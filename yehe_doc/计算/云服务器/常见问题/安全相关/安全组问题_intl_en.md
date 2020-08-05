@@ -1,7 +1,7 @@
 
 ### Why does a security group have a reject rule by default?
 
-Security group rules take effect sequentially from top to bottom. If an allow rule that was previously set takes effect, other rules will be rejected by default. If this allow rule opens all ports to the Internet, the last reject rule will not take effect. We provide this default setting due to security concerns.
+Security group rules take effect sequentially from top to bottom. If an allow rule that was previously set takes effect, other rules will be rejected by default. If this allow rule opens all ports to Internet, the last reject rule will not take effect. We provide this default setting due to security concerns.
 
 ### How can I adjust the priority of a security group?
 

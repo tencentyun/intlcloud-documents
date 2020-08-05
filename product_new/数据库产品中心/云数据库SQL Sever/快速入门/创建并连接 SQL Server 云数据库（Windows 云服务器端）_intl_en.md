@@ -9,7 +9,7 @@ This document describes how to connect to a TencentDB for SQL Server instance th
 ![](https://main.qcloudimg.com/raw/019e13af6a6db7bf831cad9d7000279e.png)
 4. Start SSMS in the Windows CVM instance. On the **Connect to server** page, enter the relevant information to connect to TencentDB. Click **Connect** and wait a few minutes before SSMS connects to your database instance.
  - **Server type**: select "Database Engine".
- - **Server name**: enter the private IP and port number of the instance and separate them with a comma. For example, if the private IP and port number of the instance are `10.10.10.10:1433`, then enter `10.10.10.10,1433` here.
+ - **Server name**: enter the private IP and port number of the instance and separate them with a comma. For example, if the private IP is `10.10.10.10` and the port number is `1433`, then enter `10.10.10.10,1433`.
  - **Authentication**: select "SQL Server Authentication".
  - **Login** and **Password**: enter the account name and password you configured when creating the instance account on the **Account Management** page.
 ![](//mc.qcloudimg.com/static/img/1cac47c4fc515d30d2cb5a0ef0141e22/image.png)

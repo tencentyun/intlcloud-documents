@@ -1,19 +1,24 @@
 
 ### Command Compatibility of Different Editions
-In the following table, ✓ indicates "supported", x indicates "not supported", and - indicates that cross-slot access is not applicable to the command. For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336). For more information on the command compatibility of the Cluster Edition, please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336) and [Command Table Download Address](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/Redis%E5%91%BD%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%80%A7.xlsx).
+In the following table, ✓ indicates "supported", x indicates "unsupported", and - indicates that cross-slot access is not applicable to the command:
+- For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336).
+- For more information on the command compatibility of the Memory Edition (Cluster Architecture), please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336).
+- For more information on the command compatibility of the Hybrid Storage Edition (Cluster Architecture), please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/36163).
+- [Command table download address](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/Redis%E5%91%BD%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%80%A7.xlsx).
+
 <table>
    <tr>
-      <th>Command Type</th>
+      <th>Command Group</th>
       <th>Command</th>
-      <th>2.8 Standard Edition</th>
-      <th>4.0 Standard Edition</th>
-      <th>4.0 Cluster Edition</th>
-      <th>5.0 Standard Edition</th>
-      <th>5.0 Cluster Edition</th>
-      <th>Cluster Edition Cross-Slot Support</th>
+      <th>2.8 Memory Edition (Standard Architecture)</th>
+      <th>4.0 Memory Edition (Standard Architecture)</th>
+      <th>4.0 Memory/Hybrid Storage Edition (Cluster Architecture)</th>
+      <th>5.0 Memory Edition (Standard Architecture)</th>
+      <th>5.0 Memory Edition (Cluster Architecture)</th>
+      <th>Cross-slot Support in Memory Edition (Cluster Architecture)</th>
    </tr>
    <tr>
-      <td rowspan=6>connection type</td>
+      <td rowspan=6>connection group</td>
       <td>auth</td>
       <td>✓</td>
       <td>✓</td>
@@ -60,7 +65,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
    </tr>
    <tr>
       <td>swapdb</td>
-      <td>✓</td>
+      <td>x</td>
       <td>✓</td>
       <td>✓</td>
       <td>✓</td>
@@ -68,7 +73,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=15>hash type</td>
+      <td rowspan=15>hash group</td>
       <td>hdel</td>
       <td>✓</td>
       <td>✓</td>
@@ -204,7 +209,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=17>keys type</td>
+      <td rowspan=17>keys group</td>
       <td>del</td>
       <td>✓</td>
       <td>✓</td>
@@ -358,7 +363,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=17>list type</td>
+      <td rowspan=17>list group</td>
       <td>lindex</td>
       <td>✓</td>
       <td>✓</td>
@@ -512,7 +517,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>x</td>
    </tr>
    <tr>
-      <td rowspan=6>pub/sub type</td>
+      <td rowspan=6>pub/sub group</td>
       <td>psubscribe</td>
       <td>✓</td>
       <td>✓</td>
@@ -567,7 +572,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=15>sets type</td>
+      <td rowspan=15>sets group</td>
       <td>sadd</td>
       <td>✓</td>
       <td>✓</td>
@@ -703,7 +708,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>x</td>
    </tr>
    <tr>
-      <td rowspan=25>sorted sets type</td>
+      <td rowspan=25>sorted sets group</td>
       <td>zadd</td>
       <td>✓</td>
       <td>✓</td>
@@ -929,7 +934,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=24>strings type</td>
+      <td rowspan=24>strings group</td>
       <td>append</td>
       <td>✓</td>
       <td>✓</td>
@@ -1146,7 +1151,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=5>transactions type</td>
+      <td rowspan=5>transactions group</td>
       <td>discard</td>
       <td>✓</td>
       <td>✓</td>
@@ -1192,7 +1197,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=3>hyperloglog type</td>
+      <td rowspan=3>hyperloglog group</td>
       <td>pfadd</td>
       <td>✓</td>
       <td>✓</td>
@@ -1220,7 +1225,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>x</td>
    </tr>
    <tr>
-      <td rowspan=7>scripting type</td>
+      <td rowspan=7>scripting group</td>
       <td>eval</td>
       <td>✓</td>
       <td>✓</td>
@@ -1284,7 +1289,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=6>geo type</td>
+      <td rowspan=6>geo group</td>
       <td>geoadd</td>
       <td>x</td>
       <td>✓</td>
@@ -1339,7 +1344,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=7>keys type</td>
+      <td rowspan=7>keys group</td>
       <td>touch</td>
       <td>✓</td>
       <td>✓</td>
@@ -1403,7 +1408,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=40>server type</td>
+      <td rowspan=40>server group</td>
       <td>bgrewriteaof</td>
       <td>x</td>
       <td>x</td>
@@ -1764,7 +1769,7 @@ In the following table, ✓ indicates "supported", x indicates "not supported", 
       <td>-</td>
    </tr>
    <tr>
-      <td rowspan=13>Stream type</td>
+      <td rowspan=13>Stream group</td>
       <td>xinfo</td>
       <td>x</td>
       <td>x</td>
