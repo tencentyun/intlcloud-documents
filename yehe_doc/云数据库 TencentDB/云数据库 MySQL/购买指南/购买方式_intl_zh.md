@@ -17,7 +17,7 @@
 2. 支付完成后，返回实例列表，待实例状态变为“未初始化”，即可进行初始化操作。
 
 ##  API 购买
-通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15871)。
+通过 API 购买云数据库的用户，可参考 [创建实例](https://intl.cloud.tencent.com/document/product/236/15865)。
 
 
 ## 后续步骤
