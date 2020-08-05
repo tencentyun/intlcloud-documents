@@ -11,7 +11,8 @@
 
 
 ## 实例规格（内存容量）价格
-
+>? 此产品的包年包月售卖模式正在内测中，价格文档仅供参考，最终价格以账单为准。如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
+>
 ### 包年包月价
 
 <table>
@@ -490,6 +491,13 @@
   <td class=xl65 align=right>0.0005</td>
  </tr>
  <tr height=21 style='height:15.75pt'>
+  <td height=21 style='height:15.75pt'>清远</td>
+  <td class=xl65 align=right>0.0500</td>
+  <td class=xl65 align=right>0.0400</td>
+  <td class=xl65 align=right>0.0300</td>
+  <td class=xl65 align=right>0.0005</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
   <td height=21 style='height:15.75pt'>上海</td>
   <td class=xl65 align=right>0.0500</td>
   <td class=xl65 align=right>0.0400</td>
@@ -618,6 +626,13 @@
  </tr>
  <tr height=21 style='height:15.75pt'>
   <td height=21 class=xl1529815 style='height:15.75pt'>广州</td>
+  <td class=xl6529815 align=right>0.0250</td>
+  <td class=xl6529815 align=right>0.0200</td>
+  <td class=xl6529815 align=right>0.0150</td>
+  <td class=xl6529815 align=right>0.0003</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1529815 style='height:15.75pt'>清远</td>
   <td class=xl6529815 align=right>0.0250</td>
   <td class=xl6529815 align=right>0.0200</td>
   <td class=xl6529815 align=right>0.0150</td>
