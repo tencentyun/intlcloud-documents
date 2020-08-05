@@ -1,3 +1,7 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [VPC API 3.0](https://intl.cloud.tencent.com/document/product/215/15754) which is standardized and faster.
+>
+
+
 ## 1. API Description
 
 This API (AttachClassicLinkVpc) is used to create a classiclink.
@@ -23,7 +27,7 @@ API request domain name: <font style="color:red">vpc.api.qcloud.com</font>
 |---------|---------|---------|
 | code | Int | Common error code. 0: Successful; other values: Failed. For more information, see <a href="https://intl.cloud.tencent.com/document/product/377/8946">Common Error Codes</a>. |
 | message | String | Module error message, which depends on the API. |
-| taskId | Int | Task ID. You can query the execution result by using taskId. For more information, see the <a href="https://intl.cloud.tencent.com/doc/api/245/%e6%9f%a5%e8%af%a2%e4%bb%bb%e5%8a%a1%e6%89%a7%e8%a1%8c%e7%bb%93%e6%9e%9c%e6%8e%a5%e5%8f%a3">API for Querying Task Execution Results</a>.|
+| taskId | Int | Task ID. You can query the execution result by using taskId. For more information, see the <a href="https://intl.cloud.tencent.com/document/api/215/5094">API for Querying Task Execution Results</a>.|
 
 ## 4. Error Codes
  The following error codes only include business logic error codes for this API. For additional common error codes, see <a href="https://intl.cloud.tencent.com/doc/api/245/4924" title="VPC Error Codes">VPC Error Codes</a>.
