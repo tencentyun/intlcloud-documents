@@ -103,5 +103,7 @@ pod install
  - iOS: enter the iOS/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the project.
  - Mac: enter the Mac/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the project.
 
+## Related Documentation
+- [Pricing](https://intl.cloud.tencent.com/zh/document/product/1047/34350)
 
 
