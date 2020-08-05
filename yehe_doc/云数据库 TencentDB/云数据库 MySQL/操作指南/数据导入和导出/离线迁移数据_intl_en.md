@@ -1,3 +1,5 @@
+This document describes how to migrate data in the console or with the command line tool.
+
 ## Data Migration Through Console
 There are two modes for migrating data through the console: physical backup and logical backup. For more information, please see:
 - [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910)
