@@ -19,7 +19,7 @@ You can view and modify certain parameters in the [TencentDB for MySQL Console](
 ![](https://main.qcloudimg.com/raw/4687ed705274b76ec92c43b7f9d448ab.png)
 3. Enter the target parameter value as prompted in the "Acceptable Values" column and click <img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;"> to save the change. You can click <img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;"> to cancel the operation.
 ![](https://main.qcloudimg.com/raw/41c7d73d4c5d404a112f54c3a63da726.png)
-4. In the pop-up dialog box, click **OK**.
+4. In the pop-up dialog box, select an "Execution Mode" and click **OK**.
 
 ### Importing from parameter template
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
