@@ -1,39 +1,39 @@
-## Application Scenarios
-In application scenarios such as remote education, live show streaming, video conferencing, remote loss assessment, financial audiovisual recording, and online healthcare, the entire video call or interactive live streaming process needs to be recorded and retained for future needs like evidence gathering, quality control, audit, storage, and playback.
+## Use Cases
+In application scenarios such as remote education, show live streaming, video conferencing, remote loss assessment, financial audiovisual recording, and online healthcare, the entire video call or interactive live streaming process needs to be recorded and retained for future needs like evidence gathering, quality control, audit, storage, and playback.
 
-With TRTC on-cloud recording, an audio/video channel is recorded into an independent file for each user in a room:
-![](https://main.qcloudimg.com/raw/7820cdafe40fabc38653bc53795412d2.png)
+The on-cloud recording feature of TRTC can record the audio and video streams of each user in the room into a separate file:
+![](https://main.qcloudimg.com/raw/b96dd835182d3546f8d13abb290e619e.gif)
 
-Or multiple audio/video channels are mixed by [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) and then recorded into one file:
-![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
+Multiple audio/video streams can also be first mixed by [On-cloud Stream Mix](https://intl.cloud.tencent.com/document/product/647/34618), and then the mixed audio/video streams can be recorded as a file:
+![](https://main.qcloudimg.com/raw/be3fe2b57b07fb9cabe62e108f5cbe69.gif)
 
 ## Console Guide
 
 <span id="open"></span>
-### Activating on-cloud recording service
+### Activating recording service
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc) and select **Application Management** on the left sidebar.
 2. Click **Feature Configuration** in the row of the target application to enter the feature configuration page. If there are no applications, you can click **Create Application**, enter the application name, and click **OK** to create one.
-3. Click <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"  style="margin:0;"> on the right of **Enable On-cloud Recording** to enter the on-cloud recording configuration page.
+3. Click <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"  style="margin:0;"> on the right of **Enable On-cloud Recording** and the on-cloud recording settings page will pop up:
 
 <span id="recordType"></span>
-### Selecting an on-cloud recording mode
-TRTC on-cloud recording has two modes: global auto-recording and specified user recording.
-![](https://main.qcloudimg.com/raw/d8084b7aa472b95ec21448703e4b6a49.png)
+### Selecting recording mode
+The on-cloud recording service of TRTC supports two recording modes: "global auto-recording" and "recording by user":
+![](https://main.qcloudimg.com/raw/cfa54cf045cd8d6ed266c5022ac4eb1e.png)
 
 - **Global auto-recording**
-Upstream audio/video streams of every user in each TRTC room are automatically recorded. A recording task automatically starts and ends without manual intervention, making it easy to use. For more information, please see [Solution 1. Global auto-recording](#autoRecord).
+The audio and video upstreams of each user in each TRTC room will be automatically recorded. The start and stop of the recording task are automatic, so you don't need to care about it. This option is relatively simple and easy to use. For specific usage, please see [Scheme 1. Global auto-recording](#autoRecord).
 
-- **Specified user recording**
-You can record audio/video streams for specified users through SDK APIs on the client or RESTful APIs on the server, but this needs additional development. For more information, please see [Solution 2. Specified user recording (SDK APIs)](#recordSDKAPI) and [Solution 3. Specified user recording (RESTful APIs)](#recordRESTAPI).
+- **Recording by user**
+You can specify to record certain users' audio and video streams, which requires you to control through the client SDK API or server RESTful API and requires additional development efforts. For specific usage, please see [Scheme 2. Recording by user (SDK API)](#recordSDKAPI) and [Scheme 3. Recording by user (RESTful API)](#recordRESTAPI).
 
 <span id="fileFormat"></span>
-### Selecting a file format
-TRTC on-cloud recording supports HLS, MP4, FLV and AAC formats for you to choose as needed. Their differences and application scenarios are listed in the table below:
+### Selecting file format
+On-cloud recording supports four different file formats: HLS, MP4, FLV, and AAC. The differences and applicable scenarios of the four formats are listed in the table below. You can choose an appropriate one according to your business needs:
 
 <table>
 <tr>
 <th>Parameter</th>
-<th>Description</th>
+<th>Parameter Description</th>
 </tr>
 <tr>
 <td>File Type</td>
@@ -41,131 +41,131 @@ TRTC on-cloud recording supports HLS, MP4, FLV and AAC formats for you to choose
 </tr>
 <tr>
 <td nowrap="nowrap">Maximum Length of Single File (in Minutes)</td>
-<td>You can set the maximum length of a single file based on your actual business needs, and files exceeding this limit will be automatically split by the system. The value ranges from 5 to 120 minutes.<br>If **File Type** is set to **HLS**, the maximum length of a single file will be unlimited, i.e., this parameter will not take effect.</td>
+<td>You can set the maximum length of a single video file based on your actual business needs, and files exceeding this limit will be automatically split by the system. The value ranges from 5 to 120 minutes.<br>If **File Type** is set to **HLS**, the maximum length of a single file will be unlimited, i.e., this parameter will not take effect.</td>
 </tr>
 <tr>
-<td>File Retention Duration (in Days)</td>
-<td>You can set the number of days during which a video file will be stored on the VOD platform based on your actual business needs. The value ranges from 0 to 1,800 days, and 0 indicates permanent storage.</td>
+<td>File retention duration (in days)</td>
+<td>You can set the number of days during which a video file will be stored on the VOD platform based on your actual business needs. The value ranges from 0 to 1,800 days, the file will be irreversibly deleted automatically by the VOD platform upon expiration, and 0 indicates permanent storage.</td>
 </tr>
 <tr>
 <td>Recording Resumption Timeout Period (in Seconds)</td>
-<td>Only when **File Type** is set to **HLS** can this parameter take effect.<br>By default, if a call (or live stream) is interrupted due to network jitter or other problems, the recording file will be split into multiple files. If you want to generate only one playback link for one call (or live stream), you can set this parameter as needed. If the interruption duration does not exceed the specified recording resumption timeout period, only one file will be generated for one call (or live stream). The value ranges from 1 to 300 seconds, and 0 indicates that recording resumption is disabled.</td>
+<td>Only when **File Type** is set to **HLS** can this parameter take effect.<br>By default, if a call (or live stream) is interrupted due to network jitter or other problems, the recording file will be split into multiple files. If you want to generate only one playback link for one call (or live stream), you can set this parameter as needed. If the interruption duration does not exceed the specified recording resumption timeout period, only one file will be generated for one call (or live stream). The value ranges from 1 to 300 seconds, and 0 indicates that recording resumption is disabled. </td>
 </tr>
 </table>
 
-> 
-- We recommend HLS for lecture playback in online education scenarios.
+>? 
+- The HLS format is recommended for online education businesses for easy course playback.
 HLS supports a maximum of 5-minute timeout period for recording resumption so as to generate only one playback link for one lecture. In addition, it is supported by most browsers for online playback and is therefore ideal for video playback scenarios.
-- We recommend FLV when you need to store recording files on self-built servers.
-As an HLS file consists of a series of small .ts files, it is inconvenient to migrate it during service operation. Therefore, if you need to store recording files on your self-built servers, please choose the simple and highly tolerant FLV format.
+- If you need to store recording files on your own, the FLV format is recommended.
+As an HLS file consists of a series of small .ts files, it is inconvenient to migrate it across servers. Therefore, if you need to store recording files on your self-built servers, please choose the simple and highly tolerant FLV format.
 
 <span id="storageLocation"></span>
-### Selecting a storage location
-Files recorded by TRTC on-cloud recording are stored on VOD by default. If multiple businesses in your project share the same VOD account, you may need to isolate recording files from each other. You can isolate TRTC recording files from those of other businesses through VOD "subapplications".
+### Selecting storage location
+An on-cloud recording file in TRTC will be stored in the Tencent Cloud VOD service by default. If multiple businesses in your project share the same Tencent Cloud VOD account, you may need recording file isolation. You can distinguish TRTC recording files from those in other businesses through the "subapplication" capability of VOD.
 
-- **What are primary applications and subapplications in VOD?**
-Primary applications and subapplications can divide VOD resources. A primary application is equivalent to a root account, and a subapplication to a sub-account under the root account. You can create multiple subapplications for one primary application, but each of them manages resources independently and has a storage space isolated from that of other subapplications.
+- **What are VOD primary application and subapplication?**
+Primary application and subapplication are a way of resource division in VOD. A primary application is equivalent to a root account of VOD, and multiple subapplications can be created under the primary application, each of which is equivalent to a sub-account under the root account and has independent resource management features and storage space isolated from other subapplications.
 
-- **How to enable VOD subapplications?**
-Log in to the [VOD Console](https://console.cloud.tencent.com/vod), enable the subapplication feature, and create a subapplication as instructed in [Subapplication System](https://intl.cloud.tencent.com/document/product/266/33987).
+- **How do I enable a VOD subapplication?**
+You can add new subapplications in the [VOD Console](https://console.cloud.tencent.com/vod) as instructed in [How do I enable a VOD subapplication?](https://intl.cloud.tencent.com/document/product/266/33987).
 
 <span id="recordCallback"></span>
-### Configuring recording callback
-If you want to receive a real-time [notification](#callback) whenever a recording file is generated, enter an address in the input box shown below for your server to receive the recoding file callback. The address should comply with the HTTP (or HTTPS) protocol. When a recording file is generated, Tencent Cloud will send a notification to your server via this address.
+### Setting recording callback
+If you need to receive [storage notifications](#callback) for new files in real time, you can enter the address for your server to receive recording file callback, which must be an HTTP or HTTPS address. When a new recording file is generated, Tencent Cloud will send a notification to your server at this address.
 
+![](https://main.qcloudimg.com/raw/34588c52d3a93690874fdb760c771a84.png)
 
-
-For details on how to receive a callback and understand its fields, please see [Receiving a Recoding File](#callback).
+For detailed recording callback receipt and interpretation, please see [Receiving recording file](#callback) below.
 
 <span id="startAndStop"></span>
-## On-cloud Recording Solutions
-TRTC supports three on-cloud recording solutions: global auto-recording, specified user recording (SDK APIs), and specified user recording (RESTful APIs). They will be detailed from the following perspectives:
-- How to configure and use a solution in the console?
-- How to start a recording task?
-- How to end a recording task?
-- How to mix multiple image channels in a room into one?
-- In which format will a recording file be named?
-- Which platforms will support these solutions?
+## Recording Control Schemes
+TRTC provides three on-cloud recording control schemes, namely, "global auto-recording", "recording by user (controlled by SDK API)", and "recording by user (controlled by RESTful API)", each of which will be described in the following aspects:
+- How do I select a scheme in the console?
+- How do I start a recording task?
+- How do I end a recording task?
+- How do I mix multiple channels of video image in the room into one channel?
+- How is a recording file named?
+- What platforms are supported by the scheme?
 
 <span id="autoRecord"></span>
-### Solution 1. Global auto-recording
-- **Configure in the console**
-Select **Global Auto-Recording** as the [on-cloud recording mode](#recordType) in the console.
+### Scheme 1. Global auto-recording
+- **Settings in the console**
+To use this recording scheme, please select "Global Auto-Recording" when [selecting the recording mode](#recordType).
 
-- **Start a recording task**
-Audio/video streams of every user in each TRTC room are automatically recorded without manual intervention.
+- **Start of recording task**
+The audio and video streams of each user in the TRTC room will be automatically recorded into files with no additional operations required.
 
-- **End a recording task**
-A recording task ends automatically. Once an anchor stops upstreaming audio/video streams, the on-cloud recording automatically stops. If you set the recording resumption timeout period when [selecting a file format](#fileFormat), you will not receive the recording file until the timeout period has elapsed.
+- **End of recording task**
+The task will stop automatically. After an anchor stops upstreaming audio/video, on-cloud recording of the anchor will stop automatically. If you set the "recording timeout" when [selecting the file format](#fileFormat), you need to wait for the recording timeout period to elapse before you can receive the recording file.
 
-- **Mix multiple image channels**
-Global auto-recording supports two methods of On-Cloud MixTranscoding: mixing through RESTful APIs on the server or SDK APIs on the client. Do not use both methods at the same time:
- + [Mixing through RESTful APIs on the server](https://intl.cloud.tencent.com/document/product/647/34618#restapi): call APIs on your server, which is not subject to the client platform version.
- + [Mixing through SDK APIs on the client](https://intl.cloud.tencent.com/document/product/647/34618#sdkapi): the client starts a mixing. Currently, clients for iOS, Android, Windows, macOS, and Electron, etc. are supported, while WeChat Mini Programs and web browsers are not.
+- **Mix of multi-channel video image**
+There are two schemes for on-cloud stream mix in the global auto-recording mode, namely, "server RESTful API scheme" and "client SDK API scheme". Do not mix the two schemes:
+ + [Server RESTful API stream mix scheme](https://intl.cloud.tencent.com/document/product/647/34618#restapi): your server needs to initiate API calls, which are not subject to the client platform version.
+ + [Client SDK API stream mix scheme](https://intl.cloud.tencent.com/document/product/647/34618#sdkapi): stream mix can be initiated directly on the client. Currently, it supports iOS, Android, Windows, macOS, and Electron but not WeChat Mini Program and Web Browser.
 
 
-- **Name a recording file**
- + If the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter is specified when an anchor enters a room, the recording file is named `userDefineRecordId_start time_end time`.
- + If the [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) parameter (instead of [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)) is specified when an anchor enters a room, the recording file is named `streamId_start time_end time`.
- + If neither [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) nor [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) is specified when an anchor enters a room, the recording file is named `sdkappid_roomid_userid_start time_end time`.
+- **Naming of recording file**
+ + If the anchor specifies the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter during room entry, the recording file will be named as `userDefineRecordId_start time_end time`;
+ + If the anchor specifies the [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) parameter but not the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter during room entry, the recording file will be named as `streamId_start time_end time`;
+ + If the anchor specifies neither the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter nor the [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) parameter during room entry, the recording file will be named as `sdkappid_roomid_userid_start time_end time`.
  
 - **Supported platforms**
-They depend on your server rather than the client.
+The operation is controlled by your server but not subject to the client platform.
 
 <span id="recordSDKAPI"></span>
-### Solution 2. Specified user recording (SDK APIs)
+### Scheme 2. Recording by user (SDK API)
 
-![](https://main.qcloudimg.com/raw/e3d81ef76c64d2fb6631d98d22bfb0dc.png)
+![](https://main.qcloudimg.com/raw/83b8e1790265a58bede293934802d000.gif)
 
-- **Configure in the console**
-Select **Specified User Recording** as the [on-cloud recording mode](#recordType) in the console.
+- **Settings in the console**
+To use this recording scheme, please select "Specified User Recording" when [selecting the recording mode](#recordType).
 
-- **Start a recording task**
-If the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) field of the [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) parameter is specified when an anchor enters a room, upstream audio/video data of the anchor can be recorded on cloud; otherwise, no recording task will be triggered by the anchor.
+- **Start of recording task**
+If the anchor specifies the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) field in the room entry parameter [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) during room entry, the upstreamed audio/video data of the anchor will be recorded in the cloud; otherwise, no recording tasks will be triggered.
 
 ```Objective-C
-// Sample code: record the audio/video streams of the specified "rexchang" user, and the file ID is "1001_rexchang"
+// Sample code: specifying to record the audio/video streams of user rexchang with the file ID as 1001_rexchang
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 TRTCParams *param = [[TRTCParams alloc] init];
 param.sdkAppId = 1400000123;     // `SDKAppID` in TRTC, which can be obtained after an application is created
 param.roomId   = 1001;           // Room ID
 param.userId   = @"rexchang";    // Username
 param.userSig  = @"xxxxxxxx";    // Login signature
-params.role     = TRTCRoleAnchor; // Role: anchor
-param.userDefineRecordId = @"1001_rexchang";  // Recording ID, used to record only for this user
-[trtcCloud enterRoom:params appScene:TRTCAppSceneLIVE]; // Please enable LIVE mode
+param.role     = TRTCRoleAnchor; // Role: anchor
+param.userDefineRecordId = @"1001_rexchang";  // Recording ID, i.e., specifying to enable recording for this user
+[trtcCloud enterRoom:params appScene:TRTCAppSceneLIVE]; // Please use the `LIVE` mode
 ```
 
-- **End a recording task**
-A recording task ends automatically. If the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter is specified when an anchor enters a room, once an anchor stops upstreaming audio/video streams, the on-cloud recording automatically stops. If you set the recording resumption timeout period when [selecting a file format](#fileFormat), you will not receive the recording file until the timeout period has elapsed.
+- **End of recording task**
+The task will stop automatically. After the anchor who specifies the [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) parameter during room entry stops upstreaming audio/video, on-cloud recording will stop automatically. If you set the "recording timeout" when [selecting the file format](#fileFormat), you need to wait for the recording timeout period to elapse before you can receive the recording file.
 
-- **Mix multiple image channels**
-You can call the [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) SDK API to mix other users' images and audios in the same room into the current user's channel. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
+- **Mix of multi-channel video image**
+You can call the SDK API [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to mix the audio/video streams of other users in the room with the current user's audio/video streams. For more information, please see [On-cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
 
-- **Name a recording file**
-A recording file is named in the format of `userDefineRecordId_start time_end time`.
+- **Naming of recording file**
+The recording file will be named as `userDefineRecordId_start time_end time`.
 
 - **Supported platforms**
-Currently, terminals for [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html), etc., are supported, while WeChat Mini Programs and web browsers are not.
+Recording controls can be initiated on [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) but not Web Browser and WeChat Mini Program.
 
 <span id="recordRESTAPI"></span>
-### Solution 3. Specified user recording (RESTful APIs)
+### Scheme 3. Recording by user (RESTful API)
 
-![](https://main.qcloudimg.com/raw/71b4b6705cee61000660c13c2a0fe595.png)
+![](https://main.qcloudimg.com/raw/f0d7c94b98e4e7839c2e360f1aeea718.gif)
 
-> TRTC provides the `StartMCUMixTranscode` and `StopMCUMixTranscode` RESTful APIs for the server to implement on-cloud mixing and transcoding, on-cloud recording and relayed live streaming:
->- On-cloud mixing and transcoding: the `LayoutParams` parameter controls the image layout in mixing.
->- On-cloud recording: the `OutputParams.RecordId` parameter enables/disables on-cloud recording.
->- Relayed live streaming: the `OutputParams.StreamId` parameter enables/disables CDN relayed live streaming.
+>? TRTC's server provides a pair of RESTful APIs ([StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) and [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269)) to implement three features of on-cloud stream mix, on-cloud recording, and relayed live streaming:
+>- On-cloud stream mix: the video image layout during stream mix can be controlled through the `LayoutParams` parameter.
+>- On-cloud recording: on-cloud recording can be enabled/disabled through the `OutputParams.RecordId` parameter.
+>- Relayed live streaming: CDN live watching can be enabled/disabled through the `OutputParams.StreamId` parameter.
 
-- **Configure in the console**
-Select **Specified User Recording** as the [on-cloud recording mode](#recordType) in the console.
+- **Settings in the console**
+To use this recording scheme, please select "Specified User Recording" when [selecting the recording mode](#recordType).
 
-- **Start a recording task**
-Call the `StartMCUMixTranscode` API and specify the `OutputParams.RecordId` parameter on your server to start mixing and recording.
+- **Start of recording task**
+Call [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) from your server and specify the `OutputParams.RecordId` parameter to start stream mix and recording.
 
 ```
-// Sample code: start on-cloud mixing and transcoding and on-cloud recording tasks through the RESTful APIs
+// Sample code: starting on-cloud stream mix and on-cloud recording tasks through RESTful API
 https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 &SdkAppId=1400000123
 &RoomId=1001
@@ -184,24 +184,24 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 &<Common request parameters>
 ```
 
-- **End a recording task**
-A recording task ends automatically. You can call the `StopMCUMixTranscode` API to manually end a mixing or recording task in progress.
+- **End of recording task**
+The task will stop automatically. You can also call [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269) halfway to stop the stream mix or recording task.
 
-- **Mix multiple image channels**
-Call the `StartMCUMixTranscode` API and specify the `LayoutParams` parameter on your server to mix. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
+- **Mix of multi-channel video image**
+Call [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) from your server and specify the `LayoutParams` parameter. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
 
-- **Name a recording file**
-A recording file is named with the `OutputParams.RecordId` parameter specified when `StartMCUMixTranscode` is called. The name is in the format of `OutputParams.RecordId_start time_end time`.
+- **Naming of recording file**
+A recording file will be named by the `OutputParams.RecordId` parameter specified when [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) is called, and the naming format is `OutputParams.RecordId_start time_ end time`.
 
 - **Supported platforms**
-They depend on your server rather than the client.
+The operation is controlled by your server but not subject to the client platform.
 
 <span id="search"></span>
-## Searching for a Recording File
+## Finding Recording File
 After recording is enabled, files recorded in TRTC can be found in Tencent Cloud VOD. You can directly search for files in the VOD Console or use a RESTful API on your backend server for scheduled filtering:
 
 **Method 1. Search for files in the VOD Console**
-1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/) and click **Media Assets** on the left sidebar.
+1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/) and select **Media Assets** on the left sidebar.
 2. Click **Search by prefix** above the list, select **Search by prefix**, enter a keyword such as `1400000123_1001_rexchang_main` in the search box, and click <img src="https://main.qcloudimg.com/raw/16b35c89b5efe4a7153e1cb5282006fd.png"  style="margin:0;">. Video files whose names match the prefix will be displayed.
 3. You can filter out target files by creation time.
 
@@ -217,9 +217,9 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 ```
 
 <span id="callback"></span>
-## Receiving a Recording File
+## Receive Recording File
 In addition to [searching for recording files](#search), you can make Tencent Cloud proactively push messages of new recording files to your server by configuring a callback address.
-After the last channel of audio/video stream exits a room, Tencent Cloud will end recording and transfer the recording file to the VOD platform for storage, which will take about 30 seconds to 2 minutes by default (if you set the recording resumption timeout period to 300 seconds, then the actual waiting time will be 300 seconds plus the default waiting time). After the transfer and storage are completed, Tencent Cloud will send a notification to your server at the callback (HTTP/HTTPS) address configured in [Configuring recording callback](#recordCallback).
+After the last channel of audio/video stream exits a room, Tencent Cloud will end recording and transfer the recording file to the VOD platform for storage, which will take about 30 seconds to 2 minutes by default (if you set the recording resumption timeout period to 300 seconds, then the actual waiting time will be 300 seconds plus the default waiting time). After the transfer and storage are completed, Tencent Cloud will send a notification to your server at the callback address (HTTP/HTTPS) configured in [Setting recording callback](#recordCallback).
 
 Tencent Cloud will push the recording and recording-related events to your server at the specified callback address. Below is a sample callback message:
 ![](https://main.qcloudimg.com/raw/1a89e7058f7c806f6f867217821d1a9c.png)
@@ -233,7 +233,7 @@ You can determine which call (or live stream) corresponds to the current callbac
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/b75fdd3c8a2c0b1562ee4cb5a4ef65d1.png"  style="box-shadow: 0 0 0px #ccc;"></td>
 <td>event_type</td>
-<td>Message type. If its value is 100, the callback message indicates the generation of a recording file.</td>
+<td>Message type. If its value is 100, the callback message indicates generation of a recording file.</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/2a495b157f03a8905e372a2516ea3a8f.png"  style="box-shadow: 0 0 0px #ccc;"></td>
@@ -257,7 +257,7 @@ You can determine which call (or live stream) corresponds to the current callbac
 </tr></table>
 
 <span id="delete"></span>
-## Deleting a Recording File
+## Deleting Recording File
 VOD provides a series of RESTful APIs for audio/video file management. You can use the `DeleteMedia` API to delete a specified file.
 Sample RESTful request:
 ```
@@ -267,11 +267,11 @@ https://vod.tencentcloudapi.com/?Action=DeleteMedia
 ```
 
 <span id="play"></span>
-## Playing Back a Recording File
+## Playing back Recording File
 In scenarios such as online education, recording files usually need to be played back for multiple times in order to make full use of the teaching resources.
 
 **Select the file format (HLS)**
-Select HLS as the [file format](#fileFormat).
+Select HLS as the file format when [selecting the file format](#fileFormat).
 HLS supports a maximum of 5-minute timeout period for recording resumption so as to generate only one playback link for one live stream (or lecture). In addition, HLS is supported by most browsers for online playback and is therefore ideal for video playback scenarios.
 
 **Get the VOD address (video_url)**
@@ -282,4 +282,4 @@ Integrate a VOD player based on the used platform. For detailed directions, plea
 - [iOS](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
 - [Android](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 
-> We recommend that you use the [professional edition](https://intl.cloud.tencent.com/document/product/647/34615) of the TRTC SDK, which is integrated with various features such as superplayer (Player+) and MLVB. Thanks to the highly reusable underlying modules, integration with the professional edition has a smaller size than integration with two independent SDKs and can also avoid the problem of symbol duplicate.
+>! We recommend you use the [Pro Edition](https://intl.cloud.tencent.com/document/product/647/34615) of the TRTC SDK, which is integrated with various features such as superplayer (Player+) and MLVB. Thanks to the highly reusable underlying modules, integration with the Pro Edition has a smaller size than integration with two independent SDKs and can also avoid the problem of symbol duplicate.

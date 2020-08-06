@@ -83,7 +83,7 @@ Demo 所用框架技术如下：
 
 ## 实现自定义 UI 界面
 如果 Demo 中默认实现的 UI 不符合您的预期，您可以按需实现自己的用户界面，即只使用我们封装好的 [trtc-electron-education](https://www.npmjs.com/package/trtc-electron-education) 组件所提供的音视频能力，自行实现 UI 部分。
-![](https://main.qcloudimg.com/raw/e00d38bf3869a41be809d8bf80cee248.png)
+![](https://main.qcloudimg.com/raw/cba4f331a811dd5dbf31cce80bd1d826.png)
 
 ### 步骤1：集成 SDK
 
