@@ -54,16 +54,6 @@
 		<td>清远一区<br> ap-qingyuan-1</td>
 	</tr>
 	<tr>
-		<td rowspan="3">华南地区（深圳金融）<br>ap-shenzhen-fsi</td>
-		<td>深圳金融一区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-1</span></td>
-	</tr>
-	<tr>
-		<td>深圳金融二区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-2</span></td>
-	</tr>
-		<tr>
-		<td>深圳金融三区<span style="background-color: rgb(249, 249, 249);">（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shenzhen-fsi-3</span></td>
-	</tr>
-	<tr>
 		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
@@ -77,15 +67,6 @@
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
-			<td rowspan="3">华东地区（上海金融）<br>ap-shanghai-fsi</td>
-			<td>上海金融一区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-1</td>
-	</tr>
-	<tr>
-			<td>上海金融二区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-2</td>
-	</tr>
-	<tr>
-			<td>上海金融三区（仅限金融机构和企业 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）<br>ap-shanghai-fsi-3</td>
-	</tr>
 		<tr>
 			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
