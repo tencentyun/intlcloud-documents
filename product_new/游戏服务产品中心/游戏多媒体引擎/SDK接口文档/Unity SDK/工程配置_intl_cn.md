@@ -48,13 +48,7 @@ $ xattr -d com.apple.quarantine gmesdk.bundle
 >此操作有风险，建议使用低版本的 MacOS 进行接入
 
 ## 工程导出配置
-从 Unity 引擎导出不同平台，需要做相应的工程配置：
-
-|平台       | 工程配置           
-| ------------- |:-------------:|
-| Android |[Android 工程配置文档](https://intl.cloud.tencent.com/document/product/607/10783)|
-| iOS     |[iOS 工程配置文档](https://intl.cloud.tencent.com/document/product/607/10783)|
-| macOS   |[macOS 工程配置文档](https://intl.cloud.tencent.com/document/product/607/10783)|
+从 Unity 引擎导出不同平台，需要做相应的工程配置。
 
 >GME Unity SDK 支持 il2cpp 编译。
 

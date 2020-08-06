@@ -50,12 +50,6 @@ $ xattr -d com.apple.quarantine gmesdk.bundle
 ## Project Export Configuration
 Project configuration is required before you can export executables from the Unity engine for different platforms:
 
-| OS | Project Configuration           
-| ------------- |:-------------:|
-| Android |[Android Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|
-| iOS     |[iOS Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|
-| macOS     |[macOS Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|
-
 >The GME SDK for Unity supports IL2CPP compilation.
 
 #### Exporting for iOS
