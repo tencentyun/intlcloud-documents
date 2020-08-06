@@ -60,7 +60,7 @@
 <span id="model"> </span>
 ## 实现自定义 UI 界面
 [源码](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVoiceRoomDemo) 中的 TRTCVoiceRoomDemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCVoiceRoom，您可以在`TRTCVoiceRoom.swift`文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
-![](https://main.qcloudimg.com/raw/0ebcbb27843bf03a790a945a8c92d560.png)
+![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 
 <span id="model.step1"> </span>
@@ -149,7 +149,7 @@ self.vocieRoom.login(sdkAppId: sdkAppID, userId: userId, userSig: userSig) { [we
 4. 主播收到组件的`onSeatListChange`麦位表变化事件通知，此时可以将麦位表变化刷新到 UI 界面上。
 5. 主播还会收到麦位表有成员进入的`onAnchorEnterSeat`的事件通知，此时会自动打开麦克风采集。
 
-![](https://main.qcloudimg.com/raw/628f0aa3f0c15e53fec6ac904c8d3943.png)
+![](https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png)
 
 示例代码：
 
@@ -216,7 +216,7 @@ func onAnchorEnterSeat(index: Int, user: VoiceRoomUserInfo) {
 7. 进房后还会收到麦位表有主播进入的`onAnchorEnterSeat`的事件通知。
 
 
-![](https://main.qcloudimg.com/raw/6e36bc8029a8abbeed69b43e197ba3c0.png)
+![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
 
 ```Swift
 // 1.观众设置昵称和头像
@@ -264,13 +264,13 @@ func onAnchorEnterSeat(index: Int, user: VoiceRoomUserInfo) {
 2. `kickSeat`传入对应麦位后，可以踢人下麦，房间内所有成员会收到`onSeatListChange`和`onAnchorLeaveSeat`的事件通知。
 3. `muteSeat`传入对应麦位后，可以静音/解除静音，房间内所有成员会收到 `onSeatListChange` 和 `onSeatMute` 的事件通知。
 4. `closeSeat`传入对应麦位后，可以封禁/解禁某个麦位，封禁后观众端将不能再上麦，房间内所有成员会收到`onSeatListChange`和`onSeatClose`的事件通知。
-![](https://main.qcloudimg.com/raw/299e62ae7d20d10622197ad8685d4639.png)
+![](https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png)
 
 观众端：
 1. `enterSeat`传入对应的麦位后，可以进行上麦，房间内所有成员会收到`onSeatListChange`和`onAnchorEnterSeat`的事件通知。
 2. `leaveSeat`主动下麦，房间内所有成员会收到`onSeatListChange`和`onAnchorLeaveSeat`的事件通知。
 
-![](https://main.qcloudimg.com/raw/3ac11818d7d23f61104600ea7235867d.png)
+![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
 麦位操作后的事件通知顺序如下：
 callback > onSeatListChange > onAnchorEnterSeat 等独立事件
@@ -319,7 +319,7 @@ func onAnchorEnterSeat(index: Int, user: VoiceRoomUserInfo) {
 3. 主播选择同意后，调用`acceptInvitation`并传入 inviteId。
 4. 观众端收到`onInviteeAccepted`的事件通知，调用`enterSeat`进行上麦。
 
-![](https://main.qcloudimg.com/raw/e2b97c645590c835b54fffbf0ff4ebfd.png)
+![](https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png)
 
 ```Swift
 // 观众端视角
@@ -352,7 +352,7 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 3. 观众选择同意后，调用`acceptInvitation`并传入 inviteId。
 4. 主播端收到`onInviteeAccepted`的事件通知，调用`pickSeat`抱观众上麦。
 
-![](https://main.qcloudimg.com/raw/e68e2dd9a8056ad8496cbe3dcfe634f1.png)
+![](https://main.qcloudimg.com/raw/5515f49d6e30410e12cd828b75a8db0b.png)
 
 ```java
 // 主播端视角

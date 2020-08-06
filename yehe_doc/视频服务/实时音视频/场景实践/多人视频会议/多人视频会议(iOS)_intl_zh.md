@@ -61,7 +61,7 @@
 ## 实现自定义 UI 界面
 
 [源码](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCMeetingDemo) 中的 trtcmeetingdemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCMeeting，您可以在`TRTCMeeting.h`文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
-![](https://main.qcloudimg.com/raw/bee48f1b790fd81a60f73d07fdb5ecc5.png)
+![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 
 <span id="model.step1"> </span>
@@ -139,7 +139,7 @@ TRTCMeeting.sharedInstance().login(SDKAPPID, userId: userID, userSig: userSig, c
 >非企业版 SDK 不支持变脸和贴图挂件功能。
 >
 
-![](https://main.qcloudimg.com/raw/6e0cf097f46a8953cbebcf9995ba28c1.png)
+![](https://main.qcloudimg.com/raw/416a1afd87b196a6ef791bf63eeaa5e0.png)
 
 ```swift
 // 1.主播设置昵称和头像
@@ -167,7 +167,7 @@ trtcMeeting.createMeeting(roomId) { (code, msg) in
 3. 参会成员可以调用`startCameraPreview`进行视频画面的采集，调用`startMicrophone`进行声音的采集。
 4. 如果有其他的参会成员打开了摄像头，会收到`onUserVideoAvailable`的事件，此时可以调用`startRemoteView`并传入 userId 开始播放。
 
-![](https://main.qcloudimg.com/raw/d8b796bbe41c9da1af40740916e84d70.png)
+![](https://main.qcloudimg.com/raw/f33213dea7a32ca9904c066952fcc535.png)
 
 ```swift
 // 1.参会成员设置昵称和头像

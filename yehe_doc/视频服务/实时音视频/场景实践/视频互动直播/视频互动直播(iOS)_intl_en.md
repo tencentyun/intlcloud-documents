@@ -1,7 +1,7 @@
 ## Effect Demo
-You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo to try out the interactive live video broadcasting (ILVB) capabilities of TRTC, such as co-anchoring, anchor competition, low-latency watch, and chat through on-screen comments.
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo to try out the interactive video live streaming capabilities of TRTC, such as co-anchoring, anchor competition, low-latency watch, and chat through on-screen comments.
 
-To quickly access the ILVB feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCLiveRoom` component and implement custom UI.
+To quickly implement the interactive video live streaming feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCLiveRoom` component and implement custom UI.
 
 <span id="DemoUI"> </span>
 ## Reusing Demo UI
@@ -11,7 +11,7 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestLiveRoom`, and click **Create Application**.
 
->This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.
+>?This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.
 
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
@@ -25,12 +25,12 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 2. Find and open the `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
-  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul>
+  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
     <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
->The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
+>!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
 >The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-Side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166).
 
 <span id="ui.step4"></span>
@@ -48,12 +48,13 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 | ChatRoom | Implementation code for UIs for text chat room and on-screen commenting. | 
 | Common | Implementation code for some reusable UI components. | 
 | StatusView | Status floating view, which will cover the video image for displaying log information and video loading animations. | 
-| LiveRoomMainViewController.swift | UI for ILVB homepage. | 
+| LiveRoomMainViewController.swift | UI for interactive video live streaming homepage. | 
 
 
 <span id="model"> </span>
 ## Implementing Custom UI
-The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the API functions provided by this component in the `TRTCLiveRoom.swift` file and use the corresponding API to implement your own custom UI.
+
+The `trtcliveroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the APIs provided by this component in the `TRTCLiveRoom.swift` file and use the corresponding API to implement your own custom UI.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
@@ -66,7 +67,7 @@ The video call component `TRTCLiveRoom` depends on the TRTC SDK and IM SDK. You 
 pod 'TXIMSDK_iOS'
 pod 'TXLiteAVSDK_TRTC'
 ```
->You can get the latest version numbers of the two SDKs on the [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK) homepages on GitHub.
+>?You can get the latest version numbers of the two SDKs on the [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK) homepages on GitHub.
 
 **Method 2. Implement dependency through local files**
 If the access to the CocoaPods repository is slow in your development environment, you can download the ZIP packages and manually integrate the SDKs into your project as instructed in the integration document.
@@ -90,7 +91,7 @@ Copy all files in the `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` d
 2. Create a `TRTCLiveRoomConfig` object, where the `useCDNFirst` and `CDNPlayDomain` attributes can be set:
  - `useCDNFirst` attribute: used to set the way how viewers will watch live streaming. `true` means that general viewers will watch live streaming over CDN, which is cheap but has a high latency. `false` means that general viewers will watch live streaming through the low latency scheme, the cost of which ranges between that of CDN and co-anchoring, but the delay can be controlled within 1 second.
  - `CDNPlayDomain` attribute: it will take effect only if `useCDNFirst` is set to `true`. It is used to specify the playback domain name for watching over CDN. You can set it in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the LVB Console.
-3. Call the `login` function to log in to the component. Enter key parameters as shown below:
+3. Call the `login` API to log in to the component. Enter key parameters as shown below:
 <table>	
 <tr>
 <th>Parameter Name</th>
@@ -138,7 +139,7 @@ mLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
 ### Step 5. The anchor starts streaming
 1. The anchor can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
 2. Before starting streaming, the anchor can call `startCameraPreview` to enable camera preview, where the beauty filter adjusting buttons can be configured for setting beauty filters through `getBeautyManager`.
- >Face changing and sticker pendant features are not supported for SDKs in editions other than the Enterprise Edition.
+ >?Face changing and sticker pendant features are not supported for SDKs in editions other than the Enterprise Edition.
  >
 3. The anchor can call `createRoom` to create a live room after adjusting the beauty filters.
 4. The anchor can call `startPublish` to start pushing. To enable watching over CDN, please specify `useCDNFirst` and `CDNPlayDomain` in the `TRTCLiveRoomConfig` parameter passed in during login and specify the `streamID` for LVB pull during `startPublish`.
@@ -170,10 +171,10 @@ mLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, e
 ### Step 6. The viewer watches the live streaming
 1. The viewer can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
 2. The viewer gets the latest live room list from the business backend.
- >The live room list in the demo is for demonstration purposes only. The business logic of the live room list varies greatly, and Tencent Cloud currently does not provide live room list management services. Please manage the live room list by yourself.
+ >?The live room list in the demo is for demonstration purposes only. The business logic of the live room list varies greatly, and Tencent Cloud currently does not provide live room list management services. Please manage the live room list by yourself.
  >
 3. The viewer can call `getRoomInfos` to get the detailed information of the room, which is a simple description set by the anchor when calling `createRoom` to create the live room.
- >If your live room list contains enough information, you can skip the step of calling `getRoomInfos`.
+ >!If your live room list contains enough information, you can skip the step of calling `getRoomInfos`.
  >
 4. The viewer selects a live room and calls `enterRoom` and passes in the room ID to enter the room.
 5. The viewer calls `startPlay` and pass in the `userId` of the anchor to start playback.

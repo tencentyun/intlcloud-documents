@@ -60,14 +60,6 @@ Scenario 3: you did not change the configuration in February 2019 or you changed
 
 
 
-## Downgrading Your App
-If the service version of your app is **Pro Edition** or **Flagship Edition**, you can perform the downgrade operation. **The downgrade operation will change your app to Trial Edition, so proceed with caution**.
-
-1. Log in to the [IM Console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
-2. In the **Service Version** area, click **Downgrade**. The **Downgrade Reminder** dialog appears.
-3. Click **OK**, and your app changes to Trial Edition immediately.
-
-
 >After your app changes to Trial Edition, the existing audio-video chat rooms, ordinary groups, and the groups created or joined by users will not be affected. However, the new audio-video chat rooms, groups, or the groups your users subsequently create or join will be subject to the limitations of the Trial Edition. You will receive [error code](https://intl.cloud.tencent.com/document/product/1047/34348) messages once any of the limitations are exceeded.
 
 ## Disabling Your App
