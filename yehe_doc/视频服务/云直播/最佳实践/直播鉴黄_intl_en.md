@@ -1,38 +1,33 @@
 
-To enable LVB porn detection, you need to enable LVB screencapturing first either in the [LVB Console](https://intl.cloud.tencent.com/document/product/267/31072) or through API. This document describes how to implement LVB porn detection through API.
+To enable LVB porn detection, you need to enable LVB screencapturing first either in the [LVB Console](https://intl.cloud.tencent.com/zh/document/product/267/31072) or through API. This document describes how to implement LVB porn detection through API.
 
 ## Enabling LVB Porn Detection
 As the LVB porn detection feature is based on the LVB screencapturing feature, you have to enable LVB screencapturing first before you can enable LVB porn detection. The steps are as follows:
 
-#### 1. Create a porn detection-enabled LVB screencapturing template
+### 1. Create a porn detection-enabled LVB screencapturing template
 Call [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834) and set `PornFlag` to 1 to create a porn detection-enabled LVB screencapturing template.
 
-#### 2. Create a porn detection-enabled LVB screencapturing rule
+### 2. Create a porn detection-enabled LVB screencapturing rule
 Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835) to create a porn detection-enabled LVB screencapturing rule and associate the LVB screencapturing template ID created in step 1 to the `AppID`, `DomainName`, `AppName`, and `StreamName` of the live stream that needs to undergo porn detection.
 
-#### 3. Start a live streaming and start porn detection
-After a porn detection-enabled LVB screencapturing rule is created, the porn detection feature will be automatically enabled for new live streaming. If you want to enable porn detection for a live streaming that is in progress, you need to stop and restart the streaming for the feature to take effect.
+### 3. Start a live stream and start porn detection
+After a porn detection-enabled LVB screencapturing rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
 
 ## Getting LVB Porn Detection Result
 After LVB porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the LVB backend call back the porn detection result.
+>! By default, only suspicious results will be called back.
 
->By default, only suspicious results will be called back.
-
-The steps are as follows:
-#### 1. Create an LVB porn detection callback template
+### 1. Create an LVB porn detection callback template
 Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an LVB porn detection callback template.
+### 2. Create an LVB porn detection callback rule
 
-#### 2. Create an LVB porn detection callback rule
+Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled LVB screencapturing rule and associate the LVB screencapturing template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live stream that needs to undergo porn detection.
 
-Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled LVB screencapturing rule and associate the LVB screencapturing template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live streaming that needs to undergo porn detection.
+### 3. Get the porn detection result
+The LVB backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live stream is pornographic by the `type` field alone.
+>!We recommend you use the `type` of an image to judge whether it is pornographic. As the detection system cannot achieve 100% accuracy, there may be false positives or false negatives, and human confirmation is recommended.  
 
-#### 3. Get the porn detection result
-
-The LVB backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live streaming is pornographic by the `type` field alone.
->It is recommended to use the `type` of an image to judge whether it is pornographic. As the detection system cannot achieve 100% accuracy, there may be false positives or false negatives, and human confirmation is recommended.  
-
-The complete protocol is as follows:
-
+#### Complete protocol
 | **Parameter** | **Required ** | **Data Type** | **Description** |
 | --- | --- | --- | --- |
 | tid | Yes | Number | Alert policy ID. Video content alert: 20001 |
@@ -55,24 +50,21 @@ The complete protocol is as follows:
 | illegalScore | No | Number  | Non-compliant score of image |
 | terrorScore  | No | Number  | Terrorism score of image |
 | similarScore  | No | Number | Similarity score of image |
-| stream_param  | No | String | Push parameter 
+| stream_param  | No | String | Push parameter | 
 | app  | No | String | Push domain name |
 | appid  | No | Number | Business ID |
 | appname  | No | String | Push path |
 
 
 
-
-
-`AbductionRisk` description
+#### AbductionRisk description
 
 | **Parameter** | **Required ** | **Data Type** | **Description** |
 | --- | --- | --- | --- |
 | level | Yes | Number | Risk level in the range of 0–4. The higher the number, the higher the risk. 3 and 4 indicate maliciousness and should be handled |
 | type | Yes | Number | Risk type. 20002: porn |
 
-`faceDetail` description
-
+#### faceDetail description
 | **Parameter Name* | **Required ** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | gender | No | Number | Gender [0 (female)–100 (male)] |
@@ -84,35 +76,22 @@ The complete protocol is as follows:
 | width | No | Number | Face frame width |
 | height | No | Number | Face frame height |
 
-`gameDetails` description
-
+#### gameDetails description
 | **Parameter Name* | **Required ** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | battlegrounds | No | Object | PUBG information |
 | gameList | No | Array | Game list |
 
-gameList
+#### gameList description
 
 | **Parameter Name* | **Required ** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | name | No | String | Game name |
 | confidence | No | Number | Probability |
 
-In addition, the HTTP header contains the `TPD-SecretID` and `TPD-CallBack-Auth` fields which can be used for user authentication.
-Signature calculation: ``Signature = base64_encode(hash_hmac('SHA1', $Body, $SecretKey, true))``, where `SecretKey` is the `SecretKey` corresponding to the `SecretId`.
 
-**Below is a sample request:**
-HTTP Header:
-```
-TPD-SecretID : SecretId
-
-TPD-CallBack-Auth: Signature
-
-TPD-CallBack-Version : version
-```
-
+#### Sample request
 HTTP Body:
-
 ```
 {
     "ocrMsg":"",
@@ -165,12 +144,12 @@ HTTP Body:
 
 ## Disabling LVB Porn Detection
 
-LVB porn detection can be disabled by deleting the screencapturing rule or modifying the screencapturing template. Both deletion and modification are effective only for new live streaming. If you want to disable LVB porn detection for a live streaming that has already started, you have to stop and restart the stream.
+LVB porn detection can be disabled by deleting the screencapturing rule or modifying the screencapturing template. Both deletion and modification are effective only for new live streams. If you want to disable LVB porn detection for a live stream that has already started, you have to stop and restart the stream.
 
-#### 1. Delete the porn detection-enabled screencapturing rule
+### 1. Delete the porn detection-enabled screencapturing rule
 
 Call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833) to delete the corresponding LVB screencapturing rule under `DomainName`, `AppName`, and `StreamName` by template ID.
 
-#### 2. Delete or modify the porn detection-enabled screencapturing template
+### 2. Delete or modify the porn detection-enabled screencapturing template
 
 Call [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828) to set the porn detection flag of the LVB screencapturing template to 0.

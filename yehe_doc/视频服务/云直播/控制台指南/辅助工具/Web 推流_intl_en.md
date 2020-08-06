@@ -6,7 +6,7 @@ Tencent Cloud provides a web push feature which can quickly generate push addres
 - Your device has a camera installed and its browser supports the Flash plugin to call the camera permission.
 
 ## Directions
-1. Log in to the LVB Console and select **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)**.
+1. Log in to the LVB Console and select **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**.
 2. Perform the following settings on the web push page:
 	- Select a push domain name.
 	- Enter a custom `StreamName`, such as `test`.
