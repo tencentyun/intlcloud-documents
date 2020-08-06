@@ -11,7 +11,7 @@ When the configuration of a pay-as-you-go node is adjusted, the amount frozen du
 ## Price Description
 EMR provides elastic computing cluster capabilities, so that you can select and combine multiple EMR specifications in a customized manner. EMR fees will be charged for all nodes in each cluster.
 
-The prices of nodes in Beijing, Shanghai and Guangzhou regions are as listed below:
+The prices of nodes in Beijing, Shanghai, and Guangzhou regions are as listed below:
 >
 >1. The prices on our official website are subject to change. Please check periodically for the latest prices.
 >2. For the prices of disks, please see [CBS Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
