@@ -12,8 +12,6 @@ You can view the following table or use the [DescribeRegions](https://intl.cloud
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, which those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003) that is faster and steadier.
 - [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) is enabled, cross-region binding of CLB and CVM instances is supported.
 
->? The **Shenzhen/Shanghai Finance Zone** is a tailor-made availability zone for compliance with regulatory requirements in the finance industry and features high security and high isolation. Currently, the finance zone supports CVM, finance database, Redis storage, OCR and other services. Verified finance customers can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to use these availability zones.
-
 
 ## Availability Zone
 
@@ -50,16 +48,6 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td rowspan="3">South China (Shenzhen Finance)<br>ap-shenzhen-fsi</td>
-		<td>Shenzhen Finance Zone 1 <span style="background-color: rgb(249, 249, 249);">(only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shenzhen-fsi-1</span></td>
-	</tr>
-	<tr>
-		<td>Shenzhen Finance Zone 2 <span style="background-color: rgb(249, 249, 249);">(only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shenzhen-fsi-2</span></td>
-	</tr>
-		<tr>
-		<td>Shenzhen Finance Zone 3 <span style="background-color: rgb(249, 249, 249);">(only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shenzhen-fsi-3</span></td>
-	</tr>
-	<tr>
 		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
@@ -71,16 +59,6 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 	</tr>
 	<tr>
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
-	</tr>
-	<tr>
-			<td rowspan="3">East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
-			<td>Shanghai Finance Zone 1 (only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shanghai-fsi-1</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 2 (only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shanghai-fsi-2</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 3 (only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>)<br>ap-shanghai-fsi-3</td>
 	</tr>
 		<tr>
 			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>

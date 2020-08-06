@@ -30,7 +30,7 @@ If you want to adjust the scaling based on CVM metrics, you can create an alarm-
 
 >?
 > - When a scaling group is created, a ping unreachable alarm-triggered policy is created by default, which is used to replace unhealthy CVMs.
-> - Before using an alarm-triggered policy, you need to install the latest version of Cloud Monitor agent in the CVM image. For more information, see [Installing Monitoring Components](/doc/product/248/安装监控组件).
+> - Before using an alarm-triggered policy, you need to install the latest version of Cloud Monitor agent in the CVM image. For more information, see [Installing Monitoring Components](https://intl.cloud.tencent.com/document/product/248/6211).
 
 1. Log in to the Auto Scaling console and select **[Scaling Groups](https://console.cloud.tencent.com/autoscaling/group)** in the left sidebar.
 2. On the **Scaling Groups** page, select a scaling group ID, as shown in the following figure:
