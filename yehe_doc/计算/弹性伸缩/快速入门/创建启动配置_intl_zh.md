@@ -23,7 +23,7 @@
 ## 选择镜像
 参考以下信息，设置镜像类型、操作系统、系统架构、镜像版本等信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/51d1974f89849862c8a4536f02864c2a.png)
- - **镜像**：支持选择公共镜像、自定义镜像、共享镜像、镜像市场。详情请参见 [镜像概述](https://intl.cloud.tencent.com/document/product/213/4940)，推荐选择自定义镜像。
+ - **镜像**：支持选择公共镜像、自定义镜像、共享镜像。详情请参见 [镜像概述](https://intl.cloud.tencent.com/document/product/213/4940)，推荐选择自定义镜像。
     - 若选择公共镜像，则需和伸缩组期望绑定 CVM 的操作系统保持一致。
     - 若选择自定义镜像，则自定义镜像需要由用户通过 CVM 的镜像制作功能完成制作。
  - **操作系统**：可以选择 CentOS、CoreOS、Debian、SUSE、Windows 等操作系统。

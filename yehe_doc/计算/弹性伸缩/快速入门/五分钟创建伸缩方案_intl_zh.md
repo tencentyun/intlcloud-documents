@@ -28,7 +28,7 @@
 
 
 ### 选择镜像、存储及带宽
-1. 创建启动配置可使用公共镜像、自定义镜像、共享镜像、镜像市场。详情请参见 [镜像概述](https://intl.cloud.tencent.com/document/product/213/4940)。如下图所示：
+1. 创建启动配置可使用公共镜像、自定义镜像、共享镜像。详情请参见 [镜像概述](https://intl.cloud.tencent.com/document/product/213/4940)。如下图所示：
 ![](https://main.qcloudimg.com/raw/51d1974f89849862c8a4536f02864c2a.png)
 建议使用已经部署好环境的自定义镜像。原因如下：
 	- 若您选择的是公共镜像，那么伸缩出来的实例是纯净的 OS，仍需要手动部署应用环境。

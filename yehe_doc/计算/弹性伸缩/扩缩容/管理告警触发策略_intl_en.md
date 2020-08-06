@@ -1,47 +1,42 @@
 ## Introduction
 
-AS allows you to dynamically add or remove instances in a scaling group based on monitoring metrics, provided that you define the alarm trigger policy, including the status of the monitoring metrics that trigger the scaling, and how you want to scale in response to changing demand.
+With Auto Scaling (AS), you can increase or decrease  CVMs in a scaling group based on monitoring metrics. You only need to define an alarm-triggered policy, specifying the status of the monitoring metrics that trigger scaling and the related scaling activity. 
 
-To create an alarm policy, you need to specify the conditions and actions:
-- Condition format: A metric + Threshold + Period + Number of periods during which the threshold is reached. That is, the metric at the threshold lasts for the number of periods that you specified.
-- Execution actions: Sending notification(s) + adding or removing the specified number of CVMs.
+You need to specify the conditions and actions when creating an alarm policy, as shown in the figure below:
+![](https://main.qcloudimg.com/raw/a3e40d8217ea04969a2198d6c9d52eb0.png)
+- Condition format: a metric + threshold + period + number of consecutive periods during which the threshold is reached. This indicates an alarm is triggered when the value of the metric breaches the threshold that you defined for the number of periods that you specified.
+- Execution actions: sending notification(s) + adding/removing the specified number of CVMs
 
-We recommended you create two policies for each scaling group, one for scale-out and the other for scale-in. Once the traffic to your web application reaches the threshold of the alarm policy, AS executes the associated policy to scale your group in (by terminating instances) or out (by launching instances).
+We recommend you create two policies for each scaling group, one for scale-out and one for scale-in. Once the traffic to your web application reaches the threshold of the alarm policy, AS executes the associated policy to scale your group in (by terminating instances) or out (by launching instances).
 
-This is shown in the figure below:
-![](https://mc.qcloudimg.com/static/img/83557f69f860be57cf464b2b45ab31c5/1.jpg)
 
 
 ## Scenarios
 
-For example, you have an e-commerce web application that currently runs on five instances. You plan to carry out an operational activity, and are concerned that the access traffic is much greater than you had expected. You can configure a scaling group to add two instances when the load on the current instance reaches 70%, and terminate extra instances when the load decreases to 40%.
+For example, assume you have an e-commerce web application that currently runs on five instances. You plan to carry out a promotional activity and are concerned that the access traffic might be much greater than you expect. In this case, you can configure a scaling group to add two new instances when the load on the current instances reaches 70%, and terminate extra the instances when the load decreases to 40%. This is shown in the figure below:
 ![](https://mc.qcloudimg.com/static/img/92435c4281be33320200ce3f69bbc36c/AS-Expanding+and+Reducing-Managing+Alarm+Triggering+Policies.jpg)
 
 ## Directions
-
-1. Log in to [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/config), and select **Scaling group** in the left sidebar.
-
-2. Select the scaling group to modify, and click the ID of a scaling group to enter the **Scaling Group Details** page.
-![](https://mc.qcloudimg.com/static/img/cebad1b79ccba9fb9548c2bd2c30a210/2.jpg)
-
-3. Select the **Alarm Trigger Policy** tab, and manage the alarm trigger policy associated with the scaling group on this page.
-	- Click **Create** to add an alarm trigger policy.
-	- Click **Delete** to delete the alarm trigger policy.
-![](https://mc.qcloudimg.com/static/img/570e5bd24b8975c65dd939bc9052d5a3/3.jpg)
+1. Log in to the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/group) and click **Scaling Groups** in the left sidebar.
+2. Select the scaling group to be modified and click the **Scaling Group ID** to go to the basic information page, as shown in the figure below:
+![](https://main.qcloudimg.com/raw/23edebce4019c1aeaca92dcde4b0f185.png)
+3. On the details page of the scaling group, select the **Alarm-Triggered Policy** tab and configure the alarm trigger policy associated with the scaling group on this page, as shown in the figure below:
+![](https://main.qcloudimg.com/raw/2bc68bff49b77a203a5f7b3daa16c033.png)
+	- Click **Create** to add a new alarm-triggered policy.
+	- Click **Delete** to delete the alarm-triggered policy.
 
 
-## Preventing Specified CVMs from being Removed by the Scaling Policy
-For the proper running of your existing business, if the CVMs in the cluster are used for the following purposes, you need to prevent them from being removed by the scale-in policy:
 
-- **Multiple purposes**: Apart from the tasks specified by the cluster, the CVM in the cluster is also used for other purposes, for example, the CVM is used as both a cache server and a file server.
+## Preventing specified CVMs from being removed by the scaling policy
+For the proper running of your existing business, if the CVMs in the cluster are used for the following purposes, you need to prevent them from being removed by the scale-in policy: 
 
-- **Data storage**: The CVM is stateful or stores data that other CVMs do not have. For example, the CVM stores the incremental data of other running CVMs in a cluster.
+- **Multiple purposes**: apart from the tasks specified by the cluster, a CVM in the cluster is also used for other purposes, for example the CVM is used as both a cache server and a file server. 
 
-- **Image/Snapshot updates**: The CVM is used to regularly update images and snapshots.
+- **Data storage**: the CVM is stateful or stores data that other CVMs do not have. For example, the CVM stores the incremental data of other running CVMs in a cluster.
+
+- **Image/Snapshot updates**: the CVM is used to regularly update images and snapshots.
 
 
 **Configuration:**
-
-**Step 1**: In the [Scaling group](https://console.cloud.tencent.com/autoscaling) page, click the scaling group to which the CVM belongs to go to the management page.
-
-**Step 2**: In the **Instance List** at the bottom of the management page, click **Enable removal protection** for the CVM.
+1. In the [Scaling Group List](https://console.cloud.tencent.com/autoscaling), click the scaling group to which the CVM belongs to go to the management page.
+2. In the **Instance List** at the bottom of the management page, click **Enable Removal Protection** for the instance.
