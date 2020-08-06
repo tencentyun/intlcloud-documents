@@ -1,9 +1,11 @@
-﻿TencentDB for MongoDB
+TencentDB for MongoDB
 A TencentDB for MongoDB cluster typically consists of 3 or more nodes. Each node contains computing resources (specified CVM models) and storage resources (cloud disks).
 
-Replica set instance price formula: **Price of a replica set instance = Single-node price (computing resource fees + storage resource fees) x Number of nodes **  
+Replica set instance price formula: **Price of a replica set instance = Single-node price (computing resource fees + storage resource fees) x Number of nodes**  
 
 ## Monthly Subscription Pricing
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 ### Computing resource rates
 <table>
 <thead>
@@ -14,7 +16,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan=4>Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo</td>
+<td rowspan=4>Beijing, Shanghai, Guangzhou, Qingyuan, Chengdu, Chongqing, Tokyo</td>
 <td>Smaller than 128 GB</td>
 <td>5.476190476</td>
 </tr>
@@ -33,19 +35,19 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 <tr>
 <td rowspan=4>Hong Kong (China), Singapore</td>
 <td>Smaller than 128 GB</td>
-<td>135</td>
+<td>6.42857143</td>
 </tr>
 <tr>
 <td>Equal to 128 GB</td>
-<td>120</td>
+<td>5.71428571</td>
 </tr>
 <tr>
 <td>Equal to 240 GB</td>
-<td>105</td>
+<td>5</td>
 </tr>
 <tr>
 <td>Equal to 512 GB</td>
-<td>90</td>
+<td>4.28571429</td>
 </tr>
 <td rowspan=4>Bangkok, Mumbai</td>
 <td>Smaller than 128 GB</td>
@@ -138,7 +140,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
      
 | Region                                  | Disk Price (USD/GB/Month) |
 | ---------------------------------- | ----------------------- |
-| Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo | 0.1                    |
+| Beijing, Shanghai, Guangzhou, Qingyuan, Chengdu, Chongqing, Tokyo | 0.1                    |
 | Hong Kong (China), Singapore               | 0.133333333                    |
 | Bangkok, Mumbai                        | 0.136666667                     |
 | Seoul, Moscow            | 0.114285714                     |
@@ -159,7 +161,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 </tr>
 </thead>
 <tbody><tr>
-<td rowspan = "4">Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo</td>
+<td rowspan = "4">Beijing, Shanghai, Guangzhou, Qingyuan, Chengdu, Chongqing, Tokyo</td>
 <td>Smaller than 128 GB</td>
 <td>0.01521164</td>
 <td>0.01140873</td>
@@ -339,7 +341,7 @@ Replica set instance price formula: **Price of a replica set instance = Single-n
 ### Storage resource rates
 | Region                                  | Disk Price (USD/GB/Hr) |
 | ---------------------------------- | ----------------------- |
-| Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, Tokyo | 0.000138857                   |
+| Beijing, Shanghai, Guangzhou, Qingyuan, Chengdu, Chongqing, Tokyo | 0.000138857                   |
 | Hong Kong (China), Singapore               | 0.000178571                 |
 | Bangkok, Mumbai                        | 0.000171952                     |
 | Seoul, Moscow            | 0.00015873                     |
