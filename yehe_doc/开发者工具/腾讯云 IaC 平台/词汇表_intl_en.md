@@ -12,7 +12,7 @@ A key pair consists of an AccessKey and a SecretKey. Each cloud vendor must prov
 
 ### Resource
 
-Resource is the basic operational unit of the syntax used by Tencent Infrastructure as Code (TIC). It can be a cloud service or an association relationship of cloud services.
+Resource is the basic operational unit of the syntax used by Tencent Cloud Infrastructure as Code (TIC). It can be a cloud service or an association relationship of cloud services.
 
 ## S
 
@@ -24,10 +24,10 @@ Stack is an organic collection of cloud services. It can be a complete set of cl
 
 ### TIC
 
-See [Tencent Infrastructure as Code](#Z).
+See [Tencent Cloud Infrastructure as Code](#Z).
 
 ## Z
 
-### Tencent Infrastructure as Code
+### Tencent Cloud Infrastructure as Code
 
-Tencent Infrastructure as Code (TIC) is an open Infrastructure as Code (IaC) platform launched by Tencent Cloud. It integrates a variety of industry-leading open-source technologies to help resolve the efficiency, cost, and security issues in cloud infrastructure management.
+Tencent Cloud Infrastructure as Code (TIC) is an open Infrastructure as Code (IaC) platform launched by Tencent Cloud. It integrates a variety of industry-leading open-source technologies to help resolve the efficiency, cost, and security issues in cloud infrastructure management.

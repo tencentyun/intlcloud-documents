@@ -175,7 +175,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- |	 ---- |
 | [Tag](https://intl.cloud.tencent.com/document/product/651) | Operation level | &#10003;  | - |  - |	 - |
-| [Tencent Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | &#10003;  | - |  - |	 - |
+| [Tencent Cloud Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | &#10003;  | - |  - |	 - |
 
 ## Management and Auditing
 

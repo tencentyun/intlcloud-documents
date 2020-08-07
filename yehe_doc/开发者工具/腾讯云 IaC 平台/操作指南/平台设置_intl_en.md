@@ -1,4 +1,4 @@
-Upon first use of Tencent Infrastructure as Code (TIC), you must authorize the service to access cloud resources under your Tencent Cloud account for orchestration. Without the authorization, TIC is unable to orchestrate Tencent cloud resources.
+Upon first use of Tencent Cloud Infrastructure as Code (TIC), you must authorize the service to access cloud resources under your Tencent Cloud account for orchestration. Without the authorization, TIC is unable to orchestrate Tencent cloud resources.
 
 TIC supports the following authorization methods:
 

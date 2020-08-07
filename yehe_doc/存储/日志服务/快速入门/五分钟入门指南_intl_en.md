@@ -73,8 +73,7 @@ The collection path needs to match the absolute path of the log file on the serv
 | /\*\*/     | Current directory and all its subdirectories                                  |
 | File name   | A log file name supports only the wildcard characters `\*` and `?`. `\*` indicates that one or more characters can be matched, while `?` indicates that any single character can be matched. |
 
-For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, then the directory prefix entered for the collection path should be `/cls/logs`, and the file name `access.log`, as shown below:
-![image](https://main.qcloudimg.com/raw/079514c379d2c840d6a9f52031d96ecc.jpg)
+For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, then the directory prefix entered for the collection path should be `/cls/logs`, and the file name `access.log`.
 
 #### 5.2 Binding a server group
 
