@@ -11,7 +11,7 @@ gRPC uses Protocol Buffers to define a service: an RPC service specifies methods
 ## Generating gRPC Code
 1. After defining the service, you can use protoc (protocol buffer compiler) to generate the client and server code (in any language supported by gRPC). 
 2. The generated code includes the client stub and the abstract APIs to be implemented by the server.
-3. Steps for generating gRPC code:
+3. Methods for generating gRPC code:
  - Method 1. Execute the script under `java-demo/src/main/proto`. You need to download `protoc` and `protoc-gen-grpc-java` generation tools from the gRPC website:
 ```
 sh gen_pb.sh
@@ -22,7 +22,7 @@ protoc --plugin=protoc-gen-grpc-java=`which protoc-gen-grpc-java` --grpc-java_ou
 protoc --java_out=../java --proto_path=. GseGrpcSdkService.proto
 protoc --plugin=protoc-gen-grpc-java=`which protoc-gen-grpc-java` --grpc-java_out=../java --proto_path=. GseGrpcSdkService.proto
 ```
- - Method 2. Use the Maven tool to generate gRPC code by adding a Maven plugin for compiling gRPC code in Maven. For more information, please see [here](https://github.com/grpc/grpc-java).
+ - Method 2. Use the Maven tool to generate gRPC code by adding a Maven plugin for compiling gRPC code to Maven. For more information, please see [here](https://github.com/grpc/grpc-java).
 ``` 
 <build>
 	   <extensions>
@@ -112,7 +112,7 @@ public GseResponseBo processReady(ProcessReadyRequestBo request) {
         return createResponseBoByRpcResponse(rpcResponse);
 }
 ```
- 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+ 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 public boolean onHealthCheck() {
         
@@ -187,7 +187,7 @@ public GseResponseBo acceptPlayerSession(PlayerSessionRequestBo request) {
 }
 ```
 
- 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+ 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 public GseResponseBo removePlayerSession(PlayerSessionRequestBo request) {
         logger.info("removePlayerSession request=" + new Gson().toJson(request));
@@ -360,7 +360,7 @@ Server connecting: create a gRPC channel, specify the host name and server port 
 ```java
 public GseGrpcSdkServiceGrpc.GseGrpcSdkServiceBlockingStub getGseGrpcSdkServiceClient() {
         
-        // The "channel" here is a channel instead of a `ManagedChannel`; therefore, the responsibility of the code is not to turn it off.
+        // The "channel" here is a channel instead of a `ManagedChannel`; therefore, it is not the responsibility of the code to shut it down.
 
         // Pass the channel to the code to make it easier for the code to test and reuse the channel.
         if (blockingStub == null) {

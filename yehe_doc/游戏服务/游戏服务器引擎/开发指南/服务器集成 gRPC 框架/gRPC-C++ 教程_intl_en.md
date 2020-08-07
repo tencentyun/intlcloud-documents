@@ -29,10 +29,10 @@ to generate the `pb.cc` and `pb.h` files.
 ```
 protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` *.proto``` 
 to generate the corresponding gRPC code.
-Move the 8 generated files to an appropriate location in the project.
+Move the eight generated files to an appropriate location in the project.
 
 ## Game Process Integration Process
-![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
+![](https://main.qcloudimg.com/raw/528941c9a0e6aa1912552b6ad525bd72.png)
 
 #### Server API list
 
@@ -90,7 +90,7 @@ Status GseManager::ProcessReady(std::vector<std::string> &logPath, int clientPor
         return stub_->ProcessReady(&context, request, &reply);
 }
 ```
-2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 Status GameServerGrpcSdkServiceImpl::OnHealthCheck(ServerContext* context, const HealthCheckRequest* request,  HealthCheckResponse* reply)
 {
@@ -107,7 +107,7 @@ Status GameServerGrpcSdkServiceImpl::OnStartGameServerSession(ServerContext* con
 
         GseResponse processReadyReply;
         Status status = GGseManager->ActivateGameServerSession(gameServerSession.gameserversessionid(), gameServerSession.maxplayers(), processReadyReply);
-        // Judge whether the activation has succeeded based on `status` and `replay`
+        // Determine whether the activation has succeeded based on `status` and `replay`
 
         return Status::OK;
 }
@@ -143,7 +143,7 @@ Status GseManager::AcceptPlayerSession(std::string playerSessionId, GseResponse&
         return stub_->AcceptPlayerSession(&context, request, &reply);
 }
 ```
-6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 Status GseManager::RemovePlayerSession(std::string playerSessionId, GseResponse& reply)
 {
@@ -312,7 +312,7 @@ As the gRPC code has already been generated in the `cpp-demo/source/grpcsdk` dir
 Create a gRPC channel, specify the host name and server port to connect to, and use this channel to create a stub instance.
 5. Compile and run.
  1. Install CMake.
- 2. Install GCC above v4.9.
+ 2. Install GCC v4.9 or above.
  3. Download the code and run the following command in the `cpp-demo` directory:
   ```
   mkdir build
