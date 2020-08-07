@@ -1,6 +1,6 @@
 
 
-Tencent Infrastructure as Code (TIC) is an open Infrastructure as Code (IaC) platform developed by Tencent Cloud. By integrating with industry-leading open-source technologies, TIC allows you to manage your cloud infrastructures in an efficient, cost-effective, and secure manner.
+Tencent Cloud Infrastructure as Code (TIC) is an open Infrastructure as Code (IaC) platform developed by Tencent Cloud. By integrating with industry-leading open-source technologies, TIC allows you to manage your cloud infrastructures in an efficient, cost-effective, and secure manner.
 
 TIC offers 3 features: resource orchestration, configuration management, and compliance checking. It supports the HCL (Terraform) syntax. To simplify usage, TIC also offers multiple public templates that are created based on Tencent Cloud best practices.
 
