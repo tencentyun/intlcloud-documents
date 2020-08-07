@@ -8,7 +8,7 @@
   - macOS
   ```
   $ brew install cmake
-  ```  
+  ```
 2. Install gRPC and Protocol Buffers locally.
  >?For more information on the installation process, please see [Installing CMake](https://cmake.org/install), [Installing gRPC C++](https://github.com/grpc/grpc/blob/master/BUILDING.md), and [Installing Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md).
 
@@ -24,15 +24,16 @@ gRPC uses Protocol Buffers to define a service: an RPC service specifies methods
     In the `proto` directory, run:
  ```
  protoc --cpp_out=. *.proto
- ``` 
+ ```
 to generate the `pb.cc` and `pb.h` files.
 ```
+
 protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` *.proto``` 
 to generate the corresponding gRPC code.
 Move the eight generated files to an appropriate location in the project.
 
 ## Game Process Integration Process
-![](https://main.qcloudimg.com/raw/528941c9a0e6aa1912552b6ad525bd72.png)
+![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
 
 #### Server API list
 
@@ -78,14 +79,14 @@ Status GseManager::ProcessReady(std::vector<std::string> &logPath, int clientPor
 
         GConsoleLog->PrintOut(true, "ProcessReady clientPort is %d\n", clientPort);
         GConsoleLog->PrintOut(true, "ProcessReady grpcPort is %d\n", grpcPort);
-
+    
         // Set the ports
         request.set_clientport(clientPort);
         request.set_grpcport(grpcPort);
       
         ClientContext context;
         AddMetadata(context);
-
+    
         // Ready to provide services
         return stub_->ProcessReady(&context, request, &reply);
 }
@@ -108,7 +109,7 @@ Status GameServerGrpcSdkServiceImpl::OnStartGameServerSession(ServerContext* con
         GseResponse processReadyReply;
         Status status = GGseManager->ActivateGameServerSession(gameServerSession.gameserversessionid(), gameServerSession.maxplayers(), processReadyReply);
         // Determine whether the activation has succeeded based on `status` and `replay`
-
+    
         return Status::OK;
 }
 ```
@@ -118,14 +119,14 @@ Status GseManager::ActivateGameServerSession(std::string gameServerSessionId, in
 {
         GConsoleLog->PrintOut(true, "ActivateGameServerSession gameServerSessionId is %s\n", gameServerSessionId.c_str());
         GConsoleLog->PrintOut(true, "ActivateGameServerSession maxPlayers is %d\n", maxPlayers);
-  
+
         ActivateGameServerSessionRequest request; 
         request.set_gameserversessionid(gameServerSessionId);
         request.set_maxplayers(maxPlayers);
-
+    
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->ActivateGameServerSession(&context, request, &reply);
 }
 ```
@@ -139,7 +140,7 @@ Status GseManager::AcceptPlayerSession(std::string playerSessionId, GseResponse&
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->AcceptPlayerSession(&context, request, &reply);
 }
 ```
@@ -154,7 +155,7 @@ Status GseManager::RemovePlayerSession(std::string playerSessionId, GseResponse&
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->RemovePlayerSession(&context, request, &reply);
 }
 ```
@@ -168,7 +169,7 @@ Status GseManager::TerminateGameServerSession(GseResponse& reply)
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->TerminateGameServerSession(&context, request, &reply);
 }
 ```
@@ -186,11 +187,11 @@ Status GameServerGrpcSdkServiceImpl::OnProcessTerminate(ServerContext* context, 
         // End the game server session
         GseResponse terminateGameServerSessionReply;
         GGseManager->TerminateGameServerSession(terminateGameServerSessionReply);
-
+    
         // End the process
         GseResponse processEndingReply;
         GGseManager->ProcessEnding(processEndingReply);
-
+    
         return Status::OK;
 }
 ```
@@ -206,7 +207,7 @@ Status GseManager::ProcessEnding(GseResponse& reply)
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->ProcessEnding(&context, request, &reply);
 }
 ```
@@ -225,7 +226,7 @@ Status GseManager::DescribePlayerSessions(std::string gameServerSessionId, std::
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->DescribePlayerSessions(&context, request, &reply);
 }
 ```
@@ -240,7 +241,7 @@ Status GseManager::UpdatePlayerSessionCreationPolicy(std::string newpolicy, GseR
 
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->UpdatePlayerSessionCreationPolicy(&context, request, &reply);
 }
 ```
@@ -254,10 +255,10 @@ Status GseManager::ReportCustomData(int currentCustomCount, int maxCustomCount, 
         ReportCustomDataRequest request;
         request.set_currentcustomcount(currentCustomCount);
         request.set_maxcustomcount(maxCustomCount);
-
+    
         ClientContext context;
         AddMetadata(context);
-
+    
         return stub_->ReportCustomData(&context, request, &reply);
 }
 ```
@@ -314,7 +315,7 @@ Create a gRPC channel, specify the host name and server port to connect to, and 
  1. Install CMake.
  2. Install GCC v4.9 or above.
  3. Download the code and run the following command in the `cpp-demo` directory:
-  ```
+```
   mkdir build
   cmake ..
   make
@@ -323,3 +324,5 @@ Create a gRPC channel, specify the host name and server port to connect to, and 
  4. Package the `cpp-demo` executable file as an [asset package](https://intl.cloud.tencent.com/document/product/1055/36674) and configure the launch path as `cpp-demo` with no launch parameter needed.
  5. [Create a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675) and deploy the asset package on it. After that, you can perform various operations such as [scaling](https://intl.cloud.tencent.com/document/product/1055/37445).
 
+
+  ```
