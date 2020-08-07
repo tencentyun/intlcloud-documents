@@ -73,8 +73,7 @@ telnet <region>.cls.myqcloud.com 80
 | /\*\*/     | 表示当前目录以及所有子目录                                   |
 | 文件名   | 日志文件名，仅支持通配符 \* 和 ? ，\* 表示匹配多个任意字符，? 表示匹配单个任意字符 |
 
-例如待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log，如下图所示：
-![image](https://main.qcloudimg.com/raw/079514c379d2c840d6a9f52031d96ecc.jpg)
+例如待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log。
 
 #### 5.2 绑定机器组
 
