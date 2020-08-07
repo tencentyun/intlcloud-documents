@@ -11,7 +11,8 @@ Instance price formula: Instance price = Memory fee + Storage fee
 
 
 ## Pricing for Instance Specification (Memory)
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 ### Monthly subscription pricing
 
 <table>
@@ -27,8 +28,8 @@ Instance price formula: Instance price = Memory fee + Storage fee
 <td>Instance Specifications</td>
 <td align="center">Shanghai, Guangzhou, Beijing, Nanjing, Qingyuan</td>
 <td>Chengdu, Chongqing</td>
-<td>Singapore, Hong Kong (China), Taipei (China), Toronto</td>
-<td>Tokyo, Seoul, Russia, Mumbai, Bangkok, Frankfurt, Silicon Valley, Virginia</td>
+<td>Singapore, Hong Kong (China), Taipei (China), Toronto, Mumbai</td>
+<td>Tokyo, Seoul, Russia, Bangkok, Frankfurt, Silicon Valley, Virginia</td>
 </tr>
 <tr>
 <td>High-Availability Edition - master instance</td>
@@ -497,6 +498,13 @@ Depending on the usage duration, the prices in pay-as-you-go mode divide into th
   <td class=xl65 align=right>0.0005</td>
  </tr>
  <tr height=21 style='height:15.75pt'>
+  <td height=21 style='height:15.75pt'>Qingyuan</td>
+  <td class=xl65 align=right>0.0500</td>
+  <td class=xl65 align=right>0.0400</td>
+  <td class=xl65 align=right>0.0300</td>
+  <td class=xl65 align=right>0.0005</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
   <td height=21 style='height:15.75pt'>Shanghai</td>
   <td class=xl65 align=right>0.0500</td>
   <td class=xl65 align=right>0.0400</td>
@@ -625,6 +633,13 @@ Depending on the usage duration, the prices in pay-as-you-go mode divide into th
  </tr>
  <tr height=21 style='height:15.75pt'>
   <td height=21 class=xl1529815 style='height:15.75pt'>Guangzhou</td>
+  <td class=xl6529815 align=right>0.0250</td>
+  <td class=xl6529815 align=right>0.0200</td>
+  <td class=xl6529815 align=right>0.0150</td>
+  <td class=xl6529815 align=right>0.0003</td>
+ </tr>
+ <tr height=21 style='height:15.75pt'>
+  <td height=21 class=xl1529815 style='height:15.75pt'>Qingyuan</td>
   <td class=xl6529815 align=right>0.0250</td>
   <td class=xl6529815 align=right>0.0200</td>
   <td class=xl6529815 align=right>0.0150</td>
