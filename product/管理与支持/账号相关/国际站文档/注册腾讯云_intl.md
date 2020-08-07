@@ -1,4 +1,6 @@
 1. Enter your information to sign up.
+>? A mobile number can be used to sign up for a maximum of 5 Tencent Cloud accounts. To sign up for more accounts, change the mobile number and try again. For the specific operation, see [Modifying Mobile Number and Email Address](https://intl.cloud.tencent.com/document/product/378/36000)
+
 ![](https://main.qcloudimg.com/raw/654702003585c0224ddc4d17e9c88631.png)
 ![](https://main.qcloudimg.com/raw/262d2f0ecb2ea9abc07d02f10254c50c.png)
 

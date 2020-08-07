@@ -4,7 +4,7 @@
 >- 本文档以证书名称 `cloud.tencent.com` 为例。
 >- Nginx 版本以 `nginx/1.16.0` 为例。
 >- 当前服务器的操作系统为 CentOS 7，由于操作系统的版本不同，详细操作步骤略有区别。
->- 安装 SSL 证书前，请您在 Nginx 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。判断是否已开启 “443” 端口，可参考 [如何验证443端口是否开启？](https://intl.cloud.tencent.com/document/product/1007/36738)
+>- 安装 SSL 证书前，请您在 Nginx 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
 >
 ## 前提条件
 - 已准备文件远程拷贝软件，例如 WinSCP（建议从官方网站获取最新版本）。
@@ -92,10 +92,10 @@ server {
  - 在后端程序中添加重定向。
  - 通过 Web 服务器实现跳转。
  - Nginx 支持 rewrite 功能。若您在编译时没有去掉 pcre，您可在 HTTP 的 server 中增加 `return 301 https://$host$request_uri;`，即可将默认80端口的请求重定向为 HTTPS。修改如下内容：
- >?
+>?
 >- 未添加注释的配置语句，您按照下述配置即可。
 >- 由于版本问题，配置文件可能存在不同的写法。例如：Nginx 版本为 `nginx/1.15.0` 以上请使用 `listen 443 ssl` 代替 `listen 443` 和 `ssl on`。
->
+
 ```
 server {
    listen 443 ssl;
@@ -123,7 +123,7 @@ server {
 	#把http的域名请求转成https
     return 301 https://$host$request_uri; 
 }
-``` 
+```
 2. 若修改完成，重启 Nginx。即可使用 `http://cloud.tencent.com` 进行访问。
 
 >!操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
