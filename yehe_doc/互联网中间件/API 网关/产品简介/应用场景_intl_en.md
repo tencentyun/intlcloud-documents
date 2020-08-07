@@ -3,7 +3,7 @@
 If your system is developed under a microservice architecture, then:
 * There will be a lot of microservice modules.
 * Each module has its own APIs.
-* Each module has its own service address or LB.
+* Each module has its own service address or [CLB](https://intl.cloud.tencent.com/product/clb).
 * Certain API calls are contextual.
 * In certain cases, multiple APIs need to be called to get the final data.
 * The call specifications, naming conventions, and parameter designs of APIs may vary.
@@ -20,7 +20,7 @@ In this case, it will become increasingly troublesome to manage and use APIs as 
 
 ## Serverless Development
 
-After you write a cloud function in Serverless Cloud Function (SCF), if you want to provide an API service for it so that apps, frontend webpages, or clients can access it, an access method will be required.
+After you write a cloud function in Serverless Cloud Function [(SCF)](https://intl.cloud.tencent.com/product/scf), if you want to provide an API service for it so that apps, frontend webpages, or clients can access it, an access method will be required.
 
 In this case, you can use API Gateway to configure an API for integration with the backend cloud function. Then, each request to the API will trigger the execution of the cloud function to implement the corresponding business feature. For serverless development, you only need to pay for actual requests and executions.
 
