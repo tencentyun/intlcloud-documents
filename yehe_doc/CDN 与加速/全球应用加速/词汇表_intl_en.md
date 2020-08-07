@@ -2,7 +2,7 @@
 
 ### Max Concurrent Connections
 
-It refers to the maximum number of concurrent accessing connections supported by one GAAP connection.
+It refers to the maximum number of concurrent accessing connections supported by a GAAP connection.
 
 
 
@@ -21,11 +21,11 @@ For more information, please see [Global Application Acceleration Platform](#GAA
 
 ### Listener
 
-A listener is used to provide configuration features for request forwarding policy, including the configuration of protocols, ports, scheduling policies among multiple origin servers, and health checks.
+A listener is used to provide configuration features for request forwarding policy, including the configuration of protocols, ports, scheduling policies among multiple origin servers, and health checks. Requests will be forwarded to the backend origin server according to the policy configured on a listener.
 
 ### Acceleration Region
 
-It refers to the region where users are located. Users in this region can access the customer servers in the origin region through acceleration connections.
+It refers to the region where users are located. Users in acceleration regions can access the business servers in the origin server region through acceleration connections.
 
 
 <span ="GAAP1"></span>
@@ -37,4 +37,4 @@ Tencent Cloud Global Application Acceleration Platform (GAAP) is a PaaS product 
 
 ### Origin Server
 
-It is a customer business server and can be a self-created server or a [COS](https://intl.cloud.tencent.com/product/cos) bucket.
+It is a customer business server and can be a self-created server or a Tencent Cloud [COS](https://intl.cloud.tencent.com/product/cos) bucket.
