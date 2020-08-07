@@ -1,5 +1,5 @@
 ### Consistent Access Experience from Any Network
-GOA replaces VPN and allows you to access enterprise resources from any network worldwide, ensuring a consistent user experience on private and public networks. It supports enterprise cloudification and ensures secure access to enterprise resources anytime and anywhere, enhancing the collaborative experience in the workplace.
+GOA allows you to access your organization’s resources from any network worldwide, ensuring a consistent user experience on private and public networks. It ensures secure access to enterprise resources anytime and anywhere, enhancing the collaborative experience in the workplace.
 
 ### Fast and Reliable Connections
 GOA efficiently solves issues such as packet loss and delay in cross-border or cross-network data transmission by using independently developed technologies, such as intelligent routing, protocol optimization, multiplexing, anti-jitter and more.
