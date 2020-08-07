@@ -1,7 +1,7 @@
 
 
 ## Installing gRPC
-1. Install gRPC. After installation, the `grpc_cpp_plugin` executable program will be generated, which will be needed for generating gRPC code.
+1. Install gRPC. The installation will generate an executable program `grpc_cpp_plugin`, which will be needed for generating gRPC code.
 2. Install protocol buffers.
  >?For more information on the installation process, please see [Installing gRPC Lua](https://github.com/grpc/grpc/blob/master/BUILDING.md) and [Installing Protocol Buffers](https://github.com/protocolbuffers/protobuf/blob/master/src/README.md).
 
@@ -20,7 +20,7 @@
  ```
 protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` *.proto```
 to generate the corresponding gRPC code.
-Move the 8 generated files to an appropriate location in the project.    
+Move the eight generated files to an appropriate location in the project.    
 
 ## Game Process Integration Process
 ![](https://main.qcloudimg.com/raw/96018551bc88c71a02333b1f197b3111.png)
@@ -69,7 +69,7 @@ static bool luaProcessReady(std::vector <std::string> &logPath, int clientPort, 
 		return true;
 }
 ```
- 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+ 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 Status GameServerGrpcSdkServiceImpl::OnHealthCheck(ServerContext* context, const HealthCheckRequest* request,  HealthCheckResponse* reply)
 {
@@ -119,7 +119,7 @@ static bool luaAcceptPlayerSession(const std::string &gameServerSessionId, const
 		return true;
 }
 ```
- 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+ 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 static bool luaRemovePlayerSession(const std::string &gameServerSessionId, const std::string &playerSessionId) {
 		GseResponse reply;
@@ -236,7 +236,7 @@ void GseManager::InitStub() {
 ## Demo for Lua
  1. [Click here](https://gsegrpcdemo-1301007756.cos.ap-guangzhou.myqcloud.com/lua-demo.zip) to download the code of the Demo for Lua.
  2. Generate the gRPC code.
-The Demo for Lua relies on the C++ framework, and the generated gRPC code is in the `cpp-demo/source/grpcsdk` directory, so there is no need to generate it again.
+The Demo for Lua relies on the C++ framework, with gRPC code generated in the `cpp-demo/source/grpcsdk` directory, so there is no need to generate it again.
  3. Launch the server for GSE to call.
   - Implement the server.
 `grpcserver.cpp` in the `lua-demo/source/api` directory implements three server APIs.
@@ -249,7 +249,7 @@ The Demo for Lua relies on the C++ framework, and the generated gRPC code is in 
 Create a gRPC channel, specify the host name and server port to connect to, and use this channel to create a stub instance.
  5. Compile and run.
   1. Install CMake.
-  - Install GCC above v4.9.
+  - Install GCC v4.9 or above.
   - Install the LuaJIT and Boost development kits:
  ```
 yum install -y luajit-devel
@@ -264,6 +264,6 @@ yum install -y cmake
    make
    cp ../source/lua/gse.lua .
  ```
-  The corresponding `lua-demo` executable file will be generated. Run `./lua-demo` to launch.
+  The corresponding `lua-demo` executable file will be generated. Run `./lua-demo` to launch it.
   - Package the executable file `lua-demo.cpp` as an [asset package](https://intl.cloud.tencent.com/document/product/1055/36674) and configure the launch path as `lua-demo` with no launch parameter needed.
   - [Create a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675) and deploy the asset package on it. After that, you can perform various operations such as [scaling](https://intl.cloud.tencent.com/document/product/1055/37445).

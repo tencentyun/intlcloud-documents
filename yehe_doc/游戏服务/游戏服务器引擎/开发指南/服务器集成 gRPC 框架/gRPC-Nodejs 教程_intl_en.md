@@ -1,7 +1,7 @@
 
 
 ## Installing gRPC
-1. Prerequisites: install Node.js above v12.16.0.
+1. Prerequisites: install Node.js v12.16.0 or above.
 2. Install gRPC.
 
 >?For more information on the installation process, please see [Installing gRPC Node.js](https://github.com/grpc/grpc/tree/master/examples/node).
@@ -67,7 +67,7 @@ function ProcessReady(param) {
 		});
 }
 ```
- 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+ 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 function OnHealthCheck(call, callback) {
 		console.log("OnHealthCheck.request", call.request);
@@ -113,7 +113,7 @@ function AcceptPlayerSession(param, w, callback) {
 		});
 }
 ```
- 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+ 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 function RemovePlayerSession(param, w, callback) {
 		console.log("RemovePlayerSession.request", param);
@@ -263,7 +263,7 @@ Node.js uses `grpc/proto-loader` to load `pb` files directly, so there is no nee
   - Connect to the server.
 Create a gRPC channel, specify the host name and server port to connect to, and use this channel to create a stub instance.
  5. Compile and run.
-  1. Install Node.js above v12.16.0.
+  1. Install Node.js v12.16.0 or above.
   - Install the gRPC package.
  ```
 cnpm install --save grpc-tools
@@ -272,7 +272,7 @@ cnpm install --save grpc
 cnpm install --save @grpc/proto-loader
 cnpm install --save @grpc/grpc-js
  ```
- If you cannot download the dependency package outside Mainland China, you need to configure an npm site in Mainland China.
+ If you cannot download dependencies outside Mainland China, you need to configure an npm site in Mainland China.
   - Download the code and run the following command in the `nodejs-demo` directory to launch the test:
 	```
 	cd dynamic_code
