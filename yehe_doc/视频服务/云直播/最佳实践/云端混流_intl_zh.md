@@ -23,22 +23,22 @@
 **最常用的布局模板效图：**
 <table>
 <style>#m_img{width:90%;height:auto;display:block;margin-left:auto;margin-right:auto; }</style>
-<thead><tr><th>模板10</th><th >模板30</th></tr></thead><tr>
-<td><img src="https://main.qcloudimg.com/raw/ff48a20c9a80b000e388959b1daa8a6b.jpg" id="m_img"></td>
+<thead><tr><th>Template 10</th><th >Template 30</th></tr></thead><tr>
+<td><img src="https://main.qcloudimg.com/raw/a6b395f6fc7c1d07e4325836a3b725e6.jpg" id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/05fbe1c32bec1aed0624785d51b8a2ef.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th >模板40</th><th>模板310</th></tr></thead><tr>
-<td><img src="https://main.qcloudimg.com/raw/5260234d4c6fb4f36d1c67bd483810f3.jpg"  id="m_img"></td>
-<td><img src="https://main.qcloudimg.com/raw/53c6f7284ae50d534afa69993c55f0a0.jpg"  id="m_img"></td>
+<thead><tr><th >Template 40</th><th>Template 310</th></tr></thead><tr>
+<td><img src="https://main.qcloudimg.com/raw/06cd40976b29452fa297d52db0d3435c.jpg"  id="m_img"></td>
+<td><img src="https://main.qcloudimg.com/raw/e1f4aa6f198856c47d8175302c649448.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th>模板390</th><th >模板410</th></tr></thead><tr>
+<thead><tr><th>Template 390</th><th >Template 410</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/50157bb0b01d511c10b3637c13b1471a.png"  id="m_img"></td>
-<td><img src="https://main.qcloudimg.com/raw/26c8862b4a9c55281bebf407df7473a0.jpg"  id="m_img"></td>
-
+<td><img src="https://main.qcloudimg.com/raw/6a420d03e7921453cbc461d1f1176f6c.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th >模板510</th><th>模板610</th></tr></thead>
-<td><img src="https://main.qcloudimg.com/raw/cd731f1bcbc78eae1a968a94a35f7ae1.jpg"  id="m_img"></td>
-<td><img src="https://main.qcloudimg.com/raw/298eb252ec03a4d92179272849c66806.jpg"  id="m_img"></td>
+<thead><tr><th>Template 510</th><th>Template 610</th></tr></thead>
+<td><img src="https://main.qcloudimg.com/raw/c0e5bd29f275a6f055af9830ceea0a02.jpg"  id="m_img"></td>
+<td><img src="https://main.qcloudimg.com/raw/5ca8ba33cc08e80d6aeb403645e75aac.jpg"  id="m_img"></td>
+
 
 </tr>
 </tbody></table>	
@@ -120,7 +120,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 
 ##  场景3：自定义混流示例
 使用自定义布局。其中，位置参数 LocationX 和 LocationY 为小画面左上角相对背景画面左上角的绝对像素距离。
-![](https://main.qcloudimg.com/raw/0547d55f7f198cdef7df1bdb9fa7986e.png)
+![](https://main.qcloudimg.com/raw/e1f81cd4a9b08af4ad7e4658fc643f0d.png)
 
 ### 输入示例
 ```
@@ -276,7 +276,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 <td>检查输出流码率是否在[1，50000]之间。</td>
 </tr><tr>
 <td>其它</td>
-<td>其它错误，请 <a href="https://cloud.tencent.com/act/event/connect-service">联系客服</a> 提供技术支持</td>
+<td>其它错误，请 <a href="https://intl.cloud.tencent.com/contact-sales">联系客服</a> 提供技术支持</td>
 <td>-</td>
 </tr>
 </tbody></table>
