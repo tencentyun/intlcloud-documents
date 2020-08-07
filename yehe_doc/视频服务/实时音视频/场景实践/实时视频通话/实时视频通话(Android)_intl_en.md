@@ -119,7 +119,6 @@ Copy all files in the following directory to your project:
 trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo/model 
 ```
 
-![](https://main.qcloudimg.com/raw/82f9ccdb79eac798025905c18ddff142.gif)
 
 <span id="model.step4"> </span>
 ### Step 4. Initialize and log in to the component
@@ -233,7 +232,6 @@ sCall.openCamera(true, txCloudVideoView);
 The IM SDK supports offline push; however, different Android phone vendors have different offline push services, so the access complexity is higher than that on iOS. You need to complete the corresponding settings to meet its availability standard.
 1. Apply for the certificate required by the corresponding vendor's push channel, configure it in the IM Console, and add the certificate and ID according to the push requirements.
 2. Modify the commented part of the `sendModel` function in the `TRTCVideoCallImpl` configuration.
- ![](https://main.qcloudimg.com/raw/be240b11a0e3fe79cc6b9bf619fe0623.png)
 
 
 <span id="api"> </span>
