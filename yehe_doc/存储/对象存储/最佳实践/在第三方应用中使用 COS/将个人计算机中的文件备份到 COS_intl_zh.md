@@ -60,7 +60,7 @@ Arq® Backup 商业授权为49.99美元每个用户，用户购买后可以在�
 10. 在弹窗中设置用于加密的密码。输入两次用于加密备份文件的密码，并单击【OK】。**注意请牢记备份密码，否则将无法从备份恢复文件！**
     ![](https://main.qcloudimg.com/raw/43213532f56da02450b1ea52321457c6.png)
 11. （可选）设置备份周期。
-    ![](https://main.qcloudimg.com/raw/70bf92401110bce7b3b49af3017c189b.png)
+    ![](https://main.qcloudimg.com/raw/92a00ca49471007336c34471bec8fa6d.png)
 12. 单击【Save】保存设置，然后单击【Back Up Now】开始备份。
     ![](https://main.qcloudimg.com/raw/65093effc29b66385f8ee20f293cde01.png)
 
