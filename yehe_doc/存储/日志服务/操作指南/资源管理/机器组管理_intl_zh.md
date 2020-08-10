@@ -11,7 +11,7 @@
 
 ### 配置机器 IP 机器组
 填写机器组名称及其服务器对应的 IP 地址，确认信息无误后，单击【确认】，即可完成机器组创建。
-<img src="https://main.qcloudimg.com/raw/3d6119154a2ad3d482bba23b584250ba.png" width="80%">
+
 > !
 > - 每行填写一个 IP 地址，暂不支持 Windows 系统机器。
 > - 同园区内，腾讯云服务器填写内网 IP 即可，分行隔开。
@@ -23,7 +23,7 @@
 > - 每行填写一个标识名称，暂不支持识别 Windows 系统的机器。
 
 1. 填写机器组名称及其机器标识，确认信息无误后，单击【确认】，完成机器组创建。
-<img src="https://main.qcloudimg.com/raw/749bc422544156ee5f4f7acf7389de84.png" width="80%">
+
 2. 登录目标机器，修改 Loglistener 安装目录下的`/etc/loglistener.conf`文件。此处安装目录以`/user/local`为例：
 ```plaintext
 vi /usr/local/loglistener-2.3.0/etc/loglistener.conf
