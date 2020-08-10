@@ -37,7 +37,7 @@ If an out of memory error occurs when you are submitting a MapReduce task or run
 The memory parameter can be adjusted based on your actual computation needs. It can also be written in the `~/.hiverc` file in Hive and will be executed automatically when submitted.
 
 ### How do I estimate the cluster size?
-Suppose that you need to run an SQL query. If 64 vcores and 128 GB memory are needed for getting the query result in the specified time period, and the business requires 10 concurrencies, then the required resources would be 640 vcores and 1,280 GB memory. If the server specification you are using is 24 cores and 48 GB memory, then you need around 1280 / 48 = 40 servers.
+Suppose that you need to run an SQL query. If 64 vcores and 128 GB memory are needed for getting the query result in the specified time period, and the business requires 10 concurrencies, then the required resources would be 640 vcores and 1,280 GB memory. If the server specification you are using is 24 cores and 48 GB memory, then you need around 1280 / 48 = 27 servers.
 
 ### How do I set up a fetch query in Hive?
 The default query in Hive is as follows:
