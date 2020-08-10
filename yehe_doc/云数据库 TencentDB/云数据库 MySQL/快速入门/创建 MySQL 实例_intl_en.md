@@ -4,9 +4,9 @@ This document describes how to create a TencentDB for MySQL instance in the cons
 ## Prerequisites
 You have registered a Tencent Cloud account and completed identity verification.
 - To register a Tencent Cloud account:
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to register a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 370px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to register a Tencent Cloud account</a></div>
 - To verify your identity:
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
+<div style="background-color:#00A4FF; width: 270px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 ## Directions
 1. Log in at the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb), select various configuration items based on your actual needs, confirm that everything is correct, and click **Buy Now**.
