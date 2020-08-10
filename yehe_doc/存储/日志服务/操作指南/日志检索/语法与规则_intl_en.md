@@ -64,9 +64,6 @@ CLS supports fuzzy search, which allows you to search for logs by special fuzzy 
 | * | Fuzzy query of keywords that can match zero, single, or multiple random characters. For example, if you enter `abc*`, all logs beginning with `abc` will be returned.|
 | ? |Fuzzy query of keywords that can match a single character at a specific position. For example, if you enter `ab?c`, logs that begin with `ab`, end with `c`, and contain only one character between `ab` and `c` will be returned.|
 
-### Cross-topic search
-
-Log search allows you to select only one logset but multiple log topics under the logset, which means that you can search in multiple log topics under one logset at the same time, making it easier to perform troubleshooting.
 
 ## Notes
 
