@@ -6,8 +6,8 @@ yarn logs -applicationId application_1507732460084_0057
 ```
 
 >!
-- 需以 Hadoop 用户身份执行该命令。
-- 如果是其他用户的任务可以添加参数 -appOwner username。
+>- 需以 Hadoop 用户身份执行该命令。
+>- 如果是其他用户的任务可以添加参数 `-appOwner username`。
 
 如需查看任务异常原因可通过以下命令实现：
 ```
@@ -15,7 +15,7 @@ yarn logs -applicationId application_1507732460084_0057|grep -A20 Exception
 ```
 
 ### 如何调整集群计算资源？
-集群计算资源由 yarn-site.xml 中的以下两项配置决定：
+集群计算资源由 `yarn-site.xml` 中的以下两项配置决定：
 ``` xml
 <property>
   <name>yarn.nodemanager.resource.cpu-vcores</name>
