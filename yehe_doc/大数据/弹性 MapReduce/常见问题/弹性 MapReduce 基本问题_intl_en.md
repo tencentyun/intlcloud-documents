@@ -5,9 +5,9 @@ You can log in to any EMR server and run the following command to view task logs
 yarn logs -applicationId application_1507732460084_0057
 ```
 
->
-- This command can only be executed by a Hadoop user.
-- If it is a task of another user, you can add the `-appOwner username` parameter.
+>?
+>- This command can only be executed by a Hadoop user.
+>- If it is a task of another user, you can add the `-appOwner username` parameter.
 
 To view the cause of a task exception, run the following command:
 ```
@@ -15,7 +15,7 @@ yarn logs -applicationId application_1507732460084_0057|grep -A20 Exception
 ```
 
 ### How do I adjust the computing resources of a cluster?
-Cluster computing resources are determined by the following two configuration items in yarn-site.xml:
+Cluster computing resources are determined by the following two configuration items in `yarn-site.xml`:
 ``` xml
 <property>
   <name>yarn.nodemanager.resource.cpu-vcores</name>
