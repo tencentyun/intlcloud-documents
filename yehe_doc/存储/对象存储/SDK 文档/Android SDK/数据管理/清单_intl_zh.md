@@ -1,9 +1,11 @@
+
+
 ## 简介
 
 本文档提供关于清单的 API 概览以及 SDK 示例代码。
 
 | API                                                          | 操作名       | 操作描述             |
-| ------------------------------------------------------------ | ------------ | -------------------- |
+| :----------------------------------------------------------- | :----------- | :------------------- |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | 设置清单任务 | 设置存储桶的清单任务 |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | 查询清单任务 | 查询存储桶的清单任务 |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | 删除清单任务 | 删除存储桶的清单任务 |
@@ -20,7 +22,8 @@ PUT Bucket inventory 用于在存储桶中创建清单任务。
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-put-bucket-inventory)
+
+
 ```java
 String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
 PutBucketInventoryRequest putBucketInventoryRequest =
@@ -60,15 +63,16 @@ cosXmlService.putBucketInventoryAsync(putBucketInventoryRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketInventory.java) 查看。
-
+> 说明：
+>
+> 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketInventory.java) 查看。
 
 #### 错误码说明
 
 该请求可能会发生的一些常见的特殊错误如下：
 
 | 错误码                | 描述                                         | 状态码               |
-| --------------------- | -------------------------------------------- | -------------------- |
+| :-------------------- | :------------------------------------------- | :------------------- |
 | InvalidArgument       | 不合法的参数值                               | HTTP 400 Bad Request |
 | TooManyConfigurations | 清单数量已经达到1000条的上限                 | HTTP 400 Bad Request |
 | AccessDenied          | 未授权的访问。您可能不具备访问该存储桶的权限 | HTTP 403 Forbidden   |
@@ -81,7 +85,8 @@ GET Bucket inventory 用于查询存储桶中用户的清单任务信息。
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-get-bucket-inventory)
+
+
 ```java
 String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
 GetBucketInventoryRequest getBucketInventoryRequest =
@@ -109,7 +114,9 @@ cosXmlService.getBucketInventoryAsync(getBucketInventoryRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java) 查看。
+> 说明：
+>
+> 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java) 查看。
 
 ## 删除清单任务
 
@@ -119,7 +126,8 @@ DELETE Bucket inventory 用于删除存储桶中指定的清单任务。
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-delete-bucket-inventory)
+
+
 ```java
 String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
 DeleteBucketInventoryRequest deleteBucketInventoryRequest =
@@ -142,5 +150,6 @@ cosXmlService.deleteBucketInventoryAsync(deleteBucketInventoryRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java) 查看。
-
+> 说明：
+>
+> 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java) 查看。

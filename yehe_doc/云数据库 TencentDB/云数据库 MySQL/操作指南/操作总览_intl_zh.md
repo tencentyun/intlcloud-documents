@@ -2,7 +2,7 @@
 
 ## 实例列表页
 在 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表页可查看实例相关信息，以及管理实例。
-![](https://main.qcloudimg.com/raw/6b5ce84ac2728e387d79703267efdbb8.png)
+![](https://main.qcloudimg.com/raw/51001a389fec3fc1d62d45ff0f0895f9.png)
 
 | 功能 | 介绍 |
 |---------|---------|
@@ -12,7 +12,7 @@
 
 ## 实例管理页
 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，初始化完成后，在实例列表，单击实例名或在“操作”列的【管理】，可以进入实例管理页面。您可以进行实例详情查看、实例监控、数据库管理等操作。
-![](https://main.qcloudimg.com/raw/98cd4863ce625f3b42a1f654da5bd7a4.png)
+![](https://main.qcloudimg.com/raw/167ee41bc241ef2e5a68c5fc160112d4.png)
 
 | 功能 | 介绍 |
 |---------|---------|

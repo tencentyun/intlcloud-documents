@@ -2,8 +2,8 @@
 
 
 ## Installing gRPC
-1. To use gRPC Go, you need to install the latest major version of Go first.
-2. Install the protocol buffer compiler with version protoc3.
+1. To use gRPC Go, you need to install the latest major release of Go first.
+2. Install the protocol buffer compiler protoc3.
 3. Install the Go plugin in the protocol buffer compiler.
   - Run the following command to install the protocol buffer compiler plugin for Go (protoc-gen-go):
   ```
@@ -89,7 +89,7 @@ func (g *gsemanager) ProcessReady(logPath []string, clientPort int32, grpcPort i
 		return nil
 }
 ```
- 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+ 2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 func _GameServerGrpcSdkService_OnHealthCheck_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 		in := new(HealthCheckRequest)
@@ -161,7 +161,7 @@ func (g *gsemanager) AcceptPlayerSession(playerSessionId string) (*grpcsdk.GseRe
 		return g.rpcClient.AcceptPlayerSession(g.getContext(), req)
 }
 ```
- 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+ 6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 func (g *gsemanager) RemovePlayerSession(playerSessionId string) (*grpcsdk.GseResponse, error) {
 		logger.Info("start to RemovePlayerSession", zap.String("playerSessionId", playerSessionId))
@@ -321,7 +321,7 @@ Create a gRPC channel, specify the host name and server port to connect to, and 
   ```
 	go mod vendor```
 	to generate the `vendor` directory.
-  - Compile the command:
+  - Run the compile command:
   ```
 	go build -mod=vendor main.go```
 	to generate the corresponding `go-demo` executable file `main.go`.

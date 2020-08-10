@@ -8,19 +8,19 @@ Encryption context is a piece of data in JSON format. If you input this data whe
 
 ### KMS
 
-For more information, please see [Key Management Service](https://cloud.tencent.com/document/product/573/8781#1196).
+For more information, please see [Key Management Service](https://intl.cloud.tencent.com/document/product/1030/31984#1196).
 
 
 
 ### Key Management Service
 
-Tencent Cloud Key Management Service (KMS) is a security management solution that lets you to easily create and manage keys and protect their confidentiality, integrity, and availability, helping meet your key management and compliance needs in multi-application and multi-business scenarios.
+Tencent Cloud Key Management Service (KMS) is a security management solution that enables you to easily create and manage keys and protect their confidentiality, integrity, and availability, helping meet your key management and compliance needs in multi-application and multi-business scenarios.
 
 
 
 ### Data Encryption Key
 
-Data encryption keys (DEKs) are keys protected by CMK and used to encrypt business data. They can be customized or created through KMS APIs.
+Data encryption keys (DEKs) are protected by CMK and used to encrypt business data. They can be customized or created through KMS APIs.
 
 
 
@@ -32,10 +32,10 @@ Envelope encryption is a high-performance encryption and decryption solution for
 
 ### Customer Master Key
 
-Customer master keys (CMKs) are master keys that Tencent Cloud keeps for you. They are protected by a third-party certified hardware security module (HSM) and used to encrypt and decrypt sensitive data used in your business such as passwords, certificates, and DEKs. They can be created and managed in the console or through APIs.
+Customer master keys (CMKs) are kept by Tencent Cloud. They are protected by a third-party certified hardware security module (HSM) and used to encrypt and decrypt sensitive data used in your business such as passwords, certificates, and DEKs. They can be created and managed in the console or through APIs.
 CMKs include customer managed CMKs and Tencent Cloud managed CMKs.
 
 ### Tencent Cloud Managed CMK
 
-Tencent Cloud managed CMKs are CMKs that Tencent Cloud automatically creates for you when a Tencent Cloud service (such as COS or TDSQL) calls the KMS service.
+Tencent Cloud managed CMKs are automatically created for you when a Tencent Cloud service (such as COS or TDSQL) calls the KMS service.
 You can query and rotate Tencent Cloud managed CMKs but cannot disable or delete them.

@@ -2,7 +2,7 @@
 ## 故障について
 
 - Mac が Microsoft Remote Desktop 経由でWindows CVMにログインする時に、「The certificate couldn't be verified back to a root certificate.」というプロンプトが表示されます。
-<img src="https://main.qcloudimg.com/raw/070b9c862d6928988768b266461bc816.png" height="300" width="550" />
+<img src="https://main.qcloudimg.com/raw/070b9c862d6928988768b266461bc816.png" data-nonescope="true" />
 - Mac でリモートデスクトップ接続（Remote Desktop Connection）を使用すると、 「接続先のコンピューターのIDを確認できません」というプロンプトが表示されます。
 
 ## トラブルシューティング

@@ -11,7 +11,7 @@
 
 ### MongoDB 应该选哪个版本的驱动程序？
 推荐使用最新版本，例如 PHP 可以选择 mongo-1.6 及以上。
-
+ 
 ### MongoDB 提供哪些语言连接方式？
 云数据库 MongoDB 提供多种语言连接方式，例如 Shell、PHP、Node.js、Java、Python，详情请参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092)。
 
@@ -19,10 +19,10 @@
 云数据库 MongoDB 版针对客户端连接完全兼容 MongoDB，只要是官方 MongoDB 版支持的客户端，云数据库全部支持。例如 C、C++、C#、Java、Node.js、Python、PHP、Perl 等，详情请参见 [MongoDB 官方文档](https://docs.mongodb.org/ecosystem/drivers/)。
 
 ### 在 shell 里怎么连接腾讯云 MongoDB？
-详情请参见 [Shell 连接示例](https://intl.cloud.tencent.com/zh/document/product/240/3978)。
+详情请参见 [Shell 连接示例](https://cloud.tencent.com/doc/product/240/3978)。
 
 ### 业务程序里连接 MongoDB 的 URI 是什么样的？
-详情请参见 [连接示例](https://intl.cloud.tencent.com/zh/document/product/240/7092)。
+详情请参见 [连接示例](https://cloud.tencent.com/doc/product/240/3563)。
 
 ### 用 meteor 等各类框架、类库无法连接腾讯云 MongoDB，如何处理？
 一般来说都是连接方式、URI 拼接错误，请先检查核实。
@@ -30,25 +30,10 @@
 ### 在 PHP 中，如何设置 MongoDB 最大连接数？
 MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）可以通过在连接 URL 中配置 maxPoolSize 参数控制连接数。
 MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）可以通过 Mongo::setPoolSize() 方法设置连接数，详情请参见 [MongoPool::setSize](http://php.net/manual/en/mongopool.setsize.php)。
-
+ 
 
 ### MongoDB 连接数限制是多少？
-
-| 内存规格 | 连接数上限 |
-| :------: | :--------: |
-|   2GB    |    1500    |
-|   4GB    |    2000    |
-|   6GB    |    2500    |
-|   8GB    |    3500    |
-|   16GB   |    6000    |
-|   24GB   |    8000    |
-|   32GB   |    9500    |
-|   64GB   |   16000    |
-|  128GB   |   18000    |
-|  240GB   |   18000    |
-|  512GB   |   20000    |
-
->!对于副本集来说，连接数上限是针对整个实例的，不是单个节点；对于分片集群来说，连接数上限是针对单个 shard，详见  [使用限制](https://intl.cloud.tencent.com/document/product/240/31183)。
+请参见 [连接数限制](https://intl.cloud.tencent.com/document/product/240/31183)。
 
 
 ### 手动重连 MongoDB 怎么操作？
@@ -57,7 +42,7 @@ MongoDB 驱动（[PHP 官网文档](http://php.net/manual/en/set.mongodb.php)）
 一般来说，客户端驱动会实现一个自动重连的过程，但是也有部分语言的驱动并没有实现。对于没有实现自动重连的语言驱动，当用户使用一个已经被踢掉的连接来尝试与腾讯云 MongoDB 服务通信时可能会得到 “Remote server has closed the connection” 之类的错误信息，所以需要手动进行重连，这里给出一个 PHP 重连的 demo。
 
 **基于 PHP mongo 驱动的重连实现** 
-![](https://main.qcloudimg.com/raw/a0b428c51f0ba06b91788b391e1650ea.png)
+![](https://main.qcloudimg.com/raw/0fcb5ee5ace2c301c2c9061403986d07.png)
 
 
 ### 如何使用 mongoose 连接云数据库 MongoDB？
@@ -77,4 +62,4 @@ var connection = mongodb.createConnection(dbUri, opts);
 ### MongoDB 支持外网连接吗？
 MongoDB 目前只支持内网连接，连接方式参见 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092) 。
 目前暂不支持开通外网访问，如果您要在本地连接 MongoDB，可以使用与 MongoDB 同一账号同一内网下的服务器做端口转发实现。
-
+ 

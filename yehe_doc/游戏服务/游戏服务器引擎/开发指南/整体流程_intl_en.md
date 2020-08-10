@@ -7,9 +7,9 @@ The game server communicates with GSE over gRPC. The gRPC framework can be integ
 ### Step 2. Publish the program
 
 1. Upload an asset package 
-An asset package contains the executable files, dependency packages, and installation scripts of the game server. You need to package it as a zip package before uploading it. For more information, please see [Creating Asset Package](https://intl.cloud.tencent.com/document/product/1055/36674).
+An asset package contains the executable files, dependencies, and install script of the game server. You need to package them as a ZIP file before upload. For more information, please see [Creating Code Packages](https://intl.cloud.tencent.com/document/product/1055/36674).
 2. Create a server fleet 
-Deploy the uploaded asset package on the created server fleet and complete process management, deployment configuration, scaling configuration, etc. For more information, please see [Creating Server Fleet](https://intl.cloud.tencent.com/document/product/1055/36675).   
+Deploy the uploaded asset package on the created server fleet and complete process management, deployment configuration, scaling configuration, etc. For more information, please see [Creating Server Fleets](https://intl.cloud.tencent.com/document/product/1055/36675).   
 
 ### Step 3. Call a TencentCloud API to get the server address (IP:port or domain name)
 You can get the server address (IP:port or domain name) by creating and placing a game server session.
@@ -18,7 +18,7 @@ You can get the server address (IP:port or domain name) by creating and placing 
 - Creation method:
   Create one by using a server fleet.
 	Create one by using an alias.
-- Call a TencentCloud API:
+- Calling a TencentCloud API:
 The client TencentCloud API call process varies by supporting mode of the game server session.
  * When a game server session only supports one game:
    - Create a game server session (CreateGameServerSession);
@@ -34,7 +34,7 @@ The client TencentCloud API call process varies by supporting mode of the game s
 - Creation method:
 Create one by using a game server queue.
 
-- Call a TencentCloud API:
+- Calling a TencentCloud API:
  - Start placing a game server session (StartGameServerSessionPlacement);
  - Query the game server session placement (DescribeGameServerSessionPlacement);
  - Stop placing a game server session (StopGameServerSessionPlacement).

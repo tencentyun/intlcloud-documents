@@ -11,19 +11,20 @@ Currently, the migration tool supports the default mode and the private network 
 You can [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) or use other methods to back up data.
 
 ## 4. Checking before Migrating
-Before migrating, check the following on source servers and destination CVMs, respectively:
+Before the migration, check the following items of the source server and destination CVM:
 <table>
-	<tr><th style="width: 15%;">Destination CVM</th><td><ol  style="margin: 0;"><li>Storage: the storage space in its cloud disks (including system disks and data disks) is sufficient to store the data from the source server.</li><li>Security group: the 443 and 80 ports must be open to the Internet in a security group.</li><li>Bandwidth: we recommend that you increase inbound and outbound bandwidth for faster migration. The traffic consumed during migration will be approximately equal to the data volume. If needed, change your network billing method in advance.</li><li>Operating system: we recommend using the same operating system on both the source server and the destination CVM. Different operating systems will result in inconsistency between the image that will be created later and the actual operating system. For example, when migrating a source server with the CentOS 7 system installed, choose a CVM with the CentOS 7 system installed as the migration destination.</li></ol></td></tr>
-	<tr><th>Linux source server</th><td><ol  style="margin: 0;"><li>Check for and install Virtio. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li><li>Check whether rsync and grub2-install (or grub-install) are installed.</li><li>Check whether SELinux is enabled. Disable it if it is enabled.</li><li>Ensure the current system time is correct, because the Tencent Cloud API will use the UNIX timestamp to check against the generated token after receiving a migration request.</li></ol></td></tr>
+	<tr><th style="width: 15%;">Destination CVM</th><td><ol  style="margin: 0;"><li>Storage: the storage space in its cloud disks (including system disks and data disks) must be sufficient to store the data from the source server.</li><li>Security group: the 443 and 80 ports must be open to the Internet in a security group.</li><li>Bandwidth: we recommend that you increase inbound and outbound bandwidth for faster migration. The traffic consumed during migration will be approximately equal to the data volume. If needed, change your network billing method in advance.</li><li>Operating system: it is recommended that you use the same operating system on both the source server and the destination CVM. Different operating systems will result in inconsistency between the image that will be created later and the actual operating system. For example, when migrating a source server with the CentOS 7 system installed, choose a CVM with the CentOS 7 system installed as the migration destination.</li></ol></td></tr>
+	<tr><th>Linux source server</th><td><ol  style="margin: 0;"><li>Check for and install Virtio. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li><li>Check whether rsync is installed by running <code>which rsync</code> for verification. </li><li>Check whether SELinux is enabled. If yes, disable it.</li><li>Ensure the current system time is correct, because the Tencent Cloud API will use the UNIX timestamp to check against the generated token after receiving a migration request.</li></ol></td></tr>
 </table>
 
 >? 
-> - You can use tool commands such as `sudo ./go2tencentcloud_x64 --check` to automatically check the source server. 
-> - The “go2tencentcloud” migration tool automatically checks the source server by default when it starts to run. If you want to skip this check and force migration, configure the value of the `Client.Extra.IgnoreCheck` field in the “client.json” file to `true`.
-> 
+> - You can use tool commands such as `sudo ./go2tencentcloud_x64 --check` to automatically check the source server.
+> - By default, the go2tencentcloud migration tool automatically performs checking when it is started. If you want to skip the checks and directly perform migration, set `Client.Extra.IgnoreCheck` to `true` in the client.json file.
+> - For more information on the go2tencentcloud migration tool, see [Migration Tool](https://intl.cloud.tencent.com/document/product/213/35640).
+ > 
 
 ## 5. Starting the Migration
- 
+
 1. (Optional) Establish a connection between the source server and the destination CVM.  
  - If you are using the private network mode, establish a connection between the source server and the destination CVM through [VPC peering connections](https://intl.cloud.tencent.com/document/product/553), [VPN connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/document/product/216).
  - Skip to the next step if you are using the default mode.
@@ -41,5 +42,5 @@ For example, on a 64-bit Linux source server, execute the following command as `
 ```
 sudo ./go2tencentcloud_x64
 ```
-For example, if you are using the [private network mode: scenario 2](https://intl.cloud.tencent.com/document/product/213/35640) for migration and the following appears on the Console, the migration has been successful.
+For example, you are using the [private network mode: scenario 2](https://intl.cloud.tencent.com/document/product/213/35640#Scenario2) for migration. If the migration is successful, the following console output appears:
  ![](https://main.qcloudimg.com/raw/3d5c45ccb9f5350bb30cf3d3fce29590/console-cross-region.png)

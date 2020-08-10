@@ -6,5 +6,5 @@ Pay-as-you-go CVM instances **do not allow**:
  - Agents paying on your behalf
  - 5-day unconditional refunds
  - CVMs with shared cores
- - Bandwidth packages and postpaid monthly billing plans
+ - Postpaid monthly billing plans
 - The **purchase limit** of pay-as-you-go CVM instances for each user in each availability zone is between 30 and 60. Please see the CVM purchase page for the exact purchase limit. 

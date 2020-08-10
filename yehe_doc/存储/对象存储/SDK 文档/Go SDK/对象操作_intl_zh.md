@@ -6,32 +6,32 @@
 
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket（List Object）](https://cloud.tencent.com/document/product/436/7734) | 查询对象列表   | 查询存储桶下的部分或者全部对象            |
-| [PUT Object](https://cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个 Object（文件/对象）至 Bucket     |
-| [HEAD Object](https://cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询 Object 的 Meta 信息                  |
-| [GET Object](https://cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
-| [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
-| [DELETE Object](https://cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
-| [DELETE Multiple Objects](https://cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在 Bucket 中批量删除 Object （文件/对象） |
+| [GET Bucket（List Object）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象            |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象   | 上传一个 Object（文件/对象）至 Bucket     |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询 Object 的 Meta 信息                  |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个 Object（文件/对象）至本地        |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制   | 复制文件到目标路径                        |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 删除单个对象   | 在 Bucket 中删除指定 Object （文件/对象） |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在 Bucket 中批量删除 Object （文件/对象） |
 
 **分块操作**
 
 | API                                                          | 操作名         | 操作描述                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
-| [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
-| [Upload Part](https://cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
-| [List Parts](https://cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
-| [Complete Multipart Upload](https://cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
-| [Abort Multipart Upload](https://cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 查询分块上传   | 查询正在进行中的分块上传信息         |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 初始化分块上传 | 初始化 Multipart Upload 上传操作     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 上传分块       | 分块上传文件                         |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 查询已上传块   | 查询特定分块上传操作中的已上传的块   |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 完成分块上传   | 完成整个文件的分块上传               |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 终止分块上传   | 终止一个分块上传操作并删除已上传的块 |
 
 **其他操作**
 
 | API                                                          | 操作名       | 操作描述                                      |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
-| [PUT Object acl](https://cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置 Bucket 中某个 Object （文件/对象）的 ACL |
-| [GET Object acl](https://cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询 Object（文件/对象）的 ACL                |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | 设置对象 ACL | 设置 Bucket 中某个 Object （文件/对象）的 ACL |
+| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | 查询对象 ACL | 查询 Object（文件/对象）的 ACL                |
 
 ## 简单操作
 
@@ -192,7 +192,12 @@ type ObjectPutHeaderOptions struct {
     'x-cos-expiration': 'string'
 }
 ```
-
+通过返回结果Response获取。
+```go
+resp, err := client.Object.Put(context.Background(), key, f, nil)
+etag := resp.Header.Get("ETag")
+exp := resp.Header.Get("x-cos-expiration")
+```
 | 参数名称         | 参数描述                         | 类型   |
 | ---------------- | -------------------------------- | ------ |
 | ETag             | 上传文件的 MD5 值                | string |
@@ -244,6 +249,15 @@ type ObjectHeadOptions struct {
     'Last-Modified': 'Wed, 28 Oct 2014 20:30:00 GMT',
     'X-Cos-Request-Id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
 }
+```
+通过返回结果Response获取。
+```go
+resp, err := client.Object.Head(context.Background(), key, nil)
+contentType := resp.Header.Get("Content-Type")
+contentLength := resp.Header.Get("Content-Length")
+etag := resp.Header.Get("ETag")
+reqid := resp.Header.Get("X-Cos-Request-Id")
+
 ```
 
 | 参数名称   | 参数描述                                                     | 类型   |
@@ -332,7 +346,16 @@ type ObjectGetOptions struct {
     'X-Cos-Request-Id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
 }
 ```
+通过返回结果Response获取。
+```go
+resp, err := client.Object.Get(context.Background(), key, nil)
+body, _ := ioutil.ReadAll(resp.Body)
+contentType := resp.Header.Get("Content-Type")
+contentLength := resp.Header.Get("Content-Length")
+etag := resp.Header.Get("ETag")
+reqid := resp.Header.Get("X-Cos-Request-Id")
 
+```
 | 参数名称   | 参数描述                                                     | 类型       |
 | ---------- | ------------------------------------------------------------ | ---------- |
 | Body       | 下载文件的内容                                               | StreamBody |
@@ -358,11 +381,11 @@ f := strings.NewReader("test")
 _, err := client.Object.Put(context.Background(), name, f, nil)
 assert.Nil(s.T(), err, "Test Failed")
 
-soruceURL := fmt.Sprintf("%s/%s", client.BaseURL.BucketURL.Host, name)
+sourceURL := fmt.Sprintf("%s/%s", client.BaseURL.BucketURL.Host, name)
 dest := "example_dest"
 // 如果不是必要操作，建议上传文件时不要给单个文件设置权限，避免达到限制。若不设置默认继承桶的权限。
 // opt := &cos.ObjectCopyOptions{}
-_, _, err = client.Object.Copy(context.Background(), dest, soruceURL, nil)
+_, _, err = client.Object.Copy(context.Background(), dest, sourceURL, nil)
 if err != nil {
     panic(err)
 }
@@ -406,7 +429,7 @@ type ObjectCopyHeaderOptions struct {
 | XCosCopySourceIfUnmodifiedSince | 当 Object 在指定时间后未被修改，则执行操作，否则返回412。可与 XCosCopySourceIfMatch 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
 | XCosCopySourceIfMatch           | 当 Object 的 Etag 和给定一致时，则执行操作，否则返回412。可与 XCosCopySourceIfUnmodifiedSince 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
 | XCosCopySourceIfNoneMatch       | 当 Object 的 Etag 和给定不一致时，则执行操作，否则返回412。可与 XCosCopySourceIfModifiedSince 一起使用，与其他条件联合使用返回冲突 | string      | 否   |
-| XCosStorageClass                | 设置文件的存储类型，STANDARD、STANDARD_IA，默认值：STANDARD  | string      | 否   |
+| XCosStorageClass                | 设置文件的存储类型，STANDARD、STANDARD_IA、ARCHIVE，默认值：STANDARD  | string      | 否   |
 | XCosMetaXXX                     | 用户自定义的文件元信息                                       | http.Header | 否   |
 | XCosCopySource                  | 源文件 URL 路径，可以通过 versionid 子资源指定历史版本       | string      | 否   |
 
@@ -420,7 +443,6 @@ type ObjectCopyResult struct {
     LastModified string
 }
 ```
-
 | 参数名称     | 参数描述                   | 类型   |
 | ------------ | -------------------------- | ------ |
 | ETag         | 拷贝文件的 MD5 值          | string |
@@ -646,7 +668,7 @@ type Owner struct {
 - 分块上传对象： 初始化分块上传，上传分块，完成分块上传。
 - 删除已上传分块。
 
->分块上传对象，您还可以使用 [高级接口](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 上传（推荐）。
+>?分块上传对象，您还可以使用 [高级接口](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 上传（推荐）。
 
 ### <span id = "INIT_MULIT_UPLOAD"> 初始化分块上传 </span>
 
@@ -702,7 +724,6 @@ type ObjectPutHeaderOptions struct {
 
 | 参数名称             | 参数描述                                                     | 类型        | 必填 |
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
-| r                    | 上传文件的内容，可以为文件流或字节流，当 r 不是`bytes.Buffer/bytes.Reader/strings.Reader`时，必须指定`opt.ObjectPutHeaderOptions.ContentLength` | io.Reader   | 是   |
 | key                  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | string      | 是   |
 | XCosACL              | 设置文件  ACL，例如 private，public-read                       | string      | 否   |
 | XCosGrantFullControl | 赋予被授权者所有的权限。格式：id="[OwnerUin]"                | string      | 否   |
@@ -781,9 +802,12 @@ type ObjectUploadPartOptions struct {
 {
     'ETag': 'string'
 }
-
 ```
-
+通过返回结果Response获取。
+```go
+resp, err := client.Object.UploadPart(context.Background(), key, UploadID, 1, f, nil)
+etag := resp.Header.Get("ETag")
+```
 | 参数名称 | 参数描述          | 类型   |
 | -------- | ----------------- | ------ |
 | ETag     | 上传分块的 MD5 值 | string |

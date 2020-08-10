@@ -3,8 +3,8 @@
 >?
 >- 本文档以证书名称 `cloud.tencent.com` 为例，实际名称请以您申请的证书为准。
 >- 本文档以操作系统 Windows10 为例。由于操作系统的版本不同，详细操作步骤略有区别。
->- 安装 SSL 证书前，请您在 IIS 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。判断是否已开启 “443” 端口，可参考 [如何验证443端口是否开启？](https://intl.cloud.tencent.com/document/product/1007/36738)
->
+>- 安装 SSL 证书前，请您在 IIS 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
+
 
 ## 操作步骤
 
@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/160833eb7c00b81f4c1024bb0efc6d8d.png)
 4. 在弹出的 “导入证书” 窗口中，选择证书文件存放路径，输入密码，单击【确定】。如下图所示：
 >? 申请证书时若设置了私钥密码，输入密码时，请输入私钥密码。若申请证书时未设置私钥密码，输入密码时，请输入 IIS 文件夹中 keystorePass.txt 文件的密码。
->
+
 ![](https://main.qcloudimg.com/raw/32e710a2240601010ac82576ddd403ad.png)
 5. 选择网站下的站点名称，并单击右侧 “操作” 栏的【绑定】。如下图所示：
 ![](https://main.qcloudimg.com/raw/b2567cb66ba2315837e8c18adab2287c.png)
@@ -43,7 +43,7 @@
 1. 打开 IIS 服务管理器。
 2. 选择网站下的站点名称，双击打开 “URL 重写”。如下图所示：
 >!执行该步骤前请下载安装 [rewrite 模块](https://www.iis.net/downloads/microsoft/url-rewrite)。
->
+
 ![](https://main.qcloudimg.com/raw/3333c80eaa29a208346541cd55d298c9.png)
 3. 进入 “URL 重写” 页面，并单击右侧 “操作” 栏的【添加规则】。如下图所示：
 ![](https://main.qcloudimg.com/raw/089257c578a3afec51eda00fedd61ac6.png)

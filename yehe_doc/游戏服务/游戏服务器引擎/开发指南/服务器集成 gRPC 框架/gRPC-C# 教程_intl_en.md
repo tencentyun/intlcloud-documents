@@ -1,14 +1,14 @@
 
 
 ## Installing gRPC
-1. To use gRPC C#, you need to install .Net Core 3.1 SDK first. Taking CentOS as an example, the version must be above v7 or v8.
+1. To use gRPC C#, you need to install .Net Core 3.1 SDK first. Taking CentOS as an example, the version must be v7, v8 or above.
   - Add the signature key
 ```
 sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm```
  - Install .NET Core SDK
 ```
  sudo yum install dotnet-sdk-3.1```
-2. In addition, you can also use gRPC C# in the following operating environments/IDEs:
+2. In addition, you can also use gRPC C# in the following runtime environments/IDEs:
  - Windows: .NET Framework 4.5 or higher, Visual Studio 2013 or higher, Visual Studio Code.
  - Linux: Mono 4 or higher, Visual Studio Code.
  - macOS X: Mono 4 or higher, Visual Studio Code, Visual Studio for Mac.
@@ -28,7 +28,7 @@ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-
        dotnet run
        ```
          to automatically compile and run the service.
-     - After the program is compiled and run correctly, the project's dependent library, binary files, and .cs files created by compiling the `proto` file will be generated in the `csharp-demo/obj/Debug/netcoreapp3.1` folder.
+     - After the program is compiled and run correctly, the project's dependent libraries and binary files, and the .cs files created by compiling the `proto` file will be generated in the `csharp-demo/obj/Debug/netcoreapp3.1` folder.
      - The `proto` file is imported in `csharp-demo/csharpdemo.csproj`:
        ```
 <Protobuf Include="..\proto\csharp-demo\GameServerGrpcSdkService.proto" Link="GameServerGrpcSdkService.proto"/>
@@ -85,7 +85,7 @@ public static GseResponse ProcessReady(string[] logPath, int clientPort, int grp
         return GrpcClient.GseClient.ProcessReady(req, meta);
 }
 ```
-2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server once every minute. If the health check fails 3 consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to the process.
+2. After the process is ready, GSE will call the `OnHealthCheck` API to perform a health check on the game server every minute. If the health check fails three consecutive times, the process will be considered to be unhealthy, and no game server sessions will be assigned to it.
 ```
 public override Task<HealthCheckResponse> OnHealthCheck(HealthCheckRequest request, ServerCallContext context)
 {
@@ -129,7 +129,7 @@ public static GseResponse AcceptPlayerSession(string playerSessionId)
         return GrpcClient.GseClient.AcceptPlayerSession(req, meta);
 }
 ```
-6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player location in the game server session.
+6. After the game ends or the player exits, the game server will call the `RemovePlayerSession` API to remove the player, change the status of `playersession` to "Completed", and reserve the player slot in the game server session.
 ```
 public static GseResponse RemovePlayerSession(string playerSessionId)
 {

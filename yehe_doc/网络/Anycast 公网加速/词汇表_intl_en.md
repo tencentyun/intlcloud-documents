@@ -26,7 +26,7 @@ Border Gateway Protocol (BGP) is an autonomous system routing protocol that runs
 
 ### Unicast
 
-Unicast is a transfer method where a separate data channel needs to be established between client and media server. Each packet sent from one server can only be delivered to one client.
+Unicast is a transfer method where a separate data channel needs to be established between the client and media server. Each packet sent from one server can only be delivered to one client.
 
 
 
@@ -38,7 +38,7 @@ Broadcast means to broadcast the packets in an IP subnet, and all servers in the
 
 ### Anycast
 
-Anycast refers to the communication between a sender and a nearest group of receivers. When a unicast address is assigned to more than one API, packets sent to these APIs will be routed by the network to the "closest" destination API as measured by the routing protocol.
+Anycast refers to the communication between a sender and the nearest group of receivers. When a unicast address is assigned to more than one API, packets sent to these APIs will be routed by the network to the closest destination API as measured by the routing protocol.
 
 
 
