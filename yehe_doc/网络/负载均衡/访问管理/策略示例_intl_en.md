@@ -33,7 +33,7 @@
 ## Full Access Policy for CLB Service Under a Specified Tag
 - Grant a sub-account full access to the CLB service (creating instances, managing listeners, etc.) under a specified tag (tag key: tagkey; tag value: tagvalue).
 - CLB instances supports configuring tags and using tags for authentication.
-- CLB listeners current don't support configuring tags; instead, they require separate API permission granting.
+
 ```
 {
     "version":"2.0",
@@ -49,13 +49,6 @@
                     ]
                 }
             }
-        },
-        {
-            "effect":"allow",
-            "action":"*",
-            "resource":[
-                "qcs::clb:::listener/*"
-            ]
         }
     ]
 }  
