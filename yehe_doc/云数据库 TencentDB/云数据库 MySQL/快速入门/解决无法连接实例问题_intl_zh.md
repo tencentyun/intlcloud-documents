@@ -86,7 +86,7 @@ CVM 实例和 MySQL 实例均为 VPC 网络时，若 CVM 实例和 MySQL 实例�
 >- 如果实例列表的“网络”处，均显示为同一个“VPC”（保障同一个地域），则表示 CVM 和 MySQL 是同一 VPC。
 >
 - **查看 CVM 网络类型/同一 VPC** ：登录 [CVM 控制台](https://console.cloud.tencent.com/cvm/instance)，在实例列表查看“网络”。
-![](https://main.qcloudimg.com/raw/db3d2544281da931e791d6c2a8f24619.png)
+![](https://main.qcloudimg.com/raw/ce2550045bc286172f841f4fcceb0cc4.png)
 - **查看 MySQL 网络类型/同一 VPC**：登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表查看“网络”。
-![](https://main.qcloudimg.com/raw/cd3c1363c5c2e34141317206665eb77b.png)
+![](https://main.qcloudimg.com/raw/2cc5396f1b3f8af2028d75ae642a5126.png)
 

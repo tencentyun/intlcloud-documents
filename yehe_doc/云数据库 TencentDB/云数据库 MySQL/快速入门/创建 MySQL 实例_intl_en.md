@@ -1,8 +1,15 @@
-## Prerequisites
-To make a purchase, you need to verify your identity first. For more information, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
-## Purchasing at Official Website
-1. Log in at the [purchase page](https://buy.cloud.tencent.com/cdb), select various configuration items based on your actual needs, confirm that everything is correct, and click **Buy Now**.
+This document describes how to create a TencentDB for MySQL instance in the console.
+
+## Prerequisites
+You have registered a Tencent Cloud account and completed identity verification.
+- To register a Tencent Cloud account:
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to register a Tencent Cloud account</a></div>
+- To verify your identity:
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
+
+## Directions
+1. Log in at the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb), select various configuration items based on your actual needs, confirm that everything is correct, and click **Buy Now**.
  - **Billing mode**:
     - If the request volume of your business may fluctuate greatly and instantaneously, we recommend you choose pay-as-you-go billing.
  - **Region**: select the region where your TencentDB for MySQL instance is deployed. Tencent Cloud services in different regions cannot communicate with each other over the private network. Region cannot be modified after purchase.
@@ -16,11 +23,8 @@ To make a purchase, you need to verify your identity first. For more information
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each AZ.
 2. After making the payment, return to the instance list, wait for the instance status to become "uninitialized", and initialize the instance.
 
-## Purchasing Through API
-For more information on how to purchase a TencentDB instance through API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15871).
-
 
 ## Subsequent Steps
-- [Initializing MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128)
-- [Connecting to MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3130)
+Initialize the TencentDB for MySQL instance in the console as instructed in [Initializing MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
+
 
