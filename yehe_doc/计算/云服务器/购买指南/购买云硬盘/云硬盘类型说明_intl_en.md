@@ -14,7 +14,7 @@ The table below compares the performances of SSD and Premium Cloud Storage.
 
 The main difference between **SSD** and **Premium Cloud Storage** is the I/O requirement.
 
-**SSD is more suitable for I/O-intensive applications, including:
+SSD is more suitable for I/O-intensive applications, including:
 - High performance and high data reliability: Suitable for high-load, mission-critical business systems. SSD provides three-copy data redundancy and is equipped with comprehensive capabilities for data backup, snapshots, and data restoration within seconds.
 - Medium and large databases: Support medium and large relational database applications that contain tables with millions of rows, such as MySQL, Oracle, SQL Server, and MongoDB.
 - Large NoSQL: Support NoSQL businesses such as HBase and Cassandra.
