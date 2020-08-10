@@ -19,7 +19,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 
 #### 示例代码
 
-[//]: # ".cssg-snippet-put-bucket-versioning"
+[//]: # (.cssg-snippet-put-bucket-versioning)
 ```java
 String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
 PutBucketVersioningRequest putBucketVersioningRequest =
@@ -48,7 +48,7 @@ cosXmlService.putBucketVersionAsync(putBucketVersioningRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java) 查看。
 
 ## 查询版本控制
 
@@ -61,7 +61,7 @@ cosXmlService.putBucketVersionAsync(putBucketVersioningRequest,
 
 #### 示例代码
 
-[//]: # ".cssg-snippet-get-bucket-versioning"
+[//]: # (.cssg-snippet-get-bucket-versioning)
 ```java
 String bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
 GetBucketVersioningRequest getBucketVersioningRequest =
@@ -88,5 +88,5 @@ cosXmlService.getBucketVersioningAsync(getBucketVersioningRequest,
 });
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java)查看。
 

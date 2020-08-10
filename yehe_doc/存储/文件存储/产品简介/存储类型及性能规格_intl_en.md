@@ -12,7 +12,7 @@ CFS offers two types of file systems: standard and high-performance. Below are t
     <td>Standard</td>
     <td nowrap="nowrap">   
     <li>Elastic scaling of storage capacity based on the number of writes, up to 160 TB</li>
-    <li>Linear scaling of throughput based on file system capacity, up to 1.2 GB/s</li>
+    <li>Linear scaling of throughput based on file system capacity, up to 300 MB/s</li>
     <li>Up to 4K IOPS (4 KB random read/write)</li>
     </td>
     <td nowrap="nowrap"><li>Low costs<br><li>High volume</td>
