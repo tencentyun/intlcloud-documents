@@ -21,7 +21,7 @@
 获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger) 。
 
 ### 获取华为推送配置文件
-在华为推送平台应用概览页面，下载华为应用最新配置文件 agconnect-services.json 。
+登录华为开放平台，进入【我的项目】> 选择项目 > 【项目设置】，下载华为应用最新配置文件 agconnect-services.json 。
 
 ### 打开推送服务开关
 在华为推送平台打开推送服务开关，详情请参见 [打开推送服务开关](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service) 。
@@ -166,7 +166,7 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 ## 高级配置（可选）
 ### 华为通道抵达回执配置
 华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置，完成后，可在推送记录中查看华为推送通道的抵达数据。
-![](C:\Users\v_vxllin\Desktop\TAPD提单\移动推送 TPNS\移动推送 TPNS_2020-07-20_14-16-23\华为通道 V4 接入_intl_zh\c5247214fb095b300091bb62629dd57a.png)
+![](https://main.qcloudimg.com/raw/11c44dfc000045458a627e12b67ef611.png)
 
 ### 华为设备角标适配
 华为设备支持设置应用角标，需要开发者申请应用内角标设置权限和设置应用启动类，详情请参见 [角标适配指南](https://intl.cloud.tencent.com/zh/document/product/1024/35828#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97) 文档。
