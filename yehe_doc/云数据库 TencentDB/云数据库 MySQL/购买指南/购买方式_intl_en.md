@@ -17,7 +17,7 @@ To make a purchase, you need to verify your identity first. For more information
 2. After making the payment, return to the instance list, wait for the instance status to become "uninitialized", and initialize the instance.
 
 ## Purchasing Through API
-For more information on how to purchase a TencentDB instance through API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15871).
+For more information on how to purchase a TencentDB instance through API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15865).
 
 
 ## Subsequent Steps
