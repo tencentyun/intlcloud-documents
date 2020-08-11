@@ -8,7 +8,7 @@
 
 
 1. 登录云点播控制台，选择【媒资管理】>[【图片管理】](https://console.cloud.tencent.com/vod/pics)，默认进入“已上传”页面，单击【上传图片】，进入上传图片页面。
-![](https://main.qcloudimg.com/raw/58c13796cc8f2e5b9835b18d1546438b.png)
+![](https://main.qcloudimg.com/raw/5aaa381ddabb4fc177a341af85b00104.png)
 2. 选择【本地上传】，即直接将本地文件上传至控制台，单击【选择图片】，选择本地图片或将图片文件拖拽到待上传列表区域。
 >?
 >- 支持批量上传，单次最多可同时上传200张图片，选中的所有图片将会展示在待上传列表中。
