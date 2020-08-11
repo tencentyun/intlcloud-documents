@@ -49,16 +49,7 @@
 
 >?截图信息在控制台上仅展示100条，全部截图信息请单击信息栏右上角下载。
 
-## 视频发布
-1. 登录云点播控制台，选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，默认进入“已上传”页面。
-2. 单击目标视频文件所在行的【管理】，默认进入“基本信息”页面。
-3. 单击【视频发布】，进入“视频发布”页面，该页面展示包括原始视频及处理后视频的文件列表。
-	- **微信公众号视频链接发布**
-		您可以申请微信公众号视频链接进行视频发布，**仅支持 MP4 格式**，详细请参见 [微信公众号视频链接发布指南](https://intl.cloud.tencent.com/zh/document/product/266/2876)。
-	- **微信小程序视频发布**
-		支持 MP4、3GP、HLS 格式的小程序视频发布，发布通过后的视频可在小程序中播放。
-	
-	
+
 ## 超级播放器预览
 >!超级播放器仅支持对转自适应码流的视频进行预览。若您想快速生成符合超级播放器要求的视频，
 
@@ -66,14 +57,14 @@
 
 ### 参数信息
 **播放配置**：包含了超级播放器配置里的所有播放器配置，其中 default 和 basicDrmPreset 为默认配置，**除 default 播放配置以外，所有播放配置都需要主分发域名 [开启 Key 防盗链](https://console.cloud.tencent.com/vod/distribute-play/domain) 才可以使用**。
-![](https://main.qcloudimg.com/raw/460c56006dcf8cb1ee5e060cc5195ee8.png)
+![](https://main.qcloudimg.com/raw/f9af1b9e2a3be269271f2bbc9ba04c98.png)
 
 
 ### 配置项
 **配置项**：展示了选中播放配置里的配置内容。
 - 如果该 fileID 存在对应用于播放的转自适应码流名称和缩略图预览的雪碧图，则用户可以直接进行  Web 播放器和终端播放器预览。
 - 如果该 fileID 没有转出对应用于播放的转自适应码流名称或缩略图预览的雪碧图，则会在下方进行提示：
-![](https://main.qcloudimg.com/raw/ab0d7dbfdcd921284ef1853ba772ce62.png)
+![](https://main.qcloudimg.com/raw/5939befcbd87c048a10733b25673da89.png)
 
 ### 播放控制
 开启 Key 防盗链的域名播放配置：可以通过参数配置来控制**播放链接过期时长**、**试看时长**以及**最多可播放的 IP 数**：
@@ -85,7 +76,7 @@
 #### Web 播放器
 
 单击视频可以直接进行 Web 端预览，同时可以复制代码用于自定义嵌入网页。
-![](https://main.qcloudimg.com/raw/e8e3debcd109c9f7aeb7e76b96b51f08.png)
+![](https://main.qcloudimg.com/raw/36f46c83781ffa90bcf6d432dcbfa079.png)
 
 #### 终端播放器
 1. 下载视频云工具包 App。

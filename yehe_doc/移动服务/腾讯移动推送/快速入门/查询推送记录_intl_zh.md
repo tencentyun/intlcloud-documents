@@ -3,8 +3,8 @@
 
 
 ## 操作步骤
-1.登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，选择左侧菜单栏【消息推送】。
-2.进入推送记录页面，单击【查看详情】(当前仅保存一个月内的推送记录)。
+1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，选择左侧菜单栏【推送管理】>【推送任务】。
+2. 进入推送任务页面，单击【查看详情】（当前仅保存一个月内的推送记录）。
 ![](https://main.qcloudimg.com/raw/90cdb3f17a614ff43ab0fd8dbb3f5994.png)
 3.进入明细数据页面，数据以漏斗的形式展示推送下发各个过程中的数据。Android 端和 iOS 端数据漏斗不同。
 

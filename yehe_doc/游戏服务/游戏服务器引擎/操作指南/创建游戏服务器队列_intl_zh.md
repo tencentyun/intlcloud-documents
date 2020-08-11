@@ -4,7 +4,8 @@
 
 ## 前提条件
 
-已填写 [游戏服务器引擎申请表](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6)，并获得使用资格。
+- 已填写 [游戏服务器引擎申请表](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6)，并获得使用资格。
+- 已完成 [创建服务器舰队](https://intl.cloud.tencent.com/document/product/1055/36675)。
 
 
 ## 操作步骤
