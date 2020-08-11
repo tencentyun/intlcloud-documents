@@ -4,18 +4,18 @@ This document provides an overview of APIs and SDK code samples related to versi
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets the versioning configuration of a bucket |
 | [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
 
 ## SDK API References
 
-For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting Versioning
 
 #### API description
 
-This API (PUT Bucket versioning) is used to set versioning configuration on a bucket. Once enabled, versioning can only be suspended, but not disabled.
+This API is used to set the versioning configuration of a bucket. Once enabled, versioning can only be suspended, but not disabled.
 
 #### Sample code
 
@@ -24,7 +24,7 @@ This API (PUT Bucket versioning) is used to set versioning configuration on a bu
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 PutBucketVersioningRequest putBucketVersioningRequest =
         new PutBucketVersioningRequest(bucket);
-//true: enable versioning; false: suspend versioning
+// true: enable versioning; false: suspend versioning
 putBucketVersioningRequest.setEnableVersion(true);
 
 cosXmlService.putBucketVersionAsync(putBucketVersioningRequest,
@@ -48,16 +48,16 @@ cosXmlService.putBucketVersionAsync(putBucketVersioningRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
 
 ## Querying Versioning
 
 #### API description
 
-This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
+This API is used to query the versioning configuration of a bucket.
 
-- To get the versioning state of a bucket, you need to have READ permission on the bucket.
-- There are three versioning states: non-versioned, enabled, and suspended.
+- To get the versioning status of a bucket, you need to have read permission for the bucket.
+- There are three versioning statuses: not enabled, enabled, and suspended.
 
 #### Sample code
 
@@ -88,5 +88,5 @@ cosXmlService.getBucketVersioningAsync(getBucketVersioningRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketVersioning.java).
 

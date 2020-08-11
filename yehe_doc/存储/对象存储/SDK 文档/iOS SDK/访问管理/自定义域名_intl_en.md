@@ -2,20 +2,20 @@
 
 This document provides an overview of APIs and SDK code samples related to custom endpoints.
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain | Setting custom endpoint   | Sets a custom endpoint for a bucket |
-| GET Bucket domain | Querying custom endpoint   | Queries the custom endpoint of a bucket |
+| PUT Bucket domain | Setting a custom endpoint   | Sets a custom endpoint for a bucket |
+| GET Bucket domain | Querying a custom endpoint | Queries the custom endpoint of a bucket |
 
 ## SDK API References
 
-For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Custom Endpoint
+## Setting a Custom Endpoint
 
 #### API description
 
-This API (PUT Bucket domain) is used to configure a custom endpoint for a bucket.
+This API is used to configure a custom endpoint for a bucket.
 
 #### Sample code
 **Objective-C**
@@ -24,7 +24,7 @@ This API (PUT Bucket domain) is used to configure a custom endpoint for a bucket
 ```objective-c
 QCloudPutBucketDomainRequest *req = [QCloudPutBucketDomainRequest new];
 
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format: BucketName-APPID
 req.bucket = @"examplebucket-1250000000";
 
 QCloudDomainConfiguration *config = [QCloudDomainConfiguration new];
@@ -35,18 +35,18 @@ rule.status = QCloudDomainStatueEnabled;
 // Endpoint information
 rule.name = @"www.baidu.com";
 
-// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until forced verification of the endpoint ownership
+// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until verification of endpoint ownership is complete
 rule.replace = QCloudCOSDomainReplaceTypeTxt;
 rule.type = QCloudCOSDomainTypeRest;
 
-// An array of rule descriptions
-config.rule = [rule];
+// Array of rule descriptions
+config.rule = @[rule];
 
 // Endpoint configuration rule
 req.domain  = config;
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
-    // outputObject contains all HTTP response headers
+    // outputObject contains all the HTTP response headers
     NSDictionary* info = (NSDictionary *) outputObject;
     
 }];
@@ -61,7 +61,7 @@ req.domain  = config;
 ```swift
 let req = QCloudPutBucketDomainRequest.init();
 
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format: BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 
 let config = QCloudDomainConfiguration.init();
@@ -69,11 +69,11 @@ let rule = QCloudDomainRule.init();
 rule.status = .enabled;
 rule.name = "www.baidu.com";
 
-// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until forced verification of the endpoint ownership
+// Replace the existing configuration. If CNAME/TXT is specified as a valid value, the new configuration won’t be delivered until verification of endpoint ownership is complete
 rule.replace = .txt;
 rule.type = .rest;
 
-// An array of rule descriptions
+// Array of rule descriptions
 config.rules = [rule];
 
 // Endpoint configuration rule
@@ -92,18 +92,18 @@ QCloudCOSXMLService.defaultCOSXML().putBucketDomain(req);
 
 #### Error codes
 
-The following describes some frequent special errors that may occur when you make requests using this API.
+The following describes some common errors that may occur when making requests using this API.
 
 | Status Code                                 | Description                                                         |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict                      | The endpoint record already exists, and no forced overwrite is specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
-| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in Mainland China                           |
+| HTTP 409 Conflict | The endpoint record already exists, and forced overwrite is not specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in the Chinese mainland |
 
-## Querying Custom Endpoint
+## Querying a Custom Endpoint
 
 #### API description
 
-This API (GET Bucket domain) is used to query the custom endpoint of a bucket.
+This API is used to query the custom endpoint of a bucket.
 
 #### Sample code
 **Objective-C**
@@ -112,12 +112,12 @@ This API (GET Bucket domain) is used to query the custom endpoint of a bucket.
 ```objective-c
 QCloudGetBucketDomainRequest *getReq =  [QCloudGetBucketDomainRequest new];
 
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format: BucketName-APPID
 getReq.bucket = @"examplebucket-1250000000";
 
 [getReq setFinishBlock:^(QCloudDomainConfiguration * _Nonnull result,
                          NSError * _Nonnull error) {
-    // An array of rule descriptions
+    // Array of rule descriptions
     NSArray *rules = result.rules;
 }];
 [[QCloudCOSXMLService defaultCOSXML]GetBucketDomain:getReq];
@@ -132,7 +132,7 @@ getReq.bucket = @"examplebucket-1250000000";
 ```swift
 let req = QCloudGetBucketDomainRequest.init();
 
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format: BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 
 req.finishBlock = {(result,error) in
@@ -160,7 +160,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
 </thead>
 <tbody><tr>
 <td nowrap="nowrap">x-cos-domain-txt-verification</td>
-<td>Endpoint verification information, which appears as an MD5 checksum of a character string in the format of <code>cos[Region][BucketName-APPID][BucketCreateTime]</code>, where Region is the bucket location, and BucketCreateTime is the bucket creation time in GMT</td>
+<td>Endpoint verification information, which appears as an MD5 checksum of a character string in the format: <code>cos[Region][BucketName-APPID][BucketCreateTime]</code>, where `Region` is the bucket location, and `BucketCreateTime` is the time the bucket was created in GMT format</td>
 <td>String</td>
 </tr>
 </tbody></table>

@@ -6,23 +6,23 @@ This document provides an overview of APIs and SDK code samples related to cross
 | ------------------------------------------------------------ | -------------- | -------------------------- |
 | [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | Setting cross-region replication | Sets cross-region replication rules for a bucket |
 | [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | Querying cross-region replication | Queries the cross-region replication rules of a bucket |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules from a bucket |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | Deleting cross-region replication | Deletes the cross-region replication rules of a bucket |
 
 ## SDK API References
 
-For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting Cross-Region Replication
 
 #### API description
 
-This API (PUT Bucket replication) is used to set cross-region replication rules for a bucket.
+This API is used to set cross-region replication rules for a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-put-bucket-replication)
+[//]: # ".cssg-snippet-put-bucket-replication"
 ```java
-String bucket = "examplebucket-1250000000"; //Format: BucketName-APPID
+String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 PutBucketReplicationRequest putBucketReplicationRequest =
         new PutBucketReplicationRequest(bucket);
 
@@ -33,15 +33,15 @@ putBucketReplicationRequest.setReplicationConfigurationWithRole(ownerUin,
 
 PutBucketReplicationRequest.RuleStruct ruleStruct =
         new PutBucketReplicationRequest.RuleStruct();
-//Identifies the name of a specific rule
+// Identify the name of a specific rule
 ruleStruct.id = "replication_01";
 //Identify whether to enable the rule. true: enabled; false: disabled
 ruleStruct.isEnable = true;
-//Destination bucket region
+// Destination bucket region
 ruleStruct.region = "ap-beijing";
-//Destination bucket
+// Destination bucket
 ruleStruct.bucket = "destinationbucket-1250000000";
-//Prefix matching policy
+// Prefix matching policy
 ruleStruct.prefix = "dir/";
 putBucketReplicationRequest.setReplicationConfigurationWithRule(ruleStruct);
 
@@ -66,19 +66,19 @@ cosXmlService.putBucketReplicationAsync(putBucketReplicationRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
 ## Querying Cross-Region Replication
 
 #### API description
 
-This API (GET Bucket replication) is used to query the cross-region replication rules of a specified bucket.
+This API is used to query the cross-region replication rules of a specified bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-get-bucket-replication)
+[//]: # ".cssg-snippet-get-bucket-replication"
 ```java
-String bucket = "examplebucket-1250000000"; //Format: BucketName-APPID
+String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 GetBucketReplicationRequest getBucketReplicationRequest =
         new GetBucketReplicationRequest(bucket);
 
@@ -103,19 +103,19 @@ cosXmlService.getBucketReplicationAsync(getBucketReplicationRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
 ## Deleting Cross-Region Replication
 
 #### API description
 
-This API (DELETE Bucket replication) is used to delete the cross-region replication rules from a bucket.
+This API is used to delete the cross-region replication rules from a bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-delete-bucket-replication)
+[//]: # ".cssg-snippet-delete-bucket-replication"
 ```java
-String bucket = "examplebucket-1250000000"; //Format: BucketName-APPID
+String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 DeleteBucketReplicationRequest deleteBucketReplicationRequest =
         new DeleteBucketReplicationRequest(bucket);
 
@@ -140,5 +140,5 @@ cosXmlService.deleteBucketReplicationAsync(deleteBucketReplicationRequest,
         });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketReplication.java).
 
