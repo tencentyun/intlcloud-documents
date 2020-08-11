@@ -29,6 +29,8 @@ Direct Connect is billed as follows:
 ### Dedicated access port fee
 - **Initial installation fee:** one-time access fee of $2,500 USD.
 - **Resource occupation fee for dedicated access port:** monthly pay-as-you-go. The fee incurred in the current month will be charged from your account between 8 and 10 AM on the first day of the next month.
+- **Billing time**: the billing starts on the day when the connection is in "operating" status, and stops when the connection is deleted on the [Direct Connect Console](https://console.cloud.tencent.com/dc/dc). The connection used within one month will be billed on the basis of valid days (number of billable days in the current month / number of calendar days in the current month).
+
 <table>
 <tr><th>Billable Item</th><th>Access Port Specification</th><th>Tencent Cloud International (USD/month)</th></tr>
 <tr><td rowspan=3>Resource occupation fee (Mainland China)</td><td>1 GbE or below </td><td>90</td></tr>
