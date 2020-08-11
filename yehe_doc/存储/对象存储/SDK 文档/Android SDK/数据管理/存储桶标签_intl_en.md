@@ -10,17 +10,17 @@ This document provides an overview of APIs and SDK code samples related to bucke
 
 ## SDK API References
 
-For parameters and method descriptions of all SDK APIs, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, see [SDK API References](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
 ## Setting Bucket Tags
 
 #### API description
 
-This API (PUT Bucket tagging ) is used to set tags for an existing bucket.
+This API is used to set tags for an existing bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-put-bucket-tagging)
+[//]: # ".cssg-snippet-put-bucket-tagging"
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 PutBucketTaggingRequest putBucketTaggingRequest =
@@ -50,17 +50,17 @@ cosXmlService.putBucketTaggingAsync(putBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 
 ## Querying Bucket Tags
 
 #### API description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-get-bucket-tagging)
+[//]: # ".cssg-snippet-get-bucket-tagging"
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 GetBucketTaggingRequest getBucketTaggingRequest =
@@ -87,17 +87,17 @@ cosXmlService.getBucketTaggingAsync(getBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 
 ## Deleting Bucket Tags
 
 #### API description
 
-This API (DELETE Bucket tagging) is used to delete the existing tags from a specified bucket.
+This API is used to delete the existing tags of a specified bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-delete-bucket-tagging)
+[//]: # ".cssg-snippet-delete-bucket-tagging"
 ```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
 DeleteBucketTaggingRequest deleteBucketTaggingRequest =
@@ -125,5 +125,5 @@ cosXmlService.deleteBucketTaggingAsync(deleteBucketTaggingRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketTagging.java).
 
