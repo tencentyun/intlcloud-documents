@@ -2,10 +2,10 @@
 In application scenarios such as remote education, show live streaming, video conferencing, remote loss assessment, financial audiovisual recording, and online healthcare, the entire video call or interactive live streaming process needs to be recorded and retained for future needs like evidence gathering, quality control, audit, storage, and playback.
 
 The on-cloud recording feature of TRTC can record the audio and video streams of each user in the room into a separate file:
-![](https://main.qcloudimg.com/raw/b96dd835182d3546f8d13abb290e619e.gif)
+![](https://main.qcloudimg.com/raw/7820cdafe40fabc38653bc53795412d2.png)
 
 Multiple audio/video streams can also be first mixed by [On-cloud Stream Mix](https://intl.cloud.tencent.com/document/product/647/34618), and then the mixed audio/video streams can be recorded as a file:
-![](https://main.qcloudimg.com/raw/be3fe2b57b07fb9cabe62e108f5cbe69.gif)
+![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
 
 ## Console Guide
 
@@ -18,7 +18,7 @@ Multiple audio/video streams can also be first mixed by [On-cloud Stream Mix](ht
 <span id="recordType"></span>
 ### Selecting recording mode
 The on-cloud recording service of TRTC supports two recording modes: "global auto-recording" and "recording by user":
-![](https://main.qcloudimg.com/raw/cfa54cf045cd8d6ed266c5022ac4eb1e.png)
+![](https://main.qcloudimg.com/raw/d8084b7aa472b95ec21448703e4b6a49.png)
 
 - **Global auto-recording**
 The audio and video upstreams of each user in each TRTC room will be automatically recorded. The start and stop of the recording task are automatic, so you don't need to care about it. This option is relatively simple and easy to use. For specific usage, please see [Scheme 1. Global auto-recording](#autoRecord).
@@ -73,8 +73,6 @@ You can add new subapplications in the [VOD Console](https://console.cloud.tence
 ### Setting recording callback
 If you need to receive [storage notifications](#callback) for new files in real time, you can enter the address for your server to receive recording file callback, which must be an HTTP or HTTPS address. When a new recording file is generated, Tencent Cloud will send a notification to your server at this address.
 
-![](https://main.qcloudimg.com/raw/34588c52d3a93690874fdb760c771a84.png)
-
 For detailed recording callback receipt and interpretation, please see [Receiving recording file](#callback) below.
 
 <span id="startAndStop"></span>
@@ -115,7 +113,7 @@ The operation is controlled by your server but not subject to the client platfor
 <span id="recordSDKAPI"></span>
 ### Scheme 2. Recording by user (SDK API)
 
-![](https://main.qcloudimg.com/raw/83b8e1790265a58bede293934802d000.gif)
+![](https://main.qcloudimg.com/raw/e3d81ef76c64d2fb6631d98d22bfb0dc.png)
 
 - **Settings in the console**
 To use this recording scheme, please select "Specified User Recording" when [selecting the recording mode](#recordType).
@@ -151,7 +149,7 @@ Recording controls can be initiated on [iOS](http://doc.qcloudtrtc.com/group__TR
 <span id="recordRESTAPI"></span>
 ### Scheme 3. Recording by user (RESTful API)
 
-![](https://main.qcloudimg.com/raw/f0d7c94b98e4e7839c2e360f1aeea718.gif)
+![](https://main.qcloudimg.com/raw/71b4b6705cee61000660c13c2a0fe595.png)
 
 >? TRTC's server provides a pair of RESTful APIs ([StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) and [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269)) to implement three features of on-cloud stream mix, on-cloud recording, and relayed live streaming:
 >- On-cloud stream mix: the video image layout during stream mix can be controlled through the `LayoutParams` parameter.
