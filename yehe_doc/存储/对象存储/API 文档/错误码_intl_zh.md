@@ -122,7 +122,7 @@ Content-Type：application/xml
 | 403 Forbidden                       | NoProcessAuthority                    | 没有处理图片的权限                                           |
 | 403 Forbidden                       | RequestTimeTooSkewed                  | 本地时间与服务器时间相差过大，超过15分钟                     |
 | 403 Forbidden                       | Request has expired                   | 发起请求的时间超过了签名的有效时间，或者本地系统时间和所在时区的时间不一致。详情请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687) |
-| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致              |
+| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致。请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。           |
 | 403 Forbidden                       | UserNotSourceBucketOwner              | 当前用户不是源存储桶的拥有者                                 |
 | 403 Forbidden                       | UserNotTargetBucketOwner              | 当前用户不是目标存储桶的拥有者                               |
 | 404 Not Found                       | InventoryConfigurationNotFoundError   | 清单配置未找到                                               |

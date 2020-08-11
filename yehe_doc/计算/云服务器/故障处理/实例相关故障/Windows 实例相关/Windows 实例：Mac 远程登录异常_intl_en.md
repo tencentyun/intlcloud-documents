@@ -2,9 +2,11 @@ This document describes common problems you may encounter when logging in to Win
 ## Problems
 
 - When logging in to Windows CVM through Microsoft Remote Desktop, you get a “The certificate couldn't be verified back to a root certificate” prompt.
-<img src="https://main.qcloudimg.com/raw/070b9c862d6928988768b266461bc816.png" height="300" width="550" />
+
+<img src="https://main.qcloudimg.com/raw/070b9c862d6928988768b266461bc816.png" data-nonescope="true" />
+
 - When using Remote Desktop Connection on Mac, you get a “Remote Desktop Connection cannot verify the identity of the computer that you want to connect to” prompt.
-<img src="https://main.qcloudimg.com/raw/32f0444a47b2e4c90f6657ec9686afcb.png" height="180" width="550" />
+
 
 ## Troubleshooting
 > The following operations take Windows Server 2016 as an example.

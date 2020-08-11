@@ -39,11 +39,15 @@
 
 **云产品日志**
 
-| 云产品名称       | 推荐接入方式                                                 |
-| ---------------- | ------------------------------------------------------------ |
-| 云服务器 CVM     | 安装配置 LogListener                                         |
-| 标准直播 LVB     | 控制台配置，接入指引 |
-| 无服务云函数 SCF | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/614/32936) |
-| 容器服务 TKE     | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/614/32937) |
-| 网络流日志 FL    | 控制台配置                                                   |
+| 云产品名称               | 推荐接入方式                                                 |
+| ------------------------ | ------------------------------------------------------------ |
+| 云服务器 CVM             | 安装配置 LogListener，[采集指引](https://intl.cloud.tencent.com/document/product/614/17414) |
+| 容器服务 TKE             | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/457/32419) |
+| 内容分发网络CDN          | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/228/35380) |
+| 负载均衡CLB              | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/214/35063) |
+| 云函数 SCF               | 控制台配置。 |
+| 标准直播 LVB             | 控制台配置。|
+| 网络流日志 FL            | 控制台配置，[接入指引](https://intl.cloud.tencent.com/document/product/682/18966) |
+| 智能钛机器学习平台TI-ONE | 控制台配置。 |
+| 游戏联机对战引擎MGOBE    | 控制台配置。 |                                              |
 

@@ -24,10 +24,10 @@ Layer-7 CLB can forward requests from different domain names and URLs to differe
 2. If you configure a full domain name in the forwarding rule and multiple URLs in the forwarding group, domain name+URLs will be used to access the service.
 3. If you configure a wildcard domain name in the forwarding rule and multiple URLs in the forwarding group, you will access the service through the matching of requested domain name and URLs. To have different domain names point to the same URL, you can use this method for configuration. Taking `example.qcould.com` as an example, the format is as follows:
  - `example.qcloud.com` exactly matches the `example.qcloud.com` domain name.
- - `\*.qcloud.com` matches all domain names ending with `qcloud.com`.
- - `example.qcloud.\*` matches all domain names beginning with `example.qcloud`.
+ - `*.qcloud.com` matches all domain names ending with `qcloud.com`.
+ - `example.qcloud.*` matches all domain names beginning with `example.qcloud`.
 4. If you configure a domain name in the forwarding rule and a URL for fuzzy matching in the forwarding group, you can initiate full matching by using prefix matches and adding a suffixed wildcard `$`.
-For example, if you configure `URL ~* \.(gif|jpg|bmp)$`. in the forwarding group, hopefully it will match any files that end with gif, jpg, or bmp.
+For example, if you configure `URL ~*.(gif|jpg|bmp)$`. in the forwarding group, hopefully it will match any files that end with gif, jpg, or bmp.
 
 #### <span id="default" />Default domain name policy for forwarded domain name
 If a client request cannot be matched with any domain name of this listener, CLB will forward the request to the default domain name (`Default Server`) to make the default rule controllable. Only one default domain name can be configured under one listener.

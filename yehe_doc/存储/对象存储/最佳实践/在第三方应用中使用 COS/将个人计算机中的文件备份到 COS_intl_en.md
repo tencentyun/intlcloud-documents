@@ -60,7 +60,7 @@ To get a commercial license of Arq® Backup, each user needs to pay $49.99. This
 10. In the pop-up window, set your encryption password. Enter it twice and click **OK**. **Please keep your password in mind, otherwise, you may not be able to restore your files from backup.**
     ![](https://main.qcloudimg.com/raw/43213532f56da02450b1ea52321457c6.png)
 11. (Optional) You may configure a backup schedule.
-    ![](https://main.qcloudimg.com/raw/70bf92401110bce7b3b49af3017c189b.png)
+    ![](https://main.qcloudimg.com/raw/92a00ca49471007336c34471bec8fa6d.png)
 12. Click **Save**, and then **Back Up Now** to start the backup.
     ![](https://main.qcloudimg.com/raw/65093effc29b66385f8ee20f293cde01.png)
 
