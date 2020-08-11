@@ -23,8 +23,8 @@ This document describes how to query push records (such as message ID, title, co
  - Vendor channel
    - Attempted: the total number of devices with the notification bar enabled and using vendor channels out of the push target devices.
    - Sent: the number of devices to which the message was pushed through the vendor channel and the vendor server returns a success.
-   - Clicked: the number of devices on which the message was clicked.
    - Reached: the number of devices that received the message
+   - Clicked: the number of devices on which the message was clicked.
    - Reach rate: reached/sent.
    - Click rate: the number of devices on which the message was clicked/the number of devices which the notification reached
    
