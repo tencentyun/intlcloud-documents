@@ -156,7 +156,67 @@ x-cos-request-id: NWU5MDNkZDVfNjZjODJhMDlfMTY2MDdfMThm****
 [Object Content]
 ```
 
-#### Example 3. Using server-side encryption SSE-COS
+#### Example 3. Specifying query conditions using request headers and returning a HTTP status code 304 (Not Modified)
+
+#### Request
+
+```shell
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 29 Jul 2020 06:51:49 GMT
+If-None-Match: "ee8de918d05640145b18f70f4c3aa602"
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1596005509;1596012709&q-key-time=1596005509;1596012709&q-header-list=date;host;if-none-match&q-url-param-list=&q-signature=20e39095b9f22ae1279bec2a3375b527c32d****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 304 Not Modified
+Content-Type: image/jpeg
+Content-Length: 0
+Connection: close
+Date: Wed, 29 Jul 2020 06:51:49 GMT
+ETag: "ee8de918d05640145b18f70f4c3aa602"
+Server: tencent-cos
+x-cos-hash-crc64ecma: 16749565679157681890
+x-cos-request-id: NWYyMTFjODVfOGZiNzJhMDlfNDcxZjZfZDY2****
+```
+
+#### Example 4. Specifying query conditions using request headers and returning a HTTP status code 412 (Precondition Failed)
+
+#### Request
+
+```shell
+GET /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 29 Jul 2020 06:51:50 GMT
+If-Match: "aa488bb80185a6be87f4a7b936a80752"
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1596005510;1596012710&q-key-time=1596005510;1596012710&q-header-list=date;host;if-match&q-url-param-list=&q-signature=1437a0d094c4e0f8e26909d35b2cca83dcbf****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 412 Precondition Failed
+Content-Type: application/xml
+Content-Length: 480
+Connection: close
+Date: Wed, 29 Jul 2020 06:51:50 GMT
+Server: tencent-cos
+x-cos-request-id: NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****
+<?xml version='1.0' encoding='utf-8' ?>
+<Error>
+	<Code>PreconditionFailed</Code>
+	<Message>Precondition not match.</Message>
+	<Resource>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Resource>
+	<RequestId>NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****</RequestId>
+	<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTdjMDczODYwZjM5YTU3ZmZmOWI5MmY4NjkxY2I3MGNiNjkyOWZiNzUxZjg5MGY2OWU4NmI0YWMwNTlhNTExYWU=</TraceId>
+</Error>
+```
+
+#### Example 5. Using server-side encryption SSE-COS
 
 #### Request
 
@@ -187,7 +247,7 @@ x-cos-server-side-encryption: AES256
 [Object Content]
 ```
 
-#### Example 4. Using server-side encryption SSE-KMS
+#### Example 6. Using server-side encryption SSE-KMS
 
 #### Request
 
@@ -219,7 +279,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 [Object Content]
 ```
 
-#### Example 5. Using server-side encryption SSE-C
+#### Example 7. Using server-side encryption SSE-C
 
 #### Request
 
@@ -254,7 +314,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 [Object Content]
 ```
 
-#### Example 6. Downloading the latest version of an object (with versioning enabled)
+#### Example 8. Downloading the latest version of an object (with versioning enabled)
 
 #### Request
 
@@ -285,7 +345,7 @@ x-cos-version-id: MTg0NDUxNTc1NTE5MTc1NjM4MDA
 [Object Content Version 2]
 ```
 
-#### Example 7. Downloading a specific version of an object (with versioning enabled)
+#### Example 9. Downloading a specific version of an object (with versioning enabled)
 
 #### Request
 
@@ -316,7 +376,7 @@ x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 [Object Content]
 ```
 
-#### Example 8. Downloading partial content by specifying the Range request header
+#### Example 10. Downloading partial content by specifying the Range request header
 
 #### Request
 
@@ -348,7 +408,7 @@ x-cos-request-id: NWU5MDY3NjVfY2VjODJhMDlfOWVlZl8xNmMy****
 Content
 ```
 
-#### Example 9. Downloading an archived object that has not been restored
+#### Example 11. Downloading an archived object that has not been restored
 
 #### Request
 
