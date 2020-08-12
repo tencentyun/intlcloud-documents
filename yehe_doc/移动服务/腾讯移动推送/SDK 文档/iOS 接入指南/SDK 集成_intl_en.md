@@ -1,9 +1,9 @@
 ## Overview
 This document provides sample code for integrating with the SDK and launching TPNS. (SDK version: v1.0+)
 >!If you are migrating from the [XG Platform](https://xg.qq.com) to TPNS, please be sure to:
-1. [Unregister XG platform service API](#zhuxiao).
-2. Implement corresponding changes based on the application integration conditions and then return to this document.
-3. Complete the integration as described below.
+>1. [Unregister XG platform service API](#zhuxiao).
+>2. Implement corresponding changes based on the application integration conditions and then return to this document.
+>3. Complete the integration as described below.
 
 ## SDK Composition
 - doc folder: TPNS SDK for iOS development guide.
