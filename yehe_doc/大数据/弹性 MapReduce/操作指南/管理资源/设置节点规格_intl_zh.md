@@ -7,4 +7,4 @@
 ![](https://main.qcloudimg.com/raw/bee79bdccb2bd86d061d1d7f5c712549.png)
 3. CORE 节点初始默认规格为集群创建时所选规格，您可以通过添加或删除来调整默认规格，以便用于正常的扩容。
 4. TASK 节点和 ROUTER 节点无初始默认规格，请根据页面提示添加。
-![](https://main.qcloudimg.com/raw/fb5874c67ccafdf8311d980139f8f44d.png)
+![](https://main.qcloudimg.com/raw/ff26c5cdaef9e4407cbbb82715df6809.png)
