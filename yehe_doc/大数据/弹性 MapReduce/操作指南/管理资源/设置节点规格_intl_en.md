@@ -7,4 +7,4 @@ Node specification management is used to set hardware specifications when adding
 ![](https://main.qcloudimg.com/raw/bee79bdccb2bd86d061d1d7f5c712549.png)
 3. The default initial specification of the core nodes is the specification selected when the cluster is created. You can set or delete the default one for normal scaling.
 4. The task and router nodes have no default specification. Please add the specification as prompted.
-![](https://main.qcloudimg.com/raw/fb5874c67ccafdf8311d980139f8f44d.png)
+![](https://main.qcloudimg.com/raw/ff26c5cdaef9e4407cbbb82715df6809.png)

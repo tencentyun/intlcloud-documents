@@ -139,6 +139,7 @@
 | [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | -    |  -  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)    | 服务级   | &#10003;  | -    |   &#10003;   |	-  |		
 | [媒体直播](https://intl.cloud.tencent.com/document/product/1048)    | 操作级   | &#10003;  | -    |   -   |	-  |	
+| [媒体包装](https://intl.cloud.tencent.com/document/product/1063)    | 操作级   | &#10003;  | -    |   -   |	-  |	
 
 ## 云智大数据平台
 
