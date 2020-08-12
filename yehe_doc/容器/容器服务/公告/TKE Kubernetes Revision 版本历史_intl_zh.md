@@ -5,6 +5,11 @@
 </thead>
 <tbody>
 <tr>
+    <td>2020-07-28</td>	
+    <td>v1.16.3-tke.10</td>	
+    <td><ul class="params"><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>，避免 CLB 健康检查导致 kube-apiserver 产生大量 TLS 握手错误日志的问题（kube-apiserver）。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>，修复 KUBERNETES_SERVICE_HOST 环境变量缺失的问题（kubelet）。</li></ul></td>
+</tr>
+<tr>
     <td>2020-06-17</td>	
     <td>v1.16.3-tke.9</td>	
     <td>临时修复 AWS 问题 <a href="https://github.com/kubernetes/kubernetes/issues/92162">pr92162</a>。不再注册 AWS Credential Provider，避免由它引起的节点启动变慢问题。</td>
@@ -58,6 +63,11 @@
 </thead>
 <tbody>
 <tr>
+    <td>2020-07-28</td>	
+    <td>v1.14.3-tke.15</td>	
+    <td><ul class="params"><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/76518">pr76518</a> 及 <a href="https://github.com/kubernetes/kubernetes/pull/82514">pr82514</a>，限制 http 及 exec probe 的返回大小，避免占用大量节点内存（kubelet）。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>，避免 CLB 健康检查导致 kube-apiserver 产生大量 TLS 握手错误日志的问题（kube-apiserver）。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>，修复 KUBERNETES_SERVICE_HOST 环境变量缺失的问题（kubelet）。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/77475">pr77475</a>，修复 Job 数量超过500时，Cronjob 无法调度的问题（kube-controller-manager）。</li></ul></td>
+</tr>
+<tr>
     <td>2020-06-10</td>	
     <td>v1.14.3-tke.14</td>	
     <td><ul class="params"><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/85027">pr85027</a>，修复滚动更新时 HPA 错误计算实例个数的问题。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/79708">pr79708</a>，使用 spec.replicas 来计算 HPA 当前副本数量。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91252">pr91252</a>，忽略其他组件产生的 Pod Condition 更新，以免进行不必要的调度。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/89794">pr89794</a>，清理 kube-controller-manager 的错误日志，避免 CVE-2020-8555 的 Half-Blind SSRF 攻击。</li></ul></td>
@@ -75,7 +85,7 @@
 <tr>
     <td>2020-04-14</td>
     <td>v1.14.3-tke.11</td>
-    <td><ul class="params"><li>合并<a href="https://github.com/kubernetes/kubernetes/pull/75442"> pr75442</a>，将 bandwidth 单位从 Kb 修正为 b。</li><li>合并<a href="https://github.com/kubernetes/kubernetes/pull/87669"> pr87669</a>，修复 CVE-2020-8552：apiserver DoS 攻击问题。</li> <li>tke 支持感知单个 node 可挂载 qcloudcbs 的最大数量（1.12 版本及以上为 maxAttachCount-2，1.10 版本目前默认为18）。</li></ul></td>
+    <td><ul class="params"><li>合并<a href="https://github.com/kubernetes/kubernetes/pull/75442"> pr75442</a>，将 bandwidth 单位从 Kb 修正为 b。</li><li>合并<a href="https://github.com/kubernetes/kubernetes/pull/86583"> pr87669</a>，修复 CVE-2020-8552：apiserver DoS 攻击问题。</li> <li>tke 支持感知单个 node 可挂载 qcloudcbs 的最大数量（1.12 版本及以上为 maxAttachCount-2，1.10 版本目前默认为18）。</li></ul></td>
 </tr>
 <tr>
     <td>2020-04-14</td>
@@ -131,6 +141,11 @@
 <tr><th width="13%">时间</th><th width="13%">版本</th><th width="74%">更新内容</th></tr>
 </thead>
 <tbody>
+<tr>
+    <td>2020-07-28</td>	
+    <td>v1.12.4-tke.22</td>	
+    <td><ul class="params"><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>，避免 CLB 健康检查导致 kube-apiserver 产生大量 TLS 握手错误日志的问题（kube-apiserver）。</li><li>合并 <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>，修复 KUBERNETES_SERVICE_HOST 环境变量缺失的问题（kubelet）。</li></ul></td>
+</tr>
 <tr>
     <td>2020-06-10</td>	
     <td>v1.12.4-tke.21</td>	
@@ -377,6 +392,8 @@
 	<td>当 kubelet 更新状态超时，controller-manager 对 kubelet 端口做下探测。</td>
 </tr>
 </tbody></table>
+
+
 ## TKE kubernetes 1.7.8 revisions
 
 <table>

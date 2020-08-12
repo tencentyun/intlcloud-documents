@@ -26,7 +26,7 @@ SSD cloud disks are used. The disk capacity is 100 GB–6 TB on a single node.
 The number of nodes is limited to 2–50. As an ES cluster typically consists of nodes deployed in a distributed manner, a master node is required to manage it. In order to prevent the risk of split brain caused by possible node failures, you are recommended to select at least three nodes for a cluster.
 
 **Configuration selection** 
-See [Best Practice - Suggestions on Node Type and Storage Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
+See [Evaluation of Cluster Specification and Capacity Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
 
 ## Network Access
 

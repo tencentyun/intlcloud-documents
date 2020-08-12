@@ -117,7 +117,59 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4NDBfNjFjODJhMDlfMzY2NjVfMjNi****
 ```
 
-#### Example 2. Using server-side encryption SSE-COS
+#### Example 2. Specifying query conditions using request headers and returning a HTTP status code 304 (Not Modified)
+
+#### Request
+
+```shell
+HEAD /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 29 Jul 2020 06:51:49 GMT
+If-None-Match: "ee8de918d05640145b18f70f4c3aa602"
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1596005509;1596012709&q-key-time=1596005509;1596012709&q-header-list=date;host;if-none-match&q-url-param-list=&q-signature=9d087f05c259ca271efe91fc780cdced75c6****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 304 Not Modified
+Content-Type: application/xml
+Content-Length: 0
+Connection: close
+Date: Wed, 29 Jul 2020 06:51:49 GMT
+Server: tencent-cos
+x-cos-request-id: NWYyMTFjODVfZDNjODJhMDlfMWU1MWVfOTUy****
+x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3NGM=
+```
+
+#### Example 3. Specifying query conditions using request headers and returning a HTTP status code 412 (Precondition Failed)
+
+#### Request
+
+```shell
+HEAD /exampleobject HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 29 Jul 2020 06:51:50 GMT
+If-Match: "aa488bb80185a6be87f4a7b936a80752"
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1596005510;1596012710&q-key-time=1596005510;1596012710&q-header-list=date;host;if-match&q-url-param-list=&q-signature=38afe94fc61ca0b3aa763e00b23fd90ac23e****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 412 Precondition Failed
+Content-Type: application/xml
+Content-Length: 0
+Connection: close
+Date: Wed, 29 Jul 2020 06:51:50 GMT
+Server: tencent-cos
+x-cos-request-id: NWYyMTFjODZfMzBjMDJhMDlfMmU3ZF9kYTE4****
+x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZDRkOWFlZjczOWExNjZmY2RiNjhjNGIwZWQ3YjYwMzQ=
+```
+
+#### Example 4. Using server-side encryption SSE-COS
 
 #### Request
 
@@ -145,7 +197,7 @@ x-cos-request-id: NWU5MGI4NmJfNmRjMDJhMDlfZGQwNl8xZmE4****
 x-cos-server-side-encryption: AES256
 ```
 
-#### Example 3. Using server-side encryption SSE-KMS
+#### Example 5. Using server-side encryption SSE-KMS
 
 #### Request
 
@@ -174,7 +226,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Sample 4. Using Server-side Encryption SSE-C
+#### Example 6. Using Server-side Encryption SSE-C
 
 #### Request
 
@@ -207,7 +259,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
 ```
 
-#### Example 5. Requesting the latest version of an object (with versioning enabled)
+#### Example 7. Requesting the latest version of an object (with versioning enabled)
 
 #### Request
 
@@ -237,7 +289,7 @@ x-cos-version-id: MTg0NDUxNTc1MzA5NjQ2ODI5MTg
 
 ```
 
-#### Example 6. Requesting a specific version of an object (with versioning enabled)
+#### Example 8. Requesting a specific version of an object (with versioning enabled)
 
 #### Request
 
@@ -266,7 +318,7 @@ x-cos-request-id: NWU5MGI4OThfN2RiNDBiMDlfMTk1MTBfMWZj****
 x-cos-version-id: MTg0NDUxNTc1MzA5NzU4ODg1Mjg
 ```
 
-#### Example 7. Requesting an archived object that is being restored
+#### Example 9. Requesting an archived object that is being restored
 
 #### Request
 
@@ -295,7 +347,7 @@ x-cos-restore-status: tier="expedited"; request-date="Fri, 27 Dec 2019 08:19:29 
 x-cos-storage-class: ARCHIVE
 ```
 
-#### Example 8. Requesting an archived object which has been restored
+#### Example 10. Requesting an archived object which has been restored
 
 #### Request
 

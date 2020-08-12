@@ -16,7 +16,7 @@ table th:first-of-type {
 | Cloud Port Type | Specifies the type of the port for bridging the connection with the Tencent Cloud access device. | Select the port type based on your bandwidth. You can consult with your Direct Connect provider or Tencent Cloud's architect or after-sales manager. |
 | Your IDC Location | Detailed address. | The floor of the IDC should be provided in the detailed address. |
 | Bandwidth | 2 - 100,000 Mbps | - |
-| ISP Circuit Number | The unique circuit number provided by the ISP for line identification and protection. | - |
+| Carrier Circuit ID | The unique circuit ID provided by the direct connect provider for line identification and protection. | 
 | Redundant Connection | Use a second access device for the redundant connection instead of having both connections plugged in to the same device. That way, he first access device and the second one can form a mast/slave configuration to avoid single point of failure. | The purpose of setting master/slave connections is to avoid two lines connecting to the same access point. The master/slave relation of dedicated tunnels must be applied for on the dedicated tunnel product page. |
 | Applicant Name | The name of the contact person for Direct Connect. | - |
 | Applicant Mobile Number | The mobile number of the contact person for Direct Connect. | - |

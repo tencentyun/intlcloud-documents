@@ -53,7 +53,7 @@ The suffix request format should be noted that the path used when signing should
 For uploads through the WeChat Mini Program, the wx.uploadFile API is used. As it only supports the POST method, the current scheme uses the [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) API. Below are the steps:
 
 ```js
-var CosAuth = require('./cos-auth'); //  COS signature method https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js
+var CosAuth = require('./cos-auth'); // Here, reference the cos-auth.js, which is downloaded at https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js 
 
 var Bucket = 'examplebucket-1250000000';
 var Region = 'ap-shanghai';

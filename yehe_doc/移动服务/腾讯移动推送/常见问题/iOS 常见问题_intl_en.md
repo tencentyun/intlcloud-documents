@@ -136,3 +136,9 @@ Below is a sample:
 ```
 
 
+### What should I do when the App prompts an error "Crash: you can't call -sendResponse: twice nor after encoding it"?
+This error occurs if your APP integrates TPNS iOS SDK (1.2.7.2 - 1.2.5.4), uses the **Recall** feature of TPNS, and implements the following system callback:
+```
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+```
+In this case, **override** the sent messages to process them.

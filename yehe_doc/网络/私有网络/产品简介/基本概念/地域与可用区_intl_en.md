@@ -48,6 +48,9 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
 	</tr>
 	<tr>
+		<td>South China (Qingyuan)<br> ap-qingyuan</td>
+		<td>Qingyuan Zone 1<br> ap-qingyuan-1</td>
+	<tr>
 		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
