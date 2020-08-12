@@ -59,5 +59,5 @@
 </tr>
 </tbody></table>
 
->? Parameter templates can be imported by security groups. After importing parameter template features, security groups will convert the IP addresses and ports in the parameter template into multiple security group rules. Note that the total number of rules in each security group after the conversion cannot exceed 2,000.
+>?If the parameter template is referenced to by a security group, the IP/port in the parameter template will be converted to a maximum of 2,000 security group rules.
 
