@@ -6,7 +6,7 @@ This API is used to search for log content by specified criteria.
 #### Sample request
 
 ```
-GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx,xxxx&start_time=2017-08-22%2010%3A10%3A10&end_time=2017-08-23%2010%3A10%3A10&query=&limit=10&context= HTTP/1.1
+GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx,xxxx&start_time=2017-08-22%2010%3A10%3A10&end_time=2017-08-23%2010%3A10%3A10&query_string=&limit=10&context= HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 
@@ -30,7 +30,7 @@ There are only common request headers but no special request headers.
 | topic_ids     | string | query| Yes      | IDs of the topics to be queried, separated with `,`                         |
 | start_time    | string | query| Yes      | Start time of the log to be queried in the format of `YYYY-mm-dd HH:MM:SS`       |
 | end_time      | string | query| Yes      | End time of the log to be queried in the format of `YYYY-mm-dd HH:MM:SS`     |
-| query         | string | query| Yes      | Content to be queried. For more information, please see [Search Syntax](https://intl.cloud.tencent.com/document/product/614/30439)  |
+| query_string         | string | query| Yes     |Query statement. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439)|
 | limit         | int    | query| Yes      | Number of logs to be returned at a time. Maximum value: 100         |
 | context       | string | query| No      | This field is used when loading more results. Pass through the last `context` value returned to get more log content. Up to 10,000 logs can be obtained through cursor. Please narrow down the time range as much as possible |
 | sort          | string | query| No      | Sorting by log time. Valid values: asc (ascending), desc (descending). Default value: desc        |

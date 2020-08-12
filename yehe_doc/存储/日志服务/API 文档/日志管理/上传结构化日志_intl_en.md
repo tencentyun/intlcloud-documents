@@ -123,7 +123,7 @@ The `x-cls-hashkey` request header indicates that logs should be written to the 
 
 | Field Name | Required | Description |
 | -------- | -------- | ------------------------------------------------------------ |
-| time     | Yes       | Log time (Unix timestamp) in milliseconds. If you use second as the unit, the value in seconds will be automatically converted to milliseconds in the system |
+| time | Yes | Unix timestamp for logging in seconds (not recommended), milliseconds, or microseconds |
 | contents | No       | Log content in `key-value` format. A log can contain multiple `key-value` pairs |
 
 `Content` description:
