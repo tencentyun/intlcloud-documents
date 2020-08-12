@@ -3,7 +3,6 @@
 This API is used to configure a cross-region replication rule for a bucket where versioning is enabled. If there is already a rule for the bucket, the existing one will be overwritten.
 
 > !
->
 > - To use this API, make sure that the bucket has versioning enabled. For more information, see the API documentation [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
 > - Currently, for a MAZ-enabled bucket, you can only delete expired objects, but not transition them to the STANDARD_IA or ARCHIVE storage class.
 
@@ -56,7 +55,7 @@ The nodes are described in details below:
 |Prefix    |ReplicationConfiguration.Rule    | Prefix to be matched in the rule. Prefixes cannot overlap; otherwise, an error will be returned. The prefix matching root directory is empty |String    | Yes |
 | Destination              | ReplicationConfiguration.Rule             | Destination bucket information                                               | Container | Yes   |
 |Bucket    |ReplicationConfiguration.Rule.Destination    | Resource ID: <br>`qcs::cos:<Region>::<BucketName-APPID>` |String    | Yes |
-|StorageClass    |ReplicationConfiguration.Rule.Destination    | Storage class; enumerated values: STANDARD, STANDARD_IA. It follows the storage class of the source bucket by default.<br>**Note:** currently, cross-region replication does not support specifying the storage class of object copies as ARCHIVE. If you need to do so, you can configure lifecycle management for the destination bucket. For more information, see [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280)|String    | No |
+| StorageClass | ReplicationConfiguration.Rule.Destination | Storage class. Enumerated values: STANDARD, STANDARD_IA, ARCHIVE. It is specified as that of the source bucket by default | String | No |
 
 ## Response
 
