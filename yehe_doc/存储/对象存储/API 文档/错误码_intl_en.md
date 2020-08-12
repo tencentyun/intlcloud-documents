@@ -61,7 +61,7 @@ The nodes are detailed as follows:
 | 400 Bad Request                     | IncorrectNumberOfFilesInPostRequest   | Only one object can be uploaded for each POST Object request                     |
 | 400 Bad Request                     | InvalidArgument                       | Invalid request parameter                                               |
 | 400 Bad Request                     | InvalidBucketName                     | Invalid bucket name. For more information, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) under Bucket Overview                                              |
- | 400 Bad Request | InvalidCopySource | Invalid source for object copying |
+| 400 Bad Request | InvalidCopySource | Invalid source for object copying |
 | 400 Bad Request                     | InvalidDelimiter                      | Invalid delimiter. A delimiter can be only one character          |
 | 400 Bad Request                     | InvalidDigest                         | The provided [Content-MD5](https://intl.cloud.tencent.com/document/product/436/7728) digest is invalid                                |
 | 400 Bad Request                     | InvalidImageFormat                    | Invalid image format                                               |
@@ -73,12 +73,12 @@ The nodes are detailed as follows:
 | 400 Bad Request                     | InvalidPicOperations                  | The Pic-Operations request header is invalid                                |
 | 400 Bad Request                     | InvalidPolicyDocument                 | Invalid policy in the POST Object request                   |
 | 400 Bad Request                     | InvalidRegionName                     | Invalid region name. For more information, see [Regions and Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)                                               |
- | 400 Bad Request | InvalidRequest | Invalid request|
+| 400 Bad Request | InvalidRequest | Invalid request|
 | 400 Bad Request | InvalidSHA1Digest | Invalid SHA1 digest of request content for verification |
 | 400 Bad Request                     | InvalidTag                            | Invalid bucket tag. For more information, see [Bucket Tagging Overview](https://intl.cloud.tencent.com/document/product/436/31509)                                           |
 | 400 Bad Request                     | InvalidTargetBucketForLogging         | Invalid destination bucket for storing logs. The destination bucket must be in the same region as the source bucket |
 | 400 Bad Request                     | InvalidUploadStatus                   | The JSON API cannot be used to upload objects if versioning is enabled. Please use the XML API instead |
- | 400 Bad Request | InvalidURI | Invalid URI |
+| 400 Bad Request | InvalidURI | Invalid URI |
 | 400 Bad Request                     | InventoryFull                         | The number of inventory jobs reached the upper limit (1,000)                                       |
 | 400 Bad Request                     | JsonAPINotSupportOnMAZBucket          | The JSON API cannot be used for MAZ-enabled buckets. Please use the XML API instead        |
 | 400 Bad Request                     | KeyTooLong                            | The object key is too long. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) under Object Overview                                                |
@@ -107,22 +107,22 @@ The nodes are detailed as follows:
 | 400 Bad Request                     | SSEContentNotSupported                | The encryption method is not supported                                              |
 | 400 Bad Request                     | SSEHeaderNotAllowed                   | The operation does not allow the specified SSE header                             |
 | 400 Bad Request                     | TargetBucketNameInvalid               | Invalid destination bucket name. For more information, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) under Bucket Overview                                          |
- | 400 Bad Request | TooManyBuckets | The number of buckets reached the upper limit (200) |
+| 400 Bad Request | TooManyBuckets | The number of buckets reached the upper limit (200) |
 | 400 Bad Request | UnexpectedContent | The request does not support the content  |
 | 400 Bad Request                     | UserCnameInvalid                      | The user-specified CNAME does not exist or is invalid                             |
 | 400 Bad Request                     | UserNetworkTooSlow                    | The user’s network is too slow                                           |
- | 400 Bad Request | VerifyAlgorithmNotSupported | The verification algorithm is not supported |
- | 400 Bad Request | WebsiteURLInvalid | Invalid custom endpoint domain URL |
+| 400 Bad Request | VerifyAlgorithmNotSupported | The verification algorithm is not supported |
+| 400 Bad Request | WebsiteURLInvalid | Invalid custom endpoint domain URL |
 | 400 Bad Request | XMLSizeLimit                        | The length of XML has exceeded the limit                                                                  |
 | 402 Payment Required                | PaymentRequired                       | Payment is required for exceeding quotas                                             |
 | 403 Forbidden                       | AccessDenied                          | Access denied for incorrect signature or permission. See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) and [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583)                                 |
 | 403 Forbidden                       | AccessForbidden                       | CORS request denied. Please confirm that your request method or the Origin, Access-Control-Request-Method and Access-Control-Requet-Headers request headers are in the CORS allowlist |
- | 403 Forbidden | InvalidAccessKeyId | SecretID does not exist|
+| 403 Forbidden | InvalidAccessKeyId | SecretID does not exist|
 | 403 Forbidden                       | InvalidObjectState                    | The object storage class conflicts with the operation request                                   |
 | 403 Forbidden                       | NoProcessAuthority                    | No permission for image processing                                           |
- | 403 Forbidden | RequestTimeTooSkewed | The gap between the local time and the server time is over 15 minutes |
+| 403 Forbidden | RequestTimeTooSkewed | The gap between the local time and the server time is over 15 minutes |
 | 403 Forbidden                       | Request has expired                   | The request was initiated after the signature expired, or your system time is different from the local time. For more information, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687) |
-| 403 Forbidden | SignatureDoesNotMatch | The signature computed by the client does not match that computed by the COS server  |
+| 403 Forbidden | SignatureDoesNotMatch | The signature provided by the client does not match that calculated by the COS server. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) . |
 | 403 Forbidden                       | UserNotSourceBucketOwner              | The current user is not the source bucket owner                                |
 | 403 Forbidden                       | UserNotTargetBucketOwner              | The current user is not the destination bucket owner                               |
 | 404 Not Found                       | InventoryConfigurationNotFoundError   | No inventory configuration was found                                               |
