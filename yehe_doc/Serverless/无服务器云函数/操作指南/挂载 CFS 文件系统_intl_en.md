@@ -10,6 +10,8 @@ Tencent Cloud SCF can be seamlessly integrated with CFS. After proper configurat
 ## Directions
 
 ### Associating authorization policy
+>! To use the CFS service, you need to grant SCF the operation permission to your CFS resources.
+
 To use CFS features, please authorize your account in the following steps:
 1. Associate the `SCF_QcsRole` role with the `QcloudCFSReadOnlyAccess` policy as instructed in [Modifying Role](https://intl.cloud.tencent.com/document/product/598/19389).
 If you don't perform this operation for your currently used account, problems such as failures in saving functions and unavailability of CFS features may occur.
@@ -44,3 +46,5 @@ Please create a CFS resource as instructed in [Creating CFS File System](https:/
 You can edit the function code to start using the CFS file system as shown below:
 ![](https://main.qcloudimg.com/raw/5ba2b08d89b903cda862135c1f74fc9d.png)
 
+### Testing the CFS Use Performance of SCF
+You can use this [script](https://github.com/tencentyun/scf_cfs_demo) to test the performance of SCF when using CFS.
