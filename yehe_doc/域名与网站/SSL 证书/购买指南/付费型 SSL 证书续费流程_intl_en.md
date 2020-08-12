@@ -30,7 +30,7 @@ After renewal, the remaining available time of the original certificate and an e
 #### For an OV/EV paid certificate, upload the confirmation letter and wait for review.
 1. After you complete payment, on the **Certificate Management** page in the SSL Certificate Service console, you can find a new certificate with the status of **Pending confirmation letter upload** in the certificate list. Click **Upload confirmation letter** to go to the confirmation letter details page.    
 2. Click **Download Confirmation Letter** as prompted, fill in the information, and seal the letter. Scan the confirmation letter to a file and click **Upload for Review**, as shown in the following figure.   
-![5](https://mc.qcloudimg.com/static/img/243413870795fc3421fd28db5a9e68a8/image.png)
+![](https://main.qcloudimg.com/raw/3bc609a54a2f6492df36319829ddf287.png)
 3. After you submit the confirmation letter, the certificate status changes to **Pending verification**. Wait for the reviewer to verify your information by phone and confirm the domain information email.
 >For OV certificates, certificate issuance takes **3 to 5 business days**. For EV certificates, certificate issuance takes **5 to 7 business days**
 
@@ -40,7 +40,7 @@ After renewal, the remaining available time of the original certificate and an e
 2. The DNS verification value is displayed on the **Certificate Details** page. Add this DNS record and wait for scan and verification by the CA. The certificate will be issued after approval.
 >Issuance of DV certificates takes **10 minutes to 24 hours**.
 >
- ![](https://main.qcloudimg.com/raw/beb1b5ae08553a832cabe9c0cb881cc5.png)
+ ![](https://main.qcloudimg.com/raw/3bc609a54a2f6492df36319829ddf287.png)
 
 
 <span id="certificate"></span>
