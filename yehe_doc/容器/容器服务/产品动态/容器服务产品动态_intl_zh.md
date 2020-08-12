@@ -1,3 +1,24 @@
+## 2020年07月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>存储插件能力优化</td><td><ul class="params"><li>容器服务控制台支持不指定 StorageClass 创建 PV。</li><li>支持设置并挂载对象存储 COS 子目录。</li></ul></td><td>2020-07-28</td>	<td><ul class="params"><li><a href="https://intl.cloud.tencent.com/document/product/457/37770">PV 和 PVC 的绑定规则</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/36160">使用对象存储 COS</a></li></ul></td>
+</tr>
+<tr>
+    <td>创建集群支持设置节点配置置放群组</td>	<td>该功能使得节点在启动时就具备容灾性和高可用性。</td><td>2020-07-15</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
+</tr>
+<tr>
+    <td>云原生监控内测版本上线</td>	<td>支持一键部署高可用监控架构，快速关联 TKE 集群和 EKS 集群。</td><td>2020-07-15</td>	<td>-</td>
+</tr>
+<tr>
+    <td>云原生监控采集配置和告警配置产品化</td>	<td><ul class="params"><li>支持 service monitor，pod monitor 和 raw job 三种配置方式。</li><li>支持告警历史回溯。</li></ul></td><td>2020-07-15</td>	<td>-</td>
+</tr>
+<tr>
+    <td>基于 RBAC 的更细粒度权限控制内测上线</td>	<td><ul class="params"><li>支持集群管理员为不同角色配置集群内不同资源的管理权限。</li><li>支持证书吊销。</li><li> 适配企业合规权限管理场景。</li></ul></td><td>2020-07-10</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/37366">TKE Kubernetes 对象级权限控制概述</a></td>
+</tr>
+</table>
+
 ## 2020年06月
 
 <table>
@@ -7,10 +28,10 @@
     <td>IPVS-bpf 模式内测上线</td>	<td>容器服务使用 eBPF 绕过 conntrack，优化 K8s Service，短连接性能提升40%以上，p99 时延降低31%以上。</td><td>2020-06-19</td>	<td>-</td>
 </tr>
 <tr>
-    <td>容器服务支持创建直连 Pod 模式 Service</td>	<td>负载均衡直通弹性网卡模式的 Pod， 转发性能提高10%以上。</td><td>2020-06-18</td>	<td>使用 LoadBalancer 直连 Pod 模式 Service</td>
+    <td>容器服务支持创建直连 Pod 模式 Service</td>	<td>负载均衡直通弹性网卡模式的 Pod， 转发性能提高10%以上。</td><td>2020-06-18</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/36837">使用 LoadBalancer 直连 Pod 模式 Service</a></td>
 </tr>
 <tr>
-    <td>容器服务支持均衡转发和 Local 绑定</td>	<td>容器服务增强 Loadbalancer Service、负载均衡 Ingress 后端绑定 RS 功能及支持均衡转发和 Local 绑定。</td><td>2020-06-18</td>	<td>Service 后端选择</td>
+    <td>容器服务支持均衡转发和 Local 绑定</td>	<td>容器服务增强 Loadbalancer Service、负载均衡 Ingress 后端绑定 RS 功能及支持均衡转发和 Local 绑定。</td><td>2020-06-18</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/36836">Service 后端选择</a></td>
 </tr>
 <tr>
     <td>容器服务应用市场全面升级</td>	<td>应用市场提供腾讯云原生实践技术输出窗口，同时提供了丰富的社区应用，帮助使用者快速使用和体验社区优质应用。</td> <td>2020-06-10</td>	<td>-</td>
@@ -49,7 +70,7 @@
 <tr>
     <td>容器服务内测上线节点池功能</td>	<td>可在以下场景中使用节点池功能：
 		<ul class="params">
-		<li>集群存在较多异构节点（机型配置不同），可通过节点池规范节点分组管理。</li><li>集群需要频繁扩缩容节点，可通过节点池降低操作成本。</li><li>集群内应用程序调度规则复杂，可通过节点池标签快速指定业务调度规则。</li><li>集群内节点日常维护，可通过节点池便捷管理 Kubernetes 版本升级、Docker 版本升级。</li></ul></td>	<td>2020-04-10</td>	<td>节点池管理</td>
+		<li>集群存在较多异构节点（机型配置不同），可通过节点池规范节点分组管理。</li><li>集群需要频繁扩缩容节点，可通过节点池降低操作成本。</li><li>集群内应用程序调度规则复杂，可通过节点池标签快速指定业务调度规则。</li><li>集群内节点日常维护，可通过节点池便捷管理 Kubernetes 版本升级、Docker 版本升级。</li></ul></td>	<td>2020-04-10</td>	<td><a href="https://cloud.tencent.com/document/product/457/43718">节点池管理</a></td>
 </tr>
 <tr>
 	<td>容器服务关闭 Kubernetes 1.8 版本创建入口</td>	<td>腾讯云容器服务（TKE）控制台不再支持创建 Kubernetes 版本为 1.8 的集群。</td>	<td>2020-04-03</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
@@ -162,7 +183,7 @@
 <td>集群/节点创建时支持批量添加节点 Label</td>
     <td>容器服务支持在集群创建或存量集群添加新节点时，<b>对运行同一业务或具有相同配置的节点统一添加 Label</b>，为用户提供资源划分、资源属性标记、海量资源筛选及批量处理功能。</td>
 <td>2019-10-21</td>
-<td><a href="https://cloud.tencent.com/document/product/457/32185">集群管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
 </tr>
 <tr>
 <td>运行时组件 Containerd 支持 GPU 机型</td>
@@ -214,7 +235,7 @@
 <td>容器服务独立集群支持单独查看 Maste&Etcd 节点</td>
     <td>该功能支持用户<b>直观查看独立集群下所有的 Master&Etcd 节点列表及此类节点更多详情信息</b>，解决用户查看独立集群节点时无法区分 Node 和 Master 节点的问题。</td>
 <td>2019-09-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30650">节点管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/30649">节点管理</a></td>
 </tr>
 </table>
 
@@ -258,7 +279,7 @@
 </td>
 <td>容器服务 API 升级到 3.0 版本，已全地域接入全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，SDK/CLI 版本与 API 文档严格一致，给用户带来简单快捷的使用体验。</td>
 <td>2019-08-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/36406">API 3.0</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
 </tr>
 <tr>
 <td>容器服务支持采集容器内文件日志</td>
@@ -465,7 +486,7 @@
 <td>创建 Service 支持使用已有负载均衡</td>
 <td>使用已有负载均衡创建 Service，可以避免额外新增资源，帮助用户降低成本。</td>
 <td>2019-01-24</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30672">Service 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36832">Service 管理</a></td>
 </tr>
 <tr>
 <td>创建集群支持使用自定义镜像</td>
@@ -483,7 +504,7 @@
 <td>容器服务 Service 支持集群内多 Service 复用已有负载均衡</td>
 <td>多个 Service 复用同一个已有负载均衡，可以多次避免额外新增资源，帮助用户降低成本。</td>
 <td>2019-01-10</td>
-<td>Service 管理</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/36832">Service 管理</a></td>
 </tr>
 </table>
 
@@ -507,7 +528,7 @@
 	<td>修复 Kubernetes 权限提示漏洞</td>
 	<td>腾讯云安全中心监测到 Kubernetes 存在严重的权限提升漏洞（漏洞编号：CVE-2018-1002105），本次修复可以有效避免攻击者利用该漏洞访问未被授权访问的 Kubernetes  集群资源甚至导致权限提升，发起恶意请求最终危害业务系统安全。</td>
 	<td>2018-12-04</td>
-        <td>【安全预警】关于 Kubernetes 权限提升漏洞的通知</a></td>
+        <td>【安全预警】关于 Kubernetes 权限提升漏洞的通知</td>
 	</tr>
 	<tr>
 	<td>关闭 Kubenretes 1.7.8 版本创建入口</td>
@@ -827,7 +848,7 @@
 		<td>配置项支持导入环境变量</td>
 		<td>部署实例内容器时，可在环境变量中引入配置项 ConfigMap/Secret。</td>
 		<td>2017-09-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30675">配置项</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/30674">配置项</a></td>
 	</tr>
 	<tr>
 		<td>集群新增资源所属项目属性</td>
@@ -887,7 +908,7 @@
 		<td>容器集群接入访问管理权限管理</td>
         <td>访问管理主要用于帮助客户安全管理腾讯云账户下的资源的访问权限。<b>通过 CAM，您可以创建、管理和销毁用户（组），并通过身份管理和策略管理用户使用的腾讯云资源</b>。</td>
 		<td>2017-08-04</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/11528">TKE 集群资源级权限接口列表</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/37499">TKE 集群资源级权限接口列表</a></td>
 	</tr>
 </table>
 
@@ -960,7 +981,7 @@
 		<td>容器服务支持重新部署服务功能</td>
 		<td>重新部署是将服务下的容器重新部署一次，并重新拉取镜像。</td>
 		<td>2017-06-07</td>
-        <td><li><a href="https://intl.cloud.tencent.com/document/product/457/30672">Service 管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30673">Ingress 基本操作</a></li></td>
+        <td><li><a href="https://intl.cloud.tencent.com/document/product/457/36832">Service 管理</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/30673">Ingress 基本操作</a></li></td>
 	</tr>
 </table>
 
@@ -1026,7 +1047,7 @@
 		<td>容器服务支持7层负载均衡</td>
         <td>Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过配置转发规则，<b>实现不同 URL 可以访问到集群内不同的 Service</b>。</td>
         <td>2017-03-06</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30673">Ingress 管理</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/37013">Ingress 管理</a></td>
 	</tr>
 	<tr>
 		<td>支持查看集群、服务、实例的监控信息</td>
@@ -1050,19 +1071,19 @@
 		<td>集群管理</td>
 		<td>集群的增删改查、VPC 容器集群、跨可用区集群及支持开源 Kubernetes 原生 API 功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30635">集群管理</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
 	</tr>
 	<tr>
 		<td>服务管理</td>
 		<td>服务的增删改查、私有镜像创建服务、Docker 官方镜像创建服务、服务跨可用区调度等功能。</td>
         <td>2016-12-26</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30635">服务管理</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">服务管理</a></td>
 	</tr>
 	<tr>
 		<td>镜像管理</td>
 		<td>Docker 官方镜像、我的镜像、上传下载私有镜像、Docker 官方镜像加速功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9118">镜像仓库</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/9103">镜像仓库</a></td>
 	</tr>
 	<tr>
 		<td>集群监控及容器监控</td>

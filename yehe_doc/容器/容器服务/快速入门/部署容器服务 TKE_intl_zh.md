@@ -23,7 +23,7 @@
 ![](https://main.qcloudimg.com/raw/aa2446d6cf8e17def9c353afc36fa42b.png)
  - **节点来源**：提供【新增节点】和【已有节点】两个选项，请根据实际需求进行选择。
  - **Master 节点** ：Master 的部署方法决定了您集群的管理模式，我们提供【平台托管】和【独立部署】两种集群模式选择。详情请参见 [集群类型](https://intl.cloud.tencent.com/document/product/457/30635)。
- - **计费模式**：提供【按量计费】的计费模式。详情请参见 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
+ - **计费模式**：提供【按量计费】和【包年包月】两种计费模式。详情请参见 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
  - **Worker 配置**：此处以“**节点来源**”选择为【新增节点】为例，该模块下所有设置项默认如上，您可根据实际需求进行更改。
 5. 参考以下信息进行云服务器配置，并单击 【下一步】。如下图所示：
 ![](https://main.qcloudimg.com/raw/960e92c51bd77ed5bf88bf7ef55e5c7e.png)
@@ -54,8 +54,8 @@
  - **类型**：根据实际需求进行选择。
 4. （可选）设置数据卷，如需指定容器挂载至指定路径时，单击【添加数据卷】。详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。如下图所示：
 ![](https://main.qcloudimg.com/raw/a4e6150eedd0c7385b4a170649042cee.png)
->源路径不指定时将默认分配临时路径。
-> 
+>!源路径不指定时将默认分配临时路径。
+
  - **类型**：支持使用临时目录、主机路径、NFS盘、已有PVC、腾讯云硬盘、ConfigMap、Secret 七种类型的数据卷。详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 5. 参考以下信息设置实例內容器。如下图所示：
 ![](https://main.qcloudimg.com/raw/fc1425d8ba8d84599a3b84a7376b6d7d.png)
@@ -72,7 +72,7 @@
 7. 参考以下信息进行访问设置。如下图所示：
 ![](https://main.qcloudimg.com/raw/bcab65ccaefa2ae76d1a603b5be3e64d.png)
  - **Service**：勾选【启用】。
- - **服务访问方式**：服务的访问方式决定该服务的网络属性，不同访问方式的服务可提供不同网络能力。详情请参见 [Service 管理](https://intl.cloud.tencent.com/document/product/457/30672)。
+ - **服务访问方式**：服务的访问方式决定该服务的网络属性，不同访问方式的服务可提供不同网络能力。详情请参见 [服务访问方式](https://intl.cloud.tencent.com/document/product/457/36832)。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择”协议“，填写“容器端口”和“服务端口”。
 8. 单击【创建Workload】，即可完成服务的创建。创建完成的服务将出现在服务列表中。
@@ -114,17 +114,15 @@
 1. 选择左侧导航栏中的【集群】，在“集群管理”页面选择需删除集群所在行右侧【更多】>【删除】。如下图所示：
 ![](https://main.qcloudimg.com/raw/0f58c601a0798b606524f85ce6956a0b.png)
 2. 在弹出框中确认信息后，单击【确定】即可删除集群。
->
+>!
 >- 集群在删除期间，无法对外提供服务，请提前做好准备，以免造成影响。
 >- 若删除集群，则该集群内的 Service 也随即被删除。
->
-
 
 
 
 ## 后续操作
 通过本文，您已经了解如何在腾讯云容器服务中配置、部署和删除服务。使用腾讯云容器服务，您将无需安装、运维、扩展您的集群管理基础设施，只需进行简单的 API 调用，便可启动和停止 Docker 应用程序，查询集群的完整状态，以及使用各种云服务。
 
-您可进入下一个教程，了解 [负载均衡](https://intl.cloud.tencent.com/document/product/457/30673) 和 [镜像仓库](https://intl.cloud.tencent.com/document/product/457/9118) 的基本概念和操作，并通过 [入门示例](https://intl.cloud.tencent.com/document/product/457/7851) 快速构建服务。
+您可进入下一个教程，了解 [负载均衡](https://intl.cloud.tencent.com/document/product/457/30673) 和 [镜像仓库](https://intl.cloud.tencent.com/document/product/457/9118) 的基本概念和操作，并通过 [入门示例](https://intl.cloud.tencent.com/document/product/457/11138) 快速构建服务。
 
 ​                                          
