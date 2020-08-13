@@ -47,7 +47,7 @@ In addition to common request headers, this API also supports the following requ
 | Expires             | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | String | No |
 | Transfer-Encoding   | To upload data in chunks, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616, while you cannot use the `Content-Length` request header. | String | No |
 | x-cos-meta-\*       | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | String | No |
-| x-cos-storage-class | Object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
+| x-cos-storage-class | Object storage class. Enumerated values: `MAZ_STANDARD`,`MAZ_STANDARD_IA`, `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
 
 **ACL-related headers**
 
