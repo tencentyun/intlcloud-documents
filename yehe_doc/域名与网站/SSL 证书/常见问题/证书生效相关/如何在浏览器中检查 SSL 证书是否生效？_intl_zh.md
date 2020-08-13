@@ -5,4 +5,5 @@
 2. 按回车键，访问域名地址。检查是否具备以下情况：
  - 域名地址可以成功访问网站。
  - 浏览器地址栏左侧显示安全锁标志，则说明您的 SSL 数字证书已生效。如下图所示：
-![](https://main.qcloudimg.com/raw/ed0719cc04d91b5e7c651fe819a15437.png)
+![](https://main.qcloudimg.com/raw/4e6f3537bb8788038d35cca532e26f93.png)
+
