@@ -55,7 +55,7 @@ For example, add `Port 23456` in the row.
 ```
 systemctl restart sshd.service
 ```
-6. Configure the firewall.
+6. (Optional)Configure the firewall.
  - By default, the iptables service is used as the firewall for Linux CVMs with CentOS earlier than CentOS 7. Configure the firewall as follows if iptables rules have been configured for the CVM.
     1. Run the following command to configure the firewall:
 ```
