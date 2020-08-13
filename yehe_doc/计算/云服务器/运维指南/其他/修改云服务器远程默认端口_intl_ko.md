@@ -16,24 +16,24 @@
 3. "Windows PowerShell" 창에서 **regedit**를 입력한 후 **Enter**를 눌러 "레지스트리 편집기" 창을 엽니다.
 4. 왼쪽의 레지스트리 바에서 [HKEY_LOCAL_MACHINE]>[SYSTEM]>[CurrentControlSet]>[Control]>[Terminal Server]>[Wds]>[rdpwd]>[Tds]>[tcp] 디렉터리를 차례대로 펼칩니다.
 5. <span id="Windows_step05"></span>아래 이미지와 같이 [tcp] 중의 PortNumber를 찾아 PortNumber 데이터(즉 3389 포트 번호)를 0 - 65535 사이의 미사용 포트로 수정합니다.
-![](https://main.qcloudimg.com/raw/cabe7effbab9583785ccfc5de37f98c5.png)
+![](https://main.qcloudimg.com/raw/7044cef95fd7e56b56946afdb64de346.png)
 6. 왼쪽의 레지스트리 바에서 [HKEY_LOCAL_MACHINE]>[SYSTEM]>[CurrentControlSet]>[Control]>[Terminal Server]>[WinStations]>[RDP-Tcp] 디렉터리를 차례대로 펼칩니다.
 7. [RDP-Tcp] 에서 PortNumber를 찾아 [RDP-Tcp] 안의 PortNumber 데이터(포트 번호)를 [tcp] 안의 PortNumber 데이터(포트 번호)와 동일한 포트 번호로 수정합니다.
-![](https://main.qcloudimg.com/raw/e5d14dea07959df35bce32b0a694d143.png)
+![](https://main.qcloudimg.com/raw/fa54eb32c20dcc8a7c942c8e707fa665.png)
 8. (선택)사용자의 CVM이 방화벽을 활성화한 경우, 새로운 포트를 방화벽에 추가하고 연결 허용을 설정해야 합니다.
  1. "Windows PowerShell" 창에서 **wf.msc**를 입력한 후 **Enter**를 눌러 “고급 보안 Windows 방화벽” 창을 엽니다.
  2. 아래 이미지와 같이 "고급 보안 Windows 방화벽" 창에서 [인바운드 규칙]을 선택한 후 [규칙 생성]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/0a27ae0c2666b44cf7a5108e69e9137c.png)
+![](https://main.qcloudimg.com/raw/ac93eed862e215971073912030fdbc41.png)
  3. "새 인바운드 규칙 마법사" 창의 "규칙 종류" 단계에서 [포트]를 선택한 후 [다음]을 클릭합니다.
  4. 아래 이미지와 같이 "새 인바운드 규칙 마법사" 창의 "프로토콜 및 포트" 단계에서 [TCP]를 선택하고 [특정 로컬 포트]를 [5단계](#Windows_step05)에서 설정한 포트 번호로 작성한 후 [다음]을 클릭합니다.
- ![](https://main.qcloudimg.com/raw/52df8147f8d1138fa20b5d0e52cc7431.png)
+ ![](https://main.qcloudimg.com/raw/73a7ca280f4f6b733d687597014b57b4.png)
  5. "새 인바운드 규칙 마법사" 창의 "작업" 단계에서 [연결 허용]을 선택한 후 [다음]을 클릭합니다.
  6. "새 인바운드 규칙 마법사" 창의 “프로파일” 단계에서 기본 설정을 유지한 후 [다음]을 클릭합니다.
  7. "새 인바운드 규칙 마법사" 창의 "이름" 단계에서 규칙 이름을 입력한 후 [완료]를 클릭합니다.
 9. "Windows PowerShell" 창에서 **services.msc**를 입력한 후, **Enter**를 눌러 "서비스" 창을 엽니다.
 10. "서비스" 창에서 [Remote Desktop Services]를 찾아 [Remote Desktop Services]를 우클릭한 후 [재시작]을 선택하여 원격 로그인 서비스를 재시작합니다.
 11. [보안 그룹 규칙 수정](https://intl.cloud.tencent.com/document/product/213/34825)을 참조하여 프로토콜 포트가 “TCP:3389”인 보안 그룹 규칙을 [5단계](#Windows_step05)에서 설정한 포트 번호로 수정합니다.
-![](https://main.qcloudimg.com/raw/487fe94762c4e9d322332d9e9b3c64f5.png)
+![](https://main.qcloudimg.com/raw/a447d7e69ce95d349f0d78b5b72b9228.png)
 
 
 <span id="ModifyLinuxCVMPort"></span>
@@ -55,7 +55,7 @@ vim /etc/ssh/sshd_config
 ```
 systemctl restart sshd.service
 ```
-6. 방화벽을 설정합니다.
+6. (선택)방화벽을 설정합니다.
  - CentOS 7 이전 버전의 Linux CVM은 기본으로 iptables 서비스를 방화벽으로 사용합니다. CVM이 iptables 규칙을 생성한 경우, 아래의 작업을 실행하여 방화벽을 설정해야 합니다:
     1. 다음 명령어를 실행하여 방화벽을 설정합니다.
 ```
@@ -80,7 +80,7 @@ firewall-cmd --add-port=23456/tcp --permanent
 ```
 출력 결과가 `success`면 통과 허가 성공을 표시합니다.
 7. [보안 그룹 규칙 수정](https://intl.cloud.tencent.com/document/product/213/34825)을 참조하여 프로토콜 포트가 “TCP:22”인 보안 그룹 규칙을 [3단계](#Linux_step03)에서 새로 추가한 포트 번호로 수정합니다.
-![](https://main.qcloudimg.com/raw/2ee2bc9f1d93e4ff95107925c0a01406.png)
+![](https://main.qcloudimg.com/raw/add0bba23dc32f73b5d1fbbdad71c9ab.png)
 
 
 ## 인증 작업
@@ -89,11 +89,11 @@ firewall-cmd --add-port=23456/tcp --permanent
 
 1. 로컬 컴퓨터가 Windows 운영 체제일 때를 예로, 원격 데스크톱 연결 대화창을 엽니다.
 2. 아래 이미지와 같이 [컴퓨터] 뒤쪽에 `Windows 서버의 공인 IP:수정 후의 포트 번호`를 입력한 후 [연결]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/c826fa4dcfef45b7de8695fada5674d3.png)
+![](https://main.qcloudimg.com/raw/1452f968e3c2c4d4c1083bdf0742df9d.png)
 3. 인터페이스에 따라 인스턴스의 관리자 계정과 비밀번호를 입력한 후 [확인]을 클릭합니다.
 Windows CVM의 운영 체제 인터페이스로 이동하면 로그인 연결 성공입니다.
 > 아래 이미지와 같이 RDP 파일을 사용해 Windows CVM에 로그인하는 경우, 우선 RDP 파일 중의 `full address:s` 매개변수를 수정해야 합니다.
->[](https://main.qcloudimg.com/raw/84dd85a9547fc64f2daccba32f1d59d7.png)
+>[](https://main.qcloudimg.com/raw/9e7ddc631de2a27bfd35f9225de85506.png)
 >
 
 ### Linux CVM의 인증
