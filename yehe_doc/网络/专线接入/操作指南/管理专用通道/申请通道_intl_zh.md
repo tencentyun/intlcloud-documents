@@ -29,7 +29,7 @@
 1. 登录 [专线接入 - 专用通道](https://console.cloud.tencent.com/dc/dcConn) 控制台。
 2. 在“专用通道”页面上方单击 【+新建】，并配置以下信息。
 3. 配置名称、专线类型、接入网络、地域、关联的专线网关等基本配置。
-![基本配置](https://main.qcloudimg.com/raw/a85ff3b11e814aeeee62a4b4a1d836a7.png) 
+
 <table>
 	<thead>
 	<tr>
@@ -55,7 +55,7 @@
 	</tr>
 	<tr>
 	<td align="center" style='white-space:nowrap'>接入网络</td>
-	<td>支持 <a href="https://cloud.tencent.com/document/product/215">私有网络</a>、<a href="https://cloud.tencent.com/document/product/386">黑石网络</a> 和 <a href="https://cloud.tencent.com/document/product/877">云联网网络</a></td>
+	<td>支持 <a href="https://intl.cloud.tencent.com/document/product/215">私有网络</a>、黑石网络和 <a href="https://intl.cloud.tencent.com/document/product/1003">云联网网络</a></td>
 	<td>云联网：可实现一个通道连接多个 VPC 网络。</td>
 	</tr>
 	<tr>
@@ -77,7 +77,7 @@
 
 
 4. 在“高级配置”页面配置以下参数。
- ![高级配置](https://main.qcloudimg.com/raw/caf316d4dc39bfc7e193426b3970d931.png)
+
 
  <table>
  <thead>
@@ -121,7 +121,7 @@
 
 5. 配置 IDC 设备。
     您可下载 CPE 配置指引文件，文件提供了几款通用厂商的配置方法。
-![](https://main.qcloudimg.com/raw/f5480a8e21884a3bbf1cd38c109f23bc.png)
+
 <table>
 <thead><tr>
 <th>参数</th>
