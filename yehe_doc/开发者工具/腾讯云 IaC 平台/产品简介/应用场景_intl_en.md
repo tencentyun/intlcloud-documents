@@ -1,13 +1,13 @@
-## Quickly Creating Tencent Cloud Infrastructures
+## Quickly creating Tencent Cloud infrastructures
 
-TIC is an ideal choice if you need to quickly create multiple identical infrastructures, for example, creating identical infrastructures in different regions or creating a cross-region disaster recovery system. TIC relieves you of repeated click operations in the console, saves the cost of learning API usage, and avoids the risk of misoperations. You only need to specify a region, select an existing template, modify the required parameters, and submit all the settings to create infrastructures.
+If you need to quickly create multiple identical infrastructures, such as creating the same infrastructure in different regions or enabling cross-region disaster recovery, TIC is an ideal choice. It helps you avoid repeated operations in the console, reduces the cost of learning API usage, and lowers the risk of misoperations. You only need to specify a region, select an existing template, modify required parameters, and submit configurations to create corresponding infrastructures.
 <img src="https://main.qcloudimg.com/raw/84c31324c0adf4feaf52a90aef7df5e9.svg" width="80%">
 
 
 
 
-## Deploying an Infrastructure in a Multi-Cloud Environment
+## Deploying an infrastructure in a multi-cloud environment
 
-TIC is an ideal choice if you need to build an infrastructure in a multi-cloud environment to manage and migrate resources across multiple clouds. TIC calls APIs based on the resources of different cloud service providers, and builds infrastructures in a multi-cloud environment based on resource dependencies.
+If you need to build an infrastructure in a multi-cloud environment to enable cross-cloud resource management and migration, TIC is an ideal choice. It calls APIs based on different cloud service provider resources, and builds a multi-cloud infrastructure based on resource dependencies.
 <img src="https://main.qcloudimg.com/raw/b3691ed309bfebc5275850a317335834.svg" width="80%">
 

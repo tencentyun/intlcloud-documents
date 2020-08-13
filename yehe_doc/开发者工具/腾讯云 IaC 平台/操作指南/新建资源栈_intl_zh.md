@@ -18,19 +18,19 @@
  - **私有模板**：选择私有模板，了解更多模板详情，请参见 [模板管理](https://intl.cloud.tencent.com/document/product/1043/37185)。
  - **公共模板**：选择公共模板，了解更多模板详情，请参见 [模板管理](https://intl.cloud.tencent.com/document/product/1043/37185)。
  - **输入模板内容**：编辑模式，直接编辑基础架构代码，支持多文件编写，支持常用快捷键操作（例如 Ctrl+s，Ctrl+z，Ctrl+x等）。
-![](https://main.qcloudimg.com/raw/c0efc0cbff42503ab674d6834ed6aa93.png)
+![](https://main.qcloudimg.com/raw/8a4065e9bcf415073bbf4926eac6f068.png)
 4. 在完成上述配置后，单击【下一步】 ，进入第二步。
 
 #### 步骤2：参数配置
 
 1. 根据实际需要调整模板中 Resource 参数。此时后台已经为您创建了一个“draft-xxx”格式命名的资源栈草稿，并会自动保存相关代码。
 2. 单击【下一步】进入 Plan 预览。
-![](https://main.qcloudimg.com/raw/ee91a68e03ec880627ff61091e582a1e.png)
+![](https://main.qcloudimg.com/raw/dde7ee93c999a2e0f55469acaead2709.png)
 
 #### 步骤3：Plan 操作
 
 TIC 会进行语法检查、模拟相关创建，并给出 Plan 结果以供您参考是否与规划一致。单击【下一步】进入 Apply 资源栈创建步骤。
-![](https://main.qcloudimg.com/raw/34817ae5fdd594182480290a65607b47.png)
+![](https://main.qcloudimg.com/raw/80377e5a281b18c6b4aff8f0004c37aa.png)
 
 #### 步骤4：Apply 操作
 1. 输入新建资源栈名称以及描述。
