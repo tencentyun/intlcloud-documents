@@ -37,8 +37,6 @@ If the settings are as follows, Unity playback sound effect will be interrupted 
 #### Operations on macOS
 If you use Unity to access the GME SDK on macOS 10.15.x, an error will be displayed for file corruption during the execution. This error is caused by the `com.apple.quarantine` attribute, and the most direct solution is to delete this attribute.
 
-![](https://main.qcloudimg.com/raw/29aa9b69f32c13ffe3c6db4559c9ff17.png)
-
 1. Run the `cd` command in terminal to go to the `Unity_OpenSDK_Audio/Assets/Plugins/` folder in the project.
 2. Run the following command:
 ```
@@ -61,7 +59,7 @@ Project configuration is required before you can export executables from the Uni
 3. If the following error occurs during compilation, please complete the library files.  
 ![](https://main.qcloudimg.com/raw/335c9d806cd2d5fe11b5f6a04a6fad80.png) 
 Sample list of library files:
-![](https://main.qcloudimg.com/raw/5942e241e56571afe3ce5b9db58501db.png) 
+![](<https://main.qcloudimg.com/raw/5950ab3af7fceb6b58e7510f274fffe6.png>) 
 
 #### Exporting for Android
 1. The GME SDK for Unity provides lib files for arm64-v8a, armeabi-v7a, and x86 by default. Please delete unnecessary files as appropriate.

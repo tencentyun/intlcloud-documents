@@ -48,10 +48,6 @@
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td>华南地区（清远）<br> ap-qingyuan</td>
-		<td>清远一区<br> ap-qingyuan-1</td>
-	</tr>
-	<tr>
 		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
