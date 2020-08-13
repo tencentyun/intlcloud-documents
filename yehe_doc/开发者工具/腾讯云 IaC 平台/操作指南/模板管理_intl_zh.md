@@ -12,7 +12,7 @@
 私有模板管理可进行新建模板、使用模板、复制和删除模板等操作。
 1. 单击【私有】，进入私有模板管理页面。
 2. 选择任一私有模板，单击【部署】，TIC 控制台将会使用该模板创建新建资源栈。
-![](https://main.qcloudimg.com/raw/f82683ff4ffbb1f245b2a42bf861aa13.png)
+![](https://main.qcloudimg.com/raw/0e8af12c2ed727f7cdab99313bd7ec43.png)
 
 
 #### 公共模板
@@ -20,5 +20,5 @@
 公共模板管理可进行查看、保存和部署等操作。
 1. 单击【公共】，进入公共模板管理页面。
 2. 选择任一公共模板，单击【部署】，TIC 控制台将会使用该模板创建新建资源栈。
-![](https://main.qcloudimg.com/raw/0b95f1a66f95ef4c6bdc90e410279ecb.png)
+![](https://main.qcloudimg.com/raw/4cdc19dcd0e0742c909ee9972c1af17f.png)
 

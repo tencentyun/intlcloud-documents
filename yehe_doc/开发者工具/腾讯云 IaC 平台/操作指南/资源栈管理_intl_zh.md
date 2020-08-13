@@ -10,7 +10,7 @@
 	- **创建时间**：资源栈创建时间，使用格林威治标准时间。
 	- **状态**：资源栈状态。
 	- **版本**：当前资源栈使用的版本信息。
-![](https://main.qcloudimg.com/raw/755ff5bb43b0e9a87dfacd8d6bb3f282.png)
+![](https://main.qcloudimg.com/raw/30bb9e1f6f893781bb8a4f349899a34c.png)
 3. 该页面支持的资源栈操作包括：
  - **Destroy 资源栈**，即释放选定资源栈下的所有资源，资源栈状态由“APPLY_COMPLETED”变为“DESTROY_COMPLETED”。
  - **删除资源栈**，删除资源栈前需要先释放（Destroy）选定资源栈下的所有资源。
