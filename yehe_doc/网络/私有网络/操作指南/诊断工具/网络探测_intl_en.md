@@ -56,6 +56,7 @@ Under the hybrid cloud network architecture, you can use VPN or Direct Connect t
 <p>If you do not want to specify the next hop,<a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=168&source=0&data_title=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C%20VPC&level3_id=185&radio_title=%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98&queue=96&scene_code=16314&step=2">submit a ticket</a> to enable this allowlist feature.</p></li><li>If you specify the next hop, select the next hop type and instances. And then, the system automatically adds the corresponding 32-bit route to the subnet-associated route table.</li></ul></td>
 </tr>
 </tbody></table>
+
 5. **Verify** the **Probe Destination IP**
 	- If the connection succeeds, click **OK**.
 	- If the connection fails, check whether the subnet route is correctly configured, and whether the probed device enables Network ACL, security group or other firewalls, which may block the connection. For more information, see [Managing Network ACLs](https://intl.cloud.tencent.com/document/product/215/31852) and [Modifying a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35515).
