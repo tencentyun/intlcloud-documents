@@ -16,24 +16,24 @@ CVMのデフォルトポートは、悪意のあるソフトウェアによる�
 3. 「Windows PowerShell」画面で、**regedit**を入力して、**Enter**キーを押して、「レジストリエディタ」を開きます。
 4. 左側のレジストリナビゲーションで、【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【Wds】>【rdpwd】>【Tds】>【tcp】ディレクトリの順で展開します。
 5. <span id="Windows_step05"></span>【tcp】中のPortNumberを見つけて、以下に示すように、PortNumberデータ（すなわち3389のポート番号）を0～65535間の未使用ポートに変更します。
-![](https://main.qcloudimg.com/raw/cabe7effbab9583785ccfc5de37f98c5.png)
+![](https://main.qcloudimg.com/raw/7044cef95fd7e56b56946afdb64de346.png)
 6. 左側のレジストリナビゲーションで、【HKEY_LOCAL_MACHINE】>【SYSTEM】>【CurrentControlSet】>【Control】>【Terminal Server】>【WinStations】>【RDP-Tcp】ディレクトリの順で展開します。
 7. 【RDP-Tcp】中のPortNumberを見つけ、【RDP-Tcp】中のPortNumberデータ（ポート番号）を【tcp】中のPortNumberデータ（ポート番号）と同じポート番号に変更します。
-![](https://main.qcloudimg.com/raw/e5d14dea07959df35bce32b0a694d143.png)
+![](https://main.qcloudimg.com/raw/fa54eb32c20dcc8a7c942c8e707fa665.png)
 8.（オプション）CVMでファイアウォールが有効になっている場合は、新しいポートをファイアウォールに追加して、接続を許可するように設定する必要があります。
  1. 「Windows PowerShell」ウィンドウで、**wf.msc**を入力して、**Enter**キーを押して、「セキュリティが強化されたWindowsファイアウォール」ウィンドウを開きます。
  2.「セキュリティが強化されたWindowsファイアウォール」ウィンドウで、以下に示すように、【インバウンドルール】を選択し、【新規ルール】をクリックします。
-![](https://main.qcloudimg.com/raw/0a27ae0c2666b44cf7a5108e69e9137c.png)
+![](https://main.qcloudimg.com/raw/ac93eed862e215971073912030fdbc41.png)
  3.「新規のインバウンドルールウィザード」ウィンドウで、【ポート】 をオンにして 【次へ】 をクリックします。
  4.「新規のインバウンドルールウィザード」ウィンドウの「プロトコルとポート」ステップで、以下に示すように、【TCP】を選択して、【特定のローカルポート】に[ステップ5]（#Windows_step05）で設定されたポート番号を入力して、【次へ】をクリックします。　
- ![](https://main.qcloudimg.com/raw/52df8147f8d1138fa20b5d0e52cc7431.png)
+ ![](https://main.qcloudimg.com/raw/73a7ca280f4f6b733d687597014b57b4.png)
  5.「新規のインバウンドルールウィザード」ウィンドウの「操作」ステップで、【接続を許可する】を選択し、【次へ】をクリックします。
  6.「新規のインバウンドルールウィザード」ウィンドウの「設定ファイル」ステップで、デフォルト設定のままにして、【次へ】をクリックします。
  7.「新規のインバウンドルールウィザード」ウィンドウの「名前」ステップで、ルール名を入力し、【完了】をクリックします。
 9.「Windows PowerShel」ウィンドウで** diskmgmt.msc **を入力し、** Enter **キーを押して「サービス」ウィンドウを開きます。
 10.「サービス」ウィンドウで、【Remote Desktop Services】を右クリックし、【再起動】を選択して、リモートログインサービスを再起動します。
 11. [セキュリティグループルールの変更](https://intl.cloud.tencent.com/document/product/213/34825)を参照し、プロトコルポートが「TCP:3389」のセキュリティグループルールを[ステップ5](#Windows_step05)で設定されたポート番号に変更します。
-![](https://main.qcloudimg.com/raw/487fe94762c4e9d322332d9e9b3c64f5.png)
+![](https://main.qcloudimg.com/raw/a447d7e69ce95d349f0d78b5b72b9228.png)
 
 
 <span id="ModifyLinuxCVMPort"></span>
@@ -55,7 +55,7 @@ vim /etc/ssh/sshd_config
 ```
 systemctl restart sshd.service
 ```
-6.ファイアウォールを設定します。
+6.（オプション）ファイアウォールを設定します。
  - CentOS 7より前のバージョンを使用するLinux CVMでは、デフォルトでiptablesサービスをファイアウォールとします。CVMにiptablesルールが設定されている場合、次の操作を実行してファイアウォールを設定する必要があります。
     1. 次のコマンドを実行して、ファイアウォールを設定します。
 ```
@@ -80,7 +80,7 @@ firewall-cmd --add-port=23456/tcp --permanent
 ```
 返される結果が`success`の場合、ポートは正常に構成されています。
 7. [セキュリティグループルールの変更]（https://intl.cloud.tencent.com/document/product/213/34825）を参照し、プロトコルポートが「TCP：22」のセキュリティグループルールを[ステップ3]（#Linux_step03）で新しく追加されたポート番号に変更します。
-![](https://main.qcloudimg.com/raw/2ee2bc9f1d93e4ff95107925c0a01406.png)
+![](https://main.qcloudimg.com/raw/add0bba23dc32f73b5d1fbbdad71c9ab.png)
 
 
 ## 検証操作
@@ -89,7 +89,7 @@ firewall-cmd --add-port=23456/tcp --permanent
 
 1. ローカルコンピュータがWindows OSの場合を例として、リモートデスクトップ接続ダイアログボックスを開きます。
 2. 次の図に示すように、【コンピュータ】の後に `Windows サーバーのパブリックIP：変更後のポート番号`を入力して、【接続】をクリックします。
-![](https://main.qcloudimg.com/raw/c826fa4dcfef45b7de8695fada5674d3.png)
+![](https://main.qcloudimg.com/raw/1452f968e3c2c4d4c1083bdf0742df9d.png)
 3.画面の指示に従って、インスタンスの管理者アカウントとパスワードを入力し、【OK】をクリックします。
 Windows CVMのOSインターフェイスが表示された場合は、接続が確立されています。
 > RDPファイルを使用してWindows CVMにログインする場合は、以下に示すように、先にRDPファイルの`full address：s`パラメータを変更してください。
