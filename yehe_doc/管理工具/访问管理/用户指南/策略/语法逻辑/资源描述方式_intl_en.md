@@ -1,16 +1,16 @@
 A resource description identifies one or multiple operation objects including CVM resources and COS buckets. This document introduces CAM resource descriptions.
 
-### Six-piece format
-All resources can be described using the following six-piece format. Every product has its own resources and detailed resource definition. For more information on how to specify resource information, see the corresponding product documentation.
-The six-piece format is defined as follows:
+### Six-Segment Format
+All resources can be described in the following six-segment format. Each service has its own resources and detailed resource definition. For more information on how to specify resources, see the corresponding product documentation in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
+The six-segment format is defined as follows:
 ```
 qcs:project_id:service_type:region:account:resource
 ```
 
-- **qcs**: qcloud service abbreviation. This refers to Tencent Cloud resources. This field is required.   
-- **project_id**: indicates the project information and is only compatible with the earlier CAM logic. Such information is prohibited to be entered by the current policy syntax.  
-- **service_type**: indicates the abbreviated product type, e.g. CVM and CDN. For more information about product, see the corresponding product documentation. The value `*` indicates all products. This field is required.  
-- **region**: describes the region information. If the field is left empty, it indicates all regions. At present, two types of naming methods are supported. For more information about the newest naming method for regions, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091). The existing naming method for Tencent Cloud regions is as follows:
+- **qcs** is the abbreviation of `qcloud service` and indicates that the resource is a Tencent Cloud resource. This field is required. 
+- **project_id** describes the project information, which is only compatible with legacy CAM logic. It is prohibited to be entered in the current policy syntax and can be left empty.
+- **service_type** describes the abbreviated service name, such as CVM and CDN. See the corresponding service documentation for more information. The value `*` indicates all services. This field is required.  
+- **region** describes the region information. If the field is left empty, it indicates all regions. Currently, two naming methods are supported. For more information on the latest naming method standard for regions, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091). The existing naming method for Tencent Cloud regions is as follows:
 
 | Region Abbreviation | Region | 
 |:---------:|:---------:|
@@ -23,91 +23,70 @@ qcs:project_id:service_type:region:account:resource
 | cd | Chengdu |
 | de | Germany |
 
-- **account**: indicates the root account information of the resource owner. At present, either `uin` or `uid` can be used to describe the resource owner.
- - uin is the account ID of the root account. It is expressed in the format `uin/${uin}`, e.g. `uin/12345678`.
- - uid is the APPID of the root account. It is expressed in the format `uid/${appid}`, e.g. `uid/10001234`.
- - If this value is empty, the account will be taken to be the root account of the user that created the policy.
+- **account** describes the root account information of the resource owner. Currently, either `uin` or `uid` can be used to describe the resource owner.
+ - `uin` is the account ID of the root account, which is expressed in the format of `uin/${uin}`, such as `uin/12345678`.
+ - `uid` is the `APPID` of the root account, which is expressed in the format of `uid/${appid}`, such as `uid/10001234`.
+ - If this value is empty, the account will be the root account of the user who created the policy.
  
- >  At present, COS resource owners can only be described using `uid`, and resource owners of other services can only be described using `uin`.
-- **resource**: describes the details of the specific product resource.
+ >？  At present, COS resource owners can only be described using `uid`, and resource owners of other services can only be described using `uin`.
+- **resource** describes the detailed resource information of the specific service.
 	- This field is required. The resource can be described as follows:
-
-     - Indicates the ID of a resource under a sub-resource type. For example, `instance/ins-abcdefg` of a VPC product.
-
-     ```
+     - It can indicate the ID of a resource in a resource subcategory, such as `instance/ins-abcdefg` for VPC.
+```
 	<resource_type>/<resource_id> 
-     ```
-
-     - Indicates the ID of a resource with a path under a sub-resource type. For example, `prefix//10001234/bucket1/object2` of a COS product. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects under bucket1.
-
-     ```
+```
+	 - It can indicate the ID of a resource with a path in a resource subcategory, such as `prefix//10001234/bucket1/object2` for COS. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects in `bucket1`.
+```
 	<resource_type>/<resource_path>
-     ```
-
-     - Indicates all the resources under a sub-resource type, such as `instance/*`.
-
-     ```
+```
+	 - It can indicate all the resources in a resource subcategory, such as `instance/*`.
+```
 	<resource_type>/*
-     ```
+```
+	 - It can indicate all the resources of a service.
+```
+	*
+```
 
-     - Indicates all the resources under a product.
+ - In certain scenarios, the `resource` element can be described by `*`, and the definitions are as follows. For more information, please see the corresponding service documentation.
+ -   If the `action` needs to be associated with a resource, the resource can be defined as `*`, indicating that all resources are associated.
+ -   If the `action` does not need to be associated with a resource, the resource needs to be defined as `*`.
 
-     ```
-      *
-     ```
-
- - In certain scenarios, resource elements can be described with `*`, and the definitions are as follows. For more information, see the corresponding product documentation.
- - For actions that require association with resources, "resource" defined as `*` indicates that all resources are associated.
- - If the action does not require association with resources, "resource" is defined as `*` in all cases.
-
-### Resource definition for CAM  
-CAM resources includes users, user groups, and policies. A CAM resource can be described as follows: 
-#### Root Account:
-
+### Resource Definition for CAM  
+CAM resources include users, user groups, and policies. A CAM resource can be described as follows: 
+#### Root account
 ```
 qcs::cam::uin/164256472:uin/164256472
 ```
-
 Or
-
 ```
 qcs::cam::uin/164256472:root 
 ```
-
-#### Sub-account:
-
+#### Sub-account
 ```    
 qcs::cam::uin/164256472:uin/73829520
 ```
-
-#### Group:
-
+#### Group
 ```
 qcs::cam::uin/164256472:groupid/2340
 ```
-
-#### All resources:
-
+#### All resources
 ```
 *
 ```
-
-#### Policy:
-
+#### Policy
 ```
 qcs::cam::uin/12345678:policyid/*
 ```
-
 Or
-
 ```
 qcs::cam::uin/12345678:policyid/12423
 ```
 
-### Notes on resources
-- The resource owner will always be the root account. The sub-account that creates the resource will not be permitted to access it without authorization from the root account.
-- Services such as COS support authorization of cross-account resource access permissions. Authorized accounts can pass permissions to their sub-accounts through permission propagation.
+### Notes on Resources
+- A resource owner is always a root account. The sub-account that creates a resource will not automatically have access to the resource; instead, it must be authorized by the resource owner.
+- Services such as COS support cross-account authorization for resource access. Authorized accounts can pass permissions to their sub-accounts through permission propagation.
 
-### Related documentation
+### Relevant Documents
 
-For more information about individual products’ resource definition details, see the corresponding product documentation in [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588). 
+For more information on service-specific resource definitions, please see the corresponding product documentation in [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588). 
