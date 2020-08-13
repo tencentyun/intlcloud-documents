@@ -49,7 +49,7 @@ Under the hybrid cloud network architecture, you can use VPN or Direct Connect t
 </tr>
 <tr>
 <td>Next hop</td>
-<td>You can choose to "Specify" or "Do Not Specify" the next hop. <ul><li>If **Do Not Specify** is chosen, no next hop will be selected.<blockquote class="d-mod-explain">
+<td>You can choose to "Specify" or "Do Not Specify" the next hop. <ul><li>If "Do Not Specify" is chosen, no next hop will be selected.<blockquote class="d-mod-explain">
 <div class="d-mod-title d-explain-title">
 <i class="d-icon-explain"></i>Note:
 </div>
@@ -57,8 +57,9 @@ Under the hybrid cloud network architecture, you can use VPN or Direct Connect t
 </tr>
 </tbody></table>
 5. "Verify" the "Probe Destination IP"
-	- If the connection succeeds, click **OK**.
-	- If the connection fails, check whether the subnet route is correctly configured, and whether the probed device enables Network ACL, security group or other firewalls, which may block the connection. For more information, see [Managing Network ACLs](https://intl.cloud.tencent.com/document/product/215/31852) and [Modifying a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35515).
+
+     - If the connection succeeds, click **OK**.
+     - If the connection fails, check whether the subnet route is correctly configured, and whether the probed device enables Network ACL, security group or other firewalls, which may block the connection. For more information, see [Managing Network ACLs](https://intl.cloud.tencent.com/document/product/215/31852) and [Modifying a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35515).
 
 ## Checking the Latency and Packet Loss of a Network Probe
 
