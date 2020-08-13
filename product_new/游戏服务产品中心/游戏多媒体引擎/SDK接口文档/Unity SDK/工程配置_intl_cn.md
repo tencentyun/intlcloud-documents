@@ -32,12 +32,10 @@
 
 如果设置为下图这种模式，Unity 播放音效会因为在 iOS 上设置硬件缓存区受影响，表现为音效被打断。如图所示：
 
-![](https://main.qcloudimg.com/raw/0b1c09af7f42e39081cca1718baaede3.png)
+![](https://main.qcloudimg.com/raw/60fcc1ec0bd58cc1e0de5403392c1955.png)
 
 #### MacOS平台下使用操作
 如果是在 MacOS 10.15.x 版本使用 Unity 集成 GME SDK，执行运行操作时会有报错，显示文件已损坏，目前分析原因是 com.apple.quarantine 属性导致的，那么最直接的方法就是删除 com.apple.quarantine 属性。
-
-![](https://main.qcloudimg.com/raw/29aa9b69f32c13ffe3c6db4559c9ff17.png)
 
 1. 通过终端执行 cd 命令快速定位到工程中的文件夹下：Unity_OpenSDK_Audio/Assets/Plugins/。
 2. 执行命令
@@ -61,7 +59,7 @@ $ xattr -d com.apple.quarantine gmesdk.bundle
 3. 在编译过程中出现如下图错误，请将库文件补全。  
 ![](https://main.qcloudimg.com/raw/335c9d806cd2d5fe11b5f6a04a6fad80.png) 
 库文件列表示例：
-![](https://main.qcloudimg.com/raw/5942e241e56571afe3ce5b9db58501db.png) 
+![](<https://main.qcloudimg.com/raw/5950ab3af7fceb6b58e7510f274fffe6.png>) 
 
 #### 导出 Android 平台
 1. GME Unity SDK 默认提供 arm64-v8a、armeabi-v7a 及 x86 的 lib 文件，请根据工程项目所需进行删减。

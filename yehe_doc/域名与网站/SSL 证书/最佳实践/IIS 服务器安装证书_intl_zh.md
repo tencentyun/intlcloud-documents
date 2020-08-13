@@ -18,21 +18,21 @@
   - CSR 文件内容：	`cloud.tencent.com.csr` 文件
   >?CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
 2. 打开 IIS 服务管理器，选择计算机名称，双击打开 “服务器证书”。如下图所示：
-![](https://main.qcloudimg.com/raw/3fff5cb577517b57995680b0b5ffa089.png)
+![](https://main.qcloudimg.com/raw/dc34b3e08aeb07949782ac874be1fa45.png)
 3. 在服务器证书窗口的右侧 “操作” 栏中，单击【导入】。如下图所示：
-![](https://main.qcloudimg.com/raw/160833eb7c00b81f4c1024bb0efc6d8d.png)
+![](https://main.qcloudimg.com/raw/1f81c471c61418396a7d6951f323c6a1.png)
 4. 在弹出的 “导入证书” 窗口中，选择证书文件存放路径，输入密码，单击【确定】。如下图所示：
 >? 申请证书时若设置了私钥密码，输入密码时，请输入私钥密码。若申请证书时未设置私钥密码，输入密码时，请输入 IIS 文件夹中 keystorePass.txt 文件的密码。
 
-![](https://main.qcloudimg.com/raw/32e710a2240601010ac82576ddd403ad.png)
+![](https://main.qcloudimg.com/raw/ca0b599728d99a079a2fde7325b3a0d3.png)
 5. 选择网站下的站点名称，并单击右侧 “操作” 栏的【绑定】。如下图所示：
-![](https://main.qcloudimg.com/raw/b2567cb66ba2315837e8c18adab2287c.png)
+![](https://main.qcloudimg.com/raw/e683da3789f65ac6c7d27fc08fc6fbe3.png)
 6. 在弹出的 “网站绑定” 窗口中，单击【添加】。如下图所示：
-![](https://main.qcloudimg.com/raw/84020faaf7c2899ff6290372acc4c608.png)
+![](https://main.qcloudimg.com/raw/e034799a4a854d12348ded423151f83b.png)
 7. 在 “添加网站绑定” 的窗口中，将网站类型设置为 https，端口设置为443，主机名请填写您当前申请证书的域名，并指定对应的 SSL 证书，单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/12dde01596ff7a5cd3e39a47b225cc36.png)
+![](https://main.qcloudimg.com/raw/e5ca25bbe1b6fe1ba8abd535562f0840.png)
 8. 添加完成后，即可在 “网站绑定” 窗口中查看到新添加的内容。如下图所示：
-![](https://main.qcloudimg.com/raw/db2ab433f6868e775535bb20febf63db.png)
+![](https://main.qcloudimg.com/raw/eaa3f08dc578da45ae0f6a3f79bc094f.png)
 
 ### HTTP 自动跳转 HTTPS 的安全配置（可选）
 
@@ -44,13 +44,13 @@
 2. 选择网站下的站点名称，双击打开 “URL 重写”。如下图所示：
 >!执行该步骤前请下载安装 [rewrite 模块](https://www.iis.net/downloads/microsoft/url-rewrite)。
 
-![](https://main.qcloudimg.com/raw/3333c80eaa29a208346541cd55d298c9.png)
+![](https://main.qcloudimg.com/raw/e5cb93191202ba7e285003f6a12887a1.png)
 3. 进入 “URL 重写” 页面，并单击右侧 “操作” 栏的【添加规则】。如下图所示：
-![](https://main.qcloudimg.com/raw/089257c578a3afec51eda00fedd61ac6.png)
+![](https://main.qcloudimg.com/raw/91c2ce545cd1a5439c545db8f39d0b07.png)
 4. 在弹出的 “添加规则”窗口中，选择【空白规则】，单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/7cbd21bda514331f55a1eaeab86b4328.png)
+![](https://main.qcloudimg.com/raw/043dc754d6479b5adcd239b197bddbd5.png)
 5. 进入 “编辑入站规则” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/13ee58091b5b006f00dbe004f2740564.png)
+![](https://main.qcloudimg.com/raw/e51778c3fee46a2d45b83191707d81fb.png)
   - 名称：填写强制 HTTPS。
   - 匹配URL：在 “模式” 中手动输入`(.*)`。
   - 条件：展开 <img src="https://main.qcloudimg.com/raw/b55f713d199b5077dfa66fa960b08363.png" style="margin-bottom: -5px;"></img>，单击添加，弹出 “添加条件” 窗口。
