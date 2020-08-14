@@ -29,6 +29,6 @@ From 2016 on, Apple started to support Bitcode compilation in the Xcode developm
  2. Upload the .so files downloaded in [step 1](#step1) to your server (or Tencent Cloud [COS](https://intl.cloud.tencent.com/product/cos)) and record the download address such as `http://xxx.com/so_files.zip`.
  3. Before an SDK feature such as video playback is started by the user, use a loading animation to prompt the user that the relevant feature module is being loaded.
   When the user is waiting, the application can download the .so files from `http://xxx.com/so_files.zip` and store the files in the application directory (such as the `files` folder in the application's root directory). To ensure that this process is not affected by ISP DNS hijacking, please verify the integrity of the .so files after download to check whether the zip package has been tampered with the ISP.
- 4. After all .so files are ready, call the `setLibraryPath()` API in the `TXLiveBase` class (the earliest basic module of `LiteAVSDK`) to set the target paths of the downloaded .so files to the paths in the SDK, so that the SDK can load the required .so files at those paths and start the relevant feature.
+ 4. After all .so files are ready, call the `setLibraryPath()` API in the `TXLiveBase` class (the earliest basic module of `LiteAVSDK`) to set the target paths of the downloaded .so files to the paths in the SDK, so that the SDK can load the required .so files at those paths and start the relevant features.
 
 

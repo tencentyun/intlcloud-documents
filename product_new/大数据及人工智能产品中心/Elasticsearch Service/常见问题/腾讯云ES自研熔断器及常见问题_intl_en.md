@@ -1,8 +1,8 @@
-Elasticsearch provides a variety of official circuit breakers to prevent ES cluster errors caused by OutOfMemoryError when the memory utilization is too high. It is equipped with various types of child circuit breakers to specify the limit on memory available to specific requests. In addition, there is a parent circuit breaker that is used to specify the total amount of memory available across all child circuit breakers.
+Elasticsearch provides multiple circuit breakers to prevent ES cluster errors caused by OutOfMemoryError when the memory utilization is too high. It is equipped with various types of child circuit breakers to specify the limit on memory available to specific requests. In addition, there is a parent circuit breaker that is used to specify the total amount of memory available across all child circuit breakers.
 
-### ES' Proprietary Circuit Breaker
+### ES Circuit Breakers
 
-One of the drawbacks of Elasticsearch's official circuit breaker mechanism is that only those requests that are often problematic are tracked to estimate the memory utilization, making it impossible to limit the amount of memory available to requests or trigger a circuit breaker based on the actual memory utilization on the current node. ES has a proprietary circuit breaker to address this problem with JVM OLD memory utilization.
+One of the drawbacks of Elasticsearch circuit breaker mechanism is that only those requests that are often problematic are tracked to estimate the memory utilization, making it impossible to limit the amount of memory available to requests or trigger a circuit breaker based on the actual memory utilization on the current node. ES has a proprietary circuit breaker to address this problem with JVM OLD memory utilization.
 
 This circuit breaker monitors the JVM OLD memory utilization. When the utilization exceeds `85%`, write requests will be rejected. If GC still cannot recycle the JVM OLD memory, query requests will be rejected when the utilization reaches `90%`. If a request is rejected, the client will receive the following response:
 ```

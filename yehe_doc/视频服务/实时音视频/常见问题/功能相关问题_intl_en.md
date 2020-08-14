@@ -74,7 +74,7 @@ If you want a fixed resolution, you need to call the `setSubStreamEncoderParam` 
 Yes. You can set the resolution through the video encoding parameter `setVideoEncoderParam` of the SDK.
 
 ### Does TRTC support custom data capturing?
-This feature is supported on certain platforms. For more information, please see [Custom Capturing and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+This feature is supported on certain platforms. For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
 
 ### Can TRTC communicate with the ILVB SDK?
 No.
@@ -86,7 +86,7 @@ TRTC and MLVB have different backend architectures and therefore cannot directly
 The following scenarios are supported:
 - TRTCAppSceneVideoCall: video call scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video chat, and video interview.
 - TRTCAppSceneLIVE: interactive video live streaming scenarios such as low-latency video live streaming, interactive classroom for up to 100,000 participants, live video competition, video dating room, remote training, and mega-scale conferencing.
-- TRTCAppSceneAudioCall: audio call scenarios such as one-to-one audio call, audio conferencing with up to 300 participants, voice chat, and online werewolf.
+- TRTCAppSceneAudioCall: audio call scenarios such as one-to-one audio call, audio conferencing with up to 300 participants, voice chat, and online Werewolf.
 - TRTCAppSceneVoiceChatRoom: interactive audio live streaming scenarios such as low-latency live audio streaming, live audio co-anchoring, voice chat room, karaoke room, and FM radio.
 
 
@@ -98,7 +98,7 @@ For more information, please see [Differences Between Editions](https://intl.clo
 
 ### What are the differences between the TRTC room entry modes indicated by `AppScene`?
 TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
-- In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video interview, video customer service, and online werewolf.
+- In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video interview, video customer service, and online Werewolf.
 - TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for such application scenarios as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
 
 ### Does TRTC support hands-free mode during audio/video call?
@@ -127,7 +127,7 @@ TRTC does not distinguish between audio and video channels. If only `startLocalA
 ### Can I kick out a user, forbid a user to speak, or mute a user in a TRTC room?	
 Yes.
 - To perform a simple signaling operation, you can use the custom signaling API `sendCustomCmdMsg` of TRTC to define the corresponding control signaling, and the user in the call will perform the corresponding operation after receiving the control signaling. For example, to kick out a user is to define a kick-out signaling, and the user receiving it will exit the room automatically.
-- If you want to implement a more comprehensive operation logic, we recommend you use [IM](https://intl.cloud.tencent.com/document/product/1047) to map the TRTC room to an IM group and receive/send custom messages in the group, so as to perform the corresponding operation.
+- If you want to implement a more comprehensive operation logic, we recommend you use [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047) to map the TRTC room to an IM group and receive/send custom messages in the group, so as to perform the corresponding operation.
 
 ### Does TRTC support playback of pulled RTMP/FLV streams?	
 Yes. Currently, TXLivePlayer has been embedded in the TRTC SDK. If you need more player features, you can directly use the LiteAVSDK_Professional Edition, which provides all player features.
@@ -229,7 +229,7 @@ For more information, please see [Recommended Configuration](https://intl.cloud.
 For more information, please see [Testing Network Speed Before Chat](https://intl.cloud.tencent.com/document/product/647/35156).
 
 ### Does TRTC support room entry authentication in scenarios such as allowing entry for only authorized members?	
-Yes. For more information, please see [Room Entry Permission Protection](https://intl.cloud.tencent.com/document/product/647/35157).
+Yes. For more information, please see [Configuring Permission for Entering Room](https://intl.cloud.tencent.com/document/product/647/35157).
 
 ### Can TRTC audio/video streams be pulled through CDN for playback?	
 Yes. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
