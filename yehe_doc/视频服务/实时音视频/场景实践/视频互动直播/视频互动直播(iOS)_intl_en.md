@@ -31,7 +31,7 @@ To quickly implement the interactive video live streaming feature, you can direc
 5. Click **Close Guide and Enter Console** to manage the application.
 
 >!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
->The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-Side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166).
+>The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
 <span id="ui.step4"></span>
 ### Step 4. Run the demo
@@ -211,7 +211,7 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID:
 2. The anchor will receive the `TRTCLiveRoomDelegate#onRequestJoinAnchor` event notification (i.e., "a viewer has initiated a request to co-anchor with you").
 3. The anchor can decide whether to accept the co-anchoring request from the viewer by calling `responseJoinAnchor`.
 4. The viewer will receive the `TRTCLiveRoomDelegate#responseCallback` event notification, which will carry the processing result from the anchor.
-5. If the anchor agrees to the co-anchoring request, the viewer can call `startCameraPreview` to enable local camera and then call `startPublish` to start push.
+5. If the anchor accepts the co-anchoring request, the viewer can call `startCameraPreview` to enable local camera and then call `startPublish` to start push.
 6. The anchor will receive the `TRTCLiveRoomDelegate#onAnchorEnter` notification (i.e., "another audio/video stream has arrived") after the viewer enables notification, which will carry the viewer's `userId`.
 7. The anchor can call `startPlay` to view the co-anchoring viewer's video image.
 
@@ -232,8 +232,8 @@ mliveRoom.requestJoinAnchor(reason: mSelfUserId + "requested to co-anchor with y
 // Anchor:
 // 2. The anchor receives the co-anchoring request
 public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRequestJoinAnchor user: TRTCLiveUserInfo, reason: String?, timeout: Double) {
-	// 3. The anchor agrees to the co-anchoring request
-	mliveRoom.responseJoinAnchor(userID: userID, agree: true, reason: "agreed to co-anchor")
+	// 3. The anchor accepts the co-anchoring request
+	mliveRoom.responseJoinAnchor(userID: userID, agree: true, reason: "accepted co-anchoring")
 }
 
 // 6. The anchor receives the notification of mic-on by the co-anchoring viewer
@@ -249,7 +249,7 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID:
 2. Anchor B will receive the `TRTCLiveRoomDelegate onRequestRoomPK` callback notification.
 3. Anchor B decides whether to accept the competition request from anchor A by calling `responseRoomPK`.
 4. Anchor B accepts the request from anchor A, waits for the `TRTCLiveRoomDelegate onAnchorEnter` notification, and calls `startPlay` to display anchor A's video image.
-5. Anchor A receives the `responseCallback` callback notification of whether the request to compete is accepted.
+5. Anchor A receives the `responseCallback` callback notification of whether the competition request is accepted.
 6. Anchor A's request is accepted, and anchor A waits for `TRTCLiveRoomDelegate onAnchorEnter` notification and calls `startPlay` to display anchor B's video image.
 
 ![](https://main.qcloudimg.com/raw/5632056b6d86541db841026e9488468b.jpg)
