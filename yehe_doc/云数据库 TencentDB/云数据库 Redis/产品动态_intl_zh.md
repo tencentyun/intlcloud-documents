@@ -16,7 +16,7 @@
 <td>支持架构升级</td>
 <td>Redis 新增架构升级功能，一键完成标准架构到集群架构升级，帮助业务快速扩展性能和容量。</td>
 <td>2020-07</td>
-<td><a href="https://cloud.tencent.com/document/product/239/46458" target="_blank">升级实例架构</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/37860" target="_blank">升级实例架构</a></td>
 </tr>
 </table>
 

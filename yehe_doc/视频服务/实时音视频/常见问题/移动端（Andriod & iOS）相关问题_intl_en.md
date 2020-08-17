@@ -7,7 +7,7 @@ Two system volume types, i.e., call volume and media volume, are supported.
 1080p is defined as 114 in `TX_Enum_Type_VideoResolution`. You can directly set the resolution by passing in the enumerated value.
 
 ### Can I enter a room created on Mini Program through the mobile client?
-Yes, TRTC supports interconnection across all platforms.
+Yes. TRTC supports interconnection across all platforms.
 
 ### How does the TRTC mobile client implement screen sharing?	
 From v7.2 on, the entire screen can be shared on Android, and the screen of a single application can be shared on iOS. For more information, please see the source code in the [official demo](https://github.com/tencentyun/TRTCSDK).

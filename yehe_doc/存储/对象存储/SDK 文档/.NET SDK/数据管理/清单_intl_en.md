@@ -1,62 +1,40 @@
-
-
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to inventory.
+This document provides an overview of APIs and SDK code samples related to COS inventory.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
-| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
-| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
-| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
+| [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job for a bucket |
+| [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of a bucket |
+| [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job from a bucket |
 
-## Setting Inventory Job
+## SDK API References
 
-#### Feature description
+For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-This API (PUT Bucket inventory) is used to create an inventory job in a bucket.
+## Setting an Inventory Job
 
-#### Method prototype
+#### API description 
 
-```
-PutBucketInventoryResult putBucketInventory(PutBucketInventoryRequest request);
+This API is used to create an inventory job for a bucket.
 
-void putBucketInventoryAsync(PutBucketInventoryRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-```
+#### Sample code
 
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # (.cssg-snippet-put-bucket-inventory)
+```cs
 try
 {
   string inventoryId = "aInventoryId";
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-  PutBucketInventoryRequest putRequest = new PutBucketInventoryRequest(bucket);
-  putRequest.SetInventoryId(inventoryId);
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  PutBucketInventoryRequest putRequest = new PutBucketInventoryRequest(bucket, inventoryId);
   putRequest.SetDestination("CSV", "100000000001", "examplebucket-1250000000", "ap-guangzhou","list1");
   putRequest.IsEnable(true);
   putRequest.SetScheduleFrequency("Daily");
   // Execute the request
   PutBucketInventoryResult putResult = cosXml.putBucketInventory(putRequest); 
   
-  // Request succeeded
-  Console.WriteLine(result.GetResultInfo());
+  // Request successful 
+  Console.WriteLine(putResult.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
 {
@@ -70,68 +48,33 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketInventory.cs).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket  | Bucket for which to set an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string |
 
-For more information on other inventory configuration parameters, please see the API documentation.
+#### Error codes
 
-#### Returned result description
+The following describes some common errors that may occur when making requests using this API.
 
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
-
-#### Error code description
-
-Some frequent special errors that may occur with this request are listed below:
-
-| Error code | Description | Status code |
+| Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You probably do not have access to the bucket. | HTTP 403 Forbidden |
+| AccessDenied          | Unauthorized access. You may not have access to the bucket | HTTP 403 Forbidden   |
 
-## Querying Inventory Job
+## Querying Inventory Jobs
 
-#### Feature description
+#### API description 
 
-This API (GET Bucket inventory) is used to query the inventory job information in a bucket.
+This API is used to query the inventory jobs of a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-GetBucketInventoryResult getBucketInventory(GetBucketInventoryRequest request);
-
-void getBucketInventoryAsync(GetBucketInventoryRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-
-```
-
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # (.cssg-snippet-get-bucket-inventory)
+```cs
 try
 {
   string inventoryId = "aInventoryId";
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketInventoryRequest getRequest = new GetBucketInventoryRequest(bucket);
   getRequest.SetInventoryId(inventoryId);
   
@@ -151,63 +94,28 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 
-| Parameter Name | Description | Type |
-| ----------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to query an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | bucket |
-| inventoryId | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | string |
+## Deleting an Inventory Job
 
-#### Returned result description
+#### API description 
 
-| Member Variable | Description | Type |
-| ---------------------- | -------------------------------------------------------- | ---------------------- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
-| inventoryConfiguration | Inventory configuration                                                 | InventoryConfiguration |
+This API is used to delete an inventory job from a bucket.
 
-## Deleting Inventory Job
+#### Sample code
 
-#### Feature description
-
-This API (DELETE Bucket inventory) is used to delete a specified inventory job of a bucket.
-
-#### Method prototype
-
-```
-DeleteBucketInventoryResult deleteBucketInventory(DeleteBucketInventoryRequest request);
-
-void deleteInventoryAsync(DeleteBucketInventoryRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-```
-
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # (.cssg-snippet-delete-bucket-inventory)
+```cs
 try
 {
   string inventoryId = "aInventoryId";
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketInventoryRequest deleteRequest = new DeleteBucketInventoryRequest(bucket);
   deleteRequest.SetInventoryId(inventoryId);
   DeleteBucketInventoryResult deleteResult = cosXml.deleteBucketInventory(deleteRequest);
   
-  // Request succeeded
-  Console.WriteLine(result.GetResultInfo());
+  // Request successful 
+  Console.WriteLine(deleteResult.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
 {
@@ -221,15 +129,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 
-| Parameter Name | Description | Type |
-| ----------- | ------------------------------------------------------------ | ------ |
-| bucket  | Bucket for which to delete an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string |
-| inventoryId | Inventory job name. Valid characters: a-z, A-Z, 0-9, -, _, .             | string |
-
-#### Returned result description
-
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
