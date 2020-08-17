@@ -55,4 +55,4 @@
 ![](https://main.qcloudimg.com/raw/4c616b40d058f114e8f75c4021c02648.png)
 
 ## 后续操作
-- 相关重要参数的配置建议，请参见 [参数配置建议](https://intl.cloud.tencent.com/document/product/238/38051)。
+- 相关重要参数的配置建议，请参见 [参数配置建议](https://intl.cloud.tencent.com/document/product/236/38056)。
