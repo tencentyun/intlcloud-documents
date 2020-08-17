@@ -14,14 +14,14 @@
 <span id="http"></span>
  - **HTTP/HTTPS 监听器**
 	 1. 在 HTTP/HTTPS 监听器区域，单击目标监听器左侧的+。
-	 ![](https://main.qcloudimg.com/raw/5c123efc112957e25f51ab2f8a753063.png)
+	 ![](https://main.qcloudimg.com/raw/561cc0f6ee3c0bce9e051fb20b4ec7bd.png)
 	 2. 在展开的域名左侧单击+。
-	 ![](https://main.qcloudimg.com/raw/816b003603e735d3d4f21e8891d9e279.png)
+	 ![](https://main.qcloudimg.com/raw/c4bb770736b9e185a3ecaddb9591331d.png)
 	 3. 选中展开的 URL 路径，单击【绑定】。
-![](https://main.qcloudimg.com/raw/94dcb867b54744690b6b53ef6d150c8c.png)
+![](https://main.qcloudimg.com/raw/05f2041acaced53d2ae8bc24a2f0662b.png)
  - **TCP/UDP/TCP SSL 监听器**
 在 TCP/UDP/TCP SSL 监听器模块的左侧列表中，选中需要绑定后端云服务器的监听器，单击【绑定】。
-![](https://main.qcloudimg.com/raw/e8ddf05b155e14d0b5e6886812cebebb.png)
+![](https://main.qcloudimg.com/raw/7dc44fc32104e533b512ab6c0b616e21.png)
 5. 为负载均衡实例绑定后端服务。
 	- **方式1**：在“绑定后端服务”弹出框中，单击【云服务器】，选择需要关联的云服务器（可多选），并填写相关云服务器需要被转发的端口与权重，详情请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)，单击【确定】。
 >?
@@ -29,9 +29,9 @@
 >- 绑定多个后端服务器时，CLB 将按 Hash 算法转发流量，起到均衡负载的作用。
 >- 权重越大转发的请求越多，默认为10，可配置范围为0 - 100。 当权重设置为0，该服务器不会再接受新请求。 如开启会话保持，可能会造成后端服务器的请求不均匀，详情请参见 [均衡算法选择与权重配置实例](https://intl.cloud.tencent.com/document/product/214/5371)。
 >
- ![](https://main.qcloudimg.com/raw/fe255ed598355baa1c38b64f3e58083f.png)
+ ![](https://main.qcloudimg.com/raw/a7f71557ff1812f777c9e989b916049f.png)
 	- **方式2**：如需批量绑定服务器且预设端口值一致时，可在“绑定后端服务”弹出框中，单击【云服务器】，并输入默认端口值（端口选择请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)）、再勾选相关服务器并设定权重值，单击【确定】。
-![](https://main.qcloudimg.com/raw/791cef0adbb501b8e44bd648c10d827d.png)
+![](https://main.qcloudimg.com/raw/118bfbab842d72e990d9ffe08c6379ff.png)
 
 ### 修改负载均衡后端服务器权重
 后端服务器权重决定了云服务器被转发的请求相对数量，在绑定后端云服务器时，需要预设权重信息，接下来将以 “HTTP/HTTPS 监听器”为例（TCP/UDP/TCP SSL 监听器的修改方式相同），为您介绍如何修改负载均衡后端服务器权重。
@@ -42,21 +42,22 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
 2. 在“实例管理”页面的“负载均衡”页签中，单击目标负载均衡实例右侧操作列的【配置监听器】。
 4. 在 HTTP/HTTPS 监听器模块左侧列表中，展开实例与监听器规则，选中 URL 路径。
-![](https://main.qcloudimg.com/raw/2c2fbe8baf8cd922318c5a4b5c390c34.png)
+![](https://main.qcloudimg.com/raw/06d500104032de3edda51bdc368b0c4b.png)
 5. 在 HTTP/HTTPS 监听器模块右侧服务器列表中，修改相关服务器权重。
 >?权重越大转发的请求越多，默认为10，可配置范围为0 - 100。 当权重设置为0，该服务器不会再接受新请求。 如开启会话保持，可能会造成后端服务器的请求不均匀，详情请见 [均衡算法选择与权重配置实例](https://intl.cloud.tencent.com/document/product/214/5371)。
 >
 	- **方式1**：单独修改某台服务器权重。
 		1. 找到需要修改权重的服务器，并将鼠标悬浮于对应权重上方，单击<img src="https://main.qcloudimg.com/raw/4aae0dbec227f8fc18b4a35acf560f62.png" style="margin:0;">编辑按钮。
-		![](https://main.qcloudimg.com/raw/e9464dafdb3d8182445079036780fec4.png)
+		![](https://main.qcloudimg.com/raw/519a69a1fab550879e92cdfc159a8fa1.png)
 		2. 在“修改权重”弹窗中，输入修改后的权重值，单击【提交】。
 	- **方式2**：批量修改某些服务器权重。
 	>?批量修改权重后的服务器权重相同。
+		
 		>
 		1. 单击服务器前方复选框，选中多台服务器，在列表上方，单击【修改权重】。
-		![](https://main.qcloudimg.com/raw/6a183155ed93e89bc9c7c428a3bf9dfb.png)
+		![](https://main.qcloudimg.com/raw/09fdd5cb7a49f80bdc088632d7249f1e.png)
 		2. 在“修改权重”弹窗中，输入修改后的权重值，单击【提交】。
-		
+
 
 
 ### 修改负载均衡后端服务器端口
@@ -66,17 +67,17 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
 2. 在“实例管理”页面的“负载均衡”页签中，单击目标负载均衡实例右侧操作列的【配置监听器】。
 4. 在 HTTP/HTTPS 监听器模块左侧列表中，展开实例与监听器规则，选中 URL 路径。
-![](https://main.qcloudimg.com/raw/2c2fbe8baf8cd922318c5a4b5c390c34.png)
+![](https://main.qcloudimg.com/raw/06d500104032de3edda51bdc368b0c4b.png)
 5. 在 HTTP/HTTPS 监听器模块右侧服务器列表中，修改相关服务器端口，端口选择请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)。
 	- **方式1**：单独修改某台服务器端口。
 		1. 找到需要修改端口的服务器，并将鼠标悬浮于对应端口上方，单击<img src="https://main.qcloudimg.com/raw/4aae0dbec227f8fc18b4a35acf560f62.png" style="margin:0;">编辑按钮。
-		![](https://main.qcloudimg.com/raw/4317e0c21e3baf9015c4d0c1653b9f08.png)
+		![](https://main.qcloudimg.com/raw/923c439bedc4af2e6129d8ada459a1c5.png)
 		2. 在“修改端口”弹窗中，输入修改后的端口值，单击【提交】。
 	- **方式2**：批量修改某些服务器端口。
 	>?批量修改端口后的服务器端口相同。
 		>
 		1. 单击服务器前方复选框，选中多台服务器，在列表上方，单击【修改端口】。
-		![](https://main.qcloudimg.com/raw/972739b2d3c9cc8ca338397eeb4cfaef.png)
+		![](https://main.qcloudimg.com/raw/07d40e5fcf1111a9141be83e41f67797.png)
 		2. 在“修改端口”弹窗中，输入修改后的端口值，单击【提交】。
 
 
@@ -91,14 +92,14 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
 2. 在“实例管理”页面的“负载均衡”页签中，单击目标负载均衡实例右侧操作列的【配置监听器】。
 4. 在 HTTP/HTTPS 监听器模块左侧列表中，展开实例与监听器规则，选中 URL 路径 。
-![](https://main.qcloudimg.com/raw/2c2fbe8baf8cd922318c5a4b5c390c34.png)
+![](https://main.qcloudimg.com/raw/06d500104032de3edda51bdc368b0c4b.png)
 5. 在 HTTP/HTTPS 监听器模块右侧服务器列表中，解绑已绑定的后端服务器。
 	- **方式1**：单独解绑某台服务器。
 		1. 找到需要解绑的服务器，在右侧操作栏，单击【解绑】。
-		![](https://main.qcloudimg.com/raw/8f041678ca1a50bbadaecf7a3c9cbb01.png)
+		![](https://main.qcloudimg.com/raw/c995daabbf0b6a710b21389b17b7760b.png)
 		2. 在“解绑”弹窗中，确认解绑的服务，单击【提交】。
 	- **方式2**：批量解绑某些服务器。
 		1. 单击服务器前方复选框，选中多台服务器，在列表上方，单击【解绑】。
-		![](https://main.qcloudimg.com/raw/2441fcacc682c22761c1cdca7e3087c7.png)
+		![](https://main.qcloudimg.com/raw/b397ef434ce42cfaa9a48b9f4f08f09f.png)
 		2. 在“解绑”弹窗中，确认解绑的服务，单击【提交】。
 
