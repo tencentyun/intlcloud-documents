@@ -25,6 +25,6 @@
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#cross-region-replication)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#cross-region-replication)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#cross-region-replication)
-- Node.js SDK
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35859)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#cross-region-replication)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#cross-region-replication)
