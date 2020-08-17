@@ -10,7 +10,7 @@
 3. 根据实际情况和需求选择网络、所属项目等信息，各个属性的选择请参考 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629)。
 4. 确认购买后，您可以进行支付。
 5. 支付完成后即开通负载均衡服务，您可进行负载均衡配置使用。
-![](https://main.qcloudimg.com/raw/13a12d1e0fe89a6bc905a4f846c2a5be.png)
+![](https://main.qcloudimg.com/raw/33dfce7ca7a0bbde210346a313a42d8e.png)
 
 ### 带宽上移账户
 内网负载均衡免费，公网负载均衡收取实例费和公网网络费。公网负载均衡支持按量计费的计费模式，按量计费的公网网络费支持按带宽计费、按流量计费、共享带宽包三种计费模式。
@@ -20,7 +20,7 @@
 3. 根据实际情况和需求选择网络、网络计费模式、所属项目等信息，各个属性的选择请参考 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629)。
 4. 确认购买后，您可以进行支付。
 5. 支付完成后即开通负载均衡服务，您可进行负载均衡配置使用。
-![](https://main.qcloudimg.com/raw/dc6c971e92caf76aaee413450036b80b.png)
+![](https://main.qcloudimg.com/raw/315549c93a7552d2b97f83e9b47602d4.png)
 
 ## API 购买
 欲通过 API 购买负载均衡的用户，请参见 [负载均衡 API - 购买负载均衡实例](https://intl.cloud.tencent.com/document/product/214/33841)。

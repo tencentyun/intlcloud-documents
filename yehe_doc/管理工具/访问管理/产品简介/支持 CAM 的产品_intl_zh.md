@@ -172,7 +172,7 @@
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
 | [即时通信](https://intl.cloud.tencent.com/document/product/1047)   | 资源级 | &#10003;   | -  |  - | - |
-| [短信](https://intl.cloud.tencent.com/document/product/382) | 操作级 | &#10003; | -   | -  |	-  |	
+| [短信](https://intl.cloud.tencent.com/document/product/382) | 资源级 | &#10003; | -   | -  |	-  |	
 
 ## 云资源管理
 
