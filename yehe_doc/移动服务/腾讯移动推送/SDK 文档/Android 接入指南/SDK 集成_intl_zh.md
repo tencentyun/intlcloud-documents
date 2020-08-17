@@ -152,7 +152,7 @@ dependencies {
             <intent-filter>
                 <data
                     android:scheme="tpns"
-                    android:host="${applicationId}"/>
+                    android:host="应用包名"/>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -185,7 +185,7 @@ dependencies {
         android:persistent="true"
         android:process=":xg_vip_service"></service>
 
-    <!-- 【必须】 通知service，其中android:name部分要改为当前包名 -->
+    <!-- 【必须】通知 service ，android:name 部分改为包名.XGVIP_PUSH_ACTION -->
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
             <intent-filter>
@@ -229,7 +229,7 @@ dependencies {
 	<provider
             android:exported="false"
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
-            android:authorities="${applicationId}.XG_SETTINGS_PROVIDER" />
+            android:authorities="应用包名.XG_SETTINGS_PROVIDER" />
 
     <!-- MQTT END-->
 		
