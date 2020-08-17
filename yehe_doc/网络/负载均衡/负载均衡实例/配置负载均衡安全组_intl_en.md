@@ -1,4 +1,10 @@
 After a CLB instance is created, you can configure a CLB security group to isolate public network traffic. This document describes how to configure CLB security groups in different modes.
+## Use Limits
+- One CLB instance can be bound to five security groups at most.
+- There can be 0–65535 security group rules.
+- Security groups cannot be bound to classic private network CLB instances and private network CLB instances in the classic network. If a private network CLB instance is bound to an [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426), security groups bound to the instance will not take effect.
+- The "Allow Traffic by Default in Security Group" feature is in beta test. To try it out, please <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">submit a ticket for application</a>. This feature is not supported for classic private network CLB and CLB in the classic network.
+
 
 ## Background
 A security group is a virtual firewall that can filter stateful data packets and control outbound and inbound traffic at the instance level. For more information, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/213/12452).
@@ -29,11 +35,7 @@ After "Allow Traffic by Default in Security Group" is disabled:</p>
 <ol ><li>Configure public network CLB <br>You need to open the CLB VIP to the internet on the backend CVM security group, so that CLB can use the VIP to detect the backend CVM health status.</li>
 <li>Configure private network CLB<ul><li>For private network CLB (formerly "private network application CLB"), if your CLB instance is in a VPC, the CLB VIP needs to be opened to the internet in the backend CVM security group for health checks; if your CLB instance is in the classic network, no additional configuration is needed as the health check IP is opened to the internet by default. </li><li>For private network classic CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be opened to the internet (for health checks) in the backend CVM security group; otherwise, no additional configuration is needed as the health check IP is opened to the internet by default.</li></ul></li></ol>
 
-## Use Limits
-- One CLB instance can be bound to five security groups at most.
-- There can be 0–65535 security group rules.
-- Security groups cannot be bound to classic private network CLB instances and private network CLB instances in the classic network. If a private network CLB instance is bound to an [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426), security groups bound to the instance will not take effect.
-- The "Allow Traffic by Default in Security Group" feature is in beta test. To try it out, please <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">submit a ticket for application</a>. This feature is not supported for classic private network CLB and CLB in the classic network.
+
 
 ## Directions
 The following public network CLB security group configuration example only allows business traffic to enter from CLB port 80 and make CVM port 8080 provide services. It does not limit the client IP but supports access from any IP.
@@ -45,6 +47,7 @@ For more information, please see [Getting Started with CLB](https://intl.cloud.t
 <img alt="" src="https://main.qcloudimg.com/raw/9ec487d62b6092e6f5b14c1791ef5f4e.png" >
 
 ### Step 2. Configure a CLB security group
+
 1. Configure a CLB security group rule. <br>Log in to the <a rel="nofollow" href="https://console.cloud.tencent.com/cvm/securitygroup">Security Group Console</a> to configure a security group rule. In the inbound rule, open port 80 of all IPs (i.e., `0.0.0.0/0`) to the internet and reject traffic from other ports.
 > ?
 > - Security group rules are screened to take effect from top to bottom. If the new rule is put into effect, other rules will be denied by default; therefore, pay attention to their order.
@@ -63,6 +66,7 @@ For more information, please see [Getting Started with CLB](https://intl.cloud.t
 ### Step 3. Configure "Allow Traffic by Default in Security Group"
 You can choose to enable or disable "Allow Traffic by Default in Security Group" with different configurations as follows:
 - Method 1. Enable "Allow Traffic by Default in Security Group", so that the real server does not need to open the port to the internet.
+>?The "Allow Traffic by Default in Security Group" feature is in beta test. To try it out, please <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">submit a ticket for application</a>. This feature is not supported for classic private network CLB and CLB in the classic network.
 - Method 2. Disable "Allow Traffic by Default in Security Group", and you also need to open the client IP to the internet (0.0.0.0/0 in this example) in the CVM security group.
 
 #### Method 1. Enable "Allow Traffic by Default in Security Group"
