@@ -18,7 +18,7 @@ A response similar to the following will be returned:
 <span id="CheckVirtioForInitramfs"></span>
 ### Step 2: Checking whether virtio drivers are in the temporary file system
 If the value of the parameters is `m` in [Step 1](#CheckVirtioForKernel), you need to check whether `initramfs` or `initrd` contains the `virtio` drivers. Please execute the corresponding command according to the operating system:
-- For CentOS 6/CentOS 7/RedHat 6/RedHat 7:
+- For CentOS 6/CentOS 7/CentOS 8/RedHat 6/RedHat 7:
 ```
 lsinitrd /boot/initramfs-$(uname -r).img | grep virtio
 ```
