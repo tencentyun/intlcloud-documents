@@ -1,66 +1,62 @@
-VOD provides an SDK for PHP for uploading videos from a server. For more information on the upload process, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33912).
+VOD provides an SDK for Java for uploading videos from a server. For more information on the upload process, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33912).
 
 ## Integration Methods
 
-### Importing by using Composer
-```json
-{
-    "require": {
-        "qcloud/vod-sdk-v5": "v2.4.0"
-    }
-}
+### Importing Maven dependency
+
+Add the VOD SDK dependency in the pom.xml file of your project.
+
+```
+<dependency>
+    <groupId>com.qcloud</groupId>
+    <artifactId>vod_api</artifactId>
+    <version>2.1.4</version>
+</dependency>
 ```
 
-### Installing through source package
-If the Composer tool is not used for dependency management in the project, you can download the source code and import it into the project:
+### Importing jar packages
 
-* [Access from GitHub](https://github.com/tencentyun/vod-php-sdk-v5)
-* Click [here](https://github.com/tencentyun/vod-php-sdk-v5/raw/master/packages/vod-sdk.zip) to download the SDK for PHP
+If Maven is not used for dependency management in your project, you can directly download the required jar packages and import them into the project:
 
-Decompress the `vod-sdk.zip` file into the project and import the `autoload.php` file.
+| jar File | Description |
+| ------------ | ------------ |
+| vod_api-2.1.4.jar | VOD SDK. |
+| jackson-annotations-2.9.0.jar,jackson-core-2.9.7.jar,jackson-databind-2.9.7.jar,gson-2.2.4.jar       | Open-source JSON libraries. |
+| cos_api-5.4.10.jar            | COS SDK.                          |
+| tencentcloud-sdk-java-3.1.2.jar             | TencentCloud API SDK.                        |
+| commons-codec-1.10.jar,commons-logging-1.2.jar,log4j-1.2.17.jar,slf4j-api-1.7.21.jar,slf4j-log4j12-1.7.21.jar           | Open-source log libraries.   |
+| httpclient-4.5.3.jar,httpcore-4.4.6.jar,okhttp-2.5.0.jar,okio-1.6.0.jar | Open-source HTTP processing libraries. |
+| joda-time-2.9.9.jar | Open-source time processing library. |
+| jaxb-api-2.3.0.jar | Open-source XML processing library. |
+| bcprov-jdk15on-1.59.jar | Open-source encryption processing library.                            |
 
-## Simple Video Upload
-### Initializing upload object
+Download the jar packages associated with the SDK for Java [here](https://github.com/tencentyun/vod-java-sdk/raw/master/packages/vod-sdk-jar.zip) and import them into your project.
+
+
+
+## Simple Upload
+### Initializing upload client object
 Initialize a `VodUploadClient` instance with a TencentCloud API key.
-
-**Import by using Composer**
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-```
-
-**Import by using source code**
-```php
-<?php
-require 'vod-sdk-v5/autoload.php';
-
-use Vod\VodUploadClient;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
 ```
 
 ### Constructing upload request object
+Set the local media upload path.
 ```
-use Vod\Model\VodUploadRequest;
-
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
 ```
 
 ### Calling upload method
 Call the upload method and pass in the access point region and upload request.
 ```
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
@@ -69,115 +65,95 @@ try {
 ## Advanced Features
 ### Uploading cover
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
-$req->CoverFilePath = "/data/videos/Wildlife-Cover.png";
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+request.setCoverFilePath("/data/videos/Wildlife.jpg");
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-    echo "CoverUrl -> ". $rsp->CoverUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
 ### Specifying task flow
 First, [create a task flow template](https://intl.cloud.tencent.com/document/product/266/14058) and name it. When initiating the task flow, you can set the `Procedure` parameter with the task flow template name, and the task flow will be executed automatically upon upload success.
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
-$req->Procedure = "Your Procedure Name";
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+request.setProcedure("Your Procedure Name");
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
 ### Uploading to subapplication
 Pass in a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987) ID. After the upload is successful, the resource will belong only to the specified subapplication.
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
-$req->SubAppId = 101;
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+request.setSubAppId(101);
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
 ### Specifying storage region
 In the [console](https://console.cloud.tencent.com/vod), confirm that the target storage region has been activated. If not, you can do so as instructed in [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874) and then set the [abbreviation](https://intl.cloud.tencent.com/document/product/266/9760) of the storage region through the `StorageRegion` attribute.
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
-$req->StorageRegion = "ap-chongqing";
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+request.setStorageRegion("ap-chongqing");
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
+}
+```
+
+### Specifying the number of concurrent parts
+The number of concurrent parts is applicable to uploading a large file in multiple parts simultaneously. The advantage of multipart upload lies in that a large file can be uploaded quickly. The SDK automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload. The number of concurrent parts of the file is specified by the `ConcurrentUploadNumber` parameter.
+```
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+request.setConcurrentUploadNumber(5);
+try {
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
 ### Uploading with temporary credentials
 Pass in the relevant key information of the temporary credentials to use the temporary credentials for authentication and upload.
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("Credentials TmpSecretId", "Credentials TmpSecretKey", "Credentials Token");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
+VodUploadClient client = new VodUploadClient("Credentials TmpSecretId", "Credentials TmpSecretKey", "Credentials Token");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
@@ -185,25 +161,19 @@ try {
 ### Setting upload proxy
 Set an upload proxy, and then the protocol and data involved will be processed by the proxy. In this way, you can use the proxy to upload files to Tencent Cloud over your organization's private network.
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-use Vod\Model\VodUploadHttpProfile;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$uploadHttpProfile = new VodUploadHttpProfile("your proxy addr");
-$client->setHttpProfile($uploadHttpProfile);
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/Wildlife.wmv";
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/Wildlife.wmv");
+HttpProfile httpProfile = new HttpProfile();
+httpProfile.setProxyHost("your proxy ip");
+httpProfile.setProxyPort(8080); //your proxy port
+client.setHttpProfile(httpProfile);
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
@@ -212,22 +182,15 @@ try {
 The adaptive bitstream formats supported by this SDK for upload include HLS and DASH, and the media files referenced by the `manifest` (M3U8 or MPD) must be relative paths (i.e., URLs and absolute paths cannot be used) and be located in the same-level directory or subdirectory of `manifest` (i.e., `../` cannot be used). When calling the SDK's upload APIs, enter the `manifest` path as the `MediaFilePath` parameter, and the SDK will parse the list of related media files and upload them together.
 
 ```
-<?php
-require 'vendor/autoload.php';
-
-use Vod\VodUploadClient;
-use Vod\Model\VodUploadRequest;
-
-$client = new VodUploadClient("your secretId", "your secretKey");
-$req = new VodUploadRequest();
-$req->MediaFilePath = "/data/videos/prog_index.m3u8";
+VodUploadClient client = new VodUploadClient("your secretId", "your secretKey");
+VodUploadRequest request = new VodUploadRequest();
+request.setMediaFilePath("/data/videos/prog_index.m3u8");
 try {
-    $rsp = $client->upload("ap-guangzhou", $req);
-    echo "FileId -> ". $rsp->FileId . "\n";
-    echo "MediaUrl -> ". $rsp->MediaUrl . "\n";
-} catch (Exception $e) {
-    // Handle upload exception
-    echo $e;
+    VodUploadResponse response = client.upload("ap-guangzhou", request);
+    logger.info("Upload FileId = {}", response.getFileId());
+} catch (Exception e) {
+    // The business team performs troubleshooting
+    logger.error("Upload Err", e);
 }
 ```
 
@@ -254,6 +217,7 @@ Upload request class `VodUploadRequest`
 | SourceContext | Source context of up to 250 characters, which is used to pass through the user request information and will be returned by the upload callback API. | String | No |
 | SubAppId | ID of [subapplication](https://intl.cloud.tencent.com/document/product/266/33987) in VOD. If you need to access a resource in a subapplication, enter the subapplication ID in this field; otherwise, leave it empty. | Integer | No |
 | StorageRegion | Storage region, which specifies the region where to store the file. This field should be filled in with a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/9760). | String | No |
+| ConcurrentUploadNumber | Number of concurrent parts, which is valid when a large file is uploaded in multiple parts. | Integer | No |
 
 Upload response class `VodUploadResponse`
 
