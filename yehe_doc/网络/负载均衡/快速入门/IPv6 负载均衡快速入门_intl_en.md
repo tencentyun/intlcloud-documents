@@ -66,7 +66,7 @@ vim  /etc/nginx/nginx.conf
 3. Configure health check: enable health check, check the default forwarding domain name and path used by the domain name, and click **Next**.
 ![](https://main.qcloudimg.com/raw/f55355ac26ed08260c631d4e665efbd6.png)
 4. Configure session persistence: enable session persistence, configure the persistence period, and click **Submit**.
-![](https://main.qcloudimg.com/raw/f55355ac26ed08260c631d4e665efbd6.png)
+![](https://main.qcloudimg.com/raw/e5f710e4dd821a06ef4a6f3d77e0370f.png)
 
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
