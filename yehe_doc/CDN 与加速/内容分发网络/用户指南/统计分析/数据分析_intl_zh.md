@@ -10,13 +10,13 @@
 独立 IP 访问数按指定时间周期，对日志中访问来源客户端 IP 去重计算：
 <li>时间区间小于等于1天时，提供5分钟粒度去重 IP 数曲线。</li>
 <li> 域名情况按全天去重计算日活，多域名/项目/账号情况则按每一个域名日活5分钟粒度累加。</li>
-<img src="https://main.qcloudimg.com/raw/8a342e8643b91159da50515f2aa923e7.png" alt>
+<img src="https://main.qcloudimg.com/raw/bed86e21420fe337d6b0587090fe4b64.png" alt>
 
 
 ## 用户访问区域分布
 通过来源客户端 IP 识别出访问者所在省份，并进行地图、列表展示，便于客户了解自身业务用户地域分布情况。
-![](https://main.qcloudimg.com/raw/88ab778c8ca2cbfb5f920a1684a76b9e.png)
+![](https://main.qcloudimg.com/raw/d89e4321c94499833d04841c7e5e3597.png)
 
 ## 用户运营商分布
 通过来源客户端 IP 识别出访问者所在运营商，并进行环状占比图、列表展示，便于客户了解自身业务用户运营商分布情况。
-![](https://main.qcloudimg.com/raw/32a086d7b7e0a2e26f49e9ef23e3372a.png)
+![](https://main.qcloudimg.com/raw/b6fa25e2fb72dbcd02e11fae43e888ed.png)
