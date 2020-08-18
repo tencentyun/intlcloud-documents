@@ -12,7 +12,7 @@ Below describes how to purchase these two types of CVMs from the console.
 ### Pay-as-you-go
  
 1. Log in to the [CVM purchase page](http://manage.qcloud.com/shoppingcart/shop.php?tab=cvm).
-2. When selecting a model, select **Pay as you go** as the **Billing Mode**.
+2. Under **Custom Configuration**, select **Pay as you go** as **Billing Mode** when selecting a model.
 3. Select region, availability zone, network type, instance and other configuration information as needed and prompted by the page.
 4. After confirming the order, you can pay with credit card and other methods.
 5. The CVM is enabled immediately after the payment is completed. The IP address will be displayed in 10 minutes, and you can log in to the CVM to manage it.

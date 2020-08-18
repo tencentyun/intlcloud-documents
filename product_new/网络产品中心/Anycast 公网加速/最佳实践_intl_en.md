@@ -11,7 +11,7 @@ The company's IDC built by customers and the small and medium-sized public cloud
 Based on customers’ requirements, Tencent Cloud provides a solution to help solve the problems, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/20577137db9f0cb70cddd0f051d1bd60.png)
 The key points of the solution are as follows:
-1. Use Anycast EIP. The IP can Anycast in multiple regions at the same time to share one server across the globe.
+1. Use Anycast EIP. The IP can Anycast in multiple regions at the same time to share one server around the world.
 The user backend maintains one set of clusters and binds the Anycast EIP. The EIP uses Tencent Cloud's private network and POP point to route in multiple regions.
 Customers neither need to select a network path nor manually specify the IP publishing location, the traffic will be globally balanced by entering and exiting from the optimal region, simplifying the backend. Meanwhile, customers’ IP is converged, and there is no need to configure IP and DNS rules for each region, simplifying ICP filing and management.
 2. The transmission quality is improved.

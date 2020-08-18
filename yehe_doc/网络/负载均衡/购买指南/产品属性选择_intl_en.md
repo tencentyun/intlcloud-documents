@@ -34,7 +34,7 @@ If your application has multiple layers, such as web servers that can communicat
 For CLB IP versions, you can select IPv4, IPv6, or IPv6 NAT64. Currently, IPv6 is fully supported in Beijing, Shanghai, Guangzhou, and Singapore regions.
 
 ## Enabling Anycast
-If you check "Enable Anycast", an Anycast CLB instance will be created. Anycast CLB is a load balancing service that supports global dynamic acceleration. CLB VIP is published in multiple regions around the world. The client connects to the nearest POP, and the traffic will be forwarded to a CVM instance through the high-speed internet of Tencent Cloud IDC. For more information, please see [Creating Anycast CLB Instances](https://intl.cloud.tencent.com/document/product/214/32426).
+If you check "Enable Anycast", an Anycast CLB instance will be created. Anycast CLB is a load balancing service that supports cross-region dynamic acceleration. CLB VIP is published in multiple regions. The client connects to the nearest POP and forwards traffic to a CVM instance through the high-speed internet of Tencent Cloud IDC. For more information, see [Creating an Anycast Instance](https://intl.cloud.tencent.com/document/product/214/32426).
 
 ## Instance Name
 CLB instance name, which can contain 1–50 characters.
