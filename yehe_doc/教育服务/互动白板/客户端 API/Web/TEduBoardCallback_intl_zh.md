@@ -110,7 +110,7 @@ data参数格式如下：
      currentImgUrl: "http://xxxxx",  //当前 img 标签上的图片 url
 }
 ```
- 
+
 
 
 ### TEB_SETBACKGROUNDIMAGE
@@ -167,7 +167,7 @@ data参数格式如下：
      url: "http://xxxx",             //当前白板的 H5 背景 url
 }
 ```
- 
+
 
 
 
@@ -256,7 +256,7 @@ data参数格式如下：
      userData: "",       //透传数据
 }
 ```
- 
+
 
 
 
@@ -336,7 +336,7 @@ data参数格式如下：
      fid: "xxx"      //文件 ID
 }
 ```
- 
+
 
 
 ### TEB_FILEUPLOADSTATUS
@@ -364,7 +364,7 @@ data 参数格式如下：
      userData: "xx",             //透传上传接口的 userData
 }
 ```
- 
+
 
 
 ### TEB_FILEUPLOADPROGRESS
@@ -390,7 +390,7 @@ data参数格式如下：
      fid: "xxx"      //文件 ID
 }
 ```
- 
+
 
 
 ### TEB_ADDIMAGESFILE
@@ -417,7 +417,7 @@ function TEB_VIDEO_STATUS_CHANGED(Object data)
 
 | 参数 | 类型 | 含义 |
 | --- | --- | --- |
-| data | Object | 回调数据 data参数格式如下： 
+| data | Object | 回调数据 data参数格式如下： |
 ``` 
    {
         fileId: '',     //文件ID
@@ -430,7 +430,6 @@ function TEB_VIDEO_STATUS_CHANGED(Object data)
 function TEB_H5FILE_STATUS_CHANGED(Object data);
 
 ```
-  |
 
 
 

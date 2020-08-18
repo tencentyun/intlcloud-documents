@@ -451,7 +451,7 @@ void setBackgroundImage(String url, TEduBoardImageFitMode mode)
    userData: 'xxx' //透传数据，会在文件上传进度回调中带回
 }
 ```
- 
+
 
 
 ### setBackgroundH5
@@ -924,7 +924,7 @@ String addVideoFile(String url)
 <script src="https://resources-tiw.qcloudtrtc.com/board/third/videojs/video.min.js"></script>
 <link href="https://resources-tiw.qcloudtrtc.com/board/third/videojs/video-js.min.css" rel="stylesheet">
 ```
- 
+
 
 >? 支持 mp4/m3u8/hls；触发状态改变回调 TEB_VIDEO_STATUS_CHANGED。 
 
@@ -952,7 +952,7 @@ String addVODFile(String appId, String vodId, String extParam)
 <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/libs/hls.min.0.12.4.js"></script>
 <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.min.js"></script>
 ```
- 
+
 
 >? 仅支持腾讯云点播系统文件 
 
@@ -1116,7 +1116,7 @@ void addImageElement(String url)
    userData: 'xxx' //透传数据，会在文件上传进度回调中带回
 }
 ```
- 
+
 
 
 ### setHandwritingEnable
@@ -1185,7 +1185,7 @@ void snapshot(TEduBoardSnapshotInfo param)
 
 | 参数 | 类型 | 含义 |
 | --- | --- | --- |
-| param | TEduBoardSnapshotInfo | 快照参数 
+| param | TEduBoardSnapshotInfo | 快照参数 |
 ``` 
 {
    //接口调用--userData透传数据，会在 TEB_SNAPSHOT 事件回调中带回
@@ -1194,7 +1194,6 @@ void snapshot(TEduBoardSnapshotInfo param)
    teduBoard.on(TEduBoard.EVENT.TEB_SNAPSHOT, ({image, userData}) => {});
 }
 ```
-  |
 
 
 

@@ -8,7 +8,7 @@ Whiteboard tools
 | TEDU_BOARD_TOOL_TYPE_MOUSE | int | Mouse |
 | TEDU_BOARD_TOOL_TYPE_PEN | int | Pen |
 | TEDU_BOARD_TOOL_TYPE_ERASER | int | Eraser |
-| TEDU_BOARD_TOOL_TYPE_LASER | int | Laser pen |
+| TEDU_BOARD_TOOL_TYPE_LASER | int | Laser pointer |
 | TEDU_BOARD_TOOL_TYPE_LINE | int | Line |
 | TEDU_BOARD_TOOL_TYPE_OVAL | int | Hollow oval |
 | TEDU_BOARD_TOOL_TYPE_RECT | int | Hollow rectangle |
@@ -50,12 +50,12 @@ Oval drawing modes
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| TEDU_BOARD_OVAL_DRAW_MODE_FIX_START | int | Fixed start point. The midpoint between the start point and the end point is the circle center. |
-| TEDU_BOARD_OVAL_DRAW_MODE_FIX_CENTER | int | Fixed circle center. The start point is the circle center. |
+| TEDU_BOARD_OVAL_DRAW_MODE_FIX_START | int | Fixed start point. The midpoint between the start point and the end point is the circle center |
+| TEDU_BOARD_OVAL_DRAW_MODE_FIX_CENTER | int | Fixed circle center. The start point is the circle center |
 
 
 ## TEduBoardImageFitMode
-Alignment modes of whiteboard image filling 
+Alignment modes of the whiteboard image filling 
 
 #### Attribute list
 
@@ -75,13 +75,13 @@ Whiteboard image statuses
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| TEDU_BOARD_IMAGE_STATUS_LOADING | int | The background image is being loaded. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_DONE | int | The background image has been loaded. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_ABORT | int | The loading of the background image was aborted. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_ERROR | int | An error occurred when loading the background image. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_TIMEOUT | int | The loading of the background image timed out. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_CANCEL | int | The loading of the background image was canceled. |
-| TEDU_BOARD_IMAGE_STATUS_READ_ERROR | int | An error occurred when loading the local image. |
+| TEDU_BOARD_IMAGE_STATUS_LOADING | int | The background image is being loaded |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_DONE | int | The background image has been loaded |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_ABORT | int | The loading of the background image was interrupted |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_ERROR | int | An error occurred when loading the background image |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_TIMEOUT | int | The loading of the background image timed out |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_CANCEL | int | The loading of the background image was canceled |
+| TEDU_BOARD_IMAGE_STATUS_READ_ERROR | int | An error occurred when loading the local image |
 
 
 ## TEduBoardTextStyle
@@ -115,8 +115,8 @@ H5 background statuses
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| TEDU_BOARD_BACKGROUND_H5_STATUS_LOADING | int | The H5 background is being loaded. |
-| TEDU_BOARD_BACKGROUND_H5_STATUS_LOAD_FINISH | int | The H5 background has been loaded. |
+| TEDU_BOARD_BACKGROUND_H5_STATUS_LOADING | int | H5 background is being loaded |
+| TEDU_BOARD_BACKGROUND_H5_STATUS_LOAD_FINISH | int | H5 background has been loaded |
 
 
 ## TEduBoardContentFitMode
@@ -126,9 +126,9 @@ Whiteboard content self-adaption modes
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| TEDU_BOARD_CONTENT_FIT_MODE_NONE | int | Do not use content self-adaption. In this default mode, do not automatically adjust the whiteboard aspect ratio and scale the content proportionally in a center-aligned fashion. In addition, the content width and height are less than or equal to the whiteboard width and height respectively. |
-| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_INSIDE | int | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are less than or equal to the container width and height respectively. |
-| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_COVER | int | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are greater than or equal to the container width and height respectively. |
+| TEDU_BOARD_CONTENT_FIT_MODE_NONE | int | Do not use content self-adaption. In this default mode, do not automatically adjust the whiteboard aspect ratio and scale the content proportionally in a center-aligned fashion. In addition, the content width and height are less than or equal to the whiteboard width and height respectively |
+| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_INSIDE | int | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are less than or equal to the container width and height respectively |
+| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_COVER | int | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are greater than or equal to the container width and height respectively |
 
 
 ## TEduBoardFileTranscodeStatus
@@ -203,7 +203,7 @@ Color parameters
 
 
 ### TEduBoardColor
-Initializes the color value. 
+Initializes the color value 
 ``` Java
 TEduBoardColor(int color)
 ```
@@ -215,7 +215,7 @@ TEduBoardColor(int color)
 
 
 ### TEduBoardColor
-Initializes the color value. 
+Initializes the color value 
 ``` Java
 TEduBoardColor(final String color)
 ```
@@ -223,11 +223,11 @@ TEduBoardColor(final String color)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | final String | Color value string (whose format is similar to ::RRGGBB and ::AARRGGBB) |
+| color | final String | Color value string, whose format is similar to ::RRGGBB and ::AARRGGBB |
 
 
 ### toHex
-Generates a hexadecimal color string, whose format is similar to ::AARRGGBB. 
+Generates a hexadecimal color string, whose format is similar to ::AARRGGBB 
 ``` Java
 String toHex()
 ```
@@ -236,7 +236,7 @@ String toHex()
 
 
 ### toRGBA
-Generates a hexadecimal color string, whose format is similar to rgba(red, green, blue, alpha). 
+Generates a hexadecimal color string, whose format is similar to rgba (red, green, blue, alpha) 
 ``` Java
 String toRGBA()
 ```
@@ -285,8 +285,8 @@ Whiteboard initialization parameters
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| ratio | String | Default whiteboard aspect ratio (whose format is similar to "4:3" and "16:9") |
-| drawEnable | boolean | Whether doodle is allowed or not |
+| ratio | String | Default whiteboard aspect ratio, whose format is similar to "4:3" and "16:9" |
+| drawEnable | boolean | Whether doodle is allowed |
 | globalBackgroundColor | TEduBoardColor | Global background color |
 | toolType | int | Whiteboard tool |
 | brushColor | TEduBoardColor | Brush color |
@@ -294,13 +294,13 @@ Whiteboard initialization parameters
 | textColor | TEduBoardColor | Text color |
 | textSize | int | Text size |
 | textStyle | int | Text style |
-| timSync | boolean | Whether or not to use Tencent Cloud IMSDK for real-time data synchronization |
-| preloadDepth | int | Image pre-loading depth. The default value is 5 (indicating that the previous and next 5 pages are pre-loaded). |
+| timSync | boolean | Whether to use Tencent Cloud IMSDK for real-time data synchronization |
+| preloadDepth | int | Image pre-loading depth. The default value is 5, which indicates that the previous and next 5 pages are pre-loaded |
 | smoothLevel | float | Smoothness level of handwriting. Default value: 0. Value range: [0, 1] |
-| dataSyncEnable | boolean | Whether to enable data synchronization or not |
+| dataSyncEnable | boolean | Whether to enable data synchronization |
 | contentFitMode | int | Content self-adaption mode |
-| progressEnable | boolean | Whether or not to enable the loading icon, which is used during image loading and PowerPoint file loading. Default value: false |
-| progressBarUrl | String | Custom loading icon. It is valid only when processEnable = true. Supported icon formats are jpg, gif, png, and svg. |
+| progressEnable | boolean | Whether to enable the loading icon, which is used during image loading and PowerPoint file loading. Default value: false |
+| progressBarUrl | String | Custom loading icon. It is valid only when processEnable = true. Supported icon formats are jpg, gif, png, and svg |
 | imageTimeout | int | Image loading timeout period, in seconds |
 
 
@@ -343,9 +343,9 @@ File transcoding parameters
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| minResolution | String | Minimum resolution of the transcoded file. It can be used to enhance the resolution of the transcoded file. The format of the value is similar to 960x540, where the width and height are separated by letter x. |
-| isStaticPPT | boolean | Whether or not to enable static transcoding for PowerPoint files (transcoding into static images). By default, PowerPoint files are transcoded into HTML5 animations, which takes a relatively long time. |
-| thumbnailResolution | String | Resolution of the thumbnail generated for the file. By default, no thumbnail is generated (generating thumbnails will increase the amount of transcoding time). The format of the value is similar to 200x200, where the width and height are separated by letter x. |
+| minResolution | String | Minimum resolution of the transcoded file. It can be used to enhance the resolution of the transcoded file. The format of the value is similar to 960x540, where the width and height are separated by letter x |
+| isStaticPPT | boolean | Whether to enable static transcoding for PowerPoint files (transcoding into static images). By default, PowerPoint files are transcoded into HTML5 animations, which may take a long time |
+| thumbnailResolution | String | Resolution of the thumbnail generated for the file. By default, no thumbnail is generated (generating thumbnails will increase the transcoding time). The format of the value is similar to 200x200, where the width and height are separated by letter x |
 
 
 
@@ -357,8 +357,8 @@ Cursor icon information
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| cursor | String | Built-in cursor icon of the browser. For more information on possible values, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor). |
-| url | String | URL of the custom cursor icon. For more information on the format restrictions, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor/url). |
+| cursor | String | Built-in cursor icon of the browser. For more information, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor) |
+| url | String | URL of the custom cursor icon. For more information, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor/url) |
 | offsetX | int | Horizontal offset of the custom cursor icon |
 | offsetY | int | Vertical offset of the custom cursor icon |
 
@@ -372,7 +372,7 @@ Snapshot information
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| path | String | Local path where the snapshot file is stored. The path includes the file name and extension, and supports only png files. For example, aaa/bbb/ccc/xxx.png. |
+| path | String | Local path where the snapshot file is stored. The path includes the file name and extension, and only supports png files. For example, aaa/bbb/ccc/xxx.png |
 
 
 

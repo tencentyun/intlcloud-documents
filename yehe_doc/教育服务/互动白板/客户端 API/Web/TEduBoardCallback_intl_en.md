@@ -1,5 +1,5 @@
 ## TEduBoardCallback
-Whiteboard event callback delegate 
+Whiteboard event callback API 
 
 ## Common Event Callbacks
 
@@ -12,7 +12,7 @@ function TEB_ERROR(TEduBoardErrorCode code, String msg)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardErrorCode | Error code. For more information, see the definitions of TEduBoardErrorCode. |
+| code | TEduBoardErrorCode | Error code. For more information, see the definitions of TEduBoardErrorCode |
 | msg | String | Error information, which is UTF8-coded |
 
 
@@ -25,7 +25,7 @@ function TEB_WARNING(TEduBoardWarningCode code, String msg)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardWarningCode | Error code. For more information, see the definitions of TEduBoardWarningCode. |
+| code | TEduBoardWarningCode | Error code. For more information, see the definitions of TEduBoardWarningCode |
 | msg | String | Error information, which is UTF8-coded |
 
 
@@ -38,11 +38,11 @@ Whiteboard initialization completion callback
 function TEB_INIT()
 ```
 #### Description
-If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled.) 
+If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled) 
 
 
 ### TEB_HISTROYDATA_SYNCCOMPLETED
-Callback for the completion of whiteboard historical data synchronization 
+Callback for the completion of the whiteboard historical data synchronization 
 ``` C++
 function TEB_HISTROYDATA_SYNCCOMPLETED()
 ```
@@ -59,7 +59,7 @@ function TEB_SYNCDATA(Object data)
 | data | Object | Whiteboard synchronization data |
 
 #### Description
-When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the AddSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization by using Tencent Cloud IMSDK. 
+When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the AddSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization using Tencent Cloud IMSDK 
 
 
 ### TEB_OPERATE_CANUNDO_STATUS_CHANGED
@@ -71,7 +71,7 @@ function TEB_OPERATE_CANUNDO_STATUS_CHANGED(Boolean canUndo)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| canUndo | Boolean | Whether the whiteboard allows undo operations or not  |
+| canUndo | Boolean | Whether the whiteboard allows undo operations |
 
 
 ### TEB_OPERATE_CANREDO_STATUS_CHANGED
@@ -83,7 +83,7 @@ function TEB_OPERATE_CANREDO_STATUS_CHANGED(Boolean canRedo)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| canRedo | Boolean | Whether the whiteboard allows redo operations or not  |
+| canRedo | Boolean | Whether the whiteboard allows redo operations |
 
 
 
@@ -106,11 +106,11 @@ The format of the data parameter is as follows:
 ``` 
 {
      currentBoardId: "xxx",          //ID of the current whiteboard
-     imgUrl: "http://xxxx",          //URL of the image to load
+     imgUrl: "http://xxxx",          //URL of the image to be loaded
      currentImgUrl: "http://xxxxx",  //Image URL in the current img label
 }
 ```
- 
+
 
 
 ### TEB_SETBACKGROUNDIMAGE
@@ -127,7 +127,7 @@ function TEB_SETBACKGROUNDIMAGE(String fileName, String fileUrl, String userData
 | userData | String | userData passed through the upload API |
 
 #### Description
-This callback is returned only when setBackgroundImage is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
+This callback is returned only when setBackgroundImage is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed 
 
 
 ### TEB_ADDIMAGEELEMENT
@@ -144,7 +144,7 @@ function TEB_ADDIMAGEELEMENT(String fileName, String fileUrl, String userData)
 | userData | String | userData passed through the upload API |
 
 #### Description
-This callback is returned only when addImageElement is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
+This callback is returned only when addImageElement is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed 
 
 
 ### TEB_H5BACKGROUND_STATUS_CHANGED
@@ -167,7 +167,7 @@ The format of the data parameter is as follows:
      url: "http://xxxx",             //H5 background URL of the current whiteboard
 }
 ```
- 
+
 
 
 
@@ -182,8 +182,8 @@ function TEB_ADDBOARD(Array boardList, String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | Array | List of IDs of the added whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page. |
-| fileId | String | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardList | Array | List of IDs of the added whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release it. The SDK will release it automatically |
+| fileId | String | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### TEB_DELETEBOARD
@@ -195,8 +195,8 @@ function TEB_DELETEBOARD(Array boardList, String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | Array | List of IDs of the deleted whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page. |
-| fileId | String | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardList | Array | List of IDs of the deleted whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release it. The SDK will release it automatically |
+| fileId | String | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### TEB_GOTOBOARD
@@ -208,12 +208,12 @@ function TEB_GOTOBOARD(String boardId, String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | String | ID of the whiteboard page to redirect to |
-| fileId | String | ID of the file to which the whiteboard page to redirect to belongs |
+| boardId | String | ID of the whiteboard page to be redirected to |
+| fileId | String | ID of the file to which the whiteboard page to be redirected to belongs |
 
 
 ### TEB_GOTOSTEP
-Callback for whiteboard page animation steps 
+Callback for the whiteboard page animation steps 
 ``` C++
 function TEB_GOTOSTEP(Number currentStep, Number totalStep)
 ```
@@ -222,11 +222,11 @@ function TEB_GOTOSTEP(Number currentStep, Number totalStep)
 | Parameter | Type | Description |
 | --- | --- | --- |
 | currentStep | Number | Current step of the current whiteboard page animation. Value range: [0, totalStep) |
-| totalStep | Number | Total steps of the current whiteboard page animation |
+| totalStep | Number | Total number of steps of the current whiteboard page animation |
 
 
 ### TEB_RECTSELECTED
-Callback for selecting certain content by the rectangle tool. This callback is triggered only after the tool selects a doodle or an image element. 
+Callback for selecting certain content by the rectangle tool. This callback is triggered only after the tool selects a doodle or an image element 
 ``` C++
 function TEB_RECTSELECTED()
 ```
@@ -256,7 +256,7 @@ The format of the data parameter is as follows:
      userData: "",       //Passthrough data
 }
 ```
- 
+
 
 
 
@@ -286,7 +286,7 @@ function TEB_ADDTRANSCODEFILE(String fileId)
 | fileId | String | ID of the added file |
 
 #### Description
-This callback is triggered only after the file is loaded successfully. 
+This callback is triggered only after the file is loaded successfully 
 
 
 ### TEB_DELETEFILE
@@ -298,7 +298,7 @@ function TEB_DELETEFILE(String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | String | ID of the file to delete |
+| fileId | String | ID of the file to be deleted |
 
 
 ### TEB_SWITCHFILE
@@ -310,7 +310,7 @@ function TEB_SWITCHFILE(String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | String | ID of the file to switch to |
+| fileId | String | ID of the file to be switched to |
 
 
 ### TEB_FILEUPLOADPROGRESS
@@ -331,12 +331,12 @@ The format of the data parameter is as follows:
      loaded: 50,     //Size of the uploaded file in bytes
      total: 100,     //Total file size in bytes
      speed: 10,      //File upload speed in bytes/s
-     percent: 0.5,   //File upload percentage in decimal format, for example, 0.5 indicates 50%
+     percent: 0.5,   //File upload percentage in decimal format. For example, 0.5 indicates 50%
      userData: "xx", //userData passed through the upload API
      fid: "xxx"      //File ID
 }
 ```
- 
+
 
 
 ### TEB_FILEUPLOADSTATUS
@@ -364,7 +364,7 @@ The format of the data parameter is as follows:
      userData: "xx",             //userData passed through the upload API
 }
 ```
- 
+
 
 
 ### TEB_FILEUPLOADPROGRESS
@@ -385,12 +385,12 @@ The format of the data parameter is as follows:
      loaded: 50,     //Size of the uploaded file in bytes
      total: 100,     //Total file size in bytes
      speed: 10,      //File upload speed in bytes/s
-     percent: 0.5,   //File upload percentage in decimal format, for example, 0.5 indicates 50%
+     percent: 0.5,   //File upload percentage in decimal format. For example, 0.5 indicates 50%
      userData: "xx", //userData passed through the upload API
      fid: "xxx"      //File ID
 }
 ```
- 
+
 
 
 ### TEB_ADDIMAGESFILE
@@ -405,7 +405,7 @@ function TEB_ADDIMAGESFILE(String fileId)
 | fileId | String | ID of the added file |
 
 #### Description
-This callback is triggered only after the file is loaded successfully. 
+This callback is triggered only after the file is loaded successfully 
 
 
 ### TEB_VIDEO_STATUS_CHANGED
@@ -417,7 +417,8 @@ function TEB_VIDEO_STATUS_CHANGED(Object data)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| data | Object | Callback data. The format of the data parameter is as follows: 
+| data | Object | Callback data. The format of the data parameter is as follows: |
+
 ``` 
    {
         fileId: '',     //File ID
@@ -425,12 +426,8 @@ function TEB_VIDEO_STATUS_CHANGED(Object data)
    }
 
   
-   This callback can be received only when addH5File is called locally.
+   This callback can be received only when addH5File is called locally
   /
 function TEB_H5FILE_STATUS_CHANGED(Object data);
 
 ```
-  |
-
-
-
