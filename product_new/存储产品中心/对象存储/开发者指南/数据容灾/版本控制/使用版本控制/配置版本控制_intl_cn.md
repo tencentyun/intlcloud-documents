@@ -32,6 +32,6 @@
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#versioning)
-- Node.js SDK
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)

@@ -1,5 +1,5 @@
 ## Introduction
-Global Office Access (GOA) leverages terminal authentication and access control modules as well as network acceleration technologies, including intelligent routing and multiplexing, to build office acceleration networks for organizations. It features seamless access, efficient connections, reliable terminals and access control to help users collaborate and access organization data from any network around the world securely and rapidly.
+Global Office Access (GOA) leverages terminal authentication and access control modules as well as network acceleration technologies, including intelligent routing and multiplexing, to build office acceleration networks for enterprises. It features seamless access, efficient connections, reliable terminals and access control to help users collaborate and access enterprise data from any network around the world securely and rapidly.
 
 ## Key Features
 ### Terminal security management
