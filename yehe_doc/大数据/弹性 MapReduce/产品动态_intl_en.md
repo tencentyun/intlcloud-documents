@@ -1,3 +1,28 @@
+
+## July 2020
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The custom configuration file is supported</td>
+<td>The custom configuration file is supported to improve the flexibility of configuration management.</td><td>July 29, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31109" target="_blank">Modifying Component Parameters</a></td>
+</tr>
+<tr>
+<td>The editable configuration items are optimized</td>
+<td>The editable configuration items have prompts and support restoring default values.</td>
+<td>July 29, 2020</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
 <h2>June 2020</h2>
 <table>
 <thead>

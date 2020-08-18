@@ -3,7 +3,7 @@ Currently, a public network CLB instance supports cross-region binding of CVM. Y
 >Cross-region CVM instance binding is currently not supported for private network CLB and classic CLB.
 
 ## Use Cases
-1. This feature can meet the needs in unified global server scenarios for gaming businesses such as P2P. For example, if your real server cluster is deployed in Guangzhou, you can create CLB instances in Shanghai and Beijing and bind them to the same real server cluster in Guangzhou for game acceleration and traffic convergence, effectively ensuring the quality of data transfer and reducing the latency.
+1. This feature can meet the needs of P2P and other gaming businesses to access the server from multiple regions. For example, if your real server cluster is deployed in Guangzhou, you can create CLB instances in Shanghai and Beijing and bind them to the same real server cluster in Guangzhou for game acceleration and traffic convergence, effectively ensuring the data transfer quality and reducing the latency.
 2. This feature can meet the needs in financial business and payment scenarios by effectively ensuring the transfer quality and consistency of data in key businesses.
 ![](https://main.qcloudimg.com/raw/b61f652d7100166236b4b7b0e6a26f43.png)
 

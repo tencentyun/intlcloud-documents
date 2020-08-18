@@ -14,7 +14,7 @@ ISP networks may fail from time to time, and Anycast can be used to block the fa
 ## Additional Information
 **The following concepts can help you better understand AIA:**
 For more information on the concepts, please see [Glossary](https://intl.cloud.tencent.com/document/product/644/12625).
-**To provide Anycast service, public cloud vendors must have a powerful network for interconnecting nodes worldwide as well as the capability of cross-region network scheduling. The basic capabilities of AIA are as follows:**
+**To provide Anycast service, public cloud vendors must have interconnection network nodes deployed across regions and support cross-region network scheduling. AIA offers the following basic capabilities：**
 - Multi-path ISP aggregation: Tencent Cloud has BGP network egresses with 35+ ISP lines at the Tbps level.
 - Multi-node interconnection: Tencent Cloud's global backbone network at the Tbps level is used for hosting.
 - Multidimensional network monitoring models, global network monitoring alarms, and real-time detection of internet conditions are available.
