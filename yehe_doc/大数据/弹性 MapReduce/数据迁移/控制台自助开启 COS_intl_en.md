@@ -18,7 +18,7 @@ For example, if there is a file `t1.txt` in the root directory of the bucket, yo
 ### Step 3. Set COS in the cluster
 >!The COS bucket and the cluster must be in the same region.
 
-1. Enter the [EMR Console](https://console.cloud.tencent.com/emr) and click a cluster ID in **Cluster List** to enter the cluster details page.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), and click the ID/Name of a target cluster on the **Cluster** page to enter the cluster details page.
 ![](https://main.qcloudimg.com/raw/c1555c479499b401cf8f55d346fd3297.png)
 2. In **Software Info** > **COS Access**, click **Set**.
 ![](https://main.qcloudimg.com/raw/110d1ee209f59db7079ecbbe8ef9cfa0.png)
