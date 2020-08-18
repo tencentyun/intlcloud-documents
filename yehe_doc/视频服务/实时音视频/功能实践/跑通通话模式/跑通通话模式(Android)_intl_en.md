@@ -1,5 +1,5 @@
 ## Use Cases
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
+TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as [live streaming mode](https://cloud.tencent.com/document/product/647/35428).
 In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video interview, video customer service, and online werewolf.
 
 ## How It Works
@@ -10,11 +10,9 @@ Backed by the highest-quality lines and high-performance servers, this type of n
 With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
 In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
-![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) to get the sample code related to this document.
-![](https://main.qcloudimg.com/raw/0f4db0e8f6046f69bdef9b041f3a2238.png)
 
 >If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
 
@@ -73,7 +71,7 @@ Add the permissions to request camera, mic, and network access in the `AndroidMa
 <span id="step3"> </span>
 ### Step 3. Initialize an SDK instance and listen on the event callback
 
-1. Call the [sharedInstance()](https://intl.cloud.tencent.com/document/product/647/35125) API to create a `TRTCCloud` instance.
+1. Call the [sharedInstance()](https://cloud.tencent.com/document/product/647/32267) API to create a `TRTCCloud` instance.
 ```
 // Create a `trtcCloud` instance
 mTRTCCloud = TRTCCloud.sharedInstance(getApplicationContext());
@@ -98,10 +96,10 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 ### Step 4. Assemble the room entry parameter `TRTCParams`
 When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) API, you need to enter a key parameter [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59), which includes the following required fields:
 
-| Parameter | Field Type | Description | Example |
+| Parameter | Field Type | Description | Example | 
 |---------|---------|---------|---------|
-| sdkAppId | Numeric | Application ID. You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |1400000123 |
-| userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 |
+| sdkAppId | Numeric | Application ID. You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |1400000123 | 
+| userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 | 
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
