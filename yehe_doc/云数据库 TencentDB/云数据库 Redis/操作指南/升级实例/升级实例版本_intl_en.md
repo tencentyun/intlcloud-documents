@@ -22,10 +22,10 @@ The version upgrade process mainly consists of data sync and instance switch:
 ## Upgrade Directions
 1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis), select a region in the instance list, and click an instance name to enter the instance details page.
 2. On the instance details page, click **Version Upgrade**.
-![](https://main.qcloudimg.com/raw/88d793020cb366c2436bb15102fd0358.png)
+![](https://main.qcloudimg.com/raw/ebc4ecc50af95d99be2fa23f45d11278.png)
 3. In the pop-up dialog box, select the version and switch time and click **OK**.
 Switch refers to the process where the new instance replaces the old one. The upgrade feature supports **Switch Now** and **Switch Maintenance Window** options.
     - Switch Now: switch will be performed when data sync is almost completed (data left to be synced is less than 10 MB).
     - Switch Maintenance Window: switch will be performed during the instance maintenance window. If the switch conditions cannot be met in the current maintenance window, switch will be attempted in the next window. You can modify the maintenance time in "Maintenance Window" on the instance details page.
-![](https://main.qcloudimg.com/raw/c442feb780209496c48678a298643bf3.png)
+![](https://main.qcloudimg.com/raw/f584ccc7b3004feb662e72e8ddcf819a.png)
 4. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
