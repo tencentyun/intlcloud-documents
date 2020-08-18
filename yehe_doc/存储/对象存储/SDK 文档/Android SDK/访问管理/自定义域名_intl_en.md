@@ -1,33 +1,29 @@
-
-
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to custom domain name.
+This document provides an overview of APIs and SDK code samples related to custom endpoints.
 
-| API | Operation Name | Operation Description |
+| API | Operation Name | Description |
 | ----------------- | -------------- | -------------------------- |
-| PUT Bucket domain    | Setting custom domain name | Sets custom domain name information for a bucket |
-| GET Bucket domain | Querying custom domain name | Queries the custom domain name information of a bucket |
+| PUT Bucket domain    | Setting a custom endpoint | Sets a custom endpoint for a bucket |
+| GET Bucket domain    | Querying a custom endpoint | Queries the custom endpoint of bucket |
 
-## Setting Custom Domain Name
+## SDK API Reference
+
+For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+
+## Setting a Custom Endpoint
 
 #### Feature description
 
-This API (PUT Bucket domain) is used to configure a custom domain name for a bucket.
+This API is used to configure a custom endpoint for a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-PutBucketDomainResult putBucketDomain(PutBucketDomainRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void putBucketDomainAsync(PutBucketDomainRequest request, CosXmlResultListener cosXmlResultListener);
-```
-
-#### Sample request
-
-```
+[//]: # ".cssg-snippet-put-bucket-domain"
+```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-PutBucketDomainRequest putBucketDomainRequest = new PutBucketDomainRequest(bucket);
+PutBucketDomainRequest putBucketDomainRequest =
+        new PutBucketDomainRequest(bucket);
 DomainConfiguration.DomainRule domainRule = new DomainConfiguration.DomainRule(
         DomainConfiguration.STATUS_ENABLED,
         "www.example.com",
@@ -36,109 +32,74 @@ DomainConfiguration.DomainRule domainRule = new DomainConfiguration.DomainRule(
 domainRule.forcedReplacement = DomainConfiguration.REPLACE_CNAME;
 putBucketDomainRequest.addDomainRule(domainRule);
 
-// Use the sync method
-try {
-    PutBucketDomainResult putBucketDomainResult = cosXmlService.putBucketDomain(putBucketDomainRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// Use the async callback to request
-cosXmlService.putBucketDomainAsync(putBucketDomainRequest, new CosXmlResultListener() {
+cosXmlService.putBucketDomainAsync(putBucketDomainRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        PutBucketDomainResult putBucketDomainResult = (PutBucketDomainResult) result;
+        PutBucketDomainResult putBucketDomainResult =
+                (PutBucketDomainResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketDomain.java).
 
-| Parameter Name | Description | Type |
-| ----------------- | ------------------------------------------------------------ | ------ |
-| bucket            | Bucket for which to set a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| name                  | Custom domain name                                                   | String |
-| status            | Domain name status. Valid values: ENABLED, DISABLED                     | String |
-| type              | Type of bound origin server. Valid values: REST, WEBSITE                       | String |
-| forcedReplacement | Forcibly overwrites existing configuration. Valid values: CNAME, TXT                    | String |
+#### Error Codes
 
-#### Response description
-
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
-
-#### Error codes
-
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when making requests using this API.
 
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
-| HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is registered in Mainland China but has no ICP filing.                          |
+| HTTP 409 Conflict | The endpoint record already exists, and forced overwrite is not specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
+| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in the Chinese mainland.                          |
 
-## Querying Custom Domain Name
+## Querying a Custom Endpoint
 
 #### Feature description
 
-This API (GET Bucket domain) is used to query the custom domain name information of a bucket.
+This API is used to query the custom endpoint of a bucket.
 
-#### Method prototype
+#### Sample code
 
-```
-GetBucketDomainResult getBucketDomain(GetBucketDomainRequest request) throws CosXmlClientException, CosXmlServiceException;
-
-void getBucketDomainAsync(GetBucketDomainRequest request, CosXmlResultListener cosXmlResultListener);
-```
-
-#### Sample request
-
-```
+[//]: # ".cssg-snippet-get-bucket-domain"
+```java
 String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
-GetBucketDomainRequest getBucketDomainRequest = new GetBucketDomainRequest(bucket);
-// Set signature verification host. All headers are to be verified by default
-Set<String> headerKeys = new HashSet<>();
-headerKeys.add("Host");
-// Use the sync method
-try {
-    GetBucketDomainResult getBucketTaggingResult = cosXmlService.getBucketDomain(getBucketDomainRequest);
-} catch (CosXmlClientException e) {
-    e.printStackTrace();
-} catch (CosXmlServiceException e) {
-    e.printStackTrace();
-}
-
-// Use the async callback to request
-cosXmlService.getBucketDomainAsync(getBucketDomainRequest, new CosXmlResultListener() {
+GetBucketDomainRequest getBucketDomainRequest =
+        new GetBucketDomainRequest(bucket);
+cosXmlService.getBucketDomainAsync(getBucketDomainRequest,
+        new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
-        GetBucketDomainResult getBucketTaggingResult = (GetBucketDomainResult)result;
+        GetBucketDomainResult getBucketTaggingResult =
+                (GetBucketDomainResult) result;
     }
 
     @Override
-    public void onFail(CosXmlRequest cosXmlRequest, CosXmlClientException clientException, CosXmlServiceException serviceException)  {
+    public void onFail(CosXmlRequest cosXmlRequest,
+                       CosXmlClientException clientException,
+                       CosXmlServiceException serviceException) {
+        if (clientException != null) {
+            clientException.printStackTrace();
+        } else {
+            serviceException.printStackTrace();
+        }
     }
 });
 ```
 
-#### Parameter description
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketDomain.java).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket            | Bucket for which to query a custom domain name in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
-
-#### Response description
-
-| Member Variable | Description | Type |
-| ------------------- | -------------------------------------------------------- | ------------------- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
-| domainConfiguration | Returns bucket object's `DomainConfiguration` information                | DomainConfiguration |
 
 #### Response parameters
 
@@ -152,7 +113,8 @@ cosXmlService.getBucketDomainAsync(getBucketDomainRequest, new CosXmlResultListe
 </thead>
 <tbody><tr>
 <td nowrap="nowrap">x-cos-domain-txt-verification</td>
-<td>Domain name verification information. This field is an MD5 check value, whose original string is in the following format: <code>cos[Region][BucketName-APPID][BucketCreateTime]</code>, where `Region` is the bucket region and `BucketCreateTime` is the bucket creation time in GMT</td>
+<td>Endpoint verification information. This field is an MD5 checksum of a character string in the format: <code>cos[Region][BucketName-APPID][BucketCreateTime]</code>, where `Region` is the bucket region and `BucketCreateTime` is the time the bucket was created in GMT format</td>
 <td>String</td>
 </tr>
 </tbody></table>
+

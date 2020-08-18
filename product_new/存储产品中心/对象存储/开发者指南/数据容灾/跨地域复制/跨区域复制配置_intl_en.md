@@ -18,14 +18,14 @@ You can configure and manage cross-region replication via REST API as described 
 ### Configuring with SDK
 You can directly call the cross-region replication method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#cross-region-replication)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36196#cross-region-replication)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#cross-region-replication)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#cross-region-replication)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597#cross-region-replication)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35272#cross-region-replication)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#cross-region-replication)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#cross-region-replication)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#cross-region-replication)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#cross-region-replication)
-- Node.js SDK
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#cross-region-replication)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35805#cross-region-replication)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35859)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34996#cross-region-replication)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#cross-region-replication)

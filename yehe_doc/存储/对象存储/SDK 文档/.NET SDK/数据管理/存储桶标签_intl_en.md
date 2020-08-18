@@ -1,51 +1,30 @@
-
-
 ## Overview
 
 This document provides an overview of APIs and SDK code samples related to bucket tagging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
 | [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes a specified bucket tag |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes specified bucket tags |
 
-## Setting Bucket Tag
+## SDK API References
 
-#### Feature description
+For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-This API (PUT Bucket tagging) is used to set a tag for an existing bucket.
+## Setting Bucket Tags
 
-#### Method prototype
+#### API description
 
-```
-PutBucketTaggingResult putBucketTagging(PutBucketTaggingRequest request);
+This API is used to set tags for an existing bucket.
 
-void putBucketTaggingAsync(PutBucketTaggingRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-```
+#### Sample code
 
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # ".cssg-snippet-put-bucket-tagging"
+```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   PutBucketTaggingRequest request = new PutBucketTaggingRequest(bucket);
   string akey = "aTagKey";
   string avalue = "aTagValue";
@@ -54,11 +33,11 @@ try
 
   request.AddTag(akey, avalue);
   request.AddTag(bkey, bvalue);
-   
+  
   // Execute the request
   PutBucketTaggingResult result = cosXml.putBucketTagging(request);
   
-  // Request succeeded
+  // Request successful 
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -73,61 +52,26 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to set a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string |
-| key | Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | string |
-| value | Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 256 bytes | string |
+## Querying Bucket Tags
 
-#### Returned result description
+#### API description
 
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
+This API is used to query the existing tags of a specified bucket.
 
-## Querying Bucket Tag
+#### Sample code
 
-#### Feature description
-
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
-
-#### Method prototype
-
-```
-GetBucketTaggingResult getBucketTagging(GetBucketTaggingRequest request);
-
-void getBucketTaggingAsync(GetBucketTaggingRequest request,COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-```
-
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # ".cssg-snippet-get-bucket-tagging"
+```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketTaggingRequest request = new GetBucketTaggingRequest(bucket);   
   // Execute the request
   GetBucketTaggingResult result = cosXml.getBucketTagging(request);
   
-  // Request succeeded
+  // Request successful 
   Tagging tagging = result.tagging;
   Console.WriteLine(tagging);
 }
@@ -143,59 +87,26 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ---- |
-| bucket | Bucket for which to query a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | xxx  |
+## Deleting Bucket Tags
 
-#### Returned result description
+#### API description
 
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |
+This API is used to delete the existing tags of a specified bucket.
 
-## Deleting Bucket Tag
+#### Sample code
 
-#### Feature description
-
-This API (DELETE Bucket tagging) is used to delete an existing tag of a specified bucket.
-
-#### Method prototype
-
-```
-DeleteBucketTaggingResult deleteBucketTagging(DeleteBucketTaggingRequest request);
-
-void deleteBucketTaggingAsync(DeleteBucketTaggingRequest request, COSXML.Callback.OnSuccessCallback<CosResult> successCallback, COSXML.Callback.OnFailedCallback failCallback);
-```
-
-#### Sample request
-
-```
-CosXmlConfig config = new CosXmlConfig.Builder()
-  .SetConnectionTimeoutMs(60000)  // Set the connection timeout period in milliseconds, which is 45,000 ms by default
-  .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout period in milliseconds, which is 45,000 ms by default
-  .IsHttps(true)  // Set HTTPS as default request method
-  .SetAppid("1250000000") // Set the `APPID` of your Tencent Cloud account
-  .SetRegion("ap-guangzhou") // Set the default bucket region
-  .Build();
-
-string secretId = "COS_SECRETID";   //TencentCloud API key's SecretId
-string secretKey = "COS_SECRETKEY"; // TencentCloud API key's SecretKey
-long durationSecond = 600;          // Validity period of each request signature in seconds
-QCloudCredentialProvider qCloudCredentialProvider = new DefaultQCloudCredentialProvider(secretId, 
-  secretKey, durationSecond);
-
-CosXml cosXml = new CosXmlServer(config, qCloudCredentialProvider);
-
+[//]: # ".cssg-snippet-delete-bucket-tagging"
+```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
   DeleteBucketTaggingResult result = cosXml.deleteBucketTagging(request);
   
-  // Request succeeded
+  // Request successful 
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -210,14 +121,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
-#### Parameter description
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 
-| Parameter Name | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| bucket | Bucket for which to delete a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | string |
-
-#### Returned result description
-
-| Member Variable | Description | Type |
-| -------- | -------------------------------------------------------- | ---- |
-| httpCode            | HTTP code. If the code is within the range of [200, 300), the operation succeeded; otherwise, it failed | int                 |

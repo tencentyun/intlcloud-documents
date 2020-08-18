@@ -29,9 +29,9 @@
 >?若选择【维护时间内】，所选实例的参数变更任务会在实例的 [维护时间](https://intl.cloud.tencent.com/document/product/236/10929) 内执行并生效。
 >
 
+
 ### 取消参数修改任务
 批量修改参数或修改单个参数任务提交后，如需取消修改参数，可在任务执行前（即任务状态为“等待执行”），在左侧导航【[任务列表](https://console.cloud.tencent.com/mysql/task)】页，单击“操作”列的【撤销】，取消参数修改任务。
-
 
 ### 从参数模板导入
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
@@ -46,6 +46,7 @@
 ![](https://main.qcloudimg.com/raw/52d6f069bbce29c933254593d59c0236.png)
 3. 在弹出的对话框，选择文件上传后，单击【导入并覆盖原有参数】。
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
+	
 ## 查看参数修改记录
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击右侧的【最近修改记录】。
@@ -53,3 +54,5 @@
 3. 在最近参数修改记录页，可查看近期参数修改记录。
 ![](https://main.qcloudimg.com/raw/4c616b40d058f114e8f75c4021c02648.png)
 
+## 后续操作
+- 相关重要参数的配置建议，请参见 [参数配置建议](https://intl.cloud.tencent.com/document/product/236/38056)。

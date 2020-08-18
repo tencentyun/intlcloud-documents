@@ -14,7 +14,7 @@
 5. 在“创建监听器”弹窗中，填写“后端端口”（端口选择请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)）及其他相关字段，单击【下一步】，继续完成配置，详情请参见 [配置传统型负载均衡](https://intl.cloud.tencent.com/document/product/214/32462)。
 >?传统型负载均衡需要在**创建监听器阶段**指定后端服务器的端口。
 >
-![](https://main.qcloudimg.com/raw/fb33d8ebc45f64bb6991568ec912c4f2.png)
+![](https://main.qcloudimg.com/raw/b2d43b48851d5c021a95872613e359c3.png)
 6. 监听器创建完成后，在绑定后端服务模块，单击【绑定】。
 7. 在“绑定云服务器”弹窗中，勾选需要绑定的云服务器，在“权重”处填写权重信息，单击【确定】。
 >?
@@ -22,7 +22,7 @@
 >- 绑定多个后端服务器时，CLB 将按 Hash 算法转发流量，起到均衡负载的作用。
 >- 权重越大转发的请求越多，默认为10，可配置范围为0 - 100。 当权重设置为0，该服务器不会再接受新请求。 如开启会话保持，可能会造成后端服务器的请求不均匀，详情请见 [均衡算法选择与权重配置实例](https://intl.cloud.tencent.com/document/product/214/5371)。
 >
- ![](https://main.qcloudimg.com/raw/b1c0944b907a84ca384062e75f69670a.png)
+ ![](https://main.qcloudimg.com/raw/d9d9becb83da5d34e913591b86132aa5.png)
 
 ### 修改传统型负载均衡后端服务器权重
 >?传统型负载均衡暂不支持使用 API 修改后端服务器权重。
@@ -35,13 +35,13 @@
 >
 	- **方式1**：单独修改某台服务器权重。
 		1. 找到需要修改权重的服务器，并将鼠标悬浮于对应权重上方，单击<img src="https://main.qcloudimg.com/raw/4aae0dbec227f8fc18b4a35acf560f62.png" style="margin:0;">编辑按钮。
-		![](https://main.qcloudimg.com/raw/5f814a223765b08bde55918df24b159f.png)
+		![](https://main.qcloudimg.com/raw/9230ac972fdd0f1b8c55c5188c0424fd.png)
 		2. 在“修改权重”弹窗中，输入修改后的权重值，单击【提交】。
 	- **方式2**：批量修改某些服务器权重。
 	>?批量修改权重后的服务器权重相同。
 		>
 		1. 单击服务器前方复选框，选中多台服务器，在列表上方，单击【修改权重】。
-		![](https://main.qcloudimg.com/raw/1f67c6555d61e2b5884dd15aed9f2126.png)
+		![](https://main.qcloudimg.com/raw/6e58995f13d57fe0cd9ea0c92e32d931.png)
 		2. 在“修改权重”弹窗中，输入修改后的权重值，单击【提交】。
 
 ### 解绑传统型负载均衡后端服务器
@@ -56,11 +56,11 @@
 4. 在绑定后端服务模块，解绑已绑定的服务器。
 	- **方式1**：单独解绑某台服务器。
 		1. 找到需要解绑的服务器，在右侧操作栏，单击【解绑】。
-		![](https://main.qcloudimg.com/raw/91b74ae1590c7893df920d52bd86680a.png)
+		![](https://main.qcloudimg.com/raw/f398806fd564c8b0ff9ed1610b76ce4e.png)
 		2. 在“解绑后端服务”弹窗中，确认解绑的服务，单击【提交】。
 	- **方式2**：批量解绑某些服务器。
 		1. 单击服务器前方复选框，选中多台服务器，在列表上方，单击【解绑】。
-		![](https://main.qcloudimg.com/raw/87e42ebf8c25ad74a8d9e28c0a0c7bdc.png)
+		![](https://main.qcloudimg.com/raw/088d33fd06d677741f58b91ea05ab1a2.png)
 		2. 在“解绑后端服务”弹窗中，确认解绑的服务，单击【提交】。
 
 

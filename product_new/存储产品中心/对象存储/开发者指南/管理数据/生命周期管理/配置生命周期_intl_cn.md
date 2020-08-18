@@ -30,7 +30,7 @@
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523)
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37855)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/32454)

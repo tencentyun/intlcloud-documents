@@ -1,23 +1,23 @@
 ## Relevant Resources
 
-- Download the COS iOS SDK source code [here](https://github.com/tencentyun/qcloud-sdk-ios.git).
+- Download the iOS SDK source code [here](https://github.com/tencentyun/qcloud-sdk-ios.git).
 - Access the demo [here](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
-- For the SDK APIs and their parameters, see [SDK API References](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com).
-- For the SDK change log, see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
+- For the SDK APIs and their parameters, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com).
+- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
 
 ## Preparations
 
-1. You need an iOS application; this can be one of your existing projects or a new empty project.
+1. Prepare an iOS application; this can be an existing project or a new empty project.
 2. Make sure that the application is built using an SDK running on iOS 8.0 or above.
-3. You need a remote address where users can obtain your Tencent Cloud temporary key. For more information on temporary keys, see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+3. Prepare a remote address that can be used to get your Tencent Cloud temporary key. For more information on temporary keys, please see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 ## Step 1. Install the SDK
 
-### Method 1. Using CocoaPods (recommended)
+### Method 1. Integration using CocoaPods (recommended)
 
 #### Standard SDK
 
-In the `Podfile` of your project, run:
+Add the following content to the `Podfile` of your project:
 
 ```shell
 pod 'QCloudCOSXML'
@@ -27,7 +27,7 @@ pod 'QCloudCOSXML'
 
 We have introduced Tencent Mobile Analytics (TMA) capabilities into the SDK to keep track of and optimize SDK quality for a better user experience.
 
-To disable TMA reporting, in the `Podfile` of your project, run:
+If you want to disable this feature, add the following content to the `Podfile` file of your project
 
 ```shell
 pod 'QCloudCOSXML/WithoutMTA'
@@ -35,9 +35,9 @@ pod 'QCloudCOSXML/WithoutMTA'
 
 #### Simplified SDK
 
-If you only need to perform upload and download operations and want a smaller sized SDK, you can use our simplified version without the MTA feature.
+If you only need to perform upload and download operations and want a smaller sized SDK, you can use the simplified version, which does not contain the MTA feature.
 
-The simplified SDK is implemented through the CocoaPods subspec feature, so it currently can only be integrated automatically. In the `Podfile`  of your project, run:
+The simplified SDK is implemented through the CocoaPods subspec feature, so it currently can only be integrated automatically. Add the following content to the `Podfile` of your project:
 
 ```shell
 pod 'QCloudCOSXML/Transfer'
@@ -45,15 +45,15 @@ pod 'QCloudCOSXML/Transfer'
 
 ### Method 2. Manual integration
 
-You can directly download the latest version of the SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip), or you can find all of the versions [here](https://github.com/tencentyun/qcloud-sdk-ios/releases).
+You can directly download the latest version of the SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-ios/latest/qcloud-sdk-ios.zip) or you can find all of the versions [here](https://github.com/tencentyun/qcloud-sdk-ios/releases).
 
 #### 1. Import binary libraries
 
-Drag **QCloudCOSXML.framework, QCloudCore.framework and libmtasdk.a** into your project.
+Drag **`QCloudCOSXML.framework`, `QCloudCore.framework`, and `libmtasdk.a`** to your project.
 
 ![](https://main.qcloudimg.com/raw/ce990d8871293daec0aa434f28b152e6.png)  
 
-And add the following dependent libraries:
+Add the following dependent libraries:
  - CoreTelephony
  - Foundation
  - SystemConfiguration
@@ -61,7 +61,7 @@ And add the following dependent libraries:
 
 #### 2. Configure your project
 
-Configure "Other Linker Flags" in "Build Settings" by adding this parameter:
+Set "Other Linker Flags" in "Build Settings" and add the following parameters:
 
 ```shell
 -ObjC
@@ -70,7 +70,7 @@ Configure "Other Linker Flags" in "Build Settings" by adding this parameter:
 
 ![](https://main.qcloudimg.com/raw/125218fad3f4781cae8f992d9a152057.png)
 
-## Step 2. Begin Using the SDK
+## Step 3. Begin Using the SDK
 
 ### 1. Import the header file
 
@@ -86,7 +86,7 @@ Configure "Other Linker Flags" in "Build Settings" by adding this parameter:
 import QCloudCOSXML
 ```
 
-For simplified SDK, import:
+For the simplified SDK, import the following:
 
 **Objective-c**
 
@@ -113,18 +113,18 @@ We provide a `QCloudCredentailFenceQueue` scaffolding tool for you to cache and 
 
 We recommend designing the COS instances `QCloudCOSXMLService` and `QCloudCOSTransferMangerService` as **application singletons**.
 
-The following is the complete sample code:
+Please see the following complete sample code:
 
 **Objective-c**
 
 ```objective-c
 //AppDelegate.m
-//AppDelegate needs to follow QCloudSignatureProvider and 
-//QCloudCredentailFenceQueueDelegate protocols
+// `AppDelegate` must follow the `QCloudSignatureProvider` and 
+// `QCloudCredentailFenceQueueDelegate` protocols
 
 @interface AppDelegate()<QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate>
 
-// A scaffolding tool instance
+// Scaffolding tool instance
 @property (nonatomic) QCloudCredentailFenceQueue* credentialFenceQueue;
 
 @end
@@ -135,7 +135,7 @@ The following is the complete sample code:
         didFinishLaunchingWithOptions:(NSDictionary * )launchOptions {
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // Service region abbreviation, e.g. ap-guangzhou
+    // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
     endpoint.regionName = @"COS_REGION";
     // Use HTTPS
     endpoint.useHTTPS = true;
@@ -156,20 +156,20 @@ The following is the complete sample code:
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    // Here, get the temporary key from the background server synchronously
+    // Get the temporary key from the backend server synchronously
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
-    // Temporary key SecretId
+    // Temporary key's `SecretId`
     credential.secretID = @"COS_SECRETID";
-    // Temporary key SecretKey
+    // Temporary key's `SecretKey`
     credential.secretKey = @"COS_SECRETKEY";
-    // Temporary key Token
+    // Temporary key's `Token`
     credential.token = @"COS_TOKEN";
     // We strongly recommend using the server time as the start time of the signature
     // to avoid signature errors caused by a deviation between your mobile phone's local time and standard time
     credential.startDate = [[[NSDateFormatter alloc] init] 
-        dateFromString:@"startTime"]; // Measured in seconds
+        dateFromString:@"startTime"]; // Unit: second
     credential.experationDate = [[[NSDateFormatter alloc] init] 
         dateFromString:@"expiredTime"];
 
@@ -204,8 +204,8 @@ The following is the complete sample code:
 
 ```swift
 //AppDelegate.swift
-//AppDelegate needs to follow QCloudSignatureProvider and 
-//QCloudCredentailFenceQueueDelegate protocols
+// `AppDelegate` must follow the `QCloudSignatureProvider` and 
+// `QCloudCredentailFenceQueueDelegate` protocols
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
     QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate {
@@ -218,7 +218,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        // Service region abbreviation, e.g. ap-guangzhou
+        // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
         endpoint.regionName = "COS_REGION";
         // Use HTTPS
         endpoint.useHTTPS = true;
@@ -241,20 +241,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
     func fenceQueue(_ queue: QCloudCredentailFenceQueue!, 
         requestCreatorWithContinue continueBlock: 
         QCloudCredentailFenceQueueContinue!) {
-        // Here, get the temporary key from the background server synchronously
+        // Get the temporary key from the backend server synchronously
         //...
 
         let credential = QCloudCredential.init();
-        // Temporary key SecretId
+        // Temporary key's `SecretId`
         credential.secretID = "COS_SECRETID";
-        // Temporary key SecretKey
+        // Temporary key's `SecretKey`
         credential.secretKey = "COS_SECRETKEY";
-        // Temporary key Token
+        // Temporary key's `Token`
         credential.token = "COS_TOKEN";
         // We strongly recommend using the server time as the start time of the signature
         // to avoid signature errors caused by a deviation between your mobile phone's local time and standard time
         credential.startDate = DateFormatter().date(from: "startTime");
-        // Measured in seconds
+        // Here, the value is measured in seconds
         credential.experationDate = DateFormatter().date(from: "expiredTime");
 
         let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -280,18 +280,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 ```
 
 >!
->- For the COS region abbreviations, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
->- We recommend requesting data over HTTPS. To use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed instructions, see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
+>- For the abbreviations of different bucket regions, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+>- We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, please see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
 
-If your `QCloudServiceConfiguration` changes, you can register a new instance by using the following method:
+If your `QCloudServiceConfiguration` has changed, you can register a new instance by using the following method:
 
 ```objective-c
 + (QCloudCOSTransferMangerService*) registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key;
 ```
 
-#### Method 2. Using your permanent key for local debugging
+#### Method 2. Using a permanent key for local debugging
 
-You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before release.**
+You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
 
 When using a permanent key, you can choose not to implement the `QCloudCredentailFenceQueueDelegate` protocol.
 
@@ -305,8 +305,8 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    credential.secretID = @"COS_SECRETID"; // Permanent key SecretId
-    credential.secretKey = @"COS_SECRETKEY"; // Permanent key SecretKey
+    credential.secretID = @"COS_SECRETID"; // Permanent key's `SecretId`
+    credential.secretKey = @"COS_SECRETKEY"; // Permanent key's `SecretKey`
 
     // Use the permanent key to calculate the signature
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
@@ -324,8 +324,8 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    credential.secretID = "COS_SECRETID"; // Permanent key SecretId
-    credential.secretKey = "COS_SECRETKEY"; // Permanent key SecretKey
+    credential.secretID = "COS_SECRETID"; // Permanent key's `SecretId`
+    credential.secretKey = "COS_SECRETKEY"; // Permanent key's `SecretKey`
 
     // Use the permanent key to calculate the signature
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -336,7 +336,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 #### Method 3. Using a backend-calculated signature to authenticate requests
 
-If you put the signing process on the backend, you can choose not implement the `QCloudCredentailFenceQueueDelegate` protocol.
+When the signature is generated on the backend, you can choose not to implement `QCloudCredentailFenceQueueDelegate` protocol
 
 **Objective-C**
 
@@ -350,7 +350,7 @@ If you put the signing process on the backend, you can choose not implement the 
     NSDate *expiration = [[[NSDateFormatter alloc] init] 
                             dateFromString:@"expiredTime"];
     QCloudSignature *sign = [[QCloudSignature alloc] initWithSignature:
-        @"Backend-calculated signature" expiration:expiration];
+        @"Signature calculated on backend" expiration:expiration];
     continueBlock(signature, nil);
 }
 ```
@@ -364,37 +364,37 @@ func signature(with fileds: QCloudSignatureFields!,
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     // Signature expiration time
     let expiration = DateFormatter().date(from: "expiredTime");
-    let sign = QCloudSignature.init(signature: "backend-calculated signature", 
+    let sign = QCloudSignature.init(signature: "signature calculated on backend", 
                 expiration: expiration);
     continueBlock(signature,nil);
 }
 ```
 
-## Step 3. Access COS
+## Step 4. Access COS
 
-### Uploading an object
+### Uploading object
 
-The SDK supports uploading local files and binary data in NSData format. The following is an example of uploading a local file.
+The SDK allows you to upload local files and binary data in NSData format. The following uses local file upload as an example:
 
 **Objective-C**
 
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-// Path to the local file
+// Local file path
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 put.object = @"exampleobject";
-// The object content to be uploaded. You can pass in variables in NSData *or NSURL* format
+// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body =  url;
 // Monitor the upload progress
 [put setSendProcessBlock:^(int64_t bytesSent,
                             int64_t totalBytesSent,
                             int64_t totalBytesExpectedToSend) {
-    //      bytesSent                   Number of new bytes
-    //      totalBytesSent              Total number of bytes in the upload
-    //      totalBytesExpectedToSend    Target number of bytes in the upload
+    //      bytesSent                   Number of new bytes sent
+    //      totalBytesSent              Total number of bytes sent in the upload
+    //      totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 }];
 
 // Monitor the upload result
@@ -410,11 +410,11 @@ put.body =  url;
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format: `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 put.object = "exampleobject";
-// The object content to be uploaded. You can pass in variables in NSData *or NSURL* format
+// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 
 // Monitor the upload result
@@ -430,14 +430,14 @@ put.setFinish { (result, error) in
 // Monitor the upload progress
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
-    //      bytesSent                   Number of new bytes
-    //      totalBytesSent              Total number of bytes in the upload
-    //      totalBytesExpectedToSend    Target number of bytes in the upload
+    //      bytesSent                   Number of new bytes sent
+    //      totalBytesSent              Total number of bytes sent in the upload
+    //      totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 };
 // Set the upload parameters
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
     // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData
-    //and generate a multipart upload request using resumeData
+    // and can generate a multipart upload request using resumeData.
     let resumeUploadRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>
         .init(request: resumeData as Data?);
 }
@@ -445,24 +445,25 @@ put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
 QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
-### Downloading an object
+### Downloading object
 
 **Objective-C**
 
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// Bucket name in the format: BucketName-APPID
+// Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 request.object = @"exampleobject";
 
 // Set the download URL. Once set, the file will be downloaded to the specified path
+// If this parameter is not set, the file will be downloaded to memory and stored in the `outputObject` of `finishBlock`.
 request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 
 // Monitor the download result
 [request setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject contains all the HTTP response headers
+    // `outputObject` contains all HTTP response headers
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 
@@ -470,9 +471,9 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 [request setDownProcessBlock:^(int64_t bytesDownload,
                                 int64_t totalBytesDownload,
                                 int64_t totalBytesExpectedToDownload) {
-    //      bytesDownload                   New bytes downloaded
-    //      totalBytesDownload              Total number of bytes received for the download
-    //      totalBytesExpectedToDownload    Target number of bytes to download
+    //      bytesDownload                   Number of new bytes downloaded 
+    //      totalBytesDownload              Total number of bytes received in the download
+    //      totalBytesExpectedToDownload    Target number of bytes expected to be downloaded
 }];
 
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] DownloadObject:request];
@@ -489,14 +490,15 @@ request.bucket = "examplebucket-1250000000";
 request.object = "exampleobject";
 
 // Set the download URL. Once set, the file will be downloaded to the specified path
+// If this parameter is not set, the file will be downloaded to memory and stored in the `outputObject` of `finishBlock`.
 request.downloadingURL = NSURL.fileURL(withPath: "Local File Path") as URL?;
 
 // Monitor the download progress
 request.sendProcessBlock = { (bytesDownload, totalBytesDownload,
     totalBytesExpectedToDownload) in
-    //      bytesDownload                   New bytes downloaded
-    //      totalBytesDownload              Total number of bytes received for the download
-    //      totalBytesExpectedToDownload    Target number of bytes to download
+    //      bytesDownload                   Number of new bytes downloaded
+    //      totalBytesDownload              Total number of bytes received in the download
+    //      totalBytesExpectedToDownload    Target number of bytes expected to be downloaded
 }
 
 // Monitor the download result

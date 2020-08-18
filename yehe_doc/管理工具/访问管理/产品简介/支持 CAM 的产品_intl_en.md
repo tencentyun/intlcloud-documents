@@ -169,7 +169,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
 | [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047)   | Resource level | &#10003;   | -  |  - | - |
-| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Operation level | &#10003; | -   | -  |	-  |
+| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Resource level | &#10003; | -   | -  |	-  |
 
 ## Cloud Resource Management
 

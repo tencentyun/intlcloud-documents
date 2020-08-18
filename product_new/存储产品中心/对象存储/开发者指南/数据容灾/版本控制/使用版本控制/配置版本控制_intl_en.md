@@ -23,14 +23,14 @@ You can use the REST API to configure versioning and manage objects in buckets w
 
 You can directly call the Versioning method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#versioning)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36195#versioning)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#versioning)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#versioning)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271#versioning)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#versioning)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#versioning)
-- Node.js SDK
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#versioning)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35804#versioning)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
