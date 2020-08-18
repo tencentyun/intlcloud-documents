@@ -17,14 +17,14 @@
 ### 使用 SDK
 您可以直接调用 SDK 的跨地域复制方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#cross-region-replication)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36196#cross-region-replication)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#cross-region-replication)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#cross-region-replication)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597#cross-region-replication)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35272#cross-region-replication)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#cross-region-replication)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#cross-region-replication)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#cross-region-replication)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#cross-region-replication)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35805#cross-region-replication)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35859)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#cross-region-replication)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34996#cross-region-replication)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#cross-region-replication)
