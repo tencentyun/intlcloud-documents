@@ -121,7 +121,7 @@
 					<p>The total number of instances that can be enabled in one region is limited. For more information, please see <a href="https://cloud.tencent.com/document/product/213/2664">CVM Instance Purchase Limit</a>.</p>
 				</li>
 				<li>
-					<p>Restrictions on system and data disks mounted on an instance: To ensure premium disk I/O performance, Tencent Cloud sets limits on the size and type of data disks purchased with an instance. For more information, please see the disks supported by the respective instance family. You can also purchase separate cloud disks if you have higher disk requirements.</p>
+					<p>Restrictions on system and data disks mounted on an instance: to ensure premium disk I/O performance, Tencent Cloud sets limits on the size and type of data disks purchased with an instance. For more information, see the supported disks of each instance family. You can also purchase separate cloud disks if you have higher disk requirements.</p>
 				</li>
 				<li>
 					<p>Note that the private network bandwidth capacity of an instance specification is the maximum private network bandwidth limit of the corresponding instance. If the CVM private network traffic exceeds this limit, random packet loss may happen within the private network for your instances.</p>
@@ -161,7 +161,7 @@
 										<p>Standard S5 instances are the latest generation of standard instances. Based on an all-new optimized virtualization platform, this family provides a balance of stable computing, memory, and network resources. This is a premium choice for many applications.</p>
 									</div>
 									<div class="paragraph">
-										<p>Standard S5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and support for up to 28 Gbps of private network bandwidth.</p>
+										<p>Standard S5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory. They are network optimized by default, and provide excellent private network throughput and bandwidth.</p>
 									</div>
 									<div class="sect3">
 										<h4 id="_Features">Features</h4>
@@ -1382,7 +1382,7 @@
 													<p>Larger instance size, SA2.45XLARGE464, offering 180 vCPUs and 464 GB of memory</p>
 												</li>
 												<li>
-													<p>1:2 processor to memory ratio</p>
+													<p>A wide range of processor to memory ratio, such as 1:2 and 1:4</p>
 												</li>
 												<li>
 													<p>Supports up to 25 Gbps of private network bandwidth for ultra-high packet throughput to meet the needs of extremely high private network transmission demand</p>
@@ -6979,7 +6979,8 @@
 </table>
 </div>
 </div>
-
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>Among standard S1 instances, "-" indicates that, for this specification, the network packet rate and server CPU performance are not guaranteed. If you have strict requirement on the performance, please choose models with performance guarantee. </p>
+</blockquote>
 <div class="sect1">
 <h2 id="M">Memory Optimized Instance Family</h2>
 <div class="sectionbody">
@@ -6999,7 +7000,7 @@
 <p>As the latest generation of memory optimized instances, Memory Optimized M5 instances are designed based on an all-new optimized virtualization platform to deliver fast, stable performance for processing large data sets in memory, and are the best choice for applications demanding high-memory computing.</p>
 </div>
 <div class="paragraph">
-<p>Memory Optimized M5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and support for up to 25 Gbps of private network bandwidth.</p>
+<p>Memory Optimized M5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory. They are network optimized by default, and provide excellent private network throughput and bandwidth.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_8">Application Scenarios</h4>
@@ -7303,7 +7304,7 @@
 <p>As the new generation of memory optimized instances, Memory Optimized M4 instances are designed to deliver high performance for processing large data sets in memory, and are the best choice for applications demanding high-memory computing.</p>
 </div>
 <div class="paragraph">
-<p>Memory Optimized M4 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and support for up to 25 Gbps of private network bandwidth.</p>
+<p>Memory Optimized M4 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and ultra-high private network bandwidth.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_8">Application Scenarios</h4>
@@ -8848,6 +8849,8 @@
 </table>
 </div>
 </div>
+<div><blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note: </p><p>Among M1 instances, "-" indicates that, for this specification, the network packet rate is not guaranteed. If you have strict requirement on the performance, please choose models with performance guarantee.  </p>
+</blockquote></div>
 
 <div class="sect1">
 <h2 id="I">High I/O Instance Family</h2>
@@ -9953,7 +9956,7 @@
 <p>As the latest generation of computing instances, Compute C3 instances have the most powerful processors and the best cost performance among CVMs. They are ideal for compute bound applications that require high computing performance and high concurrent read and write.</p>
 </div>
 <div class="paragraph">
-<p>Compute C3 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory and support for up to 10 Gbps of private network bandwidth.</p>
+<p>Compute C3 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory and support for higher private network bandwidth.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_18">Application Scenarios</h4>
