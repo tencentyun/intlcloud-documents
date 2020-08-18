@@ -43,8 +43,14 @@ Please create a CFS resource as instructed in [Creating CFS File System](https:/
  -  **File System ID**: select the file system to be mounted in the drop-down list.
  -  **Mount Target ID**: select the ID of the mount target corresponding to the file system in the drop-down list.
 6. Click **Save** at the bottom to complete the configuration.
-You can edit the function code to start using the CFS file system as shown below:
-![](https://main.qcloudimg.com/raw/5ba2b08d89b903cda862135c1f74fc9d.png)
-
+You can use the following function code to start using CFS.
+```
+'use strict';
+var fs = requiret('fs');
+exports.main_handler = async (event, context) => {
+      await fs.promises.writeFile('/mnt/myfolder/filel.txt', JSON.stringify(event)); 
+      return event;
+};
+```
 ### Testing the CFS Use Performance of SCF
 You can use this [script](https://github.com/tencentyun/scf_cfs_demo) to test the performance of SCF when using CFS.
