@@ -24,14 +24,14 @@
 
 您可以直接调用 SDK 的版本控制方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515#versioning)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36195#versioning)
 - [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#versioning)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523#versioning)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597#versioning)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271#versioning)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#versioning)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31531#versioning)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535#versioning)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539#versioning)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35804#versioning)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543#versioning)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997#versioning)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547#versioning)
