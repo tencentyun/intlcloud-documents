@@ -32,5 +32,5 @@ For more information, see [Creating Instances via the CVM Purchase Page](https:/
 For more information, see [Reinstalling the System](https://intl.cloud.tencent.com/document/product/213/4933).
 
 ## Technical Support
-Tencent Cloud provides the following technical support for Tlinux:
-Tencent Cloud provides security updates in the YUM repository. You can run the `yum update` command to update Tlinux to the latest version.
+- Tencent Cloud provides security updates in the YUM repository. You can run the `yum update` command to upgrade Tlinux.
+- Tlinux is an operating system image tailored to the cloud environment. It is based on kernel version 4.14.105, which has long been supported by the kernel community. Tencent Cloud will provide technical support for the problems you encounter while using Tlinux.
