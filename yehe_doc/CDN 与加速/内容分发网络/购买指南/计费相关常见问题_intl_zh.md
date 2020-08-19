@@ -60,3 +60,6 @@ CDN 属于后付费结算模式（先使用后付费）。第二日结算时的�
 ### 怎么查询 CDN 账单？
 
 您可以前往腾讯云 [费用中心](https://console.cloud.tencent.com/expense/bill/overview) 查询您的账单。具体操作步骤请参见 [账单查询](https://intl.cloud.tencent.com/document/product/228/6071)。
+
+### 请问使用 API 接口查询数据时会有延迟嘛，延迟有多大？
+使用 API 查询数据是有一定延迟的。访问数据、计费数据等的实时数据查询，时延在5-10分钟左右，TOP 数据等分析类的查询时延在半小时左右。后台在凌晨3点左右会对数据进行校准。
