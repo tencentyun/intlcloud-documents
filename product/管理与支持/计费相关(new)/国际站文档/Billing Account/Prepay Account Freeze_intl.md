@@ -32,7 +32,7 @@ The frozen amount cannot be spent and cannot be withdrawn. According to billing 
 
 You can go to "Account Information" in the home page of [Billing Center](https://console.cloud.tencent.com/account) to view the frozen amount.
 
- ![](https://mc.qcloudimg.com/static/img/60a6a4842c6f44705bc365aed7c369c9/image.png)
+ ![](https://main.qcloudimg.com/raw/411a9db41d44133bf71e40fe66c006d2.png)
 
 You can also check the details of frozen and unfrozen amount in [Transactions](https://console.cloud.tencent.com/account/fee).
 
