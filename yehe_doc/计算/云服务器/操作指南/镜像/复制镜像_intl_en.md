@@ -2,10 +2,10 @@
 
 ### Common Steps
 
-**Cross-region replication** can help users deploy the same CVM **across regions**quickly. You can use this feature to copy images across regions, and then create a CVM by copying the images under the new region.
+**Cross-region replication** can help users deploy the same CVM **across regions** quickly. You can use this feature to copy images across regions, and then create a CVM by copying the images under the new region.
 
 ### Notes
- - The copied image must be a custom image. You must create a custom image first. For details, see [Create Custom Images] (https://intl.cloud.tencent.com/document/product/213/4942).
+ - The copied image must be a custom image. You must create a custom image first. For details, see [Create Custom Images](https://intl.cloud.tencent.com/document/product/213/4942).
  - Cross-region replication allows you to copy images in or outside China. If you need to copy images from China to other countries or vice versa, please contact after-sale service.
  - Cross-region replication of images is currently free of charge.
  - Cross-region replication currently does not support custom images larger than 50 GB.
