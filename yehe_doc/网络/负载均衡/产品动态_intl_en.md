@@ -166,7 +166,7 @@
 </thead>
 <tbody><tr>
 <td>Anycast CLB is supported</td>
-<td>Anycast CLB supports global dynamic acceleration. CLB VIP is published in multiple regions around the world. The client connects to the nearest POP and forwards traffic to a CVM instance through the high-speed internet of Tencent Cloud IDC.</td>
+<td>Anycast CLB supports cross-region dynamic acceleration. CLB VIP is published in multiple regions. The client connects to the nearest POP and forwards traffic to a CVM instance through the high-speed internet of Tencent Cloud IDC.</td>
 <td>November 27, 2018</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/32426">Creating an Anycast Instance</a></td>
 </tr>

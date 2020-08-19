@@ -1,5 +1,5 @@
 ## TEduBoardDelegate-p
-Whiteboard event callback delegate 
+Whiteboard event callback APIs 
 
 ## Common Event Callbacks
 
@@ -12,7 +12,7 @@ Whiteboard error callback
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardErrorCode | Error code. For more information, see the definitions of TEduBoardErrorCode. |
+| code | TEduBoardErrorCode | Error code. For more information, see the definition of TEduBoardErrorCode |
 | msg | NSString * | Error information, which is UTF8-coded |
 
 
@@ -25,7 +25,7 @@ Whiteboard alarm callback
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardWarningCode | Error code. For more information, see the definitions of TEduBoardWarningCode. |
+| code | TEduBoardWarningCode | Error code. For more information, see the definition of TEduBoardWarningCode |
 | msg | NSString * | Error information, which is UTF8-coded |
 
 
@@ -38,11 +38,11 @@ Whiteboard initialization completion callback
 - (void)onTEBInit
 ```
 #### Description
-If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled.) 
+If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled). 
 
 
 ### onTEBHistroyDataSyncCompleted
-Callback for the completion of whiteboard historical data synchronization 
+Callback for the completion of the whiteboard historical data synchronization 
 ``` Objective-C
 - (void)onTEBHistroyDataSyncCompleted
 ```
@@ -59,7 +59,7 @@ Whiteboard synchronization data callback
 | data | NSString * | Whiteboard synchronization data (a JSON string) |
 
 #### Description
-When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the addSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization by using Tencent Cloud IMSDK. 
+When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the addSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization via Tencent Cloud IMSDK. 
 
 
 ### onTEBUndoStatusChanged:
@@ -112,7 +112,7 @@ Callback for setting the whiteboard background image
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | URL that you passed in when calling SetBackgroundImage  |
+| url | NSString * | URL passed in when SetBackgroundImage is called  |
 
 #### Description
 This callback is returned only when SetBackgroundImage is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
@@ -127,7 +127,7 @@ Callback for adding image elements
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | URL that you passed in when calling SetBackgroundImage |
+| url | NSString * | URL passed in when SetBackgroundImage is called |
 
 #### Description
 This callback is returned only when addImageElement is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
@@ -159,8 +159,8 @@ Callback for adding a whiteboard page
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardIds | NSArray * | List of IDs of the added whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page. |
-| fileId | NSString * | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardIds | NSArray * | List of the IDs of the added whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page |
+| fileId | NSString * | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBDeleteBoard:fileId:
@@ -172,8 +172,8 @@ Callback for deleting a whiteboard page
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardIds | NSArray * | List of IDs of the deleted whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page. |
-| fileId | NSString * | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardIds | NSArray * | List of the IDs of the deleted whiteboard pages. After using a whiteboard page, you do not need to call the Release method to release the page. Instead, the SDK will automatically release the page |
+| fileId | NSString * | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBGotoBoard:fileId:
@@ -185,12 +185,12 @@ Callback for redirecting to a whiteboard page
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | NSString * | ID of the whiteboard page to redirect to |
-| fileId | NSString * | ID of the file to which the whiteboard page to redirect to belongs |
+| boardId | NSString * | ID of the whiteboard page to be redirected to |
+| fileId | NSString * | ID of the file to which the whiteboard page to be redirected to belongs |
 
 
 ### onTEBGotoStep:totalStep:
-Callback for whiteboard page animation steps 
+Callback for the whiteboard page animation steps 
 ``` Objective-C
 - (void)onTEBGotoStep:(uint32_t)currentStep totalStep:(uint32_t)totalStep 
 ```
@@ -198,7 +198,7 @@ Callback for whiteboard page animation steps
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| currentStep | uint32_t | Current step of the current whiteboard page animation. Value range: [0, totalStep) |
+| currentStep | uint32_t | Step of the current whiteboard page animation. Value range: [0, totalStep) |
 | totalStep | uint32_t | Total steps of the current whiteboard page animation |
 
 
@@ -208,7 +208,7 @@ Callback for the selection made by the selection tool
 - (void)onTEBRectSelected
 ```
 #### Description
-This callback is triggered only after the rectangle selection tool selects a doodle or image element. 
+This callback is triggered only after the rectangle selection tool selects a doodle or an image element. 
 
 
 ### onTEBRefresh
@@ -218,7 +218,7 @@ Callback for refreshing a whiteboard
 ```
 
 ### onTEBSnapshot:errorCode:errorMsg:
-Creates a whiteboard snapshot. 
+Creates a whiteboard snapshot 
 ``` Objective-C
 - (void)onTEBSnapshot:(NSString *)path errorCode:(TEduBoardErrorCode)code errorMsg:(NSString *)msg 
 ```
@@ -227,7 +227,7 @@ Creates a whiteboard snapshot.
 | Parameter | Type | Description |
 | --- | --- | --- |
 | path | NSString * | Local storage path of the snapshot |
-| code | TEduBoardErrorCode | Error code. If 0 is returned, the snapshot has been obtained. |
+| code | TEduBoardErrorCode | Error code. If 0 is returned, the snapshot has been obtained |
 | msg | NSString * | Error information |
 
 
@@ -245,8 +245,8 @@ File transcoding progress callback
 | --- | --- | --- |
 | result | TEduBoardTranscodeFileResult * | File transcoding result |
 | path | NSString * | Local storage path of the file being transcoded |
-| errorCode | NSString * | File transcoding error code. If no error occurs, the value is the null string (""). |
-| errorMsg | NSString * | File transcoding error information. If no error occurs, the value is the null string (""). |
+| errorCode | NSString * | File transcoding error code. If no error occurs, the value is the null string ("") |
+| errorMsg | NSString * | File transcoding error information. If no error occurs, the value is the null string ("") |
 
 
 ### onTEBAddTranscodeFile:
@@ -273,7 +273,7 @@ Callback for deleting a file
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | NSString * | ID of the file to delete |
+| fileId | NSString * | ID of the file to be deleted |
 
 
 ### onTEBSwitchFile:
@@ -285,7 +285,7 @@ Callback for switching to another file
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | NSString * | ID of the file to switch to |
+| fileId | NSString * | ID of the file to be switched to |
 
 
 ### onTEBFileUploadProgress:currentBytes:totalBytes:uploadSpeed:percent:

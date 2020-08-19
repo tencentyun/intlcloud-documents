@@ -1,5 +1,5 @@
 ## Scenario
-This document describes how to manage spread placement groups.
+This document describes how to manage spread placement groups.For more information about the placement group, see [Placement Group](https://intl.cloud.tencent.com/document/product/213/15486).
 
 ## Directions
 ### Creating a placement group

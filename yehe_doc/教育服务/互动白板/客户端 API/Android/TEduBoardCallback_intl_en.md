@@ -12,7 +12,7 @@ void onTEBError(int code, String msg)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | int | Error code. For more information, see the definitions of TEduBoardErrorCode. |
+| code | int | Error code. For more information, see the definitions of TEduBoardErrorCode |
 | msg | String | Error information, which is UTF8-coded |
 
 
@@ -25,7 +25,7 @@ void onTEBWarning(int code, String msg)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | int | Error code. For more information, see the definitions of TEduBoardWarningCode. |
+| code | int | Error code. For more information, see the definitions of TEduBoardWarningCode |
 | msg | String | Error information, which is UTF8-coded |
 
 
@@ -38,7 +38,7 @@ Whiteboard initialization completion callback
 void onTEBInit()
 ```
 #### Description
-If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled.) 
+If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled) 
 
 
 ### onTEBHistroyDataSyncCompleted
@@ -59,7 +59,7 @@ void onTEBSyncData(String data)
 | data | String | Whiteboard synchronization data (a JSON string) |
 
 #### Description
-When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the addSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization by using Tencent Cloud IMSDK. 
+When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the addSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization using Tencent Cloud IMSDK 
 
 
 ### onTEBUndoStatusChanged
@@ -71,7 +71,7 @@ void onTEBUndoStatusChanged(boolean canUndo)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| canUndo | boolean | Whether the whiteboard allows undo operations or not |
+| canUndo | boolean | Whether the whiteboard allows undo operations |
 
 
 ### onTEBRedoStatusChanged
@@ -83,7 +83,7 @@ void onTEBRedoStatusChanged(boolean canRedo)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| canRedo | boolean | Whether the whiteboard allows redo operations or not |
+| canRedo | boolean | Whether the whiteboard allows redo operations |
 
 
 
@@ -112,10 +112,10 @@ void onTEBSetBackgroundImage(final String url)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | final String | URL that you passed in when calling setBackgroundImage |
+| url | final String | URL passed in when setBackgroundImage is called |
 
 #### Description
-This callback is returned only when SetBackgroundImage is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
+This callback is returned only when SetBackgroundImage is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed 
 
 
 ### onTEBAddImageElement
@@ -127,10 +127,10 @@ void onTEBAddImageElement(final String url)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | final String | URL that you passed in when calling setBackgroundImage |
+| url | final String | URL passed in when setBackgroundImage is called |
 
 #### Description
-This callback is returned only when addImageElement is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed. 
+This callback is returned only when addImageElement is called locally. When this callback is returned, the background image has been uploaded or downloaded successfully and is displayed 
 
 
 ### onTEBBackgroundH5StatusChanged
@@ -159,8 +159,8 @@ void onTEBAddBoard(final List< String > boardList, final String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | final List< String > | List of IDs of added whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally. |
-| fileId | final String | ID of the file to which the added whiteboard pages belong.The value must be ::DEFAULT in the current version. |
+| boardList | final List< String > | List of IDs of added whiteboard pages. After using this parameter, you do not need to call the Release method to release it. The SDK will release it automatically |
+| fileId | final String | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBDeleteBoard
@@ -172,8 +172,8 @@ void onTEBDeleteBoard(final List< String > boardList, final String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | final List< String > | List of IDs of deleted whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally. |
-| fileId | final String | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardList | final List< String > | List of IDs of deleted whiteboard pages. After using this parameter, you do not need to call the Release method to release it. The SDK will release it automatically |
+| fileId | final String | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBGotoBoard
@@ -185,8 +185,8 @@ void onTEBGotoBoard(final String boardId, final String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | final String | ID of the whiteboard page to redirect to |
-| fileId | final String | ID of the file to which the whiteboard page to redirect to belongs |
+| boardId | final String | ID of the whiteboard page to be redirected to |
+| fileId | final String | ID of the file to which the whiteboard page to be redirected to belongs |
 
 
 ### onTEBGotoStep
@@ -208,7 +208,7 @@ Callback for the selection made by the selection tool
 void onTEBRectSelected()
 ```
 #### Warning
-This callback is triggered only after the rectangle selection tool selects a doodle or image element. 
+This callback is triggered only after the rectangle selection tool selects a doodle or image element 
 
 
 ### onTEBRefresh
@@ -229,10 +229,10 @@ void onTEBAddTranscodeFile(String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | String | ID of the file for transcoding |
+| fileId | String | ID of the added file |
 
 #### Description
-This callback is triggered only after the file is loaded successfully. 
+This callback is triggered only after the file is loaded successfully 
 
 
 ### onTEBDeleteFile
@@ -244,7 +244,7 @@ void onTEBDeleteFile(String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | String | ID of the file to delete |
+| fileId | String | ID of the file to be deleted |
 
 
 ### onTEBSwitchFile
@@ -256,7 +256,7 @@ void onTEBSwitchFile(String fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | String | ID of the file to switch to |
+| fileId | String | ID of the file to be switched to |
 
 
 ### onTEBFileUploadProgress
@@ -300,8 +300,8 @@ void onTEBFileTranscodeProgress(final String file, final String errorCode, final
 | Parameter | Type | Description |
 | --- | --- | --- |
 | file | final String | Path of the local file being transcoded |
-| errorCode | final String | File transcoding error code. If no error occurs, the value is the null string (""). |
-| errorMsg | final String | File transcoding error information. If no error occurs, the value is the null string (""). |
+| errorCode | final String | File transcoding error code. If no error occurs, the value is the null string ("") |
+| errorMsg | final String | File transcoding error information. If no error occurs, the value is the null string ("") |
 | result | final TEduBoardTranscodeFileResult | File transcoding result |
 
 
@@ -330,7 +330,7 @@ void onTEBAddImagesFile(String fileId)
 | fileId | String | ID of the added file |
 
 #### Description
-This callback is triggered only after the file is loaded successfully. 
+This callback is triggered only after the file is loaded successfully 
 
 
 ### onTEBVideoStatusChanged
@@ -349,7 +349,7 @@ void onTEBVideoStatusChanged(String fileId, int status, float progress, float du
 
 
 ### onTEBSnapshot
-Creates a whiteboard snapshot. 
+Creates a whiteboard snapshot 
 ``` Java
 void onTEBSnapshot(final String path, int code, final String msg)
 ```
@@ -358,7 +358,7 @@ void onTEBSnapshot(final String path, int code, final String msg)
 | Parameter | Type | Description |
 | --- | --- | --- |
 | path | final String | Local snapshot path |
-| code | int | Error code. If 0 is returned, the snapshot is obtained successfully. |
+| code | int | Error code. If 0 is returned, the snapshot is obtained successfully |
 | msg | final String | Error information |
 
 

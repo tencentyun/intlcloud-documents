@@ -15,4 +15,4 @@ TencentDB for Redis boasts a rich set of metrics and alarms that are monitored a
 TencentDB for Redis supports cold and hot data migration in various self-created database environments such as self-created Tencent Cloud-based, VPN-based, Direct Connect-based, and IDC-based environments.
 
 ### Automatic Disaster Recovery
-TencentDB for Redis adopts a master/slave hot backup architecture. In case of failure of the master, the access can be switched to the slave in a matter of seconds. The switch process does not affect the online business, nor does it require any operations at your side, reducing the labor and time costs of developing a master/slave system architecture.
+TencentDB for Redis adopts a primary/replica hot backup architecture. In case of failure of the primary server, the access can be switched to the replica in a matter of seconds. The switch process does not require any operations at your side, reducing the labor and time costs of developing a primary/replica system architecture.

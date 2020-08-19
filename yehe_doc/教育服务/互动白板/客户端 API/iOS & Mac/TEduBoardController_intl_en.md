@@ -15,7 +15,7 @@ Sets the event callback listener.
 | delegate | id< TEduBoardDelegate > | Event callback listener |
 
 #### Warning
-We recommend that you call this method before running Init to handle the error. 
+We recommend that you call this method before running Init to resolve the error. 
 
 
 ### removeDelegate:
@@ -47,10 +47,10 @@ Initializes the whiteboard.
 | initParam | TEduBoardInitParam * | An optional parameter, which specifies a series of attribute values for initializing the whiteboard |
 
 #### Warning
-When Tencent Cloud IMSDK is used for real-time data synchronization, only one whiteboard instance is supported. If multiple whiteboard instances are created, the doodle status may be abnormal.
+When Tencent Cloud IMSDK is used for real-time data synchronization, only one whiteboard instance is supported. If multiple whiteboard instances are created, the doodle status may become unhealthy.
 
 #### Description
-You can use initParam.timSync to specify whether to use Tencent Cloud IMSDK for real-time data synchronization. When initParam.timSync is set to True, the system tries to use Tencent Cloud IMSDK as the signaling channel to receive and send data in real time (in this case, only message receiving and sending are automatically implemented, while users must manually perform the initialization, room entry, and other operations.) Currently, only IMSDK 4.3.118 and later are supported. 
+You can use initParam.timSync to specify whether Tencent Cloud IMSDK is used for real-time data synchronization. When initParam.timSync is set to True, the system tries to use Tencent Cloud IMSDK as the signaling channel to receive and send data in real time (in this case, only message receiving and sending are automatically implemented, and users must manually perform initialization, room entry, and other operations). Currently, only IMSDK 4.3.118 and later are supported. 
 
 
 ### unInit
@@ -72,7 +72,7 @@ Whiteboard rendering view
 
 
 ### addSyncData:
-Adds whiteboard synchronization data. 
+Adds the whiteboard synchronization data. 
 ``` Objective-C
 - (void)addSyncData:(NSString *)data 
 ```
@@ -80,14 +80,14 @@ Adds whiteboard synchronization data.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| data | NSString * | Synchronization data from other members in the room |
+| data | NSString * | Synchronization data sent by other members in the room |
 
 #### Description
 This API is used to sync data between whiteboard instances. When the built-in IM is used as the signaling channel, you do not need to call this API. 
 
 
 ### setDataSyncEnable:
-Sets whether to enable data synchronization for the whiteboard. 
+Sets whether data synchronization is enabled for the whiteboard. 
 ``` Objective-C
 - (void)setDataSyncEnable:(BOOL)enable 
 ```
@@ -95,10 +95,10 @@ Sets whether to enable data synchronization for the whiteboard.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| enable | bool | Whether to enable data synchronization |
+| enable | bool | Whether data synchronization is enabled |
 
 #### Description
-After a whiteboard instance is created, data synchronization is enabled by default. If this feature is disabled, none of local whiteboard operations will be synchronized to the remote end or server. 
+After a whiteboard instance is created, data synchronization is enabled by default. If data synchronization is disabled, none of the local whiteboard operations will be synchronized to the remote end or to the server. 
 
 
 ### isDataSyncEnable
@@ -107,7 +107,7 @@ Checks whether data synchronization is enabled for the whiteboard.
 - (BOOL)isDataSyncEnable
 ```
 #### Response
-Whether data synchronization is enabled or not. Valid values: true for enabled, and false for disabled. 
+Whether data synchronization is enabled or not. Valid values: true for enabled and false for disabled. 
 
 
 ### getSyncTime
@@ -147,7 +147,7 @@ Obtains the version number.
 + (NSString *)getSDKVersion
 ```
 #### Response
-Version number 
+NSString version number 
 
 
 
@@ -162,18 +162,18 @@ Sets users whose drawings can be operated.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| users | NSArray< NSString * > * | Users for which operations are allowed. The null value indicates all users. |
+| users | NSArray< NSString * > * | Specifies the users for which operations are allowed. The nullptr value indicates all users |
 
 #### Description
 This API has the following effects:
-1. The ERASER tool can erase only the doodles drawn by the users specified by the users parameter, but cannot erase the doodles drawn by other users.
-2. The POINTSELECT and SELECT tools can select only the doodles drawn by the users specified by the users parameter, but cannot select the doodles drawn by other users.
-3. The clear API can clear only selected doodles and the doodles drawn by the users specified by the users parameter. It cannot clear backgrounds or the doodles drawn by other users.
-4. This API has no impact on other features of the whiteboard that are not listed here. 
+1. The eraser tool can only erase the doodles drawn by the users specified by the users parameter, but cannot erase the doodles drawn by other users.
+2. The point select and select tools can only select the doodles drawn by the users specified by the users parameter, but cannot select the doodles drawn by other users.
+3. The clear API can only clear the selected doodles and the doodles drawn by the users specified by the users parameter. It cannot clear backgrounds or the doodles drawn by other users.
+4. This API has no impact on the other features of the whiteboard that are not listed here. 
 
 
 ### setDrawEnable:
-Sets whether the whiteboard allows doodle. 
+Sets whether the whiteboard allows doodles. 
 ``` Objective-C
 - (void)setDrawEnable:(BOOL)enable 
 ```
@@ -181,7 +181,7 @@ Sets whether the whiteboard allows doodle.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| enable | BOOL | Whether doodle is allowed for the whiteboard or not. Valid values: true for yes, false for no |
+| enable | BOOL | Whether doodle is allowed for the whiteboard or not. Valid values: true for yes and false for no |
 
 #### Description
 After a whiteboard instance is created, doodle is allowed for the whiteboard by default. 
@@ -193,7 +193,7 @@ Checks whether doodle is allowed for the whiteboard.
 - (BOOL)isDrawEnable
 ```
 #### Response
-Whether doodle is allowed for the whiteboard or not. Valid values: true for yes, and false for no. 
+Whether doodle is allowed for the whiteboard. Valid values: true for yes and false for no. 
 
 
 ### setGlobalBackgroundColor:
@@ -205,14 +205,14 @@ Sets the background color of all whiteboards.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | TEColor * | Global background color to set |
+| color | TEColor * | Global background color to be set |
 
 #### Description
-When this API is called, the background color of all whiteboards is changed, and the default background color of newly created whiteboards will be the global background color. 
+When this API is called, the background color of all whiteboards will change, and the default background color of the newly created whiteboards will be the global background color. 
 
 
 ### getGlobalBackgroundColor
-Obtains the global background color of whiteboards. 
+Obtains the global background color of the whiteboards. 
 ``` Objective-C
 - (TEColor *)getGlobalBackgroundColor
 ```
@@ -229,7 +229,7 @@ Sets the background color of the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | TEColor * | Background color to set |
+| color | TEColor * | Background color to be set |
 
 #### Description
 After a whiteboard page is created, the default background color is set by the SetDefaultBackgroundColor API. 
@@ -253,8 +253,8 @@ Sets the background image of the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | URL of the background image to set, which is UTF8-coded |
-| mode | TEduBoardImageFitMode | Image padding and alignment mode to use |
+| url | NSString * | URL of the background image to be set, which is UTF8-coded |
+| mode | TEduBoardImageFitMode | Image padding and alignment mode to be used |
 
 #### Description
 When the URL is a valid local file address, the file will be automatically uploaded to COS. 
@@ -269,14 +269,14 @@ Sets the background H5 page of the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | URL of the background H5 page to set |
+| url | NSString * | URL of the background H5 page to be set |
 
 #### Description
 This API and the SetBackgroundImage API are mutually exclusive. 
 
 
 ### setToolType:
-Sets the whiteboard tool to use. 
+Sets the whiteboard tool to be used. 
 ``` Objective-C
 - (void)setToolType:(TEduBoardToolType)type 
 ```
@@ -284,7 +284,7 @@ Sets the whiteboard tool to use.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| type | TEduBoardToolType | Whiteboard tool to set |
+| type | TEduBoardToolType | Whiteboard tool to be set |
 
 
 ### getToolType
@@ -305,7 +305,7 @@ Sets the brush color.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | TEColor * | Brush color to set |
+| color | TEColor * | Brush color to be set |
 
 #### Description
 The set brush color applies to all doodles. 
@@ -329,7 +329,7 @@ Sets the brush thickness.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| thin | UInt32 | Brush thickness to set |
+| thin | UInt32 | Brush thickness to be set |
 
 #### Description
 The brush thickness applies to all doodles. If the actual pixel value (thin * whiteboard height/10000) px is less than 1 px, the doodle line will be almost invisible. 
@@ -353,7 +353,7 @@ Sets the text color.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | TEColor * | Text color to set |
+| color | TEColor * | Text color to be set |
 
 
 ### getTextColor
@@ -374,7 +374,7 @@ Sets the text style.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| style | TEduBoardTextStyle | Text style to set |
+| style | TEduBoardTextStyle | Text style to be set |
 
 
 ### getTextStyle
@@ -395,10 +395,10 @@ Sets the text size.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| size | UInt32 | Text size to set |
+| size | UInt32 | Text size to be set |
 
 #### Description
-This API defines the actual pixel value, that is, (size * whiteboard height/10000) px. 
+This API defines the actual pixel value, which equals (size * whiteboard height/10000) px. 
 
 
 ### getTextSize
@@ -419,7 +419,7 @@ Sets the line style.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| style | TEduBoardLineStyle * | Line style to set |
+| style | TEduBoardLineStyle * | Line style to be set |
 
 
 ### getLineStyle
@@ -440,7 +440,7 @@ Sets the oval drawing mode.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| mode | TEduBoardOvalDrawMode | Oval drawing mode to set |
+| mode | TEduBoardOvalDrawMode | Oval drawing mode to be set |
 
 
 ### getOvalDrawMode
@@ -485,7 +485,7 @@ Clears the doodle on the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| background | BOOL | Whether or not to clear the background color and background image simultaneously |
+| background | BOOL | Whether or not to clear the background color and the background image simultaneously |
 | selected | BOOL | Whether or not to clear only the selected doodles |
 
 #### Warning
@@ -501,8 +501,8 @@ Sets the cursor icon for the whiteboard tool.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| toolType | TEduBoardToolType | Whiteboard tool for which the cursor icon is to be set |
-| cursorIcon | TEduBoardCursorIcon * | Cursor icon to set |
+| toolType | TEduBoardToolType | Whiteboard tool type for which the cursor icon is to be set |
+| cursorIcon | TEduBoardCursorIcon * | Cursor icon to be set |
 
 
 
@@ -517,7 +517,7 @@ Adds a whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | URL of the background image to use, which is UTF8-coded. The nullptr value indicates that no background image is specified. |
+| url | NSString * | URL of the background image to be used, which is UTF8-coded. The nullptr value indicates that no background image is specified |
 
 #### Response
 Whiteboard ID 
@@ -526,7 +526,7 @@ Whiteboard ID
 Whiteboard pages will be added to the default file (with the file ID ::DEFAULT). Whiteboard pages cannot be added for user-uploaded files.
 
 #### Description
-The SDK manages the memory for storing the return value, so you do not need to dump the memory on your own. 
+The SDK manages the memory for storing the return value, so you do not need to release the memory on your own. 
 
 
 ### deleteBoard:
@@ -538,14 +538,14 @@ Deletes a whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | NSString * | ID of the whiteboard to delete. The nullptr value indicates the current page. |
+| boardId | NSString * | ID of the whiteboard to be deleted. The nullptr value indicates that the current page will be deleted |
 
 #### Warning
 Only whiteboard pages in the default file (with file ID ::DEFAULT) can be deleted. The default whiteboard page (with whiteboard ID ::DEFAULT) cannot be deleted. 
 
 
 ### prevStep
-Goes to the previous step. Each step corresponds to an animation effect of the PowerPoint file. If no displayed animation effect is available, calling this API goes to the previous slide. 
+Goes to the previous step. Each step corresponds to an animation effect of the PowerPoint file. If no displayed animation effect is available, calling this API will redirect you to the previous slide. 
 ``` Objective-C
 - (void)prevStep
 ```
@@ -556,7 +556,7 @@ Goes to the next step.
 - (void)nextStep
 ```
 #### Description
-Each step corresponds to an animation effect of the PowerPoint file. If no animation effect that has not yet been displayed is available, calling this API goes to the next slide. 
+Each step corresponds to an animation effect of the PowerPoint file. If no animation effect that has not yet been displayed is available, calling this API will redirect you to the next slide. 
 
 
 ### preBoard
@@ -565,7 +565,7 @@ Goes to the previous page.
 - (void)preBoard
 ```
 #### Description
-If the current whiteboard page is the first page of the current file, calling this API does not work. 
+If the current whiteboard page is the first page of the current file, calling this API will not work. 
 
 
 ### nextBoard
@@ -574,7 +574,7 @@ Goes to the next page.
 - (void)nextBoard
 ```
 #### Description
-If the current whiteboard page is the last page of the current file, calling this API does not work. 
+If the current whiteboard page is the last page of the current file, calling this API will not work. 
 
 
 ### gotoBoard:
@@ -586,7 +586,7 @@ Redirects to the specified whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | NSString * | ID of the whiteboard page to redirect to |
+| boardId | NSString * | ID of the whiteboard page to be redirected to |
 
 #### Description
 This API is used to redirect to any whiteboard page in any file. 
@@ -601,10 +601,10 @@ Goes to the previous page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
+| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirection to the specified slide |
 
 #### Description
-If the current whiteboard page is the first page of the current file, calling this API does not work. 
+If the current whiteboard page is the first page of the current file, calling this API will not work. 
 
 
 ### nextBoard:
@@ -616,10 +616,10 @@ Goes to the next page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
+| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirection to the specified slide |
 
 #### Description
-If the current whiteboard page is the last page of the current file, calling this API does not work. 
+If the current whiteboard page is the last page of the current file, calling this API will not work. 
 
 
 ### gotoBoard:resetStep:
@@ -631,8 +631,8 @@ Redirects to the specified whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | NSString * | ID of the whiteboard page to redirect to |
-| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
+| boardId | NSString * | ID of the whiteboard page to be redirected to |
+| resetStep | BOOL | Whether or not to reset the PowerPoint animation steps after redirection to the specified slide |
 
 #### Description
 This API is used to redirect to any whiteboard page in any file. 
@@ -647,7 +647,7 @@ Obtains the ID of the current whiteboard page.
 ID of the current whiteboard page
 
 #### Description
-The SDK manages the memory for storing the return value, so you do not need to dump the memory on your own. 
+The SDK manages the memory for storing the return value, so you do not need to release the memory on your own. 
 
 
 ### getBoardList
@@ -668,7 +668,7 @@ Sets the aspect ratio of the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| ratio | NSString * | Whiteboard aspect ratio to set |
+| ratio | NSString * | Whiteboard aspect ratio to be set |
 
 #### Description
 The format of the value is similar to "4:3" and "16:9". 
@@ -692,7 +692,7 @@ Sets the scale of the current whiteboard page.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| scale | UInt32 | Whiteboard scale to set |
+| scale | UInt32 | Whiteboard scale to be set |
 
 #### Description
 The value range is [100, 300], and the actual scale is scale/100. 
@@ -708,7 +708,7 @@ Whiteboard scale, in the same format as the SetBoardScale parameter
 
 
 ### setBoardContentFitMode:
-Sets the whiteboard content self-adaption mode. 
+Sets self-adaption mode for the whiteboard content. 
 ``` Objective-C
 - (void)setBoardContentFitMode:(TEduBoardContentFitMode)mode 
 ```
@@ -716,10 +716,10 @@ Sets the whiteboard content self-adaption mode.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| mode | TEduBoardContentFitMode | Whiteboard content self-adaption mode |
+| mode | TEduBoardContentFitMode | Whiteboard content self-adaption mode to be set |
 
 #### Description
-Setting the self-adaption mode affects all subsequent whiteboard content operations. In addition, the AddTranscodeFile API is affected. 
+Setting the self-adaption mode affects all subsequent whiteboard content operations and the AddTranscodeFile API. 
 
 
 ### getBoardContentFitMode
@@ -740,11 +740,11 @@ Adds image resources.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | NSString * | [Required] Image address. Local and online images in png/jpg/gif/svg format are supported. If the URL is a valid local file address, the file is automatically uploaded to COS. The upload progress callback is onTEBFileUploadProgress, and the upload result callback is onTEBFileUploadStatus. |
+| url | NSString * | [Required] Image address. Local and online images in png/jpg/gif/svg format are supported. If the URL is a valid local file address, the file will be automatically uploaded to COS. The upload progress callback is onTEBFileUploadProgress, and the upload result callback is onTEBFileUploadStatus. |
 
 
 ### setHandwritingEnable:
-Sets whether to enable handwriting for the whiteboard. 
+Sets whether handwriting is enabled for the whiteboard. 
 ``` Objective-C
 - (void)setHandwritingEnable:(BOOL)enable 
 ```
@@ -752,7 +752,7 @@ Sets whether to enable handwriting for the whiteboard.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| enable | BOOL | [Required] Whether handwriting is enabled or not. Valid values: true for yes, and false for no |
+| enable | BOOL | [Required] Whether handwriting is enabled or not. Valid values: true for yes and false for no |
 
 #### Description
 After a whiteboard is created, handwriting is disabled for the whiteboard by default. 
@@ -773,7 +773,7 @@ Refreshes the current whiteboard page and triggers the onTEBRefresh callback.
 - (void)refresh
 ```
 #### Warning
-If the current whiteboard contains PowerPoint, HTML5, image, or video content, refreshing the whiteboard triggers the corresponding callback. 
+If the current whiteboard contains PowerPoint, HTML5, image, or video content, refreshing the whiteboard will trigger the corresponding callback. 
 
 
 ### syncAndReload
@@ -782,10 +782,10 @@ Syncs local data that failed to be sent to the remote end and refreshes the loca
 - (void)syncAndReload
 ```
 #### Warning
-Reload is to reload historical data, which will trigger all callbacks except those for onTEBInit during whiteboard initialization. 
+Reload means reloading historical data, which will trigger all callbacks except those for onTEBInit during whiteboard initialization. 
 
 #### Description
-Usage: this API is used after network recovery to synchronize local data to the remote end and fetch remote data to the local end. Call timing: the API is called after network recovery. Use restrictions: (1) This API supports only version 2.4.9 and later. (2) Before the historical data is load successfully, this API cannot be repeatedly called. Otherwise, the callback alarm TEDU_BOARD_WARNING_ILLEGAL_OPERATION will be triggered. 
+Usage: this API is used after network recovery to synchronize local data to the remote end and fetch remote data to the local end. Call timing: the API is called after network recovery. Use limits: (1) This API only supports version 2.4.9 and later. (2) This API cannot be called repeatedly until the historical data is loaded successfully. Otherwise, the callback alarm TEDU_BOARD_WARNING_ILLEGAL_OPERATION will be triggered. 
 
 
 ### snapshot:
@@ -816,10 +816,10 @@ Initiates a file transcoding request.
 | config | TEduBoardTranscodeConfig * | Transcoding parameters |
 
 #### Warning
-This API is designed to enable users to quickly use the transcoding feature in the access stage. Generally, we do not recommend that you use this API in production environments. We recommend that you initiate transcoding requests in production environments by using backend service APIs. 
+This API is designed to enable users to quickly use the transcoding feature during access. Generally, we do not recommend that you use this API in production environments. We recommend that you initiate transcoding requests in production environments by using backend service APIs. 
 
 #### Description
-Transcoding is supported for PowerPoint, PDF, and Word files. PowerPoint files are transcoded into HTML5 animations by default, and original animation effects of the PowerPoint file can be restored. Other files are transcoded into static images. PowerPoint animation transcoding rate is about 1 sec/slide, whereas the transcoding rate of any files into static images is about 0.5 sec/page. The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, see the description document of the callback. 
+Transcoding is supported for PowerPoint, PDF, and Word files. PowerPoint files are transcoded into HTML5 animations by default, and the original animation effects of the PowerPoint file can be restored. Other files are transcoded into static images. The PowerPoint animation transcoding rate is about 1 sec/slide, whereas the rate for transcoding any files into static images is about 0.5 sec/page. The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, please refer to the callback documentation. 
 
 
 ### getFileTranscodeProgress:
@@ -834,10 +834,10 @@ Actively queries the file transcoding progress.
 | taskId | NSString * | Transcoding task ID obtained from the onTEBFileTranscodeProgress callback |
 
 #### Warning
-This API is used only in special business scenarios to actively query the file transcoding progress. After ApplyFileTranscode is called, the SDK will automatically trigger the onTEBFileTranscodeProgress callback according to schedule. Normally, you do not need to actively call this API. 
+This API is only used in special business scenarios to actively query the file transcoding progress. After ApplyFileTranscode is called, the SDK will automatically trigger the onTEBFileTranscodeProgress callback according to the schedule. Normally, you do not need to actively call this API. 
 
 #### Description
-The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, see the description document of the callback. 
+The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, please refer to the callback documentation. 
 
 
 ### addTranscodeFile:
@@ -856,12 +856,12 @@ File ID
 
 #### Warning
 If the passed-in file URL is repeated, the file ID returned will be a null string. 
-Before the corresponding onTEBAddTranscodeFile callback is received, you cannot use the returned file ID to query file information. 
+Before the corresponding onTEBAddTranscodeFile callback is received, you cannot use the returned file ID to query the file information. 
 
 #### Description
 The field information of TEduBoardTranscodeFileResult can be retrieved by:
 1. Using the client ApplyFileTranscode for transcoding. The transcoding result will be used to call this API.
-2. (Recommended) Using the server RESTful API for transcoding. Only four fields of the transcoding result (title, resolution, url, and pages) need to be passed in. The field relationships between the server and the client are: Title -> title, Resolution -> resolution, ResultUrl -> url, and Pages -> pages. For details, see the [transcoding document](https://cloud.tencent.com/document/product/1137/40260).
+2. (Recommended) Using the server RESTful API for transcoding. Only four fields of the transcoding result (title, resolution, url, and pages) need to be passed in. The field relationships between the server and the client are: Title -> title, Resolution -> resolution, ResultUrl -> url, and Pages -> pages. For details, see the [Transcoding Events](https://cloud.tencent.com/document/product/1137/40260) documentation.
 
 
 ### deleteFile:
@@ -873,7 +873,7 @@ Deletes a file.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | NSString * | ID of the file to delete |
+| fileId | NSString * | ID of the file to be deleted |
 
 #### Description
 When the file ID is nullptr, it indicates the current file. The default file cannot be deleted. 
@@ -888,10 +888,10 @@ Switches to another file.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | NSString * | ID of the file to switch to |
+| fileId | NSString * | ID of the file to be switched to |
 
 #### Warning
-This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and do not perform any operations.
+This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and not perform any operations.
 
 #### Description
 The file ID is required. If it is nullptr or a null string, file switching will fail. 
@@ -906,12 +906,12 @@ Switches files.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | NSString * | ID of the file to switch to |
+| fileId | NSString * | ID of the file to be switched to |
 | boardId | NSString * | Switch files and redirect to this whiteboard page |
 | stepIndex | NSInteger | Redirect to the whiteboard page and switch to this animation |
 
 #### Warning
-This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and do not perform any operations.
+This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and not perform any operations.
 
 #### Description
 The file ID is required. If it is nullptr or a null string, file switching will fail. 
@@ -953,7 +953,7 @@ Obtains the file information list of all uploaded files on the whiteboard.
 File information list 
 
 #### Warning
-If you no longer need the return value, you do not have to delete it yourself. However, you must call its release method to release the occupied memory space. 
+If you no longer need the returned value, you do not have to delete it yourself. However, you must call its release method to release the occupied memory space. 
 
 
 ### getFileBoardList:
@@ -971,7 +971,7 @@ Obtains the whiteboard ID list of the specified file.
 Whiteboard ID list 
 
 #### Warning
-If you no longer need the return value, you do not have to delete it yourself. However, you must call its release method to release the occupied memory space. 
+If you no longer need the returned value, you do not have to delete it yourself. However, you must call its release method to release the occupied memory space. 
 
 
 ### getThumbnailImages:
@@ -989,7 +989,7 @@ Obtains the thumbnail of the specified file, excluding the default file (fileId=
 Thumbnail URL list
 
 #### Description
-When you call the RESTful API to request transcoding, the "thumbnail_resolution" parameter is required to enable the thumbnail feature. Otherwise, the returned thumbnail URL is invalid. 
+When you call the RESTful API to request transcoding, the "thumbnail_resolution" parameter is required to enable the thumbnail feature. Otherwise, the returned thumbnail URL will be invalid. 
 
 
 ### clearFileDraws:
@@ -1034,7 +1034,7 @@ Shows or hides the video control bar.
 | show | BOOL | Whether the video control bar is displayed or not |
 
 #### Warning
-This is a global control item that applies to all video files. It specifies whether to show or hide the default video control bar. By default, the default video control bar is displayed. The UI style of the control bar varies on different platforms. 
+This is a global control item that applies to all video files. It specifies whether to show or hide the default video control bar. By default, the default video control bar is displayed. The UI style of the control bar varies by platforms. 
 
 
 ### playVideo
@@ -1080,7 +1080,7 @@ This API triggers the status change callback onTEBVideoStatusChanged. It is usua
 
 
 ### setSyncVideoStatusEnable:
-Sets whether to synchronize local video operations to the remote end. 
+Sets whether local video operations is synchronized to the remote end. 
 ``` Objective-C
 - (void)setSyncVideoStatusEnable:(BOOL)enable 
 ```
@@ -1094,11 +1094,11 @@ Sets whether to synchronize local video operations to the remote end.
 This is a global control item that applies to all video files.
 
 #### Description
-This API specifies whether the triggering of the play/pause/seek API and control bar events affects the remote end. The default value is true. Usually, it is set to false for students and true for teachers. 
+This API specifies whether the triggering of the play/pause/seek API and the control bar events affects the remote end. The default value is true. Usually, it is set to false for students and true for teachers. 
 
 
 ### startSyncVideoStatus:
-This is an internal start timer that syncs the video status to the remote end according to a schedule (only for mp4 files). 
+This is an internal start timer that syncs the video status to the remote end according to the schedule (only for mp4 files). 
 ``` Objective-C
 - (void)startSyncVideoStatus:(NSInteger)interval 
 ```
@@ -1106,7 +1106,7 @@ This is an internal start timer that syncs the video status to the remote end ac
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| interval | NSInteger | [Optional] Synchronization interval, for example, 5 seconds |
+| interval | NSInteger | [Optional] Synchronization interval. For example, 5 seconds |
 
 #### Warning
 This API is valid only for the current file.
@@ -1139,7 +1139,7 @@ Adds an H5 file.
 File ID 
 
 #### Warning
-Only display but not interaction is supported. 
+Only display, and not interaction, is supported. 
 
 
 ### addImagesFile:
@@ -1151,7 +1151,7 @@ Imports image files to the whiteboard in batches.
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| urls | NSArray< NSString * > * | List of URLs of the background images to use. These URLs are UTF8-coded. |
+| urls | NSArray< NSString * > * | List of URLs of the background images to be used. These URLs are UTF8-coded |
 
 #### Response
 IDs of the added files 

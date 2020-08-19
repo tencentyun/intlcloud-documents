@@ -1,3 +1,5 @@
+This document describes how to troubleshoot instance login failures after you purchase Cloud Virtual Machine (CVM) instances, helping you locate and resolve CVM login failures.
+
 This document describes how to determine possible causes of instance login failures after you purchase Cloud Virtual Machine (CVM) instances, helping you locate and resolve CVM login failures.
 
 ## Possible Causes
