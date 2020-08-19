@@ -3,7 +3,7 @@ CMQ provides finance-grade message transmission with high reliability and high d
 CKafka is suitable for scenarios that require higher throughput and lower reliability (such as log aggregation). In addition, CKafka is compatible with existing Kafka users, enabling migration at zero cost with full instance exclusivity.
 
 ### Which version of open-source Kafka is compatible with CKafka?
-Currently, CKafka is fully compatible with open-source Kafka API 0.9, 0.10, and 1.1, allowing users to migrate data to the cloud at zero cost.
+Currently, CKafka is fully compatible with open-source Kafka API 0.9, 0.10, 1.1, and 2.4, allowing users to migrate data to the cloud at zero cost.
 
 ### Which version of open-source Kafka is the current CKafka based on?
 The current CKafka is based on Apache Kafka 0.10. We recommend using the SDK of the 0.10 version for production and consumption.
@@ -22,7 +22,7 @@ Configuration Method: in the configuration file of the producer, set the `compre
 
 
 ### Can a Kafka client connect directly to the CKafka service?
-CKafka is compatible with open-source Kafka 0.9, 0.10, and 1.1. You can connect to the message center via a Kafka client and deploy codes to Tencent Cloud services to produce or consume messages.
+CKafka is compatible with open-source Kafka 0.9, 0.10, 1.1, and 2.4. You can connect to the message center via a Kafka client and deploy codes to Tencent Cloud services to produce or consume messages.
 
 ### What are the restrictions on a CKafka instance?
 Different instance specifications have different restrictions on peak throughput, disk capacity, number of topics at the instance level, and number of partitions at the instance level. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/597/11745).
