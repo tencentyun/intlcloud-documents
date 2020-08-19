@@ -5,13 +5,13 @@
 
 | Billable Item         | Billing Method           | Billing Cycle | Description                                                  |
 | :-------------------- | :----------------------- | :------------ | :----------------------------------------------------------- |
-| File storage capacity | Pay-as-you-go (postpaid) | Hour          | Fees are billed every hour based on the maximum (peak) storage capacity used in an hour |
+| File storage usage | Pay-as-you-go (postpaid) | Hour          | Fees are billed every hour based on the maximum (peak) storage used in an hour |
 
 
 
-## Storage Capacity
+## Storage Usage
 
-When a file system is created, it consumes 32 MB of storage capacity by default, which will not be counted into the storage capacity actually billed.
+When a file system is created, it consumes 32 MB of storage by default, which will not be counted into the storage usage billed.
 
 
 
@@ -31,7 +31,7 @@ Below are the latest unit prices for standard file systems in all regions in Mai
    <tr>
       <th>Storage Class </th>
       <th>Region </th>
-      <th>Range of Maximum (Peak) Storage Capacity</th>
+      <th>Range of Maximum (Peak) Storage Usage</th>
       <th nowrap="nowrap">Unit Price</th>
    </tr>
    <tr>
@@ -87,6 +87,6 @@ Below are the latest unit prices for standard file systems in all regions in Mai
 
 ## Billing Example
 
-An organization has 20 CVM instances that access two file systems in Mainland China. The file system A is used for cold data storage with a maximum standard storage capacity of 11 TB. The file system B is used as organizational cloud storage with a peak standard storage capacity of 105.6 GB in the current hour.
+An organization has 20 CVM instances that access two file systems in Chinese Mainland. The file system A is used for cold data storage with a maximum standard storage usage of 11 TB. The file system B is used as organizational cloud storage with a peak standard storage usage of 105.6 GB in the current hour.
 
 Total CFS fees for the current hour = (11*1024 + 105.6) * 0.00008056 = 0.92 USD
