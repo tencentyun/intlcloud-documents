@@ -6,7 +6,7 @@ The playback data page displays the data of bandwidth, traffic, and concurrent c
 ![](https://main.qcloudimg.com/raw/8e22e9eaa44be89778eab39502a13a1f.png)
 
 ### Push Data Query
-You can query the push frame rate and bitrate of a stream in the last 5 days, and the query period cannot be over 3 hours.
+You can query the push frame rate and bitrate of a stream in the last 3 days, and the query period cannot be over 3 hours.
 After entering the stream ID, select **View push data** to query the push information of the stream as shown below:
 ![](https://main.qcloudimg.com/raw/053ea95db102c1e6c59395b3d5eaea8f.png)
 

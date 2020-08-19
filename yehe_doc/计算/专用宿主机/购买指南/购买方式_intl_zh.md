@@ -1,5 +1,6 @@
 您可以在官网控制台或者使用 API 创建 CDH 实例。
-
+>!CDH 不支持退还操作，请核实所需配置后在进行订单支付。
+>
 
 ### 使用控制台创建 CDH 实例
 1. 登录 [腾讯云专用宿主机购买页](https://buy.cloud.tencent.com/cdh) 进行购买。
@@ -9,4 +10,4 @@
 
 
 ### 使用 API 创建 CDH 实例
-腾讯云支持使用 API 创建 CDH 实例，具体使用请参考 [创建 CDH 实例](https://intl.cloud.tencent.com/document/product/213/33280)。
+腾讯云支持使用 API 创建 CDH 实例，具体使用请参考创建 CDH 实例
