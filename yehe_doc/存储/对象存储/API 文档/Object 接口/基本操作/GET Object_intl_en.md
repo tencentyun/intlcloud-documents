@@ -47,6 +47,7 @@ In addition to common request headers, this API also supports the following requ
 | If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
 | If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
 | If-None-Match | If the `ETag` of the object is different from the specified value, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
+| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
 
 **Server-side Encryption Headers**
 
