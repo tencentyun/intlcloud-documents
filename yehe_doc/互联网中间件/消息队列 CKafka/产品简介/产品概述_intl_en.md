@@ -1,5 +1,5 @@
 ## CKafka Overview
-Based on the open-source Apache Kafka message queuing engine, Tencent Cloud Kafka (CKafka) provides high-throughput and highly scalable message queuing services. It is perfectly compatible with Apache Kafka APIs v0.9, v0.10, and v1.1 and has greater advantages in terms of performance, scalability, business security, and OPS, allowing you to enjoy powerful features at low costs while eliminating tedious OPS work.
+Based on the open-source Apache Kafka message queuing engine, Tencent Cloud Kafka (CKafka) provides high-throughput and highly scalable message queuing services. It is perfectly compatible with Apache Kafka APIs v0.9, v0.10, v1.1, and v2.4 and has greater advantages in terms of performance, scalability, business security, and OPS, allowing you to enjoy powerful features at low costs while eliminating tedious OPS work.
 
 ## Features
 - **Message Decoupling**
