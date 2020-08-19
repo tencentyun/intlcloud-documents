@@ -23,7 +23,7 @@ The beta test for CIFS/SMB protocols has ended; the schedule for future tests wi
 
 ## Pricing Details
 
-Below are the latest unit prices for standard file systems in all regions in the Chinese Mainland effective as of 00:00, November 10, 2017.
+Below are the latest unit prices for standard file systems in all regions in the Chinese mainland effective as of 00:00, November 10, 2017.
 
 > The unit prices for NFS and CIFS/SMB file systems are the same.
 
@@ -36,7 +36,7 @@ Below are the latest unit prices for standard file systems in all regions in the
    </tr>
    <tr>
       <td rowspan="8">Standard storage</td>
-      <td rowspan="1">Mainland China</td>
+      <td rowspan="1">Chinese mainland</td>
       <td>-</td>
       <td>0.058 USD/GB/month (0.00008056 USD/GB/hour)</td>
    </tr>
@@ -77,7 +77,7 @@ Below are the latest unit prices for standard file systems in all regions in the
    </tr>
       <tr>
       <td rowspan="1">High-performance storage</td>
-      <td rowspan="2">Mainland China</td>
+      <td rowspan="2">Chinese mainland</td>
       <td> - </td>
       <td>0.26 USD/GB/month (0.000361111 USD/GB/hour)</td>
    </tr>
@@ -87,6 +87,6 @@ Below are the latest unit prices for standard file systems in all regions in the
 
 ## Billing Example
 
-An organization has 20 CVM instances that access two file systems in Chinese Mainland. The file system A is used for cold data storage with a maximum standard storage usage of 11 TB. The file system B is used as organizational cloud storage with a peak standard storage usage of 105.6 GB in the current hour.
+An organization has 20 CVM instances that access two file systems in Chinese mainland. The file system A is used for cold data storage with a maximum standard storage usage of 11 TB. The file system B is used as organizational cloud storage with a peak standard storage usage of 105.6 GB in the current hour.
 
 Total CFS fees for the current hour = (11*1024 + 105.6) * 0.00008056 = 0.92 USD
