@@ -1,5 +1,5 @@
 ### What are the features of Tencent Cloud CBS?
-Tencent Cloud CBS provides two disk types, namely Premium Cloud Storage, and SSD Cloud Storage. The cloud disks have the following features:
+Tencent Cloud CBS provides three disk types: Premium Cloud Storage, SSD and Enhanced SSD. The cloud disks have the following features:
 - Elastic mounting and unmounting: elastic cloud disks can be mounted and unmounted. Up to 20 elastic cloud disks can be mounted to each CVM to serve as data disks. 
 - Elastic expansion: a single disk supports a maximum capacity of 16 TB. You can scale up the disk at any time.
 - Snapshot backup: cloud disks enable you to back up data by creating a snapshot. This improves data reliability and allow rapid data restoration when necessary. Cloud disks also enable you to create a new cloud disk based on a snapshot, speeding up your business deployment.
@@ -12,9 +12,10 @@ Tencent Cloud CBS provides two disk types, namely Premium Cloud Storage, and SSD
 
 
 ### What are the differences between different types of cloud disks?
-Cloud disks are classified into two types:
-- Premium Cloud Storage: suitable for most I/O scenarios such as web servers and all types of small and mid-sized databases.
-- SSD Cloud Storage: suitable for transactional workloads and large-sized databases.
+CBS supports the latest three volume types:
+- Premium Cloud Storage: suitable for most I/O applications including Web/APP services, logical processing, as well as small and medium sites.
+- SSD: suitable for applications including transactional workload, as well as small and medium databases.
+- Enhanced SSD: suitable for latency-sensitive or high-performance applications including medium and large databases, NoSQL, and log analysis.
 
 The performance and pricing vary with type. You can choose cloud disks based on your budget and application requirements. For more information on disk types and performance, see [Cloud Disk Types](https://intl.cloud.tencent.com/document/product/362/31636).
 
