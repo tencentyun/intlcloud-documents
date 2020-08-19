@@ -43,6 +43,7 @@ The request body of this API is encoded with multipart/form-data. When sending r
 | success_action_status | HTTP status code returned upon a successful upload. Valid values: 200, 201, 204; default value: 204. If `success_action_redirect` is specified, this field will be ignored. For more information, please see [Sample 9](#step9) | number | No |
 | x-cos-meta-\*           | Contains user-defined metadata and header suffixes, which will be stored in the object metadata. Maximum size: 2 KB. <br>**Note:** user-defined metadata can contain underscores (_), while the header suffixes of user-defined metadata can only contain minus signs (-) but not underscores | string | No |
 | x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `STANDARD_IA`, and `ARCHIVE`. Default value: STANDARD. For enumerated values, please see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
+| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
 | Content-MD5 | MD5 hash value of the Base64-encoded file content used for integrity check, i.e., checking whether the file content has changed during the upload | string | No |
 | file                    | Information and content of the file. When the file is uploaded through the web form, the browser will automatically set the value of this field to the correct format. <br>**Note:** the `file` field must be placed at the end of the entire form. | file | Yes |
 
@@ -161,6 +162,7 @@ Attach the above policy and signature-related information to the form as describ
 
 | Name | Description | Type | Required |
 | ---------------- | -------------------------------------- | ------ | -------- |
+| x-cos-security-token | Specifies the security token required when using temporary security credentials. For details, see [Temporary security credentials](https://intl.cloud.tencent.com/document/product/436/30613#temporary-security-credentials) | string | Required only if you are<br>using temporary keys |
 | policy | Base64-encoded policy content | string | Yes |
 | q-sign-algorithm | Signature hash algorithm, which is always `sha1`              | string | Yes       |
 | q-ak             | Aforementioned `SecretId`                    | string | Yes       |
