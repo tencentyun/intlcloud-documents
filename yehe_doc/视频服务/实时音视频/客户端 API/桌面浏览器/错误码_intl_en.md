@@ -1,4 +1,5 @@
->This document applies to TRTC SDK for Desktop Browser v4.x.x.
+
+>!This document applies to TRTC SDK for Desktop Browser v4.x.x.
 
 ## Error Code Definitions
 
@@ -18,8 +19,8 @@
 
 ## Account Error Messages
 
-| Error Code | Type | Description                                                         |
-| :----- | :------- | :------------------------------------------------------------------------------------------------------------- |
+| Error Code | Type | Description |
+| :----- | :------- | :------------------------------------------------------------------------------------------------------------ |
 | 70001  | Account system | `userSig` has expired. Please try to generate a signature again. If the signature expires immediately after generation, please check whether the validity period is too short or entered as 0 mistakenly |
 | 70002  | Account system | The length of `userSig` is 0. Please check whether the signature is correctly calculated. Access `sign_src` to get the plain source code for signature calculation and verify the parameters to make sure that the signature is correctly calculated |
 | 70003  | Account system | `userSig` verification failed. Please check whether the content of `userSig` has been truncated for reasons such as insufficient buffer length |
@@ -47,7 +48,7 @@
 | 70106  | Account system | Invalid account format type                                             |
 | 70107  | Account system | `userId` was not registered                                             |
 | 70113  | Account system | Invalid quantity for batch operation                                               |
-| 70114  | Account system | Restricted due to security reasons                                               |
+| 70114  | Account system | Restricted for security reasons                                               |
 | 70115  | Account system | The `uin` is not the one of the developer of the corresponding `sdkAppId`                           |
 | 70140  | Account system | `sdkAppId` does not match `acctype`                                   |
 | 70145  | Account system | Incorrect account type                                                 |
@@ -81,3 +82,27 @@
 | 70403  | Account system | The initiator of this operation is not the application admin and does not have the permission                      |
 | 70050  | Account system | This account is temporarily prohibited from login due to excessive login failures and retries. Please check whether the credential is correct and retry after 1 minute |
 | 70051  | Account system | Blocked account. Please contact TLS account support over QQ at 3268519604                                                        |
+
+
+## Common Errors and Solutions
+If an error in this type is reported, the application needs to intervene. For example, if the camera access is denied, the application needs to ask the user to grant the camera access before they can make audio and video calls.
+
+
+| Error Message | Reason | Solution |
+| :--------------------------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------- |
+| publish timeout                                            | `publish` timed out                                                                | Please try to refresh and reconnect and then perform `publish()` again                                                                                                     |
+| join room timeout                                          | Room entry timed out                                                                   | Please refresh the page and enter again                                                                                                                       |
+| DTLS Transport connection timeout (10s)                    | DTLS connection timed out                                                     | Please try to refresh and reconnect                                                                                                                         |
+| failed to connect to remote server via websocket           | WebSocket connection failed                                                          | Please try to refresh and reconnect                                                                                                                         |
+| ICE/DTLS Transport connection failed                       | Media transport tunnel creation failed                                                     | Please check the [firewall configuration](https://intl.cloud.tencent.com/document/product/647/35164)                                                             |
+| previous publishing is ongoing, please avoid re-publishing | Already in publishing status                                                     | Please avoid performing `publish()` again after `publish`                                                                                                            |
+| AbortError                                                 | The device could not be used for an unknown device/system reason                                | Please check the device before making the call                                                                                                               |
+| NotReadableError                                           | The device was inaccessible due to an error in a certain hardware device, browser, or webpage on the operating system | Please process in response to the error reported by the browser and prompt the user that "Please make sure that no other applications are requesting access to the camera/mic and try again" |
+| NotFoundError                                              | Unable to find the media type that satisfies the request parameters, such as audio, video, and screen sharing                       | Please check the device before making the call                                                                                                               |
+| NotAllowedError                                            | The user has rejected the request to access audio, video, or screen sharing made by the current browser instance | Please inform the user that it is impossible to make video or voice calls without camera/mic access |
+| SignalChannel reconnect failed                             | WebSocket disconnected                                                              | Please try to refresh and reconnect                                                                                                                         |
+| duplicate publishing, please unpublish and then re-publish | Repeated `publish`                                                                | Please perform `unpublish()` before `publish()`                                                                                                   |
+| OverconstrainedError                                       | The browser could not get the `cameraId / microphoneId`                                        | Please make sure that the value of `cameraId / microphoneId` is a valid non-empty string                                                                                      |
+| RtcError: no valid ice candidate found                     | The TRTC SDK for Web failed during STUN hole punching                                                 | Please check the [firewall configuration](https://intl.cloud.tencent.com/document/product/647/35164)                                                             |
+| 10006 error                                                | Account service status error                                                           | Please log in to the [TRTC Console](https://console.cloud.tencent.com/rav), click the application you created, and click **Account Info** to view the service status in the account info tab |
+| -100018 get tinyid error                                   | `userSig` error                                                                | Please check whether the entered `userSig` is correct                                                                                                            |
