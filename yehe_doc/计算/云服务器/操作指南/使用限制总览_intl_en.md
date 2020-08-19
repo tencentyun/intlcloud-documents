@@ -7,7 +7,7 @@
 ## CVM instance use limits
 
 - Virtualized software cannot be installed or re-virtualized (such as installing VMware or Hyper-V).
-- You cannot use sound cards or mount external hardware devices (such as ISO files, USB flash drives, external disks, and U-keys).
+- You cannot use sound cards or mount external hardware devices (such as USB flash drives, external disks, and U-keys).
 - The public gateway is available only in Linux operating system.
 
 ## CVM instance purchase limits
