@@ -25,25 +25,45 @@ This required element describes whether the statement results in an "allow" or a
 ### 8. Sample Policy
 The following sample policy grants a sub-account (ID 3232523) of a root account (ID 1238423) permissions to use all COS read APIs, write objects, and send message queues for the COS bucket "bucketA" in the Beijing region and the COS object "object2" in the bucket "bucketB" in the Guangzhou region when the access IP falls within the IP range of `10.121.2.*`. 
 ```
-{     
-        "version":"2.0",
-        "statement": 
-        [ 
-             {  
-                    "principal":{"qcs":["qcs::cam::uin/1238423:uin/3232523"]}, 
-                    "effect":"allow", 
-                    "action":["name/cos:PutObject","permid/280655"], 
-                    "resource":["qcs::cos:bj:uid/1238423:prefix//1238423/bucketA/*", 
-                                        "qcs::cos:gz:uid/1238423:prefix//1238423/bucketB/object2"], 
-                     "condition": {"ip_equal":{"qcs:ip":"10.121.2.10/24"}} 
-             }, 
-            {  
-                 "principal":{"qcs":["qcs::cam::uin/1238423:uin/3232523"]}, 
-                 "effect":"allow", 
-                 "action":"name/cmqqueue:Sendmessages", 
-                 "resource":"*" 
-            } 
-     ] 
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "principal": {
+        "qcs": [
+          "qcs::cam::uin/1238423:uin/3232523"
+        ]
+      },
+      "effect": "allow",
+      "action": [
+        "cos:PutObject",
+        "cos:GetObject",
+        "cos:HeadObject",
+        "cos:OptionsObject",
+        "cos:ListParts",
+        "cos:GetObjectTagging"
+      ],
+      "resource": [
+        "qcs::cos:ap-beijing:uid/1238423:bucketA-1238423/*",
+        "qcs::cos:ap-guangzhou:uid/1238423:bucketB-1238423/object2"
+      ],
+      "condition": {
+        "ip_equal": {
+          "qcs:ip": "10.121.2.10/24"
+        }
+      }
+    },
+    {
+      "principal": {
+        "qcs": [
+          "qcs::cam::uin/1238423:uin/3232523"
+        ]
+      },
+      "effect": "allow",
+      "action": "cmqqueue:SendMessage",
+      "resource": "*"
+    }
+  ]
 }
 ```
 
