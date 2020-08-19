@@ -1,4 +1,4 @@
-This document describes some common operations for using NAT gateways (create and query port forwarding rules, adjust configurations, manage EIPs, and view bandwidth limit details) and the related products. 
+This document describes some common operations for using NAT gateways (create and query port forwarding rules, manage EIPs, adjust configurations, and view bandwidth limit details) and the related products. 
 ## Common Operations
 - [Configuring a Route That Points to NAT Gateway](https://intl.cloud.tencent.com/document/product/1015/30236)
 - [Adjusting the Priorities of NAT Gateways and EIPs](https://intl.cloud.tencent.com/document/product/1015/32734)
