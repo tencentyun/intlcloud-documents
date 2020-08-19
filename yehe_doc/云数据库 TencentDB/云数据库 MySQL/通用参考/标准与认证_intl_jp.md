@@ -1,4 +1,4 @@
-Tencent MySQLは、下記の国家又は国際的な認証などを取得しています。
+TencentDB for MySQLは、下記の国家および国際的な認証などを取得しています。
 - ソフトウェア著作権
 - [ISO 22301 認証](https://intl.cloud.tencent.com/document/product/363)
 - [ISO 27001 認証](https://intl.cloud.tencent.com/document/product/363/2408)
