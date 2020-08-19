@@ -23,7 +23,7 @@ The beta test for CIFS/SMB protocols has ended; the schedule for future tests wi
 
 ## Pricing Details
 
-Below are the latest unit prices for standard file systems in all regions in Mainland China effective as of 00:00, November 10, 2017.
+Below are the latest unit prices for standard file systems in all regions in the Chinese Mainland effective as of 00:00, November 10, 2017.
 
 > The unit prices for NFS and CIFS/SMB file systems are the same.
 
