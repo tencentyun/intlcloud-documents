@@ -115,7 +115,6 @@ Click **Sync Now** to finish the IM SDK integration.
 To configure app permissions in AndroidManifest.xml, the IM SDK requires the following permissions:
 
 ```
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />

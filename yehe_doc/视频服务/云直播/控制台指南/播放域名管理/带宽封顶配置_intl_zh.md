@@ -16,25 +16,25 @@
 
 
 ## 创建带宽封顶配置
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，选择您需要配置的播放域名单击右侧的【管理】，进入域名详情页。
+1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
 2. 选择【高级配置】页签，进入查看【带宽封顶配置】标签。
 3. 单击标签右侧的【编辑】，进入带宽封顶配置页。
-4. 打开【带宽封顶】滑动开关![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png)。
+4. 打开【带宽封顶】滑动开关![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png).。
 5. 单击【+ 新增限制】按钮，进行如下配置
 	1. 	限制区域根据该播放域名加速区域类型自行判定，相关配置规则请参见  [使用限制](#limit)。
 	2. 填写带宽阈值。
 	3. 选择阈值单位为 Mbps、Gbps 或 Tbps。
 6. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/8de70e9993f1e18b25e728451d047635.png)
+![](https://main.qcloudimg.com/raw/c2d7d5c342e3e7dc81575a6baa906fc3.png)
 > 各个单位之间进制为1000，例如：1bps=1000Gbps，1Gbps=1000Mbps。
 
 
 ## 关闭带宽封顶配置
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，选择您需要配置的播放域名单击右侧的【管理】，进入域名详情页。
+1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
 2. 选择【高级配置】页签，进入查看【带宽封顶配置】标签。
 3. 单击标签右侧的【编辑】，进入带宽封顶配置页。
 ![](https://main.qcloudimg.com/raw/ffd0943d41682035b908771996b05949.png)
-4. 关闭【带宽封顶】滑动开关![](https://main.qcloudimg.com/raw/a02cf62f7cf3e9c072047690a6818ac2.png)。
+4. 关闭【带宽封顶】滑动开关 ![](https://main.qcloudimg.com/raw/a02cf62f7cf3e9c072047690a6818ac2.png)。
 5. 单击【保存】即可。
 

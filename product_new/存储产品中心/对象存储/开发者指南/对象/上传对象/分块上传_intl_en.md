@@ -24,12 +24,12 @@ You can use the REST API directly to initiate a multipart upload request. For mo
 
 You can directly call the multipart upload method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37674#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
+- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/38062)
 - [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
+- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37683#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C)
 - [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
