@@ -37,11 +37,6 @@ This status code is returned when a network exception, timeout, or ticket switch
 
 This status code is returned when the client is offline, times out, or is disconnected. Error 6200 is defined as no network connection during request sending, whereas error 6201 is defined as no network connection during response sending. When you encounter this status code, check the network condition or wait for the network to restore and try again.
 
-### Why do I encounter error 116001 when receiving and sending short videos by using IM SDK v3.x?
-
-This error occurs because Video on Demand (VOD) has not been activated. The solution is as follows:
-1. Check the UGSV service status in the IM console and ensure that it has been activated.
-2. If you want short videos to be stored for over 7 days, you also need to ensure that VOD has been activated in the VOD console.
 
 ### Why do I encounter error 20003 when receiving and sending messages?
 
