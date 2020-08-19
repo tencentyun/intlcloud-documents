@@ -40,7 +40,7 @@ producer.setSecretKey(“获取的SecretKey”)
 String queue = “创建的队列名”
 ```
 具体图示如下：
-![](https://main.qcloudimg.com/raw/7bee345ab49daac395329ff70d3be787.png)
+![](https://main.qcloudimg.com/raw/63f196eb05b263cff7f4ea5c8881a8c1.png)
 
 ### 运行 Demo
 #### 使用队列模型收发消息
@@ -48,7 +48,7 @@ String queue = “创建的队列名”
  2. 执行文件 ProducerDemo，成功后显示日志如下：
  ![](https://main.qcloudimg.com/raw/151a28f513b8eebe78eea9e47fe2b732.png)
  ProducerDemo 支持普通消息、延时消息、异步消息的发送。
-![](https://main.qcloudimg.com/raw/75fae413af9db02c612f0e9f49230c98.png)
+![](https://main.qcloudimg.com/raw/0562f412da247090198fb79540d90d8e.png)
  3. 执行文件 ConsumerDemo，可接收消息。
 
 #### 使用主题模型收发消息
