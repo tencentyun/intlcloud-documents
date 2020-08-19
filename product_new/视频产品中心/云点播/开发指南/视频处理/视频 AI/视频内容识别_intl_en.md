@@ -8,7 +8,6 @@ Video content recognition is an offline task that intelligently recognizes video
 | Speech keyword recognition | Recognizes keywords in speech | <li>Checks for sensitive words in speech </li><li> Retrieves specific keywords in speech </li> |
 | Text keyword recognition | Recognizes keywords in video image | <li>Checks for sensitive words in video image</li><li> Retrieves specific keywords in video image </li> |
 | Opening and closing credits recognition | Recognizes opening and closing credits in video | <li>Marks the positions of opening credits, closing credits, and feature in the progress bar </li><li>Removes opening and closing credits of videos in batches</li> |
-| Object recognition | Recognizes specific objects in video image | <li>Checks for sensitive objects in video image </li><li>Marks where specific objects appear in video image </li> |
 
 Some content recognition features depend on a material library. There are two types of libraries: public library and custom library.
 
@@ -20,14 +19,13 @@ Some content recognition features depend on a material library. There are two ty
 | Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://intl.cloud.tencent.com/document/product/266/34800) to manage the custom face library |
 | Speech recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
 | Text recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
-| Object recognition | Supported. Objects in the library mainly include politically sensitive icons | Not supported yet |
 
 ## <span id = "sh"></span>Video Content Recognition Template
 
 Video content recognition integrates a number of recognition features that require fine-grained control through parameters as shown below:
 
 * Recognition type enabled: which features in content recognition are enabled.
-* Material library used: whether a public or custom library is used for face and object recognition.
+* Material library used: whether a public or custom library is used for face.
 * Filter score specified: at what confidence score a face recognition result will be returned.
 * Filter tag specified: within what range a face tag result will be returned.
 

@@ -1426,6 +1426,6 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Preset video content recognition templates
 
-| Template ID | Face Recognition (Face) | Full Text Recognition (OcrFullText) | Text Keyword Recognition (OcrWords) | Full Speech Recognition (AsrFullText) | Speech Keyword Recognition (AsrWords) | Object Recognition (Object) |
-| -- | -- | -- | -- | -- | -- | -- |
-10 | Yes (default figure library is used) | No | No | No | No | No |
+| Template ID | Face Recognition (Face) | Full Text Recognition (OcrFullText) | Text Keyword Recognition (OcrWords) | Full Speech Recognition (AsrFullText) | Speech Keyword Recognition (AsrWords) |
+| -- | -- | -- | -- | -- | -- |
+10 | Yes (default figure library is used) | No | No | No | No |

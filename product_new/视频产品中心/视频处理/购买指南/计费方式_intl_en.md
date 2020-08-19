@@ -62,7 +62,7 @@ Transcoding fees = 0.0355 (USD/minute) * 60 (minutes) + 0.023 (USD/minute) * 100
 
 
 #### Intelligent content recognition
-The intelligent content recognition feature of MPS uses AI technology to recognize elements in videos such as human faces, objects, texts, speeches, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
+The intelligent content recognition feature of MPS uses AI technology to recognize elements in videos such as human faces, texts, speeches, opening and closing credits, and frame-specific tags. It is priced in USD/minute.
 
 The billing description is as shown below:
 - Billing mode: Pay-as-you-go.
