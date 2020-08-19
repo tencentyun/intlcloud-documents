@@ -1,24 +1,24 @@
-## インスタンスリストページ
-[TencentDB for MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、【インスタンスリスト】ページでインスタンス関連情報の確認及びインスタンスの管理を行えます。
+## Instance List Page
+You can log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and enter the instance list page to view instance information and manage your instances.
 ![](https://main.qcloudimg.com/raw/ad7eb840269b428dd044ddd45b08545e.png)
 
-| 機能 | 説明 | 
+| Feature | Description | 
 |---------|---------|
-| コンフィギュレーションの調整 | 【インスタンスリスト】ページでは、データベースインスタンスに対しコンフィギュレーションの調整（スケールイン・スケールアウト）を行うことができます。インスタンスのアップグレード及びダウングレードがサポートされています。詳細については、[データベースインスタンス仕様の調整](https://intl.cloud.tencent.com/document/product/236/19707)をご参照ください。 | 
-| ロールバック | 【インスタンスリスト】ページでは、ロールバックするインスタンスを選択し、【その他の操作】>【ロールバック】を選択し、コールドバックアップとbinlog により、データベースを指定した時点にロールバックすることができます。詳細については、[データのロールバック](https://intl.cloud.tencent.com/document/product/236/7276)をご参照ください。 |
-| 再起動 |【インスタンスリスト】ページで、再起動が必要なインスタンスをチェックし、【再起動】をクリックしてインスタンスを再起動します。一括再起動が可能です（複数のインスタンスをチェックする）。<li>再起動中、インスタンスは正常にアクセスすることができなく、既存の接続が切断されますので、その影響を避けるようにあらかじめ対策を講じてください。<li>再起動中、サービスの書き込み量が多く、ダーティページが多すぎると、再起動に失敗することがあります。再起動に失敗すると、インスタンスは再起動前の状態に戻りますが、インスタンスはまだアクセス可能です。<li>再起動の成功率を確保してサービスへの影響を低減させるため、低ピーク期間に再起動するようにしてください。|
+| Configuration adjustment | In the instance list, you can adjust the configuration of your database instance (i.e., scale-up or scale-down). For more information, please see [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707). | 
+| Rollback | In the instance list, select the instance to be rolled back and select **More** > **Rollback** to roll it back to a specified time point based on cold backup and binlog. For more information, please see [Data Rollback](https://intl.cloud.tencent.com/document/product/236/7276). |
+| Restart | In the instance list, select an instance and click **Restart** to restart it. You can also select multiple instances for batch restart. <li>During the restart, the instance will be inaccessible, and existing connections to it will be closed. Please be prepared for the restart to avoid business interruption. <li>During the restart, if the number of business writes is high and there are too many dirty pages, the restart will fail. In this case, the instance will go back to the state before the restart and become accessible. <li>Please restart instances during off-peak hours to ensure the restart success rate and reduce the impact on your business. |
 
-## インスタンス管理ページ
-[MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンス初期化が完了したら、【インスタンスリスト】ページで、インスタンス名をクリックするか、「操作」カラムの【管理】をクリックすると、【インスタンス管理】ページに進みます。インスタンスの詳細表示、インスタンスの監視、データベース管理などの操作を実行できます。
+## Instance Management Page
+Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). After an instance is initialized, click its name in the instance list or click **Manage** in the "Operation" column to enter the instance management page, where you can view its details, monitor it, and manage databases.
 ![](https://main.qcloudimg.com/raw/be7a1916b3cba0932a015b95fa857d2d.png)
 
-| 機能 | 説明 | 
+| Feature | Description | 
 |---------|---------|
-| インスタンスの詳細 | [インスタンスの詳細](https://console.cloud.tencent.com/cdb)ページで、データベースの様々な情報を表示及び操作できます。インスタンスの基本情報を変更するには、<img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;">をクリックします。ここで、パブリックネットワークアドレスはデフォルトで無効になっています。必要に応じて、「パブリックネットワークアドレス」の後に【有効】をクリックして有効にします。| 
-| インスタンスの監視 |【インスタンスの監視】ページでは、アクセス、負荷、クエリーキャッシュ、テーブル、InnoDB、MyISAMなど、現在のデータベースで実行されている主要なコア指標を確認できます。詳細については、[監視機能](https://intl.cloud.tencent.com/document/product/236/8455)及び[アラーム機能](https://intl.cloud.tencent.com/document/product/236/8457)をご参照ください。|
-| データベース管理 | <li>**データベースリスト**<br>【データベースリスト】ページで、SQLファイルを指定したデータベースにインポートできます。詳細については、 [ SQL ファイルのインポート](https://intl.cloud.tencent.com/document/product/236/8466)をご参照ください。<li>**パラメータの設定**<br>【パラメータ設定】ページで、データベースの変更可能なパラメータを設定したり、変更履歴を確認したりできます。【パラメータ実行値】の横にある<img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;">をクリックすると、そのパラメータの値を変更できます。<li>**アカウント管理**<br>【アカウント管理】ページで、権限の変更、パスワードのリセットなど、システムのデフォルトのrootアカウントを管理することができます。また、アカウントの新規作成や削除もできます。詳細については、[アカウント管理](https://intl.cloud.tencent.com/document/product/236/31900)をご参照ください。|
-| セキュリティグループ |【セキュリティグループ】ページでは、データベースに対してセキュリティグループのコンフィギュレーションを行うことができます。詳細については、[MySQLセキュリティグループ](https://intl.cloud.tencent.com/document/product/236/14470)をご参照ください。|
-| バックアップと復元 |【バックアップと復元】ページでは、binlog のダウンロード及びコールドバックアップ操作を行うことができます。詳細については、[バックアップ方式](https://intl.cloud.tencent.com/document/product/236/32340)をご参照ください。|
-| 操作ログ |【操作ログ】ページで、スロークエリログ、エラーログ及びロールバックログを確認しダウンロードできます。詳細については、[操作ログ](https://intl.cloud.tencent.com/document/product/236/34588)をご参照ください。|
-| 読み取り専用インスタンス |【読み取り専用インスタンス】ページでは、一つか複数の読み取り専用インスタンスを作成することにより、ユーザーの読み取り/書き込み分離及び1マスター対複数スレーブのユースケースを対応し、ユーザーのデータベース読み取り負荷能力を大幅に向上させることができます。詳細については、[読み取り専用インスタンス](https://intl.cloud.tencent.com/document/product/236/7270)をご参照ください。|
-| 接続チェック |【接続チェック】ページでは、MySQLの存在する可能性のある接続・アクセス問題をチェックし、提供されているソリューションでアクセス問題を解決することにより、データベースに正常にアクセスできることを確認できます。詳細については、[チェックツールのワンクリック接続](https://intl.cloud.tencent.com/document/product/236/31927)をご参照ください。|
+| Instance details | On the [Instance Details](https://console.cloud.tencent.com/cdb) tab, you can view and manipulate various information of the database. Click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> to modify the basic information of the instance, where the public network address is disabled by default. If needed, click **Enable** after "Public Network Address" to enable it. | 
+| Instance monitoring | On the "Instance Monitoring" tab, you can view the monitoring data of various core metrics of the current database in various dimensions such as access, load, query cache, table, InnoDB, and MyISAM. For more information, please see [Monitoring Feature](https://intl.cloud.tencent.com/document/product/236/8455) and [Alarming Feature](https://intl.cloud.tencent.com/document/product/236/8457). |
+| Database management | <li> **Database List** <br>On the "Database List" tab, you can import SQL files into a specified database. For more information, please see [Importing SQL File](https://intl.cloud.tencent.com/document/product/236/8466). <li>**Parameter Settings**<br>On the "Parameter Settings" tab, you can set and view the history of various customizable database parameters. Click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> next to **Current Value** to modify the parameter value. <li>**Manage Account**<br>On the "Manage Account" tab, you can manage the system's default root account, such as modifying permissions and resetting password. You can also create and delete creates. For more information, please see [Account Management](https://intl.cloud.tencent.com/document/product/236/31900). |
+| Security group | On the "Security Group" tab, you can configure security groups for your databases. For more information, please see [Security Group](https://intl.cloud.tencent.com/document/product/236/14470). |
+| Backup and restoration | On the "Backup and Restore" tab, you can download binlogs and perform cold backup. For more information, please see [Backup Mode](https://intl.cloud.tencent.com/document/product/236/32340). |
+| Operation log | On the "Operation Log" tab, you can view and download slow query logs, error log, and rollback logs. For more information, please see [Operation Log](https://intl.cloud.tencent.com/document/product/236/34588). |
+| Read-only instance | On the "Read-only Instance" tab, you can create one or more read-only (RO) instances, which can be applied to read/write separation and one-master-multiple-slave application scenarios to boost the read load capacity of your databases. For more information, please see [Read-only Instance](https://intl.cloud.tencent.com/document/product/236/7270). |
+| Connection check | On the "Connection Check" tab, you can check for potential connectivity and access problems and address them using the solutions provided so as to ensure that your databases can be accessed normally. For more information, please see [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927). |
