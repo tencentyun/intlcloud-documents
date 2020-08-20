@@ -1,5 +1,5 @@
 ## 简介
-https://github.com/tencentyun/intlcloud-documents/tree/master/yehe_doc/%E5%AD%98%E5%82%A8/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8
+
 当您需要定期对指定对象进行存储类型转换或删除以降低成本时，您可以使用生命周期管理功能。对象存储 COS 会按照您设定的规则对指定对象在指定的时间内自动进行存储类型转换或删除。如需了解该功能的更多信息，请参见 [生命周期概述](https://intl.cloud.tencent.com/document/product/436/17028) 文档。
 
 >生命周期的设置支持最长天数为3650天。
