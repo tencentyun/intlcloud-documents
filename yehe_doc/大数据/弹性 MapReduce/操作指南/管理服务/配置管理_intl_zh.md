@@ -14,9 +14,9 @@
 4. 若没有您想要配置的参数，可单击右侧【新增配置项】进入新增参数页面，填写新参数名和参数值后，单击【确认】后，新参数设置完成。
  ![](https://main.qcloudimg.com/raw/6cf666b6bdde136fa74e1947f1289358.png)
 5. 若没有您想要配置的配置文件，可单击左下侧【新建配置文件】进入配置文件配置页面，填写配置文件，单击【保存配置】后，参数下发并更新配置文件列表中的配置文件名。
- ![](https://main.qcloudimg.com/raw/7e4a67182ed140575076ccef785bf8cb.png)
+ ![](https://main.qcloudimg.com/raw/92202b758597c9241a6095d7b23a0e74.png)
  自定义配置文件下发生效后支持修改和删除操作：
-![](https://main.qcloudimg.com/raw/953329bb9f5c45ce28e8c5f9c58afb74.png)
+![](https://main.qcloudimg.com/raw/69ab9980a4415b86ab59e89eea611b44.png)
 保存配置：
  ![](https://main.qcloudimg.com/raw/cf75abe561c0e8270400f6337644f2a8.png)
 6. 完成参数修改后，单击【保存配置】确认变更内容，建议填写变更原因避免忘记。确认无误后单击【保存并下发】，配置下发成功后单击【重启服务】，重启完成后配置完成，参数生效。
