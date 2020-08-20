@@ -12,7 +12,7 @@ This API is used to upload an object in multiple parts to COS. It supports up to
 #### Request samples
 
 ```plaintext
-PUT /<ObjectKey>partNumber=PartNumber&uploadId=UploadId HTTP/1.1
+PUT /<ObjectKey>?partNumber=PartNumber&uploadId=UploadId HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-Type: Content Type
@@ -45,6 +45,7 @@ If you used SSE-C to initialize the multipart upload, then you should specify th
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm; currently only AES256 is supported | string | Yes |
 | x-cos-server-side-encryption-customer-key       | Base64-encoded server-side encryption key. <br>For example, `MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | Yes       |
 | x-cos-server-side-encryption-customer-key-MD5  | Base64-encoded MD5 hash of the server-side encryption key. <br>For example, `U5L61r7jcwdNvT7frmUG8g==` | string | Yes       |
+| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
 
 #### Request body
 

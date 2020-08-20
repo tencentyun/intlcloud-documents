@@ -12,7 +12,7 @@ Upload Part 接口请求实现将对象按照分块的方式上传到 COS。最�
 #### 请求示例
 
 ```plaintext
-PUT /<ObjectKey>partNumber=PartNumber&uploadId=UploadId HTTP/1.1
+PUT /<ObjectKey>?partNumber=PartNumber&uploadId=UploadId HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-Type: Content Type
@@ -45,6 +45,7 @@ Authorization: Auth String
 | x-cos-server-side-encryption-customer-algorithm | 服务端加密算法，目前仅支持 AES256                            | string | 是       |
 | x-cos-server-side-encryption-customer-key       | 服务端加密密钥的 Base64 编码<br>例如`MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=` | string | 是       |
 | x-cos-server-side-encryption-customer-key-MD5   | 服务端加密密钥的 MD5 哈希值，使用 Base64 编码<br>例如`U5L61r7jcwdNvT7frmUG8g==` | string | 是       |
+| x-cos-traffic-limit | 针对本分块上传进行流量控制的限速值，必须为数字，单位默认为 bit/s。限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误 | integer | 否       |
 
 #### 请求体
 
