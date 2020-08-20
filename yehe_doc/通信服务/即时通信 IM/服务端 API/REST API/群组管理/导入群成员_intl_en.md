@@ -37,13 +37,13 @@ The maximum calling frequency is 200 times per second.
 
 ### Request packet example
 
-Request packets are used to import group members. A single request supports the import of a maximum of 500 members. If the unread message count specified by this API is greater than the current number of messages of the group, the unread message count is set to the current number of messages of the group.
+Request packets are used to import group members. A single request supports the import of a maximum of 300 members. If the unread message count specified by this API is greater than the current number of messages of the group, the unread message count is set to the current number of messages of the group.
 > Ensure that the join time of the member to be imported is later than the group creation time and earlier than the current time. Otherwise, the member cannot be imported.
 
 ```
 {
     "GroupId": "@TGS#2J4SZEAEL", // Target group (required)
-    "MemberList": [ // A maximum of 500 members can be added at a time.
+    "MemberList": [ // A maximum of 300 members can be added at a time.
     {
         "Member_Account": "tommy" // ID of the group member to be added (required)
         "Role":"Admin", // Role of the group member to be imported. Currently, the only supported role is Admin (optional).
