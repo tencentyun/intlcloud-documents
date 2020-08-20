@@ -6,7 +6,7 @@
 - VPC1（广州）：192.168.0.0/16，子网 A：192.168.0.0/24，子网 B：192.168.1.0/24。
 - VPC2（上海）：10.0.0.0/16，子网 C：10.0.0.0/24，子网 D：10.0.1.0/24。
 
-![](https://main.qcloudimg.com/raw/b8375dc8a3da681835b7d5d5f72cbd42.png)
+![](https://main.qcloudimg.com/raw/937834b52397e7c83072cda4764e5b73.jpg)
 ## 操作步骤
 
 1. 新建一个云联网实例（如果已有云联网实例，请跳过此步），具体操作请参见 [新建云联网实例](https://intl.cloud.tencent.com/document/product/1003/30062)。
