@@ -16,7 +16,7 @@ Some content recognition features depend on a material library. There are two ty
 
 | Recognition Type | Public Library | Custom Library |
 | -- | -- | -- |
-| Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://intl.cloud.tencent.com/document/product/266/34800) to manage the custom face library |
+| Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://intl.cloud.tencent.com/document/product/266/37584) to manage the custom face library |
 | Speech recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
 | Text recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
 

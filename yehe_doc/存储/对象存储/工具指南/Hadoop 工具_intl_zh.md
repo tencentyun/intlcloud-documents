@@ -58,7 +58,7 @@ done
 |          fs.cosn.upload.<br>part.size           | CosN 文件系统每个 block 的大小，也是分块上传的每个 part size 的大小。由于 COS 的分块上传最多只能支持10000块，因此需要预估最大可能使用到的单文件大小。<br>例如，part size 为8MB时，最大能够支持78GB的单文件上传。 part size 最大可以支持到2GB，即单文件最大可支持19TB。 | 8388608（8MB） |   否   |
 | fs.cosn.<br>upload.buffer | CosN 文件系统上传时依赖的缓冲区类型。当前支持三种类型的缓冲区：非直接内存缓冲区（non_direct_memory），<br>直接内存缓冲区（direct_memory），磁盘映射缓冲区（mapped_disk）。非直接内存缓冲<br>区使用的是 JVM 堆内存，直接内存缓冲区使用的是堆外内存，而磁盘映射缓冲区则是基于内存文件映射得到的缓冲区。| mapped_disk | 否 |
 | fs.cosn.<br>upload.buffer.size | CosN 文件系统上传时依赖的缓冲区大小，如果指定为-1，则表示不限制缓冲区。若不<br>限制缓冲区大小，则缓冲区的类型必须为 mapped_disk。如果指定大小大于0，则要求该值至少大于等于一个 block 的大小。兼容原有配置 fs.cosn.buffer.size | -1 | 否 |
-|  fs.cosn.block.size | CosN 文件系统 block size | 134217728（128MB）| 否 | 
+|  fs.cosn.block.size | CosN 文件系统 block size | 134217728（128MB）| 否 |
 |        fs.cosn.<br>upload_thread_pool        | 文件流式上传到 COS 时，并发上传的线程数目。                  |                        8                        |   否   |
 |         fs.cosn.<br>copy_thread_pool         | 目录拷贝操作时，可用于并发拷贝和删除文件的线程数目。               |                   3                       |   否   |
 |      fs.cosn.<br>read.ahead.block.size       | 预读块的大小。                                               |                        1048576（1MB）                        |   否   |
@@ -68,7 +68,7 @@ done
 | fs.cosn.<br>server-side-encryption.algorithm | 配置 COS 服务端加密算法，支持 SSE-C 和 SSE-COS，默认为空，不加密 |                              无                              |   否   |
 |    fs.cosn.<br>server-side-encryption.key    | 当开启 COS 的 SSE-C 服务端加密算法时，必须配置 SSE-C 的密钥，<br>密钥格式为 base64 编码的 AES-256 密钥，默认为空，不加密 |                              无                              |   否   |
 | fs.cosn.<br>crc64.checksum.enabled | 是否开启 CRC64校验。默认不开启，此时无法使用 hadoop fs -checksum 命令<br>获取文件的 CRC64校验值。 | false | 否 |
-| fs.cosn.traffic.limit | 上传带宽的控制选项，819200 ~ 838860800 bits/s，默认值为-1，默认表示不限制。 | 无 | 否 | 
+| fs.cosn.traffic.limit | 上传带宽的控制选项，819200 ~ 838860800 bits/s，默认值为-1，默认表示不限制。 | 无 | 否 |
 
 
 ### Hadoop 配置

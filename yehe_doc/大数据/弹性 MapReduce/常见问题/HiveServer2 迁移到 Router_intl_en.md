@@ -1,13 +1,15 @@
 ### How do I migrate HiveServer2 to a router node?
-1. Log in to the EMR Console and select **Cloud Hardware Management** on the left sidebar. Click **Add Router Node** to enter the router node adding page and choose to install the **Hive 2.1.1** component.
-![](https://main.qcloudimg.com/raw/6a0e18c90a0e1ea0f5c92f117204c3ee.png)
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click its **ID/Name** to enter the cluster details page. Select **Cluster Resources** > **Resource Management** to enter the resource management page, and then click **Scale Out** to enter the cluster scale-out page.
+![](https://main.qcloudimg.com/raw/dcebf8cd1f53dae19f5cbde68b817c99.png)
+On the cluster scale-out page, select **Router** as the **Node Type** and **Hive-2.3.3** as the **Services**, and configure other options as needed.
+![](https://main.qcloudimg.com/raw/1591783452381d6802ffa38d9f330718.png)
 2. Log in to the router node and modify the configuration file `hive-site.xml`.
  ![](https://main.qcloudimg.com/raw/0a9fdf9401f68f799db530bee95d34c0.png)
 3. Disable the Hive service on the master node.
-On the Hive role management page in component management, suspend all Hive processes on the master node and restart Hive processes on the router node.
-![](https://main.qcloudimg.com/raw/86dc44afdb6234d88d84881ac1caf115.png)
+In **Cluster Services**, select **Operation** > **Role Management** of the Hive component, pause all Hive processes on the master node, and restart the Hive processes on the router node.
+![](https://main.qcloudimg.com/raw/0eac9d885faa61fda2a0deab90ea5712.png)
 4. Conduct a test.
-On the router node, check whether HiveServer2 can be properly connected to and existing tables can be queried; and if yes, the migration is successful.
+On the router node, check whether HiveServer2 can be properly connected to and existing tables can be queried; and if so, the migration is successful.
 ![](https://main.qcloudimg.com/raw/3ffae19871f972bef3ccd8796deb2e27.png)
 5. Modify the Hue configuration file to route requests to the Hive component on the router node.
 ```

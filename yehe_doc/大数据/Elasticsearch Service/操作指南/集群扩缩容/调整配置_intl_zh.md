@@ -18,11 +18,11 @@
 
 
 - 调整数据节点配置。
-![](https://main.qcloudimg.com/raw/c1dfbd6efa1d1d0009bc9ec21d6d3635.png)
+![](https://main.qcloudimg.com/raw/3baaac98def0637e053788623c5245e0.png)
 - 调整主节点配置。
-![](https://main.qcloudimg.com/raw/a708b9f4be705e88ca55d1e96abcae57.png)
+![](https://main.qcloudimg.com/raw/a624c1570541ff57b3b2f310125606d3.png)
 - 查看集群变更进度。
-![](https://main.qcloudimg.com/raw/76103a86a258cef464385155d155791b.png)
+![](https://main.qcloudimg.com/raw/7745487c55eafc38a1b462ef23ec485d.png)
 
 ## 调整配置费用说明
 

@@ -1,90 +1,103 @@
-
-
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to static website.
+This document provides an overview of APIs and SDK code samples related to static websites.
 
 | API | Operation Name | Operation Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Sets static website configuration for a bucket |
-| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying static website configuration | Queries the static website configuration information of a bucket |
-| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting static website configuration | Deletes the static website configuration of a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Configures a static website for bucket |
+| [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
+| [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
-## Setting Static Website
+## SDK API Reference
+
+For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+
+## Setting a Static Website
 
 #### Feature description
 
-This API (PUT Bucket website) is used to configure a static website for a bucket.
+This API is used to configure a static website for a bucket.
 
-#### Method prototype
+#### Sample code
+**Objective-C**
 
-When you start to use COS, you need to create a bucket under a specified account for object use and management and specify the region where the bucket resides. The user who creates a bucket is considered the owner of the bucket by default. If you do not specify the access permission when creating a bucket, the bucket has private read/write ("private") permission. The steps are as follows:    
-
-1. Instantiate `QCloudPutBucketWebsiteRequest`
-2. Call the `PutBucketWebsite` method in the `QCloudCOSXMLService` object to initiate a request.
-3. Get the specific content from the `outputObject` in the `finishBlock` of the callback.
-
-#### Sample request
-
-[//]: # (.cssg-snippet-objc-put-bucket-website)
-
-```
+[//]: # (.cssg-snippet-put-bucket-website)
+```objective-c
+// Bucket name in the format: `BucketName-APPID`
 NSString *bucket = @"examplebucket-1250000000";
-   NSString * regionName = @"ap-chengdu";
+NSString * regionName = @"ap-chengdu";
 
-   NSString *indexDocumentSuffix = @"index.html";
-   NSString *errorDocKey = @"error.html";
-   NSString *derPro = @"https";
-   int errorCode = 451;
-   NSString * replaceKeyPrefixWith = @"404.html";
-   QCloudPutBucketWebsiteRequest *putReq = [QCloudPutBucketWebsiteRequest new];
-   putReq.bucket = bucket;
+NSString *indexDocumentSuffix = @"index.html";
+NSString *errorDocKey = @"error.html";
+NSString *derPro = @"https";
+int errorCode = 451;
+NSString * replaceKeyPrefixWith = @"404.html";
+QCloudPutBucketWebsiteRequest *putReq = [QCloudPutBucketWebsiteRequest new];
+putReq.bucket = bucket;
 
-   QCloudWebsiteConfiguration *config = [QCloudWebsiteConfiguration new];
+QCloudWebsiteConfiguration *config = [QCloudWebsiteConfiguration new];
 
-   QCloudWebsiteIndexDocument *indexDocument = [QCloudWebsiteIndexDocument new];
-   indexDocument.suffix = indexDocumentSuffix;
-   config.indexDocument = indexDocument;
+QCloudWebsiteIndexDocument *indexDocument = [QCloudWebsiteIndexDocument new];
 
-   QCloudWebisteErrorDocument *errDocument = [QCloudWebisteErrorDocument new];
-   errDocument.key = errorDocKey;
-   config.errorDocument = errDocument;
+// Specify the object key suffix of the index document. For example, if `index.html` is specified, then when the root directory of the bucket is accessed,
+// the content of `index.html` will automatically be returned; when the `article/` directory is accessed, the content of `article/index.html` will automatically be returned
+indexDocument.suffix = indexDocumentSuffix;
+// Index document configuration
+config.indexDocument = indexDocument;
 
+// Error document configuration
+QCloudWebisteErrorDocument *errDocument = [QCloudWebisteErrorDocument new];
+errDocument.key = errorDocKey;
+// Specify the object key of the general error document. When an error occurs and no error code in the redirect rule is hit for redirect, the content of this object key will be returned
+config.errorDocument = errDocument;
 
-   QCloudWebsiteRedirectAllRequestsTo *redir = [QCloudWebsiteRedirectAllRequestsTo new];
-   redir.protocol  = @"https";
-   config.redirectAllRequestsTo = redir;
+// Configuration for redirecting all requests
+QCloudWebsiteRedirectAllRequestsTo *redir = [QCloudWebsiteRedirectAllRequestsTo new];
+redir.protocol  = derPro;
+// Specify the target protocol for redirecting all requests; only `https` can be used
+config.redirectAllRequestsTo = redir;
 
+// Configuration of a single redirect rule
+QCloudWebsiteRoutingRule *rule = [QCloudWebsiteRoutingRule new];
 
-   QCloudWebsiteRoutingRule *rule = [QCloudWebsiteRoutingRule new];
-   QCloudWebsiteCondition *contition = [QCloudWebsiteCondition new];
-   contition.httpErrorCodeReturnedEquals = errorCode;
-   rule.condition = contition;
+// Conditions for the redirect rule
+QCloudWebsiteCondition *contition = [QCloudWebsiteCondition new];
+contition.httpErrorCodeReturnedEquals = errorCode;
+rule.condition = contition;
 
-   QCloudWebsiteRedirect *webRe = [QCloudWebsiteRedirect new];
-   webRe.protocol = @"https";
-   webRe.replaceKeyPrefixWith = replaceKeyPrefixWith;
-   rule.redirect = webRe;
+// Specific redirect destination of the redirect rule
+QCloudWebsiteRedirect *webRe = [QCloudWebsiteRedirect new];
+webRe.protocol = derPro;
 
-   QCloudWebsiteRoutingRules *routingRules = [QCloudWebsiteRoutingRules new];
-   routingRules.routingRule = @[rule];
-   config.rules = routingRules;
-   putReq.websiteConfiguration  = config;
+// Specify the object key of the redirect destination specified in the rule. The prefix part matched in the original request will be replaced.
+// This can be set only if `Condition` is set to `KeyPrefixEquals`
+webRe.replaceKeyPrefixWith = replaceKeyPrefixWith;
+rule.redirect = webRe;
 
+QCloudWebsiteRoutingRules *routingRules = [QCloudWebsiteRoutingRules new];
+routingRules.routingRule = @[rule];
 
-   [putReq setFinishBlock:^(id outputObject, NSError *error) {
+// Redirect rule configuration. Up to 100 `RoutingRule` values can be set
+config.rules = routingRules;
+putReq.websiteConfiguration  = config;
 
-   }];
+[putReq setFinishBlock:^(id outputObject, NSError *error) {
+    // `outputObject` contains all the HTTP response headers
+    NSDictionary* info = (NSDictionary *) outputObject;
+}];
 
-   [[QCloudCOSXMLService defaultCOSXML] PutBucketWebsite:putReq];
+[[QCloudCOSXMLService defaultCOSXML] PutBucketWebsite:putReq];
 ```
 
-Swift sample code:
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
 
-[//]: # (.cssg-snippet-swift-put-bucket-website)
+**Swift**
 
-```
+[//]: # (.cssg-snippet-put-bucket-website)
+```swift
 let req = QCloudPutBucketWebsiteRequest.init();
+
+// Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 
 let indexDocumentSuffix = "index.html";
@@ -96,140 +109,111 @@ let replaceKeyPrefixWith = "404.html";
 let config = QCloudWebsiteConfiguration.init();
 
 let indexDocument = QCloudWebsiteIndexDocument.init();
+
+// Specify the object key suffix of the index document. For example, if `index.html` is specified, then when the root directory of the bucket is accessed,
+// the content of `index.html` will automatically be returned; when the `article/` directory is accessed, the content of `article/index.html` will automatically be returned
 indexDocument.suffix = indexDocumentSuffix;
+
+// Index document configuration
 config.indexDocument = indexDocument;
 
+// Error document configuration
 let errDocument = QCloudWebisteErrorDocument.init();
 errDocument.key = errorDocKey;
+
+// Specify the object key of the general error document. When an error occurs and no error code in the redirect rule is hit for redirect, the content of this object key will be returned
 config.errorDocument = errDocument;
 
-
+// Configuration for redirecting all requests
 let redir = QCloudWebsiteRedirectAllRequestsTo.init();
+
+// Specify the target protocol for redirecting all requests; only `https` can be used
 redir.protocol  = "https";
 config.redirectAllRequestsTo = redir;
 
-
+// Configuration of a single redirect rule
 let rule = QCloudWebsiteRoutingRule.init();
+
+// Conditions for the redirect rule
 let contition = QCloudWebsiteCondition.init();
 contition.httpErrorCodeReturnedEquals = Int32(errorCode);
 rule.condition = contition;
 
+// Specific redirect destination of the redirect rule
 let webRe = QCloudWebsiteRedirect.init();
 webRe.protocol = "https";
+
+// Specify the object key of the redirect destination specified in the rule. The prefix part matched in the original request will be replaced.
+// This can be set only if `Condition` is set to `KeyPrefixEquals`
 webRe.replaceKeyPrefixWith = replaceKeyPrefixWith;
 rule.redirect = webRe;
 
 let routingRules = QCloudWebsiteRoutingRules.init();
 routingRules.routingRule = [rule];
+
+// Redirect rule configuration. Up to 100 `RoutingRule` values can be set
 config.rules = routingRules;
 req.websiteConfiguration  = config;
 
 req.finishBlock = {(result,error) in
-
     if error != nil{
         print(error!);
     }else{
         print( result!);
     }
-
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketWebsite(req);
 ```
 
-#### Parameter description
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
 
-#### `QCloudPutBucketWebsiteRequest` request parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------------------- | ------------------------------------------------------------ | ---------------------------- | -------- |
-| bucket | Bucket for which to set a static website in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | NSString *                   | Yes |
-| websiteConfiguration | Sets the configuration information of static website                                       | QCloudWebsiteConfiguration * | Yes       |
-
-#### `QCloudWebsiteConfiguration` parameter description
-
-| Parameter Name | Description | Type | Required |
-| --------------------- | ---------------------------------------- | ------------------------------------ | -------- |
-| rules                 | Sets redirect rules. Up to 100 `RoutingRule` can be set | QCloudWebsiteRoutingRules *          | Yes       |
-| indexDocument         | Index document                                 | QCloudWebsiteIndexDocument *         | Yes       |
-| errorDocument         | Error document                                 | QCloudWebisteErrorDocument *         | No       |
-| redirectAllRequestsTo | Redirects all requests                           | QCloudWebsiteRedirectAllRequestsTo * | No       |
-
-#### `QCloudWebsiteRoutingRules` parameter description
-
-| Parameter Name | Description | Type | Required |
-| ----------- | ---------------------------------------------------- | ------------------------------------ | -------- |
-| routingRule | Sets a single redirect rule, including prefix match-triggered and error code-triggered redirect | NSArray<QCloudWebsiteRoutingRule*> * | No       |
-
-#### `QCloudWebsiteIndexDocument` parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | ------------ | ---------- | -------- |
-| suffix   | Specifies the index document | NSString * | Yes       |
-
-#### `QCloudWebisteErrorDocument` parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | ---------------- | ---------- | -------- |
-| key      | Specifies the common return for errors | NSString * | No       |
-
-#### `QCloudWebsiteRedirectAllRequestsTo` parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | -------------------------------------- | --------- | -------- |
-| protocol | RedirectAllRequestsTo | Specifies the protocol for global redirect, which can only be `https` | NSString* | No       |
-
-
-
-#### Returned error code description
-
-When an SDK request fails, the returned error will not be empty and will include error code, error message, and other information required for troubleshooting to help developers fix the problem quickly.
-
-There are mainly two types of returned error codes (encapsulated in the returned error): error codes returned by the device for network reasons and error codes returned by COS.
-
-- All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, please see the definitions in the `NSURLError.h` header of the `Foundation` framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
-- Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, please see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, please see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
-
-## Querying Static Website Configuration
+## Querying a Static Website Configuration
 
 #### Feature description
 
-This API (GET Bucket website) is used to query the configuration information of a static website associated with a bucket.
+This API is used to query the static website configuration associated with a bucket.
 
-#### Method prototype
+#### Sample code
+**Objective-C**
 
-When you start to use COS, you need to create a bucket under a specified account for object use and management and specify the region where the bucket resides. The user who creates a bucket is considered the owner of the bucket by default. If you do not specify the access permission when creating a bucket, the bucket has private read/write ("private") permission. The steps are as follows:    
-
-1. Instantiate `QCloudGetBucketWebsiteRequest`
-2. Call the `GetBucketWebsite` method in the `QCloudCOSXMLService` object to initiate a request.
-3. Get the specific content from the `result` in the `finishBlock` of the callback.
-
-
-
-#### Sample request
-
-[//]: # (.cssg-snippet-objc-get-bucket-website)
-
-```
+[//]: # (.cssg-snippet-get-bucket-website)
+```objective-c
 QCloudGetBucketWebsiteRequest *getReq = [QCloudGetBucketWebsiteRequest new];
-getReq.bucket = @"examplebucket-1250000000";
-[getReq setFinishBlock:^(QCloudWebsiteConfiguration *  result, NSError * error) {
 
+// Bucket name in the format: `BucketName-APPID`
+getReq.bucket = @"examplebucket-1250000000";
+[getReq setFinishBlock:^(QCloudWebsiteConfiguration *  result,
+                         NSError * error) {
+    
+    // Set redirect rules. Up to 100 `RoutingRule` values can be set
+    QCloudWebsiteRoutingRules *rules =result.rules;
+    
+    // Index document
+    QCloudWebsiteIndexDocument *indexDocument = result.indexDocument;
+    
+    // Error document
+    QCloudWebisteErrorDocument *errorDocument = result.errorDocument;
+   
+    // Redirect all requests
+    QCloudWebsiteRedirectAllRequestsTo *redirectAllRequestsTo = result.redirectAllRequestsTo;
+    
 }];
 [[QCloudCOSXMLService defaultCOSXML] GetBucketWebsite:getReq];
-
 ```
 
-Swift sample code:
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
 
-[//]: # (.cssg-snippet-swift-get-bucket-website)
+**Swift**
 
-```
+[//]: # (.cssg-snippet-get-bucket-website)
+```swift
 let req = QCloudGetBucketWebsiteRequest.init();
+
+// Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 
 req.setFinish {(result,error) in
-
+    
     if error != nil{
         print(error!);
     }else{
@@ -239,75 +223,44 @@ req.setFinish {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketWebsite(req);
 ```
 
-#### Parameter description
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
 
-#### `QCloudGetBucketWebsiteRequest` request parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | ---------- | -------- |
-| bucket | Bucket for which to query static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | NSString *                   | Yes |
-
-#### Returned result description
-
-#### `QCloudWebsiteConfiguration` parameter description
-
-| Parameter Name | Description | Type |
-| --------------------- | ----------------------------------------- | ------------------------------------ |
-| rules                 | Sets redirect rules. Up to 100 `RoutingRule` can be set | QCloudWebsiteRoutingRules *          |
-| errorDocument         | Error document                                  | QCloudWebisteErrorDocument *         |
-| redirectAllRequestsTo | Redirects all requests                           | QCloudWebsiteRedirectAllRequestsTo * |
-
-
-
-#### Returned error code description
-
-When an SDK request fails, the returned error will not be empty and will include error code, error message, and other information required for troubleshooting to help developers fix the problem quickly.
-
-There are mainly two types of returned error codes (encapsulated in the returned error): error codes returned by the device for network reasons and error codes returned by COS.
-
-- All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, please see the definitions in the `NSURLError.h` header of the `Foundation` framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
-- Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, please see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, please see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
-
-
-
-## Deleting Static Website Configuration
+## Deleting a Static Website Configuration
 
 #### Feature description
 
-This API (DELETE Bucket website) is used to delete the static website configuration of a bucket.
+This API is used to delete the static website configuration of a bucket.
 
-#### Method prototype
+#### Sample code
+**Objective-C**
 
-When you start to use COS, you need to create a bucket under a specified account for object use and management and specify the region where the bucket resides. The user who creates a bucket is considered the owner of the bucket by default. If you do not specify the access permission when creating a bucket, the bucket has private read/write ("private") permission. The steps are as follows:    
-
-1. Instantiate `QCloudDeleteBucketWebsiteRequest`
-2. Call the `DeleteBucketWebsite` method in the `QCloudCOSXMLService` object to initiate a request.
-3. Get the specific content from the `outputObject` in the `finishBlock` of the callback.
-
-#### Sample request
-
-[//]: # (.cssg-snippet-objc-delete-bucket-website)
-
-```
+[//]: # (.cssg-snippet-delete-bucket-website)
+```objective-c
 QCloudDeleteBucketWebsiteRequest *delReq = [QCloudDeleteBucketWebsiteRequest new];
-delReq.bucket = "examplebucket-1250000000";
-[delReq setFinishBlock:^(id outputObject, NSError *error) {
 
+// Bucket name in the format: `BucketName-APPID`
+delReq.bucket = @"examplebucket-1250000000";
+
+[delReq setFinishBlock:^(id outputObject, NSError *error) {
+    
+    // `outputObject` contains all the HTTP response headers
+    NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketWebsite:delReq];
-
 ```
 
-Swift sample code:
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
 
-[//]: # (.cssg-snippet-swift-delete-bucket-website)
+**Swift**
 
-```
+[//]: # (.cssg-snippet-delete-bucket-website)
+```swift
 let delReq = QCloudDeleteBucketWebsiteRequest.init();
-delReq.bucket = "examplebucket-1250000000";
-delReq.finishBlock = {(result,error) in
 
+// Bucket name in the format: `BucketName-APPID`
+delReq.bucket = "examplebucket-1250000000";
+
+delReq.finishBlock = {(result,error) in
     if error != nil{
         print(error!);
     }else{
@@ -318,20 +271,5 @@ delReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketWebsite(delReq);
 ```
 
-#### Parameter description
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
 
-#### `QCloudDeleteBucketWebsiteRequest` request parameter description
-
-| Parameter Name | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | ---------- | -------- |
-| bucket | Bucket for which to delete static website configuration in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | NSString *                   | Yes |
-
-#### Returned error code description
-
-When an SDK request fails, the returned error will not be empty and will include error code, error message, and other information required for troubleshooting to help developers fix the problem quickly.
-
-There are mainly two types of returned error codes (encapsulated in the returned error): error codes returned by the device for network reasons and error codes returned by COS.
-
-- All the error codes returned by the device for network reasons are 4-digit negative numbers such as -1001, which are defined by Apple. For more information, please see the definitions in the `NSURLError.h` header of the `Foundation` framework or [Apple's official documentation](https://developer.apple.com/documentation/foundation/1508628-url_loading_system_error_codes).
-- Error codes returned by COS are based on HTTP status codes such as 404 and 503. For solutions to this type of error codes, please see [API Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-- All the error codes customized by the SDK are 5-digit positive numbers such as 10000 and 20000. For solutions to this type of error codes, please see [SDK Error Codes](https://intl.cloud.tencent.com/document/product/436/30610).
