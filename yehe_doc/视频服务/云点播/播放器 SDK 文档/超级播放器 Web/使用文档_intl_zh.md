@@ -33,6 +33,10 @@
 ### 点播平台的转码服务
 由于 MP4 和 HLS（M3U8）是目前在桌面浏览器和手机浏览器上支持程度最广泛的格式，所以腾讯云的视频点播平台最终会把上传的视频发布为 MP4 和 HLS（M3U8）格式。
 
+## 准备工作
+
+具体流程请参见 [使用超级播放器播放 - 接入指引](https://intl.cloud.tencent.com/document/product/266/38098) 文档。
+
 ## 初始化 Web 播放器
 在准备工作完成后，通过以下步骤，您就可以在网页上添加一个视频播放器。
 ### 步骤1：在页面中引入文件
@@ -44,6 +48,17 @@
  <!--播放器脚本文件-->
  <script src="https://imgcache.qq.com/open/qcloud/video/tcplayer/tcplayer.v4.1.min.js"></script>
 ```
+
+如果在域名限制区域，可以引入以下链接：
+```
+ <link href="https://cloudcache.tencent-cloud.com/open/qcloud/video/tcplayer/tcplayer.css" rel="stylesheet">
+ <!--如果需要在 Chrome 和 Firefox 等现代浏览器中通过 H5 播放 HLS 格式的视频，需要在 tcplayer.v4.1.min.js 之前引入 hls.min.0.13.2m.js。-->
+ <script src="https://cloudcache.tencent-cloud.com/open/qcloud/video/tcplayer/libs/hls.min.0.13.2m.js"></script>
+ <!--播放器脚本文件-->
+ <script src="https://cloudcache.tencent-cloud.com/open/qcloud/video/tcplayer/tcplayer.v4.1.min.js"></script>
+```
+
+
 >?暂不支持 VUE React 等框架的模块加载方式，可以通过 script 全局引入相关脚本的方式进行使用。
 
 ### 步骤2：放置播放器容器
@@ -110,7 +125,7 @@ var player = TCPlayer('player-container-id', {
   });
 ```
 开启成功后将会看到的效果如下图：
-![](https://mc.qcloudimg.com/static/img/e155be329a6fec959e1ad6b361add390/image.png)
+![](https://main.qcloudimg.com/raw/90bffb38a6658744b3012196676fef8a.png)
 
 #### 示例
 单击 [续播](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-continue-play.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
@@ -125,10 +140,10 @@ var player = TCPlayer('player-container-id', {
 
 ```
 var player = TCPlayer('player-container-id', {
-    fileID: '', // 请传入需要播放的视频 filID（必须）
-    appID: '', // 请传入点播账号的 appID（必须）
-    playbackRates: [0.5, 1, 1.25, 1.5, 2] // 设置变速播放倍率选项，仅 HTML5 播放模式有效
-  });
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  playbackRates: [0.5, 1, 1.25, 1.5, 2] // 设置变速播放倍率选项，仅 HTML5 播放模式有效
+});
 ```
 
 >!
@@ -139,9 +154,6 @@ var player = TCPlayer('player-container-id', {
 点播超级播放器支持缩略图预览，开启该功能有两种方式：
 1. 通过服务端 API 生成视频的缩略图与 VTT 文件，相关文档可参阅 [截图 - 雪碧图](https://intl.cloud.tencent.com/document/product/266/33940)。
 2. 自行生成缩略图文件与 VTT 文件，并将两个文件的 URL 传递给播放器，参考示例“缩略图预览 - 传入缩略图与 VTT 文件”
-
-开启成功的效果如下图：
-![](https://main.qcloudimg.com/raw/cf668bbf1a991c347fbeacb6555831c1.png)
 
 #### 示例
 - [缩略图预览 - 服务端生成](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-vtt-thumbnail.html)
@@ -171,7 +183,7 @@ player.loadVideoByID({
 
 ### 镜像功能
 激活镜像功能，可以让视频画面镜像翻转，如下图所示：
-![](https://main.qcloudimg.com/raw/d5886d7d550be72b608077f341299610.png)
+![](https://main.qcloudimg.com/raw/500ef27aa1f88712a76e1fe58b256556.png)
 开启右键菜单镜像选项：
 ```
 var player = TCPlayer('player-container-id', {
@@ -191,8 +203,7 @@ var player = TCPlayer('player-container-id', {
 >!在浏览器劫持视频播放的情况下，该功能无法使用。
 
 ### 进度条标记
-通过服务端 API 对视频 [增加打点信息]，可以在播放器中开启显示进度条标记，如下图所示：
-![](https://main.qcloudimg.com/raw/70d880065adce22cb64270f4999558f8.png)
+通过服务端 API 对视频增加打点信息，可以在播放器中开启显示进度条标记。
 
 播放器开启方式：
 ```
@@ -214,8 +225,7 @@ var player = TCPlayer('player-container-id', {
 
 ### HLS 自适应码率播放
 - HLS 规范的 Master Playlist 可以根据网络速度自适应码率播放，在视频下载过程中，如果网络速度满足下载高码率的 TS 分片时，播放器将切换播放高码率的 TS 分片，反之播放低码率的 TS 分片。移动端和桌面端大部分浏览器都支持该特性。
-- 播放 HLS Master Playlist 时，播放器的清晰度选择功能将会变成选择特定的码率或者根据网络速度自动选择。如下图所示：
-![](https://main.qcloudimg.com/raw/339d7dfb3a4d247deb70460edac35a0e.png)
+- 播放 HLS Master Playlist 时，播放器的清晰度选择功能将会变成选择特定的码率或者根据网络速度自动选择。
 
 >!
 >- 自适应码率播放全端都默认采用自动切换逻辑。 
@@ -244,6 +254,7 @@ var player = TCPlayer('player-container-id', {
 >- 腾讯云提供的隔离域名是每个用户独有的域名，一个 appID 对应一个域名，通常格式为`[appID].vod2.myqcloud.com`。
 >- 需要将播放器 swf URL 的域名添加到白名单内，开启了 Referer 防盗链的视频才能在 Flash 模式下播放。
 >- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
+>- 如果是在域名限制区域，需要的播放器的 Flash swf 文件默认存放在`cloudcache.tencent-cloud.com`域名下。
 >- iframe 嵌入播放器页面，视频请求的 Referer 会带上 iframe src。
 
 ### Key 防盗链
@@ -255,7 +266,7 @@ var player = TCPlayer('player-container-id', {
      psign:''
    });
 ```
-参数 psign 即超级播放器签名。
+参数 psign 即超级播放器签名，其具体含义请参见 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)。
 
 >!如果同时开启了 Referer 防盗链，在 Referer 防盗链配置的示例代码基础上增加参数即可。
 
@@ -263,12 +274,12 @@ var player = TCPlayer('player-container-id', {
 使用试看功能需要先开启 Key 防盗链，开启流程请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。播放器初始化需增加参数如下：
 ```
 var player = TCPlayer('player-container-id', {
-     fileID: '', // 请传入需要播放的视频 filID（必须）
-     appID: '', // 请传入点播账号的 appID（必须）
-     psign:''
-   });
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  psign:''
+});
 ```
-参数 psign 即超级播放器签名。
+参数 psign 即超级播放器签名，其具体含义请参见 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)。
 
 >!
 >- 播放器播放的视频时长是 exper 参数指定的长度，与已往在播放端控制播放时长的试看功能不同，播放器不会获取完整的视频。
@@ -284,9 +295,43 @@ var player = TCPlayer('player-container-id', {
      psign:''
    });
 ```
-参数 psign 即超级播放器签名。
+参数 psign 即超级播放器签名，其具体含义请参见 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)。
+
+>!
 >- 如果播放页面或者 Flash swf URL 与解密密钥服务器域名不一致，Key 服务器需要部署 corssdomain.xml 和 CORS（"跨域资源共享"，Cross-origin resource sharing），允许 Flash 和 JavaScript 跨域获取解密密钥。
 >- crossdomain.xml 中配置的是 swf URL 的域名，并且 xml 文件必须放置在 Key 服务器的根目录。
 >- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
+>- 如果是在域名限制区域，需要的播放器的 Flash swf 文件默认存放在`cloudcache.tencent-cloud.com`域名下。
 >- 视频只能进行一次加密，不可多次加密，严格按照视频加密文档操作。
 >- 解密密钥正确长度为16字节，起始和末尾位置不能有空白字符。
+
+### 视频统计信息
+右键打开视频统计面板，可以查看视频的实时信息。
+开启右键菜单打开视频统计信息选项：
+```
+var player = TCPlayer('player-container-id', {
+  fileID: '', // 请传入需要播放的视频 filID（必须）
+  appID: '', // 请传入点播账号的 appID（必须）
+  plugins: {
+    ContextMenu: {
+      statistic: true
+    }
+  }
+});
+```
+
+#### 示例
+单击 [视频统计信息](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-change-file-statistic.html) 进入示例页面，在该页面鼠标右键单击选择【查看网页源代码】，即可查看示例源码。
+
+>!
+>- 该功能仅支持桌面端浏览器。
+>- 在浏览器劫持视频播放的情况下，该功能无法使用。
+
+
+## 更新日志
+TCPlayer 在不断更新及完善中，下面是 TCPlayer 发布的主版本介绍。
+
+| 日期             | 版本     | 更新内容
+|-----------------|--------- |-------------------------------------------- |
+| 2020.7.10       |   4.1    |   1. 修改默认 hls.js 版本为0.13.2。<br> 2. 支持开启 Key 防盗链功能。 <br>3. 修复其他已知问题。 |
+| 2020.6.17       |   4.0    |   1. 修复试看视频时长保持显示原始时长。<br>2. 启用后台清晰度配置。 <br>3. 修复其他已知问题。 |

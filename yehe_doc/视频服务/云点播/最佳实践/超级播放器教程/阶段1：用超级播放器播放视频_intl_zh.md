@@ -1,5 +1,5 @@
 ## 学习目标
-通过本阶段的教程后，您将掌握上传一个视频到云点播，并通过视频处理后，在超级播放器中播放。
+通过本阶段的教程后，您将掌握上传一个视频到云点播，并通过视频处理后，在超级播放器中播放的技能。
 
 ## 前置条件
 在开始本教程之前，请您确保已满足以下前置条件。
@@ -8,7 +8,7 @@
 您需要开通云点播，步骤如下：
 
 1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
-2. 购买云点播服务，具体请参见 [计费概述]。
+2. 购买云点播服务。
 3. 选择【云产品】>【视频服务】>[【云点播】](https://console.cloud.tencent.com/vod)，进入云点播控制台。
 
 至此，您已经完成了云点播的开通步骤。
@@ -18,7 +18,7 @@
 您需要确认自己的默认分发域名，没有开启防盗链：
 
 1. 登录云点播控制台，选择【分发播放设置】>[【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain)，单击“默认分发域名”操作栏下的【设置】，进入设置页面。
-<img src="C:\Users\v_vxllin\Desktop\TAPD提单\云点播\云点播_2020-07-22_13-59-25\需处理图\阶段1：用超级播放器播放视频_intl_zh\0.1.png" width="800" />
+<img src="https://main.qcloudimg.com/raw/7fd38449ee26e6269cc1557c5b4845b9.png" width="800" />
 2. 查看“Referer 防盗链”和“Key 防盗链”的启用状态，确认均为“未启用”状态。
 ![](https://main.qcloudimg.com/raw/3849f1bd9b3491261f7ff2f29242ae96.png)
 
@@ -49,21 +49,20 @@
 1. 选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，找到**步骤1**上传和处理过的视频，单击“操作”栏下的【管理】，选择【超级播放器预览】。
 2. 【超级播放器配置】选择 default。
 >? default 是预置超级播放器配置，用于播放10模板转自适应码流输出，10模板截雪碧图输出。
- <img src="C:\Users\v_vxllin\Desktop\TAPD提单\云点播\云点播_2020-07-22_13-59-25\需处理图\阶段1：用超级播放器播放视频_intl_zh\0.5.png" width="500" />
+ <img src="https://main.qcloudimg.com/raw/ab1ff0bbebd1ff5d209ccec3bb1b66d2.png" width="500" />
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
-<img src="C:\Users\v_vxllin\Desktop\1\需作图\阶段1：用超级播放器播放视频（翻译）_intl\1.png" width="522" />
+<img src="https://main.qcloudimg.com/raw/aca724a8c811d5107d22878f78890c16.png" width="522" />
 5. 在【移动端播放器】中，点击【扫码下载】，安装“腾讯云工具包”。
 ![](https://main.qcloudimg.com/raw/7646593a4ea15d9c1ad441207e224be8.png)
 6. 手机打开腾讯云工具包，选择【播放器】>【超级播放器】，然后点击右上角扫码，即可在移动端播放体验。
- <img src="C:\Users\v_vxllin\Desktop\TAPD提单\云点播\云点播_2020-07-22_13-59-25\需处理图\阶段1：用超级播放器播放视频_intl_zh\8.png" width="522" />
+ <img src="https://main.qcloudimg.com/raw/3894fc5d024bd7f53423cabcdff60db0.png" width="522" />
 
 ## 步骤3：使用 Demo 体验
 
 您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/tencentyun/SuperPlayer_Android) 和 [iOS](https://github.com/tencentyun/SuperPlayer_iOS)  三端的超级播放器 Demo 进行验证，具体请参考 Demo 的源码。
 >?在控制台的【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)>【超级播放器预览】中，可以获取预览视频对应的 Web 播放器源码，供您直接参考使用。
-<img src="C:\Users\v_vxllin\Desktop\TAPD提单\云点播\云点播_2020-07-22_13-59-25\需处理图\阶段1：用超级播放器播放视频_intl_zh\9.png" width="500" />
+<img src="https://main.qcloudimg.com/raw/7da1641a94b14e43a4cf024209c7e404.png" width="500" />
 
 ## 总结
 
 学习本教程后，您已经初步了解了，如何上传一个视频到云点播，并通过视频处理后，在超级播放器中播放。
-
