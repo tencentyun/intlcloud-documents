@@ -19,7 +19,7 @@ Namespace=QCE/TXMR_HBASE
 | EmrHbaseOverview<br/>HbaseMasterReq<br>Clusterrequests       | Total number of requests in the cluster\_clusterRequests                | Requests/s     | Total number of requests in the cluster              | host4hbaseoverview, <br/>id4hbaseoverview |
 | EmrHbaseOverview<br/>HbaseMaster<br>Assignmentmanager<br>OpsAssignNumOps | Cluster assignment manager operations\_Assign_num_ops     | Count       | Cluster assignment manager operations | host4hbaseoverview, <br/>id4hbaseoverview |
 | EmrHbaseOverview<br/>HbaseMaste<br>rAssignmentmanager<br>OpsBulkassignNumOps | Cluster assignment manager operations\_BulkAssign_num_ops | Count       | Cluster assignment manager operations | host4hbaseoverview, <br/>id4hbaseoverview |
-| EmrHbaseOverview<br/>HbaseMasterBalancerOps<br>BalancerclusterNumOps | Number of cluster reads/writes\_receivedBytes                    | Count       | Number of cluster load balancing operations            | host4hbaseoverview, <br/>id4hbaseoverview |
+| EmrHbaseOverview<br/>HbaseMasterBalancerOps<br>BalancerclusterNumOps | Number of cluster load balancing operations\_BalancerclusterNum                    | Count       | Number of cluster load balancing operations            | host4hbaseoverview, <br/>id4hbaseoverview |
 | EmrHbaseOverview<br/>HbaseMasterServerPlan<br>Mergeplancount | Cluster plans_mergePlanCount                      | Plans       | Cluster plans                  | host4hbaseoverview, <br/>id4hbaseoverview |
 | EmrHbaseOverview<br/>HbaseMasterServerPlan<br>Splitplancount | Cluster plans_splitPlanCount                      | Plans       | Cluster plans                  | host4hbaseoverview, <br/>id4hbaseoverview |
 
@@ -38,7 +38,7 @@ Namespace=QCE/TXMR_HBASE
 | EmrHbaseOverviewAggregation<br/>HbaseMasterReq<br>Clusterrequests | Total number of requests in the cluster_clusterRequests                | Requests/s     | Total number of requests in the cluster              | id4hbaseoverview |
 | EmrHbaseOverviewAggregation<br/>HbaseMasterAssign<br>mentmanagerOpsAssignNumOps | Cluster assignment manager operations\_Assign_num_ops     | Count       | Cluster assignment manager operations | id4hbaseoverview |
 | EmrHbaseOverviewAggregation<br/>HbaseMasterAssign<br/>mentmanagerOpsBulkassignNumOps | Cluster assignment manager operations\_BulkAssign_num_ops | Count       | Cluster assignment manager operations | id4hbaseoverview |
-| EmrHbaseOverviewAggregation<br/>HbaseMasterBalancerOps<br>BalancerclusterNumOps | Number of cluster reads/writes_receivedBytes                    | Count       | Number of cluster load balancing operations            | id4hbaseoverview |
+| EmrHbaseOverviewAggregation<br/>HbaseMasterBalancerOps<br>BalancerclusterNumOps | Number of cluster load balancing operations\_BalancerclusterNum                    | Count       | Number of cluster load balancing operations            | id4hbaseoverview |
 | EmrHbaseOverviewAggregation<br/>HbaseMasterServerPlan<br>Mergeplancount | Cluster plans_mergePlanCount                      | Plans       | Cluster plans                  | id4hbaseoverview |
 | EmrHbaseOverviewAggregation<br/>HbaseMasterServerPlan<br>Splitplancount | Cluster plans_splitPlanCount                      | Plans       | Cluster plans                  | id4hbaseoverview |
 

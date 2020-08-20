@@ -9,8 +9,9 @@ For more information, see [Use Cases](https://intl.cloud.tencent.com/document/pr
 
 ### How do I select a cloud disk?
 Before you select a disk type, determine the use case:
-- For general scenarios such as mid and small-sized databases, Web/App applications, and transactional workloads, we recommend that you select Premium Cloud Storage for higher cost efficiency.
-- For scenarios with higher workloads and performance requirements such as large-sized core databases, OLTP businesses, and NoSQL databases, we recommend that you select SSD for better performance.
+- For general use cases including Web/APP applications, logical processing, and small and medium sites, we recommend that you select Premium Cloud Storage for a higher cost efficiency.
+- For use cases including medium databases, and image processing, we recommend that you select SSD for a better performance.
+- For use cases with high requirements for workloads and performance, including large databases, video business, NoSQL, and ElasticSearch, we recommend that you select Enhanced SSD for the optimal performance and minimum storage latency.
 
 ### What should I notice when using a cloud disk?
 - For an independently purchased cloud disk, when configuring static file system information using `fstab`, use the UUID or label of the file system as the file system ID, so that the device name remains unchanged on the CVM when any cloud disk is unmounted and then remounted. 

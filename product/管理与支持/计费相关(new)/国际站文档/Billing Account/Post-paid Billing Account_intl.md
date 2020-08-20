@@ -34,6 +34,10 @@ Billing cycle is the bill period to pay for services you have purchased. Billing
 
 For example, if your initial credit is 1000USD and the billing cycle is one month, the service fee generated in April will be billed in May, which should be paid on June 10th as the billing cycle is one month.
 
+## Monthly Expense Alert
+
+Send a reminder when the monthly expense (excluding the amount deducted by vouchers) exceeds the alert threshold. You can set up reminders and message recipients in Message Subscription. By default, reminders will be sent via Message Center, email, and SMS.
+
 # FAQs
 ##  Can available credit be withdrawn?
 

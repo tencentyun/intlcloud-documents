@@ -9,7 +9,7 @@
 4. 单击【管理配置组】设置配置组，进入“管理配置组”页，可分别单击【添加配置组】、【修改】和【删除】对配置组进行新增、修改和删除。
 ![](https://main.qcloudimg.com/raw/ff447e9c6676627682ca593f857900b9.png)
 ![](https://main.qcloudimg.com/raw/2fce4a94775737259e58268c2038e1a9.png)
-![](https://main.qcloudimg.com/raw/b1e700e2cf9ea6cffe2c66b8c9265d89.png)
+![](https://main.qcloudimg.com/raw/9f7d7373ed884a0251e52ee133c98fa0.png)
 5. 配置组中存在节点配置与当前配置组配置不一致时，可单击右上角【同步配置】将配置组配置下发到配置不一致的节点。
 ![](https://main.qcloudimg.com/raw/7286e6eb52685a59dfb0e53eed087dd5.png)
 进入“同步配置”页面，可单击【详情】查看详细信息，也可单击【同步配置】完成配置组的同步。
