@@ -417,7 +417,7 @@ V2TIMCustomElem customElem = (V2TIMCustomElem) elem;
 byte[] data = customElem.getData();
 }
 // Continue to check whether the current `Elem` is followed by more `Elem` objects.
-elem.getNextElem();
+elem = elem.getNextElem();
 }
 // If `elem` is `null`, all `Elem` objects have been parsed.
 }
