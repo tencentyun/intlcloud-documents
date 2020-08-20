@@ -1,13 +1,13 @@
 ### HiveServer2 迁移到 Router 的方法是什么？
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中选择对应的集群单击【ID/名称】进入集群详情页，在集群详情页中选择【集群资源】>【资源管理】，进入资源管理页面，单击【扩容】进入集群扩容页面。
-![](https://main.qcloudimg.com/raw/6cc0dfec6655ecbac907b8448248705c.png)
+![](https://main.qcloudimg.com/raw/dcebf8cd1f53dae19f5cbde68b817c99.png)
 在集群扩容页面中，选择【扩容节点类型】为【Router 节点】，【扩容组件】为【Hive-2.3.3】，其他选项可根据需要自行选择。
-![](https://main.qcloudimg.com/raw/ebdf6ba5e5649309b4af062efb783d04.png)
+![](https://main.qcloudimg.com/raw/1591783452381d6802ffa38d9f330718.png)
 2. 登录 router 节点，修改`hive-site.xml`配置文件。
  ![](https://main.qcloudimg.com/raw/0a9fdf9401f68f799db530bee95d34c0.png)
 3. 关闭 master 上的 hive 服务。
 在【集群服务】中选择 hive 组件的【操作】>【角色管理】，将 master 节点上的所有 hive 进程暂停，重启 Router 节点上的 hive 进程。
-![](https://main.qcloudimg.com/raw/e84a86cd2db03fb635040d450e0d8a3c.png)
+![](https://main.qcloudimg.com/raw/0eac9d885faa61fda2a0deab90ea5712.png)
 4. 测试。
 在 router 上测试 hiveserver2。如果能正确连接并查询到已有的表，则说明迁移成功。
 ![](https://main.qcloudimg.com/raw/3ffae19871f972bef3ccd8796deb2e27.png)
