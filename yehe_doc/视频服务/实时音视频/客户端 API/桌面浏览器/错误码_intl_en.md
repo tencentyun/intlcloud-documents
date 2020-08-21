@@ -3,19 +3,19 @@
 
 ## Error Code Definitions
 
-| Key                         | Error Code | Description                   |
-| --------------------------- | ------ | ---------------------- |
-| INVALID_PARAMETER           | 0x1000 | Invalid parameter               |
-| INVALID_OPERATION           | 0x1001 | Invalid operation               |
-| SIGNAL_CAHNNEL_SETUP_FAILED | 0x4001 | Failed to establish the signaling channel       |
-| SIGNAL_CHANNEL_ERROR        | 0x4002 | Error with the signaling channel           |
-| ICE_TRANSPORT_ERROR         | 0x4003 | Error with the ICE transport connection |
-| JOIN_ROOM_FAILED            | 0x4004 | Failed to enter the room               |
-| CREATE_OFFER_FAILED         | 0x4005 | Failed to create an SDP offer    |
-| CLIENT_BANNED               | 0x4040 | The user was kicked out of the room         |
-| SERVER_TIMEOUT              | 0x4041 | Media transmission service timed out       |
-| SUBSCRIPTION_TIMEOUT        | 0x4042 | Remote stream subscription timed out         |
-| UNKOWN                      | 0xFFFF | Unknown error               |
+| Key                         | getCode | Error Code | Description                   |
+| --------------------------- | ------ | ---------------------- | ---------------------- |
+| INVALID_PARAMETER           | 4096 | 0x1000 | Invalid parameter               |
+| INVALID_OPERATION           | 4097 | 0x1001 | Invalid operation               |
+| SIGNAL_CAHNNEL_SETUP_FAILED | 16385 | 0x4001 | Failed to establish the signaling channel       |
+| SIGNAL_CHANNEL_ERROR        | 16386 | 0x4002 | Error with the signaling channel           |
+| ICE_TRANSPORT_ERROR         | 16387 | 0x4003 | Error with the ICE transport connection |
+| JOIN_ROOM_FAILED            | 16388 | 0x4004 | Failed to enter the room               |
+| CREATE_OFFER_FAILED         | 16389 | 0x4005 | Failed to create an SDP offer    |
+| CLIENT_BANNED               | 16448 | 0x4040 | The user was kicked out of the room         |
+| SERVER_TIMEOUT              | 16449 | 0x4041 | Media transmission service timed out       |
+| SUBSCRIPTION_TIMEOUT        | 16450 | 0x4042 | Remote stream subscription timed out         |
+| UNKOWN                      | 65535 | 0xFFFF | Unknown error               |
 
 ## Account Error Messages
 
