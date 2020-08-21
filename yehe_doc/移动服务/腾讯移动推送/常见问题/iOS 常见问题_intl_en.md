@@ -97,12 +97,12 @@ Assign the value `1` to `content-available` and do not use `alert`, `badge`, or 
 
 
 
-### What should I do if `DeviceToken` is not returned occasionally for registration in the development environment of iOS 13?
+### What should I do if `DeviceToken` is not returned occasionally or the `APNs request token failed` error is reported during registration in the iOS development environment?
 This problem is caused by instability of APNs. You can fix it in the following ways:
 1. Insert a SIM card into the phone and use the 4G network.
 2. Uninstall and reinstall the application, restart the application, or shut down and restart the phone.
 3. Use a package for the production environment.
-4. Use another iPhone on iOS 13.
+4. Use another iPhone on iOS.
 
 
 ### How do I expand the testing scope on iOS if the number of testing devices is limited?
