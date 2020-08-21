@@ -3,11 +3,11 @@ To use LVB, you should have at least **two** domain names, one as the push domai
 
 
 ## Prerequisites
-1. You have activated the [LVB](https://intl.cloud.tencent.com/product/css) service.
-2. You have prepared your own domain names and obtained ICP filings for them.
-	- If your domain names have not obtained an ICP filing, you can go to [Tencent Cloud Website ICP Filing Service](https://intl.cloud.tencent.com/product/icp) to apply for ICP filing.
+1. You have activated the [LVB](https://intl.cloud.tencent.com/product/LVB) service.
+2. You have prepared your own domain names and obtained ICP filings for their service in Mainland China.
+	- If your domain names have not obtained an ICP filing, you can go to Tencent Cloud Website ICP Filing Service to apply for ICP filing.
 
->- You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. For more information, please see [Domain Name ICP Filing](https://intl.cloud.tencent.com/product/icp) and [Domain Name ICP Filing and Configuration](https://intl.cloud.tencent.com/document/product/267/32478).
+>- You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. For more information, please see [Domain Name ICP Filing and Configuration](https://intl.cloud.tencent.com/document/product/267/32478).
 >- The time needed to complete an ICP filing application depends on your domain name service provider. If you have received a notification from MIIT that your domain name has been filed on record, please wait for 1 to 24 hours. After your domain name can be found on [MIIT's ICP filing query website](http://www.beian.miit.gov.cn), it can be added to the LVB Console.
 >- A new ICP filing can be synced to Tencent Cloud servers in one business day; therefore, a newly filed domain name may appear to be not filed when it is added.
 
