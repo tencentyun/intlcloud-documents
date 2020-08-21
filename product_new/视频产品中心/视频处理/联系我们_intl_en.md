@@ -1,8 +1,8 @@
 ## Customer Service
 
 If you have any questions when using Tencent Cloud products, please contact our customer service for assistance.
-- Customer service: 95716
-- ICP filing support: 95716-3
+- Customer service: 95716
+- ICP filing for service in Mainland China: 95716-3
 
 ## Ticket System
 If you encounter any OPS or technical issues, please log in to the Tencent Cloud Console and follow the on-screen prompts to submit a ticket. We will get back to you as soon as possible.
