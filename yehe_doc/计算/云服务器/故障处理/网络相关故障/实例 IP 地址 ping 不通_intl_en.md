@@ -70,7 +70,7 @@ Run the following command to check whether the firewall rule and the correspondi
 ```
 iptables -L
 ```
-- If the following result is returned, the ICMP rule is not disabled. In this case, [check whether the domain name has ICP filing](#CheckDomainRegistration).
+- If the following result is returned, the ICMP rule is not disabled. In this case, [check whether the domain name has ICP filing](#CheckDomainRegistration) (for domain names served in Mainland China).
 ```
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination         
