@@ -11,7 +11,7 @@ In addition:
 Generally, it takes less than 30 minutes for the CDN configuration to take effect. If the configuration does not take effect within 30 minutes after configuration, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### Are there any requirements for connecting a domain name to CDN?
-Yes. Before a domain name is connected to CDN for acceleration, it must obtain the ICP filing from the MIIT, and the business contents on the origin server must be legally compliant.
+Yes. Before a domain name is connected to CDN for acceleration, an ICP filing for services in Mainland China should have been obtained from the MIIT for the domain name, and the business contents on the origin server must be legally compliant.
 
 ### Can I configure multiple origin server IPs?
 Yes. After you configure multiple IPs, CDN will randomly access one of the IPs when forwarding a request to the origin server. If the number of origin-pull failures with this IP exceeds the threshold, it will be isolated for 300 seconds by default and will no longer be used for origin-pull.
@@ -57,8 +57,8 @@ You can also manage your projects on the [Project Management](https://console.cl
 
 ### Are there any requirements for connecting a domain name to CDN?
 Yes. The following are the requirements for connecting a domain name to CDN:
-1. The length of the domain name cannot exceed 50 characters.
-2. If mainland China CDN is used, the domain name must have an ICP filing issued by the MIIT.
+1. The domain name can contain up to 50 characters. CDN currently does not support Chinese domain names (even after transcoding).
+2. If Mainland China CDN is used, the domain name must have an ICP filing issued by the MIIT.
 3. The domain name is a sub-domain name in the format of `a.test.com` or `a.b.test.com` or a wildcard domain name in the format of `*.test.com` or `*.a.test.com`.
 4. If the domain name is a wildcard one or has been connected by another user, you need to [verify your ownership](https://intl.cloud.tencent.com/document/product/228/5734#m1) before connecting or retrieving it.
 
