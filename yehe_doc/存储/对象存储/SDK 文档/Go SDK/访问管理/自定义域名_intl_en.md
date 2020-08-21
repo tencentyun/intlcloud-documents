@@ -1,5 +1,3 @@
-
-
 ## Overview
 
 This document provides an overview of APIs and SDK code samples related to custom domain name.
@@ -25,10 +23,10 @@ func (s *BucketService) PutDomain(ctx context.Context, opt *BucketPutDomainOptio
 
 ```go
 opt := &cos.BucketPutDomainOptions{
-	Status:            "ENABLED",
-	Name:              "www.example.com",
-	Type:              "REST",
-	ForcedReplacement: "CNAME",
+ Status:            "ENABLED",
+ Name:              "www.example.com",
+ Type:              "REST",
+ ForcedReplacement: "CNAME",
 }   
 resp, err := c.Bucket.PutDomain(context.Background(), opt)
 ```
@@ -60,7 +58,7 @@ Some frequent special errors that may occur with this request are listed below:
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
 | HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is registered in Mainland China but has no ICP filing.                          |
+| HTTP 451 Unavailable For Legal Reasons | The domain name is served in Mainland China but has no ICP filing.                          |
 
 ## Querying Custom Domain Name
 
@@ -93,4 +91,3 @@ type BucketGetDomainResult BucketPutDomainOptions
 | Name                   | Custom domain name. Valid values: letter, digit, dot                     | String |
 | Type                   | Type of bound origin server. Valid values: REST/WEBSITE                          | String |
 | ForcedReplacement | Overwrites existing configuration. Valid values: CNAME/TXT. If this parameter is entered, the configuration will be distributed after the domain name ownership is forcibly verified | String |
-
