@@ -39,8 +39,8 @@ You can access different log sources in different ways. For more information, se
 
 **Cloud product logs**
 
-| Product name | Recommended access method |
-| ------------------------ | ------------------------ ------------------------------------ |
+| Cloud product name       | Recommended access method                                                 |
+| ---------------- | ------------------------------------------------------------ |
 | CVM | [LogListener](https://intl.cloud.tencent.com/document/product/614/17414) |
 | TKE | [Console](https://intl.cloud.tencent.com/document/product/457/32419) |
 | CDN | [Console](https://intl.cloud.tencent.com/document/product/228/35380) |
