@@ -28,13 +28,13 @@
 
 ## 操作指南
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，单击左侧目录的【日志服务】，选择【实时日志】，即可进入实时日志页面，开始创建实时日志投递。
-![](https://main.qcloudimg.com/raw/f9e726354eb74855c507574d9aad5c66.png)
+![](https://main.qcloudimg.com/raw/d6f22b7194f2e3433f9bbee4f4e4a1dc.png)
 
 ### 新建日志主题
 单击【新建】，创建日志主题。
 >!一个日志集下至多可创建10个主题。
 
-![](https://main.qcloudimg.com/raw/a2d6566eb6d002218a21223cffa5c447.png)
+![](https://main.qcloudimg.com/raw/94136aa047219848f82948e19cd8dc06.png)
 
 ### 配置日志主题
 填写新增日志主题名称，绑定域名到该日志主题下。
@@ -43,11 +43,11 @@
 >- 一个域名只能绑定到一个日志主题下，不可绑定多个日志主题。
 >- 配置信息保存后，配置生效时间大约为15分钟。
 
-![](https://main.qcloudimg.com/raw/e04e398136dc52192752e866041ca109.png)
+![](https://main.qcloudimg.com/raw/6e820577732ecc679aae25386683c57e.png)
 
 ### 管理日志主题
 成功配置日志主题后，您可对日志主题进行管理：停止 / 启动日志投递到该日志主题、以该日志主题为单元检索日志、管理该日志主题和删除该日志主题。
-![](https://main.qcloudimg.com/raw/1148d492591594000621b167a38182fd.png)
+![](https://main.qcloudimg.com/raw/46d8293f0819b693b4b17fa6a79ca78c.png)
 
 #### 停止 / 启动日志投递
 您可手动停止 / 启动日志投递到日志主题。
@@ -61,7 +61,7 @@
 + 排列展示：支持按照日志时间进行降序 / 升序排列。
 + 检索：支持全文检索、键值检索和模糊关键字检索。详细内容见 [检索语法](https://intl.cloud.tencent.com/document/product/614/30439)。
 
-![](https://main.qcloudimg.com/raw/c3d2cdd0a1673ce123fb281c903b5e06.png)
+![](https://main.qcloudimg.com/raw/dbc8e4aa6ae93062c22cadf4b9373e64.png)
 
 **日志数据说明**
 
@@ -92,7 +92,7 @@
 您可管理已创建的日志主题，更新该主题下绑定的域名列表。
 >? 新配置生效时间约为5 - 15分钟。
 
-![](https://main.qcloudimg.com/raw/d9f8f9d09c683ede80e889b100e72d5a.png)
+![](https://main.qcloudimg.com/raw/ce1f6df0d8bde8ce66f7ebfb4a233e6e.png)
 
 #### 删除
 您可手动删除日志主题。

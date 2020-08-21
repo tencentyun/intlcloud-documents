@@ -98,7 +98,7 @@ For a cluster on v6.x or higher, you can upgrade X-Pack (i.e., from the Open Sou
 
 ## How to Upgrade a Cluster
 1. Log in to the [ES Console](https://console.cloud.tencent.com/es), enter the cluster details page, and click **Upgrade** in the top-right corner.
-![](https://main.qcloudimg.com/raw/fcad447622adf7423c18a67e949e2d65.jpg)
+![](https://main.qcloudimg.com/raw/86b5876f89ca1b836f7dbb1b01d676c7.png)
 2. Choose to upgrade Elasticsearch or X-Pack in the upgrade dialog box.
 
 ### Upgrading the Elasticsearch version
@@ -124,4 +124,4 @@ For a cluster on v6.x or higher, you can upgrade X-Pack (i.e., from the Open Sou
 >
 ![](https://main.qcloudimg.com/raw/6a710281be1129e354c101c77a71972d.jpg)
 4. After the upgrade starts, you can check the upgrade progress in the **Cluster Change History** on the cluster details page.
-![](https://main.qcloudimg.com/raw/1c65d6ffdc7eff556f620ce23bfc47f4.jpg)
+![](https://main.qcloudimg.com/raw/dd4595025c8977d2207481ac7b2287f0.png)

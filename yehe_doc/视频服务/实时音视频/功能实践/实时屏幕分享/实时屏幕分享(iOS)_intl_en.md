@@ -21,7 +21,7 @@ We recommend the following encoding parameters for screen sharing on iOS:
 
 | Parameter Item | Parameter Name | Common Recommended Value | Recommended Value for Text-based Teaching | 
 |---------|---------|---------|-----|
-| Resolution | videoResolution | 1280x720 | 1920x1080 | 
+| Resolution | videoResolution | 1280 × 720 | 1920 × 1080 | 
 | Frame rate | videoFps | 10 FPS | 8 FPS |
 | Highest bitrate | videoBitrate| 1,600 Kbps | 2,000 Kbps |
 | Resolution adaption | enableAdjustRes | No | No |
@@ -167,8 +167,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 Connect to the receipt logic of the primary application in the following steps, so that the primary application can stay in `waiting` status before screen sharing starts in order to receive the screen sharing data from the `Broadcast Upload Extension` process at any time.
 1. Make sure that camera capture has been disabled in `TRTCCloud`; and if not, call [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) to disable it.
 2. Call the [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) method and pass in the `AppGroup` set in [step 1](#createGroup) to make the SDK enter the `waiting` status.
-3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS as shown below:
-![](https://main.qcloudimg.com/raw/4082c8bcc7f41328a17f7ede78577bd9.png)
+3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS.
 4. You can call the [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) API to stop screen sharing at any time.
  
 ```
@@ -197,7 +196,6 @@ Connect to the receipt logic of the primary application in the following steps, 
 <span id="launch"> </span>
 #### Step 4. Add a screen sharing triggering button (optional)
 Till [step 3](receive), the user needs to start screen sharing manually by pressing and holding the screen recording button in Control Center. You can implement the feature of triggering screen sharing simply by clicking a button like in VooV Meeting in the following steps:
-![](https://main.qcloudimg.com/raw/4a759043c613a558400cce8b539fd7d9.png)
 
 1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen) and add it to your project.
 2. Place a button on your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to wake up screen sharing.

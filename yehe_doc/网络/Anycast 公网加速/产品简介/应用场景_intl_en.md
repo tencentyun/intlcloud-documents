@@ -8,7 +8,7 @@ If high-quality and delay-free audio/video streaming is desired during live vide
 ![](https://main.qcloudimg.com/raw/db1ca84c4ae97b2365a1a3daa7b61b0d.png)
 
 ## Financial Service
-Financial services such as securities trading require very high real-time performance, and unstable public network transfer obviously cannot meet this requirement. After the access layer of financial applications is bound to an Anycast IP, data can be transferred over Tencent Cloud's private network to make these applications available in multiple regions. In addition, the AIA service also allows the same IP to be used in multiple regions, which simplifies IP-related approval work, such as application for ICP filing and registration with financial regulators.
+Financial services such as securities trading require very high real-time performance, and unstable public network transfer obviously cannot meet this requirement. After the access layer of financial applications is bound to an Anycast IP, data can be transferred over Tencent Cloud's private network to make these applications available in multiple regions. In addition, the AIA service also allows the same IP to be used in multiple regions, which simplifies IP-related approval work, such as application for ICP filing for services in Mainland China and registration with financial regulators.
 ![Scenario 3](https://main.qcloudimg.com/raw/dde74492ff3b59a9425262b76aba6c49.png)
 
 ## Security Service

@@ -97,7 +97,7 @@ The following describes some common errors that may occur when making requests u
 | Status Code                                 | Description                                                         |
 | -------------------------------------- | ------------------------------------------------------------ |
 | HTTP 409 Conflict | The endpoint record already exists, and forced overwrite is not specified in the request; OR the endpoint record does not exist, and forced overwrite is specified in the request |
-| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name without ICP filing in the Chinese mainland |
+| HTTP 451 Unavailable For Legal Reasons | The endpoint is a domain name served in Mainland China but without ICP filing|
 
 ## Querying a Custom Endpoint
 
@@ -164,4 +164,3 @@ QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
 <td>String</td>
 </tr>
 </tbody></table>
-

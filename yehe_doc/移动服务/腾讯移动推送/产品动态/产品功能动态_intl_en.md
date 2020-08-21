@@ -1,3 +1,68 @@
+## August 2020
+<table>
+<thead>
+    <tr>
+        <th width=20%>Update</th>
+        <th width=44%>Description</th>
+        <th width=16%>Release Date</th>
+        <th width=20%>Documentation</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>The <B>grouping and collapsing</B> feature is added</td>
+<td>The <B>grouping and collapsing</B> feature is added to control whether the notification is collapsed in the notification center and its collapsing methods</td>
+<td>August 11, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/37807">Message Collapsing</a></td>
+</tr>
+<tr>
+<td>The Android channel policy is optimized</td>
+<td>The custom policy for Android channel is optimized to allow you decide whether to firstly use the TPNS push</td>
+<td>August 11, 2020</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>New metrics are added on the <B>Data Overview</B> page</td>
+<td>New metrics are added on the console </B>Data Overview</B>, including opt-in devices and uninstalled/unavailable devices</td>
+<td>August 11, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/36384">Data Overview</td>
+</tr>
+</tbody></table>
+
+## July 2020
+
+<table>
+<thead>
+    <tr>
+        <th width=20%>Update</th>
+        <th width=44%>Description</th>
+        <th width=16%>Release Date</th>
+        <th width=20%>Document</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>The <B>device statistics</B> page is added</td>
+<td>The <B>device statistics</B> page is added in the console to help you stay on top of the distribution of all registered devices of the application in all dimensions and make informed operational decisions.</td>
+<td>July 30, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Rich media notification is upgraded</td>
+<td>The rich media notification feature is upgraded to support images in notifications for an improved click rate (for the Huawei and Mi channels).</td>
+<td>July 30, 2020</td>
+<td><a href="https://cloud.tencent.com/document/product/548/46964 ">Rich Media Notification</a></td>
+</tr>
+
+<tr>
+<td>The pay-as-you-go (postpaid) billing mode is added</td>
+<td>The daily pay-as-you-go billing mode is added, which is suitable for applications whose number of daily connected devices fluctuates greatly.</td>
+<td>July 1, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/36877">Pay-as-You-Go</a></td>
+</tr>
+</tbody></table>
+
 ## June 2020
 
 <table>
@@ -11,7 +76,7 @@
 </thead>
 <tbody><tr>
 <td>Bulletin board is added</td>
-<td>A bulletin board module is added on the **Product Management** page in the console to display notifications for product updates and services changes</td>
+<td>A bulletin board module is added on the <B>Product Management</B> page in the console to display notifications for product updates and services changes</td>
 <td>June 10, 2020</td>
 <td>-</td>
 </tr>

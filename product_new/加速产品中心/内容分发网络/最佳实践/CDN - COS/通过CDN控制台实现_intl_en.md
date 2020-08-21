@@ -14,7 +14,7 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Doma
 1. Enter the **domain name** to be accelerated.
 Wildcard domain names are supported, such as `*.test.com`. Up to 10 domain names can be connected in batches in one single operation.
 The domain name should meet the following conditions:
- - ICP filing for the domain name has been obtained from the MIIT
+ - ICP filing for services in Mainland China has been obtained from the MIIT for the domain name
  - The domain name has never been connected to Tencent Cloud CDN
 2. Select the **project** of the domain name.
 The project is shared by all Tencent Cloud products. You can add a project in [Project Management](https://console.cloud.tencent.com/project).

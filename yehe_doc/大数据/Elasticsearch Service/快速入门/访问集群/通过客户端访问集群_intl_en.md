@@ -33,9 +33,9 @@ The sample steps and code for accessing a cluster using the Java High Level REST
 ```
 
 > 
->- The client version should be compatible with the ES cluster version; otherwise, a compatibility issue may occur. The demo here is applicable to ES 6.4.3. For more information on how to use other versions, please see [here](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.4/java-rest-high.html).
-- The Java High Level Client is built on the Java Low Level Client, and both of them connect to an ES cluster using the HTTP protocol. The Java High Level Client provides more APIs with version upgrading. If the APIs currently provided by it cannot meet your needs, you can upgrade your ES cluster version and client version.  
-- The Transport Client that uses the TCP protocol to connect to an ES cluster is no longer updated, so you are recommended to use the Java High Level or Low Level Client that uses the HTTP protocol. For more information, please see [Migrating from Transport Client to Java High Level Client](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/5.6/java-rest-high-level-migration.html).
+>- The client version should be compatible with the ES cluster version; otherwise, a compatibility issue may occur. The demo here is applicable to ES 6.4.3. For more information on how to use other versions, please see [Java High Level REST Client](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/6.4/java-rest-high.html).
+- The Java High REST Client is built on the Java Low REST Client, and both of them connect to an ES cluster using the HTTP protocol. The Java High Level REST provides more APIs with version upgrading. If the APIs currently provided by it cannot meet your needs, you can upgrade your ES cluster version and client version.  
+- The Transport Client that uses the TCP protocol to connect to an ES cluster is no longer updated, so you are recommended to use the Java High Level or Low Level Client that uses the HTTP protocol. For more information, please see [Migrating from Transport Client to Java High REST Client](https://www.elastic.co/guide/en/elasticsearch/client/java-rest/5.6/java-rest-high-level-migration.html).
 
 ### Sample code
 ```

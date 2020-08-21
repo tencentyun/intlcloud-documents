@@ -17,9 +17,9 @@ On the **Add Domain Name** page, enter the acceleration domain name information 
 ![](https://main.qcloudimg.com/raw/23711a3ed5c1ffdcd908f6919ce13233.png)
 
 >
->- A newly added acceleration domain name for acceleration in/outside Mainland China should have an [ICP filing from MIIT](http://beian.miit.gov.cn/) or be connected to [Tencent Cloud ICP Filing Service](https://intl.cloud.tencent.com/product/icp?from=qcloudProductBa) and have not been connected to CDN or ECDN. A domain name connected to CDN needs to be deactivated and deleted before being connected to ECDN.
+>- A newly added acceleration domain name for acceleration in/outside Mainland China should have an [ICP filing from MIIT](http://beian.miit.gov.cn/)  and have not been connected to CDN or ECDN. A domain name connected to CDN needs to be deactivated and deleted before being connected to ECDN.
 >- You can manage domain names by project in the **Project** section. Here, a project is shared by all Tencent Cloud products. You can manage projects in [Project Management](https://console.cloud.tencent.com/project).
->- If the origin server type is **origin IP**, optimal route selection, weighted, and master/slave origin-pull policies are supported. For more information, please see configuration methods in [Advanced Origin-Pull Policies](https://intl.cloud.tencent.com/document/product/570/35821). 
+>- If the origin server type is **origin IP**, optimal route selection, weighted, and primary/secondary origin-pull policies are supported. For more information, please see configuration methods in [Advanced Origin-Pull Policies](https://intl.cloud.tencent.com/document/product/570/35821). 
 >- If the origin server type is **origin domain**, you can enter only one domain name, which must be different from the acceleration domain name. You can set the port in ```Host:Port``` format, and the port number should be between 1 and 65535.
 >- When you add a domain name, ECDN will display the default regular caching rules. You can modify or manage them in the rule list for customization for the domain name.
 
@@ -68,4 +68,3 @@ After setting the `hosts` file, you can access resources under the acceleration 
 ## Step 3. Configure the CNAME record of the domain name
 1. After verification with the `hosts` file is passed, you can forward requests to the domain name to the ECDN acceleration platform. You need to complete the CNAME configuration at your DNS service provider of the acceleration domain name. For more information on how to configure a CNAME record, please see [CNAME Record Configuration](https://intl.cloud.tencent.com/document/product/570/11134).
 2. Check whether the CNAME record of the domain name takes effect: the time it takes for a CNAME record to take effect varies by DNS service provider. You can also run the `ping` or `dig` command to check whether the CNAME record is in effect. If a domain name suffixed with ```.dsa.sp.spcdntip.com``` or ```.dsa.p23.tc.cdntip.com``` is returned, the CNAME record has taken effect.
-

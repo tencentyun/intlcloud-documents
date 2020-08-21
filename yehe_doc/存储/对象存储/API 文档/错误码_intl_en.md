@@ -13,11 +13,11 @@ HTTP status code: 3XX, 4XX, or 5XX. Please note that for the [PUT Object - Copy]
 ```xml
 <?xml version='1.0' encoding='utf-8' ?>
 <Error>
-	<Code>string</Code>
-	<Message>string</Message>
-	<Resource>string</Resource>
-	<RequestId>string</RequestId>
-	<TraceId>string</TraceId>
+ <Code>string</Code>
+ <Message>string</Message>
+ <Resource>string</Resource>
+ <RequestId>string</RequestId>
+ <TraceId>string</TraceId>
 </Error>
 ```
 
@@ -166,7 +166,7 @@ The nodes are detailed as follows:
 | 411 Length Required                 | MissingContentLength                  | Missing [Content-Length](https://intl.cloud.tencent.com/document/product/436/7728) request header                                |
 | 412 Precondition | PreconditionFailed | Precondition match failed  |
 | 416 Requested Range Not Satisfiable | InvalidRange | The requested object range is invalid  |
-| 451 Unavailable For Legal Reasons   | DomainAuditFailed                     | No ICP filing for the domain                                                   |
+| 451 Unavailable For Legal Reasons   | DomainAuditFailed                     | No ICP filing for the domain in  Mainland China                                                   |
 | 451 Unavailable For Legal Reasons   | UnavailableForLegalReasons            | Unavailable for legal reasons. For more information, [submit a ticket](https://console.cloud.tencent.com/workorder/category)                                             |
 
 **5XX errors**

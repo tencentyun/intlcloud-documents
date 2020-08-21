@@ -16,11 +16,11 @@ For detailed directions, please see [Domain Name Connection](https://intl.cloud.
 
 
 
-### Should I obtain an ICP filing for a domain name connected to ECDN?
+### Should I obtain an ICP filing for services in Mainland China for a domain name connected to ECDN?
 
 Whether the system checks the ICP filing status depends on your selected acceleration region:
 
-- If the acceleration region includes regions in Mainland China, according to applicable laws and regulations, your domain name must get an ICP filing before being connected.
+- If the acceleration region includes regions in Mainland China, according to applicable laws and regulations, an ICP filing for services in Mainland China should have been obtained from the MIIT for the domain name before connection.
 
 - If the acceleration region includes regions only outside Mainland China (including Hong Kong (China), Macao (China), and Taiwan (China)), your domain name does not need ICP filing.
 
@@ -88,7 +88,7 @@ No. ECDN currently does not support connecting wildcard domain names.
 
 
 
-<span id=""port""></span>
+<span id="port"></span>
 
 
 
@@ -113,6 +113,7 @@ They have the following differences when CDN or ECDN is used:
       <td>1–65535</td>
    </tr>
 </table>
+
 >
 >- After ECDN is activated, if the client request port is different from the service ports opened on the node, client access requests cannot be accelerated by the node. 
 >- You can specify the origin-pull port on a node on the ECDN domain management page.

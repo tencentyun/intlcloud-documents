@@ -7,18 +7,17 @@ In the TRTC SDK for Desktop Browser, the following terms are often used:
 The API call process of basic audio/video calls is as shown below:
 ![](https://main.qcloudimg.com/raw/9f246e5a88e5a8176290eb6070a0ecb6.jpg)
 
-
 ## Step 1. Create a Client object
 
 Create a [Client](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html) object through the [TRTC.createClient()](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.createClient) method. The parameter settings are as follows:
-- `mode`: TRTC call mode, which is set to `videoCall` here
+- `mode`: TRTC call mode, which is set to `rtc` here
 - `sdkAppId`: the `sdkAppId` you applied for from Tencent Cloud
 - `userId`: user ID
-- `userSig`: user signature, for more information, see [How to Generate Usersig](https://intl.cloud.tencent.com/document/product/647/35166)
+- `userSig`: user signature. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166)
 
 ```javascript
 const client = TRTC.createClient({
-  mode: 'videoCall',
+  mode: 'rtc',
   sdkAppId,
   userId,
   userSig
@@ -37,7 +36,7 @@ client
     console.error('Failed to enter the room' + error);
   })
   .then(() => {
-    console.log('Room successfully entered');
+    console.log('Entered room successfully');
   });
 ```
 
@@ -51,7 +50,7 @@ client
 
  ```javascript
 const localStream = TRTC.createStream({ userId, audio: true, video: true });
-```
+ ```
 
 2. Call [LocalStream.initialize()](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#initialize) to initialize the local audio/video stream.
 ```javascript
@@ -61,7 +60,7 @@ localStream
     console.error('Failed to initialize the local stream ' + error);
   })
   .then(() => {
-    console.log('Local stream successfully initialized');
+    console.log('Initialized local stream successfully');
   });
 ```
 
@@ -73,12 +72,12 @@ client
     console.error('Failed to publish the local stream ' + error);
   })
   .then(() => {
-    console.log('Local stream successfully published');
+    console.log('Published local stream successfully');
   });
 ```
 
 4. The remote stream is obtained by listening on the `client.on('stream-added')` event. After receiving this event, use [Client.subscribe()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#subscribe) to subscribe to a remote audio/video stream.
->Please register the `client.on('stream-added')` event before calling [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter the room, so that you won't miss the notifications for remote user's room entry.
+>?Please register the `client.on('stream-added')` event before calling [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter the room, so that you won't miss the notifications for remote user's room entry.
 >
 ```javascript
 client.on('stream-added', event => {
@@ -89,7 +88,7 @@ client.on('stream-added', event => {
 });
 client.on('stream-subscribed', event => {
   const remoteStream = event.stream;
-  console.log('Remote stream successfully subscribed to:' + remoteStream.getId());
+  console.log('Subscribed to remote stream successfully:' + remoteStream.getId());
   // Play back the remote stream
   remoteStream.play('remote_stream-' + remoteStream.getId());
 });
@@ -104,7 +103,7 @@ localStream
     console.error('Failed to initialize the local stream ' + error);
   })
   .then(() => {
-    console.log('Local stream successfully initialized');
+    console.log('Initialized local stream successfully');
     localStream.play('local_stream');
   });
 ```
@@ -112,7 +111,7 @@ localStream
 ```javascript
 client.on('stream-subscribed', event => {
   const remoteStream = event.stream;
-  console.log('Remote stream successfully subscribed to:' + remoteStream.getId());
+  console.log('Subscribed to remote stream successfully:' + remoteStream.getId());
   // Play back the remote stream
   remoteStream.play('remote_stream-' + remoteStream.getId());
 });
@@ -123,14 +122,13 @@ client.on('stream-subscribed', event => {
 Call the [Client.leave()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#leave) method to exit the audio/video call room when the call ends, and the entire audio/video call session will end.
 
 ```javascript
-client.leave().catch(error => {
-  console
-    .error(error => {
-      console.error('Failed to exit the room ' + error);
-      // This error is unrecoverable and the page needs to be refreshed.
-    })
-    .then(() => {
-      // Exited room successfully. `client.join` can be called again to enter the room again for a new call.
-    });
+client
+.leave()
+.then(() => {
+  // Exited room successfully. `client.join` can be called again to enter the room again for a new call.
+})
+.catch(error => {
+  console.error('Failed to exit the room ' + error);
+  // This error is unrecoverable and the page needs to be refreshed.
 });
 ```

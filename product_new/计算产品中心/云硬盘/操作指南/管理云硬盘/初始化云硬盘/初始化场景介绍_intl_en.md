@@ -1,4 +1,4 @@
-After a cloud disk is manually mounted, the cloud disk is used as the CVM’s data disk. The default status is offline. You must perform initialization operations such as formatting, partitioning and creating a file system. We recommend you select an initialization method according to your actual use cases:
+The cloud disks created through the console are manually mounted to your CVM and used as data disks in Online status by default. To use the disks, you need to initialize them first, including formatting, partitioning, and creating file systems. The initailization method varies by actual use scenario as shown below:
 - If the entire disk is presented as one independent partition (that is, there are not multiple logical disks such as D disk/vdb1 and E disk/vdb2), we strongly recommend you not use partitions, and directly create the file system on bare devices.
 - If the entire disk needs to be presented as multiple logical partitions (that is, there are multiple logical disks), you need to perform the partitioning first, then create the file system on a partition. 
 

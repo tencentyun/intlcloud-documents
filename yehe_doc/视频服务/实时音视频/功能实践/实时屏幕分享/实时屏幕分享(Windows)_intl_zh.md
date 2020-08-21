@@ -31,7 +31,7 @@ sourceInfoList 中每一个 sourceInfo 可以分享的目标，它由如下字�
 | 字段 | 类型 | 含义|
 |:-------:|:--------:| :---------------:|
 | type |TRTCScreenCaptureSourceType| 采集源类型，指定类型为窗口或屏幕|
-| sourceId | HWND| 采集源 ID<br>对于窗口，该字段指示窗口句柄；<br>对于屏幕，该字段指示屏幕 ID |
+| sourceId | HWND| 采集源 ID<li>对于窗口，该字段指示窗口句柄；<li>对于屏幕，该字段指示屏幕 ID |
 | sourceName| string | 窗口名字，如果是屏幕则返回 Screen0 Screen1... |
 | thumbWidth| int32 | 窗口缩略图宽度 | 
 | thumbHeight| int32 | 窗口缩略图高度 |
@@ -40,9 +40,6 @@ sourceInfoList 中每一个 sourceInfo 可以分享的目标，它由如下字�
 | iconHeight| int32 | 窗口图标的高度 |
 | iconBGRA | buffer | 窗口图标的二进制 buffer |
 
-根据上述信息，您可以实现一个简单的列表页面，将可以分享的目标罗列出来供用户选择，如下图：
-
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
 
 ## 选择分享目标
 TRTC SDK 支持三种分享模式，您可以通过 `selectScreenCaptureTarget` 来指定：

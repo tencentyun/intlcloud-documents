@@ -68,9 +68,7 @@ After the pod command is executed, a project file with the .xcworkspace extensio
 4. Click **Link Binary with Libraries** to expand it and then click the "+" icon at the bottom to add the dependent library.
 ![](https://main.qcloudimg.com/raw/17046154417930f9d31b6452782df55d.jpg)
 
-5. Add the downloaded SDK Framework and its required dependent library in sequence.
-    - `AudioUnit.framework` 
-    - `libc++.tbd`
+5. Add the downloaded SDK Framework and its required dependent library in sequence: `AudioUnit.framework`, `libc++.tbd` and `Accelerate.framework`。  
     
  Successful addition is as shown below:
 ![](https://main.qcloudimg.com/raw/7bddb832347a971f3e69238480fa3e8d.jpg)

@@ -8,7 +8,7 @@ Once your domain name is connected to LVB, the system will automatically assign 
 - If the CNAME configuration fails to take effect after a prolonged time, please see [CNAME Configuration Troubleshooting](https://intl.cloud.tencent.com/document/product/267/32478).
 
 ## Prerequisites
-- You have applied for a domain name through [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns) and obtained ICP filing for it.
+- You have applied for a domain name through [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns) and obtained ICP filing for its service in Mainland China.
 - You have successfully [added a domain name](https://intl.cloud.tencent.com/document/product/267/35970) in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the LVB Console, and the CNAME address status of the domain name is ![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png) (CNAME not configured).
 
 

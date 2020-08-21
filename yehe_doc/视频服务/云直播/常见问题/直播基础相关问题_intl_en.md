@@ -2,11 +2,11 @@
 ### What are the differences between push, LVB, and VOD?
 - **Push**: this refers to the process in which the host pushes local video and audio sources to Tencent Video Cloud servers. It is also known as "RTMP publishing" in some cases.
 - **LVB**: LVB video source is generated in real time. It is only meaningful if someone pushes a live stream. Once the host stops streaming, the LVB URL will become invalid, and since the live streams are played back in real time, no progress bar will be displayed on the player during the playback.   
-- **VOD**: a video source in VOD is a file in the cloud, which can be played back at any time as long as it is not deleted by the provider (such as Tencent Video). Since the entire video file is stored on the server, a progress bar will be displayed during the playback.
+- **VOD**: a video source in VOD is a file in the cloud, which can be played back at any time as long as it is not deleted by the provider (such as Youku Tudou, iQIYI, and Tencent Video). Since the entire video file is stored on the server, a progress bar will be displayed during the playback.
 
 <span id="Que2"></span>
 ### What are the requirements for a playback domain name in LVB?	
-You need to apply for an ICP filing for your domain name before submitting it to the console for management. The domain name can be up to 29 bits in length and cannot contain uppercase letters. For more information, please see [Domain Name Management](https://cloud.tencent.com/document/product/267/20381).
+You need to apply for an ICP filing for your domain name for service in Mainland China before submitting it to the console for management. The domain name can contain up to 29-bit characters and cannot contain uppercase letters.
 
 <span id="Que3"></span>
 ### Can the playback and push domain names in LVB be the same? Can I use second-level domain names for them?
@@ -45,17 +45,20 @@ https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txT
 RTMP playback protocol: **rtmp://**.
 HTTP-FLV playback protocol: **http://** or **https://**.
 HLS playback protocol: **http://** or **https://**.
+
 - **Application name (`AppName`)**
 Application name refers to the storage path of a live streaming media file. By default, LVB assigns a unified path: **live**.
+
 - <span id="streamname">**Stream name (`StreamName`)**</span>
 Stream name (`StreamName`) is the unique identifier of a live stream.
+
 - **Authentication parameter and other custom parameters**
 Authentication parameter: **txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)**.
 
 
 <span id="Que7"></span>
 ### What are common push methods?
-- **Camera on Android/iOS devices**: use third-party software or [MLVB SDK](https://cloud.tencent.com/product/mlvb) to capture camera video and push the video stream to the push address.
+- **Camera on Android/iOS devices**: use third-party software or MLVB SDK to capture camera video and push the video stream to the push address.
 - **Camera or screencapturing tool on desktops/laptops**: use third-party software to capture camera video or screen and push the video or screen content to the push address. Third-party push applications include [OBS (recommended)](https://intl.cloud.tencent.com/document/product/267/31569), XSplit, FMLE, etc.
 - **Video capturing device**: if an HD camcorder has an HDMI or SDI output interface, it can be connected to an encoder to push live content to LVB through RTMP push. You need to configure the push address as the RTMP publishing address of the encoder.
 For a webcam, if it supports RTMP push, you can configure the LVB push address as its RTMP publishing address.

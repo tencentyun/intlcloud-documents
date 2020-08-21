@@ -9,14 +9,14 @@ You can quickly create a server group on the CLS Console as instructed below:
 3. Select the region of your CLS, e.g. Guangzhou, and then click **Create Server Group**.
 4. Select either [server IP address](#.E6.9C.BA.E5.99.A8-ip-.E9.85.8D.E7.BD.AE.E6.9C.BA.E5.99.A8.E7.BB.84) or [server ID](#.E6.9C.BA.E5.99.A8.E6.A0.87.E8.AF.86.E9.85.8D.E7.BD.AE.E6.9C.BA.E5.99.A8.E7.BB.84) to configure the server group.  
 
-#### Configuring the server group by server IP address
+### Configuring the server group by server IP address
 Enter the server group name and the server IP address, and click **OK** after confirmation to complete the creation of the server group.
 
 > !
 > - Enter one IP in a line. Windows system is not supported.
 > - If you are using Tencent Cloud servers in the same region, you can enter private IPs directly, with one IP per line.
 
-#### Configuring the server group by server ID
+### Configuring the server group by server ID
 If you choose server IP address to configure a server group, you have to modify the configuration each time when one server IP address changes, which is annoying. However, CLS supports dynamically configuring the server group by server ID. You only need to fill in the server ID in the configuration information of Loglistener, and CLS can identify and automatically add the server to the server group.
 > !
 > - This feature is only supported by Loglistener 2.3 and later versions. If you use an earlier version, see [installation guide](https://intl.cloud.tencent.com/document/product/614/17414) to manually update it.

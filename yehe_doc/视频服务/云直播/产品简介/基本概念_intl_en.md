@@ -6,10 +6,10 @@
  The pull (LVB playback) video source is generated in real time. It is only meaningful if someone pushes a live stream. Once the host stops streaming, the LVB URL will become invalid, and since the live streams are played back in real time, no progress bar will be displayed on the player during the playback. 
 <span id="push_domain"></span>
 ### Push Domain Name
-It refers to the domain name used to push live streams, which is required. It must be registered and get an ICP filing before you can use the LVB service. After a push domain name is configured, LVB will generate the corresponding push address.
+It refers to the domain name used to push live streams, which is required. It must be registered and get an ICP filing for service in Mainland China before you can use the LVB service. After a push domain name is configured, LVB will generate the corresponding push address.
 <span id="play_domain"></span>
 ### Playback Domain Name
-It refers to the domain name used to play back live streams, which is required. It must be registered and get an ICP filing before you can use the LVB service. After a playback domain name is configured, LVB will generate the corresponding playback address.
+It refers to the domain name used to play back live streams, which is required. It must be registered and get an ICP filing for service in Mainland China before you can use the LVB service. After a playback domain name is configured, LVB will generate the corresponding playback address.
 <span id="cname"></span>
 ### Domain Name CNAME
 A CNAME domain name is a domain name suffixed with `.liveplay.myqcloud.com` that is assigned by the system to the connected acceleration domain name configured in the LVB Console. You need to configure a CNAME record at your domain name service provider. After the record takes effect, LVB will take care of domain name resolution, and all requests made to this domain name will be forwarded to the edge servers of LVB.
@@ -59,5 +59,3 @@ You can capture screenshots of videos in a pushed live stream at a fixed interva
  <span id="yellow_confidence"></span>
 ### Porn Detection
 Based on the screencapturing feature, the system can identify whether a host are presenting non-compliant live content in LVB push based on the screencapturing and porn detection template associated with the push domain name. For more information, please see [Screencapturing and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31072).
-
- 

@@ -214,11 +214,13 @@ Height_pixel = 192 * 240 / 320 = 144
 ### 使用方法概述
 添加水印可以通过两种方式来实现，一种是通过 [云直播控制台](#W_control) 来实现，另一种是通过 [服务端 API](#W_api) 来实现。根据您的业务需求选择对应的使用方式。
 
-#### 直播控制台<span id="W_control"></span>
+<span id="W_control"></span>
+
+#### 直播控制台
 1. 进入【功能模板】>【[水印配置](https://console.cloud.tencent.com/live/config/watermark)】添加水印配置模板，设置水印相关参数，并生成一个对应的水印模板 ID。具体操作请参见 [水印模板配置](https://intl.cloud.tencent.com/zh/document/product/267/31073)。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)对您需操作的推流域名，单击【管理】>【模板配置】，将此域名与水印模板进行关联。具体操作请参见 [水印配置](https://intl.cloud.tencent.com/document/product/267/31064)。
-
-#### API 调用<span id="W_api"></span>
+<span id="W_api"></span>
+#### API 调用
 1 调用  [AddLiveWatermark](https://intl.cloud.tencent.com/document/product/267/30826) 添加水印接口，设置水印的名称和参数信息。
 2 调用 [CreateLiveWatermarkRule](https://intl.cloud.tencent.com/document/product/267/30825) 创建水印规则，设置参数推流域名 DomainName 和 WatermarkId（第1步返回），AppName 与推流和播放地址中的 AppName 保持一致，默认为 `live`。
 
@@ -231,13 +233,13 @@ Height_pixel = 192 * 240 / 320 = 144
 ### 使用方法概述
 
 设置转码参数可以通过两种方式来实现，一种是通过 [云直播控制台](#T_control) 来实现，另一种是通过 [服务端 API](#T_api) 来实现。不管使用哪一种方式，主要涉及水印模板、转码模板、转码规则的相关操作。
-
-#### 直播控制台<span id="T_control"></span>
+<span id="T_control"></span>
+#### 直播控制台
 1. 进入【功能模板】>【[转码配置](https://console.cloud.tencent.com/live/config/transcode)】添加转码配置模板，支持添加 [普通转码](https://intl.cloud.tencent.com/zh/document/product/267/31073)、[极速高清转码](https://intl.cloud.tencent.com/zh/document/product/267/31073) 模板。
 2. 根据您的需求创建对应的转码类型，设置转码相关参数。也可以使用我们系统默认的参数，并生成一个对应的转码模板 ID。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的拉流域名，单击【管理】>【模板配置】，将此域名与转码模板进行关联。具体操作请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
-
-#### API 调用<span id="T_api"></span>
+<span id="T_api"></span>
+#### API 调用
 
 1. 调用 [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790) 创建转码模板接口，设置您需要的转码类型参数信息。
 2. 调用 [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) 创建转码规则，设置参数拉流域名 DomainName 和 TemplateId（第1步返回）。在 AppName 及 StreamName 填写空字符串，表示通配此域名下所有拉流的转码。您还可以将转码模板与不同流名称进行关联，以此实现部分直播流开启转码的效果。

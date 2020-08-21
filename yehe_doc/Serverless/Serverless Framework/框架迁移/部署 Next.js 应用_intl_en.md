@@ -119,7 +119,7 @@ The Next.js component will use the following Serverless services in your Tencent
 - **SCF**: it will carry the Next.js application.
 - **CAM**: this component will create a default CAM role for authorizing access to associated resources.
 - **COS**: to ensure the upload speed and quality, when the function is compressed and the code is uploaded, the code package will be stored in a specifically named COS bucket by default.
-- **SSL Certificates Service**: if you configure the `domain` field in the YAML file, you will need to bind a custom domain name and enable HTTPS; therefore, you will also need to use the certificate management service and domain name service. Serverless Framework will automatically apply for and configure an SSL certificate based on the domain name with ICP filing.
+- **SSL Certificates Service**: if you configure the `domain` field in the YAML file, you will need to bind a custom domain name and enable HTTPS; therefore, you will also need to use the certificate management service and domain name service. Serverless Framework will automatically apply for and configure an SSL certificate based on the domain name with ICP filing (required for Mainland China service).
 
 ### More components
 You can view more component information in the repository of [Serverless Components](https://github.com/serverless/components).
@@ -127,4 +127,3 @@ You can view more component information in the repository of [Serverless Compone
 ### FAQs
 **Why is an entry file no longer needed?**
 In the previous version, to use this component, you need to add an `sls.js` file in the project root directory. In the current version, this is taken care of by the component, so you do not need to deal with it separately. For more information, please see the [GitHub documentation](https://github.com/serverless-components/tencent-nextjs/issues/1).
-

@@ -13,7 +13,7 @@ If the template content is short, has unclear definition, or has too many variab
 For example, if the template content is `Your verification code is {1}. Please enter it in {2} minutes. If you did not make this request, please contact the customer service at {3}.`, you can enter "Your verification code is 123456. Please enter it 5 minutes. If you did not make this request, please contact the customer service at XXXX." as the template remarks.
 
 ### Can I directly enter a link as a template parameter?
-You cannot enter links (including short links) as a template variable parameter. If required, you are recommended to directly use a URL with ICP filing as a constant in the SMS template and use it after the template is approved.
+You cannot enter links (including short links) as a template variable parameter. If required, you are recommended to directly use a URL that has already obtained ICP filing as a constant in the SMS template and use it after the template is approved.
 
 <span id="Q6"></span>
 ### Is there a limit on the number of SMS templates?
@@ -49,5 +49,3 @@ Variable content (such as name, date, and verification code) in an SMS template 
 
 ### My SMS body template did not pass the review, and I was prompted to add "Reply "TD" to unsubscribe". Why did this happen?
 A body template for marketing SMS messages must contain the unsubscription method so as to allow recipients to reply "TD", "T", or "N" to unsubscribe; otherwise, the messages may be blocked by ISPs.
-
-
