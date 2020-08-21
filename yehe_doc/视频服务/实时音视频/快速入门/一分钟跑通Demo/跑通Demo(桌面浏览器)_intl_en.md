@@ -52,7 +52,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/1732ea2401af6111b41259a78b5330a4.png">
+	<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
