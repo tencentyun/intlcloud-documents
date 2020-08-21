@@ -2,7 +2,7 @@ International Console Voucher
 
 A voucher is a coupon for fee deduction. You can log in to the Tencent Cloud console and go to **Billing Center** > **Voucher** to view the vouchers under your account. Vouchers cannot be withdrawn, transferred, or invoiced.
 
-##　Voucher Use Limits
+## Voucher Use Limits
 
 1. Voucher status
 
@@ -28,12 +28,14 @@ Only the account creator and collaborators or sub-users with finance management 
 Vouchers cannot be used in the following cases: account arrears, frozen fees for pay-as-you-go service activation, certain promotional campaigns (subject to specific campaign rules), and pay-on-behalf orders.
 
 An unused voucher is used as an example below to demonstrate use limits. It can be used only if your order meets the following conditions:
+![](https://main.qcloudimg.com/raw/4b722364f2ec226ae87107d56abdfa77.png)
 
+![](https://main.qcloudimg.com/raw/0094d41e669546a8a63c89b0efd051db.png)
 
 Unused: the voucher is unused or has a positive balance.
 Payment scenarios: the voucher can be used for fee deduction only for pay-as-you-go services.
-Amount threshold: the voucher can be used as long as the order amount is above 0. 
-Validity period: the voucher is valid between 00:00:00, July 20, 2020 and 23:59:59, August 19, 2020.
+
+Validity period: the voucher is valid from August 21, 2020 00:00:00 to September 20, 2020 23:59:59.
 
 ## Using Vouchers 
 
@@ -91,12 +93,3 @@ Voucher D (face value: 20 USD; balance: 12 USD; expiration date: March 11, 2019;
 
 The system will use voucher A for deduction first, as it has the smallest balance among the vouchers with the same expiration date and deductible amount.
 
-Deduction apportionment rules
-
-If a voucher is used for multiple resources at the same time, but its available balance is smaller than the amount payable, the deductible amount of the voucher will be apportioned according to the following rules:
-
-Pay-as-you-go
-
-In the same settlement cycle, the system will apportion the deductible amount of the voucher based on the order amount ratio. 
-
-Example: Tom has two orders in the same settlement cycle. Order A's amount is 100 USD, and order B's amount is 200 USD, but the voucher balance is only 90 USD. Then, 30 USD will be deducted for order A from the voucher, 60 USD for order B, and the remainder will be deducted from the account balance.
