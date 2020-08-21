@@ -124,7 +124,7 @@ You can enable debugging by running the `serverless dev` command in the director
 
 `serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
 
-Currently, in addition to real-time log output, for Node.js applications, cloud debugging is also supported. After the `serverless dev` command is started, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging mode ends, you need to deploy the function again to update the code and set the timeout period back to the original value. For more information, please see [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/1040/36860).
+Currently, in addition to real-time log output, for Node.js applications, cloud debugging is also supported. After the `serverless dev` command is started, it will automatically listen on the remote port and set the function timeout period to 900 seconds temporarily. At this point, you can find the remote debugging path by accessing `chrome://inspect/#devices` and directly debug the code with breakpoints. After the debugging mode ends, you need to deploy the function again to update the code and set the timeout period back to the original value. 
 
 #### 6. Check status
 
@@ -151,7 +151,7 @@ The Express component will use the following Serverless services in your Tencent
 - **SCF**: it will carry the Express.js application.
 - **CAM**: this component will create a default CAM role for authorizing access to associated resources.
 - **COS**: to ensure the upload speed and quality, when the function is compressed and the code is uploaded, the code package will be stored in a specifically named COS bucket by default.
-- **SSL Certificates Service**: if you configure the `domain` field in the YAML file, you will need to bind a custom domain name and enable HTTPS; therefore, you will also need to use the certificate management service and domain name service. Serverless Framework will automatically apply for and configure an SSL certificate based on the domain name with ICP filing.
+- **SSL Certificates Service**: if you configure the `domain` field in the YAML file, you will need to bind a custom domain name and enable HTTPS; therefore, you will also need to use the certificate management service and domain name service. Serverless Framework will automatically apply for and configure an SSL certificate based on the domain name. If the domain name is used for Mainland China service, ICP filing is required.
 
 ## Account Configuration
 
