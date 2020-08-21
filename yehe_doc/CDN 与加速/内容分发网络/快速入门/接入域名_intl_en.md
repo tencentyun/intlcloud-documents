@@ -35,7 +35,7 @@ Configure business origin server information. If the CDN node has no resource ca
 
 | Configuration | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Origin type | External: select this if you already have your own stable business server (i.e., origin server). <br/><a href = ""https://intl.cloud.tencent.com/product/cos"">COS origin</a>: if resources have already been stored in COS, the bucket can be directly selected as the origin server. |
+| Origin type | External: select this if you already have your own stable business server (i.e., origin server). <br/><a href = "https://intl.cloud.tencent.com/product/cos">COS origin</a>: if resources have already been stored in COS, the bucket can be directly selected as the origin server. |
 | Origin address | External origin server: <br/>1. Multiple IPs can be configured as the origin server, which will be polled during origin-pull. <br/>2. If multiple IPs are used, you can configure weighted origin-pull in the format of `IP:port:weight(1 - 100)`. The port can be omitted and the format becomes `IP::weight`. <br/>3. You can configure one domain name as the origin server, which should be different from the business acceleration domain name. <br/><br/>COS: <br/>1. Select from the drop-down list the bucket to be configured as the origin server. <br/>2. If the bucket is private read/write, first grant CDN access to the bucket. Otherwise, origin-pull will fail. |
 | Origin-pull protocol | This can be selected based on the protocols supported by the origin server: <br/>HTTP: HTTP/HTTPS access requests use HTTP origin-pull. <br/>HTTPS: HTTP/HTTPS access requests use HTTPS origin-pull (the origin server must support HTTPS access). <br/>Follow protocol: HTTP access requests use HTTP origin-pull, while HTTPS access requests use HTTPS origin-pull (the origin server must support HTTPS access). |
 | Origin domain | This refers to the site domain name accessed on the origin server by a CDN node during origin-pull. <br/>If a subdomain name is configured, it will be the same as the acceleration domain name by default and can be customized. <br/>If a wildcard domain name is configured, it will be the actual access subdomain name by default and can be customized. |
@@ -48,7 +48,7 @@ Configure the node acceleration service:
 
 | Configuration | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Basic configuration | A node caches resources by following the `Key-Value` mapping, where `Key` is the resource URL. <br/>If ""Ignore Query String"" is enabled, parameters after ""?"" in the URL will be ignored before mapping. <br/>Otherwise, `Key` will be a complete resource URL. <br/>By default, this feature is enabled for download and streaming VOD acceleration, but not for static acceleration. |
+| Basic configuration | A node caches resources by following the `Key-Value` mapping, where `Key` is the resource URL. <br/>If "Ignore Query String" is enabled, parameters after "?" in the URL will be ignored before mapping. <br/>Otherwise, `Key` will be a complete resource URL. <br/>By default, this feature is enabled for download and streaming VOD acceleration, but not for static acceleration. |
 | Enable Range GETs | This specifies whether to process partial requests during origin-pull. It can be enabled only if the origin server supports Range GETs. <br/>This feature is enabled for COS origin server by default. |
 | Cache configuration | This specifies the expiration period of the node cache, which is 30 days for all files by default. <br/>The configured expiration period is an estimate. The actual expiration period may be shorter depending on the available storage capacity of the node. |
 
@@ -59,10 +59,10 @@ Click **Submit** to add the domain name and wait for the domain name configurati
 
 > When the distribution is completed, CDN will allocate a corresponding CNAME address to you, which needs to be configured before taking effect. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 
-<span ID =""m1""></span>
+<span ID ="m1"></span>
 ## Domain Name Ownership Verification
 If the domain name is a wildcard one or has been connected to by another user, you need to verify ownership before accessing or retrieving it. DNS verification is used. The verification steps are as follows:
 
 1. Click **Verification Method** to get the resolution record information to be added for DNS verification. Do not close this page before verification is completed.
-2. At your DNS service provider, add a TXT record and enter `_cdnauth` as its host record and the record value randomly generated on the ""Verification Method"" page as its record value.
-3. Wait for TXT resolution to take effect and click **Verify**. If ""Verification failed"" is displayed, wait for the DNS record to take effect before trying again and check whether the TXT record has been entered correctly.
+2. At your DNS service provider, add a TXT record and enter `_cdnauth` as its host record and the record value randomly generated on the "Verification Method" page as its record value.
+3. Wait for TXT resolution to take effect and click **Verify**. If "Verification failed" is displayed, wait for the DNS record to take effect before trying again and check whether the TXT record has been entered correctly.
