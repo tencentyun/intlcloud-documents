@@ -63,7 +63,7 @@ Yes. The following are the requirements for connecting a domain name to CDN:
 4. If the domain name is a wildcard one or has been connected by another user, you need to [verify your ownership](https://intl.cloud.tencent.com/document/product/228/5734#m1) before connecting or retrieving it.
 
 ### My domain name has already obtained an ICP filing from the MIIT. Why does the system prompt that it does not have an ICP filing when I try to connect it to CDN?
-After you obtain your ICP filing, it takes some time to sync the information from the MIIT to Tencent Cloud CDN. Please wait 24 hours and try again.
+After you obtain your ICP filing, it takes some time to sync the information from the MIIT to Tencent Cloud CDN. Please wait for 24 hours and try again.
 
 ### Can I configure ports for acceleration domain names/origin servers?
 - CDN acceleration domain name port: currently, CDN acceleration ports can only be 80, 443, and 8080 by default.
