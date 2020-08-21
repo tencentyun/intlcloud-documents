@@ -14,7 +14,7 @@ This article uses the following software:
 
 ##  Prerequisites
 You should have a Linux CVM. If you have not purchased one yet, see [Getting Started with Linux CVMs](http://intl.cloud.tencent.com/document/product/213/2936).
-- A domain name that points to your CVM and already completed ICP filing.
+- A domain name that points to your CVM. If the domain name is used for Mainland China service, ICP filing is required.
 
 
 
@@ -145,6 +145,3 @@ If you encounter a problem when using CVM, refer to the following documents for 
 - For issues regarding CVM login, see [Password Login and SSH Key Login](https://intl.cloud.tencent.com/document/product/213/18120) and [Login and Remote Access](https://intl.cloud.tencent.com/document/product/213/17278).
 - For issues regarding the CVM network, see [IP Addresses](https://intl.cloud.tencent.com/document/product/213/17285) and [Ports and Security Groups](https://intl.cloud.tencent.com/document/product/213/2502).
 - For issues regarding CVM disks, see [System and Data Disks](https://intl.cloud.tencent.com/document/product/213/17351).
-
- 
- 
