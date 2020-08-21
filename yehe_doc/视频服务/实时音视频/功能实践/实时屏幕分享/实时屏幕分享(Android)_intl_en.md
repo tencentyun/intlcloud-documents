@@ -18,7 +18,7 @@ By setting the first parameter `encParams` in [startScreenCapture()](http://doc.
 
 | Parameter Item | Parameter Name | Common Recommended Value | Recommended Value for Text-based Teaching |
 |---------|---------|---------|-----|
-| Resolution | videoResolution | 1280x720 | 1920x1080 |
+| Resolution | videoResolution |  1280 × 720 | 1920 × 1080 |
 | Frame rate | videoFps | 10 FPS | 8 FPS |
 | Highest bitrate | videoBitrate| 1,600 Kbps | 2,000 Kbps |
 | Resolution adaption | enableAdjustRes | No | No |
