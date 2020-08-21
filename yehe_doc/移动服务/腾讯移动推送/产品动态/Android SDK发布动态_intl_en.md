@@ -1,3 +1,49 @@
+## July 2020
+
+<table>
+<tr>
+   <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+    <tr>
+        <td>The SDK 1.2.0.3 is released</td>
+       <td>The known issue is fixed</td>
+        <td>July 30, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Downloading SDK</a></td>
+    </tr>
+<tr>   
+        <td>Released SDK 1.2.0.2</td>
+       <td>Optimized internal logic</td>
+        <td>2020-07-01</td>
+        <td>-</td>
+    </tr>
+</table>
+
+## June 2020
+
+<table>
+<tr>
+    <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+   <tr>
+       <td>Released SDK 1.2.0.1</td>
+       <td><li>Supported notification click event statistics for vendor channels</li> <li> Enriched notification custom styles</li> <li>Upgraded OPPO Push SDK V2.1.0</li> </td>
+        <td>2020-06-23</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Download SDK</a></td>
+    </tr>
+        <td>Released SDK 1.1.6.3</td>
+        <td>Third-party vendor channel integration optimization</td>
+        <td>2020-06-04</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+    </tr>
+</table>
+
+
 ## April 2020
 
 <table>
@@ -21,7 +67,7 @@
     </tr>
     <tr>
         <td>The SDK v1.1.5.5 is released</td>
-        <td><li>The issue where DCL violation occurred when an application was released in Google Play is fixed</li><li>Beacon will no longer be used to get QIMEI information.</li></td>
+        <td><li>The issue where DCL violation occurred when an application was released in Google Play is fixed</li></td>
         <td>April 2, 2020</td>
         <td>-</a></td>
     </tr>
