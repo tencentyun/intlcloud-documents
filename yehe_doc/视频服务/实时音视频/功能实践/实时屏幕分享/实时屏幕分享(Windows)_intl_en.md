@@ -31,7 +31,7 @@ Each `sourceInfo` in `sourceInfoList` can be a sharing target and is described b
 | Field | Type | Description |
 |:-------:|:--------:| :---------------:|
 | type |TRTCScreenCaptureSourceType| Capture source type, which can be specified as window or screen |
-| sourceId | HWND| Capture source ID. <br>For a window, this field indicates a window handle; <br>for a screen, this field indicates a screen ID |
+| sourceId | HWND| Capture source ID. <li>For a window, this field indicates a window handle; <li>for a screen, this field indicates a screen ID |
 | sourceName| string | Window name. For screens, Screen0, Screen1, and so on will be returned |
 | thumbWidth| int32 | Window thumbnail width | 
 | thumbHeight| int32 | Window thumbnail height |
@@ -40,9 +40,6 @@ Each `sourceInfo` in `sourceInfoList` can be a sharing target and is described b
 | iconHeight| int32 | Window icon height |
 | iconBGRA | buffer | Window icon binary buffer |
 
-Based on the information above, you can implement a simple list page to list the sharable targets for users to choose from as shown below:
-
-![](https://main.qcloudimg.com/raw/e370bcac46cc9ab5eb75e34378664d97.jpg)
 
 ## Selecting Sharing Target
 TRTC SDK supports three sharing modes, which can be specified with `selectScreenCaptureTarget`.
