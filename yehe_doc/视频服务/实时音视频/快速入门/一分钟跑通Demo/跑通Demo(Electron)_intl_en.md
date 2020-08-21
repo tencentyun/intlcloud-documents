@@ -82,15 +82,15 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 #### Windows
 
-1. Install the latest version of Node.js. We recommend you choose a 64-bit .msi file. [Node.js download address](https://nodejs.org/en/download/)
+1. Install the latest version of Node.js. We recommend you choose a 64-bit `.msi` file. [Node.js download address](https://nodejs.org/en/download/)
 
-2. Press the Windows key + R and enter `cmd` to open the command line window as administrator, locate the [project directory](#projectFolder), and run the following command.
+2. Press the `win + r` and enter `cmd` to open the command line window as administrator, locate the [project directory](#projectFolder), and run the following command.
 	
-    ```shell
-    $ npm install
-    ```
+```shell
+$ npm install
+```
 	
-    ![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
+![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
 
 
 3. After the npm dependent libraries are all installed, run the following command in the command line window to run the demo.
@@ -153,7 +153,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 Starting from TRTC SDK 6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166).
 
-Upgrade operation:
+**Upgrade operation:**
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
