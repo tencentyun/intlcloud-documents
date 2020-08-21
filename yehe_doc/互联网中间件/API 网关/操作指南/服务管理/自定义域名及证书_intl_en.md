@@ -3,7 +3,7 @@ The domain name binding feature allows you to bind your own domain name to a ser
 
 ## Prerequisites
 - Please ensure that the domain name to be bound has been configured for resolution.
-- Please ensure that an [ICP filing](https://intl.cloud.tencent.com/document/product/1022/34607) has been obtained for your domain name as required.
+- Please ensure that an [ICP filing](https://intl.cloud.tencent.com/document/product/1022/34607) has been obtained for your domain name service in Mainland China as required.
 
 ## Directions
 
@@ -28,7 +28,3 @@ The domain name binding feature allows you to bind your own domain name to a ser
  >When a custom path mapping is used, the default path mapping (i.e., `custom domain name/environment name`) will not take effect.
 Both the custom path mapping and default path mapping can be modified after configuration.
 3. Click **Submit** to complete the configuration..
-
-
-
-
