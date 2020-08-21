@@ -1,23 +1,25 @@
 ## Demo
 <table style="text-align:center;vertical-align:middle;width: 300px">
   <tr>
-    <th width="150px">macOS</th>
+    <th width="150px">Mac OS</th>
     <th width="150px">Windows</th>
   </tr>
   <tr>
-    <td><a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg"><img width="125px" height="125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
-    <td><a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe"><img width="125px" height="125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
+<td>
+		<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg" >
+		<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
+</span></a></td>
+<td>
+<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe">
+<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
+</span></a></td>
   </tr>
 </table>
 
 
+
 ## Effect Demo
 You can download and install the demo to experience the capabilities and effect of the real-time interactive teaching feature, such as teaching modes (audio, video, and screen sharing, etc.) and interactions (Q&A, raise hand, invite, end, etc.).
-
-- Teacher client
- ![](https://main.qcloudimg.com/raw/35d33cb6003bd3575ee6bbfb0cbe6450.png)
-- Student client
- ![](https://main.qcloudimg.com/raw/30e62d5c96c1ba31fc24c113ecfdb395.png)
 
 To quickly implement real-time interactive teaching, you can directly modify the demo provided by TRTC for adaptation or use the provided [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) component and implement custom UI.
 
@@ -39,7 +41,7 @@ To quickly implement real-time interactive teaching, you can directly modify the
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
   <ul style="margin:0;"><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-  <img src="https://main.qcloudimg.com/raw/1732ea2401af6111b41259a78b5330a4.png">
+  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
