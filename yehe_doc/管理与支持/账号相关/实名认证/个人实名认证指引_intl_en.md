@@ -2,7 +2,7 @@
 This document describes how to verify individual identity for your Tencent Cloud account. After successful verification, the account and the Tencent Cloud resources under it will belong to you. You will be able to purchase or manage resources for individual businesses. However, you cannot purchase or use resources designated for organization businesses or apply for VAT invoices for them.
 >One passport/driver's license number can be used to verify the identity of up to three Tencent Cloud accounts.
 >
->If your resources are in the Chinese mainland, and you want to apply for ICP filing in the future, please make sure that the name in identity verification is the same as that of the ICP filing entity; otherwise, ICP filing application will fail.
+>If your resources are in the Mainland China, and you want to apply for ICP filing for service in Mainland China in the future, please make sure that the name in identity verification is the same as that of the ICP filing entity; otherwise, ICP filing application will fail.
 
 The following describes how to verify your individual identity in detail.
 
@@ -19,7 +19,7 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 
 
 
-2. Select "Individual Verification" and click **Verify Now**.
+2. Select ""Individual Verification"" and click **Verify Now**.
    ![image-20200701171147604](https://main.qcloudimg.com/raw/f23b527a964b770a45da7a32e8ba40f9.png)
 
 
