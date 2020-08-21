@@ -11,7 +11,7 @@
 <tbody>
 <tr>
 <td>The <B>grouping and collapsing</B> feature is added</td>
-<td>The "<B>grouping and collapsing</B>" feature is added to control whether the notification is collapsed in the notification center and its collapsing methods</td>
+<td>The <B>grouping and collapsing</B> feature is added to control whether the notification is collapsed in the notification center and its collapsing methods</td>
 <td>August 11, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1024/37807">Message Collapsing</a></td>
 </tr>
@@ -76,7 +76,7 @@
 </thead>
 <tbody><tr>
 <td>Bulletin board is added</td>
-<td>A bulletin board module is added on the </B>Product Management</B> page in the console to display notifications for product updates and services changes</td>
+<td>A bulletin board module is added on the <B>Product Management</B> page in the console to display notifications for product updates and services changes</td>
 <td>June 10, 2020</td>
 <td>-</td>
 </tr>
