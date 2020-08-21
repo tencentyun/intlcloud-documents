@@ -23,10 +23,10 @@ A room is an audio/video space where users can receive each other's real-time au
 - A user can be in only one room at any time point and can enter another room only after exiting the current room.
 
 >!
-- The first user who enters a room will be the room owner, but this user cannot dismiss the room actively.
-- After all users actively exit the current room, it will be immediately dismissed on the backend.
-- If a user in the room is disconnected exceptionally, the server will remove this user from the room after 30 seconds. If all users in the room are disconnected exceptionally, the server will automatically dismiss the room after 30 seconds.
-- When a user attempts to enter a room that does not exist, the backend will create the room first.
+>- The first user who enters a room will be the room owner, but this user cannot dismiss the room actively.
+>- After all users actively exit the current room, it will be immediately dismissed on the backend.
+>- If a user in the room is disconnected exceptionally, the server will remove this user from the room after 30 seconds. If all users in the room are disconnected exceptionally, the server will automatically dismiss the room after 30 seconds.
+>- When a user attempts to enter a room that does not exist, the backend will create the room first.
 
 ### RoomID
 
