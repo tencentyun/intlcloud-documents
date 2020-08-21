@@ -34,7 +34,9 @@
        <td>Released SDK 1.2.0.1</td>
        <td><li>Supported notification click event statistics for vendor channels</li> <li> Enriched notification custom styles</li> <li>Upgraded OPPO Push SDK V2.1.0</li> </td>
         <td>2020-06-23</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Download SDK</a></td>
+        <td>Since the package name changes, see the latest<a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>to modify the configurations:
+<li>Automatic integration: note the obfuscation configuration;</li>
+<li>Manual integration: note the `so` file, `manifest` file, and obfuscation configuration.</li></td></td>
     </tr>
         <td>Released SDK 1.1.6.3</td>
         <td>Third-party vendor channel integration optimization</td>
