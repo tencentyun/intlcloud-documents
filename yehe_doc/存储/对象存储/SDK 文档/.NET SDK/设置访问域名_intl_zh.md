@@ -4,9 +4,9 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
 
-### 自定义源站域名
+## 自定义源站域名
 
 关于如何设置自定义源站域名请参考 [自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)。
 
@@ -15,8 +15,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 [//]: # (.cssg-snippet-set-custom-domain)
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .IsHttps(true)  //设置默认 HTTPS 请求
-  .SetAppid("1250000000") //设置腾讯云账户的账户标识 APPID
+
   .SetRegion("COS_REGION") //设置一个默认的存储桶地域
   //请求域名为 your.domain.com
   .setHost("your.domain.com") //自定义域名
@@ -34,9 +33,7 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 [//]: # (.cssg-snippet-set-accelerate-domain)
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .IsHttps(true)  //设置默认 HTTPS 请求
-  .SetAppid("1250000000") //设置腾讯云账户的账户标识 APPID
-  .SetRegion("COS_REGION") //设置一个默认的存储桶地域
+
   .setEndpointSuffix("cos.accelerate.myqcloud.com")
   .Build();
 ```
