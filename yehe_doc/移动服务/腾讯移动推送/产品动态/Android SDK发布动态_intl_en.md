@@ -10,7 +10,7 @@
     <tr>
         <td>The SDK 1.2.0.3 is released</td>
        <td>The known issue is fixed</td>
-        <td>July 30, 2020</td>
+        <td>2020-07-30</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Downloading SDK</a></td>
     </tr>
 <tr>   
