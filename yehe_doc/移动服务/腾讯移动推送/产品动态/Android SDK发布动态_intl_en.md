@@ -8,7 +8,7 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK 1.2.0.3 is released</td>
+        <td>Released SDK 1.2.0.3</td>
        <td>The known issue is fixed</td>
         <td>2020-07-30</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Downloading SDK</a></td>
