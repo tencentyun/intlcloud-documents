@@ -3,7 +3,7 @@
 2. Log in to the [LVB Console](https://console.cloud.tencent.com/live/livestat) to get a push address for LVB push. For detailed directions, please see [LVB Push](https://intl.cloud.tencent.com/document/product/267/31558).
 3. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage), click **Add Domain**, enter your ICP filed domain name, select **Playback domain** as the type, and click **Save**.
 >
->- If you do not have a domain name,  You can purchase one at another domain name service provider.
+>- If you do not have a domain name, you can purchase one at another domain name service provider.
 >- If you have already purchased a domain name but have not obtained an ICP filing for its service in Mainland China, please apply through Tencent Cloud's Domain Name ICP Filing service. You can also do so at another domain name service provider.
 >
 4. Log in to the [Tencent Cloud Domain Service Console](https://console.cloud.tencent.com/domain) and configure CNAME for the successfully added playback domain name. For detailed directions, please see [Domain Name CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
