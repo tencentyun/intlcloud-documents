@@ -66,8 +66,7 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 > - 一般情况下体验 Demo 需要部署至服务器，通过`https://域名/xxx`访问，或者直接在本地搭建服务器，通过`localhost:端口`访问。
 > - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
 
-Demo 运行界面如图所示：
-![](https://main.qcloudimg.com/raw/e989c968446e6e3bdcc19c58e40e2b86.png)
+
 
 - 单击【加入房间】加入音视频通话房间并且发布本地音视频流。
  您可以打开多个页面，每个页面都单击 【加入房间】，正常情况下可以看到多个画面并模拟实时音视频通话。
@@ -75,7 +74,7 @@ Demo 运行界面如图所示：
 - 单击麦克风图标可以选择麦克风设备。
 
 >?WebRTC 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】。
-> ![](https://main.qcloudimg.com/raw/1a2c1e7036720b11f921f8ee1829762a.png)
+
 
 ## 常见问题
 
@@ -86,12 +85,6 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
  2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
-  - 升级：
-      ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
-  - 切换回老版本算法 ECDSA-SHA256：
-      ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
-  - 切换为新版本算法 HMAC-SHA256：
-      ![](https://main.qcloudimg.com/raw/0e5d53acc7618f9245ec40470ab9ddbb.png)
 
 ### 2. 出现客户端错误：“RtcError: no valid ice candidate found”该如何处理？
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请根据 [环境要求](#requirements) 检查防火墙配置。
