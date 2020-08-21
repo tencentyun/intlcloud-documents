@@ -39,7 +39,7 @@ You have activated Tencent Cloud [LVB](https://console.cloud.tencent.com/live). 
 ### Step 2. Configure the playback domain name and CNAME record
 1. Log in to the [LVB Console](https://console.cloud.tencent.com/live/).
 2. On the left sidebar, select **Domain Management** and you can see that a push domain name is added in the domain name list. Its format is `xxxxx.livepush.myqcloud.com`, where `xxxxx` is a number called `bizid`. You can find the `bizid` information in **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** in the TRTC Console.
-3. Click **Add Domain Name**, enter a playback domain name for which you have already obtained the ICP filing, select **Playback domain name** as its type, select an acceleration region (which is **Mainland China** by default), and click **OK**.
+3. Click **Add Domain Name**, enter a playback domain name for which you have already obtained the ICP filing for service in Mainland China, select **Playback domain name** as its type, select an acceleration region (which is **Mainland China** by default), and click **OK**.
 4. Once your domain name is added, the system will automatically assign it a CNAME domain name (suffixed with `.liveplay.myqcloud.com`), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, LVB can be used properly. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 
 > **You do not need to add a push domain name.** After the relayed live streaming feature is enabled in [step 1](#step1), Tencent Cloud will add a push domain name in the format of `xxxxx.livepush.myqcloud.com` in the LVB Console by default. It is the default push domain name agreed on between LVB and TRTC and cannot be modified currently.
@@ -168,7 +168,7 @@ This document uses Objective-C code for iOS as an example:
     // Start LVB playback
 ```
 
-<span id="expense"></span>
+<span id="expense"></span>
 ## Applicable Fees
 
 Fees of CDN relayed live streaming include **watching fees** and **transcoding fees**. The watching fees are the basic fees, while transcoding fees will be charged only if [On-Cloud MixTranscoding](#mixCDN) is enabled.
@@ -182,8 +182,6 @@ For CDN relayed live streaming, **LVB** will charge you for downstream traffic/b
 
 ### Transcoding fees: incurred after On-Cloud MixTranscoding is enabled
 If you enable [On-Cloud MixTranscoding](#mixCDN), as stream mixing needs decoding and encoding, additional On-Cloud MixTranscoding fees will be incurred. On-Cloud MixTranscoding is billed by resolution and transcoding duration. The higher the anchor's resolution or the longer the co-anchoring duration (generally, On-Cloud MixTranscoding is required only in co-anchoring), the higher the fees.
-
->For example, if you use [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the anchor bitrate (`videoBitrate`) to 1,500 Kbps and resolution to 720p, and an anchor co-anchors with a viewer for 1 hour and enables [On-Cloud MixTranscoding](#mixCDN) during co-anchoring, then the transcoding fees incurred will be `0.0325 CNY/minute * 60 minutes = 1.95 CNY`.
 
 ## FAQs
 **There is only one user in the room, but the video image is lagging and blurry. Why?**
