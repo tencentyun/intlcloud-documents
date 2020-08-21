@@ -4,7 +4,7 @@
 | October 9, 2019 | <li>The extraction feature is released <br>It uses Structured Query Language (SQL) statements to filter the objects stored in COS so as to extract a specific object and get the desired data. |
 | August 29, 2019 | <li>The log management feature is released <br>It is used to record the detailed access information of the specified source bucket and store the information in the specified bucket in the form of log files to facilitate bucket management. |
 | June 20, 2019 | <li>The versioning feature is released <br>It is used to store multiple versions of the same object in the same bucket. <br><li>The cross-region replication feature is released <br>By configuring a cross-region replication rule, incremental objects can be automatically and asynchronously replicated between buckets in different regions. |
-| June 10, 2019 | <li>Customization of origin server domain name is supported <br>You can bind a custom domain name with ICP filing to your current bucket and access the objects there through the domain name. |
+| June 10, 2019 | <li>Customization of origin server domain name is supported <br>You can bind a custom domain name with ICP filing for service in Mainland China to your current bucket and access the objects there through the domain name. |
 | June 3, 2019 | <li>The inventory feature is released <br>It helps you manage objects in a bucket and can gradually replace the List API operation in COS. |
 | May 10, 2019 | <li>The bucket tagging feature is released <br>A tag can be used as an identifier for easier bucket grouping and management. |
 | April 26, 2019 | <li>The direct upload archiving feature is released <br>It is to directly upload objects to COS and store them in the archive storage class. |
