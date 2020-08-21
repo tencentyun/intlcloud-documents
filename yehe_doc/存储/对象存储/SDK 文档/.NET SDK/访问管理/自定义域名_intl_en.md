@@ -1,5 +1,3 @@
-
-
 ## Overview
 
 This document provides an overview of APIs and SDK code samples related to custom domain name.
@@ -94,7 +92,7 @@ Some frequent special errors that may occur with this request are listed below:
 | Status Code | Description |
 | -------------------------------------- | ------------------------------------------------------------ |
 | HTTP 409 Conflict                      | The domain name record already exists, and no forced overwriting is set in the request. Or, the domain name record does not exist, but forced overwriting is set in the request. |
-| HTTP 451 Unavailable For Legal Reasons | The domain name is registered in Mainland China but has no ICP filing.                          |
+| HTTP 451 Unavailable For Legal Reasons | The domain name is served in Mainland China but has no ICP filing.                          |
 
 ## Querying Custom Domain Name
 
