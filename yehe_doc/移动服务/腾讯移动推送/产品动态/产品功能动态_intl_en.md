@@ -1,3 +1,54 @@
+## August 2020
+<table>
+<thead>
+    <tr>
+        <th width=20%>Update</th>
+        <th width=44%>Description</th>
+        <th width=16%>Release Date</th>
+        <th width=20%>Documentation</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>The "<B>grouping and collapsing</B>" feature is added</td>
+<td>The "<B>grouping and collapsing</B>" feature is added to control whether the notification is collapsed in the notification center and its collapsing methods</td>
+<td>August 11, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/37807">Message Collapsing</a></td>
+</tr>
+<tr>
+<td>The Android channel policy is optimized</td>
+<td>The custom policy for Android channel is optimized to allow you decide whether to firstly use the TPNS push</td>
+<td>August 11, 2020</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td>New metrics are added on the **Data Overview** page</td>
+<td>New metrics are added on the console **Data Overview**, including opt-in devices and uninstalled/unavailable devices</td>
+<td>August 11, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/36384">Data Overview</td>
+</tr>
+</tbody></table>
+
+## July 2020
+
+<table>
+<thead>
+    <tr>
+   <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+    </tr>
+</thead>
+<tbody><tr>
+<td>Added the pay-as-you-go billing option</td>
+<td>Supported the pay-as-you-go billing on a daily basis, which is suitable for applications with varying peak of daily connected devices</td>
+<td>2020-07-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/36877#.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9">Pay-as-you-go</a></td>
+</tr>
+</tbody></table>
+
 ## June 2020
 
 <table>
