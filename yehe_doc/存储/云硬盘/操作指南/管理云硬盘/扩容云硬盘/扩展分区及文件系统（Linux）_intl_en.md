@@ -5,8 +5,8 @@ After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/3
 
 
 ## Prerequisites
->!Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
->
+>!Expanding the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
+To protect your existing data, we have added two options to umount existing partitions and run fsck for a filesystem check during the expansion process. You can choose to use them as needed.
 - You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
 - You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Linux CVM and created a file system.
 - You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to expand partitions and the file system.
@@ -24,7 +24,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/ce19715fc8494a9735b714d86f0cccfa.png)
  - If the result similar to the following two figures (which may vary according to the operating system) is returned, MBR partition format is used.
  >! The maximum disk capacity supported by MBR partition format is 2 TB. If your disk partition is in MBR format, and you need to expand its capacity to more than 2 TB, we recommend that you create and mount a new data disk, and copy the data to the new disk using GPT partition format. For Linux operating system, if the disk partition format is GPT, the fdisk partition tool can no longer be used, and parted tool must be used.
- >
+ 
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. Follow [Step 1](#fdisk) to view the cloud disk partition format, and select the corresponding operations guide.
 <table>
