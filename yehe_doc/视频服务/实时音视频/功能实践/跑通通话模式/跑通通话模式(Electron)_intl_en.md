@@ -29,7 +29,7 @@ You are recommended to read [Run SimpleDemo (Electron)](https://intl.cloud.tence
 
 If the SimpleDemo can run properly, it means that you have mastered the method of installing Electron in your project.
 
-If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to the [Electron FAQs](https://cloud.tencent.com/developer/article/1616668) or Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
+If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to the Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
 
 <span id="step2"></span>
 ### Step 2. Integrate trtc-electron-sdk into your project

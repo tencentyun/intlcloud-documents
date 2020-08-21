@@ -29,7 +29,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
 
-反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考我们总结的 [Electron常见问题收录](https://cloud.tencent.com/developer/article/1616668) ，也可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
+反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
 
 <span id="step2"></span>
 ### 步骤2：为您的项目集成 trtc-electron-sdk
