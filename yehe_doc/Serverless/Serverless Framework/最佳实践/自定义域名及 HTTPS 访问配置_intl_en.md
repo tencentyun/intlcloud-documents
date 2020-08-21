@@ -3,7 +3,7 @@ After quickly constructing a Serverless website service through Serverless Compo
 
 ## Prerequisites
 - A website service has been deployed, and the website hosting address at COS/API Gateway has been obtained. For the specific deployment method, please see [Deploying Hexo Blog](https://intl.cloud.tencent.com/document/product/1040/36749).
-- You already have a custom domain name (such as www.example.com) with ICP filing.
+- You already have a custom domain name (such as www.example.com). If the domain name is used for Mainland China services, ICP filing is required.
 - If you need HTTPS access, you can apply for a certificate and [get the certificate ID](https://console.cloud.tencent.com/ssl) (such as `certificateId` of `axE1bo3)`.
 
 
