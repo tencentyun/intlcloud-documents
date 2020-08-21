@@ -27,7 +27,10 @@ Android:
 - Reached (PV): unique devices that received push messages
 - Clicked: the number of times the notification was clicked
 - Cleared: the number of times the notification was dismissed
+- Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
+- Opt-in devices: the number of devices on which the notification bar is enabled
+- Uninstalled/unavailable devices: the number of unavailable or offline devices over 90 days/TPNS SDK returned unavailable
 - New Devices: the number of unique devices that got newly registered token on the day
 
 iOS:
@@ -36,6 +39,9 @@ iOS:
 - Messages Sent (PV): the total number of messages pushed everyday
 - Reached (PV): unique devices that received push messages
 - Clicked: the number of times the notification was clicked
+- Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
+- Opt-in devices: the number of devices on which the notification bar is enabled
+- Uninstalled/unavailable devices: the number of unavailable or offline devices over 90 days/TPNS SDK returned unavailable
 - New Devices: the number of unique devices that got newly registered token on the day
 
