@@ -13,10 +13,10 @@ Definitions:
 > - Operation level: it defines whether a user has the permission to call a specific API of the service. For example, granting an account read-only access to the CVM service is an authorization at the operation level. 
 > - Resource level: it is the finest authorization granularity which defines whether a user has the permission to access specific resources. For example, granting an account read/write access to a specific CVM instance is an authorization at the resource level.
 
-- Console: whether sub-accounts can access the service through the console. ""&#10003;"" means yes, while ""-"" means no. 
-- Authorization by tag: whether the service supports using tags for permission management. ""&#10003;"" means yes, while ""-"" means no.  
-- [Service role](https://intl.cloud.tencent.com/document/product/598/19420): whether the service can access other services as a role entity. ""&#10003;"" means yes, while ""-"" means no. 
-- Reference document: link to the document on CAM-based access control for the service. ""-"" means no documentation available yet.
+- Console: whether sub-accounts can access the service through the console. "&#10003;" means yes, while "-" means no. 
+- Authorization by tag: whether the service supports using tags for permission management. "&#10003;" means yes, while "-" means no.  
+- [Service role](https://intl.cloud.tencent.com/document/product/598/19420): whether the service can access other services as a role entity. "&#10003;" means yes, while "-" means no. 
+- Reference document: link to the document on CAM-based access control for the service. "-" means no documentation available yet.
 
 ## Compute 
 
