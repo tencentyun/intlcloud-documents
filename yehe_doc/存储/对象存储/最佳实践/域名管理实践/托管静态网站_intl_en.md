@@ -16,11 +16,11 @@ The following services will be used in the steps outlined below:
 >The sample domain name `www.example.com` is used in the steps outlined in this document. For your purposes, replace it with your own domain name.
 
 
-## Step 1. Register the domain name and obtain ICP filing
+## Step 1. Register the domain name and obtain ICP filing for service in China
 
 Domain registration is a prerequisite for any service built on the internet. After the domain name is registered, it needs to go through the MIIT filing procedure before your website can be accessed.
 
-- If you have already registered a domain name and obtained ICP filing for it, skip this step and proceed to [step 2](#Create a bucket).
+- If you have already registered a domain name and obtained ICP filing for service in China for it, skip this step and proceed to [step 2](#Create a bucket).
 - Obtain ICP filing for the registered domain name.
 - Register a domain name and obtain ICP filing for it.
 
@@ -87,7 +87,7 @@ We recommend that you use a custom CDN domain name so that Tencent Cloud CDN can
 - **Domain**: Enter the custom domain name you have purchased (e.g. `www.example.com`).
 - **Origin Server Type**: Select **Static website origin server**.
 - **Origin-pull Authentication**: Turn it on.
-	
+ 
 
 ![](https://main.qcloudimg.com/raw/419c8e900a0c3ead5f01a4240129dfc3.png)
 (3) Follow the prompt above the domain list to add **CDN Service Authorization**.
