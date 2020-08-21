@@ -41,7 +41,7 @@
         <td>Released SDK 1.1.6.3</td>
         <td>Third-party vendor channel integration optimization</td>
         <td>2020-06-04</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -59,7 +59,7 @@
         <td>The SDK v1.1.6.1 is released</td>
         <td>The vulnerability with HTTPS certificate verification is fixed</td>
         <td>April 28, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Downloading SDK</a></td>
+        <td>-</td>
     </tr>
     <tr>
         <td>The SDK v1.1.6.0 is released</td>
