@@ -1,6 +1,9 @@
 ## Overview
 
-Before a video call is made, it is recommended to test the devices such as camera and mic; otherwise, it is difficult to find device problems when the user actually makes a call.
+Before a video call is made, it is recommended to test the devices such as camera and mic; otherwise, it is difficult to find device problems when a user actually makes a call.
+
+<img style="border:0; max-width:100%; height:auto; box-sizing:content-box; box-shadow: 0px 0px 0px #ccc; margin: 0px 0px 0px 0px;" src="https://main.qcloudimg.com/raw/fced7778482de4edfbe94bfcf8ec5f20.jpg" />
+
 
 ## Platforms That Support This Feature
 
@@ -62,7 +65,7 @@ private void stopTestCameraDevice()
 
 ## Testing Mic
 
-Use the `startMicDeviceTest` function of TRTCCloud to test the mic volume, and the callback function will return the real-time mic volume level.
+You can use the `startMicDeviceTest` function of TRTCCloud to test the mic volume, and the callback function will return the real-time mic volume level.
 
 - **macOS**
 
@@ -130,7 +133,7 @@ private void stopTestMicDevice()
 
 ## Testing Speaker
 
-Use the `startSpeakerDeviceTest` function of TRTCCloud to test whether the speaker is working by playing a default mp3 audio clip.
+You can use the `startSpeakerDeviceTest` function of TRTCCloud to test whether the speaker is working by playing a default mp3 audio clip.
 
 - **macOS**
 
