@@ -11,7 +11,7 @@ If you want to impose restrictions on room entry for certain rooms (for example,
 ## PrivateMapKey
 
 ### Feature overview
-`privateMapKey` is an optional field in `TRTCParamEnc` used to make Tencent Cloud check whether the user has permission to enter the specified room.
+`privateMapKey` is an optional field in `TRTCParamEnc` used to allow Tencent Cloud to check whether the user has permission to enter the specified room.
 
 ![](https://main.qcloudimg.com/raw/93389bf9638bcfaf3d744467889dea84.jpg)
 
@@ -24,14 +24,14 @@ This is a required field in `TRTCParamEnc` used to check whether the current use
 This is an optional field in `TRTCParamEnc` used to check whether the current user is authorized to enter the room with the specified `roomid`. It is only necessary if your business needs to distinguish between different users.
 
  In addition, you can also determine whether the current user is authorized to enter the specified room directly in the application. `privateMapKey` is only to make this practice more secure as it can prevent the application from being cracked (i.e., non-members can enter high-level rooms).
-
+ 
 ## How to Enable
  - **Enable room permission control in the [TRTC Console](https://console.cloud.tencent.com/rav).**
  ![](https://main.qcloudimg.com/raw/26f146bfd8617c10a4b8ae9003c5673c.png)
 
  - **Calculate `privateMapKey` on your server.**
-    As `privateMapKey` aims to prevent the client from being reversely cracked (i.e., non-members can enter high-level rooms), it should be calculated on your backend server and then returned to the client.
-    Three samples of code for calculating `PrivateMapKey` are provided for Java, PHP, and Node.js, respectively, which can be directly downloaded and integrated into your server.
+  As `privateMapKey` aims to prevent the client from being reversely cracked (i.e., non-members can enter high-level rooms), it should be calculated on your backend server and then returned to the client.
+  Three samples of code for calculating `PrivateMapKey` are provided for Java, PHP, and Node.js, respectively, which can be directly downloaded and integrated into your server.
 
 | Programming Language | Key Function | Download Link |
 |:---------:|:---------:|:---------:|
