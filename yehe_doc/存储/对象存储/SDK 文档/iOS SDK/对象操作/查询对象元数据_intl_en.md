@@ -40,7 +40,7 @@ headerRequest.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] HeadObject:headerRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/HeadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/HeadObject.m).
 
 **Swift**
 
@@ -66,5 +66,5 @@ headObject.finishBlock =  {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/HeadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/HeadObject.swift).
 

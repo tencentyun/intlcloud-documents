@@ -9,7 +9,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 查询对象列表
 
@@ -46,7 +46,7 @@ request.prefix = @"dir1/";
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m) 查看。
 
 **Swift**
 
@@ -80,7 +80,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift) 查看。
 
 #### 示例代码二：请求下一页数据
 **Objective-C**
@@ -112,7 +112,7 @@ request.maxKeys = 100;
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m) 查看。
 
 **Swift**
 
@@ -150,7 +150,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift) 查看。
 
 #### 示例代码三：获取对象列表与子目录
 **Objective-C**
@@ -190,7 +190,7 @@ request.marker = prevPageResult.nextMarker;
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m) 查看。
 
 **Swift**
 
@@ -234,7 +234,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift) 查看。
 
 ## 查询对象历史版本列表
 
@@ -278,7 +278,7 @@ listObjectVersionsRequest.marker = prevPageResult.versionIDMarkder;
 [[QCloudCOSXMLService defaultCOSXML] ListObjectVersions:listObjectVersionsRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjectsVersioning.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjectsVersioning.m)查看。
 
 **Swift**
 
@@ -300,6 +300,4 @@ listObjectVersionsRequest.setFinish { (result, error) in
 
 QCloudCOSXMLService.defaultCOSXML().listObjectVersions(listObjectVersionsRequest);
 ```
-
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjectsVersioning.swift) 查看。
 

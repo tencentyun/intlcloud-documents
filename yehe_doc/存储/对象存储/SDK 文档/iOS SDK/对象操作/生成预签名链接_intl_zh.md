@@ -34,7 +34,7 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
 
 **Swift**
 
@@ -59,7 +59,7 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
 
 #### 示例代码二：生成预签名下载链接
 **Objective-C**
@@ -87,7 +87,7 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
 
 **Swift**
 
@@ -112,5 +112,5 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift)查看。
 

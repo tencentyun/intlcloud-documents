@@ -42,7 +42,7 @@ request.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] OptionsObject:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -73,5 +73,5 @@ optionsObject.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().optionsObject(optionsObject);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
