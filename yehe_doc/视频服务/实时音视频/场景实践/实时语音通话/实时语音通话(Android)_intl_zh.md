@@ -26,7 +26,7 @@
 3. 设置 `GenerateTestUserSig.java` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+	<img src="https://main.qcloudimg.com/raw/345c3e8915ef988eb158833d1655d0c5.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -51,8 +51,8 @@
 <span id="model"> </span>
 ## 实现自定义 UI 界面
 
-[源码](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcaudiocalldemo/src/main/java/com/tencent/liteav/trtcaudiocalldemo) 文件夹 `trtcaudiocalldemo` 中包含两个子文件夹 ui 和 model，其中 model 文件夹中包含了我们实现的可重用开源组件 TRTCAudioCall，您可以在  `ITRTCAudioCall.java`  文件中看到该组件提供的接口函数。
-![](https://main.qcloudimg.com/raw/c9e700bcca0adb259529e66fe7400d91.png)
+[源码](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling) 文件夹 `trtcaudiocalldemo` 中包含两个子文件夹 ui 和 model，其中 model 文件夹中包含了我们实现的可重用开源组件 TRTCAudioCall，您可以在  `ITRTCAudioCall.java`  文件中看到该组件提供的接口函数。
+![](https://main.qcloudimg.com/raw/84a70412fcd7cc2ea6456deb10479bb0.png)
 
 您可以使用开源组件 TRTCAudioCall 实现自己的 UI 界面，即只复用 model 部分，自行实现 UI 部分。
 
