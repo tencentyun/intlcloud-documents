@@ -52,8 +52,10 @@ getPresign.httpMethod = "PUT";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
@@ -105,8 +107,10 @@ getPresign.httpMethod = "GET";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
