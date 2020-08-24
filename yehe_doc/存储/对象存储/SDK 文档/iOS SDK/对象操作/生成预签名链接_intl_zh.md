@@ -3,7 +3,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 生成对象预签名链接
 
@@ -52,8 +52,10 @@ getPresign.httpMethod = "PUT";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
@@ -105,8 +107,10 @@ getPresign.httpMethod = "GET";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
