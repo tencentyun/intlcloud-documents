@@ -1,12 +1,13 @@
 You can use the rollback feature of TencentDB for MariaDB to view historical data. To restore your database instance locally, restore the historical data by following the steps in this document.
 
+
 ## Prerequisites
 ### Preparing a server
 If you need to restore the database instance locally, please ensure that the basic configuration of the server meets the following requirements:
-- CPU: 2 or above cores.
+- CPU: 2 or more cores.
 - Memory: 4 GB or above.
 - Disk capacity: it must exceed the database size plus the temporary capacity needed by the system.
-- OS: CentOS.
+- Operating system: CentOS
 
 ### Preparing the database
 Take installation of MariaDB 10.0.10 as an example:
@@ -31,7 +32,7 @@ yum info MariaDB-server
 ```
 yum install MariaDB-server
 ```
->If the system prompts a conflict with a legacy version, you need to remove the previously installed package by running `yum remove mariadb-libs` for example.
+>?If the system prompts a conflict with a legacy version, you need to remove the previously installed package by running `yum remove mariadb-libs` for example.
 
 ### Installing the auxiliary tool
 1. Install the MariaDB client.
@@ -46,7 +47,7 @@ yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percon
 yum install percona-xtrabackup
 ```
 
-### Downloading the backup
+### Downloading a backup
 In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql), click an instance name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
 Sample of a download command:
 ```
@@ -54,6 +55,7 @@ wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_5
 ```
 
 ## Restoring Database from Backup File (Unencrypted)
+
 <span id = "mulu_jieya"></span>
 #### 1. Enter the cold backup file download directory and decompress the file with LZ4
 ```
@@ -61,7 +63,7 @@ lz4 -d set_1464144850_587.1464552298.xtrabackup.lz4
 ```
 
 <span id = "gongju_jieya"></span>
-#### 2. Decompress the file with xbstream to the temporary directory `xtrabackuptmp`
+#### 2. Decompress the file to a temporary directory `xtrabackuptmp` with xbstream tool
 ```
 mkdir xtrabackuptmp/
 mv set_1464144850_587.1464552298.xtrabackup xtrabackuptmp/
@@ -70,7 +72,7 @@ xbstream -x < set_1464144850_587.1464552298.xtrabackup
 After the decompression, the directories and files are as shown below:
 ![](https://main.qcloudimg.com/raw/6ad248ceef84e26eaf8ee40437c12d9e.png)
 
-#### 3. Use innobackupex to apply logs
+#### 3. Use `innobackupex` to apply logs
 ```
 mkdir /root/dblogs_tmp
 innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtrabackuptmp/
@@ -79,11 +81,11 @@ After the operation succeeds, `completed OK!` will be displayed as shown below:
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
 
 <span id = "tingzhi_qingkong"></span>
-#### 4. Stop the database and clear data files
+#### 4. Stop database and clear data file
 ```
 service mysql stop
 ```
-Clear data files (in data directories, table space directories, and log directories):
+Clear data files (in data directories, tablespace directories, and log directories):
 ```
 mkdir /var/lib/mysql-backup
 mv /var/lib/mysql/* /var/lib/mysql-backup
@@ -105,11 +107,11 @@ innodb_log_block_size=512
 innodb_undo_tablespaces=0
 ```
 
-#### 6. Use innobackupex to load the image
+#### 6. Use `innobackupex` to load the image
 ```
 innobackupex --defaults-file=/etc/my.cnf --move-back /root/xtrabackuptmp/
 ```
-After loading succeeds, `Complete OK!` will be displayed as shown below:
+After loading succeeds, `completed OK!` will be displayed as shown below:
 ![](https://main.qcloudimg.com/raw/f193ec9e3d4693e103038ca9a1f280e1.png)
 
 #### 7. Start the database
@@ -117,16 +119,16 @@ After loading succeeds, `Complete OK!` will be displayed as shown below:
 chmod 777 -R /var/lib/mysql
 service start mysql
 ```
-If the database fails to start, troubleshoot the error based on the error message and then try again.
+If you fail to start the database, you need to check and fix the error, and then try again.
 
-#### 8. Connect to the database to view data
+#### 8. Connect to the database to check data
 After starting the database, you may need to connect to the database with the original account and password to view data.
 
 ## Restoring Database from Backup File (Encrypted)
 Transparent Data Encryption (TDE) is currently supported only in Percona 5.7. You can access it in TencentDB for MariaDB. Please download and install the critical tool needed by the restoration. Below is the encryption process:
 
 #### 1. Decompress the backup file to the temporary directory
-For more information, please see [Enter the cold backup file download directory and decompress the file with LZ4](#mulu_jieya) and [Decompress the file with xbstream to the temporary directory `xtrabackuptmp`](#gongju_jieya).
+For more information, please see [Enter the cold backup file download directory and decompress the file with LZ4](#mulu_jieya) and [Decompress the file to a temporary directory `xtrabackuptmp` with xbstream tool](#gongju_jieya).
 
 In this example, the backup file is decompressed to the temporary directory `./backup_dir`. LZ4 is installed in the `mysqlagent/bin` directory by default. You can also install it in the `/usr/bin` directory and import it as an environment variable.
 
@@ -137,16 +139,18 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 ```
 
 #### 3. Prepare for data restoration
-For more information, please see [Stop the database and clear data files](#tingzhi_qingkong).
+For more information, please see [Stop database and clear data file](#tingzhi_qingkong).
 
 #### 4. Get the data key plaintext
-Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Data Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
+>?To use the [SSL Connection Encryption](https://intl.cloud.tencent.com/document/product/237/35447) feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+
+Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Connection Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
 - Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://intl.cloud.tencent.com/document/product/1030/32172).
 - Use the Python script `./kms_tool.py` provided by Tencent Cloud to get the data key plaintext.
- - Parameter description:
+ - Descriptions of parameters:
     - --role: this parameter is in a fixed format. Enter `kmsTDSQLRole` here.
     - --secret_id, --secret_key: authorization information, which can be queried in [API Key Management](https://console.cloud.tencent.com/cam/capi) in **CAM**.
-    - --region: region information, which can be queried in [KMS Common Parameters](https://intl.cloud.tencent.com/document/product/1030/32175).
+    - --region: region information, which can be queried in KMS [Common Parameters](https://intl.cloud.tencent.com/document/product/1030/32175).
     - --ciphertext: data key ciphertext.
 ![](https://main.qcloudimg.com/raw/c0b8552753c094fc6b0257c57e59872e.png)
  - Below is a demo:
@@ -185,7 +189,7 @@ Below is a demo of using this tool:
 ![](https://main.qcloudimg.com/raw/32c59981a400f7e4bfc8c9096c476466.png)
 
 #### 8. Use the `keyring_file` tool to configure the generated key file to MySQL
-The figure below shows configuring the generated key file to MySQL. Please pay attention to the configuration in the red box. You are recommended to run `keyring_file` with the permissions of the user who starts MySQL.
+The figure below shows how to configure the generated key file to MySQL. Please pay attention to the configuration in the red box. You are recommended to run `keyring_file` with the permissions of the user who starts MySQL.
 ![](https://main.qcloudimg.com/raw/2b4b6098a2f527902409fb3bac19fb61.png)
 
 #### 9. Restart MySQL
