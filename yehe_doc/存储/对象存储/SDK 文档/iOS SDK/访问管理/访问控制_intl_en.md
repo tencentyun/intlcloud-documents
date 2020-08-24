@@ -63,7 +63,7 @@ putACL.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] PutBucketACL:putACL];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketACL.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketACL.m).
 
 **Swift**
 
@@ -98,7 +98,7 @@ putBucketACLReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketACL(putBucketACLReq);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketACL.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketACL.swift).
 
 ### Querying a bucket ACL
 
@@ -125,7 +125,7 @@ getBucketACl.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketACL:getBucketACl];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketACL.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketACL.m).
 
 **Swift**
 
@@ -147,7 +147,7 @@ getBucketACLReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketACL(getBucketACLReq)
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketACL.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketACL.swift).
 
 ## Object ACL
 
@@ -188,7 +188,7 @@ request.grantWrite = grantString;
 [[QCloudCOSXMLService defaultCOSXML] PutObjectACL:request];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectACL.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectACL.m).
 
 **Swift**
 
@@ -221,7 +221,7 @@ putObjectACl.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().putObjectACL(putObjectACl);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectACL.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectACL.swift).
 
 ### Querying an object ACL
 
@@ -253,7 +253,7 @@ __block QCloudACLPolicy* policy;
 
 [[QCloudCOSXMLService defaultCOSXML] GetObjectACL:request];
 ```
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectACL.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectACL.m).
 
 
 
@@ -280,7 +280,7 @@ getObjectACL.setFinish { (result, error) in
 }
 QCloudCOSXMLService.defaultCOSXML().getObjectACL(getObjectACL);
 ```
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectACL.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectACL.swift).
 
 
 

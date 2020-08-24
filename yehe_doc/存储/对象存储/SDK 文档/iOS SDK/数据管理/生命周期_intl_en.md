@@ -68,7 +68,7 @@ request.lifeCycle.rules = @[rule];
 [[QCloudCOSXMLService defaultCOSXML] PutBucketLifecycle:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketLifecycle.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m).
 
 
 **Swift**
@@ -127,7 +127,7 @@ putBucketLifecycleReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketLifecycle(putBucketLifecycleReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketLifecycle.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLifecycle.swift).
 
 
 ## Querying a Lifecycle Configuration
@@ -153,7 +153,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketLifecycle:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketLifecycle.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m).
 
 **Swift**
 
@@ -174,7 +174,7 @@ getBucketLifeCycle.setFinish { (config, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketLifecycle(getBucketLifeCycle);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketLifecycle.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLifecycle.swift).
 
 ## Deleting a Lifecycle Configuration
 
@@ -199,7 +199,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketLifeCycle:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketLifecycle.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m).
 
 **Swift**
 
@@ -217,5 +217,5 @@ deleteBucketLifeCycle.finishBlock = { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketLifeCycle(deleteBucketLifeCycle);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketLifecycle.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLifecycle.swift).
 

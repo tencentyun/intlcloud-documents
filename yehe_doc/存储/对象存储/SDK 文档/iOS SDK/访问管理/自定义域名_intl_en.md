@@ -53,7 +53,7 @@ req.domain  = config;
 [[QCloudCOSXMLService defaultCOSXML]PutBucketDomain:req];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketDomain.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketDomain.m).
 
 **Swift**
 
@@ -88,7 +88,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketDomain(req);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketDomain.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketDomain.swift).
 
 #### Error codes
 
@@ -123,7 +123,7 @@ getReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML]GetBucketDomain:getReq];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketDomain.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketDomain.m).
 
 
 **Swift**
@@ -145,7 +145,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketDomain.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketDomain.swift).
 
 
 #### Response parameters

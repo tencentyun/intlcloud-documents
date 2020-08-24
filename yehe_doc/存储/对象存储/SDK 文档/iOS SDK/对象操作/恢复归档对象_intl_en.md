@@ -45,7 +45,7 @@ req.restoreRequest.CASJobParameters.tier =QCloudCASTierStandard;
 [[QCloudCOSXMLService defaultCOSXML] PostObjectRestore:req];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/RestoreObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/RestoreObject.m).
 
 **Swift**
 
@@ -75,5 +75,5 @@ restore.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/RestoreObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/RestoreObject.swift).
 

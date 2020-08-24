@@ -59,7 +59,7 @@ putReq.taggings = taggings;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketTagging:putReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketTagging.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketTagging.m).
 
 **Swift**
 
@@ -103,7 +103,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketTagging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketTagging.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketTagging.swift).
 
 ## Querying Bucket Tags
 
@@ -128,7 +128,7 @@ getReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketTagging:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketTagging.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketTagging.m).
 
 **Swift**
 
@@ -148,7 +148,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketTagging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketTagging.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketTagging.swift).
 
 ## Deleting Bucket Tags
 
@@ -173,7 +173,7 @@ delReq.bucket =  @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketTagging:delReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketTagging.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketTagging.m).
 
 **Swift**
 
@@ -193,5 +193,5 @@ req.finishBlock =  { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketTagging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketTagging.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketTagging.swift).
 

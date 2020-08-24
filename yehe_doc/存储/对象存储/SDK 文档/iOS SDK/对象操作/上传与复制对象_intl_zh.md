@@ -78,7 +78,7 @@ put.body =  url;
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)  查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
@@ -127,7 +127,7 @@ put.abort { (result, error) in
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388)  文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 #### 示例代码二: 上传二进制数据
@@ -165,7 +165,7 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
@@ -207,7 +207,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 复制对象
@@ -251,7 +251,7 @@ request.sourceRegion= @"COS_REGION";
 [request cancel];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m)  查看。
 
 **Swift**
 
@@ -294,7 +294,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyReques
 copyRequest.cancel();
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift) 查看。
+>?更多完整示例，请前往[GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift) 查看。
 
 ## 简单操作
 
@@ -333,7 +333,7 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/PutObject.m) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m) 查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
@@ -360,7 +360,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/PutObject.swift) 查看。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift)  查看。
 >- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 复制对象（修改属性）
@@ -406,7 +406,7 @@ request.versionID = @"objectVersion1";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/CopyObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m) 查看。
 
 **Swift**
 
@@ -447,7 +447,7 @@ putObjectCopy.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/CopyObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)  查看。
 
 #### 示例代码二: 复制对象时替换对象属性
 **Objective-C**
@@ -497,7 +497,7 @@ request.versionID = @"objectVersion1";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/CopyObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m) 查看。
 
 **Swift**
 
@@ -547,7 +547,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/CopyObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift) 查看。
 
 #### 示例代码三: 修改对象元数据
 **Objective-C**
@@ -587,7 +587,7 @@ request.objectCopySource =
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ModifyObjectProperty.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m) 查看。
 
 **Swift**
 
@@ -627,7 +627,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ModifyObjectProperty.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift) 查看。
 
 #### 示例代码四: 修改对象存储类型
 **Objective-C**
@@ -661,7 +661,7 @@ request.versionID = @"";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ModifyObjectProperty.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m) 查看。
 
 **Swift**
 
@@ -689,7 +689,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ModifyObjectProperty.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift) 查看。
 
 ## 分块操作
 
@@ -742,7 +742,7 @@ uploads.maxUploads = 100;
 [[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
 
@@ -770,7 +770,7 @@ listParts.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 初始化分块上传
 
@@ -818,7 +818,7 @@ initRequest.grantFullControl = @"grantFullControl";
 [[QCloudCOSXMLService defaultCOSXML] InitiateMultipartUpload:initRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
 
@@ -844,7 +844,7 @@ initRequest.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 上传分块
 
@@ -893,7 +893,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 [[QCloudCOSXMLService defaultCOSXML]  UploadPart:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
 
@@ -940,7 +940,7 @@ uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,totalBytesExpectedToSen
 QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 复制分块
 
@@ -984,7 +984,7 @@ request.partNumber = 1;
 [[QCloudCOSXMLService defaultCOSXML]UploadPartCopy:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsCopyObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsCopyObject.m) 查看。
 
 **Swift**
 
@@ -1022,7 +1022,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsCopyObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsCopyObject.swift) 查看。
 
 ### 查询已上传的分块
 
@@ -1057,7 +1057,7 @@ request.uploadId = uploadId;
 [[QCloudCOSXMLService defaultCOSXML] ListMultipart:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
 
@@ -1087,7 +1087,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 完成分块上传
 
@@ -1139,7 +1139,7 @@ completeRequst.parts = partInfo;
 [[QCloudCOSXMLService defaultCOSXML] CompleteMultipartUpload:completeRequst];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
 
@@ -1182,7 +1182,7 @@ complete.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift) 查看。
 
 ### 终止分块上传
 
@@ -1215,7 +1215,7 @@ abortRequest.uploadId = @"exampleUploadId";
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/AbortMultiPartsUpload.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/AbortMultiPartsUpload.m) 查看。
 
 **Swift**
 
@@ -1244,5 +1244,4 @@ abort.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/AbortMultiPartsUpload.swift) 查看。
-
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift) 查看。

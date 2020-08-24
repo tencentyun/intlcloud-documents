@@ -34,7 +34,7 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectPresignUrl.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
 
 **Swift**
 
@@ -52,14 +52,16 @@ getPresign.httpMethod = "PUT";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectPresignUrl.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
 
 #### Sample 2. Generating a pre-signed download link
 **Objective-C**
@@ -87,7 +89,7 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ObjectPresignUrl.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m).
 
 **Swift**
 
@@ -105,12 +107,14 @@ getPresign.httpMethod = "GET";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
-    if error == nil{
-        print(result?.presienedURL as Any);
+    if let result = result {
+        let url = result.presienedURL
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ObjectPresignUrl.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift).
 

@@ -39,7 +39,7 @@ QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 [[QCloudCOSXMLService defaultCOSXML] GetService:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/GetService.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/GetService.m).
 
 **Swift**
 
@@ -61,7 +61,7 @@ getServiceReq.setFinish{(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/GetService.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/GetService.swift).
 
 ## Creating a Bucket
 
@@ -87,7 +87,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] PutBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/PutBucket.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutBucket.m).
 
 **Swift**
 
@@ -109,7 +109,7 @@ putBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucket(putBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/PutBucket.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutBucket.swift).
 
 ## Checking a Bucket and Its Permissions
 
@@ -143,7 +143,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] HeadBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/HeadBucket.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/HeadBucket.m).
 
 
 **Swift**
@@ -171,7 +171,7 @@ headBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().headBucket(headBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/HeadBucket.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/HeadBucket.swift).
 
 
 ## Deleting a Bucket
@@ -200,7 +200,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/DeleteBucket.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/DeleteBucket.m).
 
 **Swift**
 
@@ -222,4 +222,4 @@ deleteBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucket(deleteBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/DeleteBucket.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteBucket.swift).

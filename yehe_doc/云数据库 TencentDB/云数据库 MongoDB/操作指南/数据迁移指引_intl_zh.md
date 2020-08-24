@@ -54,10 +54,10 @@ DTS 迁移服务支持常见的网络迁移，包括公网、CVM 自建、专线
   ![](https://main.qcloudimg.com/raw/a5dc2558be5db94f5121526e1690d72f.png)
 
 5. 在校验任务页面，完成迁移前校验工作，单击【启动任务】。
-  ![](https://main.qcloudimg.com/raw/6ab71b2393b4a99f305d139614a0d398.png)
+  
 
 6. 返回迁移任务列表，待增量同步完成100%，在“操作”列单击【完成】，即可完成迁移任务。
-![](https://main.qcloudimg.com/raw/2a14237df7258733a5c14ff68fc19cf3.png)
+![](https://main.qcloudimg.com/raw/86e30f0eba3671e4272a27bc1ac9ca97.png)
 
 
 

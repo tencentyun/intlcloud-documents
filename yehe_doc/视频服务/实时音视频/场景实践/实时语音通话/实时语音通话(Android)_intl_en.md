@@ -51,7 +51,7 @@ The source code folder `trtcaudiocalldemo` contains two subfolders: `ui` and `mo
 <span id="model"> </span>
 ## Implementing Custom UI
 
-The [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcaudiocalldemo/src/main/java/com/tencent/liteav/trtcaudiocalldemo) folder `trtcaudiocalldemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCAudioCall`. You can find the API functions provided by this component in the `ITRTCAudioCall.java` file.
+The [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling) folder `trtcaudiocalldemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCAudioCall`. You can find the API functions provided by this component in the `ITRTCAudioCall.java` file.
 ![](https://main.qcloudimg.com/raw/c9e700bcca0adb259529e66fe7400d91.png)
 
 You can use the open-source component `TRTCAudioCall` to implement your own UI, i.e., only reusing the `model` to implement your custom UI.

@@ -46,7 +46,7 @@ request.prefix = @"dir1/";
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m).
 
 **Swift**
 
@@ -80,7 +80,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
 #### Sample 2. Requesting the next page of data
 **Objective-C**
@@ -112,7 +112,7 @@ request.maxKeys = 100;
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m).
 
 **Swift**
 
@@ -150,7 +150,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
 #### Sample 3. Getting an object list and subdirectories
 **Objective-C**
@@ -190,7 +190,7 @@ request.marker = prevPageResult.nextMarker;
 [[QCloudCOSXMLService defaultCOSXML] GetBucket:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjects.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjects.m).
 
 **Swift**
 
@@ -234,7 +234,7 @@ getBucketReq.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjects.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ListObjects.swift).
 
 ## Querying an Object Version List
 
@@ -278,7 +278,7 @@ listObjectVersionsRequest.marker = prevPageResult.versionIDMarkder;
 [[QCloudCOSXMLService defaultCOSXML] ListObjectVersions:listObjectVersionsRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ListObjectsVersioning.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjectsVersioning.m).
 
 **Swift**
 
@@ -301,5 +301,4 @@ listObjectVersionsRequest.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listObjectVersions(listObjectVersionsRequest);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ListObjectsVersioning.swift).
 
