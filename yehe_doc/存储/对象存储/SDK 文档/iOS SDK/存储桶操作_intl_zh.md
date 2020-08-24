@@ -39,7 +39,7 @@ QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 [[QCloudCOSXMLService defaultCOSXML] GetService:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/GetService.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/GetService.m) 查看。
 
 **Swift**
 
@@ -61,7 +61,7 @@ getServiceReq.setFinish{(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/GetService.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/GetService.swift) 查看。
 
 ## 创建存储桶
 
@@ -87,7 +87,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] PutBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/PutBucket.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutBucket.m) 查看。
 
 **Swift**
 
@@ -109,7 +109,7 @@ putBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucket(putBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/PutBucket.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutBucket.swift) 查看。
 
 ## 检索存储桶及其权限
 
@@ -143,7 +143,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] HeadBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/HeadBucket.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/HeadBucket.m) 查看。
 
 
 **Swift**
@@ -171,7 +171,7 @@ headBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().headBucket(headBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/HeadBucket.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/HeadBucket.swift) 查看。
 
 
 ## 删除存储桶
@@ -200,7 +200,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucket:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/DeleteBucket.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/DeleteBucket.m) 查看。
 
 **Swift**
 
@@ -222,4 +222,4 @@ deleteBucketReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucket(deleteBucketReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/DeleteBucket.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteBucket.swift) 查看。
