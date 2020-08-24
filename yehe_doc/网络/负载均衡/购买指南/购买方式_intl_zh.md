@@ -20,7 +20,7 @@
 3. 根据实际情况和需求选择网络、网络计费模式、所属项目等信息，各个属性的选择请参考 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629)。
 4. 确认购买后，您可以进行支付。
 5. 支付完成后即开通负载均衡服务，您可进行负载均衡配置使用。
-![](https://main.qcloudimg.com/raw/315549c93a7552d2b97f83e9b47602d4.png)
+![](https://main.qcloudimg.com/raw/f09271383a733a0c0281ebe324b6ff56.png)
 
 ## API 购买
 欲通过 API 购买负载均衡的用户，请参见 [负载均衡 API - 购买负载均衡实例](https://intl.cloud.tencent.com/document/product/214/33841)。
