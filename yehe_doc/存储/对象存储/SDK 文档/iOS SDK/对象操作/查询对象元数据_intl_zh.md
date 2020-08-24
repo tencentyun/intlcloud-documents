@@ -8,7 +8,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 查询对象元数据
 
@@ -57,10 +57,10 @@ headObject.versionID = "versionID";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 headObject.object  = "exampleobject";
 headObject.finishBlock =  {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
