@@ -66,7 +66,7 @@ request.configuation = replConfiguration;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketRelication:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketReplication.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
 
 **Swift**
 
@@ -115,7 +115,7 @@ putBucketReplication.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketRelication(putBucketReplication);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketReplication.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 
 ## Querying Cross-region Replication Rules
 
@@ -141,7 +141,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketReplication:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketReplication.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
 
 **Swift**
 
@@ -159,7 +159,7 @@ getBucketReplication.setFinish { (config, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketReplication(getBucketReplication);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketReplication.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 
 ## Deleting Cross-region Replication Rules
 
@@ -186,7 +186,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketReplication:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketReplication.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketReplication.m).
 
 **Swift**
 
@@ -204,5 +204,5 @@ deleteBucketReplication.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketReplication(deleteBucketReplication);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketReplication.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketReplication.swift).
 
