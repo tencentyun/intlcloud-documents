@@ -103,7 +103,7 @@ putReq.inventoryConfiguration = config;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketInventory:putReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketInventory.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketInventory.m).
 
 
 **Swift**
@@ -191,7 +191,7 @@ putReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketInventory(putReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketInventory.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift).
 
 
 #### Error code description
@@ -229,7 +229,7 @@ getReq.inventoryID = @"list1";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketInventory:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -251,7 +251,7 @@ req.setFinish {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketInventory(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
 ## Deleting an Inventory Job
 
@@ -279,7 +279,7 @@ delReq.inventoryID = @"list1";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketInventory:delReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -303,5 +303,5 @@ delReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketInventory(delReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 

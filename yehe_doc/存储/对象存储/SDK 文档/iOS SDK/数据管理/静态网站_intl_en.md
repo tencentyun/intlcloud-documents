@@ -89,7 +89,7 @@ putReq.websiteConfiguration  = config;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketWebsite:putReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m).
 
 **Swift**
 
@@ -165,7 +165,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketWebsite(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift).
 
 ## Querying a Static Website Configuration
 
@@ -201,7 +201,7 @@ getReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketWebsite:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m).
 
 **Swift**
 
@@ -223,7 +223,7 @@ req.setFinish {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketWebsite(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift).
 
 ## Deleting a Static Website Configuration
 
@@ -249,7 +249,7 @@ delReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketWebsite:delReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m).
 
 **Swift**
 
@@ -271,5 +271,5 @@ delReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketWebsite(delReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift).
 
