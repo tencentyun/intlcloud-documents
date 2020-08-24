@@ -1,6 +1,6 @@
 
 ### What do I do in case of disconnection from MongoDB?
-Please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092) to troubleshoot authentication issues.
+Please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092) to eliminate authentication issues.
 
 ### What do I do if a message saying "Remote server has closed the connection" displays?
 First, please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092) to troubleshoot authentication issues. If you can connect to MongoDB but still encounter this problem, you may need a reconnection mechanism. For more information, please see [PHP Reconnection Sample](https://intl.cloud.tencent.com/document/product/240/4980).
@@ -11,18 +11,18 @@ Lock is a feature of databases, and is used to deal with the problems of concurr
 
 ### Which version of the driver should be used in MongoDB?
 We recommend that you use the latest version, for example, using mongo-1.6 or above for PHP.
-
+ 
 ### Which languages can be used to connect to MongoDB?
 TencentDB for MongoDB can be connected through a variety of programming languages, such as Shell, PHP, Node.js, Java, and Python. For more information, please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092).
 
 ### Which language clients are supported by TencentDB for MongoDB?
-TencentDB for MongoDB provides the same compatibility as MongoDB. TencentDB for MongoDB supports any client that is supported by the official MongoDB. For example: C, C++, C#, Java, Node.js, Python, PHP, and Perl. For more information, please see [MongoDB official documentation](https://docs.mongodb.org/ecosystem/drivers/).
+TencentDB for MongoDB provides the same compatibility as MongoDB. It supports any client that is supported by the official MongoDB. For example: C, C++, C#, Java, Node.js, Python, PHP, and Perl. For more information, please see [MongoDB official documentation](https://docs.mongodb.org/ecosystem/drivers/).
 
 ### How do I connect to TencentDB for MongoDB in shell?
-For more information, please see [Shell Connection Sample](https://intl.cloud.tencent.com/zh/document/product/240/3978).
+For more information, please see [Shell Connection Samples](https://cloud.tencent.com/doc/product/240/3978).
 
 ### What URIs in service applications can be used to connect to MongoDB?
-For more information, please see [Connection Samples](https://intl.cloud.tencent.com/zh/document/product/240/7092).
+For more information, please see [Connection Samples](https://cloud.tencent.com/doc/product/240/3563).
 
 ### What do I do if I cannot connect to TencentDB for MongoDB using meteor and other types of frameworks and class libraries?
 This is usually caused by incorrect connection method or URI combinations. Please check and verify the cause first.
@@ -30,25 +30,10 @@ This is usually caused by incorrect connection method or URI combinations. Pleas
 ### How do I set the maximum number of connections to MongoDB in PHP?
 MongoDB driver ([official PHP documentation](http://php.net/manual/en/set.mongodb.php)) can control the number of connections by configuring the `maxPoolSize` parameter in the URL connection.
 MongoDB driver ([official PHP documentation](http://php.net/manual/en/set.mongodb.php)) can set the number of connections through the `Mongo::setPoolSize()` method. For more information, please see [MongoPool::setSize](http://php.net/manual/en/mongopool.setsize.php).
-
+ 
 
 ### What is the limit on the number of connections to MongoDB?
-
-| MEM Specification | Max Connections |
-| :------: | :--------: |
-|   2 GB    |    1,500    |
-|   4 GB    |    2,000    |
-|   6 GB    |    2,500    |
-|   8 GB    |    3,500    |
-|   16 GB   |    6,000    |
-|   24 GB   |    8,000    |
-|   32 GB   |    9,500    |
-|   64 GB   |   16,000    |
-|  128 GB   |   18,000    |
-|  240 GB   |   18,000    |
-|  512 GB   |   20,000    |
-
->!For a replica set instance, the maximum number of connections applies to the whole instance instead of a node; for a sharded cluster instance, it applies to a shard. For more information, please see [Use Limits](https://intl.cloud.tencent.com/document/product/240/31183).
+For more information, please see [Use Limits](https://intl.cloud.tencent.com/document/product/240/31183).
 
 
 ### How do I reconnect to MongoDB manually?
@@ -57,7 +42,7 @@ The client driver establishes a persistent connection with an access server usin
 Generally, the client driver will implement an automatic reconnection. However, this process cannot be implemented by some language drivers. For the language drivers that cannot implement automatic reconnection, if you attempt to communicate with the TencentDB for MongoDB service using a terminated connection, an error message such as "Remote server has closed the connection" will be returned. So manual reconnection is required. Here is a demo for PHP reconnection.
 
 **Reconnection based on PHP mongo driver** 
-![](https://main.qcloudimg.com/raw/a0b428c51f0ba06b91788b391e1650ea.png)
+![](https://main.qcloudimg.com/raw/0fcb5ee5ace2c301c2c9061403986d07.png)
 
 
 ### How do I use mongoose to connect to TencentDB for MongoDB?
@@ -77,4 +62,4 @@ var connection = mongodb.createConnection(dbUri, opts);
 ### Can I connect to MongoDB from a public network?
 TencentDB for MongoDB can only be connected over the private network. For more information, please see [Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092).
 Connection through a public network is not supported. To connect to MongoDB locally, you can implement port forwarding using the server within the same private network under the same MongoDB account.
-
+ 

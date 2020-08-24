@@ -14,7 +14,7 @@ MongoDB 的服务模型是每个网络连接由一个单独的线程（ one-thre
  - 若确认业务无异常，请检查索引是否有异常，例如之前建立的索引被误删等。
  -  若索引无异常，请检查当前是否有大量慢查询。慢查询导致连接一直占用未被释放，因此会建立更多的连接。
 登录 [ MongoDB 控制台](https://console.cloud.tencent.com/mongodb) ，查看实例的慢日志，可选择抽象查询。
-![](https://main.qcloudimg.com/raw/c3e4fdf651defddff01ba3a115ee8b32.png)
+![](https://main.qcloudimg.com/raw/bfa1b87481b272489bfae511b758a8d5.png)
 请关注：command、COLLSCAN、IXSCAN、keysExamined、docsExamined 等关键字，更多的日志说明请参考 [MongoDB 官网](https://docs.mongodb.com/manual/reference/log-messages/index.html)， 
    需注意的关键字如下：
  1. command 指出慢日志中记录的操作。
@@ -51,7 +51,7 @@ MongoDB 的服务模型是每个网络连接由一个单独的线程（ one-thre
 
 2. 确认用户名与密码是否错误。
 请确保用户名和密码正确，如有错，请前往控制台更改。
-![](https://main.qcloudimg.com/raw/b31d4f6dc3af7d18e830992fce3c0f54.png)
+![](https://main.qcloudimg.com/raw/3dc1106070c23340a042c130ea6800ae.png)
 
 3. 确认 Mongoshell 版本。
 为保障鉴权成功，请安装 Mongo Shell 3.0及以上版本。安装步骤请参考 [官方文档](https://docs.mongodb.com/v3.2/installation/)。
