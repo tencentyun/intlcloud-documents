@@ -4,7 +4,7 @@
 Step1. 查询和开通专属银行账号
 查看判断您的账户是否已经开通了专属银行账号功能，如果已经开通， 则可直接获取收款户名、收款账号、收款银行和SWIFT CODE等专属银行收款账户信息.
 ![](https://main.qcloudimg.com/raw/e82eae0a3c87101a6170dabfa8869e0a.png)
-目前仅支持注册地为A，B类的用户使用专属银行账号功能，详情可参考[注册地清单与收款地址说明](#注册地清单与收款地址说明)；
+目前仅支持注册地为A，C类的用户使用专属银行账号功能，详情可参考[注册地清单与收款地址说明](#注册地清单与收款地址说明)；
 
 Step2. 使用专属账号进行线下对公打款
 根据您的专属银行收款账户信息，您可发起线下对公打款，系统会自动检测，请您打款前务必填写正确.
@@ -64,7 +64,7 @@ Beneficiary bank: HSBC BANK PLC, Amsterdam z.o. The Netherlands
 Address: De Entree 236, 1101 EE Amsterdam 
 SWIFT Code: HSBCNL2A
 Remarks: Cloud service fee + developer account (unique ID)
-
+目前B类注册地暂不支持使用专属银行账号功能，请使用“[Top-up Process](https://intl.cloud.tencent.com/document/product/555/11319?lang=en&pg=)”方式进行充值.
 
 | C. 对于其他注册地的用户：|  | 
 |---------|---------|
@@ -73,4 +73,8 @@ Remarks: Cloud service fee + developer account (unique ID)
 | Macau, China | Malaysia | 
 | Hong Kong, China | Singapore | 
 
-目前C类注册地暂不支持使用专属银行账号功能，请使用“[Top-up Process](https://intl.cloud.tencent.com/document/product/555/11319?lang=en&pg=)”方式进行充值.
+Beneficiary name: ACEVILLE PTE.LTD.
+Beneficiary bank: HSBC, Singapore
+Address: 1 Fullerton Road, #02-095, One Fullerton, Singapore 049213
+SWIFT Code: HSBCSGSG
+Remarks: Cloud service fee + developer account (unique ID)
