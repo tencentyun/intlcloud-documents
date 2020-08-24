@@ -9,7 +9,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 删除单个对象
 
@@ -53,11 +53,10 @@ deleteObject.bucket = "examplebucket-1250000000";
 deleteObject.object = "exampleobject";
 
 deleteObject.finishBlock = {(result,error)in
-    // 可以从 result 中获取 response 中 etag 或者自定义头部等信息
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
@@ -144,12 +143,13 @@ deleteInfos.quiet = false;
 mutipleDel.deleteObjects = deleteInfos;
 
 mutipleDel.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        let deleted = result.deletedObjects
+        let failed = result.deletedFailedObjects
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
-}
+}    
 QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 ```
 

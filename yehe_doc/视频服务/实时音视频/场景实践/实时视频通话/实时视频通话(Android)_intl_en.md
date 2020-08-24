@@ -47,7 +47,7 @@ The source code folder `trtcvideocalldemo` contains two subfolders: `ui` and `mo
 <span id="model"> </span>
 ## Implementing Custom UI
 
-The [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvideocalldemo/src/main/java/com/tencent/liteav/trtcvideocalldemo) folder `trtcvideocalldemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCVideoCall`. You can find the API functions provided by this component in the `ITRTCVideoCall.java` file.
+The [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling) folder `trtcvideocalldemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCVideoCall`. You can find the API functions provided by this component in the `ITRTCVideoCall.java` file.
 ![](https://main.qcloudimg.com/raw/777f4837df516344a002af7c064b4072.jpg)
 
 You can use the open-source component `TRTCVideoCall` to implement your own UI, i.e., only reusing the `model` to implement your custom UI.
