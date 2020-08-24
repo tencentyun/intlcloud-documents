@@ -38,7 +38,7 @@ deleteObjectRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] DeleteObject:deleteObjectRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/DeleteObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/DeleteObject.m)查看。
 
 **Swift**
 
@@ -63,7 +63,7 @@ deleteObject.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/DeleteObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteObject.swift) 查看。
 
 ## 删除多个对象
 
@@ -109,7 +109,7 @@ delteRequest.deleteObjects = deleteInfo;
 [[QCloudCOSXMLService defaultCOSXML] DeleteMultipleObject:delteRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/DeleteObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/DeleteObject.m)查看。
 
 **Swift**
 
@@ -153,5 +153,5 @@ mutipleDel.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/DeleteObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteObject.swift)查看。
 
