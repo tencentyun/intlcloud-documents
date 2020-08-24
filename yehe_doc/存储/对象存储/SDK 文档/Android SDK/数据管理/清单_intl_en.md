@@ -60,7 +60,7 @@ cosXmlService.putBucketInventoryAsync(putBucketInventoryRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketInventory.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketInventory.java).
 
 
 #### Error codes
@@ -109,7 +109,7 @@ cosXmlService.getBucketInventoryAsync(getBucketInventoryRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java).
 
 ## Deleting an Inventory Job
 
@@ -142,5 +142,5 @@ cosXmlService.deleteBucketInventoryAsync(deleteBucketInventoryRequest,
 });
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/BucketCORS.java).
 
