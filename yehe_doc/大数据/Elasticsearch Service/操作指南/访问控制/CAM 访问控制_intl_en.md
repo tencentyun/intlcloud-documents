@@ -40,13 +40,9 @@ Supported regions include:
 </tr>
 </thead>
 <tbody><tr>
-<td align="left" rowspan="2">South China</td>
+<td align="left" rowspan="1">South China</td>
 <td align="left">Guangzhou</td>
 <td><code>ap-guangzhou</code></td>
-</tr>
-<tr>
-<td align="left">Qingyuan</td>
-<td><code>ap-qingyuan</code></td>
 </tr>
 <tr>
 <td align="left" rowspan="2">East China</td>
