@@ -46,7 +46,7 @@ versioningConfiguration.status = QCloudCOSBucketVersioningStatusEnabled;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketVersioning:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketVersioning.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
 
 **Swift**
 
@@ -77,7 +77,7 @@ putBucketVersioning.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketVersioning(putBucketVersioning);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketVersioning.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 
 ## Querying Versioning
 
@@ -109,7 +109,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketVersioning:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketVersioning.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
 
 **Swift**
 
@@ -131,5 +131,5 @@ getBucketVersioning.setFinish { (config, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketVersioning(getBucketVersioning);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketVersioning.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 
