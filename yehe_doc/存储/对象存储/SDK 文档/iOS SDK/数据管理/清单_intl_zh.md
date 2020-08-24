@@ -103,7 +103,7 @@ putReq.inventoryConfiguration = config;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketInventory:putReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketInventory.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketInventory.m) 查看。
 
 
 **Swift**
@@ -191,7 +191,7 @@ putReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketInventory(putReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketInventory.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift)查看。
 
 
 #### 错误码说明
@@ -229,7 +229,7 @@ getReq.inventoryID = @"list1";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketInventory:getReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m) 查看。
 
 **Swift**
 
@@ -251,7 +251,7 @@ req.setFinish {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketInventory(req);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift) 查看。
 
 ## 删除清单任务
 
@@ -279,7 +279,7 @@ delReq.inventoryID = @"list1";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketInventory:delReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m)查看。
 
 **Swift**
 
@@ -303,5 +303,5 @@ delReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketInventory(delReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift)查看。
 
