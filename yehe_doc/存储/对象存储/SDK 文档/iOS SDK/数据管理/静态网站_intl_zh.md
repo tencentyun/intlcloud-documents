@@ -89,7 +89,7 @@ putReq.websiteConfiguration  = config;
 [[QCloudCOSXMLService defaultCOSXML] PutBucketWebsite:putReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m) 查看。
 
 **Swift**
 
@@ -165,7 +165,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketWebsite(req);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift) 查看。
 
 ## 查询静态网站配置
 
@@ -201,7 +201,7 @@ getReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketWebsite:getReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m)查看。
 
 **Swift**
 
@@ -223,7 +223,7 @@ req.setFinish {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketWebsite(req);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift) 查看。
 
 ## 删除静态网站配置
 
@@ -249,7 +249,7 @@ delReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketWebsite:delReq];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketWebsite.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketWebsite.m)查看。
 
 **Swift**
 
@@ -271,5 +271,5 @@ delReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketWebsite(delReq);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketWebsite.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketWebsite.swift)查看。
 
