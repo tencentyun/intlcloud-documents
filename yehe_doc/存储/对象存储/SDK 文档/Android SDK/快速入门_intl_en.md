@@ -340,7 +340,7 @@ viewModelScope.launch {
 ```
 
 >?
->- For more complete samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-android/tree/master/Demo/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferObject.java).
+>- For more complete samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
 >- After an object is uploaded, you can use the same key to generate a file download link as instructed in [Generating a Pre-signed Link](https://intl.cloud.tencent.com/document/product/436/37680). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 ### Downloading an object
