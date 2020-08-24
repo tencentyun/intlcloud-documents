@@ -144,10 +144,11 @@ deleteInfos.quiet = false;
 mutipleDel.deleteObjects = deleteInfos;
 
 mutipleDel.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        let deleted = result.deletedObjects
+        let failed = result.deletedFailedObjects
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().deleteMultipleObject(mutipleDel);
