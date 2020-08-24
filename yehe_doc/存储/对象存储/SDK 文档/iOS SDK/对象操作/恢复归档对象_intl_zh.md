@@ -8,7 +8,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 恢复归档对象 
 
@@ -65,11 +65,10 @@ restore.restoreRequest.days = 10;
 // 复原的过程类型配置信息
 restore.restoreRequest.casJobParameters.tier = .standard;
 restore.finishBlock = {(result,error)in
-    if error != nil{
-        print(error!)
-    }else{
-        // 可以从 result 中获取 response 中 etag 或者自定义头部等信息
-        print(result!);
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);
