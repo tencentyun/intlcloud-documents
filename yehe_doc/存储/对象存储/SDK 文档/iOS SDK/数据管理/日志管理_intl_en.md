@@ -47,7 +47,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] PutBucketLogging:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketLogging.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
 
 **Swift**
 
@@ -83,7 +83,7 @@ req.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketLogging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketLogging.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
 
 ## Querying Log Management
 
@@ -108,7 +108,7 @@ getReq.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML]GetBucketLogging:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketLogging.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
 
 **Swift**
 
@@ -128,5 +128,5 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketLogging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketLogging.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
 
