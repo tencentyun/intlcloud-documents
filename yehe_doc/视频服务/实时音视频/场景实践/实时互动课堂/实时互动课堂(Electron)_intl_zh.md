@@ -5,19 +5,21 @@
     <th width="150px">Windows</th>
   </tr>
   <tr>
-    <td><a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg"><img width="125px" height="125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
-    <td><a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe"><img width="125px" height="125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
+<td>
+		<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg" >
+		<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
+</span></a></td>
+<td>
+<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe">
+<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
+</span></a></td>
   </tr>
 </table>
 
 
+
 ## 效果展示
 您可以下载安装我们的 Demo 体验实时互动课堂的能力效果，包括语音、视频、屏幕分享等上课方式，还封装了老师开始问答、学生举手、老师邀请学生上台回答、结束回答等相关能力。
-
-- 教师端
- ![](https://main.qcloudimg.com/raw/35d33cb6003bd3575ee6bbfb0cbe6450.png)
-- 学生端
- ![](https://main.qcloudimg.com/raw/30e62d5c96c1ba31fc24c113ecfdb395.png)
 
 如需快速实现实时互动课堂功能，可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) 组件并实现自定义 UI 界面。
 
@@ -39,7 +41,7 @@
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
   <ul style="margin:0;"><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-  <img src="https://main.qcloudimg.com/raw/1732ea2401af6111b41259a78b5330a4.png">
+  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 

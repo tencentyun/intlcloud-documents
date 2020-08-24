@@ -23,12 +23,12 @@ When you create, update, delete, or publish a function, it will be in one of the
 >! If a function failed to be published or updated, its versions that have already been published normally will not be affected, and when it is called, its content before the update will be called normally.
 
 The change process of the function creation and update statuses is as shown below:
-![](https://main.qcloudimg.com/raw/7984764b424406ae65631494766eb8f6.png)
+![](https://main.qcloudimg.com/raw/a49f5ac2e5c0340c87e6cd3aaa17ffe7.png)
 
 
 
 The change process of the function version release statuses is as shown below:
-![](https://main.qcloudimg.com/raw/240f2ede623e38d21f125ce89aa35851.png)
+![](https://main.qcloudimg.com/raw/e4ee43d6c507a14b7bd5b2247af83bed.png)
 
 
 

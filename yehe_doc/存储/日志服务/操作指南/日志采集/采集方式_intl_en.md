@@ -41,9 +41,12 @@ You can access different log sources in different ways. For more information, se
 
 | Cloud product name       | Recommended access method                                                 |
 | ---------------- | ------------------------------------------------------------ |
-| CVM     | LogListener                                         |
-| Standard LVB    | Console (For more information, see Access Directions.) |
-| Serverless Cloud Function (SCF) | Console (For more information, see [Access directions](https://intl.cloud.tencent.com/document/product/614/32936).) |
-| Tencent Kubernetes Engines (TKE) | Console (For more information, see [Access directions](https://intl.cloud.tencent.com/document/product/614/32937).) |
-| Network flow log (FL)    | Console                                                   |
-
+| CVM | [LogListener](https://intl.cloud.tencent.com/document/product/614/17414) |
+| TKE | [Console](https://intl.cloud.tencent.com/document/product/457/32419) |
+| CDN | [Console](https://intl.cloud.tencent.com/document/product/228/35380) |
+| CLB | [Console](https://intl.cloud.tencent.com/document/product/214/35063) |
+| SCF | Console |
+|  LVB | Console |
+| FL | [Console](https://intl.cloud.tencent.com/document/product/682/18966) |
+| TI-ONE | Console |
+| MGOBE | Console |

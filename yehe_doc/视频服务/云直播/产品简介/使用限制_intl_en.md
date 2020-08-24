@@ -4,7 +4,7 @@ Before using LVB, you need to know the following use limits:
     <tr><th width="15%">Item</th><th width="75%">Description</th></tr>
     <tr>
         <td>LVB domain name</td>
-        <td>Multiple playback and push domain names can be created under an account by default. A domain name to be added must get an ICP filing from the MIIT, and the current filing information must be normal and available.</td>
+        <td>Multiple playback and push domain names can be created under an account by default. A domain name to be added must get an ICP filing from the MIIT for service in Mainland China, and the current filing information must be normal and available.</td>
     </tr>
     <tr>
         <td>LVB push</td>
@@ -43,4 +43,3 @@ Before using LVB, you need to know the following use limits:
         </td>
     </tr>
 </table>
-

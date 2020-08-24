@@ -78,7 +78,7 @@ put.body =  url;
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 **Swift**
@@ -127,7 +127,7 @@ put.abort { (result, error) in
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 #### Sample 2. Uploading binary data
@@ -165,7 +165,7 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 **Swift**
@@ -207,7 +207,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 ### Copying an object
@@ -251,7 +251,7 @@ request.sourceRegion= @"COS_REGION";
 [request cancel];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/TransferObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m).
 
 **Swift**
 
@@ -294,7 +294,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyReques
 copyRequest.cancel();
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/TransferObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift).
 
 ## Simple Operations
 
@@ -333,7 +333,7 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/PutObject.m).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 **Swift**
@@ -360,7 +360,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 ```
 
 >?
->- For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/PutObject.swift).
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift).
 >- After an object is uploaded, you can use the same key to generate a link to download the file as instructed in [Generating a Pre-signed Link](https://cloud.tencent.com/document/product/436/46388). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
 
 ### Copying an object (modifying attributes)
@@ -406,7 +406,7 @@ request.versionID = @"objectVersion1";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/CopyObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m).
 
 **Swift**
 
@@ -447,7 +447,7 @@ putObjectCopy.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/CopyObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift).
 
 #### Sample 2. Copying an object while replacing its attributes
 **Objective-C**
@@ -497,7 +497,7 @@ request.versionID = @"objectVersion1";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/CopyObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m).
 
 **Swift**
 
@@ -547,7 +547,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/CopyObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift).
 
 #### Sample 3. Modifying object metadata
 **Objective-C**
@@ -587,7 +587,7 @@ request.objectCopySource =
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ModifyObjectProperty.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m).
 
 **Swift**
 
@@ -627,7 +627,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ModifyObjectProperty.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift).
 
 #### Sample 4. Changing the object storage class
 **Objective-C**
@@ -661,7 +661,7 @@ request.versionID = @"";
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/ModifyObjectProperty.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m).
 
 **Swift**
 
@@ -689,7 +689,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/ModifyObjectProperty.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift).
 
 ## Multipart Operations
 
@@ -742,7 +742,7 @@ uploads.maxUploads = 100;
 [[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
 
@@ -770,7 +770,7 @@ listParts.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
 ### Initializing a multipart upload operation
 
@@ -818,7 +818,7 @@ initRequest.grantFullControl = @"grantFullControl";
 [[QCloudCOSXMLService defaultCOSXML] InitiateMultipartUpload:initRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
 
@@ -844,7 +844,7 @@ initRequest.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
 ### Uploading parts
 
@@ -893,7 +893,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 [[QCloudCOSXMLService defaultCOSXML]  UploadPart:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
 
@@ -940,7 +940,7 @@ uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,totalBytesExpectedToSen
 QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
 ### Copying a part
 
@@ -984,7 +984,7 @@ request.partNumber = 1;
 [[QCloudCOSXMLService defaultCOSXML]UploadPartCopy:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsCopyObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsCopyObject.m).
 
 **Swift**
 
@@ -1022,7 +1022,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsCopyObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsCopyObject.swift).
 
 ### Querying uploaded parts
 
@@ -1057,7 +1057,7 @@ request.uploadId = uploadId;
 [[QCloudCOSXMLService defaultCOSXML] ListMultipart:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
 
@@ -1087,7 +1087,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
 ### Completing a multipart upload operation
 
@@ -1139,7 +1139,7 @@ completeRequst.parts = partInfo;
 [[QCloudCOSXMLService defaultCOSXML] CompleteMultipartUpload:completeRequst];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/MultiPartsUploadObject.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
 
@@ -1182,7 +1182,7 @@ complete.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/MultiPartsUploadObject.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
 ### Aborting a multipart upload operation
 
@@ -1215,7 +1215,7 @@ abortRequest.uploadId = @"exampleUploadId";
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/AbortMultiPartsUpload.m).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/AbortMultiPartsUpload.m).
 
 **Swift**
 
@@ -1244,5 +1244,5 @@ abort.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/AbortMultiPartsUpload.swift).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift).
 

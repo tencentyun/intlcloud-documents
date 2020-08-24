@@ -13,11 +13,11 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 ```
 <span id="Key"></span>
 ### 如何获取密钥？
+1. 登录【实时音视频控制台】>【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
+2. 单击您需查看的 SDKAppID 或对应的【应用信息】，单击进入【快速上手】页签。
+3. 查看【第二步 获取签发UserSig的密钥】标签，即可获取用于计算 UserSig 的加密密钥。
+4. 单击【复制密钥】，可将密钥拷贝到剪贴板中。
 
-1. 登录实时音视频 [控制台](https://console.cloud.tencent.com/rav)，单击应用卡片，进入【快速上手】页面。
-2. 单击【第二步 获取签发UserSig的密钥】区域的【查看密钥】，即可获取用于计算 UserSig 的加密密钥。
-3. 单击【复制密钥】，将密钥拷贝到剪贴板中。
- ![](https://main.qcloudimg.com/raw/d0b780f7b28833533e12807d1b11d8be.png)
 
 ### 查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
 TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)，如已升级，您按需切换为新旧算法。
@@ -26,12 +26,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
  2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
-  - 升级：
-   ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
-  - 切换回老版本算法 ECDSA-SHA256：
-   ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
-  - 切换为新版本算法 HMAC-SHA256：
-   ![](https://main.qcloudimg.com/raw/b0412153935704abc9e286868ad8a916.png)
+
 
 <span id="Client"></span>
 ### 客户端如何计算 UserSig？
@@ -47,8 +42,6 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 | Windows(C#) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)| Windows/CSharpDemo/GenerateTestUserSig.cs |
 | 桌面浏览器 | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | 微信小程序 | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/debug/GenerateTestUserSig.js)| WXMini/debug/GenerateTestUserSig.js |
-
-![](https://main.qcloudimg.com/raw/1efeacff505209c4f5c1d9bf67455157.png)
 
 >! 该方案仅适用于调试，如果产品要正式上线，**不推荐**采用这种方案，因为客户端代码（尤其是 Web 端）中的 SECRETKEY 很容易被反编译逆向破解。一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量。
 >

@@ -22,7 +22,7 @@ There are many possible reasons; for example, the signature does not meet the su
 ### What should I enter as signature remarks?
 You need to enter **application remarks** only when the signature type is one of the following:
 - Application: enter a link to the display page of the application on any application store/market.
-- Website: enter the website domain name that has an ICP filing.
+- Website: enter the website domain name hosted in Mainland China that has an ICP filing.
 - WeChat Official Account (or WeChat Mini Program): enter the full name of the WeChat Official Account (or WeChat Mini Program).
 
 <span id="Q8"></span>

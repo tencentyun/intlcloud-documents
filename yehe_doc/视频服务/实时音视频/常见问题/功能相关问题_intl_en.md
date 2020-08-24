@@ -1,4 +1,3 @@
-
 ### Does TRTC support live streaming co-anchoring?
 Yes. For detailed directions, please see:
 - [Live Streaming (iOS and macOS)](https://intl.cloud.tencent.com/document/product/647/35107)
@@ -26,8 +25,8 @@ Unlimited.
 ### Does TRTC support deployment in a private cloud?
 No.
 
-### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
-To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name service in Mainland China?
+To enable relayed live streaming, according to the requirements of applicable authorities, the playback domain name needs an ICP filing before it can be used in Mainland China. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
 
 ### How long is the average delay in TRTC?
 The average end-to-end delay around the globe is less than 300 ms.

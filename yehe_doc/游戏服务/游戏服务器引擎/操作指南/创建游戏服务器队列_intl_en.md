@@ -4,7 +4,8 @@ This document describes how to create a game server queue. You can use a queue t
 
 ## Prerequisites
 
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
+- You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
+- You have [created server fleets](https://intl.cloud.tencent.com/document/product/1055/36675).
 
 
 ## Directions

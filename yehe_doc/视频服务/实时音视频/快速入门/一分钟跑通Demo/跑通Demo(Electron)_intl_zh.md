@@ -82,54 +82,54 @@
 
 #### Windows 平台
 
-1.  安装 Node 最新版本，建议选择 64bit 的 .msi 文件。[Node 下载地址](https://nodejs.org/en/download/)
+1.  安装 Node 最新版本，建议选择 64bit 的 `.msi` 文件。[Node 下载地址](https://nodejs.org/en/download/)
 
-2.  按下 win + r 输入 cmd，用管理员权限启动命令行窗口，并将目录定位到 [项目目录](#projectFolder)，并执行以下命令。
+2.  按下 `win + r` 输入 cmd，用管理员权限启动命令行窗口，并将目录定位到 [项目目录](#projectFolder)，并执行以下命令。
 	
-    ```shell
-    $ npm install
-    ```
+```shell
+$ npm install
+```
 	
-    ![安装](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
+![安装](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
 
 
 3.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
 
-    ```shell
-    $ npm run start  # 首次运行，稍等片刻后，窗口中才会出现 UI
-    ```
+```shell
+$ npm run start  # 首次运行，稍等片刻后，窗口中才会出现 UI
+```
     
-    ![运行demo](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+![运行demo](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
 
 #### Mac OS 平台
 
 1.  打开终端（Terminal）或 cmd 窗口，执行以下命令安装 Homebrew，如果已经安装请跳过此步骤。
 
-    ```shell
-    $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ```
+```shell
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 2.  执行以下命令，安装 Node.js。
 
-    ```shell
-    $ brew install node
-    ```
+```shell
+$ brew install node
+```
 
 3.  通过 cd 命令定位项目目录，并执行以下命令。
 
-    ```shell
-    $ npm install 
-    ```
+ ```shell
+$ npm install 
+ ```
     
     ![mac下安装](https://main.qcloudimg.com/raw/3f8e92e9c59ff1bdb9fd0b2a0f34852a.png)
     
 4.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
 
-    ```shell
-    $ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI
-    ```
+```shell
+$ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI
+```
     
-	![mac下运行项目](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
+![mac下运行项目](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
     
 ### 项目主要命令
 
@@ -145,7 +145,7 @@
 
 TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。如不升级，您也可以继续使用 [老版本算法 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)。
 
-升级操作：
+**升级操作：**
 
 1.  登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2.  在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。

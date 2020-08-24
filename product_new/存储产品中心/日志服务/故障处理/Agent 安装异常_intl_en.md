@@ -15,7 +15,7 @@ The executable file in the bin directory under the LogListener installation dire
 2. Check the installation execution command.
 The script file in the Tools directory is a bash script, which does not support the `sh install.sh` execution method. It is recommended that you use `./install.sh` or `bash install.sh`. Be sure to perform the operations according to the [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414).
 3. Check the LogListener version.
-The latest features of CLS may rely on a newer version of LogListener. If it is confirmed that the exception is caused by the use of new features, download the [latest version of LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener.2.2.3.tar.gz).
+Some of new CLS features may be available only for the latest version of Loglistener. In this case, please download and install the latest version. For step-by-step directions, see [LogListener Installation Guide](https://intl.cloud.tencent.com/document/product/614/17414).
 4. Verify whether LogListener is successfully installed.
 Check whether LogListener processes are running normally. Enter the installation directory and execute the following command:
 ```shell

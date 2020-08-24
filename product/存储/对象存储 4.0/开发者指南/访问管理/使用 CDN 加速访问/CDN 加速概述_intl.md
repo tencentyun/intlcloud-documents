@@ -43,7 +43,7 @@ If the static website feature is enabled, you can get an access node for a stati
 You can accelerate access to COS by managing the following two domain names:
 
 - Default accelerated domain name: COS provides a default CDN accelerated domain name (such as ` <bucketname>-<APPID>.file.mycloud.com`). You can enable or disable it at your option.
-- Custom domain name: You can use a custom domain name which has gone through ICP filing, with a COS bucket as the origin server. This allows you to accelerate the access to the objects in the bucket with your custom domain name.
+- Custom domain name: You can use a custom domain name which has gone through ICP filing for service in Mainland China, with a COS bucket as the origin server. This allows you to accelerate the access to the objects in the bucket with your custom domain name.
 
 > **Notes:**
 > Default accelerated domain name and custom domain name can be collectively referred to as CDN accelerated domain names.
@@ -79,4 +79,3 @@ After the CDN service authorization is added and origin-pull authentication is e
 | ------------ | ---------------- | --------------- | ----------------------------------- |
 | Disabled (default) | Yes | COS authentication is required | Direct access to CDN domain names is allowed to protect the data on origin server. |
 | Enabled | URL authentication is required | COS authentication is required | Full stack strict SSL secured connection. Hotlink protection for CDN authentication is supported. |
-

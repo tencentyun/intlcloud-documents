@@ -1,4 +1,3 @@
-
 ## October 2019
 
 
@@ -16,7 +15,7 @@
 <td><ul style="margin:0;"><li >The video clipping statistics collection feature is launched.
 <li >The TESHD template feature is launched.
 <li >The error with error code mappings is fixed.
-<li >The error where domain names without ICP filing could not be deleted is fixed.
+<li >The error where domain names without ICP filing for service in Mainland China could not be deleted is fixed.
 <li >The error with storage region name display is fixed.
  <td>October 23, 2019</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/14059#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E6.A8.A1.E6.9D.BF">Template Settings</a></td>

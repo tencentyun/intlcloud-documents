@@ -27,7 +27,7 @@ RTMP format: rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(ti
 FLV format: http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 M3U8 format: http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-- **domain**: your playback domain name which has obtained an ICP filing.
+- **domain**: your playback domain name which has obtained an ICP filing for service in Mainland China.
 - **AppName**: LVB application name, which is `live` by default and customizable.
 - **StreamName**: user-defined stream name which is used to identify a live stream.
 - **txSecret**: authentication string generated after playback authentication is enabled.

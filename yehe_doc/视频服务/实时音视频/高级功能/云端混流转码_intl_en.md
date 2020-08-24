@@ -6,7 +6,7 @@ You can control On-Cloud MixTranscoding in the following methods:
 
 - Method 2: use the [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API of the TRTC SDK on the client. The following diagram illustrates how it works: 
 ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
-> The second method applies only to SDKs for iOS, Android, Windows, macOS, and Electron. If you want to mix streams on WeChat Mini Programs and desktop browsers, please use the first method.
+> The second method applies only to SDKs for iOS, Android, Windows, macOS, and Electron.
 
 ## How It Works
 On-Cloud MixTranscoding involves three processes: decoding, mixing, and encoding:

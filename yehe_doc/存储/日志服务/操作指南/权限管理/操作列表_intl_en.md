@@ -54,4 +54,11 @@ The following table describes actions on CLS log resources for which permissions
 | GetDashboard              | Gets dashboard information                 |
 | GetHistogram              | Gets a log numbers histogram             |
 | GetFastAnalysis           | Gets quick analysis results               |
+| GetAccount | Gets the user status in the console |
+| GetResource | Gets the "Overview" data in the console |
+| ListAlarm | Gets a list of monitoring alarms |
+| GetAlarm | Gets information on the monitoring alarm list |
+| DeleteAlarm | Deletes a monitoring alarm |
+| SwitchAlarm | Enables or disables monitoring alarm |
+| ModifyAlarm | Modifies a monitoring alarm task |
 

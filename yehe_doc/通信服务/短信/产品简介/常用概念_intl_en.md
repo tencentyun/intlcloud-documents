@@ -37,7 +37,7 @@ Your login verification code is 1234. Please enter it within 2 minutes. If the l
 - **notification SMS**: used to send system notifications such as delivery notifications, payment receipts, and status notifications.
  Sample:
  ```
-The supporting documents submitted for ICP filing application order 201700001234 have been approved. Please submit additional supporting documents as soon as possible. If you have already submitted them, Tencent Cloud will review them as soon as possible.
+The supporting documents submitted for ICP filing application order 201700001234 for service in Mainland China have been approved. Please submit additional supporting documents as soon as possible. If you have already submitted them, Tencent Cloud will review them as soon as possible.
  ```
 
 ## Marketing SMS

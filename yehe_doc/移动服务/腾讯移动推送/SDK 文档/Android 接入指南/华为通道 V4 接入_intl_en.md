@@ -21,7 +21,7 @@ As TPNS always keeps up with the update progress of each vendor channel's push s
 Get the SHA-256 certificate fingerprint and configure it on the Huawei Push platform as instructed in [Generating Signature Certificate Fingerprint](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger).
 
 ### Getting Huawei Push configuration file
-Download the latest configuration file `agconnect-services.json` of your Huawei application on the application overview page on the Huawei Push platform.
+Download the latest configuration file `agconnect-services.json` from Huawei developer platform in **My Project** -> **Select Project** -> **Project Setting**.
 
 ### Enabling push service
 Enable the push service on the Huawei Push platform. For more information, please see [Enabling Push Service](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
