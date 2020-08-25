@@ -1,4 +1,5 @@
 This document describes the pricing and discount policies of two TPNS billing modes: monthly subscription and pay-as-you-go.
+>! Monthly subscription is currently in beta. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales)
 
 ## Glossary
 - Daily connected devices: the number of deduplicated online devices connected to the SDK on a day (SDK will connect to the TPNS server when the application is running in the foreground or background).
