@@ -9,7 +9,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 设置生命周期
 
@@ -68,7 +68,7 @@ request.lifeCycle.rules = @[rule];
 [[QCloudCOSXMLService defaultCOSXML] PutBucketLifecycle:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m) 查看。
 
 
 **Swift**
@@ -117,11 +117,10 @@ putBucketLifecycleReq.lifeCycle = config;
 putBucketLifecycleReq.lifeCycle.rules = [rule];
 
 putBucketLifecycleReq.finishBlock = {(result,error) in
-    // 可以从 result 中获取服务器返回的 header 信息
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketLifecycle(putBucketLifecycleReq);
@@ -162,12 +161,11 @@ request.bucket = @"examplebucket-1250000000";
 let getBucketLifeCycle = QCloudGetBucketLifecycleRequest.init();
 getBucketLifeCycle.bucket = "examplebucket-1250000000";
 getBucketLifeCycle.setFinish { (config, error) in
-    
-    // 可以从 result 中获取返回信息
-    if error != nil{
+    if let config = config {
+        // 生命周期规则
+        let rules = config.rules
+    } else {
         print(error!);
-    }else{
-        print(config!);
     }
  
 };
@@ -199,7 +197,7 @@ request.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketLifeCycle:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLifecycle.m) 查看。
 
 **Swift**
 
@@ -208,14 +206,14 @@ request.bucket = @"examplebucket-1250000000";
 let deleteBucketLifeCycle = QCloudDeleteBucketLifeCycleRequest.init();
 deleteBucketLifeCycle.bucket = "examplebucket-1250000000";
 deleteBucketLifeCycle.finishBlock = { (result, error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 };
 QCloudCOSXMLService.defaultCOSXML().deleteBucketLifeCycle(deleteBucketLifeCycle);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLifecycle.swift)  查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLifecycle.swift) 查看。
 

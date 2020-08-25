@@ -9,7 +9,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 设置版本控制
 
@@ -34,12 +34,11 @@ QCloudBucketVersioningConfiguration* versioningConfiguration =
 
 request.configuration = versioningConfiguration;
 
-// 说明版本是否开启，枚举值：Suspended、Enabled
+// 说明版本是否开启，枚举值：QCloudCOSBucketVersioningStatusEnabled、
+// QCloudCOSBucketVersioningStatusSuspended
 versioningConfiguration.status = QCloudCOSBucketVersioningStatusEnabled;
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
-    
-    // 可以从 outputObject 中获取服务器返回的 header 信息
     // outputObject 包含所有的响应 http 头部
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
@@ -67,11 +66,10 @@ config.status = .enabled;
 putBucketVersioning.configuration = config;
 
 putBucketVersioning.finishBlock = {(result,error) in
-    // 可以从 result 中获取服务器返回的 header 信息
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketVersioning(putBucketVersioning);
@@ -101,15 +99,14 @@ request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(QCloudBucketVersioningConfiguration* result,
                           NSError* error) {
-    
-    // result 包含多版本的状态
-    result.status;
+    // 获取多版本状态
+    QCloudCOSBucketVersioningStatus * status = result.status;
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] GetBucketVersioning:request];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m)查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m) 查看。
 
 **Swift**
 
@@ -121,10 +118,11 @@ let getBucketVersioning = QCloudGetBucketVersioningRequest.init();
 getBucketVersioning.bucket = "examplebucket-1250000000";
 
 getBucketVersioning.setFinish { (config, error) in
-    if error != nil{
+    if let config = config {
+        // 多版本状态
+        let status = config.status
+    } else {
         print(error!);
-    }else{
-        print(config!);
     }
        
 }
