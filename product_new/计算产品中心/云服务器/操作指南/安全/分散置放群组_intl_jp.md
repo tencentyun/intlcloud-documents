@@ -2,7 +2,7 @@
 このドキュメントは、分散放置グループの管理について説明します。
 
 ## 操作手順
-### 放置グループを作成する
+### 放置グループを作成する。Placement Groupの詳細については、[Placement Group](https://intl.cloud.tencent.com/document/product/213/15486)をご参照ください。
 
 1. [CVM放置グループコンソール](https://console.cloud.tencent.com/cvm/ps)にログイン します。
 2.【新規作成】をクリックします。
