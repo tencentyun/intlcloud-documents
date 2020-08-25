@@ -9,16 +9,16 @@
  - **是否为只读帐号**：选中表示该账号只能使用读请求（select）。
 >?同一个账号名不同的主机 IP 需要独立设置权限，可通过账号管理中【克隆账号】功能，快速克隆相似的账号以及设置权限。
 >
-![](https://main.qcloudimg.com/raw/eda758408c3d0998fbf7c21c3a265bca.png)
+![](https://main.qcloudimg.com/raw/d49f230abc744ca8551b692a13cf3d79.png)
 4. 在弹出的对话框，设置数据库权限，单击【保存设置】，也可以选择【之后设置】。
 
 ## 设置权限
 1. 在账号管理页，单击“操作”列的【修改权限】。
-![](https://main.qcloudimg.com/raw/d99d1c24ead8d610a8fd50cc723e3793.png)
+![](https://main.qcloudimg.com/raw/90665980ad0ceef13438db0fcc6058b4.png)
 2. 在弹出的对话框，根据需求分配权限后，单击【保存设置】即可完成权限分配。
 MariaDB 的权限为对象级权限，权限包括数据库常见的19种权限，可以为表、视图、函数、触发器等对象设置权限。
 >?未创建数据库时，无法设置对象级别权限。
 >
-![](https://main.qcloudimg.com/raw/694d08a5d3c1c491f1b263122400845f.png)
+![](https://main.qcloudimg.com/raw/32866e0cdac00cf84a98a0b203e01e64.png)
 
 
