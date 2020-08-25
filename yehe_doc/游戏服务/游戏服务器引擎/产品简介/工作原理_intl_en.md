@@ -4,7 +4,7 @@
 
 A server fleet consists of multiple CVM instances, each of which runs multiple game server sessions. GSE can manage and assign game server sessions. In general, each session is a process.
 
-![](https://main.qcloudimg.com/raw/31e41eec195bf98521120c5e71e5d9b2.jpg)
+![](https://main.qcloudimg.com/raw/9539e4c5e762feadcf331ac3ca15b2ac.png)
 
 
 
@@ -25,7 +25,7 @@ GSE will not remove instances where game server sessions are running. During red
 
 A game server queue is actually a queue of server fleets with configured priorities. It can include server fleets around the world to implement nearby scheduling and disaster recovery.
 
-![](https://main.qcloudimg.com/raw/bb7598376dbe1b0e72f8e08d0522dfa3.jpg)
+![](https://main.qcloudimg.com/raw/ec7a6961656f315de95a1c10d981de37.png)
 
 
 
@@ -40,7 +40,7 @@ GSE provides a speed test tool that you can use to test the latency of requests 
 ## Alias 
 
 A client can request a server in a server fleet through an alias. When the version is updated, you can create a server fleet and point the alias to the new fleet so that the client can still call the same alias and implement non-stop update.
-![](https://main.qcloudimg.com/raw/b3c8b0b7d529e4c0d29288f69978d868.png)
+![](https://main.qcloudimg.com/raw/84df25b4e1609cafb0cf7271e7a0aaf4.png)
 
 
 

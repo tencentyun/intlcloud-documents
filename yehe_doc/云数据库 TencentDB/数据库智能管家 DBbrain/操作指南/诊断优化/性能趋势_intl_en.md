@@ -170,3 +170,4 @@ Drag on the view for fine-grained display of one single performance metric trend
 ![](https://main.qcloudimg.com/raw/8883b09c4f7b2b28b60299ba61c6b5d7.png)
 Click **Add Time Comparison** and select the desired time period for comparison to view the time comparison of multiple performance metric trends.
 ![](https://main.qcloudimg.com/raw/696f8ccd768423e1aefaed587e8da3c2.png)
+

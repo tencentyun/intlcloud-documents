@@ -77,11 +77,11 @@
    </tr>
    <tr>
       <td  rowspan="2">按语音消息 DAU 计费</td>
-      <td >仅简体中文、英文</td>
+      <td >标准模式</td>
       <td>0.0019 </td>
    </tr>
    <tr>
-      <td >全语种</td>
+      <td >增强模式</td>
       <td>0.078 </td>
    </tr>
    </tr>
@@ -89,7 +89,8 @@
 
 
 
->应用内用户收发语音消息即算作语音消息 DAU，语音消息 DAU 按照 openID 去重计算（openID 是应用内用户的唯一标识符，一个用户对应一个 openID）。
+>- 应用内用户收发语音消息即算作语音消息 DAU，语音消息 DAU 按照 openID 去重计算（openID 是应用内用户的唯一标识符，一个用户对应一个 openID）。
+>- 标准模式仅支持中文、韩文、英文，增强模式支持全语种。详细语言参数请参考[语言参数列表](https://intl.cloud.tencent.com/document/product/607/30260)。
 
 
 ## 停服/释放策略

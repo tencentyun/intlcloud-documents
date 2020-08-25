@@ -11,10 +11,9 @@ This document describes how to access the GME SDK.
 #### Entering information
 Enter the required information on the page and select the service you need. 
 - For billing details, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/607/17808) or consult your Tencent Cloud rep. The settings can be modified afterwards.
-- For gaming applications, you need to select the appropriate platform/engine. The options selected in **Platform/Engine** and **Service Region** are for reference only and do not affect the service effect.
 - The settings for the voice messaging and speech-to-text service can be modified at any time.
 
-![](https://main.qcloudimg.com/raw/bea791aa3cf63384b8b195e99782d383.png)
+![](https://main.qcloudimg.com/raw/6a7f84cf85f38d6ee87e98feb710ba23.png)
 
 ## Setting Service
 #### Viewing application
@@ -26,7 +25,7 @@ The `AppID` in the list is used as a parameter when accessing the SDK for develo
 #### Setting application
 Click **Settings** to enter the application information module and click **Modify** to modify the information as needed.
 
-![](https://main.qcloudimg.com/raw/8dbad81c822f119ad7f7a9d3955b8c20.png)
+![](https://main.qcloudimg.com/raw/d915147f17ca0e31fc623c022f3c608b.png)
 
 
 
