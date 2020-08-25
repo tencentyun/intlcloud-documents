@@ -4,7 +4,7 @@
 
 多个 CVM 实例构建成了一个服务器舰队，一个 CVM 上运行多个游戏服务器会话。GSE 对游戏服务器会话进行管理和分配，通常一个游戏服务器会话是一个进程。
 
-![](https://main.qcloudimg.com/raw/31e41eec195bf98521120c5e71e5d9b2.jpg)
+![](https://main.qcloudimg.com/raw/9539e4c5e762feadcf331ac3ca15b2ac.png)
 
 
 
@@ -25,7 +25,7 @@ GSE 不会缩减有游戏服务器会话运行的实例，缩容时，GSE 会通
 
 游戏服务器队列实际上是一组有优先级的服务器舰队的队列。该队列可以包含全球各地的服务器舰队，从而有条件实现就近调度和容灾。
 
-![](https://main.qcloudimg.com/raw/bb7598376dbe1b0e72f8e08d0522dfa3.jpg)
+![](https://main.qcloudimg.com/raw/ec7a6961656f315de95a1c10d981de37.png)
 
 
 
@@ -40,7 +40,7 @@ GSE 提供测速工具，可以测到客户端到服务端的延时，对于对�
 ## 别名 
 
 客户端通过别名（alias）请求服务器舰队（fleet）下的服务器，版本更新的时候，新建服务器舰队（fleet），并把别名（alias）的配置指向新建的服务器舰队（fleet），客户端仍然调用同一个别名，实现不停服更新。
-![](https://main.qcloudimg.com/raw/b3c8b0b7d529e4c0d29288f69978d868.png)
+![](https://main.qcloudimg.com/raw/84df25b4e1609cafb0cf7271e7a0aaf4.png)
 
 
 

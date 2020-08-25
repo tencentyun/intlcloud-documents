@@ -47,7 +47,7 @@ go
 4. 返回存储桶列表，单击存储桶名或操作列的【配置管理】。
 5. 选择【文件列表】页，单击【上传文件】，可以选择单个或多个文件上传。
 6. 文件上传完后，可单击存储桶名，在基础配置的基本信息中获取【对象地址】。
-![](https://main.qcloudimg.com/raw/6f1639a7df6015e52d6a98913839352f.png)
+![](https://main.qcloudimg.com/raw/97f433605a1efcad655fe1eb2a0eb9da.png)
 
 <span id = "qianyi_shuju"></span>
 ### 通过 COS 源文件迁移数据

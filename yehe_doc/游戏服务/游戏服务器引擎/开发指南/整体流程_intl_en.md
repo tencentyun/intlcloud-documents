@@ -1,5 +1,5 @@
 ## Overall Flowchart
-![](https://main.qcloudimg.com/raw/b940c44c486d02f19c5a3fad3361b5f0.png)
+![](https://main.qcloudimg.com/raw/70af47a2520180f93b202547acaadac8.png)
 ## Integration Steps
 ### Step 1. Integrate the server with the gRPC framework
 The game server communicates with GSE over gRPC. The gRPC framework can be integrated with the game server program in various programming languages to generate game server executable files. For more information on how to integrate GSE with the server in different languages, please see [gRPC - C++ Tutorial](https://intl.cloud.tencent.com/document/product/1055/37408), [gRPC - C# Tutorial](https://intl.cloud.tencent.com/document/product/1055/37409), [gRPC - Go Tutorial](https://intl.cloud.tencent.com/document/product/1055/37410), [gRPC - Java Tutorial](https://intl.cloud.tencent.com/document/product/1055/37411), [gRPC - Lua Tutorial](https://intl.cloud.tencent.com/document/product/1055/37412), and [gRPC - Node.js Tutorial](https://intl.cloud.tencent.com/document/product/1055/37413). For other languages, please see the [gRPC official documentation](http://doc.oschina.net/grpc).
@@ -11,8 +11,8 @@ An asset package contains the executable files, dependencies, and install script
 2. Create a server fleet 
 Deploy the uploaded asset package on the created server fleet and complete process management, deployment configuration, scaling configuration, etc. For more information, please see [Creating Server Fleets](https://intl.cloud.tencent.com/document/product/1055/36675).   
 
-### Step 3. Call a TencentCloud API to get the server address (IP:port or domain name)
-You can get the server address (IP:port or domain name) by creating and placing a game server session.
+### Step 3. Call a TencentCloud API to get the server address (IP:port)
+You can get the server address (IP:port) by creating and placing a game server session.
 
 #### Create a game server session
 - Creation method:
@@ -41,8 +41,8 @@ Create one by using a game server queue.
 
  For more information on how to call the TencentCloud APIs, please see [Placing Game Server Session](https://intl.cloud.tencent.com/document/product/1055/37417).
 
-### Step 4. The client uses the IP:port or domain name to access the server
-The client can connect to the target server through the `IP:port` or domain name returned in step 3.
+### Step 4. The client uses the IP:port to access the server
+The client can connect to the target server through the `IP:port` returned in step 3.
 
 ## Workflow
 ![](https://main.qcloudimg.com/raw/02ec2067c8e06f5e1d1f3130aee7b81d.png)

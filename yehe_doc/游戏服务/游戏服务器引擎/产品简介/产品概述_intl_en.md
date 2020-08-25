@@ -5,7 +5,7 @@ Tencent Cloud Game Server Engine (GSE) provides dedicated game server hosting se
 ## Product Architecture 
 GSE provides a runtime environment for game code packages where you can perform service discovery, scaling, cross-region deployment, and nearby scheduling. You can integrate the GSE ServerSDK into your server framework so that clients can request access to game servers through APIs and GSE will return the optimal game server for client access.
 
-![](https://main.qcloudimg.com/raw/c9ad61366683b2045cba5d30a35c0b8b.jpg)
+![](https://main.qcloudimg.com/raw/363390d57a27cac0a9b8adc3d4935a2f.png)
 
 
 ## Features 

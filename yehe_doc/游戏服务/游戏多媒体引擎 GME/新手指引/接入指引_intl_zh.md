@@ -11,10 +11,9 @@
 #### 填写信息
 填写该页面所需信息，按照需要选择所需的服务。 
 - 计费详情请参考 [产品价格](https://intl.cloud.tencent.com/document/product/607/17808) 或者咨询相关腾讯云商务工作人员。设置完成可再修改。
-- 如果是游戏类应用，需选择相应的平台引擎。【平台/引擎】和【服务区域】中的勾选选项仅作参考，不影响服务效果。
 - 语音消息及转文本服务设置完成可再修改。
 
-![](https://main.qcloudimg.com/raw/bea791aa3cf63384b8b195e99782d383.png)
+![](https://main.qcloudimg.com/raw/6a7f84cf85f38d6ee87e98feb710ba23.png)
 
 ## 设置服务
 #### 查看应用
@@ -26,7 +25,7 @@
 #### 设置应用
 单击【设置】，进入应用信息模块，单击【修改】后可对相应信息进行修改。
 
-![](https://main.qcloudimg.com/raw/8dbad81c822f119ad7f7a9d3955b8c20.png)
+![](https://main.qcloudimg.com/raw/d915147f17ca0e31fc623c022f3c608b.png)
 
 
 

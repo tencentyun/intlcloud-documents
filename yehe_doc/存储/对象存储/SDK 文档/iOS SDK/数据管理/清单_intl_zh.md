@@ -181,10 +181,10 @@ config.optionalFields = fields;
 putReq.inventoryConfiguration = config;
 
 putReq.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 
@@ -242,10 +242,11 @@ req.bucket = "examplebucket-1250000000";
 // 清单任务的名称
 req.inventoryID = "list1";
 req.setFinish {(result,error) in
-    if error != nil{
+    if let result = result {
+        // 任务信息
+        let enabled = result.isEnabled
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucketInventory(req);
@@ -293,10 +294,10 @@ delReq.bucket = "examplebucket-1250000000";
 // 清单任务的名称
 delReq.inventoryID = "list1";
 delReq.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 
