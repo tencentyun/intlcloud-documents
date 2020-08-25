@@ -5,7 +5,7 @@
 ## 产品架构 
 游戏服务器引擎为游戏代码包提供运行环境，该环境可以进行服务发现、扩缩容、多地部署、就近调度，开发者在服务端框架中集成 GSE 的 ServerSDK，客户端通过 API 请求游戏服务器，GSE 返回最恰当的游戏服务器供客户端访问。
 
-![整体架构](https://main.qcloudimg.com/raw/c9ad61366683b2045cba5d30a35c0b8b.jpg)
+![整体架构](https://main.qcloudimg.com/raw/363390d57a27cac0a9b8adc3d4935a2f.png)
 
 
 ## 产品功能 
