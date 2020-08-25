@@ -11,8 +11,8 @@ An asset package contains the executable files, dependencies, and install script
 2. Create a server fleet 
 Deploy the uploaded asset package on the created server fleet and complete process management, deployment configuration, scaling configuration, etc. For more information, please see [Creating Server Fleets](https://intl.cloud.tencent.com/document/product/1055/36675).   
 
-### Step 3. Call a TencentCloud API to get the server address (IP:port or domain name)
-You can get the server address (IP:port or domain name) by creating and placing a game server session.
+### Step 3. Call a TencentCloud API to get the server address (IP:port)
+You can get the server address (IP:port) by creating and placing a game server session.
 
 #### Create a game server session
 - Creation method:
