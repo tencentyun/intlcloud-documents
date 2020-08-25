@@ -1,8 +1,22 @@
 ## Testing Tool
-The tool used to test the database benchmark performance is sysbench v0.5.
+Sysbench 0.5 is the tool used to test the database benchmark performance.
 
 Modifications to the tool:
-The OLTP script that comes with sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve 4 Select operations and 1 Update operation with the read/write ratio at 4:1.
+The OTLP script that comes with sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve four Select operations and one Update operation with the read/write ratio at 4:1.
+
+#### Tool installation
+Run the following code to install Sysbench 0.5:
+```
+git clone https://github.com/akopytov/sysbench.git
+git checkout 0.5
+yum -y install make automake libtool pkgconfig libaio-devel
+yum -y install mariadb-devel
+./autogen.sh
+./configure
+make -j
+make install
+```
+>?The installation directions above apply to performance stress testing on a CentOS CVM instance. For directions on installing the tool on other operating systems, please see [the official Sysbench documentation](https://github.com/akopytov/sysbench?spm=a2c4g.11186623.2.12.36061072oZL2qS).
 
 ## Testing Environment
 
@@ -11,15 +25,15 @@ The OLTP script that comes with sysbench was modified. Specifically, the read/wr
 | Physical machine | High-availability edition where a single machine can support database instances with up to 488 GB memory and 6 TB disk |
 | Instance specification | Currently purchasable mainstream specification (please see the [test cases](#cscs) below) |
 | Client configuration | 4-core CPU and 8 GB memory |
-| Number of clients | 1–6 (more clients need to be added as the configuration is upgraded) |
+| Number of clients | 1-6 (more clients need to be added as the configuration is upgraded) |
 | Network environment | Data center with 10-Gigabit connection and a network latency below 0.05 ms |
 | Environment load | Load on the machine where MySQL is installed is above 70% (for non-exclusive instances) |
 
 - Note on client specification: high-spec client machines are used so as to ensure that the database instance performance can be measured through stress testing on a single client. For low-spec clients, it is recommended to use multiple clients for concurrent stress testing and aggregate the results.
-- Note on network latency: in the testing environment, it should be ensured that clients and database instances are in the same AZ so as to prevent the testing result from being affected by network factors.
+- Note on network latency: in the testing environment, it should be ensured that clients and database instances are in the same availability zone so as to prevent the testing result from being affected by network factors.
 
-## Testing Method
-### 1. Structure of testing tables
+## Test Method
+### 1. Structure of testing database tables
 ```
 CREATE TABLE `sbtest1` ( 
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
@@ -41,43 +55,44 @@ pad: 63188288836-92351140030-06390587585-66802097351-4928296184
 
 ### 3. Data preparations
 ```
-/root//sysbench/sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --mysql-table-engine=innodb --test=tests/db/oltp.lua --oltp_tables_count=20 --oltp-table-size=10000000  --rand-init=on prepare
+sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --mysql-table-engine=innodb --test=tests/db/oltp.lua --oltp_tables_count=20 --oltp-table-size=10000000  --rand-init=on prepare
 ```
 
 Descriptions of data preparation parameters:
-- `--test=tests/db/oltp.lua` indicates to implement the OLTP test by calling the tests/db/oltp.lua script.
+- `--test=tests/db/oltp.lua` indicates to implement the OLTP test by calling the `tests/db/oltp.lua` script.
 - `--oltp_tables_count=20` indicates that the number of tables for testing is 20.
 - `--oltp-table-size=10000000` indicates that each testing table is populated with 10 million rows of data.
 - `--rand-init=on` indicates that each testing table is populated with random data.
    
 
-### 4. Command for performance stress testing
+### 4. Command for stress testing
 ```
-/root//sysbench/sysbench --mysql-host=xxxx --mysql-port=xxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua --oltp_tables_count=xx --oltp-table-size=xxxx --num-threads=xxx --oltp-read-only=off --rand-type=special --max-time=600 --max-requests=0 --percentile=99 --oltp-point-selects=4 run
+sysbench --mysql-host=xxxx --mysql-port=xxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua --oltp_tables_count=xx --oltp-table-size=xxxx --num-threads=xxx --oltp-read-only=off --rand-type=special --max-time=600 --max-requests=0 --percentile=99 --oltp-point-selects=4 run
 ```
 
-Descriptions of performance stress testing parameters:
-- `--test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua` indicates to implement the OLTP test by calling the /root/sysbench_for_z3/sysbench/tests/db/oltp.lua script.
+Descriptions of stress testing parameters:
+- `--test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua` indicates to implement the OLTP test by calling the `/root/sysbench_for_z3/sysbench/tests/db/oltp.lua` script.
 - `--oltp_tables_count=20` indicates that the number of tables for testing is 20.
 - `--oltp-table-size=10000000` indicates that each testing table is populated with 10 million rows of data.
 - `--num-threads=128` indicates that the concurrent connections of clients for testing is 128.
 - `--oltp-read-only=off` indicates that the read-only testing model is disabled and the hybrid read/write model is used.
 - `--rand-type=special` indicates that the random model is specific.
 - `--max-time=1800` indicates the execution time of this test.
-- `--max-requests=0` indicates that no limit is imposed on the total number of requests and the test is executed according to max-time.
+- `--max-requests=0` indicates that no limit is imposed on the total number of requests and the test is executed according to `max-time`.
 - `--percentile=99` indicates the sampling rate. Here, 99 means discarding 1% long requests of all the requests and taking the maximum value among the remaining 99% requests. The default value is 95%.
 - `--oltp-point-selects=4` indicates that the number of Select operations in the SQL testing command in the OLTP script is 4. The default value is 1.
 
 ### 5. Scenario model
-All test cases in this document adopt the scenario script `our_oltp.lua` which is modified to run four `Select` operations and one `Update` operation (index column) with the read/write ratio at 4:1.
+All test cases in this document adopt the scenario script `our_oltp.lua` which is modified to run four Select operations and one Update operation (index column) with the read/write ratio at 4:1.
 For the maximum configuration, the parameter tuning model is added to the data scenario. For the test results, please see [Test Results](#document_test_result) below.
 
 <span id="cscs"></span>
-## Testing Parameters
+## Test Parameters
 
-| Instance Specification | Storage Capacity | Number of Tables | Number of Rows | Data Set Size | Concurrence | Execution Time (in Minutes) |
+| Instance Specification | Storage Capacity | Number of Tables | Number of Rows | Data Set Size | Concurrence | Execution Time (Minutes) |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|1-core, 1 GB|200 GB|4|20 million|19 GB|128|30|
+|1-core, 1 GB|200 GB|4|20 million |19 GB|128|30|
+|1-core, 2 GB|200 GB|4|40 million |38 GB|128|30|
 |2-core, 4 GB|200 GB|8|40 million|76 GB|128|30|
 |4-core, 8 GB|200 GB|15|40 million |142 GB|128|30|
 |4-core, 16 GB|400 GB|25|40 million|238 GB|128|30|
@@ -94,7 +109,8 @@ For the maximum configuration, the parameter tuning model is added to the data s
 
 | Instance Specification | Storage Capacity | Data Set | Number of Clients | Single-client Concurrence | QPS | TPS |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-|1-core, 1 GB|200 GB|19 GB|1|128|1757|97|
+|1-core, 1 GB|200 GB|19 GB|1|128|1,757|97|
+|1-core, 2 GB|200 GB|38 GB|1|128|3,016|167|
 |2-core, 4 GB|200 GB|76 GB|1|128|4,082|816|
 |4-core, 8 GB|200 GB|142 GB|1|128|6,551|1,310|
 |4-core, 16 GB|400 GB|238 GB|1|128|11,098|2,219|
