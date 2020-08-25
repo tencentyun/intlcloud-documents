@@ -1,5 +1,5 @@
 ## 整体流程图
-![](https://main.qcloudimg.com/raw/b940c44c486d02f19c5a3fad3361b5f0.png)
+![](https://main.qcloudimg.com/raw/70af47a2520180f93b202547acaadac8.png)
 ## 接入步骤
 ### 步骤1：服务器集成 gRPC 框架
 游戏服务器和 GSE 通过 gRPC 通信，游戏服务器程序集成 gRPC 框架，实现多语言接入，生成游戏服务器可执行文件。各语言服务端接入 GSE 的具体教程请您参考腾讯云 [gRPC-C++ 教程](https://intl.cloud.tencent.com/document/product/1055/37408)、[gRPC-C# 教程](https://intl.cloud.tencent.com/document/product/1055/37409)、[gRPC-Go 教程](https://intl.cloud.tencent.com/document/product/1055/37410)、[gRPC-Java 教程](https://intl.cloud.tencent.com/document/product/1055/37411)、[gRPC-Lua 教程](https://intl.cloud.tencent.com/document/product/1055/37412)、[gRPC-Nodejs 教程](https://intl.cloud.tencent.com/document/product/1055/37413) 文档。其他语言请您参考 [gRPC 官方文档](http://doc.oschina.net/grpc)。
