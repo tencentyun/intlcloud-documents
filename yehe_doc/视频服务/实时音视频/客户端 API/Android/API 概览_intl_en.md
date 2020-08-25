@@ -20,7 +20,8 @@
 | [ConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Requests cross-room call (anchor competition). |
 | [DisconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exits cross-room call. |
 | [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
-
+| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Creates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance |
+| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance |
 
 ### CDN API functions
 
@@ -333,11 +334,11 @@ Event callback API for TRTC video call feature.
 
 
 ### Custom audio data frame processing callbacks (read-only)
-
-| API                                                          | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a13dfcc17ca7ea6bcff7b0f5f6d167e33) | Callback of audio data captured by local mic. |
-| [onPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a60a54a148edf641a85fbc07bc294fe11) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
+| API | Description |
+|-----|-----|
+| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | Callback of audio data captured by local mic. |
+| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Calls back the audio data which is locally collected and pre-processed by the audio module |
+| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Audio data to be played back by speaker after audio data from each channel is mixed. |
 
 
