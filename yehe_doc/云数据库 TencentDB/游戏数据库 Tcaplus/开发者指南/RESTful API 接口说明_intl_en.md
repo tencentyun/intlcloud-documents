@@ -1,36 +1,42 @@
 This document is the TcaplusDB RESTful API v1.0 User Manual.
 
 ## Overview
-TcaplusDB RESTful API enables you to remotely interact with TcaplusDB through HTTP requests. After sending an HTTP request where data is transferred in JSON format by calling the RESTful API, you will receive a response packet in JSON format. You can send RESTful API requests in any programming language or tool to perform CRUD operations on data.
+TcaplusDB RESTful API enables you to remotely interact with TcaplusDB through HTTP requests. After sending an HTTP request where data is transferred in JSON format by calling the RESTful API, you will receive a response package in JSON format. You can send RESTful API requests in any programming language or tool to perform CRUD operations on data.
 
 ## Preparations
-You have created a cluster in the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app) and obtained the corresponding cluster information, including `AppId` (cluster access ID), `ZoneId` (table group ID), and `AppKey` (cluster access password). Currently, TcaplusDB RESTful API only supports tables defined through protobuf.
+
+Make sure that you have created a cluster in the [TcaplusDB Console](https://console.cloud.tencent.com/tcaplusdb/app) and obtained the corresponding cluster information, including `AppId` (cluster access ID), `ZoneId` (table group ID), and `AppKey` (cluster access password). Currently, TcaplusDB RESTful API only supports tables defined through protobuf.
 
 ## Current Version
+
 By default, the version of TcaplusDB RESTful API is v1.0.
 
 ## Request
+
 All API call requests are sent over HTTP, and all data is transferred in JSON format. Below is a typical format for access request URI:
+
 ```
 http://{Tcaplus_REST_URL}/{Version}/apps/{AppId}/zones/{ZoneId}/tables/{TableName}/records
 ```
 * Tcaplus_REST_URL: TcaplusDB RESTful URL access point
 * Version: TcaplusDB RESTful API version number, which is "ver1.0" by default
-* AppId: cluster access ID
-* ZoneId: table group
+* AppId: cluster **access ID**
+* ZoneId: table group **ID**
 * TableName: table name
 
-Sample:
+Sample code:
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_rest_test/records
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_rest_test/records
 ```
 
 ### HTTP header
+
 Setting HTTP headers allows you to transfer additional information through requests and responses at the HTTP client.
 
 #### Authentication
+
 `x-tcaplus-pwd-md5`
-Fill in this field with the calculated MD5 of your `App Key`, which is used to authenticate the client's access to the data.
+Fill in this field with the calculated MD5 of your `app key`, which is used to authenticate the client's access to the data.
 Calculate the MD5 of the string by running the `bash` command:
 ```
 # echo -n "c3eda5f013f92c81dda7afcdc273cf82" | md5sum
@@ -38,50 +44,58 @@ Calculate the MD5 of the string by running the `bash` command:
 ```
 
 #### Operation check 
+
 - `x-tcaplus-target` specifies TcaplusDB RESTful API request operations, including:
  * Tcaplus.GetRecord   Gets record
  * Tcaplus.AddRecord   Inserts record
  * Tcaplus.SetRecord   Sets record
  * Tcaplus.DeleteRecord   Deletes record
- * Tcaplus.FieldGetRecord   Reads certain fields
- * Tcaplus.FieldSetRecord   Sets certain fields
- * Tcaplus.FieldIncRecord   Auto-increments certain fields
- * Tcaplus.PartkeyGetRecord   Batch reads indices
-- `x-tcaplus-idl-type` specifies the TcaplusDB table type. Currently, only the protobuf (PB) type is supported.
+ * Tcaplus.FieldGetRecord   Reads specified fields
+ * Tcaplus.FieldSetRecord   Sets specified fields
+ * Tcaplus.FieldIncRecord   Auto-increments specified fields
+ * Tcaplus.PartkeyGetRecord   Batch reads indexes
+- `x-tcaplus-idl-type` specifies the TcaplusDB table type. Currently, only the protobuf (pb) type is supported.
 
 
 #### Setting tag 
-- `x-tcaplus-data-version-check` Specifies Tcaplus data version check policy use with `x-tcaplus-data-version`. It can be set as:
+
+- `x-tcaplus-data-version-check` Specifies TcaplusDB data version check policy use with `x-tcaplus-data-version`. It can be set as:
 `x-tcaplus-data-version-check` specifies the TcaplusDB data version check policy to implement the optimistic locking feature, which is to be used with `x-tcaplus-data-version` tagging. Valid values include:
- - `1`: write operations can be performed only if the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time this operation is performed.
- - `2`: the relationship between the client version number and the server version number is ignored. The client version number is forcibly set at the storage layer.
- - `3`: the relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time the write operation is performed.
+
+ * `1`: write operations can be performed only if the data version number at the client is identical to that at the storage layer. The version number will be increased by 1 each time this operation is performed.
+ * `2`: the relationship between the client version number and the server version number is ignored. The client version number will be forcibly set at the storage layer.
+ * `3`: the relationship between the client version number and the server version number is ignored. The version number at the storage layer will be increased by 1 each time the write operation is performed.
+
  These tags are only applicable to `Tcaplus.AddRecord` and `Tcaplus.SetRecord`.
 
 - `x-tcaplus-data-version` is used with `x-tcaplus-data-version-check` to set the data version number of the client. Valid values include:
- - `version <= 0` means to ignore the version check policy.
- - `version > 0` means to specify the version number of the data record at the client.
+ * version <= 0 means to ignore the version check policy.
+ * version > 0 means to specify the version number of the data record at the client.
 - `x-tcaplus-result-flag` sets whether the response contains the complete data policy. Valid values include:
- - `0`: the response only contains whether the request succeeded or failed.
- - `1`: the response contains the same values as the request does.
- - `2`: the response contains the latest values of all fields of the data that has been modified.
- - `3`: the response contains the value before the record is modified.
+ * `0`: the response only contains whether the request succeeded or failed.
+ * `1`: the response contains the same values as the request does.
+ * `2`: the response contains the latest values of all fields of the data that has been modified.
+ * `3`: the response contains the value before the record is modified.
 
 
 ### JSON request data 
+
 ```
 Request Data:
 {
  "ReturnValues": "...", // The data you configure to be retained, which will arrive at TcaplusDB with the request and be sent back as-is
  "Record": {
-     ... // For the format of data records, please see "API Samples"
+     ... // For the format of data records, please see "API Samples".
  }
 }
 ```
 
 ## Response
+
 ### JSON response data
+
 The `GetRecord/SetRecord/AddRecord/DeleteRecord/FieldGetRecord/FieldSetRecord/FieldIncRecord` operation returns a single data entry. The JSON response data is as below:
+
 ```
 Response Data
 {
@@ -96,6 +110,7 @@ Response Data
 ```
 
 The `PartkeyGetRecord` operation may return multiple data entries. The JSON response data is as below:
+
 ```
 Response Data
 {
@@ -131,6 +146,7 @@ Response Data
 | 500 | - | Internal system error <br>Please see the return message field |
 
 ## API Samples 
+
 ### Tcaplus.GetRecord 
 ```
 GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSONKeysObj}&select={JSONSelectObj}
@@ -139,7 +155,7 @@ This API is used to query a record by specifying its `key` information in a Tcap
 
 The `keys` variable must be specified in the URI, which indicates the values of all primary keys. The optional `select` variable indicates the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
-> The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
+>! The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -149,7 +165,7 @@ The `keys` variable must be specified in the URI, which indicates the values of 
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
 
 ##### URL
 - If URL is not URL-encoded:
@@ -228,10 +244,10 @@ The `SetRecord` operation supports setting the following values for `resultflag`
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
 ##### URL
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### HTTP request header
@@ -320,10 +336,11 @@ POST /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 This API is used to insert a record by specifying its `key` information. If the record already exists, an error will be returned.
 
 The `AddRecord` operation supports setting the following values for `resultflag`:
-* `0`: the response only contains whether the request succeeded or failed.
-* `1`: the response contains the same values as the request does.
-* `2`: the response contains the latest values of all fields of the data that has been modified.
-* `3`: the response contains the value before the record is modified.
+
+* `0`: the response only contains whether the request succeeded or failed
+* `1`: the response contains the same values as the request does
+* `2`: the response contains the latest values of all fields of the data that has been modified
+* `3`: the response contains the value before the record is modified
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -334,14 +351,14 @@ The `AddRecord` operation supports setting the following values for `resultflag`
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
 
 ##### URL
 ```
- http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
+ http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
-
 ##### HTTP request header
+
 ```
 [
  "x-tcaplus-target:Tcaplus.AddRecord",
@@ -353,6 +370,7 @@ The `AddRecord` operation supports setting the following values for `resultflag`
 ```
 
 ##### JSON request data
+
 ```
 {
  "ReturnValues": "Send to tcaplus by calvinshao",
@@ -382,6 +400,7 @@ The `AddRecord` operation supports setting the following values for `resultflag`
 ```
 
 ##### JSON response data
+
 ```
 {
  "ErrorCode": 0,
@@ -416,13 +435,16 @@ The `AddRecord` operation supports setting the following values for `resultflag`
 
 
 ### Tcaplus.DeleteRecord 
+
 ```
 DELETE /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
+
 ```
 
 This API is used to delete a record by specifying its `key` information. If the data does not exist, an error will be returned.
 
 The `DeleteRecord` operation supports setting the following values for `resultflag`:
+
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
 * `2`: the response contains the latest values of all fields of the data that has been modified
@@ -437,14 +459,15 @@ The `DeleteRecord` operation supports setting the following values for `resultfl
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
 
 ##### URI
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### HTTP request header
+
 ```
 [
  "x-tcaplus-target:Tcaplus.DeleteRecord",
@@ -456,6 +479,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### JSON request data
+
 ```
 {
  "ReturnValues": "Send to tcaplus by calvinshao",
@@ -478,15 +502,16 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 
+
 ### Tcaplus.FieldGetRecord 
 ```
 GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSONKeysObj}&select={JSONSelectObj}
 ```
 
-This API is used to query a record by specifying its `key` information in a TcaplusDB PB table. This operation only queries and transfers the values of the field you specify through the `select` variable, which will reduce the network transfer traffic usage and is the biggest difference from the `GetRecord` operation. If the data record does not exist, an error will be returned.
+This API is used to query a record by specifying its `key` information in a TcaplusDB pb table. This operation only queries and transfers the values of the field you specify through the `select` variable, which will reduce the network transfer traffic usage and is the biggest difference from the `GetRecord` operation. If the data record does not exist, an error will be returned.
 The `keys` and` select` variables must be specified in the URI. `keys` specifies the values of all primary keys. `select` specifies the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
-> The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
+>! The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -495,19 +520,22 @@ The `keys` and` select` variables must be specified in the URI. `keys` specifies
 |x-tcaplus-pwd-md5  |String|MD5 of AppKey(Password) |
 |x-tcaplus-idl-type  |String|protobuf |
 
-#### Samples
+#### Sample
 
 ##### If URL is not URL-encoded
+
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys={'region': 101, 'name': 'calvinshao', 'uin': 100}&select=['gamesvrid', 'lockid', 'pay.auth.pay_keys', 'pay.total_money']
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records?keys={'region': 101, 'name': 'calvinshao', 'uin': 100}&select=['gamesvrid', 'lockid', 'pay.auth.pay_keys', 'pay.total_money']
 ```
 
 ##### If URL is URL-encoded
+
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7B%22region%22%3A%20101%2C%20%22name%22%3A%20%22calvinshao%22%2C%20%22uin%22%3A%20100%7D&select=%5B%22gamesvrid%22%2C%20%22lockid%22%2C%20%22pay.auth.pay_keys%22%2C%20%22pay.total_money%22%5D
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7B%22region%22%3A%20101%2C%20%22name%22%3A%20%22calvinshao%22%2C%20%22uin%22%3A%20100%7D&select=%5B%22gamesvrid%22%2C%20%22lockid%22%2C%20%22pay.auth.pay_keys%22%2C%20%22pay.total_money%22%5D
 ```
 
 ##### HTTP request header
+
 ```
 [
  "x-tcaplus-target:Tcaplus.FieldGetRecord",
@@ -518,6 +546,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7
 ```
 
 ##### JSON response data
+
 ```
 {
  "ErrorCode": 0,
@@ -544,13 +573,16 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7
 ```
 
 ### Tcaplus.FieldSetRecord  
+
 ```
 PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 ```
 
+
 This API is used to modify a record by specifying its `key` information. Different from the `SetRecord` operation, it transfers and sets the values of only the specified fields instead of all fields, which reduces the network traffic usage. If the data record already exists, an update operation will be performed; otherwise, an error will be returned.
 
 The `FieldSetRecord` operation supports setting the following values for `resultflag`:
+
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the same values as the request does
 
@@ -566,16 +598,17 @@ The `FieldSetRecord` operation supports setting the following values for `result
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
 
 ##### URL
 
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records
 
 ```
 
 ##### HTTP request header
+
 ```
 [
  "x-tcaplus-target:Tcaplus.FieldSetRecord",
@@ -588,8 +621,8 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ]
 
 ```
-
 ##### JSON request data
+
 ```
 {
  "ReturnValues": "aaaaaaaaaa",
@@ -616,6 +649,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### JSON response data
+
 ```
 {
  "ErrorCode": 0,
@@ -640,13 +674,16 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 
 
 ### Tcaplus.FieldIncRecord 
+
 ```
 PUT /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records
 ```
 
+
 This API is used to auto-increment the specified fields by specifying the `key` information of a record. It supports fields in `int32`, `int64`, `uint32`, and `uint64` fields and has similar characteristics as `FieldSetRecord`.
 
 The `SetRecord` operation supports setting the following values for `resultflag`:
+
 * `0`: the response only contains whether the request succeeded or failed
 * `1`: the response contains the modified value of the specified field
 
@@ -662,13 +699,16 @@ The `SetRecord` operation supports setting the following values for `resultflag`
 |x-tcaplus-idl-type  |String|protobuf |
 
 
-#### Samples
+#### Sample
+
 ##### URL
+
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### HTTP request header
+
 ```
 [
  "x-tcaplus-target:Tcaplus.FieldIncRecord",
@@ -682,6 +722,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### JSON request data
+
 ```
 {
  "ReturnValues": "aaaaaaaaaa",
@@ -702,6 +743,7 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 ```
 
 ##### JSON response data
+
 ```
 {
  "ErrorCode": 0,
@@ -730,12 +772,13 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records
 GET /ver1.0/apps/{APP_ID}/zones/{ZONE_ID}/tables/{TABLE_NAME}/records?keys={JSONKeysObj}&select={JSONSelectObj}
 ```
 
-This API is used to query multiple records by specifying the values of some primary keys. This operation will return multiple data entries and display them by the field name specified by the `select` variable. The premise of this operation is that the specified primary key set must have an index created when the table is created; otherwise, an error will be returned.
+This API is used to query multiple records by specifying the values of certain primary keys. This operation will return multiple data entries and display them by the field name specified by the `select` variable. The premise of this operation is that the specified primary key set must have an index created when the table is created; otherwise, an error will be returned.
 
 The `keys` variable must be specified in the URI, which specifies the values of all primary keys. The optional `select` variable specifies the name of the field whose value you want to display. You can specify the fields in the nested structure by separating the path with a dot, such as `pay.total_money`.
 
 `limit` and `offset` are the parameters used to control partial record return.
-> The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`. Please specify the index name to be accessed through `x-tcaplus-index-name` in the HEADER. The index name can be found in the table definition file.
+
+>! The variables in the request must be URL-encoded. Please encode the space in the URL as `%20` instead of `+`. Please specify the index name to be accessed through `x-tcaplus-index-name` in the HEADER. The index name can be found in the table definition file.
 
 | Name | Type | Value |
 | -----------------|-------------- | ------------ |
@@ -746,15 +789,17 @@ The `keys` variable must be specified in the URI, which specifies the values of 
 |x-tcaplus-index-name  |String| {index_name}|
 
 
-#### Samples
+#### Sample
+
 ##### If URL is not URL-encoded
+
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys={'name': 'calvinshao', 'uin': 100}&select=['gamesvrid', 'lockid', 'pay.total_money', 'pay.auth.pay_keys']
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records?keys={'name': 'calvinshao', 'uin': 100}&select=['gamesvrid', 'lockid', 'pay.total_money', 'pay.auth.pay_keys']
 ```
 
 ##### If URL is URL-encoded
 ```
-http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7B%22name%22%3A%20%22calvinshao%22%2C%20%22uin%22%3A%20100%7D&select=%5B%22gamesvrid%22%2C%20%22lockid%22%2C%20%22pay.total_money%22%2C%20%22pay.auth.pay_keys%22%5D
+http://10.123.9.70/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7B%22name%22%3A%20%22calvinshao%22%2C%20%22uin%22%3A%20100%7D&select=%5B%22gamesvrid%22%2C%20%22lockid%22%2C%20%22pay.total_money%22%2C%20%22pay.auth.pay_keys%22%5D
 ```
 
 ##### HTTP request header
@@ -768,7 +813,10 @@ http://10.123.9.70:31002/ver1.0/apps/2/zones/1/tables/tb_example/records?keys=%7
 ]
 ```
 
+
+
 ##### Response data
+
 ```
 {
  "ErrorCode": 0,
