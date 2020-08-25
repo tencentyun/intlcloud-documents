@@ -33,8 +33,7 @@ RDPまたはリモートログインソフトでWindowsインスタンスにロ�
 ### パスワードの問題によりログインできない
 
 **障害の現象**：パスワードの入力間違い、パスワードを忘れた、またはパスワードのリセット失敗によるログインできません。
-**ソリューション **： [Tencent Cloudコンソール](https://console.cloud.tencent.com/cvm/index) で当該インスタンスのパスワードをリセットした後、インスタンスを再起動します。
-**対処手順**：インスタンスパスワードのリセット方法については、[インスタンスパスワードのリセット](https://intl.cloud.tencent.com/document/product/213/16566)をご参照ください。
+**手順**：[CVMコンソール](https://console.cloud.tencent.com/cvm/index) でこのインスタンスのパスワードをリセットし、インスタンスを再起動します。 詳細については、[インスタンスパスワードのリセット](https://intl.cloud.tencent.com/document/product/213/16566)をご参照ください。
 
 <span id="BandwidthUtilization"></span>
 ### 帯域幅利用率が高すぎる
