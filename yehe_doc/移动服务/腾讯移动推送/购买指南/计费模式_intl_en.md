@@ -1,4 +1,5 @@
 TPNS provides two billing modes to meet customer needs in different scenarios: monthly subscription and pay-as-you-go.
+>! Monthly subscription is currently in beta. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales)
 
 The following table lists the differences between the two billing modes:
 

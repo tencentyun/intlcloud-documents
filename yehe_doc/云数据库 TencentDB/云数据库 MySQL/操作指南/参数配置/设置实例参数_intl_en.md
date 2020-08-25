@@ -28,11 +28,11 @@ You can view and modify certain parameters in the [TencentDB for MySQL Console](
 4. In the pop-up dialog box, select an **Effective Time** and click **OK**.
 >?If you select **During maintenance window** as the effective time, the parameter modification task will be executed and take effect during the [instance maintenance period](https://intl.cloud.tencent.com/document/product/236/10929).
 >
-![](https://main.qcloudimg.com/raw/12055aa545f88a51ed2e5bc388057280.png)
+
 
 ### Cancelling a parameter modification task
 If a parameter modification or batch modification task has been submitted but you want to cancel it, you can select **[Task List](https://console.cloud.tencent.com/mysql/task)** in the left sidebar in the console, find the task, and click **Cancel** in the "Operation" column. You can cancel a task only before it is executed (that is, when the task state is "Waiting for execution").
-![](https://main.qcloudimg.com/raw/05e07ce358a66c9b4a17d31016a78c4e.png)
+
 
 ### Importing from a parameter template
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
