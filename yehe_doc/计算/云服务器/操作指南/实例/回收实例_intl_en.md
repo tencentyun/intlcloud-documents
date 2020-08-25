@@ -12,9 +12,9 @@ Tencent Cloud recycle bin provides a CVM instance repossession mechanism as foll
  - **Operation restriction**: instances in the recycle bin can only be [restored after renewal](https://intl.cloud.tencent.com/document/product/213/6143) or [terminated](https://intl.cloud.tencent.com/document/product/213/4930).
  
 >! 
-- You cannot restore pay-as-you-go instances from the recycle bin if your account is in arrears. Please renew the payment first.
-- Pay-as-you-go instances are retained in the recycle bin for a maximum of 2 hours. Please note the release time and renew the payment in time to restore the instances.
-- Pay-as-you-go instances cannot enter the recycle bin if your account is in arrears. You can view them on the CVM instance list page. The instances will be released after your account has been in arrears for 2 hours and 15 days.
+> - You cannot restore pay-as-you-go instances from the recycle bin if your account is in arrears. Please renew the payment first.
+> - Pay-as-you-go instances are retained in the recycle bin for a maximum of 2 hours. Please note the release time and renew the payment in time to restore the instances.
+> - Pay-as-you-go instances cannot enter the recycle bin if your account is in arrears. You can view them on the CVM instance list page. The instances will be released after your account has been in arrears for 2 hours and 15 days.
 
 ## Recovering Instance
  1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
