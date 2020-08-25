@@ -62,7 +62,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 上传时使用图片处理
 
@@ -71,74 +71,80 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 图片上传完成后，COS 会存储原始图片和已处理过的图片。后续用户可以通过普通的下载请求获取处理结果。
 
 #### 示例代码
+**Objective-C**
 
 [//]: # ".cssg-snippet-upload-with-pic-operation"
-```cs
-PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
+```objective-c
+QCloudPutObjectWatermarkRequest* put = [QCloudPutObjectWatermarkRequest new];
 
-JObject o = new JObject();
-// 不返回原图
-o["is_pic_info"] = 0;
-JArray rules = new JArray();
-JObject rule = new JObject();
-rule["bucket"] = bucket;
-rule["fileid"] = key;
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/6924
-//这里以图片等比缩放到 400x400 像素以内为例
-rule["rule"] = "imageView2/thumbnail/400x400";
-rules.Add(rule);
-o["rules"] = rules;
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+put.object = @"exampleobject";
+// 存储桶名称，格式为 BucketName-APPID
+put.bucket = @"examplebucket-1250000000";
 
-request.SetRequestHeader("Pic-Operation", o.ToString());
-//执行请求
-PutObjectResult result = cosXml.PutObject(request);
+put.body =  [@"123456789" dataUsingEncoding:NSUTF8StringEncoding];
+QCloudPicOperations * op = [[QCloudPicOperations alloc]init];
+
+// 是否返回原图信息。0表示不返回原图信息，1表示返回原图信息，默认为0
+op.is_pic_info = NO;
+QCloudPicOperationRule * rule = [[QCloudPicOperationRule alloc]init];
+
+// 处理结果的文件路径名称，如以/开头，则存入指定文件夹中，否则，存入原图文件存储的同目录
+rule.fileid = @"test";
+
+// 盲水印文字，需要经过 URL 安全的 Base64 编码。当 type 为3时必填，type
+rule.text = @"123"; // 水印文字只能是 [a-zA-Z0-9]
+
+// 盲水印类型，有效值：1 半盲；2 全盲；3 文字
+rule.type = QCloudPicOperationRuleText;
+op.rule = @[rule];
+put.picOperations = op;
+[put setFinishBlock:^(id outputObject, NSError *error) {
+   
+}];
+[[QCloudCOSXMLService defaultCOSXML] PutWatermarkObject:put];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PictureOperation.m) 查看。
 
 
-### 添加盲水印
+**Swift**
 
-#### 功能说明
+[//]: # ".cssg-snippet-upload-with-pic-operation"
+```swift
+let put = QCloudPutObjectWatermarkRequest<AnyObject>();
 
-盲水印支持在上传时添加以及下载时添加。
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+put.object = "exampleobject";
+// 存储桶名称，格式为 BucketName-APPID
 
-#### 示例代码一：上传时添加盲水印
+put.bucket = "examplebucket-1250000000";
+put.body = "123456789".data(using: .utf8)! as NSData;
+let op = QCloudPicOperations.init();
 
-[//]: # ".cssg-snippet-put-object-with-watermark"
-```cs
-PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
+// 是否返回原图信息。0表示不返回原图信息，1表示返回原图信息，默认为0
+op.is_pic_info = false;
 
-JObject o = new JObject();
-// 不返回原图
-o["is_pic_info"] = 0;
-JArray rules = new JArray();
-JObject rule = new JObject();
-rule["bucket"] = bucket;
-rule["fileid"] = key;
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
-rule["rule"] = "watermark/3/type/<type>/image/<imageUrl>/text/<text>/level/<level>";
-rules.Add(rule);
-o["rules"] = rules;
+let rule = QCloudPicOperationRule.init();
 
-request.SetRequestHeader("Pic-Operation", o.ToString());
-//执行请求
-PutObjectResult result = cosXml.PutObject(request);
+// 处理结果的文件路径名称，如以/开头，则存入指定文件夹中，否则，存入原图文件存储的同目录
+
+rule.fileid = "test";
+
+// 盲水印文字，需要经过 URL 安全的 Base64 编码。当 type 为3时必填，type 为1或2时无效。
+rule.text = "123";
+
+// 盲水印类型，有效值：1 半盲；2 全盲；3 文字
+rule.type = .text;
+
+op.rule = [rule];
+put.picOperations = op;
+put.setFinish { (outoutObject, error) in
+    
+};
+QCloudCOSXMLService.defaultCOSXML().putWatermarkObject(put);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
-
-#### 示例代码二：下载时添加盲水印
-
-[//]: # ".cssg-snippet-download-object-with-watermark"
-```cs
-GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, key, localDir, localFileName);
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
-getObjectRequest.SetQueryParameter("watermark/3/type/<type>/image/<imageUrl>/text/<text>", null);
-
-GetObjectResult result = cosXml.GetObject(getObjectRequest);
-```
-
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PictureOperation.swift) 查看。
 
 

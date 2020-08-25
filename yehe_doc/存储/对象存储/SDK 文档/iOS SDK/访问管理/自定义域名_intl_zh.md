@@ -30,7 +30,7 @@ req.bucket = @"examplebucket-1250000000";
 QCloudDomainConfiguration *config = [QCloudDomainConfiguration new];
 QCloudDomainRule *rule = [QCloudDomainRule new];
 
-// 源站状态
+// 源站状态，可选 QCloudDomainStatueEnabled、 QCloudDomainStatueDisabled
 rule.status = QCloudDomainStatueEnabled;
 // 域名信息
 rule.name = @"www.baidu.com";
@@ -66,6 +66,7 @@ req.bucket = "examplebucket-1250000000";
 
 let config = QCloudDomainConfiguration.init();
 let rule = QCloudDomainRule.init();
+// 开启状态，可选 .enabled, .disabled
 rule.status = .enabled;
 rule.name = "www.baidu.com";
 
@@ -79,10 +80,10 @@ config.rules = [rule];
 // 域名配置的规则
 req.domain = config;
 req.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketDomain(req);
@@ -136,10 +137,10 @@ let req = QCloudGetBucketDomainRequest.init();
 req.bucket = "examplebucket-1250000000";
 
 req.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含源站信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
@@ -164,3 +165,4 @@ QCloudCOSXMLService.defaultCOSXML().getBucketDomain(req);
 <td>String</td>
 </tr>
 </tbody></table>
+
