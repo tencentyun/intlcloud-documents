@@ -5,7 +5,7 @@
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket（List Objects）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象     |
-| [GET Bucket Object Versions](https://cloud.tencent.com/document/product/436/35521) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 查询对象及其历史版本列表 |   查询存储桶下的部分或者全部对象及其历史版本信息|
 
 ## SDK API 参考
 
@@ -20,7 +20,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 #### 示例代码一: 获取第一页数据
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
@@ -50,7 +50,7 @@ request.prefix = @"dir1/";
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
@@ -64,17 +64,16 @@ getBucketReq.maxKeys = 100;
 getBucketReq.prefix = "dir/";
 
 getBucketReq.setFinish { (result, error) in
-    // result 返回具体信息
-    // QCloudListBucketResult.contents 桶内文件数组
-    // QCloudListBucketResult.commonPrefixes 桶内文件夹数组
-    
-    if error != nil{
-        print(error!);
-    } else if let isTruncated = result?.isTruncated {
-        if (isTruncated) {
+    if let result = result {
+        // 文件列表
+        let contents = result.contents
+        
+        if (result.isTruncated) {
             // 数据被截断，需要请求下一页数据
             self.prevPageResult = result;
         }
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
@@ -85,7 +84,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 #### 示例代码二：请求下一页数据
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-bucket-next-page)
+[//]: # ".cssg-snippet-get-bucket-next-page"
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
@@ -116,7 +115,7 @@ request.maxKeys = 100;
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-bucket-next-page)
+[//]: # ".cssg-snippet-get-bucket-next-page"
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
@@ -134,17 +133,16 @@ getBucketReq.maxKeys = 100;
 getBucketReq.prefix = "dir/";
 
 getBucketReq.setFinish { (result, error) in
-    // result 返回具体信息
-    // QCloudListBucketResult.contents 桶内文件数组
-    // QCloudListBucketResult.commonPrefixes 桶内文件夹数组
-    
-    if error != nil{
-        print(error!);
-    } else if let isTruncated = result?.isTruncated {
-        if (isTruncated) {
+    if let result = result {
+        // 文件列表
+        let contents = result.contents
+        
+        if (result.isTruncated) {
             // 数据被截断，需要请求下一页数据
             self.prevPageResult = result;
         }
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
@@ -155,7 +153,7 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 #### 示例代码三：获取对象列表与子目录
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-bucket-with-delimiter)
+[//]: # ".cssg-snippet-get-bucket-with-delimiter"
 ```objective-c
 QCloudGetBucketRequest* request = [QCloudGetBucketRequest new];
 
@@ -194,7 +192,7 @@ request.marker = prevPageResult.nextMarker;
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-bucket-with-delimiter)
+[//]: # ".cssg-snippet-get-bucket-with-delimiter"
 ```swift
 let getBucketReq = QCloudGetBucketRequest.init();
 
@@ -218,17 +216,16 @@ if let result = self.prevPageResult {
 }
 
 getBucketReq.setFinish { (result, error) in
-    // result 返回具体信息
-    // QCloudListBucketResult.contents 桶内文件数组
-    // QCloudListBucketResult.commonPrefixes 桶内文件夹数组
-    
-    if error != nil{
-        print(error!);
-    } else if let isTruncated = result?.isTruncated {
-        if (isTruncated) {
+    if let result = result {
+        // 文件列表
+        let contents = result.contents
+        
+        if (result.isTruncated) {
             // 数据被截断，需要请求下一页数据
             self.prevPageResult = result;
         }
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
@@ -243,9 +240,8 @@ QCloudCOSXMLService.defaultCOSXML().getBucket(getBucketReq);
 查询开启版本控制的存储桶下的部分或者全部对象。
 
 #### 示例代码：获取对象历史版本列表第一页数据
-**Objective-C**
 
-[//]: # (.cssg-snippet-list-objects-versioning)
+[//]: # ".cssg-snippet-list-objects-versioning"
 ```objective-c
 QCloudListObjectVersionsRequest* listObjectVersionsRequest = [[QCloudListObjectVersionsRequest alloc] init];
 
@@ -255,9 +251,10 @@ listObjectVersionsRequest.bucket = @"bucketname";
 // 一页请求数据条目数，默认 1000
 listObjectVersionsRequest.maxKeys = 100;
 
-// 已经请求的总条目数
-listObjectVersionsRequest.marker = prevPageResult.versionIDMarkder;
-
+//从当前key列出剩余的条目
+listObjectVersionsRequest.keyMarker = prevPageResult.nextKeyMarker;
+//从当前key的某个版本列出剩余的条目
+listObjectVersionsRequest.versionIdMarker = prevPageResult.nextVersionIDMarkder;
 [listObjectVersionsRequest setFinishBlock:^(QCloudListVersionsResult * _Nonnull result,
                                             NSError * _Nonnull error) {
     
@@ -278,26 +275,5 @@ listObjectVersionsRequest.marker = prevPageResult.versionIDMarkder;
 [[QCloudCOSXMLService defaultCOSXML] ListObjectVersions:listObjectVersionsRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjectsVersioning.m)查看。
-
-**Swift**
-
-[//]: # (.cssg-snippet-list-objects-versioning)
-```swift
-let listObjectVersionsRequest :QCloudListObjectVersionsRequest = QCloudListObjectVersionsRequest();
-
-// 存储桶名称，格式为 BucketName-APPID
-listObjectVersionsRequest.bucket = "examplebucket-1250000000";
-
-// 一次请求多少条数据
-listObjectVersionsRequest.maxKeys = 100;
-
-listObjectVersionsRequest.setFinish { (result, error) in
-    
-    // result.deleteMarker; // 已删除的文件
-    // result.versionContent;  对象版本条目
-}
-
-QCloudCOSXMLService.defaultCOSXML().listObjectVersions(listObjectVersionsRequest);
-```
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ListObjectsVersioning.m) 查看。
 

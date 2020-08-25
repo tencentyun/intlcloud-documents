@@ -12,7 +12,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 查询存储桶列表
 
@@ -23,7 +23,7 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](http
 #### 示例代码
 **Objective-C**
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```objective-c
 // 获取所属账户的所有存储空间列表的方法
 QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
@@ -43,19 +43,16 @@ QCloudGetServiceRequest* request = [[QCloudGetServiceRequest alloc] init];
 
 **Swift**
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```swift
 // 获取所属账户的所有存储空间列表的方法.
 let getServiceReq = QCloudGetServiceRequest.init();
 getServiceReq.setFinish{(result,error) in
-    if result == nil {
-        print(error!);
+    if let result = result {
+        let buckets = result.buckets
+        let owner = result.owner
     } else {
-        
-        // 从 result 中获取返回信息
-        // result?.owner ;  bucket owner的信息
-        // result?.buckets; 存储桶列表
-        print(result!);
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
@@ -72,7 +69,7 @@ QCloudCOSXMLService.defaultCOSXML().getService(getServiceReq);
 #### 示例代码
 **Objective-C**
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```objective-c
 // 创建存储桶
 QCloudPutBucketRequest* request = [QCloudPutBucketRequest new];
@@ -91,7 +88,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-put-bucket"
+[//]: # (.cssg-snippet-put-bucket)
 ```swift
 // 创建存储桶
 let putBucketReq = QCloudPutBucketRequest.init();
@@ -124,7 +121,7 @@ HEAD Bucket 请求可以确认该存储桶是否存在，是否有权限访问�
 #### 示例代码
 **Objective-C**
 
-[//]: # ".cssg-snippet-head-bucket"
+[//]: # (.cssg-snippet-head-bucket)
 ```objective-c
 QCloudHeadBucketRequest* request = [QCloudHeadBucketRequest new];
 
@@ -135,10 +132,6 @@ request.bucket = @"examplebucket-1250000000";
     // 可以从 outputObject 中获取服务器返回的 header 信息
     NSDictionary * result = (NSDictionary *)outputObject;
 
-    
-    // x-cos-bucket-region 存储桶所在地域。枚举值请参见 地域和访问域名 文档，
-    // 例如 ap-beijing，ap-hongkong，eu-frankfurt 等
-
 }];
 [[QCloudCOSXMLService defaultCOSXML] HeadBucket:request];
 ```
@@ -148,7 +141,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-head-bucket"
+[//]: # (.cssg-snippet-head-bucket)
 ```swift
 let headBucketReq = QCloudHeadBucketRequest.init();
 
@@ -156,17 +149,11 @@ let headBucketReq = QCloudHeadBucketRequest.init();
 headBucketReq.bucket = "examplebucket-1250000000";
 
 headBucketReq.finishBlock = {(result,error) in
-    
-    // 可以从 result 中获取服务器返回的 header 信息
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
-
-    
-    // x-cos-bucket-region 存储桶所在地域。枚举值请参见 地域和访问域名 文档，
-    // 例如 ap-beijing，ap-hongkong，eu-frankfurt 等
 }
 QCloudCOSXMLService.defaultCOSXML().headBucket(headBucketReq);
 ```
@@ -185,7 +172,7 @@ QCloudCOSXMLService.defaultCOSXML().headBucket(headBucketReq);
 #### 示例代码
 **Objective-C**
 
-[//]: # ".cssg-snippet-delete-bucket"
+[//]: # (.cssg-snippet-delete-bucket)
 ```objective-c
 QCloudDeleteBucketRequest* request = [[QCloudDeleteBucketRequest alloc ] init];
 
@@ -193,7 +180,6 @@ QCloudDeleteBucketRequest* request = [[QCloudDeleteBucketRequest alloc ] init];
 request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(id outputObject,NSError*error) {
-    
     // 可以从 outputObject 中获取服务器返回的 header 信息
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
@@ -204,7 +190,7 @@ request.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # ".cssg-snippet-delete-bucket"
+[//]: # (.cssg-snippet-delete-bucket)
 ```swift
 let deleteBucketReq = QCloudDeleteBucketRequest.init();
 
@@ -212,14 +198,14 @@ let deleteBucketReq = QCloudDeleteBucketRequest.init();
 deleteBucketReq.bucket = "examplebucket-1250000000";
 
 deleteBucketReq.finishBlock = {(result,error) in
-    // 可以从 result 中获取服务器返回的 header 信息
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().deleteBucket(deleteBucketReq);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/DeleteBucket.swift) 查看。
+

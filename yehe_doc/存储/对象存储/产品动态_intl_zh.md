@@ -1,6 +1,4 @@
-
-
-## 2020年06月
+## 2020年08月
 
 <table>
 <thead>
@@ -13,10 +11,33 @@
 </thead>
 <tbody>
 <tr>
-<td>上线内容审核功能</td>
-<td>内容审核服务基于腾讯云数据万象。通过内容审核服务，可以对 COS 中存量的图片文件进行扫描，审核涉黄、涉政、涉暴力恐怖及广告传播的文件。</td>
-<td> 2020-06-23</td>
-<td>内容审核概述</td>
+<td>回源功能和生命周期功能迭代</td>
+<td>1. 支持设置触发回源规则后跳转的具体路径，同时支持设置多个回源规则；<br>2. 生命周期规则的应用范围支持指定对象标签。</td>
+<td> 2020-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/436/14605">设置生命周期</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2020年07月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上线 CDN 缓存刷新功能</td>
+<td>CDN 缓存刷新是腾讯云对象存储 COS 基于云函数服务 SCF 为用户提供的数据刷新功能，可以协助用户自动刷新 CDN 边缘节点上的缓存数据。</td>
+<td> 2020-07-01</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/37273">设置 CDN 缓存刷新</a>
 </tr>
 </tbody></table>
 

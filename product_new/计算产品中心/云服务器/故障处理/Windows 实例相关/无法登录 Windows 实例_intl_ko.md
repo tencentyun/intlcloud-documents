@@ -36,8 +36,7 @@ RDP 또는 원격 로그인 소프트웨어를 통해 Windows 인스턴스에 �
 ### 비밀번호 문제로 인해 로그인할 수 없을 경우
 
 **장애 현상**: 잘못된 비밀번호를 입력하거나 비밀번호를 잊었거나 비밀번호 재설정에 실패할 경우 로그인에 실패합니다.
-**해결 방법**: [Tencent Cloud 콘솔](https://console.cloud.tencent.com/cvm/index)에서 인스턴스의 비밀번호를 재설정하고 인스턴스를 재시작하십시오.
-**처리 순서**: 인스턴스 비밀번호 재설정 방법은 [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)을 참조하십시오.
+**처리 순서**: [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에서 해당 인스턴스의 비밀번호를 재설정하고 인스턴스를 재시작하십시오. 자세한 내용은 [인스턴스 비밀번호 리셋](https://cloud.tencent.com/document/product/213/16566)을 참조하십시오.
 
 <span id="BandwidthUtilization"></span>
 ### 대역폭 이용률이 너무 높을 경우

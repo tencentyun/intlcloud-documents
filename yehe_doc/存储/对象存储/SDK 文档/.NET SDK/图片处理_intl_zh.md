@@ -1,6 +1,6 @@
 ## 简介
 
-腾讯云对象存储 COS 集成了 [数据万象](https://cloud.tencent.com/document/product/460)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
+腾讯云对象存储 COS 集成了 [数据万象](https://intl.cloud.tencent.com/document/product/1045)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
 
 <table>
    <tr>
@@ -96,10 +96,6 @@ PutObjectResult result = cosXml.PutObject(request);
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
 
-
-## 盲水印功能
-
-关于盲水印的功能说明请参考 盲水印功能。
 
 ### 添加盲水印
 

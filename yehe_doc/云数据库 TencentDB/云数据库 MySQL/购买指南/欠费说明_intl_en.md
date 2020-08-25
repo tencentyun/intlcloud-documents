@@ -17,4 +17,4 @@
  - Within 3 days after automatic shutdown,if your account is not topped up to a positive balance, you will not be able to start your TencentDB instance; if your balance is positive, the billing continues, and you can start your instance.
  - If the balance remains negative for 3 days after shutdown, the TencentDB instance will be repossessed. All data will be erased and cannot be recovered. Tencent Cloud account creator, global resource collaborators, and financial collaborators will be notified via email, SMS, etc.
  
-![](https://main.qcloudimg.com/raw/e70d5ae19da36800b31165004a795688.png)
+![](https://main.qcloudimg.com/raw/2a4084a3304cd60ede9a2675feda9e97.png)

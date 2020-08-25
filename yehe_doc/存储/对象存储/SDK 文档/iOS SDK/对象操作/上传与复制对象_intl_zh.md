@@ -25,7 +25,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 高级接口（推荐）
 
@@ -65,21 +65,19 @@ put.body =  url;
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
 
-[put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult * _Nullable multipleUploadInitResult, QCloudCOSXMLUploadObjectResumeData  _Nullable resumeData) {
-    // 在初始化分块上传完成以后会回调该 block，在这里可以获取 resumeData，同时可以拿到 uploadid
+[put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
+                                        multipleUploadInitResult,
+                                        QCloudCOSXMLUploadObjectResumeData resumeData) {
+    // 在初始化分块上传完成以后会回调该 block，在这里可以获取 resumeData，uploadid
+    NSString* uploadId = multipleUploadInitResult.uploadId;
 }];
 
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
-
-// 如果需要中途取消上传，调用 cancel 方法
-[put abort:^(id outputObject, NSError *error) {
-
-}];
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)  查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
 
@@ -99,10 +97,11 @@ put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 // 监听上传结果
 put.setFinish { (result, error) in
     // 获取上传结果
-    if error != nil{
+    if let result = result {
+        // 文件的 etag
+        let eTag = result.eTag
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 
@@ -115,20 +114,18 @@ put.sendProcessBlock = { (bytesSent, totalBytesSent,
 };
 // 设置上传参数
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
-    // 在初始化分块上传完成以后会回调该 block，在这里可以获取 resumeData
+    // 在初始化分块上传完成以后会回调该 block，在这里可以获取 resumeData,以及 uploadId
+    if let multipleUploadInitResult = multipleUploadInitResult {
+        let uploadId = multipleUploadInitResult.uploadId
+    }
 }
 
 QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
-
-// 如果需要取消上传，调用 abort 方法
-put.abort { (result, error) in
-    
-}
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388)  文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 #### 示例代码二: 上传二进制数据
 **Objective-C**
@@ -150,7 +147,6 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
-    
     // bytesSent                   新增字节数
     // totalBytesSent              本次上传的总字节数
     // totalBytesExpectedToSend    本地上传的目标字节数
@@ -165,8 +161,8 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
 
@@ -187,10 +183,11 @@ put.body = dataBody;
 // 监听上传结果
 put.setFinish { (result, error) in
     // 获取上传结果
-    if error != nil{
+    if let result = result {
+        // 文件的 etag
+        let eTag = result.eTag
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 
@@ -208,7 +205,146 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+
+#### 示例代码三: 上传暂停、继续与取消
+**Objective-C**
+
+对于上传任务，可以通过以下方式暂停：
+
+[//]: # (.cssg-snippet-transfer-upload-pause)
+```objective-c
+NSError *error;
+NSData *resmeData = [put cancelByProductingResumeData:&error];
+```
+
+暂停之后，可以通过以下方式续传：
+
+[//]: # (.cssg-snippet-transfer-upload-resume)
+```objective-c
+QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectRequest requestWithRequestData:resmeData];
+[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];
+```
+
+也通过以下方式取消上传：
+
+[//]: # (.cssg-snippet-transfer-upload-cancel)
+```objective-c
+//丢弃该上传
+[put abort:^(id outputObject, NSError *error) {
+    
+}];
+```
+
+>?
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
+
+**Swift**
+
+对于上传任务，可以通过以下方式暂停：
+
+[//]: # (.cssg-snippet-transfer-upload-pause)
+```swift
+var error : NSError?;
+var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
+```
+
+暂停之后，可以通过以下方式续传：
+
+[//]: # (.cssg-snippet-transfer-upload-resume)
+```swift
+var resumeRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: uploadResumeData);
+QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeRequest);
+```
+
+也通过以下方式取消上传：
+
+[//]: # (.cssg-snippet-transfer-upload-cancel)
+```swift
+//丢弃该上传
+put.abort { (outputObject, error) in
+    
+}
+```
+
+>?
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
+
+#### 示例代码四: 批量上传
+**Objective-C**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```objective-c
+for (int i = 0; i<20; i++) {
+    QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
+    
+    // 存储桶名称，格式为 BucketName-APPID
+    put.bucket = @"examplebucket-1250000000";
+    
+    // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+    put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
+    
+    // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
+    put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // 监听上传进度
+    [put setSendProcessBlock:^(int64_t bytesSent,
+                               int64_t totalBytesSent,
+                               int64_t totalBytesExpectedToSend) {
+        // bytesSent                   新增字节数
+        // totalBytesSent              本次上传的总字节数
+        // totalBytesExpectedToSend    本地上传的目标字节数
+    }];
+    
+    // 监听上传结果
+    [put setFinishBlock:^(id outputObject, NSError *error) {
+        // outputObject 包含所有的响应 http 头部
+        NSDictionary* info = (NSDictionary *) outputObject;
+    }];
+    [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
+}
+```
+
+**Swift**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```swift
+for i in 1...10 {
+    let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
+    
+    // 存储桶名称，格式为 BucketName-APPID
+    put.bucket = "examplebucket-1250000000";
+    
+    // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+    put.object = "exampleobject-".appendingFormat("%d", i);
+    
+    // 需要上传的对象内容
+    let dataBody:NSData = "wrwrwrwrwrw".data(using: .utf8)! as NSData;
+    put.body = dataBody;
+    
+    // 监听上传结果
+    put.setFinish { (result, error) in
+        // 获取上传结果
+        if let result = result {
+            // 文件的 etag
+            let eTag = result.eTag
+        } else {
+            print(error!);
+        }
+    }
+
+    // 监听上传进度
+    put.sendProcessBlock = { (bytesSent, totalBytesSent,
+        totalBytesExpectedToSend) in
+        
+        // bytesSent                   新增字节数
+        // totalBytesSent              本次上传的总字节数
+        // totalBytesExpectedToSend    本地上传的目标字节数
+    };
+    
+    QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
+}
+```
 
 ### 复制对象
 
@@ -251,7 +387,7 @@ request.sourceRegion= @"COS_REGION";
 [request cancel];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m)  查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m) 查看。
 
 **Swift**
 
@@ -279,10 +415,11 @@ copyRequest.sourceAPPID = "1250000000";
 copyRequest.sourceRegion = "COS_REGION";
 
 copyRequest.setFinish { (copyResult, error) in
-    if error != nil{
+    if let copyResult = copyResult {
+        // 文件的 etag
+        let eTag = copyResult.eTag
+    } else {
         print(error!);
-    }else{
-        print(copyResult!);
     }
     
 }
@@ -294,7 +431,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyReques
 copyRequest.cancel();
 ```
 
->?更多完整示例，请前往[GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift) 查看。
 
 ## 简单操作
 
@@ -321,10 +458,10 @@ put.bucket = @"examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 put.object = @"exampleobject";
 
+// 文件内容，可以传入NSData*或者NSURL*类型的变量
 put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    
     // outputObject 包含所有的响应 http 头部
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
@@ -334,7 +471,7 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 **Swift**
 
@@ -344,24 +481,25 @@ let putObject = QCloudPutObjectRequest<AnyObject>.init();
 
 // 存储桶名称，格式为 BucketName-APPID
 putObject.bucket = "examplebucket-1250000000";
+// 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
 let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
 putObject.body =  dataBody!;
 
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 putObject.object = "exampleobject";
 putObject.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift)  查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46388) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 复制对象（修改属性）
 
@@ -438,16 +576,16 @@ putObjectCopy.accessControlList = "default";
 putObjectCopy.versionID = "versionID";
 
 putObjectCopy.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        let eTag = result.eTag
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)  查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift) 查看。
 
 #### 示例代码二: 复制对象时替换对象属性
 **Objective-C**
@@ -537,11 +675,11 @@ request.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.co
 request.versionID = "versionID";
 
 request.setFinish { (result, error) in
-   if error != nil{
-       print(error!);
-   }else{
-       print(result!);
-   }
+    if let result = result {
+        let eTag = result.eTag
+    } else {
+        print(error!);
+    }
        
 }
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
@@ -621,7 +759,12 @@ request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 request.setFinish { (result, error) in
-    // result 返回具体信息
+    if let result = result {
+        // 生成的新文件的 etag
+        let eTag = result.eTag
+    } else {
+        print(error!);
+    }
 }
 
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
@@ -683,7 +826,12 @@ request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 request.setFinish { (result, error) in
-    // result 返回具体信息
+    if let result = result {
+        // 生成的新文件的 etag
+        let eTag = result.eTag
+    } else {
+        print(error!);
+    }
 }
 
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
@@ -757,14 +905,11 @@ listParts.bucket = "examplebucket-1250000000";
 listParts.maxUploads = 100;
 
 listParts.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        // 未完成的所有分块上传任务
+        let uploads = result.uploads;
+    } else {
         print(error!);
-    }else{
-        // 可以从 result 中返回分块信息
-        print(result!);
-        
-        // 进行中的分块上传对象
-        let uploads : Array<QCloudListMultipartUploadContent> = result!.uploads;
     }
 }
 QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
@@ -833,12 +978,11 @@ initRequest.bucket = "examplebucket-1250000000";
 initRequest.object = "exampleobject";
 
 initRequest.setFinish { (result, error) in
-    if error != nil{
-        print(error!);
-    }else{
+    if let result = result {
         // 获取分块上传的 uploadId，后续的上传都需要这个 ID，请保存以备后续使用
-        self.uploadId = result!.uploadId;
-        print(result!.uploadId);
+        self.uploadId = result.uploadId;
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
@@ -908,29 +1052,30 @@ uploadPart.bucket = "examplebucket-1250000000";
 uploadPart.object = "exampleobject";
 uploadPart.partNumber = 1;
 
-// 标识本次分块上传的 ID；使用 Initiate Multipart Upload 接口初始化分块上传时会得到一个 uploadId
-// 该 ID 不但唯一标识这一分块数据，也标识了这分块数据在整个文件内的相对位置
+// 标识本次分块上传的 ID
 if let uploadId = self.uploadId {
     uploadPart.uploadId = uploadId;
 }
 
+// 示例文件内容
 let dataBody:NSData? = "wrwrwrwrwrwwrwrwrwrwrwwwrwrw"
     .data(using: .utf8) as NSData?;
+
 uploadPart.body = dataBody!;
 uploadPart.setFinish { (result, error) in
-    if error != nil{
-        print(error!);
-    }else{
+    if let result = result {
         let mutipartInfo = QCloudMultipartInfo.init();
-        // 获取所上传分块的 etag
-        mutipartInfo.eTag = result!.eTag;
+        // 获取分块的 etag
+        mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
-        // 保存起来用于最好完成上传时使用
+        // 保存起来用于最后完成上传时使用
         self.parts = [mutipartInfo];
+    } else {
+        print(error!);
     }
 }
-uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,totalBytesExpectedToSend) in
-    
+uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,
+                                totalBytesExpectedToSend) in
     // 上传进度信息
     // bytesSent                   新增字节数
     // totalBytesSent              本次上传的总字节数
@@ -1008,15 +1153,15 @@ if let uploadId = self.uploadId {
 // 标志当前分块的序号
 req.partNumber = 1;
 req.setFinish { (result, error) in
-    if error != nil{
-        print(error!);
-    }else{
+    if let result = result {
         let mutipartInfo = QCloudMultipartInfo.init();
         // 获取所复制分块的 etag
-        mutipartInfo.eTag = result!.eTag;
+        mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
-        // 保存起来用于最后完成上传时使用
+        // 保存起来用于最后完成复制时使用
         self.parts = [mutipartInfo];
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
@@ -1076,11 +1221,11 @@ if let uploadId = self.uploadId {
     req.uploadId = uploadId;
 }
 req.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        // 所有已完成的分片
+        let parts = result.parts
+    } else {
         print(error!);
-    }else{
-        // 从 result 中获取已上传分块信息
-        print(result!);
     }
 }
 
@@ -1096,9 +1241,7 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 完成整个文件的分块上传（Complete Multipart Upload）。
 
 #### 示例代码
-
 **Objective-C**
-
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
@@ -1142,7 +1285,6 @@ completeRequst.parts = partInfo;
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
-
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```swift
 let  complete = QCloudCompleteMultipartUploadRequest.init();
@@ -1172,11 +1314,13 @@ if self.parts != nil {
 
 complete.parts = completeInfo;
 complete.setFinish { (result, error) in
-    if error != nil{
-        print(error!)
-    }else{
-        // 从 result 中获取上传结果
-        print(result!);
+    if let result = result {
+        // 文件的 eTag
+        let eTag = result.eTag
+        // 不带签名的文件链接
+        let location = result.location
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
@@ -1234,14 +1378,14 @@ abort.object = "exampleobject";
 abort.uploadId = self.uploadId!;
 
 abort.finishBlock = {(result,error)in
-    if error != nil{
+    if let result = result {
+        // 可以从 result 中获取服务器返回的 header 信息
+    } else {
         print(error!)
-    }else{
-        // 可以从 result 中获取 response 中 etag 或者自定义头部等信息
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift) 查看。
+

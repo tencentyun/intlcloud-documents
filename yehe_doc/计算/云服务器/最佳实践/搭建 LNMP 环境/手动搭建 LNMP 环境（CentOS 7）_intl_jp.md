@@ -118,7 +118,7 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
 4.  「**Esc**」を押して、 「**:wq**」を入力し、ファイルを保存してから戻ります。
-5. 下記のコマンドを実行して、MariaDBをインストールします。
+5.次のコマンドを実行して、MariaDBをインストールします。 インストールの進行状況に注意して、インストールが完了するまでお待ちください。
 ```
 yum -y install MariaDB-client MariaDB-server
 ```

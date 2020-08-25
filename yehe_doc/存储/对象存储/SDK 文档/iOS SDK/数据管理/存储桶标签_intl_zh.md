@@ -21,7 +21,7 @@ PUT Bucket tagging 用于为已存在的存储桶设置标签。
 #### 示例代码
 **Objective-C**
 
-[//]: # (.cssg-snippet-put-bucket-tagging)
+[//]: # ".cssg-snippet-put-bucket-tagging"
 ```objective-c
 QCloudPutBucketTaggingRequest *putReq = [QCloudPutBucketTaggingRequest new];
 
@@ -63,7 +63,7 @@ putReq.taggings = taggings;
 
 **Swift**
 
-[//]: # (.cssg-snippet-put-bucket-tagging)
+[//]: # ".cssg-snippet-put-bucket-tagging"
 ```swift
 let req = QCloudPutBucketTaggingRequest.init();
 
@@ -94,10 +94,10 @@ tagSet.tag = [tag1,tag2];
 // 标签集合
 req.taggings = taggings;
 req.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketTagging(req);
@@ -114,7 +114,7 @@ GET Bucket tagging 用于查询指定存储桶下已有的存储桶标签。
 #### 示例代码
 **Objective-C**
 
-[//]: # (.cssg-snippet-get-bucket-tagging)
+[//]: # ".cssg-snippet-get-bucket-tagging"
 ```objective-c
 QCloudGetBucketTaggingRequest *getReq = [QCloudGetBucketTaggingRequest new];
 
@@ -132,17 +132,18 @@ getReq.bucket = @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # (.cssg-snippet-get-bucket-tagging)
+[//]: # ".cssg-snippet-get-bucket-tagging"
 ```swift
 let req = QCloudGetBucketTaggingRequest.init();
 
 // 存储桶名称，格式为 BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 req.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        // 标签集合
+        let tagSet = result.tagSet
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 };
 QCloudCOSXMLService.defaultCOSXML().getBucketTagging(req);
@@ -159,7 +160,7 @@ DELETE Bucket tagging 用于删除指定存储桶下已有的存储桶标签。
 #### 示例代码
 **Objective-C**
 
-[//]: # (.cssg-snippet-delete-bucket-tagging)
+[//]: # ".cssg-snippet-delete-bucket-tagging"
 ```objective-c
 QCloudDeleteBucketTaggingRequest *delReq = [QCloudDeleteBucketTaggingRequest new];
 
@@ -177,20 +178,21 @@ delReq.bucket =  @"examplebucket-1250000000";
 
 **Swift**
 
-[//]: # (.cssg-snippet-delete-bucket-tagging)
+[//]: # ".cssg-snippet-delete-bucket-tagging"
 ```swift
 let req = QCloudDeleteBucketTaggingRequest.init();
 
 // 存储桶名称，格式为 BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 req.finishBlock =  { (result, error) in
-    if error != nil{
+    if let result = result {
+        // result 包含响应的 header 信息
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 };
 QCloudCOSXMLService.defaultCOSXML().deleteBucketTagging(req);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketTagging.swift) 查看。
+

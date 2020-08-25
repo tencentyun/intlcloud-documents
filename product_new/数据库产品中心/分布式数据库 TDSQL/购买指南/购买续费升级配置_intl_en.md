@@ -1,5 +1,5 @@
 ## Instance Purchase
-Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb) and click **Create** to purchase an instance. You can purchase up to 64 shards at a time, and if you need more, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+Log in to the [TDSQL Purchase Page](https://console.cloud.tencent.com/dcdb/buy) to purchase an instance. You can purchase up to 64 shards at a time, and if you need more, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 Initialization is required for the purchased instance to function normally.
 
 ## Instance Upgrade
