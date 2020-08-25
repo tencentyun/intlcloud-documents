@@ -7,6 +7,6 @@ TencentDB for MySQL supports assigning instances to different projects for manag
 
 ## Directions
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb/), select an instance, and click **More** > **Assign to Project** at the top of the instance list.
-![](https://main.qcloudimg.com/raw/29a7d2d888ad0f81579a0efda37acdd0.png)
+![](https://main.qcloudimg.com/raw/d1fe0ad3b002172fbb6418cc8ba830d5.png)
 2. In the pop-up dialog box, select a project and click **OK**.
-![](https://main.qcloudimg.com/raw/00ddccf18b6bff5d13e003bc62fc8a12.png)
+![](https://main.qcloudimg.com/raw/f547428bb9ae2fc0d2d8105cff950b85.png)
