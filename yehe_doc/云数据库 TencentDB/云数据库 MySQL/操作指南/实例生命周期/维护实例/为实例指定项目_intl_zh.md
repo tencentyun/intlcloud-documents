@@ -7,6 +7,6 @@
 
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/)，选择对应实例，在上方选择【更多操作】>【分配至项目】。
-
+![](https://main.qcloudimg.com/raw/d1fe0ad3b002172fbb6418cc8ba830d5.png)
 2. 在弹出对话框，选择对应项目后，单击【确定】。
-
+![](https://main.qcloudimg.com/raw/f547428bb9ae2fc0d2d8105cff950b85.png)
