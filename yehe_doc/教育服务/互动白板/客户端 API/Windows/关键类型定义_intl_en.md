@@ -8,7 +8,7 @@ Whiteboard tools
 | TEDU_BOARD_TOOL_TYPE_MOUSE | Mouse |
 | TEDU_BOARD_TOOL_TYPE_PEN | Pen |
 | TEDU_BOARD_TOOL_TYPE_ERASER | Eraser |
-| TEDU_BOARD_TOOL_TYPE_LASER | Laser pen |
+| TEDU_BOARD_TOOL_TYPE_LASER | Laser pointer |
 | TEDU_BOARD_TOOL_TYPE_LINE | Line |
 | TEDU_BOARD_TOOL_TYPE_OVAL | Hollow oval |
 | TEDU_BOARD_TOOL_TYPE_RECT | Hollow rectangle |
@@ -17,7 +17,7 @@ Whiteboard tools
 | TEDU_BOARD_TOOL_TYPE_POINT_SELECT | Point selection tool |
 | TEDU_BOARD_TOOL_TYPE_RECT_SELECT | Rectangle selection tool |
 | TEDU_BOARD_TOOL_TYPE_TEXT | Text tool |
-| TEDU_BOARD_TOOL_TYPE_ZOOM_DRAG | Scaling and moving tool |
+| TEDU_BOARD_TOOL_TYPE_ZOOM_DRAG | Whiteboard scaling and moving tool |
 
 
 
@@ -45,7 +45,7 @@ Alignment modes of whiteboard image filling
 
 
 #### Description
-When the image is zoomed in proportionally based on the width, the effect of left and right alignments are the same as that of central alignment. When the image is zoomed in proportionally based on the height, the effect of top and bottom alignments are the same as that of central alignment. 
+When the image is zoomed in proportionally based on its width, the effect of the left and right alignments are the same as that of central alignment. When the image is zoomed in proportionally based on its height, the effect of the top and bottom alignments are the same as that of central alignment. 
 
 
 ## TEduBoardImageStatus
@@ -54,13 +54,13 @@ Whiteboard image statuses
 
 | Enumerated Value | Description |
 | --- | --- |
-| TEDU_BOARD_IMAGE_STATUS_LOADING | The background image is being loaded. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_DONE | The background image has been loaded. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_ABORT | The loading of the background image was aborted. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_ERROR | An error occurred while loading the background image. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_TIMEOUT | The loading of the background image timed out. |
-| TEDU_BOARD_IMAGE_STATUS_LOAD_CANCEL | The loading of the background image was canceled. |
-| TEDU_BOARD_IMAGE_STATUS_READ_ERROR | Failed to read the background image. |
+| TEDU_BOARD_IMAGE_STATUS_LOADING | The background image is being loaded |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_DONE | The background image has been loaded |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_ABORT | The loading of the background image was aborted |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_ERROR | An error occurred while loading the background image |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_TIMEOUT | The loading of the background image timed out |
+| TEDU_BOARD_IMAGE_STATUS_LOAD_CANCEL | The loading of the background image was canceled |
+| TEDU_BOARD_IMAGE_STATUS_READ_ERROR | Failed to read the background image |
 
 
 
@@ -94,8 +94,8 @@ H5 background statuses
 
 | Enumerated Value | Description |
 | --- | --- |
-| TEDU_BOARD_BACKGROUND_H5_STATUS_LOADING | The H5 background is being loaded. |
-| TEDU_BOARD_BACKGROUND_H5_STATUS_LOAD_FINISH | The H5 background has been loaded. |
+| TEDU_BOARD_BACKGROUND_H5_STATUS_LOADING | The H5 background is being loaded |
+| TEDU_BOARD_BACKGROUND_H5_STATUS_LOAD_FINISH | The H5 background has been loaded |
 
 
 
@@ -105,9 +105,9 @@ Whiteboard content self-adaption modes
 
 | Enumerated Value | Description |
 | --- | --- |
-| TEDU_BOARD_CONTENT_FIT_MODE_NONE | Do not use content self-adaption. In this default mode, do not automatically adjust the whiteboard aspect ratio and scale the content proportionally in a center-aligned fashion. In addition, the content width and height are less than or equal to the whiteboard width and height respectively. |
-| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_INSIDE | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are less than or equal to the container width and height respectively. |
-| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_COVER | Automatically adjust the whiteboard aspect ratio to be consistent with the content. Spread the content all over the whiteboard and scale the whiteboard proportionally in a center-aligned fashion. In addition, the whiteboard width and height are greater than or equal to the container width and height respectively. |
+| TEDU_BOARD_CONTENT_FIT_MODE_NONE | Content self-adaption is not used. In this default mode, the whiteboard aspect ratio is not adjusted automatically and the content is not scaled proportionally in a center-aligned fashion. In addition, the content width and height are less than or equal to the whiteboard width and height, respectively |
+| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_INSIDE | The whiteboard aspect ratio is automatically adjusted to be consistent with that of the content. The content is spread all over the whiteboard and the whiteboard is scaled proportionally in a center-aligned fashion. In addition, the whiteboard width and height are less than or equal to the container width and height, respectively |
+| TEDU_BOARD_CONTENT_FIT_MODE_CENTER_COVER | The whiteboard aspect ratio is automatically adjusted to be consistent with that of the content. The content is spread all over the whiteboard and the whiteboard is scaled proportionally in a center-aligned fashion. In addition, the whiteboard width and height are greater than or equal to the container width and height, respectively |
 
 
 #### Description
@@ -143,8 +143,8 @@ Oval drawing modes
 
 | Enumerated Value | Description |
 | --- | --- |
-| TEDU_BOARD_OVAL_DRAW_MODE_FIX_START | Fixed start point. The midpoint between the start point and the end point is the circle center. |
-| TEDU_BOARD_OVAL_DRAW_MODE_FIX_CENTER | Fixed circle center. The start point is the circle center. |
+| TEDU_BOARD_OVAL_DRAW_MODE_FIX_START | Fixed start point. The midpoint between the start point and the end point is the center of the circle |
+| TEDU_BOARD_OVAL_DRAW_MODE_FIX_CENTER | Fixed circle center. The start point is the center of the circle |
 
 
 
@@ -198,9 +198,9 @@ Keyboard event types
 | Enumerated Value | Description |
 | --- | --- |
 | TEDU_BOARD_KEYEVENT_RAWKEYDOWN | The status change process of a key that is pressed |
-| TEDU_BOARD_KEYEVENT_KEYDOWN | A key is pressed. For different keyboard and language types, the key press will be mapped to different characters. Therefore, when you need to enter characters, use the TEDU_BOARD_KEYEVENT_CHAR event. |
-| TEDU_BOARD_KEYEVENT_KEYUP | A key is released. |
-| TEDU_BOARD_KEYEVENT_CHAR | A symbol is entered. For different keyboards, regions, and operating systems, the key press event will generate different characters. Therefore, use this event for text entry. |
+| TEDU_BOARD_KEYEVENT_KEYDOWN | A key is pressed. The key press will be mapped to different characters according to different keyboard and language types. Therefore, when you need to enter characters, use the TEDU_BOARD_KEYEVENT_CHAR event |
+| TEDU_BOARD_KEYEVENT_KEYUP | A key is released |
+| TEDU_BOARD_KEYEVENT_CHAR | A symbol is entered. The key press event will generate different characters according to different keyboards, regions, and operating systems. Therefore, use this event for text entry |
 
 
 
@@ -250,18 +250,18 @@ Event flags
 | Enumerated Value | Description |
 | --- | --- |
 | TEDU_BOARD_EVENTFLAG_NONE | No flag |
-| TEDU_BOARD_EVENTFLAG_CAPS_LOCK_ON | Caps Lock is on. |
-| TEDU_BOARD_EVENTFLAG_SHIFT_DOWN | The Shift key is pressed. |
-| TEDU_BOARD_EVENTFLAG_CONTROL_DOWN | The Ctrl key is pressed. |
-| TEDU_BOARD_EVENTFLAG_ALT_DOWN | The Alt key is pressed. |
-| TEDU_BOARD_EVENTFLAG_LEFT_MOUSE_BUTTON | The left mouse button is pressed. |
-| TEDU_BOARD_EVENTFLAG_MIDDLE_MOUSE_BUTTON | The middle mouse button is pressed. |
-| TEDU_BOARD_EVENTFLAG_RIGHT_MOUSE_BUTTON | The right mouse button is pressed. |
-| TEDU_BOARD_EVENTFLAG_COMMAND_DOWN | The MacOS command key is pressed. |
-| TEDU_BOARD_EVENTFLAG_NUM_LOCK_ON | Number Lock is on. |
+| TEDU_BOARD_EVENTFLAG_CAPS_LOCK_ON | Caps Lock is on |
+| TEDU_BOARD_EVENTFLAG_SHIFT_DOWN | The Shift key is pressed |
+| TEDU_BOARD_EVENTFLAG_CONTROL_DOWN | The Ctrl key is pressed |
+| TEDU_BOARD_EVENTFLAG_ALT_DOWN | The Alt key is pressed |
+| TEDU_BOARD_EVENTFLAG_LEFT_MOUSE_BUTTON | The left mouse button is pressed |
+| TEDU_BOARD_EVENTFLAG_MIDDLE_MOUSE_BUTTON | The middle mouse button is pressed |
+| TEDU_BOARD_EVENTFLAG_RIGHT_MOUSE_BUTTON | The right mouse button is pressed |
+| TEDU_BOARD_EVENTFLAG_COMMAND_DOWN | The MacOS command key is pressed |
+| TEDU_BOARD_EVENTFLAG_NUM_LOCK_ON | Number Lock is on |
 | TEDU_BOARD_EVENTFLAG_IS_KEY_PAD | - |
-| TEDU_BOARD_EVENTFLAG_IS_LEFT | The left key modifier is pressed. |
-| TEDU_BOARD_EVENTFLAG_IS_RIGHT | The right key modifier is pressed. |
+| TEDU_BOARD_EVENTFLAG_IS_LEFT | The left key modifier is pressed |
+| TEDU_BOARD_EVENTFLAG_IS_RIGHT | The right key modifier is pressed |
 
 
 
@@ -303,7 +303,7 @@ Whiteboard initialization parameters
 | Attribute | Type | Field Description |
 | --- | --- | --- |
 | progressEnable | bool | Whether or not to enable the loading icon, which is used during image loading and PowerPoint file loading. Default value: false |
-| progressBarUrl | const char * | Custom loading icon. It is valid only when processEnable = true. Supported icon formats are jpg, gif, png, and svg. |
+| progressBarUrl | const char * | Custom loading icon. It is valid only when processEnable = true. Supported icon formats are jpg, gif, png, and svg |
 | ratio | const char * | Default whiteboard aspect ratio (whose format is similar to "4:3" and "16:9") |
 | drawEnable | bool | Whether doodling is allowed or not |
 | globalBackgroundColor | TEduBoardColor | Global background color |
@@ -313,13 +313,13 @@ Whiteboard initialization parameters
 | textColor | TEduBoardColor | Text color |
 | textSize | uint32_t | Text size |
 | textStyle | TEduBoardTextStyle | Text style |
-| timSync | bool | Whether or not to use Tencent Cloud IMSDK for real-time data synchronization |
-| dataSyncEnable | bool | Whether or not data synchronization is enabled. If no, no local whiteboard operations will be synced to the remote end. |
-| preloadDepth | uint32_t | Image pre-loading depth. The default value is 5, which indicates that the previous and next 5 pages are pre-loaded. |
+| timSync | bool | Whether or not Tencent Cloud IMSDK is used for real-time data synchronization |
+| dataSyncEnable | bool | Whether or not data synchronization is enabled. If no, none of the local whiteboard operations will be synced to the remote end |
+| preloadDepth | uint32_t | Image pre-loading depth. The default value is 5, which indicates that the previous and next 5 pages are pre-loaded |
 | smoothLevel | double | Handwriting smoothness coefficient. Default value: 0. Value range: [0, 1] |
 | contentFitMode | TEduBoardContentFitMode | Content self-adaption mode |
 | imageTimeout | uint32_t | Image loading timeout period in seconds. Default value: 10s |
-| audioCallback | bool | Whether to enable the audio callback mode or not. If yes, audio will no longer be played on the whiteboard. Instead, PCM data will be thrown through the callback. |
+| audioCallback | bool | Whether the audio callback mode is enabled or not. If yes, the audio will no longer be played on the whiteboard. Instead, PCM data will be thrown through the callback |
 | experimental | const char * | Experimental parameter set, which is a dictionary-type JSON string |
 
 
@@ -346,8 +346,8 @@ Cursor icon information
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| cursor | const char * | Built-in cursor icon of the browser. For more information on possible values, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor). When a custom image is used, enter "url" for this field. |
-| url | const char * | URL of the custom cursor icon. For more information on the format restrictions, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor/url). The value of this field does not need to contain "url()". |
+| cursor | const char * | Built-in cursor icon of the browser. For more information on possible values, see [cursor](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor). When a custom image is used, enter "url" for this field |
+| url | const char * | URL of the custom cursor icon. For more information on format restrictions, see the [reference document](https://developer.mozilla.org/zh-CN/docs/Web/CSS/cursor/url). The value of this field does not need to contain "url()" |
 | offsetX | uint32_t | Horizontal offset of the custom cursor icon |
 | offsetY | uint32_t | Vertical offset of the custom cursor icon |
 
@@ -373,9 +373,9 @@ File transcoding parameters
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| minResolution | const char * | Minimum resolution of the transcoded file. It can be used to enhance the resolution of the transcoded file. The format of the value is similar to 960x540, where the width and height are separated by letter x. |
-| isStaticPPT | bool | Whether or not to enable static transcoding for PowerPoint files (transcoding into static images). By default, PowerPoint files are transcoded into HTML5 animations, which takes a relatively long time. |
-| thumbnailResolution | const char * | Resolution of the thumbnail generated for the file. By default, no thumbnail is generated (generating thumbnails will increase the amount of transcoding time). The format of the value is similar to 200x200, where the width and height are separated by letter x.. |
+| minResolution | const char * | Minimum resolution of the transcoded file. It can be used to enhance the resolution of the transcoded file. The format of the value is similar to 960x540, where the width and height are separated by the letter x |
+| isStaticPPT | bool | Whether static transcoding is enabled for PowerPoint files (transcoding into static images). By default, PowerPoint files are transcoded into HTML5 animations, which takes a relatively long time |
+| thumbnailResolution | const char * | Resolution of the thumbnail generated for the file. By default, no thumbnail is generated (generating thumbnails will increase the amount of transcoding time). The format of the value is similar to 200x200, where the width and height are separated by the letter x |
 
 
 
@@ -408,7 +408,7 @@ Whiteboard information
 | Attribute | Type | Field Description |
 | --- | --- | --- |
 | boardId | const char * | Whiteboard ID |
-| backgroundUrl | const char * | URL of the whiteboard background image or background H5 page |
+| backgroundUrl | const char * | URL of the whiteboard background image or the background H5 page |
 | backgroundColor | TEduBoardColor | Whiteboard background color |
 
 
@@ -455,8 +455,8 @@ File information
 | fileId | const char * | File ID |
 | title | const char * | File name |
 | downloadUrl | const char * | File download address |
-| pageIndex | uint32_t | Currently displayed page of the file |
-| pageCount | uint32_t | Total pages of the file |
+| pageIndex | uint32_t | Currently displayed page number of the file |
+| pageCount | uint32_t | Total number of pages of the file |
 | boardInfoList | const TEduBoardInfoList * | Whiteboard information list |
 
 
@@ -470,13 +470,13 @@ Keyboard event
 | Attribute | Type | Field Description |
 | --- | --- | --- |
 | type | TEduBoardKeyEventType | Keyboard event type |
-| modifiers | uint32_t | Bitwise status of keyboard modifiers. For more information on possible values, see TEduBoardEventFlag. |
-| windowsKeyCode | int | Windows key code, which is used for DOM specifications. On Windows, it comes from system events. On other platforms, it is determined by mapping functions (see the reference document at [https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)). |
+| modifiers | uint32_t | Bitwise status of the keyboard modifiers. For more information on possible values, see TEduBoardEventFlag |
+| windowsKeyCode | int | Windows key code, which is used for DOM specifications. On Windows, it comes from system events. On other platforms, it is determined by mapping functions (see the reference document at [https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)) |
 | nativeKeyCode | int | Actual key code generated by the platform |
-| isSystemKey | int | Whether the event is a "system key press" event or not. The value is valid only for Windows (see the reference document at [http://msdn.microsoft.com/en-us/library/ms646286(VS.85).aspx](http://msdn.microsoft.com/en-us/library/ms646286(VS.85).aspx)). |
+| isSystemKey | int | Whether the event is a "system key press" event or not. The value is valid only for Windows (see the reference document at [http://msdn.microsoft.com/en-us/library/ms646286(VS.85).aspx](http://msdn.microsoft.com/en-us/library/ms646286(VS.85).aspx)) |
 | character | wchar_t | Character generated by the key press |
-| unmodifiedCharacter | wchar_t | Character generated by the key press. The impact of key modifiers (except for Shift) is ignored. This value is used to trigger shortcut keys. |
-| focusOnEditableField | int | When the key press event occurs in the text editing area, the value is 1. This value is used to determine whether to intercept the transmission of certain key press events. |
+| unmodifiedCharacter | wchar_t | Character generated by the key press. However, the impact of the key modifiers (except for Shift) is ignored. This value is used to trigger shortcut keys |
+| focusOnEditableField | int | When the key press event occurs in the text editing area, the value is 1. This value is used to determine whether to intercept the transmission of certain key press events |
 
 
 
@@ -490,7 +490,7 @@ Mouse event
 | --- | --- | --- |
 | x | int | X-axis coordinate with the upper-left corner of the view as the origin |
 | y | int | Y-axis coordinate with the upper-left corner of the view as the origin |
-| modifiers | uint32_t | Bitwise status of keyboard modifiers. For more information on possible values, see TEduBoardEventFlag. |
+| modifiers | uint32_t | Bitwise status of the keyboard modifiers. For more information on possible values, see TEduBoardEventFlag |
 
 
 
@@ -502,15 +502,15 @@ Touch event
 
 | Attribute | Type | Field Description |
 | --- | --- | --- |
-| id | int | Touch point ID. This value can be any value other than -1. Note that a maximum of 16 touch points can be tracked simultaneously. When this limit is exceeded, excessive touch points will be ignored. |
+| id | int | Touch point ID. This value can be any value other than -1. Note that a maximum of 16 touch points can be tracked simultaneously. When this limit is exceeded, the excessive touch points will be ignored |
 | x | float | X-axis coordinate with the upper-left corner of the view as the origin |
 | y | float | Y-axis coordinate with the upper-left corner of the view as the origin |
-| radiusX | float | X-axis radius in pixels. If it is not applicable, pass in 0. |
-| radiusY | float | Y-axis radius in pixels. If it is not applicable, pass in 0. |
-| rotationAngle | float | Rotation angle in degree. If it is not applicable, pass in 0. |
-| pressure | float | Normalized pressure value of the touch point. Value range: [0,1]. If it is not applicable, pass in 0. |
-| type | TEduBoardTouchEventType | Touch point status. A touch begins with the TEDU_BOARD_TOUCHEVENT_PRESSED event, followed by 0 to N TEDU_BOARD_TOUCHEVENT_MOVED events, and ends with the TEDU_BOARD_TOUCHEVENT_RELEASED or TEDU_BOARD_TOUCHEVENT_CANNELLED event. Events that do not follow this rule will be ignored. |
-| modifiers | uint32_t | Bitwise status of keyboard modifiers. For more information on possible values, see TEduBoardEventFlag. |
+| radiusX | float | X-axis radius in pixels. If it is not applicable, pass in 0 |
+| radiusY | float | Y-axis radius in pixels. If it is not applicable, pass in 0 |
+| rotationAngle | float | Rotation angle in degrees. If it is not applicable, pass in 0 |
+| pressure | float | Normalized pressure value of the touch point. Value range: [0,1]. If it is not applicable, pass in 0 |
+| type | TEduBoardTouchEventType | Touch point status. A touch begins with the TEDU_BOARD_TOUCHEVENT_PRESSED event, is followed by the 0 to N TEDU_BOARD_TOUCHEVENT_MOVED events, and ends with the TEDU_BOARD_TOUCHEVENT_RELEASED or TEDU_BOARD_TOUCHEVENT_CANNELLED event. Events that do not follow this rule will be ignored |
+| modifiers | uint32_t | Bitwise status of the keyboard modifiers. For more information on possible values, see TEduBoardEventFlag |
 | pointerType | TEduBoardPointType | Type of the device that triggered the event |
 
 

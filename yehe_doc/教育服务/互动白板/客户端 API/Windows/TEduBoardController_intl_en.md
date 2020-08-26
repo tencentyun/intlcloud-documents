@@ -9,8 +9,8 @@ EDUSDK_API TEduBoardController* CreateTEduBoardController(bool disableCefInit=fa
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| disableCefInit | bool | Whether to disable CEF framework initialization or not. Generally, you can use the default value. |
-| cefRenderPath | const char * | Path of the executable program of the custom Render process when the internal CEF initialization of the SDK is used, which is UTF8-coded. If the value is null or nullptr, the built-in Render process of the SDK is used. |
+| disableCefInit | bool | Whether the CEF framework initialization is disabled or not. Generally, you can use the default value |
+| cefRenderPath | const char * | Path of the executable program of the custom Render process when the internal CEF initialization of the SDK is used, which is UTF8-coded. If the value is null or nullptr, the built-in Render process of the SDK is used |
 
 #### Response
 Whiteboard controller instance pointer 
@@ -18,13 +18,13 @@ Whiteboard controller instance pointer
 #### Warning
 This API must be called in the main thread. 
 
->? As the SDK is implemented based on the CEF framework (BSD-licensed), if your program is using the CEF framework, conflict may occur. To solve the conflict, see the following solutions:
-> 1. Choose any of the following methods to enable your own Render process:
-> - Set disableCefInit to false and set cefRenderPath to point to your own Render process.
-> - Set disableCefInit to true and initialize CEF yourself.
+>? As the SDK is implemented based on the CEF framework (BSD-licensed), if your program is using the CEF framework, conflict may occur. To solve the conflict, implement the following solutions:
+> 1. Choose one of the two following methods to enable your own Render process:
+> - Set disableCefInit to false and set cefRenderPath to point to your own Render process
+> - Set disableCefInit to true and initialize CEF yourself
 > 2. Follow the instructions below to call RenderProcessHandler of the SDK in your Render process:
 > - After the Render process is launched, call the API to obtain an sdkHandler instance: CefRefPtr<CefRenderProcessHandler> sdkHandler = (CefRenderProcessHandler*)GetTEduBoardRenderProcessHandler();
-> - In CefApp in the Render process, rewrite the GetRenderProcessHandler method. The preceding sdkHandler is always returned.
+> - In CefApp in the Render process, rewrite the GetRenderProcessHandler method. The preceding sdkHandler is always returned
 > - If you need a custom CefRenderProcessHandler, the custom Handler can be returned in step 2. Then, in the following methods of the custom Handler, call the corresponding methods of sdkHandler:
 > 		- OnBrowserCreated
 > 		- OnBrowserDestroyed
@@ -58,7 +58,7 @@ const EDUSDK_API char* GetTEduBoardVersion()
 SDK version number
 
 #### Description
-The SDK manages the memory for storing the return value, so you do not need to dump the memory on your own. 
+The SDK manages the memory for storing the return value, so you do not need to release the memory on your own. 
 
 
 ### SetTEduBoardLogFilePath
@@ -70,7 +70,7 @@ EDUSDK_API bool SetTEduBoardLogFilePath(const char *logFilePath)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| logFilePath | const char * | Path of the whiteboard log file to set, including the file name and extension. This path is UTF8-coded. If it is null or nullptr, the default path is used. |
+| logFilePath | const char * | Path of the whiteboard log file to be set, including the file name and extension. This path is UTF8-coded. If it is null or nullptr, the default path is used |
 
 #### Response
 Whether the whiteboard log file path is set successfully or not 
@@ -105,7 +105,7 @@ Whether off-screen rendering is enabled or not
 You must call this API before CreateTEduBoardController is called for the first time. Otherwise, calling this API will fail.
 
 #### Description
-When off-screen rendering is enabled, the SDK no longer creates a whiteboard view but throws the pixel data of whiteboard off-screen rendering through the onTEBOffscreenPaint callback API. 
+When off-screen rendering is enabled, the SDK no longer creates a whiteboard view but throws the pixel data of the whiteboard off-screen rendering through the onTEBOffscreenPaint callback API. 
 
 
 ### GetTEduBoardRenderProcessHandler
@@ -138,7 +138,7 @@ virtual void AddCallback(TEduBoardCallback *callback)=0
 | callback | TEduBoardCallback * | Event callback listener |
 
 #### Warning
-We recommend that you call this method before running Init to handle the error. 
+We recommend that you call this method before running Init to resolve the error. 
 
 
 ### RemoveCallback
@@ -170,10 +170,10 @@ virtual void Init(const TEduBoardAuthParam &authParam, uint32_t roomId, const TE
 | initParam | const TEduBoardInitParam & | An optional parameter, which specifies a series of attribute values for initializing the whiteboard |
 
 #### Warning
-When Tencent Cloud IMSDK is used for real-time data synchronization, only one whiteboard instance is supported. If multiple whiteboard instances are created, the doodle status may be abnormal.
+When Tencent Cloud IMSDK is used for real-time data synchronization, only one whiteboard instance is supported. If multiple whiteboard instances are created, the doodle status may become abnormal.
 
 #### Description
-You can use initParam.timSync to specify whether to use Tencent Cloud IMSDK for real-time data synchronization. When initParam.timSync is set to True, the system tries to use Tencent Cloud IMSDK as the signaling channel to receive and send data in real time (in this case, only message receiving and sending are automatically implemented, while users must manually perform the initialization, room entry, and other operations.) Currently, only IMSDK 4.3.118 and later are supported. 
+You can use initParam.timSync to specify whether Tencent Cloud IMSDK is used for real-time data synchronization. When initParam.timSync is set to True, the system tries to use Tencent Cloud IMSDK as the signaling channel to receive and send data in real time (in this case, only message receiving and sending are automatically implemented, and users must manually perform initialization, room entry, and other operations). Currently, only IMSDK 4.3.118 and later are supported. 
 
 
 ### GetBoardRenderView
@@ -191,7 +191,7 @@ Refreshes the current whiteboard page and triggers the onTEBRefresh callback.
 virtual void Refresh()=0
 ```
 #### Warning
-If the current whiteboard contains PowerPoint, HTML5, image, or video content, refreshing the whiteboard triggers the corresponding callback. 
+If the current whiteboard contains PowerPoint, HTML5, image, or video content, refreshing the whiteboard will trigger the corresponding callback. 
 
 
 ### SyncAndReload
@@ -203,7 +203,7 @@ virtual void SyncAndReload()=0
 Reload is to reload historical data, which will trigger all callbacks except those for onTEBInit during whiteboard initialization. 
 
 #### Description
-Usage: this API is used after network recovery to synchronize local data to the remote end and fetch remote data to the local end. Call timing: the API is called after network recovery. Use restrictions: Before the historical data is load successfully, this API cannot be repeatedly called. Otherwise, the callback alarm TEDU_BOARD_WARNING_ILLEGAL_OPERATION will be triggered. 
+Usage: this API is used after network recovery to synchronize local data to the remote end and fetch remote data to the local end. Call timing: this API is called after network recovery. Use limits: this API cannot be repeatedly called until the historical data is loaded successfully. Otherwise, the callback alarm TEDU_BOARD_WARNING_ILLEGAL_OPERATION will be triggered. 
 
 
 ### AddSyncData
@@ -222,7 +222,7 @@ This API is used to sync data between whiteboard instances. When the built-in IM
 
 
 ### SetDataSyncEnable
-Sets whether to enable data synchronization for the whiteboard. 
+Sets whether data synchronization is enabled for the whiteboard. 
 ``` C++
 virtual void SetDataSyncEnable(bool enable)=0
 ```
@@ -230,10 +230,10 @@ virtual void SetDataSyncEnable(bool enable)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| enable | bool | Whether to enable data synchronization |
+| enable | bool | Whether data synchronization is enabled |
 
 #### Description
-After a whiteboard instance is created, data synchronization is enabled by default. If this feature is disabled, none of local whiteboard operations will be synchronized to the remote end or server. 
+After a whiteboard instance is created, data synchronization is enabled by default. If data synchronization is disabled, none of the local whiteboard operations will be synchronized to the remote end or to the server. 
 
 
 ### IsDataSyncEnable
@@ -263,10 +263,10 @@ virtual void SetBoardRenderViewPos(int32_t x, int32_t y, uint32_t width, uint32_
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| x | int32_t | X component of the position of the whiteboard rendering view to set |
-| y | int32_t | Y component of the position of the whiteboard rendering view to set |
-| width | uint32_t | Width of the whiteboard rendering view to set |
-| height | uint32_t | Height of the whiteboard rendering view to set |
+| x | int32_t | X component of the position of the whiteboard rendering view to be set |
+| y | int32_t | Y component of the position of the whiteboard rendering view to be set |
+| width | uint32_t | Width of the whiteboard rendering view to be set |
+| height | uint32_t | Height of the whiteboard rendering view to be set |
 
 #### Description
 When a parent window is available for the whiteboard rendering view, (x, y) indicates the position relative to the parent window. 
@@ -303,14 +303,14 @@ virtual const char* CallExperimentalAPI(const char *apiExp)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| apiExp | const char * | Whiteboard JS code to execute |
+| apiExp | const char * | Whiteboard JS code to be executed |
 
 #### Response
 A string converted from the returned value after JS execution 
 
 
 
-## APIs for Off-Screen Rendering Input Events
+## APIs for Off-screen Rendering Input Events
 
 ### SendKeyEvent
 Sends a keyboard event to the whiteboard. 
@@ -321,7 +321,7 @@ virtual void SendKeyEvent(const TEduBoardKeyEvent &event)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| event | const TEduBoardKeyEvent & | Keyboard event to send |
+| event | const TEduBoardKeyEvent & | Keyboard event to be sent |
 
 
 ### SendMouseClickEvent
@@ -333,7 +333,7 @@ virtual void SendMouseClickEvent(const TEduBoardMouseEvent &event, TEduBoardMous
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| event | const TEduBoardMouseEvent & | Mouse event to send |
+| event | const TEduBoardMouseEvent & | Mouse event to be sent |
 | type | TEduBoardMouseButtonType | Mouse click type |
 | mouseUp | bool | Whether the mouse button is released |
 | clickCount | int | Number of clicks |
@@ -348,7 +348,7 @@ virtual void SendMouseMoveEvent(const TEduBoardMouseEvent &event, bool mouseLeav
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| event | const TEduBoardMouseEvent & | Mouse event to send |
+| event | const TEduBoardMouseEvent & | Mouse event to be sent |
 | mouseLeave | bool | Whether the mouse cursor has been removed from the whiteboard or not |
 
 
@@ -361,7 +361,7 @@ virtual void SendMouseWheelEvent(const TEduBoardMouseEvent &event, int deltaX, i
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| event | const TEduBoardMouseEvent & | Mouse event to send |
+| event | const TEduBoardMouseEvent & | Mouse event to be sent |
 | deltaX | int | Wheel motion increment in the X direction |
 | deltaY | int | Wheel motion increment in the Y direction |
 
@@ -375,7 +375,7 @@ virtual void SendTouchEvent(const TEduBoardTouchEvent &event)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| event | const TEduBoardTouchEvent & | Touch event to send |
+| event | const TEduBoardTouchEvent & | Touch event to be sent |
 
 
 
@@ -406,7 +406,7 @@ Whether doodling is allowed for the whiteboard or not. Valid values: true for ye
 
 
 ### SetHandwritingEnable
-Sets whether to enable handwriting for the whiteboard. 
+Sets whether handwriting is enabled for the whiteboard. 
 ``` C++
 virtual void SetHandwritingEnable(bool enable)=0
 ```
@@ -438,15 +438,15 @@ virtual void SetAccessibleUsers(const char **users, uint32_t userCount)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| users | const char ** | Users for which operations are allowed. The null value indicates all users. |
+| users | const char ** | Users for which operations are allowed. The nullptr value indicates all users |
 | userCount | uint32_t | Number of users contained in the users parameter |
 
 #### Description
 This API has the following effects:
-1. The ERASER tool can erase only the doodles drawn by the users specified by the users parameter, but cannot erase the doodles drawn by other users.
-2. The POINTSELECT and SELECT tools can select only the doodles drawn by the users specified by the users parameter, but cannot select the doodles drawn by other users.
+1. The eraser tool can erase only the doodles drawn by the users specified by the users parameter, but cannot erase the doodles drawn by other users.
+2. The point select and select tools can select only the doodles drawn by the users specified by the users parameter, but cannot select the doodles drawn by other users.
 3. The clear API can clear only selected doodles and the doodles drawn by the users specified by the users parameter. It cannot clear backgrounds or the doodles drawn by other users.
-4. This API has no impact on other features of the whiteboard that are not listed here. 
+4. This API has no impact on the other features of the whiteboard that are not listed here. 
 
 
 ### SetGlobalBackgroundColor
@@ -458,14 +458,14 @@ virtual void SetGlobalBackgroundColor(const TEduBoardColor &color)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | const TEduBoardColor & | Global background color to set |
+| color | const TEduBoardColor & | Global background color to be set |
 
 #### Description
-When this API is called, the background color of all whiteboards is changed, and the default background color of newly created whiteboards will be the global background color. 
+When this API is called, the background color of all whiteboards will be changed, and the default background color of the newly created whiteboards will be the global background color. 
 
 
 ### GetGlobalBackgroundColor
-Obtains the global background color of whiteboards. 
+Obtains the global background color of the whiteboards. 
 ``` C++
 virtual TEduBoardColor GetGlobalBackgroundColor()=0
 ```
@@ -482,7 +482,7 @@ virtual void SetBackgroundColor(const TEduBoardColor &color)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | const TEduBoardColor & | Background color to set |
+| color | const TEduBoardColor & | Background color to be set |
 
 #### Description
 After a whiteboard page is created, the default background color is set by the SetDefaultBackgroundColor API. 
@@ -498,7 +498,7 @@ Background color of the current whiteboard page
 
 
 ### SetToolType
-Sets the whiteboard tool to use. 
+Sets the whiteboard tool to be used. 
 ``` C++
 virtual void SetToolType(TEduBoardToolType type)=0
 ```
@@ -506,7 +506,7 @@ virtual void SetToolType(TEduBoardToolType type)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| type | TEduBoardToolType | Whiteboard tool to set |
+| type | TEduBoardToolType | Whiteboard tool to be set |
 
 
 ### GetToolType
@@ -527,8 +527,8 @@ virtual void SetCursorIcon(TEduBoardToolType type, const TEduBoardCursorIcon &ic
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| type | TEduBoardToolType | Whiteboard tool for which the cursor icon is to be set |
-| icon | const TEduBoardCursorIcon & | Cursor icon to set |
+| type | TEduBoardToolType | Whiteboard tool type for which the cursor icon is to be set |
+| icon | const TEduBoardCursorIcon & | Cursor icon to be set |
 
 
 ### SetBrushColor
@@ -540,7 +540,7 @@ virtual void SetBrushColor(const TEduBoardColor &color)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | const TEduBoardColor & | Brush color to set |
+| color | const TEduBoardColor & | Brush color to be set |
 
 #### Description
 The brush color applies to all doodles. 
@@ -564,7 +564,7 @@ virtual void SetBrushThin(uint32_t thin)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| thin | uint32_t | Brush thickness to set |
+| thin | uint32_t | Brush thickness to be set |
 
 #### Description
 The brush thickness applies to all doodles. If the actual pixel value (thin * whiteboard height/10000) px is less than 1 px, the doodle line will be almost invisible. 
@@ -588,7 +588,7 @@ virtual void SetTextColor(const TEduBoardColor &color)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| color | const TEduBoardColor & | Text color to set |
+| color | const TEduBoardColor & | Text color to be set |
 
 
 ### GetTextColor
@@ -609,10 +609,10 @@ virtual void SetTextSize(uint32_t size)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| size | uint32_t | Text size to set |
+| size | uint32_t | Text size to be set |
 
 #### Description
-This API defines the actual pixel value, that is, (size * whiteboard height/10000) px. 
+This API defines the actual pixel value; that is, (size * whiteboard height/10000) px. 
 
 
 ### GetTextSize
@@ -633,7 +633,7 @@ virtual void SetTextStyle(TEduBoardTextStyle style)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| style | TEduBoardTextStyle | Text style to set |
+| style | TEduBoardTextStyle | Text style to be set |
 
 
 ### GetTextStyle
@@ -654,7 +654,7 @@ virtual void SetLineStyle(const TEduBoardLineStyle &style)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| style | const TEduBoardLineStyle & | Line style to set |
+| style | const TEduBoardLineStyle & | Line style to be set |
 
 
 ### GetLineStyle
@@ -663,7 +663,7 @@ Obtains the line style.
 virtual TEduBoardLineStyle GetLineStyle()=0
 ```
 #### Response
-Line style 
+Line styles 
 
 
 ### SetOvalDrawMode
@@ -675,7 +675,7 @@ virtual void SetOvalDrawMode(TEduBoardOvalDrawMode drawMode)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| drawMode | TEduBoardOvalDrawMode | Oval drawing mode to set |
+| drawMode | TEduBoardOvalDrawMode | Oval drawing mode to be set |
 
 
 ### GetOvalDrawMode
@@ -684,11 +684,11 @@ Obtains the oval drawing mode.
 virtual TEduBoardOvalDrawMode GetOvalDrawMode()=0
 ```
 #### Response
-Oval drawing mode 
+Oval drawing modes 
 
 
 ### Clear
-Clears doodles on the current whiteboard page. 
+Clears the doodles on the current whiteboard page. 
 ``` C++
 virtual void Clear(bool clearBackground=false, bool clearSelectedOnly=false)=0
 ```
@@ -696,7 +696,7 @@ virtual void Clear(bool clearBackground=false, bool clearSelectedOnly=false)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| clearBackground | bool | Whether or not to clear the background color and background image simultaneously |
+| clearBackground | bool | Whether or not to clear the background color and the background image simultaneously |
 | clearSelectedOnly | bool | Whether or not to clear the selected doodle only |
 
 #### Warning
@@ -712,8 +712,8 @@ virtual void SetBackgroundImage(const char *url, TEduBoardImageFitMode mode)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | const char * | URL of the background image to set, which is UTF8-coded |
-| mode | TEduBoardImageFitMode | Image padding and alignment mode to use |
+| url | const char * | URL of the background image to be set, which is UTF8-coded |
+| mode | TEduBoardImageFitMode | Image padding and alignment modes to be used |
 
 #### Description
 When the URL is a valid local file address, the file will be automatically uploaded to COS. 
@@ -728,7 +728,7 @@ virtual void SetBackgroundH5(const char *url)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | const char * | URL of the background H5 page to set |
+| url | const char * | URL of the background H5 page to be set |
 
 #### Description
 This API and the SetBackgroundImage API are mutually exclusive. 
@@ -758,7 +758,7 @@ virtual const char* AddBoard(const char *url=nullptr)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | const char * | URL of the background image to use, which is UTF8-coded. The nullptr value indicates that no background image is specified. |
+| url | const char * | URL of the background image to be used, which is UTF8-coded. The nullptr value indicates that no background image is specified |
 
 #### Response
 Whiteboard ID 
@@ -767,7 +767,7 @@ Whiteboard ID
 Whiteboard pages will be added to the default file (with the file ID ::DEFAULT). Whiteboard pages cannot be added for user-uploaded files.
 
 #### Description
-The SDK manages the memory for storing the return value, so you do not need to dump the memory on your own. 
+The SDK manages the memory for storing the return value, so you do not need to release the memory on your own. 
 
 
 ### AddImageElement
@@ -779,7 +779,7 @@ virtual void AddImageElement(const char *url)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| url | const char * | URL of the image element to add, which is UTF8-coded |
+| url | const char * | URL of the image element to be added, which is UTF8-coded |
 
 
 ### AddElement
@@ -792,7 +792,7 @@ virtual const char* AddElement(TEduBoardElementType type, const char *url)=0
 | Parameter | Type | Description |
 | --- | --- | --- |
 | type | TEduBoardElementType | Whiteboard element type |
-| url | const char * | URL of the element to use, which is UTF8-coded. The nullptr value indicates that no URL is specified. |
+| url | const char * | URL of the element to be used, which is UTF8-coded. The nullptr value indicates that no URL is specified |
 
 #### Response
 Element ID for subsequent deletion operations
@@ -825,14 +825,14 @@ virtual void DeleteBoard(const char *boardId=nullptr)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | const char * | ID of the whiteboard to delete. The nullptr value indicates the current page. |
+| boardId | const char * | ID of the whiteboard to be deleted. The nullptr value indicates the current page |
 
 #### Warning
 Only whiteboard pages in the default file (with file ID ::DEFAULT) can be deleted. The default whiteboard page (with whiteboard ID ::DEFAULT) cannot be deleted. 
 
 
 ### PrevStep
-Goes to the previous step. Each step corresponds to an animation effect of the PowerPoint file. If no displayed animation effect is available, calling this API goes to the previous slide. 
+Goes to the previous step. Each step corresponds to an animation effect of the PowerPoint file. If no displayed animation effect is available, calling this API will redirect you to the previous slide. 
 ``` C++
 virtual void PrevStep()=0
 ```
@@ -843,7 +843,7 @@ Goes to the next step.
 virtual void NextStep()=0
 ```
 #### Description
-Each step corresponds to an animation effect of the PowerPoint file. If no animation effect that has not yet been displayed is available, calling this API goes to the next slide. 
+Each step corresponds to an animation effect of the PowerPoint file. If no animation effect that has not yet been displayed is available, calling this API will redirect you to the next slide. 
 
 
 ### PrevBoard
@@ -858,7 +858,7 @@ virtual void PrevBoard(bool resetStep=false)=0
 | resetStep | bool | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
 
 #### Description
-If the current whiteboard page is the first page of the current file, calling this API does not work. 
+If the current whiteboard page is the first page of the current file, calling this API will not work. 
 
 
 ### NextBoard
@@ -873,7 +873,7 @@ virtual void NextBoard(bool resetStep=false)=0
 | resetStep | bool | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
 
 #### Description
-If the current whiteboard page is the last page of the current file, calling this API does not work. 
+If the current whiteboard page is the last page of the current file, calling this API will not work. 
 
 
 ### GotoBoard
@@ -885,7 +885,7 @@ virtual void GotoBoard(const char *boardId, bool resetStep=false)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | const char * | ID of the whiteboard page to redirect to |
+| boardId | const char * | ID of the whiteboard page to be redirected to |
 | resetStep | bool | Whether or not to reset the PowerPoint animation steps after redirecting to the specified slide |
 
 #### Description
@@ -901,7 +901,7 @@ virtual const char* GetCurrentBoard()=0
 ID of the current whiteboard page
 
 #### Description
-The SDK manages the memory for storing the return value, so you do not need to dump the memory on your own. 
+The SDK manages the memory for storing the return value, so you do not need to release the memory on your own. 
 
 
 ### GetBoardList
@@ -925,7 +925,7 @@ virtual void SetBoardRatio(const char *ratio)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| ratio | const char * | Whiteboard aspect ratio to set |
+| ratio | const char * | Whiteboard aspect ratio to be set |
 
 #### Description
 The format of the value is similar to "4:3" and "16:9". 
@@ -949,7 +949,7 @@ virtual void SetBoardScale(uint32_t scale)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| scale | uint32_t | Whiteboard scale to set |
+| scale | uint32_t | Whiteboard scale to be set |
 
 #### Description
 The value range is [100, 300], and the actual scale is scale/100. 
@@ -973,10 +973,10 @@ virtual void SetBoardContentFitMode(TEduBoardContentFitMode mode)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| mode | TEduBoardContentFitMode | Whiteboard content self-adaption mode |
+| mode | TEduBoardContentFitMode | Whiteboard content self-adaption mode to be set |
 
 #### Description
-Setting the self-adaption mode affects all subsequent whiteboard content operations. In addition, the AddTranscodeFile API is affected. 
+Setting the self-adaption mode affects all subsequent whiteboard content operations and the AddTranscodeFile API. 
 
 
 ### GetBoardContentFitMode
@@ -985,7 +985,7 @@ Obtains the whiteboard content self-adaption mode.
 virtual TEduBoardContentFitMode GetBoardContentFitMode()=0
 ```
 #### Response
-Whiteboard content self-adaption mode 
+Whiteboard content self-adaption modes 
 
 
 ### Snapshot
@@ -1012,14 +1012,14 @@ virtual void ApplyFileTranscode(const char *path, const TEduBoardTranscodeConfig
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| path | const char * | Path of the file to transcode, which is UTF8-coded |
+| path | const char * | Path of the file to be transcoded, which is UTF8-coded |
 | config | const TEduBoardTranscodeConfig & | Transcoding parameters |
 
 #### Warning
 This API is designed to enable users to quickly use the transcoding feature in the access stage. Generally, we do not recommend that you use this API in production environments. We recommend that you initiate transcoding requests in production environments by using backend service APIs. 
 
 #### Description
-Transcoding is supported for PowerPoint, PDF, and Word files. PowerPoint files are transcoded into HTML5 animations by default, and original animation effects of the PowerPoint file can be restored. Other files are transcoded into static images. PowerPoint animation transcoding rate is about 1 sec/slide, whereas the transcoding rate of any files into static images is about 0.5 sec/page. The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, see the description document of the callback. 
+Transcoding is supported for PowerPoint, PDF, and Word files. PowerPoint files are transcoded into HTML5 animations by default, and original animation effects of the PowerPoint file can be restored. Other files are transcoded into static images. The PowerPoint animation transcoding rate is about 1 sec/slide, whereas the transcoding rate of any files into static images is about 0.5 sec/page. The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, please refer to the callback documentation. 
 
 
 ### GetFileTranscodeProgress
@@ -1034,10 +1034,10 @@ virtual void GetFileTranscodeProgress(const char *taskId)=0
 | taskId | const char * | Transcoding task ID obtained from the onTEBFileTranscodeProgress callback |
 
 #### Warning
-This API is used only in special business scenarios to actively query the file transcoding progress. After ApplyFileTranscode is called, the SDK will automatically trigger the onTEBFileTranscodeProgress callback according to schedule. Normally, you do not need to actively call this API. 
+This API is used only in special business scenarios to actively query the file transcoding progress. After ApplyFileTranscode is called, the SDK will automatically trigger the onTEBFileTranscodeProgress callback according to the schedule. Normally, you do not need to actively call this API. 
 
 #### Description
-The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, see the description document of the callback. 
+The transcoding progress and result will be returned through the onTEBFileTranscodeProgress callback. For more information, please refer to the callback documentation. 
 
 
 ### AddTranscodeFile
@@ -1060,8 +1060,8 @@ Before the corresponding onTEBAddTranscodeFile callback is received, you cannot 
 
 #### Description
 The field information of TEduBoardTranscodeFileResult can be retrieved by:
-1. Using the client ApplyFileTranscode for transcoding. The transcoding result will be used to call this API.
-2. (Recommended) Using the server RESTful API for transcoding. Only four fields of the transcoding result (title, resolution, url, and pages) need to be passed in. The field relationships between the server and the client are: Title -> title, Resolution -> resolution, ResultUrl -> url, and Pages -> pages. For details, see the [transcoding document](https://cloud.tencent.com/document/product/1137/40260).
+1. Using the client ApplyFileTranscode for transcoding. The transcoding result will be used to call this API
+2. (Recommended) Using the server RESTful API for transcoding. Only four fields of the transcoding result (title, resolution, url, and pages) need to be passed in. The field relationships between the server and the client are: Title -> title, Resolution -> resolution, ResultUrl -> url, and Pages -> pages. For details, see [Document Transcoding Events](https://cloud.tencent.com/document/product/1137/40260).
 
 
 ### AddImagesFile
@@ -1073,7 +1073,7 @@ virtual const char* AddImagesFile(const char **urls, uint32_t urlCount)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| urls | const char ** | List of image URLs to use. These URLs are UTF8-coded. The nullptr value is not allowed. |
+| urls | const char ** | List of image URLs to be used. These URLs are UTF8-coded. The nullptr value is not allowed |
 | urlCount | uint32_t | Number of image URLs |
 
 #### Response
@@ -1114,7 +1114,7 @@ virtual void ShowVideoControl(bool show)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| show | bool | Whether to display the video control bar or not |
+| show | bool | Whether the video control bar is displayed or not |
 
 #### Warning
 This is a global control item that applies to all video files. It specifies whether to show or hide the default video control bar. By default, the default video control bar is displayed. The UI style of the control bar varies on different platforms. 
@@ -1163,7 +1163,7 @@ This API triggers the status change callback onTEBVideoStatusChange. It is usual
 
 
 ### SetSyncVideoStatusEnable
-Sets whether to synchronize local video operations to the remote end. 
+Sets whether local video operations are synchronized to the remote end. 
 ``` C++
 virtual void SetSyncVideoStatusEnable(bool enable)=0
 ```
@@ -1177,11 +1177,11 @@ virtual void SetSyncVideoStatusEnable(bool enable)=0
 This is a global control item that applies to all video files.
 
 #### Description
-This API specifies whether the triggering of the play/pause/seek API and control bar events affects the remote end. The default value is true. Usually, it is set to false for students and true for teachers. 
+This API specifies whether the triggering of the play/pause/seek API and the control bar events affects the remote end. The default value is true. Usually, it is set to false for students and true for teachers. 
 
 
 ### StartSyncVideoStatus
-This is an internal start timer that syncs the video status to the remote end according to a schedule (only for mp4 files). 
+This is an internal start timer that syncs the video status to the remote end according to the schedule (only for mp4 files). 
 ``` C++
 virtual void StartSyncVideoStatus(uint32_t interval)=0
 ```
@@ -1189,7 +1189,7 @@ virtual void StartSyncVideoStatus(uint32_t interval)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| interval | uint32_t | Synchronization interval, for example, 5 seconds |
+| interval | uint32_t | Synchronization interval. For example, 5 seconds |
 
 #### Warning
 This API is valid only for the current file.
@@ -1221,7 +1221,7 @@ virtual const char* AddH5File(const char *url)=0
 #### Response
 File ID 
 
->? Only display but not interaction is supported. 
+>? Only display, and not interaction, is supported. 
 
 
 ### DeleteFile
@@ -1233,7 +1233,7 @@ virtual void DeleteFile(const char *fileId)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to delete |
+| fileId | const char * | ID of the file to be deleted |
 
 #### Description
 When the file ID is nullptr, it indicates the current file. The default file cannot be deleted. 
@@ -1248,12 +1248,12 @@ virtual void SwitchFile(const char *fileId, const char *boardId=nullptr, int32_t
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to switch to |
+| fileId | const char * | ID of the file to be switched to |
 | boardId | const char * | Switch files and redirect to this whiteboard page |
 | stepIndex | int32_t | Redirect to the whiteboard page and switch to this animation |
 
 #### Warning
-This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and do not perform any operations. 
+This API can only be used for file switching. If the passed-in fileId is the current file ID, the SDK will ignore other parameters and will not perform any operations. 
 
 >? The file ID is required. If it is nullptr or a null string, file switching will fail. 
 
@@ -1329,11 +1329,11 @@ virtual TEduBoardStringList* GetThumbnailImages(const char *fileId)=0
 #### Response
 Thumbnail URL list 
 
->? When you call the RESTful API to request transcoding, the "thumbnail_resolution" parameter is required to enable the thumbnail feature. Otherwise, the returned thumbnail URL is invalid. 
+>? When you call the RESTful API to request transcoding, the "thumbnail_resolution" parameter is required to enable the thumbnail feature. Otherwise, the returned thumbnail URL will be invalid. 
 
 
 ### ClearFileDraws
-Clears all whiteboard doodles of the specified file. 
+Clears all the whiteboard doodles of the specified file. 
 ``` C++
 virtual void ClearFileDraws(const char *fileId)=0
 ```

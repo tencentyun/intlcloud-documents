@@ -12,7 +12,7 @@ virtual void onTEBError(TEduBoardErrorCode code, const char *msg)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardErrorCode | Error code. See the definitions of TEduBoardErrorCode. |
+| code | TEduBoardErrorCode | Error code. For more information, see the definitions of TEduBoardErrorCode |
 | msg | const char * | Error information, which is UTF8-coded |
 
 
@@ -25,7 +25,7 @@ virtual void onTEBWarning(TEduBoardWarningCode code, const char *msg)=0
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| code | TEduBoardWarningCode | Error code. For more information, see the definitions of TEduBoardWarningCode. |
+| code | TEduBoardWarningCode | Error code. For more information, see the definitions of TEduBoardWarningCode |
 | msg | const char * | Error information, which is UTF8-coded |
 
 
@@ -38,11 +38,11 @@ Whiteboard initialization completion callback
 virtual void onTEBInit()=0
 ```
 #### Description
-If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled.) 
+If this callback is returned, the whiteboard is running normally (in this case, the whiteboard is blank and no historical data has been pulled). 
 
 
 ### onTEBHistroyDataSyncCompleted
-Callback for the completion of whiteboard historical data synchronization 
+Callback for the completion of the whiteboard historical data synchronization 
 ``` C++
 virtual void onTEBHistroyDataSyncCompleted()
 ```
@@ -59,7 +59,7 @@ virtual void onTEBSyncData(const char *data)
 | data | const char * | Whiteboard synchronization data (a JSON string) |
 
 #### Description
-When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the AddSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization by using Tencent Cloud IMSDK. 
+When this callback is returned, you need to send the callback data to other members in the room through signaling channels. After the recipients receive the callback data, call the AddSyncData API to add the data to the whiteboard to sync the data. This callback is used to sync data between multiple whiteboards. This callback is not returned during real-time data synchronization using Tencent Cloud IMSDK. 
 
 
 ### onTEBUndoStatusChanged
@@ -226,7 +226,7 @@ This callback is received only when AddElement is called locally. Receiving this
 
 
 ### onTEBBackgroundH5StatusChanged
-Callback for the whiteboard background H5 status change 
+Callback for setting the whiteboard background H5 status change 
 ``` C++
 virtual void onTEBBackgroundH5StatusChanged(const char *boardId, const char *url, TEduBoardBackgroundH5Status status)
 ```
@@ -236,7 +236,7 @@ virtual void onTEBBackgroundH5StatusChanged(const char *boardId, const char *url
 | --- | --- | --- |
 | boardId | const char * | Whiteboard ID |
 | url | const char * | Whiteboard image URL |
-| status | TEduBoardBackgroundH5Status | New whiteboard image status|
+| status | TEduBoardBackgroundH5Status | New whiteboard image status |
 
 
 
@@ -251,8 +251,8 @@ virtual void onTEBAddBoard(const TEduBoardStringList *boardList, const char *fil
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | const TEduBoardStringList * | List of IDs of added whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally. |
-| fileId | const char * | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardList | const TEduBoardStringList * | List of IDs of added whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally |
+| fileId | const char * | ID of the file to which the added whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBDeleteBoard
@@ -264,8 +264,8 @@ virtual void onTEBDeleteBoard(const TEduBoardStringList *boardList, const char *
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardList | const TEduBoardStringList * | List of IDs of deleted whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally. |
-| fileId | const char * | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version. |
+| boardList | const TEduBoardStringList * | List of IDs of deleted whiteboard pages. After using this parameter, you do not need to call the Release method to release it as the SDK will automatically release it internally |
+| fileId | const char * | ID of the file to which the deleted whiteboard pages belong. The value must be ::DEFAULT in the current version |
 
 
 ### onTEBGotoBoard
@@ -277,12 +277,12 @@ virtual void onTEBGotoBoard(const char *boardId, const char *fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| boardId | const char * | ID of the whiteboard page to redirect to |
-| fileId | const char * | ID of the file to which the whiteboard page to redirect to belongs |
+| boardId | const char * | ID of the whiteboard page to be redirected to |
+| fileId | const char * | ID of the file to which the whiteboard page to be redirected to belongs |
 
 
 ### onTEBGotoStep
-Callback for whiteboard page animation steps 
+Callback for the whiteboard page animation steps 
 ``` C++
 virtual void onTEBGotoStep(uint32_t currentStep, uint32_t totalStep)
 ```
@@ -319,8 +319,8 @@ virtual void onTEBFileTranscodeProgress(const char *path, const char *errorCode,
 | Parameter | Type | Description |
 | --- | --- | --- |
 | path | const char * | Path of the local file being transcoded |
-| errorCode | const char * | File transcoding error code. If no exception occurs, the value is the null string (""). |
-| errorMsg | const char * | File transcoding error message. If no exception occurs, the value is the null string (""). |
+| errorCode | const char * | File transcoding error code. If no exception occurs, the value is the null string ("") |
+| errorMsg | const char * | File transcoding error message. If no exception occurs, the value is the null string ("") |
 | result | const TEduBoardTranscodeFileResult & | File transcoding result |
 
 
@@ -333,7 +333,7 @@ virtual void onTEBAddTranscodeFile(const char *fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to add |
+| fileId | const char * | ID of the file to be added |
 
 #### Description
 This callback is triggered only after the file is loaded successfully. 
@@ -348,7 +348,7 @@ virtual void onTEBAddImagesFile(const char *fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to add |
+| fileId | const char * | ID of the file to be added |
 
 #### Description
 This callback is triggered only after the file is loaded successfully. 
@@ -391,7 +391,7 @@ virtual void onTEBDeleteFile(const char *fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to delete |
+| fileId | const char * | ID of the file to be deleted |
 
 
 ### onTEBSwitchFile
@@ -403,7 +403,7 @@ virtual void onTEBSwitchFile(const char *fileId)
 
 | Parameter | Type | Description |
 | --- | --- | --- |
-| fileId | const char * | ID of the file to switch to |
+| fileId | const char * | ID of the file to be switched to |
 
 
 ### onTEBFileUploadProgress
