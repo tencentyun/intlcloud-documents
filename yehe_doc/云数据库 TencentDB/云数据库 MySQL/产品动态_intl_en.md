@@ -315,7 +315,7 @@
 <td>Data Management Console (DMC) is available</td>
 <td>DMC supports real-time monitoring and management of instance sessions.</td>
 <td>2017-08</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/40879" target="_blank">DMC</a></td>
+<td>-</td>
 </tr>
 </tbody></table>
 
