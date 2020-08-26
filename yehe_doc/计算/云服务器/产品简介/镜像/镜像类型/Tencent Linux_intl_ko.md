@@ -33,4 +33,5 @@ Tencent Cloud는 [CVM 콘솔](https://console.cloud.tencent.com/cvm)에서 Tence
 
 ## 기술 지원
 Tencent Cloud는 Tencent Linux를 위해 다음의 기술 지원을 제공합니다.
-YUM 소스에서 보안 업데이트(Security Updates)를 제공하며 `yum update` 명령어를 실행하면 바로 신규 버전으로 업데이트할 수 있습니다.
+- Tencent Cloud는 YUM repository에 보안 업데이트(Security Updates)를 제공하고 `yum update` 명령을 실행하여 버전 업그레이드할 수 있습니다.
+- Tencent Linux는 커널 커뮤니티에서 장기간 지원해 온 4.14.105 커널 버전를 기반으로 클라우드 환경에 맞춘 운영체제 이미지 입니다. Tencent Cloud는 Tencent Linux를 사용하면서 겪는 문제에 대해 기술 지원을 제공해 드립니다.

@@ -33,8 +33,8 @@ Just like a region of generic CLB instances, an Anycast CLB region is the one yo
 >- Anycast EIP can be bound to private network CLB instances but not classic private network CLB instances.
 >
 ## Anycast CLB Use Cases
-### Unified server for global access
-If you are in the gaming industry, you may hope that the players from different corners of the world are in the same server region or that your branches around the globe can share the same IDC. With the help of Anycast CLB, you can deploy real servers in one region (such as Guangzhou). You can purchase an Anycast CLB instance in that region and select the publishing regions as needed. In this way, players or employees in different parts of the world can have nearby access to the same set of real servers.
+### Unified server for cross-region access
+If you are in the gaming industry, you may hope that the players from different places are in the same server region or that your branches around the globe can share the same IDC. You can use Anycast CLB to deploy real servers in one region (such as Guangzhou), purchase an Anycast CLB instance in that region and select the publishing regions as needed. In this way, players or employees can obtain the nearby access to the same real servers.
 ![](https://main.qcloudimg.com/raw/548f5853d5d56af85a248d5ee64d2c39.png)
 
 ### Gaming acceleration

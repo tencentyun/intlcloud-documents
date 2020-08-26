@@ -13,7 +13,7 @@ TDSQL ensures the stability of automatic scaling with its proprietary automatic 
 
 ### Scaling up an existing shard
 Scaling up an existing shard is actually replacing it with a larger physical shard.
->This does not add any new shards and will not change the logic rules of sharding or number of shards.
+>?This does not add any new shards and will not change the logic rules of sharding or number of shards.
 
 1. Assign a new physical shard (the "new shard") based on the required configuration.
 2. Sync the data and configuration of the physical shard to be upgraded (the "old shard") to the new shard.

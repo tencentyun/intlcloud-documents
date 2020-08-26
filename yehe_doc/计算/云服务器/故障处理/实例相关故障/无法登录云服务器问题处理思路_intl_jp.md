@@ -1,9 +1,9 @@
-このドキュメントでは、Cloud Virtual Machine（CVM）インスタンスを購入した後、インスタンスにログインできない問題についての解決策を紹介します。CVMにログインできない問題を特定して解決するのに役立ちます。
+このドキュメントでは、Cloud Virtual Machine（CVM）インスタンスの購入後にログインが失敗する原因を特定し、問題を解決するために役立ちます。
 
 ## 考えられる原因
 
 下記画像にCVMインスタンスが接続できない主な要因分類と発生確率を示します。インスタンスが接続できない場合、インテリジェント診断ツールを使用して、以下の指示に従ってトラブルシューティングを実行することをお勧めします。
-<img src="https://main.qcloudimg.com/raw/bde5d6d99a10bd307da495cfaeea3c7a.jpeg" height="310" width="520" />
+<img src="https://main.qcloudimg.com/raw/d8e0151489003a251514eebe74dc201a.png" height="310" width="520" />
 
 ## トラブルシューティング
 
