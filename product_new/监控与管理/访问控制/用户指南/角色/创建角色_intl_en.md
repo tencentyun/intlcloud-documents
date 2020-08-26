@@ -76,7 +76,7 @@ Company A's enterprise account CompanyExampleA (ownerUin:12345) creates a role a
 ]
 }
 ```
- (2) CompanyExampleA (ownerUin: 12345) calls [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889) to associate the new policy with the role `DevOpsRole`. Input parameters: policyName=DevOpsPolicy, roleName=DevOpsRole.
+ (2) CompanyExampleA (ownerUin: 12345) calls [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562) to associate the new policy with the role `DevOpsRole`. Input parameters: policyName=DevOpsPolicy, roleName=DevOpsRole.
 
 At this point, Company A's enterprise account CompanyExampleA (ownerUin: 12345) has created a new role and granted permissions to the role.
 
