@@ -76,7 +76,8 @@ API 网关的计费项包括：调用次数费用和流量费用。
 - 数据传输总费用 = 14.3GB * 0.12USD/GB + 4.77 GB * 0.12USD/GB = 2.29USD
 - 总费用 = 4.45USD + 2.29USD = 6.74USD
 
-**相关链接**
-关于 API 网关 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 API网关 [欠费说明](https://intl.cloud.tencent.com/document/product/628/11934)。
+## 补充说明
+- 关于 API 网关 的欠费停服策略：数据的保留和销毁时间、以及相关计费说明，请参见 API 网关 [欠费说明](https://intl.cloud.tencent.com/document/product/628/11934)。
+- 后端对接 WEBSOCKET 的 API 暂时不收取调用次数费用，仅收取外网出流量费用。
 
 价格文档仅供参考，最终价格以账单为准
