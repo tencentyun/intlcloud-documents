@@ -78,3 +78,5 @@ The backend business is in a different region from API Gateway and receives five
 
 **Related links**
 For more information on arrears processing in API Gateway, data retention and purge schedule, and billing descriptions, please see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/628/11934) for API Gateway.
+
+This pricing document  is for reference only. See your bill for the actual price.
