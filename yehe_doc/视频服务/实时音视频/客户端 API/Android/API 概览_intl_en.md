@@ -20,7 +20,8 @@
 | [ConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Requests cross-room call (anchor competition). |
 | [DisconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exits cross-room call. |
 | [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
-
+| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Creates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance |
+| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance |
 
 ### CDN API functions
 
@@ -177,14 +178,14 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Sets mic volume level. |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Sets effect levels of beauty, brightening, and rosy skin filters. |
-| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the effect level of eye enlarging filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Sets the effect level of face slimming filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Sets the effect level of chin slimming filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Sets the effect level of chin lengthening/shortening filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Sets the effect level of face shortening filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the effect level of nose slimming filter. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects the AI animated effect pendant to be used. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effect. This API takes effect only in the [SDK Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the effect level of eye enlarging filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Sets the effect level of face slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Sets the effect level of chin slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Sets the effect level of chin lengthening/shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Sets the effect level of face shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the effect level of nose slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects the AI animated effect pendant to be used. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effect. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Sets filter effect for specified material. This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set the filter effect. |
 | [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter effect level. This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set filter effect level. |
 | [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green screen video (it takes effect only in the Enterprise Edition and is invalid in other editions). This API is disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set green screen video. |
@@ -336,8 +337,9 @@ Event callback API for TRTC video call feature.
 
 | API                                                          | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a13dfcc17ca7ea6bcff7b0f5f6d167e33) | Callback of audio data captured by local mic. |
-| [onPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a60a54a148edf641a85fbc07bc294fe11) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
+| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e)| Callback of audio data captured by local mic. |
+| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Calls back the audio data which is locally collected and pre-processed by the audio module |
+| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902)  | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Audio data to be played back by speaker after audio data from each channel is mixed. |
 
 

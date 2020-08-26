@@ -33,4 +33,5 @@ Tencent Linux は下記にユースケースに適用します：
 
 ## テクニカルサポート
 Tencent Cloudは Tencent Linux に次のテクニカルサポートを提供します：
- YUM ソースでセキュリティ更新（Security Updates）を提供し、 `yum update` コマンドを実行するだけで、Tlinuxを最新バージョンに更新できます。
+- Tencent Cloudは、YUMリポジトリでセキュリティアップデートを提供します。 `yum update`コマンドを実行してTlinuxをアップグレードできます。
+- Tencent Linuxは、カーネルコミュニティで長期的にサポートされているカーネルバージョン4.14.105に基づいて、クラウド環境に合わせてカスタマイズされたOSイメージです。Tencent Cloudは、Tlinuxの使用中に発生する問題に対するテクニカルサポートを提供します。

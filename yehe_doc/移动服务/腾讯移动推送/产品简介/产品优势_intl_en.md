@@ -1,5 +1,5 @@
 ### Excellent and Reliable Performance Metrics
-TPNS provides a processing power of 300,000 push messages per second, outperforming its competitors in the industry. It sustains hundreds of millions of push messages per day for top applications such as the Honor of Kings. The stability of the TPNS system and SDK has been proved on a large number of applications. In addition, TPNS is selected by Google as the only official third-party push service provider for Android within Mainland China.
+TPNS provides a processing power of 300,000 push messages per second, outperforming its competitors in the industry. It sustains hundreds of millions of push messages per day for top applications such as the Honor of Kings. The stability of the TPNS system and SDK has been proved on a large number of applications. 
 
 
 ### Strong Keep-Alive Capability for High Delivery Rate
