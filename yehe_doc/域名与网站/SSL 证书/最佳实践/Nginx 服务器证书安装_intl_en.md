@@ -7,8 +7,8 @@ This document describes how to install an SSL certificate on an Nginx server.
 >- Before you install an SSL certificate, enable port 443 on the Nginx server so that HTTPS can be enabled after the certificate is installed. For more information, see [How do I enable port 443 for a server?](https://intl.cloud.tencent.com/document/product/1007/36738).
 
 ## Prerequisites
-- A remote file copy tool such as WinSCP has been installed (you are recommended to get the latest version from its official website).
-- A remote login tool such as PuTTY or Xshell has been installed (you are recommended to get the latest version from their official websites).
+- A remote file copy tool such as WinSCP has been installed (we recommend downloading the latest version from their official website).
+- A remote login tool such as PuTTY or Xshell has been installed (we recommend downloading the latest version from their official websites).
 - The Nginx service has been installed and configured on the current server.
 - The data required to install the SSL certificate includes:
 <table>
@@ -43,9 +43,9 @@ After decompression, you can get the certificate files of the relevant types, in
      - `1_cloud.tencent.com_bundle.crt`: certificate file
      - `2_cloud.tencent.com.key`: private key file
   - CSR file content: `cloud.tencent.com.csr` file
->!The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+>!The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is not relevant to installation.
 2. Log in to the Nginx server using WinSCP (a tool copying files between a local computer and a remote computer).
-3. Copy the obtained `1_cloud.tencent.com_bundle.crt` certificate file and `2_cloud.tencent.com.key` private key file from the local directory to the `/usr/local/nginx/conf` directory of the Nginx server (this is the default Nginx installation directory needs to be adjusted as needed).
+3. Copy the obtained `1_cloud.tencent.com_bundle.crt` certificate file and `2_cloud.tencent.com.key` private key file from the local directory to the `/usr/local/nginx/conf` directory of the Nginx server (this is the default Nginx installation directory and needs to be adjusted as needed).
 4. Log in to the Nginx server remotely by using a login tool such as [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502).
 5. Edit the `conf/nginx.conf` configuration file in the Nginx root directory by modifying the following:
 >?
@@ -82,7 +82,7 @@ server {
  - If yes, reconfigure or fix the problem.
  - Otherwise, proceed to [step 7](#step7).
 <span id="step7"></span>
-7. Restart the Nginx server and it can be accessed through `https://cloud.tencent.com`.
+7. Restart the Nginx server; it can be accessed through `https://cloud.tencent.com`.
 
 ### (Optional) Security configuration for automatic redirect from HTTP to HTTPS
 
@@ -91,9 +91,9 @@ If you do not know how to access a website over HTTPS, you can configure the ser
  - Add a JS script to the page.
  - Add redirect in the backend program.
  - Redirect through a web server.
- - Nginx supports rewrite. If you did not remove pcre during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server and modify the following to redirect requests made to the default port 80 to HTTPS:
+ - Nginx supports rewrite. If you did not remove pcre during the compilation, you can add `return 301 https://$host$request_uri;` to the HTTP server and modify the following to redirect requests made to default port 80 to HTTPS:
 >?
->- Uncommented configuration statements can be configured as shown in the following.
+>- Uncommented configuration statements can be configured as shown below.
 >- The configuration file may be written differently on different versions; for example, use `listen 443 ssl` instead of `listen 443` and `ssl on` for `nginx/1.15.0` or later.
 
 ```
@@ -124,7 +124,7 @@ server {
     return 301 https://$host$request_uri; 
 }
 ```
-2. After completing modification, restart the Nginx server and it can be accessed through `http://cloud.tencent.com`.
+2. After modification is complete, restart the Nginx server; it can be accessed through `http://cloud.tencent.com`.
 
->!If anything goes wrong during this procedure, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>!If you experience any issues with the steps outlined above, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 
