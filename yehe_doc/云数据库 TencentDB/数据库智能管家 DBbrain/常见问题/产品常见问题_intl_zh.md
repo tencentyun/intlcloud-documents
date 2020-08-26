@@ -2,7 +2,7 @@
 DBbrain 是一款智能诊断和优化数据库的产品。
 
 ### DBbrain 的兼容性如何？
-支持多款 SQL、NoSQL、NewSQL 数据库类型，目前仅开发支持 MySQL 版本，后续将陆续开放 Redis、MongoDB、PostgreSQL、SQL Server、CynosDB、MariaDB 等多款主流数据库。
+支持多款 SQL、NoSQL、NewSQL 数据库类型，目前仅开放支持 MySQL 版本，后续将陆续开放 Redis、MongoDB、PostgreSQL、SQL Server、CynosDB、MariaDB 等多款主流数据库。
 
 ### DBbrain 如何计费？
 DBbrain 目前处于内测期间，内测期间产品和功能免费。

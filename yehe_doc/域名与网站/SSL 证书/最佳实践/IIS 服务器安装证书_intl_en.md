@@ -1,7 +1,7 @@
 ## Scenarios
 This document describes how to install an SSL certificate on an IIS server.
 >?
->- This document uses the certificate name `cloud.tencent.com` as an example. The actual name prevails.
+>- This document uses the certificate name `cloud.tencent.com` as an example. For your purposes, please use the name used in your certificate.
 >- This document takes Windows 10 as an example. The detailed steps may vary slightly depending on the operating system.
 >- Before you install an SSL certificate, enable port 443 on the IIS server so that HTTPS can be enabled after the certificate is installed. For more information, see [How do I enable port 443 for a server?](https://intl.cloud.tencent.com/document/product/1007/36738).
 
@@ -16,7 +16,7 @@ After decompression, you can get the certificate files of the relevant types, in
     - `cloud.tencent.com.pfx`: certificate file
     - `keystorePass.txt`: password file (If a private key password is set, there is no `keystorePass.txt`.)
   - CSR file content: `cloud.tencent.com.csr` file
-  >!The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+  >!The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is not relevant to installation.
 2. Open the IIS Manager, select the computer name, and double-click **Server Certificates** to open it, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/dc34b3e08aeb07949782ac874be1fa45.png)
 3. In the **Actions** column to the right of the **Server Certificates** window, click **Import**, as shown in the following figure.
@@ -37,12 +37,12 @@ After decompression, you can get the certificate files of the relevant types, in
 ### (Optional) Security configuration for automatic redirect from HTTP to HTTPS
 
 >?
->- For normal redirect, edit the rule in the following steps. If you have other needs, you can set it on your own.
->- During the redirect from HTTP to HTTPS, if your website element contains external links or uses the HTTP protocol, the entire web page is not completely based on HTTPS. In this case, some browsers may issue insecurity prompts such as "this link is insecure". You can view the reason for the error by clicking **Details** on the insecure message page.
+>- For normal redirect, edit the rule according to the following steps. If you have other needs, you can configure as needed.
+>- During the redirect from HTTP to HTTPS, if your website element contains external links or uses HTTP protocol, it will cause the entire web page to not be completely based on HTTPS protocol. In this case, some browsers may issue security warnings such as "this link is insecure". You can view the reason for the error by clicking **Details** on message page.
 
 1. Open the IIS Manager.
 2. Select a site name under **Sites**, and double-click **URL Rewrite**, as shown in the following figure.
->!Download and install the [URL Rewrite module](https://www.iis.net/downloads/microsoft/url-rewrite) before going to the following steps.
+>!Download and install the [URL Rewrite module](https://www.iis.net/downloads/microsoft/url-rewrite) before proceeding to the following steps.
 
 ![](https://main.qcloudimg.com/raw/e5cb93191202ba7e285003f6a12887a1.png)
 3. On the **URL Rewrite** page, click **Add Rule(s)** in the **Actions** column on the right, as shown in the following figure.
@@ -64,4 +64,4 @@ After decompression, you can get the certificate files of the relevant types, in
 6. Click **Apply** in the **Actions** column to save the settings.
 7. Return to the **Sites** page and click **Restart** in the **Manage Website** column on the right. Then, the website can be accessed using `http://cloud.tencent.com`.
 
->!If anything goes wrong during this procedure, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>!If you experience any issues with the steps outlined above, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).

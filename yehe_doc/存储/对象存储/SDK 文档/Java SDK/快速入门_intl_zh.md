@@ -4,6 +4,7 @@
 - 对象存储服务的 XML Java SDK 源码下载地址：[XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5)。
 - SDK 快速下载地址：[XML Java SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip)。
 - 示例 Demo 下载地址：[ COS XML Java SDK 示例](<https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo>)。
+- SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Java)。
 
 #### 环境依赖
 - SDK 支持 JDK 1.7、1.8及以上版本。
@@ -56,7 +57,7 @@ COS Java SDK 的包名为`com.qcloud.cos.*`，您可以通过 Eclipse 或者 Int
 
 若您使用永久密钥初始化 COSClient，可以先在访问管理控制台中的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 页面获取 SecretId、SecretKey，使用永久密钥适用于大部分的应用场景，参考示例如下：
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```java
 // 1 初始化用户身份信息（secretId, secretKey）。
 String secretId = "COS_SECRETID";
@@ -72,7 +73,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 您也可以使用临时密钥初始化 COSClient，临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)，参考示例如下：
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```java
 // 1 传入获取到的临时密钥 (tmpSecretId, tmpSecretKey, sessionToken)
 String tmpSecretId = "COS_SECRETID";
@@ -105,7 +106,7 @@ ClientConfig 类为配置信息类，主要的成员如下：
 
 用户确定地域和存储桶名称后，参考如下示例创建存储桶：
 
-[//]: # ".cssg-snippet-put-bucket-and-grant-acl"
+[//]: # (.cssg-snippet-put-bucket-and-grant-acl)
 ```java
 String bucket = "examplebucket-1250000000"; //存储桶名称，格式：BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
@@ -124,7 +125,7 @@ try{
 
 查询用户的存储桶列表，参考示例如下：
 
-[//]: # ".cssg-snippet-get-service"
+[//]: # (.cssg-snippet-get-service)
 ```java
 List<Bucket> buckets = cosClient.listBuckets();
 for (Bucket bucketElement : buckets) {
@@ -145,7 +146,7 @@ for (Bucket bucketElement : buckets) {
 
 上传不超过5GB的文件，参考示例如下：
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```java
 // 指定要上传的文件
 File localFile = new File(localFilePath);
@@ -161,7 +162,7 @@ PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
 
 查询存储桶中对象列表，参考示例如下：
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -210,7 +211,7 @@ do {
 上传对象后，您可以用同样的 key，调用 GetObject 接口将对象下载到本地，也可以生成预签名链接（下载请指定 method 为 GET，详情请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31536)），分享到其他终端来进行下载。但如果您的文件设置了私有读权限，那么请注意预签名链接的有效期。
 将文件下载到本地指定路径，参考示例如下：
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -235,7 +236,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 删除 COS 上指定路径的对象，代码如下:
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";

@@ -10,7 +10,7 @@ Query OK,0 rows affected(0.15 sec)
 ```
 		
 ## Inserting Data
->The `insert` field must include the shardkey; otherwise, the operation will be refused.
+>!The `insert` field must include the shardkey; otherwise, the operation will be refused.
 
 Insert data into the table just created. Below is the sample code:
 ```
@@ -21,7 +21,7 @@ ERROR 7013 (HY000): Proxy ERROR:get_shardkeys return error
 ```
 
 ## Querying Data
->When you query data, you are recommended to include the shardkey, so that the distributed route will be automatically redirected to the corresponding shard, achieving the highest efficiency; otherwise, the distributed system will automatically scan the entire table and then aggregate the results at the gateway, which compromises the efficiency.
+>!When you query data, you are recommended to include the shardkey, so that the distributed route will be automatically redirected to the corresponding shard, achieving the highest efficiency; otherwise, the distributed system will automatically scan the entire table and then aggregate the results at the gateway, which compromises the efficiency.
 
 Below is the sample code for data query:
 ```
@@ -29,7 +29,7 @@ mysql> select id from test1 where id=1;
 ```
 
 ## Deleting Data
->A "where" condition must be included in a "DELETE" operation, and you are recommended to include the shardkey in the "where" condition.
+>!A "where" condition must be included in a "DELETE" operation, and you are recommended to include the shardkey in the "where" condition.
 
 Below is the sample code for data deletion:
 ```

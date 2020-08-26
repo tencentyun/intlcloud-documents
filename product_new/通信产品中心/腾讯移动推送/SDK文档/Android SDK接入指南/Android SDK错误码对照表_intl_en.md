@@ -64,7 +64,6 @@
 | 10110008 | Account of the Token queried does not exist |
 | 10010005 | Push target does not exist |
 | 10010018 | Duplicate push|
-| 10010005  | Push target does not exist|
 | 10030002 | AccessID and AccessKey do not match |
 
 

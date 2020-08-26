@@ -1,6 +1,6 @@
 A security group is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. VPC-based instances with identical network security isolation requirements in the same region can be put into the same logical security group. This feature is currently not supported for instances on the basic network. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. Rules that are not supported by TencentDB become invalid automatically.
 
->
+>?
 >- TencentDB security group currently only supports network access control over private and public network access in VPCs but not over the basic network.
 > - Security groups that currently support public network access are available only in Guangzhou, Shanghai, Beijing, and Chengdu.
 
@@ -19,10 +19,7 @@ Security group policies are divided into "allowing" and "denying" traffic. You c
 Currently, if you select VPC as the network type when purchasing a TencentDB instance, there is no need to associate a security group. In this case, the default policy is to "open all IPs and ports to internet".
 
 ## Security group template
-You can create a custom security group or create one from template. You can control the inbound and outbound packets on CVM instances by configuring security group rules. Three templates are currently available in the system:
-- Port 22 opened on Linux: Only TCP port 22 for SSH logins is opened to the public network, while all ports are opened to the private network. This template is not applicable to TencentDB.
-- Port 3389 opened on Windows: Only TCP 3389 for MSTSC logins is opened to the public network, while all ports are opened to the private network. This template is not applicable to TencentDB.
-- All ports opened: Access to TencentDB from all IP addresses is allowed, which comes with certain security risks.
+You can create a custom security group or create one from template. You can control the inbound and outbound packets on CVM instances by configuring security group rules. 
 
 ## Security group rules
 Security group rules are used to control the inbound and outbound traffic on instances associated with the security group (filtered based on the rules from top to bottom). By default, a new security group denies all traffic (All Drop). You can modify security group rules at any time, and new rules take effect immediately once saved.
@@ -44,7 +41,7 @@ In addition, if the last policy of such security groups is "ALL Traffic denied",
 - A maximum of 100 inbound and 100 outbound access policies can be set in one security group. As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB.
 - A TencentDB instance can be associated with multiple security groups, and a security group can be associated with multiple TencentDB instances. No limit is imposed on the number.
 
->It is not recommended to associate too many instances with a security group.
+>!It is not recommended to associate too many instances with a security group.
 
 | Feature | Quantity | 
 |---------|---------|

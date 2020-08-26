@@ -1,5 +1,8 @@
 | Field | Description |
 | ------------------------------ | ------------------------------------------------------------ |
+| Payer Account ID                            | The account ID of the user who pays the bills. An account ID is the unique identifier of a Tencent Cloud account.                   |
+| Owner Account ID                            | The account ID of the user who owns the resource.                                             |
+| Operator Account ID                         | The account ID of the user who purchases or activates the resource.                       |
 | Product Name | Cloud product. E.g., CVM or TencentDB for MySQL. |
 | Billing Mode | Resource billing mode, including monthly subscription and pay as you go. |
 | Project Name | Project to which a resource belongs. This is user-designated. If a resource has not been assigned to a project, it will automatically belong to the default project.  |

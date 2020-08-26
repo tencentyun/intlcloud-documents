@@ -1,15 +1,16 @@
 ## Relevant Resources
 
-- Download the Android SDK source code [here](https://github.com/tencentyun/qcloud-sdk-android).
-- Download the demo [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
-- For the SDK API and parameter documentation, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
-- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
+- Download the COS XML Android SDK source code [here](https://github.com/tencentyun/qcloud-sdk-android).
+- Download Demo [here](https://github.com/tencentyun/qcloud-sdk-android-samples).
+- For SDK APIs and their parameters, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
+- For the complete code, see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Android).
+- For the SDK change log, see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
 
 ## Preparations
 
-1. Prepare an Android application; this can be an existing project or a new empty project.
-2. Please make sure that your target Android application is API level 15 (Ice Cream Sandwich) or above.
-3. Prepare a remote address that can be used to get your Tencent Cloud temporary key. For more information on temporary keys, please see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
+1. You need an Android application; this can be one of your existing projects or a new project.
+2. Make sure that your Android application has a target API level of 15 (Ice Cream Sandwich) or above.
+3. You need a remote address where users can obtain your Tencent Cloud temporary key. For more information on temporary keys, see [Practice of Direct Upload for Mobile Apps](https://intl.cloud.tencent.com/document/product/436/30618).
 
 ## Step 1. Install the SDK
 
@@ -17,16 +18,16 @@
 
 #### Standard SDK
 
-Add the following dependencies to `build.gradle` at the application level (generally in the `app` module):
+Add dependencies to `build.gradle` at the application level (usually under the application module).
 ```
 dependencies {
 	...
     // Add this line
-    implementation 'com.tencent.qcloud:cosxml:5.5.3'
+    implementation 'com.tencent.qcloud:cosxml:5.5.4'
 }
 ```
 
-If you use Kotlin to develop your project, you can add our KTX extension package, which provides friendlier APIs:
+If you are using Kotlin for development in your project, you can add our KTX extension package, which provides more user-friendly APIs.
 
 ```
 dependencies {
@@ -38,15 +39,15 @@ dependencies {
 
 #### Simplified SDK
 
-If you use only basic object features such as upload, download, and copy and have strict limitations on packet size, you can use the simplified SDK.
+If you need access only to the basic COS features, such as upload, download, and replication, as well as a minimal SDK size, you may want to use the simplified SDK.
 
-First, add the Bintray repository address to the `build.gradle` file at the project level:
+First, add the Bintray repository location to your `build.gradle` file at the project level.
 
 ```
 allprojects {
  repositories {
      ...
-     // Add the Maven repository:
+     // Add a Maven repository
      maven {
          url "https://dl.bintray.com/tencentqcloudterminal/maven"
      }
@@ -54,21 +55,21 @@ allprojects {
 }
 ```
 
-Then, change the dependencies to `cosxml-lite` in `build.gradle` at the application level (generally in the `app` module):
+Then, add dependencies to `build.gradle` at the application level (usually under the application module).
 
 ```
 dependencies {
 	...
     // Add this line
-    implementation 'com.tencent.qcloud:cosxml-lite:5.5.3'
+    implementation 'com.tencent.qcloud:cosxml-lite:5.5.4'
 }
 ```
 
 #### Disabling MTA reporting
 
-We have introduced Tencent Mobile Analytics (TMA) capabilities into the SDK to keep track of and optimize SDK quality for a better user experience.
+We have introduced Tencent Mobile Analytics (TMA) capabilities into the SDK to track down and optimize the SDK quality for a better user experience.
 
-To disable this feature, please add the statements for removing MTA to `build.gradle` at the application level (generally in the `app` module):
+To disable the MTA feature, add the following statement to `build.gradle` at the application level (usually under the application module):
 
 ```
 dependencies {
@@ -80,33 +81,33 @@ dependencies {
 }
 ```
 
-### Method 2. Manual integration 
+### Method 2. Manual integration
 
-#### 1. Download an archive file
+#### 1. Download SDK version
 
-You can download the latest version of the SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-android/latest/qcloud-sdk-android.zip), or you can find all of the versions [here](https://github.com/tencentyun/qcloud-sdk-android/releases).
+You can directly download the latest SDK version [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/qcloud-sdk-android/latest/qcloud-sdk-android.zip), or you can find all of the versions at [SDK Releases](https://github.com/tencentyun/qcloud-sdk-android/releases).
 
-After the package is downloaded and decompressed, you will see multiple `JAR` or `AAR` packages, which are detailed below. Please select the packages to be integrated as needed.
+After downloading and decompressing the file, you can see that it contains multiple `JAR` or `AAR` packages which are described as follows. Please choose the ones you want to integrate.
 
 Required libraries:
 
 - cosxml: COS protocol implementation
-- qcloud-foundation: basic library
-- [Bolts - Tasks](https://github.com/BoltsFramework/Bolts-Android): third-party task library
-- [OkHttp](https://github.com/square/okhttp): third-party networking library
-- [Okio](https://github.com/square/okio): third-party I/O library
+- qcloud-foundation: foundation library
+- [bolts-tasks](https://github.com/BoltsFramework/Bolts-Android): third-party task library
+- [okhttp](https://github.com/square/okhttp): third-party networking library
+- [okio](https://github.com/square/okio): third-party IO library
 
 Optional libraries:
 
-- mtaUtils: MTA library for SDK improvement
-- mid-sdk: MTA library for SDK improvement
-- mta-android-sdk: MTA library for SDK improvement
-- LogUtils: log module for SDK improvement
-- quic: QUIC protocol, which is required if you transfer data over QUIC protocol
+- mtaUtils: MTA library for improving the SDK
+- mid-sdk: MTA library for improving the SDK
+- mta-android-sdk: MTA library for improving the SDK
+- LogUtils: log module for improving the SDK
+- quic: QUIC protocol; required if you transfer data over QUIC
 
 #### 2. Integrate the SDK into your project
 
-Place the needed packages in the `libs` folder in your application module and add the following dependencies to the `build.gradle` file at the application level (generally in the `app` module):
+Put your libraries in the `libs` folder under your application module, and add dependencies to the `build.gradle` file at the application level (usually under the application module):
 
 ```
 dependencies {
@@ -116,11 +117,11 @@ dependencies {
 }
 ```
 
-## Step 2. Configure permissions
+## Step 2. Configure Permissions
 
-### Network permissions
+### Network permission
 
-The SDK needs network permission to communicate with the COS server. Please add the following permission declarations to `AndroidManifest.xml` in the application module:
+The SDK needs network permission to communicate with the COS server. Please add the following permission statements to the `AndroidManifest.xml` under your application module:
 
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -128,22 +129,22 @@ The SDK needs network permission to communicate with the COS server. Please add 
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
 
-### Storage permissions
+### Storage permission
 
-If your application needs to read/write files from/to external storage, please add the following permission declarations to `AndroidManifest.xml` in the application module:
+If you need to read and write files from external storage, please add the following permission statements to the `AndroidManifest.xml` under your application module:
 
 ```
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
-Please note that on Android 6.0 (API level 23) or above, the storage permissions need to be requested at runtime.
+Note that you need to request dynamic storage permissions at runtime for Android 6.0 (API level 23) or above.
 
-## Step 3. Begin Using the SDK
+## Step 3. Use the SDK
 
-### 1. Get a temporary key
+### 1. Obtain a temporary key
 
-Implement a subclass of `BasicLifecycleCredentialProvider` to request a temporary key and return the result.
+Implement a subclass `BasicLifecycleCredentialProvider` to request a temporary key and return the result.
 
 ```java
 public static class MySessionCredentialProvider
@@ -153,26 +154,26 @@ public static class MySessionCredentialProvider
     protected QCloudLifecycleCredentials fetchNewCredentials() 
             throws QCloudClientException {
 
-        // First, get the response containing the key information from your temporary key server
+        // First, get the response containing a signature from your temporary key server
 
-        // Then, parse the response to get the temporary key information
-        String tmpSecretId = "COS_SECRETID"; // Temporary key's `SecretId`
-        String tmpSecretKey = "COS_SECRETKEY"; // Temporary key's `SecretKey`
-        String sessionToken = "COS_SESSIONTOKEN"; // Temporary key's `Token`
-        long expiredTime = 1556183496L;// End timestamp of the validity period of the temporary key in seconds
+        // Then, parse the response to get a temporary key
+        String tmpSecretId = "COS_SECRETID"; // SecretId of the temporary key
+        String tmpSecretKey = "COS_SECRETKEY"; // SecretKey of the temporary key
+        String sessionToken = "TOKEN"; // Token of the temporary key
+        long expiredTime = 1556183496L;// End timestamp in seconds of the validity period of the temporary key
 
-        // We recommend using the server time as the start time of the signature so as to avoid request expiration caused by a large discrepancy between the mobile phone's local time and the server time
-        // Use the server time as the start time of the signature
-        long startTime = 1556182000L; // Start timestamp of the validity period of the temporary key in seconds
+        // We strongly recommend returning the server time as the start time of the signature to avoid request expiration due a large difference between your mobile phone's local time and standard time
+        // Return the server time as the start time of the signature
+        long startTime = 1556182000L; // Start timestamp in seconds of the validity period of the temporary key
 
-        // Finally, return the temporary key information object
+        // Finally, return the temporary key object
         return new SessionQCloudCredentials(tmpSecretId, tmpSecretKey,
                 sessionToken, startTime, expiredTime);
     }
 }
 ```
 
-Here, suppose the class name is `MySessionCredentialProvider`. Initialize an instance to provide a key for the SDK.
+Assumed a class named `MySessionCredentialProvider`. Now, initialize an instance to provide the key for the SDK.
 
 ```java
 QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider();
@@ -180,43 +181,43 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 
 #### Using a permanent key for local debugging
 
-You can use a Tencent Cloud permanent key for local debugging during the development. **As this method may disclose your key, please change to the temporary key method before launching your application.**
+You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to replace it with a temporary key before before launching your application.**
 
 ```java
-String secretId = "COS_SECRETID"; // The SecretId of the permanent key
-String secretKey = "COS_SECRETKEY"; // The SecretKey of the permanent key
+String secretId = "COS_SECRETID"; // The secretId of the permanent key
+String secretKey ="COS_SECRETKEY"; // The secretKey of the permanent key
 
-// `keyDuration` is the key validity period in the request in seconds
+// keyDuration is the valid duration in seconds of the key in your request
 QCloudCredentialProvider myCredentialProvider = 
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
-### 2. Initialize the COS service
+### 2. Initialize a COS Instance
 
-Use the `myCredentialProvider` instance that provides the key to initialize a `CosXmlService` instance.
+Use your instance `myCredentialProvider` for providing keys to initialize a `CosXmlService` instance.
 
-`CosXmlService` provides all APIs for accessing COS. We recommend using it as an **application singleton**.
+`CosXmlService` provides all APIs for accessing COS. We recommend you use it as an **application singleton**.
 
 ```java
-// Bucket region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+// Bucket region abbreviation, e.g. ap-guangzhou
 String region = "COS_REGION";
 
-// Create a `CosXmlServiceConfig` object and modify the default configuration parameters as needed
+// Create a `CosXmlServiceConfig` object, and modify the default configuration parameters as needed
 CosXmlServiceConfig serviceConfig = new CosXmlServiceConfig.Builder()
         .setRegion(region)
-        .isHttps(true) // Use HTTPS for the request. The default value is HTTP
+        .isHttps(true) // Set HTTPS as the default request method
         .builder();
 
-// Initialize the COS service to get the instance
+// Initialize the COS instance
 CosXmlService cosXmlService = new CosXmlService(context, 
     serviceConfig, myCredentialProvider);
 ```
 
->? For the abbreviations of different bucket regions, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
+>? For the COS bucket region abbreviations, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
 
-#### Using the KTX package to initialize a COS service
+#### Using the KTX package to initialize a COS instance
 
-If you use KTX, the simplified initialization code will be as follows:
+The code is shorter for initialization using KTX as shown below:
 
 ```kotlin
 val cos = cosService(context = application.applicationContext) {
@@ -245,24 +246,24 @@ val cos = cosService(context = application.applicationContext) {
 
 ### Uploading an object
 
-The SDK allows you to upload local files, binary data, URIs, and input streams. The following uses local file upload as an example:
+The SDK supports uploading local files, binary data, URIs, and input streams. The following is an example of uploading a local file.
 
-[//]: # ".cssg-snippet-transfer-upload-file"
+[//]: # (.cssg-snippet-transfer-upload-file)
 ```java
-// Initialize `TransferConfig`. The default configuration is used here. If you need to customize it, please see the SDK API documentation.
+// Initialize `TransferConfig`. The default configuration is used here. If you need to customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize `TransferManager`
+// Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key.
+String bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
-        .toString(); // Absolute path of local file
-// If there is an `uploadId` for an initialized multipart upload, assign the value of the `uploadId` here to resume the upload; otherwise, assign `null`.
+        .toString(); // The absolute path of the local file
+// If there is an uploadId for the initialized multipart upload, assign the value of the uploadId here to resume the upload; otherwise, assign null
 String uploadId = null; 
 
-// Uploading the file
+// Upload a file
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 
@@ -301,13 +302,13 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Using KTX package to upload object
+#### Using the KTX package to upload an object
 
-If you use KTX, please see the following sample code for upload:
+The following sample code shows how to upload using KTX:
 
 ```kotlin
-// Here, the `viewModel` KTX extension is used
-// `viewModelScope` is the built-in coroutine scope in `viewModel`
+// Use the KTX extension of ViewModel
+// viewModelScope is the built-in coroutine scope of ViewModel
 viewModelScope.launch {
     val `object` = cosObject {
         bucket = cosBucket {
@@ -316,11 +317,11 @@ viewModelScope.launch {
         }
         key = "exampleObject"
     }
-    // Local sample file
+    // Local file example
     val sourceFile = File(appContext.externalCacheDir, "sourceFile")
 
     try {
-        // The upload method is `suspend function`
+        // Call the “suspend” function to upload
         val result = `object`.upload(
             localFile = sourceFile,
             progressListener = { complete, target ->
@@ -340,27 +341,27 @@ viewModelScope.launch {
 ```
 
 >?
->- For more complete samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
->- After an object is uploaded, you can use the same key to generate a file download link as instructed in [Generating a Pre-signed Link](https://intl.cloud.tencent.com/document/product/436/37680). However, please note that if your file is set to private-read, the download link will only be valid for a certain period of time.
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 ### Downloading an object
 
-[//]: # ".cssg-snippet-transfer-download-object"
+[//]: # (.cssg-snippet-transfer-download-object)
 ```java
-// Advanced download APIs support checkpoint restart; therefore, a `HEAD` request will be sent to get file information before download.
-// If you are using a temporary key or accessing with a sub-account, please make sure that you have `HeadObject` permission.
+// The advanced download API supports checkpoint restart. To do so, a `HEAD` request will be sent first to get file information before download.
+// If you are using a temporary key or accessing with a sub-account, please make sure that your access permission list includes HeadObject.
 
-// Initialize `TransferConfig`. The default configuration is used here. If you need to customize it, please see the SDK API documentation.
+// Initialize `TransferConfig`. The default configuration is used here. If you need to customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
-// Initialize `TransferManager`
+// Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format of `BucketName-APPID`
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, i.e., the object key.
+String bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
 // Local directory path
 String savePathDir = context.getExternalCacheDir().toString();
-// Name of the locally saved file; if this is null, the COS filename will be used
+// The file name saved locally. If not specified (null), it will be the same as the COS file name
 String savedFileName = "exampleobject";
 
 Context applicationContext = context.getApplicationContext(); // application
@@ -376,7 +377,7 @@ cosxmlDownloadTask.setCosXmlProgressListener(new CosXmlProgressListener() {
         // todo Do something to update progress...
     }
 });
-// Set the response callback 
+// Set the response callback
 cosxmlDownloadTask.setCosXmlResultListener(new CosXmlResultListener() {
     @Override
     public void onSuccess(CosXmlRequest request, CosXmlResult result) {
@@ -404,13 +405,13 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Using the KTX package to download an object
+#### Use the KTX package to download an object
 
-If you use KTX, please see the following sample code for download:
+The following sample code shows how to download using KTX:
 
 ```kotlin
-// Here, the `viewModel` KTX extension is used
-// `viewModelScope` is the built-in coroutine scope in `viewModel`
+// Use the KTX extension of ViewModel
+// viewModelScope is the built-in coroutine scope of ViewModel
 viewModelScope.launch {
     val `object` = cosObject {
         bucket = cosBucket {
@@ -421,7 +422,7 @@ viewModelScope.launch {
     }
 
     try {
-        // The download method is `suspend function`
+        // Call the “suspend” function to download
         val result = `object`.download(
             context = appContext,
             destDirectory = appContext.externalCacheDir!!,
@@ -442,5 +443,5 @@ viewModelScope.launch {
 ```
 
 >?
->- For more complete samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
->- Advanced download APIs support checkpoint restart; therefore, a `HEAD` request will be sent to get file information before download. If you are using a temporary key or accessing with a sub-account, please make sure that you have `HeadObject` permission.
+>- For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
+>- The advanced download API supports checkpoint restart; therefore, a `HEAD` request will be sent to get file information before download. If you are using a temporary key or accessing with a sub-account, please make sure that your access permission list includes HeadObject.

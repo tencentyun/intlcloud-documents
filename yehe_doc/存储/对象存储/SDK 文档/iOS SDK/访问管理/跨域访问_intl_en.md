@@ -58,7 +58,7 @@ putCORS.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] PutBucketCORS:putCORS];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -103,7 +103,7 @@ putBucketCorsReq.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().putBucketCORS(putBucketCorsReq);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
 ## Querying a Cross-Origin Configuration
 
@@ -131,7 +131,7 @@ corsRequest.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketCORS:corsRequest];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -152,7 +152,7 @@ getBucketCorsRes.setFinish { (corsConfig, error) in
 QCloudCOSXMLService.defaultCOSXML().getBucketCORS(getBucketCorsRes);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
 ## Deleting a Cross-Origin Configuration
 
@@ -177,7 +177,7 @@ deleteCORS.bucket = @"examplebucket-1250000000";
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketCORS:deleteCORS];
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Objc/Examples/cases/BucketCORS.m).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 
 **Swift**
@@ -200,6 +200,6 @@ deleteBucketCorsRequest.finishBlock = {(result,error) in
 QCloudCOSXMLService.defaultCOSXML().deleteBucketCORS(deleteBucketCorsRequest);
 ```
 
->?For more samples, go to [GitHub](https://github.com/tencentyun/qcloud-sdk-ios-samples/tree/master/COSAPIDemo/Swift/Examples/cases/BucketCORS.swift).
+>?For more samples, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
 
