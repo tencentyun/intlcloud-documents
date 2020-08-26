@@ -11,7 +11,7 @@
 ### Installing the SDK
 Execute the following command to install the COS Go SDK:
 ```sh
-go get -u github.com/tencentyun/cos-go-sdk-v5/
+go get -u github.com/tencentyun/cos-go-sdk-v5
 ```
 
 ## Getting started
@@ -66,7 +66,7 @@ For more information on how to generate and use a temporary key, see [Generating
 
 ### Creating a bucket
 
-[//]: # (.cssg-snippet-put-bucket-comp)
+
 ```Go
 package main
 
@@ -99,7 +99,7 @@ func main() {
 
 
 ### Querying a bucket list
-[//]: # (.cssg-snippet-get-service-comp)
+
 ```go
 package main
 
@@ -132,7 +132,7 @@ func main() {
 ```
 
 ### Uploading an object
-[//]: # (.cssg-snippet-put-object-comp)
+
 ```Go
 package main
 
@@ -175,7 +175,7 @@ func main() {
 ```
 
 ### Querying an object list
-[//]: # (.cssg-snippet-get-bucket-comp)
+
 ```go
 package main
 
@@ -216,7 +216,7 @@ func main() {
 ```
 
 ### Downloading an object
-[//]: # (.cssg-snippet-get-object-comp)
+
 ```Go
 package main
 
@@ -259,7 +259,7 @@ func main() {
 ```
 
 ### Deleting an object
-[//]: # (.cssg-snippet-delete-object-comp)
+
 ```go
 package main
 

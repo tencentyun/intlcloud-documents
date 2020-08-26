@@ -4,6 +4,7 @@
 - 对象存储 COS 的 XML Go SDK 源码下载地址：[ XML Go SDK](https://github.com/tencentyun/cos-go-sdk-v5)。
 - 示例 Demo 下载地址：[ COS XML Go SDK 示例](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example)。
 - 更多信息请参见 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 文档。
+- SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Go)。
 
 #### 环境依赖
 - Golang：用于下载和安装 Go 编译运行环境，请前往 Golang 官网进行下载。
@@ -11,7 +12,7 @@
 #### 安装 SDK
 执行以下命令安装 COS Go SDK：
 ```sh
-go get -u github.com/tencentyun/cos-go-sdk-v5/
+go get -u github.com/tencentyun/cos-go-sdk-v5
 ```
 
 ## 开始使用
@@ -66,7 +67,7 @@ if client != nil {
 
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-put-bucket-comp)
+
 ```Go
 package main
 
@@ -99,7 +100,7 @@ func main() {
 
 
 ### 查询存储桶列表
-[//]: # (.cssg-snippet-get-service-comp)
+
 ```go
 package main
 
@@ -132,7 +133,7 @@ func main() {
 ```
 
 ### 上传对象
-[//]: # (.cssg-snippet-put-object-comp)
+
 ```Go
 package main
 
@@ -175,7 +176,7 @@ func main() {
 ```
 
 ### 查询对象列表
-[//]: # (.cssg-snippet-get-bucket-comp)
+
 ```go
 package main
 
@@ -216,7 +217,7 @@ func main() {
 ```
 
 ### 下载对象
-[//]: # (.cssg-snippet-get-object-comp)
+
 ```Go
 package main
 
@@ -259,7 +260,7 @@ func main() {
 ```
 
 ### 删除对象
-[//]: # (.cssg-snippet-delete-object-comp)
+
 ```go
 package main
 

@@ -1,6 +1,6 @@
 ## ITRTCCloud @ TXLiteAVSDK
 
-### Creating and terminating an ITRTCCloud Singleton
+### Creating and terminating an ITRTCCloud singleton
 
 | API | Description |
 |-----|-----|
