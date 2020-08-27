@@ -2,7 +2,7 @@
 To make a purchase, you need to verify your identity first. For more information, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Purchasing at Official Website
-1. Log in at the [purchase page](https://buy.cloud.tencent.com/cdb), select various configuration items based on your actual needs, confirm that everything is correct, and click **Buy Now**.
+1. Log in and go to the [purchase page](https://buy.cloud.tencent.com/cdb), select various configuration items based on your actual needs, confirm that everything is correct, and click **Buy Now**.
  - **Billing mode**:
     - If the request volume of your business may fluctuate greatly and instantaneously, we recommend you choose pay-as-you-go billing.
  - **Region**: select the region where your TencentDB for MySQL instance is deployed. Tencent Cloud services in different regions cannot communicate with each other over the private network. Region cannot be modified after purchase.
@@ -17,7 +17,7 @@ To make a purchase, you need to verify your identity first. For more information
 2. After making the payment, return to the instance list, wait for the instance status to become "uninitialized", and initialize the instance.
 
 ## Purchasing Through API
-For more information on how to purchase a TencentDB instance through API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15865).
+For more information on how to purchase a TencentDB instance through API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15871).
 
 
 ## Subsequent Steps

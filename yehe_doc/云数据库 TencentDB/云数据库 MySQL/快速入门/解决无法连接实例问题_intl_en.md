@@ -72,7 +72,7 @@ By modifying the host address authorized by the database account in the TencentD
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
 3. Select **Database Management** > **Manage Account**, find the account for which to modify the host, and select **More** > **Modify Host** in the "Operation" column.
 4. In the pop-up dialog box for modifying host, enter the new host address and click **OK**.
->?The host address can be an IP and contain `%` (indicating not to limit the IP range). Multiple hosts should be separated by line breaks, spaces, `;`, `,`, or `|`.
+>?The host address can be an IP and contain `%` (indicating not to limit the IP range). Multiple hosts should be separated by line breaks, spaces, semicolons, commas, or vertical bars.
 > - Example 1: enter `%` to indicate not to limit the IP range, that is, clients at all IP addresses are allowed to use this account to connect to the database.
 > - Example 2: enter `10.5.10.%`, which means that clients whose IP range is within `10.5.10.%` are allowed to use this account to connect to the database.
 
@@ -86,7 +86,7 @@ To enable connection between CVM and TencentDB for MySQL instances over the priv
 >- If the "Network" fields in the instance lists both show the same "VPC" (in the same region), it means that the CVM and TencentDB for MySQL instances are in the same VPC.
 >
 - **View CVM network type/VPC**: log in to the [CVM Console](https://console.cloud.tencent.com/cvm/instance) and view "Network" in the instance list.
-![](https://main.qcloudimg.com/raw/ce2550045bc286172f841f4fcceb0cc4.png)
+![](https://main.qcloudimg.com/raw/4a113e0488aab66d612f989ce04dbfdf.png)
 - **View TencentDB for MySQL network type/VPC**: log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and view "Network" in the instance list.
-![](https://main.qcloudimg.com/raw/2cc5396f1b3f8af2028d75ae642a5126.png)
+![](https://main.qcloudimg.com/raw/3ae00005e16d22f1e73fb85b607a1274.png)
 
