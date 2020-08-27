@@ -41,7 +41,6 @@ vivo mobile phones use a highly customized Android system, with very strict mana
  ![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
 5. Record the Certificate ID once it is generated.
- ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
 
 <span id="Step3"></span>
 ### Step 3: Integrate push SDK
