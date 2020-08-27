@@ -93,7 +93,7 @@ ECDN 已正式接入腾讯云监控系统，当前版本支持的告警指标包
 
 ## 监控配置入口
 登录 [云监控控制台](https://console.cloud.tencent.com/monitor/policylist)，在左侧目录中，单击【告警策略】，进入管理页面。
-![](https://main.qcloudimg.com/raw/fb17ec3c2e9f696eb5766e2ba2405173.png)
+![](https://main.qcloudimg.com/raw/02656ec03060812cd5f6267856ff779f.png)
 
 ## 新增告警配置
 新增告警策略配置步骤如下图所示。
