@@ -195,7 +195,7 @@ Set custom content for the notification bar message before sending the message.
  - **Package name**: indicates the name of the Huawei Push service app.
  - **AppID**: enter the **App ID** obtained from Huawei Push.
  - **AppSecret**: enter the **APP SECRET** obtained from Huawei Push.
- - **Click event**: indicates the event that is triggered after the notification bar message is clicked. Valid values are **Open app**, **Open URL**, and **Open specific app interface**. For more information, see [Configuring Click Events](#huawei_click).
+- **Badge Parameter**: enter the complete class name of `Activity` for the app entry as the application badge on Huawei Desktop. For more information, see [Interface Description for Badging on Huawei Desktop](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802)
    **Open app** and **Open specific app interface** allow [custom content passthrough](#huawei_custom).
    Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect 10 minutes after you save it.
 
