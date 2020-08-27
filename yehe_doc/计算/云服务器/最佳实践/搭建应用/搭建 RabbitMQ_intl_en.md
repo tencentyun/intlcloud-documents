@@ -1,8 +1,8 @@
 ## Overview
-RabbitMQ is an open-source message broker based on the Advanced Message Queuing Protocol (AMQP). It features usability, scalability and high availability with an Erlang-programed server, and supports multiple clients including Python, Ruby, .NET, Java, JMS, C, PHP, ActionScript, XMPP, STOMP and AJAX. This document describes how to deploy RabbitMQ on Tencent Cloud CVM.
+RabbitMQ is an open-source message broker based on the Advanced Message Queuing Protocol (AMQP). It features usability, scalability, and high availability with an Erlang-programmed server, and supports multiple clients including Python, Ruby, .NET, Java, JMS, C, PHP, ActionScript, XMPP, STOMP, and AJAX. This document describes how to deploy RabbitMQ on Tencent Cloud CVM.
 
 ## Software
-This document uses the following software as an example to deploy RabbitMQ.
+This document uses the following software as an example to deploy RabbitMQ:
 - Linux: Linux operating system. This document uses CentOS 7.7 as an example.
 - RabbitMQ Server: open-source message broker. This document uses RabbitMQ Server 3.6.9 as an example.
 - Erlang: programming language. This document uses Erlang 19.3 as an example.
@@ -14,9 +14,9 @@ This document uses the following software as an example to deploy RabbitMQ.
 
 ## Directions
 ### Installing Erlang
-1. See [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
+1. See [Log in to Linux Instances Using the Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 	- [Log in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
-	- [Log in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+	- [Log in to Linux Instances via a SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 1. Run the following command to install dependencies.
 ```
 yum -y install make gcc gcc-c++ m4 ncurses-devel openssl-devel unixODBC-devel
@@ -47,7 +47,7 @@ make && make install
 ```
 vi /etc/profile
 ```
-7. Press **i** to enter edit mode, and append the following to the file.
+7. Press **i** to enter the editing mode, and append the following at the end of the file.
 ```
 export PATH=$PATH:/usr/local/erlang/bin
 ```
@@ -69,7 +69,7 @@ cd
 ```
 yum install rabbitmq-server-3.6.9-1.el7.noarch.rpm
 ```
-12. Run the following commands to enable RabbitMQ autostart and start it.
+12. Run the following commands in sequence to enable RabbitMQ autostart and start RabbitMQ.
 ```
 systemctl enable rabbitmq-server
 ```
@@ -84,7 +84,7 @@ rabbitmqctl delete_user guest
 ```
 rabbitmqctl add_user Username Password
 ```
-15. Run the following command to set the new account to admin account.
+15. Run the following command to set the new account as the admin account.
 ```
 rabbitmqctl set_user_tags Username administrator
 ```
@@ -106,5 +106,5 @@ http://Instance public IP:15672
 For more information about how to obtain the public IP address of the instance, see [Getting Public IP Addresses](https://intl.cloud.tencent.com/document/product/213/17940).
 If you see the following page, it indicates that RabbitMQ has been successfully installed.
 ![](https://main.qcloudimg.com/raw/aacb15db11b5cf80dd6b7ba1dc80d331.png)
-3. Log in to RabbitMQ with the Admin account created in [Step 6](#Step6) and enter the RabbitMQ management page, as shown below.
+3. Log in to RabbitMQ with the admin account created in [Step 6](#Step6) and access the RabbitMQ management page, as shown below:
 ![](https://main.qcloudimg.com/raw/7f8d24062541be6ba8b271483343b20a.png)

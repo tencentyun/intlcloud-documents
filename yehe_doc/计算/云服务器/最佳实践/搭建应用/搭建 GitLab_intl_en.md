@@ -7,7 +7,7 @@ GitLab is a Ruby-based open-source version management system. It provides the co
 The CVM instance needs to be configured with:
 - vCPU: 2 cores
 - Memory: 4 GB
-- Linux operating system: this document uses CentOS 7.7 as an example.
+- Linux operating system: this document uses CentOS 7.7 as an example
 
 ## Prerequisites
 - A Linux CVM is required to install GitLab. If you have not purchased a Linux CVM yet, see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
@@ -15,14 +15,14 @@ The CVM instance needs to be configured with:
 
 ## Directions
 ### Installing GitLab
-1. See [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
+1. See [Log in to Linux Instances Using the Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
  - [Log in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
- - [Log in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+ - [Log in to Linux Instances via a SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 2. Run the following command to install dependencies.
 ```
 yum install -y curl policycoreutils-python openssh-server
 ```
-3. Run the following commands in sequence to enable SSH service autostart and start it.
+3. Run the following commands in sequence to enable SSH service autostart and start the SSH service.
 ```
 systemctl enable sshd
 ```
@@ -41,7 +41,7 @@ systemctl enable postfix
 ```
 vim /etc/postfix/main.cf
 ```
-7. Press  **i** to enter edit mode. Delete `#` before `inet_interfaces = all`, and add `#` before `inet_interfaces = localhost`, as shown below: 
+7. Press  **i** to enter the editing mode. Delete `#` before `inet_interfaces = all`, and add `#` before `inet_interfaces = localhost`, as shown below: 
 ![](https://main.qcloudimg.com/raw/57fa73bdcd05343b5dcee24e47b5f09a.png)
 8. Press **Esc** and enter **:wq** to save and close the file.
 9. Run the following command to start Postfix.
@@ -64,17 +64,17 @@ For more information about how to obtain the public IP of the instance, see [Get
 
 
 ### Creating projects
-1. In a local browser, visit the public IP address of your CVM to enter the GitLab login page. Enter your `root` account and the password configured, as shown below.
+1. In a local browser, visit the public IP address of your CVM to access the GitLab login page. Enter your `root` account and the configured password, as shown below:
 ![](https://main.qcloudimg.com/raw/c0639741b40c1fa33d41434c0222c13b.png)
-2. Create a private project as instructed. This document uses `test` as an example in the following figure.
+2. Create a private project as instructed. This document uses `test` as an example in the following figure:
 ![](https://main.qcloudimg.com/raw/912805dfffcba06558d3adbe8b33b4bc.png)
 3. After the project is created, click **Add SSH Key** at the top of the page.
-4. On the **SSH Keys** page, add a SSH key by performing the following:
+4. On the **SSH Keys** page, add a SSH key by performing the following steps:
  1. [Get the key](#getKey) for the PC to be managed by the project and paste it in the `Key` field.
  2. Enter the key name in the `Title` field.
- 3. Click **Add key**, as shown below.
+ 3. Click **Add key** as shown below:
 ![](https://main.qcloudimg.com/raw/c8d21821f0d6919a650cf36d43666f06.png)
-If the result is similar to the following figure, the key has been added successfully.
+If the result is similar to the following figure, the key has been added successfully:
 ![](https://main.qcloudimg.com/raw/6908a9710bd01d57c01892b31247bc02.png)
 5. <span id="Step5"></span>On the project homepage, click **clone** to record the project address, as shown below:
 ![](https://main.qcloudimg.com/raw/972726ec33e5a92c0a778a700ae9b4b0.png)
@@ -96,11 +96,11 @@ git clone “Project address”
 After the project is successfully cloned, the same directory and all project files will be generated on your local computer.
 
 ### Uploading files
-1. Run the following command to enter the project directory.
+1. Run the following command to access the project directory.
 ```
 cd test/
 ```
-2. Run the following command to create the target file to upload to GitLab. This document uses the test.sh file as an example.
+2. Run the following command to create the target file to be uploaded to GitLab. This document uses the test.sh file as an example.
 ```
 echo "test" > test.sh
 ```
@@ -116,7 +116,7 @@ git commit -m "test.sh"
 ```
 git push -u origin master
 ```
-Go back to the test project page. You can see the file on the page, as shown below.
+Go back to the test project page. You can now see the file on the page, as shown below:
 ![](https://main.qcloudimg.com/raw/e208c7a0f7399e4a42a1bb3d17a89c1c.png)
 
 ## Relevant Operations
@@ -125,7 +125,7 @@ Go back to the test project page. You can see the file on the page, as shown bel
 ```
 yum install -y git
 ```
-2. Run the following command to generate the key file “.ssh/id_rsa”. In the process, press **Enter** to keep the default configurations.
+2. Run the following command to generate the key file “.ssh/id_rsa”. During the key file generation process, press **Enter** to keep the default configurations.
 ```
 ssh-keygen
 ```
