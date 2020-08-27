@@ -40,6 +40,10 @@ Currently, the feature covers the following COS events:
       <td>Creating a file with the CompleteMultipartUploadt API</td>
    </tr>
    <tr>
+      <td nowrap="nowrap">cos:ObjectCreated:Origin</td>
+      <td>Triggers the function when image origin-pull occurs</td>
+   </tr>
+   <tr>
       <td>cos: ObjectRemove:*</td>
       <td>All deletion events mentioned below can trigger the SCF function</td>
    </tr>
