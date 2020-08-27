@@ -28,7 +28,9 @@ XG register push success with token:6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 If the token cannot be found, please check the error code returned by the registration API and troubleshoot as instructed in [Error Codes](https://intl.cloud.tencent.com/document/product/1024/30722)
 
 ## Quickly Integrating with Vendor Channel
-1. On the configuration management page, enable the vendor push channel and configure application information such as `AppId` and `SecretKey`. For more information on how to apply for such information, please see the relevant documentation of the corresponding vendor.
+1. On the configuration management page, enable the vendor push channel and configure application information such as `AppId` and `SecretKey`. For more information about how to apply for such information, see the documentation of the vendor channel.
+ - Click **View Documentation** to see the vendor channel description.
+ - Configure the vendor channel at `AppId`, `AppKey`, and `AppSecret` on the right.
 2. After configuring the vendor channel information, click **Download Configuration File** at the top to download the vendor channel configuration file and use it to replace the legacy one in the project file.
 ![](https://main.qcloudimg.com/raw/4dfa37ac471c1c3b18cc559d5780a6be.png)
 

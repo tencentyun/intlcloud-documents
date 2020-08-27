@@ -1,7 +1,7 @@
 ## Introduction
 You can delete a single object or multiple objects in the COS Console.
 
-
+>!Please note that an object cannot be recovered once deleted.
 
 
 ## Deleting a Single Object

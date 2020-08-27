@@ -1,5 +1,5 @@
 
->!This document applies to TRTC SDK for Desktop Browser v4.x.x.
+>This document applies to TRTC SDK for Desktop Browser v4.x.x.
 
 ## Error Code Definitions
 
@@ -48,7 +48,7 @@
 | 70106  | Account system | Invalid account format type                                             |
 | 70107  | Account system | `userId` was not registered                                             |
 | 70113  | Account system | Invalid quantity for batch operation                                               |
-| 70114  | Account system | Restricted for security reasons                                               |
+| 70114  | Account system | Restricted due to security reasons                                               |
 | 70115  | Account system | The `uin` is not the one of the developer of the corresponding `sdkAppId`                           |
 | 70140  | Account system | `sdkAppId` does not match `acctype`                                   |
 | 70145  | Account system | Incorrect account type                                                 |
