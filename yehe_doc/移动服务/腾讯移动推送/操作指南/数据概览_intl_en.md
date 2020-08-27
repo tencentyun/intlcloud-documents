@@ -23,7 +23,7 @@ The metrics on this page are described as follows:
 **3. App usage trend: trend in app push usage is displayed to help you analyze the push effect.**
 Android:
 ![](https://main.qcloudimg.com/raw/804ffa41de4d4ea18ffb35309e8af34b.png)
-- Attempted: available devices in the push target devices
+- Attempted: number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.
 - Messages Sent (PV): the total number of messages pushed everyday
 - Reached (PV): unique devices that received push messages
 - Clicked: the number of times the notification was clicked
