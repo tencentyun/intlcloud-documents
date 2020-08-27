@@ -13,12 +13,12 @@ The callback feature is disabled by default for LVB push. This document describe
 2. Select **Template Configuration** and click **Edit** in the **Callback Configuration** tab.
 ![](https://main.qcloudimg.com/raw/d3e31f428ab1463335e234007c663311.png)
 3. Select a callback template and click **Save**.
-![](https://main.qcloudimg.com/raw/07e03b807866a54f212b268e16fbf425.png)
+![](https://main.qcloudimg.com/raw/27f9da682e20283e25cc2478e1a53a0b.png)
 
 ## Unassociating a Callback Template
 
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to unassociate or click **Manage** to enter the domain details page.
 2. Select **Template Configuration** and click **Edit** in the **Callback Configuration** tab.
 3. Deselect the template and click **Save**.
-![](https://main.qcloudimg.com/raw/8b55740b1d953df0c1353435aa13412f.png)
+![](https://main.qcloudimg.com/raw/0f8ec4ae49d2f1c5329bdb509f056366.png)
 
