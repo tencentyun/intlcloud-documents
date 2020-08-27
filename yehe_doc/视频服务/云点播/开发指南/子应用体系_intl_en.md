@@ -17,7 +17,7 @@ Roles in the VOD subapplication system include **admin**, **primary application*
 1. After you activate the VOD service, you are in the default role of **primary application**, to which all VOD resources belong. The primary application ID is your Tencent Cloud `APPID`, which can be viewed in [**Account Info**](https://console.cloud.tencent.com/developer) in the console.
 2. After you enable the VOD subapplication feature, an **admin** role will be generated, which does not own any VOD resources, and all resources still belong to the primary application.
 3. If you create a **subapplication** in the "admin" role, the new subapplication will have separate VOD resources. It is equivalent to and isolated from the primary application (which can be viewed as a special subapplication). When you create a subapplication, VOD will assign a globally unique ID to it, which is called subapplication ID. For more information on how to view the ID, please see [Console Use Instructions - Application Management](#p1).
-4. If you create another **subapplication** in the "admin" role, the new subapplication will have separate VOD resources too; the new subapplication, the primary application, and all other subapplications will be equal to and isolated from one another, and so on.
+4. If you create another **subapplication** in the "admin" role, the new subapplication will also have separate VOD resources; the new subapplication, the primary application, and all other subapplications will be equal to and isolated from one another, and so on.
 
 >?Unless otherwise specified, the primary application and subapplications will not be distinguished in the following sections and will be collectively referred to as **subapplication**.
 
