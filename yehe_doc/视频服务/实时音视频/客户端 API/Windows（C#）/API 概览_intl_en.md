@@ -20,7 +20,7 @@
 
 | API | Description |
 |-----|-----|
-| [enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b) | Enters room. If the room does not exist, the system will automatically create a new room. |
+| [enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b) | Enters room. If the room does not exist, the system will automatically create a room. |
 | [exitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a715f5b669ad1d7587ae19733d66954f3) | Exits room. |
 | [switchRole](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a94ab2e8a7df0c120def9d4b0c7658d84) | Switches role. This API applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
 | [connectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa29407e4c40f2bf61777bbe054f6bf0f) | Requests cross-room call (anchor competition). |

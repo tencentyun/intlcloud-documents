@@ -103,7 +103,7 @@ You can use the callback functions `TRTCCloudDelegate.onStartPublishing()` and `
 
 ### Error codes for cross-room co-anchoring
 
-The `TRTCCloud.ConnectOtherRoom()` will trigger this type of error codes if cross-room co-anchoring fails. You can use the `TRTCCloudDelegate.onConnectOtherRoom()` callback function to capture related notifications.
+`TRTCCloud.ConnectOtherRoom()` will trigger this type of error codes if cross-room co-anchoring fails. You can use the callback function `TRTCCloudDelegate.onConnectOtherRoom()` to capture related notifications.
 
 | Code | Value | Description |
 |---|---|---|
