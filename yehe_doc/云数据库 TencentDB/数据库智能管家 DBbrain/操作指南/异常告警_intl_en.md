@@ -6,11 +6,12 @@ The exception alarms page displays the information overview of exception alarms 
 ## Exception Alarm List
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/monitor) and select **Exception Alarm** on the left sidebar.
 The exception alarm list displays the basic information of the database instance (instance name/ID, private IP, AZ), risk level, diagnosis items, duration, and operations. In the search bar, you can search by instance ID, instance name, private IP, diagnosis item, etc. You can also filter instances by region and time.
-![](https://main.qcloudimg.com/raw/8becacbcbf6f6878fe62ef83dd3dee82.png)
+![](https://main.qcloudimg.com/raw/843d97fc1bcbcef5fe7cb4b879f49f64.png)
+
 - "Risk levels" include warning, alarm, severe, and critical. You can filter, aggregate, and search for alarms by field. You can also click **Details** to view specific information about the exception and the optimization advice for the exception.
-  ![](https://main.qcloudimg.com/raw/d5818e2dd30309c734761a33c2d35ce0.png)
+  ![](https://main.qcloudimg.com/raw/3198fb174423d3873bf0db1eeaa1e7b6.png)
 - There are over 30 "diagnosis items" for exception diagnosis, such as slow SQL, master-slave switch, deadlock, uncommitted transaction, and OOM. You can filter, aggregate, and search for items by field. You can also sort them by duration.
-  ![](https://main.qcloudimg.com/raw/ba870dd3874d004cb0af8b6e3df3fe21.png)
+  ![](https://main.qcloudimg.com/raw/1a6dbd21f676836b40bd9b59d67744a8.png)
 
 
 ## Detailed Description of Diagnosis Items
