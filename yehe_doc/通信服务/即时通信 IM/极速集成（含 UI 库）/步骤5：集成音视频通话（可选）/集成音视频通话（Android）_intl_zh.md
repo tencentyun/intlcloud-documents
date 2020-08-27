@@ -1,14 +1,4 @@
 TUIKit 组件在 4.8.50 版本之后基于 [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 实现了单聊和群组的视频通话和语音通话功能， 并且实现了 iOS 和 Android 平台的互通，参考本文您只需要简单几步就可以快速集成。
-<table style="text-align:center;vertical-align:middle;width: 400px">
-  <tr>
-    <th style="text-align:center;" width="180px"><b>视频通话<br></b></th>
-    <th style="text-align:center;" width="180px"><b>语音通话</b><br></th>
-  </tr>
-  <tr>
-    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/59713f77fc8e0dbe4787288aba0898f7.jpeg"  />    </td>
-<td><img style="width:180px" src="https://main.qcloudimg.com/raw/9c20238b4af83283fb677059b8693380.jpeg" />     </td
-	 </tr>
-</table>
 
 >!
 >- TUIKit 4.8.50 之后的版本音视频通话直接集成在 TUIKit 组件中，并且基于新的信令方案设计。
@@ -56,28 +46,16 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
 ```
 
 <span id="Step5"></span>
-## 步骤5：发起视频或语音通话
-<img style="width:180px" src="https://main.qcloudimg.com/raw/17698afaedf9ba86045c03ef85159bec.png"  /> 
-
+## 步骤5：发起视频或语音通话 
 当用户点击聊天界面的视频通话或则语音通话时，TUIKit 会自动展示通话邀请 UI，并给对方发起通话邀请请求。
 
 ## 步骤6：接受视频或语音通话
 
-<table style="text-align:center;vertical-align:middle;width: 400px">
-  <tr>
-    <th style="text-align:center;" width="180px"><b>接受视频通话<br></b></th>
-    <th style="text-align:center;" width="180px"><b>接受语音通话</b><br></th>
-  </tr>
-  <tr>
-    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/d4f0d5c7f208932055588c1ac59b9a91.jpg"  />    </td>
-    <td><img style="width:180px" src="https://main.qcloudimg.com/raw/a621580a0553271c70a9fec0738400c5.jpg" />     </td>
-	 </tr>
-</table>
 
 - 当用户**在线**收到通话邀请时，TUIKit 会自动展示通话接收 UI，用户可以选择同意或则拒绝通话。
 - 当用户**离线**收到通话邀请时，如需唤起 APP 通话，就要使用到离线推送能力，离线推送的实现请参考 [步骤7](#Step7)。
-
-## 步骤7：离线推送<span id="Step7"></span>
+<span id="Step7"></span>
+## 步骤7：离线推送
 实现音视频通话的离线推送能力，请参考以下几个步骤：
 1. 配置 APP 的 [离线推送](https://intl.cloud.tencent.com/document/product/1047/34336)。
 2. 升级 TUIKit  到4.9.1以上版本。

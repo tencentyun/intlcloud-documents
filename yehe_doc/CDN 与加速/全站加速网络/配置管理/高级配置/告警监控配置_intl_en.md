@@ -93,7 +93,7 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 
 ## Monitoring Configuration Entry
 Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/policylist) and click **Alarm Policy** on the left sidebar to enter the management page.
-![](https://main.qcloudimg.com/raw/fb17ec3c2e9f696eb5766e2ba2405173.png)
+![](https://main.qcloudimg.com/raw/02656ec03060812cd5f6267856ff779f.png)
 
 ## Adding Alarm
 The steps for adding an alarm policy are as follows:
