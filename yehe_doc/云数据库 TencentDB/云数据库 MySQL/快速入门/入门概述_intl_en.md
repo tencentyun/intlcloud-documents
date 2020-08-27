@@ -1,5 +1,5 @@
 This document describes how to get started with TencentDB for MySQL from instance creation to basic use. To use an instance, you need to complete the following operations.
-![](https://main.qcloudimg.com/raw/919cc549d441fc36026e4c58aaf968fa.png)
+![](https://main.qcloudimg.com/raw/397dbb3f8755e4a280aa9ede45ba2725.png)
 
 ### 1. Create a TencentDB for MySQL instance
 You can create TencentDB for MySQL instances with different billing modes and specifications in the TencentDB for MySQL Console.
