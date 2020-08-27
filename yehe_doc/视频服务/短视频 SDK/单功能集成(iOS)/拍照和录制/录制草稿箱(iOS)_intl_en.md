@@ -3,10 +3,12 @@ You can implement the drafts logic as follows:
 1. Start shooting.
 2. Pause/End the first shooting. 
 3. Cache the video segment locally (in drafts).
+
 #### Second Shooting
 1. Preload the locally cached video segment.
 2. Resume shooting.
 3. End shooting.
+
 ```objc
 // Get the first video shooting object
 record = [TXUGCRecord shareInstance];
