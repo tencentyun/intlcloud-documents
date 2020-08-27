@@ -1,4 +1,4 @@
-### Why does the following exception occur when I use APIs with JNI?
+### What should I do if the following exception occurs when I use APls with JNI?
 
 ```
 Exception in thread "main" java.lang.UnsatisfiedLinkError:
