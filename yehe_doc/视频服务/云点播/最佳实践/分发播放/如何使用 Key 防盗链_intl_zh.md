@@ -10,7 +10,7 @@
 Demo 基于云函数（SCF）搭建了一个 HTTP 服务，用于接收来自客户端的获取防盗链签名请求。服务从请求 Body 中获取 VOD 的视频原始 URL，计算防盗链签名，并返回带防盗链签名的 URL 给客户端。
 
 系统主要涉及四个组成部分：开发者、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="C:\Users\v_vxllin\Desktop\1\如何使用 Key 防盗链（翻译）_intl_zh\翻译1.png" width="600">
+<img src="https://main.qcloudimg.com/raw/e2397093b8cd9d0aabf228ef41ecac45.png" width="600">
 
 具体业务流程为：
 
@@ -26,7 +26,7 @@ Demo 基于云函数（SCF）搭建了一个 HTTP 服务，用于接收来自客
 - 购买腾讯云云服务器（CVM）用于执行服务部署脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
 - 使用腾讯云云函数（SCF）提供签名派发服务，详见 [SCF 计费](https://intl.cloud.tencent.com/document/product/583/12284) 和 [SCF 免费额度](https://intl.cloud.tencent.com/document/product/583/12282)。
 - 使用腾讯云 API 网关为 SCF 提供外网接口，详见 [API 网关计费](https://intl.cloud.tencent.com/document/product/628/11771)。
-- 消耗云点播（VOD）存储用于存储上传的视频，详见 [存储计费](https://cloud.tencent.com/document/product/266/14666#.E8.A7.86.E9.A2.91.E5.AD.98.E5.82.A8) 和 [存储资源包]
+- 消耗云点播（VOD）存储用于存储上传的视频。
 
 ## 快速部署 Key 防盗链签名派发服务
 
