@@ -6,7 +6,7 @@ You have created a cluster and a table group. For more information, please see [
 
 ## Directions
 1. Enter the [Table Group List](https://console.cloud.tencent.com/tcaplusdb/app) page and click **Modify** in the "Operation" column.
-![](https://main.qcloudimg.com/raw/86bbb375560896619cb49c681f60fc10.png)
+![](https://main.qcloudimg.com/raw/ad7da178125cbed628513b82a1726078.png)
 2. In the pop-up dialog box, click **Modify Table Group** to rename the table group. The table group name must be unique in the cluster.
 ![](https://main.qcloudimg.com/raw/6ced0ca63b18b4f569321a7d9d7627d2.png)
 
