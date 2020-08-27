@@ -45,7 +45,7 @@ Once a TRTC trial app is disabled by the TRTC administrator, you can [contact us
     The key can be used to generate UserSig. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## Configuring Account Admins
-Account admins can call RESTful APIs, disband groups, and perform operations on all members. You can use the default account admin `administrator` or manually add a new account admin. An app supports up to 10 account admins.
+Account administrators can call RESTful APIs, disband groups, and perform operations on all members. You can use the default `administrator` or manually add account administrators.  Each application can have 5 account administrators.
 ![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
 <span id="AddAdmin"></span>
 
