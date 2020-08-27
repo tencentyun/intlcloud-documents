@@ -33,6 +33,7 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
  - **Package name**: the name of the Huawei Push service app.
  - **AppID**: enter the **App ID** you got from Huawei Push.
  - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
+ - **Badge Parameter**: enter the complete class name of `Activity` for the app entry as the application badge on Huawei Desktop. For more information, see [Interface Description for Badging on Huawei Desktop](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802)
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open App**, **Open URL**, and **Open specific App interface**. For more information, refer to [Configuring the Notification Bar Message Click Event](#click).
     **Open App** or **Open specific App interface** allows [custom content pass through](#section4).
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.

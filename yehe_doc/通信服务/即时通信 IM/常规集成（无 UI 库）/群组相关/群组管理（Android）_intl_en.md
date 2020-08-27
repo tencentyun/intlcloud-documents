@@ -333,7 +333,7 @@ public void getGroupMemberList(long nextSeq) {
 
 
 ### Getting the profiles of group members
-Call [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5) to get the profiles of group members in batches. You can pass in multiple `userIDs` at a time to improve network transmission efficiency.
+To obtain the profile of a group member, call the [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5) API. You can pass in multiple `userID` values at one time to obtain profiles of groups, which improves network transmission efficiency.
 
 ### Modifying group name card for members
 The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) API to modify group-related information for members, including group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).

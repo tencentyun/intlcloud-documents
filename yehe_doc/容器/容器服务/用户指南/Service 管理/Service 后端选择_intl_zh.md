@@ -2,7 +2,7 @@
 ## 默认后端选择
 
 默认情况下，Service 会配置负载均衡的后端到集群节点的 NodePort，如下图 TKE 接入层组件部分。此方案具有非常高的容错性，流量从负载均衡到任何一个 NodePort 之后，NodePort 会再一次随机选择一个 Pod 将流量转发过去。同时这也是 Kubernetes 官方提出的最基础的网络接入层方案。如下图所示：
-![A.png](https://main.qcloudimg.com/raw/958fdb435750a042ac745ad4871e0a55.png)
+![A.png](https://main.qcloudimg.com/raw/de1a453250a111505a7dccdfd3dade85.png)
 
 `TKE Service Controller` 默认不会将以下节点作为负载均衡后端：
 - Master 节点（不允许 Master 节点参与网络接入层的负载）。

@@ -51,7 +51,7 @@
 9. <b>获取密钥</b>：超级播放器携带播放器签名请求解密密钥。
 10. <b>解密播放</b>：超级播放器使用解密密钥，解密播放。
 
-<img src="C:\Users\v_vxllin\Desktop\1\需作图\视频加密综述（翻译）_intl_zh\1.png" width="700" />
+<img src="https://main.qcloudimg.com/raw/8384bbba97c518b62c1b39f7c670d240.png" width="700" />
 
 ## 接入参考
 
