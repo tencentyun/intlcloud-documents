@@ -1,6 +1,4 @@
 
->The add-on feature is currently under beta. They are slated for official release in December, 2019. Once they are released, you can view them in the [TKE Console](https://console.cloud.tencent.com/tke2). 
->
 
 ## Overview
 Add-ons are extended feature packages provided by Tencent Cloud TKE. You can deploy the add-ons according to your business requirements. Add-ons can help you manage cluster Kubernetes components, including component deployment, upgrades, and configuration updates.
