@@ -17,6 +17,7 @@ CVM 到 MongoDB 实例的平均时延为0.35ms。
 
 ### 相关命令
 1. 准备数据 （约10GB）
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb load mongodb -s -P workloads/workloada
 -p mongodb.url=mongodb://mongouser:password@10.216.0.30:27017,10.216.0.28:27017,10.216.0.5:27017/admin?w=0 -p table=test -threads 300 -p recordcount=10000000>loadlog.txt &
@@ -24,12 +25,14 @@ nohup ./ycsb-0.15.0/bin/ycsb load mongodb -s -P workloads/workloada
 
 
 2. 0.5read/0.5update
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://mongouser: password @10.216.0.30:27017,10.216.0.28:27017,10.216.0.5:27017/admin?w=0 -p table=test -p recordcount=10000000 -p readproportion=0.5 -p updateproportion=0.5 -p insertproportion=0 -p operationcount=100000 -threads 100 >runlog.txt &
 ```
 
 
 3. 0.95read/0.05update
+
 ```
 nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://mongouser: password @10.216.0.30:27017,10.216.0.28:27017,10.216.0.5:27017/admin?w=0 -p table=test -p recordcount=10000000 -p readproportion=0.5 -p updateproportion=0.5 -p insertproportion=0 -p operationcount=100000 -threads 100 >runlog.txt &
 ```
