@@ -11,7 +11,7 @@
 <br>2. List 类请求：所有地域默认1200QPS。
 <br>3. 数据取回请求：所有地域默认100QPS。
 <br>如需更高 QPS，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13653">请求速率与性能优化</a>。</td>
-    
+    </tr>
     </tr>
 		    <tr>
         <td>带宽</td>
