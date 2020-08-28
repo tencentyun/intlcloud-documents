@@ -84,7 +84,7 @@ The data of text messages comes from the TUITextMessageCellData class, through w
 
 ### Configuring the profile photo
 
-The profile photo is included in all messages and is part of the layout configuration. You can change the profile photo style for all messages by modifying TUIMessageCellLayout.
+A profile photo is a common element to every message. To set the size and position of the profile photo, you need to first obtain the `layout` instance of the message. Take a text message as an example:
 
 #### Setting the profile photo size
 

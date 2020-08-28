@@ -84,7 +84,7 @@ supportMediaClassification = [ 'video', 'audio', 'image' ]
 excludeMediaType = [  ]
 migrateDbStoragePath = ''
 migrateResultOutputPath = ''
-``` 
+```
 | Name | Description |
 | :------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 | secretId | `SecretId` of your key. Replace `SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |
@@ -113,7 +113,7 @@ If you migrate data from a local system to VOD, configure this section. The spec
 [migrateLocal]
 localPath = ''
 excludes = [ ]
-``` 
+```
 | Configuration Item | Description |
 | :-------- | :-------------------------------------------------------------------: |
 | localPath | Local path, which should be an absolute path |
@@ -122,7 +122,7 @@ excludes = [ ]
 #### 3.2. Configure a URL list data source (migrateUrl)
 If you migrate data from a specified URL list to VOD, configure this section. The specific configuration items and descriptions are as follows:
 ```
-# Configuration section for migration from a URL list to VOD
+# Configuration section for migration from a URL list download to VOD
 [migrateUrl]
 urllistPath = 'D:\folder\urllist.txt'
 ```
@@ -141,7 +141,7 @@ bucket = 'examplebucket-1250000000'
 secretId = 'COS_SECRETID'
 secretKey = 'COS_SECRETKEY'
 prefix = ''
-``` 
+```
 
 | Configuration Item | Description |
 | :-------- | :---------------------------------------------------------------------------------------------------------: |
@@ -211,7 +211,7 @@ prefix = ''
 | prefix | Prefix of the path to be migrated. If all data in the bucket needs to be migrated, leave the prefix empty |
 
 ## Use Limits
-- The tool is designed as a one-time migration tool. The migration is divided into three stages: **origin server file scanning**, **migrating**, and **migration completion**. After the file scan is completed, if the configuration needs to be changed, the `db` file must be cleared (i.e., deleting `migrate.db` or modifying the `db` storage path) to avoid errors with configuration file MD5 verification.
+- The tool is designed as a one-time migration tool. The migration is divided into three stages: **origin server file scanning**, **migrating**, and **migration completed**. After the file scan is completed, if the configuration needs to be changed, the `db` file must be cleared (i.e., deleting `migrate.db` or modifying the `db` storage path) to avoid errors with configuration file MD5 verification.
 - The migrated files must be displayed with the file extension.
 - HLS/DASH files cannot be migrated currently.
 - After the migration, the directory relationship between the original videos cannot be maintained, and each video has an independent `FileId`, all of which are not related to each other.
@@ -221,3 +221,4 @@ prefix = ''
 2. The origin server is scanned according to the migration type, and migration tasks are generated.
 3. After the scan is completed, the migration is performed, and the results of each task and the overall progress are printed.
 4. After the migration is completed, the details are output to the result file.
+![](https://main.qcloudimg.com/raw/132acd323d0aa947f319f113182b83c1.png)

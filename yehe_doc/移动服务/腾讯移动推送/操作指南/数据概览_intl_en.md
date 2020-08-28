@@ -6,6 +6,7 @@ The metrics on this page are described as follows:
 ![](https://main.qcloudimg.com/raw/dd17dad647411bcbcacce185a27378af.png)
 - Messages Pushed Yesterday: the total number of messages pushed by all push tasks (subject to the actual sent amount and not affected by the creation date of push tasks).
 - Push Tasks Yesterday: the total number of push tasks yesterday.
+- Number of devices reached yesterday: unique visit number of devices reached yesterday (subject to the actual sent amount, and is not affected by the creation date of push tasks).
 - Connected Devices Yesterday: the number of unique devices of which SDK connected to TPNS server yesterday (SDK will be connected to TPNS server when app frontend or backend process is online).
 
 **2. App status monitoring: you can monitor the app's effective devices, notification bar enablement information, and uninstallation information.**
@@ -22,7 +23,7 @@ The metrics on this page are described as follows:
 **3. App usage trend: trend in app push usage is displayed to help you analyze the push effect.**
 Android:
 ![](https://main.qcloudimg.com/raw/804ffa41de4d4ea18ffb35309e8af34b.png)
-- Attempted: available devices in the push target devices
+- Attempted: number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.
 - Messages Sent (PV): the total number of messages pushed everyday
 - Reached (PV): unique devices that received push messages
 - Clicked: the number of times the notification was clicked

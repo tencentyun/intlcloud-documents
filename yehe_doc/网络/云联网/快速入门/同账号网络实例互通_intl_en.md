@@ -56,7 +56,7 @@ You have created VPCs, subnets and CVMs in Shanghai and Guangzhou regions. The t
  <tr>
   <td rowspan=2>Speed Limit Mode</td>
   <td align="center" style='white-space:nowrap'>Region outbound speed limit</td>
-  <td >It’s the speed limit for incoming and outgoing bandwidth between two regions.</td>
+  <td >The overall outbound bandwidth limit from one region to another.</td>
  </tr>
  <tr>
   <td align="center" style='white-space:nowrap'>Inter-region speed limit</td>

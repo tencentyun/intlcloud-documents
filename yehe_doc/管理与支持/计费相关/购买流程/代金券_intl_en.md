@@ -8,7 +8,7 @@ A voucher is a coupon for fee deduction. You can log in to the Tencent Cloud con
 
 A voucher can be "Unused", "Used", or "Expired".
 
-- Unused: the voucher has not been used and has not expired. It can be used for fee deduction (excluding frozen fees for pay-as-you-go services). 
+- Unused: the voucher has not been used up. It can be used for fee deduction (excluding frozen fees for pay-as-you-go services). 
 
 - Used: the voucher has been used up and cannot be used. 
 
@@ -17,7 +17,6 @@ A voucher can be "Unused", "Used", or "Expired".
 2. Applicable services
 All pay-as-you-go Tencent Cloud services.
 3. Payment scenarios
-There are two types of vouchers, prepaid and postpaid, depending on the billing mode of the Tencent Cloud service.
 Postpaid: postpaid vouchers can be used for fee deduction only for pay-as-you-go services.
 4. Validity period
 A voucher can be used only within its validity period, which cannot be extended.
@@ -39,12 +38,12 @@ Validity period: the voucher is valid from August 21, 2020 00:00:00 to September
 
 ## Using Vouchers 
 
-Prepaid and postpaid vouchers are used differently. Currently, only postpaid vouchers are supported, and the instructions on how to use the vouchers are described as follows:
+Currently, only postpaid vouchers are supported, and the instructions on how to use the vouchers are described as follows:
 
 Using voucher for pay-as-you-go services
 
 The system will automatically use vouchers when billing and deducting fees for (hourly/daily/monthly) pay-as-you-go services.
-Multiple vouchers can be used in one single payment. When deducting fees, the system will automatically use applicable vouchers first before deducting from the account balance. For more information, please see **System voucher selection**.
+Multiple vouchers can be used in one single payment. When deducting fees, the system will automatically use applicable vouchers first before deducting from the account balance.
 When a pay-as-you-go service is activated, the frozen fees cannot be deducted with vouchers.
 After the system automatically selects a voucher for fee deduction, the deducted amount can be viewed in **Bill Details**.
 

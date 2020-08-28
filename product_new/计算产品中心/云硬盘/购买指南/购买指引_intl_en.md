@@ -4,7 +4,7 @@ Tencent Cloud provides two ways for you to purchase cloud disks, either through 
 
 <span id="CreateDisk"></span>
 ### Purchasing directly through the console
-1. Log in to [CBS console](https://console.cloud.tencent.com/cvm/cbs) and click **Create**.
+1. Log in to the [CBS Console](https://console.cloud.tencent.com/cvm/cbs), select a region and click **Create**.
 2. Configure the cloud disk type and capacity.
 3. Select a billing method.
 4. Confirm the order and then pay.

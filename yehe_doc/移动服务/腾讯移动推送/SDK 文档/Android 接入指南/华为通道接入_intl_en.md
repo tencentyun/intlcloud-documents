@@ -6,6 +6,7 @@ The Huawei push channel is a system-level push channel **officially provided by 
 
 
 >
+>- This document is only applicable to Huawei channel V2 integration. For the V4 integration, see [Huawei Channel V4 Integration](https://intl.cloud.tencent.com/document/product/1024/37176).
 >- Huawei Push can only receive push messages in a signed package environment.
 >- The Mobile Push Service on the Huawei phone must be upgraded to 2.5.3 or above; otherwise, the Huawei channel registration will fail and the TPNS channel will be used.
 >- The Huawei channel supports click callback (custom parameters required) and passthrough (custom parameters ignored but arrival unguaranteed) but not arrival callback.

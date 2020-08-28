@@ -1,50 +1,26 @@
-During the use of TencentDB for MySQL, you may encounter problems related to instance access, instance maintenance, database and table creation as well as data backup and rollback. This document describes common operations in TencentDB for MySQL instances and relevant products.
-## Instances
-A TencentDB for MySQL [instance](https://intl.cloud.tencent.com/document/product/236/5147) can contain multiple user-created databases and can be accessed using the same tools and applications as those for a standalone database instance. Below are common operations in TencentDB for MySQL instances, databases, and tables.
+This document describes operations on the instance list and management pages in the TencentDB for MySQL Console.
 
-### Common operations
-- [Accessing MySQL Database](https://intl.cloud.tencent.com/document/product/236/3130)
+## Instance List Page
+You can log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and enter the instance list page to view instance information and manage your instances.
+![](https://main.qcloudimg.com/raw/3de047a080388fa2f41c7910bfc8d2e8.png)
 
-- Maintaining an instance
- - [Setting Instance Maintenance Period](https://intl.cloud.tencent.com/document/product/236/10929)
- - [Specifying Project for Instance](https://intl.cloud.tencent.com/document/product/236/8460)
+| Feature | Description |
+|---------|---------|
+| Configuration adjustment | In the instance list, you can adjust the configuration (i.e., scaling) of your database instance. Both instance upgrade and downgrade are supported. For more information, please see [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707). |
+| Rollback | In the instance list, select the instance to be rolled back and select **More** > **Rollback** to roll it back to a specified time point based on cold backup and binlog. For more information, please see [Data Rollback](https://intl.cloud.tencent.com/document/product/236/7276). |
+| Restart | In the instance list, select an instance and click **Restart** to restart it. You can also select multiple instances for batch restart. <li>During the restart, the instance will be inaccessible, and existing connections to it will be closed. Please be prepared for the restart to avoid business interruption. <li>During the restart, if the number of business writes is high and there are too many dirty pages, the restart will fail. In this case, the instance will go back to the state before the restart and become accessible. <li>Please restart instances during off-peak hours to ensure the restart success rate and reduce the impact on your business. |
 
-- Modifying an instance
- - [Upgrading Database Engine](https://intl.cloud.tencent.com/document/product/236/8126)
- - [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707)
+## Instance Management Page
+Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). After an instance is initialized, click its name in the instance list or click **Manage** in the "Operation" column to enter the instance management page, where you can view its details, monitor it, and manage databases.
+![](https://main.qcloudimg.com/raw/197f2f354d5f9470a9d040237440c680.png)
 
-- Scaling an instance
- - [Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/7270)
- - [RO Group of Read-only Instance](https://intl.cloud.tencent.com/document/product/236/11361)
- - [Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272)
-
-- [Terminating Instance](https://intl.cloud.tencent.com/document/product/236/31895)
-
-### Database management
-- [Creating Database and Table](http://intl.cloud.tencent.com/document/product/236/8465)
-- [Batch Operating Instance](https://intl.cloud.tencent.com/document/product/236/8466)
-- [Dropping Database/Table](https://intl.cloud.tencent.com/document/product/236/31905)
-
-## Parameter Template
-A [parameter template](https://intl.cloud.tencent.com/zh/document/product/236) is used to manage how the parameters of a database engine are configured. A database parameter set is just like a container of engine configuration values which can be applied to one or more database instances. Below are common operations currently supported by a TencentDB instance parameter template.
-
-## Data
-Common data operations in TencentDB for MySQL are as follows:
-
-### Backup and rollback
-- [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910)
-- [Restoring Database from Logical Backup](https://intl.cloud.tencent.com/document/product/236/31909)
-- [Database Rollback](https://intl.cloud.tencent.com/document/product/236/7276)
-
-### Data import and export
-- [Data Import](https://intl.cloud.tencent.com/document/product/236/8463)
-- [Offline Migration of Data](https://intl.cloud.tencent.com/document/product/236/8464)
-
-## Security Groups
-A [TencentDB security group](https://intl.cloud.tencent.com/document/product/236/14470) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB databases.
-#### Common operations
-- [Security Group Configuration for TencentDB](https://intl.cloud.tencent.com/document/product/236/14470#.E4.B8.BA.E4.BA.91.E6.95.B0.E6.8D.AE.E5.BA.93.E9.85.8D.E7.BD.AE.E5.AE.89.E5.85.A8.E7.BB.84)
-- [Security Group Rule Import](https://intl.cloud.tencent.com/document/product/236/14470#.E5.AF.BC.E5.85.A5.E5.AE.89.E5.85.A8.E7.BB.84.E8.A7.84.E5.88.99)
-- [Security Group Clone](https://intl.cloud.tencent.com/document/product/236/14470#.E5.85.8B.E9.9A.86.E5.AE.89.E5.85.A8.E7.BB.84)
-- [Security Group Deletion](https://intl.cloud.tencent.com/document/product/236/14470#.E5.88.A0.E9.99.A4.E5.AE.89.E5.85.A8.E7.BB.84)
-
+| Feature | Description |
+|---------|---------|
+| Instance details | On the [Instance Details](https://console.cloud.tencent.com/cdb) tab, you can view and manipulate various information of the database. Click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> to modify the basic information of the instance, where the public network address is disabled by default. If needed, click **Enable** after "Public Network Address" to enable it. |
+| Instance monitoring | On the "Instance Monitoring" tab, you can view the monitoring data of various core metrics of the current database in various dimensions such as access, load, query cache, table, InnoDB, and MyISAM. For more information, please see [Monitoring Feature](https://intl.cloud.tencent.com/document/product/236/8455) and [Alarming Feature](https://intl.cloud.tencent.com/document/product/236/8457). |
+| Database management | <li> **Database List** <br>On the "Database List" tab, you can import SQL files into a specified database. For more information, please see [Importing SQL File](https://intl.cloud.tencent.com/document/product/236/8466). <li>**Parameter Settings**<br>On the "Parameter Settings" tab, you can set and view the history of various customizable database parameters. Click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> next to **Current Value** to modify the parameter value. <li>**Manage Account**<br>On the "Manage Account" tab, you can manage the system's default root account, such as modifying permissions and resetting password. You can also create and delete account. For more information, please see [Account Management](https://intl.cloud.tencent.com/document/product/236/31900). |
+| Security group | On the "Security Group" tab, you can configure security groups for your databases. For more information, please see [Security Group](https://intl.cloud.tencent.com/document/product/236/14470). |
+| Backup and restoration | On the "Backup and Restore" tab, you can download binlogs and perform cold backup. For more information, please see [Backing up Database](https://intl.cloud.tencent.com/document/product/236/32340). |
+| Operation log | On the "Operation Log" tab, you can view and download slow query logs, error log, and rollback logs. For more information, please see [Operation Log](https://intl.cloud.tencent.com/document/product/236/34588). |
+| Read-only instance | On the "Read-only Instance" tab, you can create one or more read-only (RO) instances, which can be applied to read/write separation and one-source-multiple-replica application scenarios to boost the read load capacity of your databases. For more information, please see [Read-only Instance](https://intl.cloud.tencent.com/document/product/236/7270). |
+| Connection check | On the "Connection Check" tab, you can check for potential connectivity and access problems and address them by using the solutions provided so as to ensure that your databases can be accessed normally. For more information, please see [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927). |

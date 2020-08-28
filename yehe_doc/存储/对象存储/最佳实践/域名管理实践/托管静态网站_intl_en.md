@@ -3,7 +3,8 @@
 This document describes how to host an existing or new static website on COS and make it accessible to visitors through a custom domain name such as `www.example.com`. The specific steps are outlined below:
 ![](https://main.qcloudimg.com/raw/2f3fbbcc08b15f6037efc40e625037a3.png)
 
->For the static website configuration to take effect, you need to use the domain name of the static website instead of the COS default domain name to access the COS origin server.
+>- For the static website configuration to take effect, you need to use the domain name of the static website instead of the COS default domain name to access the COS origin server.
+>- This practice only applies to scenarios where you need a domain name in Mainland China for your business.
 
 ## Preparations
 

@@ -30,6 +30,7 @@ The cloud disk encryption feature is subject to the following limitations:
 	<li>Only data disks can be encrypted, not system disks .</li>
 	<li>An existing non-encrypted disk cannot be directly converted to an encrypted disk.</li>
 	<li>An encrypted cloud disk cannot be converted to a non-encrypted cloud disk.</li>
+	<li>If an encrypted cloud disk is expanded, you need to unmount and remount it on your CVM instance for its new capacity to be recognized.	
 	</ul></td>
 	</tr>
 	<tr>
