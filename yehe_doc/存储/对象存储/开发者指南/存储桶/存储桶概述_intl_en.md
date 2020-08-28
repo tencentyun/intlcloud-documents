@@ -50,9 +50,6 @@ Public permissions include "Private Read/Write", "Public Read/Private Write", an
 
 A root account has all the permissions (full control) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and Read/Write permissions, and even **full access** to buckets.
 
-This video illustrates bucket permissions in detail:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1823-20776?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 
 ## Notes
 
