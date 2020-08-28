@@ -2,9 +2,9 @@
 This document describes how to upload videos through the VOD Console, including local upload and video pull.
 
 >! 
-- Formats such as WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, and RMVB are supported.
-- During upload, you can switch to another page of the VOD Console, but do not close the browser to access the console of another product; otherwise, the upload will be interrupted.
-- Web upload supports checkpoint restart and queuing upload in Chrome. Web upload is supported in Chrome and Internet Explorer 10 or higher.
+>- Formats such as WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, and RMVB are supported.
+>- During upload, you can switch to another page of the VOD Console, but do not close the browser to access the console of another product; otherwise, the upload will be interrupted.
+>- Web upload supports checkpoint restart and queuing upload in Chrome. Web upload is supported in Chrome and Internet Explorer 10 or higher.
 
 
 ## Local Upload
