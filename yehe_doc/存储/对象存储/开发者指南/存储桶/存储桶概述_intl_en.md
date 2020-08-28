@@ -57,7 +57,7 @@ This video illustrates bucket permissions in detail:
 ## Notes
 
 - COS stores objects using a flat structure instead of folders. For more information, see “Folders and Directories” in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
-- You can create up to 200 buckets in total in all regions with one account. There is no limit on the number of objects in a bucket.
+- Each root account (APPID) can create up to 200 buckets (not region-specific), and an unlimited number of objects. 
 - In Tencent Cloud COS, the bucket name under one APPID must be unique.
 - Once a bucket is created, it cannot be renamed. To rename a bucket, you need to delete it and create another one with the desired name.
 - When creating a bucket, make sure to select the desired region, as the region cannot be changed once specified.
