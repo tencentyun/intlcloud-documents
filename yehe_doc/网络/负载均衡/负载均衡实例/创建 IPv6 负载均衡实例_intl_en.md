@@ -1,10 +1,10 @@
 >?
 >- IPv6 CLB is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application.
-- Currently, IPv6 CLB instances can be created in Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, and Singapore regions.
-- IPv6 CLB does not support classic CLB.
-- IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
-- Currently, IPv6 CLB is completely implemented on the public network, so clients in the same VPC cannot access IPv6 CLB over the private network.
-- IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1). SLA is not guaranteed during the beta test period.
+>- Currently, IPv6 CLB instances can be created in Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, and Singapore regions.
+>- IPv6 CLB does not support classic CLB.
+>- IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
+>- Currently, IPv6 CLB is completely implemented on the public network, so clients in the same VPC cannot access IPv6 CLB over the private network.
+>- IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1). SLA is not guaranteed during the beta test period.
 
 ## Overview
 IPv6 CLB is load balancing implemented based on the IPv6 single stack technology. It can collaborate with IPv4 CLB to implement IPv6/IPv4 dual-stack communication. An IPv6 CLB instance is bound to an IPv6 address of a CVM instance and provides an IPv6 VIP address.
