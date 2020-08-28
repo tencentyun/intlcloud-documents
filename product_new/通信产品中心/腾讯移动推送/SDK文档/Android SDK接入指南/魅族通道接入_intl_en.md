@@ -66,6 +66,8 @@ implementation 'com.tencent.tpns:meizu:[VERSION]-release'// Meizu Push [VERSION]
 </receiver>
 ```
 
+5. To manually integrate Meizu mobiles of version Flyme 6.0 or earlier, you need to place a picture named " stat_sys_third_app_notify" under `drawable` folder with different resolutions. For details, see the ` flyme-notification-res` folder in [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload).
+
 ### Enabling Meizu push
 Configure the following code before starting TPNS and calling `XGPushManager.registerPush`:
 
