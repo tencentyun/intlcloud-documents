@@ -1,6 +1,6 @@
 >?
 >- IPv6 负载均衡内测中，如需使用，请提 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。
->- 支持创建 IPv6 负载均衡的地域包括：北京、上海、广州、南京、成都、新加坡。
+>- 支持创建 IPv6 负载均衡的地域包括：北京、上海、广州、南京、上海金融云、深圳金融云、新加坡。
 - IPv6 负载均衡不支持传统型负载均衡。
 - IPv6 负载均衡支持获取客户端 IPv6 源地址。四层 IPv6 负载均衡支持直接获取客户端 IPv6 源地址，七层 IPv6 负载均衡支持通过 HTTP 的 X-Forwarded-For 头域获取客户端 IPv6 源地址。
 - 当前 IPv6 负载均衡是纯公网负载均衡，相同 VPC 的客户端无法通过内网访问该 IPv6 负载均衡。
@@ -28,12 +28,12 @@ IPv6 负载均衡的架构如下图所示：
 1. 登录腾讯云官网，进入 [负载均衡购买页](https://buy.cloud.tencent.com/lb)。
 2. 请正确选择如下参数：
  - 计费模式：仅支持按量计费。
- - 地域：北京、上海、广州、上海金融、深圳金融、新加坡。
+ - 地域：北京、上海、广州、成都、新加坡。
  - IP 版本：IPv6。
  - 运营商类型：BGP。
  - 网络：请务必选择已获取 IPv6 CIDR 的私有网络和子网。
 3. 在购买页选择各项配置后，单击【立即购买】，返回至 [负载均衡实例列表页](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1)，即可查看已购的 IPv6 负载均衡。
-
+![](https://main.qcloudimg.com/raw/fa0f2f76d7457086d2b11ce69b76b8a7.png)
 
 ### 步骤2：创建 IPv6 负载均衡监听器
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)，单击 IPv6 负载均衡实例 ID，进入详情页。
@@ -41,14 +41,14 @@ IPv6 负载均衡的架构如下图所示：
 >?支持创建四层 IPv6 负载均衡监听器（TCP/UDP/TCP SSL）和七层 IPv6 负载均衡监听器（HTTP/HTTPS），详情请参见 [负载均衡监听器概述](https://intl.cloud.tencent.com/document/product/214/6151)。
 >
 3. 在“基本配置”中配置名称、监听协议端口和均衡方式，单击【下一步】。
-
+![](https://main.qcloudimg.com/raw/dce7a8870add7556a229c10990444e78.png)
 4. 配置健康检查，单击【下一步】
-
+![](https://main.qcloudimg.com/raw/7e425de32751160382b602752c302f19.png)
 5. 配置会话保持，单击【提交】。
-
+![](https://main.qcloudimg.com/raw/e4d910a5904e1c8fb890d594bb64ba72.png)
 6. 监听器创建完成后，选中该监听器，在右侧单击【绑定】。
 >?绑定云服务器前，请确定该云服务器已获取 IPv6 地址。
 >
-
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)
 7. 在弹出框中，选择需要通信的 IPv6 云服务器，并配置服务端口和权重，单击【确定】即可。
-
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)

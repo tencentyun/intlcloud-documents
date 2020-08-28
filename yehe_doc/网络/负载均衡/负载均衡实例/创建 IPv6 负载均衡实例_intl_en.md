@@ -28,12 +28,12 @@ The IPv6 CLB architecture is as shown below.
 1. Log in to the Tencent Cloud's official website and enter the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Select options for the following parameters correctly:
  - Billing Mode: only pay-as-you-go billing is supported.
- - Region: Beijing, Shanghai, Guangzhou, Shanghai Finance, Shenzhen Finance, or Singapore.
+ - Region: Beijing, Shanghai, Guangzhou,Chengdu, or Singapore.
  - IP Version: IPv6.
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
 3. After setting the configuration items on the purchase page, click **Buy Now** to return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1), where you can view the IPv6 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/b25a3156db7a73ffa1a3b835be0069e8.png)
+![](https://main.qcloudimg.com/raw/fa0f2f76d7457086d2b11ce69b76b8a7.png)
 
 ### Step 2. Create an IPv6 CLB listener
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3) and click the IPv6 CLB instance ID to enter the details page.
@@ -41,14 +41,14 @@ The IPv6 CLB architecture is as shown below.
 >? CLB supports creating layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) IPv6 CLB listeners. For more information, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >
 3. In "Basic Configurations", configure the name, listening protocol ports, and balancing method, and click **Next**.
-![](https://main.qcloudimg.com/raw/815c00aa93b5f23408bd78791ea5b7c3.png)
+![](https://main.qcloudimg.com/raw/dce7a8870add7556a229c10990444e78.png)
 4. Configure health check and click **Next**.
-![](https://main.qcloudimg.com/raw/19fbf68edcb9d4f06102ae61c2228b67.png)
+![](https://main.qcloudimg.com/raw/7e425de32751160382b602752c302f19.png)
 5. Configure session persistence and click **Submit**.
-![](https://main.qcloudimg.com/raw/9743537a93828dc8c0c10e6c943f7673.png)
+![](https://main.qcloudimg.com/raw/e4d910a5904e1c8fb890d594bb64ba72.png)
 6. After the listener is created, select it and click **Bind** on the right.
 >?Before binding the listener to a CVM instance, please check whether the instance has obtained an IPv6 address.
 >
-![](https://main.qcloudimg.com/raw/edf72af61361da4f833f2424a548040e.png)
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)
 7. In the pop-up box, select the real IPv6 CVM instance that needs to be communicated with, configure the service port and weight, and click **OK**.
-![](https://main.qcloudimg.com/raw/7eb363ea3170bbe7a881762be7968210.png)
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)
