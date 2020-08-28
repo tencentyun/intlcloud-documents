@@ -32,8 +32,8 @@ $ mkdir tencent-express && cd tencent-express
 
 Use the following command and template link to quickly create an Express application:
 ```
-$ serverless create --template-url https://github.com/serverless-components/tencent-express/tree/master/example
-$ cd example
+$ serverless init express-demo
+$ cd express-demo
 ```
 
 Run the following command to install the corresponding dependencies of the Express application:
