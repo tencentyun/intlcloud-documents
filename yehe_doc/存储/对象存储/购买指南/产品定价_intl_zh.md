@@ -8,7 +8,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
 
 >- 关于对象存储的详细计费介绍，请参见 [计费方式](https://intl.cloud.tencent.com/document/product/436/16871#billing-modes)、[计费项](https://intl.cloud.tencent.com/document/product/436/33776) 和 [计费周期](https://intl.cloud.tencent.com/document/product/436/16871#billing-cycle)。
 >- 关于按量计费的示例说明，请参见 [按量计费（后付费）](https://intl.cloud.tencent.com/document/product/436/32534)。
->- 下文价格表中归档存储的读/写请求费用、外网下行流量费用，是需先恢复至标准存储，才产生相应的费用。关于归档存储的相关介绍，您可参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925)。
+>- 下文价格表中归档存储的请求费用、外网下行流量费用，是需先恢复至标准存储，才产生相应的费用。关于归档存储的相关介绍，您可参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925)。
 
 <table>
    <tr>
@@ -18,7 +18,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
    </tr>
    <tr>
       <th rowspan="2">存储容量费用（美元/GB/月）</th>
-      <th rowspan="2" width="150px">读/写请求费用<br>（美元/万次）</th>
+      <th rowspan="2" width="150px">请求费用<br>（美元/万次）</th>
       <th rowspan="2">数据取回费用（美元/GB）</th>
       <th colspan="3">流量费用（美元/GB）</th>
    </tr>
@@ -69,7 +69,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <td>0.002</td>
    </tr>
    <tr>
-      <td>归档存储</td>
+      <td>归档存储（暂不支持南京）</td>
       <td>0.005</td>
       <td>0.0147（需恢复才可请求）</td>
       <td width="150px">快速取回: 0.03<br>标准取回: 0.01<br>批量取回: 0.0025</td>
@@ -358,6 +358,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
 ## 管理功能定价
 
 
+>!
 >[清单功能](https://intl.cloud.tencent.com/zh/document/product/436/30622) 费用、[检索功能](https://intl.cloud.tencent.com/zh/document/product/436/32472) 费用、[批量处理](https://intl.cloud.tencent.com/zh/document/product/436/32958) 费用和 [对象标签](https://intl.cloud.tencent.com/zh/document/product/436/31509) 费用均按**日**结算。
 
 
@@ -386,8 +387,8 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <td>0.01</td>
    </tr>
    <tr>
-      <td>北京、上海、广州</td>
-      <td>0.0027</td>
+      <td>北京一、北京、南京、上海、广州</td>
+      <td>0.0027（暂不支持南京）</td>
       <td>0.0018</td>
       <td>0.2022</td>
       <td>0.0081</td>
@@ -396,89 +397,59 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
    <tr>
       <td>香港</td>
       <td>0.0028</td>
-      <td>0.0025</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
+      <td rowspan=11>暂不支持</td>
+      <td rowspan=11>暂不支持</td>
+      <td rowspan=11>暂不支持</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>新加坡</td>
       <td>0.0028</td>
-      <td>0.0025</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>孟买</td>
       <td>0.0028</td>
-      <td>0.0025</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>首尔</td>
       <td>0.0028</td>
-      <td>0.0022</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>曼谷</td>
       <td>0.0028</td>
-      <td>0.0025</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>东京</td>
       <td>0.0028</td>
-      <td>0.0022</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>硅谷</td>
       <td>0.0028</td>
-      <td>0.0022</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>弗吉尼亚</td>
       <td>0.0025</td>
-      <td>0.0019</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>多伦多</td>
       <td>0.0025</td>
-      <td>0.0022</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>法兰克福</td>
       <td>0.0027</td>
-      <td>0.0025</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
    <tr>
       <td>莫斯科</td>
       <td>0.0028</td>
-      <td>0.0022</td>
-      <td>0.2022</td>
-      <td>0.0081</td>
       <td>0.012</td>
    </tr>
 </table>
@@ -488,7 +459,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
 >- [全球加速](https://intl.cloud.tencent.com/document/product/436/33409) 功能目前已全量放开，支持境内外公有云地域。
 >- 全球加速定价按**日**结算。
 
-| 地域                                | 传输方向 | 全球加速流量费用<br>（美元/GB） |
+| 不同地域之间的传输方向              | 收发方式| 全球加速流量费用<br>（美元/GB） |
 | ----------------------------------- | -------- | ----------------------------- |
 | 中国大陆 - 中国大陆地域             | 上行     | 0.07                          |
 | 中国大陆 - 中国大陆地域             | 下行     | 0.07                           |
