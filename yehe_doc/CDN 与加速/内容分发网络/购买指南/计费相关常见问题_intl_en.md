@@ -60,3 +60,6 @@ Monthly 95th Percentile: there are 288 CDN bandwidth statistical points per day.
 ### How can I check my CDN bills?
 
 You can check your bills in the Tencent Cloud [Billing Center](https://console.cloud.tencent.com/expense/bill/overview). For more information, please see [Bill Query](https://intl.cloud.tencent.com/document/product/228/6071).
+
+### Is there a delay in using APIs to query data? How long is it?
+There is a certain delay in using APIs to query data. Queries of real-time data such as access data and billing data have a delay of around 5–10 minutes, while queries of analytical data such as rankings will have delays of approximately half an hour. The data is calibrated on the backend at around 3 am Beijing Time.

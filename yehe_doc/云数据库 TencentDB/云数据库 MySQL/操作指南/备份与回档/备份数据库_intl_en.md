@@ -32,7 +32,7 @@ This will not affect your business access, but may have impact on your auto back
 - We recommend you back up your database during off-peak hours.
 - To avoid situations where the required backup files are deleted after the retention period lapses, please download them to the local file system in a timely manner.
 - DDL operations are prohibited during the backup process so as to avoid backup failure due to table locking.
-- Backup capacity in excess of the free tier will incur fees. For more information, please see [Backup Space Billing Notes](https://intl.cloud.tencent.com/document/product/236/32344).
+- Backup capacity in excess of the free tier will incur fees. For more information, please see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 
 ## Backing up MySQL Data Automatically
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click an instance name on the instance list page to enter the management page, and select **Backup and Restore** > **Auto Backup Settings**.
