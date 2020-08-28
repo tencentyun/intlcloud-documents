@@ -20,7 +20,7 @@ You have already purchased TPNS service.
 	◦Advanced settings: TPNS also supports other advanced settings, including the following content:
 	  - Badge number: number of messages reached but not clicked.
       - GroupID:  a field for aggregated statistics of multiple push tasks.
-	  - Offline retention: Sets offline retention duration, the maximum is 72 hours by default.
+	  - Offline retention: sets the offline storage period in 0-72 hours. Up to 3 latest push messages can be saved offline.
 	  - Click open: Sets push click open actions. Actions include apps, in-app pages, URLs, and client customization.
 	  - Reminder formats: Sets reminder formats, custom ringtones, etc.
 	  - Multiple package name push: Supports push with multiple package names.
