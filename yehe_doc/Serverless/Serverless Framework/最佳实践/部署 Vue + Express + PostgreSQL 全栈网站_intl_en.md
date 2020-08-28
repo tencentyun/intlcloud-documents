@@ -45,7 +45,7 @@ Components: 2.31.6
 1. Create a local folder and run the `serverless init` command to download the relevant template.
 
 ```console
-serverless init -t fullstack
+serverless init fullstack
 ```
 
 2. Find the `.env.example` file in the project template, rename it to `.env`, and configure the corresponding Tencent Cloud `SecretId`, `SecretKey`, region, and AZ information in it.
