@@ -48,7 +48,6 @@ To avoid malicious requests or CC/DDoS attacks to your website, we strongly reco
 3. IP access limit configuration: you can defend against CC attacks by limiting the number of access requests per second to a node allowed for a client IP. After the configuration is enabled, a 514 error will be returned for requests that exceed the QPS limit. Setting a lower frequency limit may affect the usage of your business by normal high-frequency users. Therefore, please set the threshold according to your actual business conditions and usage. For more information, please see [IP Access Limit Configuration](https://intl.cloud.tencent.com/document/product/228/6420).
 4. Bandwidth cap configuration: you can configure a bandwidth cap for a domain name. When the bandwidth consumed by the domain name exceeds this cap within a statistical cycle (5 minutes), all access requests will be forwarded to the origin server or the CDN service will be disabled depending on your configuration (in both cases, a 404 error will be returned for all access requests). For more information, please see [Bandwidth Cap Configuration](https://intl.cloud.tencent.com/document/product/228/7541).
 
-
 ### Is there a delay in using APIs to query data? How long is it?
 There is a certain delay in using APIs to query data. Queries of real-time data such as access data and billing data have a delay of around 5–10 minutes, while queries of analytical data such as rankings will have delays of approximately half an hour. The data is calibrated on the backend at around 3 am Beijing Time.
 
