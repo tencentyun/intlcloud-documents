@@ -23,7 +23,7 @@ Add dependencies to `build.gradle` at the application level (usually under the a
 dependencies {
 	...
     // Add this line
-    implementation 'com.tencent.qcloud:cosxml:5.5.4'
+    implementation 'com.tencent.qcloud:cosxml:5.5.5'
 }
 ```
 
@@ -61,7 +61,7 @@ Then, add dependencies to `build.gradle` at the application level (usually under
 dependencies {
 	...
     // Add this line
-    implementation 'com.tencent.qcloud:cosxml-lite:5.5.4'
+    implementation 'com.tencent.qcloud:cosxml-lite:5.5.5'
 }
 ```
 
