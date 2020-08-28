@@ -1,10 +1,10 @@
 >?
 >- IPv6 CLB is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application.
-- Currently, IPv6 CLB instances can be created in Beijing, Shanghai, Guangzhou, Nanjing, Shanghai Finance, Shenzhen Finance, and Singapore regions.
-- IPv6 CLB does not support classic CLB.
-- IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
-- Currently, IPv6 CLB is completely implemented on the public network, so clients in the same VPC cannot access IPv6 CLB over the private network.
-- IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1). SLA is not guaranteed during the beta test period.
+>- Currently, IPv6 CLB instances can be created in Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, and Singapore regions.
+>- IPv6 CLB does not support classic CLB.
+>- IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
+>- Currently, IPv6 CLB is completely implemented on the public network, so clients in the same VPC cannot access IPv6 CLB over the private network.
+>- IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1). SLA is not guaranteed during the beta test period.
 
 ## Overview
 IPv6 CLB is load balancing implemented based on the IPv6 single stack technology. It can collaborate with IPv4 CLB to implement IPv6/IPv4 dual-stack communication. An IPv6 CLB instance is bound to an IPv6 address of a CVM instance and provides an IPv6 VIP address.
@@ -28,12 +28,12 @@ The IPv6 CLB architecture is as shown below.
 1. Log in to the Tencent Cloud's official website and enter the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Select options for the following parameters correctly:
  - Billing Mode: only pay-as-you-go billing is supported.
- - Region: Beijing, Shanghai, Guangzhou, Shanghai Finance, Shenzhen Finance, or Singapore.
+ - Region: Beijing, Shanghai, Guangzhou or Singapore.
  - IP Version: IPv6.
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
 3. After setting the configuration items on the purchase page, click **Buy Now** to return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1), where you can view the IPv6 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/b25a3156db7a73ffa1a3b835be0069e8.png)
+![](https://main.qcloudimg.com/raw/fa0f2f76d7457086d2b11ce69b76b8a7.png)
 
 ### Step 2. Create an IPv6 CLB listener
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3) and click the IPv6 CLB instance ID to enter the details page.
@@ -41,14 +41,14 @@ The IPv6 CLB architecture is as shown below.
 >? CLB supports creating layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) IPv6 CLB listeners. For more information, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >
 3. In "Basic Configurations", configure the name, listening protocol ports, and balancing method, and click **Next**.
-![](https://main.qcloudimg.com/raw/815c00aa93b5f23408bd78791ea5b7c3.png)
+![](https://main.qcloudimg.com/raw/dce7a8870add7556a229c10990444e78.png)
 4. Configure health check and click **Next**.
-![](https://main.qcloudimg.com/raw/19fbf68edcb9d4f06102ae61c2228b67.png)
+![](https://main.qcloudimg.com/raw/7e425de32751160382b602752c302f19.png)
 5. Configure session persistence and click **Submit**.
-![](https://main.qcloudimg.com/raw/9743537a93828dc8c0c10e6c943f7673.png)
+![](https://main.qcloudimg.com/raw/e4d910a5904e1c8fb890d594bb64ba72.png)
 6. After the listener is created, select it and click **Bind** on the right.
 >?Before binding the listener to a CVM instance, please check whether the instance has obtained an IPv6 address.
 >
-![](https://main.qcloudimg.com/raw/edf72af61361da4f833f2424a548040e.png)
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)
 7. In the pop-up box, select the real IPv6 CVM instance that needs to be communicated with, configure the service port and weight, and click **OK**.
-![](https://main.qcloudimg.com/raw/7eb363ea3170bbe7a881762be7968210.png)
+![](https://main.qcloudimg.com/raw/6c1a45bed978f944fcb34984849d5287.png)

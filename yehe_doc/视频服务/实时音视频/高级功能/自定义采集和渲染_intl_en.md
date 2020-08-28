@@ -9,7 +9,7 @@ The TRTC SDK uses OpenGL to render video image. If you are using it in game deve
 If you are using the TRTC SDK on a special hardware device, when you need to use an external sound capturing device to capture sound data, you can disable the TRTC SDK's default sound capturing process through the `enableCustomAudioCapture` API of `TRTCCloud`, and then use the `sendCustomAudioData` API to populate the TRTC SDK with your own audio data.
 >!After custom audio capturing is enabled, the acoustic echo cancellation (AEC) feature may fail.
 
-- **Get raw audio data**
+- **Getting raw audio data**
 The sound module is highly complex, and the SDK needs to strictly control the capturing and playback logic of the sound device. In some scenarios, when you need to get the audio data of a remote user or that captured by a local mic, you can implement it through the corresponding callback API provided by the TRTC SDK.
 
 ## Supported Platforms
@@ -82,7 +82,7 @@ The `texture` scheme needs to pass OpenGL textures to the TRTC SDK. In order to 
 |VideoFrameReader.java    |  Reads the video image frame by frame from a local video file. |
 | decoder folder | Decoder module |
 | opengl folder   |     Encapsulates the basic functions of OpenGL to make it easier to use. |
-| render folder | Encapsulates the basic functions of Egl to make it easier to use. |
+| render folder    |    Encapsulates the basic functions of Egl to make it easier to use. |
 
 >! For resolutions above 640x360, the `texture` scheme is recommended so as to avoid excessive CPU utilization.
 

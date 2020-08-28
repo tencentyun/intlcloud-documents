@@ -39,7 +39,8 @@
 <td>记录回档任务的运行状态和进展</td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/c229d0fe6a4869998d3472b0a35efa28.png"  style="margin:0;">
+<img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
+
 3. 在慢日志下载页面，单击“操作”列的【下载】下载慢日志。
 4. 在弹出的对话框，推荐您复制下载地址，并登录到云数据库所在 VPC 下的 CVM（Linux 系统） 中，运用 wget 命令进行内网高速下载，更高效。
 >?

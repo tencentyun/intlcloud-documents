@@ -3,7 +3,7 @@
 
 ### 总体介绍
 客户端上传的整体流程如下图所示：
-![图片描述](https://main.qcloudimg.com/raw/3c9b427ba32f5f23c352d339a3e45af8.jpg)
+![图片描述](https://main.qcloudimg.com/raw/dda5e1c01863e801e65d9635cedb4ca2.png)
 为了支持客户端上传，开发者需要搭建两个后台服务：签名派发服务和事件通知接收服务。
 
 * 客户端首先向签名派发服务请求上传签名。
@@ -66,7 +66,7 @@ function getUploadSignature(req, res) {
 ## 对接流程
 #### 短视频发布
 将 MP4 文件上传到腾讯视频云，并获得在线观看 URL， 腾讯视频云支持视频观看的就近调度、秒开播放、动态加速 以及海外接入等要求，从而确保优质的观看体验。
-![](https://mc.qcloudimg.com/static/img/283c8d7fe0a5a316097ae687a2bf6c5a/image.png)
+![](https://main.qcloudimg.com/raw/860e8f3b3c3e6f6910421c47b7b134b6.png)
 
 * 第一步：使用 TXUGCRecord 接口录制一段小视频，录制结束后会生成一个小视频文件（MP4）回调给客户。
 * 第二步：您的 App 向您的业务服务器申请上传签名。上传签名是 App 将 MP4 文件上传到腾讯云视频分发平台的“许可证”，为了确保安全性，这些上传签名都要求由您的业务 Server 进行签发，而不能由终端 App 生成。
@@ -107,15 +107,19 @@ _ugcPublish.delegate = self;                                 // 设置 TXVideoPu
 发布的过程和结果是通过 TXVideoPublishListener（位于 TXUGCPublishListener.h 头文件中定义）接口反馈出来的：
 
 - onPublishProgress 用于反馈文件发布的进度，参数 uploadBytes 表示已经上传的字节数，参数 totalBytes 表示需要上传的总字节数。
+
 ```ObjectiveC 
 @optional
 -(void) onPublishProgress:(NSInteger)uploadBytes totalBytes: (NSInteger)totalBytes;
 ```
+
 - onPublishComplete 用于反馈发布结果，TXPublishResult 的字段 errCode 和 descMsg 分别表示错误码和错误描述信息，videoURL 表示短视频的点播地址，coverURL 表示视频封面的云存储地址，videoId 表示视频文件云存储 Id，您可以通过这个 Id 调用点播 [服务端API接口](https://intl.cloud.tencent.com/document/product/266/7788)。
+
 ``` C 
 @optional
 -(void) onPublishComplete:(TXPublishResult*)result;
 ```
+
 - 发布结果
 通过 [错误码表](https://intl.cloud.tencent.com/document/product/1069/38042) 来确认短视频发布的结果。
 

@@ -1,4 +1,4 @@
-You can view basic information and origin server information of domain names in the ECDN Console. You can modify the **project**, **origin server type**, and **origin server address** of domain names as needed.
+You can view basic information and origin server information of a domain name in the ECDN Console. You can modify **Project**, **Origin Server Type**, and **Origin Server Address** of the domain name as needed.
 - Basic information includes the acceleration domain name, CNAME record, project, and creation time of the acceleration service.
 - Origin server information includes origin server type and origin server address.
 

@@ -50,14 +50,11 @@ Public permissions include "Private Read/Write", "Public Read/Private Write", an
 
 A root account has all the permissions (full control) for buckets by default. In addition, you can add sub-accounts that are granted permissions to read/write data and Read/Write permissions, and even **full access** to buckets.
 
-This video illustrates bucket permissions in detail:
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1823-20776?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 
 ## Notes
 
 - COS stores objects using a flat structure instead of folders. For more information, see “Folders and Directories” in [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
-- You can create up to 200 buckets in total in all regions with one account. There is no limit on the number of objects in a bucket.
+- Each root account (APPID) can create up to 200 buckets (not region-specific), and an unlimited number of objects. 
 - In Tencent Cloud COS, the bucket name under one APPID must be unique.
 - Once a bucket is created, it cannot be renamed. To rename a bucket, you need to delete it and create another one with the desired name.
 - When creating a bucket, make sure to select the desired region, as the region cannot be changed once specified.

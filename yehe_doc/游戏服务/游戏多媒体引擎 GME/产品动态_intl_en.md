@@ -12,7 +12,7 @@
 <tbody><tr>
 <td>SDK v2.6.0 beta is released</td>
 <td >
-<li>The room entry process is optimized to improve the success rate of room entry on weak networks.<li>The capture delay on Android devices is lowered.<li>The speech recognition feature is added to the speech-to-text service.<li>The SDK stability is improved.
+<li>The room entry process is optimized to improve the success rate of room entry on weak networks.<li>The capture delay on Android devices is lowered.<li>The automatic speech recognition feature is added to the speech-to-text service.<li>The SDK stability is improved.
 </td> 
 <td>July 7, 2020</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/18521">SDK Download Guide</tr>

@@ -2,7 +2,7 @@ Video upload from client refers to uploading local videos to the VOD platform by
 
 ## Overview
 The overall process for upload from client is as follows:
-![](https://main.qcloudimg.com/raw/3c9b427ba32f5f23c352d339a3e45af8.jpg)
+![](https://main.qcloudimg.com/raw/dda5e1c01863e801e65d9635cedb4ca2.png)
 To support upload from client, you need to build two backend services: signature distribution service and event notification receipt service.
 
 * The client first requests an upload signature from the signature distribution service.

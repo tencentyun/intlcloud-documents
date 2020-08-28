@@ -20,7 +20,7 @@
 3. 在【模式选择】步骤中，选中地域后，指定【导入资源】模板，勾选需要导入的资源。
 ![image-20200710154557033](https://main.qcloudimg.com/raw/ec82cc68cfb8f353d36a29f1c7e1bc9f.png)
 4. 单击【导入】，执行资源导入操作。
-5. 导入的资源个数，导入时间越长。单击【导入完成】，执行后续的参数配置操作。
+5. 导入的资源个数越多，导入时间越长。单击【导入完成】，执行后续的参数配置操作。
 ![](https://main.qcloudimg.com/raw/89cf5c05edef27aaeb93ba42ed4968e5.png)
 
 ### 资源栈配置
@@ -35,7 +35,7 @@
 3. 确认 Plan 操作的执行结果是否符合预期，重点关注是否存在资源 destory、add 的情况，确认无误后，单击【下一步】。
    ![image-20200710154824278](https://main.qcloudimg.com/raw/33533236d7d1e1d06ccf9aa447d56bfc.png)
    >?因为是导入存量资源，正常情况下不会出现资源创建、修改、删除的操作。若 Plan 结果中显示 add、change、destroy 的资源数不为0，请终止后续的操作，检查是否编辑了上一步提到的 ForceNew 参数。若您仍有疑问，请 [提交工单](https://console.cloud.tencent.com/workorder/category)，联系 TIC 团队确认后，再执行后续的操作。
-4. 设置资源名称以及资源栈描述信息，单击【确认】，完成资源栈创建操作。
+4. 设置资源栈名称以及资源栈描述信息，单击【确认】，完成资源栈创建操作。
 ![](https://main.qcloudimg.com/raw/7824466b2c40aa13d996a60d95bf6f7d.png)
 
 ### 查看资源栈状态
