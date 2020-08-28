@@ -6,7 +6,7 @@ The SDK provides powerful and cutting-edge UGSV features such as video capturing
 ### VOD Integration
 Tencent Cloud VOD provides a one-stop on-cloud integration service for UGSV covering video upload, storage, fast transcoding, porn detection, and distribution, so that end users' videos can be watched and shared most promptly.
 
-![](https://main.qcloudimg.com/raw/a40cbda6d8554885afa071cb2efbcabb.png)
+![](https://main.qcloudimg.com/raw/434ca35776504501bd19261dc5718ed7.png)
 
 ### Content Monitoring
 Based on the porn detection feature of Tencent Cloud VOD, porn detection can be automatically initiated for uploaded videos with the result returned. The porn score can be immediately calculated after a video is uploaded for the business team to process.

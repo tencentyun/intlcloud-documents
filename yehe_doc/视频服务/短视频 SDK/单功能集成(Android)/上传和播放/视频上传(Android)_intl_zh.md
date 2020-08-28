@@ -2,7 +2,7 @@
 ## 对接流程 
 
 短视频发布：将 MP4 文件上传到腾讯视频云，并获得在线观看 URL， 腾讯视频云满足视频观看的就近调度、秒开播放、动态加速以及海外接入等要求，确保了优质的观看体验。
-![](https://mc.qcloudimg.com/static/img/283c8d7fe0a5a316097ae687a2bf6c5a/image.png)
+![](https://main.qcloudimg.com/raw/860e8f3b3c3e6f6910421c47b7b134b6.png)
 
 - Step1. 使用 TXUGCRecord 接口录制一段小视频，录制结束后会生成一个小视频文件（MP4）回调给客户。
 - Step2. App 向您的业务服务器申请上传签名（App 将 MP4 文件上传到腾讯云视频分发平台的“许可证”）。为了确保安全性，上传签名由您的业务 Server 进行签发，而不能由终端 App 生成。
