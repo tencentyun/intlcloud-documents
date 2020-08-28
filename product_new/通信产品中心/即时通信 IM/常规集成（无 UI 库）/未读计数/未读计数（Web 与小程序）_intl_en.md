@@ -11,7 +11,7 @@ The unread count of all conversations is the sum of the `unreadCount` values of 
 
 When the user reads a message in a conversation, a read report is sent, and the IM SDK sets all messages before the last read message as read. We recommend that you send read reports when the user clicks to switch between conversations.
 
->Read reports change the unread count of a conversation, but do not push read receipts to the message sender.
+>? Read reports will change the unread count of a conversation. If you set `C2C` messages to read in SDK v2.7.0 or later versions, read receipts will be pushed to the message sender. For more information, see [TIM.EVENT.MESSAGE_READ_BY_PEER](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_READ_BY_PEER).
 
 **API**
 

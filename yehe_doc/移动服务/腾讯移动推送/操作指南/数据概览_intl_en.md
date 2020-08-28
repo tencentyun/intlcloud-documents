@@ -26,7 +26,7 @@ Android:
 - Attempted: number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.
 - Messages Sent (PV): the total number of messages pushed everyday
 - Reached (PV): unique devices that received push messages
-- Clicked: the number of times the notification was clicked
+- Clicked: the number of devices on which the notification bar message was clicked. This feature requires Android SDK 1.2.0.1 or later. This deduplicated number is obtained from TPNS acquisition and vendor's data receipt.
 - Cleared: the number of times the notification was dismissed
 - Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)

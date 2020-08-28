@@ -101,7 +101,31 @@ void appendAccount(Context context, final String account)
 XGPushManager.bindAccount(getApplicationContext(),"test");
 ```
 
+#### Obtaining the account binding result
 
+This API is used to obtain the result of the "XGIOperateCallback" account binding API. For more information about the account binding API, see its API description stated earlier.
+
+Sample code
+```java
+public interface XGIOperateCallback {
+
+    /**
+     * Success callback.
+     * @param data  Data of a successful operation, including token of a successful registration.
+     * @param flag Tag code
+     */
+    public void onSuccess(Object data, int flag);
+    
+    
+    /**
+     * Failure callback.
+     * @param data Data of a failed operation.
+     * @param errCode Error code.
+     * @param msg Error message.
+     */
+    public void onFail(Object data, int errCode, String msg);
+}
+```
 
 ### Unbinding account
 

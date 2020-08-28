@@ -1,6 +1,5 @@
-## Trial/Test Application Limit
-- A trial application supports up to 1,000 devices in a test. If the limit is exceeded, the trial may be terminated. Therefore, do not use it for commercial purpose to avoid potential losses.
-- A test application supports up to 1,000 devices in a test. If the limit is exceeded, the use of application may be terminated. Therefore, do not use it for commercial purpose to avoid potential losses.
+## Trial Application Limits
+- A trial application supports up to 1,000 devices in a test. It may be terminated if the testing devices are more than 1,000. Therefore, do not use it for commercial purpose to avoid potential losses.
 
 ## Android/iOS Message Content Limit
 - On Android and iOS, the size of a push message body cannot exceed 4 KB, and this limit applies to the `message` field in the Push API.
