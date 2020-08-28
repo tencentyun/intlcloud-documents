@@ -13,7 +13,7 @@
         </tr>
 				        <tr>
             <td>Sending frequency</td>
-            <td>The length of a single message cannot exceed 8,000 bytes.<br>We recommend that the frequency of sending messages to the same account not exceed 10 messages per second. When the target account is online, messages can be received normally even if the limit of 10 messages per second is exceeded. When the target account is offline, only 10 messages per second will be saved, and those beyond this limit will be discarded.</td>
+             <td>The length of a single message cannot exceed 8,000 bytes.<br>We recommend sending 10 or less messages to the same account per second. </td> 
         </tr>
         <tr>
             <td>File size</td>

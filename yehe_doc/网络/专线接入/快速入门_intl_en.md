@@ -3,11 +3,10 @@ After purchasing the Direct Connect service, use the Tencent Cloud Direct Connec
 ## Step 1: Log in to Direct Connect Console
 Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and select **Tencent Cloud Services** > **Networking** > **Direct Connect** to go to the Direct Connect Console. If you do not already have an account, refer to [Signing Up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
 
-## Step 2: (Optional) Create a Connection
-1. **Self-service**
- 1. In the left sidebar, click **Connections** to go to the management page.
- 2. Click **+Create**.
- 3. Enter the necessary information. After you submit the application, a Tencent Cloud Direct Connect representative will contact you and verify the details.
+## Step 2: create a connection.
+1. In the left sidebar on the [Direct Connect Console](https://console.cloud.tencent.com/dc/dc), click **Connections** to go to the **Connections** page.
+2. Click **+New**.
+3. Enter the necessary information. After you submit the application, a Tencent Cloud Direct Connect representative will contact you and verify the details.
 
 ## Step 3: Create a Direct Connect Gateway
 1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and choose **Tencent Cloud Services** > **Networking** > **Virtual Private Cloud** to go to the VPC Console.

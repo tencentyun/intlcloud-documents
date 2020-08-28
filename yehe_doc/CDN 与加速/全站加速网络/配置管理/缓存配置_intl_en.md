@@ -42,7 +42,7 @@ ECDN can automatically detect static/dynamic content access requests based on th
 			<td style="text-align: center">Full-path file</td>
 			<td>Sets the caching time for a specified file</td>
 			<td>/a.jpg; /b.png</td>
-			<td>1. The content is case-sensitive, and files at different paths should be separated with `;`.</br>2. `*` can be used to match a type of files by regex, such as `/test/abc/*.jpg`.</td>
+			<td>1. The content is case-sensitive, and files at different paths should be separated with `;`.</br>2. `*` can be used to match a type of files by regex, such as `/test/abc/*.jpg`.</br>3. It must be a folder starting with `/`.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Homepage</td>

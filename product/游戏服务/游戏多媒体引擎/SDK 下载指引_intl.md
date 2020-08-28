@@ -20,7 +20,7 @@ The v2.6.0 beta is updated as follows:
 </thead>
 <tbody><tr>
 <td>Speech-to-text</td>
-<td ><li>The speech recognition feature is added to the speech-to-text service.</td> 
+<td ><li>The automatic speech recognition feature is added to the speech-to-text service.</td> 
 </tbody></table>
 
 ## Downloading SDK v2.6.0 beta

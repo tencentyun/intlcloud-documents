@@ -1,9 +1,9 @@
 ## Overview
 A high-availability virtual IP (HAVIP) is a floating private IP that supports binding to a CVM using ARP announcement to update the mapping between the IP address and MAC address. In a high-availability deployment scenario (such as keepalived), this IP can be switched from the master server to the slave server for disaster recovery of the service.
 
->
->- Currently, HAVIP is in beta test, and unavailable to new users in the Shanghai region. If you are a new user outside the Shanghai region and want to try it out, please [submit a beta test application](https://intl.cloud.tencent.com/apply/p/azh0w1qoavk).
->- Changing the Shanghai region to another region may take 1-2 minutes. We recommend using Tencent Cloud [CLB](https://intl.cloud.tencent.com/document/product/214), TDaTa and other services to meet your requirements.
+>?
+>- Currently, HAVIP is in beta test, and unavailable to new users in the Shanghai or Guangzhou region. If you are a new user outside the Shanghai and Guangzhou regions and want to try it out, please submit a [beta test application](https://intl.cloud.tencent.com/apply/p/azh0w1qoavk).
+>- Changing from Shanghai or Guangzhou region to another region may take 1-2 minutes. We recommend using Tencent Cloud [CLB](https://intl.cloud.tencent.com/document/product/214), TDaTa and other services to meet your requirements. 
 
 ### Features
 1. HAVIP is a floating private IP that is not bound to a specified CVM. A backend CVM can change the HAVIP binding through ARP announcement. 

@@ -59,6 +59,9 @@ After you download the official demo for iOS, if an error similar to "ld: warnin
 ### What should I do if an error occurs when I download the demo for Unity and export an executable file for PC?
 If an error similar to "Found plugins with same names and architectures" occurs, it is because that the GME SDK is available for both the x86 and x86_64 architectures by default. Please delete either SDK in the `plugins` folder.
 
+### What should I do if dll files cannot be found when I download the demo for Unreal and export an executable file for PC?
+On a Windows x64 PC, for example, copy all dll files in the `UEDemo1\Plugins\GMESDK\Source\ThirdParty\GMESDKLibrary\x64` project directory to the directory where you saved the executable files (.exe) exported.
+
 ### What should I do if another player (such as QQ Player) is required to play back accompaniment on the Windows client?
 Please call the related API as instructed in the document of player accompaniment for Windows. As accompaniment with a third-party player uses an advanced API, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance and provide the `tmg_adv_win.h` header file.
 
