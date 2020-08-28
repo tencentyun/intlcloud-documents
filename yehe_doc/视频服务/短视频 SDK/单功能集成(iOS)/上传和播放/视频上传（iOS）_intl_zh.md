@@ -107,15 +107,19 @@ _ugcPublish.delegate = self;                                 // 设置 TXVideoPu
 发布的过程和结果是通过 TXVideoPublishListener（位于 TXUGCPublishListener.h 头文件中定义）接口反馈出来的：
 
 - onPublishProgress 用于反馈文件发布的进度，参数 uploadBytes 表示已经上传的字节数，参数 totalBytes 表示需要上传的总字节数。
+
 ```ObjectiveC 
 @optional
 -(void) onPublishProgress:(NSInteger)uploadBytes totalBytes: (NSInteger)totalBytes;
 ```
+
 - onPublishComplete 用于反馈发布结果，TXPublishResult 的字段 errCode 和 descMsg 分别表示错误码和错误描述信息，videoURL 表示短视频的点播地址，coverURL 表示视频封面的云存储地址，videoId 表示视频文件云存储 Id，您可以通过这个 Id 调用点播 [服务端API接口](https://intl.cloud.tencent.com/document/product/266/7788)。
+
 ``` C 
 @optional
 -(void) onPublishComplete:(TXPublishResult*)result;
 ```
+
 - 发布结果
 通过 [错误码表](https://intl.cloud.tencent.com/document/product/1069/38042) 来确认短视频发布的结果。
 
