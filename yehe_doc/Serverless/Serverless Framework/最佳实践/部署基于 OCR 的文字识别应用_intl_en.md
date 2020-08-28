@@ -41,7 +41,7 @@ Components: 2.31.6
 1. Create a local folder and run the `serverless init` command to download the relevant template.
 
 ```console
-$ serverless init -t ocr-app
+$ serverless init ocr-app
 ```
 
 2. Find the `.env.example` file in the template, rename it to `.env`, and enter your account, key information, and specified bucket (used to store uploaded images) in it.
