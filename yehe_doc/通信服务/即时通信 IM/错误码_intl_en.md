@@ -286,9 +286,19 @@
 | 90010 | The JSON request packet is not in the message format. For more information, see the definition in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | 90011 | The number of target UserIDs for batch message sending exceeds the limit of 500. Reduce the number of target UserIDs in To_Account. |
 | 90012 | To_Account is not registered or does not exist. Check whether To_Account has been imported into the IM console or is incorrectly spelled. |
+| 90018 | The number of requested accounts exceeded the limit. |
+| 90022 | `TagsOr` and `TagsAnd` in the push condition have duplicate tags. |
+| 90024 | Pushes are too often. The push interval must be longer than 1 second. |
 | 90026 | Incorrect offline message storage period. The value cannot exceed 7 days. |
+| 90030 | The attribute length is 0 or greater than 50. |
 | 90031 | The SyncOtherMachine field in the JSON request packet is not of the Integer type. |
+| 90032 | The number of tags is greater than 10 in the push condition or in the tag addition request.   |
+| 90033 | Invalid attributes.   |
+| 90034 | Tag length is greater than 50.  |
+| 90040 | One empty tag exist in the push conditions.         |
 | 90044 | The MsgLifeTime field in the JSON request packet is not of the Integer type. |
+| 90045 | The "all member push" feature is not enabled.        |
+| 90047 | The number of pushes exceeded the daily limit (100 by default). |
 | 90048 | The requested UserID does not exist. |
 | 90054 | Invalid MsgKey in the recall request. |
 | 90994 | Internal server error. Try again later. |
