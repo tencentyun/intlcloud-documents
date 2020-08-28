@@ -302,6 +302,8 @@ promise.then(function(imResponse) {
     case TIM.TYPES.JOIN_STATUS_SUCCESS: // Joined the group successfully.
       console.log(imResponse.data.group); // The profile of the group.
       break;
+    case TIM.TYPES.JOIN_STATUS_ALREADY_IN_GROUP: //Already in the group
+      break;
     default: break;
   }
 }).catch(function(imError){
