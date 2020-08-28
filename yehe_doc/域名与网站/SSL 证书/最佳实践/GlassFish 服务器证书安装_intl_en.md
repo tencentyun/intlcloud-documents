@@ -35,7 +35,7 @@ This document describes how to install an SSL certificate on a GlassFish server.
 - If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
  - Access the [conversion tool](https://myssl.com/cert_convert.html).
  - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
-- The GlassFish service is installed in the `/usr/share` directory.
+- The current GlassFish service is installed in the `/usr/share` directory.
 
 
 ## Directions
