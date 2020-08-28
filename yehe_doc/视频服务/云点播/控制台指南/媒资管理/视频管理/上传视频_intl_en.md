@@ -4,7 +4,7 @@ This document describes how to upload videos through the VOD Console, including 
 >! 
 - Formats such as WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, and RMVB are supported.
 - During upload, you can switch to another page of the VOD Console, but do not close the browser to access the console of another product; otherwise, the upload will be interrupted.
-- Web upload supports checkpoint restart and queuing upload in Chrome. Web upload is supported in Internet Explorer 10+ or higher and Chrome.
+- Web upload supports checkpoint restart and queuing upload in Chrome. Web upload is supported in Chrome and Internet Explorer 10 or higher.
 
 
 ## Local Upload
@@ -14,7 +14,7 @@ This document describes how to upload videos through the VOD Console, including 
 ![](https://main.qcloudimg.com/raw/098125ef7743bdb344087248eeea2f1b.png)
 3. Select **Local Upload** to upload a local file to the console. Click **Select Video** to select a local video file or drag and drop the file into the upload list zone.
  > ?Batch upload is supported. You can upload up to 5 videos at a time, and all the selected videos will be displayed in the upload list.
-4. In the upload list, you can check the filename and size of a selected video, change its name and category, or delete it.
+4. In the upload list, you can check the filename and size of a selected video, modify its name and category, or delete it.
 5. You can choose whether to process the uploaded video.
    - If no processing is needed, select **No Processing After Upload**.
    - If processing is needed, select **Automatic Processing After Upload** and configure video processing parameters according to the table below.

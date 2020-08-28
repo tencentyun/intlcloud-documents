@@ -12,7 +12,7 @@ This document describes how to upload images through the VOD Console, including 
 2. Select **Local Upload** to upload a local file to the console. Click **Select Image** to select a local image file or drag and drop the file into the upload list zone.
 >?
 >- Batch upload is supported. You can upload up to 200 images at a time, and all the selected images will be displayed in the upload list.
->- In the upload list, you can check the filename and size of a selected image, change its name and category, or delete it. Image category and video category are categories in the same directory.
+>- In the upload list, you can check the filename and size of a selected image, modify its name and category, or delete it. Images and videos use the same set of categories.
 4. Click **Upload** to start uploading the image.
 	
 ## Image Pull

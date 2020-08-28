@@ -9,4 +9,4 @@
 ![](https://main.qcloudimg.com/raw/a567309928fc4f00a1251c0f45da04cd.png)
 >?
 >- 图片分类与视频分类属于同一分类管理。
->- 关于管理分类的操作，请参见 [分类管理](https://intl.cloud.tencent.com/document/product/266/18874) 。
+>- 关于管理分类的操作，请参见 [分类管理步骤](https://intl.cloud.tencent.com/document/product/266/18874) 。
