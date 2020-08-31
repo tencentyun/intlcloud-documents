@@ -33,7 +33,7 @@ IM provides a holistic solution for profile and relationship chain management, w
 Data security is ensured with asymmetric encryption ECDSA-SHA256 and hash encryption HMAC-SHA256 (HMAC-SHA256 is recommended). Developers can directly use the app's own account to quickly integrate IM services, avoiding the tedious account mapping work. With simple SDK integration and convenient API calls, it is easy to authenticate user accounts (UserID) and passwords (UserSig). For more information, please see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 
 ## Management and Monitoring
-In addition to basic instant messaging features, IM provides a convenient and easy-to-use console, which allows you to create apps, download IM SDKs, query app configurations, perform joint app debugging, and integrate instant messaging capabilities. The IM console also provides various features such as backend message delivery, user management, group management, and data statistics. For more information, please see [Console Guide](https://intl.cloud.tencent.com/document/product/1047/34577).
+In addition to basic instant messaging features, IM provides a convenient and easy-to-use console, which allows you to create apps, download IM SDKs, query app configurations, perform joint app debugging, and integrate instant messaging capabilities. The IM console also provides various features such as backend message delivery, group management, and data statistics. For more information, please see [Console Guide](https://intl.cloud.tencent.com/document/product/1047/34577).
 
 ## Advanced Features
 ### RESTful APIs
