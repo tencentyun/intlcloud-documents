@@ -41,7 +41,7 @@ defaultConfig {
 If JCenter cannot be accessed, you can manually download the SDK and integrate it into your project:
 
 - **Step 1: download the LiteAVSDK**
-   Download the [LiveAVSDK](https://cloud.tencent.com/document/product/454/7873), and then decompress it.
+   Download the [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150), and then decompress it.
 
 - **Step 2: copy the LiteAVSDK to the project directory**  
   After decompressing the downloaded file, copy the aar file in the SDK directory to the **app/libs** directory of the project:
@@ -75,7 +75,7 @@ defaultConfig {
 If you do not want to integrate the aar library, you can choose to integrate the LiteAVSDK by importing the jar and so libraries:
 
 - **Step 1: download and decompress the LiteAVSDK**
-  Download the [LiveAVSDK](https://cloud.tencent.com/document/product/454/7873), and then decompress it. In the SDK directory, find `LiteAVSDK_Smart_xxx.zip` (in which `xxx` indicates the LiteAVSDK version number):
+  Download the [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150), and then decompress it. In the SDK directory, find `LiteAVSDK_Smart_xxx.zip` (in which `xxx` indicates the LiteAVSDK version number):
 
   ![](https://main.qcloudimg.com/raw/e17f5e1e2a712d86f541013c176d9ece.png)
 
@@ -147,7 +147,7 @@ Configure application permissions in `AndroidManifest.xml`. The LiteAVSDK requir
 
 ## Configuring License Authorization
 
-Click [License application](https://console.cloud.tencent.com/live/license) to obtain a Trial License. For more information, see [Trial License](https://cloud.tencent.com/document/product/454/34750#.E6.B5.8B.E8.AF.95.E7.89.88-license). You will get two character strings: one is licenseURL, and the other is the decryption key.
+Click [License application](https://console.cloud.tencent.com/live/license) to obtain a Trial License. You will get two character strings: one is licenseURL, and the other is the decryption key.
 
 Before your app calls relevant features of the SDK Enterprise Edition, we recommend that you configure the following settings (in the Application class):
 

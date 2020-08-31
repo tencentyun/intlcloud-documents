@@ -26,7 +26,7 @@
 
 ### 1. 下载 SDK 开发包
 /// TODO URL下载地址替换
-[下载](https://cloud.tencent.com/document/product/454/7873) SDK 开发包，并按照 [SDK 集成指引](https://cloud.tencent.com/document/product/454/7876) 将 SDK 嵌入您的 App 工程中。
+[下载](https://intl.cloud.tencent.com/document/product/1071/38150) SDK 开发包，并按照 [SDK 集成指引](https://intl.cloud.tencent.com/document/product/1071/38155) 将 SDK 嵌入您的 App 工程中。
 
 <span id="step2"></span>
 ### 2. 给 SDK 配置 License 授权
@@ -58,7 +58,7 @@
 
 ### 4. 开启摄像头预览
 /// TODO 接口文档地址替换
-调用 [TXLivePusherV2](https://cloud.tencent.com/document/product/454/34755) 中的`setRenderView`接口可以开启当前手机的摄像头预览。您需要为`setRenderView` 接口提供一个用于显示预览画面的 view 对象。
+调用 TXLivePusherV2 中的`setRenderView`接口可以开启当前手机的摄像头预览。您需要为`setRenderView` 接口提供一个用于显示预览画面的 view 对象。
 
 ```objectivec   
  //创建一个 view 对象，并将其嵌入到当前界面中
@@ -99,7 +99,7 @@ NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx"; //此处填写您的 rtmp �
 
 -  **如何获取可用的推流 URL？**
 
-开通直播服务后，可以使用【直播控制台】>【辅助工具】> [【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址，详细信息请参见 [推拉流 URL](https://cloud.tencent.com/document/product/454/7915)。
+开通直播服务后，可以使用【直播控制台】>【辅助工具】> [【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址。
 ![](https://main.qcloudimg.com/raw/0ec9d83f340454c287d96f83eec3a3e4.png)
 - **返回 -5 的原因？**
 如果 `startPush` 接口返回 -5，则代表您的 License 校验失败了，请检查 [第2步“给 SDK 配置   License 授权”](#step2) 中的工作是否有问题。
@@ -248,7 +248,7 @@ NSString* msg = @"test";
 
 // TODO 接口文档链接需要更换
 
-SDK 通过 [TXLivePusherObserver](https://cloud.tencent.com/document/product/454/34757) 代理来设置推流器回调，通过设置回调，可以监听 TXLivePusherV2 推流器的一些回调事件，包括推流器状态、音量回调、统计数据、警告和错误信息等。详细的事件表和错误码表请参见 [错误码表](https://cloud.tencent.com/document/product/454/17246) 。
+SDK 通过 TXLivePusherObserver 代理来设置推流器回调，通过设置回调，可以监听 TXLivePusherV2 推流器的一些回调事件，包括推流器状态、音量回调、统计数据、警告和错误信息等。
 
 ### 2. 常规事件 
 一次成功的推流都会通知的事件有（例如，收到0就意味着此次事件调用成功了）：

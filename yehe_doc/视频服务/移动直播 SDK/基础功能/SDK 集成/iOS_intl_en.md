@@ -62,7 +62,7 @@ After the pod command is executed, an `.xcworkspace` project file integrated wit
 
 
 ### Manual integration
-1. Download the [LiveAVSDKV2](https://cloud.tencent.com/document/product/454/7873), and then decompress it.
+1. Download the [LiveAVSDKV2](https://intl.cloud.tencent.com/document/product/1071/38150), and then decompress it.
 
 2. Open your Xcode project, select the target you want to run, and select **Build Phases**.
 ![](https://main.qcloudimg.com/raw/81404ea4ae84f577941c0ede791eb205.png)

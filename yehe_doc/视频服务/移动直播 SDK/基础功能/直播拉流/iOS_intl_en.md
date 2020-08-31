@@ -174,9 +174,6 @@ The LVB feature of the Tencent Cloud SDK, equipped with the self-developed playb
   [_player setCacheParams:CACHE_TIME_FAST maxTime:CACHE_TIME_SMOOTH];
   ```
 
-> Note:
->
-> For more technical knowledge related to lag and delay optimization, see [How to optimize video lag](https://cloud.tencent.com/document/product/454/7946).
 
 ## Listening to SDK Events
 
