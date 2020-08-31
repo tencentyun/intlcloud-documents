@@ -37,7 +37,6 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   PutBucketACLRequest request = new PutBucketACLRequest(bucket);
-  // Set the validity period of the signature
   // Set private read and write permissions
   request.SetCosACL(CosACL.PRIVATE);
   // Grant read permission for account 1131975903
@@ -77,7 +76,6 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketACLRequest request = new GetBucketACLRequest(bucket);
-  // Set the validity period of the signature
   // Execute the request
   GetBucketACLResult result = cosXml.GetBucketACL(request);
   // Bucket ACL information
@@ -116,7 +114,6 @@ try
   string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   PutObjectACLRequest request = new PutObjectACLRequest(bucket, key);
-  // Set the validity period of the signature
   // Set private read and write permissions 
   request.SetCosACL(CosACL.PRIVATE);
   // Grant read permission for account 1131975903 
@@ -157,7 +154,6 @@ try
   string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   GetObjectACLRequest request = new GetObjectACLRequest(bucket, key);
-  // Set the validity period of the signature
   // Execute the request
   GetObjectACLResult result = cosXml.GetObjectACL(request);
   // Object ACL information

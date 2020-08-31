@@ -27,7 +27,6 @@ This API is used to query the list of all buckets under a specified account.
 try
 {
   GetServiceRequest request = new GetServiceRequest();
-  // Set the validity period of the signature
   // Execute the request
   GetServiceResult result = cosXml.GetService(request);
   // Get the list of all buckets
@@ -61,7 +60,6 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   PutBucketRequest request = new PutBucketRequest(bucket);
-  // Set the validity period of the signature
   // Execute the request
   PutBucketResult result = cosXml.PutBucket(request);
   // Request successful
@@ -99,7 +97,6 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   HeadBucketRequest request = new HeadBucketRequest(bucket);
-  // Set the validity period of the signature
   // Execute the request
   HeadBucketResult result = cosXml.HeadBucket(request);
   // Request successful
@@ -136,7 +133,6 @@ try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketRequest request = new DeleteBucketRequest(bucket);
-  // Set the validity period of the signature
   // Execute the request
   DeleteBucketResult result = cosXml.DeleteBucket(request);
   // Request successful
