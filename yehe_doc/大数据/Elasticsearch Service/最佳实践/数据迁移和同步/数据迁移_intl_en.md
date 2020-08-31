@@ -167,10 +167,13 @@ The above configuration file syncs all the indices in the source cluster to the 
 elasticsearch-dump is an open-source Elasticsearch data migration tool available on [GitHub](https://github.com/taskrabbit/elasticsearch-dump).
 1. Install elasticsearch-dump
 elasticsearch-dump is developed using Node.js and can be installed directly using the npm package manager:
+
 ```
 npm install elasticdump -g
 ```
+
 2. Main parameters
+
 ```
 --input: the source address in the format of `{protocol}://{host}:{port}/{index}`, which can be an Elasticsearch cluster URL, file, or stdin and allows you to specify an index
 --input-index: index in source cluster
@@ -178,19 +181,23 @@ npm install elasticdump -g
 --output-index: index in target cluster
 --type: migration type, which is `data` by default, indicating that only data will be migrated. Valid values: settings, analyzer, data, mapping, alias
 ```
+
 3. Migrate a single index
  The following operation migrates the `companydatabase` index in the `172.16.0.39` cluster to the `172.16.0.20` cluster by running the `elasticdump` command.
  >!The first command migrates the settings of the index. If you directly migrate the mapping or data, the configuration information of the index in the source cluster will be lost, such as the number of shards and number of replicas. Of course, you can also directly create an index in the target cluster first before syncing the mapping and data.
  >
+
 ```
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=settings
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=mapping
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=data
 ```
+
 4. Migrate all indices
 The following operation migrates all the indices in the `172.16.0.39` cluster to the `172.16.0.20` cluster by running the `elasticdump` command. 
 >!This operation cannot migrate the configurations of indices, such as the number of shards and number of replicas. You must migrate the configuration of each index separately, or directly create an index in the target cluster first before migrating the data.
 >
+
 ```
 elasticdump --input=http://172.16.0.39:9200 --output=http://172.16.0.20:9200
 ```
