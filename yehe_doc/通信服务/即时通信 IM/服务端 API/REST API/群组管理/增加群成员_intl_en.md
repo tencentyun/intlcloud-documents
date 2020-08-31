@@ -6,15 +6,14 @@
 
 | Group Type | Support This RESTful API |
 |-----------|------------|
-| Private | Yes |
-| Public | Yes |
-| ChatRoom | Yes |
-| AVChatRoom | No (see description below) |
-| BChatRoom | No (see description below) |
+|Private|Yes, identical to Work in the new version|
+|Public|Yes|
+|ChatRoom|Yes, identical to Meeting in the new version|
+|AVChatRoom|No|
 
-IM provides the preceding five built-in group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
+IM comes with the preceding four group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
 
-> AVChatRoom and BChatRoom groups do not support adding group members. If you attempt to add members to such groups, error 10007 returns. To add users to these groups, you must apply to join them.
+>? Generally, importing group members is not required for AVChatRoom, so AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned.
 
 ### Request URL example
 ```
@@ -117,7 +116,7 @@ The following table describes the error codes specific to this API.
 | 10002 | An internal server error occurred. In this case, try again. |
 | 10003 | The request command keyword is invalid. |
 | 10004 | A parameter is invalid. In this case, check whether request parameters are correct based on the error description. |
-| 10005 | The number of Member_Accounts in the request packet exceeds 500. |
+| 10005 | The number of Member_Accounts in the request packet exceeds 300. |
 | 10007 | Operation permissions are insufficient. In this case, check whether the type of the group supports user invitation. For example, AVChatRoom and BChatRoom groups disallow anyone to invite others to the groups. |
 | 10014 | The user in the request cannot be added to the group because the group is already full. In this case, reduce the number of Member_Accounts in the request or change the value of the MaxMemberNum field in the basic group information. For information on the basic group information, see [Basic Group Information](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E5.9F.BA.E7.A1.80.E8.B5.84.E6.96.99). |
 | 10010 | The group does not exist or has been dismissed. |
