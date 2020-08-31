@@ -17,7 +17,7 @@ Service access point in Singapore:
 https://api.tpns.sgp.tencent.com/v3/push/package/upload
 ```
 
-**Feature**: the user needs to upload number package files to batch accounts as files. The files in the number package must then be pushed. The number package push APIs mainly include the number package upload API and the number package push API.
+**Feature**: the user needs to upload account package files to batch accounts as files. The files in the account package must then be pushed. The account package push APIs mainly include the account package upload API and the account package push API.
 
 >
 - Request files are uploaded in form-data format, and the key is the `file`.
@@ -38,7 +38,7 @@ https://api.tpns.sgp.tencent.com/v3/push/package/upload
 | --- | --- | --- | --- |
 | retCode   | Integer   | Yes   | Error code   |
 | errMsg   | String   | Yes   | Error message when an error occurs in the request   |
-| uploadId    | Integer   | Yes   | When a file upload succeeds, a positive integer uploadId will be provided, which represents the ID of the uploaded file. It is provided for the push of the subsequent number package API.   |
+| uploadId    | Integer   | Yes   | When a file upload succeeds, a positive integer uploadId will be provided, which represents the ID of the uploaded file. It is provided for the push of the subsequent account package API.   |
 
 
 ## Samples
