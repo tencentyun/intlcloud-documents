@@ -19,7 +19,7 @@ This API is used to enable logging for a source bucket and store the access logs
 
 #### Sample code
 
-[//]: # (.cssg-snippet-put-bucket-logging)
+[//]: # ".cssg-snippet-put-bucket-logging"
 ```cs
 try
 {
@@ -27,8 +27,6 @@ try
   PutBucketLoggingRequest request = new PutBucketLoggingRequest(bucket);
   // Set the destination path for storing logs
   request.SetTarget("targetbucket-1250000000", "logs/");
-  // Set the validity duration of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   PutBucketLoggingResult result = cosXml.putBucketLogging(request);
   // Request successful 
@@ -46,7 +44,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketLogging.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketLogging.cs).
 
 ## Querying Logging
 
@@ -56,14 +54,12 @@ This API is used to query the logging configuration of a specified bucket.
 
 #### Sample code
 
-[//]: # (.cssg-snippet-get-bucket-logging)
+[//]: # ".cssg-snippet-get-bucket-logging"
 ```cs
 try
 {
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketLoggingRequest request = new GetBucketLoggingRequest(bucket);
-  // Set the validity duration of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   GetBucketLoggingResult getResult = cosXml.getBucketLogging(request);
   // Request successful 
@@ -85,5 +81,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketLogging.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketLogging.cs).
 
