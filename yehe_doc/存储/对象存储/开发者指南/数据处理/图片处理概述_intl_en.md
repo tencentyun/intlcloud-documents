@@ -3,7 +3,7 @@
 Tencent Cloud COS has integrated the professional All-in-One media solutions of [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045), covering image processing, moderation, recognition, and many more. See the table below for details. You can process your media data with the Upload and Process APIs in COS.
 
 >
-> - This image processing feature is only supported for Public Cloud regions in mainland China.
+> - This image processing feature is only supported for Public Cloud regions in China.
 > - Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 
