@@ -18,7 +18,7 @@ CDN cache purging is a Tencent Cloud COS feature based on [SCF](https://intl.clo
 4. Click **Add Function**, and configure the following in the pop-up window:
 	- **Function Name**: uniquely identifies a function, and cannot be modified after creation. You can view the function from the [SCF](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) console.
 	-**Event Type**: an operation that triggers the function. Taking upload as an example, an upload may be performed by calling the [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) or [Post Object](https://intl.cloud.tencent.com/document/product/436/14690) API. If you select PUT for Event Type, only uploads through the `PUT Object` API can trigger the function to purge your cache on CDN edge servers.
-	-**Trigger Condition**: specifies the source file range for triggering the function. You can choose the whole bucket, or a range with specified prefix or suffix. If you choose the latter, the rule only applies to the matched source files.
+	-**Trigger Condition**: specifies the scope of file sources the trigger event applies to, e.g. the whole bucket, or only those matching a specified prefix or suffix. 
 	-**Specified Domain**: specifies the CDN domain to cache.
 	-**SCF Authorization**: CDN cache purging requires authorizing SCF to call the CDN API `PurgeUrlsCache`. In this way, SCF can replace your CDN cache with the latest data CDN pulls from the origin server on COS.
 ![](https://main.qcloudimg.com/raw/9881bbc4d5cf620c4cfac9060b061ce5.png)
