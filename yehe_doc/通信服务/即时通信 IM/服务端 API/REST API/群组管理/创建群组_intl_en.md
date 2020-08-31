@@ -272,7 +272,7 @@ The list below contains error codes specific to this API:
 | 10002 | An internal server error occurred. Please try again. |
 | 10003| The request command word is invalid. |
 | 10004 | A parameter is invalid. Check the error description and troubleshoot the issue. |
-| 10005 | The number of members imported in the request packet exceeds 500. Reduce the number of members imported in the `MemberList` parameter. |
+| 10005 | The number of members imported in the request packet exceeds 300. Reduce the number of members imported in the `MemberList` parameter. |
 | 10006 | The number of groups created exceeds the quota. For example, the cumulative number of BChatRoom groups created exceeds 5, or the net increase in the number of groups in a single day exceeds the set quota. For details, see [Differences in Group Limits](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82). |
 | 10007 | The operation permissions are insufficient. Check the request parameters based on the error information. For example, the specified group type does not allow adding members, but you specified `MemberList` in the request packet. |
 | 10008 | The request is invalid, probably because verification of the signing information in the request failed. Please try again or [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) to contact technical support. |
