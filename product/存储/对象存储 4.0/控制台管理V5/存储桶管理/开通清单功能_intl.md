@@ -17,8 +17,8 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
 ![](https://main.qcloudimg.com/raw/6669721856e7a2d7ae6e0477b5c739c9.png)
  - **Inventory Name**: Name the output inventory report.
  - **Destination Prefix (Optional)**: Enter the prefix selected for the destination bucket, which can group the inventory files in a public location. The default value is used initially.
- - **Destination Bucket **: This is the bucket where the inventory is stored. The default value is the source bucket. The destination bucket must be in the same region as the source bucket.
- - ** Status**: You can choose to enable or disable the inventory.
+ - **Destination Bucket**: This is the bucket where the inventory is stored. The default value is the source bucket. The destination bucket must be in the same region as the source bucket.
+ - **Status**: You can choose to enable or disable the inventory.
  - **Advanced Settings**: You can configure more inventory information in the advanced settings. If you leave them alone, all the default settings will be used:
    - **Output Format**: The default value is CSV format.
    - **Object Version**: Select whether to include all object versions or only the current version in the inventory. If you do not make a selection, only the current version is included by default.
