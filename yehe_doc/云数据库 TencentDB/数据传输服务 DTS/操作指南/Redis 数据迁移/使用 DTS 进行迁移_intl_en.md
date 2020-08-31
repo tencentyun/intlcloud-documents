@@ -17,7 +17,7 @@ Tencent Cloud Data Transmission Service (DTS) is a data transfer service that in
 
 #### Supported versions
 - DTS supports Redis 2.8, 3.0, 3.2, 4.0, and 5.0.
-- DTS supports single-node, Redis cluster, Codis, and tewmproxy architectures.
+- DTS supports single-node, Redis cluster, Codis, and twemproxy architectures.
 - Migration permission requirements: to migrate data via DTS, the source instance must support SYNC or PSYNC commands.
 
 #### Supported networks
@@ -114,7 +114,7 @@ Redis instances on CVM are used here as an example, and the same is true for mig
 | Instance ID | Target instance ID | Data is synchronized to the target instance | Yes |
 
 **Notes on migration in the cluster edition**
-DTS supports migration in the Redis Cluster Edition. For cluster schemes with the Redis Cluster, Codis, or tewmproxy architecture, simply enter the addresses and passwords of all shard nodes of the source cluster as the node information when creating the task. It is strongly recommended to perform data migration from a replica node (slave) of the source instance to avoid any impact on business access to the source instance. DTS supports password-free migration. The following is an example for entering relevant information for migration:
+DTS supports migration in the Redis Cluster Edition. For cluster schemes with the Redis Cluster, Codis, or twemproxy architecture, simply enter the addresses and passwords of all shard nodes of the source cluster as the node information when creating the task. It is strongly recommended to perform data migration from a replica node (slave) of the source instance to avoid any impact on business access to the source instance. DTS supports password-free migration. The following is an example for entering relevant information for migration:
 ![](https://main.qcloudimg.com/raw/c08aad1d17a1cc39b1ae4cf978c4194b.png)
 
 ### 4. Start the migration task
