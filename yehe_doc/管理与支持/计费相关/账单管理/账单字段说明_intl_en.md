@@ -11,7 +11,7 @@
 | Instance ID | Instance ID, which can be viewed on the console. |
 | Instance Name | Resource alias, which is customized by users. If it is not set, it is null. |
 | Subproduct Name | Cloud product subcategory, such as CVM – Standard S1. |
-| Transaction Type | Transaction type. Valid options include pay-as-you-go resource purchase/renewal/upgrade and downgrade/refund, hourly pay-as-you-go, daily pay-as-you-go, monthly pay-as-you-go, refund for amount adjustment, and deduction for amount adjustment. |
+| Transaction Type | Transaction type. Valid options include monthly subscription resource purchase/renewal/upgrade and downgrade/refund, hourly pay-as-you-go, daily pay-as-you-go, monthly pay-as-you-go, refund for amount adjustment, and deduction for amount adjustment. |
 | Transaction ID | Unique transaction ID. |
 | Transaction Time | Fee deduction time . |
 | Usage Start Time | Time when resource is started. |

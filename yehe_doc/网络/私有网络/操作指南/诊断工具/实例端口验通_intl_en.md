@@ -53,3 +53,6 @@ The following ports can be verified:
 >**Open All Ports** will open all listed ports. To open certain ports, add rules in [Security Group Console](https://console.cloud.tencent.com/vpc/securitygroup).
 >
 ![](https://main.qcloudimg.com/raw/b7f208cca3943ecefacd791f30533911.png)
+
+## Relevant Information
+- For more information about the common server ports, see [Common Server Ports](https://intl.cloud.tencent.com/document/product/215/35520).

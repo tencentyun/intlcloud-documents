@@ -52,7 +52,7 @@ kubectl describe node <node-name>
 
 ### 检查 Node 是否存在 Pod 没有容忍的污点
 #### 问题分析
-假如节点上存在污点（Taints），而 Pod 上没有响应的容忍（Tolerations），Pod 将不会调度到该 Node。在调度之前，可以先通过 `kubectl describe node <node-name>` 命令查看 Node 已设置污点。示例如下：
+假如节点上存在污点（Taints），而 Pod 上没有相应的容忍（Tolerations），Pod 将不会调度到该 Node。在调度之前，可以先通过 `kubectl describe node <node-name>` 命令查看 Node 已设置污点。示例如下：
 ``` bash
 $ kubectl describe nodes host1
 ...
@@ -70,7 +70,7 @@ Node 上已设置的污点可通过手动或自动的方式添加，详情请参
 kubectl taint nodes host1 special-
 ```
 - 方法2：在 Pod 上增加污点容忍
-  >本文以向 Deployment 中已创建的 Pod（名称为 `nginx`）添加容忍为例。
+  >?本文以向 Deployment 中已创建的 Pod（名称为 `nginx`）添加容忍为例。
   >
   1. 参考 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)，登录 `nginx` 所在的云服务器。 
   4. 执行以下命令，编辑 Yaml。
@@ -106,14 +106,15 @@ Pod 一直处于 Pending 状态可能是低版本 `kube-scheduler` 的 bug 导�
 
 
 ## 相关操作
-### 添加污点<span id="addTaints"></span>
+<span id="addTaints"></span>
+### 添加污点
 #### 手动添加污点
 通过以下或类似方式，可以手动为节点添加指定污点：
 ``` bash
 $ kubectl taint node host1 special=true:NoSchedule
 node "host1" tainted
 ```
->在某些场景下，可能期望新加入的节点在调整好某些配置之前默认不允许调度 Pod。此时，可以给该新节点添加 `node.kubernetes.io/unschedulable` 污点。
+>?在某些场景下，可能期望新加入的节点在调整好某些配置之前默认不允许调度 Pod。此时，可以给该新节点添加 `node.kubernetes.io/unschedulable` 污点。
 
 #### 自动添加污点
 从 v1.12 开始，Beta 默认开启 `TaintNodesByCondition` 特性，controller manager 将会检查 Node 的 Condition。Node 运行状态异常时，当检查的 Condition 符合如下条件（即符合 Condition 与 Taints 的对应关系），将自动给 Node 加上相应的污点。
@@ -138,5 +139,5 @@ NetworkUnavailable     True        node.kubernetes.io/network-unavailable
 * `PIDPressure` 为 True，表示节点上运行了太多进程，PID 数量不足。
 * `DiskPressure` 为 True，表示节点上的磁盘可用空间不足。
 * `NetworkUnavailable` 为 True，表示节点上的网络没有正确配置，无法跟其他 Pod 正常通信。
->上述情况一般属于被动添加污点，但在容器服务中，存在一个主动添加/移出污点的过程：
+>?上述情况一般属于被动添加污点，但在容器服务中，存在一个主动添加/移出污点的过程：
 >在新增节点时，首先为该节点添加 `node.cloudprovider.kubernetes.io/uninitialized` 污点，待节点初始化成功后再自动移除此污点，以避免 Pod 被调度到未初始化好的节点。

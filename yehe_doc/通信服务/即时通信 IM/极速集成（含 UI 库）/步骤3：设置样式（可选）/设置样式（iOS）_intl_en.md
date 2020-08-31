@@ -101,6 +101,8 @@ A profile photo is a common element to every message. To set the size and positi
 [TUIMessageCellLayout outgoingMessageLayout].avatarInsets = UIEdgeInsetsMake(10, 10, 20, 20);
 ```
 
+For other messages, obtain their `layout` instances to set the size and position of the profile photos.
+
 
 ### Configuring the nickname font and color
 
