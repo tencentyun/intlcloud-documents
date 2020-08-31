@@ -23,7 +23,8 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
    - **Output Format**: The default value is CSV format.
    - **Object Version**: Select whether to include all object versions or only the current version in the inventory. If you do not make a selection, only the current version is included by default.
    - **Generation Cycle**: Select whether to export the inventory daily or weekly. If you do not make a selection, the report is exported daily by default.
-   - **Filter**: Add a prefix to the filter to only inventory the objects whose names begin with the same string. If you do not enter a prefix, no filter is used by default.
+   - **Filter Prefix (Optional)**: filters objects only for those keys starting with the specified prefix. If this field is left empty, no keys will be filtered.
+   - **Filter time (Optional)**: filters only objects which are modified after a specified time or within a specified time range. Default: `Not setting`.
    - **Inventory Encryption**: Select whether to encrypt the inventory on the server. Options include:
      - No encryption: The inventory is not encrypted. This is the default value.
      - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
