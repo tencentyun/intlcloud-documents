@@ -48,7 +48,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketInventory.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketInventory.cs).
 
 
 #### Error codes
@@ -59,7 +59,7 @@ The following describes some common errors that may occur when making requests u
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You may not have access to the bucket | HTTP 403 Forbidden   |
+| AccessDenied          | Unauthorized access. You most likely do not have access permission for the bucket | HTTP 403 Forbidden   |
 
 ## Querying Inventory Jobs
 
@@ -94,7 +94,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 
 ## Deleting an Inventory Job
 
@@ -129,5 +129,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketCORS.cs).
 

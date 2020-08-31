@@ -41,7 +41,7 @@ defaultConfig {
 如果您的网络连接 jcenter 有问题，也可以手动下载 SDK 集成到工程里：
 
 - **第一步：下载 LiteAVSDK**
-   下载 [LiveAVSDK](https://cloud.tencent.com/document/product/454/7873) ，下载完成后进行解压。
+   下载 [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。
  
 - **第二步：拷贝 LiteAVSDK 到工程目录**  
   将下载文件解压之后 SDK 目录下的 aar 文件拷贝到工程的 **app/libs** 目录下：
@@ -75,7 +75,7 @@ defaultConfig {
 如果您不想集成 aar 库，也可以通过导入 jar 和 so 库的方式集成 LiteAVSDK：
 
 - **第一步：下载解压 LiteAVSDK**
-  下载 [LiveAVSDK](https://cloud.tencent.com/document/product/454/7873) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_Smart_xxx.zip`（其中 xxx 为 LiteAVSDK 的版本号）：
+  下载 [LiveAVSDK](https://intl.cloud.tencent.com/document/product/1071/38150) ，下载完成后进行解压。在 SDK 目录下找到 `LiteAVSDK_Smart_xxx.zip`（其中 xxx 为 LiteAVSDK 的版本号）：
 
   ![](https://main.qcloudimg.com/raw/aae5879bccd31e8c082eebc24aa4ff7c.png)
 
@@ -147,7 +147,7 @@ dependencies{
 
 ## 配置 License 授权
 
-单击 [License 申请](https://console.cloud.tencent.com/live/license) 获取测试用 License，具体操作请参见 [测试版 License](https://cloud.tencent.com/document/product/454/34750#.E6.B5.8B.E8.AF.95.E7.89.88-license)。您会获得两个字符串：一个字符串是 licenseURL，另一个字符串是解密 key。
+单击 [License 申请](https://console.cloud.tencent.com/live/license) 获取测试用 License。您会获得两个字符串：一个字符串是 licenseURL，另一个字符串是解密 key。
 
 在您的 App 调用企业版 SDK 相关功能之前（建议在 Application类中）进行如下设置：
 

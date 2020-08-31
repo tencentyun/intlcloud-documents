@@ -25,9 +25,9 @@ CFS can automatically expand the storage capacity of a file system based on file
 ## Model Selection
 #### Application scenarios: CFS vs. CBS
 
-Category | Single CFS File System (Standard) | Single Cloud Disk
+Category | Single CFS File System | Single Cloud Disk
 ------- | ------- | -------
-Throughput | Up to 40 GB/s for high-performance CFS<p>Up to 1.2 GB/s for standard CFS</p> | Up to 260 MB/s for SSD cloud disk<p>Up to 150 MB/s for premium cloud disk</p>
+Throughput | Up to 40 GB/s for high-performance CFS<p>Up to 300 MB/s for standard CFS</p> | Up to 260 MB/s for SSD cloud disk<p>Up to 150 MB/s for premium cloud disk</p>
 IOPS | Up to 60K IOPS for high-performance CFS<p>Up to 4K IOPS for standard CFS</p> | Up to 26K IOPS for SSD cloud disk<p>Up to 6K IOPS for premium cloud disk</p>
 Sharing | Shared by tens of thousands of clients with strong data consistency | Shared by dozens of clients with no guarantee for consistency 
 Number of redundant copies | 3 | 3

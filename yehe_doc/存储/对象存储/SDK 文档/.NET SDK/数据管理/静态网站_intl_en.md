@@ -4,7 +4,7 @@ This document provides an overview of APIs and SDK code samples related to stati
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ---------------- | ------------------------ |
-| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website | Configures a static website for a bucket |
+| [PUT Bucket website](https://intl.cloud.tencent.com/document/product/436/30617) | Setting a static website configuration | Configures a static website for a bucket |
 | [GET Bucket website](https://intl.cloud.tencent.com/document/product/436/30616) | Querying a static website configuration | Queries the static website configuration of a bucket |
 | [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | Deleting a static website configuration | Deletes the static website configuration of a bucket |
 
@@ -12,7 +12,7 @@ This document provides an overview of APIs and SDK code samples related to stati
 
 For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting a static website
+## Setting a Static Website Configuration
 
 #### API description 
 
@@ -46,7 +46,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
 
 ## Querying a Static Website Configuration
 
@@ -80,7 +80,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
 
 ## Deleting a Static Website Configuration
 
@@ -114,5 +114,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketWebsite.cs).
 

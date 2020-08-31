@@ -4,7 +4,7 @@ COS supports traffic control for file uploads and downloads to guarantee normal 
 
 ## Instructions
 
-- You can add the `x-cos-traffic-limit` parameter when requesting `Object`, `PostObject`, `GetObject`, or `UploadPart` to specify the speed limit value for the request. This parameter can be set in the header, request parameter, or form field (for upload through form).
+- You can put a traffic limit on a request by specifying the `x-cos-traffic-limit` in your PUT Object, POST Object, GET Object, or Upload Part request. This parameter can be used as a request header, request parameter, or a HTML form field for POST Object requests.
 - The value of the `x-cos-traffic-limit` parameter must be a number and the unit is bit/s by default.
 - The speed limit value range is 819200–838860800, i.e, 100 KB/s–100 MB/s. If the range is exceeded, a 400 error will be returned.
 

@@ -2,7 +2,7 @@
 DBbrain is an intelligent database diagnosis and optimization product.
 
 ### What is DBbrain compatible with?
-DBbrain is compatible with SQL, NoSQL, and NewSQL databases. Currently, it supports only the MySQL edition, but it will support more mainstream databases such as Redis, MongoDB, PostgreSQL, SQL Server, CynosDB, and MariaDB in the future.
+DBbrain is compatible with SQL, NoSQL, and NewSQL databases. Currently, only MySQL is supported, but it will support more mainstream databases such as Redis, MongoDB, PostgreSQL, SQL Server, CynosDB, and MariaDB in the future.
 
 ### How much does DBbrain cost?
 DBbrain is currently in beta, during which the product and its features are free.

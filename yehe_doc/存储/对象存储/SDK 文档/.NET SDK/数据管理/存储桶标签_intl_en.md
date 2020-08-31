@@ -52,7 +52,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 
 ## Querying Bucket Tags
 
@@ -87,7 +87,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 
 ## Deleting Bucket Tags
 
@@ -121,5 +121,5 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/BucketTagging.cs).
 

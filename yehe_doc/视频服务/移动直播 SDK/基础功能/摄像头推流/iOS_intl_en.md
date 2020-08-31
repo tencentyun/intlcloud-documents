@@ -23,7 +23,7 @@ The SDK uses a lot of audio and video APIs of the iOS system. These APIs often c
 
 ### 1. Download the SDK
 /// Change the TODO download URL.
-[Download](https://cloud.tencent.com/document/product/454/7873) the SDK and follow the instructions in the [SDK integration guide](https://cloud.tencent.com/document/product/454/7876) to embed the SDK in your application project.
+[Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK and follow the instructions in the [SDK integration guide](https://intl.cloud.tencent.com/document/product/1071/38155) to embed the SDK in your application project.
 
 <span id="step2"></span>
 ### 2. Configure a license for the SDK
@@ -55,7 +55,7 @@ First, create a `TXLivePusherV2` instance. Later, this instance can be used to i
 
 ### 4. Enable camera preview
 /// Change the URL of the TODO API document.
-You can call the `setRenderView` API in [TXLivePusherV2](https://cloud.tencent.com/document/product/454/34755) to enable the camera preview for the mobile phone. You must provide a view object for previewing images for the `setRenderView` API.
+You can call the `setRenderView` API in TXLivePusherV2 to enable the camera preview for the mobile phone. You must provide a view object for previewing images for the `setRenderView` API.
 
 ```objectivec   
  // Create a view object and insert it into the current interface.
@@ -96,7 +96,7 @@ After you complete stream push, you can call the `stopPush` API of TXLivePusherV
 
 -  **How can I obtain a valid push URL?**
 
-After you activate the LVB service, you can choose LVB console > Auxiliary tools > [URL generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a push URL. For more information, see [Push/Pull URL](https://cloud.tencent.com/document/product/454/7915).
+After you activate the LVB service, you can choose LVB console > Auxiliary tools > [URL generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a push URL. 
 ![](https://main.qcloudimg.com/raw/0ec9d83f340454c287d96f83eec3a3e4.png)
 - **Why is “-5” returned?**
 If the `startPush` API returns “-5”, license verification has failed. In this case, check whether any problem occurred in [Step 2. Configure a license for the SDK](#step2).
@@ -245,7 +245,7 @@ When the video streams played by TXLivePlayerV2 contain SEI messages, you are no
 
 // The URL of the TODO API document must be changed.
 
-The SDK uses the [TXLivePusherObserver](https://cloud.tencent.com/document/product/454/34757) proxy to set the pusher callback. By setting the callback, you can monitor some callback events of TXLivePusherV2, including the player status, volume callback, statistics, warnings, and error messages. For the detailed event table and error code table, see [Error code table](https://cloud.tencent.com/document/product/454/17246).
+The SDK uses the TXLivePusherObserver proxy to set the pusher callback. By setting the callback, you can monitor some callback events of TXLivePusherV2, including the player status, volume callback, statistics, warnings, and error messages.
 
 ### 2. Normal events 
 The table below lists the events you will be notified of upon each successful push. If “0” is received, the related event is called successfully.
