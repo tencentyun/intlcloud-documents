@@ -1,6 +1,6 @@
 
 ## 操作场景
->为节约存储空间，云数据库 MySQL 的物理备份和逻辑备份文件，都会先经过 qpress 压缩，后经过 xbstream 打包（xbstream 为 Percona 的一种打包/解包工具）进行压缩与打包。
+>?为节约存储空间，云数据库 MySQL 的物理备份和逻辑备份文件，都会先经过 qpress 压缩，后经过 xbstream 打包（xbstream 为 Percona 的一种打包/解包工具）进行压缩与打包。
 >
 开源软件 Percona Xtrabackup 可以用于对数据库进行备份恢复，本文为您介绍使用 XtraBackup 工具，将 MySQL 物理备份文件恢复至其他主机上的自建数据库。
 - XtraBackup 只支持 Linux 平台，不支持 Windows 平台。
@@ -10,18 +10,18 @@
 ## 前提条件
 - 下载并安装 XtraBackup 工具。
 下载地址请参见 [Percona XtraBackup 官网](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)，请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)。
-- 支持的实例版本：MySQL 5.5、5.6、5.7 高可用版和金融版。
+- 支持的实例版本：MySQL 高可用版和金融版。
 - 启用数据加密功能的实例，不支持使用物理备份恢复数据库。
 
 ## 操作步骤
 ### 步骤1：下载备份文件
 您可通过控制台下载云数据库 MySQL 的数据备份、日志备份。
->默认每个 IP 限制10个链接，每个链接下载速度可达20Mpbs - 30Mpbs。
+>?默认每个 IP 限制10个链接，每个链接下载速度可达20Mpbs - 30Mpbs。
 >
 1. 登录 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表中，单击实例名或操作列的【管理】，进入实例管理页面。
 2. 在实例管理页，选择【备份恢复】>【数据备份列表】页， 选择需要下载的备份，在操作列单击【下载】。
 3. 在弹出的对话框，推荐您复制下载地址，并登录到云数据库所在 VPC 下的 CVM（Linux 系统） 中，运用 wget 命令进行内网高速下载，更高效。
->
+>?
 >- 您也可以选择【本地下载】直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb 
 >
@@ -35,7 +35,7 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 ```
 xbstream -x -C /data < ~/test.xb
 ```
->
+>?
 >- 本文目标目录以`/data`为例，您可根据实际情况替换为实际路径。
 >- `~/test.xb`替换为您的备份文件。
 >
@@ -47,7 +47,7 @@ xbstream -x -C /data < ~/test.xb
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
+>?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
 2. 通过如下命令解压出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
@@ -57,7 +57,7 @@ source /etc/profile
 ```
 xtrabackup --decompress --target-dir=/data
 ```
->
+>?
 >- `/data`为之前存储备份文件的目标目录 ，您可根据实际情况替换为实际路径。
 >- Percona Xtrabackup 在2.4.6及以上版本中才支持`--remove-original`选项。
 >- `xtrabackup`默认在解压缩时不删除原始的压缩文件，若需解压完删除原始的压缩文件，可在上面的命令中加上`--remove-original`参数。
@@ -78,7 +78,7 @@ xtrabackup --prepare  --target-dir=/data
 ```
 vi /data/backup-my.cnf
 ```
->本文以目标目录`/data`为例，您可以根据实际情况将其替换成实际路径。
+>?本文以目标目录`/data`为例，您可以根据实际情况将其替换成实际路径。
 >
 2. 由于存在的版本问题，请将解压文件`backup-my.cnf`中如下参数进行注释。
  - innodb_checksum_algorithm
