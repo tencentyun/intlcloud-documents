@@ -65,6 +65,6 @@
 >- 云函数开启公网访问后，才可选择开启固定公网出口 IP。
 >- 您无法手动选择或编辑随机生成的弹性公网 IP。
 >
-![](https://main.qcloudimg.com/raw/adedb9d862ec5d22a9df64b8ffdb2a01.png)
+
 配置完成后，单击【保存】即可。
 
