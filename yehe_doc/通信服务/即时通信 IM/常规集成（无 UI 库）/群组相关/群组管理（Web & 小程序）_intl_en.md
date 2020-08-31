@@ -608,7 +608,7 @@ tim.addGroupMember(options);
 | Name | Type | Description |
 | :----------- | :------------- | :-------------------------------------------- |
 | `groupID` | `String` | Group ID. |
-| `userIDList` | `Array<String>` | An array of IDs of the group members to be added. Up to 500 group members can be added at a time. |
+| `userIDList` | `Array<String>` | An array of IDs of the group members to be added. Up to 300 group members can be added at a time. |
 
 **Response**
 

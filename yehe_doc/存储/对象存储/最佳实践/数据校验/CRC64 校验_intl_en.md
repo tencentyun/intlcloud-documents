@@ -2,14 +2,14 @@
 
 Errors may occur when data is transferred between the client and the server. COS can verify data integrity using [MD5 and custom attributes](https://intl.cloud.tencent.com/document/product/436/32467), or the CRC64 check code.
 
-COS will calculate the CRC64 of the newly uploaded object and store the result as object attributes. It will carry x-cos-hash-crc64ecma in the returned response header, which indicates the CRC64 value of the uploaded object calculated according to [ECMA-182 standard] (https://www.ecma-international.org/publications/standards/Ecma-182.htm). If an object already has a CRC64 value stored before this feature is activated, COS will not calculate its CRC64 value, nor will it be returned when the object is obtained.
+COS calculates the CRC64 value according to [ECMA-182 standard](https://www.ecma-international.org/publications/standards/Ecma-182.htm) for each newly uploaded object, and stores it as part of the object attributes. It then includes `x-cos-hash-crc64ecma` in the response headers to represent this CRC64 value. Objects that were created before this CRC64 feature was launched will have no CRC64 value for COS to return when the object is requested.
 
 ## Directions
 
-APIs that currently support CRC64 are:
+APIs that currently support CRC64 include:
 
-- Simple upload APIs
-	- [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) and [POST Object](https://intl.cloud.tencent.com/document/product/436/14690): you can get the CRC64 check value for your file in the returned response headers.
+- APIs for simple upload
+	- [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) and [POST Object](https://intl.cloud.tencent.com/document/product/436/14690): you can get the CRC64 check value for your file from the response headers.
 - Multipart upload APIs
 	- [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750): you can compare and verify the CRC64 value returned by COS against the value calculated locally.
 	- [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742): returns a CRC64 value for the entire object only if each part has a CRC64 attribute. Otherwise, no value is returned.
@@ -19,9 +19,9 @@ APIs that currently support CRC64 are:
 
 ## API Samples
 
-#### Multipart upload response
+#### Upload Part response
 
-The following is an example of the response obtained after a user sends an Upload Part request. The x-cos-hash-crc64ecma header indicates the CRC64 value of the part, and the user can compare the value with the locally calculated CRC64 value to verify the integrity of the part.
+The following example shows the response to an Upload Part request. The `x-cos-hash-crc64ecma` header represents the CRC64 value of a part, which you can compare against the locally calculated CRC64 value to verify the part integrity.
 
 ```shell
 HTTP/1.1 200 OK
@@ -34,9 +34,9 @@ x-cos-hash-crc64ecma: 15060521397700495958
 x-cos-request-id: NWRlODY0MmJfMjBiNDU4NjRfNjkyZl80ZjZi****
 ```
 
-#### Completing the multipart upload response
+#### Complete Multipart Upload response
 
-The following is an example of the response obtained after a user sends a Complete Multipart Upload request. The x-cos-hash-crc64ecma header indicates the CRC64 value of the part, and the user can compare the value with the locally calculated CRC64 value to verify the integrity of the part.
+The following example shows the response to a Complete Multipart Upload request. The `x-cos-hash-crc64ecma` header represents the CRC64 value of an entire object, which you can compare against the locally calculated CRC64 value to verify the object integrity.
 
 ```shell
 HTTP/1.1 200 OK
@@ -53,11 +53,11 @@ x-cos-request-id: NWRlODY0ZWRfMjNiMjU4NjRfOGQ4Ml81MDEw****
 
 ## SDK Samples
 
-The following uses the Python SDK as an example to demonstrate how to verify an object. The complete sample code is as follows.
+The following example uses the Python SDK to verify object integrity. The complete sample code is as follows.
 
->The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations] for Python SDK.(https://intl.cloud.tencent.com/document/product/436/31546).
+> ?The code is based on Python 2.7. For more information on how to use the Python SDK, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546).
 
-#### 1. Initial configuration
+#### 1. Initialization configuration
 
 Configure user attributes, including SecretId, SecretKey, and region, and create a client object.
 
@@ -70,15 +70,16 @@ from qcloud_cos import CosClientError
 import sys
 import logging
 import hashlib
+import crcmod
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 # Configure user attributes, including SecretId, SecretKey, and region
-# APPID has been removed from the configuration. Please add the APPID to the `Bucket` parameter in the format of `BucketName-APPID`.
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
 secret_id = COS_SECRETID           # Replace with your own SecretId
 secret_key = COS_SECRETKEY         # Replace with your own SecretKey
 region = 'ap-beijing'      # Replace with your own region (which is Beijing in this sample)
-token = None                # If a temporary key is used, token needs to be passed in. This is optional and is null by default
+token = None               # If a temporary key is used, Token needs to be passed in, which is left empty by default
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
 client = CosS3Client(config)
 ```
@@ -97,25 +98,25 @@ c64 = crcmod.mkCrcFun(0x142F0E1EBA9EA3693L, initCrc=0L, xorOut=0xfffffffffffffff
 local_crc64 =str(c64(object_body))
 ```
 
-# 1. Initialize multipart upload
+#### 3. Initialize the multipart upload
 
 ```python
 # Initialize the multipart upload
 response = client.create_multipart_upload(
-    Bucket='examplebucket-1250000000',  #Replaced with your own bucket name. 'examplebucket' is a sample bucket, and '1250000000' is a sample APPID.
-    Key='exampleobject',              # Replaced with the key value of your uploaded object 
+    Bucket='examplebucket-1250000000',  #Replace with your own bucket name and APPID
+    Key='exampleobject',              # Replace with the key value of your uploaded object
     StorageClass='STANDARD',            # Storage class of the object
 )
-# Get the UploadId of the multipart upload
+#Get the UploadId of the multipart upload
 upload_id = response['UploadId']
 ```
 
-#### 4. Upload the object via multipart upload
+#### 4. Upload the object using multipart upload
 
-During a multipart upload, an object is divided into multiple (up to 10,000) parts for upload. The size of each part can range from 1 MB to 5 GB, and the last part can be less than 1 MB. When uploading parts, configure the PartNumber of each part and its corresponding CRC64 value. After the parts are successfully uploaded, check the returned CRC64 value with the locally calculated value to verify the integrity of each part.
+During a multipart upload, an object is divided into multiple (up to 10,000) parts for upload. The size of each part ranges from 1 MB to 5 GB, except the last part that can be less than 1 MB. When uploading parts, configure the PartNumber of each part and calculate its corresponding CRC64 value. After the parts are successfully uploaded, check the returned CRC64 value with the locally calculated value to verify the object integrity.
 
 ```python
-# Upload an object in parts where the size of each part is OBJECT_PART_SIZE except the last part which may be smaller
+#Upload an object in parts where the size of each part is OBJECT_PART_SIZE except the last part which may be smaller
 part_list = list()
 position = 0 
 left_size = OBJECT_TOTAL_SIZE
@@ -132,7 +133,7 @@ while left_size > 0:
 
     response = client.upload_part(
         Bucket='examplebucket-1250000000',
-        Key=‘exampleobject’,
+        Key='exampleobject',
         Body=body,
         PartNumber=part_number,
         UploadId=upload_id,
@@ -145,17 +146,17 @@ while left_size > 0:
     part_list.append({'ETag' : etag, 'PartNumber' : part_number})
 ```
 
-#### 5. Complete multipart upload
+#### 5. Complete the multipart upload
 
-After all parts are successfully uploaded, you need to complete the multipart upload. The CRC64 returned by COS and the CRC64 of the local object can be used for comparison and verification.
+After all parts are successfully uploaded, you need to complete the multipart upload. Then, you can verify the CRC64 value returned by COS against that of the local object.
 
 ```python
-# Complete the multipart upload
+#Complete the multipart upload
 response = client.complete_multipart_upload(
-    Bucket='examplebucket-1250000000',      # Replace with your own bucket name, examplebucket is a sample bucket, and 1250000000 is a sample APPID
-    Key=‘exampleobject’,             #Key value of the object 
+    Bucket='examplebucket-1250000000',  #Replace with your own bucket name and APPID
+    Key=‘exampleobject’,             #Key value of the object
     UploadId=upload_id,
-    MultipartUpload={       #Requires one-to-one correspondence between ETag and PartNumber for each part
+    MultipartUpload={       #Require one-to-one correspondence between ETag and PartNumber for each part
         'Part' : part_list    
     },
 )
