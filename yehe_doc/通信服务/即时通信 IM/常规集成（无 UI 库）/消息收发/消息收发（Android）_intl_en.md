@@ -10,8 +10,8 @@ IM messages can also be classified by content into text messages, custom (signal
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| Text message | TextMessage | This is a common text message. Sensitive words in text messages will be filtered out by the IM service. If a message containing sensitive words is sent, the 80001 error code is returned. |
-| Custom message | CustomMessage | This is a section of the binary buffer, which is often used to transfer custom signaling in your app. Its content is not filtered for sensitive words. |
+| Text message | TextElem | This is a common text message. Sensitive words in text messages will be filtered out by the IM service. If a message containing sensitive words is sent, the 80001 error code is returned. |
+| Custom message | CustomElem | This is a section of the binary buffer, which is often used to transfer custom signaling in your app. Its content is not filtered for sensitive words. |
 | Image message | ImageElem | When the IM SDK sends an original image, it automatically generates two smaller images of different sizes. The three images are called the original image, large image, and thumbnail. |
 | Video message | VideoElem | A video message contains a video file and a thumbnail. |
 | Voice message | SoundElem | Voice messages can display a red dot upon playback. |

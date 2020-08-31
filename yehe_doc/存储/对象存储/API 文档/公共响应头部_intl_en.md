@@ -23,7 +23,7 @@ This document describes common response headers that may be used in API requests
    <tr>
       <td>Connection</td>
       <td>Indicates whether the network connection will be turned off after the response is complete, defined in RFC 2616. Enumerated values: `keep-alive`, `close`.</td>
-      <td>Enum</td>
+      <td>enum</td>
    </tr>
    <tr>
       <td>Date</td>

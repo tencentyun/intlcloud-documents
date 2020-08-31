@@ -8,7 +8,7 @@ CFS is billed hourly based on the peak storage usage for the hour.
 As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills.
 
 ### Which access protocols are supported by CFS?
-NFS v3.0/v4.0 and CIFS/SMB. CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
+NFS v3.0/v4.0 and CIFS/SMB2.0/SMB3.0. CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
 
 As clients on Windows and Linux 3.10 and its previous kernel version (e.g., CentOS 6.\*) are incompatible with NFS v4.0, they cannot work normally after mount. Please use NFS v3.0 instead.
 
