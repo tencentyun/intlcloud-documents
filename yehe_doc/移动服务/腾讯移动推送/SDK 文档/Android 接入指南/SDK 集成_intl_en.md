@@ -152,7 +152,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
             <intent-filter>
                 <data
                     android:scheme="tpns"
-                    android:host="${applicationId}"/>
+                    android:host="Application package name"/>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
