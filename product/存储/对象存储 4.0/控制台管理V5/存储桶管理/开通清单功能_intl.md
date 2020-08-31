@@ -26,8 +26,8 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
  - **Filter Prefix (Optional)**: filters objects only for those keys starting with the specified prefix. If this field is left empty, no keys will be filtered.
  - **Filter time (Optional)**: filters only objects which are modified after a specified time or within a specified time range. Default: `Not setting`.
  - **Inventory Encryption**: Select whether to encrypt the inventory on the server. Options include:
-   - No encryption: The inventory is not encrypted. This is the default value.
-   - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
+    - No encryption: The inventory is not encrypted. This is the default value.
+    - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
  - **Inventory Information**: Select the object information to be included in the inventory report. Options include object size, storage class, ETag, cross-region replication status, multipart upload status, and last modified date. If you do not make a selection, all items are selected by default.
 > An entity tag (ETag) is a hash of the object. It only reflects changes to the object's content but not the object's metadata. It may or may not be an MD5 digest of the object data. This depends on how the object was created and encrypted.
 5. After confirming that the configuration information is correct, click **Save**.
