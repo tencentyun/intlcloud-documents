@@ -127,7 +127,7 @@ The object ACL in this example describes the full control permission of the obje
 
 In CAM, you can grant different permissions to different types of users under the root account.
 
-The biggest difference between a user policy and a bucket policy is that the user policy only describes the effect, the action, the resource, and the condition (optional), and does not describe the identity (principal). Therefore, after you write a user policy, associate it with a sub-user, a user group or a role. Besides, the user policy does not support granting anonymous users the permissions to access resources and perform operations.
+The biggest difference between a user policy and a bucket policy is that the user policy only describes effect, action, resource, and condition (optional), but not principal. Therefore, you have to write a user policy first, and then associate it manually with a sub-user, a user group or a role. Besides, the user policy cannot grant anonymous users access to resources or operations.
 
 You can [associate a preset policy for authorization](https://intl.cloud.tencent.com/document/product/598/10602), or [write a user policy](https://intl.cloud.tencent.com/document/product/598/10603) and associate it with a specified identity to manage access for your users.
 
