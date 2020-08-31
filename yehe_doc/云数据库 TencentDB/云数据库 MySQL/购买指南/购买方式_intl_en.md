@@ -17,7 +17,7 @@ To make a purchase, you need to verify your identity first. For more information
 2. You will be returned to the instance list after purchase. The instance is in the "Delivering" status. You can initialize the instance after around 5-10 minutes and when the status is changed to "Uninitialized".
 
 ## Purchasing via API
-For more information on how to purchase a TencentDB instance via API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15871).
+For more information on how to purchase a TencentDB instance via API, please see [CreateDBInstance](https://intl.cloud.tencent.com/document/product/236/15865).
 
 
 ## Subsequent Operations

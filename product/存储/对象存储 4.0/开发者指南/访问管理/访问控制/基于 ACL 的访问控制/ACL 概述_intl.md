@@ -5,7 +5,7 @@ An ACL is described in the XML language. It is a list of specified grantees and 
 >Here are some limits on the use of ACLs associated with resources.
 >- The resource owner always has FULL_CONTROL permission on the resource, which cannot be revoked or modified.
 >- An anonymous user cannot be the resource owner. In this case, the object owner is the bucket owner (Tencent Cloud root account).
->- Permissions can only be granted to Tencent Cloud CAM root accounts or anonymous users, rather than sub-users or user groups.
+>- Permissions can only be granted to Tencent Cloud CAM root accounts or preset user groups, but not custom user groups. Besides, it's not recommended to grant permissions to any sub-accounts.
 >- No conditions should be imposed on the permissions.
 >- "Deny" permission is not supported.
 >- A resource can have up to 100 ACL policies.

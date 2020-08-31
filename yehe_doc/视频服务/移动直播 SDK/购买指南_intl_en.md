@@ -1,6 +1,3 @@
-# Purchase Guide
-
-
 
 You can purchase the Tencent Cloud Mobile Live Video Broadcasting (MLVB) SDK independently or together with other cloud services.
 

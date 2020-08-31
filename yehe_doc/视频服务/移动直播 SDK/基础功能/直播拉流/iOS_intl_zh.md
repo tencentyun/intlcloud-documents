@@ -174,9 +174,6 @@ NSString* flvUrl = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
   [_player setCacheParams:CACHE_TIME_FAST maxTime:CACHE_TIME_SMOOTH];
   ```
 
->说明：
->
->更多关于卡顿和延迟优化的技术知识，请参见 [如何优化视频卡顿?](https://cloud.tencent.com/document/product/454/7946)
 
 ## SDK事件监听
 

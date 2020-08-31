@@ -1,8 +1,4 @@
-﻿### Free Demo
-
-
-
-
+﻿
 ## Basic Edition Demo
 The following table describes the SDK demo provided for developers to give them an overall view of the Mobile Live Video Broadcasting (MLVB) features. You can debug the demo based on your project requirements to quickly implement mobile client push of your products.
 

@@ -17,16 +17,17 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
 ![](https://main.qcloudimg.com/raw/6669721856e7a2d7ae6e0477b5c739c9.png)
  - **Inventory Name**: Name the output inventory report.
  - **Destination Prefix (Optional)**: Enter the prefix selected for the destination bucket, which can group the inventory files in a public location. The default value is used initially.
- - **Destination Bucket **: This is the bucket where the inventory is stored. The default value is the source bucket. The destination bucket must be in the same region as the source bucket.
- - ** Status**: You can choose to enable or disable the inventory.
+ - **Destination Bucket**: This is the bucket where the inventory is stored. The default value is the source bucket. The destination bucket must be in the same region as the source bucket.
+ - **Status**: You can choose to enable or disable the inventory.
  - **Advanced Settings**: You can configure more inventory information in the advanced settings. If you leave them alone, all the default settings will be used:
-   - **Output Format**: The default value is CSV format.
-   - **Object Version**: Select whether to include all object versions or only the current version in the inventory. If you do not make a selection, only the current version is included by default.
-   - **Generation Cycle**: Select whether to export the inventory daily or weekly. If you do not make a selection, the report is exported daily by default.
-   - **Filter**: Add a prefix to the filter to only inventory the objects whose names begin with the same string. If you do not enter a prefix, no filter is used by default.
-   - **Inventory Encryption**: Select whether to encrypt the inventory on the server. Options include:
-     - No encryption: The inventory is not encrypted. This is the default value.
-     - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
-   - **Inventory Information**: Select the object information to be included in the inventory report. Options include object size, storage class, ETag, cross-region replication status, multipart upload status, and last modified date. If you do not make a selection, all items are selected by default.
+ - **Output Format**: The default value is CSV format.
+ - **Object Version**: Select whether to include all object versions or only the current version in the inventory. If you do not make a selection, only the current version is included by default.
+ - **Generation Cycle**: Select whether to export the inventory daily or weekly. If you do not make a selection, the report is exported daily by default.
+ - **Filter Prefix (Optional)**: filters objects only for those keys starting with the specified prefix. If this field is left empty, no keys will be filtered.
+ - **Filter time (Optional)**: filters only objects which are modified after a specified time or within a specified time range. Default: `Not setting`.
+ - **Inventory Encryption**: Select whether to encrypt the inventory on the server. Options include:
+    - No encryption: The inventory is not encrypted. This is the default value.
+    - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
+ - **Inventory Information**: Select the object information to be included in the inventory report. Options include object size, storage class, ETag, cross-region replication status, multipart upload status, and last modified date. If you do not make a selection, all items are selected by default.
 > An entity tag (ETag) is a hash of the object. It only reflects changes to the object's content but not the object's metadata. It may or may not be an MD5 digest of the object data. This depends on how the object was created and encrypted.
 5. After confirming that the configuration information is correct, click **Save**.
