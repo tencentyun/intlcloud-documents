@@ -1,5 +1,4 @@
-﻿### Feature Description
-
+﻿
 
 
 Mobile Live Video Broadcasting (MLVB) currently provides the simple and easy-to-use **basic edition SDK**. You can purchase the MLVB basic edition license to use livestreaming features, including livestream push, livestream playback, and basic beauty effects (such as skin brightening and smoothing). In the near future, Tencent Cloud will launch the **enterprise edition SDK** to provide an even better livestreaming experience.

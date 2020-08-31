@@ -1,6 +1,4 @@
-﻿### Product Overview
-
-
+﻿
 Mobile Live Video Broadcasting (MLVB) is an extension of LVB in mobile scenarios. The MLVB SDK can help you quickly implement livestreaming on mobile phones by using the mobile client RTMP SDK quick integration solution. If you use the MLVB SDK together with LVB, Video on Demand (VOD), or Instant Messaging (IM), the MLVB SDK provides an excellent unified cloud service solution.
 
 

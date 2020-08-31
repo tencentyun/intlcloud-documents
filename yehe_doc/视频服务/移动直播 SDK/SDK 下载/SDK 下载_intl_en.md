@@ -1,4 +1,4 @@
-﻿### SDK Download
+﻿
 <h2 id="Smart">MLVB Basic Edition SDK</h2>
 The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, livestreaming push (`V2TXLivePusher`) and livestreaming playback (`V2TXLivePlayer`). The incremental size of the app installation package provided by Tencent Cloud is small. Therefore, you can quickly implement livestreaming on mobile clients at minimal cost. The following table describes the download addresses of the iOS and Android installation packages.
 
