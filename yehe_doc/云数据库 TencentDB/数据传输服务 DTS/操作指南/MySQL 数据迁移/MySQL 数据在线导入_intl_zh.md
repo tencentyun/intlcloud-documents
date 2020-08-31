@@ -15,7 +15,7 @@
 ### 源实例 super 权限
 大部分场景对源实例无 super 权限要求，仅以下场景中需具有源实例的 super 权限。
 - 用户在“数据一致性检测”中选择了“全量检测”校验模式。
-- 若在 binlog 同步过程中，用户在源实例创建了 Event，且这个 Event 指定了非用于 DTS 数据迁移的账号做 DEFINER，此时不具备 super 权限将会报错。
+- 若在 binlog 同步过程中，用户在源实例创建了 Event，且这个 Event 指定了非用于 DTS 数据迁移的帐号做 DEFINER，此时不具备 super 权限将会报错。
 
 ### 支持迁移的数据库
 - 支持基础网络、VPC 网络的 CVM 自建 MySQL 数据库迁移至 TencentDB 实例。
@@ -26,9 +26,9 @@
 1. 检查目标 TencentDB 实例是否有同名库表，避免冲突。
 2. 检查数据库版本，可支持 MySQL 5.1/5.5/5.6/5.7 版本迁移上云；由于目前腾讯云 TencentDB 已不再支持 MySQL 5.1 版本，因此我们推荐您在迁移前完成 MySQL 5.1 升级到 MySQL 5.5，然后再迁移至 TencentDB for MySQL 5.5。当然您也可以选择使用 DTS 数据迁移工具直接从本地 MySQL 5.1 迁移至腾讯云 TencentDB for MySQL 5.5。
 3. 检查目标 TencentDB 实例容量必须大于源实例。
-4. 在源 MySQL 数据库上创建迁移账号（若有已授权可用于数据迁移的账号，也可不创建）。
+4. 在源 MySQL 数据库上创建迁移帐号（若有已授权可用于数据迁移的帐号，也可不创建）。
 ```  	
-        GRANT ALL PRIVILEGES ON *.* TO "迁移账号"@"%" IDENTIFIED BY "迁移密码";
+        GRANT ALL PRIVILEGES ON *.* TO "迁移帐号"@"%" IDENTIFIED BY "迁移密码";
     		FLUSH PRIVILEGES;	
 ```
 5. 确认源库 MySQL 变量。
@@ -45,7 +45,7 @@
             log_slave_updates = 1           
 ```
 6. 修改变量值。
-    a.  修改源库 MySQL 配置文件`my.cnf`，需重启：
+  a.  修改源库 MySQL 配置文件`my.cnf`，需重启：
 ```
   	        log-bin=[自定义binlog文件名]
 ```
@@ -74,10 +74,10 @@
 
 | 源库类型 | 说明 |
 |---------|---------|
-| 有公网 IP 的 MySQL | 能够通过公网 IP 访问的 MySQL 数据库，所需信息：<li> MySQL 主机地址<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码	 |
-| 云服务器上的自建 MySQL | 支持基础网络和私有网络两种环境下基于 CVM 的自建 MySQL 数据库，使用时需要指定 CVM 的实例 ID，所需信息：<li>所属地域：CVM 自建 MySQL，均可通过腾讯云内网迁移到云数据库 MySQL<li>云服务器实例 ID<li>MySQL 端口<li> MySQL 账号<li>MySQL 密码			 |
-| 专线接入腾讯云的 MySQL | 本地 IDC 自建 MySQL 使用 [专线接入 DC](https://intl.cloud.tencent.com/zh/product/dc) 服务与腾讯云相连接后，可使用DTS数据迁移至腾讯云。所需信息：<li>专线网关：接入腾讯云的数据库服务器所使用的专线网关，了解 [专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li>MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码 |
-| VPN 接入的 MySQL | 本地 IDC 自建 MySQL 通过 [腾讯云 VPN 连接服务](https://intl.cloud.tencent.com/zh/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<li>所属地域：目前仅支持同地域内的 VPN 服务<li>VPN 类型：云 VPN 服务或云服务器上自建 VPN <li>VPN 网关：仅云 VPN 服务需要补充 VPN 网关信息，了解 [VPN]<li> 私有网络：VPN 服务所属的私有网络 <li> MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 账号<li> MySQL 密码	 |
+| 有公网 IP 的 MySQL | 能够通过公网 IP 访问的 MySQL 数据库，所需信息：<li> MySQL 主机地址<li> MySQL 端口<li> MySQL 帐号<li> MySQL 密码	 |
+| 云服务器上的自建 MySQL | 支持基础网络和私有网络两种环境下基于 CVM 的自建 MySQL 数据库，使用时需要指定 CVM 的实例 ID，所需信息：<li>所属地域：CVM 自建 MySQL，均可通过腾讯云内网迁移到云数据库 MySQL<li>云服务器实例 ID<li>MySQL 端口<li> MySQL 帐号<li>MySQL 密码			 |
+| 专线接入腾讯云的 MySQL | 本地 IDC 自建 MySQL 使用 [专线接入 DC](https://intl.cloud.tencent.com/zh/product/dc) 服务与腾讯云相连接后，可使用DTS数据迁移至腾讯云。所需信息：<li>专线网关：接入腾讯云的数据库服务器所使用的专线网关，了解 [专线网关](https://intl.cloud.tencent.com/document/product/216/19256)<li>私有网络：专线网关所属的私有网络<li>MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL帐号<li> MySQL 密码 |
+| VPN 接入的 MySQL | 本地 IDC 自建 MySQL 通过 [腾讯云 VPN 连接服务](https://intl.cloud.tencent.com/zh/product/vpn) 或云服务器上自建 VPN 服务接入与腾讯云相连接后，可使用 DTS 数据迁移至腾讯云。所需信息：<li>所属地域：目前仅支持同地域内的 VPN 服务<li>VPN 类型：云 VPN 服务或云服务器上自建 VPN <li>VPN 网关：仅云 VPN 服务需要补充 VPN 网关信息，了解 [VPN]<li> 私有网络：VPN 服务所属的私有网络 <li> MySQL 主机地址：IDC 内的 MySQL 主机地址，DTS 数据迁移将通过专线网关映射 IP 后访问<li> MySQL 端口<li> MySQL 帐号<li> MySQL 密码	 |
 
 #### c. 目标库设置
 选择目标数据库实例，并输入目标库上的帐号及密码。
@@ -90,15 +90,14 @@
 
 **数据迁移**：将选中数据库中的数据导出，然后在 TencentDB for MySQL 中导入。
 **增量同步**：在进行数据导出导入后，设置 TencentDB for MySQL 为源库的备库，进行主备增量同步。
-**覆盖 root 账号**：因 root 账号将用于云数据库安全效验，若源库 root 账号不存在，会对后续使用 TencentDB 造成不便。因此在整实例迁移时，需指定是否使用源库 root 账号覆盖目标库 root 账号。如需使用源库 root 账号或目标库未设置 root，则选【是】，如需保留目标库的 root 账号，则选【否】。
+**覆盖 root 帐号**：因 root 帐号将用于云数据库安全效验，若源库 root 帐号不存在，会对后续使用 TencentDB 造成不便。因此在整实例迁移时，需指定是否使用源库 root 帐号覆盖目标库 root 帐号。如需使用源库 root 帐号或目标库未设置 root，则选【是】，如需保留目标库的 root 帐号，则选【否】。
 **是否只读**：选择只读后，在数据迁移过程中，从源数据库迁移的数据在目标数据库只能读取（Read Only），无法更改，直至用户单击完成迁移任务。
-![](https://main.qcloudimg.com/raw/574d4f59462d52b70d2071284dbcce4a.png)
+
 
 ### 4. 检测数据一致性
 选择数据检测类型（可选择全部检测、部分检测或不检测）。
 >!选择部分检测选项时，需填写检测比例。
 >
-![](https://main.qcloudimg.com/raw/6b104c24804e410b3ef6a8bb12fe155a.png)
 
 ### 5. 校验迁移任务信息
  在创建完迁移任务后，您需要对迁移任务信息进行校验，单击【下一步：校验任务】进行校验，只有所有校验项通过后才能启动迁移任务，单击【启动任务】即可。
@@ -108,7 +107,6 @@
  - 警告：表示校验不通过，迁移过程中或迁移后可能影响数据库正常运行但不影响迁移任务的执行。
  - 失败：表示校验不通过，无法进行迁移。如果校验失败，请根据出错的校验项，检查并修改迁移任务信息，然后重试校验。失败原因可单击【查看详情】查看“校验详情”。
 
-![](https://main.qcloudimg.com/raw/a884ae48b08083d1a60e267d01f7124b.png)
 
 ### 6. 启动迁移
 校验通过后，在迁移任务列表单击【立即启动】立即开始迁移数据。需要注意的是，如果您设定了迁移任务的定时时间，则迁移任务会在设定的时间开始排队并执行，如果没有设置定时任务，则迁移任务会立即执行。
@@ -129,11 +127,10 @@
 3. 迁移单独的表时，需保证所有表外键依赖的表必须被迁移。
 
 在迁移过程中，如果您需要撤销迁移，可以单击【撤销】。
-![](https://main.qcloudimg.com/raw/1404b46bdbe53bdd83201bad3ae39af9.png)
 
 
 ### 9. 完成迁移
 >!当迁移处于“未结束”状态时，迁移任务将一直进行，数据持续同步。
 
 当迁移进度达到100%时，可在单击右侧【完成】，完成迁移任务。完成后效果如下：
-![](https://main.qcloudimg.com/raw/a539d58244ae7ffcbdc367b655fd1738.png)
+
