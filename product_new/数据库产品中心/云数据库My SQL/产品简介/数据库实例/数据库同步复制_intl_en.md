@@ -1,7 +1,7 @@
 Database instance replication means to sync data by configuring one or more backup databases for the server in order to distribute the data in MySQL to multiple systems. TencentDB for MySQL supports three data replication modes:
 
 >
->
+>?
 >- "Master" refers to the master database instance, while "Slave" the backup database instance.
 >- Currently, MySQL v5.6, v5.7 and v8.0 support three replication modes: async, semi-sync, and strong sync. Only async mode is available in MySQL v5.5.
 
