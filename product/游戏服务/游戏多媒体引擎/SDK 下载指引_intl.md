@@ -4,6 +4,10 @@ Thank you for using [Tencent Cloud Game Multimedia Engine (GME) SDK](https://int
 ## Update History
 To make it easier for developers to integrate GME products, we recommended that developers check the [Update History](https://intl.cloud.tencent.com/document/product/607/11904) before downloading the SDK.
 
+## Download and Use
+
+After downloading SDK and DEMO, if you have any problems with the use, see [Download and Use](https://intl.cloud.tencent.com/document/product/607/30256). You can also [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
+
 ## Version Updates
 The v2.6.0 beta is updated as follows:
 
