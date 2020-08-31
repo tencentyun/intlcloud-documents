@@ -22,6 +22,6 @@ Elastic cloud disks can be terminated with the following methods:
 
 >When the cloud disk is terminated, all data on the cloud disk will also be deleted, and cannot be restored. Please note that cloud disks that have been terminated cannot be recovered. 
 >
-3. In the **Terminate Cloud Disk** pop-up box, click **Confirm** to complete the termination.
+3. In the **Terminate Cloud Disk** pop-up box, Click **Submit** to complete the termination.
  The target cloud disk will no longer be billed. It is **permanently terminated and cannot be recovered**.
 
