@@ -71,7 +71,7 @@ If you don't explicitly grant access to (allow) a resource, the access is implic
 
 ### Specifying an Action
 
-COS defines COS actions that you can specify in a policy. The specified actions are just like initiation of API requests.
+COS defines actions that you can specify in a policy. The actions are exactly the same as the COS API operations. The following lists only part of the actions on buckets and objects. For more information, see [Operation List]( https://intl.cloud.tencent.com/document/product/436/10111).
 
 #### Actions on Buckets
 
