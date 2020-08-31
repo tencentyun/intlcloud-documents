@@ -22,7 +22,7 @@ Namespace=QCE/COS
 
 ### Storage metrics
 
-| Parameter | Metric Name | Description | Unit | Dimension |
+| Parameter | Metric Name | Unit | Dimension |
 | ---------------------- | ----------------- | ---- | ---------------------- |
 | StdStorage | STANDARD - storage space | MB | appid and bucket |
 | SiaStorage | STANDARD_IA - storage space | MB | appid and bucket |
