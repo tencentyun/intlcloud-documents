@@ -12,11 +12,11 @@ Namespace=QCE/TXMR_PRESTO
 | EmrPrestoOverviewPresto<br/>PrestoMNodesTotal                | Number of nodes_Total                               | Count       | Total number of nodes         | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>PrestoMNodesFailed               | Number of nodes_Failed                              | Count       | Number of failed nodes       | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | Count       | Total number of running queries | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of waiting queries | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of failed queries     | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of aborted queries     | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Completedqueries | Query frequency_CompletedQueries                    | Queries/min   | Total number of canceled queries     | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Startedqueries | Query frequency_StartedQueries                      | Queries/min   | Total number of completed queries     | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of failed queries | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of aborted queries     | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of canceled queries     | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Completedqueries | Query frequency_CompletedQueries                    | Queries/min   | Total number of completed queries     | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Startedqueries | Query frequency_StartedQueries                      | Queries/min   | Total number of started queries     | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>MDataOneMinuteRate<br>Inputdatasizeoneminute | Volume of input/output data per minute_InputDataSizeOneMinute  | GB/min   | Data input rate       | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>MDataOneMinuteRate<br>Outputdatasizeoneminute | Volume of input/output data per minute_OutputDataSizeOneMinute | GB/min   | Data output rate        | id4prestooverview |
 
@@ -28,11 +28,11 @@ Namespace=QCE/TXMR_PRESTO
 | EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesTotal   | Number of nodes_Total                               | Count       | Total number of nodes         | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesFailed  | Number of nodes_Failed                              | Count       | Number of failed nodes       | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | Count       | Total number of running queries | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of waiting queries | id4prestooverview, <br>host4prestooverview  |
-| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of failed queries     | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of aborted queries     | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Completedqueries | Query frequency_CompletedQueries                    | Queries/min   | Total number of canceled queries     | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute Startedqueries | Query frequency_StartedQueries                      | Queries/min   | Total number of completed queries     | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of failed queries | id4prestooverview, <br>host4prestooverview  |
+| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of aborted queries     | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of canceled queries     | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Completedqueries | Query frequency_CompletedQueries                    | Queries/min   | Total number of completed queries     | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute Startedqueries | Query frequency_StartedQueries                      | Queries/min   | Total number of started queries     | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>MDataOneMinuteRate<br>Inputdatasizeoneminute | Volume of input/output data per minute_InputDataSizeOneMinute  | GB/min   | Data input rate       | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>MDataOneMinuteRate<br>Outputdatasizeoneminute | Volume of input/output data per minute_OutputDataSizeOneMinute | GB/min   | Data output rate       | id4prestooverview, <br/>host4prestooverview |
 
@@ -100,20 +100,20 @@ Namespace=QCE/TXMR_PRESTO
 | PrestoMOsFdCount<br>Maxfiledescriptorcount  | Number of file descriptors_MaxFileDescriptorCount  | Count       | Maximum number of file descriptors                        | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMOsFdCount<br>Openfiledescriptorcount | Number of file descriptors_OpenFileDescriptorCount | Count       | Number of opened file descriptors                      | host4prestoprestocoordinator, <br/>id4prestoprestocoordinator |
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | :----------------------------- | :--------------------------- | :--------------------------- | :----------------------------------------------------- |
 | Instances.N.Dimensions.0.Name  | id4prestooverview            | Dimension name of the EMR instance ID       | String-type dimension name, such as id4prestooverview            |
-| Instances.N.Dimensions.0.Value | id4prestooverview            | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222              |
+| Instances.N.Dimensions.0.Value | id4prestooverview  | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222                |
 | Instances.N.Dimensions.1.Name  | host4prestooverview          | Dimension name of the node IP in the EMR instance | String-type dimension name, such as host4prestooverview           |
 | Instances.N.Dimensions.1.Value | host4prestooverview          | Specific node IP in the EMR instance        | Specific node IP, such as 1.1.1.1                        |
 | Instances.N.Dimensions.0.Name  | id4prestoprestoworker        | Dimension name of the EMR instance ID       | String-type dimension name, such as id4prestoprestoworker        |
-| Instances.N.Dimensions.0.Value | id4prestoprestoworker        | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222              |
+| Instances.N.Dimensions.0.Value | id4prestoprestoworker        | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222                |
 | Instances.N.Dimensions.1.Name  | host4prestoprestoworker      | Dimension name of the node IP in the EMR instance | String-type dimension name, such as host4prestoprestoworker      |
 | Instances.N.Dimensions.1.Value | host4prestoprestoworker      | Specific node IP in the EMR instance        | Specific node IP, such as 1.1.1.1                        |
 | Instances.N.Dimensions.0.Name  | id4prestoprestocoordinator   | Dimension name of the EMR instance ID       | String-type dimension name, such as id27prestoprestocoordinator  |
-| Instances.N.Dimensions.0.Value | id4prestoprestocoordinator   | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222              |
+| Instances.N.Dimensions.0.Value | id4prestoprestocoordinator   | Specific EMR instance ID              | Specific EMR instance ID, such as emr-mm8bs222                |
 | Instances.N.Dimensions.1.Name  | host4prestoprestocoordinator | Dimension name of the node IP in the EMR instance | String-type dimension name, such as host4prestoprestocoordinator |
 | Instances.N.Dimensions.1.Value | host4prestoprestocoordinator | Specific node IP in the EMR instance        | Specific node IP, such as 1.1.1.1                        |
 
@@ -148,4 +148,3 @@ EMR (Presto) supports querying monitoring data based on the following four combi
 &Instances.N.Dimensions.0.Value=EMR instance ID
 &Instances.N.Dimensions.1.Name=host4prestoprestocoordinator
 &Instances.N.Dimensions.1.Value=Specific node IP in the EMR instance
-
