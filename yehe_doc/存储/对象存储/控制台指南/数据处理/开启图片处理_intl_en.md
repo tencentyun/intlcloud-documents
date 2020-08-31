@@ -6,7 +6,7 @@ This document describes how to use image processing in the COS Console with the 
 - **Using an image style**: you can save different processing results as image styles, which can be used to standardize your image processing. Such a style is an assembled template designed to process parameters in real time when an image is downloaded.
 
 >
-> - This image processing feature is only supported for Public Cloud regions in mainland China.
+> - This image processing feature is only supported for Public Cloud regions in China.
 > - Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## Adding URL Parameters
