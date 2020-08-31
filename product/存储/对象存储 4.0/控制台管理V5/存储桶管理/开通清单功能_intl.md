@@ -4,6 +4,7 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
 
 > - You can configure multiple inventory tasks in one bucket.
 > - Such tasks do not directly read the object content during their execution; instead, they only scan the attribute information such as object metadata.
+> - Currently, the inventory feature is not available in Nanjing or Finance Cloud regions.
 
 ## Steps
 

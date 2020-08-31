@@ -1,6 +1,9 @@
 ## Introduction to RAID
 RAID (Redundant Array of Independent Disks) combines multiple disks into a disk array in order to improve data read and write performance and reliability. Meanwhile, the operating system will use the disk array as a single hard disk. RAID has multiple levels at present. The following will introduce RAID0, RAID1, RAID01 and RAID10. Depending on the level of RAID, the disk array offers improvement benefits in data integration, fault tolerance, and throughput or capacity compared with a large hard disk with considerable capacity.
->We recommend you use partitions of the same size when creating RAID 1, RAID 01, and RAID 10 for minimal waste of disk capacity.
+
+>Note:
+>- please [renew](https://intl.cloud.tencent.com/document/product/362/36874) your elastic cloud disk that is about expire to avoid impact on your RAID array due to forced isolation of the disk.
+>- We recommend you use partitions of the same size when creating RAID 1, RAID 01, and RAID 10 for minimal waste of disk capacity.
 
  The following is a comparison of different RAID levels:
 <table>
