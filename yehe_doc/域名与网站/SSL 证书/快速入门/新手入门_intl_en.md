@@ -14,19 +14,19 @@ The following figure shows the entire process of purchasing a certificate:
 ### Step 2: submit information for verification
  #### Domain name ownership verification
 For DV SSL certificates, 3 verification methods are supported: automatic DNS verification, manual DNS verification, and file verification.
- >!If the domain name entered is added successfully to [Tencent Cloud DNS](https://console.cloud.tencent.com/cns), it will support automatic DNS verification.
+ >!If the domain name entered is added successfully to [Tencent Cloud DNS](https://console.cloud.tencent.com/cns), automatic DNS verification is supported.
 
 #### Organization verification
-For OV and EV SSL certificates, you need to submit the materials, upload the confirmation letter, and wait for review. A reviewer will call you to verify the information and send an email asking you to confirm the domain name information. For more information, see [Material Submission for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
+For OV and EV SSL certificates, you need to submit the required materials, upload the confirmation letter, and wait for review. A reviewer will call you to verify the information and send an email asking you to confirm the domain name information. For more information, see [Material Submission for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
 
-### Step 3: issue a certificate
-After your certificate order passes the review, the CA will issue a certificate to you.
+### Step 3: wait for the certificate to be issued
+After your certificate order passes the review, the CA will issue your certificate.
 - **OV and EV certificates**: it takes **3-5 business days** to issue an OV certificate and **5-7 business days** to issue an EV certificate.
 - **DV certificates**: it takes between **10 minutes and 24 hours** to issue a DV certificate.
 
-### Step 4: install a certificate
-1. Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl). The **Certificate Management** page is displayed.
-2. In the row of the certificate you want to install, click **Download**.
+### Step 4: install the certificate
+1. Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), and the **Certificate Management** page will be displayed.
+2. Find the row of the certificate you want to install, click **Download**.
 3. After downloading the certificate, decompress the certificate and install it on your server. Click [here](https://intl.cloud.tencent.com/document/product/1007/30173) to see installation details.
 
 
