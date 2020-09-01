@@ -11,7 +11,7 @@ This document describes how to implement basic duet features.
 ## UI Construction
 
 In `activity_video_record.xml` of the shoot page `TCVideoRecordActivity`, create two views: the left one is the shoot page, and the right one is the playback page.
-![](https://main.qcloudimg.com/raw/db388cf497615ac5f1ab58238a765e93.png)
+![](https://main.qcloudimg.com/raw/692dc0e49f7d41f746c528c703cbc6b9.png)
 
 ## Sample Code
 

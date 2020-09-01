@@ -11,7 +11,7 @@
 ## 界面搭建
 
 在录制界面 TCVideoRecordActivity 的 activity_video_record.xml 中创建两个 view，左半边是录制界面，右半边是播放界面。
-![](https://main.qcloudimg.com/raw/db388cf497615ac5f1ab58238a765e93.png)
+![](https://main.qcloudimg.com/raw/692dc0e49f7d41f746c528c703cbc6b9.png)
 
 ## 代码部分
 
