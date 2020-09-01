@@ -1,0 +1,1 @@
+暂无开放申请，如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。

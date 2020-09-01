@@ -4,7 +4,8 @@
 ## 操作步骤
 创建 Custom Runtime 云函数前，需要创建运行时引导文件 [bootstrap](#bootstrap) 和 [函数处理文件](#hsfile)。
 
-### 创建 bootstrap 文件<span id="bootstrap"></span>
+<span id="bootstrap"></span>
+### 创建 bootstrap 文件
 bootstrap 是运行时入口引导程序文件，Custom Runtime 加载函数时固定检索 bootstrap 同名文件，并执行该程序来启动 Custom Runtime 运行时。Custom Runtime 支持任意语言及版本开发运行函数，主要基于 bootstrap 引导程序由开发者自定义实现。其中，bootstrap 需具备以下条件：
  - 需具有可执行权限。
  - 能够在 SCF 系统环境（CentOS 7.6）中运行。
@@ -49,7 +50,7 @@ curl -d " " -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/in
 - **初始化日志及异常**
 初始化阶段日志及异常信息，请参见 [日志及异常](https://intl.cloud.tencent.com/document/product/583/38129#.E6.97.A5.E5.BF.97.E5.8F.8A.E5.BC.82.E5.B8.B8)。
 - **调用阶段**
-关于调用阶段详细信息，请参见 [函数调用](https://intl.cloud.tencent.com/document/product/583/38129#.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8)。
+关于调用阶段详细信息，请参见 [函数调用](https://intl.cloud.tencent.com/document/product/583/38129)。
  1. 完成初始化后，进入循环的调用阶段，监听事件并调用函数处理。示例代码如下：
 ```
 # 长轮询获取事件
@@ -77,8 +78,8 @@ curl -d " " -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/in
 - **调用日志及异常**
 调用阶段日志及异常信息，请参见 [日志及异常](https://intl.cloud.tencent.com/document/product/583/38129#.E6.97.A5.E5.BF.97.E5.8F.8A.E5.BC.82.E5.B8.B82)。
 
-
-### 创建函数处理文件<span id="hsfile"></span>
+<span id="hsfile"></span>
+### 创建函数处理文件
 >? 函数处理文件包含函数逻辑的具体实现，执行方式及参数可以通过运行时自定义实现。
 >
 在命令行终端创建 index.sh。
@@ -105,8 +106,8 @@ $ zip demo.zip index.sh bootstrap
   adding: bootstrap (deflated 46%)
 ```
 3. 部署包准备好后，可以通过 [SDK](#SDK) 或 [云函数控制台](#KZT) 来创建和发布函数。
-
-### 使用 SDK 创建及发布函数<span id="SDK"></span>
+<span id="SDK"></span>
+### 使用 SDK 创建及发布函数
 #### 创建函数<span id="creat"></span>
 执行以下命令，通过 SCF 的 Python SDK 创建名为 CustomRuntime-Bash 的函数。
 ```
