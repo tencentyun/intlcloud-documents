@@ -42,18 +42,14 @@ Yes. CLS does not restrict log sources. Logs are collected to CLS provided that 
 
 Yes, provided that these log topics are in the same region.
 
-### 服务器更换 IP 地址后，Loglistener 应该如何适配？
-- 若服务器通过机器标识绑定机器组，用户无需变更 Loglistener 配置。若服务器 IP 需要频繁变更，建议用户使用机器标识配置机器组。单击 [了解详情](https://intl.cloud.tencent.com/document/product/614/17412)。
-- 若服务器通过 IP 地址绑定机器组，用户需要完成以下配置变更：
- 2. Log in to the target server and modify the `/etc/loglistener.conf` file in the Loglistener installation directory (`/user/local` in this example):
-```go
+How do I modify the Loglistener configuration after the server IP address is changed?
+ - If the server is bound to the server group by server ID, there is no need to modify the Loglistener configuration. This method is recommended when the server IP frequently changes. For more information, see [Server Group Management]( https://intl.cloud.tencent.com/zh/document/product/614/17412).
+ - If the server is bound to the server group by server IP, modify the configuration as follows:
+i. Modify the /etc/loglistener.conf file in the Loglistener installation directory (/user/local in this example).
 vi /usr/local/loglistener-2.3.0/etc/loglistener.conf
-```
- 2. Press **i** to enter the edit mode.
- 3. 修改配置文件中 group_ip 部分，填入变更后的 IP 地址。
- 5. Press **Esc**, enter **:wq** and press **Enter** to save and close the file.
- In the installation directory, run the following command to restart LogListener.
-```go
- /etc/init.d/loglistenerd restart
-```
- 6. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou)，在左侧导航栏中，单击【机器组管理】，修改该服务器绑定的机器组配置，使用新 IP 替换原机器 IP 地址，单机【确定】。
+ii. Press **i** to enter the edit mode.
+iii. Enter the new IP address in the group_ip section of the configuration file.
+iv. Press **Esc**, enter **:wq**, and press **Enter** to save and exit the editor.
+v. Run the following command to restart Loglistener.
+/etc/init.d/loglistenerd restart
+vi. Log in to the [CLS Console](https://console.cloud.tencent.com/cls) and click **Server Group Management** on the left sidebar. Locate the server group to which the server binds and click **Modify** to enter the **Modify Server Group** page. Replace the old IP address with the new one, and click **OK**.
