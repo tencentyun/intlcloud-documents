@@ -1,0 +1,1 @@
+Currently, no application is allowed. If needed, please [contact sales](https://intl.cloud.tencent.com/contact-sales).

@@ -1,72 +1,60 @@
-CLS provides a wide variety of search features. You can search for logs in real time by search syntax and rules and get results within seconds, gaining insights into your business operations.
 
-## Starting Search
+##  Syntax Rule
 
-Log search is an important CLS feature. You can define the search criteria to search for hundreds of millions of log data rows. The steps are as follows:
+| Reserved Keyword    | Description                                                         |
+| :------------ | :----------------------------------------------------------- |
+| \_\_SOURCE\_\_    | The operator that specifies the IP address of a source whose logs you want to query, and wildcard is supported, such as `__SOURCE__:"127.0.0.*"` |
+| \_\_FILENAME\_\_  | The operator that specifies the file path from which you want to query logs, and wildcard is supported, such as `__FILENAME__:"/var/log/access.*"` |
+| AND           | The AND logical operator that displays a record if all the conditions separated by AND are TRUE, such as `level:ERROR AND pid:1234`                |
+| OR            | The OR logical operator that displays a record if any of the conditions separated by OR is TRUE, such as `level:ERROR OR level:WARNING`            |
+| NOT           | The NOT logical operator that displays a record if the condition(s) is NOT TRUE, such as `level:ERROR NOT pid:1234`                |
+| TO            | The range operator that matches results whose field(s) values are between the lower and upper bounds specified, such as `request_time:[0.1 TO 1.0]`            |
+| ""            | All characters in the double quotation mark are considered as a general phrase, such as `name:"john Smith"` |
+| :             | The operator that specifies the “key:value” search format, such as `level:ERROR`    |
+| *             | The wildcard character that replaces zero, single, or multiple random characters, such as `host:www.test*.com` |
+| ?             | The wildcard character that replaces a single character at a specific position, such as `host:www.te?t.com` |
+| ()            | The parentheses is used to group clauses to form sub queries and control the logic operations, such as `(ERROR OR WARNING) AND pid:1234` |
+| >             | The range operator that matches results whose field(s) values are greater than a specified number, such as `status:>400`             |
+| >=              | The range operator that matches results whose field(s) values are greater than or equal to a specified number, such as `status:>=400`             |
+| <             | The range operator that matches results whose field(s) values are less than a specified number, such as `status:<400`             |
+| <=             | The range operator that matches results whose field(s) values are less than or equal to a specified number, such as `status:<=400`             |
+| []            | The range query is inclusive of the upper and lower bounds, such as `age:[20 TO 30]`          |
+| {}            | The range query is exclusive of the upper and lower bounds, such as `age:{20 TO 30}`          |
+| \             | Escape character. An escaped character represents the literal meaning of the character, such as`url:\/images\/favicon.ico"` |
+| +             | The "+" logical operator (similar to AND) requires that the term after the "+" symbol exist. The term `+A` means `A` exist, such as `+level:ERROR +pid:1234` |
+| -             | The "-" logical operator (similar to NOT) excludes the object that contains the term after the "-" symbol. The term `-A` means `A` does not exist, such as `+level:ERROR -pid:1234 |
+| \|\|          | A valid substitute for the logical operator OR, such as `level:ERROR \|\| level:WARNING`          |
+| &&            | A valid substitute for the logical operator AND, such as `level:ERROR && pid:1234`              |
+| !             | A valid substitute for the logical operator NOT, such as `level:ERROR !pid:1234`                |
+| /             | A regular expression identifier in the format of/${regExp}/. For example, use `/[mb]oat/` to obtain search results containing `moat` or `boat` |
+| \_exists\_    | The operator that returns a result whose key value exists. For example, use `_exists_:userAgent` to obtain search results whose `userAgent` field has a value |
+| ~             | Fuzzy search. For example, use `level:errro~` to obtain search results whose `level` field contains `error` |
 
-1. Log in to the [CLS Console](https://console.cloud.tencent.com/cls).
-2. Select **Log Search** on the left sidebar to enter the log search page.
-3. Select the time range, logset, and log topic.
-4. Enter keywords and click **Search** to get results.
-
-## Search Syntax
-
-The following search syntax can be used in searches:
-
-| Syntax          | Semantics                                                         |
-| ------------- | ------------------------------------------------------------ |
-|key:value| This refers to the "key-value" search format. You need to enable the [key-value index](https://intl.cloud.tencent.com/document/product/614/16981). The value supports fuzzy search by `?` or `*`.|
-|A and B| "AND" logic that returns the intersection of A and B. If multiple keywords are used for search at a time, the default logic will be "AND" if they are separated by spaces. |
-| A or B | "OR" logic that returns the union of A or B. |
-| not B | "NOT" logic that returns the results excluding B. |
-| A not B | "MINUS" logic that returns the results including A but excluding B, i.e., A-B. |
-| 'a' | The character `a` will be considered as a regular character and will not be processed as a syntax keyword. |
-| "A" | All characters in A will be considered as regular ones and will not be processed as syntax keywords. |
-|\ |Escape character. An escaped character represents the literal meaning of the character, such as \" for quotation mark or \: for colon. |
-|* |Fuzzy query of keywords that can match zero, single, or multiple random characters. `*` cannot be used as the first character. For example, if you enter `abc*`, all logs beginning with `abc` will be returned.|
-| ? |Fuzzy query of keywords that can match a single character at a specific position. For example, if you enter `ab?c`, logs that begin with `ab`, end with `c`, and contain only one character between `ab` and `c` will be returned.|
-| > | "GREATER THAN" logic, which is used for numeric fields. |
-| >= | "GREATER THAN OR EQUAL TO" logic, which is used for numeric fields. |
-| < | "LESS THAN" logic, which is used for numeric fields. |
-| <= | "LESS THAN OR EQUAL TO" logic, which is used for numeric fields. |
-|=| "EQUAL TO" logic, which can be used for numeric or text fields. (Fuzzy search is not supported. If you need fuzzy search, please see the key-value search `key:value`.)|
-| `__SOURCE__`   | It is used to search for the logs from a specified source, and wildcard is supported, such as `__SOURCE__:127.0.0.*`. |
-| `__FILENAME__` | It is used to search for the logs from a specified file, and wildcard is supported, such as `__FILENAME__:/var/log/access.*`. |
-
+>?
 >
-> - Numeric fields must be set to a double or long type before you can search for a range; otherwise, you may get different results than expected.
-> - If b is text, then, the difference between `a=b` and `a:b` lies in that a equals b in the former, while a contains b in the latter (the search is processed based on the word segmentation logic and fuzzy search is supported).
+> - The syntax operators are case-sensitive. Use the logical operators in all caps (such as AND, OR), otherwise they will be regarded as ordinary phrases.
+> - If you connect multiple search statements with a space, the OR logic will be used. For example, enter `warning error` to obtain results containing `warning` or `error`.
+> - All strings in the syntax are reserved. These reserved characters in the search keyword need to be escaped.
+> - Before performing a “key:value” search, make sure the key is successfully configured in the index configuration of the log topic.
 
 
 
-## Search Rule
+## Search Statement Examples
 
-Time range, logset, and log topic are required for log search. The default time range is the current day. You can select the logset and log topic as needed. The search box can be left empty, which means no filter conditions, and all valid log data will be returned.
+| Expected Search Result                                                    | Search Statement                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Logs containing `ERROR`                              | `ERROR`                                                      |
+| Failed logs (with a status code larger than 400)                             | `status:>400`                                                |
+| Failed logs in the `GET` request (with a status code larger than 400)                 | `method:GET AND status:>400`                                 |
+| Logs at `ERROR` or `WARNING` level                       | `level:ERROR OR level:WARNING`                               |
+| Logs except those at `INFO` level                                  | `NOT level:INFO`                                             |
+| Logs from `192.168.10.10` but except those at `INFO` level           | `__SOURCE__:192.168.10.10 NOT level:INFO`                    |
+| Logs from the `/var/log/access.log` file on `192.168.10.10` but except those at `INFO` | `(__SOURCE__:192.168.10.10 AND __FILENAME__:"/var/log/access.*") NOT level:INFO` |
+| Logs from `192.168.10.10` and at `ERROR` or `WARNING` level  | `__SOURCE__:192.168.10.10 AND (level:ERROR OR level:WARNING)` |
+| Logs with a status code of `4XX`                                      | `status:[400 TO 500}`                                        |
+| Logs with the container name as `nginx` in the metadata                         | `__TAG__.container_name:nginx`                               |
+| Logs with the container name as `nginx` in the metadata, and request latency of longer than 1 second       | `__TAG__.container_name:nginx AND request_time:>1`           |
+| Logs that contain the `message` field, or whose `message` field has a value  | `message:*` or `_exists_:message`                          |
+| Logs that do not contain the `message` field                             | `NOT _exists_:message`                                       |
+| Logs whose `message` field is empty                              | `message:""`                                                 |
 
-### Full-text search
-
-Log data of log topics with full-text index enabled is split into multiple phrases with word delimiters, so that you can search for the log by specific keywords.
-
-For example, to search for log data containing the keyword `error`, enter `error` in the search box and search.
-
-### Key-value search
-
-Log data of the log topics with key-value index enabled is managed based on the specified key-value pairs. You can search for the log by specifying a key field.
-
-For example, to search for log data with `error` as the `status` field, enter `status:error` in the search box and search.
-
-### Fuzzy keyword search
-
-CLS supports fuzzy search, which allows you to search for logs by special fuzzy keywords as described below:
-
-| Metacharacter | Description                                                         |
-| ------ | :----------------------------------------------------------- |
-| * | Fuzzy query of keywords that can match zero, single, or multiple random characters. For example, if you enter `abc*`, all logs beginning with `abc` will be returned.|
-| ? |Fuzzy query of keywords that can match a single character at a specific position. For example, if you enter `ab?c`, logs that begin with `ab`, end with `c`, and contain only one character between `ab` and `c` will be returned.|
-
-
-## Notes
-
-1. Before performing a log search, make sure index is enabled for the relevant log topics. Otherwise, no valid logs will be found.
-2. Before performing a key-value search, make sure the index field for searching is successfully configured in the index configuration of the log topic.
-3. The results are displayed in reverse order by default.
