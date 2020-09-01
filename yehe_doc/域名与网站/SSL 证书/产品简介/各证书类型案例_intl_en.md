@@ -1,5 +1,5 @@
 
-This topic lists certificate type selection cases for certain industries to help you determine which certificate type to apply for or purchase.
+This topic lists certificate type selection cases for certain industries to help you determine which certificate type for which to apply or purchase.
 
 <table>
 <tr>
@@ -24,6 +24,6 @@ This topic lists certificate type selection cases for certain industries to help
 <td>Individual business</td>
 <td>DV certificate</td>
 <td>Personal blog</td>
-<td><li><span style='margin-left:-10px;' >No data transmission business.</span></li><li><span style='margin-left:-10px;' >The website displays pure information or content.</span></li></td>
+<td><li><span style='margin-left:-10px;' >No data transmission.</span></li><li><span style='margin-left:-10px;' >The website displays pure information or content.</span></li></td>
 </tr>
 </table>

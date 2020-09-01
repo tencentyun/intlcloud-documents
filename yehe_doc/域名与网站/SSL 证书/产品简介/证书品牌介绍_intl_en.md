@@ -11,7 +11,7 @@ Tencent Cloud provides 4 SSL certificate brands for sale:
 </tr>
 <tr>
 <td>GeoTrust</td>
-<td><li>GeoTrust, the world's second-largest digital certificate authority (CA) and a leader in identity verification and trust certification, provides state-of-the-art technologies that enable organizations and companies of all sizes to deploy SSL digital certificates securely and cost-effectively and to achieve a wide range of identity verification.</li><li>GeoTrust was founded in 2001, and by 2006, it accounted for 25% of the global market. VeriSign acquired GeoTrust for 125 million USD in May-September 2006, and is now another cost-effective SecureSite SSL certificate brand.</li></td>
+<td><li>GeoTrust, the world's second-largest digital certificate authority (CA) and a leader in identity verification and trust certification, provides state-of-the-art technologies that enable organizations and companies of all sizes to deploy SSL digital certificates securely and cost-effectively and to implement a wide range of identity verifications.</li><li>GeoTrust was founded in 2001, and by 2006, it accounted for 25% of the global market. VeriSign acquired GeoTrust for 125 million USD in May-September 2006, and is now another cost-effective SSL certificate brand under SecureSite.</li></td>
 </tr>
 <tr>
 <td>TrustAsia</td>
@@ -24,7 +24,7 @@ Tencent Cloud provides 4 SSL certificate brands for sale:
 </table>
 
 ## Brand Differences
-Certificates of different brands vary depending on the browser address bar, encryption level, and guaranteed compensation. The most important difference lies in root certificates. For example, a GeoTrust wildcard certificate is issued using a GeoTrust root certificate, while a SecureSite wildcard certificate is issued using a SecureSite root certificate, which is compatible with all browsers on the market and also best supports mobile devices. A TrustAsia wildcard certificate is issued using a SecureSite root certificate, and a GlobalSign wildcard certificate is issued using a GlobalSign root certificate.
+The certificates of different brands vary depending on the browser address bar, encryption level, and the level guaranteed compensation. The most important difference lies in their root certificates. For example, a GeoTrust wildcard certificate is issued using a GeoTrust root certificate, while a SecureSite wildcard certificate is issued using a SecureSite root certificate, which is compatible with all browsers on the market and also best supports mobile devices. A TrustAsia wildcard certificate is issued using a SecureSite root certificate, and a GlobalSign wildcard certificate is issued using a GlobalSign root certificate.
 
 From a technical point of view, the differences between SecureSite (formerly VeriSign) and GeoTrust are as follows:
 - Algorithm support: SecureSite (supporting RSA, DSA and ECC) outperforms GeoTrust (supporting RSA and DSA).

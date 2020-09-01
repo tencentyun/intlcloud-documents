@@ -60,20 +60,20 @@ The details are as follows:
  2. Run the `SubscriberTransactionDemo` class to receive transaction messages.
 
 ## NameServer Table<span id="Nameserver"></span>
-| Region     | Public Network Address   | VPC Address       |
-| -------- | ------------ | -------------------------- |
-| India     | http://cmq-nameserver-in.tencentcloudapi.com | http://cmq-nameserver-vpc-in.api.tencentyun.com |
-| Beijing     | http://cmq-nameserver-bj.tencentcloudapi.com| http://cmq-nameserver-vpc-bj.api.tencentyun.com |
-| Shanghai     |http://cmq-nameserver-sh.tencentcloudapi.com| http://cmq-nameserver-vpc-sh.api.tencentyun.com |
-| Guangzhou     | http://cmq-nameserver-gz.tencentcloudapi.com | http://cmq-nameserver-vpc-gz.api.tencentyun.com |
-| North America     | http://cmq-nameserver-ca.tencentcloudapi.com| http://cmq-nameserver-vpc-ca.api.tencentyun.com |
-| Chengdu     | http://cmq-nameserver-cd.tencentcloudapi.com | http://cmq-nameserver-vpc-cd.api.tencentyun.com|
-| Chongqing     | http://cmq-nameserver-cq.tencentcloudapi.com | http://cmq-nameserver-vpc-cq.api.tencentyun.com |
-| Hong Kong (China)     |http://cmq-nameserver-hk.tencentcloudapi.com | http://cmq-nameserver-vpc-hk.api.tencentyun.com |
-| Korea     | http://cmq-nameserver-kr.tencentcloudapi.com | http://cmq-nameserver-vpc-kr.api.tencentyun.com |
-| Russia   | http://cmq-nameserver-ru.tencentcloudapi.com | http://cmq-nameserver-vpc-ru.api.tencentyun.com|
-| Singapore   | http://cmq-nameserver-sg.tencentcloudapi.com                 | http://cmq-nameserver-vpc-sg.api.tencentyun.com          |
-| Thailand     | http://cmq-nameserver-th.tencentcloudapi.com| http://cmq-nameserver-vpc-th.api.tencentyun.com |
-| East US     | http://cmq-nameserver-use.tencentcloudapi.com | http://cmq-nameserver-vpc-use.api.tencentyun.com        |
-| West US     | http://cmq-nameserver-usw.tencentcloudapi.com | http://cmq-nameserver-vpc-usw.api.tencentyun.com |
+| Region     | Public Network Address   | VPC Address       |    
+| -------- | ------------ | -------------------------- | 
+| India     | http://cmq-nameserver-in.tencentcloudapi.com | http://cmq-nameserver-vpc-in.api.tencentyun.com | 
+| Beijing     | http://cmq-nameserver-bj.tencentcloudapi.com| http://cmq-nameserver-vpc-bj.api.tencentyun.com |   
+| Shanghai     |http://cmq-nameserver-sh.tencentcloudapi.com| http://cmq-nameserver-vpc-sh.api.tencentyun.com |  
+| Guangzhou     | http://cmq-nameserver-gz.tencentcloudapi.com | http://cmq-nameserver-vpc-gz.api.tencentyun.com |  
+| North America     | http://cmq-nameserver-ca.tencentcloudapi.com| http://cmq-nameserver-vpc-ca.api.tencentyun.com |   
+| Chengdu     | http://cmq-nameserver-cd.tencentcloudapi.com | http://cmq-nameserver-vpc-cd.api.tencentyun.com|    
+| Chongqing     | http://cmq-nameserver-cq.tencentcloudapi.com | http://cmq-nameserver-vpc-cq.api.tencentyun.com |    
+| Hong Kong (China)     |http://cmq-nameserver-hk.tencentcloudapi.com | http://cmq-nameserver-vpc-hk.api.tencentyun.com |    
+| Korea     | http://cmq-nameserver-kr.tencentcloudapi.com | http://cmq-nameserver-vpc-kr.api.tencentyun.com |     
+| Russia   | http://cmq-nameserver-ru.tencentcloudapi.com | http://cmq-nameserver-vpc-ru.api.tencentyun.com|     
+| Singapore   | http://cmq-nameserver-sg.tencentcloudapi.com                 | http://cmq-nameserver-vpc-sg.api.tencentyun.com          |          
+| Thailand     | http://cmq-nameserver-th.tencentcloudapi.com| http://cmq-nameserver-vpc-th.api.tencentyun.com |     
+| East US     | http://cmq-nameserver-use.tencentcloudapi.com | http://cmq-nameserver-vpc-use.api.tencentyun.com        |  
+| West US     | http://cmq-nameserver-usw.tencentcloudapi.com | http://cmq-nameserver-vpc-usw.api.tencentyun.com |     
 
