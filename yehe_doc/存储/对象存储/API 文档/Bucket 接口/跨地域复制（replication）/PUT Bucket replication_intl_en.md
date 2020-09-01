@@ -56,6 +56,7 @@ The nodes are described in details below:
 | Destination              | ReplicationConfiguration.Rule             | Destination bucket information                                               | Container | Yes   |
 |Bucket    |ReplicationConfiguration.Rule.Destination    | Resource ID: <br>`qcs::cos:<Region>::<BucketName-APPID>` |String    | Yes |
 | StorageClass             | ReplicationConfiguration.Rule.Destination | Storage class. Enumerated values: STANDARD, STANDARD_IA. It is the same as that of the source object by default.<br>**Note:** currently, cross-region replication does not allow replicating an object directly into the ARCHIVE storage class. To store your object copies in ARCHIVE, you should configure lifecycle management on the destination bucket. For details, see [PUT Bucket lifecycle](https://intl.cloud.tencent.com/document/product/436/8280) | String    | No   |
+
 ## Response
 
 #### Response headers
