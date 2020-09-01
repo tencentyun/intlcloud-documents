@@ -10,16 +10,17 @@ This document describes how to host an existing or new static website on COS and
 
 The following services will be used in the steps outlined below:
 
-- DNS Service: Before hosting a static website, you need to register a domain name such as `www.example.com`.
+- [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns): Before hosting a static website, you need to register a domain name such as `www.example.com`. You can do so via the [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloud).
 - [COS](https://intl.cloud.tencent.com/product/cos): You need to create a bucket in COS for storing the uploaded webpage contents.
-- [CDN](https://intl.cloud.tencent.com/product/cdn): CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability, in addition to binding the domain name to the website content.
+- [CDN](https://intl.cloud.tencent.com/product/cdn): Together with Tencent Cloud DNS, CDN can accelerate the delivery of static website contents, reduce access delay, and improve availability, in addition to binding the domain name to the website content.
+- Tencent Cloud DNS: Allows you to access the static website through a custom domain name.
 
 >The sample domain name `www.example.com` is used in the steps outlined in this document. For your purposes, replace it with your own domain name.
 
 
 ## Step 1. Register the domain name and obtain ICP filing for service in China
 
-Domain registration is a prerequisite for any service built on the internet. After the domain name is registered, it needs to go through the MIIT filing procedure before your website can be accessed.
+Domain registration is a prerequisite for any service built on the Internet. After the domain name is registered, it needs to go through the MIIT filing procedure before your website can be accessed.
 
 - If you have already registered a domain name and obtained ICP filing for service in China for it, skip this step and proceed to [step 2](#Create a bucket).
 - Obtain ICP filing for the registered domain name.
@@ -88,7 +89,7 @@ We recommend that you use a custom CDN domain name so that Tencent Cloud CDN can
 - **Domain**: Enter the custom domain name you have purchased (e.g. `www.example.com`).
 - **Origin Server Type**: Select **Static website origin server**.
 - **Origin-pull Authentication**: Turn it on.
- 
+	
 
 ![](https://main.qcloudimg.com/raw/419c8e900a0c3ead5f01a4240129dfc3.png)
 (3) Follow the prompt above the domain list to add **CDN Service Authorization**.
@@ -101,7 +102,17 @@ Click **OK** in the pop-up window.
 
 #### 2. DNS
 
-If you registered your domain name through a third-party ISP, go to your ISP, add a CNAME record for your custom CDN domain name, and point it to the CNAME record configured above. 
+If you registered your domain name through a third-party ISP, go to your ISP, add a CNAME record for your custom CDN domain name, and point it to the CNAME record configured above. To use Tencent Cloud DNS, follow these steps:
+
+(1) Log in to the [DNS Console](https://console.cloud.tencent.com/cns), locate your domain name, and click **DNS**.
+
+(2) Click **Add Record**.
+
+- **Host record**: www
+- **Type**: CNAME
+- **Value**: the CNAME from the preceding step
+
+(3) Click **Save**.
 
 ## Step 4. Verify the result
 
