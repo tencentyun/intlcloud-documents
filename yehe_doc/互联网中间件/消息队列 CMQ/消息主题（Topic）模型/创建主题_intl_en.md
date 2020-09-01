@@ -1,5 +1,13 @@
-On the **[CMQ](https://console.cloud.tencent.com/mq)** > **[Topic Subscription](https://console.cloud.tencent.com/mq/topic?fromNav=1)** page, click **Create ** in the top-left corner to create a topic.
->You need to use the root account to create a topic subscription; otherwise, message delivery may fail.
+## Overview
+This document describes how to create a topic in the console.
+
+## Directions
+>!You need to use the root account to create a topic subscription; otherwise, message delivery may fail.
+
+1. Log in to the [CMQ Console](https://console.cloud.tencent.com/cmq) and click **Topic Subscription** on the left sidebar.
+2. In the top-left corner of the topic subscription page, select a region.
+3. On the topic subscription page, click **Create** and enter the information as prompted.
+4. Click **Submit** to create a topic in the specified region.
 
 You need to specify the following attributes when creating a topic:
 
