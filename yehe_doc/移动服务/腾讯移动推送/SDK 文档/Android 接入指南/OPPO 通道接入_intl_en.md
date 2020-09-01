@@ -20,7 +20,6 @@ Use an OPPO enterprise developer account to log in to the [OPPO Developer Platfo
 
 After your application for activating OPPO PUSH is approved, you can select **[OPPO PUSH Platform](https://push.oppo.com/)** > **Configuration Management** > **Application Configuration** to view the `AppKey`, `AppSecret`, and `MasterSecret`.
 
-
 ### Configuring push channel
 To be compatible with channel configurations for Android 8.0 or above on OPPO phones, you need to create the default TPNS channel in the OPPO Console. For more information, please see [OPPO's official documentation](https://open.oppomobile.com/wiki/doc/#id=10198).
 The configuration items are as described below:
@@ -44,52 +43,31 @@ implementation 'com.tencent.tpns:oppo:[VERSION]-release'// OPPO PUSH [VERSION] i
 After getting the TPNS SDK package for OPPO PUSH, configure the major TPNS version and the following content in the manual integration method detailed on TPNS's official website.
 
 1. Import the jar packages related to OPPO PUSH. Import `oppo4tpns1.1.2.1.jar` to the project folder.
-2. Add the following configuration to the `Androidmanifest.xml` file (two methods):
- - Use the following configuration for the TPNS SDK for Android below v1.2.0.2:
+2. Add the following configuration to the `Androidmanifest.xml` file:
+
 ```
 <!--Permissions required by OPPO PUSH-->
 <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
 <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
+
 <application>
-		<!--Components required by OPPO PUSH-->
-		<service
-			android:name="com.heytap.mcssdk.PushService"
-			android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
-			<intent-filter>
-				<action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
-		<service
-			android:name="com.heytap.mcssdk.AppPushService"
-			android:permission="com.heytap.mcs.permission.SEND_MCS_MESSAGE">
-			<intent-filter>
-				<action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
-</application>
-```
- - Use the following configuration for the TPNS SDK for Android v1.2.0.2 and above:
-```
-<!--Permissions required by OPPO PUSH-->
-<uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE"/>
-<uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE"/>
-<application>
-		<!-- The following is the OPPO component on v1.2.0.2 -->
-		<service
-			android:name="com.heytap.msp.push.service.CompatibleDataMessageCallbackService"
-			android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
-			<intent-filter>
-				<action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
-		<service
-			android:name="com.heytap.msp.push.service.DataMessageCallbackService"
-			android:permission="com.heytap.mcs.permission.SEND_PUSH_MESSAGE">
-			<intent-filter>
-				<action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
-				<action android:name="com.heytap.msp.push.RECEIVE_MCS_MESSAGE"/>
-			</intent-filter>
-		</service>
+    <!--Components required by OPPO PUSH-->
+    <service
+        android:name="com.heytap.mcssdk.PushService"
+        android:permission="com.coloros.mcs.permission.SEND_MCS_MESSAGE">
+        <intent-filter>
+            <action android:name="com.coloros.mcs.action.RECEIVE_MCS_MESSAGE"/>
+        </intent-filter>
+    </service>
+
+    <service
+        android:name="com.heytap.mcssdk.AppPushService"
+        android:permission="com.heytap.mcs.permission.SEND_MCS_MESSAGE">
+        <intent-filter>
+            <action android:name="com.heytap.mcs.action.RECEIVE_MCS_MESSAGE"/>
+        </intent-filter>
+    </service>
+
 </application>
 ```
 

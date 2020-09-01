@@ -8,13 +8,13 @@
 
 
 腾讯云云函数与 Ckafka 也进行了深度联动，并推出了很多实用的功能。借助云函数和 Ckafka 触发器，可以非常方便实现 CKafka 消息转存到 COS、ES、DB 等，本文介绍使用云函数替代 Logstash，实现 Ckafka 消息罗盘 ES。如下图所示：
- ![](https://main.qcloudimg.com/raw/52bfb4c0ee549307c459212b5bbc6ef4.png)
+ ![](https://main.qcloudimg.com/raw/742d23c1f95b9f3fbf50a099d0ce5ff5.png)
 
  
 
 ## 运行原理
 云函数可以实时消费 Ckafka 中的消息。例如，做数据转存、日志清洗、实时消费等。且数据转存的功能已集成到  Ckafka 控制台，用户可以一键开启使用，降低了用户使用的复杂度。如下图所示：
-![](https://main.qcloudimg.com/raw/04b45265bc259b12f7c7103595ce7fd3.png)
+![](https://main.qcloudimg.com/raw/994185353e9235c0f75e2dadf0feba41.png)
 
 ## 方案优势
 
@@ -40,8 +40,8 @@
 ### 创建云函数
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)，单击左侧导航栏的【函数服务】。
 2. 在“函数服务”上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 在“新建函数”页面的“基本信息”步骤中，根据以下信息创建函数，并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/9b0c1f124040a2ff3c079b48ccebd212.png)
+3. 在“新建函数”页面的“基本信息”步骤中，根据以下信息创建函数，并单击【下一步】。
+
 	- **函数名称**：自定义函数名称，本文以 ckafka_to_es_demo 为例。
 	- **运行环境**：选择 “Pyhton 3.6”。
 	- **创建方式**：选择【模板函数】。
@@ -49,8 +49,8 @@
 单击模板中的【查看详情】，即可在弹出的“模板详情”窗口中查看相关信息，支持下载操作。
 4. 在“函数配置”页面，保持默认配置并单击【完成】，即可完成函数的创建。
 5. 进入已创建的云函数“函数配置”页面，单击右上角【编辑】，按以下信息填写函数配置：
- - **环境变量**：新增如下环境变量，参考表格进行填写。如下图所示：
-![](https://main.qcloudimg.com/raw/aa4409842f15ca5198d453eeb4c9fa8e.png)
+ - **环境变量**：新增如下环境变量，参考表格进行填写。
+
 <table>
 <tr>
 <th>key</th><th>value</th><th>是否必填</th>
@@ -74,8 +74,8 @@
 <td>ES_Index_TimeFormat</td><td>按照天或者小时设置 Index，缺省则按照天建立索引。例如填写 hour。</td><td>否</td>
 </tr>
 </table>
- - **私有网络**：勾选“启用”，并选择与 ES 相同的 VPC。如下图所示：
-![](https://main.qcloudimg.com/raw/157c97e4d342a81e2e3c3c574cd80da7.png)
+ - **私有网络**：勾选“启用”，并选择与 ES 相同的 VPC。
+
 6. 单击【保存】即可完成函数配置。
 
 
@@ -83,7 +83,7 @@
 ### 创建 Ckafka 触发器
 1. 在“函数配置”页面，选择函数侧边栏【触发管理】，单击【创建触发器】。
 2. 在弹出的“创建触发器”窗口中，参考以下信息进行配置。如下图所示：
-![](https://main.qcloudimg.com/raw/0e513da4e33ec49292af74e2d95fc9d5.png)
+
 主要参数信息如下，其余参数请保持默认配置：
  - **触发方式**：选择 “Ckafka触发”。
  - **Ckafka实例及 Topic**：按需选择对应的 Topic。
@@ -97,10 +97,10 @@
 ### 查看 ES 和函数运行日志
 >!如果您还未将实际数据接入消息队列 Ckafka，您可以通过 [客户端工具](https://intl.cloud.tencent.com/document/product/597/32544) 模拟消息生产。
 >
-- 选择函数侧边栏【日志查询】，即可查看函数运行日志。如下图所示：
-![](https://main.qcloudimg.com/raw/da6d2085affcedc728c1b3e3b1bf6eb4.png)
+- 选择函数侧边栏【日志查询】，即可查看函数运行日志。
+
 - 查看 Kibana。详情请参见 [通过 Kibana 访问集群](https://intl.cloud.tencent.com/document/product/845/19541)。
-![](https://main.qcloudimg.com/raw/974199a28188cb11a43b5e89e5f660b5.png)
+
 
 
 
@@ -108,4 +108,4 @@
 
 ## 扩展能力
 若您需实现高级日志清洗逻辑，可在如下图所示的代码位置中修改逻辑：
-![](https://main.qcloudimg.com/raw/faa37c5784e21ad5ed250663b933103e.png)
+![](https://main.qcloudimg.com/raw/8e71698dd087bed4b888773ce0db3175.png)
