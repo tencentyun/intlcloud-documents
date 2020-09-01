@@ -1,7 +1,7 @@
 ## Supported Platforms
 
 Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) and Safari (desktop and mobile) but poorly or not supported by other platforms (such as browsers on Android).
-- For mobile devices, the Mini Program solution is recommended, which is supported by both WeChat and Mobile QQ. This solution is implemented through native technologies of corresponding platforms to deliver excellent audio/video performance and specifically adapted to major mobile phone brands.
+- For mobile devices, the [Mini Program](https://cloud.tencent.com/document/product/647/17018) solution is recommended, which is supported by both WeChat and Mobile QQ. This solution is implemented through native technologies of corresponding platforms to deliver excellent audio/video performance and specifically adapted to major mobile phone brands.
 - If your application scenario is mainly in the education sector, the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution is recommended for the teacher end, which is more stable and supports two-channel big/small video images, more flexible screen sharing schemes, and more powerful recovery capabilities on poor network connections.
 
 | OS | Browser | Minimum Browser Version Requirement | Receipt (Playback) | Sending (Mic-on) | Screen Sharing |
