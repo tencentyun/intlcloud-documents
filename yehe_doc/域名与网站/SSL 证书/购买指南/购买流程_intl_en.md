@@ -1,4 +1,4 @@
-Before purchasing a certificate, it is recommended that you understand the differences between certificate types and domain name types and choose the appropriate certificate based on your actual needs. The following introduces the procedure for purchasing a certificate.
+Before purchasing a certificate, it is important that you understand the differences between certificate types and domain name types and choose the appropriate certificate based on your actual needs. The following introduces the procedure for purchasing a certificate.
 
 ### Step 1: go to the SSL certificate purchase page
 1. Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl). On the **Certificate Management** page, click **Purchase Certificate** to go to the SSL certificate purchase page.
@@ -7,7 +7,7 @@ Before purchasing a certificate, it is recommended that you understand the diffe
 
 
 ### Step 2: select the certificate type and brand
-1. Select a certificate type based on your industry and actual needs. For more information about certificate types, see [Certificate Type Selection Cases](https://intl.cloud.tencent.com/document/product/1007/37811).
+1. Select a certificate type that fits best with your industry and actual needs. For more information on certificate types, see [Certificate Type Selection Cases](https://intl.cloud.tencent.com/document/product/1007/37811).
 2. Select a certificate brand. For more information about certificate brands, see [Certificate Brands](https://intl.cloud.tencent.com/document/product/1007/37810).
 
 ### Step 3: select the domain name type and the number of domain names supported
@@ -47,6 +47,6 @@ After selecting the brand, model, supported domain name, and certificate validit
 
 
 ### Step 6: submit the application
-- **OV and EV certificates**: after purchasing a certificate, you need to submit information for review in the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for certificate application. The certificate will be issued upon approval by the CA. For more information, see [Material Submission for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
+- **OV and EV certificates**: after purchasing a certificate, you need to submit information for review on the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) for your certificate application. The certificate will be issued upon approval by the CA. For more information, see [Material Submission for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
 - **DV certificates**: after purchasing a certificate, you need to submit information for domain name ownership authentication. The certificate will be issued upon approval by the CA.
 
