@@ -65,7 +65,7 @@ kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/man
 - 若网络模式是 VPC-CNI，且所有的 Pod 都使用弹性网卡，您可以使用 CLB 直接绑定弹性网卡的 Pod，即绕过 NodePort，不用手动管理 CLB且支持自动扩、缩容。如下图所示：
 <img style="width:450px" src="https://main.qcloudimg.com/raw/83630c50a259482ede83742945fc591e.png" data-nonescope="true">
 - 若网络模式是 Global Router，您可以在集群信息页 [为集群开启 VPC-CNI 支持](https://intl.cloud.tencent.com/document/product/457/35250)，即两种网络模式混用。如下图所示：
-![](https://main.qcloudimg.com/raw/c61d57e3614c87cbca143fe4d746a15d.png)
+![](https://main.qcloudimg.com/raw/c3e443f268b63abf9dd37075ebd73b91.png)
 确保集群支持 VPC-CNI 之后，依次执行以下命令，即可安装 Nginx Ingress：
 ```
 kubectl create ns nginx-ingress
