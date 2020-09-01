@@ -18,10 +18,10 @@ Privacy - Camera Usage Description
 You can enter desired values for the two items, such as "Shooting Video"
 
 Configure a simple shoot page. Open `Main.storyboard`, drag two `UIView` objects into it, configure their width to 0.5 time of the `superview`, and set their aspect ratio to 16:9.
-![](https://main.qcloudimg.com/raw/757835bb36355f7e702a364d9740eb1e.png)
+![](https://main.qcloudimg.com/raw/cbbe0788031303bcccd46deafcd99333.png)
 
 Add the progress bar, bind the page to `IBOutlet` in `ViewController.m`, and set the button `IBAction`. As the preview page needs to be redirected to after shoot, a navigation controller is required. Click the "VC" icon in yellow, select "Editor" > "Embed In" in the menu, and click "Navigation Controller" to add a layer of "Navigation Controller" onto the "ViewController". At this point, the basic UI has been constructed.
-![](https://main.qcloudimg.com/raw/cbdc197ae0ac5856413efb956dd5893d.png)
+![](https://main.qcloudimg.com/raw/69a931c25aa360dbfc3cd4ae5dee8704.png)
 
 
 ## Sample Code

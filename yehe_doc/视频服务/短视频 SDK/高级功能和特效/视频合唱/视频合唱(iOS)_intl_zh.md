@@ -18,10 +18,10 @@ Privacy - Camera Usage Description
 这两项的值可以随便填写，如"录制视频"。
 
 接下来我们配置一个简单的录制界面，打开 Main.storyboard，拖进去两个 UIView，配置宽度为 superview 的0.5倍，长宽比16:9。
-![5放View](https://main.qcloudimg.com/raw/757835bb36355f7e702a364d9740eb1e.png)
+![5放View](https://main.qcloudimg.com/raw/cbbe0788031303bcccd46deafcd99333.png)
 
 然后加上进度条，在 ViewController.m 中设置 IBOutlet 绑定界面，并设置好按钮的 IBAction。因为录制好后我们还要跳转到预览界面，还需要一个导航，单击黄色 VC 图标，在菜单栏依次进入 Editor > Embeded In，单击 Navigation Controller 给 ViewController 套一层 Navigation Controller。完成基本 UI 的搭建。
-![6绑定View](https://main.qcloudimg.com/raw/cbdc197ae0ac5856413efb956dd5893d.png)
+![6绑定View](https://main.qcloudimg.com/raw/69a931c25aa360dbfc3cd4ae5dee8704.png)
 
 
 ## 代码部分
