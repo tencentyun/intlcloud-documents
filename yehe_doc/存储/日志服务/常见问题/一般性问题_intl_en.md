@@ -38,11 +38,7 @@ CLS provides two levels of conceptual logic: logset and log topic. A logset cont
 Yes. CLS does not restrict log sources. Logs are collected to CLS provided that the log source is reachable to our server over the network.
 
 
-### Can LogListener upload data to multiple log topics?
-
-Yes, provided that these log topics are in the same region.
-
-How do I modify the Loglistener configuration after the server IP address is changed?
+### How do I modify the Loglistener configuration after the server IP address is changed?
  - If the server is bound to the server group by server ID, there is no need to modify the Loglistener configuration. This method is recommended when the server IP frequently changes. For more information, see [Server Group Management]( https://intl.cloud.tencent.com/zh/document/product/614/17412).
  - If the server is bound to the server group by server IP, modify the configuration as follows:
 i. Modify the /etc/loglistener.conf file in the Loglistener installation directory (/user/local in this example).
