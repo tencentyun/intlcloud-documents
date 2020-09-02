@@ -5,8 +5,8 @@
 ## 云数据库的全读写策略
 如果您想让用户拥有创建和管理云数据库实例的权限，您可以对该用户使用名称为：QcloudCDBFullAccess 的策略。
 
-进入 [策略管理](https://console.cloud.tencent.com/cam/policy) 界面，单击列项【服务类型】在下拉选项中选择【云数据库 MySQL】，就可以在结果中找到该策略。
-![Alt text](https://main.qcloudimg.com/raw/c3a7dd4dae2d82da3d3c702a5188fe9e.png)
+进入 [策略管理](https://console.cloud.tencent.com/cam/policy) 界面，在右上角搜索框搜索 QcloudCDBFullAccess，即可找到该策略。
+![](https://main.qcloudimg.com/raw/5ec89e71595a5edd3e7f723a19c01a6a.png)
 策略语法如下：
 ```
 {
@@ -63,7 +63,7 @@
 ## 云数据库的只读策略
 如果您只想让用户拥有查询云数据库实例的权限，但是不具有创建、删除和修改的权限，您可以对该用户使用名称为：QcloudCDBInnerReadOnlyAccess 的策略。
 
->建议配置云数据库的只读策略。
+>?建议配置云数据库的只读策略。
 
 您可以进入 [策略管理](https://console.cloud.tencent.com/cam/policy) 界面，单击列项【服务类型】在下拉选项中选择【云数据库 MySQL】，就可以在结果中找到该策略。
 
