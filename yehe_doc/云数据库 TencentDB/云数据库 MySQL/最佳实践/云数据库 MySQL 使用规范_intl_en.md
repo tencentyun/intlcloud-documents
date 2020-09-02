@@ -1,88 +1,88 @@
-## 目的
-- TencentDB for MySQLの管理とメンテナンスを規範化して、不適切な操作でTencentDB for MySQLが使えなくなるといった影響が起きないようにします。
-- データベース開発者を指導してSQLを合理的に作成し、TencentDB for MySQLの性能を最大限に発揮させます。
+## Purpose
+- To standardize the management and maintenance of TencentDB for MySQL to avoid unavailability and other issues caused by improper operations.
+- To provide guidance for database developers on how to write SQL statements to ensure optimal performance of TencentDB for MySQL.
 
-## 権限管理ルール
-- TencentDB for MySQLの安定性とセキュリティを確保するために、TencentDB for MySQLはスーパー、シャットダウン、およびファイル権限を制限します。setステートメントを実行すると、次のエラーが発生する場合があります。  
+## Permission Management Specifications
+- To ensure the stability and security, permission restrictions are imposed on `super`, `shutdown`, and `file` in TencentDB for MySQL. The following error may occur when you run the `set` statement:  
 ```
 #1227-Access denied;you need(at least one of)the SUPER privilege (s) for this operation
 ```     
-解決方法：「set」を使用して関連するパラメーターを変更する必要がある場合は、コンソールのインスタンス管理画面の【データベース管理】>【パラメータ設定】に移動してください。修正が必要なパラメータがその中になければ、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して評価後修正をサポートし、インスタンスの安定性を確保します。
-- - 必要に応じて権限を付与、一般のアプリケーションプログラムにDML（SELECT、UPDATE、INSERT、DELETE）権限を付与するだけで十分です。
-- 一般のアプリケーションプログラムのアクセスユーザーはデータベースレベルによって権限を付与します。
-- 認証されたユーザーが特定のIPまたはIP範囲からのみアクセスできるようにします。コンソールにセキュリティグループを設定して制限することができます。セキュリティグループの設定は、必ずコンソールのプロンプトが示した基準に従い操作してください。パブリックネットワークアクセス用のセキュリティグループを設定するケースでは、すべての関連する出口IPを必ず開いてください。
-- 管理と開発に異なるアカウントを使用します。
+Solution: if you need to modify relevant parameters using "set", go to **Database Management** > **Parameter Settings** on the instance management page. If the parameters to be modified are not listed there, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application, and we will evaluate and make the modifications for you so as to ensure instance stability.
+- Grant permission on demand. It is sufficient to grant general applications only the DML permissions (SELECT, UPDATE, INSERT, DELETE).
+- Grant permission to users of general application at the database level.
+- Allow authorized users to access only from specific IPs or IP range. This can be achieved by configuring security groups in the console as instructed there. To set a security group for public network access, be sure to allow all the egress IPs involved.
+- Use different accounts for management and development.
 
-## 日常操作のルール
-### 注意事項
-- インスタンスのセキュリティを強化するには、弱いパスワードを使用しないでください。
-- プライベートネットワーク経由でログインする場合は、クライアントのCVMインスタンスとTencentDB for MySQLインスタンスが同一アカウント、同一リージョンにあることを確認してください。
-- コンソールからダウンロードされたバイナリログをローカルで解析する必要がある場合は、クライアントのMySQLバージョンとTencentDB for MySQLインスタンスのバージョンが一致していることを必ず確認してください。一致していない場合、解析において文字化けが生じますので、mysqlbinlog 3.4以降のバージョンを使用することをお勧めします。
-- コールドバックアップファイルをコンソールのプライベートネットワーク経由でCVMインスタンスにダウンロードする場合は、URLを引用符で囲みます。そうしないと、404エラーが発生します。
+## Operation Specifications
+### Precautions
+- For enhanced instance security, do not use weak passwords.
+- For login over the private network, make sure that the CVM instance of the client and the TencentDB for MySQL instance are in the same region and under the same account.
+- If the binlogs downloaded from the console need to be parsed locally, make sure that the client's MySQL version is the same as that of the TencentDB for MySQL instance; otherwise, garbled characters will be displayed during parsing. It is recommended to use mysqlbinlog 3.4 or higher.
+- When downloading cold backup files to a CVM instance over the private network in the console, enclose the URL with quotation marks; otherwise, a 404 error will occur.
 
-### 提案事項
-- ピーク時にオンラインDDL操作を実行しないでください。`pt-online-sche-machange`などのツールを使用できます。
-- ピーク時にバッチ処理を実行しないでください。
-- 1つのインスタンスで多くのタスクを行うことは極力避けてください。結合係数が高すぎると、タスク間で相互に影響し合うリスクが生じます。
-- 誤操作によるデータ消失のリスクを軽減するために、自動トランザクションコミットを無効にし、オンライン操作ではbeginを使用する習慣を身に付けることをお勧めします。誤操作も、TencentDB for MySQLのロールバック機能を使用してデータを復元できます（過去5日間の任意の時点へのロールバックがサポートされています）。関連テーブルがクロスデータベースやクロステーブルのロジックが含まれていない場合は、クイックロールバックまたはインスタントロールバックを使用してデータを速やかに復元します。ロールバックで新しく生成したデータベーステーブル名は、デフォルトで`元のテーブル名_bak`です。
-- 業務に推進活動などがある場合は、リソースを事前に予想し、インスタンス関連の最適化を行ってください。リソースに対する大きな需要がある場合は、Tencent Cloudの営業担当者に適時連絡してください。
+### Suggestions
+- Avoid performing online DDL operations during peak hours. You can use tools such as `pt-online-sche-machange`.
+- Avoid performing batch operations during peak hours.
+- Avoid running an instance for multiple businesses so as to minimize the risk of mutual interference between businesses due to high coupling.
+- It is recommended to disable automatic transaction committing and develop a habit of using `begin;` for online operations, which can help minimize the risk of data loss caused by faulty operations. In case of a faulty operation, you can use the rollback feature of TencentDB for MySQL for data restoration (rollback to any point in time in the last 5 days is supported). For tables without cross-database and cross-table logic, you can use quick or instant rollback for even faster data restoration. The new table after rollback is named "original table name_bak".
+- For promotional campaigns of your business, make an estimate of the resources required in advance and optimize the instances. In case of a great demand for resources, contact your Tencent Cloud sales rep in a timely manner.
 
 
-## データベースとテーブルの設計ルール
-### 注意事項
-- TencentDB for MySQL 5.6およびそれ以上のバージョンではMyISAMエンジンおよびMemoryエンジンをサポートしません。Memoryエンジンのニーズがあれば、TencentDB for RedisまたはMemcachedを使用することをお勧めします。自作データベースをTencentDB for MySQLに移行すると、MyISAMエンジンは移行中に自動的にInnoDBエンジンに変換されます。
-- 自動インクリメント列を含むテーブルの場合、自動インクリメント列に個別のインデックスが存在する必要があります。複合インデックスを使用する場合は、自動インクリメント列は先頭になければなりません。
-- `row_format`必ず非固定にしてください。
-- 各テーブルには必ず主キーがなければならず、適切な列を主キーに選択できなくても、意味のない列を主キーとして追加する必要があります。 MySQL第一モデル基準によると、主キー値は標準のInnoDBセカンダリインデックスのリーフノードに保存されます。インデックスが占めるディスク容量を減らし、効率を向上させるために、主キーとして短い自動インクリメント列を使用することをお勧めします。 `binlog_format`が rowの場合、主キーなしでデータを一括削除すると、重大なマスタースレーブ遅延が発生する可能性があります。
-- フィールドをNOT NULLとして定義し、デフォルト値を設定します。NULLフィールドはインデックスを利用できなくなり、SQL開発に多くの問題を引き起こします。 NULL計算は、IS NULLおよびIS NOT NULLに基づいてのみ実装できます。
+## Database and Table Design Specifications
+### Precautions
+- MyISAM and Memory engines are no longer supported in TencentDB for MySQL 5.6 or higher. If the Memory engine is required, you are recommended to use TencentDB for Redis or Memcached. When your self-built database is migrated to TencentDB for MySQL, MyISAM will be automatically converted to InnoDB during the migration.
+- For a table containing an auto-increment column, a separate index must exist on the column. If composite indexing is used, the auto-increment column must be put in the first place.
+- `row_format` must be non-fixed.
+- Each table must have a primary key. Even if no column is suitable for use as the primary key, you still have to add a meaningless column as the primary key. According to MySQL 1NF, a primary key value is saved on the standard InnoDB secondary index's leaf nodes. It is recommended to use a short auto-increment column as the primary key so as to reduce the disk capacity occupied by indexes and improve the efficiency. If `binbin_format` is row, deleting data in batches without the primary key can cause serious master-slave delay.
+- Define fields as NOT NULL and set default values. NULL fields will cause unavailability of indexes, thus bringing problems to SQL development. NULL calculation can only be implemented based on IS NULL and IS NOT NULL.
 
-### 提案事項
-- ビジネスシナリオ分析とデータアクセスの見積もり（データベースの読み取り/書き込みQPS、TPS、ストレージを含む）を通じて、データベースが使用するリソースを合理的に計画します。 コンソールのクラウド監視画面でTencentDB for MySQLインスタンスの各監視を設定することもできます。
-- データベースを構築する原則は同一種類のタスクのテーブルを1つのデータベースに入れ、混同しないようにしてください。 プログラムではデータベース間の関連操作を実行することは極力避けます。実行すると、今後のクイックロールバックにも一定の影響があります。
-- 文字化けのリスクを最小限に抑えるために、utf8mb4文字セットを使用してください。複雑な一部の漢字と絵文字の表情はutf8mb4を使うと正しく表示されます。文字セットが変更された場合、新しい文字セットは変更後に作成されたテーブルでのみ有効になります。新しく購入したTencentDB for MySQLインスタンスを初期化するときはutf8mb4を選択することをお勧めします。
-- 10進数フィールドの場合、decimalタイプの使用を推奨します。floatとdoubleは精度が低いので、特に金額のタスクに関するものはdecimalを必ず使用してください。
-- データベースtext/blobを使用して大きなテキスト、バイナリデータ、画像、ファイルなどのコンテンツを保存することは極力避けてください。これらのデータはローカルディスクファイルに保存し、データベースにはそのインデックス情報だけを保存します。
-- 外部キーの使用は避けてください。アプリケーション層で外部キーのロジックを実現することをお勧めします。外部キーとカスケード更新は、挿入のパフォーマンスを低下させ、同時実行数が多い場合にデッドロックを引き起こす可能性があるため、同時実行数が多いシナリオには適していません。
-- ビジネスロジックとデータストレージの結合度を下げ、データベースには主にデータを保存します。ビジネスロジックは可能な限りアプリケーション層を介して実行します。移植性とスケーラビリティが低いため、ストレージプロセス、トリガー、関数、イベント、ビュー、およびその他の高度な機能の使用を最小限に抑えます。このようなオブジェクトがインスタンスに存在する場合、アカウントの移行とdefinerの不一致に起因する移行の失敗を回避するために、デフォルトではdefinerを設定しないことをお勧めします。　　
-- 短期タスクが大きな量にならない場合は、パーティションテーブルを使用しないでください。パーティションテーブルは主にアーカイブ管理に使用され、宅配業やeコマース業の発注書に多く使われます。パーティションテーブルには性能を向上させる作用はありません。
-- 読み取り負荷が高く、整合性の要件が低いビジネスシナリオ（秒レベルのデータ遅延は許容範囲）では、読み取り専用インスタンスを購入して、データベースレベルで読み取り/書き込みの分離を実装することをお勧めします。
+### Suggestions
+- Plan the resources used by databases reasonably based on business scenario analysis and estimation of data access (including database read/write QPS, TPS, and storage). You can also configure various Cloud Monitor metrics for TencentDB for MySQL in the console.
+- When building databases, put the tables for the same type of businesses into one database and try not to mix and match. Do not perform cross-database correlation operations in programs as doing so will affect subsequent quick rollbacks.
+- Always use the utf8mb4 character set to minimize the risk of garbled characters. Some complex Chinese characters and emoji stickers can be displayed normally only in utf8mb4. If the character set is changed, the new character set will take effect only on tables created after the change. Therefore, it is recommended to select utf8mb4 as early as in the initialization of a new TencentDB for MySQL instance.
+- For decimal fields, the decimal type is recommended. The float and double types have insufficient precision, especially for businesses involving money where the decimal type must be used.
+- Do not use text/blob to store a large amount of text, binary data, images, files, and other contents in a database; instead, save such data as local disk files and only store their index information in the database.
+- Avoid using foreign keys. It is recommended to implement the foreign key logic at the application layer. Foreign key and cascade update are not suitable for high-concurrence scenarios, because they may reduce the insertion performance and lead to deadlock in case of high concurrence.
+- Reduce the coupling of business logic and data storage; use databases mainly for storing data and implement business logic at the application layer as much as possible; minimize the use of stored procedures, triggers, functions, events, views, and other advanced features due to their poor portability and scalability. If such objects exist in an instance, it is not recommended to set definer by default so as to avoid migration failures caused by inconsistency between migration account and definer.
+- If you won't have a substantial business volume in the near future, do not use partition tables, which are mainly used for archive management in the courier and ecommerce industries. Do not rely on partition tables for performance enhancement, unless over 80% of queries in your business involve partition fields.
+- For business scenarios with a high read load and low requirement for consistency (data delay within seconds is acceptable), it is recommended to purchase read-only instances to implement read/write separation at the database level.
 
-## インデックス設定ルール
-### 注意事項
-- 非常に頻繁に更新され、高度に区分化されていない列にインデックスを作成することを禁止します。記録の更新によりB+ツリーが変更されます。更新が頻繁なフィールドでのインデックス作成はデータベースのパフォーマンスを大幅に低下させます。
-- 複合インデックスを作成するときは、高度に区分化された列をインデックスの最も左側に置きます。例えば、`select xxx where a = x and b = x;`，aとbを一緒に組み合わせてインデックスを作成し、aの区分度をさらに高めて、`idx_ab(a,b)`を作成します。不等号と等号の判断条件が混在するときは、等号条件を持つ列を前に置く必要があります。例えば、`where a xxx and b = xxx`の場合、インデックスaはクエリで使用されないため、インデックスaの区分度が高くても、bをインデックスの最前列に配置する必要があります。
+## Index Design Specifications
+### Precautions
+- Do not create indexes on the columns that are updated frequently and have a lower differentiation. Record updates will change the B+ tree, so creating indexes for frequently updated fields may greatly reduce the database performance.
+- When creating a composite index, the index with the highest differentiation should be placed on the far left; for example, in `select xxx where a = x and b = x;`, if a and b are used together to create a composite index and a has higher differentiation, then the composite index should be created as `idx_ab(a,b)`. If None-Equal To and Equal To conditions are used at the same time, the column with the Equal To condition must be put first; for example, for `where a xxx and b = xxx`, b must be placed at the forefront even if a has a higher differentiation, because index a will not be used in the query.
 
-### 提案事項
-- 単一テーブルのインデックス数は5個以下に、インデックス1つあたりのフィールド数は5個以下とすることをお勧めします。インデックスが多すぎると、フィルター機能が働かず、インデックスも空間を占めてしまい、管理してもリソースを消耗してしまうからです。
-- カーディナリティ値が高いSQLフィルターに最も頻繁に使用される列にインデックスを作成します。SQLフィルターに関係しない列にインデックスを作成しても意味がありません。フィールドの一意性が高いほど、カーディナリティ値が高くなり、インデックスのフィルター効果も良くなります。通常、カーディナリティが10％未満のインデックス列は、性別フィールドなどの非効率なインデックスと見なされます。
-- varcharフィールドにインデックスを作成するときは、インデックスの長さを指定することをお勧めします。すべての列にインデックスは直接作成しないでください。一般にvarchar列は比較的長く、一定の長さを指定してのインデックス作成はすでに区分度が高いので、すべての列にインデックスをつける必要はありません。すべての列へのインデックス作成は重くなり、インデックスのメンテナンスコストが増加してしまいます。count(distinct left(列名、インデックスの長さ))/count(\*)を使用してインデックス区分度を見ることができます。
-- 冗長なインデックスを使用しないでください。 2つのインデックス(a、b) (a)が同時に存在する場合、(a)は冗長なインデックスと見なされます。クエリフィルター条件がa列なら、(a、b)インデックスは十分で、単独で(a)インデックスを作成する必要はありません。
-- カバリングインデックスを適切に使用して、IOオーバーヘッドを低減させます。InnoDBでは、セカンダリインデックスのリーフノードは、自身のキー値と主キー値のみを保存します。SQLステートメントがそのようなインデックス列または主キーをクエリしない場合、インデックスのクエリは対応する主キーを最初に検索し、次に主キーに基づいて必要な列を検索します。これはテーブルアクセス( TABLE ACCESS BY INDEX ROWID )で、こうして想定外のIOオーバーヘッドが発生しますが、この時カバリングインデックスを利用してこの問題を解決できます。例えば`select a,b from xxx where a = xxx`において、aが主キーでない場合、aおよびb列に複合インデックスを作成して問題を回避できます。
+### Suggestions
+- It is recommended to use no more than 5 indexes in a single table and no more than 5 fields in a single index. Too many indexes may affect the filtering, occupy much more capacity, and consume more resources for management.
+- Create indexes on the columns that are used for SQL filtering most frequently with a high cardinality value. It is meaningless to create indexes on a column not involved in SQL filtering. The higher the uniqueness of a field, the higher the cardinality value, and the better the index filtering result. Generally, an index column with a cardinality below 10% is considered an inefficient index, such as the gender field.
+- When creating an index on the `varchar` field, it is recommended to specify an index length but not to index the entire column. This is because the `varchar` column is often long and specifying the index length can provide sufficient differentiation. Indexing the entire column will increase the maintenance costs. You can use `count (distinct left (column name, index length))/count (\*)` to check index differentiation.
+- Avoid using redundant indexes. If both index (a,b) and index (a) exist, (a) is considered a redundant index. If the query filtering is based on column a, the index (a,b) is sufficient.
+- Use covering indexes reasonably to reduce IO overhead. In InnoDB, leaf nodes of a secondary index only save the values of their own keys and the primary key. If an SQL statement does not query such an index column or primary key, the query on the index will locate the corresponding primary key first and then locate the desired column based on the primary key. This is TABLE ACCESS BY INDEX ROWID, which will incur extra IO overhead. Covering indexes can be used to solve this problem; for example, in `select a,b from xxx where a = xxx`, if a is not the primary key, a composite index can be created on a and b columns to prevent the problem.
 
-## SQL作成規範
-### 注意事項
-- LIMITはランダムであり、データエラーを引き起こす可能性があるため、UPDATEおよびDELETE操作にLIMITを使用しないでください。代わりに、完全に一致するような操作にはWHEREを使用する必要があります。
-- `INSERT INTO t_xxx VALUES(xxx)`の使用は禁止します。テーブル結合の変化がデータエラーを出すことを避けるため、挿入した列の属性を明確に指定する必要があります。
-- 無効なインデックスの一般的な理由は次のとおりです。
- - 暗黙的な型変換。例えば、インデックスaのタイプはvarcharで、SQLステートメントがwhere a = 1の場合、varcharはintに変更されます。
- - インデックス列に数学計算と関数などの操作を行います。例えば、日付列の関数を使用してフォーマット処理を行います。
- -  結合操作が実行される列には、異なる文字セットがあります。
- -  複数の列の配列順序が不一致の問題。例えば、インデックスが(a、b)で、SQLステートメントがorder by a b desclike。
- -  あいまい検索を実行すると、一部のインデックスで`xxx%`の形式の文字をクエリできます。
- -  逆方向の検索を使用（not，!=，not in 等）します。
+## SQL Statement Writing Specifications
+### Precautions
+- Do not use LIMIT for UPDATE and DELETE operations, because LIMIT is random and may cause data errors; instead, you must use WHERE for such operations for exact match.
+- Do not use `INSERT INTO t_xxx VALUES(xxx)`, and the column attributes to be inserted must be specified explicitly to prevent data errors caused by changes in the table structure.
+- The following are common reasons for invalid indexes in SQL statements:
+ - Implicit type conversion; for example, if the type of index a is varchar and the SQL statement is where a = 1;, then varchar is changed to int.
+ - Math calculations and functions are performed on the index columns; for example, date column is formatted using a function.
+ - Columns on which a join operation is performed have different character sets.
+ - Multiple columns have different sorting orders; for example, the index is (a,b), but the SQL statement is `order by a b desclike`.
+ - When fuzzy queries are performed, some indexes can be queried for characters in the format of `xxx%`; however, in other cases, indexes will not be used.
+ - Queries in reverse direction (such as "not", "!=", and "not in") are used.
  
-### 提案事項
-- 次の問題を回避するために、必要に応じてクエリを実行し、`select *`を拒否してください。       
-    - カバリングインデックスが機能せず、TABLE ACCESS BY INDEX ROWIDの問題が発生し、余分なIOオーバーヘッドが発生します。      
-    - 想定以上にメモリ負担があるため、多くのコールドデータが`innodb_buffer_pool_size`にインポートされるため、クエリのヒット率が低下する可能性があります。      
-    - 想定以上のネットワーク伝送オーバーヘッド。
-- 大きなトランザクションの使用は避けてください。マスター/スレーブ遅延問題を回避するために、大きなトランザクションを複数の小さなトランザクションに分割することをお勧めします。
-- ビジネスコードのトランザクションを適時にコミットし、不必要なロックが生じないようにします。
-- 複数のテーブルでの結合操作の使用を最小限に抑え、大きなテーブルでは結合操作を実行しないでください。 2つのテーブルで結合操作を実行する場合は、小さい方のテーブルを駆動表として使用し、結合する列の文字セットを同じにし、それらすべてにインデックスを付ける必要があります。
-- LIMITを使用してページングを最適化します。「LIMIT 80000、10」という操作は、80010レコードを取り出し、最後の10レコードを返すことです。これにより、データベースに高い負荷がかかる場合があります。ページング前に最初のレコードを見つけることをお勧めします。例：`SELECT * FROM test WHERE id = ( SELECT sql_no_cache id FROM test order by id LIMIT 80000,1 ) LIMIT 10 ;。
-- マルチレベルのネストされたサブクエリでSQLステートメントを使用しないでください。 MySQL 5.5より前のクエリオプティマイザがinをexistsに変更すると、インデックスエラーになります。この場合、外部テーブルが大きいとパフォーマンスが低下する可能性があります。
+### Suggestions
+- Ensure query on demand and reject `select *` to avoid the following problems:       
+    - The covering index does not work and the problem of TABLE ACCESS BY INDEX ROWID occurs, which leads to extra IO overhead.      
+    - Additional memory load; a large amount of cold data is imported to `innodb_buufer_pool_size` which may reduce the query hit rate.      
+    - Additional overhead in network transfer.
+- Avoid using large transactions. It is recommended to split a large transaction into multiple small ones to avoid master-slave delay.
+- Commit transactions in the business code in a timely manner to avoid unnecessary lock waits.
+- Minimize the use of join operations for multiple tables and do not perform join operations on large tables. When a join operation is performed on two tables, the smaller one must be used as the driving table, the columns to be joined must have the same character set, and all of them must have been indexed.
+- Use LIMIT for paging optimization. The operation "LIMIT 80000, 10" is to filter out 80,010 records and then return the last 10 ones. This may cause a high load on the database. It is recommended to locate the first record before paging, such as `SELECT * FROM test WHERE id = ( SELECT sql_no_cache id FROM test order by id LIMIT 80000,1 ) LIMIT 10 ;`.
+- Avoid using an SQL statement with multi-level nested subqueries. The query optimizer prior to MySQL 5.5 can convert "in" to "exists" and does not go through the indexes. In this case, a large external table may result in poor performance.
 
 >
->- 上記のような状況を完全に避けることは困難です。推奨される　　このタイプの条件を主要なフィルタリング条件として使用しないことです。
->- 多数の全表スキャンがある場合は、コンソールで`log_queries_not_using_indexes`パラメーターを設定し、しばらくしてからスローログファイルをダウンロードして分析します。しかし、スロークエリーログが急増しないように長時間の起動はしないでください。
->- タスクがオンラインになる前に、必要なSQL監査を行い、日常のメンテナンスでは定期的にスロークエリログをダウンロードして対象を絞った最適化を行います。
+>- It is difficult to totally avoid the above problems. The solution is not to use the aforementioned conditions as the primary filtering conditions; instead, set them as the conditions secondary to the primary filtering conditions for indexes.
+>- If a large number of full table scans is found in the monitor, set the `log_queries_not_using_indexes` parameter in the console and download the slow logs for analysis later. Do not keep it enabled for too long so as to avoid a surge of slow logs.
+>- Perform the required SQL audit before a business goes live. In daily OPS work, download slow query logs regularly for targeted optimization.
