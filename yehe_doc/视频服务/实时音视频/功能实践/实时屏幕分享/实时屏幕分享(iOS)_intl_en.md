@@ -195,7 +195,7 @@ Connect to the receipt logic of the primary application in the following steps, 
 
 <span id="launch"> </span>
 #### Step 4. Add a screen sharing triggering button (optional)
-Till [step 3](receive), the user needs to start screen sharing manually by pressing and holding the screen recording button in Control Center. You can implement the feature of triggering screen sharing simply by clicking a button like in VooV Meeting in the following steps:
+Till [step 3](#receive), the user needs to start screen sharing manually by pressing and holding the screen recording button in Control Center. You can implement the feature of triggering screen sharing simply by clicking a button like in VooV Meeting in the following steps:
 
 1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen) and add it to your project.
 2. Place a button on your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to wake up screen sharing.

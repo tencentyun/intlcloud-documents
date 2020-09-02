@@ -1,12 +1,12 @@
 ## 密钥问题
 
-### 如何查看 APPID、SecretId、SecretKey 等密钥信息呢？
+### 如何查看 APPID、SecretId、SecretKey 等密钥信息？
 
 存储桶名称的后半部分即为 APPID 信息，您可以登录 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 查看。SecretId、SecretKey 等信息，请登录访问管理控制台的 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中查看。
 
 ### 临时密钥的有效时间是多长？
 
-最长2小时，即7200秒。临时密钥过期后，持有过期临时密钥的请求将会被拒绝。有关临时密钥的介绍请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+临时密钥目前主账号最长2小时（即7200秒），子账号最长36小时（即129600秒），默认值为30分钟（即1800秒）。临时密钥过期后，持有过期临时密钥的请求将会被拒绝。有关临时密钥的介绍请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 密钥相关信息如 APPID、SecretId 等信息泄露了，如何处理？
 
@@ -76,7 +76,7 @@
 
 ### COS 的 ACL 限制是针对存储桶还是账号？上传文件时是否可以指定权限？
 
-ACL 限制针对账号。不建议上传文件时指定权限，容易导致规则数量超过1000条而出现报错。
+ACL 限制针对账号。不建议上传文件时指定权限，容易导致 ACL 规则数量超过1000条而出现报错。
 
 ### 如何授权协作者访问指定存储桶？
 

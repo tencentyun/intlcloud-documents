@@ -408,3 +408,5 @@
 | [TRTCDeviceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga76eabab111ddd8a7b2e44d2cbcf45794) | 设备类型。 |
 | [TRTCWaterMarkSrcType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab3426c24d07508781330231a35be0ae0) | 水印图片的源类型。 |
 | [TRTCTranscodingConfigMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaec50c849a17b7706f6989d718fc6b7df) | 混流参数配置模式。 |
+
+
