@@ -21,4 +21,4 @@
 4. 当 ClickHouse 集群进行扩容时，高可用实例（HA），扩容节点数量是偶数；非高可用实例（HA），扩容节点数量无限制。需要选择所属 cluster，支持选择已有 Cluster 和新建 Cluster 两种。
 >!ClickHouse 集群扩容成功后虚拟集群 Cluster 中新增节点没有数据，系统不会进行数据迁移，需要手动进行数据迁移；以达到数据均衡充分提升资源利用率；请在集群扩容成功后及时进行数据迁移。
 >
-![](https://main.qcloudimg.com/raw/c3e7f2a5435714c6361072bd423ccfab.png)
+![](https://main.qcloudimg.com/raw/76b2279772ab7a7402d438acbaa60493.png)
