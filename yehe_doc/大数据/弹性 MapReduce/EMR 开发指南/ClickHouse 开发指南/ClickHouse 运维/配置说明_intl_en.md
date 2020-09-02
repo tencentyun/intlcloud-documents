@@ -5,13 +5,13 @@ The ClickHouse server configuration files are located in `/etc/clickhouse-server
 Under the `conf.d` and `config.d` folders at the same level as the `config.xml` configuration file, you can create an `*.xml` file to override the configurations in the `config.xml` file (**however, you are not recommended to do so; instead, you are recommended to centrally distribute configurations by using the configuration delivery feature in the console**).
 
 For example, create a `config.d` directory at the same level as the `config.xml` file:
-1. Modify the HTTP port listened on by the `clickhouse-server`, which is port 9900 in the `config.xml` file by default. Create a `tcp_port.xml` file in the `config.d` folder and add the following content to it:
+1. Modify the TCP port listened on by the `clickhouse-server`, which is port 9000 in the `config.xml` file by default. Create a `tcp_port.xml` file in the `config.d` folder and add the following content to it:
 ```
 <yandex>
        <tcp_port>9900</tcp_port>
 </yandex>
 ```
-Restart the `clickhouse-server` and you can find that the HTTP port listened on has been changed to 9900.
+Restart the `clickhouse-server` and you can find that the TCP port listened on has been changed to 9000.
 2. Add the `metric_log` configuration. Create a `metric_log.xml` file and add the following content to it:
 ```
 <yandex>
