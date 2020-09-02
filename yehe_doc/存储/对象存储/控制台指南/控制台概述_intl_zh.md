@@ -27,6 +27,6 @@
 | 存储桶策略   | [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)   |
 | 访问控制     | <li>[设置对象的访问权限](https://intl.cloud.tencent.com/document/product/436/13327)<br><li>[设置存储桶的访问权限](https://intl.cloud.tencent.com/document/product/436/13315)<br><li>[子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)          |
 | 域名与访问加速     | <li>[域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)<br><li>[开启默认加速域名](https://intl.cloud.tencent.com/document/product/436/31505)<br><li>[开启自定义加速域名](https://intl.cloud.tencent.com/document/product/436/31506)<br><li>[开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)<br><li>[授予子账号配置存储桶加速域名的权限](https://intl.cloud.tencent.com/document/product/436/31712)<br><li>[开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406)  |
-|  数据处理 |  图片审核：<li>[基础图片处理](https://intl.cloud.tencent.com/document/product/436/36569) <br>文档处理：<br><li>设置文档预览<br>内容审核 ：<br><li>设置图片审核 <br><li>设置视频审核<br>函数计算：<br><li>[设置文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[设置 CDN 缓存刷新](https://intl.cloud.tencent.com/document/product/436/37273)   |
+|  数据处理 |  图片处理：<li>[基础图片处理](https://intl.cloud.tencent.com/document/product/436/36569) <br>函数计算：<br><li>[设置文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[设置 CDN 缓存刷新](https://intl.cloud.tencent.com/document/product/436/37273)   |
 
 

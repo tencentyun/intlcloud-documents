@@ -14,7 +14,7 @@ bin/alluxio fs mount --option fs.cos.access.key=<COS_SECRET_ID> \
     --option fs.cos.secret.key=<COS_SECRET_KEY> \
     --option fs.cos.region=<COS_REGION> \
     --option fs.cos.app.id=<COS_APP_ID> \
-    /cos cos://<COS_BUCKET>/<COS_DATA>/
+    /cos cos://<COS_BUCKET>/
 ```
 
 Configure the COS configuration information in --options.
@@ -26,7 +26,6 @@ Configure the COS configuration information in --options.
 | fs.cos.region     | COS region name such as `ap-beijing` |
 | fs.cos.app.id     | User APPID                              |
 | COS_BUCKET        | COS Bucket name                         |
-| COS_DATA          | COS directory, which can be the root `/`         |
 
 This command mounts the COS directory (specified by `cos://bucket/xxx`) to the `/cos` directory in Alluxio. 
 
