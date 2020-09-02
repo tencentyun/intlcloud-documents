@@ -13,7 +13,7 @@
 
 IM comes with the preceding four group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->? Generally, importing group members is not required for AVChatRoom, so AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned.
+>!AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned. You have to apply to join this group.
 
 ### Request URL example
 ```
@@ -38,7 +38,7 @@ The maximum invocation frequency is 200 times per second.
 ### Request packet examples
 
 - **Basic form**
-Invites users to a group. A single request supports adding up to 500 members. By default, the backend will deliver group system notifications to all group members (except for Private groups that have not been activated).
+Invites users to a group. A single request supports adding up to 500 members. By default, the backend will deliver group system notifications to all group members (except for Private groups or Work groups in the new version that have not been activated).
 ```
 {
     "GroupId": "@TGS#2J4SZEAEL", // The group to be operated on (required)
@@ -124,7 +124,7 @@ The following table describes the error codes specific to this API.
 | 10016 | The developer backend rejects this operation through a third-party callback. |
 | 10019 | The requested UserID  does not exist. In this case, check whether all Member_Accounts in MemberList are correct. |
 | 10026 | The command keyword requested by SDKAppID is disabled. In this case, contact our customer service. |
-| 10037 | The number of groups that the invited user has joined exceeds the limit. In this case, check and delete the Member_Account that has joined excessive groups, or **purchase an upgrade** based on the actual need. For information on feature packages, see [Feature Packages](https://intl.cloud.tencent.com/document/product/1047/34350). | 
+| 10037 | The number of groups that the invited user has joined exceeds the limit. In this case, check and delete the Member_Account that has joined excessive groups, or **purchase an upgrade** based on the actual need. For information on feature packages, see [Feature Packages](https://intl.cloud.tencent.com/document/product/1047/34350). |
 
 ## API Commissioning Tool
 Use the [online commissioning tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/add_group_member) to commission this API.
@@ -137,3 +137,7 @@ Deleting a group member ([v4/group_open_http_svc/delete_group_member](https://in
 - [Callback before inviting a user to a group](https://intl.cloud.tencent.com/document/product/1047/34371)
 - [Callback after a new member joins a group](https://intl.cloud.tencent.com/document/product/1047/34372)
 - [Callback after the group is full](https://intl.cloud.tencent.com/document/product/1047/34376)
+
+```
+
+```

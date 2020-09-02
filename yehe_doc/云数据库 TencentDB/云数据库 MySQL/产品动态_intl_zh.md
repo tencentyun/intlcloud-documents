@@ -1,3 +1,19 @@
+## 2020年08月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tbody><tr>
+<td>支持 MySQL 8.0</td>
+<td>云数据库 MySQL 支持8.0，结合完备的管控服务和 TXSQL 内核，提供更快、更稳的企业级服务，丰富行业场景，助力客户产业升级。</td>
+<td>2020-08</td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/236/31896" target="_blank">数据库版本</a></td>
+</tr>
+</tbody></table>
+
 ## 2020年07月
 <table>
 <tr>
@@ -10,7 +26,7 @@
 <td>支持应用参数模板于实例</td>
 <td>云数据库 MySQL 支持通过参数模板同时修改多个实例的参数，并可选择在自定义时间内执行参数修改任务，及支持取消参数修改任务。</td>
 <td>2020-07</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">设置实例参数</a><li><a </td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">设置实例参数</a><li><a href="https://intl.cloud.tencent.com/document/product/236/31906" target="_blank">使用参数模板</a></td>
 </tr>
 <tr>
 <td>支持透明数据加密 TDE</td>

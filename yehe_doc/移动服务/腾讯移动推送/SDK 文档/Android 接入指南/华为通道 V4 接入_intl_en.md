@@ -1,11 +1,11 @@
 ## Operation Scenarios
 Huawei launches HMS Push SDK v4.0 as an upgrade of **Huawei Push** SDK v2.6.3.
 Compared with SDK v2.6, v4.0 features major changes in API call and push service enablement steps.
-As TPNS always keeps up with the update progress of each vendor channel's push service, it provides plugin dependency packages integrated with HMS Push SDK v4 for your choice.
+As TPNS always keeps up with the update progress of each vendor channel's push service, it provides plugin dependency packages integrated with HMS Push SDK v4.0 for your choice.
 >!  
 >- HMS Push SDK v4 is incompatible with v2. If both are integrated, their dependency packages will conflict with each other. Please choose one of them for integration.
->- HMS Push SDK v4 no longer supports direct delivery of custom parameters in `key-value` format from the server and the `onEvent` callback for notification click events provided in v2. You are recommended to use the general intent scheme on Android to deliver such events. For more information, please see [How do I set the message click event?](https://intl.cloud.tencent.com/document/product/1024/32624#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F).
->- You can still integrate Huawei Push SDK v2 to use the Huawei Push service. For more information, please see [Huawei Channel v2 Connection](https://intl.cloud.tencent.com/document/product/1024/30716).
+>- HMS Push SDK v4 no longer supports direct delivery of custom parameters in `key-value` format from the server and the `onEvent` callback for notification click events provided in v2. You are recommended to use the general intent scheme on Android to deliver such events. For more information, please see [How do I set the message click event?](https://cloud.tencent.com/document/product/548/36674#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F).
+>- You can still integrate Huawei Push SDK v2 to use the Huawei Push service. For more information, please see [Huawei Channel v2 Connection](https://cloud.tencent.com/document/product/548/36653).
 >- For Huawei Push, you can successfully register with the Huawei channel and push messages through it only in a signed package environment.
 >- The Huawei channel supports click callback but not arrival callback.
 
@@ -13,7 +13,7 @@ As TPNS always keeps up with the update progress of each vendor channel's push s
 ## Application Configuration on Huawei Push Platform
 ### Getting key
 1. Go to the [Huawei Developer platform](http://developer.huawei.com).
-2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to verify your identity.)
+2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to complete identity verification.)
 3. Create an application on the Huawei Push platform. For more information, please see [Creating Application](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). (The application package name must be the same as that entered in the TPNS Console.)
 4. Get and copy the application's `AppID` and `AppSecret` and paste them in **Application Configuration** > **Huawei Channel** in the TPNS Console.
    
@@ -55,6 +55,7 @@ allprojects {
 ```
 
 3. Copy the application configuration file `agconnect-services.json` obtained from the Huawei Push platform to the `app` module directory.  
+![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
 
 4. Add the following configuration to the `build.gradle` file at its beginning in the `app` module:
 ```
@@ -104,7 +105,8 @@ buildscript {
 ```
 
 3. Copy the application configuration file `agconnect-services.json` obtained from the Huawei Push platform to the `app` module directory.  
-![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
+
+  ![](https://main.qcloudimg.com/raw/90cefd6b26ad2bd2c80925ccbb4e67c7.png)
 
 4. Add the following configuration to the `build.gradle` file at its beginning in the `app` module:
 ```
@@ -164,11 +166,11 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 
 ## Advanced Configuration (Optional)
 ### Arrival receipt configuration for Huawei channel
-The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Receipt Configuration Guide for Huawei Channel](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
+The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Receipt Configuration Guide for Huawei Channel](https://cloud.tencent.com/document/product/548/41318#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
 ![](https://main.qcloudimg.com/raw/11c44dfc000045458a627e12b67ef611.png)
 
 ### Badge adaptation for Huawei devices
-You can set the application badge on Huawei devices after applying for the application badge setting permission and setting the application start class. For more information, please see [Badge Adaption Guide](https://intl.cloud.tencent.com/document/product/1024/35828#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97).
+You can set the application badge on Huawei devices after applying for the application badge setting permission and setting the application start class. For more information, please see [Badge Adaption Guide](https://cloud.tencent.com/document/product/548/43693#.E5.8D.8E.E4.B8.BA.E6.89.8B.E6.9C.BA.E8.A7.92.E6.A0.87.E9.80.82.E9.85.8D.E6.8C.87.E5.8D.97).
 
 ## Troubleshooting
 ### Querying Huawei Push registration error code

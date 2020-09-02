@@ -1,4 +1,5 @@
 ## Getting Backup Download Link
+>?To download backups via a sub-account, please grant the sub-account sufficient permissions. For more information, please see [Sub-Account Authorization for Backup Download](https://intl.cloud.tencent.com/document/product/240/36356).
 
 >
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name in the instance list to enter the instance management page.
@@ -15,10 +16,18 @@ coscmd config -a IKIDxxxxxxxxxxx20Eb -s TbecxxxxxxxxxxxT4Yw -b mognodb-backup-te
 ```
 
 ## Downloading Backup File
-1. Specify an empty download directory; if there is no directory, create one by running the following command:
+1. [Log in to the Linux CVM instance](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8) and specify an empty download directory. If there is no empty directory, run the following command to create one:
 ```
 mkdir dump
 ```
+>!The private network address of the Linux CVM instance must be within one of the following IP ranges; otherwise, backup files cannot be downloaded.
+>- 192.168.0.0/16 
+>- 172.16.0.0/16
+>- 172.20.0.0/16
+>- 172.24.0.0/16
+>- 172.27.0.0/16
+>- 10.0.0.0/8
+
 2. Run the download command with the download link obtained from the TencentDB for MongoDB Console. For example, if the download link is `cmongo_backup/cmgo-pfsumk5l_0/snapshot/1544517026`, the command will be as shown below:
 ```
 coscmd  download -r  cmongo_backup/cmgo-pfsumk5l_0/snapshot/1544517026  dump/
