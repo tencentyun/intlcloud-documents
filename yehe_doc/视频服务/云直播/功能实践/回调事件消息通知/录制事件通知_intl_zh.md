@@ -2,7 +2,7 @@
 
 # 注意事项
 
-- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://cloud.tencent.com/document/product/267/32744)。
+- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/zh/document/product/267/38080)。
 - 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，并可提前选购点播相关资源包，避免点播业务欠费停用。
 
 
