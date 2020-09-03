@@ -54,8 +54,8 @@ No special request header is used except for the common header.
 | max_size | int | body | No | The maximum size of a file to be shipped (in MB). Default is 100 MB. Value range: 100-256 |
 | effective | bool | body | No | Indicates whether to enable the shipping task |
 | partition | string | body | No | Rules for partitioning logs to be shipped. `Strftime` can be used to define the time format. |
-| compress | object | body | Yes | Compression configuration of logs to be shipped |
-| content | object | body | Yes | Format configuration of logs to be shipped |
+| compress | object | body | No       | Compression configuration of logs to be shipped |
+| content | object | body | No | Format configuration of logs to be shipped |
 
 The `compress` format is as follows:
 
