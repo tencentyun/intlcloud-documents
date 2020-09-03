@@ -1,6 +1,6 @@
 ## ITRTCCloud @ TXLiteAVSDK
 
-### Creating and terminating an ITRTCCloud Singleton
+### Creating and terminating an ITRTCCloud singleton
 
 | API | Description |
 |-----|-----|
@@ -8,7 +8,7 @@
 | [destroyTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a4a0722972418aa87ae602f7e12d466ac) | Releases [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#classManageLiteAV_1_1ITRTCCloud) singleton object. |
 
 
-### Setting TRTCCloudCallback callback
+### Setting `TRTCCloudCallback` callbacks
 
 | API | Description |
 |-----|-----|
@@ -16,30 +16,30 @@
 | [removeCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#afdcaecebad62bfcceecb97f5cbe2bf88) | Removes event callback. |
 
 
-### Room API functions
+### Room APIs
 
 | API | Description |
 |-----|-----|
 | [enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b) | Enters room. If the room does not exist, the system will automatically create a room. |
 | [exitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a715f5b669ad1d7587ae19733d66954f3) | Exits room. |
-| [switchRole](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a94ab2e8a7df0c120def9d4b0c7658d84) | Switches role. This API applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
+| [switchRole](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a94ab2e8a7df0c120def9d4b0c7658d84) | Switches role. This API applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`). |
 | [connectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa29407e4c40f2bf61777bbe054f6bf0f) | Requests cross-room call (anchor competition). |
 | [disconnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#abd656e4c9b6a01231810ae897627e9bc) | Disables cross-room co-anchoring. |
 | [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae870243f89b5829cd7ac5612ec958cdf) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
 
 
-### CDN API functions
+### CDN APIs
 
 | API | Description |
 |-----|-----|
-| [startPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad23040b25685bed8a9fa35bec28024bd) | Starts pushing to Tencent Cloud LVB CDN. |
-| [stopPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#afc00ba747be5299cd7235928a628339e) | Stops pushing to Tencent Cloud LVB CDN. |
+| [startPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad23040b25685bed8a9fa35bec28024bd) | Starts pushing streams to Tencent Cloud LVB CDN. |
+| [stopPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#afc00ba747be5299cd7235928a628339e) | Stops pushing stream to Tencent Cloud LVB CDN. |
 | [startPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adf6a56b335c9860c3ea1a090cad9bf7b) | Starts relaying to the live streaming CDN of another cloud. |
 | [stopPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a5d8a86795b8a2d7eaf9be7157dd9b8dd) | Stops relaying to non-Tencent Cloud address. |
 | [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9a92140403d83a22f4334c0002f71d8d) | Sets On-Cloud MixTranscoding parameters. |
 
 
-### Video API functions
+### Video APIs
 
 | API | Description |
 |-----|-----|
@@ -57,7 +57,7 @@
 | [setRemoteViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aeeb9e236aaa9c2ae9846af86ff3195d4) | Sets the rendering mode of remote image. |
 | [setLocalViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a8d5dc6995392c71257493353e3571e86) | Sets the clockwise rotation angle of local image. |
 | [setRemoteViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a87f256d5148e34bd59756fa516307fce) | Sets the clockwise rotation angle of remote image. |
-| [setVideoEncoderRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a291f1c48e5446135c29188f759f023cb) | Sets the direction of image output by video encoder (i.e., video image viewed by remote user and recorded by server).
+| [setVideoEncoderRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a291f1c48e5446135c29188f759f023cb) | Sets the direction of image output by video encoder (i.e., video image viewed by remote user and recorded by server). |
 | [setLocalViewMirror](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a050a53b8bed638f76a64ad82ecd89078) | Sets the mirror mode of local camera's preview image. |
 | [setVideoEncoderMirror](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a3e6dae3e385f1e15d528ec3d6f57a59c) | Sets the mirror mode of image output by encoder. |
 | [enableSmallVideoStream](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a4a83369f8798e273caf0a6550cb19cfe) | Enables dual-channel encoding mode with big and small images. |
@@ -65,10 +65,11 @@
 | [setPriorRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a5cc9f8652845ff0d7adc5b2d24b8a269) | Sets the video quality preferred by viewers. |
 
 
-### Audio API functions
+### Audio APIs
 
 | API | Description |
 |-----|-----|
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae241d03683fdde1e033078a6057f609c) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
 | [startLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a3177329bc84e94727a1be97563800beb) | Enables local audio capture and upstreaming. |
 | [stopLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ab78601c38f1b872b03b662e6856be84c) | Disables local audio capture and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a16d9b4a197a7bc1955240a1ede889246) | Mutes local audio. |
@@ -79,11 +80,11 @@
 | [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9b8946403b8b3ac8e11f3a78e9d531ca) | Sets SDK playback volume level. |
 | [getAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#acd6e6336d8f314cef76de9da831a58dd) | Gets SDK playback volume level. |
 | [enableAudioVolumeEvaluation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ac5711f9704dbea303cf746da26b16a6a) | Enables or disables volume reminder. |
-| [startAudioRecording](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a8e34f7bd3e4b1d63eced9a5273f5afa9) | Starts audio recording. |
-| [stopAudioRecording](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ac8c12476bbcf3d691060954fcdb6ebe6) | Stops recording|
+| [startAudioRecording](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a8e34f7bd3e4b1d63eced9a5273f5afa9) | Starts recording. |
+| [stopAudioRecording](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ac8c12476bbcf3d691060954fcdb6ebe6) | Stops recording. |
 
 
-### Camera API functions
+### Camera APIs
 
 | API | Description |
 |-----|-----|
@@ -92,7 +93,7 @@
 | [getCurrentCameraDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a24ac636304cb989cce4e43a460ad659e) | Gets the currently used camera. |
 
 
-### Audio device API functions
+### Audio device APIs
 
 | API | Description |
 |-----|-----|
@@ -108,7 +109,7 @@
 | [setCurrentSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a5fe7bfacc946565df7d14a91f6de9f21) | Sets current system speaker volume level. |
 
 
-### Beauty filter API functions
+### Beauty effects APIs
 
 | API | Description |
 |-----|-----|
@@ -116,13 +117,21 @@
 | [setWaterMark](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ac6451172a12f33274215785b029be727) | Sets watermark. |
 
 
-### Secondary stream API functions
+
+### Music and voice effects API
 
 | API | Description |
 |-----|-----|
-| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) | Starts rendering the secondary stream image of remote user. |
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ab43456e2e7d83986fd66708131d8c264) | Gets the sound effect management class `TXAudioEffectManager`. |
+
+
+### Substream APIs
+
+| API | Description |
+|-----|-----|
+| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) | Starts rendering the substream image of remote user. |
 | [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a92ad3b6468abc72890c053a94765c4de) | Stops displaying the screen sharing image of remote user. |
-| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23a2fc554362748ef3d0c543918fd35d) | Sets the rendering mode of secondary stream image. |
+| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23a2fc554362748ef3d0c543918fd35d) | Sets the rendering mode of substream image. |
 | [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#acd8fb23b00e6638466f65512723a7395) | Sets the clockwise rotation angle of screen sharing image. |
 | [getScreenCaptureSources](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1eda1853bfc49c43a35e4d945dfccd7a) | Enumerates shareable windows. |
 | [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a92) | Sets screen sharing parameters. This method can be called during screen sharing. |
@@ -131,10 +140,10 @@
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad1fc32927622168e9b3cbb3f70043450) | Resumes screen sharing. |
 | [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad02093be5c603f66f356978169946a18) | Stops screen capture. |
 | [setSubStreamEncoderParam](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7e9588c951feaf2d70c8bd6412432f09) | Sets encoder parameters for screen sharing. |
-| [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aabc643e4be3add7e08b8fb3f1a9789a9) | Sets the audio mixing volume level of secondary stream. |
+| [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aabc643e4be3add7e08b8fb3f1a9789a9) | Sets the audio mixing volume level of substream. |
 
 
-### Custom capture and rendering API functions
+### Custom capture and rendering APIs
 
 | API | Description |
 |-----|-----|
@@ -155,37 +164,6 @@
 | [sendSEIMsg](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a253023d332139a09cbb4d592042b84e6) | Embeds custom data of a small size in video frames. |
 
 
-### Background audio mixing API functions
-
-| API | Description |
-|-----|-----|
-| [playBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2dc777ac9dbc51c01eb735a62318fcc5) | Starts background music. |
-| [stopBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a11004f1ba27b057985850a25307b0bec) | Stops background music. |
-| [pauseBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa4b92d4c989e99612f6c4dab03a78764) | Pauses background music. |
-| [resumeBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aed6e8f224b5f834b1bc0c15f9701f692) | Resumes background music. |
-| [getBGMDuration](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a05d821f12515462f9f1f441a30064e10) | Gets the total length of music file in milliseconds. |
-| [setBGMPosition](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a4e0ae301ab2c14afe7f7a5656e4b0693) | Sets the playback progress of background music. |
-| [setBGMVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aaf6c2319fd42b0453b7408d3f3d60cb4) | Sets background music volume level. This API is used to control the background music volume level during playback. |
-| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a74be58163008d9a85701663e8cfcd3d0) | Sets the local playback volume level of background music. |
-| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad3dd3d419d87c3518088bce81fd5749b) | Sets the remote playback volume level of background music. |
-| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aac7057a9556fc1b1b106733a87069e06) | Enables system audio capture (the 64-bit SDK currently does not support system audio mixing). |
-| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adef486f26a2c7d74a8cccb537367e66a) | Disables system audio capture (the 64-bit SDK currently does not support system audio mixing). |
-| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2bb76d46a5fcf037c560ab8f09b1825f) | Sets system audio capture volume level (the 64-bit SDK currently does not support system audio mixing). |
-
-
-### Sound effect API functions
-
-| API | Description |
-|-----|-----|
-| [playAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa0464fd4855bf9d3275036d04a3e4c74) | Plays back specified sound effect. |
-| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a942a6f358980c8520e2155fb4ef55bd0) | Sets sound effect volume level. |
-| [stopAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a61561195216ac575235b67d410070563) | Stops sound effect. |
-| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7066509af1de32c290b7cc297cd00f2b) | Stops all sound effects. |
-| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a19416181cce88c58052a4eb2e87adeb8) | Sets the volume level of all sound effects. |
-| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a43f83a1323cc39c1610c61cf79ab652c) | Pauses sound effect. |
-| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23b65446d7dd9835da888b5285867629) | Resumes sound effect. |
-
-
 ### Device and network test APIs
 
 | API | Description |
@@ -200,7 +178,7 @@
 | [stopSpeakerDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#abf383f971dc54f0254b2d40f100cc9ca) | Stops speaker test. |
 
 
-### Log API functions
+### Log APIs
 
 | API | Description |
 |-----|-----|
@@ -214,16 +192,36 @@
 | [callExperimentalAPI](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#add201789a0da7c5893cc5636ad9e783e) | Calls experimental API. |
 
 
-### Disused API functions
+### Disused APIs
 
 | API | Description |
 |-----|-----|
-| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1fff2c9d17bc4197c0097c01397bf70e) | Disused since v6.9. |
+| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1fff2c9d17bc4197c0097c01397bf70e) | Sets mic volume level. |
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adde6382876b0afab78bab89e8be8e2542) | Starts screen sharing. |
+| [playBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2dc777ac9dbc51c01eb735a62318fcc5) | Starts background music. |
+| [stopBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a11004f1ba27b057985850a25307b0bec) | Stops background music. |
+| [pauseBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa4b92d4c989e99612f6c4dab03a78764) | Pauses background music. |
+| [resumeBGM](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aed6e8f224b5f834b1bc0c15f9701f692) | Resumes background music. |
+| [getBGMDuration](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a05d821f12515462f9f1f441a30064e10) | Gets the total length of music file in milliseconds. |
+| [setBGMPosition](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a4e0ae301ab2c14afe7f7a5656e4b0693) | Sets the playback progress of background music. |
+| [setBGMVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aaf6c2319fd42b0453b7408d3f3d60cb4) | Sets the playback volume level of background music. |
+| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a74be58163008d9a85701663e8cfcd3d0) | Sets the local playback volume level of background music. |
+| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad3dd3d419d87c3518088bce81fd5749b) | Sets the remote playback volume level of background music. |
+| [playAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aa0464fd4855bf9d3275036d04a3e4c74) | Plays back sound effect. |
+| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a942a6f358980c8520e2155fb4ef55bd0) | Sets sound effect volume level. |
+| [stopAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a61561195216ac575235b67d410070563) | Stops sound effect. |
+| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7066509af1de32c290b7cc297cd00f2b) | Stops all sound effects. |
+| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a19416181cce88c58052a4eb2e87adeb8) | Sets the volume level of all sound effects. |
+| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a43f83a1323cc39c1610c61cf79ab652c) | Pauses sound effect. |
+| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23b65446d7dd9835da888b5285867629) | Resumes sound effect. |
+| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aac7057a9556fc1b1b106733a87069e06) | Enables system audio capture. |
+| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adef486f26a2c7d74a8cccb537367e66a) | Disables system audio capture. |
+| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2bb76d46a5fcf037c560ab8f09b1825f) | Sets system audio capture volume level. |
 
 
 ## TRTCCloudCallback @ TXLiteAVSDK
 
-Callback API class for TRTC video call feature.
+Callback APIs for Tencent Cloud video call feature.
 
 ### Error events and warning events
 
@@ -244,7 +242,7 @@ Callback API class for TRTC video call feature.
 | [onDisconnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a6c11aecb5474f578ce0b83e346b14cac) | Callback of result of ending cross-room call (anchor competition). |
 
 
-### Member event callbacks
+### User event callbacks
 
 | API | Description |
 |-----|-----|
@@ -261,7 +259,7 @@ Callback API class for TRTC video call feature.
 | [onUserExit](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#ab1d8d76808cf417b6f859f3991b2e8f8) | A user (anchor) exits the current room. |
 
 
-### Statistics collection and quality callbacks
+### Callbacks of statistics on quality and technical metrics
 
 | API | Description |
 |-----|-----|
@@ -291,7 +289,7 @@ Callback API class for TRTC video call feature.
 | [onTestSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a7cc29016572d6aa30f389df92d70c048) | Callback of test speaker volume level. |
 
 
-### Custom message reception callbacks
+### Callbacks of custom message receipt
 
 | API | Description |
 |-----|-----|
@@ -329,7 +327,7 @@ Callback API class for TRTC video call feature.
 | [onScreenCaptureStoped](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#ad0c359a7cefb8f246d498a3fbf52b1ac) | This callback will be returned by the SDK when screen sharing is stopped. |
 
 
-### Background audio mixing event callbacks
+### Callbacks of background music related events
 
 | API | Description |
 |-----|-----|
@@ -338,17 +336,17 @@ Callback API class for TRTC video call feature.
 | [onPlayBGMComplete](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#aff8d7c6c3d2a5984ddd6448008041340) | Playback of background music ends. |
 
 
-### Callback of custom processing of video data frames
+### Callbacks of video data frames for custom processing.
 
 | API | Description |
 |-----|-----|
-| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a183dde7faae6b9c62b0b6d9e8422de65) | Callback of custom video rendering. |
+| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a183dde7faae6b9c62b0b6d9e8422de65) | Callback of video data for custom rendering. |
 
 
-### Custom audio data frame processing callbacks (read-only)
+### Callbacks of audio data frames for custom processing (read only)
 
 The callback function is thrown synchronously in the internal thread of the SDK; therefore, please do not perform time-consuming operations. 
->Please define the implementation of related functions as needed to reduce unnecessary performance loss.
+>?Please define related functions for implementation as needed to reduce unnecessary performance loss.
 
 | API | Description |
 |-----|-----|
@@ -357,7 +355,7 @@ The callback function is thrown synchronously in the internal thread of the SDK;
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#ac5262e14766154bda8ad437923285567) | Audio data to be played back by speaker after audio data from each channel is mixed. |
 
 
-### Log callbacks
+### Log related callbacks
 
 | API | Description |
 |-----|-----|
