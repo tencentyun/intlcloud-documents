@@ -53,7 +53,7 @@ create database caccts ;
 | 1000 | Open-source MySQL | 412775 | 2.4 | 6.3 |
 | 1000 | TDSQL | 478393 | 2.08 | 4.21 |
 
-### Write request (UPDATE) test results
+### Write request (write) test results
 
 | Concurrence | Version | QPS | Average Response Time (ms) | 99% Response Time (ms) |
 | --- | --- | --- | --- | --- |
