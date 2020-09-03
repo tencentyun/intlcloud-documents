@@ -868,6 +868,7 @@
 | StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,233.90 | $1.690           | 45%                     | $3.08             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $22,176.00 | $603.90   | $1.671          | 46%                     | $3.08             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $43,344.00 | $0.00     | $1.649           | 46%                     | $3.08             |
+
 ### Standard S3
 
 | Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
@@ -1088,6 +1089,7 @@
 | StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,794.76 | $2.459           | 45%                     | $4.46             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $31,680.00 | $862.71  | $2.387           | 46%                     | $4.46             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $60,880.00 | $0.00     | $2.317           | 48%                     | $4.46             |
+
 ### Compute C2
 
 | Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
@@ -1906,6 +1908,7 @@
 | StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,357.04 | $1.859           | 50%                     | $3.70             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $24,400.00 | $661.94   | $1.835           | 50%                     | $3.70             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $47,520.00 | $0.00     | $1.808           | 51%                     | $3.70             |
+
 ### Compute C3
 
 | Billing Mode                    | Specification          | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
@@ -2778,7 +2781,7 @@
 | Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $29,568.00 | $0.00     | $1.125           | 51%                     | $2.30            |
 
 
-## Mumbai
+## Singapore
 ### Standard S3
 
 | Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |

@@ -4,7 +4,7 @@
 >- 本文档以证书名称 `cloud.tencent.com` 为例，实际名称请以您申请的证书为准。
 >- Weblogic 版本以 Weblogic/14.1.1 为例。
 >- 本文档以操作系统 Windows Server 2012 R2 为例。由于操作系统的版本不同，详细操作步骤略有区别。
->- 安装 SSL 证书前，请您在 IIS 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
+>- 安装 SSL 证书前，请您在 Weblogic 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
 >- SSL 证书文件上传至服务器方法可参考 [如何将本地文件拷贝到云服务器](https://intl.cloud.tencent.com/document/product/213/34821)。
 
 
@@ -28,13 +28,13 @@
 3. 将本地解压缩后的证书文件与密码文件上传至 `temp` 文件夹中。
 4. 请登录 Weblogic 服务管理后台（默认地址：`http://localhost:7001/console`），输入您的用户名及密码，即可进入 WebLogic Server 管理控制台。
 5. 单击【域配置】>【服务器】。进入 “服务器概要” 管理页面。如下图所示：
-![](https://main.qcloudimg.com/raw/ffc8a6df5c09dd96680cdcf1bdb241cb.png)
+![](https://main.qcloudimg.com/raw/a106e5e64c6778f4404f4ed80e489fb0.png)
 6. 选择您要配置的服务器名称，以 `AdminiServer` 为例。 如下图所示：
-![](https://main.qcloudimg.com/raw/aa01743bf9a8db4e4b56688069bd9906.png)
+![](https://main.qcloudimg.com/raw/77fd69ad0a9028898cea25f604dfbe83.png)
 7. 进入 `AdminiServer` 的管理设置页面，勾选【启用 SSL 监听端口】并填写 SSL 监听端口为 `443`，单击【保存】。如下图所示：
-![](https://main.qcloudimg.com/raw/c48f73608b825c6fd3d50fe5e2d1ddcb.png)
+![](https://main.qcloudimg.com/raw/c1f669bffdd864edd378d10dcc59ae1d.png)
 8. 在 `AdminiServer` 的管理设置页面，单击【密钥库】，设置完成后并单击【保存】。如下图所示：
-![](https://main.qcloudimg.com/raw/cd19bfe757e62b3dc0763d2d979a7cf5.png)
+![](https://main.qcloudimg.com/raw/10090637ba62375b29d5e11eb0b1809f.png)
 设置如下信息：
 **密钥库**：选择 “定制身份和 JAVA 标准信任”。
 **定制身份密钥库**：请填写您的 JKS 证书文件路径，例如：`C:\temp\cloud.tencent.com.jks`。
@@ -44,7 +44,7 @@
 >?【定制身份密钥库密码短语】与【确认定制身份密钥库密码短语】默认密码为空。此处密码可以和自己的 JKS 密码一致，也可以不做任何改动，此处设置不影响证书正常使用。
 
 9. 在 `AdminiServer` 的管理设置页面，单击【SSL】，设置完成后并单击【保存】。如下图所示：
-![](https://main.qcloudimg.com/raw/729e4accbfbcc70dd198d6c1ad11c7e7.png)
+![](https://main.qcloudimg.com/raw/8896cb2a6f2f4ce846439cd911688a06.png)
 设置如下信息：
 **身份和信任位置**：请更改为【密钥库】
 **私有密钥别名**： 请填写 JKS 的别名。
@@ -55,5 +55,5 @@
 >- Weblogic 版本在10.3.6 以下不支持 SHA2 算法证书，请升级后再试。
 
 10. 修改内容后，单击【保存】，即可自动激活，不需要进行重启。如下图所示：
-![](https://main.qcloudimg.com/raw/6dac04176e3f1c33af5f7426619c1987.png)
+![](https://main.qcloudimg.com/raw/ec29de920379cf9e12f87f71c17777fe.png)
 11. 请使用 `https://cloud.tencent.com` 进行访问。
