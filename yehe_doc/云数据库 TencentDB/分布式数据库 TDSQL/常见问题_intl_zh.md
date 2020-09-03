@@ -6,7 +6,7 @@
 
 ### TDSQL 语法和 MySQL 的兼容和限制有哪些?
 TDSQL 目前版本不能通过命令行进行用户权限相关的设置，需要登录 [控制台](https://console.cloud.tencent.com/dcdb) 进行操作。
-TDSQL 目前版本暂不支持自定义函数、视图、触发器、外键、子查询等特性。
+TDSQL 目前版本暂不支持自定义函数、视图、触发器、外键等特性。
 对 MySQL 的语法兼容详情，请参见 [使用限制](https://intl.cloud.tencent.com/document/product/1042/33356)。
 
 ### 分表键有何作用？
