@@ -2778,7 +2778,7 @@
 | Compute C3 | Silicon Valley | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $29,568.00 | $0.00     | $1.125           | 51%                     | $2.30            |
 
 
-## Mumbai
+## Singapore
 ### Standard S3
 
 | Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
