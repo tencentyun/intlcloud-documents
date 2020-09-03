@@ -14,7 +14,7 @@ Specification of a TDSQL shard is determined by three factors: performance, capa
 **Capacity**: by predicting the disk capacity and possible growth for at least one year, you can define the total disk size required of your TDSQL instance.
 **Other requirements**: you are recommended to store at least **50 million rows of data** in one shard and take into account business needs such as [broadcast and non-sharded tables](https://intl.cloud.tencent.com/document/product/1042/33358) and in-node joins.
 
->You are recommended to ensure high specification for a single shard while keeping the shard quantity relatively small.
+>已自行处理You are recommended to ensure high specification for a single shard while keeping the shard quantity relatively small.
 
 Based on the above, it is estimated that you may have the following business requirements. Recommended strategies are as follows:
 - For functional testing in TDSQL with no special performance requirements: 2 shards with **2 GB of memory and 25 GB of disk capacity each**.
