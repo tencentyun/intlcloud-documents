@@ -1,21 +1,16 @@
 
-If you want to view or download the full set of development documents, please see [Development Guide for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33352).
 
 TDSQL only uses the HASH method to shard data, which is not convenient for deleting old data of specific conditions, such as transactional data. In order to solve this problem, two-level partitioning can be used.
 TDSQL supports two-level partitioning in range and list formats where the specific table creating syntax is similar to the partitioning syntax in MySQL.
 
->!Partitioning uses the less-than `<` symbol; therefore, if you want to store the data of the current year (e.g., 2017), you need to create a `<2018` partition. You only need to create partitions up to the current time, and TDSQL will automatically add subsequent partitions (3 by default). Taking YEAR as an example, TDSQL will automatically create partitions of 2018, 2019, and 2020 and increase or decrease them afterwards.
 
-- **Supported range types**
-- DATE, DATETIME, and TIMESTAMP
-`year`, `month`, and `day` functions are supported. If the function is empty, it will be defaulted to the `day` function.
-- TINYINT, SMALLINT, MEDIUMINT, INT (INTEGER), and BIGINT
-`year`, `month`, and `day` functions are supported. The value entered is converted to year, month, and day and then compared against the sharded table information.
+## Supported range types
 
-If the function is empty, this int value will be compared against the sharded table information directly.
+- DATE, DATETIME, and TIMESTAMP：`year`, `month`, and `day` functions are supported. If the function is empty, it will be defaulted to the `day` function.
+- TINYINT, SMALLINT, MEDIUMINT, INT (INTEGER), and BIGINT：`year`, `month`, and `day` functions are supported. The value entered is converted to year, month, and day and then compared against the sharded table information. If the function is empty, this int value will be compared against the sharded table information directly.
 
 Sample:
-If `hired` is of `date` type, the query for the corresponding value inserted is in the format of `'20160101 10:20:20' ,20160101`
+If `hired` is of `date` type, the query for the corresponding value inserted is in the format of "20160101 10:20:20" or "20160101".
 ```
 	CREATE TABLE employees_int (
 	    id INT key NOT NULL,
@@ -54,10 +49,9 @@ If `hired` is of `int` type, the query for the corresponding value inserted will
 
 ```
 
-- **Supported list types**
-DATE, DATETIME, TIMESTAMP. `year`, `month`, and `day` functions are supported;
-TINYINT, SMALLINT, MEDIUMINT, INT (INTEGER), and BIGINT;
-CHAR, VARCHAR, BINARY, and VARBINARY;
+## Supported list types
+-DATE, DATETIME, TIMESTAMP：`year`, `month`, and `day` functions are supported.
+- TINYINT, SMALLINT, MEDIUMINT, INT (INTEGER), and BIGINT, CHAR, VARCHAR, BINARY, and VARBINARY;
 ```
 	CREATE TABLE customers_1 (
 	    first_name VARCHAR(25),
@@ -74,3 +68,4 @@ CHAR, VARCHAR, BINARY, and VARBINARY;
 	    PARTITION pRegion_4 VALUES IN('10', '11', '12')
 	);
 ```
+>!Partitioning uses the less-than `<` symbol; therefore, if you want to store the data of the current year (e.g., 2017), you need to create a `<2018` partition. You only need to create partitions up to the current time, and TDSQL will automatically add subsequent partitions (3 by default). Taking YEAR as an example, TDSQL will automatically create partitions of 2018, 2019, and 2020 and increase or decrease them afterwards.
