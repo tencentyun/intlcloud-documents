@@ -1,4 +1,4 @@
-## Introduction
+## Operation Scenario
 Tencent Kubernetes Engine (TKE) is a highly scalable high-performance container management service that allows you to easily run applications on hosted CVM instance clusters. This document describes how to use TKE to quickly create and manage container clusters and how to quickly and flexibly deploy your services in the clusters.
 
 ## Directions
@@ -23,8 +23,8 @@ At first, you need to create a cluster. A cluster is a collection of cloud resou
 ![](https://main.qcloudimg.com/raw/aa2446d6cf8e17def9c353afc36fa42b.png)
  - **Node Source**: there are two options: **Add node** and **Existing nodes**. Choose one based on your actual requirements.
  - **Master Node**: the deployment mode of the Master node determines the management mode of your cluster. Two cluster modes **Hosting** and **Independent deployment** are available. For details, see [Cluster Overview](https://intl.cloud.tencent.com/document/product/457/30635).
- - **Billing Mode**: **pay-as-you-go** is supported. For details, see [Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
- - **Worker Configuration**: here, **Node Source** is set to **New Node**. The settings under the component the same as above by default. You can change them based on actual needs.
+ - **Billing Mode**: **pay-as-you-go** and **monthly subscription** are supported. For details, see [Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
+ - **Worker Configuration**: here, **Node Source** is set to **New Node**. The settings under the component are the same as above by default. You can change them based on actual needs.
 5. Configure the CVM based on the following information and click **Next**, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/960e92c51bd77ed5bf88bf7ef55e5c7e.png)
  - **Container Directory**: by default, this option is not selected. If it is selected, you can set the container and image storage directory. We recommend that you store containers and images in data disks.
@@ -54,9 +54,9 @@ After a cluster is created, you can create a service as instructed below. A serv
  - **Type**: select a type based on your actual requirements.
 4. (Optional) Set the volume. Click **Add Volume** if you need to specify a path to which a container is mounted, as shown in the figure below. For details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
 ![](https://main.qcloudimg.com/raw/a4e6150eedd0c7385b4a170649042cee.png)
-> If no source path is specified, a temporary path is assigned by default.
-> 
- - **Type**: seven volume types are supported: temp directory, CVM path, NFS disk, existing VPC, Tencent Cloud block storage, ConfigMap, and Secret. For details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
+>! If no source path is specified, a temporary path is assigned by default.
+
+ - **Type**: seven volume types are supported: temp directory, CVM path, NFS disk, existing PVC, Tencent Cloud block storage, ConfigMap, and Secret. For details, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678).
 5. Set containers in the pod based on the following information.
 ![](https://main.qcloudimg.com/raw/fc1425d8ba8d84599a3b84a7376b6d7d.png)
  - **Name**: enter the name of the container to be created.
@@ -72,8 +72,8 @@ After a cluster is created, you can create a service as instructed below. A serv
 7. Configure access settings based on the following information.
 ![](https://main.qcloudimg.com/raw/bcab65ccaefa2ae76d1a603b5be3e64d.png)
  - **Service**: select **Enable**.
- - **Service Access**: the service access method determines the network attributes of a service. Different access methods offer different network capabilities. For details, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672).
- - **Load Balancer**: select **Automatic Creation** or **Use Existing** based on your actual requirements.
+ - **Service Access**: the service access method determines the network attributes of a service. Different access methods offer different network capabilities. For details, see [Service Access](https://intl.cloud.tencent.com/document/product/457/36832).
+ - **Load Balancer**: select the value as required.
  - **Port Mapping**: select a protocol and enter the **Target port** and **Port**.
 8. Click **Create workload**. After the service is created, it will appear in the service list.
 
@@ -85,14 +85,14 @@ By now, you have created a cluster and a service. The following steps describe h
  - **Basic Info**: displays the basic cluster information.
  - **Node Management**: a node is a CVM registered to the cluster. You can create a node, add an existing node, and create scaling rules here.
  - **Namespace**: a namespace is an abstract collection of a group of resources and objects. You can create and delete namespaces here.
- - **Workload**, **Service**, **Configuration Management**, **Storage**: these are common Kubernetes resource objects. For details, see [Types of Objects](https://intl.cloud.tencent.com/document/product/457/30658). 
+ - **Workload**, **Service**, **Configuration Management**, **Storage**: these are common Kubernetes resource objects. For details, see [Types of Objects](https://intl.cloud.tencent.com/document/product/457/30658).
  - **Logs**: displays related log information.
  - **Event**: you are redirected to this page when creating a service. It displays the service creation details.
 
 
 ### Viewing services
 1. Click **Clusters** in the left sidebar and choose a cluster ID on the **Cluster Management** page.
-2. On the **Deployment** management page, choose **Service** -> **Service**, as shown in the following figure.
+2. On the **Deployment** management page, choose **Service** > **Service**, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/727dda83385a8df6f5f8a43ce0235b67.png)
 3. Choose a service name in the **Service** list to go to the service details page, where you can view the following information:
  - **Details**: displays basic information and advanced settings of the service.
@@ -105,26 +105,24 @@ In this document, cluster and service resources are enabled. The following steps
 
 #### Deleting a service
 1. Click **Clusters** in the left sidebar to go to the **Cluster Management** page and click the ID of the cluster for which you want to delete services.
-2. On the **Deployment** management page, choose **Service** -> **Service**. 
+2. On the **Deployment** management page, choose **Service** > **Service**.
 3. On the **Service** management page, click **Delete** to the right on the row where the service to be deleted is located.
 5. Click **OK** in the pop-up box to delete the service.
 
 
 #### Deleting a cluster
-1. Click **Clusters** in the left sidebar. On the **Cluster Management** page, choose **More** -> **Delete** to the right on the row where the cluster to be deleted is located, as shown in the following figure.
+1. Click **Clusters** in the left sidebar. On the **Cluster Management** page, choose **More** > **Delete** to the right on the row where the cluster to be deleted is located, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/0f58c601a0798b606524f85ce6956a0b.png)
 2. After confirming the information in the pop-up box, click **OK** to delete the cluster.
->
+>!
 >- The cluster stops providing services once the deletion process starts, so please prepare in advance.
 >- If a cluster is deleted, the services in the cluster will also be deleted.
->
-
 
 
 
 ## Next Steps
 In this document, you have learned how to configure, deploy, and delete services in Tencent Cloud TKE. With Tencent Cloud TKE, you don't need to install, operate, maintain, or expand your cluster management infrastructure. You can enable and disable Docker applications, query cluster statuses, and use various cloud services by simply calling APIs.
 
-Go to the next tutorial to learn about the basic concepts and operations of [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673) and [Image Repository Overview](https://intl.cloud.tencent.com/document/product/457/9118) and quickly build services by viewing [Examples for Getting Started](https://intl.cloud.tencent.com/document/product/457/7851).
+Go to the next tutorial to learn about the basic concepts and operations of [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/457/30673) and [Image Repository Overview](https://intl.cloud.tencent.com/document/product/457/9118) and quickly build services by viewing [Examples for Getting Started](https://intl.cloud.tencent.com/document/product/457/11138).
 
 ​                                          

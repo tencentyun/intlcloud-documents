@@ -1,35 +1,35 @@
-DrupalはPHP言語が作成したオープンソースのコンテンツ管理フレームワーク（Content Management Framework）を使用しています。コンテンツ管理システム（Content Management System）とPHP開発フレームワーク（Framework）で構成されます。Drupalは様々な機能とサービスを提供する動的Webサイトを構築するのに使用し、個人のブログから大型コミュニティ等の各種様々なネットワーク項目をサポートできます。
-この課程では、Tencent CloudのCVM上でDrupalの電子商取引サイトを構築する方法が理解できます。
-使用するソフトウェア環境はCentOS7.2、Drupal7.56、PHP5.4.16です。
+Drupalは、コンテンツ管理システムとPHP開発フレームワークで構成され、PHPで記述されたオープンソースのコンテンツ管理フレームワークです。個人のブログから大規模なコミュニティに至るまで、豊富な機能を備えた動的Webサイトを構築するために使用できます。
+このチュートリアルでは、CVMインスタンスでDrupal電子商取引サイトを構築する方法について説明します。
+ここで使用されるソフトウェア環境には、CentOS v7.2、Drupal v7.56、およびPHP v5.4.16が含まれます。
 
 ### CVMインスタンスへのログイン
 
 
-### Maria DBサービスのインストール
+### MariaDBサービスのインストール
 1. CentOS7以上のバージョンではデフォルトでMariaDBデータベースをサポートします。CVMインスタンスで`yum`を使用してMariaDBサービスをインストールします。
 ```
 yum install mariadb-server mariadb -y
 ```
-2. Maria DBサービスを起動します。
+2. MariaDBサービスを起動します。
 ```
 systemctl start mariadb
 ```
-3. Drupalのデータベースを作成します。（この項目ではdrupalを使用してデータベース名にしています）
+3. Drupal用のデータベースを作成します。（この項目ではdrupalを使用してデータベース名にしています）
 ```
 mysqladmin -u root -p create drupal
 ```
-このうち、drupalはDrupalサービスを使用したデータベース名です。
+ここで、「drupal」は、Drupalサービスで使用されるデータベース名です。
 3. データベースのユーザーを作成します。
 ```
 mysql -u root -p
 ```
-ユーザーを承認して、正常に承認されたら、データベースから退出します。
+ユーザーを認証し、認証が成功したらデータベースを終了します。
 ```
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON drupal.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 FLUSH PRIVILEGES;
 exit
 ```
-このうち、usernameはDrupalサービスを使用したデータベースユーザー名とし、passwordはDrupalサービスを使用したデータベースのパスワードとします。
+ここで、「username」と「password」は、それぞれDrupalサービスで使用されるデータベースのユーザー名とパスワードです。
 
 ### Apacheサービスのインストール
 1. CVMインスタンスで`yum`を使用してApacheをインストールします。
@@ -41,17 +41,17 @@ yum install httpd -y
 service httpd start
 ```
 3. Apacheをテストします。
->!この手順では、CVMがセキュリティグループにおいて、設定ソースを**all**に設定し、ポートプロトコルを**TCP:80**のインバウンドルールにします。セキュリティグループの設定は[セキュリティグループ](https://cloud.tencent.com/document/product/213/12452)をご参照ください。
+> この手順では、CVMインスタンスがセキュリティグループにおいて、ソースが**all**、ポートプロトコルが**TCP:80**であるインバウンドルールを設定する必要があります。セキュリティグループの設定方法の詳細については、[セキュリティグループ](https://cloud.tencent.com/document/product/213/12452)をご参照ください。
 >
-ローカルのブラウザに`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMの公式サイトのIPアドレス）を入力し、下記の画面が現れたら、Apacheの起動に成功しています。
+ローカルブラウザに`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMインスタンスのパブリックIPアドレス）を入力してください。次の画面が表示されたら、Apahceは正常に起動しています。
 ![](https://main.qcloudimg.com/raw/c9b20e150bd5330feef6d978b8308629.png)
 
 ### PHPのインストール 
-1. CVMインスタンスで`yum`を使用してPHPおよびその拡張をインストールします。
+1. CVMインスタンスで`yum`を使用してPHPおよびその拡張機能をインストールします。
 ```
 yum install php php-dom php-gd php-mysql php-pdo -y
 ```
-2. CVM`/var/www/html`ディレクトリ下でinfo.phpファイルを1つ作成してPHPのインストールが成功したか検査します。そのコード例は次のとおりです。
+2. CVMインスタンスの`/var/www/html`ディレクトリにinfo.phpファイルを作成して、PHPが正常にインストールされているかどうかを確認します。そのコード例は次のとおりです。
 ```
 <?php phpinfo(); ?>
 ```
@@ -59,7 +59,7 @@ yum install php php-dom php-gd php-mysql php-pdo -y
 ```
 service httpd restart
 ```
-4. ローカルのブラウザに`http://115.xxx.xxx.xxx/info.php`（このうち`115.xxx.xxx.xxx`はCVMの公式サイトのIPアドレス）を入力し、下記の画面が現れたら、PHPのインストールに成功しています。
+4. ローカルブラウザに`http://115.xxx.xxx.xxx/info.php`（このうち`115.xxx.xxx.xxx`はCVMインスタンスのパブリックIPアドレス）を入力してください。次の画面が表示されたら、PHPのインストールに成功しています。
 ![](//mc.qcloudimg.com/static/img/0bc6667d122fe85d505fbe50b507b60a/image.png)
 
 ### Drupalサービスのインストール
@@ -67,17 +67,17 @@ service httpd restart
 ```
 wget http://ftp.drupal.org/files/projects/drupal-7.56.zip
 ```
-2. Webサイトルートディレクトリに解凍します。
+2. パッケージをWebサイトのルートディレクトリに解凍します。
 ```
 unzip drupal-7.56.zip 
 mv drupal-7.56/* /var/www/html/
 ```
-3. 中国語翻訳パッケージをダウンロードします。
+3. 翻訳パッケージをダウンロードします。
 ```
 cd /var/www/html/
 wget -P profiles/standard/translations http://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.zh-hans.po
 ```
-4. `sites`ディレクトリが属するマスターグループを修正します。
+4. `sites`ディレクトリが属する所有者とグループを変更します。
 ```
 chown -R apache:apache /var/www/html/sites
 ```
@@ -85,14 +85,14 @@ chown -R apache:apache /var/www/html/sites
 ```
 service httpd restart
 ```
-6. ローカルのブラウザに`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMの公式サイトのIPアドレス）を入力し、Drupalインストール画面に進みます。インストールバージョンを選択し、【Save and continue】をクリックします。
+6. ローカルブラウザに`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMインスタンスのパブリックIPアドレス）を入力し、Drupalインストール画面に進みます。インストールするバージョンを選択し、【Save and continue】をクリックします。
 ![](https://main.qcloudimg.com/raw/f52af1bb9822ddefc1989df9a0a95e8c.png)
 7. 言語を選択し、【Save and continue】をクリックします。
 ![](https://main.qcloudimg.com/raw/11a8f788ebd0595e6afdff936656c2cc.png)
-8. データベースを設定し、**mariadbのインストールサービス**に設定したデータベース情報を入力します。
+8. データベースをセットアップし、**MariaDBサービスのインストール**時に設定したデータベース情報を入力します。
 
 9. サイト情報を入力します。
  
-10. Drupalのインストールを完了させます。
+10. Drupalのインストールプロセスを完了します。
 
-11. その後は`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMの公式サイトのIPアドレス）にアクセスしてサイトに個別化設定を行うことができます。
+11. その後は`http://115.xxx.xxx.xxx/`（このうち`115.xxx.xxx.xxx`はCVMのパブリックIPアドレス）にアクセスして、Webサイトをカスタマイズできます。

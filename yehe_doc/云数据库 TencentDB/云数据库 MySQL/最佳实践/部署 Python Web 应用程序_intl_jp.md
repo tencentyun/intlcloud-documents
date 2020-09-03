@@ -1,20 +1,20 @@
-DjangoはオープンソースコードのWebアプリケーションフレームワークであり、Pythonで書き込みます。
-この課程ではデフォルトのDjangoサイトを、稼働しているPython2.7のCVMにどうやってデプロイするかを説明します。
+DjangoはPythonで実装されたWebアプリケーションフレームワークです。無料のオープンソースとして公開されています。
+このドキュメントでは、Python 2.7を実行するCVMインスタンスにデフォルトのDjangoウェブサイトをデプロイする方法について説明します。
 
 使用するソフトウェア環境：CentOS7.2 | Python2.7 | Django1.11
 
 ### 手順1：CVMインスタンスにログイン
-CVMの購入とアクセスについては[Linux CVMのカスタマイズ設定](https://intl.cloud.tencent.com/document/product/213/10517)をご参照ください。
+CVMインスタンスの購入とアクセスについては、[Linux CVMのカスタム設定](https://intl.cloud.tencent.com/document/product/213/10517)をご参照ください。
 
 ### 手順2：Pythonのインストール
-CentOSではデフォルトでPythonをインストールし、`python --version`によってPythonのバージョンを確認することができます。
+PythonはデフォルトでCentOSにインストールされます。`python --version`によってPythonのバージョンを確認することができます。
 
 ### 手順3：Djangoのインストール
 1. pipをインストールします。
 ```
 yum install python-pip 
 ```
-2. pipパッケージを更新させます。
+2. pipパッケージを更新します。
 ```
 pip install --upgrade pip
 ```
@@ -49,12 +49,12 @@ yum install httpd -y
 service httpd start
 ```
 3. Apacheをテストします。
->この手順ではCVMがセキュリティグループにおいて、ソースを**all**に設定し、ポートプロトコルを**TCP:80**のインバウンドルールにします。セキュリティグループの設定方法については[セキュリティグループ操作](https://intl.cloud.tencent.com/document/product/213/12452)をご参照ください。
+>この手順では、CVMインスタンスがセキュリティグループにおいて、ソースが**all**、ポートプロトコルが**TCP:80**であるインバウンドルールを構成する必要があります。セキュリティグループの設定方法については、[セキュリティグループ](https://intl.cloud.tencent.com/document/product/213/12452)をご参照ください。
 >
-ローカルのブラウザに`http://xxx.xxx.xxx.xxx/`（このうち`xxx.xxx.xxx.xxx`はCVMの公式サイトのIPアドレス）を入力し、下の画面が現れたら、Apacheの起動に成功しています。
+ローカルブラウザに`http://xxx.xxx.xxx.xxx/`（このうち`xxx.xxx.xxx.xxx`はCVMインスタンスのパブリックIPです）を入力し、次の画面が表示されたら、Apacheの起動に成功しています。
 ![](https://main.qcloudimg.com/raw/a8708d09de9280c730f47eb8289f7c47.png)
 
-### 手順6：Apacheのmod_wsgi拡張をDjangoのアプリケーションコンテナとしてインストールします。
+### 手順6：Apacheのmod_wsgi拡張機能をDjangoアプリケーションコンテナとしてインストールする
 1. httpd-develをインストールします。
 ```
 yum install -y httpd-devel
@@ -64,13 +64,13 @@ yum install -y httpd-devel
 yum install -y mod_wsgi
 ```
 
-### 手順7：プロジェクトテストDjango環境の作成
-1. `/usr/local`下でプロジェクト項目を作成し、`django-admin.py startproject projectname`を稼働して1つのプロジェクトを作成し、このうちprojectnameをプロジェクト名とします。
+### 手順7：Django環境をテストするプロジェクトの作成
+1.`django-admin.py startproject projectname`を実行して、`/usr/local`の下にテストプロジェクトを作成します。このうちprojectnameをプロジェクト名とします。　
 ```
 cd /usr/local
 django-admin.py startproject projectname
 ```
-2. **プロジェクトルートディレクトリ**では`django.wsgi`ファイルを新規作成してApacheとしてサポートします。
+2. Apacheをサポートするために、**プロジェクトのルートディレクトリ**に`django.wsgi`ファイルを作成します。
 ```
 cd /usr/local/projectname
 vim django.wsgi
@@ -99,13 +99,13 @@ WSGIScriptAlias /python "/usr/local/projectname/django.wsgi"
     Require all granted
 </Directory>
 ```
-5. ビューの作成には、**プロジェクトディレクトリ**`/usr/local/projectname/projectname`下で`view.py`ファイルを作成してアクセスの入り口とします。コンテンツは以下のとおりです。
+5. 次の内容のアクセスエントリとして、**プロジェクトディレクトリ**`/usr/local/projectname/projectname`にビューと`view.py`ファイルを作成します。
 ```
 from django.http import HttpResponse
 def hello(request):
        return HttpResponse("Hello world ! ")
 ```
-6. 設定URLについては、**プロジェクト名ディレクトリ**`/usr/local/projectname/projectname`下の`urls.py`ファイルを設定し、当初のコンテンツを削除します。追加内容は次のとおりです。
+6. **プロジェクトディレクトリ**`/usr/local/projectname/projectname`にURLと`urls.py`ファイルを設定します。元のコンテンツを削除して、以下を追加します。
 ```
 from django.conf.urls import *
 from projectname.view import hello
@@ -113,7 +113,7 @@ urlpatterns = [
     url(r'^hello/$',hello),
 ]
 ```
-7. **プロジェクトディレクトリ**`/usr/local/projectname/projectname`下の`settings.py`ファイルを修正します。
+7. **プロジェクトディレクトリ**`/usr/local/projectname/projectname`下の`settings.py`ファイルを変更します。
 ```
 ALLOWED_HOSTS = ['*']
 ```
@@ -121,9 +121,9 @@ ALLOWED_HOSTS = ['*']
 ```
 service httpd restart
 ```
-9. ローカルブラウザに`http://xxx.xxx.xxx.xxx/python/hello`（このうち`xxx.xxx.xxx.xxx`はCVMの公式サイトIPのアドレス）を入力し、画面に「Hello world !」と表示されたらプロジェクト環境の作成に成功しています。
+9. ローカルブラウザに`http://xxx.xxx.xxx.xxx/python/hello`（このうち`xxx.xxx.xxx.xxx`はCVMインスタンスのパブリックIPアドレス）を入力し、画面に「Hello world !」と表示されたらプロジェクト環境の作成に成功しています。
 
-### 手順8：DjangoにTemcemtDB（オプション）を設定
+### 手順8：DjangoにTemcemtDBを設定（オプション）
 1. プロジェクトディレクトリ下の`settings.py`ファイルを設定します。
 ```
 DATABASES = {
@@ -131,14 +131,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysql',
         'USER': 'root', # TencentDB アカウント名
-        'PASSWORD': '123456', # TencentDB アカウントパスワード
-        'HOST': '0.0.0.0', # TencentDB 内部ネットアドレス
+        'PASSWORD': '123456', # TencentDB アカウントのパスワード
+        'HOST': '0.0.0.0', # TencentDB プライベートIPアドレス
         'PORT': '3306', # TencentDB ポート
     }
 }
 ```
-2. 設定完了後、以下のコマンドを使用してデータベースの接続をテストできます。
+2. 設定完了後、次のコマンドを実行してデータベース接続をテストします。
 ```
 $python manage.py validate/check
 ```
-3. テストに合格するとデータベースの操作が可能になります。より多くのデータベースの操作については[モデルとデータベース](https://docs.djangoproject.com/en/1.11/topics/db/)をご参照ください。
+3. テストに合格すると、データベース操作を実行できます。より多くのデータベースの操作については、[モデルとデータベース](https://docs.djangoproject.com/en/1.11/topics/db/)をご参照ください。

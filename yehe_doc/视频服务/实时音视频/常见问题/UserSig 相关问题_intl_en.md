@@ -14,10 +14,11 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 <span id="Key"></span>
 ### How do I get a key?
 
-1. Log in to the [TRTC Console](https://console.cloud.tencent.com/rav) and click the application block to enter the **Quick Start** page.
-2. Click **View Key** in the **Step 2: obtain the secret key to issue UserSig** section to get the encryption key used to calculate `UserSig`.
-3. Click **Copy Secret Key** to copy the key to the clipboard.
- ![](https://main.qcloudimg.com/raw/d0b780f7b28833533e12807d1b11d8be.png)
+1. Log in to the TRTC Console and select **[Application Management](https://console.cloud.tencent.com/trtc/app)** on the left sidebar.
+2. Find the desired SDKAppID, click **Application Info** in the "Operation" column, and select the **Quick Start** tab.
+3. In the **Step 2: obtain the secret key to issue UserSig** block, you can view the secret key used to calculate `UserSig`.
+4. Click **Copy Secret Key** to copy it to the clipboard.
+
 
 ### Only public and private key information can be obtained when I try to view the encryption key. How do I get the encryption key?
 Starting from TRTC SDK 6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [old algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166). If you have upgraded the version, you can switch between the new and old algorithms as needed.
@@ -26,12 +27,6 @@ Upgrade/Switch operation:
  1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
  2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
  3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
-  - Upgrade:
-   ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
-  - Switch to the old algorithm ECDSA-SHA256:
-   ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
-  - Switch to the new algorithm HMAC-SHA256:
-   ![](https://main.qcloudimg.com/raw/b0412153935704abc9e286868ad8a916.png)
 
 <span id="Client"></span>
 ### How do I calculate UserSig on the client?
@@ -47,8 +42,6 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 | Windows (C#) | [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)| Windows/CSharpDemo/GenerateTestUserSig.cs |
 | Desktop browser | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 | WeChat Mini Program | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/WXMini/debug/GenerateTestUserSig.js)| WXMini/debug/GenerateTestUserSig.js |
-
-![](https://main.qcloudimg.com/raw/1efeacff505209c4f5c1d9bf67455157.png)
 
 >! This method is only applicable for debugging. The use of this method is **not recommended** if your product is to be formally launched, because the `SECRETKEY` of the client code (especially for the web) can be very easily decompiled and reverse engineered. If your key is disclosed, attackers can make unauthorized use of your Tencent Cloud traffic.
 >
