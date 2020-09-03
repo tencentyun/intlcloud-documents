@@ -7,7 +7,7 @@ Purchase a Linux CVM instance and run `yum install mariadb-server` to install my
 ```
 mysqldump --compact --single-transaction -d -uxxx -pxxx  -hxxx.xxx.xxx.xxx -Pxxxx  db_name table_name   >  schema.sql
 ```
->Please select the `db_name` and `table_name` parameters as needed.
+>?Please select the `db_name` and `table_name` parameters as needed.
 
 ## 3. Export data
 Export data by using mysqldump:
@@ -43,7 +43,7 @@ mysql --default-character-set=utf8 -uxxx -pxxx -hxxx.xxx.xxx.xxx -Pxxxx dbname <
 ```
 mysql --default-character-set=utf8 -uxxx -pxxx -hxxx.xxx.xxx.xxx -Pxxxx dbname < data.sql
 ```
->If an auto-increment field is used in the source table, and the "Column 'xx' specified twice" error occurs during import, the `schema.sql` needs to be processed.
+>?If an auto-increment field is used in the source table, and the "Column 'xx' specified twice" error occurs during import, the `schema.sql` needs to be processed.
    Remove the back quotes from the auto-increment field (cat schema.sql | tr "`" " " > schema_tr.sql), drop database, and repeat steps 3–5 by using the processed `schema_tr.sql`.
 	 
 ![](https://main.qcloudimg.com/raw/b55fe0763f4e8fd1795fec478e9dc0c1.png)
