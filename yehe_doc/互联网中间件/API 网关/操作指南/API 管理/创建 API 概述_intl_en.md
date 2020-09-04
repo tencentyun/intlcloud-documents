@@ -10,9 +10,38 @@ You have [created a service](https://intl.cloud.tencent.com/document/product/628
 3. In the service details, click the **Manage API** tab and choose to create a **General API** or **Microservice API** based on the backend business type.
 4. Click **Create** for subsequent configuration.
 
->
->- General API: suitable for common situations (where backend business is not implemented in TSF). For more information on how to create a general API, please see [Creating General APIs](https://intl.cloud.tencent.com/document/product/628/11797).
->- Microservice API: suitable for situations where backend business is implemented in TSF. For more information on how to create a microservice API, please see [Creating Microservice APIs](https://intl.cloud.tencent.com/document/product/628/17561).
+## API Types
+In API Gateway, you can create APIs for five types of backend services, i.e., general APIs for HTTP, SCF, mock, and WEBSOCKET, and microservice APIs for TSF. More information is listed below:
+<table>
+<thead>
+<tr>
+<th>API Type</th>
+<th>Backend Service</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="4">General API</td>
+<td>HTTP</td>
+<td rowspan="4"><a href="https://intl.cloud.tencent.com/document/product/628/11797">Creating General APIs</a></td>
+</tr>
+<tr>
+<td>SCF</td>
+</tr>
+<tr>
+<td>mock</td>
+</tr>
+<tr>
+<td>WEBSOCKET</td>
+</tr>
+<tr>
+<td>Microservice API</td>
+<td>TSF</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/17561">Creating Microservice APIs</a></td>
+</tr>
+</tbody>
+</table>
 
 <span id="basic"></span>
 ## Basic API Information
