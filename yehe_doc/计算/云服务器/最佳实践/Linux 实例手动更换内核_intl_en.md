@@ -1,5 +1,5 @@
 ## Overview
-Bottleneck Bandwidth and Round-trip propagation time (BBR) is a TCP congestion control algorithm developed by Google in 2016. It helps significantly improve throughput and TCP connection latency of Linux servers. However, the enablement of BBR requires a Linux kernel version 4.10 or later. If you use an earlier version, you need to upgrade your kernel. This document guides you through how to manually change the kernel and enable BBR on your Linux server.
+Bottleneck Bandwidth and Round-trip propagation time (BBR) is a TCP congestion control algorithm developed by Google in 2016. It helps significantly improve the throughput and the TCP connection latency of Linux servers. However, enabling BBR requires a Linux kernel version of 4.10 or later. If you use an earlier version, you need to upgrade your kernel. This document guides you through how to manually change the kernel and enable BBR on your Linux server.
 
 ## Directions
 

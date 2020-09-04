@@ -97,7 +97,7 @@ For a cluster on v6.x or higher, you can upgrade X-Pack (i.e., from the Open Sou
 - To upgrade from the Open Source Edition to the Basic Edition (with user authentication enabled) or from the Basic Edition (with user authentication unavailable or not enabled) to the Platinum Edition, your cluster must have user authentication enabled and be fully restarted. During the full restart, your cluster will be inaccessible until the upgrade is completed; therefore, this option should be used with caution.
 
 ## How to Upgrade a Cluster
-1. Log in to the [ES Console](https://console.cloud.tencent.com/es), enter the cluster details page, and click **Upgrade** in the top-right corner.
+1. Log in to the [ES Console](https://console.cloud.tencent.com/es) to enter the **Cluster List** page, and click **More** -> **Adjust Configuration**  in the top-right corner.
 ![](https://main.qcloudimg.com/raw/86b5876f89ca1b836f7dbb1b01d676c7.png)
 2. Choose to upgrade Elasticsearch or X-Pack in the upgrade dialog box.
 

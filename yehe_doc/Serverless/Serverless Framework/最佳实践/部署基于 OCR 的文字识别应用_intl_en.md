@@ -8,7 +8,7 @@ By using Serverless Framework Component and OCR SDK, you can quickly deploy a ge
 ## Prerequisites
 
 - You have installed [Node.js](https://nodejs.org/en/) (v8.6 or above; v10.0 or above is recommended).
-- You have activated the OCR service.
+- You have activated OCR.
 
 ## Directions
 

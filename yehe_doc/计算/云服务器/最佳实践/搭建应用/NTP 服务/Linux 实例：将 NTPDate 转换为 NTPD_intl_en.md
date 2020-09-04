@@ -4,12 +4,12 @@ The ntpdate is a breakpoint update for the time synchronization of your new inst
 
 ## Prerequisites
 The NTP service communicates on the port UDP 123. Please make sure that you have opened the port to the Internet before transitioning to the NTP service.
-If the port has not been opened, please refer to [Adding Security Group Policies](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
+If the port has not been opened, please refer to [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272) to open it to the Internet.
 
 ## Directions
 You can choose to transition from ntpdate to ntpd [manually](#manual) or [automatically](#automatic).
-
-### Transitioning from ntpdate to ntpd manually<span id="manual"></span>
+<span id="manual"></span>
+### Transitioning from ntpdate to ntpd manually
 #### Shutting down ntpdate
 1. Run the following command to export the `crontab` configuration and filter ntpdate.
 ```
@@ -35,8 +35,8 @@ vi /etc/ntp.conf
 ![Server configuration](https://main.qcloudimg.com/raw/643dc5bbd2a42307ec10b5d38f756dda.png)
 3. Press **Esc** and enter **:wq** to save and close the file.
 
-
-### Transitioning from ntpdate to ntpd automatically<span id="automatic"></span>
+<span id="automatic"></span>
+### Transitioning from ntpdate to ntpd automatically
 1. Download the `ntpd_enable.sh` script.
 ```
 wget https://image-10023284.cos.ap-shanghai.myqcloud.com/ntpd_enable.sh
@@ -46,10 +46,10 @@ wget https://image-10023284.cos.ap-shanghai.myqcloud.com/ntpd_enable.sh
 sh ntpd_enable.sh
 ```
 
-## Relevant Operation
+## Relevant Operations
 ### Checking the status of ntpd
 Run the following commands to check the status of ntpd as needed.
-- Run the following command to check whether the NTP is normally listening on the service port UDP 123.
+- Run the following command to check whether the NTP is listening normally on the service port UDP 123.
 ```
 netstat -nupl
 ```
@@ -73,7 +73,7 @@ The following result will be returned:
  - **refid**: the NTP server one stratum above to which the NTP server on this stratum is synchronized.
  - **st**: the stratum of the remote server. The stratum of a server can be set to 1 through 16 from high to low. In order to relieve the load and network congestion, you should avoid connecting directly to a stratum 1 server.
  - **when**: the number of seconds that have elapsed since the last successful request.
- - **poll**: the synchronization interval (in seconds) between local and remote servers. At the beginning, the `poll` value will be smaller, which indicates a higher synchronization frequency, so that the time can be adjusted to the correct time range as soon as possible. Later, the `poll` value will gradually increase, and the synchronization frequency will decrease accordingly.
+ - **poll**: the synchronization interval (in seconds) between the local and remote servers. At the beginning, the `poll` value will be smaller, which indicates a higher synchronization frequency, so that the time can be adjusted to the correct time range as soon as possible. Later, the `poll` value will gradually increase, and the synchronization frequency will decrease accordingly.
  - **reach**: an octal value used to test whether the server can be connected. Its value increases every time the server is successfully connected.
  - **delay**: the round trip time of sending the synchronization request from the local machine to the NTP server.
  - **offset**: the time difference in milliseconds (ms) between the host and the time source through NTP. The closer the offset is to 0, the closer the times of the host and the NTP server are.

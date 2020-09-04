@@ -32,7 +32,7 @@ API 的前端配置指提供给外界访问的相关配置，包括 API 名称�
 ### 前端参数配置
 **入参**：入参包含了来源于 Header、Query、Path 的参数。其中 Path 参数对应于在 URL 路径中定义的动态参数。任一参数，均需要指定参数名，参数类型和参数数据类型；同时可以指明是否必填、默认值、示例数据和描述说明。利用这些配置，API 网关可以协助您完成入参的文档化和初步校验。
 
-![](https://main.qcloudimg.com/raw/54740d34998185942ca6b6f89c7535b8.png)
+![](https://main.qcloudimg.com/raw/b1a0e3498bed3efb8cd702bf59c8b894.png)
 >?
 >- 请求协议为 HTTPS 时，需要请求中携带 SNI 标识，为了保障请求安全，API 网关会拒绝不携带 SNI 标识的请求。
 >- SNI（Server Name Indication）是 TLS 的一个扩展协议，用于解决一个服务器拥有多个域名的情况，在 TLSv1.2 开始得到协议的支持。之前的 SSL 握手信息中没有携带客户端要访问的目标地址，如果一台服务器有多个虚拟主机，且每个主机的域名不一样，使用了不一样的证书，此时会无法判断返回哪一个证书给客户端，SNI 通过在 Client Hello 中补上 Host 信息解决该问题。
@@ -57,13 +57,13 @@ API 网关提供的后端配置，根据前端类型的不同而略有不同，�
 6. 设置后端超时时间。超时时间的最大限制为30分钟。在 API 网关调用后端服务，未在超时时间内获得响应时，API 网关将终止此次调用，并返回相应的错误信息。
 7. 设置映射前端的后端参数。
 8. 单击【下一步】，配置响应结果。
-![](https://main.qcloudimg.com/raw/f0ecac1d8942f1afe8a8cb44ac60b073.png)
+![](https://main.qcloudimg.com/raw/0ddcb98e190574eade251e3fb431f3fc.png)
 
 
 #### API 网关后端对接 VPC 内的 CLB 资源
 当用户在配置后端对接服务为 VPC 内的 CLB 时，前端配置与其他 API 配置方法相同，后端配置方法如下：
 1. 在后端配置中需要先选择所需对接的 VPC。
-![](https://main.qcloudimg.com/raw/afd807a4544685a90af9817f93521cb7.png)
+![](https://main.qcloudimg.com/raw/8b78f0caa891537d024fb4dc2f696c34.png)
 2. 选择 VPC 内资源为 CLB。
 目前 API 网关仅支持对接 VPC 内的 CLB，后续还会陆续支持 VPC 内的其他云资源。
 3. 选择后端域名的 CLB 及对应监听器。
@@ -72,10 +72,10 @@ API 网关提供的后端配置，根据前端类型的不同而略有不同，�
 5. 填写后端路径。
  - 如果您选择的是 HTTP/HTTPS 的 CLB 监听类型，在后端路径配置中，需要将后端路径配置为用户在 CLB 中监听器中配置的路径。
 [CLB](https://console.cloud.tencent.com/clb/index) 中监听器配置的域名及路径：
-![](https://main.qcloudimg.com/raw/40b6cabcfb893cb6c1caf663ffa38e8c.png)
+![](https://main.qcloudimg.com/raw/87580da4a46b78ebb61857f5ef7e689d.png)
  API 网关中的后端路径，需要和 CLB 中的路径一致。
  此外，还需要在常量参数处配置一个名为 host 的参数，放在 header 中，参数值为 CLB 监听器中配置的域名。
-![](https://main.qcloudimg.com/raw/38201ce524986c4aef2935df173c6756.png)
+![](https://main.qcloudimg.com/raw/4b7ca9408558c0ca8f0ae072800250a6.png)
  - 如果您选择的是 TCP/UDP 的 CLB 监听类型，在后端配置中，需要将后端路径配置为 CLB 后端挂载 CVM 中业务所需的路径。
 如果您在 CVM 中配置了 host 校验，则如同使用七层监听器一样，需要在常量参数中配置名为 host 的参数，根据您自身的业务选择所需放置的地址。后续的配置与其他的 API 配置相同。
 >!当后端对接 CLB 时，需要将后端挂载的 CVM 上的安全组放通100.64.0.0/10、9.0.0.0/8 网段。
@@ -84,7 +84,7 @@ API 网关提供的后端配置，根据前端类型的不同而略有不同，�
 ### 对接 SCF
 当您的业务实现在云函数 SCF 中，希望通过 API 网关将服务能力开放出来时，后端选用 SCF 对接。
 
-![](https://main.qcloudimg.com/raw/5a8606143fdc45a2fb7a4e5ae6245c21.png)
+![](https://main.qcloudimg.com/raw/85e5c9650826e4656a90a082f4b6beac.png)
 
 后端对接 SCF 时，需要填写的参数如下表：
 
@@ -161,12 +161,12 @@ API 网关发往 SCF 的结构体格式为：
 <span id="mock"></span>
 ### 对接 mock 
 mock 会对 API 请求返回固定配置的响应。mock 常用于测试开发，可以在后端服务还未完成的情况下预先完成 API 配置和响应。对接 mock 时，只需要配置您的返回数据，单击【完成】即可。
-![](https://main.qcloudimg.com/raw/40ce80c320c12721efabae202e296b30.png)
+![](https://main.qcloudimg.com/raw/ec0a96a74628797a191f307555c85df9.png)
 
 <span id="websocket"></span>
 ### 对接 WEBSOCKET
 当用户的业务使用 WEBSOCKET 时，后端服务可选择对接 WEBSOCKET。对接 WEBSOCKET 的配置方式与 [对接 HTTP](#http) 基本相同，但后端域名以`ws://`或`wss://`开头，不包括后面的路径。
-![](https://main.qcloudimg.com/raw/7426c3ce1db7a9a8fa9366cb63c1f04d.png)
+![](https://main.qcloudimg.com/raw/8bdb108f237bdcaa5e00b599f15bad81.png)
 
 ## 步骤4：响应配置
 API 响应配置：包括 API 响应数据配置和 API 错误码配置。

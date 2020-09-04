@@ -1,11 +1,11 @@
-## Operation Scenarios
+## Overview
 This document describes how to create a general API in the API Gateway Console and configure the frontend, backend, and response result in detail.
 
 
 ## Step 1. Create a general API
-1. Log in to the [API Gateway Console](https://console.cloud.tencent.com/apigateway/index?rid=1).
+1. Log in to the [API Gateway Console](https://console.cloud.tencent.com/apigateway/index?rid=1) and click **Service** on the left sidebar.
 2. In the service list, click the name of the target service to view it.
-3. In the service details, click the **Manage API** tab and choose to create a **General API** based on the backend business type.
+3. In the service details, click the **Manage API** tab and choose to create a **general API** based on the backend business type.
 4. Click **Create** for subsequent configuration.
 
 ## Step 2. Configure the frontend
@@ -16,8 +16,7 @@ The frontend configuration of an API refers to the configuration provided for ex
 - **Frontend type**: API Gateway supports two frontend types: HTTP and WebSocket.
  - HTTP: suitable for situations where the backend is integrated with HTTP, Mock, or a cloud function.
  - WebSocket: suitable for situations where WebSocket is used for the business and the backend is integrated with WebSocket or a cloud function.
-- **Request protocol**: API Gateway supports HTTP/HTTPS protocols in three modes: HTTP only, HTTPS only, and HTTP/HTTPS.
--  **HTTP method**: you can select GET, POST, PUT, DELETE, or HEAD.
+
 - **URL path**: you can write a valid URL path as needed. If you need to configure a dynamic parameter in the path, please use `{}` to enclose the parameter name. For example, the `/user/{userid}` path declares the `userid` parameter in the path, which must be defined as a path-type input parameter. A query parameter does not need to be defined in the URL path.
 **Regular expression match is supported**. Taking `/user` as an example of the path:
  - `=/user`: indicates exact match. When there are multiple APIs with `/user`, APIs configured with `=/user` have the highest matching priority.
@@ -26,10 +25,15 @@ The frontend configuration of an API refers to the configuration provided for ex
  - `/user`: indicates access by exact match or prefix match. `/user`, `/usertest`, and `/user/test/a` all can access APIs with the path of `/user`.
  - Standard regular expressions are supported; for example, the asterisk (*) matches the preceding subexpression zero or more times, while the question mark (?) matches the preceding subexpression zero or one time.
 
+- **HTTP request method**: you can select GET, POST, PUT, DELETE, or HEAD.
+- **Authentication type**: you can select [No Authentication](https://intl.cloud.tencent.com/document/product/628/11820), [Key Pair Authentication](https://intl.cloud.tencent.com/document/product/628/11819), and [OAuth 2.0](https://intl.cloud.tencent.com/document/product/628/34065).
+- **CORS support**: cross-origin resource sharing (CORS). If CORS is enabled, the response header will contain `Access-Control-Allow-Origin : *` by default.
+
 ### Configuring frontend parameters
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
-![](https://main.qcloudimg.com/raw/5c5350abfae7dcbcf1903d8d25a9b59d.png)
->
+
+![](https://main.qcloudimg.com/raw/b1a0e3498bed3efb8cd702bf59c8b894.png)
+>?
 >- If the request protocol is HTTPS, a request must carry SNI. In order to ensure request security, API Gateway will reject requests without SNI.
 >- SNI (Server Name Indication) is an extension to TLS used to address situations where a server has multiple domain names, which is supported by the protocol since TLSv1.2. Previous SSL handshake messages didn't carry the destination address to be accessed by the client. If a server has multiple virtual hosts, each of which has a unique domain name and uses a unique certificate, then it will not be able to determine which certificate to return to the client. SNI addresses this issue by providing the host information in `Client Hello`.
 
@@ -53,57 +57,70 @@ Configuration instructions:
 6. Set the backend timeout period (up to 30 minutes). During a call, if there is no response after the timeout period elapses, API Gateway will terminate the call and return the corresponding error message.
 7. Set the backend parameters that map the frontend.
 8. Click **Next** and configure the response result.
-
+![](https://main.qcloudimg.com/raw/0ddcb98e190574eade251e3fb431f3fc.png)
 
 
 #### API Gateway backend integration with CLB resources in VPC
 If you want to integrate the backend with CLB in VPC, the frontend can be configured in the same way as other APIs, and the backend should be configured in the following way:
 1. In the backend configuration, select the VPC to be integrated with.
-
-2. After selecting the VPC where your resource resides, select CLB as the resource type in VPC. Currently, API Gateway only allows you to integrate with CLB in VPC, and integration with other Tencent Cloud resources in VPC will be supported in the future.
-
-3. Enter `http://vip+port` or `https://vip+port` at the backend address. The requests sent to CLB will be HTTP requests or HTTPS requests depending on the content you enter. The VIP here is the VIP of the private network CLB instance, which can be viewed in its basic information.
-
-4. Select a listener type.
+![](https://main.qcloudimg.com/raw/8b78f0caa891537d024fb4dc2f696c34.png)
+2. Select CLB as the VPC resource.
+API Gateway only supports integrating CLB in a VPC. Other cloud resources in the VPC will be supported soon.
+3. Select the CLB instance of the backend domain name and the corresponding listener.
+If you choose HTTP or HTTPS listener, please make sure that the backend CVM instance has enabled the public network bandwidth; otherwise, network request failure may occur (traffic generated by this policy is not included in the outbound traffic of the public network).
+4. Enter `http://vip+port` or `https://vip+port` as the backend domain name. The requests sent to CLB will be HTTP requests or HTTPS requests depending on the content you enter. The VIP here is the VIP of the private network CLB instance, which can be viewed in its basic information (as shown in the screenshot in step 1).
+5. Enter the backend path.
  - If you select the CLB listener type of HTTP/HTTPS, you should configure the backend path as the path configured in the CLB listener.
-Domain name and path configured in the CLB listener.
-
+Domain name and path configured in the [CLB](https://console.cloud.tencent.com/clb/index) listener:
+![](https://main.qcloudimg.com/raw/87580da4a46b78ebb61857f5ef7e689d.png)
  The backend path in API Gateway must be the same as that in CLB.
-
  You also need to configure a parameter named `host` as a constant parameter and place it in the header, whose value should be the domain name configured in the CLB listener.
-
+![](https://main.qcloudimg.com/raw/4b7ca9408558c0ca8f0ae072800250a6.png)
  - If you select the CLB listener type of TCP/UDP, you should configure the backend path as the path required by the business in the real CVM instance of the CLB instance.
 If you have configured host verification in CVM, you need to configure a parameter named `host` as a constant parameter and select the address to place it based on your actual business needs, just like with a layer-7 listener. Subsequent configuration is the same as that of other APIs.
-> When the backend is integrated with CLB, security groups on the real CVM instance should open the IP ranges of `100.64.0.0/10` and `9.0.0.0/8`.
+>!When the backend is integrated with CLB, security groups on the real CVM instance should open the IP ranges of `100.64.0.0/10` and `9.0.0.0/8`.
 
 <span id="scf"></span>
 ### Integrating with SCF
-If you choose not to enable response integration (existing mode) for API Gateway integration with SCF, the request information will be combined in a fixed structure when API Gateway sends a request to SCF, and the fixed structure will be received by SCF. The return will be passed through without being processed.
+If your business is implemented in SCF and you want to open up your service capabilities through API Gateway, you can select SCF as the backend connection type.
 
-Configuration instructions:
-1. When you integrate the backend with SCF, you should configure the functions you created on SCF.
-2. Configure the timeout period and click **Complete**.
+![](https://main.qcloudimg.com/raw/85e5c9650826e4656a90a082f4b6beac.png)
 
-If you choose to enable response for API Gateway integration with SCF, the request information will be combined in a fixed structure when API Gateway sends a request to SCF, and the content returned by SCF should also be in a fixed structure. API Gateway will then map the content returned by SCF to `statusCode`, `header`, and `body` and return it to the client.
+When connecting to SCF on the backend, you need to enter the following parameters:
 
-In this case, you need to return data in the following format to API Gateway for parsing:
+| No. | Parameter Name | Parameter Description |
+|---------|---------|---------|
+| 1 | Namespace | Namespace of the connected function, which is `default` by default |
+| 2 | Name | Name of the connected function |
+| 3 | Version | Version of the connected function, which is `$LATEST` by default |
+| 4 | Response time | Response time, which is 15 seconds by default |
+| 5 | Response integration | See below |
+
+Response integration description:
+
+Request method is the method to process request sent from API Gateway to SCF, and response method is the method to process the returned value sent from SCF to API Gateway. Both request and response methods can be planned and implemented by means of passthrough and integration.
+- If response integration is not enabled, the passthrough mode will be used. The request information will be combined in a fixed structure when API Gateway sends a request to SCF, and the fixed structure will be received by SCF. The response will be passed through without being processed and can only be in JSON format.
+- If response integration is enabled, the integration mode will be used. The request information will be combined in a fixed structure when API Gateway sends a request to SCF, and the content returned by SCF should also be in a fixed structure. API Gateway will then map the content returned by SCF to `statusCode`, `header`, and `body` and return it to the client.
+
+If response integration is enabled, you must configure the SCF to return data in the following format to API Gateway for parsing:
+
 ```
 { 
         "isBase64Encoded": false, // Whether Base64 encoding is used. The value is `true` or `false` 
         "statusCode": 200, // HTTP request status code 
-        "headers": {"Content-Type":"text/html"}, 
+        "headers": {"Content-Type":"text/html"}, // `Content-Type` can contain only strings but not arrays
         "body": "<html><body><h1>Heading</h1><p>Paragraph.</p></body></html>" 
 }
 ```
 
 The structure sent by API Gateway to SCF is in the following format:
+
 ```
 {
   "requestContext": {
     "serviceId": "service-f94sy04v",
     "path": "/test/{path}",
     "httpMethod": "POST",
-    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
     "identity": {
       "secretId": "abdcdxxxxxxxsdfs"
     },
@@ -114,7 +131,8 @@ The structure sent by API Gateway to SCF is in the following format:
     "Accept-Language": "en-US,en,cn",
     "Accept": "text/html,application/xml,application/json",
     "Host": "service-3ei3tii4-251000691.ap-guangzhou.apigateway.myqloud.com",
-    "User-Agent": "User Agent String"
+    "User-Agent": "User Agent String",
+    "x-api-requestid": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef"
   },
   "body": "{\"test\":\"body\"}",
   "pathParameters": {
@@ -137,21 +155,22 @@ The structure sent by API Gateway to SCF is in the following format:
   "httpMethod": "POST"
 }
 ```
-> You can implement backend web services by writing SCF functions and providing services through API Gateway which will pass the request content as parameters to the function and return the result from the function back to the requester as the response. For more information, please see [API Gateway Trigger Overview](https://intl.cloud.tencent.com/document/product/583/12513).
+
+>? You can implement backend web services by writing SCF functions and providing services through API Gateway which will pass the request content as parameters to the function and return the result from the function back to the requester as the response. For more information, please see [API Gateway Trigger Overview](https://intl.cloud.tencent.com/document/product/583/12513).
 
 <span id="mock"></span>
 ### Integrating with Mock 
 Mock returns a response that has a fixed configuration to an API request. It is typically used for development testing. API configuration and response can be completed in advance before the backend service is completed. To integrate with Mock, you only need to configure your returned data and click **Complete**.
-
+![](https://main.qcloudimg.com/raw/ec0a96a74628797a191f307555c85df9.png)
 
 <span id="websocket"></span>
 ### Integrating with WebSocket
 If WebSocket is used for your business, you can integrate WebSocket with your backend service in generally the same way as [integrating with HTTP](#http), except that the backend domain name should begin with `ws://` or `wss://` excluding the path.
-
+![](https://main.qcloudimg.com/raw/8bdb108f237bdcaa5e00b599f15bad81.png)
 
 ## Step 4. Configure the response
 API response configuration includes the configuration of API response data and API error codes.
 API response data configuration: indicates the type of returned data, including data samples of successful and failed calls.
 API error code definition: indicates additional error code, error message, and description.
 
-> Currently, API Gateway directly passes through the response result to the requester without processing it. When SDK documentation is generated, the entered sample responses will also be displayed in the documentation, which will help users better understand the meanings of APIs.
+>?Currently, API Gateway does not process the response result and directly passes it through to the requester. When SDK documentation is generated, the entered response sample will also be displayed in the document, which will help users better understand the meanings of the APIs.

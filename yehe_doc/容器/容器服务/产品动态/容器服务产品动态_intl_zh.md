@@ -1,3 +1,28 @@
+## 2020年08月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>云原生监控服务优化监控能力</td><td><ul class="params"><li>预置集群监控采集项，同步配备丰富的 Grafana 大盘。</li><li>新增 Targets 列表页，实时观测监控任务状态。</li></ul></td><td>2020-08-31</td><td>-</td>
+</tr>
+<tr>
+    <td>云原生监控服务告警模块升级</td><td><ul class="params"><li>可关联本地 Alertmanager 组件。</li><li>支持 CRD 管理 Prometheus rules。</li></ul></td><td>2020-08-31</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE 发布 NodeProblemDetectorPlus 扩展组件</td><td>支持在原有的检测基础上，进行节点配置自愈策略。</td><td>2020-08-25</td>	<td>-</td>
+</tr>
+<tr>
+    <td>TKE 上线原地大版本升级能力</td><td>原地大版本升级功能支持大版本升级不重装节点。</td><td>2020-08-25</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE 扩展组件全量上线</td><td>扩展组件功能支持为集群安装及卸载多种增强组件。</td><td>2020-08-25</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE 全量上线 Kubernetes 1.18 版本支持</td><td>支持用户新建 Kubernetes 1.18版本集群以及升级集群版本至1.18。 </td><td>2020-08-24</td>	<td>-</td>
+</tr>
+</table>
+
+
 ## 2020年07月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -183,7 +208,7 @@
 <td>集群/节点创建时支持批量添加节点 Label</td>
     <td>容器服务支持在集群创建或存量集群添加新节点时，<b>对运行同一业务或具有相同配置的节点统一添加 Label</b>，为用户提供资源划分、资源属性标记、海量资源筛选及批量处理功能。</td>
 <td>2019-10-21</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/32185">集群管理</a></td>
 </tr>
 <tr>
 <td>运行时组件 Containerd 支持 GPU 机型</td>
@@ -212,7 +237,7 @@
 <td>容器服务集群伸缩组相关 API 接入 API 3.0</td>
     <td>容器服务 API 升级到 3.0 版本，已支持全地域接入。<b>全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码、SDK/CLI 版本与 API 文档严格一致</b>，给用户带来简单快捷的使用体验。</td>
 <td>2019-09-12</td>
-<td>伸缩组相关接口</td>
+<td><a href="https://cloud.tencent.com/document/api/457/37977">伸缩组相关接口</a></td>
 <tr>
 <td>容器服务 Kubernetes 1.14 版本全量上线，已通过一致性认证</td>
     <td>容器服务<b> Kubernetes 1.14 版本全量上线</b>，并且已经通过一致性认证，以保证及时提供最新版本的 Kubernetes。</td>
@@ -235,7 +260,7 @@
 <td>容器服务独立集群支持单独查看 Maste&Etcd 节点</td>
     <td>该功能支持用户<b>直观查看独立集群下所有的 Master&Etcd 节点列表及此类节点更多详情信息</b>，解决用户查看独立集群节点时无法区分 Node 和 Master 节点的问题。</td>
 <td>2019-09-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30649">节点管理</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/32186">节点管理</a></td>
 </tr>
 </table>
 
@@ -279,7 +304,7 @@
 </td>
 <td>容器服务 API 升级到 3.0 版本，已全地域接入全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码，SDK/CLI 版本与 API 文档严格一致，给用户带来简单快捷的使用体验。</td>
 <td>2019-08-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
 </tr>
 <tr>
 <td>容器服务支持采集容器内文件日志</td>
@@ -474,7 +499,7 @@
 <td>修复 runc 漏洞 CVE-2019-5736</td>
 <td>轻量级容器运行环境 runc 被证实存在容器逃逸漏洞，本次修复可以有效避免攻击者利用该漏洞覆盖 Host 上的 runc 文件，从而在 Host 上以 root 权限执行代码。</td>
 <td>2019-02-13</td>
-    <td>【安全预警】关于runc容器逃逸漏洞通知</td>
+    <td><a href="https://cloud.tencent.com/announce/detail/457">【安全预警】关于runc容器逃逸漏洞通知</a></td>
 </tr>
 </table>
 
@@ -492,7 +517,7 @@
 <td>创建集群支持使用自定义镜像</td>
 <td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">工单</a> 申请。</td>
 <td>2019-01-24</td>
-    <td>自定义镜像说明</td>
+    <td><a href="https://cloud.tencent.com/document/product/457/39563">自定义镜像说明</a></td>
 </tr>
 <tr>
 <td>创建工作负载支持设置亲和性调度</td>
@@ -516,7 +541,7 @@
 	<td>TencentHub 支持 Helm Chart 管理</td>
 	<td>Helm 是 Kubernetes 的一种包管理工具，Chart 是描述 Kubernetes 资源的文件的集合。Tencent Hub 为用户提供了一个 Helm Chart 的存储地址。</td>
 	<td>2018-12-26</td>
-	<td>Helm Chart 简介</td>
+	<td><a href="https://cloud.tencent.com/document/product/857/31682">Helm Chart 简介</a></td>
 	</tr>
 	<tr>
 	<td>容器服务支持 Helm 应用安装</td>
@@ -528,7 +553,7 @@
 	<td>修复 Kubernetes 权限提示漏洞</td>
 	<td>腾讯云安全中心监测到 Kubernetes 存在严重的权限提升漏洞（漏洞编号：CVE-2018-1002105），本次修复可以有效避免攻击者利用该漏洞访问未被授权访问的 Kubernetes  集群资源甚至导致权限提升，发起恶意请求最终危害业务系统安全。</td>
 	<td>2018-12-04</td>
-        <td>【安全预警】关于 Kubernetes 权限提升漏洞的通知</td>
+        <td><a href="https://cloud.tencent.com/announce/detail/362">【安全预警】关于 Kubernetes 权限提升漏洞的通知</a></td>
 	</tr>
 	<tr>
 	<td>关闭 Kubenretes 1.7.8 版本创建入口</td>
@@ -848,7 +873,7 @@
 		<td>配置项支持导入环境变量</td>
 		<td>部署实例内容器时，可在环境变量中引入配置项 ConfigMap/Secret。</td>
 		<td>2017-09-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30674">配置项</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/31716">配置项</a></td>
 	</tr>
 	<tr>
 		<td>集群新增资源所属项目属性</td>
@@ -884,7 +909,7 @@
 		<td>基于 TencentHub 持续集成和持续部署</td>
 		<td>TencentHub 是腾讯云为存储研发流程中文件以及创建 DevOps 工作流而打造的管理平台。用户使用 Tencent Hub 时可以方便快捷地对项目全周期中产生的文件进行存储、查看及调用等操作。</td>
 		<td>2017-08-23</td>
-        <td>TencentHub 产品概述</td>
+        <td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub 产品概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增触发器功能</td>
@@ -927,13 +952,13 @@
 		<td>容器服务支持 CI 源码构建</td>
         <td>容器持续集成提供在腾讯云容器平台上，<b>自动、手动构建容器镜像的功能。</b></td>
 		<td>2017-07-18</td>
-		<td>镜像构建概述</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/10151">镜像构建概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增 TencentHub 镜像</td>
 		<td>镜像仓库支持查看、使用 TencentHub 镜像。</td>
 		<td>2017-07-18</td>
-		<td>TencentHub产品概述</td>
+		<td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub产品概述</a></td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增“我的收藏”</td>
@@ -1021,7 +1046,7 @@
 	</tr>
 	<tr>
 		<td>容器服务创建集群支持自定义安全组</td>
-        <td>若当前默认安全组不能满足业务需求，您可参照 <a href="https://intl.cloud.tencent.com/document/product/213/34826">管理安全组规则</a> 进行集群安全组自定义设置。</td>
+        <td>若当前默认安全组不能满足业务需求，您可参照 <a href="https://cloud.tencent.com/document/product/213/39739">管理安全组规则</a> 进行集群安全组自定义设置。</td>
         <td>2017-04-19</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 	</tr>
@@ -1071,19 +1096,19 @@
 		<td>集群管理</td>
 		<td>集群的增删改查、VPC 容器集群、跨可用区集群及支持开源 Kubernetes 原生 API 功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30634">集群管理</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/32185">集群管理</a></td>
 	</tr>
 	<tr>
 		<td>服务管理</td>
 		<td>服务的增删改查、私有镜像创建服务、Docker 官方镜像创建服务、服务跨可用区调度等功能。</td>
         <td>2016-12-26</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">服务管理</a></td>
+		<td><a href="https://cloud.tencent.com/document/product/457/32185">服务管理</a></td>
 	</tr>
 	<tr>
 		<td>镜像管理</td>
 		<td>Docker 官方镜像、我的镜像、上传下载私有镜像、Docker 官方镜像加速功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9103">镜像仓库</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/9103">镜像仓库</a></td>
 	</tr>
 	<tr>
 		<td>集群监控及容器监控</td>

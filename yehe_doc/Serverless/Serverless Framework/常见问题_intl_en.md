@@ -21,6 +21,9 @@ If you have any other questions or feedback, please visit [GitHub Repository Iss
 
 This error is caused by account arrears, as it is impossible to create pay-as-you-go resources. Please check whether your account is in arrears. This error can be resolved by topping up your account to a positive balance.
 
+### What should I do if I have no operate permission in the Window Powershell?
+Under the strict permission management of Window Powershell, you only need to run the `set-executionpolicy remotesigned` command for the deployment. In Windows, we recommend using the `serverless deploy`  command.
+
 ### How do I deploy if my development environment is outside Mainland China?
 Problem: Serverless Framework checks whether the user is in Mainland China by default during deployment. If your development environment is outside Mainland China and you want to use the Mainland China edition of Serverless Framework, you can configure it as follows:
 

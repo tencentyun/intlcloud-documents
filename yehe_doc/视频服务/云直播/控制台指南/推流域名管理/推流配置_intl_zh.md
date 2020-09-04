@@ -14,8 +14,11 @@
 1.  进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。 
 2.  单击【推流配置】，查看【鉴权配置】标签，单击右侧的【编辑】。
 	![](https://main.qcloudimg.com/raw/9928eda10a0759bcf2a433e101cb3e7d.jpg)
-3.  进入修改推流鉴权信息，单击【保存】即可成功生效。
+3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
+4. 修改主 KEY 和备 KEY 信息，单击【保存】即可成功生效。
 ![](https://main.qcloudimg.com/raw/315b71b8315d30ade496b3861e8d403c.jpg)
+>? 主 KEY 为必填、备 KEY 为选填，主备 KEY 可实现当 KEY 泄露时平滑更换 KEY 不影响业务。
+
 
 
 ## 推流地址生成器
@@ -134,3 +137,5 @@ public class Test {
     }
 }
 ```
+## 后续操作
+生成推流地址后，可根据业务场景使用直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/zh/document/product/267/31558)。

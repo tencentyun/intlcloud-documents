@@ -17,7 +17,7 @@
 2. 결제를 완료하고 Instance List로 돌아온 뒤 "발주중"(약 5분~ 10분간 소요할 수 있으니 기다려 주시기 바랍니다.)으로 표시된 걸 볼 수 있고, 인스턴스 상태가 '초기화하지 않음'으로 바뀌었다면 초기화 작업을 진행할 수 있습니다.
 
 ### API 구매
-API로 CDB를 구매한 사용자는 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/236/15871)을 참조 바랍니다.
+API로 CDB를 구매한 사용자는 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/236/15865)을 참조 바랍니다.
 
 
 ## 후속 작업
