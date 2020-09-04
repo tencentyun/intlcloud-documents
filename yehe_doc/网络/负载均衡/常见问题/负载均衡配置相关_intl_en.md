@@ -89,3 +89,6 @@ clientB IP + port drop
 
 ### Managing real server security group through TencentCloud API
 For more information, please see [AssociateSecurityGroups](https://intl.cloud.tencent.com/document/product/213/33265) and [DisassociateSecurityGroups](https://intl.cloud.tencent.com/document/product/213/33253).
+
+### Why is the 843 listener Telnet connected without being created?
+By default, CLB opens the 843 port to Internet for resetting access to Flash. To close the port, you only need to leave the TCP: 843 listener unbound to the real server.
