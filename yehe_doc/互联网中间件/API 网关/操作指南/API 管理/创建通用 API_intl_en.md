@@ -16,8 +16,7 @@ The frontend configuration of an API refers to the configuration provided for ex
 - **Frontend type**: API Gateway supports two frontend types: HTTP and WebSocket.
  - HTTP: suitable for situations where the backend is integrated with HTTP, Mock, or a cloud function.
  - WebSocket: suitable for situations where WebSocket is used for the business and the backend is integrated with WebSocket or a cloud function.
-- **Request protocol**: API Gateway supports HTTP/HTTPS protocols in three modes: HTTP only, HTTPS only, and HTTP/HTTPS.
--  **HTTP method**: you can select GET, POST, PUT, DELETE, or HEAD.
+
 - **URL path**: you can write a valid URL path as needed. If you need to configure a dynamic parameter in the path, please use `{}` to enclose the parameter name. For example, the `/user/{userid}` path declares the `userid` parameter in the path, which must be defined as a path-type input parameter. A query parameter does not need to be defined in the URL path.
 **Regular expression match is supported**. Taking `/user` as an example of the path:
  - `=/user`: indicates exact match. When there are multiple APIs with `/user`, APIs configured with `=/user` have the highest matching priority.
@@ -25,6 +24,10 @@ The frontend configuration of an API refers to the configuration provided for ex
  - `/user/{id}`: indicates that there is a dynamic parameter in the path. When there are multiple APIs with `/user`, APIs configured with a dynamic parameter have the third highest matching priority.
  - `/user`: indicates access by exact match or prefix match. `/user`, `/usertest`, and `/user/test/a` all can access APIs with the path of `/user`.
  - Standard regular expressions are supported; for example, the asterisk (*) matches the preceding subexpression zero or more times, while the question mark (?) matches the preceding subexpression zero or one time.
+
+- **HTTP request method**: you can select GET, POST, PUT, DELETE, or HEAD.
+- **Authentication type**: you can select [No Authentication](https://intl.cloud.tencent.com/document/product/628/11820), [Key Pair Authentication](https://intl.cloud.tencent.com/document/product/628/11819), and [OAuth 2.0](https://intl.cloud.tencent.com/document/product/628/34065).
+- **CORS support**: cross-origin resource sharing (CORS). If CORS is enabled, the response header will contain `Access-Control-Allow-Origin : *` by default.
 
 ### Configuring frontend parameters
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
