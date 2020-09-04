@@ -11,7 +11,7 @@ This document describes how to authenticate and manage your APIs through key pai
 6. Generate signing information in Python by referring to the [Sample Code](#example).
 
 ## Environment Dependencies
-Python 2.7.
+API Gateway provides sample code for Python v2.7 and v3. Please select one according to the version of your Python.
 
 ## Notes
 - The eventually delivered HTTP request contains at least two headers: `Date` or `X-Date` and `Authorization`. More optional headers can be added in the request. If `Date` is used, the server will not check the time; if `X-Date` is used, the server will check the time.
@@ -20,7 +20,7 @@ Python 2.7.
 - If it is a microservice API, you need to add two fields in the header: `X-NameSpace-Code` and `X-MicroService-Name`. They are not needed for general APIs and are included in the demo by default.
 
 <span id="example"></span>
-## Sample Code
+### Sample code for Python v2.7
 ```python
 # -*- coding: utf-8 -*-
 import requests
@@ -71,3 +71,50 @@ r = requests.get(url, headers=header)
 print r
 print r.text
 ```
+
+### Sample code for Python v3
+
+```
+# -*- coding: utf-8 -*-
+import base64
+import datetime
+import hashlib
+import hmac
+
+import requests
+
+GMT_FORMAT = '%a, %d %b %Y %H:%M:%S GMT'
+
+
+def getSimpleSign(source, SecretId, SecretKey):
+    dateTime = datetime.datetime.utcnow().strftime(GMT_FORMAT)
+    auth = "hmac id=\"" + SecretId + "\", algorithm=\"hmac-sha1\", headers=\"date source\", signature=\""
+    signStr = "date: " + dateTime + "\n" + "source: " + source
+    sign = hmac.new(SecretKey.encode(), signStr.encode(), hashlib.sha1).digest()
+    sign = base64.b64encode(sign).decode()
+    sign = auth + sign + "\""
+    return sign, dateTime
+
+
+SecretId = 'your SecretId'  # SecretId in key pair
+SecretKey = 'your SecretKey'  # SecretKey in key pair
+url = 'http://service-xxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com/release/xxx'  # API access path
+
+header = {'Host': 'service-xxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com',  # Service domain name of API
+          'Accept': 'text/html, */*; q=0.01',
+          'X-Requested-With': 'XMLHttpRequest',
+          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36',
+          'Accept-Encoding': 'gzip, deflate, sdch',
+          'Accept-Language': 'zh-CN,zh;q=0.8,ja;q=0.6'
+          }
+Source = 'xxxxxx'  # Arbitrary signature watermark value
+sign, dateTime = getSimpleSign(Source, SecretId, SecretKey)
+header['Authorization'] = sign
+header['Date'] = dateTime
+header['Source'] = Source
+
+
+r = requests.get(url, headers=header)
+print(r.text)
+```
+
