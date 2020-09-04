@@ -1,7 +1,7 @@
 Cloud Block Storage (CBS) provides highly available, highly reliable, low-cost, and customizable network block device that can be used as a standalone and expandable disk for CVMs. CBS stores data at the data block level in a three-copy distributed mechanism, so as to ensure data reliability. CBS is classified into three types: **Premium**, **SSD**, and **Enhanced SSD**. Each type has unique performance and characteristics, and the price varies, making CBS suitable for different use cases.
 
 >!
->- Currently, Enhanced SSD is only available in Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 3, Shanghai Zone 5, Beijing Zone 3, Beijing Zone 4, Chengdu Zone 1, Chongqing Zone 1, Nanjing Zone 1, Nanjing Zone 2, and Qingyuan Zone 1. It will be supported in more availability zones.
+>- Currently, Enhanced SSD is only available in Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 3, Shanghai Zone 5, Beijing Zone 3, Beijing Zone 4, Chengdu Zone 1, Chongqing Zone 1, Nanjing Zone 1, and Nanjing Zone 2. It will be supported in more availability zones.
 >- The performance of Enhanced SSD is only guaranteed when it’s mounted to S5, M5, SA2, IT3, and D3 models created after August 1, 2020, and all later generation models.
 - Enhanced SSD cannot be used as the system disk.
 - Enhanced SSD cannot be encrypted.
