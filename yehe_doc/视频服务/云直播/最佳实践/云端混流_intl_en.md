@@ -1,8 +1,8 @@
 LVB provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
 
->!
->- Standard transcoding fees will be incurred for the stream mix feature.
->- To use the mixing and cropping feature, the value of cropping parameter cannot exceed the value of input stream parameter.
+## 
+- Standard transcoding fees will be incurred for the stream mix feature.
+- To use the mixing and cropping feature, the value of cropping parameter cannot exceed the value of input stream parameter.
 
 
 ## Supported Features
@@ -44,16 +44,16 @@ Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using the
 
 
 
-
-## Parameter Description
+## 
+### Parameter Description
 For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997).
 
 
 
-## Scenario 1. Apply for stream mix - use template 20
+### Scenario 1. Apply for stream mix - use template 20
 This example shows you how to use a preset stream mix template to mix streams.
 
-### Sample input code
+#### Sample input code
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
@@ -66,7 +66,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &<Common request parameters>
 ```
 
-### Sample output code
+#### Sample output code
 ```
 {
   "Response": {
@@ -75,14 +75,14 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 }
 ```
 
-### Stream mix effect for mic connection
+#### Stream mix effect for mic connection
 ![img](https://main.qcloudimg.com/raw/a9bdfd2622e3152e61d8cb15a1b21aa1.jpg)
 
 
-## Scenario 2. Apply for stream mix - use template 390
+### Scenario 2. Apply for stream mix - use template 390
 This example shows you how to use a preset stream mix template to mix streams.
 
-### Sample input code
+#### Sample input code
 
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
@@ -102,7 +102,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &<Common request parameters>
 ```
 
-### Sample output code
+#### Sample output code
 
 ```
 {
@@ -112,23 +112,23 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 }
 ```
 
-### Stream mix effect for host competition
+#### Stream mix effect for host competition
 ![img](https://main.qcloudimg.com/raw/cad10f080a239725893e5221faa21c17.jpg)
 
 
 
-## Scenario 3. Custom stream mix
+### Scenario 3. Custom stream mix
 Use the custom layout, where the position parameters `LocationX` and `LocationY` represent the absolute pixel distance between the top-left corner of the small image and that of the background image.
 ![](https://main.qcloudimg.com/raw/e1f81cd4a9b08af4ad7e4658fc643f0d.png)
 
-### Sample input code
+#### Sample input code
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
 &OutputParams.OutputStreamName=test_stream2
 &InputStreamList.0.InputStreamName=test_stream1
 &InputStreamList.0.LayoutParams.ImageLayer=1
-&InputStreamList.1.LayoutParams.InputType=3
+&InputStreamList.0.LayoutParams.InputType=3
 &InputStreamList.0.LayoutParams.ImageWidth = 1920
 &InputStreamList.0.LayoutParams.ImageHeight= 1080
 &InputStreamList.0.LayoutParams.Color=0x000000
@@ -158,7 +158,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 ```
 
 
-### Custom stream mix effect
+#### Custom stream mix effect
 ![](https://main.qcloudimg.com/raw/db6a87baba1f1891f514d4bea9b38ee4.png)
 
 

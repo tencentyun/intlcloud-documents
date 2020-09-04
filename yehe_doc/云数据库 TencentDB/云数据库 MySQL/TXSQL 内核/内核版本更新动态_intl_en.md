@@ -1,12 +1,24 @@
-This document describes the release notes of the TencentDB for MySQL kernel. If you need to upgrade it, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
+This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
+## MySQL 8.0
+### 20200630
+#### New features
+- Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supports automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+
+
+#### Bug fixes
+- Fixed the error where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
+- Fixed the data file error caused by asynchronously storing data in the disk.
+- Fixed the hard error when `fsync` returned `EIO` and retries were made repeatedly.
+- Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
 - Supports the [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037) feature for ecommerce flash sale scenarios.
-- Supports [SQL Throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
+- Supports the [SQL throttling] (https://intl.cloud.tencent.com/document/product/1035/36037) feature.
 - Supports encryption with custom KMS keys.
 
 #### Bug fixes
@@ -18,7 +30,7 @@ This document describes the release notes of the TencentDB for MySQL kernel. If 
 - Supports skipping the corrupted data and continuing to parse when a binlog is corrupted. If the source instance and binlog are both damaged, this feature helps restore data from the replica database for use as much as possible.
 - Supports syncing data from non-GTID to GTID mode.
 - Supports querying the "user thread memory usage" by executing the `show full processlist` statement.
-- Supports [quick column adding](https://intl.cloud.tencent.com/document/product/236/35990) for tables. This feature does not copy the data or use disk space/IO, and can implement changes in real time during peak hours.
+- Supports [quick column adding](https://intl.cloud.tencent.com/document/product/236/35990) for tables. This feature does not replicate the data or use disk space/IO and can implement changes during peak hours.
 - Supports persistent auto-increment values.
 
 #### Bug fixes
@@ -61,7 +73,7 @@ This document describes the release notes of the TencentDB for MySQL kernel. If 
 
 ### 20180918
 #### New features
-- Supports automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supports automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supports automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supports invisible indexes.
 - Supports memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.
@@ -118,7 +130,7 @@ This document describes the release notes of the TencentDB for MySQL kernel. If 
 ### 20190530
 #### Bug fixes
 - Fixed the error where dirty data might be read in RC mode.
-- Fixed the error where replica replay might fail due to the deletion of temp table.
+- Fixed the error where replica instance replay might fail due to the deletion of temp table.
 - Fixed the error of deadlock under high concurrency.
    
 
@@ -139,7 +151,7 @@ This document describes the release notes of the TencentDB for MySQL kernel. If 
 ### 20180915
 #### New features
 - Supports automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
-- Supports automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supports automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
    
 #### Bug fixes
 - Fixed the crash caused by `REPLAY LOG RECORD`.

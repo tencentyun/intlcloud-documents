@@ -1,48 +1,47 @@
->The strengths described in this document are exclusive to TencentDB for MySQL High-Availability Edition instances.
+>?The strengths described in this document are exclusive to TencentDB for MySQL High-Availability Edition and Finance Edition instances.
 
 ## Cost Effectiveness and Ease of Use
 
+- **Read/write separation is supported**
+Read-only instances can be mounted to TencentDB for MySQL. One-source-multiple-replica architecture allows you to respond to massive requests. RO group with load balancing feature is supported to greatly optimize the pressure distribution among read-only instances.
 
-#### Read/Write separation
-Read-only instances can be mounted to MySQL. The one-master-multiple-slave architecture allows you to respond to a multitude of business requests with ease. Load balancing-enabled RO groups can be created, helping evenly distribute the load among read-only instances.
-
-#### Powerful hardware for high performance
+- **Powerful hardware ensures high performance**
 NVMe SSD features high IO performance, ensuring smooth reads and writes.
-One single instance can sustain up to 240,000 [QPS] with a maximum storage capacity of 6 TB.
+A maximum of 240,000 QPS and a maximum storage space of 6 TB are supported.
 
 ## High Security
- **DDoS protection**
-This feature helps defend against various DDoS attacks, large and small, to ensure business continuity.
+- **Anti-DDoS protection**
+When you suffer a DDoS attack, this feature can help you resist various attack traffic, ensuring the normal operation of businesses.
 
-#### Protection against database attacks
-Database attacks such as SQL injections and brute force attacks can be blocked efficiently.
+- **Protection against database attacks**
+Effectively defense against such database attacks as SQL injection and brute force attacks.
 
 ## High Reliability
-Data is stored online in a master/slave architecture, ensuring high data security. Moreover, backup data can be stored for an extended time period, allowing for data recovery in case of a database disaster.
+Data is stored online in a source/replica architecture, ensuring high data security. Moreover, backup data can be stored for an extended time period, allowing for data recovery in case of a database disaster.
 
-#### Data encryption
+- **Data encryption**
 Transparent data encryption (TDE) feature guarantees the security of real-time data and backup data.
 
-#### Database audit
+- **Database audit**
 Financial-grade data audit feature helps prevent core data theft, trace non-compliant operations, and locate malicious pulls.
 
 
 ## High Availability
-**Real-Time hot backup**
+- **Real-time hot backup**
 The dual-server hot backup mechanism supports lossless restoration of data from the last 7–732 days based on data backup and log backup (binlog). Such backups can be retained for 7–732 days.
 
-#### Automated disaster recovery
-Automated failure detection and failover are supported. Master/slave switch and failover are imperceptible to users.
+- **Automatic disaster recovery**
+Automatic failure detection and automatic failover are supported. Procedures of source/replica switchover and failover are imperceptible to users.
 
-## Advantages over Self-Created Databases
-**Easy management of massive databases**
-Databases can be managed via command line or console. Batch database management, permission setting, and SQL import are supported.
+## Advantages over Self-created Databases
+- **Easy management of massive databases**
+Databases can be managed via command line or console. Batch database management, permission setting, and SQL import are supported. 
 
-#### Data import, backup, and rollback
-Multiple data import methods are provided for initialization. Data is automatically backed up daily and can be rolled back to any point in time in the last 5 days based on backup files.
+- **Data import and backup rollback**
+Multiple data import methods are provided for initialization. Data is backed up automatically on a daily basis. TencentDB allows data to be rolled back to any point in time within the retention period based on backup files.
 
-#### Professional monitoring and alarming
+- **Professional monitoring and alarm**
 Multidimensional monitoring and alarming based on custom resource thresholds are supported. You can also download slow query analysis reports and complete SQL running reports.
 
-#### Multiple network access methods
+- **A variety of access methods**
 Access to the public network and VPC is supported. You can connect TencentDB instances to your IDC, a private cloud, or other computing resources for deployment in a hybrid cloud conveniently.

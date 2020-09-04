@@ -40,7 +40,6 @@ When the `long_query_time` parameter is adjusted, existing slow logs will not be
 </tr>
 </tbody></table>
 <img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
-
 3. To download the slow log, on the "Download slow log" tab, click **Download** in "Operation".
 4. To quickly download the slow log, we recommend that you copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command to download over the private network.
 >?
