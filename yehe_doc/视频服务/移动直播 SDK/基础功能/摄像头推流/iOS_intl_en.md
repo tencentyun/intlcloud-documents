@@ -207,7 +207,7 @@ The method is as follows:
 }
 ```
 Example:
-![](https://main.qcloudimg.com/raw/4e34de6c6cc40e0afca31d71659a9d72.jpeg)
+![](https://main.qcloudimg.com/raw/5b1bc5b6e1a8aada3af7b1ebe70ab108.jpg)
 
 ### 13. Set the logo watermark
 
