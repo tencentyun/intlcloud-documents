@@ -8,8 +8,8 @@ If the port has not been opened, please refer to [Adding Security Group Rules](h
 
 ## Directions
 You can choose to transition from ntpdate to ntpd [manually](#manual) or [automatically](#automatic).
-
-### Transitioning from ntpdate to ntpd manually<span id="manual"></span>
+<span id="manual"></span>
+### Transitioning from ntpdate to ntpd manually
 #### Shutting down ntpdate
 1. Run the following command to export the `crontab` configuration and filter ntpdate.
 ```
@@ -35,8 +35,8 @@ vi /etc/ntp.conf
 ![Server configuration](https://main.qcloudimg.com/raw/643dc5bbd2a42307ec10b5d38f756dda.png)
 3. Press **Esc** and enter **:wq** to save and close the file.
 
-
-### Transitioning from ntpdate to ntpd automatically<span id="automatic"></span>
+<span id="automatic"></span>
+### Transitioning from ntpdate to ntpd automatically
 1. Download the `ntpd_enable.sh` script.
 ```
 wget https://image-10023284.cos.ap-shanghai.myqcloud.com/ntpd_enable.sh
