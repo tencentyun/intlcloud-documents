@@ -76,7 +76,8 @@ The backend business is in a different region from API Gateway and receives five
 - Total data transfer fees = 14.3 GB * 0.12 USD/GB + 4.77 GB * 0.12 USD/GB = 2.29 USD
 - Total fees = 4.45 USD + 2.29 USD = 6.74 USD
 
-**Related links**
-For more information on arrears processing in API Gateway, data retention and purge schedule, and billing descriptions, please see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/628/11934) for API Gateway.
+## Notes
+- For more information on arrears processing in API Gateway, data retention and purge schedule, and billing descriptions, please see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/628/11934).
+- The WebSocket API will incur public network outbound traffic fees only.
 
 This pricing document  is for reference only. See your bill for the actual price.
