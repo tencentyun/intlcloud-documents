@@ -6,7 +6,7 @@
 
 ### 收费模式相关
 
-[COS 如何收费？](https://intl.cloud.tencent.com/document/product/436/10373#how-is-cos-billed.3F)
+[COS 支持哪种计费方式？](https://intl.cloud.tencent.com/document/product/436/10373#how-is-cos-billed.3F)
 [COS 的外网下行流量如何收费？](https://intl.cloud.tencent.com/document/product/436/10373#how-is-the-public-network-downstream-traffic-in-cos-billed.3F)
 [COS 的 CDN 回源流量如何收费？](https://intl.cloud.tencent.com/document/product/436/10373#how-is-the-cdn-origin-pull-traffic-in-cos-billed.3F)
 [COS 与 CVM 之间传输数据，请求数和流量是否收费？](https://intl.cloud.tencent.com/document/product/436/10373#will-fees-be-charged-for-requests-and-traffic-generated-by-data-transfer-between-cos-and-cvm.3F)

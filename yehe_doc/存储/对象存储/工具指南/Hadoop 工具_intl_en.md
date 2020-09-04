@@ -19,13 +19,13 @@ Hadoop-2.6.0 or later.
 
 ### Downloading the Hadoop-COS plugin
 
-Download the Hadoop-COS plugin [here](https://github.com/tencentyun/hadoop-cos).
+Download the Hadoop-COS release [here](https://github.com/tencentyun/hadoop-cos/releases).
 
 ### Installing the Hadoop-COS plugin
 
 1. Copy `hadoop-cos-X.X.X-shaded.jar *` from the `dep` directory to `$ HADOOP_HOME/share/hadoop/tools/lib`.
 
-> ?Select the JAR package that corresponds to your Hadoop version. If you cannot find the corresponding package dep directory, compile and generate one manually by modifying the Hadoop version number in the pom file. 
+> ?Select the JAR package that corresponds to your Hadoop version. If you cannot find the corresponding package release, compile and generate one manually by modifying the Hadoop version number in the pom file. 
 
 2. Modify the `hadoop_env.sh` file under the `$HADOOP_HOME/etc/hadoop` directory by adding the COSN JAR package to your Hadoop environment variables as follows:
 

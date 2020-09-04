@@ -24,7 +24,7 @@ Log in to the [CLS Console](https://console.cloud.tencent.com/cls), and click **
 
 ### 2. Creating log topic for LogListener
 
-Select a logset, click **Add Log Topic**, enter the log topic name, e.g. `test-full`, and click **OK**.
+Select a logset, click **Add Log Topic**, enter the log topic name, e.g. `test_full`, and click **OK**.
 ![](https://main.qcloudimg.com/raw/cc3937823ac7a68534144d54b0719cf9.png)
 
 ### 3. Configuring LogListener collection
