@@ -17,8 +17,8 @@ The following table lists the Tencent Cloud services that can be imported into T
 
 1. Log in to the [TIC console](https://console.cloud.tencent.com/tic). In the left sidebar, choose **Orchestration** -> **Stacks** to go to the **Stacks** page.
 2. On the [**Stacks**](https://console.cloud.tencent.com/tic/stacks) page, click **New stack**.
-3. In the **Select a Mode** step, select a region, specify a template for importing resources, and select the resources to be imported.
-![image-20200710154557033](https://main.qcloudimg.com/raw/0a3156f4b6319c2a589ff31719d56b30.png)
+3. In the **Select Mode** step, select a region, specify a template for importing resources, and select the resources to be imported.
+![image-20200710154557033](https://main.qcloudimg.com/raw/ec82cc68cfb8f353d36a29f1c7e1bc9f.png)
 4. Click **Next** to import the selected resources.
 5. The more resources you select to import, the longer it will take to import them. After the resources are imported, click **Import Completed** to go to the **Configure the Stack** step.
 ![](https://main.qcloudimg.com/raw/89cf5c05edef27aaeb93ba42ed4968e5.png)
