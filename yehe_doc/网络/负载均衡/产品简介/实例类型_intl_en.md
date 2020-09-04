@@ -123,3 +123,7 @@ CLB has all features of Classic CLB. Given their product features and performanc
                         <td>×</td>
         </tr>   
 </tbody></table>
+
+>?  
+> - CLB instance: a CLB instance supports enabling or disabling the HTTP/2 protocol.  For more information, see [Configuring an HTTPS Listener](https://intl.cloud.tencent.com/document/product/214/32516#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.85.8D.E7.BD.AE.E7.9B.91.E5.90.AC.E5.99.A8) .
+> - Classic CLB instance: HTTPS listeners created for Classic CLB before April 2018 do not support the HTTP/2 protocol. HTTPS listeners created after April 2018 support but cannot disable the HTTP/2 protocol.
