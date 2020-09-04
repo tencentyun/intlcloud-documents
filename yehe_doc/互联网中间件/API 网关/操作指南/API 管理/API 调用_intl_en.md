@@ -11,7 +11,7 @@ This document describes how to call a key pair authentication API.
 5. Bind the usage plan to the API or the service where the API resides.
 
 #### Confirming information
-Before calling the API, you must obtain information of the API, including SecretId, SecretKey, request path, request method, and request parameters.
+Before calling the API, you must obtain the information of the API, including SecretId, SecretKey, request path, request method, and request parameters.
 
 #### Preparing tools
 You can initiate requests from various sources such as browsers, browser plugins, Postman, and clients. Postman is recommended for simple verification.
@@ -40,7 +40,7 @@ Host: service-xxxxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com/release
 User-Agent: Mozila/4.0(compatible;MSIE5.01;Window NT5.0)
 Accept-Encoding: gzip,deflate
 Content-Type: application/x-www-form-urlencoded;charset=utf-8
-// Request body type, which should be set according to the actual request body content
+// Request body type, which should be set according to the actual request body content.
 X-Client-Proto: http
 X-Client-Proto-Ver: HTTP/1.1
 X-Real-IP: 163.177.93.244
@@ -49,10 +49,10 @@ Date: Sun, 21 Sep 2017 06:18:21 GMT
 Authorization: hmac id="AKIDCgXXXXXXXX48pN", algorithm="hmac-sha1", headers="Date Host", signature="630123456789da9c"
 // Signature. For the specific signature method, see the key calculation method in "Verification and Security".
 </code></pre>
-- The eventually delivered HTTP request contains at least 2 headers: `Date` or `X-Date` and `Authorization`. More optional headers can be added in the request. If `Date` is used, the server will not check the time; if `X-Date` is used, the server will check the time.
+- The eventually delivered HTTP request contains at least 2 headers: `Date` or `X-Date` and `Authorization`. More optional headers can be added in the request. If `Date` is used, the server will not check the time. If `X-Date` is used, the server will check the time.
 - The value of the `Date` header is the construction time of the HTTP request in GMT format, such as Fri, 09 Oct 2015 00:00:00 GMT.
-- The value of the `X-Date` header is the construction time of the HTTP request in GMT format, such as Mon, 19 Mar 2018 12:08:40 GMT. It cannot deviate from the current time for more than 15 minutes.
-- For details of the parts in the `Authorization` header, see [Key Pair Authentication](https://intl.cloud.tencent.com/document/product/628/11819). For examples of signature generation in multiple languages, see [Generate signatures in multiple languages](https://intl.cloud.tencent.com/document/product/628/35255).
+- The value of the `X-Date` header is the construction time of the HTTP request in GMT format, such as Mon, 19 Mar 2018 12:08:40 GMT. The construction time of the HTTP request cannot deviate from the current time by more than 15 minutes.
+- For details of the parts in the `Authorization` header, see [Key Pair Authentication](https://intl.cloud.tencent.com/document/product/628/11819). For examples of signature generation in multiple languages, see [Generating signatures in multiple languages](https://intl.cloud.tencent.com/document/product/628/35255).
 
 
 ## Response Handling
