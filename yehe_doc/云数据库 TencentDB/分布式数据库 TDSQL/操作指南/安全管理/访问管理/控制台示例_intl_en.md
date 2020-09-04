@@ -1,7 +1,7 @@
 ## Sample CAM policies for TencentDB
 You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console.
 
->As TDSQL was formerly known as DCDB, its API keyword in CAM is "dcdb".
+>?As TDSQL was formerly known as DCDB, its API keyword in CAM is "dcdb".
 
 ### Syntax for creating a custom policy
 1. Enter the [Policy Syntax](https://console.cloud.tencent.com/cam/policy) configuration page and click **Create Custom Policy**.
@@ -63,7 +63,7 @@ The policy syntax is as follows:
 ```
 The above policy achieves its goal by allowing the user to separately authorize the use of all operations beginning with "Describe" in TencentDB with the CAM policy.
 
-> As not all functional APIs are covered in the beta test, you may see that a small number of operations are not included in CAM, which is normal.
+>? As not all functional APIs are covered in the beta test, you may see that a small number of operations are not included in CAM, which is normal.
 
 ### Policy for granting a user permission to manipulate TencentDB instances in a specific region
 To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
@@ -145,7 +145,7 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
->For all currently supported APIs, please see the list at the end of this document.
+>?For all currently supported APIs, please see the list at the end of this document.
 
 ### Denying a user permission to create TencentDB accounts
 To deny a user permission to create TencentDB accounts, configure `"effect": "deny"`.
