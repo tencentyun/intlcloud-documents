@@ -76,9 +76,12 @@ client
   });
 ```
 
-4. The remote stream is obtained by listening on the `client.on('stream-added')` event. After receiving this event, use [Client.subscribe()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#subscribe) to subscribe to a remote audio/video stream.
->?Please register the `client.on('stream-added')` event before calling [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter the room, so that you won't miss the notifications for remote user's room entry.
->
+4. The remote stream is obtained by listening on the [Client.on('stream-added')](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html#.STREAM_ADDED) event. After receiving this event, use [Client.subscribe()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#subscribe) to subscribe to a remote audio/video stream.
+
+>?
+>- Before you use [Client.join()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) to enter a room, please use [Client.on('stream-added')](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html#.STREAM_ADDED) to register an event to ensure that you can receive the notification when a remote user enters the room.
+>- For more information about remote stream exiting the room or other events, please see [Event](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html).
+
 ```javascript
 client.on('stream-added', event => {
   const remoteStream = event.stream;
