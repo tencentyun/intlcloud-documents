@@ -1,3 +1,27 @@
+## August 2020
+<table><tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Document</th>
+</tr><tr>
+<td>Experience optimization</td>
+<td><li>You can view API documentation online in rich text or Markdown format.</li><li>After you return from the API details page to the API list page, the parameters you have set for search or controlling the number of items displayed per page are retained, making it easy for you to manage APIs.</li></td>
+<td>2020-08-20</td>
+<td>-</td>
+</tr><tr>
+<td>Access tag</td>
+<td>You can use access tags of API Gateway to manage Tencent Cloud resources at different granularities.</td>
+<td>2020-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/651">Tag</a></td>
+</tr><tr>
+<td>User experience improvement</td>
+<td>The overview page of the API Gateway Console is updated with the "Quick Access", "Exception Alarm", "Quota Limit", "Announcements", and other feature blocks.</td>
+<td>2020-08-05</td>
+<td>-</td>
+</tr></table>
+
+
 ## July 2020
 <table><tr>
 <th width="20%">Update</th>
