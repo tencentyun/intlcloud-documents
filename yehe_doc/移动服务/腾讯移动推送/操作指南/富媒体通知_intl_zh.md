@@ -24,7 +24,7 @@
 
 1. 登录 [移动推送控制台](https://console.cloud.tencent.com/tpns)，在左侧导航中选择【推送管理】>【推送任务】，进入推送任务页面。
 2. 单击【新建推送】>【高级设置】。
-	 ![](https://main.qcloudimg.com/raw/c7f2bf259dad9b03b5caa04632db0084.png)
+	 ![](https://main.qcloudimg.com/raw/cf75c4752a715bc241cee8a0273f10aa.png)
 3. 开启【通知图片】或【通知音视频】，填入富媒体消息 URL，详细配置说明如下：
  - **当您开启【通知图片】时**：
     Android 端：
@@ -38,29 +38,30 @@
 >   通过 TPNS 通道和小米通道下发的推送可展示大图。
 >   格式要求：`PNG/JPG/JPEG`格式图片，尺寸固定876 x 324px，小于1M。
 >
- ![](https://main.qcloudimg.com/raw/404ab424e3a1d0b0c28b6a088fb3940d.png)
+ ![](https://main.qcloudimg.com/raw/5314797a28893a0ced7d2bc0a32811bd.png)
  iOS 端：
  >? 填写图片 URL 后，通知将展示图片，格式要求：
 >
 > - 大小不超过10M
 > - 格式为`PNG/JPG/JPEG/GIF`
 > - URL 格式必须为 HTTPS
->
- ![](https://main.qcloudimg.com/raw/e5907e74557f2aef9c83f07d3a00c563.png)
+
+ ![](https://main.qcloudimg.com/raw/ea40f906c6fc5d322f92510b30883c49.png)
+
  - **当您开启【通知音频】或【通知音视频】时**：
     Android 端：
 > ?填写音频 URL 后，TPNS 通道下发的通知可携带音频。
 > - 音频文件大小不超过5M
 > - URL 格式必须为 HTTPS
->
-  ![](https://main.qcloudimg.com/raw/ac2e7204c68520cc269f76a31fb481d6.png)
+
+ ![](https://main.qcloudimg.com/raw/8433c6eae3503c9c58878f05089c5ea5.png)
   iOS 端：
 > ?填写音视频 URL 后，通知可携带音频或视频，并通过 Apple 原生组件播放。
 > - 音视频文件大小不超过5M
 > - 格式为`MPEG/MPEG2video/MPEG4/AVI`
 > - URL 格式必须为 HTTPS
->
-  ![](https://main.qcloudimg.com/raw/f46c5bbd56c6748444e0f89c2ab36891.png)
+
+  ![](https://main.qcloudimg.com/raw/81bcf3c89c21ba42c279e060af081c07.png)
 
 
 
