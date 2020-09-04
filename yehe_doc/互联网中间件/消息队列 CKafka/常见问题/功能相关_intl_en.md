@@ -6,7 +6,7 @@ CKafka is suitable for scenarios that require higher throughput and lower reliab
 Currently, CKafka is fully compatible with open-source Kafka API 0.9, 0.10, 1.1, and 2.4, allowing users to migrate data to the cloud at zero cost.
 
 ### Which version of open-source Kafka is the current CKafka based on?
-The current CKafka is based on Apache Kafka 0.10. We recommend using the SDK of the 0.10 version for production and consumption.
+The current CKafka is based on Apache Kafka 0.10, 1.1, and 2.4. We recommend using an SDK for production and consumption according to the Apache Kafka's version.
 
 ### Does CKafka expose ZooKeeper?
 CKafka does not expose ZooKeeper or its address.

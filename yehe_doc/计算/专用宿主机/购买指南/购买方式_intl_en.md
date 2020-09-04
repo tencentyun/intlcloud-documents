@@ -1,5 +1,5 @@
 You can create CDH instances in the console or using API.
-
+>! CDH cannot be returned. Please confirm your configuration and make the payment.
 
 ### Creating CDH instances in console
 1. Log in to [Tencent Cloud Dedicate Host Purchase Page](https://buy.cloud.tencent.com/cdh).
@@ -9,4 +9,4 @@ You can create CDH instances in the console or using API.
 
 
 ### Creating CDH instances using API
-Tencent Cloud offers an API to create CDH instances. For details, please refer to [Creating CDH Instances](https://intl.cloud.tencent.com/document/product/213/33280).
+Tencent Cloud offers an API to create CDH instances. For details, please refer to Creating CDH Instances.

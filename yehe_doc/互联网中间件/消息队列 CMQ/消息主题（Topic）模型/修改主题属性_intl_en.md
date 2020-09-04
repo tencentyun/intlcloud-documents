@@ -6,7 +6,8 @@ You have [created a topic](https://intl.cloud.tencent.com/document/product/406/6
 
 ## Directions
 1. Log in to the [CMQ Console](https://console.cloud.tencent.com/cmq) and click **Topic Subscription** on the left sidebar.
-2. In the topic subscription list, click **Change Settings** in the "Operation" column to modify the topic attributes.
+2. In the topic subscription list, click **Change Settings** in the "Operation" column to modify the maximum message size.
+3. Click **Submit**.
 
 >
 > - The topic region cannot be modified.
