@@ -6,7 +6,7 @@
 	</tr>
 	<tr>
 	  <td>Enhanced SSD usage</td>
-		<td> 1. Currently, Enhanced SSD is only available in Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 3, Shanghai Zone 5, Beijing Zone 3, Beijing Zone 4, Chengdu Zone 1, Chongqing Zone 1, Nanjing Zone 1, Nanjing Zone 2, and Qingyuan Zone 1. It will be supported in more availability zones.<br>2. The performance of Enhanced SSD is only guaranteed when it’s mounted to S5, M5, SA2, IT3, and D3 models created after August 1, 2020, and all later generation models.<br>3. Enhanced SSD cannot be used as the system disk.<br>4. Enhanced SSD cannot be encrypted.<br>5. Enhanced SSD cannot be upgraded from other disk types.</td>
+		<td> 1. Currently, Enhanced SSD is only available in Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 3, Shanghai Zone 5, Beijing Zone 3, Beijing Zone 4, Chengdu Zone 1, Chongqing Zone 1, Nanjing Zone 1, and Nanjing Zone 2. It will be supported in more availability zones.<br>2. The performance of Enhanced SSD is only guaranteed when it’s mounted to S5, M5, SA2, IT3, and D3 models created after August 1, 2020, and all later generation models.<br>3. Enhanced SSD cannot be used as the system disk.<br>4. Enhanced SSD cannot be encrypted.<br>5. Enhanced SSD cannot be upgraded from other disk types.</td>
 	</tr>
 	<tr>
 		<td>Elastic cloud disk capability</td>

@@ -12,7 +12,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $63.93  | $0.088           | 45%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,148.00  | $31.27  | $0.087           | 46%                     | $0.16             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,244.00  | $0.00   | $0.085           | 47%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $72.37  | $0.099           | 38%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $72.37  | $0.099           | 38%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,296.00  | $35.66  | $0.098           | 39%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,512.00  | $0.00   | $0.096           | 40%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $124.84 | $0.171          | 29%                     | $0.24             |
@@ -24,7 +24,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $95.89  | $0.131          | 45%                     | $0.24             |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,724.00  | $46.85  | $0.130           | 46%                     | $0.24             |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,364.00  | $0.00   | $0.128           | 47%                     | $0.24             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $108.55 | $0.149           | 38%                     | $0.24             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $108.55 | $0.149           | 38%                     | $0.24             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,944.00  | $53.48  | $0.147           | 39%                     | $0.24             |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,768.00  | $0.00   | $0.143           | 40%                     | $0.24             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $208.06 | $0.285           | 29%                     | $0.40             |
@@ -36,7 +36,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $159.82 | $0.219           | 45%                     | $0.40             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,876.00  | $78.01 | $0.216           | 46%                     | $0.40             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $5,604.00  | $0.00   | $0.213           | 47%                     | $0.40             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $180.92 | $0.248           | 38%                     | $0.40             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $180.92 | $0.248           | 38%                     | $0.40             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $3,240.00  | $89.14  | $0.245           | 39%                     | $0.40             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $6,280.00  | $0.00   | $0.239           | 40%                     | $0.40             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $166.45 | $0.228           | 31%                     | $0.33             |
@@ -48,7 +48,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $127.85 | $0.175           | 47%                     | $0.33             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,296.00  | $62.54  | $0.173           | 48%                     | $0.33             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $4,488.00  | $0.00   | $0.171          | 48%                     | $0.33             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $144.74 | $0.198           | 40%                     | $0.33             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $144.74 | $0.198           | 40%                     | $0.33             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,592.00  | $71.31 | $0.196           | 41%                     | $0.33             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $5,024.00  | $0.00   | $0.191          | 42%                     | $0.33             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $249.67 | $0.342           | 30%                     | $0.49             |
@@ -60,7 +60,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $191.78 | $0.263           | 46%                     | $0.49             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,448.00  | $93.69  | $0.260           | 47%                     | $0.49             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $6,728.00  | $0.00   | $0.256           | 48%                     | $0.49             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $217.11 | $0.297           | 39%                     | $0.49             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $217.11 | $0.297           | 39%                     | $0.49             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,888.00  | $106.97 | $0.294           | 40%                     | $0.49             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $7,536.00  | $0.00   | $0.287           | 41%                     | $0.49             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $332.90 | $0.456           | 31%                     | $0.66             |
@@ -72,7 +72,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $255.70 | $0.350           | 47%                     | $0.66             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $4,592.00  | $125.07 | $0.346           | 48%                     | $0.66             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $8,976.00  | $0.00   | $0.342           | 48%                     | $0.66             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $289.48 | $0.397           | 40%                     | $0.66             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $289.48 | $0.397           | 40%                     | $0.66             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $5,184.00  | $142.62 | $0.393           | 40%                     | $0.66             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $10,048.00 | $0.00   | $0.382           | 42%                     | $0.66             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $499.35 | $0.684           | 30%                     | $0.98             |
@@ -84,7 +84,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $383.56 | $0.525           | 46%                     | $0.98             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $6,896.00  | $187.39 | $0.519           | 47%                     | $0.98             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $13,456.00 | $0.00   | $0.512           | 48%                     | $0.98             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $434.22 | $0.595           | 39%                     | $0.98             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $434.22 | $0.595           | 39%                     | $0.98             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $7,776.00  | $213.94 | $0.589           | 40%                     | $0.98             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $15,072.00 | $0.00   | $0.574           | 41%                     | $0.98             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $832.25 | $1.140           | 30%                     | $1.63             |
@@ -96,7 +96,7 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $639.26 | $0.876           | 46%                     | $1.63             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $11,488.00 | $312.46 | $0.865           | 47%                     | $1.63             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $22,432.00 | $0.00   | $0.854           | 48%                     | $1.63             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $723.69 | $0.991          | 39%                     | $1.63             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $723.69 | $0.991          | 39%                     | $1.63             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $12,960.00 | $356.56 | $0.982           | 40%                     | $1.63             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $25,120.00 | $0.00   | $0.956           | 41%                     | $1.63 |
 
@@ -113,7 +113,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $39.80    | $0.055 | 54%  | $0.12 |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $708.00    | $19.50    | $0.054 | 55%  | $0.12 |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,356.00  | $0.00     | $0.052 | 57%  | $0.12 |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $46.14    | $0.063 | 48%  | $0.12 |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $46.14    | $0.063 | 48%  | $0.12 |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $828.00    | $22.55    | $0.062 | 48%  | $0.12 |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,620.00  | $0.00     | $0.062 | 48%  | $0.12 |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $72.37    | $0.099 | 38%  | $0.16 |
@@ -125,7 +125,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $53.07    | $0.073 | 54%  | $0.16 |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $944.00    | $26.00    | $0.072 | 55%  | $0.16 |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,808.00  | $0.00     | $0.069 | 57%  | $0.16 |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $61.51   | $0.084 | 48%  | $0.16 |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $61.51   | $0.084 | 48%  | $0.16 |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $1,104.00  | $30.06    | $0.083 | 48%  | $0.16 |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $2,160.00  | $0.00     | $0.082 | 49%  | $0.16 |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $108.55   | $0.149 | 38%  | $0.24 |
@@ -137,7 +137,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $79.61   | $0.109 | 55%  | $0.24 |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,416.00  | $39.00    | $0.107 | 55%  | $0.24 |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,712.00  | $0.00     | $0.103 | 57%  | $0.24 |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $92.27    | $0.126 | 48%  | $0.24 |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $92.27    | $0.126 | 48%  | $0.24 |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,656.00  | $45.09    | $0.125 | 48%  | $0.24 |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $3,240.00  | $0.00     | $0.123 | 49%  | $0.24 |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $144.74   | $0.198 | 40%  | $0.33 |
@@ -149,7 +149,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $106.14   | $0.145 | 56%  | $0.33 |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,888.00  | $52.00    | $0.143 | 57%  | $0.33 |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,616.00  | $0.00     | $0.138 | 58%  | $0.33 |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $123.03   | $0.169 | 49%  | $0.33 |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $123.03   | $0.169 | 49%  | $0.33 |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $2,208.00  | $60.12    | $0.166 | 50%  | $0.33 |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $4,320.00  | $0.00     | $0.164 | 50%  | $0.33 |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $217.11  | $0.297 | 39%  | $0.49 |
@@ -161,7 +161,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $159.21  | $0.218 | 56%  | $0.49 |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,832.00  | $78.00    | $0.215 | 56%  | $0.49 |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,424.00  | $0.00     | $0.206 | 58%  | $0.49 |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $184.54   | $0.253 | 48%  | $0.49 |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $184.54   | $0.253 | 48%  | $0.49 |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $3,312.00  | $90.18    | $0.250 | 49%  | $0.49 |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $6,480.00  | $0.00     | $0.247 | 50%  | $0.49 |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $217.11  | $0.297 | 39%  | $0.49 |
@@ -173,7 +173,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $159.21  | $0.218 | 56%  | $0.49 |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,832.00  | $78.00    | $0.215 | 56%  | $0.49 |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,424.00  | $0.00     | $0.206 | 58%  | $0.49 |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $184.54   | $0.253 | 48%  | $0.49 |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $184.54   | $0.253 | 48%  | $0.49 |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $3,312.00  | $90.18    | $0.250 | 49%  | $0.49 |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $6,480.00  | $0.00     | $0.247 | 50%  | $0.49 |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $325.66   | $0.446 | 39%  | $0.73 |
@@ -185,7 +185,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $238.82   | $0.327 | 55%  | $0.73 |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,248.00  | $117.01  | $0.322 | 56%  | $0.73 |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $8,136.00  | $0.00     | $0.310 | 58%  | $0.73 |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $276.81  | $0.379 | 48%  | $0.73 |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $276.81  | $0.379 | 48%  | $0.73 |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,968.00  | $135.28   | $0.374 | 49%  | $0.73 |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $9,720.00  | $0.00     | $0.370 | 49%  | $0.73 |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $289.48   | $0.397 | 40%  | $0.66 |
@@ -197,7 +197,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $212.28   | $0.291 | 56%  | $0.66 |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,776.00  | $104.01  | $0.286 | 57%  | $0.66 |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $7,232.00  | $0.00     | $0.275 | 58%  | $0.66 |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $246.06   | $0.337 | 49%  | $0.66 |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $246.06   | $0.337 | 49%  | $0.66 |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $4,416.00  | $120.24   | $0.333 | 50%  | $0.66 |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $8,640.00  | $0.00     | $0.329 | 50%  | $0.66 |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $434.22   | $0.595 | 39%  | $0.98 |
@@ -209,7 +209,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $318.42   | $0.436 | 56%  | $0.98 |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,664.00  | $156.01  | $0.429 | 56%  | $0.98 |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $10,848.00 | $0.00     | $0.413 | 58%  | $0.98 |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $369.08   | $0.506 | 48%  | $0.98 |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $369.08   | $0.506 | 48%  | $0.98 |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $6,624.00  | $180.37   | $0.499 | 49%  | $0.98 |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $12,960.00 | $0.00     | $0.493 | 50%  | $0.98 |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $434.22   | $0.595 | 39%  | $0.98 |
@@ -221,7 +221,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $318.42   | $0.436 | 56%  | $0.98 |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,664.00  | $156.01  | $0.429 | 56%  | $0.98 |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $10,848.00 | $0.00     | $0.413 | 58%  | $0.98 |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $369.08   | $0.506 | 48%  | $0.98 |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $369.08   | $0.506 | 48%  | $0.98 |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $6,624.00  | $180.37   | $0.499 | 49%  | $0.98 |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $12,960.00 | $0.00     | $0.493 | 50%  | $0.98 |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $651.32   | $0.892 | 39%  | $1.46 |
@@ -233,7 +233,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $477.64   | $0.654 | 55%  | $1.46 |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $8,496.00  | $234.01  | $0.644 | 56%  | $1.46 |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $16,272.00 | $0.00     | $0.619 | 58%  | $1.46 |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $553.62   | $0.758 | 48%  | $1.46 |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $553.62   | $0.758 | 48%  | $1.46 |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $9,936.00  | $270.55   | $0.749 | 49%  | $1.46 |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $19,440.00 | $0.00     | $0.740 | 49%  | $1.46 |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $578.95   | $0.793 | 39%  | $1.31 |
@@ -245,7 +245,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $424.57   | $0.582 | 56%  | $1.31 |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $7,552.00  | $208.01  | $0.572 | 56%  | $1.31 |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $14,464.00 | $0.00     | $0.550 | 58%  | $1.31 |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $492.11  | $0.674 | 49%  | $1.31 |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $492.11  | $0.674 | 49%  | $1.31 |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $8,832.00  | $240.49   | $0.666 | 49%  | $1.31 |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $17,280.00 | $0.00     | $0.658 | 50%  | $1.31 |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $868.43   | $1.190 | 39%  | $1.95 |
@@ -257,7 +257,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $636.85   | $0.872 | 55%  | $1.95 |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $11,328.00 | $312.02   | $0.858 | 56%  | $1.95 |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $21,696.00 | $0.00     | $0.826 | 58%  | $1.95 |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $738.17   | $1.011 | 48%  | $1.95 |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $738.17   | $1.011 | 48%  | $1.95 |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $13,248.00 | $360.73   | $0.998 | 49%  | $1.95 |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $25,920.00 | $0.00     | $0.986 | 49%  | $1.95 |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,519.75 | $2.082 | 39%  | $3.42 |
@@ -269,7 +269,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,114.49 | $1.527 | 55%  | $3.42 |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $19,824.00 | $546.03   | $1.502 | 56%  | $3.42 |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $37,968.00 | $0.00     | $1.445 | 58%  | $3.42 |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,291.79 | $1.770 | 48%  | $3.42 |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,291.79 | $1.770 | 48%  | $3.42 |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $23,184.00 | $631.28   | $1.747 | 49%  | $3.42 |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $45,360.00 | $0.00     | $1.726 | 50%  | $3.42 |
 
@@ -286,7 +286,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $38.91   | $0.053           | 52%                     | $0.11            |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $684.00    | $18.58    | $0.051          | 54%                     | $0.11            |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,274.00  | $0.00     | $0.048           | 56%                     | $0.11            |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $45.26    | $0.062           | 44%                     | $0.11            |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $45.26    | $0.062           | 44%                     | $0.11            |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $814.00    | $22.17    | $0.061          | 45%                     | $0.11            |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,596.00  | $0.00     | $0.061          | 45%                     | $0.11            |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $72.00    | $0.099           | 29%                     | $0.14             |
@@ -298,7 +298,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $51.88    | $0.071          | 49%                     | $0.14             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $912.00    | $24.78    | $0.069           | 51%                     | $0.14             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,700.00  | $0.00     | $0.065           | 54%                     | $0.14             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $60.35    | $0.083           | 41%                     | $0.14             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $60.35    | $0.083           | 41%                     | $0.14             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $1,084.00  | $29.60    | $0.082           | 41%                     | $0.14             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $2,128.00  | $0.00     | $0.081          | 42%                     | $0.14             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $108.00   | $0.148           | 33%                     | $0.22             |
@@ -310,7 +310,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $77.82    | $0.107           | 51%                     | $0.22             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,368.00  | $37.17    | $0.103           | 53%                     | $0.22             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,548.00  | $0.00     | $0.097           | 56%                     | $0.22             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $90.53    | $0.124           | 44%                     | $0.22             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $90.53    | $0.124           | 44%                     | $0.22             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,628.00  | $44.34    | $0.123           | 44%                     | $0.22             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $3,192.00  | $0.00     | $0.121          | 45%                     | $0.22             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $144.00   | $0.197           | 32%                     | $0.29             |
@@ -322,7 +322,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $103.76   | $0.142           | 51%                     | $0.29             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,824.00  | $49.56    | $0.137           | 53%                     | $0.29             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,400.00  | $0.00     | $0.129           | 56%                     | $0.29             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $120.71  | $0.165           | 43%                     | $0.29             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $120.71  | $0.165           | 43%                     | $0.29             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $2,168.00  | $59.19    | $0.164           | 43%                     | $0.29             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $4,256.00  | $0.00     | $0.162           | 44%                     | $0.29             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $216.00   | $0.296           | 31%                     | $0.43             |
@@ -334,7 +334,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $155.65   | $0.213           | 50%                     | $0.43             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,736.00  | $74.34    | $0.206           | 52%                     | $0.43             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,096.00  | $0.00     | $0.194           | 55%                     | $0.43             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $181.06   | $0.248           | 42%                     | $0.43             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $181.06   | $0.248           | 42%                     | $0.43             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $3,256.00  | $88.68    | $0.245           | 43%                     | $0.43             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $6,384.00  | $0.00     | $0.243           | 43%                     | $0.43             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $216.00   | $0.296           | 31%                     | $0.43             |
@@ -346,7 +346,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $155.65   | $0.213           | 50%                     | $0.43             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,736.00  | $74.34    | $0.206           | 52%                     | $0.43             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,100.00  | $0.00     | $0.194           | 55%                     | $0.43             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $181.06   | $0.248           | 42%                     | $0.43             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $181.06   | $0.248           | 42%                     | $0.43             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $3,252.00  | $88.79    | $0.245           | 43%                     | $0.43             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $6,384.00  | $0.00     | $0.243           | 43%                     | $0.43             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $324.00   | $0.444           | 32%                     | $0.65             |
@@ -358,7 +358,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $233.47   | $0.320           | 51%                     | $0.65             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,104.00  | $111.50   | $0.309           | 52%                     | $0.65             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,644.00  | $0.00     | $0.291          | 55%                     | $0.65             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $271.59   | $0.372           | 43%                     | $0.65             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $271.59   | $0.372           | 43%                     | $0.65             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,884.00  | $133.02   | $0.368           | 43%                     | $0.65             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $9,576.00  | $0.00     | $0.364           | 44%                     | $0.65             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $288.00   | $0.395           | 32%                     | $0.58             |
@@ -370,7 +370,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $207.53   | $0.284           | 51%                     | $0.58             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,648.00  | $99.11   | $0.275           | 53%                     | $0.58             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,800.00  | $0.00     | $0.259           | 55%                     | $0.58             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $241.41  | $0.331          | 43%                     | $0.58             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $241.41  | $0.331          | 43%                     | $0.58             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $4,336.00  | $118.38   | $0.327           | 44%                     | $0.58             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $8,512.00  | $0.00     | $0.324           | 44%                     | $0.58             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $432.00   | $0.592           | 31%                     | $0.86             |
@@ -382,7 +382,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $311.29   | $0.426           | 50%                     | $0.86             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,472.00  | $148.67   | $0.412           | 52%                     | $0.86             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $10,192.00 | $0.00     | $0.388           | 55%                     | $0.86             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $362.12   | $0.496           | 42%                     | $0.86             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $362.12   | $0.496           | 42%                     | $0.86             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $6,512.00  | $177.35   | $0.491          | 43%                     | $0.86             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $12,768.00 | $0.00     | $0.486           | 43%                     | $0.86             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $432.00   | $0.592           | 31%                     | $0.86             |
@@ -394,7 +394,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $311.29   | $0.426           | 50%                     | $0.86             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,472.00  | $148.67   | $0.412           | 52%                     | $0.86             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $10,200.00 | $0.00     | $0.388           | 55%                     | $0.86             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $362.12   | $0.496           | 42%                     | $0.86             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $362.12   | $0.496           | 42%                     | $0.86             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $6,504.00  | $177.57   | $0.491          | 43%                     | $0.86             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $12,768.00 | $0.00     | $0.486           | 43%                     | $0.86             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $648.00   | $0.888           | 32%                     | $1.30             |
@@ -406,7 +406,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $466.94   | $0.640           | 51%                     | $1.30             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $8,208.00  | $223.01  | $0.618           | 52%                     | $1.30             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $15,288.00 | $0.00     | $0.582           | 55%                     | $1.30             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $543.18   | $0.744           | 43%                     | $1.30             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $543.18   | $0.744           | 43%                     | $1.30             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $9,768.00  | $266.03   | $0.736           | 43%                     | $1.30             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $19,152.00 | $0.00     | $0.729           | 44%                     | $1.30             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $576.00   | $0.789           | 31%                     | $1.15             |
@@ -418,7 +418,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $415.06   | $0.569           | 51%                     | $1.15             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $7,296.00  | $198.23   | $0.549           | 52%                     | $1.15             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $13,600.00 | $0.00     | $0.518           | 55%                     | $1.15             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $482.82   | $0.661          | 43%                     | $1.15             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $482.82   | $0.661          | 43%                     | $1.15             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $8,672.00  | $236.76   | $0.654           | 43%                     | $1.15             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $17,024.00 | $0.00     | $0.648           | 44%                     | $1.15             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $864.00   | $1.184           | 32%                     | $1.73             |
@@ -430,7 +430,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $622.59   | $0.853           | 51%                     | $1.73             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $10,944.00 | $297.34   | $0.824           | 52%                     | $1.73             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $20,384.00 | $0.00     | $0.776           | 55%                     | $1.73             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $724.24   | $0.992           | 43%                     | $1.73             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $724.24   | $0.992           | 43%                     | $1.73             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $13,024.00 | $354.71  | $0.981          | 43%                     | $1.73             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $25,536.00 | $0.00     | $0.972           | 44%                     | $1.73             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $864.00   | $1.184           | 32%                     | $1.73             |
@@ -442,7 +442,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $622.59   | $0.853           | 51%                     | $1.73             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $10,944.00 | $297.34   | $0.824           | 52%                     | $1.73             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $20,400.00 | $0.00     | $0.776           | 55%                     | $1.73             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $724.24   | $0.992           | 43%                     | $1.73             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $724.24   | $0.992           | 43%                     | $1.73             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $13,008.00 | $355.15   | $0.981          | 43%                     | $1.73             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $25,536.00 | $0.00     | $0.972           | 44%                     | $1.73             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,296.00 | $1.775           | 31%                     | $2.59             |
@@ -454,7 +454,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $933.88   | $1.279           | 51%                     | $2.59             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $16,416.00 | $446.01  | $1.236           | 52%                     | $2.59             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $30,576.00 | $0.00     | $1.163           | 55%                     | $2.59             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,086.35 | $1.488           | 43%                     | $2.59             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,086.35 | $1.488           | 43%                     | $2.59             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $19,536.00 | $532.06   | $1.472           | 43%                     | $2.59             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $38,304.00 | $0.00     | $1.458           | 44%                     | $2.59             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $1,152.00 | $1.578           | 31%                     | $2.30             |
@@ -466,7 +466,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $830.12   | $1.137           | 51%                     | $2.30             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $14,592.00 | $396.45   | $1.098           | 52%                     | $2.30             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $27,200.00 | $0.00     | $1.035           | 55%                     | $2.30             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $965.65   | $1.323           | 42%                     | $2.30             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $965.65   | $1.323           | 42%                     | $2.30             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $17,344.00 | $473.53   | $1.309           | 43%                     | $2.30             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $34,048.00 | $0.00     | $1.296           | 44%                     | $2.30             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,728.00 | $2.367           | 32%                     | $3.46             |
@@ -478,7 +478,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,245.18 | $1.706           | 51%                     | $3.46             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $21,888.00 | $594.68   | $1.648           | 52%                     | $3.46             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $40,768.00 | $0.00     | $1.551          | 55%                     | $3.46             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,448.47 | $1.984           | 43%                     | $3.46             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,448.47 | $1.984           | 43%                     | $3.46             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $26,048.00 | $709.41  | $1.963           | 43%                     | $3.46             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $51,072.00 | $0.00     | $1.943           | 44%                     | $3.46             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,160.00 | $2.959           | 32%                     | $4.32             |
@@ -490,7 +490,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,556.47 | $2.132           | 51%                     | $4.32             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $27,360.00 | $743.35   | $2.059           | 52%                     | $4.32             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $50,960.00 | $0.00     | $1.939           | 55%                     | $4.32             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,810.59 | $2.480           | 43%                     | $4.32             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,810.59 | $2.480           | 43%                     | $4.32             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $32,560.00 | $886.77   | $2.454           | 43%                     | $4.32             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $63,840.00 | $0.00     | $2.429           | 44%                     | $4.32             |
 
@@ -507,7 +507,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $64.79    | $0.089           | 53%                     | $0.19             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,136.00  | $30.91   | $0.086           | 55%                     | $0.19             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,160.00  | $0.00     | $0.082           | 57%                     | $0.19             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $75.82    | $0.104           | 45%                     | $0.19             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $75.82    | $0.104           | 45%                     | $0.19             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,332.00  | $36.57    | $0.101          | 47%                     | $0.19             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,620.00  | $0.00     | $0.100           | 47%                     | $0.19             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $140.60   | $0.193           | 33%                     | $0.29             |
@@ -519,7 +519,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $97.18    | $0.133           | 54%                     | $0.29             |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,704.00  | $46.36    | $0.128           | 56%                     | $0.29             |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,240.00  | $0.00     | $0.123           | 58%                     | $0.29             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $113.72   | $0.156           | 46%                     | $0.29             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $113.72   | $0.156           | 46%                     | $0.29             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,996.00  | $54.90    | $0.151          | 48%                     | $0.29             |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,932.00  | $0.00     | $0.150           | 48%                     | $0.29             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $234.34   | $0.321          | 33%                     | $0.48             |
@@ -531,7 +531,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $161.97   | $0.222           | 54%                     | $0.48             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,840.00  | $77.27    | $0.214           | 55%                     | $0.48             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $5,400.00  | $0.00     | $0.205           | 57%                     | $0.48             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $189.54   | $0.260           | 46%                     | $0.48             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $189.54   | $0.260           | 46%                     | $0.48             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $3,324.00  | $91.58    | $0.252           | 48%                     | $0.48             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $6,556.00  | $0.00     | $0.249           | 48%                     | $0.48             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $187.47   | $0.257           | 32%                     | $0.38             |
@@ -543,7 +543,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $129.58   | $0.178           | 53%                     | $0.38             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,272.00  | $61.81   | $0.171          | 55%                     | $0.38             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $4,320.00  | $0.00     | $0.164           | 57%                     | $0.38             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $151.63   | $0.208           | 45%                     | $0.38             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $151.63   | $0.208           | 45%                     | $0.38             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,664.00  | $73.13    | $0.202           | 47%                     | $0.38             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $5,240.00  | $0.00     | $0.199           | 48%                     | $0.38             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $281.21  | $0.385           | 34%                     | $0.58             |
@@ -555,7 +555,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $194.36   | $0.266           | 54%                     | $0.58             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,408.00  | $92.72    | $0.257           | 56%                     | $0.58             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $6,480.00  | $0.00     | $0.247           | 57%                     | $0.58             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $227.45   | $0.312           | 46%                     | $0.58             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $227.45   | $0.312           | 46%                     | $0.58             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,992.00  | $109.81  | $0.302           | 48%                     | $0.58             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $7,864.00  | $0.00     | $0.299           | 48%                     | $0.58             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $374.94   | $0.514           | 33%                     | $0.77             |
@@ -567,7 +567,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $259.15   | $0.355           | 54%                     | $0.77             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $4,544.00  | $123.63   | $0.342           | 56%                     | $0.77             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $8,640.00  | $0.00     | $0.329           | 57%                     | $0.77             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $303.26   | $0.415           | 46%                     | $0.77             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $303.26   | $0.415           | 46%                     | $0.77             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $5,328.00  | $146.26   | $0.403           | 48%                     | $0.77             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $10,480.00 | $0.00     | $0.399           | 48%                     | $0.77             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $562.41  | $0.770           | 33%                     | $1.15             |
@@ -579,7 +579,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $388.73   | $0.533           | 54%                     | $1.15             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $6,816.00  | $185.44   | $0.513           | 55%                     | $1.15             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $12,960.00 | $0.00     | $0.493           | 57%                     | $1.15             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $454.89   | $0.623           | 46%                     | $1.15             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $454.89   | $0.623           | 46%                     | $1.15             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $7,984.00  | $219.61  | $0.605           | 47%                     | $1.15             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $15,728.00 | $0.00     | $0.598           | 48%                     | $1.15             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $937.35   | $1.284           | 33%                     | $1.92             |
@@ -591,7 +591,7 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $647.88   | $0.888           | 54%                     | $1.92             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $11,360.00 | $309.07   | $0.856           | 55%                     | $1.92             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $21,600.00 | $0.00     | $0.822           | 57%                     | $1.92             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $758.15   | $1.039           | 46%                     | $1.92             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $758.15   | $1.039           | 46%                     | $1.92             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $13,312.00 | $365.87   | $1.008           | 48%                     | $1.92             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $26,208.00 | $0.00     | $0.997           | 48%                     | $1.92             |
 
@@ -709,7 +709,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $37.66    | $0.052           | 53%                     | $0.11            |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $672.00    | $18.45    | $0.051          | 54%                     | $0.11            |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,284.00  | $0.00     | $0.049           | 55%                     | $0.11            |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $44.07    | $0.060           | 45%                     | $0.11            |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $44.07    | $0.060           | 45%                     | $0.11            |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $792.00    | $21.57    | $0.060           | 45%                     | $0.11            |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,548.00  | $0.00     | $0.059           | 46%                     | $0.11            |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $76.92    | $0.105           | 30%                     | $0.15             |
@@ -721,7 +721,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $50.21   | $0.069           | 54%                     | $0.15             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $896.00    | $24.59    | $0.068           | 55%                     | $0.15             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,712.00  | $0.00     | $0.065           | 57%                     | $0.15             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $58.76    | $0.080           | 47%                     | $0.15             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $58.76    | $0.080           | 47%                     | $0.15             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $1,056.00  | $28.76    | $0.080           | 47%                     | $0.15             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $2,064.00  | $0.00     | $0.079           | 47%                     | $0.15             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $115.38   | $0.158           | 28%                     | $0.22             |
@@ -733,7 +733,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $75.32    | $0.103           | 53%                     | $0.22             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,344.00  | $36.89    | $0.102           | 54%                     | $0.22             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,568.00  | $0.00     | $0.098           | 55%                     | $0.22             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $88.14    | $0.121          | 45%                     | $0.22             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $88.14    | $0.121          | 45%                     | $0.22             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,584.00  | $43.14    | $0.119           | 46%                     | $0.22             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $3,096.00  | $0.00     | $0.118           | 46%                     | $0.22             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $153.84   | $0.211          | 30%                     | $0.30             |
@@ -745,7 +745,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $100.42   | $0.138           | 54%                     | $0.30             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,792.00  | $49.19    | $0.136           | 55%                     | $0.30             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,424.00  | $0.00     | $0.130           | 57%                     | $0.30             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $117.51  | $0.161          | 46%                     | $0.30             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $117.51  | $0.161          | 46%                     | $0.30             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $2,112.00  | $57.51   | $0.159           | 47%                     | $0.30             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $4,128.00  | $0.00     | $0.157           | 48%                     | $0.30             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $230.75   | $0.316           | 28%                     | $0.44             |
@@ -757,7 +757,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $150.63   | $0.206           | 53%                     | $0.44             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,688.00  | $73.78    | $0.203           | 54%                     | $0.44             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,136.00  | $0.00     | $0.195           | 56%                     | $0.44             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $176.27   | $0.241          | 45%                     | $0.44             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $176.27   | $0.241          | 45%                     | $0.44             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $3,168.00  | $86.27    | $0.239           | 46%                     | $0.44             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $6,192.00  | $0.00     | $0.236           | 46%                     | $0.44             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $230.75   | $0.316           | 28%                     | $0.44             |
@@ -769,7 +769,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $150.63   | $0.206           | 53%                     | $0.44             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,688.00  | $73.78    | $0.203           | 54%                     | $0.44             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,136.00  | $0.00     | $0.195           | 56%                     | $0.44             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $176.27   | $0.241          | 45%                     | $0.44             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $176.27   | $0.241          | 45%                     | $0.44             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $3,168.00  | $86.27    | $0.239           | 46%                     | $0.44             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $6,192.00  | $0.00     | $0.236           | 46%                     | $0.44             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $346.13   | $0.474           | 28%                     | $0.66             |
@@ -781,7 +781,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $225.95   | $0.310           | 53%                     | $0.66             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,032.00  | $110.67   | $0.305           | 54%                     | $0.66             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $7,704.00  | $0.00     | $0.293           | 56%                     | $0.66             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $264.41  | $0.362           | 45%                     | $0.66             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $264.41  | $0.362           | 45%                     | $0.66             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,752.00  | $129.41  | $0.358           | 46%                     | $0.66             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $9,288.00  | $0.00     | $0.353           | 47%                     | $0.66             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $307.67   | $0.421          | 29%                     | $0.59             |
@@ -793,7 +793,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $200.84   | $0.275           | 53%                     | $0.59             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,584.00  | $98.38    | $0.271          | 54%                     | $0.59             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $6,848.00  | $0.00     | $0.261          | 56%                     | $0.59             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $235.03   | $0.322           | 45%                     | $0.59             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $235.03   | $0.322           | 45%                     | $0.59             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $4,224.00  | $115.03   | $0.318           | 46%                     | $0.59             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $8,256.00  | $0.00     | $0.314           | 47%                     | $0.59             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $461.51  | $0.632           | 28%                     | $0.88             |
@@ -805,7 +805,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $301.26   | $0.413           | 53%                     | $0.88             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,376.00  | $147.57   | $0.407           | 54%                     | $0.88             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $10,272.00 | $0.00     | $0.391          | 56%                     | $0.88             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $352.54   | $0.483           | 45%                     | $0.88             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $352.54   | $0.483           | 45%                     | $0.88             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $6,336.00  | $172.54   | $0.477           | 46%                     | $0.88             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $12,384.00 | $0.00     | $0.471          | 46%                     | $0.88             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $461.51  | $0.632           | 29%                     | $0.89             |
@@ -817,7 +817,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $301.26   | $0.413           | 54%                     | $0.89             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,376.00  | $147.57   | $0.407           | 54%                     | $0.89             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $10,272.00 | $0.00     | $0.391          | 56%                     | $0.89             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $352.54   | $0.483           | 46%                     | $0.89             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $352.54   | $0.483           | 46%                     | $0.89             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $6,336.00  | $172.54   | $0.477           | 46%                     | $0.89             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $12,384.00 | $0.00     | $0.471          | 47%                     | $0.89             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $692.26   | $0.948           | 28%                     | $1.32             |
@@ -829,7 +829,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $451.89   | $0.619           | 53%                     | $1.32             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $8,064.00  | $221.35   | $0.610           | 54%                     | $1.32             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $15,408.00 | $0.00     | $0.586           | 56%                     | $1.32             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $528.81  | $0.724           | 45%                     | $1.32             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $528.81  | $0.724           | 45%                     | $1.32             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $9,504.00  | $258.81  | $0.716           | 46%                     | $1.32             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $18,576.00 | $0.00     | $0.707           | 46%                     | $1.32             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $615.35   | $0.843           | 29%                     | $1.18             |
@@ -841,7 +841,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $401.68   | $0.550           | 53%                     | $1.18             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $7,168.00  | $196.75   | $0.542           | 54%                     | $1.18             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $13,696.00 | $0.00     | $0.521          | 56%                     | $1.18             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $470.06   | $0.644           | 45%                     | $1.18             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $470.06   | $0.644           | 45%                     | $1.18             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $8,448.00  | $230.06   | $0.637           | 46%                     | $1.18             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $16,512.00 | $0.00     | $0.628           | 47%                     | $1.18             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $923.02   | $1.264           | 28%                     | $1.76             |
@@ -853,7 +853,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $602.53   | $0.825           | 53%                     | $1.76             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $10,752.00 | $295.13   | $0.813           | 54%                     | $1.76             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $20,544.00 | $0.00     | $0.782           | 56%                     | $1.76             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $705.08   | $0.966           | 45%                     | $1.76             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $705.08   | $0.966           | 45%                     | $1.76             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $12,672.00 | $345.09   | $0.955           | 46%                     | $1.76             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $24,768.00 | $0.00     | $0.942           | 46%                     | $1.76             |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,615.28 | $2.213           | 28%                     | $3.08             |
@@ -865,7 +865,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,054.42 | $1.444           | 53%                     | $3.08             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $18,816.00 | $516.48   | $1.423           | 54%                     | $3.08             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $35,952.00 | $0.00     | $1.368           | 56%                     | $3.08             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,233.90 | $1.690           | 45%                     | $3.08             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,233.90 | $1.690           | 45%                     | $3.08             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $22,176.00 | $603.90   | $1.671          | 46%                     | $3.08             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $43,344.00 | $0.00     | $1.649           | 46%                     | $3.08             |
 
@@ -882,7 +882,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $39.26    | $0.054           | 51%                     | $0.11            |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $686.00    | $18.86    | $0.052           | 53%                     | $0.11            |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,318.00  | $0.00     | $0.050           | 55%                     | $0.11            |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $44.87    | $0.061          | 45%                     | $0.11            |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $44.87    | $0.061          | 45%                     | $0.11            |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $792.00    | $21.57    | $0.060           | 45%                     | $0.11            |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,522.00  | $0.00     | $0.058           | 47%                     | $0.11            |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $74.78    | $0.102           | 32%                     | $0.15             |
@@ -894,7 +894,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $52.35    | $0.072           | 52%                     | $0.15             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $916.00    | $25.11   | $0.069           | 54%                     | $0.15             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,756.00  | $0.00     | $0.067           | 55%                     | $0.15             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $59.83    | $0.082           | 45%                     | $0.15             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $59.83    | $0.082           | 45%                     | $0.15             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $1,056.00  | $28.76    | $0.080           | 47%                     | $0.15             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $2,028.00  | $0.00     | $0.077           | 49%                     | $0.15             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $112.17   | $0.154           | 30%                     | $0.22             |
@@ -906,7 +906,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $78.52    | $0.108           | 51%                     | $0.22             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,372.00  | $37.73    | $0.104           | 53%                     | $0.22             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,636.00  | $0.00     | $0.100           | 55%                     | $0.22             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $89.74    | $0.123           | 44%                     | $0.22             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $89.74    | $0.123           | 44%                     | $0.22             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,584.00  | $43.14    | $0.119           | 46%                     | $0.22             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $3,044.00  | $0.00     | $0.116           | 47%                     | $0.22             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $149.56   | $0.205           | 32%                     | $0.30             |
@@ -918,7 +918,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $104.69   | $0.143           | 52%                     | $0.30             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,832.00  | $50.23    | $0.139           | 54%                     | $0.30             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,512.00  | $0.00     | $0.134           | 55%                     | $0.30             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $119.65   | $0.164           | 45%                     | $0.30             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $119.65   | $0.164           | 45%                     | $0.30             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $2,112.00  | $57.51   | $0.159           | 47%                     | $0.30             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $4,056.00  | $0.00     | $0.154           | 49%                     | $0.30             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $224.34   | $0.307           | 32%                     | $0.45             |
@@ -930,7 +930,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $157.04   | $0.215           | 52%                     | $0.45             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,744.00  | $75.45    | $0.208           | 54%                     | $0.45             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,272.00  | $0.00     | $0.201          | 55%                     | $0.45             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $179.48   | $0.246           | 45%                     | $0.45             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $179.48   | $0.246           | 45%                     | $0.45             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $3,168.00  | $86.27    | $0.239           | 47%                     | $0.45             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $6,088.00  | $0.00     | $0.232           | 48%                     | $0.45             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $224.34   | $0.307           | 32%                     | $0.45             |
@@ -942,7 +942,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $157.04   | $0.215           | 52%                     | $0.45             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,748.00  | $75.34    | $0.208           | 54%                     | $0.45             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,268.00  | $0.00     | $0.200           | 56%                     | $0.45             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $179.48   | $0.246           | 45%                     | $0.45             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $179.48   | $0.246           | 45%                     | $0.45             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $3,168.00  | $86.27    | $0.239           | 47%                     | $0.45             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $6,084.00  | $0.00     | $0.232           | 48%                     | $0.45             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $336.52   | $0.461          | 31%                     | $0.67             |
@@ -954,7 +954,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $235.56   | $0.323           | 52%                     | $0.67             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,116.00  | $113.18   | $0.312           | 53%                     | $0.67             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,908.00  | $0.00     | $0.301          | 55%                     | $0.67             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $269.21  | $0.369           | 45%                     | $0.67             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $269.21  | $0.369           | 45%                     | $0.67             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,752.00  | $129.41  | $0.358           | 47%                     | $0.67             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $9,132.00  | $0.00     | $0.347           | 48%                     | $0.67             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $299.13   | $0.410           | 31%                     | $0.59             |
@@ -966,7 +966,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $209.39   | $0.287           | 51%                     | $0.59             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,664.00  | $100.46   | $0.277           | 53%                     | $0.59             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $7,024.00  | $0.00     | $0.267           | 55%                     | $0.59             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $239.30   | $0.328           | 44%                     | $0.59             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $239.30   | $0.328           | 44%                     | $0.59             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $4,224.00  | $115.03   | $0.318           | 46%                     | $0.59             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $8,112.00  | $0.00     | $0.309           | 48%                     | $0.59             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $448.69   | $0.615           | 31%                     | $0.89             |
@@ -978,7 +978,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $314.08   | $0.430           | 52%                     | $0.89             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,488.00  | $150.91  | $0.416           | 53%                     | $0.89             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $10,544.00 | $0.00     | $0.401          | 55%                     | $0.89             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $358.95   | $0.492           | 45%                     | $0.89             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $358.95   | $0.492           | 45%                     | $0.89             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $6,336.00  | $172.54   | $0.477           | 46%                     | $0.89             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $12,176.00 | $0.00     | $0.463           | 48%                     | $0.89             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $448.69   | $0.615           | 31%                     | $0.89             |
@@ -990,7 +990,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $314.08   | $0.430           | 52%                     | $0.89             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,496.00  | $150.69   | $0.416           | 53%                     | $0.89             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $10,536.00 | $0.00     | $0.401          | 55%                     | $0.89             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $358.95   | $0.492           | 45%                     | $0.89             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $358.95   | $0.492           | 45%                     | $0.89             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $6,336.00  | $172.54   | $0.477           | 46%                     | $0.89             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $12,168.00 | $0.00     | $0.463           | 48%                     | $0.89             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $673.03   | $0.922           | 31%                     | $1.34             |
@@ -1002,7 +1002,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $471.12   | $0.645           | 52%                     | $1.34             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $8,232.00  | $226.36   | $0.623           | 54%                     | $1.34             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $15,816.00 | $0.00     | $0.602           | 55%                     | $1.34             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $538.43   | $0.738           | 45%                     | $1.34             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $538.43   | $0.738           | 45%                     | $1.34             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $9,504.00  | $258.81  | $0.716           | 47%                     | $1.34             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $18,264.00 | $0.00     | $0.695           | 48%                     | $1.34             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $598.25   | $0.820           | 31%                     | $1.19             |
@@ -1014,7 +1014,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $418.78   | $0.574           | 52%                     | $1.19             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $7,328.00  | $200.92   | $0.554           | 53%                     | $1.19             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $14,048.00 | $0.00     | $0.535           | 55%                     | $1.19             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $478.60   | $0.656           | 45%                     | $1.19             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $478.60   | $0.656           | 45%                     | $1.19             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $8,448.00  | $230.06   | $0.637           | 46%                     | $1.19             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $16,224.00 | $0.00     | $0.617           | 48%                     | $1.19             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $897.38   | $1.229           | 31%                     | $1.78             |
@@ -1026,7 +1026,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $628.16   | $0.860           | 52%                     | $1.78             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $10,976.00 | $301.81  | $0.831          | 53%                     | $1.78             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $21,088.00 | $0.00     | $0.802           | 55%                     | $1.78             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $717.90   | $0.983           | 45%                     | $1.78             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $717.90   | $0.983           | 45%                     | $1.78             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $12,672.00 | $345.09   | $0.955           | 46%                     | $1.78             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $24,352.00 | $0.00     | $0.927           | 48%                     | $1.78             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $897.38   | $1.229           | 31%                     | $1.78             |
@@ -1038,7 +1038,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $628.16   | $0.860           | 52%                     | $1.78             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $10,992.00 | $301.37   | $0.831          | 53%                     | $1.78             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $21,072.00 | $0.00     | $0.802           | 55%                     | $1.78             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $717.90   | $0.983           | 45%                     | $1.78             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $717.90   | $0.983           | 45%                     | $1.78             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $12,672.00 | $345.09   | $0.955           | 46%                     | $1.78             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $24,336.00 | $0.00     | $0.926           | 48%                     | $1.78             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,346.07 | $1.844           | 31%                     | $2.67             |
@@ -1050,7 +1050,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $942.25   | $1.291          | 52%                     | $2.67             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $16,464.00 | $452.72   | $1.247           | 53%                     | $2.67             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $31,632.00 | $0.00     | $1.204           | 55%                     | $2.67             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,076.85 | $1.475           | 45%                     | $2.67             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,076.85 | $1.475           | 45%                     | $2.67             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $19,008.00 | $517.63   | $1.432           | 46%                     | $2.67             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $36,528.00 | $0.00     | $1.390           | 48%                     | $2.67             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $1,196.50 | $1.639           | 31%                     | $2.37             |
@@ -1062,7 +1062,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $837.55   | $1.147           | 52%                     | $2.37             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $14,656.00 | $401.83   | $1.108           | 53%                     | $2.37             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $28,096.00 | $0.00     | $1.069           | 55%                     | $2.37             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $957.20   | $1.311          | 45%                     | $2.37             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $957.20   | $1.311          | 45%                     | $2.37             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $16,896.00 | $460.11  | $1.273           | 46%                     | $2.37             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $32,448.00 | $0.00     | $1.235           | 48%                     | $2.37             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,794.76 | $2.459           | 31%                     | $3.56             |
@@ -1074,7 +1074,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,256.33 | $1.721          | 52%                     | $3.56             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $21,952.00 | $603.63   | $1.662           | 53%                     | $3.56             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $42,176.00 | $0.00     | $1.605           | 55%                     | $3.56             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,435.81 | $1.967           | 45%                     | $3.56             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,435.81 | $1.967           | 45%                     | $3.56             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $25,344.00 | $690.17   | $1.910           | 46%                     | $3.56             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $48,704.00 | $0.00     | $1.853           | 48%                     | $3.56             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,243.45 | $3.073           | 31%                     | $4.46             |
@@ -1086,7 +1086,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,570.41 | $2.151          | 52%                     | $4.46             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $27,440.00 | $754.53   | $2.078           | 53%                     | $4.46             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $52,720.00 | $0.00     | $2.006           | 55%                     | $4.46             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,794.76 | $2.459           | 45%                     | $4.46             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,794.76 | $2.459           | 45%                     | $4.46             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $31,680.00 | $862.71  | $2.387           | 46%                     | $4.46             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $60,880.00 | $0.00     | $2.317           | 48%                     | $4.46             |
 
@@ -1103,7 +1103,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $63.32    | $0.087           | 52%                     | $0.18             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,136.00  | $30.91   | $0.086           | 52%                     | $0.18             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,172.00  | $0.00     | $0.083           | 54%                     | $0.18             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $72.37    | $0.099           | 45%                     | $0.18             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $72.37    | $0.099           | 45%                     | $0.18             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,296.00  | $35.57    | $0.098           | 46%                     | $0.18             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,544.00  | $0.00     | $0.097           | 46%                     | $0.18             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $147.32   | $0.202           | 22%                     | $0.26             |
@@ -1115,7 +1115,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $94.98    | $0.130           | 50%                     | $0.26             |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,704.00  | $46.36    | $0.128           | 51%                     | $0.26             |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,260.00  | $0.00     | $0.124           | 52%                     | $0.26             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $108.55   | $0.149           | 43%                     | $0.26             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $108.55   | $0.149           | 43%                     | $0.26             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,944.00  | $53.36    | $0.147           | 43%                     | $0.26             |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,816.00  | $0.00     | $0.145           | 44%                     | $0.26             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $245.54   | $0.336           | 24%                     | $0.44             |
@@ -1127,7 +1127,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $158.31  | $0.217           | 51%                     | $0.44             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,840.00  | $77.27    | $0.214           | 51%                     | $0.44             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $5,436.00  | $0.00     | $0.207           | 53%                     | $0.44             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $180.92   | $0.248           | 44%                     | $0.44             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $180.92   | $0.248           | 44%                     | $0.44             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $3,240.00  | $88.93    | $0.245           | 44%                     | $0.44             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $6,360.00  | $0.00     | $0.242           | 45%                     | $0.44             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $196.43   | $0.269           | 23%                     | $0.35             |
@@ -1139,7 +1139,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $126.65   | $0.173           | 51%                     | $0.35             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,272.00  | $61.81   | $0.171          | 51%                     | $0.35             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $4,344.00  | $0.00     | $0.165           | 53%                     | $0.35             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $144.74   | $0.198           | 43%                     | $0.35             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $144.74   | $0.198           | 43%                     | $0.35             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,592.00  | $71.14    | $0.196           | 44%                     | $0.35             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $5,088.00  | $0.00     | $0.194           | 45%                     | $0.35             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $294.65   | $0.404           | 24%                     | $0.53             |
@@ -1151,7 +1151,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $189.97   | $0.260           | 51%                     | $0.53             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,408.00  | $92.72    | $0.257           | 52%                     | $0.53             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $6,520.00  | $0.00     | $0.248           | 53%                     | $0.53             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $217.11  | $0.297           | 44%                     | $0.53             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $217.11  | $0.297           | 44%                     | $0.53             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,888.00  | $106.71  | $0.294           | 45%                     | $0.53             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $7,632.00  | $0.00     | $0.290           | 45%                     | $0.53             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $392.86   | $0.538           | 23%                     | $0.70             |
@@ -1163,7 +1163,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $253.29   | $0.347           | 50%                     | $0.70             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $4,544.00  | $123.63   | $0.342           | 51%                     | $0.70             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $8,688.00  | $0.00     | $0.331          | 53%                     | $0.70             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $289.48   | $0.397           | 43%                     | $0.70             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $289.48   | $0.397           | 43%                     | $0.70             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $5,184.00  | $142.28   | $0.392           | 44%                     | $0.70             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $10,176.00 | $0.00     | $0.387           | 45%                     | $0.70             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $589.29   | $0.807           | 24%                     | $1.06             |
@@ -1175,7 +1175,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $379.94   | $0.520           | 51%                     | $1.06             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $6,816.00  | $185.44   | $0.513           | 52%                     | $1.06             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $13,040.00 | $0.00     | $0.496           | 53%                     | $1.06             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $434.22   | $0.595           | 44%                     | $1.06             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $434.22   | $0.595           | 44%                     | $1.06             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $7,776.00  | $213.42   | $0.588           | 45%                     | $1.06             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $15,264.00 | $0.00     | $0.581          | 45%                     | $1.06             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $982.15   | $1.345           | 24%                     | $1.76             |
@@ -1187,7 +1187,7 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $633.23   | $0.867           | 51%                     | $1.76             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $11,360.00 | $309.07   | $0.856           | 51%                     | $1.76             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $21,728.00 | $0.00     | $0.827           | 53%                     | $1.76             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $723.69   | $0.991          | 44%                     | $1.76             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $723.69   | $0.991          | 44%                     | $1.76             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $12,960.00 | $355.70   | $0.980           | 44%                     | $1.76             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $25,440.00 | $0.00     | $0.968           | 45%                     | $1.76             |
 
@@ -1205,7 +1205,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $32.26    | $0.044           | 63%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $576.00    | $15.65    | $0.043           | 64%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,116.00  | $0.00     | $0.042           | 65%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $38.87    | $0.053           | 56%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $38.87    | $0.053           | 56%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $696.00    | $18.98    | $0.052           | 57%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,356.00  | $0.00     | $0.052           | 57%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $57.34    | $0.079           | 47%                     | $0.15             |
@@ -1217,7 +1217,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $43.01   | $0.059           | 61%                     | $0.15             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $768.00    | $20.86    | $0.058           | 61%                     | $0.15             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,488.00  | $0.00     | $0.057           | 62%                     | $0.15             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $51.83    | $0.071          | 53%                     | $0.15             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $51.83    | $0.071          | 53%                     | $0.15             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $928.00    | $25.30    | $0.070           | 53%                     | $0.15             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,808.00  | $0.00     | $0.069           | 54%                     | $0.15             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $86.02    | $0.118           | 49%                     | $0.23             |
@@ -1229,7 +1229,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $64.51   | $0.088           | 62%                     | $0.23             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,152.00  | $31.30    | $0.087           | 62%                     | $0.23             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,232.00  | $0.00     | $0.085           | 63%                     | $0.23             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $77.75    | $0.107           | 53%                     | $0.23             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $77.75    | $0.107           | 53%                     | $0.23             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,392.00  | $37.95    | $0.105           | 54%                     | $0.23             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,712.00  | $0.00     | $0.103           | 55%                     | $0.23             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $114.69   | $0.157           | 49%                     | $0.31            |
@@ -1241,7 +1241,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $86.02    | $0.118           | 62%                     | $0.31            |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,536.00  | $41.73    | $0.116           | 63%                     | $0.31            |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $2,976.00  | $0.00     | $0.113           | 64%                     | $0.31            |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $103.66   | $0.142           | 54%                     | $0.31            |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $103.66   | $0.142           | 54%                     | $0.31            |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,856.00  | $50.61   | $0.140           | 55%                     | $0.31            |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,616.00  | $0.00     | $0.138           | 55%                     | $0.31            |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $172.03   | $0.236           | 49%                     | $0.46             |
@@ -1253,7 +1253,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $129.02   | $0.177           | 62%                     | $0.46             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,304.00  | $62.59    | $0.173           | 62%                     | $0.46             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $4,464.00  | $0.00     | $0.170           | 63%                     | $0.46             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $155.49   | $0.213           | 54%                     | $0.46             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $155.49   | $0.213           | 54%                     | $0.46             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,784.00  | $75.91   | $0.210           | 54%                     | $0.46             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,424.00  | $0.00     | $0.206           | 55%                     | $0.46             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $172.03   | $0.236           | 49%                     | $0.46             |
@@ -1265,7 +1265,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $129.02   | $0.177           | 62%                     | $0.46             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,304.00  | $62.59    | $0.173           | 62%                     | $0.46             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $4,464.00  | $0.00     | $0.170           | 63%                     | $0.46             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $155.49   | $0.213           | 54%                     | $0.46             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $155.49   | $0.213           | 54%                     | $0.46             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,784.00  | $75.91   | $0.210           | 54%                     | $0.46             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,424.00  | $0.00     | $0.206           | 55%                     | $0.46             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $258.05   | $0.353           | 49%                     | $0.69             |
@@ -1277,7 +1277,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $193.54   | $0.265           | 62%                     | $0.69             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $3,456.00  | $93.89    | $0.260           | 62%                     | $0.69             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $6,696.00  | $0.00     | $0.255           | 63%                     | $0.69             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $233.24   | $0.320           | 54%                     | $0.69             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $233.24   | $0.320           | 54%                     | $0.69             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,176.00  | $113.86   | $0.315           | 54%                     | $0.69             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $8,136.00  | $0.00     | $0.310           | 55%                     | $0.69             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $229.38   | $0.314           | 49%                     | $0.61            |
@@ -1289,7 +1289,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $172.03   | $0.236           | 61%                     | $0.61            |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,072.00  | $83.46    | $0.231          | 62%                     | $0.61            |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $5,952.00  | $0.00     | $0.226           | 63%                     | $0.61            |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $207.32   | $0.284           | 53%                     | $0.61            |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $207.32   | $0.284           | 53%                     | $0.61            |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,712.00  | $101.21  | $0.280           | 54%                     | $0.61            |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $7,232.00  | $0.00     | $0.275           | 55%                     | $0.61            |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $344.06   | $0.471          | 49%                     | $0.92             |
@@ -1301,7 +1301,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $258.05   | $0.353           | 62%                     | $0.92             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $4,608.00  | $125.18   | $0.347           | 62%                     | $0.92             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $8,928.00  | $0.00     | $0.340           | 63%                     | $0.92             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $310.98   | $0.426           | 54%                     | $0.92             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $310.98   | $0.426           | 54%                     | $0.92             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,568.00  | $151.82   | $0.420           | 54%                     | $0.92             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $10,848.00 | $0.00     | $0.413           | 55%                     | $0.92             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $344.06   | $0.471          | 49%                     | $0.92             |
@@ -1313,7 +1313,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $258.05   | $0.353           | 62%                     | $0.92             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $4,608.00  | $125.18   | $0.347           | 62%                     | $0.92             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $8,928.00  | $0.00     | $0.340           | 63%                     | $0.92             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $310.98   | $0.426           | 54%                     | $0.92             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $310.98   | $0.426           | 54%                     | $0.92             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,568.00  | $151.82   | $0.420           | 54%                     | $0.92             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $10,848.00 | $0.00     | $0.413           | 55%                     | $0.92             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $516.10   | $0.707           | 49%                     | $1.38             |
@@ -1325,7 +1325,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $387.07   | $0.530           | 62%                     | $1.38             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $6,912.00  | $187.78   | $0.520           | 62%                     | $1.38             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $13,392.00 | $0.00     | $0.510           | 63%                     | $1.38             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $466.47   | $0.639           | 54%                     | $1.38             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $466.47   | $0.639           | 54%                     | $1.38             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $8,352.00  | $227.72   | $0.630           | 54%                     | $1.38             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $16,272.00 | $0.00     | $0.619           | 55%                     | $1.38             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $458.75   | $0.628           | 49%                     | $1.23             |
@@ -1337,7 +1337,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $344.06   | $0.471          | 62%                     | $1.23             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $6,144.00  | $166.91  | $0.462           | 62%                     | $1.23             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $11,904.00 | $0.00     | $0.453           | 63%                     | $1.23             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $414.64   | $0.568           | 54%                     | $1.23             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $414.64   | $0.568           | 54%                     | $1.23             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $7,424.00  | $202.42   | $0.560           | 54%                     | $1.23             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $14,464.00 | $0.00     | $0.550           | 55%                     | $1.23             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $688.13   | $0.943           | 49%                     | $1.84             |
@@ -1349,7 +1349,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $516.10   | $0.707           | 62%                     | $1.84             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $9,216.00  | $250.37   | $0.694           | 62%                     | $1.84             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $17,856.00 | $0.00     | $0.679           | 63%                     | $1.84             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $621.96   | $0.852           | 54%                     | $1.84             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $621.96   | $0.852           | 54%                     | $1.84             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $11,136.00 | $303.63   | $0.840           | 54%                     | $1.84             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $21,696.00 | $0.00     | $0.826           | 55%                     | $1.84             |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,204.22 | $1.650           | 49%                     | $3.22             |
@@ -1361,7 +1361,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $903.17   | $1.237           | 62%                     | $3.22             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $16,128.00 | $438.15   | $1.214           | 62%                     | $3.22             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $31,248.00 | $0.00     | $1.189           | 63%                     | $3.22             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,088.43 | $1.491          | 54%                     | $3.22             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,088.43 | $1.491          | 54%                     | $3.22             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $19,488.00 | $531.36   | $1.469           | 54%                     | $3.22             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $37,968.00 | $0.00     | $1.445           | 55%                     | $3.22             |
 
@@ -1378,7 +1378,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $34.12    | $0.047           | 61%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $610.00    | $16.55    | $0.046           | 62%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,186.00  | $0.00     | $0.045           | 63%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $40.09    | $0.055           | 54%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $40.09    | $0.055           | 54%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $718.00    | $19.56    | $0.054           | 55%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,402.00  | $0.00     | $0.053           | 56%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $70.51   | $0.097           | 39%                     | $0.16             |
@@ -1390,7 +1390,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $45.49    | $0.062           | 61%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $812.00    | $22.11   | $0.061          | 62%                     | $0.16             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,580.00  | $0.00     | $0.060           | 63%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $53.45    | $0.073           | 54%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $53.45    | $0.073           | 54%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $956.00    | $26.12    | $0.072           | 55%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,868.00  | $0.00     | $0.071          | 56%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $105.76   | $0.145           | 40%                     | $0.24             |
@@ -1402,7 +1402,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $68.23    | $0.093           | 61%                     | $0.24             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,220.00  | $33.10    | $0.092           | 62%                     | $0.24             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,372.00  | $0.00     | $0.090           | 63%                     | $0.24             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $80.17    | $0.110           | 54%                     | $0.24             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $80.17    | $0.110           | 54%                     | $0.24             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,436.00  | $39.13    | $0.108           | 55%                     | $0.24             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,804.00  | $0.00     | $0.107           | 55%                     | $0.24             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $141.02   | $0.193           | 40%                     | $0.32             |
@@ -1414,7 +1414,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $90.98    | $0.125           | 61%                     | $0.32             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,624.00  | $44.21   | $0.122           | 62%                     | $0.32             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,160.00  | $0.00     | $0.120           | 63%                     | $0.32             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $106.90   | $0.146           | 54%                     | $0.32             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $106.90   | $0.146           | 54%                     | $0.32             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,912.00  | $52.24    | $0.144           | 55%                     | $0.32             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,736.00  | $0.00     | $0.142           | 56%                     | $0.32             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $211.52   | $0.290           | 38%                     | $0.47             |
@@ -1426,7 +1426,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $136.47   | $0.187           | 60%                     | $0.47             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,440.00  | $66.21   | $0.184           | 61%                     | $0.47             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $4,744.00  | $0.00     | $0.181          | 61%                     | $0.47             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $160.35   | $0.220           | 53%                     | $0.47             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $160.35   | $0.220           | 53%                     | $0.47             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,872.00  | $78.25    | $0.216           | 54%                     | $0.47             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,608.00  | $0.00     | $0.213           | 55%                     | $0.47             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $211.52   | $0.290           | 38%                     | $0.47             |
@@ -1438,7 +1438,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $136.47   | $0.187           | 60%                     | $0.47             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,436.00  | $66.32    | $0.184           | 61%                     | $0.47             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $4,740.00  | $0.00     | $0.180           | 62%                     | $0.47             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $160.35   | $0.220           | 53%                     | $0.47             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $160.35   | $0.220           | 53%                     | $0.47             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,868.00  | $78.36    | $0.216           | 54%                     | $0.47             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,604.00  | $0.00     | $0.213           | 55%                     | $0.47             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $317.29   | $0.435           | 39%                     | $0.71            |
@@ -1450,7 +1450,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $204.70   | $0.280           | 61%                     | $0.71            |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,660.00  | $99.31   | $0.275           | 61%                     | $0.71            |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,116.00  | $0.00     | $0.271          | 62%                     | $0.71            |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $240.52   | $0.329           | 54%                     | $0.71            |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $240.52   | $0.329           | 54%                     | $0.71            |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,308.00  | $117.38   | $0.325           | 54%                     | $0.71            |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $8,412.00  | $0.00     | $0.320           | 55%                     | $0.71            |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $282.03   | $0.386           | 39%                     | $0.63             |
@@ -1462,7 +1462,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $181.96   | $0.249           | 60%                     | $0.63             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,248.00  | $88.42    | $0.245           | 61%                     | $0.63             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,320.00  | $0.00     | $0.240           | 62%                     | $0.63             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $213.80   | $0.293           | 53%                     | $0.63             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $213.80   | $0.293           | 53%                     | $0.63             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,824.00  | $104.48   | $0.289           | 54%                     | $0.63             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $7,472.00  | $0.00     | $0.284           | 55%                     | $0.63             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $423.05   | $0.580           | 39%                     | $0.95             |
@@ -1474,7 +1474,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $272.94   | $0.374           | 61%                     | $0.95             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $4,880.00  | $132.41  | $0.367           | 61%                     | $0.95             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $9,488.00  | $0.00     | $0.361          | 62%                     | $0.95             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $320.70   | $0.439           | 54%                     | $0.95             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $320.70   | $0.439           | 54%                     | $0.95             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,744.00  | $156.51  | $0.433           | 54%                     | $0.95             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $11,216.00 | $0.00     | $0.427           | 55%                     | $0.95             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $423.05   | $0.580           | 39%                     | $0.95             |
@@ -1486,7 +1486,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $272.94   | $0.374           | 61%                     | $0.95             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $4,872.00  | $132.63   | $0.367           | 61%                     | $0.95             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $9,480.00  | $0.00     | $0.361          | 62%                     | $0.95             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $320.70   | $0.439           | 54%                     | $0.95             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $320.70   | $0.439           | 54%                     | $0.95             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,736.00  | $156.73   | $0.433           | 54%                     | $0.95             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $11,208.00 | $0.00     | $0.426           | 55%                     | $0.95             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $634.57   | $0.869           | 39%                     | $1.42             |
@@ -1498,7 +1498,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $409.40   | $0.561          | 60%                     | $1.42             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $7,320.00  | $198.62   | $0.551          | 61%                     | $1.42             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $14,232.00 | $0.00     | $0.542           | 62%                     | $1.42             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $481.05   | $0.659           | 54%                     | $1.42             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $481.05   | $0.659           | 54%                     | $1.42             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $8,616.00  | $234.76   | $0.649           | 54%                     | $1.42             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $16,824.00 | $0.00     | $0.640           | 55%                     | $1.42             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $564.07   | $0.773           | 39%                     | $1.26             |
@@ -1510,7 +1510,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $363.91  | $0.499           | 60%                     | $1.26             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $6,496.00  | $176.84   | $0.489           | 61%                     | $1.26             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $12,640.00 | $0.00     | $0.481          | 62%                     | $1.26             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $427.60   | $0.586           | 53%                     | $1.26             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $427.60   | $0.586           | 53%                     | $1.26             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $7,648.00  | $208.97   | $0.577           | 54%                     | $1.26             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $14,944.00 | $0.00     | $0.569           | 55%                     | $1.26             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $846.10   | $1.159           | 39%                     | $1.90             |
@@ -1522,7 +1522,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $545.87   | $0.748           | 61%                     | $1.90             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $9,760.00  | $264.83   | $0.734           | 61%                     | $1.90             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $18,976.00 | $0.00     | $0.722           | 62%                     | $1.90             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $641.40   | $0.879           | 54%                     | $1.90             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $641.40   | $0.879           | 54%                     | $1.90             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $11,488.00 | $313.01  | $0.866           | 54%                     | $1.90             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $22,432.00 | $0.00     | $0.854           | 55%                     | $1.90             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $846.10   | $1.159           | 39%                     | $1.90             |
@@ -1534,7 +1534,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $545.87   | $0.748           | 61%                     | $1.90             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $9,744.00  | $265.27   | $0.734           | 61%                     | $1.90             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $18,960.00 | $0.00     | $0.721          | 62%                     | $1.90             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $641.40   | $0.879           | 54%                     | $1.90             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $641.40   | $0.879           | 54%                     | $1.90             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $11,472.00 | $313.45   | $0.866           | 54%                     | $1.90             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $22,416.00 | $0.00     | $0.853           | 55%                     | $1.90             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,269.15 | $1.739           | 39%                     | $2.85             |
@@ -1546,7 +1546,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $818.81  | $1.122           | 61%                     | $2.85             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $14,640.00 | $397.24   | $1.101          | 61%                     | $2.85             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $28,464.00 | $0.00     | $1.083           | 62%                     | $2.85             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $962.10   | $1.318           | 54%                     | $2.85             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $962.10   | $1.318           | 54%                     | $2.85             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $17,232.00 | $469.52   | $1.299           | 54%                     | $2.85             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $33,648.00 | $0.00     | $1.280           | 55%                     | $2.85             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $1,128.13 | $1.545           | 39%                     | $2.53             |
@@ -1558,7 +1558,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $727.83   | $0.997           | 61%                     | $2.53             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $12,992.00 | $353.69   | $0.979           | 61%                     | $2.53             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $25,280.00 | $0.00     | $0.962           | 62%                     | $2.53             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $855.20   | $1.172           | 54%                     | $2.53             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $855.20   | $1.172           | 54%                     | $2.53             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $15,296.00 | $417.93   | $1.155           | 54%                     | $2.53             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $29,888.00 | $0.00     | $1.137           | 55%                     | $2.53             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,692.20 | $2.318           | 39%                     | $3.80             |
@@ -1570,7 +1570,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,091.74 | $1.496           | 61%                     | $3.80             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $19,520.00 | $529.65   | $1.468           | 61%                     | $3.80             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $37,952.00 | $0.00     | $1.444           | 62%                     | $3.80             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,282.80 | $1.757           | 54%                     | $3.80             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,282.80 | $1.757           | 54%                     | $3.80             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $22,976.00 | $626.02   | $1.732           | 54%                     | $3.80             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $44,864.00 | $0.00     | $1.707           | 55%                     | $3.80             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,115.25 | $2.898           | 39%                     | $4.74             |
@@ -1582,7 +1582,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,364.68 | $1.869           | 61%                     | $4.74             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $24,400.00 | $662.07   | $1.835           | 61%                     | $4.74             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $47,440.00 | $0.00     | $1.805           | 62%                     | $4.74             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,603.50 | $2.197           | 54%                     | $4.74             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,603.50 | $2.197           | 54%                     | $4.74             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $28,720.00 | $782.53   | $2.165           | 54%                     | $4.74             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $56,080.00 | $0.00     | $2.134           | 55%                     | $4.74             |
 
@@ -1599,7 +1599,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $52.38    | $0.072           | 60%                     | $0.18             |
 | Standard 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $932.00    | $25.54    | $0.070           | 61%                     | $0.18             |
 | Standard 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $1,820.00  | $0.00     | $0.069           | 62%                     | $0.18             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $60.24    | $0.083           | 54%                     | $0.18             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $60.24    | $0.083           | 54%                     | $0.18             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $1,072.00  | $29.56    | $0.081          | 55%                     | $0.18             |
 | Convertible 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $2,100.00  | $0.00     | $0.080           | 56%                     | $0.18             |
 |  Standard 1-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $113.93   | $0.156           | 42%                     | $0.27             |
@@ -1611,7 +1611,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $78.57    | $0.108           | 60%                     | $0.27             |
 | Standard 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,396.00  | $38.36    | $0.106           | 61%                     | $0.27             |
 | Standard 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $2,732.00  | $0.00     | $0.104           | 61%                     | $0.27             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $90.36    | $0.124           | 54%                     | $0.27             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $90.36    | $0.124           | 54%                     | $0.27             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,608.00  | $44.34    | $0.122           | 55%                     | $0.27             |
 | Convertible 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $3,148.00  | $0.00     | $0.120           | 56%                     | $0.27             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $151.91  | $0.208           | 42%                     | $0.36             |
@@ -1623,7 +1623,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $104.76   | $0.144           | 60%                     | $0.36             |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $1,864.00  | $51.08    | $0.141          | 61%                     | $0.36             |
 | Standard 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $3,640.00  | $0.00     | $0.139           | 61%                     | $0.36             |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $120.48   | $0.165           | 54%                     | $0.36             |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $120.48   | $0.165           | 54%                     | $0.36             |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $2,144.00  | $59.12    | $0.163           | 55%                     | $0.36             |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $4,200.00  | $0.00     | $0.160           | 56%                     | $0.36             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $227.86   | $0.312           | 43%                     | $0.55             |
@@ -1635,7 +1635,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $157.14   | $0.215           | 61%                     | $0.55             |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $2,792.00  | $76.72    | $0.211          | 62%                     | $0.55             |
 | Standard 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $5,464.00  | $0.00     | $0.208           | 62%                     | $0.55             |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $180.72   | $0.248           | 55%                     | $0.55             |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $180.72   | $0.248           | 55%                     | $0.55             |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $3,216.00  | $88.68    | $0.244           | 56%                     | $0.55             |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $6,296.00  | $0.00     | $0.240           | 56%                     | $0.55             |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $303.81  | $0.416           | 43%                     | $0.73             |
@@ -1647,7 +1647,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $209.53   | $0.287           | 61%                     | $0.73             |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $3,728.00  | $102.15   | $0.282           | 61%                     | $0.73             |
 | Standard 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $7,280.00  | $0.00     | $0.277           | 62%                     | $0.73             |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $240.96   | $0.330           | 55%                     | $0.73             |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $240.96   | $0.330           | 55%                     | $0.73             |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $4,288.00  | $118.24   | $0.325           | 55%                     | $0.73             |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $8,400.00  | $0.00     | $0.320           | 56%                     | $0.73             |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $455.72   | $0.624           | 43%                     | $1.09             |
@@ -1659,7 +1659,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $314.29   | $0.431          | 60%                     | $1.09             |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $5,584.00  | $153.45   | $0.423           | 61%                     | $1.09             |
 | Standard 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $10,928.00 | $0.00     | $0.416           | 62%                     | $1.09             |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $361.43   | $0.495           | 55%                     | $1.09             |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $361.43   | $0.495           | 55%                     | $1.09             |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $6,432.00  | $177.36   | $0.488           | 55%                     | $1.09             |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $12,592.00 | $0.00     | $0.479           | 56%                     | $1.09             |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $607.63   | $0.832           | 43%                     | $1.46             |
@@ -1671,7 +1671,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $419.05   | $0.574           | 61%                     | $1.46             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $7,456.00  | $204.30   | $0.564           | 61%                     | $1.46             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $14,560.00 | $0.00     | $0.554           | 62%                     | $1.46             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $481.91  | $0.660           | 55%                     | $1.46             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $481.91  | $0.660           | 55%                     | $1.46             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $8,576.00  | $236.47   | $0.650           | 55%                     | $1.46             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $16,800.00 | $0.00     | $0.639           | 56%                     | $1.46             |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $911.44   | $1.249           | 43%                     | $2.18             |
@@ -1683,7 +1683,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $628.58   | $0.861          | 61%                     | $2.18             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $11,168.00 | $306.89   | $0.845           | 61%                     | $2.18             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $21,856.00 | $0.00     | $0.832           | 62%                     | $2.18             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $722.87   | $0.990           | 55%                     | $2.18             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $722.87   | $0.990           | 55%                     | $2.18             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $12,864.00 | $354.71  | $0.975           | 55%                     | $2.18             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $25,184.00 | $0.00     | $0.958           | 56%                     | $2.18             |
 
@@ -1701,7 +1701,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $29.27    | $0.040           | 56%                     | $0.09             |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $526.00    | $14.19    | $0.039           | 57%                     | $0.09             |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $996.00    | $0.00     | $0.038           | 58%                     | $0.09             |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $33.93    | $0.046           | 49%                     | $0.09             |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $33.93    | $0.046           | 49%                     | $0.09             |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $610.00    | $16.55    | $0.046           | 49%                     | $0.09             |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,188.00  | $0.00     | $0.045           | 50%                     | $0.09             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $62.09    | $0.085           | 29%                     | $0.12             |
@@ -1713,7 +1713,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $39.03    | $0.053           | 56%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $700.00    | $18.96    | $0.053           | 56%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,328.00  | $0.00     | $0.051          | 58%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $45.23    | $0.062           | 48%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $45.23    | $0.062           | 48%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $812.00    | $22.10    | $0.061          | 49%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,584.00  | $0.00     | $0.060           | 50%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $93.13    | $0.128           | 29%                     | $0.18             |
@@ -1725,7 +1725,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $58.54    | $0.080           | 56%                     | $0.18             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,052.00  | $28.39    | $0.079           | 56%                     | $0.18             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $1,992.00  | $0.00     | $0.076           | 58%                     | $0.18             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $67.85    | $0.093           | 48%                     | $0.18             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $67.85    | $0.093           | 48%                     | $0.18             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,220.00  | $33.10    | $0.092           | 49%                     | $0.18             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,376.00  | $0.00     | $0.090           | 50%                     | $0.18             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $124.17   | $0.170           | 32%                     | $0.25             |
@@ -1737,7 +1737,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $78.05    | $0.107           | 57%                     | $0.25             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,400.00  | $37.92    | $0.105           | 58%                     | $0.25             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $2,656.00  | $0.00     | $0.101          | 60%                     | $0.25             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $90.47    | $0.124           | 50%                     | $0.25             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $90.47    | $0.124           | 50%                     | $0.25             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,624.00  | $44.20    | $0.122           | 51%                     | $0.25             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,168.00  | $0.00     | $0.121          | 52%                     | $0.25             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $186.26   | $0.255           | 31%                     | $0.37             |
@@ -1749,7 +1749,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $117.08   | $0.160           | 57%                     | $0.37             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,104.00  | $56.77    | $0.158           | 57%                     | $0.37             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $3,984.00  | $0.00     | $0.152           | 59%                     | $0.37             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $135.70   | $0.186           | 50%                     | $0.37             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $135.70   | $0.186           | 50%                     | $0.37             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,440.00  | $66.19    | $0.184           | 50%                     | $0.37             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $4,752.00  | $0.00     | $0.181          | 51%                     | $0.37             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $186.26   | $0.255           | 31%                     | $0.37             |
@@ -1761,7 +1761,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $117.08   | $0.160           | 57%                     | $0.37             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,100.00  | $56.88    | $0.158           | 57%                     | $0.37             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $3,984.00  | $0.00     | $0.152           | 59%                     | $0.37             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $135.70   | $0.186           | 50%                     | $0.37             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $135.70   | $0.186           | 50%                     | $0.37             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,436.00  | $66.30    | $0.184           | 50%                     | $0.37             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $4,752.00  | $0.00     | $0.181          | 51%                     | $0.37             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $279.39   | $0.383           | 30%                     | $0.55             |
@@ -1773,7 +1773,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $175.62   | $0.241          | 56%                     | $0.55             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,156.00  | $85.16    | $0.237           | 57%                     | $0.55             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $5,976.00  | $0.00     | $0.227           | 59%                     | $0.55             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $203.56   | $0.279           | 49%                     | $0.55             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $203.56   | $0.279           | 49%                     | $0.55             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,660.00  | $99.29    | $0.275           | 50%                     | $0.55             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,128.00  | $0.00     | $0.271          | 51%                     | $0.55             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $248.35   | $0.340           | 31%                     | $0.49             |
@@ -1785,7 +1785,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $156.10   | $0.214           | 56%                     | $0.49             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $2,800.00  | $75.84    | $0.210           | 57%                     | $0.49             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $5,312.00  | $0.00     | $0.202           | 59%                     | $0.49             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $180.94   | $0.248           | 49%                     | $0.49             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $180.94   | $0.248           | 49%                     | $0.49             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,248.00  | $88.41   | $0.245           | 50%                     | $0.49             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,336.00  | $0.00     | $0.241          | 51%                     | $0.49             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $372.52   | $0.510           | 31%                     | $0.74             |
@@ -1797,7 +1797,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $234.16   | $0.321          | 57%                     | $0.74             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $4,208.00  | $113.55   | $0.316           | 57%                     | $0.74             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $7,968.00  | $0.00     | $0.303           | 59%                     | $0.74             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $271.41  | $0.372           | 50%                     | $0.74             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $271.41  | $0.372           | 50%                     | $0.74             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $4,880.00  | $132.39   | $0.367           | 50%                     | $0.74             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $9,504.00  | $0.00     | $0.362           | 51%                     | $0.74             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $372.52   | $0.510           | 31%                     | $0.74             |
@@ -1809,7 +1809,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $234.16   | $0.321          | 57%                     | $0.74             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $4,200.00  | $113.77   | $0.316           | 57%                     | $0.74             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $7,968.00  | $0.00     | $0.303           | 59%                     | $0.74             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $271.41  | $0.372           | 50%                     | $0.74             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $271.41  | $0.372           | 50%                     | $0.74             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $4,872.00  | $132.61  | $0.367           | 50%                     | $0.74             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $9,504.00  | $0.00     | $0.362           | 51%                     | $0.74             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $558.78   | $0.765           | 31%                     | $1.11            |
@@ -1821,7 +1821,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $351.23   | $0.481          | 57%                     | $1.11            |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $6,312.00  | $170.32   | $0.473           | 57%                     | $1.11            |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $11,952.00 | $0.00     | $0.455           | 59%                     | $1.11            |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $407.11  | $0.558           | 50%                     | $1.11            |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $407.11  | $0.558           | 50%                     | $1.11            |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $7,320.00  | $198.58   | $0.551          | 50%                     | $1.11            |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $14,256.00 | $0.00     | $0.542           | 51%                     | $1.11            |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $496.70   | $0.680           | 31%                     | $0.99             |
@@ -1833,7 +1833,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $312.21  | $0.428           | 57%                     | $0.99             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $5,600.00  | $151.69   | $0.421          | 57%                     | $0.99             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $10,624.00 | $0.00     | $0.404           | 59%                     | $0.99             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $361.88   | $0.496           | 50%                     | $0.99             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $361.88   | $0.496           | 50%                     | $0.99             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $6,496.00  | $176.81  | $0.489           | 51%                     | $0.99             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $12,672.00 | $0.00     | $0.482           | 51%                     | $0.99             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $745.04   | $1.021          | 31%                     | $1.48             |
@@ -1845,7 +1845,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $468.31  | $0.642           | 57%                     | $1.48             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $8,416.00  | $227.09   | $0.631          | 57%                     | $1.48             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $15,936.00 | $0.00     | $0.606           | 59%                     | $1.48             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $542.82   | $0.744           | 50%                     | $1.48             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $542.82   | $0.744           | 50%                     | $1.48             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $9,760.00  | $264.78   | $0.734           | 50%                     | $1.48             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $19,008.00 | $0.00     | $0.723           | 51%                     | $1.48             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $745.04   | $1.021          | 31%                     | $1.48             |
@@ -1857,7 +1857,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $468.31  | $0.642           | 57%                     | $1.48             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $8,400.00  | $227.53   | $0.631          | 57%                     | $1.48             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $15,936.00 | $0.00     | $0.606           | 59%                     | $1.48             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $542.82   | $0.744           | 50%                     | $1.48             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $542.82   | $0.744           | 50%                     | $1.48             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $9,744.00  | $265.22   | $0.734           | 50%                     | $1.48             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $19,008.00 | $0.00     | $0.723           | 51%                     | $1.48             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,117.57 | $1.531          | 31%                     | $2.22             |
@@ -1869,7 +1869,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $702.47   | $0.962           | 57%                     | $2.22             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $12,624.00 | $340.64   | $0.947           | 57%                     | $2.22             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $23,904.00 | $0.00     | $0.910           | 59%                     | $2.22             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $814.23   | $1.115           | 50%                     | $2.22             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $814.23   | $1.115           | 50%                     | $2.22             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $14,640.00 | $397.16   | $1.101          | 50%                     | $2.22             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $28,512.00 | $0.00     | $1.085           | 51%                     | $2.22             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $993.39   | $1.361          | 31%                     | $1.97             |
@@ -1881,7 +1881,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $624.42   | $0.855           | 57%                     | $1.97             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $11,200.00 | $303.38   | $0.842           | 57%                     | $1.97             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $21,248.00 | $0.00     | $0.809           | 59%                     | $1.97             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $723.76   | $0.991          | 50%                     | $1.97             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $723.76   | $0.991          | 50%                     | $1.97             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $12,992.00 | $353.62   | $0.979           | 50%                     | $1.97             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $25,344.00 | $0.00     | $0.964           | 51%                     | $1.97             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,490.09 | $2.041          | 31%                     | $2.96             |
@@ -1893,7 +1893,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $936.63   | $1.283           | 57%                     | $2.96             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $16,832.00 | $454.19   | $1.263           | 57%                     | $2.96             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $31,872.00 | $0.00     | $1.213           | 59%                     | $2.96             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,085.63 | $1.487           | 50%                     | $2.96             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,085.63 | $1.487           | 50%                     | $2.96             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $19,520.00 | $529.55   | $1.468           | 50%                     | $2.96             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $38,016.00 | $0.00     | $1.447           | 51%                     | $2.96             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,862.61 | $2.552           | 31%                     | $3.70             |
@@ -1905,7 +1905,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,170.78 | $1.604           | 57%                     | $3.70             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $21,040.00 | $567.74   | $1.578           | 57%                     | $3.70             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $39,840.00 | $0.00     | $1.516           | 59%                     | $3.70             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,357.04 | $1.859           | 50%                     | $3.70             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,357.04 | $1.859           | 50%                     | $3.70             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $24,400.00 | $661.94   | $1.835           | 50%                     | $3.70             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $47,520.00 | $0.00     | $1.808           | 51%                     | $3.70             |
 
@@ -1922,7 +1922,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $51.13    | $0.070           | 59%                     | $0.17             |
 | Standard 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $912.00    | $24.93    | $0.069           | 59%                     | $0.17             |
 | Standard 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $1,732.00  | $0.00     | $0.066           | 61%                     | $0.17             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $59.65    | $0.082           | 52%                     | $0.17             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $59.65    | $0.082           | 52%                     | $0.17             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $1,044.00  | $28.61   | $0.079           | 54%                     | $0.17             |
 | Convertible 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $2,048.00  | $0.00     | $0.078           | 54%                     | $0.17             |
 |  Standard 1-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $115.04   | $0.158           | 37%                     | $0.25             |
@@ -1934,7 +1934,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $76.70    | $0.105           | 58%                     | $0.25             |
 | Standard 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,368.00  | $37.39    | $0.103           | 59%                     | $0.25             |
 | Standard 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $2,596.00  | $0.00     | $0.099           | 60%                     | $0.25             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $89.48    | $0.123           | 51%                     | $0.25             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $89.48    | $0.123           | 51%                     | $0.25             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,564.00  | $42.98    | $0.118           | 53%                     | $0.25             |
 | Convertible 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $3,072.00  | $0.00     | $0.117           | 53%                     | $0.25             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $153.39   | $0.210           | 38%                     | $0.34             |
@@ -1946,7 +1946,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $102.26   | $0.140           | 59%                     | $0.34             |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $1,824.00  | $49.85    | $0.138           | 59%                     | $0.34             |
 | Standard 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $3,464.00  | $0.00     | $0.132           | 61%                     | $0.34             |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $119.30   | $0.163           | 52%                     | $0.34             |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $119.30   | $0.163           | 52%                     | $0.34             |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $2,088.00  | $57.23    | $0.158           | 54%                     | $0.34             |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $4,096.00  | $0.00     | $0.156           | 54%                     | $0.34             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $230.09   | $0.315           | 38%                     | $0.51            |
@@ -1958,7 +1958,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $153.39   | $0.210           | 59%                     | $0.51            |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $2,736.00  | $74.78    | $0.207           | 59%                     | $0.51            |
 | Standard 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $5,192.00  | $0.00     | $0.198           | 61%                     | $0.51            |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $178.96   | $0.245           | 52%                     | $0.51            |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $178.96   | $0.245           | 52%                     | $0.51            |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $3,128.00  | $85.95    | $0.237           | 54%                     | $0.51            |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $6,144.00  | $0.00     | $0.234           | 54%                     | $0.51            |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $306.78   | $0.420           | 38%                     | $0.68             |
@@ -1970,7 +1970,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $204.52   | $0.280           | 59%                     | $0.68             |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $3,648.00  | $99.71   | $0.275           | 60%                     | $0.68             |
 | Standard 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $6,928.00  | $0.00     | $0.264           | 61%                     | $0.68             |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $238.61  | $0.327           | 52%                     | $0.68             |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $238.61  | $0.327           | 52%                     | $0.68             |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $4,176.00  | $114.46   | $0.316           | 54%                     | $0.68             |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $8,192.00  | $0.00     | $0.312           | 54%                     | $0.68             |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $460.17   | $0.630           | 38%                     | $1.01            |
@@ -1982,7 +1982,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $306.78   | $0.420           | 58%                     | $1.01            |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $5,472.00  | $149.56   | $0.413           | 59%                     | $1.01            |
 | Standard 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $10,384.00 | $0.00     | $0.395           | 61%                     | $1.01            |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $357.91  | $0.490           | 51%                     | $1.01            |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $357.91  | $0.490           | 51%                     | $1.01            |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $6,256.00  | $171.91  | $0.474           | 53%                     | $1.01            |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $12,288.00 | $0.00     | $0.468           | 54%                     | $1.01            |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $613.57   | $0.841          | 38%                     | $1.35             |
@@ -1994,7 +1994,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $409.04   | $0.560           | 59%                     | $1.35             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $7,296.00  | $199.41  | $0.551          | 59%                     | $1.35             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $13,856.00 | $0.00     | $0.527           | 61%                     | $1.35             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $477.22   | $0.654           | 52%                     | $1.35             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $477.22   | $0.654           | 52%                     | $1.35             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $8,352.00  | $228.92   | $0.631          | 53%                     | $1.35             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $16,384.00 | $0.00     | $0.623           | 54%                     | $1.35             |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $920.35   | $1.261          | 38%                     | $2.03             |
@@ -2006,7 +2006,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $613.57   | $0.841          | 59%                     | $2.03             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $10,944.00 | $299.12   | $0.826           | 59%                     | $2.03             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $20,768.00 | $0.00     | $0.790           | 61%                     | $2.03             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $715.83   | $0.981          | 52%                     | $2.03             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $715.83   | $0.981          | 52%                     | $2.03             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $12,512.00 | $343.81  | $0.947           | 53%                     | $2.03             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $24,576.00 | $0.00     | $0.935           | 54%                     | $2.03             |
 
@@ -2024,7 +2024,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $35.28    | $0.048           | 60%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $626.00    | $17.22    | $0.047           | 61%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,224.00  | $0.00     | $0.047           | 61%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $43.42    | $0.059           | 51%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $43.42    | $0.059           | 51%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $744.00    | $20.32    | $0.056           | 53%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,452.00  | $0.00     | $0.055           | 54%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $68.75    | $0.094           | 41%                     | $0.16             |
@@ -2036,7 +2036,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $47.04    | $0.064           | 60%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $836.00    | $22.93    | $0.063           | 61%                     | $0.16             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,632.00  | $0.00     | $0.062           | 61%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $57.90    | $0.079           | 51%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $57.90    | $0.079           | 51%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $992.00    | $27.10    | $0.075           | 53%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,936.00  | $0.00     | $0.074           | 54%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $103.13   | $0.141          | 41%                     | $0.24             |
@@ -2048,7 +2048,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $70.56    | $0.097           | 60%                     | $0.24             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,252.00  | $34.45    | $0.095           | 60%                     | $0.24             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,448.00  | $0.00     | $0.093           | 61%                     | $0.24             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $86.84    | $0.119           | 50%                     | $0.24             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $86.84    | $0.119           | 50%                     | $0.24             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,488.00  | $40.65    | $0.112           | 53%                     | $0.24             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,904.00  | $0.00     | $0.111          | 54%                     | $0.24             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $137.50   | $0.188           | 43%                     | $0.33             |
@@ -2060,7 +2060,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $94.08    | $0.129           | 61%                     | $0.33             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,672.00  | $45.86    | $0.126           | 62%                     | $0.33             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,264.00  | $0.00     | $0.124           | 62%                     | $0.33             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $115.79   | $0.159           | 52%                     | $0.33             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $115.79   | $0.159           | 52%                     | $0.33             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,984.00  | $54.20    | $0.150           | 55%                     | $0.33             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,872.00  | $0.00     | $0.147           | 55%                     | $0.33             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $206.25   | $0.283           | 42%                     | $0.49             |
@@ -2072,7 +2072,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $141.12   | $0.193           | 61%                     | $0.49             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,504.00  | $68.90    | $0.190           | 61%                     | $0.49             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $4,896.00  | $0.00     | $0.186           | 62%                     | $0.49             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $173.69   | $0.238           | 51%                     | $0.49             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $173.69   | $0.238           | 51%                     | $0.49             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,976.00  | $81.30    | $0.225           | 54%                     | $0.49             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,808.00  | $0.00     | $0.221          | 55%                     | $0.49             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $206.25   | $0.283           | 42%                     | $0.49             |
@@ -2084,7 +2084,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $141.12   | $0.193           | 61%                     | $0.49             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,508.00  | $68.79    | $0.190           | 61%                     | $0.49             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $4,896.00  | $0.00     | $0.186           | 62%                     | $0.49             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $173.69   | $0.238           | 51%                     | $0.49             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $173.69   | $0.238           | 51%                     | $0.49             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,976.00  | $81.30    | $0.225           | 54%                     | $0.49             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,808.00  | $0.00     | $0.221          | 55%                     | $0.49             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $309.38   | $0.424           | 42%                     | $0.73             |
@@ -2096,7 +2096,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $211.68   | $0.290           | 60%                     | $0.73             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $3,756.00  | $103.35   | $0.284           | 61%                     | $0.73             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $7,344.00  | $0.00     | $0.279           | 62%                     | $0.73             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $260.53   | $0.357           | 51%                     | $0.73             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $260.53   | $0.357           | 51%                     | $0.73             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,464.00  | $121.94   | $0.337           | 54%                     | $0.73             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $8,712.00  | $0.00     | $0.332           | 55%                     | $0.73             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $275.00   | $0.377           | 43%                     | $0.66             |
@@ -2108,7 +2108,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $188.16   | $0.258           | 61%                     | $0.66             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,344.00  | $91.72    | $0.253           | 62%                     | $0.66             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $6,528.00  | $0.00     | $0.248           | 62%                     | $0.66             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $231.58   | $0.317           | 52%                     | $0.66             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $231.58   | $0.317           | 52%                     | $0.66             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,968.00  | $108.40   | $0.299           | 55%                     | $0.66             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $7,744.00  | $0.00     | $0.295           | 55%                     | $0.66             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $412.50   | $0.565           | 42%                     | $0.98             |
@@ -2120,7 +2120,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $282.24   | $0.387           | 61%                     | $0.98             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,008.00  | $137.80   | $0.379           | 61%                     | $0.98             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $9,792.00  | $0.00     | $0.373           | 62%                     | $0.98             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $347.37   | $0.476           | 51%                     | $0.98             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $347.37   | $0.476           | 51%                     | $0.98             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,952.00  | $162.59   | $0.449           | 54%                     | $0.98             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $11,616.00 | $0.00     | $0.442           | 55%                     | $0.98             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $412.50   | $0.565           | 42%                     | $0.98             |
@@ -2132,7 +2132,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $282.24   | $0.387           | 61%                     | $0.98             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,016.00  | $137.58   | $0.379           | 61%                     | $0.98             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $9,792.00  | $0.00     | $0.373           | 62%                     | $0.98             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $347.37   | $0.476           | 51%                     | $0.98             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $347.37   | $0.476           | 51%                     | $0.98             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,952.00  | $162.59   | $0.449           | 54%                     | $0.98             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $11,616.00 | $0.00     | $0.442           | 55%                     | $0.98             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $618.76   | $0.848           | 42%                     | $1.46             |
@@ -2144,7 +2144,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $423.36   | $0.580           | 60%                     | $1.46             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $7,512.00  | $206.70   | $0.569           | 61%                     | $1.46             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $14,688.00 | $0.00     | $0.559           | 62%                     | $1.46             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $521.06   | $0.714           | 51%                     | $1.46             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $521.06   | $0.714           | 51%                     | $1.46             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $8,928.00  | $243.89   | $0.674           | 54%                     | $1.46             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $17,424.00 | $0.00     | $0.663           | 55%                     | $1.46             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $550.01  | $0.753           | 43%                     | $1.31            |
@@ -2156,7 +2156,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $376.32   | $0.516           | 61%                     | $1.31            |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $6,688.00  | $183.44   | $0.506           | 61%                     | $1.31            |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $13,056.00 | $0.00     | $0.497           | 62%                     | $1.31            |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $463.16   | $0.634           | 52%                     | $1.31            |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $463.16   | $0.634           | 52%                     | $1.31            |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $7,936.00  | $216.79   | $0.599           | 54%                     | $1.31            |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $15,488.00 | $0.00     | $0.589           | 55%                     | $1.31            |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $825.01  | $1.130           | 42%                     | $1.95             |
@@ -2168,7 +2168,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $564.48   | $0.773           | 60%                     | $1.95             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $10,016.00 | $275.60   | $0.759           | 61%                     | $1.95             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $19,584.00 | $0.00     | $0.745           | 62%                     | $1.95             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $694.74   | $0.952           | 51%                     | $1.95             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $694.74   | $0.952           | 51%                     | $1.95             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $11,904.00 | $325.19   | $0.898           | 54%                     | $1.95             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $23,232.00 | $0.00     | $0.884           | 55%                     | $1.95             |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,443.77 | $1.978           | 42%                     | $3.42             |
@@ -2180,7 +2180,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $987.84   | $1.353           | 60%                     | $3.42             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $17,528.00 | $482.29   | $1.328           | 61%                     | $3.42             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $34,272.00 | $0.00     | $1.304           | 62%                     | $3.42             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,215.80 | $1.665           | 51%                     | $3.42             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,215.80 | $1.665           | 51%                     | $3.42             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $20,832.00 | $569.08   | $1.572           | 54%                     | $3.42             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $40,656.00 | $0.00     | $1.547           | 55%                     | $3.42             |
 
@@ -2197,7 +2197,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $63.41   | $0.087           | 54%                     | $0.19             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,104.00  | $30.41   | $0.084           | 56%                     | $0.19             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,112.00  | $0.00     | $0.080           | 58%                     | $0.19             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $71.68    | $0.098           | 48%                     | $0.19             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $71.68    | $0.098           | 48%                     | $0.19             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,280.00  | $35.23    | $0.097           | 49%                     | $0.19             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $2,512.00  | $0.00     | $0.096           | 49%                     | $0.19             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $132.33   | $0.181          | 38%                     | $0.29             |
@@ -2209,7 +2209,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $95.11   | $0.130           | 55%                     | $0.29             |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,656.00  | $45.61   | $0.125           | 57%                     | $0.29             |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,168.00  | $0.00     | $0.121          | 58%                     | $0.29             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $107.52   | $0.147           | 49%                     | $0.29             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $107.52   | $0.147           | 49%                     | $0.29             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,920.00  | $52.85    | $0.145           | 50%                     | $0.29             |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $3,768.00  | $0.00     | $0.143           | 51%                     | $0.29             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $220.55   | $0.302           | 37%                     | $0.48             |
@@ -2221,7 +2221,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $158.52   | $0.217           | 55%                     | $0.48             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,760.00  | $76.01   | $0.209           | 56%                     | $0.48             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $5,280.00  | $0.00     | $0.201          | 58%                     | $0.48             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $179.20   | $0.245           | 49%                     | $0.48             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $179.20   | $0.245           | 49%                     | $0.48             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $3,200.00  | $88.08    | $0.242           | 50%                     | $0.48             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $6,280.00  | $0.00     | $0.239           | 50%                     | $0.48             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $176.44   | $0.242           | 36%                     | $0.38             |
@@ -2233,7 +2233,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $126.82   | $0.174           | 54%                     | $0.38             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,208.00  | $60.81   | $0.167           | 56%                     | $0.38             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $4,224.00  | $0.00     | $0.161          | 58%                     | $0.38             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $143.36   | $0.196           | 48%                     | $0.38             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $143.36   | $0.196           | 48%                     | $0.38             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $2,560.00  | $70.47    | $0.194           | 49%                     | $0.38             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $5,024.00  | $0.00     | $0.191          | 50%                     | $0.38             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $264.66   | $0.363           | 37%                     | $0.58             |
@@ -2245,7 +2245,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $190.23   | $0.261          | 55%                     | $0.58             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,312.00  | $91.22    | $0.251          | 57%                     | $0.58             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $6,336.00  | $0.00     | $0.241          | 58%                     | $0.58             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $215.04   | $0.295           | 49%                     | $0.58             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $215.04   | $0.295           | 49%                     | $0.58             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $3,840.00  | $105.70   | $0.291          | 50%                     | $0.58             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $7,536.00  | $0.00     | $0.287           | 51%                     | $0.58             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $352.89   | $0.483           | 37%                     | $0.77             |
@@ -2257,7 +2257,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $253.64   | $0.347           | 55%                     | $0.77             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $4,416.00  | $121.62   | $0.335           | 56%                     | $0.77             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $8,448.00  | $0.00     | $0.321          | 58%                     | $0.77             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $286.72   | $0.393           | 49%                     | $0.77             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $286.72   | $0.393           | 49%                     | $0.77             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $5,120.00  | $140.93   | $0.388           | 50%                     | $0.77             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $10,048.00 | $0.00     | $0.382           | 50%                     | $0.77             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $529.33   | $0.725           | 37%                     | $1.15             |
@@ -2269,7 +2269,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $380.46   | $0.521          | 55%                     | $1.15             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $6,624.00  | $182.43   | $0.502           | 56%                     | $1.15             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $12,672.00 | $0.00     | $0.482           | 58%                     | $1.15             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $430.08   | $0.589           | 49%                     | $1.15             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $430.08   | $0.589           | 49%                     | $1.15             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $7,680.00  | $211.40   | $0.582           | 49%                     | $1.15             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $15,072.00 | $0.00     | $0.574           | 50%                     | $1.15             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $882.22   | $1.209           | 37%                     | $1.92             |
@@ -2281,7 +2281,7 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $634.09   | $0.869           | 55%                     | $1.92             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $11,040.00 | $304.06   | $0.837           | 56%                     | $1.92             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $21,120.00 | $0.00     | $0.804           | 58%                     | $1.92             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $716.80   | $0.982           | 49%                     | $1.92             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $716.80   | $0.982           | 49%                     | $1.92             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $12,800.00 | $352.33   | $0.970           | 49%                     | $1.92             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $25,120.00 | $0.00     | $0.956           | 50%                     | $1.92             |
 
@@ -2299,7 +2299,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $37.53    | $0.051          | 58%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $650.00    | $18.01   | $0.049           | 59%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,248.00  | $0.00     | $0.047           | 61%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $45.20    | $0.062           | 48%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $45.20    | $0.062           | 48%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $766.00    | $20.81   | $0.058           | 52%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,498.00  | $0.00     | $0.057           | 53%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $75.06    | $0.103           | 36%                     | $0.16             |
@@ -2311,7 +2311,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $50.04    | $0.069           | 57%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $868.00    | $23.98    | $0.066           | 59%                     | $0.16             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,664.00  | $0.00     | $0.063           | 61%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $60.27    | $0.083           | 48%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $60.27    | $0.083           | 48%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $1,020.00  | $27.78    | $0.077           | 52%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,996.00  | $0.00     | $0.076           | 53%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $112.59   | $0.154           | 36%                     | $0.24             |
@@ -2323,7 +2323,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $75.06    | $0.103           | 57%                     | $0.24             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,300.00  | $36.03    | $0.099           | 59%                     | $0.24             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,496.00  | $0.00     | $0.095           | 60%                     | $0.24             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $90.41   | $0.124           | 48%                     | $0.24             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $90.41   | $0.124           | 48%                     | $0.24             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,532.00  | $41.61   | $0.115           | 52%                     | $0.24             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,996.00  | $0.00     | $0.114           | 53%                     | $0.24             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $150.11  | $0.206           | 36%                     | $0.32             |
@@ -2335,7 +2335,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $100.08   | $0.137           | 57%                     | $0.32             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,736.00  | $47.97    | $0.132           | 59%                     | $0.32             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,328.00  | $0.00     | $0.127           | 60%                     | $0.32             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $120.55   | $0.165           | 48%                     | $0.32             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $120.55   | $0.165           | 48%                     | $0.32             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $2,040.00  | $55.56    | $0.154           | 52%                     | $0.32             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,992.00  | $0.00     | $0.152           | 53%                     | $0.32             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $225.17   | $0.308           | 36%                     | $0.48             |
@@ -2347,7 +2347,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $150.11  | $0.206           | 57%                     | $0.48             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,600.00  | $72.06    | $0.198           | 59%                     | $0.48             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $4,992.00  | $0.00     | $0.190           | 60%                     | $0.48             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $180.82   | $0.248           | 48%                     | $0.48             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $180.82   | $0.248           | 48%                     | $0.48             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $3,064.00  | $83.23    | $0.231          | 52%                     | $0.48             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,992.00  | $0.00     | $0.228           | 53%                     | $0.48             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $225.17   | $0.308           | 36%                     | $0.48             |
@@ -2359,7 +2359,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $150.11  | $0.206           | 57%                     | $0.48             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,604.00  | $71.95    | $0.198           | 59%                     | $0.48             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $4,992.00  | $0.00     | $0.190           | 60%                     | $0.48             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $180.82   | $0.248           | 48%                     | $0.48             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $180.82   | $0.248           | 48%                     | $0.48             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $3,060.00  | $83.34    | $0.231          | 52%                     | $0.48             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,988.00  | $0.00     | $0.228           | 53%                     | $0.48             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $337.76   | $0.463           | 36%                     | $0.72             |
@@ -2371,7 +2371,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $225.17   | $0.308           | 57%                     | $0.72             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $3,900.00  | $108.09   | $0.296           | 59%                     | $0.72             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $7,488.00  | $0.00     | $0.285           | 60%                     | $0.72             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $271.23   | $0.372           | 48%                     | $0.72             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $271.23   | $0.372           | 48%                     | $0.72             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,596.00  | $124.84   | $0.346           | 52%                     | $0.72             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $8,988.00  | $0.00     | $0.342           | 53%                     | $0.72             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $300.23   | $0.411          | 36%                     | $0.64             |
@@ -2383,7 +2383,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $200.15   | $0.274           | 57%                     | $0.64             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,472.00  | $95.93    | $0.264           | 59%                     | $0.64             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $6,656.00  | $0.00     | $0.253           | 60%                     | $0.64             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $241.09   | $0.330           | 48%                     | $0.64             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $241.09   | $0.330           | 48%                     | $0.64             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $4,080.00  | $111.12   | $0.307           | 52%                     | $0.64             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $7,984.00  | $0.00     | $0.304           | 53%                     | $0.64             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $450.34   | $0.617           | 36%                     | $0.96             |
@@ -2395,7 +2395,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $300.23   | $0.411          | 57%                     | $0.96             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $5,200.00  | $144.12   | $0.395           | 59%                     | $0.96             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $9,984.00  | $0.00     | $0.380           | 60%                     | $0.96             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $361.64   | $0.495           | 48%                     | $0.96             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $361.64   | $0.495           | 48%                     | $0.96             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $6,128.00  | $166.46   | $0.461          | 52%                     | $0.96             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $11,984.00 | $0.00     | $0.456           | 53%                     | $0.96             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $450.34   | $0.617           | 36%                     | $0.96             |
@@ -2407,7 +2407,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $300.23   | $0.411          | 57%                     | $0.96             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $5,208.00  | $143.90   | $0.395           | 59%                     | $0.96             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $9,984.00  | $0.00     | $0.380           | 60%                     | $0.96             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $361.64   | $0.495           | 48%                     | $0.96             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $361.64   | $0.495           | 48%                     | $0.96             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $6,120.00  | $166.67   | $0.461          | 52%                     | $0.96             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $11,976.00 | $0.00     | $0.456           | 53%                     | $0.96             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $675.52   | $0.925           | 36%                     | $1.44             |
@@ -2419,7 +2419,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $450.34   | $0.617           | 57%                     | $1.44             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $7,800.00  | $216.17   | $0.593           | 59%                     | $1.44             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $14,976.00 | $0.00     | $0.570           | 60%                     | $1.44             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $542.46   | $0.743           | 48%                     | $1.44             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $542.46   | $0.743           | 48%                     | $1.44             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $9,192.00  | $249.68   | $0.692           | 52%                     | $1.44             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $17,976.00 | $0.00     | $0.684           | 53%                     | $1.44             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $600.46   | $0.823           | 36%                     | $1.28             |
@@ -2431,7 +2431,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $400.31  | $0.548           | 57%                     | $1.28             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $6,944.00  | $191.86   | $0.527           | 59%                     | $1.28             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $13,312.00 | $0.00     | $0.507           | 60%                     | $1.28             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $482.19   | $0.661          | 48%                     | $1.28             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $482.19   | $0.661          | 48%                     | $1.28             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $8,160.00  | $222.23   | $0.615           | 52%                     | $1.28             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $15,968.00 | $0.00     | $0.608           | 53%                     | $1.28             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $900.69   | $1.234           | 36%                     | $1.92             |
@@ -2443,7 +2443,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $600.46   | $0.823           | 57%                     | $1.92             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $10,400.00 | $288.23   | $0.791          | 59%                     | $1.92             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $19,968.00 | $0.00     | $0.760           | 60%                     | $1.92             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $723.28   | $0.991          | 48%                     | $1.92             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $723.28   | $0.991          | 48%                     | $1.92             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $12,256.00 | $332.91  | $0.922           | 52%                     | $1.92             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $23,968.00 | $0.00     | $0.912           | 53%                     | $1.92             |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,576.20 | $2.159           | 36%                     | $3.36             |
@@ -2455,7 +2455,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,050.80 | $1.439           | 57%                     | $3.36             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $18,200.00 | $504.41  | $1.384           | 59%                     | $3.36             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $34,944.00 | $0.00     | $1.330           | 60%                     | $3.36             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,265.74 | $1.734           | 48%                     | $3.36             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,265.74 | $1.734           | 48%                     | $3.36             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $21,448.00 | $582.59   | $1.614           | 52%                     | $3.36             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $41,944.00 | $0.00     | $1.596           | 53%                     | $3.36             |
 
@@ -2472,7 +2472,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $38.38    | $0.053           | 56%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $672.00    | $18.26    | $0.051          | 58%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,274.00  | $0.00     | $0.048           | 60%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $44.35    | $0.061          | 49%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $44.35    | $0.061          | 49%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $780.00    | $21.28    | $0.059           | 51%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,498.00  | $0.00     | $0.057           | 53%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $72.78    | $0.100           | 38%                     | $0.16             |
@@ -2484,7 +2484,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $51.18    | $0.070           | 56%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $896.00    | $24.35    | $0.067           | 58%                     | $0.16             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,700.00  | $0.00     | $0.065           | 59%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $59.14    | $0.081          | 49%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $59.14    | $0.081          | 49%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $1,040.00  | $28.37    | $0.078           | 51%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,996.00  | $0.00     | $0.076           | 53%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $109.17   | $0.150           | 38%                     | $0.24             |
@@ -2496,7 +2496,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $76.76    | $0.105           | 56%                     | $0.24             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,344.00  | $36.53    | $0.101          | 58%                     | $0.24             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,548.00  | $0.00     | $0.097           | 60%                     | $0.24             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $88.70    | $0.122           | 49%                     | $0.24             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $88.70    | $0.122           | 49%                     | $0.24             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,560.00  | $42.55    | $0.118           | 51%                     | $0.24             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,996.00  | $0.00     | $0.114           | 53%                     | $0.24             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $145.57   | $0.199           | 38%                     | $0.32             |
@@ -2508,7 +2508,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $102.35   | $0.140           | 56%                     | $0.32             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,792.00  | $48.71   | $0.135           | 58%                     | $0.32             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,400.00  | $0.00     | $0.129           | 60%                     | $0.32             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $118.27   | $0.162           | 49%                     | $0.32             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $118.27   | $0.162           | 49%                     | $0.32             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $2,080.00  | $56.74    | $0.157           | 51%                     | $0.32             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,992.00  | $0.00     | $0.152           | 53%                     | $0.32             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $218.35   | $0.299           | 36%                     | $0.47             |
@@ -2520,7 +2520,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $153.53   | $0.210           | 55%                     | $0.47             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,688.00  | $73.06    | $0.202           | 57%                     | $0.47             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,096.00  | $0.00     | $0.194           | 59%                     | $0.47             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $177.41  | $0.243           | 48%                     | $0.47             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $177.41  | $0.243           | 48%                     | $0.47             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $3,120.00  | $85.11   | $0.235           | 50%                     | $0.47             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,992.00  | $0.00     | $0.228           | 51%                     | $0.47             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $218.35   | $0.299           | 36%                     | $0.47             |
@@ -2532,7 +2532,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $153.53   | $0.210           | 55%                     | $0.47             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,688.00  | $73.06    | $0.202           | 57%                     | $0.47             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,100.00  | $0.00     | $0.194           | 59%                     | $0.47             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $177.41  | $0.243           | 48%                     | $0.47             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $177.41  | $0.243           | 48%                     | $0.47             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $3,120.00  | $85.11   | $0.235           | 50%                     | $0.47             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,988.00  | $0.00     | $0.228           | 51%                     | $0.47             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $327.52   | $0.449           | 37%                     | $0.71            |
@@ -2544,7 +2544,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $230.29   | $0.315           | 56%                     | $0.71            |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,032.00  | $109.59   | $0.304           | 57%                     | $0.71            |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,644.00  | $0.00     | $0.291          | 59%                     | $0.71            |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $266.11  | $0.365           | 49%                     | $0.71            |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $266.11  | $0.365           | 49%                     | $0.71            |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,680.00  | $127.66   | $0.353           | 50%                     | $0.71            |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $8,988.00  | $0.00     | $0.342           | 52%                     | $0.71            |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $291.13   | $0.399           | 37%                     | $0.63             |
@@ -2556,7 +2556,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $204.70   | $0.280           | 56%                     | $0.63             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,584.00  | $97.41   | $0.270           | 57%                     | $0.63             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,800.00  | $0.00     | $0.259           | 59%                     | $0.63             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $236.54   | $0.324           | 49%                     | $0.63             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $236.54   | $0.324           | 49%                     | $0.63             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $4,160.00  | $113.47   | $0.314           | 50%                     | $0.63             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $7,984.00  | $0.00     | $0.304           | 52%                     | $0.63             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $436.70   | $0.598           | 37%                     | $0.95             |
@@ -2568,7 +2568,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $307.05   | $0.421          | 56%                     | $0.95             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,376.00  | $146.12   | $0.405           | 57%                     | $0.95             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $10,192.00 | $0.00     | $0.388           | 59%                     | $0.95             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $354.82   | $0.486           | 49%                     | $0.95             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $354.82   | $0.486           | 49%                     | $0.95             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $6,240.00  | $170.21  | $0.471          | 50%                     | $0.95             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $11,984.00 | $0.00     | $0.456           | 52%                     | $0.95             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $436.70   | $0.598           | 37%                     | $0.95             |
@@ -2580,7 +2580,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $307.05   | $0.421          | 56%                     | $0.95             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,376.00  | $146.12   | $0.405           | 57%                     | $0.95             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $10,200.00 | $0.00     | $0.388           | 59%                     | $0.95             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $354.82   | $0.486           | 49%                     | $0.95             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $354.82   | $0.486           | 49%                     | $0.95             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $6,240.00  | $170.21  | $0.471          | 50%                     | $0.95             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $11,976.00 | $0.00     | $0.456           | 52%                     | $0.95             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $655.04   | $0.897           | 37%                     | $1.42             |
@@ -2592,7 +2592,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $460.58   | $0.631          | 56%                     | $1.42             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $8,064.00  | $219.18   | $0.607           | 57%                     | $1.42             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $15,288.00 | $0.00     | $0.582           | 59%                     | $1.42             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $532.22   | $0.729           | 49%                     | $1.42             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $532.22   | $0.729           | 49%                     | $1.42             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $9,360.00  | $255.32   | $0.706           | 50%                     | $1.42             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $17,976.00 | $0.00     | $0.684           | 52%                     | $1.42             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $582.26   | $0.798           | 37%                     | $1.26             |
@@ -2604,7 +2604,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $409.40   | $0.561          | 55%                     | $1.26             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $7,168.00  | $194.82   | $0.540           | 57%                     | $1.26             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $13,600.00 | $0.00     | $0.518           | 59%                     | $1.26             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $473.09   | $0.648           | 49%                     | $1.26             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $473.09   | $0.648           | 49%                     | $1.26             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $8,320.00  | $226.95   | $0.627           | 50%                     | $1.26             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $15,968.00 | $0.00     | $0.608           | 52%                     | $1.26             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $873.39   | $1.196           | 37%                     | $1.90             |
@@ -2616,7 +2616,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $614.10   | $0.841          | 56%                     | $1.90             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $10,752.00 | $292.24   | $0.809           | 57%                     | $1.90             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $20,384.00 | $0.00     | $0.776           | 59%                     | $1.90             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $709.63   | $0.972           | 49%                     | $1.90             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $709.63   | $0.972           | 49%                     | $1.90             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $12,480.00 | $340.42   | $0.941          | 50%                     | $1.90             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $23,968.00 | $0.00     | $0.912           | 52%                     | $1.90             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $873.39   | $1.196           | 37%                     | $1.90             |
@@ -2628,7 +2628,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $614.10   | $0.841          | 56%                     | $1.90             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $10,752.00 | $292.24   | $0.809           | 57%                     | $1.90             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $20,400.00 | $0.00     | $0.776           | 59%                     | $1.90             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $709.63   | $0.972           | 49%                     | $1.90             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $709.63   | $0.972           | 49%                     | $1.90             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $12,480.00 | $340.42   | $0.941          | 50%                     | $1.90             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $23,952.00 | $0.00     | $0.911          | 52%                     | $1.90             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,310.09 | $1.795           | 37%                     | $2.85             |
@@ -2640,7 +2640,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $921.16   | $1.262           | 56%                     | $2.85             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $16,128.00 | $438.35   | $1.214           | 57%                     | $2.85             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $30,576.00 | $0.00     | $1.163           | 59%                     | $2.85             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,064.45 | $1.458           | 49%                     | $2.85             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,064.45 | $1.458           | 49%                     | $2.85             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $18,720.00 | $510.63   | $1.412           | 50%                     | $2.85             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $35,952.00 | $0.00     | $1.368           | 52%                     | $2.85             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $1,164.52 | $1.595           | 37%                     | $2.53             |
@@ -2652,7 +2652,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $818.81  | $1.122           | 56%                     | $2.53             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $14,336.00 | $389.65   | $1.079           | 57%                     | $2.53             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $27,200.00 | $0.00     | $1.035           | 59%                     | $2.53             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $946.18   | $1.296           | 49%                     | $2.53             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $946.18   | $1.296           | 49%                     | $2.53             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $16,640.00 | $453.89   | $1.255           | 50%                     | $2.53             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $31,936.00 | $0.00     | $1.215           | 52%                     | $2.53             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,746.79 | $2.393           | 37%                     | $3.80             |
@@ -2664,7 +2664,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,228.21 | $1.682           | 56%                     | $3.80             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $21,504.00 | $584.47   | $1.619           | 57%                     | $3.80             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $40,768.00 | $0.00     | $1.551          | 59%                     | $3.80             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,419.26 | $1.944           | 49%                     | $3.80             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,419.26 | $1.944           | 49%                     | $3.80             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $24,960.00 | $680.84   | $1.882           | 50%                     | $3.80             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $47,936.00 | $0.00     | $1.824           | 52%                     | $3.80             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,183.48 | $2.991          | 37%                     | $4.74             |
@@ -2676,7 +2676,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,535.26 | $2.103           | 56%                     | $4.74             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $26,880.00 | $730.59   | $2.024           | 57%                     | $4.74             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $50,960.00 | $0.00     | $1.939           | 59%                     | $4.74             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,774.08 | $2.430           | 49%                     | $4.74             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,774.08 | $2.430           | 49%                     | $4.74             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $31,200.00 | $851.05   | $2.353           | 50%                     | $4.74             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $59,920.00 | $0.00     | $2.280           | 52%                     | $4.74             |
 
@@ -2795,7 +2795,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $37.32    | $0.051          | 54%                     | $0.11            |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $636.00    | $17.52    | $0.048           | 56%                     | $0.11            |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,188.00  | $0.00     | $0.045           | 59%                     | $0.11            |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $40.50    | $0.055           | 50%                     | $0.11            |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $40.50    | $0.055           | 50%                     | $0.11            |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $722.00    | $19.93    | $0.055           | 50%                     | $0.11            |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,418.00  | $0.00     | $0.054           | 51%                     | $0.11            |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $72.00    | $0.099           | 34%                     | $0.15             |
@@ -2807,7 +2807,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $49.76    | $0.068           | 55%                     | $0.15             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $848.00    | $23.36    | $0.064           | 57%                     | $0.15             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,584.00  | $0.00     | $0.060           | 60%                     | $0.15             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $54.00    | $0.074           | 51%                     | $0.15             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $54.00    | $0.074           | 51%                     | $0.15             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $964.00    | $26.53    | $0.073           | 51%                     | $0.15             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,892.00  | $0.00     | $0.072           | 52%                     | $0.15             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $108.00   | $0.148           | 33%                     | $0.22             |
@@ -2819,7 +2819,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $74.65    | $0.102           | 54%                     | $0.22             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,272.00  | $35.03    | $0.096           | 56%                     | $0.22             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,376.00  | $0.00     | $0.090           | 59%                     | $0.22             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $81.00    | $0.111          | 50%                     | $0.22             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $81.00    | $0.111          | 50%                     | $0.22             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,444.00  | $39.85    | $0.110           | 50%                     | $0.22             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,836.00  | $0.00     | $0.108           | 51%                     | $0.22             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $144.00   | $0.197           | 32%                     | $0.29             |
@@ -2831,7 +2831,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $99.53    | $0.136           | 53%                     | $0.29             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,696.00  | $46.71   | $0.129           | 56%                     | $0.29             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,168.00  | $0.00     | $0.121          | 58%                     | $0.29             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $108.00   | $0.148           | 49%                     | $0.29             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $108.00   | $0.148           | 49%                     | $0.29             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,928.00  | $53.06    | $0.146           | 50%                     | $0.29             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,784.00  | $0.00     | $0.144           | 50%                     | $0.29             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $216.00   | $0.296           | 33%                     | $0.44             |
@@ -2843,7 +2843,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $149.29   | $0.205           | 53%                     | $0.44             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,544.00  | $70.07    | $0.193           | 56%                     | $0.44             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $4,752.00  | $0.00     | $0.181          | 59%                     | $0.44             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $162.00   | $0.222           | 50%                     | $0.44             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $162.00   | $0.222           | 50%                     | $0.44             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,888.00  | $79.70    | $0.219           | 50%                     | $0.44             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $5,672.00  | $0.00     | $0.216           | 51%                     | $0.44             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $216.00   | $0.296           | 33%                     | $0.44             |
@@ -2855,7 +2855,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $149.29   | $0.205           | 53%                     | $0.44             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,544.00  | $70.07    | $0.193           | 56%                     | $0.44             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $4,752.00  | $0.00     | $0.181          | 59%                     | $0.44             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $162.00   | $0.222           | 50%                     | $0.44             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $162.00   | $0.222           | 50%                     | $0.44             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,892.00  | $79.59    | $0.219           | 50%                     | $0.44             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $5,676.00  | $0.00     | $0.216           | 51%                     | $0.44             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $324.00   | $0.444           | 33%                     | $0.66             |
@@ -2867,7 +2867,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $223.94   | $0.307           | 53%                     | $0.66             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,816.00  | $105.10   | $0.289           | 56%                     | $0.66             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $7,128.00  | $0.00     | $0.271          | 59%                     | $0.66             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $243.00   | $0.333           | 50%                     | $0.66             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $243.00   | $0.333           | 50%                     | $0.66             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $4,332.00  | $119.55   | $0.329           | 50%                     | $0.66             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $8,508.00  | $0.00     | $0.324           | 51%                     | $0.66             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $288.00   | $0.395           | 33%                     | $0.59             |
@@ -2879,7 +2879,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $199.06   | $0.273           | 54%                     | $0.59             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,392.00  | $93.42    | $0.257           | 56%                     | $0.59             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,336.00  | $0.00     | $0.241          | 59%                     | $0.59             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $216.00   | $0.296           | 50%                     | $0.59             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $216.00   | $0.296           | 50%                     | $0.59             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,856.00  | $106.12   | $0.292           | 51%                     | $0.59             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $7,568.00  | $0.00     | $0.288           | 51%                     | $0.59             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $432.00   | $0.592           | 33%                     | $0.88             |
@@ -2891,7 +2891,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $298.59   | $0.409           | 54%                     | $0.88             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,088.00  | $140.13   | $0.386           | 56%                     | $0.88             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $9,504.00  | $0.00     | $0.362           | 59%                     | $0.88             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $324.00   | $0.444           | 50%                     | $0.88             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $324.00   | $0.444           | 50%                     | $0.88             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $5,776.00  | $159.40   | $0.438           | 50%                     | $0.88             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $11,344.00 | $0.00     | $0.432           | 51%                     | $0.88             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $432.00   | $0.592           | 33%                     | $0.88             |
@@ -2903,7 +2903,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $298.59   | $0.409           | 54%                     | $0.88             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,088.00  | $140.13   | $0.386           | 56%                     | $0.88             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $9,504.00  | $0.00     | $0.362           | 59%                     | $0.88             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $324.00   | $0.444           | 50%                     | $0.88             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $324.00   | $0.444           | 50%                     | $0.88             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $5,784.00  | $159.18   | $0.438           | 50%                     | $0.88             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $11,352.00 | $0.00     | $0.432           | 51%                     | $0.88             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $648.00   | $0.888           | 33%                     | $1.32             |
@@ -2915,7 +2915,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $447.88   | $0.614           | 53%                     | $1.32             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $7,632.00  | $210.20   | $0.578           | 56%                     | $1.32             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $14,256.00 | $0.00     | $0.542           | 59%                     | $1.32             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $486.00   | $0.666           | 50%                     | $1.32             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $486.00   | $0.666           | 50%                     | $1.32             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $8,664.00  | $239.10   | $0.657           | 50%                     | $1.32             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $17,016.00 | $0.00     | $0.647           | 51%                     | $1.32             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $576.00   | $0.789           | 33%                     | $1.18             |
@@ -2927,7 +2927,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $398.12   | $0.545           | 54%                     | $1.18             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $6,784.00  | $186.84   | $0.514           | 56%                     | $1.18             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $12,672.00 | $0.00     | $0.482           | 59%                     | $1.18             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $432.00   | $0.592           | 50%                     | $1.18             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $432.00   | $0.592           | 50%                     | $1.18             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $7,712.00  | $212.24   | $0.584           | 51%                     | $1.18             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $15,136.00 | $0.00     | $0.576           | 51%                     | $1.18             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $864.00   | $1.184           | 33%                     | $1.77             |
@@ -2939,7 +2939,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $597.18   | $0.818           | 54%                     | $1.77             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $10,176.00 | $280.26   | $0.771          | 56%                     | $1.77             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $19,008.00 | $0.00     | $0.723           | 59%                     | $1.77             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $648.00   | $0.888           | 50%                     | $1.77             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $648.00   | $0.888           | 50%                     | $1.77             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $11,552.00 | $318.80   | $0.876           | 51%                     | $1.77             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $22,688.00 | $0.00     | $0.863           | 51%                     | $1.77             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $864.00   | $1.184           | 33%                     | $1.77             |
@@ -2951,7 +2951,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $597.18   | $0.818           | 54%                     | $1.77             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $10,176.00 | $280.26   | $0.771          | 56%                     | $1.77             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $19,008.00 | $0.00     | $0.723           | 59%                     | $1.77             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $648.00   | $0.888           | 50%                     | $1.77             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $648.00   | $0.888           | 50%                     | $1.77             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $11,568.00 | $318.36   | $0.876           | 51%                     | $1.77             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $22,704.00 | $0.00     | $0.864           | 51%                     | $1.77             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $1,296.00 | $1.775           | 33%                     | $2.65             |
@@ -2963,7 +2963,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $895.76   | $1.227           | 54%                     | $2.65             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $15,264.00 | $420.40   | $1.157           | 56%                     | $2.65             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $28,512.00 | $0.00     | $1.085           | 59%                     | $2.65             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $972.00   | $1.332           | 50%                     | $2.65             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $972.00   | $1.332           | 50%                     | $2.65             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $17,328.00 | $478.20   | $1.314           | 50%                     | $2.65             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $34,032.00 | $0.00     | $1.295           | 51%                     | $2.65             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $1,152.00 | $1.578           | 33%                     | $2.36             |
@@ -2975,7 +2975,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $796.24   | $1.091          | 54%                     | $2.36             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $13,568.00 | $373.69   | $1.028           | 56%                     | $2.36             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $25,344.00 | $0.00     | $0.964           | 59%                     | $2.36             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $864.00   | $1.184           | 50%                     | $2.36             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $864.00   | $1.184           | 50%                     | $2.36             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $15,424.00 | $424.48   | $1.168           | 51%                     | $2.36             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $30,272.00 | $0.00     | $1.152           | 51%                     | $2.36             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,728.00 | $2.367           | 33%                     | $3.53             |
@@ -2987,7 +2987,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,194.35 | $1.636           | 54%                     | $3.53             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $20,352.00 | $560.53   | $1.542           | 56%                     | $3.53             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $38,016.00 | $0.00     | $1.447           | 59%                     | $3.53             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,296.00 | $1.775           | 50%                     | $3.53             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,296.00 | $1.775           | 50%                     | $3.53             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $23,104.00 | $637.60   | $1.753           | 50%                     | $3.53             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $45,376.00 | $0.00     | $1.727           | 51%                     | $3.53             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,160.00 | $2.959           | 33%                     | $4.42             |
@@ -2999,7 +2999,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,492.94 | $2.045           | 54%                     | $4.42             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $25,440.00 | $700.66   | $1.928           | 56%                     | $4.42             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $47,520.00 | $0.00     | $1.808           | 59%                     | $4.42             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,620.00 | $2.219           | 50%                     | $4.42             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,620.00 | $2.219           | 50%                     | $4.42             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $28,880.00 | $797.00   | $2.191          | 50%                     | $4.42             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $56,720.00 | $0.00     | $2.158           | 51%                     | $4.42             |
 
@@ -3016,7 +3016,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $55.18    | $0.076           | 60%                     | $0.19             |
 | Standard 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $980.00    | $26.99    | $0.074           | 61%                     | $0.19             |
 | Standard 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $1,916.00  | $0.00     | $0.073           | 62%                     | $0.19             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $72.68    | $0.100           | 47%                     | $0.19             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $72.68    | $0.100           | 47%                     | $0.19             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE8     | 4    | 8    | $1,200.00  | $33.07    | $0.091          | 52%                     | $0.19             |
 | Convertible 3-Year Term - all upfront | C3.LARGE8     | 4    | 8    | $2,356.00  | $0.00     | $0.090           | 53%                     | $0.19             |
 |  Standard 1-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $141.32   | $0.194           | 31%                     | $0.28             |
@@ -3028,7 +3028,7 @@
 | Standard 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $82.77    | $0.113           | 60%                     | $0.28             |
 | Standard 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,468.00  | $40.53    | $0.111          | 60%                     | $0.28             |
 | Standard 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $2,876.00  | $0.00     | $0.109           | 61%                     | $0.28             |
-| StConvertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $109.02   | $0.149           | 47%                     | $0.28             |
+| Convertible 3-Year Term - no upfront   | C3.LARGE16    | 4    | 16   | $0.00      | $109.02   | $0.149           | 47%                     | $0.28             |
 | Convertible 3-Year Term - partial upfront | C3.LARGE16    | 4    | 16   | $1,800.00  | $49.61   | $0.136           | 51%                     | $0.28             |
 | Convertible 3-Year Term - all upfront | C3.LARGE16    | 4    | 16   | $3,532.00  | $0.00     | $0.134           | 52%                     | $0.28             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $188.42   | $0.258           | 30%                     | $0.37             |
@@ -3040,7 +3040,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $110.36   | $0.151          | 59%                     | $0.37             |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $1,960.00  | $53.97    | $0.149           | 60%                     | $0.37             |
 | Standard 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $3,832.00  | $0.00     | $0.146           | 61%                     | $0.37             |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $145.36   | $0.199           | 46%                     | $0.37             |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE16  | 8    | 16   | $0.00      | $145.36   | $0.199           | 46%                     | $0.37             |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE16  | 8    | 16   | $2,400.00  | $66.14    | $0.182           | 51%                     | $0.37             |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE16  | 8    | 16   | $4,712.00  | $0.00     | $0.179           | 52%                     | $0.37             |
 |  Standard 1-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $282.64   | $0.387           | 31%                     | $0.56             |
@@ -3052,7 +3052,7 @@
 | Standard 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $165.54   | $0.227           | 59%                     | $0.56             |
 | Standard 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $2,936.00  | $81.07    | $0.223           | 60%                     | $0.56             |
 | Standard 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $5,752.00  | $0.00     | $0.219           | 61%                     | $0.56             |
-| StConvertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $218.03   | $0.299           | 47%                     | $0.56             |
+| Convertible 3-Year Term - no upfront   | C3.2XLARGE32  | 8    | 32   | $0.00      | $218.03   | $0.299           | 47%                     | $0.56             |
 | Convertible 3-Year Term - partial upfront | C3.2XLARGE32  | 8    | 32   | $3,600.00  | $99.21   | $0.273           | 51%                     | $0.56             |
 | Convertible 3-Year Term - all upfront | C3.2XLARGE32  | 8    | 32   | $7,064.00  | $0.00     | $0.269           | 52%                     | $0.56             |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $376.85   | $0.516           | 31%                     | $0.75             |
@@ -3064,7 +3064,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $220.72   | $0.302           | 60%                     | $0.75             |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $3,920.00  | $107.94   | $0.297           | 60%                     | $0.75             |
 | Standard 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $7,664.00  | $0.00     | $0.292           | 61%                     | $0.75             |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $290.71  | $0.398           | 47%                     | $0.75             |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE32  | 16   | 32   | $0.00      | $290.71  | $0.398           | 47%                     | $0.75             |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE32  | 16   | 32   | $4,800.00  | $132.29   | $0.364           | 51%                     | $0.75             |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE32  | 16   | 32   | $9,424.00  | $0.00     | $0.359           | 52%                     | $0.75             |
 |  Standard 1-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $565.27   | $0.774           | 31%                     | $1.12             |
@@ -3076,7 +3076,7 @@
 | Standard 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $331.09   | $0.454           | 59%                     | $1.12             |
 | Standard 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $5,872.00  | $162.14   | $0.446           | 60%                     | $1.12             |
 | Standard 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $11,504.00 | $0.00     | $0.438           | 61%                     | $1.12             |
-| StConvertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $436.07   | $0.597           | 47%                     | $1.12             |
+| Convertible 3-Year Term - no upfront   | C3.4XLARGE64  | 16   | 64   | $0.00      | $436.07   | $0.597           | 47%                     | $1.12             |
 | Convertible 3-Year Term - partial upfront | C3.4XLARGE64  | 16   | 64   | $7,200.00  | $198.43   | $0.546           | 51%                     | $1.12             |
 | Convertible 3-Year Term - all upfront | C3.4XLARGE64  | 16   | 64   | $14,128.00 | $0.00     | $0.538           | 52%                     | $1.12             |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $753.69   | $1.032           | 31%                     | $1.50             |
@@ -3088,7 +3088,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $441.45   | $0.605           | 60%                     | $1.50             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $7,840.00  | $215.89   | $0.594           | 60%                     | $1.50             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $15,328.00 | $0.00     | $0.583           | 61%                     | $1.50             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $581.42   | $0.796           | 47%                     | $1.50             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE64  | 32   | 64   | $0.00      | $581.42   | $0.796           | 47%                     | $1.50             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE64  | 32   | 64   | $9,600.00  | $264.57   | $0.728           | 51%                     | $1.50             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE64  | 32   | 64   | $18,848.00 | $0.00     | $0.717           | 52%                     | $1.50             |
 |  Standard 1-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $1,130.54 | $1.549           | 31%                     | $2.25             |
@@ -3100,7 +3100,7 @@
 | Standard 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $662.17   | $0.907           | 60%                     | $2.25             |
 | Standard 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $11,744.00 | $324.27   | $0.891          | 60%                     | $2.25             |
 | Standard 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $23,008.00 | $0.00     | $0.875           | 61%                     | $2.25             |
-| StConvertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $872.13   | $1.195           | 47%                     | $2.25             |
+| Convertible 3-Year Term - no upfront   | C3.8XLARGE128 | 32   | 128  | $0.00      | $872.13   | $1.195           | 47%                     | $2.25             |
 | Convertible 3-Year Term - partial upfront | C3.8XLARGE128 | 32   | 128  | $14,400.00 | $396.86   | $1.092           | 51%                     | $2.25             |
 | Convertible 3-Year Term - all upfront | C3.8XLARGE128 | 32   | 128  | $28,256.00 | $0.00     | $1.075           | 52%                     | $2.25             |
 
@@ -3118,7 +3118,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $42.52    | $0.058           | 55%                     | $0.13             |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $758.00    | $20.85    | $0.057           | 56%                     | $0.13             |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,418.00  | $0.00     | $0.054           | 58%                     | $0.13             |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $49.75    | $0.068           | 48%                     | $0.13             |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $49.75    | $0.068           | 48%                     | $0.13             |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $862.00    | $23.42    | $0.065           | 50%                     | $0.13             |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,654.00  | $0.00     | $0.063           | 52%                     | $0.13             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $79.61   | $0.109           | 36%                     | $0.17             |
@@ -3130,7 +3130,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $56.69    | $0.078           | 54%                     | $0.17             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $1,012.00  | $27.76    | $0.077           | 55%                     | $0.17             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,892.00  | $0.00     | $0.072           | 58%                     | $0.17             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $66.34    | $0.091          | 46%                     | $0.17             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $66.34    | $0.091          | 46%                     | $0.17             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $1,148.00  | $31.27    | $0.087           | 49%                     | $0.17             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $2,204.00  | $0.00     | $0.084           | 51%                     | $0.17             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $119.41  | $0.164           | 34%                     | $0.25             |
@@ -3142,7 +3142,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $85.03    | $0.116           | 54%                     | $0.25             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,516.00  | $41.69    | $0.115           | 54%                     | $0.25             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,836.00  | $0.00     | $0.108           | 57%                     | $0.25             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $99.51   | $0.136           | 46%                     | $0.25             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $99.51   | $0.136           | 46%                     | $0.25             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,724.00  | $46.85    | $0.130           | 48%                     | $0.25             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $3,308.00  | $0.00     | $0.126           | 50%                     | $0.25             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $159.21  | $0.218           | 36%                     | $0.34             |
@@ -3154,7 +3154,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $113.38   | $0.155           | 54%                     | $0.34             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $2,024.00  | $55.51   | $0.153           | 55%                     | $0.34             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,784.00  | $0.00     | $0.144           | 58%                     | $0.34             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $132.68   | $0.182           | 46%                     | $0.34             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $132.68   | $0.182           | 46%                     | $0.34             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $2,296.00  | $62.54    | $0.173           | 49%                     | $0.34             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $4,408.00  | $0.00     | $0.168           | 51%                     | $0.34             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $238.82   | $0.327           | 35%                     | $0.50             |
@@ -3166,7 +3166,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $170.07   | $0.233           | 53%                     | $0.50             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $3,032.00  | $83.38    | $0.230           | 54%                     | $0.50             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $5,672.00  | $0.00     | $0.216           | 57%                     | $0.50             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $199.02   | $0.273           | 45%                     | $0.50             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $199.02   | $0.273           | 45%                     | $0.50             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $3,448.00  | $93.69    | $0.260           | 48%                     | $0.50             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $6,616.00  | $0.00     | $0.252           | 50%                     | $0.50             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $238.82   | $0.327           | 35%                     | $0.50             |
@@ -3178,7 +3178,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $170.07   | $0.233           | 53%                     | $0.50             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $3,036.00  | $83.27    | $0.230           | 54%                     | $0.50             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $5,676.00  | $0.00     | $0.216           | 57%                     | $0.50             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $199.02   | $0.273           | 45%                     | $0.50             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $199.02   | $0.273           | 45%                     | $0.50             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $3,444.00  | $93.80    | $0.260           | 48%                     | $0.50             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $6,612.00  | $0.00     | $0.252           | 50%                     | $0.50             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $358.23   | $0.491          | 35%                     | $0.75             |
@@ -3190,7 +3190,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $255.10   | $0.349           | 53%                     | $0.75             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $4,548.00  | $125.07   | $0.344           | 54%                     | $0.75             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $8,508.00  | $0.00     | $0.324           | 57%                     | $0.75             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $298.52   | $0.409           | 45%                     | $0.75             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $298.52   | $0.409           | 45%                     | $0.75             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $5,172.00  | $140.54   | $0.389           | 48%                     | $0.75             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $9,924.00  | $0.00     | $0.378           | 50%                     | $0.75             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $318.42   | $0.436           | 35%                     | $0.67             |
@@ -3202,7 +3202,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $226.76   | $0.311          | 54%                     | $0.67             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $4,048.00  | $111.03   | $0.306           | 54%                     | $0.67             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $7,568.00  | $0.00     | $0.288           | 57%                     | $0.67             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $265.35   | $0.363           | 46%                     | $0.67             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $265.35   | $0.363           | 46%                     | $0.67             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $4,592.00  | $125.07   | $0.346           | 48%                     | $0.67             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $8,816.00  | $0.00     | $0.335           | 50%                     | $0.67             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $477.64   | $0.654           | 35%                     | $1.01            |
@@ -3214,7 +3214,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $340.14   | $0.466           | 54%                     | $1.01            |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $6,064.00  | $166.76   | $0.459           | 55%                     | $1.01            |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $11,344.00 | $0.00     | $0.432           | 57%                     | $1.01            |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $398.03   | $0.545           | 46%                     | $1.01            |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $398.03   | $0.545           | 46%                     | $1.01            |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $6,896.00  | $187.39   | $0.519           | 49%                     | $1.01            |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $13,232.00 | $0.00     | $0.504           | 50%                     | $1.01            |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $477.64   | $0.654           | 35%                     | $1.01            |
@@ -3226,7 +3226,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $340.14   | $0.466           | 54%                     | $1.01            |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $6,072.00  | $166.54   | $0.459           | 55%                     | $1.01            |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $11,352.00 | $0.00     | $0.432           | 57%                     | $1.01            |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $398.03   | $0.545           | 46%                     | $1.01            |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $398.03   | $0.545           | 46%                     | $1.01            |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $6,888.00  | $187.61  | $0.519           | 49%                     | $1.01            |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $13,224.00 | $0.00     | $0.503           | 50%                     | $1.01            |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $716.46   | $0.981          | 35%                     | $1.51            |
@@ -3238,7 +3238,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $510.20   | $0.699           | 54%                     | $1.51            |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $9,096.00  | $250.14   | $0.689           | 54%                     | $1.51            |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $17,016.00 | $0.00     | $0.647           | 57%                     | $1.51            |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $597.05   | $0.818           | 46%                     | $1.51            |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $597.05   | $0.818           | 46%                     | $1.51            |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $10,344.00 | $281.08   | $0.779           | 48%                     | $1.51            |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $19,848.00 | $0.00     | $0.755           | 50%                     | $1.51            |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $636.85   | $0.872           | 35%                     | $1.34             |
@@ -3250,7 +3250,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $453.51  | $0.621          | 54%                     | $1.34             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $8,096.00  | $222.06   | $0.612           | 54%                     | $1.34             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $15,136.00 | $0.00     | $0.576           | 57%                     | $1.34             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $530.71  | $0.727           | 46%                     | $1.34             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $530.71  | $0.727           | 46%                     | $1.34             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $9,184.00  | $250.14   | $0.692           | 48%                     | $1.34             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $17,632.00 | $0.00     | $0.671          | 50%                     | $1.34             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $955.27   | $1.309           | 35%                     | $2.01            |
@@ -3262,7 +3262,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $680.27   | $0.932           | 54%                     | $2.01            |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $12,128.00 | $333.52   | $0.918           | 54%                     | $2.01            |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $22,688.00 | $0.00     | $0.863           | 57%                     | $2.01            |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $796.06   | $1.090           | 46%                     | $2.01            |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $796.06   | $1.090           | 46%                     | $2.01            |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $13,792.00 | $374.78   | $1.038           | 48%                     | $2.01            |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $26,464.00 | $0.00     | $1.007           | 50%                     | $2.01            |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,671.73 | $2.290           | 35%                     | $3.52             |
@@ -3274,7 +3274,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,190.47 | $1.631          | 54%                     | $3.52             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $21,224.00 | $583.67   | $1.607           | 54%                     | $3.52             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $39,704.00 | $0.00     | $1.511          | 57%                     | $3.52             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,393.11 | $1.908           | 46%                     | $3.52             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,393.11 | $1.908           | 46%                     | $3.52             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $24,136.00 | $655.86   | $1.817           | 48%                     | $3.52             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $46,312.00 | $0.00     | $1.762           | 50%                     | $3.52             |
 
@@ -3291,7 +3291,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $89.32    | $0.122           | 47%                     | $0.23             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,568.00  | $43.06    | $0.119           | 48%                     | $0.23             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $3,020.00  | $0.00     | $0.115           | 50%                     | $0.23             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $105.87   | $0.145           | 37%                     | $0.23             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $105.87   | $0.145           | 37%                     | $0.23             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $1,872.00  | $51.27    | $0.141          | 39%                     | $0.23             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $3,620.00  | $0.00     | $0.138           | 40%                     | $0.23             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $188.57   | $0.258           | 26%                     | $0.35             |
@@ -3303,7 +3303,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $133.99   | $0.184           | 47%                     | $0.35             |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $2,352.00  | $64.59    | $0.178           | 49%                     | $0.35             |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $4,532.00  | $0.00     | $0.172           | 51%                     | $0.35             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $158.80   | $0.218           | 38%                     | $0.35             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $158.80   | $0.218           | 38%                     | $0.35             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $2,808.00  | $76.90    | $0.212           | 39%                     | $0.35             |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $5,428.00  | $0.00     | $0.207           | 41%                     | $0.35             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $314.29   | $0.431          | 26%                     | $0.58             |
@@ -3315,7 +3315,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $223.31  | $0.306           | 47%                     | $0.58             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $3,920.00  | $107.64   | $0.297           | 49%                     | $0.58             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $7,556.00  | $0.00     | $0.288           | 50%                     | $0.58             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $264.66   | $0.363           | 37%                     | $0.58             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $264.66   | $0.363           | 37%                     | $0.58             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $4,680.00  | $128.17   | $0.354           | 39%                     | $0.58             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $9,044.00  | $0.00     | $0.344           | 41%                     | $0.58             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $251.43   | $0.344           | 25%                     | $0.46             |
@@ -3327,7 +3327,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $178.65   | $0.245           | 47%                     | $0.46             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $3,136.00  | $86.11   | $0.237           | 48%                     | $0.46             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $6,040.00  | $0.00     | $0.230           | 50%                     | $0.46             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $211.73   | $0.290           | 37%                     | $0.46             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $211.73   | $0.290           | 37%                     | $0.46             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $3,744.00  | $102.54   | $0.283           | 38%                     | $0.46             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $7,240.00  | $0.00     | $0.275           | 40%                     | $0.46             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $377.15   | $0.517           | 25%                     | $0.69             |
@@ -3339,7 +3339,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $267.97   | $0.367           | 47%                     | $0.69             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $4,704.00  | $129.17   | $0.356           | 48%                     | $0.69             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $9,064.00  | $0.00     | $0.345           | 50%                     | $0.69             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $317.60   | $0.435           | 37%                     | $0.69             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $317.60   | $0.435           | 37%                     | $0.69             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $5,616.00  | $153.81  | $0.424           | 39%                     | $0.69             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $10,856.00 | $0.00     | $0.413           | 40%                     | $0.69             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $502.86   | $0.689           | 25%                     | $0.92             |
@@ -3351,7 +3351,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $357.30   | $0.489           | 47%                     | $0.92             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $6,272.00  | $172.23   | $0.475           | 48%                     | $0.92             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $12,080.00 | $0.00     | $0.460           | 50%                     | $0.92             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $423.46   | $0.580           | 37%                     | $0.92             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $423.46   | $0.580           | 37%                     | $0.92             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $7,488.00  | $205.08   | $0.566           | 38%                     | $0.92             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $14,480.00 | $0.00     | $0.551          | 40%                     | $0.92             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $754.29   | $1.033           | 25%                     | $1.38             |
@@ -3363,7 +3363,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $535.95   | $0.734           | 47%                     | $1.38             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $9,408.00  | $258.34   | $0.712           | 48%                     | $1.38             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $18,128.00 | $0.00     | $0.690           | 50%                     | $1.38             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $635.20   | $0.870           | 37%                     | $1.38             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $635.20   | $0.870           | 37%                     | $1.38             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $11,232.00 | $307.62   | $0.849           | 38%                     | $1.38             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $21,712.00 | $0.00     | $0.826           | 40%                     | $1.38             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $1,257.16 | $1.722           | 25%                     | $2.30             |
@@ -3375,7 +3375,7 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $893.24   | $1.224           | 47%                     | $2.30             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $15,680.00 | $430.57   | $1.186           | 48%                     | $2.30             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $30,208.00 | $0.00     | $1.149           | 50%                     | $2.30             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $1,058.66 | $1.450           | 37%                     | $2.30             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $1,058.66 | $1.450           | 37%                     | $2.30             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $18,720.00 | $512.70   | $1.415           | 38%                     | $2.30             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $36,192.00 | $0.00     | $1.377           | 40%                     | $2.30             |
 
@@ -3392,7 +3392,7 @@
 | Standard 3-Year Term - no upfront   | M2.SMALL8      | 1   | 8    | $0.00      | $22.74    | $0.031          | 61%                     | $0.08             |
 | Standard 3-Year Term - partial upfront | M2.SMALL8      | 1   | 8    | $396.00    | $10.76    | $0.030           | 63%                     | $0.08             |
 | Standard 3-Year Term - all upfront | M2.SMALL8      | 1   | 8    | $769.00    | $0.00     | $0.029           | 64%                     | $0.08             |
-| StConvertible 3-Year Term - no upfront   | M2.SMALL8      | 1   | 8    | $0.00      | $27.29    | $0.037           | 54%                     | $0.08             |
+| Convertible 3-Year Term - no upfront   | M2.SMALL8      | 1   | 8    | $0.00      | $27.29    | $0.037           | 54%                     | $0.08             |
 | Convertible 3-Year Term - partial upfront | M2.SMALL8      | 1   | 8    | $474.00    | $13.17    | $0.036           | 55%                     | $0.08             |
 | Convertible 3-Year Term - all upfront | M2.SMALL8      | 1   | 8    | $935.00    | $0.00     | $0.036           | 55%                     | $0.08             |
 |  Standard 1-Year Term - no upfront   | M2.MEDIUM16    | 2    | 16   | $0.00      | $65.96    | $0.090           | 44%                     | $0.16             |
@@ -3404,7 +3404,7 @@
 | Standard 3-Year Term - no upfront   | M2.MEDIUM16    | 2    | 16   | $0.00      | $45.49    | $0.062           | 61%                     | $0.16             |
 | Standard 3-Year Term - partial upfront | M2.MEDIUM16    | 2    | 16   | $792.00    | $21.52    | $0.060           | 63%                     | $0.16             |
 | Standard 3-Year Term - all upfront | M2.MEDIUM16    | 2    | 16   | $1,538.00  | $0.00     | $0.059           | 63%                     | $0.16             |
-| StConvertible 3-Year Term - no upfront   | M2.MEDIUM16    | 2    | 16   | $0.00      | $54.59    | $0.075           | 53%                     | $0.16             |
+| Convertible 3-Year Term - no upfront   | M2.MEDIUM16    | 2    | 16   | $0.00      | $54.59    | $0.075           | 53%                     | $0.16             |
 | Convertible 3-Year Term - partial upfront | M2.MEDIUM16    | 2    | 16   | $948.00    | $26.34    | $0.072           | 55%                     | $0.16             |
 | Convertible 3-Year Term - all upfront | M2.MEDIUM16    | 2    | 16   | $1,870.00  | $0.00     | $0.071          | 56%                     | $0.16             |
 |  Standard 1-Year Term - no upfront   | M2.LARGE32     | 4    | 32   | $0.00      | $131.92   | $0.181          | 43%                     | $0.32             |
@@ -3416,7 +3416,7 @@
 | Standard 3-Year Term - no upfront   | M2.LARGE32     | 4    | 32   | $0.00      | $90.98    | $0.125           | 61%                     | $0.32             |
 | Standard 3-Year Term - partial upfront | M2.LARGE32     | 4    | 32   | $1,584.00  | $43.03    | $0.119           | 63%                     | $0.32             |
 | Standard 3-Year Term - all upfront | M2.LARGE32     | 4    | 32   | $3,076.00  | $0.00     | $0.117           | 63%                     | $0.32             |
-| StConvertible 3-Year Term - no upfront   | M2.LARGE32     | 4    | 32   | $0.00      | $109.17   | $0.150           | 53%                     | $0.32             |
+| Convertible 3-Year Term - no upfront   | M2.LARGE32     | 4    | 32   | $0.00      | $109.17   | $0.150           | 53%                     | $0.32             |
 | Convertible 3-Year Term - partial upfront | M2.LARGE32     | 4    | 32   | $1,896.00  | $52.68    | $0.144           | 55%                     | $0.32             |
 | Convertible 3-Year Term - all upfront | M2.LARGE32     | 4    | 32   | $3,740.00  | $0.00     | $0.142           | 56%                     | $0.32             |
 |  Standard 1-Year Term - no upfront   | M2.2XLARGE64   | 8    | 64   | $0.00      | $263.84   | $0.361          | 43%                     | $0.63             |
@@ -3428,7 +3428,7 @@
 | Standard 3-Year Term - no upfront   | M2.2XLARGE64   | 8    | 64   | $0.00      | $181.96   | $0.249           | 60%                     | $0.63             |
 | Standard 3-Year Term - partial upfront | M2.2XLARGE64   | 8    | 64   | $3,168.00  | $86.06    | $0.238           | 62%                     | $0.63             |
 | Standard 3-Year Term - all upfront | M2.2XLARGE64   | 8    | 64   | $6,152.00  | $0.00     | $0.234           | 63%                     | $0.63             |
-| StConvertible 3-Year Term - no upfront   | M2.2XLARGE64   | 8    | 64   | $0.00      | $218.35   | $0.299           | 53%                     | $0.63             |
+| Convertible 3-Year Term - no upfront   | M2.2XLARGE64   | 8    | 64   | $0.00      | $218.35   | $0.299           | 53%                     | $0.63             |
 | Convertible 3-Year Term - partial upfront | M2.2XLARGE64   | 8    | 64   | $3,792.00  | $105.36   | $0.289           | 54%                     | $0.63             |
 | Convertible 3-Year Term - all upfront | M2.2XLARGE64   | 8    | 64   | $7,480.00  | $0.00     | $0.285           | 55%                     | $0.63             |
 |  Standard 1-Year Term - no upfront   | M2.3XLARGE96   | 12   | 96   | $0.00      | $395.76   | $0.542           | 43%                     | $0.95             |
@@ -3440,7 +3440,7 @@
 | Standard 3-Year Term - no upfront   | M2.3XLARGE96   | 12   | 96   | $0.00      | $272.94   | $0.374           | 61%                     | $0.95             |
 | Standard 3-Year Term - partial upfront | M2.3XLARGE96   | 12   | 96   | $4,752.00  | $129.10   | $0.358           | 62%                     | $0.95             |
 | Standard 3-Year Term - all upfront | M2.3XLARGE96   | 12   | 96   | $9,228.00  | $0.00     | $0.351          | 63%                     | $0.95             |
-| StConvertible 3-Year Term - no upfront   | M2.3XLARGE96   | 12   | 96   | $0.00      | $327.52   | $0.449           | 53%                     | $0.95             |
+| Convertible 3-Year Term - no upfront   | M2.3XLARGE96   | 12   | 96   | $0.00      | $327.52   | $0.449           | 53%                     | $0.95             |
 | Convertible 3-Year Term - partial upfront | M2.3XLARGE96   | 12   | 96   | $5,688.00  | $158.04   | $0.433           | 54%                     | $0.95             |
 | Convertible 3-Year Term - all upfront | M2.3XLARGE96   | 12   | 96   | $11,220.00 | $0.00     | $0.427           | 55%                     | $0.95             |
 |  Standard 1-Year Term - no upfront   | M2.4XLARGE128  | 16   | 128  | $0.00      | $527.68   | $0.723           | 43%                     | $1.27             |
@@ -3452,7 +3452,7 @@
 | Standard 3-Year Term - no upfront   | M2.4XLARGE128  | 16   | 128  | $0.00      | $363.91  | $0.499           | 61%                     | $1.27             |
 | Standard 3-Year Term - partial upfront | M2.4XLARGE128  | 16   | 128  | $6,336.00  | $172.13   | $0.477           | 62%                     | $1.27             |
 | Standard 3-Year Term - all upfront | M2.4XLARGE128  | 16   | 128  | $12,304.00 | $0.00     | $0.468           | 63%                     | $1.27             |
-| StConvertible 3-Year Term - no upfront   | M2.4XLARGE128  | 16   | 128  | $0.00      | $436.70   | $0.598           | 53%                     | $1.27             |
+| Convertible 3-Year Term - no upfront   | M2.4XLARGE128  | 16   | 128  | $0.00      | $436.70   | $0.598           | 53%                     | $1.27             |
 | Convertible 3-Year Term - partial upfront | M2.4XLARGE128  | 16   | 128  | $7,584.00  | $210.72   | $0.577           | 55%                     | $1.27             |
 | Convertible 3-Year Term - all upfront | M2.4XLARGE128  | 16   | 128  | $14,960.00 | $0.00     | $0.569           | 55%                     | $1.27             |
 |  Standard 1-Year Term - no upfront   | M2.6XLARGE192  | 24   | 192  | $0.00      | $791.51  | $1.084           | 43%                     | $1.90             |
@@ -3464,7 +3464,7 @@
 | Standard 3-Year Term - no upfront   | M2.6XLARGE192  | 24   | 192  | $0.00      | $545.87   | $0.748           | 61%                     | $1.90             |
 | Standard 3-Year Term - partial upfront | M2.6XLARGE192  | 24   | 192  | $9,504.00  | $258.19   | $0.715           | 62%                     | $1.90             |
 | Standard 3-Year Term - all upfront | M2.6XLARGE192  | 24   | 192  | $18,456.00 | $0.00     | $0.702           | 63%                     | $1.90             |
-| StConvertible 3-Year Term - no upfront   | M2.6XLARGE192  | 24   | 192  | $0.00      | $655.04   | $0.897           | 53%                     | $1.90             |
+| Convertible 3-Year Term - no upfront   | M2.6XLARGE192  | 24   | 192  | $0.00      | $655.04   | $0.897           | 53%                     | $1.90             |
 | Convertible 3-Year Term - partial upfront | M2.6XLARGE192  | 24   | 192  | $11,376.00 | $316.08   | $0.866           | 54%                     | $1.90             |
 | Convertible 3-Year Term - all upfront | M2.6XLARGE192  | 24   | 192  | $22,440.00 | $0.00     | $0.854           | 55%                     | $1.90             |
 |  Standard 1-Year Term - no upfront   | M2.8XLARGE256  | 32   | 256  | $0.00      | $1,055.35 | $1.446           | 43%                     | $2.53             |
@@ -3476,7 +3476,7 @@
 | Standard 3-Year Term - no upfront   | M2.8XLARGE256  | 32   | 256  | $0.00      | $727.83   | $0.997           | 61%                     | $2.53             |
 | Standard 3-Year Term - partial upfront | M2.8XLARGE256  | 32   | 256  | $12,672.00 | $344.26   | $0.954           | 62%                     | $2.53             |
 | Standard 3-Year Term - all upfront | M2.8XLARGE256  | 32   | 256  | $24,608.00 | $0.00     | $0.936           | 63%                     | $2.53             |
-| StConvertible 3-Year Term - no upfront   | M2.8XLARGE256  | 32   | 256  | $0.00      | $873.39   | $1.196           | 53%                     | $2.53             |
+| Convertible 3-Year Term - no upfront   | M2.8XLARGE256  | 32   | 256  | $0.00      | $873.39   | $1.196           | 53%                     | $2.53             |
 | Convertible 3-Year Term - partial upfront | M2.8XLARGE256  | 32   | 256  | $15,168.00 | $421.44   | $1.154           | 54%                     | $2.53             |
 | Convertible 3-Year Term - all upfront | M2.8XLARGE256  | 32   | 256  | $29,920.00 | $0.00     | $1.139           | 55%                     | $2.53             |
 |  Standard 1-Year Term - no upfront   | M2.12XLARGE384 | 48   | 384  | $0.00      | $1,583.03 | $2.169           | 43%                     | $3.80             |
@@ -3488,7 +3488,7 @@
 | Standard 3-Year Term - no upfront   | M2.12XLARGE384 | 48   | 384  | $0.00      | $1,091.74 | $1.496           | 61%                     | $3.80             |
 | Standard 3-Year Term - partial upfront | M2.12XLARGE384 | 48   | 384  | $19,008.00 | $516.39   | $1.431          | 62%                     | $3.80             |
 | Standard 3-Year Term - all upfront | M2.12XLARGE384 | 48   | 384  | $36,912.00 | $0.00     | $1.405           | 63%                     | $3.80             |
-| StConvertible 3-Year Term - no upfront   | M2.12XLARGE384 | 48   | 384  | $0.00      | $1,310.09 | $1.795           | 53%                     | $3.80             |
+| Convertible 3-Year Term - no upfront   | M2.12XLARGE384 | 48   | 384  | $0.00      | $1,310.09 | $1.795           | 53%                     | $3.80             |
 | Convertible 3-Year Term - partial upfront | M2.12XLARGE384 | 48   | 384  | $22,752.00 | $632.16   | $1.732           | 54%                     | $3.80             |
 | Convertible 3-Year Term - all upfront | M2.12XLARGE384 | 48   | 384  | $44,880.00 | $0.00     | $1.708           | 55%                     | $3.80             |
 |  Standard 1-Year Term - no upfront   | M2.14XLARGE448 | 56   | 448  | $0.00      | $1,846.86 | $2.530           | 43%                     | $4.43             |
@@ -3500,7 +3500,7 @@
 | Standard 3-Year Term - no upfront   | M2.14XLARGE448 | 56   | 448  | $0.00      | $1,273.70 | $1.745           | 61%                     | $4.43             |
 | Standard 3-Year Term - partial upfront | M2.14XLARGE448 | 56   | 448  | $22,176.00 | $602.45   | $1.669           | 62%                     | $4.43             |
 | Standard 3-Year Term - all upfront | M2.14XLARGE448 | 56   | 448  | $43,064.00 | $0.00     | $1.639           | 63%                     | $4.43             |
-| StConvertible 3-Year Term - no upfront   | M2.14XLARGE448 | 56   | 448  | $0.00      | $1,528.44 | $2.094           | 53%                     | $4.43             |
+| Convertible 3-Year Term - no upfront   | M2.14XLARGE448 | 56   | 448  | $0.00      | $1,528.44 | $2.094           | 53%                     | $4.43             |
 | Convertible 3-Year Term - partial upfront | M2.14XLARGE448 | 56   | 448  | $26,544.00 | $737.52   | $2.020           | 54%                     | $4.43             |
 | Convertible 3-Year Term - all upfront | M2.14XLARGE448 | 56   | 448  | $52,360.00 | $0.00     | $1.992           | 55%                     | $4.43             |
 
@@ -3518,7 +3518,7 @@
 | Standard 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $29.95    | $0.041          | 54%                     | $0.09             |
 | Standard 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $514.00    | $13.87    | $0.039           | 57%                     | $0.09             |
 | Standard 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $972.00    | $0.00     | $0.037           | 59%                     | $0.09             |
-| StConvertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $32.61   | $0.045           | 50%                     | $0.09             |
+| Convertible 3-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $32.61   | $0.045           | 50%                     | $0.09             |
 | Convertible 3-Year Term - partial upfront | S2.MEDIUM8     | 2    | 8    | $586.00    | $15.89    | $0.044           | 51%                     | $0.09             |
 | Convertible 3-Year Term - all upfront | S2.MEDIUM8     | 2    | 8    | $1,140.00  | $0.00     | $0.043           | 52%                     | $0.09             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $56.79    | $0.078           | 35%                     | $0.12             |
@@ -3530,7 +3530,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $39.93    | $0.055           | 54%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $684.00    | $18.53    | $0.051          | 58%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,296.00  | $0.00     | $0.049           | 59%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $43.48    | $0.060           | 50%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE8      | 4    | 8    | $0.00      | $43.48    | $0.060           | 50%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE8      | 4    | 8    | $780.00    | $21.22    | $0.059           | 51%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S2.LARGE8      | 4    | 8    | $1,520.00  | $0.00     | $0.058           | 52%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $85.19    | $0.117           | 38%                     | $0.19             |
@@ -3542,7 +3542,7 @@
 | Standard 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $59.90    | $0.082           | 57%                     | $0.19             |
 | Standard 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,028.00  | $27.74    | $0.077           | 59%                     | $0.19             |
 | Standard 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $1,944.00  | $0.00     | $0.074           | 61%                     | $0.19             |
-| StConvertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $65.22    | $0.089           | 53%                     | $0.19             |
+| Convertible 3-Year Term - no upfront   | S2.LARGE16     | 4    | 16   | $0.00      | $65.22    | $0.089           | 53%                     | $0.19             |
 | Convertible 3-Year Term - partial upfront | S2.LARGE16     | 4    | 16   | $1,172.00  | $31.78    | $0.088           | 54%                     | $0.19             |
 | Convertible 3-Year Term - all upfront | S2.LARGE16     | 4    | 16   | $2,280.00  | $0.00     | $0.087           | 54%                     | $0.19             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $113.59   | $0.156           | 38%                     | $0.25             |
@@ -3554,7 +3554,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $79.86    | $0.109           | 56%                     | $0.25             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,368.00  | $37.06    | $0.103           | 59%                     | $0.25             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $2,592.00  | $0.00     | $0.099           | 60%                     | $0.25             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $86.96    | $0.119           | 52%                     | $0.25             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE16   | 8    | 16   | $0.00      | $86.96    | $0.119           | 52%                     | $0.25             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE16   | 8    | 16   | $1,560.00  | $42.45    | $0.118           | 53%                     | $0.25             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE16   | 8    | 16   | $3,040.00  | $0.00     | $0.116           | 54%                     | $0.25             |
 |  Standard 1-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $170.38   | $0.233           | 39%                     | $0.38             |
@@ -3566,7 +3566,7 @@
 | Standard 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $119.80   | $0.164           | 57%                     | $0.38             |
 | Standard 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,056.00  | $55.48    | $0.154           | 59%                     | $0.38             |
 | Standard 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $3,888.00  | $0.00     | $0.148           | 61%                     | $0.38             |
-| StConvertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $130.45   | $0.179           | 53%                     | $0.38             |
+| Convertible 3-Year Term - no upfront   | S2.2XLARGE32   | 8    | 32   | $0.00      | $130.45   | $0.179           | 53%                     | $0.38             |
 | Convertible 3-Year Term - partial upfront | S2.2XLARGE32   | 8    | 32   | $2,344.00  | $63.56    | $0.176           | 54%                     | $0.38             |
 | Convertible 3-Year Term - all upfront | S2.2XLARGE32   | 8    | 32   | $4,560.00  | $0.00     | $0.174           | 54%                     | $0.38             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $170.38   | $0.233           | 37%                     | $0.37             |
@@ -3578,7 +3578,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $119.80   | $0.164           | 56%                     | $0.37             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,052.00  | $55.59    | $0.154           | 58%                     | $0.37             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $3,888.00  | $0.00     | $0.148           | 60%                     | $0.37             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $130.45   | $0.179           | 52%                     | $0.37             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE24   | 12   | 24   | $0.00      | $130.45   | $0.179           | 52%                     | $0.37             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE24   | 12   | 24   | $2,340.00  | $63.67    | $0.176           | 52%                     | $0.37             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE24   | 12   | 24   | $4,560.00  | $0.00     | $0.174           | 53%                     | $0.37             |
 |  Standard 1-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $255.57   | $0.350           | 38%                     | $0.56             |
@@ -3590,7 +3590,7 @@
 | Standard 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $179.70   | $0.246           | 56%                     | $0.56             |
 | Standard 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $3,084.00  | $83.22    | $0.231          | 59%                     | $0.56             |
 | Standard 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $5,832.00  | $0.00     | $0.222           | 60%                     | $0.56             |
-| StConvertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $195.67   | $0.268           | 52%                     | $0.56             |
+| Convertible 3-Year Term - no upfront   | S2.3XLARGE48   | 12   | 48   | $0.00      | $195.67   | $0.268           | 52%                     | $0.56             |
 | Convertible 3-Year Term - partial upfront | S2.3XLARGE48   | 12   | 48   | $3,516.00  | $95.35    | $0.264           | 53%                     | $0.56             |
 | Convertible 3-Year Term - all upfront | S2.3XLARGE48   | 12   | 48   | $6,840.00  | $0.00     | $0.260           | 54%                     | $0.56             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $227.17   | $0.311          | 38%                     | $0.50             |
@@ -3602,7 +3602,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $159.73   | $0.219           | 56%                     | $0.50             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $2,736.00  | $74.12    | $0.206           | 59%                     | $0.50             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $5,184.00  | $0.00     | $0.197           | 61%                     | $0.50             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $173.93   | $0.238           | 52%                     | $0.50             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE32   | 16   | 32   | $0.00      | $173.93   | $0.238           | 52%                     | $0.50             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE32   | 16   | 32   | $3,120.00  | $84.90    | $0.235           | 53%                     | $0.50             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE32   | 16   | 32   | $6,080.00  | $0.00     | $0.231          | 54%                     | $0.50             |
 |  Standard 1-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $340.76   | $0.467           | 38%                     | $0.75             |
@@ -3614,7 +3614,7 @@
 | Standard 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $239.59   | $0.328           | 56%                     | $0.75             |
 | Standard 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $4,112.00  | $110.96   | $0.308           | 59%                     | $0.75             |
 | Standard 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $7,776.00  | $0.00     | $0.296           | 61%                     | $0.75             |
-| StConvertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $260.89   | $0.357           | 52%                     | $0.75             |
+| Convertible 3-Year Term - no upfront   | S2.4XLARGE64   | 16   | 64   | $0.00      | $260.89   | $0.357           | 52%                     | $0.75             |
 | Convertible 3-Year Term - partial upfront | S2.4XLARGE64   | 16   | 64   | $4,688.00  | $127.13   | $0.353           | 53%                     | $0.75             |
 | Convertible 3-Year Term - all upfront | S2.4XLARGE64   | 16   | 64   | $9,120.00  | $0.00     | $0.347           | 54%                     | $0.75             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $340.76   | $0.467           | 37%                     | $0.74             |
@@ -3626,7 +3626,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $239.59   | $0.328           | 56%                     | $0.74             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $4,104.00  | $111.18   | $0.308           | 58%                     | $0.74             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $7,776.00  | $0.00     | $0.296           | 60%                     | $0.74             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $260.89   | $0.357           | 52%                     | $0.74             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE48   | 24   | 48   | $0.00      | $260.89   | $0.357           | 52%                     | $0.74             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE48   | 24   | 48   | $4,680.00  | $127.35   | $0.353           | 52%                     | $0.74             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE48   | 24   | 48   | $9,120.00  | $0.00     | $0.347           | 53%                     | $0.74             |
 |  Standard 1-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $511.13   | $0.700           | 38%                     | $1.13             |
@@ -3638,7 +3638,7 @@
 | Standard 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $359.39   | $0.492           | 56%                     | $1.13             |
 | Standard 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $6,168.00  | $166.45   | $0.463           | 59%                     | $1.13             |
 | Standard 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $11,664.00 | $0.00     | $0.444           | 61%                     | $1.13             |
-| StConvertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $391.34   | $0.536           | 53%                     | $1.13             |
+| Convertible 3-Year Term - no upfront   | S2.6XLARGE96   | 24   | 96   | $0.00      | $391.34   | $0.536           | 53%                     | $1.13             |
 | Convertible 3-Year Term - partial upfront | S2.6XLARGE96   | 24   | 96   | $7,032.00  | $190.69   | $0.529           | 53%                     | $1.13             |
 | Convertible 3-Year Term - all upfront | S2.6XLARGE96   | 24   | 96   | $13,680.00 | $0.00     | $0.521          | 54%                     | $1.13             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $454.34   | $0.622           | 37%                     | $0.99             |
@@ -3650,7 +3650,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $319.46   | $0.438           | 56%                     | $0.99             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $5,472.00  | $148.24   | $0.411          | 58%                     | $0.99             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $10,368.00 | $0.00     | $0.395           | 60%                     | $0.99             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $347.85   | $0.477           | 52%                     | $0.99             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE64   | 32   | 64   | $0.00      | $347.85   | $0.477           | 52%                     | $0.99             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE64   | 32   | 64   | $6,240.00  | $169.80   | $0.470           | 53%                     | $0.99             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE64   | 32   | 64   | $12,160.00 | $0.00     | $0.463           | 53%                     | $0.99             |
 |  Standard 1-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $681.51  | $0.934           | 38%                     | $1.50             |
@@ -3662,7 +3662,7 @@
 | Standard 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $479.19   | $0.656           | 56%                     | $1.50             |
 | Standard 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $8,224.00  | $221.93   | $0.617           | 59%                     | $1.50             |
 | Standard 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $15,552.00 | $0.00     | $0.592           | 61%                     | $1.50             |
-| StConvertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $521.78   | $0.715           | 52%                     | $1.50             |
+| Convertible 3-Year Term - no upfront   | S2.8XLARGE128  | 32   | 128  | $0.00      | $521.78   | $0.715           | 52%                     | $1.50             |
 | Convertible 3-Year Term - partial upfront | S2.8XLARGE128  | 32   | 128  | $9,376.00  | $254.26   | $0.705           | 53%                     | $1.50             |
 | Convertible 3-Year Term - all upfront | S2.8XLARGE128  | 32   | 128  | $18,240.00 | $0.00     | $0.694           | 54%                     | $1.50             |
 |  Standard 1-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,192.64 | $1.634           | 38%                     | $2.63             |
@@ -3674,7 +3674,7 @@
 | Standard 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $838.58   | $1.149           | 56%                     | $2.63             |
 | Standard 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $14,392.00 | $388.37   | $1.080           | 59%                     | $2.63             |
 | Standard 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $27,216.00 | $0.00     | $1.036           | 61%                     | $2.63             |
-| StConvertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $913.12   | $1.251          | 52%                     | $2.63             |
+| Convertible 3-Year Term - no upfront   | S2.14XLARGE224 | 56   | 224  | $0.00      | $913.12   | $1.251          | 52%                     | $2.63             |
 | Convertible 3-Year Term - partial upfront | S2.14XLARGE224 | 56   | 224  | $16,408.00 | $444.95   | $1.234           | 53%                     | $2.63             |
 | Convertible 3-Year Term - all upfront | S2.14XLARGE224 | 56   | 224  | $31,920.00 | $0.00     | $1.215           | 54%                     | $2.63             |
 
@@ -3691,7 +3691,7 @@
 | Standard 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $30.05    | $0.041          | 54%                     | $0.09             |
 | Standard 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $516.00    | $14.04    | $0.039           | 57%                     | $0.09             |
 | Standard 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $960.00    | $0.00     | $0.037           | 59%                     | $0.09             |
-| StConvertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $33.81   | $0.046           | 49%                     | $0.09             |
+| Convertible 3-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $33.81   | $0.046           | 49%                     | $0.09             |
 | Convertible 3-Year Term - partial upfront | S3.MEDIUM8     | 2    | 8    | $586.00    | $15.88    | $0.044           | 51%                     | $0.09             |
 | Convertible 3-Year Term - all upfront | S3.MEDIUM8     | 2    | 8    | $1,140.00  | $0.00     | $0.043           | 52%                     | $0.09             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $55.10    | $0.075           | 38%                     | $0.12             |
@@ -3703,7 +3703,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $40.07    | $0.055           | 54%                     | $0.12             |
 | Standard 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $688.00    | $18.72    | $0.052           | 57%                     | $0.12             |
 | Standard 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,280.00  | $0.00     | $0.049           | 59%                     | $0.12             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $45.08    | $0.062           | 48%                     | $0.12             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE8      | 4    | 8    | $0.00      | $45.08    | $0.062           | 48%                     | $0.12             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE8      | 4    | 8    | $780.00    | $21.20    | $0.059           | 51%                     | $0.12             |
 | Convertible 3-Year Term - all upfront | S3.LARGE8      | 4    | 8    | $1,520.00  | $0.00     | $0.058           | 52%                     | $0.12             |
 |  Standard 1-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $82.64    | $0.113           | 34%                     | $0.17             |
@@ -3715,7 +3715,7 @@
 | Standard 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $60.10    | $0.082           | 52%                     | $0.17             |
 | Standard 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,032.00  | $28.07    | $0.078           | 54%                     | $0.17             |
 | Standard 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $1,920.00  | $0.00     | $0.073           | 57%                     | $0.17             |
-| StConvertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $67.62    | $0.093           | 45%                     | $0.17             |
+| Convertible 3-Year Term - no upfront   | S3.LARGE16     | 4    | 16   | $0.00      | $67.62    | $0.093           | 45%                     | $0.17             |
 | Convertible 3-Year Term - partial upfront | S3.LARGE16     | 4    | 16   | $1,172.00  | $31.75    | $0.088           | 48%                     | $0.17             |
 | Convertible 3-Year Term - all upfront | S3.LARGE16     | 4    | 16   | $2,280.00  | $0.00     | $0.087           | 49%                     | $0.17             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $110.19   | $0.151          | 34%                     | $0.23             |
@@ -3727,7 +3727,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $80.14    | $0.110           | 52%                     | $0.23             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,376.00  | $37.43    | $0.104           | 55%                     | $0.23             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $2,560.00  | $0.00     | $0.097           | 58%                     | $0.23             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $90.16    | $0.124           | 46%                     | $0.23             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE16   | 8    | 16   | $0.00      | $90.16    | $0.124           | 46%                     | $0.23             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE16   | 8    | 16   | $1,560.00  | $42.41   | $0.117           | 49%                     | $0.23             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE16   | 8    | 16   | $3,040.00  | $0.00     | $0.116           | 50%                     | $0.23             |
 |  Standard 1-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $165.29   | $0.226           | 35%                     | $0.35             |
@@ -3739,7 +3739,7 @@
 | Standard 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $120.21  | $0.165           | 53%                     | $0.35             |
 | Standard 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,064.00  | $56.15    | $0.155           | 56%                     | $0.35             |
 | Standard 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $3,840.00  | $0.00     | $0.146           | 58%                     | $0.35             |
-| StConvertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $135.23   | $0.185           | 47%                     | $0.35             |
+| Convertible 3-Year Term - no upfront   | S3.2XLARGE32   | 8    | 32   | $0.00      | $135.23   | $0.185           | 47%                     | $0.35             |
 | Convertible 3-Year Term - partial upfront | S3.2XLARGE32   | 8    | 32   | $2,344.00  | $63.50    | $0.176           | 50%                     | $0.35             |
 | Convertible 3-Year Term - all upfront | S3.2XLARGE32   | 8    | 32   | $4,560.00  | $0.00     | $0.174           | 50%                     | $0.35             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $165.29   | $0.226           | 35%                     | $0.35             |
@@ -3751,7 +3751,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $120.21  | $0.165           | 53%                     | $0.35             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,064.00  | $56.15    | $0.155           | 56%                     | $0.35             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $3,840.00  | $0.00     | $0.146           | 58%                     | $0.35             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $135.23   | $0.185           | 47%                     | $0.35             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE24   | 12   | 24   | $0.00      | $135.23   | $0.185           | 47%                     | $0.35             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE24   | 12   | 24   | $2,340.00  | $63.61   | $0.176           | 50%                     | $0.35             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE24   | 12   | 24   | $4,560.00  | $0.00     | $0.174           | 50%                     | $0.35             |
 |  Standard 1-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $247.93   | $0.340           | 35%                     | $0.52             |
@@ -3763,7 +3763,7 @@
 | Standard 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $180.31  | $0.247           | 53%                     | $0.52             |
 | Standard 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,096.00  | $84.22    | $0.233           | 55%                     | $0.52             |
 | Standard 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $5,760.00  | $0.00     | $0.219           | 58%                     | $0.52             |
-| StConvertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $202.85   | $0.278           | 47%                     | $0.52             |
+| Convertible 3-Year Term - no upfront   | S3.3XLARGE48   | 12   | 48   | $0.00      | $202.85   | $0.278           | 47%                     | $0.52             |
 | Convertible 3-Year Term - partial upfront | S3.3XLARGE48   | 12   | 48   | $3,516.00  | $95.25    | $0.264           | 49%                     | $0.52             |
 | Convertible 3-Year Term - all upfront | S3.3XLARGE48   | 12   | 48   | $6,840.00  | $0.00     | $0.260           | 50%                     | $0.52             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $220.38   | $0.302           | 34%                     | $0.46             |
@@ -3775,7 +3775,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $160.28   | $0.220           | 52%                     | $0.46             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $2,752.00  | $74.86    | $0.207           | 55%                     | $0.46             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $5,120.00  | $0.00     | $0.195           | 58%                     | $0.46             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $180.31  | $0.247           | 46%                     | $0.46             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE32   | 16   | 32   | $0.00      | $180.31  | $0.247           | 46%                     | $0.46             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE32   | 16   | 32   | $3,120.00  | $84.82    | $0.235           | 49%                     | $0.46             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE32   | 16   | 32   | $6,080.00  | $0.00     | $0.231          | 50%                     | $0.46             |
 |  Standard 1-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $330.57   | $0.453           | 34%                     | $0.69             |
@@ -3787,7 +3787,7 @@
 | Standard 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $240.42   | $0.329           | 52%                     | $0.69             |
 | Standard 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $4,128.00  | $112.30   | $0.311          | 55%                     | $0.69             |
 | Standard 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $7,680.00  | $0.00     | $0.292           | 58%                     | $0.69             |
-| StConvertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $270.47   | $0.371          | 46%                     | $0.69             |
+| Convertible 3-Year Term - no upfront   | S3.4XLARGE64   | 16   | 64   | $0.00      | $270.47   | $0.371          | 46%                     | $0.69             |
 | Convertible 3-Year Term - partial upfront | S3.4XLARGE64   | 16   | 64   | $4,688.00  | $127.01  | $0.352           | 49%                     | $0.69             |
 | Convertible 3-Year Term - all upfront | S3.4XLARGE64   | 16   | 64   | $9,120.00  | $0.00     | $0.347           | 50%                     | $0.69             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $330.57   | $0.453           | 34%                     | $0.69             |
@@ -3799,7 +3799,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $240.42   | $0.329           | 52%                     | $0.69             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $4,128.00  | $112.30   | $0.311          | 55%                     | $0.69             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $7,680.00  | $0.00     | $0.292           | 58%                     | $0.69             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $270.47   | $0.371          | 46%                     | $0.69             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE48   | 24   | 48   | $0.00      | $270.47   | $0.371          | 46%                     | $0.69             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE48   | 24   | 48   | $4,680.00  | $127.22   | $0.352           | 49%                     | $0.69             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE48   | 24   | 48   | $9,120.00  | $0.00     | $0.347           | 50%                     | $0.69             |
 |  Standard 1-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $495.86   | $0.679           | 35%                     | $1.04             |
@@ -3811,7 +3811,7 @@
 | Standard 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $360.63   | $0.494           | 53%                     | $1.04             |
 | Standard 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $6,192.00  | $168.44   | $0.466           | 55%                     | $1.04             |
 | Standard 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $11,520.00 | $0.00     | $0.438           | 58%                     | $1.04             |
-| StConvertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $405.70   | $0.556           | 47%                     | $1.04             |
+| Convertible 3-Year Term - no upfront   | S3.6XLARGE96   | 24   | 96   | $0.00      | $405.70   | $0.556           | 47%                     | $1.04             |
 | Convertible 3-Year Term - partial upfront | S3.6XLARGE96   | 24   | 96   | $7,032.00  | $190.51  | $0.529           | 49%                     | $1.04             |
 | Convertible 3-Year Term - all upfront | S3.6XLARGE96   | 24   | 96   | $13,680.00 | $0.00     | $0.521          | 50%                     | $1.04             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $440.77   | $0.604           | 34%                     | $0.92             |
@@ -3823,7 +3823,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $320.56   | $0.439           | 52%                     | $0.92             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $5,504.00  | $149.73   | $0.415           | 55%                     | $0.92             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $10,240.00 | $0.00     | $0.390           | 58%                     | $0.92             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $360.63   | $0.494           | 46%                     | $0.92             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE64   | 32   | 64   | $0.00      | $360.63   | $0.494           | 46%                     | $0.92             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE64   | 32   | 64   | $6,240.00  | $169.63   | $0.470           | 49%                     | $0.92             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE64   | 32   | 64   | $12,160.00 | $0.00     | $0.463           | 50%                     | $0.92             |
 |  Standard 1-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $661.15   | $0.906           | 35%                     | $1.39             |
@@ -3835,7 +3835,7 @@
 | Standard 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $480.83   | $0.659           | 53%                     | $1.39             |
 | Standard 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $8,256.00  | $224.59   | $0.622           | 55%                     | $1.39             |
 | Standard 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $15,360.00 | $0.00     | $0.584           | 58%                     | $1.39             |
-| StConvertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $540.94   | $0.741          | 47%                     | $1.39             |
+| Convertible 3-Year Term - no upfront   | S3.8XLARGE128  | 32   | 128  | $0.00      | $540.94   | $0.741          | 47%                     | $1.39             |
 | Convertible 3-Year Term - partial upfront | S3.8XLARGE128  | 32   | 128  | $9,376.00  | $254.01  | $0.705           | 49%                     | $1.39             |
 | Convertible 3-Year Term - all upfront | S3.8XLARGE128  | 32   | 128  | $18,240.00 | $0.00     | $0.694           | 50%                     | $1.39             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE96  | 48   | 96   | $0.00      | $661.15   | $0.906           | 35%                     | $1.39             |
@@ -3847,7 +3847,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE102 | 48   | 96   | $0.00      | $480.83   | $0.659           | 53%                     | $1.39             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE103 | 48   | 96   | $8,256.00  | $224.59   | $0.622           | 55%                     | $1.39             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE104 | 48   | 96   | $15,360.00 | $0.00     | $0.584           | 58%                     | $1.39             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $540.94   | $0.741          | 47%                     | $1.39             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE105 | 48   | 96   | $0.00      | $540.94   | $0.741          | 47%                     | $1.39             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE106 | 48   | 96   | $9,360.00  | $254.45   | $0.705           | 49%                     | $1.39             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE107 | 48   | 96   | $18,240.00 | $0.00     | $0.694           | 50%                     | $1.39             |
 |  Standard 1-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $991.72   | $1.359           | 35%                     | $2.08             |
@@ -3859,7 +3859,7 @@
 | Standard 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $721.25   | $0.988           | 53%                     | $2.08             |
 | Standard 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $12,384.00 | $336.89   | $0.933           | 55%                     | $2.08             |
 | Standard 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $23,040.00 | $0.00     | $0.877           | 58%                     | $2.08             |
-| StConvertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $811.41  | $1.112           | 47%                     | $2.08             |
+| Convertible 3-Year Term - no upfront   | S3.12XLARGE192 | 48   | 192  | $0.00      | $811.41  | $1.112           | 47%                     | $2.08             |
 | Convertible 3-Year Term - partial upfront | S3.12XLARGE192 | 48   | 192  | $14,064.00 | $381.02   | $1.057           | 49%                     | $2.08             |
 | Convertible 3-Year Term - all upfront | S3.12XLARGE192 | 48   | 192  | $27,360.00 | $0.00     | $1.041          | 50%                     | $2.08             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $881.53   | $1.208           | 35%                     | $1.85             |
@@ -3871,7 +3871,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $641.11  | $0.878           | 53%                     | $1.85             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $11,008.00 | $299.45   | $0.829           | 55%                     | $1.85             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $20,480.00 | $0.00     | $0.779           | 58%                     | $1.85             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $721.25   | $0.988           | 47%                     | $1.85             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE128 | 64   | 128  | $0.00      | $721.25   | $0.988           | 47%                     | $1.85             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE128 | 64   | 128  | $12,480.00 | $339.26   | $0.940           | 49%                     | $1.85             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE128 | 64   | 128  | $24,320.00 | $0.00     | $0.925           | 50%                     | $1.85             |
 |  Standard 1-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,322.30 | $1.811          | 35%                     | $2.77             |
@@ -3883,7 +3883,7 @@
 | Standard 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $961.67   | $1.317           | 52%                     | $2.77             |
 | Standard 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $16,512.00 | $449.18   | $1.244           | 55%                     | $2.77             |
 | Standard 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $30,720.00 | $0.00     | $1.169           | 58%                     | $2.77             |
-| StConvertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,081.88 | $1.482           | 46%                     | $2.77             |
+| Convertible 3-Year Term - no upfront   | S3.16XLARGE256 | 64   | 256  | $0.00      | $1,081.88 | $1.482           | 46%                     | $2.77             |
 | Convertible 3-Year Term - partial upfront | S3.16XLARGE256 | 64   | 256  | $18,752.00 | $508.02   | $1.409           | 49%                     | $2.77             |
 | Convertible 3-Year Term - all upfront | S3.16XLARGE256 | 64   | 256  | $36,480.00 | $0.00     | $1.388           | 50%                     | $2.77             |
 |  Standard 1-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,652.87 | $2.264           | 35%                     | $3.46             |
@@ -3895,7 +3895,7 @@
 | Standard 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,202.09 | $1.647           | 52%                     | $3.46             |
 | Standard 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $20,640.00 | $561.48   | $1.555           | 55%                     | $3.46             |
 | Standard 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $38,400.00 | $0.00     | $1.461          | 58%                     | $3.46             |
-| StConvertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,352.35 | $1.853           | 46%                     | $3.46             |
+| Convertible 3-Year Term - no upfront   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,352.35 | $1.853           | 46%                     | $3.46             |
 | Convertible 3-Year Term - partial upfront | S3.20XLARGE320 | 80   | 320  | $23,440.00 | $635.03   | $1.762           | 49%                     | $3.46             |
 | Convertible 3-Year Term - all upfront | S3.20XLARGE320 | 80   | 320  | $45,600.00 | $0.00     | $1.735           | 50%                     | $3.46             |
 
@@ -3912,7 +3912,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $47.78  | $0.065           | 54%                     | $0.14             |
 | Standard 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $832.00    | $22.95  | $0.063           | 55%                     | $0.14             |
 | Standard 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $1,596.00  | $0.00   | $0.061          | 56%                     | $0.14             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $55.91 | $0.077           | 45%                     | $0.14             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $55.91 | $0.077           | 45%                     | $0.14             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE8    | 4    | 8    | $980.00    | $27.03  | $0.074           | 47%                     | $0.14             |
 | Convertible 3-Year Term - all upfront | C2.LARGE8    | 4    | 8    | $1,932.00  | $0.00   | $0.074           | 47%                     | $0.14             |
 |  Standard 1-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $109.79 | $0.150           | 29%                     | $0.21            |
@@ -3924,7 +3924,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $71.67  | $0.098           | 53%                     | $0.21            |
 | Standard 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,248.00  | $34.43  | $0.095           | 55%                     | $0.21            |
 | Standard 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $2,396.00  | $0.00   | $0.091          | 57%                     | $0.21            |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $83.87  | $0.115           | 45%                     | $0.21            |
+| Convertible 3-Year Term - no upfront   | C2.LARGE16   | 4    | 16   | $0.00      | $83.87  | $0.115           | 45%                     | $0.21            |
 | Convertible 3-Year Term - partial upfront | C2.LARGE16   | 4    | 16   | $1,468.00  | $40.60  | $0.111          | 47%                     | $0.21            |
 | Convertible 3-Year Term - all upfront | C2.LARGE16   | 4    | 16   | $2,900.00  | $0.00   | $0.110           | 48%                     | $0.21            |
 |  Standard 1-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $182.99 | $0.251          | 28%                     | $0.35             |
@@ -3936,7 +3936,7 @@
 | Standard 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $119.45 | $0.164           | 53%                     | $0.35             |
 | Standard 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,080.00  | $57.38  | $0.158           | 55%                     | $0.35             |
 | Standard 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $3,996.00  | $0.00   | $0.152           | 57%                     | $0.35             |
-| StConvertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $139.78 | $0.191          | 45%                     | $0.35             |
+| Convertible 3-Year Term - no upfront   | C2.LARGE32   | 4    | 32   | $0.00      | $139.78 | $0.191          | 45%                     | $0.35             |
 | Convertible 3-Year Term - partial upfront | C2.LARGE32   | 4    | 32   | $2,444.00  | $67.74  | $0.186           | 47%                     | $0.35             |
 | Convertible 3-Year Term - all upfront | C2.LARGE32   | 4    | 32   | $4,836.00  | $0.00   | $0.184           | 47%                     | $0.35             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $146.39 | $0.201          | 31%                     | $0.29             |
@@ -3948,7 +3948,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $95.56  | $0.131          | 55%                     | $0.29             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $1,664.00  | $45.91 | $0.126           | 57%                     | $0.29             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $3,192.00  | $0.00   | $0.121          | 58%                     | $0.29             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $111.83 | $0.153           | 47%                     | $0.29             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE16 | 8    | 16   | $0.00      | $111.83 | $0.153           | 47%                     | $0.29             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE16 | 8    | 16   | $1,960.00  | $54.06  | $0.149           | 49%                     | $0.29             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE16 | 8    | 16   | $3,864.00  | $0.00   | $0.147           | 49%                     | $0.29             |
 |  Standard 1-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $219.59 | $0.301          | 30%                     | $0.43             |
@@ -3960,7 +3960,7 @@
 | Standard 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $143.34 | $0.196           | 54%                     | $0.43             |
 | Standard 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $2,496.00  | $68.86  | $0.189           | 56%                     | $0.43             |
 | Standard 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $4,792.00  | $0.00   | $0.182           | 58%                     | $0.43             |
-| StConvertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $167.74 | $0.230           | 47%                     | $0.43             |
+| Convertible 3-Year Term - no upfront   | C2.2XLARGE32 | 8    | 32   | $0.00      | $167.74 | $0.230           | 47%                     | $0.43             |
 | Convertible 3-Year Term - partial upfront | C2.2XLARGE32 | 8    | 32   | $2,936.00  | $81.20  | $0.223           | 48%                     | $0.43             |
 | Convertible 3-Year Term - all upfront | C2.2XLARGE32 | 8    | 32   | $5,800.00  | $0.00   | $0.221          | 49%                     | $0.43             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $292.79 | $0.401          | 30%                     | $0.57             |
@@ -3972,7 +3972,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $191.12 | $0.262           | 54%                     | $0.57             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $3,328.00  | $91.81 | $0.252           | 56%                     | $0.57             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $6,384.00  | $0.00   | $0.243           | 57%                     | $0.57             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $223.66 | $0.306           | 46%                     | $0.57             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE32 | 16   | 32   | $0.00      | $223.66 | $0.306           | 46%                     | $0.57             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE32 | 16   | 32   | $3,920.00  | $108.13 | $0.297           | 48%                     | $0.57             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE32 | 16   | 32   | $7,728.00  | $0.00   | $0.294           | 48%                     | $0.57             |
 |  Standard 1-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $439.18 | $0.602           | 29%                     | $0.85             |
@@ -3984,7 +3984,7 @@
 | Standard 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $286.69 | $0.393           | 54%                     | $0.85             |
 | Standard 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $4,992.00  | $137.72 | $0.379           | 55%                     | $0.85             |
 | Standard 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $9,584.00  | $0.00   | $0.365           | 57%                     | $0.85             |
-| StConvertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $335.48 | $0.460           | 46%                     | $0.85             |
+| Convertible 3-Year Term - no upfront   | C2.4XLARGE64 | 16   | 64   | $0.00      | $335.48 | $0.460           | 46%                     | $0.85             |
 | Convertible 3-Year Term - partial upfront | C2.4XLARGE64 | 16   | 64   | $5,872.00  | $162.41 | $0.446           | 48%                     | $0.85             |
 | Convertible 3-Year Term - all upfront | C2.4XLARGE64 | 16   | 64   | $11,600.00 | $0.00   | $0.441          | 48%                     | $0.85             |
 |  Standard 1-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $731.96 | $1.003           | 29%                     | $1.42             |
@@ -3996,6 +3996,6 @@
 | Standard 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $477.81 | $0.655           | 54%                     | $1.42             |
 | Standard 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $8,320.00  | $229.53 | $0.631          | 56%                     | $1.42             |
 | Standard 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $15,968.00 | $0.00   | $0.608           | 57%                     | $1.42             |
-| StConvertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $559.14 | $0.766           | 46%                     | $1.42             |
+| Convertible 3-Year Term - no upfront   | C2.8XLARGE96 | 32   | 96   | $0.00      | $559.14 | $0.766           | 46%                     | $1.42             |
 | Convertible 3-Year Term - partial upfront | C2.8XLARGE96 | 32   | 96   | $9,792.00  | $270.53 | $0.743           | 48%                     | $1.42             |
 | Convertible 3-Year Term - all upfront | C2.8XLARGE96 | 32   | 96   | $19,328.00 | $0.00   | $0.735           | 48%                     | $1.42             |

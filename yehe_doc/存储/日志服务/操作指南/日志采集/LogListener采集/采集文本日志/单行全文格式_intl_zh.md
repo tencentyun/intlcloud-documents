@@ -24,7 +24,7 @@ __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-
 
 ### 2. 新建 LogListener 采集
 
-选择目标日志集，单击【新建日志主题】，输入日志主题名称：test-full ，单击【确定】。
+选择目标日志集，单击【新建日志主题】，输入日志主题名称：test_full ，单击【确定】。
 ![](https://main.qcloudimg.com/raw/cc3937823ac7a68534144d54b0719cf9.png)
 
 ### 3. 配置 LogListener 采集

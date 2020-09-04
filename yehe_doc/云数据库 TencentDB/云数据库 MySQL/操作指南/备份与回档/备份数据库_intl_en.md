@@ -65,7 +65,7 @@ This will not affect your business access, but may have impact on your automatic
 <td>Log backup files can be retained for 7 (default value) to 732 days. <strong>The number of days set for log backup retention must be smaller than that for data backup retention.</strong></td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/efb1b3d8dd91e38fece00d44b788736e.png"  style="margin:0;">
+<img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
 
 <span id = "manual-backup"></span>
@@ -78,7 +78,7 @@ The manual backup feature allows you to initiate a backup task manually.
 >
 1. On the instance list page, click an instance name and enter the management page, and select **Backup and Restore** > **Manual Backup**.
 2. Select the backup mode and object in the pop-up window and click **OK**.
-![](https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png)
+![](https://main.qcloudimg.com/raw/a16e644f51756b6a98597945e45329cd.png)
 >? For single-database/table logical backup, select the database or table to be backed up in **Select database & table** in the left column and add the selected item to the right column. If you do not have a database, please create a database/table first.
 >
 ![](https://main.qcloudimg.com/raw/76924e2c76ac348b68ed113d679d6907.png)

@@ -1,6 +1,6 @@
 ## Overview
 
-Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image fails to be imported. This document describes how to install the cloud-init service.
+Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image will fail to be imported. This document describes how to install the cloud-init service.
 You can use either of the following methods to install cloud-init:
 - [Manually downloading the cloud-init source package](#ManualDown) 
 - [Using the cloud-init package from the software source](#SoftSources)
@@ -18,7 +18,7 @@ A server with the cloud-init service installed can correctly access the public n
 
 #### Downloading the cloud-init source package
 >?  
-> - Version cloud-init-17.1 is best compatible with Tencent Cloud. It ensures that all configuration items of CVMs created through the image can be initialized properly. We recommend that you install **cloud-init-17.1.tar.gz**. You can also [click here](https://launchpad.net/cloud-init/+download) to download other versions. This document uses cloud-init-17.1 as an example.
+> - The cloud-init-17.1 version is most compatible with Tencent Cloud. It ensures that all configuration items of CVMs created through the image can be initialized properly. We recommend that you install **cloud-init-17.1.tar.gz**. You can also [click here](https://launchpad.net/cloud-init/+download) to download other versions. This document uses cloud-init-17.1 as an example.
 > - If the installation fails, [manually download the green cloud-init package](#greeninitCloudInit) to install the service.
 >
 Run the following command to download the cloud-init source package:
@@ -33,7 +33,7 @@ wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.g
 ```
 tar -zxvf cloud-init-17.1.tar.gz 
 ```
-2. Run the following command to enter the decompressed cloud-init installation package directory, that is, the cloud-init-17.1 directory:
+2. Run the following command to enter the decompressed cloud-init installation package directory; that is, the cloud-init-17.1 directory:
 ```
 cd cloud-init-17.1
 ```
@@ -46,9 +46,9 @@ yum install python-pip -y
 ```
 apt-get install python-pip -y
 ```
-During the installation, if an error such as “failed to install” or “installation package not found” occurs, see [fixing Python-pip installation failed issue](#updateSoftware) to troubleshoot it.
+During installation, if an error such as “failed to install” or “installation package not found” occurs, see [resolving Python-pip installation failure](#updateSoftware) to troubleshoot it.
 4. Run the following command to install dependencies:
->!  Python 2.6 is not supported when cloud-init uses requests 2.20.0. If the Python interpreter installed in the image environment is Python version 2.6 or earlier, run the `pip install 'requests<2.20.0'` command to install requests 2.20.0 or later before installing the cloud-init dependencies.
+>!  Python 2.6 is not supported when cloud-init uses requests 2.20.0. or later. If the Python interpreter installed in the image environment is Python version 2.6 or earlier, run the `pip install 'requests<2.20.0'` command to install requests 2.20.0 or later before installing the cloud-init dependencies.
 >
 ```
 pip install -r requirements.txt
@@ -72,7 +72,7 @@ apt-get install cloud-guest-utils -y
 python setup.py build
 python setup.py install --init-system systemd
 ```
->! The `--init-system` can be followed by any of systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse or upstart [default: None]. Configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the systemd auto-start service management method as an example.
+>! The `--init-system` can be followed by any of systemd, sysvinit, sysvinit_deb, sysvinit_freebsd, sysvinit_openrc, sysvinit_suse or upstart [default: None]. Please configure parameters based on the auto-start service management method of the operating system. If incorrect parameters are configured, the cloud-init service cannot automatically start upon system startup. This document uses the systemd auto-start service management method as an example.
 
 #### Modifying the cloud-init configuration file
 
@@ -189,7 +189,7 @@ apt-get/yum install cloud-init
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 ## Relevant Operations
->! Do not restart the server after performing the following operations. Otherwise, you need to perform them again.
+>! Do not restart the server after performing the following operations. Otherwise, you will need to perform them again.
 >
 1. Run the following commands to check whether the cloud-init configuration is successful.
 ```
@@ -217,7 +217,7 @@ If the cloud-init service fails to be installed by [manually downloading the clo
 ```
 tar xvf greeninit-x64-beta.tgz 
 ```
-3. Run the following command to enter the decompressed green cloud-init package directory, that is, the greeninit directory:
+3. Run the following command to enter the decompressed green cloud-init package directory; that is, the greeninit directory:
 ```
 cd greeninit
 ```
@@ -226,8 +226,8 @@ cd greeninit
 sh install.sh 
 ```
 
-### Fixing Python-pip installation failed issue<span id="updateSoftware"></span>
-During the installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it as follows based on the operating system:
+### Resolving Python-pip installation failure<span id="updateSoftware"></span>
+During installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it based on the operating system as follows:
 - For CentOS 6/7:
   1. Run the following command to configure the EPEL storage repository.
 ```
