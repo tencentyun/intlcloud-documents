@@ -1,8 +1,8 @@
 云直播服务为您提供了直播混流功能，根据您设定好的混流布局同步的将各路输入源混流成一个新的流，可实现直播互动效果。同时，云直播直播混流功能已接入 API 3.0接口，具体可参见 [直播混流接口](https://intl.cloud.tencent.com/document/product/267/35997)，本文将举例说明如何在不同场景下实现直播混流。
 
->!
->- 使用云端混流功能将产生标准转码费用。
->- 使用混流裁剪功能的时候，裁剪的参数不能大于源流参数。
+## 注意事项
+- 使用云端混流功能将产生标准转码费用。
+- 使用混流裁剪功能的时候，裁剪的参数不能大于源流参数。
 
 
 ## 功能支持
@@ -23,19 +23,19 @@
 **最常用的布局模板效图：**
 <table>
 <style>#m_img{width:90%;height:auto;display:block;margin-left:auto;margin-right:auto; }</style>
-<thead><tr><th>Template 10</th><th >Template 30</th></tr></thead><tr>
+<thead><tr><th>模板 10</th><th >模板 30</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/a6b395f6fc7c1d07e4325836a3b725e6.jpg" id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/05fbe1c32bec1aed0624785d51b8a2ef.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th >Template 40</th><th>Template 310</th></tr></thead><tr>
+<thead><tr><th >模板 40</th><th>模板 310</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/06cd40976b29452fa297d52db0d3435c.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/e1f4aa6f198856c47d8175302c649448.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th>Template 390</th><th >Template 410</th></tr></thead><tr>
+<thead><tr><th>模板 390</th><th >模板 410</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/50157bb0b01d511c10b3637c13b1471a.png"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/6a420d03e7921453cbc461d1f1176f6c.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th>Template 510</th><th>Template 610</th></tr></thead>
+<thead><tr><th>模板 510</th><th>模板 610</th></tr></thead>
 <td><img src="https://main.qcloudimg.com/raw/c0e5bd29f275a6f055af9830ceea0a02.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/5ca8ba33cc08e80d6aeb403645e75aac.jpg"  id="m_img"></td>
 
@@ -45,16 +45,16 @@
 
 
 
-
-## 参数说明
+## 创建混流
+### 参数说明
 具体请参见 [直播混流](https://intl.cloud.tencent.com/document/product/267/35997)。
 
 
 
-## 场景1：申请混流-使用20模板
+### 场景1：申请混流-使用20模板
 使用混流预置模板混流。
 
-### 输入示例
+#### 输入示例
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
@@ -67,7 +67,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &<公共请求参数>
 ```
 
-### 输出示例
+#### 输出示例
 ```
 {
   "Response": {
@@ -76,14 +76,14 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 }
 ```
 
-### 主播连麦混流效果
+#### 主播连麦混流效果
 ![img](https://main.qcloudimg.com/raw/a9bdfd2622e3152e61d8cb15a1b21aa1.jpg)
 
 
-## 场景2：申请混流-使用390模板
+### 场景2：申请混流-使用390模板
 使用混流预置模板混流。
 
-### 输入示例
+#### 输入示例
 
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
@@ -103,7 +103,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &<公共请求参数>
 ```
 
-### 输出示例
+#### 输出示例
 
 ```
 {
@@ -113,23 +113,23 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 }
 ```
 
-### 主播 PK 混流效果
+#### 主播 PK 混流效果
 ![img](https://main.qcloudimg.com/raw/cad10f080a239725893e5221faa21c17.jpg)
 
 
 
-##  场景3：自定义混流示例
+###  场景3：自定义混流示例
 使用自定义布局。其中，位置参数 LocationX 和 LocationY 为小画面左上角相对背景画面左上角的绝对像素距离。
 ![](https://main.qcloudimg.com/raw/e1f81cd4a9b08af4ad7e4658fc643f0d.png)
 
-### 输入示例
+#### 输入示例
 ```
 https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
 &OutputParams.OutputStreamName=test_stream2
 &InputStreamList.0.InputStreamName=test_stream1
 &InputStreamList.0.LayoutParams.ImageLayer=1
-&InputStreamList.1.LayoutParams.InputType=3
+&InputStreamList.0.LayoutParams.InputType=3
 &InputStreamList.0.LayoutParams.ImageWidth = 1920
 &InputStreamList.0.LayoutParams.ImageHeight= 1080
 &InputStreamList.0.LayoutParams.Color=0x000000
@@ -149,7 +149,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 ```
 
 
-### 输出示例
+#### 输出示例
 ```
 {
   "Response": {
@@ -159,9 +159,33 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 ```
 
 
-### 自定义混流效果
+#### 自定义混流效果
 ![](https://main.qcloudimg.com/raw/db6a87baba1f1891f514d4bea9b38ee4.png)
 
+## 取消混流
+### 参数说明
+具体请参见 [取消通用混流](https://intl.cloud.tencent.com/zh/document/product/267/35998)。
+
+### 场景示例
+根据 session id 取消混流。
+#### 输入示例
+```
+https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
+&MixStreamSessionId=test_room
+```
+
+#### 输出示例
+```
+{
+  "Response": {
+    "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+  }
+}
+```
+
+>! 
+>- 申请混流后，请至少等待5s后再取消混流。
+>- 取消混流后，半分钟后才可使用相同的 session id 申请混流。
 
 
 ## 错误码
@@ -280,3 +304,4 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 <td>-</td>
 </tr>
 </tbody></table>
+
