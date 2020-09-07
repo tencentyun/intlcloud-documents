@@ -22,7 +22,7 @@ Namespace=QCE/COS
 
 ### Storage metrics
 
-| Parameter | Metric Name | Unit | Dimension |
+| Metric | Description | Unit | Dimension |
 | ---------------------- | ----------------- | ---- | ---------------------- |
 | StdStorage | STANDARD - storage space | MB | appid and bucket |
 | SiaStorage | STANDARD_IA - storage space | MB | appid and bucket |
@@ -45,7 +45,7 @@ Namespace=QCE/COS
 | MazArcMultipartNumber | MAZ_ARCHIVE - incomplete multipart uploads | N/A | appid and bucket |
 | NlMultipartNumber | Nearline Storage - incomplete multipart uploads | N/A | appid and bucket |
 | ItFrequentMultipartNumber | Intelligent Laying of Files with High-Frequency Access - incomplete multipart uploads | N/A | appid and bucket |
-| MazItFrequentMultipartNumber | MAZ_Intelligent Laying of Files with High-Frequency Access | N/A | appid and bucket |
+| MazItFrequentMultipartNumber | MAZ_Intelligent Laying of Files with High-Frequency Access - incomplete multipart uploads | N/A | appid and bucket |
 
 
 ### Traffic metrics
@@ -77,17 +77,17 @@ Namespace=QCE/COS
 | IaRetrieval | Low-frequency data retrieval | Traffic generated due to the retrieval of low-frequency data | Byte | appid and bucket |
 | NlRetrieval | Nearline data retrieval | Traffic generated due to the retrieval of nearline data | Byte | appid and bucket |
 
-## Overview of Parameters in Each Dimension
+## Overview of the Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | ------------------------------- | -------- | ---------------------- | --------------------------------------------------- |
-| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name, such as appid. |
-| &Instances.N.Dimensions.0.Value | appid | Specific APPID of the root account | Enter a specific root account APPID, such as 1250000000. |
-| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket. |
-| &Instances.N.Dimensions.1.Value | bucket | Specific bucket name | Enter a specific bucket name, such as examplebucket-1250000000. |
+| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name, such as appid |
+| &Instances.N.Dimensions.0.Value | appid | Specific APPID of the root account | Enter a specific root account APPID, such as 1250000000 |
+| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket |
+| &Instances.N.Dimensions.1.Value | bucket | Specific bucket name | Enter a specific bucket name, such as examplebucket-1250000000 |
 
 ## Input Parameters
-To query COS monitoring data, the values of input parameters are as follows:
+To query COS monitoring data, the values of the input parameters are as follows:
 &Namespace=QCE/COS
 &Instances.N.Dimensions.0.Name=appid
 &Instances.N.Dimensions.0.Value=`APPID` of the root account
