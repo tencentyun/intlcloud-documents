@@ -26,7 +26,7 @@ A User Request is a request that is sent by the user and received by the server 
 
 The Error Rate Per 5 Minutes is the ratio of the count of Failed Requests returned by the Tencent Cloud Log Service to the count of User Requests in the 5-minute period, which shall be calculated as follows:
 
-Error Rate Per 5 Minutes = ![img](file:///C:/Users/V_VHUA~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.png)
+Error Rate Per 5 Minutes = ![img](https://main.qcloudimg.com/raw/00a544cceb8753431a4056a842f11c9e.png)
 
 **1.5 Monthly Service Fee**
 
@@ -36,7 +36,7 @@ The Monthly Service Fee is the aggregated amount of fees arising from the usage 
 
 **2.1 Calculation of the Service Availability**
 
-Service Availability = ![img](file:///C:/Users/V_VHUA~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.png),
+Service Availability = ![img](https://main.qcloudimg.com/raw/8cc3ef17703651b3079a39558258d40f.png),
 
 where the total number of 5-minute periods in a Service Month = 12 × 24 × number of days in that Service Month.
 
