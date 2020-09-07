@@ -11,8 +11,8 @@
 
 The .NET SDK is developed based on .NET Standard 2.0.
 
-- For Windows users: Install .NET Core 2.0 or above or .NET Framework 4.6.1 or above. 
-- For Linux/Mac users: Install .NET Core 2.0 or above.
+- For Windows: Install .NET Core 2.0 or above or .NET Framework 4.6.1 or above. 
+- For Linux/Mac: Install .NET Core 2.0 or above.
 
 #### Installing the SDK
 
@@ -28,7 +28,7 @@ If .NET CLI is used instead, run the following command:
 dotnet add package Tencent.QCloud.Cos.Sdk
 ```
 
-## Step 2. Initiate COS Services
+## Step 2. Initialize COS Services
 
 The section below describes how to perform basic COS operations with the .NET SDK, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
 
@@ -53,7 +53,7 @@ Before making any COS requests, always instantiate the following 3 objects: `Cos
 
 >?The initialization samples below use temporary keys. For more information on how to generate and use them, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
-### 1. Initializating a COS service
+### 1. Initializing a COS service
 
 ```cs
 // Initialize CosXmlConfig 
@@ -61,7 +61,6 @@ string appid = "1250000000";// Set the APPID of your Tencent Cloud account
 string region = "COS_REGION"; // Set the default bucket region
 CosXmlConfig config = new CosXmlConfig.Builder()
   .IsHttps(true)  // Set HTTPS as the default request method
-  .SetAppid(appid)  // Set the APPID of your Tencent Cloud account
   .SetRegion(region)  // Set the default bucket region
   .SetDebugLog(true)  // Display logs
   .Build();  // Create a CosXmlConfig object
@@ -74,8 +73,8 @@ The SDK supports three types of access credentials: permanent keys, updated temp
 **Type 1: permanent key**
 
 ```cs
-String secretId = "COS_SECRETID"; // “SecretId of your TencentCloud API key”
-String secretKey = "COS_SECRETKEY"; // “SecretKey of your TencentCloud API key”
+String secretId = "COS_SECRETID"; // SecretId of your TencentCloud API key
+String secretKey = "COS_SECRETKEY"; // SecretKey of your TencentCloud API key
 long durationSecond = 600;          // Validity period of each request signature in seconds
 QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
   secretId, secretKey, durationSecond);
@@ -97,9 +96,9 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
   public override void Refresh()
   {
     //... First, request a temporary key from Tencent Cloud
-    String tmpSecretId = "COS_SECRETID"; // “SecretId of the temporary key”;
-    String tmpSecretKey = "COS_SECRETKEY"; // “SecretKey of the temporary key”;
-    string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
+    String tmpSecretId = "COS_SECRETID"; // SecretId of the temporary key;
+    String tmpSecretKey = "COS_SECRETKEY"; // SecretKey of the temporary key;
+    string tmpToken = "COS_TOKEN"; // Token of the temporary key;
     long tmpStartTime = 1546860702;// Start time in seconds of the temporary key’s validity period
     long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
     // Call the API to update the key
@@ -116,15 +115,15 @@ QCloudCredentialProvider cosCredentialProvider = new CustomQCloudCredentialProvi
 Note that your request may fail if you use an expired temporary key from a previous request.
 
 ```cs
-String tmpSecretId = "COS_SECRETID"; // “SecretId of the temporary key”;
-String tmpSecretKey = "COS_SECRETKEY"; // “SecretKey of the temporary key”;
-string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
+String tmpSecretId = "COS_SECRETID"; // SecretId of the temporary key;
+String tmpSecretKey = "COS_SECRETKEY"; // SecretKey of the temporary key;
+string tmpToken = "COS_TOKEN"; // Token of the temporary key;
 long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
 QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredentialProvider(
   tmpSecretId, tmpSecretKey, tmpExpireTime, tmpToken);
 ```
 
-### 3. Initialize CosXmlServer
+### 3. Initializing CosXmlServer
 
 We recommend using `CosXmlConfig` and `QCloudCredentialProvider` to initialize the `CosXmlServer` service class as a **singleton** in your program.
 
@@ -138,13 +137,11 @@ CosXml cosXml = new CosXmlServer(config, cosCredentialProvider);
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; //Format: BucketName-APPID
   PutBucketRequest request = new PutBucketRequest(bucket);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   PutBucketResult result = cosXml.PutBucket(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -164,8 +161,6 @@ catch (COSXML.CosException.CosServerException serverEx)
 try
 {
   GetServiceRequest request = new GetServiceRequest();
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   GetServiceResult result = cosXml.GetService(request);
   // Get a list of all buckets
@@ -185,56 +180,60 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Uploading an object
 ```cs
-try
-{
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-  string key = "exampleobject"; // Identifier of an object in the bucket, i.e. object key
-  string srcPath = @"temp-source-file";// Absolute path to the local file
-  if (!File.Exists(srcPath)) {
-    // For testing only: if the destination file does not exist, create a temporary test file
-    File.WriteAllBytes(srcPath, new byte[1024]);
-  }
+// Initialize TransferConfig
+TransferConfig transferConfig = new TransferConfig();
 
-  PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set the progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
-  {
+// Initialize TransferManager
+TransferManager transferManager = new TransferManager(cosXml, transferConfig);
+
+String bucket = "examplebucket-1250000000"; // Bucket in the format: `BucketName-APPID`
+String cosPath = "exampleobject"; // Identify the location of an object in the bucket, i.e., the object key
+String srcPath = @"temp-source-file";// Absolute path to the local file
+
+// Upload an object
+COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath);
+uploadTask.SetSrcPath(srcPath);
+
+uploadTask.progressCallback = delegate (long completed, long total)
+{
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
-  });
-  // Execute the request
-  PutObjectResult result = cosXml.PutObject(request);
-  // Object Etag
-  string eTag = result.eTag;
-}
-catch (COSXML.CosException.CosClientException clientEx)
+};
+uploadTask.successCallback = delegate (CosResult cosResult) 
 {
-  // Request failed
-  Console.WriteLine("CosClientException: " + clientEx);
-}
-catch (COSXML.CosException.CosServerException serverEx)
+    COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = cosResult 
+      as COSXML.Transfer.COSXMLUploadTask.UploadTaskResult;
+    Console.WriteLine(result.GetResultInfo());
+    string eTag = result.eTag;
+};
+uploadTask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
 {
-  // Request failed
-  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-}
+    if (clientEx != null)
+    {
+        Console.WriteLine("CosClientException: " + clientEx);
+    }
+    if (serverEx != null)
+    {
+        Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+    }
+};
+transferManager.Upload(uploadTask);
 ```
 
-### Querying an object list
+### Querying object list
 
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; //Format: BucketName-APPID
   GetBucketRequest request = new GetBucketRequest(bucket);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Get objects prefixed with “dir/”
-  request.SetPrefix("dir/");
   // Execute the request
   GetBucketResult result = cosXml.GetBucket(request);
   // Bucket information
   ListBucket info = result.listBucket;
+  if (info.isTruncated) {
+    // Record the marker for the next page of truncated data
+    this.nextMarker = info.nextMarker;
+  }
 }
 catch (COSXML.CosException.CosClientException clientEx)
 {
@@ -251,35 +250,44 @@ catch (COSXML.CosException.CosServerException serverEx)
 ### Downloading an object
 
 ```cs
-try
+// Initialize TransferConfig
+TransferConfig transferConfig = new TransferConfig();
+
+// Initialize TransferManager
+TransferManager transferManager = new TransferManager(cosXml, transferConfig);
+
+String bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+String cosPath = "exampleobject"; // Identify the location of an object in the bucket, i.e., the object key
+string localDir = System.IO.Path.GetTempPath();// Local file directory
+string localFileName = "my-local-temp-file"; // Specify the name of the file to be saved locally
+
+// Download an object
+COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(bucket, cosPath, 
+  localDir, localFileName);
+
+downloadTask.progressCallback = delegate (long completed, long total)
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-  string key = "exampleobject"; // Identifier of an object in the bucket, i.e. object key
-  string localDir = System.IO.Path.GetTempPath();// Local file directory
-  string localFileName = "my-local-temp-file"; // Specify the name of the file to be saved locally
-  GetObjectRequest request = new GetObjectRequest(bucket, key, localDir, localFileName);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
-  // Set the progress callback
-  request.SetCosProgressCallback(delegate (long completed, long total)
-  {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
-  });
-  // Execute the request
-  GetObjectResult result = cosXml.GetObject(request);
-  // Request successful
-  Console.WriteLine(result.GetResultInfo());
-}
-catch (COSXML.CosException.CosClientException clientEx)
+};
+downloadTask.successCallback = delegate (CosResult cosResult) 
 {
-  // Request failed
-  Console.WriteLine("CosClientException: " + clientEx);
-}
-catch (COSXML.CosException.CosServerException serverEx)
+    COSXML.Transfer.COSXMLDownloadTask.DownloadTaskResult result = cosResult 
+      as COSXML.Transfer.COSXMLDownloadTask.DownloadTaskResult;
+    Console.WriteLine(result.GetResultInfo());
+    string eTag = result.eTag;
+};
+downloadTask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
 {
-  // Request failed
-  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-}
+    if (clientEx != null)
+    {
+        Console.WriteLine("CosClientException: " + clientEx);
+    }
+    if (serverEx != null)
+    {
+        Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+    }
+};
+transferManager.Download(downloadTask);
 ```
 
 ### Deleting an object
@@ -287,14 +295,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-  string key = "exampleobject"; // Identifier of an object in the bucket, i.e. object key
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+  string key = "exampleobject"; // Object key
   DeleteObjectRequest request = new DeleteObjectRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   DeleteObjectResult result = cosXml.DeleteObject(request);
-  // Request successful
+  // Request succeeded
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
