@@ -10,4 +10,5 @@
 >!限速方式变更后，原有限速配置将删除，带宽将设置为1Gbps（默认），如需更大默认带宽，请提[ 工单申请](https://console.cloud.tencent.com/workorder/category)。
 
 ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
-    3. 单击【确定】，即可修改限速方式。
+
+   3. 单击【确定】，即可修改限速方式。
