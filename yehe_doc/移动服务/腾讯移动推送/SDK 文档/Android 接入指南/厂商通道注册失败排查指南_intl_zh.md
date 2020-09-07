@@ -13,7 +13,7 @@ TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
 - 方式一：在应用运行日志中通过过滤关键字 `OtherPush`，找到如下类似日志来定位厂商通道注册返回码：
    ```
    // 华为通道
-   // 如果过滤关键字 `OtherPush` 找不到返回码，可以过滤关键字 `HMSSDK` 。
+   // 如果过滤关键字 `OtherPush` 找不到返回码，可以过滤关键字 `HMSSDK` ，并注意查看 onResult 或 onConnect 后的返回码
    [OtherPushHuaWeiImpl] other push huawei onConnect code:907135702
    
    // 小米通道
@@ -139,9 +139,7 @@ TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
  </tbody></table>
  
 
-   
-   
-### 其他排查
+ ### 其他排查
 - **华为推送需要在华为推送平台开启推送服务**
 如您在华为设备上无法获取华为 Token，但获取到厂商推送注册返回码为0 ，请前往 [华为推送平台](https://developer.huawei.com/consumer/cn/)，进入【开发】>【推送服务】页面，确认应用的推送开关是否开启；进入【开发】>【项目设置】>【API 管理】页面，确认 `Push Kit、App Messaging` 开关是否开启。
 推送服务页面显示如下：
@@ -159,6 +157,22 @@ API 管理页面显示如下：
 - **vivo 推送需要申请推送功能开通后才能进行正式推送**
 进入【[vivo 开放平台](https://dev.vivo.com.cn/home)】>【推送运营平台】，在【消息推送】>【全部应用】中，所创建应用将会列入在应用名称里，点击【应用名称】选择要申请的应用后单击【提交申请】。
 ![](https://main.qcloudimg.com/raw/4e7bec948dd18600d6c13636dd6e42b2.png)
+
 >?部分厂商推送开关开启生效有约5分钟延迟，若开启开关后仍遇到注册失败，可以稍等片刻再进行尝试。
+
+- **华为移动服务版本过低**
+搜索日志关键字“HMSSDK”，如观察如下类似日志，即 `connect versionCod` 小于 `connect minVersion`，表示系统应用“华为移动服务”或“HMS_Core”版本较低，请做升级后尝试重新注册。
+```plaintext
+I/HMSSDK_HuaweiApiClientImpl: ====== HMSSDK version: 20601301 ======
+I/HMSSDK_HuaweiApiClientImpl: Enter connect, Connection Status: 1
+E/HMSSDK_Util: In getHmsVersion, Failed to read meta data for the HMS VERSION.
+I/HMSSDK_HuaweiApiClientImpl: connect minVersion:20600000
+I/HMSSDK_HuaweiMobileServicesUtil: connect versionCode:20301306
+D/HMSAgent: connect end:-1001
+```
+
+
+- **vivo 部分机型不支持推送服务**
+vivo 推送仅支持部分较新的机型和对应的系统及以上系统，详情请参考 [vivo推送常见问题汇总](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733)。
 
 
