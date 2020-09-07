@@ -80,8 +80,7 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/server_upload/; python3 server_upl
 
 ### 步骤6：查看结果<span id="p6"></span>
 
-在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面上可以看到刚上传的视频文件和封面：
-<img src="https://main.qcloudimg.com/raw/30496b593f606ef3bbcefbc8dc6d790d.png" width="750">
+在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面上可以看到刚上传的视频文件和封面。
 
 ## 代码解读
 

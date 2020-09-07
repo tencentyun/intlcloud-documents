@@ -61,7 +61,7 @@ Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 V
 
 - 如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
 - 在控制台 [账号信息](https://console.cloud.tencent.com/developer) 页面可以查看 APPID，如下图所示：
-  ![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
+  ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
 
 ### 步骤4：部署事件通知接收服务<span id="p4"></span>
 
@@ -99,20 +99,17 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 如 [避免影响生产环境](#p0) 一节所述，操作之前请先确认您的线上业务不依赖于 VOD 事件通知。
 
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/callback)，单击【设置】，回调模式选择【普通回调】，回调 URL 填写 [步骤4](#p4) 中获得的事件通知接收服务地址，回调事件全部勾选，然后单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/d2814df6ab35d47f3ba83608851666ff.png)
->!如果您在控制台同时看到两个回调 URL 设置（2.0版本格式和3.0版本格式），请填写3.0版本。如下图所示：
-![](https://main.qcloudimg.com/raw/7d032f25fa1ae90dc627df943dc48753.png)
+![](https://main.qcloudimg.com/raw/4664c0b6d1991eb136fde116881d7467.png)
+>!如果您在控制台同时看到两个回调 URL 设置（2.0版本格式和3.0版本格式），请填写3.0版本。
 
 ### 步骤6：测试 Demo
 
 按照 [上传视频 - 本地上传步骤](https://intl.cloud.tencent.com/document/product/266/33890) 的说明，上传一个测试视频到云点播，注意上传过程选择默认的【只上传，暂不进行视频处理】。上传完成后，在“已上传”标签页可以看到该视频的状态为“处理中”，说明 Demo 接收到了 NewFileUpload 事件通知并发起了转码请求。
-![](https://main.qcloudimg.com/raw/0bab955ace318ff37cc0c3b42cacf3d6.png)
 
-等待视频处理完成（状态变为“正常”）后，单击【快捷查看】，在页面右侧可以看到该视频有两个转码视频。如下图所示：
-![](https://main.qcloudimg.com/raw/7bdb93b122fd66ac4ced3c3491c7c8af.png)
+
+等待视频处理完成（状态变为“正常”）后，单击【快捷查看】，在页面右侧可以看到该视频有两个转码视频。
 
 登录 [SCF 控制台日志页面](https://console.cloud.tencent.com/scf/list-detail?rid=1&ns=vod_demo&id=callback&menu=log) 查看 SCF 日志记录，在最新的一条日志中，可以看到两个转码文件的 URL 已经打印出来，在实际应用场景中，开发者可以通过 SCF 将 URL 记录在自己的数据库，或者通过其它渠道发布给观众。
-![](https://main.qcloudimg.com/raw/7d19597bdf36c5354e88550d60911685.png)
 >?SCF 日志可能会有些许延迟，如果在页面上没有看到日志，请耐心等待一两分钟，然后单击【重置】刷新。
 
 ## 系统设计说明<span id="design"></span>
