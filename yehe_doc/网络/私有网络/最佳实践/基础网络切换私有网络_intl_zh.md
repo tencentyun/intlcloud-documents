@@ -48,14 +48,14 @@
 如下图所示，基础网络的服务使用了 CLB、CVM、云数据库 MySQL、云数据库 Redis 四个产品，它们之间的依赖关系为：
 - 公网 CLB 绑定了两台 CVM 作为后端服务器。
 - 云数据库 MySQL、云数据库 Redis 为两台 CVM 上部署的服务提供数据库服务。
-![](https://main.qcloudimg.com/raw/47306535fde541d174012cfa762ba746.png)
+![](https://main.qcloudimg.com/raw/bf54dd1832d0e16c756984e305772e06.png)
 
 ### 迁移步骤
 1. 迁移云数据库，利用迁移后，仍可访问原有基础网络的优势，保障数据库连接不中断，不影响服务提供，且在原有基础网络的访问的最长保持时间内，完成其他产品的迁移。
-![](https://main.qcloudimg.com/raw/d3a4a990141bd75f162d62e6bebfe555.png)
+![](https://main.qcloudimg.com/raw/427fe3f0445056c94332df90d4cd9bb3.png)
 2. 在云数据库迁移的私有网络内，新建两个 CVM，并部署对应的服务。完成后，测试 CVM 是否能正常访问云数据库。
-![](https://main.qcloudimg.com/raw/ffe2eb1cbdb9cb860ca872fd3c251799.png)
+![](https://main.qcloudimg.com/raw/4425f9af34e3df70a84f1a80e8a7ba40.png)
 3. 在云数据库迁移的私有网络内，新建一个公网 CLB，并绑定上述新建的两个 CVM，注意检查健康状态，避免因异常情况影响服务。
-![](https://main.qcloudimg.com/raw/1025a688c01db399d3061a68d4d66c20.png)
+![](https://main.qcloudimg.com/raw/8dab2d96a40f1df4eefa9ad04117cb2b.png)
 4. 待所有服务完成迁移后，释放基础网络下留存的公网 CLB、CVM 资源，结束迁移。
-![](https://main.qcloudimg.com/raw/6b0488e853bd84e0d424fd17120fef95.png)
+![](https://main.qcloudimg.com/raw/cb567a4a3f88c4bc4c8d787d60f512f3.png)
