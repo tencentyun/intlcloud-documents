@@ -5,11 +5,11 @@
 华为推送通道是由**华为官方提供**的系统级推送通道。在华为手机上，推送消息能够通过华为的系统通道抵达终端，并且无需打开应用，即可收到推送。
 
 
->
->- 本文仅适用华为通道 V2 接入，V4 接入请参见 [华为通道 V4 接入](https://intl.cloud.tencent.com/document/product/1024/37176)。
->- 华为推送只有在签名发布包环境下，才可收到推送消息。
->- 华为手机中的移动推送服务，必须升级到2.5.3以上版本，否则华为通道会注册失败（依旧走腾讯移动推送的 TPNS 通道）。
->- 华为通道不支持抵达回调，支持点击回调（需要自定义参数），支持透传（忽略自定义参数，但不保证到达）。
+>!
+- 本文仅适用华为通道 V2 接入，V4 接入请参见 [华为通道 V4 接入](https://intl.cloud.tencent.com/document/product/1024/37176)。
+- 华为推送只有在签名发布包环境下，才可收到推送消息。
+- 华为手机中的移动推送服务，必须升级到2.5.3以上版本，否则华为通道会注册失败（依旧走移动推送 TPNS 的 TPNS 通道）。
+- 华为通道不支持抵达回调，支持点击回调（需要自定义参数），支持透传（忽略自定义参数，但不保证到达）。
 
 ## 操作步骤
 
@@ -17,7 +17,7 @@
 
 1. 进入 [华为开放平台](http://developer.huawei.com)。
 2. 注册和登录开发者账号，详情请参见 [账号注册认证](https://developer.huawei.com/consumer/cn/devservice/doc/20300)。（如果您是新注册账号，需进行实名认证）
-3. 在华为推送平台中新建应用，详情请参见 [创建应用](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057)。（应用包名需跟您在腾讯移动推送填写的包名保持一致）
+3. 在华为推送平台中新建应用，详情请参见 [创建应用](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-Guides/hmssdk_huaweipush_devprepare_agent#h1-1575111622057)。（应用包名需跟您在移动推送 TPNS 填写的包名保持一致）
 4. 获取应用的 AppID 和 AppSecret，并且复制信息，填入控制台的应用配置 > 华为通道栏目中。
 
 
@@ -43,7 +43,7 @@
 ```
 
 
-
+>? 华为推送 [VERSION] 为当前 SDK 版本号，版本号可在 [SDK 下载页](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
 
 #### Eclipes 集成方法
 1. 下载 [SDK 安装包](https://console.cloud.tencent.com/tpns/sdkdownload)。
@@ -123,7 +123,7 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
 -keep class com.huawei.android.hms.agent.**{*;}
 
 ```
->混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
+>?混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
 
 ## 华为通道抵达回执配置
 华为通道抵达回执需要开发者自行配置，您可参照 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95)  配置完成后，可在推送记录中查看华为推送通道的抵达数据。
