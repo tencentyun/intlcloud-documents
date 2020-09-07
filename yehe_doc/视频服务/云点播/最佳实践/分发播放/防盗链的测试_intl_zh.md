@@ -1,4 +1,3 @@
-## 简介
 云点播提供了 [防盗链](https://intl.cloud.tencent.com/document/product/266/33984) 功能，开发者可以根据实际需要，对视频播放 URL 使用的域名合理设置防盗链，实现对用户视频播放行为的控制。
 
 然而，不经测试就对使用中的域名设置防盗链有以下风险：
@@ -20,8 +19,8 @@
 ### 术语说明
 为了便于说明方案，下面介绍一些会涉及的术语：
 
-* **点播默认域名**：现网环境中，用户播放点播视频使用的正式域名。“预置点播域名”和“自定义域名”都能被设置成“点播默认域名”（设置方法请参见 [自定义域名](https://intl.cloud.tencent.com/document/product/266/35572)）。
-* **预置点播测试域名**：一个用于开发者调试的测试域名（通常为`xxx-test.vod2.myqcloud.com`），不得用于现网环境，不能被设为默认域名。
+* **点播默认域名**：现网环境中，用户播放点播视频使用的正式域名。任意点播“自定义域名”都能被设置成“点播默认域名”（设置方法请参见 [自定义域名](https://intl.cloud.tencent.com/document/product/266/35572)）。
+* **点播测试域名**：一个用于开发者调试的测试域名，不得用于现网环境，不建议被设为默认域名。
 * **正式 App 后台**：业务的 App 后台服务，现网用户从这里获取视频的播放 URL。
 * **测试 App 后台**：业务测试环境中的 App 后台服务，测试客户端从这里获取视频的播放 URL。
 
@@ -29,22 +28,22 @@
 
 通常情况下，现网用户从业务的正式 App 后台获取视频的播放 URL，测试客户端从业务的测试 App 后台获取视频播放 URL，两处获得的 URL 中的域名相同（都是点播默认域名）。当对防盗链测试时，不能直接变更点播默认域名，否则现网用户将受到影响。
 
-<img src="https://main.qcloudimg.com/raw/4117ff809dd401c6f0f6c7569d731b21.png" width="450">
+<img src="https://main.qcloudimg.com/raw/85d3b79bc4255be32804c53438bc8ec2.png" width="450">
 
-为了避免防盗链测试影响现网用户，云点播提供了一个“预置点播测试域名”，与现网中使用的点播默认域名隔离。开发者测试防盗链时，仅操作测试域名的防盗链配置。
+为了避免防盗链测试影响现网用户，开发者需要额外准备一个测试域名，与现网中使用的点播默认域名隔离。开发者测试防盗链时，仅操作测试域名的防盗链配置。
 
 云点播还提供了一个“测试域名代理”（IP 为`122.152.250.73`），开发者只需要修改测试客户端的 HOST 表，将点播默认域名解析到这个代理上，测试客户端的视频播放请求，将经过代理转发到测试域名（下图中的红色路径），而现网用户的播放请求仍然通过正式域名获取视频内容（下图中的黑色路径）。
 
-<img src="https://main.qcloudimg.com/raw/3c461eb955a8b526816341f5116ff19c.png" width="450">
+<img src="https://main.qcloudimg.com/raw/ea7c413d0bc993554b4b5521ffc7adcf.png" width="450">
 
 因此，开发者可以自由修改测试域名的防盗链配置，以及测试 App 后台派发的视频播放 URL，而不必担心影响到现网用户。
 
-<img src="https://main.qcloudimg.com/raw/6f891fcbebef12da423e42ec5ab59e1e.png" width="450">
+<img src="https://main.qcloudimg.com/raw/9d47fd2140a3bdc7a20aa6347407b009.png" width="450">
 
 开发者使用测试客户端和测试 App 后台，充分验证防盗链并确认无误后，可以依次执行以下步骤：
 
 1. 将正式 App 后台派发视频播放 URL 的规则修改成与测试 App 后台一致。
-2. 将点播默认域名的防盗链配置修改成和预置点播测试域名一致。
+2. 将点播默认域名的防盗链配置修改成和测试域名一致。
 
 如此，点播默认域名的防盗链正式生效，经过测试验证的防盗链配置被应用到了现网。
 
@@ -52,7 +51,7 @@
 
 下面，以用户开启 KEY 防盗链为例，介绍防盗链测试的操作步骤：
 
-1. 预置点播测试域名开启防盗链。
+1. 测试域名开启防盗链。
 2. 获取一个原始播放 URL。
 3. 测试客户端仍然能够播放视频原始 URL。
 4. 测试客户端修改 HOST 表。
@@ -64,20 +63,15 @@
 #### 背景
 
 ![](https://main.qcloudimg.com/raw/98a0a1c95a0874cb8ebdf39f321753d5.png)
-用户（例中 appid 为`125xxx655`）登录云点播控制台，在 [【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain) 将看到以下两种域名：
+用户（例中 appid 为`125xxx655`）登录云点播控制台，在 [【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain) 添加正式域名和测试域名，并将正式域名设置为默认域名。初始状态下的域名默认没有开启 KEY 防盗链。
 
-* 预置点播域名（`125xxx655.vod2.myqcloud.com`）。
-* 预置点播测试域名（`125xxx655-test.vod2.myqcloud.com`）。
+#### 1. 测试域名开启防盗链
 
-初始状态下，预置点播域名`125xxx655.vod2.myqcloud.com`为点播默认域名，并且没有开启 KEY 防盗链。
-
-#### 1. 预置点播测试域名开启防盗链
-
-选择预置点播测试域名（`125xxx655-test.vod2.myqcloud.com`），单击【设置】，进入【Key 防盗链】，启用 Key 防盗链，并使用【生成 Key】生成一个防盗链 Key。单击【确定】保存，等待配置生效。
+选择测试域名，单击【设置】，进入【Key 防盗链】，启用 Key 防盗链，并使用【生成 Key】生成一个防盗链 Key。单击【确定】保存，等待配置生效。
 
 #### 2. 获取一个原始播放 URL
 
-视频的原始播放 URL，是指没有带 [防盗链参数](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE.E5.8F.82.E6.95.B0) 的 URL 地址，可以从控制台 [媒资管理](https://console.cloud.tencent.com/vod/media) 中获取。例子中使用的 URL 为：`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov`。
+视频的原始播放 URL，是指没有带 [防盗链参数](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE.E5.8F.82.E6.95.B0) 的 URL 地址，可以从控制台 [媒资管理](https://console.cloud.tencent.com/vod/media) 中获取。
 
 #### 3. 测试客户端仍然能够播放视频原始 URL
 
@@ -86,9 +80,9 @@
 
 #### 4. 测试客户端修改 HOST 表
 
-修改测试终端的 HOST 表（Windows 系统为`C:\Windows\System32\drivers\etc\hosts`，Mac 系统为`/private/etc/hosts`），添加一条记录```122.152.250.73 125xxx655.vod2.myqcloud.com```，然后保存。
+修改测试终端的 HOST 表（Windows 系统为`C:\Windows\System32\drivers\etc\hosts`，Mac 系统为`/private/etc/hosts`），添加一条记录```122.152.250.73 测试域名```，然后保存。
 
-修改后，执行```ping 125xxx655.vod2.myqcloud.com```检查 HOST 修改是否生效。
+修改后，执行```ping 测试域名```检查 HOST 修改是否生效。
 
 #### 5. 测试客户端不能再播放视频原始 URL
 
@@ -96,7 +90,7 @@
 
 #### 6. 测试客户端能够播放带防盗链参数的 URL
 
-按照 Key 防盗链的 [生成规则](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 生成带有防盗链参数的 URL，便能成功播放视频，地址为`https://125xxx655.vod2.myqcloud.com/ca7xxx655/cfbxxx349/PkxxxIA.mov?t=5bd6be00&sign=18cxxx9deb`，执行```curl```返回的 HTTP 状态码为 200。
+按照 Key 防盗链的 [生成规则](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 生成带有防盗链参数的 URL，便能成功播放视频，地址为`https://xxx.com/ca7xxx655/cfbxxx349/PkxxxIA.mov?t=5bd6be00&sign=18cxxx9deb`，执行```curl```返回的 HTTP 状态码为 200。
 
 测试 App 后台按照防盗链生成规则，派发带有防盗链参数的 URL，并使用测试客户端进行验证。
 
@@ -106,9 +100,6 @@
 
 #### 8. 点播默认域名开启防盗链
 
-先在控制台打开**点播预置测试域名**的【Key 防盗链】，复制测试域名的防盗链 Key。然后打开**点播默认域名**的【Key 防盗链】，把测试域名的 Key 粘贴在【防盗链 Key】文本框中，单击【确定】保存。
+先在控制台打开**测试域名**的【Key 防盗链】，复制测试域名的防盗链 Key。然后打开**点播默认域名**的【Key 防盗链】，把测试域名的 Key 粘贴在【防盗链 Key】文本框中，单击【确定】保存。
 
 域名配置生效后，防盗链配置就会被应用到现网使用的点播默认域名，并正式生效。
-
-
-
