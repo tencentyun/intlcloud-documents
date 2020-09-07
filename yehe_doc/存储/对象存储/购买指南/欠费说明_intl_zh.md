@@ -4,14 +4,14 @@
 
 您可以查看以下常见问题，了解欠费原因：
 
-- [享受免费额度为何仍会欠费（扣费）？](https://cloud.tencent.com/document/product/436/30747#.E4.BA.AB.E5.8F.97.E5.85.8D.E8.B4.B9.E9.A2.9D.E5.BA.A6.E4.B8.BA.E4.BD.95.E4.BB.8D.E4.BC.9A.E6.AC.A0.E8.B4.B9.EF.BC.88.E6.89.A3.E8.B4.B9.EF.BC.89.EF.BC.9F)
+- [享受免费额度为何仍会欠费（扣费）？](https://intl.cloud.tencent.com/document/product/436/10373)
 
 
 
 >?
->- 若您对欠费有疑问，可在控制台 [费用账单](https://console.cloud.tencent.com/expense/bill/overview) 页面查阅和核对您的消费明细，操作方式请参见 [查询消费明细](https://cloud.tencent.com/document/product/436/30357) 文档。
->- 若您对具体的扣费项有疑问，可以参见 [计费项](https://cloud.tencent.com/document/product/436/40285) 了解具体的计费项含义及计费规则。
->- 若您想了解各费用的计费和结算周期，请参见 [计费周期](https://cloud.tencent.com/document/product/436/16871#.E8.AE.A1.E8.B4.B9.E5.91.A8.E6.9C.9F)。
+>- 若您对欠费有疑问，可在控制台 [费用账单](https://console.cloud.tencent.com/expense/bill/overview) 页面查阅和核对您的消费明细，操作方式请参见 [查询消费明细](https://intl.cloud.tencent.com/document/product/436/31631) 文档。
+>- 若您对具体的扣费项有疑问，可以参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776) 了解具体的计费项含义及计费规则。
+>- 若您想了解各费用的计费和结算周期，请参见 [计费周期](https://intl.cloud.tencent.com/document/product/436/16871)。
 
 
 ## 欠费后的服务状态
@@ -26,5 +26,5 @@
 
 
 1. 对于存储在 COS 的数据若您不再使用，您可选择进行删除，以免继续扣费。
-2. 您可以在**控制台**>**费用中心**设置**费用预警**功能，当可用余额低于预警阈值时，将向您发送预警通知，详情请参见 [余额预警指引](https://cloud.tencent.com/document/product/555/9942)。
+2. 您可以在**控制台**>**费用中心**设置**费用预警**功能，当可用余额低于预警阈值时，将向您发送预警通知。
 3. 当产生欠费后，请您及时充值使账号余额大于等于0。
