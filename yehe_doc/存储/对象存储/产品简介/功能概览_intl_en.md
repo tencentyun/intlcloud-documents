@@ -12,7 +12,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Object Operations</td>
-      <td>Storage classes: currently, COS offers three object storage classes for different access frequencies: STANDARD, STANDARD_IA, and ARCHIVE. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class</a><br>Objects/folders: can be uploaded, queried, downloaded, copied, and deleted. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
+      <td>Objects/folders: can be uploaded, queried, downloaded, copied, and deleted. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
    </tr>
    <tr>
       <td rowspan=8>Data Management</td>
@@ -57,9 +57,7 @@ COS offers the following features:
       <td>By configuring a cross-region replication rule, incremental objects can be automatically and asynchronously replicated between buckets in different regions for remote disaster recovery and data backup purposes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-region Replication Overview.</a></td>
    </tr>
    <tr>
-      <td nowrap="nowrap">MAZ</td>
-      <td>Tencent COS now provides a multi-AZ (MAZ) storage architecture, which can provide disaster recovery capabilities at the data center level. For more information, please see <a href="https://intl.cloud.tencent.com/ document/product/436/19237">MAZ Overview</a></td>
-   </tr>
+​     
 
    <tr>
       <td rowspan=2>Data Security</td>
