@@ -10,7 +10,7 @@ A customer gateway is a logical object used with a Tencent Cloud VPN gateway to 
 
 ## VPN Tunnel
 After VPN gateway and customer gateway are created, you can establish a VPN tunnel between the VPC or CCN and an external IDC for encrypted communication. Currently, VPN tunnel supports the IPsec encryption protocol, meeting the requirements of most VPN connections.
-Because a VPN tunnel runs on an ISP's public network, congestion or jitter on the public network may affect the VPN network. Hence, SLA cannot be provided. If your business is sensitive to delay and jitter, we recommend that you connect the VPC or CCN via Direct Connect. For more information, see [Direct Connect](https://intl.cloud.tencent.com/product/dc).
+Because a VPN tunnel runs on an ISP's public network, congestion or jitter on the public network may affect the VPN network. If your business is sensitive to delay and jitter, we recommend that you connect the VPC or CCN via Direct Connect. For more information, see [Direct Connect](https://intl.cloud.tencent.com/product/dc).
 
 ### Establishing a VPN tunnel
 A VPN tunnel on Tencent Cloud uses the Internet Key Exchange (IKE) protocol to establish a session when implementing IPsec. IKE has a self-protection mechanism that can securely authenticate identities, distribute keys, and establish IPSec sessions on insecure networks.
