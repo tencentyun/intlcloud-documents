@@ -3,7 +3,7 @@ UGC（用户生产内容）和 PGC（专业生产内容）是视频行业中常�
 ## 违规视频问题的产生
 
 UGC 或 PGC 的视频平台，与内容提供方、内容消费方及云点播的交互方式如下（第1 - 3步，可参考 [客户端上传](https://intl.cloud.tencent.com/document/product/266/33921)）：
-<img src="https://main.qcloudimg.com/raw/1583662375b390c774d1298e41cda9fd.png" width="400">
+<img src="https://main.qcloudimg.com/raw/b14cc670c5652d00eec47693502615d7.png" width="400">
 
 1. 视频 App 后台对内容提供方进行鉴权，鉴权通过后派发 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 2. 内容提供方执行上传，把分享的内容上传到云点播。
@@ -20,7 +20,7 @@ App 平台在第3步获取到视频的上传信息后，即在平台中发布该
 * 审核结果为“review（建议复核）”时，App 后台进行人工复核，选择是否发布视频。
 
 启用云点播的视频内容审核后，App 后台可以高效识别并过滤违规视频，推荐使用流程如下：
-<img src="https://main.qcloudimg.com/raw/3696b553b4d21a221e83cd537d7df8f2.png" width="550">
+<img src="https://main.qcloudimg.com/raw/81c816c767843b83fb1a303d3eb4b537.png" width="550">
 
 1. App 后台对内容提供方进行鉴权，鉴权通过后派发视频 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 2. 内容提供方执行上传，把分享的内容上传到云点播。

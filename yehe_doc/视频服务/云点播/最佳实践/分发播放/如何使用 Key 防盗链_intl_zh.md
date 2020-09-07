@@ -10,7 +10,7 @@
 Demo 基于云函数（SCF）搭建了一个 HTTP 服务，用于接收来自客户端的获取防盗链签名请求。服务从请求 Body 中获取 VOD 的视频原始 URL，计算防盗链签名，并返回带防盗链签名的 URL 给客户端。
 
 系统主要涉及四个组成部分：开发者、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="https://main.qcloudimg.com/raw/e2397093b8cd9d0aabf228ef41ecac45.png" width="600">
+<img src="https://main.qcloudimg.com/raw/f30d9b832b388c9ffe35551ef26743b4.png" width="600">
 
 具体业务流程为：
 
@@ -49,7 +49,7 @@ Demo 基于云函数（SCF）搭建了一个 HTTP 服务，用于接收来自客
 
 1. 参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
 2. 开通完成后，参考 [设置防盗链](https://intl.cloud.tencent.com/document/product/266/14060) 文档启用 Key 防盗链，并记录下防盗链 Key：
-![](https://main.qcloudimg.com/raw/04d1a39b76fdb3bef5acebe57f3edb16.png)
+![](https://main.qcloudimg.com/raw/209bb5a252765cc77fe4402fe7e76d49.png)
 >!此处是开通 Key 防盗链，而非开通 Referer 防盗链。如果您同步开通了 Referer 防盗链，那么下文的测试方法有可能因为不符合 Referer 防盗链的要求而导致请求失败。
 
 ### 步骤3：获取 API 密钥和 APPID<span id="p3"></span>
@@ -58,7 +58,7 @@ Key 防盗链签名派发服务 Demo 的部署和运行过程需要使用到开�
 
 - 如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
 - 在控制台 [账号信息](https://console.cloud.tencent.com/developer) 页面可以查看 APPID，如下图所示：
-  ![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
+  ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
 
 ### 步骤4：部署防盗链签名派发服务
 
@@ -94,7 +94,7 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 ### 步骤5：测试 Key 防盗链
 
 按照 [上传视频 - 本地上传步骤](https://intl.cloud.tencent.com/document/product/266/33890) 的说明，上传一个测试视频到云点播。上传完成后，单击【快捷查看】，然后单击右侧【复制地址】复制该视频的 URL。
-![](https://main.qcloudimg.com/raw/b93899bb2d2335ce3212ca9c024df10a.png)
+![](https://main.qcloudimg.com/raw/1f319a8d52f046ad979ea9b66eec1023.png)
 在 CVM 命令行执行`curl`命令尝试直接访问该 URL，结果会因不符合 Key 防盗链规则而被服务器拒绝访问，HTTP 返回码为403（测试时，请将命令中的 URL 替换为实际 URL，下同）：
 
 ```

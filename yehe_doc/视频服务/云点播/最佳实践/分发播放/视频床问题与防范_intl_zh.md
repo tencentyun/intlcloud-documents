@@ -19,7 +19,7 @@ UGC（或 PGC）的视频平台，与内容提供方、内容消费方和云点�
 5. 内容消费方通过播放 URL，从云点播加速播放视频。
 
 ### 恶意用户如何实现视频床
-<img src="https://main.qcloudimg.com/raw/3ccbd82c7b6ff5e805d1ce16f113de18.png" width="500"><br>
+<img src="https://main.qcloudimg.com/raw/b0a347b6dc42f3438fca5bf08e46b9f0.png" width="500"><br>
 >?图中箭头方向是指网络请求方向。
 
 恶意的第三方视频平台，会冒充开发者 App 平台的普通用户：
