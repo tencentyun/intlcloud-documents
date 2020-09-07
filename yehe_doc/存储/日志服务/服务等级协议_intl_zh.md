@@ -18,7 +18,7 @@
 
 每5分钟错误率是指由腾讯云日志服务返回的失败请求数占这5分钟内用户请求数的比例。其具体的计算方式如下：
 
-[![img](https://main.qcloudimg.com/raw/00a544cceb8753431a4056a842f11c9e.png)
+每5分钟错误率= [![img](https://main.qcloudimg.com/raw/00a544cceb8753431a4056a842f11c9e.png)
 
 #### 1.5 月度服务费用
 
@@ -28,7 +28,7 @@
 
 #### 2.1 服务可用性计算方式
 
-[![img](https://main.qcloudimg.com/raw/8cc3ef17703651b3079a39558258d40f.png)
+服务可用性= [![img](https://main.qcloudimg.com/raw/8cc3ef17703651b3079a39558258d40f.png)
 
 其中服务月度内的 5 分钟总个数 = 12 x 24 x 该服务月度的天数
 
