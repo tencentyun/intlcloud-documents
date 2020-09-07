@@ -32,7 +32,7 @@ pod 'TPNS-iOS'
 pod repo update
 pod search TPNS-iOS
 pod install //安装 SDK 
-```
+```  
 
 #### 方式二：手动导入
 1. 进入腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns)，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏中【下载】即可。
@@ -227,4 +227,4 @@ NSNumber *msgType = tpnsInfo[@"msgtype"];
 //获取 TPNS 生成的 Token
 [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
-
+![](https://main.qcloudimg.com/raw/f6ff84d3a50630bb4e8a0ab6fd090798.png)

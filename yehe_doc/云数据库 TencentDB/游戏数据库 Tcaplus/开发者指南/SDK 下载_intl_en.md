@@ -5,7 +5,7 @@ To help you integrate TcaplusDB, this document provides links to download Tcaplu
 ## Release History
 Before downloading the SDK, please read the [Release History](https://intl.cloud.tencent.com/document/product/1016/30284).
 
-## SDK for Linux C++ Download
+## SDK Download for Linux C++
 
 | Version | Update Date | SDK Download |
 | ------------- | ---------- | ------------------------------------------------------------ |
@@ -28,7 +28,7 @@ Before downloading the SDK, please read the [Release History](https://intl.cloud
 | Python 2.x | tcaplusdb-restapi-python-sdk-2.x.zip | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-2.x.zip) |
 | Python 3.x | tcaplusdb-restapi-python-sdk-3.x.zip | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/tcaplusdb-restapi-python-sdk-3.x.zip) |
 
-## SDK for Windows C++ Download
+## SDK Download for Windows C++
 
 | Runtime Library | Version | Update Date | SDK Download |
 | ------ | ------------- | ---------- | ------------------------------------------------------------ |

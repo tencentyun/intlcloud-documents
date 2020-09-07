@@ -8,10 +8,10 @@ Namespace=QCE/TXMR_PRESTO
 
 | Parameter | Metric Name | Unit | Description | Dimension |
 | ------------------------------------------------------------ | -------------------------------------------- | -------- | ------------------ | ----------------- |
-| EmrPrestoOverviewPresto<br>PrestoMNodesActive                | Number of nodes_Active                              | Count       | Number of active nodes       | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>PrestoMNodesTotal                | Number of nodes_Total                               | Count       | Total number of nodes         | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>PrestoMNodesFailed               | Number of nodes_Failed                              | Count       | Number of failed nodes       | id4prestooverview |
-| EmrPrestoOverviewPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | Count       | Total number of running queries | id4prestooverview |
+| EmrPrestoOverviewPresto<br>PrestoMNodesActive                | Number of nodes_Active                              | - | Number of active nodes       | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>PrestoMNodesTotal                | Number of nodes_Total                               | - | Total number of nodes         | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>PrestoMNodesFailed               | Number of nodes_Failed                              | - | Number of failed nodes       | id4prestooverview |
+| EmrPrestoOverviewPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | - | Total number of running queries | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of failed queries | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of aborted queries     | id4prestooverview |
 | EmrPrestoOverviewPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of canceled queries     | id4prestooverview |
@@ -24,10 +24,10 @@ Namespace=QCE/TXMR_PRESTO
 
 | Parameter | Metric Name | Unit | Description | Dimension |
 | ------------------------------------------------------------ | -------------------------------------------- | -------- | ------------------ | ------------------------------------------- |
-| EmrPrestoOverview<br>OriginalPresto<br>PrestoMNodesActive    | Number of nodes_Active                              | Count       | Number of active nodes       | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesTotal   | Number of nodes_Total                               | Count       | Total number of nodes         | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesFailed  | Number of nodes_Failed                              | Count       | Number of failed nodes       | id4prestooverview, <br/>host4prestooverview |
-| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | Count       | Total number of running queries | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br>OriginalPresto<br>PrestoMNodesActive    | Number of nodes_Active                              | -        | Number of active nodes       | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesTotal   | Number of nodes_Total                               | -        | Total number of nodes         | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMNodesFailed  | Number of nodes_Failed                              | -        | Number of failed nodes       | id4prestooverview, <br/>host4prestooverview |
+| EmrPrestoOverview<br/>OriginalPresto<br/>PrestoMQueries<br>Runningqueries | Queries_RunningQueries                          | - | Total number of running queries | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Failedqueries | Query frequency_FailedQueries                       | Queries/min   | Total number of failed queries | id4prestooverview, <br>host4prestooverview  |
 | EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute Abandonedqueries | Query frequency_AbandonedQueries                    | Queries/min   | Total number of aborted queries     | id4prestooverview, <br/>host4prestooverview |
 | EmrPrestoOverview<br/>OriginalPresto<br/>MQueriesOneMinute<br>Canceledqueries | Query frequency_CanceledQueries                     | Queries/min   | Total number of canceled queries     | id4prestooverview, <br/>host4prestooverview |
@@ -42,8 +42,8 @@ Namespace=QCE/TXMR_PRESTO
 
 | Parameter | Metric Name | Unit | Description | Dimension |
 | ------------------------------------------------------- | ---------------------------------------- | -------- | --------------------------------------- | -------------------------------------------------- |
-| PrestoWGcUtilGcCountYgc                                 | GC count_YGC                               | Count       | Young GC count                           | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWGcUtilGcCountFgc                                 | GC count_FGC                               | Count       | Full GC count                            | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWGcUtilGcCountYgc                                 | GC count_YGC                               | -        | Young GC count                           | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWGcUtilGcCountFgc                                 | GC count_FGC                               | -        | Full GC count                            | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWGcUtilGcTimeFgct                                 | GC time_FGCT                              | s        | Time consumed by Full GC                        | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWGcUtilGcTimeGct                                  | GC time_FGCT                              | s        | Time used to collect garbage                         | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWGcUtilGcTimeYgct                                 | GC time_YGCT                              | s        | Time consumed by Young GC                       | host4prestoprestoworker, <br>id4prestoprestoworker |
@@ -62,20 +62,20 @@ Namespace=QCE/TXMR_PRESTO
 | PrestoWJvmMem<br>Memnonheapinitm                        | JVM memory_MemNonHeapInitM                  | MB       | Size of the initial JVM NonHeapMem              | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWDataOneMinute<br>RateInputdatasizeoneminute      | Data input/output rate_InputDataSizeOneMinute  | GB/min   | Data input rate                            | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWDataOneMinute<br>RateOutputdata<br>sizeoneminute | Data input/output rate_OutputDataSizeOneMinute | GB/min   | Data output rate                            | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWThreadCount<br>Peakthreadcount                   | Number of threads_PeakThreadCount                 | Count       | Peak number of threads                              | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWThreadCount<br>Daemonthreadcount                 | Number of threads_DaemonThreadCount               | Count       | Number of threads                                | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWThreadCount<br>Threadcount                       | Number of threads_ThreadCount                     | Count       | Number of background threads                            | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWThreadCount<br>Peakthreadcount                   | Number of threads_PeakThreadCount                 | - | Peak number of threads                              | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWThreadCount<br>Daemonthreadcount                 | Number of threads_DaemonThreadCount               | - | Number of threads                                | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWThreadCount<br>Threadcount                       | Number of threads_ThreadCount                     | - | Number of background threads                            | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWUptimeUptime                                     | Process run time_Uptime                      | s        | Process run time                            | host4prestoprestoworker, <br>id4prestoprestoworker |
 | PrestoWStartTimeStarttime                               | Process start time_StartTime                   | s        | Process start time                            | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWOsFdCount<br>Maxfiledescriptorcount              | Number of file descriptors_MaxFileDescriptorCount      | Count       | Maximum number of file descriptors                        | host4prestoprestoworker, <br>id4prestoprestoworker |
-| PrestoWOsFdCount<br>Openfiledescriptorcount             | Number of file descriptors_OpenFileDescriptorCount     | Count       | Number of opened file descriptors                      | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWOsFdCount<br>Maxfiledescriptorcount              | Number of file descriptors_MaxFileDescriptorCount      | - | Maximum number of file descriptors                        | host4prestoprestoworker, <br>id4prestoprestoworker |
+| PrestoWOsFdCount<br>Openfiledescriptorcount             | Number of file descriptors_OpenFileDescriptorCount     | - | Number of opened file descriptors                      | host4prestoprestoworker, <br>id4prestoprestoworker |
 
 ### Presto - Coordinator
 
 | Parameter | Metric Name | Unit | Description | Dimension |
 | ------------------------------------------- | ------------------------------------ | -------- | --------------------------------------- | ------------------------------------------------------------ |
-| PrestoMGc<br>UtilGcCountYgc                 | GC count_YGC                           | Count       | Young GC count                           | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMGc<br>UtilGcCountFgc                 | GC count_FGC                           | Count       | Full GC count                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMGc<br>UtilGcCountYgc                 | GC count_YGC                           | - | Young GC count                           | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMGc<br>UtilGcCountFgc                 | GC count_FGC                           | - | Full GC count                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMGc<br>UtilGcTimeFgct                 | GC time_FGCT                          | s        | Time consumed by Full GC                        | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMGc<br>UtilGcTimeGct                  | GC time_FGCT                          | s        | Time used to collect garbage                        | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMGc<br>UtilGcTimeYgct                 | GC time_YGCT                          | s        | Time consumed by Young GC                       | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
@@ -92,15 +92,15 @@ Namespace=QCE/TXMR_PRESTO
 | PrestoMJvmMem<br>Memheapmaxm                | JVM memory_MemHeapMaxM                  | MB       | Size of the HeapMemory configured by JVM            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMJvmMem<br>Memheapinitm               | JVM memory_MemHeapInitM                 | MB       | Size of the initial JVM HeapMem                 | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMJvmMem<br>Memnonheapinitm            | JVM memory_MemNonHeapInitM              | MB       | Size of the initial JVM NonHeapMem              | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMThreadCount<br>Peakthreadcount       | Number of threads_PeakThreadCount             | Count       | Peak number of threads                              | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMThreadCount<br>Daemonthreadcount     | Number of threads_DaemonThreadCount           | Count       | Number of threads                                | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMThread<br>CountThreadcount           | Number of threads_ThreadCount                 | Count       | Peak number of background threads                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMThreadCount<br>Peakthreadcount       | Number of threads_PeakThreadCount             | - | Peak number of threads                              | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMThreadCount<br>Daemonthreadcount     | Number of threads_DaemonThreadCount           | - | Number of threads                                | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMThread<br>CountThreadcount           | Number of threads_ThreadCount                 | -  | Peak number of background threads                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMUptimeUptime                         | Process run time_Uptime                  | s        | Process run time                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
 | PrestoMStart<br>TimeStarttime               | Process start time_StartTime               | s        | Process start time                            | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMOsFdCount<br>Maxfiledescriptorcount  | Number of file descriptors_MaxFileDescriptorCount  | Count       | Maximum number of file descriptors                        | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
-| PrestoMOsFdCount<br>Openfiledescriptorcount | Number of file descriptors_OpenFileDescriptorCount | Count       | Number of opened file descriptors                      | host4prestoprestocoordinator, <br/>id4prestoprestocoordinator |
+| PrestoMOsFdCount<br>Maxfiledescriptorcount  | Number of file descriptors_MaxFileDescriptorCount  | -        | Maximum number of file descriptors                        | host4prestoprestocoordinator, <br>id4prestoprestocoordinator |
+| PrestoMOsFdCount<br>Openfiledescriptorcount | Number of file descriptors_OpenFileDescriptorCount | - | Number of opened file descriptors                      | host4prestoprestocoordinator, <br/>id4prestoprestocoordinator |
 
-## Overview of Parameters in Each Dimension
+## Overview of the Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | :----------------------------- | :--------------------------- | :--------------------------- | :----------------------------------------------------- |

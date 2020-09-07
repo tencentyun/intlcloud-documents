@@ -30,7 +30,7 @@ implementation 'com.tencent.tpns:vivo:[VERSION]-release' // Vivo Push [VERSION] 
 
 
 
-#### Integrating through Eclipse
+#### Integrating through Eclipes
 After getting the TPNS SDK package for Vivo Push, configure the major TPNS version and the following content in the manual integration method detailed on TPNS's official website.
 
 1. Import the jar packages related to Vivo Push. Import `vivo4tpns1.1.2.1.jar` to the project folder:
@@ -93,4 +93,4 @@ I/XINGE: [PushServiceBroadcastHandler]  bind OtherPushToken success ack with [ac
 
 ```
 
->Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
+>?Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.

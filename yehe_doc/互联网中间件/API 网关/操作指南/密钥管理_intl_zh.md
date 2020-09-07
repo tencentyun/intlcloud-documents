@@ -14,7 +14,7 @@
 3. 在密钥列表页点击【新建】，弹出新建密钥对话框。
 4. 密钥类型选择【自动生成密钥】，输入密钥名称。
 5. 单击【提交】，即可自动生成密钥。
-![](https://main.qcloudimg.com/raw/b52227c7381244bcf39afbc25111eb8d.png)
+![](https://main.qcloudimg.com/raw/f3094bc97af3d505a256e03ee975c0f4.png)
 
 ### 创建自定义密钥
 
@@ -23,7 +23,7 @@
 3. 在密钥列表页点击【新建】，弹出新建密钥对话框。
 4. 密钥类型选择【自定义密钥】，输入密钥名称、SecretId、SercretKey。
 5. 单击【提交】，即可成功创建自定义密钥。
-![](https://main.qcloudimg.com/raw/b182c95f4724366390253051c7fddc88.png)
+![](https://main.qcloudimg.com/raw/c568cddb09a93fdade398aded2f2d3a6.png)
 
 ### 禁用密钥
 
@@ -31,7 +31,7 @@
 2. 在左侧导航栏，单击【密钥】，进入密钥列表页。
 3. 在密钥列表页找到状态为“使用中”且需要禁用的密钥，单击操作栏的【禁用】。
 4. 在弹出的确认对话框中单击【确认】，即可禁用密钥，密钥状态变为“已停用”。
-![](https://main.qcloudimg.com/raw/11ce468f420a585e601ed57cba661372.png)
+![](https://main.qcloudimg.com/raw/fe278a365679be68f6df3184506878c7.png)
 
 ### 启用密钥
 
