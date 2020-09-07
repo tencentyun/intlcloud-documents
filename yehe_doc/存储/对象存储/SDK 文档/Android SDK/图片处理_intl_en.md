@@ -47,14 +47,14 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36378">Removing metadata</a></td>
-      <td>Including EXIF data</td>
+      <td>Includes EXIF data</td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">Quick thumbnail template</a></td>
       <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
    </tr>
    <tr>
-      <td>Setting style</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">Setting style</a></td>
       <td>Sets image styles to easily manage images for different purposes</td>
    </tr>
 </table>
@@ -62,14 +62,15 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
 
 ## SDK API Reference
 
-For the parameters and method descriptions of all the APIs in the SDK, see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
+For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
+## Using Image Processing when Uploading
 
-## Using Image Processing
-
-The following example shows how to automatically process an image when you upload it.
+The following example shows how COS automatically processes an image when you upload it.
 
 Upon successful upload, COS will save both the original and processed images. You can obtain the processing result using a common download request.
+
+#### Sample code
 
 [//]: # ".cssg-snippet-upload-with-pic-operation"
 ```java
@@ -82,10 +83,55 @@ PicOperations picOperations = new PicOperations(true, rules);
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
 putObjectRequest.setPicOperations(picOperations);
 
-// If the upload is successful, you will get two images: the original and the processed image
+// If the upload is successful, you will get both the original and the processed images
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+
+
+### Blind watermarking
+
+#### Description
+
+COS allows you to add a blind watermark when uploading or download an object.
+
+#### Sample 1. Adding a blind watermark when uploading
+
+[//]: # ".cssg-snippet-put-object-with-watermark"
+```java
+List<PicOperationRule> rules = new LinkedList<>();
+// Add a blind watermarking rule. The processed image will be saved in the bucket with a location identifier in the format:
+// examplewatermarkobject
+rules.add(new PicOperationRule("examplewatermarkobject",
+        "watermark/3/type/1/image/aHR0cDovL2V4YW1wbGVzLTEyNTEwMDAw"));
+PicOperations picOperations = new PicOperations(true, rules);
+
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
+putObjectRequest.setPicOperations(picOperations);
+
+// If the upload is successful, you will get both the original and the processed images
+COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
+        srcPath, uploadId);
+```
+
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+
+#### Sample 2. Adding a blind watermark when downloading
+
+[//]: # ".cssg-snippet-download-object-with-watermark"
+```java
+GetObjectRequest getObjectRequest = new GetObjectRequest(bucket, cosPath, savePathDir, savedFileName);
+Map<String, String> params = new HashMap<>();
+// Add text watermark
+params.put("watermark/3/type/3/text/dGVuY2VudCBjbG91ZA==", null);
+getObjectRequest.setQueryParameters(params);
+
+COSXMLDownloadTask cosxmlDownloadTask =
+        transferManager.download(applicationContext, getObjectRequest);
+```
+
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+
 
