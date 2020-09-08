@@ -56,11 +56,14 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31917">云数据库 MySQL</a></td>
 <td>MySQL 实例</td>
 </tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/237">云数据库 MariaDB</a></td>
+<td>云数据库 MariaDB 实例</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1042">分布式数据库 TDSQL</a></td>
+<td>分布式数据库 TDSQL 实例</td>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 <td>MongoDB 实例</td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/239">云数据库 Redis </a></td>
-<td>Redis 实例 </td>
 </tr></table>
 
 ## Serverless
@@ -68,6 +71,16 @@
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/583">云函数 SCF</a></td>
 <td>函数</td>
+</tr></table>
+
+## 云通信
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047">即时通信 IM  </a></td>
+<td>即时通信 IM 应用</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/382">短信 SMS </a></td>
+<td>短信应用 </td>
 </tr></table>
 
 ## 视频服务
@@ -81,11 +94,11 @@
 </tr></table>
 
 
-## 云通信
+## 中间件
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047">即时通信 IM  </a></td>
-<td>即时通信 IM 应用</td>
+<td>消息队列 CKafka</td>
+<td>Ckafka 实例</td>
 </tr></table>
 
 ## 网络安全
