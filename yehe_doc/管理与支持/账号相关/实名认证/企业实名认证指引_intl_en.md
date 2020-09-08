@@ -1,5 +1,5 @@
 ## Overview
-This document describes how to verify organization identity for your Tencent Cloud account. After successful verification, the account and Tencent Cloud resources under it will belong to your organization. You will be able to purchase and manage resources for organizations. You can request for VAT invoices but will not be able to purchase or use resources designated for individual businesses.
+This document describes how to verify organization identity for your Tencent Cloud account. After successful verification, the account and Tencent Cloud resources under it will belong to your organization. You will be able to purchase and manage resources for organizations, but will not be able to purchase or use resources designated for individual businesses.
 >One set of organization identity information (organization name/business number) can be used to verify the identity of up to three Tencent Cloud accounts.
 >
 >If you want to apply for ICP filing for service in Mainland China in the future, please make sure that the name in identity verification is the same as that of the ICP filing entity; otherwise, ICP filing application will fail.
