@@ -52,7 +52,7 @@ Definitions:
 
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document | 
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- | ---- | 
-| [Global Application Acceleration Platform (GAAP)](https://intl.cloud.tencent.com/document/product/608)  | Resource level | &#10003;  |  -   |  -  |-  |
+| [Global Application Acceleration Platform (GAAP)](https://intl.cloud.tencent.com/document/product/608)  | Resource level | &#10003;  |   &#10003;  |  -  |-  |
 | [Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/document/product/570)  | Resource level | &#10003;  |  - | -  | -  |
 | [Content Delivery Network (CDN)](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| Resource level | &#10003;   |  -   | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/228/35229)  |
 
@@ -62,10 +62,10 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document | 
 | ------------------------------------------------------------ | ------ | --------| --------- | ---- | ---- |
 | [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236)  | Resource level | &#10003; | -  |  &#10003; | [CAM Guide](https://intl.cloud.tencent.com/document/product/236/14469) |  
-| [TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/237)  | Resource level | &#10003;  | -    | &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/237/35441) | 
+| [TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/237)  | Resource level | &#10003;  | &#10003;   | &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/237/35441) | 
 | [TencentDB for SQL Server](https://intl.cloud.tencent.com/document/product/238)  | Resource level | &#10003;  | -    | -     |[CAM Guide](https://intl.cloud.tencent.com/document/product/238/34583) | 
 | [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  | Resource level | &#10003;  | -    | -     | - |
-| [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
+| [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) | 
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
 | [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | -    | &#10003;    | - |
@@ -84,7 +84,7 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |  ---- |
-| [Cloud Message Queue (CMQ)](https://intl.cloud.tencent.com/document/product/406) | Resource level   | &#10003;  | - |  - | [CAM Guide](https://intl.cloud.tencent.com/document/product/406/34257) |
+| [Cloud Message Queue (CMQ)](https://intl.cloud.tencent.com/document/product/406) | Resource level   | &#10003;  | &#10003; |  - | [CAM Guide](https://intl.cloud.tencent.com/document/product/406/34257) |
 | [Cloud Kafka (CKafka)](https://intl.cloud.tencent.com/document/product/597) | Resource level | &#10003; | - | &#10003;   | - |
 | [API Gateway](https://intl.cloud.tencent.com/document/product/628)     | Resource level | &#10003;  | -  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/628/34064)|
 
@@ -131,7 +131,7 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- | ---- | 
-| [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647)   | Resource level | &#10003; | -  |  - | -| 
+| [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647)   | Resource level | &#10003; | &#10003;  |  - | -| 
 | [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267)   | Resource level | &#10003; | &#10003;  |  &#10003;  | [CAM Guide](https://intl.cloud.tencent.com/document/product/267/32468) | 
 | [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  -  | [CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  | 
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)    | Service level   | &#10003;  | -    |   &#10003;   | -  |  
@@ -168,8 +168,8 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- | ---- |
-| [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047)   | Resource level | &#10003;   | -  |  - | - |
-| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Resource level | &#10003; | -   | -  | -  |
+| [Instant Messaging (IM)](https://intl.cloud.tencent.com/document/product/1047)   | Resource level | &#10003;   | &#10003;  |  - | - |
+| [Short Message Service (SMS)](https://intl.cloud.tencent.com/document/product/382) | Resource level | &#10003; | &#10003;   | -  | -  |
 
 ## Cloud Resource Management
 

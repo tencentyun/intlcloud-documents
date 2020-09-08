@@ -54,7 +54,7 @@
 
 | 服务                                                      | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |	
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	---- |	
-| [全球应用加速](https://intl.cloud.tencent.com/document/product/608)  | 资源级 | &#10003;  |  -   |  -  |-  |
+| [全球应用加速](https://intl.cloud.tencent.com/document/product/608)  | 资源级 | &#10003;  |  &#10003;   |  -  |-  |
 | [全站加速网络](https://intl.cloud.tencent.com/document/product/570)  | 资源级 | &#10003;  |  - | -  | -  |
 | [内容分发网络](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| 资源级 | &#10003;   |  -   | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/228/35229)  |
 
@@ -64,10 +64,10 @@
  | 服务                                                         | 授权粒度 | 控制台   | 根据标签进行授权 | 服务角色 |	参考文档 |	
 | ------------------------------------------------------------ | ------ | --------| --------- | ---- |	---- |
 | [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236)  | 资源级 | &#10003; | &#10003;  |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/236/14469) |		
-| [云数据库 MariaDB](https://intl.cloud.tencent.com/document/product/237)  |资源级 | &#10003;  | -    | &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/237/35441) |	
+| [云数据库 MariaDB](https://intl.cloud.tencent.com/document/product/237)  |资源级 | &#10003;  | &#10003;    | &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/237/35441) |	
 | [ 云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/238)  |资源级 | &#10003;  | -    | -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/238/34583) |	
 | [云数据库 PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  |资源级 | &#10003;  | -    | -     | - |
-| [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
+| [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  |  &#10003;    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
 | [云数据库 Redis](https://intl.cloud.tencent.com/document/product/239)   | 资源级| &#10003; | -  | - |[访问管理指南](https://intl.cloud.tencent.com/document/product/239/32845) |	
 | [云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/240) |资源级 | &#10003; | -   |&#10003;|[访问管理指南](https://intl.cloud.tencent.com/document/product/240/32839) |			
 | [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | -    | &#10003;    | - |
@@ -87,7 +87,7 @@
 
  | 服务                                                       | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	 ---- |
-| [消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406) | 资源级   | &#10003;  | - |  - |	[访问管理指南](https://intl.cloud.tencent.com/document/product/406/34257) |
+| [消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406) | 资源级   | &#10003;  | &#10003; |  - |	[访问管理指南](https://intl.cloud.tencent.com/document/product/406/34257) |
 | [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597) | 资源级 | &#10003; | - | &#10003;   | - |
 | [API 网关](https://intl.cloud.tencent.com/document/product/628)     | 资源级  | &#10003;  | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/628/34064)|
 
@@ -109,7 +109,7 @@
  | 服务                                                          | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
 | [宙斯盾安全防护](https://intl.cloud.tencent.com/document/product/685)    | -      | -   | -   |  &#10003;    |- |
-><sup>1</sup> DDOS 防护（大禹）中  [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029)、[BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297)均已支持使用 CAM。
+><sup>1</sup> DDoS 防护（大禹）中  [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029)、[BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297)均已支持使用 CAM。
 
 ## 数据安全
 
@@ -134,7 +134,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	---- |	
-| [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 资源级| &#10003; | -  |  - |	-|	
+| [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 资源级| &#10003; | &#10003;  |  - |	-|	
 | [云直播](https://intl.cloud.tencent.com/document/product/267)   | 资源级| &#10003; | &#10003;  |  &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | -    |  -  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)    | 服务级   | &#10003;  | -    |   &#10003;   |	-  |		
@@ -172,7 +172,7 @@
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
 | [即时通信](https://intl.cloud.tencent.com/document/product/1047)   | 资源级 | &#10003;   | -  |  - | - |
-| [短信](https://intl.cloud.tencent.com/document/product/382) | 资源级 | &#10003; | -   | -  |	-  |	
+| [短信](https://intl.cloud.tencent.com/document/product/382) | 资源级 | &#10003; | &#10003;   | -  |	-  |	
 
 ## 云资源管理
 
