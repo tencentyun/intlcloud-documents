@@ -62,9 +62,7 @@ VPC 中至少包含一个子网，只有在子网中才可以添加云服务资�
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在“私有网络”页面顶部，选择 VPC 所属地域。
 3. 在 VPC 列表中目标 VPC 右侧**操作**列单击【编辑 CIDR】。
-   ![](https://main.qcloudimg.com/raw/4a481b0690c7a1660530c3b6e8804674.png)
 4. 在“编辑 CIDR” 对话框的 IPv4 CIDR 下方，单击【添加】，并填写辅助 CIDR 信息，然后单击【确认】。
-   ![](https://main.qcloudimg.com/raw/6c72a8da68e6156bf98a7f86349aca0e.png)
 
 <span id ="31"></span>
 
@@ -76,7 +74,6 @@ VPC 中至少包含一个子网，只有在子网中才可以添加云服务资�
 2. 在“私有网络”页面顶部，选择 VPC 所属地域。
 3. 在 VPC 列表中目标 VPC 右侧**操作**列单击【编辑 CIDR】。
 4. 在“编辑 CIDR” 对话框的 IPv6 CIDR 右侧单击【获取】，并单击【确定】，系统将为该 VPC 分配1个`/56`的 IPv6 CIDR。
-   ![](https://main.qcloudimg.com/raw/74e90b92823a76da34de94e5b7726a38.png)
 
 
 <span id ="22"></span>
@@ -111,4 +108,3 @@ VPC 中至少包含一个子网，只有在子网中才可以添加云服务资�
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在“私有网络”页面顶部，选择 VPC 所属地域。
 3. 在 VPC 列表中待删除的 VPC 右侧**操作**列单击【删除】，并确认操作。
-   ![](https://main.qcloudimg.com/raw/eb4132388565269ac16d44ae61163601.png)
