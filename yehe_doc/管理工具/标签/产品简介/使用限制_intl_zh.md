@@ -1,0 +1,21 @@
+<table>
+<tr>
+<th >限制项</th>
+<th >标签键</th>
+<th >标签值</th>
+</tr><tr>
+<td rowspan="4">命名限制</td>
+<td>以 qcs:、project:、项目等开头的标签键为系统预留标签键，系统预留标签键禁止创建。</td>
+<td>-</td>
+</tr>
+<tr>
+<td>在 UTF-8 中，标记键必须最少为 1，最多为 127 个 Unicode 字符。</td>
+<td>在 UTF-8 中，标记键必须最少为 1，最多为 255 个 Unicode 字符。</td>
+</tr>
+<tr>
+<td colspan=2>支持 UTF-8 格式表示的字符、空格和数字以及特殊字符： + - = .  /  @ 。</td>
+</tr>
+<tr>
+<td colspan=2>区分大小写 。</td>
+</tr>
+</tbody></table>
