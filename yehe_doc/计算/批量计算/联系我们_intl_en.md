@@ -8,7 +8,8 @@ Other regions: +86 75595716
 ## Ticket System
 If you encounter any OPS or technical problems when using the product, log in to Tencent Cloud's official website and submit a ticket as instructed. We will respond as soon as possible.
 Ticket links:
-- Ticket submission: [Submit a ticket](https://console.cloud.tencent.com/workorder/category)
+
+- Ticket submission: [Submit a ticket](https://console.cloud.tencent.com/workorder/category)
 - Status query: [Ticket list](https://console.cloud.tencent.com/workorder)
 
 A ticket can have the following states:
