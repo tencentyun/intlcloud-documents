@@ -1,38 +1,83 @@
-## Latest Version 4.8.50 @2020.06.22
+## Latest Version 4.9.1 @2020.07.24
 
 ### SDK
 
 **Common changes**
 
-- Fixed an issue with API 2.0 where the onMemberEnter callback would not be called when a user entered a live streaming group (AVChatRoom).
-- Added the groupID parameter to the onGroupInfoChanged and onMemberInfoChanged callbacks of API 2.0.
-- Fixed the issue where the update conversation callback would not be called after C2C messages were sent.
-- Fixed the issue where messages would not be received after switching accounts to join the same live streaming group (AVChatRoom).
-- Fixed an occasional error with incorrect callback sequences when synchronizing unread messages after login.
-- Added signaling API.
-- Added the group custom property API to live streaming groups (AVChatRoom).
-- Fixed known crashes.
+- Optimized login outside China.
+- Fixed file upload failures in some regions outside China.
+- Fixed file upload failures for accounts containing the @ symbol.
+- Fixed occasional errors with C2C unread count.
+- Fixed occasional exceptions in session showName display.
+- Added an API for obtaining the download URL of file messages.
+
+**iOS platform**
+
+- Fixed the issue where there was no callback when users attempted to obtain C2C messages while network connection was not available.
 
 **Android platform**
 
-The default log storage location is changed to /sdcard/Android/data/package-name/files/log/tencent/imsdk for compatibility with Android Q version.
+- Fixed occasional crashes of signaling parsing APIs.
+- Fixed occasional crashes when obtaining offline push information.
+- Fixed the issue of no callback when API2.0 getFriendApplicationList carried no data, and fixed the issue of no callback when non-members were specified for getGroupMembersInfo.
 
 **Windows platform**
 
-Fixed issue with group member roles.
+- Added detailed group information when users obtain the list of groups joined.
+- Fixed the failure to send small files.
+- Fixed error 6002 reported by logs.
 
 ### TUIKit and demo
 
 **iOS platform**
 
-- TUIKit now uses API 2.0.
-- Audio/Video call feature is now available based on TRTC integration.
-- Dark mode is now available.
+- Added push of offline voice and video calls and enabled redirection to the call answering interface.
+- Fixed failure to delete or recall custom messages.
+- Optimized the interface.
+- Changed the voice and video code swift -> oc to substantially reduce third-party dependent libraries.
+- Supports TUIKit pod integration of two types of voice and video dependent libraries: LiteAV_TRTC and LiteAV_Professional.
 
 **Android platform**
-- TUIKit now uses API 2.0.
-- Audio/Video call feature is now available based on TRTC integration.
-- AndroidX is now supported.
+
+- Optimized the offline push of the demo and upgraded the push SDK version for each vendor.
+- Added push of offline voice and video calls and enabled redirection to the call answering interface.
+
+
+## 4.8.50 @2020.06.22
+
+### SDK
+
+**Common changes**
+
+- Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a livestreaming group (AVChatRoom).
+- Added the groupID parameter to the onGroupInfoChanged and onMemberInfoChanged callbacks of API 2.0.
+- Fixed the issue where there was no conversation update callback after a C2C message was sent successfully.
+- Fixed the issue where a user failed to receive messages after switching accounts and joining the same livestreaming group (AVChatRoom).
+- Fixed the occasional issue of incorrect callback sequence during unread message synchronization after login.
+- Adding signaling APIs.
+- Added the custom group attribute API for livestreaming groups (AVChatRoom).
+- Fixed known crashes.
+
+**Android platform**
+
+Changed the default log storage location to /sdcard/Android/data/package name/files/log/tencent/imsdk to be compatible with Android Q versions.
+
+**Windows platform**
+
+Fixed group member role issues during group creation.
+
+### TUIKit and demo
+
+**iOS platform**
+
+- TUIKit replaced API 2.0.
+- Integrated TRTC to realize the voice and video call feature.
+- Added the deep-color mode.
+
+**Android platform**
+- TUIKit replaced API 2.0.
+- Integrated TRTC to realize the voice and video call feature.
+- Supports AndroidX.
 
 
 ## 4.8.10 @2020.05.15
@@ -41,19 +86,19 @@ Fixed issue with group member roles.
 
 **Common changes**
 
-- iOS and Android now support IPv6.
-- Live streaming groups (AVChatRoom) now support the dynamic update of the group member list.
-- Fixed xlog crash issue.
+- iOS and Android support IPv6.
+- Livestreaming groups (AVChatRoom) support dynamic updates of the group member list.
+- Fixed xlog crashes.
 
 **iOS and Mac platforms**
 
-- Fixed iOS issue where large files always failed to send.
-- Fixed an iOS exception that occurred when messages pulled remarks.
+- Fixed the failure of iOS to send big files.
+- Fixed the exceptions that occurred when getFriendRemark was triggered to fetch the sender’s friend remark in a V2TIMMessage message.
 
 **Android platform**
 
-- The IM SDK now supports AndroidX.
-- Fixed Android device crashes caused by network permission issues.
+- IM SDK supports AndroidX.
+- Fixed the crashes of Android devices caused by network permission issues.
 
 ## 4.8.1 @2020.04.30
 
@@ -61,8 +106,8 @@ Fixed issue with group member roles.
 
 **Common changes**
 
-- API 2.0 is now available for iOS and Android.
-- Fixed conversation confusion that occurred when logging in to different accounts in some cases.
+- iOS & Android launched all-new API 2.0.
+- Fixed conversation errors when users logged in to different accounts in certain scenarios.
 
 ## 4.7.10 @2020.04.23
 
@@ -195,13 +240,13 @@ Revised a data error.
 
 - Added the video call feature.
 - Added 3X3 grid display of group profile photos.
-- Optimized the conversation list, contacts, and chat interface UIs.
+- Optimized the conversation list, contacts, and chat UIs.
 
 **Android platform**
 
 - Added a method to set whether to display read receipts.
 - Added 3X3 grid display of group profile photos.
-- Optimized the conversation list, contacts, and chat interface UIs.
+- Optimized the conversation list, contacts, and chat UIs.
 - Fixed compatibility issues with the input method, UI, and file selection for some mobile phones.
 - Fixed messy display of custom messages.
 - Fixed slow contact loading in the stress test.
@@ -418,7 +463,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
   - Fixed the Didn't find class "android.support.v4.content.FileProvider" error reported on some mobile phones.
   - Optimized the logic for pinning a chat to the top to arrange chats in chronological order starting from the most recent.
   - Fixed the issue where the soft keyboard and other layouts appeared in chats at the same time.
-  - Fixed the issue where the Group Chats, Blocklist, and New Contacts items were not displayed on the Contacts interface when a user is newly registered with no contacts.
+  - Fixed the issue where the Group Chats, Blocklist, and New Contacts items are not displayed on the Contacts interface when a user is newly registered with no contacts.
   - Fixed the issue where the video sound continued to play after a user taps the Back button on a mobile phone.
   - Fixed the issue where the playing voice message did not stop and its sound was also recorded during voice message recording.
   - Fixed the issue where videos sent by iOS devices failed to playback on some mobile phones.
@@ -522,14 +567,14 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Fixed the issue where online messages that had been sent could be obtained through getLastMessage of the conversation.
 - Fixed the issue where getting lastMsg status through the conversation was exceptional after the last message was recalled.
 - Fixed the issue where recalled message content still existed in the conversation list of the peer.
-- Fixed the issue where the sending status of image/audio/file messages was exceptional after network reconnection.
+- Fixed the issue where the sending status of image/voice/file messages was exceptional after network reconnection.
 - Fixed the issue where login accounts that contained special characters could not send audio and images.
 - Fixed the issue where the V4 version could not get the width and height of thumbnails sent by the V2 version.
 - Fixed the issue where recent conversations failed to be pulled after saveMessage was created for a conversation.
 - Fixed the issue where getMessage failed to get the MemberChangeList content of group tips.
 - Fixed the issue when getLoginStatus failed to get the login status.
 - Fixed the issue where applicants became group members after their requests to join the group were rejected.
-- Fixed the issue where a log file existed under the root directory of the drive letter after a log path has been set.
+- Fixed the issue where a log file existed under the root directory of the drive letter after a log path was set.
 - Mac: fixed the issue where the callback failed to be received in case of force offline.
 - TUIKit
   - Optimized the group management page logic.
@@ -545,7 +590,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Fixed the issue with incorrect system message types.
 - Fixed the issue with exceptional progress value when files were downloaded.
 - Fixed the issue where mobile phones failed to send messages after the system time was changed.
-- Fixed the issue where the sending status of image/audio/file messages was exceptional after network reconnection.
+- Fixed the issue where the sending status of image/voice/file messages was exceptional after network reconnection.
 - Fixed exceptional message sorting after a group was disbanded or a user was muted.
 - Fixed the issue where reporting conversation read and getting the unread count failed in some cases. 
 - Fixed the issue where recalled message content still existed in the conversation list of the peer.
@@ -558,7 +603,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Fixed the issue where getOpUser of TIMGroupSystemElem was empty.
 - Fixed the issue where getMessage failed to get the MemberChangeList content of group tips.
 - Fixed the issue where recent conversations failed to be pulled after saveMessage was created for a conversation.
-- Fixed the issue where a log file existed under the root directory of the drive letter after a log path has been set.
+- Fixed the issue where a log file existed under the root directory of the drive letter after a log path was set.
 - Fixed known TUIKit issues.
 
 **Windows platform**
@@ -570,9 +615,9 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 - Fixed the issue with incorrect system message types.
 - Fixed the issue where the iOS IM SDK module of the cross-platform library did not include the Armv7a architecture.
 - Fixed the issue where empty messages were not supported by the TIMMsgReportReaded API of the cross-platform library.
-- Fixed the issue where multiple IM instances could run on one cross-platform library device with the same account and would be kicked off.
+- Fixed the issue where multiple IM instances could run on one cross-platform library device with the same account and would not be kicked off.
 - Added the JSON key for getting the unique ID of messages to cross-platform library messages.
-- Fixed the issue where a log file existed under the root directory of the drive letter after a log path has been set.
+- Fixed the issue where a log file existed under the root directory of the drive letter after a log path was set.
 - Fixed the issue where getMessage failed to get the MemberChangeList content of group tips.
 - Fixed the issue where getting lastMsg status through the conversation was exceptional after the last message was recalled.
 - Fixed the issue where reporting conversation read and getting the unread count failed in some cases.
@@ -817,7 +862,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
  - TUIKit: fixed a crash (github issue#86).
  - TUIKit: fixed issues with using SDK without permissions.
  - TUIKit: fixed crashes after deleting conversation, deleting message, and long-pressing.
- - TUIKit: fixed the issue where pop-up window would not disappear.
+ - TUIKit: fixed the issue where popupwindow would not disappear.
  - TUIKit: fixed the issue with repeated messages.
  - TUIKit: fixed the issue with intercepting empty messages containing whitespace.
  - TUIKit: fixed the issue where unread counts did not update after conversations were deleted.
@@ -837,7 +882,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **iOS platform**
 - New features:
- - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
+ Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Optimized API annotations.
  - Fixed the issue with ineffective group custom fields and group member custom fields.
@@ -851,7 +896,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **Android platform**
 - New features:
- - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
+ Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Fixed jni leak on Android.
  - Fixed incorrect group member roles.
@@ -869,7 +914,7 @@ Deprecated the setOfflinePushListener API and TIMOfflinePushNotification class i
 
 **Windows platform**
 - New features:
- - Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
+ Supplemented relationship chain features such as blocklist, friend list, and friend request handling of earlier version SDKs.
 - Fixed:
  - Fixed the issue where TIMMessage failed to get user profiles through senderProfile.
  - Fixed the issue with read receipt callback and status.
@@ -1153,7 +1198,6 @@ Fixed the issue where some so libraries were incompatible with devices running s
 
 **API changes:**
 - Changed how TIMMessageOfflinePushSettings.AndroidSettings and TIMMessageOfflinePushSettings.IOSSettings are constructed.
-For more information, see [Offline Push]
 
 ## IM Android SDK 2.5.2 2017-3-1
 - Fixed the issue where the return of outgoing packets occasionally timed out (return code 6205).
@@ -1185,7 +1229,7 @@ For more information, see [Offline Push]
 - Fixed the issue where various listeners became invalid when logout is called before login after initialization.
 
 ## IM SDK 2.4 2016-11-09
-- Fully compatible with the ATS mode.
+- Full compatible with the ATS mode.
 - Message forwarding feature: the copyFrom API forwards image and file messages by copying images and files without downloading them.
 - The number of members in an audio-video chat room is dynamically updated. TIMGroupEventListener returns the current number of group members.
 - Message filtering can be customized for audio-video chat rooms.
@@ -1226,7 +1270,7 @@ For more information, see [Offline Push]
 
 ## IM Web SDK 1.5 2016-7-13
 - Merged broadcasting chat room SDK capabilities.
-- Fixed issues with uploading images in IE8 and 9.
+- Fixed issues with uploading images in IE8 and IE9.
 - Added a group member count field to tips for joining and quitting groups.
 - Fixed some SDK and demo bugs.
 
