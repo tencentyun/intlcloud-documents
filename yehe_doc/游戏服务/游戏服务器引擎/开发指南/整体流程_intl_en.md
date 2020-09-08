@@ -7,39 +7,33 @@ The game server communicates with GSE over gRPC. The gRPC framework can be integ
 ### Step 2. Publish the program
 
 1. Upload an asset package 
-An asset package contains the executable files, dependencies, and install script of the game server. You need to package them as a ZIP file before upload. For more information, please see [Creating Code Packages](https://intl.cloud.tencent.com/document/product/1055/36674).
+An asset package contains the executable files, dependencies, and installation script of the game server. You need to package them as a ZIP file before upload. For more information, please see [Creating Code Packages](https://intl.cloud.tencent.com/document/product/1055/36674).
 2. Create a server fleet 
 Deploy the uploaded asset package on the created server fleet and complete process management, deployment configuration, scaling configuration, etc. For more information, please see [Creating Server Fleets](https://intl.cloud.tencent.com/document/product/1055/36675).   
 
 ### Step 3. Call a TencentCloud API to get the server address (IP:port)
-You can get the server address (IP:port) by creating and placing a game server session.
+You can get the server address (IP:port) by creating or placing a game server session.
 
-#### Create a game server session
-- Creation method:
-  Create one by using a server fleet.
-	Create one by using an alias.
-- Calling a TencentCloud API:
+#### Method 1. Create a game server session
+Call a TencentCloud API:
 The client TencentCloud API call process varies by supporting mode of the game server session.
- * When a game server session only supports one game:
-   - Create a game server session (CreateGameServerSession);
-   - Join the game server session (JoinGameServerSession).
- * When a game server session supports multiple games or one service (such as login):
-   - Query the game server session list (DescribeGameServerSessions) or search in the game server session list (SearchGameServerSessions);
-   - If there is a game server session, join it (JoinGameServerSession);
-   - If there is no game server session, create one (CreateGameServerSession) and join it (JoinGameServerSession).
+- When a game server session only supports one game:
+   - Create a game server session ([CreateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37139));
+   - Join a game server session ([JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132)).
+- When a game server session supports multiple games or one service (such as login):
+   - Query the game server session list ([DescribeGameServerSessions](https://intl.cloud.tencent.com/document/product/1055/37136)) or search in the game server session list ([SearchGameServerSessions](https://intl.cloud.tencent.com/document/product/1055/37131));
+   - If there is a game server session, join it ([JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132));
+   - If there is no game server session, create one ([CreateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37139)) and join it ([JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132)).
 
- For more information on how to call TencentCloud APIs, please see [Creating Game Server Session](https://intl.cloud.tencent.com/document/product/1055/37416).
+For more information on how to call TencentCloud APIs, please see [Creating Game Server Session](https://intl.cloud.tencent.com/document/product/1055/37416).
 
-#### Place a game server session
-- Creation method:
-Create one by using a game server queue.
+#### Method 2. Place a game server session
+- Call a TencentCloud API:
+ - Start placing a game server session ([StartGameServerSessionPlacement](https://intl.cloud.tencent.com/document/product/1055/37130));
+ - Query game server session placement ([DescribeGameServerSessionPlacement](https://intl.cloud.tencent.com/document/product/1055/37137));
+ - Stop placing a game server session ([StopGameServerSessionPlacement](https://intl.cloud.tencent.com/document/product/1055/37129)).
 
-- Calling a TencentCloud API:
- - Start placing a game server session (StartGameServerSessionPlacement);
- - Query the game server session placement (DescribeGameServerSessionPlacement);
- - Stop placing a game server session (StopGameServerSessionPlacement).
-
- For more information on how to call the TencentCloud APIs, please see [Placing Game Server Session](https://intl.cloud.tencent.com/document/product/1055/37417).
+For more information on how to call the TencentCloud APIs, please see [Placing Game Server Session](https://intl.cloud.tencent.com/document/product/1055/37417).
 
 ### Step 4. The client uses the IP:port to access the server
 The client can connect to the target server through the `IP:port` returned in step 3.

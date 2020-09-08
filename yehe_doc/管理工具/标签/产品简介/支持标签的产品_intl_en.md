@@ -56,11 +56,14 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31917">TencentDB for MySQL</a></td>
 <td>TencentDB for MySQL instance</td>
 </tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/237">TencentDB for MariaDB</a></td>
+<td>TencentDB for MariaDB instance</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1042">TencentDB for TDSQL</a></td>
+<td>TencentDB for TDSQL instance</td>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 <td>TencentDB for MongoDB instance</td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/239">TencentDB for Redis </a></td>
-<td>TencentDB for Redis instance</td>
 </tr></table>
 
 ## Serverless
@@ -68,6 +71,16 @@
 <tr><th width="50%">Service Name</th><th width="50%">Resource</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/583">Serverless Cloud Function (SCF)</a></td>
 <td>Function</td>
+</tr></table>
+
+## Cloud Communication
+<table>
+<tr><th width="50%">Service Name</th><th width="50%">Resource</th></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1047">Instant Messaging (IM) </a></td>
+<td>IM application</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/382">Short Message Service (SMS) </a></td>
+<td>SMS  application</td>
 </tr></table>
 
 ## Video Services
@@ -81,11 +94,11 @@
 </tr></table>
 
 
-## Cloud Communication
+## Middleware
 <table>
 <tr><th width="50%">Service Name</th><th width="50%">Resource</th></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047">Instant Messaging (IM) </a></td>
-<td>IM application</td>
+<td>Message Queue CKafka</td>
+<td>Ckafka instance</td>
 </tr></table>
 
 ## Network Security

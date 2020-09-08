@@ -15,12 +15,11 @@
 
 请参考以下步骤为账号进行授权操作：
 
-1. 请参考 [修改角色](https://intl.cloud.tencent.com/document/product/598/19389)，为 `SCF_QcsRole` 角色关联 `QcloudCFSReadOnlyAccess` 策略。关联成功则如下图所示：
+1. 请参考 [修改角色](https://intl.cloud.tencent.com/document/product/598/19389)，为 `SCF_QcsRole` 角色关联 `QcloudCFSReadOnlyAccess` 策略。
    如您使用的账号未进行该操作，则可能出现函数无法保存，CFS 相关功能无法使用等问题。
-   ![](https://main.qcloudimg.com/raw/dec5c3f4d54aeeb25fce8450f584afa4.png)
-2. 如您使用账号为子账号，则请联系主账号并参考 [子用户权限设置](https://intl.cloud.tencent.com/document/product/598/32650) 为您的子账号关联 `QcloudCFSReadOnlyAccess` 策略。关联成功则如下图所示：
+2. 如您使用账号为子账号，则请联系主账号并参考 [子用户权限设置](https://intl.cloud.tencent.com/document/product/598/32650) 为您的子账号关联 `QcloudCFSReadOnlyAccess` 策略。
    如您使用的子账号未进行该操作，则可能出现无法使用 CFS 相关功能的问题。
-   ![](https://main.qcloudimg.com/raw/4e83ee59c61f86484b3f56b356ac32d5.png)
+   
 
 
 ### 创建私有网络 VPC
@@ -38,15 +37,13 @@
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/list)，单击左侧导航栏中的【函数服务】。
 2. 在“函数服务”页面，选择需配置的函数名。
 3. 在“函数管理”页面的【函数配置】页签中，单击右上角的【编辑】。
-4. 在“私有网络”中，勾选启用并选择 CFS 文件系统所在的 VPC。如下图所示：
-   ![](https://main.qcloudimg.com/raw/b2e88b9fcb5e5045cc9951d75f498eca.png)
+4. 在“私有网络”中，勾选启用并选择 CFS 文件系统所在的 VPC。
 5. 在“文件系统”中勾选启用，并按照以下信息进行挂载。如下图所示：
  - **用户 ID**及**用户组 ID**：这两个值等同于 CFS 文件系统中的用户及用户组。云函数默认用户及用户组值为 10000，来操作您的 CFS 文件系统。请按需设置文件的拥有者及相应组的权限，并确保您的 CFS 文件系统已配置相应权限。详情请参见 [权限设置](https://intl.cloud.tencent.com/document/product/582/10951)。
  - **远程目录**：为云函数需访问 CFS 文件系统的远端目录，由文件系统和远端目录两部分组成。
  - **本地目录**：为本地文件系统的挂载点。您可使用 `/mnt/` 目录的子目录挂载 CFS 文件系统。
  - **文件系统 ID**：在下拉列表中选择需挂载的文件系统。
  - **挂载点 ID**：在下拉列表中选择对应文件系统的挂载点 ID。
-   ![](https://main.qcloudimg.com/raw/5df4693e17f05892edb610e04f420de2.png)
 6.  单击页面下方的【保存】即可完成配置。
     您可编辑函数代码，开始使用 CFS 文件系统。函数代码如下：
 

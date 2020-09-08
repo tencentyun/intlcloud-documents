@@ -1,46 +1,47 @@
-## Operation Scenario
-This article describes how to create a Trial Edition app and obtain the SDKAppID in the Instant Messaging (IM) console. It also shows you how to upgrade an app from Trial Edition to Pro Edition.
+## Overview
+This article describes how to create Trial Edition apps and obtain SDKAppIDs. It also covers how to upgrade Trial Edition apps to Pro Edition apps using the IM console.
 
 ## Prerequisites
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](http://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Creating a Trial App
-1. Log in to the [IM Console](https://console.cloud.tencent.com/im).
+1. Log in to the [Instant Messaging Console](https://console.cloud.tencent.com/im).
 2. Click **Add Application**.
 3. In the **Create Application** dialog box, enter an app name and click **OK**.
-    After the app is created, you can view the status, version, SDKAppID, creation time, and expiry time of the new app on the overview page of the console.
-  >By default, a new app is a trial app and enabled.
-  >A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
+    After the app is created, you can view the status, service version, SDKAppID, creation time, and expiration time of the new app on the overview page of the console.
+  >? By default, a new app is a trial app and enabled.
+  > A Tencent Cloud account can create a maximum of 100 IM apps. If you want to create more apps, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost**.
 
-  ![](https://main.qcloudimg.com/raw/8997bb04e972bfe2a1ef7a149b7350b1.jpg)
+![](https://main.qcloudimg.com/raw/8997bb04e972bfe2a1ef7a149b7350b1.jpg)
 
 ## Upgrading an App
+>? You can use a package to upgrade an app from the Trial Edition to the Pro Edition or Flagship Edition but cannot roll it back to the Trial Edition after the upgrade. After the services of an app are suspended due to arrears or refunds, if you need to continue to use the services, you can [renew] the Pro Edition or Flagship Edition package. If you want to go back to the Trial Edition, [create a new app](https://intl.cloud.tencent.com/document/product/1047/34577).
 
-1. Locate the desired app and click **Upgrade**. The IM standard billing plan purchase page appears.
+
+1. Click **Upgrade** in the card for the target app to open the IM package purchase page.
 2. Configure the parameters described in the following table:
   <table>
      <tr>
-         <th>Parameter</th>  
-         <th>Description</th>  
+         <th>Parameter Item</th>  
+         <th>Note</th>  
      </tr>
 	 <tr>      
-         <td>SDKAppID</td>   
+         <td>Select the SDKAppID of your app</td>   
 				<td>Make sure the SDKAppID is correct. It cannot be modified after purchase.</td>   
      </tr> 
 	 <tr>      
-         <td>Standard billing plan</td>   
-				 <td><ul><li>If the current SDKAppID is under the Trial Edition, you can select **Pro Edition** or **Flagship Edition**. The **Purchase value-added service plan separately** option is unavailable.</li><li>If the current SDKAppID is under the Pro Edition or Flagship Edition, only the **Purchase value-added service plan separately** option is available.</li></ul></td>   
+         <td>Select a plan</td>   
+				 <td><ul><li>If your app is a trial app, you can only select **Pro** or **Flagship**. You cannot purchase value-added service plans.</li><li>If your app is a pro or flagship app, you can only purchase **value-added service plans**.</li></ul></td>   
      </tr> 
 	 <tr>      
-         <td nowrap="nowrap">Available value-added features</td>   
-				 <td>Value-added plans include value-added features such as **Maximum groups a user can join**, **Maximum members per group**, **Enable content filtering**, and **Extend the retention period of historical messages**.</ul></td>   
+         <td nowrap="nowrap">Value-added Plans</td>   
+				 <td>Value-added plans include **Maximum groups a user can join**, **Maximum members per group (non-AVChatRoom)**, **Enable content filtering**, and **Extend the retention period of historical messages**.</ul></td>   
      </tr> 
 	 <tr> 
-	     <td>Purchase Period</td>   
-	     <td>Standard billing plans are paid monthly. You can select a length from 1 to 24 months.</td>   
+	     <td>Subscription length</td>   
+	     <td>The plans are purchased on a monthly basis. You can select a length from 1 to 24 months.<br>You can also select to **Auto renew subscription when there are sufficient funds**.</td>   
      </tr> 
 </table>
 
-
-4. Check **I have read and accept the “Tencent Cloud Instant Messaging (IM) Service Level Agreement”** and click **Buy Now**.
-5. Make sure all information is correct and select whether to use a voucher. Click **Confirm** to complete the process.
+4. Select **I have read and agree to the [Tencent Cloud IM service level agreement](https://intl.cloud.tencent.com/document/product/1047/34545)** and click **Purchase**.
+5. Check all information and select whether to use a voucher. Click **Confirm** to complete the process.

@@ -19,15 +19,12 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 选择地域，单击需要与基础网络互通的`TomVPC`的 ID，进入详情页。
 3. 单击【基础网络互通】选项卡，单击【+关联云服务器】。 
-![](https://main.qcloudimg.com/raw/9800c7f8a1d6be1b20dfe31d30a6ed06.png)
 4. 在弹出框中，选择基础网络内需要关联至此私有网络的云服务器：`TomCVM`，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/b3511df785851f67e0d878c473cee478.png)
 
 ## 查看与基础网络互通云服务器
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 选择地域，单击需要与基础网络互通的 VPC ID，进入详情页。
 3. 单击【基础网络互通】选项卡，即可查看与该私有网络关联的基础网络云服务器列表。
-![](https://main.qcloudimg.com/raw/daeaf702d51007c8c9b3eff91e36b234.png)
 
 
 
@@ -38,6 +35,5 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击需要与基础网络互通的 VPC ID，进入详情页。
 3. 单击【基础网络互通】选项卡，在基础网络云服务器列表中，找到需要解关联的云服务器，单击操作栏中的【解关联】，确认操作即可。
-![](https://main.qcloudimg.com/raw/a7c164f1033b93a6722faad1ed9d2f1a.png)
 
 

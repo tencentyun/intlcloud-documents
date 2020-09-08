@@ -1,5 +1,8 @@
 TUIKit 4.8.50 and later versions provide video and voice call features for one-to-one and group chats based on [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and support interconnection between iOS and Android platforms. To quickly integrate TUIKit video and voice call features, follow the steps described in this document.
 
+
+
+
 >!
 >- In TUIKit 4.8.50 and later versions, the voice and video call features are integrated in the TUIKit component and designed based on the new signaling solution.
 >- In versions earlier than TUIKit 4.8.50, the voice and video call features are integrated in the TUIKitDemo sample on the iOS client. **If you use the voice and video call features of an earlier version, we do not recommend that you upgrade the version to avoid compatibility issues.**
@@ -46,15 +49,20 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
 ```
 
 <span id="Step5"></span>
-## Step 5: Initiate a Video or Voice Call
+## Step 5: Initiate a Video or Voice Call 
 When you tap **Video** or **Voice** on the chat UI, TUIKit displays the call invitation UI and sends a call request to the peer.
 
 ## Step 6: Answer a Video or Voice Call
 
 
+
+
 - When an **online** user receives a call invitation, TUIKit displays the call accept UI. The user can answer or reject the call.
+
 - When an **offline** user receives a call invitation, offline push is required to wake up the app call UI. For more information about offline push, see [Step 7](#Step7).
-<span id="Step7"></span>
+
+  <span id="Step7"></span>
+
 ## Step 7: Offline Push
 To implement offline push for voice and video calls, follow these steps:
 1. Configure offline push for the app. For more information, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34336).

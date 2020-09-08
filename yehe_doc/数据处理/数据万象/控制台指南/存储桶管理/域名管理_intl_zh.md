@@ -75,14 +75,11 @@ http:// testbucket-1250000000.image.myqcloud.com/testdir/test.jpg
 
 1. 登录 [数据万象控制台](https://console.cloud.tencent.com/ci) ，进入左侧菜单栏【存储桶管理】，单击需要配置域名的存储桶（例如 imagetest），进入存储桶。
 2. 单击【域名管理】，进入域名管理页面。在【自定义域名】配置项下，单击【新增自定义域名】，添加用户已有的域名。
-![示例1](https://main.qcloudimg.com/raw/aa49f743b5c671f5dd7e26622560eb82.png)
 3. 复制 CNAME 地址。
-![示例2](https://main.qcloudimg.com/raw/e6e6a4b5bfc5e89e9b525c5594d9b67e.png)
 4. 进入 [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns)，单击已绑定的自定义域名。
-![示例4](https://main.qcloudimg.com/raw/5de1be46d4f6d671227456e9f463ca08.png)
 >?请到相应的域名解析商处进行配置，此处以腾讯云解析为例。
 5. 单击【添加记录】，添加一条  CNAME 记录。
-![示例3](https://main.qcloudimg.com/raw/2c2f51886f52adddce693915bf6d3d47.png)
+
 >?记录值是之前复制的 CNAME 地址，添加后，大约需15分钟左右生效，请耐心等待。 
 
 
