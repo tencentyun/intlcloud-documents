@@ -23,5 +23,5 @@
 8. 在**关联策略**弹窗中，搜索并勾选刚创建的自定义策略，单击【确定】即可。
    ![](https://main.qcloudimg.com/raw/c5dc62d62250a19ceac131b637ef513f.png)
 9. 关联策略完成后，此时您已完成对该子用户的授权流程。使用该子用户登录 [COS 控制台](https://console.cloud.tencent.com/cos5)，即可正常访问和配置 COS 存储桶的默认加速域名和 CDN 加速域名。如下图所示：
-![][img](https://main.qcloudimg.com/raw/5ff57238dbe3685b020c746bf10573ba.png)
+![](https://main.qcloudimg.com/raw/5ff57238dbe3685b020c746bf10573ba.png)
 
