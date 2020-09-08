@@ -38,9 +38,7 @@
 其中，数据存储费和公网流量费暂不收取。
 
 ## DTS-DBbridge
-[DTS-DBbridge] 数据同步服务免费公测中，您可以免费试用。如果价格更新，将提前通知存量用户。
-
-
+DTS-DBbridge 是独立输出版本，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请试用版本 license 进行测试，如需要正式购买，请 [提交工单](https://console.cloud.tencent.com/workorder/category)，会有专人对接。
 
 
 
