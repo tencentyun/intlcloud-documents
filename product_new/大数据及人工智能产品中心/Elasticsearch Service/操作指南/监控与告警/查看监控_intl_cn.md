@@ -21,7 +21,6 @@
 - **单个节点运行详情**
 提供每个节点，各项指标详细的历史运行情况。
 ![](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
-![](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
 
 ### 部分指标含义及说明
 ES 集群一般由多个节点构成，为反映集群整体的运行情况，部分监控指标提供了两类值：平均值、最大值。
