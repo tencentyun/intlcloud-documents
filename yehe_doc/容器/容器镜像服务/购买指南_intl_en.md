@@ -9,37 +9,34 @@ The following table describes the regions that TCR has supported and will suppor
 <table>
 <tbody>
 <tr>
-<th width="33%">Region</th><th width="33%">Abbreviation</th><th width="33%">Description</th>
+<th width="33%">Region</th><th width="33%">Abbreviation</th>
 </tr>
 <tr>
-<td>Guangzhou</td><td>ap-guangzhou</td><td>-</td>
-</tr>
-<tr>
-<td>Qingyuan</td><td>ap-qingyuan</td><td>Supported in July 2020</td>
+<td>Guangzhou</td><td>ap-guangzhou</td>
 </tr>
 
 <tr>
-<td>Shanghai</td><td>ap-shanghai</td><td>-</td>
+<td>Shanghai</td><td>ap-shanghai</td>
 </tr>
 
 <tr>
-<td>Nanjing</td><td>ap-nanjing</td><td>Supported in July 2020</td>
+<td>Nanjing (Submit a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for application)</td><td>ap-nanjing</td>
 </tr>
 
 <tr>
-<td>Beijing</td><td>ap-beijing</td><td>-</td>
+<td>Beijing</td><td>ap-beijing</td>
 </tr>
 
 <tr>
-<td>Hong Kong</td><td>ap-hongkong</td><td>Submit a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for application.</td>
+<td>Hong Kong</td><td>ap-hongkong</td>
 </tr>
 
 <tr>
-<td>Seoul</td><td>ap-seoul</td><td>Supported in July 2020</td>
+<td>Seoul</td><td>ap-seoul</td>
 </tr>
 
 <tr>
-<td>Silicon Valley</td><td>na-siliconvalley</td><td>-</td>
+<td>Silicon Valley</td><td>na-siliconvalley</td>
 </tr>
 
 </tbody></table>

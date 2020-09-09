@@ -3,7 +3,7 @@ Databases with excellent performance and scalability can help you quickly increa
 ## 1. Select a proper database configuration
 
 ### 1.1 Select the database version
-TencentDB for MySQL is currently available in v5.5, v5.6, v5.7 and v8.0, all of which are fully compatible with native MySQL. You are recommended to choose v5.6 and higher, as they use more stable database kernels, deliver better system performance by optimizing the design of v5.5 and lower, and come with a lot of appealing new features.
+TencentDB for MySQL is currently available in v5.5, v5.6, v5.7, and v8.0, all of which are fully compatible with native MySQL.  You are recommended to choose v5.6 and higher, as they use more stable database kernels, deliver better system performance by optimizing the design of v5.5 and lower, and come with a lot of appealing new features.
 
 This document takes MySQL v5.7 as an example to illustrate the features of the new versions. This version is widely recognized for its impressive performance, reliability, and ease of use. Some of its improvements and new features are as shown below:
 
