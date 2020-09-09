@@ -38,7 +38,7 @@ After integrating the SDK for Huawei Channel, you need to activate and configure
 2. Configure the HTTPS certificate. Click [here](https://api.tpns.tencent.com/v3/tpnscert/download) to download it.
 3. Configure the username and key (optional) for authentication.
 4. Click **Test Receipt** to test the receipt address.
->Currently, if you click **Test Receipt**, the error message "Certificate error. Please modify and upload it again" will be displayed. Ignore it and click **Submit**.
+>!Currently, if you click **Test Receipt**, the error message "Failed to test the callback address" will be displayed. Ignore it and click **Submit**.
 
 5. Click **Submit** to activate the service.
 ![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)
@@ -58,7 +58,6 @@ After integrating the SDK for Meizu Channel, you need to create a receipt on the
  - Service access point in Hong Kong (China): https://api.tpns.hk.tencent.com/log/statistics/mz
  - Service access point in Singapore: https://api.tpns.sgp.tencent.com/log/statistics/mz
 4. After entering the receipt address, click **Add** on the right, and if the newly created receipt is correctly displayed in the **Receipt List**, the configuration is successful.
->!Currently, if you click **Test Receipt**, the error message "Failed to test the callback address" will be displayed. Ignore it and click **Submit**.
 
 ### Activating receipt
 1. Go to the [Product Management](https://console.cloud.tencent.com/tpns) page, select the application to be activated, and click **Configuration Management**.
