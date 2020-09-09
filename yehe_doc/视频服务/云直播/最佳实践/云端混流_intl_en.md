@@ -89,16 +89,16 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
 &MixStreamTemplateId=390
 &OutputParams.OutputStreamName=test_stream2
-&InputStreamList.1.InputStreamName=test_stream1
-&InputStreamList.1.LayoutParams.ImageLayer=1
-&InputStreamList.1.LayoutParams.InputType=3
-&InputStreamList.1.LayoutParams.ImageWidth=1920 (canvas width)
-&InputStreamList.1.LayoutParams.ImageHeight=1080 (canvas height)
-&InputStreamList.1.LayoutParams.Color=0x000000
-&InputStreamList.2.InputStreamName=test_stream2
-&InputStreamList.2.LayoutParams.ImageLayer=2
-&InputStreamList.3.InputStreamName=test_stream3
-&InputStreamList.3.LayoutParams.ImageLayer=3
+&InputStreamList.0.InputStreamName=test_stream1
+&InputStreamList.0.LayoutParams.ImageLayer=1
+&InputStreamList.0.LayoutParams.InputType=3
+&InputStreamList.0.LayoutParams.ImageWidth=1920  (canvas width)
+&InputStreamList.0.LayoutParams.ImageHeight=1080 (canvas height)
+&InputStreamList.0.LayoutParams.Color=0x000000
+&InputStreamList.1.InputStreamName=test_stream2
+&InputStreamList.1.LayoutParams.ImageLayer=2
+&InputStreamList.2.InputStreamName=test_stream3
+&InputStreamList.2.LayoutParams.ImageLayer=3
 &<Common request parameters>
 ```
 
@@ -138,12 +138,12 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &InputStreamList.1.LayoutParams.ImageHeight= 360
 &InputStreamList.1.LayoutParams.LocationX= 50
 &InputStreamList.1.LayoutParams.LocationY= 720
-&InputStreamList.1.InputStreamName=test_stream3
-&InputStreamList.3.LayoutParams.ImageLayer=3
-&InputStreamList.3.LayoutParams.ImageWidth = 640
-&InputStreamList.3.LayoutParams.ImageHeight= 360
-&InputStreamList.3.LayoutParams.LocationX= 740
-&InputStreamList.3.LayoutParams.LocationY= 720
+&InputStreamList.2.InputStreamName=test_stream3
+&InputStreamList.2.LayoutParams.ImageLayer=3
+&InputStreamList.2.LayoutParams.ImageWidth = 640
+&InputStreamList.2.LayoutParams.ImageHeight= 360
+&InputStreamList.2.LayoutParams.LocationX= 740
+&InputStreamList.2.LayoutParams.LocationY= 720
 &<Common request parameters>
 ```
 
