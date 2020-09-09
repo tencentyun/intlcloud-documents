@@ -3,7 +3,7 @@ ES comes with a Kibana module. You can access the Kibana page of your cluster to
 ## Accessing Kibana Page
 ### Entries
 There are two entries to the Kibana page, which are located on the cluster list page and the cluster details page, as shown below. Click either of them to jump to the Kibana login page.
->By default, Kibana is accessed at the public address. If you are concerned that accessing Kibana over the public network will cause security problems, you can disable the Kibana public address and enable the Kibana private address for access on the cluster details page (**this feature is not supported for clusters where all nodes are of the 1-core 2 GB MEM specification; instead, it is supported for hot/warm clusters where not all nodes are of the 1-core 2 GB MEM specification**).
+>By default, Kibana is accessed at the public address. If you are concerned that accessing Kibana over the public network will cause security problems, you can disable the Kibana public address and enable the Kibana private address for access on the cluster details page.
 >
 ![](https://main.qcloudimg.com/raw/3b4f196136668a1cdbe351d0ac655960.png)
 ![](https://main.qcloudimg.com/raw/168f91daf55dba8783c56d63ffdbb4e0.png)
