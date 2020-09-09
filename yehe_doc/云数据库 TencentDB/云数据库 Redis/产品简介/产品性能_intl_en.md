@@ -42,7 +42,7 @@
 <td align="center">Traffic limit</td>
 <td align="center">10-64 MB/s</td>
 <td align="center">10-64 MB/s</td>
-<td align="center">72 MB/s-5 GB/s</td>
+<td align="center">144 MB/s-6 GB/s</td>
 </tr>
 <tr>
 <td align="center">Multi-database</td>

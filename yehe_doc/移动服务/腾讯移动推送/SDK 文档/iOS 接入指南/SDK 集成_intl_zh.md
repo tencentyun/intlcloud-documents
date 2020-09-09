@@ -120,12 +120,6 @@ SDK 提供了 Service Extension 接口，可供客户端调用，从而可以使
 接入步骤请参考文档 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730)。
 >!如果未集成此接口，则无法统计“抵达数”。
 
-未集成通知服务扩展插件：
-![](https://main.qcloudimg.com/raw/79c01ccaffca8be63341b18ad48ea9a7.png)
-
-集成通知服务扩展插件后：
-![](https://main.qcloudimg.com/raw/b2efe6f31b14c129fc2167f14ed6ece3.png)
-
 ## 调试方法
 #### 开启 Debug 模式
 打开 Debug 模式，即可在终端查看详细的腾讯移动推送 Debug 信息，方便定位问题。
@@ -227,4 +221,4 @@ NSNumber *msgType = tpnsInfo[@"msgtype"];
 //获取 TPNS 生成的 Token
 [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
-![](https://main.qcloudimg.com/raw/f6ff84d3a50630bb4e8a0ab6fd090798.png)
+
