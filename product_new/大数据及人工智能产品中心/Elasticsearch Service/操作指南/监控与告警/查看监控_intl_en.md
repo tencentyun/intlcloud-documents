@@ -21,7 +21,6 @@ This section show real-time health metrics of each node in the cluster.
 - **Single node health details**
 This section shows detailed historical health status of each metric of each node.
 ![](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
-![](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
 
 ### Descriptions of certain metrics
 An ES cluster is generally composed of multiple nodes. To reflect the overall health status of the cluster, certain monitoring metrics provide two types of values: average value and maximum value.
