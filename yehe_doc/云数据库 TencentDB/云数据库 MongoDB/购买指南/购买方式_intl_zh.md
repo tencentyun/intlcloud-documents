@@ -2,7 +2,7 @@
 
 ## 控制台购买
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，单击【新建实例】进入购买页。
-
+![](https://main.qcloudimg.com/raw/24f2aa83ab3171731caeb975652b312b.png)
 2. 在购买页选择各项配置，确认无误后单击【立即购买】。
  - **计费模式**：支持按量计费，计费模式详情参见 [计费概述](https://intl.cloud.tencent.com/document/product/240/3550)。
  - **地域和可用区**：详细对比参见 [地域和可用区](https://intl.cloud.tencent.com/document/product/240/3637)。
