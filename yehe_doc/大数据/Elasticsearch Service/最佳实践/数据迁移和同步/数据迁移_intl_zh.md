@@ -16,7 +16,7 @@
 </tr>
 <tr>
 <td>logstash</td>
-<td><li>迁移全量或增量数据，且对实时性要求不高的场景</li><li>需要对迁移的数据通过 es query 进行简单的过滤的的场景</li><li>需要对迁移的数据进行复杂的过滤或处理的场景</li><li>版本跨度较大的数据迁移场景，如 5.x 版本迁移到 6.x 版本或 7.x 版本 </td>
+<td><li>迁移全量或增量数据，且对实时性要求不高的场景</li><li>需要对迁移的数据通过 es query 进行简单的过滤的场景</li><li>需要对迁移的数据进行复杂的过滤或处理的场景</li><li>版本跨度较大的数据迁移场景，如 5.x 版本迁移到 6.x 版本或 7.x 版本 </td>
 </tr>
 <tr>
 <td>elasticsearch-dump</td>
@@ -182,20 +182,24 @@ npm install elasticdump -g
  以下操作通过 elasticdump 命令将集群172.16.0.39中的 companydatabase 索引迁移至集群172.16.0.20。
  >!第一条命令先将索引的 settings 先迁移，如果直接迁移 mapping 或者 data 将失去原有集群中索引的配置信息如分片数量和副本数量等，当然也可以直接在目标集群中将索引创建完毕后再同步 mapping 与 data。
  >
+
 ```
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=settings
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=mapping
 elasticdump --input=http://172.16.0.39:9200/companydatabase --output=http://172.16.0.20:9200/companydatabase --type=data
 ```
+
 4. 迁移所有索引
-以下操作通过 elasticdump 命令将将集群172.16.0.39中的所有索引迁移至集群172.16.0.20。 
+以下操作通过 elasticdump 命令将集群172.16.0.39中的所有索引迁移至集群172.16.0.20。 
 >!此操作并不能迁移索引的配置，例如分片数量和副本数量，必须对每个索引单独进行配置的迁移，或者直接在目标集群中将索引创建完毕后再迁移数据。
 >
+
 ```
 elasticdump --input=http://172.16.0.39:9200 --output=http://172.16.0.20:9200
 ```
 
 ## 总结
+
 1. elasticsearch-dump 和 logstash 做跨集群数据迁移时，都要求用于执行迁移任务的机器可以同时访问到两个集群，因为网络无法连通的情况下就无法实现迁移。而使用 snapshot 的方式则没有这个限制，因为 snapshot 方式是完全离线的。因此 elasticsearch-dump 和 logstash 迁移方式更适合于源 ES 集群和目标 ES 集群处于同一网络的情况下进行迁移。而需要跨云厂商的迁移，可以选择使用 snapshot 的方式进行迁移，例如从阿里云 ES 集群迁移至腾讯云 ES 集群，也可以通过打通网络实现集群互通，但是成本较高。
 2. elasticsearch-dump 工具和 MySQL 数据库用于做数据备份的工具 mysqldump 类似，都是逻辑备份，需要将数据一条一条导出后再执行导入，所以适合数据量小的场景下进行迁移。
 3. snapshot 的方式适合数据量大的场景下进行迁移。
