@@ -20,7 +20,7 @@
 </tr>
 
 <tr>
-<td>南京</td><td>ap-nanjing</td>
+<td>南京（<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）</td><td>ap-nanjing</td>
 </tr>
 
 <tr>
