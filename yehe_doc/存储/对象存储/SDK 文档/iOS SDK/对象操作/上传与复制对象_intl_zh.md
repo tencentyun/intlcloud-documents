@@ -608,7 +608,7 @@ request.metadataDirective = @"Replaced";
 // 修改元数据
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型 文档
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-storage-class"];
@@ -657,7 +657,7 @@ request.metadataDirective = "Replaced";
 // 修改元数据
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*");
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型 文档
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
@@ -785,7 +785,7 @@ request.bucket = @"examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型 文档
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 [request.customHeaders setValue:@"ARCHIVE" forKey:@"x-cos-storage-class"];
 
@@ -818,7 +818,7 @@ request.bucket = "examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = "exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型 文档
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 // 源对象所在的路径
