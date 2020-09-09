@@ -35,11 +35,10 @@ The limits for the function runtime environment are as follows:
 ## Increasing Limits
 
 Currently, limits that can be increased include:
-
-* Maximum number of functions
-* Maximum number of concurrent executions per function
-* Maximum number of triggers per function
-* Code size of one function
-* Total code size of functions per region
+- Maximum number of functions
+- Maximum number of concurrent executions per function
+- Maximum number of triggers per function
+- Code size of one function
+- Total code size of functions per region
 
 To increase the limits, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) and state the desired items and quantities.
