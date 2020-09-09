@@ -250,7 +250,6 @@ Android 平台具体字段如下表：
 | hw_ch_id       | String  | Android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
 | oppo_ch_id     | String  | Android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
 | vivo_ch_id     | String  | Android | 0      | 否   | vivo 渠道ID “0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
-
 | builder_id     | Integer | Android | 0      | 否   | 本地通知样式标识                                             |
 | badge_type     | Integer | android | -1     | 否   | 通知角标，当前仅对华为设备生效。<li>-2：自动增加1；</li><li>-1：不变</li> |
 | ring           | Integer | Android | 1      | 否   | 是否有铃声<li>0：没有铃声</li><li>1：有铃声  </li>           |
