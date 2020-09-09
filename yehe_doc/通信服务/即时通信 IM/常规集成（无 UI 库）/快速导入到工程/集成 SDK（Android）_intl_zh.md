@@ -74,8 +74,8 @@ defaultConfig {
 如果您不想集成 aar 库，也可以通过导入 jar 和 so 库的方式集成 IM SDK：
 
 - **第一步：下载解压 IM SDK**
-在 Github 上可以 [下载](https://main.qcloudimg.com/raw/9a2cebad9475735c456fea0795088679.png) 到最新版本的 aar 文件。解压后的目录里面主要包含 jar 文件和 so 文件夹，把其中的 **classes.jar** 重命名成 **imsdk.jar** 。
-![](https://main.qcloudimg.com/raw/ecc6ae484565b0170c42698825951eba.png)
+在 Github 上可以 [下载](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) 到最新版本的 aar 文件。解压后的目录里面主要包含 jar 文件和 so 文件夹，把其中的 **classes.jar** 重命名成 **imsdk.jar** 。
+![](https://main.qcloudimg.com/raw/9a2cebad9475735c456fea0795088679.png)
 
 - **第二步：拷贝 SDK 文件到工程目录**
 将重命名后的 jar 文件和各个架构的 so 文件分别拷贝到 Android Studio 默认加载的目录下：
