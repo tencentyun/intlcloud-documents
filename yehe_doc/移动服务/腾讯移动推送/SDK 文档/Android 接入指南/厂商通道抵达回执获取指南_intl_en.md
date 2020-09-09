@@ -58,6 +58,7 @@ After integrating the SDK for Meizu Channel, you need to create a receipt on the
  - Service access point in Hong Kong (China): https://api.tpns.hk.tencent.com/log/statistics/mz
  - Service access point in Singapore: https://api.tpns.sgp.tencent.com/log/statistics/mz
 4. After entering the receipt address, click **Add** on the right, and if the newly created receipt is correctly displayed in the **Receipt List**, the configuration is successful.
+>!Currently, if you click **Test Receipt**, the error message "Failed to test the callback address" will be displayed. Ignore it and click **Submit**.
 
 ### Activating receipt
 1. Go to the [Product Management](https://console.cloud.tencent.com/tpns) page, select the application to be activated, and click **Configuration Management**.
