@@ -21,7 +21,11 @@ Service access point in Singapore:
 ```plaintext
 https://api.tpns.sgp.tencent.com/v3/push/app
 ```
+Service access point in Shanghai:
 
+```plaintext
+https://api.tpns.sh.tencent.com/v3/push/app
+```
 **Feature**: `Push` API is the general term for all push APIs. Push API has many types of push targets, which are described as follows.
 All request parameters are uploaded via JSON encapsulation to the backend, which distinguishes among different push targets based on the request parameters. If you have any questions, please see [Server Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).
 
@@ -337,7 +341,7 @@ The specific fields for the iOS platform are as follows:
 | Field Name | Type | Parent Item | Default Value | Required | Parameter Description |
 | ------ | ------ | ------- | ------ | ---- | -------- |
 | title                | String  |       message       | None          | Yes        | Message title.  |
-| content | String | message | None | Yes | Message content. | 
+| content | String | message | None | Yes | Message content. |
 | thread_id       | String  | message       |None    | No    | Thread name for collapsed notification in threaded display |
 | ios    | Object       |message  | None    | Yes    | iOS message structure. For more information, please see the [iOS field description](#iOS)  |
 | xg_media_resources    | String     | message | None    | No    | URL address of rich media element such as image, audio, and video                          |
