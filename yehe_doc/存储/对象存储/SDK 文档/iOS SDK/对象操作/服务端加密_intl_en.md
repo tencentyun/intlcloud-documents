@@ -1,49 +1,68 @@
 ## Overview
 
-This document provides an overview of code samples related to setting server-side encryption for objects.
+This document describes how to enable server-side encryption when uploading objects. There are three types of keys that can be used for server-side encryption:
+
+* COS-managed key
+* KMS-managed key
+* Customer-provided key
 
 ## SDK API Reference
 
 For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Server-side Encryption
+### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
 
-You can encrypt uploaded objects in the following ways.
+#### Description
 
-#### Using server-side encryption with COS-managed encryption keys (SSE-COS) to protect data
+With this method, your master key and data are managed by COS. COS can automatically encrypt your data when written into the IDC and automatically decrypt it when accessed. Currently, COS supports AES-256 encryption using a COS master key pair.
 
-COS can automatically encrypt your data when entered in IDC and will automatically decrypt it when accessed. Currently, COS supports AES-256 encryption by using a COS master key pair.
+#### Sample code
+**Objective-C**
 
-You can enable SSE-COS encryption by calling `-(void)setCOSServerSideEncyption` in the iOS SDK.
-
-Objective-C sample code:
+[//]: # (.cssg-snippet-put-object-sse)
 ```objective-c
+QCloudCOSXMLUploadObjectRequest *request = [QCloudCOSXMLUploadObjectRequest new];
 [request setCOSServerSideEncyption];
 ```
 
-Swift sample code:
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m).
+
+**Swift**
+
+[//]: # (.cssg-snippet-put-object-sse)
 ```swift
 request.setCOSServerSideEncyption();
 ```
 
-#### Using server-side encryption with customer-provided encryption keys (SSE-C) to protect data
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).
 
-You can enable SSE-C encryption by calling `-(void)setCOSServerSideEncyptionWithCustomerKey:(NSString \*)customerKey` in the SDK for iOS.
+### Using server-side encryption with customer-provided encryption keys (SSE-C) to protect data
+
+#### Description
+
+With this method, the encryption key is provided by the customer. To upload an object, COS will apply AES-256 encryption to the data using the customer-provided encryption key pair.
 
 > !
 >- This type of encryption requires using HTTPS requests.
->- customerKey: the key provided by the user; this key should be a 32-byte string consisting of numbers, letters, and symbols. Chinese characters are not supported.
->- If you used this method when uploading the source file, then it should also be used when downloading, querying, uploading, and copying the source object by using `QCloudCOSXMLDownloadObjectRequest`, `QCloudHeadObjectRequest`, `QCloudCOSXMLUploadObjectRequest`, and `QCloudCOSXMLUploadObjectRequest`, respectively.
+>- You need to provide a 32-byte string as the key, a combination of numbers, letters, and characters, with Chinese characters not supported.
+>- If a file was key-encrypted when uploaded, you need to include the same key in your GET (download) or HEAD (query) request for it to succeed.
 
-Objective-C sample code:
+#### Sample code
+**Objective-C**
+
+[//]: # (.cssg-snippet-put-object-sse-c)
 ```objective-c
+QCloudCOSXMLUploadObjectRequest *request = [QCloudCOSXMLUploadObjectRequest new];
 NSString *customKey = @"123456qwertyuioplkjhgfdsazxcvbnm";
-[put setCOSServerSideEncyptionWithCustomerKey:customKey];
+[request setCOSServerSideEncyptionWithCustomerKey:customKey];
 ```
 
-Swift sample code
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObjectSSE.m). **Swift**
 
+[//]: # (.cssg-snippet-put-object-sse-c)
 ```swift
 let customKey = "123456qwertyuioplkjhgfdsazxcvbnm";
-putObject.setCOSServerSideEncyptionWithCustomerKey(customKey);
+request.setCOSServerSideEncyptionWithCustomerKey(customKey);
 ```
+
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObjectSSE.swift).

@@ -1,19 +1,19 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to log management.
+This document provides an overview of APIs and SDK code samples related to logging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------------- |
-| [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | Setting log management | Enables logging for a source bucket |
-| [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | Querying log management | Queries the logging configuration of a source bucket |
+| [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054) | Setting logging configuration | Enables logging for a source bucket |
+| [GET Bucket logging](https://intl.cloud.tencent.com/document/product/436/17053) | Querying logging configuration | Queries the logging configuration of a source bucket |
 
 ## SDK API Reference
 
 For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Setting Log Management
+## Setting Logging Configuration
 
-#### Feature description
+#### API description 
 
 This API is used to enable logging for a source bucket and store the access logs in a specified destination bucket.
 
@@ -24,10 +24,10 @@ This API is used to enable logging for a source bucket and store the access logs
 ```objective-c
 QCloudPutBucketLoggingRequest *request = [QCloudPutBucketLoggingRequest new];
 
-// Status of the logging configuration. If there is no subnode information, logging is disabled
+// Status of the logging configuration. If there is no subnode, logging is disabled
 QCloudBucketLoggingStatus *status = [QCloudBucketLoggingStatus new];
 
-// Specific logging configuration; this mainly refers to the destination bucket
+// Specific logging configuration mainly on the destination bucket
 QCloudLoggingEnabled *loggingEnabled = [QCloudLoggingEnabled new];
 
 // Destination bucket for storing logs; this can be the source bucket (not recommended) or a bucket in the same region under the same account
@@ -35,19 +35,21 @@ loggingEnabled.targetBucket = @"examplebucket-1250000000";
 
 // Specified path in the destination bucket for storing logs
 loggingEnabled.targetPrefix = @"mylogs";
+
 status.loggingEnabled = loggingEnabled;
 request.bucketLoggingStatus = status;
 
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
+
 [request setFinishBlock:^(id outputObject, NSError *error) {
-   // `outputObject` contains all the HTTP response headers
+   // outputObject contains all the HTTP response headers
    NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSXMLService defaultCOSXML] PutBucketLogging:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
 
 **Swift**
 
@@ -55,10 +57,10 @@ request.bucket = @"examplebucket-1250000000";
 ```swift
 let req = QCloudPutBucketLoggingRequest.init();
 
-// Status of the logging configuration. If there is no subnode information, logging is disabled
+// Status of the logging configuration. If there is no subnode, logging is disabled
 let status = QCloudBucketLoggingStatus.init();
 
-// Specific logging configuration; this mainly refers to the destination bucket
+// Specific logging configuration mainly on the destination bucket
 let loggingEnabled = QCloudLoggingEnabled.init();
 
 // Destination bucket for storing logs; this can be the source bucket (not recommended) or a bucket in the same region under the same account
@@ -66,28 +68,29 @@ let loggingEnabled = QCloudLoggingEnabled.init();
 loggingEnabled.targetBucket = "examplebucket-1250000000";
 
 // Specified path in the destination bucket for storing logs
-loggingEnabled.targetPrefix = "";
+loggingEnabled.targetPrefix = "logs/";
+
 status.loggingEnabled = loggingEnabled;
 req.bucketLoggingStatus = status;
 
 // Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 req.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // “result” contains response headers
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 
 QCloudCOSXMLService.defaultCOSXML().putBucketLogging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
 
-## Querying Log Management
+## Querying Logging Configuration
 
-#### Feature description
+#### API description 
 
 This API is used to query the logging configuration of a specified bucket.
 
@@ -103,12 +106,13 @@ getReq.bucket = @"examplebucket-1250000000";
 
 [getReq setFinishBlock:^(QCloudBucketLoggingStatus * _Nonnull result,
                          NSError * _Nonnull error) {
-    // `result` contains the log status
+    // Logging configuration
+    QCloudLoggingEnabled *loggingEnabled = result.loggingEnabled;
 }];
 [[QCloudCOSXMLService defaultCOSXML]GetBucketLogging:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketLogging.m).
 
 **Swift**
 
@@ -119,14 +123,15 @@ let req = QCloudGetBucketLoggingRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 req.setFinish { (result, error) in
-    if error != nil{
+    if let result = result {
+        // Logging configuration
+        let enabled = result.loggingEnabled
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 };
 QCloudCOSXMLService.defaultCOSXML().getBucketLogging(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketLogging.swift).
 

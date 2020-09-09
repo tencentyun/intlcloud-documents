@@ -2,7 +2,7 @@
 
 This document provides an overview of APIs and SDK code samples related to COS inventory.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | -------------------- |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job for a bucket |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries the inventory jobs of bucket |
@@ -14,7 +14,7 @@ For the parameters and method descriptions of all the APIs in the SDK, please se
 
 ## Setting an Inventory Job
 
-#### Feature description
+#### API description
 
 This API is used to create an inventory job for a bucket.
 
@@ -28,14 +28,14 @@ QCloudPutBucketInventoryRequest *putReq = [QCloudPutBucketInventoryRequest new];
 // Bucket name in the format: `BucketName-APPID`
 putReq.bucket= @"examplebucket-1250000000";
 
-// Name of the inventory job
+// ID of the inventory job
 putReq.inventoryID = @"list1";
 
-// You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed by the inventory job,
+// You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed,
 // analysis frequency, analysis dimensions, result format, and storage location.
 QCloudInventoryConfiguration *config = [QCloudInventoryConfiguration new];
 
-// Inventory name, corresponding to the ID in the request parameter
+// Inventory ID, corresponding to the ID in the request parameter
 config.identifier = @"list1";
 
 // Specifies whether inventory is enabled:
@@ -43,7 +43,7 @@ config.identifier = @"list1";
 // if `false`, no inventories will be generated
 config.isEnabled = @"True";
 
-// Information on the storage of the inventory result
+// Information on storage of the inventory result
 QCloudInventoryDestination *des = [QCloudInventoryDestination new];
 
 QCloudInventoryBucketDestination *btDes =[QCloudInventoryBucketDestination new];
@@ -67,10 +67,10 @@ enc.ssecos = @"";
 // Option to provide server-side encryption for the inventory result
 btDes.encryption = enc;
 
-// Information on the bucket where the inventory result is stored after export
+// Information on the bucket where the exported inventory result is stored
 des.bucketDestination = btDes;
 
-// Information on the storage of the inventory result
+// Information on storage of the inventory result
 config.destination = des;
 
 // Configure the frequency of the inventory job
@@ -96,14 +96,14 @@ fields.field = @[ @"Size",
 config.optionalFields = fields;
 putReq.inventoryConfiguration = config;
 [putReq setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject returns information such as the Etag or custom headers in the response
+    // “outputObject” returns information such as the Etag or custom headers in the response
     NSDictionary * result = (NSDictionary *)outputObject;
 
 }];
 [[QCloudCOSXMLService defaultCOSXML] PutBucketInventory:putReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketInventory.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketInventory.m).
 
 
 **Swift**
@@ -115,14 +115,14 @@ let putReq = QCloudPutBucketInventoryRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 putReq.bucket = "examplebucket-1250000000";
 
-// Name of the inventory job
+// ID of the inventory job
 putReq.inventoryID = "list1";
 
 // You can use XML to set specific configuration information for the inventory job in the request body, including the objects to be analyzed by the inventory job,
 // analysis frequency, analysis dimensions, result format, and storage location.
 let config = QCloudInventoryConfiguration.init();
 
-// Inventory name, corresponding to the ID in the request parameter
+// Inventory ID, corresponding to the ID in the request parameter
 config.identifier = "list1";
 
 // Specifies whether inventory is enabled:
@@ -130,7 +130,7 @@ config.identifier = "list1";
 // if `false`, no inventories will be generated
 config.isEnabled = "True";
 
-// Information on the storage of the inventory result
+// Information on storage of the inventory result
 let des = QCloudInventoryDestination.init();
 let btDes = QCloudInventoryBucketDestination.init();
 
@@ -153,10 +153,10 @@ enc.ssecos = "";
 // Option to provide server-side encryption for the inventory result
 btDes.encryption = enc;
 
-// Information on the bucket where the inventory result is stored after export
+// Information on the bucket where the exported inventory result is stored
 des.bucketDestination = btDes;
 
-// Information on the storage of the inventory result
+// Information on storage of the inventory result
 config.destination = des;
 
 // Configure the frequency of the inventory job
@@ -181,24 +181,24 @@ config.optionalFields = fields;
 putReq.inventoryConfiguration = config;
 
 putReq.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // “result” contains response headers
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 
 QCloudCOSXMLService.defaultCOSXML().putBucketInventory(putReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketInventory.swift).
 
 
-#### Error code description
+#### Error codes
 
 The following describes some common errors that may occur when making requests using this API.
 
-| Error code | Description | Status code |
+| Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
@@ -206,7 +206,7 @@ The following describes some common errors that may occur when making requests u
 
 ## Querying Inventory Jobs
 
-#### Feature description
+#### API description 
 
 This API is used to query the inventory jobs of a bucket.
 
@@ -220,7 +220,7 @@ QCloudGetBucketInventoryRequest *getReq = [QCloudGetBucketInventoryRequest new];
 // Bucket name in the format: `BucketName-APPID`
 getReq.bucket = @"examplebucket-1250000000";
 
-// Name of the inventory job
+// ID of the inventory job
 getReq.inventoryID = @"list1";
 [getReq setFinishBlock:^(QCloudInventoryConfiguration * _Nonnull result,
                          NSError * _Nonnull error) {
@@ -229,7 +229,7 @@ getReq.inventoryID = @"list1";
 [[QCloudCOSXMLService defaultCOSXML] GetBucketInventory:getReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -239,23 +239,24 @@ let req = QCloudGetBucketInventoryRequest.init();
 
 // Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
-// Name of the inventory job
+// ID of the inventory job
 req.inventoryID = "list1";
 req.setFinish {(result,error) in
-    if error != nil{
+    if let result = result {
+        // Information on the job
+        let enabled = result.isEnabled
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().getBucketInventory(req);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 
 ## Deleting an Inventory Job
 
-#### Feature description
+#### API description 
 
 This API is used to delete a specified inventory job from a bucket.
 
@@ -269,17 +270,17 @@ QCloudDeleteBucketInventoryRequest *delReq = [QCloudDeleteBucketInventoryRequest
 // Bucket name in the format: `BucketName-APPID`
 delReq.bucket = @"examplebucket-1250000000";
 
-// Name of the inventory job
+// ID of the inventory job
 delReq.inventoryID = @"list1";
 [delReq setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject returns information such as the Etag or custom headers in the response
+    // “outputObject” returns information such as the Etag or custom headers in the response
     NSDictionary * result = (NSDictionary *)outputObject;
     
 }];
 [[QCloudCOSXMLService defaultCOSXML] DeleteBucketInventory:delReq];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketCORS.m).
 
 **Swift**
 
@@ -290,18 +291,18 @@ let delReq = QCloudDeleteBucketInventoryRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 delReq.bucket = "examplebucket-1250000000";
 
-// Name of the inventory job
+// ID of the inventory job
 delReq.inventoryID = "list1";
 delReq.finishBlock = {(result,error) in
-    if error != nil{
+    if let result = result {
+        // “result” contains response headers
+    } else {
         print(error!);
-    }else{
-        print( result!);
     }
 }
 
 QCloudCOSXMLService.defaultCOSXML().deleteBucketInventory(delReq);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketCORS.swift).
 

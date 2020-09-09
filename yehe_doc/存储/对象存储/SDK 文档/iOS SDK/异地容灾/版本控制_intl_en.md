@@ -2,9 +2,9 @@
 
 This document provides an overview of APIs and SDK code samples related to versioning.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
-| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets the versioning configuration of a bucket |
+| [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets a versioning configuration for a bucket |
 | [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
 
 ## SDK API Reference
@@ -13,9 +13,9 @@ For the parameters and method descriptions of all the APIs in the SDK, please se
 
 ## Setting Versioning
 
-#### Feature description
+#### API description 
 
-This API is used to set the versioning configuration of a specified bucket. Once enabled, versioning can only be suspended but not disabled.
+This API is used to set a versioning configuration for a specified bucket. Once enabled, versioning can only be suspended but not disabled.
 
 #### Sample code
 **Objective-C**
@@ -28,25 +28,24 @@ QCloudPutBucketVersioningRequest* request = [[QCloudPutBucketVersioningRequest a
 // Bucket name in the format: `BucketName-APPID`
 request.bucket =@"examplebucket-1250000000";
 
-// Specific versioning configuration
+// Specify the versioning configuration
 QCloudBucketVersioningConfiguration* versioningConfiguration =
     [[QCloudBucketVersioningConfiguration alloc] init];
 
 request.configuration = versioningConfiguration;
 
-// Indicates whether versioning is enabled. Enumerated values: Suspended, Enabled
+// Indicate whether versioning is enabled. Enumerated values: QCloudCOSBucketVersioningStatusEnabled,
+// QCloudCOSBucketVersioningStatusSuspended
 versioningConfiguration.status = QCloudCOSBucketVersioningStatusEnabled;
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
-    
-    // You can get the header returned by the server from outputObject
     // `outputObject` contains all the HTTP response headers
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSXMLService defaultCOSXML] PutBucketVersioning:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
 
 **Swift**
 
@@ -58,30 +57,29 @@ let putBucketVersioning = QCloudPutBucketVersioningRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 putBucketVersioning.bucket = "examplebucket-1250000000";
 
-// Specific versioning configuration
+// Specify the versioning configuration
 let config = QCloudBucketVersioningConfiguration.init();
 
-// Indicates whether versioning is enabled. Enumerated values: Suspended, Enabled
+// Indicate whether versioning is enabled. Enumerated values: Suspended, Enabled
 config.status = .enabled;
 
 putBucketVersioning.configuration = config;
 
 putBucketVersioning.finishBlock = {(result,error) in
-    // You can get the header information returned by the server from `result`
-    if error != nil{
+    if let result = result {
+        // “result” contains response headers
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().putBucketVersioning(putBucketVersioning);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 
 ## Querying Versioning
 
-#### Feature description
+#### API description 
 
 This API is used to query the versioning configuration of a specified bucket.
 
@@ -101,15 +99,14 @@ request.bucket = @"examplebucket-1250000000";
 
 [request setFinishBlock:^(QCloudBucketVersioningConfiguration* result,
                           NSError* error) {
-    
-    // `result` contains the versioning status
-    result.status;
+    // Get the status of multiple versions
+    QCloudCOSBucketVersioningStatus * status = result.status;
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] GetBucketVersioning:request];
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/BucketVersioning.m).
 
 **Swift**
 
@@ -121,15 +118,16 @@ let getBucketVersioning = QCloudGetBucketVersioningRequest.init();
 getBucketVersioning.bucket = "examplebucket-1250000000";
 
 getBucketVersioning.setFinish { (config, error) in
-    if error != nil{
+    if let config = config {
+        // Get the status of multiple versions
+        let status = config.status
+    } else {
         print(error!);
-    }else{
-        print(config!);
     }
        
 }
 QCloudCOSXMLService.defaultCOSXML().getBucketVersioning(getBucketVersioning);
 ```
 
->?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/BucketVersioning.swift).
 
