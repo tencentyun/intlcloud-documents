@@ -142,10 +142,6 @@ TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
  ### 其他排查
 - **华为推送需要在华为推送平台开启推送服务**
 如您在华为设备上无法获取华为 Token，但获取到厂商推送注册返回码为0 ，请前往 [华为推送平台](https://developer.huawei.com/consumer/cn/)，进入【开发】>【推送服务】页面，确认应用的推送开关是否开启；进入【开发】>【项目设置】>【API 管理】页面，确认 `Push Kit、App Messaging` 开关是否开启。
-推送服务页面显示如下：
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
-API 管理页面显示如下：
-![](https://main.qcloudimg.com/raw/cc53290c7509e59e161227228e3b0317.png)
 
 - **小米推送需要在小米推送平台开启推送服务**
 如您未找到小米通道注册返回码，请前往【[小米开放平台](https://dev.mi.com/console/appservice/push.html)】>【推送运营平台】，确认应用的消息推送服务是否启用。
