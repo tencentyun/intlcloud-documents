@@ -17,15 +17,19 @@ This section shows detailed, time-varying metrics to help you understand how the
 ### Node status
 - **Node list**
 This section show real-time health metrics of each node in the cluster.
-![Node list](https://main.qcloudimg.com/raw/da941a63b3ed26f26ef494f08f53bdf2.png)
+![](https://main.qcloudimg.com/raw/da941a63b3ed26f26ef494f08f53bdf2.png)
 - **Single node health details**
 This section shows detailed historical health status of each metric of each node.
-![Node monitoring - list](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
-![Node monitoring - grid](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
+![](https://main.qcloudimg.com/raw/142bc93a2a409fe4984d29e81cefc715.png)
+![](https://main.qcloudimg.com/raw/3f98bfc463551fc9184b1ecfab810caa.png)
 
 ### Descriptions of certain metrics
 An ES cluster is generally composed of multiple nodes. To reflect the overall health status of the cluster, certain monitoring metrics provide two types of values: average value and maximum value.
-The average value represents the average of all values of a metric on all nodes in the cluster, while the maximum value represents the maximum value of the metric on all nodes in the cluster. The statistical period of all metrics is 1 minute, that is, metric data is collected from the cluster once every minute. The meanings of specific metrics are as follows:
+
+- The average value represents the average of all values of a metric on all nodes in the cluster.
+- The maximum value represents the maximum value of the metric on all nodes in the cluster. 
+
+The statistical period of all metrics is 1 minute, that is, metric data is collected from the cluster once every minute. The meanings of specific metrics are as follows:
 
 <table  border="0" cellspacing="0" cellpadding="0">
    <tr>
