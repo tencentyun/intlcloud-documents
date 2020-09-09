@@ -21,6 +21,11 @@ https://api.tpns.hk.tencent.com/v3/push/app
 ```plaintext
 https://api.tpns.sgp.tencent.com/v3/push/app
 ```
+上海服务接入点:
+
+```plaintext
+https://api.tpns.sh.tencent.com/v3/push/app
+```
 
 **接口功能**：Push API 是所有推送接口的统称。Push API 有多种推送目标，推送目标见下文。
 所有请求参数通过 JSON 封装上传给后台，后台通过请求参数区分不同的推送目标。如有疑问请参见 [服务端错误码](https://intl.cloud.tencent.com/document/product/1024/33763)。
@@ -245,7 +250,6 @@ Android 平台具体字段如下表：
 | hw_ch_id       | String  | Android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
 | oppo_ch_id     | String  | Android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
 | vivo_ch_id     | String  | Android | 0      | 否   | vivo 渠道ID “0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
-| n_id           | Integer | Android | 0      | 否   | 通知消息对象的唯一标识（仅对 TPNS 通道生效）<li>大于0：会覆盖先前相同 ID 的消息</li><li>等于0：展示本条通知且不影响其他消息</li><li>等于-1：将清除先前所有消息，仅展示本条消息</li> |
 | builder_id     | Integer | Android | 0      | 否   | 本地通知样式标识                                             |
 | badge_type     | Integer | android | -1     | 否   | 通知角标，当前仅对华为设备生效。<li>-2：自动增加1；</li><li>-1：不变</li> |
 | ring           | Integer | Android | 1      | 否   | 是否有铃声<li>0：没有铃声</li><li>1：有铃声  </li>           |
@@ -357,7 +361,7 @@ iOS 平台具体字段如下表：
 | mutable-content | Integer | aps    | 无     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1 ，说明是支持 iOS 10 的 Service Extension。<li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报 |
 | sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<br>1：播放系统默认提示音，"sound":"default"<br>2：播放本地自定义铃声，"sound":"chime.aiff"<br>3：静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。 |
 | custom_content  | String  | ios    | 无     | 否   | 自定义下发的参数，需要序列化为 json string                   |
-| xg     | String     |message | 无    | 否    | 系统保留 key，应避免使用            |
+| xg     | String     |ios | 无    | 否    | 系统保留 key，应避免使用            |
 
 完整的消息示例如下：
 
@@ -476,7 +480,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | send_time            | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送和标签推送支持此字段</li> |
 | multi_pkg            | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制 TPNS 通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
 | loop_param           | Object  | 无     | 否                             | 0                                    | 循环推送（全推，标签推）相关，详情见下文 [loop_param 参数说明](#loop_param参数说明) |
-| badge_type           | Integer | aps/android   | 否                             | -1                                   | 用户设置角标数字， 当推送平台是 Android 时，放置在 Android 结构体中，当推送平台是 iOS 时，放置在 aps 结构体中：<li> -1：角标数字不变</li> <li> -2：角标数字自动加1 </li><li> >=0：设置自定义角标数字</li> |
+
 | group_id             | String  | 无     | 否                             | tpns_yyyymmdd，yyyymmdd 代表推送日期 | 该字段已废弃，后续会下线，若需要使用聚合统计请使用推送计划字段（plan_id） |
 | plan_id              | String  | 无     | 否                             | 无                                   | 推送计划 ID，推送计划创建及使用方式可 [参考文档](https://intl.cloud.tencent.com/document/product/1024/37452) |
 | tag_list             | Object  | 无     | 仅标签推送必需                 | 无                                   | <li>推送 tag1 和 tag2 的设备：`{"tags":["tag1","tag2"],"op":"AND"}`</li><li>推送 tag1 或 tag2 的设备： `{"tags":["tag1","tag2"],"op":"OR"}` </li> |
@@ -487,8 +491,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | collapse_id          | Integer | 无     | 否                             | 系统默认分配一个 collapse_id         | <li>消息覆盖参数，在前一条推送任务已经调度下发后，如果第二条推送任务携带相同的 collapse_id  则会停止前一条推送中尚未下发的 TPNS 通道数据，同时会覆盖展示第一条推送任务的消息。<li>已完成任务的 collapse_id 可以通过 [单个任务推送信息查询接口](https://intl.cloud.tencent.com/document/product/1024/33773) 获取。<li>目前仅支持全推、标签推送、号码包推送。 |
 | channel_rules        | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
 force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
-| thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名，安卓、iOS 通用 |
-| thread_sumtext      | String  | message       |无    | 否    | 通知分组折叠后显示的摘要，安卓端使用，thread_id 非空时有效|
+
 
 > ?对于 collapse_id，有以下使用条件：
 >

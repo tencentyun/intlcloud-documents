@@ -1,6 +1,6 @@
 
 SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
->
+>!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
@@ -29,7 +29,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 [Maven](https://maven.apache.org) is a dependency management tool for Java that supports the dependencies your project requires and installs them into your project.
 1. Go to [Maven's official website](https://maven.apache.org/) to download the corresponding Maven installation package for your system and install it.
 2. Add Maven dependencies by adding the following dependencies in Maven's pom.xml:
- >The version number here is for demonstration only. Please get the latest version number in [Maven Repository](https://search.maven.org/search?q=tencentcloud-sdk-java) for replacement.
+ >!The version number here is for demonstration only. Please get the latest version number in [Maven Repository](https://search.maven.org/search?q=tencentcloud-sdk-java) for replacement.
  >
 <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.tencentcloudapi<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
@@ -46,7 +46,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 <span id="example"></span>
 ## Sample Code
->All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
+>?All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
 
 Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. For more samples, please see [SDK for Java Samples](https://github.com/TencentCloud/tencentcloud-sdk-java/tree/master/examples/sms).
 

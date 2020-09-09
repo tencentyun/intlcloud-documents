@@ -34,8 +34,8 @@ Enter the following organization information in the console:
 1. Registration region;
 2. Organization name;
 3. Registered address;
-4. Organization registration number;
-5. Photo for verification.
+4. Organization business license ID;
+5. Photo for organization verification.
 
 After entering the information above, click **Submit** to initiate identity verification.
 

@@ -12,7 +12,6 @@
 | ---------------------- | ----------------------------------------------------- | ------------------------------------------------------------ |
 | EMR supports cloud disk encryption | EMR allows CBS users on the allowlist to select cloud disk encryption when creating an EMR cluster | [Cloud Disk Encryption](https://intl.cloud.tencent.com/document/product/362/33139) |
 | Task nodes support mounting multiple cloud disks | Task nodes support mounting cloud disks when a cluster is created or scaled |   -   |
-| The Nanjing region is supported     | EMR is now available in the Nanjing region   |  -    |
 
 ## December 2019
 
@@ -64,7 +63,6 @@
 | Update | Description | Document |
 | -------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
 | The HBase table-level monitoring feature is launched | HBase table-level monitoring is supported, covering the number of read/write requests and storage of each table in HBase | [HBase Table-Level Monitoring](https://intl.cloud.tencent.com/document/product/1026/34528) |
-| EMR is available in new regions | The Singapore, Mumbai, and Chengdu regions are supported    | -                                                            |
 | New models are available | Standard S4 and Standard Network-Optimized SN3ne models are available in the Beijing, Shanghai, and Guangzhou regions | - |
 | Monitoring page interactions are optimized and new monitoring metrics are added | Monitoring page interactions are optimized and new monitoring metrics are added | - |
 | WebUI proxy address is optimized   | The WebUI proxy address is optimized  | -   |
@@ -95,7 +93,6 @@
 | Update | Description | Document |
 | ---------- | ------------------------------------------------------------ | -------- |
 | New models are available | The I3 model is available in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 model allowlist | - |
-| New region is available | Purchase is made available in the Silicon Valley region  | -   |
 | Router node is supported  | Router nodes are mainly used to relieve the load of master nodes and as task submitters | [Node Types](https://intl.cloud.tencent.com/document/product/1026/31094) |
 | Node configuration adjustment is supported | Node configurations can be upgraded | [Configuration Adjustment](https://intl.cloud.tencent.com/document/product/1026/31114) |
 

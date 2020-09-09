@@ -9,7 +9,7 @@ Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click **C
 ### 1. AZ and software configuration
 - **Billing Mode:** only pay-as-you-go billing is supported.
  - Pay-as-you-go: you are charged by usage duration of the cluster. This billing mode requires identity verification and will freeze the amount of 1 hour's usage fees when the cluster is created (vouchers cannot be used here). After this cluster is terminated, the frozen amount will be returned.
-- **Region and AZ:** currently supported regions include Guangzhou, Shanghai, Beijing, Singapore, Silicon Valley, Chengdu, Nanjing, and Mumbai. Tencent Cloud products in different regions cannot communicate with each another over a private network.
+- **Region and AZ:** currently supported regions include Guangzhou, Shanghai, Beijing, and Mumbai. Tencent Cloud products in different regions cannot communicate with each another over a private network.
 - **Cluster Type:** there are three types of EMR clusters, namely, Hadoop cluster, ClickHouse cluster, and Druid cluster. **You can choose one to deploy as needed.**
 - **Version and Components:** EMR recommends some commonly used combinations of components for Hadoop. You can also combine the components based on your needs.
 - **Hive Metadatabase:** if you choose to deploy the Hive component, there are two storage methods for Hive metadata: you can store the metadata in a MetaDB instance separately purchased for the cluster or associate the metadata with EMR-MetaDB or a self-created MySQL database. In the latter case, metadata will be stored in an associated database and will not be terminated when the cluster is terminated.

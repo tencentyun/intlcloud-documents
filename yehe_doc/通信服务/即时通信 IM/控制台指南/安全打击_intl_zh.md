@@ -32,13 +32,13 @@
 
 
 ## 自定义消息打击
-自定义消息安全打击服务需要依靠即时通信 IM 结合第三方安全打击业务（推荐采用 [天御内容安全服务](https://cloud.tencent.com/document/product/295 )）。
+自定义消息安全打击服务需要依靠即时通信 IM 结合第三方安全打击业务。
 
 具体流程为：消息通过 IM SDK 发送至 IM 后台，同时通过第三方消息发送前回调（[单聊](https://intl.cloud.tencent.com/document/product/1047/34364)、[群聊](https://intl.cloud.tencent.com/document/product/1047/34374)），将消息内容抄送至业务后台，业务后台根据第三方安全打击服务要求进行判断，将判断结果告知 IM 后台是否下发。具体方案可参考下图：
-![](https://main.qcloudimg.com/raw/096f5d09f2c3667e9ed33adf173b657b.png)
+![](https://main.qcloudimg.com/raw/34bdd4f7adcb4919c8ef8dc68930ecf2.png)
 
 ## 图片、短视频、语音打击
 图片、短视频、语音打击安全打击服务需要依靠即时通信 IM 结合第三方安全打击业务（推荐采用 [天御内容安全服务](https://cloud.tencent.com/document/product/295 )）。
 
 具体流程为：消息通过 IM SDK 发送至 IM 后台，IM 后台下发消息，同时通过第三方消息发送后回调（[单聊](https://intl.cloud.tencent.com/document/product/1047/34364)、[群聊](https://intl.cloud.tencent.com/document/product/1047/34374)），将消息内容抄送至业务后台，业务后台根据第三方安全打击服务要求进行判断，将判断结果告知 IM 后台是否撤回 [单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015)、[群聊消息](https://intl.cloud.tencent.com/document/product/1047/34965)。具体方案可参考下图：
-![](https://main.qcloudimg.com/raw/69efd23ec482240d9fc2f3da3d9ebce3.png)
+![](https://main.qcloudimg.com/raw/f934c972855307282bba88f77ddbaf47.png)

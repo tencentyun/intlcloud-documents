@@ -33,8 +33,8 @@
 1.Registration region;
 2.Organization name;
 3.Registered address;
-4.Organization registration number;
-5.Photo for verification.
+4.Organization business license ID;
+5.Photo for organization verification.
 
   After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
 
@@ -87,7 +87,7 @@ Enter the following organization information in the console:
 1.Registration region;
 2.Organization name;
 3.Registered address;
-4.Organization registration number;
-5.Photo for verification.
+4.Organization business license ID;
+5.Photo for organization verification.
 
 After entering the information, click **Submit**. The Tencent Cloud team will review the application within two to three business days and notify you of the result through the console Message Center, email, and SMS.
