@@ -20,7 +20,7 @@ The following table describes the regions that TCR has supported and will suppor
 </tr>
 
 <tr>
-<td>Nanjing (<a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for application)</td><td>ap-nanjing</td>
+<td>Nanjing (Submit a <a href="https://console.cloud.tencent.com/workorder/category">ticket</a> for application)</td><td>ap-nanjing</td>
 </tr>
 
 <tr>
