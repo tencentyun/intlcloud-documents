@@ -3,8 +3,11 @@ This document describes how to upgrade the TencentDB for MySQL engine in the con
 TencentDB for MySQL supports database engine upgrade:
 - From MySQL 5.5 to MySQL 5.6
 - From MySQL 5.6 to MySQL 5.7
->?You cannot downgrade the database engine version.
->
+
+>?
+>- You cannot downgrade the database engine version.
+>- Upgrading across major releases is not supported. For example, to upgrade a TencentDB for MySQL 5.5 instance to MySQL 5.7 or higher, you have to upgrade it to MySQL 5.6 first.
+>- You cannot upgrade MySQL 5.7 to MySQL 8.0.
 
 <span id="shengjiguize"></span>
 ## Upgrade Rules
@@ -24,7 +27,7 @@ TencentDB for MySQL supports database engine upgrade:
 ![](https://main.qcloudimg.com/raw/ec14ff513f80db6e87338b5a531f6126.png)
 3. In the pop-up window, select the database version to be upgraded to and click **Upgrade**.
 As database upgrading involves data migration, after the upgrade is completed, a very short disconnection from the MySQL database lasting for just seconds may occur. When the upgrade is initiated, the **Switch Time** can be selected as **During maintenance window**, so that the switch will be initiated within the next **Maintenance Time** after the instance upgrade is completed.
->If you do so, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance period** when the switch will be performed. In this way, the overall time it takes to upgrade the instance may be extended.
+>!If you do so, the switch will not occur immediately after the database specification upgrade is completed; instead, the sync will continue till the instance goes into the next **maintenance period** when the switch will be performed. In this way, the overall time it takes to upgrade the instance may be extended.
 >
 ![](https://main.qcloudimg.com/raw/8a27b736891296d8c64077cf01409f08.png)
 
