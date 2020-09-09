@@ -1,55 +1,71 @@
-Before using Tencent Cloud VPC, you need to plan the quantity and IP range of your VPC instances based on your business to prevent problems resulting from temporary scale-out or similar.
-During planning, pay attention to the belonging region, VPC instances, number of subnets, IP ranges, and route tables.
+Before you use Tencent Cloud’s VPC services, you need to plan the quantity and IP range of your VPCs based on your business in order to prevent problems when you need to temporarily scale up.
+- [How to Plan the Quantity of VPCs?](#planVPC)
+- [How to Plan the Quantity of Subnets?](#planSubnet)
+- [How to Plan the IP Ranges (CIDR Blocks) of VPCs and Subnets?](#planCIDR)
+- [How to Plan the Quantity of Route Tables?](#planRoute)
+- [How to Plan a Cross-region Multi-center Hybrid Cloud Network?](#planExample)
 
-## Planning Regions
-Each VPC belongs to a specific region (for example, Guangzhou), and each region contains one or more availability zones (such as Guangzhou Zone 1 and Guangzhou Zone 2). You can choose an appropriate region to create VPC instances and subnets.
-Note that even if two VPC instances are present in the same region and isolated from each other by default within the private network, private network communication is enabled only in the same VPC by default. To enable private network communication between different VPC instances, establish a [peering connection](https://intl.cloud.tencent.com/document/product/553) or use [CCN](https://intl.cloud.tencent.com/document/product/1003).
-![](https://main.qcloudimg.com/raw/f0eb1a194187ec95a03881db3d4ae1b3.png)
+<span id="planVPC"  ></span>
+## How to Plan the Quantity of VPCs?
+- **Planning one VPC**
+If your business is relatively small in volume and deployed in the same region with no need for VPC isolation, we recommend that you plan one VPC.
+You can create multiple subnets and route tables in a single VPC for detailed traffic management. In addition, we recommend that you deploy multiple subnets in different availability zones for mutual disaster recovery between these zones.
+![](https://main.qcloudimg.com/raw/22c3ea70430c6eaf50c994f5cb5923bc.png)
+- **Planning multiple VPCs**
+In any of the following scenarios, we recommend that you plan multiple VPCs:
+ - **Your business is deployed in multiple regions.**
+If your business is deployed in multiple regions, you need to plan multiple VPCs. A VPC cannot be deployed across regions. When you have businesses deployed in multiple regions, you need to deploy at least one VPC in each region.
+By default, VPCs are not interconnected. Interconnection between VPCs can be achieved via [peering connection](https://intl.cloud.tencent.com/document/product/553) or [CCN](https://intl.cloud.tencent.com/document/product/1003).
+![](https://main.qcloudimg.com/raw/8e08edafd53646887f337be56836e56c.png)
+ - **Multiple businesses are deployed in the same region and require isolation.**
+If you have multiple businesses deployed in the same region and these businesses must be isolated from each other, you need to plan multiple VPCs and deploy one VPC for each business. As VPCs do not intercommunicate by default, isolation between businesses can be achieved without the need for any other operations.
+![](https://main.qcloudimg.com/raw/ec02b9e821f2a723a3e2d90bfab553bb.png)
+<span id="planSubnet" ></span>
+## How to Plan the Quantity of Subnets?
+- One VPC can have multiple subnets (the default quota is 10) at a time, and different subnets in the same VPC intercommunicate with each other via private network by default.
+- To achieve disaster recovery across availability zones, we recommend that you create at least two subnets in different availability zones in each VPC.
 
-## Planning VPC Instances
-### Planning a VPC
-If your business volume is relatively small and the business is deployed in the same region without the demand for network isolation, we recommend that you plan one VPC.
-You can create multiple subnets and route tables in a single VPC to achieve refined traffic management.
-![](https://main.qcloudimg.com/raw/e858339e22584215e9e9af4286d03468.png)
+<span id="planCIDR"></span>
+## How to Plan the IP Ranges (CIDR Blocks) of VPCs and Subnets?
+**Once set, the IP range masks of VPCs and subnets cannot be modified.** Therefore, be sure to carefully plan VPCs and subnets based on your business scale and communication scenarios. This will facilitate smooth scaling and O&M in the future.
+#### Planning VPC IP ranges
+- **You can use any of the following IP ranges as your VPC’s IP range:**
+ - **10.0**.0.0 - **10.255**.255.255 (**Mask range required to be between 16 - 28**)
+ - **172.16**.0.0 - **172.31**.255.255 (**Mask range required to be between 16 - 28**)
+ - **192.168**.0.0 - **192.168**.255.255 (**Mask range required to be between 16 - 28**)
+- **When planning VPC IP ranges, note that:**
+ - If you need to create multiple VPCs that must intercommunicate with each other or communicate with IDCs, make sure that the IP ranges of the VPCs do not overlap.
+ - If your VPC needs to intercommunicate with the classic network, then create a VPC with the IP range of `10.[0-47].0.0/16` and its subsets. VPCs of other IP ranges cannot intercommunicate with the classic network.
+ - Once created, VPC CIDR blocks and subnet CIDR blocks cannot be modified. When VPC CIDR block or subnet CIDR block addresses are insufficient, you can [create auxiliary CIDR blocks](https://intl.cloud.tencent.com/document/product/215/31805). However, as the auxiliary CIDR block feature is still in beta testing and increases operational complexity, we recommend that you carefully plan IP ranges when creating VPCs and subnets.
 
-### Planning multiple VPC instances
-In the following scenarios, we recommend that you plan multiple VPC instances:
-- **Your business is deployed in multiple regions**
-As VPC instances are region-specific, they cannot be deployed across different regions. When your business is deployed in multiple regions, you must plan multiple VPC instances.
-VPC instances in different regions can implement private network communication through [peering connection](https://intl.cloud.tencent.com/document/product/553) or [CCN](https://intl.cloud.tencent.com/document/product/1003).
-- **Multiple businesses need to be isolated from each other**
-As private network communication is enabled within the same VPC by default, if you have different businesses in the same region need to be isolated from each other, you must plan multiple VPC instances.
-![](https://main.qcloudimg.com/raw/4de88098290c378caf1cabbd2b040266.png)
+#### Planning subnet IP ranges
+- **Subnet IP range:** you can select an IP range within your VPC’s IP range or equal to your VPC’s IP range as your subnet IP range. For example, if your VPC’s IP range is 10.0.0.0/16, you can select an IP range within 10.0.0.0/16 - 10.0.255.255/28 as the subnet IP range.
+- **Subnet size and IP capacity**: once created, subnets cannot be modified. Therefore, when creating subnets, make sure that the IP capacity meets the needs of the subnet IP range. However, subnets should not be too large. Otherwise, you may be unable to create new subnets when scaling up the business in the future.
+- **Business requirements**: a single VPC can be divided into subnets based on business modules. For example, you can deploy the web layer, logic layer, and data layer in different subnets. Access between subnets can be controlled using [network ACLs](https://intl.cloud.tencent.com/document/product/215/31850).
 
-## Planning Subnets
-Each Tencent Cloud VPC supports creating a maximum of 10 subnets, which are IP address blocks within VPC instances. The IP range of subnets must fall within or be identical to the VPC’s IP range. One VPC can simultaneously contain multiple subnets, and different subnets in the same VPC intercommunicate with each other through the private network by default.
-Consider the following when planning subnets:
-- **Subnet size and number of IP addresses**
-When creating subnets, ensure that the number of IP addresses in the subnet IP range meets your requirements. However, the size of the subnets should not be too big in case you may need to create new subnets when expanding business in the future.
-- **Subnet IP range**
-If the VPC in which subnets are located needs to communicate with other VPC instances or IDCs, ensure that the subnet IP range does not overlap with the IP range of the peer end. Otherwise, private network communication fails.
-- **Business requirements**
-A single VPC can be divided into multiple subnets based on business modules, such as deploying the web layer, logic layer, and data layer in different subnets. Access to subnets can be controlled by using [Network ACLs](https://intl.cloud.tencent.com/document/product/215/5132).
-![](https://main.qcloudimg.com/raw/7cf89e24bc7bba66fec60c8142b454ad.png)
+>?
+>- If the VPC in which subnets are located needs to communicate with other VPCs or IDCs, make sure that the subnet IP range does not overlap with the peer IP range. Otherwise, private network intercommunication will not be possible.
+>- If subnet IP ranges overlap, you can use CCN after [changing the subnets of instances](https://intl.cloud.tencent.com/document/product/213/16565), or create a new VPC and purchase CVMs.
 
-## Planning IP Ranges
-Tencent Cloud VPC CIDR supports using any of the following private IP ranges:
-- **10.0**.0.0 - **10.255**.255.255 (**The mask must range from 16 to 28.**)
-- **172.16**.0.0 - **172.31**.255.255 (**The mask must range from 16 to 28.**)
-- **192.168**.0.0 - **192.168**.255.255 (**The mask must range from 16 to 28.**)
+<span id="planRoute" ></span>
+## How to Plan the Quantity of Route Tables?
+A route table is used to control the traffic direction within a subnet. Each subnet can be bound with only one route table. Tencent Cloud VPCs support the default route table and custom route tables.
+- **Planning a route table**
+If the traffic direction requirements of different subnets in your VPC are the same or similar, we recommend that you plan one route table. Then, you can create different routing policies to control the traffic directions.
+![](https://main.qcloudimg.com/raw/0fdd4b7616e92011e3fd9d8141bc49a4.png)
+- **Planning multiple route tables**
+If the traffic direction requirements of different subnets in your VPC are very different, we recommend that you plan multiple route tables. Then, you can bind subnets with corresponding route tables based on different requirements and control the traffic directions through routing policies.
+![](https://main.qcloudimg.com/raw/6f13922803b6531e77cdeb983e27b01e.png)
+<span id="planExample" ></span>
+## How to Plan a Cross-region Multi-center Hybrid Cloud Network?
+If you need to create multiple VPCs that must intercommunicate with each other or communicate with IDCs, make sure that the IP ranges of the VPCs do not overlap with the IP ranges of the entities with which they need to communicate.
+For example, assume that you have a local IDC with the IP range of `10.1.0.0/16` in Chengdu and need to create two cloud IDCs in Shanghai and Beijing, and that these two cloud IDCs need to communicate with the local IDC in Chengdu. In this case, we recommend that you plan the VPC IP ranges of the cloud IDCs in Shanghai and Beijing as `10.2.0.0/16` and `10.3.0.0/16`, respectively, to avoid communication failure caused by IP range overlap. You can enable intercommunication between the local IDC and the cloud IDCs and between the cloud IDCs using the following two methods.
+- **Method 1:** use CCN to enable interconnection and intercommunication over both public and private networks.
+![](https://main.qcloudimg.com/raw/05d61e7d26768a3e539858ba51d90f31.png)
+- **Method 2:** use dedicated connections to connect the cloud IDCs in Shanghai and Beijing to the local IDC in Chengdu, thus enabling communication between the local IDC and the cloud IDCs. To enable communication between the cloud IDCs in Shanghai and Beijing, use peering connections to connect to the corresponding VPCs.
+![](https://main.qcloudimg.com/raw/cba1d5751f6e7f6fce991b9ed3877bf9.png)
 
-#### IP range explanation
-- To create multiple VPC instances that need to communicate with each other or with IDCs, ensure that the IP ranges of VPC instances do not overlap with each other. Otherwise, peering connections and CCN do not work.
-- If your VPC needs to communicate with the basic network, create a VPC with the IP range falling within `10.[0-47].0.0/16` or its subsets. Classiclink cannot be created for VPC instances in other IP ranges.
-- If subnet IP ranges overlap, you can [change subnets of instance](https://intl.cloud.tencent.com/document/product/213/16565) and then use CCN. Alternatively, you can re-create a VPC or purchase a CVM.
-
-
-## Planning Route Tables
-A route table is used to control the traffic route within a subnet. Each subnet can be bound to one route table. Tencent Cloud VPC instances support the default route table and custom route tables.
-### Planning a route table
-If the traffic route requirements of different subnets in your VPC are the same or similar, we recommend that you plan one route table. You can create different routing policies to control different traffic routes.
-![](https://main.qcloudimg.com/raw/266543085902f18e038017a63162c5f4.png)
-### Planning multiple route tables
-If the traffic route requirements of different subnets in your VPC are different, we recommend that you plan multiple route tables. To do this, bind subnets with corresponding route tables based on different requirements, and control specific traffic routes by defining routing policies.
-![](https://main.qcloudimg.com/raw/0f13fc52b27f01ae1b2e278d6f09c70a.png)
-
+**Suggestions for multi-VPC scenarios:**
+- Try to plan different IP ranges for different VPCs if possible.
+- If you cannot plan different IP ranges for different VPCs, try to plan different IP ranges for the subnets of different VPCs.
+- If you cannot plan different IP ranges for the subnets of different VPCs, ensure that the IP ranges of subnets that need to communicate are different.

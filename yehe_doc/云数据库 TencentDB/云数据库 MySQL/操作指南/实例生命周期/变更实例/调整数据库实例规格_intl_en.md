@@ -21,7 +21,7 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 ### Adjusting the instance configuration in the console
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb), find the desired instance in the instance list, and select **More** > **Adjust Configurations** in the "Operation" column.
 ![](https://main.qcloudimg.com/raw/bddf4d9354753da23a0730fb91e01227.png)
-2. In the pop-up dialog box, select the desired configuration and click **Submit**.
+2. In the pop-up dialog box, adjust the instance configurations, and click **Submit**.
  - Pay-as-you-go instance:
 ![](https://main.qcloudimg.com/raw/fd7b5ead8e0aaeaa89248dcf12f58c02.png)
 
