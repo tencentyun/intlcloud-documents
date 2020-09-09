@@ -231,7 +231,7 @@ HttpRequestInfo=get\n/logset\nlogset_id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\nco
 The original string of the signature generated according to `HttpRequestInfo` is:
 
 ```shell
-StringToSign = sha1\1578976553;1578978363\ne2d0126b61269ef047d9d05b6c385cea0aea9799\n
+StringToSign = sha1\n1578976553;1578978363\ne2d0126b61269ef047d9d05b6c385cea0aea9799\n
 ```
 
 Encrypt `q-key-time` with `SecretKey` to get:
