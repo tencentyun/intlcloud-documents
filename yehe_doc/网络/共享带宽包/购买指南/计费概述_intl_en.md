@@ -18,7 +18,7 @@ This document describes the billing mode and price of bandwidth packages. The tw
 ### Billing formula
 **BWP fee** = BWP monthly peak x Number of valid days x Unit price/Number of days of the billed month.
 
-- **Daily peak: **the highest BWP bandwidth value at the granularity of 10 seconds is collected every five minutes. At the end of the day, the collected values are sorted in descending order, and the fifth highest value is used as the daily peak.
+- **Daily peak**: the highest BWP bandwidth value at the granularity of 10 seconds is collected every five minutes. At the end of the day, the collected values are sorted in descending order, and the fifth highest value is used as the daily peak.
 As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sample points are generated every day. The values of the 288 sample points are sorted in descending order, the fifth sample point is taken as the daily peak bandwidth.
 - **Monthly peak**: When the billed month is over, the collected daily peaks are sorted in descending order, and the average value of the top 5 peaks is used as the monthly peak.
 - **Valid days**: the number of days in which bandwidth is greater than 1 Kbps.
