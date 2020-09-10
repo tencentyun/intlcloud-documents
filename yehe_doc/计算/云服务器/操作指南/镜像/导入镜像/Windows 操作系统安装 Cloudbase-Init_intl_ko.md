@@ -66,6 +66,7 @@ PS C:\Set-ExecutionPolicy Unrestricted
 3. ‘TencentCloudRun.ps1’ 스크립트를 ‘C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts’ 경로에 복사합니다.
 4.`TencentCloudRun.ps1` 스크립트를 우클릭하고 [속성]을 선택한 후 아래와 같이 팝업 창에서 실행 가능한 사용 권한을 확인하십시오.
 ![](https://main.qcloudimg.com/raw/3a3a31fc4d0dbd58cacb9211f7a97e79.png)
-- [Unblock]을 선택하고 [OK]를 클릭하십시오.
-- [Unblock] 옵션이 없는 경우, 이 단계를 건너뛰십시오.
+
+- [Unblock]을 선택하고 [OK]를 클릭하십시오.
+- [Unblock] 옵션이 없는 경우, 이 단계를 건너뛰십시오.
 5. ‘C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Lib\site-packages\cloudbaseinit\plugins\common’ 경로에 있는 ‘localscripts.py’ 를 [소프트웨어 준비]의 ‘localscripts.py’ 파일로 교체합니다.
