@@ -62,7 +62,7 @@ kms_host="kms.tencentyun.com"
 local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
 ```
 3. Copy the `TencentCloudRun.ps1` script to `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts`.
-4. Right-click the `TencentCloudRun.ps1` script, select **Properties*, and check for its executable permission in the pop-up window, as shown below:
+4. Right-click the `TencentCloudRun.ps1` script, select **Properties**, and check for its executable permission in the pop-up window, as shown below:
 ![](https://main.qcloudimg.com/raw/3a3a31fc4d0dbd58cacb9211f7a97e79.png)
 - Check **Unblock** and click **OK**.
 - Skip this step if the **Unblock** option does not exist.
