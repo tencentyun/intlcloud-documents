@@ -16,8 +16,7 @@
 		    <tr>
         <td>Bandwidth</td>
     			<td>Limits</td>
-    			<td>COS puts no limits on upload and download bandwidth. The upload and download speed depends on your local bandwidth and local disk IO.<td>
-    </tr>
+    			<td>By default, the bandwidth limit is 15 Gbit/s for each Public Cloud region in Chinese mainland, and 10 Gbit/s for any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. </td>
     	 <tr>
         <td rowspan="3">Storage class</td>
     			<td>STANDARD limits</td>
@@ -34,7 +33,7 @@
      <tr>
         <td rowspan="3">Bucket</td>
     			<td>Limits</td>
-    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. Bucket names only support a sequence or combination of lowercase letters [a-z], numbers [0-9], and hyphens (-), with a total length of 1-50 characters.</td>
+    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. The name contains 1-50 characters that can only be English lowercase letters [a-z], numbers [0-9], or a combination of them with underscores "-".</td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
