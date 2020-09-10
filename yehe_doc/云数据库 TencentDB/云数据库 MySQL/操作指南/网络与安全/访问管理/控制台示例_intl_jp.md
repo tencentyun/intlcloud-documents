@@ -5,8 +5,8 @@ Cloud Access Management（CAM）を使用して、ユーザーにCDBコンソー
 ### CDBの全読み書きポリシー
 ユーザーにCDBインスタンスを作成し管理する権限を持たせたい場合、このユーザーに対して名称がQcloudCDBFullAccessのポリシーを使用することができます。
 
-[ポリシーの管理](https://console.cloud.tencent.com/cam/policy)インターフェースに進み、列項目【サービスのタイプ】をクリックし、プルダウンオプションから【MySQL】を選択すると、結果からこのポリシーを見つけることができます。
-![Alt text](https://main.qcloudimg.com/raw/c3a7dd4dae2d82da3d3c702a5188fe9e.png)
+[ポリシー管理](https://console.cloud.tencent.com/cam/policy)画面に入り、右上隅の検索ボックスに[QcloudCDBFullAccess] を入力して、ポリシーを見つけます。 ![](https://main.qcloudimg.com/raw/5ec89e71595a5edd3e7f723a19c01a6a.png)
+
 ポリシー文法は以下の通りです。
 ```
 {
