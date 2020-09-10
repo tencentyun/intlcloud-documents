@@ -12,7 +12,7 @@ A security group is a virtual firewall for stateful data packet filtering. As an
  - If clusters in the same VPC need to communicate with each other, you must open the container networks and node networks of the corresponding clusters to the Internet.
  - Open port 22 to the Internet if SSH login is required.
  - Open ports 30000 to 32768 on nodes to the Internet.
- In the access path, you must use a Cloud Load Balancer (CLB) to forward data packets to NodeIP:NodePort of the container cluster. NodeIP is the CVM instance IP of any node in the cluster. NodePort is assigned by the container cluster by default when the service is created. NodePort ranges from 30000 to 32768.
+ In the access path, you must use a load balancer to forward data packets to NodeIP:NodePort of the container cluster. NodeIP is the CVM instance IP of any node in the cluster. NodePort is assigned by the container cluster by default when the service is created. NodePort ranges from 30000 to 32768.
  The following figure uses service access from the public network as an example.
 ![Public network access through CLB](https://main.qcloudimg.com/raw/0a237626a95174fd851052f49a0ff5b3.png)
 
@@ -37,6 +37,6 @@ Some ports must be opened to the Internet to ensure normal communication between
 | All | All | 0.0.0.0/0 | Allow |
 
 >?
-> - To customize outbound rules, you need to open the node CIDR and container CIDR to the Internet.
+> - To customize outbound rules, you need to open the node IP range and container IP range.
 > - If you configure this rule for container nodes, the services in the cluster can be accessed using different access methods.
 > - For more information on how to access a service in a cluster, please see "Service Access" in [Overview](https://intl.cloud.tencent.com/document/product/457/36832).
