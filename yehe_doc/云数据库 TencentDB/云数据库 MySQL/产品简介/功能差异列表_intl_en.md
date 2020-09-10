@@ -1,3 +1,5 @@
+This document describes and compares the features supported by different types of TencentDB for MySQL instances, providing a guide for you to learn more about the features of all architectures and purchase instances according to your needs.
+"-" in the following table indicates "unsupported".
 
 | Feature       | High-Availability Edition         |Finance Edition             |Single-node High IO Edition        |Basic Edition                 | 
 | :------------ | :----------------- | :----------------- |:----------------------- | :-------------------- |
