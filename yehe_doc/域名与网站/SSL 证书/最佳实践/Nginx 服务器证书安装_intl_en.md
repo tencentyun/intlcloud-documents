@@ -5,6 +5,7 @@ This document describes how to install an SSL certificate on an Nginx server.
 >- Nginx version `nginx / 1.16.0` is used as an example.
 >- The current server OS is CentOS 7. The detailed steps may vary slightly depending on the operating system.
 >- Before you install an SSL certificate, enable port 443 on the Nginx server so that HTTPS can be enabled after the certificate is installed. For more information, see [How do I enable port 443 for a server?](https://intl.cloud.tencent.com/document/product/1007/36738).
+>- To upload a SSL certificate to CVMs, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
 
 ## Prerequisites
 - A remote file copy tool such as WinSCP has been installed (we recommend downloading the latest version from their official website).
