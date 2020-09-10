@@ -25,7 +25,7 @@ QCloudOptionsObjectRequest* request = [[QCloudOptionsObjectRequest alloc] init];
 // Bucket name in the format: `BucketName-APPID`
 request.bucket =@"examplebucket-1250000000";
 
-// Simulates the origin domain name from which the request for cross-origin access is sent
+// Specify the domain the request that simuplates CORS comes from, request method and host
 request.origin = @"http://cloud.tencent.com";
 request.accessControlRequestMethod = @"GET";
 request.accessControlRequestHeaders = @"host";
@@ -53,7 +53,7 @@ let optionsObject = QCloudOptionsObjectRequest.init();
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 optionsObject.object = "exampleobject";
 
-// Simulates the origin domain name from which the request for cross-origin access is sent
+// Specify the domain the request that simuplates CORS comes from, request method and header
 optionsObject.origin = "http://www.qcloud.com";
 optionsObject.accessControlRequestMethod = "GET";
 optionsObject.accessControlRequestHeaders = "origin";
@@ -63,11 +63,8 @@ optionsObject.bucket = "examplebucket-1250000000";
 
 optionsObject.finishBlock = {(result,error) in
     
-    // `result` returns information such as the etag or custom headers in the response
-    if error != nil{
-        print(error!);
-    }else{
-        print(result!);
+  if let result = result {
+       // “result" contains headers returned by the server
     }
 }
 QCloudCOSXMLService.defaultCOSXML().optionsObject(optionsObject);

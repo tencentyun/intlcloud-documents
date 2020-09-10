@@ -12,7 +12,7 @@ If the excessive backup space is less than 1 GB, no fees will be charged. If the
 
 ## Billing Schedule for Backup Space
 - Billing officially started from 00:00 on December 2, 2019 for Hong Kong (China), Macao (China), Taiwan (China), and other regions outside Mainland China.
-- Billing officially started from 00:00 on December 2, 2019 for Southwest China (Chengdu and Chongqing regions), South China (Shenzhen Finance), East China (Shanghai Finance), and North China (Beijing Finance).
+- Billing officially started from 00:00 on December 2, 2019 for Southwest China (Chengdu and Chongqing regions).
 - Billing officially started from 00:00 on December 5, 2019 for South China (Guangzhou region).
 - Billing officially started from 00:00 on December 9, 2019 for North China (Beijing region).
 - Billing officially started at 00:00 on December 10, 2019 for East China (Shanghai region).
