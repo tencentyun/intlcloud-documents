@@ -10,7 +10,7 @@
     			<td>Limits</td>
     			<td>1. READ/WRITE requests: by default, each bucket enjoys up to 30,000 QPS in Public Cloud regions in Chinese mainland, and up to 3,000 QPS in any other regions.
 <br>2. LIST requests: by default, each bucket enjoys up to 1,200 QPS in any region.
-<br>3. RETRIEVE requests: by default, each bucket enjoys up to 100 QPS in any region.
+<br>3. RETRIEVE requests: each bucket enjoys up to 100 QPS in any region.
 <br>To request higher QPS, please see <a href="https://intl.cloud.tencent.com/document/product/436/13653">Request Rate and Performance Optimization</a>. </td>
      </tr>
 		    <tr>
