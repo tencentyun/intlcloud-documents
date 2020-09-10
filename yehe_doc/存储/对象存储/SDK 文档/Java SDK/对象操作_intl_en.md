@@ -258,8 +258,20 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 
 #### Response
 
-- Success: no value is returned.
+- Success: Success: returns ObjectMetadata class, including user-defined headers, Etag and other object metadata.
 - Failure: an error (such as authentication failure) occurs, with a CosClientException or CosServiceException thrown. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+
+#### Response parameters
+
+The ObjectMetadata class is used to record metadata on an object, and its main members are described as follows:
+
+| Member Name | Description | Type |
+| --------------- | --------------------------------- ------------------ | ------------------- |
+| httpExpiresDate | The cache expiration time, which is the value of the `Expires` field in HTTP response headers | Date |
+| ongoingRestore | Indicates that the object is being restored from ARCHIVE | Boolean |
+| userMetadata | User-defined metadata prefixed with `x-cos-meta-` | Map<String, String> |
+| metadata | Headers other than user-defined ones for metadata | Map<String, String> |
+| restoreExpirationTime | Expiration time of a restored ARCHIVE object copy | Date |
 
 #### Sample request
 
