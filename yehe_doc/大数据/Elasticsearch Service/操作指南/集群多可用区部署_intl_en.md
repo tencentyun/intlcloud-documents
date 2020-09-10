@@ -6,8 +6,11 @@ Go to the [ES purchase page](https://buy.cloud.tencent.com/es#/), select **Deplo
 >- To enable multi-AZ disaster recovery, a cluster must first have at least three dedicated master nodes enabled; therefore, there must be at least three regions selected where multi-AZ disaster recovery is supported. Currently, this feature is only supported in certain major regions such as Beijing, Shanghai, and Guangzhou, and it will be gradually rolled out in other regions as new Tencent Cloud data centers are constructed.
 >- Other parameter settings are generally the same as those for single-AZ deployment.
 
-Take Shanghai as an example. Select **Multi-AZ** as the deployment mode. Currently, only two AZs are supported, so you need to select two pairs of **AZ and subnet**. The **number of nodes** will be automatically adjusted proportionally to the number of AZs. In order to ensure the stability and reliability of the cluster, **Dedicated Master Node** > **Enable** is selected by default, and you can select 3 or 5 **dedicated master nodes**. Such nodes will be evenly distributed among the three AZs to ensure that when an AZ becomes unavailable, the circumstance where more than half of the nodes are unavailable will never happen. Plus, this guarantees that the cluster always has electable nodes which form a quorum for the election of a master node, thus ensuring cluster reliability.
+Take Shanghai as an example. Select **Multi-AZ** as the deployment mode. Currently, only two AZs are supported, so you need to select two pairs of **AZ and subnet**. 
 ![](https://main.qcloudimg.com/raw/16c3287455f278f5324b985cc358510b.png)
+
+The **Node Qty** will be automatically equal to a multiple of the number of AZs. To ensure the cluster stability and reliability, **Dedicated Master Node** is **enabled** by default. You can configure three or five dedicated master nodes and evenly distribute them in three AZs to ensure that the cluster can have optional primary nodes more than the required number.
+![](https://main.qcloudimg.com/raw/8d45409f27afb533e4d3b0225fa1f034.png)
 
 ## How Multi-AZ Disaster Recovery Works
 
