@@ -22,7 +22,7 @@ For a published function version, you can set a desired number of provisioned co
 2. On the "Function Service" list page, select the name of the target function to enter the "Function Management" page.
 3. On the "Function Management" page, select "Concurrence Management" on the left sidebar to enter the "Concurrence Management" page.
 4. On the "Concurrence Management" page, click **Add Provisioned Concurrence** as shown below:
-![](https://main.qcloudimg.com/raw/cc67dfc7eb685db6009ca313f531154b.png)
+![](https://main.qcloudimg.com/raw/896d0ae8b0276a9316cf8f22f0c714bc.png)
 5. In the "Add Provisioned Function Concurrence" window that pops up, select the desired version and the number of provisioned concurrent instances and click **Submit**.
 After completing the settings, you can view the configuration status in "Provisioned Concurrence". It will take some time for the SCF backend to add the instances and display the number of ready-to-start concurrent instances and completion status in the list.
 
@@ -30,7 +30,7 @@ After completing the settings, you can view the configuration status in "Provisi
 After the SCF backend adds the provisioned concurrent instances, you can modify the number of concurrent instances as needed in the following steps:
 1. Enter the "Concurrence Management" page of the target function.
 2. On the "Concurrence Management" page, select **Set** on the right of the target version as shown below:
-![](https://main.qcloudimg.com/raw/dcfb189dbb17334d4653ba32f79c541b.png)
+![](https://main.qcloudimg.com/raw/d3749d4f21e7a17b7a23ddcf53171de6.png)
 3. In the "Update Provisioned Function Concurrence" window that pops up, update the set value and click **Submit**.
 After the settings are completed, the SCF platform will adjust the number of concurrent instances according to your modification in a certain period of time.
 
@@ -39,7 +39,7 @@ After the settings are completed, the SCF platform will adjust the number of con
 If you no longer use a provisioned concurrence configuration, you can delete it in the following steps:
 1. Enter the "Concurrence Management" page of the target function.
 2. On the "Concurrence Management" page, select **Delete** on the right of the target version as shown below:
-![](https://main.qcloudimg.com/raw/516542314836b4dcb2a1e91612f47ac6.png)
+![](https://main.qcloudimg.com/raw/6c79a835ef99bd709c3349051cabef3d.png)
 3. In the pop-up window, click **OK**. After the configuration is deleted, the SCF backend will gradually repossess concurrent instances.
 
 
