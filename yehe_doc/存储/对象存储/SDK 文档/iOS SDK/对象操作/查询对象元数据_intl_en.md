@@ -57,10 +57,10 @@ headObject.versionID = "versionID";
 // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
 headObject.object  = "exampleobject";
 headObject.finishBlock =  {(result,error) in
-    if error != nil{
+    if let result = result {
+        // "result" contains response headers
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().headObject(headObject);
