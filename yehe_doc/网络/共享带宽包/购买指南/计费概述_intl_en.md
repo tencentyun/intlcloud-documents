@@ -20,8 +20,8 @@ This document describes the billing mode and price of bandwidth packages. The tw
 
 - **Daily peak: **the highest BWP bandwidth value at the granularity of 10 seconds is collected every five minutes. At the end of the day, the collected values are sorted in descending order, and the fifth highest value is used as the daily peak.
 As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sample points are generated every day. The values of the 288 sample points are sorted in descending order, the fifth sample point is taken as the daily peak bandwidth.
-- Monthly peak: When the billed month is over, the collected daily peaks are sorted in descending order, and the average value of the top 5 peaks is used as the monthly peak.
-- **Valid days**: the number of days in which bandwidth is not zero.
+- **Monthly peak**: When the billed month is over, the collected daily peaks are sorted in descending order, and the average value of the top 5 peaks is used as the monthly peak.
+- **Valid days**: the number of days in which bandwidth is greater than 1 Kbps.
 - **Days of the billed month**: the actual number of days during the month in which BWP is used.
 
 >
@@ -57,7 +57,7 @@ The final fee for June is 1,018.2 USD, payable in early July.
 **BWP fee** = BWP monthly peak x Number of valid days x Unit price/Number of days of the billed month.
 - **Monthly peak**: Every five minutes, the highest BWP bandwidth value per minute is collected. When the billed month is over, the collected values are sorted from high to low. After the top 5% values are eliminated, the highest value is used as the monthly peak.
 For example, you use BWP for 14 days in June. As one sample point is generated every 5 minutes, 288 (60 min × 24/5 min) sample points are generated every day, and 4032 (14 days × 288 sample points/day) sample points are generated in 14 days. The bandwidth values of the 4032 sample points are sorted in descending order, the top 5% of the sample points (4032 sample points × 0.05 = 201.6 statistical points) are removed, and the bandwidth value of the 202nd sample point is taken as the monthly 95th percentile of peak bandwidth.
-- **Valid days**: the number of days in which bandwidth is not zero.
+- **Valid days**: the number of days in which bandwidth is greater than 1 Kbps.
 - **Days of the billed month**: the actual number of days during the month in which BWP is used.
 
 >Monthly peak is collected for inbound and outbound traffics respectively and the higher one is used as the monthly peak of the current billed month.
