@@ -5,6 +5,7 @@ This document describes the MySQL kernel version updates. For information on how
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supports automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- Supports Transparent Data Encryption (TDE).
 
 
 #### Bug fixes
