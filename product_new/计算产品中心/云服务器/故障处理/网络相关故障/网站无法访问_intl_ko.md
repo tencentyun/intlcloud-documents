@@ -1,4 +1,4 @@
-본 문서는 웹 사이트가 액세스하지 못하는 문제에 대해 점검 방법과 문제 위치 확인 방법을 설명합니다.
+본 문서는 웹 사이트 액세스 오류를 야기하는 문제를 찾아 해결하는 방법에 대해 설명합니다.
 
 ## 예상 원인
 
@@ -14,8 +14,8 @@
  - 해당되지 않는 경우 CVM 인스턴스를 재시작하십시오.
 2. <span id="Server_step02">인스턴스의 ID/인스턴스 이름을 클릭해 인스턴스 상세 페이지로 진입하십시오.</span>
 3. [모니터링]탭을 선택하여 CPU/메모리/대역폭 사용 현황을 조회하십시오. 아래 이미지를 참조하십시오.
- - CPU/메모리가 사용량이 너무 많은 경우 [Windows 인스턴스: CPU와 메모리의 높은 점유율로 인한 로그인 불가](https://cloud.tencent.com/document/product/213/10233)와 [Linux 인스턴스: CPU와 메모리의 높은 점유율로 인한 검색 불가](https://cloud.tencent.com/document/product/213/10310)를 참조하십시오.
- - 대역폭이 사용량이 너무 많은 경우 [대역폭의 높은 점유율로 인한 로그인 불가](https://cloud.tencent.com/document/product/213/10334)를 참조하십시오.
+ - CPU/메모리가 사용량이 너무 많은 경우 [Windows 인스턴스: CPU와 메모리의 높은 점유율로 인한 로그인 불가](https://intl.cloud.tencent.com/zh/document/product/213/32405)와 [Linux 인스턴스: CPU와 메모리의 높은 점유율로 인한 검색 불가](https://intl.cloud.tencent.com/zh/document/product/213/32387)를 참조하십시오.
+ - 대역폭이 사용량이 너무 많은 경우 대역폭의 높은 점유율로 인한 로그인 불가 를 참조하십시오.
  - CPU/메모리/대역폭 사용 현황이 정상이라면 [4단계](#Server_step04)를 수행하십시오.
 4. <span id="Server_step04">다음 명령어를 실행하여 웹서비스에 대응하는 포트가 제대로 모니터링되는지 점검합니다.</span>
 > 다음 작업은 HTTP 서버에 자주 사용하는 80 포트를 예시로 합니다.
@@ -60,7 +60,7 @@ ping 타깃 서버의 공인 IP
  - 도메인에 ICP비안이 없을 경우 [도메인 ICP비안](https://console.cloud.tencent.com/beian)을 실행하십시오.
  - Tencent Cloud의 도메인 서비스를 사용할 경우 [도메인 관리 콘솔](https://console.cloud.tencent.com/domain)에 로그인하여 해당하는 도메인 이름 상황을 조회할 수 있습니다.
  - 도메인이 이미 ICP비안에 등록된 경우 [2단계](#Analysis_step02)를 실행하십시오.
-2. <span id="Analysis_step02">[분석 효과 관련](https://cloud.tencent.com/document/product/302/30597)을 참조하여 분석 관련 문제를 점검하십시오.</span>
+2. <span id="Analysis_step02">분석 효과 관련 을 참조하여 분석 관련 문제를 점검하십시오.</span>
  - 웹 사이트 액세스 문제를 해결한 경우 작업을 완료합니다.
  - 여전히 웹 사이트 액세스 문제를 해결할 수 없을 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&level3_id=497&radio_title=%E7%BD%91%E7%AB%99%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE&queue=15&scene_code=14550&step=2)을 통해 피드백하십시오.
 
