@@ -1,3 +1,15 @@
+### 2.7.7 @2020.8.12
+
+**Added**
+
+The [TIM.EVENT.SDK_RELOAD](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_RELOAD) event.
+
+**Fixed**
+
+- Messages occasionally failed to be pulled when mini program is reconnected after a long period of disconnection, or switches to the frontend after running in the background for a long time.
+- The image message `imageFormat` has an inconsistent type and value with the actual image format.
+- The Work and Public groups have messy nicknames.
+
 ### 2.7.6 @2020.7.9
 
 **Fixed**

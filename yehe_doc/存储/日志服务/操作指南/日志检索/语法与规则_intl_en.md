@@ -1,5 +1,5 @@
 
-##  Syntax Rule
+##  Syntax (Lucene)
 
 | Reserved Keyword    | Description                                                         |
 | :------------ | :----------------------------------------------------------- |

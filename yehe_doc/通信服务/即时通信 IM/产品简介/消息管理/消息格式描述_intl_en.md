@@ -468,7 +468,10 @@ The preceding fields are described as follows:
 | Desc | String | Optional | The offline push content. This field overwrites the offline push display text of the [TIMMsgElement] (https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this Desc field will overwrite the Desc field in the TIMCustomElem. If neither of the Desc fields is filled in, the offline push notification for the message will not be received. |
 | Ext | String | Optional | The passthrough content of offline push. To make sure the offline push of all Andriod vendors are attainable, this field must be in JSON format.|
 | AndroidInfo.Sound | String | Optional | The file path for the offline push sound in Android. |
-| AndroidInfo.OPPOChannelID | String | Optional | This field is used for NotificationChannel notifications in OPPO mobile phones with Android 8.0 or later. |
+| AndroidInfo.HuaWeiChannelID | String | Optional | This field is used for notification channel in Huawei mobile phones with EMUI 10.0 or later. |
+| AndroidInfo.XiaoMiChannelID | String | Optional | This field is used for notification channel in Xiaomi mobile phones with EMUI 10 or later. |
+| AndroidInfo.OPPOChannelID | String | Optional | This field is used for NotificationChannel notifications in OPPO mobile phones with Android 8.0 or later.  |
+| AndroidInfo.GoogleChannelID | String | Optional | This field is used for notification channel in Google mobile phones with Android 8.0 or later. This field is supported by the new Google API (certificate upload), but not the old API (server key). |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
 | ApnsInfo.Title | String | Optional | This field identifies the title of APNs push messages. The top-level title is replaced when this field is filled in. |
 | ApnsInfo.SubTitle | String | Optional | This field identifies the subtitle of APNs push messages. |

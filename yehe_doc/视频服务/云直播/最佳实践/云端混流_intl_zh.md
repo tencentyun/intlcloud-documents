@@ -1,4 +1,4 @@
-云直播服务为您提供了直播混流功能，根据您设定好的混流布局同步的将各路输入源混流成一个新的流，可实现直播互动效果。同时，云直播直播混流功能已接入 API 3.0接口，具体可参见 [直播混流接口](https://intl.cloud.tencent.com/document/product/267/35997)，本文将举例说明如何在不同场景下实现直播混流。
+云直播服务为您提供了直播混流功能，根据您设定好的混流布局同步的将各路输入源混流成一个新的流，可实现直播互动效果。同时，云直播直播混流功能已接入 API 3.0 接口，具体可参见 [直播混流接口](https://intl.cloud.tencent.com/document/product/267/35997)，本文将举例说明如何在不同场景下实现直播混流。
 
 ## 注意事项
 - 使用云端混流功能将产生标准转码费用。
@@ -90,16 +90,16 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &MixStreamSessionId=test_room
 &MixStreamTemplateId=390
 &OutputParams.OutputStreamName=test_stream2
-&InputStreamList.1.InputStreamName=test_stream1
-&InputStreamList.1.LayoutParams.ImageLayer=1
-&InputStreamList.1.LayoutParams.InputType=3
-&InputStreamList.1.LayoutParams.ImageWidth=1920  (画布的宽)
-&InputStreamList.1.LayoutParams.ImageHeight=1080 （画布的高）
-&InputStreamList.1.LayoutParams.Color=0x000000
-&InputStreamList.2.InputStreamName=test_stream2
-&InputStreamList.2.LayoutParams.ImageLayer=2
-&InputStreamList.3.InputStreamName=test_stream3
-&InputStreamList.3.LayoutParams.ImageLayer=3
+&InputStreamList.0.InputStreamName=test_stream1
+&InputStreamList.0.LayoutParams.ImageLayer=1
+&InputStreamList.0.LayoutParams.InputType=3
+&InputStreamList.0.LayoutParams.ImageWidth=1920  (画布的宽)
+&InputStreamList.0.LayoutParams.ImageHeight=1080 （画布的高）
+&InputStreamList.0.LayoutParams.Color=0x000000
+&InputStreamList.1.InputStreamName=test_stream2
+&InputStreamList.1.LayoutParams.ImageLayer=2
+&InputStreamList.2.InputStreamName=test_stream3
+&InputStreamList.2.LayoutParams.ImageLayer=3
 &<公共请求参数>
 ```
 
@@ -139,12 +139,12 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 &InputStreamList.1.LayoutParams.ImageHeight= 360
 &InputStreamList.1.LayoutParams.LocationX= 50
 &InputStreamList.1.LayoutParams.LocationY= 720
-&InputStreamList.1.InputStreamName=test_stream3
-&InputStreamList.3.LayoutParams.ImageLayer=3
-&InputStreamList.3.LayoutParams.ImageWidth = 640
-&InputStreamList.3.LayoutParams.ImageHeight= 360
-&InputStreamList.3.LayoutParams.LocationX= 740
-&InputStreamList.3.LayoutParams.LocationY= 720
+&InputStreamList.2.InputStreamName=test_stream3
+&InputStreamList.2.LayoutParams.ImageLayer=3
+&InputStreamList.2.LayoutParams.ImageWidth = 640
+&InputStreamList.2.LayoutParams.ImageHeight= 360
+&InputStreamList.2.LayoutParams.LocationX= 740
+&InputStreamList.2.LayoutParams.LocationY= 720
 &<公共请求参数>
 ```
 
@@ -305,3 +305,9 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 </tr>
 </tbody></table>
 
+## 常见问题
+- [推流后混流，为什么会返回-505错误码？](https://intl.cloud.tencent.com/document/product/267/38255#que1)
+- [申请混流后，如果一直未取消混流，会出现什么情况？](https://intl.cloud.tencent.com/document/product/267/38255#que5)
+- [为什么混流的小主播画面有的时候与期望的位置不同？](https://intl.cloud.tencent.com/document/product/267/38255#que9)
+
+>? 更多云端混流相关问题，请参见 [云端混流相关](https://intl.cloud.tencent.com/document/product/267/38255)

@@ -1,5 +1,5 @@
-### VPC-CNI Mode Description in GlobalRouter
-VPC-CNI is an extended network mode supported by Tencent Kubernetes Engine (TKE). In VPC-CNI mode, Tencent Cloud ENI assigns IP addresses within the VPC instance to pods in the cluster, and the Tencent Cloud VPC instance is responsible for routing. In this way, the data plane and control plane of pods and nodes can be located at the same network layer. VPC-CNI nodes can use all product features of Tencent Cloud VPC.
+### VPC-CNI Mode in GlobalRouter
+VPC-CNI is an extended network mode supported by Tencent Kubernetes Engine (TKE). In VPC-CNI mode, Tencent Cloud ENI assigns IP addresses within the VPC instance to pods in the cluster, and the Tencent Cloud VPC instance is responsible for routing. In this way, the data plane and control plane of pods and nodes can be located at the same network layer. VPC-CNI pods can use all product features of Tencent Cloud VPC.
 The VPC-CNI mode has use limits. We recommend that you check whether the mode adapts to your business scenarios in advance.
 
 ### VPC-CNI Use Cases
@@ -17,11 +17,11 @@ In VPC-CNI mode, StatefulSet workloads support pods with static IP addresses. Th
 #### Enabling VPC-CNI
 1. Log in to the [TKE console](https://console.qcloud.com/tke2).
 2. In the left sidebar, click **Cluster** to go to the cluster management page. Select a cluster and click **Basic Information**.
-3. In the "VPC-CNI mode" field, click the switch icon. Then, select the subnet and confirm the use limits, as shown below.
+3. Enable in the **VPC-CNI mode** field. Then, select the subnet and confirm the use limits, as shown below.
 ![](https://main.qcloudimg.com/raw/19ec70c11d5eb083612dd4dec806b958.png)
 
 #### Disabling VPC-CNI
 1. Log in to the [TKE console](https://console.qcloud.com/tke2).
 2. In the left sidebar, click **Cluster** to go to the cluster management page. Select a cluster and click **Basic Information**.
-3. In the "VPC-CNI mode" field, click the switch icon, as shown below. VPC-CNI can be disabled only when no VPC-CNI pods exist in the cluster.
+3. Disable in the **VPC-CNI mode** field. VPC-CNI can be disabled only when no VPC-CNI pods exist in the cluster.
 ![](https://main.qcloudimg.com/raw/e404afd6d5f3871aa7f913c6a045b144.png)

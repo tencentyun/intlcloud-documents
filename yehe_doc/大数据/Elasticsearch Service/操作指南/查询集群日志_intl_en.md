@@ -10,7 +10,7 @@ This document describes how to use ES cluster logs. You can use the logs to lear
  - Specify a field-specific keyword, such as "message:YELLOW".
  - Combine multiple criteria for querying, such as `level: INFO and ip: 10.0.1.1`.
 	
-![](https://main.qcloudimg.com/raw/b25b5ea74877913e8cba58266a57ce5f.png)
+![](https://main.qcloudimg.com/raw/dea1faef96050165d68270fef849fe15.png)
 
 ## Log Description
 ### Master log

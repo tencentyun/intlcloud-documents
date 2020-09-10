@@ -10,7 +10,7 @@
 ## 前提条件
 - XtraBackupツールをダウンロードしてインストールします。
 XtraBackupツールは[Percona XtraBackup公式ウェブサイト](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)からダウンロードでき、Percona XtraBackup 2.4.6及びその以降のバーションを選択してください。ツールのインストール方法の詳細については、[Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)をご参照ください 。
-- サポートするインスタンスのバージョン：MySQL 5.5、5.6、5.7の高可用性エディションとファイナンスエディション。
+- サポートされるインスタンスエディション：TencentDB for MySQL 高可用性エディションおよびファイナンスエディション。
 - データ暗号化が有効になっているインスタンスでは、物理バックアップを使用したデータベースの復元がサポートされていません。
 
 ##　操作手順

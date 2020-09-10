@@ -1,6 +1,6 @@
 ## Overview
 
-To deploy applications in Tencent Kubernetes Engine (TKE) and use static pod IP addresses, you can use StatefulSets with static IP addresses. TKE supports this type of StatefulSets that create pods with IP addresses in an actual VPC instance assigned through ENIs. TKE's VPC-CNI plugin assigns IP addresses. The IP addresses remain unchanged after pods are restarted or migrated.
+To deploy applications in Tencent Kubernetes Engine (TKE) and use static pod IP addresses, you can use StatefulSets with static IP addresses. Pods created by this type of StatefulSet are assigned with an IP in an actual VPC through ENIs. TKE's VPC-CNI plugin assigns IP addresses. The IP addresses remain unchanged after pods are restarted or migrated.
 By using StatefulSets with static IP addresses, you can:
 - Authorize based on source IP addresses.
 - Review processes based on IP addresses.
@@ -21,7 +21,7 @@ You have enabled the VPC-CNI mode for your cluster. For more information, please
 4. Click **Create** to view **Number of Pods**, as shown below.
 ![](https://main.qcloudimg.com/raw/0ebc313ec37d0f4dc6506ecbcecd3fc7.png)
 5. Click **Advanced Settings** and set StatefulSet parameters as needed. The key parameters are as follows:
-   ![CreateStatefulSet](https://main.qcloudimg.com/raw/fa66910444475fcab224844c200a217c.png)
+   ![Create StatefulSet](https://main.qcloudimg.com/raw/fa66910444475fcab224844c200a217c.png)
  - Network mode: select **Enable VPC-CNI mode**.
  - IP address range: currently, only the **Random** value is supported.
  - Static pod IP: select **Enable**.

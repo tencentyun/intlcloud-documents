@@ -5,6 +5,7 @@ This document describes how to install an SSL certificate on a JBoss server.
 >- JBoss 7.1.1 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
 >- Before installing the SSL certificate, open the port 443 on the JBoss server to ensure that HTTPS can be enabled after certificate installation. For more information, see [How Do I Open the Port 443 on the Server?](https://intl.cloud.tencent.com/document/product/1007/36738).
+>- To upload a SSL certificate to CVMs, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
 
 ## Prerequisites
 - A remote file copy tool such as WinSCP has been installed. You are recommended to obtain the latest version from the official website.
@@ -32,9 +33,9 @@ This document describes how to install an SSL certificate on a JBoss server.
 
 >
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
->- If you selected the **Paste CSR** method when applying for the SSL certificate, the option to download the Tomcat certificate file is not provided. Instead, you need to manually convert the format to generate a keystore as follows: 
- >- Access the [conversion tool](https://myssl.com/cert_convert.html).
- >- Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+>- If you selected the **Paste CSR** method when applying for the SSL certificate, or purchased the Wotrus certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore by following the procedure below:
+    - Access the [conversion tool](https://myssl.com/cert_convert.html).
+    - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
 >- The JBoss service is installed in the `/usr/local` directory.
 
 

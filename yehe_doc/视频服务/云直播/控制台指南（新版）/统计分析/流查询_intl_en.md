@@ -2,7 +2,7 @@ Log in to the LVB Console, select **Statistical Analysis** > **[Query Stream](ht
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### Playback Data Query 
-The playback data page displays the data of bandwidth, traffic, and concurrent connections.
+The playback data page displays the data of bandwidth, traffic, and concurrent connections. You can only query the playback data in last 30 days. The query period cannot exceed 24 hours.
 ![](https://main.qcloudimg.com/raw/8e22e9eaa44be89778eab39502a13a1f.png)
 
 ### Push Data Query

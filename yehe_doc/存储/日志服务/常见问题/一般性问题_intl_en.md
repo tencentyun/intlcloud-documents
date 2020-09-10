@@ -20,7 +20,7 @@ A complete CLS log contains mainly the log timestamp, the log content and the me
 CLS provides log lifecycle management. When you create a logset, you may configure a storage cycle, beyond which the data will be cleared without incurring storage fees. If you need to extend the storage cycle, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 After you ship logs to Cloud Object Storage (COS), the lifecycle management of the destination bucket, and the COS billing rules will be used.
-
+>! It may take a period of time for CLS to clear expired data, during which no charges will apply.
 
 ### What are the differences between logset and log topic?
 
