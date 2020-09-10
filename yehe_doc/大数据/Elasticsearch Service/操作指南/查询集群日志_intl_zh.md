@@ -10,7 +10,7 @@
  - 指定字段设置关键词，例如：“message:YELLOW”。
  - 多个条件组合：“level:INFO and ip:10.0.1.1”，可以查询相关日志。
 	
-![](https://main.qcloudimg.com/raw/b25b5ea74877913e8cba58266a57ce5f.png)
+![](https://main.qcloudimg.com/raw/dea1faef96050165d68270fef849fe15.png)
 
 ## 日志说明
 ###  主日志

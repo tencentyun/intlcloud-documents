@@ -1,6 +1,6 @@
-标准直播计费项包含基础服务费用、增值服务费用及拓展服务费用。费用组成如下图：
+云直播计费项包含基础服务费用、增值服务费用及拓展服务费用。费用组成如下图：
 
-![](https://main.qcloudimg.com/raw/67a295effc191c4f710d9e2622fa1b01.png)
+![img](https://main.qcloudimg.com/raw/67a295effc191c4f710d9e2622fa1b01.png)
 
 - [基础服务费用](#base)：使用标准直播后产生的直播消耗费用，支持流量或峰值带宽两种计费方式切换。
 - [增值服务费用](#appreciation)：使用直播转码、录制、截图、鉴黄等增值功能，此类功能默认关闭，使用才收费。
@@ -13,15 +13,15 @@
 <tr>
 <td>标准直播流量（默认）</td>
 <td>当计费方式为<b>日结流量计费</b>时，标准直播产生的费用<strong>按流量消耗计费</strong>。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/34175#.E6.B5.81.E9.87.8F.E8.AE.A1.E8.B4.B9">后付费-日结</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#traffic-and-bandwidth">后付费-日结</a></td>
 </tr><tr>
 <td>标准直播带宽峰值</td>
 <td>当计费方式为<b>日结带宽计费</b>时，标准直播产生的费用<b>按带宽峰值计费</b>。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/34175#.E5.B8.A6.E5.AE.BD.E8.AE.A1.E8.B4.B9">后付费-日结</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#traffic-and-bandwidth">后付费-日结</a></td>
 </tr></table>
 
 
->? 若您需要重新选择计费方式，请参见 [计费变更](https://cloud.tencent.com/document/product/267/32712)。  
+>? 若您需要重新选择计费方式，请参见 [计费变更](https://intl.cloud.tencent.com/document/product/267/30411)。  
 
 
 
@@ -34,45 +34,54 @@
 <td>标准直播转码</td>
 <td>
 	<li>支持在直播播放的标准转码场景使用。</li>
-	<li>当开启添加 <a href="https://cloud.tencent.com/document/product/267/35253">水印</a> 或 <a href="https://cloud.tencent.com/document/product/267/45566">云端混流</a> 功能，将可能产生标准转码费用，分辨率以您输出的直播流分辨率为准。</li>
+	<li>当开启添加 <a href="https://intl.cloud.tencent.com/document/product/267/31064">水印</a> 或 <a href="https://intl.cloud.tencent.com/document/product/267/37665">云端混流</a> 功能，将可能产生标准转码费用，分辨率以您输出的直播流分辨率为准。</li>
 	<li>转码产生的服务费用<b>按转码时长计费</b>。</li>
 </td>
 <td>
-	<a href="https://cloud.tencent.com/document/product/267/34175#.E6.A0.87.E5.87.86.E8.BD.AC.E7.A0.81">后付费-日结</a>
+	<a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding">后付费-日结</a>
 </td>
 </tr><tr>
 <td>极速高清转码</td>
 <td>
 	<li>支持在直播播放的极速高清转码场景使用。</li>
-	<li>当开启添加 <a href="https://cloud.tencent.com/document/product/267/35253">水印</a> 或 <a href="https://cloud.tencent.com/document/product/267/45566">云端混流</a> 功能，将可能产生标准转码费用，分辨率以您输出的直播流分辨率为准。</li>
+	<li>当开启添加 <a href="https://intl.cloud.tencent.com/document/product/267/31064">水印</a> 或 <a href="https://intl.cloud.tencent.com/document/product/267/37665">云端混流</a> 功能，将可能产生标准转码费用，分辨率以您输出的直播流分辨率为准。</li>
 	<li>转码产生的服务费用<b>按转码时长计费</b>。</li></td>
 <td>
-<a href="https://cloud.tencent.com/document/product/267/34175#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81">后付费-日结</a></td>
+<a href="https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding">后付费-日结</a></td>
 </tr><tr>
+	<td colspan=2>全球加速</td>
+	<td>
+		<li>通过连接用户和全局加速源服务器而生成的下游流量和带宽。</li>
+		<li>提供两种计费方式：按流量计费和按带宽计费</b>。</li>
+	</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#global-acceleration">后付费-日结</a></td>
+</tr>
+    <tr>
 	<td colspan=2>直播录制</td>
 	<td>
 		<li>直播录制为根据录制模板生成的录制文件并存储到云点播。</li>
 		<li>录制产生的服务费用<b>按标准直播录制并发峰值路数计费</b>。</li>
 	</td>
-<td><a href="https://cloud.tencent.com/document/product/267/34175#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6">后付费-月结</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording">后付费-月结</a></td>
 </tr><tr>
 <td colspan=2>直播截图</td>
 <td>
 	<li>直播截图为根据模板定时对直播流进行截图，图片存储到 COS。</li>
 	<li>截图产生的服务费用<b>按截图张数计费</b>，每月前1000张免费。</li>
 </td>
-<td><a href="https://cloud.tencent.com/document/product/267/34175#.E7.9B.B4.E6.92.AD.E6.88.AA.E5.9B.BE">后付费-月结</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-screencapturing">后付费-月结</a></td>
 </tr><tr>
 	<td colspan=2>截图鉴黄</td>
 	<td>截图鉴黄会产生鉴黄和截图两笔费用。
 		<li>鉴黄产生的服务费用<b>按鉴黄张数计费</b>，每月前1000张免费。</li>
 		<li>截图产生的服务费用<b>按截图张数计费</b>，每月前1000张免费。</li>
 </td>
-<td><a href="https://cloud.tencent.com/document/product/267/34175#.E6.99.BA.E8.83.BD.E9.89.B4.E9.BB.84">后付费-月结</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#intelligent-porn-detection">后付费-月结</a></td>
 </tr><tr>
 </tr><tr>
 </tr>
 </table>
+
 
 
 
@@ -83,9 +92,9 @@
 <tr>
 <td>录制存储</td>
 <td>直播录制文件需存储到云点播，产生的服务费用<b>按数据的实际存储时间和存储量计费</b>，需额外支付点播存储费用。</td>
-<td><a href="https://cloud.tencent.com/document/product/266/14667#1.-.E5.AD.98.E5.82.A8.E8.B5.84.E6.BA.90.E5.8C.85">云点播-按量计费</a></td>
+<td><a href="https://intl.cloud.tencent.com/contact-sales">联系商务经理申请</a></td>
 </tr><tr>
 <td>截图存储</td>
 <td>直播截图和鉴黄生成的截图文件需存储到 COS，产生的服务费用<strong>按数据的实际存储时间和存储量计费</strong>，需额外支付 COS 存储费用。</td>
-<td><a href="https://cloud.tencent.com/document/product/436/36522">COS-按量计费</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32534">COS-按量计费</a></td>
 </tr></table>
