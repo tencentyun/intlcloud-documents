@@ -6,6 +6,9 @@ You can enable inventory for your bucket in the [COS Console](https://console.cl
 > - Such tasks do not directly read the object content during their execution; instead, they only scan the attribute information such as object metadata.
 > - Currently, the inventory feature is not available in Nanjing or Finance Cloud regions.
 
+## Prerequisites
+A bucket has been created. For details, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+
 ## Steps
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
