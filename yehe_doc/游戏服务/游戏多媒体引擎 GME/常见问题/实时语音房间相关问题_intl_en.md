@@ -67,6 +67,9 @@ Use a browser on the device with network problems to open the three links above,
 On the device with network problems, [click here to check the domain name tcloud.tim.qq.com](https://tcloud.tim.qq.com), view the displayed content, copy or take a screenshot of the content, and provide it to Tencent Cloud technical support for assistance.
 Sample: {"ActionStatus":"FAIL","ErrorCode":60002,"ErrorInfo":"HTTP parse Error"}
 
+### After I enter the voice chat room, will I exit the room automatically if I switch my mobile phone to the background?
+ No. But if you are disconnected from the server after switching to the background, you will exit in 60 minutes.
+
 ### What should I do if a client is disconnected from a voice chat room?
 If the network connection is interrupted, the client will try reconnecting to the room in 60 minutes. `ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT` will be called back after 60 minutes. After the reconnection, the mic and speaker status do not need to be set.
 

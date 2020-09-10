@@ -30,7 +30,7 @@ If the excessive backup space is less than 1 GB, no fees will be charged. If the
 **Calculation example**
 If you have a running a TencentDB for MySQL High-Availability Edition instance with a purchased database storage capacity of 500 GB/month in Guangzhou Zone 3 and another such instance with a purchased database storage capacity of 200 GB/month in Guangzhou Zone 4, you will get a free backup space of 700 GB/month in the Guangzhou region.
 
-If your data backups reach 800 GB and log backups reach 100 GB, your total backup space in Guangzhou will exceed 700 GB, and your hourly paid backup space will be 200 GB per hour (800 + 100 - 700 = 200).
+If your data backups reach 800 GB and log backups reach 100 GB, your total backup capacity in Guangzhou will exceed 700 GB, and your hourly paid backup capacity will be 200 GB per hour (800 + 100 - 700 = 200), and so on.
 
 ## Backup Lifecycle
 
