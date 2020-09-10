@@ -88,7 +88,9 @@ A message that has been restricted by frequency control is not delivered or stor
 #### Priority-based frequency control
 
 Priority-based frequency control limits the maximum number of messages with a certain priority sent per second in a single group. A message sending request must first pass the number-based frequency control check before it enters the priority-based frequency control processing.
-The app admin, group owner, and group admins are not subject to priority-based frequency control. Messages with high priority are not subject to priority-based frequency control. Messages with the other three priority levels are subject to a default limit of 40 messages per second, which can be set on an individual basis.
+
+A group supports sending up to 40 messages per second and setting the three levels of priority. The message with the High priority will be sent firstly. But if a group sends more than 40 high-priority messages per second, the surplus messages will also be discarded.
+
 Each [group type](https://intl.cloud.tencent.com/document/product/1047/33529) under an SDKAppID has its own number-based frequency control and priority-based frequency control configurations. To modify their default values, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1).
 
 

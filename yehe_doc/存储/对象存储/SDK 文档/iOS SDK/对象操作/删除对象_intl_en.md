@@ -53,11 +53,10 @@ deleteObject.bucket = "examplebucket-1250000000";
 deleteObject.object = "exampleobject";
 
 deleteObject.finishBlock = {(result,error)in
-    // `result` returns information such as the etag or custom headers in the response
-    if error != nil{
+    if let result = result {
+        // "result" contains response headers
+    } else {
         print(error!);
-    }else{
-        print(result!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().deleteObject(deleteObject);

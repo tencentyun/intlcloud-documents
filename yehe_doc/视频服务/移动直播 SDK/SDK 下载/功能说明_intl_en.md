@@ -1,12 +1,13 @@
-﻿
+﻿### Feature Description
 
 
-Mobile Live Video Broadcasting (MLVB) currently provides the simple and easy-to-use **basic edition SDK**. You can purchase the MLVB basic edition license to use livestreaming features, including livestream push, livestream playback, and basic beauty effects (such as skin brightening and smoothing). In the near future, Tencent Cloud will launch the **enterprise edition SDK** to provide an even better livestreaming experience.
+
+Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use **basic edition SDK**. Purchase the MLVB basic edition license to use live streaming features, including live stream push, live stream playback, and beauty filters such as airbrushing and whitening to touch up appearances. In the near future, Tencent Cloud will launch the **enterprise edition SDK** which includes advanced features for an enhanced live streaming experience.
 
 
 ### SDK and License Authorization 
 
-You can apply for an MLVB basic edition testing license or purchase the official MLVB basic edition license to use the MLVB basic edition SDK.
+You can request for a free MLVB basic edition license for a limited time demo or purchase the MLVB basic edition license to use the MLVB basic edition SDK.
 
 ### SDK Feature List
 
@@ -20,29 +21,29 @@ You can apply for an MLVB basic edition testing license or purchase the official
   <tr>
     <td rowspan='1' style="text-align:center">UI</td>
     <td style="text-align:center">Custom UI</td>
-    <td style="text-align:left">MLVB provides a complete set of UI interactive source code, and developers can reuse or customize it.</td>
+    <td style="text-align:left">MLVB provides a complete set of UI interactive source code for developers to use out of the box or customize.</td>
     <td style="text-align:center">✓</td>
     </tr>
   <tr>
-    <td rowspan='2' style="text-align:center">Livestream push</td>
+    <td rowspan='2' style="text-align:center">Live stream push</td>
     <td style="text-align:center">RTMP push</td>
-    <td style="text-align:left">This is used to push livestreams on the host side using mobile phones (shows).</td>
+    <td style="text-align:left">This is used to push live streams on the host-end with mobile phones for live video streams.</td>
     <td style="text-align:center">✓</td>
   </tr>
    <tr>
     <td style="text-align:center">Screen push</td>
-    <td style="text-align:left">This is used to push the screen on the host side (games).</td>
+    <td style="text-align:left">This is used to push the screen on the host-end for gaming live streams.</td>
     <td style="text-align:center">✓</td>
      </tr>
   <tr>
-    <td rowspan='2' style="text-align:center">Livestream playback</td>
+    <td rowspan='2' style="text-align:center">Live stream playback</td>
     <td style="text-align:center">RTMP playback</td>
-    <td style="text-align:left">This is used to play RTMP-based livestreams.</td>
+    <td style="text-align:left">This is used to play RTMP-based live streams.</td>
     <td style="text-align:center">✓</td>
   </tr>
   <tr>
     <td style="text-align:center">FLV playback</td>
-    <td style="text-align:left">This is used to play HTTP-FLV-based livestreams.</td>
+    <td style="text-align:left">This is used to play HTTP-FLV-based live streams.</td>
     <td style="text-align:center">✓</td>
   </tr>
   <tr>
@@ -57,8 +58,8 @@ You can apply for an MLVB basic edition testing license or purchase the official
       <td style="text-align:center">✓</td>
    </tr>
    <tr>
-      <td style="text-align:center">Shooting control</td>
-      <td>Camera switching and light control before and after shooting are supported.</td>
+      <td style="text-align:center">Video controls</td>
+      <td>Switching between front and rear cameras and lighting adjustments are supported.</td>
       <td style="text-align:center">✓</td>
    </tr>
    <tr>
@@ -83,12 +84,12 @@ You can apply for an MLVB basic edition testing license or purchase the official
    </tr>
    <tr>
       <td style="text-align:center">Filter</td>
-      <td>You can customize filter and set the filter level.</td>
+      <td>You can customize filters and set the filter level.</td>
       <td style="text-align:center">✓</td>
    </tr>
    <tr>
-      <td style="text-align:center">Basic beauty</td>
-      <td>During shooting, you can set the smoothing, skin brightening, and blushing levels.</td>
+      <td style="text-align:center">Beauty effects</td>
+      <td>Hosts can set beauty filters for airbrushing and whitening to touch up their appearances when streaming.</td>
       <td style="text-align:center">✓</td>
    </tr>
   </tr>

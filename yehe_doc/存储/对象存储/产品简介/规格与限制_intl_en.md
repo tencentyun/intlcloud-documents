@@ -8,8 +8,11 @@
     <tr>
         <td>QPS</td>
     			<td>Limits</td>
-    			<td>Chinese Mainland: by default, a quota of 30,000 QPS is provided to each bucket in a public cloud region. For buckets in Hong Kong (China) or outside the Chinese mainland, a quota of 3,000 QPS is provided by default. For higher QPS, see <a href="https://intl.cloud.tencent.com/document/product/436/13653">Request Rate and Performance Optimization.</a> </td>
-    </tr>
+    			<td>1. READ/WRITE requests: by default, each bucket enjoys up to 30,000 QPS in Public Cloud regions in Chinese mainland, and up to 3,000 QPS in any other regions.
+<br>2. LIST requests: by default, each bucket enjoys up to 1,200 QPS in any region.
+<br>3. RETRIEVE requests: by default, each bucket enjoys up to 100 QPS in any region.
+<br>To request higher QPS, please see <a href="https://intl.cloud.tencent.com/document/product/436/13653">Request Rate and Performance Optimization</a>. </td>
+     </tr>
 		    <tr>
         <td>Bandwidth</td>
     			<td>Limits</td>

@@ -5,7 +5,7 @@ This document describes how to use the SDK for TCP and install, download, config
 - **Fewer computing resources**
 HTTP authenticates requests and requires a signature for each request, while TCP authenticates links; therefore, it is sufficient to authenticate a link during its establishment, which saves client computing resources.
 - **Safer client threads**
-The HTTP client is not thread-safe, while the TCP client is thread-safe, and multiple threads can use the same link, which saves link resources.
+The TCP client is thread-safe, and multiple threads can use the same link, which saves link resources.
 - **Higher transfer efficiency**
 TCP increases the proportion of valid data during transfer. For the same client, it has higher throughput and QPS and greater transfer efficiency than HTTP.
 - **Better user experience**

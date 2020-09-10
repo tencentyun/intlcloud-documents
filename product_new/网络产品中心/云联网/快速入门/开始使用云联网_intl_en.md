@@ -1,4 +1,4 @@
-Cloud Connect Network (CCN) enables interconnection between the cloud-based Virtual Private Clouds (VPCs) and the local IDCs. With CCN, you can create a simple, intelligent, secure and flexible hybrid cloud and globally interconnected network with ease. Follow the steps to use the CCN in one account or crossing accounts.
+Cloud Connect Network (CCN) enables interconnection between Virtual Private Clouds (VPCs) on Tencent Cloud and between VPCs and local IDCs. With CCN, you can easily create an intelligent, secure and flexible hybrid cloud and globally interconnected network. This document describes how to use CCN under the same or different accounts.
 
 ## Network Instance Interconnection in One Account
 Follow the steps to interconnect the network instances in one account:

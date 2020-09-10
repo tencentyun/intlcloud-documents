@@ -1,8 +1,7 @@
 ## Overview
 You can set Cross Origin Resource Sharing(CORS) for objects in buckets through the COS Console. COS supports configuring multiple rules to respond to OPTIONS requests. CORS is a mechanism that allows resources at one origin to be requested from another origin through HTTP requests. Origins are deemed different from each other as long as their protocols, domain names or ports are different.
 
-COS supports response to OPTIONS requests for CORS, and returns specific rules set by developers to browsers, but the server does not verify whether subsequent cross-origin requests conform to the rules. For more information, see [Cross-Origin Resource Sharing](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS).
-
+COS can respond to an OPTIONS request for cross-origin access, and return the cross-origin access configuration to the browser based on your CORS rule. However, the server does not check whether the subsequent actual cross-origin request meets the rule. For more details, see [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-us/docs/Web/HTTP/Access_control_CORS) and [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/11488).
 ## Procedure
 
 1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.

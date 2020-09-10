@@ -65,11 +65,10 @@ restore.restoreRequest.days = 10;
 // Configuration of the restoration type
 restore.restoreRequest.casJobParameters.tier = .standard;
 restore.finishBlock = {(result,error)in
-    if error != nil{
-        print(error!)
-    }else{
-        // `result` returns information such as the etag or custom headers in the response
-        print(result!);
+    if let result = result {
+        // "result" contains response headers
+    } else {
+        print(error!);
     }
 }
 QCloudCOSXMLService.defaultCOSXML().postObjectRestore(restore);

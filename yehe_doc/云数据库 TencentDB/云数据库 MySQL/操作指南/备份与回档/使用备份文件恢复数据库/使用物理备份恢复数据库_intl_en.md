@@ -10,7 +10,7 @@ The open-source software tool Percona XtraBackup can be used to back up and rest
 ## Prerequisites
 - Download and install XtraBackup.
 XtraBackup can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or higher. For more information on how to install the tool, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
-- Supported instance versions: TencentDB for MySQL 5.5, 5.6, and 5.7 high-availability edition and finance edition.
+- Supported instance editions: TencentDB for MySQL High-Availability Edition and Finance Edition.
 - Instances with data encryption enabled cannot be restored from a physical backup.
 
 ## Directions

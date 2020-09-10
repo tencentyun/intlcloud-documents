@@ -5,6 +5,7 @@ This document describes how to install an SSL certificate on a JBoss server.
 >- JBoss 7.1.1 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
 >- Before installing the SSL certificate, open the port 443 on the JBoss server to ensure that HTTPS can be enabled after certificate installation. For more information, see [How Do I Open the Port 443 on the Server?](https://intl.cloud.tencent.com/document/product/1007/36738).
+>- To upload a SSL certificate to CVMs, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
 
 ## Prerequisites
 - A remote file copy tool such as WinSCP has been installed. You are recommended to obtain the latest version from the official website.
