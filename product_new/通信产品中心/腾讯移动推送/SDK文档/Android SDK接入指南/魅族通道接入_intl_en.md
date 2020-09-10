@@ -96,6 +96,7 @@ If you need to get parameters through the click callback or redirect to a custom
 >? If the Meizu token is properly registered in the App Debug version, but cannot be obtained in the Release version, check whether the obfuscation rules are added.
 >- If you are using Android Studio 3.4  or later versions, this problem may be caused by the enabled R8 obfuscation in Android Studio by default.
 Solution: add `android.enableR8 = false` to `gradle.properties`
+>- Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 
 ### Configuring the arrival receipt for Meizu channel
 Developers need to manually configure the arrival receipt for Meizu channel. For more information about the configuration, see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.AD.85.E6.97.8F.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95). And then ,you can view the arrival data of the Meizu push channel in the push record.
