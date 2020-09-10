@@ -13,6 +13,8 @@ Use the [port verification tool for security groups](https://console.cloud.tence
  
 ### Step 2: Querying the SSHD service port
 1. <span id="step07">[Log in to a Linux instance by using VNC](https://intl.cloud.tencent.com/document/product/213/32494).</span>
+>?When the remote login and other login methods fail, you can use VNC to connect the instance, monitor instance status, and troubleshoot issues.
+>
 2. On the operating system interface, run the following command to check whether a port is listened on by the SSH daemon (SSHD) service:
 ```
 netstat -tnlp | grep sshd
