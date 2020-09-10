@@ -77,11 +77,11 @@ Voice messaging and speech-to-text services are billed by voice message DAU.
    </tr>
    <tr>
       <td  rowspan="2">Billed by voice message DAU</td>
-      <td >Simplified Chinese and English only</td>
+      <td >Standard</td>
       <td>0.0019 </td>
    </tr>
    <tr>
-      <td >All languages</td>
+      <td >Enhanced</td>
       <td>0.078 </td>
    </tr>
    </tr>
@@ -89,7 +89,8 @@ Voice messaging and speech-to-text services are billed by voice message DAU.
 
 
 
->A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
+>- A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID`. `openID` is a unique identifier of a user in an application. One user corresponds to one `openID`.
+>- The standard mode only supports Simplified Chinese, Korean, and English. The enhanced mode supports all languages. For more information, see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260).
 
 
 ## Service Suspension/Termination Policy
