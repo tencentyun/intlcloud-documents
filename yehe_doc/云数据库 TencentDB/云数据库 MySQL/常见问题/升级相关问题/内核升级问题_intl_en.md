@@ -8,7 +8,7 @@ TencentDB for MySQL supports automatic or manual kernel minor version upgrade. U
 - **Manual upgrade**:
 You can also manually upgrade kernel minor version in the console. For more information, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
->
+>!
 >- The instance cannot be downgraded once upgraded to the latest kernel minor version.
 >- Operations such as database version upgrade and configuration adjustment are accompanied by a momentary disconnection from the TencentDB for MySQL instance. Please make sure that your business has a reconnection mechanism.
 
