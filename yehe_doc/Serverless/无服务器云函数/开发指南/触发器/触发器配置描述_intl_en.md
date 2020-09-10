@@ -1,7 +1,7 @@
 When you call the trigger API [CreateTrigger](https://intl.cloud.tencent.com/document/product/583/18589), the corresponding `TriggerDesc` parameter will be the trigger description, which can be used as instructed in this document.
 
 ## Timer Trigger
-Please see [Cron Expression](<https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F>).
+Directly use a cron expression by referring to [Cron Expression](<https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F>).
 
 ### Sample TriggerDesc
 Triggered once every 5 minutes:
@@ -18,7 +18,8 @@ Triggered once every 5 minutes:
 | service | [ApigwService](#ApigwService) | No   | Creates service configuration for API gateway |
 | release | [ApigwRelease](#ApigwRelease) | No   | Release environment for created API gateway  |
 
-### ApigwApi<span id="ApigwApi"></span>
+<span id="ApigwApi"></span>
+### ApigwApi
 
 
 | Name | Type | Required | Description |
@@ -27,18 +28,21 @@ Triggered once every 5 minutes:
 | requestConfig        | [ApigwApiRequestConfing](#ApigwApiRequestConfing) | No | Configuration of request backend API |
 | isIntegratedResponse | String                                            | No | Whether to use integrated response. Valid values: TRUE, FALSE. Default value: FALSE |
 
-### ApigwApiRequestConfing<span id="ApigwApiRequestConfing"></span>
+<span id="ApigwApiRequestConfing"></span>
+### ApigwApiRequestConfing
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | ------------------------------------------------------------ |
 | method | String | No   | Method configuration of request backend API. Valid values: `ANY`, `GET`, `HEAD`, `POST`, `PUT`, `DELETE` |
 
-### ApigwService<span id="ApigwService"></span>
+<span id="ApigwService"></span>
+### ApigwService
 
 | Name | Type | Required | Description |
 | --------- | ------ | ---- | -------------------------------------------- |
 | serviceId | String | No | Apigw Service ID (if this parameter is not passed in, a new service will be created) |
 
-### ApigwRelease<span id="ApigwRelease"></span>
+<span id="ApigwRelease"></span>
+### ApigwRelease
 
 | Name | Type | Required | Description |
 | --------------- | ------ | ---- | ------------------------------------------------------------ |
