@@ -306,8 +306,8 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 </tbody></table>
 
 ## 常见问题
-- [推流后混流，为什么会返回-505错误码？](https://intl.cloud.tencent.com/document/product/267/38255)
-- [申请混流后，如果一直未取消混流，会出现什么情况？](https://intl.cloud.tencent.com/document/product/267/38255)
-- [为什么混流的小主播画面有的时候与期望的位置不同？](https://intl.cloud.tencent.com/document/product/267/38255)
+- [推流后混流，为什么会返回-505错误码？](https://intl.cloud.tencent.com/document/product/267/38255#que1)
+- [申请混流后，如果一直未取消混流，会出现什么情况？](https://intl.cloud.tencent.com/document/product/267/38255#que5)
+- [为什么混流的小主播画面有的时候与期望的位置不同？](https://intl.cloud.tencent.com/document/product/267/38255#que9)
 
 >? 更多云端混流相关问题，请参见 [云端混流相关](https://intl.cloud.tencent.com/document/product/267/38255)
