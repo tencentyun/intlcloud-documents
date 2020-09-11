@@ -6,7 +6,7 @@
 * 使用视频中间部分的截图作为视频封面。
 * 进度条上的缩略图预览，调整为20%的间隔。
 
-阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098) 和 [阶段2：开启防盗链后的视频播放](https://cloud.tencent.com/document/product/266/46218) 篇部分，本教程使用了 [阶段1](https://intl.cloud.tencent.com/document/product/266/38098) 篇开通的账号以及上传的视频，并需要按照 [阶段2](https://cloud.tencent.com/document/product/266/46218) 开启防盗链。
+阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098) 和 [阶段2：开启防盗链后的视频播放](https://intl.cloud.tencent.com/document/product/266/38292) 篇部分，本教程使用了 [阶段1](https://intl.cloud.tencent.com/document/product/266/38098) 篇开通的账号以及上传的视频，并需要按照 [阶段2](https://intl.cloud.tencent.com/document/product/266/38292) 开启防盗链。
 
 ## 步骤1：创建自适应码流模板
 
