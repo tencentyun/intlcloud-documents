@@ -10,7 +10,9 @@ The copy operation creates a copy of an object that is already stored in COS. Yo
 
 In the copy operation, the metadata of the original object is inherited by default, but the creation date is subject to the new object.
 
->? Copy and paste is not supported for objects in the archive storage class.
+>? 
+>- Copy and paste is not supported for objects in the archive storage class.
+>- For a sub-account to replicate an object, it should have permission to PutObject, GetObject, and GetObjectACL.
 
 ## Directions
 

@@ -105,9 +105,9 @@ public class Demo {
     public static void main(String[] args) throws Exception {
 
         // Basic user information
-        String tmpSecretId = "COS_SECRETID"; // Replace it with your own SecretId. 
-        String tmpSecretKey = "COS_SECRETKEY"; // Replace it with your own SecretKey.
-        String sessionToken = "TOKEN"; // Replace it with your own Token.
+         String tmpSecretId = "COS_SECRETID"; // Replace with your temporary SecretId returned by the STS API
+         String tmpSecretKey = "COS_SECRETKEY"; // Replace with your temporary SecretKey returned by the STS API
+         String sessionToken = "Token"; // Replace with your temporary Token returned by the STS API
 
         // 1. Initialize user authentication information (secretId, secretKey).
         COSCredentials cred = new BasicCOSCredentials(tmpSecretId, tmpSecretKey);

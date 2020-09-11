@@ -477,10 +477,9 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | 参数名               | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
 | -------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
 | expire_time          | Integer | 无     | 否                             | 259200（72小时）                     | 消息离线存储时间（单位为秒）,最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过2147483647，否则会导致推送失败</li> |
-| send_time            | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送和标签推送支持此字段</li> |
+| send_time            | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间,可选择未来90天内的时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送和标签推送支持此字段</li> |
 | multi_pkg            | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制 TPNS 通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
 | loop_param           | Object  | 无     | 否                             | 0                                    | 循环推送（全推，标签推）相关，详情见下文 [loop_param 参数说明](#loop_param参数说明) |
-
 | group_id             | String  | 无     | 否                             | tpns_yyyymmdd，yyyymmdd 代表推送日期 | 该字段已废弃，后续会下线，若需要使用聚合统计请使用推送计划字段（plan_id） |
 | plan_id              | String  | 无     | 否                             | 无                                   | 推送计划 ID，推送计划创建及使用方式可 [参考文档](https://intl.cloud.tencent.com/document/product/1024/37452) |
 | tag_list             | Object  | 无     | 仅标签推送必需                 | 无                                   | <li>推送 tag1 和 tag2 的设备：`{"tags":["tag1","tag2"],"op":"AND"}`</li><li>推送 tag1 或 tag2 的设备： `{"tags":["tag1","tag2"],"op":"OR"}` </li> |
@@ -492,9 +491,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | channel_rules        | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
 force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
 
-
 > ?对于 collapse_id，有以下使用条件：
->
 > - 暂不支持用户自定义此参数，需要 TPNS 生成的 collapse_id。<li>目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备。<li>对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截。<li>目前 OPPO 通道 vivo 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭 vivo、OPPO 通道的下发。
 
 <span id="channel_rules参数说明1"></span>
@@ -512,8 +509,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 
 | 字段名        | 类型    | 是否必填 | 注释                                                         |
 | ------------- | ------- | -------- | ------------------------------------------------------------ |
-| startDate     | String  | 是       | 循环区间开始日期，格式YYYY-MM-DD，如2019-07-01               |
-| endDate       | String  | 是       | 循环区间开始日期，格式YYYY-MM-DD，如2019-07-07               |
+| startDate     | String  | 是       | 循环区间开始日期，可选择未来90天内的时间。格式YYYY-MM-DD，如2019-07-01               |
+| endDate       | String  | 是       | 循环区间截止日期，可选择未来90天内的时间。格式YYYY-MM-DD，如2019-07-07               |
 | loopType      | Integer | 是       | 循环类型<li>1：按天<li> 2：按周<li> 3：按月                  |
 | loopDayIndexs | Array   | 是       | 按周循环，填周几[0-6]，按天填 0，如[0, 1, 2]，表示每周的周一，周二，周三进行推送 |
 | dayTimes      | Array   | 是       | 具体推送时间，格式 HH:MM:SS，如["19:00:00", "20:00:00"]，表示每天的19点，20点进行推送 |

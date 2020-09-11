@@ -1,7 +1,7 @@
 ## Overview
 With a cross-region replication rule, COS can automatically and asynchronously replicate the **new objects** added to one bucket to another bucket in a different region. When cross-region replication is enabled, COS will accurately replicate the object content (such as object metadata and version ID) in the source bucket to the destination bucket, and the object copies contain exactly the same attribute information. Additionally, operations on the objects in the source bucket, such as adding or deleting, will also be synced to the destination bucket.
 
->- To enable cross-region replication, you need to make sure that the source and destination buckets are in different regions and both have versioning enabled.
+>- To enable cross-region replication, you need to enable versioning for both the source and destination buckets.
 >- After cross-region replication is enabled, the object copies will be of the same storage class as the source objects, unless you specify a different storage class for the object copies during replication.
 >- During replication, COS will copy the access control list (ACL) of the source bucket. Currently, the source bucket and destination bucket must be in the same account.
 

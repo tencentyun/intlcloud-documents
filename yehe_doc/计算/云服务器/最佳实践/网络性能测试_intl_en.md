@@ -1,3 +1,6 @@
+## Overview
+This document describes how to test the CVM network performance with tools, which helps you stay on top of the CVM network performance based on the test result.
+
 ## Network Performance Test Metrics
 <table>
 <tr><th style="width: 25%;">Metric</th><th>Description</th></tr>
@@ -17,9 +20,10 @@
 | PPS viewing | sar |
 | ENI queue viewing | ethtool |
 
-## Constructing a Test Environment
+## Directions
+#### Constructing a Test Environment
 
-### Preparing a test server
+#### Preparing a test server
 
 - Image: CentOS 7.4 64-bit
 - Specifications: S3.2XLARGE16
@@ -27,7 +31,7 @@
 
 Assume that the IP address of the test server is 10.0.0.1.
 
-### Preparing companion training servers
+#### Preparing companion training servers
 
 * Image: CentOS 7.4 64-bit
 * Specifications: S3.2XLARGE16
@@ -35,7 +39,7 @@ Assume that the IP address of the test server is 10.0.0.1.
 
 Assume that the IP addresses of companion training servers are 10.0.0.2 to 10.0.0.9.
 
-### Deploying test tools
+#### Deploying test tools
 
 > When constructing a test environment and conducting tests in the environment, ensure that you have root user permissions.
 >
@@ -73,7 +77,7 @@ iperf -h
 ```
 If “Help” appears, the installation was successful.
 
-## Bandwidth Test
+### Bandwidth Test
 
 We recommend that you use two CVMs with the same configuration for testing to prevent deviations in the performance test results. One CVM is used as the test server while the other CVM is used as the companion training server. In this example, 10.0.0.1 and 10.0.0.2 are specified for testing.
 
@@ -94,7 +98,7 @@ For example, if the IP address of the companion training server is 10.0.0.1 and 
 iperf -c 10.0.0.1 -b 2048M -t 300 -P 8
 ```
 
-## UDP-STREAM Test
+### UDP-STREAM Test
 
 We recommend that you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server, and 10.0.0.2 to 10.0.0.9 are the companion training servers.
 
@@ -117,7 +121,7 @@ For example, if the private IP address of the test server is 10.0.0.1, run the f
 ./netperf -H 10.0.0.1 -l 300 -t UDP_STREAM -- -m 1 &
 ```
 
-## TCP-RR Test
+### TCP-RR Test
 
 We recommend that you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server, and 10.0.0.2 to 10.0.0.9 are the companion training servers.
 
@@ -209,7 +213,9 @@ In SUM lines, sender represents the data volume sent and receiver represents the
 | Transfer | Data transfer volume, including the sent and received data volumes |
 | Bandwidth | Bandwidth, including the sending and receiving bandwidths |
 
-## Script for Launching Multiple Netperf Instances
+
+## Relevant Operations
+### Script for Launching Multiple Netperf Instances
 
 In TCP-RR and UDP-STREAM, multiple netperf instances need to be launched. The number of instances that need to be launched depends on the server configuration. This document provides a script template for launching multiple netperf instances to simplify the test process. For example, the script for TCP_RR is as follows:
 ```

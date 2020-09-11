@@ -2,7 +2,7 @@
 You can log in to the COS Console to enable log management for a bucket, which records various requests related to **bucket operations**. Log management facilitates buckets usage and management. For more information, please see [Log Management Overview](https://intl.cloud.tencent.com/document/product/436/16920).
 
 >!
->- The log management feature is currently available in the Beijing, Shanghai, Guangzhou, Chengdu, and Toronto regions.
+> - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
 >- Currently, only the **bucket owner** has permission to set log management, and the **Log Management** configuration item will not be displayed to other users when they log in to the console. 
 >- The log data is delivered once every 5 minutes. COS does not guarantee 100% accuracy of the log data. Such data is for reference only and does not serve as a basis for usage measurement and billing.
 

@@ -18,10 +18,10 @@ Tencentcloud-Serverless-Nodejs SDK has the following features:
 Node.js 8.9 and higher.
 - Operating environment
 Windows, Linux, or macOS with Tencentcloud-Serverless-Nodejs SDK installed.
-- You are recommended to install [SCF CLI](https://github.com/tencentyun/scfcli) to quickly deploy functions locally.
+- We recommend you use [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/32743) to quickly deploy local functions.
 
 ### Tencentcloud-Serverless-Nodejs SDK installation
-#### Installation through npm (Recommended)
+#### Installation through npm (recommended)
 1. Select the directory path as needed and create a directory under it.
 For example, you can create a project directory named `testNodejsSDK` in the `/Users/xxx/Desktop/testNodejsSDK` path.
 2. Enter the `testNodejsSDK` directory and run the following commands in sequence to install the Tencentcloud-Serverless-Nodejs SDK.
@@ -31,17 +31,29 @@ npm install tencentcloud-serverless-nodejs
 ```
 After installation, you can see `node_modules`, `package.json`, and `package-lock.json` in the `testNodejsSDK` directory.
 
-#### Installation through Source Package
+#### Installation through source package
 Go to the [GitHub code hosting page](https://github.com/TencentCloud/tencentcloud-serverless-nodejs) to download the latest source package and install it after decompression.
 
+#### Using SCF to install dependencies online
+To [install dependencies online with SCF](https://intl.cloud.tencent.com/document/product/583/38105), run the following command in `package.json`:
+```js
+{
+    "dependencies": {
+    "tencentcloud-serverless-nodejs":"*"
+  }
+}
+```
 
 
 ### Mutual function invocation
 #### Samples
->
->- To make functions in different regions invoke each other, regions must be specified. For the naming convention, please see [Region List](https://intl.cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
+>!
+> - To make functions in different regions invoke each other, regions must be specified. For the naming convention, please see [Region List](https://intl.cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
 >- If no region is specified, intra-region mutual function invocation will be used by default.
 >- If no namespace is specified, `default` will be used by default.
+>- The invoker function should have the public network access enabled.
+>- If parameters such as `secretId` and `secretKey` are not manually passed in, the function needs to be bound to a role with `SCF Invoke` permission (or containing `SCF Invoke`, such as `SCF FullAccess`). For more information, please see [Creating Function Execution Role](https://intl.cloud.tencent.com/document/product/583/38176).
+
 
 1. <span id="Step1"></span>Create a **to-be-invoked** Node.js function named "FuncInvoked" in the region of **Beijing**. The content of the function is as follows:
 ```js
@@ -55,24 +67,22 @@ exports.main_handler = async (event, context, callback) => {
 ```
 2. Create an `index.js` file in the `testNodejsSDK` directory and enter the following sample code to create an **invoking** Node.js function.
 ```js
-const sdk = require('tencentcloud-serverless-nodejs')
-exports.main_handler = async (event,context,callback)=>{
-      sdk.init({
-          region: 'ap-beijing'
-      }) // If the SDK is running in SCF, `secretId` and `secretKey` are not required during initialization
-
-      console.log('prepare to invoke a function!')
-      const res = await sdk.invoke({
-          functionName: 'FuncInvoked',
-          qualifier: '$LATEST',
-          data: JSON.stringify({
-              key:'value'
-          }),
-          namespace:'default'
-      })
-      console.log(res)
-      //return res
-      return 'Already invoked a function!'
+const { SDK, LogType }  = require('tencentcloud-serverless-nodejs')
+exports.main_handler = async (event, context) => {
+  context.callbackWaitsForEmptyEventLoop = false
+  const sdk = new SDK({
+    region:'ap-beijing'
+  }) // If you bind and run in SCF an execution role with SCF invocation permission, the authentication information in the environment variable will be used by default
+  const res = await sdk.invoke({
+    functionName: 'FuncInvoked',
+    logType: LogType.Tail,
+    data: {
+      name: 'test',
+      role: 'test_role'
+    }
+  })
+  console.log(res)
+  // return res
 }
 ```
 The main parameters can be obtained as follows:
@@ -83,7 +93,7 @@ The main parameters can be obtained as follows:
 	- **data**: data passed to the **invoked** function, which can be read from the `event` input parameter.
 3. Create an **invoking** Node.js function named "NodejsInvokeTest" in the region of **Chengdu**. The main settings of the function are as follows:
  - Execution method: select **index.main_handler**.
- - Code submission method: select **Local zip package upload**.
+ - Code submission method: select **Local ZIP file**.
     Compress all files in the `testNodejsSDK` directory in ZIP format and upload it to the cloud.
 4. 
 On the function details page in the [SCF Console](https://console.cloud.tencent.com/scf/list), you can test run a function by going to the function code tab and clicking **Execute**. Below is the output result:
@@ -111,34 +121,27 @@ exports.main_handler = async (event, context, callback) => {
 
 2. Create an `index.js` file in the `testNodejsSDK` directory as an **invoking** Node.js function and enter the following sample code:
 ```js
-const sdk = require('tencentcloud-serverless-nodejs')
-exports.main_handler = async (event, context, callback) => {
-      sdk.init({
-          region: 'ap-beijing',
-         secretId: 'AKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj',
-          secretKey: 'WtxxxxxxxxxxxxxxxxxxxxxxxxxxxxqL'
-      }) // Replace them with your own `secretId` and `secretKey`
-      console.log('prepare to invoke a function!')
-      const res = await sdk.invoke({
-          functionName: 'FuncInvoked',
-          qualifier: '$LATEST',
-          data: JSON.stringify({
-              key:'value'
-          }),
-          namespace:'default'
-      })
-      console.log(res)
-      //return res
-      console.log('Already invoked a function!')
-  }
-  if (process.env.NODE_ENV === 'development') {
-      const event = {
-          test: '123'
-      }
-      exports.main_handler(event)
+const { SDK, LogType }  = require('tencentcloud-serverless-nodejs')
+exports.main_handler = async (event, context) => {
+  context.callbackWaitsForEmptyEventLoop = false
+  const sdk = new SDK({
+    region:'ap-beijing',
+    secretId: 'AKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj',
+    secretKey: 'WtxxxxxxxxxxxxxxxxxxxxxxxxxxxxqL'
+  }) // If you bind and run in SCF an execution role with SCF invocation permission, the authentication information in the environment variable will be used by default
+  const res = await sdk.invoke({
+    functionName: 'FuncInvoked',
+    logType: LogType.Tail,
+    data: {
+      name: 'test',
+      role: 'test_role'
+    }
+  })
+  console.log(res)
+  // return res
 }
 ```
->`secretId` and `secretKey`: secret ID and secret key of TencentCloud API. You can go to the [CAM Console](https://console.cloud.tencent.com/cam/overview) and select **Access Key** > **API Key Management** to get them or create new ones.
+>!`secretId` and `secretKey`: secret ID and secret key of TencentCloud API. You can go to the [CAM Console](https://console.cloud.tencent.com/cam/overview) and select **Access Key** > **API Key Management** to get them or create new ones.
 
 3. Go to the directory where the `index.js` file is located and run the following command to view the result.
  - On Linux or macOS, run the following command:
@@ -166,7 +169,7 @@ Already invoked a function!
 <span id="Init"></span>
 #### Init
 You are recommended to run the `npm init` command to initialize the SDK before using it.
->
+>?
 >- The `region`, `secretId`, and `secretKey` parameters can be passed in by using the initialization command.
 >- After initialization is completed, the initialization configuration can be reused for future API calls.
 

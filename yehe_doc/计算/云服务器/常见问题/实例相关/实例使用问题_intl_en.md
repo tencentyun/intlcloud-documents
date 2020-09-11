@@ -35,6 +35,9 @@ If the file or directory permissions are incorrectly configured on the Web serve
 - You can run the `ls –l` command to query the owners and owner groups of files and directories.
 - You can run the `chown` command to modify the permissions. For example, you can run the `chown -R www.www /tencentcloud/www/user/` command to change the owners and owner groups of all files and directories under the `/tencentcloud/www/user` directory to account “www”.
 
+### Does a Linux instance support visual desktop?
+Yes, provided that you've built a visual desktop on the Linux instance. For more information, see [Building a Visual Ubuntu Desktop](https://intl.cloud.tencent.com/document/product/213/37500).
+
 ### Why can’t I add sound or video cards to CVM instances?
 Tencent Cloud CVMs do not provide multimedia servers and sound and video card components by default. Therefore, sound and video cards cannot be added to CVM instances.
 

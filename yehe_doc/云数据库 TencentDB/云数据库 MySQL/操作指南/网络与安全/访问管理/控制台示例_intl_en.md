@@ -4,8 +4,8 @@ You can grant a user the permission to view and use specific resources in the Te
 ## Full read/write permission policy for TencentDB
 To grant a user permission to create and manage TencentDB instances, implement the policy named `QcloudCDBFullAccess` for the user.
 
-Enter the [policy management page](https://console.cloud.tencent.com/cam/policy) . Click **Service Type** and select **TencentDB for MySQL** in the drop-down list. Then, you can see this policy in the results.
-![Alt text](https://main.qcloudimg.com/raw/c3a7dd4dae2d82da3d3c702a5188fe9e.png)
+Go to the [policy management page](https://console.cloud.tencent.com/cam/policy). Enter "QcloudCDBFullAccess" in the search box in the top-right corner, click the search icon or press Enter, and then you can see this policy in the results.
+![](https://main.qcloudimg.com/raw/5ec89e71595a5edd3e7f723a19c01a6a.png)
 The policy syntax is as follows:
 ```
 {
@@ -62,7 +62,7 @@ The above policy achieves its goal by allowing the user to separately authorize 
 ## Read-only permission policy for TencentDB
 To grant a user permission to view TencentDB instances but not create, delete, or modify them, implement the policy named `QcloudCDBInnerReadOnlyAccess` for the user.
 
->You are recommended to configure the read-only policy for TencentDB.
+>?You are recommended to configure the read-only policy for TencentDB.
 
 You can enter the [policy management page](https://console.cloud.tencent.com/cam/policy) . Click **Service Type** and select **TencentDB for MySQL** in the drop-down list. Then, you can see this policy in the results.
 

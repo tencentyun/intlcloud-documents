@@ -1,6 +1,6 @@
-﻿
+﻿### SDK Download
 <h2 id="Smart">MLVB Basic Edition SDK</h2>
-The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, livestreaming push (`V2TXLivePusher`) and livestreaming playback (`V2TXLivePlayer`). The incremental size of the app installation package provided by Tencent Cloud is small. Therefore, you can quickly implement livestreaming on mobile clients at minimal cost. The following table describes the download addresses of the iOS and Android installation packages.
+The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, live stream push (`V2TXLivePusher`) and live stream playback (`V2TXLivePlayer`). It has a small library size, enabling you to launch live streaming services on mobile clients efficiently. The following table describes the download addresses of the iOS and Android installation packages.
 
 <table>
    <tr>
@@ -9,7 +9,7 @@ The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, 
       <th width="0px"  style="text-align:center">GitHub</td>
       <th width="0px" style="text-align:center">SDK Integration Guide</td>
       <th width="0px" style="text-align:center">64-bit Support</td>
-      <th width="0px" style="text-align:center">Installation Package Incremental Size</td>
+      <th width="0px" style="text-align:center">Installation Package Library Size</td>
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
@@ -30,7 +30,7 @@ The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, 
 </table>
 
 
-> Note: to use the MLVB basic edition SDK service, you need to purchase the MLVB basic edition license to authorize product features. For more information about the price, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
+> Note: please purchase MLVB basic edition license to activate the service. For pricing information, see [Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38114).
 
 
 

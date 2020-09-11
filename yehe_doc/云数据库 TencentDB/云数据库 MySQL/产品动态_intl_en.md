@@ -1,3 +1,19 @@
+## August 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+<tbody><tr>
+<td>MySQL 8.0 is supported</td>
+<td>TencentDB for MySQL supports MySQL v8.0. Combined with a complete set of management services and the TXSQL kernel, TencentDB for MySQL provides an enterprise-level database service which is more stable and quicker to deploy. It is applicable to a variety of use cases, helping you upgrade your business.</td>
+<td>2020-08</td>
+<td><a href="https://cloud.tencent.com/document/product/236/30969" target="_blank">Database Version</a></td>
+</tr>
+</tbody></table>
+
 ## July 2020
 <table>
 <tr>
@@ -10,7 +26,7 @@
 <td>Parameter templates can be applied to instances</td>
 <td>TencentDB for MySQL supports modifying parameters of multiple instances at the same time through parameter templates. You can perform a parameter modification task during the custom time window, or cancel it.</td>
 <td>2020-07</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">Setting Instance Parameters</a><li><a </td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">Setting Instance Parameters</a><li><a href="https://intl.cloud.tencent.com/document/product/236/31906" target="_blank">Managing Parameter Template</a></td>
 </tr>
 <tr>
 <td>Transparent Data Encryption (TDE) is supported</td>

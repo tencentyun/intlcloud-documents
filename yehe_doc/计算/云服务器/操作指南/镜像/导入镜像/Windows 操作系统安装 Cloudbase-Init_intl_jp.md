@@ -62,4 +62,8 @@ kms_host="kms.tencentyun.com"
 local_scripts_path=C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts\
 ```
 3. `TencentCloudRun.ps1`スクリプトを`C:\Program Files\Cloudbase Solutions\Cloudbase-Init\LocalScripts`のパスにコピーします。
-4. `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Lib\site-packages\cloudbaseinit\plugins\common`パスにある`localscripts.py`を[必要なソフトウェア](#PreparationSoftware) 中の`localscripts.py`ファイルに置き換えます。
+4. `TencentCloudRun.ps1`スクリプトを右クリックし、【プロパティ】を選択して、ポップアップウィンドウでスクリプトに実行権限があるかどうかを確認します。 次図に示すように：
+![](https://main.qcloudimg.com/raw/3a3a31fc4d0dbd58cacb9211f7a97e79.png)
+ - [Unblock] オプションがある場合、 [Unblock] にチェックを入れて、[OK]をクリックして終了する必要があります。 
+ - [Unblock ] オプションが存在しない場合は、この手順をスキップしてください。
+5. `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\Python\Lib\site-packages\cloudbaseinit\plugins\common`パスにある`localscripts.py`を[必要なソフトウェア](#PreparationSoftware) 中の`localscripts.py`ファイルに置き換えます。

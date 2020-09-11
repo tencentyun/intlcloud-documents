@@ -4,6 +4,7 @@
 - Download the COS XML Java SDK source code [here](https://github.com/tencentyun/cos-java-sdk-v5).
 - Download the XML Java SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip).
 - Download the demo [here](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo).
+- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Java).
 
 #### Environmental dependencies
 - The SDK supports JDK v1.7, v1.8 or higher.

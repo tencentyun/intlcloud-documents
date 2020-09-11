@@ -5,7 +5,7 @@ Content filtering uses natural language processing (NLP) technologies to determi
 >! Currently, content filtering does not support passed-through custom messages.
 
 ## Content Filtering – Basic Edition
-The content filtering basic edition is enabled by default. It only provides some politically sensitive word libraries and does not support word library customization. To customize sensitive words, click **Upgrade** in the IM console and purchase the content filtering professional edition on the [purchase page](https://buy.cloud.tencent.com/avc?position=1400399435).
+The Content Filtering Basic feature only provides the default dictionary and you cannot add custom dictionary. To use the custom sensitive word feature, you can click **Upgrade** on the [IM Console](https://console.cloud.tencent.com/im).
 
 
 ## Content Filtering – Professional Edition
