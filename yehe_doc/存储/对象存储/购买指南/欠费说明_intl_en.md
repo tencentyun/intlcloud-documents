@@ -1,47 +1,30 @@
-## Billing Cycle
+If your account falls into arrears, a notification will be sent to you. Once receiving it, please go to the [Billing Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account in time to prevent your business from being affected. This document will provide detailed information on arrears.
 
-See the following for COS billable items and corresponding billing cycle:
+## Causes
 
-<table>
-   <tr>
-      <th>Billable Items</th>
-      <th>Billing Cycle</th>
-   </tr>
-   <tr>
-      <td>Storage usage fees</td>
-      <td rowspan="3">Monthly</td>
-   </tr>
-   <tr>
-      <td>Request fees</td>
-   </tr>
-   <tr>
-      <td>Data retrieval fees</td>
-   </tr>
-   <tr>
-      <td>Traffic fees</td>
-      <td>Daily</td>
-   </tr>
-   <tr>
-      <td>Management feature fees</td>
-      <td>Daily</td>
-   </tr>
-</table>
+You can learn about why arrears happen by browsing FAQs as below:
 
-## Arrears and Service Termination
-
-When your account is in arrears for 24 hours, COS service will stop automatically. Your data will be stored for 120 days. If your account balance is not greater than 0 after 120 days, the data will be destroyed.
-
-If you receive an arrears notification, please go to the [Top-up Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account in time to prevent your business from being affected.
-
-For billing details, please check the [Bill Details](https://console.cloud.tencent.com/expense/bill) page on the console. For more information, please see [Viewing Billing Details](https://intl.cloud.tencent.com/document/product/436/31631).
-
-If you have any question on the billing items, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776) for the description of each billing item and the billing rules.
+- [Why does my account fall into arrears or incur charges even if I am eligible for the free tier?](https://intl.cloud.tencent.com/document/product/436/10373)
 
 
 
-> 1. When your account is in arrears and COS is out of service, **you will continue to be charged for the storage capacity occupied** till the data is destroyed.
-> 2. The data cannot be recovered once destroyed.
-> 3. After you renew your account and make your balance equal to or above 0, the service will automatically restart.
-> 4. Delete data on COS that you no longer need to avoid incurring unnecessary charges.
+>?
+>- If you have any question, please check [Bill Overview](https://console.cloud.tencent.com/expense/bill/overview) on the console. For more information, please see [Viewing Billing Details](https://intl.cloud.tencent.com/document/product/436/31631).
+>- See [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776) for the description of each billing item and billing rules.
+>- For information on the billing cycle of each billing item, see [Billing Cycle](https://intl.cloud.tencent.com/document/product/436/16871).
 
 
+## Service Status in Arrears
+
+
+1. COS service is still available within 24 hours after your account falls into arrears, with a service suspension notification sent to you on the console. In this case, please top up your account to an amount not less than 0 in order to avoid affecting your business.
+2. COS service will be automatically suspended after 24 hours in arrears. You cannot read or write any data in COS, while charges will still accrue for the **storage usage of your data** until it is destroyed. Before the destruction, COS will retain your data for 120 days considering its potential importance. During this period, all you can do using the console is top up your account, whose balance should be not less than 0 for the service to be activated again.
+3. After 120 days on end in arrears, you will be deemed to have waived the COS service. With no promise to further retain your data, it will be destroyed and cannot be recovered.
+
+
+## How to Avoid or Process my Arrears?
+
+
+1. You can choose to delete COS data which you find useless to avoid any further charges.
+2. You can enable **Monthly Expense Alert** in **Console** > **Billing Center** to receive notifications when your available balance falls below the alert threshold.
+3. In case of arrears, please top up your account timely to an amount not less than 0.
