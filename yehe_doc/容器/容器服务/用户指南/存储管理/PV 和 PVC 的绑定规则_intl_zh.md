@@ -61,7 +61,7 @@
 
 ## StorageClass 的选择和 PV/PVC 的绑定关系
 容器服务 TKE 的平台操作中，StorageClass 的选择与 PV/PVC 之间的绑定关系见下图：
-![](https://main.qcloudimg.com/raw/211897efb0d69913a91844c0a27ff6f3.png)
+![](https://main.qcloudimg.com/raw/9eb0904f597763938a8c3af02586aaf6.png)
 
 
 
