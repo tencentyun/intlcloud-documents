@@ -10,7 +10,7 @@
 ![](https://main.qcloudimg.com/raw/46307132ac1ef1e8422667abd896f878.png)
 3. 在“文件列表”页签下，找到需要下载的对象，如您只需下载单个对象，您有多种方式可选：
  1. 在所选的对象右侧直接单击【下载】即可下载；或者选中单个对象，在【更多操作】下拉列表中单击【下载】。
-![](https://main.qcloudimg.com/raw/c86340a73fbf2eb3d867aa8fb3d07009.png)
+![](https://main.qcloudimg.com/raw/4ee4cb3f5ff0a5634ef8ed49d26c549b.png)
  2. 在对象右侧单击【详情】进入文件详情页，在文件详情页中单击【下载对象】即可下载，或单击【复制临时链接】，将链接粘贴至浏览器地址栏，回车即可下载该对象。
 ![](https://main.qcloudimg.com/raw/934b43a085b8cae825ddad88a0177caf.png)
 
