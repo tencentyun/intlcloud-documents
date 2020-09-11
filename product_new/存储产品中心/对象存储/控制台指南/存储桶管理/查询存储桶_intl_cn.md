@@ -13,6 +13,4 @@
 ![](https://main.qcloudimg.com/raw/427646694bb71be676c916b431eac116.png)
  - 按照**标签**查询：若您已为存储桶设置了标签（详见 [设置存储桶标签](https://intl.cloud.tencent.com/document/product/436/30928)），您也可以在**存储桶列表**页面右上角的搜索区，选择按**标签**查询，可输入**标签键**进行查询。如下图所示：
 ![](https://main.qcloudimg.com/raw/34aa33cf0c739e56acb76cfac8c7c09a.png)
-3. 当您的存储桶访问权限为**公有读写**或**公有读私有写**时，在存储桶名称旁会有【公有】状态提示，以提示您该状态存在一定的风险。
-![](https://main.qcloudimg.com/raw/2741bada43f93dcdb0a000b59b6ef151.png)
 
