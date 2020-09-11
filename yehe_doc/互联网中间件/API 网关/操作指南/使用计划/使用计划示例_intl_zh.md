@@ -22,7 +22,7 @@
 ### 绑定使用计划和密钥对
 1. 在【[使用计划](https://console.cloud.tencent.com/apigateway/plan)】页面，单击目标使用计划的 ID，进入详情页的使用计划信息。
 2. 在使用计划信息页，单击【绑定密钥】。
-3. 勾选需要绑定的 SecretId，单击【提交】，完成使用计划和密钥对的绑定
+3. 勾选需要绑定的 SecretId，单击【提交】，完成使用计划和密钥对的绑定。
 ![](https://main.qcloudimg.com/raw/774299c4fa7afdc0db1247a7d26f02f4.png)
 
 ### 绑定使用计划和服务环境
