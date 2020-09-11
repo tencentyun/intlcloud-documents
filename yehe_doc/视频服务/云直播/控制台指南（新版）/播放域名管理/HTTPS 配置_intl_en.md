@@ -23,7 +23,7 @@ The HTTPS protocol is a network protocol built based on the SSL and HTTP protoco
 <td>Tencent Cloud-hosted certificate</td>
 <td>Certificate List: select an uploaded certificate in <a href="https://console.cloud.tencent.com/ssl">SSL Certificate Service</a>.</td>
 </tr></table>
-<img src="https://main.qcloudimg.com/raw/2f38a79d4c4ccdbf0e14153a1b9b6603.png"></img>
+<img src="https://main.qcloudimg.com/raw/b42458905e48db6b45def7a1d8ecc349.png"></img>
 
 #### Certificate description
 A certificate provided by the [CA](https://intl.cloud.tencent.com/zh/document/product/1007/30192#354) includes Apache, IIS, Nginx, and Tomcat files. **The encryption service of LVB uses Nginx, so you should select the content of the Nginx files for the configuration.** 
@@ -47,6 +47,6 @@ The HTTPS configuration will take effect in about 2 hours. Please visit the doma
 
 ### Step 3. Modify the configuration
 The HTTPS feature can be enabled and disabled. Once it is disabled, LVB will no longer provide HTTPS service for the domain name. If the certificate has expired, it should be replaced with a new valid one.
- 
- 
+
+
  >? For more information on certificate, please see [SSL Certificate Service - Operation Guide](https://intl.cloud.tencent.com/document/product/1007/30168).
