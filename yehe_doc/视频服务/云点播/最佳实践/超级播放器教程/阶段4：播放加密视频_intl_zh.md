@@ -2,7 +2,7 @@
 
 学习本阶段教程，您将了解掌握如何对视频加密，并使用超级播放器播放加密后的视频。
 
-阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频] 和 [阶段2：开启防盗链后的视频播放]篇部分，本教程使用了 [阶段1] 篇开通的账号以及上传的视频，并需要按照 [阶段2]开启防盗链。
+阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098) 和 [阶段2：开启防盗链后的视频播放](https://cloud.tencent.com/document/product/266/46218) 篇部分，本教程使用了 [阶段1](https://intl.cloud.tencent.com/document/product/266/38098) 篇开通的账号以及上传的视频，并需要按照 [阶段2](https://cloud.tencent.com/document/product/266/46218) 开启防盗链。
 
 ## 步骤1：视频加密
 1. 登录云点播控制台，选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，勾选要处理的视频（FileId 为528xxx3757278095），单击【视频处理】。
@@ -31,11 +31,11 @@
 3. 因为默认分发域名开启了防盗链，【播放控制】选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
  <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
-<img src="https://main.qcloudimg.com/raw/aca724a8c811d5107d22878f78890c16.png" width="522" />
+<img src="https://main.qcloudimg.com/raw/f15945fabaeb9a88151c69dc897daf41.png" width="522" />
 5. 在【移动端播放器】中，点击【扫码下载】，安装“腾讯云工具包”。
 ![](https://main.qcloudimg.com/raw/7646593a4ea15d9c1ad441207e224be8.png)
 6. 手机打开腾讯云工具包，选择【播放器】>【超级播放器】，然后点击右上角扫码，即可在移动端播放体验。
- <img src="https://main.qcloudimg.com/raw/3894fc5d024bd7f53423cabcdff60db0.png" width="522" />
+
 
 ## 步骤3：使用 Demo 验证
 
