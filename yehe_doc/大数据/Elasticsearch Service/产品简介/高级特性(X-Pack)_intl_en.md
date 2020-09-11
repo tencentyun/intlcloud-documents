@@ -15,7 +15,9 @@ In order to be able to use more advanced features in ES, we recommend that you c
 
 ## X-Pack Overview
 This document describes some of the commonly used X-Pack features. For more information, please see Elasticsearch's official [Elastic Stack subscriptions](https://www.elastic.co/subscriptions) and [API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/xpack-api.html).
+>! 
 >- Some features vary by editions (Basic, Platinum, and Open Source).
+>- Some features are unavailable in earlier ES versions. For more information, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 - **Security**  
 This feature supports refined read/write permission control at the index and field levels and effectively protects data security by enabling data security protection and business access isolation, granting access to the right people, and preventing malicious attacks and data leakage.
