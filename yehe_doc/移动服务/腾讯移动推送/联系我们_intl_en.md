@@ -4,7 +4,7 @@ If you have any questions when using Tencent Cloud services, please contact our 
 
 - Hong Kong (China): +852 800-964-163 (toll-free)
 - US: +1 888-652-2736 (toll-free)
-- Other regions: +86 75595716
+- Other regions: +86 4009100100
 
 ## Ticket System
 

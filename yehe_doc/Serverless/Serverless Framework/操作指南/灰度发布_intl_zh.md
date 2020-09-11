@@ -10,18 +10,18 @@ Serverless 应用的灰度发布是配置云函数别名为 $default（默认流
 ## 命令说明
 #### 函数发布版本
 部署时发布项目下所有函数版本：
-```plaintext
+```
 sls deploy --inputs.publish  
 ```
 
 部署时发布项目下函数 fun01、fun02 的版本：
-```plaintext
+```
 sls deploy --inputs.publish="fun01,fun02" 
 ```
 
 #### 函数流量设置
 部署后切换20%流量到 $latest 版本：
-```plaintext
+```
 sls deploy --inputs.traffic=0.2
 ```
 - Serverless Framework 流量切换修改的是云函数别名为 $default 的流量规则。
@@ -32,21 +32,21 @@ sls deploy --inputs.traffic=0.2
 ## 操作步骤
 当一个功能测试完毕，需要进行灰度发布，操作如下：
 1. 配置生产环境信息到 .env 文件（STAGE=prod 为生产环境）：
-```plaintext
+```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
 STAGE=prod 
 ```
 2. 部署到线上环境 $latest，并切换10%的流量在 $latest 版本（90%的流量在最后一次发布的云函数版本 N 上）：
-```plaintext
+```
 sls deploy --inputs.traffic=0.1 
 ```
 3. 对 $latest 版本进行监控与观察，等版本稳定之后把流量100%切到该版本上：
-```plaintext
+```
 sls deploy --inputs.traffic=1.0 
 ```
 4. 流量全部切换成功后，对于一个稳定版本，我们需要对它进行标记，以免后续发布新功能时，如果遇到线上问题，方便快速回退版本。部署并发布函数版本N+1，切换100%流量到版本N+1：
-```plaintext
+```
 sls deploy --inputs.publish --inputs.traffic=0 
 ```
 
