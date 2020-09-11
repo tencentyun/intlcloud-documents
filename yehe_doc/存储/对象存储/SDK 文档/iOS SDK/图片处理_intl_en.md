@@ -92,17 +92,6 @@ QCloudPicOperationRule * rule = [[QCloudPicOperationRule alloc]init];
 // File path of the processing result. If it starts with “/”, the result is stored in the specified folder. Otherwise, it is stored in the same directory as the original image file.
 rule.fileid = @"test";
 
-// Blind watermark text, which should URL-safe and base64-encoded. It is required if “type” is set to 3, and omitted if “type” is set to 1 or 2
-rule.text = @"123"; // The watermark text can only be a string of [a-z, A-Z, 0-9]
-
-// Type of the blind watermark. Valid values: 1 (half-blind), 2 (blind), 3 (text)
-rule.type = QCloudPicOperationRuleText;
-op.rule = @[rule];
-put.picOperations = op;
-[put setFinishBlock:^(id outputObject, NSError *error) {
-   
-}];
-[[QCloudCOSXMLService defaultCOSXML] PutWatermarkObject:put];
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PictureOperation.m).
@@ -130,21 +119,12 @@ let rule = QCloudPicOperationRule.init();
 // File path of the processing result. If it starts with “/”, the result is stored in the specified folder. Otherwise, it is stored in the same directory as the original image file.
 
 rule.fileid = "test";
-
-// Blind watermark text, which should URL-safe and base64-encoded. It is required if “type” is set to 3, and omitted if “type” is set to 1 or 2
-rule.text = "123";
-
-// Type of the blind watermark. Valid values: 1 (half-blind), 2 (blind), 3 (text)
-rule.type = .text;
-
-op.rule = [rule];
-put.picOperations = op;
-put.setFinish { (outoutObject, error) in
-    
-};
-QCloudCOSXMLService.defaultCOSXML().putWatermarkObject(put);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PictureOperation.swift).
 
 
+
+```
+
+```
