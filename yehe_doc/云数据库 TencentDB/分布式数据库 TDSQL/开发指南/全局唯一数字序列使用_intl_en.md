@@ -1,6 +1,4 @@
-If you want to view or download the full set of development documents, please see [Development Guide for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33352).
-
-The globally unique numerical sequence (auto_increment) is supported. Currently, it can ensure the global uniqueness and increment of auto-increment fields, but not the monotonic increment (i.e., absolute increment in chronological order). The `auto_increment` here is 8 bytes in length with 18446744073709551616 being the maximum value, so you don't need to worry about value overflow. It can be used in the following way:
+The `auto_increment` keyword can be used to create a global unique auto-incremental field which is definitely global unique but may not be monotonically increasing. You can use `auto_increment` as instructed below.
 
 Create:
 ```
