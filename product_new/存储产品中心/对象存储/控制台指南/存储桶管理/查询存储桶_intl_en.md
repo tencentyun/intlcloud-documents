@@ -11,5 +11,3 @@ You can query created buckets quickly using the Cloud Object Storage (COS) Conso
 ![](https://main.qcloudimg.com/raw/427646694bb71be676c916b431eac116.png)
 2. In the search box on the right, you can enter a bucket name or a prefix of a bucket name to search for the desired bucket.
 ![](https://main.qcloudimg.com/raw/34aa33cf0c739e56acb76cfac8c7c09a.png)
-3. When the access permission for the bucket is **Public Read/Write** or **Public Read/Private Write**, a **Public** status is indicated next to the bucket name to alert you to the security risk.
-![](https://main.qcloudimg.com/raw/2741bada43f93dcdb0a000b59b6ef151.png)
