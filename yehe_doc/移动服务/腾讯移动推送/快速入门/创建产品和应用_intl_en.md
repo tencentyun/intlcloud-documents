@@ -11,8 +11,9 @@ You have a Tencent Cloud account. For more information, please see [Signing Up f
 2. Go to the product management page and click **Add Product**.
 3. On the product adding page, enter the product name and product details and select a product type.
 4. If you check Android, iOS, or macOS below, the system will create an application on the selected platform by default.
-5. Click **OK** to create the product.
 ![](https://main.qcloudimg.com/raw/463013c99e476af32767de8b2d48ff49.png)
+5. Click **OK** to create the product.
+	 ![](https://main.qcloudimg.com/raw/e4f98c5b7a615009ccbff29d0a7fb166.jpg)
 
 ### Creating application
 After you create a product, if you haven't added the default application, you can follow the steps below to create an application. Only one application can be created per platform. After applications have been created for all three platforms, no new applications can be created.
@@ -36,16 +37,6 @@ After you create a product, if you haven't added the default application, you ca
 ![](https://main.qcloudimg.com/raw/035516a4f5179f315090e2afd41e08d1.png)
 
 
-### Applying for trial
-After creating the application, you can click **Apply for Trial/Test** on the service management page to complete the trial application in the following steps:
-1. Click **Initial Product Experience**.
-2. Enter your company name, contact number, email, and other information.
-3. Click **OK** to complete the application for trial.
-4. After your application is approved, you can start trying the push service.
-
->
->- Please ensure the accuracy of the entered information; otherwise, your application may be rejected.
->- A trial application supports up to 1,000 devices in a test. If the limit is exceeded, the trial may be terminated. Therefore, do not use it for commercial purpose to avoid potential losses.
 
 
 
