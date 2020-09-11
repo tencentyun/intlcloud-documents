@@ -1,6 +1,5 @@
 ## 操作场景
-在腾讯云 API 网关控制台中，您可以查看有关 API 网关服务的请求的日志。
-
+该任务指导您通过腾讯云 API 网关控制台，查看有关 API 网关服务的请求的日志。
 
 ## 操作步骤
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway/index)，在左侧导航中单击【服务】，进入服务列表页。
