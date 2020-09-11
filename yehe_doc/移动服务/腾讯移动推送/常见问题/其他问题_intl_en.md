@@ -47,12 +47,12 @@ There is no limit on the number of notification bar messages that a phone can re
 - ROMs running native Android v5.0 or above will process the small icon of an application and add a layer of color if `target sdk` is greater than or equal to 21, causing the icon to be gray.
 - If you want to display it as colored, you need to set the `target sdk` to below 21. If you don't want the `target sdk` to be below 21, you can rename a small transparent background .png image to `notification_icon.png` (the filename must be unique) and place it in `drawable`; in this way, the small icon will be displayed as gray (but shaped).
 We recommend you draw an icon based on the demo logo.
->?  
->1. The small icon must be a PNG image with the alpha transparency channel.
->2. The background must be transparent.
->3. The image must be in white. Do not upload an image in another color.
->4. Do not leave too much padding around the icon.
->5. We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+
+>?   1. The small icon must be a PNG image with the alpha transparency channel.
+       2. The background must be transparent.
+       3. The image must be in white. Do not upload an image in another color.
+       4. Do not leave too much padding around the icon.
+       5. We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
 
 
 ### Can an application still receive push messages after it is closed or its process is ended?

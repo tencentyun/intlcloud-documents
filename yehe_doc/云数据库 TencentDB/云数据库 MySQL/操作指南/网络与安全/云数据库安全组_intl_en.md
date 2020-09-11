@@ -29,7 +29,7 @@ A [security group](https://cloud.tencent.com/doc/product/213/500) is a stateful 
  <span id="Step2"></span>
 ### Step 2. Add a security group rule
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rule** in the "Operation" column on the row of the security group for which to configure a rule.
-2. <span id="step02">On the security group rule page, click **Inbound Rules** > **Add Rule**.</span>
+2. <span id="step02">On the security group rule page, select **Inbound Rules** > **Add Rule**.</span>
 3. In the pop-up dialog box, set the rule.
  - Type: "Custom" is selected by default. You can also choose another system rule template. MySQL(3306) is recommended.
  - Source: traffic source (inbound rule) or destination (outbound rule). You need to specify one of the following options:
@@ -65,10 +65,9 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 >!Currently, security groups can be configured only for **TencentDB for MySQL instances in VPC**.
 
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
-2. In the instance list, select the instance for which to configure a security group and click **Manage** in the "Operation" column to enter the instance management page.
-3. On the **Security Group** tab, click **Configure Security Group**.
-4. In the pop-up dialog box, select the security group to be bound and click **OK**. 
+1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance name to enter the instance management page.
+2. Select the **Security Group** tab and click **Configure Security Group**.
+3. In the pop-up dialog box, select the security group to be bound and click **OK**.
 
 ## Security Group Rule Import
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.

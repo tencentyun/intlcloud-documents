@@ -6,12 +6,12 @@
 * 使用视频中间部分的截图作为视频封面。
 * 进度条上的缩略图预览，调整为20%的间隔。
 
-阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频] 和 [阶段2：开启防盗链后的视频播放]篇部分，本教程使用了 [阶段1]篇开通的账号以及上传的视频，并需要按照 [阶段2]开启防盗链。
+阅读之前，请先确保已经学习超级播放器指引的 [阶段1：用超级播放器播放视频](https://intl.cloud.tencent.com/document/product/266/38098) 和 [阶段2：开启防盗链后的视频播放](https://cloud.tencent.com/document/product/266/46218) 篇部分，本教程使用了 [阶段1](https://intl.cloud.tencent.com/document/product/266/38098) 篇开通的账号以及上传的视频，并需要按照 [阶段2](https://cloud.tencent.com/document/product/266/46218) 开启防盗链。
 
 ## 步骤1：创建自适应码流模板
 
 1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建自适应码流模板】。
-![](https://main.qcloudimg.com/raw/1404b768c46eba2b7515cebb6d1e5c55.png )
+<img src="https://main.qcloudimg.com/raw/d44cb4a89b3bc996c8745707df4a4d9a.png" width="800" />
 2. 进入“模板设置”页面后，单击【添加子流】，新建子流1、子流2和子流3，填写参数如下：
 	- **基本信息模块**：
 	  - 【模板名称】：填写 MyTestTemplate。
@@ -55,10 +55,10 @@
 <td>双声道</td>
 </tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/16fc3a752fe8dd2878aaa80da03e3aa7.png" width="500" />
-
+<img src="https://main.qcloudimg.com/raw/ad5f9ba9336d268626e5721f67d9a982.png" width="500" />
 3. 单击【创建】，则生成了一个包含3个子流的自适应码流模板，模板 ID 为125866。
-![](https://main.qcloudimg.com/raw/380cef63c854a94295397ae243195fbe.png)
+
+![](https://main.qcloudimg.com/raw/4a8b8bae95237dd3b49fda2d7a2479a7.png)
 
 ## 步骤2：创建雪碧图模板
 
@@ -70,9 +70,9 @@
  * 【采样间隔】：20%。
  * 【小图行数】：10。
  * 【小图列数】：10。
-![](https://main.qcloudimg.com/raw/17a568d68925fd83d2cf7fb679ff5bea.png)
+![](https://main.qcloudimg.com/raw/c3ce95756c12d6d4a4544504d657562b.png)
 3. 单击【创建】，则生成了一个模板 ID 为41377的雪碧图模板。
-![](https://main.qcloudimg.com/raw/64e7946dfa457107a3cde0b5e576d2d9.png)
+![](https://main.qcloudimg.com/raw/d310762ac43dc5d2f965f6c56cde9729.png)
 
 ## 步骤3：创建任务流并发起处理
 
@@ -84,16 +84,16 @@
 	 *  在【自适应码流任务配置】选项卡，单击【添加自适应码流模板】，在“自适应码流模版/ID”栏选择**步骤1**创建的自定义转自适应码流模板 MyTestTemplate(126866)。
 	 *  在【截图任务配置】选项卡，单击【添加截图模板】，“截图方式”栏选择【雪碧图】，“截图模板”栏选择**步骤2**创建的自定义雪碧图模板 MyTestTemplate(41377)。
 	 *  在【截取封面图任务配置】选项卡，单击【添加截图模板】，“截图模板”栏选择【TimepointScreenshot】，“时间点选取”栏选择【百分比】，填写50%。
-<img src="https://main.qcloudimg.com/raw/f3eef0cee6dc6f90edf6445a3404e929.png" />
+<img src="https://main.qcloudimg.com/raw/0b03eb77c5da28f38c6892f8210bcb32.png" width="900" />
 2. 单击【提交】，生成了一个名为 MyTestProcedure 的任务流。
 ![](https://main.qcloudimg.com/raw/4c5535f4e7f9fc62acc7c96020ff8fb7.png)
 3. 在控制台选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，勾选要处理的视频（FileId 为528xxx3757278095），单击【视频处理】。
 4. 在视频处理弹框：
  * 【处理类型】选择【任务流】。
  * 【任务流模板】选择【MyTestProcedure】。<span></span>
- <img src="https://main.qcloudimg.com/raw/60ae86a722ac5d5a668d3e309de19016.png" />
+ <img src="https://main.qcloudimg.com/raw/a0e09d4901e22fd92a81ac708000d78d.png" width="500" />
 5. 单击【确定】，等待**视频状态**从“处理中”变为“正常”，表示视频已处理完毕。
-![](https://main.qcloudimg.com/raw/f12c0dd0706c9873cd20d5dc8fba1c45.png)
+![](https://main.qcloudimg.com/raw/09e956a2f60c9c7d58c23f25ed57f400.png)
 6. 单击视频“操作”栏中的【管理】，进入管理页面：
  * 在【基本信息】栏，可以看到生成的封面，以及自适应码流输出（模板 ID 为125866）。
  * 在【截图信息】栏，可以看到生成的雪碧图（模板 ID 为41377）。
@@ -107,7 +107,7 @@
  * 【模板名称】：填写 MyTestCfg。
  * 【用于播放的自适应码流】选项卡的“自适应码流模板/ID”栏选择：MyTestTemplate(125866)。
  * 【用于播放的雪碧图】选项卡的“截图模板”栏选择：MyTestTemplate(41377)。
-<img src="https://main.qcloudimg.com/raw/f0f6aeea9a90d454e9bddb41ed42b237.png" />
+<img src="https://main.qcloudimg.com/raw/864d1c6cc06a24fdf20be9135c692e74.png" width="400" />
 3. 单击【确定】，则生成新的超级播放器配置 MyTestCfg。
 
 ##   步骤5：预览播放体验
@@ -116,15 +116,15 @@
 
 1. 选择[【视频管理】](https://console.cloud.tencent.com/vod/media)的“已上传”页签，找到之前步骤上传和处理过的视频，单击“操作”栏中的【管理】，选择“超级播放器预览”页签。
 2. 【播放配置】选择 MyTestCfg。
-<img src="https://main.qcloudimg.com/raw/db41d3dca50f03688adb6774b0bcd8a7.png />
+<img src="https://main.qcloudimg.com/raw/9468da0d6a015202d8fb8ffc3a5877ea.png" width="522" />
 3. 因为默认分发域名开启了防盗链，【播放控制】选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
- <img src="https://main.qcloudimg.com/raw/1050ce8038fba7eb0243a5f5d2b3e228.png" />
+ <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
-<img src="https://main.qcloudimg.com/raw/aca724a8c811d5107d22878f78890c16.png" width="522" />
+<img src="https://main.qcloudimg.com/raw/f15945fabaeb9a88151c69dc897daf41.png" width="522" />
 5. 在【移动端播放器】中，点击【扫码下载】，安装“腾讯云工具包”。
-![](https://main.qcloudimg.com/raw/f9c5d00d8f4b8a3ec89a368971c5c35f.png)
+![](https://main.qcloudimg.com/raw/7646593a4ea15d9c1ad441207e224be8.png)
 6. 手机打开腾讯云工具包，选择【播放器】>【超级播放器】，然后点击右上角扫码，即可在移动端播放体验。
- <img src="https://main.qcloudimg.com/raw/87b133430fe98b7eba6d3c323c6e9028.png" />
+
 
 ##  步骤6：使用 Demo 验证
 
@@ -139,13 +139,13 @@
  * 【链接过期时间】：Key 防盗链过期时间，可以填6小时后的十六进制 Unix 时间：5ee09b44。
  * 【防盗链 Key】：填写之前获取到的防盗链 Key：2WExxx48eW。
 2. 单击【生成签名】，生成出来的签名显示在“生成签名结果”文本框中。
-<img src="https://main.qcloudimg.com/raw/2ea964fc5908ff83206216312a045fa9.png" />
+<img src="https://main.qcloudimg.com/raw/c7eff5906fbf01d8f28ec37119f8caf0.png" width="700" />
 
 获取超级播放器签名后，您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/tencentyun/SuperPlayer_Android) 和 [iOS](https://github.com/tencentyun/SuperPlayer_iOS)  三端的超级播放器 Demo 进行验证，具体请参考 Demo 的源码。
 >?在控制台的【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)>【超级播放器预览】中，可以获取预览视频对应的 Web 播放器源码，供您直接参考使用。
-<img src="https://main.qcloudimg.com/raw/f5905329b4a2fa4f6a6a44070a4a974b.png />
+<img src="https://main.qcloudimg.com/raw/7da1641a94b14e43a4cf024209c7e404.png" width="500" />
 
 ## 总结
 
 学习本教程后，您已经掌握如何定制超级播放器播放的视频内容与样式。
-
+如果您希望对视频进行加密，并播放加密后的视频，请参考 [阶段4：播放加密视频](https://intl.cloud.tencent.com/document/product/266/38294)。
