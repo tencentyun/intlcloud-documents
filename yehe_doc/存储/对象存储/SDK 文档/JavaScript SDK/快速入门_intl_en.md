@@ -5,6 +5,7 @@
 - Source code of COS XML JS SDK download: [XML JavaScript SDK](https://github.com/tencentyun/cos-js-sdk-v5).
 - Fast SDK download: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip).
 - Demo: [JS Sample](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
+- Find all code samples for this SDK [here](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
 
 #### Environment requirements
 

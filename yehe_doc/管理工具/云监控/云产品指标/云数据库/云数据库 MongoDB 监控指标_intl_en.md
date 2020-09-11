@@ -4,6 +4,8 @@ Namespace=QCE/CMONGO
 
 ## Monitoring Metrics
 
+>?The metrics `Aggregates`, `Timeouts` and `Conn` are deprecated.
+
 | Parameter | Metric Name | Description | Unit | Dimension |
 | ----------------- | -------------------------- | ------------------------------------------- | ----- | ------------------- |
 | Inserts | Write requests | Writes per unit time | Times | target (instance ID) |
@@ -11,7 +13,6 @@ Namespace=QCE/CMONGO
 | Updates | Update requests | Updates per unit time | Times | target (instance ID) |
 | Deletes | Delete requests | Deletions per unit time | Times | target (instance ID) |
 | Counts | Count requests | Counts per unit time | Times | target (instance ID) |
-| Aggregates | Aggregates requests | Aggregates per unit time | Times | target (instance ID) |
 | ClusterConn | Cluster connections | Total number of cluster connections, which indicates the connections received by the current cluster proxy | Times | target (instance ID) |
 | Commands | Command requests | Number of command requests | Times | target (instance ID) |
 | Connper | Percentage of cluster connections | Ratio of the current cluster connections to the configured total cluster connections | % | target (instance ID) |
@@ -21,16 +22,13 @@ Namespace=QCE/CMONGO
 | Delay10 | Number of requests with a latency between 10 ms and 50 ms | Number of successful requests with a latency between 10 ms and 50 ms per unit time | Times | target (instance ID) |
 | Delay50 | Number of requests with a latency between 50 ms and 100 ms | Number of successful requests with a latency between 50 ms and 100 ms per unit time | Times | target (instance ID) |
 | Delay100 | Number of requests with a latency over 100 ms | Number of successful requests with a latency over 100 ms | Times | target (instance ID) |
-| Timeouts | Number of timeouts | Number of timeout requests | Times | target (instance ID) |
 | ReplicaDiskUsage | Disk utilization | Replica set capacity utilization | % | target (replica set ID) |
 | Slavedelay | Master-Slave latency | Average latency per unit time between the Master and Slave | Second | target (replica set ID) |
 | Oplogreservedtime | Oplog save time | Time difference between the last operation and the first operation for Oplog records | Hour | target (replica set ID) |
-| Conn | Node connections | Number of node connections | Count | target (node ID) |
 | Cpuusage | CPU utilization | CPU utilization | % | target (node ID) |
 | Memusage | Memory utilization | Memory utilization | % | target (node ID) |
 | Qr | Read request queue length | Number of read requests in the waiting queue | Count | target (node ID) |
 | Qw | Write request queue length | Number of write requests in the waiting queue | Count | target (node ID) |
-| Conn | Connections | Number of connections | Count | target (node ID) |
 | Netin | Network inbound traffic | Network inbound traffic | MB/s | target (node ID) |
 | Netout | Network outbound traffic | Network outbound traffic | MB/s | target (node ID) |
 

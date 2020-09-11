@@ -16,7 +16,7 @@ If you use the automatic gradle integration method, please configure the followi
 	 android:exported="false" />    
 ```
 
-If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
+If the following log is printed in the console, the session keep-alive feature has been disabled: `I/TPush: [ServiceUtil] disable pull up other app`.
 
 ### Why can't push messages be received?
 Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the obtained token for message push. If pushes cannot be received, please troubleshoot as follows:

@@ -33,14 +33,12 @@ The default configuration role of SCF is `SCF_QcsRole` as detailed below:
 >
 
 ### Service authorization
-1. If you are using SCF for the first time, you will be prompted for service authorization when you open the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1) as shown below:
-![](https://main.qcloudimg.com/raw/e2c9a7755b2f1f1671a6cc12f47bdef6.png)
+1. If you are using SCF for the first time, you will be prompted for service authorization when you open the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1).
 
-2. Select **Go to Access Management** to enter the "Role Management" page and click **Grant** to confirm the authorization as shown below:
-![](https://main.qcloudimg.com/raw/59611885715e48011cc4e7de393efa1c.png)
+2. Select **Go to Access Management** to enter the "Role Management" page and click **Grant** to confirm the authorization.
 
-3. After the authorization is confirmed, the role `SCF_QcsRole` will be automatically created for you as shown below, which can be viewed in [Role](https://console.cloud.tencent.com/cam/role):
-![](https://main.qcloudimg.com/raw/9702d15f8ade526bf55cb836be360ef7.png)
+3. After the authorization is confirmed, the role `SCF_QcsRole` will be automatically created for you, which can be viewed in [Role](https://console.cloud.tencent.com/cam/role):
+
 
 ## Execution Role
 An execution role is used for user code, and the role entity is `service-scf.qcloud.com`. After you add the corresponding execution role to the function, SCF will apply for temporary authorization for your code to run within the scope of permissions in the policies associated with the execution role, so that the code can get the required permissions and access other Tencent Cloud resources through the role authorization mechanism.
@@ -50,17 +48,15 @@ Take `SCF_QcsRole` as an example. You can also select `SCF_QcsRole` as the funct
 1. Log in to the SCF Console and select **[Function Service](https://console.cloud.tencent.com/scf)** on the left sidebar.
 2. On the "Functions" list page, click the name of the target function to enter the function configuration page.
 3. Select **Edit** in the top-right corner on the function configuration page.
-4. Check **Enable** in "Execution Role" and click **Create Running Role** as shown below:
-![](https://main.qcloudimg.com/raw/c8d4e42e246ae3bab15db83c9f7e44df.png)
+4. Check **Enable** in "Execution Role" and click **Create Running Role**.
 5. Check **Serverless Cloud Function (SCF)** in the "Enter role entity info" step and click **Next**.
-![](https://main.qcloudimg.com/raw/61f45843b7a52b8edb1432c17618ff3c.png)
+
 6. In the "Configure role policy" step, select all policies required by the function and click **Next** as shown below:
 >? This document uses selection of `QcloudCOSFullAccess` (full access permissions of COS) as an example. Please select policies as needed.
 >
-![](https://main.qcloudimg.com/raw/f4b2f40ca703f033e61f8a1911e7991e.png)
+
 7. Enter a "role name" in the "Review" step and click **Complete**. This document uses the role name `scf_cos_full_access` as an example. 
-8. Return to the function configuration page and click <img src="https://main.qcloudimg.com/raw/b32932fe6f9afabb88280c38bb287887.png" style="margin:-3px 0px"> on the right of "Execution Role" to select the execution role created just now in the drop-down list as shown below:
-![](https://main.qcloudimg.com/raw/f891ccabd030dfafd3119d10f28b42ea.png)
+8. Return to the function configuration page and click <img src="https://main.qcloudimg.com/raw/b32932fe6f9afabb88280c38bb287887.png" style="margin:-3px 0px"> on the right of "Execution Role" to select the execution role created just now in the drop-down list.
 >! When adding policies to an execution role, in addition to preset policies, you can also select custom policies to configure permissions in a more refined manner. SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource description method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format. For more information, please see [SCF Policy Syntax](https://intl.cloud.tencent.com/document/product/583/38177).
 >
 

@@ -32,6 +32,8 @@ The limits for the function runtime environment are as follows:
 | Sync request response size | 6 MB |
 | Async request event size | 128 KB |
 
+>! You can use [API Gateway](https://intl.cloud.tencent.com/product/apigateway) to pass a Base64-encoded file within 6 MB in SCF. To upload a Base64-encoded file greater than 6 MB, we recommend that you upload it to [COS](https://intl.cloud.tencent.com/product/cos) and give the object address to SCF, therefore SCF will pull the file from COS.
+
 ## Increasing Limits
 
 Currently, limits that can be increased include:

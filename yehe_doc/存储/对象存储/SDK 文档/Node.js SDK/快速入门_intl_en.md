@@ -5,6 +5,7 @@
 - Download the COS XML SDK resources for Node.js [here] (https://github.com/tencentyun/cos-nodejs-sdk-v5).
 - Fast SDK download: [XML Node.js SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-nodejs-sdk-v5/latest/cos-nodejs-sdk-v5.zip).
 - Download the demo [here](https://github.com/tencentyun/cos-nodejs-sdk-v5/tree/master/demo).
+- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/NodeJS).
 
 #### Environment dependencies
 

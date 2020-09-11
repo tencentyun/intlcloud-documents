@@ -116,7 +116,7 @@ The SDK provides the Service Extension API, which can be called by the client t
 - Receive images and audiovisual rich media messages.
 
 For the integration steps, please see [Notification Service Extension Use Instructions](https://intl.cloud.tencent.com/document/product/1024/30730).
->!If this API is not integrated, the "Reached" and "Clicked" in the statistics will be the same.
+>! If this API is not integrated, the **Reached** number cannot be counted.
 
 ## Debugging Method
 #### Enabling debug mode

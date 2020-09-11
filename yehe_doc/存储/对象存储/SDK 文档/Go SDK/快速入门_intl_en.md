@@ -1,9 +1,10 @@
 ## Download and Installation
 
 #### Relevant Resources
-- Download the source code for the COS XML Go SDK [here] (https://github.com/tencentyun/cos-wx-sdk-v5).
-- Download the demo [here] (https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
+- Download the source code for the COS XML Go SDK [here](https://github.com/tencentyun/cos-wx-sdk-v5).
+- Download the demo [here](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
 - For more information, see [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5).
+- Find all code samples for this SDK [here](https://github.com/tencentyun/cos-snippets/tree/master/Go).
 
 #### Environmental dependencies
 - Golang is used to download and install the Go operating environment; it can be downloaded from the Golang official website.

@@ -43,6 +43,10 @@ Currently, the feature covers the following COS events:
       <td nowrap="nowrap">cos:ObjectCreated:Origin</td>
       <td>Triggers the function when image origin-pull occurs</td>
    </tr>
+    <tr>
+      <td nowrap="nowrap">cos:ObjectCreated:Replication</td>
+      <td>Triggers the function when an object is created through cross-region replication</td>
+   </tr>
    <tr>
       <td>cos: ObjectRemove:*</td>
       <td>All deletion events mentioned below can trigger the SCF function</td>
@@ -54,6 +58,14 @@ Currently, the feature covers the following COS events:
    <tr>
       <td nowrap="nowrap">cos: ObjectRemove:DeleteMarkerCreated</td>
       <td>Deleting an object via the Delete Object API from a bucket for which versioning is enabled or suspended</td>
+   </tr>
+  <tr>
+      <td nowrap="nowrap">cos:ObjectRestore:Post</td>
+      <td>Triggers the function when an ARCHIVE restoration job is created</td>
+   </tr>
+    <tr>
+      <td nowrap="nowrap">cos:ObjectRestore:Completed</td>
+      <td>Triggers the function when an ARCHIVE restoration job is completed</td>
    </tr>
 </table>
 

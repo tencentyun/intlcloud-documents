@@ -12,7 +12,9 @@
 - セキュリティグループのポート設定に問題がない場合、 [次へ](#step07)を実行してください。
  
 ###  ステップ2： sshd サービスポートを確認する
-1. <span id="step07">[ VNC を介して Linux インスタンスにログインします](https://cloud.tencent.com/document/product/213/35701)。</span>
+1. <span id="step07">[ VNC を介して Linux インスタンスにログインします](https://intl.cloud.tencent.com/document/product/213/32494)。</span>
+>?リモートログインまたはその他の方法を使用してインスタンスにログインできない場合は、VNCを使用してインスタンスにログインし、インスタンスのステータスを監視し、問題のトラブルシューティングを行うことができます。
+>
 2. OSのインターフェースで、下記のコマンドを実行し、ポートがSSHDサービスによってリッスンされているかどうかを確認します。
 ```
 netstat -tnlp | grep sshd

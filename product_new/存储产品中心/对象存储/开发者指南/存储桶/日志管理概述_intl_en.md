@@ -42,7 +42,8 @@ The log is generated every 5 minutes, one record is a row, each record contains 
 | 30 | referer | Origin server address | `*.example.com` or 111.111.111.1 |
 | 31       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
-> - The log management feature is currently only available in four regions including Beijing, Shanghai, Guangzhou, Chengdu and Toronto. 
+>!
+> - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
 > - The log management feature requires the source bucket and destination bucket to be in the same region.
 > - The destination bucket for storing the logs can be the source bucket itself, but this is not recommended.
 > - Currently, logs will be generated only when the bucket is accessed through XML APIs and XML API-based SDKs or tools, not via JSON APIs or JSON API-based SDKs or tools.
