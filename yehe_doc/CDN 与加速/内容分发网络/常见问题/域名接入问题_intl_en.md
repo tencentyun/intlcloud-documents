@@ -74,7 +74,7 @@ Origin domain is the website domain name accessed on the origin server during or
 
 ### How do I tell whether CDN has taken effect?
 
-Ping the domain name and view the returned result. If `cdntip.com`and `ovscdns.com` are displayed in the returned result, CDN connection has succeeded.
+Ping the domain name and view the returned result. If `cdntip.com` or `ovscdns.com` is displayed in the returned result, CDN connection has succeeded.
 ### What should I do if files cannot be downloaded from CDN?
 
 If files cannot be downloaded from CDN, we recommend you troubleshoot using the following methods:
