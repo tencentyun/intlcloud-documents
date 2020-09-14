@@ -13,7 +13,7 @@ The TPNS SDK for Android provides the following two methods to get the vendor ch
 - Method 1. Filter application execution logs by the keyword `OtherPush` to find the logs similar to the following ones in order to locate the return code for vendor channel registration:
    ```
    // Huawei channel
-   // If no return codes can be found with the keyword `OtherPush`, try `HMSSDK`.
+   // If no return codes can be found with the keyword `OtherPush`, try `HMSSDK`, and see return codes of `onResult ` or `onConnect`.
    [OtherPushHuaWeiImpl] other push huawei onConnect code:907135702
    
    // Mi channel
@@ -138,15 +138,10 @@ You can view the specific meaning of return codes in the official documentation 
 <tr>
  </tbody></table>
  
-
-   
-
 ### Other troubleshooting measures
 - **Enable the push service on the Huawei Push platform for Huawei Push**
 If you cannot get the Huawei token on the Huawei device, but the return code for vendor push channel registration is 0, please go to [Huawei Push](https://developer.huawei.com/consumer/cn/), enter the **Development** > **Push Service** page to check whether the push service for the application is enabled, and enter the **Development** > **Project Settings** > **API Management** page to check whether `Push Kit` and `App Messaging` are enabled.
 The push service page is as shown below:
-
-The API management page is as shown below:
 
 - **Enable the push service on the Mi Push platform for Mi Push**
 If you cannot find the return code for Mi channel registration, please go to **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Operation Platform** and check whether the message push service for the application is enabled.
@@ -159,4 +154,17 @@ Go to **[Vivo Open Platform](https://dev.vivo.com.cn/home)** > **Push Operation 
 
 >?It takes about 5 minutes for the push service of some vendors to take effect after being enabled. If the registration still fails after the push service is enabled, please wait a while and try again.
 
+- **Huawei Mobile Services version is too old**
+Search for log keyword "HMSSDK". If you see the value of `connect versionCod` is lower than that of `connect minVersion`, it indicates that the system uses an earlier "Huawei Mobile Services" or "HMS_Core" version. Please try to register again after upgrading.
+```plaintext
+I/HMSSDK_HuaweiApiClientImpl: ====== HMSSDK version: 20601301 ======
+I/HMSSDK_HuaweiApiClientImpl: Enter connect, Connection Status: 1
+E/HMSSDK_Util: In getHmsVersion, Failed to read meta data for the HMS VERSION.
+I/HMSSDK_HuaweiApiClientImpl: connect minVersion:20600000
+I/HMSSDK_HuaweiMobileServicesUtil: connect versionCode:20301306
+D/HMSAgent: connect end:-1001
+```
 
+
+- **Vivo Push is not supported**
+Vivo Push is only available in later models and systems. For more information, see [Vivo Push FAQs](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
