@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th style="text-align:center;" width="180px"><b>Android<br></b>Code Scanning via Browser</th>
-    <th style="text-align:center;" width="180px"><b>iOS</b><br>Installation Password: 123</th>
+    <th style="text-align:center;" width="180px"><b>iOS</b></th>
     <th style="text-align:center;" width="180px"><b>Mini Program</b></th>
     <th style="text-align:center;" width="180px"><b>Live-Streaming E-commerce Scenarios on Mini Programs</b></th>
     <th style="text-align:center;" width="180px"><b>Web</b></th>
