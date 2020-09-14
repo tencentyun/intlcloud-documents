@@ -14,8 +14,8 @@ The instance data has been backed up. For backup directions, please see [Backing
 1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance management page.
 2. Select the **Backup and Restore** tab, select the backup you want to restore, and click **Restore Instance**.
 3. In the pop-up dialog box, enter the instance password and click **OK**.
->The password to be entered here is the instance password you set rather than the connection password in the format of "Instance ID:instance password" used for instance access.
+>!The password to be entered here is the instance password you set rather than the connection password in the format of "Instance ID:instance password" used for instance access.
 >
-
+![](https://main.qcloudimg.com/raw/744576140f7f9c204e5c1ef275de22e5.png)
 4. Return to the instances. The status of the instance is displayed as **Restoring backup by backup ID**. After the status changes to **Running**, it can be used normally.
 
