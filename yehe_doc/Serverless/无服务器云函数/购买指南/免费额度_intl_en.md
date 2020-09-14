@@ -6,7 +6,7 @@ SCF users are entitled to a certain free tier of resources and invocations each 
 
 | Billable Item | Monthly Free Tier | 
 | ---- | ------ | 
-| Resources | 400,000 GB | 
+| Resources | 400,000 GB-s | 
 | Invocations | 1 million | 
 
 The table below lists monthly free running durations for SCFs configured with different memories:

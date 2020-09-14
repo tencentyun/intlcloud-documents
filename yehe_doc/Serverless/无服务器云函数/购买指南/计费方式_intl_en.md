@@ -52,13 +52,13 @@ SCF fees will be incurred by actual loading and execution of function code. If t
 
 **Resource usage fees = (resource usage - free tier) * resource usage unit price**
 
-### Resource usage in GBs
+### Resource usage in GB-s
 
 **Resource usage = memory configured for function * execution duration**
 
-Resource usage is calculated by multiplying the memory configured for function by the billable function execution duration. Here, the configured memory is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GBs**.
+Resource usage is calculated by multiplying the memory configured for function by the billable function execution duration. Here, the configured memory is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GB-s**.
 
-For example, if a function with 256 MB memory configured is executed for 1760 ms, then the billable duration is 1760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GBs.
+For example, if a function with 256 MB memory configured is executed for 1760 ms, then the billable duration is 1760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GB-s.
 
 Resource usage will be calculated for each function execution and aggregated in each hour as the hourly resource usage.
 >

@@ -4,7 +4,7 @@ Users who have opened SCF service can enjoy certain amount of free resource usag
 
 | Billing Item | Monthly Free Quota                               |
 | -------- | --------------------------------------- |
-| Resource Usage | 400K GBs|
+| Resource Usage | 400K GB-s|
 | Number of Invocations | 1 Million invocations|
 
 ## Billing Modes and Items
@@ -13,7 +13,7 @@ SCF is billed on an hourly basis in a post-paid mode in USD.
 
 The SCF bill consists of the following three parts and each part is calculated in a specific method based on the collected data. The calculated amount is in USD and rounded to 0.01：
 
-* Resource usage fee: Memory configured * running time, in GBs.
+* Resource usage fee: Memory configured * running time, in GB-s.
 * Fee for number of invocations: Every time the function is triggered and executed, it is counted as one invocation.
 * Fee for public network outbound traffic: The traffic generated in accessing external network resources from SCF is counted as outbound traffic in GB.
 
@@ -23,7 +23,7 @@ For more detials, please see [Billing Methods](/document/product/583/12284).
 
 For the pricing of the three parts of SCF fee, please see below:
 
-* Resource usage fee: 0.0000167 USD/GBs
+* Resource usage fee: 0.0000167 USD/GB-s
 * Fee for number of invocations: 0.002 USD/10k invocations
 * Fee for public network outbound traffic: The price per GB varies depending on each region. 0.12 USD/GB in mainland China.
 
@@ -46,7 +46,7 @@ The table below lists the supported regions of SCF:
 <td>North China (Beijing)</td><td>ap-beijing</td>
 </tr>
 <tr>
-<td>Southwest (Chengdu)</td><td>ap-chengdu</td>
+<td>Southwest China (Chengdu)</td><td>ap-chengdu</td>
 </tr>
 <tr>
 <td>Hong Kong/Macao/Taiwan, China region (Hong Kong, China)</td><td>ap-hongkong</td>
