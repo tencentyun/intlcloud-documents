@@ -5,7 +5,7 @@
 The Huawei push channel is a system-level push channel **officially provided by Huawei**. On a Huawei phone, push messages can be delivered through Huawei's system channel without opening the application.
 
 
->
+>!
 >- This document is only applicable to Huawei channel V2 integration. For the V4 integration, see [Huawei Channel V4 Integration](https://intl.cloud.tencent.com/document/product/1024/37176).
 >- Huawei Push can only receive push messages in a signed package environment.
 >- The Mobile Push Service on the Huawei phone must be upgraded to 2.5.3 or above; otherwise, the Huawei channel registration will fail and the TPNS channel will be used.
@@ -42,7 +42,7 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
  implementation 'com.tencent.tpns:huawei:[VERSION]-release'// Huawei Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
 ```
 
-
+>? Huawei Push [VERSION] refers to the SDK version number, which can be viewed on the [SDK download page](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
 #### Integrating through Eclipse
@@ -123,7 +123,7 @@ I/XINGE: [XGOtherPush] other push token is : 0865551032618726300001294600CN01 ot
 -keep class com.huawei.android.hms.agent.**{*;}
 
 ```
->Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
+>?Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
 
 ## Arrival Receipt Configuration for Huawei Channel
 The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Configuration Guide](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
