@@ -93,7 +93,9 @@
 ### 录制示例
 - 最简单的情况，只需填写指定的 StreamName、DomainName、AppName 和 EndTime 参数。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 FLV，视频录制，分片间隔30分钟，永久存储。
-**输入示例：**
+
+**输入示例**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -107,7 +109,9 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 - 您还可以指定具体录制格式、录制类型以及存储参数等。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
 	1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
-**输入示例：**
+
+**输入示例**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -117,7 +121,9 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<公共请求参数>
 ```
-**输出示例：**
+
+**输出示例**
+
 ```
 {
   "Response": {
@@ -127,7 +133,9 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 }
 ```
 	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
-**输入示例：**
+
+**输入示例**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 &StreamName=livetest
