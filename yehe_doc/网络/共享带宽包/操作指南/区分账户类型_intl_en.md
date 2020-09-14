@@ -1,9 +1,8 @@
- 
-You can only sign up for a bill-by-IP account after June 17, 2020 00:00:00. If you’ve already signed up, go to the console to check your account type.
+ All Tencent Cloud accounts registered after June 17, 2020 00:00:00 will be bill-by-IP accounts. For Tencent Cloud accounts registered before June 17, 2020, check your account types in the console.
 
-1. Log in to the [EIP Console](https://console.cloud.tencent.com/cvm/eip?rid=1).
-2. Check the fields of the list:
+1. Log in to [EIP Console](https://console.cloud.tencent.com/cvm/eip?rid=1).
+2. Check if there is a prompt message at the top of the **EIP** page, as shown below.
+ - If no, you have a bill-by-IP account.
+ - If yes, you have a bill-by-CVM account.
+![](https://main.qcloudimg.com/raw/f37a94b03196a0454c5ed219a1af552e.png)
 
- - If the **Bandwidth** information does not exist, you have a bill-by-CVM account. In this case, you can only purchase **device bandwidth packages**.
- - If you can see the **Bandwidth** information, you have a bill-by-IP account. In this case, you can only purchase **IP bandwidth packages**.
-   ![](https://main.qcloudimg.com/raw/5a0c24c3e886b9f09b373a1450058750.png)
