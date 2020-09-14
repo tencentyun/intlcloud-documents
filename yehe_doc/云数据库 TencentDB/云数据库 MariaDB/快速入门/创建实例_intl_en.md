@@ -1,7 +1,7 @@
 This document describes how to create an instance in the TencentDB for MariaDB Console.
 
 ## Directions
-1. Go to the MariaDB purchase page, specify the instance information based on your needs and click **Buy Now**.
+1. Log in to [MariaDB purchase page](https://console.cloud.tencent.com/mariadb/buy), specify the instance information based on your needs and click **Buy Now**.
  - Billing mode: only pay-as-you-go is supported.
  - Region: select a region where the instance will be deployed. We recommend that you use the same region as the CVM instance to be connected to.
  - Availability zone: physical IDCs whose electric power facilities and networks are independent from each other within the same region. We recommend that you use the same availability zone as the CVM instance to be connected to.
@@ -13,5 +13,5 @@ This document describes how to create an instance in the TencentDB for MariaDB C
  - Project: if different databases need to be managed by different teams, please specify projects accordingly.
  - Quantity: this represents the number of instances that can be purchased at a time. To avoid faulty operations, an upper limit has been set for this parameter. If you want to purchase more instances, please make multiple purchases.
 2. Verify all the information is correct on the pop-up window and click **Buy Now** to purchase.
-3. You will be returned to the instance list after purchase. Wait for the instance status to be created. When the status changes to **Uninitialized**, you can initialize the instance.
+3. You will be returned to the MariaDB instance list after purchase. Wait for the instance status to be created. When the status changes to **Uninitialized**, you can initialize the instance.
 
