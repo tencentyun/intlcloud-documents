@@ -82,7 +82,7 @@
 
 | 播放器类型 | SDK 下载地址 | 使用文档 |
 | -- | -- | -- |
-| 超级播放器 | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://cloud.tencent.com/document/product/266/14424#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://cloud.tencent.com/document/product/266/14424)</li> |
+| 超级播放器 | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
 
 
 ### 能力清单<span id="p1"></span>
