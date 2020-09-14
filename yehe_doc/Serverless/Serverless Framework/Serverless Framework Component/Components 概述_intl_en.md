@@ -13,9 +13,9 @@ The deployment of most serverless components is about 20 times faster than tradi
 
 ### Serverless Framework Components Best Practices
 
-- [@serverless/tencent-scf](https://github.com/serverless-components/tencent-scf/master/v2/) - SCF component
-- [@serverless/tencent-express](https://github.com/serverless-components/tencent-express/master/v2/) - Component used to quickly deploy Express.js-based backend services in SCF
-- [@serverless/tencent-website](https://github.com/serverless-components/tencent-website/master/v2/) - Component used to quickly deploy static websites in SCF
+- [@serverless/tencent-scf](https://github.com/serverless-components/tencent-scf/master) - SCF component
+- [@serverless/tencent-express](https://github.com/serverless-components/tencent-express/master) - Component used to quickly deploy Express.js-based backend services in SCF
+- [@serverless/tencent-website](https://github.com/serverless-components/tencent-website/master) - Component used to quickly deploy static websites in SCF
 
 
 ### Supported Serverless Components
