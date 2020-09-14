@@ -42,7 +42,6 @@ The business type determines the resource platform to be scheduled by the domain
 - Static acceleration: suitable for static resource acceleration scenarios such as ecommerce, websites, and gaming images.
 - Download acceleration: suitable for scenarios such as game installations, audio/video downloads, and mobile phone firmware package distribution.
 - Streaming VOD acceleration: suitable for audio/video on demand acceleration scenarios.
-- LVB acceleration: suitable for live video broadcast and interactive live video broadcast acceleration scenarios.
 
 ### How do I modify the project of a CDN domain name?
 
@@ -75,7 +74,7 @@ Origin domain is the website domain name accessed on the origin server during or
 
 ### How do I tell whether CDN has taken effect?
 
-Ping the domain name and view the returned result. If `cdntip.com` is displayed in the returned result, CDN connection has succeeded.
+Ping the domain name and view the returned result. If `cdntip.com`and `ovscdns.com` are displayed in the returned result, CDN connection has succeeded.
 ### What should I do if files cannot be downloaded from CDN?
 
 If files cannot be downloaded from CDN, we recommend you troubleshoot using the following methods:
