@@ -43,3 +43,11 @@ No, WAF won’t automatically add an intermediate IP range to a security group. 
 ### If the uploaded files are blocked, will they still be blocked with HTTPS or SFTP?
 
 They won’t be blocked if WAF is disabled. However, if you enable block mode in WAF, it blocks malicious files uploaded with HTTP or HTTPS, but does not block any files uploaded with SFTP, a non-HTTP or -HTTPS protocol beyond protection of WAF.
+
+### Do SaaS WAF and CLB WAF support SSL mutual authentication?
+CLB WAF supports SSL mutual authentication, while SaaS WAF does not.
+
+### Which cipher suites are supported by SaaS WAF and CLB WAF?
+- SaaS WAF does not support SSL cipher suite settings.
+- CLB WAF supports the following cipher suite.
+ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-CHACHA20-POLY1305:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128:AES256:AES:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK
