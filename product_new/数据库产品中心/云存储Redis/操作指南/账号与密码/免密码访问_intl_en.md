@@ -1,6 +1,6 @@
 TencentDB for Redis supports both password-enabled and password-free access.
 
-
+>?
 >- For the sake of data security, you are not recommended to enable password-free access.
 >- After password-free access is enabled, you are recommended to limit the number of accessing servers using a security group.
 
