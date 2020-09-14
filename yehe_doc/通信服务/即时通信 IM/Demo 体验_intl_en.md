@@ -23,5 +23,4 @@
 </table>
 
 
->?
->- For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).
+>?For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).
