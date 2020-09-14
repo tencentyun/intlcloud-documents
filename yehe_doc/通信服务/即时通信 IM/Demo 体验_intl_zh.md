@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th style="text-align:center;" width="180px"><b>Android<br></b>使用浏览器扫码</th>
-    <th style="text-align:center;" width="180px"><b>iOS</b><br>安装密码：123</th>
+    <th style="text-align:center;" width="180px"><b>iOS</b></th>
     <th style="text-align:center;" width="180px"><b>小程序</b></th>
     <th style="text-align:center;" width="180px"><b>小程序直播电商场景</b></th>
     <th style="text-align:center;" width="180px"><b>Web</b></th>
@@ -22,3 +22,4 @@
   </tr>
 </table>
 
+>?想了解更多 Demo 相关信息，请参见 [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/34553)。

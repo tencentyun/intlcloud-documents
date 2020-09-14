@@ -3,12 +3,12 @@
 vivo 通道是由 vivo 官方提供的系统级推送通道。在 vivo 手机上，推送消息能够通过 vivo 的系统通道抵达终端，并且无需打开应用，即可收到推送，更多详情请参见 [vivo 推送官网](https://dev.vivo.com.cn/home)。
 
 >?
-- 如遇到 debug 版本点击通知后无法拉起 App，请在权限设置中找到后台弹出界面，并开启当前应用的权限开关。
-- vivo 通道暂不支持应用内消息，此类型的消息将通过 TPNS 通道下发。
-- vivo 通道对应用的每日推送量有额度限制，详情请参见 [厂商通道限额说明](https://intl.cloud.tencent.com/zh/document/product/1024/35829)，超过限制部分将走 TPNS 通道进行补推发送。
-- vivo 通道7:00 - 23:00允许推送消息，其他时间只能推送系统消息，系统消息申请详情请参见 [vivo 系统消息申请指南](https://intl.cloud.tencent.com/zh/document/product/1024/36250#vivozhinan)。
-- vivo 通道单应用单用户每天接收运营消息条数上限为5条，系统消息不限接收条数。
-- vivo 通道仅支持部分较新的机型和对应的系统及以上系统，详情请参见 [vivo 推送常见问题汇总](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733)。
+>- 如遇到 debug 版本点击通知后无法拉起 App，请在权限设置中找到后台弹出界面，并开启当前应用的权限开关。
+>- vivo 通道暂不支持应用内消息，此类型的消息将通过 TPNS 通道下发。
+>-  vivo 通道对应用的每日推送量有额度限制，详情请参见 [厂商通道限额说明](https://intl.cloud.tencent.com/zh/document/product/1024/35829)，超过限制部分将走 TPNS 通道进行补推发送。
+>-  vivo 通道7:00 - 23:00允许推送消息，其他时间只能推送系统消息，系统消息申请详情请参见 [vivo 系统消息申请指南](https://intl.cloud.tencent.com/zh/document/product/1024/36250#vivozhinan)。
+>-  vivo 通道单应用单用户每天接收运营消息条数上限为5条，系统消息不限接收条数。
+>- vivo 通道仅支持部分较新的机型和对应的系统及以上系统，详情请参见 [vivo 推送常见问题汇总](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733)。
 
 
 ## 操作步骤

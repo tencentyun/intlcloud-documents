@@ -18,7 +18,7 @@ JCenter is recommended for dependency import for AS development. Import the Jar 
 implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
 ```
 
-
+>? Xiaomi Push [VERSION] refers to the SDK version number, which can be viewed on the [SDK download page](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
 #### Integrating through Eclipse

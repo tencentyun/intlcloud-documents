@@ -5,7 +5,7 @@ This document describes how to quickly install Serverless Framework through [bin
 ### Method 1. Binary installation
 
 If Node.js is not installed in your local environment, you can install it directly in binary mode:
->!You are recommended to use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
+>!Starting from September 1, 2020, Node.js10.0 or earlier versions are no longer supported on Serverless. Upgrade it as needed.
 
 #### macOS/Linux 
 

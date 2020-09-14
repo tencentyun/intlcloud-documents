@@ -13,7 +13,7 @@ After successfully configuring the arriving data display feature, you can view t
 | Vivo channel | Yes               | No           |
 | FCM channel | Yes | No |
 
->Vendor channel arrival receipt data is for reference only.
+>?Vendor channel arrival receipt data is for reference only.
 
 ## Receipt Configuration Guide for Huawei Channel
 
@@ -32,9 +32,24 @@ After integrating the SDK for Huawei Channel, you need to activate and configure
 
 1. Configure the message receipt address. Please view the service access point of your application in the [TPNS Console](https://console.cloud.tencent.com/tpns) and select the receipt address of the corresponding service access point for configuration:
 ![](https://main.qcloudimg.com/raw/ccdcd39ece57703af3106fa756f98991.png)
- - Service access point in Guangzhou: https://api.tpns.tencent.com/log/statistics/hw
- - Service access point in Hong Kong (China): https://api.tpns.hk.tencent.com/log/statistics/hw
- - Service access point in Singapore: https://api.tpns.sgp.tencent.com/log/statistics/hw
+<table>
+ <tbody><tr>
+ <th>Service access point</th>
+ <th>Callback address</th> 
+ </tr>
+ <tr>
+ <td >Service access point in Guangzhou</td>
+ <td>https://stat.tpns.tencent.com/log/statistics/hw</td>
+ </tr>
+ <tr>
+ <td>Service access point in Hong Kong (China)</td>
+ <td>https://stat.tpns.hk.tencent.com/log/statistics/hw</td>
+ </tr>
+ <tr>
+ <td>Service access point in Singapore</td>
+ <td>https://stat.tpns.sgp.tencent.com/log/statistics/hw</td>
+ </tr>
+ </tbody></table>
 2. Configure the HTTPS certificate. Click [here](https://api.tpns.tencent.com/v3/tpnscert/download) to download it.
 3. Configure the username and key (optional) for authentication.
 4. Click **Test Receipt** to test the receipt address.
@@ -46,7 +61,7 @@ After integrating the SDK for Huawei Channel, you need to activate and configure
 ## Receipt Configuration Guide for Meizu Channel
 
 After integrating the SDK for Meizu Channel, you need to create a receipt on the Flyme push platform and activate it in the TPNS Console before the arrival data for the Meizu channel can be obtained. The configuration steps are as follows:
->You need to complete both the following steps; otherwise, delivery through the Meizu channel may fail.
+>!You need to complete both the following steps; otherwise, delivery through the Meizu channel may fail.
 
 ### Configuring receipt
 
@@ -54,14 +69,36 @@ After integrating the SDK for Meizu Channel, you need to create a receipt on the
 2. On the push notification page, click **Configuration Management** > **Receipt Management**.
 3. Enter the receipt address in **Create Receipt**. Please view the service access point of your application in the [TPNS Console](https://console.cloud.tencent.com/tpns) and select the receipt address of the corresponding service access point for configuration:
 ![](https://main.qcloudimg.com/raw/a7940ac0e3a6d8c68523cce9d8483d22.png)
- - Service access point in Guangzhou: https://api.tpns.tencent.com/log/statistics/mz
- - Service access point in Hong Kong (China): https://api.tpns.hk.tencent.com/log/statistics/mz
- - Service access point in Singapore: https://api.tpns.sgp.tencent.com/log/statistics/mz
+<table>
+ <tbody><tr>
+ <th>Service access point</th>
+ <th>Callback address</th> 
+ </tr>
+ <tr>
+ <td rowspan="2">Service access point in Guangzhou</td>
+ <td>https://api.tpns.tencent.com/log/statistics/mz</td>
+ </tr>
+ <tr>
+ <td>https://stat.tpns.tencent.com/log/statistics/mz</td> 
+ </tr>
+ <tr>
+ <td>Service access point in Hong Kong (China)</td>
+ <td>https://stat.tpns.hk.tencent.com/log/statistics/mz</td>
+ </tr>
+ <tr>
+ <td>Service access point in Singapore</td>
+ <td>https://stat.tpns.sgp.tencent.com/log/statistics/mz </td>
+ </tr>
+ </tbody></table>
+  
+  >! Both callback addresses for service access point in Guangzhou are required.
 4. After entering the receipt address, click **Add** on the right, and if the newly created receipt is correctly displayed in the **Receipt List**, the configuration is successful.
 
 ### Activating receipt
 1. Go to the [Product Management](https://console.cloud.tencent.com/tpns) page, select the application to be activated, and click **Configuration Management**.
 ![](https://main.qcloudimg.com/raw/7ac8c31f122ae267796672f50a10b55f.png)
 2. On the configuration management page, click the edit icon in **Vendor Channel** > **Meizu Official Push Channel**.
+![](https://main.qcloudimg.com/raw/f12fc508aca29874b4d70afdc365b6c8.png)
 3. On the Meizu official push channel editing page, activate the application as prompted.
+![](https://main.qcloudimg.com/raw/6c6c40c0f4867e118b54ebdb7083a7f9.png)
 
