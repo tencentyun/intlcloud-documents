@@ -1,5 +1,5 @@
 
-The pay-as-you-go pricing for Tencent Cloud **Standard S3** CVMs in Silicon Valley region has been updated as follows:
+The pay-as-you-go pricing for Tencent Cloud **Standard S3** CVMs in the Silicon Valley region has been updated as follows:
 
 <table>
 <thead>
@@ -21,5 +21,5 @@ The pay-as-you-go pricing for Tencent Cloud **Standard S3** CVMs in Silicon Vall
 ## Notes
 
 - The updated price takes effect on July 24, 2020.
-- This document is for the price adjustment purpose. For the specific estimated price, use [CVM Price Calculator](https://buy.cloud.tencent.com/calculator/cvm).
+- This document describes the price adjustments. For specific prices, use the [CVM Price Calculator](https://buy.cloud.tencent.com/calculator/cvm).
 - For any questions, please [contact us](https://intl.cloud.tencent.com/support).
