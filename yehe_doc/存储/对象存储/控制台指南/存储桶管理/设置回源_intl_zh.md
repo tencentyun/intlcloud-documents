@@ -12,7 +12,7 @@
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面。单击需要设置回源的存储桶，进入存储桶详情页。
 
 2. 单击左侧菜单栏中的【基础配置】>【回源设置】配置项，然后单击【添加回源规则】。
-   ![](https://main.qcloudimg.com/raw/7c7625753ad3c0c34dee7eb901bc9184.png)
+   ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. 按照以下配置项说明进行配置，最后单击【保存】即可。
  - **回源条件**：可按需求选择触发回源的条件，触发回源需同时满足配置的所有回源条件。
     - **HTTP 状态码**：当前仅支持条件为 HTTP 状态码404时触发回源，该项为必选且不可取消。
@@ -38,9 +38,9 @@ abc.example.com:8080
  - **3xx 跟随策略**：开启后，当源站返回了 3XX 重定向状态码时，COS 的默认处理策略为跟随 3XX 再次到另一个源站拉取数据，选择**关闭**则不会拉取资源。
  - **回源参数**：指定是否将访问 COS 时携带的请求参数透传到源站。
  - **回源头部**：COS 在访问您的源站时，可携带您指定的新增头部进行访问。当前最多支持新增10个自定义头部。 
-   ![](https://main.qcloudimg.com/raw/5ba7301bb6f2bee44f9e8ce49f29d4ed.png)
+   ![](https://main.qcloudimg.com/raw/0049d66f20bd79f4edb673cb8c8c7185.png)
 4. 当您添加完规则后，系统将为您的新规则分配最高优先级；COS 将按照最高优先级的规则回源；此外您也可以在规则列表页面，单击修改按钮调整优先级。
-![](https://main.qcloudimg.com/raw/1b758c71412a588cdb2d909a2b21f89a.png)
+![](https://main.qcloudimg.com/raw/3fa148b2e43f30fb891adee75ff255db.png)
 
 
 ## 示例
