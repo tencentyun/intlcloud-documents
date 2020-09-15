@@ -22,7 +22,7 @@ The two CCN billing modes are as follows:
 <td align="left">Stable bandwidth</td>
 </tr>
 <tr>
-<td align="left">pay-as-you-go by monthly 95th percentile</td>
+<td align="left">Pay-as-you-go by monthly 95th percentile</td>
 <td align="left">Pay after use</td>
 <td align="left">USD/month. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days</td>
 <td align="left">More expensive</td>
@@ -45,7 +45,7 @@ The three CCN service levels are as follows:
 >- This price comparison is for reference only. Please refer to the actual prices.
 
 
-## Monthly subscription
+## Monthly Subscription
 Pay for the fixed bandwidth (by the month) before use. The unit price of monthly subscription is lower than that of pay-as-you-go by monthly 95th percentile. Monthly subscription is suitable for business that requires stable bandwidth.
 For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regions, you need to first pay for 10 Mbps of bandwidth.
 
@@ -110,7 +110,7 @@ Suppose your CCN (service level: gold) is associated with network instances in G
 The total amount of prepaid fee is: 7,980 USD.
 ![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)
 
-## Pay-as-you-go by monthly 95th percentile
+## Pay-As-You-Go by Monthly 95th Percentile
 Pay after use. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days. Monthly pay-as-you-go is suitable for business with large bandwidth fluctuations.
 For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regions but also a bandwidth burst of 30 Mbps. We recommend using pay-as-you-go by monthly 95th percentile because you may only need to pay for 10 Mbps of bandwidth after the top 5% is removed.
 ### Billing Cycle
