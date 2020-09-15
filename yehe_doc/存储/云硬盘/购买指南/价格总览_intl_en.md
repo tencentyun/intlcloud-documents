@@ -4,8 +4,8 @@
 	<tbody>
 		<tr>
             <th style="width: 10%;" rowspan="2">CBS Price Overview</th>
-            <th style="width: 50%;" colspan="2">Pay-as-You-Go Price (Unit: $USD/GB * hour)</th>
-            <th style="width: 50%;" colspan="2">Monthly Subscription Price (Unit: $USD/GB * month)</th>
+            <th style="width: 50%;" colspan="2">Pay-as-You-Go Price (Unit: USD/GB/hour)</th>
+            <th style="width: 50%;" colspan="2">Monthly Subscription Price (Unit: USD/GB/month)</th>
      </tr>
       <tr>
                 <th>Premium Cloud Storage</th>
