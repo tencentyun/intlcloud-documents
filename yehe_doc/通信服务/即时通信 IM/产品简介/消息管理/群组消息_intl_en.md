@@ -26,7 +26,7 @@ Group ID and SEQ together constitute the unique identifier of a message.
 | Audio | Audio data must include the duration in seconds. |
 | Location | The message content contains the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 28 MB. |
-| Short video | The message content includes the URL, duration, size, and format of the short video. The maximum supported file size is 28 MB. |
+| Short video | The message includes the URL, duration, size, and format of the short video. The message size cannot exceed 28 MB. |
 | Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
