@@ -15,7 +15,8 @@ Billing for the data subscription service officially started on March 19, 2020. 
 Your subscription service will be isolated after expiration, which will affect your normal business. Please follow Tencent Cloud notifications and renew the service in time.
 
 ### Billing Mode
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 | Billing Mode | Payment Mode | Use Case | 
 |---------|---------|---------|
 | Monthly subscription | Fees are prepaid when a subscription instance is created. | <li>Suitable for businesses with long-term stable needs as the rates are lower than the pay-as-you-go option. Longer-term purchases result in increased savings.<li>Monthly subscription cannot be changed to pay-as-you-go. | 
@@ -35,3 +36,6 @@ Suppose a subscription instance generates X GB data in one month and pulls Y GB 
 **Total fees = Linkage configuration fee + Data storage fee * X + Public network traffic fee * Y**
 
 Currently, data storage and public network traffic are free of charge.
+
+## DTS-DBbridge
+DTS-DBbridge can be purchased offline. Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a trial license for testing. If you need to purchase an official license, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and we will get back to you.
