@@ -10,7 +10,7 @@ Currently, RIs are only offered to allowed users. To use it, go to RI beta page 
 2. Click **Reserved Instance** on the left sidebar to enter the management page.
 3. Click **Create Reserve Instance** to purchase RIs.
 
-![image-20200909172355330](https://main.qcloudimg.com/raw/177994b324f9224833a5209800012a7d.png)
+![image-20200909172355330](https://main.qcloudimg.com/raw/f604c27f8faeded74797d78d66ada9c2.png)
 
 4. Configure the following information as prompted by the page:
 
@@ -27,4 +27,4 @@ Currently, RIs are only offered to allowed users. To use it, go to RI beta page 
 
 5. Click **Purchase Now** and complete the payment. Then you can visit [Reserved Instance](https://console.cloud.tencent.com/cvm/reservedinstances/) console to query, search and manage your RIs. On this page, you can click **Create Instance** to create CVM instances, or click **View Bill** to see RI discount details.
 
-   ![image-20200909173059650](https://main.qcloudimg.com/raw/38aafbaf0f9b46676f49d025920dbca7.png)
+   ![image-20200909173059650](https://main.qcloudimg.com/raw/86912bb5b8ceabbb071fbb6cfa06cadf.png)

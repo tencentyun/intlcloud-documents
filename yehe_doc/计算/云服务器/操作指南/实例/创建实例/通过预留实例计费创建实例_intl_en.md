@@ -11,7 +11,7 @@ Your account already has RIs in the same region/availability zone as the CVM ins
 2. Click **Reserved Instance** on the left sidebar to enter the management page.
 3. Select the target region, locate the reserved instance from which you want to create CVM instances, and click **Create Instance** to enter the CVM purchase page.
 
-![image-20200909173349604](https://main.qcloudimg.com/raw/b334d2d61be1b407d8d796f86a98955e.png)
+![image-20200909173349604](https://main.qcloudimg.com/raw/1a9a8900c83d99329f9317427a539989.png)
 
 4. Complete instance configurations as prompted by the page.
 The **Region**, **Availability Zone** and **Instance** fields are automatically filled. Complete the other configurations of the instance as needed. For more information, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).

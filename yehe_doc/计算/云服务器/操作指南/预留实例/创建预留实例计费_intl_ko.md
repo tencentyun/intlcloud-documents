@@ -10,7 +10,7 @@
 2. 왼쪽 메뉴의 [예약 인스턴스]를 클릭하여 예약 인스턴스 관리 페이지로 이동합니다.
 3. [예약 인스턴스 생성]을 클릭하여 예약 인스턴스 구매 페이지로 이동합니다.
 
-![image-20200909172355330](https://main.qcloudimg.com/raw/177994b324f9224833a5209800012a7d.png)
+![image-20200909172355330](https://main.qcloudimg.com/raw/f604c27f8faeded74797d78d66ada9c2.png)
 
 4. 페이지 안내에 따라 다음의 정보를 설정합니다.
 
@@ -27,4 +27,4 @@
 
 5. [즉시 구매]를 클릭해 결제를 완료합니다. 결제가 완료되면 [예약 인스턴스 리스트 페이지](https://console.cloud.tencent.com/cvm/reservedinstances/)로 이동해 예약 인스턴스를 조회, 검색, 관리할 수 있습니다. 또한, [인스턴스 생성]에서 예약 인스턴스를 통해 CVM을 생성할 수 있으며, [청구서 조회]에서 예약 인스턴스의 차감 명세를 확인할 수 있습니다.
 
-   ![image-20200909173059650](https://main.qcloudimg.com/raw/38aafbaf0f9b46676f49d025920dbca7.png)
+   ![image-20200909173059650](https://main.qcloudimg.com/raw/86912bb5b8ceabbb071fbb6cfa06cadf.png)
