@@ -11,5 +11,4 @@ TencentDB for Redis has a full range of custom alarms. When a metric exceeds the
  - Alarm Object: select the instance object that needs to be associated with.
  - Alarm Channel: set the recipient group and select the objects to receive SMS notifications.
 ![](https://main.qcloudimg.com/raw/e164f26773457a00ca7e153383f51390.png)
-4. After confirming that everything is correct, click **Complete**.
 
