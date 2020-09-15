@@ -10,7 +10,7 @@
 2.	左侧导航栏中，单击【预留实例】，进入预留实例计费管理页面。
 3.	单击【创建预留实例计费】，进入预留实例计费购买页面。
 
-![image-20200909172355330](https://main.qcloudimg.com/raw/177994b324f9224833a5209800012a7d.png)
+![image-20200909172355330](https://main.qcloudimg.com/raw/f604c27f8faeded74797d78d66ada9c2.png)
 
 4. 根据页面提示，配置以下信息：
 
@@ -27,4 +27,4 @@
 
 5. 单击【立即购买】，完成支付。当您付款完成后，即可进入[预留实例列表页面](https://console.cloud.tencent.com/cvm/reservedinstances/) 查看、搜索、管理您的预留实例计费。您可以点击【创建实例】来通过预留实例计费创建云服务器，也可以点击【查看账单】来查看预留实例计费的抵扣详情。
 
-   ![image-20200909173059650](https://main.qcloudimg.com/raw/38aafbaf0f9b46676f49d025920dbca7.png)
+   ![image-20200909173059650](https://main.qcloudimg.com/raw/86912bb5b8ceabbb071fbb6cfa06cadf.png)
