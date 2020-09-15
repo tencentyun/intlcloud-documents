@@ -16,6 +16,11 @@ Service access point in Singapore:
 ```plaintext
 https://api.tpns.sgp.tencent.com/v3/push/package/upload
 ```
+Service access point in Shanghai:
+
+```plaintext
+https://api.tpns.sh.tencent.com/v3/push/package/upload
+```
 
 **Feature**: This API is used to upload an account package.
 

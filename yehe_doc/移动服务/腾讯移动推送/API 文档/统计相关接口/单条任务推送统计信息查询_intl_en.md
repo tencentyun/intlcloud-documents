@@ -16,7 +16,10 @@ Service access point in Singapore:
 ```shell
 https://api.tpns.sgp.tencent.com/v3/statistics/get_push_task_stat_channel
 ```
-
+Service access point in Shanghai:
+```shell
+https://api.tpns.sh.tencent.com/v3/statistics/get_push_task_stat_channel
+```
 **Feature**: this API is used to query the detailed statistics for each push task, including all channel information and summary results. The channel types in pushStatDataAll will be changed based on their differences in terms of iOS/Android and push channels.
 
 
