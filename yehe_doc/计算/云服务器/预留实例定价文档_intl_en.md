@@ -695,7 +695,7 @@
 | Compute C3 | Frankfurt | Convertible 3-Year Term - partial upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $13,856.00 | $384.77   | $1.054           | 52%                     | $2.21            |
 | Compute C3 | Frankfurt | Convertible 3-Year Term - all upfront | Linux | USD  | C3.8XLARGE128 | 32   | 128  | $26,688.00 | $0.00     | $1.016           | 54%                     | $2.21            |
 
-## Hong Kong
+## Hong Kong (China)
 ### Standard S2
 
 | Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
