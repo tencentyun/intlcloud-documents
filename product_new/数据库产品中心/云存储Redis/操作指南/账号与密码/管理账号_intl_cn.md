@@ -17,4 +17,4 @@
 ## 操作步骤
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例名，进入实例管理页面。
 2. 在实例管理页面，选择【账号管理】页，在该页面可以执行创建账号、修改权限、重置密码、删除账号等操作。
-![](https://main.qcloudimg.com/raw/8b52744f649464719e095d6e764591a2.png)
+![](https://main.qcloudimg.com/raw/276fb5f3092f46c57d675b19d1a14962.png)

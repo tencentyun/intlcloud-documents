@@ -71,7 +71,7 @@ ICP비안 등록 완료 후 공업정보부의 정보 동기화 및 Tencent Clou
 
 ### CDN이 적용되었는지 어떻게 확인하나요?
 
-도메인 Ping으로 출력 결과 조회: 출력 결과에 `cdntip.com`이 출력되면 Tencent Cloud CDN 노드에 연결되었다는 뜻입니다.
+도메인 Ping으로 반환 결과 조회: `cdntip.com또는 ovscdns.com이 반환된다면  Tencent Cloud CDN 노드에 연결되었다는 뜻입니다.
 ![이미지 설명](https://main.qcloudimg.com/raw/657d4b219f99acc10b55cf9faabd9943.png)
 >? CDN은 전국 각지에 노드가 있어, Ping으로 CDN에 연결한 도메인이 가리키는 IP가 고정적이지 않는 게 정상입니다.
 
