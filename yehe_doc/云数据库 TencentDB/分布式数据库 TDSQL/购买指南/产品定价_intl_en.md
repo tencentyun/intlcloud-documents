@@ -3,7 +3,7 @@
 **Total fees = Instance fees + Backup capacity fees + Traffic fees**.
 **Instance fees = Node price x Number of nodes x Number of shards=(Node memory size x Memory price + Node disk size x Disk price) x Number of nodes x Number of shards**
 
->The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
+>?The number of nodes is the sum of primary and secondary instances. For example, 1 primary and 1 secondary are 2 nodes, and 1 primary and 2 secondaries are 3 nodes.
 
 #### Billable Items
 <table>
@@ -37,7 +37,8 @@
 
 
 ## Node Monthly Subscription Price (USD)
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 <table>
 <thead>
 <tr>
@@ -181,11 +182,11 @@
 
 ## Billing Examples
 
-**Monthly subscription**: suppose a user purchases 1 monthly subscription TDSQL instance with 2 nodes (1 master and 1 slave) in the Guangzhou region for 1 month, and each node has 2 GB memory, 500 GB disk capacity, and 2 shards.
+**Monthly subscription**: suppose a user purchases 1 monthly subscription TDSQL instance with 2 nodes (1 primary and 1 secondary) in the Guangzhou region for 1 month, and each node has 2 GB memory, 500 GB disk capacity, and 2 shards.
 The fees to be paid are calculated as follows:
 Instance fees = (Node memory size x Memory price + Node disk size x Disk price) x Number of nodes x Number of shards=(2 GB x 9.43 USD/GB/month + 500 GB x 0.06 USD/GB/month) x 2 nodes x 2 shards x 1 month = 195.44 USD
 	
-**Pay-as-you-go**: suppose a user purchases 1 pay-as-you-go TDSQL instance with 2 nodes (1 master and 1 slave) in the Beijing region for 400 hours, and each node has 2 GB of memory, 500 GB disk capacity, and 2 shards.
+**Pay-as-you-go**: suppose a user purchases 1 pay-as-you-go TDSQL instance with 2 nodes (1 primary and 1 secondary) in the Beijing region for 400 hours, and each node has 2 GB of memory, 500 GB disk capacity, and 2 shards.
 The fees to be paid are calculated as follows:
  - Tier 1 fee: (2 GB x 0.026194 USD/GB/hr + 500 GB x 0.000250 USD/GB/hr) x 2 nodes x 2 shards x 96 hours = 68.116992 USD
  - Tier 2 fee: (2 GB x 0.013097 USD/GB/hr + 500 GB x 0.000250 USD/GB/hr) x 2 nodes x 2 shards x 264 hours = 159.660864 USD
