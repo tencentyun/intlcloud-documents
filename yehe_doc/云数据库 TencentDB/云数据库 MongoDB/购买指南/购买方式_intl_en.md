@@ -2,7 +2,7 @@ TencentDB for MongoDB can be purchased in the console or through APIs.
 
 ## Purchase in Console
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click **Create Instance** to enter the purchase page.
-![](https://main.qcloudimg.com/raw/afe20b55be2e6a471a3e188bbb5addfd.png)
+![](https://main.qcloudimg.com/raw/24f2aa83ab3171731caeb975652b312b.png)
 2. Select various configuration items on the purchase page, confirm that everything is correct, and click **Buy Now**.
  - **Billing Mode**: pay-as-you-go is supported. For more information, please see [Billing Overview](https://intl.intl.cloud.tencent.com/document/product/240/3550).
  - **Region and AZ**: for more information, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/240/3637).
@@ -18,3 +18,6 @@ TencentDB for MongoDB can be purchased in the console or through APIs.
  - **Project**: you can select an appropriate project based on your business needs.
  - **Purchase Quantity**: a total of up to 30 pay-as-you-go instances can be purchased in all regions.
 3. After making the payment, return to the instance list, wait for the instance status to become **to be uninitialized**, and initialize the instance.
+
+## Purchasing via API
+For more information on how to purchase a TencentDB instance via API, please see [CreateDBInstanceHour](https://intl.cloud.tencent.com/document/product/240/34704).
