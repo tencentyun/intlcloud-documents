@@ -303,3 +303,10 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>-</td>
 </tr>
 </tbody></table>
+
+## FAQs
+- [Why does the stream mix after push return the error code 505?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [What happens if the applied stream mix is not canceled?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [Why does the assistant host image of the stream mix sometimes appear at the unexpected position?](https://intl.cloud.tencent.com/document/product/267/38255)
+
+>? For more questions about on-cloud stream mix, see [On-cloud Stream Mix FAQs](https://intl.cloud.tencent.com/document/product/267/38255)
