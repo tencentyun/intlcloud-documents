@@ -34,8 +34,9 @@ promise.then(function(imResponse) {
 This API is used to obtain standard profile fields and [Custom Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520).
 
 >
-> Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
-> If you have not configured any custom profile fields or you have configured custom profile fields but have not set the values, this API will not return custom profile information.
+>- Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
+>- If you have not configured any custom profile fields or you have configured custom profile fields but have not set the values, this API will not return custom profile information.
+>- You may pull profiles of up to 100 users to avoid failure caused by a large amount of data returned. If the length of an array passed in is greater than 100, only the first 100 users will be queried and the rest are discarded.
 
 **API name**
 
