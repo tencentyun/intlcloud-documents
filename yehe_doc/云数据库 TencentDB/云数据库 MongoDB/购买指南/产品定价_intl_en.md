@@ -1,4 +1,4 @@
-TencentDB for MongoDB
+
 A TencentDB for MongoDB cluster typically consists of 3 or more nodes. Each node contains computing resources (specified CVM models) and storage resources (cloud disks).
 
 Replica set instance price formula: **Price of a replica set instance = Single-node price (computing resource fees + storage resource fees) x Number of nodes**  
