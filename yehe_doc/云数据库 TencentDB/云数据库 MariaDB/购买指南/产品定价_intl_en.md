@@ -3,7 +3,7 @@
 **Total fees = Instance fees + Backup capacity fees + Traffic fees**.
 **Instance fees = Node price x Number of nodes = (Node memory x Memory price + Node disk capacity x Disk price) x Number of nodes**
 
->? The number of nodes is the sum of master and slave instances. For example, 1 master and 1 slave are 2 nodes, and 1 master and 2 slaves are 3 nodes.
+>? The number of nodes is the sum of primary and replica instances. For example, 1 primary and 1 replica are 2 nodes, and 1 primary and 2 replicas are 3 nodes.
 
 #### Billable Items
 <table>
@@ -34,7 +34,8 @@
 </tbody></table>
 
 ## Pricing for Monthly Subscription Single Node
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 <table>
 <thead>
 <tr>
@@ -44,7 +45,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing,Qingyuan</td>
+<td>Guangzhou, Beijing, Shanghai, Shenzhen, Nanjing, Chengdu, Chongqing, Qingyuan</td>
 <td>0.18</td>
 <td>9.43</td>
 </tr>
@@ -59,7 +60,7 @@
 <td>10.00</td>
 </tr>
 <tr>
-<td>Virginia,Frankfurt</td>
+<td>Virginia, Frankfurt</td>
 <td>0.07</td>
 <td>8.00</td>
 </tr>
@@ -138,11 +139,11 @@
 </tbody></table>
 
 ## Billing Examples 
-**Monthly subscription**: suppose a user purchases 1 monthly subscription TencentDB for MariaDB with 2 nodes (1 master and 1 slave) in the Guangzhou region for 1 month, and each node has 2 GB memory and 500 GB disk capacity.
+**Monthly subscription**: suppose a user purchases 1 monthly subscription TencentDB for MariaDB with 2 nodes (1 primary and 1 replica) in the Guangzhou region for 1 month, and each node has 2 GB memory and 500 GB disk capacity.
 The fees to be paid are calculated as follows:
 Instance fees = (Node memory x Memory price + Node disk capacity x Disk price) x Number of nodes=(2 GB × 9.43 USD/GB/month + 500 GB x 0.18 USD/GB/month) x 2 nodes x 1 month = 217.72 USD
 	
-**Pay-as-you-go**: suppose a user purchases 1 pay-as-you-go TencentDB for MariaDB with 2 nodes (1 master and 1 slave) in the Beijing region for 400 hours, and each node has 2 GB memory and 500 GB disk capacity.
+**Pay-as-you-go**: suppose a user purchases 1 pay-as-you-go TencentDB for MariaDB with 2 nodes (1 primary and 1 replica) in the Beijing region for 400 hours, and each node has 2 GB memory and 500 GB disk capacity.
 The fees to be paid are calculated as follows:
  - Tier 1 fee: (2 GB x 0.0262 USD/GB/hr + 500 GB x 0.00025 USD/GB/hr) x 2 nodes x 96 hours = 34.061 USD
  - Tier 2 fee: (2 GB x 0.0196 USD/GB/hr + 500 GB x 0.00025 USD/GB/hr) x 2 nodes x 264 hours = 86.698 USD
