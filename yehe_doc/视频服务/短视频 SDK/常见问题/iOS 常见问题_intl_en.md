@@ -19,7 +19,7 @@ Starting v4.5, `TXUGCPublish` classes have been moved to the demo layer from the
 ### What should I do if an error was reported when I directly ran the demo in Xcode?
 
 You need to select the corresponding target as shown below:
-![](https://main.qcloudimg.com/raw/bafe4d2c775330a29b4478be270022fc.jpg)
+![](https://main.qcloudimg.com/raw/4c429ae5017c7990e7bf332a4b8de0ab.png)
 
 
 <span id="que4"></span>
@@ -123,7 +123,7 @@ Hardware encoding (featuring higher encoding efficiency and image quality) is us
 
 The file upload status codes are as detailed below:
 
-![](https://main.qcloudimg.com/raw/555615a2b4ee9277d10a1258750635dc.png)
+![](https://main.qcloudimg.com/raw/fd39ad5be960bc3988b4801181e37bf3.png)
 1. Check whether the file to be uploaded is in the local sandbox. If you want to upload a file in the media library, you need to copy it to the local sandbox first.
 2. If error code 1002 is returned, the signature is exceptional, the timestamp has expired, or the VOD service is exceptional (unactivated or suspended).
 3. If error code 1003 is returned, a request parameter is exceptional or the format of the file to be uploaded is not supported.
