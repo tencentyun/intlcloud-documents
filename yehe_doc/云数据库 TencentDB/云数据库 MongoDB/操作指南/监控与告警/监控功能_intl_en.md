@@ -3,9 +3,10 @@ TencentDB for MongoDB does not support customizing monitoring granularity. The a
 
 | Time Span | Monitoring Granularity | Retention Period |
 | -------- | -------- | -------- |
-| 0–2 days | 1 minute | 2 days |
-| 2–7 days | 5 minutes | 7 days |
-| 7–30 days | 1 minute | 30 days |
+| 0-1 day    | 5 seconds      | 1 day      |
+| 0-2 days  | 1 minute    | 2 days      |
+| 2-7 days  | 5 minutes    | 7 days      |
+| 7-30 days | 1 hour    | 30 days     |
 
 ## Types of Instances for Monitoring
 TencentDB for MongoDB master, read-only, and disaster recovery instances can be monitored, and each instance is provided with a separate monitoring view for easy query.
