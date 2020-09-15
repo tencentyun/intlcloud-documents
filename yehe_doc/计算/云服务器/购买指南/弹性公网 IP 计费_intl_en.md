@@ -16,12 +16,13 @@ EIP fees consist of **IP resource fees** and **public network fees**. Bill-by-CV
 
 Bill-by-CVM accounts only incur IP resource fees. Public network fees are billed on CVM instances.
 
-- When EIP has not been bound with cloud resources: EIP only charges <a href="#ip"> IP resource fees</a>by the hour.
+- When EIP has not been bound with cloud resources: EIP only charges <a href="#ip"> IP resource fees</a> by the hour.
 - When EIP has been bound with cloud resources: EIP itself does not charge any fees. <a href="https://intl.cloud.tencent.com/document/product/213/10578">Public network fees</a> are charged on CVM instances.
 
 
 ### Bill-by-IP accounts
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 There are three billing plans for bill-by-IP accounts:
 
 <ul>
@@ -43,7 +44,7 @@ There are three billing plans for bill-by-IP accounts:
 
 ### Billing cycle
 
-The billing cycle of IP resource fees is by the hour. The payment method is postpaid.
+IP resource fee is pay-as-you-go on an hourly billing cycle.
 IP resource fees are billed starting from when you apply for EIP. Billing is suspended when the cloud resource is bound, resumed when the cloud resource is unbound, and stopped when EIP is released. Billing is accurate to the second, and the fees generated for the hour are settled and deducted the next hour. If the cloud resource is unbound and bound multiple times in the same billing cycle, the billing period is the cumulative time that cloud resources spend unbound.
 
 
@@ -65,7 +66,7 @@ IP resource fee = the idle price of the region EIP is located in × billing peri
 
 Suppose a user with a bill-by-CVM account applied for an EIP in the Guangzhou region between 09:00:00 - 09:59:59 and was bound with CVM after being idle for 15 minutes (900 seconds), then the generated IP resource fee is: 0.031 USD/hour \* (900/3600) hour = 0.00775 USD. 
 
-> ! To avoid generating unnecessary IP resource fees, please bind EIP with cloud resources immediately after applying for EIP and unbind EIP with cloud resources immediately after releasing EIP.
+> ! To avoid generating unnecessary IP resource fees, please bind EIP with cloud resources immediately after applying for EIP and release EIP immediately after unbinding it from cloud resources.
 
 <sapn id="net"></span>
 
