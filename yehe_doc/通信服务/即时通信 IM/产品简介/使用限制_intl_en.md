@@ -115,7 +115,7 @@
         </tr>
         <tr>
             <td>Importing multiple accounts</td>
-            <td>Up to 100 usernames can be imported at a time. However, the API does not support the direct import of account nicknames and profile photos.</td>
+            <td>Up to 100 usernames can be imported at a time. Direct import of account nickname and profile picture is not supported.</td>
         </tr>
 				<tr>
             <td>Querying online status of accounts</td>
