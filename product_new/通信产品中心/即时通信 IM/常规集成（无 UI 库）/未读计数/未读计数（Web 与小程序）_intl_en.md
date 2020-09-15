@@ -30,7 +30,13 @@ The `options` parameter is of the `Object` type. The attribute it contains is de
 **Example**
 
 ```javascript
-// Send read reports for all unread messages in a conversation
-tim.setMessageRead({conversationID: 'C2Cexample'});
+//Send read reports for all unread messages in a conversation
+let promise = tim.setMessageRead({conversationID: 'C2Cexample'});
+promise.then(function(imResponse) {
+//Read reports sent successfully
+}).catch(function(imError) {
+//Failed to send read reports
+  console.warn('setMessageRead error:', imError);
+});
 ```
 
