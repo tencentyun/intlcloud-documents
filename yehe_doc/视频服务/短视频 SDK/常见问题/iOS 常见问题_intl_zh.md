@@ -19,7 +19,7 @@
 ### Xcode 中直接运行 Demo 报错？
 
 需要选择对应的 Target，如下图：
-![](https://main.qcloudimg.com/raw/bafe4d2c775330a29b4478be270022fc.jpg)
+![](https://main.qcloudimg.com/raw/4c429ae5017c7990e7bf332a4b8de0ab.png)
 
 
 <span id="que4"></span>
@@ -123,7 +123,7 @@ iOS 中的 AudioSession 是所有音视频应用共用的，使用其他播放�
 
 文件上传状态码：
 
-![](https://main.qcloudimg.com/raw/555615a2b4ee9277d10a1258750635dc.png)
+![](https://main.qcloudimg.com/raw/fd39ad5be960bc3988b4801181e37bf3.png)
 1. 确定上传的文件是否在本地沙盒，如果上传媒体库的文件，需要先 copy 到本地沙盒。
 2. 返回错误码1002：签名有问题、时间戳过期、点播服务问题（未开通或停服）。
 3. 返回错误码1003：请求参数问题、上传文件格式不支持。
