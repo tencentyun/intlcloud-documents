@@ -17,3 +17,9 @@ The current scale-out instance specification is the default instance specificati
  - Current Specification: it is the default specification.
     - If the default specification for scale-out is not set, you can set it in [node specification management](https://intl.cloud.tencent.com/document/product/1026/34533) later.
     - The node specification used during scale-out is the default specification. If you want to adjust it, go to the node specification page.
+
+
+4. For the ClickHouse cluster scale-out, you can add an even number of nodes in the high-availability (HA) mode, and unlimited nodes in non-HA mode. Choose an existing or new cluster for nodes you want to add.
+>! There will be no data in the newly added nodes after ClickHouse cluster is scaled out. You need to manually migrate data to achieve data balance and improve the utilization of cluster resources. Migrate data promptly after a successful cluster scale-out.
+>
+![](https://main.qcloudimg.com/raw/76b2279772ab7a7402d438acbaa60493.png)

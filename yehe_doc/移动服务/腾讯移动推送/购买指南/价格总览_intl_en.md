@@ -1,14 +1,14 @@
 This document describes the pricing and discount policies of two TPNS billing modes: monthly subscription and pay-as-you-go.
->! The monthly subscription mode is currently in beta test. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>! The monthly subscription mode is currently in beta. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 
 ## Glossary
-- Daily connected devices: the number of deduplicated online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the foreground or background).
+- Daily connected devices: the number of unique online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the foreground or background).
 - Monthly peak of daily connected devices: the highest number of daily connected devices in a month.
 - Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by region. You can select an application service access point when creating an instance in the console.
 
 ## Monthly Subscription
 ### Notes
-- The billing unit of monthly subscription is 10,000 daily connected devices. You should purchase the service for at least 10,000 daily connected devices.
+- Monthly subscription bills in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required. 
 
 ### Pricing
 Because service costs vary by service access point, the corresponding prices are also different.
@@ -31,23 +31,23 @@ Because service costs vary by service access point, the corresponding prices are
 - The service access point is Singapore.
 - The monthly peak of daily connected devices for the application on Android is 600,000.
 - The purchase duration of the package is 12 months.
-The total fees of the package will be monthly fees * duration * discount = (60 * 56.316) * 12 * 0.65 = 26355.7944 USD.
+The total package fees will be: monthly fees * duration * discount = (60 * 56.316) * 12 * 0.65 = 26355.7944 USD.
 
 **Billing example 2**
 - The service access point is Guangzhou.
 - The monthly peak of daily connected devices for the application on iOS is 100,000.
 - The purchase duration of the package is 1 month.
-The total fees of the package will be monthly fees * duration * discount = (10 * 42.237) * 1 * 1 = 422.37 USD.
+The total package fees will be: monthly fees * duration * discount = (10 * 42.237) * 1 * 1 = 422.37 USD.
 
 ## Pay-as-You-Go
 
 ### Pricing
 
-- In daily pay-as-you-go billing mode:
+The following applies for daily pay-as-you-go billing mode:
 	- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
 	- 1000 < daily connected devices ≤ 50,000: fees will be incurred and settled at the fixed prices as listed below.
 	- Daily connected devices > 50,000: fees will be incurred and settled at the elastic prices as listed below.
-	- The continuous usage duration is calculated from the day when the pay-as-you-go billing mode is enabled for the application for the first time, and will not be cleared if the service is suspended or terminated during use (if the number of daily connected devices on a day is less than or equal to 1,000 with no fees incurred, then the day will not be included in the continuous usage duration).
+	- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then the day will not be included in the continuous usage duration.
 	
 Because service costs vary by service access point, the corresponding prices are also different. Specific prices are listed in the table below.
 

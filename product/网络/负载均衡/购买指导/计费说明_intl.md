@@ -1,8 +1,8 @@
 ## Billing Items
-Private network-based Cloud Load Balance (CLB) is free of charge. Public network-based CLB has an instance rental charge, and public network must be purchased for its servers. For more information, see [Public Network Billing Method](https://intl.cloud.tencent.com/document/product/213/10578).
+Private network CLB is free of charge. Public network CLB charges instance fees, and public network must be purchased for its servers. For more information, see [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578).
 
 ## Pay-as-You-Go
-Instance rental for public network-based CLB is based on pay-as-you-go mode and calculated on a daily basis (every 24 hours), so you don't need to pay your usage upfront.
+Instance rental for public network CLB is based on pay-as-you-go mode and calculated on a daily basis (every 24 hours), so you don't need to pay your usage upfront.
 - You will be billed every 24 hours.
 - Billing is based on your actual days of use.
 - Billing starts after the creation of CLB instance and stops upon termination.
@@ -11,12 +11,12 @@ Instance rental for public network-based CLB is based on pay-as-you-go mode and 
 > We will withhold one day instance fee when pay-as-you-go CLB instance is created, so make sure you have sufficient account balance. After the purchase, a daily instance configuration charge applies even if the instance remains idle (no access and not bound with backend CVM).
 
 ## Price
-The rental fees of the public network-based CLB instance domains are as follows.
+The public network CLB charges instance fees differently in regions as shown below.
 
-|  Domain | Price<br>(USD/Day) |
+|  Region | Price<br>(USD/Day) |
 |---------|---------|
-| Guangzhou, Shanghai, Beijing, Chengdu & Chongqing   | 0.07 |  
-| Hong Kong, Bangkok,Tokyo, Seoul & Mumbai| 0.22 |
+| Guangzhou, Qingyuan, Shanghai, Beijing, Chengdu & Chongqing   | 0.07 |  
+| Hong Kong (China), Bangkok,Tokyo, Seoul & Mumbai| 0.22 |
 | Singapore, Frankfurt, Toronto & Moscow | 0.14 |
 | Silicon Valley & Virginia | 0.12 |
 
@@ -27,3 +27,5 @@ The rental fees of the public network-based CLB instance domains are as follows.
 - Tencent Cloud will send you notifications via SMS/email one day before deletion. Once deleted, relevant configuration data cannot be recovered.
 
 > CLB and CVM can only be unbound manually, but they can unbind forcibly when **CVM** is isolated (when Pay-as-You-Go CVM account is in arrears for over 2 hours).
+
+This pricing document is for reference only. See your bill for the actual price.

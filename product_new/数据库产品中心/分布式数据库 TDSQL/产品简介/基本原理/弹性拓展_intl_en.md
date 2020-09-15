@@ -5,7 +5,7 @@ TDSQL supports real-time online scaling. There are two scaling methods: adding n
 TDSQL ensures the stability of automatic scaling with its proprietary automatic rebalancing technology.
 
 ### Adding a new shard
-1. After you click scale in the console, the system will calculate the bottleneck of node A (multiple nodes may actually be affected) based on the load and capacity.
+1. Scale node A in the [console](https://console.cloud.tencent.com/dcdb).
 2. According to the configuration of new node G, some data of node A will be migrated (from the slave) to node G.
 3. After the data is completely synced, nodes A and G will check the database (read-only status for one to tens of seconds), but the entire service will not be suspended.
 4. The scheduling system notifies the proxy to switch route.

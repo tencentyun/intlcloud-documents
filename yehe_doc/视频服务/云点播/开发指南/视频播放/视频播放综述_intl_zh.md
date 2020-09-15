@@ -48,7 +48,8 @@
 
 针对长视频播放场景，点播提供了**超级播放器 SDK**，使用 FileId 作为参数，播放点播中的视频。
 
-<img src="C:\Users\v_vxllin\Desktop\1\需作图\视频播放综述_intl_z\1.png" width="700" />
+
+<img src="https://main.qcloudimg.com/raw/60b3574fe1300681f351e8cf02a7845a.png" width="700" />
 
 使用超级播放器 SDK 播放的整体架构流程如下：
 1. **服务端上传**：业务后台通过控制台、服务端 API 等方式，将视频上传到云点播。
@@ -59,30 +60,29 @@
 6. **下载内容**：超级播放器通过下载地址，从点播 CDN 下载内容。
 7. **播放**：超级播放器开始播放自适应码流输出。
 
-如果您要播放的视频开启了 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)，则播放时需要指定 [超级播放器签名](https://cloud.tencent.com/document/product/266/42436)。此时的架构流程如下：
+如果您要播放的视频开启了 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)，则播放时需要指定 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)。此时的架构流程如下：
 
-1. 业务后台需要搭建“签名派发”服务，根据 [播放器签名计算规则]生成签名。
+1. 业务后台需要搭建“签名派发”服务，根据 [播放器签名计算规则](https://intl.cloud.tencent.com/document/product/266/38099#.E7.AD.BE.E5.90.8D.E8.AE.A1.E7.AE.97) 生成签名。
 2. 超级播放器在播放视频前，需要获取播放器签名（如下图步骤5）。
 3. 超级播放器在请求下载地址时（如下图步骤6），播放服务需要校验签名合法后，才返回下载地址。
 
-<img src="C:\Users\v_vxllin\Desktop\1\需作图\视频播放综述_intl_z\2.png" width="700" />
+<img src="https://main.qcloudimg.com/raw/7b20c4117e3e9fc320b6e8cf2d8e47c9.png" width="700" />
 
 ### 集成超级播放器
 
 超级播放器 SDK 支持的功能，请参见 [能力清单](#p1)。集成方式请参见 [下载与使用](#p2) 部分。
-为了帮助您快速接入点播的超级播放器，我们为您提供了超级播放器 [接入指引]，以示例的方式为您讲解接入步骤。
+为了帮助您快速接入点播的超级播放器，我们为您提供了超级播放器 [接入指引](https://intl.cloud.tencent.com/document/product/266/38098)，以示例的方式为您讲解接入步骤。
 
 ## 视频加密播放
 视频加密属于长视频场景下的一个细分场景。是视频平台自有的独播剧、网络课程等具有版权的视频，采取加密防止视频被非法下载和传播的措施。
-云点播分别在 [视频加密综述]和 [视频加密接入指引]中详细介绍了视频加密的原理和接入方式。
+云点播分别在 [视频加密综述](https://intl.cloud.tencent.com/document/product/266/38131) 和 [视频加密接入指引](https://intl.cloud.tencent.com/document/product/266/38294) 中详细介绍了视频加密的原理和接入方式。
 
 ## 播放器 SDK
 ### 下载与使用<span id="p2"></span>
 
 | 播放器类型 | SDK 下载地址 | 使用文档 |
 | -- | -- | -- |
-| 基础播放器 | <ul style="margin:0;"><li>[Android]</li><li>[iOS]</li><li>[Web]</li> | <ul style="margin:0;"><li>[Android]</li><li>[iOS]</li><li>[Web]</li> |
-| 超级播放器 | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/zh/document/product/266/7938)</li><li>[iOS](https://intl.cloud.tencent.com/zh/document/product/266/9237)</li><li>[Web]</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/zh/document/product/266/7938)</li><li>[iOS](https://intl.cloud.tencent.com/zh/document/product/266/9237)</li><li>[Web]</li> |
+| 超级播放器 | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
 
 
 ### 能力清单<span id="p1"></span>

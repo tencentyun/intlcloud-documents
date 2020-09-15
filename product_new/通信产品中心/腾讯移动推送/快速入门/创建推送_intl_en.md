@@ -11,10 +11,10 @@ You have already purchased TPNS service.
 2. Enter the **Download SDK** page, select the version you need to download, and click **Download**. Perform configurations according to the guidelines.
 
 ### Configuring push parameters
-1. Go to the **Application List** page. Select the paid app, and click **Create Push**.
+1. Log in to [Tencent Push Notification Service Console](https://console.cloud.tencent.com/tpns) and select **Push** in the left sidebar.
 2. Go to the mobile push page, and click **Push Notifications**. Enter the notification title and notification content. The notification preview will be displayed on the right side of the page.
 	◦Push time configuration: Supports instant, scheduled, and loop modes.
-	◦Push target configuration: Supports push to all users and to specific users. Specific users include: Individual token, individual account, custom tag, and device attributes.
+	◦Push target configuration: Supports push to all users and to specific users. Specific users can be a specific token or account, a set of batch accounts or tagged users. 
 	◦Additional parameters: You can select additional parameters in the data format of key:value, for more push content.
 	◦Rich media content: You can add rich media content, by entering the URL corresponding to an image.
 	◦Advanced settings: TPNS also supports other advanced settings, including the following content:

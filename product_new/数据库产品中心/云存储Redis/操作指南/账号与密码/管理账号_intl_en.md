@@ -1,5 +1,5 @@
 ## Operation Scenarios
-TencentDB for Redis provides read/write permission control and routing policy control through the account mechanism, which helps meet the needs of business permission management in complex scenarios. Currently, only the 4.0 Standard Edition and 4.0 Cluster Edition support account settings.
+TencentDB for Redis provides read/write permission control and routing policy control through the account mechanism, which helps meet the needs of business permission management in complex scenarios. Currently, only the TencentDB for Redis Memory Edition (excluding v2.8) supports account settings.
 - **Account category**
   - Default account: an account with password only.
   - Custom account: an account with an account name. The authentication method of a custom account is `account name@password`, which is used as the password parameter for accessing Redis, such as `redis-cli -h 1.1.1.1 -p 6379 -a readonlyuser@password`.
@@ -15,5 +15,6 @@ TencentDB for Redis provides read/write permission control and routing policy co
   - If an instance has an account accessing a replica node, the **read-only replica** feature cannot be disabled. To disable it, you need to delete the account first.
   
 ## Directions
-1. In the instance list, click an instance name to enter the instance management page.
-2. Go to the **Manage Database** > **Manage Account** page, on which you can perform operations such as creating accounts, modifying permissions, resetting passwords, and deleting accounts.
+1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance management page.
+2. Select the **Manage Account** tab, on which you can create accounts, modify permissions, reset passwords, and delete accounts.
+![](https://main.qcloudimg.com/raw/276fb5f3092f46c57d675b19d1a14962.png)

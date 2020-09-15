@@ -1,5 +1,4 @@
 When writing code in a language supported by the SCF platform, you need to adopt a common paradigm that includes the following core concepts:
-
 ## Execution Method
 When the SCF platform invokes a function, it will first find an execution method as the entry point to execute your code. At this time, you need to set in the format of **filename.execution method name**.
 For example, if the user-configured execution method is `index.handler`, the SCF platform will first look for the `index` file in the code package and find the `handler` method in the file to start execution.
@@ -11,34 +10,10 @@ def method_name(event,context):
 ```
 This model specifies the fixed `event` data and `context` data as input parameters. In the execution method, you should handle the parameters and can call any other method in the code arbitrarily.
 
-## Naming Conventions
-<table>
-<tbody><tr>
-<th>Programming Language</th>
-<th style="
-    width: 50%;
-">Specification and Example</th>
-<th>General Specification</th>
-</tr>
-<tr>
-<td>Node.js<br>Python<br>PHP</td>
-<td>The two-segment format is <code>[filename].[function name]</code>, such as <code>index.main_handler</code>.</td>
-<td rowspan="3">It can contain 2–60 letters, digits, underscores, and hyphens. It can start with a letter and must end with a digit or letter.</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>The three-segment format is <code>[package].[class]::[method]</code>, such as <code>example.Hello::mainHandler</code>.</td>
-</tr>
-<tr>
-<td>Go</td>
-<td>The one-segment format is <code>[filename]</code>, such as <code>main</code>.</td>
-</tr>
-</tbody></table>
-
-
 ## Function Input Parameters
 
 Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: `event` and `context`. However, the number of input parameters may vary by programming language and environment. For more information, please see [Notes on Programming Languages](https://intl.cloud.tencent.com/document/product/583/11061).
+
 <table>
 	<tr>
 		<th style="width: 12%;">Input Parameter Type</th>
@@ -69,11 +44,20 @@ Function input parameters refer to the content that is passed to the function wh
 		</td>
 		<td>
 		Please see the `context` input parameter below for specific information: <pre>{
-    "time_limit_in_ms": 3000, 
-    "request_id": "627466b4-8049-11e8-8758-5254005d5fdb",
-    "memory_limit_in_mb": 512
-}</pre>This contains the execution timeout of the current invocation, the memory limit, and the current request ID.<br>
-		<b>Note:</b> the content of the context structure may be increased as the SCF platform is iterated.
+	getRemainingTimeInMillis: [Function: getRemainingTimeInMillis],
+	memory_limit_in_mb: 128,
+	time_limit_in_ms: 3000,
+	request_id: '4ca7089c-3bb0-48cf-bcdb-26d130fed2ae',
+	environment: '{"SCF_NAMESPACE":"default"}',
+	environ: 'SCF_NAMESPACE=default;SCF_NAMESPACE=default',
+	function_version: '$LATEST',
+	function_name: 'test',
+	namespace: 'default',
+	tencentcloud_region: 'ap-chengdu',
+	tencentcloud_appid: '1253970226',
+	tencentcloud_uin: '3473058547' 
+}
+</pre>This contains the execution timeout of the current invocation, the memory limit, and the current request ID.<br><b>Note:</b> the content of the context structure may be increased as the SCF platform is iterated.
 		</td>
 	</tr>
 </table>
@@ -154,8 +138,8 @@ If an exception occurs during testing and executing a function, the SCF platform
 ### Handling method
 This document provides the following three ways to throw exceptions, and you can choose how to handle exceptions in the code based on your actual needs.
 >?You can log in to the [SCF Console](https://console.cloud.tencent.com/scf/index) and follow the steps below to test exception handling:
-> 1. Create a function and copy the following function code without adding any triggers.
-> 2. Click **Test** in the console and select the "Hello World" test sample for testing.
+>1. Create a function and copy the following function code without adding any triggers.
+>2. Click **Test** in the console and select the "Hello World" test sample for testing.
 <table>
 	<tr>
 	<th>Handling Method</th>
@@ -270,6 +254,10 @@ You can get a function execution log in the following methods:
 	<tr>
 	<th>Means</th>
 	<th>Method</th>
+	</tr>
+	<tr>
+	<td>SCF CLI</td>
+	<td>Run the <code>scf logs</code> command.</td>
 	</tr>
 	<tr>
 	<td>SCF Console</td>

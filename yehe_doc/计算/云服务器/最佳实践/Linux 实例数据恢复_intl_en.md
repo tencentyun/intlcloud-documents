@@ -8,14 +8,14 @@ Tencent Cloud also offers [snapshots](https://intl.cloud.tencent.com/document/pr
 
 
 ## Directions
->!Refer to [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) and [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942) to back up data before operation, so you can recover the instance to its initial status if a problem occurs.
+>!Refer to [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) and [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942) to back up data before performing operations so that you can recover the instance to its initial status if a problem occurs.
 >
 
 ### Installing Extundelete
 1. Run the following command to install the Extundelete dependencies and libraries.
 >!
->- Extundelete requires the version libext2fs 1.39 or later.
->- To support the ext4 format, install the version e1fsprogs 1.41 or later. You may use the `dumpe2fs` command to view the version. 
+>- Extundelete requires the libext2fs version 1.39 or later.
+>- To support the ext4 format, install the e1fsprogs version 1.41 or later. You may use the `dumpe2fs` command to view the version. 
 >
 ```
 yum -y install  bzip2  e2fsprogs-devel  e2fsprogs  gcc-c++  make
@@ -35,15 +35,15 @@ cd extundelete-0.2.4
 ```
 make && make install
 ```
-After the installation completes, you can see the executable file “extundelete” in the `usr/local/bin` directory.
+After the installation is completed, you will be able to see the executable file “extundelete” in the `usr/local/bin` directory.
 
 ### Testing the data recovery
 Recover data as needed by performing the following steps.
-1. Initialize and partition the data disk by referring to [creating a file system on a partition](https://intl.cloud.tencent.com/document/product/362/31597). Run the following command to view the existing disks and available partitions.
+1. Initialize and partition the data disk by referring to [Initializing Cloud Disks (Smaller than 2TB)](https://intl.cloud.tencent.com/document/product/362/31597). Run the following command to view the existing disks and the available partitions.
 ```
 fdisk -l
 ```
-The following information appears:
+The following information will appear:
 ![](https://main.qcloudimg.com/raw/34abb1b0c7a1f6fb4ff233a42a781123.png)
 2. Run the following commands in sequence to create a mount point and mount the partition. This document uses mounting the `/dev/vdb1` partition to `/test` as an example.
 ```
@@ -63,7 +63,7 @@ echo test > hello
 ```
 md5sum hello
 ```
-The following information appears:
+The following information will appear:
 ![](https://main.qcloudimg.com/raw/230d4c9a4456df8b3623c0bd401d878a.png)
 5. Run the following commands in sequence to delete the “hello” file.
 ```
@@ -83,15 +83,15 @@ umount /dev/vdb1
 ```
 extundelete --inode 2 /dev/vdb1
 ```
-The following information appears:
+The following information will appear:
 ![](https://main.qcloudimg.com/raw/97a64a2e0de658f4ed55500f162b1eb7.png)
-8. Run the following command to recover the file using Extundelete.
+8. Run the following command to use Extundelete to recover the file.
 ```
 /usr/local/bin/extundelete  --restore-inode 12  /dev/vdb1
 ```
-After the recovery, you will see the `RECOVERED_FILES` folder in the same-level directory.
+After the file is recovered, you will see the `RECOVERED_FILES` folder in the same-level directory.
 9. Access the `RECOVERED_FILES` folder, check the recovered file, and run the following command to obtain its MD5 value.
 ```
 md5sum Recovered file
 ```
-If the MD5 value obtained is the same as that of the “hello” file recorded in [Step 4](#Step4), data has been recovered successfully.
+If the obtained MD5 value is the same as that of the “hello” file recorded in [Step 4](#Step4), the data has been recovered successfully.

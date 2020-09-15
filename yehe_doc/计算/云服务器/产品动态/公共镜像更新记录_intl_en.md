@@ -1,8 +1,8 @@
 ## CoreOS
-The CoreOS community announced that CoreOS Container Linux would not be supported and updated after May 26, 2020, please take note that:
+The CoreOS community announced that CoreOS Container Linux would not be supported or updated after May 26, 2020. Please take note that:
 - After October 30, 2020, you will be unable to create a Cloud Virtual Machine (CVM) using Tencent Cloud’s CoreOS Container Linux.
-- Starting from May 26, 2020, Tencent Cloud ended technical support for CoreOS Container Linux, while your use of CoreOS Container Linux CVMs will be unaffected. The security update patches of the operating system are no longer officially available after its lifecycle, so we recommend against using this image.
-- The Fedora CoreOS community recommends Fedora CoreOS to replace CoreOS Container Linux, and Tencent Cloud will release Fedora CoreOS public image in September 2020.
+- Starting from May 26, 2020, Tencent Cloud ended technical support for CoreOS Container Linux. However, your use of CoreOS Container Linux CVMs will be unaffected. Because the security update patches of the operating system are no longer available after the lifecycle of the operating system, we recommend that you do not use this image.
+- The Fedora CoreOS community recommends Fedora CoreOS to replace CoreOS Container Linux. Tencent Cloud will release the Fedora CoreOS public image in September 2020.
 
 
 

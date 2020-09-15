@@ -13,9 +13,9 @@ The deployment of most serverless components is about 20 times faster than tradi
 
 ### Serverless Framework Components Best Practices
 
-- [@serverless/tencent-scf](https://github.com/serverless-components/tencent-scf/tree/v2/) - SCF component
-- [@serverless/tencent-express](https://github.com/serverless-components/tencent-express/tree/v2/) - Component used to quickly deploy Express.js-based backend services in SCF
-- [@serverless/tencent-website](https://github.com/serverless-components/tencent-website/tree/v2/) - Component used to quickly deploy static websites in SCF
+- [@serverless/tencent-scf](https://github.com/serverless-components/tencent-scf/tree/master) - SCF component
+- [@serverless/tencent-express](https://github.com/serverless-components/tencent-express/tree/master) - Component used to quickly deploy Express.js-based backend services in SCF
+- [@serverless/tencent-website](https://github.com/serverless-components/tencent-website/tree/master) - Component used to quickly deploy static websites in SCF
 
 
 ### Supported Serverless Components
@@ -28,10 +28,7 @@ Currently, Serverless Components supports a rich set of development frameworks a
 - [@serverless/tencent-cos](https://github.com/serverless-components/tencent-cos) - Tencent Cloud COS component
 - [@serverless/tencent-scf](https://github.com/serverless-components/tencent-scf/tree/v2) - Tencent Cloud SCF component
 - [@serverless/tencent-cdn](https://github.com/serverless-components/tencent-cdn) - Tencent Cloud CDN component
-- [@serverless/tencent-cam-role](https://github.com/serverless-components/tencent-cam-role) - Tencent Cloud CAM role component
-- [@serverless/tencent-cam-policy](https://github.com/serverless-components/tencent-cam-policy) - Tencent Cloud CAM policy component
 - [@serverless/tencent-vpc](https://github.com/serverless-components/tencent-vpc/tree/v2) - Tencent Cloud VPC component
-- [@serverless/tencent-ssl](https://github.com/serverless-tencent/tencent-ssl) - Tencent Cloud SSL certificate component
 
 
 
@@ -43,13 +40,9 @@ Currently, Serverless Components supports a rich set of development frameworks a
 - [@serverless/tencent-koa](https://github.com/serverless-components/tencent-koa/tree/v2) - Component used to quickly deploy Koa.js-based backend services in SCF
 - [@serverless/tencent-flask](https://github.com/serverless-components/tencent-flask) - Tencent Cloud Python Flask RESTful API component
 - [@serverless/tencent-django](https://github.com/serverless-tencent/tencent-django/tree/v2) - Tencent Cloud Python Django RESTful API component
-- [@serverless/tencent-tornado](https://github.com/serverless-tencent/tencent-tornado) - Tencent Cloud Python Tornado RESTful API component
-- [@serverless/tencent-pyramid](https://github.com/serverless-tencent/tencent-pyramid) - Tencent Cloud Python Pyramid RESTful API component
-- [@serverless/tencent-bottle](https://github.com/serverless-tencent/tencent-bottle) - Tencent Cloud Python Bottle RESTful API component
 - [@serverless/tencent-laravel](https://github.com/serverless-components/tencent-laravel) - Tencent Cloud PHP Laravel RESTful API component
 - [@serverless/tencent-thinkphp](https://github.com/serverless-components/tencent-thinkphp) - Tencent Cloud ThinkPHP RESTful API component
 - [@serverless/tencent-website](https://github.com/serverless-components/tencent-website/tree/v2) - Component used to quickly deploy static websites in SCF
-- [@serverless/serverless-global](https://github.com/serverless-tencent/serverless-global) - Component used to manage global variables
 
 **Third-party components:**
 - [@authing/serverless-oidc](https://github.com/Authing/serverless-oidc) - Component used to quickly deploy Authing-based authentication

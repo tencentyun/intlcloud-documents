@@ -19,7 +19,7 @@ Billable items of API Gateway include call fees and traffic fees.
 | Tier | Monthly Accumulative Excessive Calls (N) | Unit Price (USD/10,000 Calls) |
 |---------|---------|---------|
 | Free tier | The first one million calls in each calendar month in the first year are free of charge | 0 |
-| Tier 1 |  100 < N ≤ 10 million | 0.0089 |
+| Tier 1 |  1 million < N ≤ 10 million | 0.0089 |
 | Tier 2 | 10 million < N ≤ 100 million | 0.0059 |
 | Tier 3 | N > 100 million | 0.0045 |
 

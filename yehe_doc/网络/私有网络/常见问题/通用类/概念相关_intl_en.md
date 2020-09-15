@@ -13,6 +13,6 @@ Yes. A VPC is a regional (such as Guangzhou, Beijing, or Seoul) resource, and th
 A VPC supports a maximum of 65,533 private IP addresses for Tencent Cloud service instances.
 
 ### What is a CIDR block?
-Classless Inter-Domain Routing (CIDR) is a specified independent network address block that uses with IP and mask to implement the overall division of network. It eliminates the concepts of traditional class A, B and C addresses as well as subnet partitioning, and assigns the IP address spaces more efficiently. You need to create subnets in CIDR format when creating a VPC and its subnets. For example, to create an IP range of `10.0.16.0 - 10.0.17.255`:
+Classless Inter-Domain Routing (CIDR) is a user-specified independent network space address block. It combines IP and masking to achieve network division. Without the traditional Class A, B and C IP addresses as well as subnet, it allocates IP address spaces more effectively. To create a VPC and subnet, you need to create IP ranges in CIDR format. In the `10.0.16.0 - 10.0.17.255` example, 
 This IP range changes to `00001010.00000000.00010000.00000000 - 00001010.00000000.00010001.11111111` in binary format that has the same first 23 digits, and to `10.0.16.0/23` in CIDR format.
 

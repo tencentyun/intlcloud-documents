@@ -56,12 +56,3 @@ KMS provides a free quota of 20,000 API calls. After the free quota is used up, 
 
 
 
-
-
-
-|---------|---------|
-
-
-
-
-

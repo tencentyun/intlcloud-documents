@@ -1,9 +1,10 @@
 ## Download and Installation
 
 #### Relevant Resources
-The resources of COS XML SDK for Python can be downloaded [here](https://github.com/tencentyun/cos-python-sdk-v5).
-SDK quick download address: [XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip?_ga=1.29598463.1783616852.1583375173).
-Download Demo from: [XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py).
+- The resources of COS XML SDK for Python can be downloaded [here](https://github.com/tencentyun/cos-python-sdk-v5).
+- SDK quick download address: [XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip?).
+- Download Demo from: [XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py).
+- Find all code samples for this SDK [here](https://github.com/tencentyun/cos-snippets/tree/master/Python).
 
 #### Environmental Requirements
 

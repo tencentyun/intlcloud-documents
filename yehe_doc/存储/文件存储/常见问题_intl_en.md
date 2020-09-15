@@ -1,11 +1,11 @@
-### Which operating systems are supported by CFS?
-Linux, Unix, and Windows clients are supported.
+### How can I access CFS?
+CFS can be accessed through Tencent Cloud services, such as CVM clients (Linux, Unix, and Windows), TKE, SCF, BatchCompute, and BM instances. It can also be accessed through your own IDC or external computing nodes once you activate Tencent Cloud VPN, Direct Connect or CCN ([Learn more](https://cloud.tencent.com/document/product/215/36699)).
 
 ### How is CFS billed?
 CFS is billed hourly based on the peak storage usage for the hour.
 
 ### I have never used any resources in the Guangzhou region. Why are there fees for Guangzhou in CFS bills?
-As storage usage in Mainland China is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills.
+As storage usage in Chinese mainland is billed in a consolidated manner, the billing zone will be displayed as "South China (Guangzhou)" in CFS bills; the specific regions will be shown in the extended fields.
 
 ### Which access protocols are supported by CFS?
 NFS v3.0/v4.0 and CIFS/SMB2.0/SMB3.0. CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.

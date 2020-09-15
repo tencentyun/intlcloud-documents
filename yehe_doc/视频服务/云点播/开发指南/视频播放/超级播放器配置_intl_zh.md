@@ -4,8 +4,7 @@
 * 播放哪一个自适应码流。
 * 使用哪一个雪碧图作为缩略图。
 
-转自适应码流包含多个子流，在切换清晰度时对应不同的清晰度名。当您需要指定各个子流在播放器中展示的清晰度名时，就需要指定子流清晰度名字的命名规则：
-<img src="C:\Users\v_vxllin\Desktop\1\缺失英文截图\超级播放器配置_intl_zh\1.png" height="200" /><img src="C:\Users\v_vxllin\Desktop\1\缺失英文截图\超级播放器配置_intl_zh\2.png" height="200" />
+转自适应码流包含多个子流，在切换清晰度时对应不同的清晰度名。当您需要指定各个子流在播放器中展示的清晰度名时，就需要指定子流清晰度名字的命名规则。
 
 ## 播放器配置项
 
@@ -26,13 +25,13 @@
 <tr><td>basicDrmPreset</td><td>12</td><td>10</td>
 </tbody></table>
 
-* 如果视频内容无需加密，可以使用预置任务流 LongVideoPreset 转自适应码流输出，然后使用预置超级播放器配置 default 播放。
-* 如需播放加密后内容，可以使用预置任务流 SimpleAesEncryptPreset 转自适应码流输出，然后使用预置超级播放器配置 basicDrmPreset 播放。
+* 如果视频内容无需加密，可以使用预置任务流 LongVideoPreset 转自适应码流输出，然后使用预置超级播放器配置 default 播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38098)。
+* 如需播放加密后内容，可以使用预置任务流 SimpleAesEncryptPreset 转自适应码流输出，然后使用预置超级播放器配置 basicDrmPreset 播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
 
 ## 自定义配置
-除了预置超级播放器配置之外，您也可以通过 [控制台] 或 [API]自定义配置。
-使用自定义的超级播放器配置播放。
+除了预置超级播放器配置之外，您也可以通过 [控制台](https://intl.cloud.tencent.com/document/product/266/38261) 或 [API](https://intl.cloud.tencent.com/document/product/266/37567) 自定义配置。
+使用自定义的超级播放器配置播放，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38098)。
 
 ## 使用配置
-如果您使用预置配置 default 以外的配置播放视频，就需要使用 [超级播放器签名]，并在签名参数的`pcfg`参数中指定您要使用的配置名。
-使用超级播放器签名播放视频。
+如果您使用预置配置 default 以外的配置播放视频，就需要使用 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)，并在签名参数的`pcfg`参数中指定您要使用的配置名。
+使用超级播放器签名播放视频，具体示例请参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38098)。

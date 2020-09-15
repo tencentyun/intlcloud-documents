@@ -1,3 +1,26 @@
+## August 2020
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The EMRv2.4.0 version is released</td>
+<td>The KUDU component is now supported. Some components are upgraded</td>
+<td>August 27, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+</tr>
+<tr>
+<td>ClickHouse now supports the data migration</td>
+<td>The utilization of cluster resources is improved, with data security guaranteed</td><td>August 17, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/38165" target="_blank">ClickHouse Data Migration</a></td>
+</tr>
+</tbody></table>
 
 ## July 2020
 <table>

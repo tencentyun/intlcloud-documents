@@ -7,16 +7,16 @@ ClickHouse 集群由N≥1个节点构成，在集群中用户可以通过配置�
 
 ## 操作说明
 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在集群列表中选择【CLICKHOUSE 集群】>【集群服务】，单击 CLICKHOUSE卡片中的【操作】>【数据迁移】。
-![](https://main.qcloudimg.com/raw/55d8b44ab07fceb386e16b0ec7fa3d27.png)
+![](https://main.qcloudimg.com/raw/e4d815d3f4d372ac2ab193248ab8c4ae.png)
 数据迁移步骤分为四步：
 1. 【选择 Cluster】，并选择迁移类型，默认为“均衡模式”，每次迁移时只能选择一个 Cluster。
-![](https://main.qcloudimg.com/raw/f2982450f56d4f176eac3a0f3bd53a85.png)
+![](https://main.qcloudimg.com/raw/a52996fb597995e866c52c42b654c69b.png)
 2. 【下一步：选择迁移节点】，设置数据迁移带宽上限值，系统默认推荐值200MB/S，可自定义调整。系统会默认勾选 Cluster 中所有节点列表，并自动标记迁出和迁入节点，可自行轻微调整设置，同一节点只能作为迁出节点或迁出节点，且同一个 Cluster 中必须包含迁出节点和迁入节点。
-![](https://main.qcloudimg.com/raw/f77415bbb9cddf179ff1374c6ee3a75e.png)
+![](https://main.qcloudimg.com/raw/50122a6d01939d8f5500111ccba48555.png)
 3. 【下一步：选择迁移数据表】，系统拉取所有迁出节点中的表，默认数据总量由高到低排列，单页只展示10张表，默认勾选10张表，可能根据阈值以及包含不包含条件进行搜索查询。
- ![](https://main.qcloudimg.com/raw/1a2366ce9f1a4039ef24965f0773ea21.png)
+ 
 4. 【下一步：信息确认】，确认最终迁移信息。
- ![](https://main.qcloudimg.com/raw/04d0834ff9eaf5a66ba53f91c5dec792.png)
+ 
 >!
 >- 均衡模式：只迁移分区表。
 >- 下线模式：迁移分区表和非分区表。

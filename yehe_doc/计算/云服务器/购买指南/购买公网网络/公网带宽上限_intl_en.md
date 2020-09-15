@@ -22,8 +22,8 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 ## Inbound Bandwidth Cap (Upstream Bandwidth)
 
 The inbound bandwidth of the public network refers to the bandwidth that flows into CVM instances.
-- If the fixed bandwidth purchased by users is greater than 10 Mbps, Tencent Cloud assigns a public network inbound bandwidth that is equal to the purchased bandwidth.
-- If the fixed bandwidth purchased by users is less than 10 Mbps, Tencent Cloud assigns 10 Mbps public network inbound bandwidth.
+- If the bandwidth you purchased is greater than 10 Mbps, Tencent Cloud will assign a public network inbound bandwidth equals to the purchased bandwidth.
+- If the bandwidth you purchased is less than 10 Mbps, Tencent Cloud will assign 10-Mbps public network inbound bandwidth.
 
 ## Bandwidth Peaks
 The bandwidth peak is applicable to both bill-by-traffic and bill-by-bandwidth, but it means differently in these two cases as follows:

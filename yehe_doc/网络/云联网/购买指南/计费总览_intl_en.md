@@ -1,5 +1,5 @@
-Cloud Connect Network (CCN) is billed according to the interconnection bandwidth and supports two billing modes (monthly prepaid and monthly postpaid (bill by the 95th percentile) and three service levels ([platinum, gold, and silver](https://intl.cloud.tencent.com/document/product/1003/30217)).
-You can choose the plan with the lowest cost and best quality based on business needs. For example, we recommend choosing monthly postpaid (bill by the 95th percentile) - gold for real-time audio/video and game acceleration. For business data backup, we recommend choosing monthly prepaid - silver.
+Cloud Connect Network (CCN) is billed according to the interconnection bandwidth and supports two billing modes (monthly subscription and pay-as-you-go by monthly 95th percentile) and three service levels ([platinum, gold, and silver](https://intl.cloud.tencent.com/document/product/1003/30217)).
+You can choose the plan with the lowest cost and best quality based on business needs. For example, we recommend choosing pay-as-you-go by monthly 95th percentile - gold for real-time audio/video and game acceleration. For business data backup, we recommend choosing monthly subscription - silver.
 
 
 ## Billing
@@ -15,18 +15,18 @@ The two CCN billing modes are as follows:
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">Monthly prepaid</td>
+<td align="left">Monthly subscription</td>
 <td align="left">Pay before use</td>
 <td align="left">USD/month. Must use for at least a month. If the bandwidth exceeds the purchased value, packets will be lost</td>
-<td align="left">About 20% lower than monthly postpaid (bill by the 95th percentile)</td>
+<td align="left">About 20% lower than pay-as-you-go by monthly 95th percentile</td>
 <td align="left">Stable bandwidth</td>
 </tr>
 <tr>
-<td align="left">Monthly postpaid (bill by the 95th percentile)</td>
+<td align="left">Pay-as-you-go by monthly 95th percentile</td>
 <td align="left">Pay after use</td>
 <td align="left">USD/month. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days</td>
 <td align="left">More expensive</td>
-<td align="left">Business volume grows significantly (it is currently in beta. To use it, please<a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket to apply</a>)</td>
+<td align="left">Business volume grows significantly (it is currently in beta. To use it, please <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket to apply</a>)</td>
 </tr>
 </tbody></table>
 
@@ -45,14 +45,14 @@ The three CCN service levels are as follows:
 >- This price comparison is for reference only. Please refer to the actual prices.
 
 
-## Monthly Prepaid
-Pay for the fixed bandwidth (by the month) before use. The unit price of monthly prepaid is lower than that of monthly postpaid (bill by the 95th percentile). Monthly prepaid is suitable for business that requires stable bandwidth.
+## Monthly Subscription
+Pay for the fixed bandwidth (by the month) before use. The unit price of monthly subscription is lower than that of pay-as-you-go by monthly 95th percentile. Monthly subscription is suitable for business that requires stable bandwidth.
 For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regions, you need to first pay for 10 Mbps of bandwidth.
 
 >This feature is currently in beta. To use this feature, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 
 ### Billing Cycle
-**Monthly prepaid**: when purchasing fixed bandwidth (by the month), you need to first pay for the fixed bandwidth.
+**Monthly subscription**: when purchasing fixed bandwidth (by the month), you need to first pay for the fixed bandwidth.
 
 ### Billing Formula
 **Total CCN costs** = Sum of the interconnection costs of all regions
@@ -78,8 +78,8 @@ For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regio
 <tbody>
 <tr>
 <td>Platinum</td>
-<td rowspan="3">The mainland of China<br>(not including Hong Kong, Macao, and Taiwan)</td>
-<td rowspan="3">The mainland of China<br>(not including Hong Kong, Macao, and Taiwan)</td>
+<td rowspan="3">Chinese mainland</td>
+<td rowspan="3">Chinese mainland</td>
 <td>44</td>
 <td>17</td>
 <td>11</td>
@@ -98,8 +98,8 @@ For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regio
 </tbody></table>
 
 >?
->- Please consult your sales rep for prices between regions outside the mainland of China and other regions.
->- Currently, prepaid can be upgraded but not downgraded.
+>- Please consult your sales rep for prices between regions outside Chinese mainland and other regions.
+>- Currently, monthly subscription CCN instance can be upgraded but not downgraded.
 >- If the bandwidth between regions exceeds the purchased value, packets will be lost. We recommend configuring alarms.
 >- The bandwidth limit has a 3-5% deviation. If you purchased 100 Mbps of bandwidth, packet loss may occur when the bandwidth reaches 95 Mbps or above.
 
@@ -110,11 +110,11 @@ Suppose your CCN (service level: gold) is associated with network instances in G
 The total amount of prepaid fee is: 7,980 USD.
 ![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)
 
-## Monthly Postpaid (bill by the 95th percentile)
-Pay after use. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days. Monthly postpaid is suitable for business with large bandwidth fluctuations.
-For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regions but also a bandwidth burst of 30 Mbps. We recommend using monthly postpaid (bill by the 95th percentile) because you may only need to pay for 10 Mbps of bandwidth after the top 5% is removed.
+## Pay-As-You-Go by Monthly 95th Percentile
+Pay after use. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days. Monthly pay-as-you-go is suitable for business with large bandwidth fluctuations.
+For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regions but also a bandwidth burst of 30 Mbps. We recommend using pay-as-you-go by monthly 95th percentile because you may only need to pay for 10 Mbps of bandwidth after the top 5% is removed.
 ### Billing Cycle
-**Monthly postpaid**: fees are generated each month. You will be charged for the current month between 8 and 10 AM on the first day of the next month.
+**Monthly pay-as-you-go**: fees are generated each month. You will be charged for the current month between 8 and 10 AM on the first day of the next month.
 
 ### Billing Formula
 **Total monthly cost of CCN** = Sum of the interconnection costs of all regions
@@ -140,8 +140,8 @@ For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regio
 </thead>
 <tbody><tr>
 <td>Platinum</td>
-<td rowspan="3">The mainland of China<br>(not including Hong Kong, Macao, and Taiwan)</td>
-<td rowspan="3">The mainland of China<br>(not including Hong Kong, Macao, and Taiwan)</td>
+<td rowspan="3">Chinese mainland</td>
+<td rowspan="3">Chinese mainland</td>
 <td>55</td>
 <td>21</td>
 <td>13</td>
@@ -161,12 +161,12 @@ For example, if you have 10 Mbps of bandwidth between Beijing and Shanghai regio
 </tbody></table>
 
 >?
->- Please consult your sales rep for prices between regions outside the mainland of China and other regions.
+>- Please consult your sales rep for prices between regions outside Chinese mainland and other regions.
 >- CCN is postpaid based on actual usage. To avoid paying for extra bandwidth, we recommend configuring an upper limit for bandwidth between regions.
 
 ### Billing Example
 Suppose your CCN (service level: gold) was associated with network instances in Guangzhou, Beijing, and Shanghai regions in June 2019. There are 14 valid days, and the bandwidth usage is as follows:
-- Interconnection cost between Guangzhou and Beijing regions = 95th percentile of the monthly peak bandwidth value (120 M) × Proportion of valid days (14/30) × Tiered unit price (13 USD/Mbps/month) = 728 USD.
+- Interconnection cost between Guangzhou and Beijing regions = 95th percentile of the monthly peak bandwidth value (120 Mbps) × Proportion of valid days (14/30) × Tiered unit price (13 USD/Mbps/month) = 728 USD.
 - Interconnection cost between Beijing and Shanghai regions can be calculated using the above formula.
 The final CCN cost generated in June is the sum of the interconnection costs of all regions.
 ![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)

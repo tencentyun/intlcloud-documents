@@ -14,8 +14,10 @@ You have activated the LVB service and completed identity verification.
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page. 
 2. Click **Push Configuration**, view the **Authentication Configuration** section, and click **Edit** on the right.
 	![](https://main.qcloudimg.com/raw/9928eda10a0759bcf2a433e101cb3e7d.jpg)
-3. Modify the push authentication information and click **Save** to make the change take effect.
+3. On the **Configure Authentication** page, click ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push authentication.
+4. Modify the **Primary Key** and **Standby Key**, and click **Save**.
 ![](https://main.qcloudimg.com/raw/315b71b8315d30ade496b3861e8d403c.jpg)
+>? **Primary Key** is required, while **Standby Key** is optional. This design ensures that the key can be smoothly replaced in case of leakage without interrupting the business.
 
 
 ## Push Address Generator
@@ -134,3 +136,5 @@ public class Test {
     }
 }
 ```
+## Subsequent Operations
+With the push address, you can use LVB push as needed. For more information, see [LVB Push](https://intl.cloud.tencent.com/zh/document/product/267/31558).

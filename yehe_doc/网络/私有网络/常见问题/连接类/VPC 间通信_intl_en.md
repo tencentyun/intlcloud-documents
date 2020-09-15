@@ -9,7 +9,11 @@ The private network communication of CVMs or databases in a VPC is actually the 
 | Different subnets | Same VPC: support interconnection by default.<br>Different VPCs: communicate through [peering connections](https://intl.cloud.tencent.com/document/product/553/18836) or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985). (Both same-account and cross-account communication are supported.) |
 | Cross-account | Cross-account communication through [peering connections](https://intl.cloud.tencent.com/document/product/553/18836) or [CCN](https://intl.cloud.tencent.com/document/product/1003/31985). (Both same-region and cross-region communication are supported.) |
  
-> **Private network default interconnection** is present between different subnets of the same VPC (whether or not they are in the same availability zone). If they cannot connect with each other, you can first troubleshoot the firewall policies of the [security group](https://intl.cloud.tencent.com/document/product/213/12452) and the [network ACL](https://intl.cloud.tencent.com/document/product/215/5132).
+>!
+>- For the cross-account VPC interconnection through peering connection or CCN, take note of  the following: 
+    - The root account owns resources. If you want to communicate with another account through peering connection or CCN, enter the root account. 
+    - The sub-account only has the operation permission by default. Apply for permission from the root account to establish the peering connection or CCN if needed.
+>- **Private network default interconnection** is present between different subnets of the same VPC (whether or not they are in the same availability zone). If they cannot connect with each other, you can first troubleshoot the firewall policies of the [security group](https://intl.cloud.tencent.com/document/product/213/12452) and the [network ACL](https://intl.cloud.tencent.com/document/product/215/5132).
 
 
 ### What Should I Do When a Peering Connection Fails to Be Established Due to a VPC IP Range Conflict?

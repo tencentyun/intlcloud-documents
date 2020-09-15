@@ -12,7 +12,7 @@ CFS can automatically expand the storage capacity of a file system based on file
 
 #### Security and reliability
 
-- CFS features an extremely high availability and reliability. Each file stored in a CFS instance has multiple redundant copies in an AZ.
+- CFS employs a three-copy distributed mechanism that can securely store data across racks to ensure reliability up to 99.9999999%. The service won't return a success response to a write request until it confirms that the data has been written in all three copies. In case that any one of the copies fails, CFS will quickly copy a new one through data migration to ensure that there are always three copies ready for use.
 - CFS can strictly control access to file systems, allowing you to implement access control by using the security groups in the basic network or VPCs together with permission groups.
 
 #### Low costs
