@@ -1,3 +1,23 @@
+## September 2020
+
+<table>
+     <tr>
+         <th width="20%">Update</th>  
+         <th width="50%">Description</th>  
+         <th width="15%">Release Date</th>  
+         <th width="15%">Documentation</th>  
+     </tr> 
+     <tr>
+         <td> SDK 5.0.102 release (simplified SDK for Android & iOS)</td>
+         <td><ul stype="margin:0:">
+               <li>Simplified SDK for Android & iOS.</li>
+               <li>Compared to standard version, simplified SDK cuts out two capabilities (friend and conversion) and optimizes the business logic to improve efficiency and reduce installation package size.</li>
+         </td>
+         <td>September 4, 2020</td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</td>
+     </tr>
+</table>
+
 ## July 2020
 
 <table>

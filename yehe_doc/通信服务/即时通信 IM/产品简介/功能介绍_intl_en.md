@@ -18,7 +18,7 @@ The following platforms can communicate with each other and provide services acr
 | Feature Type | Description |
 | -------------- | -------------- |
 | Global access overview | IM provides reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside Mainland China, IM SDK connects to the nearest access nodes. |
-| China | South China, North China, East China, Hong Kong, etc. |
+| China | South China, North China, East China, Hong Kong, Taiwan regions, etc. |
 | Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa |
 
 
@@ -52,7 +52,7 @@ The following platforms can communicate with each other and provide services acr
 | Audio | The duration (in seconds) must be provided for audio data. |
 | Location | The message content includes the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 28 MB. |
-| Short video | The message content includes the URL, duration, size, and format of the short video. The maximum supported file size is 28 MB. |
+| Short video | The message contains the URL, duration, size, and format of the video file. The maximum supported file size is 28 MB. |
 | Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
