@@ -9,7 +9,7 @@
 2. 找到对应的存储桶，单击其存储桶名称，进入存储桶的文件列表页面。
 ![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
 3. 选择想要删除的对象，单击【更多操作】>【删除】，弹出删除文件对话框。
-![](https://main.qcloudimg.com/raw/9cc02a601944d8c4535855f7a50a8933.png)
+![](https://main.qcloudimg.com/raw/952657b354b3f554780c57b9ba1a23ad.png)
 4. 单击【确定】即可删除对象。
 ![](https://main.qcloudimg.com/raw/3e579dc3f90f83c6ececbb76dae519f7.png)
 
