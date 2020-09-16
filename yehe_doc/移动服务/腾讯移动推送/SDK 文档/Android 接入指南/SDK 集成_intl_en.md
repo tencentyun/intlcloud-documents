@@ -52,7 +52,7 @@ dependencies {
 
 >!
 >- If your application service access point is Guangzhou, the SDK implements this configuration by default.
->- If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+- If your application service access point is Shanghai, Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
 ```
 <application>
