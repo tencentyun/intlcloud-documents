@@ -8,5 +8,5 @@ You can delete buckets on the Bucket List page on the COS console. For more info
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Locate the bucket to delete, and click **Delete** under the **Operation** column.
-![](https://main.qcloudimg.com/raw/1bc40e12003c85ee7fec32fc4f41ff53.png)
+![](https://main.qcloudimg.com/raw/1baeba77031a31a1a242c237da68e376.png)
 
