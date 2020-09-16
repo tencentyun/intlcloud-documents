@@ -4,7 +4,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 
 ## Background
 
-The shared connection feature of new dedicated tunnels will stop accepting new applications at 00:00, August 1, 2020. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after 00:00, August 1, 2020.
+The shared connection feature of new dedicated tunnels has stopped accepting new applications at 00:00, August 1, 2020. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after 00:00, August 1, 2020.
 
 ## Use Limits on Large IP Range
 
