@@ -11,6 +11,8 @@ To receive APNs offline message notifications, complete the following steps:
 
 When the app configured with APNs switches to the background or is killed by the user, the Tencent Cloud backend pushes offline messages to the device through Apple’s APNs. For more information, see [Apple Push Notification Service](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
+>!Users who have logged out normally or forcibly will not receive any message notifications.
+
 <span id ="ApplyForCertificate"></span>
 
 ### Step 1: Apply for an APNs certificate
