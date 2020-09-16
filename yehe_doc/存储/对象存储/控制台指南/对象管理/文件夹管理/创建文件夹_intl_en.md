@@ -15,7 +15,7 @@ You have created a bucket. For more information, see [Creating a Bucket](https:/
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the bucket in which you want to create the folder to enter the bucket management page.
-![](https://main.qcloudimg.com/raw/70f39c92db05d363959658060fd632ec.png)
+
 3. Click **Create Folder** in the **File List** tab.
 4. Enter a folder name in the **Create Folder** dialog box. The folder naming rules are as follows:
  - A combination of numbers, letters and visible characters is supported.
