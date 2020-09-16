@@ -1,7 +1,7 @@
 ## Billable Items
 Global Application Acceleration Platform (GAAP) is a pay-as-you-go service, and billable items include the following:
-- **Connection fee** refers to the cost of resources (dedicated connection, forwarding server, etc.) used to create an acceleration connection. The fee is related to the concurrency capability of the connection. Each connection is billed independently on a daily basis. For specific prices, please [contact us](https://intl.cloud.tencent.com/contact-sales).
-- **Bandwidth fee** refers to the cost of bandwidth consumed by an acceleration connection. Each connection is billed independently on a daily basis according to the price range within which the actual peak bandwidth falls using tiered prices. For specific prices, please [contact us](https://intl.cloud.tencent.com/contact-sales).
+- **Connection fee** refers to the cost of resources (dedicated connection, forwarding server, etc.) used to create an acceleration connection. The fee is related to the concurrency capability of the connection. Refer to the [console](https://console.cloud.tencent.com/gaap) for final prices.
+- **Bandwidth fee** refers to the cost of bandwidth consumed by an acceleration connection. Each connection is billed independently on a daily basis according to the price range within which the actual peak bandwidth falls using tiered prices. Refer to the [console](https://console.cloud.tencent.com/gaap) for final prices.
 
 >A disabled connection does not incur any bandwidth fee but a connection fee. To stop incurring any connection fee, you need to delete the connection.
 
