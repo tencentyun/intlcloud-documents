@@ -1,9 +1,9 @@
 ## Overview
 This document provides sample code for integrating with the SDK and launching TPNS. (SDK version: v1.0+)
 >!If you are migrating from the [XG Platform](https://xg.qq.com) to TPNS, please be sure to:
-1. [Unregister XG platform service API](#zhuxiao).
-2. Implement corresponding changes based on the application integration conditions and then return to this document.
-3. Complete the integration as described below.
+>1. [Unregister XG platform service API](#zhuxiao).
+>2. Implement corresponding changes based on the application integration conditions and then return to this document.
+>3. Complete the integration as described below.
 
 ## SDK Composition
 - doc folder: TPNS SDK for iOS development guide.
@@ -26,13 +26,13 @@ Download through Cocoapods:
 pod 'TPNS-iOS' 
 ```
 >?
- - For the first download, you need to log in to the [git address](https://git.code.tencent.com/users/sign_in) to [set the username and password](https://code.tencent.com/help/productionDoc/profile#password) in **Account**. After successful configuration, enter the corresponding username and password in Terminal. Subsequently, no login is required on the current PC.
- - Due to the change of the git address, if the pod prompts `Unable to find a specification for 'TPNS-iOS'`, you need to run the following command to update the git and confirm the version:
-``` 
+> - For the first download, you need to log in to the [git address](https://git.code.tencent.com/users/sign_in) to [set the username and password](https://code.tencent.com/help/productionDoc/profile#password) in **Account**. After successful configuration, enter the corresponding username and password in Terminal. Subsequently, no login is required on the current PC.
+> - Due to the change of the git address, if the pod prompts `Unable to find a specification for 'TPNS-iOS'`, you need to run the following command to update the git and confirm the version:
+>``` 
 pod repo update
 pod search TPNS-iOS
 pod install // Install the SDK 
-```
+>```
 
 #### Method 2. Import manually
 1. Enter the [TPNS Console](https://console.cloud.tencent.com/tpns) and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** on the left sidebar to go to the download page. Select the SDK version to download and click **Download** in the "Operation" column.
@@ -61,8 +61,9 @@ If `checkTargetOtherLinkFlagForObjc` reports an error, it means that `-ObjC` has
 
 >! If your application service access point is Guangzhou, the SDK implements this configuration by default.
 If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
-1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
-2. Call the configuration `domain name` API in the header file before calling the `startXGWithAccessID:accessKey:delegate:` method (SDK v1.2.7.2+):
+>1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
+>2. Call the configuration `domain name` API in the header file before calling the `startXGWithAccessID:accessKey:delegate:` method (SDK v1.2.7.2+):
+
 To integrate with the Singapore service access point, set the domain name to ```tpns.sgp.tencent.com```.
 **Sample**
 ``` object-c
@@ -162,9 +163,9 @@ Unified message receipt callback. This callback will be used when the applicatio
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
 >!
-- When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
+>- When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
 The following is the sample code for differentiating notification message and silent message received in the foreground:
-```
+>```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
 NSNumber *msgType = tpnsInfo[@"msgtype"];
  if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive && msgType.integerValue == 1) {
@@ -172,8 +173,8 @@ NSNumber *msgType = tpnsInfo[@"msgtype"];
     } else {
         /// Silent message
     }
-```
-- If the unified message receipt callback `xgPushDidReceiveRemoteNotification` is implemented, then there is no need to implement `application:didReceiveRemoteNotification:fetchCompletionHandler` again.
+>```
+>- If the unified message receipt callback `xgPushDidReceiveRemoteNotification` is implemented, then there is no need to implement `application:didReceiveRemoteNotification:fetchCompletionHandler` again.
 
 
 Unified message click callback. This callback method is the notification message click callback in all states of the application (foreground, background, and closed).
