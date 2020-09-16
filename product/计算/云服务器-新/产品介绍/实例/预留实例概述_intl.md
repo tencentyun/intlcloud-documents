@@ -1,45 +1,45 @@
 ### Overview
 
-Reserved Instance (RI) is a special form of discount for pay-as-you-go instances. The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI. RIs are cheaper than pay-as-you-go instances.
->? The reserved instance is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+Reserved instance (RI) is a billing discount applied to the use of pay-as-you-go CVM instances under your account. These CVM instances must exactly match attributes of the RI you purchased to benefit from the billing discount during the RI term. RI provide you with a significant discount compared to pay-as-you-go billing.
+>? RI is currently in beta. Prices published here are for reference only. Refer to your bills for final prices. [Contact sales](https://intl.cloud.tencent.com/contact-sales) if you need further help.
 >
 
 > Currently, RIs are non-refundable.
 >
-> RIs do not support configuration adjustment. If the configuration of a pay-as-you-go instance matched with a RI is adjusted, the RI discount will become inapplicable.
+> Configurations of an RI cannot be changed after purchase. The RI billing discount will no longer apply to the matched instance if you change its configurations.
 >
-> After the RI-matched pay-as-you-go instance shuts down or is forced to shut down, the RI discount is still applicable to the pay-as-you-go instance.
+> The RI billing discount will still apply to matched CVM instances even after they are proactively or forcibly shut down.
 
 
-#### Launch Schedule
+#### Release schedule
 
-Currently, RIs are offered to allowed users. You can go to the RI beta page and submit an [application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns).
+Currently, RIs are only offered to beta users. To use it, [submit an application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) to be an RI beta user. 
 
 #### Attributes
 
-- [Region](https://intl.cloud.tencent.com/document/product/213/6091): Region refers to the geographic region where a physical IDC is located, such as Silicon Valley
-- [Availability zone](https://intl.cloud.tencent.com/document/product/213/6091): Availability zone refers to the physical IDC in Tencent Cloud that has independent power supply and network, such as Silicon Valley Zone 1
-- [Instance type](https://intl.cloud.tencent.com/document/product/213/11518): Tencent Cloud offers multiple instance types, eg. standard model
-- [Instance specifications](https://intl.cloud.tencent.com/document/product/213/11518): Specifications of a RI model, such as S4.SMALL1
-- OS: Linux
+- [Region](https://cloud.tencent.com/document/product/213/6091): the physical location of an IDC, such as Silicon Valley.
+- [Availability zone](https://cloud.tencent.com/document/product/213/6091): a Tencent Cloud IDC with independent power supply and network in the above region, such as Silicon Valley Zone 1.
+- [Instance type](https://cloud.tencent.com/document/product/213/11518): a Tencent Cloud CVM instance family type, such as Standard.
+- [Specification](https://cloud.tencent.com/document/product/213/11518): RI specifications, such as S4.SMALL. 
+- Operating system: Linux OS
 
-> The discount can be applied to a pay-as-you-go instance only if it is within the normal lifecycle of a RI and has exactly the same attributes as the RI.
+> The pay-as-you-go CVM instances must exactly match RI attributes to benefit from the billing discount during the RI term.
 
-#### Concept Comparisons
+#### Concept comparison
 
-| Item | RI | Pay-as-you-go instance |
-| -------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| Format | A discount for pay-as-you-go instances. | An instance purchased via [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2180), i.e., a running virtual machine. |  |
-| How to use | It cannot be used separately; instead, it can only be used with matched pay-as-you-go instances to offset part of the pay-as-you-go bill. | This can be managed and configured independently as a simple web server or together with other Tencent Cloud products to build powerful solutions. |
+| Item   | RI      | Pay-as-you-go instance         |
+| -------- | ---------- | ---------- |
+| Concept     | A discount for pay-as-you-go instances.       | An instance purchased using the [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2179) billing option, i.e., a running virtual machine. |
+| Usage | RIs cannot be used separately; instead, it can only be used with matched pay-as-you-go instances to offset part of the pay-as-you-go bill. | CVMs can be managed and configured independently as a simple web server or as part of a powerful cloud solution together with other Tencent Cloud products. |
 
-#### Usage Restrictions
+#### Use limits
 
-Currently, availability zones and instance specifications available for RIs can be viewed here: [Purchasable RI listing API](https://intl.cloud.tencent.com/document/product/213/30575)
+To check availability zones that support RIs, please use the [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) API.
 
-OS: Currently, only Linux instances are eligible for RIs
+Operating system: currently, RI only supports Linux CVM instances.
 
-Payment method: There are three options: All Upfront, Partial Upfront, and No Upfront.
+Payment method: there are three payment options, namely **All Upfront**, **Partial Upfront**, and **No Upfront**.
 
-Validity period: One year or three years.
+Terms: 1 year
 
-Quota: Each user can have up to 20 RIs per month in one availability zone
+Quota: each user can have up to 20 RIs per month in one availability zone.
