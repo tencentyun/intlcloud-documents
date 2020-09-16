@@ -18,7 +18,7 @@ We are committed to building the most flexible cloud service management platform
 - **OS**: switch between Windows and Linux at any time for CVMs in Mainland China. Coming soon for other areas.
 - **EIP**: for CVMs in various network environments
 - **Image**: public images (with multiple Linux and Windows variants) and custom images (image created by users using the image creation feature). Cross-region adjustment and image duplication are supported.
-**Custom network architecture**: Virtual Private Cloud (VPC) provides independent network space, custom IP address ranges, IP addresses, and routing policies. It offers port-level access control to support full logical isolation for networks.
+- **Custom network architecture**: Virtual Private Cloud (VPC) provides independent network space, custom IP address ranges, IP addresses, and routing policies. It offers port-level access control to support full logical isolation for networks.
 
 ## Reliability
 
