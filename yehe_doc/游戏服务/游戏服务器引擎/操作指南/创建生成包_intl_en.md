@@ -18,7 +18,7 @@ Enter the basic asset package information, such as name and version, select the 
    - Asset Package Version: detailed information of asset package version, which is used to distinguish between different asset package versions.
    - OS: OS on which the game server asset package runs. It cannot be modified after the asset package is created and is CentOS 7.16 by default.
    - Submission Mode: currently, only local upload zip package is supported.
-   - Upload Codes: the asset package directory must contain all the components necessary for running your game server, including executable files, dependency packages, and installation scripts of the game server. It needs to be compressed into a zip package.
+   - Upload Codes: the asset package requires [integrating gRPC Framework](https://intl.cloud.tencent.com/document/product/1055/37418). The asset package directory must contain all the components necessary for running your game server, including executable files, dependency packages, and installation scripts of the game server. It needs to be compressed into a zip package.
      - Server executable: a file required for running the game server. The asset package can contain multiple server executables, provided that they are built for the same platform.
      - Dependency: any file required for running the server executable.
      - Installation script: script used to execute the tasks for installing the asset package on the GSE-hosted server. This file must be placed in the root directory of the asset package and will run once during fleet creation.

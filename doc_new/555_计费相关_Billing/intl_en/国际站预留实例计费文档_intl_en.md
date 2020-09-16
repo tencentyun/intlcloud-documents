@@ -1,6 +1,6 @@
 ### Overview
 
-A reserved instance (RI) is not a cloud virtual machine (CVM). It is a billing discount applied to the use of pay-as-you-go CVM instances under your account. RI automatically applies to running pay-as-you-go instances with matching attributes, so these instances will benefit from the discount during the RI term. You can purchase and activate an RI for your existing CVM or buy one before even purchasing a CVM. RIs provide you flexibility and significant savings compared to pay-as-you-go billing modes.
+A reserved instance (RI) is not a cloud virtual machine (CVM). It is a billing discount applied to pay-as-you-go CVM instances under your account. RI automatically applies to running pay-as-you-go instances with matching attributes, so these instances will benefit from the discount during the purchased RI term. You can purchase and activate an RI for your existing CVM or directly buy an RI with no existing CVM. RIs provide you flexibility and significant savings compared to the pay-as-you-go billing mode.
 
 **Supported Products**
 
