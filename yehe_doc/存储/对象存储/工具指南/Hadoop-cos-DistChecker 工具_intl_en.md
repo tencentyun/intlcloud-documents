@@ -4,10 +4,10 @@ After migrating data from HDFS to COS by using the `hadoop distcp` command, you 
 
 ## Operating Environment
 
-- [hadoop-cos-2.x.x-shaded.jar](https://github.com/tencentyun/hadoop-cos/tree/master/dep)
+- Hadoop-cos v5.8.2 or above. For more information, see [hadoop-cos release](https://github.com/tencentyun/hadoop-cos/releases).
 - Runtime environment for Hadoop MapReduce
 
->Please note that the `hadoop-cos` dependency must be of the latest version (with GitHub tag 5.8.2 or above) to get the CRC64 check code.
+>- For self-built Hadoop clusters, the "Hadoop-cos" dependency must be of the latest version (GitHub release 5.8.2 or above) to return CRC64 check code.
 
 ## Instructions
 
