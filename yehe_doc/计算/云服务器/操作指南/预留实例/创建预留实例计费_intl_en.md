@@ -3,7 +3,7 @@
 Reserved Instance (RI) provides a discount for pay-as-you-go instances. This document describes how to create RI via the console.
 
 ## Prerequisites
-Currently, RIs are only offered to beta users. To use it, go to the RI beta application page and submit an application to be a beta user.
+Currently, RIs are only offered to beta users. To use it, go to the RI beta application page and [submit an application](https://intl.cloud.tencent.com/apply/p/bvrqmrrp5ns) to be a beta user.
 
 ## Directions
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/instance/index?rid=1).
