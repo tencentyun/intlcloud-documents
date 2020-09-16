@@ -1,5 +1,5 @@
 Traffic mirror provides a traffic collection service that filters and copies desired traffic from ENI to CVM clusters in the same VPC. This feature is applicable to scenarios including security audit, risk monitoring, troubleshooting and business analysis.
-> However, traffic mirror consumes CVM resources such as CPU, memory and bandwidth pro rata. For example, if you mirror a network interface that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic. In this case, the instance needs to handle 1 Gbps of inbound traffic and 3 Gbps of outbound traffic (1 Gbps for the outbound traffic, 1 Gbps for the mirrored inbound traffic and 1 Gbps for the mirrored outbound traffic).
+> ?However, traffic mirror consumes CVM resources such as CPU, memory and bandwidth pro rata. For example, assume you mirror a ENI that has 1 Gbps of inbound traffic and 1 Gbps of outbound traffic. In this case, the instance needs to handle 1 Gbps of inbound traffic and 3 Gbps of outbound traffic (1 Gbps for the outbound traffic, 1 Gbps for the mirrored inbound traffic and 1 Gbps for the mirrored outbound traffic).
 
 ## Procedure
 The following are key components of a traffic mirror, together with its workflow.
