@@ -1,5 +1,7 @@
+
 实例初始化后，可以通过 MongoDB shell 或者各语言驱动访问数据库，并进行各种管理操作。
 使用 [云服务器 CVM](https://intl.cloud.tencent.com/document/product/213/10517) 连接自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个 VPC 内（保障同一个地域），或同在基础网络内。暂不支持外网访问方式。
+>?对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见  [云联网](https://intl.cloud.tencent.com/document/product/1003/30049)。
 
 ## 前提条件
 连接云数据库 MongoDB 最低驱动版本需要3.2，建议使用最新版的客户端驱动以保证最好的兼容性，包括 Shell 套件、Java jar 包、PHP 扩展、Node.js 模块等，具体请参见 [MongoDB 官网驱动介绍](https://docs.mongodb.com/ecosystem/drivers/)。
@@ -12,11 +14,11 @@ mongo shell 是 MongoDB 发行版的一部分，您需要先下载和安装 Mong
     cd <mongodb installation dir>
 	./bin/mongo -umongouser -plxh2081* 172.x.x.56:27017/admin
 ```
->上例中，-u 参数指定 [用户名](#mryh)，-p 参数指定密码，172.x.x.56和27017分别指定 MongoDB 实例的 IP 和端口。
+>?上例中，-u 参数指定 [用户名](#mryh)，-p 参数指定密码，172.x.x.56和27017分别指定 MongoDB 实例的 IP 和端口。
 
 ### URI 方式
 MongoDB 既可以用传统的传参方式进行连接，同时大部分的驱动程序也支持 URI 形式连接。MongoDB 官方推荐使用 URI 的方式连接 MongoDB。
->MongoDB 副本集实例（4.0版）连接方式与其他版本规格有所不同，4.0版提供了3个 IP 进行访问，分别对应副本集的3个节点。现网业务连接时，建议在连接串中配置3个 IP，连接更加安全高效。请参见 [副本集实例（4.0版）连接说明](https://intl.cloud.tencent.com/document/product/240/35062)。
+>?MongoDB 副本集实例（4.0版）连接方式与其他版本规格有所不同，4.0版提供了3个 IP 进行访问，分别对应副本集的3个节点。现网业务连接时，建议在连接串中配置3个 IP，连接更加安全高效。请参见 [副本集实例（4.0版）连接说明](https://intl.cloud.tencent.com/document/product/240/35062)。
 >
 典型的 URI 如下：
 - 例1
