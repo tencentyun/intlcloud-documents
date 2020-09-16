@@ -42,4 +42,4 @@ Payment method: there are three payment options, namely **All Upfront**, **Parti
 
 Terms: 1 year
 
-Quota: each user can have up to 20 RIs per month in one availability zone.
+Quota: each user can have up to 20 RIs in one availability zone.
