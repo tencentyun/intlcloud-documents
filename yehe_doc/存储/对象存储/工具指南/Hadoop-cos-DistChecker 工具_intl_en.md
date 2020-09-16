@@ -32,7 +32,7 @@ Its format is as follows:
 /benchmarks/TestDFSIO/io_write/part-00000
 ```
 
-- **Source directory **: the directory where the source files are stored; it usually serves as the source path for data migration through the `distcp` command. For example, `hdfs://host:port/source_dir` is the source directory in the following sample:
+- **Source directory**: the directory where the source files are stored; it usually serves as the source path for data migration through the `distcp` command. For example, `hdfs://host:port/source_dir` is the source directory in the following sample:
 ```plaintext
 hadoop distcp hdfs://host:port/source_dir cosn://examplebucket-appid/dest_dir
 ```
