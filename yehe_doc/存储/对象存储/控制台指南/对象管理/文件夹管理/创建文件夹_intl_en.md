@@ -1,12 +1,12 @@
 ## Overview
 In COS that comes with no folders, objects are stored in a flat structure. To make it easier for you to get started, objects whose object keys are suffixed with `/` can be used as "folders", but the "folders" are actually objects occupying 0 KB in COS.
 
-> The length of the folder name cannot exceed 255 characters, and ASCII control characters are not supported.
-> ASCII control characters are as follows:
-- Up (↑): CAN (24)
-- Down (↓): EM (25) 
-- Right (→): SUB (26) 
-- Left (←): ESC (27) 
+>!A folder name can be up to 255 characters which cannot contain reserved ASCII control characters as follows:
+> 
+>- Up (↑): CAN (24)
+>- Down (↓): EM (25) 
+>- Right (→): SUB (26) 
+>- Left (←): ESC (27) 
 
 ## Prerequisites
 
