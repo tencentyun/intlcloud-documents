@@ -25,7 +25,7 @@
 </tr></table>
 
 >? <span id="key"></span>key 为【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
->![](https://main.qcloudimg.com/raw/34b21b2d50d2aca00dd2dfa19816e8e3.png)
+>![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### 回调消息参数
 
