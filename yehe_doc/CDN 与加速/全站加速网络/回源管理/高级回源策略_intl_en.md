@@ -11,7 +11,7 @@ You can select an appropriate origin-pull policy based on your business needs. 
 >- The default origin-pull policy of ECDN is optimal route selection.
 >- Weighted and primary/secondary origin-pull policies support only origin servers whose type is origin IP. Origin servers whose type is origin domain support only optimal route selection origin-pull.
 >- If weighted origin-pull is selected, the performance will also be taken into account when the platform schedules requests. Therefore, the actual origin-pull weight ratio may be different from the set ratio.
->- If primary/secondary origin-pull is selected, the platform will monitor availability of both the primary and secondary origin servers. If the primary origin server is found exceptional, requests will be automatically switched to the secondary origin server and will be switched back to the primary origin server if it is found recovered.
+>- If primary/secondary origin-pull is selected, the platform will monitor availability of both the primary and secondary origin servers. If the primary origin server returns a status code in the range of 400-599 (except for 416), requests will be automatically switched to the secondary origin server and will be switched back to the primary origin server if it is found recovered.
 
 <span id=""new""></span>
 ## Adding Advanced Origin-Pull Policy

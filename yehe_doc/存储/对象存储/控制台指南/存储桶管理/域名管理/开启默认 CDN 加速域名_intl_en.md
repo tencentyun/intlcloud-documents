@@ -4,8 +4,8 @@ This document describes how to enable a custom acceleration domain name followin
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List** on the left sidebar to open the Bucket List page.
-2. Click the bucket for which you need to set a domain name, and enter the bucket configuration page.
-![](https://main.qcloudimg.com/raw/e7864a63d1a7a1c1cde36d186b067c97.png)
+2. Click on the bucket for which to configure the domain name to enter the bucket configuration page.
+
 3. Click **Domain Management** on the left, click **Edit** under **Default CDN Acceleration Domain**, set the status to **On**, and configure as follows:
  - **Acceleration Region**: supports CDN acceleration for Mainland China, Hong Kong, China, and overseas regions, and global acceleration for buckets across all regions.
  - **Origin Server Type**: the origin server type usually defaults to **Default Origin Server**, but if you have enabled static website for the origin server bucket and want to accelerate content delivery for the static website, select **Static Website Origin Server**.

@@ -11,9 +11,9 @@ COS Select allows you to filter out desired data at the storage level, significa
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List**.
 3. Click the bucket name to enter the bucket where the object is stored.
-   ![](https://main.qcloudimg.com/raw/44d78203df8d6b4506e7870e7cd827b1.png)
-4. In the bucket "File List", locate the object to be extracted and click **More Actions>Extract** under the "Actions" column on the right side.
-	 ![](https://main.qcloudimg.com/raw/2e507efa3b6f9ccda41a45b7bb3038d1.png)
+
+4. Locate the object to extract under the **File List** tab, and select **More Actions** > **Extract** under **Operation**.
+	
 5. Enter the extract object content page in the console, and select the type, header field, separator, and compression format of the file to be extracted.
 	 ![](https://main.qcloudimg.com/raw/b6390a741fc0b3dd6880752ed78d7ca5.png)
 6. Click **Select an SQL Template**, select the desired template statement, and click **OK**.

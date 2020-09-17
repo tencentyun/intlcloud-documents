@@ -1,6 +1,6 @@
 
 ### Does TUIKit source code support Androidx?
-TUIKit source code currently does not support Androidx.
+Yes.
 
 ### Why do I encounter a 6012 error or "TLSSDK exchange ticket fail" upon login?
 

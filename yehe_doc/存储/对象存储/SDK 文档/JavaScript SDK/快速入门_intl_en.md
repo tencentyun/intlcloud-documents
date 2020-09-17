@@ -41,7 +41,9 @@ var COS = require('cos-js-sdk-v5');
 
 ## Getting a Temporary Key
 
-Using a fixed key on the frontend exposes your SecretId and SecretKey. Therefore, we store the permanent key on the backend, and the frontend uses a temporary key generated from the backend through AJAX. In actual deployment, please add an additional authentication step on the backend. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+As exposing your permanent key to the front end poses security risks, we recommend using temporary keys instead in the real environment. To do so, the front end first requests a temporary key from the server. The server then obtains the temporary key by calling the STS service using the permanent key (For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048), and returns it to the front end for use.
+
+>!If your site has a login status, you should add login status verification to your API for generating temporary keys. 
 
 ### Initialization
 
