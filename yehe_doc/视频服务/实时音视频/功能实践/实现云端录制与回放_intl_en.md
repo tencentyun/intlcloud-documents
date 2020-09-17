@@ -11,7 +11,7 @@ Multiple audio/video streams can also be first mixed by [On-cloud Stream Mix](ht
 
 <span id="open"></span>
 ### Activating recording service
-1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc) and select **Application Management** on the left sidebar.
+1. Log in to the TRTC Console and select **[Application Management](https://console.cloud.tencent.com/trtc/app)** on the left sidebar.
 2. Click **Feature Configuration** in the row of the target application to enter the feature configuration page. If there are no applications, you can click **Create Application**, enter the application name, and click **OK** to create one.
 3. Click <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"  style="margin:0;"> on the right of **Enable On-cloud Recording** and the on-cloud recording settings page will pop up:
 
