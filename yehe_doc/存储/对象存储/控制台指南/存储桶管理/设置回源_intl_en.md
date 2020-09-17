@@ -30,12 +30,15 @@ abc.example.com:8080
 ```
 
 You can configure a specific origin-pull address using the following fields:
+
     - **Fixed file**: specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to the `<origin-pull address>/test/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
     - **Specified suffix**: specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to the `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
      >!
      >- If you select “Fixed file”, the other fields cannot be used by default.
      >- “Specified prefix” and “Specified suffix” can be used at the same time.
+     ```
+     
  - **3xx Following Policy**: if this policy is enabled, when your origin server returns a 3XX redirect, COS will follow it by default to another origin server to pull data from.
  - **Origin-Pull Parameter**: specifies whether to pass through COS request parameters when accessing the origin server.
  - **Origin-pull header**: specifies the custom headers that you can add for COS to access your origin server. Currently, up to 10 of them can be added. 
