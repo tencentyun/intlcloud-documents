@@ -18,4 +18,3 @@ A ticket can have the following states:
 >?The ticket will revert to "pending processing" status after you re-submit the ticket with more information.
 
 - Closed: the ticket has been resolved, or you closed the ticket before it was processed.
-
