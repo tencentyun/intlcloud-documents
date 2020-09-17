@@ -10,6 +10,7 @@ Before downloading an object, make sure that the object already exists in the bu
 2. Find the bucket where the object is stored and click the bucket name to enter the bucket management page.
    ![](https://main.qcloudimg.com/raw/46307132ac1ef1e8422667abd896f878.png)
 3. Under the **File List** tab, select the object(s) you want to download. To download only one object, you can use one of the following ways:
+
   1. Click **Download** under the **Operation** column, or select a single object and click **Download** in the **More Actions** drop-down list at the top.
   ![](https://main.qcloudimg.com/raw/4ee4cb3f5ff0a5634ef8ed49d26c549b.png)
   2. Select the object and click **Download** in the **More Actions** drop-down list.
