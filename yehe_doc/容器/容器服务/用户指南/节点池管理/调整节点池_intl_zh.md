@@ -12,9 +12,9 @@
 ### 调整节点池全局配置
 
 1. 在“节点池列表”页面，单击“全局配置”模块右上角的【编辑】。如下图所示：
-![](https://main.qcloudimg.com/raw/94e8b41f593dd6507ff9d9f4d9f89537.png)
+![](https://main.qcloudimg.com/raw/b4903a06aa4d95593190e8d7cc49c626.png)
 2. 在弹出的“设置集群伸缩全局配置”窗口中，参考以下信息进行设置。如下图所示： 
-![](https://main.qcloudimg.com/raw/9175321e4165d2d0c67c27be19af4e28.png) 
+![](https://main.qcloudimg.com/raw/36cdb1310cfa3c8518973ff0616d3611.png) 
 主要参数信息如下：
  - **自动缩容**：默认不勾选。开启自动缩容时，集群中节点空闲资源较多时将触发缩容。详情请参见 [集群自动扩缩容说明](https://intl.cloud.tencent.com/document/product/457/30638)。
  - **缩容配置**：该配置项仅在开启自动缩容时显示，请根据实际需求进行设置。
@@ -35,9 +35,9 @@
 
 ### 调整节点池配置
 1. 单击目标节点池名片页右上角的【编辑】。如下图所示：
-![](https://main.qcloudimg.com/raw/87a5b4313f1d67dfb0d068afa8090397.png)
+![](https://main.qcloudimg.com/raw/78c2ad6771aaaa705e8734a5c850db9a.png)
 2. 在弹出的“调整节点池配置”页面，参考以下信息进行设置。如下图所示：
-![](https://main.qcloudimg.com/raw/496ec743f24b3bb7c37db680e7b17b51.png)
+![](https://main.qcloudimg.com/raw/d67c48fefa24d43101c1107aaecb2c55.png)
  - **节点池名称**：自定义。可根据业务需求等信息进行命名，方便后续资源管理。
  - **弹性伸缩**：根据实际需求进行勾选。
  - **节点数量范围**：节点数量将在设定的节点范围内自动调节，不会超出该设定范围。
@@ -49,31 +49,31 @@
 > - **PreferNoSchedule：** 非强制性条件，尽量避免将 Pod 调度到设置了其不能容忍的 taint 的节点上。
 > - **NoSchedule：** 当节点上存在 taint 时，没有对应容忍的 Pod 一定不能被调度。
 > - **NoExecute：**当节点上存在 taint 时，对于没有对应容忍的 Pod，不仅不会被调度到该节点上，该节点上已存在的 Pod 也会被驱逐。
-> 
+
 以设置 Taints `key1=value1:PreferNoSchedule` 为例，控制台配置如下图所示：
-![](https://main.qcloudimg.com/raw/e554317ef5c178297d34eef3f9a7bfa7.png)
+![](https://main.qcloudimg.com/raw/019a6924bfcc0d454a0816260eb90bee.png)
 3. 单击【确定】并等待更新完成即可。
 
 
 <span id="adjustNodePool"></span>
 ### 调整节点池下节点数量
 1. 单击目标节点池名片页右侧的【调整数量】。如下图所示：
-![](https://main.qcloudimg.com/raw/9ca0c61a643d42098857069966c5a975.png)
+![](https://main.qcloudimg.com/raw/633abae62af2dc91a37b42e3fa575695.png)
 2. 在弹出的“调整数量”页面，按需调整节点数量范围。如下图所示：
 > 
 > - 节点数量范围可在[ 调整节点池全局配置 ](#adjustGlobalNodePool)时进行设置。
 > - 节点池已开启弹性伸缩时，该数量将会随着集群工作负载自动调整，可能会存在最终实际的节点数量与数量调整时所设置的值不一致的问题。
 
-![](https://main.qcloudimg.com/raw/71add01b63c47a550cf07825e3916ebc.png)
+![](https://main.qcloudimg.com/raw/22c617ed3b3ae00246804aea2cea3a93.png)
 
 3. 单击【确定】等待数量调整完成即可。
 
 
 ### 启用/停用弹性伸缩
 > 执行启用/停用弹性伸缩操作时，仅建议在容器服务侧节点池处进行，以确保该状态能够同步至 Cluster-autoscaler。
->
+
 1. 单击目标节点池名片页右上角的【更多】。如下图所示：
-![](https://main.qcloudimg.com/raw/fa2114520fb455fdc7e8e7839545ff41.png)
+![](https://main.qcloudimg.com/raw/0dccca5810605714c8fe11987eb7add0.png)
 2. 结合实际情况选择【启用弹性伸缩】或者【停用弹性伸缩】，并在弹出的窗口中单击【确认】即可。
 
 ## 相关操作

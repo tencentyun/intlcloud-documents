@@ -8,13 +8,13 @@
 
 ## 操作步骤
 1. 选择目标节点池名片页右上角的【更多】>【删除】。如下图所示：
-![](https://main.qcloudimg.com/raw/6ba9e3437bed683a8022a2a391c54ded.png)
+![](https://main.qcloudimg.com/raw/8378207a7d3909bd962c8ed8d9a73fca.png)
 2. 在弹出的“删除节点池”窗口中，按需设置是否保留节点。如下图所示：
 > 
 > -  默认勾选销毁按量计费的节点，可根据实际需求取消勾选。
 > - 按量计费的节点销毁后不可恢复，请谨慎操作，并提前备份好数据。
 
-![](https://main.qcloudimg.com/raw/e31037b22c4832a3ec5fe2673e6fcb87.png)
+![](https://main.qcloudimg.com/raw/88ff22054e4a48836ed36446458fa2a6.png)
 3. 单击【确认】，等待删除成功即可。
 
 ## 相关操作

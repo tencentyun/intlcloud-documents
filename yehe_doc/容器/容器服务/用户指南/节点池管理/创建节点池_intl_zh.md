@@ -11,19 +11,19 @@
 1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”列表页面，选择目标集群 ID，进入该集群 “Deployment” 页面。
 3. 选择左侧菜单栏中的【节点管理】>【伸缩组】，进入“伸缩组列表”页面。如下图所示：
-![](https://main.qcloudimg.com/raw/6c77bda8d1dda23db3ffc53f84cf4730.png)
+![](https://main.qcloudimg.com/raw/3f7687f710e9a09e81d93b6bb4f5cbd8.png)
 4. 选择伸缩组所在行右侧的【更多】>【创建节点池】 ，在弹出窗口中单击【确定】即可。
 >创建完成后，即可参考 [查看节点池](https://intl.cloud.tencent.com/document/product/457/35902) 查看相关信息。原【伸缩组】项将不可再次查看。
->
+
 
 
 ## 操作步骤
 
 1. 在“集群管理”列表页面，选择目标集群 ID，进入该集群 “Deployment” 页面。
 3. 选择左侧菜单栏中的【节点管理】>【节点池】，进入“节点池列表”页面。如下图所示：
-![](https://main.qcloudimg.com/raw/cdd0a20623702fbf6d93bf4cebe2f895.png)
+![](https://main.qcloudimg.com/raw/d58e9454d7e191c669b382caedd2f547.png)
 4. 单击【新建节点池】，进入“新建节点池”页面，参考以下提示进行设置。如下图所示：
-![](https://main.qcloudimg.com/raw/e635d072eab64aad02943ced48e771e0.png)
+![](https://main.qcloudimg.com/raw/ccabf536db92a234c7df3851f4cf7fa1.png)
  - **节点池名称**：自定义，可根据业务需求等信息进行命名，方便后续资源管理。
  - **计费模式**：提供【按量计费】和【竞价计费】两种计费模式，请根据实际需求进行选择。详情请参见[ 计费模式对比](https://intl.cloud.tencent.com/document/product/213/2180)。
  - **支持网络**：系统将为集群内主机分配在节点网络地址范围内的 IP 地址。
@@ -66,7 +66,7 @@
  - **节点数范围**：节点数量将在设定的节点范围内自动调节，不会超出该设定范围。
  - **支持子网**：请根据实际需求选择合适的可用子网。
 4. （可选）单击【更多设置】，查看或配置更多信息。如下图所示：
-![](https://main.qcloudimg.com/raw/8caad80cefbd214e7552fab8ed0dcfb1.png)
+![](https://main.qcloudimg.com/raw/f3018ed7f3bebcc5163cd34e5eb94e49.png)
  - **容器目录**：勾选即可设置容器和镜像存储目录，建议存储到数据盘。例如 `/var/lib/docker`。
   - **安全加固**：默认免费开通 DDoS 防护、WAF 和云镜主机防护，详情请参见[ T-Sec 主机安全官网页](https://intl.cloud.tencent.com/product/cwp?_ga=1.173966502.440655928.1500464439)。
   - **云监控**：默认免费开通云产品监控、分析和实施告警，安装组件获取主机监控指标，详情请参见 [云监控 CM 官网主页](https://intl.cloud.tencent.com/product/cm)。
@@ -80,7 +80,8 @@
 > - **NoExecute**：当节点上存在 taint 时，对于没有对应容忍的 Pod，不仅不会被调度到该节点上，该节点上已存在的 Pod 也会被驱逐。
 >
   以设置 Taints `key1=value1:PreferNoSchedule` 为例，控制台配置如下图所示：
-	![](https://main.qcloudimg.com/raw/e554317ef5c178297d34eef3f9a7bfa7.png)
+	![](https://main.qcloudimg.com/raw/789f7d012c69b6c51425c82294a8f9a5.png)
+  
   - **重试策略**：提供以下两种策略，请根据实际需求进行选择。
     - **快速重试**：立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
     - **间隔递增重试**：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
