@@ -11,7 +11,7 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the Bucket List page. Click the bucket for which you want to configure origin-pull to enter the bucket details page.
 2. Select **Basic Configurations** > **CORS (Cross-Origin Resource Sharing) Setting** on the left sidebar, and click **Add a Rule**.
-![](https://main.qcloudimg.com/raw/7c7625753ad3c0c34dee7eb901bc9184.png)
+![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. Configure the following and click **OK**.
  - **Origin-pull condition**: specifies all conditions as needed that must be met at the same time for triggering origin-pull.
     -**HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
