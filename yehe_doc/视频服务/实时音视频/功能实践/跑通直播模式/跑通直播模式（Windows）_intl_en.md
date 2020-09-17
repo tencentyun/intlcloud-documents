@@ -1,7 +1,5 @@
 ## Overview
-This document describes how to implement an online live streaming service that supports video co-anchoring and viewing by tens of thousands of concurrent viewers based on the TRTC SDK:
-- This document only mentions the most basic features. If you want to learn more about advanced features, please see [Advanced Features](https://intl.cloud.tencent.com/document/product/647/35242).
-- This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35119).
+This document describes how to implement an online live streaming service that supports video co-anchoring and viewing by tens of thousands of concurrent viewers based on the TRTC SDK. This document only lists the most commonly used APIs. If you want to learn more about API functions, please see the [API documentation](https://intl.cloud.tencent.com/document/product/647/35119).
 
 
 ## Sample Code
