@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th style="text-align:center;" width="180px"><b>Android<br></b>Code Scanning via Browser</th>
-    <th style="text-align:center;" width="180px"><b>iOS</b><br>Installation Password: 123</th>
+    <th style="text-align:center;" width="180px"><b>iOS</b></th>
     <th style="text-align:center;" width="180px"><b>Mini Program</b></th>
     <th style="text-align:center;" width="180px"><b>Live-Streaming E-commerce Scenarios on Mini Programs</b></th>
     <th style="text-align:center;" width="180px"><b>Web</b></th>
@@ -22,13 +22,5 @@
   </tr>
 </table>
 
-**Android/iOS basic feature demonstration**
 
-<img src="https://main.qcloudimg.com/raw/a60cd107fa2f3e2a9d6caccdeb473dee.gif" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://main.qcloudimg.com/raw/1c642a25bda2c78ca5ac71cd5c715f5a.gif" />
-
-**Android/iOS custom feature demonstration**
-
-<img src="https://main.qcloudimg.com/raw/b3641b1aaa5fe4d8d031b328c411fbe0.gif" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://main.qcloudimg.com/raw/eaa6f517e6aacdd973a85174ed0aca68.gif" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://main.qcloudimg.com/raw/d389b703fe98e10fd005d8401c4dd652.gif" />
-
->?
->- For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).
+>?For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).

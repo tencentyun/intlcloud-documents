@@ -93,7 +93,9 @@
 ### 录制示例
 - 最简单的情况，只需填写指定的 StreamName、DomainName、AppName 和 EndTime 参数。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 FLV，视频录制，分片间隔30分钟，永久存储。
-**输入示例：**
+
+**输入示例**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -101,13 +103,15 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
 &StartTime=1597017600
 &EndTime=1597024800
-&TemplateId=17016
+&TemplateId=0
 &<公共请求参数>
 ```
 - 您还可以指定具体录制格式、录制类型以及存储参数等。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
-	1. 调用 [CreateLiveRecordTemplate](https://cloud.tencent.com/document/product/267/32614) ，先创建录制模板。
-**输入示例：**
+	1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
+
+**输入示例**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -117,7 +121,9 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<公共请求参数>
 ```
-**输出示例：**
+
+**输出示例**
+
 ```
 {
   "Response": {
@@ -126,8 +132,31 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
   }
 }
 ```
-	2. 调用 [CreateRecordTask](https://cloud.tencent.com/document/product/267/45983)，创建录制任务。
-**输入示例：**
+	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
+
+**输入示例**
+
+```
+https://live.tencentcloudapi.com/?Action=CreateLiveRecord
+&StreamName=livetest
+&AppName=live
+&DomainName=mytest.live.push.com
+&StartTime=1597017600
+&EndTime=1597024800
+&TemplateId=17016
+&<公共请求参数>
+```
+
+
+> ?
+>- 对于同一条直播流，定时任务之间以及定时任务与其它形式的录制任务不冲突。也就是说，您创建的多个定时任务所指定的时间范围可以重叠。而且可以在启用配置录制的基础上再调用 API 创建录制任务。
+> - 另外，建议提前创建录制任务（如：提前一个小时，或者凌晨创建当天的任务），且指定的任务开始时间稍早于事件时间。
+
+
+## 精彩视频录制
+
+在推流过程中，若碰到精彩视频画面，您希望立即开始录制并生成精彩视频剪辑做后续使用。可以通过 API 调用并指定精彩视频录制来实现。
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 &StreamName=test
@@ -158,6 +187,8 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 - 对于 OutputStreamType 为`1`的情况，开启配置录制后，默认会生成 A 流、B 流以及 C 流（混流画面）录制文件。
 
 如果只想录制混流画面，您可以通过 API [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) 实现。需要说明的是，对于 OutputStreamType 为`1`这种混流类型，调用上述 API 需要设置 StreamType 参数为`1`。
+
+
 
 ## 自动拼接录制（多次推流续流录制）
 

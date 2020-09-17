@@ -45,12 +45,12 @@ public class Demo {
 
 		try {
 		    // Replace with your own SecretId 
-		    config.put("SecretId", "AKIDHTVVaVR6e3");
+		    config.put("SecretId", "AKIDHTVVaV34t5G45YOb6y65R6e3****");
 		    // Replace with your own SecretKey
-		    config.put("SecretKey", "PdkhT9e2rZCfy6");
+		    config.put("SecretKey", "PdkhT9e2t43t45B42FE79rZCfy6****");
 		
-		    // Validity period of the temporary key in seconds; default value: 1,800s; maximum value: 7,200s
-		    config.put("durationSeconds", 1800);
+		    // By default, a temporary key is valid for 1,800 s. The maximum duration is 2 h (7,200 s) for a root account, and 36 h (129,600 s) for a sub-account. 
+		    
 		
 		    // Replace with your own bucket
 		    config.put("bucket", "examplebucket-1250000000");

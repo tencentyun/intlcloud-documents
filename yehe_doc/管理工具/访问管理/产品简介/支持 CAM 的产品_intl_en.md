@@ -64,7 +64,7 @@ Definitions:
 | [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236)  | Resource level | &#10003; | -  |  &#10003; | [CAM Guide](https://intl.cloud.tencent.com/document/product/236/14469) |  
 | [TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/237)  | Resource level | &#10003;  | &#10003;   | &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/237/35441) | 
 | [TencentDB for SQL Server](https://intl.cloud.tencent.com/document/product/238)  | Resource level | &#10003;  | -    | -     |[CAM Guide](https://intl.cloud.tencent.com/document/product/238/34583) | 
-| [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  | Resource level | &#10003;  | -    | -     | - |
+| [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  | Resource level | &#10003;  | &#10003;    | -     | - |
 | [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) | 
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
@@ -133,7 +133,7 @@ Definitions:
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- | ---- | 
 | [Tencent Real-Time Communication (TRTC)](https://intl.cloud.tencent.com/document/product/647)   | Resource level | &#10003; | &#10003;  |  - | -| 
 | [Live Video Broadcasting (LVB)](https://intl.cloud.tencent.com/document/product/267)   | Resource level | &#10003; | &#10003;  |  &#10003;  | [CAM Guide](https://intl.cloud.tencent.com/document/product/267/32468) | 
-| [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  -  | [CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  | 
+| [Video on Demand (VOD)](https://intl.cloud.tencent.com/document/product/266)    | Resource level   | &#10003;  | -    |  &#10003; | [CAM Guide](https://intl.cloud.tencent.com/document/product/266/33970)  | 
 | [Media Processing Service (MPS)](https://intl.cloud.tencent.com/document/product/1041)    | Service level   | &#10003;  | -    |   &#10003;   | -  |  
 | [MediaLive](https://intl.cloud.tencent.com/document/product/1048)    | Operation level   | &#10003;  | -    |   -   | -  |
 | [MediaPackage](https://intl.cloud.tencent.com/document/product/1063)    | Operation level   | &#10003;  | -    |   -   | -  | 
@@ -176,7 +176,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- |  ---- |
 | [Tag](https://intl.cloud.tencent.com/document/product/651) | Operation level | &#10003;  | - |  - |  - |
-| [Tencent Cloud Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | &#10003;  | - |  - |  - |
+| [Tencent Cloud Infrastructure as Code (TIC)](https://intl.cloud.tencent.com/document/product/1043) | Service level | -  | - |  &#10003; |  - |
 
 ## Management and Auditing
 

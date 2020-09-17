@@ -4,16 +4,11 @@ During the use of TencentDB for Redis, you may encounter problems related to acc
 A database instance can contain multiple user-created databases and can be accessed using the same client tools and applications as those for a standalone database instance.
 Common operations in a TencentDB for Redis instance are as follows:
 
-### Common operations
 - [Connecting to instances](https://intl.cloud.tencent.com/document/product/239/7042)
 - [Specifying project for instances](https://intl.cloud.tencent.com/document/product/239/31933)
 - [Changing instance specifications](https://intl.cloud.tencent.com/document/product/239/31934)
-- [Read/write separation](https://intl.cloud.tencent.com/document/product/239/31935)
+- [Enabling/Disabling read/write separation](https://intl.cloud.tencent.com/document/product/239/31935)
 - [Terminating instances](https://intl.cloud.tencent.com/document/product/239/31937)
-
-### Billing
-
-- [Purchasing instances](https://intl.cloud.tencent.com/document/product/239/31955)
 
 
 ## Data

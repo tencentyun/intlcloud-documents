@@ -52,15 +52,18 @@ You need to configure the page to redirect to in the client app's manifest:
  - For example, if you want to redirect to the page specified by `AboutActivity`, use the following sample code:
 ```
 <activity
-android:name="com.qq.xg.AboutActivity"
-android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-<intent-filter >
-<action android:name="android.intent.action.VIEW" />
-<category android:name="android.intent.category.DEFAULT"/>
-<data android:scheme="xgscheme"
-android:host="com.xg.push"
-android:path="/notify_detail" />
-</intent-filter>
+            android:name="com.qq.xg.AboutActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <!-- The custom data block specifies your complete scheme, which will generate a URL in the format of "scheme name://hostname/pathname" based on your configuration-->
+                <!-- You may use app name, app package name, or another field that uniquely identifies the application to avoid conflicting redirection with other applications.-->
+                <data
+                    android:scheme="Scheme name"
+                    android:host="Hostname"
+                    android:path="/Pathname" />
+            </intent-filter>
 </activity>
 ```
  - If you use the TPNS Console to set the intent for redirect, enter in the following way:
@@ -146,6 +149,68 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 #### Troubleshooting for Meizu channel
 - It is similar to the troubleshooting method for the Mi channel. For more information, please see troubleshooting for the Mi channel.
+
+### Why can't messages be displayed on the notification bar after arriving at phones on Meizu Flyme 6.0 or below?
+1. Manual integration is used on Meizu phones on Flyme 6.0 and below.
+2. Automatic integration is used on Meizu phones on Flyme 6.0 and below, and the version of the used TPNS SDK for Android is below 1.1.4.0.
+
+In the above two cases, you need to place an image exactly named `stat_sys_third_app_notify` in the drawable folders with different resolutions. For more information, please see the `flyme-notification-res` folder in the [TPNS SDK for Android](https://console.cloud.tencent.com/tpns/sdkdownload).
+
+
+### How do I solve the conflict between component dependencies when integrating with the Huawei push channel?
+If your project uses Huawei HMS 2.x.x, Game Suite, Huawei Pay, Huawei ID, or other Huawei service components and a conflict between component dependencies occurs when you integrate with the Huawei push channel based on `com.tencent.tpns:huawei:1.1.x.x-release`, please follow the steps below for integration:
+1. Cancel the project's dependency on the single dependency package `"com.tencent.tpns:huawei:[VERSION]-release"`.
+2. When integrating with the official Huawei SDK by referring to the official documentation of Huawei Developers, please select the push module to add the push feature to the SDK.
+3. In the source code of the HMSAgent module, modify the tool class `com.huawei.android.hms.agent.common.StrUtils` as follows to fix Huawei token registration failure caused by an exception in the Huawei SDK.
+Before modification:
+```java
+package com.huawei.android.hms.agent.common;
+public final class StrUtils {
+    public static String objDesc(Object object) {
+        return object == null ? "null" : (object.getClass().getName()+'@'+ Integer.toHexString(object.hashCode()));
+    }
+}
+```
+After modification:
+```java
+package com.huawei.android.hms.agent.common;
+public final class StrUtils {
+    public static String objDesc(Object object) {
+        String s = "";
+        try {
+            s = Integer.toHexString(object.hashCode());
+        } catch (Throwable e) {
+        }
+        return object == null ? "null" : (object.getClass().getName()+'@'+ s);
+    }
+}
+```
+
+
+### How do I fix the exception that occurs when I use quick integration in the console?
+1. If an exception occurs during integration, set the `"debug"` field in the `tpns-configs.json` file to `true` and run the following command: 
+```
+./gradlew --rerun-tasks :app:processReleaseManifest 
+```
+Then, use the `"TpnsPlugin"` keyword for analysis.
+2. Click "sync projects".
+![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
+
+3. Check whether there are relevant dependencies in the external libraries of the project.
+![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
+
+
+### How do I convert Android extension library v4 to AndroidX?
+
+Add the following property to the `gradle.properties` file of the AndroidX project:
+```
+android.useAndroidX=trueandroid.enableJetifier=true
+```
+>? 
+>- `android.useAndroidX=true` indicates to enable `AndroidX` for the current project.
+>- `android.enableJetifier=true` indicates to migrate the dependency package to `AndroidX`. 
+
+
 
 ### Why can't messages be displayed on the notification bar after arriving at phones on Meizu Flyme 6.0 or below?
 1. Manual integration is used on Meizu phones on Flyme 6.0 and below.

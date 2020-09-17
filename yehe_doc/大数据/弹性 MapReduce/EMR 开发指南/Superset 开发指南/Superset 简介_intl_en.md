@@ -39,7 +39,7 @@ The SQLAlchemy URI for each database is as follows:
 
 
 ## Adding New Database on Your Own
-Superset supports those [databases](https://superset.incubator.apache.org/installation.html#database-dependencies). To install another database, follow the steps below:
+Superset supports those databases. To install another database, follow the steps below:
 1. Log in to the server where the master node of EMR resides.
 2. Run the `source /usr/local/service/superset/bin/activate` command.
 3. Install the corresponding Python library with pip3.

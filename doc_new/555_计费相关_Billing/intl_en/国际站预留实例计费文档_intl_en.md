@@ -1,6 +1,6 @@
-## Overview
+### Overview
 
-A reserved instance (RI) is not a cloud virtual machine (CVM). However, RIs provide discounts for running pay-as-you-go CVMs. If the attributes of your CVM matches that of the RI, your CVM is automatically eligible for the discount provided by that RI. You can purchase and activate a RI for your existing CVM or buy one before even purchasing a CVM. Once the deposit is paid, the RI automatically applies its discount to your instance usage within the valid period. Compared to monthly subscription or pay-as-you-go billing modes, RIs provide you flexibility and save you money with significant discounts.
+A reserved instance (RI) is not a cloud virtual machine (CVM). It is a billing discount applied to pay-as-you-go CVM instances under your account. RI automatically applies to running pay-as-you-go instances with matching attributes, so these instances will benefit from the discount during the purchased RI term. You can purchase and activate an RI for your existing CVM or directly buy an RI with no existing CVM. RIs provide you flexibility and significant savings compared to the pay-as-you-go billing mode.
 
 **Supported Products**
 
@@ -8,42 +8,42 @@ CVM
 
 **Purchasing RIs**
 
-- RIs let you choose the type of CVM that best fits your needs and budget. You can choose type (model and configuration), payment method, region, validity period, and quantity of your RI.
+- RIs let you choose the type of CVM that best fits your needs and budget. You can choose the type (model and configuration), payment method, region, term, and quantity of your RI.
 
-- Currently, you can purchase RIs through TencentCloud API. For more information, see the CVM product description;
+- Currently, you can purchase RIs via TencentCloud API or console. For more information, see the CVM documentation.
 
--   RIs are non-refundable.
+- RIs are non-refundable.
 
-**RI-supported Instance Types and Prices:**
-For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM product documentation.
-For more information about the RI-supported availability zones and instance types, see the [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) API.
-For more information about the [RI matching rules](https://intl.cloud.tencent.com/document/product/213/37265) and other instructions, see [Overview](https://intl.cloud.tencent.com/document/product/213/30571).
-CVM is a RI-supported instance. For more information about the price, see [CVM Reserved Instance Price Overview (Linux)](https://intl.cloud.tencent.com/document/product/213/30619).
+**RI-supported Instance Types and Prices**
+For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM documentation.
+For more information about the RI-supported availability zones and instance types, see [CVM Pricing](https://intl.cloud.tencent.com/pricing/cvm) or the [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) API. 
+For more information, please see the [RI matching rules](https://intl.cloud.tencent.com/document/product/213/37265) and [Reserved Instance Overview](https://intl.cloud.tencent.com/document/product/213/30571).
+CVM supports RI. For more information about the price, see [CVM Reserved Instance Price Overview (Linux)](https://intl.cloud.tencent.com/document/product/213/30619). 
 
-**Payment Method**
+**Payment Methods**
 
-- All Upfront: All fees are prepaid at the time of purchase and no additional fees will be incurred during the usage of RIs. This option provides the biggest discount compared to the pricing of on-demand instances described below.
+- All Upfront: you pay for the entire RI term with one upfront payment. This option provides you with the largest discount compared to the other two options below.
 
-- Partial Upfront: A prepayment of a lower amount is made at the time of purchase, and the instance fees are paid at the monthly rate or the discounted hourly rate during the usage of RIs;
+- Partial Upfront: you make a low upfront payment and then pay for instance fees at a monthly rate or discounted hourly rate during the RI term.
 
-- No Upfront: No fees are charged at the time of purchase, and the instance fees are paid at the monthly rate or the discounted hourly rate during the usage of RIs;
+- No Upfront: you make no upfront payment and then pay for instance fees at a monthly rate or discounted hourly rate during the RI term.
 
-Note: When using RIs, you will be charged for the entire period of purchase regardless of the actual usage.
+Please note that you pay for the entire RI term regardless of actual usage.
 
-**Term Type**
+**Terms**
 
-1 year or 3 years
+1 year
 
-For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, it will be valid from 12:00:00, May 25, 2019 to 12:00:00, May 24, 2020.If you purchased a 3-year term CVM R1 on May 25, 2019 11:15:24, the instance will be valid from May 25, 2019 12:00:00 to May 24, 2022 12:00:00.
+Assume you purchased a 1-year term CVM R1 on May 25, 2019 11:15:24, the RI will be valid from May 25, 2019 12:00:00 to May 24, 2020 12:00:00.
 
-Note: After RIs expire, the matched pay-as-you-go instances will run normally but on longer enjoy a discount.
+Note: The matched pay-as-you-go instances continue to run when the RI expires, but the billing discount stops.
 
 **Billing Rules**
 
-- The settlement cycle of RIs is per hour (3,600 seconds), and the bill is generated on the dot of each hour (e.g., 10:00:00-10:59:59). Multiple pay-as-you-go physical instances can be matched to the same RI at the same time in the same settlement cycle. The amounts charged for physical instances successfully matching RI and those failing to match RI will be detailed in your bill;
+- RIs are billed for every clock-hour (3,600 seconds) during the term that you select. For example, 10:00:00 to 10:59:59 is one clock-hour. The RI billing benefit can be applied to multiple eligible instances at the same time up to a maximum of 3600 seconds in a clock-hour. The breakdown will be detailed in your bill.
 
-- After successfully purchased, a RI will become valid on the dot of the next hour. you will need to pay for the RI during its validity period, no matter whether a pay-as-you-go instance is matched or not. You can choose the appropriate payment method and validity period based on your budget and resource conditions. The effective time of a RI is calculated on the hour, and the expiry time is the corresponding hour on the expiry date. For example, if you successfully purchase a CVM RI with a validity period of one year at 11:15:24, May 25, 2019, its effective time and billing start time is 12:00:00, May 25, 2019, and its expiry time is 12:00:00, May 24, 2020. If you already have a matching CVM resource when you purchase this RI, fees will be charged starting from 11:00:00-11:59:59, May 25, 2019 at the hourly rate.
+- RIs are billed for every clock-hour during the term that you select, regardless of whether it is matched to a pay-as-you-go instance. Therefore, it is important to choose a suitable payment option based on your budget and resources. RIs take effect and expire on the hour. For example, if you purchase a 1-year term CVM RI on May 25, 2019 11:15:24, the RI billing starts from May 25, 2019 12:00:00, and ends on May 24, 2020 12:00:00. If you already have matched CVM resources at the time of purchase, the first RI billing cycle will be 11:00:00-11:59:59, May 25, 2019, and it will be billed for every clock-hour.
 
 **RI Discount:**
 
-The discount on the purchase of RIs is supported.
+Billing discount received when a purchased RI is matched with a supported instance.

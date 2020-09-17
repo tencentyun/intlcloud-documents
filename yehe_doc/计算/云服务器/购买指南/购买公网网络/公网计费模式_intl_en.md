@@ -10,7 +10,8 @@ Tencent Cloud currently provides two billing plans: bill-by-traffic and bill-by-
 
 
 ## Billing Plans
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 
 The following tables compare the payment methods, billing cycles, and use cases of the two different billing plans:
 
@@ -57,7 +58,7 @@ The following tables compare the payment methods, billing cycles, and use cases 
             <th>Bill-by-bandwidth</th>
        </tr>
        <tr>          
-            <td>The peak bandwidth is only regarded as the<strong>maximum peak bandwidth</strong>, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td> 
+            <td>The peak bandwidth is only regarded as the <strong>maximum peak bandwidth</strong>, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td> 
             <td>The peak bandwidth is regarded as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth will be guaranteed and will not be limited.</td>
             </tr> 
 </tbody></table>
@@ -81,7 +82,7 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 </tr>
 </thead>
 <tbody><tr>
-<td>Chinese mainland (not including Hong Kong, Macao, and Taiwan), Seoul, Hong Kong (China)</td>
+<td>Chinese mainland, Seoul, Hong Kong (China)</td>
 <td>0.12</td>
 </tr>
 <tr>
@@ -121,7 +122,8 @@ Suppose a user with a bill-by-IP account purchases an EIP in Singapore region wi
 
 With monthly bandwidth subscription, you can purchase fixed bandwidth in advance according to your needs. The payment method is prepaid. Monthly bandwidth subscription is suitable for scenarios where the peak business traffic is stable and is used long-term.
 
->Currently, this feature is in beta. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>? Monthly subscription is currently in beta. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 
 #### Pricing
 
@@ -138,7 +140,7 @@ With monthly bandwidth subscription, you can purchase fixed bandwidth in advance
 </tr>
 </thead>
 <tbody><tr>
-<td>Guangzhou<br>Shanghai<br>Beijing<br>Hong Kong, China<br>Singapore</td>
+<td>Guangzhou<br>Qingyuan<br>Shanghai<br>Beijing<br>Hong Kong, China<br>Singapore</td>
 <td>2.86   </td>
 <td>3.57</td>
 <td>12.86</td>
@@ -166,13 +168,13 @@ With monthly bandwidth subscription, you can purchase fixed bandwidth in advance
 
 #### Billing sample
 
-Suppose a user with a bill-by-IP account purchases an EIP in Singapore region with the monthly bandwidth subscription billing mode. If this user purchases a fixed bandwidth of 15 Mbps for 2 months, the fees will be: (2.86 USD/Mbps/month) × 2 Mbps + 3.57 USD/Mbps/month × 3 Mbps + 12.86 USD/Mbps/month × 10 Mbps) × 2 months = 290.06 USD.
+Suppose a user with a bill-by-IP account purchases an EIP in Singapore region with the monthly bandwidth subscription billing mode. If this user purchases a fixed bandwidth of 15 Mbps for 2 months, the fees will be: (2.86 USD/Mbps/month × 2 Mbps + 3.57 USD/Mbps/month × 3 Mbps + 12.86 USD/Mbps/month × 10 Mbps) × 2 months = 290.06 USD.
 
 <span id="Step4"></span>
 
 ### Bandwidth packages
 
-EIP bandwidth packages are postpaid, which is suitable for large-scale businesses where traffic can be staggered between different instances using the public network. For details, please refer to [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255).
+EIP bandwidth package is a monthly pay-as-you-go service, which is suitable for large-scale businesses where traffic can be staggered between different instances using the public network. For details, please refer to [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255).
 
 
 

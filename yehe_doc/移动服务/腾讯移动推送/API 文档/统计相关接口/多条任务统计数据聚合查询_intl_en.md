@@ -16,7 +16,10 @@ Service access point in Singapore:
 ```plaintext
 https://api.tpns.sgp.tencent.com/v3/statistics/get_push_group_stat_channel
 ```
-
+Service access point in Shanghai:
+```plaintext
+https://api.tpns.sh.tencent.com/v3/statistics/get_push_group_stat_channel
+```
 **Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID` or `PlanId` ** in the last 7 days according to `GroupID` or `PlanId`.
 
 

@@ -1,7 +1,7 @@
 Private network CLB is free of charge, while public network CLB is charged for instance fees and public network fees. If you purchase a CLB instance under a bill-by-IP account, two billing modes are supported: monthly subscription and pay-as-you-go.
 
 ## Monthly Subscription
->? Monthly subscription is currently in beta. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 >
 Monthly subscription is prepaid. You need to pay for one or multiple months or even years in advance. This billing mode is applicable to long-term businesses with stable peak traffic. The public network fees of a monthly subscription CLB instance only supports bill-by-bandwidth, and the monthly bandwidth is cheaper than the hourly bandwidth. If you need to use CLB in the long run, we recommend purchasing the monthly subscription CLB instance.
 
@@ -35,7 +35,7 @@ Total fees = Instance fees + Public network fees = (Monthly instance fees * Purc
        <th>6 Mbps and above<br>(`n` is the configured bandwidth upper limit)</th>
   </tr>
    <tr>
-      <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing</td>
+      <td>Guangzhou, Qingyuan, Shanghai, Nanjing, Beijing, Chengdu, Chongqing</td>
       <td rowspan="4">2.06</td>
        <td>3.29</td>
        <td>6.75</td>
@@ -110,7 +110,7 @@ The calculation formula of total public network fees varies by billing modes, as
 </tr>
 </thead>
 <tbody><tr>
-<td>Guangzhou, Shanghai, Beijing, Chengdu, and Chongqing</td>
+<td>Guangzhou, Qingyuan, Shanghai, Beijing, Chengdu and Chongqing</td>
 <td>0.07</td>
 </tr>
 <tr>
@@ -138,11 +138,11 @@ This billing mode is based on the total volume (in GB) of data transferred over 
 <thead>
 <tr>
 <th width="80%">Region</th>
-<th width="20%">Public Network Fees (USD/PB)</th>
+<th width="20%">Public Network Fees (USD/GB)</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>The Mainland of China, Hong Kong (China), and Seoul</td>
+<td>Chinese mainland, Hong Kong (China), and Seoul</td>
 <td>0.12</td>
 </tr>
 <tr>
@@ -181,4 +181,4 @@ Total fees = Instance fees + Public network fees = 0.07 USD + 0.24 USD = 0.31 US
 Suppose you use a pay-as-you-go CLB instance whose public network billing mode is bandwidth package between 09:00:00, June 1, 2020 and 08:59:59, June 22, 2020 in the Guangzhou region, then:
 - Instance fees = Hourly instance fees * Usage duration = 0.07 USD/day * 1 day = 0.07 USD
 - Public network fees: because <a href="https://intl.cloud.tencent.com/document/product/684/15255">bandwidth package fees</a> are settled monthly, only instance fees will be settled during usage.
-Total fees = Instance fees = 0.07 USD, which will be settled and deducted at the next hour (10:00:00–10:59:59).
+Total fees = Instance fees = 0.07 USD, which will be settled and deducted at the next hour (10:00:00-10:59:59).

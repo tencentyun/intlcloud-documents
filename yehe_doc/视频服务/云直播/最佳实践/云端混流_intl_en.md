@@ -1,6 +1,6 @@
 LVB provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
 
-## 
+## Notes
 - Standard transcoding fees will be incurred for the stream mix feature.
 - To use the mixing and cropping feature, the value of cropping parameter cannot exceed the value of input stream parameter.
 
@@ -44,7 +44,7 @@ Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using the
 
 
 
-## 
+## Creating a Stream Mix
 ### Parameter Description
 For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997).
 
@@ -161,6 +161,30 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 #### Custom stream mix effect
 ![](https://main.qcloudimg.com/raw/db6a87baba1f1891f514d4bea9b38ee4.png)
 
+## Canceling a Stream Mix
+### Parameter description
+For more information, please see [CancelCommonMixStream](https://cloud.tencent.com/document/product/267/43405).
+
+### Examples
+Cancel a stream mix based on SessionId.
+#### Sample input code
+```
+https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
+&MixStreamSessionId=test_room
+```
+
+#### Sample output code
+```
+{
+  "Response": {
+    "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+  }
+}
+```
+
+>! 
+>- The stream mix you apply for cannot be cancelled within 5 seconds.
+>- After the cancellation, you can apply for a stream mix with the same SessionId at least 30 seconds later.
 
 
 ## Error Codes
@@ -279,3 +303,10 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 <td>-</td>
 </tr>
 </tbody></table>
+
+## FAQs
+- [Why does the stream mix after push return the error code 505?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [What happens if the applied stream mix is not canceled?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [Why does the assistant host image of the stream mix sometimes appear at the unexpected position?](https://intl.cloud.tencent.com/document/product/267/38255)
+
+>? For more questions about on-cloud stream mix, see [On-cloud Stream Mix FAQs](https://intl.cloud.tencent.com/document/product/267/38255)

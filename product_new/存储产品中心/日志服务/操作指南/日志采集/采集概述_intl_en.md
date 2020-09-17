@@ -1,6 +1,6 @@
 ## Overview
 
-The CLS provides data access modes such as LogListener, API, and SDK so that you can import application logs to the CLS. The CLS provides the structured upload mode to upload data in key-value mode.
+CLS allows you to collect your application logs and import them into CLS through a collector client (LogListener) or APIs. Currently, CLS requires logs to be uploaded in a structured manner as key-value pairs.
 
 ## Log Structuring
 

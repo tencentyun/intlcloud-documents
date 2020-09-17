@@ -6,7 +6,7 @@ The second half of a bucket name is the APPID. You can check it by logging in to
 
 ### How long is a temporary key valid for?
 
-A temporary key is valid for 2 hours (7,200 seconds) at most. Requests made with an expired temporary key will be rejected. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+By default, a temporary key is valid for 30 min (1,800 s). The maximum duration is 2 h (7,200 s) for a root account, and 36 h (129,600 s) for a sub-account. Any requests that include expired temporary keys will be rejected. For more information on temporary keys, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
 ### What should I do if the key information such as APPID and SecretId is leaked?
 
@@ -76,7 +76,7 @@ Locate **Bucket Policy**, click **Policy Syntax** > **Edit**, and enter the foll
 
 ### Are the ACL restrictions in COS imposed on buckets or accounts? Can I specify the permission when uploading files?
 
-The ACL restrictions are imposed on accounts. It is not recommended to specify the permission when you upload files, because this may make the total number of bucket ACL rules exceed 1,000, and thus cause an error.
+The ACL limit is imposed at the account level. It is not recommended to specify ACL permission when you upload files, because this may make the number of your bucket ACLs exceed the upper limit of 1,000, and thus cause an error.
 
 ### How do I authorize a collaborator to access the specified bucket?
 

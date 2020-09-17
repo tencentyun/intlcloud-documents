@@ -1,5 +1,3 @@
-# Pricing
-
 Tencent Cloud Face Recognition API calls are billed by the number of calls. Calls in the current month will be settled at the beginning of the next month.
 
 

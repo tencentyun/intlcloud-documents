@@ -11,7 +11,9 @@ COS can monitor your stored data. The COS data monitoring window displays data r
 ![](https://main.qcloudimg.com/raw/9c4319d2a97c46b568bd37e75bffc09b.png)
 3. Open the data monitoring page as shown below. The different monitoring categories are as follows:
  - Storage: queries the storage usage in different storage classes.
- - Number of Objects: the number of objects present in a bucket.
+ - Number of Objects: is the total number of objects in the bucket, including incomplete multipart uploads. 
+ - Number of incomplete multipart uploads: is the number of multipart uploads that were suspended or canceled, and remain as incomplete multipart uploads in the bucket.
+ 
  >
  >- To count the number of objects in a folder, see [View Folder Details](https://intl.cloud.tencent.com/document/product/436/31633).
  >- If you have versioning enabled, object versions with the same name are counted as a single object in the bucket.

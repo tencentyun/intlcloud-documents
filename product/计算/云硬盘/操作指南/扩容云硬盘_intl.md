@@ -15,7 +15,7 @@ Cloud disk is an expandable storage device on cloud. When a cloud disk is create
 
 
 ### Expanding CBS Data Disk via API
-For more information, please see **API ResizeCbsStorage**.
+You can use the `ResizeCbsStorage` API to expand a specified elastic cloud disk. For more information, see [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
 
 ### Expanding CBS Data Disk via CVM Console
 1) Log in to the [CVM Console](https://console.cloud.tencent.com/cvm).

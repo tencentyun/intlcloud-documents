@@ -159,7 +159,6 @@ Pay-as-you-go cloud disks:
  - If your Tencent Cloud account is topped up to a positive balance within 15 days after shutdown, the cloud disk will be restored.
  - If your account remains negative for 15 days after shutdown, your pay-as-you-go disk will be repossessed, and all data will be erased and **cannot be retrieved**. We will notify the Tencent Cloud account creator and all the collaborators via email, SMS, and the Message Center when the cloud disk is repossessed.
 
-Please call 95716 if you need further information.
 
 ### Can I change the type of the cloud disk I have purchased?
 No. To do this, you need to create a snapshot for backup and then use the snapshot to create a cloud disk of your needed type.

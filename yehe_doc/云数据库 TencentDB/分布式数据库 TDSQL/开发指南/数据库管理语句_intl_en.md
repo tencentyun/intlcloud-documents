@@ -1,9 +1,12 @@
-If you want to view or download the full set of development documents, please see [Development Guide for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33352).
-
-#### Database Management Statements
-
-**Query status**
+## Query status
 You can view the configuration and status of the proxy through SQL. The following commands are currently supported:
+- `/*proxy*/help;`
+- `/*proxy*/show config;`
+- `/*proxy*/show status;`
+
+>?If you're logging to MySQL client, add `-c` to the codes, such as `mysql -hxxx.xxx.xxx.xxx -Pxxxx -uxxx -pxxx -c`.
+
+Sample codes:
 ```
 	mysql> /*proxy*/help;
 	+-----------------------+-------------------------------------------------------+
