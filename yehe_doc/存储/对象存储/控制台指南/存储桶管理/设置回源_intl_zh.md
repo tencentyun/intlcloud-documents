@@ -15,8 +15,8 @@
    ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. 按照以下配置项说明进行配置，最后单击【保存】即可。
  - **回源条件**：可按需求选择触发回源的条件，触发回源需同时满足配置的所有回源条件。
-    - **HTTP 状态码**：当前仅支持条件为 HTTP 状态码404时触发回源，该项为必选且不可取消。
-    - **文件名前缀**：当请求的文件名前缀匹配时，可触发回源规则。例如：设置文件名前缀为 prefix，则访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` 并且返回的 HTTP 状态码为404时，会触发回源规则。
+ - **HTTP 状态码**：当前仅支持条件为 HTTP 状态码404时触发回源，该项为必选且不可取消。
+ - **文件名前缀**：当请求的文件名前缀匹配时，可触发回源规则。例如：设置文件名前缀为 prefix，则访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` 并且返回的 HTTP 状态码为404时，会触发回源规则。
  - **回源协议**：COS 访问您指定的源站时所使用的 HTTP 协议，可选项为强制 HTTPS、强制 HTTP 和跟随请求协议。
     - 选择强制 HTTPS/HTTP，则 COS 会以 HTTPS/HTTP 协议访问您的源站。
     - 选择跟随请求协议，COS 会以您请求 COS 所使用的协议访问您的源站。
@@ -31,6 +31,7 @@ abc.example.com:8080
 
 回源地址支持具体的地址设置，您可以配置为如下配置项。
 
+    ```shell
     - **固定文件**：触发回源规则时，默认全部跳转至固定的文件。
     - **指定前缀**：触发回源规则时，跳转至指定前缀的文件。例如指定前缀为`test`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` 时触发回源规则，则会跳转至 `<回源地址>/test/prefix123.jpg`；
     - **指定后缀**：触发回源规则时，跳转至指定后缀的文件。例如指定后缀为`.jpg`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123` 时触发回源规则，则会跳转至 `<回源地址>/prefix123.jpg`；
