@@ -4,7 +4,7 @@ Currently, the following LVB events can trigger a notification: stream push, str
 
 ## Overall Process
 
-<img src="https://main.qcloudimg.com/raw/2244d551735116880d46ec72d786bf21.svg" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
 
 **Process description:**
 1. The host configures event message notification URLs and related features such as recording and screencapturing in the console or by calling TencentCloud APIs.
@@ -34,7 +34,7 @@ Callback configuration can mainly be implemented in two ways: in the [LVB Consol
 
 ### LVB Console<span id="c_callback"></span>
 1. Go to **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** in the LVB Console to create a callback template. For detailed directions, please see [Creating Callback Template](https://intl.cloud.tencent.com/zh/document/product/267/31074).
-![](https://main.qcloudimg.com/raw/5566fb233adbda7955bd2062d167d05b.png)
+![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, find the target push domain name, and click **Manage** > **Template Configuration** to associate it with the callback template. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31065).
 
 ### Server API<span id="api_callback"></span>
