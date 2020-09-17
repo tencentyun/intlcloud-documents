@@ -11,9 +11,9 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 
 <span id="open"></span>
 ### 开通录制服务
-1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)，在左侧导航栏选择【应用管理】。
+1. 登录实时音视频控制台，在左侧导航栏选择【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
 2. 单击目标应用所在行的【功能配置】，进入功能配置页卡。如果您还没有创建过应用，可以单击【创建应用】，填写应用名称，单击【确定】创建一个新的应用。
-3. 单击【启动云端录制】右侧的 <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"  style="margin:0;"> ，会弹出云端录制的设置页面。
+3. 单击【启用云端录制】右侧的 <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"  style="margin:0;"> ，会弹出云端录制的设置页面。
 
 <span id="recordType"></span>
 ### 选择录制形式
