@@ -14,19 +14,21 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. Configure the following and click **OK**.
  - **Origin-pull condition**: specifies all conditions as needed that must be met at the same time for triggering origin-pull.
-    -**HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
-    -**File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, then the origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
+    - **HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
+    - **File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, then the origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
  - **Origin-Pull Protocol**: the protocol used for COS to access the specified origin server. The options include `Follow request protocol`, `Force HTTPS`, and `Force HTTP`.
     - If you select “Force HTTPS/HTTP”, COS will access your origin server using HTTPS/HTTP protocol.
     - If you select “Follow request protocol”, COS will access your origin server using the protocol that you used for your request.
  - **Origin-pull Address**: allows only a domain name or IP address without the `http://` or `https` prefix. You can optionally append a port number to the address.
    An example correct address:
+
 ```shell
 abc.example.com
 abc.example.com:8080
 10.10.10.10
 10.10.10.10:8080
 ```
+
 You can configure a specific origin-pull address using the following fields:
     - **Fixed file**: specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to the `<origin-pull address>/test/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
@@ -38,6 +40,7 @@ You can configure a specific origin-pull address using the following fields:
  - **Origin-Pull Parameter**: specifies whether to pass through COS request parameters when accessing the origin server.
  - **Origin-pull header**: specifies the custom headers that you can add for COS to access your origin server. Currently, up to 10 of them can be added. 
    ![](https://main.qcloudimg.com/raw/0049d66f20bd79f4edb673cb8c8c7185.png)
+   
 4. By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the “Edit” icon under the “Priority” column in the rule list.
 ![](https://main.qcloudimg.com/raw/3fa148b2e43f30fb891adee75ff255db.png)
 
