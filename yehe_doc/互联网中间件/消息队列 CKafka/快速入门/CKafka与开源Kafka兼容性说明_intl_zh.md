@@ -136,7 +136,6 @@ while (iterator.hasNext()) {
             ", partition " + msg.partition() + ", " + //
              new String(msg.message()));
 }
-}
 ```
 
 可以看到，改造成 New Consumer 编写更加简单，最主要的变化是将 ZooKeeper 参数的输入替代成了 Kafka 地址输入。同时，New Consumer 也增加了与 Coodinator 交互的参数配置，一般情况下使用默认配置就足够。
