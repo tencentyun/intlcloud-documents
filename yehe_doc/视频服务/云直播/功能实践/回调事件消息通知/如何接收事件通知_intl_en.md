@@ -36,8 +36,8 @@ Callback configuration can mainly be implemented in two ways: in the [LVB Consol
 1. Go to **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** in the LVB Console to create a callback template. For detailed directions, please see [Creating Callback Template](https://intl.cloud.tencent.com/document/product/267/31074).
 ![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, find the target push domain name, and click **Manage** > **Template Configuration** to associate it with the callback template. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31065).
-
-### Server API<span id="api_callback"></span>
+<span id="api_callback"></span>
+### Server API
 1. Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) to create a callback template and set the callback parameters you need.
 2. Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a callback rule, set the `DomainName` and `TemplateId` (returned in step 1) parameters, and enter the same `AppName` as in the push and playback addresses to enable callback for certain live streams.
 
