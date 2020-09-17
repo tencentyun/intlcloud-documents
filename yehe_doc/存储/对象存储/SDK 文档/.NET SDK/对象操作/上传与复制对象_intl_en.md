@@ -15,11 +15,11 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 
 | API          | Operation                   | Description                                       |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Queries multipart uploads | Queries in-progress multipart uploads |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in multipart upload |
 | [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a specific multipart upload|
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts |  Queries the uploaded parts of a specific multipart upload |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts |
 
@@ -43,20 +43,13 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-String bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
-String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e. the object key
+String bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+String cosPath = "exampleobject"; // Identifier of the object in the bucket, i.e., the object key
 String srcPath = @"temp-source-file";// Absolute path to the local file
-if (!File.Exists(srcPath)) {
-  // If the destination file does not exist, create a temporary test file
-  File.WriteAllBytes(srcPath, new byte[1024]);
-}
 
-// Upload an object
-COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, "COS_REGION", cosPath); // COS_REGION is the bucket region
+// An object to upload
+COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath);
 uploadTask.SetSrcPath(srcPath);
-
-// Sync invocation
-var autoEvent = new AutoResetEvent(false);
 
 uploadTask.progressCallback = delegate (long completed, long total)
 {
@@ -68,7 +61,6 @@ uploadTask.successCallback = delegate (CosResult cosResult)
       as COSXML.Transfer.COSXMLUploadTask.UploadTaskResult;
     Console.WriteLine(result.GetResultInfo());
     string eTag = result.eTag;
-    autoEvent.Set();
 };
 uploadTask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
 {
@@ -80,18 +72,44 @@ uploadTask.failCallback = delegate (CosClientException clientEx, CosServerExcept
     {
         Console.WriteLine("CosServerException: " + serverEx.GetInfo());
     }
-    autoEvent.Set();
 };
 transferManager.Upload(uploadTask);
-// Wait for the upload to complete
-autoEvent.WaitOne();
 ```
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
 >- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-#### Sample 2. Suspending, resuming, or canceling a download
+#### Sample 2. Uploading binary data
+
+[//]: # (.cssg-snippet-transfer-upload-bytes)
+```cs
+try
+{
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+  string cosPath = "exampleobject"; // Object key
+  byte[] data = new byte[1024]; // Binary data
+  PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, data);
+  
+  cosXml.PutObject(putObjectRequest);
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+
+>?
+>- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+
+#### Sample 3. Suspending, resuming and canceling an upload
 
 To suspend an upload, use the code below:
 
@@ -100,7 +118,7 @@ To suspend an upload, use the code below:
 uploadTask.Pause();
 ```
 
-To resume a suspended download, use the code below:
+To resume a suspended download, run the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```cs
@@ -117,7 +135,7 @@ uploadTask.Cancel();
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
 
-#### Sample 3. Uploading multiple objects
+#### Sample 4. Uploading multiple objects
 
 [//]: # (.cssg-snippet-transfer-batch-upload-objects)
 ```cs
@@ -126,16 +144,39 @@ TransferConfig transferConfig = new TransferConfig();
 // Initialize TransferManager
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
 
-string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
 
 for (int i = 0; i < 5; i++) {
-  // Upload a set of objects
-  String cosPath = "exampleobject"; // The location identifier of an object in the bucket, i.e. the object key
-  string srcPath = @"temp-source-file";// Absolute path to a local file
-  // COS_REGION is the bucket region
-  COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, "COS_REGION", cosPath); 
+  // A set of objects to upload
+  string cosPath = "exampleobject" + i; // The location identifier of an object in the bucket, i.e. the object key
+  string srcPath = @"temp-source-file";// Absolute path to the local file
+  COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath); 
   uploadTask.SetSrcPath(srcPath);
   transferManager.Upload(uploadTask);
+}
+```
+
+#### Sample 5. Creating a directory
+
+[//]: # (.cssg-snippet-create-directory)
+```cs
+try
+{
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
+  string cosPath = "dir/"; // Object key
+  PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, new byte[0]);
+  
+  cosXml.PutObject(putObjectRequest);
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+  // Request failed
+  Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+  // Request failed
+  Console.WriteLine("CosServerException: " + serverEx.GetInfo());
 }
 ```
 
@@ -145,28 +186,24 @@ for (int i = 0; i < 5; i++) {
 
 ### Copying an object
 
-The advanced replication API encapsulates PUT Object - Copy (simple replication) and multipart replication APIs that allow async requests for suspending, resuming, and canceling replication.
+The advanced replication API encapsulates PUT Object - Copy, and the APIs for multipart replication to allow asynchronous requests for suspending, resuming and canceling a replication request.
 
 #### Sample code
 
 [//]: # (.cssg-snippet-transfer-copy-object)
 ```cs
-string sourceAppid = "1250000000"; // Account AppID
-string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
+string sourceAppid = "1250000000"; // Account APPID
+string sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
 string sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
 string sourceKey = "sourceObject"; // Key of the source object
-// Construct source object attributes
+// Construct the source object attributes
 CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
-
-string bucket = "examplebucket-1250000000"; // Destination bucket in the format: `BucketName-APPID`
+string bucket = "examplebucket-1250000000"; // Destination bucket in the format: BucketName-APPID
 string key = "exampleobject"; // Key of the destination object
 
-COSXMLCopyTask copytask = new COSXMLCopyTask(bucket, "COS_REGION", key, copySource);
-
-// Sync invocation
-var autoEvent = new AutoResetEvent(false);
+COSXMLCopyTask copytask = new COSXMLCopyTask(bucket, key, copySource);
 
 copytask.successCallback = delegate (CosResult cosResult) 
 {
@@ -174,7 +211,6 @@ copytask.successCallback = delegate (CosResult cosResult)
       as COSXML.Transfer.COSXMLCopyTask.CopyTaskResult;
     Console.WriteLine(result.GetResultInfo());
     string eTag = result.eTag;
-    autoEvent.Set();
 };
 copytask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
 {
@@ -186,11 +222,8 @@ copytask.failCallback = delegate (CosClientException clientEx, CosServerExceptio
     {
         Console.WriteLine("CosServerException: " + serverEx.GetInfo());
     }
-    autoEvent.Set();
 };
 transferManager.Copy(copytask);
-// Wait for the replication to complete
-autoEvent.WaitOne();
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferCopyObject.cs).
@@ -199,9 +232,9 @@ autoEvent.WaitOne();
 
 ### Uploading an object using simple upload
 
-#### API description
+#### API description 
 
-This API is used to upload an object to a specified bucket. This operation requires the requester to have WRITE permission for the bucket and can upload a file of up to 5 GB in size. For larger files, please use [multipart upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
+This API is used to upload an object to a specified bucket. This operation requires the requester to have WRITE permission for the bucket and can upload a file of up to 5 GB in size. To upload larger objects, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [the advanced upload API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
 > !
 > 1. The Key (file name) cannot end with `/`; otherwise, it will be identified as a folder.
@@ -213,17 +246,11 @@ This API is used to upload an object to a specified bucket. This operation requi
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
-  string srcPath = @"temp-source-file";// Absolute path to a local file
-  if (!File.Exists(srcPath)) {
-    // If the destination file does not exist, create a temporary test file
-    File.WriteAllBytes(srcPath, new byte[1024]);
-  }
+  string srcPath = @"temp-source-file";// Absolute path to the local file
 
   PutObjectRequest request = new PutObjectRequest(bucket, key, srcPath);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set progress callback
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
@@ -252,9 +279,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Uploading an object using HTML form
 
-#### API description
+#### API description 
 
-This API is used to upload an object using HTML form.
+This API is used to upload an object using an HTML form.
 
 #### Sample code
 
@@ -262,16 +289,10 @@ This API is used to upload an object using HTML form.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
-  string srcPath = @"temp-source-file";// Absolute path to a local file
-  if (!File.Exists(srcPath)) {
-    // If the destination file does not exist, create a temporary test file
-    File.WriteAllBytes(srcPath, new byte[1024]);
-  }
+  string srcPath = @"temp-source-file";// Absolute path to the local file
   PostObjectRequest request = new PostObjectRequest(bucket, key, srcPath);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set progress callback
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
@@ -296,7 +317,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PostObject.cs).
 
-### Copying an object (modifying attributes)
+### Copying an object (modifying object attributes)
 
 This API is used to copy a file to a destination path.
 
@@ -306,19 +327,17 @@ This API is used to copy a file to a destination path.
 ```cs
 try
 {
-  string sourceAppid = "1250000000"; // Account appid
-  string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
-  string sourceRegion = "COS_REGION"; // Source object bucket region
-  string sourceKey = "sourceObject"; // Source object key
-  // Construct source object attributes
+  string sourceAppid = "1250000000"; // Account APPID
+  string sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
+  string sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
+  string sourceKey = "sourceObject"; // Key of the source object
+  // Construct the source object attributes
   CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
@@ -348,19 +367,17 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```cs
 try
 {
-  string sourceAppid = "1250000000"; // Account appid
-  string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
+  string sourceAppid = "1250000000"; // Account APPID
+  string sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
   string sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
   string sourceKey = "sourceObject"; // Key of the source object
-  // Construct source object attributes
+  // Construct the source object attributes
   CopySourceStruct copySource = new CopySourceStruct(sourceAppid, sourceBucket, 
     sourceRegion, sourceKey);
 
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
@@ -392,7 +409,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string appId = "1250000000"; // Account APPID
   string region = "COS_REGION"; // Region where the bucket of the source object resides
@@ -401,8 +418,6 @@ try
     region, key);
 
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
@@ -429,13 +444,13 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs).
 
-#### Sample 4. Modifying the object storage class
+#### Sample 4. Modifying the storage class of an object
 
 [//]: # (.cssg-snippet-modify-object-storage-class)
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string appId = "1250000000"; // Account APPID
   string region = "COS_REGION"; // Region where the bucket of the source object resides
@@ -444,8 +459,6 @@ try
     region, key);
 
   CopyObjectRequest request = new CopyObjectRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
@@ -478,12 +491,12 @@ The multipart operation process is outlined below.
 #### How to perform a multipart upload/replication
 
 1. Initialize the multipart upload with `Initiate Multipart Upload` and get the `UploadId`.
-2. Use the `UploadId` to upload parts through `Upload Part` or copy parts through `Upload Part - Copy`.
+2. Use the `UploadId` to upload parts with `Upload Part` or copy parts with `Upload Part Copy`
 3. Complete the multipart upload with `Complete Multipart Upload`.
 
 #### How to resume a multipart upload/replication
 
-1. If you did not record the `UploadId` of a multipart upload, you can query the multipart upload with `List Multipart Uploads` to get it.
+1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload with `List Multipart Uploads` to get it.
 2. Use the `UploadId` to list the uploaded parts with `List Parts`.
 3. Use the `UploadId` to upload the remaining parts with `Upload Part` or copy the remaining parts with `Upload Part - Copy`.
 4. Complete the multipart upload with `Complete Multipart Upload`.
@@ -495,7 +508,7 @@ The multipart operation process is outlined below.
 
 ### Querying multipart uploads
 
-#### API description
+#### API description 
 
 This API is used to query in-progress multipart uploads in a specified bucket.
 
@@ -505,10 +518,8 @@ This API is used to query in-progress multipart uploads in a specified bucket.
 ```cs
 try
 {
-  String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   ListMultiUploadsRequest request = new ListMultiUploadsRequest(bucket);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   ListMultiUploadsResult result = cosXml.ListMultiUploads(request);
   // Request succeeded
@@ -530,9 +541,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Initializing a multipart upload
 
-#### API description
+#### API description 
 
-This API is used to initialize a multipart upload and get its `uploadId`.
+This API is used to initialize a multipart upload, and get its uploadId.
 
 #### Sample code
 
@@ -540,15 +551,13 @@ This API is used to initialize a multipart upload and get its `uploadId`.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   InitMultipartUploadRequest request = new InitMultipartUploadRequest(bucket, key);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   InitMultipartUploadResult result = cosXml.InitMultipartUpload(request);
   // Request succeeded
-  "exampleUploadId" = result.initMultipartUpload.uploadId; // The uploadId to use for subsequent part uploads
+  this.uploadId = result.initMultipartUpload.uploadId; // The uploadId to use for subsequent multipart uploads
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
@@ -575,19 +584,13 @@ This API is used to upload parts in a multipart upload.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload was initialized
   int partNumber = 1; // Part number that increases starting from 1
-  string srcPath = @"temp-source-file";// Absolute path to a local file
-  if (!File.Exists(srcPath)) {
-    // If the destination file does not exist, create a temporary test file
-    File.WriteAllBytes(srcPath, new byte[1024]);
-  }
+  string srcPath = @"temp-source-file";// Absolute path to the local file
   UploadPartRequest request = new UploadPartRequest(bucket, key, partNumber, 
     uploadId, srcPath);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set progress callback
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
@@ -616,7 +619,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Copying a part
 
-#### API description
+#### API description 
 
 This API is used to copy an object as a part.
 
@@ -627,21 +630,19 @@ This API is used to copy an object as a part.
 try
 {
   string sourceAppid = "1250000000"; // Account APPID
-  string sourceBucket = "sourcebucket-1250000000"; //" Source object bucket
+  string sourceBucket = "sourcebucket-1250000000"; // Bucket of the source object
   string sourceRegion = "COS_REGION"; // Region where the bucket of the source object resides
   string sourceKey = "sourceObject"; // Key of the source object
-  // Construct source object attributes
+  // Construct the source object attributes
   COSXML.Model.Tag.CopySourceStruct copySource = new CopySourceStruct(sourceAppid, 
     sourceBucket, sourceRegion, sourceKey);
 
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
-  string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload was initialized
+  string uploadId = this.uploadId; // uploadId returned when the multipart upload was initialized
   int partNumber = 1; // Part number that increases starting from 1
   UploadPartCopyRequest request = new UploadPartCopyRequest(bucket, key, 
     partNumber, uploadId);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Set the copy source
   request.SetCopySource(copySource);
   // Set the byte range of an object to copy as a part, e.g., 0 to 1 M
@@ -649,7 +650,7 @@ try
   // Execute the request
   UploadPartCopyResult result = cosXml.PartCopy(request);
   // Request succeeded
-  // Get Etag of the returned part for subsequent CompleteMultiUploads
+  // Return Etag of the part for subsequent CompleteMultiUploads
   this.eTag = result.copyObject.eTag;
   Console.WriteLine(result.GetResultInfo());
 }
@@ -669,7 +670,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Querying uploaded parts
 
-#### API description
+#### API description 
 
 This API is used to query the uploaded parts of a specific multipart upload.
 
@@ -679,12 +680,10 @@ This API is used to query the uploaded parts of a specific multipart upload.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload was initialized
   ListPartsRequest request = new ListPartsRequest(bucket, key, uploadId);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   ListPartsResult result = cosXml.ListParts(request);
   // Request succeeded
@@ -708,7 +707,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Completing a multipart upload
 
-#### API description
+#### API description 
 
 This API is used to complete the multipart upload of an entire file.
 
@@ -717,13 +716,11 @@ This API is used to complete the multipart upload of an entire file.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload was initialized
   CompleteMultipartUploadRequest request = new CompleteMultipartUploadRequest(bucket, 
     key, uploadId);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Specify uploaded parts in an ascending order by partNumber
   request.SetPartNumberAndETag(1, this.eTag);
   // Execute the request
@@ -747,7 +744,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 ### Aborting a multipart upload
 
-#### API description
+#### API description 
 
 This API is used to abort a multipart upload and delete the uploaded parts.
 
@@ -757,12 +754,10 @@ This API is used to abort a multipart upload and delete the uploaded parts.
 ```cs
 try
 {
-  string bucket = "examplebucket-1250000000"; // Bucket in the format: BucketName-APPID
+  string bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
   string key = "exampleobject"; // Object key
   string uploadId = "exampleUploadId"; // uploadId returned when the multipart upload was initialized
   AbortMultipartUploadRequest request = new AbortMultipartUploadRequest(bucket, key, uploadId);
-  // Set the validity period of the signature
-  request.SetSign(TimeUtils.GetCurrentTime(TimeUnit.SECONDS), 600);
   // Execute the request
   AbortMultipartUploadResult result = cosXml.AbortMultiUpload(request);
   // Request succeeded
