@@ -8,6 +8,7 @@ After migrating data from HDFS to COS by using the `hadoop distcp` command, you 
 - Runtime environment for Hadoop MapReduce
 
 >- For self-built Hadoop clusters, the "Hadoop-cos" dependency must be of the latest version (GitHub release 5.8.2 or above) to return CRC64 check code.
+>- If you are using Tencent Cloud EMR suite, the Hadoop-cos version above is available only for clusters created after May 8, 2020. For earlier clusters, please [submit a ticket](https://console.cloud .tencent.com/workorder/category) for assistance.
 
 ## Instructions
 

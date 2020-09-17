@@ -2,8 +2,8 @@
 ### Command Compatibility of Different Editions
 In the following table, ✓ indicates "supported", x indicates "unsupported", and - indicates that cross-slot access is not applicable to the command:
 - For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336).
-- For more information on the command compatibility of the Memory Edition (Cluster Architecture), please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336).
-- For more information on the command compatibility of the Hybrid Storage Edition (Cluster Architecture), please see [Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/36163).
+- For more information on the command compatibility of the Memory Edition (Cluster Architecture), please see [Memory Edition (Cluster Architecture) > Command Compatibility](https://intl.cloud.tencent.com/document/product/239/18336).
+- For more information on the command compatibility of the Hybrid Storage Edition (Cluster Architecture), please see [Hybrid Storage Edition (Cluster Architecture) > Command Compatibility](https://intl.cloud.tencent.com/document/product/239/36163).
 - [Command table download address](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/Redis%E5%91%BD%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%80%A7.xlsx).
 
 <table>
