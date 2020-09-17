@@ -29,11 +29,11 @@ TRTC 最擅长的领域就是音视频互动连麦，如果一个房间里同时
 ## 使用步骤
 
 <span id="step1"></span>
-### 步骤1：开通旁路推流服务
+### 步骤1：开启旁路推流功能
 
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【功能配置】。
-3. 在【旁路推流配置】中，单击【自动旁路推流】右侧的<img src="https://main.qcloudimg.com/raw/8f08eba741586e96dbe3b30c6804e9b6.png"  style="margin:0;">，在弹出的【开启自动旁路推流】对话框中，单击【确定】即可开通。
+3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png)，在弹出的【开启旁路推流功能】对话框中，单击【开启旁路推流功能】即可开通。
 
 <span id="step2"></span>
 ### 步骤2：配置播放域名并完成 CNAME
@@ -182,8 +182,6 @@ http://播放域名/live/[streamId].flv
 
 ### 转码费用：启用多路画面混合时收取
 如果您启用了 [多路画面混合](#mixCDN) ，混流需要进行解码和编码，因此会产生额外的混流转码费用。混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高。
-
->例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了1个小时，连麦期间开启了 [多路画面混合](#mixCDN) ，那么产生的转码费用为`0.0325元/分钟 × 60分钟 = 1.95元`。
 
 ## 常见问题
 **为什么房间里只有一个人时画面又卡又模糊?**
