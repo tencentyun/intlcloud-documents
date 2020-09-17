@@ -5,7 +5,7 @@ This document only describes how to add a custom acceleration domain name and en
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5). Click **Bucket List** on the left sidebar to open the Bucket List page.
-2. Click the bucket for which you need to set a domain name, and enter the bucket configuration page.
+2. Click on the bucket for which to configure the domain name to enter the bucket configuration page.
 
 3. Click **Domain Management** on the left, locate **Custom CDN Acceleration Domain**, and click **Add Domain** to configure the following options. (If you have used "Custom Domain Name" in a previous version of the COS console, the new version will still display "Custom Domain Name" instead of “Custom CDN Acceleration Domain”.)
 **Domain**: Enter the custom domain name to be bound (e.g. `www.example.com`). Ensure that the domain name in Mainland China has obtained ICP filing, and a corresponding CNAME has been configured for the domain name with the DNS service provider. For more information, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).

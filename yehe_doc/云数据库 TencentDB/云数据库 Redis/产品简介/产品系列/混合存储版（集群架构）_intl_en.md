@@ -83,7 +83,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 When you set a timeout period for keys or use the `expire` command, both keys and values will be evicted from the memory; otherwise, only values will be evicted.
 - **value-eviction-policy**
  - Through `value-eviction-policy`, you can set how many days a value has not been accessed before it is automatically evicted from the memory.
- - The default value of this parameter is 7 days. It is expected that this parameter can be modified by users in the console in August, 2020.
+- The default value of this parameter is 7 days. It can be modified by users in the console.
 - **maxmemory-policy**
  - Hybrid Storage Edition only supports `allkeys-lru` (default) and `allkeys-random`.
  - When Redis memory usage reaches `maxmemory`, the system evicts values from the memory according to `maxmemory-policy`.
