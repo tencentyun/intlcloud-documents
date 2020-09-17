@@ -10,8 +10,8 @@ Currently, the following LVB events can trigger a notification: stream push, str
 1. The host configures event message notification URLs and related features such as recording and screencapturing in the console or by calling TencentCloud APIs.
 2. The host pushes a stream or interrupts the push.
 3. When an event occurs in the LVB service, a message will be sent to viewers through the event message notification service.
-
-## Event Message Notification Protocol<span id="protocol"></span>
+<span id="protocol"></span>
+## Event Message Notification Protocol
 
 ### Network protocol
 - Request: HTTP POST request with a JSON packet. The specific packet content of each type of message is described later.
@@ -24,15 +24,15 @@ There is a retry mechanism for event notification service. Such retries will be 
 - No response packet is returned for a long time (at least 20 seconds).
 - The HTTP status code in the response is not 200.
 
-
-## Callback Event Configuration<span id="configuration"></span>
+<span id="configuration"></span>
+## Callback Event Configuration
 Callback configuration can mainly be implemented in two ways: in the [LVB Console](#c_callback) and through [server API](#api_callback).
 >?You can configure different callback URLs for LVB stream push, stream interruption, recording, screencapturing, and porn detection events.
 
 
 
-
-### LVB Console<span id="c_callback"></span>
+<span id="c_callback"></span>
+### LVB Console
 1. Go to **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** in the LVB Console to create a callback template. For detailed directions, please see [Creating Callback Template](https://intl.cloud.tencent.com/document/product/267/31074).
 ![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, find the target push domain name, and click **Manage** > **Template Configuration** to associate it with the callback template. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31065).
