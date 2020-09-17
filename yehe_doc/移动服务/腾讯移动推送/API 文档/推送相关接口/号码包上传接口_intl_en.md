@@ -2,13 +2,13 @@
 
 **Request method**: POST
 
-The API request address maps to the service access point. Select the request address mapping for the service access point of your application.
+The API request address is corresponding to the service access point. Select the request address corresponding to the service access point of your application.
 
-Service access point in Guangzhou:
+Service access point in Guangzhou, China:
 ```plaintext
 https://api.tpns.tencent.com/v3/push/package/upload
 ```
-Service access point in Hong Kong:
+Service access point in Hong Kong, China:
 ```plaintext
 https://api.tpns.hk.tencent.com/v3/push/package/upload
 ```
@@ -22,7 +22,7 @@ Service access point in Shanghai:
 https://api.tpns.sh.tencent.com/v3/push/package/upload
 ```
 
-**Feature**: This API is used to upload an account package.
+**Feature**: this API is used to batch upload account package files.
 
 >!
 - The account package is in `.zip` format and less than 100 MB in size.
@@ -42,9 +42,9 @@ https://api.tpns.sh.tencent.com/v3/push/package/upload
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| retCode | Integer | Yes | The error code. |
-| errMsg | String | Yes | The error message when an error occurs in the request. |
-| uploadId | Integer | Yes | When a file is uploaded, the uploadId is provided as a positive integer, which represents the ID of the uploaded file. It is provided to the account package push API. |
+| retCode | Integer | Yes | Error code. |
+| errMsg | String | Yes | Error message when an error occurs in the request. |
+| uploadId | Integer | Yes | When a file is uploaded, the uploadId is provided as a positive integer, which represents the ID of the uploaded file. It is provided to the account package API for subsequent pushes. |
 
 
 ## Sample
