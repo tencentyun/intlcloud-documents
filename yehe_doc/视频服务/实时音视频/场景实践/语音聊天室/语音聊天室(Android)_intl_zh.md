@@ -12,7 +12,7 @@
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【立即开始】，输入应用名称，例如 `TestVoiceRoom` ，单击【创建应用】。
 
->?本功能需同时使用 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。
+>?本功能需同时使用 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 <span id="ui.step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
@@ -27,7 +27,7 @@
 3. 设置 `GenerateTestUserSig.java` 文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
+    <img src="https://main.qcloudimg.com/raw/345c3e8915ef988eb158833d1655d0c5.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -53,7 +53,7 @@
 ## 实现自定义 UI 界面
 
 [源码](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom) 中的 trtcvoiceroomdemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCVoiceRoom，您可以在`TRTCVoiceRoom.java`文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
-![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
+![](https://main.qcloudimg.com/raw/0ebcbb27843bf03a790a945a8c92d560.png)
 
 <span id="model.step1"> </span>
 ### 步骤1：集成 SDK
@@ -176,7 +176,7 @@ mTRTCVoiceRoom.login(SDKAPPID, userId, userSig, new TRTCVoiceRoomCallback.Action
 4. 主播收到组件的`onSeatListChange`麦位表变化事件通知，此时可以将麦位表变化刷新到 UI 界面上。
 5. 主播还会收到麦位表有成员进入的`onAnchorEnterSeat`的事件通知，此时会自动打开麦克风采集。
 
-![](https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png)
+![](https://main.qcloudimg.com/raw/628f0aa3f0c15e53fec6ac904c8d3943.png)
 
 ```java
 // 1.主播设置昵称和头像
@@ -229,7 +229,7 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 6. 进房后会收到组件的`onSeatListChange`麦位表变化事件通知，此时可以将麦位表变化刷新到 UI 界面上。
 7. 进房后还会收到麦位表有主播进入的`onAnchorEnterSeat`的事件通知。
 
-![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
+![](https://main.qcloudimg.com/raw/6e36bc8029a8abbeed69b43e197ba3c0.png)
 
 ```java
 // 1.观众设置昵称和头像
@@ -286,13 +286,13 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 3. `muteSeat`传入对应麦位后，可以静音/解除静音，房间内所有成员会收到 `onSeatListChange` 和 `onSeatMute` 的事件通知。
 4. `closeSeat`传入对应麦位后，可以封禁/解禁某个麦位，封禁后观众端将不能再上麦，房间内所有成员会收到`onSeatListChange`和`onSeatClose`的事件通知。
 
-![](https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png)
+![](https://main.qcloudimg.com/raw/299e62ae7d20d10622197ad8685d4639.png)
 
 观众端：
 1. `enterSeat`传入对应的麦位后，可以进行上麦，房间内所有成员会收到`onSeatListChange`和`onAnchorEnterSeat`的事件通知。
 2. `leaveSeat`主动下麦，房间内所有成员会收到`onSeatListChange`和`onAnchorLeaveSeat`的事件通知。
 
-![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
+![](https://main.qcloudimg.com/raw/3ac11818d7d23f61104600ea7235867d.png)
 
 麦位操作后的事件通知顺序如下：
 callback > onSeatListChange > onAnchorEnterSeat 等独立事件
@@ -349,7 +349,7 @@ public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 3. 主播选择同意后，调用`acceptInvitation`并传入 inviteId。
 4. 观众端收到`onInviteeAccepted`的事件通知，调用`enterSeat`进行上麦。
 
-![](https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png)
+![](https://main.qcloudimg.com/raw/e2b97c645590c835b54fffbf0ff4ebfd.png)
 
 ```java
 // 观众端视角
@@ -381,7 +381,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 3. 观众选择同意后，调用`acceptInvitation`并传入 inviteId。
 4. 主播端收到`onInviteeAccepted`的事件通知，调用`pickSeat`抱观众上麦。
 
-![](https://main.qcloudimg.com/raw/5515f49d6e30410e12cd828b75a8db0b.png)
+![](https://main.qcloudimg.com/raw/e68e2dd9a8056ad8496cbe3dcfe634f1.png)
 
 ```java
 // 主播端视角
