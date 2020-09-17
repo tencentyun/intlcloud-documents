@@ -2,13 +2,11 @@
 
 You can delete buckets on the Bucket List page on the COS console. For more information on buckets, see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 
-> To delete a bucket, first make sure to delete all objects in the bucket and all fragments in **Incomplete Upload**.
+## Prerequisites
+Before deleting a bucket, please make sure that all the objects and incomplete multipart uploads have been cleared out of it. For more information, see [Emptying Buckets](https://intl.cloud.tencent.com/document/product/436/30926).
 
 ## Directions
-
-1. Log in to the [COS console](https://intl.cloud.tencent.com/login), click **Bucket List** to enter the bucket detail page and then click **Delete** on the right of the target bucket.
-   ![](https://main.qcloudimg.com/raw/07d0b4b4f9df3aeba5f1ad0ed0d1701a.png)
-2. In the Delete Bucket confirmation popup box, click **OK** to delete the bucket.
-   ![](https://main.qcloudimg.com/raw/ab06ccc4fcdca8c8c0d76be1f319b873.png)
-
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), and click **Bucket List** in the left sidebar to enter the bucket list page.
+2. Locate the bucket to delete, and click **Delete** under the **Operation** column.
+![](https://main.qcloudimg.com/raw/1baeba77031a31a1a242c237da68e376.png)
 

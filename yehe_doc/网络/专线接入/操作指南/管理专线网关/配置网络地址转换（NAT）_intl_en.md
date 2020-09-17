@@ -110,7 +110,7 @@ IP A ` 192.168.0.3` in a VPC instance is the source IP address. It is mapped to 
 
 ### Sample peer IP translation configuration
 Direct Connect peer IP D `10.0.0.3` is the source IP address. It is mapped to IP C `172.16.0.3` through peer IP translation:
-- The source IP address of network packets for active access from IP D `10.0.0.3` to the VPC instance is automatically changed to IP C `172.16.0.3`.
+- The original Class D IP address `10.0.0.3` for VPC network access automatically changes to Class C IP address `172.16.0.3`.
 - All network packets accessing IP C `172.16.0.3` from the VPC instance will automatically point to IP D `10.0.0.3`.
 
 ### Sample configuration for local source IP port translation

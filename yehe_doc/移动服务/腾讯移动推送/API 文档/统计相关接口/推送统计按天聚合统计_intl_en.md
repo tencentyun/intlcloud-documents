@@ -16,7 +16,10 @@ Service access point in Singapore:
 ```shell
 https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
 ```
-
+Service access point in Shanghai:
+```shell
+https://api.tpns.sh.tencent.com/v3/statistics/get_push_channel_stat_overview
+```
 **Feature**: this API is used to query the daily push conversion summary within a certain time period by push channel.
 
 ## Parameter Description

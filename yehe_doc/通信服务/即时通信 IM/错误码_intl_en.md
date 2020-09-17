@@ -296,11 +296,13 @@
 | 90033 | Invalid attributes.   |
 | 90034 | Tag length is greater than 50.  |
 | 90040 | One empty tag exist in the push conditions.         |
+| 90043 | The format of the OfflinePushInfo field in the JSON request packet is invalid. For more information, see [Message Element OfflinePushInfo](https://intl.cloud.tencent.com/document/product/1047/33527#.E7.A6.BB.E7.BA.BF.E6.8E.A8.E9.80.81-offlinepushinfo-.E8.AF.B4.E6.98.8E). |
 | 90044 | The MsgLifeTime field in the JSON request packet is not of the Integer type. |
 | 90045 | The "all member push" feature is not enabled.        |
 | 90047 | The number of pushes exceeded the daily limit (100 by default). |
 | 90048 | The requested UserID does not exist. |
 | 90054 | Invalid MsgKey in the recall request. |
+| 90055 | The batch message packet exceeded the maximum size of 8 KB.| 
 | 90994 | Internal server error. Try again later. |
 | 90995 | Internal server error. Try again later. |
 | 91000 | Internal server error. Try again later. |

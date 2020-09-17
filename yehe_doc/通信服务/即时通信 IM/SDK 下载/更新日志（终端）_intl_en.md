@@ -1,4 +1,13 @@
-## Latest Version 4.9.1 @2020.07.24
+## Latest Simplified Version 5.0.102 @2020.09.04
+
+### SDK
+
+**Common changes**
+
+- Released the simplified SDK for Android & iOS
+- Compared to standard version, simplified SDK cuts out two capabilities (friend and conversion) and optimizes the business logic to improve efficiency and reduce installation package size
+
+## Latest Standard Version 4.9.1 @2020.07.24
 
 ### SDK
 

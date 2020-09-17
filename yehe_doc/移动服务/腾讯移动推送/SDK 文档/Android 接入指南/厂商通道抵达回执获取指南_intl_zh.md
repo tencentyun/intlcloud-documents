@@ -49,6 +49,10 @@
  <td>新加坡服务接入点 </td>
  <td>https://stat.tpns.sgp.tencent.com/log/statistics/hw </td>
  </tr>
+ <tr>
+ <td>上海服务接入点 </td>
+ <td>https://stat.tpns.sh.tencent.com/log/statistics/hw </td>
+ </tr>
  </tbody></table>
 2. 配置 HTTPS 证书，[证书下载](https://api.tpns.tencent.com/v3/tpnscert/download)。
 3. 配置用户名和密钥（非必填）进行身份验证。
@@ -57,6 +61,9 @@
 
 5. 单击【提交】，即可完成服务的开通。
 ![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)
+
+
+
 
 ## 魅族厂商通道回执配置指引
 
@@ -90,6 +97,10 @@
  <td>新加坡服务接入点 </td>
  <td>https://stat.tpns.sgp.tencent.com/log/statistics/mz </td>
  </tr>
+		<tr>
+	 <td>上海服务接入点 </td>
+	 <td>https://stat.tpns.sh.tencent.com/log/statistics/mz </td>
+	 </tr>
  </tbody></table>
   
   >!广州服务接入点的两个回执地址都需要填写。
@@ -99,5 +110,5 @@
 ![](https://main.qcloudimg.com/raw/7ac8c31f122ae267796672f50a10b55f.png)
 2. 在配置管理页面，【厂商通道】>【魅族官方推送通道】> 单击编辑图标。
 ![](https://main.qcloudimg.com/raw/f12fc508aca29874b4d70afdc365b6c8.png)
-3. 在编辑魅族官方推送通道页面，按照提示点击激活。
+3. 在编辑魅族官方推送通道页面，按照提示单击【点击激活】。
 ![](https://main.qcloudimg.com/raw/6c6c40c0f4867e118b54ebdb7083a7f9.png)

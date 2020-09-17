@@ -8,8 +8,8 @@ You can delete a single object or multiple objects in the COS Console.
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Click the name of the target bucket to enter its file list page.
 ![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
-3. Select the object you want to delete, click **Delete**, and a Delete File dialog box will pop up.
-![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
+3. Select the object to delete, click **More Actions** > **Delete**, and the delete file dialog box will pop up.
+![](https://main.qcloudimg.com/raw/952657b354b3f554780c57b9ba1a23ad.png)
 4. Click **OK** to delete the object.
 ![](https://main.qcloudimg.com/raw/3e579dc3f90f83c6ececbb76dae519f7.png)
 

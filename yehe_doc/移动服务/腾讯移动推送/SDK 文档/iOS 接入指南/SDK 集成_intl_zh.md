@@ -1,9 +1,9 @@
 ## 简介
 本文档提供关于 SDK 接入以及开启推送服务的示例代码（SDK 版本：V1.0+ 版本）。
 >!如果您是从 [信鸽平台](https://xg.qq.com) 迁移至腾讯移动推送平台，请务必：
-1. 实现 [注销信鸽平台推送服务接口](#zhuxiao)。
-2. 根据您 App 的集成情况，实现相应的变更，完成后返回当前文档。
-3. 完成下述文档的集成工作。
+>1. 实现 [注销信鸽平台推送服务接口](#zhuxiao)。
+>2. 根据您 App 的集成情况，实现相应的变更，完成后返回当前文档。
+>3. 完成下述文档的集成工作。
 
 ## SDK 组成
 - doc 文件夹：腾讯移动推送 iOS SDK 开发指南。
@@ -26,13 +26,13 @@
 pod 'TPNS-iOS' 
 ```
 >?
- - 首次下载需要登录 [仓库地址](https://git.code.tencent.com/users/sign_in)，并在【账户】菜单栏中 [设置用户名和密码](https://code.tencent.com/help/productionDoc/profile#password)。设置成功后，在 Terminal 输入对应的用户名和密码，后续即可正常使用，当前 PC 不需要再次登录。
- - 由于仓库地址变更，如果 pod 提示 `Unable to find a specification for 'TPNS-iOS'`，那么需要执行以下命令，并更新仓库确认版本：
-``` 
+> - 首次下载需要登录 [仓库地址](https://git.code.tencent.com/users/sign_in)，并在【账户】菜单栏中 [设置用户名和密码](https://code.tencent.com/help/productionDoc/profile#password)。设置成功后，在 Terminal 输入对应的用户名和密码，后续即可正常使用，当前 PC 不需要再次登录。
+> - 由于仓库地址变更，如果 pod 提示 `Unable to find a specification for 'TPNS-iOS'`，那么需要执行以下命令，并更新仓库确认版本：
+>``` 
 pod repo update
 pod search TPNS-iOS
 pod install //安装 SDK 
-```  
+>```  
 
 #### 方式二：手动导入
 1. 进入腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns)，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏中【下载】即可。
@@ -60,16 +60,24 @@ pod install //安装 SDK
 如 checkTargetOtherLinkFlagForObjc 报错，是因为 build setting 中，Other link flags 未添加 -ObjC。
 
 >! 如果您的应用服务接入点为广州，SDK 默认实现该配置。
-如果您的应用服务接入点为新加坡或者中国香港，请按照下文步骤完成境外服务接入点配置。
-1. 解压 SDK 文件包，将 SDK 目录下的 XGPushPrivate.h 文件添加到工程中。
-2. 在`startXGWithAccessID:accessKey:delegate:`方法之前调用头文件中的配置`域名`接口：
-如需接入新加坡服务接入点 则将域名设置为```tpns.sgp.tencent.com```。
+如果您的应用服务接入点为上海、新加坡或者中国香港，请按照下文步骤完成其他服务接入点域名配置。
+>1. 解压 SDK 文件包，将 SDK 目录下的 XGPushPrivate.h 文件添加到工程中。
+>2. 在`startXGWithAccessID:accessKey:delegate:`方法之前调用头文件中的配置`域名`接口：
+
+如需接入上海服务接入点，则将域名设置为```tpns.sh.tencent.com```。
+**示例**
+``` object-c
+/// @note TPNS SDK1.2.7.1+
+[[XGPush defaultManager] configureClusterDomainName:@"tpns.sh.tencent.com"];
+
+```
+如需接入新加坡服务接入点，则将域名设置为```tpns.sgp.tencent.com```。
 **示例**
 ``` object-c
 /// @note TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sgp.tencent.com"];
 ```
-如需接入中国香港服务接入点 则将域名设置为```tpns.hk.tencent.com```。
+如需接入中国香港服务接入点，则将域名设置为```tpns.hk.tencent.com```。
 **示例**
 ``` object-c
 /// @note TPNS SDK1.2.7.1+
@@ -164,9 +172,9 @@ SDK 提供了 Service Extension 接口，可供客户端调用，从而可以使
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
 >!
-- 当应用在前台收到通知消息以及所有状态下收到静默消息时，会触发统一接收消息回调 xgPushDidReceiveRemoteNotification。
+>- 当应用在前台收到通知消息以及所有状态下收到静默消息时，会触发统一接收消息回调 xgPushDidReceiveRemoteNotification。
 区分前台收到通知消息和静默消息示例代码如下：
-```
+>```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
 NSNumber *msgType = tpnsInfo[@"msgtype"];
  if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive && msgType.integerValue == 1) {
@@ -174,8 +182,8 @@ NSNumber *msgType = tpnsInfo[@"msgtype"];
     } else {
         /// 静默消息
     }
-```
-- 若实现了统一接收消息回调 xgPushDidReceiveRemoteNotification，则无需再实现 application:didReceiveRemoteNotification:fetchCompletionHandler。
+>```
+>- 若实现了统一接收消息回调 xgPushDidReceiveRemoteNotification，则无需再实现 application:didReceiveRemoteNotification:fetchCompletionHandler。
 
 
 统一点击消息回调，此回调方法为应用所有状态（前台、后台、关闭）下的通知消息点击回调。

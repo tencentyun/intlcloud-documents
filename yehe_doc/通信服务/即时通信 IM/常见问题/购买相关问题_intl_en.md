@@ -9,7 +9,7 @@ You can create up to 100 accounts in the trial edition. To use the accounts in a
 ### Does IM support global access?
 IM provides highly interconnected, reliable, and secure global network connections and proprietary multi-level optimal addressing algorithms to implement scheduling across private and public networks. When terminals log in, the IM SDK connects to the nearest access nodes or cache nodes. Global access and cache nodes include the following:
 
-- China: South China, North China, East China, and Hong Kong
+- China: South China, North China, East China, Hong Kong, Taiwan regions, etc.
 - Other countries (regions):
  - Asia: Singapore, Indonesia, UAE, Thailand, Japan, Vietnam, and India
  - Europe: United Kingdom, Netherlands, Germany, Italy, Norway, France, and Russia

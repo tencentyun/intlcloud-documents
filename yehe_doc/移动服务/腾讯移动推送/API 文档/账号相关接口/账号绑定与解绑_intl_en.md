@@ -17,6 +17,10 @@ Service access point in Singapore:
 ```shell
 https://api.tpns.sgp.tencent.com/v3/device/account/batchoperate
 ```
+Service access point in Shanghai:
+```shell
+https://api.tpns.sh.tencent.com/v3/device/account/batchoperate
+```
 
 **Feature**: this is an async API that is only responsible for task issuance, with real-time operation currently unsupported.
 

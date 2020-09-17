@@ -52,19 +52,20 @@ dependencies {
 
 >!
 >- If your application service access point is Guangzhou, the SDK implements this configuration by default.
->- If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+>- If your application service access point is Shanghai, Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
-```
+>```
 <application>
 	// Other Android components
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
 			android:value="Domain name outside Mainland China" />
 </application>
-```
-The domain names outside Mainland China are as follows:
-- Hong Kong (China): `tpns.hk.tencent.com`
-- Singapore: `tpns.sgp.tencent.com`
+>```
+The domain names for other service access points are as follows:
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
 
 #### Notes
 
@@ -264,20 +265,21 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 ```
 
 >!
- - If your application service access point is Guangzhou, the SDK implements this configuration by default.
- - If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+> - If your application service access point is Guangzhou, the SDK implements this configuration by default.
+> - If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
-```
+>```
 <application>
 	// Other Android components
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
-			android:value="Domain name outside Mainland China" />
+			android:value="Domain name for other service access points" />
 </application>
-```
-The domain names outside Mainland China are as follows:
-- Hong Kong (China): `tpns.hk.tencent.com`
-- Singapore: `tpns.sgp.tencent.com`
+>```
+The domain names for other service access points are as follows:
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
 
 
 

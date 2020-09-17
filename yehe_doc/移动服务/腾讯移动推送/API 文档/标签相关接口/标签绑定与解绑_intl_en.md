@@ -14,6 +14,11 @@ Service access point in Singapore:
 ```shell
 https://api.tpns.sgp.tencent.com/v3/device/tag
 ```
+Service access point in Shanghai:
+```shell
+https://api.tpns.sh.tencent.com/v3/device/tag
+```
+
 **API feature**
 `Tag` API is the general term for all tag APIs. It includes various APIs for setting, updating, and deleting which are described as below:
 For use cases of the tag feature, please see [Tag Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/35392).
