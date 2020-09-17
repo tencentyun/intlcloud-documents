@@ -3,6 +3,7 @@
 - 升级过程不能中断。
 - 管理中心暂不支持降级操作，如有需要请 [提交工单](https://console.cloud.tencent.com/workorder/category)。
 
+升级费用 = (目标规格单价 - 原规格单价) x 剩余到期时间
 
 1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，选择选择相应的实例，在“操作”列选择【更多】>【调整配置】。
 
