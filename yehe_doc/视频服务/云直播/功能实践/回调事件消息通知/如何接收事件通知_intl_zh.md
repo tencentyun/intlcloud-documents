@@ -4,7 +4,7 @@
 
 ## 整体流程
 
-<img src="https://main.qcloudimg.com/raw/2244d551735116880d46ec72d786bf21.svg" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
 
 **流程说明：**
 1. 主播在控制台或直接调用云 API 配置事件消息通知 URL 以及录制、截图等相关功能。
@@ -33,8 +33,8 @@
 
 
 ### 云直播控制台<span id="c_callback"></span>
-1. 进入云直播控制台的【功能模板】>【[回调配置](https://console.cloud.tencent.com/live/config/callback)】，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/zh/document/product/267/31074)。
-![](https://main.qcloudimg.com/raw/5566fb233adbda7955bd2062d167d05b.png)
+1. 进入云直播控制台的【功能模板】>【[回调配置](https://console.cloud.tencent.com/live/config/callback)】，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074)。
+![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的推流域名，单击【管理】>【模板配置】，将此域名与转码模板进行关联。具体操作请参见 [回调配置](https://cloud.tencent.com/document/product/267/35254)。
 
 ### 服务端 API<span id="api_callback"></span>
