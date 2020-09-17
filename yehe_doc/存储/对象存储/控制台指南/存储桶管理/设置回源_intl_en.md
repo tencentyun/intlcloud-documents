@@ -31,6 +31,7 @@ abc.example.com:8080
 
 You can configure a specific origin-pull address using the following fields:
 
+    ```shell
     - **Fixed file**: specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
     - **Specified prefix**: specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to the `<origin-pull address>/test/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
     - **Specified suffix**: specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to the `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
