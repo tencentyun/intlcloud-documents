@@ -10,11 +10,9 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the Bucket List page. Click the bucket for which you want to configure origin-pull to enter the bucket details page.
-   ![](https://main.qcloudimg.com/raw/3797a80a4d8ec0d49d64754530f8fe4d.png)
-2. Click **Basic Configuration** on the left sidebar to enter the bucket’s basic configuration page.
-3. Scroll down to the **Origin-pull Configurations** section, and click **Add origin-pull rule**.
-   ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
-4. Configure the following and click **OK**.
+2. Select **Basic Configurations** > **CORS (Cross-Origin Resource Sharing) Setting** on the left sidebar, and click **Add a Rule**.
+![](https://main.qcloudimg.com/raw/7c7625753ad3c0c34dee7eb901bc9184.png)
+3. Configure the following and click **OK**.
  - **Origin-pull condition**: specifies all conditions as needed that must be met at the same time for triggering origin-pull.
     -**HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
     -**File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, then the origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
@@ -40,7 +38,7 @@ You can configure a specific origin-pull address using the following fields:
  - **Origin-Pull Parameter**: specifies whether to pass through COS request parameters when accessing the origin server.
  - **Origin-pull header**: specifies the custom headers that you can add for COS to access your origin server. Currently, up to 10 of them can be added. 
    ![](https://main.qcloudimg.com/raw/0049d66f20bd79f4edb673cb8c8c7185.png)
-5. By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the “Edit” icon under the “Priority” column in the rule list.
+4. By default, COS always gives the highest priority to the most recent rule, by which it performs origin-pull. To change the priority manually, you can click the “Edit” icon under the “Priority” column in the rule list.
 ![](https://main.qcloudimg.com/raw/3fa148b2e43f30fb891adee75ff255db.png)
 
 
