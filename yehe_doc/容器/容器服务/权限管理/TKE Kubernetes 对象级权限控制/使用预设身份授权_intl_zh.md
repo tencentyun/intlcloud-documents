@@ -3,7 +3,7 @@
 
 ### Role 说明
 容器服务控制台提供授权管理页，默认**主账号**及**集群创建者**具备管理员权限。可对其他拥有该集群 DescribeCluster Action 权限的子账号进行权限管理。如下图所示：
-![](https://main.qcloudimg.com/raw/4882f2ca968c328e2d3a7ad53dbfa36e.png)
+![](https://main.qcloudimg.com/raw/6cb15e89a1853a202eadbf21f43b6698.png)
 
 ### ClusterRole 说明
 - **所有命名空间维度**：
@@ -24,7 +24,7 @@
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
 2. 在“集群管理”页面中，选择需目标集群 ID。
 3. 在集群详情页面中，选择左侧的【基本信息】即可在“集群APIServer信息”模块中查看并下载 Kubeconfig 文件。如下图所示：
-![](https://main.qcloudimg.com/raw/64ba3b4331fbb27e69eaed6894646ab3.png)
+![](https://main.qcloudimg.com/raw/3094558dd334529b7bee15ecbb2cfd2b.png)
 
 ### 凭证管理
 集群管理员可以访问凭证管理页，进行查看并更新所有账号下集群的凭证。详情请参见 更新子账号的 TKE 集群访问凭证。
@@ -36,7 +36,7 @@
 1. 在“集群管理”页面中，选择目标集群 ID。 
 2. 在集群详情页面中，选择左侧【授权管理】>【ClusterRoleBinding】。
 3. 在 “ClusterRoleBinding” 管理页面中，单击【RBAC策略生成器】。如下图所示：
-![](https://main.qcloudimg.com/raw/47088d7ea0ae41078094d3dbac82aeaf.png)
+![](https://main.qcloudimg.com/raw/e66f2780794f55cf4020b8e6fdb3e287.png)
 4. 在“管理权限”页面的“选择子账号”步骤中，勾选需授权的子账号并单击【下一步】。
 5. 在“集群RBAC设置”步骤中，按照以下指引进项权限设置：
   - **Namespace列表**：按需指定权限生效的 Namespace 范围。

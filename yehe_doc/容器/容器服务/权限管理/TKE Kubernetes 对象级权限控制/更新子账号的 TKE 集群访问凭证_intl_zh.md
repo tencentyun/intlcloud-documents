@@ -11,5 +11,5 @@
 2. 在“集群管理”页面中，选择需目标集群 ID。
 3. 在集群详情页面中，选择左侧的【基本信息】，在“集群APIServer信息”模块中单击【Kubeconfig权限管理】。
 4. 在弹出的 “Kubeconfig权限管理” 窗口中，按需勾选认证账号并单击【更新】即可。如下图所示：
-![](https://main.qcloudimg.com/raw/b8c2a30a36d96946cf2f134f49bc2114.png)
+![](https://main.qcloudimg.com/raw/465c1fa8e4b385cf5d66bbdfba598217.png)
 
