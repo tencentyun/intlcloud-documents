@@ -8,7 +8,7 @@
 - 当满足节点空闲等缩容条件时，自动触发缩容，为您节约资源成本。
 
 节点池整体架构图如下：
-![](https://main.qcloudimg.com/raw/96086aafcb5d563980a489900d2060d0.png)
+![](https://main.qcloudimg.com/raw/ee033cab974b375a1e59fb5a96aaa503.png)
 
 通常情况下，节点池内的节点均具有如下相同属性：
 - 节点操作系统。
