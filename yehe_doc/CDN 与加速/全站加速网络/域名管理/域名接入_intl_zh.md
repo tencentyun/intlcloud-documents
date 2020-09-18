@@ -1,5 +1,5 @@
 ## 操作步骤概览
-![](https://main.qcloudimg.com/raw/f5043a09b749ae3bb9802825effb7d8c.png)
+![](https://main.qcloudimg.com/raw/9e2319ef334f7596c050816bff61c6a1.png)
 
 ECDN 加速域名接入加速平台的主要步骤如下：  
 
