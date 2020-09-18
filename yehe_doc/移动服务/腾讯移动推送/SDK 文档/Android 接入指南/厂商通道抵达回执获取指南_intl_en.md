@@ -49,6 +49,11 @@ After integrating the SDK for Huawei Channel, you need to activate and configure
  <td>Service access point in Singapore</td>
  <td>https://stat.tpns.sgp.tencent.com/log/statistics/hw</td>
  </tr>
+ <tr>
+ <td>Service access point in Shanghai</td>
+ <td>https://stat.tpns.sh.tencent.com/log/statistics/hw </td>
+ </tr>
+ </tbody></table>
  </tbody></table>
 2. Configure the HTTPS certificate. Click [here](https://api.tpns.tencent.com/v3/tpnscert/download) to download it.
 3. Configure the username and key (optional) for authentication.
@@ -89,6 +94,10 @@ After integrating the SDK for Meizu Channel, you need to create a receipt on the
  <td>Service access point in Singapore</td>
  <td>https://stat.tpns.sgp.tencent.com/log/statistics/mz </td>
  </tr>
+ <tr>
+ <td>Service access point in Shanghai</td>
+ <td>https://stat.tpns.sh.tencent.com/log/statistics/hw </td>
+ </tr>
  </tbody></table>
   
   >! Both callback addresses for service access point in Guangzhou are required.
@@ -99,6 +108,6 @@ After integrating the SDK for Meizu Channel, you need to create a receipt on the
 ![](https://main.qcloudimg.com/raw/7ac8c31f122ae267796672f50a10b55f.png)
 2. On the configuration management page, click the edit icon in **Vendor Channel** > **Meizu Official Push Channel**.
 ![](https://main.qcloudimg.com/raw/f12fc508aca29874b4d70afdc365b6c8.png)
-3. On the Meizu official push channel editing page, activate the application as prompted.
+3. On the Meizu official push channel editing page, click **Activate Now**.
 ![](https://main.qcloudimg.com/raw/6c6c40c0f4867e118b54ebdb7083a7f9.png)
 
