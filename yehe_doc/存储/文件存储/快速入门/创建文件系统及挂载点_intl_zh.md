@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td nowrap="nowrap">文件服务协议</td>
-    <td>选择文件系统的协议类型，NFS 或 CIFS/SMB 。其中，NFS 协议更适合于 Linux/Unix 客户端，CIFS/SMB 协议更适合于 Windows 客户端。CIFS/SMB 协议近期公测已结束，后续开放时间敬待通知，更多信息请参见 <a href="https://intl.cloud.tencent.com/document/product/582/9553">CIFS/SMB 公测说明</a>。</td>
+    <td>选择文件系统的协议类型，NFS 或 CIFS/SMB 。其中，NFS 协议更适合于 Linux/Unix 客户端，CIFS/SMB 协议更适合于 Windows 客户端。</td>
   </tr>
   <tr>
     <td nowrap="nowrap">客户端类型</td>

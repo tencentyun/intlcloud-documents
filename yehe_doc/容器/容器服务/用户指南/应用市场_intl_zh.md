@@ -7,7 +7,7 @@
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【应用市场】进入“应用市场”管理页面。如下图所示：
-![](https://main.qcloudimg.com/raw/4e090635c36a63cbf038327d40c7e6b0.png)
+![](https://main.qcloudimg.com/raw/383f2bb6305e3c15c7e61bd107d48784.png)
 在“应用市场”管理页面中，可进行如下操作：
  - 筛选应用：可按照集群类型、应用场景或输入关键词进行应用筛选。
     - 集群类型：包含集群、弹性集群、边缘集群。
@@ -20,6 +20,6 @@
 1. 在“应用管理”页面中按需选择应用包，并进入该应用详情页。
 2. 在“应用详情页”中，单击“基本信息”模块中的【创建应用】。
 3. 在弹出的“创建应用”窗口中，按需配置并创建应用。如下图所示：
-   ![](https://main.qcloudimg.com/raw/7e581c74bc79c04eb45a53b4ed7b0ea4.png)
+   ![](https://main.qcloudimg.com/raw/926b52aab01a4849209a609c7e5b0876.png)
 4.单击【创建】即可创建应用。
 

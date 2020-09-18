@@ -1,5 +1,6 @@
 After you initialize your instance, you can access the database by using MongoDB shell or drivers in various programming languages to perform management operations.
 A [CVM](https://intl.cloud.tencent.com/document/product/213/10517) instance can be used to connect to the private network address that is automatically assigned to a TencentDB instance. This access method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same VPC in the same region or reside in the basic network. Public network access is not supported for the time being.
+>?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003/30049).
 
 ## Prerequisites
 To connect to a TencentDB for MongoDB instance, a driver on v3.2 or above is required. You are recommended to use the latest version of client driver to ensure optimal compatibility, such as shell kit, Java jar package, PHP expansion, and Node.js module. For more information, please see [MongoDB Drivers](https://docs.mongodb.com/ecosystem/drivers/).
@@ -12,11 +13,11 @@ The mongo shell is included as part of the MongoDB distribution. You need to dow
     cd <mongodb installation dir>
 	./bin/mongo -umongouser -plxh2081* 172.x.x.56:27017/admin
 ```
->In the above example, the `-u` parameter specifies the [username](#mryh), the `-p` parameter specifies the password, and `172.x.x.56` and `27017` specify the IP and port of the MongoDB instance, respectively.
+>?In the above example, the `-u` parameter specifies the [username](#mryh), the `-p` parameter specifies the password, and `172.x.x.56` and `27017` specify the IP and port of the MongoDB instance, respectively.
 
 ### Through URI
 MongoDB can be connected to by passing in parameters or by using URI (supported by most drivers). Connection to MongoDB through URI is officially recommended by MongoDB.
->The connection method for MongoDB replica set instances (v4.0) is different from that of other editions. 3 IPs are provided on v4.0 for access, corresponding to 3 nodes in a replica set. When connecting your business in a production environment, you are recommended to configure 3 IPs in the connection string to make the connection more secure and efficient. For more information, please see [Replica Set Instance (v4.0) Connection Description](https://intl.cloud.tencent.com/document/product/240/35062).
+>?The connection method for MongoDB replica set instances (v4.0) is different from that of other editions. 3 IPs are provided on v4.0 for access, corresponding to 3 nodes in a replica set. When connecting your business in a production environment, you are recommended to configure 3 IPs in the connection string to make the connection more secure and efficient. For more information, please see [Replica Set Instance (v4.0) Connection Description](https://intl.cloud.tencent.com/document/product/240/35062).
 >
 Below are some typical URIs:
 - Sample 1
@@ -109,7 +110,7 @@ mongodb://username:password@IP:27017/admin?readPreference=secondaryPreferred
 
 ## Connection Samples
 ### Through shell
--[Shell Connection Sample](https://intl.cloud.tencent.com/document/product/240/3978)
+[Shell Connection Sample](https://intl.cloud.tencent.com/document/product/240/3978)
 
 ### Through URI
 - [PHP Connection Sample](https://intl.cloud.tencent.com/document/product/240/3977)

@@ -33,7 +33,7 @@
 >? 容器 CIDR、单节点 Pod 数量上限以及集群内 Service 数量上限，请根据实际情况在创建集群时的集群信息设置页面进行自定义设置。
 >
     例如，指定容器 CIDR 为172.16.0.0/16，单节点 Pod 数量上限为64，集群内 Service 数量上限为256。如下图所示：
-![](https://main.qcloudimg.com/raw/dc9e09a67def1a04faf55d8b74f015eb.png)
+![](https://main.qcloudimg.com/raw/6078d72a6f4f8900017ebeb395eae91b.png)
       其中，CIDR 的地址空间分配如下：
 ![](https://main.qcloudimg.com/raw/d527fba52707aa8b77d463ddee7ff9c4.png)
  - CIDR 地址最后一段分配给 Service 使用，共256个 IP。

@@ -60,18 +60,26 @@ pod install // Install the SDK
 If `checkTargetOtherLinkFlagForObjc` reports an error, it means that `-ObjC` has not been added to `Other link flags` in `build setting`.
 
 >! If your application service access point is Guangzhou, the SDK implements this configuration by default.
-If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+If your application service access point is Shanghai, Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
 >1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
 >2. Call the configuration `domain name` API in the header file before calling the `startXGWithAccessID:accessKey:delegate:` method (SDK v1.2.7.2+):
 
+To integrate with the service access point in Shanghai, set the domain name to `tpns.sh.tencent.com`.
+**Sample**
+``` object-c
+/// @note TPNS SDK1.2.7.1+
+[[XGPush defaultManager] configureClusterDomainName:@"tpns.sh.tencent.com"];
+```
 To integrate with the Singapore service access point, set the domain name to ```tpns.sgp.tencent.com```.
 **Sample**
 ``` object-c
+/// @note TPNS SDK1.2.7.1+
  [[XGPush defaultManager] configureClusterDomainName:@"tpns.sgp.tencent.com"];
 ```
 To integrate with the Hong Kong (China) service access point, set the domain name to ```tpns.hk.tencent.com```.
 **Sample**
 ``` object-c
+/// @note TPNS SDK1.2.7.1+
  [[XGPush defaultManager] configureClusterDomainName:@"tpns.hk.tencent.com"];
 ```
 

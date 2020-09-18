@@ -22,7 +22,7 @@ Currently, the IPv6 protocol is not supported.
 Currently, new Anti-DDoS Advanced does not provide attack packet files for download.
 
 ### How does Anti-DDoS Advanced deal with load balancing if multiple real server IPs are configured?
-- For website applications, load balancing based on source IP hash is used.
+- For website applications, default load balancing based on round robin is used.
 - For non-website applications, load balancing based on weighted round robin is used to forward traffic to real server IPs in turn.
 
 ### How many forwarding ports and domain names are supported by one Anti-DDoS Advanced instance?

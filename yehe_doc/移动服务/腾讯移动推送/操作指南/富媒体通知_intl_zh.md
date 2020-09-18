@@ -13,9 +13,9 @@
 
 | 推送通道 | 支持类型          | 使用要求                                                     |
 | -------- | ----------------- | ------------------------------------------------------------ |
-| 华为     | 缩略图            | <li>URL 仅支持 HTTPS <li> 格式要求：<br>1. `PNG/JPG/JPEG`格式<br>2. 尺寸120 × 120px<br>3. 小于200KB |
+| 华为     | 缩略图            | <li>URL 仅支持 HTTPS <li> 格式要求：<br>1. `PNG/JPG/JPEG`格式<br>2. 尺寸120 × 120px，若图片长或宽超过120px，华为系统会自动缩放<br>3. 小于200KB |
 | 小米     | 大图              | <li>URL 仅支持 HTTPS<li>格式要求：<br>1. `PNG/JPG/JPEG`格式<br>2. 固定876 x 324px<br>3. 小于1MB <li> 注意：如需使用小米通道大图通知功能，需先调用小米图片上传接口上传图片文件，获取小米指定的图片地址 pic_url ，再填入 TPNS 推送对应的参数 xg_media_resources 中。详情请参见 [小米推送富文本消息](https://dev.mi.com/console/doc/detail?pId=1163#_10_0) 文档中的上传大图 API 部分|
-| TPNS     | 大图+缩略图 +音频 | <li>URL 仅支持 HTTPS <li> 图片格式要求：<br>1. `JPEG/JPG/PNG`格式<br>2. 图片高度不能超过256px，宽度自适应<li>音视频文件格式要求：<br>1. 音频文件大小不超过5M |
+| TPNS     | 大图+缩略图 +音频 | <li>URL 仅支持 HTTPS <li> 大图、缩略图格式要求：<br>1. `JPEG/JPG/PNG`格式<br>2. 大图高度不能超过256px，宽度自适应<br>3. 缩略图尺寸120 × 120px，若图片长或宽超过120px，TPNS 会居中截取方形<li>音视频文件格式要求：<br>1. 音频文件大小不超过5M |
 | APNs     | 缩略图+音视频     | <li>URL 仅支持 HTTPS <li>图片格式要求：<br>1. `JPEG/PNG/GIF`格式<br>2. 小于10MB<li>音视频文件格式要求：<br>1. `MPEG/MPEG2video/MPEG4/AVI`格式<br>2. 小于5MB <li>说明：图片不能与通知音视频同时开启，只能开启其中一个 |
 
 ## 操作步骤
@@ -45,22 +45,21 @@
 > - 大小不超过10M
 > - 格式为`PNG/JPG/JPEG/GIF`
 > - URL 格式必须为 HTTPS
-
+>
  ![](https://main.qcloudimg.com/raw/ea40f906c6fc5d322f92510b30883c49.png)
-
  - **当您开启【通知音频】或【通知音视频】时**：
     Android 端：
 > ?填写音频 URL 后，TPNS 通道下发的通知可携带音频。
 > - 音频文件大小不超过5M
 > - URL 格式必须为 HTTPS
-
+>
  ![](https://main.qcloudimg.com/raw/8433c6eae3503c9c58878f05089c5ea5.png)
   iOS 端：
 > ?填写音视频 URL 后，通知可携带音频或视频，并通过 Apple 原生组件播放。
 > - 音视频文件大小不超过5M
 > - 格式为`MPEG/MPEG2video/MPEG4/AVI`
 > - URL 格式必须为 HTTPS
-
+>
   ![](https://main.qcloudimg.com/raw/81bcf3c89c21ba42c279e060af081c07.png)
 
 

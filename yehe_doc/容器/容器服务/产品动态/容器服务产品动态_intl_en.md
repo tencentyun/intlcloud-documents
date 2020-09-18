@@ -1,21 +1,46 @@
+## August 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>The monitoring capability of the cloud native monitoring service was optimized.</td><td><ul class="params"><li>The cluster monitoring collection items were preset, and diverse Grafana dashboards are available.</li><li>The Targets list page was added to allow users to view the real-time status of monitoring tasks.</li></ul></td><td>2020-08-31</td><td>-</td>
+</tr>
+<tr>
+    <td>The alarm module of the cloud native monitoring service was upgraded.</td><td><ul class="params"><li>It can be associated with a local Alertmanager component.</li><li>It supports CRD management of Prometheus rules.</li></ul></td><td>2020-08-31</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE released the NodeProblemDetectorPlus add-on.</td><td>It supports node configuration of self-recovery policies on the basis of existing detection feature.</td><td>2020-08-25</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE launched in-place major-version upgrade capabilities.</td><td>The in-place major-version upgrade feature supports major-version upgrade without the need for node reinstallation.</td><td>2020-08-25</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE add-ons were fully launched.</td><td>The add-on feature enables users to install or uninstall multiple advanced add-ons for clusters.</td><td>2020-08-25</td><td>-</td>
+</tr>
+<tr>
+    <td>TKE Kubernetes 1.18 version was fully launched.</td><td>It allows users to create clusters of the Kubernetes 1.18 version and upgrade clusters to the 1.18 version.</td><td>2020-08-24</td><td>-</td>
+</tr>
+</table>
+
+
 ## July 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The capabilities of storage plug-ins are optimized.</td><td><ul class="params"><li>The TKE Console supports PV creation without the need to specify StorageClass.</li><li>Users can set and mount COS subdirectories.</li></ul></td><td>2020-07-28</td><td><ul class="params"><li><a href="https://intl.cloud.tencent.com/document/product/457/37770">PV and PVC binding rules</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/36160">Using COS</a></li></ul></td>
+    <td>The capabilities of storage plug-ins were optimized.</td><td><ul class="params"><li>The TKE console supports PV creation without the need to specify StorageClass.</li><li>Users can set and mount COS subdirectories.</li></ul></td><td>2020-07-28</td><td><ul class="params"><li><a href="https://intl.cloud.tencent.com/document/product/457/37770">PV and PVC binding rules</a></li><li><a href="https://intl.cloud.tencent.com/document/product/457/36160">Using COS</a></li></ul></td>
 </tr>
 <tr>
     <td>Cluster creation supports setting node configuration placement groups.</td><td>This feature enables disaster recovery and high availability for nodes when they are launched.</td><td>2020-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating a Cluster</a></td>
 </tr>
 <tr>
-    <td>Cloud native monitoring is launched for beta testing.</td><td>It supports one-click deployment of the high-availability monitoring architecture and quick association with TKE clusters and EKS clusters.</td><td>2020-07-15</td><td>-</td>
+    <td>Cloud native monitoring was launched for beta testing.</td><td>It supports one-click deployment of the high-availability monitoring architecture and quick association with TKE clusters and EKS clusters.</td><td>2020-07-15</td><td>-</td>
 </tr>
 <tr>
-    <td>The collection configuration and alarm configuration for cloud native monitoring are implemented through products.</td><td><ul class="params"><li>Three configuration modes are supported: service monitor, pod monitor, and raw job.</li><li>Alarm history rewinding is supported.</li></ul></td><td>2020-07-15</td><td>-</td>
+    <td>The collection configuration and alarm configuration of cloud native monitoring are now implemented through products.</td><td><ul class="params"><li>Three configuration modes are supported: service monitor, pod monitor, and raw job.</li><li>Alarm history rewinding is supported.</li></ul></td><td>2020-07-15</td><td>-</td>
 </tr>
 <tr>
-    <td>RBAC-based permission control with finer granularity is launched for beta testing.</td><td><ul class="params"><li>It allows cluster admins to configure management permissions to allow different roles to manage different resources in the cluster.</li><li>It supports certificate revocation.</li><li>It is suitable for enterprise compliance permission management scenarios.</li></ul></td><td>2020-07-10</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37366">TKE Kubernetes Object-level Permission Control</a></td>
+    <td>RBAC-based permission control with finer granularity was launched for beta testing.</td><td><ul class="params"><li>It allows cluster admins to configure management permissions for different roles regarding different resources in the cluster.</li><li>It supports certificate revocation.</li><li>It is suitable for enterprises’ compliance permission management scenarios.</li></ul></td><td>2020-07-10</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37366">TKE Kubernetes Object-level Permission Control</a></td>
 </tr>
 </table>
 
@@ -28,13 +53,13 @@
     <td>The IPVS-bpf mode is launched for beta testing.</td><td>TKE uses eBPF to bypass conntrack and optimize the Kubernetes Service, improving the non-persistent connection performance by over 40% and reducing the p99 latency by over 31%.</td><td>2020-06-19</td><td>-</td>
 </tr>
 <tr>
-    <td>TKE supports the creation of services in direct-connection pod mode.</td><td>This can improve the forwarding performance of pods with LoadBalancer directly connected to ENI by over 10%.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36837">Using services with LoadBalancer directly connected to pods</a></td>
+    <td>TKE supports the creation of services in direct-connection pod mode.</td><td>The forwarding performance of pods with LoadBalancer directly connected to ENI can be improved by over 10%.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36837">Using services with LoadBalancer directly connected to pods</a></td>
 </tr>
 <tr>
     <td>TKE supports balanced forwarding and local binding.</td><td>TKE has strengthened the Loadbalancer Service and the LoadBalancer Ingress backend binding with the RS feature. TKE supports balanced forwarding and local binding.</td><td>2020-06-18</td><td><a href="https://intl.cloud.tencent.com/document/product/457/36836">Service backend selection</a></td>
 </tr>
 <tr>
-    <td>The TKE app market is comprehensively upgraded.</td><td>The app market provides an output window for Tencent Cloud’s practical cloud-native technologies and also provides a variety of great community apps that users can easily and quickly use.</td> <td>2020-06-10</td><td>-</td>
+    <td>The TKE app market was comprehensively upgraded.</td><td>The app market provides an output window for Tencent Cloud’s practical cloud-native technologies and also provides a variety of great community apps that users can easily and quickly use.</td> <td>2020-06-10</td><td>-</td>
 </tr>
 </table>
 
@@ -142,7 +167,7 @@
 <tr>
 	<td>TKE supports purchasing multiple data disks during node initialization as well as custom formatting.</td>
     <td>TKE allows users to purchase multiple data disks during node initialization and supports custom data disk formatting, allowing users to <b>isolate data</b> and <b>format settings flexibly based on their actual needs</b>.</td> <td>2019-12-12</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding Nodes</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding a Node</a></td>
 </tr>
 <tr>
 	<td>TKE nodes support the in-place rolling updates of minor Kubernetes versions.</td>
@@ -160,7 +185,7 @@
 	<td>The beta custom Hostname supported by TKE is launched.</td>
     <td>The TKE custom Hostname feature provides the following advantages: <li><b>Helps clusters interwork with enterprises’ internal domain name service systems.</b></li><li><b>Makes it easier for users to quickly create nodes with a specified Hostname in batches</b>.</li></td>
     <td>2019-11-15</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding Nodes</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding a Node</a></td>
 </tr>
 <tr>
 	<td>TKE Ingress performance optimization is released.</td>
@@ -183,7 +208,7 @@
 <td>Node labels can be added in batches during creation of clusters/nodes.</td>
     <td>When a cluster is created or new nodes are added to an existing cluster, TKE allows users to <b>add labels for nodes that run the same business or have the same configurations</b>. The labels help users divide resources, label resource attributes, and filter and batch process massive resource volumes.</td>
 <td>2019-10-21</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">Cluster Management</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/32185">Managing Clusters</a></td>
 </tr>
 <tr>
 <td>Runtime component Containerd supports the GPU model.</td>
@@ -212,7 +237,7 @@
 <td>Related APIs of the TKE cluster scaling group have been updated to API 3.0.</td>
     <td>TKE APIs have been updated to 3.0 and support all-region access. <b>The new API documentation is more standardized and comprehensive, with unified parameter styles and common error codes. The SDK/CLI version is consistent with the API documentation</b>, providing a simple and convenient user experience.</td>
 <td>2019-09-12</td>
-<td>Related APIs of the Scaling Group</td>
+<td><a href="https://cloud.tencent.com/document/api/457/37977">Cluster scaling group APIs</a></td>
 <tr>
 <td>TKE Kubernetes 1.14 is fully launched and has passed conformance verification.</td>
     <td>TKE <b>Kubernetes 1.14 is fully launched</b> and has passed conformance verification to ensure that the latest Kubernetes version is available.</td>
@@ -235,7 +260,7 @@
 <td>TKE self-deployed clusters support the separate viewing of Master and Etcd nodes.</td>
     <td>This feature allows users to <b>intuitively view the list of all Master and Etcd nodes of a self-deployed cluster and the details of such nodes</b>. Users no longer have trouble distinguishing Master and Etcd nodes in self-deployed clusters.</td>
 <td>2019-09-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/30649">Node Management</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/32186">Managing Nodes</a></td>
 </tr>
 </table>
 
@@ -279,7 +304,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 </td>
 <td>TKE APIs have been updated to 3.0 and support all-region access. The new API documentation is more standardized and comprehensive, with unified parameter styles and common error codes. The SDK/CLI version is consistent with the API documentation, providing a simple and convenient user experience.</td>
 <td>2019-08-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
+<td><a href="https://cloud.tencent.com/document/product/457/6787">API 3.0</a></td>
 </tr>
 <tr>
 <td>TKE now supports application-level log collection.</td>
@@ -471,10 +496,10 @@ When a “self-deployed cluster” is created, a security group is automatically
 <td>-</td>
 </tr>
 <tr>
-<td>Fixes the runC vulnerability CVE-2019-5736.</td>
+<td>Fixes the runc vulnerability CVE-2019-5736.</td>
 <td>The lightweight container runtime environment runc was found to have a container escape vulnerability, which allowed attackers to overwrite the host runc file (and consequently obtain host root access). This vulnerability has been fixed.</td>
 <td>2019-02-13</td>
-    <td>[WARNING] runC Container Escape Vulnerability</td>
+    <td><a href="https://cloud.tencent.com/announce/detail/457">**Security Vulnerability** Notification on runc container escape vulnerability</a></td>
 </tr>
 </table>
 
@@ -492,7 +517,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 <td>Custom images can be used to create clusters.</td>
 <td>TKE allows users to create custom images based on the basic image provided by TKE and use these custom images to create clusters. To enable this feature, submit a <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">ticket</a> to apply.</td>
 <td>2019-01-24</td>
-    <td>Custom Images</td>
+    <td><a href="https://cloud.tencent.com/document/product/457/39563">Custom Images</a></td>
 </tr>
 <tr>
 <td>Affinity scheduling can be set during workload creation.</td>
@@ -516,7 +541,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 	<td>TencentHub supports Helm Chart management.</td>
 	<td>Helm is a package management tool of Kubernetes. Chart is a collection of files describing Kubernetes resources. Tencent Hub provides an address for users to store Helm Charts.</td>
 	<td>2018-12-26</td>
-	<td>Overview of Helm Charts</td>
+	<td><a href="https://cloud.tencent.com/document/product/857/31682">Helm Chart Introduction</a></td>
 	</tr>
 	<tr>
 	<td>TKE supports Helm application installation.</td>
@@ -528,7 +553,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 	<td>The privilege escalation vulnerability in Kubernetes is fixed.</td>
 	<td>Tencent Cloud Security Center detected that a severe privilege escalation vulnerability existed in Kubernetes (vulnerability ID: CVE-2018-1002105). This vulnerability has been fixed. Now, TKE can effectively prevent attackers from using the vulnerability to illegally access Kubernetes cluster resources, inducing privilege escalation and initiating malicious requests that ultimately jeopardize the security of the business system.</td>
 	<td>2018-12-04</td>
-        <td>[WARNING] Privilege Escalation Vulnerability in Kubernetes</td>
+        <td><a href="https://cloud.tencent.com/announce/detail/362">**Security Alert** Notification on Kubernetes permission vulnerability</a></td>
 	</tr>
 	<tr>
 	<td>Removes Kubernetes 1.7.8 as an option for creating clusters.</td>
@@ -666,7 +691,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>Node initialization supports the import of scripts.</td>
         <td><b>This feature allows users to configure a node using custom data</b>. As long as the script can be re-inputted and has a clear retry pattern, it will be used to configure the node after startup.</td>
 		<td>2018-06-22</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding Nodes</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding a Node</a></td>
 	</tr>
 </table>
 
@@ -848,7 +873,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>Configuration items can be imported to environment variables.</td>
 		<td>When deploying a container in a pod, users can import the configuration items ConfigMap and Secret to environment variables.</td>
 		<td>2017-09-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30674">ConfigMap Management</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/31716">Configuration Items</a></td>
 	</tr>
 	<tr>
 		<td>Clusters support the Project attribute.</td>
@@ -884,7 +909,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>Continuous integration and deployment based on TencentHub.</td>
 		<td>TencentHub is a management platform created by Tencent Cloud for storing R&D process files and creating DevOps workflows. TencentHub allows users to quickly and conveniently perform operations such as storage, query, and calls for files generated during the full project cycle.</td>
 		<td>2017-08-23</td>
-        <td>TencentHub Product Overview</td>
+        <td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub Product Overview</a></td>
 	</tr>
 	<tr>
 		<td>Image Registry adds the trigger feature.</td>
@@ -927,13 +952,13 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE supports CI source code building.</td>
         <td>Continuous container integration <b>enables the automatic and manual building of container images on the Tencent TKE Platform.</b></td>
 		<td>2017-07-18</td>
-		<td>Image Building Overview</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/10151">Image Building Overview</a></td>
 	</tr>
 	<tr>
 		<td>Image Registry adds TencentHub images.</td>
 		<td>Image Registry allows users to view and use TencentHub images.</td>
 		<td>2017-07-18</td>
-		<td>TencentHub Product Overview</td>
+		<td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub Product Overview</a></td>
 	</tr>
 	<tr>
 		<td>Image Registry adds "My Favorites".</td>
@@ -1011,17 +1036,17 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>The TKE remote terminal allows you to upload and download files remotely.</td>
 		<td><ul class="params"><li>When uploading files, you need to specify the file directory.</li><li>When downloading files, you need to specify the file path.</li></ul></td>
         <td>2017-04-19</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">Basic Remote Terminal Operations</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">Remote Terminal Basic Operations</a></td>
 	</tr>
 	<tr>
 		<td>TKE supports the creation of monthly subscription CVMs to clusters.</td>
         <td><b>Monthly subscription is a prepaid mode that requires customers to pay for CVMs for a period of one or multiple months/years in advance. </b>It is cheaper than the pay-as-you-go mode and is suitable for scenarios where device demands can be predicted in advance.</td>
         <td>2017-04-19</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding Nodes</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding a Node</a></td>
 	</tr>
 	<tr>
-		<td>TKE supports custom security groups when creating a cluster.</td>
-        <td>If the current default security group cannot meet your business needs, you can refer to <a href="https://intl.cloud.tencent.com/document/product/213/34826">Managing Security Group Rules</a> to customize your cluster security groups.</td>
+		<td>CCS now supports custom security groups when creating clusters.</td>
+        <td>If the default security group does not meet your needs, refer to <a href="https://cloud.tencent.com/document/product/213/39739">Managing Security Groups</a> for details on how to use a custom security group.</td>
         <td>2017-04-19</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating Clusters</a></td>
 	</tr>
@@ -1035,7 +1060,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE allows remote web terminals to log in to containers.</td>
         <td>Remote terminals help you debug containers quickly and connect to the containers for troubleshooting. <b>It supports file copy, paste, upload, and download operations, and helps solve the problems of long container login paths and difficult debugging</b>.</td>
         <td>2017-03-15</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">Basic Remote Terminal Operations</a></td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/9120">Remote Terminal Basic Operations</a></td>
 	</tr>
 	<tr>
 		<td>TKE supports third-party image creation services.</td>
@@ -1071,19 +1096,19 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>Cluster management.</td>
 		<td>Cluster management supports cluster addition, deletion, modification, and query, VPC-based container clusters, cross-AZ clusters, and open-source native Kubernetes APIs.</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30634">Cluster Management</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/32185">Managing Clusters</a></td>
 	</tr>
 	<tr>
 		<td>Service management.</td>
 		<td>Service management supports service addition, deletion, modification, and query, the creation of services via private images and official Docker images, and cross-AZ scheduling of services.</td>
         <td>2016-12-26</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/30634">Service Management</a></td>
+		<td><a href="https://cloud.tencent.com/document/product/457/32185">Service Management</a></td>
 	</tr>
 	<tr>
 		<td>Image management.</td>
 		<td>Image management supports official Docker images, My Images, uploading and downloading private images, and official Docker image acceleration.</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9103">Image Registry Overview</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/457/9103">Image Repository</a></td>
 	</tr>
 	<tr>
 		<td>Cluster monitoring and container monitoring.</td>

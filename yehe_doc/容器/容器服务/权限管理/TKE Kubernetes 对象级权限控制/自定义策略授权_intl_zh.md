@@ -59,15 +59,15 @@ rules:
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
 2. 在“集群管理”页面中，选择需升级的集群 ID。
 3. 在集群详情页面中，选择左侧【授权管理】>【ClusterRole】。如下图所示：
-![](https://main.qcloudimg.com/raw/58d3cc109319cfa3c4470058e850e5f7.png)
+![](https://main.qcloudimg.com/raw/329224cd171080c92a4c392ec1323052.png)
 4. 在 “ClusterRole” 管理页面中，选择右上角的【YAML创建资源】。
 5. 在编辑界面输入自定义策略的 YAML 内容，单击【完成】即可创建 ClusterRole。
 该步骤以 [ClusterRole：集群维度](#ClusterRole) YAML 为例，创建完成后，可在 “ClusterRole” 管理页面中查看自定义权限 “testClusterRole”。
 6. 在 “ClusterRoleBinding” 管理页面中，单击【RBAC策略生成器】。
 7. 在“管理权限”页面的“选择子账号”步骤中，勾选需授权的子账号并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/f3be80766b098bac5ae9303f220baf12.png)
+![](https://main.qcloudimg.com/raw/e1fb5dfada1acd7ab9f3d15e46c56673.png)
 8. 进入“集群RBAC设置”界面，按照以下指引进项权限设置。如下图所示：
-![](https://main.qcloudimg.com/raw/ed6bb6b21c9a749402bde061b1b9e1b2.png)
+![](https://main.qcloudimg.com/raw/f820d1fc43a0ebbb67e44e586aba947e.png)
  - **Namespace列表**：按需指定权限生效的 Namespace 范围。
  - **权限**：选择“自定义”，并单击【选择自定义权限】。按需在自定义权限列表中进行权限选择，本文以选择已创建的自定义权限 “testClusterRole” 为例。
 >?您还可以单击【添加权限】，继续进行权限自定义设置。

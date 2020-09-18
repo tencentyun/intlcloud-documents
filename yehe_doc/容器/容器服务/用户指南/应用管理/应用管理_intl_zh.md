@@ -13,7 +13,7 @@
 1. 登录容器服务控制台，选择左侧导航栏中的【[应用](https://console.cloud.tencent.com/tke2/helm)】。
 2. 在“应用”列表页面上方，选择需创建应用的集群及地域，并单击【新建】。
 3. 在“新建应用”页面中，参考以下信息设置应用的基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/7b49f75ebd24ddbbb07e6eb38f0a44c0.png)
+![](https://main.qcloudimg.com/raw/f636846a914a1ec71c4f6c1870cfa831.png)
 主要参数信息如下：
  - **应用名**：自定义应用名称。
  - **来源**：可选择【应用市场】、【TCR私有仓库】及【第三方来源】。详细配置见下表：
@@ -58,9 +58,9 @@
 1. 前往 [应用控制台](https://console.cloud.tencent.com/tke2/helm)，选择左侧导航栏中的【应用】，进入应用列表页面。
 2. 在“应用”列表中，选择需要更新的应用名，进入该应用详情页面。
 3. 在应用详情页中，选择【版本历史】页签，单击需回滚版本所在行右侧的【回滚】。如下图所示：
-   ![](https://main.qcloudimg.com/raw/d496e5f02c3c3ac984d8f12f5fb85544.png)
+   ![](https://main.qcloudimg.com/raw/47fc42e6601945f665fa270c31c8b085.png)
 4. 在弹出的“回滚应用”窗口中，单击【确认】即可。如下图所示：
-   ![](https://main.qcloudimg.com/raw/38105d165e7c0b9167172ea459760a47.png)
+   ![](https://main.qcloudimg.com/raw/c0b642ce3f89898c1c59c85911c484d6.png)
 
 ### 删除应用
 

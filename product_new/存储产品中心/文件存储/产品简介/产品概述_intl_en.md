@@ -5,7 +5,7 @@ CFS is easy to integrate, eliminating your need to adjust your business structur
 
 ## Features
 #### Integrated management
-CFS supports NFS v3.0/v4.0 and CIFS/SMB2.0/SMB3.0 protocols as well as POSIX access syntax (such as strong data consistency and file locking). You can mount a file system by running the standard mount command on the corresponding operating system.
+CFS supports NFS v3.0/v4.0 and CIFS/SMB2.0/SMB2.5/SMB3.0 protocols as well as POSIX access syntax (such as strong data consistency and file locking). You can mount a file system by running the standard mount command on the corresponding operating system.
 
 #### Automatic expansion
 CFS can automatically expand the storage capacity of a file system based on file size without interrupting requests and applications during the process, thereby ensuring exclusive use of storage resources while reducing management workload.
