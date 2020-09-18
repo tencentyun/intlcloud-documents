@@ -111,8 +111,8 @@ If you want to perform scaling based on CVM metrics, you can create an alarm pol
 > 
 1. On the **Scaling Groups** page, select a scaling group ID to go to the details page of that scaling group.
 2. Select the **Alarm-triggered Policy** tab and click **Create**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
+![](https://main.qcloudimg.com/raw/fb81fc1a502b12f736d6f71b2cdae467.png)
 3. In the **Create Alarm Policy** window that pops up, configure the Cloud Monitor metrics (such as CPU utilization, memory usage, and bandwidth), which will be used as the basis of adding or removing CVM instances by a specified number or percentage.
 You can also choose **Use Existing Policy (Optional)** to copy an existing policy from an existing scaling group to the current scaling group, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![](https://main.qcloudimg.com/raw/6cd93ad87076ffbc43d7f2af2477ab01.png)
 4. After completing the configuration, click **OK** to view the alarm policy.

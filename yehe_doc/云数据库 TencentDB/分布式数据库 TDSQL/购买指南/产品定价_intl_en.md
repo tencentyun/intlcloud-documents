@@ -48,7 +48,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Beijing, Shanghai, Guangzhou, Tianjin, Nanjing, Shenzhen, Qingyuan</td>
+<td>Guangzhou, Beijing, Shanghai </td>
 <td>0.06</td>
 <td>9.43</td>
 </tr>
@@ -63,36 +63,16 @@
 <td>12.3913</td>
 </tr>
 <tr>
-<td>Virginia</td>
+<td>Virginia, Frankfurt </td>
 <td>0.07</td>
 <td>8</td>
-</tr>
-<tr>
-<td>Silicon Valley</td>
-<td>0.068</td>
-<td>9.9</td>
 </tr>
 <tr>
 <td>Toronto</td>
 <td>0.1</td>
 <td>13.2609</td>
 </tr>
-<tr>
-<td>Frankfurt</td>
-<td>0.1</td>
-<td>9.9</td>
-</tr>
-<tr>
-<td>Singapore</td>
-<td>0.085</td>
-<td>12.6812</td>
-</tr>
-    <tr>
-  <td>Japan</td>
-<td>0.11</td>
-<td>10</td>
-</tr>  
-    </tbody></table>
+
 
 
 
@@ -113,7 +93,7 @@
     </tr>
 </thead>
     <tr>
-        <td>Beijing, Shanghai, Guangzhou, Tianjin, Nanjing, Shenzhen, Qingyuan</td>
+        <td>Guangzhou, Beijing, Shanghai </td>
         <td>0.02619</td>
         <td>0.01965</td>
         <td>0.01310</td>
@@ -135,7 +115,7 @@
         <td>0.00012</td>
     </tr>
     <tr>
-        <td>Virginia</td>
+        <td>Virginia, Frankfurt </td>
         <td>0.02222</td>
         <td>0.01667</td>
         <td>0.01111</td>
@@ -148,37 +128,11 @@
         <td>0.01842</td>
         <td>0.00014</td>
     </tr>    
-<tr>
-        <td>Silicon Valley (US)</td>
-        <td>0.02750</td>
-        <td>0.02063</td>
-        <td>0.01375</td>
-        <td>0.00009</td>
-    </tr>
-    <tr>
-        <td>Singapore</td>
-        <td>0.03522</td>
-        <td>0.02642</td>
-        <td>0.01761</td>
-        <td>0.00012</td>
-    </tr>
-    <tr>
-        <td>Japan</td>
-        <td>0.02778</td>
-        <td>0.02083</td>
-        <td>0.01389</td>
-        <td>0.00015</td>
-    </tr>
-    <tr>
-        <td>Frankfurt</td>
-        <td>0.02222</td>
-        <td>0.01667</td>
-        <td>0.01111</td>
-        <td>0.00010</td>
-    </tr>
+
+
 </tbody></table>
 
-## 
+
 
 ## Billing Examples
 

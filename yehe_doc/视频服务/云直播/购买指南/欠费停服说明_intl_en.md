@@ -1,6 +1,6 @@
 ## Arrears Description
 
-- A daily consumption bill will be generated for daily billable items of LVB in the morning next day after use, while a monthly consumption bill will be generated for monthly billable items on the 1st day of the next month after use. For billing details, please see [Bill Query](https://intl.cloud.tencent.com/zh/document/product/267/36278).
+- A daily consumption bill will be generated for daily billable items of LVB in the morning next day after use, while a monthly consumption bill will be generated for monthly billable items on the 1st day of the next month after use. 
 - When your Tencent Cloud account falls into arrears due to insufficient account balance, you will receive account arrears reminders. You can top up your account within 24 hours. If your account is topped up to a positive balance within 24 hours, the LVB service will run normally; otherwise, it will be suspended.
 - After your account falls into arrears, LVB will not immediately terminate ongoing live streams and PGM outputs, which will continue to run and incur fees normally.
 
