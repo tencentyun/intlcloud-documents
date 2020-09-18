@@ -124,7 +124,6 @@ A CIFS/SMB file system can be mounted via graphical interface or command line.
 
 #### Mounting a file system via graphical interface
 
->CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
 
 1. Open "Map Network Drive"
    Log in to the Windows instance where you need to mount the file system, find "Computer" in the "Start" menu, right-click it, and then click "Map Network Drive" in the menu that appears. 
