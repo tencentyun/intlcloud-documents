@@ -9,7 +9,7 @@ By using API callbacks, your WeCom group or self-built system can directly recei
 1. Go to [Cloud Monitor Console > Alarm Policy](https://console.cloud.tencent.com/monitor/policylist/).
 2. Select an alarm policy to go to the alarm policy management page.
 3. In the API callback section, enter an alarm callback URL that is accessible over the public network.
-   ![](https://main.qcloudimg.com/raw/5aac51613a09f264adb513732dc23436.png)
+   ![](https://main.qcloudimg.com/raw/6c5dcf93ba7498f44faa33dbbcaa82ad.png)
 4. If the HTTP response returns code 200, the verification is successful. After the callback URL is successfully verified, Cloud Monitor will push alarm messages through HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Description of Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
 
 

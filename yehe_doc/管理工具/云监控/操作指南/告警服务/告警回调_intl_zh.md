@@ -9,7 +9,7 @@
 1. 进入 [云监控控制台—告警策略](https://console.cloud.tencent.com/monitor/policylist/ )。
 2. 选择对应的告警策略，进入告警策略管理页。
 3. 在接口回调模块中填写公网可访问的告警回调 URL。
-   ![](https://main.qcloudimg.com/raw/5aac51613a09f264adb513732dc23436.png)
+   ![](https://main.qcloudimg.com/raw/6c5dcf93ba7498f44faa33dbbcaa82ad.png)
 4. HTTP 返回 200为验证成功。当回调 URL 验证成功后，云监控会将告警消息通过 HTTP 的 POST 请求推送您系统的URL地址，您可以参考 [告警回调参数说明](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E)，对推送的告警信息做进一步的处理。
 
 

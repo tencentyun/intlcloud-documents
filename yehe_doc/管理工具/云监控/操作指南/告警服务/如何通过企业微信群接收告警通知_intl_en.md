@@ -17,7 +17,7 @@ For the sending of WeCom group messages, the number of messages sent by each bot
 3. In the window that appears, click **Create a Bot**.
 4. In the window that appears, enter a custom bot name and click **Add**.
 5. Copy the webhook address and configure the API callback by following [Step 2](#step2).
-![](https://main.qcloudimg.com/raw/8eb31aba4be2b7d08070e73172a364c9.png)
+![](https://main.qcloudimg.com/raw/d44f83956609d5d6700721e787770c3a.png)
 
 #### WeCom for Web
 
@@ -32,9 +32,9 @@ For the sending of WeCom group messages, the number of messages sent by each bot
 ## Step 2: Configure the Alarm API Callback
 
 Go to [Cloud Monitor Console - Create Alarm Policy](https://console.cloud.tencent.com/monitor/policylist/create), enter the webhook address, and click **Complete**. For more information on how to create alarm policies, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
-![](https://main.qcloudimg.com/raw/5aac51613a09f264adb513732dc23436.png)
+![](https://main.qcloudimg.com/raw/6c5dcf93ba7498f44faa33dbbcaa82ad.png)
 
 After the configuration is completed successfully, when an alarm policy is triggered or the alarm is resolved, you will receive alarm notifications sent by group bots through the WeCom group, as shown in the following figure:
 
-![](https://main.qcloudimg.com/raw/e50a48e4802e672f1d7c432c03c86812.png)
+![](https://main.qcloudimg.com/raw/e3cc8e94135f26dbc3bc695664fa8763.png)
 

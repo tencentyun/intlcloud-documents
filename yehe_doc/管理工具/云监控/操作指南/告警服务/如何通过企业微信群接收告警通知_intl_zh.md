@@ -17,7 +17,7 @@
 3. 在弹框中单击【新创建一个机器人】。
 4. 在弹框中自定义机器人名称，填写完后单击【添加机器人】。
 5. 复制 webhook 地址后，参考 [步骤2](#step2) 配置接口回调。
-![](https://main.qcloudimg.com/raw/8eb31aba4be2b7d08070e73172a364c9.png)
+![](https://main.qcloudimg.com/raw/d44f83956609d5d6700721e787770c3a.png)
 
 #### Web 版
 
@@ -32,9 +32,9 @@
 ## 步骤2：配置告警接口回调
 
 在 [云监控控制台—创建告警策略](https://console.cloud.tencent.com/monitor/policylist/create)，填写 webhook 地址，单击【完成】即可。告警策略创建步骤，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
-![](https://main.qcloudimg.com/raw/5aac51613a09f264adb513732dc23436.png)
+![](https://main.qcloudimg.com/raw/6c5dcf93ba7498f44faa33dbbcaa82ad.png)
 
 配置成功后，当告警策略被触发或恢复时，您可以在企业微信群接收到群机器人发送的告警通知，如下图所示：
 
-![](https://main.qcloudimg.com/raw/e50a48e4802e672f1d7c432c03c86812.png)
+![](https://main.qcloudimg.com/raw/e3cc8e94135f26dbc3bc695664fa8763.png)
 
