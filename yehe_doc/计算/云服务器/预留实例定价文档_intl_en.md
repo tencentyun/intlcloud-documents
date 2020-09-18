@@ -9,7 +9,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | ------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $83.22  | $0.114           | 29%                     | $0.16             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $496.00    | $41.25  | $0.113           | 29%                     | $0.16             |
@@ -45,7 +45,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ------ | ---- | ----- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $54.28    | $0.074 | 38%  | $0.12 |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $324.00    | $26.74    | $0.074 | 38%  | $0.12 |
@@ -99,7 +99,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $54.00    | $0.074           | 33%                     | $0.11            |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $322.00    | $25.95    | $0.072           | 35%                     | $0.11            |
@@ -165,7 +165,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $93.74    | $0.128           | 33%                     | $0.19             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $556.00    | $45.28    | $0.125           | 34%                     | $0.19             |
@@ -201,7 +201,7 @@
     </a>
 </div>
 
-| Model     | Region     | Billing Mode                   | Image  | Currency | Specification          | VCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand Hourly |
+| Model     | Region     | Billing Mode                   | Image  | Currency | Specification          | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | -------- | -------- | -------------------------- | ----- | ---- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
 | Compute C3 | Frankfurt | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $87.55    | $0.120           | 33%                     | $0.18            |
 | Compute C3 | Frankfurt | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $508.00    | $41.76    | $0.115           | 36%                     | $0.18            |
@@ -238,7 +238,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $57.69    | $0.079           | 28%                     | $0.11            |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $338.00    | $28.31   | $0.077           | 30%                     | $0.11            |
@@ -293,7 +293,7 @@
 </div>
 
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $56.09    | $0.077           | 30%                     | $0.11            |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $334.00    | $27.03    | $0.075           | 32%                     | $0.11            |
@@ -359,7 +359,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $98.22    | $0.135           | 25%                     | $0.18             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $592.00    | $48.27    | $0.134           | 26%                     | $0.18             |
@@ -396,7 +396,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $43.01   | $0.059           | 51%                     | $0.12             |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $254.00    | $21.30    | $0.058           | 52%                     | $0.12             |
@@ -450,7 +450,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $52.88    | $0.072           | 40%                     | $0.12             |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $314.00    | $26.22    | $0.072           | 40%                     | $0.12             |
@@ -516,7 +516,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification          | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification          | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $75.95    | $0.104           | 42%                     | $0.18             |
 |  Standard 1-Year Term - partial upfront  | C3.LARGE8     | 4    | 8    | $448.00    | $36.51   | $0.101          | 44%                     | $0.18             |
@@ -553,7 +553,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $46.57    | $0.064           | 29%                     | $0.09             |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $266.00    | $22.04    | $0.061          | 32%                     | $0.09             |
@@ -619,7 +619,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification          | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification          | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $76.70    | $0.105           | 38%                     | $0.17             |
 |  Standard 1-Year Term - partial upfront  | C3.LARGE8     | 4    | 8    | $460.00    | $37.67    | $0.104           | 39%                     | $0.17             |
@@ -656,7 +656,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $51.56    | $0.071          | 41%                     | $0.12             |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $300.00    | $25.10    | $0.069           | 43%                     | $0.12             |
@@ -710,7 +710,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $88.22    | $0.121          | 36%                     | $0.19             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $528.00    | $43.45    | $0.120           | 37%                     | $0.19             |
@@ -747,7 +747,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $56.29    | $0.077           | 36%                     | $0.12             |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $336.00    | $27.82    | $0.076           | 37%                     | $0.12             |
@@ -801,7 +801,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $54.59    | $0.075           | 38%                     | $0.12             |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $324.00    | $26.25    | $0.073           | 39%                     | $0.12             |
@@ -867,7 +867,7 @@
     </a>
 </div>
 
-| Model     | Region | Billing Mode                   | Image  | Currency | Specification          | VCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand Hourly |
+| Model     | Region | Billing Mode                   | Image  | Currency | Specification          | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | -------- | ---- | -------------------------- | ----- | ---- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
 | Compute C3 | Silicon Valley | Standard 1-Year Term - no upfront   | Linux | USD  | C3.LARGE8     | 4    | 8    | $0.00      | $95.33    | $0.131           | 31%                     | $0.19            |
 | Compute C3 | Silicon Valley | Standard 1-Year Term - partial upfront  | Linux | USD  | C3.LARGE8     | 4    | 8    | $556.00    | $45.22    | $0.125           | 34%                     | $0.19            |
@@ -905,7 +905,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $54.00    | $0.074           | 33%                     | $0.11            |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $322.00    | $25.95    | $0.072           | 35%                     | $0.11            |
@@ -971,7 +971,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification          | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification          | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C3.LARGE8     | 4    | 8    | $0.00      | $94.21   | $0.129           | 32%                     | $0.19             |
 |  Standard 1-Year Term - partial upfront  | C3.LARGE8     | 4    | 8    | $544.00    | $44.12    | $0.123           | 35%                     | $0.19             |
@@ -1008,7 +1008,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $59.70    | $0.082           | 37%                     | $0.13             |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $350.00    | $29.13    | $0.080           | 38%                     | $0.13             |
@@ -1062,7 +1062,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $125.72   | $0.172           | 25%                     | $0.23             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $748.00    | $60.93    | $0.169           | 27%                     | $0.23             |
@@ -1098,7 +1098,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | M2.SMALL8      | 1   | 8    | $0.00      | $32.98    | $0.045           | 44%                     | $0.08             |
 |  Standard 1-Year Term - partial upfront  | M2.SMALL8      | 1   | 8    | $198.00    | $16.14    | $0.045           | 44%                     | $0.08             |
@@ -1141,7 +1141,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S2.MEDIUM8     | 2    | 8    | $0.00      | $42.59    | $0.058           | 36%                     | $0.09             |
 |  Standard 1-Year Term - partial upfront  | S2.MEDIUM8     | 2    | 8    | $252.00    | $20.55    | $0.057           | 37%                     | $0.09             |
@@ -1195,7 +1195,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification           | vCPU | MEM | Upfront    | Monthly   | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification           | vCPU | MEM | Upfront Payment    | Monthly   | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | S3.MEDIUM8     | 2    | 8    | $0.00      | $41.32    | $0.057           | 37%                     | $0.09             |
 |  Standard 1-Year Term - partial upfront  | S3.MEDIUM8     | 2    | 8    | $242.00    | $20.18    | $0.055           | 39%                     | $0.09             |
@@ -1261,7 +1261,7 @@
     </a>
 </div>
 
-| Billing Mode                    | Specification         | vCPU | MEM | Upfront    | Monthly | Effective Hourly | Savings over  On-Demand | On-Demand  Hourly |
+| Billing Mode                    | Specification         | vCPU | MEM | Upfront Payment    | Monthly | Effective Hourly Rate | Savings over pay-as-you go instance | Pay-as-you-go Hourly Rate |
 | --------------------------- | ------------ | ---- | ---- | ---------- | ------- | ---------------- | ----------------------- | ----------------- |
 |  Standard 1-Year Term - no upfront   | C2.LARGE8    | 4    | 8    | $0.00      | $73.20  | $0.100           | 29%                     | $0.14             |
 |  Standard 1-Year Term - partial upfront  | C2.LARGE8    | 4    | 8    | $436.00    | $36.34  | $0.100           | 29%                     | $0.14             |
