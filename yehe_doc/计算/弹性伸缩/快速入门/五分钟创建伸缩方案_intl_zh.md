@@ -111,8 +111,8 @@
 > 
 1. 在“伸缩组”页面，选择伸缩组 ID 进入该伸缩组详情页。
 2. 选择【告警触发策略】页签，并单击【新建】。如下图所示：
-![](https://main.qcloudimg.com/raw/50a8f16c5826b2b1886e1e9aabba8671.png)
+![](https://main.qcloudimg.com/raw/fb81fc1a502b12f736d6f71b2cdae467.png)
 3. 在弹出的“新建告警触发策略”窗口中，设置基于云监控性能指标（例如 CPU、内存、带宽等），自动为伸缩组增加或减少指定台数或指定百分比的 CVM 实例。
 您还可通过“复制策略（选填）”，直接复制已有伸缩组的已有策略到当前伸缩组。如下图所示：
-![](https://main.qcloudimg.com/raw/196e482efed765613323dea3703532e7.png)
+![](https://main.qcloudimg.com/raw/6cd93ad87076ffbc43d7f2af2477ab01.png)
 4. 完成设置后单击【确定】，即可查看该告警触发策略。
