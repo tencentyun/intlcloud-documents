@@ -5,9 +5,9 @@ OPPO 通道是由 OPPO 官方提供的系统级推送通道。在 OPPO 手机上
 
 
 >?
-- OPPO 通道暂不支持应用内消息的发送，此类型的消息会通过 TPNS 通道进行下发。
-- OPPO 通道对应用的每日推送量有额度限制，详情请参见 [厂商通道限额说明](https://intl.cloud.tencent.com/zh/document/product/1024/35829#oppo-.E5.B9.B3.E5.8F.B0.E9.99.90.E5.88.B6)，超过限制部分将走 TPNS 通道进行补推发送。
-- OPPO 通道需要 OPPO 手机系统 ColorOS V3.1 及以上支持。
+>- OPPO 通道暂不支持应用内消息的发送，此类型的消息会通过 TPNS 通道进行下发。
+>- OPPO 通道对应用的每日推送量有额度限制，详情请参见 [厂商通道限额说明](https://intl.cloud.tencent.com/zh/document/product/1024/35829#oppo-.E5.B9.B3.E5.8F.B0.E9.99.90.E5.88.B6)，超过限制部分将走 TPNS 通道进行补推发送。
+>- OPPO 通道需要 OPPO 手机系统 ColorOS V3.1 及以上支持。
 
 
 
