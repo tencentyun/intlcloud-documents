@@ -71,7 +71,7 @@ In addition to common response headers, this API also returns the following resp
 | Content-Range                                                | Byte range of the returned content as defined in RFC 2616, which will be returned only if it is specified in the request | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
 | x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
-| x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `STANDARD_IA` and `ARCHIVE`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
+| x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `STANDARD_IA`, `ARCHIVE` and `DEEP_ARCHIVE`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
 
 **Versioning-related Headers**
 

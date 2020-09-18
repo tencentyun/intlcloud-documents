@@ -14,7 +14,7 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) ，选择左侧导航栏中的【集群】。
 2. 在“集群管理”列表页面，选择目标集群 ID，进入该集群 “Deployment” 页面。
 3. 选择左侧菜单栏中的【节点管理】>【节点池】，进入“节点池列表”页面。即可查看节点池全局配置及已创建的节点池。如下图所示：
-![](https://main.qcloudimg.com/raw/32b0002ccffc2187f406ca07f4e4936f.png)
+![](https://main.qcloudimg.com/raw/2e8aca5a76690724c78987537d09ce4c.png)
 节点池信息及配置如下：
  - **全局配置**：包含该集群下所有节点池的共同配置项。可单击该模块右上角【编辑】进行修改，详情请参见 [ 调整节点池全局配置](https://intl.cloud.tencent.com/document/product/457/35903#adjustGlobalNodePool)。
     - **自动缩容**：本例此处已关闭。正常开启时，集群中节点空闲资源较多时将触发缩容。详情请参见 [集群自动扩缩容说明](https://intl.cloud.tencent.com/document/product/457/30638)。
@@ -37,9 +37,9 @@
 ### 查看单个节点池
 
 1. 在“节点池名片页”中，单击目标节点池 ID。如下图所示：
-![](https://main.qcloudimg.com/raw/e7b6dfa83d85af90428a68b26453abee.png)
+![](https://main.qcloudimg.com/raw/7e6f25fbb6a1401c1d7e9ee63501f498.png)
 2. 进入该节点池详情页，即可查看节点池更多基本信息及节点信息。如下所示：
-![](https://main.qcloudimg.com/raw/dfcf9d7642e78268070bcbb6c7fc8d4e.png)
+![](https://main.qcloudimg.com/raw/df047f354ca9f326f87975456f6b249b.png)
 
 
 ## 相关操作

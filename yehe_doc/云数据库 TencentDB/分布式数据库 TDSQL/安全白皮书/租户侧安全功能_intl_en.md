@@ -48,7 +48,6 @@ TDSQL complies with applicable Chinese information security standards and has ea
 - SOC Audit
 - ITSS Cloud Service Advanced Certification
 - Cybersecurity Classified Protection Level 3 Filling and Evaluation for Public Cloud
-- Cybersecurity Classified Protection Level 4 Filling and Evaluation for Finance Cloud
 - Trusted Cloud Database Service Certification
 - Trusted Cloud User Data Security Protection Capability Assessment
 - Trusted Cloud Gold Class Operations Special Assessment
@@ -73,9 +72,9 @@ Security audit is one of the most important tracing methods; therefore, China's 
 >- In public cloud, all security audit features are configured by default.
 >- In private cloud, system operation logging (Chitu system) is configured by default, while database SQL audit and server operation audit features are optional.
 >
-![](https://main.qcloudimg.com/raw/4f1b334dcc1d92c902b57d72ee53bcd6.png)
 
->?In public cloud, all security audit features are configured by default. In private cloud, system operation logging (Chitu system) is configured by default, while database SQL audit and server operation audit features are optional.
+
+
 
 ## Kernel-Level Security Policies
 TDSQL provides various open-source security schemes at the database kernel level, some of which have earned the recognition of the community. The following are some kernel security measures:
@@ -103,13 +102,6 @@ Therefore, we recommend you satisfy at least the following requirements for 1-DC
 - Deploy different devices of the same module across racks.
 - Deploy a data backup module.
 
-## Suggestions on 1-Region-2-DC Deployment
-We recommend you use at least three nodes (which can be expanded to two nodes in each data center, i.e., 2+2 mode) for 1-region-2-DC deployment. The nodes are deployed in two data centers as shown below, which are interconnected through Direct Connect, with two nodes deployed in the primary center and one node in the secondary center.
-
-The load balancing network uses a soft load balancing scheme similar to Linux Virtual Server (LVS). We recommend you support network switch for data center-level failures. As SQL Engine automatically distributes requests, the business system can access a normal database no matter from which data center the access request is initiated. If a database node or data center fails, TDSQL generally can implement automatic switch in around 40 seconds and guarantee zero transaction loss, but you should make sure that your business has a reconnection mechanism.
->?Tencent Cloud Finance Cloud (finance zone in public cloud) supports the general 2-DC architecture by default.
->
-![](https://main.qcloudimg.com/raw/295f24a2e54fb3af52ed8db0b66acecb.png)
 
 
 ## Suggestions on 2-Region-3-DC Deployment
