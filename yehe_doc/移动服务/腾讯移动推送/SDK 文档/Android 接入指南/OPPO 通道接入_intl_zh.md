@@ -20,6 +20,7 @@ OPPO 通道是由 OPPO 官方提供的系统级推送通道。在 OPPO 手机上
 
 Opush 申请开通成功后，您可在【[OPPO 推送平台](https://push.oppo.com/)】>【配置管理】>【应用配置页面】，查看 AppKey、AppSecret 和 MasterSecret。
 
+
 ### 配置推送通道
 为兼容安卓8.0及以上版本的 OPPO 手机的通道配置，用户需在 OPPO 管理台上，创建一个 TPNS 推送的默认通道。详情请参见 [OPPO 官方文档](https://open.oppomobile.com/wiki/doc/#id=10198)。
 具体内容为：
@@ -42,8 +43,18 @@ implementation 'com.tencent.tpns:oppo:[VERSION]-release'//OPPO 推送 [VERSION] 
 #### Eclipes 集成方法
 获取移动推送 TPNS  OPPO 通道 SDK 包后，按照移动推送 TPNS 官网手动集成方法，在配置好移动推送 TPNS 主版本的基础下，进行以下设置。
 
-1. 导入 OPPO 推送相关 jar 包，将 oppo4tpns1.1.2.1.jar 导入项目工程中。
-2. 在`Androidmanifest.xml`文件中新增如下配置（二选一）：
+1. 打开 Other-push-jar 文件夹，将 OPPO 推送相关 jar 导入项目工程中。
+2. 在主工程添加类资源文件，代码如下：
+```java
+package com.heytap.mcssdk;
+class R {
+    public static final class string {
+        public static final int system_default_channel = 
+	com.tencent.android.tpns.demo.R.string.oppo_system_default_channel;//可更改为自定义字符串资源ID
+    }
+}
+```
+3. 在 `Androidmanifest.xml` 文件中新增如下配置（二选一）：
  - TPNS Android SDK 1.2.0.2以前的版本使用以下配置：
 ```
 <!--OPPO 推送服务必须权限-->
