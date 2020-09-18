@@ -32,7 +32,7 @@ Click **Create** and configure the following information in the pop-up window. A
   </tr>
   <tr>
     <td nowrap="nowrap">File service protocol</td>
-    <td>Select the protocol type for the file system, which can be NFS or CIFS/SMB. Among them, NFS is more suitable for Linux/Unix clients, while CIFS/SMB is more suitable for Windows clients. The beta test for CIFS/SMB file systems has ended, and the schedule for future tests will be announced later. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/582/9553">Notes on CIFS/SMB Beta Test</a>.</td>
+    <td>Select the protocol type for the file system, which can be NFS or CIFS/SMB. Among them, NFS is more suitable for Linux/Unix clients, while CIFS/SMB is more suitable for Windows clients. </td>
   </tr>
   <tr>
     <td nowrap="nowrap">Client type</td>
