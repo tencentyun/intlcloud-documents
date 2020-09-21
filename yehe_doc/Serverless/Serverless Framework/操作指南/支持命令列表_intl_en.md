@@ -10,6 +10,8 @@ Serverless Framework supports the following CLI commands:
     
     `sls init xxx --name my-app`: customizes the project directory name.
 
+	 `--debug`：lists log information during the template download process.
+
 - **`serverless deploy`**: deploys the component instance in the cloud.
 
     `--debug`: lists log information such as the deployment operations and the status output by `console.log()` during component deployment.
