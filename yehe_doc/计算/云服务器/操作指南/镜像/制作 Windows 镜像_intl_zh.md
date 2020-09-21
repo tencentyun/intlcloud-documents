@@ -7,7 +7,7 @@
 ### 准备工作
 
 制作系统盘镜像导出时，需要进行以下检查：
-> 如果您是通过数据盘镜像导出，则可以跳过此操作。
+>? 如果您是通过数据盘镜像导出，则可以跳过此操作。
 >
 #### 检查 OS 分区和启动方式
 
@@ -57,6 +57,7 @@ bootmenupolicy          Standard
 1. 打开【控制面板】>【程序和功能】，并在搜索栏中搜索 Virtio。
  - 若返回结果如下图示，则表示已安装了 Virtio 驱动。
 ![image](https://main.qcloudimg.com/raw/87808940ddd5317dd8c67a699e3dc5c0.png)
+
  - 若没有安装 Virtio 驱动，则需要手动安装。
     - Microsoft Windows Server 2008 R2（标准版、数据中心版、企业版)，Microsoft Windows Server 2012 R2（标准版），请下载：[腾讯云定制版 Virtio](http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe?_ga=1.44298212.1367540472.1504757536)。
     - 其它系统版本，请下载 [社区版本 virtio](https://www.linux-kvm.org/page/WindowsGuestDrivers/Download_Drivers)。
@@ -78,7 +79,7 @@ bootmenupolicy          Standard
 #### 使用平台工具导出镜像
 
 使用 VMWare vCenter Convert 或 Citrix XenConvert 等虚拟化平台的导出镜像工具。详情请参见各平台的导出工具文档。
-> 目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
+>? 目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
 >
 
 <span id="Usedisk2vhd"></span>
@@ -87,9 +88,9 @@ bootmenupolicy          Standard
 当您的需要导出物理机上的系统或者不想使用平台工具导出时，可以使用 disk2vhd 工具进行导出。
 1. 安装并打开 disk2vhd 工具。
 [点此下载 disk2vhd 工具 >>](https://download.sysinternals.com/files/Disk2vhd.zip)
-3. 选择需要导出的镜像存放路径，勾选需要复制的卷，单击【Create】。如下图所示：
-> 
-> - disk2vhd 需要 Windows 预装 VSS（卷影拷贝服务）功能后才能运行。
+2. 选择需要导出的镜像存放路径，勾选需要复制的卷，单击【Create】。如下图所示：
+>! 
+> - disk2vhd 需要 Windows 预装 VSS（卷影拷贝服务）功能后才能运行。关于 VSS 功能的更多信息请参见 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)。
 > - 请勿勾选 “Use Vhdx”，目前系统不支持 vhdx 格式的镜像。
 > - 建议勾选 “Use volume Shadow Copy”，使用卷影复制功能，将能更好地保证数据完整性。
 > 
@@ -97,7 +98,7 @@ bootmenupolicy          Standard
 
 ### 检查镜像
 
-> 当您未停止服务直接制作镜像或者其它原因，可能导致制作出的镜像文件系统有误，因此建议您在制作镜像后检查是否无误。
+>? 当您未停止服务直接制作镜像或者其它原因，可能导致制作出的镜像文件系统有误，因此建议您在制作镜像后检查是否无误。
 >
 当镜像格式和当前平台支持的格式一致时，您可以直接打开镜像检查文件系统。 例如，Windows 平台可以直接附加 vhd 格式镜像，Linux 平台可以使用 qemu-nbd 打开 qcow2 格式镜像，Xen 平台可以直接启用 vhd 文件。
 以 Linux 平台为例：
