@@ -12,7 +12,7 @@
 | Code | Value | Description |
 |---|---|---|
 |ERR_ROOM_ENTER_FAIL|-3301|Failed to enter the room|
-|ERR_ENTER_ROOM_PARAM_NULL|-3316|Empty room entry parameter. Please check whether valid parameters are passed in to the `enterRoom:appScene:` API when it is called|
+|ERR_ENTER_ROOM_PARAM_NULL|-3316|Empty room entry parameter. Please check whether valid parameters are passed in to the `TRTCCloud.enterRoom():` API when it is called|
 |ERR_SDK_APPID_INVALID|-3317|Incorrect room entry parameter `sdkAppId`|
 |ERR_ROOM_ID_INVALID|-3318|Incorrect room entry parameter `roomId`|
 |ERR_USER_ID_INVALID|-3319|Incorrect room entry parameter `userID`|
@@ -37,7 +37,7 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 | Code | Value | Description |
 |---|---|---|
 |ERR_CAMERA_START_FAIL|-1301|Failed to enable the camera; for example, the configuration program (driver) of the camera on Windows or macOS was exceptional. In this case, please try to disable and then enable the camera again, restart the device, or update the configuration program|
-|ERR_CAMERA_NOT_AUTHORIZED|-1314|The camera is not authorized. This error usually occurs on mobile devices and may be caused by permission denial by user|
+|ERR_CAMERA_NOT_AUTHORIZED|-1314|The camera is not authorized. This error usually occurs on mobile devices and may be caused by permission denial by user |
 |ERR_CAMERA_SET_PARAM_FAIL|-1315|Incorrect camera parameter settings (unsupported value or other causes)|
 |ERR_CAMERA_OCCUPY|-1316|The camera is being used. Please try to enable another camera|
 |ERR_MIC_START_FAIL|-1302|Failed to enable the mic; for example, the configuration program (driver) of the mic on Windows or macOS was exceptional. In this case, please try to disable and then enable the mic again, restart the device, or update the configuration program|
@@ -56,11 +56,11 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 
 | Code | Value | Description |
 |---|---|---|
-|ERR_SCREEN_CAPTURE_START_FAIL|-1308|Failed to start screencapturing. If this error occurs on a mobile device, it may be caused by permission denial by user; if on Windows or macOS, please check whether parameters of the screencapturing API meet the requirements|
-|ERR_SCREEN_CAPTURE_UNSURPORT|-1309|Screencapturing failed. Please use Android v5.0 or above if the device is on Android or use iOS v11.0 or above if the device is on iOS|
-|ERR_SERVER_CENTER_NO_PRIVILEDGE_PUSH_SUB_VIDEO|-102015|No permission to upstream secondary channel|
-|ERR_SERVER_CENTER_ANOTHER_USER_PUSH_SUB_VIDEO|-102016|Other users are upstreaming secondary channel|
-|ERR_SCREEN_CAPTURE_STOPPED|-7001|Screecapturing was stopped by the system|
+|ERR_SCREEN_CAPTURE_START_FAIL|-1308|Failed to start screen sharing. If this error occurs on a mobile device, it may be caused by permission denial by user; if on Windows or macOS, please check whether parameters of the screen sharing API meet the requirements |
+|ERR_SCREEN_CAPTURE_UNSURPORT|-1309|Screen sharing failed. Please use Android 5.0 or above if the device is on Android or use iOS 11.0 or above if the device is on iOS |
+|ERR_SERVER_CENTER_NO_PRIVILEDGE_PUSH_SUB_VIDEO|-102015|No permission to upstream substream|
+|ERR_SERVER_CENTER_ANOTHER_USER_PUSH_SUB_VIDEO|-102016|Other users are upstreaming substream |
+|ERR_SCREEN_CAPTURE_STOPPED|-7001|Screencapturing was stopped by the system|
 
 
 ### Error code for encoding and decoding
@@ -75,7 +75,7 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 |ERR_UNSUPPORTED_SAMPLERATE|-1306|Unsupported audio sample rate|
 
 
-### Error codes for custom capture
+### Error codes for custom capturing
 
 You can use the callback function `TRTCCloudDelegate.OnError()` to capture related notifications.
 
@@ -85,7 +85,7 @@ You can use the callback function `TRTCCloudDelegate.OnError()` to capture relat
 |ERR_BUFFER_TYPE_UNSUPPORTED|-1328|Unsupported buffer type|
 
 
-### Error codes for CDN binding and mixtranscoding
+### Error codes for CDN binding and stream mix
 
 You can use the callback functions `TRTCCloudDelegate.onStartPublishing()` and `TRTCCloudDelegate.onSetMixTranscodingConfig()` to capture related notifications.
 
@@ -142,9 +142,15 @@ Warning codes do not require your special attention, and you can choose whether 
 |---|---|---|
 |WARNING_HW_ENCODER_START_FAIL|1103|An error occurred while enabling the hardware encoder, and the software encoder was automatically switch to |
 |WARNING_VIDEO_ENCODER_SW_TO_HW|1107|The current CPU utilization is too high to meet software encoding needs, and the hardware encoder was automatically switch to |
-|WARNING_INSUFFICIENT_CAPTURE_FPS|1108|Insufficient frame rate for video capture through camera. This error may occur in Android mobile devices with an in-built beauty filter algorithm|
+|WARNING_INSUFFICIENT_CAPTURE_FPS|1108|Insufficient frame rate for video capturing through camera. This error may occur in Android mobile devices with an in-built beauty filter algorithm|
 |WARNING_SW_ENCODER_START_FAIL|1109|Failed to enable the software encoder|
 |WARNING_REDUCE_CAPTURE_RESOLUTION|1110|Camera resolution was lowered to meet the balance between current frame rate and performance|
+|WARNING_CAMERA_DEVICE_EMPTY|1111|No available camera device detected|
+|WARNING_MICROPHONE_DEVICE_EMPTY|1201|No available mic device detected|
+|WARNING_SPEAKER_DEVICE_EMPTY|1202|No available speaker device detected|
+|WARNING_MICROPHONE_NOT_AUTHORIZED|1203|The current application is not authorized to use the mic|
+|WARNING_MICROPHONE_DEVICE_ABNORMAL|1204|The audio capturing device is unavailable (for example, it is in use)|
+|WARNING_SPEAKER_DEVICE_ABNORMAL|1205|The audio playback device is unavailable (for example, it is in use)|
 |WARNING_VIDEO_FRAME_DECODE_FAIL|2101|Failed to decode the current video frame|
 |WARNING_AUDIO_FRAME_DECODE_FAIL|2102|Failed to decode the current audio frame|
 |WARNING_VIDEO_PLAY_LAG|2105|Video playback lagged |
@@ -152,7 +158,23 @@ Warning codes do not require your special attention, and you can choose whether 
 |WARNING_VIDEO_DECODER_HW_TO_SW|2108|The hardware decoder failed to decode the first I frame of the current stream, and the SDK automatically switched to the software decoder|
 |WARNING_SW_DECODER_START_FAIL|2109|Failed to enable the software decoder|
 |WARNING_VIDEO_RENDER_FAIL|2110|Failed to render video|
-|WARNING_START_CAPTURE_IGNORED|4000|Video capture has started|
+|WARNING_START_CAPTURE_IGNORED|4000|Capturing is already in progress. The request to enable capturing is ignored|
 |WARNING_AUDIO_RECORDING_WRITE_FAIL|7001|Failed to write the recorded audio to a file|
 |WARNING_ROOM_DISCONNECT|5101|Network connection was closed|
 |WARNING_IGNORE_UPSTREAM_FOR_AUDIENCE|6001|The current role is viewer, so upstream audio/video data is ignored|
+|WARNING_NET_BUSY|1101|Unstable network condition: the upstream bandwidth is too low, and data upload is restricted|
+|WARNING_RTMP_SERVER_RECONNECT|1102|LVB error. The network was disconnected, and automatic reconnection was performed (which will be canceled if failing for 3 times in a row)|
+|WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|LVB error. The network was disconnected, and automatic reconnection was performed (which will be canceled if failing for 3 times in a row)|
+|WARNING_RECV_DATA_LAG|2104|Unstable transmission of packets from the network. This may be caused by insufficient downstream bandwidth or uneven outbound stream from the anchor|
+|WARNING_RTMP_DNS_FAIL|3001|LVB error. DNS resolution failed|
+|WARNING_RTMP_SEVER_CONN_FAIL|3002|LVB error. Server connection failed|
+|WARNING_RTMP_SHAKE_FAIL|3003|LVB error. Handshake with the RTMP server failed|
+|WARNING_RTMP_SERVER_BREAK_CONNECT|3004|LVB error. The server actively closed the connection|
+|WARNING_RTMP_READ_WRITE_FAIL|3005|LVB error. RTMP read/write failed, and connection will be closed|
+|WARNING_RTMP_WRITE_FAIL|3006|LVB error. RTMP write failed (SDK internal error code, which will not be thrown out)|
+|WARNING_RTMP_READ_FAIL|3007|LVB error. RTMP read failed (SDK internal error code, which will not be thrown out)|
+|WARNING_RTMP_NO_DATA|3008|LVB error. If no data is sent in 30s, the server will actively close the connection|
+|WARNING_PLAY_LIVE_STREAM_INFO_CONNECT_FAIL|3009|LVB error. Failed to call "connect" to connect to the server (SDK internal error code, which will not be thrown out)|
+|WARNING_NO_STEAM_SOURCE_FAIL|3010|LVB error. Connection failed since there was no video in the stream address (SDK internal error code, which will not be thrown out)|
+|WARNING_ROOM_RECONNECT|5102|Network disconnected. Automatic reconnection has been enabled|
+|WARNING_ROOM_NET_BUSY|5103|Unstable network condition: the upstream bandwidth is too low, and data upload is restricted|

@@ -8,7 +8,7 @@ Once your domain name is connected to LVB, the system will automatically assign 
 - If the CNAME configuration fails to take effect after a prolonged time, please see [CNAME Configuration Troubleshooting](https://intl.cloud.tencent.com/document/product/267/32478).
 
 ## Prerequisites
-- You have applied for a domain name through [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns) and obtained ICP filing for its service in Mainland China.
+- You have owned a domain name.
 - You have successfully [added a domain name](https://intl.cloud.tencent.com/document/product/267/35970) in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the LVB Console, and the CNAME address status of the domain name is ![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png) (CNAME not configured).
 
 
@@ -16,59 +16,12 @@ Once your domain name is connected to LVB, the system will automatically assign 
 ## Configuration Steps
 This document describes how to configure a CNAME record at Tencent Cloud, Alibaba Cloud, Baidu Cloud, DNSPod, Wanwang, and Xinnet, respectively. The directions below are for your reference only, and the actual directions shall apply. After configuring the domain name CNAME, you can verify whether the CNAME configuration has taken effect as instructed in [Verifying the Effect of CNAME Record](#check).
 
-<span id="tencent"></span>
 
-### Settings for Tencent Cloud
-If your DNS service provider is Tencent Cloud, you can add a CNAME record in the following steps:
-
-1. Log in to the [Tencent Cloud Domain Service Console](https://console.cloud.tencent.com/domain).
-2. Select the domain name for which you want to add a CNAME record and click **Resolve**.
-3. Go to the DNS page of the specified domain name and click **Add Record**.
-4. Enter the domain name CNAME record in the new line as follows:
-<table>
-    <tr><th width="12%" >Parameter Name</th><th width="38%">Parameter Description</th><th width="50%">How to Configure</th></tr>
-    <tr>
-        <td>Host Record	</td>
-        <td>Enter the prefix of the subdomain name	</td>
-        <td>
-            <ul style="margin-bottom:0;">
-                <li>If the domain name is <code>play.myqcloud.com</code>, please select: <code>play</code></li>
-                <li>To resolve the primary domain name <code>myqloud.com</code>, please select: <code>@</code></li>
-                <li>To resolve a wildcard domain name, please select: <code>\*</code></li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>Record Type</td>
-        <td>Set the record type to CNAME</td>
-        <td>To point a domain name to another one, please select: <b>CNAME</b></td>
-    </tr>
-    <tr>
-        <td>Line Type</td>
-        <td>This is used to return the corresponding server IP address according to the source of the visitor when the DNS server resolves the domain name</td>
-        <td>Please select: <b>Default</b></td>
-    </tr>
-    <tr>
-        <td>Record Value</td>
-        <td>Domain name to point to. Enter the corresponding CNAME value of the domain name obtained on the **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>** page in the Tencent Cloud Console.</td>
-        <td>Format: <code><b style="color:red;">xxxx</b>.livecdn.liveplay.myqcloud.com</code></td>
-    </tr>
-    <tr>
-        <td>TTL (s)</td>
-        <td>Time to live of the cache, which is <b>600s</b> by default</td>
-        <td>You are recommended to enter <b>600s</b></td>
-    </tr>
-</table>
-5. Click **Save** to complete the CNAME configuration.
-
-
-> 
->There are differences in priority between various record types during domain name resolution. If the host records are identical, different types of records cannot coexist on the same line; otherwise, a conflict will occur. A CNAME record conflicts with records of any other types; therefore, you need to delete other records first before configuring CNAME.
 <span id="ali"></span>
 ### Settings for Alibaba Cloud
 If your DNS service provider is Alibaba Cloud and you have obtained an ICP filing for your domain name, you can set up a CNAME record in the following steps:
 
-1. Log in to the Alibaba Cloud Console and go to **Alibaba Cloud DNS** > **[DNS](https://dns.console.aliyun.com/#/dns/domainList)**.
+1. Log in to the Alibaba Cloud Console and go to **Alibaba Cloud DNS** > **DNS**.
 2. Select the domain name for which you want to add a CNAME record and click **Resolution Settings**.
 3. Select **Add Record** and set as follows:
 	- Record Type: select `CNAME`.
@@ -82,7 +35,7 @@ If your DNS service provider is Alibaba Cloud and you have obtained an ICP filin
 
 ### Settings for Baidu Cloud
 If your domain name service provider is Baidu Cloud, you can add a CNAME record in the following steps:
-1. Log in to the Baidu Cloud Console and select **[Domain Management](https://console.bce.baidu.com/bcd/?_=1550137564099#/bcd/manage/list)** to enter the domain management list page.
+1. Log in to the Baidu Cloud Console and select **Domain Management** to enter the domain management list page.
 2. Select the domain name added to LVB and click **Resolve** in the "Operation" column to enter the DNS resolution page:
 3. Add a resolution record and configure as follows:
  - Host Record: enter the prefix of the second-level domain names; for example, if the playback domain name is `play.myqcloud.com`, enter `play`; if you want to directly resolve the primary domain name `myqloud.com`, enter `@`; and if you want to resolve a wildcard domain name, enter `\*`.
