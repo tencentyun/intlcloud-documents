@@ -1,12 +1,12 @@
 ## Tencentcloud-Serverless-Nodejs SDK Overview
 
-Tencentcloud-Serverless-Nodejs is a Tencent Cloud SCF SDK that integrates SCF business flow APIs to simplify the function invocation method. It can be used to invoke a function quickly from a local system, CVM instance, container, or function, eliminating your need to encapsulate public TencentCloud APIs.
+Tencentcloud-Serverless-Nodejs is a Tencent Cloud SCF SDK that integrates SCF business flow APIs to simplify the function invocation method. It can be used to invoke a function quickly from a local system, CVM instance, container, or function, eliminating the need for you to encapsulate public TencentCloud APIs.
 
 ## Features
 Tencentcloud-Serverless-Nodejs SDK has the following features:
 
 * It can invoke functions in a high-performance, low-latency manner.
-* It enables quick invocation across functions after the required parameters are entered (it will obtain parameters in environment variables by default, such as region and `secretId`).
+* It enables quick invocation across functions after the required parameters are entered (by default, it will obtain parameters in environment variables such as `region` and `secretId`).
 * It supports access with private network domain names.
 * It supports session keep-alive.
 * It supports cross-region function invocation.
@@ -18,20 +18,20 @@ Tencentcloud-Serverless-Nodejs SDK has the following features:
 Node.js 8.9 and higher.
 - Operating environment
 Windows, Linux, or macOS with Tencentcloud-Serverless-Nodejs SDK installed.
-- We recommend you use [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/32743) to quickly deploy local functions.
+- We recommend you use the [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/32743) to quickly deploy local functions.
 
 ### Tencentcloud-Serverless-Nodejs SDK installation
-#### Installation through npm (recommended)
-1. Select the directory path as needed and create a directory under it.
+#### Installing via npm (recommended)
+1. Select the directory path according to your actual needs and create a directory under it.
 For example, you can create a project directory named `testNodejsSDK` in the `/Users/xxx/Desktop/testNodejsSDK` path.
 2. Enter the `testNodejsSDK` directory and run the following commands in sequence to install the Tencentcloud-Serverless-Nodejs SDK.
 ```shell
 npm init -y
 npm install tencentcloud-serverless-nodejs
 ```
-After installation, you can see `node_modules`, `package.json`, and `package-lock.json` in the `testNodejsSDK` directory.
+After installation, you will be able to see `node_modules`, `package.json`, and `package-lock.json` in the `testNodejsSDK` directory.
 
-#### Installation through source package
+#### Installing via the source package
 Go to the [GitHub code hosting page](https://github.com/TencentCloud/tencentcloud-serverless-nodejs) to download the latest source package and install it after decompression.
 
 #### Using SCF to install dependencies online
@@ -46,13 +46,13 @@ To [install dependencies online with SCF](https://intl.cloud.tencent.com/documen
 
 
 ### Mutual function invocation
-#### Samples
+#### Sample
 >!
-> - To make functions in different regions invoke each other, regions must be specified. For the naming convention, please see [Region List](https://intl.cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
+> - To make functions in different regions invoke each other, the regions must be specified. For naming conventions, please see the **Region List** in [Common Parameters](https://intl.cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8).
 >- If no region is specified, intra-region mutual function invocation will be used by default.
 >- If no namespace is specified, `default` will be used by default.
 >- The invoker function should have the public network access enabled.
->- If parameters such as `secretId` and `secretKey` are not manually passed in, the function needs to be bound to a role with `SCF Invoke` permission (or containing `SCF Invoke`, such as `SCF FullAccess`). For more information, please see [Creating Function Execution Role](https://intl.cloud.tencent.com/document/product/583/38176).
+>- If parameters such as `secretId` and `secretKey` are not manually passed in, the function needs to be bound to a role with `SCF Invoke` permissions (or containing `SCF Invoke`, such as `SCF FullAccess`). For more information, please see [Roles and Policies](https://intl.cloud.tencent.com/document/product/583/38176).
 
 
 1. <span id="Step1"></span>Create a **to-be-invoked** Node.js function named "FuncInvoked" in the region of **Beijing**. The content of the function is as follows:
@@ -72,7 +72,7 @@ exports.main_handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
   const sdk = new SDK({
     region:'ap-beijing'
-  }) // If you bind and run in SCF an execution role with SCF invocation permission, the authentication information in the environment variable will be used by default
+  }) // If you bind and run in SCF an execution role with SCF invocation permissions, the authentication information in the environment variable will be used by default
   const res = await sdk.invoke({
     functionName: 'FuncInvoked',
     logType: LogType.Tail,
@@ -85,18 +85,18 @@ exports.main_handler = async (event, context) => {
   // return res
 }
 ```
-The main parameters can be obtained as follows:
-	- **region**: region of the **invoked** function. The Beijing region selected in [step 1](#Step1) is used as an example in this document.
-	- **functionName**: name of the **invoked** function. The `FuncInvoked` function created in [step 1](#Step1) is used as an example in this document.
-	- **qualifier**: version of the **invoked** function. If no version is specified, `$LATEST` will be used by default. For more information, please see [Viewing Version](https://intl.cloud.tencent.com/document/product/583/31455).
-	- **namespace**: namespace of the **invoked** function. If no namespace is specified, `default` will be used by default.
-	- **data**: data passed to the **invoked** function, which can be read from the `event` input parameter.
-3. Create an **invoking** Node.js function named "NodejsInvokeTest" in the region of **Chengdu**. The main settings of the function are as follows:
+The main parameters can be obtained as described below:
+	- **region**: the region of the **invoked** function. The Beijing region selected in [step 1](#Step1) is used as an example in this document.
+	- **functionName**: the name of the **invoked** function. The `FuncInvoked` function created in [step 1](#Step1) is used as an example in this document.
+	- **qualifier**: the version of the **invoked** function. If no version is specified, `$LATEST` will be used by default. For more information, please see [Viewing a Version](https://intl.cloud.tencent.com/document/product/583/31455).
+	- **namespace**: the namespace of the **invoked** function. If no namespace is specified, `default` will be used by default.
+	- **data**: the data passed to the **invoked** function, which can be read from the `event` input parameter.
+3. Create an **invoking** Node.js function named "NodejsInvokeTest" in the **Chengdu** region. The main settings of the function are as follows:
  - Execution method: select **index.main_handler**.
  - Code submission method: select **Local ZIP file**.
     Compress all files in the `testNodejsSDK` directory in ZIP format and upload it to the cloud.
 4. 
-On the function details page in the [SCF Console](https://console.cloud.tencent.com/scf/list), you can test run a function by going to the function code tab and clicking **Execute**. Below is the output result:
+On the function details page in the [SCF console](https://console.cloud.tencent.com/scf/list), you can test run a function by going to the function code tab and clicking **Execute**. Below is the output result:
 ```shell
 "Already invoked a function!"
 ```
@@ -104,9 +104,9 @@ On the function details page in the [SCF Console](https://console.cloud.tencent.
 
 
 
-### Local function invocation
+### Invoking a function locally
 
-#### Samples
+#### Sample
 
 1. Create a **to-be-invoked** Node.js function named `FuncInvoked` in the **Beijing** region. The content of the function is as follows:
 ```js
@@ -128,7 +128,7 @@ exports.main_handler = async (event, context) => {
     region:'ap-beijing',
     secretId: 'AKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj',
     secretKey: 'WtxxxxxxxxxxxxxxxxxxxxxxxxxxxxqL'
-  }) // If you bind and run in SCF an execution role with SCF invocation permission, the authentication information in the environment variable will be used by default
+  }) // If you bind and run in SCF an execution role with SCF invocation permissions, the authentication information in the environment variable will be used by default
   const res = await sdk.invoke({
     functionName: 'FuncInvoked',
     logType: LogType.Tail,
@@ -141,7 +141,7 @@ exports.main_handler = async (event, context) => {
   // return res
 }
 ```
->!`secretId` and `secretKey`: secret ID and secret key of TencentCloud API. You can go to the [CAM Console](https://console.cloud.tencent.com/cam/overview) and select **Access Key** > **API Key Management** to get them or create new ones.
+>!`secretId` and `secretKey`: the secret ID and secret key of the TencentCloud API. You can go to the [CAM console](https://console.cloud.tencent.com/cam/overview) and select **Access Key** > **API Keys** to get them or create new ones.
 
 3. Go to the directory where the `index.js` file is located and run the following command to view the result.
  - On Linux or macOS, run the following command:
@@ -168,10 +168,10 @@ Already invoked a function!
 
 <span id="Init"></span>
 #### Init
-You are recommended to run the `npm init` command to initialize the SDK before using it.
+We recommend you run the `npm init` command to initialize the SDK before using it.
 >?
 >- The `region`, `secretId`, and `secretKey` parameters can be passed in by using the initialization command.
->- After initialization is completed, the initialization configuration can be reused for future API calls.
+>- After the initialization is completed, the initialization configuration can be reused for future API calls.
 
 
 **Parameter information:**
