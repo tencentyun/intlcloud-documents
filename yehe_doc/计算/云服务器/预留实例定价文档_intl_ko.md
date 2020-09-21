@@ -1,6 +1,13 @@
 ## 방콕
 ### 컴퓨팅형 C2
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월) | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | ------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C2.LARGE8    | 4    | 8    | $0.00      | $83.22  | $0.114           | 29%                     | $0.16             |
@@ -26,6 +33,13 @@
 
 ## 프랑크푸르트
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월) | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
@@ -67,6 +81,13 @@
 | 표준 1년 기한-전체 선결제 | S2.14XLARGE224 | 56   | 224  | $17,808.00 | $0.00     | $2.033 | 41%  | $3.42 |
 
 ### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -118,6 +139,13 @@
 
 ### 컴퓨팅형 C2
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C2.LARGE8    | 4    | 8    | $0.00      | $93.74    | $0.128           | 33%                     | $0.19             |
@@ -142,6 +170,13 @@
 | 표준 1년 기한-전체 선결제 | C2.8XLARGE96 | 32   | 96   | $10,720.00 | $0.00     | $1.224           | 36%                     | $1.92             |
 
 ### 컴퓨팅형 C3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양          | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | -------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
@@ -172,6 +207,13 @@
 
 ## 중국홍콩
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -210,7 +252,15 @@
 | 표준 1년 기한-선결제 없음   | S2.14XLARGE224 | 56   | 224  | $0.00      | $1,615.28 | $2.213           | 28%                     | $3.08             |
 | 표준 1년 기한-부분 선결제 | S2.14XLARGE224 | 56   | 224  | $9,464.00  | $792.55   | $2.166           | 30%                     | $3.08             |
 | 표준 1년 기한-전체 선결제 | S2.14XLARGE224 | 56   | 224  | $18,480.00 | $0.00     | $2.110           | 31%                     | $3.08             |
-  ### 표준형 S3
+
+### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -259,7 +309,15 @@
 | 표준 1년 기한-선결제 없음   | S3.20XLARGE320 | 80   | 320  | $0.00      | $2,243.45 | $3.073           | 31%                     | $4.46             |
 | 표준 1년 기한-부분 선결제 | S3.20XLARGE320 | 80   | 320  | $13,360.00 | $1,081.27 | $3.006           | 33%                     | $4.46             |
 | 표준 1년 기한-전체 선결제 | S3.20XLARGE320 | 80   | 320  | $25,840.00 | $0.00     | $2.950           | 34%                     | $4.46             |
-  ### 컴퓨팅형 C2
+
+### 컴퓨팅형 C2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -285,7 +343,15 @@
 | 표준 1년 기한-전체 선결제 | C2.8XLARGE96 | 32   | 96   | $11,648.00 | $0.00     | $1.330           | 24%                     | $1.76             |
 
 ## 모스크바
+
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -326,6 +392,13 @@
 | 표준 1년 기한-전체 선결제 | S2.14XLARGE224 | 56   | 224  | $14,112.00 | $0.00     | $1.611           | 50%                     | $3.22             |
 
 ### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -377,6 +450,13 @@
 
 ### 컴퓨팅형 C3
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양          | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C3.LARGE8     | 4    | 8    | $0.00      | $75.95    | $0.104           | 42%                     | $0.18             |
@@ -402,6 +482,13 @@
 
 ## 뭄바이
 ###  표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -450,7 +537,15 @@
 | 표준 1년 기한-선결제 없음   | S3.20XLARGE320 | 80   | 320  | $0.00      | $1,862.61 | $2.552           | 31%                     | $3.70             |
 | 표준 1년 기한-부분 선결제 | S3.20XLARGE320 | 80   | 320  | $10,640.00 | $881.65   | $2.422           | 35%                     | $3.70             |
 | 표준 1년 기한-전체 선결제 | S3.20XLARGE320 | 80   | 320  | $20,640.00 | $0.00     | $2.356           | 36%                     | $3.70             |
-  ### 컴퓨팅형 C3
+
+### 컴퓨팅형 C3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양          | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -477,6 +572,13 @@
 
 ## 서울
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -518,6 +620,13 @@
 
 ### 컴퓨팅형 C2
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C2.LARGE8    | 4    | 8    | $0.00      | $88.22    | $0.121           | 36%                     | $0.19             |
@@ -543,6 +652,13 @@
 
 ## 실리콘밸리
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -583,6 +699,13 @@
 | 표준 1년 기한-전체 선결제 | S2.14XLARGE224 | 56   | 224  | $18,536.00 | $0.00     | $2.116           | 37%                     | $3.36             |
 
 ### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -634,6 +757,13 @@
 
 ### 컴퓨팅형 C3
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양          | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | -------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ---------------- |
 | 표준 1년 기한-선결제 없음    | C3.LARGE8     | 4    | 8    | $0.00      | $95.33    | $0.131           | 31%                     | $0.19            |
@@ -663,6 +793,13 @@
 
 ## 싱가포르
 ### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -714,6 +851,13 @@
 
 ### 컴퓨팅형 C3
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양          | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C3.LARGE8     | 4    | 8    | $0.00      | $94.21    | $0.129           | 32%                     | $0.19             |
@@ -739,6 +883,13 @@
 
 ## 도쿄
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -780,6 +931,13 @@
 
 ### 컴퓨팅형 C2
 
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
+
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
 | 표준 1년 기한-선결제 없음   | C2.LARGE8    | 4    | 8    | $0.00      | $125.72   | $0.172           | 25%                     | $0.23             |
@@ -804,6 +962,13 @@
 | 표준 1년 기한-전체 선결제 | C2.8XLARGE96 | 32   | 96   | $14,528.00 | $0.00     | $1.658           | 28%                     | $2.30             |
 
 ### 메모리형 M2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -835,6 +1000,13 @@
 
 ## 버지니아주
 ### 표준형 S2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -875,6 +1047,13 @@
 | 표준 1년 기한-전체 선결제 | S2.14XLARGE224 | 56   | 224  | $13,496.00 | $0.00     | $1.541           | 41%                     | $2.63             |
 
 ### 표준형 S3
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양           | VCPU | 메모리 | 선결제    | 잔여비용(매월)   | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | -------------- | ---- | ---- | ---------- | --------- | ---------------- | ----------------------- | ----------------- |
@@ -925,6 +1104,13 @@
 | 표준 1년 기한-전체 선결제 | S3.20XLARGE320 | 80   | 320  | $18,800.00 | $0.00     | $2.146           | 38%                     | $3.46             |
 
 ### 컴퓨팅형 C2
+
+<div class="doc-content-operate" style="text-align: right;">
+    <a class="doc-content-operate-btn J-export-table-data-btn" href="javascript:;">
+        <i class="icon-download"></i>
+        <span>다운로드</span>
+    </a>
+</div>
 
 | 결제 방식                    | 사양         | VCPU | 메모리 | 선결제    | 잔여비용(매월) | 시간당 비용 | 종량제 대비 비용 절감 |종량제 비용(시간당) |
 | --------------------------- | ------------ | ---- | ---- | ---------- | ------- | ---------------- | ----------------------- | ----------------- |

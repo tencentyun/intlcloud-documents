@@ -49,7 +49,7 @@ In addition to common request headers, this API also supports the following requ
 | x-cos-copy-source-If-Unmodified-Since | The PUT Object - Copy operation is performed if the object is not modified after the specified time. Otherwise, HTTP status code 412 (Precondition Failed) is returned. | String | No |
 | x-cos-copy-source-If-Match | The PUT Object - Copy operation is performed if the object ETag matches the specified value. Otherwise, HTTP status code 412 (Precondition Failed) is returned.  | String | No |
 | x-cos-copy-source-If-None-Match | The PUT Object - Copy operation is performed if the object ETag does not match the specified value. Otherwise, HTTP status code 412 (Precondition Failed) is returned.  | String | No |
-| x-cos-storage-class | Storage class of the destination object, such as `STANDARD_IA` and `ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-storage-class | Storage class of the destination object, such as `STANDARD_IA` , `ARCHIVE`and `DEEP_ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
 
 **Headers related to destination object metadata**
 

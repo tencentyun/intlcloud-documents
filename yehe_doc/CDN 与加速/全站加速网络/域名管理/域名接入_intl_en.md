@@ -1,4 +1,5 @@
 ## Process Overview
+![](https://main.qcloudimg.com/raw/9e2319ef334f7596c050816bff61c6a1.png)
 
 The main steps in connecting an acceleration domain name to ECDN include:  
 
@@ -48,7 +49,7 @@ To ensure continuity of access to your business, you are recommended to set the 
 
 ### 2. Resolve the CNAME domain name to get the ECDN cache node IP
 Run `nslookup` on the local command line to resolve the ECDN CNAME domain name so as to get the IP address of the cache node.
-
+![](https://main.qcloudimg.com/raw/17ccbf7e5d46f1417807410dcb3e4f07.png)
 
 ### 3. Set `hosts`
 You can configure the local `hosts` file to forcibly redirect access requests to the local server to the ECDN platform, so that you can verify the platform compatibility without affecting formal access to your business.  
