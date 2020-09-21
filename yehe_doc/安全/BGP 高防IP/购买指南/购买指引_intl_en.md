@@ -8,6 +8,7 @@ Before purchasing an Anti-DDoS Advanced instance, you need to [sign up for a Ten
 2. Set the parameters based on your actual needs.
  - Specification Description:
     - Connection Mode: proxy mode
+    - Bandwidth type: multi-line BGP
     - Resource Overview: 1 dedicated Anycast IP
     - Protection Capability: base protection + elastic protection
   - Line: you can select BGP line or non-BGP (China Telecom, China Unicom, and China Mobile) line as the Anti-DDoS protective line based on your actual needs.
