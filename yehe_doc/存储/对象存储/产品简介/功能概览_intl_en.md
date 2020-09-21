@@ -118,14 +118,6 @@ COS offers the following features:
       <td>COS has integrated Cloud Infinite (CI), an all-in-one professional media solution, to provide image processing, content moderation, detection, and many more. You can use the COS upload and process APIs to process your media data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35280">Image Processing Overview</a></td>
    </tr>
    <tr>
-      <td>Document Preview</td>
-      <td>A COS feature provided based on Tencent Cloud CI. Once enabled, you can preview any written documents in your bucket online without downloading them</td>
-   </tr>
-   <tr>
-      <td>Content Moderation</td>
-      <td>This COS feature is provided based on Tencent Cloud CI. Once enabled, newly uploaded images will be automatically detected for content violations, with any non-compliant content blocked automatically (allowing no public read access).</td>
-   </tr>
-   <tr>
       <td>File Decompression</td>
       <td>The file decompression feature is a data processing solution provided through SCF. Once enabled, when a compressed file is uploaded to COS, SCF will be triggered automatically to decompress the file into the specified directory and bucket. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35663"> File Decompression.</a></td>
    </tr>
