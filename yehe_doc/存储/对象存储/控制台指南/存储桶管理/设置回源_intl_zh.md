@@ -21,6 +21,7 @@
     - 选择强制 HTTPS/HTTP，则 COS 会以 HTTPS/HTTP 协议访问您的源站。
     - 选择跟随请求协议，COS 会以您请求 COS 所使用的协议访问您的源站。
  - **回源地址**：只需填入域名或 IP 地址，支持域名或 IP 地址后面添加端口号。无需加上前缀`http://`或`https://`。
+ 
    正确示例地址如下：
 ```shell
 abc.example.com
@@ -30,9 +31,10 @@ abc.example.com:8080
 ```
 
 回源地址支持具体的地址设置，您可以配置为如下配置项。
-    - **固定文件**：触发回源规则时，默认全部跳转至固定的文件。
-    - **指定前缀**：触发回源规则时，跳转至指定前缀的文件。例如指定前缀为`test`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` 时触发回源规则，则会跳转至 `<回源地址>/test/prefix123.jpg`；
-    - **指定后缀**：触发回源规则时，跳转至指定后缀的文件。例如指定后缀为`.jpg`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123` 时触发回源规则，则会跳转至 `<回源地址>/prefix123.jpg`；
+   - **固定文件**：触发回源规则时，默认全部跳转至固定的文件。
+   - **指定前缀**：触发回源规则时，跳转至指定前缀的文件。例如指定前缀为`test`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` 时触发回源规则，则会跳转至 `<回源地址>/test/prefix123.jpg`；
+   - **指定后缀**：触发回源规则时，跳转至指定后缀的文件。例如指定后缀为`.jpg`，访问 `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123` 时触发回源规则，则会跳转至 `<回源地址>/prefix123.jpg`；
+   
       >!
       >- 选择固定文件时，其他两种类型默认不可选。
       >- 指定前缀和指定后缀的配置可以同时生效。
