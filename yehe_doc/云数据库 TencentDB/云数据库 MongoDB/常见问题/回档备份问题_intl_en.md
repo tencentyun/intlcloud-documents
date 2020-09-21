@@ -6,19 +6,12 @@ An instance can be automatically backed up once a day. You can view details in *
 - **Manual backup**
 In **Backup and Rollback** on the instance details page, click **Manual Backup** in the top-right corner, enter remarks in the pop-up box, and click "Submit" to complete manual backup.
 
-### Can I perform rollback again if the instance is replaced after rollback?
-No. The original backup file is no longer applicable to the new instance, so you cannot perform rollback again. You should perform the replacement operation with caution.
 
 ### What determines the rollback time of a TencentDB for MongoDB instance?
 Rollback is based on the latest full backup image and oplog. The rollback time is subject to the amount of replayed oplogs.
 If the rollback is performed a long time after the full backup is completed, it will take more time to replay oplogs.
 
-### After rollback of a TencentDB for MongoDB instance, what is the difference between a promotion operation and a replacement operation?
-Promotion is to promote the rolled-back temp instance to a formal instance, which has no mapping relationship with the original instance. By default, the temp instance has a validity period of 2 days.
-Replacement is to overwrite the current instance data with the temp instance data. After replacement, the backup file of the instance will be deleted, and the instance cannot be rolled back again. Please proceed with caution.
 
-### Will the backup file be deleted if the TencentDB for MongoDB instance is replaced after rollback?
-As the original backup file is no longer applicable to the new instance, the backup file will be deleted during rollback.
  
 ### How do I back up and roll back a replica set instance in TencentDB for MongoDB?
 Replica set instances currently support instance-level and database/table-level backup and rollback.
