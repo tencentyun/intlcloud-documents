@@ -21,9 +21,6 @@ SPF, DKIM, and DMARC verification methods are mainly used to guarantee the email
 -   DMARC verification
 	Domain-based Message Authentication, Reporting, and Conformance (DMARC) is an email authentication protocol that uses SPF and DKIM to detect email spoofing. To meet the DMARC standards, emails must be authenticated through SPF and/or DKIM.
 
--   CNAME verification
-    A canonical name (CNAME) record allows you to map multiple names to another domain name in order to collect the tracking data of email opens and clicks.
-	
 -   MX verification  
     A mail exchanger (MX) record points to an email server and is used by the email system to locate the email server based on the recipient address suffix during emailing.
 
