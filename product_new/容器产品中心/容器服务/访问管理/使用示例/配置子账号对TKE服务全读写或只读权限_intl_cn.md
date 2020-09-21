@@ -9,7 +9,7 @@
 1. 登录 [CAM 控制台](https://console.cloud.tencent.com/cam/overview)。
 2. 在左侧导航栏中，单击 [策略](https://console.cloud.tencent.com/cam/policy)，进入策略管理页面。
 3. 在策略管理页面中，单击 **QcloudTKEFullAccess** 策略行的【关联用户/组】。如下图所示：
-![](https://main.qcloudimg.com/raw/4292db018e8c1270ae53cd1c5556479e.png)
+![](http://file.tapd.oa.com//tfl/captures/2020-08/tapd_20397132_base64_1597199301_50.png)
 4. 在弹出的 “关联用户/用户组” 窗口中，勾选需对 TKE 服务拥有全读写权限的账号，单击【确定】，即可完成子账号对 TKE 服务全读写权限的配置。
 5. 在策略管理页面中，单击 **QcloudTKEFullAccess** 策略行的【关联用户/组】。
 6. 在弹出的 “关联用户/用户组” 窗口中，勾选需对镜像仓库拥有全读写权限的账号，单击【确定】，即可完成子账号对镜像仓库全读写权限的配置。
