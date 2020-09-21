@@ -13,11 +13,10 @@ A bucket has been created. For details, please see [Creating Buckets](https://in
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. In the left sidebar, click **Bucket List** and then click the bucket (source bucket) for which you want to enable inventory.
-![](https://main.qcloudimg.com/raw/9531d534a55a9f9665c52bdc384c7ba1.png)
+
 3. Click the **Advanced Configuration** tab, find the **Inventory Settings** item, and click **Add an Inventory**.
 ![](https://main.qcloudimg.com/raw/f38999a30e04fb3da8c765517fd42668.png)
 4. On the **Add an Inventory** page, you can configure the following items:
-![](https://main.qcloudimg.com/raw/6669721856e7a2d7ae6e0477b5c739c9.png)
  - **Inventory Name**: Name the output inventory report.
  - **Destination Prefix (Optional)**: Enter the prefix selected for the destination bucket, which can group the inventory files in a public location. The default value is used initially.
  - **Destination Bucket**: This is the bucket where the inventory is stored. The default value is the source bucket. The destination bucket must be in the same region as the source bucket.
@@ -32,5 +31,7 @@ A bucket has been created. For details, please see [Creating Buckets](https://in
     - No encryption: The inventory is not encrypted. This is the default value.
     - SSE-COS: Encrypt the report using server-side encryption with COS-managed key. For more information, see [SSE-COS Encryption](https://intl.cloud.tencent.com/document/product/436/18145) in the COS Developer Guide.
  - **Inventory Information**: Select the object information to be included in the inventory report. Options include object size, storage class, ETag, cross-region replication status, multipart upload status, and last modified date. If you do not make a selection, all items are selected by default.
+ ![](https://main.qcloudimg.com/raw/6669721856e7a2d7ae6e0477b5c739c9.png)
+ 
 > An entity tag (ETag) is a hash of the object. It only reflects changes to the object's content but not the object's metadata. It may or may not be an MD5 digest of the object data. This depends on how the object was created and encrypted.
 5. After confirming that the configuration information is correct, click **Save**.
