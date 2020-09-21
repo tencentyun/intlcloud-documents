@@ -16,7 +16,7 @@ Tencent Cloud의 네트워크는 기본 네트워크와 사설 네트워크(VPC)
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
 2. '인스턴스 리스트' 페이지에서 변경 대기 중인 네트워크의 객체 인스턴스를 조회합니다.
 아래 이미지와 같이 '인스턴스 설정'에서 네트워크가 '기본 네트워크'로 표시된다면 해당 인스턴스의 네트워크가 기본 네트워크임을 의미합니다.
-![](https://main.qcloudimg.com/raw/a01d0c8f2716b7581c50d4d49d989bf4.png)
+![](https://main.qcloudimg.com/raw/bb54a50bd8a42e5aeac6ce02bc3c6a4d.png)
 >!
 >- 기본 네트워크를 사설 네트워크로 변경한 후에는 다시 되돌릴 수 없으며, CVM을 사설 네트워크로 변경한 후에는 다른 기본 네트워크의 클라우드 서비스와 통신할 수 없습니다.
 >- 인스턴스의 네트워크 속성을 확인한 후, 필요에 따라 [VPC 변경](#changeVPC) 순서를 참조하여 작업하시길 바랍니다.
@@ -28,20 +28,20 @@ Tencent Cloud의 네트워크는 기본 네트워크와 사설 네트워크(VPC)
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
 2. ''인스턴스 리스트' 페이지에서 객체 인스턴스의 VPC를 변경합니다.
 	- **방법1**: 변경 대기 중인 네트워크의 객체 인스턴스를 선택하고, 오른쪽 작업란에서 [더 보기]>[리소스 조절]>[VPC 변경]을 선택합니다.
-	![](https://main.qcloudimg.com/raw/f32bde4ddbe58e36c3b57512e1e7b0cf.png)
+	![](https://main.qcloudimg.com/raw/e688912e2ad9ea46ce7027f17e1a8045.png)
 	- **방법2**: 여러 객체 인스턴스를 VPC로 일괄 변경하려면, 변경 대기 중인 네트워크의 인스턴스를 선택하고 인스턴스 리스트 상단에서 [더 보기]>[리소스 조절]>[VPC 변경]을 선택합니다.
 	>!CVM 네트워크 유형 일괄 변경 시에는 선택한 CVM 모두 반드시 동일한 가용존에 있어야 합니다.
 	>
-	![](https://main.qcloudimg.com/raw/b9dc54b2d04a8b7712452f179e9fe70f.png)
+	![](https://main.qcloudimg.com/raw/b15f3e4e6c212ff496d38c3753c9a4da.png)
 3. 팝업된 'VPC 변경' 창에서 주의사항을 확인하고 [다음]을 클릭합니다.
 4. VPC 및 상응하는 서브넷을 선택한 뒤 [다음]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/ce6d3715be0c37e829b6b37c99de1e1a.png)
+![](https://main.qcloudimg.com/raw/acaca8c4343d8e5357bd33b75f1f5f68.png)
 5. 실제 수요에 따라, 선택한 서브넷의 IP 주소를 사전 할당 및 HostName 옵션을 설정하고 [다음]을 클릭합니다.
 >? 
 > - 'IP 주소 사전 할당'에 입력하지 않았다면 시스템에서 자동으로 할당합니다.
 > - HostName 옵션을 설정할 때 VPC 변경을 선택하는 동시에 인스턴스의 HostName을 초기화하거나 기존 인스턴스 HostName을 유지하도록 선택할 수 있습니다.
 > 
-![](https://main.qcloudimg.com/raw/b3b42fcffceb3d7205db984cfa1b0c6d.png)
+![](https://main.qcloudimg.com/raw/c3908fef18c46a5f88aebfca2204f5c0.png)
 6. 아래 이미지와 같이 셧다운 알림에 따라 작업을 진행하고 [마이그레이션 시작]을 클릭하면, 콘솔 페이지에서 인스턴스 상태가 '인스턴스 VPC 구성 변경'으로 변경됩니다.
 >!
 >- 마이그레이션 과정 중 호스트 인스턴스를 재시작해야 하므로 다른 작업은 진행하지 마시길 바랍니다.

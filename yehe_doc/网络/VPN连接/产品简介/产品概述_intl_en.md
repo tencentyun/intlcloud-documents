@@ -5,6 +5,6 @@ A VPN connection is used to connect the customer IDC with a Virtual Private Clou
 - Customer gateway: a logical object that records the fixed public IP address of the IPsec VPN gateway on the IDC side.
 - VPN tunnel: an encrypted IPsec VPN tunnel.
 
-![](https://main.qcloudimg.com/raw/21e570e5c1a774f1f4b518a84167d1d1.png)
+![](https://main.qcloudimg.com/raw/b408d142266092bc5f75a8bbd659c20a.png)
 
 

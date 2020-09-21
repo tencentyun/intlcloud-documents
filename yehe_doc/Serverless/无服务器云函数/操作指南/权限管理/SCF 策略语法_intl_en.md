@@ -1,14 +1,15 @@
 
 ## Policy Syntax
-For more information on how to create custom policies, please see [Creating Custom Policy](https://intl.cloud.tencent.com/document/product/598/35596). SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource description method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format, and all resources can be described in the six-segment style as shown in the sample below:
+For more information on how to create custom policies, please see [Creating Custom Policies](https://intl.cloud.tencent.com/document/product/598/35596). SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource description method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format, and all resources can be described in the six-segment style, as shown in the sample below:
 
 ```
 qcs: :scf:region:uin/uin—id:function/function-name
 ```
 
->! When configuring the policy syntax, you also need to use the monitor APIs to get the monitoring information under the account. For the usage, please see the [sample policy](#policygen).
+>! When configuring the policy syntax, you also need to use the monitor APIs to get the monitoring information under the account. For more information about using the monitor APIs, please see the [sample policy](#policygen).
 
-## Sample Policy<span id="policygen"></span>
+<span id="policygen"></span>
+## Sample Policy
 ```
 {	 
         "version":"2.0", 
@@ -47,11 +48,11 @@ qcs: :scf:region:uin/uin—id:function/function-name
       ] 
 } 
 ```
-- If the `action` is an operation that needs to be associated with a resource, the resource can be defined as `*`, indicating that all resources are associated.
+- If the `action` is an operation that needs to be associated with a resource, the resource can be defined as `*`, indicating that all resources are to be associated.
 - If the `action` is an operation that does not need to be associated with a resource, the resource needs to be defined as `*`.
 - This sample allows the sub-account to have the operation permissions of certain functions under the root account. The resource in `resource` is described as a function under the root account.
 
-## Specifying Condition
+## Specifying Conditions
 The access policy language allows you to specify conditions when granting permissions, such as limiting the user access source or authorization time. The list below contains supported condition operators as well as general condition keys and examples.
 
 <table>
@@ -65,49 +66,49 @@ The access policy language allows you to specify conditions when granting permis
 </thead>
 <tbody><tr>
 <td>ip_equal</td>
-<td>IP is equal to</td>
+<td>The IP is equal to</td>
 <td>qcs:ip</td>
 <td><code>{"ip_equal":{"qcs:ip ":"10.121.2.0/24"}}</code></td>
 </tr>
 <tr>
 <td>ip_not_equal</td>
-<td>IP is not equal to</td>
+<td>The IP is not equal to</td>
 <td>qcs:ip</td>
 <td><code>{"ip_not_equal":{"qcs:ip ":["10.121.1.0/24", "10.121.2.0/24"]}}</code></td>
 </tr>
 <tr>
 <td>date_not_equal</td>
-<td>Date is not equal to</td>
+<td>The date is not equal to</td>
 <td>qcs:current_time</td>
 <td><code>{"date_not_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}}</code></td>
 </tr>
 <tr>
 <td>date_greater_than</td>
-<td>Date is later than</td>
+<td>The date is later than</td>
 <td>qcs:current_time</td>
 <td><code>{"date_greater_than":{"qcs:current_time":"2016-06-01T00:01:00Z"}}</code></td>
 </tr>
 <tr>
 <td>date_greater_than_equal</td>
-<td>Date is later than or equal to</td>
+<td>The date is later than or equal to</td>
 <td>qcs:current_time</td>
 <td><code>{"date_greater_than_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}}</code></td>
 </tr>
 <tr>
 <td>date_less_than</td>
-<td>Date is earlier than</td>
+<td>The date is earlier than</td>
 <td>qcs:current_time</td>
 <td><code>{"date_less_than":{"qcs:current_time":"2016-06-01T 00:01:00Z"}}</code></td>
 </tr>
 <tr>
 <td>date_less_than_equal</td>
-<td>Date is earlier than or equal to</td>
+<td>The date is earlier than or equal to</td>
 <td>qcs:current_time</td>
 <td><code>{"date_less_than":{"qcs:current_time":"2016-06-01T 00:01:00Z"}}</code></td>
 </tr>
 <tr>
 <td>date_less_than_equal</td>
-<td>Date is earlier than or equal to</td>
+<td>The date is earlier than or equal to</td>
 <td>qcs:current_time</td>
 <td><code>{"date_less_than_equal":{"qcs:current_time":"2016-06-01T00:01:00Z"}}</code></td>
 </tr>
@@ -127,8 +128,8 @@ The access policy language allows you to specify conditions when granting permis
 }
 ```
 
-## User Policy Update Description<spoan id="Strategy"></span>
-SCF improved the preset permission policies in April 2020. The preset policies `QcloudSCFFullAccess` and `QcloudSCFReadOnlyAccess` were modified, and the `QcloudAccessForScfRole` policy was added for the configuration role `SCF_QcsRole` as shown below:
+## User Policy Update<spoan id="Strategy"></span>
+SCF improved the preset permission policies in April 2020. The preset policies `QcloudSCFFullAccess` and `QcloudSCFReadOnlyAccess` were modified, and the `QcloudAccessForScfRole` policy was added for the configuration role `SCF_QcsRole`, as shown below:
 - Currently, the preset policy `QcloudSCFFullAccess` has the following permissions:
 
 ``` json

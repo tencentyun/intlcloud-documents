@@ -5,6 +5,6 @@ VPN 连接是通过公网加密通道，将对端 IDC 与私有网络（Virtual 
 - 对端网关：记录 IDC 端 IPsec VPN 网关公网 IP 地址的逻辑对象（IDC 端必须有固定公网 IP）。
 - VPN 通道：加密的 IPsec VPN 通道。
 
-![](https://main.qcloudimg.com/raw/21e570e5c1a774f1f4b518a84167d1d1.png)
+![](https://main.qcloudimg.com/raw/b408d142266092bc5f75a8bbd659c20a.png)
 
 

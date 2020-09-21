@@ -2,7 +2,10 @@
 
 #### 接口说明
 
-通过使用在腾讯移动推送官网注册的应用信息，启动腾讯移动推送服务，SDK 1.2.7.2 版本新增，老版本请参考 XGPush.h。
+
+通过使用在腾讯移动推送官网注册的应用信息，启动腾讯移动推送服务。
+（此接口为 SDK 1.2.7.2版本新增，1.2.7.1及之前版本请参考 SDK 包内 XGPush.h 文件`startXGWithAppID` 接口）。
+
 
 ```objective-c
 /// @note TPNS SDK1.2.7.2+
@@ -96,7 +99,7 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 
 > ?
 > 1. 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
-> 2. 如果您是多账号体系，请查看XGPush.h。
+> 2. 如果您是多账号体系，请参考 SDK 包内 XGPush.h 文件中的 `bindWithIdentifiers` 接口。
 
 ```Objective-C
 - (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;
@@ -108,10 +111,10 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 - type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 
 > ?
-- 账号操作需要使用字典数组且 key 是固定要求。
-- Objective-C 的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
-- Swift 的写法：[["account":identifier, "accountType":NSNumber(0)]]。
-- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
+>- 账号操作需要使用字典数组且 key 是固定要求。
+>- Objective-C 的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
+>- Swift 的写法：[["account":identifier, "accountType":NSNumber(0)]]。
+>- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
 
 #### 示例代码
 
@@ -151,9 +154,9 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 开发者可以针对不同的用户绑定标签，然后对该标签进行推送。
 
 > ?
-- 此接口为追加方式。
-- 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用
-- 单个应用最多可以有10000个自定义tag， 每个设备 token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们，每个自定义 tag 可绑定的设备 token 数量无限制。
+>- 此接口为追加方式。
+>- 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用
+>- 单个应用最多可以有10000个自定义tag， 每个设备 token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们，每个自定义 tag 可绑定的设备 token 数量无限制。
 
 #### 操作接口 
 

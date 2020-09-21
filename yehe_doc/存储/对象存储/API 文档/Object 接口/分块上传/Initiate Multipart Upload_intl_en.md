@@ -33,7 +33,7 @@ In addition to common request headers, this API also supports the following requ
 | Content-Type                                                 | HTTP request content type (MIME) as defined in RFC 2616 of the object to upload, and stored as part of object metadata<br>Example: `text/html` or `image/jpeg` | string | Yes       |
 | Expires | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | string | No |
 | x-cos-meta-\* | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | string | No |
-| x-cos-storage-class | Object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA` and `ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
+| x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `STANDARD_IA`,`ARCHIVE`, and `DEEP_ARCHIVE`. Default value: STANDARD. For enumerated values, please see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum | No |
 
 **ACL-related headers**
 

@@ -16,7 +16,7 @@
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在“实例”列表页面，查看待切换网络的目标实例。
 若“实例配置”中显示网络为“基础网络”，则表示该实例所属网络为基础网络。如下图所示：
-![](https://main.qcloudimg.com/raw/a01d0c8f2716b7581c50d4d49d989bf4.png)
+![](https://main.qcloudimg.com/raw/bb54a50bd8a42e5aeac6ce02bc3c6a4d.png)
 >!
 >- 基础网络切换私有网络后不可逆，云服务器切换至私有网络后与其他基础网络的云服务不互通。
 >- 在了解实例的网络属性后，请按需参考 [切换私有网络](#changeVPC) 步骤进行对应操作。
@@ -28,20 +28,20 @@
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在“实例”页面，为目标实例切换私有网络。
 	- **方式1**：选择待切换网络的目标实例，在右侧操作栏，选择【更多】>【资源调整】>【切换私有网络】。
-	![](https://main.qcloudimg.com/raw/f32bde4ddbe58e36c3b57512e1e7b0cf.png)
+	![](https://main.qcloudimg.com/raw/e688912e2ad9ea46ce7027f17e1a8045.png)
 	- **方式2**： 如需将目标实例批量切换私有网络，可勾选待切换网络的实例，在实例列表上方，选择【更多操作】>【资源调整】>【切换私有网络】。
 	>!批量云服务器切换网络类型时，所选中的云服务器必须处于同一可用区。
 	>
-	![](https://main.qcloudimg.com/raw/b9dc54b2d04a8b7712452f179e9fe70f.png)
+	![](https://main.qcloudimg.com/raw/b15f3e4e6c212ff496d38c3753c9a4da.png)
 3. 在弹出的“切换私有网络”窗口中，确认注意事项，单击【下一步】。
 4. 选择私有网络以及相应子网，单击【下一步】。
-![](https://main.qcloudimg.com/raw/ce6d3715be0c37e829b6b37c99de1e1a.png)
+![](https://main.qcloudimg.com/raw/acaca8c4343d8e5357bd33b75f1f5f68.png)
 5. 根据实际需求，在所选子网下设置预分配 IP 地址，并设置 HostName 选项，单击【下一步】。
 >? 
 > - 若未填写“预分配IP地址”，系统将自动分配。
 > - 设置 HostName 选项时，您可以选择切换私有网络的同时重置实例 HostName，也可以选择保留实例原有 HostName。
 > 
-![](https://main.qcloudimg.com/raw/b3b42fcffceb3d7205db984cfa1b0c6d.png)
+![](https://main.qcloudimg.com/raw/c3908fef18c46a5f88aebfca2204f5c0.png)
 6. 根据关机提示进行操作，并单击【开始迁移】，在控制台页面实例修改状态为“修改实例vpc属性”。如下图所示：
 >!
 >- 迁移过程中，主机实例需要进行重启，请勿进行其他操作。

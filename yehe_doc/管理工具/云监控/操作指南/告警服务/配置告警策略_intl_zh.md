@@ -11,7 +11,7 @@
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2. 单击【告警配置】>【告警策略】，进入告警策略配置页面。
 3. 单击【新增】，配置告警策略，配置说明如下。
-   ![](https://main.qcloudimg.com/raw/fb110f55cb5caf90df1a1d893931e059.png)
+   ![](https://main.qcloudimg.com/raw/35ab944e14b549e22225592ca93e4f4a.png)
 <table>
 	<tr>
 		<th>配置类型</th>
@@ -103,13 +103,13 @@
 **情况一：告警策略未绑定实例。** 
 
 在告警策略列表中，直接单击【删除】即可。
-   ![](https://main.qcloudimg.com/raw/4180fac37392cdde227e3a12d26482d5.png)
+   ![](https://main.qcloudimg.com/raw/16366d1fef2d920375b378d6768d7ce8.png)
 
 **情况二： 告警策略已绑定实例。** 
 
 1. 在告警策略列表中，单击您需要删除的告警策略名，进入告警策略管理页。
 2. 在告警对象中单击【全部解除】，在弹框中确认解除。（如有多地域需重复执行该步骤，直到所有地域所有实例解除完）。
-	 ![](https://main.qcloudimg.com/raw/5bd2e4960f8c87fd56510443006f5fb6.png)
+	 ![](https://main.qcloudimg.com/raw/35faa0b32fd61997ee9c5821a4a8ec51.png)
 3. 所有实例解除成功后，返回告警策略列表页，单击【删除】即可。
 
 ### 默认告警策略
@@ -118,7 +118,7 @@
 
 - 当您首次成功购买默认策略支持的云产品，云监控会为您自动创建默认告警策略。如需了解默认策略支持的指标/事件或告警规则，请参见 [云产品默认策略说明](#step1)。
 - 您也可以手动创建告警策略，设为默认告警策略。设置成功后新购买的实例会自动关联默认策略，无需您手动添加。
-  ![](https://main.qcloudimg.com/raw/3e22de8d2e823fd8aba8445f9c78cd8a.jpg)
+  ![](https://main.qcloudimg.com/raw/bbacd03b65c9c2ffbdb064f85df18a97.png)
 
 
 
