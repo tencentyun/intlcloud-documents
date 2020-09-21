@@ -70,6 +70,6 @@
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
-> 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。 
+>! 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。 
 ## 关联与解绑推流域名
 具体操作及相关说明，请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。
