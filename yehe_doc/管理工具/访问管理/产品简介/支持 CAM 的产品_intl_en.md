@@ -68,7 +68,7 @@ Definitions:
 | [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) | 
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
-| [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | -    | &#10003;    | - |
+| [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  |  &#10003;    | &#10003;    | - |
 | [TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | Resource level |  &#10003;  | &#10003;    | -    | - |  
 | [TencentDB for DBbrain](https://intl.cloud.tencent.com/document/product/1035) |Resource level | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1035/36050)| 
 
