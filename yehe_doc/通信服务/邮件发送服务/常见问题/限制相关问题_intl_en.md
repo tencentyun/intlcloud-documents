@@ -28,7 +28,7 @@ The specific character and file size limits are as detailed below:
 | Sender name | Input box | Up to 30 characters |
 | Return address | Input box | Up to 3 addresses |
 | Email subject | Input box | Up to 60 characters |
-| Email body | HTML | Up to 500 KB |
+| Email body | HTML | Up to 200 KB |
 | Custom template variable value | JSON | Up to 100 KB |
 | Domain name | Input box | Up to 60 characters |
 | Template name | Input box | Up to 60 characters |

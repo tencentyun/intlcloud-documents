@@ -14,8 +14,8 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. Configure the following and click **OK**.
  - **Origin-pull condition**: specifies all conditions as needed that must be met at the same time for triggering origin-pull.
- - **HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
- - **File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, then the origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
+    - **HTTP Status Code 404**: the only HTTP status code that triggers origin-pull currently. This field is required and cannot be canceled manually.
+    - **File name prefix**: triggers the origin-pull rule when the requested file name matches this prefix. For example, if this field is set to `prefix`, then the origin-pull is triggered when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg` and an HTTP status code 404 is returned.
  - **Origin-Pull Protocol**: the protocol used for COS to access the specified origin server. The options include `Follow request protocol`, `Force HTTPS`, and `Force HTTP`.
     - If you select “Force HTTPS/HTTP”, COS will access your origin server using HTTPS/HTTP protocol.
     - If you select “Follow request protocol”, COS will access your origin server using the protocol that you used for your request.
@@ -31,14 +31,13 @@ abc.example.com:8080
 
 You can configure a specific origin-pull address using the following fields:
 
-    ```shell
-    - **Fixed file**: specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
-    - **Specified prefix**: specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to the `<origin-pull address>/test/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
-    - **Specified suffix**: specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to the `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
+   - **Fixed file**: specifies a fixed file to which all requests are redirected when the origin-pull rule is triggered.
+   - **Specified prefix**: specifies the prefix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the prefix is specified as `test`, the request is redirected to the `<origin-pull address>/test/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123.jpg`, and the origin-pull rule is triggered.
+   - **Specified suffix**: specifies the suffix for the file to which a request is redirected when the origin-pull rule is triggered. For example, if the suffix is specified as `.jpg`, the request is redirected to the `<origin-pull address>/prefix123.jpg` when you access `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/prefix123`, and the origin-pull rule is triggered.
      >!
      >- If you select “Fixed file”, the other fields cannot be used by default.
      >- “Specified prefix” and “Specified suffix” can be used at the same time.
-     ```
+ 
      
  - **3xx Following Policy**: if this policy is enabled, when your origin server returns a 3XX redirect, COS will follow it by default to another origin server to pull data from.
  - **Origin-Pull Parameter**: specifies whether to pass through COS request parameters when accessing the origin server.
