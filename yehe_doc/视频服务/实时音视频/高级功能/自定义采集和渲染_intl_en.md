@@ -186,8 +186,8 @@ This function will call back the sound data of each remote user, which is the da
 After all audio data is mixed, it will be called back by this function before being sent to the speaker for playback.
 
 >!
-1. Do not perform any time-consuming operation in this callback function. We recommend you directly copy the data to another thread for processing; otherwise, intermittent sound or acoustic echo cancellation (AEC) failure may occur.
-2. The data called back by the above callback functions can only be read and copied but not modified; otherwise, various uncertain consequences may occur.
+>1. Do not perform any time-consuming operation in this callback function. We recommend you directly copy the data to another thread for processing; otherwise, intermittent sound or acoustic echo cancellation (AEC) failure may occur.
+>2. The data called back by the above callback functions can only be read and copied but not modified; otherwise, various uncertain consequences may occur.
 
 
 
