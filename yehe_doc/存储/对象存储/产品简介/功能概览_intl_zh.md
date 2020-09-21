@@ -12,7 +12,7 @@ COS 主要提供以下功能：
    </tr>
    <tr>
       <td>对象操作</td>
-      <td>对象/文件夹：上传、查询、下载、复制和删除操作，具体操作请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13321">对象管理</a> 目录下的文档</td>
+      <td>多种存储类型：根据访问频度的高低，COS 提供多种对象的存储类型，包括标准存储、低频存储、归档存储和深度归档存储，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/30925">存储类型</a><br>对象/文件夹：上传、查询、下载、复制和删除操作，具体操作请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13321">对象管理</a> 目录下的文档</td>
    </tr>
    <tr>
       <td rowspan=8>数据管理</td>
@@ -113,17 +113,9 @@ COS 主要提供以下功能：
       <td>对象存储 COS 提供存储数据的监控能力，您可通过监控数据窗口按照不同时间段查询不同存储类型数据的数据量及趋势，详情请参见 查询数据监控和  <a href="https://intl.cloud.tencent.com/document/product/436/36542">   查看数据概览</a></td>
    </tr>
    <tr>
-      <td rowspan=5>数据处理</td>
+      <td rowspan=3>数据处理</td>
       <td nowrap="nowrap">图片处理</td>
       <td>腾讯云对象存储 COS 集成了数据万象（Cloud Infinite，CI）专业的一体化媒体解决方案，涵盖图片处理、审核、识别等功能。您可以通过 COS 的上传和处理接口来进行媒体数据的处理操作，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a></td>
-   </tr>
-   <tr>
-      <td>文档预览</td>
-      <td>文档预览服务基于腾讯云数据万象，开启之后，存储桶中的文档类型文件即可在线预览无需下载，解决文档内容的页面展示问题。</td>
-   </tr>
-   <tr>
-      <td>内容审核</td>
-      <td>内容审核服务基于腾讯云数据万象，开启之后，新增的图片会在上传时自动进行检测，并支持自动冻结（禁止公有读访问）已检测的违规内容。</td>
    </tr>
    <tr>
       <td>文件解压缩</td>
