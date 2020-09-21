@@ -33,14 +33,11 @@ The default configuration role of SCF is `SCF_QcsRole`, as detailed below:
 >
 
 ### Service authorization
-1. If you are using SCF for the first time, you will be prompted for service authorization when you open the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1), as shown below:
-![](https://main.qcloudimg.com/raw/e2c9a7755b2f1f1671a6cc12f47bdef6.png)
+1. If you are using SCF for the first time, you will be prompted for service authorization when you open the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1).
 
-2. Select **Go to Access Management** to access the "Role Management" page and click **Grant** to confirm the authorization, as shown below:
-![](https://main.qcloudimg.com/raw/59611885715e48011cc4e7de393efa1c.png)
+2. Select **Go to Access Management** to access the "Role Management" page and click **Grant** to confirm the authorization.
 
-3. After the authorization is confirmed, the role `SCF_QcsRole` will be automatically created for you as shown below, which can be viewed in [Roles](https://console.cloud.tencent.com/cam/role):
-![](https://main.qcloudimg.com/raw/9702d15f8ade526bf55cb836be360ef7.png)
+3. After the authorization is confirmed, the role `SCF_QcsRole` will be automatically created for you as shown below, which can be viewed in [Roles](https://console.cloud.tencent.com/cam/role).
 
 ## Execution Roles
 An execution role is used for user code, and the role entity is `service-scf.qcloud.com`. After you add the corresponding execution role to the function, SCF will apply for the temporary authorization for your code to run within the scope of the permissions in the policies associated with the execution role, so that the code can get the required permissions and access other Tencent Cloud resources through the role authorization mechanism.
@@ -50,23 +47,24 @@ Take `SCF_QcsRole` as an example. You can also select `SCF_QcsRole` as the funct
 1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf)** on the left sidebar.
 2. On the "Functions" list page, click the name of the target function to access the function configuration page.
 3. Select **Edit** in the top-right corner on the function configuration page.
-4. Check **Enable** for "Execution Role" and click **Create Running Role**, as shown below:
-![](https://main.qcloudimg.com/raw/c8d4e42e246ae3bab15db83c9f7e44df.png)
+4. Check **Enable** for "Execution Role" and click **Create Running Role**.
+
 5. Check **Serverless Cloud Function (SCF)** in the "Enter role entity info" step and click **Next**.
-![](https://main.qcloudimg.com/raw/61f45843b7a52b8edb1432c17618ff3c.png)
+
 6. In the "Configure role policy" step, select all the policies required by the function and click **Next**, as shown below:
 >? This document uses the selection of `QcloudCOSFullAccess` (full access permissions of COS) as an example. Please select the policies as needed.
 >
-![](https://main.qcloudimg.com/raw/f4b2f40ca703f033e61f8a1911e7991e.png)
+
 7. Enter a "role name" in the "Review" step and click **Done**. This document uses the role name `scf_cos_full_access` as an example. 
-8. Return to the function configuration page and click <img src="https://main.qcloudimg.com/raw/b32932fe6f9afabb88280c38bb287887.png" style="margin:-3px 0px"> on the right of "Execution Role" to select the execution role created just now in the drop-down list, as shown below:
-![](https://main.qcloudimg.com/raw/f891ccabd030dfafd3119d10f28b42ea.png)
+8. Return to the function configuration page and click <img src="https://main.qcloudimg.com/raw/b32932fe6f9afabb88280c38bb287887.png" style="margin:-3px 0px"> on the right of "Execution Role" to select the execution role created just now in the drop-down list.
 >! When adding policies to an execution role, in addition to preset policies, you can also select custom policies to configure permissions in a more refined manner. SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource description method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format. For more information, please see [SCF Policy Syntax](https://intl.cloud.tencent.com/document/product/583/38177).
 >
 
 ### Using the execution role to get environment variables
 When a function is running, the SCF service will use the selected execution role to apply for the temporary `SecretId`, `SecretKey`, and `SesstionToken` and pass them in to the runtime environment in the form of environment variables, as shown below:
+
 ![](https://main.qcloudimg.com/raw/04d1d326e4a383d44c4d019a2207ba6e.png)
+
 Take Python as an example. You can run the following code to pass in the above information to the function runtime environment and get it in the form of environment variables:
 ```python
 secret_id = os.environ.get('TENCENTCLOUD_SECRETID')
