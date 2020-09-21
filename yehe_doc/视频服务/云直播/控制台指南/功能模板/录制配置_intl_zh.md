@@ -1,7 +1,7 @@
 云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、修改以及删除录制模板。
 创建录制模板有以下两种方式
 - 通过云直播控制台创建录制模板，具体操作步骤请参见 [创建录制模板](#C_record)。
-- 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/zh/document/product/267/30845)。
+- 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
 
 ## 注意事项
 - 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，并可提前选购点播相关资源包，避免点播业务欠费停用，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
