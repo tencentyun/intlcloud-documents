@@ -8,7 +8,8 @@ qcs: :scf:region:uin/uin—id:function/function-name
 
 >! When configuring the policy syntax, you also need to use the monitor APIs to get the monitoring information under the account. For more information about using the monitor APIs, please see the [sample policy](#policygen).
 
-## Sample Policy<span id="policygen"></span>
+<span id="policygen"></span>
+## Sample Policy
 ```
 {	 
         "version":"2.0", 
