@@ -8,10 +8,10 @@ You can grant a user the permissions to view and use specific resources in the T
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/overview).
 2. In the left navigation pane, click [Policies](https://console.cloud.tencent.com/cam/policy) to go to the policy management page.
-3. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudCCSFullAccess** policy. See the figure below:
-![QcloudCCSFullAccess policy](https://main.qcloudimg.com/raw/4292db018e8c1270ae53cd1c5556479e.png)
+3. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudTKEFullAccess** policy. See the figure below:
+![](https://main.qcloudimg.com/raw/4292db018e8c1270ae53cd1c5556479e.png)
 4. In the **Associate a user/user** window that pops up, select the account that needs full read/write permission for the TKE service, and click **OK** to grant full read/write permission for the TKE service to the sub-accounts.
-5. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudCCRFullAccess** policy. See the figure below:
+5. On the "Policy management" page, click **Associate a user/group** in the row of **QcloudTKEFullAccess** policy. See the figure below:
 ![QcloudCCRFullAccess policy](https://main.qcloudimg.com/raw/b8ffe32995fba33464c1d6e0fe6e52b2.png)
 6. In the **Associate a user/group** window that pops up, select the account that needs full read/write permission for Image Registry, and click **OK** to grant full read/write permission for Image Registry to the sub-accounts.
 > If you want to use the trigger and automatic building features of Image Registry, you also need to configure additional permissions for TKE - continuous integration (CCB).
