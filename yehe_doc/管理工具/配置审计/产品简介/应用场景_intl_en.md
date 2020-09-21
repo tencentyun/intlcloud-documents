@@ -1,4 +1,3 @@
-**Use Cases**
 
   **Troubleshooting**
 

@@ -1,8 +1,3 @@
-Overview
-
----------
-
-
 
  **Product overview**
 
