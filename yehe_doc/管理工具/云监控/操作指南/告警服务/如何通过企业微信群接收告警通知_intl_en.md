@@ -2,11 +2,11 @@ This document describes how to receive alarm notifications through a WeCom group
 
 ## Use Limits
 
-For the sending of WeCom group messages, the number of messages sent by each bot cannot exceed 20 per minute. If you have many alarm policies, we recommend that you create multiple bots and associate alarm policies with different bots. Otherwise, multiple alarm policies may trigger alarms simultaneously, and you may fail to receive some alarm notifications.
+Regarding sending WeCom group messages, the number of messages sent by each bot cannot exceed 20 per minute. If you have many alarm policies, we recommend that you create multiple bots and associate alarm policies with different bots. Otherwise, multiple alarm policies may trigger alarms simultaneously, and you may fail to receive some alarm notifications as a result.
 
 
 
->? After you successfully create WeCom bots and configure the callback address, Cloud Monitor will automatically push alarm messages to the WeCom bots. In this way, you can receive alarm notifications through a WeCom group.
+>? After you successfully create WeCom bots and configure the callback address, Cloud Monitor will automatically push the alarm messages to the WeCom bots. This way, you can receive alarm notifications through a WeCom group.
 
 ## Step 1: Add a Bot on WeCom
 
