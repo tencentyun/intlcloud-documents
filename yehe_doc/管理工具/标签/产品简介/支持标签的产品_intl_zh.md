@@ -64,7 +64,16 @@
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 <td>MongoDB 实例</td>
-</tr></table>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1016">游戏数据库 TcaplusDB</a></td>
+<td><li>集群</li><li>表格</li></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/571">数据传输服务</a></td>
+<td><li>迁移任务</li><li>订阅实例</li></td>
+</tr>
+</table>
 
 ## Serverless
 <table>
@@ -99,7 +108,12 @@
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td>消息队列 CKafka</td>
 <td>Ckafka 实例</td>
-</tr></table>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/406/34258">消息队列 CMQ</a></td>
+<td><li>队列</li><li>主题 </li></td>
+</tr>
+</table>
 
 ## 网络安全
 <table>

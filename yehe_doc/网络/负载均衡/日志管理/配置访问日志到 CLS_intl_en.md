@@ -5,11 +5,9 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 - Log storage and search provide SLA based on the storage service currently in use.
 
 >?
->- As the feature of storing access logs in COS will be officially disused after 00:00:00, June 30, 2020, you are recommended to use CLS for CLB access log storage.
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
 - The feature of storing CLB access logs in CLS is free of charge, and you only need to pay for CLS usage.
 - Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chongqing, Chengdu, Hong Kong (China), Singapore, Mumbai, Silicon Valley, Toronto, and Frankfurt regions through the console or APIs.
-- Currently, [CLS](https://intl.cloud.tencent.com/document/product/614) is in beta test. To try it out, please submit a ticket for application.
 
 ## Enabling Access Log Storage in CLS
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
