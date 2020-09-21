@@ -1,11 +1,11 @@
 
-## Operation Scenarios
-Tencent Cloud [Flask](https://github.com/pallets/flask) Serverless Component supports deploying RESTful API services but does not support Flask Command.
->!Any Python server framework that supports Web Server Gateway Interface (WSGI) can be deployed through this component, such as Falcon.
+## Overview
+The Tencent Cloud [Flask](https://github.com/pallets/flask) Serverless Component supports deploying RESTful API services but does not support Flask Command.
+>!Any Python server framework that supports the Web Server Gateway Interface (WSGI), such as Falcon, can be deployed through this component.
 
 ## Prerequisites
 1. Before using this component, please make sure that you have installed the Python environment locally.
-2. Initialize a Flask project first and then add `Flask` and `werkzeug` to the dependent file `requirements.txt` as follows: 
+2. Initialize a Flask project first and then add `Flask` and `werkzeug` to the dependent file `requirements.txt`, as shown below: 
 ```txt
 Flask==1.0.2
 werkzeug==0.16.0
@@ -69,17 +69,17 @@ inputs:
     environment: release
 ```
 
-[Detailed Configuration >>]( https://github.com/serverless-components/tencent-flask/blob/master/docs/configure.md )
+[Detailed Configurations >>]( https://github.com/serverless-components/tencent-flask/blob/master/docs/configure.md )
 
 ### Deployment
 
-Run the following command to deploy by scanning code:
+Run the following command to deploy granting permissions via code scanning:
 
 ```console
 sls deploy
 ```
 
->?To grant persistent permission, please see [Account Configuration](#account).
+>?To grant persistent permissions, please see [Account Configuration](#account).
 
 ### Removal
 

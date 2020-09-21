@@ -1,52 +1,52 @@
-## 操作场景
-HTTPS 协议是由 SSL + HTTP 协议构建的可进行加密传输和身份认证的网络协议，比 HTTP 协议安全。若需要开启 HTTPS 加速，可通过开启播放域名的 HTTPS 功能和配置正确有效的证书来实现。您可以在腾讯云 [SSL 证书](https://intl.cloud.tencent.com/product/ssl) 购买相应证书，若您已有 HTTPS 证书，可上传至云直播控制台进行配置。直播目前仅支持 PEM 格式，若您的证书为其它格式，需要转化为 PEM 格式。证书的格式要求和配置方法如下：
+## Overview
+The HTTPS protocol is a network protocol built based on SSL and HTTP protocols for encrypted transfer and authentication. It is more secure than the HTTP protocol. If you want to enable HTTPS acceleration, you can do so by enabling the HTTPS feature for the playback domain name and configuring a valid certificate. You can purchase a certificate from Tencent Cloud [SSL Certificate Service](https://intl.cloud.tencent.com/product/ssl). If you already have one, you can upload it to the LVB Console for configuration. Currently, LVB only supports the PEM format. If your certificate is in another format, you need to convert it to PEM format first. The format requirements and configuration method for the certificate are as follows:
 
-## 前提条件
-- 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-- 已 [添加播放域名](https://intl.cloud.tencent.com/zh/document/product/267/35970)。
+## Prerequisites
+- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
+- You have [added a playback domain name](https://intl.cloud.tencent.com/zh/document/product/267/35970).
 
-## 操作步骤 
-### 步骤1：编辑 HTTPS 配置
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
-2. 选择【高级配置】，查看【HTTPS 配置】标签。
-3. 单击【编辑】进入 HTTPS 配置页，单击![](https://main.qcloudimg.com/raw/897761946b06e8f904bfa6301d282817.png)按钮选择开启 HTTPS 服务。
-4. 选择证书来源，选择配置的证书来源，并填写相关信息，单击【保存】即可。
+## Directions 
+### Step 1. Edit the HTTPS configuration
+1. Go to the **[domain management page](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain name** to be configured or **Manage** on the right to enter the domain name details page.
+2. Select **Advanced Configuration** to view the **HTTPS Configuration** tab.
+3. Click **Edit** to enter the HTTPS configuration page and toggle ![](https://main.qcloudimg.com/raw/897761946b06e8f904bfa6301d282817.png) to enable the HTTPS service.
+4. Select the source of the certificate to be configured, enter relevant information, and click **Save**.
 <table>
-<tr><th>当选择证书来源类型为</th><th>需要填写</th></tr>
+<tr><th>Certificate Source</th><th>Required Configuration Items</th></tr>
 <tr>
-<td>自有证书</td>
+<td>Self-owned certificate</td>
 <td><ul style="margin:0">
-<li>证书名称：可自定义，便于标识证书。</li>
-<li>证书内容：填写 Nginx 文件中的<code>.crt</code> 文件内容，具体请参见 <a href="#content">证书内容</a>。</li>
-<li>私钥内容：填写 Nginx 文件中的 <code>.key</code> 文件内容，具体请参见 <a href="#private_key">证书密钥</a>。</li><ul></td>
+<li>Certificate Name: enter a custom name used to identify the certificate.</li>
+<li>Certificate Content: enter the content of the <code>.crt</code> file for Nginx. For more information, please see <a href="#content">Certificate content</a>.</li>
+<li>Private Key Content: enter the content of the <code>.key</code> file for Nginx. For more information, please see <a href="#private_key">Certificate key</a>.</li><ul></td>
 </tr><tr>
-<td>腾讯云托管证书</td>
-<td>证书列表：选择在腾讯云 <a href="https://console.cloud.tencent.com/ssl">SSL 证书服务</a> 中已经上传的证书。</td>
+<td>Tencent Cloud-hosted certificate</td>
+<td>Certificate List: select an uploaded certificate in <a href="https://console.cloud.tencent.com/ssl">SSL Certificate Service</a>.</td>
 </tr></table>
-<img src="https://main.qcloudimg.com/raw/b42458905e48db6b45def7a1d8ecc349.png"></img>
+<img src="https://main.qcloudimg.com/raw/023725d33c3fdc4e06a4a4eb1791a578.png"></img>
 
-#### 证书说明：
-[CA](https://intl.cloud.tencent.com/zh/document/product/1007/30192#354) 提供的证书包括 Apache、IIS、Nginx 以及 Tomcat。**云直播的加密服务使用 Nginx，故配置需选择 Nginx 文件中的内容**。 
-进入【SSL 证书控制台】>【[证书管理](https://console.cloud.tencent.com/ssl)】，选择您需要查看的证书，单击操作栏的【下载】，并进行解压后即可获得以下文件：
+#### Certificate description
+The top [CAs](https://intl.cloud.tencent.com/zh/document/product/1007/30192#354) issue certificates for Apache, IIS, Nginx, and Tomcat web servers. **LVB encryption uses Nginx, so you should select the Nginx files for configuration.** 
+Go to **SSL Certificate Service Console** > **[Certificate Management](https://console.cloud.tencent.com/ssl)**, select the target certificate, click **Download** in the "Operation" column, and decompress the downloaded package to get the following files:
   ![](https://main.qcloudimg.com/raw/f67e31bfa2c233cf8dc0c4a1e58cb6fc.png)
-- <b id="content">证书内容</b>：选择 Nginx 中的 `.crt` 文件，输入框填写包含 `-----BEGIN CERTIFICATE-----` 和 `-----END CERTIFICATE-----` 的所有内容。
-**内容示例：**
+- <b id="content">Certificate content</b>: enter the entire content between `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` in the `.crt` file for Nginx.
+**Sample content:**
 ![](https://main.qcloudimg.com/raw/e6c61fda3637a2f11e56cec30f0f7bd3.png)
->?若您的证书为中级机构颁发，并包含多个证书，证书内容请按照下述方式拼接：
+>?If your certificate is issued by an intermediate CA and contains multiple certificates, the certificate content should be spliced as follows:
 > -----BEGIN CERTIFICATE-----
 > -----END CERTIFICATE-----
 > -----BEGIN CERTIFICATE-----
 > -----END CERTIFICATE-----
-- <b id="private_key">证书私钥</b>：选择 Nginx 中的 `.key` 文件，输入框填写包含` -----BEGIN RSA PRIVATE KEY----- `和 `-----END RSA PRIVATE KEY----- `的所有内容。
-**内容示例：**
+- <b id="private_key">Certificate private key</b>: enter the entire content between ` -----BEGIN RSA PRIVATE KEY----- ` and `-----END RSA PRIVATE KEY----- ` in the `.key` file for Nginx.
+**Sample content:**
 ![](https://main.qcloudimg.com/raw/1ca20b0021b49ccb407df43675be37ba.png)
 
-### 步骤2：验证配置
-HTTPS 配置生效时间约2小时，请于提交证书后2小时左右访问该域名，若浏览器地址栏显示为 HTTPS 则说明配置成功。
+### Step 2. Verify the configuration
+The HTTPS configuration will take effect in about 2 hours. Please visit the domain name about 2 hours after the certificate is submitted. If HTTPS is displayed in the address bar of the browser, the configuration is successful.
 ![](https://main.qcloudimg.com/raw/b1f54ec35855e5d2adbaeae96a04ef13.png)
 
-### 步骤3：修改配置
-HTTPS 功能支持开启和关闭。关闭此服务后，云直播将不再为该域名提供 HTTPS 服务。若证书已过期，需更新为新的有效证书。
- 
- 
- >? 更多证书相关指引请参见 [SSL 证书操作指南](https://intl.cloud.tencent.com/document/product/1007/30168)。
+### Step 3. Modify the configuration
+The HTTPS feature can be enabled and disabled. Once it is disabled, LVB will no longer provide HTTPS service for the domain name. If the certificate has expired, it should be replaced with a new valid one.
+
+
+ >? For more information on certificates, please see [SSL Certificate Service](https://intl.cloud.tencent.com/document/product/1007/30168).

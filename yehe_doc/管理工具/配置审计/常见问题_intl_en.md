@@ -1,4 +1,3 @@
-FAQs
 
 **1.** **What is Config Audit?**
 

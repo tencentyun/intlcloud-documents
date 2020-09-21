@@ -1,6 +1,7 @@
 云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、修改以及删除录制模板。
 创建录制模板有以下两种方式
 - 通过云直播控制台创建录制模板，具体操作步骤请参见 [创建录制模板](#C_record)。
+- 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
 
 ## 注意事项
 - 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，并可提前选购点播相关资源包，避免点播业务欠费停用，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
@@ -8,6 +9,7 @@
 - 直播过程中预计在录制结束5分钟左右可获取对应文件。例如，某直播从12:00开始录制，则12:35左右可获取12:00 - 12:30的对应片段，以此类推。
 - 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持H.264，音频编码类型支持 AAC。
 - 录制模板创建成功后，可与推流域名进行关联，相关文档可参见  [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)，关联成功后约5分钟 - 10分钟生效。
+- 若需了解生成的录制文件命名规则，请参见 [录制模板参数-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)。
 
 
 ## 前提条件
@@ -37,7 +39,7 @@
    </tr><tr>
    <td>单个录制文件时长（分钟）</td>
    <td><ul style="margin-bottom:0px">
-       <li>录制 HLS 格式最长单个文件时长无限制，如果超出则新建文件继续录制。</li>
+       <li>录制 HLS 格式最长单个文件时长无限制，如果超出续录超时时间则新建文件继续录制。</li>
        <li>录制 MP4、FLV 或 AAC 格式单个文件时长限制为5分钟 - 120分钟。</li>
        </ul></td>
    </tr><tr>
@@ -68,6 +70,6 @@
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
-> 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。 
+>! 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。 
 ## 关联与解绑推流域名
 具体操作及相关说明，请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。

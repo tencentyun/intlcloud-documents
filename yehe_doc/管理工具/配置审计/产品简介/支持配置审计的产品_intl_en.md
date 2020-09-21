@@ -1,4 +1,3 @@
-**Config Audit-Enabled Tencent Cloud Services**
 
 Config Audit can monitor configuration changes in the following Tencent Cloud services:
 

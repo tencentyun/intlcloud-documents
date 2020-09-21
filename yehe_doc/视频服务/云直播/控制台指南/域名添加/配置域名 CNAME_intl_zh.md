@@ -8,7 +8,7 @@
 - 若 CNAME 设置完成后长时间未显示成功，请前往参见 [CNAME 配置问题定位](https://intl.cloud.tencent.com/document/product/267/32478)。
 
 ## 前提条件
-- 已在 [域名注册](https://dnspod.cloud.tencent.com/?from=qcloudProductDns) 申请域名，并备案成功。
+- 准备好自有域名。
 - 已在云直播控制台的【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】中成功 [添加自有域名](https://intl.cloud.tencent.com/document/product/267/35970)，且域名 CNAME 地址状态为![](https://main.qcloudimg.com/raw/ed1ac2f8541f629814a3f2420b1eb79c.png)（CNAME 未配置）。
 
 
@@ -18,57 +18,12 @@
 
 <span id="tencent"></span>
 
-### 腾讯云设置方法
-若您的 DNS 服务商为腾讯云，您可根据如下步骤添加 CNAME 记录。
-
-1. 登录 [域名服务控制台](https://console.cloud.tencent.com/domain)。
-2. 选择您需添加 CNAME 的域名，单击【解析】。
-3. 进入指定域名的域名解析页，单击【添加记录】。
-4. 在该新增列填写域名 CNAME 记录，具体填写内容如下所示：
-<table>
-    <tr><th width="12%" >参数名</th><th width="38%">参数描述</th><th width="50%">如何配置</th></tr>
-    <tr>
-        <td>主机记录	</td>
-        <td>填写子域名的前缀	</td>
-        <td>
-            <ul style="margin-bottom:0;">
-                <li>若域名为<code>play.myqcloud.com</code>，请选择：<code>play</code></li>
-                <li>若解析主域名<code>myqloud.com</code>，请选择：<code>@</code></li>
-                <li>若解析泛域名，请选择：<code>\*</code></li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <td>记录类型</td>
-        <td>记录类型，此处为 CNAME 类型</td>
-        <td>将域名指向另一个域名，请选择：<b>CNAME</b></td>
-    </tr>
-    <tr>
-        <td>线路类型</td>
-        <td>用于 DNS 服务器在解析域名时，根据访问者的来源，返回对应的服务器 IP 地址</td>
-        <td>选择：<b>默认</b></td>
-    </tr>
-    <tr>
-        <td>记录值</td>
-        <td>需指向的域名，填写腾讯云控制台【<a href="https://console.cloud.tencent.com/live/domainmanage">域名管理</a>】域名对应的 CNAME 值</td>
-        <td>填写格式为：<code><b style="color:red;">xxxx</b>.livecdn.liveplay.myqcloud.com</code></td>
-    </tr>
-    <tr>
-        <td>TTL(秒)</td>
-        <td>缓存的生存时间，默认最常用的<b>600秒</b></td>
-        <td>建议填写<b>600秒</b></td>
-    </tr>
-</table>
-5. 单击【保存】，配置 CNAME 完毕。
-
-
-> 域名解析各种记录类型之间是有优先级差异的，在主机记录相同的情况下，同一条线路有几种不同的记录类型不能共存，否则将会提示冲突。CNAME 记录与除 CNAME 记录以外的任何记录类型都冲突，需要先删除掉其他记录，再进行配置。
 
 <span id="ali"></span>
 ### 阿里云设置方法
 若您的 DNS 服务商为阿里云，且已完成域名备案，可参考下述步骤进行 CNAME 设置。
 
-1.  登录阿里云控制台，进入【云解析DNS】>[【域名解析】](https://dns.console.aliyun.com/#/dns/domainList)。
+1.  登录阿里云控制台，进入【云解析DNS】>【域名解析】。
 2. 选择您需添加 CNAME 的域名，单击【解析设置】。
 3. 选择【添加记录】，在添加记录页进行如下设置：
 	-  记录类型：选择 `CNAME`。
@@ -82,7 +37,7 @@
 <span id="baidu"></span>
 ### 百度云设置方法
 若您的域名服务商为百度云，您可通过如下步骤添加 CNAME 记录。
-1. 登录百度云控制台，选择[【域名管理】](https://console.bce.baidu.com/bcd/?_=1550137564099#/bcd/manage/list)，进入域名管理列表页。
+1. 登录百度云控制台，选择【域名管理】，进入域名管理列表页。
 2. 选择云直播添加的域名，在操作列单击【解析】进入 DNS 解析页面。
 3. 添加解析记录，在该页面进行如下配置：
  - 主机记录：填写二级域名，即域名前缀。若播放域名为`play.myqcloud.com`，则添加`play`；若需要直接解析主域名`myqloud.com`，则输入`@`；若需要解析泛域名，则输入`\*`。

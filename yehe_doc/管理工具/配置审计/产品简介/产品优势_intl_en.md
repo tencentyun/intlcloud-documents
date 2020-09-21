@@ -1,4 +1,3 @@
-Strengths
 
 **1.** **Continuous change monitoring**
 

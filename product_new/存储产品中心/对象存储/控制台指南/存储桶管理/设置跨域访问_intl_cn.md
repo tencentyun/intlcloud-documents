@@ -6,8 +6,8 @@
 ## 操作步骤
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面，单击需要设置跨域访问的存储桶。
-![](https://main.qcloudimg.com/raw/c265d4596065e27c9aa4510ba8aeca84.png)
-2. 单击【基础配置】，进入存储桶的基础配置页，找到**跨域访问 CORS 设置**，单击【添加规则】。
+
+2. 单击【安全管理】>【跨域访问 CORS 设置】，找到**跨域访问 CORS 设置**，单击【添加规则】。
 ![](https://main.qcloudimg.com/raw/1659089c942ec8fadd77c880f1d4f492.png)
 3. 添加规则信息（带 * 号的为必填项），配置项说明如下：
 
