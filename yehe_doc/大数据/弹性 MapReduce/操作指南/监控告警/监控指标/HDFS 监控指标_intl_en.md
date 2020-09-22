@@ -45,7 +45,7 @@
 | MemHeapUsedM | MB | Size of HeapMemory currently used by JVM |
 | MemHeapCommittedM | MB | Submitted size of JVM HeapMemory |
 | MemHeapMaxM | MB | Size of HeapMemory configured by JVM |
-| MemMaxM | MB | Maximum size of memory available to JVM runtime |
+| MemMaxM | MB | Maximum memory size that can be used by JVM during runtime| 
 | BlockReportAvgTime                            | Blocks/s     | Average delay for processing DataNode blocks per second                     |
 | FGC                                | Operations/s       | Full GC count            |
 | YGC                                | 2/s      | Young GC count            |
@@ -157,14 +157,14 @@
 | RamDiskBlocksEvicted                    | Blocks/s     | Total number of blocks cleared in memory                       |
 | RamDiskBlocksEvictedWithoutRead         | Blocks/s     | Total number of blocks retrieved from memory          |
 | RamDiskBlocksLazyPersisted              | Blocks/s     | Number of disk writes by lazy writer                   |
-| RamDiskBytesLazyPersisted               | Bytes/s  | Total number of bytes written to disk by lazy writer           |
+| RamDiskBytesLazyPersisted  | Bytes/s  | Total number of blocks written by the lazy writer to a disk |
 | RamDiskBytesWrite                       | Bytes/s  | Total number of bytes written to memory                        |
 | MemNonHeapUsedM | MB | Size of NonHeapMemory currently used by JVM |
 | MemNonHeapCommittedM                    | MB | Size of NonHeapCommittedM configured by JVM |
 | MemHeapUsedM | MB | Size of HeapMemory currently used by JVM |
 | MemHeapCommittedM | MB | Submitted size of JVM HeapMemory |
 | MemHeapMaxM | MB | Size of HeapMemory configured by JVM |
-| MemMaxM | MB | Maximum size of memory available to JVM runtime |
+| MemMaxM | MB | Maximum memory size that can be used by JVM during runtime| 
 | ThreadsNew                                    | -       | Number of threads in new state                               |
 | ThreadsRunnable                               | -       | Number of threads in runnable state                             |
 | ThreadsBlocked                                | - | Number of threads in blocked state |
@@ -215,7 +215,7 @@
 | MemHeapUsedM | MB | Size of HeapMemory currently used by JVM |
 | MemHeapCommittedM | MB | Submitted size of JVM HeapMemory |
 | MemHeapMaxM | MB | Size of HeapMemory configured by JVM |
-| MemMaxM | MB | Maximum size of memory available to JVM runtime |
+| MemMaxM | MB | Maximum memory size that can be used by JVM during runtime| 
 | ThreadsNew                                    | -       | Number of threads in new state                               |
 | ThreadsRunnable                               | -       | Number of threads in runnable state                             |
 | ThreadsBlocked                                | - | Number of threads in blocked state |
