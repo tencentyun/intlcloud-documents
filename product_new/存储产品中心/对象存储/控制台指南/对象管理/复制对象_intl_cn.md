@@ -8,8 +8,7 @@
 ## 操作步骤
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航中单击【存储桶列表】，进入存储桶列表页。
-2. 找到对应的存储桶，单击其存储桶名称（例如 examplebucket-12500000000），进入存储桶的文件列表页面。
-![](https://main.qcloudimg.com/raw/adc916ca1fd692a204dceee84ff3cc4d.png)
+2. 找到对应的存储桶，单击其存储桶名称，进入存储桶的文件列表页面。
 3. 选择想要复制的对象或文件夹，支持多选。在【更多操作】中单击【复制】。
 ![](https://main.qcloudimg.com/raw/dffbfdbb92b1ca08f0bbc3685d1788c9.png)
 4. 提示复制成功后，可选择目标路径进行粘贴。例如粘贴至存储桶 examplebucket1-1250000000 下的 target 文件夹。

@@ -7,8 +7,7 @@
 ## 通过主账号查询操作步骤
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，单击左侧菜单【存储桶列表】，进入存储桶列表页面。
-2. 找到您需要进行统计数据的存储桶，并在其监控一栏下，单击<img src="https://main.qcloudimg.com/raw/c288d6a69541eeeb393bc9beeef39851.png"  style="margin:0;">，如下图所示：
-![](https://main.qcloudimg.com/raw/9c4319d2a97c46b568bd37e75bffc09b.png)
+2. 找到您需要进行统计数据的存储桶，并单击右侧【监控】。
 3. 进入监控数据界面，如下图所示。监控项说明如下：
  - 存储：可查询不同存储类型的存储用量。
  - 对象数量：指存储桶中存在的对象数量，对象数量包含文件碎片数量。
