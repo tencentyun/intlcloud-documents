@@ -4,12 +4,12 @@ This document describes how to change the password for a sub-user. After the mod
 >?These directions only apply to created custom sub-users.
 >
 1. In [User List](https://console.cloud.tencent.com/cam), locate the sub-user whose password needs to be changed and click the **username** to enter the user details page.
-2. Go to **Security** > **Access Security** > **Console Login Management** and click **Manage** as shown below:
-![](https://main.qcloudimg.com/raw/38da51b500940ab5d45b0e03f5f566f8.png)
+2. Go to **Security** > **Console login settings** > **Login password** and click **Reset Password**, as shown below:
+![](https://main.qcloudimg.com/raw/6ff87dbaf396a5b6dbad4b7eccb270e2.png)
 3. In the **Console Access** window that pops up, set the password for the current user as shown below:
-![](https://main.qcloudimg.com/raw/40431bf5f8ff652253172e6981d3890e.png)
- - If the current sub-user needs to access Tencent Cloud by logging in to the console, select **Enable** for **Console Access**.
- - If you need to set a new password for the sub-user, you can do so in the following two ways:
+![](https://main.qcloudimg.com/raw/f8a08aee9f671f73da48ccc6ed8becbe.png)
+
+If you need to set a new password for the sub-user, you can do so in the following two ways:
     - If you select **Auto-generate password** in **Access Password**, the system will automatically generate a console login password. You can copy and save it. If needed, you can also click **Download .csv** to save the password.
     - If you select **Customize Password** in **Access Password**, enter the password you want to set as the sub-user's console login password.
  -  If you want the current user to reset their own password, you can select **Enforce Password Reset**. The sub-user will be required to reset their console login password the next time they log in.
