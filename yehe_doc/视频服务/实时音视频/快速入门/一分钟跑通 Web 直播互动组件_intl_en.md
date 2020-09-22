@@ -1,9 +1,5 @@
 This document describes how to quickly run the demo of Tencent Cloud TWebLive (interactive web live streaming) component.
 
-## Effect Demo
-
-![](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/doc-assets/demo-official-website.gif)
-
 ## Environment Requirements
 
 - Please use the latest version of Chrome.
@@ -22,31 +18,34 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter the application name such as `testtrtc`, and click **OK**.
-
-### Step 2. Get SDKAppID and key<span id="step2"></span>
+<span id="step2"></span>
+### Step 2. Get SDKAppID and key
 
 1. In the application list, find the created application, click **Application Info** on the right to enter the details page, and copy and save the `SDKAppID` information.
-![](https://main.qcloudimg.com/raw/64bad9b2d6a0589f2c97b7c021af27ed.png)
+![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
 2. Click the **Quick Start** tab and click **Copy Secret Key** in **Step 2: obtain the secret key to issue UserSig**.
-![](https://main.qcloudimg.com/raw/648d534f5de68488c0d6d83567bcc8e1.png)
+![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 
 >! Please keep the key information confidential and avoid disclosure.
+>
 
-### Step 3. Download and configure the demo source code<span id="step3"></span>
+<span id="step3"></span>
+### Step 3. Download and configure the demo source code
 
 1. Download the demo project of the TWebLive component [here](https://github.com/tencentyun/TWebLive).
 2. Open the `TWebLive/dist/debug/GenerateTestUserSig.js` file and set relevant parameters:
  - SDKAPPID: please enter the actual `SDKAppID` obtained in [step 2](#step2).
  - SECRETKEY: please enter the actual key information obtained in [step 2](#step2).
 
-![](https://main.qcloudimg.com/raw/2bae16dd7363d1deffcfc82f1bd848f5.png)
+
 
 
 >!
 >- A locally calculated `UserSig` should be only used for local development and debugging. Please do not publish it directly online. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-### Step 4. Run the demo<span id="step4"></span>
+<span id="step4"></span>
+### Step 4. Run the demo
 
 Open the `index.html` file in the `dist` directory of the demo with Chrome to run the demo.
 
@@ -54,11 +53,8 @@ Open the `index.html` file in the `dist` directory of the demo with Chrome to ru
 >- Generally, the demo needs to be deployed on your server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
 - Currently, the desktop version of Chrome offers more comprehensive support for the features of the TRTC SDK for Desktop Browser; therefore, Chrome is recommended for the demo.
 
-**The demo execution page is as shown below:**
-![](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/doc-assets/demo-pusher.png)
-
 TWebLive needs to use camera and mic to capture audio and video. During the trial, you may receive relevant prompts from Chrome and you should click **Allow**.
-![](https://main.qcloudimg.com/raw/1a2c1e7036720b11f921f8ee1829762a.png)
+
 
 ## Supported Platforms
 
@@ -98,7 +94,7 @@ This error indicates that the TRTC SDK for Desktop Browser failed to establish a
 
 If `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"` is displayed, please check whether your TRTC application service is available.
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav), click the application you created, click **Account Info**, and you can view the service status in the account information tab.
-![](https://main.qcloudimg.com/raw/13c9b520ea333804cffb4e2c4273fced.png)
+![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
 
 
 ## Related Documents
