@@ -113,7 +113,7 @@ The release process and result will be returned through the `TXVideoPublishListe
 -(void) onPublishProgress:(NSInteger)uploadBytes totalBytes: (NSInteger)totalBytes;
 ```
 
-- `onPublishComplete` is used to return the release result, the `errCode` and `descMsg` fields of `TXPublishResult` indicate the error code and error message respectively, `videoURL` indicates the VOD address of the short video, `coverURL` indicates the cloud storage address of the video cover, and `videoId` indicates the cloud storage ID the video file, with which you can call VOD's [server APIs](https://intl.cloud.tencent.com/document/product/266/7788).
+- `onPublishComplete` is used to return the release result, the `errCode` and `descMsg` fields of `TXPublishResult` indicate the error code and error message respectively, `videoURL` indicates the VOD address of the short video, `coverURL` indicates the cloud storage address of the video cover, and `videoId` indicates the cloud storage ID the video file, with which you can call VOD's [server APIs](https://intl.cloud.tencent.com/document/product/266/34110).
 
 ``` C 
 @optional
