@@ -1,58 +1,57 @@
-## Feature Description
-- This API is used by the app admin to query the message records of a one-to-one chat based on a specified time range.
-- The one-to-one chat to query is specified by From_Account and to_Account in the request. The query result contains the messages sent between both sides. The specific sender and recipient of each message are specified by From_Account and to_Account in the message, respectively.
-- In most cases, if you exchange the values of From_Account and to_Account in a request, the query result will remain unchanged. However, to query a message sent through the [Sending a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) or [Batch Sending One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/34920) API, if you set SyncOtherMachine to 2, you must specify From_Account and to_Account correctly.
-  For example, you have called the [Sending a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34919) API to enable account A to send a message to account B and set SyncOtherMachine to 2. When calling this API to query the message records of the one-to-one chat, you must set From_Account to account A and to_Account to account B.
-- The query result contains recalled messages, which are indicated by the MsgFlagBits field.
-- To recall a message by calling the [Recalling One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/35015) RESTful API, you can first call this API to query the MsgKey of the message and then call the recall API to recall the message.
-- The time range of message records that can be queried depends on the roaming message storage period, which is seven days by default. You can modify the message roaming period in the IM console. Extending the message roaming period is a value-added service. For more information, see [Roaming Message Storage](https://intl.cloud.tencent.com/document/product/1047/33524).
-- For first-time queries, we recommend that you set MaxCnt to 20. In the response, the Complete field indicates whether all messages within the time range have been pulled.
+## Overview
+- This API is used by the app admin to query the history of a one-to-one chat based on a specified time range.
+- The one-to-one chat to be queried is specified by From_Account and To_Account in the request. The query result contains the messages sent between both sides. The specific sender and recipient of each message are specified by From_Account and To_Account, respectively.
+- In most cases, if you exchange the values of From_Account and To_Account in the request, the query result will remain unchanged. However, to query a message sent through the API for [sending a one-to-one message](https://intl.cloud.tencent.com/document/product/1047/34919) or [batch sending one-to-one messages](https://intl.cloud.tencent.com/document/product/1047/34920), if you set SyncOtherMachine to 2, you must specify From_Account and To_Account correctly.
+  For example, call the API for [sending a one-to-one message](https://intl.cloud.tencent.com/document/product/1047/34919) to enable account A to send a message to account B and set SyncOtherMachine to 2. When calling this API to query the message history of the one-to-one chat, you must set From_Account to account A and To_Account to account B.
+- The query result contains recalled messages indicated by the MsgFlagBits field.
+- If you want to recall a message by calling the RESTful API for [recalling one-to-one messages](https://intl.cloud.tencent.com/document/product/1047/35015), you can first call this API to query the MsgKey of the message and then call the recall API to recall the message.
+- The time range of message records that can be queried depends on the roaming message storage period, which is 7 days by default. You can modify the message roaming period in the IM console. Extending the message roaming period is a value-added service. For more information, see [Roaming Message Storage](https://intl.cloud.tencent.com/document/product/1047/33524).
+- If the total size of the messages within the requested time range exceeds the maximum size limit of the response packet (currently 13 KB), continued pulling is needed. You can check whether all the requested messages have been pulled based on the Complete field in the response.
 
-## Call Description
-### Example request URL
+## API Call Description
+### Sample request URL
 ```
 https://console.tim.qq.com/v4/openim/admin_getroammsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 
 ### Request parameters
 
-The following table only describes the parameters that are modified when this API is called. For more information on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
+The list below contains only the parameters commonly used when calling this API and their descriptions. For more parameters, see the [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| v4/openim/admin_getroammsg | The request API. |
-| sdkappid | The SDKAppID assigned by the IM console when an application is created. |
+| v4/openim/admin_getroammsg | The request API that is used. |
+| sdkappid | The SDKAppID assigned via the IM console when the application is created. |
 | identifier | The value must be the app admin account. For more information, see [App Admin](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | The signature generated by the app admin account. For more information on the operation, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295. |
 
 ### Maximum call frequency
 
-200 times/second
+200 calls per second
 
-### Example requests and responses
+### Sample requests and responses
 
-#### Returning all data through one request (Continued pulling is not required)
-For example, two messages were sent between user1 and user2 within the time range from 2020-03-20 10:00:00 to 2020-03-20 11:00:00 and we want to query the chat history in this time range.
+For example, user1 and user2 had a chat, and we want to query the chat history generated within the time range from 2020-03-20 10:00:00 to 2020-03-20 11:00:00.
 
-#### Example request
+#### Sample request
 ```
 {
     "From_Account":"user2",
     "To_Account":"user1",
-    "MaxCnt":2,
+    "MaxCnt":100,
     "MinTime":1584669600,
     "MaxTime":1584673200
 }
 ```
-#### Example response
+#### Sample response
 ```
 {
     "ActionStatus":"OK",
     "ErrorInfo":"",
     "ErrorCode": 0,
-    "Complete": 1,
-    "MsgCnt": 2,
+    "Complete": 0,
+    "MsgCnt": 12, //12 messages were returned for this pull.
     "LastMsgTime": 1584669680,
     "LastMsgKey": "549396494_2578554_1584669680",
     "MsgList": [
@@ -68,7 +67,7 @@ For example, two messages were sent between user1 and user2 within the time rang
                 {
                     "MsgType": "TIMTextElem",
                     "MsgContent": {
-                        "Text": "1"
+                        "Text": "msg 1"
                     }
                 }
             ]
@@ -85,71 +84,94 @@ For example, two messages were sent between user1 and user2 within the time rang
                 {
                     "MsgType": "TIMTextElem",
                     "MsgContent": {
-                        "Text": "2"
+                        "Text": "msg 2"
                     }
                 }
             ]
-        }
+        },
+        { ... } //To save space, the remaining 10 messages are not listed here.
     ]
 }
 ```
+In the response, `"Complete": 0` indicates that not all messages generated within the time range have been pulled. Therefore, continued pulling is required.
+**In the subsequent pulling request, the value of MaxTime must be changed to the value of the LastMsgTime field in the response, and the LastMsgKey field in the response must be specified**, as shown below:
 
-#### Return all data through multiple requests (continued pulling is required)
-For example, 100 messages were sent between user1 and user2 within the time range from 2020-03-20 10:00:00 to 2020-03-20 11:00:00 and we want to query the chat history in this time range.
-##### Example first request packet
+##### Sample continued pulling request<span id="example"></span>
 ```
 {
     "From_Account":"user2",
     "To_Account":"user1",
     "MaxCnt":100,
     "MinTime":1584669600,
-    "MaxTime":1584673200
+    "MaxTime":1584669680,
+    "LastMsgKey": "549396494_2578554_1584669680"
 }
 ```
-
-#### Example response
+#### Sample response
 ```
 {
     "ActionStatus":"OK",
     "ErrorInfo":"",
     "ErrorCode": 0,
-    "Complete": 0,
-    "MsgCnt": 17,
-    "LastMsgTime": 1584672269,
-    "LastMsgKey": "1259_93754093_1584672269",
-    "MsgList": [ ... ] //To indicate a continued pulling process, the result of MsgList is not listed.
+    "Complete": 1,
+    "MsgCnt": 5, //5 messages were returned for this pull.
+    "LastMsgTime": 1584669601,
+    "LastMsgKey": "1456_23287_1584669601",
+    "MsgList": [
+        {
+            "From_Account": "user1",
+            "To_Account": "user2",
+            "MsgSeq": 1456,
+            "MsgRandom": 23287,
+            "MsgTimeStamp": 1584669601,
+            "MsgFlagBits": 0,
+            "MsgKey": "1456_23287_1584669601",
+            "MsgBody": [
+                {
+                    "MsgType": "TIMTextElem",
+                    "MsgContent": {
+                        "Text": "msg 13"
+                    }
+                }
+            ]
+        },
+        {
+            "From_Account": "user2",
+            "To_Account": "user1",
+            "MsgSeq": 9806,
+            "MsgRandom": 14,
+            "MsgTimeStamp": 1584669602,
+            "MsgFlagBits": 0,
+            "MsgKey": "9806_14_1584669602",
+            "MsgBody": [
+                {
+                    "MsgType": "TIMTextElem",
+                    "MsgContent": {
+                        "Text": "msg 14"
+                    }
+                }
+            ]
+        },
+        { ... } //To save space, the remaining 3 messages are not listed here.
+    ]
 }
 ```
-
-In the response, `"Complete": 0` indicates that not all messages generated within the time range have been pulled, and continued pulling is required.
-**In the continued pulling request, the value of MaxTime must be changed to the value of the LastMsgTime field in the response, and the LastMsgKey field in the response must be specified**, as shown below:
-
-<span id="example"></span>
-##### Continued pulling request
-```
-{
-    "From_Account":"user2",
-    "To_Account":"user1",
-    "MaxCnt":100,
-    "MinTime":1584669600,
-    "MaxTime":1584672269,
-    "LastMsgKey": "1259_93754093_1584672269"
-}
-```
+In the response, `"Complete": 1` indicates that all messages generated within the time range have been pulled.
+If the value of Complete in the response is 0, you need to continue pulling messages until the value of Complete becomes 1.
 
 #### Request packet fields
 
-| Field | Type | Property | Description |
+| Field | Type | Required | Description |
 |---------|---------|----|---------|
-| From_Account | String | Required | The UserID of either party in the chat. If the message sender account has been specified, this parameter indicates the message sender. |
-| To_Account | String | Required | The UserID of either party in the chat. |
+| From_Account | String | Required | The UserID of either party in the conversation. If the message sender account has been specified, this parameter indicates the message sender. |
+| To_Account | String | Required | The UserID of either party in the conversation. |
 | MaxCnt | Integer | Required | The number of messages that you want to query. |
-| MinTime | Integer | Required | The minimum time range of the requested messages. |
-| MaxTime | Integer | Required | The maximum time range of the requested messages. |
-| LastMsgKey | String | Optional | The MsgKey of the last message that was pulled previously. This field is required when continued pulling is required. For more information, see the preceding [Example](#example). |
+| MinTime | Integer | Required | The minimum value of the time range of the requested messages. |
+| MaxTime | Integer | Required | The maximum value of the time range of the requested messages. |
+| LastMsgKey | String | Optional | The MsgKey of the last message that was pulled previously. This field is required when you enable continued pulling. For more information, see the preceding [Example](#example). |
 
-### Example response packet body
-- Normal response
+### Sample response packets
+- Response to a successful recall
 ```
 {
     "ActionStatus":"OK",
@@ -181,7 +203,7 @@ In the response, `"Complete": 0` indicates that not all messages generated withi
 }
 ```
 
-- Exceptional response
+- Abnormal response
 ```
 {
     "ActionStatus": "FAIL", 
@@ -192,39 +214,39 @@ In the response, `"Complete": 0` indicates that not all messages generated withi
 
 ### Response packet fields
 
-| Field | Type| Description |
+| Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode| Integer | The error code. 0: succeeded. Other values: failed. |
-| ErrorInfo | String | The error information. |
-| Complete | Integer | Indicates whether all messages have been pulled. 0: no, and continued pulling is required. 1: yes. |
+| ActionStatus | String | The result the request. `OK` means the request was successful. `FAIL` means the request failed. |
+| ErrorCode| Integer | Error code. `0` means the request was successful. Any non-zero value means the request failed. |
+| ErrorInfo | String | Detailed information on the error. |
+| Complete | Integer | Indicates whether all messages have been pulled. 0: no, continued pulling is required. 1: yes. |
 | MsgCnt | Integer | The number of messages that were pulled this time. |
 | LastMsgTime | Integer | The time when the last message was pulled this time. |
-| LastMsgKey | Integer | The identifier of the last message that was pulled this time. |
+| LastMsgKey | String | The identifier of the last message that was pulled this time. |
 | MsgList | Array | The list of returned messages. |
 | MsgFlagBits | Integer | The property of the message. 0: normal message. 8: recalled message. |
-| MsgBody | Object | The message body. For more information on the format, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). A message can contain multiple message elements, and MsgBody is of the Array type. |
-| MsgKey | String | The message identifier. You can use this parameter in the [Recalling One-to-One Messages](https://intl.cloud.tencent.com/document/product/1047/35015) RESTful API. |
+| MsgBody | Object | The body of the message. For more information on the format, see [Message Format Description](https://intl.cloud.tencent.com/document/product/1047/33527). Note: a message can contain multiple message elements, in which case the value of MsgBody is of the Array type. |
+| MsgKey | String | The identifier of the message. You can use this parameter when [Recalling one-to-one messages by using a RESTful API](https://intl.cloud.tencent.com/document/product/1047/35015). |
 
 ## Error Codes
 
-Unless a network error (such as error 502) occurs, the HTTP return code for this API is always 200. ErrorCode and ErrorInfo in the response packet represent the actual error code and error information.
-For public error codes 60000 to 79999, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The following table describes the error codes specific to this API.
+Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response fields such as `ResultCode`, `ResultInfo`.
+For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+The list below contains only error codes specific to this API:
 
 | Error Code | Description |
 | ------------- | ------------------------------------------------------------ |
-| 90001 | Failed to parse the JSON request packet. Make sure that the request packet meets JSON specifications. |
-| 90003 | The JSON request packet body does not contain the To_Account field or the To_Account field is not a String. |
-| 90008 | The JSON request packet body does not contain the From_Account field or the account specified by the From_Account field does not exist. |
-| 90009 | The request requires the app admin's permissions. |
-| 91000 | An internal service error occurred. Please try again. |
+| 90001 | Failed to parse the JSON request packet. Make sure the format of the request is valid. |
+| 90003 | The To_Account field is missing in the JSON request packet or To_Account is not a string. |
+| 90008 | The JSON request packet does not contain the From_Account field or the account specified by the From_Account field does not exist. |
+| 90009 | The request requires the app admin’s permissions. |
+| 91000 | An internal service error occurs. Please try again. |
 
-## Commissioning Tool
+## API Debugging Tool
 
-Use the [RESTful API online commissioning tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/multiaccount_import) to commission this API.
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/admin_getroammsg).
 
 ## References
-- Sending a One-to-one Chat Message ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
-- Batch Sending One-to-one Chat Messages ([v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920))
-- Recalling One-to-one Chat Messages ([v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015))
+- Sending a one-to-one message ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
+- Batch sending one-to-one messages ([v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920))
+- Recalling one-to-one messages ([v4/openim/admin_msgwithdraw](https://intl.cloud.tencent.com/document/product/1047/35015))
