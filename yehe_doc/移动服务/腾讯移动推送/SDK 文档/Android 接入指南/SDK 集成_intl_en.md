@@ -2,7 +2,7 @@
 
 The SDK for Android is a set of APIs provided by TPNS Service for clients to implement message push. This document provides two integration methods, AndroidStudio Gradle, which is automatic, and Android Studio, which is manual.
 
->!If you are migrating from the [XG Platform](https://xg.qq.com) to TPNS:
+
 
 ## SDK Integration (Two Methods)
 
