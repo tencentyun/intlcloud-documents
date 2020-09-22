@@ -41,7 +41,7 @@ There are two buckets under root account A (APPID: `1250000000`): `examplebucket
     ]
 }
 ```
-Specifically, "1250000000" in `uid/1250000000` is the APPID of root account A, and `examplebucket1-1250000000` is the bucket name to be authorized. The `examplebucket1-1250000000/*` bucket resource can be replaced with `*`, meaning that all buckets under root account A that root account B are authorized to manipulate will be authorized to sub-account B0.
+Specifically, "1250000000" in `uid/1250000000` is the APPID of root account A, and `examplebucket1-1250000000` is the bucket name to be authorized. The `examplebucket1-1250000000/*`, meaning that all buckets under root account A that root account B are authorized to manipulate will be authorized to sub-account B0.
 ![](https://main.qcloudimg.com/raw/f53be7ca4360edd0547e440868506c8e.png)
 
 4. Click **Done**.

@@ -7,6 +7,7 @@
 ## 录制存储
 
 直播录制将文件存放于点播平台，您如需使用直播录制服务，需首先申请开通 [云点播服务](https://intl.cloud.tencent.com/product/vod)。
+>? 若需了解生成的录制文件命名规则，请参见 [录制模板参数-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)。
 
 ## 录制格式
 
@@ -63,7 +64,7 @@
 | &#10003;   | 空         | 2      |
 | 空         | 空         | 3      |
 
-其中：【空】为通配，【√】为精确匹配，【0】为最高优先级。一旦匹配到高优先级模板则停止匹配且返回此优化级模板。
+其中：【空】为通配，【&#10003;】为精确匹配，【0】为最高优先级。一旦匹配到高优先级模板则停止匹配且返回此优化级模板。
 
 ## 同一推流域名下部分流不开启录制
 您可能已经为某个推流域名配置了录制，但是此域名下存在个别推流因业务原因不需要录制。可以这样操作：
@@ -94,7 +95,7 @@
 - 最简单的情况，只需填写指定的 StreamName、DomainName、AppName 和 EndTime 参数。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 FLV，视频录制，分片间隔30分钟，永久存储。
 
-**输入示例**
+**输入示例：**
 
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
@@ -110,7 +111,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
 	1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
 
-**输入示例**
+**输入示例：**
 
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
@@ -122,7 +123,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &<公共请求参数>
 ```
 
-**输出示例**
+**输出示例：**
 
 ```
 {
@@ -134,7 +135,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 ```
 	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
 
-**输入示例**
+**输入示例：**
 
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecord
@@ -210,7 +211,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 ### 云点播控制台
 
-登录云点播控制台，在 [媒资管理页](https://console.cloud.tencent.com/vod/media) 可以浏览已录制所有文件。
+登录 [云点播控制台](https://console.cloud.tencent.com/vod/media)，在**非管理员**页面上选择【媒资管理】>【视频管理】，即可浏览录制生成的所有文件。
 
 ![img](https://main.qcloudimg.com/raw/4812fce355626d4befffa2f57bbb3cbb.png)
 

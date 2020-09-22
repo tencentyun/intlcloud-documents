@@ -15,12 +15,12 @@
 
 ## 敏感操作
 敏感操作模块展示最近3天（最高50条）当前主账号下所有敏感操作的概览信息，展示信息包括：账号 ID、操作者 ID、详细敏感操作和操作时间。用户还可以通过单击【查看所有记录】，进入云审计控制台，查看更详细的敏感操作记录。
-![](https://main.qcloudimg.com/raw/a0270ed9f12a9c4851e9f744bd8c7ec0.png)
+![](https://main.qcloudimg.com/raw/e9249aaf9989ef5d1fbe5f95bd69dc5f.jpg)
 
 
 ## 上次登录信息
 上次登录信息模块展示当前账号的上次登录时间，上次登录 IP、身份安全状态、管理 API 密钥、管理 MFA 设置快捷操作入口。
-![](https://main.qcloudimg.com/raw/ae9ebea58e142f2ba8e6cae2c4464c77.png)
+![](https://main.qcloudimg.com/raw/a0270ed9f12a9c4851e9f744bd8c7ec0.png)
 ## 安全分析报告
 安全分析报告模块提供了【下载报告】按钮，您可以单击该按钮获取当前主子账号的安全状态，以及基于 [最佳实践](https://intl.cloud.tencent.com/document/product/598/10592) 我们发现的风险点以及推荐方案。单次报告生成有效缓存期为 4 小时。
 ![](https://main.qcloudimg.com/raw/5a7b93966dbfb9ed458925b151a2bfcc.png)

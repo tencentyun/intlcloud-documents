@@ -113,17 +113,9 @@ COS offers the following features:
       <td>The COS console features a Dashboard monitoring window where you can see the amount of storage data for different storage classes over different periods as well as associated trends. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/436/31634">Querying Monitoring Data</a> and <a href="https://intl.cloud.tencent.com/document/product/436/36542">Dashboard</a></td>
    </tr>
    <tr>
-      <td rowspan=5>Data Management</td>
+      <td rowspan=3>Data Management</td>
       <td nowrap="nowrap">Image Processing</td>
       <td>COS has integrated Cloud Infinite (CI), an all-in-one professional media solution, to provide image processing, content moderation, detection, and many more. You can use the COS upload and process APIs to process your media data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35280">Image Processing Overview</a></td>
-   </tr>
-   <tr>
-      <td>Document Preview</td>
-      <td>A COS feature provided based on Tencent Cloud CI. Once enabled, you can preview any written documents in your bucket online without downloading them</td>
-   </tr>
-   <tr>
-      <td>Content Moderation</td>
-      <td>This COS feature is provided based on Tencent Cloud CI. Once enabled, newly uploaded images will be automatically detected for content violations, with any non-compliant content blocked automatically (allowing no public read access).</td>
    </tr>
    <tr>
       <td>File Decompression</td>
