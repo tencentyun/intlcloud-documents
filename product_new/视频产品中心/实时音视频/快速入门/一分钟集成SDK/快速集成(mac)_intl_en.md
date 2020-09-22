@@ -78,7 +78,13 @@ To use the audio/video features of the SDK, you need to grant the mic and camera
 - **Privacy - Microphone Usage Description**; enter the prompt for mic usage purpose.
 - **Privacy - Camera Usage Description**; enter the prompt for camera usage purpose.
 
+![](https://main.qcloudimg.com/raw/ce02c335f1a6413fb37adb0ed20a9603.png)
 
+If **App Sandbox** or **Hardened Runtime** is enabled, you need to select `Network`, `Camera` and `Audio Input` options.
+- App Sandbox is configured as shown below:
+![](https://main.qcloudimg.com/raw/b77d2ab814e6e14e8bed17efdcbee1a6.png)
+- Hardened Runtime is configured as shown below:
+![](https://main.qcloudimg.com/raw/2b569e1c95bb4c97b7045112d6e3ce9c.png)
 
 ## Importing the TRTC SDK
 There are two ways to use the SDK in your project code:
