@@ -62,7 +62,6 @@
 
 #### 背景
 
-![](https://main.qcloudimg.com/raw/98a0a1c95a0874cb8ebdf39f321753d5.png)
 用户（例中 appid 为`125xxx655`）登录云点播控制台，在 [【域名管理】](https://console.cloud.tencent.com/vod/distribute-play/domain) 添加正式域名和测试域名，并将正式域名设置为默认域名。初始状态下的域名默认没有开启 KEY 防盗链。
 
 #### 1. 测试域名开启防盗链
