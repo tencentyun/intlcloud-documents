@@ -14,12 +14,14 @@
 
 ## 操作步骤
 
-### 步骤1：创建新的应用<span id="step1"></span>
+<span id="step1"></span>
+### 步骤1：创建新的应用
 
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2. 进入[【应用管理】](https://console.cloud.tencent.com/trtc/app)，单击【创建应用】，输入应用名称，例如 `testtrtc`，单击【确定】。
 
-### 步骤2：获取 SDKAppID 和密钥<span id="step2"></span>
+<span id="step2"></span>
+### 步骤2：获取 SDKAppID 和密钥
 
 1. 在应用列表里，找到已创建的应用，单击右侧的【应用信息】进入详情页，即可复制保存 `SDKAppID` 信息。
 ![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
@@ -28,7 +30,8 @@
 
 >! 请妥善保管密钥信息，谨防泄露。
 
-### 步骤3：下载并配置 Demo 源码<span id="step3"></span>
+<span id="step3"></span>
+### 步骤3：下载并配置 Demo 源码
 
 1. 下载腾讯云 Web 直播互动组件 Demo 工程，[下载地址](https://github.com/tencentyun/TWebLive)。
 2. 打开 `TWebLive/dist/debug/GenerateTestUserSig.js` 文件，并设置相关参数：
@@ -42,7 +45,8 @@
 >- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-### 步骤4：运行 Demo<span id="step4"></span>
+<span id="step4"></span>
+### 步骤4：运行 Demo
 
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
 
