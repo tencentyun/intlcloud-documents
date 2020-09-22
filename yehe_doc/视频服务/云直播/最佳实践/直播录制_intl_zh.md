@@ -109,7 +109,10 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 ```
 - 您还可以指定具体录制格式、录制类型以及存储参数等。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
-	1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
+
+
+1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
+
 
 **输入示例：**
 
@@ -133,7 +136,9 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
   }
 }
 ```
-	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
+
+2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
+
 
 **输入示例：**
 
@@ -213,7 +218,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/media)，在**非管理员**页面上选择【媒资管理】>【视频管理】，即可浏览录制生成的所有文件。
 
-![img](https://main.qcloudimg.com/raw/4812fce355626d4befffa2f57bbb3cbb.png)
+![img](https://main.qcloudimg.com/raw/66bde9882dab60099bed8013a3d8c521.png)
 
 ### 录制事件通知
 
