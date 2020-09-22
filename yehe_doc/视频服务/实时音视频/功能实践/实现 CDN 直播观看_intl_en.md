@@ -33,7 +33,7 @@ You have activated Tencent Cloud [LVB](https://console.cloud.tencent.com/live). 
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Select **Application Management** on the left sidebar and click **Feature Configuration** on the row of the target application.
-3. In **Relayed Push Configuration**, click <img src="https://main.qcloudimg.com/raw/8f08eba741586e96dbe3b30c6804e9b6.png"  style="margin:0;"> on the right of **Auto-relay Push**. In the **Enable Auto-relay Push** dialog box that pops up, click **Confirm** to enable the feature.
+3. In **Relayed Push Configuration**, click ![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png) on the right of **Auto-relay Push**, and click **OK** in the pop-up window.
 
 <span id="step2"></span>
 ### Step 2. Configure the playback domain name and CNAME record
