@@ -1,5 +1,5 @@
 ## Operation Scenarios
-In the Tencent Cloud API Gateway Console, you can view the logs of requests received by API Gateway.
+This document describes how to view logs of requests received by API Gateway in the Tencent Cloud API Gateway Console.
 
 
 ## Directions
