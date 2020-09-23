@@ -1,8 +1,8 @@
 This document describes how to configure a Cocos2d project for the GME APIs for Cocos2d.
-
-
-
+## Cocos Creator Access
+If you use Cocos Creator access, see Getting Started with Tencent Cloud GME
 ## SDK Preparations
+
 1. Download the applicable demo and SDK. For more information, please see [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 2. Decompress the obtained SDK resources.
 3. The folder contains:
