@@ -32,7 +32,6 @@ dependencies {
 > api 'com.tencent.imsdk:imsdk:4.9.1'
 >}
 >```
-```
 
  
 - **Step 2: Specify the architecture used by the app**
@@ -105,6 +104,4 @@ In the `proguard-rules.pro` file, add the IM SDK classes that you do not want Pr
 
 ```
 -keep class com.tencent.imsdk.** { *; }
-```
-
 ```

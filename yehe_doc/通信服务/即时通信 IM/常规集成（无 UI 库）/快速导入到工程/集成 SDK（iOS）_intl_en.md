@@ -56,12 +56,11 @@ pod update
 
 After the pod command is executed, a project file integrated with the SDK and suffixed .xcworkspace appears. Double-click the project file to open it.
 >? If the pod search fails, we recommend that you update the local repo cache of the pod by running the following commands:
-```
+>```
 > pod setup
 > pod repo update
 > rm ~/Library/Caches/CocoaPods/search_index.json
 >```
-```
 
 ### Manual integration
 #### 1. Downloading the SDK
@@ -137,8 +136,4 @@ In files that require the SDK API, reference the corresponding header file.
 - If you are using the lite edition of SDK, reference the header file as follows:
 ```
 #import <ImSDK_Smart/ImSDK_Smart.h>
-```
-
-```
-
 ```
