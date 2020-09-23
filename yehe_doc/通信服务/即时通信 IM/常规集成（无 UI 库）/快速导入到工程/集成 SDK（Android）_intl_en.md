@@ -105,5 +105,3 @@ In the `proguard-rules.pro` file, add the IM SDK classes that you do not want Pr
 ```
 -keep class com.tencent.imsdk.** { *; }
 ```
-
-```
