@@ -19,12 +19,12 @@
 ### 控制台操作指引
 
 1.  登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
-2.  参考 控制台创建 Service 步骤，进入 “新建Service” 页面，根据实际需求设置 Service 参数。
+2.  参考 [控制台创建 Service](https://intl.cloud.tencent.com/document/product/457/36833) 步骤，进入 “新建Service” 页面，根据实际需求设置 Service 参数。
 其中，部分关键参数信息需进行如下设置，如下图所示：
 ![](https://main.qcloudimg.com/raw/1e52f535cd9eb5712ddf6c4760952e70.png)
 	- **服务访问方式**：选择为【提供公网访问】或【VPC内网访问】。
 	- **网络模式**：勾选【采用负载均衡直连Pod模式】。
-	- **Workload绑定**：选择【引用Worklocad】，并在弹出窗口中选择 VPC-CNI 模式的后端工作负载。
+	- **Workload绑定**：选择【引用Workload】，并在弹出窗口中选择 VPC-CNI 模式的后端工作负载。
 3. 单击【创建服务】，完成创建。
 
 ### YAML 操作指引
@@ -51,7 +51,7 @@ spec:
 
 
 ####  annotation 扩展
-负载均衡 CLB 的相关配置，建议您参考 TKEServiceConfig 介绍 进行设置。其中相关 annotation 配置如下：
+负载均衡 CLB 的相关配置，建议您参考 [TKEServiceConfig 介绍](https://intl.cloud.tencent.com/document/product/457/36834) 进行设置。其中相关 annotation 配置如下：
 ```
 service.cloud.tencent.com/tke-service-config: [tke-service-configName]
 ```

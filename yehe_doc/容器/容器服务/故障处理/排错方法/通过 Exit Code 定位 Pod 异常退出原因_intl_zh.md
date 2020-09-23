@@ -52,7 +52,7 @@ code % 256
 * **137**：表示程序被 `SIGKILL` 中断信号杀死。异常原因可能为：
  * 通常是由于 Pod 中容器内存达到了其资源限制（`resources.limits`）。例如，内存溢出（OOM）。由于资源限制是通过 Linux 的 cgroup 实现的，当某个容器内存达到资源限制， cgroup 就会将其强制停止（类似于 `kill -9`），此时通过 `describe pod` 可以看到 Reason 是 `OOMKilled`。
  * 宿主机本身资源不够用（OOM），则内核会选择停止一些进程来释放内存。
->无论是 cgroup 限制，还是因为节点机器本身资源不够导致的进程停止，都可以从系统日志中找到记录。方法如下：
+>?无论是 cgroup 限制，还是因为节点机器本身资源不够导致的进程停止，都可以从系统日志中找到记录。方法如下：
 >Ubuntu 系统日志存储在目录 `/var/log/syslog`，CentOS 系统日志存储在目录 `/var/log/messages` 中，两者系统日志均可通过 `journalctl -k` 命令进行查看。
 >
  * livenessProbe（存活检查）失败，使得 kubelet 停止 Pod。
@@ -235,5 +235,64 @@ Linux 程序被外界中断时会发送中断信号，程序退出时的状态�
 
 ## 状态码参考
 
-更多状态码含义可参考 [Appendix E. Exit Codes With Special Meanings](http://tldp.org/LDP/abs/html/exitcodes.html)。
-
+更多状态码含义可参考以下表格：
+<table>
+    <tr>
+        <th>状态码</th>
+        <th>含义</th>
+        <th>示例</th>
+        <th>描述</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Catchall for general errors</td>
+<td>let "var1 = 1/0"</td>
+<td>Miscellaneous errors, such as <span>"divide by zero"</span> and other impermissible operations</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Misuse of shell builtins (according to Bash documentation)</td>
+<td>empty_function() {}</td>
+<td><a>Missing keyword</a> or command</td>
+</tr>
+<tr>
+ <td>126</td>
+<td>Command invoked cannot execute</td>
+<td>/dev/null</td>
+<td>Permission problem or command is not an executable</td>
+</tr>
+        <tr>
+            <td>127</td>
+            <td><span>"command not found"</span></td>
+            <td>illegal_command</td>
+            <td>Possible problem with <tt>$PATH</tt> or a typo</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>Invalid argument to <a> exit</a></td>
+            <td>exit 3.14159</td>
+            <td><strong>exit</strong> takes only integer args in therange<span>0 - 255</span> (seefirst footnote)</td>
+        </tr>
+        <tr>
+            <td>128+n</td>
+            <td>Fatal error signal <span>"n"</span></td>
+            <td><em>kill -9</em> <tt> $PPID</tt> of script</td>
+            <td><tt><strong>$?</strong></tt> returns<span>137</span> (128 + 9)</td>
+        </tr>
+        <tr>
+            <td>130</td>
+            <td>Script terminated by Control-C</td>
+            <td><em>Ctl-C</em></td>
+            <td>Control-C is fatal error signal <span> 2</span>, (130 = 128 + 2, see above)</td>
+        </tr>
+        <tr>
+            <td>255*</td>
+            <td>Exit status out of range</td>
+            <td>exit <span>-1</span></td>
+            <td><strong>exit</strong> takes only integer args in the
+                range<span>0 - 255</span></td>
+        </tr>
+    </tbody>
+</table>
