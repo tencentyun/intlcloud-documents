@@ -32,7 +32,6 @@ dependencies {
 > api 'com.tencent.imsdk:imsdk:4.9.1'
 >}
 >```
-```
 
  
 - **Step 2: Specify the architecture used by the app**
