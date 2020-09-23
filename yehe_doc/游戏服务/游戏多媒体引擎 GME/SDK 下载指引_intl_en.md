@@ -22,7 +22,7 @@ The v2.7.1 beta is updated as follows:
 </tr>
 </thead>
 <tbody><tr>
-<td>SDK 2.7.1 is released</td>
+<td> SDK 2.7.1 Beta is released</td>
 <td ><ul style="margin:0;"><li >The room management feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> .</li>
 <li>The voice changing feature is now available for voice messages.</li>
 <li >The pitch of accompaniment can be adjusted.</li>
