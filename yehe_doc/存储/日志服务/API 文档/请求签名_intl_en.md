@@ -4,7 +4,7 @@
 1. Get `SecretId` and `SecretKey`.
    They can be obtained on the [TencentCloud API Key](https://console.cloud.tencent.com/capi) page in the console.
 2. Determine the programming language:
-   Supported languages include without limitation Java, PHP, C#, C++, Node.js, and Python. You should determine the corresponding HMAC-SHA1 function according to the actual language.
+   Determine the HMAC-SHA1 function to use based on your development language. CLS provides a [demo for signature calculation](http://signature-1254139626.file.myqcloud.com/signature.zip) for C#, C++, Go, Java, Node.js, PHP, and Python languages.
 
 An HTTP signature request initiated to CLS through an API is transmitted by using the standard HTTP Authorization header as shown in the following example:
 

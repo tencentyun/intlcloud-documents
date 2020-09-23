@@ -193,5 +193,11 @@ You can view the call quality of the corresponding `RoomID` and `UserID` on the 
 - TRTC dynamically adjusts the bitrate and resolution based on the network conditions according to the on-cloud QoS bandwidth limit policy. If the network is poor, the bitrate tends to be reduced, which will cause decreased definition.
 - Check whether the `VideoCall` or `Live` mode is used during room entry. As the `VideoCall` mode is dedicated to call scenarios and features low-latency and smoothness, it tends to reduce the image quality on a weak network in order to ensure the smoothness. Therefore, we recommend you use the `Live` mode in scenarios with a high requirement for image quality.
 
+<span id="que36"></span>
+### How do I give the room number to the co-anchor I invite？
+You can add roomid in the custom message for parsing. For more information on how to do this, see [Creating a custom message](https://intl.cloud.tencent.com/document/product/1047/34322#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF) and [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgsendnewmsg).
 
+<span id="que37"></span>
+###  Can I wait for at least two members join the room before the recording?
+Yes. If you want to obtain the mixed audio data, please [enable On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E5.90.AF.E5.8A.A8.E6.B7.B7.E6.B5.81), specify the output stream ID, and call the [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) API.
 

@@ -1,9 +1,5 @@
 本文介绍如何快速跑通腾讯云 Web 直播互动组件的体验 Demo。
 
-## 效果展示
-
-![](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/doc-assets/demo-official-website.gif)
-
 ## 环境要求
 
 - 请使用最新版本的 Chrome 浏览器。
@@ -18,35 +14,39 @@
 
 ## 操作步骤
 
-### 步骤1：创建新的应用<span id="step1"></span>
+<span id="step1"></span>
+### 步骤1：创建新的应用
 
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2. 进入[【应用管理】](https://console.cloud.tencent.com/trtc/app)，单击【创建应用】，输入应用名称，例如 `testtrtc`，单击【确定】。
 
-### 步骤2：获取 SDKAppID 和密钥<span id="step2"></span>
+<span id="step2"></span>
+### 步骤2：获取 SDKAppID 和密钥
 
 1. 在应用列表里，找到已创建的应用，单击右侧的【应用信息】进入详情页，即可复制保存 `SDKAppID` 信息。
-![](https://main.qcloudimg.com/raw/64bad9b2d6a0589f2c97b7c021af27ed.png)
+![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
 2. 单击【快速上手】页签，查看【第二步 获取签发UserSig的密钥】标签，单击【复制密钥】。
-![](https://main.qcloudimg.com/raw/648d534f5de68488c0d6d83567bcc8e1.png)
+![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 
 >! 请妥善保管密钥信息，谨防泄露。
 
-### 步骤3：下载并配置 Demo 源码<span id="step3"></span>
+<span id="step3"></span>
+### 步骤3：下载并配置 Demo 源码
 
 1. 下载腾讯云 Web 直播互动组件 Demo 工程，[下载地址](https://github.com/tencentyun/TWebLive)。
 2. 打开 `TWebLive/dist/debug/GenerateTestUserSig.js` 文件，并设置相关参数：
  - SDKAPPID：请设置为 [步骤2](#step2) 中获取的实际应用 `SDKAppID`。
  - SECRETKEY：请设置为 [步骤2](#step2) 中获取的实际密钥信息。
 
-![](https://main.qcloudimg.com/raw/2bae16dd7363d1deffcfc82f1bd848f5.png)
+
 
 
 >!
 >- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-### 步骤4：运行 Demo<span id="step4"></span>
+<span id="step4"></span>
+### 步骤4：运行 Demo
 
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
 
@@ -54,11 +54,8 @@
 >- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
 - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
 
-**Demo 运行界面如图所示：**
-![](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/doc-assets/demo-pusher.png)
-
 TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】。
-![](https://main.qcloudimg.com/raw/1a2c1e7036720b11f921f8ee1829762a.png)
+
 
 ## 支持平台
 
@@ -98,7 +95,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 
 如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`，请确认您的实时音视频应用的服务状态是否为可用状态。
 登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板即可确认服务状态。
-![](https://main.qcloudimg.com/raw/13c9b520ea333804cffb4e2c4273fced.png)
+![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
 
 
 ## 相关文档

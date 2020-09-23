@@ -4,10 +4,13 @@ You can go to the [Retrieve Account page](https://intl.cloud.tencent.com/service
 
 
 ### How do I change the mobile phone bound?
-- Method 1: Click the user name at the top right of the Tencent Cloud website to go to the account information. Go to [Security Settings](https://console.cloud.tencent.com/developer/security) and click **Modify Bound Mobile Phone**. Send a verification code. You can change the mobile phone number after verification.
-- Method 2: Submit the below documentation online to request for modification. A customer service agent will modify your security information after review. The required documents are as follows:
-  - Personal real-name verification: Provide your name as shown on your ID, as well as your passport number or driver license.
-  - Enterprise real-name verification: Provide the name of the company, the company's business license number, and a photograph or color scan of the company’s business license.
+Method 1: click the username at the top right of the Tencent Cloud console to go to the account center. Select **[Security Settings]((https://console.cloud.tencent.com/developer/security))** from the left sidebar and click the edit icon to change your recovery mobile number. You will need to go through identity verification first.
+Method 2: submit the below documentation online to request for modification:
+-1) Users who have completed identity verification:
+Individual: photos of the applicant holding identity card or driver's license with the front and back sides shown, respectively.
+Enterprise: photos of the business license and identity card of the legal representative with the front and back sides shown, respectively
+-2) Users who were unable to complete identity verification:
+Provide your recovery phone number and email address in the ticket. We will review the information and help you make the change.
 
 
 ### What are the security requirements for email login?

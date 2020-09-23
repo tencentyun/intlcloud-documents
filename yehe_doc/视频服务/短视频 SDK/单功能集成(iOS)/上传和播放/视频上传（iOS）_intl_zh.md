@@ -113,7 +113,7 @@ _ugcPublish.delegate = self;                                 // 设置 TXVideoPu
 -(void) onPublishProgress:(NSInteger)uploadBytes totalBytes: (NSInteger)totalBytes;
 ```
 
-- onPublishComplete 用于反馈发布结果，TXPublishResult 的字段 errCode 和 descMsg 分别表示错误码和错误描述信息，videoURL 表示短视频的点播地址，coverURL 表示视频封面的云存储地址，videoId 表示视频文件云存储 Id，您可以通过这个 Id 调用点播 [服务端API接口](https://intl.cloud.tencent.com/document/product/266/7788)。
+- onPublishComplete 用于反馈发布结果，TXPublishResult 的字段 errCode 和 descMsg 分别表示错误码和错误描述信息，videoURL 表示短视频的点播地址，coverURL 表示视频封面的云存储地址，videoId 表示视频文件云存储 Id，您可以通过这个 Id 调用点播 [服务端API接口](https://intl.cloud.tencent.com/document/product/266/34110)。
 
 ``` C 
 @optional

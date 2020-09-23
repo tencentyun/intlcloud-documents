@@ -131,7 +131,7 @@ You can run `df -m` to check the disk usage and then delete unnecessary files to
 You can run `df -i` to view and confirm relevant processes. 
 - There is a hardware failure
 
-If none of the above works, please call the hot line 95716 or submit a ticket. 
+If none of the above works, please call the hot line or submit a ticket. 
 
 ## 15. How do I view Linux system logs?
 

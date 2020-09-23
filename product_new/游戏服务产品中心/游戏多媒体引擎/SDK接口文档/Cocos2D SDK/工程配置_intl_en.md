@@ -1,8 +1,8 @@
 This document describes how to configure a Cocos2d project for the GME APIs for Cocos2d.
-
-
-
+## Cocos Creator Access
+If you use Cocos Creator access, see Getting Started with Tencent Cloud GME
 ## SDK Preparations
+
 1. Download the applicable demo and SDK. For more information, please see [Download Guide](https://intl.cloud.tencent.com/document/product/607/18521).
 2. Decompress the obtained SDK resources.
 3. The folder contains:
@@ -34,6 +34,7 @@ public class AppActivity extends Cocos2dxActivity {
     }
 }
 ```
+
 3. Initialize in the `oncreate` function exactly in the following sequence:
 ```
 protected void onCreate(Bundle savedInstanceState) {
@@ -50,17 +51,19 @@ protected void onCreate(Bundle savedInstanceState) {
         });
 }
 ```
+
 4. Configure your project for compilation options by referring to the `Android.mk` in the GME Demo for Cocos.
- - Path: GMECocos/GMECocosDemo/proj.android-studio/app/jni/Android.mk
- - Path to the `preBuild.mk` file: /Users/username/Downloads/GMECocos/GMESDK/android/bin/preBuild.mk
+
+ - Path: GMECocos/GMECocosDemo/proj.android-studio/app/jni/Android.mk.
+ - Path to the `preBuild.mk` file: /Users/username/Downloads/GMECocos/GMESDK/android/bin/preBuild.mk.
 
 
 ## Exporting for Different Platforms
 
 Project configuration is required before you can export executables from the Cocos2d engine for different platforms:
 
-| OS | Project Configuration           
-| ------------- |:-------------:|
+| OS | Project Configuration  |
+| ------------- |:-------------|
 | Android |[Android Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|
 | iOS     	|[iOS Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|
 | macOS     	|[macOS Project Configuration](https://intl.cloud.tencent.com/document/product/607/10783)|

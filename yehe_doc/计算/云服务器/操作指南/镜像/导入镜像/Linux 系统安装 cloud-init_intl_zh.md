@@ -226,7 +226,8 @@ cd greeninit
 sh install.sh 
 ```
 
-### 解决无法安装 Python-pip 问题<span id="updateSoftware"></span>
+<span id="updateSoftware"></span>
+### 解决无法安装 Python-pip 问题
 若在安装 Python-pip 出现无此安装包或无法安装的错误，可对应实际使用的操作系统，参考以下步骤进行解决：
 - CentOS 6/7系列：
   1. 执行以下命令，设置 EPEL 存储库。
@@ -244,7 +245,7 @@ apt-get update -y
 ```
   2. 执行以下命令，安装 Python-pip。
 ```
-yum install python-pip -y
+apt-get install python-pip -y
 ```
 
 

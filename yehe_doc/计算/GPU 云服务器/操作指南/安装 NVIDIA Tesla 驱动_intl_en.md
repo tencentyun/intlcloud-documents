@@ -3,7 +3,7 @@ The GPU instance must be installed with the necessary infrastructure software in
 - Hardware driver for the GPU
 - Libraries required by upper-level applications
 
-To use NVIDIA GPU instances for general computing tasks, you must install the Tesla driver and Compute Unified Device Architecture (CUDA) Toolkit. This document only describes how to install a Tesla driver. For more information on CUDA Toolkit, please see [Installing CUDA Toolkit](https://intl.cloud.tencent.com/document/product/560/8064).
+To use NVIDIA GPU instances for general computing tasks, you must install Tesla driver and Compute Unified Device Architecture (CUDA) driver. This document only describes how to install a Tesla driver. For more information on CUDA driver, please see [Installing CUDA Driver](https://intl.cloud.tencent.com/document/product/560/8064).
 
 ## Directions
 ### Installing an NVIDIA Tesla driver on a Linux instance
