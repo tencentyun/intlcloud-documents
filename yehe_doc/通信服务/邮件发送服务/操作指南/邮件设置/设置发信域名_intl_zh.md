@@ -20,7 +20,7 @@
 新建域名后，需要完成必要的配置才能使用，这些配置项是保证域名能够优质出信的基础。
 
 1.  在 【发信域名】 页面域名列表中，单击域名的 【配置】 操作，转至域名配置信息页。
-[![Image from Gyazo](https://i.gyazo.com/47e1df4d85bb493420d23a9666a135f0.png)](https://gyazo.com/47e1df4d85bb493420d23a9666a135f0)
+![Image from Gyazo](https://main.qcloudimg.com/raw/265d8e4186a4c7f804bf09b4fdad4d1e.png)
 -   SPF 验证  
     发件人策略框架 (SPF) 是一种电子邮件验证标准，旨在防止电子邮件欺骗。域所有者使用 SPF 来告知电子邮件提供商，允许哪些服务器从其域发送电子邮件。
     

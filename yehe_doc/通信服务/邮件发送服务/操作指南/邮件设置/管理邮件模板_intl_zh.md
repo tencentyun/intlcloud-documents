@@ -4,7 +4,7 @@
 **创建邮件模板**
 1.  登录  [邮件发送服务控制台](https://console.cloud.tencent.com/dms)。
 2.  在控制台左侧导航栏里，单击  【邮件设置】 > 【邮件模板】，单击 【新建邮件模板】进入模板编辑页面。
-[![Image from Gyazo](https://i.gyazo.com/a5292baa98130e892a087da1066c72f6.png)](https://gyazo.com/a5292baa98130e892a087da1066c72f6)
+![Image from Gyazo](https://main.qcloudimg.com/raw/138a946b91f19c0506ea4401d02ebaa8.png)
 3.  您需要对邮件模板命名唯一的 【模板名称】 ，【邮件标题】 和 【邮件正文】 均支持自定义任意数量的替代变量，定义代替变量的方式是使用双花括号指明  **{{ 代替变量 }}**。
 常用的代替变量有：
     - 用 {{EAddr}} 替换收件人邮箱地址。  
