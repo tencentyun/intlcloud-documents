@@ -32,7 +32,6 @@ dependencies {
 >	api 'com.tencent.imsdk:imsdk:4.9.1'
 >}
 >```
-```
 
  
 - **第二步：指定 App 使用架构**
@@ -105,6 +104,4 @@ defaultConfig {
 
 ```
 -keep class com.tencent.imsdk.** { *; }
-```
-
 ```

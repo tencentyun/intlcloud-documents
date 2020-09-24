@@ -10,12 +10,12 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>SDK 2.7.0 beta  is released</td>
+<td>SDK 2.7.1 beta  is released</td>
 <td ><ul style="margin:0;"><li >The room management feature is supported (This feature is currently in beta. To try it out, please<a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>).</li>
 <li>The voice changing feature is added to voice messages.</li>
 <li >The pitch of accompaniment can be adjusted.</li>
 <li >The cross-room antiphonal singing feature is added (This feature is currently in beta. To try it out, please<a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>).</li></ul ></td>
-<td>September 11, 2020</td> 
+<td>September 18, 2020</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/31504">Real-time Voice Accompaniment</tr>
 </tbody></table>
 
