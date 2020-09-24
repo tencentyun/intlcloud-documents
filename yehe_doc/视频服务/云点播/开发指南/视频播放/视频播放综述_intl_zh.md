@@ -16,12 +16,12 @@
 * 电商购物平台（京东、拼多多）中的商品宣传视频。
 * 微信公众号、自媒体中分享的短片。
 
-<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
+
 
 ### 播放架构
 针对短视频播放场景，点播提供了**基础播放器 SDK**，使用 URL 作为参数，播放点播中的视频。
 
-<img src="https://main.qcloudimg.com/raw/ea6c80065cfe7d7aad1aa60c42651ea1.png" width="700" />
+
 
 使用基础播放器 SDK 播放的整体架构流程如下：
 1. **服务端上传**：业务后台通过控制台、服务端 API 等方式，将视频上传到云点播。
@@ -49,7 +49,7 @@
 针对长视频播放场景，点播提供了**超级播放器 SDK**，使用 FileId 作为参数，播放点播中的视频。
 
 
-<img src="https://main.qcloudimg.com/raw/60b3574fe1300681f351e8cf02a7845a.png" width="700" />
+<img src="https://main.qcloudimg.com/raw/f6b52d9429111812b0ee0e78654f2e34.png" width="700" />
 
 使用超级播放器 SDK 播放的整体架构流程如下：
 1. **服务端上传**：业务后台通过控制台、服务端 API 等方式，将视频上传到云点播。
@@ -66,7 +66,7 @@
 2. 超级播放器在播放视频前，需要获取播放器签名（如下图步骤5）。
 3. 超级播放器在请求下载地址时（如下图步骤6），播放服务需要校验签名合法后，才返回下载地址。
 
-<img src="https://main.qcloudimg.com/raw/7b20c4117e3e9fc320b6e8cf2d8e47c9.png" width="700" />
+<img src="https://main.qcloudimg.com/raw/e5ae52f1b5f15f289b6f54aa28917da4.png" width="700" />
 
 ### 集成超级播放器
 

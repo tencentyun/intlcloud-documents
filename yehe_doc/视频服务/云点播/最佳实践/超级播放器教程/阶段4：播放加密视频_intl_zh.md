@@ -9,12 +9,12 @@
 2. 在视频处理界面：
  * 【处理类型】选择【任务流】。
  * 【任务流模板】选择【SimpleAesEncryptPreset】。
-<img src="https://main.qcloudimg.com/raw/6de419bdb32cd9bfabc51e68c50b4fc2.png" width="" /><span>
+<img src="https://main.qcloudimg.com/raw/4cc8649c21b5c60305b925120f84d7e6.png" width="" /><span>
 >? 
 >- SimpleAesEncryptPreset 是预置任务流：使用12模板转自适应码流，10模板截图做封面，10模板截雪碧图。
 >- 12模板自适应码流是转出加密的多码率输出。
 3. 单击【确定】，等待“视频状态”栏从“处理中”变为“正常”，表示视频已处理完毕：
-![](https://main.qcloudimg.com/raw/a93577f102e0ca36bbf7dc342c7606cb.png)
+![](https://main.qcloudimg.com/raw/885b68427d36faefe8f2bb5b489e1e19.png)
 4. 单击视频“操作”栏下的【管理】，进入管理页面：
  * 选择“基本信息”页签，可以看到生成的封面，以及加密的自适应码流输出（模板 ID 为12）。
  * 选择“截图信息”页签，可以看到生成的雪碧图（模板 ID 为10）。
@@ -26,15 +26,12 @@
 
 1. 选择【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)，找到**步骤1**上传和处理过的视频，单击“操作”栏下的【管理】，选择【超级播放器预览】。
 2. 【超级播放器配置】选择 basicDrmPreset。
-<img src="https://main.qcloudimg.com/raw/ce1b94617f61c589e8ee0a769a03623b.png" width="522" /><span>
+
  >? basicDrmPreset 是预置超级播放器配置，用于播放12模板转自适应码流输出，10模板截雪碧图输出。
 3. 因为默认分发域名开启了防盗链，【播放控制】选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
- <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
+ 
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
-<img src="https://main.qcloudimg.com/raw/f15945fabaeb9a88151c69dc897daf41.png" width="522" />
-5. 在【移动端播放器】中，点击【扫码下载】，安装“腾讯云工具包”。
-![](https://main.qcloudimg.com/raw/7646593a4ea15d9c1ad441207e224be8.png)
-6. 手机打开腾讯云工具包，选择【播放器】>【超级播放器】，然后点击右上角扫码，即可在移动端播放体验。
+<img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
 
 
 ## 步骤3：使用 Demo 验证
@@ -51,11 +48,11 @@
  * 【防盗链 Key】：填写之前获取到的防盗链 Key：2WExxx48eW。
 >!basicDrmPreset 是预置超级播放器配置，用于播放12模板转自适应码流输出，10模板截雪碧图输出。
 2. 单击【生成签名】，生成出来的签名显示在【生成签名结果】文本框中。
-<img src="https://main.qcloudimg.com/raw/dab6b68815f38314a6d40597c3963fd5.png" width="700" />
+
 
 获取超级播放器签名后，您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/tencentyun/SuperPlayer_Android) 和 [iOS](https://github.com/tencentyun/SuperPlayer_iOS)  三端的超级播放器 Demo 进行验证，具体请参考 Demo 的源码。
 >?在控制台的【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)>【超级播放器预览】中，可以获取预览视频对应的 Web 播放器源码，供您直接参考使用。
-<img src="https://main.qcloudimg.com/raw/7da1641a94b14e43a4cf024209c7e404.png" width="500" />
+<img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
 
 ## 总结
 
