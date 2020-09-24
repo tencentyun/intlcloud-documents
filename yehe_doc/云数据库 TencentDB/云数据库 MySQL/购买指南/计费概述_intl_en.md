@@ -4,13 +4,13 @@ TencentDB for MySQL now offers the monthly subscription billing mode. Pay-as-you
 
 
 
-TencentDB for MySQL supports separate billing for memory and disks to provide you with more flexible options.
+TencentDB for MySQL supports separate billing for memory and disks to provide users with more flexible options.
 
-Instance price formula: instance price = memory fees + storage space fees
+Instance price formula: Instance price = Memory fee + Storage fee
 
 
 
-## Instance Specification (Memory Capacity) Pricing
+## Pricing for Instance Specification (Memory)
 >? The monthly subscription mode is currently in beta. Prices published here are for reference only. Refer to your bills for final prices. To use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 >
 ### Monthly subscription pricing
@@ -33,7 +33,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>1-core 1000 MB MEM</td>
 <td align="center">14.37</td>
 <td>10</td>
@@ -42,7 +42,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>1-core 2000 MB MEM</td>
 <td align="center">28.73</td>
 <td>20</td>
@@ -51,7 +51,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>2-core 4000 MB MEM</td>
 <td align="center">57.46</td>
 <td>40</td>
@@ -60,7 +60,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>4-core 8000 MB MEM</td>
 <td align="center">114.93</td>
 <td>80</td>
@@ -69,7 +69,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>4-core 16000 MB MEM</td>
 <td align="center">229.86</td>
 <td>160</td>
@@ -78,7 +78,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>8-core 32000 MB MEM</td>
 <td align="center">459.72</td>
 <td>320</td>
@@ -87,7 +87,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>16-core 64000 MB MEM</td>
 <td align="center">919.44</td>
 <td>640</td>
@@ -96,7 +96,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>16-core 96000 MB MEM</td>
 <td align="center">1223.1</td>
 <td>960</td>
@@ -105,7 +105,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>16-core 128000 MB MEM</td>
 <td align="center">1838.87</td>
 <td>1280</td>
@@ -114,7 +114,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>24-core 244000 MB MEM</td>
 <td align="center">3505.35</td>
 <td>2440</td>
@@ -123,7 +123,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>High-Availability Edition - source instance</td>
-<td>MySQL source instance</td>
+<td>TencentDB for MySQL source instance</td>
 <td>48-core 488000 MB MEM</td>
 <td align="center">7010.7</td>
 <td>4880</td>
@@ -132,7 +132,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>1-core 1000 MB MEM</td>
 <td align="center">7.18</td>
 <td>5</td>
@@ -141,7 +141,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>1-core 2000 MB MEM</td>
 <td align="center">14.37</td>
 <td>10</td>
@@ -150,7 +150,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>2-core 4000 MB MEM</td>
 <td align="center">28.73</td>
 <td>20</td>
@@ -159,7 +159,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>4-core 8000 MB MEM</td>
 <td align="center">57.46</td>
 <td>40</td>
@@ -168,7 +168,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>4-core 16000 MB MEM</td>
 <td align="center">114.93</td>
 <td>80</td>
@@ -177,7 +177,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>8-core 32000 MB MEM</td>
 <td align="center">229.86</td>
 <td>160</td>
@@ -186,7 +186,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>16-core 64000 MB MEM</td>
 <td align="center">459.72</td>
 <td>320</td>
@@ -195,7 +195,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>16-core 96000 MB MEM</td>
 <td align="center">611.55</td>
 <td>480</td>
@@ -204,7 +204,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>16-core 128000 MB MEM</td>
 <td align="center">919.44</td>
 <td>640</td>
@@ -213,7 +213,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>24-core 244000 MB MEM</td>
 <td align="center">1752.68</td>
 <td>1220</td>
@@ -222,7 +222,7 @@ Instance price formula: instance price = memory fees + storage space fees
 </tr>
 <tr>
 <td>Single-Node High IO Edition</td>
-<td>MySQL read-only instance</td>
+<td>TencentDB for MySQL read-only instance</td>
 <td>48-core 488000 MB MEM</td>
 <td align="center">3505.35</td>
 <td>2440</td>
@@ -334,21 +334,21 @@ Instance price formula: instance price = memory fees + storage space fees
 
 **Notes**
 
-1. Prices in the table above apply to instance configuration fees only and do not include fees for storage space, backup space, and bandwidth.
+1. Prices in the table above apply to instance configuration fees only, and do not include fees for storage capacity, backup capacity, and bandwidth.
 3. Prices in the table above apply to new purchases only and may be subject to change upon renewal and configuration adjustment.
 4. Published prices are subject to change.
 
 
 
-## Storage Space (Disk Capacity) Pricing
+## Pricing for Storage Capacity (Disk)
 
-### Monthly subscription pricing
+### Monthly subscription
 
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">TencentDB for MySQL</th>
-<th colspan="5" style="text-align: center;">Monthly Subscription Price (USD/GB/Month)</th>
+<th colspan="5" style="text-align: center;">Monthly Subscription Price/USD/GB/Month</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -387,7 +387,7 @@ Instance price formula: instance price = memory fees + storage space fees
 
 **Notes**
 
-1. Prices in the table above apply to storage space fees only and do not include fees for instance specification and bandwidth.
+1. Prices in the table above apply to storage fees only, and do not include fees for instance specifications and bandwidth.
 2. Prices in the table above apply to new purchases only and may be subject to change upon renewal and configuration adjustment.
 3. Published prices are subject to change.
 
@@ -395,54 +395,54 @@ Instance price formula: instance price = memory fees + storage space fees
 
 ## Advanced Features
 
-### Backup space
+### Backup capacity
 
-Backup space does not support monthly subscription. Please see pay-as-you-go pricing.
+Backup capacity does not support monthly subscription. Please see pay-as-you-go pricing.
 
 **Instance renewal management**
 
-Batch renewal, auto-renewal, collective expiry date, and do-not-renew flag for instances can be found on the renewal management page.
+Batch renewal, auto-renewal, collective expiry date, do-not-renew flag can be found in the **Renewal Management** page.
 
 
 
-**Instance upgrade fees formula**
+**Instance upgrade cost formula**
 
-Suppose an instance expires in T days, and the monthly prepaid fee difference between the target configuration and the current configuration is C, then the total upgrade fees will be T/30 * C.
+Suppose an instance expires in T days, and the monthly prepaid fee difference between the target configuration and the current configuration is C, then the total upgrade cost will be: T/30 x C.
 
-Suppose you have an instance with 1 core, 1,000 MB memory, and 100 GB disk (prepaid fees: 24.511 USD/month) and it will expire in 15 days. If you need to upgrade it to 1 core, 1,000 MB memory, and 200 GB disk (prepaid fees: 34.653 USD/month), then the total upgrade fees will be 15/30 * (34.653 - 24.511) = 5.071 USD.
-
-
-
-**Excessive instance disk capacity limit**
-
-To ensure business continuity, upgrade your instance specification or purchase additional disk space in time before the disk space is used up.
-
-When the size of the data stored on an instance exceeds its capacity limit, the instance will be locked and become read-only. You will not be able to write data to it. You need to expand its capacity or delete some database tables in the console to unlock it.
-
-To avoid a database from triggering the lock status repeatedly, a locked instance will be unlocked and allowed for reads and writes only when its remaining available space accounts for more than 20% of its total space or is over 50 GB.
+Assume that you have an instance with 1 core, 1000 MB memory, and 100 GB disk (prepaid fee: 24.511 USD/month) and it will expire in 15 days. If you need to upgrade it to 1 core, 1000 MB memory, and 200 GB disk (prepaid fee: 34.653 USD/month), then the total upgrade cost will be: 15/30 x (34.653 - 24.511)=5.071 USD.
 
 
 
-**Traffic sync fees for disaster recovery instance**
+**Exceeding instance disk capacity limit**
 
-Data sync traffic for disaster recovery instances in TencentDB for MySQL is currently free of charge.
+To ensure business continuity, upgrade your instance specifications or purchase additional disk capacity in time before disk capacity is used up.
 
-We will notify you when this feature is commercialized.
+When the size of the data stored on an instance exceeds its capacity limit, the instance will be locked and become read-only. You will not be able to write data to it. You will need to expand its capacity or delete some database tables in the console to unlock it.
 
-## Pay-as-You-Go
+To avoid a database from triggering the lock status repeatedly, a locked instance will be unlocked and allowed for reads and writes only when its remaining available capacity accounts for more than 20% of its total capacity or is over 50 GB.
+
+
+
+**Traffic synchronization fee for disaster recovery instances**
+
+Data synchronization for disaster recovery instances in TencentDB for MySQL is currently free of charge.
+
+We will notify users when this feature is commercialized. 
+
+## Pay-as-you-go
 
 The tiered pricing model is based on usage duration.
 
-| Usage Duration | Tiered Pricing |
+| Usage Duration              | Tiered Price             |
 |---------|---------|
-| 0 hours < duration ≤ 96 hours | Tier 1 pay-as-you-go price applies |
-| 96 hours < duration ≤ 360 hours | Tier 2 pay-as-you-go price applies |
-| Duration > 360 hours | Tier 3 pay-as-you-go price applies |
+| 0 hours<duration≤96 hours   | Tier 1 pay-as-you-go price applies |
+| 96 hours<duration≤360 hours | Tier 2 pay-as-you-go price applies |
+| Duration>360 hours          | Tier 3 pay-as-you-go price applies |
 
-### Instance pricing
+### Instance price
 
 #### Billing formula
-**Total fees = memory specification fees + storage space fees + backup space fees + traffic fees**
+**Total fees = Memory fees + Storage fees + Backup capacity fees + Traffic fees (currently free of charge)**
 
 #### Billable items
 <table>
@@ -453,30 +453,30 @@ The tiered pricing model is based on usage duration.
 </tr>
 </thead>
 <tbody><tr>
-<td>Memory specification fees<br></td>
+<td>Memory fees<br></td>
 <td>The instance specification selected on the purchase page is pay-as-you-go and supports tiered pricing. For detailed prices, please see <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">Product Pricing</a>.</td>
 </tr>
 <tr>
-<td>Storage space fees</td>
-<td>The disk space selected on the purchase page is pay-as-you-go and supports tiered pricing. For detailed prices, please see <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">Product Pricing</a>.</td>
+<td>Storage capacity fees</td>
+<td>The disk capacity selected on the purchase page is pay-as-you-go and supports tiered pricing. For detailed prices, please see <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">Product Pricing</a>.</td>
 </tr>
 <tr>
-<td>Backup space fees</td>
-<td>TencentDB for MySQL offers a certain amount of backup space free of charge based on the region, which is equivalent to the sum of storage space of all high-availability instances (including source and disaster recovery instances) in your region. <br>For more information on the fees for excessive backup space, please see <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">Backup Space Billing</a>.</td>
+<td>Backup capacity fees</td>
+<td>TencentDB for MySQL offers a certain amount of backup capacity free of charge based on the region, which is equivalent to the sum of storage capacity of all high-availability instances (including source and disaster recovery instances) in the region. <br>For more information on the fees for excessive backup capacity, please see <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">Backup Space Billing</a>.</td>
 </tr>
 <tr>
 <td>Traffic fees</td>
-<td>This refers to the fees of public network traffic (free of charge for now).</td>
+<td>Public network traffic fees (currently free of charge).</td>
 </tr>
 </tbody></table>
 
-#### Pay-as-You-Go pricing
+#### Pay-as-you-go pricing
 
 ##### High-Availability Edition
 <table >
   <td rowspan=2>Region</td>
-  <td colspan=3 >Memory (USD/GB/Hour)</td>
-  <td rowspan=2 >Disk (USD/GB/Hour)</td>
+  <td colspan=3 >Memory Price (USD/GB/Hour)</td>
+  <td rowspan=2 >Disk Price (USD/GB/Hour)</td>
  </tr>
  <tr >
   <td >Tier 1</td>
@@ -616,8 +616,8 @@ The tiered pricing model is based on usage duration.
 
 <table>
   <td rowspan=2>Region</td>
-  <td colspan=3 >Memory (USD/GB/Hour)</td>
-  <td rowspan=2 >Disk (USD/GB/Hour)</td>
+  <td colspan=3 >Memory Price (USD/GB/Hour)</td>
+  <td rowspan=2 >Disk Price (USD/GB/Hour)</td>
  </tr>
  <tr height=21 style='height:15.75pt'>
   <td height=21 class=xl1529815 style='height:15.75pt'>Tier 1</td>
@@ -753,12 +753,38 @@ The tiered pricing model is based on usage duration.
 </table>
 
 
-## Billing Samples
-**Monthly subscription billing sample**: suppose you purchase a monthly subscription TencentDB for MySQL instance with 4 cores, 8,000 MB memory, and 500 GB disk space in the Guangzhou region for one month.
-The fees for the current month are calculated as follows:
-Instance price = memory fees + storage space fees = (114.93 USD/month + 500 GB * 0.1014 USD/GB/month) * 1 month = 165.63 USD
-**Pay-as-you-go billing sample**: suppose you purchase a pay-as-you-go TencentDB for MySQL instance with 4 cores, 8,000 MB memory, and 500 GB disk space in the Guangzhou region for 400 hours.
+## Billing Example
+
+### Monthly subscription
+Take the Guangzhou region as an example:
+- Suppose you purchase a monthly subscription TencentDB for MySQL High-Availability Edition instance with 4 cores, 8000 MB memory, and 500 GB disk space in the Guangzhou Zone 3 for a month.
+- Suppose you also purchase a monthly subscription TencentDB for MySQL High-Availability Edition instance with 4 cores, 8000 MB memory, and 200 GB disk space in the Guangzhou Zone 4 for a month.
+
+Total fees = Memory fees + Storage fees + Backup capacity fees
+
+##### Memory fees + Storage fees
+The fees are calculated as follows:
+Memory fees + Storage fees = 2 * 114.93 USD/month + (500 GB + 200 GB) * 0.1014 USD/GB/month * 1 month = 300.84 USD
+
+##### Backup capacity fees
+Since the TencentDB for MySQL High-Availability Edition instance you purchased in Guangzhou Zone 3 has 500 GB storage capacity for a month and the same type of instance you purchased in Guangzhou Zone 4 has 200 GB storage capacity for a month, you can have 700 GB backup capacity free of charge for a month in Guangzhou.
+
+If you have 800 GB data backups and 100 GB log backups, then your total backup capacity in Guangzhou will exceed 700 GB, and your hourly paid backup capacity will be 200 GB (800 + 100 - 700 = 200).
+
+Backup capacity fees (per hour) = 200 GB (backup capacity in excess of the free tier, which may change constantly) * 0.000127 USD/GB/hour
+
+### Pay-as-you-go
+Suppose you purchase a pay-as-you-go TencentDB for MySQL instance with 4 cores, 8000 MB memory, and 500 GB disk space in the Guangzhou region for 400 hours.
 Tier 1 fees: (0.0250 USD/GB/hour * 8 GB + 500 GB * 0.0003) * 96 hours = 33.6 USD
 Tier 2 fees: (0.0200 USD/GB/hour * 8 GB + 500 GB * 0.0003) * 264 hours = 81.84 USD
 Tier 3 fees: (0.0150 USD/GB/hour * 8 GB + 500 GB * 0.0003) * 40 hours = 10.8 USD
-Instance fees = tier 1 fees + tier 2 fees + tier 3 fees = 126.24 USD
+Total instance fees = Tier 1 fee + Tier 2 fee + Tier 3 fee = 126.24 USD
+
+## FAQs
+#### Why are other fees incurred for the monthly subscription instance I have purchased?
+Please check whether your backup space exceeds the free tier. Usage of backup space in excess of the free tier will incur fees.
+You can view details on the usage of backup space on the database backup page in the [MySQL Console](https://console.cloud.tencent.com/cdb/backup). For more on backup capacity pricing, please see [Backup Space Billing](https://cloud.tencent.com/document/product/236/36263).
+
+#### Are pay-as-you-go instances still charged while they are being idle?
+Yes. If you stop using pay-as-you-go resources, please terminate them as soon as possible to avoid further fee incursion.
+
