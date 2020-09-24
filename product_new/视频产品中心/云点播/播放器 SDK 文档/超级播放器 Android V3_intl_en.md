@@ -52,8 +52,6 @@ allprojects {
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
->! `lib_tcsuperplayer.aar` is made open source in the form of module. You can find all the source code in `Demo/lib_tcsuperplayer`.
-
 ### Preparing videos
 
 Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), click **Media Assets** on the left sidebar, and you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column. If you don't have a video, please click **Upload Video** to upload one.
