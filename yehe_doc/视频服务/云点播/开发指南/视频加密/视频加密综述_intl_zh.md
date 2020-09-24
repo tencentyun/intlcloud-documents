@@ -60,6 +60,6 @@
 ## 常见问题
 
 1. 如何对上传的视频进行加密？
-云点播的 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 功能，可以将视频转成多种分辨率并加密。
+云点播的 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 功能，可以将视频转成多种分辨率并加密。具体实践方式，请您参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
 2. 终端如何播放加密后的视频？
-播放点播加密的视频，您需要在终端集成超级播放器 SDK。同时，您还需要搭建一个签名派发服务。
+播放点播加密的视频，您需要在终端集成超级播放器 SDK。同时，您还需要搭建一个签名派发服务。具体实践方式，请您参见 [接入指引](https://intl.cloud.tencent.com/document/product/266/38294)。
