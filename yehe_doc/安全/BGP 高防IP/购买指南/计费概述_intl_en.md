@@ -30,21 +30,21 @@ Anti-DDoS Advanced adopts a combo billing mode, utilizing both monthly subscript
 <td >Application bandwidth</td>
 <td>Monthly subscription</br>Billed by bandwidth</td>
 <td>Prepaid</td>
-<td>Bandwidth used for forwarding the cleansed application traffic back to the real server. Bandwidth within 100 Mbps is free of charge. You can adjust the bandwidth threshold as needed.</td>
+<td>The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, 
+ whichever is greater. If the actual application bandwidth is continuously higher than the Application Bandwidth selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This 
+ might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.</td>
 </tr>
 </table>
 
 ### Base Protection
 Base protection is billed based on your monthly subscription plan. See the following table for detailed prices.
 
-| Anti-DDoS Capacity | Non-BGP | BGP | Outside Chinese mainland |
-|---------|---------|---------|---------|
-| 20 Gbps | -  |1,000 USD/month  | 4,800 USD/month |
-| 30 Gbps | - | -  | 7,000 USD/month  |
-| 40 Gbps | -  |- | 8,200 USD/month |
-| 50 Gbps | 4,000 USD/month</br>25,000 USD/year  | 4,500 USD/month</br>35,000 USD/year | 10,500 USD/month  |
-| 100 Gbps | 40,000 USD/year  | 50,000 USD/year | 198,000 USD/year |
-| 300 Gbps| 60,000 USD/year  | 65,000 USD/year | - |
+| Anti-DDoS Capacity | CC Protection Bandwidth | Non-BGP | BGP | Outside Chinese mainland |
+|---------|---------|----|---------|---------|
+| 20 Gbps | 40,000qps | -  |1,000 USD/month  | 4,800 USD/month |
+| 50 Gbps | 150,000qps | 4,000 USD/month</br>25,000 USD/year  | 4,500 USD/month</br>35,000 USD/year | 10,500 USD/month  |
+| 100 Gbps | 300,000qps | 40,000 USD/year  | 50,000 USD/year | 198,000 USD/year |
+| 300 Gbps| 700,000qps | 60,000 USD/year  | 65,000 USD/year | - |
 
 >
 - “Non-BGP” refers to China Mobile/China Union/China Telecom network services. If purchased, you will be provided with three Anti-DDoS Advanced instances, one for each of them.
@@ -105,15 +105,15 @@ It is billed by the monthly subscription plan. See the following table for detai
 
 The relationship between the application bandwidth and the number of Layer-7 requests is as shown in the following table.
 
-| Application Bandwidth | HTTP     | HTTPS    |
-| -------- | -------- | -------- |
-| 50 Mbps   | 1,500 QPS  | 1,500 QPS  |
-| 100 Mbps  | 3,000 QPS  | 3,000 QPS  |
-| 150 Mbps   | 5,000 QPS  | 3,500 QPS  |
-| 200 Mbps  | 7,000 QPS  | 4,000 QPS  |
-| 500 Mbps  | 20,000 QPS | 7,000 QPS  |
-| 1 Gbps    | 40,000 QPS | 10,000 QPS |
-| 2 Gbps    | 70,000 QPS | 17,000 QPS |
+| Application Bandwidth     |  HTTP/HTTPS    |
+| -------- | -------- |
+| 50Mbps    | 5,000QPS  |
+| 100Mbps |  10,000QPS  |
+| 150Mbps  | 15,000QPS  |
+| 200Mbps  |  20,000QPS  |
+| 500Mbps  |  50,000QPS  |
+| 1Gbps    | 100,000QPS |
+| 2Gbps    | 200,000QPS |
 
 >
 >- The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, whichever is greater. If the actual application bandwidth is continuously higher than the **Application Bandwidth** selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.
