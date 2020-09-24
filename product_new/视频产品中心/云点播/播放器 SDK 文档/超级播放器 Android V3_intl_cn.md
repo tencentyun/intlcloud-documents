@@ -18,15 +18,15 @@ Android 超级播放器 SDK 是一款用于播放云点播视频的播放器组�
 ### aar 集成
 
 1. 下载 SDK + Demo 开发包，下载地址为 [SuperPlayer_Android](https://github.com/tencentyun/SuperPlayer_Android)。
-2. 导入`SDK/LiteAVSDK_XXX.aar`以及`Demo/app/libs/lib_tcsuperplayer.aar`到工程中。
-3. 在`app/build.gralde`中添加依赖：
+2. 导入`SDK/LiteAVSDK_XXX.aar`以及`Demo/superplayerkit`到工程中。
+3. 在`app/build.gradle`中添加依赖：
 ```java
-compile(name: 'LiteAVSDK_Professional', ext: 'aar')
-compile(name: 'lib_tcsuperplayer', ext: 'aar')
+compile(name: 'LiteAVSDK_Player_7.4.9211', ext: 'aar')
+compile project(':superplayerkit')
 // 超级播放器弹幕集成的第三方库
 compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 ```
-4. 在项目`build.gralde`中添加：
+4. 在项目`build.gradle`中添加：
 ```
 ...
 allprojects {
