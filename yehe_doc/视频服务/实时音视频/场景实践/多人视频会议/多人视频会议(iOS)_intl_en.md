@@ -1,17 +1,6 @@
 ## Effect Demo
 You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo to try out the video conferencing capabilities of TRTC, such as screen sharing, beauty filters, and low-latency conferencing.
 
-<table>
-     <tr>
-         <th>Join meeting</th>  
-         <th>Share screen</th>  
-     </tr>
-<tr>
-<td><img src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/gif/enterroom.gif"/></td>
-<td><img src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/gif/screencapture.gif"/></td>
-</tr>
-</table>
-
 To quickly implement the video conferencing feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCMeeting` component and implement custom UI.
 
 ## Reusing Demo UI
@@ -21,7 +10,7 @@ To quickly implement the video conferencing feature, you can directly modify the
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestMeetingRoom`, and click **Create Application**.
 
->This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.
+>? This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**), and download the relevant SDK and supporting demo source code.

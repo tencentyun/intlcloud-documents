@@ -226,7 +226,8 @@ cd greeninit
 sh install.sh 
 ```
 
-### Resolving Python-pip installation failure<span id="updateSoftware"></span>
+<span id="updateSoftware"></span>
+### Resolving Python-pip installation failure
 During installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it based on the operating system as follows:
 - For CentOS 6/7:
   1. Run the following command to configure the EPEL storage repository.
@@ -244,7 +245,7 @@ apt-get update -y
 ```
   2. Run the following command to install Python-pip.
 ```
-yum install python-pip -y
+apt-get install python-pip -y
 ```
 
 

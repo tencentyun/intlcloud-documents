@@ -109,7 +109,7 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 
 #### Billing sample
 
-Suppose a user with a bill-by-IP account purchases an EIP in Singapore region with the bill-by-traffic billing mode. If this user binds a CVM betwen 07:00:00 - 07:59:59 and uses 10 GB of traffic, the fees incurred within 07:00:00 - 07:59:59 will be: 0.12 USD/GB × 10 GB = 1.2 USD.
+Suppose a user with a bill-by-IP account purchases an EIP in Seoul region with the bill-by-traffic billing mode. If this user binds a CVM betwen 07:00:00 - 07:59:59 and uses 10 GB of traffic, the fees incurred within 07:00:00 - 07:59:59 will be: 0.12 USD/GB × 10 GB = 1.2 USD.
 
 > ?Public network traffic is the traffic data based on the number of downstream bytes, which is the application-layer data. During actual data transfer, the traffic generated over the network is around 5-15% more than the application-layer traffic, so the traffic counted by Tencent Cloud may be about 10% more than that counted by users themselves on the server.
 >

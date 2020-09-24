@@ -1,27 +1,22 @@
 ## 操作场景
 腾讯云容器服务 TKE 支持通过创建 PersistentVolume（PV）/PersistentVolumeClaim（PVC），并为工作负载挂载数据卷的方式使用腾讯云对象存储 COS。本文介绍如何在 TKE 集群中为工作负载挂载对象存储。
 
-
-## 相关概念
-- **PersistentVolume（PV）**：集群内的存储资源。PV 独立于 Pod 的生命周期，可根据不同的 StorageClass 类型创建不同类型的 PV。
-- **PersistentVolumeClaim（PVC）**：集群内的存储请求。例如，PV 是 Pod 使用的节点资源，PVC 则声明使用 PV 资源。当 PV 资源不足时，PVC 可动态创建 PV。
-
-
 ## 准备工作
 ### 安装对象存储扩展组件
 >?
 >- 使用扩展组件功前能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
 >- 若您的集群已安装 COS-CSI 扩展组件，则请跳过此步骤。
 
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【扩展组件】。
-2. 在“扩展组件”管理页面上方选择需使用对象存储扩展组件的集群及其所在地域，并单击【新建】。
-3. 在“新建扩展组件”页面，选择【COS 腾讯云对象存储】并单击【完成】即可。
-
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
+2. 选择左侧导航栏中的【集群】，进入集群管理界面。
+3. 选择需新建组件的集群 ID，单击集群详情页左侧栏中的【组件管理】。
+4. 在“组件管理”页面，单击【新建】，进入“新建组件”页面。
+5. 勾选【COS（腾讯云对象存储）】并单击完成即可。
 <span id="CreatAccessKey"></span>
 ### 创建访问密钥
 >!
-> - 为避免主账号密钥泄露造成您的云上资产损失，建议您参照[ 最佳实践 ](https://intl.cloud.tencent.com/document/product/598/10592)停止使用主账号登录控制台或者使用主账号密钥访问云 API，并使用已授予相关管理权限的子账号/协作者进行相关资源操作。
-> - 本文以已授予访问管理相关权限的子用户创建或查看访问密钥为例，关于如何创建子用户并实现访问管理权限请参考文档[ 自定义创建子用户](https://intl.cloud.tencent.com/document/product/598/13674)。
+>- 为避免主账号密钥泄露造成您的云上资产损失，建议您参照[ 最佳实践 ](https://intl.cloud.tencent.com/document/product/598/10592)停止使用主账号登录控制台或者使用主账号密钥访问云 API，并使用已授予相关管理权限的子账号/协作者进行相关资源操作。
+>- 本文以已授予访问管理相关权限的子用户创建或查看访问密钥为例，关于如何创建子用户并实现访问管理权限请参考文档[ 自定义创建子用户](https://intl.cloud.tencent.com/document/product/598/13674)。
 
 1. 使用子账号用户登录[ 访问管理控制台 ](https://console.cloud.tencent.com/cam/overview)，单击左侧导航栏中的【访问管理】>【API密钥管理】，进入 “API密钥管理”管理界面。
 2. 单击【新建密钥】等待新建完成即可。
@@ -62,8 +57,8 @@
 ## 操作步骤
 
 ### 通过控制台使用对象存储
-Secret<span id="StepOne"></span>
-#### 创建可以访问对象存储的 
+<span id="StepOne"></span>
+#### 创建可以访问对象存储的 Secret
 
 1. 单击左侧导航栏中的【集群】，进入集群管理界面。
 2. 选择目标集群 ID，进入集群详情页面。
@@ -81,7 +76,7 @@ Secret<span id="StepOne"></span>
 <span id="StepTwo"></span>
 #### 创建支持 COS-CSI 动态配置的 PV 
 >!本步骤需使用存储桶，若当前地域无可用存储桶，则请参考 [创建存储桶](#CreatBucket) 进行创建。
-
+>
 1. 在目标集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolume】，进入 “PersistentVolume” 页面。
 2. 单击【新建】进入“新建PersistentVolume” 页面，参考以下信息创建 PV。如下图所示：
 ![](https://main.qcloudimg.com/raw/8dd2a6ad66bce8601a57b032a6ca8862.png)

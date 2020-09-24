@@ -1,7 +1,7 @@
 ﻿腾讯云用户可以使用支付方式模块查询，添加，删除和设置默认支付方式，用户需保留至少一个支付方式，账号未绑定支付方式可参照下方流程进行绑定。
 
 ## 付款方式页面
-在[付款方式页面](https://console.cloud.tencent.com/accountv1/paymentmethods)中，用户可以查询其现有的付款方式，包括付款类型，帐户ID，收款人姓名，状态和操作。
+在[付款方式页面](https://console.cloud.tencent.com/accountv1/paymentmethods)中，用户可以查询其现有的付款方式，包括付款类型，帐户ID，付款人姓名，状态和操作。
  ![](https://main.qcloudimg.com/raw/e5aa09620f8f808f6e4a7a4bd1dd01a2.png)
 
 注意：
@@ -17,14 +17,14 @@
 
 ## 删除付款方式
 ![](https://main.qcloudimg.com/raw/69550d8f13d6df0e35225712d9dc614c.png)
-•	用户可以单击“Delete”来删除所选的付款方式。但是无法删除默认付款方式，您可以选择有效的付款方式或添加有效的付款方式，然后点击“设为默认”以将其标记为默认付款方式。之后，先前的默认付款方式将成为可以保留或删除的通用付款方式。
+•	用户可以单击“Delete”来删除所选的付款方式。但是无法删除默认付款方式，您可以选择有效的付款方式或添加有效的付款方式，然后点击"Set as default"以将其标记为默认付款方式。之后，先前的默认付款方式将成为可以保留或删除的通用付款方式。
 
 ## 常见问题
 1.未绑卡的如何绑定信用卡？
 可直接在[付款方式页面](https://console.cloud.tencent.com/accountv1/paymentmethods)中添加付款方式。
 
 2.绑定了PayPal 的如何绑定信用卡？
-需前往在[付款方式页面](https://console.cloud.tencent.com/accountv1/paymentmethods)中添加新的付款方式，点击“设为默认”以将其标记为默认付款方式，针对先前绑定的PayPal付款方式可单击“Delete”来进行删除所选的付款方式。
+需前往在[付款方式页面](https://console.cloud.tencent.com/accountv1/paymentmethods)中添加新的付款方式，点击"Set as default"以将其标记为默认付款方式，针对先前绑定的PayPal付款方式可单击“Delete”来进行删除所选的付款方式。
 
 3.目前支持几种付款方式？
 腾讯云目前仅支持信用卡付款。

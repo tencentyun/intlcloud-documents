@@ -10,7 +10,7 @@
 底层存储使用本地 NVMe SSD 硬盘，提供强大的 IO 性能。目前应用于 [只读实例](https://intl.cloud.tencent.com/document/product/236/7270)，帮助业务分摊读压力。
 
 ## 架构基本框架图
-![Alt text](http://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/shopcart/database/css/img/mysql-frame3.svg)
+![Alt text](https://main.qcloudimg.com/raw/9c18abaf213f5b2c66f36e538eb86273.svg)
 >!
 >- 单节点部署存在单点风险，在只购买一个只读实例情况下，无法保证业务高可用，单个只读实例故障，会导致业务中断而影响客户。
 >- 单个只读实例恢复时长受业务数据量大小影响，无法得到保证。因此，建议对可用性有要求的业务 [RO 组](https://intl.cloud.tencent.com/document/product/236/11361) 内至少选购两个只读实例，保证可用性。
