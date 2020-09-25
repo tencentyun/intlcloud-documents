@@ -125,8 +125,6 @@ df -h
 >To avoid subsequent misoperations, unless in special cases, it is strongly recommended not to repeat mounts on the directory where the CFS or any other file system has been mounted.
 
 ### Mounting a CIFS/SMB file system
->CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
-
 #### 1. Launch a CIFS client
 Before mounting, please make sure that `cifs-utils` has already been installed in the system. The installation method is as follows:
 CentOS:
