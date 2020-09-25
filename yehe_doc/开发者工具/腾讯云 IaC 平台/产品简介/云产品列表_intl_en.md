@@ -57,8 +57,6 @@ The following table lists the cloud services supported by Tencent Infrastructure
 </tr>
 <tr>
 <td rowspan="5">Database</td>
-</tr>
-<tr>
 <td>TencentDB for MongoDB</td>
 </tr>
 <tr>
