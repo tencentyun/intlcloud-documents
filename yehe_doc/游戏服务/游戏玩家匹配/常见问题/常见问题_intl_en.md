@@ -8,7 +8,7 @@ Currently, GPM support rule types such as distance, comparison, collection, late
 Currently, GPM supports matching up to 200 players in a single game session for a large match, and up to 40 players for a small match.
 
 #### How can I get the matchmaking status and results?
-There are two ways for you to do so: automatic event notifications, and manually calling the API for querying matchmaking progress. We recommend that you use the former method for better matchmaking performance.
+There are two ways for you to do so: automatic event notifications, and manually calling the API for describing matchmaking progress. We recommend that you use the former method for better matchmaking performance.
 
 #### How are matchmaking results processed?
 GPM can automatically place matchmaking results into GSE to launch game server sessions, or you can process them by yourself.
