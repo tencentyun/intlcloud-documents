@@ -13,7 +13,7 @@ Applications created in the [TPNS Console](https://console.cloud.tencent.com/tpn
 2. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns). If you are logging in for the first time, please indicate your consent to the [Developer Agreement](https://intl.cloud.tencent.com/document/product/1024/36176).
 3. Go to the product management page and [create a product and application](https://intl.cloud.tencent.com/document/product/1024/32603).
 4. After the above steps are completed, the application will be on the trial version by default. Check the current service status, and if it is displayed as **In use**, you can use the push service normally.
-![](https://main.qcloudimg.com/raw/4dfce58bd6084b2de0d2d54353554258.png)
+![](https://main.qcloudimg.com/raw/704180d4ca9db141d328defac57ad322.png)
 
 
 
