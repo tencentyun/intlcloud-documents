@@ -78,14 +78,15 @@ Video encryption is a specific scenario of long video playback scenarios, where 
 For more information on how video encryption works and the integration methods, please see [Video Encryption Overview](https://intl.cloud.tencent.com/document/product/266/38131) and [Video Encryption Integration Guide](https://intl.cloud.tencent.com/document/product/266/38294).
 
 ## Player SDK
-### Download and use<span id="p2"></span>
+<span id="p2"></span>
+### Download and use
 
 | Player Type | SDK Download Address | User Guide |
 | -- | -- | -- |
 | Superplayer | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
 
-
-### Feature list<span id="p1"></span>
+<span id="p1"></span>
+### Feature list
 #### Basic player
 | Feature | Description | Mobile (Android and iOS) | Web |
 | -- | -- | -- | -- |

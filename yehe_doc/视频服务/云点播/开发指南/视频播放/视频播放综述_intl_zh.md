@@ -78,14 +78,15 @@
 云点播分别在 [视频加密综述](https://intl.cloud.tencent.com/document/product/266/38131) 和 [视频加密接入指引](https://intl.cloud.tencent.com/document/product/266/38294) 中详细介绍了视频加密的原理和接入方式。
 
 ## 播放器 SDK
-### 下载与使用<span id="p2"></span>
+<span id="p2"></span>
+### 下载与使用
 
 | 播放器类型 | SDK 下载地址 | 使用文档 |
 | -- | -- | -- |
 | 超级播放器 | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976#sdk-.E4.B8.8B.E8.BD.BD)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.9C.A8.E9.A1.B5.E9.9D.A2.E4.B8.AD.E5.BC.95.E5.85.A5.E6.96.87.E4.BB.B6)</li> | <ul style="margin:0;"><li>[Android](https://intl.cloud.tencent.com/document/product/266/33975)</li><li>[iOS](https://intl.cloud.tencent.com/document/product/266/33976)</li><li>[Web](https://intl.cloud.tencent.com/document/product/266/33977)</li> |
 
-
-### 能力清单<span id="p1"></span>
+<span id="p1"></span>
+### 能力清单
 #### 基础播放器
 | 功能 | 说明 | 移动端（Android 和 iOS）| Web 端 |
 | -- | -- | -- | -- |

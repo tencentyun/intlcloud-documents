@@ -20,7 +20,8 @@ The superplayer signature parameters and generation rule are as detailed below:
 | urlAccessInfo | No | Object | Hotlink protection configuration parameter of playback link, which is in [UrlAccessInfo type](#p1) |
 | drmLicenseInfo | No | Object | Key configuration parameter of encrypted content, which is in [DrmLicenseInfo type](#p2) |
 
-#### UrlAccessInfo type<span id = "p1"></span>
+<span id = "p1"></span>
+#### UrlAccessInfo type
 
 | Parameter Name | Required | Type | Description |
 | -- | -- | -- | -- |
@@ -29,7 +30,8 @@ The superplayer signature parameters and generation rule are as detailed below:
 | rlimit | No | Integer | <ul style="margin:0;"><li>Maximum decimal number of clients with different IPs allowed for playback</li><li>For the specific description and valid values, please see the `rlimit` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)</li> |
 | us | No | String | <ul style="margin:0;"><li>Link ID, which can uniquely identify a link</li><li>For the specific description and valid values, please see the `us` parameter in [hotlink protection parameters](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F)</li> |
 
-#### DrmLicenseInfo type<span id = "p2"></span>
+<span id = "p2"></span>
+#### DrmLicenseInfo type
 
 | Parameter Name | Required | Type | Description |
 | -- | -- | -- | -- |
@@ -127,11 +129,15 @@ The result after processing through `base64UrlEncode` will be:
 }
 ```
 The result after processing through `base64UrlEncode` will be:
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`.
+```
+eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ
+```
 3. Perform HMAC calculation by using `24FEQmTzro4V5u3D5epW` as `KEY`, and the `Signature` will be:
 `TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8`.
 4. The final `Token` will be:
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8`.
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8
+```
 
 ## Sample Code
 

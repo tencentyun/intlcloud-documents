@@ -20,7 +20,8 @@
 | urlAccessInfo | 否 | Object | 播放链接的防盗链配置参数，为 [UrlAccessInfo 类型](#p1) |
 | drmLicenseInfo | 否 | Object | 加密内容的密钥配置参数，为 [DrmLicenseInfo 类型](#p2) |
 
-#### UrlAccessInfo 类型<span id = "p1"></span>
+<span id = "p1"></span>
+#### UrlAccessInfo 类型
 
 | 参数名称 | 必选 | 类型 | 说明 |
 | -- | -- | -- | -- |
@@ -29,7 +30,8 @@
 | rlimit | 否 | Integer | <ul style="margin:0;"><li>最多允许多少个不同 IP 的终端播放，以十进制表示</li><li>具体含义和取值参见 [防盗链参数](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 中的 rlimit 参数</li> |
 | us | 否 | String | <ul style="margin:0;"><li>链接标识，用户增强链接的唯一性</li><li>具体含义和取值参见 [防盗链参数](https://intl.cloud.tencent.com/document/product/266/33986#.E9.98.B2.E7.9B.97.E9.93.BE-url-.E7.94.9F.E6.88.90.E6.96.B9.E5.BC.8F) 中的 us 参数</li> |
 
-#### DrmLicenseInfo 类型<span id = "p2"></span>
+<span id = "p2"></span>
+#### DrmLicenseInfo 类型
 
 | 参数名称 | 必选 | 类型 | 说明 |
 | -- | -- | -- | -- |
@@ -127,11 +129,15 @@ Key 是计算签名时使用的密钥，和 [防盗链参数](https://intl.cloud
 }
 ```
 经过 base64UrlEncode 后的结果是：
-`eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ`。
+```
+eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ
+```
 3. 以`24FEQmTzro4V5u3D5epW`为 KEY 进行 HMAC 计算，Signature 是：
 `TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8`。
 4. 最终 Token 是：
-`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8`。
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTI1NTU2NjY1NSwiZmlsZUlkIjoiNDU2NDk3MjgxODUxOTYwMjQ0NyIsImN1cnJlbnRUaW1lU3RhbXAiOjE1NDYzNDA0MDAsImV4cGlyZVRpbWVTdGFtcCI6MTU0NjM0NDAwMCwidXJsQWNjZXNzSW5mbyI6eyJ0IjoiNWMyYjU2NDAiLCJybGltaXQiOjMsInVzIjoiNzJkNGNkMTEwMSJ9fQ.TRdfy-ctQFRDJzknfKsT0di5tEaweAVumOgxsA8Qd-8
+```
 
 ## 代码示例
 
