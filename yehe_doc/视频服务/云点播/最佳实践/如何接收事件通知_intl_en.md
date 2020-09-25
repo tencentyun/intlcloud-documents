@@ -29,14 +29,14 @@ The VOD event notification receipt service demo provided in this document is ope
 - Fees for using signature distribution service provided by SCF. For more information, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284) and [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
 - Fees for using Tencent Cloud API Gateway to provide public network APIs for SCF. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/628/11771).
 
-
-### Avoiding affecting production environment<span id="p0"></span>
+<span id="p0"></span>
+### Avoiding affecting production environment
 
 The business logic of the event notification receipt service demo uses the VOD event notification mechanism; therefore, you need to set the event notification address during deployment. If there is already a VOD-based production environment under your account, changing the event notification address may cause business exceptions. **Before doing so, please confirm that this will not affect the production environment. If you are not sure, please use a new account to deploy the demo.**
 
 ## Quickly Deploying Event Notification Receipt Service
-
-### Step 1. Prepare a CVM instance<span id="p1"></span>
+<span id="p1"></span>
+### Step 1. Prepare a CVM instance
 
 The deployment script needs to be executed on a CVM instance meeting the following requirements:
 
@@ -50,20 +50,20 @@ For detailed directions on how to purchase a CVM instance and reinstall the syst
 >!
 >- The event notification receipt service demo itself does not depend on CVM but only uses CVM to run the deployment script.
 >- If you do not have a CVM instance satisfying the above conditions, you can also run the script on another Linux (such as CentOS or Debian) or macOS server with public network access, but you need to modify certain commands in the deployment script based on the operating system. Please search for the specific modification method by yourself.
-
-### Step 2. Activate VOD<span id="p2"></span>
+<span id="p2"></span>
+### Step 2. Activate VOD
 
 Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-
-### Step 3. Get the API key and APPID<span id="p3"></span>
+<span id="p3"></span>
+### Step 3. Get the API key and APPID
 
 Your API key (i.e., `SecretId` and `SecretKey`) and `APPID` are required for deploying and running the event notification receipt service demo.
 
 - If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
 - You can view the `APPID` on the [Account Information](https://console.cloud.tencent.com/developer) page in the console as shown below:
   ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
-
-### Step 4. Deploy the event notification receipt service<span id="p4"></span>
+<span id="p4"></span>
+### Step 4. Deploy the event notification receipt service
 
 Log in to the [CVM instance prepared in step 1](#p1) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote device:
 
@@ -111,8 +111,8 @@ Wait for the video processing to complete (indicated by the "Normal" status), cl
 Log in to the SCF Console and enter the [log page](https://console.cloud.tencent.com/scf/list-detail?rid=1&ns=vod_demo&id=callback&menu=log) to view the SCF logs. In the latest log, you can see that the URLs of the two output files have been printed out. In actual use cases, you can use SCF to record the URLs in your database or publish them to viewers through other channels.
 
 >?SCF log generation may have a certain delay. If no logs are displayed on the page, please wait for one or two minutes and click **Reset** to refresh.
-
-## System Design Description<span id="design"></span>
+<span id="design"></span>
+## System Design Description
 
 ### API protocol
 
