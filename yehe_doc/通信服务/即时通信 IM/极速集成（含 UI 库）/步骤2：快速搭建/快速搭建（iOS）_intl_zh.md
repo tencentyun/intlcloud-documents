@@ -22,14 +22,13 @@ vc.delegate = self;
 
 ## 打开聊天界面
 
-初始化聊天界面时，上层需要传入当前聊天界面对应的会话信息，即 TIMConversation。
-TIMConversation 对象通过 ImSDK 底层方法获取。
-
-以创建一个与用户`abc`的 C2C 会话为例，示例代码如下：
+初始化聊天界面时，上层需要传入当前聊天界面对应的会话信息，示例代码如下：
 
 ```objectivec
-TIMConversation *conv = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"abc"];
-TUIChatController *vc = [[TUIChatController alloc] initWithConversation:conv];
+TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
+data.groupID = @"groupID";  // 如果是群会话，传入对应的群 ID
+data.userID = @"userID";    // 如果是单聊会话，传入对方用户 ID
+TUIChatController *vc = [[TUIChatController alloc] initWithConversation:data];
 [self.navigationController pushViewController:vc animated:YES];
 ```
 TUIChatController 会自动拉取该用户的历史消息并展示出来。
