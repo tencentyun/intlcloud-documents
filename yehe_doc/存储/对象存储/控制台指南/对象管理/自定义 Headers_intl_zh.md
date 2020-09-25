@@ -8,7 +8,7 @@
 ## 操作步骤
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，选择左侧菜单栏【存储桶列表】，进入存储桶列表页面。单击对象所在的存储桶，进入存储桶。
 2. 在存储桶的“文件列表”模块下，找到需要自定义头部的单个对象，在其右侧操作栏中，单击右侧【更多操作】>【自定义头部】进行设置。若您需要对多个对象自定义头部，可勾选多个对象，然后在【更多操作】菜单中下拉滑动条，选择【自定义头部】即可。
-![](https://main.qcloudimg.com/raw/5955b33ab701ea7f15600654a928837c.png)
+![](https://main.qcloudimg.com/raw/88779600818f3670df2f7df62fd1b3a0.png)
 3. 在**自定义 Headers**弹窗中，单击【添加 Header】，选择需要设置的参数类型，输入对应的值。COS 提供了以下6种对象 HTTP 头部标识供配置。头部配置说明如下。配置完成后，单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/191fbd1b903069b5e546bb237b050ee2.png)
 <table>
@@ -73,7 +73,7 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 ```
 
 添加如下配置：
-![](https://main.qcloudimg.com/raw/3df9e3628c6d8b429842807771ff547e.jpg)
+![](https://main.qcloudimg.com/raw/2474d24e7d1d365e0c736572aae8f652.png)
 再次发起请求，浏览器或客户端得到的对象头部范例如下：
 
 #### 请求
