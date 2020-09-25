@@ -120,8 +120,8 @@ There are 7 check results:
 - UNCONFIRM: the system cannot determine whether the source and destination files are the same. This may be because the destination file already existed in COS before the CRC64 feature was launched, and thus its CRC64 checksum cannot be obtained.
 - UNCHECKED: the check is not performed. This is mainly because the source file cannot be read, or its checksum cannot be computed.
 - SOURCE_FILE_MISSING: the source file does not exist.
-TARGET_FILE_MISSING: the destination file does not exist.
-TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
+- TARGET_FILE_MISSING: the destination file does not exist.
+- TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
 
 
 
