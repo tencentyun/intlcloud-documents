@@ -8,8 +8,8 @@ INTELLIGENT TIERING is ideal for data with unknown or changing access patterns. 
 >
 >- Currently, INTELLIGENT TIERING is available in Beijing, Shanghai, and Guangzhou Public Cloud regions.
 >- INTELLIGENT TIERING is billed for storage usage as follows:
-   - The storage usage fees in the frequent access tier are charged at the same published prices as STANDARD storage class;
-   - The storage usage fees in the infrequent access tier are charged at the same published prices as STANDARD_IA storage class.
+   >- The storage usage fees in the frequent access tier are charged at the same published prices as STANDARD storage class;
+   >- The storage usage fees in the infrequent access tier are charged at the same published prices as STANDARD_IA storage class.
 >- INTELLIGENT TIERING requests are billed the same as STANDARD requests. The INTELLIGENT TIERING fees for traffic and management features are charged depending on the region, the same as in the other storage classes. There are no data retrieval fees, but additional charges apply for monitoring INTELLIGENT TIERING objects. For more information, please see [Product Pricing](https://buy.cloud.tencent.com/price/cos).
 
 ## Strengths
