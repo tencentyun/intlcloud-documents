@@ -24,7 +24,7 @@ You can use the lifecycle management feature when you need to change the storage
    - **Managing historical versions**: you can transition or delete previous versions of an object using this option. If it is not enabled, only the latest version of an object is processed by default.
    - **Removing delete markers with no noncurrent versions**: if an object has a delete marker as its latest version, with all of its noncurrent versions deleted, the delete marker will also be deleted once you enable this option. It cannot be enabled with the option to delete upon expiration under **Managing the current version** at the same time.
    - **Deleting incomplete multipart uploads**: allows you to delete expired incomplete multipart uploads that have failed due to any reason.
-		![](https://main.qcloudimg.com/raw/5e8c5d09b78537b77c25c7594aa6ec11.png)
+ ![](https://main.qcloudimg.com/raw/5e8c5d09b78537b77c25c7594aa6ec11.png)
 6. After the lifecycle rule is configured, click **OK**, and it will be listed instantly.
    ![](https://main.qcloudimg.com/raw/ad7ef4119bfeae82ee7bc4635e7bab38.png)
 7. To stop using a lifecycle rule, click **Edit** under **Operation**, and change **Status** to **Disable**, or simply delete it.
