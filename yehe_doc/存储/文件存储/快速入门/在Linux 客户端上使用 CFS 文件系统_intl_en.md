@@ -10,14 +10,14 @@ For detailed directions, please see [Creating File Systems and Mount Targets](ht
 
 
 ## Step 2. Connect to an Instance
-This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For alternative login methods, please see [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436).
+This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For alternative login methods, please see [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436).
 
 #### Prerequisites
 Log in to the CVM instance with an admin account.
  - Admin account ID: `root` for all Linux-based instances (`ubuntu` on Ubuntu).
  - Password: the password you specified when purchasing the CVM instance.
 
-#### Logging in to a CVM instance in the console
+#### Logging in to the CVM instance in the console
 - Locate the instance in the [CVM instance](https://console.cloud.tencent.com/cvm/index) list, click **Log In** under **Operation**. Click **Log in Now** under **Alternative login methods** to connect to the Linux CVM instance through VNC.
 - Enter the account ID and its password to log in.
 
@@ -43,21 +43,21 @@ CIFS/SMB | 445 |  telnet 445
 #### 1. Launch the NFS client
 Before mounting, please make sure that `nfs-utils` or `nfs-common` has already been installed in the system. The installation method is as follows:
 - CentOS:
-```shell
+```plaintext
 sudo yum install nfs-utils
 ```
 - Ubuntu or Debian:
-```shell
+```plaintext
 sudo apt-get install nfs-common
 ```
 
 #### 2. Create a destination mount directory
 Create a destination mount directory with the following command.
-```shell
-mkdir <destination mount directory>
+```plaintext
+mkdir <target mount directory>
 ```
-Example:
-```shell
+ Example:
+```plaintext
 mkdir /local/
 mkdir /local/test
 ```
@@ -114,31 +114,33 @@ sudo mount -t nfs -o vers=3,nolock,proto=tcp，noresvport 10.0.24.4:/z3r6k95r /l
 
 #### 4. View the mount target information
 After the mount is completed, run the following command to view the mounted file system:
-```shell
+```plaintext
 mount -l
 ```
-You can also run the following command to view the capacity information of the file system:
-```shell
+You may also use the following `df` command to view the capacity information of the file system. Note that there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed).
+```plaintext
 df -h
 ```
 
+>To avoid subsequent misoperations, unless in special cases, it is strongly recommended not to repeat mounts on the directory where the CFS or any other file system has been mounted.
 
-#### Mounting a CIFS/SMB file system
+### Mounting a CIFS/SMB file system
+>CIFS/SMB file systems are in beta. For more information, go [here](https://intl.cloud.tencent.com/document/product/582/9553) to see **Notes on CIFS/SMB Beta Test**.
 
 #### 1. Launch a CIFS client
 Before mounting, please make sure that `cifs-utils` has already been installed in the system. The installation method is as follows:
 CentOS:
-```shell
+```plaintext
 sudo yum install cifs-utils.x86_64 –y
 ```
 
 #### 2. Create a destination mount directory
 Create a destination mount directory with the following command.
-```shell
-mkdir <destination mount directory>
+```plaintext
+mkdir <target mount directory>
 ```
-Example:
-```shell
+ Example:
+```plaintext
 mkdir /local/
 mkdir /local/test
 ```
@@ -154,33 +156,37 @@ mount -t cifs -o guest //<mount target IP>/<FSID> /<destination mount directory>
 
 > There is a space between `<FSID>/` and `<destination mount directory>`.
 
-Example:
-```shell
+ Example:
+```plaintext
 mount -t cifs -o guest //10.66.168.75/vj3i1135  /local/test
 ```
 
 #### 4. View the mount target information
 After the mount is completed, run the following command to view the mounted file system:
-```shell
+```plaintext
 mount -l
 ```
-You can also run the following command to view the capacity information of the file system:
-```shell
+You may also use the following `df` command to view the capacity information of the file system. Note that there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed).
+```plaintext
 df -h
 ```
 
+
+>To avoid subsequent misoperations, unless in special cases, it is strongly recommended not to repeat mounts on the directory where the CFS or any other file system has been mounted.
+
+
 ## Step 4. Unmount a Shared Directory
 In case you need to unmount a shared directory, use the following command where "directory name" is the root directory or the full path of the file system.
-```shell
+```plaintext
 umount <directory name>
 ```
 
-Example: 
-```shell
+ Example: 
+```plaintext
 umount /local/test
 ```
 
->We strongly recommend that you unmount the file system before restarting or shutting down the client so as to avoid any system exceptions.
+>After a `df` command is run, there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed). In addition, it is strongly recommended that you unmount the file system before restarting or closing your client to avoid system exceptions.
 
 ## Step 5. Terminate a Resource
 
