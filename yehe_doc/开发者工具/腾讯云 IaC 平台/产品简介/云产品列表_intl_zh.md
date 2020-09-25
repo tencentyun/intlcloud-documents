@@ -57,8 +57,6 @@
 </tr>
 <tr>
 <td rowspan="5">数据库</td>
-</tr>
-<tr>
 <td>云数据库 MongoDB（TencentDB for MongoDB）</td>
 </tr>
 <tr>
