@@ -46,7 +46,7 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 ###  出现10006 error 该如何处理？
 如果出现"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"，请确认您的实时音视频应用的服务状态是否为可用状态。
 登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板即可确认服务状态。
-
+![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
 
 <span id="que7"></span>
 ###  进入房间返回错误码-100018是什么原因？
@@ -75,7 +75,7 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 
 <span id="que12"></span>
 ###  TRTC 自己的本地画面和远端画面左右相反？
-本地默认采集的画面是镜像的，可以通过 setLocalViewMirror 接口设置，该接口只改变本地摄像头的预览画面的镜像模式。也可以通过 setVideoEncoderMirror 接口设置编码器输出的画面镜像模式，该接口不改变本地摄像头的预览画面，但会改变另一端用户看到的（以及服务器录制下来的）画面效果。
+本地默认采集的画面是镜像的，可以通过 [setLocalViewMirror](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?&_ga=1.239476867.1286123284.1593759269#setLocalViewMirror) 接口设置，该接口只改变本地摄像头的预览画面的镜像模式。也可以通过 setVideoEncoderMirror 接口设置编码器输出的画面镜像模式，该接口不改变本地摄像头的预览画面，但会改变另一端用户看到的（以及服务器录制下来的）画面效果。
 
 <span id="que13"></span>
 ###  TRTC 设置视频编码输出的方向没有效果？
