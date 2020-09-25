@@ -63,4 +63,10 @@ The unit prices of Anti-DDoS Pro instances for different business sizes are as f
 
 <span id="txfh"></span>
 
+#### CC protection bandwidth
 
+|Region  | CC protection bandwidth |
+|----|---|
+| Guangzhou | 300,000 QPS|
+| Shanghai | 700,000 QPS|
+| Beijing | 300,000 QPS|

@@ -10,7 +10,7 @@ The following are the regions where CFS is available:
 		<th>Applicable Storage Class</th>
   </tr>
   <tr>
-    <td rowspan="5">Beijing</td>
+    <td rowspan="4">Beijing</td>
     <td>Beijing Zone 1</td>
 		<td rowspan="2">Standard storage</td>
   </tr>
@@ -22,11 +22,8 @@ The following are the regions where CFS is available:
 		<td>Standard storage<br>High-performance storage</td>
   </tr>
 		<tr>
-    <td>Beijing Zone 4</td>
-		<td rowspan="2">Standard storage</td>
-  </tr>
-	<tr>
     <td>Beijing Zone 5</td>
+		<td>Standard storage</td>
   </tr>
 	<tr>
     <td rowspan="3">Shanghai</td>

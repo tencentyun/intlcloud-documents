@@ -18,11 +18,11 @@ It takes just a few simple steps to integrate with the VOD superplayer SDK for v
 ### aar integration
 
 1. Download the SDK and Demo development kit for Android here: [SuperPlayer_Android](https://github.com/tencentyun/SuperPlayer_Android).
-2. Import `SDK/LiteAVSDK_XXX.aar` and `Demo/app/libs/lib_tcsuperplayer.aar` into the project.
-3. Add dependencies to `app/build.gralde`:
+2. Import `SDK/LiteAVSDK_XXX.aar` and `Demo/superplayerkit` into the project.
+3. Add dependencies to `app/build.gradle`:
 ```java
-compile(name: 'LiteAVSDK_Professional', ext: 'aar')
-compile(name: 'lib_tcsuperplayer', ext: 'aar')
+compile(name: 'LiteAVSDK_Player_7.4.9211', ext: 'aar')
+compile project(':superplayerkit')
 // Third-party library for integration of the on-screen commenting feature of superplayer
 compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 ```
@@ -52,8 +52,6 @@ allprojects {
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
->! `lib_tcsuperplayer.aar` is made open source in the form of module. You can find all the source code in `Demo/lib_tcsuperplayer`.
-
 ### Preparing videos
 
 Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), click **Media Assets** on the left sidebar, and you will see the uploaded video and its corresponding ID (i.e., `FileId`) in the video list in the **Uploaded** column. If you don't have a video, please click **Upload Video** to upload one.
@@ -80,14 +78,12 @@ mSuperPlayerView.playWithMode(model);
 In the code, `appid` is your AppId, `fileid` is the ID of the video you want to play back, `playDefinition` is the ID of the playback template used for playback, and `version` is fixed to `SuperPlayerVideoId.FILE_ID_V3`.
 
 Run the code and you can see that the video is played back on the phone and most of the features in the UI are available.
-<img src="https://main.qcloudimg.com/raw/128c45edfc77b319475868c21caec2de.png" width="550">
 
 ## Thumbnails and Timestamps
 
 When videos are played back, the "thumbnails" and "timestamps" on the progress bar can help viewers find the points of interest easily. Thumbnails are implemented through [image sprites](https://intl.cloud.tencent.com/document/product/266/34125), while timestamps by modifying timestamp information in media assets.
 
 After image sprites are generated and timestamps are added, new elements will be displayed in the player UI.
-<img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
 
 ### How to use
 
