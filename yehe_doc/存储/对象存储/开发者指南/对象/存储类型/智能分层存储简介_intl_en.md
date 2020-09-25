@@ -41,8 +41,8 @@ You can follow the steps below to store an object into the INTELLIGENT TIERING s
 You can also use the following APIs to configure intelligent tiering storage:
 
 1. First, use the REST APIs as shown below to enable the intelligent tiering configuration on a bucket:
- - [PUT Bucket IntelligentTiering](https://cloud.tencent.com/document/product/436/48348)
- - [GET Bucket IntelligentTiering](https://cloud.tencent.com/document/product/436/48349)
+ - [PUT Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38314)
+ - [GET Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38315)
 2. Upload an object into INTELLIGENT TIERING using the APIs below:
  - [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749)
  - [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881)
