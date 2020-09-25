@@ -15,8 +15,8 @@ You can use the lifecycle management feature when you need to change the storage
 5. Add lifecycle rules as needed. The configuration items are described as follows:
    - **Rule ID**: enter a name for the lifecycle rule.
    - **Applied to**: the lifecycle rule can be applied to the entire bucket, or objects within a specified range as defined below:
-         - Prefix: specifies the prefix for objects to which the lifecycle rule applies, e.g. prefix/.
-         - Object Tag: specifies one or more tags for objects to which the lifecycle rule applies only. Note that it's case-sensitive.
+       - Prefix: specifies the prefix for objects to which the lifecycle rule applies, e.g. prefix/.
+       - Object Tag: specifies one or more tags for objects to which the lifecycle rule applies only. Note that it's case-sensitive.
         >!Prefix and Object Tag can be specified at the same time.
 	
    - **Managing the current version**: you can transition or delete the current version of an object using this option. It allows you to transition objects in your bucket from COS STANDARD to COS STANDARD_IA or ARCHIVE, or delete objects upon expiration.
