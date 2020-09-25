@@ -66,7 +66,9 @@ mkdir /local/test
 **Mount NFS v4.0**
 Mount NFS v4.0 with the following command:
 ```shell
-sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0, noresvport <mount target IP>:/ <destination mount directory>
 ```
 
 - Mount target IP: it is automatically generated when the file system is created.
@@ -78,18 +80,24 @@ sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
 
 Example:
 - Mount to the root directory of CFS:
-```shell
-sudo mount -t nfs -o vers=4.0 10.0.24.4:/ /localfolder
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0，noresvport 10.0.24.4:/ /localfolder
 ```
 - Mount to the subdirectory of CFS:
-```shell
-sudo mount -t nfs -o vers=4.0 10.0.24.4:/subfolder /localfolder 
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0，noresvport 10.0.24.4:/subfolder /localfolder 
 ```
 
 **Mount NFS v3.0**
 Mount NFS v3.0 with the following command:
-```shell
-sudo mount -t nfs -o vers=3,nolock,proto=tcp <mount target IP>:/<fsid> <destination mount directory>
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=3,nolock,proto=tcp，noresvport mount target IP>:/<fsid> <destination mount directory>
 ```
 - Mount target IP: it is automatically generated when the file system is created.
 - NFS v3.0 can only be mounted to a subdirectory. The default file system subdirectory is FSID.
@@ -98,8 +106,10 @@ sudo mount -t nfs -o vers=3,nolock,proto=tcp <mount target IP>:/<fsid> <destinat
 > There is a space between `<mount target IP>:/<FSID>` and `<destination mount directory>`.
 
 Below is an example of mounting to a CFS subdirectory:
-```shell
-sudo mount -t nfs -o vers=3,nolock,proto=tcp 10.0.24.4:/z3r6k95r /localfolder 
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=3,nolock,proto=tcp，noresvport 10.0.24.4:/z3r6k95r /localfolder 
 ```
 
 #### 4. View the mount target information
