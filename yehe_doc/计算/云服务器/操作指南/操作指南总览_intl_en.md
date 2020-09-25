@@ -3,7 +3,7 @@ This document provides an overview of CVM instances and their use cases. It also
 ## Purchasing and Using a CVM
 If this is the first time you are purchasing and using a CVM instance, we recommend following the instructions below to get started.
 
-1. To learn about CVM instance: see [CVM Overview] (https://intl.cloud.tencent.com/document/product/213/495).
+1. To learn about CVM instance: see [CVM Overview](https://intl.cloud.tencent.com/document/product/213/495).
 2. Select and purchase an appropriate CVM model. If this is the first time you are using the CVM instance as a personal user, see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
 3. Log in to the CVM instance you purchased: Depending on the instance type purchased, you may choose to either log in to the [Windows instance](https://intl.cloud.tencent.com/document/product/213/5435) or [Linux instance](https://intl.cloud.tencent.com/document/product/213/5436).
 
