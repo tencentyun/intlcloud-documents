@@ -6,8 +6,8 @@ After successfully configuring the arriving data display feature, you can view t
 
 | Vendor Channel | Arrival Supported | Configuration Required |
 | -------- | ---------------- | ------------ |
-| Huawei channel | Yes               | Yes           |
-| Meizu channel | Yes               | Yes           |
+| Huawei channel | Yes               |**Yes**           |
+| Meizu channel | Yes               |**Yes**           |
 | Mi channel | Yes               | No           |
 | OPPO channel | Yes               | No           |
 | Vivo channel | Yes               | No           |
