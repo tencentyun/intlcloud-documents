@@ -22,10 +22,9 @@ Before downloading an object, make sure that the object already exists in the bu
 > You can only download individual objects in the COS Console. To download multiple objects or folders in batches, it is recommended that you install the [COSBrowser client](https://intl.cloud.tencent.com/document/product/436/11366). Here is how to download objects or folders in batches in the console in conjunction with the **COSBrowser client**.
 #### Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and enter the bucket list page. Find the bucket where the object is stored and click the bucket name to enter the bucket management page.
-![](https://main.qcloudimg.com/raw/46307132ac1ef1e8422667abd896f878.png)
-2. Select multiple objects and click **Download** in the **More Actions** drop-down list.
+2. Find the bucket where the object is stored and click the bucket name to enter the bucket management page.
+3. Select multiple objects and click **Download** in the **More Actions** drop-down list.
 ![](https://main.qcloudimg.com/raw/26499cc4f21d5a76580627fe9fb0db56.png)
-3. Follow the on-screen prompts to install or launch the COSBrowser client and log in.
-![](https://main.qcloudimg.com/raw/0e5706fb690d250200d1fe9bf3b86b8d.png)
-4. After COSBrowser is launched, the selected files will be automatically added to the download queue and start to download. You can click **Download List** to view them.
+4. Follow the on-screen prompts to install or launch the COSBrowser client and log in.
+5. After COSBrowser is launched, the selected files will be automatically added to the download queue and start to download. You can click **Download List** to view them.
 ![](https://main.qcloudimg.com/raw/140c741db0854e17d24d2b69e89bd268.png)
