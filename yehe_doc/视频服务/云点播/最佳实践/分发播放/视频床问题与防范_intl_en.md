@@ -6,7 +6,7 @@ Malicious video hosting can cause serious economic losses since all the storage,
 
 ## Causes of Malicious Video Hosting
 ### How UGC/PGC platforms interact with others normally
-<img src="https://main.qcloudimg.com/raw/602e67c1a9abd1ec66a3c2db544d51f3.png" width="400"><br>
+<img src="https://main.qcloudimg.com/raw/86d03658c0d7ad57220ae27eaf59b9a2.png" width="400"><br>
 
 >?Arrows in the figure represent the network request directions.
 

@@ -10,7 +10,7 @@ An SSL certificate actually represents CA’s verification of the public key, an
 
 ### CA
 
-See [certificate authority](https://intl.cloud.tencent.com/document/product/1007/30192).
+See [certificate authority](https://intl.cloud.tencent.com/document/product/1007/30192#certificate-authority).
 
 ### Hypertext Transfer Protocol Secure
 
@@ -18,13 +18,13 @@ Hypertext Transfer Protocol Secure (HTTPS), also known as HTTP over TLS, HTTP ov
 
 ### CSR
 
-See [certificate signing request](https://intl.cloud.tencent.com/document/product/1007/30192).
+See [certificate signing request](https://intl.cloud.tencent.com/document/product/1007/30192#certificate-signing-request).
 
 
 
 ### HTTPS
 
-See [Hypertext Transfer Protocol Secure](https://intl.cloud.tencent.com/document/product/1007/30192) in Glossary.
+See [Hypertext Transfer Protocol Secure](https://intl.cloud.tencent.com/document/product/1007/30192#hypertext-transfer-protocol-secure) in Glossary.
 
 
 

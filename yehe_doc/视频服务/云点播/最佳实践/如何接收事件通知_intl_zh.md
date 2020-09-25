@@ -9,7 +9,7 @@
 Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 VOD 的事件通知请求。该服务通过对 NewFileUpload（[视频上传完成事件通知](https://intl.cloud.tencent.com/document/product/266/33950)）和 ProcedureStateChanged（[任务流状态变更](https://intl.cloud.tencent.com/document/product/266/33953)）的处理，实现发起视频转码和获取转码结果。
 
 系统主要涉及四个组成部分：控制台、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="https://main.qcloudimg.com/raw/7ab37316a2c56109919f1afbba2a8a8e.jpg" width="550">
+<img src="https://main.qcloudimg.com/raw/faad90288240a98d34071ad5845aeb76.png" width="550">
 
 具体业务流程为：
 
@@ -29,14 +29,14 @@ Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 V
 - 使用 SCF 提供签名派发服务，详见 [SCF 计费](https://intl.cloud.tencent.com/document/product/583/12284) 和 [SCF 免费额度](https://intl.cloud.tencent.com/document/product/583/12282)。
 - 使用腾讯云 API 网关为 SCF 提供外网接口，详见 [API 网关计费](https://intl.cloud.tencent.com/document/product/628/11771)。
 
-
-### 避免影响生产环境<span id="p0"></span>
+<span id="p0"></span>
+### 避免影响生产环境
 
 事件通知接收服务 Demo 的业务逻辑使用到 VOD 事件通知机制，因此部署过程中需要开发者配置事件通知地址。如果该账号已有基于 VOD 的生产环境，那么变更事件通知地址可能造成业务异常。**操作前请务必确认不会影响生产环境，如果您无法确定，请更换一个全新账号来部署 Demo**。
 
 ## 快速部署事件通知接收服务
-
-### 步骤1：准备腾讯云 CVM<span id="p1"></span>
+<span id="p1"></span>
+### 步骤1：准备腾讯云 CVM
 
 部署脚本需要运行在一台腾讯云 CVM 上，要求如下：
 
@@ -50,20 +50,20 @@ Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 V
 >!
 >- 事件通知接收服务 Demo 本身并不依赖于 CVM，仅使用 CVM 来执行部署脚本。
 >- 如果您没有符合上述条件的腾讯云 CVM，也可以在其它带外网的 Linux（如 CentOS、Debian 等）或 Mac 机器上执行部署脚本，但需根据操作系统的区别修改脚本中的个别命令，具体修改方式请开发者自行搜索。
-
-### 步骤2：开通云点播<span id="p2"></span>
+<span id="p2"></span>
+### 步骤2：开通云点播
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-
-### 步骤3：获取 API 密钥和 APPID<span id="p3"></span>
+<span id="p3"></span>
+### 步骤3：获取 API 密钥和 APPID
 
 事件通知接收服务 Demo 的部署和运行过程需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）和 APPID。
 
 - 如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
 - 在控制台 [账号信息](https://console.cloud.tencent.com/developer) 页面可以查看 APPID，如下图所示：
   ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
-
-### 步骤4：部署事件通知接收服务<span id="p4"></span>
+<span id="p4"></span>
+### 步骤4：部署事件通知接收服务
 
 登录 [步骤1准备的 CVM](#p1)（登录方法详见 [操作指南 - 登录 Linux](https://intl.cloud.tencent.com/document/product/213/5436)），在远程终端输入以下命令并运行：
 
@@ -111,8 +111,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 
 登录 [SCF 控制台日志页面](https://console.cloud.tencent.com/scf/list-detail?rid=1&ns=vod_demo&id=callback&menu=log) 查看 SCF 日志记录，在最新的一条日志中，可以看到两个转码文件的 URL 已经打印出来，在实际应用场景中，开发者可以通过 SCF 将 URL 记录在自己的数据库，或者通过其它渠道发布给观众。
 >?SCF 日志可能会有些许延迟，如果在页面上没有看到日志，请耐心等待一两分钟，然后单击【重置】刷新。
-
-## 系统设计说明<span id="design"></span>
+<span id="design"></span>
+## 系统设计说明
 
 ### 接口协议
 
