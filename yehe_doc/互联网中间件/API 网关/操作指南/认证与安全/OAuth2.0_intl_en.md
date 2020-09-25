@@ -1,72 +1,65 @@
+## Overview
+This topic describes how to configure OAuth 2.0 authorization access for APIs in the API Gateway console to meet your personalized security setting needs.
+
 ## OAuth 2.0 Overview
-OAuth 2.0 is an open authorization standard that enables you to allow **third-party applications** to access your **specific private resources** in a service without **providing the account and password** to the applications.
->?OAuth 2.0 is an authorization protocol rather than an authentication protocol.
+OAuth 2.0 is an open authorization standard that enables you to allow **third-party applications** to access your **specific private resources** in a service without **providing the account and password** to the applications. OAuth 2.0 is an authorization protocol rather than an authentication protocol.
 
-### OAuth 2.0 role description
-OAuth 2.0 has the following four roles: 
-- Resource owner: owner of resource.
-- Resource server: server where resource is stored.
-- Client: third-party application client, which can be any third-party application that can consume the resource server.
-- Authorization server: intermediate layer that manages the above three roles.
+### OAuth 2.0 roles
+OAuth 2.0 has the following 4 roles: 
 
-### Authorization process
-![](https://main.qcloudimg.com/raw/27814a835f31fd1511ef3247764ee1c7.png)
+| Role  | Description  |
+| --- | --- |
+| Resource owner | Owner of the resource |
+| Resource server | Server where the resource is stored |
+| Client | Third-party application client, which can be any third-party application that can consume the resource server |
+| Authorization server | Intermediate layer that manages the above 3 roles |
+
+### OAuth 2.0 authorization process 
+![](https://main.qcloudimg.com/raw/d3cee6e7e868be4bc3e611547331e8cf.png)
 (A) The client initiates a request to the resource owner for authorization.
-(B) The resource owner approves authorization.
+(B) The resource owner approves the authorization.
 (C) The client applies to the authorization server for an authorization token after getting the resource owner's authorization.
 (D) The authorization server grants the authorization token after authenticating the client.
 (E) The client requests the resource server to send the user information after getting the authorization token.
 (F) The resource server sends the user information to the client after verifying that the token is correct.
 
+## Prerequisites
+ - An authorization server for distributing tokens is available. (You need to build an authorization server. The API Gateway provides the [Python3 Demo](https://github.com/TencentCloud/apigateway-demo/tree/master/apigateway-oauth-python-demo) and the [Golang Demo](https://github.com/TencentCloud/apigateway-demo/tree/master/apigateway-oauth-golang-demo/AS) for your reference.)
+ - You have created an API Gateway service (for more information, see [Creating Services](https://intl.cloud.tencent.com/document/product/628/11787)).
 
-## API Gateway OAuth 2.0 Operations
-   Tencent Cloud API Gateway provides the OAuth 2.0 feature. To quickly try it out, you can use the simplified edition by preparing the following items:
- - Authorization server to distribute the token (currently, demos for Python 3 and Go are provided).
- - API Gateway configuration: create an authorization API and a business API under the same service. The former is used to verify whether the token carried in the request to the latter is valid and provide the link for getting the token.
+## Directions
 
-### Building authorization server
-- [Demo for Python](https://github.com/TencentCloud/apigateway-demo/tree/master/apigateway-oauth-python-demo) (which is used below as an example)
-- [Demo for Go](https://github.com/TencentCloud/apigateway-demo/tree/master/apigateway-oauth-golang-demo/AS)
+### Step 1: build an authorization server (Python3 Demo is used as an example).
 
-
-1. Generate RSA public and private keys and run `produce_key.py` in Python 3 to generate three files:
+1. Download the [Python3 Demo](https://github.com/TencentCloud/apigateway-demo/tree/master/apigateway-oauth-python-demo) from the official repository of the API Gateway.
+2. Generate the RSA public and private keys and run `produce_key.py` in Python 3 to generate 3 files:
  - public_pem: public key in PEM format
  - priv_pem: private key in PEM format
  - pulic: public key in JSON format. The file content is used to configure the authorization API of API Gateway and is in the following format:
 ```
 {"e":"AQAB","kty":"RSA","n":"43nSuC6lmGLogEPgFVwaaxAmPDzmZcocRB4Jed_dHc-sV7rcAcNB0iHyuGfNkfOAE2uhHVjdXuO6DBYGz4pnTwRZ5_wFrW0DlrlJQAXSvg6B2N1uda_aqySNw3rrvdh38rVG7HxFmyPbLXcpJtyfkiRNyZ1WhSpH0NciIRrFbW2mKRtOZsBGfBgmNqPGcGrMA71cuqNAQ9RMKmAF37iGXkx0tWMBQ_PL2aviHhtsiPbT3zIO7qUG3cleBHnS61kid3K8F38z9-5Hj-1zdTIP8iS4rAt4FmhvKvtOocRPYGq0W_dLLxmi4DYgIV2GJE93WyZ1EUvgRGhpcHvyT65z4w"}
 ```
-
-2. Start the service. After installing the `bottle` library by running `pip3 install bottle`, run `server.py` in Python 3.
-Run `produce_key.py` to generate three files and run `server.py` to generate a token. Then, you can simply check whether the token is successfully generated.
+3. Start the service. After installing the `bottle` library by running `pip3 install bottle`, run `server.py` in Python 3 to generate a token. Then, you can simply check whether the token is successfully generated.
 ```
 curl localhost:8080/token 
 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTIyNzgwODksImZvbyI6ImJhciIsImlhdCI6MTU5MjI3Nzc4OSwianRpIjoibFY1TS10S2oxMEdtV0pJcHotM01GUSIsIm5iZiI6MTU5MjI3Nzc4OSwid3VwIjo5MH0.aHyZo2jgkNxVRDMtEiRBU4-n0pMfa0gocu92KQBe-nmbFoeI_5EWTJ8XFNnSIuoCAIFvrd9MSUX2DNVTg0woXukjoKOTjZSx4txknaXs1aApdvW74FVddCrMtdLrKh_VlwPOrEaOGesmtfcR3RN8xWnj1oedPW-HKPEqVpIAIIWO8ilCBFF-5yffcnFGIbfYO0t7OeBBviCQnQjWAmQHnteOZm0CBeG22k7rlnjH96qE_kyq7DHQqGmURjlpGxoXRC6E-AiV-3mYrCGnsAosEltuIUtq8VIbTZabSobFDE92C8us4GFtIVJQB2NWgeB3Hxgpz3Dlb4NCCcCkZbryEQ
 ```
 
-### Configuring Tencent Cloud API Gateway authorization API and business API
+### Step 2: configure a Tencent Cloud API Gateway authorization API.
 
-Prerequisites: you have created an API Gateway service (for more information, please see [Creating Service](https://intl.cloud.tencent.com/document/product/628/11787)).
-
-#### Configuring Tencent Cloud API Gateway authorization API 
-1. Create an authorization API (for more information, please see [Creating General API](https://intl.cloud.tencent.com/document/product/628/11797)). In the frontend configuration, select `OAuth2.0` as the authentication type and authorization API as the OAuth mode.
+1. In the created service, create an authorization API (for more information, see [Creating a General API](https://intl.cloud.tencent.com/document/product/628/11797)). When you are configuring the frontend, select **OAuth 2.0** as the authentication type and **Authorization API** as the OAuth mode.
 ![](https://main.qcloudimg.com/raw/848c8f2624e4dcba0b9ecc69f4f7fc65.png)
-2. In the backend configuration, select your own server address as the authentication server, select `Header` as the token position, and enter the content in the `public` file generated by running `produce_key.py` as the public key. After the API is created, click **Complete**.
+2. When you are configuring the backend, select your own server address as the authentication server, select **Header** as the token location, and enter the content in the `public` file generated by running `produce_key.py` as the public key. After the API is created, click **Complete**.
 ![](https://main.qcloudimg.com/raw/7f2981bb9673c38407d35a0780b71045.png)
 
-#### Configuring Tencent Cloud API Gateway business API 
-1. Create a business API (for more information, please see [Creating General API](https://intl.cloud.tencent.com/document/product/628/11797)). In the frontend configuration, select `OAuth2.0` as the authentication type, business API as the OAuth mode, and the created authorization API as the associated authorization API.
+### Step 3: configure a Tencent Cloud API Gateway business API. 
+1. In the authorization API service, create a business API (for more information, see [Creating a General API](https://intl.cloud.tencent.com/document/product/628/11797)). When you are configuring the frontend, select **OAuth 2.0** as the authentication type, **Business API** as the OAuth mode, and the created authorization API as the associated authorization API.
 
-2. In the backend configuration, select `mock` as the backend type and enter `hello world` as the returned data.
-
-
+2. When you are configuring the backend, select **mock** as the backend type and enter `hello world` as the returned data.
 
 
-### Sample
- Get the token first. This sample directly and quickly gets the token from the authorization server.
- >?To protect the authorization server, you can send a request to the API Gateway authorization API address to get the token.
-
-- Request the authorization API to get the token:
+### Step 4: perform verification.
+1. Request the authorization API to get the token:
 ```
 curl http://service-cmrrdq86-1251890925.gz.apigw.tencentcs.com:80/token
 ```
@@ -74,7 +67,8 @@ Returned result:
 ```
 eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTIyNzk3MTAsImZvbyI6ImJhciIsImlhdCI6MTU5MjI3OTQxMCwianRpIjoiZlBGYlFZRkR4REx3d0lXTFl0aHBBQSIsIm5iZiI6MTU5MjI3OTQxMCwid3VwIjo5MH0.0JQquNRVCQ8n9hPV-mJi6Mku_7G3T1jFp68Sk2AYBijpzzBMQ1KOcREyo9G6QOpvdctynGOAPkL3cwqeTzkFhWgGj633pu_MdLjlectEBMGyVQIv6pL8OBMCHMQzTUTpHWJ_NoUkLpRLKGqZFFcXW8q7v4KeCbf8xHUa9OCH5VF2JxYOnFWDVgucSqao06r0Jaq64LDwKIhLw77ujheKpcBjRrf1kqoIpqk2qhb8CzxM36g_DawMadzKmX49dT-k7auNnI2xUtu5CZdXZ3lSmLeicXfGjc66rrH_acqUqipZRKeeQ5F3Ma467jPQaTeOKiCMHwS2_yp-sXNU2GzxOA
 ```
-- Request the business API:
+>!You can get the token using either of the following methods: 1. send a request to the API Gateway authorization API address to get the token; 2. quickly get the token directly from the authorization server. The first method is used in this document to protect the authorization server.
+2. Use the token to request the business API. As you can see, the business API can be requested successfully.
 ```
 curl http://service-cmrrdq86-1251890925.gz.apigw.tencentcs.com:80/work -H'Authorization:Bearer id_token="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTIyNzk3MTAsImZvbyI6ImJhciIsImlhdCI6MTU5MjI3OTQxMCwianRpIjoiZlBGYlFZRkR4REx3d0lXTFl0aHBBQSIsIm5iZiI6MTU5MjI3OTQxMCwid3VwIjo5MH0.0JQquNRVCQ8n9hPV-mJi6Mku_7G3T1jFp68Sk2AYBijpzzBMQ1KOcREyo9G6QOpvdctynGOAPkL3cwqeTzkFhWgGj633pu_MdLjlectEBMGyVQIv6pL8OBMCHMQzTUTpHWJ_NoUkLpRLKGqZFFcXW8q7v4KeCbf8xHUa9OCH5VF2JxYOnFWDVgucSqao06r0Jaq64LDwKIhLw77ujheKpcBjRrf1kqoIpqk2qhb8CzxM36g_DawMadzKmX49dT-k7auNnI2xUtu5CZdXZ3lSmLeicXfGjc66rrH_acqUqipZRKeeQ5F3Ma467jPQaTeOKiCMHwS2_yp-sXNU2GzxOA"'
 ```
@@ -83,5 +77,5 @@ Returned result:
 hello world
 ```
 
-### Using authorization code to get token
+### Using the authorization code to get the token
 In the sample above, no authorization code is used to get the token. To ensure that only specified users can get the token, the authorization code needs to be obtained from the resource owner according to the authorization process. As can be seen in the `server.py` file, you can first request the authorization code path to get the code and then register the distributed code to verify its validity when getting the token.

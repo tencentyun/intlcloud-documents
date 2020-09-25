@@ -11,7 +11,7 @@ The process of implementing offline message push is as follows:
 ## Directions
 
 Flyme is a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not included in the auto-start allowlist of the system. As apps running in the background are often killed by the system, we recommend that Meizu push be integrated on Meizu devices. Meizu push is a system-grade service of Flyme, with a high push delivery rate. Currently, **IM only supports the notification bar messages of Meizu push**.
->
+>!
 >- This document was prepared with direct reference to the official documentation of Meizu. If Meizu push is updated, refer to Meizu push documentation on the official website.
 >- This document was prepared based on the Flyme push access guide. It is intended for the Flyme system only and is not a unified push platform for Meizu (but the integration for different vendors).
 >- If you do not need to implement special offline push adaptation for Meizu devices, ignore this section.
@@ -19,7 +19,7 @@ Flyme is a highly customized Android system, with very strict management of the 
 ### Step 1: Apply for a Meizu push certificate
 
 1. Access the Meizu open platform website to register an account and pass developer verification.
- > The verification process takes about 3 days. Be sure to read the Meizu Push Service Activation Guide to facilitate access to the service.
+ >? The verification process takes about 3 days. Be sure to read the Meizu Push Service Activation Guide to facilitate access to the service.
 2. Log in to the console of the Meizu open platform, choose **Service** > **Integrate Push Service** > **Push Backend**, and create a Meizu push service app.
  After the Meizu push service app is created, you can view detailed app information on the app details page.
 <span id="Step1_3"></span>
@@ -29,7 +29,7 @@ Flyme is a highly customized Android system, with very strict management of the 
 ### Step 2: Host the certificate to IM
 1. Log in to Tencent Cloud [IM Console](https://console.qcloud.com/avc) and click the target app card to enter the basic configuration page of the app.
 2. Click **Add Certificate** in the **Android Platform Push Settings** area.
- > If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
+ >? If you already have a certificate and only want to modify its information, you can click **Edit** in the **Android Platform Push Settings** area to modify and update the certificate.
  >
 
 3. Set the following parameters based on the information obtained in [Step 1](#step-1.3A-apply-for-a-meizu-push-certificate):
@@ -45,7 +45,7 @@ Flyme is a highly customized Android system, with very strict management of the 
 
 <span id="Step3"></span>
 ### Step 3: Integrate the push SDK
->
+>?
 > - The default notification title for IM push messages is `a new message`.
 > - Before reading this section, ensure that you have correctly integrated and used the IM SDK.
 > - You can find a sample for Meizu push implementation in our demo. Note that the features of Meizu push may be adjusted during Meizu push version updates. If you find any inconsistencies with the content of this section, refer to Meizu push documentation on the official website and notify us of the difference so that we can make the necessary modifications.
@@ -182,7 +182,7 @@ public class DemoApplication extends Application {
 
 If you need to use Meizu push to push IM message notifications, after **successful user login**, you must use the `setOfflinePushToken` method of `TIMManager` to report the **certificate ID** generated and hosted by the IM console and **PushID** returned by the Meizu push service, to the IM server.
 
-> After the PushId and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the Meizu push service to push notifications.
+>! After the PushId and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the Meizu push service to push notifications.
 
 Sample code in the demo:
 - Define the certificate ID constant:
@@ -280,7 +280,7 @@ public class ThirdPushTokenMgr {
 
 After the certificate ID and PushID are successfully reported, the IM server sends messages through Meizu push notifications to the user when the app has been killed but the user has not logged out of IM.
 
->
+>?
 > - Meizu push does not guarantee 100% success in reaching target users.
 > - Meizu push may be delayed. Usually, this is related to the timing of app killing. In some cases, it is related to the Meizu push service.
 > - If the IM user has logged out or was forced logout by the IM server (for example, due to login on another terminal), the device will not receive push messages.
@@ -306,7 +306,7 @@ When [adding a certificate](#Step2), you need to select **Open Specified Interfa
 ### If the app uses obfuscation, how can I prevent exceptions when using the Meizu offline push feature?
 
 If your app uses obfuscation, to prevent exceptions when using the Meizu offline push feature, you need to keep the custom BroadcastReceiver and add obfuscation rules by referring to the following:
-> The following code is an official sample from Meizu. Please modify it based on your actual situation before use.
+>? The following code is an official sample from Meizu. Please modify it based on your actual situation before use.
 
 ```
 # Change com.tencent.qcloud.tim.demo.thirdpush.MEIZUPushReceiver to the complete class name defined in your app.
@@ -323,4 +323,4 @@ Currently, Meizu push does not support custom notification sounds.
 3. Confirm that your project’s [Meizu push SDK integration](#step-3.3A-integrate-the-push-sdk) configuration is correct and that you have obtained the PushId.
 4. Confirm that you have [reported push information](#step-4.3A-report-the-push-information-to-the-im-server) to the IM server correctly.
 5. Manually kill the app on your device, send several messages, and check whether you can receive notifications within one minute.
-6. If you still cannot receive push messages after the preceding steps, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the specific `time`, `SDKAppID`, `certificate ID`, and `push receiving UserID` for processing.
+
