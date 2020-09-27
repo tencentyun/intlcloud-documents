@@ -142,7 +142,7 @@ Outside Chinese mainland, there are eight billing regions determined according t
 Tencent VOD traffic is billed on a daily basis with a tiered pricing. The more traffic you use on each day, the lower the billing tier. Detailed tiered unit prices are as follows:
 
 | Traffic Tier (USD/GB) | Chinese Mainland |Asia Pacific Zone 1|Asia Pacific Zone 2|Asia Pacific Zone 3|Middle East|Europe|North America|South America|Africa|
-| ----------      |----------------|
+| ----------  |----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
 |  0 GB - 500 GB (inclusive)   | 0.039             |0.113|0.125|0.125|0.163|0.071|0.071|0.169|0.169|
 | 500 GB - 2 TB (inclusive)   | 0.038             |0.038|0.105|0.105|0.159|0.064|0.064|0.161|0.161|
 | 2 TB - 50 TB (inclusive)   | 0.036            |0.097|0.099|0.099|0.154|0.051|0.051|0.156|0.156|
