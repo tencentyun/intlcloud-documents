@@ -65,7 +65,7 @@ Transcoding fees on January 1 = 0.0242 (USD/min) x 100 (min) + 0.0061 (USD/min) 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
 ### THSHD
-了解更多信息，请参考[Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd)
+For more information, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd)
 #### Pricing
 
 Charges are based on the output file duration and the resolution range of the video short side.
