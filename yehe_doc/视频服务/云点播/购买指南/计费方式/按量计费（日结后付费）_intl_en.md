@@ -28,7 +28,7 @@ Storage price outside Chinese mainland: 0.0009 (USD/GB)
 >! If you do not want to incur storage fees, you can delete the stored files via the console. Otherwise, storage fees will be incurred every day.
 
 ## Video Transcoding
-VOD offers three types of video transcoding: basic transcoding, top speed codec transcoding and [transcoding to adaptive bitrate streaming] (https://intl.cloud.tencent.com/document/product/266/33942).
+VOD offers three types of video transcoding: basic transcoding, top speed codec transcoding and [transcoding to adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942).
 
 ### Basic transcoding
 

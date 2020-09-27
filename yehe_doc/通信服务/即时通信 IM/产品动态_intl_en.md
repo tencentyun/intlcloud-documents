@@ -6,7 +6,25 @@
          <th width="50%">Description</th>  
          <th width="15%">Release Date</th>  
          <th width="15%">Documentation</th>  
-     </tr> 
+		  <tr>
+         <td>SDK 5.0.106 release (simplified SDK for Android & iOS)</td>
+         <td>Fixed the known stability issue.
+         </td>
+         <td>September 21, 2020</td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a> </td>
+     </tr>
+     <tr>
+         <td>Standard SDK 5.0.6 release</td>
+         <td><ul stype="margin:0:">
+               <li>Added the @mentions feature for groups</li>
+		<li>iOS and Android now supports the `deleteMessages` API, which deletes local and roaming messages simultaneously.</li>
+		 <li>The `deleteConversation` API will delete local and roaming messages when the conversion is deleted.</li>
+		 <li>API2.0 now covers the APIs that are used to set and get the user profile, friend profile, group member profile, and other custom fields.</li>
+		  <li>For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Changelog</a>.</li>
+         </td>
+         <td> September 18, 2020</td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+     </tr>	
      <tr>
          <td> SDK 5.0.102 release (simplified SDK for Android & iOS)</td>
          <td><ul stype="margin:0:">
@@ -192,7 +210,7 @@
          <td>Launch of standard billing plan (Flagship Edition)</td>   
          <td>Standard billing plan (Flagship Edition) is now available with features such as “unlimited audio-video chat rooms”, “30-day message history storage”, and “maximum of 2,000 group members”. This is a one-time purchase to get more features.</td>   
 	     <td>2019-12-26</td>   
-	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">Billing Overview</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">Price Specification</a></li><li><a href="https://cloud.tencent.com/document/product/269/32458">Purchase Guide</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">Create and upgrade applications</a></li></ul></td>   
+	     <td><ul style="margin:0;"><li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">Billing Overview</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">Price Specification</a></li><li>Purchase Guide</li><li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">Create and upgrade applications</a></li></ul></td>   
      </tr> 
 	 <tr>      
          <td>SDK 4.6 improvements (Android, iOS and Windows)</td>   

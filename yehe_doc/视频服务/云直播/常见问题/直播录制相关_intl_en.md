@@ -6,7 +6,7 @@ When you enable the recording for an LVB stream, the audio/video data is relayed
 
 If an LVB push is interrupted, the access layer will immediately notify the recording server to record the file being written, store it into the VOD system and generate an index. Then, you can find the new recording file in the VOD system. If you have configured recording event notification on a server, the recording system will send the **index ID** and **online playback URL** to the server.
 
-However, an error will occur in the processes of transferring and processing a large file on the cloud. To ensure success, the maximum recording length of a file is 120 minutes, and you can specify a shorter segment using the `record_interval` parameter.
+However, an error will occur in the processes of transferring and processing a large file on the cloud. To ensure success, the maximum recording length of a file is 120 minutes, and you can specify a shorter segment using the `RecordInterval` parameter.
 
 <span id="que2"></span>
 ### Why is LVB recording not available? 
@@ -33,12 +33,14 @@ LVB currently has no limit on the video storage period. You can manage video fil
 
 <span id="que7"></span>
 ### How many recording files are generated in an LVB recording process?
-The maximum recording length of a file is 120 minutes. You can specify a shorter segment using the `record_interval` parameter of the [CreateLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30845). 
+- **Recording a file in MP4, FLV or AAC format**: the maximum recording length of a single file ranges from 5 to 20 minutes. You can specify a shorter segment using the `RecordIntervall` parameter of the [CreateLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30845).
 
 - If the duration of a live stream is too short (for example, shorter than 1 second), no recording file is generated.
-- If the duration of a live stream is not long (shorter than `record_interval`), and the push is not interrupted during the live stream, only one recording file is generated.
-- If the duration of a live stream is very long (longer than `record_interval`), the video will be segmented based on the length of time specified by `record_interval`, to avoid the time uncertainty of the flow of the file with a longer duration in a distributed system.
+- If the duration of a live stream is not long (shorter than `RecordInterval`), and the push is not interrupted during the live stream, only one recording file is generated.
+- If the duration of a live stream is very long (longer than `RecordInterval`), the video will be segmented based on the length of time specified by `RecordInterval`, to avoid the time uncertainty of the flow of the file with a longer duration in a distributed system.
 - If the push is interrupted during a live stream (SDK will re-push later), a new segment will be generated every time the interruption occurs.
+
+- **Recording a file in HLS format**: there is no upper limit. If a file exceeds the recording resumption timeout period, a new file will be created to continue recording. You can set the recording resumption timeout period to 0-1800 seconds.
 
 <span id="que9"></span>
 ### How do I splice segments?
