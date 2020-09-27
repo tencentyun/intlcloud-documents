@@ -6,7 +6,7 @@
 
 ## 基础网络转入 VPC 网络
 支持实例从基础网络转入 VPC 网络。您可登录 [TDSQL 控制台](https://console.cloud.tencent.com/dcdb)，单击实例名进入实例详情页，在“所属网络”处，单击【转VPC网络】更改，前提条件是目标 VPC 子网内仍有可用 IP。
-
+![](https://main.qcloudimg.com/raw/735f3699ff0b139170a34724cedeb95f.png)
 
 ## 修改内网地址
 在 VPC 网络下，云数据库支持修改内网地址。您可以在实例详情页的“内网地址”处更改，前提条件是当前子网仍有可用 IP。
