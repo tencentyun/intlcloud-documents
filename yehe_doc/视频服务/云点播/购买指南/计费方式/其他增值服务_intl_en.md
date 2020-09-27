@@ -1,0 +1,69 @@
+
+## User Generated Short Video (UGSV) SDK License
+
+UGSV SDK license overview:
+- You can apply for the basic edition UGSV license for free to get a 28-day trial.
+- UGSV SDK resource consumption such as acceleration, storage, traffic, etc. is billed according to VOD billing rules.
+- If you need enterprise edition and Enterprise Pro licenses, please contact sales.
+- You cannot refund the license fee once UGSV feature is activated.
+
+
+#### Pricing
+|Edition|Validity Period|Unit Price (USD)|
+|--|--|--|
+|Trial edition|28 days|0|
+|Lite edition license|1 year|269|
+|Basic edition license|1 year|1,499|
+|Enterprise edition license|1 year|25,999|
+|Enterprise Pro edition license|1 year|71,999|
+
+
+## AI-Based Video Analysis Feature
+AI-based video analysis feature is billed on a postpaid monthly basis. The billing unit is USD/min and this service is billed based on service types and corresponding durations.
+- Payment method: postpaid monthly billing cycle
+- A duration of less than 1 minute in the source video is counted as 1 minute.
+
+#### Pricing
+AI-based video analysis feature has the following billable items:
+- Intelligent highlights identifying and video splitting: intelligent video splitting feature splits videos according to the contents. We can optimize this feature according to users’ requirements. **APIs for video highlights and splitting are different, and the two services are billed separately**.
+- Intelligent video tagging and classification: this feature intelligently identifies figures, scenarios, voices, text and other information in videos and then automatically generates video tags, categories, summaries among others. **APIs for video tagging and classification are different, and the two services are billed separately**.
+- Intelligent video cover recommendation: selects one or more screenshots of a video as the recommended thumbnails.
+
+The billing details are as follows:
+
+|Billable Items|Billing Mode|Unit Price (USD/minute)|
+|--------|-------------|-------|
+|Intelligent highlights identifying|Billing by the original video duration|0.0572|
+|Intelligent video splitting|Billing by the original video duration|0.0572|
+|Intelligent video tagging|Billing by the original video duration|0.0572|
+|Intelligent video classification|Billing by the original video duration|0.0572| 
+|Intelligent video thumbnail recommendation|Billing by the original video duration|0.0572|
+
+
+#### Billing example
+
+**User A wants to process video B. The APIs of intelligent video tagging and intelligent video classification will be called at the same time, and the original duration of video B is 100 minutes.
+Service fee = 100 x 0.0572 + 100 x 0.0572 = 11.4 USD**
+
+## AI-Based Video Auditing
+
+The billing mode for AI-based video auditing is postpaid. The billing unit is USD/min and this service is billed based on service types and corresponding video durations.
+Billing rules:
+
+Payment method: postpaid.
+- A duration of less than 1 minute in the source video is counted as 1 minute.
+
+#### Pricing
+AI-based video auditing feature intelligently reviews images, audios, and texts in videos to detect pornographic, terrorist, and politically sensitive information and outputs auditing results according to users’ requirements.
+
+The billing details are as follows:
+
+|Billable Items|Billing Mode|Unit Price (USD/min)|
+|----------|----------|-------|
+|Video auditing|Billing by the original video duration|0.016 |
+
+#### Billing example
+ Let’s assume a user uses this feature to audit the 30-minute video A
+Service fee = 30 x 0.016 = 0.48 USD.
+
+
