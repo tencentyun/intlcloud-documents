@@ -65,7 +65,7 @@
 其余转码计费问题请参见 [计费示例](https://intl.cloud.tencent.com/document/product/266/38163)。
 
 ### 极速高清转码
-
+了解更多信息，请参考[Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd)。
 #### 计费价格
 
 按照极速高清转码输出文件时长和视频短边所处的分辨率区间进行收费。
