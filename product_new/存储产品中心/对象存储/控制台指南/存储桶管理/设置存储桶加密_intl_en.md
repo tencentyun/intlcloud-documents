@@ -18,8 +18,6 @@ You can configure bucket encryption when [creating a bucket](https://intl.cloud.
 If you do not set encryption when creating a bucket, you can follow the steps below to set configuration subsequently.
 
 1. On the [Bucket List](https://console.cloud.tencent.com/cos5/bucket) page, click the name of the bucket for which to set encryption to enter the bucket configuration page.
-2. Click **Basic Configuration** on the left to enter the basic configuration page of the bucket.
-3. Scroll down to **Server-Side Encryption**, click **Edit**, and toggle **Status** on.
-![](https://main.qcloudimg.com/raw/e2863ba89860f15464870ac198b5335f.png)
-4. Select the specified encryption method and click **Save**.
+2. Select **Safety Management** > **Server-Side Encryption** on the left sidebar, click **Edit**, and toggle **Status** on.
+3. Select the specified encryption method and click **Save**.
 ![](https://main.qcloudimg.com/raw/524717e180e357eb74fa8be0b42a51a3.png)
