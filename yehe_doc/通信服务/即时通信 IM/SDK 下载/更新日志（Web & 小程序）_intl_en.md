@@ -1,3 +1,14 @@
+### 2.7.8 @2020.9.24
+
+**Added**
+
+The [TIM.create](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html#.create) API added the `oversea` parameter. When this parameter is set to `true`, SDK will use a domain name outside China to avoid interference.
+
+**Fixed**
+
+- Fixed the `undefined` response issue when a SDK in `not ready` status calls an API.
+- Fixed the statistics issue.
+
 ### 2.7.7 @2020.8.12
 
 **Added**

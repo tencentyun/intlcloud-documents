@@ -1,7 +1,7 @@
 This document describes how to initialize an instance in the TDSQL Console.
 
 ## Directions
-1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), locate the uninitialized instance in the instance list, and click **Initialize** in the "Operation" column.
+1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), locate the uninitialized instance in the instance list, and click **More** > **Initialize** in the "Operation" column.
 
 2. In the instance initialization dialog box that pops up, select the configuration as needed, and click **OK** to initialize the instance.
  - Supported character sets: select the character set supported by MySQL.

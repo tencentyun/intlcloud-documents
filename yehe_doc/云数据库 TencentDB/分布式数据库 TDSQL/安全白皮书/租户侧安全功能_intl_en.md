@@ -2,13 +2,12 @@ This document describes tenant security features such as MAR, auto failover, and
 
 ## Multi-thread Async Replication (MAR)
 #### Background
-As a database records data in it, to switch between multiple databases, the data in them must be in sync. Therefore, data sync is the foundation of database high availability scheme. Generally, data can be synced in the following process:
-![](https://main.qcloudimg.com/raw/e4c7add8700c0846e97fd9f7a87812b7.png)
+As a database records data in it, to switch between multiple databases, the data in them must be in sync. Therefore, data sync is the foundation of database high availability scheme. 
 Currently, the open-source MySQL database supports async and semi-sync data replication modes. However, in both modes, if a node failure occurs, the data may be lost, incorrect, or messy; plus, the replication is serial, which has a low performance.
 
 #### Solution
 In Tencent Cloud's proprietary parallel multi-thread asynchronous replication (MAR, aka strong sync) scheme based on the MySQL protocol, when a request is initiated at the application layer, only after a secondary node successfully returns a message can the primary node respond to the application layer with a request success, ensuring that the primary and the secondary nodes have completely the same data.
-![](https://main.qcloudimg.com/raw/78c845d0d1ee7e557d9ec35cef773b64.png)
+![](https://main.qcloudimg.com/raw/b2f406a24d556c7355c7fa05511c4422.png)
 
 When you perform MAR, the primary database will be hanged if it is disconnected from the secondary database or the secondary database fails. In this case, if there is only one primary or secondary database, the high availability scheme will be unavailable, because if only one single server is used, part of data will be lost completely when a failure occurs, which does not meet the requirements for finance-level data security.
 Therefore, based on MAR, TDSQL provides a downgradable strong sync scheme, which is similar to the semi-sync technology of Google but has a different implementation scheme.

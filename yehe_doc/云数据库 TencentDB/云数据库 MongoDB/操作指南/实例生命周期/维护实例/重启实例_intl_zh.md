@@ -5,5 +5,5 @@
 
 ## 操作步骤 
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在实例列表选择所需实例，在上方单击【重启】，或在“操作”列选择【更多】>【重启】。
-![](https://main.qcloudimg.com/raw/e0420002ff62a7c48852cf0cd49e6902.png)
+
 2. 在弹出的对话框，勾选需要重启的组件，单击【确定】，等待任务完成即可。

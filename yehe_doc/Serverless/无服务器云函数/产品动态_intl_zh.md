@@ -1,3 +1,24 @@
+## 2020年08月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云函数 SCF 定制化运行环境 Custom Runtime 功能正式发布</td>
+<td>云函数 SCF 提供 Custom Runtime 即可定制化运行环境，通过将函数的运行时开放自定义实现，开发者可以根据需求使用任意开发语言的任意版本来编写函数。</td>
+<td>2020-08-05</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/38129">Custom Runtime</a>
+</td>
+</tr>
+</tbody></table>
+
+
 
 ## 2020年07月
 <table>

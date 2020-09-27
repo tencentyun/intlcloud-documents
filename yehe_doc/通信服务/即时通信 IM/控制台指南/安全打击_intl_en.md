@@ -8,8 +8,8 @@ Content filtering uses natural language processing (NLP) technologies to determi
 The Content Filtering Basic feature only provides the default dictionary and you cannot add custom dictionary. To use the custom sensitive word feature, you can click **Upgrade** on the [IM Console](https://console.cloud.tencent.com/im).
 
 
-## Content Filtering – Professional Edition
-The content filtering professional edition provides sensitive word customization, query, and other features.
+## Content Filtering - Professional Edition
+The Content Filtering Pro service provides sensitive word customization, query, and other features.
 
 ### How to enable
 1. Log in to the [IM console](https://console.cloud.tencent.com/im), click a target application card, and click **Content Filtering** in the left sidebar.
@@ -17,7 +17,8 @@ The content filtering professional edition provides sensitive word customization
 3. Select **Enable content filtering** and complete payment.
 
 ### Sensitive word customization
-After you enable the content filtering professional edition, sensitive word customization is available for the content filtering module in the IM console. Then, you can select **Custom List** to customize sensitive words.
+After the Content Filtering Pro service is enabled, you can customize sensitive words by selecting **Content Filtering** -> **Custom List** in the IM console.
+
 Click **Add Sample**, enter keywords, select tags, and click **Submit**.
 
 >! A maximum of 50 custom sensitive words can be added at a time. The total number of sensitive words cannot exceed 3,000, and a single sensitive word cannot exceed 10 characters in length.
@@ -26,7 +27,7 @@ Click **Add Sample**, enter keywords, select tags, and click **Submit**.
 Tags for custom sensitive words include general, political, pornographic, violence and terrorism, abuse, drug-related, and ads.
 
 ### Sensitive word query
-After you enable the content filtering professional edition, you can click a target application card in the IM console, click **Content Filtering** in the left sidebar, and click **Detail Query** to query sensitive words.
+After the Content Filtering Pro service is enabled, you can click the target application card in the IM console, select **Content Filtering** in the left sidebar, and click **Details** to query sensitive words.
 
 You can query content filtering details for sensitive words with certain tags within the past 7, 14, or 30 days. The content filtering details include the filtered content, keywords, review results, review identifiers, and review time.
 

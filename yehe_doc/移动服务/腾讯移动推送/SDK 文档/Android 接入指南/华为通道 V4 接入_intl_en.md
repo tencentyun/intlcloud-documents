@@ -166,7 +166,7 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 
 ## Advanced Configuration (Optional)
 ### Arrival receipt configuration for Huawei channel
-The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Receipt Configuration Guide for Huawei Channel](https://cloud.tencent.com/document/product/548/41318#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
+The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Receipt Configuration Guide for Huawei Channel](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
 ![](https://main.qcloudimg.com/raw/11c44dfc000045458a627e12b67ef611.png)
 
 ### Badge adaptation for Huawei devices
