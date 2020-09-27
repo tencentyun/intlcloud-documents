@@ -3,20 +3,20 @@ This document describes how to quickly run the TRTC SDK for Desktop Browser Demo
 ## Supported Platforms
 
 Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) and Safari (desktop and mobile) but poorly or not supported by other platforms (such as browsers on Android).
-- For mobile devices, the [Mini Program] solution is recommended, which is supported by both WeChat and Mobile QQ. This solution is implemented through native technologies of corresponding platforms to deliver excellent audio/video performance and specifically adapted to major mobile phone brands.
+
 - If your application scenario is mainly in the education sector, the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution is recommended for the teacher end, which is more stable and supports two-channel big/small video images, more flexible screen sharing schemes, and more powerful recovery capabilities on poor network connections.
 
-| OS | Browser | Minimum Version Requirement | Receipt (Playback) | Sending (Mic-on) |
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| macOS | Safari (desktop) | 11+ | Supported | Supported |
-| macOS | Chrome (desktop) | 47+ | Supported | Supported |
-| Windows | Chrome (desktop) | 52+ | Supported | Supported |
-| Windows | QQ Browser (desktop) | 10.2 | Supported | Supported |
-| iOS | Safari (mobile) | 11.1.2 | Supported | Supported |
-| iOS | WeChat embedded browser | 12.1.4 | Supported | Not supported |
-| Android | QQ Browser (mobile) | - | Not supported | Not supported |
-| Android | UC Browser (mobile) | - | Not supported | Not supported |
-| Android | WeChat embedded browser | - | Not supported | Not supported |
+| OS | Browser | Minimum Browser Version Requirement | Receipt (Playback) | Sending (Mic-on) | Screen Sharing |
+|:-------:|:-------:|:-------:|:-------:|:-------:| :-------:|
+| Mac OS  | Safari (desktop)  |  11+ | Supported | Supported | Not supported |
+| Mac OS  | Chrome (desktop) |  56+ | Supported | Supported |  Supported (on Chrome 72+) |
+| Windows  | Chrome (desktop) |  56+ | Supported | Supported |  Supported (on Chrome 72+) |
+| Windows  | QQ browser (desktop) |  10.4 | Supported | Supported | Not supported |
+| iOS | Safari (mobile)  | 11.1.2 | Supported | Supported | Not supported |
+| iOS | WeChat embedded browser| 12.1.4 | Supported | Not supported | Not supported |
+| Android | QQ browser (mobile)| - | Not supported | Not supported | Not supported |
+| Android | UC browser (mobile) | - | Not supported | Not supported | Not supported |
+| Android | WeChat embedded browser | - | Not supported | Not supported | Not supported |
 
 >! 
 >- You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
