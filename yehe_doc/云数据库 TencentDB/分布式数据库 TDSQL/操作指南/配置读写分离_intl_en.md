@@ -8,7 +8,7 @@
  - Select **Report Errors** to report an error when the delay of the slave exceeds the limit.
  - Select **Read Only from Slave Server** to ignore the delay parameter and always read from the slave (this is generally used to pull binlogs for sync).
  - Set the **Read-only slave server delay parameter** to define the data sync delay time, which is to be used together with **Master Server** and **Report Errors** under the **Read-only request allocation policy**.
-![](https://main.qcloudimg.com/raw/e9d443b923f60a1e09bc2ce2382c13a9.png)
+![](https://main.qcloudimg.com/raw/d6329e5b6626e419c2fbd07f5b50c3c9.png)
 
 ## Read/Write Separation Based on Comment
 Add the **```/*slave*/```** field before each SQL statement to be "read" by the slave, and add the `-c` parameter after "mysql" to parse the comment, such as ```mysql -c -e "/*slave*/sql"```, to automatically assign "read" requests to the slave. Below are examples:
@@ -18,7 +18,7 @@ select * from emp order by sal，deptno desc；
 //Read from slave//
 /*slave*/ select * from emp order by sal，deptno desc；
 ```
->
+>!
 >- This feature only supports read from slave (SELECT) rather than other operations. Non-SELECT statements will fail.
 >- The `-c` parameter needs to be added after `mysql` to parse the comment.
 >- ```/*slave*/``` must be in lowercase, and no spaces are needed before and after the statement.

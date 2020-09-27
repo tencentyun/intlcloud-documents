@@ -22,17 +22,15 @@ vc.delegate = self;
 
 ## Opening the Chat Interface
 
-When initializing the chat interface, the upper layer needs to pass the conversation information for the current chat interface, that is, TIMConversation.
-The TIMConversation object is obtained using the underlying ImSDK method.
-
-The following code creates a C2C conversation with user `abc`:
-
+When the chat interface is initializing, the UI layer needs to pass in the conversation information for the current chat interface. The sample code is as follows:
 ```objectivec
-TIMConversation *conv = [[TIMManager sharedInstance] getConversation:TIM_C2C receiver:@"abc"];
-TUIChatController *vc = [[TUIChatController alloc] initWithConversation:conv];
+TUIConversationCellData *data = [[TUIConversationCellData alloc] init];
+data.groupID = @"groupID";  // Pass in the group ID for group chats
+data.userID = @"userID";    // Pass in the user ID for one-to-one chats
+TUIChatController *vc = [[TUIChatController alloc] initWithConversation:data];
 [self.navigationController pushViewController:vc animated:YES];
 ```
-TUIChatController will automatically pull the user's message history and display it.
+TUIChatController will automatically pull and display the user's message history.
 
 
 

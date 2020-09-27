@@ -2,7 +2,8 @@
 
 #### API description
 
-Launch the TPNS service by using the information of the application registered at the official website of TPNS. This is new in SDK v1.2.7.2 or above. For legacy versions, please see `XGPush.h`.
+Activate TPNS by using the information of the application registered in the TPNS console.
+(This is new in SDK 1.2.7.2 or later. For legacy versions, use the `startXGWithAppID` API in the XGPush.h file of the SDK package).
 
 ```objective-c
 /// @note TPNS SDK1.2.7.2+
@@ -96,7 +97,7 @@ This API is used to set an account. If there is already a bound account, it will
 
 > ?
 > 1. This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-> 2. If you use a multi-account system, please see `XGPush.h`.
+> 2. If you need to bind multiple accounts, use the `bindWithIdentifiers` API in the XGPush.h of the SDK package.
 
 ```Objective-C
 - (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;

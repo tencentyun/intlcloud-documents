@@ -4,7 +4,7 @@ VOD supports pay-as-you-go daily billing cycle and monthly billing cycle:
 + Monthly billing cycle: postpaid pay-as-you-go monthly billing cycle.
 
 When you activate VOD service, **the default mode is daily billing cycle. If you want to switch to billing cycle, please contact sales**.
->Tencent Cloud International does not support billing feature now. If you want to use it, please contact sales
+
 
 
 ## Billable Items
@@ -15,7 +15,7 @@ VOD billable items include: storage, transcoding, traffic and other value-added 
 Billing modes of each billable item:
 
 |Billable Items|Daily Billing Cycle|Monthly Billing Cycle|
-|--|--|--|--|
+|--|--|--|
 |Storage fee|√|√|
 |Transcoding fee|√|√|
 |Traffic fee|√|√|

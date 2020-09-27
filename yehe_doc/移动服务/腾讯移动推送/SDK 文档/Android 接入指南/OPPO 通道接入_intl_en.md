@@ -40,11 +40,21 @@ implementation 'com.tencent.tpns:oppo:[VERSION]-release'// OPPO PUSH [VERSION] i
 >? OPPO Push [VERSION] refers to the SDK version number, which can be viewed on the [SDK download page](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
-#### Integrating through Eclipse
+#### Integrating through Eclipes
 After getting the TPNS SDK package for OPPO PUSH, configure the major TPNS version and the following content in the manual integration method detailed on TPNS's official website.
 
-1. Import the jar packages related to OPPO PUSH. Import `oppo4tpns1.1.2.1.jar` to the project folder.
-2. Add the following configuration to the `Androidmanifest.xml` file (two methods):
+1. Access the Other-push-jar folder, and import OPPO push jar to the project.
+2. Use the following codes to add the resource file to the primary project.
+```java
+package com.heytap.mcssdk;
+class R {
+    public static final class string {
+        public static final int system_default_channel = 
+	com.tencent.android.tpns.demo.R.string.oppo_system_default_channel;//You can use a custom string resource ID.
+    }
+}
+```
+3. Add the following configurations to the `Androidmanifest.xml` file (two methods):
  - Use the following configuration for the TPNS SDK for Android below v1.2.0.2:
 ```
 <!--Permissions required by OPPO PUSH-->

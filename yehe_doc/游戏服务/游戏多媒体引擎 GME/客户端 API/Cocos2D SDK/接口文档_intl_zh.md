@@ -1,6 +1,6 @@
 为方便 Cocos2d 开发者调试和接入腾讯云游戏多媒体引擎产品 API，这里向您介绍适用于 Cocos2d 开发的接入技术文档。
 
->?此文档对应 GME sdk version：2.5。
+>?此文档对应 GME sdk version：2.7。
 
 ## 使用 GME 重要事项
 
@@ -31,7 +31,7 @@
 
 |接口     | 接口含义   |
 | ------------- |:-------------:|
-|Init    	|初始化 GME	| 
+|Init    	|初始化 GME	|
 |Poll    	|触发事件回调	|
 |Pause   	|系统暂停	|
 |Resume 	|系统恢复	|
@@ -191,7 +191,7 @@ context->Uninit();
 ## 实时语音房间相关接口
 初始化之后，SDK 调用进房后进去了房间，才可以进行实时语音通话。
 使用问题可参考 [实时语音相关问题](https://intl.cloud.tencent.com/document/product/607/30257)。
- 
+
 |接口     | 接口含义   |
 | ------------- |:-------------:|
 |GenAuthBuffer    	|初始化鉴权|
@@ -377,7 +377,7 @@ ITMGContextGetInstance()->GetRoom()->GetRoomType();
 | ITMG_ROOM_CHANGE_EVENT_ENTERROOM		|1 	|表示在进房的过程中，自带的音频类型与房间不符合，被修改为所进入房间的音频类型	|
 | ITMG_ROOM_CHANGE_EVENT_START			|2	|表示已经在房间内，音频类型开始切换（例如调用 ChangeRoomType 接口后切换音频类型 ）|
 | ITMG_ROOM_CHANGE_EVENT_COMPLETE		|3	|表示已经在房间，音频类型切换完成|
-| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	|表示房间成员调用 ChangeRoomType 接口，请求切换房间音频类型|	
+| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	|表示房间成员调用 ChangeRoomType 接口，请求切换房间音频类型|
 
 
 ####  示例代码  
@@ -922,7 +922,8 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerVolume();
 
 
 ### 启动耳返
-此接口用于启动耳返。
+此接口用于启动耳返，需要 EnableLoopBack+EnableSpeaker 才可以听到自己声音。
+
 ####  函数原型  
 ```
 ITMGAudioCtrl virtual int EnableLoopBack(bool enable)
@@ -952,7 +953,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 |接口     | 接口含义   |
 | ------------- |:-------------:|
-|Init    	|初始化 GME	| 
+|Init    	|初始化 GME	|
 |Poll    	|触发事件回调	|
 |Pause   	|系统暂停	|
 |Resume 	|系统恢复	|

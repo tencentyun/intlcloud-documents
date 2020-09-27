@@ -78,7 +78,7 @@ API Gateway can be used to this end. Configure the backend of API Gateway as a f
 Currently, triggering by manual triggers (APIs), timer triggers, COS, CMQ, and API Gateway is supported, and more triggering methods will be available in the future.
 
 ### What languages does SCF support?
-Currently, it supports Python 2.7 and 3.6, Node.js 6.10, 8.9, and 10.15, Java 8, PHP 5 and 7, and Go. More languages will be supported in the future.
+Currently, it supports Python 2.7 and 3.6, Node.js 6.10, 8.9, and 10.15 & 12.16, Java 8, PHP 5 and 7, and Go. More languages will be supported in the future.
 
 
 ### Can I access the infrastructure where SCF runs?
@@ -119,7 +119,7 @@ When you create the zip package, if `SecondFolder` is zipped, the error above wi
 
 ### What if a timeout occurs?
 
-Please set the timeout period to a larger value (up to 300) and test the function again. If it still times out, please check whether there are excessive input data and computation, loops that cannot be jumped out, or prolonged sleeps in the log of your code.
+Please set the timeout period to a larger value (up to 900) and test the function again. If it still times out, please check whether there are excessive input data and computation, loops that cannot be jumped out, or prolonged sleeps in the log of your code.
 
 ### How do I scale a function?
 You do not have to care about function scaling as the SCF platform will automatically do so on your behalf. Whenever a function request is received, SCF will quickly locate the free capacity and execute your code. Since your code is stateless, as many instances as needed can be launched without lengthy delays in deployment and configuration.

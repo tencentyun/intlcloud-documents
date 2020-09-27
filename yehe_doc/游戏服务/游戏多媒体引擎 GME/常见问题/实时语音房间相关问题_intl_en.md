@@ -3,7 +3,7 @@ There are mainly three types of applicable scenarios:
 - **Mic sequence mode:** this mode allows players to mic on in turn with high and smooth sound quality, which is suitable for voice chat-enabled games such as werewolf.
 - **Free audio call mode:** this mode allows multiple players to speak at the same time with ultra low latency, which is suitable for competitive games such as multi-player team battles.
 - **Command mode:** this mode is suitable for commander games such as one-to-many command battles and audio interaction with host.
-Voice chat features provided by the GME SDK can meet the needs of the above-mentioned scenarios. However, the specific mode (such as mic sequence) is something that should be implemented in your own product's application layer through a delivery protocol, for example.
+Voice chat features provided by Tencent Cloud SDK can meet the needs of the above-mentioned scenarios. However, the specific mode (such as mic sequence) is something that should be implemented in your own product's application layer through a delivery protocol, for example.
 
 ### What are the requirements for the value of `openid`?
 Only a 64-bit unsigned integer can be an `openid`. Convert it to a string before passing it to the SDK.
@@ -93,3 +93,6 @@ Notifications for audio events are subject to a threshold, and the notification 
 
 ### Will a blocked user stay in the blocklist after exiting the room?
 No. After voice room exit, the blocklist becomes invalid.
+
+### I can normally use the range voice but there is no attenuation. I set the 3D sound effect file but the return value is still 0. Why did this happen?
+Confirm if you enable the 3D sound effect API `EnableSpatializer`, and use [UpdateSelfPosition and UpdateAudioRecvRange](https://intl.cloud.tencent.com/document/product/607/18218) to update your position.

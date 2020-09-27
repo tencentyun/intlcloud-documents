@@ -15,8 +15,8 @@ VOD billable items:
 
 #### Pricing
 Fees for VOD video storage are charged differently in **Chinese Mainland** and **outside Chinese Mainland**.
-Storage price in Chinese mainland: 0.0006 (USD/GB)
-Storage price outside Chinese mainland: 0.0009 (USD/GB)
+Storage price in Chinese mainland: 0.0006 (USD/GB/day)
+Storage price outside Chinese mainland: 0.0009 (USD/GB/day)
 
 #### Billing overview
 
@@ -28,7 +28,7 @@ Storage price outside Chinese mainland: 0.0009 (USD/GB)
 >! If you do not want to incur storage fees, you can delete the stored files via the console. Otherwise, storage fees will be incurred every day.
 
 ## Video Transcoding
-VOD offers three types of video transcoding: basic transcoding, top speed codec transcoding and [transcoding to adaptive bitrate streaming] (https://intl.cloud.tencent.com/document/product/266/33942).
+VOD offers three types of video transcoding: basic transcoding, top speed codec transcoding and [transcoding to adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942).
 
 ### Basic transcoding
 
@@ -64,8 +64,8 @@ Transcoding fees on January 1 = 0.0242 (USD/min) x 100 (min) + 0.0061 (USD/min) 
 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
-### Top speed codec transcoding
-
+### THSHD
+For more information, see [Video Transcoding Service](https://intl.cloud.tencent.com/document/product/266/7898#teshd).
 #### Pricing
 
 Charges are based on the output file duration and the resolution range of the video short side.
@@ -134,6 +134,7 @@ Outside Chinese mainland, there are eight billing regions determined according t
 | North America| United States, Canada        |
 | South America | Brazil|
 | Africa| South Africa             |
+
 - CDN service fees for Chinese mainland and regions outside Chinese mainland are paid separately based on corresponding unit prices and usages.
 
 #### Pricing
@@ -142,12 +143,12 @@ Outside Chinese mainland, there are eight billing regions determined according t
 Tencent VOD traffic is billed on a daily basis with a tiered pricing. The more traffic you use on each day, the lower the billing tier. Detailed tiered unit prices are as follows:
 
 | Traffic Tier (USD/GB) | Chinese Mainland |Asia Pacific Zone 1|Asia Pacific Zone 2|Asia Pacific Zone 3|Middle East|Europe|North America|South America|Africa|
-| ----------      |----------------|
+| ----------  |----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
 |  0 GB - 500 GB (inclusive)   | 0.039             |0.113|0.125|0.125|0.163|0.071|0.071|0.169|0.169|
 | 500 GB - 2 TB (inclusive)   | 0.038             |0.038|0.105|0.105|0.159|0.064|0.064|0.161|0.161|
 | 2 TB - 50 TB (inclusive)   | 0.036            |0.097|0.099|0.099|0.154|0.051|0.051|0.156|0.156|
 | 50 TB - 100 TB (inclusive)     | 0.033             |0.084|0.092|0.092|0.145|0.033|0.033|0.15|0.15|
-| 50 TB - 100 TB (inclusive)     | 0.033             |0.084|0.092|0.092|0.145|0.033|0.033|0.15|0.15|
+| 100TB         | 0.025             |0.071|0.085|0.085|0.135|0.026|0.026|0.14|0.14|
 
 >For more information, see [Examples of VOD Traffic Usage Estimation](https://intl.cloud.tencent.com/document/product/266/38163#.E7.82.B9.E6.92.AD.E6.B5.81.E9.87.8F.E4.BD.BF.E7.94.A8.E9.A2.84.E4.BC.B0.E5.88.86.E6.9E.90).
 #### Billing overview
