@@ -5,7 +5,7 @@ WAF provides SaaS-based WAF and load-balanced WAF. These 2 types provide basical
 - SaaS-based WAF resolves a domain name to the CNAME address provided by the WAF cluster through DNS resolution. The IP address of the real server is configured through the WAF service. SaaS-based WAF cleanses and filters out malicious domain name traffic and returns legitimate traffic to the real server to ensure website security.
 - Load-balanced WAF works with the Tencent Cloud Load Balancer cluster to mirror load-balanced HTTP/HTTPS traffic to the WAF cluster. WAF performs bypass threat detection and cleansing and then synchronizes the trusted status of user requests to the Tencent Cloud Load Balancer cluster to block threats and pass legitimate requests, helping ensure the security of websites.
 
-The WAF service can effectively prevent SQL injection, cross-site scripting (XSS), trojan upload, unauthorized access, and other OWASP attacks. In addition, it can provide all-round protection for website systems and services by effectively filtering out CC attacks, detecting DNS link hijacking, providing zero-day vulnerability patches, and preventing web page tampering.
+The WAF service can effectively prevent SQL injection, cross-site scripting (XSS), trojan upload, unauthorized access, and other OWASP attacks. In addition, it can provide all-round protection for website systems and services by effectively filtering out CC attacks, providing zero-day vulnerability patches, and preventing web page tampering.
 
 ## Key features
 
@@ -23,7 +23,6 @@ table th:first-of-type {
 | Data leakage prevention            | WAF provides ex-ante server application hiding, real-time intrusion prevention, and ex-post sensitive data replacement and hiding policies to prevent backend databases from being hacked. |
 | Defense against CC attacks           | WAF provides intelligent defense against CC attacks, and performs intelligent decision-making to generate defense policies based on the exceptional responses (timeout and response delay) of the real server and big data analysis of website behaviors. In addition, it provides multi-dimensional, custom, and precise access control, human-machine identification, frequency control, and other countermeasures to efficiently filter out unwanted access and mitigate CC attacks. |
 | Crawler BOT behavior management     | Based on the AI+ rules repository, WAF provides web page crawler and BOT robot management to help enterprises mitigate business risks caused by malicious BOT behaviors. Business risks include website user data leakage, content infringement, competitive pricing, inventory query, black hat SEO, and business strategy disclosure. |
-| DNS illegal hijacking detection      | WAF performs nationwide DNS verification on the domain names submitted by users, and detects and displays the hijacking details of the protected domain names in each region to help enterprises avoid data theft and financial loss caused by malicious hijacking of website users. |
 | 30-line BGP IP access protection | WAF supports dedicated 30-line BGP IP link access for defense nodes. The nodes are scheduled intelligently, which effectively solves the access delay problem and ensures the site access speed of users in all tiers of cities. This helps to deploy imperceptible cloud WAF security protection without affecting the website access speed. |
 
 ## Why do we need WAF?
@@ -38,7 +37,6 @@ In the following scenarios, the WAF service can provide effective defense and pr
   After obtaining permissions of websites or servers, attackers inject malicious code to make users execute malicious programs, to earn traffic, to steal accounts, or to show off. They insert links of illicit content, and tamper with web page images and texts. These behaviors severely influence the operation of websites and impair the image and credibility of website operators.
 - **Framework vulnerabilities (frameworks attacked during the patch fixing period)**
   Many web systems are based on common open-source frameworks, such as Structs2, Spring, and WordPress, which often carry security vulnerabilities. It is a tough and dangerous period before patches are ready to use, because many attacks spring up soon after the vulnerabilities are uncovered.
-- **Illegal hijacking (imperceptible hijacking)**
-  The normal DNS requests of websites cannot be responded to properly or the accessed content is maliciously modified due to the attempts to obtain traffic or increase advertising revenue. These are common hijacks on the internet. In most cases, website operators cannot perceive these hijacks until they receive customer complaints.
+
 - **Service interruption caused by large traffic DDoS attacks**
   As a cheap and easy-to-use attack means, DDoS attacks are often used to disrupt the business operation of competitors or to make key portals inaccessible, leading to significant impact on business continuity and branding. Operators are often very passive when their websites are attacked.
