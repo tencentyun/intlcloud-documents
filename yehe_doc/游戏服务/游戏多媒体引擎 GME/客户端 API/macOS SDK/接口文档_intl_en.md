@@ -1,6 +1,6 @@
 This document describes how to access and debug the GME APIs for macOS.
 
->?This document applies to GME SDK v2.5.
+>?This document applies to GME SDK v2.7.
 
 ## Key Considerations for Using GME
 
