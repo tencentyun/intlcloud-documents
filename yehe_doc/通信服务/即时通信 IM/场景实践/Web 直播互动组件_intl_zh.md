@@ -9,7 +9,7 @@
 
 
 TWebLive 架构设计如下图所示：
-![](https://main.qcloudimg.com/raw/503229b90d3714e5340e7c860ee50a8d.png)
+![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
 
 ## 二、TWebLive 的优势
 
