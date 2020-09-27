@@ -1,12 +1,11 @@
-## Operation Scenarios
 When the access address of a database instance needs to be modified, you can adjust the network using the private network translation feature.
 
->
+>!
 >- Modifying the private address of an instance is highly risky. Please only do so with caution during off-peak hours. After modification, unless occupied by another service, the original address will remain valid for another 24 hours. Please switch your business configuration as soon as possible.
 >- Once selected, a VPC cannot be changed.
 
 ## Switching from Basic Network to VPC
-An instance can be switched from basic network to VPC. To do so, click **Switch to VPC** in the **Network** section on the instance details page, provided that there is an available IP in the target VPC subnet.
+An instance can be switched from classic network to VPC. To do so, log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), click an instance name in the instance list, and click **Switch to VPC** in the "Network" section on the instance details page (provided that there is an available IP in the target VPC subnet).
 
 
 ## Changing Private Address
