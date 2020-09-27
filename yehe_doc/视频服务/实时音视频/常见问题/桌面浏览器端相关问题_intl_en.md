@@ -1,6 +1,6 @@
 ### Which browsers support the SDK for desktop browser?	
 It is well supported by Chrome (desktop) and Safari (desktop and mobile) but poorly or not supported by other platforms (such as browsers on Android). For more information, please see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35143).
-You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported.
+You can open the [WebRTC capability test](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) page in your browser to check whether WebRTC is fully supported.
 
 ### Does TRTC work in the same way across desktop browsers, WeChat Mini Program, and PC?
 Yes. TRTC supports interconnection across all platforms.

@@ -25,3 +25,6 @@ This error is caused by incorrect initialization of the voice messaging and spee
 
 ### What should I do if it takes too long to upload or download an offline recording file?
 For the voice messaging and speech-to-text service, if the conversion delay is too high, you are recommended to use the streaming recording API which calls back the returned text.
+
+### Why can't I access the recording file and the error 4101 is reported after I finish recording? Do I need to first create a folder?
+Yes. Due to security reasons, you have to create your folder and ensure the file path is correct.

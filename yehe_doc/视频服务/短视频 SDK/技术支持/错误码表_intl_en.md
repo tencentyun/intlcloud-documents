@@ -62,4 +62,4 @@ If you cannot determine the video release result based on the SDK error code, yo
 | -20014  |  `bucket_authority` is empty | 
 | -21001  |  Out of memory | 
 | -22000  |  I/O exception | 
-| -25000  |  Other errors. If you need help, contact your Tencent Cloud rep at 95716 or [submit a ticket](https://console.cloud.tencent.com/workorder/category) | 
+| -25000  |  Other errors. If you need help, contact your Tencent Cloud rep or [submit a ticket](https://console.cloud.tencent.com/workorder/category) | 

@@ -10,14 +10,14 @@ For detailed directions, please see [Creating File Systems and Mount Targets](ht
 
 
 ## Step 2. Connect to an Instance
-This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For alternative login methods, please see [Log into Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436).
+This section describes how to log in to a Linux-based CVM instance. Login method varies by scenario. This section shows how to log in to the instance through the console. For alternative login methods, please see [Logging into Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436).
 
 #### Prerequisites
 Log in to the CVM instance with an admin account.
  - Admin account ID: `root` for all Linux-based instances (`ubuntu` on Ubuntu).
  - Password: the password you specified when purchasing the CVM instance.
 
-#### Logging in to a CVM instance in the console
+#### Logging in to the CVM instance in the console
 - Locate the instance in the [CVM instance](https://console.cloud.tencent.com/cvm/index) list, click **Log In** under **Operation**. Click **Log in Now** under **Alternative login methods** to connect to the Linux CVM instance through VNC.
 - Enter the account ID and its password to log in.
 
@@ -43,21 +43,21 @@ CIFS/SMB | 445 |  telnet 445
 #### 1. Launch the NFS client
 Before mounting, please make sure that `nfs-utils` or `nfs-common` has already been installed in the system. The installation method is as follows:
 - CentOS:
-```shell
+```plaintext
 sudo yum install nfs-utils
 ```
 - Ubuntu or Debian:
-```shell
+```plaintext
 sudo apt-get install nfs-common
 ```
 
 #### 2. Create a destination mount directory
 Create a destination mount directory with the following command.
-```shell
-mkdir <destination mount directory>
+```plaintext
+mkdir <target mount directory>
 ```
-Example:
-```shell
+ Example:
+```plaintext
 mkdir /local/
 mkdir /local/test
 ```
@@ -66,7 +66,9 @@ mkdir /local/test
 **Mount NFS v4.0**
 Mount NFS v4.0 with the following command:
 ```shell
-sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0, noresvport <mount target IP>:/ <destination mount directory>
 ```
 
 - Mount target IP: it is automatically generated when the file system is created.
@@ -78,18 +80,24 @@ sudo mount -t nfs -o vers=4.0 <mount target IP>:/ <destination mount directory>
 
 Example:
 - Mount to the root directory of CFS:
-```shell
-sudo mount -t nfs -o vers=4.0 10.0.24.4:/ /localfolder
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0，noresvport 10.0.24.4:/ /localfolder
 ```
 - Mount to the subdirectory of CFS:
-```shell
-sudo mount -t nfs -o vers=4.0 10.0.24.4:/subfolder /localfolder 
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=4.0，noresvport 10.0.24.4:/subfolder /localfolder 
 ```
 
 **Mount NFS v3.0**
 Mount NFS v3.0 with the following command:
-```shell
-sudo mount -t nfs -o vers=3,nolock,proto=tcp <mount target IP>:/<fsid> <destination mount directory>
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=3,nolock,proto=tcp，noresvport mount target IP>:/<fsid> <destination mount directory>
 ```
 - Mount target IP: it is automatically generated when the file system is created.
 - NFS v3.0 can only be mounted to a subdirectory. The default file system subdirectory is FSID.
@@ -98,37 +106,39 @@ sudo mount -t nfs -o vers=3,nolock,proto=tcp <mount target IP>:/<fsid> <destinat
 > There is a space between `<mount target IP>:/<FSID>` and `<destination mount directory>`.
 
 Below is an example of mounting to a CFS subdirectory:
-```shell
-sudo mount -t nfs -o vers=3,nolock,proto=tcp 10.0.24.4:/z3r6k95r /localfolder 
+```plaintext
+// You can go to the **CFS Console**, click the file system ID and select the **Mount Target Info** tab to get the mount command down below. It's recommended to configure the `norevsport` parameter because it ensures uninterrupted connection between the client and the file system during recovery from a network exception after a new TCP port is used for network reconnection. However, some old versions of file systems do not support the `noresvport` parameter. In this case, please use the mount command just as proposed in the console.
+// In addition, some old versions of the Linux kernel require use of "vers=4" instead of "vers=4.0" in the mount command to avoid exceptions.
+sudo mount -t nfs -o vers=3,nolock,proto=tcp，noresvport 10.0.24.4:/z3r6k95r /localfolder 
 ```
 
 #### 4. View the mount target information
 After the mount is completed, run the following command to view the mounted file system:
-```shell
+```plaintext
 mount -l
 ```
-You can also run the following command to view the capacity information of the file system:
-```shell
+You may also use the following `df` command to view the capacity information of the file system. Note that there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed).
+```plaintext
 df -h
 ```
 
+>To avoid subsequent misoperations, unless in special cases, it is strongly recommended not to repeat mounts on the directory where the CFS or any other file system has been mounted.
 
-#### Mounting a CIFS/SMB file system
-
+### Mounting a CIFS/SMB file system
 #### 1. Launch a CIFS client
 Before mounting, please make sure that `cifs-utils` has already been installed in the system. The installation method is as follows:
 CentOS:
-```shell
+```plaintext
 sudo yum install cifs-utils.x86_64 –y
 ```
 
 #### 2. Create a destination mount directory
 Create a destination mount directory with the following command.
-```shell
-mkdir <destination mount directory>
+```plaintext
+mkdir <target mount directory>
 ```
-Example:
-```shell
+ Example:
+```plaintext
 mkdir /local/
 mkdir /local/test
 ```
@@ -144,33 +154,37 @@ mount -t cifs -o guest //<mount target IP>/<FSID> /<destination mount directory>
 
 > There is a space between `<FSID>/` and `<destination mount directory>`.
 
-Example:
-```shell
+ Example:
+```plaintext
 mount -t cifs -o guest //10.66.168.75/vj3i1135  /local/test
 ```
 
 #### 4. View the mount target information
 After the mount is completed, run the following command to view the mounted file system:
-```shell
+```plaintext
 mount -l
 ```
-You can also run the following command to view the capacity information of the file system:
-```shell
+You may also use the following `df` command to view the capacity information of the file system. Note that there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed).
+```plaintext
 df -h
 ```
 
+
+>To avoid subsequent misoperations, unless in special cases, it is strongly recommended not to repeat mounts on the directory where the CFS or any other file system has been mounted.
+
+
 ## Step 4. Unmount a Shared Directory
 In case you need to unmount a shared directory, use the following command where "directory name" is the root directory or the full path of the file system.
-```shell
+```plaintext
 umount <directory name>
 ```
 
-Example: 
-```shell
+ Example: 
+```plaintext
 umount /local/test
 ```
 
->We strongly recommend that you unmount the file system before restarting or shutting down the client so as to avoid any system exceptions.
+>After a `df` command is run, there may be small chances that the mount target is not displayed, but actually exists. In this case, check the `mount -l` output to ensure that all mounting information has been listed). In addition, it is strongly recommended that you unmount the file system before restarting or closing your client to avoid system exceptions.
 
 ## Step 5. Terminate a Resource
 
