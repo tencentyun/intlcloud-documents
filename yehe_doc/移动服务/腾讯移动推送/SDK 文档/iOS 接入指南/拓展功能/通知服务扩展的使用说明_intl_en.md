@@ -1,9 +1,10 @@
 ## Overview
-To accurately count the message reach rate and receive rich media messages, the SDK provides the Service Extension API that can be called by the client to listen on message arrivals and receive rich media messages. You can use this feature in the following steps:
+To **accurately count the message reach rate and receive rich media messages**, the SDK provides the Service Extension API that can be called by the client to listen on message arrivals and receive rich media messages. You can follow the instructions below to use this feature.
 
 ## Creating Notification Extension Target
 1. In the Xcode menu bar, select **File** > **New** > **Target**.
 >?
+>- The Bundle Id of the Project and Service must be different. The Service Bundle Id must be prefixed with the Project Bundle Id. For example, Project Bundle Id is com.tencent.tpns, and Service Bundle Id is com.tencent.tpns.service.
 >- If the lowest version supported by the target of the primary project is below 10.0, set the extension target system version to v10.0.
 >- If the lowest version supported by the target of the primary project is above 10.0, the extension target system version should be the same as the primary project target version.
 
