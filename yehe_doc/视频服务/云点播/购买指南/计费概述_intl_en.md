@@ -15,7 +15,7 @@ VOD billable items include: storage, transcoding, traffic and other value-added 
 Billing modes of each billable item:
 
 |Billable Items|Daily Billing Cycle|Monthly Billing Cycle|
-|--|--|--|--|
+|--|--|--|
 |Storage fee|√|√|
 |Transcoding fee|√|√|
 |Traffic fee|√|√|
