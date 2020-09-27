@@ -6,7 +6,7 @@ When the access address of a database instance needs to be modified, you can adj
 
 ## Switching from Basic Network to VPC
 An instance can be switched from classic network to VPC. To do so, log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), click an instance name in the instance list, and click **Switch to VPC** in the "Network" section on the instance details page (provided that there is an available IP in the target VPC subnet).
-
+![](https://main.qcloudimg.com/raw/735f3699ff0b139170a34724cedeb95f.png)
 
 ## Changing Private Address
 The private address of a TencentDB instance can be changed. You can do so in the **Private IP** section on the instance details page, provided that there is an available IP in the current subnet.
