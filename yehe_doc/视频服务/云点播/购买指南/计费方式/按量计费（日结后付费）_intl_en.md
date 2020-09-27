@@ -15,8 +15,8 @@ VOD billable items:
 
 #### Pricing
 Fees for VOD video storage are charged differently in **Chinese Mainland** and **outside Chinese Mainland**.
-Storage price in Chinese mainland: 0.0006 (USD/GB)
-Storage price outside Chinese mainland: 0.0009 (USD/GB)
+Storage price in Chinese mainland: 0.0006 (USD/GB/day)
+Storage price outside Chinese mainland: 0.0009 (USD/GB/day)
 
 #### Billing overview
 
