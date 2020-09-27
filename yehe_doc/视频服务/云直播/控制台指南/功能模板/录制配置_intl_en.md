@@ -1,6 +1,7 @@
 LVB supports recording live streams and storing recording files in VOD for download and preview. This document describes how to create, modify, and delete recording templates.
 You can create a recording template in the following two methods:
 - Create a recording template in the LVB Console. For detailed directions, please see [Creating Recording Template](#C_record).
+- Create a recording template via API. For more information about the parameters and samples, see [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845).
 
 ## Notes
 - The recorded video files are stored in the [VOD Console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to account arrears. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
@@ -8,7 +9,7 @@ You can create a recording template in the following two methods:
 - During the live streaming, you can get a recording file in about 5 minutes after the recording process ends. For example, if you start recording a live stream at 12:00, you can get the corresponding clip for 12:00 to 12:30 at around 12:35.
 - Subject to the audio and video file formats (FLV/MP4/HLS), the video encoding format of H.264 and audio encoding format of ACC are supported.
 - After a recording template is created successfully, it can be associated with a push domain name. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224). The association will take effect in about 5–10 minutes.
-
+- For more information about the recording filenames, see the `VodFileName` parameter in [Data Types](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam).
 
 ## Prerequisites
 - You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
@@ -37,7 +38,7 @@ You can create a recording template in the following two methods:
    </tr><tr>
    <td>Length of a single recording file (in minutes)</td>
    <td><ul style="margin-bottom:0px">
-       <li>There is no upper limit for .hls format. If a file exceeds the limit, a new file will be created to continue recording.</li>
+<li>There is no upper limit for HLS format. If a file exceeds the recording resumption timeout period, a new file will be created to continue recording.</li>
        <li>The length of a single file recorded in .mp4, .flv, or .aac format ranges from 5 to 120 minutes.</li>
        </ul></td>
    </tr><tr>
@@ -68,6 +69,6 @@ You can create a recording template in the following two methods:
 3. Confirm whether to delete the selected recording template and click **OK** to delete it.
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
-> The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30842). 
+>! The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30842). 
 ## Associating and Disassociating Push Domain Name
 For detailed directions, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224).
