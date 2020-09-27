@@ -75,7 +75,7 @@ hdfs dfs -copyFromLocal demo/config/* /hudi/config/
 ```
 3.	Modify the Kafka data source.
 ```
-/usr/local/service/apps/hudi-0.5.1/demo/config/kafka-source.properties
+/usr/local/service/hudi/demo/config/kafka-source.properties
 bootstrap.servers=kafka_ip:kafka_port
 ```
 Upload the first batch of data:
@@ -136,7 +136,7 @@ spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer
 spark-submit --class org.apache.hudi.utilities.deltastreamer.HoodieDeltaStreamer  --master yarn ./hudi-utilities-bundle_2.11-0.5.1-incubating.jar  --table-type MERGE_ON_READ --source-class org.apache.hudi.utilities.sources.JsonKafkaSource --source-ordering-field ts  --target-base-path /usr/hive/warehouse/stock_ticks_mor --target-table stock_ticks_mor --props /hudi/config/kafka-source.properties --schemaprovider-class org.apache.hudi.utilities.schema.FilebasedSchemaProvider --disable-compaction
 ```
 10.	Query incremental data by following step 7.
-11.	Use the Hive CLI tool.
+11.	Use the hudi-cli tool.
 ```
  cli/bin/hudi-cli.sh
 connect --path /usr/hive/warehouse/stock_ticks_mor
