@@ -7,8 +7,7 @@ With versioning, you can store multiple versions of an object in a bucket and re
 ## Directions
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Click the bucket to be configured to enter the bucket details page.
-![](https://main.qcloudimg.com/raw/b54f229b4f6ae656b124bff914e83ae3.png)
-3. Click **Advanced Configuration** on the left to enter the advanced configuration page of the bucket, scroll down to **Versioning**, and click **Edit** on the right.
+3. Click **Advanced Configuration** > **Versioning**, and then click **Edit**.
 ![](https://main.qcloudimg.com/raw/8a7d2f60286820abce82a072291ed46e.png)
-4. Click Enable in “Status” and save the change. In the pop-up window, click OK to enable versioning. When you no longer need versioning, you can simply click Disable to disable it.
+4. Toggle **Status** on, and click **Save**. In the pop-up window, click **OK**. If you don't need versioning any more, simply toggle **Status** off.
 ![](https://main.qcloudimg.com/raw/63dc4bd4b571c2a2a79407d4ed4cdc1f.png)

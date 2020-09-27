@@ -1,3 +1,7 @@
+### What are TPNS AccessID, AccessKey and SecretKey used for?
+- AccessID: a unique ID of TPNS, which is used to integrate SDK and generate authentication signature for Rest API calls.
+- AccessKey: a customer-provided key for TPNS, which is used to integrate SDK.
+- SecretKey: a server-side key for TPNS, which is used to generate authentication signature for Rest API calls.
 
 ### Why is my application rejected after the review when I publish it on Huawei AppGallery?
 Please download the official Huawei HMS SDK and copy all files and subdirectories in the `assets` directory to that in your application project. If the `assets` directory does not exist in the application project, create one.

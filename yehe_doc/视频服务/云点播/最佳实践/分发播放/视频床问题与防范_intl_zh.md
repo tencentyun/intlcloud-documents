@@ -6,7 +6,7 @@ UGC（用户生产内容）和 PGC（专业生产内容）是视频行业中常�
 
 ## 视频床问题产生的原因
 ### UGC 和 PGC 平台的一般交互方式
-<img src="https://main.qcloudimg.com/raw/602e67c1a9abd1ec66a3c2db544d51f3.png" width="400"><br>
+<img src="https://main.qcloudimg.com/raw/86d03658c0d7ad57220ae27eaf59b9a2.png" width="400"><br>
 
 >?图中箭头方向是指网络请求方向。
 

@@ -10,6 +10,12 @@ After migrating data from HDFS to COS by using the `hadoop distcp` command, you 
 >- For self-built Hadoop clusters, the "Hadoop-cos" dependency must be of the latest version (GitHub release 5.8.2 or above) to return CRC64 check code.
 >- If you are using Tencent Cloud EMR suite, the Hadoop-cos version above is available only for clusters created after May 8, 2020. For earlier clusters, please [submit a ticket](https://console.cloud .tencent.com/workorder/category) for assistance.
 
+## Directions
+
+To run Hadoop-cos-DistChecker requires the CRC64 checksum of the object from Hadoop-COS (COSN file system). Therefore, you should first configure `fs.cosn.crc64.checksum.enabled` to `true` to do so. Once this tool finishes, set this value back to `false` to stop getting CRC64 checksum.
+
+>The CRC64 checksum in Hadoop-COS is not compatible with the CRC32C checksum in HDFS, so after using this tool, be sure to set the above parameter to `false`. Otherwise, Hadoop-COS may fail to run in some scenarios where the file system getFileChecksum API is called.
+
 ## Instructions
 
 ### Parameter description
@@ -114,8 +120,8 @@ There are 7 check results:
 - UNCONFIRM: the system cannot determine whether the source and destination files are the same. This may be because the destination file already existed in COS before the CRC64 feature was launched, and thus its CRC64 checksum cannot be obtained.
 - UNCHECKED: the check is not performed. This is mainly because the source file cannot be read, or its checksum cannot be computed.
 - SOURCE_FILE_MISSING: the source file does not exist.
-TARGET_FILE_MISSING: the destination file does not exist.
-TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
+- TARGET_FILE_MISSING: the destination file does not exist.
+- TARGET_FILESYSTEM_ERROR: the destination file system is not CosN.
 
 
 

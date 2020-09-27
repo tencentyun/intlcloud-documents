@@ -15,6 +15,7 @@ Fees for VOD traffic and storage will be incurred when you enable the time shift
 -  You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
 
 <span id="step1"></span>
+
 ### Step 1: activate VOD service
 
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Activate Now**.
@@ -33,8 +34,8 @@ To add the Tencent Cloud VOD domain name for time-shift playback, perform the fo
 1. Log in to the LVB Console and go to **Function Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **+** to create a recording template. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
    > ! 
-   > - Choose **HLS** for the file type.
-   > - Define the file storage duration, which should be no less than the [time-shift duration](#step4)
+   >- Choose **HLS** for the file type.
+   >- Define the file storage duration, which should be no less than the [time-shift duration](#step4)
 3. Associate the recording template with the push domain name to be configured. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/31064).
 
 <span id="step4"></span>
@@ -46,7 +47,7 @@ Go to the [ticket system](https://console.cloud.tencent.com/workorder/category?l
 - Recording template ID added in [Step 3](#step3). 
 - Define time-shift duration `timeshift_dur` in seconds
   > ? 
-  > - Time-shift duration, which refers to the maximum time-shift duration (up to 7 days currently).
+  >- Time-shift duration, which refers to the maximum time-shift duration (up to 7 days currently).
   >- The defined duration may not take accurately. We recommend that you adding a little buffer.
   >- Suppose the duration is configured as 7200 (2 hours), you will be able to request time-shifted contents generated less than 2 hours ago (`delay`, or the time-shift duration will range from 90 seconds to 2 hours). When any content generated more than 2 hours ago is requested, `HTTP 404` will be returned even if there is live streaming content. 
 
