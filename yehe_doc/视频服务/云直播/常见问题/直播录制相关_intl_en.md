@@ -40,6 +40,8 @@ LVB currently has no limit on the video storage period. You can manage video fil
 - If the duration of a live stream is very long (longer than `RecordInterval`), the video will be segmented based on the length of time specified by `RecordInterval`, to avoid the time uncertainty of the flow of the file with a longer duration in a distributed system.
 - If the push is interrupted during a live stream (SDK will re-push later), a new segment will be generated every time the interruption occurs.
 
+- **Recording a file in HLS format**: there is no upper limit. If a file exceeds the recording resumption timeout period, a new file will be created to continue recording. You can set the recording resumption timeout period to 0-1800 seconds.
+
 <span id="que9"></span>
 ### How do I splice segments?
 You can splice segments by using the TencentCloud APIs. 
