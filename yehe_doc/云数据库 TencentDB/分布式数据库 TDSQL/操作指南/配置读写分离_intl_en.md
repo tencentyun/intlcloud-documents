@@ -22,4 +22,4 @@ select * from emp order by sal，deptno desc；
 >- This feature only supports read from the secondary server (SELECT) rather than other operations. Non-SELECT statements will fail.
 >- The `-c` parameter needs to be added after `mysql` to parse the comment.
 >- ```/*slave*/``` must be in lowercase, and no spaces are needed before and after the statement.
-- If the MAR (strong sync) mechanism is affected by a secondary server exception, read from the secondary server will be automatically switched to read from the primary server.
+>- If the MAR (strong sync) mechanism is affected by a secondary server exception, read from the secondary server will be automatically switched to read from the primary server.
