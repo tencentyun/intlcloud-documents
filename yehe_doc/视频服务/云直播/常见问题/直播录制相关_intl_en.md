@@ -33,7 +33,7 @@ LVB currently has no limit on the video storage period. You can manage video fil
 
 <span id="que7"></span>
 ### How many recording files are generated in an LVB recording process?
--**Recording a file in MP4, FLV or AAC format**: the maximum recording length of a single file ranges from 5 to 20 minutes. You can specify a shorter segment using the `RecordIntervall` parameter of the [CreateLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30845).
+- **Recording a file in MP4, FLV or AAC format**: the maximum recording length of a single file ranges from 5 to 20 minutes. You can specify a shorter segment using the `RecordIntervall` parameter of the [CreateLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30845).
 
 - If the duration of a live stream is too short (for example, shorter than 1 second), no recording file is generated.
 - If the duration of a live stream is not long (shorter than `RecordInterval`), and the push is not interrupted during the live stream, only one recording file is generated.
