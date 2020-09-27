@@ -12,7 +12,7 @@
 ### 操作步骤
 1. 登录 [TDSQL 控制台](https://console.cloud.tencent.com/dcdb)，在实例列表上方，选择【更多操作】>【销毁/退货】。
 2. 在弹出的对话框，勾选同意，单击【确定】。
-![](https://main.qcloudimg.com/raw/05da45291b05603314eebb449f7f4ed9.png)
+![](https://main.qcloudimg.com/raw/16f8187856e09385505c70bde7fb3912.png)
 返回实例列表，实例状态变为“已隔离”，隔离期间可选择【恢复/开机】实例。
 
 ## 恢复实例
