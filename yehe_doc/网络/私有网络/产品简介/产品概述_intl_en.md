@@ -28,7 +28,6 @@ Tencent Cloud provides a wide range of VPC connection solutions for different sc
 - Peering Connection and Cloud Connect Network are used to enable communication between VPCs.
 - VPCs and local IDCs are interconnected through VPN Connection, Direct Connect, and Cloud Connect Network. 
 
-For more information, see [VPC Connections](https://intl.cloud.tencent.com/document/product/215/34797).
 
 ## VPC Security
 A VPC is a logically isolated network space in the cloud. Different VPCs are isolated from each other to protect business security.
@@ -36,4 +35,4 @@ A VPC is a logically isolated network space in the cloud. Different VPCs are iso
 - Network Access Control List (ACL): a network ACL is a stateless virtual firewall for filtering packets at the subnet level. It can be used to control the inbound and outbound data streams of subnets at the protocol and port granularity.
 - Cloud Access Management (CAM): CAM helps you securely manage access to your Tencent Cloud resources. For example, CAM provides identity management and policy management so you can control who has access to your VPCs.
 
-For more information on VPC security, see [Security](https://intl.cloud.tencent.com/document/product/215/31850).
+For more information on VPC security, see [Security Management](https://intl.cloud.tencent.com/document/product/215/31850).
