@@ -43,6 +43,7 @@ Download address of log decryption tool: `dldir1.qq.com/hudongzhibo/log_tool/dec
 ### What should I do if a 10006 error occurs?
 If "Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it" is displayed, please check whether your TRTC application service is available.
 Log in to the [TRTC Console](https://console.cloud.tencent.com/rav), click the application you created, click **Account Info**, and you can view the service status in the account information tab.
+![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
 
 <span id="que7"></span>
 ### Why is error code -100018 returned for room entry?
@@ -70,7 +71,7 @@ You can solve this problem by setting `TRTCVideoFillMode_Fill` (fill mode). The 
 
 <span id="que12"></span>
 ### Why are the local and remote images of TRTC horizontally reversed?
-The locally captured image is horizontally reversed by default, which can be set through the `setLocalViewMirror` API. This API changes only the mirroring mode of the preview image of the local camera. You can also use the `setVideoEncoderMirror` API to set the mirroring mode of the image output by the encoder. This API does not change the preview image of the local camera; instead, it changes the video image viewed by the remote user (and recorded by the server).
+The locally captured image is horizontally reversed by default, which can be set through the [setLocalViewMirror](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?&_ga=1.239476867.1286123284.1593759269#setLocalViewMirror) API. This API changes only the mirroring mode of the preview image of the local camera. You can also use the `setVideoEncoderMirror` API to set the mirroring mode of the image output by the encoder. This API does not change the preview image of the local camera; instead, it changes the video image viewed by the remote user (and recorded by the server).
 
 <span id="que13"></span>
 ### Why doesn't the set video encoding output direction take effect in TRTC?
