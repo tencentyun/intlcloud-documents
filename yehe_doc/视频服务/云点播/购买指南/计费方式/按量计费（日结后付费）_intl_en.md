@@ -15,8 +15,8 @@ VOD billable items:
 
 #### Pricing
 Fees for VOD video storage are charged differently in **Chinese Mainland** and **outside Chinese Mainland**.
-Storage price in Chinese mainland: 0.0006 (USD/GB/day)
-Storage price outside Chinese mainland: 0.0009 (USD/GB/day)
+Storage price in Chinese mainland: 0.0006 (USD/GB)
+Storage price outside Chinese mainland: 0.0009 (USD/GB)
 
 #### Billing overview
 
@@ -64,7 +64,7 @@ Transcoding fees on January 1 = 0.0242 (USD/min) x 100 (min) + 0.0061 (USD/min) 
 
 For more billing examples, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 
-### Top speed codec transcoding
+### THSHD
 
 #### Pricing
 
