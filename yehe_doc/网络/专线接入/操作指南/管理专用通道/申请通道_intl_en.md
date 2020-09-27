@@ -9,20 +9,26 @@ The shared connection feature of new dedicated tunnels has stopped accepting new
 ## Use Limits on Large IP Range
 
 To ensure the fine-grained scheduling capability of your network, do not publish the following routes:
-10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, 100.64.0.0/10.
->!If a large IP range route is published, the Direct Connect gateway will directly reject it.
+9.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16,  100.64.0.0/10, 131.87.0.0/16, 172.16.0.0/12, 192.168.0.0/16.
+>!If a large IP range route is published, the direct connect gateway will directly reject it.
 
-You can split the above large routes as follows for distribution:
-
+ You can split the above routes as follows for distribution:
+- 9.0.0.0/8
+should be split into `9.0.0.0/9` + `9.128.0.0/9`.
 - 10.0.0.0/8            
-  should be split into 10.0.0.0/9 + 10.128.0.0/9.
+should be split into `10.0.0.0/9` + `10.128.0.0/9`.
 - 172.16.0.0/12      
-  should be split into 172.16.0.0/13 + 172.24.0.0/13.
+should be split into `172.16.0.0/13` + `172.24.0.0/13`.
 - 192.168.0.0/16    
-  should be split into 192.168.0.0/17 + 192.168.128.0/17.
+should be split into `192.168.0.0/17` + `192.168.128.0/17`.
 - 100.64.0.0/10      
-  should be split into 100.64.0.0/11 + 100.96.0.0/11.
-
+should be split into `100.64.0.0/11` + `100.96.0.0/11`.
+- 131.87.0.0/16      
+should be split into `131.87.0.0/17` + `131.87.128.0/17`.
+- 172.16.0.0/12      
+should be split into `172.16.0.0/13` + `172.24.0.0/13`.
+- 192.168.0.0/16      
+should be split into `192.168.0.0/17` + `192.168.128.0/17`.
 
 ## Directions
 
