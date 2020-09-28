@@ -9,7 +9,7 @@ VOD billable items:
 - **Video transcoding**: basic transcoding of source video files stored in Tencent Cloud VOD. This service is charged according to specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.
 - **Top speed codec transcoding**: transcoding the video source files stored in the VOD into HD or FHD in top speed. This service is charged according to specifications and durations of output files. A duration less than 1 minute will be calculated as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.  
 - **Video Editing**: using [Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [Video Editing](https://intl.cloud.tencent.com/document/product/266/34126) APIs to process source files stored in the VOD. Fees are calculated according to specifications and durations of output files. A duration less than 1 minute will be counted as 1 minute. Each trancoding task is only charged once according to the specification. No fees will be charged for failed transcoding.  
-**Video acceleration**: using CDN for acceleration during video playback. Fees are charged based on the downstream traffic.
+- **Video acceleration**: using CDN for acceleration during video playback. Fees are charged based on the downstream traffic.
 
 ## Video Storage
 
