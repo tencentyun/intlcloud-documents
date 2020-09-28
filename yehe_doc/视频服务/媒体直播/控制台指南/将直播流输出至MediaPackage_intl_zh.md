@@ -1,4 +1,4 @@
-# 通过 MediaLive 输出至腾讯云 MediaPackage
+
 MediaLive 支持直接联合腾讯云 MediaPackage 一起使用，将 HLS/DASH 格式直播流直接输出至同账号下的 MediaPackage 中，以便于用户形成自己的源站，从而进行下一步的视频分发与播放。
 ### 步骤1：开通 MediaPackage
 在输出至 MediaPackage 前请先开通 MediaPackage 服务，登录[控制台](https://console.cloud.tencent.com/mdp/channel)并创建 Channel。
