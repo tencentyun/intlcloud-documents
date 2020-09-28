@@ -12,7 +12,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Object Operations</td>
-      <td>Objects/folders: can be uploaded, queried, downloaded, copied, and deleted. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
+      <td>COS provides the following storage classes for different access frequencies: STANDARD, STANDARD_IA, ARCHIVE and DEEP ARCHIVE. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class</a><br>Objects/folders: can be uploaded, queried, downloaded, copied, and deleted. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
    </tr>
    <tr>
       <td rowspan=8>Data Management</td>
