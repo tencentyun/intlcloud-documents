@@ -5,8 +5,7 @@ COS can respond to an OPTIONS request for cross-origin access, and return the cr
 ## Procedure
 
 1. Log in to the [COS Console](https://intl.cloud.tencent.com/login), and then select the **Bucket List** in the left pane to go to the Bucket List page. Click the bucket of the object for which you want to set CORS to enter the bucket.
-![](https://main.qcloudimg.com/raw/695c2f7e68ef417a9f1a0809fcd804fc.png)
-2. Click **Basic Configuration** to go to the Basic Configuration page of the bucket, find **CORS Settings**, and click **Add Rule**.
+2. Go to **Safety management** > **CORS (Cross-Origin Resource Sharing) Setting**, and click **Add a Rule**.
 ![](https://main.qcloudimg.com/raw/73fc7802efdfd18abe112d0f0d61f3c0.png)
 3. Add rule information (Fields with * are required). Configuration items are as follows:
 
