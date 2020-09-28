@@ -1,4 +1,4 @@
-# 通过MediaLive输出至腾讯云COS归档
+
 MediaLive 支持输出 HLS 文件至腾讯云COS进行归档，这需要您先在 COS 中完成存储桶的创建并授权 MediaLive访问您的存储桶。
 ### 前提条件
 在开始输出至 COS 归档前，请先确保您已经开通腾讯云 [COS服务](https://console.cloud.tencent.com/cos5)
