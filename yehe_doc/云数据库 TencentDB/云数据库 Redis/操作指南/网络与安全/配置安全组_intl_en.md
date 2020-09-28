@@ -10,14 +10,14 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 ## Security Group Configuration for TencentDB
 ### Step 1. Create a security group
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/securitygroup).
-2. Select **Security Group** on the left sidebar, select a region, and click **Create**.
+2. Select **Security Groups** on the left sidebar, select a region, and click **New**.
 3. In the pop-up dialog box, configure the following items and click **OK**.
  - Template: select an appropriate template based on the service to be deployed on the TencentDB instance in the security group, which simplifies the security group rule configuration, as shown below:
 <table>
 	<tr><th>Template</th><th>Description</th><th>Remarks</th></tr>
 	<tr><td>Open all ports</td><td>All ports are opened to the public and private networks. This may present security issues.</td><td>-</td></tr>
 	<tr><td>Open ports 22, 80, 443, and 3389 and the ICMP protocol</td><td>Ports 22, 80, 443, and 3389 and the ICMP protocol are opened to the internet. All ports are opened to the private network.</td><td>This template does not take effect for TencentDB.</td></tr>
-	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For detailed directions, please see "Adding Security Group Rules"</a> below.</td><td>-</rd></tr>
+	<tr><td>Custom</td><td>You can create a security group and then add custom rules. For detailed directions, please see "Step 2. Add a security group rule"</a> below.</td><td>-</rd></tr>
 </table>
  - Name: custom name of the security group.
  - Project: the **default project** is selected by default. You can also select another one for easier management.
@@ -26,8 +26,8 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 
  <span id="Step2"></span>
 ### Step 2. Add a security group rule
-1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rule** in the "Operation" column on the row of the security group for which to configure a rule.
-2. <span id="step02">On the security group rule page, click **Inbound Rules** > **Add Rule**.</span>
+1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rules** in the "Operation" column on the row of the security group for which to configure a rule.
+2. <span id="step02">On the security group rule page, click **Inbound rule** > **Add a Rule**.</span>
 3. In the pop-up dialog box, set the rule.
  - Type: "Custom" is selected by default. You can also choose another system rule template.
  - Source: traffic source (inbound rule) or destination (outbound rule). You need to specify one of the following options:
@@ -38,14 +38,14 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 	<tr><td>ID of referenced security group. You can reference the ID of: <ul  style="margin: 0;"><li>Current security group</li><li>Another security group</li></ul>
 </td><td><ul  style="margin: 0;"><li>Current security group: CVM instance associated with the current security group.</li><li>Another security group: ID of another security group in the same region under the same project.</li></ul>
 </td></tr>
-	<tr><td>Reference IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
+	<tr><td>Reference an IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
 </table>
- - Protocol port: enter the protocol type and port range or reference an IP address object or IP address group object in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
+ - Protocol port: enter the protocol type and port range or reference a protocol/port or protocol/port group in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
   >?To connect to TencentDB for Redis, port 6379 must be opened.	
  - Policy: "Allow" is selected by default.
     - Allow: traffic to this port is allowed.
-    - Reject: data packets will be discarded without any response.
- - Remarks: a short description of the rule for easier management.
+    - Refuse: data packets will be discarded without any response.
+ - Notes: a short description of the rule for easier management.
 4. <span id="step04">Click **Complete** to finish adding the inbound rule.</span>
 
 
@@ -61,14 +61,14 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 ## Security Group Rule Import
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.
 2. On the inbound rules or outbound rules tab, click **Import Rule**.
-3. In the pop-up dialog box, select an edited inbound/outbound rule template file and click **Start Import**.
+3. In the pop-up dialog box, select an edited inbound/outbound rule template file and click **Import**.
 >? If there are existing rules in the security group, export them before importing new rules. Existing rules are overwritten after importing.
 
 
 ## Security Group Clone
-1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, select a security group and click **More** > **Clone** in the "Operation" column.
-2. In the pop-up dialog box, select the target region and target project and click **OK**. If the new security group needs to be associated with a CVM instance, do so by managing the CVM instances in the security group.
+1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, locate the desired security group and click **More** > **Clone** in the "Operation" column.
+2. In the pop-up dialog box, select the target region and target project, enter the new security group name, and click **OK**. If the new security group needs to be associated with a CVM instance, do so by managing the CVM instances in the security group.
 
 ## Security Group Deletion
-1. On the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), select the security group to be deleted and click **More** > **Delete** in the "Operation" column.
+1. On the [security group page](https://console.cloud.tencent.com/cvm/securitygroup), locate the security group to be deleted and click **More** > **Delete** in the "Operation" column.
 2. Click **OK** in the pop-up dialog box. If the current security group is associated with a CVM instance, it must be disassociated before it can be deleted.
