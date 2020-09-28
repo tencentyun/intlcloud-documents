@@ -33,8 +33,8 @@ MediaLive 支持一个频道多个 output group 的输出。点击右上方加�
 腾讯云 MediaLive 支持 Tencent DRM 及用户自定义 DRM，您可基于您的实际需求进行选择。
 ![](https://main.qcloudimg.com/raw/3d51bc21d6554446339aa2ea857d0dd0.jpg)
 
-
->! - 如果在 Output Group Setting 中的 Output Group Type 选择 HLS/HLS_ARCHIVE/HLS_MediaPackage， 开启DRM则会选择使用 Fairplay 加密。
+>!
+>- 如果在 Output Group Setting 中的 Output Group Type 选择 HLS/HLS_ARCHIVE/HLS_MediaPackage， 开启DRM则会选择使用 Fairplay 加密。
 >- 如果在 Output Group Setting中的 Output Group Type 选择 DSAH/DASH_MediaPackage，开启 DRM 会选择使用 Widevine 加密。
 
 a. Fairplay 密钥配置
