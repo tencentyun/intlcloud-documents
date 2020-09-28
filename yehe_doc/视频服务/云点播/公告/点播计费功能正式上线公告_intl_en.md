@@ -1,4 +1,4 @@
-# Video on Demand (VOD) Billing Feature Is Coming Soon
+
 Dear Tencent Cloud user,
 VOD billing feature will be available on November 13, 2020.
 VOD Billable Items：Video Storage, Video Transcoding, Video Acceleration. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/266/2838)
