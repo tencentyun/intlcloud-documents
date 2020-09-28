@@ -41,7 +41,7 @@ Host: api.tpns.tencent.com
 Content-Type: application/json
 AccessId: 1500001048
 TimeStamp: 1565314789
-Sign: Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA==
+Sign: Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjxxxx==
 {"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
 
@@ -59,7 +59,7 @@ Get hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
 3. Base64-encode the hashcode to get the following signature string:
 ```
 Get Sign=Base64(hashcode)
-Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA=="
+Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjxxxx=="
 ```
 
 **Sample Python signature**
