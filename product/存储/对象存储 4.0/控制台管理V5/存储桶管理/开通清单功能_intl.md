@@ -14,7 +14,7 @@ A bucket has been created. For details, please see [Creating Buckets](https://in
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. In the left sidebar, click **Bucket List** and then click the bucket (source bucket) for which you want to enable inventory.
 
-3. Click the **Advanced Configuration** tab, find the **Inventory Settings** item, and click **Add an Inventory**.
+3. Go to **Basic Configurations** > **Inventory Setting**, and click **Add Inventory**.
 ![](https://main.qcloudimg.com/raw/f38999a30e04fb3da8c765517fd42668.png)
 4. On the **Add an Inventory** page, you can configure the following items:
  - **Inventory Name**: Name the output inventory report.
