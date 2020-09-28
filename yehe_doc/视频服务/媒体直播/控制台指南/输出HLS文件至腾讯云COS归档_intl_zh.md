@@ -21,4 +21,4 @@ MediaLive 支持输出 HLS 文件至腾讯云COS进行归档，这需要您先�
 ### 步骤4：填写 COS 归档地址
 您可基于您创建的 COS 存储桶填写 COS 归档地址，格式为：http://<BucketName-APPID>.cos.<Region>.myqcloud.com/path
 ### 步骤5：保存并提交配置
-此时您可回到[MediaLive 频道创建](https://intl.cloud.tencent.com/document/product/1048/38373)完成其余channel配置，并点击保存之后提交。
+此时您可回到 [MediaLive 频道创建](https://intl.cloud.tencent.com/document/product/1048/38373) 完成其余channel配置，并点击保存之后提交。
