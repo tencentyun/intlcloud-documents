@@ -20,8 +20,8 @@ Charges are made according to the duration of output files and the resolution ra
 |H.264|4K (Short side ≤ 2160 px）|0.0521|
 |H.264|	2K (Short side ≤ 1440 px）|	0.0242|
 |H.264|	FHD (Short side ≤ 1080 px|	0.0121|
-|H.264|	HD (short side ≤ 720 px)	|0.0061|
-|H.264|	SD (short side ≤ 480 px)|0.003|
+|H.264|	HD (Short side ≤ 720 px)	|0.0061|
+|H.264|	SD (Short side ≤ 480 px)|0.003|
 |H.265|	4K (Short side ≤ 2160 px）	|0.2521|
 |H.265|	2K (Short side ≤ 1440 px）	|0.126|
 |H.265|	FHD (Short side ≤ 1080 px）|	0.063|
@@ -35,16 +35,16 @@ Charges are based on the output file duration and the resolution range of the vi
 
 |Codec|	Resolution	|Unit Price (USD/min)|
 |----|----|----|
-|H.264|	4K (short side ≤ 2160 px)	|0.1721|
-|H.264|	2K (short side ≤ 1440 px)|	0.08|
-|H.264|	FHD(short side ≤ 1080 px)	|0.04|
+|H.264|	4K (Short side ≤ 2160 px)	|0.1721|
+|H.264|	2K (Short side ≤ 1440 px)|	0.08|
+|H.264|	FHD(Short side ≤ 1080 px)	|0.04|
 |H.264|	HD(Short side ≤ 720 px)|	0.02|
 |H.264|	HD(Short side ≤ 480 px)	|0.01|
-|H.265|	4K (short side ≤ 2160 px)|	0.8319|
-|H.265|	2K (short side ≤ 1440 px)|	0.416|
-|H.265|	FHD(short side ≤ 1080 px)|	0.208|
-|H.265|	HD(short side ≤ 720 px)|	0.104|
-|H.265|	SD(short side ≤ 480 px)|	0.052|
+|H.265|	4K (Short side ≤ 2160 px)|	0.8319|
+|H.265|	2K (Short side ≤ 1440 px)|	0.416|
+|H.265|	FHD(Short side ≤ 1080 px)|	0.208|
+|H.265|	HD(Short side ≤ 720 px)|	0.104|
+|H.265|	SD(Short side ≤ 480 px)|	0.052|
 
 ### Video Editing
 Charges are based on the codec, duration and resolution of the output file.The unit prices as per resolution is the same as those of the Video Transcoding.
