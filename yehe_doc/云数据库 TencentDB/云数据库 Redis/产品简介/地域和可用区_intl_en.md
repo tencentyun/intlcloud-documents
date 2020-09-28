@@ -7,7 +7,7 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 -  Tencent Cloud services on the classic network in different regions cannot communicate with each other over the private network. They can communicate across VPCs only after a [peering connection](https://intl.cloud.tencent.com/document/product/553/18827) is configured.
  >?When you purchase TencentDB for Redis, we recommend you select the same region as your CVM instance to reduce access delay.
 
-## Regions and AZs
+## Regions and Availability Zones
 
 ### China
 
