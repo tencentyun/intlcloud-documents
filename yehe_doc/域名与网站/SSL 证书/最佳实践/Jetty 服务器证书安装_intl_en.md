@@ -40,7 +40,7 @@ This document describes how to install an SSL certificate on a Jetty server.
 
 
 ## Directions
-1. Go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), download the certificate package for the `cloud.tencent.com` domain name, and decompress it to a local directory.
+1. Go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl), download the `cloud.tencent.com` certificate package, and decompress it to a local directory.
 After decompression, you can obtain the relevant certificate files, including the Tomcat folder and CSR file:
  - **Folder name**: Tomcat
  - **Folder content**:
@@ -54,7 +54,7 @@ After decompression, you can obtain the relevant certificate files, including th
 5. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, modify the configuration in the `jetty-ssl-context.xml` file.
 >
 >- **KeyStorePath**: set the default value to the path of the certificate file.
->- **KeyStorePassword**: set the default value to the keystore password. If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `Tomcat` folder.
+>- **KeyStorePassword**: set the default value to the keystore password. If you have set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **KeyManagerPassword**: set the value to the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **TrustStorePath**: set the default value to the certificate file path.
 >
@@ -144,7 +144,7 @@ etc/jetty-https.xml
 8. In the Jetty root directory, run the `java -jar start.jar` command to start the Jetty server and then it can be accessed through `https://cloud.tencent.com`.
 
 ## Note
-After the certificate is deployed, the following error message may be displayed when you use `https://cloud.tencent.com` to access the Jetty server:
+After the certificate is deployed, the following error message may be displayed when you access `https://cloud.tencent.com`:
 ![](https://main.qcloudimg.com/raw/2ad181d6ed021958c214b04df9fa67a6.png)
 If the error message is displayed, copy the `ROOT` file from the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` directory to the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` directory, and then restart the Jetty server.
 

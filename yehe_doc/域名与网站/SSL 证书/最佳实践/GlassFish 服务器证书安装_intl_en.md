@@ -48,7 +48,7 @@ After decompression, you can obtain the relevant certificate files, including th
   - **CSR file**: `cloud.tencent.com.csr`
   >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
 2. Remotely log in to the GlassFish server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
-3. Go to the `/usr/share/glassfish4/glassfish/bin` directory, run the `./asadmin` command, and then run the `change-master-password --savemasterpassword=true domain1` command to change the domain's administrator password.
+3. Go to the `/usr/share/glassfish4/glassfish/bin` directory, run the `./asadmin` command, and then run the `change-master-password --savemasterpassword=true domain1` command to change the domain administrator password.
 >
 >- The default installation directory of the domain1 service is `/usr/share/glassfish4/glassfish/domains`. Change the domain name after you execute the `change-master-password --savemasterpassword=true domain1` command.
 >- The default password is **changeit**. Press **Enter** and enter the new password, which should be the **private key password** you set when applying for the certificate.
