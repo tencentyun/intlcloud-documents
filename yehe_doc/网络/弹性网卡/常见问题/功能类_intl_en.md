@@ -29,3 +29,6 @@ You can log in to the [VPC Console](https://console.cloud.tencent.com/vpc) to mo
 
 ### How do I change the subnet of ENI?
 You can log in to the [VPC Console](https://console.cloud.tencent.com/vpc) to change the subnet of ENI. For more information, see [Changing the Subnet of an ENI](https://intl.cloud.tencent.com/document/product/576/18542).
+
+### Do I have to bind a new secondary ENI to a CVM instance in the same subnet of primary ENI?
+No. The secondary ENI and primary ENI may be in different subnets, but they must be in the same availability zone of one VPC.
