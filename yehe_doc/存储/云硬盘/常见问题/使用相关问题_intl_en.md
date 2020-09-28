@@ -211,3 +211,12 @@ After formatting, cloud disks cannot be restored. We recommend you [create a sna
 
 ### Can my system disk be partitioned?
 No.
+
+### How do I update the mounting information at the mount point?
+LinuxOS supports the `systemd mount` command that generates the mounting configuration file, and the existing `.mount` still remains, the mounting to the same directory `/run/systemd/generator/` therefore will be affected.
+ #### Issue
+Assume you have mounted the data disk vdb to the directory `/opt/apps` (run `mount -a` on the fstab file based on disk uuid). Now, you want to mount another data disk vdc to the same directory and replace the data disk vdb. If you directly mount vdc, you cannot read its data in the directory.
+#### Solution
+1. Delete the configuration of the corresponding mount point (for example, run the `rm /run/systemd/generator/opt-apps.mount` command).
+2. Run the `reload` command (for example, use `systemctl daemon-reload`).
+3. Mount the data disk (for example, run the `mount /dev/vdc /opt/apps` command).

@@ -10,7 +10,7 @@ When using the Classiclink, take note of the following limits:
 If your classic network and VPC meet these conditions, you can configure the **Classiclink** tab on the details page of the VPC in the Console to associate the VPC with the CVMs in the classic network for interconnection.
 
 ### Can resources including cloud load balancers and databases in the classic network communicate with the VPC?
-- A terminal connection helps establish communication between instances in a VPC and other instances in a classic network over a private network. Here, the principle is to map the IP addresses of instances in the classic network to VPC IP addresses so that you can access a classic network instance by accessing the corresponding VPC IP address. The services that support the classic network include LB, TencentDB, CMEM, REDIS, MongoDB. Cross-region/cross-account is not supported.
+- A terminal connection helps establish communication between instances in a VPC and other instances in a classic network over a private network. The principle is to map the IP addresses of instances in the classic network to VPC IP addresses so that you can access a classic network instance by accessing the corresponding VPC IP address. The services that support the classic network include classic CLB, TencentDB, CMEM, REDIS, MongoDB. Cross-region/cross-account communication is not supported.
 - Direction: one-way (VPC accesses the classic network).
 - If you need more directions, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply.
 

@@ -2,8 +2,8 @@
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc/) and choose **IPs and ENIs** > **HAVIP** in the left sidebar.
 2. Select the target region on the HAVIP management page and click **Apply**.
 3. Enter the name and select the VPC and subnet of the HAVIP. Then, click **OK**.
->The IP address of the HAVIP can be automatically assigned or manually specified (the validity check for manual specification is the same as that for common private IP addresses.)
->
+>?The IP address of the HAVIP can be automatically assigned or manually specified. If you want a custom IP address, make sure that the entered private IP address is within the subnet IP range and is not a reserved IP address of the system.
+For example, if the subnet IP range is 10.0.0.0/24, you can enter a private IP address in the range of 10.0.0.2 - 10.0.0.254.
 ![](https://main.qcloudimg.com/raw/78ad21c0b4d93bf059ee56e1c0333bb9.png)
 
 ## Binding and Unbinding HAVIPs
@@ -15,12 +15,15 @@ HAVIP is designed to use in combination with third-party HA software. Binding an
 
 ### Operation description
 1. HAVIP is only an operation object and serves as a private IP address that can be bound through declaration. The operation is initiated by third-party software, and binding and unbinding are not done in the HAVIP console.
+>? If you perform **Bind** or **Unbind** operations in the [Highly Available Virtual IP](https://console.cloud.tencent.com/vpc/havip) console, the EIP is bound or unbound. If you don't need public netwoerk communication, ignore the operations.
+![](https://main.qcloudimg.com/raw/39370bb211feaf21d0debfa2d968b5dd.png)
+
 2. In the HA software in the CVM, HAVIP is specified as a floating VIP. This operation is the same as the operation of the third-party HA software on a non-cloud platform. For operations of different HA software, see the operation guide of the corresponding software.
 >Common HA software program include: Linux HeartBeat, Keepalived, Pacemaker, and Windows MSCS.
 
 ### Operation example
 When specifying a VIP in the HA software (either in the configuration file or on the operation page), enter the HAVIP that you created. For example:
-```
+```plaintext
 vrrp_instanceVI_1 {    
     state MASTER   
     interface eth0     
