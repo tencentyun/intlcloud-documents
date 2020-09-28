@@ -1,4 +1,4 @@
-# 产品功能
+
 本文提供 Medialive 产品功能说明。
 #### 多协议多方式流输入
 MediaLive 支持多种流媒体输入协议，比如支持 RTP、RTMP、UDP、HLS、HTTP-MP4 输入，提供 PULL和PUSH 两种输入方式。同时针对 RTP-MPEGTS 输入方式下支持多音轨视频流输入，并针对每一路音轨可做独立的转码配置。
