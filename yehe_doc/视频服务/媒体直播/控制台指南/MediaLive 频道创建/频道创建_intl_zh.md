@@ -8,7 +8,7 @@
 如果您的 rtp / rtp-fec / udp 输入源中有多个音频流，则可以根据封装在 mepgts 中的音频 pid 在此处创建选择器，以便您可以在后面的输出配置页面中配置多音频语言。
  ![](https://main.qcloudimg.com/raw/6eb57c71f10a3ad9ec209f218efdc148.jpg)
 
-> !此处的 pid 必须与输入音频流的 pid 相同，否则转码任务可能会失败。
+>!此处的 pid 必须与输入音频流的 pid 相同，否则转码任务可能会失败。
 
 ## 步骤3：输出组设置
 ### 1. 多输出组设置
@@ -33,8 +33,8 @@ MediaLive 支持一个频道多个 output group 的输出。点击右上方加�
 腾讯云 MediaLive 支持 Tencent DRM 及用户自定义 DRM，您可基于您的实际需求进行选择。
 ![](https://main.qcloudimg.com/raw/3d51bc21d6554446339aa2ea857d0dd0.jpg)
 
->!
->- 如果在 Output Group Setting 中的 Output Group Type 选择 HLS/HLS_ARCHIVE/HLS_MediaPackage， 开启DRM则会选择使用 Fairplay 加密。
+
+>! - 如果在 Output Group Setting 中的 Output Group Type 选择 HLS/HLS_ARCHIVE/HLS_MediaPackage， 开启DRM则会选择使用 Fairplay 加密。
 >- 如果在 Output Group Setting中的 Output Group Type 选择 DSAH/DASH_MediaPackage，开启 DRM 会选择使用 Widevine 加密。
 
 a. Fairplay 密钥配置
@@ -57,8 +57,8 @@ b. Widevine 密钥配置
 在此配置视频模板，包括视频模板名；包括编码器类型选择，当前支持H264；包括视频转码码率，支持范围为 50000-40000000bit；包括分辨率、帧率配置等等。top speed codec transcoding 是腾讯云视频团队开发的高性能视频转码服务，开启该功能后，可以通过 AI 算法能力，实时计算符合业务场景的最优动态编码参数实现低码率、高质量的转码服务，Bitrate compression ratio 是预期需要降低的视频码率百分比。
 ![](https://main.qcloudimg.com/raw/960518ebce570f617872941257da7ba7.jpg)
 
->?
->如果您需要更好的带有智能视频压缩算法的编解码器，您可以选择“极速高清”转码，启用此功能后，AI算法可以根据业务场景实时计算最佳动态编码参数，以实现低比特率和高质量的转码服务。您可以在后面的输入框中填写希望降低的比特率百分比。
+>? 如果您需要更好的带有智能视频压缩算法的编解码器，您可以选择“极速高清”转码，启用此功能后，AI算法可以根据业务场景实时计算最佳动态编码参数，以实现低比特率和高质量的转码服务。您可以在后面的输入框中填写希望降低的比特率百分比。
+>
 
 ### 8. 输出组合
 配置 Outputs，对已经创建的音频转码模板以及视频转码模板进行组合关联；同时支持在 HLS 或 DASH 的文件标签中传递 scte35 相关的信息。
