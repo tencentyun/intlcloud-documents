@@ -25,4 +25,4 @@ MediaLive 支持直接联合腾讯云 MediaPackage 一起使用，将 HLS/DASH �
 ![](https://main.qcloudimg.com/raw/a6716afaa492de5d744ca1ef03b4c1d5.jpg)
 
 ### 步骤6：保存并提交配置
-此时您可回到【MediaLive 频道创建】完成其余channel配置，并点击保存之后提交。
+此时您可回到[MediaLive 频道创建](https://intl.cloud.tencent.com/document/product/1048/38373)完成其余channel配置，并点击保存之后提交。
