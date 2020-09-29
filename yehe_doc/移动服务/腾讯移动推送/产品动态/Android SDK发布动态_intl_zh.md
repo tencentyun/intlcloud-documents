@@ -1,3 +1,20 @@
+## 2020年9月
+
+<table>
+<tr>
+    <th width=20%>动态名称</th>
+    <th width=44%>动态描述</th>
+    <th width=16%>发布时间</th>
+    <th width=20%>相关文档</th>
+</tr>
+        <tr>
+        <td>SDK 1.2.1.0 版本发布</td>
+       <td><li>新增「用户属性」相关接口，用于个性化推送</li> <li>新增「应用内消息」功能，以及若干应用内消息模板</li><li>SO 文件优化更新</li><li>SDK 内部优化</li></td>
+        <td>2020-09-27</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载 SDK</a></td>
+    </tr>
+</table>
+
 ## 2020年7月
 
 <table>
@@ -11,7 +28,7 @@
         <td>SDK 1.2.0.3 版本发布</td>
        <td>修复已知问题 </td>
         <td>2020-07-30</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">下载 SDK</a></td>
+        <td>-</a></td>
     </tr>
 <tr>
         <td>SDK 1.2.0.2 版本发布</td>
@@ -70,7 +87,7 @@
     </tr>
     <tr>
         <td>SDK 1.1.5.5版本发布</td>
-       <td><li>解决 App上架 GooglePlay 会出现 DCL 违规问题</li></td>
+        <td>解决 App上架 GooglePlay 会出现 DCL 违规问题</li></td>
         <td>2020-04-02</td>
         <td>-</td>
     </tr>
@@ -89,7 +106,7 @@
         <td>SDK 1.1.5.4版本发布</td>
         <td><li> 网络连接优化</li> <li> 增加账号类型</li> <li> 优化保活方案</li> <li> 安全告警修复</li> <li> 兼容信鸽平台版本升级</li><li>获取QIMEI信息的功能</li> </td>
         <td>2020-03-06</td>
-        <td>注销信鸽平台推送服务</td>
+        <td>-</td>
     </tr>
 </table>
 
