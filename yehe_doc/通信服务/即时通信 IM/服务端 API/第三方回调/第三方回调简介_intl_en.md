@@ -2,8 +2,7 @@
 
 To implement refined control over app features, IM provides you with powerful callbacks free of charge. These callbacks use the persistent connection mode by default. A callback is a request sent by the IM backend to the app backend server before or after an event occurs. This allows the app backend to synchronize data if necessary or intervene in the subsequent event processing. For more information on the callbacks currently supported by IM, see the [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
 
-A third-party callback is sent to the app backend server through an HTTP or HTTPS request, and the app backend server must process the IM callback request and respond as soon as possible. Take the [callback before delivering a group message](https://intl.cloud.tencent.com/document/product/1047/34374) as an example. Before the message is sent, the IM backend sends a callback request to the app backend server and determines whether the message should be sent based on the callback result. Based on the callback, the app can synchronize the message or perform content filtering on the message to be sent. The following figure shows the callback process.
-![](https://main.qcloudimg.com/raw/905eb625669fc0b19e7035bcf3d7bf41.svg)
+A third-party callback is sent to the app backend server through an HTTP or HTTPS request, and the app backend server must process the IM callback request and respond as soon as possible. Take the [callback before delivering a group message](https://intl.cloud.tencent.com/document/product/1047/34374) as an example. Before the message is sent, the IM backend sends a callback request to the app backend server and determines whether the message should be sent based on the callback result. Based on the callback, the app can synchronize the message or perform content filtering on the message to be sent. 
 
 ## Callback Classification
 
@@ -100,13 +99,9 @@ Currently, the IM console allows you to configure callbacks, including configuri
 
 > The IM console allows you to configure only HTTP and HTTPS callbacks. If you need to enable the HTTPS mutual authentication callback, which has the highest security level, complete the following steps:
 > 1. In the IM console, configure the callback URL (which must be an HTTPS domain name) and enable the callback.
-> 2. Submit a requirement ticket to IM. IM will issue the certificate required for mutual authentication to the app. The following information must be specified in the ticket:
->   1. SDKAppID
->   1. App name
->   1. Callback URL, which must be consistent with that in the self-service configuration in the console
-> 3. After receiving the certificate, configure HTTPS mutual authentication by following two guides:
+>2. Click **Download HTTPS Mutual Authentication Certificate** on the right to get the certificate, and configure HTTPS mutual authentication by following two guides below:
 >   1. [Configuring HTTPS Mutual Authentication on an Apache Server](https://intl.cloud.tencent.com/document/product/1047/34379)
->   1. [Configuring HTTPS Mutual Authentication on an Nginx Server](https://intl.cloud.tencent.com/document/product/1047/34380)
+>   2. [Configuring HTTPS Mutual Authentication on an Nginx Server](https://intl.cloud.tencent.com/document/product/1047/34380)
 
 ## Common Reasons for Callback Failures
 
