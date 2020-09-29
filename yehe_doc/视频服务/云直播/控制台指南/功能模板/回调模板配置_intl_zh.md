@@ -10,7 +10,7 @@
 
 - 创建成功后，还需到对应的推流域名下关联 [回调配置](https://intl.cloud.tencent.com/document/product/267/31065)，关联成功后约5分钟 - 10分钟生效。
 - 回调配置中，用于接收回调事件的回调地址`http`或`https`服务器必须能正常收到响应。
-- 控制台的回调模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过直播回调相关接口关联指定流的，则需要通过调用 [删除回调模板](https://intl.cloud.tencent.com/document/product/267/30813) 解除关联。
+- 控制台的回调模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过直播回调相关接口关联指定流的，则需要通过调用 [删除回调规则](https://intl.cloud.tencent.com/document/product/267/30814) 解除关联。
 - 直播回调相关协议，请参见 [事件消息通知协议](https://intl.cloud.tencent.com/document/product/267/31566)。
 - 直播回调参数及示例，请参见 [事件消息通知参数说明](https://intl.cloud.tencent.com/document/product/267/31566)。
 - 直播回调消息通知参数说明，具体请参见：
@@ -27,7 +27,7 @@
 ## 创建回调模板
 
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-2. 在左侧菜单栏选择【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)。
+2. 在左侧菜单栏选择【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
 3. 单击 【+】创建回调模板，在回调设置弹框中填写完成回调信息，单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
 <table>
@@ -62,7 +62,7 @@
 <span id="change"></span>
 ## 修改模板
 
-1. 进入【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)。
+1. 进入【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
 2. 选择您已创建成功的回调配置模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
@@ -73,7 +73,7 @@
 
 若模板已被关联，需要先解绑模板，才可以进行删除操作，具体解绑操作请参见 [解绑回调配置](https://intl.cloud.tencent.com/document/product/267/31065#untie)。
 
-1. 进入【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)。
+1. 进入【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)。
 2. 选择您已创建成功的回调配置模板，单击上方的删除按钮。
 3. 确认是否删除当前截图鉴黄配置模板，单击【确定】即可成功删除。
 
