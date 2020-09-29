@@ -39,40 +39,6 @@ Check whether the `bundle id` configured in the Xcode project matches the config
 
 
 
-### How does the client redirect or respond based on the message content?
-
-When an iOS device receives a push message and the user taps the message to open the app, the application will respond differently according to the status:
-
-- This function will be invoked if the application status is "not running".
- - If `launchOptions` contains `UIApplicationLaunchOptionsRemoteNotificationKey`, it means that the user's tap on the push message will cause the application to launch.
- - If the corresponding key value is not included, it means that the application launch is not caused by the tap on the message but probably by the tap on the icon or other actions.
-	```objective-c
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
-	{
-			// Get the message content
-			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-			// Then process logically based on the message content
-	}
-	```
-- If the application status is "in the foreground" or "in the background but still active":
- - On iOS 7.0+, if the Remote Notification feature is used, the following code needs to be used as the handler:
-	```objective-c
-	- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
-	```
- - On versions above iOS 10.0, if the Remote Notification feature is used, you are recommended to add a `UserNotifications Framework` handler. Please use the following two methods in the `XGPushDelegate` protocol. The sample code is as follows:
-	```objective-c
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-		NSLog(@"[XGDemo] click notification");
-		completionHandler();
-	}
-
-	// This API needs to be called when the application pops up the push message in the foreground
-	- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-		completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
-	}
-	```
-
-
 
 ### How does the client play back custom push message audio?
 
