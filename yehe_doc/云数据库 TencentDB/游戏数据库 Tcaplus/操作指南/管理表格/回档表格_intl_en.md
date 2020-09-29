@@ -31,7 +31,7 @@ message tb_online {
 To roll back a record with keys of `openid` = 100, `tconndid`= 1, and `timekey` = '123456', you need to prepare a file containing the keys as follows. The first row contains the names of primary key fields separated by space, and the second and subsequent rows contain the primary key values to be rolled back to.
 ```
 openid tconndid timekey 
-100 1 123456 "51241434551"
+100 1 123456
 ```
 4. After the key.txt file is uploaded, select the rollback time and click **Submit**.
 ![](https://main.qcloudimg.com/raw/60f9532439c46ae11803a267bed79f98.png)
