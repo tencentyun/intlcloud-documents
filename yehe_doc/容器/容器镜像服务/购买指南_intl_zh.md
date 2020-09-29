@@ -6,7 +6,7 @@
 
 ## 支持地域
 目前容器镜像服务当前已支持及近期即将支持地域如下表所示：
-<table>
+<table class="table-striped">
 <tbody>
 <tr>
 <th>地域</th><th>取值</th>
@@ -14,29 +14,29 @@
 <tr>
 <td>广州</td><td>ap-guangzhou</td>
 </tr>
-
 <tr>
 <td>上海</td><td>ap-shanghai</td>
 </tr>
-
 <tr>
 <td>南京（<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）</td><td>ap-nanjing</td>
 </tr>
-
 <tr>
 <td>北京</td><td>ap-beijing</td>
 </tr>
-
 <tr>
 <td>中国香港</td><td>ap-hongkong</td>
 </tr>
-
 <tr>
+<td>新加坡（<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）</td><td>ap-singapore</td>
+</tr>
+<tr>    
 <td>首尔</td><td>ap-seoul</td>
 </tr>
-
 <tr>
 <td>硅谷</td><td>na-siliconvalley</td>
+</tr>
+<tr>
+<td>法兰克福（<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请开通）</td><td>eu-frankfurt</td>
 </tr>
 
 </tbody></table>
@@ -50,7 +50,7 @@
 </tr>
 <tr>
 <td>实例租用</td>
-<td>企业版实例按照实例规格及所在地域区分不同的价格。</td>
+<td>企业版实例支持包年包月的计费方式，按照实例规格及所在地域区分不同的价格。</td>
 <td>公测期间免费</td>
 </tr>
 <tr>
@@ -109,13 +109,13 @@
 <td>Helm Chart 托管</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>命名空间配额</td><td>10</td><td>50</td><td>100</td><td>500</td>
+<td>命名空间配额</td><td>10</td><td>50</td><td>100</td><td>500 (可申请提高配额)</td>
 </tr>
 <tr>
-<td>镜像仓库配额</td><td>500</td><td>1000</td><td>3000</td><td>5000</td>
+<td>镜像仓库配额</td><td>500</td><td>1000</td><td>3000</td><td>5000 (可申请提高配额)</td>
 </tr>
 <tr>
-<td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000</td>
+<td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000 (可申请提高配额)</td>
 </tr>
 <tr>
 <td rowspan="4">安全管控</td>
@@ -157,7 +157,7 @@
 </tbody></table>
 
 #### 公测期间说明事项
-- VPC 接入配额公测期间各个规格均限制为1 ，请根据实际需要提交工单申请调整配额。
-- 操作日志查询功能暂未开放使用，如有需要，请提交工单申请查询。
-- Webhook 触发器类型公测期间无规格限制，仅支持推送及删除两种场景。
-- 云原生交付工作流功能公测期间无规格限制，可提交工单申请体验。
+1. VPC 接入配额公测期间各个规格均限制为1 ，请根据实际需要提交工单申请调整配额。
+2. 操作日志查询功能暂未开放使用，如有需要，请提交工单申请查询。
+3. Webhook 触发器类型公测期间无规格限制，仅支持推送及删除两种场景。
+4. 云原生交付工作流功能公测期间暂无规格限制，开放试用。
