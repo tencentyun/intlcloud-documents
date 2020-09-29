@@ -2,7 +2,7 @@
 
 **In order to use the Tencent Cloud Cloud Connect Network (“CCN”) service (the “Service”), you should read and observe this Tencent Cloud Cloud Connect Network Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, Service availability and Service uptime metrics, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, may be in bold font or underlined or otherwise brought to your special attention.**
 
-**Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
+**Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
 ### 1. Terms and Definitions
 
@@ -46,11 +46,9 @@ The Service has **three Service levels, namely, Platinum, Gold and Silver**, and
 
 
 
-Notes:
-
-\-   For Services within the same city, the Service level is default to Gold and cannot be changed.
-
-\-   For Services across cities, you may select among the three Service levels, i.e., Platinum, Gold, and Silver, when you create a CCN instance.
+>?
+>- For Services within the same city, the Service level is default to Gold and cannot be changed.
+>- For Services across cities, you may select among the three Service levels, i.e., Platinum, Gold, and Silver, when you create a CCN instance.
 
 ### 3. Service Compensation
 
@@ -60,33 +58,62 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (1) Compensations will be made **in the form of voucher** by Tencent Cloud, and you should follow the rules for using the voucher (including the valid term; for details, please refer to the rules of vouchers published on Tencent Cloud’s official website). You cannot redeem such voucher for cash or request to issue an invoice for such voucher. Such voucher can only be used to purchase the Service by using your Tencent Cloud account. You cannot use the voucher to purchase other services of Tencent Cloud, nor should you give the voucher to a third party for consideration or for free.
 
-(2) If the Service Availability for a Service Month of a CCN instance between two regions or in a single region fails to meet the Standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month of the CCN instance between such** **t****wo regions or in such single region** (the Monthly Service Fee referred to herein shall exclude the fee deducted by a voucher or promotional coupon, Service fee discounted or waived, or fees otherwise deductible). 
+(2) If the Service Availability for a Service Month of a CCN instance between two regions or in a single region fails to meet the Standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month of the CCN instance between such two regions or in such single region** (the Monthly Service Fee referred to herein shall exclude the fee deducted by a voucher or promotional coupon, Service fee discounted or waived, or fees otherwise deductible). 
 
- 
+<table>
+<thead>
+<tr>
+<th>Service Level</th>
+<th>Service Availability of a Service Month</th>
+<th>Amount of Compensational Voucher</th>
+</tr>
+</thead>
+<tbody><tr>
+<td rowspan="3">Platinum</td>
+<td>99.99% ＞ Service Availability ≥ 99.95%</td>
+<td>15% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>99.95% ＞ Service Availability ≥ 99.50 %</td>
+<td>30% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>99.50% ＞ Service Availability</td>
+<td>100% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td rowspan="3">Gold</td>
+<td>99.95% ＞ Service Availability ≥ 99.50%</td>
+<td>15% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>99.50% ＞ Service Availability ≥ 99.00%</td>
+<td>30% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>99.00% > Service Availability</td>
+<td>100% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td rowspan="3">Silver</td>
+<td>99.50% ＞ Service Availability ≥ 99.00%</td>
+<td>15% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>99.00% ＞ Service Availability ≥ 95.00%</td>
+<td>30% of the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>95.00% > Service Availability</td>
+<td>100% of the Monthly Service Fee</td>
+</tr>
+</tbody></table>
 
 
 
-| **Service   Level**                      | **Service   Availability of a Service Month** | **Amount   of Compensational Voucher** |
-| ---------------------------------------- | --------------------------------------------- | -------------------------------------- |
-| Platinum                                 | 99.99% ＞ Service Availability ≥ 99.95%       | 15% of the Monthly  Service Fee        |
-| 99.95% ＞ Service Availability ≥ 99.50 % | 30% of the Monthly  Service Fee               |                                        |
-| 99.50% ＞ Service Availability           | 100% of the Monthly  Service Fee              |                                        |
-| Gold                                     | 99.95% ＞ Service Availability ≥ 99.50%       | 15% of the Monthly  Service Fee        |
-| 99.50% ＞ Service Availability ≥ 99.00%  | 30% of the Monthly  Service Fee               |                                        |
-| 99.00% > Service Availability            | 100% of the Monthly  Service Fee              |                                        |
-| Silver                                   | 99.50% ＞ Service Availability ≥ 99.00%       | 15% of the Monthly  Service Fee        |
-| 99.00% ＞ Service Availability ≥ 95.00%  | 30% of the Monthly  Service Fee               |                                        |
-| 95.00% > Service Availability            | 100% of the Monthly  Service Fee              |                                        |
-
-
-
-Notes:
-
-The Monthly Service Fee in the above table refers to the relevant Monthly Service Fee charged for the relevant CCN instance between two regions or in a single region, and shall exclude any fee charged in the following circumstances:
-
-\-    any Monthly Service Fee charged for any other CCN instance that meets the Service Availability Standard in a single region or between regions;
-
-\-    any Monthly Service Fee charged for such CCN instance between other regions or in another region where the Service Availability Standard is met. For example, if a CCN instance fails to meet the Service Availability Standard between Shanghai and Beijing in May, but meets the Service Availability Standard between Shanghai and Guangzhou, the amount of voucher to be compensated shall be the fees charged for that CCN instance between Shanghai and Beijing in May × the applicable ratio of compensations.
+>!The Monthly Service Fee in the above table refers to the relevant Monthly Service Fee charged for the relevant CCN instance between two regions or in a single region, and shall exclude any fee charged in the following circumstances:
+>- any Monthly Service Fee charged for any other CCN instance that meets the Service Availability Standard in a single region or between regions;
+>- any Monthly Service Fee charged for such CCN instance between other regions or in another region where the Service Availability Standard is met. For example, if a CCN instance fails to meet the Service Availability Standard between Shanghai and Beijing in May, but meets the Service Availability Standard between Shanghai and Guangzhou, the amount of voucher to be compensated shall be the fees charged for that CCN instance between Shanghai and Beijing in May × the applicable ratio of compensations.
 
  
 
