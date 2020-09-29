@@ -37,11 +37,12 @@ server {
 #### 方法一
 Windows 2008及更早的版本不支持 TLS1_2 协议，因此无法调整 2008R2 TLS1_2 协议，默认是关闭的，需要启用此协议达到 ATS 要求。
 
-以2008 R2为例，导入证书后没有对协议及套件做任何的调整。
- 证书导入后检测到套件是支持 ATS 需求的，但协议 TLS1_2 没有被启用，ATS 需要 TLS1_2 的支持。可使用的 ssltools工具（亚洲诚信提供，[单击下载](http://www.trustasia.com/down/ssltools.zip)）启用 TLS1_2 协议。如下图所示：
-![1](https://mc.qcloudimg.com/static/img/bed43955994817ef3dcca0f8d617e117/1.png)
-- 勾选三个 TLS 协议并重启系统即可。
-- 如果检查到 PFS 不支持，在加密套件中选中带 ECDHE 和 DHE 就可以了。
+以 2008 R2 为例，导入证书后没有对协议及套件做任何的调整。
+ 证书导入后检测到套件是支持 ATS 需求的，但协议 TLS1_2 没有被启用，ATS 需要 TLS1_2 的支持。可使用的 iis crypto 工具（[单击下载](https://www.nartac.com/Downloads/IISCrypto/IISCrypto.exe)）启用 TLS1_2 协议。如下图所示：
+![](https://main.qcloudimg.com/raw/21fde4a6d02969a22c02d279f71750f5.png)
+
+- 勾选三个 TLS 协议并,并单击【Apply】应用设置，重启系统即可。
+- 如果检查到 PFS 不支持，在【Cipher Suites】中选中带 ECDHE 和 DHE 即可。
 
 #### 方法二
 1. 开始——运行，输入 `regedit`。
@@ -50,14 +51,17 @@ Windows 2008及更早的版本不支持 TLS1_2 协议，因此无法调整 2008R
 4. 在新建的 Server 和 Client 中新建如下的项（DWORD 32位值）, 总共4个。如下图所示：
  - DisabledByDefault [Value = 0]
  - Enabled [Value = 1]
-![2](https://mc.qcloudimg.com/static/img/a6d5d5103f41996d2297e897f3b15b8f/2.png)
+![2](https://main.qcloudimg.com/raw/c371b0309b3233d5b37da1bb74b43e4c.png)
+![3](https://main.qcloudimg.com/raw/656639fcb89350c9dbd5f11b63d6cd19.png)
+![4](https://main.qcloudimg.com/raw/a65d675b742144e817eef3fd882b48a8.png)
+![5](https://main.qcloudimg.com/raw/a58d8d4fd525777eb1d7bf523c4fcda6.png)
 5. 完成后重启系统。
 6. 加密套件调整。开始菜单——运行，输入 `gpedit.msc` 进行加密套件调整，在此操作之前需要先开启 TLS1_2 协议。如下图所示：
 >!对于前向保密加密套件不支持的话可通过组策略编辑器进行调整。
 
-![3](https://mc.qcloudimg.com/static/img/edbf53965efe2fc929347479bbfa3ffc/3.png)
+![3](https://main.qcloudimg.com/raw/11f246fad52917de46de6eff14183137.png)
 7. 双击 SSL 密码套件顺序，填写如下内容。如下图所示：
-![4](https://mc.qcloudimg.com/static/img/0fd0450901a9ececba02576344cd5679/4.png)
+![4](https://main.qcloudimg.com/raw/2f2a9c96b351282957827358cf96cc2d.png)
   - 设置为 “已启用”。
   - 把支持的 ECDHE 加密套件加入 SSL 密码套件中，以逗号（,）分隔。
   - 填写套件步骤如下：

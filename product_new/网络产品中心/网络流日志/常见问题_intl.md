@@ -18,7 +18,7 @@ For more information, see [Use Cases](https://intl.cloud.tencent.com/document/pr
 
 ### What services do Flow Logs support?
 - Flow Logs currently only supports ENI in VPC.
-- Services such as CVM, TencentDB, gateways, peering connections are currently not supported.
+- Classic network services such as CVM, TencentDB, gateways, peering connections are currently not supported.
 
 ### Can I edit a flow log’s configuration after creation?
 You cannot change the configuration of a flow log after creation. Actions such as modifying the delivery destination of the flow logs are not allowed. However, you can delete the flow log and create a new flow log and configure it as needed.

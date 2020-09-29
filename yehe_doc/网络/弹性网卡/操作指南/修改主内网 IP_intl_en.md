@@ -1,3 +1,5 @@
+>!Changing the primary IP of the primary ENI will automatically restart the associated instance and cause business interruption for about 30 seconds, so proceed with caution.
+
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Choose **IP and ENI** -> **ENI** in the left sidebar to go to the ENI list page.
 3. Locate the ENI you want to change, and click its ID/Name to enter the details page.

@@ -6,7 +6,7 @@ Choose the appropriate method based on your server type.
 >
 - Linux system:
  - [Install a certificate on an Apache server](https://intl.cloud.tencent.com/document/product/1007/30953)
- - [Install a certificate on a NGINX server](https://intl.cloud.tencent.com/document/product/1007/30954)
+ - [Install a certificate on a Nginx server](https://intl.cloud.tencent.com/document/product/1007/30954)
  - [Install a certificate on a Tomcat server](https://intl.cloud.tencent.com/document/product/1007/30956)
  - Install a certificate on a GlassFish server
  - Install a certificate on a JBoss server
