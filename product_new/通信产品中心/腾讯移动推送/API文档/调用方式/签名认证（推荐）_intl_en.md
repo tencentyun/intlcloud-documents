@@ -9,10 +9,8 @@ The HMAC-SHA256 algorithm is used to generate signing information according to `
 
 | Parameter | Description |
 | --- | --- |
-| AccessId | Application ID assigned by the TPNS backend, which can be obtained in the TPNS Console |
-| SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in the TPNS Console |
-| LoginUin | Tencent Cloud login account |
-| OwnerUin | Root account of Tencent Cloud account |
+| AccessId | Application ID assigned by the TPNS server, which can be obtained in the [TPNS Console](https://console.cloud.tencent.com/tpns) |
+| SecretKey |`SecretKey` assigned by the TPNS server, which corresponds to `AccessId` and can be obtained in the [TPNS Console](https://console.cloud.tencent.com/tpns)|
 | Sign | API signature method |
 | timeStamp |      Request timestamp |
 
