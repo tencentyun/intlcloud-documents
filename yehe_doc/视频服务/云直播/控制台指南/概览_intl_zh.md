@@ -23,7 +23,7 @@
 **切换计费模式**
 若当前计费方式为日结计费，可通过【昨日流量消耗】统计项，单击【切换】 ，查看计费切换提醒，单击【确定】即可切换计费模式 。更多计费切换详细信息，请参见 [计费变更](https://intl.cloud.tencent.com/document/product/267/30411)。
 
-> 了解计费价格相关信息，详情请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
+>? 了解计费价格相关信息，详情请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
 
 ### 今日数据
 
