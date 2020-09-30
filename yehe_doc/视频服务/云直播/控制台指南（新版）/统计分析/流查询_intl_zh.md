@@ -1,4 +1,4 @@
-进入云直播控制台选择【统计分析】>[【流查询】](https://console.cloud.tencent.com/live/analysis/stream)，输入流 ID 可查询流的推流和播放信息。如下图：
+进入云直播控制台选择[【流数据查询】](https://console.cloud.tencent.com/live/analysis/stream)，输入流 ID 可查询流的推流和播放信息。如下图：
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### 播放数据查询 
