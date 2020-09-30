@@ -9,8 +9,9 @@
 
 ## 操作步骤
 
-在直播推流中断后，选择左侧菜单栏中的【辅助工具】>【[断流诊断](https://console.cloud.tencent.com/live/tools/streamevent)】，进入断流诊断。
+在直播推流中断后，选择左侧菜单栏中的【事件中心】>【[断流记录](https://console.cloud.tencent.com/live/tools/streamevent)】，进入断流诊断。
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
+
 
 其中：
 - **路径**：推流地址中的 AppName。
@@ -285,4 +286,5 @@
  </tr>
 </table>
 
-云直播还提供了 API 接口进行查询。
+云直播还提供了 API 接口进行查询，详细请参见 [查询推断流事件](https://intl.cloud.tencent.com/document/product/267/30800)。
+
