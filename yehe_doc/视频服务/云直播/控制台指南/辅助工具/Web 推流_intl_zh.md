@@ -3,10 +3,11 @@
 
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
+- 已添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 - 您的设备已安装摄像头，并浏览器支持 Flash 插件调用摄像头权限。
 
 ## 操作步骤
-1. 登录云直播控制台，选择【辅助工具】>[【Web推流】](https://console.cloud.tencent.com/live/tools/webpush)。
+1. 登录云直播控制台，选择[【Web推流】](https://console.cloud.tencent.com/live/tools/webpush)。
 2. 在 Web 端推流的页面进行以下设置：
 	- 选择推流域名。
 	- 填写自定义的流名称 StreamName，例如：`test`。
