@@ -5,7 +5,7 @@ UGSV SDK license overview:
 - You can apply for the basic edition UGSV license for free to get a 28-day trial.
 - UGSV SDK resource consumption such as acceleration, storage, traffic, etc. is billed according to VOD billing rules.
 - If you need enterprise edition and Enterprise Pro licenses, please contact sales.
-- You cannot refund the license fee once UGSV feature is activated.
+- The license fee cannot be refunded once UGSV is activated.
 
 
 #### Pricing
@@ -20,21 +20,23 @@ UGSV SDK license overview:
 
 ## AI-Based Video Analysis Feature
 AI-based video analysis feature is billed on a postpaid monthly basis. The billing unit is USD/min and this service is billed based on service types and corresponding durations.
+
 - Payment method: postpaid monthly billing cycle
 - A duration of less than 1 minute in the source video is counted as 1 minute.
 
 #### Pricing
 AI-based video analysis feature has the following billable items:
-- Intelligent highlights identifying and video splitting: intelligent video splitting feature splits videos according to the contents. We can optimize this feature according to users’ requirements. **APIs for video highlights and splitting are different, and the two services are billed separately**.
-- Intelligent video tagging and classification: this feature intelligently identifies figures, scenarios, voices, text and other information in videos and then automatically generates video tags, categories, summaries among others. **APIs for video tagging and classification are different, and the two services are billed separately**.
-- Intelligent video cover recommendation: selects one or more screenshots of a video as the recommended thumbnails.
+
+- Intelligent highlights generation and video segmentation: intelligent video segmentation partitions videos into shots or scenes. This feature can be further optimized according to user requirements. **Highlights generation and video segmentation uses different APIs and are billed separately**.
+- Intelligent video tagging and classification: this feature intelligently identifies figures, scenarios, voices, text and other information in videos and then automatically generates video tags, categories, summaries among others. **Video tagging and classification uses different APIs and are billed separately**.
+- Intelligent video thumbnail recommendation: selects one or more screenshots of a video as the recommended thumbnails.
 
 The billing details are as follows:
 
 |Billable Items|Billing Mode|Unit Price (USD/minute)|
 |--------|-------------|-------|
-|Intelligent highlights identifying|Billing by the original video duration|0.0572|
-|Intelligent video splitting|Billing by the original video duration|0.0572|
+|Intelligent highlights generation|Billing by the original video duration|0.0572|
+|Intelligent video segmentation|Billing by the original video duration|0.0572|
 |Intelligent video tagging|Billing by the original video duration|0.0572|
 |Intelligent video classification|Billing by the original video duration|0.0572| 
 |Intelligent video thumbnail recommendation|Billing by the original video duration|0.0572|
@@ -54,7 +56,7 @@ Payment method: postpaid.
 - A duration of less than 1 minute in the source video is counted as 1 minute.
 
 #### Pricing
-AI-based video auditing feature intelligently reviews images, audios, and texts in videos to detect pornographic, terrorist, and politically sensitive information and outputs auditing results according to users’ requirements.
+AI-based video auditing feature intelligently reviews images, audios, and texts in videos to detect pornography, terrorism, and politically sensitive information and outputs auditing results according to user requirements.
 
 The billing details are as follows:
 
@@ -63,7 +65,7 @@ The billing details are as follows:
 |Video auditing|Billing by the original video duration|0.016 |
 
 #### Billing example
- Let’s assume a user uses this feature to audit the 30-minute video A
+Suppose a user uses this feature to audit the 30-minute video A
 Service fee = 30 x 0.016 = 0.48 USD.
 
 
