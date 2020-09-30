@@ -20,7 +20,7 @@
 <td>用户标签支持新增、活跃、沉默标签</td>
 <td>支持新增、活跃、沉默用户标签，可快速进行精准用户促活、流失召回，轻轻松松提升用户活跃</td>
 <td>2020-09-24</td>
-<td><a href="https://cloud.tencent.com/document/product/548/42254">标签功能</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/35392">标签功能</a></td>
 </tr>
 
 </tbody></table>
