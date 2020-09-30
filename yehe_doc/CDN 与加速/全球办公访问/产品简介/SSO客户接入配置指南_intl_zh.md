@@ -42,7 +42,7 @@ SSO客户接入配置指南
 
  
 
-# 一、 配置Azure Active Directory做为IDaaS认证源
+## 一、 配置Azure Active Directory做为IDaaS认证源
 
 用户需要提供给GOA的配置信息：
 
@@ -50,21 +50,21 @@ SSO客户接入配置指南
 
 GOA提供给用户的配置信息：
 
-**GOA****配置人员会提供Entity ID和ACS URL。**
+**GOA配置人员会提供Entity ID和ACS URL。**
 
  
 
 具体操作流程：
 
-#### 1.  进入Azure控制台 https://portal.azure.com/#home
+1.  进入Azure控制台 https://portal.azure.com/#home
 
-#### 2.  进入Azure Active Directory管理台
+2.  进入Azure Active Directory管理台
 
-#### 3.  进入Enterprise applications管理台
+3.  进入Enterprise applications管理台
 
 ![img](https://main.qcloudimg.com/raw/6596a7deb7b3225f829d27798a3e6de7.jpg)
 
-#### 4.  添加SAML-based SSO应用
+4.  添加SAML-based SSO应用
 
 ![img](https://main.qcloudimg.com/raw/12ee4e528a32c7fb6ab1f62ed1d9c648.jpg)
 
@@ -92,7 +92,7 @@ GOA配置人员会提供Entity ID和ACS URL。
 
  
 
-# 二、 配置OneLogin做为IDaaS认证源
+## 二、 配置OneLogin做为IDaaS认证源
 
 用户需要提供给GOA的配置信息：
 
@@ -144,7 +144,7 @@ GOA配置人员会提供EntityID，ACS URL。
 
  
 
-# 三、 配置Okta做为IDaaS认证源
+## 三、 配置Okta做为IDaaS认证源
 
 用户需要提供给GOA的配置信息：
 
@@ -186,7 +186,7 @@ GOA配置人员提供登陆跳转相关参数：
 
  
 
-# 四、 配置LDAP 认证源
+## 四、 配置LDAP 认证源
 
 #### 1.  操作场景
 
@@ -218,7 +218,7 @@ LDAP 账户密码：请填写上述 LDAP 账户对应的密码。
 
  
 
-# 五、 配置GSuite做为IDaaS认证源
+## 五、 配置GSuite做为IDaaS认证源
 
 用户需要提供给GOA的配置信息：
 
