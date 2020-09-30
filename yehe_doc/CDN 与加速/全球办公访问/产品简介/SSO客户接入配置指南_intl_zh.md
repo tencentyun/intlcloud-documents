@@ -56,15 +56,15 @@ GOA提供给用户的配置信息：
 
 具体操作流程：
 
-1.  进入Azure控制台 https://portal.azure.com/#home
+#### 1.  进入Azure控制台 https://portal.azure.com/#home
 
-2.  进入Azure Active Directory管理台
+#### 2.  进入Azure Active Directory管理台
 
-3.  进入Enterprise applications管理台
+#### 3.  进入Enterprise applications管理台
 
 ![img](https://main.qcloudimg.com/raw/6596a7deb7b3225f829d27798a3e6de7.jpg)
 
-4.  添加SAML-based SSO应用
+#### 4.  添加SAML-based SSO应用
 
 ![img](https://main.qcloudimg.com/raw/12ee4e528a32c7fb6ab1f62ed1d9c648.jpg)
 
