@@ -62,21 +62,21 @@ GOA提供给用户的配置信息：
 
 #### 3.  进入Enterprise applications管理台
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![img](https://main.qcloudimg.com/raw/6596a7deb7b3225f829d27798a3e6de7.jpg)
 
 #### 4.  添加SAML-based SSO应用
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![img](https://main.qcloudimg.com/raw/12ee4e528a32c7fb6ab1f62ed1d9c648.jpg)
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![img](https://main.qcloudimg.com/raw/f21293fe4592e598f5acab9c5d6ef3dd.jpg)
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)
+![img](https://main.qcloudimg.com/raw/1b0b369a98d1a2ed1354629afd770450.jpg)
 
 #### 5.  提供SAML相关信息到IDaaS
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+![img](https://main.qcloudimg.com/raw/66fdcfb3a370b4c9a58e4ebbf38350e4.jpg)
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)
+![img](https://main.qcloudimg.com/raw/b4bc246f91eeab0cfebb8191bc5def54.jpg)
 
 需要将Base64的公钥证书，Login URL，以及Azure AD Identifier提供给GOA配置人员。
 
@@ -84,11 +84,11 @@ GOA提供给用户的配置信息：
 
 GOA配置人员会提供Entity ID和ACS URL。
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+![img](https://main.qcloudimg.com/raw/d8b23991a6d23fefc491a9a53e76629a.jpg)
 
 #### 7.  授权可以使用SAML登陆的用户或组
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image016.jpg)
+![img](https://main.qcloudimg.com/raw/f371146c47338bfd7fcb3d18da9b6c5b.jpg)
 
  
 
@@ -114,11 +114,11 @@ GOA提供给用户的配置信息：
 
 #### 3.  添加SAML类型应用
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg)
+![img](https://main.qcloudimg.com/raw/55aedd18476d43f4ebdd0fc777ac8f1e.jpg)
 
 #### 4.  提供SAML相关信息到IDaaS
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg)
+![img](https://main.qcloudimg.com/raw/725ffe55a46dd54777b20643e49e3b6d.jpg)
 
 需要将X.509证书，Issuer URL, SAML 2.0 Endpoint提供给GOA配置人员。
 
@@ -126,19 +126,19 @@ GOA提供给用户的配置信息：
 
 GOA配置人员会提供EntityID，ACS URL。
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image022.jpg)
+![img](https://main.qcloudimg.com/raw/aba43e75ff7f2b5206b3540525eef2ef.jpg)
 
 设置用户字段
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image024.jpg)
+![img](https://main.qcloudimg.com/raw/4c5aae9bb60650535bf44f874f63a73d.jpg)
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image026.jpg)
+![img](https://main.qcloudimg.com/raw/85111a88c0eb314d4cf758cb77fafc65.jpg)
 
 #### 6.  授权使用SAML登陆的用户
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image028.jpg)
+![img](https://main.qcloudimg.com/raw/a9891ff322e6479bfb7f631bf4ddaf01.jpg)
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image030.jpg)
+![img](https://main.qcloudimg.com/raw/c6c4e0009503b7b9e0bd238d0ba5d09c.jpg)
 
  
 
@@ -162,25 +162,25 @@ GOA提供给用户的配置信息：
 
 #### 1.  进入Okta管理端添加应用
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image032.jpg)
+![img](https://main.qcloudimg.com/raw/1be2d37cd4b960b429e807f18492dfcd.jpg)
 
 选择Web应用
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image034.jpg)
+![img](https://main.qcloudimg.com/raw/53a2aeba78611f4c0856e1f898a90b1b.jpg)
 
 GOA配置人员提供登陆跳转相关参数：
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image036.jpg)
+![img](https://main.qcloudimg.com/raw/ea505fa803d2fe0d6afbb0197bab5d0a.jpg)
 
 #### 2.  提供OIDC相关信息到IDaaS
 
 应用添加完成后，提供应用的Client ID，Client Secret以及客户的Okta域名https://dev-xxxxxx.okta.com给到GOA配置人员。
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image038.jpg)
+![img](https://main.qcloudimg.com/raw/39eca907326e5151c4d2b1fe8a9a8db3.jpg)
 
 #### 3.  授权用户登陆应用
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image040.jpg)
+![img](https://main.qcloudimg.com/raw/781dd931cbf70990d3de2878dba2e00f.jpg)
 
  
 
@@ -200,7 +200,7 @@ GOA支持企业成员通过 LDAP/AD 用户名密码登录门户，本文将为�
 
 \3.     填写认证源配置信息。
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image042.jpg)LDAP URL：请填写 LDAP 服务器 IP 与端口号。若服务器 IP 为196.0.0.0，端口号为389，则填写
+![img](https://main.qcloudimg.com/raw/28d57287433eabeead48cbdb72769e66.jpg)LDAP URL：请填写 LDAP 服务器 IP 与端口号。若服务器 IP 为196.0.0.0，端口号为389，则填写
 
 ldap://196.0.0.0:389/，目前暂不支持 IPv6。
 
@@ -234,7 +234,7 @@ GOA提供给用户的配置信息：
 
 #### 1.  From the Admin console dashboard, go to Apps > SAML Apps. To see Apps on the dashboard, you might have to click More controls at the bottom.
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image044.jpg)
+![img](https://main.qcloudimg.com/raw/0b29584486be82cc20342fecdad3f634.jpg)
 
 #### 2.  Click the plus (+) icon at the bottom right.
 
@@ -248,7 +248,7 @@ GOA提供给用户的配置信息：
 
  
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image046.jpg)
+![img](https://main.qcloudimg.com/raw/9124e9a689a5fffcc876fe331a7d8e45.jpg)
 
 #### 6.  Click Next.
 
@@ -262,7 +262,7 @@ Entity ID：http://sigma-test.cloudidaas.com/idp/saml/4406
 
 Start URL: leave blank
 
-![img](file:///C:/Users/V_VWYZ~1/AppData/Local/Temp/msohtmlclip1/01/clip_image048.jpg)
+![img](https://main.qcloudimg.com/raw/5ceab5a4c4daa4474665d869fccc49b7.jpg)
 
 #### 8.  Click Finish.
 
