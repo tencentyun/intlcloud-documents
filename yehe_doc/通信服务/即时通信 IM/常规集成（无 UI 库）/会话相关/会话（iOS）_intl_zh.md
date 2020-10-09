@@ -12,7 +12,7 @@
  - 如果 `isFinished` 返回 `false` ，表示还有更多的会话可以拉取。此时并不意味着要立刻开始拉取“下一页”的会话列表。在常见的通信软件中，分页拉取通常由用户的滑动操作触发的，用户每下拉一次会话列表就触发一次分页拉取。
 <span id="get_step3"></span>
 3. 当用户继续下拉会话列表时，如果还有更多的会话可以拉取，可以继续调用 [getConversationList()](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#af94d9d44e90da448a395e6d92b4e512e) 接口，并传入新一轮的 `nextSeq` 和 `count` 参数（数值来自上一次拉取返回的 [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a7ff14d2973291fdac42592bfc57369f5) 对象）。
-5. 重复执行 [步骤3](#get_step3) 直至 `isFinished` 返回 `true`。
+4. 重复执行 [步骤3](#get_step3) 直至 `isFinished` 返回 `true`。
 
 ### 显示会话信息
 获取到 [V2TIMConversation](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html)  对象后，即可在 UI 上展示，`V2TIMConversation` 有如下关键字段常被用于构造会话列表：
