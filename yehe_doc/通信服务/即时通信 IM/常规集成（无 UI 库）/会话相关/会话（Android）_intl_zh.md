@@ -32,7 +32,7 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 - 当有会话更新时，例如新收到一条消息，SDK 会通过 `V2TIMConversationListener`  中的 [onConversationChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) 事件通知您。
 - 当有会话新增时，SDK 会通过 `V2TIMConversationListener`  中的 [onNewConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#ab213c51c45045665dde1542c276e2530) 事件通知您。
 
->为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520) 中的 [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) 对数据源重新排序。
+>!为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520) 中的 [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) 对数据源重新排序。
 
 ### 示例代码
 示例代码将介绍如何拉取、展示和更新会话列表：
@@ -122,7 +122,7 @@ private void updateConversation(List<V2TIMConversation> convList, boolean needSo
 ## 草稿箱
 在发送消息时，可能会遇到消息尚未编辑完就要切换至其它聊天窗口的情况，这些未编辑完的消息可通过 [setConversationDraft](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae7f2f52bf375dae69368eae42edb28ab) 接口保存，以便于回到聊天界面后调用 [getDraftText](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a56ac45415e28fe634dfdb1e0aaeea805) 继续编辑内容。
 
->
+>!
 >- 草稿仅支持文本内容。
 >- 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
 
