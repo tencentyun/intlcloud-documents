@@ -31,7 +31,7 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 - 当有会话更新时，例如新收到一条消息，SDK 会通过 `V2TIMConversationListener`  中的 [onConversationChanged](http://doc.qcloudtrtc.com/im/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) 事件通知您。
 - 当有会话新增时，SDK 会通过 `V2TIMConversationListener`  中的 [onNewConversation](http://doc.qcloudtrtc.com/im/protocolV2TIMConversationListener-p.html#a33ddb9c261e10426b0e257be93e5fc19) 事件通知您。
 
->为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [lastMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a63f0969319d4f1638e395bb2a781587b) 中的 [timestamp](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html#ae250d327c18ffaff77fa22fec3119e0f) 对数据源重新排序。
+>!为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [lastMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a63f0969319d4f1638e395bb2a781587b) 中的 [timestamp](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html#ae250d327c18ffaff77fa22fec3119e0f) 对数据源重新排序。
 
 ### 示例代码
 示例代码将介绍如何拉取、展示和更新会话列表：
@@ -105,13 +105,12 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 ```
 
 ## 删除会话
-调用 [deleteConversation](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a142f5289632f29a603937f1d770748c6) 接口可以删除某个会话，会话删除不支持多端同步，删除会话时默认删除本地历史消息。
-> 仅支持删除本地历史消息，不支持删除云端的历史消息，如果删除的会话重新激活，仍可以从云端拉取到该会话的历史消息。
+调用 [deleteConversation](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a142f5289632f29a603937f1d770748c6) 接口可以删除某个会话，会话删除不支持多端同步，删除会话时默认删除本地和服务器历史消息，且无法恢复。
 
 ## 草稿箱
 在发送消息时，可能会遇到消息尚未编辑完就要切换至其它聊天窗口的情况，这些未编辑完的消息可通过 [setConversationDraft](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a462cd163c03cdce230ed3647b414382b) 接口保存，以便于回到聊天界面后调用 [draftText](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a6b2c25f269b30a487761b305f069952f) 继续编辑内容。
 
->
+>!
 >- 草稿仅支持文本内容。
 >- 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
 
