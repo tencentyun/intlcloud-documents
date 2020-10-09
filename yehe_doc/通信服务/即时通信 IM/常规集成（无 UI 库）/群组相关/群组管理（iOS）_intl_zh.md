@@ -154,7 +154,7 @@ memberInfo.userID = @"vinson";
 - V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
 
 需要审批才能进入群的流程如下：
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **申请者提出加群申请**
     申请者调用 [joinGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a4762156b7a98489eb4715de53028e12a) 申请加群。
