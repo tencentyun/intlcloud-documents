@@ -166,7 +166,7 @@ V2TIMManager.getGroupManager().createGroup(
 - V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
 
 需要审批才能进入群的流程如下：
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **申请者提出加群申请**
 申请者调用 [joinGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) 申请加群。
