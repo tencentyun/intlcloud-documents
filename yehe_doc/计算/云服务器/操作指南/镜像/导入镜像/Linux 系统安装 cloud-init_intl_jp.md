@@ -28,7 +28,7 @@ wget https://launchpad.net/cloud-init/trunk/17.1/+download/cloud-init-17.1.tar.g
 
 #### cloud-initのインストール
 1. 次のコマンドを実行して、cloud-initインストールパッケージを解凍します。
-> OSがUbuntuの場合は、「root」アカウントでこのコマンドを実行します。
+>?  OSがUbuntuの場合は、「root」アカウントでこのコマンドを実行します。
 >
 ```
 tar -zxvf cloud-init-17.1.tar.gz 
@@ -48,7 +48,7 @@ apt-get install python-pip -y
 ```
 インストール中に「インストールに失敗しました」または「インストールパッケージが見つかりません」などのエラーが発生した場合は、[Python-pipがインストールできない時の解決法](#updateSoftware)を参考して問題のトラブルシューティングを行ってください。
 4. 次のコマンドを実行して、依存関係をインストールします。
-> cloud-initがrequests 2.20.0を使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以下の場合、cloud-initの依存関係をインストールする前、`pip install 'requests<2.20.0'` コマンドを実行して、requests 2.20.0以降のバージョンをインストールしてください。
+>! cloud-initがrequests 2.20.0を使用する場合、Python 2.6はサポートされません。イメージ環境にインストールされているPythonインタープリターバージョンが2.6以下の場合、cloud-initの依存関係をインストールする前、`pip install 'requests<2.20.0'` コマンドを実行して、requests 2.20.0以降のバージョンをインストールしてください。
 >
 ```
 pip install -r requirements.txt
@@ -72,7 +72,7 @@ apt-get install cloud-guest-utils -y
 python setup.py build
 python setup.py install --init-system systemd
 ```
-> --init-systemのオプションパラメータは：(systemd、sysvinit、sysvinit_deb、sysvinit_FreeBSD、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法に従ってパラメータを選択してください。誤ったパラメーターが構成されている場合、Cloud―initサービスはシステムの起動時に自動的に開始できません。このドキュメントでは、systemdの自動起動サービス管理を例として説明します。
+>! --init-systemのオプションパラメータは：(systemd、sysvinit、sysvinit_deb、sysvinit_FreeBSD、sysvinit_openrc、sysvinit_suse、upstart)[default：None]があります。現在のOSで使用されている自動起動サービス管理方法に従ってパラメータを選択してください。誤ったパラメーターが構成されている場合、Cloud―initサービスはシステムの起動時に自動的に開始できません。このドキュメントでは、systemdの自動起動サービス管理を例として説明します。
 
 #### cloud-init構成ファイルの変更
 
@@ -179,7 +179,7 @@ chkconfig cloud-final on
 ```
 apt-get/yum install cloud-init
 ```
-> デフォルトでは、apt-getまたはyumコマンドを介してインストールされたcloud-initバージョンは、現在のOSに構成されたソフトウェアソースのデフォルトのcloud-initバージョンです。 この方式でインストールされたイメージを使用して作成されたインスタンスは、一部の構成アイテムが予想通りに初期化されていない可能性があるため、 [手動でcloud-initソースコードパッケージをダウンロードして](#ManualDown)サービスをインストールすることをお勧めします。
+>? デフォルトでは、apt-getまたはyumコマンドを介してインストールされたcloud-initバージョンは、現在のOSに構成されたソフトウェアソースのデフォルトのcloud-initバージョンです。 この方式でインストールされたイメージを使用して作成されたインスタンスは、一部の構成アイテムが予想通りに初期化されていない可能性があるため、 [手動でcloud-initソースコードパッケージをダウンロードして](#ManualDown)サービスをインストールすることをお勧めします。
 >
 
 #### cloud-init構成ファイルの変更
@@ -189,7 +189,7 @@ apt-get/yum install cloud-init
 2. `/etc/cloud/cloud.cfg` の内容を、ダウンロードしたcloud.cfgファイルの内容に置き換えます。
 
 ## 関連する操作
-> 以下の操作が完了したら、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実行する必要があります。
+>! 以下の操作が完了したら、サーバーを再起動しないでください。再起動した場合は、以下の操作を再度実行する必要があります。
 >
 1. 次のコマンドを実行して、cloud-initが正しく設定されているかどうかを確認します。
 ```
