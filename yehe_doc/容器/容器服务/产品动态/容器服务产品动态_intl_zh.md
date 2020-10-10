@@ -1,3 +1,23 @@
+## 2020年09月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>TKE ServiceConfig 优化</td><td>新增支持配置 service/ingress 自动创建 tkeserviceconfig。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Ingress 使用 TKEServiceConfig 配置 CLB</a></td>
+</tr>
+<tr>
+    <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td><td>-</a></td>
+</tr>
+<tr>
+    <td>云原生 etcd 服务内测发布</td><td>该功能能够帮助您一键部署经腾讯内部大规模验证的高可靠高性能 etcd 集群，支持跨可用区容灾能力、提供最优化的性能配置。</td><td>2020-09-16</td><td>-</td>
+</tr>
+<tr>
+    <td>创建集群支持一键配置扩展组件</td><td>该功能能够方便快速地为集群配置所需组件。</td><td>2020-09-15</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
+</tr>
+</table>
+
+
+
 ## 2020年08月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -237,7 +257,7 @@
 <td>容器服务集群伸缩组相关 API 接入 API 3.0</td>
     <td>容器服务 API 升级到 3.0 版本，已支持全地域接入。<b>全新的 API 接口文档更加规范和全面，统一的参数风格和公共错误码、SDK/CLI 版本与 API 文档严格一致</b>，给用户带来简单快捷的使用体验。</td>
 <td>2019-09-12</td>
-<td><a href="https://cloud.tencent.com/document/api/457/37977">伸缩组相关接口</a></td>
+<td>伸缩组相关接口</td>
 <tr>
 <td>容器服务 Kubernetes 1.14 版本全量上线，已通过一致性认证</td>
     <td>容器服务<b> Kubernetes 1.14 版本全量上线</b>，并且已经通过一致性认证，以保证及时提供最新版本的 Kubernetes。</td>
@@ -499,7 +519,7 @@
 <td>修复 runc 漏洞 CVE-2019-5736</td>
 <td>轻量级容器运行环境 runc 被证实存在容器逃逸漏洞，本次修复可以有效避免攻击者利用该漏洞覆盖 Host 上的 runc 文件，从而在 Host 上以 root 权限执行代码。</td>
 <td>2019-02-13</td>
-    <td><a href="https://cloud.tencent.com/announce/detail/457">【安全预警】关于runc容器逃逸漏洞通知</a></td>
+    <td>【安全预警】关于runc容器逃逸漏洞通知</td>
 </tr>
 </table>
 
@@ -517,7 +537,7 @@
 <td>创建集群支持使用自定义镜像</td>
 <td>容器服务支持使用其提供的基础镜像进行自定义镜像制作，同时支持使用此类自定义镜像创建集群。开通此功能需提交 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1">工单</a> 申请。</td>
 <td>2019-01-24</td>
-    <td><a href="https://cloud.tencent.com/document/product/457/39563">自定义镜像说明</a></td>
+    <td>自定义镜像说明</td>
 </tr>
 <tr>
 <td>创建工作负载支持设置亲和性调度</td>
@@ -541,7 +561,7 @@
 	<td>TencentHub 支持 Helm Chart 管理</td>
 	<td>Helm 是 Kubernetes 的一种包管理工具，Chart 是描述 Kubernetes 资源的文件的集合。Tencent Hub 为用户提供了一个 Helm Chart 的存储地址。</td>
 	<td>2018-12-26</td>
-	<td><a href="https://cloud.tencent.com/document/product/857/31682">Helm Chart 简介</a></td>
+	<td>Helm Chart 简介</td>
 	</tr>
 	<tr>
 	<td>容器服务支持 Helm 应用安装</td>
@@ -553,7 +573,7 @@
 	<td>修复 Kubernetes 权限提示漏洞</td>
 	<td>腾讯云安全中心监测到 Kubernetes 存在严重的权限提升漏洞（漏洞编号：CVE-2018-1002105），本次修复可以有效避免攻击者利用该漏洞访问未被授权访问的 Kubernetes  集群资源甚至导致权限提升，发起恶意请求最终危害业务系统安全。</td>
 	<td>2018-12-04</td>
-        <td><a href="https://cloud.tencent.com/announce/detail/362">【安全预警】关于 Kubernetes 权限提升漏洞的通知</a></td>
+        <td>【安全预警】关于 Kubernetes 权限提升漏洞的通知</td>
 	</tr>
 	<tr>
 	<td>关闭 Kubenretes 1.7.8 版本创建入口</td>
@@ -909,7 +929,7 @@
 		<td>基于 TencentHub 持续集成和持续部署</td>
 		<td>TencentHub 是腾讯云为存储研发流程中文件以及创建 DevOps 工作流而打造的管理平台。用户使用 Tencent Hub 时可以方便快捷地对项目全周期中产生的文件进行存储、查看及调用等操作。</td>
 		<td>2017-08-23</td>
-        <td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub 产品概述</a></td>
+        <td>TencentHub 产品概述</td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增触发器功能</td>
@@ -952,13 +972,13 @@
 		<td>容器服务支持 CI 源码构建</td>
         <td>容器持续集成提供在腾讯云容器平台上，<b>自动、手动构建容器镜像的功能。</b></td>
 		<td>2017-07-18</td>
-		<td><a href="https://cloud.tencent.com/document/product/457/10151">镜像构建概述</a></td>
+		<td>镜像构建概述</td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增 TencentHub 镜像</td>
 		<td>镜像仓库支持查看、使用 TencentHub 镜像。</td>
 		<td>2017-07-18</td>
-		<td><a href="https://cloud.tencent.com/document/product/857/17142">TencentHub产品概述</a></td>
+		<td>TencentHub产品概述</td>
 	</tr>
 	<tr>
 		<td>镜像仓库新增“我的收藏”</td>

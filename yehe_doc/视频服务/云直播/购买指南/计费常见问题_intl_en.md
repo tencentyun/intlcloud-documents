@@ -1,6 +1,6 @@
 ## LVB Billing
 
-<span id="que1"></span>
+<span id="live_que1"></span>
 ### What are the billable items in LVB? How can I know what fees I need to pay?
 The billable items of LVB include basic and value-added billable items.
 
@@ -8,15 +8,15 @@ The billable items of LVB include basic and value-added billable items.
 >?You can choose bill-by-traffic or bill-by-bandwidth. For details prices, please see [Traffic and Bandwidth](https://intl.cloud.tencent.com/document/product/267/2818#traffic-and-bandwidth). For more information on how to switch the billing method, please see [Billing Method Change](https://intl.cloud.tencent.com/document/product/267/30411).
 - Value-added service fees: fees of transcoding, recording, screencapturing, and porn detection. These four features are disabled by default. If they are enabled and used, fees will be incurred. For more information on prices, please see [Billing Details](https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding).
 
-<span id="que2"></span>
+<span id="live_que2"></span>
 ### How can I know whether my account is in arrears?
 You can log in to the [LVB Console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below $0, your account is in arrears. To continue using LVB and other services, you need to top up your account in time.
 
-<span id="que3"></span>
+<span id="live_que3"></span>
 ### Is upstream push charged?
 No. Traffic fees are charged only for downstream push.
 
-<span id="que4"></span>
+<span id="live_que4"></span>
 ### When will value-added services be charged?
 For enabled value-added services associated with a push domain name such as recording, screencapturing, and porn detection, fees will be incurred when push starts. For enabled value-added services associated with a playback domain name such as transcoding (including stream mix and watermarking), fees will be incurred when pull for playback starts (in other words, after a transcoding template is created and associated, no transcoding fees will be incurred if there is no stream pulled for playback).
 
@@ -24,26 +24,27 @@ For enabled value-added services associated with a push domain name such as reco
 
 ## Transcoding Billing
 
-<span id="que8"></span>
+<span id="tran_que1"></span>
 ### How is LVB transcoding billed? How do I estimate the fees?
 LVB transcoding is billed on the basis of the actually used codec, transcoding resolution, and transcoding duration. As stream mixing and watermarking are processed by the transcoding module, transcoding fees will also incur. For more information, please see [LVB Transcoding](https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding).
 Transcoding will not be charged on an aggregate basis if the same live stream with the same bitrate is watched by multiple viewers.
 
+<span id="tran_que2"></span>
 ### Why is a transcoding bill generated even though I didn't use LVB transcoding?
 LVB transcoding includes LVB real-time transcoding, on-cloud stream mix, and watermarking. If you use the other two features, transcoding fees will also be incurred.
 
-<span id="que10"></span>
+<span id="tran_que3"></span>
 ### Does LVB stream mix always incur transcoding fees?
 Yes. Transcoding fees will be charged based on the live stream output after stream mix. As transcoding resources will be consumed even if there is no playback after a stream mix task succeeds, transcoding fees for stream mix will be charged by the stream mix duration, which is different from the billing by playback duration for general transcoding.
 
 
 
 ## Recording Billing
-<span id="que11"></span>
+<span id="record_que1"></span>
 ### How is LVB recording billed?
 LVB recording is billed by the peak number of concurrent recording channels in the current month, and the total number of recording channels in a statistical period is the concurrent channel peak. A single live stream recorded in one file format is counted as one recording channel. If you record in two formats (MP4 and HLS), they will be counted as two recording channels.
 
-<span id="que12"></span>
+<span id="record_que2"></span>
 
 ### How is the LVB recording channel peak calculated?
 When one live stream (one stream ID) is recorded in one file format, it will be counted as one LVB recording channel. The number of current recording channels is queried once every 5 minutes, and the maximum value of sample points in the current month will be used as the monthly recording channel peak for billing.

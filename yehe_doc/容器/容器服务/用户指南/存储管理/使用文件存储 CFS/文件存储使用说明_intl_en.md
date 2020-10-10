@@ -6,10 +6,8 @@ Tencent Kubernetes Engine (TKE) allows you to use Cloud File Storage (CFS) by cr
 
 ## Preparations
 ### Installing the CFS add-on
->?
->- To use the add-on feature, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply.
->- If your cluster has been installed with the CFS-CSI add-on, skip this step.
->
+>?If your cluster has been installed with the CFS-CSI add-on, skip this step.
+ 
 1. Log in to the [Tencent Kubernetes Engine console](https://console.cloud.tencent.com/tke2) and choose **Add-on** in the left sidebar.
 2. On the **Add-on** page, select the cluster that needs to use the CFS add-on and the relevant region, and then click **Create**.
 3. On the **Create an add-on** page, select **CFS** and click **Done**.

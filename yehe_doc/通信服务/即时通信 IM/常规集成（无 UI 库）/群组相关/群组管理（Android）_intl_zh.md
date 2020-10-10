@@ -17,6 +17,7 @@
 <th width="16%">临时会议群（Meeting）</th>
 <th>直播群（AVChatRoom）</th>
 </tr>
+
 <tr>
 <td>可用群成员角色</td>
 <td>群主、普通成员</td>
@@ -165,7 +166,7 @@ V2TIMManager.getGroupManager().createGroup(
 - V2TIM_GROUP_ADD_ANY ：取消审批流程，任何用户都可以加入。
 
 需要审批才能进入群的流程如下：
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **申请者提出加群申请**
 申请者调用 [joinGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) 申请加群。
@@ -335,26 +336,10 @@ public void getGroupMemberList(long nextSeq) {
 ### 获取群成员资料
 调用 [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5) 可以获取群成员资料，该接口支持批量获取，您可以一次传入多个 `userID` 获取多个群成员的资料，从而提升网络传输效率。
 
-### 修改群成员的群名片
-群主或管理员可以调用 [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）以及禁言时间（`muteUntil`）等与群相关的资料。
+### 修改群成员资料
+群主或管理员可以调用 [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) 接口修改群成员的群名片（`nameCard`）、 群成员角色（`role`）、禁言时间（`muteUntil`）以及自定义字段等与群成员相关的资料。
 
-```
-// 实例代码：修改群成员 denny 的群名片为 denny-tencent 
-V2TIMGroupMemberFullInfo v2TIMGroupMemberFullInfo = new V2TIMGroupMemberFullInfo();
-v2TIMGroupMemberFullInfo.setUserID("denny");
-v2TIMGroupMemberFullInfo.setNameCard("denny-tencent");
-V2TIMManager.getGroupManager().setGroupMemberInfo(
-    groupID, v2TIMGroupMemberFullInfo, new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// 失败
-	}
-	@Override
-	public void onSuccess() {
-		// 成功
-	}
-});
-```
+
 
 <span id="mute"> </span>
 ### 禁言
