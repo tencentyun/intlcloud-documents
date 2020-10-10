@@ -2,11 +2,11 @@ Apache Hadoop Hive is integrated with the Thrift service. Thrift, created by Fac
 
 This section describes how to connect to HiveServer2 through Python.
 
-## 1.	Preparations for Development 
+## 1. Preparations for Development 
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Hive component on the software configuration page. 
 - Hive and its dependencies are installed in the EMR cluster directory `/usr/local/service/`.
 
-## 2.	Viewing Parameters
+## 2. Viewing Parameters
 First, log in to any node (preferably a master one) in the EMR cluster. For more information about how to log in to EMR, please see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click *Login* on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when you created the EMR cluster. Once your credentials have been validated, you can access the command-line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user, then go to the Hive installation folder:
@@ -80,7 +80,7 @@ cur.execute('select * from ' + tablename)
 for i in cur.fetch():
         print i
 ```
->The parameters $hs2host and $hs2port in the program should be replaced with the values of the hostID and port number of the HiveServer2 you queried.
+>!The parameters $hs2host and $hs2port in the program should be replaced with the values of the hostID and port number of the HiveServer2 you queried.
 
 After connecting to HiveServer2, this program outputs all the databases first and then displays the tables in the "default" database. Create a table named "hivebypython", insert two data entries into it, and output them. Run the program:
 ```

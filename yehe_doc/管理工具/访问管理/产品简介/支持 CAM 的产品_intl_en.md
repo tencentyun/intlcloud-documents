@@ -190,5 +190,5 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ------------------------------------------------------------  | ------ | -------- | ----- | ---- | ---- |
-| [Cloud Monitor](https://intl.cloud.tencent.com/document/product/248) | Operation level | &#10003;  | -  |  &#10003; | - |  
+| [Cloud Monitor](https://intl.cloud.tencent.com/document/product/248) | Resource level | &#10003;  | &#10003;  |  &#10003; | - |  
 | [Migration Service Platform (MSP)](https://intl.cloud.tencent.com/document/product/1036)  | Service level   | &#10003; | -   |&#10003;    | - |

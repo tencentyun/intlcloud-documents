@@ -12,7 +12,7 @@ The following figure shows the structure of the policy syntax.
 
 >? You can define the policy syntax on your own, or create a custom policy by using the policy generator in CAM. You can configure a custom policy based on the following example.
 >- [Configuring a Sub-account's Administrative Permissions for a Single TKE Cluster](https://intl.cloud.tencent.com/document/product/457/30702)
->- Use tags to grant full permissions for a batch of clusters to a sub-account.
+>- [Use tags to grant full permissions for a batch of clusters to a sub-account](https://intl.cloud.tencent.com/document/product/457/37483)
 
 
 
@@ -189,6 +189,7 @@ vpc:DescribeVpcEx
 cvm:DescribeImages
 cvm:ResetInstance
 cvm:DescribeKeyPairs
+cvm:ModifyInstancesAttribute		    
 tke:DescribeClusters</td>
 <td><ul class="params"><li>Cluster-level permissions are required for adding an existing node.</li><li>CVM-level permissions are required for obtaining a CVM list.</li></ul></td>
     <td>"cvm:DescribeInstances",

@@ -1,4 +1,4 @@
->This document briefly describes how to modify the Hadoop configuration to enable it to access Kerberos. For secure clusters purchased through EMR, the required settings are already automatically configured by the system.
+This document describes how to modify the Hadoop configuration to enable it to access Kerberos. For secure clusters purchased through EMR, the required settings are already automatically configured by the system.
 
 ## Prerequisites
 - The KDC service has been set up successfully.
@@ -34,7 +34,7 @@ dfs.web.authentication.kerberos.principal= HTTP/_HOST@EMR
 ignore.secure.ports.for.testing= true
 ```
 
->The `ignore.secure.ports.for.testing` option must be set to true; otherwise, the sasl mode has to be configured, and webhdfs has to have HTTPS enabled.
+>!The `ignore.secure.ports.for.testing` option must be set to true; otherwise, the sasl mode has to be configured, and webhdfs has to have HTTPS enabled.
 
 #### Modifying httpfs-site.xml (If httpfs Is Enabled)
 ```properties

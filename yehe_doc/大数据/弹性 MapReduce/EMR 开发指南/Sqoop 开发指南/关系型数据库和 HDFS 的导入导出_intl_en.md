@@ -85,7 +85,7 @@ Enter password:
 mysql> use test;
 Database changed
 
-mysql> create table sqoop_test_back(id int not null primary key auto_increment, title varchar(64), time timestamp, (content varchar(255));
+mysql> create table sqoop_test_back(id int not null primary key auto_increment, title varchar(64), time timestamp, content varchar(255));
 Query ok , 0 rows affected(0.00 sec)
 ```
 Check whether the table is created successfully and then exit MySQL:

@@ -1,4 +1,4 @@
->本文简单介绍 Hadoop 如何修改配置接入 kerberos，如果是通过腾讯云 EMR 购买的安全集群，系统会自动配置好，无需自行配置。
+本文介绍 Hadoop 如何修改配置接入 kerberos。如果是通过腾讯云 EMR 购买的安全集群，系统会自动配置好，无需自行配置。
 
 ## 前提条件
 - kdc 服务已搭建成功。
@@ -34,7 +34,7 @@ dfs.web.authentication.kerberos.principal: HTTP/_HOST@EMR
 ignore.secure.ports.for.testing: true
 ```
 
->ignore.secure.ports.for.testing 选项必须设置为 true，否则必须配置 sasl 模式，且 webhdfs 必须启用 HTTPS。
+>!ignore.secure.ports.for.testing 选项必须设置为 true，否则必须配置 sasl 模式，且 webhdfs 必须启用 HTTPS。
 
 #### 修改 httpfs-site.xml（如果启用 httpfs）
 ```properties

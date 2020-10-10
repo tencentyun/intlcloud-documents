@@ -50,16 +50,6 @@ should be split into `192.168.0.0/17` + `192.168.128.0/17`.
 	<td>-</td>
 	</tr>
 	<tr>
-	<td align="center" style='white-space:nowrap'>Connection type</td>
-	<td>
-	<ul>
-	<li>My connection: a connection that uses the current account</li>
-	<li>Shared connection: a connection that uses another account. A shared connection does not mean sharing the bandwidth of a connection; instead, it means sharing Tencent Cloud connection ports, and different tenants are isolated from each other through the 802.1Q VLANs technology. </li>
-	</ul>
-	</td>
-	<td>To use the shared connection feature, please see <a href="#background">Background</a>. Then, select **Shared Connection** on the "Basic Information" page and configure the connection provider's account, connection ID, and other information. </td>
-	</tr>
-	<tr>
 	<td align="center" style='white-space:nowrap'>Access network</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/215">VPC</a>, BM VPC, and <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a> are supported.</td>
 	<td>CCN: it enables connection to multiple VPCs through one tunnel.</td>
