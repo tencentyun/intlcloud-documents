@@ -5,13 +5,13 @@
 
 ## 策略语法说明
 策略语法结构如下图所示：
-![](https://main.qcloudimg.com/raw/3d3ad4155e447e26b14a5c84334b060e.png)
+![](https://main.qcloudimg.com/raw/dc57207bdbf095ad1b499f0b5acaef57.png)
 - **action**：表示接口。
 - **resource**：表示资源。
 
 >?您可自行编写策略语法，或通过访问管理 CAM 策略生成器创建自定义策略。可结合以下示例进行自定义策略配置：
 >-  [配置子账号对单个 TKE 集群的管理权限](https://intl.cloud.tencent.com/document/product/457/30702)
->- 通过标签为子账号配置批量集群的全读写权限
+>-  [通过标签为子账号配置批量集群的全读写权限限](https://intl.cloud.tencent.com/document/product/457/37483)
 
 
 
@@ -188,6 +188,7 @@ vpc:DescribeVpcEx
 cvm:DescribeImages
 cvm:ResetInstance
 cvm:DescribeKeyPairs
+cvm:ModifyInstancesAttribute	    
 tke:DescribeClusters</td>
 <td><ul class="params"><li>添加已有节点、需要对应集群的资源权限</li><li>获取 CVM 列表，需要 CVM 的资源权限</li></ul></td>
     <td>"cvm:DescribeInstances",
