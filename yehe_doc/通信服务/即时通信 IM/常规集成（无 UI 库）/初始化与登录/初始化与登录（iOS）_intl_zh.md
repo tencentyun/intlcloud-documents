@@ -27,7 +27,7 @@ config.logLevel = V2TIM_LOG_INFO;
 ### SDKAppID
 SDKAppID 即应用 ID，它是腾讯云 IM 服务用于区分客户账号的唯一标识。每一个独立的 App 都建议申请一个新的 SDKAppID，不同 SDKAppID 之间的消息天然隔离，不能互通。
 您可以在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 查看所有的 SDKAppID，单击【添加新应用】即可创建新的 SDKAppID。
-![](https://main.qcloudimg.com/raw/3487090d0ccaeaf21254acbab1ac858c.png)
+
 
 <span id="SDKConfig"></span>
 ### SDKConfig
@@ -61,7 +61,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 | onUserSigExpired | 登录票据已经过期 | 请使用新签发的 UserSig 进行登录。  |
 | onSelfInfoUpdated | 当前用户的资料发生了更新 | 可以在 UI 上更新自己的头像和昵称。 |
 
->若收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请更新后重新登录。如果继续使用过期的 UserSig，会导致 SDK 登录死循环。
+>! 若收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请更新后重新登录。如果继续使用过期的 UserSig，会导致 SDK 登录死循环。
 
 ## 登录
 调用 `V2TIMManager` 的 [login(userID, userSig)](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a38c42943046acdaf615915c9422af07c) 函数可以进行登录，只有在 SDK 登录成功后，才能使用 IM SDK 的各项能力。

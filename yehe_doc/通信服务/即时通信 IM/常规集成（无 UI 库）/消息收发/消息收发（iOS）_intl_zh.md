@@ -122,11 +122,6 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 
 >? 目前仅支持文本 @ 消息。
 
-
-| 监听 @ 字符选择群成员 | 编辑群 @ 消息发送 | 收到群 @ 消息 |
-|---------|---------|---------|
-| ![](https://main.qcloudimg.com/raw/870063a7d732d5df29971609b39d4796.png) | ![](https://main.qcloudimg.com/raw/f4ace5e8b7d697be14c18c8b08de0b36.png) | ![](https://main.qcloudimg.com/raw/0291a12d3ce8edfb880dab2e4b9541c8.png) |
-
 ### 发送群 @ 消息
 
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)，昵称用来在文本框显示。
@@ -264,6 +259,7 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 
 某些场景下，您可能希望发出去的消息只被在线用户接收，即当接收者不在线时就不会感知到该消息。您只需在 
 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae) 时，将参数 `onlineUserOnly` 设置为 `YES` ，此时发送出去的消息与普通消息相比，会有如下差异点：
+
 - 不支持离线存储，即如果接收方不在线就无法收到。
 - 不支持多端漫游，即如果接收方在一台终端设备上一旦接收过该消息，无论是否已读，都不会在另一台终端上再次收到。
 - 不支持本地存储，即本地的云端的历史消息中均无法找回。
@@ -395,7 +391,6 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
-![](https://main.qcloudimg.com/raw/63625c5252348205993ec5f33b087dec.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？

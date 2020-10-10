@@ -35,8 +35,8 @@ Based on the level and type of the service, you can create multiple auto scaling
 
 ### What is the maximum quota for scaling?
 
-Each Tencent Cloud user is provided with a quota of 30 pay-as-you go CVM instances in each availability zone. You can submit a ticket to apply for more instances for your auto scaling group.
-For more information about the quotas, see [CVM Instance Quantity and Quota](https://console.cloud.tencent.com/cvm/overview) for your current availability zone. In addition, there is a maximum limit of 200 instances for Auto Scaling. You can submit a ticket to apply for a higher quota.
+Each Tencent Cloud user is provided with a quota of 30 pay-as-you go CVM instances in each availability zone. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for more instances for your auto scaling group.
+For more information about the quotas, see [CVM Instance Quantity and Quota](https://console.cloud.tencent.com/cvm/overview) for your current availability zone. In addition, there is a maximum limit of 200 instances for Auto Scaling. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a higher quota.
 
 ### Is scale-in safe for the cluster?
 

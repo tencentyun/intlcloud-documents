@@ -22,6 +22,7 @@ You have created a CLB instance and configured a listener. For more information,
  -**TCP/UDP/TCP SSL listener**
 In the list on the left of the TCP/UDP/TCP SSL listener module, select the listener to be bound to a real server and click **Bind**.
 ![](https://main.qcloudimg.com/raw/7dc44fc32104e533b512ab6c0b616e21.png)
+<span id="CLB"></span>
 5. Bind a real server to the CLB instance.
 	- **Method 1**. In the "Bind Real Server" pop-up window, click **CVM**, select one or multiple CVM instances to be associated with, enter the port and weight, and click **OK**. For more information, please see [Common Server Ports](https://intl.cloud.tencent.com/document/product/213/12451).
 >?

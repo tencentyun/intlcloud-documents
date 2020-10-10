@@ -1,4 +1,3 @@
-
 ## 消息发送
 
 ### 通用消息发送
@@ -33,7 +32,7 @@ conversation = TIMManager.getInstance().getConversation(
         groupId);                       //群组 ID
 ```
 
-**消息发送：**通过 `TIMManager` 获取会话 `TIMConversation` 后，可发送消息和获取会话缓存消息。IM SDK 中消息的解释可参阅 [IM SDK 对象简介](https://intl.cloud.tencent.com/document/product/1047/34301)。IM SDK 中的消息由 `TIMMessage` 表达， 一个 `TIMMessage` 由多个 `TIMElem` 组成，每个 `TIMElem` 可以是文本和图片，也就是说每一条消息可包含多个文本和多张图片。
+**消息发送：**通过 `TIMManager` 获取会话 `TIMConversation` 后，可发送消息和获取会话缓存消息。IM SDK 中消息的解释可参阅 [IM SDK 对象简介](/doc/product/269/9227#2.1-imsdk.E5.AF.B9.E8.B1.A1.E7.AE.80.E4.BB.8B)。IM SDK 中的消息由 `TIMMessage` 表达， 一个 `TIMMessage` 由多个 `TIMElem` 组成，每个 `TIMElem` 可以是文本和图片，也就是说每一条消息可包含多个文本和多张图片。
 
 ![](https://main.qcloudimg.com/raw/5b109b81e56ac31a6c73ca6053a342ff.png)
 
@@ -98,7 +97,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {//发送消息
 
 图片消息由 `TIMImageElem` 定义。它是 `TIMElem` 的一个子类，也就是说图片也是消息的一种内容。 发送图片的过程，就是将 `TIMImageElem` 加入到 `TIMMessage` 中，然后随消息一起发送出去。
 
->`path` 不支持 `file://` 开头的文件路径，需要去掉 `file://` 前缀。
+>!`path` 不支持 `file://` 开头的文件路径，需要去掉 `file://` 前缀。
 
 **`TIMImageElem` 成员方法如下：**
 
@@ -304,7 +303,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {//发送消息
 
 语音消息由 `TIMSoundElem` 定义，其中 `data` 存储语音数据，语音数据需要提供时长信息，以秒为单位。
 
->
+>!
 > - 一条消息只能有一个语音  `Elem`，添加多条语音 `Elem` 时，`AddElem` 函数返回错误 1，添加不生效。
 > - 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示，而且语音和文件 `Elem` 也不保证按照发送的 `Elem` 顺序排序。 
 > - `path` 不支持 `file://` 开头的文件路径，需要去掉 `file://` 前缀。
@@ -477,7 +476,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {//发送消息
 
 文件消息由 `TIMFileElem` 定义，另外还可以提供额外的显示文件名信息。
 
->
+>!
 > -  语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示，而且语音和文件 `Elem` 也不保证按照发送的 `Elem` 顺序排序。 
 > - `path` 不支持 `file://` 开头的文件路径，需要去掉 `file://` 前缀。
 > - 文件大小限制28MB。
@@ -812,7 +811,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {//发送消息
 
 对于某些场景，需要发送在线消息，即用户在线时收到消息，如果用户不在线，下次登录也不会看到消息，可用于通知类消息，这种消息不会进行存储，也不会计入未读计数。发送接口与 `sendMessage` 类似。
 
->2.5.3版本以前只针对单聊消息有效。2.5.3版本以后对群组消息有效(暂不支持 AVChatRoom 和 BChatRoom 类型)
+>!2.5.3版本以前只针对单聊消息有效。2.5.3版本以后对群组消息有效(暂不支持 AVChatRoom 和 BChatRoom 类型)
 
 ```
 //发送在线消息（服务器不保存消息）
@@ -836,9 +835,9 @@ public boolean copyFrom(@NonNull TIMMessage srcMsg)
 
 ## 接收消息
 
-用户需要感知新消息的通知时，只需注册新消息通知回调 `TIMMessageListener`，如果用户是登录状态，IM SDK 收到新消息会通过回调中的 `onNewMessages` 抛出。 注册方法请参考 新消息通知。
+用户需要感知新消息的通知时，只需注册新消息通知回调 `TIMMessageListener`，如果用户是登录状态，IM SDK 收到新消息会通过回调中的 `onNewMessages` 抛出。 注册方法请参考 [新消息通知](/doc/product/269/9229#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5)。
 
->通过 `onNewMessages` 抛出的消息不一定是未读的消息，只是本地曾经没有过的消息（例如在另外一个终端已读，拉取最近联系人消息时可以获取会话最后一条消息，如果本地没有，会通过此方法抛出）。在用户登录之后，IM SDK 会拉取 C2C 离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
+>!通过 `onNewMessages` 抛出的消息不一定是未读的消息，只是本地曾经没有过的消息（例如在另外一个终端已读，拉取最近联系人消息时可以获取会话最后一条消息，如果本地没有，会通过此方法抛出）。在用户登录之后，IM SDK 会拉取 C2C 离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
 群系统消息、关系链变化、好友资料变更也会通过该回调 `onNewMessages` 抛出。
 
 ### 消息解析
@@ -889,7 +888,7 @@ public ArrayList<TIMImage> getImageList()
 
 获取到消息时通过imageList得到所有的图片规格，为 `TIMImage` 数据，得到 `TIMImage` 后可通过图片大小进行占位，通过接口 `getImage` 下载不同规格的图片进行展示。
 
->下载的数据需要由开发者缓存，IM SDK 每次调用 `getImage` 都会从服务端重新下载数据。建议通过图片的 `uuid` 作为 `key` 进行图片文件的存储。
+>!下载的数据需要由开发者缓存，IM SDK 每次调用 `getImage` 都会从服务端重新下载数据。建议通过图片的 `uuid` 作为 `key` 进行图片文件的存储。
 
 **图片规格说明：**每幅图片有三种规格，分别是 Original(原图)、Large(大图)、Thumb(缩略图)。
 
@@ -955,7 +954,7 @@ for(int i = 0; i < msg.getElementCount(); ++i) {
  public void getSoundToFile(@NonNull final String path, final TIMValueCallBack<ProgressInfo> progressCb, @NonNull final TIMCallBack cb) 
 ```
 
-**语音消息已读状态：**语音是否已经播放，可使用 消息自定义字段 实现，例如 `customInt` 的值 0 表示未播放，1 表示播放，当用户单击播放后可设置 `customInt` 的值为 1。以下为设置自定义整数， 默认为 0。
+**语音消息已读状态：**语音是否已经播放，可使用 [消息自定义字段](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) 实现，例如 `customInt` 的值 0 表示未播放，1 表示播放，当用户单击播放后可设置 `customInt` 的值为 1。以下为设置自定义整数， 默认为 0。
 
 **原型：**
 ```
@@ -1190,8 +1189,8 @@ public boolean isSelf()
 
 可以通过 `TIMMessage` 的方法 `getSender` 获取发送用户的 ID。
 **对于单聊消息**，可以通过 `TIMMessage` 的 `getConversation` 获取到对应会话，会话的 `getPeer` 即可得到正在聊天的用户及其相关资料。
-**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://intl.cloud.tencent.com/document/product/1047/34328) 。
- >此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
+**对于群消息**，可以通过 `getSenderProfile` 和 `getSenderGroupMemberProfile` 获取发送者的资料和所在群的资料。如需拉取自定义字段，需在登录 IM SDK 之前 [设置拉取字段](https://intl.cloud.tencent.com/document/product/1047/36271) 。
+ >!此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
  >只有接收到的群消息才能获取到相应的资料。
 
 ```
@@ -1228,18 +1227,6 @@ public TIMGroupMemberInfo getSenderGroupMemberProfile()
 public long timestamp()
 ```
 
-### 消息删除
-
-目前暂不支持 Server 消息删除，只能在本地删除。通过 `TIMMessage` 中的 `remove` 接口可以删除消息，删除后使用 `getMessage` 拉取消息，不会返回被删除的消息。
-
-```
-/**
- * 将消息状态标记为删除
- * @return 成功或失败
- */
-public boolean remove()
-```
-
 ### 消息 ID
 
 消息 ID 也有两种，一种是当消息生成时，就已经固定（`msgId`），这种方式可能跟其他用户产生的消息冲突，需要再加一个时间维度，可以认为 10 分钟以内的消息可以使用 `msgId` 区分。另外一种，当消息发送成功以后才能固定下来（`uniqueId`），这种方式能保证全局唯一。这两种方式都需要在同一个会话内判断。
@@ -1273,7 +1260,7 @@ public String getCustomStr()
 ### 消息优先级
 
 对于直播场景，会有点赞和发红包功能，点赞相对优先级较低，红包消息优先级较高，具体消息内容可以使用 `TIMCustomElem` 进行定义，发送消息时，可使用不同接口定义消息优先级。
->只针对群聊消息有效。
+>!只针对群聊消息有效。
 
 ```
 //设置消息优先级
@@ -1352,7 +1339,7 @@ public TIMMessageLocator getMessageLocator()
 ### 获取所有会话
 
 通过 `TIMManager` 的 `getConversationList` 获取当前会话数量，从而得到所有本地会话。
->SDK 会在内部不断更新会话列表，每次更新后都会通过 `TIMRefreshListener.onRefresh` 回调，请**在 `onRefresh` 之后再调用 `getConversationList`** 更新会话列表。
+>!SDK 会在内部不断更新会话列表，每次更新后都会通过 `TIMRefreshListener.onRefresh` 回调，请**在 `onRefresh` 之后再调用 `getConversationList`** 更新会话列表。
 
 **原型：**
 
@@ -1427,7 +1414,7 @@ con.getLocalMessage(10, //获取此会话最近的 10 条消息
 
 对于群组，登录后可以获取漫游消息，对于C2C，开通漫游服务后可以获取漫游消息，通过 `TIMConversation` 的 `getMessage` 接口可以获取漫游消息，如果本地消息全部都是连续的，则不会通过网络获取，如果本地消息不连续，会通过网络获取断层消息。
 
- >对于图片、语音等资源类消息，消息体只会包含描述信息，需要通过额外的接口下载数据，可参与消息解析部分，下载后的真实数据不会缓存，需要调用方进行缓存。
+ >!对于图片、语音等资源类消息，消息体只会包含描述信息，需要通过额外的接口下载数据，可参与消息解析部分，下载后的真实数据不会缓存，需要调用方进行缓存。
 
 **原型：**
 
@@ -1474,37 +1461,26 @@ con.getMessage(10, //获取此会话最近的 10 条消息
 
 ### 删除会话
 
-IM SDK 的 `TIMManager` 中提供了两种删除会话的方式，一种只删除会话，但保留了所有消息；另一种在删除会话的同时，也删除掉会话相关的消息。可以根据不同应用场景选择合适的方式。
-
->
-> - 删除本地消息的情况下，C2C 会话将无法获取到删除会话前的历史消息。
-> - 删除本地消息的情况下，群组会话通过 `getMessage` 仍然会拉取到漫游消息，所以存在删除消息成功，但是拉取消息的时候仍然获取到删除会话前的历史消息的情况，取决于是否重新从漫游拉回到本地。如果不需要拉取漫游，可以通过 `getLocalMessage` 获取消息，或者只通过 `getMessage` 拉取指定条数（如未读条数数量）的消息。
+删除会话的同时 IM SDK 会删除该会话的本地和漫游消息，会话和消息删除后，无法再恢复。
 
 **原型：**
 
 ```
 /**
- * 删除会话缓存
+ * 删除本地和服务器上保存的单个会话，以及该会话中的本地和服务器的所有消息
+ *
  * @param type 会话类型
  * @param peer 参与会话的对方, C2C 会话为对方帐号 identifier, 群组会话为群组 ID
  * @return true 成功  false 失败
  */
 public boolean deleteConversation(TIMConversationType type, String peer)
 
-
-/**
- * 删除会话缓存并同时删除该会话相关的本地消息
- * @param type 会话类型
- * @param peer 参与会话的对方, C2C 会话为对方帐号 identifier, 群组会话为群组 ID
- * @return true 成功  false 失败
- */
-public boolean deleteConversationAndLocalMsgs(TIMConversationType type, String peer)
 ```
 
-以下示例中删除了与用户 hello 的 C2C 会话。**示例：**
+以下示例中删除了与用户 user1 的 C2C 会话。**示例：**
 
 ```
-TIMManager.getInstance().deleteConversation(TIMConversationType.C2C, "hello");
+TIMManager.getInstance().deleteConversation(TIMConversationType.C2C, "user1");
 ```
 
 ### 同步获取会话最后的消息
@@ -1534,7 +1510,7 @@ public void getMessage(int count, TIMMessage lastMsg, @NonNull TIMValueCallBack<
 
 IM SDK 提供了会话草稿功能，开发者可以通过 `TIMConversation` 中的相关接口进行草稿操作。
 
->
+>!
 > - 草稿只能本地有效，更换终端或者清除数据后将看不到草稿。
 > - 草稿信息会存本地数据库，重新登录后依然可以获取。
 
@@ -1593,20 +1569,22 @@ public void setUserDefinedData(byte[] userDefinedData)
  */
 public long getTimestamp()
 ```
-### 删除会话本地消息
+### 删除会话消息
 
-IM SDK 提供了保留会话的情况下，清空会话本地聊天记录的功能。通过调用 `TIMConversation` 的 `deleteLocalMessage` 接口实现。
-
->群组会话在清空本地聊天记录后，仍然会通过漫游拉取到本地删除了的历史消息。
+IM SDK 支持删除会话的本地及漫游消息，消息删除后，无法再恢复。
 
 
 **原型：**
 ```
 /**
- * 批量删除本会话的全部本地聊天记录
- * @param callback 回调
+ * 删除当前会话的本地及漫游消息
+ * 
+ * 该接口会删除本地历史的同时也会把漫游消息即保存在服务器上的消息也删除，卸载重装后无法再拉取到。需要注意的是：
+ *  1. 一次最多只能删除 30 条消息。
+ *  2. 一秒钟最多只能调用一次。
+ *  3. 如果该账号在其他设备上拉取过这些消息，那么调用该接口删除后，这些消息仍然会保存在那些设备上，即删除消息不支持多端同步。
  */
-public void deleteLocalMessage(@NonNull TIMCallBack callback)
+public void deleteMessages(List<TIMMessage> messages, TIMCallBack callback)
 ```
 
 ### 查找本地消息
@@ -1639,7 +1617,7 @@ public TIMMessageLocator getMessageLocator()
 
 IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `TIMConversation` 的 `revokeMessage` 接口来撤回自己发送的消息。
 
->
+>!
 > - 仅 C2C 和 GROUP 会话有效、onlineMessage 无效、AVChatRoom 和 BChatRoom 无效。
 > - 默认只能撤回 2 分钟内的消息。
 
@@ -1655,7 +1633,7 @@ IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `T
 public void revokeMessage(@NonNull TIMMessage msg, @NonNull TIMCallBack cb)
 ```
 
-成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfig` 的 `setMessageRevokedListener` 来进行配置。具体可以参考 [用户配置](https://intl.cloud.tencent.com/document/product/1047/34312)。
+成功撤回消息后，群组内其他用户和 C2C 会话对端用户会收到一条消息撤回通知，并通过消息撤回通知监听器 `TIMMessageRevokeListener` 通知到上层应用。消息撤回通知监听器可以在登录前，通过 `TIMUserConfig` 的 `setMessageRevokedListener` 来进行配置。具体可以参考 [用户配置](https://intl.cloud.tencent.com/document/product/1047/36255)。
 
 **原型：**
 
@@ -1694,8 +1672,8 @@ public boolean checkEquals(@NonNull TIMMessageLocator locator)
 会话类型（TIMConversationType）除了 C2C 单聊和 Group 群聊以外，还有一种系统消息，系统消息不能由用户主动发送，是系统后台在相应的事件发生时产生的通知消息。系统消息目前分为两种，一种是关系链系统消息，一种是群系统消息。
 
 - 关系链变更系统消息，当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](https://intl.cloud.tencent.com/document/product/1047/34332)。
-- 当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅 [群事件消息](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
-- 当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群系统消息](https://intl.cloud.tencent.com/document/product/1047/34328#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
+- 当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅 [群事件消息](https://intl.cloud.tencent.com/document/product/1047/36271#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
+- 当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群系统消息](https://intl.cloud.tencent.com/document/product/1047/36271#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
 
 
 ## 设置后台消息通知栏提醒

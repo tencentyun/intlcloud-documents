@@ -70,7 +70,7 @@
 | [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  |  &#10003;    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
 | [云数据库 Redis](https://intl.cloud.tencent.com/document/product/239)   | 资源级| &#10003; | -  | - |[访问管理指南](https://intl.cloud.tencent.com/document/product/239/32845) |	
 | [云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/240) |资源级 | &#10003; | -   |&#10003;|[访问管理指南](https://intl.cloud.tencent.com/document/product/240/32839) |			
-| [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | -    | &#10003;    | - |
+| [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | &#10003;    | &#10003;    | - |
 | [游戏数据库 TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | 资源级 |  &#10003;  | &#10003;   | -    | - |		
 | [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035) |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1035/36050)|	
 
@@ -193,7 +193,7 @@
 
  | 服务                                                         | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------  | ------ | -------- | ----- | ---- |	---- |
-| [云监控](https://intl.cloud.tencent.com/document/product/248) | 操作级 | &#10003;  | -  |  &#10003; |	- |		
+| [云监控](https://intl.cloud.tencent.com/document/product/248) | 资源级 | &#10003;  | &#10003;  |  &#10003; |	- |		
 | [迁移服务平台](https://intl.cloud.tencent.com/document/product/1036)  | 服务级   | &#10003; | -   |&#10003;    |	- |	
 
 

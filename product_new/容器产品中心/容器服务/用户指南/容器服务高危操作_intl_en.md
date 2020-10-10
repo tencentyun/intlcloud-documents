@@ -147,16 +147,19 @@ When deploying or running business, you may trigger high-risk operations at diff
 	<th>High-risk Operation</th>
 	<th>Consequence</th>
 	<th>Solution</th>
+	<th>Notes</th>	
 	</tr>
 	<tr>
 	<td>Deleting the <code>/tmp/ccs-log-collector/pos</code> directory of the host</td>
 	<td>Log gets collected again</td>
 	<td>None</td>
+	<td>Files in Pod record where they are collected</td>	
 	</tr>
 	<tr>
 	<td>Deleting the <code>/tmp/ccs-log-collector/buffer</code> directory of the host</td>
 	<td>Log gets lost</td>
 	<td>None</td>
+	<td>Buffer contains log cache file</td>	
 	</tr>
 </table>
 
@@ -167,24 +170,20 @@ When deploying or running business, you may trigger high-risk operations at diff
 	<th width="24%">High-risk Operation</th>
 	<th>Consequence</th>
 	<th width="25%">Solution</th>
-	<th>Notes</th>
 	</tr>
 	<tr>
 	<td>Manually unmounting cloud disks through console</td>
 	<td>Writing to Pod reports IO errors </td>
 	<td>Delete the mount directory of the node and reschedule the Pod</td>
-	<td>Files in Pod record where they are collected</td>
 	</tr>	
 	<tr>
 	<td>Unmounting disk mounting path on the node</td>
 	<td>Pod gets written to the local disk</td>
 	<td>Re-mount the corresponding directory onto Pod</td>
-	<td>Buffer contains log cache file</td>
 	</tr>	
 	<tr>
 	<td>Directly operating CBS block device on the node</td>
 	<td>Pod gets written to the local disk</td>
-	<td>None</td>
 	<td>None</td>
 	</tr>
 </table>
