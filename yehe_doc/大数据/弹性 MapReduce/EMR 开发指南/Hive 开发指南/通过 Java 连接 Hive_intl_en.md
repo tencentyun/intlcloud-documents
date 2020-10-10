@@ -171,7 +171,7 @@ public class HiveTest {
     }
 }
 ```
->The parameters $hs2host and $hs2port in the program should be replaced with the values of the hostID and port number of the HiveServer2 you queried.
+>!The parameters $hs2host and $hs2port in the program should be replaced with the values of the hostID and port number of the HiveServer2 you queried.
 
 The entire program will connect to the HiveServer2 before a table called HiveTestByJava is created in the default database. Then, insert two elements into the table and output the content of the entire table.
 
