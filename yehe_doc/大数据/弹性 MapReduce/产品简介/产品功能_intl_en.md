@@ -26,5 +26,5 @@ In addition to comprehensive technical documentation, Tencent Cloud also has a t
 
 ## Security
 EMR uses security groups to control inbound and outbound traffic to your CVM instances. Components’ web UIs can only be accessed through one specified instance assigned with public IP, and the access requests must be authenticated by username and password. In addition, the security group of this instance only allows SSH ports and proxy access ports.
->Changing the project will cause the CVM instance to lose its security group.
+>!Changing the project will cause the CVM instance to lose its security group.
 
