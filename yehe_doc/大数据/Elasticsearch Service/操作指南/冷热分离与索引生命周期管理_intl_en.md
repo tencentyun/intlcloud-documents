@@ -36,7 +36,7 @@ PUT hot_data_index/_settings
 ```
 - For warm data, set the index as follows:
 ```
-PUT hot_data_index/_settings
+PUT warm_data_index/_settings
 {
   "index.routing.allocation.require.temperature": "warm"
 }
