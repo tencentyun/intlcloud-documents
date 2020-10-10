@@ -36,9 +36,9 @@
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群运维】>【功能管理】。
 2. 在“功能管理”页面上方选择地域，单击需要开启日志采集的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/e71f52765488cfc7ca687d66decda6fc.png)
+![](https://main.qcloudimg.com/raw/bcee30ade672b8a4e114d25f3d5abd16.png)
 3. 在“设置功能”页面，单击日志采集【编辑】，开启日志采集后确认。如下图所示：
-![](https://main.qcloudimg.com/raw/f87cfe050bae7b41730bef999873d28c.png)
+![](https://main.qcloudimg.com/raw/8f10a39a943ccce8724dff252ee00e88.png)
 
 ### 配置日志规则
 
