@@ -1,11 +1,15 @@
+## 说明
+
+本文档中账号功能、标签功能及用户属性功能适用于 **SDK 1.2.8.0或更高版本**，**1.2.7.2**及之前版本请参见此 [接口文档](https://intl.cloud.tencent.com/document/product/1024/30727)。
+
+
+
 ## 启动腾讯移动推送服务
 
 #### 接口说明
 
-
 通过使用在腾讯移动推送官网注册的应用信息，启动腾讯移动推送服务。
 （此接口为 SDK 1.2.7.2版本新增，1.2.7.1及之前版本请参考 SDK 包内 XGPush.h 文件`startXGWithAppID` 接口）。
-
 
 ```objective-c
 /// @note TPNS SDK1.2.7.2+
@@ -95,33 +99,31 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 
 #### 接口说明
 
-设置账号，若之前已绑定账号则会覆盖原有账号，若未绑定过账号，则新增当前账号。
+清空已有账号，然后批量添加账号。
 
 > ?
 > 1. 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
-> 2. 如果您是多账号体系，请参考 SDK 包内 XGPush.h 文件中的 `bindWithIdentifiers` 接口。
+> 2. 如果您是多账号体系，需要以追加的方式设置账号，请参考 SDK 包内 XGPush.h 文件中的 `appendAccounts:` 接口。
 
 ```Objective-C
-- (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;
+- (void)clearAndAppendAccounts:(nonnull NSArray<NSDictionary *> *)accounts;
 ```
 
 #### 参数说明 
 
-- identifiers：账号标识。
-- type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
+- accounts：账号数组。
 
 > ?
 >- 账号操作需要使用字典数组且 key 是固定要求。
->- Objective-C 的写法 : @[@{@"account":identifier, @"accountType":@(0)}]。
->- Swift 的写法：[["account":identifier, "accountType":NSNumber(0)]]。
+>- Objective-C 的写法 :@[@{@"accountType":@(0),@"account":identifier}]；
+>- Swift 的写法：[["accountType":NSNumber(0),"account":identifier]]
 >- 更多 accountType 请参照 XGPushTokenAccountType 枚举。
 
 #### 示例代码
 
 ```Objective-C
 //设置账号：
-[[XGPushTokenManager defaultTokenManager] updateBindedIdentifiers:@[@{@"account" : identifier, @"accountType" : @(0)}]
-bindType:XGPushTokenBindTypeAccount];
+[[XGPushTokenManager defaultTokenManager] clearAndAppendAccounts:@[@{@"accountType":@(0),@"account":identifier}]];
 ```
 
 ### 清除账号
@@ -133,16 +135,13 @@ bindType:XGPushTokenBindTypeAccount];
 > ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
 
 ```Objective-C
-- (void)clearAllIdentifiers:(XGPushTokenBindType)type;
+- (void)clearAccounts;
 ```
-
-**参数说明**
-type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 
 #### 示例代码
 
 ```Objective-C
-[[XGPushTokenManager defaultTokenManager] clearAllIdentifiers:XGPushTokenBindTypeAccount];
+[[XGPushTokenManager defaultTokenManager] clearAccounts];
 ```
 
 ## 标签功能
@@ -154,32 +153,31 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 开发者可以针对不同的用户绑定标签，然后对该标签进行推送。
 
 > ?
->- 此接口为追加方式。
+> - 此接口为追加方式。
 >- 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用
->- 单个应用最多可以有10000个自定义tag， 每个设备 token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们，每个自定义 tag 可绑定的设备 token 数量无限制。
+>- 单个应用最多可以有10000个自定义 tag， 每个设备 Token 最多可绑定100个自定义 tag，如需提高该限制，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们，每个自定义 tag 可绑定的设备 Token 数量无限制。
 
 #### 操作接口 
 
 ```Objective-C
-- (void)bindWithIdentifiers:(nonnull NSArray *)identifiers type:(XGPushTokenBindType)type;
-- (void)unbindWithIdentifers:(nonnull NSArray *)identifiers type:(XGPushTokenBindType)type;
+- (void)appendTags:(nonnull NSArray<NSString *> *)tags
+- (void)delTags:(nonnull NSArray<NSString *> *)tags
 ```
 
 #### 参数说明
 
-- identifiers：指定绑定标识，标签字符串不允许有空格或者是 tab 字符。
-- type：操作类型，标签操作为：XGPushTokenBindTypeTag。
+- tags：标签数组。
 
-> ?标签操作 identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
+>?标签操作 tags 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
 
 #### 示例代码
 
 ```Objective-C
 //绑定标签：
-[[XGPushTokenManager defaultTokenManager] bindWithIdentifiers:@[identifier] type:XGPushTokenBindTypeTag];
+[[XGPushTokenManager defaultTokenManager] appendTags:@[ tagStr ]];
 
 //解绑标签
-[[XGPushTokenManager defaultTokenManager] unbindWithIdentifers:@[identifier] type:XGPushTokenBindTypeTag];
+[[XGPushTokenManager defaultTokenManager] delTags:@[ tagStr ]];
 ```
 
 
@@ -188,22 +186,27 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 
 #### 接口说明
 
-覆盖原有的标签，若之前没有绑定标签，则会执行新增标签。
+清空已有标签，然后批量添加标签。
 
 > ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
 
 ```Objective-C
-- (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;
+- (void)clearAndAppendTags:(nonnull NSArray<NSString *> *)tags
 ```
 
 #### 参数说明 
 
-- identifiers：标签标识字符串数组，标签字符串不允许有空格或者是 tab 字符。
-- type：操作类型，标签操作为：XGPushTokenBindTypeTag。
+- tags：标签数组。
 
-> ?identifiers 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
+> ?标签操作 tags 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
 
 - 此接口会将当前 Token 对应的旧有的标签全部替换为当前的标签。
+
+#### 示例代码
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] clearAndAppendTags:@[ tagStr ]];
+```
 
 ### 清除全部标签
 
@@ -214,20 +217,104 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 > ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
 
 ```Objective-C
-- (void)clearAllIdentifiers:(XGPushTokenBindType)type;
+- (void)clearTags
 ```
-
-**参数说明**
-
-- type：操作类型，标签操作为：XGPushTokenBindTypeTag。
 
 #### 示例代码
 
 ```Objective-C
-[[XGPushTokenManager defaultTokenManager] clearAllIdentifiers:XGPushTokenBindTypeTag];
+[[XGPushTokenManager defaultTokenManager] clearTags];
 ```
 
+## 用户属性功能
 
+### 新增用户属性
+
+#### 接口说明
+
+添加或更新用户属性（key-value 结构，若原来没有该 key 的用户属性 value，则新增；若原来有该 key 的用户属性 value，则更新该 value）。
+
+> ?- 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
+
+```Objective-C
+- (void)upsertAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
+```
+
+#### 参数说明 
+
+- attributes：用户属性字符串字典，字符串不允许有空格或者是 tab 字符。
+
+> ? 
+>- 需要先在管理台配置用户属性的键，才能操作成功（此功能即将上线）。
+>- 需要使用字典且 key 是固定要求。
+>- Objective-C 的写法 : @{@"gender": @"Female", @"age": @"29"}；
+>- Swift 的写法：["gender":"Female", "age": "29"]
+
+#### 示例代码
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] upsertAttributes:attributes];
+```
+
+### 删除用户属性
+
+#### 接口说明
+
+删除用户已有的属性。
+
+> ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
+
+```Objective-C
+- (void)delAttributes:(nonnull NSSet<NSString *> *)attributeKeys
+```
+
+#### 参数说明 
+
+- attributeKeys：用户属性 key 组成的集合，字符串不允许有空格或者是 tab 字符。
+
+> ?使用集合且key是固定要求。
+
+#### 示例代码
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] delAttributes:attributeKeys];
+```
+
+### 清空已有用户属性
+
+#### 接口说明
+
+清空已有用户属性。
+
+> ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
+
+```Objective-C
+- (void)clearAttributes;
+```
+
+#### 示例代码
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] clearAttributes];
+```
+
+### 更新用户属性
+
+#### 接口说明
+
+清空已有用户属性，然后批量添加用户属性。
+
+> ?此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
+
+```Objective-C
+- (void)clearAndAppendAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
+```
+
+#### 示例代码
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] clearAndAppendAttributes:attributes];
+```
 
 ## 角标功能
 
@@ -235,7 +322,7 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 
 #### 接口说明
 
-当应用本地角标值更改后，需调用此接口将角标值同步到TPNS服务器，下次推送时以此值为基准，此功能在管理台位置（新建推送->高级设置->角标数字）。
+当应用本地角标值更改后，需调用此接口将角标值同步到 TPNS 服务器，下次推送时以此值为基准，此功能在管理台位置（【新建推送】>【高级设置】>【角标数字】）。
 
 ```objective-c
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -243,9 +330,9 @@ type：操作类型，账号操作为：XGPushTokenBindTypeAccount。
 
 #### 参数说明
 
-badgeNumber： 应用的角标数。
+badgeNumber：应用的角标数。
 
-> !注意： 当本地应用角标设置后需调用此接口同步角标值到TPNS服务器，并在下次推送时生效，此接口必须在TPNS注册成功后调用（xgPushDidRegisteredDeviceToken），  
+> ! 当本地应用角标设置后需调用此接口同步角标值到 TPNS 服务器，并在下次推送时生效，此接口必须在 TPNS 注册成功后调用（xgPushDidRegisteredDeviceToken）。
 
 #### 示例代码
 
@@ -310,7 +397,7 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 
-开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，反馈问题时，请将文件地址提供给我们，便于排查问题。
+开发者如果发现推送相关功能异常，可以调用该接口，触发本地 push 日志的上报，反馈问题 [提交工单](https://console.cloud.tencent.com/workorder/category) 时，请将文件地址提供给我们，便于排查问题。
 
 ```
 /// @note TPNS SDK1.2.4.1+
@@ -332,7 +419,7 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 
-背景：如果 App 的推送服务是从信鸽平台（https://xg.qq.com）迁移到腾讯移动推送平台，在两个平台同时推送时，可能会出现重复消息。因此需要调用 TPNS SDK(1.2.5.3+) 的接口将设备信息在信鸽平台中进行反注册。
+背景：如果 App 的推送服务是从信鸽平台（`https://xg.qq.com`）迁移到腾讯移动推送平台，在两个平台同时推送时，可能会出现重复消息。因此需要调用 TPNS SDK(1.2.5.3+) 的接口将设备信息在信鸽平台中进行反注册。
 引入头文件：XGForFreeVersion.h，在 startXGWithAccessID 之前调用：
 
 ```
@@ -353,11 +440,11 @@ handler：查询结果的返回方法。
 
 #### 接口说明
 
-可以在此方法获取TPNS的log日志。此方法和 XGPush > enableDebug 无关。
+可以在此方法获取 TPNS 的 log 日志。此方法和 XGPush > enableDebug 无关。
 
 #### 参数说明
 
-- logInfo 日志信息
+- logInfo：日志信息。
 
 #### 示例代码
 
@@ -439,9 +526,5 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 
 ## 本地推送
 
-本地推送相关功能请参考 [苹果开发者文档](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SchedulingandHandlingLocalNotifications.html#//apple_ref/doc/uid/TP40008194-CH5-SW1)。
-
-
-
-
+本地推送相关功能请参见 [苹果开发者文档](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SchedulingandHandlingLocalNotifications.html#//apple_ref/doc/uid/TP40008194-CH5-SW1)。
 
