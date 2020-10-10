@@ -4,7 +4,7 @@
 
 
 ### 拉取会话列表
-用户在登录后调用 [getConversationList()](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) 拉取本地会话列表做 UI 展示，会话列表是一个 [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) 对象的列表，每一个对象都代表一个会话。
+用户在登录后调用 [getConversationList()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) 拉取本地会话列表做 UI 展示，会话列表是一个 [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) 对象的列表，每一个对象都代表一个会话。
 
 由于本地会话可能很多（例如超过500个），一次性全部加载完毕可能会耗时很久，导致界面展示比较慢。为了提升用户体验，`getConversationList()` 接口支持分页拉取能力：
 1. 首次调用 `getConversationList()` 接口时，可以指定其参数 `nextSeq` 为0 ，表示从头开始拉取会话列表，并指定 `count` 为50， 表示一次拉取50个会话对象。
@@ -12,8 +12,8 @@
  - 如果 `isFinished` 返回 `true`，表示所有会话已经拉取完成。
  - 如果 `isFinished` 返回 `false` ，表示还有更多的会话可以拉取。此时并不意味着要立刻开始拉取“下一页”的会话列表。在常见的通信软件中，分页拉取通常由用户的滑动操作触发的，用户每下拉一次会话列表就触发一次分页拉取。
 <span id="get_step3"></span>
-3. 当用户继续下拉会话列表时，如果还有没有拉取下来的会话列表，可以继续调用 [getConversationList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) 接口，并传入新一轮的 `nextSeq` 和 `count` 参数（数值来自上一次拉取返回的 [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html) 对象）。
-5. 重复执行 [步骤3](#get_step3) 直至 [isFinished](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html#a3e7d1138f146a8f19c15d0f5d81f6448) 返回 `true`。
+3. 当用户继续下拉会话列表时，如果还有没有拉取下来的会话列表，可以继续调用 [getConversationList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) 接口，并传入新一轮的 `nextSeq` 和 `count` 参数（数值来自上一次拉取返回的 [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html) 对象）。
+4. 重复执行 [步骤3](#get_step3) 直至 [isFinished](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html#a3e7d1138f146a8f19c15d0f5d81f6448) 返回 `true`。
 
 ### 显示会话信息
 获取到 [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html)  对象后，即可在 UI 上展示，`V2TIMConversation` 有如下关键字段常被用于构造会话列表：
@@ -32,7 +32,7 @@ IM SDK 会在登录成功后、用户上线后、以及断线重连后，自动�
 - 当有会话更新时，例如新收到一条消息，SDK 会通过 `V2TIMConversationListener`  中的 [onConversationChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) 事件通知您。
 - 当有会话新增时，SDK 会通过 `V2TIMConversationListener`  中的 [onNewConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#ab213c51c45045665dde1542c276e2530) 事件通知您。
 
->为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520) 中的 [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) 对数据源重新排序。
+>!为保证会话列表顺序符合最后一条消息的排序原则，您需要根据 [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520) 中的 [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) 对数据源重新排序。
 
 ### 示例代码
 示例代码将介绍如何拉取、展示和更新会话列表：
@@ -115,14 +115,14 @@ private void updateConversation(List<V2TIMConversation> convList, boolean needSo
 ```
 
 ## 删除会话
-调用 [deleteConversation](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/v2tmp/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae5850472b32de16f3d38ab232d621b66) 接口可以删除某个会话，会话删除不支持多端同步，删除会话时默认删除本地历史消息。
-> 仅支持删除本地历史消息，不支持删除云端的历史消息，如果删除的会话重新激活，仍可以从云端拉取到该会话的历史消息。
+调用 [deleteConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a7a6e38c5a7431646bd4c0c4c66279077) 接口可以删除某个会话，会话删除不支持多端同步，删除会话时默认删除本地和服务器历史消息，且无法恢复。
+
 
 
 ## 草稿箱
 在发送消息时，可能会遇到消息尚未编辑完就要切换至其它聊天窗口的情况，这些未编辑完的消息可通过 [setConversationDraft](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae7f2f52bf375dae69368eae42edb28ab) 接口保存，以便于回到聊天界面后调用 [getDraftText](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a56ac45415e28fe634dfdb1e0aaeea805) 继续编辑内容。
 
->
+>!
 >- 草稿仅支持文本内容。
 >- 草稿仅在本地保存，不会存储到服务器，因此不能多端同步，程序卸载重装会失效。
 

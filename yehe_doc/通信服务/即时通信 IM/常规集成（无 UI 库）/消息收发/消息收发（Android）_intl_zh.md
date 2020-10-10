@@ -28,7 +28,7 @@
 ### 接收文本和信令消息（简化接口）
 通过  [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) 可以监听简单的文本和信令消息，复杂的图片、视频、语音消息则需要通过 [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) 中定义的 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 实现。
 
-> [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b)  与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 请勿混用，以免产生逻辑 BUG。
+>! [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b)  与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 请勿混用，以免产生逻辑 BUG。
 
 ### 经典示例：直播群中收发弹幕消息
 直播场景下，在直播群中收发弹幕消息是非常普遍的交互方式，其实现方式非常简单，通过简单消息接口即可满足：
@@ -63,7 +63,7 @@
 // 创建图片消息
 V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createImageMessage("/sdcard/test.png");
 // 发送图片消息
-V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "toUserID", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, true, null,  new V2TIMSendCallback<V2TIMMessage>() {
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "toUserID", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, null,  new V2TIMSendCallback<V2TIMMessage>() {
 	@Override
 	public void onError(int code, String desc) {
 		// 图片消息发送失败
@@ -122,7 +122,94 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 }
 ```
 
-> 更多消息解析示例代码请参考 [常见问题 > 5. 各类型消息应该如何解析](#msgAnalyze)。
+>? 更多消息解析示例代码请参考 [常见问题 > 5. 各类型消息应该如何解析](#msgAnalyze)。
+
+## 收发群 @ 消息
+群 @ 消息，发送方可以在输入栏监听 @ 字符输入，调用到群成员选择界面，选择完成后以 `“@A @B @C......”` 形式显示在输入框，并可以继续编辑消息内容，完成消息发送。接收方会在会话界面的群聊天列表，重点显示 `“有人@我”` 或者 `“@所有人”` 标识，提醒用户有人在群里 @ 自己了。
+>? 目前仅支持文本 @ 消息。
+
+### 发送群 @ 消息
+1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)，昵称用来在文本框显示。
+2. 发送方调用 [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) 的 [createTextAtMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) 创建一条 @ 文本消息，拿到消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)。
+3. 发送方调用 [sendMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) 接口将刚才创建的 @ 消息对象发送出去。
+
+### 接收群 @ 消息
+1. 在加载和更新会话处，需要调用 [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) 的 [getGroupAtInfoList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a54790b0fd99c2504a73b42b884fba8a9)接口获取会话的 @ 数据列表 List < [V2TIMGroupAtInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) >。
+2. 通过列表中 [V2TIMGroupAtInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) 对象的 [getAtType](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html#aebb86a00883eb70fdab2c5f4728aae5d) 接口获取 @ 数据类型，并更新到当前会话的 @ 信息。
+
+### 经典示例：收发群 @ 消息
+- **发送群 @ 消息**：
+发送方创建一条群 @ 消息并发送：
+```
+// 获取群成员ID数据
+List<String> atUserList = updateAtUserList(mTextInput.getMentionList(true));
+// 创建群@消息
+V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createTextAtMessage(message, atUserList);
+// 发送群@消息
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, null, "toGroupID",  V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, null,  new V2TIMSendCallback<V2TIMMessage>() {
+    @Override
+    public void onError(int code, String desc) {
+        // 群@消息发送失败
+    }
+    @Override
+    public void onSuccess(V2TIMMessage v2TIMMessage) {
+        // 群@消息发送成功
+    }
+    @Override
+    public void onProgress(int progress) {
+
+    }
+});
+```
+
+- **接收群 @ 消息**：
+  加载和更新会话处，获取群 @ 数据列表：
+	
+```
+boolean atMe = false;
+boolean atAll = false;
+//获取群@数据列表
+List<V2TIMGroupAtInfo> atInfoList = conversation.getGroupAtInfoList();
+if (atInfoList == null || atInfoList.isEmpty()){
+    return V2TIMGroupAtInfo.TIM_AT_UNKNOWN;
+}
+//获取@数据类型
+for(V2TIMGroupAtInfo atInfo : atInfoList){
+    if (atInfo.getAtType() == V2TIMGroupAtInfo.TIM_AT_ME){
+        atMe = true;
+        continue;
+    }
+    if (atInfo.getAtType() == V2TIMGroupAtInfo.TIM_AT_ALL){
+        atAll = true;
+        continue;
+    }
+}
+
+if (atAll && atMe){
+    atInfoType = V2TIMGroupAtInfo.TIM_AT_ALL_AT_ME;
+} else if (atAll){
+    atInfoType = V2TIMGroupAtInfo.TIM_AT_ALL;
+} else if (atMe){
+    atInfoType = V2TIMGroupAtInfo.TIM_AT_ME;
+} else {
+    atInfoType = V2TIMGroupAtInfo.TIM_AT_UNKNOWN;
+}
+//更新@类型到当前会话
+switch (atInfoType){
+    case V2TIMGroupAtInfo.TIM_AT_ME:
+        Log.d(TAG, "更新到当前会话显示[有人@我]");
+        break;
+    case V2TIMGroupAtInfo.TIM_AT_ALL:
+        Log.d(TAG, "更新到当前会话显示[@所有人]");
+        break;
+    case V2TIMGroupAtInfo.TIM_AT_ALL_AT_ME:
+        Log.d(TAG, "更新到当前会话显示[有人@我][@所有人]");
+        break;
+    default:
+        break;
+
+}
+```
 
 ## 设置离线推送（offlinePushInfo）
 当接收方的 App 被 kill 时，IM SDK 无法通过正常的网络连接收取新消息。如需实现在此场景下接收方仍能感知到新消息，需要使用各个手机厂商提供的离线推送服务，更多详细请参见 [Android 离线推送](https://intl.cloud.tencent.com/document/product/1047/34336)。
@@ -157,7 +244,7 @@ V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, null, "groupA", V2TIM
 ### 点击推送消息跳转到对应的聊天窗口
 如需实现该功能，发送消息时需设置离线推送对象 `offlinePushInfo` 的扩展字段 `ext`，收到消息的用户打开 App 时可以通过不同厂商提供的获取自定义内容的方式拿到这个扩展字段 `ext`，然后根据 `ext` 内容跳转到对应的聊天界面。
 
-本文以 “denny 给 vinson 发送消息” 的场景为例。
+本文以 `“denny 给 vinson 发送消息”` 的场景为例。
 发送方：denny 要在发送消息的时候设置推送扩展字段 ext：
 
 ```
@@ -244,8 +331,8 @@ V2TIMManager.getMessageManager().revokeMessage(v2TIMMessage, new V2TIMCallback()
 		// 撤回消息成功
 	}
 });
-```
- 
+ ```
+
 ### 接收方感知消息被撤回
 
 1. 调用 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 设置高级消息监听。
@@ -267,7 +354,7 @@ public void onRecvMessageRevoked(String msgID) {
 ## 给消息增加已读回执
 在 C2C 单聊场景下，当接收方通过 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) 接口将来自某人的消息标记为已读时，消息的发送方将会收到“已读回执”，表示“xxx 已经读过我的消息了”。
 
->目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
+>!目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
 
 ### 接收方标记消息已读
 
@@ -283,7 +370,7 @@ public void onRecvMessageRevoked(String msgID) {
 		// 设置消息已读成功
 	}
 });
-```
+ ```
 
 ### 发送方感知消息已读
 消息已读回执的事件通知位于高级消息监听器 [V2TIMAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html) 中，如需支持感知消息已读，需要先通过 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 设置监听器，然后通过 [onRecvC2CReadReceipt](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMAdvancedMsgListener.html#a25acb98db29da33ae3e3eebab19b655c) 回调即可感知接收方的已读确认。
@@ -346,27 +433,7 @@ V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, 
 - 直播群（AVChatRoom）中的消息均不支持本地存储和多终端漫游，因此对直播群调用 [getGroupHistoryMessageList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) 接口是无效的。
 
 ## 删除消息
-对于已经接收到的消息，可以调用 [deleteMessageFromLocalStorage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aa31e3b48fb666b970120fc0bc6343534) 接口进行本地删除。
-
-### 删除本地消息
-
-```
-V2TIMManager.getMessageManager().deleteMessageFromLocalStorage(v2TIMMessage, new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// 删除消息失败
-	}
-	@Override
-	public void onSuccess() {
-	 // 删除消息成功
-	}
-});
-```
-> App 卸载重装后已经删除的消息为什么又回来了？
-> 由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
-
-### 删除云端消息
-目前暂不支持删除云端的消息，删除消息会导致云端建立反向映射关系，影响系统整体性能。
+对于历史消息，您可以调用 [deleteMessages](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#adb346fede13d493e415f6574df911e9a) 接口删除历史消息，消息删除后，无法再恢复。
 
 ## 设置消息权限
 ### 只允许好友间收发消息
@@ -381,7 +448,6 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
-![](https://main.qcloudimg.com/raw/63625c5252348205993ec5f33b087dec.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？
@@ -389,13 +455,10 @@ SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如
 - 请检查 [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) 与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) 是否混用。如果混用，当收到文本消息或自定义消息时，两个监听都会回调，会导致收到重复消息。
 - 请检查同一个监听对象是否重复 `add`，如果监听对象不再使用，请主动调用对应的 [removeSimpleMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a86ac462d87f652960d2600a52009849a) 或 [removeAdvancedMsgListener](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a44e1e9126bf5b30234330fe19259cd93) 接口移除多余的监听器。
 
-### 2. App 卸载重装后已经删除的消息为什么又回来了？
-由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
-
-### 3. App 卸载重装后已读回执为什么失效了？
+### 2. App 卸载重装后已读回执为什么失效了？
 在单聊场景下，接收方如果调用 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) 设置消息已读，发送方收到的已读回执里面包含了对方已读的时间戳 `timestamp`，SDK 内部会根据 `timestamp` 判断消息对方是否已读， `timestamp` 目前只在本地保存，程序卸载重装后会丢失。
 
-### 4. 有多个 Elem 的消息应该如何解析？
+### 3. 有多个 Elem 的消息应该如何解析？
 出于降低消息复杂度的考虑，SDK API2.0 接口不再支持创建包含多个 Elem 的 Message 对象。如果您收到了来自老版本的包含多个 Elem 的 Message 对象，可以按照以下步骤解析：
 1. 正常解析出第一个 `Elem` 对象。
 2. 通过第一个 `Elem` 对象的 [getNextElem](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMElem.html#aa903ed29cfa12e1ea88873eb1af39d68) 方法获取下一个 `Elem` 对象。如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `null`。
@@ -426,5 +489,5 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 ```
 
 <span id ="msgAnalyze"></span>
-### 5. 各种不同类型的消息应该如何解析？
+### 4. 各种不同类型的消息应该如何解析？
 解析消息相对复杂，我们提供了各种类型消息解析的 [示例代码](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/sampleCode/message.java)，您可以直接把相关代码拷贝到您的工程，然后根据实际需求进行二次开发。

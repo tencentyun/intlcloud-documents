@@ -3,7 +3,7 @@
 ### 场景一：独立使用匹配
 
 支持独立使用游戏玩家匹配服务，通过GPM实现自定义匹配规则和匹配搜索运算。匹配完成后，GPM将匹配结果通知到开发者提供的服务器地址，由开发者自行进行后续处理。
-![](https://main.qcloudimg.com/raw/79b12293dfc6404833cad1d1906e5c58.png)
+![](https://main.qcloudimg.com/raw/1798f70b2cc870b58f0d28abd5e8ba97.png)
 
 ### 场景二：匹配结果托管对战服
 
