@@ -35,7 +35,7 @@ Update the `%TOMCAT_HOME%\conf\server.xml` file as follows:
 
 ### IIS certificate configuration
 #### Method 1
-Windows Server 2008 and earlier versions do not support the TLS1_2 protocol. Therefore, SSL tools are disabled on those versions. To address this issue, enable the TLS1_2 protocol to meet ATS requirements.
+Windows Server 2008 and earlier versions do not support the TLS1_2 protocol. Therefore, SSL tools are disabled on those versions. To address this issue, enable the TLS1_2 protocol to meet the ATS requirements.
 
 Taking Windows Server 2008 R2 as an example, there is no adjustment to protocols and cipher suites after the certificate is imported.
  The cipher suites will support ATS requirements after the certificate is imported but the TLS1_2 protocol required for ATS is not enabled. You can use IIS Crypto ([click to download](https://www.nartac.com/Downloads/IISCrypto/IISCrypto.exe)) to enable the TLS1_2 protocol, as shown below:
@@ -56,24 +56,24 @@ Taking Windows Server 2008 R2 as an example, there is no adjustment to protocols
 ![4](https://main.qcloudimg.com/raw/a65d675b742144e817eef3fd882b48a8.png)
 ![5](https://main.qcloudimg.com/raw/a58d8d4fd525777eb1d7bf523c4fcda6.png)
 5. Restart the system.
-6. Adjust cipher suites: choose **Start** -> **Run**, and enter `gpedit.msc` for cipher suite adjustments after enabling the TLS1_2 protocol.
->!Adjustments can be made through the Group Policy Editor if PFS is not supported by cipher suites.
+6. Adjust the cipher suites: choose **Start** -> **Run**, and enter `gpedit.msc` for the cipher suite adjustments after enabling the TLS1_2 protocol.
+>!Adjustments can be made through the Group Policy Editor if PFS is not supported by the cipher suites.
 
 ![3](https://main.qcloudimg.com/raw/11f246fad52917de46de6eff14183137.png)
 7. Double-click **SSL Cipher Suite Order** and enter information, as shown in the following figure:
 ![4](https://main.qcloudimg.com/raw/2f2a9c96b351282957827358cf96cc2d.png)
   - Select `Enabled`.
-  - Add the supported ECDHE cipher suites to the SSL cipher suites, separated by comma (,).
-  - Enter cipher suite information as follows:
+  - Add the supported ECDHE cipher suites to the SSL cipher suites, separated by commas (,).
+  - Enter the cipher suite information as follows:
       a. Open a blank WordPad document.
       b. Copy the list of available suites on the right in the figure below and paste it into the document.
-      c. Sort suites in the correct order and delete any suites you do not want to use.
+      c. Sort the suites in the correct order and delete any suites you do not want to use.
       d. Type a comma at the end of each suite name (except for the last one). Make sure no space is entered.
       e. Remove all the line breaks so that the cipher suite names are in a single, long line.
-      f. Copy the cipher suite line to the clipboard and paste it into the edit box within the maximum length of 1,023 characters.
+      f. Copy the cipher suite line to the clipboard and paste it into the edit box. You can enter up to 1,023 characters.
 8. After the cipher suite information is entered, the content in the window is updated, as shown in the following figure:
 ![5](https://main.qcloudimg.com/raw/2214ae20462cd0aeaa8a4593bea7f40e.png)
-The following suites can be added:
+The following suites can be added to the cipher suite:
 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA
 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
 TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
