@@ -323,7 +323,7 @@ scp $localfile root@public IP address:$remotefolder
 
 ### Using a program to consume CKafka data
 Use two interfaces to log in to the WebShell of the EMR cluster.
-**In the first interface: **, log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in section 2. Run the following command to run the demo:
+**In the first interface:**, log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in section 2. Run the following command to run the demo:
 ```
 [hadoop@172 ~]$ bin/spark-submit --class KafkaTest --master yarn-cluster $consumerpackage 
 ```
@@ -336,7 +336,7 @@ After the program is started, it will run continuously in the Yarn cluster. Run 
 ```
 [hadoop@172 ~]$ yarn application –list
 ```
-**In the second interface: **, log in to the WebShell of EMR and run the producer program, so that Spark Streaming can retrieve the data for consumption.
+**In the second interface:**, log in to the WebShell of EMR and run the producer program, so that Spark Streaming can retrieve the data for consumption.
 ```
 [hadoop@172 spark]$ bin/spark-submit --class SendData $producerpackage
 ```
