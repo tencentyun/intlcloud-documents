@@ -3,13 +3,12 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】。
 3. 在弹性网卡列表页，找到需要绑定和配置的弹性网卡所在行，单击操作栏中的【绑定云服务器】。
-![](https://main.qcloudimg.com/raw/dcdb819148237d48c966459c4939217e.png)
+![](https://main.qcloudimg.com/raw/bce45aabdb1e1b26df31d3ff40211bce.png)
 >?
 >- 仅支持绑定和弹性网卡在相同可用区的云服务器。
 >- 不支持绑定黑石2.0（裸金属）服务器。
 4. 在弹框中，选择需要绑定的云服务器，单击【确定】完成绑定。
-   ![](https://main.qcloudimg.com/raw/c85a63213d1b6e1c64da8f5f48a472f7.png)
-	 
+   ![](https://main.qcloudimg.com/raw/7bbcb3850eae4b56ccd6d2f918f04682.png)
 ## 配置云服务器
 ### Linux 下的配置步骤
 本文提供两种常用镜像类型（CentOS和Ubuntu）的服务器配置弹性网卡的操作指导。
@@ -65,16 +64,16 @@
       ```
     2. 确认辅助网卡和辅助网卡上的 IP 可见，如下图所示。
      ![](https://main.qcloudimg.com/raw/d99d81a7bd973cb0a748d785c326cd22.png)
-      如果IP配置不正确，请执行如下检查：
+        如果IP配置不正确，请执行如下检查：
       1. 检查配置文件是否正确，如不正确请重新配置。
       2. 检查网络是否重启，如未重启，请执行如下命令重启网络，使配置生效。
       ```plaintext
       systemctl restart network
-			```
+	  ```
 6. 根据业务实际情况配置路由策略。
     按照上述步骤配置好后，Linux 镜像依旧默认从主网卡发包。您可通过策略路由来指定报文从某个网卡进，并从该网卡返回。
 <span id="6.1">
-		
+	
   1. 创建两张路由表。
    ```plaintext
      echo "10 t1" >> /etc/iproute2/rt_tables
@@ -86,7 +85,7 @@
 	```plaintext
      ip route add default dev eth0 via 192.168.1.1 table 10
      ip route add default dev eth1 via 192.168.1.1 table 20 
-		```
+	```
 > ? 此处两个命令中，192.168.1.1要分别替换成主网卡所属子网的网关，以及辅助网卡所属子网的网关。具体网关，请参考 [查看网关](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3) 。
 > 
  3. 配置策略路由。
@@ -107,7 +106,7 @@
 1. 以管理员身份[ 登录云服务器](https://intl.cloud.tencent.com/document/product/213/32501)，执行如下命令，查看需配置（未显示 IP）的网卡信息，如图所示，需配置的网卡名称为 `eth1`：
 ```plaintext
    ip addr
-   ```
+```
 ![](https://main.qcloudimg.com/raw/ade946a6b92207acb1fe80bef696379e.png)
 2. 执行如下命令，进入`/etc/network/`文件夹。
     ```plaintext
@@ -130,6 +129,7 @@
       address 172.21.48.3 # 此处填写弹性网卡上的 IP 地址，请根据实际填写
       netmask 255.255.240.0 # 此处填写子网掩码，请根据实际填写
          ```
+  
    3. 修改后保存配置文件并退出（在 vim 的末行模式下按 “Esc”，输入 “wq!” 并回车）。
 4. 重启网卡 eth1。
  1. 执行如下命令切换至 root 用户，并安装 ifupdown。
@@ -142,6 +142,7 @@
       ifdown eth1
       ```
    3. 启动网卡 eth1。
+
      ```plaintext
       ifup eth1
       ```
@@ -149,7 +150,7 @@
       1. 输入如下命令查看 IP。
        ```plaintext
       ip addr
-      ```
+       ```
       2. 确认辅助网卡和辅助网卡上的 IP 可见，如下图所示。
          ![](https://main.qcloudimg.com/raw/2c7060691fc51a212295e209a9dcee83.png)
        如果IP配置不正确，请执行如下检查：
@@ -158,7 +159,7 @@
      ```plaintext
        ifdown eth1
        ifup eth1
-			 ```
+	```
 5. 根据业务实际情况配置路由策略。
       按照上述步骤配置好后，Linux 镜像依旧默认从主网卡发包。您可通过策略路由来指定报文从某个网卡进，并从该网卡返回。
 <span id="Linux6.1">
@@ -167,7 +168,7 @@
      ```plaintext
      echo "10 t1" >> /etc/iproute2/rt_tables
      echo "20 t2" >> /etc/iproute2/rt_tables
-       ```
+     ```
 >?此处10、20为自定义的路由ID，t1、t2为自定义的路由表名称，请根据实际填写。
  >
 
@@ -175,14 +176,14 @@
   ```plaintext
  ip route add default dev eth0 via 172.21.48.1 table 10
 ip route add default dev eth1 via 172.21.48.1 table 20
-		```
+  ```
 > ?此处两个命令中，172.21.48.1要分别替换成主网卡所属子网的网关，以及辅助网卡所属子网的网关。具体网关，请参考 [查看网关](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3) 。
 > 
  3. 执行如下命令，配置策略路由。
      ```plaintext
     ip rule add from 172.21.48.11 table 10
      ip rule add from 172.21.48.3 table 20 
-     ```
+    ```
 > ?
 > + 此处两个命令中，IP 要分别替换成主网卡上的 IP，以及辅助网卡上的 IP；10和20为[ 步骤6.1](#Linux6.1)中自定义的路由ID，请根据实际情况填写。
 > + 配置完成后，可用同一个子网下的 CVM，来 Ping 内网地址，能 Ping 通即说明成功。如无其他     CVM，可以给辅助网卡的内网 IP 绑定公网 IP，Ping 该公网 IP 来验证。
@@ -196,26 +197,21 @@ ip route add default dev eth1 via 172.21.48.1 table 20
 >
 - 情况一：如果 Windows 操作系统设置了 DHCP，则无需配置，即能支持自动识别辅助网卡以及网卡上的 IP。查看操作如下：
  1. 登录云服务器，进入操作系统的【控制面板】>【网络和 Internet】>【网络和共享中心】，可查看到已自动识别辅助网卡。
- 2. 单击命名为“以太网 2”的辅助网卡，查看信息。
- ![](https://main.qcloudimg.com/raw/b8498adcc2896f436a1bfdc96d11090d.png)
+  2. 单击命名为“以太网 2”的辅助网卡，查看信息。
  3. 在“以太网 2 状态”弹窗中，单击【属性】。
  4. 在“以太网 2 属性”弹窗中，双击【Internet 协议版本4（TCP/IPv4）】。
- 5. 在 “Internet 协议版本4（TCP/IPv4）属性”弹窗中，可查看到已选择【自动获取 IP 地址】，无需手动填写。
- ![](https://main.qcloudimg.com/raw/93256b91fa4124b39c9e67a7ca06ead4.png)
- 6. 返回“以太网 2 状态”弹窗中，单击【详细信息】，即可查看已启用 DHCP，自动识别 IP。
- ![](https://main.qcloudimg.com/raw/2b8c5273070b0880a2e0b8482a572ce6.png)
+  5. 在 “Internet 协议版本4（TCP/IPv4）属性”弹窗中，可查看到已选择【自动获取 IP 地址】，无需手动填写。
+  6. 返回“以太网 2 状态”弹窗中，单击【详细信息】，即可查看已启用 DHCP，自动识别 IP。
 -  情况二：如果 Windows 操作系统没有设置 DHCP，则需要在操作系统内，把内网 IP 配上。操作步骤如下：
    1. 登录 [腾讯云控制台](https://console.cloud.tencent.com)，把弹性网卡 [绑定云服务器](#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)。
    2. 登录云服务器，进入操作系统的【控制面板】>【网络和 Internet】>【网络和共享中心】。
    3. 单击命名为“以太网 2”的辅助网卡，进行编辑。
-   ![](https://main.qcloudimg.com/raw/b8498adcc2896f436a1bfdc96d11090d.png)
    4. 在“以太网 2 状态”弹窗中，单击【属性】。
    5. 在“以太网 2 属性”弹窗中，双击【Internet 协议版本4（TCP/IPv4）】。
    6. 在 “Internet 协议版本4（TCP/IPv4）属性”弹窗中，手动填写 IP 信息（按实际填写），完成后单击【确定】。
-   ![](https://main.qcloudimg.com/raw/71eefd1aa5299036a4789792b3bb9602.png)
    7. 在“以太网 2 属性”弹窗中，单击【确定】即可完成配置。
    8. 在“以太网 2 状态”弹窗中，单击【详细信息】，可查看未启用 DHCP，手动填写的 IP 信息。
-   ![](https://main.qcloudimg.com/raw/3fe09a17eca280416d8ad64fb52a1675.png)
+   
    9. 用同一个子网下的 CVM，来 Ping 内网地址，能 Ping 通即说明成功。如无其他 CVM，可以给辅助网卡的内网 IP 绑定公网 IP，Ping 该公网 IP 来验证。
 
 ## 附录
@@ -224,14 +220,14 @@ ip route add default dev eth1 via 172.21.48.1 table 20
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页。
 4. 选择【IPv4 地址管理】标签页，查看弹性网卡上的 IP 地址，即内网 IP。
-![](https://main.qcloudimg.com/raw/e13d8391fdf23565662408050caa89b8.png)
+![](https://main.qcloudimg.com/raw/2c64b1554d28da173cc3eb969350191a.png)
 
 ### 查看弹性网卡的子网掩码
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页，查看弹性网卡的子网掩码。
 如下图所示，所属子网的 CIDR 位数为/20，即弹性网卡的子网掩码为：`255.255.240.0`。
- ![](https://main.qcloudimg.com/raw/5ccac8fb71177dff5fa24061a13f1bea.png)
+ ![](https://main.qcloudimg.com/raw/a776cf4898e1369d9c08f83466c4b98b.png)
 CIDR 位数与子网掩码的对应关系如下表所示：
 <table style="width:400px;important!">
 <thead>
@@ -300,4 +296,4 @@ CIDR 位数与子网掩码的对应关系如下表所示：
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页，查看弹性网卡的所属子网，如下图中的所属子网网段的首个 IP 即为：`10.200.16.17`。
-![](https://main.qcloudimg.com/raw/3497cabed23ed4af369ca4b978c611eb.png)
+![](https://main.qcloudimg.com/raw/7eb4088afc008a9ecffd393d02f8738c.png)
