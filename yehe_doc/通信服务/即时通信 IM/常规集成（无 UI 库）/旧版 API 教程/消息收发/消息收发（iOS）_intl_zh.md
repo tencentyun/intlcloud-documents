@@ -5,7 +5,7 @@
 #### 会话获取
 
 会话是指面向一个人或者一个群组的对话，通过与单个人或群组之间会话收发消息，发消息时首先需要先获取会话，获取会话需要指定会话类型（群组或者单聊），以及会话对方标志（对方帐号或者群号）。获取会话由`getConversation`实现。
->如果本地没有这个会话，调用会话 TIMConversation 的 API 会失败。建议在收到 TIMUserConfig > TIMRefreshListener 回调后再去操作 TIMConversation 对象。
+>!如果本地没有这个会话，调用会话 TIMConversation 的 API 会失败。建议在收到 TIMUserConfig > TIMRefreshListener 回调后再去操作 TIMConversation 对象。
 
 **原型：**
 
@@ -78,9 +78,9 @@ fail | 失败回调
 **示例：**
 
 
->
+>?
 >- text 传递需要发送的文本消息。
->- 失败回调中，code 表示错误码，具体可参阅 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)，err 表示错误描述。
+>- 失败回调中，code 表示错误码，具体可参阅 [错误码](/doc/product/269/1671)，err 表示错误描述。
 
 ```
 TIMTextElem * text_elem = [[TIMTextElem alloc] init];
@@ -192,7 +192,7 @@ image_elem.path = @"/xxx/imgPath.jpg";
 
 **参数说明：**
 
->index 和 data 只需要传入一个即可，IM SDK 只是透传这两个数据。
+>?index 和 data 只需要传入一个即可，IM SDK 只是透传这两个数据。
 
 参数 | 说明
 ---|---
@@ -220,7 +220,7 @@ TIMMessage * msg = [[TIMMessage alloc] init];
 
 语音消息由 `TIMSoundElem` 定义，其中 `data` 存储语音数据，语音数据需要提供时长信息，以秒为单位。
 
->
+>!
 >- 一条消息只能有一个语音 `Elem`，添加多条语音 `Elem` 时，`AddElem` 函数返回错误1，添加不生效。
 >- 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示，而且语音和文件 `Elem` 也不保证按照发送的 `Elem` 顺序排序。 
 
@@ -352,7 +352,7 @@ TIMMessage * msg = [[TIMMessage alloc] init];
 
 文件消息由 `TIMFileElem` 定义，另外还可以提供额外的显示文件名信息。
 
-> 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示。
+>! 语音和文件 `Elem` 不一定会按照添加时的顺序获取，建议逐个判断 `Elem` 类型展示。
 
 ```
 /**
@@ -584,7 +584,7 @@ videoElem.snapshot.height = 200;
 
 对于某些场景，需要发送在线消息，即用户在线时收到消息，如果用户不在线，下次登录也不会看到消息，可用于通知类消息，这种消息不会进行存储，也不会计入未读计数。发送接口与 `sendMessage` 类似。
 
->
+>!
 >- 2.5.3版本以前只针对单聊消息有效。
 >- 2.5.3版本以后对群组消息有效（暂不支持 AVChatRoom 和 BChatRoom 类型）
 
@@ -629,7 +629,7 @@ videoElem.snapshot.height = 200;
 
 用户需要感知新消息的通知时，只需注册新消息通知回调 `TIMMessageListener`，如果用户是登录状态，IM SDK 收到新消息会通过回调中的  `onNewMessage` 抛出。回调消息内容通过参数 `TIMMessage` 传递，通过 `TIMMessage` 可以获取消息和相关会话的详细信息（例如消息文本，语音数据，图片等等），详情请参见 [消息解析](#.E6.B6.88.E6.81.AF.E8.A7.A3.E6.9E.90)。
 
->通过 `onNewMessage` 抛出的消息不一定是未读的消息，只是本地曾经没有过的消息（例如在另外一个终端已读，拉取最近联系人消息时可以获取会话最后一条消息，如果本地没有，会通过此方法抛出）。在用户登录之后，IM SDK 会拉取离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
+>!通过 `onNewMessage` 抛出的消息不一定是未读的消息，只是本地曾经没有过的消息（例如在另外一个终端已读，拉取最近联系人消息时可以获取会话最后一条消息，如果本地没有，会通过此方法抛出）。在用户登录之后，IM SDK 会拉取离线消息，为了不漏掉消息通知，需要在登录之前注册新消息通知。
 群系统消息、关系链变化、好友资料变更也会通过该回调 `onNewMessage` 抛出。
 
 
@@ -794,7 +794,7 @@ imageList | 保存本图片的所有规格，目前最多包含三种规格：�
 - **大图：**是将原图等比压缩，压缩后宽、高中较小的一个等于720像素。
 - **缩略图：**是将原图等比压缩，压缩后宽、高中较小的一个等于198像素。
 
->
+>?
 >- 如果原图尺寸就小于198像素，则三种规格都保持原始尺寸，不需压缩。
 >- 如果原图尺寸在198 - 720之间，则大图和原图一样，不需压缩。
 >- 在手机上展示图片时，建议优先展示缩略图，用户单击缩略图时再下载大图，单击大图时再下载原图。当然开发者也可以选择跳过大图，单击缩略图时直接下载原图。
@@ -903,7 +903,7 @@ uuid | 唯一标识，方便用户缓存
 dataSize | 语音文件大小
 second | 语音时长，以秒为单位
 
-**语音消息已读状态：**语音是否已经播放，可使用 消息自定义字段 实现，如 `customInt` 的值0表示未播放，1表示播放，当用户单击播放后可设置 `customInt` 的值为1。
+**语音消息已读状态：**语音是否已经播放，可使用 [消息自定义字段](/doc/product/269/消息收发（iOS%20SDK）#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) 实现，如 `customInt` 的值0表示未播放，1表示播放，当用户单击播放后可设置 `customInt` 的值为1。
 
 ```
 @interface TIMMessage : NSObject
@@ -1138,7 +1138,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 ### 消息是否已读
 
-通过消息属性 `isReaded` 是否消息已读。这里已读与否取决于 App 侧进行的 [已读上报](https://intl.cloud.tencent.com/document/product/1047/34325)。
+通过消息属性 `isReaded` 是否消息已读。这里已读与否取决于 App 侧进行的 [已读上报](/doc/product/269/未读消息计数（iOS%20SDK）#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5)。
 
 ```
 @interface TIMMessage : NSObject
@@ -1215,7 +1215,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 对于群消息，可以通过 `TIMMessage` 的方法 `sender` 得到发送用户，另外也可以通过方法 `GetSenderProfile` 和 `GetSenderGroupMemberProfile` 获取用户自己的资料和所在群的资料。1.9版本之前，只有在线消息 `onNewMessage` 抛出的消息可以获取到用户资料，1.9版本以后，通过 `getMessage` 得到的消息也可以拿到资料（更新版本之前已经收到本地的消息无法获取到）。对于单聊消息，通过通过 `TIMMessage` 的 `getConversation` 获取到对应会话，会话的 `getReceiver` 可以得到正在聊天的用户。
 
->此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
+>!此字段是消息发送时获取用户资料写入消息体，如后续用户资料更新，此字段不会相应变更，只有产生的新消息中才会带最新的昵称。
 
 ```
 @interface TIMMessage : NSObject
@@ -1255,21 +1255,6 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
  *  @return 时间戳
  */
 -(NSDate*) timestamp;
-@end
-```
-
-### 消息删除
-
-目前暂不支持 Server 消息删除，只能在本地删除，通过这种方法删除的消息，仅是本地打上删除的标记，并未真正删除，在程序没有卸载的情况下通过`getMessage`也不会返回已经被标记为删除的消息。
-
-```
-@interface TIMMessage : NSObject
-/**
- *  删除消息：注意这里仅修改状态
- *
- *  @return TRUE 成功
- */
--(BOOL) remove;
 @end
 ```
 
@@ -1333,7 +1318,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 对于直播场景，会有点赞和发红包功能，点赞相对优先级较低，红包消息优先级较高，具体消息内容可以使用 `TIMCustomElem` 进行定义，发送消息时，可设置消息优先级。
 
->只针对群聊消息有效。
+>!只针对群聊消息有效。
 
 ```
 @interface TIMMessage : NSObject
@@ -1403,7 +1388,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 @end
 ```
 
->SDK 会在内部不断更新会话列表，每次更新后都会通过 `TIMRefreshListener.onRefresh` 回调，请**在 `onRefresh` 之后再调用 `getConversationList`** 更新会话列表。
+>!SDK 会在内部不断更新会话列表，每次更新后都会通过 `TIMRefreshListener.onRefresh` 回调，请**在 `onRefresh` 之后再调用 `getConversationList`** 更新会话列表。
 
 **示例：**
 
@@ -1504,30 +1489,25 @@ fail | 失败回调
 
 ### 删除会话
 
-删除会话有两种方式，一种只删除会话，但保留了所有消息，另一种在删除会话的同时，也删除掉会话相关的消息。可以根据不同应用场景选择合适的方式。另外需要注意的是，如果删除本地消息，对于群组，通过 `getMessage` 会拉取到漫游消息，所以存在删除消息成功，但是拉取到消息的情况，取决于是否重新从漫游拉回到本地。如果不需要拉取漫游，可以通过 `getLocalMessage` 获取消息，或者只通过 `getMessage` 拉取指定条数（如未读条数数量）的消息。其中 `deleteConversation` 仅删除会话，`deleteConversationAndMessages` 删除会话以及消息。
+删除会话的同时 IM SDK 会删除该会话的本地和漫游消息，会话和消息删除后，无法再恢复。
 
 **原型：**
 
 ```
 @protocol TIMManager : NSObject
 /**
- *  删除会话
  *
- *  @param type 会话类型，TIM_C2C 表示单聊 TIM_GROUP 表示群聊
- *  @param receiver    用户identifier 或者 群组 ID
+ *  删除会话的同时会把会话的漫游消息从本地和后台都删除。
  *
- *  @return TRUE:删除成功  FALSE:删除失败
+ *  @param type 会话类型，详情请参考 TIMComm.h 里面的 TIMConversationType 定义
+ *  @param conversationId 会话 Id
+ *                        单聊类型（C2C）   ：为对方 userID；
+ *                        群组类型（GROUP） ：为群组 groupId；
+ *                        系统类型（SYSTEM）：为 @""
+ *
+ *  @return YES:删除成功；NO:删除失败
  */
--(BOOL) deleteConversation:(TIMConversationType)type receiver:(NSString*)receiver;
-/**
- *  删除会话和消息
- *
- *  @param type 会话类型，TIM_C2C 表示单聊 TIM_GROUP 表示群聊
- *  @param receiver    用户 identifier 或者 群组 ID
- *
- *  @return TRUE：删除成功  FALSE：删除失败
- */
--(BOOL) deleteConversationAndMessages:(TIMConversationType)type receiver:(NSString*)receiver;
+- (BOOL)deleteConversation:(TIMConversationType)type receiver:(NSString*)conversationId;
 @end
 ```
 
@@ -1536,7 +1516,7 @@ fail | 失败回调
 参数|说明
 ---|---
 type|会话类型，如果是单聊，填写 TIM_C2C，如果是群聊，填写 TIM_GROUP
-receiver|会话标识，单聊情况下，receiver 为对方用户 identifier，群聊情况下，receiver 为群组 ID
+conversationId|会话标识，单聊情况下，receiver 为对方用户 identifier，群聊情况下，receiver 为群组 ID
 
 示例中删除好友『iOS_002』的 C2C 会话。**示例：**
 
@@ -1661,23 +1641,23 @@ UI 展示最近联系人列表时，时常会展示用户的草稿内容，在2.
 ---|---
 draft | 需要设置的草稿 ，需要清空会话草稿时传入 nil
 
-### 删除本地会话消息
+### 删除会话消息
 
-IM SDK 支持保留会话同时删除本地的会话消息。**再次拉取消息时群组类型会话会从服务器重新拉取到消息**。
+IM SDK 支持删除会话的本地及漫游消息，消息删除后，无法再恢复。
 
 **原型：**
 
 ```
 @interface TIMConversation : NSObject
 /**
- *  删除本地会话消息
+ *  删除当前会话的本地及漫游消息
  *
  *  @param succ  成功时回调
  *  @param fail  失败时回调
  *
  *  @return 0 本次操作成功
  */
--(int) deleteLocalMessage:(TIMSucc)succ fail:(TIMFail)fail;
+- (int)deleteMessages:(NSArray<TIMMessage *>*)msgList succ:(TIMSucc)succ fail:(TIMFail)fail;
 @end
 ```
 
@@ -1685,6 +1665,7 @@ IM SDK 支持保留会话同时删除本地的会话消息。**再次拉取消
 
 参数|说明
 ---|---
+msgList | 需要删除的消息列表
 succ | 成功回调
 fail | 失败回调
 
@@ -1732,7 +1713,7 @@ fail | 失败回调
 
 IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `TIMConversation` 的 `revokeMessage` 接口来撤回自己发送的消息。
 
->
+>!
 > - 仅 C2C 和 GROUP 会话有效、onlineMessage 无效、AVChatRoom 和 BChatRoom 无效。
 > - 默认只能撤回 2 分钟内的消息。
 
@@ -1788,7 +1769,9 @@ IM SDK 在 3.1.0 版本开始提供撤回消息的接口。可以通过调用 `T
 
 会话类型（TIMConversationType）除了 C2C 单聊和 Group 群聊以外，还有一种系统消息，系统消息不能由用户主动发送，是系统后台在相应的事件发生时产生的通知消息。系统消息目前分为两种，一种是关系链系统消息，一种是群系统消息。
 
-- **关系链变更系统消息：**当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。
-- **群事件消息：**当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。
+- **关系链变更系统消息：**当有用户加自己为好友，或者有用户删除自己好友的情况下，系统会发出变更通知，开发者可更新好友列表。相关细节可参阅 [关系链变更系统通知](/doc/product/269/用户资料与关系链（iOS%20SDK）#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5) 部分。
 
-- **群系统消息：**当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息。
+- **群事件消息：**当群资料变更，如群名变更或者群内成员变更，在群里会有系统发出一条群事件消息，开发者可在收到消息时可选择是否展示给用户，同时可刷新群资料或者群成员。详细内容可参阅：[群组管理-群事件消息](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF)。
+
+- **群系统消息：**当被管理员踢出群组，被邀请加入群组等事件发生时，系统会给用户发出群系统消息，相关细节可参阅 [群组管理-群系统消息](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF)。
+
