@@ -50,22 +50,12 @@
 	<td>-</td>
 	</tr>
 	<tr>
-	<td align="center" style='white-space:nowrap'>专线类型</td>
-	<td>
-	<ul>
-	<li> 我的专线：使用本账号的物理专线</li>
-	<li>共享专线：使用其他账号的物理专线。共享专线并非指共享物理专线带宽，而是指共享腾讯云物理专线端口，通过 802.1q VLANs 技术隔离不同租户。</li>
-	</ul>
-	</td>
-	<td>若需使用共享专线功能，请参见 <a href="#background">背景信息</a>。然后在“基本信息”页面选择【共享专线】，配置专线提供方云账号和专线 ID 等信息。</td>
-	</tr>
-	<tr>
 	<td align="center" style='white-space:nowrap'>接入网络</td>
 	<td>支持 <a href="https://intl.cloud.tencent.com/document/product/215">私有网络</a>、黑石网络和 <a href="https://intl.cloud.tencent.com/document/product/1003">云联网网络</a></td>
 	<td>云联网：可实现一个通道连接多个 VPC 网络。</td>
 	</tr>
 	<tr>
-	<td>私有网络 / 黑石网络</td>
+	<td>align="center">私有网络 / 黑石网络</td>
 	<td>选择专用通道需要连接的网络实例 ID。</td>
 	<td>黑石网络暂只支持标准型专线网关。</td>
 	</tr>
