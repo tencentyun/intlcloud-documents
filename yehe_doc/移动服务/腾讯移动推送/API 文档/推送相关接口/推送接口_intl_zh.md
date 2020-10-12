@@ -492,7 +492,8 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
 
 > ?对于 collapse_id，有以下使用条件：
->- 暂不支持用户自定义此参数，需要 TPNS 生成的 collapse_id。<li>目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备。<li>对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截。<li>目前 OPPO 通道 vivo 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭 vivo、OPPO 通道的下发。
+>
+> - 暂不支持用户自定义此参数，需要 TPNS 生成的 collapse_id。<li>目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备。<li>对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截。<li>目前 OPPO 通道 vivo 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭 vivo、OPPO 通道的下发。
 
 <span id="channel_rules参数说明1"></span>
 
@@ -500,8 +501,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 
 | 字段名  | 类型    | 是否必填 | 注释                                                         |
 | ------- | ------- | -------- | ------------------------------------------------------------ |
-| channel | String  | 是       | 下发推送通道。<br> <li> hw:  华为通道<li> xm:  小米通道<li> mz:  魅族通道<li> vivo : vivo 通道 <li>oppo: OPPO 通道 |
-| disable | Boolean | 否       | 是否关闭 channel 中对应的通道， 默认打开通道。 <br><li>true: 关闭<li> false : 打开 |
+| channel | String  | 是       | 下发推送通道。<br> <li> hw：华为通道<li> xm：小米通道<li> mz：魅族通道<li> vivo：vivo 通道 <li>oppo：OPPO 通道<li>apns：APNs 通道 |
+| disable | Boolean | 否       | 是否关闭 channel 中对应的通道， 默认打开通道。 <br><li>true：关闭<li> false：打开 |
 
 <span id="loop_param参数说明"></span>
 

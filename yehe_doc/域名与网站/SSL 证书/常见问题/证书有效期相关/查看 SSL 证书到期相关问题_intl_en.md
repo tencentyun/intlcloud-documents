@@ -4,7 +4,7 @@ Before a certificate expires, log in to the [Tencent Cloud SSL Certificate Servi
 Alternatively, you can configure message subscriptions to receive certificate related system notifications.
 >!If message subscriptions are not configured, you will not receive certificate expiration notifications through the Message Center, email, or SMS.
 
-**Certificate expiration notification time**: 90 days before certificate expiration
+**Certificate expiration notification time**: 30 days before certificate expiration
 
 
 ### How do I receive certificate related system notifications?
