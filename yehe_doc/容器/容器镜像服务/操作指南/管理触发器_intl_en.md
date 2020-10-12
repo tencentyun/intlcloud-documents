@@ -32,7 +32,7 @@ On the "Trigger" page, you can view the list of trigger rules for the current in
 >
     - **Tag**: indicates the tag for which the trigger runs. Regex matching is supported. The rule is the same as the repository name rule. To apply the trigger to all tags, leave this parameter unspecified.
  - **URL**: indicates the destination URL for the request initiated after the trigger is fired. The trigger will initiate a POST request to the URL, and the request body will contain information such as the triggering action and trigger rule.
- - **Header**: indicates the Header information that can be carried when the trigger initiates a POST request. It supports the Key:Value format, such as `Authentication: xxxxxxx`.
+ - **Header**: indicates the Header information that can be carried when the trigger initiates a POST request. It supports the Key:Value format, such as `Authentication: xxxxxxx.`.
 3. Click **OK** to create the synchronization rule.
 
 ### Managing trigger rules
