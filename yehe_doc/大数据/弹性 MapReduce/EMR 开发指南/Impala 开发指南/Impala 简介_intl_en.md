@@ -139,9 +139,7 @@ For data stored in HDFS, run the following command to import it into the table:
 ```
 LOAD DATA INPATH '$hdfspath/impala_test.data' INTO TABLE t1;
 ```
-Here, `$hdfspath` is the path of your file in HDFS. After the import is completed, the source data file in the import path in HDFS will be deleted and then stored in the `/usr/hive/warehouse/experiments.db/t1` path of the Impala internal table.
-
-You can also create an external table by executing the following statement:
+Here, `$hdfspath` is the path of your file in HDFS. After the import is completed, the source data file in the import path in HDFS will be deleted and then stored in the `/usr/hive/warehouse/experiments.db/t1` path of the Impala internal table.You can also create an external table by executing the following statement:
 >There is only one command. If you do not enter the semicolon ";", you can put one command in multiple lines for input.
 >
 ```
@@ -190,7 +188,5 @@ The only difference is `$hs2host` and `$hsport`, where `$hs2host` is the IP of a
 
 ## How to Map HBase Tables
 
-Impala uses Hive metadata, and all tables in Hive can be read in Impala.
-
-For more information on how to map an HBase table in Impala, please see [Mapping HBase Table in Hive](https://intl.cloud.tencent.com/document/product/1026/31149).
+Impala uses Hive metadata, and all tables in Hive can be read in Impala.For more information on how to map an HBase table in Impala, please see [Mapping HBase Table in Hive](https://intl.cloud.tencent.com/document/product/1026/31149).
 
