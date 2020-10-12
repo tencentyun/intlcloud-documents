@@ -165,7 +165,7 @@ Social networking groups (Public) are similar to the interest groups and tribes 
 - V2TIM_GROUP_ADD_ANY: disable the approval process to allow any user to join the group.
 
 The following diagram illustrates the process of group joining that requires approval:
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **The user sends a request to join the group**
 The user calls [joinGroup](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) to request to join the group.
@@ -335,26 +335,10 @@ public void getGroupMemberList(long nextSeq) {
 ### Getting the profiles of group members
 To obtain the profile of a group member, call the [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#adb08e1c4fa9aff407c7b2678757f66d5) API. You can pass in multiple `userID` values at one time to obtain profiles of groups, which improves network transmission efficiency.
 
-### Modifying group name card for members
-The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) API to modify group-related information for members, including group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).
+### Modifying group member profiles
+The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupManager.html#a6f1cf8ede41348b4cd7b63b8e4caa77b) API to modify group-related information of members, including group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).
 
-```
-// Sample code: modify the group name card of the group member denny to denny-tencent 
-V2TIMGroupMemberFullInfo v2TIMGroupMemberFullInfo = new V2TIMGroupMemberFullInfo();
-v2TIMGroupMemberFullInfo.setUserID("denny");
-v2TIMGroupMemberFullInfo.setNameCard("denny-tencent");
-V2TIMManager.getGroupManager().setGroupMemberInfo(
-    groupID, v2TIMGroupMemberFullInfo, new V2TIMCallback() {
-	@Override
-	public void onError(int code, String desc) {
-		// Failed
-	}
-	@Override
-	public void onSuccess() {
-		// Successful
-	}
-});
-```
+
 
 <span id="mute"> </span>
 ### Muting
