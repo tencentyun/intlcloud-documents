@@ -6,6 +6,10 @@ The Mi push channel is a system-level push channel **officially provided by Mi**
 >- When you test message push through the Mi channel, avoid using words such as `test`; otherwise, the messages will be blocked by Mi and marked as "unimportant messages".
 
 ## Directions
+
+### Activating Mi push service
+Access **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Operation Platform** to activate the message push service for the application.
+
 ### Getting key
 Enter the [Mi open platform](https://dev.mi.com/console/appservice/push.html), sign up for a Mi developer account, and get the key of Mi Push. For more information, please see [Quick Connection Guide](https://dev.mi.com/console/doc/detail?pId=708).
 
