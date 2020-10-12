@@ -1,7 +1,12 @@
 
-Tag is a feature used in targeted push where you can call the TPNS SDK or server API to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
+Tag is used in targeted push where you can call the TPNS SDK or server API to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
 
-## Tag Push Scenarios
+## Tag Push Use Cases
+
+### User stickiness
+In app operation, it is important to often send subscribed messages to new users and improve their retention rate. To do this, you only need to use the **New Equipment** tag provided by TPNS to push messages to users signed up on a specified date.
+We also provide the **Offline Device** tag for message push to specified users who were inactive for N days to reduce customer attrition and improve user activity.
+
 ### Event subscription notification
 Your live streaming application will stream a football match at 18:00 on October 24, and the live stream will be available for reservation on October 20. You want to push a message about the upcoming start to users who subscribe to this program before the live stream starts.
 If a user subscribes to this program, the title `10241800 Football` can be used as a tag to bind to the user device token. When the live stream is about to start, you can select the `Football` tag to push a notification to inform the user of the match start. After the match ends, you can call the TPNS tag unbinding API to unbind the `10241800 Football` tag from the device token.
@@ -31,10 +36,10 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 <td> love_basketball, love_shopping, male, etc.</td>
         </tr>
         <tr>
-            <td  rowspan="9">Preset tag</td>
+            <td  rowspan="12">Preset tag</td>
             <td>Application version</td>
 						 <td>xg_auto_version</td>
-            <td rowspan="9">Preset in TPNS, unlimited</td>
+            <td rowspan="12">Preset in TPNS, unlimited</td>
 						<td>1.0.1, 1.0.2, etc.</td>
         </tr>
         <tr><!--<td>2.1</td>-->
@@ -75,10 +80,25 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 				  <td>Model</td>
 					<td>xg_auto_deviceversion</td>
 					<td>Samsung Note4, vivo Y75A, etc.</td>
+				</tr>
+						<tr><!--<td>61td>-->
+				  <td>Online duration</td>
+					<td>The API call is not supported</td>
+					<td>Devices online in the last 10 days</td>
+				</tr>		
+						<tr><!--<td>61td>-->
+				  <td>Offline duration</td>
+					<td>The API call is not supported</td>
+					<td>Devices offline in the last 10 days</td>
+				</tr>		
+						<tr><!--<td>61td>-->
+				  <td>Recently registered</td>
+					<td>The API call is not supported</td>
+					<td>Devices registered between September 1 and September 10, 2020</td>
 				</tr>							
 </table>
 
->When you push by tag through API, you need to use the `tag_type` built in TPNS to set the tag type.
+>?When you push by tag through API, you need to use the `tag_type` built in TPNS to set the tag type.
 
 ## Preparations
 ### Managing custom tag
