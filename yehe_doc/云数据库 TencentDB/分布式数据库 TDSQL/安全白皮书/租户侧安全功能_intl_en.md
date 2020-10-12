@@ -84,7 +84,7 @@ Only authorized users can log in to the system and delete metadata tables, which
 - **Banning of plugin installation by unauthorized users**
 The database service provides standard APIs for users to implement custom features, but hackers usually exploit this vulnerability to launch attacks. Therefore, only specified admin users can mount plugins.
 - **Banning of unauthorized user access to physical server file system**
-As shown in the vulnerability report, hackers often bypass the security system by means such as file selection, file injection, and path detection. Therefore, unauthorized users are blocked from accessing the directory structure and file system of the physical server.
+To prevent hackers from bypassing the security system by means such as file selection, file injection, and path detection, unauthorized users are blocked from accessing the directory structure and file system of the physical server.
 
 ## Data Termination
 When you terminate your TDSQL instance, all data (including backup data) stored in it will be destroyed. Tencent Cloud will not retain the data or actively recover your instance.
