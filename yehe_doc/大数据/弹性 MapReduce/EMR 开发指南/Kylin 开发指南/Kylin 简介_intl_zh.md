@@ -114,7 +114,7 @@ Kylin 启动后，访问 Kylin 网站，在“Advanced Setting”页，编辑名
  单击【Next】进入“Configuration Overwrites”页面，单击【+ Property】添加属性`kylin.engine.spark.rdd-partition-cut-mb`其值为500。
 ![](https://main.qcloudimg.com/raw/641edfcbcc8c63efbbc5827f70585adc.png)
 样例 cube 有两个耗尽内存的度量：COUNT DISTINCT 和 TOPN(100)。当源数据较小，它们预估的大小会比真实的大很多，导致了更多的 RDD partitions 被切分，使得 build 的速度降低。500是一个较为合理的数字。单击【Next】和【Save】保存 cube。
->对于没有 COUNT DISTINCT 和 TOPN 的 cube，请保留默认配置。
+>? 对于没有 COUNT DISTINCT 和 TOPN 的 cube，请保留默认配置。
 >
 4. 用 Spark 构建 Cube
 单击【Build】，选择当前日期为 end date。Kylin 会在“Monitor”页生成一个构建 job，第7步是 Spark cubing。Job engine 开始按照顺序执行每一步。
