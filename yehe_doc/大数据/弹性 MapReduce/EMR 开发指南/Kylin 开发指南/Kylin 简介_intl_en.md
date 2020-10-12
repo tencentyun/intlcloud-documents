@@ -45,9 +45,9 @@ Run the script to restart the Kylin server to purge the cache.
 ```
 Log in at the Kylin website with the default username and password (ADMIN/KYLIN), select the `learn_kylin` project from the project drop-down list in the top-left corner, select the sample cube named `kylin_sales_cube`, click **Actions** > **Build**, and select a date after January 1, 2014 (overwriting all 10000 sample records).
 ![](https://main.qcloudimg.com/raw/a1a6c3b4dfb1d75411480d2a17227ac8.png)
-Click the **Monitor** tab to view the building progress until 100%.
+Click the **Monitor** to view the building progress until 100%.
 ![](https://main.qcloudimg.com/raw/6af053d26b3a044d3f13dcd8bf6a511a.png)
-Click the **Insight** tab to execute SQLs; for example:
+Click the **Insight** to execute SQLs; for example:
 ![](https://main.qcloudimg.com/raw/d2bf312a8be722bbdd44318da80f54f5.png)
 ```
 select part_dt, sum(price) as total_sold, count(distinct seller_id) as sellers from kylin_sales group by part_dt order by part_dt

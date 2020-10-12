@@ -79,7 +79,7 @@ transport.open()
 
 print client.getTableNames()
 ```
->Here, $thriftIP is the IP address of the master node on the private network, and $port is the port number of ThriftService.
+>! Here, $thriftIP is the IP address of the master node on the private network, and $port is the port number of ThriftService.
 
 Save and run the file, and the table in HBase will be shown in the console:
 ```

@@ -72,7 +72,7 @@ It chooses the worker for the next block in a round-robin manner and skips worke
 It returns a worker with the specified host name. This policy cannot be set as default policy.
 
 Alluxio supports custom policies, so you can also develop your own policy appropriate for your workload by implementing interface `alluxio.client.file.policyFileWriteLocationPolicy`.
->The default policy must have an empty constructor. To use the ASYNC_THROUGH write type, all the blocks of a file must be written to the same worker.
+>!The default policy must have an empty constructor. To use the ASYNC_THROUGH write type, all the blocks of a file must be written to the same worker.
 
 Alluxio allows a client to select a tier preference when writing blocks to a local worker. Currently, this policy preference exists only for local workers but not remote workers; remote workers will write blocks to the highest tier.
 

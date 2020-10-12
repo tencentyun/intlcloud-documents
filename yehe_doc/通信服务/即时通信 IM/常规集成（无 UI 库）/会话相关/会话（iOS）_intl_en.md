@@ -12,7 +12,7 @@ The number of local conversations may be large, even more than 500. Therefore, i
  - If the returned value of `isFinished` is `false`, more conversations can be pulled. This does not mean that the next page of the conversation list will be pulled immediately. In common communications software, pulling by page is often triggered when the user swipes. Each time the user swipes on the conversation list, pulling by page is triggered once.
 <span id="get_step3"></span>
 3. If the user continues to pull down the conversation list and the conversation list has content yet to be pulled, the SDK continues to call the [getConversationList()](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#af94d9d44e90da448a395e6d92b4e512e) API and passes in the `nextSeq` and `count` parameters again. The values of the two parameters come from the [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a7ff14d2973291fdac42592bfc57369f5) object returned in the previous pull.
-5. The IM SDK repeats [step 3](#get_step3) until the returned value of `isFinished` is `true`.
+4. The IM SDK repeats [step 3](#get_step3) until the returned value of `isFinished` is `true`.
 
 ### Displaying the conversation information
 After obtaining the [V2TIMConversation](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html) object, the IM SDK displays the conversation information on the UI. `V2TIMConversation` contains the following key fields, which are often used to construct the conversation list.
@@ -31,7 +31,7 @@ After login is successful, the user goes online, or the connection is re-establi
 - When any conversation is updated, such as when a new message is received, the SDK will notify you by using the [onConversationChanged](http://doc.qcloudtrtc.com/im/protocolV2TIMConversationListener-p.html#a371039feea8aa04047bd3ebcf8d12931) event in `V2TIMConversationListener`.
 - When any conversation is added, the SDK will notify you by using the [onNewConversation](http://doc.qcloudtrtc.com/im/protocolV2TIMConversationListener-p.html#a33ddb9c261e10426b0e257be93e5fc19) event in `V2TIMConversationListener`.
 
-> To ensure that the order of the conversation list complies with the sequencing principle specified in the last message, the data source must be re-sequenced based on [timestamp](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html#ae250d327c18ffaff77fa22fec3119e0f) in [lastMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a63f0969319d4f1638e395bb2a781587b).
+>! To ensure that the order of the conversation list complies with the sequencing principle specified in the last message, the data source must be re-sequenced based on [timestamp](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html#ae250d327c18ffaff77fa22fec3119e0f) in [lastMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a63f0969319d4f1638e395bb2a781587b).
 
 ### Sample code
 The sample code shows how to pull, display, and update the conversation list.
@@ -105,13 +105,13 @@ The sample code shows how to pull, display, and update the conversation list.
 ```
 
 ## Deleting a Conversation
-You can call the [deleteConversation](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a142f5289632f29a603937f1d770748c6) API to delete a conversation. This operation cannot be synchronized across multiple devices. When a conversation is deleted, the local historical messages of this conversation are deleted by default.
-> Only the local historical messages can be deleted. The historical messages in the cloud cannot be deleted. If a deleted conversation is reactivated, historical messages of this conversation can still be pulled from the cloud.
+You can call the [deleteConversation](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a142f5289632f29a603937f1d770748c6) API to delete a conversation. This operation cannot be synchronized across multiple devices. When a conversation is deleted, its local history and messages on the server will also be deleted by default, which are unrecoverable.
+
 
 ## Drafts
 When sending a message, the user may need to switch to another chat window before message editing is completed. In this case, call the [setConversationDraft](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Conversation_08.html#a462cd163c03cdce230ed3647b414382b) API to save the unfinished message. Later, the user can return to the original chat window and call [draftText](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a6b2c25f269b30a487761b305f069952f) to continue editing the message.
 
->
+>!
 >- Only text content can be stored in drafts.
 >- Drafts are stored only locally, instead of on the server. Therefore, drafts cannot be synchronized across multiple devices. If the program is reinstalled, drafts cannot be reloaded.
 

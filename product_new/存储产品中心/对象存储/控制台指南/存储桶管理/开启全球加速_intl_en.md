@@ -5,10 +5,9 @@ You can enable global acceleration for your bucket through the COS console. It a
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left navigation bar, and select the bucket for which you want to configure global acceleration to enter the bucket details page.
-![Bucket list page](https://main.qcloudimg.com/raw/01045b0ada6a9c72b55bf090d14fc193.png)
-2. Click **Advanced Configuration** on the left to enter the advanced configuration page of the bucket, scroll down to **Global Acceleration** and click **Edit**.
+2. Go to **Domain and transmission management** > **Global Acceleration**, and click **Edit** to toggle **Status** on.
 ![](https://main.qcloudimg.com/raw/e26fe8fd79c9bbc0d0ad1f9fe9088169.png)
-3. Click "Enable" and save the change to enable global acceleration for the bucket.
+3. Click **Save**.
 ![](https://main.qcloudimg.com/raw/1c6a7197c77a1555a91ad83fd29c8264.png)
 4. After enabling global acceleration, you can quickly access the bucket using a global acceleration domain name in the format of `<BucketName-APPID>.cos.accelerate.myqcloud.com`.
 >Enabling global acceleration will not affect the existing default bucket domain name. You can still use them.

@@ -7,8 +7,7 @@ COS can monitor your stored data. The COS data monitoring window displays data r
 ## Querying with a root account
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
-2. Find the bucket whose statistics you want to view and click <img src="https://main.qcloudimg.com/raw/c288d6a69541eeeb393bc9beeef39851.png"  style="margin:0;"> in the Monitoring column as shown below:
-![](https://main.qcloudimg.com/raw/9c4319d2a97c46b568bd37e75bffc09b.png)
+2. Locate the bucket for which you want to view statistics, and click **Monitor** under **Operation**.
 3. Open the data monitoring page as shown below. The different monitoring categories are as follows:
  - Storage: queries the storage usage in different storage classes.
  - Number of Objects: is the total number of objects in the bucket, including incomplete multipart uploads. 

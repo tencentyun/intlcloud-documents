@@ -10,7 +10,7 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the Bucket List page. Click the bucket for which you want to configure origin-pull to enter the bucket details page.
-2. Select **Basic Configurations** > **CORS (Cross-Origin Resource Sharing) Setting** on the left sidebar, and click **Add a Rule**.
+2. Go to **Basic Configurations** > **Origin-pull Configurations**, and click **Add origin-pull rule**.
 ![](https://main.qcloudimg.com/raw/69fc0f3042e59c3e9c2667d06aa068fa.png)
 3. Configure the following and click **OK**.
  - **Origin-pull condition**: specifies all conditions as needed that must be met at the same time for triggering origin-pull.
@@ -38,7 +38,7 @@ You can configure a specific origin-pull address using the following fields:
      >- If you select “Fixed file”, the other fields cannot be used by default.
      >- “Specified prefix” and “Specified suffix” can be used at the same time.
  
-     
+ - **Sync back-to-source**: once enabled, COS will not return 3XX status code when pulling data from an origin server. This option is currently only available for buckets in Beijing, Shanghai, Singapore, and Mumbai regions.    
  - **3xx Following Policy**: if this policy is enabled, when your origin server returns a 3XX redirect, COS will follow it by default to another origin server to pull data from.
  - **Origin-Pull Parameter**: specifies whether to pass through COS request parameters when accessing the origin server.
  - **Origin-pull header**: specifies the custom headers that you can add for COS to access your origin server. Currently, up to 10 of them can be added. 

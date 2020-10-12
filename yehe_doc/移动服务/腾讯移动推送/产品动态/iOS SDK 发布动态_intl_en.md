@@ -1,3 +1,19 @@
+## September 2020
+
+<table>
+<tr>
+    <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+    <tr>
+        <td>The SDK 1.2.8.0 is released</td>
+        <td><li>The user attribute API is added for personalized delivery</li><li>The in-app message feature is now supported, with several in-app message templates provided</li><li>The known issues have been fixed </li></td>
+        <td>September 27, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+
+
 ## July 2020
 
 <table>
@@ -11,7 +27,7 @@
         <td>The SDK v1.2.7.2 is released</td>
         <td><li> The custom event reporting feature is added</li><li>The success rate of "arrival" statistics reporting is improved</li><li>Known issues are fixed</li></td>
         <td>July 23, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li></td>
+        <td>-</a></li></td>
     </tr>        
 </table>
 

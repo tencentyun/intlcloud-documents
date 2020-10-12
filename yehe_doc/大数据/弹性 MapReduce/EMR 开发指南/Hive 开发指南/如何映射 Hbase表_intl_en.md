@@ -1,9 +1,9 @@
 You can use Hive to map HBase tables. By doing so, you can read data in HBase with Hive and run Hive-SQL statements to perform operations such as query and insertion on HBase tables.
-## 1.	Preparations for Development
+##  Preparations for Development
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Hive and HBase components on the software configuration page. 
 - Hive and its dependencies are installed under the EMR cluster directory `/usr/local/service/`
 
-## 2.	Creating an HBase Table 
+##  Creating an HBase Table 
 First, you need to log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instances](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in with WebShell. Click "Log in" on the right of the desired CVM instance to enter the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can enter the command line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user and go to the HBase folder to enter HBase Shell:
@@ -35,7 +35,7 @@ row2   column=cf:b, timestamp=1530276777806, value=value2
 row3   column=cf:c, timestamp=1530276792839, value=value3   
 3 row(s) in 0.2110 seconds
 ```
-## 3.	Mapping a Hive Table
+##  Mapping a Hive Table
 Switch to the Hive folder and connect to Hive:
 ```
 [hadoop@172 hive]$ cd /usr/local/service/hive/

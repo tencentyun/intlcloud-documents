@@ -153,7 +153,7 @@ Social networking groups (Public) are similar to the interest groups and tribes 
 - V2TIM_GROUP_ADD_ANY: disable the approval process to allow any user to join the group.
 
 The following diagram illustrates the process of group joining that requires approval:
-![](https://main.qcloudimg.com/raw/8b0de43bea607a6a75571c1885ca75aa.svg)
+![](https://main.qcloudimg.com/raw/9164de02268e14b178937bbd85465f4f.png)
 
 1. **The user sends a request to join the group**
     The user calls [joinGroup](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a4762156b7a98489eb4715de53028e12a) to apply to join the group.
@@ -297,20 +297,10 @@ succ:^(uint64_t nextSeq, NSArray<V2TIMGroupMemberInfo *> *memberList) {
 ### Getting the profiles of group members
 Call [getGroupMembersInfo](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a1ab284b80811bcc697d689d7b97edf04) to get the profiles of group members in batches. You can pass in multiple `userID` at a time to improve network transmission efficiency.
 
-### Modifying group name card for members
-The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a40b97ee4b138f93e1b2073d1bdff3756) API to modify group-related information for members, including group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).
+### Modifying group member profiles
+The group owner or admin can call the [setGroupMemberInfo](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Group_08.html#a40b97ee4b138f93e1b2073d1bdff3756) API to modify group-related information of members, including group name card (`nameCard`), group member role (`role`), and muting duration (`muteUntil`).
 
-```
-// Sample code: modify the group name card of the group member denny to denny-tencent 
-V2TIMGroupMemberFullInfo *memberInfo = [[V2TIMGroupMemberFullInfo alloc] init];
-memberInfo.userID = @"denny";
-memberInfo.nameCard = @"denny-tencent";
-[[V2TIMManager sharedInstance] setGroupMemberInfo:groupID info:memberInfo succ:^{
-    // Configured successfully
-} fail:^(int code, NSString *msg) {
-    // Failed to configure
-}];
-```
+
 
 <span id="mute"> </span>
 ### Muting
