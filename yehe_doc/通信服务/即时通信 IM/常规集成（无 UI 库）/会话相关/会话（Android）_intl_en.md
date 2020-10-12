@@ -4,7 +4,7 @@ After the user logs in to the app, the app can display a list of recent conversi
 
 
 ### Pulling the conversation list
-After logging in to the app, you can call [getConversationList()](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) to pull the local conversation list and display the list on the UI. The conversation list is a list of [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) objects, and every object represents a conversation.
+After logging in to the app, you can call [getConversationList()](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) to pull the local conversation list and display the list on the UI. The conversation list is a list of [V2TIMConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) objects, and every object represents a conversation.
 
 The number of local conversations may be large, even more than 500. Therefore, it may take a long time to load all conversations at once, which results in the slow display of the list on the UI. To improve the user experience, we provide the `getConversationList()` API to support pulling by page.
 1. When the `getConversationList()` API is called for the first time, you can set the `nextSeq` parameter to 0, indicating that the conversation list is pulled from the beginning, and set `count` to 50, indicating that 50 conversation objects are pulled at a time.
@@ -12,7 +12,7 @@ The number of local conversations may be large, even more than 500. Therefore, i
  - If the returned value of `isFinished` is `true`, all conversations have been pulled.
  - If the returned value of `isFinished` is `false`, more conversations can be pulled. This does not mean that the next page of the conversation list will be pulled immediately. In common communications software, pulling by page is often triggered when the user swipes. Each time the user swipes on the conversation list, pulling by page is triggered once.
 <span id="get_step3"></span>
-3. When the user continues to pull down the conversation list, and the conversation list has content yet to be pulled, the user can continue to call the [getConversationList](https://docs-1252463788.cos.ap-shanghai.myqcloud.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) API and passes in the `nextSeq` and `count` parameters again. The values of the two parameters come from the [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html) object returned in the previous pull operation.
+3. When the user continues to pull down the conversation list, and the conversation list has content yet to be pulled, the user can continue to call the [getConversationList](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) API and passes in the `nextSeq` and `count` parameters again. The values of the two parameters come from the [V2TIMConversationResult](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html) object returned in the previous pull operation.
 5. The IM SDK repeats [step 3](#get_step3) until the returned value of [isFinished](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationResult.html#a3e7d1138f146a8f19c15d0f5d81f6448) is `true`.
 
 ### Displaying the conversation information
@@ -32,7 +32,7 @@ After login is successful, the user goes online, or the connection is re-establi
 - When any conversation is updated, such as when a new message is received, the SDK will notify you by using the [onConversationChanged](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#a4ca1b0c3ec948d9cb76acd6022a1ebf9) event in `V2TIMConversationListener`.
 - When any conversation is added, the SDK will notify you by using the [onNewConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationListener.html#ab213c51c45045665dde1542c276e2530) event in `V2TIMConversationListener`.
 
-> To ensure that the order of the conversation list complies with the sequencing principle specified in the last message, the data source must be re-sequenced based on [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) in [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520).
+>!To ensure that the order of the conversation list complies with the sequencing principle specified in the last message, the data source must be re-sequenced based on [getTimestamp](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html#aa5fc8709c93d77e6978075466a4e819a) in [getLastMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ad3a7004f1c2bd06831720a38d4209520).
 
 ### Sample code
 The sample code shows how to pull, display, and update the conversation list.
@@ -115,14 +115,14 @@ private void updateConversation(List<V2TIMConversation> convList, boolean needSo
 ```
 
 ## Deleting a Conversation
-You can call the [deleteConversation](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/v2tmp/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae5850472b32de16f3d38ab232d621b66) API to delete a conversation. This operation cannot be synchronized across multiple devices. When a conversation is deleted, the local historical messages of this conversation are deleted by default.
-> Only the local historical messages can be deleted. The historical messages in the cloud cannot be deleted. If a deleted conversation is reactivated, historical messages of this conversation can still be pulled from the cloud.
+You can call the [deleteConversation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a7a6e38c5a7431646bd4c0c4c66279077) API to delete a conversation. This operation cannot be synchronized across multiple devices. When a conversation is deleted, its local history and messages on the server will also be deleted by default, which are unrecoverable.
+
 
 
 ## Drafts
 When sending a message, the user may need to switch to another chat window before message editing is completed. In this case, call the [setConversationDraft](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#ae7f2f52bf375dae69368eae42edb28ab) API to save the unfinished message. Later, the user can return to the original chat window and call [getDraftText](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a56ac45415e28fe634dfdb1e0aaeea805) to continue editing the message.
 
->
+>!
 >- Only text content can be stored in drafts.
 >- Drafts are stored only locally, instead of on the server. Therefore, drafts cannot be synchronized across multiple devices. If the program is reinstalled, drafts cannot be reloaded.
 
