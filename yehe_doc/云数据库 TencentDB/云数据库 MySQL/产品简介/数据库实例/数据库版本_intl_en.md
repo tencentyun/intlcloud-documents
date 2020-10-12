@@ -23,6 +23,7 @@ Currently, TencentDB for MySQL supports MySQL v8.0, v5.7, v5.6, and v5.5. For mo
 - TencentDB for MySQL provides a complete set of easy-to-use database management services, including monitoring, backup, rollback, encryption, auto scaling, auditing, and intelligent diagnosis and optimization, allowing you to focus more on business development.
 - A TencentDB for MySQL instance can handle 500,000+ QPS. TencentDB for MySQL greatly simplifies business development, database OPS, and business architecture, making it easy for you to manage databases.
 - TencentDB for MySQL Basic Edition, High-Availability Edition, and Finance Edition are supported.
+- The high-performance analysis engine CStore is supported. CStore is a high-performance columnar storage engine, supporting millions of real-time writes per second and real-time queries in any dimension of tens of billions of data in milliseconds. To apply for CStore, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Feature Comparison between TencentDB for MySQL v8.0 and Oracle MySQL v8.0
 
