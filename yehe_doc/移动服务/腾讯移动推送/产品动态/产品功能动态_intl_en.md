@@ -1,3 +1,30 @@
+## September 2020
+
+<table>
+<thead>
+    <tr>
+        <th width=20%>Update</th>
+        <th width=44%>Description</th>
+        <th width=16%>Release Date</th>
+        <th width=20%>Documentation</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>The troubleshooting tool now supports token query by account.</td>
+<td>The token can be searched by account, making troubleshooting easier and faster</td>
+<td>September 28, 2020</td>
+<td><a href="https://cloud.tencent.com/document/product/548/48774">Troubleshooting Tool</a></td>
+</tr>
+<tr>
+<td>Custom tags now contain New, Online and Offline tags</td>
+<td>You can customize New, Online and Offline tags to quickly activate and retain target users and easily improve user activity</td>
+<td>September 24, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/35392">Tagging Feature</a></td>
+</tr>
+
+</tbody></table>
+
 ## August 2020
 <table>
 <thead>
@@ -13,7 +40,7 @@
 <td>The <B>grouping and collapsing</B> feature is added</td>
 <td>The <B>grouping and collapsing</B> feature is added to control whether the notification is collapsed in the notification center and its collapsing methods</td>
 <td>August 11, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1024/37807">Message Collapsing</a></td>
+<td>Message Collapsing</td>
 </tr>
 <tr>
 <td>The Android channel policy is optimized</td>
@@ -52,7 +79,7 @@
 <td>Rich media notification is upgraded</td>
 <td>The rich media notification feature is upgraded to support images in notifications for an improved click rate (for the Huawei and Mi channels).</td>
 <td>July 30, 2020</td>
-<td><a href="https://cloud.tencent.com/document/product/548/46964 ">Rich Media Notification</a></td>
+<td>Rich Media Notification</td>
 </tr>
 
 <tr>
