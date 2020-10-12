@@ -23,17 +23,20 @@ The table below shows COS [billable items](https://intl.cloud.tencent.com/docume
       <th>Available Free Tier</th>
    </tr>
    <tr>
-      <td rowspan="3">Storage Usage Fees</td>
+      <td rowspan="4">Storage Usage Fees</td>
       <td>STANDARD storage usage</td>
       <td>Yes</td>
    </tr>
    <tr>
       <td>STANDARD_IA storage usage</td>
-      <td rowspan="6">No<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/33776">Billable Items</a></td>
+      <td rowspan="7">No<br>For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/33776">Billable Items</a></td>
    </tr>
    <tr>
       <td>Archive storage usage</td>
    </tr>
+   </tr>
+   <tr>
+      <td>DEEP ARCHIVE storage usage</td>	
    <tr>
       <td>Request Fees</td>
       <td>Number of requests</td>
@@ -55,9 +58,9 @@ The table below shows COS [billable items](https://intl.cloud.tencent.com/docume
 
 
 
-## Issuance method
+## Access and Query
+You receive the benefits of COS free tier in the format of storage pack automatically after you sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and activate COS service in the [console](https://console.cloud.tencent.com/cos5). 
 
-Once you sign up for [Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985), and activate COS service using the [COS Console](https://console.cloud.tencent.com/cos5), the free tier will be automatically activated as a free storage pack on your account.
 
 ## Validity Period
 
@@ -71,7 +74,7 @@ For example, if you activated COS at 17:13:14 on March 10, 2019, and assume that
 During the free tier term, you may be charged other fees you incur, such as request, traffic and other basic fees. Therefore, the billing sequence varies for your billing settlement depending on the scenario.
 
 - By default, COS bills are settled in a pay-as-you-go manner.
-- If you are eligible for the free tier, then your bills are settled in the order of **free tier** > **pay-as-you-go**. That is, you are charged in a pay-as-you-go manner only for the part exceeding the free tier.
+- If you are eligible for the free tier for STANDARD storage usage, and have no storage pack available, you are charged in a pay-as-you-go manner only for the usage exceeding the free tier.
 
 
 ## Example
