@@ -39,7 +39,7 @@ Download the IM SDK based on the platform you use. For more information about ho
 	<tr>      
 		<td align="center">Windows</td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'windows'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
-		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'windows'})" href="https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/Windows">Github</a></td>
+		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'windows'})" href="https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/Windows">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'windows'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/cross-platform/Windows">Gitee</a></td>
 		<td align="center">-</td>
 		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34310">DOC</a></td>
@@ -64,8 +64,8 @@ Download the IM SDK based on the platform you use. For more information about ho
 
 ## Lite Edition
 >?
->- The Lite Edition removed the friend list and conversation list capabilities found in the Standard Edition and optimized some business logic to improve execution efficiency and reduce the increase in installation package size.
->- Compared with the Standard Edition, the Lite Edition reduced the SDK volume and installation package size by a factor of three to four. If your app does not require friend list and conversation list capabilities and you are sensitive to the increase in installation package size, we recommend that you choose the Lite Edition.
+>- The Lite Edition removed the friend list and conversation list capabilities found in the Standard Edition and optimized some business logic to improve the execution efficiency and reduce the increase in the installation package size.
+>- Compared with the Standard Edition, the Lite Edition reduced the SDK volume and installation package size by a factor of three to four. If your app does not require the friend list and conversation list capabilities and you are sensitive to the increase in the installation package size, we recommend that you choose the Lite Edition.
 <table>
 	<tr>
 		<th align="center">Platform</th>  
@@ -77,14 +77,14 @@ Download the IM SDK based on the platform you use. For more information about ho
 	<tr>      
 		<td align="center">Android</td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'smart_android'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
-		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'smart_android'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
+		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'smart_android'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'smart_android'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android">Gitee</a></td>
 		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34306">DOC</a></td>
 	</tr> 
 	<tr>      
 		<td align="center">iOS</td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkDownload',{'platform':'smart_ios'})" href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
-		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'smart_ios'})" href="https://github.com/tencentyun/TIMSDK/">Github</a></td>
+		<td align="center"><a onclick="MtaH5.clickStat('sdkgithub',{'platform':'smart_ios'})" href="https://github.com/tencentyun/TIMSDK/">GitHub</a></td>
 		<td align="center"><a onclick="MtaH5.clickStat('sdkgitee',{'platform':'smart_ios'})" href="https://gitee.com/cloudtencent/TIMSDK/tree/master/iOS">Gitee</a></td>
 		<td align="center"><a href="https://intl.cloud.tencent.com/document/product/1047/34307">DOC</a></td>
 	</tr> 
@@ -103,10 +103,10 @@ Download the IM SDK based on the platform you use. For more information about ho
   	})();
 </script>
 
-## Differences Between Standard Edition and Lite Edition
-The Lite Edition supports two platforms, Android and iOS. In the future, it will also support Windows and Mac. The following section uses the differences between Android and iOS SDKs to show the differences between the Standard Edition and Lite Edition.
+## Differences Between the Standard Edition and the Lite Edition
+The Lite Edition currently supports two platforms: Android and iOS. In the future, it will also support Windows and Mac. The following section describes the differences between the Android and iOS SDKs to highlight the differences between the Standard Edition and Lite Edition.
 
-### Comparison of SDK volume
+### Comparison of the SDK volumes
 <table>
   <tr>
     <th width="100px" style="text-align:center">Platform</th>
@@ -128,7 +128,7 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
   </tr>
 </table>
 
-### Comparison of app size increment
+### Comparison of the app size increments
 <table>
   <tr>
     <th width="100px" style="text-align:center">Platform</th>
@@ -155,7 +155,7 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
   </tr>
 </table>
 
-### Comparison of feature differences
+### Comparison of the feature differences
 <table>
   <tr>
     <th width="100px" style="text-align:center">Module</th>
@@ -165,7 +165,7 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
   </tr>
   <tr>
     <td rowspan='2' style="text-align:center;">Profile</td>
-    <td style="text-align:center">Modifying own profile</td>
+    <td style="text-align:center">Modifying your own profile</td>
     <td style="text-align:center">&#10003</td>
     <td style="text-align:center">&#10003</td>
   </tr>
@@ -208,7 +208,7 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
     <td style="text-align:center">&#10003</td>
   </tr>
   <tr>
-    <td style="text-align:center">Message read and receipt</td>
+    <td style="text-align:center">Message read receipts</td>
     <td style="text-align:center">&#10003</td>
     <td style="text-align:center">&#10003</td>
   </tr>
@@ -229,7 +229,7 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
   </tr>
   <tr>
     <td rowspan='1' style="text-align:center">Signaling</td>
-    <td style="text-align:center">Signaling sending and response</td>
+    <td style="text-align:center">Sending signals and signaling responses</td>
     <td style="text-align:center">&#10003</td>
     <td style="text-align:center">&#10003</td>
   </tr>
@@ -296,12 +296,12 @@ The Lite Edition supports two platforms, Android and iOS. In the future, it will
 <span ID = "notes"></span>
 ## Solutions
 
-| Category | Platform | Github Download Address | ZIP Download Address | Integration Guide |
+| Category | Platform | GitHub Download Address | ZIP Download Address | Integration Guide |
 | ---------- | ---------- | ------------------------------------- |-| -------------- |
-| Livestreaming e-commerce | WeChat Mini Program | [Github](https://github.com/tencentyun/TencentIMDemos) |[ZIP](https://im-demos-1256635546.cos.ap-guangzhou.myqcloud.com/TencentIMDemos-master.zip) | [Scene Practice > Mini Program Livestream Marketing](https://intl.cloud.tencent.com/document/product/1047/36403) |
-| Livestreaming interaction | H5 and Web | [Github](https://github.com/tencentyun/TWebLive) | [ZIP](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/TWebLive-demo.zip?_ga=1.23181178.1931537.1590743323) | [Scene Practice > WeChat HTML5 Livestreaming Interaction](https://intl.cloud.tencent.com/document/product/1047/36404) |
+| Live e-commerce broadcasting | WeChat Mini Program | [GitHub](https://github.com/tencentyun/TencentIMDemos) |[ZIP](https://im-demos-1256635546.cos.ap-guangzhou.myqcloud.com/TencentIMDemos-master.zip) | [Scenario-based Practices > Mini Program Livestream Marketing](https://intl.cloud.tencent.com/document/product/1047/36403) |
+| Interactive livestreaming | H5 and Web | [GitHub](https://github.com/tencentyun/TWebLive) | [ZIP](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/TWebLive-demo.zip?_ga=1.23181178.1931537.1590743323) | [Scenario-based Practices > WeChat HTML5 Interactive Livestreaming](https://intl.cloud.tencent.com/document/product/1047/36404) |
 
-## Reference
+## Related Documentation
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
 
 

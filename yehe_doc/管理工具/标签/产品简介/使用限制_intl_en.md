@@ -1,3 +1,9 @@
+## Use Restrictions
+● Each resource supports up to 50 tag keys.
+● Each user can create up to 1,000 tag keys.
+● Each tag key can have up to 1,000 tag values.
+
+## Naming Convention
 <table>
 <tr>
 <th >Item</th>

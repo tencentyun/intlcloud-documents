@@ -10,6 +10,7 @@
 
 
 
+
 ##  前提条件
 已登录 [云直播控制台](https://console.cloud.tencent.com/live/livestat)，并添加 [推流/播放域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
@@ -34,7 +35,7 @@
 <h2 id="push">生成推流地址</h2>
 
 ### 操作步骤
-1. 登录云直播控制台，选择【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
+1. 登录云直播控制台，选择[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
 2. 选择生成类型为**推流域名**，并选择您已添加到域名管理的推流域名。
 3. 填写 AppName，默认值为：live。
 4. 填写流名称 StreamName，例如：`liveteststream`。
@@ -50,7 +51,7 @@
 <h2 id="play">生成播放地址</h2>
 
 ### 操作步骤
-1. 登录云直播控制台，选择【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
+1. 登录云直播控制台，选择[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)，进入地址生成器。
 2. 选择生成类型为**播放域名**，并选择您已添加到域名管理的播放域名。
 3. 填写 AppName，默认值为：live。
 4. 填写流名称 StreamName，例如：`liveteststream`。

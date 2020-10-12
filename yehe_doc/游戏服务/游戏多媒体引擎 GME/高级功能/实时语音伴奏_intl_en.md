@@ -14,9 +14,9 @@ This document describes the GME APIs for accompaniment in voice chat so that dev
 |SetAccompanyFileCurrentPlayedTimeByMs | Sets the playback progress. |
 
 
->?To use accompaniment in voice chat, it is required to integrate the GME SDK and enable real-time voice chat.
+>?To use accompaniment in voice chat, you must integrate the GME SDK and enable real-time voice chat.
 >
-### How to use
+### How to call the APIs for social networking apps
 
 The diagram below shows how to call the APIs for social networking apps:
 ![](https://main.qcloudimg.com/raw/cdcd069530545ed560f99985b15edcc9.png)
@@ -24,7 +24,7 @@ The diagram below shows how to call the APIs for social networking apps:
 
 ### How to use with EnableAudioCaputreDevice
 
-After you enter a voice chat room, call `EnableAudioCaputreDevice` to enable the capturing device, and `StartAccompany` to play back the accompaniment. To capture human voice via microphone, you should call `EnableAudioSend` to enable microphone first.
+After you enter a voice chat room, call `EnableAudioCaputreDevice` to enable the capturing device, and call `StartAccompany` to play back the accompaniment. To capture human voices via the microphone, you should call `EnableAudioSend` to enable the microphone first.
 
 ### Starting playing back the accompaniment
 
@@ -40,7 +40,7 @@ ITMGAudioEffectCtrl virtual int StartAccompany(const char* filePath, bool loopBa
 | --------- | :----: | ------------------------------------------------------- |
 | filePath  | char\* | Path of the accompaniment file.                                        |
 | loopBack | bool | Indicates whether to output the accompaniment in a mixing mode. This is generally set to `true`, indicating that the audience can also hear the accompaniment. |
-| loopCount | int | Indicates the number of loops. Value `-1` means an infinite loop. |
+| loopCount | int | Indicates the number of loops. The value `-1` means an infinite loop. |
 | msTime    |  int   | Delay time                                              |
 
 #### Sample code  
@@ -54,11 +54,11 @@ ITMGContext.GetInstance(this).GetAudioEffectCtrl().StartAccompany(filePath,true,
 [[[ITMGContext GetInstance] GetAudioEffectCtrl] StartAccompany:path loopBack:isLoopBack loopCount:loopCount msTime:0];
 ```
 
-### Starting playing back the accompaniment being downloaded
+### Starting the playback of the accompaniment being downloaded
 
 This API (StartAccompanyDownloading) is used to start playing back the accompaniment that is being downloaded.
-When you are downloading accompaniment using code, you can pass the path of your accompaniment file as a parameter to `StartAccompanyDownloading`, which plays back the accompaniment as it is downloaded. `fileSize` is the estimated size of the complete file.
-To pass a file being downloaded into this API, please make sure that the file is at least 10,000 KB large.
+When you are downloading the accompaniment using code, you can pass the path of your accompaniment file as a parameter to `StartAccompanyDownloading`, which plays back the accompaniment as it is downloaded. `fileSize` is the estimated size of the complete file.
+To pass a file being downloaded into this API, please make sure that the file size is at least 10,000 KB.
 
 #### Function prototype  
 
@@ -66,14 +66,14 @@ To pass a file being downloaded into this API, please make sure that the file is
 ITMGAudioEffectCtrl virtual int StartAccompany(const char* filePath, bool loopBack, int loopCount, int msTime, int fileSize) 
 ```
 
->?For iOS client, you need to do the following:
+>?For the iOS client, follow the steps below:
 
-1. To use this feature on iOS, you need to [download the mp3 library](https://picture-1256313114.cos.ap-beijing.myqcloud.com/mp3_codec.zip?_ga =1.162366908.1422691217.1594629603), and import it into your project.
+1. To use this feature on iOS, you need to [download the mp3 library](https://picture-1256313114.cos.ap-beijing.myqcloud.com/mp3_codec.zip?_ga =1.162366908.1422691217.1594629603) and import it into your project.
 2. Import the downloaded library and add it through “Link Binary With Libraries”.
-3. Add the header file “TMGEngine_adv.h” to the same directory as other SDK header files in your project.
+3. Add the header file “TMGEngine_adv.h” to the same directory as the other SDK header files in your project.
 
 
-### Callback for accompaniment playback
+### Callback for the accompaniment playback
 
 After the accompaniment is over, call the function `OnEvent`, and the event message ITMG_MAIN_EVENT_TYPE_ACCOMPANY_FINISH will be returned.
 The returned parameter `data` includes “result” and “file_path”.
@@ -98,7 +98,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 }
 ```
 
-### Stop playing back the accompaniment
+### Stopping the accompaniment playback
 
 This API (StopAccompany) is used to stop playing back the accompaniment.
 
@@ -135,7 +135,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->IsAccompanyPlayEnd();
 ```
 
 
-### Pause playing back the accompaniment
+### Pausing the accompaniment playback
 
 This API (PauseAccompany) is used to pause the accompaniment playback.
 
@@ -154,9 +154,9 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->PauseAccompany();
 ```
 
 
-### Resuming playing back the accompaniment
+### Resuming the accompaniment playback
 
-This API (ResumeAccompany) is used to resume playing back the accompaniment.
+This API (ResumeAccompany) is used to resume the accompaniment playback.
 
 #### Function prototype  
 
@@ -174,7 +174,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->ResumeAccompany();
 
 ### Specifying whether the speaker can hear the accompaniment
 
-This API is used to specify whether the speaker him- or herself can hear the accompaniment.
+This API is used to specify whether the speaker can hear the accompaniment.
 
 #### Function prototype  
 
@@ -185,7 +185,7 @@ ITMGAudioEffectCtrl virtual int EnableAccompanyPlay(bool enable)
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------ |
-| enable | bool | Indicates whether the audience can hear the accompaniment |
+| enable | bool | Indicates whether the audience can hear the accompaniment. |
 
 #### Sample code  
 
@@ -207,7 +207,7 @@ ITMGAudioEffectCtrl virtual int EnableAccompanyLoopBack(bool enable)
 
 | Parameter | Type | Description |
 | ------ | :--: | ------------ |
-| enable | bool | Indicates whether the audience can hear the accompaniment |
+| enable | bool | Indicates whether the audience can hear the accompaniment. |
 
 #### Sample code  
 
@@ -218,7 +218,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->EnableAccompanyLoopBack(false);
 
 ### Setting the accompaniment volume
 
-This API (SetAccompanyVolume) is used to set the accompaniment volume. Value range: 0 - 200. Default is 100. A value greater than 100 means volume up, otherwise volume down.
+This API (SetAccompanyVolume) is used to set the accompaniment volume. Value range: 0 - 200. The default value is 100. A value greater than 100 means volume up, while a value less than 100 means volume down.
 
 #### Function prototype  
 
@@ -229,7 +229,7 @@ ITMGAudioEffectCtrl virtual int SetAccompanyVolume(int vol)
 
 | Parameter | Type | Description |
 | ---- | :--: | ---------- |
-| vol    |int             | Specifies the volume value |
+| vol    |int             | Specifies the volume value. |
 
 #### Sample code  
 
@@ -303,7 +303,7 @@ ITMGContextGetInstance()->GetAudioEffectCtrl()->SetAccompanyFileCurrentPlayedTim
 
 ### Setting the accompaniment key
 
-This API (SetAccompanyKey) is used to specify the accompaniment key, and should be called before starting playing back the accompaniment.
+This API (SetAccompanyKey) is used to specify the accompaniment key, and should be called before starting the accompaniment playback.
 
 #### Function prototype  
 
@@ -314,7 +314,7 @@ ITMGAudioEffectCtrl virtual int SetAccompanyKey(int nKey)
 
 | Parameter | Type | Description |
 | ---- | :--: | ---------------------------------------------- |
-| nKey | int  | Key(s) to adjust by. Value range (recommended): -4 to 4, where `0` indicates using the original key |
+| nKey | int  | Key(s) to adjust by. Value range (recommended): -4 to 4, where `0` indicates using the original key. |
 
 ## Error Codes
 

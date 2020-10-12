@@ -29,13 +29,13 @@ The following describes the main parameters. For other parameters, simply keep t
  - **Name**: enter `version`, which can be used to obtain the image tag variable.
  - **Basic Parameter Types**: select this option.
  - **Parameter Type**: select **Text Box** to obtain the image value in text format and pass it to the `version` variable.
-4. Check **Restrict the running node of the project**. For the tag expression, enter the pod tag `jnlp-agent` set in the [Configuring the slave pod template](https://cloud.tencent.com/document/product/457/41396#PodTemplates) step.
+4. Check **Restrict the running node of the project**. For the tag expression, enter the pod tag `jnlp-agent` set in the [Configuring the slave pod template](https://intl.cloud.tencent.com/document/product/457/34867#PodTemplates) step.
 
 ### Configuring Source Code Management
 In the "Source Code Management" area, select **Git** and configure the following information.
 - **Repositories**:
   - **Repository URL**: enter your GitLab address, such as `https://gitlab.com/user-name/demo.git`.
-  - **Credentials**: select the authentication credential created in the [Adding GitLab authentication](https://cloud.tencent.com/document/product/457/41396#addGitlab) step.
+  - **Credentials**: select the authentication credential created in the [Adding GitLab authentication](https://intl.cloud.tencent.com/document/product/457/34867#addGitlab) step.
 - **Branches to build**:
   - **Specified branch (any if it is empty)**: enter `$mbranch`, which is used to dynamically obtain the branch, and its value corresponds to the value of `mbranch` defined in "Git Parameter".
 
@@ -45,7 +45,7 @@ In the "Source Code Management" area, select **Git** and configure the following
 2. Copy and paste the following script content into the "Command" entry box. Then, click **Save**.
 > 
 >- In this script, information such as the GitLab address, TKE image address, and username and password of the image repository are for example only. In actual cases, replace them based on your needs.
->- Be sure to build the package based on the source code of Docker build. In addition, the working directory `/home/Jenkins/agent` must be consistent with the working directory of the [container template](https://cloud.tencent.com/document/product/457/41396#ContainerTemplate) in "Container List".
+>- Be sure to build the package based on the source code of Docker build. In addition, the working directory `/home/Jenkins/agent` must be consistent with the working directory of the [container template](https://intl.cloud.tencent.com/document/product/457/34867#ContainerTemplate) in "Container List".
 >
 ```
 	echo "GitLab address: https://gitlab.com/[user]/[project-name]].git" 
@@ -67,4 +67,4 @@ The script provides the following features:
     - Publish the docker image combined and built with the code in the TKE image repository.
 
 ### Subsequent Operations
-You have now successfully built the slave pod. Next, go to [Building Tests](https://cloud.tencent.com/document/product/457/41398) to publish and verify images.
+You have now successfully built the slave pod. Next, go to [Building Tests](https://intl.cloud.tencent.com/document/product/457/34869) to publish and verify images.

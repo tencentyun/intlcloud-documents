@@ -2,11 +2,11 @@ This document describes how to download the SDKs for Tencent Cloud GME.
 
 ## Updates
 
-To make it easier for developers to integrate GME, we recommend they check the [Product Updates](https://intl.cloud.tencent.com/document/product/607/35323) first before downloading any SDKs.
+To make it easier for developers to integrate GME, we recommend developers to check [Product Updates](https://intl.cloud.tencent.com/document/product/607/35323) first before downloading any SDKs.
 
 ## Download and Use
 
-if you have any problems with your downloaded SDKs or DEMO, see [Download and Use](https://intl.cloud.tencent.com/document/product/607/30256), or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+If you have any problems with your downloaded SDKs or DEMO, see [Download and Use](https://intl.cloud.tencent.com/document/product/607/30256) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ## Version Updates
 
@@ -25,9 +25,9 @@ The v2.7.1 beta is updated as follows:
 <td> SDK 2.7.1 Beta is released</td>
 <td ><ul style="margin:0;"><li >The room management feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> .</li>
 <li>The voice changing feature is now available for voice messages.</li>
-<li >The pitch of accompaniment can be adjusted.</li>
-<li >The cross-room antiphonal singing feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> .</li></ul ></td>
-<td>September 18, 2020</td> 
+<li >The pitch of the accompaniment can be adjusted.</li>
+<li >The cross-room antiphonal singing feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li></ul ></td>
+<td>September 11, 2020</td> 
 <td><a href="https://cloud.tencent.com/document/product/607/34377">Real-time Voice Accompaniment</tr>
 </tbody></table>
 

@@ -29,7 +29,7 @@
 ### 接收文本和信令消息（简化接口）
 通过  [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68) 可以监听简单的文本和信令消息，复杂的图片、视频、语音消息则需要通过 [V2TIMManager + Message.h](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html) 中定义的 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 实现。
 
-> [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68)  与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 请勿混用，以免产生逻辑 BUG。
+>! [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68)  与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 请勿混用，以免产生逻辑 BUG。
 
 ### 经典示例：直播群中收发弹幕消息
 直播场景下，在直播群中收发弹幕消息是非常普遍的交互方式，其实现方式非常简单，通过简单消息接口即可满足：
@@ -114,7 +114,94 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 }
 ```
 
-> 更多消息解析示例代码请参考 [常见问题 > 5. 各类型消息应该如何解析](#msgAnalyze)。
+>? 更多消息解析示例代码请参考 [常见问题 > 5. 各类型消息应该如何解析](#msgAnalyze)。
+
+## 收发群 @ 消息
+
+群 @ 消息，发送方可以在输入栏监听 @ 字符输入，调用到群成员选择界面，选择完成后以 `“@A @B @C......”` 形式显示在输入框，并可以继续编辑消息内容，完成消息发送；接收方会在会话界面的群聊天列表，重点显示 `“有人@我”` 或者` “@所有人”` 标识，提醒用户有人在群里 @ 自己了。
+
+>? 目前仅支持文本 @ 消息。
+
+### 发送群 @ 消息
+
+1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)，昵称用来在文本框显示。
+2. 发送方调用 [V2TIMManager+Message](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html) 的 [createTextAtMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#aaebbd8ed9b9766d01f996ec722744346) 创建一条 @ 文本消息，拿到消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)。
+3. 发送方调用 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a681947465d6ab718da40f7f983740a21) 接口将刚才创建的 @ 消息对象发送出去。
+
+### 接收群 @ 消息
+
+1. 在加载和更新会话处，需要调用 [V2TIMConversation](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html) 的 [groupAtInfolist](http://doc.qcloudtrtc.com/im/interfaceV2TIMConversation.html#a5659c29a54304e89e61c25c2b073f8da) 接口获取会话的 @ 数据列表 。
+2. 通过列表中 [V2TIMGroupAtInfo](http://doc.qcloudtrtc.com/im/interfaceV2TIMGroupAtInfo.html) 对象的 [atType](http://doc.qcloudtrtc.com/im/interfaceV2TIMGroupAtInfo.html#a1486d853fd6f8ae074714ec8059f7621) 接口获取 @ 数据类型，并更新到当前会话的 @ 信息。
+
+### 经典示例：收发群 @ 消息
+
+- **发送群 @ 消息：**
+发送方创建一条群 @ 消息并发送。
+
+```objective-c
+// 获取@群成员的ID数据
+TUITextMessageCellData *text = (TUITextMessageCellData *)data;
+NSMutableArray<NSString *> *atUserList = text.atUserList;
+
+// 创建群@消息
+V2TIMMessage *atMsg = [[V2TIMManager sharedInstance] createTextAtMessage:text.content atUserList:atUserList];
+
+// 发送群@消息
+[[V2TIMManager sharedInstance] sendMessage:atMsg
+                                  receiver:nil
+                                   groupID:@"toGroupId"
+                                  priority:V2TIM_PRIORITY_DEFAULT
+                            onlineUserOnly:NO
+                           offlinePushInfo:nil
+                                  progress:nil
+                                      succ:^{
+    NSLog(@"群@消息发送成功");
+}
+                                      fail:^(int code, NSString *desc) {
+    NSLog(@"群@消息发送失败");
+}];
+```
+
+- **接收群 @ 消息：**
+ 在加载和更新会话处，获取群 @ 数据列表，解析当前的 @ 类型，根据 @ 类型显示对应的提示文本。
+
+```objective-c
+// 获取群@数据列表
+NSArray<V2TIMGroupAtInfo *> *atInfoList = conversation.groupAtInfolist;
+
+// 解析@类型（@我，@所有人, @我且@所有人）
+BOOL atMe = NO;         // 是否@我
+BOOL atAll = NO;        // 是否@所有人
+NSString *atTipsStr = @"";
+for (V2TIMGroupAtInfo *atInfo in atInfoList) {
+    switch (atInfo.atType) {
+        case V2TIM_AT_ME:
+            atMe = YES;
+            break;
+        case V2TIM_AT_ALL:
+            atAll = YES;
+            break;
+        case V2TIM_AT_ALL_AT_ME:
+            atMe = YES;
+            atAll = YES;
+            break;
+        default:
+            break;
+    }
+}
+
+// 根据@类型，提示
+if (atMe && !atAll) {
+    atTipsStr = @"[有人@我]";
+}
+if (!atMe && atAll) {
+    atTipsStr = @"[@所有人]";
+}
+if (atMe && atAll) {
+    atTipsStr = @"[有人@我][@所有人]";
+}
+```
+
 
 ## 设置 APNS 离线推送（offlinePushInfo）
 
@@ -144,7 +231,7 @@ onlineUserOnly:NO offlinePushInfo:pushInfo progress:^(uint32_t progress) {
 ### 点击推送消息跳转到对应的聊天窗口
 如需实现该功能，发送消息时需设置离线推送对象 `offlinePushInfo` 的扩展字段 `ext`，收到消息的用户打开 App 时可以通过 `didReceiveRemoteNotification` 系统回调获取到扩展字段 `ext`，再根据 `ext` 内容跳转到对应的聊天界面。
 
-本文以 “denny 给 vinson 发送消息” 的场景为例。
+本文以 `“denny 给 vinson 发送消息”` 的场景为例。
 - 发送方：denny 需在发送消息时设置推送扩展字段 `ext`：
 ```
 // denny在发送消息时设置 offlinePushInfo，并指定 ext 字段
@@ -172,6 +259,7 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 
 某些场景下，您可能希望发出去的消息只被在线用户接收，即当接收者不在线时就不会感知到该消息。您只需在 
 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae) 时，将参数 `onlineUserOnly` 设置为 `YES` ，此时发送出去的消息与普通消息相比，会有如下差异点：
+
 - 不支持离线存储，即如果接收方不在线就无法收到。
 - 不支持多端漫游，即如果接收方在一台终端设备上一旦接收过该消息，无论是否已读，都不会在另一台终端上再次收到。
 - 不支持本地存储，即本地的云端的历史消息中均无法找回。
@@ -225,7 +313,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 ## 给消息增加已读回执
 在 C2C 单聊场景下，当接收方通过 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#acb3a67bd2fa131b50c611a48fa78f34d) 接口将来自某人的消息标记为已读时，消息的发送方将会收到“已读回执”，表示“xxx 已经读过我的消息了”。
 
->目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
+>!目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
 
 ### 接收方标记消息已读
 
@@ -288,24 +376,7 @@ lastMsg:nil succ:^(NSArray<V2TIMMessage *> *msgs) {
 - 直播群（AVChatRoom）中的消息均不支持本地存储和多终端漫游，因此对直播群调用 [getGroupHistoryMessageList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a9e242ba327377fe74b83e8d5572d39a0) 接口是无效的。
 
 ## 删除消息
-对于已经接收到的消息，可以调用 [deleteMessageFromLocalStorage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a2bb42528f4d166ac826914094655841c) 接口进行本地删除。
-
-### 删除本地消息
-
-```
-[[V2TIMManager sharedInstance] deleteMessageFromLocalStorage:msg succ:^{
-      // 消息删除成功
-} fail:^(int code, NSString *msg) {
-     // 消息删除失败
-}];
-```
-
-> App 卸载重装后已经删除的消息为什么又回来了？
-> 由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
-
-### 删除云端消息
-目前暂不支持删除云端消息，删除消息会导致云端建立反向映射关系，影响系统整体性能。
-
+对于历史消息，您可以调用 [deleteMessages](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a9e394ea720ecdc10d497b63b6f2b22c4) 接口删除历史消息，消息删除后，无法再恢复。
 
 ## 设置消息权限
 ### 只允许好友间收发消息
@@ -320,20 +391,16 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
-![](https://main.qcloudimg.com/raw/63625c5252348205993ec5f33b087dec.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？
 - 请检查 [addSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a428fe7bf82be1592141d77dfa756ec68) 与 [addAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a517a6f56909fdad2004b4679b715186a) 是否混用。如果混用，当收到文本消息或自定义消息时，两个监听都会回调，会导致收到重复消息。
 - 请检查同一个监听对象是否重复 `add`，如果监听对象不再使用，请主动调用对应的 [removeSimpleMsgListener](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a8f6f9900006bf7ad5bd9bdb8ba0914eb) 或 [removeAdvancedMsgListener](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a77ec89edbdf500431cbda5ee7aa50920) 接口移除多余的监听器。
 
-### 2. App 卸载重装后已经删除的消息为什么又回来了？
-由于 IM 目前只支持删除本地消息，所以当 App 卸载重装后，云端消息依然存在，重新拉取历史消息依然会返回这些被删除的本地历史消息。
-
-### 3. App 卸载重装后已读回执为什么失效了？
+### 2. App 卸载重装后已读回执为什么失效了？
 在单聊场景下，接收方如果调用 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#acb3a67bd2fa131b50c611a48fa78f34d) 设置消息已读，发送方收到的已读回执里面包含了对方已读的时间戳 `timestamp`，SDK 内部会根据 `timestamp` 判断消息对方是否已读， `timestamp` 目前只在本地保存，程序卸载重装后会丢失。
 
-### 4. 有多个 Elem 的消息应该如何解析？
+### 3. 有多个 Elem 的消息应该如何解析？
 出于降低消息复杂度的考虑，SDK API 2.0 接口不再支持创建包含多个 Elem 的 Message 对象。如果您收到了来自老版本的包含多个 Elem 的 Message 对象，可以按照以下步骤解析：
 1. 正常解析出第一个 `Elem` 对象。
 2. 通过第一个 `Elem` 对象的 [nextElem](http://doc.qcloudtrtc.com/im/interfaceV2TIMElem.html) 方法获取下一个 `Elem` 对象。如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `nil`。
@@ -363,5 +430,6 @@ SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如
 ```
 
 <span id ="msgAnalyze"></span>
-### 5. 各种不同类型的消息应该如何解析？
+### 4. 各种不同类型的消息应该如何解析？
 解析消息相对复杂，我们提供了各种类型消息解析的 [示例代码](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKitDemo/TUIKitDemo/SampleCode/message.m)，您可以直接把相关代码拷贝到您的工程，然后根据实际需求进行二次开发。
+

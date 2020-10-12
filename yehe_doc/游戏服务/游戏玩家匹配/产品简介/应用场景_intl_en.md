@@ -3,7 +3,7 @@ GPM is suitable for a variety of use cases. Here we list some examples.
 ### Use Case 1: Player Matchmaking
 
 GPM can be used independently to generate player matches via custom matchmaking rules. Generated matchmaking results will be delivered to your server address. 
-![](https://main.qcloudimg.com/raw/79b12293dfc6404833cad1d1906e5c58.png)
+![](https://main.qcloudimg.com/raw/1798f70b2cc870b58f0d28abd5e8ba97.png)
 
 ### Use Case 2: Hosted Game Solutions
 

@@ -18,7 +18,7 @@
 
 <span id="C_record"></span>
 ## 创建录制模板
-1. 登录云直播控制台，进入【功能模板】>[【录制配置】](https://console.cloud.tencent.com/live/config/record)。
+1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
 2. 单击【+】设置基本信息，进行如下配置：
 ![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
    
@@ -58,18 +58,18 @@
 
 
 ## 修改录制模板
-1. 进入【功能模板】>[【录制配置】](https://console.cloud.tencent.com/live/config/record)。
+1. 进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
 2. 选择您已创建成功的录制模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
 ![](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 
 ## 删除录制模板
-1. 进入【功能模板】>【录制配置】。
+1. 进入【功能配置】>【直播录制】。
 2. 选择您已创建成功的录制模板，单击上方的![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)删除按钮。
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
->! 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制模板](https://intl.cloud.tencent.com/document/product/267/30842) 解除关联。 
+>! 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制规则](https://intl.cloud.tencent.com/document/product/267/30843) 解除关联。 
 ## 关联与解绑推流域名
 具体操作及相关说明，请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。

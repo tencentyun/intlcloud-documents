@@ -5,7 +5,7 @@ When using COS, you may need to use a temporary key to grant users permissions t
 The **principle of least privilege** means that when granting permission, you must specify the scope of the permission granted to the **specified user** for performing **what operation** and access **what resource** under **what conditions**.
 
 ## Precautions
-You are recommended to strictly comply with the principle of least privilege to ensure that a user can only perform the specified operations (e.g., `action:GetObject`) or access the specified resources (e.g., `resource:exampleBucket-APPID/exampleObject.txt`). 
+You are recommended to strictly comply with the principle of least privilege to ensure that a user can only perform the specified operations (e.g., `action:GetObject`) or access the specified resources (e.g., `resource:examplebucket-1250000000/exampleobject.txt`). 
 To prevent data security risks caused by unexpected and unauthorized operations with excessive permissions, it is strongly recommended that you avoid authorizing a user to access all resources (e.g., `resource:*`) or perform all operations (e.g., `action:*`).
 
 Below are some potential data security risks:

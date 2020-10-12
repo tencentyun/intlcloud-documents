@@ -34,7 +34,7 @@ Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type de
 kadmin.local:  q
 ```
 
-Here, we created two users: test-server/host@EXAMPLE.COM and test-client/host@EXAMPLE.COM. Put their keys into the `/etc/krb5.keytab` file.
+Here, we created two users: `test-server/host@EXAMPLE.COM` and `test-client/host@EXAMPLE.COM`. Put their keys into the `/etc/krb5.keytab` file.
 
 ## Starting KDC
 ```
@@ -46,9 +46,7 @@ Here, we created two users: test-server/host@EXAMPLE.COM and test-client/host@EX
 ```
 kinit -k -t /etc/krb5.keytab test-client/host@EXAMPLE.COM
 ```
-kinit corresponds to the step of obtaining a TGT from KDC. It sends a request to the KDC server specified in `/etc/krb5.conf`.
-
-If the TGT is successfully granted, you can see it by using klist.
+kinit corresponds to the step of obtaining a TGT from KDC. It sends a request to the KDC server specified in `/etc/krb5.conf`. If the TGT is successfully granted, you can see it by using klist.
 ```
 klist
 Ticket cache: FILE:/tmp/krb5cc_1000

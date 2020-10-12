@@ -13,7 +13,7 @@
 参考 [配置自定义域名](https://intl.cloud.tencent.com/document/product/628/11791) 文档，在 API 网关控制台绑定自定义域名。
 >!API 网关绑定自定义域名时，会校验自定义域名是否解析（通过 CNAME）到该服务的子域名。因此，您必须先将自定义域名解析（通过 CNAME）到 API 网关服务的子域名并配置绑定成功。再修改 CNAME 记录，将自定义域名指向 WAF 的 CNAME 域名。
 >
-<img src="https://main.qcloudimg.com/raw/d9602adbae069b353545476d4c7ee146.png">
+<img src="https://main.qcloudimg.com/raw/fb4621332105ad78229c43d150c8fe91.png">
 
 
 
@@ -25,7 +25,7 @@
 4. 在“域名配置”页面，根据实际情况填写相关字段，其中源站地址选择【域名】，并填写 API 网关服务的子域名，单击【保存】。
 ![](https://main.qcloudimg.com/raw/8c83fbec08742ede0ddb19f762eaf90b.png)
 5. 完成配置后，此时域名接入状态为“未配置 CNAME 记录”。
-<img src="https://main.qcloudimg.com/raw/46bf4804349321a264c8b0715c92a4b5.png">
+<img src="https://main.qcloudimg.com/raw/c0cc86b0eb8ae0d294a71a79b1265be6.png">
 
 
 ### 步骤3：修改 CNAME 记录

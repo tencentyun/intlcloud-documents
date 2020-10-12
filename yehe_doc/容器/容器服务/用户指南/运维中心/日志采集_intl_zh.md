@@ -36,9 +36,9 @@
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群运维】>【功能管理】。
 2. 在“功能管理”页面上方选择地域，单击需要开启日志采集的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/e71f52765488cfc7ca687d66decda6fc.png)
+![](https://main.qcloudimg.com/raw/bcee30ade672b8a4e114d25f3d5abd16.png)
 3. 在“设置功能”页面，单击日志采集【编辑】，开启日志采集后确认。如下图所示：
-![](https://main.qcloudimg.com/raw/f87cfe050bae7b41730bef999873d28c.png)
+![](https://main.qcloudimg.com/raw/8f10a39a943ccce8724dff252ee00e88.png)
 
 ### 配置日志规则
 
@@ -57,8 +57,6 @@
 #### 采集容器内文件日志 
 选择【容器文件路径】采集类型，并配置日志源。如下图所示：
 
->! 目前仅支持采集存储在 volume 的日志文件，即需要在工作负载创建时挂载 emptyDir、hostpath 等 volume，并将日志文件存到指定 volume。
->
 ![](https://main.qcloudimg.com/raw/42b80d3b0ee85a4898a7ab1bf13352c6.png)
 路径支持文件路径和通配规则，例如当容器文件路径为 `/opt/logs/*.log`，可以指定采集路径为 `/var/logs`，文件名为 `*.log`。
 

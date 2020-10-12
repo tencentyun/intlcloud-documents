@@ -1,3 +1,20 @@
+## September 2020
+
+<table>
+<tr>
+    <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+        <tr>
+        <td>The SDK 1.2.1.0 is released</td>
+       <td><li>The user attribute API is added for personalized delivery</li> <li>The in-app message is now supported, with several in-app message templates provided</li><li>The SO file is updated</li><li>The SDK is optimized</li></td>
+        <td>September 27, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+    </tr>
+</table>
+
 ## July 2020
 
 <table>
@@ -11,7 +28,7 @@
         <td>Released SDK 1.2.0.3</td>
        <td>The known issue is fixed</td>
         <td>2020-07-30</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">Downloading SDK</a></td>
+        <td>-</a></td>
     </tr>
 <tr>   
         <td>Released SDK 1.2.0.2</td>
@@ -69,7 +86,7 @@
     </tr>
     <tr>
         <td>The SDK v1.1.5.5 is released</td>
-        <td><li>The issue where DCL violation occurred when an application was released in Google Play is fixed</li></td>
+        <td>The issue where DCL violation occurred when an application was released in Google Play is fixed</li></td>
         <td>April 2, 2020</td>
         <td>-</a></td>
     </tr>
@@ -88,7 +105,7 @@
         <td>The SDK v1.1.5.4 is released</td>
         <td><li>Network connection is optimized</li> <li>Account types are added</li> <li>The keep-alive scheme is optimized</li> <li>Issues with security alarming are fixed</li> <li>TPNS is now compatible with XG Platform version upgrade</li></td>
         <td>March 6, 2020</td>
-        <td>Unregistering XG Platform Service</td>
+        <td>-</td>
     </tr>
 </table>
 

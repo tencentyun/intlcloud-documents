@@ -18,6 +18,9 @@ No. GME currently does not have a demo for WeChat Mini Program.
 ### How do I get started with GME?
 For more information on how to get started with GME quickly, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 
+### How is traffic usage calculated for using GME voice chat?
+Traffic usage is determined by both the bitrate and the number of talking users in a voice chat room. It is calculated in bytes as bitrate * number of talking users/8, where the bitrate is 30 kbps for Fluency mode, and 64 kbps for Standard and High Quality modes.
+
 ### Does the .so library on Android support x86_64?
 The SDK currently is not available on x86_64.
 

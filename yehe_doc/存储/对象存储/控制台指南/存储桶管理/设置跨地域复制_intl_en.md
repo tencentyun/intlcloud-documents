@@ -11,7 +11,7 @@ To enable cross-region replication, you need to make sure that the source and de
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List** on the left sidebar, and select the bucket for which to configure cross-origin replication.
    ![](https://main.qcloudimg.com/raw/e7262775af485aa2913b855d6064802d.png)
-2. Click **Advanced Configuration** on the left sidebar to open the configuration page, scroll down to **Cross Region Replication**, and click **Add Rule**.
+2. Click **Fault and disaster tolerance management** > **Cross Region Replication** on the left sidebar, scroll down to **Cross Region Replication**, and click **Add Rule**.
    ![](https://main.qcloudimg.com/raw/91b3093cb905751c68799fc9755d0ff6.png)
 3. To configure a cross-region replication rule, you need to first enable versioning for both the source and destination buckets. After the rule configuration is complete, click **OK**.
 	 ![](https://main.qcloudimg.com/raw/6aeab6e744f70b0928b20d485b5bbe6b.png)

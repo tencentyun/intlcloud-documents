@@ -55,7 +55,7 @@ The checkConsistency command compares Alluxio and under storage metadata for a g
 
 If the -r option is used, the checkConsistency command will repair all inconsistent files and directories under the given path. If an inconsistent file or directory exists only in under storage, its metadata will be added to Alluxio. If an inconsistent file exists in Alluxio and its data is fully present in Alluxio, its metadata will be loaded to Alluxio again.
 
->This command requires a read lock on the subtree being checked, meaning writes and updates to files or directories in the subtree cannot be completed until this command completes.
+>!This command requires a read lock on the subtree being checked, meaning writes and updates to files or directories in the subtree cannot be completed until this command completes.
 
 **Operation example**
 checkConsistency can be used to periodically validate the integrity of the namespace.
@@ -443,11 +443,11 @@ $ ./bin/alluxio fs setTtl -action free /data/good-for-one-day 86400000
 The stat command dumps the FileInfo representation of a file or a directory to the console. It is primarily intended to assist users in debugging their system. Generally, viewing the file information in the UI will be much easier to understand.
 
 You can specify -f to display information in a given format:
-- "%N": name of the file;
-- "%z": size of the file in bytes;
-- "%u": owner;
-- "%g": group name of the owner;
-- "%y" or "%Y": modification time, `%y shows ‘yyyy-MM-dd HH:mm:ss’ (the UTC date), %Y` shows milliseconds since January 1, 1970 UTC;
+- "%N": name of the file
+- "%z": size of the file in bytes
+- "%u": owner
+- "%g": group name of the owner
+- "%y" or "%Y": modification time, `%y shows ‘yyyy-MM-dd HH:mm:ss’ (the UTC date), %Y` shows milliseconds since January 1, 1970 UTC
 - "%b": number of blocks allocated for the file
 
 **Operation example**

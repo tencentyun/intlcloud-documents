@@ -2,9 +2,10 @@ The Phoenix supports SQL queries. The following are some common operations:
 - Create a table
 ```sql
 0: jdbc:phoenix:> CREATE TABLE IF NOT EXISTS TEST (
-                  host char(50) not null,
-                  txn_count bigint
-                  CONSTRAINT pk PRIMARY KEY (host) );
+	host char(50) not null,
+	txn_count bigint
+	CONSTRAINT pk PRIMARY KEY (host)
+);
 ```
 - Insert data
 ```sql

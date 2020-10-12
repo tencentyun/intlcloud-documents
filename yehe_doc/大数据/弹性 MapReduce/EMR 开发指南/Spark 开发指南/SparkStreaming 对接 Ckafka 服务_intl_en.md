@@ -130,7 +130,7 @@ Then, add the packaging and compiling plugins to the pom.xml file:
 </plugins>
 </build>
 ```
->Replace $yourgroupID and $yourartifactID with your real information.
+>! Replace $yourgroupID and $yourartifactID with your real information.
 
 Then, add the sample code by creating a Java Class named KafkaTest.java in the main>Java folder and adding the following code to it:
 ```
@@ -190,9 +190,9 @@ public class KafkaTest {
 }
 ```
 Pay attention to the following settings in the code:
-- The brokers variable should be set to the private IP of the CKafka instance found in step 2;
-- The topics variable should be set to the name of the topic you created, e.g., spark_streaming_test1 here;
-- durationSeconds is the interval for the program to consume the data in CKafka, e.g., 60 seconds here;
+- The brokers variable should be set to the private IP of the CKafka instance found in step 2.
+- The topics variable should be set to the name of the topic you created, e.g., spark_streaming_test1 here.
+- durationSeconds is the interval for the program to consume the data in CKafka, e.g., 60 seconds here.
 - $hdfsPath is the path in HDFS to which the result will be output.
 
 Use the local command prompt to enter the project directory and run the following command to compile and package the project:
@@ -265,7 +265,7 @@ Then, add the packaging and compiling plugins to the pom.xml file:
 </plugins>
 </build>
 ```
->Replace $yourgroupID and $yourartifactID with your real information.
+>! Replace $yourgroupID and $yourartifactID with your real information.
 
 Then, add the sample code by creating a Java Class named SendData.java in the main>Java folder and adding the following code to it:
 ```
@@ -323,7 +323,7 @@ scp $localfile root@public IP address:$remotefolder
 
 ### Using a program to consume CKafka data
 Use two interfaces to log in to the WebShell of the EMR cluster.
-**In the first interface**, log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in section 2. Run the following command to run the demo:
+**In the first interface:** log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in section 2. Run the following command to run the demo:
 ```
 [hadoop@172 ~]$ bin/spark-submit --class KafkaTest --master yarn-cluster $consumerpackage 
 ```
@@ -336,7 +336,7 @@ After the program is started, it will run continuously in the Yarn cluster. Run 
 ```
 [hadoop@172 ~]$ yarn application –list
 ```
-**In the second interface**, log in to the WebShell of EMR and run the producer program, so that Spark Streaming can retrieve the data for consumption.
+**In the second interface:** log in to the WebShell of EMR and run the producer program, so that Spark Streaming can retrieve the data for consumption.
 ```
 [hadoop@172 spark]$ bin/spark-submit --class SendData $producerpackage
 ```

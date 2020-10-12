@@ -9,7 +9,7 @@
 
 ## 方案说明
 针对客户需求，腾讯云帮助客户实现以下方案，方案示意图如下：
-![](https://main.qcloudimg.com/raw/bc6059aef9887e90449d38116879ea4f.png)
+![](https://main.qcloudimg.com/raw/082b373bfa4f9036dedfc4958e25e9f1.png)
 方案重点如下：
 1. 使用 Anycast 的 EIP，该 IP 同时在多地 Anycast，实现多地同服。
 用户后端集中维护一套集群，然后绑定 Anycast 类型的 EIP。该 EIP 借助腾讯云内网和 POP 点，多地发路由。

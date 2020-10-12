@@ -1,13 +1,13 @@
 ## Overview
-An HTTP header of an object is a string sent by the server over HTTP before it sends HTML data to the browser. By modifying HTTP headers, you can modify how the webpage responds as well as configuration information, such as caching time. Modifying an object's HTTP headers does not modify the object itself.
+An HTTP header of an object is a string sent by the server over HTTP before it sends HTML data to the browser. By modifying HTTP headers, you can modify how the webpage responds as well as certain configurations, such as caching time. Modifying an object's HTTP headers does not modify the object itself.
 
-For example, if the `Content-Encoding` header is set to `gzip`, but the file itself has not been compressed using gzip, a decoding error will occur.
+For example, if the `Content-Encoding` header is modified to `gzip`, but the file itself was not compressed using gzip, a decoding error will occur.
 
 >?Note that custom headers are not supported for archived objects.
 
 ## Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar. Click the bucket you want to enter the bucket details page.
-2. In this example, select a single object you want under the **File List** tab, and click **More Actions** > **Custom Header** under **Operation** to add custom headers. You can also select multiple objects and add custom headers to all of them by clicking **More Actions** > Custom Header** at the top.
+1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar. Click the specific bucket and enter the bucket details page.
+2. In this example, select a single object that you want to customize under the **File List** tab, and go to **More Actions** > **Custom Header** under **Operation** to add custom headers. You can also select multiple objects and add custom headers to all of them by going to **More Actions** > Custom Header** at the top.
 ![](https://main.qcloudimg.com/raw/88779600818f3670df2f7df62fd1b3a0.png)
 3. In the pop-up window, click **Add Header**. Select a parameter type, and enter a value for it. COS provides six HTTP headers to choose from. Once the configuration is complete, click **OK**.
 ![](https://main.qcloudimg.com/raw/191fbd1b903069b5e546bb237b050ee2.png)
@@ -54,7 +54,7 @@ For example, if the `Content-Encoding` header is set to `gzip`, but the file its
 
 Assume that a bucket named "examplebucket-1250000000" was created under account APPID 1250000000, and an object “exampleobject.txt” was uploaded to the bucket’s root directory.
 
-The sample below shows the headers returned for a request to download this object through a browser or client if no custom HTTP headers are specified:
+The sample below shows the headers returned for a request to download this object through a browser or client if no custom HTTP headers are specified.
 #### Request
 ```sh
 GET /exampleobject.txt HTTP/1.1
@@ -74,7 +74,7 @@ Last-Modified: Tue, 11 Jul 2017 15:30:35 GMT
 
 If you add custom headers as follows:
 ![](https://main.qcloudimg.com/raw/2474d24e7d1d365e0c736572aae8f652.png)
-then the headers returned for new requests will be like below:
+then the headers returned for new requests will be as follows:
 
 #### Request
 ```sh

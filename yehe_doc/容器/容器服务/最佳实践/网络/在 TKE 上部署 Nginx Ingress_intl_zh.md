@@ -7,6 +7,7 @@ Nginx Ingress 功能强大且性能极高，有多种部署方式。本文将介
 Nginx Ingress 是 Kubernetes Ingress 的一种实现。它通过 watch Kubernetes 集群的 Ingress 资源，将 Ingress 规则转换成 Nginx 的配置，让 Nginx 进行7层的流量转发。如下图所示：
 <img style="width:450px" src="https://main.qcloudimg.com/raw/cc1260950a0cc812508cf25819e3c129.png" data-nonescope="true">
 Nginx Ingress 有以下两种实现方式，本文重点对 Kubernetes 开源社区的实现进行介绍：
+
 - [Kubernetes 开源社区的实现](https://github.com/kubernetes/ingress-nginx)
 - [Nginx 官方的实现](https://github.com/nginxinc/kubernetes-ingress)
 
@@ -55,7 +56,6 @@ kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/man
 3. 手动创建 CLB，及创建80和443端口的 TCP 监听器，分别绑定已部署 Nginx Ingress 节点的80和443端口。
 <span id="step3"></span>
 ## 方案3：Deployment + LB 直通 Pod
-
 方案2相比方案1更有优势，但仍存在以下问题：
 - 提高了手动维护 CLB 和 Nginx Ingress 节点的运维成本。
 - 需要提前规划好 Nginx Ingress 的节点，增删 Nginx Ingress 节点时需要手动在 CLB 控制台绑定和解绑节点。
@@ -110,13 +110,13 @@ metadata:
 
 ### Nginx Ingress 公网带宽有多大？
 
-腾讯云账号有带宽上移和非带宽上移两种类型：
+腾讯云账号有标准账户和传统账户两种类型：
 >! 您可参考文档 [区分腾讯云账户类型](https://intl.cloud.tencent.com/document/product/684/15246) 来区分自己账号的类型。
->
-- **带宽上移：**指带宽上移到 CLB 或 IP 上管理。
-  当您的账号是带宽上移类型时，Nginx Ingress 的带宽等于已购 CLB 的带宽，默认是 10Mbps（按量计费），可按需调整。
-- **非带宽上移：**指带宽在云服务器（CVM）上管理。
-    当您的账号是非带宽上移类型时，Nginx Ingress 使用公网 CLB，Nginx Ingress 的公网带宽是 CLB 所绑定的 TKE 节点的带宽之和。如果使用 [方案3：Deployment + LB 直通 Pod](#step3)，CLB 直通 Pod，即 CLB 直接绑定弹性网卡，那么此时 Nginx Ingress 的公网带宽是所有 Nginx Ingress Controller Pod 被调度到的节点上的带宽之和。
+
+- **标准账户类型：**指带宽上移到 CLB 或 IP 上管理。
+  当您的账号是标准账户类型时，Nginx Ingress 的带宽等于已购 CLB 的带宽，默认是 10Mbps（按量计费），可按需调整。
+- **传统账户类型：**指带宽在云服务器（CVM）上管理。
+    当您的账号是传统账户类型时，Nginx Ingress 使用公网 CLB，Nginx Ingress 的公网带宽是 CLB 所绑定的 TKE 节点的带宽之和。如果使用 [方案3：Deployment + LB 直通 Pod](#step3)，CLB 直通 Pod，即 CLB 直接绑定弹性网卡，那么此时 Nginx Ingress 的公网带宽是所有 Nginx Ingress Controller Pod 被调度到的节点上的带宽之和。
 
 <span id="ingress"></span>
 
