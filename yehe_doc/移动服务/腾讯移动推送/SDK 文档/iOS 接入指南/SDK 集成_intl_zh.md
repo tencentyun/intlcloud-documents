@@ -41,6 +41,7 @@ pod install //安装 SDK
 4. 在 Build Phases 下，添加以下 Framework：
  ```
  * TPNSInAppMessage.framework
+ * XGMTACloud.framework
  * CoreTelephony.framework
  * SystemConfiguration.framework
  * UserNotifications.framework
