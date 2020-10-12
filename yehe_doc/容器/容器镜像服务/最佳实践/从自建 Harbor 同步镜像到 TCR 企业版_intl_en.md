@@ -8,7 +8,7 @@ To synchronize data in the self-built Harbor to a TCR instance, you need to conf
 - The Harbor service has been set up and only Harbor V1.8.0 and later versions are supported.
 - The self-built Harbor can access TCR through a private line, public network, or VPC.
 - You have [created an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486) in the region of the cloud container cluster or in an adjacent region.
-- If a sub-account is used for an operation, refer to [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248) to grant the sub-account the permission to push a container image of the corresponding instance and Helm Chart. It is recommended that you grant the sub-account used to configure data synchronization all the read and write permissions of the TCR instance.
+- If you are using a sub-account, you must have granted the sub-account the permission to push TCR and Helm Chart to corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248). We recommend that you grant the full TCR access permissions to the sub-account used for synchronization configuration.
 
 ## Directions
 <span id="Configuration"></span>
