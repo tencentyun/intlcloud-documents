@@ -1,4 +1,4 @@
-Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to create a bucket or view the bucket list.
+Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar. Click **Create Bucket** on the **Bucket List** page.
 ![](https://main.qcloudimg.com/raw/fa538c7bbc01aad17564958354f9cc6f.png)
 View the domain name of the bucket.
 ![](https://main.qcloudimg.com/raw/c3dcbb6fe4a2d9465e2f608837fc8a2b.png)
