@@ -1,21 +1,11 @@
 
-腾讯云移动直播 SDK 的购买分为两种情况：
-
-- 单独使用移动直播SDK，则需支付 License 授权费。
-- 配合腾讯云直播服务一起使用，则需支付 License 授权费和使用云服务产生的费用。
-
 <span id="sdklicense"></span>
 ## 移动直播 License 授权费
 
 - 移动直播基础版 License 用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限，移动直播基础版 SDK License 一年使用授权费用为 799 美元。
 
 - 目前，我们为您提供**一次免费**的基础版 SDK License体验服务，用于测试，你可以现在就通过 [云直播控制台](https://console.cloud.tencent.com/live/license) 注册账号，申请有效期28天的免费体验服务。
-
- <span id="sdklicense"></span>
-## 云直播费用
-
-
-- 当配合腾讯云直播服务一起使用时，除了SDK License 授权费用外，您也需要支付直播时产生的基础费用，例如流量带宽费。费用按照云直播服务统一计费方式，您可以选择日结或者月付费等付费模式，详细价格请参见 [直播价格总览](https://intl.cloud.tencent.com/document/product/267/2818)。
+- 腾讯云移动直播 SDK 的购买分为两种情况：单独使用移动直播SDK，则需支付 License 授权费。当配合腾讯云直播服务一起使用时，除了SDK License 授权费用外，您也需要支付直播时产生的基础费用，例如流量带宽费。费用按照云直播服务统一计费方式，您可以选择日结或者月付费等付费模式，详细价格请参见 [直播价格总览](https://intl.cloud.tencent.com/document/product/267/2818)。
 
 
 ## 退款说明 ##
