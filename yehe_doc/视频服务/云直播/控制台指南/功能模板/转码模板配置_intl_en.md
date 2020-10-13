@@ -19,7 +19,7 @@
 <span id="C_trans"></span>
 ## Creating General Transcoding Template
 
-1. Log in to the LVB Console, and select **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the LVB Console, and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **+**, select **General Transcoding** as the transcoding type, set the configuration items, and click **Save**.
 
 
@@ -61,7 +61,7 @@
 <span id="C_topspeed"></span>
 ## Creating Top Speed Codec Transcoding Template
 
-1. Log in to the LVB Console, and select **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the LVB Console, and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **+**, select **Top Speed Codec** as the transcoding type, set the configuration items, and click **Save**.
 
 <img src="https://main.qcloudimg.com/raw/39f2a3a1348f0ba26281bb7ea545f645.png" width="800px"></img>
@@ -98,7 +98,7 @@
 
 <span id="modify"></span>
 ## Modifying Template
-1. Enter **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)**.
+1.Select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select the target transcoding template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
@@ -107,7 +107,7 @@
 <span id="delect"></span>
 ## Deleting Template
 If a template has been associated, you need to unassociate it before deleting it. For detailed directions, please see [Unassociating Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062#Untie). 
-1. Enter **Feature Template** > **Transcoding Configuration**.
+1. Select **Feature Configuration** > **LVB Transcoding**.
 2. Select the target transcoding template and click "Delete" at the top.
 3. Confirm whether to delete the selected transcoding template and click **OK** to delete it.
 
