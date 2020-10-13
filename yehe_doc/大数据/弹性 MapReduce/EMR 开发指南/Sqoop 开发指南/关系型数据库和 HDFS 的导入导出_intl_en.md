@@ -3,7 +3,7 @@ Sqoop is an open-source tool for transferring data between Hadoop and traditiona
 This document describes how to use Sqoop on EMR to import and export data between MySQL and HDFS.
 
 ## 1. Prerequisites
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Sqoop component on the software configuration page. 
+- You have signed up for a Tencent Cloud account and created an EMR cluster. When creating the EMR cluster, select the Sqoop component on the software configuration page.
 - Relevant software programs such as Sqoop are installed in the `/usr/local/service/` directory of the CVM instance for the EMR cluster.
 
 ## 2. Creating a MySQL Table
