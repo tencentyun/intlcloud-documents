@@ -1,7 +1,7 @@
 ## Hadoop Commands
 
 ### Ticket not obtained
-If Kerberos is enabled, a ticket must be obtained in advance when you run a Hadoop command.
+If Kerberos is enabled, you need to obtain a ticket before running a Hadoop command.
 
 Otherwise, the following error message will appear:
 ```
@@ -35,7 +35,7 @@ drwxr-xr-x   - hadoop supergroup          0 2019-01-17 19:43 /usr
 
 ### Using a local ticket
 
->You need to run kinit in advance to obtain a ticket. After the ticket expires, the program cannot be accessed.
+>!You need to run kinit in advance to obtain a ticket. After the ticket expires, the program cannot be accessed.
 
 ```java
 public static void main(String[] args) throws IOException {

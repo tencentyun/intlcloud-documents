@@ -1,4 +1,4 @@
-Log in to the LVB Console, select **Statistical Analysis** > **[Query Stream](https://console.cloud.tencent.com/live/analysis/stream)**, and enter a stream ID to query push and playback information of the stream as shown below:
+Log in to the LVB Console, select **[Stream Data Query](https://console.cloud.tencent.com/live/analysis/stream)**, and enter a stream ID to query push and playback information of the stream as shown below:
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### Playback Data Query 

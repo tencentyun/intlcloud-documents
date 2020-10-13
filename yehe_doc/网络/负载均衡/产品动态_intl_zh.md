@@ -1,3 +1,38 @@
+
+## 2020年09月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>全量支持七层 CLB 个性化配置</td> 
+<td>全量支持设置 CLB 实例的七层配置参数。</td> 
+<td>2020-09-22</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/32427">七层个性化配置</a></td> 
+</tr>
+<tr>
+<td>CLB 跨地域绑定2.0</td>
+<td>负载均衡支持通过云联网，跨地域绑定云服务器，允许客户选取多个后端云服务器的地域，跨 VPC、跨地域绑定后端云服务器。</td>
+<td>2020-09-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38441">跨地域绑定2.0（新版）
+</a></td>
+</tr>
+<tr>
+<td>CLB 支持混合云部署</td>
+<td>负载均衡直接绑定云下本地数据中心（IDC）内 IP。</td>
+<td>2020-09-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38442">混合云部署
+</a></td>
+</tr>
+</tbody>
+</table>
+
 ## 2020年06月
 <table>
 <thead>
@@ -43,11 +78,11 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/214/14733#.E5.BC.80.E5.90.AF.E5.AE.89.E5.85.A8.E7.BB.84.E9.BB.98.E8.AE.A4.E6.94.BE.E9.80.9A">开启安全组默认放通</a></td>
 </tr>
 <tr>
-<tr>
+
 <td>更新七层监听器的默认域名策略</td>
 <td>七层监听器的默认域名由可选项改为必填项，每个监听器只能配置且必须配置一个默认域名。</td>
 <td>2020-05-15</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9032">转发域名中的默认域名策略
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9032#default">转发域名中的默认域名策略
 </a></td>
 </tr>
 </tbody></table>
@@ -82,7 +117,7 @@
 </thead>
 <tbody><tr>
 <td>CLB 支持加入共享带宽包</td>
-<td>带宽上移用户的 CLB 支持加入 IP 带宽包。</td>
+<td>标准账户类型的 CLB 支持加入 IP 带宽包。</td>
 <td>2019-11-20</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/684/15245">共享带宽包 - 产品概述</a></td>
 </tr>

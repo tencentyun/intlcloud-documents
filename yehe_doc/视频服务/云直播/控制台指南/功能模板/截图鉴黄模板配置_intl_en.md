@@ -15,7 +15,7 @@ You can create a screencapture and porn detection template in the following ways
 - The generated screenshots are stored in your COS bucket and will incur COS storage fee. For more information, please see [COS Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 - To enable the screencapture feature, you must first grant LVB the permission to write to your COS bucket. For more information, please see [How to Authorize LVB to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
 - After a template has been created, you can associate it with a push domain name. For more information, please see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063). The association will take effect in about 5–10 minutes. 
-- The screencapture and porn detection templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you associated a template with a specified stream through the screencapture and porn detection APIs and want to unassociate it, you need to call the [DeleteLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30832) API.
+- The screencapturing and porn detection templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you associated a template with a specified stream through the screencapturing and porn detection APIs and want to unassociate it, you need to call the [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833) API.
 
 
 
@@ -29,7 +29,7 @@ You can create a screencapture and porn detection template in the following ways
 <span id="Screenshot"></span>
 ## Creating a Screencapture and Porn Detection Template
 
-1. Log in to the LVB Console, and select **Feature Template** > **[Screenshot and porn detection configuration](https://console.cloud.tencent.com/live/config/jtjh)**.
+1. Log in to the LVB Console, and select **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Click **+**, enter configuration information, and click **Save**.
 ![](https://main.qcloudimg.com/raw/722ecf606d4a24f9cc7eed879faf5200.jpg)
 <table>
@@ -84,7 +84,7 @@ You can create a screencapture and porn detection template in the following ways
 
 ## Modifying a Template
 
-1. Select **Feature Template** > **[Screenshot and porn detection configuration](https://console.cloud.tencent.com/live/config/jtjh)**.
+1. Select **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Find the desired screencapture and porn detection template that you have created, and click **Edit** on the right to modify template information.
 3. Click **Save**.
 
@@ -94,7 +94,7 @@ You can create a screencapture and porn detection template in the following ways
 
 If the template is associated, you need to unassociate it before you can delete it. For more information, please see [Disassociating a Screencapture and Porn Detection Template](https://intl.cloud.tencent.com/document/product/267/31063#.E8.A7.A3.E7.BB.91.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E6.A8.A1.E6.9D.BF).
 
-1. Select **Feature Template** > **[Screenshot and porn detection configuration](https://console.cloud.tencent.com/live/config/jtjh)**.
+1. Select **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Find the desired screencapture and porn detection template that you have created, and click the deletion icon at the top.
 3. In the pop-up dialog box, click **OK** to confirm the deletion.
 

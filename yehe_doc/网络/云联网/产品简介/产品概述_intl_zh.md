@@ -6,7 +6,7 @@
 ## 产品组成
 云联网有以下组成部分：
 - 关联网络实例：加入到同一个云联网内的网络实例即可实现互通，支持类型包含：VPC、VPC（黑石）、专线网关、VPN 网关（详情请参见 [关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)）。
->目前云联网关联 VPN 网关灰度中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+>目前云联网关联 VPN 网关灰度中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。具体操作，请参见 [ IDC 通过 VPN 网关接入云联网](https://intl.cloud.tencent.com/document/product/1037/36018) 。
 - 路由表：网络实例加入到云联网后，云联网即可自动学习到相关路由，呈现在该路由表中（详情请参见 [查看路由信息](https://intl.cloud.tencent.com/document/product/1003/30066)）。
 
 
@@ -42,7 +42,7 @@
 		</td>
 		<td>1. 无需创建对等，加入云联网的实例 fullmesh 互联。 <br />
 			2. 单个专用通道，可与所有 VPC、IDC 通信。 <br />	
-			3. CIDR 网段重叠可以建加入云联网，更灵活。
+			3. CIDR 网段重叠可以一键加入云联网，更灵活。
 		</td>
 	</tr>
 	<tr>

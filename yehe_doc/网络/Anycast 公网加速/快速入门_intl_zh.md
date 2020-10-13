@@ -13,7 +13,7 @@
 ## 其他常见操作
 ### 变更 Anycast 弹性公网 IP 配置
 #### 调整带宽
->?仅带宽上移账户可在 EIP 控制台调整带宽，非带宽上移账户请在对应的 [云服务器](https://console.cloud.tencent.com/cvm/instance/index?rid=1) 或 [ NAT 网关](https://console.cloud.tencent.com/vpc/nat?rid=1) 上调整带宽。若您无法确定账户类型，请参见 [账户类型](https://intl.cloud.tencent.com/document/product/214/36999)。
+>?仅标准账户类型可在 EIP 控制台调整带宽，传统账户类型请在对应的 [云服务器](https://console.cloud.tencent.com/cvm/instance/index?rid=1) 或 [ NAT 网关](https://console.cloud.tencent.com/vpc/nat?rid=1) 上调整带宽。若您无法确定账户类型，请参见 [账户类型](https://intl.cloud.tencent.com/document/product/214/36999)。
 
 1. 登录 [EIP 控制台](https://console.cloud.tencent.com/cvm/eip )。
 2. 在 EIP 列表中，选择要使用的 EIP，单击【调整网络】 即可。

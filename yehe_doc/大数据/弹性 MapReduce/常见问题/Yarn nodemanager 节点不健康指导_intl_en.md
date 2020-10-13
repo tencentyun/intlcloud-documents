@@ -4,7 +4,7 @@
 When disk utilization of a core node exceeds 90%, NodeManager will set it as "Unhealthy".
 
 #### Solution
-1. You are recommended to use Cloud Monitor and set the alarm threshold for EMR node disk utilization to 80–85% in order to prevent the node from being flagged as unhealthy in NodeManager when the disk utilization exceeds 90%.
+1. We recommend that you use Cloud Monitor and set the alarm threshold for ERM CVM disk utilization to 80-85%, so that the node disk utilization won't exceed 90%.
 Configure the EMR disk utilization threshold in Cloud Monitor at the following address:
 `https://console.cloud.tencent.com/monitor/policyTemplate`
 ![](https://main.qcloudimg.com/raw/a6018ed544407e2912427485ef25c57c.png)

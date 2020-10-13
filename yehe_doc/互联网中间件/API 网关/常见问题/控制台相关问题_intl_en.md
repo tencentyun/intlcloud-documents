@@ -12,7 +12,7 @@ If the incoming request is `/release/apia/20171012/index.html` and the API with 
 ### How do I configure API Gateway to support CORS?
 When creating an API, if you select "Support CORS", then API Gateway will support cross-origin requests. The default configuration is as follows:
 
-```plaintext
+```
 #define CORS_DEFAULT_AC_ALLOW_ORIGIN  ("*")
 
 #define CORS_DEFAULT_AC_ALLOW_METHODS  ("GET,POST,PUT,DELETE,HEAD,OPTIONS,PATCH")
@@ -36,7 +36,6 @@ A created API service can be called only after it is published in an environment
 If a service is published in different environments, the default call address should contain the environment name, such as:
 `service-asoj98o0-1251762227.ap-guangzhou.apigateway.myqcloud.com/release/user path`
 
-<span id="file"></span>
 ### How do I upload a file through API Gateway?
 Based on different backend types and file sizes, there are four situations:
 - If the backend is connected to an SCF API to upload files below 6 MB in size after they are Base64-encoded, we recommend you Base64-encode the files through the client and pass the encoded content to SCF first. Then, SCF will Base64-decode the content to complete the upload.

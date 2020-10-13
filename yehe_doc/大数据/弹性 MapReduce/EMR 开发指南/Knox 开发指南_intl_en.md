@@ -1,8 +1,8 @@
 Currently, EMR v1.3.1 and v2.0.1 support [Apache Knox](https://knox.apache.org/?spm=a2c4g.11186623.2.10.22b554deZiOUor). After completing the following preparations, you can access the web UIs of services such as Yarn and HDFS on the internet.
 
 ## Preparations
-- Confirm that you have activated Tencent Cloud and created an EMR cluster.
-- In EMR v1.3.1 and v2.0.1, Knox is a required component by default when a cluster is created. If you use a legacy version, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for Knox installation in your cluster.
+- You have signed up for a Tencent Cloud account and created an EMR cluster.
+- In EMR version 1.3.1 and 2.0.1, Knox is a required component by default when a cluster is created. If you use a legacy version, please [contact our customer service](https://intl.cloud.tencent.com/support) to help you install Knox.
 
 ## Accessing Knox
 Access by using the public IP address of the cluster. You are recommended to modify the CVM security group rule of this IP to limit the accessing IP address on the TCP:30002 port to your own IP address.

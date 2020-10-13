@@ -1,4 +1,4 @@
-Currently, the Spark component in EMR supports Spark 2.0.2, 2.2.1, and 2.3.2. The software environment information is as follows:
+Currently, the Spark component in EMR supports Spark 2.0.2, 2.2.1, and 2.3.2. The software environment is as follows:
 - By default, Spark is installed on a master node.
 - After the log-in, run the `su hadoop` command then you can switch to the Hadoop user.
 - The Spark software path is `/usr/local/service/spark`.
