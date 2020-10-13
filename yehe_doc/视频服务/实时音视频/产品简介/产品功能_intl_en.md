@@ -47,7 +47,7 @@
 ## Advanced Features
 
 | Feature | Description | Common Use Cases |
-| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Co-anchoring | Co-anchoring is supported. Viewers can mic on/off smoothly as needed without waiting for switchover. | Interactive live streaming, online classroom, chat room, etc. |
 | Cross-room competition | It is also called "cross-room anchor competition", where viewers can watch multiple anchors compete across rooms. | Show live streaming, co-anchoring competition, cross-room teaching, etc. |
 | Screen sharing | A local desktop, window, or desktop area can be displayed to others. For example, slides presented in Microsoft PowerPoint can be shared to others. | Online classroom, slide sharing, remote assistance, etc. |

@@ -2,7 +2,7 @@ This document describes how to bind a [Linux](#centos) and [Windows](#windows) C
 ## Binding a CVM
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
-3. Locate the ENI you want to configure and bind to a CVM, and click **Bind to a CVM** in the **Operation** column.
+3. Locate the ENI you want to configure and bind to a CVM, and click **Bind CVM** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/bce45aabdb1e1b26df31d3ff40211bce.png)
 >?
 >- ENI can only be bound to CVMs in the same availability zone.
