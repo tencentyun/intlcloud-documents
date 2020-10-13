@@ -1,4 +1,4 @@
-﻿### SDK Download
+### SDK Download
 <h2 id="Smart">MLVB Basic Edition SDK</h2>
 The Mobile Live Video Broadcasting (MLVB) basic edition has two major features, live stream push (`V2TXLivePusher`) and live stream playback (`V2TXLivePlayer`). It has a small library size, enabling you to launch live streaming services on mobile clients efficiently. The following table describes the download addresses of the iOS and Android installation packages.
 
