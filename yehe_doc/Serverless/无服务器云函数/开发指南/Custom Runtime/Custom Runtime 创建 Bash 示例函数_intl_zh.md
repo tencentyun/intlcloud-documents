@@ -50,7 +50,7 @@ curl -d " " -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/in
 - **初始化日志及异常**
 初始化阶段日志及异常信息，请参见 [日志及异常](https://intl.cloud.tencent.com/document/product/583/38129#.E6.97.A5.E5.BF.97.E5.8F.8A.E5.BC.82.E5.B8.B8)。
 - **调用阶段**
-关于调用阶段详细信息，请参见 [函数调用](https://intl.cloud.tencent.com/document/product/583/38129)。
+关于调用阶段详细信息，请参见 [函数调用](https://intl.cloud.tencent.com/document/product/583/38129#.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8)。
  1. 完成初始化后，进入循环的调用阶段，监听事件并调用函数处理。示例代码如下：
 ```
 # 长轮询获取事件
@@ -98,17 +98,110 @@ function main_handler () {
 ├ bootstrap
 └ index.sh
 ```
-2. 执行以下命令，设置文件可执行权限，并将其添加至 ZIP 包。
+2. 执行以下命令，设置文件可执行权限：
+>? Windows 系统下不支持 `chmod 755` 命令，需要在 Linux 或 Mac OS 系统下执行。
+>
 ```
 $ chmod 755 index.sh bootstrap
-$ zip demo.zip index.sh bootstrap
-  adding: index.sh (deflated 23%)
-  adding: bootstrap (deflated 46%)
 ```
-3. 部署包准备好后，可以通过 [SDK](#SDK) 或 [云函数控制台](#KZT) 来创建和发布函数。
+3. 使用 [Serverless Framework](#Serverless) 创建和发布函数。或执行以下命令，打包生成 zip 包，通过 [SDK](#SDK) 或 [云函数控制台](#KZT) 来创建和发布函数。
+```
+$ zip demo.zip index.sh bootstrap
+   adding: index.sh (deflated 23%)
+   adding: bootstrap (deflated 46%)
+```
+
+   
+<span id="Serverless"></span>
+### 使用 Serverless Framework 创建及发布函数
+
+#### 创建函数
+
+1. 安装 [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040/37034)。
+2. 在 [bootstrap](#bootstrap) 目录下配置 Serverless.yml 文件，创建 dotnet 函数：
+```
+   #组件信息
+   component: scf # 组件名称，本例中为scf组件
+   name: ap-guangzhou_default_helloworld # 实例名称
+   #组件参数
+   inputs:
+     name: helloworld #函数名称
+     src: ./
+     description: helloworld blank template function. 
+     handler: index.main_handler
+     runtime: CustomRuntime
+     namespace: default
+     region: ap-guangzhou
+     memorySize: 128
+     timeout: 3
+     events: 
+       - apigw: 
+           parameters:
+             endpoints:
+               - path: /
+                 method: GET
+```
+>? SCF 组件的详细配置，请参见 [全量配置文档](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md)。 
+>
+3. 执行 `sls deploy` 命令创建云函数，创建成功则返回结果如下：
+```
+   serverless ⚡framework
+   Action: "deploy" - Stage: "dev" - App: "ap-guangzhou_default_helloworld" - Instance: "ap-guangzhou_default_helloworld"   
+   functionName: helloworld
+   description:  helloworld blank template function.
+   namespace:    default
+   runtime:      CustomRuntime
+   handler:      index.main_handler
+   memorySize:   128
+   lastVersion:  $LATEST
+   traffic:      1
+   triggers: 
+     apigw: 
+       - http://service-xxxxxx-123456789.gz.apigw.tencentcs.com/release/   
+   Full details: https://serverless.cloud.tencent.com/apps/ap-guangzhou_default_helloworld/ap-guangzhou_default_helloworld/dev   
+   36s › ap-guangzhou_default_helloworld › Success
+```
+>? 更多 SCF 组件使用，请参见 [SCF 组件](https://intl.cloud.tencent.com/document/product/1040/33164)。
+
+#### 调用函数
+
+由于 serverless.yml 中添加了 `events` 为 `apigw` 的配置，因此创建函数的同时也创建了 api 网关，可通过 api 网关访问云函数。返回类似如下信息，即表示访问成功。
+```
+Echoing request: 
+'{
+		"headerParameters":{},
+		"headers":{
+"accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+		"accept-encoding":"gzip, deflate",
+		"accept-language":"zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6",
+		"cache-control":"max-age=259200",
+		"connection":"keep-alive",
+		"host":"service-eiu4aljg-1259787414.gz.apigw.tencentcs.com",
+		"upgrade-insecure-requests":"1",
+		"user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36",
+		"x-anonymous-consumer":"true",
+		"x-api-requestid":"b8b69e08336bb7f3e06276c8c9******",
+		"x-api-scheme":"http",
+		"x-b3-traceid":"b8b69e08336bb7f3e06276c8c9******",
+		"x-qualifier":"$LATEST"},
+		"httpMethod":"GET",
+		"path":"/",
+		"pathParameters":{},
+		"queryString":{},
+		"queryStringParameters":{},
+		"requestContext":{"httpMethod":"GET","identity":{},"path":"/",
+		"serviceId":"service-xxxxx",
+		"sourceIp":"10.10.10.1",
+		"stage":"release"
+		}
+}'
+```
+
+
 <span id="SDK"></span>
 ### 使用 SDK 创建及发布函数
-#### 创建函数<span id="creat"></span>
+<span id="creat"></span>
+#### 创建函数
 执行以下命令，通过 SCF 的 Python SDK 创建名为 CustomRuntime-Bash 的函数。
 ```
 from tencentcloud.common import credential
@@ -199,13 +292,11 @@ except TencentCloudSDKException as err:
 #### 创建函数
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 2. 在“函数服务”页面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 在“新建函数”页面填写函数基础信息，单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/963dcca09bc987d7ceaaa0a157e633f6.png)
+3. 在“新建函数”页面填写函数基础信息，单击【下一步】。
     - **函数名称**：命名为 “CustomRuntime-Bash”。
     - **运行环境**：选择 “CustomRuntime”。
     - **创建方式**：选择 “空白函数”。
-4. 在“函数配置”页面中，对“提交方法”和“函数代码”进行配置。如下图所示：
-![](https://main.qcloudimg.com/raw/d4d1a942bc082166872916d26605d988.png)
+4. 在“函数配置”页面中，对“提交方法”和“函数代码”进行配置。
     - **提交方法**：选择“本地上传zip包”。
     - **函数代码**：选择打包好的 demo.zip。
     - 高级设置：展开配置项，配置“初始化超时时间”及其他相关参数。
@@ -214,10 +305,7 @@ except TencentCloudSDKException as err:
 #### 调用函数
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 2. 在“函数服务”页面上方选择期望调用函数的地域，并单击列表页中期望调用的函数，进入函数详情页面。
-3. 选择左侧【函数管理】，并在“函数管理”页面选择【函数代码】页签。如下图所示：
-![](https://main.qcloudimg.com/raw/7ba11b77d4198b2eddc98635114a7e48.png)
-4. 在“测试事件”的测试模板中选择“Hello World 事件模板”，并单击【测试】。如下图所示：
-![](https://main.qcloudimg.com/raw/1693c906f23e89e21716f6aed0da9f6e.png)
-    控制台右侧将展示出调用的执行结果及日志。如下图所示：
-![](https://main.qcloudimg.com/raw/6e8c639e89451a4ac302531659282d3f.png)
+3. 选择左侧【函数管理】，并在“函数管理”页面选择【函数代码】页签。
+4. 在“测试事件”的测试模板中选择“Hello World 事件模板”，并单击【测试】。
+    控制台右侧将展示出调用的执行结果及日志。
 
