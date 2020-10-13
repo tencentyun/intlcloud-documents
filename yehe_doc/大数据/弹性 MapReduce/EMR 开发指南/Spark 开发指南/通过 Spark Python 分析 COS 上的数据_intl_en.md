@@ -1,7 +1,7 @@
 This section describes running a Spark wordcount application in Python.
 ##  Preparations for Development
 - You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS for this job.
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating your EMR cluster, click the Spark component on the software configuration page, click "Enable COS" on the basic configuration page and then enter your SecretId and SecretKey. You can find your SecretId and SecretKey at [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a SecretKey, click **Create Key** to create one.
+- You have signed up for a Tencent Cloud account and created an EMR cluster. When creating the EMR cluster, select the Spark component on the software configuration page. Click **Enable** for COS** and enter your SecretId and SecretKey on **Basic Configuration**. You can find your SecretId and SecretKey on [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a SecretKey, click **Create Key** to create one.
 
 ##  Data Preparations
 Upload the to-be-processed file to COS first. If the file is in your local file system, upload it directly through the [COS Console](https://intl.cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, upload it by running the following Hadoop command:
