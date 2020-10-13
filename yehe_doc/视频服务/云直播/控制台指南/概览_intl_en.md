@@ -7,8 +7,8 @@ The LVB Console provides configurations for you to quickly implement basic featu
 
 ## Overview
 
-Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of online viewers, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
-![](https://main.qcloudimg.com/raw/c1a94b6fcf37cffeee7c431d1619906c.png)
+Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of concurrent connections, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
+![](https://main.qcloudimg.com/raw/02951b6f19b8f52eb8f0faec08e179d0.jpg)
 
 ### Billing
 
@@ -32,11 +32,11 @@ To view the traffic resource package usage under the current account, click **De
 
 - **Purchase traffic resource package**
 Click **Purchase** in the **Traffic Package** statistical item to enter the LVB traffic resource package purchase page where you can purchase desired resource packages.
-> For more information on pricing, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
+>? For more information on pricing, please see [Pricing Overview](https://intl.cloud.tencent.com/document/product/267/2819).
 
 ### Today's data
 
-It displays the downstream peak bandwidth, downstream traffic usage, and number of online viewers in LVB for today.
+It displays the downstream peak bandwidth, downstream traffic usage, and number of concurrent connections in LVB for today.
 
 <table>
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
@@ -52,6 +52,8 @@ It displays the downstream peak bandwidth, downstream traffic usage, and number 
 <td>Online users</td>
 <td>It is the number of concurrent connections counted by the platform during live streaming.</td>
 </tr>
+<td>Number of concurrent connections</td>
+<td>If the playback protocol is RTMP or FLV, the number of concurrent connections is the number of online viewers; if the playback protocol is HLS, the number of concurrent connections cannot be used as a reference for the number of online viewers.</td>
 </tbody></table>
 
 ### Usage trend
