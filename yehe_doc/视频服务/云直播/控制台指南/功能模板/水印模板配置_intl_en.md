@@ -1,7 +1,7 @@
 LVB supports the watermark feature. It adds watermarks to the live streaming screen to protect video content from theft. This document describes how to create, modify, and delete a watermark template in the console.
 **You can create a watermark template in the following ways:**
 - Create a template in the LVB Console. For more information, please see [Creating a Watermark Template](#Watermark).
-- Create a template through APIs.
+- Create a watermark template through APIs. For more information, please see [AddLiveWatermark](https://intl.cloud.tencent.com/document/product/267/30826) API overview.
 
 
 
@@ -16,7 +16,7 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 <span id="Watermark"></span>
 ## Creating a Watermark Template
 
-1. Log in to the LVB Console, and select **Feature Template** > **[Watermark configuration](https://console.cloud.tencent.com/live/config/watermark)**.
+1. Log in to the LVB Console, and select **Feature Configuration** > **[ LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Click **+** to create a watermark template.
 3. Enter a watermark name, which contains only letters, digits, underscores, and dashes, with a length of up to 30 characters.
 4. Click **Select image** to upload an image as the watermark.
@@ -31,7 +31,7 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 
 ## Modifying a Template
 
-1. Select **Feature Template** > **[Watermark configuration](https://console.cloud.tencent.com/live/config/watermark)**.
+1. Select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Find the desired watermark template that you have created, and click **Edit** on the right to modify template information.
 3. Click **Save**.
 
@@ -42,7 +42,7 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 
 ## Deleting a Template
 If the template is associated, you need to unassociate it before you can delete it. For more information, please see [Unassociating a Watermark Template](https://intl.cloud.tencent.com/document/product/267/31064).
-1. Select **Feature Template** > **[Watermark configuration](https://console.cloud.tencent.com/live/config/watermark)**.
+1. Select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Find the desired watermark template that you have created, and click the deletion icon ![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) at the top.
 3. In the pop-up dialog box, click **OK** to confirm the deletion.
 
