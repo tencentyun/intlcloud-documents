@@ -10,7 +10,7 @@ This document describes how to create, modify and delete a callback template in 
 
 - After a template has been created, you can [associate it with a push domain name](https://intl.cloud.tencent.com/document/product/267/31065). The association will take effect in about 5-10 minutes.
 - The `HTTP` or `HTTPS` server, whose address is configured as the callback address in the template to receive the callback, must be able to receive the request and respond normally.
-- The callback templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you associated a template with a specified stream through the callback APIs and want to unassociate it, you need to call the [DeleteLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30813) API.
+- The callback templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you associated a template with a specified stream through the callback APIs and want to unassociate it, you need to call the [DeleteLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30814) API.
 - For more information on LVB callback protocols, please see [Event Message Notification Protocol](https://intl.cloud.tencent.com/document/product/267/31566).
 - For more information on LVB callback parameters and examples, please see [Event Message Notification Parameter Descriptions](https://intl.cloud.tencent.com/document/product/267/31566).
 - For more information on LVB callback notification parameters, please see the following:
@@ -27,7 +27,7 @@ This document describes how to create, modify and delete a callback template in 
 ## Creating a Callback Template
 
 1. Log in to the [LVB Console](https://console.cloud.tencent.com/live).
-2. Select **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** on the left sidebar.
+2. Select **Feature Configuration** > **[LVB Callback](https://console.cloud.tencent.com/live/config/callback)** on the left sidebar.
 3. Click **+** to create a callback template, enter configuration information in the pop-up window, and click **Save**.
 ![](https://main.qcloudimg.com/raw/e79b06c3fecbfaa34d124f820e10ff2c.png)
 <table>
@@ -62,7 +62,7 @@ This document describes how to create, modify and delete a callback template in 
 <span id="change"></span>
 ## Modifying a Template
 
-1. Select **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)**.
+1. Select **Feature Configuration** > **[LVB Callback](https://console.cloud.tencent.com/live/config/callback)** .
 2. Find the desired callback template that you have created, and click **Edit** on the right to modify template information.
 3. Click **Save**.
 
@@ -73,7 +73,7 @@ This document describes how to create, modify and delete a callback template in 
 
 If the template is associated, you need to unassociate it before you can delete it. For more information, please see [Unassociating a Callback Template](https://intl.cloud.tencent.com/document/product/267/31065#untie).
 
-1. Select **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)**.
+1. Select **Feature Configuration** > **[LVB Callback](https://console.cloud.tencent.com/live/config/callback)** .
 2. Find the desired callback template that you have created, and click the deletion icon at the top.
 3. In the pop-up window, click **OK** to confirm the deletion.
 
