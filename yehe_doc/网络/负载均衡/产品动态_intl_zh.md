@@ -14,20 +14,20 @@
 <td>全量支持七层 CLB 个性化配置</td> 
 <td>全量支持设置 CLB 实例的七层配置参数。</td> 
 <td>2020-09-22</td> 
-<td><a href="https://cloud.tencent.com/document/product/214/15171 ">七层个性化配置</a></td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/32427">七层个性化配置</a></td> 
 </tr>
 <tr>
 <td>CLB 跨地域绑定2.0</td>
 <td>负载均衡支持通过云联网，跨地域绑定云服务器，允许客户选取多个后端云服务器的地域，跨 VPC、跨地域绑定后端云服务器。</td>
 <td>2020-09-10</td>
-<td><a href="https://cloud.tencent.com/document/product/214/48180">跨地域绑定2.0（新版）
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38441">跨地域绑定2.0（新版）
 </a></td>
 </tr>
 <tr>
 <td>CLB 支持混合云部署</td>
 <td>负载均衡直接绑定云下本地数据中心（IDC）内 IP。</td>
 <td>2020-09-10</td>
-<td><a href="https://cloud.tencent.com/document/product/214/48181">混合云部署
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38442">混合云部署
 </a></td>
 </tr>
 </tbody>
