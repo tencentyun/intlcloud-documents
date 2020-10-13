@@ -17,7 +17,7 @@ You can create a recording template in the following two methods:
 
 <span id="C_record"></span>
 ## Creating Recording Template
-1. Log in to the LVB Console and go to **Feature Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the LVB Console and go to **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **+** to set basic information and configure as follows:
 ![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
    
@@ -57,18 +57,18 @@ You can create a recording template in the following two methods:
 
 
 ## Modifying Recording Template
-1. Go to **Feature Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
+1. Select **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Select the target recording template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 
 ## Deleting Recording Template
-1. Go to **Feature Template** > **Recording Configuration**.
+1. Select **Feature Configuration** > **LVB Recording**.
 2. Select the target recording template and click ![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) above.
 3. Confirm whether to delete the selected recording template and click **OK** to delete it.
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
->! The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30842). 
+>! The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30843). 
 ## Associating and Disassociating Push Domain Name
 For detailed directions, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224).
