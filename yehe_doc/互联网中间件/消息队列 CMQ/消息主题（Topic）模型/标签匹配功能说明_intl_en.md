@@ -12,7 +12,7 @@ A producer publishes 100 messages to the topic with message filter tags `apple`,
 | A | apple | As `apple` can match the `apple` message filter tag, the 100 messages can be received properly. |
 | B | xiaomi | No messages can be received. |
 | C | imac+xiaomi | As `imac` can match the `imac` message filter tag, the 100 messages can be received properly. |
-| D | - | No messages can be received |
+| D | - | All messages can be received. |
 
 
 
