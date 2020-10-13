@@ -1,8 +1,8 @@
-本文将为非带宽上移账户的用户介绍，如何创建设备带宽包。
+本文将为传统账户类型的用户介绍，如何创建设备带宽包。
 
 >? 
 >- 目前共享带宽包处于内测阶段，如需使用，请提交 [内测申请](https://intl.cloud.tencent.com/apply/p/86ulv50u1e8)。
->- 非带宽上移账户仅能创建设备带宽包，账户类型判断方式，请参见 [区分账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
+>- 传统账户类型仅能创建设备带宽包，账户类型判断方式，请参见 [区分账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
 
 ## 限制说明
 1. 一个地域仅可开通一个设备带宽包。
