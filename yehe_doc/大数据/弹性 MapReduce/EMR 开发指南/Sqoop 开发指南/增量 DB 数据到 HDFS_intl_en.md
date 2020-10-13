@@ -69,7 +69,7 @@ Start the sqoop-metastore process in conf/sqoop-site.xml first:
 ```
 <property>
   <name>sqoop.metastore.client.enable.autoconnect</name>
-  <value>ture</value>
+  <value>true</value>
 </property>
 ```
 Then, start the sqoop-metastore service in the bin directory:
@@ -78,7 +78,7 @@ Then, start the sqoop-metastore service in the bin directory:
 ```
 
 Create a Sqoop job by running the following command:
->This command is applicable to Sqoop 1.4.6.
+>?This command is applicable to Sqoop 1.4.6.
 
 ```
 [hadoop@172 sqoop]$ bin/sqoop job --create job1 -- import --connect
@@ -128,7 +128,12 @@ Create a Sqoop job:
 ```
 [hadoop@172 sqoop]$ bin/sqoop job --create job2 -- import --connect jdbc:mysql://$mysqlIP/test --username root -P --table sqoop_test --check-column time --incremental lastmodified --merge-key id --last-value '2018-07-03 16:02:29' --target-dir /sqoop
 ```
-Here, $mysqlIP is the private IP address of your MySQL database. Several parameters are added, where --check-column must use a timestamp, --incremental selects the lastmodified mode, --merge-key selects the ID, and --last-value is the last modified time in the table that is queried. All modifications made after this time are synced to HDFS, and the Sqoop job automatically saves and updates the value each time.
+**Parameter description**
+- `$mysqlIP`: refers to the private IP address of your MySQL database
+- `--check-column`: must use a timestamp
+- `--incremental `: selects the lastmodified mode
+- `--merge-key`: selects the ID
+- `--last-value`: refers to the last modified time in the table that is queried. All modifications made after this time will be synced to HDFS, and the Sqoop job will automatically save and update the value each time. 
 
 Add data to the table sqoop_test in the MySQL database and make changes:
 ```
