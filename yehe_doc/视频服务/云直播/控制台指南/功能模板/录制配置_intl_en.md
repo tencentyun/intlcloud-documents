@@ -69,6 +69,6 @@ You can create a recording template in the following two methods:
 3. Confirm whether to delete the selected recording template and click **OK** to delete it.
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
->! The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to unassociate them, you need to call the [DeleteLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30843). 
+>! The recording templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled there for the time being. If you associated the recording configuration with a specified stream through the recording management API and want to disassociate them, you need to call the [DeleteLiveRecordRule API](https://intl.cloud.tencent.com/document/product/267/30843).
 ## Associating and Disassociating Push Domain Name
 For detailed directions, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224).
