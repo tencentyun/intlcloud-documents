@@ -31,7 +31,7 @@
 单击检索页右上角【LogListener 采集配置】，确认待采集机器状态是否正常。
      ![image-20200908212308874](https://main.qcloudimg.com/raw/7ac279ae3d62718421e3f04d028d6ee3.png)
      ![image-20200908213704314](https://main.qcloudimg.com/raw/98471d5abe8154d3767ac3c64ae7ed4b.png)
->!若待采集日志的机器状态异常，请参见 [机器组异常排查](https://cloud.tencent.com/document/product/614/17424) 文档。	 
+>!若待采集日志的机器状态异常，请参见 [机器组异常排查](https://intl.cloud.tencent.com/document/product/614/17424) 文档。	 
 2. 检查 LogListener 是否成功拉取采集配置
      在命令行下执行如下命令：
 ```shell
