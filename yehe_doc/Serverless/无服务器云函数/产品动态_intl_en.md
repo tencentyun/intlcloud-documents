@@ -1,3 +1,22 @@
+## August 2020
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="40%">Description</th>
+<th width="20%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCF now supports the Custom Runtime feature</td>
+<td>SCF provides the Custom Runtime feature, which allows you to customize runtime environments. It can implement custom function runtime by opening up its capabilities, enable you to use any programming language on any version to write functions as needed.</td>
+<td>August 5, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/38129">Custom Runtime</a>
+</td>
+</tr>
+</tbody></table>
 
 ## July 2020
 <table>
