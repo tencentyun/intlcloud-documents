@@ -8,7 +8,7 @@ Push interruption diagnosis helps you quickly check the record of LVB push inter
 
 ## Directions
 
-After the LVB push is interrupted, select **Auxiliary Tools** > **[Interruption Diagnosis](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
+After the LVB push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
 Here:
@@ -284,4 +284,4 @@ Here:
  </tr>
 </table>
 
-LVB also provides an API for querying errors.
+LVB also provides an API for queries. For more information, see [DescribeLiveStreamEventList](https://cloud.tencent.com/document/product/267/33186) API overview.
