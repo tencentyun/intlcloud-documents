@@ -241,17 +241,19 @@ https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&Conso
 <td align="left">是否隐藏日志服务日志主题选择按钮：true 表示隐藏，false 表示不隐藏</td>
 </tr>
 </tbody></table>
- 2. 拼接登录信息，生成最终的内嵌访问链接。
-     ```plaintext
-     https://cloud.tencent.com/login/roleAccessCallback
-	 ?algorithm=<签名时加密算法，目前只支持 sha1 和 sha256 ，不填默认 sha1
-	 &secretId=<签名时 secretId>
-	 &token=<临时密钥 token>
-	 &nonce=<签名时 nonce>
-	 &timestamp=<签名时 timestamp>
-	 &signature=<签名串>
-	 &s_url=<登录后目的 URL>
-     ```
+ 2. 拼接完整登录信息以及目的页地址进行登录，<b>参数值需要 urlencode 编码</b>。
+ 
+ ```plaintext
+ https://cloud.tencent.com/login/roleAccessCallback
+ ?algorithm=<签名时加密算法，目前只支持 sha1 和 sha256 ，不填默认 sha1
+ &secretId=<签名时 secretId>
+ &token=<临时密钥 token>
+ &nonce=<签名时 nonce>
+ &timestamp=<签名时 timestamp>
+ &signature=<签名串>
+ &s_url=<登录后目的 URL>
+ ```
+ 
 7. 使用生成的最终链接，访问腾讯云日志服务控制台页面。例如检索分析页面的内嵌访问链接如下：
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback?nonce=52055817&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcls%2Fsearch%3Fregion%3Dap-guangzhou%26start_time%3D2020-05-26%25252014%25253A01%25253A18%26end_time%3D2020-05-26%25252014%25253A16%25253A18&secretId=AKID-vHJ7WPHcy_RVIOm-QTIktXOf9S9z_k_JackOp3dyQPJwmDrNLQJuiNuw9******&signature=eXeWaDn6iJlcPp1sqqGd6m9%2FQk****&timestamp=1592455018&token=5e4vuBHL7fBQPi1V9fvSINw4Vu7PSr9Ic3de78b86109c171eb4e3ea27c137c1fIWKU8JC-LO01L87sIYlfTSaHHXeHcqim7Jg9hBuN2nbdfgeBUPXhmpyAk4G6e9bHFZ-7yNRig7Y33CQHxh6jOesP4VfhRzQprWGRtC5No1ty******-aoj_WJhA55oyvqaqxw2jtTdh8nx9OjJr3tlbIa9oJe7aZYoPbdpFqrF6ZjlCPPap2yQB_SkUsWwDl_9BrK2Km3U2IocdvQ7QxrW0ts1aiBi7xtTSJRcfkBYPYEV_YoJrtkhYW3E4L47imA1bfVAjM9F5uKWzVzsDGDT0aCUU9mqdb4vjJrY8tm-wJKKEe8eiyY9EbkH3VWnFV2YocYNDJqFyjKOWR******
