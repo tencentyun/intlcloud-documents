@@ -18,7 +18,7 @@ No. Traffic fees are charged only for downstream push.
 
 <span id="live_que4"></span>
 ### When will value-added services be charged?
-For enabled value-added services associated with a push domain name such as recording, screencapturing, and porn detection, fees will be incurred when push starts. For enabled value-added services associated with a playback domain name such as transcoding (including stream mix and watermarking), fees will be incurred when pull for playback starts (in other words, after a transcoding template is created and associated, no transcoding fees will be incurred if there is no stream pulled for playback).
+If you enabled value-added services such as recording, watermark, screencapturing and porn detection and have bound them with the push domain name. Such services will be billed once the push starts. For value-added services such as transcoding which are bound with the domain name, the billing will start when the pull begins. After you created a transcoding template and bound it with the domain name, no transcoding fee will be incurred if you don't start pulling. On-cloud stream mixing will be billed once a stream mixing task starts. When you enabled LVB watermark or on-cloud stream mixing feature, standard transcoding fees may be incurred, which is based on the resolutions of output live streams.
 
 
 

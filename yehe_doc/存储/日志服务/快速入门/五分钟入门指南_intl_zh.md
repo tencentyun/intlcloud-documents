@@ -12,7 +12,7 @@
 
 ### 1. 服务开通
 
-首先，您需要在腾讯云官网申请开通 [日志服务](https:/intl.cloud.tencent.com/product/cls)。
+首先，您需要在腾讯云官网申请开通 [日志服务](https://intl.cloud.tencent.com/product/cls)。
 
 ### 2. 下载安装 LogListener  
 
@@ -23,7 +23,7 @@
 安装 LogListener 要求日志源机器的网络与日志服务的可用地域网络互通（腾讯云服务器 CVM 默认内网访问日志服务）。
 您可以执行以下命令检查网络连通性，其中`<region>` 为日志服务所在地域简称，具体地域信息请参阅 [可用地域](https://intl.cloud.tencent.com/document/product/614/18940) 文档。
 ```shell
-telnet <region>.cls.myqcloud.com 80
+telnet <region 简称>.cls.tencentyun.com
 ```
 
 #### 2.2 查看（或创建）密钥对

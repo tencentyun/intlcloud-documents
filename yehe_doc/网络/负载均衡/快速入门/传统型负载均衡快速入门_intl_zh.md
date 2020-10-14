@@ -6,8 +6,8 @@
 2. 本文以 HTTP 转发为例，云服务器上必须部署相应的 Web 服务器，如 Apache、Nginx、IIS 等。
 为了验证结果，示例在 `rs-1` 上部署了 Apache 并返回一个带有 “Hello Tomcat! This is rs-1!” 的 HTML，在 `rs-2` 上部署了 Apache 并返回一个带有 “Hello Tomcat! This is rs-2!” 的 HTML。更多云服务器部署内容，请参见 [Linux（CentOS）下部署 Java Web](https://intl.cloud.tencent.com/document/product/214/32391) 及 [Windows 下安装配置 PHP](https://intl.cloud.tencent.com/document/product/213/10182)。
 3. 访问云服务器的公网 IP+路径，若显示结果为您部署好的页面，则表示服务部署成功。
->
-> - 云服务器上必须购买公网带宽，因为当前的带宽属性在 CVM 上，而非 CLB 上。
+>!
+> - 传统账户类型的云服务器上必须购买公网带宽，因为当前的带宽属性在 CVM 上，而非 CLB 上。若您无法确定账户类型，请参见 [账户类型](https://intl.cloud.tencent.com/document/product/214/36999)。
 > - 示例中后端服务器部署的服务返回值不同，实际情况下，为保持所有用户均有一致体验，后端服务器上一般是部署完全相同的服务。
 
 ## 购买传统型负载均衡实例
@@ -46,13 +46,26 @@
 4. 单击【确定】，完成绑定。
 ![](https://main.qcloudimg.com/raw/0c9f911e40621ff3615ac47d94651329.png)
 5. 展开监听器【Listener1】，可以查看后端 CVM 的健康检查状态，当状态为“健康”时表示 CVM 可以正常处理负载均衡转发的请求。
-<!--![](https://main.qcloudimg.com/raw/1928d50fb7fe1d2cd3eda128c4ae9eb0.png)-->
+
+
+## 配置安全组
+创建完负载均衡后，您可以配置负载均衡的安全组来隔离公网流量，详情请参考 [配置安全组](https://intl.cloud.tencent.com/document/product/214/14733)。
+安全组配置完成后，您可以选择开启或关闭安全组默认放通，不同选择配置如下所示。
+
+### 方法一：开启安全组默认放通
+>?目前该功能处于内测阶段，如果您需要体验该功能，请提交 [内测申请](https://cloud.tencent.com/apply/p/njj5tl4a5j)。传统型内网负载均衡不支持安全组默认放通功能。
+
+具体操作请参考 [配置安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)。
+
+
+### 方法二：在 CVM 安全组上放通客户端 IP
+具体操作请参考 [配置安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)。
 
 ## 验证负载均衡服务
 1. 在浏览器中输入负载均衡的服务地址和端口 `http://vip:80`，测试负载均衡服务，如下图所示，表示本次请求被 CLB 转发到了 rs-1 这台 CVM 上，CVM 正常处理请求并返回。
 ![](https://main.qcloudimg.com/raw/5a7cb3e86d04149978b90050546a2983.png)
 2. 此监听器的轮询算法是“按权重轮询”，且两台 CVM 的权重都是“10”，刷新浏览器，再次发送请求，可以看到本次请求被 CLB 转发到了 rs-2 这台 CVM 上。
 ![](https://main.qcloudimg.com/raw/8f9f5f667461a5d0efd3e6b2bbe859f3.png)
->
+>!
 > - 如果用户关闭会话保持功能，选择轮询的方式进行调度，则请求依次分配到不同后端服务器上。
 > - 如果用户开启会话保持功能，或关闭会话保持功能但选择 ip_hash 的调度方式，则请求持续分配到同一台后端服务器上去。
