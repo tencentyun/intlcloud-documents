@@ -18,7 +18,7 @@
 某企业的一个业务在使用 SMS，该业务的产品运营人员需要访问 SMS 控制台，获取发送数据概览信息，同时不允许其进行敏感操作（如修改发送超量提醒、发送频率限制等），以免误操作影响业务。这时可以先创建自定义策略，该策略拥有 SMS 控制台登录的访问权限且不授予发送超量提醒、发送频率限制的接口权限，然后创建一个子账号，与上述策略绑定，将该子账号提供给产品运营人员。
 
 ## 授权粒度
-访问管理的核心功能可以表达为：**允许或禁止某账号对某些资源进行某些操作**。SMS 访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B)，资源的粒度是 SMS 应用，操作的粒度是 [云 API](https://intl.cloud.tencent.com/product/api)，包括服务端 API 以及访问 SMS 控制台时可能会用到的 API。详细说明请参见可授权的资源及操作。
+访问管理的核心功能可以表达为：**允许或禁止某账号对某些资源进行某些操作**。SMS 访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B)，资源的粒度是 SMS 应用，操作的粒度是 [云 API](https://intl.cloud.tencent.com/product/api)，包括服务端 API 以及访问 SMS 控制台时可能会用到的 API。详细说明请参见 [可授权的资源及操作](https://intl.cloud.tencent.com/document/product/382/38454)。
 
 ## 能力限制
 - SMS 访问管理的资源粒度为应用，不支持对更细粒度的资源（如应用信息、配置信息等）做授权。
