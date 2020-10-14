@@ -7,7 +7,7 @@ This document describes how to prepare a Windows image by using the Windows Serv
 ### Preparations
 
 Before preparing and exporting a system disk image, complete the following checks.
-> If you need to prepare and export a data disk image, skip this operation.
+>?  If you need to prepare and export a data disk image, skip this operation.
 >
 #### Check the partitioning mode and launch mode of the operating system
 
@@ -78,7 +78,7 @@ You can select different tools to export an image based on your actual requireme
 #### Using a platform tool to export an image
 
 For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
-> Tencent Cloud supports the following image formats for service migration: QCOW2, VHD, RAW, and VMDK.
+>? Tencent Cloud supports the following image formats for service migration: QCOW2, VHD, RAW, and VMDK.
 >
 
 <span id="Usedisk2vhd"></span>
@@ -88,8 +88,8 @@ To export the system on a physical machine or if you do not want to use a platfo
 1. Install and start the Disk2vhd tool.
 [Click here to download Disk2vhd](https://download.sysinternals.com/files/Disk2vhd.zip).
 2. Select the storage path of the image to export, select the volumes to copy, and click **Create**, as shown in the following figure.
-> 
-> - Disk2vhd can be started only after the Volume Shadow Copy Service (VSS) is installed in the Windows system.
+>! 
+> - Disk2vhd can be started only after the Volume Shadow Copy Service (VSS) is installed in the Windows system. For more information about the VSS features, see [Volume Shadow Copy Service](https://docs.microsoft.com/en-us/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN).
 > - Do not select "Use Vhdx" because the system currently does not support images in VHDX format.
 > - We recommend that you select "Use volume Shadow Copy" to better ensure data integrity.
 > 
@@ -97,7 +97,7 @@ To export the system on a physical machine or if you do not want to use a platfo
 
 ### Checking the image
 
-> The image file system that you prepare may be corrupted because you prepared the image without stopping the service or due to other reasons. Therefore, we recommend that you check the image after preparing it.
+>? The image file system that you prepare may be corrupted because you prepared the image without stopping the service or due to other reasons. Therefore, we recommend that you check the image after preparing it.
 >
 If the image format is supported by the current platform, you can directly open the image to check the file system. For example, the Windows platform supports the VHD image, the Linux platform allows you to run qemu-nbd to open QCOW2 images, and the Xen platform allows you to directly open VHD files.
 Take the Linux platform as an example:
