@@ -2,7 +2,7 @@
 
 访问管理的核心功能可以表达为：**允许或禁止某账号对某些资源进行某些操作**。SMS 访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B)，资源的粒度是 SMS 应用，操作的粒度是 [云 API](https://intl.cloud.tencent.com/product/api)，包括 [API 3.0](https://intl.cloud.tencent.com/document/product/382/34689) 以及访问 SMS 控制台时可能会用到的 API。
 
-如有 SMS 访问管理需求，请登录腾讯云 [主账号](https://intl.cloud.tencent.com/document/product/598/34899) 使用 预设策略 或 [自定义策略](https://intl.cloud.tencent.com/document/product/382/38456) 完成具体授权操作。
+如有 SMS 访问管理需求，请登录腾讯云 [主账号](https://intl.cloud.tencent.com/document/product/598/34899) 使用 [预设策略](https://intl.cloud.tencent.com/document/product/382/38455) 或 [自定义策略](https://intl.cloud.tencent.com/document/product/382/38456) 完成具体授权操作。
 
 ## 可授权的资源类型
 SMS 访问管理可授权的资源类型为应用。
