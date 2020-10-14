@@ -4,7 +4,7 @@ Cloud disks use a three-copy distribution mechanism, and the system ensures that
 ## Elastic
 
 You can configure the storage capacity freely, and expand the capacity on demand without business interruption.
-The maximum capacity of cloud disks is 16TB. A single CVM can mount up to 20 elastic cloud disks as data disks, to efficiently handle TB/PB-level big data processing scenarios.
+The maximum capacity of cloud disks is 32TB. A single CVM can mount up to 20 elastic cloud disks as data disks, to efficiently handle TB/PB-level big data processing scenarios.
 
 ## High Performance
 
