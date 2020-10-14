@@ -34,7 +34,7 @@ You have logged in to the [LVB Console](https://console.cloud.tencent.com/live/l
 <h2 id="push">Generating a Push Address</h2>
 
 ### Directions
-1. Log in to the LVB Console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the address generator.
+1. Log in to the LVB Console, select **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the Address Generator.
 2. Select **Push domain** as the domain type, and select a push domain name that you have added on the domain management page.
 3. Enter an **AppName**. It is `live` by default.
 4. Enter a **StreamName**, such as `liveteststream`.
@@ -50,7 +50,7 @@ LVB supports RTMP push. You can use the address generator to generate a push add
 <h2 id="play">Generating a Playback Address</h2>
 
 ### Directions
-1. Log in to the LVB Console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the address generator.
+1. Log in to the LVB Console, select **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the Address Generator.
 2. Select **Playback domain** as the domain type, and select a playback domain name that you have added on the domain management page.
 3. Enter an **AppName**. It is `live` by default.
 4. Enter a **StreamName**, such as `liveteststream`.
