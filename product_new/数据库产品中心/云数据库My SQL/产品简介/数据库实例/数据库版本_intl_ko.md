@@ -38,8 +38,8 @@ TencentDB for MySQL에서 현재 지원하는 버전은 MySQL 8.0, MySQL 5.7, My
 
 ## MySQL 8.0의 성능 비교
 #### 읽기 성능
-![](https://main.qcloudimg.com/raw/47f61f25a1bfbafd897e57fccbceec30.png)
+![](https://main.qcloudimg.com/raw/1bf9f7294ca6b4631f203333819ab2a1.png)
 
 #### 쓰기 성능
-![](https://main.qcloudimg.com/raw/f994576735f1c573b0bcdb34825ac215.png)
+![](https://main.qcloudimg.com/raw/f77b34eb5c769539325b2f04a539ad4f.png)
 
