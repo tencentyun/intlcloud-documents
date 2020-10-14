@@ -2,6 +2,7 @@
 Tencent Cloud provides a web push feature which can quickly generate push addresses and test push online.
 
 ## Prerequisites
+- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
 - You have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - Your device has a camera installed and its browser supports the Flash plugin to call the camera permission.
 
