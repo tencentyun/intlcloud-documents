@@ -62,7 +62,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
  4. 在弹出的“配置安全组”窗口中，选择对应绑定到 CLB 上的安全组，单击【确定】。
   ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png) 
  CLB 安全组配置完成，对于访问 CLB 的流量，仅允许80端口的访问。
- <img alt="" src="https://main.qcloudimg.com/raw/976c09448afd1098588a56fe2ea18e53.png" >
+ <img alt="" src="https://main.qcloudimg.com/raw/a32cd86653185a5138006757aab38075.png" >
 
 ### 步骤三：配置安全组默认放通
 您可以选择开启或关闭安全组默认放通，不同选择配置如下：

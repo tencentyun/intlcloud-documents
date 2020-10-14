@@ -1,11 +1,11 @@
 ### What are the features of Tencent Cloud CBS?
 Tencent Cloud CBS provides three disk types: Premium Cloud Storage, SSD and Enhanced SSD. The cloud disks have the following features:
 - Elastic mounting and unmounting: elastic cloud disks can be mounted and unmounted. Up to 20 elastic cloud disks can be mounted to each CVM to serve as data disks. 
-- Elastic expansion: a single disk supports a maximum capacity of 16 TB. You can scale up the disk at any time.
+- Elastic expansion: a single disk supports a maximum capacity of 32 TB. You can scale up the disk at any time.
 - Snapshot backup: cloud disks enable you to back up data by creating a snapshot. This improves data reliability and allow rapid data restoration when necessary. Cloud disks also enable you to create a new cloud disk based on a snapshot, speeding up your business deployment.
 
 ### What limits do cloud disks have?
-- A single elastic cloud disk has a maximum capacity of 16 TB. It can be scaled up to 16 TB, but cannot be scaled down.
+- A single elastic cloud disk has a maximum capacity of 32 TB. It can be scaled up to 16 TB, but cannot be scaled down.
 - Elastic cloud disks can only be mounted to CVMs that are in the same availability zone.
 - Up to 20 elastic cloud disks can be mounted to a single CVM. You can add the elastic cloud disks directly when purchasing a CVM or [mount the elastic cloud disks](https://intl.cloud.tencent.com/document/product/362/32401) after purchase.
 - You can purchase up to 50 elastic cloud disks at one time on the [CBS console](https://console.cloud.tencent.com/cvm/cbs). 
