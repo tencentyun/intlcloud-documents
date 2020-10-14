@@ -17,4 +17,3 @@ Pay-as-you-go resources are billed on the hour. When your account becomes negati
 - If your Tencent Cloud account is topped up to a positive balance within 24 hours after the automatic shutdown, the cloud disk will be restored and billing continues.
 - If the balance is less than 0 for 24 hours after the cloud disk has service suspended, the system will repossess the pay-as-you-go disk. All data will be erased and **cannot be retrieved**. Tencent Cloud account creator and all collaborators will be notified via email, SMS, the Message Center, etc.
 
-Please call 95716 if you need further information.
