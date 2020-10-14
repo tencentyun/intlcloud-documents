@@ -22,6 +22,10 @@ You can save the dependent libraries of the SCF code in the code package and upl
 2. Install the dependencies with the `pip install -t .` command.
 3. When uploading the code library, please package and upload the dependent libraries too.
 
+>!
+>- SCF is running on CentOS 7. You need to install dependencies in the same operating system; otherwise, the uploaded dependencies may not be found in runtimes.
+>- If a dependencies involve a dynamic link library, you need to copy the dependencies to the dependency installation directory, and then package and upload them. For more information, see [Installing Dependency with Docker](https://intl.cloud.tencent.com/document/product/583/38127).
+
 ### Java runtime
 **Dependency manager**: In Java, dependencies can be managed with the Maven package manager.
 **Instructions**:
