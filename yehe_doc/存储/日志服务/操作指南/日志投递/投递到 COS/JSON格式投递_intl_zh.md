@@ -14,9 +14,9 @@
 2. 在左侧导航栏中，单击【日志集管理】。
 3. 单击需要设置投递任务的日志集 ID/名称，进入日志集详情页。
    <img src="https://main.qcloudimg.com/raw/c5781d2d437c290f00c0ece75a2691dd.png" width="80%">
-4. 找到需要投递的日志主题，在其操作栏中，单击【管理配置】>【投递对象存储配置】，进入投递配置页面。
+4. 找到需要投递的日志主题，在其操作栏中，单击【管理】，进入投递配置页面。
    <img src="https://main.qcloudimg.com/raw/0f60de9f332b4f8192838b4f53a9994f.png" width="80%">
-5. 单击【添加投递配置】，进入**投递至 COS** 配置页面，依次填写配置信息。
+5. 单击【投递至 COS】，进入**投递至 COS** 配置页面，依次填写配置信息。
    <img src="https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png">
 
 **配置项说明如下：**
