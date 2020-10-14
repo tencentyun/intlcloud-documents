@@ -1,6 +1,6 @@
 >!本文档主要介绍**短信 SMS** 访问管理功能的相关内容，其他产品访问管理相关内容请参见 [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)。
 
-在 SMS 访问管理中使用 预设策略来实现授权虽然方便，但权限控制粒度较粗，不能细化到 SMS 应用和 [云 API](https://intl.cloud.tencent.com/product/api) 粒度。如果开发者要求精细的权限控制能力，则需要创建自定义策略。
+在 SMS 访问管理中使用 [预设策略](https://intl.cloud.tencent.com/document/product/382/38455) 来实现授权虽然方便，但权限控制粒度较粗，不能细化到 SMS 应用和 [云 API](https://intl.cloud.tencent.com/product/api) 粒度。如果开发者要求精细的权限控制能力，则需要创建自定义策略。
 
 ## 自定义策略创建方法
 自定义策略有多种创建方法，下方表格展示各种方法的对比，具体操作流程请参考下文。
@@ -33,7 +33,7 @@
 ```
 
 ### 操作语法描述
-如上文所述，短信权限管理的操作粒度是云 API，详情请参见可授权的资源及操作。在下文的示例中，以 DescribeAppList（获取应用列表）、DescribeAppInfo（获取应用信息）等云 API 为例。
+如上文所述，短信权限管理的操作粒度是云 API，详情请参见 [可授权的资源及操作](https://intl.cloud.tencent.com/document/product/382/38454)。在下文的示例中，以 DescribeAppList（获取应用列表）、DescribeAppInfo（获取应用信息）等云 API 为例。
 - **短信所有云 API 的策略语法描述**
 ```
 "action": [
@@ -75,7 +75,7 @@
 	● 单击【添加声明】，页面最下方会出现一条“拒绝对短信应用1400000001进行 DeleteAppInfo 操作”的声明。
 5. 单击【下一步】，按需修改策略名称（也可以不修改）。
 6. 单击【完成】完成自定义策略的创建。
-后续将该策略授予其他子账号的方法同将 SMS 全读写访问权限授予已存在的子账号。
+后续将该策略授予其他子账号的方法同 [将 SMS 全读写访问权限授予已存在的子账号](https://intl.cloud.tencent.com/document/product/382/38455#.E5.B0.86-sms-.E5.85.A8.E8.AF.BB.E5.86.99.E8.AE.BF.E9.97.AE.E6.9D.83.E9.99.90.E6.8E.88.E4.BA.88.E5.B7.B2.E5.AD.98.E5.9C.A8.E7.9A.84.E5.AD.90.E8.B4.A6.E5.8F.B7)。
 
 ### 使用策略语法
 在下文示例中，我们将创建一个自定义策略。该策略允许对1400000001和1400000002这两个短信应用进行任何操作，但不允许对1400000001进行 DeleteAppInfo 操作。
@@ -113,4 +113,4 @@
 ```
 >?策略内容需遵循 [CAM 策略语法逻辑](https://intl.cloud.tencent.com/document/product/598/10603)，其中资源和操作两个元素的语法请参见上文 [资源语法描述](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 和 [操作语法描述](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 所述。
 6. 单击【创建策略】完成自定义策略的创建。
-后续将该策略授予其他子账号的方法同将 SMS 全读写访问权限授予已存在的子账号。
+后续将该策略授予其他子账号的方法同 [将 SMS 全读写访问权限授予已存在的子账号](https://intl.cloud.tencent.com/document/product/382/38455#.E5.B0.86-sms-.E5.85.A8.E8.AF.BB.E5.86.99.E8.AE.BF.E9.97.AE.E6.9D.83.E9.99.90.E6.8E.88.E4.BA.88.E5.B7.B2.E5.AD.98.E5.9C.A8.E7.9A.84.E5.AD.90.E8.B4.A6.E5.8F.B7)。
