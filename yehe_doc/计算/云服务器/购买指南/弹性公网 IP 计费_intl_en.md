@@ -56,9 +56,8 @@ IP resource fee = the idle price of the region EIP is located in × billing peri
 
 <table>
    <tr><th>Region</th><th>Price (USD/Hour)</th></tr>
-   <tr><td>Chinese Mainland</br>Frankfurt</br>Seoul</td><td>0.031</td></tr>
-   <tr><td>Hong Kong, China</br>Singapore</td><td>0.04</td></tr>
-   <tr><td>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Moscow</br>Tokyo</br>Mumbai</td><td>0.04</td></tr>
+   <tr><td>Chinese Mainland</td><td>0.031</td></tr>
+   <tr><td>Hong Kong, China</br>Singapore</br>Frankfurt</br>Seoul</br>Toronto</br>Virginia</br>Silicon Valley</br>Bangkok</br>Moscow</br>Tokyo</br>Mumbai</td><td>0.04</td></tr>
 </table>
 
 
