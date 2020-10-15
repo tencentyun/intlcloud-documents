@@ -13,7 +13,7 @@
    <tr>
       <td>存储容量费用</td>
       <td>根据存储容量的大小进行计算，不同存储类型的单价不同</td>
-      <td nowrap="nowrap">存储容量费用 = 存储容量单价 * 月存储容量</td>
+       <td nowrap="nowrap"><li>存储容量费用 = 存储容量单价 * 月存储容量<br><li>月存储容量 = 当月“日存储容量”之和 / 当月天数<br><li>日存储容量 = 当日“每5分钟存储容量”之和 / 288（采样点数）</td>
    </tr>
    <tr>
       <td>请求费用</td>
@@ -49,8 +49,11 @@
 
 
 
-> - 有关计费项的详细说明、计费限制，请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
-> - 有关不同计费项的详细价格信息，请参见 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239)。
+> ?有关计费项的详细说明、计费限制，请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
+
+## 产品定价
+
+关于 COS 的按量计费定价，请参见 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239)。
 
 ## 示例说明
 
