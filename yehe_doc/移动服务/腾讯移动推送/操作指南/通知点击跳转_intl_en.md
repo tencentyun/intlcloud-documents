@@ -266,7 +266,7 @@ Below is a sample of a complete message:
 
 ### Getting parameters on the client
 
-The click callback applies to the notification messages of the app in foreground, background and shutdown status.
+If you use iOS SDK integration, you can obtain custom parameters using click callback. This callback applies to the notification messages of the app in foreground, background and shutdown status.
 
 ```objective-c
 /// Click callback
@@ -283,4 +283,14 @@ The click callback applies to the notification messages of the app in foreground
     }
     completionHandler();
 }
+```
+
+If you use Flutter plugin integration, use the following APIs in the `runner->AppDelegate->didFinishLaunchingWithOptions` method at cold startup to:
+```objective-c
+	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+	{
+			// Get message content
+			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+			// Process logically based on the message content
+	}
 ```
