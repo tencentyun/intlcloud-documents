@@ -14,7 +14,7 @@
 <td>排查工具支持按账号查询 Token</td>
 <td>支持通过账号搜索设备 Token，定位问题将更方便、更快捷</td>
 <td>2020-09-28</td>
-<td><a href="https://cloud.tencent.com/document/product/548/48774">排查工具</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/38389">排查工具</a></td>
 </tr>
 <tr>
 <td>用户标签支持新增、活跃、沉默标签</td>
