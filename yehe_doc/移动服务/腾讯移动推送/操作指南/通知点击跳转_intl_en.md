@@ -41,7 +41,7 @@ If you want to redirect to the page specified by `AboutActivity`, use the follow
 
 To set the Intent redirect on the [TPNS Console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** -> **Open Location** and enter the following information.
 
-![](https://main.qcloudimg.com/raw/d31ac5addb0efcd78c83785e70d21cd7.png)
+![](https://main.qcloudimg.com/raw/7555576dd7bea459eb7f27e8a0f48d19.png)
 
 #### Opening app
 
@@ -51,13 +51,13 @@ By default, the console push is to open the app.
 
 To set the URL redirect on the [TPNS Console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** -> **Open Location** and enter the following information.
 
-![](https://main.qcloudimg.com/raw/69479956f0630b9650bb68ae4c523f5c.png)
+![](https://main.qcloudimg.com/raw/0977d856b016ffbc7799644dc5f9af53.png)
 
 #### In-app Activity redirect
 
 This method will be deactivated, so we don’t recommend using it. Go to **Advanced Settings** -> **Open Location** in the console and enter the following information.
 
-![](https://main.qcloudimg.com/raw/a0a072f1bc0955a2a5bdcb96dbc68be5.png)
+![](https://main.qcloudimg.com/raw/0d72df984a153f05a31c246e5dd6c8d9.png)
 
 
 
@@ -230,7 +230,7 @@ You can pass in custom parameters in the notification for delivery, and implemen
 ### Using the console
 
 To set parameters on the [TPNS Console](https://console.cloud.tencent.com/tpns), go to **Advanced Settings** -> **Extra Parameter(s)** and enter the following information.
-![](https://main.qcloudimg.com/raw/ddf372b38166cfc38857df91c01813cf.png)
+![](https://main.qcloudimg.com/raw/a77ffabd8cb2d4907bd7b597a11cfc97.png)
 
 ### Using RESTful APIs
 
