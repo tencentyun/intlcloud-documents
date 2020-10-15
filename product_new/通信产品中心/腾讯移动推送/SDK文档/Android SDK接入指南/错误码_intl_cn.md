@@ -42,10 +42,8 @@
 |其他|如出现其他未知错误，请记录错误日志并 [联系我们](https://intl.cloud.tencent.com/support)|
 |10006|AccessKey 或者 AccessID 错误|
 |10007|初始化移动推送 TPNS  Service 错误|
-|10008|AccessKey 或者 AccessID 错误|
 |10110|认证过程错误|
 |10115|短时间内重复注册|
-|10300|相关返回码|
 |10400|SDK 参数错误|
 |20002 |无有效的网络连接，请确认该应用是否付费|
 |10030009  |应用不存在，SDK 集成时需要根据接入的服务接入点配置域名，详情参见 [ SDK 集成文档](https://intl.cloud.tencent.com/document/product/1024/30713#androidstudio-gradle-.E8.87.AA.E5.8A.A8.E9.9B.86.E6.88.90 )|
