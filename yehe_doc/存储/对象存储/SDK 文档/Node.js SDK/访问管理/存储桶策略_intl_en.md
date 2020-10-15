@@ -50,7 +50,7 @@ cos.putBucketPolicy({
 | ------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket                           | Bucket for which the bucket policy is configured in the format: `BucketName-APPID`  | String      | Yes   |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
-| Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469) | Object | Yes |
+| Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#policy-syntax) | Object | Yes |
 | - version | Version number, fixed as 2.0 | String | Yes |
 | - statement | List of permission policy statements | ObjectArray | Yes |
 | - - effect | Effect; enumerated values: `allow`, `deny` | String | Yes |
@@ -58,7 +58,7 @@ cos.putBucketPolicy({
 | - - - qcs | ID string <br>Format: `qcs::cam::uin/100000000001:uin/100000000011` <br>Here, 100000000001 is a root account, while 100000000011 is a sub-account | String | Yes |
 | - - action | List of related actions subject to the policy. Wildcard `*` is supported | StringArray | Yes |
 | - - resource | List of resource identification strings. <br>Format: `qcs::cos:<Region>:uid/<AppId>:<ShortBucketName>/*`<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray | Yes |
-| - - condition | Constraints; can be left blank. For details, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603). | String | No |
+| - - condition | Constraints; can be left blank. For details, see [Element Reference](https://intl.cloud.tencent.com/document/product/598/10603#6.-condition). | String | No |
 
 #### Callback function description
 
@@ -138,7 +138,7 @@ function(err, data) { ... }
 | --------------- | ------------------------------------------------------------ | ----------- |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | data | Data returned when the request is successful. If the request fails, this is null. | Object |
-| - Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469) | Object |
+| - Policy | Permission policy. For more information, see [Cloud Access Management Practices > Policy Syntax](https://intl.cloud.tencent.com/document/product/436/12469#policy-syntax) | Object |
 | - - version | Version number, fixed as 2.0 | String |
 | - - statement | List of permission policy statements | ObjectArray |
 | - - - effect | Effect; enumerated values: `allow`, `deny` | String |
@@ -146,7 +146,7 @@ function(err, data) { ... }
 | - - - - qcs | ID string. <br>Format: `qcs::cam::uin/100000000001:uin/100000000011`. <br>100000000001 is a root account, while 100000000011 is a sub-account | String |
 | - - - action | List of related actions subject to the policy. Wildcard `*` is supported | StringArray |
 | - - - resource | List of resource identification strings.<br>Format: `qcs::cos:<Region>:uid/<AppId>:<ShortBucketName>/*`<br>Example: `qcs::cos:ap-beijing:uid/1250000000:examplebucket/*` | StringArray |
-| - - - condition | Constraints; can be left blank. For details, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603). | ObjectArray |
+| - - - condition | Constraints; can be left blank. For details, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603#6.-condition). | ObjectArray |
 
 ## Deleting a bucket policy
 
