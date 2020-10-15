@@ -1,9 +1,9 @@
 
 >!
-- For any Tencent Cloud account with the first app created on or after July 1, 2020 via TRTC Console, fees for on-cloud recording will be charged according to billing rules described in this document.
-- For any Tencent Cloud account with the first app created before July 1, 2020 via TRTC Console, fees for on-cloud recording in apps created before and after July 1, 2020 will all be charged according to billing rules described in [LVB > LVB Recording](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) by default.
-- This document only describe billing rules for TRTC on-cloud recording. The recording output files will be saved on VOD platform by default. VOD will charge **storage fees** and **watching fees** based on your usage. For more information, please see [On-cloud Recording > Pricing](https://intl.cloud.tencent.com/document/product/647/35426).
-- If you used LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional fees for [LVB Transcoding > Standard transcoding](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) will be incurred.
+>- For any Tencent Cloud account with the first app created on or after July 1, 2020 via TRTC Console, fees for on-cloud recording will be charged according to billing rules described in this document.
+>- For any Tencent Cloud account with the first app created before July 1, 2020 via TRTC Console, fees for on-cloud recording in apps created before and after July 1, 2020 will all be charged according to billing rules described in [LVB > LVB Recording](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) by default.
+>- This document only describe billing rules for TRTC on-cloud recording. The recording output files will be saved on VOD platform by default. VOD will charge **storage fees** and **watching fees** based on your usage. For more information, please see [On-cloud Recording > Pricing](https://intl.cloud.tencent.com/document/product/647/35426).
+>- If you used LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional fees for [LVB Transcoding > Standard transcoding](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) will be incurred.
 
 <span id="Billing_items"></span>
 ## Usage Calculation Method
