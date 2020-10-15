@@ -19,7 +19,7 @@
     			<td>中国大陆公有云地域默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请联系 <a href="https://console.cloud.tencent.com/workorder/category">售后工程师</a>。</td>
     </tr>
     	 <tr>
-        <td rowspan="3">存储类型</td>
+        <td rowspan="4">存储类型</td>
     			<td>标准存储限制</td>
     			<td>计费限制：<br>存储时间、存储单元无限制<br>标准存储计费详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价</a></td>
     </tr>
