@@ -42,10 +42,8 @@
 | Other | Unknown error. Please keep the log and [contact us](https://intl.cloud.tencent.com/support) |
 | 10006 | Invalid AccessKey or AccessID |
 | 10007 | An error occurred while initializing the TPNS service|
-| 10008 | AccessKey or AccessID error |
 | 10110 | Signature authentication error |
 | 10115 | Repeated registration in a short time |
-| 10300 | Marathon policy return code |
 | 10400 | Incorrect SDK parameters |
 | 20002 | No valid network connection available. Please check whether the application has made the payment |
 |10030009 | The application does not exist. To implement the SDK integration, please configure the domain name based on your application service access point. For more information, see [SDK Integration](https://intl.cloud.tencent.com/document/product/1024/30713#androidstudio-gradle-.E8.87.AA.E5.8A.A8.E9.9B.86.E6.88.90 )|
