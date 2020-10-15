@@ -33,20 +33,20 @@ User-mode software packages are compatible with the latest CentOS 7, which can b
 tos version 2.2
 Usage:
 	tos TencentOS Server System Management Toolset
-	tos -u|-U| update [rpm_name]Update the system 
+	tos -u|-U| update [rpm_name]	Update the system 
 	tos -i|-I| install rpm_name	install rpms
-	tos -s|-S| showShow the system version
-	tos -c|-C| check [rpm_name]Check the modified rpms
-	tos -f yum | fix yumFix yum problems
-	tos -f dns | fix dnsFix DNS problems
-	tos -a|-A | analyzeAnalyze the system performance 
+	tos -s|-S| show			Show the system version
+	tos -c|-C| check [rpm_name]	Check the modified rpms
+	tos -f yum | fix yum		Fix yum problems
+	tos -f dns | fix dns		Fix DNS problems
+	tos -a|-A | analyze		Analyze the system performance 
 	tos set dns			Set DNS
-	tos set irqSet irqaffinity, restart irqaffinity service
-	tos -cu| check-updateCheck available package updates
-	tos -b|-B| backup [ reboot ]Backup the system online, or reboot to backup 
-	tos -r|-R| recover|reinstallRecover or Reinstall the system
-	tos -h|-H| helpShow this usage
-	tos -v|-V| versionShow the script version
+	tos set irq			Set irqaffinity, restart irqaffinity service
+	tos -cu| check-update		Check available package updates
+	tos -b|-B| backup [ reboot ]	Backup the system online, or reboot to backup 
+	tos -r|-R| recover|reinstall	Recover or Reinstall the system
+	tos -h|-H| help			Show this usage
+	tos -v|-V| version		Show the script version
 ```
 
 #### System configurations
