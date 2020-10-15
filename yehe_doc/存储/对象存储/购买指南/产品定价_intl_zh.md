@@ -60,7 +60,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <td>标准取回：0.02<br>批量取回：0.0026</td>
       <td rowspan="1">0.1（需恢复才适用）</td>
       <td rowspan="1">不适用</td>
-      <td rowspan="1">不适用</td>	   
+      <td rowspan="1">不适用</td>
    </tr>
    <tr>
       <td rowspan="3">北京、南京、上海、广州</td>
