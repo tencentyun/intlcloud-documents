@@ -56,20 +56,7 @@
 
 ### 使用 SDK
 
-您可以直接调用 SDK 的智能分层控制台配置，详情请参见下列各语言 SDK 文档：
-
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36195)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31519)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37695)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35804)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35858)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34997)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547)
-
+当前 COS 所发布的 SDK 都支持使用智能分层存储类型，具体方法是在文件上传时，将 StorageClass 参数设置为 INTELLIGENT_TIERING，实现直传智能分层存储。详情请参见 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
 
 
 ## 使用限制

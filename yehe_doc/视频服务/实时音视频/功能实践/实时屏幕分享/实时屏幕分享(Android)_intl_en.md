@@ -11,7 +11,7 @@ TRTC supports screen sharing on Android, i.e., sharing the screen content of the
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
 
 ## Starting Screen Sharing
-To start screen sharing on Android, you only need to call the [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) API in `TRTCCloud`. If you want to achieve a more stable and clearer sharing effect, you need to address the following two issues:
+To start screen sharing on Android, you only need to call the [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) API in `TRTCCloud`. If you want to achieve a more stable and clearer sharing effect, you need to address the following three issues:
 
 #### Setting video encoding parameters
 By setting the first parameter `encParams` in [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58), you can specify the encoding quality of screen sharing. If `encParams` is set to `null`, the SDK will automatically use the previously set encoding parameter. We recommend you use the following parameter values:
