@@ -49,7 +49,7 @@
 
 
 
-> ?有关计费项的详细说明、计费限制，请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
+> ?有关计费项的详细说明和计费限制，请参见 [计费项](https://intl.cloud.tencent.com/document/product/436/33776)。
 
 ## 产品定价
 
