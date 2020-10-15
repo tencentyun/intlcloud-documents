@@ -48,9 +48,7 @@ The billable items in COS and their billing formulas are as detailed below:
 
 
 
->
-> - For detailed descriptions of billable items and billing restrictions, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
-> - For detailed pricing on different billable items, see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+>? For detailed descriptions of billable items and billing restrictions, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
 
 ## Example
 
