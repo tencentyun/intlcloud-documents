@@ -64,7 +64,16 @@
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 <td>TencentDB for MongoDB instance</td>
-</tr></table>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1016">TencentDB for TcaplusDB</a></td>
+<td><li>Cluster</li><li>Table</li></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/571">Data Transmission Service (DTS)</a></td>
+<td><li>Migration task</li><li>Subscription instance</li></td>
+</tr>
+</table>
 
 ## Serverless
 <table>
@@ -99,7 +108,12 @@
 <tr><th width="50%">Service Name</th><th width="50%">Resource</th></tr><tr>
 <td>Message Queue CKafka</td>
 <td>Ckafka instance</td>
-</tr></table>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/406/34258">Tencent Cloud Message Queue (CMQ)</a></td>
+<td><li>Queue</li><li>Topic</li></td>
+</tr>
+</table>
 
 ## Network Security
 <table>

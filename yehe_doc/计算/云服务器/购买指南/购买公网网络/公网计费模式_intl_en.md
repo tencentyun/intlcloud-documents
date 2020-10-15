@@ -82,11 +82,11 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 </tr>
 </thead>
 <tbody><tr>
-<td>Chinese mainland, Seoul, Hong Kong (China), Singapore</td>
+<td>Chinese mainland, Seoul, Hong Kong (China), Singapore, Frankfurt</td>
 <td>0.12</td>
 </tr>
 <tr>
-<td>Frankfurt, Toronto, Silicon Valley</td>
+<td>Toronto, Silicon Valley</td>
 <td>0.077</td>
 </tr>
 <tr>

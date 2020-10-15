@@ -8,7 +8,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
 
 >- 关于对象存储的详细计费介绍，请参见 [计费方式](https://intl.cloud.tencent.com/document/product/436/16871#billing-modes)、[计费项](https://intl.cloud.tencent.com/document/product/436/33776) 和 [计费周期](https://intl.cloud.tencent.com/document/product/436/16871#billing-cycle)。
 >- 关于按量计费的示例说明，请参见 [按量计费（后付费）](https://intl.cloud.tencent.com/document/product/436/32534)。
->- 下文价格表中归档存储的请求费用、外网下行流量费用，是需先恢复至标准存储，才产生相应的费用。关于归档存储的相关介绍，您可参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925)。
+>- 下文价格表中归档存储和深度归档存储的请求费用、外网下行流量费用，是需先恢复至标准存储，才产生相应的费用。关于归档存储和深度归档存储的相关介绍，您可参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925)。
 
 <table>
    <tr>
@@ -51,6 +51,16 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <td>0.1（需恢复才适用）</td>
       <td>不适用</td>
       <td>不适用</td>
+   </tr>
+   <tr>
+      <td rowspan="1">北京、广州、成都</td>
+      <td>深度归档存储</td>
+      <td>0.002</td>
+      <td>读写请求：0.14<br>标准取回请求：1<br>批量取回请求：0.29<br>（需恢复才可请求）</td>
+      <td>标准取回：0.02<br>批量取回：0.0026</td>
+      <td rowspan="1">0.1（需恢复才适用）</td>
+      <td rowspan="1">不适用</td>
+      <td rowspan="1">不适用</td>
    </tr>
    <tr>
       <td rowspan="3">北京、南京、上海、广州</td>
@@ -374,7 +384,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <th rowspan=2>对象标签费用<br>（美元/每万个标签）</td>
    </tr>
    <tr>
-      <th>标准存储</td>
+      <th>标准存储<br>低频存储</td>
       <th>任务费用<br>（美元/个）</th>
       <th>对象处理费用<br>（美元/每处理万个对象）</th>
    </tr>
@@ -387,7 +397,7 @@ COS 公有云地域的划分，请参见 [地域和访问域名](https://intl.cl
       <td>0.01</td>
    </tr>
    <tr>
-      <td>北京一、北京、南京、上海、广州</td>
+      <td>北京、南京、上海、广州</td>
       <td>0.0027（暂不支持南京）</td>
       <td>0.0018</td>
       <td>0.2022</td>

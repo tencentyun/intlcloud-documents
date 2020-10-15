@@ -9,12 +9,12 @@
 ## 使用步骤
 ### **初始化场景配置**
 进入 [腾讯云 Elasticsearch Service 购买页](https://buy.cloud.tencent.com/es#/)，在场景化配置区域，选择一个初始化场景配置模版。ES 集群购买成功后，相应索引配置将会应用到该集群。
-![](https://main.qcloudimg.com/raw/b745cf0617d6ec4389e158fe38e05956.png)
+![](https://main.qcloudimg.com/raw/fb2c49b11e96948acc4546c2a3fe93ab.png)
 ### **更改场景配置**
 1. 登录 [腾讯云 Elasticsearch Service 控制台](https://console.cloud.tencent.com/es)，在【集群列表】中，单击集群 ID 进入集群详情页，进入高级配置页。
-![](https://main.qcloudimg.com/raw/7d8816cdb4a45dbbc4a2a3e82b50d115.png)
+![](https://main.qcloudimg.com/raw/64f7c033f2475e91c3ab1373ac36c232.png)
 2. 在场景化配置区域，选择要更改的目标场景配置模版，弹出弹窗提示，单击【取消】后，现有模版将维持不变，单击【确定】后，相应的索引配置将会即刻应用到集群。
-![](https://main.qcloudimg.com/raw/8cdbbe6f807767816a2637afc409ddf7.jpg)
+![](https://main.qcloudimg.com/raw/bfa059b1387929c2843bf7b3dbe580c6.png)
 
 
 ## 场景化索引模板说明

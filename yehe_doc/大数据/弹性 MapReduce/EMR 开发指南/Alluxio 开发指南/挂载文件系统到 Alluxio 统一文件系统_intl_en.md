@@ -28,7 +28,7 @@ Configure the COS configuration information in --options.
 | fs.cos.secret.key | COS secretKey                         |
 | fs.cos.region     | COS region name such as `ap-beijing` |
 | fs.cos.app.id     | User AppID                              |
-| COS_BUCKET        | COS Bucket name                         |
+| COS_BUCKET        | COS bucket name. **Name only without the AppID extension**                         |
 
 This command mounts the COS directory (specified by `cos://bucket/xxx`) to the `/cos` directory in Alluxio. 
 
@@ -39,4 +39,11 @@ bin/alluxio fs mount /hdfs hdfs://data
 This command mounts the `/data` directory of HDFS to the `/hdfs` subdirectory of Alluxio.
 
 After the mount is successful, the mounted content can be viewed by running the `alluxio fs ls` command.
+
+ **Example 3. Mounting an CHDFS directory to an Alluxio directory**
+```
+alluxio fs mount   \ 
+ --option alluxio.underfs.hdfs.configuration=/usr/local/service/hadoop/etc/hadoop/core-site.xml  \
+/chdfs ofs://f4modr7kmvw-wMqw.chdfs.ap-chongqing.myqcloud.com
+```
 

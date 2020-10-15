@@ -4,6 +4,7 @@
 - 当一个 Android 系统上的后台 App 在持续使用 CPU 时，很容易会被系统强行杀掉，而且屏幕分享本身又必然会消耗 CPU。要解决这个看似矛盾的冲突，我们需要在 App 启动屏幕分享的同时，在 Android 系统上弹出悬浮窗。由于 Android 不会强杀包含前台 UI 的 App 进程，因此该种方案可以让您的 App 可以持续进行屏幕分享而不被系统自动回收。
 
 
+
 ## 支持的平台
 
 | iOS | Android | Mac OS | Windows |Electron| 微信小程序 | Chrome 浏览器|
@@ -11,7 +12,15 @@
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
 
 ## 启动屏幕分享
-要开启 Android 端的屏幕分享，只需调用 `TRTCCloud` 中的  [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) 接口即可。但如果要达到稳定和清晰的分享效果，您需要关注如下两个问题：
+要开启 Android 端的屏幕分享，只需调用 `TRTCCloud` 中的  [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) 接口即可。但如果要达到稳定和清晰的分享效果，您需要关注如下三个问题：
+
+#### 添加 Activity
+在 manifest 文件中粘贴如下 activity（若项目代码中存在则不需要添加）。
+```xml
+<activity 
+    android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity" 
+    android:theme="@android:style/Theme.Translucent"/>
+```
 
 #### 设定视频编码参数
 通过设置 [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)  中的首个参数 `encParams` ，您可以指定屏幕分享的编码质量。如果您指定 `encParams` 为 null，SDK 会自动使用之前设定的编码参数，我们推荐的参数设定如下：

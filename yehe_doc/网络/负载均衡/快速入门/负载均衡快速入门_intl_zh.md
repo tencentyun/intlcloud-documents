@@ -6,8 +6,8 @@
 2. 本文以 HTTP 转发为例，云服务器上必须部署相应的 Web 服务器，如 Apache、Nginx、IIS 等。
 为了验证结果，示例在 `rs-1` 上部署了 Nginx 并返回一个带有 “Hello nginx! This is rs-1!” 的 HTML，在 `rs-2` 上部署了 Nginx 并返回一个带有 “Hello nginx! This is rs-2!” 的 HTML。更多云服务器部署内容，请参考 [Linux（CentOS）下部署 Java Web](https://intl.cloud.tencent.com/document/product/214/32391) 及 [Windows 下安装配置 PHP](https://intl.cloud.tencent.com/document/product/213/10182)。
 3. 访问云服务器的公网 IP+路径，若显示结果为您部署好的页面，则表示服务部署成功。
->
-> - 云服务器上必须购买公网带宽，因为当前的带宽属性在 CVM 上，而非 CLB 上。
+>!
+> - 传统账户类型的云服务器上必须购买公网带宽，因为当前的带宽属性在 CVM 上，而非 CLB 上。若您无法确定账户类型，请参见 [账户类型](https://intl.cloud.tencent.com/document/product/214/36999)。
 > - 示例中后端服务器部署的服务返回值不同，实际情况下，为保持所有用户均有一致体验，后端服务器上一般是部署完全相同的服务。
 
 ## 购买负载均衡实例
@@ -51,7 +51,7 @@
 ![](https://main.qcloudimg.com/raw/af7915eed019f50f8d312979637e2c34.png)
 
 有关负载均衡监听器的更多内容，请参考 [负载均衡监听器概述](https://intl.cloud.tencent.com/document/product/214/6151)。
->
+>!
 >- 一个监听器（即监听协议：端口）可以配置多个域名，一个域名下可以配置多条 URL 路径，选中监听器或域名，单击【＋】，即可创建新的规则。
 >- 会话保持：如果用户关闭会话保持功能，选择轮询的方式进行调度，则请求依次分配到不同后端服务器上；如果用户开启会话保持功能，或关闭会话保持功能但选择 ip_hash 的调度方式，则请求持续分配到同一台后端服务器上去。
 
@@ -64,11 +64,23 @@
 3. 单击【确认】，完成绑定。
 4. 展开监听器到 URL 路径维度，可以查看绑定的云服务器和其健康检查状态，当状态为“健康”时表示云服务器可以正常处理负载均衡转发的请求。
 ![](https://main.qcloudimg.com/raw/8ef5732d0748b73dd1d71b3ab0aed1d4.png)
->一条转发规则（监听协议 + 端口 + 域名 + URL 路径）可以绑定同一台云服务器的多个端口。如用户在 `rs-1` 的 `80` 和 `81` 端口部署了一样的服务，则 CLB 支持示例中的转发规则同时绑定 `rs-1` 的 `80` 和 `81` 端口，两个端口都会接收到 CLB 转发的请求。
+>!一条转发规则（监听协议 + 端口 + 域名 + URL 路径）可以绑定同一台云服务器的多个端口。如用户在 `rs-1` 的 `80` 和 `81` 端口部署了一样的服务，则 CLB 支持示例中的转发规则同时绑定 `rs-1` 的 `80` 和 `81` 端口，两个端口都会接收到 CLB 转发的请求。
+
+## 配置安全组
+创建完负载均衡后，您可以配置负载均衡的安全组来隔离公网流量，详情请参考 [配置安全组](https://intl.cloud.tencent.com/document/product/214/14733)。
+
+安全组配置完成后，您可以选择开启或关闭安全组默认放通，不同选择配置如下所示。
+### 方法一：开启安全组默认放通
+>?目前该功能处于内测阶段，如果您需要体验该功能，请提交 [内测申请](https://cloud.tencent.com/apply/p/njj5tl4a5j)。
+
+具体操作请参考 [配置安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)。
+
+### 方法二：在 CVM 安全组上放通客户端 IP
+具体操作请参考 [配置安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)。
 
 ## 验证负载均衡服务
-配置完成负载均衡后，可以验证该架构是否生效，即验证通过一个 CLB 实例下不同的 **域名+URL** 访问不同的后端云服务器，也即验证**内容路由（content-based routing）** 的功能。
-### 方法一：配置 hosts 将域名指向 CLB
+配置完成负载均衡后，可以验证该架构是否生效，即验证通过一个负载均衡实例下不同的 **域名+URL** 访问不同的后端云服务器，也即验证**内容路由（content-based routing）** 的功能。
+### 配置 hosts 将域名指向 CLB
 1. 在 Windows 系统中，进入 `C:\Windows\System32\drivers\etc` 目录，修改 hosts 文件，把域名映射到 CLB 实例的 VIP 上。
 ![](https://main.qcloudimg.com/raw/b12ee22250cb7c24d5e12ecb803e6355.png)
 2. 为了验证 hosts 是否配置成功，可以运行 cmd，用 ping 命令探测一下该域名是否成功绑定了 VIP，如有数据包，则证明绑定成功。
@@ -77,7 +89,7 @@
 ![](https://main.qcloudimg.com/raw/cf61264a9406d141650ed79da21c6859.png)
 4. 此监听器的轮询算法是“按权重轮询”，且两台 CVM 的权重都是“10”，刷新浏览器，再次发送请求，可以看到本次请求被 CLB 转发到了 rs-2 这台 CVM 上。
 ![](https://main.qcloudimg.com/raw/ab7db7b5c3952739919ae6e271bb1348.png)
->`image/` 后 `/` 必须保留，代表 image 是默认的目录，而不是名为 image 的文件。
+>!`image/` 后 `/` 必须保留，代表 image 是默认的目录，而不是名为 image 的文件。
 
 
 ## 配置重定向功能（可选）

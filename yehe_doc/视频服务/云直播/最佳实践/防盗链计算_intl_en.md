@@ -19,7 +19,7 @@ For more information on the playback hotlink protection key, please see [How can
 - **Step 2. Generate `txTime`**
 The plaintext in the signature is `txTime`, which is the validity period of the link. For example, if the current time is 2018-12-29 11:13:45, and the URL to be generated is expected to be valid for 3 hours, then `txTime` should be set to 2018-12-29 14:13:45.
 However, it is obviously inappropriate to put such a long string of time in the URL. In actual use, we convert 2018-12-29 14:13:45 to a UNIX timestamp first, i.e., 1546064025 (you can call a time function in your programming language for conversion and processing), and then convert it to a hexadecimal string to further reduce the character length, i.e., txTime = 1546064025 (decimal) = 5C271099 (hexadecimal). Using a decimal string is also supported.
->The `txTime` should not be too long or too short:
+>!The `txTime` should not be too long or too short:
 >- If the expiration time is too short, when the host encounters network jitters during live streaming, the push cannot be resumed because the push URL expires.
 >- If the expiration time is too long, there may be a risk of hotlinking.
 

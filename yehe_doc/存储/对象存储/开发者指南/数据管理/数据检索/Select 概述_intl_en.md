@@ -54,8 +54,8 @@ COS Select currently supports the following operators:
 You can initiate an extraction request using the console, API, or SDK:
 
 - If you use the console, see [Data Extraction](https://cloud.tencent.com/document/product/436/37642).
-- If you use the SDK, go to [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474) and select the required SDK API.
 - If you use the API, see [SELECT Object Content](https://cloud.tencent.com/document/product/436/37641).
+- If you use the SDK, go to [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474) and select the required SDK API.
 
 ## FAQ
 

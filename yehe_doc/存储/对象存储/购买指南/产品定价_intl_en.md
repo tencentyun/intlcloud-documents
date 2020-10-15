@@ -387,7 +387,7 @@ For more information on COS public regions, please see [Regions and Access Domai
       <td>0.01</td>
    </tr>
    <tr>
-      <td>Beijing Zone 1, Beijing, Nanjing, Shanghai, Guangzhou</td>
+      <td>Beijing, Nanjing, Shanghai, Guangzhou</td>
       <td>0.0027 (currently not applicable to Nanjing)</td>
       <td>0.0018</td>
       <td>0.2022</td>

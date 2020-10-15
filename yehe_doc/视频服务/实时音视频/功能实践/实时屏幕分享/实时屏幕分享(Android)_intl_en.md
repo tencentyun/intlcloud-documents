@@ -11,14 +11,14 @@ TRTC supports screen sharing on Android, i.e., sharing the screen content of the
 |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
 
 ## Starting Screen Sharing
-To start screen sharing on Android, you only need to call the [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) API in `TRTCCloud`. If you want to achieve a more stable and clearer sharing effect, you need to address the following two issues:
+To start screen sharing on Android, you only need to call the [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) API in `TRTCCloud`. If you want to achieve a more stable and clearer sharing effect, you need to address the following three issues:
 
 #### Setting video encoding parameters
 By setting the first parameter `encParams` in [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58), you can specify the encoding quality of screen sharing. If `encParams` is set to `null`, the SDK will automatically use the previously set encoding parameter. We recommend you use the following parameter values:
 
 | Parameter Item | Parameter Name | Common Recommended Value | Recommended Value for Text-based Teaching |
 |---------|---------|---------|-----|
-| Resolution | videoResolution |  1280 × 720 | 1920 × 1080 |
+| Resolution | videoResolution | 1280x720 | 1920x1080 |
 | Frame rate | videoFps | 10 FPS | 8 FPS |
 | Highest bitrate | videoBitrate| 1,600 Kbps | 2,000 Kbps |
 | Resolution adaption | enableAdjustRes | No | No |
@@ -58,8 +58,14 @@ Then, what should be done to share the screen and camera image at the same time?
 The solution is simple: you only need to display a floating window of the camera image on the screen. In this way, TRTC can share the camera image together when capturing the screen image.
 
 ## Viewing Shared Screen
-When a user in a room starts screen sharing, other users in the room will get a notification through the [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a80bcaac82e5372245746a4bc63656390) event in `TRTCCloudListener`.
-Users who want to view the shared screen can start rendering the substream image of the remote user through the [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#acdbe3829d20f58cedd5a0c2f49ea24dc) API.
+- **View macOS/Windows screen sharing**
+  When a macOS/Windows user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will get a notification through the [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the substream image of the remote user through the [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) API.
+
+- **View Android/iOS screen sharing**
+  When an Android/iOS user starts screen sharing, the screen will shared through the primary stream, and other users in the room will get a notification through the [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the primary stream image of the remote user through the [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) API.
+
 
 ```java
 // Sample code: viewing screen sharing image

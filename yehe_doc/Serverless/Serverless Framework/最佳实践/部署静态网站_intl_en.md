@@ -1,118 +1,124 @@
-## Operation Scenarios
-You can connect the static website component to the Tencent Cloud COS component in order to quickly deploy a static website in COS and generate a domain name for access over the public network.
+## Overview
+**Tencent Cloud static website component** uses [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud). Based on serverless services (such as COS) in the cloud, it can implement "zero" configuration, convenient development, and rapid deployment of your static website. The static website component supports a rich set of configuration extensions such as custom domain name and CDN acceleration and provides the easiest-to-use, low-cost, and elastically scalable cloud-based static website development and hosting capabilities.
 
-You can host your custom webpage in COS and generate a domain name for access over the public network as instructed in [Directions](#caozuo). Based on the static website component, you can build a blog system (such as [Hexo](https://intl.cloud.tencent.com/document/product/1040/36749)) more easily; you can also add certain extensions to it so as to support frontend frameworks (such as Vue and React).
 
-<span id="caozuo"></span>
+Features:
+
+- **Pay-as-you-go billing**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
+- **"Zero" configuration**: you only need to write project code and then deploy it, and the Serverless Framework will take care of all the configuration work.
+- **Fast deployment**: you can deploy your static website in just a few seconds.
+- **Real-time log**: you can view the business status through the output of the real-time log, which makes it easy for you to develop applications directly in the cloud.
+- **Convenient collaboration**: the status information and deployment logs in the cloud make multi-person collaborative development easier.
+- **CDN acceleration, SSL certificate configuration, and custom domain name**: you can configure CDN acceleration, custom domain names, and HTTPS access.
+
+
+
+
+
 ## Directions
-### 1. Install
+#### 1. Install
 
-Install Serverless through npm:
-
-```console
+Install the latest version of Serverless Framework through npm:
+```
 $ npm install -g serverless
 ```
 
-### 2. Create
+#### 2. Create
 
-Create a `my-website` folder locally:
-
-```console
-$ mkdir my-website
-$ cd my-website
+Create a directory and enter it:
+```
+$ mkdir tencent-website && cd tencent-website
 ```
 
-Create a corresponding `serverless.yml` file in the folder and store the static webpage in the `code` directory. The directory structure is as follows:
-
-```console
-$ touch serverless.yml
+Use the following command and template link to quickly create a static website hosting application:
+```
+$ serverless init website-demo
+$ cd website-demo
 ```
 
+After download, the directory structure is as follows:
 ```
-|- code
-  |- index.html
-|- serverless.yml
-
-```
-
- The `code` directory should store the corresponding HTML/CSS/JavaScript resource files or a complete React application.
-Download the [sample HTML code](https://tinatest-1251971143.cos.ap-beijing.myqcloud.com/index.html) and add the following code to the `index.html` file:
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello, Tencent Cloud</title>
-</head>
-<body>
-Hello, Tencent Cloud
-</body>
-</html>
+|- src
+|   └── index.html
+└──  serverless.yml
 ```
 
-### 3. Configure
+In the `src` directory, you can host both simple HTML files and complete React/Vue applications.
 
-Configure the `serverless.yml` file as follows:
+#### 3. Deploy
+
+Run the following command in the directory under the `serverless.yml` file to deploy the static website. After the deployment is completed, you can view the URL address of your static website in the output on the command line. Then, you can click the address to visit the hosted website.
+
+```
+$ serverless deploy
+```
+
+If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
+
+
+
+#### 4. Configure
+
+The static website component supports "zero" configuration deployment, that is, it can be deployed directly through the default values in the configuration file. Nonetheless, you can also modify more optional configuration items to further customize your project.
+
+The following describes certain configuration items in `serverless.yml` of the static website component:
 
 ```yml
-
 # serverless.yml
 
 component: website # Name of the imported component, which is required. The `tencent-website` component is used in this example
 name: websitedemo # Name of the instance created by this `website` component, which is required
-org: test # Organization information, which is optional. The default value is the `APPID` of your Tencent Cloud account
+org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
 app: websiteApp # Website application name, which is optional
 stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 
 inputs:
   src:
-    src: ./code
+    root: ./
+    src: ./src
+    hook: npm run build
     index: index.html
-    # dist: ./dist
-    # hook: npm run build
-    # websitePath: ./
+    websitePath: ./
   region: ap-guangzhou
   bucketName: my-bucket
-  protocol: https
-
+  protocol: http
+  hosts:
+    - host: anycoder.cn
+      https:
+        certId: 123
 ```
 
+View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md)
 
-### 4. Deploy
+After you update the configuration fields according to the configuration file, run `serverless deploy` or `serverless` again to update the configuration to the cloud.
 
-If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, you can directly log in or sign up:
+#### 5. Debug
 
-Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
+After the static website application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
 
-```console
-$ sls deploy
-  
-region:  ap-guangzhou
-website: https://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
-  
-22s › myWebsite › done
+You can enable debugging by running the `serverless dev` command in the directory where the `serverless.yml` file is located.
+
+`serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
+
+#### 6. Check status
+
+In the directory where the `serverless.yml` file is located, run the following command to check the deployment status:
 
 ```
-
-
-### 5. Remove
-
-Run the following command to remove the project:
-```console
-sls remove --debug
-
-  DEBUG ─ Flushing template state and removing all components.
-  DEBUG ─ Starting Website Removal.
-  DEBUG ─ Removing Website bucket.
-  DEBUG ─ Removing files from the "my-bucket-1300415943" bucket.
-  DEBUG ─ Removing "my-bucket-1300415943" bucket from the "ap-guangzhou" region.
-  DEBUG ─ "my-bucket-1300415943" bucket was successfully removed from the "ap-guangzhou" region.
-  DEBUG ─ Finished Website Removal.
-
-  3s › myWebsite › done
+$ serverless info
 ```
 
-### Account configuration (optional)
+#### 7. Remove
+
+In the directory where the `serverless.yml` file is located, run the following command to remove the deployed static website service. After removal, this component will delete all related resources created during deployment in the cloud.
+
+```
+$ serverless remove
+```
+
+Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process (`sls` is an abbreviation for the `serverless` command).
+
+## Account Configuration
 
 Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
 
@@ -121,12 +127,11 @@ $ touch .env # Tencent Cloud configuration information
 ```
 
 Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` file and save it:
-
 ```
 # .env
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).

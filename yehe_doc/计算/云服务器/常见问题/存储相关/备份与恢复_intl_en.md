@@ -8,7 +8,7 @@
   - For Windows: [Build the FTP Service (Windows)](https://intl.cloud.tencent.com/document/product/213/10414)
   - For Linux: [Build the FTP Service (Linux)](https://intl.cloud.tencent.com/document/product/213/10912) 
 
-### What are common data backup and recovery solutions?
+## What are common data backup and recovery solutions?
 
 The data backup and recovery solutions vary by application scenarios and businesses. The following recommendations can be used based on your actual needs:
 - Back up the instance regularly using the [CBS Snapshot](https://intl.cloud.tencent.com/document/product/362/5757) feature.
