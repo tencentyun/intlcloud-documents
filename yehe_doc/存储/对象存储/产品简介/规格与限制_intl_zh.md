@@ -21,11 +21,11 @@
     	 <tr>
         <td rowspan="4">存储类型</td>
     			<td>标准存储限制</td>
-    			<td>计费限制：<br>存储时间、存储单元无限制<br>标准存储计费详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价</a></td>
+    			<td>计费限制：<br>存储时间、存储单元无限制。<br>标准存储计费详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价。</a></td>
     </tr>
     	 <tr>
         <td>低频存储限制</td>
-    			<td>计费限制：<br>存储时间不足30天，按30天计算<br>存储单元不足64KB，按64KB计算<br>低频存储计费详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价</a></td>
+    			<td>计费限制：<br>存储时间不足30天，按30天计算。<br>存储单元不足64KB，按64KB计算<br>低频存储计费详情，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">产品定价。</a></td>
     </tr>
     	 <tr>
         <td>归档存储限制</td>
@@ -57,7 +57,7 @@
     		</tr>
     		<tr>
     			<td >复制</td>
-    			<td >1. 支持单个账号在相同地域或跨地域进行对象复制。<br>2. 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">费用说明</a> 中流量费用信息  <br>3. 复制接口规格：<br>&nbsp;&nbsp;（a）简单复制：复制单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14117">简单复制</a><br>&nbsp;&nbsp;（b）大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14118">分块复制</a></td>
+    			<td >1. 支持单个账号在相同地域或跨地域进行对象复制。<br>2. 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6239">费用说明</a> 中流量费用信息。  <br>3. 复制接口规格：<br>&nbsp;&nbsp;（a）简单复制：复制单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14117">简单复制。</a><br>&nbsp;&nbsp;（b）大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14118">分块复制。</a></td>
     		</tr>
     		<tr>
     			<td>批量删除</td>
