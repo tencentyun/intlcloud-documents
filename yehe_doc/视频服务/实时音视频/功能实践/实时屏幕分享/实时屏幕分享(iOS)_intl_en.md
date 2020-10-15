@@ -21,7 +21,7 @@ We recommend the following encoding parameters for screen sharing on iOS:
 
 | Parameter Item | Parameter Name | Common Recommended Value | Recommended Value for Text-based Teaching | 
 |---------|---------|---------|-----|
-| Resolution | videoResolution | 1280 × 720 | 1920 × 1080 | 
+| Resolution | videoResolution | 1280x720 | 1920x1080 | 
 | Frame rate | videoFps | 10 FPS | 8 FPS |
 | Highest bitrate | videoBitrate| 1,600 Kbps | 2,000 Kbps |
 | Resolution adaption | enableAdjustRes | No | No |
@@ -167,7 +167,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 Connect to the receipt logic of the primary application in the following steps, so that the primary application can stay in `waiting` status before screen sharing starts in order to receive the screen sharing data from the `Broadcast Upload Extension` process at any time.
 1. Make sure that camera capture has been disabled in `TRTCCloud`; and if not, call [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) to disable it.
 2. Call the [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) method and pass in the `AppGroup` set in [step 1](#createGroup) to make the SDK enter the `waiting` status.
-3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS.
+3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS:
 4. You can call the [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) API to stop screen sharing at any time.
  
 ```
@@ -207,8 +207,23 @@ Till [step 3](#receive), the user needs to start screen sharing manually by pres
 }
 ```
 
->!
->Apple added `RPSystemBroadcastPickerView` to iOS 12.0, which can pop up a launcher in applications for user to confirm whether to start screen sharing. Currently, `RPSystemBroadcastPickerView` does not support custom UI or provide an official wakeup method.
+>!Apple added `RPSystemBroadcastPickerView` to iOS 12.0, which can pop up a launcher in applications for user to confirm whether to start screen sharing. Currently, `RPSystemBroadcastPickerView` does not support custom UI or provide an official wakeup method.
 >`TRTCBroadcastExtensionLauncher` works by traversing subviews of `RPSystemBroadcastPickerView` to find the `UIButton` and trigger its click event.
 > **However, this scheme is not officially recommended by Apple and may become invalid in the next system update. Therefore, [step 4](#launch) is only an alternative scheme, and all risks arising from using it shall be borne by you.**
+
+## Viewing Shared Screen
+- **View macOS/Windows screen sharing**
+  When a macOS/Windows user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will get a notification through the [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the substream image of the remote user through the [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) API.
+
+- **View Android/iOS screen sharing**
+  When an Android/iOS user starts screen sharing, the screen will shared through the primary stream, and other users in the room will get a notification through the [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the primary stream image of the remote user through the [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) API.
+
+
+
+
+
+
+
 

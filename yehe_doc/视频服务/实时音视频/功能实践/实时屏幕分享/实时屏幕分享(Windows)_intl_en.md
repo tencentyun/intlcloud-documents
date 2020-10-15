@@ -29,9 +29,9 @@ You can enumerate the list of sharable windows by using `getScreenCaptureSources
 Each `sourceInfo` in `sourceInfoList` can be a sharing target and is described by the following fields:
 
 | Field | Type | Description |
-|:-------:|:--------:| :---------------:|
+|-------|--------| ---------------|
 | type |TRTCScreenCaptureSourceType| Capture source type, which can be specified as window or screen |
-| sourceId | HWND| Capture source ID. <li>For a window, this field indicates a window handle; <li>for a screen, this field indicates a screen ID |
+| sourceId | HWND| Capture source ID. <li>For a window, this field indicates a window handle; </li><li>for a screen, this field indicates a screen ID</li> |
 | sourceName| string | Window name. For screens, Screen0, Screen1, and so on will be returned |
 | thumbWidth| int32 | Window thumbnail width | 
 | thumbHeight| int32 | Window thumbnail height |
@@ -40,6 +40,7 @@ Each `sourceInfo` in `sourceInfoList` can be a sharing target and is described b
 | iconHeight| int32 | Window icon height |
 | iconBGRA | buffer | Window icon binary buffer |
 
+Based on the information above, you can implement a simple list page to list the sharable targets for users to choose from.
 
 ## Selecting Sharing Target
 TRTC SDK supports three sharing modes, which can be specified with `selectScreenCaptureTarget`.
@@ -98,8 +99,15 @@ You can set the screen sharing image quality by using the `setSubStreamEncoderPa
 | SD | 960x720 | 10 | 400 Kbps |
 
 ## Viewing Shared Screen
-When a user in a room starts screen sharing, other users in the room will get a notification through `onUserSubStreamAvailable` in `TRTCCloudCallback`.
-Users who want to view the shared screen can start rendering the substream image of the remote user through `startRemoteSubStreamView`.
+- **View macOS/Windows screen sharing**
+  When a macOS/Windows user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will get a notification through the [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the substream image of the remote user through the [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) API.
+
+- **View Android/iOS screen sharing**
+  When an Android/iOS user starts screen sharing, the screen will shared through the primary stream, and other users in the room will get a notification through the [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) event in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the primary stream image of the remote user through the [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) API.
+
+
 
 ```C++
 // Sample code: viewing screen sharing image
@@ -119,5 +127,5 @@ void CTRTCCloudSDK::onUserSubStreamAvailable(const char * userId, bool available
 Currently, there can be only one channel of screen sharing in a TRTC room.
 
  **When window sharing (SourceTypeWindow) is specified, will the resolution of the video stream change as the window size changes?**
-By default, the SDK will automatically adjust the encoding parameter according to the shared window size.
-If you want a fixed resolution, you need to call the `setSubStreamEncoderParam` API to set the encoding parameter for screen sharing or specify the corresponding encoding parameter when calling `startScreenCapture`.
+By default, the SDK will automatically adjust the encoding parameters according to the shared window size.
+If you want a fixed resolution, you need to call the `setSubStreamEncoderParam` API to set the encoding parameter for screen sharing or specify the corresponding encoding parameter when calling the `startScreenCapture` API.
