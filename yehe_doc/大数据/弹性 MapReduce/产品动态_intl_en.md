@@ -1,3 +1,23 @@
+## September 2020
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The EMRv2.5.0 version is released</td>
+<td>The Alluxio component is now upgraded to the stable version 2.3.0, which improves Alluxio performance in the use cases where computation and storage are separated</td>
+<td>September 17, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+</tr>
+</tbody></table>
+
+
 ## August 2020
 <table>
 <thead>

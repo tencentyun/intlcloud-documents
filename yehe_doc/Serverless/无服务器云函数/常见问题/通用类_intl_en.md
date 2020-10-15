@@ -78,7 +78,7 @@ API Gateway can be used to this end. Configure the backend of API Gateway as a f
 Currently, triggering by manual triggers (APIs), timer triggers, COS, CMQ, and API Gateway is supported, and more triggering methods will be available in the future.
 
 ### What languages does SCF support?
-Currently, it supports Python 2.7 and 3.6, Node.js 6.10, 8.9, and 10.15 & 12.16, Java 8, PHP 5 and 7, and Go. More languages will be supported in the future.
+Currently, it supports Python 2.7 and 3.6, Node.js 6.10, 8.9, 10.15 and 12.16, Java 8, PHP 5 and 7, Golang and Custom Runtime languages. More languages will be supported soon.
 
 
 ### Can I access the infrastructure where SCF runs?

@@ -4,7 +4,7 @@ No Charges When Shut Down means you will not be charged for instances (CPU, memo
 
 The **No Charges When Shut Down** feature only applies to **pay-as-you-go instances** using **cloud disks as both system disk and data disk**.
 The feature is **not available** for the following scenarios:
-- Starting up/shutting down an instance within a CVM. 
+- Starting up/shutting down an instance after logging in to it.
 - Mounting local disk instances .
 - Spot instances.
 - Instances that are shut down due to an account in arrears: Billing will stop for instances and associated resources after instances are shutdown due to an account in arrears. Computing resources and public IPs will be released. Billing resumes after the balance of the account is topped up.

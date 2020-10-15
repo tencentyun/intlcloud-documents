@@ -89,7 +89,7 @@ VMWare vCenter Convert 혹은 Citrix XenConvert 등과 같은 가상화 플랫�
 [disk2vhd 툴 다운로드 클릭하기>>](https://download.sysinternals.com/files/Disk2vhd.zip)
 3. 아래 이미지와 같이 내보낼 이미지의 저장 경로를 선택하고, 복사할 볼륨을 선택한 다음 [Create]를 클릭합니다.
 > 
->- disk2vhd 실행을 위해 Windows의 VSS(볼륨 섀도 복사 서비스) 기능을 사전에 설치해야 합니다.
+> - Disk2vhd는 Windows 시스템에 VSS(Volume Shadow Copy Service)가 설치된 후에 시작할 수 있습니다.  VSS 기능에 대한 자세한 내용은 [Volume Shadow Copy Service] (https://docs.microsoft.com/en-us/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)를 참고하
 >- 현재 시스템은 vhdx 형식의 이미지를 지원하지 않으므로 "Use Vhdx"를 선택하지 마시기를 바랍니다.
 >- "Use volume Shadow Copy"를 선택해 볼륨 섀도 복사 기능을 사용할 경우, 데이터의 완전성을 더 확보할 수 있습니다.
 > 
