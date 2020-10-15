@@ -4,7 +4,7 @@
 每个实例都会涉及一个serverless.yml文件，该文件定义了组件的一些参数，这个些参数在部署时用于生成实例的信息。例如 region，定义了资源的所在区。
 
 单实例应用与多实例应用在项目组织上会有一些差别，如下图所示：
-![](https://main.qcloudimg.com/raw/c77af61d6184a41bddeee17ed8bdd2df.svg)
+![](https://main.qcloudimg.com/raw/2a365394ece3c1987871650cb761687e.svg)
 
 ### 单实例应用
 项目中只引入一个组件，部署时只生成一个组件实例，这样的应用为单实例应用。
