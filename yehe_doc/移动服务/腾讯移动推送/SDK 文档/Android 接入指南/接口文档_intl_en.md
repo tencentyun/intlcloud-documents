@@ -24,7 +24,7 @@ Standard registration only registers the current device, and the backend can sen
 public static void registerPush(Context context)
 ```
 
->This registration method does not support account push.
+>?This registration method does not support account push.
 
 #### Parameter description
 
@@ -84,9 +84,9 @@ Recommended for applications with an account system. This API will retain the pr
 void appendAccount(Context context, final String account)	
 ```
 
->
-- The account can be email, QQ account number, mobile number, username, etc.
-- If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [REST API](https://tpns.gitbook.io/tpns/pushapi#push-api-ke-xuan-can-shu).
+>?
+>- The account can be email, QQ account number, mobile number, username, etc.
+>- If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [REST API](https://intl.cloud.tencent.com/document/product/1024/33764).
 
 
 
@@ -143,7 +143,7 @@ void delAccount(Context context, final String account, XGIOperateCallback callba
 void delAccount(Context context, final String account )
 ```
 
->Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, the notification/message can still be received.
+>?Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, the notification/message can still be received.
 
 #### Parameter description
 
@@ -191,7 +191,7 @@ public void onFail(Object data, int errCode, String msg);
 **Reload XGPushBaseReceiver**
 The result can be obtained by reloading the `onRegisterResult` method of `XGPushBaseReceiver`.
 
->The reloaded `XGPushBaseReceiver` needs to be configured in `AndroidManifest.xml`. For more information, please see [Message configuration](#Message configuration) below.
+>?The reloaded `XGPushBaseReceiver` needs to be configured in `AndroidManifest.xml`. For more information, please see [Message configuration](#Message configuration) below.
 
 #### Sample code
 
@@ -246,9 +246,9 @@ XGPushManager.unregisterPush(this);
 
 The result can be obtained by reloading the `onUnregisterResult` method of `XGPushBaseReceiver`.
 
->
-- Unregistration operation should not be too frequent; otherwise, it may cause delay in backend sync.
-- Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
+>?
+>- Unregistration operation should not be too frequent; otherwise, it may cause delay in backend sync.
+>- Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
 
 #### Sample code
 
@@ -278,9 +278,9 @@ TPNS mainly provides two push formats: "push notification" and "in-app message c
 
 This refers to the content displayed in the notification bar of the device. All operations are performed by TPNS SDK. The application can listen to clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by the application and will be displayed in the notification bar by default.
 
->
-- After the TPNS service is successfully registered, notifications can be delivered without any configuration.
-- In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
+>?
+>- After the TPNS service is successfully registered, notifications can be delivered without any configuration.
+>- In general, combined with custom notification styles, standard notifications can meet most business needs, and if you need more flexible pushes, you can consider using messages.
 
 ### In-app message command (not displayed in notification bar)
 
@@ -312,7 +312,7 @@ Inherit `XGPushBaseReceiver` and configure the following in the configuration fi
 
 A message delivered by you on the frontend can be received by the application if it inherits `XGPushBaseReceiver` and reloads the `onTextMessage` method. After successfully receiving the message, the application can handle it based on specific business scenarios.
 
->Please make sure that the receiver has been registered in AndroidManifest.xml, i.e., YOUR_PACKAGE.XGPushBaseReceiver is set.
+>?Please make sure that the receiver has been registered in AndroidManifest.xml, i.e., YOUR_PACKAGE.XGPushBaseReceiver is set.
 
 ```java
 public void onTextMessage(Context context,XGPushTextMessage message)
@@ -445,7 +445,7 @@ public abstract void onNotificationShowedResult(Context context,XGPushShowedResu
 
 On the built-on activity display page of TPNS, the number of notification/message arrivals and the action of notification clicks/ clearing are counted by default. To listen to these events, you need to embed the code as follows.
 
->If you want to count the number of application launches caused by TPNS or get the delivered custom `key-value`, you need to call the following method in `onResume()` of all (or opened) activities.
+>?If you want to count the number of application launches caused by TPNS or get the delivered custom `key-value`, you need to call the following method in `onResume()` of all (or opened) activities.
 
 #### API description
 
@@ -523,7 +523,7 @@ This API is used to create a notification channel.
 public static void createNotificationChannel(Context context, String channelId, String channelName, boolean enableVibration, boolean enableLights, boolean enableSound, Uri soundUri)
 ```
 
->This API is applicable to v1.1.5.4 and above.
+>?This API is applicable to v1.1.5.4 and above.
 
 #### Parameter description
 
@@ -659,9 +659,9 @@ Setting multiple tags at a time will not override tags previously set for this d
 - If the newly added tag has a part without the punctuation mark `:`, such as "test:2  level", then all historical tags of this device will be deleted, and then `test:2` and `level` tags will be added.
 
 
->
--  In newly added tags, `:` is the backend keyword. Use it according to your business scenarios.
-- This API should be called at a certain interval (an interval of greater than 5s is recommended); otherwise, update may fail.
+>?
+>-  In newly added tags, `:` is the backend keyword. Use it according to your business scenarios.
+>- This API should be called at a certain interval (an interval of greater than 5s is recommended); otherwise, update may fail.
 
 ```java
 public static void addTags(Context context, String operateName, Set<String> tags) 
@@ -794,7 +794,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 #### Parameter description
 - context: application context
 - pullUp: true (enable session keep-alive), false (disable session keep-alive)
->If the following log is printed, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
+>?If the following log is printed, the session keep-alive feature has been disabled: `I/TPNS: [ServiceUtil] disable pull up other app`.
 
 ### Debug mode
 
@@ -823,7 +823,7 @@ Token is the identity ID of a device. It is randomly generated by the server bas
 public static String getToken(Context context)
 ```
 
->A token is generated during the first application registration and will remain in the mobile phone. The token always exists regardless of unregistration. After the application is completely uninstalled and reinstalled, the token will change. The token varies by application.
+>?A token is generated during the first application registration and will remain in the mobile phone. The token always exists regardless of unregistration. After the application is completely uninstalled and reinstalled, the token will change. The token varies by application.
 
 #### Parameter description
 
@@ -841,7 +841,7 @@ A third-party token is the identity ID of a vendor device. It is delivered to th
 public static String getOtherPushToken(Context context) 
 ```
 
->This API can be called only after successful registration; otherwise, null will be returned.
+>?This API can be called only after successful registration; otherwise, null will be returned.
 
 
 #### Parameter description
@@ -872,7 +872,7 @@ public static boolean setAccessId(Context context, long accessId)
 - true: success.
 - false: failure.
 
->The `accessId` set through this API will also be stored in the file.
+>?The `accessId` set through this API will also be stored in the file.
 
 ### Setting AccessKey
 
@@ -894,7 +894,7 @@ public static boolean setAccessKey(Context context, String accessKey)
 - true: success.
 - false: failure.
 
->The `accessKey` set through this API will also be stored in the file.
+>?The `accessKey` set through this API will also be stored in the file.
 
 
 
@@ -925,6 +925,6 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
     });
 ```
  
->You need to enable `XGPushConfig.enableDebug(this, true);` first.
+>?You need to enable `XGPushConfig.enableDebug(this, true);` first.
 
 

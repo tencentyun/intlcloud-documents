@@ -30,8 +30,8 @@ This document describes how to query push records (such as message ID, title, co
    
 
 >?
-1. The number of "cleared" messages cannot be returned for vendor channels.
-2. The arrival data is for reference only. For the Huawei and Meizu channels, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35246).
+>1. The number of "cleared" messages cannot be returned for vendor channels.
+>2. The arrival data is for reference only. For the Huawei and Meizu channels, you need to configure the arrival callback by yourself. For more information, please see [Guide for Getting Arrival Callback Through Vendor Channels](https://intl.cloud.tencent.com/document/product/1024/35246).
 
 **Push time analysis**
 ![](https://main.qcloudimg.com/raw/29272f4bbc158909fb2143a57736e48d.png)
@@ -47,9 +47,9 @@ According to different metrics:
 - Cleared: the number of devices on which the notification was dismissed within a specified period.
 
 >!
-1. The "cleared" metric is only supported for the TPNS channel.
-2. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
-3. The statistics of time metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
+>1. The "cleared" metric is only supported for the TPNS channel.
+>2. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
+>3. The statistics of time metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
 
 **iOS:**
 ![](https://main.qcloudimg.com/raw/e9fe41491d5d631c9270525ae554b9a2.png)
@@ -74,5 +74,6 @@ According to different metrics:
 - Reached: the number of devices at which the push message arrived within a specified period.
 - Clicked: the number of devices on which the push message was clicked within a specified period.
 
->!1. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
-2. The statistics of timeliness metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.
+>!
+>1. Push time analysis is not supported for single-device/account pushes or device/account list pushes.
+>2. The statistics of timeliness metrics are slightly ahead of the statistics in the push funnel, and it is normal if you see small differences in the pushing process.

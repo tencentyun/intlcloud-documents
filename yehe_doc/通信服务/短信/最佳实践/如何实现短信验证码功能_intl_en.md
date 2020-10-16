@@ -2,8 +2,8 @@ Sending verification codes through SMS is the most popular and securest way to v
 This document uses developing a verification code-based login and signup service based on [SCF](https://intl.cloud.tencent.com/document/product/583) as an example to describe how to implement the SMS verification code feature.
 
 ## Preparations
-- [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985).
-- [Purchase](https://intl.cloud.tencent.com/document/product/382/35450) an SMS package.
+- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verified your organizational identity.
+- You have purchased an SMS package.
 - Prepare SMS signature owner qualification certificates.
  This document takes a business license as a qualification certificate for example.
 - Understand the SMS body content review standards.
@@ -28,7 +28,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Mainland China SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
-3. Set the following parameters as needed and according to the signature review standards:
+3. Set the following parameters as needed:
  <table>
      <tr>
          <th width="20%">Parameter</th>  
@@ -52,10 +52,9 @@ After an SMS signature or body template is submitted, it will be reviewed within
      </tr> 
 	 <tr>      
        <td>Certificate upload</td>   
-	<td>-</td>    
+	<td><img src="https://main.qcloudimg.com/raw/48ad431a784461465054160737b9b166.png" width=400/></td>    
      </tr> 
 </table>
-
 3. Click **OK**.
  Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
 
@@ -64,7 +63,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
 ### Step 1.2. Create a body template
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
 2. Select **Mainland China SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
-3. Set the following parameters as needed and according to the body template review standards:
+3. Set the following parameters as needed:
  <table>
      <tr>
          <th width="20%">Parameter</th>  
@@ -88,10 +87,11 @@ After an SMS signature or body template is submitted, it will be reviewed within
 
 <span id="Step2"></span>
 ## Step 2. Set the SMS sending frequency limit (optional)
->Individual users have no permission to modify the frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity".
+>!Individual users have no permission to modify the frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity".
 
-To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
+To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469#.E8.AE.BE.E7.BD.AE.E5.8F.91.E9.80.81.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
 This document uses the default SMS sending frequency limit policy as an example.
+
 - For SMS messages with the same content, a maximum of one such message can be sent to the same mobile number within 30 seconds.
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
 
@@ -101,7 +101,7 @@ By default, SCF is deployed in the public network and can access public network 
 
 1. [Plan the network design](https://intl.cloud.tencent.com/document/product/215/31795) as needed.
 2. Create a VPC. For detailed directions, please see [Creating VPC](https://intl.cloud.tencent.com/document/product/215/31805).
- >The CIDRs of the VPC and subnet cannot be modified after creation.
+ >!The CIDRs of the VPC and subnet cannot be modified after creation.
  >
  <table>
      <tr>
@@ -245,45 +245,11 @@ SCF currently supports development in Python, Node.js, PHP, Java, and Go. This d
 2. Deploy the function and set **API Gateway Trigger** as the trigger. For detailed directions, please see [Deploying Function](https://intl.cloud.tencent.com/document/product/583/32742).
 
 <span id="Step6"></span>
-## Step 6. Configure a NAT gateway
-A function deployed in a VPC is isolated from the public network by default. If you want the function to have access to both private network and public network, you can do so in the following two ways:
-- Configure the public network access of SCF and make sure that the egress address for public network access is unique.
-- Add a NAT gateway through VPC. For more information, please see [Configuring NAT in VPC](https://intl.cloud.tencent.com/document/product/583/19704).
+## Step 6. Enable public network access (optional)
+- Functions deployed in a VPC before April 29, 2020 are isolated from the public network by default. If you want them to have access to both private network and public network, you can do so by enabling public network access.
+ Log in to the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1), select **Function Service**, click the name of the target function in the function list to enter the function configuration page. Click **Edit**, check **Public Network Access**, and click **Save** to save the configuration.
+- Functions deployed on or after April 29, 2020 have public network access enabled by default, and no additional operations are required.
 
-This document uses a NAT gateway as an example.
-
-1. Create a NAT gateway. For detailed directions, please see [Configuring NAT Gateway in VPC](https://intl.cloud.tencent.com/document/product/583/19704).
- >
- >- The NAT gateway should be deployed in the same region as the function and VPC.
- >- The network to which the NAT gateway belongs should be the VPC where the function is located.
- >
-  <table>
-     <tr>
-         <th width="20%">Parameter</th>  
-         <th>Sample Value</th>  
-     </tr>
-	 <tr>      
-        <td>Gateway name</td>   
-	     <td>Demo NAT</td>   
-     </tr> 
-	 <tr>      
-        <td>Network</td>   
-	     <td>Demo VPC</td>   
-     </tr> 
-	 <tr>      
-        <td>Gateway type</td>   
-	     <td>Small</td>   
-     </tr> 
-	 <tr>      
-        <td>Outbound bandwidth cap</td>   
-	     <td>100 Mbps</td>   
-     </tr> 
-	 <tr>      
-        <td>Elastic IP</td>   
-	     <td>Create an elastic IP</td>   
-     </tr> 
-</table>
-2. Create a routing policy as needed. For detailed directions, please see [Configuring NAT Gateway in VPC](https://intl.cloud.tencent.com/document/product/583/19704).
 
 <span id="Step7"></span>
 ## Step 7. Deploy the SMS SDK
