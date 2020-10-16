@@ -39,7 +39,7 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
             <td  rowspan="12">Preset tag</td>
             <td>Application version</td>
 						 <td>xg_auto_version</td>
-            <td rowspan="12">Preset in TPNS, unlimited</td>
+            <td rowspan="9">Preset in TPNS, unlimited</td>
 						<td>1.0.1, 1.0.2, etc.</td>
         </tr>
         <tr><!--<td>2.1</td>-->
@@ -121,7 +121,7 @@ A colon ":" is the keyword for separating the `key` and `value` in a `key-value`
 #### Binding/Unbinding tag
 
 TPNS provides APIs for binding/unbinding a single tag to/from a single device, a single tag to/from multiple devices, multiple tags to/from a single device, and multiple tags to/from multiple devices.
-##### Single tag for single device
+#### Single tag for single device
 **Recommended scenarios**
 1. The device SDK API is called; for example, to automatically get the user subscription channel in the application, bind the channel tag to the device token, and vice versa.         
 2. The RESTful API are called occasionally in scenarios such as integration testing.
@@ -152,7 +152,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 - A tag can contain up to 50 bytes.
 - The API is called synchronously.
 
-##### Multiple tags for single device
+#### Multiple tags for single device
 **Recommended scenarios**
 1. The device SDK API is called; for example, to automatically get user characteristics tags such as age, district, and gender in the application, bind them to the device token in batches, and vice versa.
 2. The RESTful API is called; for example, to get a device's user subscription information tags such as marital status and hobbies (football, movies, etc,) through other internal channels, bind them to the device token in batches, and vice versa.
@@ -237,7 +237,7 @@ Only the RESTful API can be called; for example, to add the "football" tag to al
 #### Tag overwriting
 
 TPNS provides two tag overwriting methods, namely, general overwriting and overwriting by tag category (aka key-value (KV) overwriting), where a colon (":") is used to separate the `key` and `value` in a key-value pair.
-##### General overwriting
+#### General overwriting
 **Recommended scenarios**
 1. The device SDK API is called. If all channel information subscribed by a device has expired, you need to unbind all the channel tags from the device. However, traversing all tags to unbind them one by one is very inconvenient. In this case, you can call this API to overwrite the tags in batches.
 2. The RESTful API is called; for example, to set new tags for a device so that it will not be affected by legacy tags, this API can be called to overwrite them.
@@ -255,7 +255,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 - A tag can contain up to 50 bytes.
 - The API is called asynchronously. You are recommended to set the call interval to longer than 1 second.
 
-##### KV overwriting
+#### KV overwriting
 **Recommended scenarios**
 1. The device SDK API is called.
 2. The RESTful API is called.
@@ -282,7 +282,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 
  TPNS provides two tag deletion methods, namely, deleting all tags of a device and deleting specific tags of an application.
 
-##### Deleting all tags of a single device
+#### Deleting all tags of a single device
 **Recommended scenarios**
 1. The device SDK API is called.
 2. The RESTful API is called.
@@ -301,7 +301,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 - A tag can contain up to 50 bytes.
 - The API is called asynchronously. You are recommended to set the call interval to longer than 1 second.
 
-##### Deleting specific application tags
+#### Deleting specific application tags
 **Recommended scenarios**
 1. Only the RESTful API can be called.
 **Description:** you can use this API to delete specific tags of an application, i.e., removing them from the tag list of the application after unbinding them from bound devices. It is generally used to delete obsolete tags; for example, to delete testing tags added during test after the application is officially released, you can call this API.
