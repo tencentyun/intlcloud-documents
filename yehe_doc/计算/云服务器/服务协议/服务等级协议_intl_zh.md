@@ -5,7 +5,7 @@
 
 ## 1. 术语和定义
 
-#### 1.1 [腾讯云云服务器服务](https://intl.cloud.tencent.com/document/product/213/495)（Cloud Virtual Machine，CVM）
+#### 1.1 腾讯云云服务器服务（Cloud Virtual Machine，CVM）
 是指腾讯云为您在云中提供可扩展的计算服务，避免了使用传统服务器时需要预估资源用量及前期投入的情况。 具体以您购买的服务及腾讯云提供的服务内容为准。
 
 #### 1.2 单实例
