@@ -1,7 +1,7 @@
 ### Billing Usage Statistics
 
 Tencent Cloud Console provides a billable usage query feature for Live Video Broadcasting (LVB). You can log in to the LVB Console and go to **Statistics** > **[Billing Usage Statistics](https://console.cloud.tencent.com/live/analysis/bill)** to query the usage statistics of LVB traffic/bandwidth, LVB recording, LVB transcoding, LVB screencapturing and LVB channels pushed to third party platforms for the last 30 days.
-<img src="https://main.qcloudimg.com/raw/d2b1f59fb28ad9b506c36b5c031c024c.png" width="750px"/>
+<img src="https://main.qcloudimg.com/raw/7c7ac04114113f2d5e2a54361df0b480.png" width="750px"/>
 
 ### Billing Overview
 
@@ -59,7 +59,7 @@ Tencent Cloud Console provides a billable usage query feature for Live Video Bro
 ### Details
 You can view traffic/bandwidth usage from the last 30 days. You can also check the traffic/bandwidth of a specific time point.
 
-![](https://main.qcloudimg.com/raw/ef1cc4a7b66a9c4edb0038ba4d6f4283.png)
+![](https://main.qcloudimg.com/raw/0cc583f5d7c71f7c59a3c29a9703c2b4.jpg)
 
 
 ### Monthly Usage Details
@@ -69,4 +69,4 @@ Click **LVB Recording** tab to view monthly usage details. You can **download** 
 ### Usage from the Last 30 Days
 
 Click **LVB Transcoding* tab to view usage details from the last 30 days. You can view start time, end time ,duration, codec, bitrate and transcoding type.
-![](https://main.qcloudimg.com/raw/d4115fdbdc2310a818561edd9a796f1f.jpg)
+![](https://main.qcloudimg.com/raw/ce7bff4c9e8747d12eb7c9b33176647f.jpg)
