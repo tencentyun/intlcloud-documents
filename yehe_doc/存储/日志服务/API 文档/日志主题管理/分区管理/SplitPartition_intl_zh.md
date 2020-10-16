@@ -23,7 +23,8 @@ Authorization: <AuthorizationString>
 | topic_id     | string | query | 是       | 分区所属的日志主题 ID                              |
 | partition_id | int    | query | 是       | 需分裂的主题分区编号                               |
 | action       | string | query | 是       | 操作类型，action 需要设置为 split                 |
-| split_key    | string | query | 是       | 主题分区的分裂位置，32位16进制字符串（不含0x部分） |
+| split_key    | string | query | 否       | 分裂成两个时，可以指定主题分区的分裂位置，32位16进制字符串（不含0x部分）;当分裂成3个及以上时，按平均方式分裂，此参数不生效 |
+| number       | int    | query | 否       | 分裂的个数，默认值为2    
 
 ## 响应
 
