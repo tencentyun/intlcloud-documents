@@ -19,7 +19,7 @@ MediaLive 支持一个频道多个 output group 的输出。点击右上方加�
 设置当前 output group 的名称和类型。目前 MediaLive 支持HLS、DASH类型输出，同时支持输出 HLS 文件至腾讯云 COS 进行归档，相关操作可参见 [输出直播流至COS归档](https://intl.cloud.tencent.com/document/product/1048/38361)，也支持直接联合 Tencent Cloud MediaPackage 一起使用，将 HLS/DASH 格式直播流直接输出至同账号下的 MediaPackage 中，相关操作可参见 [输出直播流至MediaPackage](https://intl.cloud.tencent.com/document/product/1048/38362)，从而帮助客户形成自己的源站，以便于直播的大规模稳定分发。
 ![](https://main.qcloudimg.com/raw/e85b466e4310cf22e05a26fdd7cb9f5b.jpg)
 
-> ?腾讯云对象存储 COS 介绍详见：[COS产品概述](https://intl.cloud.tencent.com/zh/document/product/436/6222)
+> ?腾讯云对象存储 COS 介绍详见：[COS产品概述](https://intl.cloud.tencent.com/document/product/436/6222)
 
 ### 3. CDN 推入地址设置
 如果您选择了 HLS 或者 DASH 协议类型输出，您可在此填写 CDN 的推入地址。如果您的推送地址具有验证要求，则可以填写验证信息。 
