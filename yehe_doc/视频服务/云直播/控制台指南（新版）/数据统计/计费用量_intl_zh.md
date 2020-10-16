@@ -1,7 +1,7 @@
 ### 计费用量
 
 腾讯云控制台为标准直播提供计费用量查询功能，若您想了解当前流量/带宽、直播录制、直播转码、直播截图、直播转推等服务使用情况，您可以通过云直播控制台【数据统计】>[【计费用量】](https://console.cloud.tencent.com/live/analysis/bill)查看相关数据。您可以查看一个月以内的云直播服务使用的相关数据。
-<img src="https://main.qcloudimg.com/raw/d2b1f59fb28ad9b506c36b5c031c024c.png" width="750px"/>
+<img src="https://main.qcloudimg.com/raw/7c7ac04114113f2d5e2a54361df0b480.png" width="750px"/>
 
 ### 计费说明
 
@@ -57,9 +57,9 @@
 
 
 ### 详细信息
-您可查看进30天的流量/带宽消耗量，支持查看具体的时间点和流量/带宽信息。
+您可查看近30天的流量/带宽消耗量，支持查看具体的时间点和流量/带宽信息。
 
-![](https://main.qcloudimg.com/raw/ef1cc4a7b66a9c4edb0038ba4d6f4283.png)
+![](https://main.qcloudimg.com/raw/0cc583f5d7c71f7c59a3c29a9703c2b4.jpg)
 
 
 ### 月度消费量
@@ -69,4 +69,4 @@
 ### 近30天消费量
 
 选择【直播转码】页签，您可查看近30天的转码消费量。支持查看转码的具体开始时间、结束时间、时长、编码方式、码率以及转码类型等信息。
-![](https://main.qcloudimg.com/raw/d4115fdbdc2310a818561edd9a796f1f.jpg)
+![](https://main.qcloudimg.com/raw/ce7bff4c9e8747d12eb7c9b33176647f.jpg)

@@ -1,14 +1,6 @@
 ## Overview
 This document uses deploying an Express website with the `tencent-express` component as an example to describe how to use Serverless Framework to develop, manage, deploy, and publish a project. You can see the demo [here](https://github.com/June1991/serverless-express).
 
-## Process Description
-The development and launch process of a project is as shown below:
-![](https://main.qcloudimg.com/raw/9aa4b4ca29bd0dd0de5f3e8593f513d8.svg)
-1. Project initialization: initialize the project; for example, select some development frameworks and templates to complete the basic construction.
-2. Development: develop product features. This stage may involve collaboration among multiple developers, who will pull different feature branches for separated development and testing and finally merge them into the `dev` branch for joint testing.
-3. Testing: test the product features by testing personnel.
-4. Release and launch: publish and launch the tested product features. As a newly published version may be unstable, grayscale release will be used generally, and some rules will be configured to monitor the stability of the new version. After the new version becomes stable, all traffic will be switched to it.
-
 Project development may involve the following branches:
 
 | Branch Type | Description |
@@ -25,9 +17,9 @@ Project development may involve the following branches:
 ### Project initialization
 
 1. Create an Express project as instructed in [Deploying Express.js Application](https://intl.cloud.tencent.com/document/product/1040/37354) and modify the YML file content as follows:
+
 ```
 #serverless.yml
-org: xxx-department # Organization information. The default value is your Tencent Cloud `appid`
 app: expressDemoApp # Application name, which is the component instance name by default
 stage: ${env:STAGE} # Parameter used to isolate the development environment, which is `dev` by default
 
@@ -42,7 +34,7 @@ inputs:
       - .env
   region: ap-guangzhou
   runtime: Nodejs10.15
-  funcitonName: ${name}-${stage}-${app}-${org} # Function name
+  funcitonName: ${name}-${stage}-${app} # Function name
   apigatewayConf:
     protocols:
       - http
@@ -51,10 +43,11 @@ inputs:
 ```
 
 2. Configure the following content in the .env file in the project root directory:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx # `SecretId` of your account
 TENCENT_SECRET_KEY=xxxxxxxx # `SecretKey` of your account
-STAGE=prod # `STAGE` is the `prod` environment. You can also run `sls deploy --stage=prod` to pass in the parameter
+STAGE=prod # `STAGE` is the `prod` environment. You can also run `sls deploy --stage prod` to pass in the parameter
 ```
 
 3. After the deployment by running `sls deploy` succeeds, access the generated URL as shown below:
@@ -72,6 +65,7 @@ Tom starts developing `feature1`. In this example, a `feature.html` file is adde
 #### Development
 
 1. Add router configuration in the `sls.js` file:
+
 ```
 // Routes
 app.get(`/feature`, (req, res) => {
@@ -80,6 +74,7 @@ app.get(`/feature`, (req, res) => {
 ```
 
 2. Add `feature.html`:
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -98,6 +93,7 @@ app.get(`/feature`, (req, res) => {
 
 3. Set a stage in the .env file so as to get an independent runtime and debugging environment during the development.
 For example, Tom configures the .env file in the project directory of `serverless.yml` as follows:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
@@ -105,6 +101,7 @@ STAGE=feature1
 ```
 
 4. After the deployment by running `sls deploy` succeeds, the following content will be returned:
+
 ```
 region: ap-guangzhou
 apigw:
@@ -152,6 +149,7 @@ At this point, the joint testing is completed, and the development of the entire
 1. Merge the jointly tested `dev` branch into `testing` code to enter the testing stage.
 ![](https://main.qcloudimg.com/raw/e494e4bc6a98f0dd722024597ddc6779.svg)
 2. Configure the .env file in the testing environment as follows:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
@@ -174,6 +172,7 @@ TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
 STAGE=prod
 ```
+
 Run the deployment command:
 
 ```
