@@ -1,4 +1,4 @@
-This article describes how to use exit codes to troubleshoot pod issues.
+This document describes how to use exit codes to troubleshoot pod issues.
 
 ## Querying Pod Exceptions
 Run the following command to query pod exceptions:
@@ -29,15 +29,15 @@ Containers:
     Ready:          True
     Restart Count:  1
 ```
-`Exit Code` is the status code of the last container exit. If it is not 0, then the container exited due to an exception. You can use the exit code to further troubleshoot the problem.
+`Exit Code` is the status code of the last container exit. If it is not 0, the container exited due to an exception. You can use the exit code to further troubleshoot the problem.
 
 ## Exit Codes
 
 * A valid exit code is between 0 and 255.
 * 0 means the container exited normally.
-* If the container exited due to an external signal, the exit code is between 129 and 255. For example, if the operating system sent `kill -9` or `ctrl+c` as termination signals, the status is `SIGKILL` or `SIGINT`.
-* If the container exited due to an internal signal, the exit code is between 1 and 128. However, in some circumstances, the exit code might be between 129 and 255 too.
-- If the specified exit code has a value outside of the 0-255 range, such as `exit(-1)`, it is automatically translated to a value in the 0-255 range.
+* If the container exited due to an external signal, the exit code is between 129 and 255. For example, if the operating system sent `kill -9` or `ctrl+c` as the termination signal, the status is `SIGKILL` or `SIGINT`.
+* If the container exited due to an internal signal, the exit code is between 1 and 128. However, in some circumstances, the exit code might be between 129 and 255.
+- If the specified exit code has a value outside the 0-255 range, such as `exit(-1)`, it is automatically translated to a value in the 0-255 range.
 If the exit code is specified as `code`, it is translated as follows:
     * If the exit code is negative:
 ```text
@@ -49,25 +49,25 @@ code % 256
 ```
 
 ## Typical Exit Codes
-* **137**: the process was killed by `SIGKILL`. Possible reasons are:
- * Pod memory reached `resources.limits`, such as Out of Memory (OOM). Pod resource limits are implemented using Linux cgroup. If the memory of a pod reaches its limit, cgroup will force it to stop (similar to `kill -9`). If you use `describe pod`, you can see the value of Reason is `OOMKilled`.
- * The host does not have sufficient resources (OOM). The kernel selected processes to stop in order to release memory.
-> If the process is stopped due to OOM, cgroup, or the host, you can find relevant records in system logs:
-> Ubuntu system logs are stored in `/var/log/syslog`. CentOS system logs are stored in `/var/log/messages`. You can use `journalctl -k` to view system logs in both operating systems.
+* **137**: indicates that the process was killed by `SIGKILL`. Possible reasons are:
+ * Pod memory reached `resources.limits`, such as Out of Memory (OOM). Pod resource limits are implemented by using Linux cgroup. If the memory of a pod reaches its limit, cgroup forces it to stop (with a similar effect to `kill -9`). If you use `describe pod`, you can see the value of Reason is `OOMKilled`.
+ * If the host does not have sufficient resources (OOM), the kernel stops some processes to free up the memory.
+>? If the process is stopped due to OOM, cgroup, or the host, you can find relevant records in system logs:
+> Ubuntu system logs are stored in `/var/log/syslog`, whereas CentOS system logs are stored in `/var/log/messages`. You can run the `journalctl -k` command to view system logs in both operating systems.
 >
  * livenessProbe failed, which causes kubelet to stop the pod.
  * Pod stopped by a trojan process.
-* **1** and **255**: common issues. Use container logs to further troubleshoot. For example, this could be the result of `exit(1)` or `exit(-1)`. -1 is translated to 255.
+* **1** and **255**: indicates common issues. Check container logs for further troubleshooting. For example, this could be the result of `exit(1)` or `exit(-1)`. -1 is translated to 255.
 
 
 
-## Standard Linux Interrupt Signals
+## Standard Linux Interruption Signals
 
-Linux programs send an exit code when they are interrupted by external signals. The value of the exit code is the value of the interrupt signal plus 128. For example, the value of `SIGKILL` is 9, so the program exit code is 9 + 128 = 137. For more standard interrupt signal, refer to the following table:
+Linux programs send an exit code when they are interrupted by external signals. The value of the exit code is the value of the interrupt signal plus 128. For example, the value of `SIGKILL` is 9, so the program exit code is 9 + 128 = 137. For more standard interrupt signals, see the following table:
 
 <table>
 	<tr>
-	<th>/th> <th>Value</th> <th>Action</th> <th>Description</th>
+	<th>Signal</th> <th>Status Code Value</th> <th>Action</th> <th>Description</th>
 	</tr>
 	<tr>
 	<td><code>SIGHUP</code></td> <td>1</td> <td>Term</td>
@@ -151,79 +151,79 @@ Linux programs send an exit code when they are interrupted by external signals. 
 
 ## C/C++ Exit Codes
 
-`/usr/include/sysexits.h` provides standardized exit codes for C and C++. These codes are listed in the following table: 
+`/usr/include/sysexits.h` provides standardized exit codes for C and C++. These codes are described in the following table:
 
 <table>
 	<tr>
-	<th>Definition</th> <th>Exit Code</th> <th>Description</th>
+	<th>Definition</th> <th>Status Code</th> <th>Description</th>
 	</tr>
 	<tr>
 	<td><code>#define EX_OK</code></td> <td>0</td>
-	<td>Successful termination</td>
+	<td>successful termination</td>
 	</tr>
 	<tr>
 	<td><code>#define EX__BASE</code></td> <td>64</td>
-	<td>Base value for error messages</td>
+	<td>base value for error messages</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_USAGE</code></td> <td>64</td>
-	<td>Command line usage error</td>
+	<td>command line usage error</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_DATAERR</code></td> <td>65</td>
-	<td>Data format error</td>
+	<td>data format error</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_NOINPUT</code></td> <td>66</td>
-	<td>Cannot open input</td>
+	<td>cannot open input</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_NOUSER</code></td> <td>67</td>
-	<td>Addressee unknown</td>
+	<td>addressee unknown</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_NOHOST </code></td> <td>68</td>
-	<td>Host name unknown</td>
+	<td> host name unknown</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_UNAVAILABLE</code></td> <td>69</td>
-	<td>Service unavailable</td>
+	<td>service unavailable</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_SOFTWARE</code></td> <td>70</td>
-	<td>Internal software error</td>
+	<td>internal software error</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_OSERR </code></td> <td>71</td>
-	<td>System error (e.g., can't fork)</td>
+	<td>system error (e.g., can't fork)</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_OSFILE</code></td> <td>72</td>
-	<td>Critical OS file missing</td>
+	<td>critical OS file missing</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_CANTCREAT</code></td> <td>73</td>
-	<td>Can't create (user) output file</td>
+	<td>can't create (user) output file</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_IOERR</code></td> <td>74</td>
-	<td>Input/output error</td>
+	<td>input/output error</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_TEMPFAIL</code></td> <td>75</td>
-	<td>Temp failure; user is invited to retry</td>
+	<td>temp failure; user is invited to retry</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_PROTOCOL</code></td> <td>76</td>
-	<td>Remote error in protocol</td>
+	<td>remote error in protocol</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_NOPERM </code></td> <td>77</td>
-	<td>Permission denied</td>
+	<td>permission denied</td>
 	</tr>
 	<tr>
 	<td><code>#define EX_CONFIG</code></td> <td>78</td>
-	<td>Configuration error</td>
+	<td>configuration error</td>
 	</tr>
 	<tr>
 	<td><code>#define EX__MAX 78</code></td> <td>78</td>
@@ -233,7 +233,66 @@ Linux programs send an exit code when they are interrupted by external signals. 
 
 
 
-## Reference
+## Status Code Reference
 
-For more information on exit codes, refer to [Appendix E. Exit Codes With Special Meanings](http://tldp.org/LDP/abs/html/exitcodes.html).
-
+For the description of more status codes, see the following table:
+<table>
+    <tr>
+        <th>Status Code</th>
+        <th>Meaning</th>
+        <th>Example</th>
+        <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Catchall for general errors</td>
+<td>let "var1 = 1/0"</td>
+<td>Miscellaneous errors, such as <span>"divide by zero"</span> and other impermissible operations</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Misuse of shell builtins (according to Bash documentation)</td>
+<td>empty_function() {}</td>
+<td><a>Missing keyword</a> or command</td>
+</tr>
+<tr>
+ <td>126</td>
+<td>Command invoked cannot execute</td>
+<td>/dev/null</td>
+<td>Permission problem or command is not an executable</td>
+</tr>
+        <tr>
+            <td>127</td>
+            <td><span>"command not found"</span></td>
+            <td>illegal_command</td>
+            <td>Possible problem with <tt>$PATH</tt> or a typo</td>
+        </tr>
+        <tr>
+            <td>128</td>
+            <td>Invalid argument to <a> exit</a></td>
+            <td>exit 3.14159</td>
+            <td><strong>exit</strong> takes only integer args in the range<span>0 - 255</span> (see first footnote)</td>
+        </tr>
+        <tr>
+            <td>128+n</td>
+            <td>Fatal error signal <span>"n"</span></td>
+            <td><em>kill -9</em> <tt> $PPID</tt> of script</td>
+            <td><tt><strong>$?</strong></tt> returns<span>137</span> (128 + 9)</td>
+        </tr>
+        <tr>
+            <td>130</td>
+            <td>Script terminated by Control-C</td>
+            <td><em>Ctl-C</em></td>
+            <td>Control-C is fatal error signal <span> 2</span>, (130 = 128 + 2, see above)</td>
+        </tr>
+        <tr>
+            <td>255*</td>
+            <td>Exit status out of range</td>
+            <td>exit <span>-1</span></td>
+            <td><strong>exit</strong> takes only integer args in the
+                range<span>0 - 255</span></td>
+        </tr>
+    </tbody>
+</table>

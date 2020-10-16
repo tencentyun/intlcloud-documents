@@ -8,7 +8,7 @@
 
 示例：开发一个 express 应用，最基本的是引入 express 组件，业务中间可能会涉及到其他一些云产品（如 COS），所以整个应用目录如下：
 
-![](https://main.qcloudimg.com/raw/a8f05b681228498b2d41981cd7e5d4fb.svg)
+![](https://main.qcloudimg.com/raw/2c3851a85c128fc7da66f68272ed7fbc.svg)
 
 ## Serverless.yml 文件
 

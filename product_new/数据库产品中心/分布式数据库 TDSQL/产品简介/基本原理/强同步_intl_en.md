@@ -10,11 +10,11 @@ When the master or slave is unavailable, there is a chance of data inconsistency
 As the core of system data storage and service, a database should be highly available. In production systems, high availability solutions are often required to ensure uninterrupted system operations, and the data sync technology serves as the foundation of such solutions.
 
 ## Solution
-Multi-Thread Asynchronous Replication (MAR) is Tencent's proprietary MySQL-based multi-thread strong sync replication solution. Only after the slave data is completely synced (with log) can the master respond to the application transaction, which prevents data loss and errors.
+In Tencent Cloud's proprietary parallel multi-thread asynchronous replication (MAR, aka strong sync) scheme based on the MySQL protocol, only after a secondary node successfully synchronizes data (logs) can the primary node respond to the application layer, ensuring that the primary and the secondary nodes have completely the same data.
 
 Below is how it works:
 ![](https://main.qcloudimg.com/raw/9d9629407461c460de1e04e4c88a4830.png)
-
+In the MAR scheme, when a request is initiated at the application layer, only after a secondary node successfully returns a message can the primary node respond to the application layer with a request success, ensuring that the primary and the secondary nodes have completely the same data.
 MAR strong sync scheme outperforms other mainstream sync schemes. For more information, see [Performance Comparison Data for Strong Sync](https://intl.cloud.tencent.com/document/product/1042/33377). It has the following features:
 - Consistent synchronous replication ensures strong consistency of data between nodes.
 - Complete imperceptibility to the business means that read-write separation and sync enhancement are not required at the business side.
