@@ -88,7 +88,7 @@ For some streams, you can start and end recording at the specified points in tim
 
 ### APIs
 For more information on how to create a recording task through the API, please see [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309).
->! This calling method does not support recording streams outside Mainland China for the time being.
+
 
 
 ### Recording sample
