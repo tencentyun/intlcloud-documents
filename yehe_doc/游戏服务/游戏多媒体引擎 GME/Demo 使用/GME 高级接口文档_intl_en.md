@@ -24,3 +24,31 @@ to duck background music. If both this option and `OptionMixWithOthers` are enab
 to release audio focus.
  - If enabled, audio focus is released when you exit a room, so that other audio apps can continue running, e.g. QQ Music.
  - If disabled, other audio apps cannot continue running when you exit a room.
+ 
+ ## Setting Maximum Number of Mixing Channels
+
+The `SetRecvMixStreamCount` API is used to set the maximum number of mixing channels before entering a chat room. This API is available for all platforms. Here, we take PC as an example:
+```
+public abstract int SetRecvMixStreamCount(int nCount);
+```
+**Parameters** 
+
+| Parameter | Description |
+| --------- | -------------------------------- |
+| nCount | Specifies the number of mixing channels. The maximum is 20 |
+
+
+## Setting Room Audio Type
+
+The `SetForceUseMediaVol` API is used to enable/disable media volume for a chat room in Fluency (room type 1) or Standard (room type 2) mode.
+
+```
+[[ITMGContext GetInstance] SetAdvanceParams:SetForceUseMediaVol value:1]
+```
+
+#### Values
+Different values are used for different features, and described as follows:
+-**1**: sets the microphone for room type 1 from call volume (default) to media volume.
+-**2**: sets the microphone for room type 2 from call volume (default) to media volume.
+-**3**: sets the microphone back to call volume for both room types 1 and 2.
+
