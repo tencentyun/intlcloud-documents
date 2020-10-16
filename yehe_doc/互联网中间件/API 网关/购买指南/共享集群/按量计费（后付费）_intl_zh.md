@@ -4,7 +4,7 @@ API 网关有多种计费方式，本文主要介绍按量付费方式，按量�
 
 ## 计费项说明
 API 网关的计费项包括：调用次数费用和流量费用。费用组成如下：
-![](https://main.qcloudimg.com/raw/9025061fdff6c29633add23bd712a765.png)
+![](https://main.qcloudimg.com/raw/01a973e0c43322e5ec3adc6218a2e392.png)
 
 > !
 > - 如果您是内网 API 网关服务，内网产生的出流量和入流量均免费。

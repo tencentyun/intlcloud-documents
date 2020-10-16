@@ -19,6 +19,7 @@
 | 孟买     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com        |
 | 法兰克福|eu-frankfurt|eu-frankfurt.cls.tencentyun.com|eu-frankfurt.cls.tencentcs.com |
 | 东京 | ap-tokyo | ap-tokyo.cls.tencentyun.com | ap-tokyo.cls.tencentcs.com |
+| 首尔     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com         |
 
 
 

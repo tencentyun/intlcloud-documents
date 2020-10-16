@@ -5,12 +5,12 @@ Impala differs from Hive in that Hive uses the MapReduce engine for execution an
 Impala integrates with Apache Hive database to share databases and tables between both components. The high level of integration with Hive and compatibility with the HiveQL syntax enable you to use either Impala or Hive to create tables, initiate queries, load data, and do more.
 
 ## Prerequisites
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the Impala component on the software configuration page.
+- You have signed up for a Tencent Cloud account and created an EMR cluster. When creating the EMR cluster, select the Impala component on the software configuration page. 
 - Impala is installed in the `/data/Impala` directory of the CVM instance for the EMR cluster.
 
 ## Data Preparations
 
-First, you need to log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instances](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in with WebShell. Click "Log in" on the right of the desired CVM instance to enter the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can enter the command line interface.
+First log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). On the CVM console, select the CVM that you want to log in to and click **Log In**. For **Password login**, enter **root** in **User Name** and your custom password when EMR is created in **Login password**. Then you can access the command line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user and go to the Impala folder:
 ```

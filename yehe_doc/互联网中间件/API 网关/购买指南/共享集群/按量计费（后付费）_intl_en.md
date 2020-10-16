@@ -1,18 +1,13 @@
->?Billing for API Gateway started at 23:59:59, February 13, 2020. Please [top up](https://console.cloud.tencent.com/expense/recharge) your Tencent Cloud account timely in order to avoid potential service suspension.
-
 ## Billing Mode
-API Gateway is billed on a pay-as-you-go basis.
-
-## Free Tier
-After the service is activated, the first one million calls in each calendar month in the first year are free of charge, and excessive calls will be billed at the tiered prices.
-After the service is activated, the first one GB of traffic in each calendar month in the first year is free of charge, and excessive traffic will be billed separately by region at the prices listed in the traffic fees table.
-
->
-> - If you use the private network API Gateway service, both the outbound and inbound traffic generated on the private network is free of charge.
-> - If you use the public network API Gateway service, the public network inbound traffic will be free of charge, while the public network outbound traffic will incur traffic fees. For more information on the specific traffic fees, please see the "Traffic Fees" section below.
+API Gateway supports different billing modes. This document describes the default pay-as-you-go billing mode.
 
 ## Billable Item Description
-Billable items of API Gateway include call fees and traffic fees.
+Billable items of API Gateway include call fees and traffic fees as shown below:
+![](https://main.qcloudimg.com/raw/01a973e0c43322e5ec3adc6218a2e392.png)
+
+>!
+> - If you use the private network API Gateway service, both the outbound and inbound traffic generated on the private network is free of charge.
+> - If you use the public network API Gateway service, the public network inbound traffic will be free of charge, while the public network outbound traffic will incur traffic fees. For more information on the specific traffic fees, please see the "Traffic Fees" section below.
 
 
 ### Call fees

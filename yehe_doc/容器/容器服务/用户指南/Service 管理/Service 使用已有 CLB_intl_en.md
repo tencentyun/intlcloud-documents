@@ -1,26 +1,35 @@
 
 
-Tencent Kubernetes Engine (TKE) allows you to use the `service.kubernetes.io/tke-existed-lbid: <LoadBalanceId>` annotation to specify CLB instances associated with cluster services. It also provides the **CLB reuse by services** feature that allows you to specify multiple services to use the same existing CLB.
+Tencent Kubernetes Engine (TKE) supports existing Cloud Load Balancers (CLBs) by using the `service.kubernetes.io/tke-existed-lbid: <LoadBalanceId>` annotation. You can use this annotation to specify a CLB instance to be associated with cluster service resources. TKE also provides the feature of **CLB sharing by multiple services**, which allows you to specify multiple services to share an existing CLB. To configure this feature, refer to the sample configuration in this document.
 
-## Synchronization Behavior for Using Existing CLBs
-* When an existing CLB is used, the annotation that specifies the service network type does not take effect.
-* When a service stops using an existing CLB, the listener of the service will be deleted and the CLB will be retained.
-When the listener is deleted, the system checks whether the listener name was modified. If the listener name was modified, the listener may have been created by a user and will not be proactively deleted.
-* If a service is using an automatically created CLB, the annotation for using an existing CLB added for the service will cause the current CLB to end its lifecycle and be released. The service configuration is synchronized to the existing CLB. If the annotation for using an existing CLB is deleted for the service, `Service Controller` will create a CLB for the service and synchronize the service configuration to the created CLB.
+## Synchronization for Using Existing CLBs
+* When an existing CLB is used, the network-type annotation of the specified service does not work.
+* When a service no longer uses an existing CLB, the listener corresponding to the service will be deleted, but the CLB will be retained.
+When a listener is deleted, the name of the listener is checked to verify whether it has been modified by the user. If yes, the listener is considered as created by the user and therefore cannot be automatically deleted.
+* If a service is using an automatically created CLB, adding the annotation for using an existing CLB to this service terminates the lifecycle of the current CLB, which will be released accordingly. The configuration of the service will be synchronized with the CLB. Likewise, if the annotation for using an existing CLB is deleted from a service, the Service Controller component will create a CLB for the service and perform synchronization.
 
-## Notes
-- The specified CLB must be in the same region as the cluster.
-- Your TKE containers and CVMs cannot share a CLB.
-- You cannot operate CLB listeners and backend servers managed by TKE in the CLB console. Your updates will be overwritten by TKE automatic synchronization.
-- When an existing CLB is used:
-  - `Service Controller` is not responsible for the release or reclamation of the existing CLB.
-  - Only CLBs created in the CLB console can be reused. CLBs automatically created by TKE cannot be reused. If these CLBs are reused, the CLB lifecycle management of other services will be affected.
-- When **CLBs are reused**:
-  - CLBs cannot be reused across clusters.
-  - We recommend implementing clear management of listener ports. Otherwise, the management of CLBs reused by multiple services may be disordered.
-  - When a CLB to be reused has a port conflict, CLB reuse is prohibited. If a conflict occurs during modification, backend synchronization for the listener with the conflict may be incorrect.
-  - Local access cannot be enabled for services that reuse the same CLB (a limitation of traditional CLBs).
-  - When you delete a service that reuses a CLB with other services, the backend server bound to the reused CLB needs to be unbound manually. The `tke-clusterId: cls-xxxx` tag retained for the CLB also needs to be manually cleared.
+
+## Tencent Cloud Tag Synchronization for Using Existing CLBs
+- By default, the tag `tke-createdBy-flag = yes` is configured for all CLBs created by services. When a service is terminated, the corresponding resources are deleted. If an existing CLB is used, this tag is not configured, and the corresponding resources are not deleted when the service is terminated.
+- The tag `tke-clusterId = ` is configured for all services. If the ClusterId is correct, the tag is deleted when the service is terminated.
+- For clusters created after August 17, 2020, the feature of sharing the same CLB among multiple services is disabled by default. For the changes and details of CLB tag configuration rules created by services in clusters before and after the aforementioned date, see [Multiple Services Sharing a CLB](https://intl.cloud.tencent.com/document/product/457/38336).
+
+
+
+
+## Notes:
+- The specified CLB to be used must be in the same region as the cluster.
+- Ensure that your TKE service and CVM service do not share the same CLB.
+- You cannot use the CLB console to manage the listeners and servers bound to the TKE-managed CLBs. Your modification will be overwritten during automatic synchronization by TKE.
+- When existing CLBs are used:
+  - The Service Controller is not responsible for the release and repossession of the existing CLBs.
+  - Only CLBs created in the CLB console can be used. CLBs automatically created by TKE cannot be shared because this affects the CLB lifecycle management of other services.
+- When CLBs are **shared**:
+  - A CLB cannot be shared across clusters.
+  - When you need to use this **sharing** feature, we recommend that you implement robust listener port management. Otherwise, chaos may occur when a CLB is shared by multiple services.
+  - In case of port conflict, CLB sharing is disabled. If a conflict occurs during modification, synchronization may be improper at the listener backend.
+  - For services that share a CLB, local access is disabled (restriction for Classic CLBs).
+  - When you delete a service that shares an existing CLB, you must manually unbind the real server that is bound to the CLB. The tag `tke-clusterId: cls-xxxx` is retained for the CLB, and can only be cleared manually.
 
 
 ## Service Example
@@ -41,15 +50,18 @@ spec:
     app: nginx
   type: LoadBalancer
 ```
->
->- The `service.kubernetes.io/tke-existed-lbid: lb-6swtxxxx` annotation indicates that the service uses an existing CLB for configuration.
->- The service type must be set to `LoadBalancer`.
+>?
+>- `service.kubernetes.io/tke-existed-lbid: lb-6swtxxxx` indicates that the service uses an existing CLB for configuration.
+>- Note that the service type must be set to `LoadBalancer`.
 
 
-## Use Case
-### Exposing TCP and UDP services over the same port
-Kubernetes has a limitation on its service design, which requires that multiple port protocols exposed under the same service must be the same. In many game scenarios, users must expose TCP and UDP services over the same port. The CLB service provided by Tencent Cloud can monitor UDP and TCP simultaneously over the same port. To meet users' requirements for exposing TCP and UDP services over the same port, you can have services reuse a CLB.
-For example, in the following service configuration, `game-service` is described as two services. Except for the listening protocol, the content of these two services is basically the same. You can annotate the two services to use the existing CLB `lb-6swtxxxx` and use kubectl to apply these two services to the cluster. In this way, multiple protocols can be exposed over the same CLB port.
+## Use Cases
+### Using a monthly subscription CLB to provide services to external users
+When the Service Controller component manages CLB lifecycles, it only supports the purchase of pay-as-you-go CLBs. When you need to use a CLB for a long term, the monthly subscription mode is more cost-effective. In such cases, you can purchase and manage CLBs independently, use annotations to control the use of existing CLBs by services, and remove CLB lifecycle management from the Service Controller component.
+
+### Opening the TCP and UDP services in the same port
+According to the official Kubernetes restrictions in service design, when multiple port protocols are opened under the same service, these protocols must be the same. In many game scenarios, users need to simultaneously open the TCP and UDP services in the same port. Tencent CLBs support simultaneous listening on UDP and TCP over the same port. This demand can be met through CLB sharing by multiple services.
+For example, in the following service configuration, `game-service` is described as two service resources. The descriptions are basically the same except for the protocols for listening. Both services specify the use of an existing CLB `lb-6swtxxxx` through annotations. By applying the resources to a cluster through kubectl, multiple protocols can be exposed over the same CLB port.
 ```
 apiVersion: v1
 kind: Service
@@ -77,7 +89,7 @@ spec:
   ports:
     - name: 80-80-udp
       port: 80
-      protocol: UDP
+      protocol: UCP
       targetPort: 80
   selector:
     app: game
