@@ -8,7 +8,7 @@ Organization is an upper-layer concept of a serverless application and mainly us
 
 For example, the basic part of developing an Express application is to import the Express component, and some other Tencent Cloud services (such as COS) may also be involved; therefore, the directories of the entire application are as shown below:
 
-![](https://main.qcloudimg.com/raw/a8f05b681228498b2d41981cd7e5d4fb.svg)
+![](https://main.qcloudimg.com/raw/2c3851a85c128fc7da66f68272ed7fbc.svg)
 
 ## serverless.yml File
 

@@ -5,7 +5,7 @@ Grayscale release of a serverless application is to configure the traffic rule o
 
 Every time a feature is published, you can run `sls deploy` to deploy it onto the `$latest` version. You can switch some traffic to the `$latest` version to check the performance and gradually switch the rest traffic to it. When 100% traffic has been switched to it, it will be fixed, and all traffic will be switched to the fixed version.
 
-![](https://main.qcloudimg.com/raw/d8fc34ba966a562d5f43a2953434286f.svg)
+![](https://main.qcloudimg.com/raw/8be91bf7dd1c50dc3b17c193f24f428e.svg)
 
 ## Command Description
 #### Function release version

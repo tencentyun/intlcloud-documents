@@ -5,7 +5,7 @@ Serverless 应用的灰度发布是配置云函数别名为 $default（默认流
 
 每次上线一个新功能，执行`sls deploy`会部署到 $latest 版本上。我们将切部分流量在 $latest 版本上进行观察，然后逐步将流量切到 $latest 版本。当流量切到100%时，我们会固化这个版本，并将流量全部切到固化后的版本。
 
-![](https://main.qcloudimg.com/raw/d8fc34ba966a562d5f43a2953434286f.svg)
+![](https://main.qcloudimg.com/raw/8be91bf7dd1c50dc3b17c193f24f428e.svg)
 
 ## 命令说明
 #### 函数发布版本
