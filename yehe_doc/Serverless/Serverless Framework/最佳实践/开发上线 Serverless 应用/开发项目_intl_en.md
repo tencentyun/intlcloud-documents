@@ -1,78 +1,39 @@
-## Operation Scenarios
+## Overview
 This document uses deploying an Express website with the `tencent-express` component as an example to describe how to use Serverless Framework to develop, manage, deploy, and publish a project. You can see the demo [here](https://github.com/June1991/serverless-express).
-
-## Command Description
-#### Publishing function version
-```plaintext
-sls deploy --inputs.publish="fun01,fun02" # Publish the `fun01` and `fun02` function versions under the project during deployment
-sls deploy --inputs.publish  # Publish all function versions under the project during deployment
-```
-
-#### Setting function traffic
-```plaintext
-sls deploy --inputs.traffic="0.2" # After deployment, switch 20% traffic to the `$latest` version
-```
-- In Serverless Framework, the traffic rule of the SCF function whose alias is `$default` is modified to switch the traffic.
-- The value of `traffic` is configured as the traffic percentage of the `$latest` version. The traffic percentage of the last published SCF function version is 1 minus the traffic percentage of the `$latest` version.
-For example, if `traffic` = "0.2", the traffic rule of `$default` will be configured as `{$latest:0.2, last published SCF function version: 0.8}`.
-- If no fixed versions are published for the function and only the `$latest` version exists, no matter how `traffic` is set, it will always be `$latest:1.0`.
-
 
 ## Process Description
 The development and launch process of a project is as shown below:
-![](https://main.qcloudimg.com/raw/af7fe3252a3607f929ad0c6e1736b6dc.svg)
+![](https://main.qcloudimg.com/raw/9aa4b4ca29bd0dd0de5f3e8593f513d8.svg)
 1. Project initialization: initialize the project; for example, select some development frameworks and templates to complete the basic construction.
 2. Development: develop product features. This stage may involve collaboration among multiple developers, who will pull different feature branches for separated development and testing and finally merge them into the `dev` branch for joint testing.
 3. Testing: test the product features by testing personnel.
 4. Release and launch: publish and launch the tested product features. As a newly published version may be unstable, grayscale release will be used generally, and some rules will be configured to monitor the stability of the new version. After the new version becomes stable, all traffic will be switched to it.
 
-## Basic Concepts
-#### Branch concepts
-The example involves the following branches:
+Project development may involve the following branches:
 
 | Branch Type | Description |
 | ------ | ----- |
-| master | It is used to deploy a production environment | 
+| master | It is used to deploy a production environment |
 | testing | It is used for testing in a testing environment |
 | dev      | It is used for daily development |
 | feature-xxx | It is used to add a new feature; for example, different developers can pull different feature branches from `dev` for development |
-| hotfix-xxx | It is used to fix an urgent bug | 
+| hotfix-xxx | It is used to fix an urgent bug |
 
-#### Serverless Framework parameters
-In this example, the `stage` parameter is used to isolate environments. Different `stage` configurations will be deployed into different SCF functions.
-```
-# serverless.yml
 
-component: express # Name of the imported component, which is required. The `express-tencent` component is used in this example
-name: expressDemo # Name of the instance created by this Express component, which is required
-org: xxx-department # Organization information, which is optional
-app: expressDemoApp # Express application name, which is optional
-stage: ${env:stage} # Information for identifying environment, which is optional. The configuration is read from the .env file
-
-inputs:
-  src:
-    src: ./ 
-    exclude:
-      - .env
-  region: ap-guangzhou
-  runtime: Nodejs10.15
-  functionName: express-demo-${stage} # SCF function name
-  apigatewayConf:
-    protocols:
-      - http
-      - https
-    environment: release
-```
 ## Directions
+
 ### Project initialization
+
 1. Create an Express project as instructed in [Deploying Express.js Application](https://intl.cloud.tencent.com/document/product/1040/37354) and modify the YML file content as follows:
 ```
 #serverless.yml
+org: xxx-department # Organization information. The default value is your Tencent Cloud `appid`
+app: expressDemoApp # Application name, which is the component instance name by default
+stage: ${env:STAGE} # Parameter used to isolate the development environment, which is `dev` by default
+
+
 component: express # Name of the imported component, which is required. The `express-tencent` component is used in this example
-name: expressDemo # Name of the instance created by this Express component, which is required
-org: personal # Organization information, which is optional
-app: expressDemoApp # Express application name, which is optional
-stage: ${env:STAGE} # Information for identifying environment, which is optional. The configuration is read from the .env file
+name: expressDemo # Name of the instance created by the component, which is required
 
 inputs:
   src:
@@ -81,7 +42,7 @@ inputs:
       - .env
   region: ap-guangzhou
   runtime: Nodejs10.15
-  functionName: express-demo-${stage} # SCF function name
+  funcitonName: ${name}-${stage}-${app}-${org} # Function name
   apigatewayConf:
     protocols:
       - http
@@ -100,12 +61,12 @@ STAGE=prod # `STAGE` is the `prod` environment. You can also run `sls deploy --s
 ![](https://main.qcloudimg.com/raw/ed180d13d3010d49ec102567c235d461.svg)
 
 4. Create a remote repository ([sample](https://github.com/June1991/serverless-express)), submit the project code to the remote `master` branch, and create `testing` and `dev` branches. In this way, the code of the three branches is on the same version (suppose it is v0).
-![](https://main.qcloudimg.com/raw/f8ae1d7e0ca59d1b0c49d6878ba4f37d.svg)
+![](https://main.qcloudimg.com/raw/730575f2662c4a9bc7806f2674f34455.svg)
 
 ### Development and testing
 #### Background
 In this stage, a feature module needs to be developed. Suppose two developers are needed: Tom and Jorge, who create `feature1` and `feature2` feature branches from `dev` (v0) for development, respectively.
-![](https://main.qcloudimg.com/raw/8716ab86706ce857897d81d2538e9253.svg)
+![](https://main.qcloudimg.com/raw/0fc0b47077478c25dbb90e9618b0b7bf.svg)
 Tom starts developing `feature1`. In this example, a `feature.html` file is added, and "This is a new feature 1." is written in it.
 
 #### Development
@@ -173,7 +134,7 @@ Suppose Jorge has also completed feature development and successfully tested the
 #### Joint testing
 
 1. The two developers merge their feature branch code into the `dev` branch (conflicts may occur and need to be solved manually).
-![](https://main.qcloudimg.com/raw/fc9297f775bda0eb0bbc7db2b3305285.svg)
+![](https://main.qcloudimg.com/raw/0e7bdc2927e6b2cd3cd5672a4a421a20.svg)
 2. Carry out joint testing in `dev`. The .env file is configured as follows in the joint testing environment:
 
 ```
@@ -189,49 +150,37 @@ At this point, the joint testing is completed, and the development of the entire
 #### Testing
 
 1. Merge the jointly tested `dev` branch into `testing` code to enter the testing stage.
-![](https://main.qcloudimg.com/raw/09d23fc99205b8ac078da6cbf4d7f700.svg)
+![](https://main.qcloudimg.com/raw/e494e4bc6a98f0dd722024597ddc6779.svg)
 2. Configure the .env file in the testing environment as follows:
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
 STAGE=testing
 ```
-3. After the deployment by running `sls  deploy` succeeds, the testing personnel will carry out relevant tests until the features are stable in the testing.
+3. After the deployment by running `sls deploy` succeeds, the testing personnel will carry out relevant tests until the features are stable in the testing.
 
 
 ### Release and launch
 
 After the test is passed, merge the testing code into the `master` branch and prepare for release and launch.
-![](https://main.qcloudimg.com/raw/dcfb979dd18f198b2764d77d0cb7b517.svg)
+![](https://main.qcloudimg.com/raw/3e5d33adeece63065707df9b46e8f839.svg)
 
-To ensure that the business in the production environment is stable, we recommend you use grayscale release:
-1. Set the .env file in the production environment as follows:
+
+
+Set the .env file in the production environment as follows:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
 STAGE=prod
 ```
-2. Deploy the `$latest` version in the production environment and switch 10% traffic to it.
+Run the deployment command:
+
 ```
-sls deploy --inputs.traffic=0.1 # Deploy and switch 10% traffic to the `$latest` version
-```
-3. Monitor the `$latest` version and switch traffic to this version after it becomes stable.
-```
-sls deploy --inputs.traffic=1.0 # Deploy and switch 100% traffic to the `$latest` version
-```
-4. After all traffic is successfully switched, the stable version needs to be marked, so that you can easily and quickly roll back to this version if a problem occurs in the production environment when a new feature is published.
-```
-sls deploy --inputs.publish --inputs.traffic=0 # Deploy and publish function v1 and switch all traffic to it
+sls deploy 
 ```
 
 At this point, a `serverless-express` project has been developed and published.
->?
-- During the development, you need to set the `stage` value based on the environment and add it to the function name to isolate different environments.
-- You can run a custom script to implement grayscale release.
-
-
-
-
 
 
 

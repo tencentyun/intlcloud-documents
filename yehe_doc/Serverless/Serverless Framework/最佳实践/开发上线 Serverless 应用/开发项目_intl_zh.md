@@ -53,12 +53,12 @@ STAGE=prod #STAGE为prod环境，也可以sls deploy --stage prod 参数传递�
 ![](https://main.qcloudimg.com/raw/ed180d13d3010d49ec102567c235d461.svg)
 
 4.创建远程仓库（[示例链接](https://github.com/June1991/serverless-express)），将项目代码提交到远程 master 分支。同时创建 testing、dev。此时三个分支的代码在同一个版本上（假设为版本0）。
-![](https://main.qcloudimg.com/raw/f8ae1d7e0ca59d1b0c49d6878ba4f37d.svg)
+![](https://main.qcloudimg.com/raw/730575f2662c4a9bc7806f2674f34455.svg)
 
 ### 开发与测试
 #### 背景
 现在需要开发某个功能模块。假设需要有两位开发者：Tom、Jorge。两位开发者分别从 dev（版本0）上创建特性分支为 feature1、feature2 进行研发。
-![](https://main.qcloudimg.com/raw/8716ab86706ce857897d81d2538e9253.svg)
+![](https://main.qcloudimg.com/raw/0fc0b47077478c25dbb90e9618b0b7bf.svg)
 Tom 开始开发 feature1。在本示例中，为新增一个 feature.html，里面写文案"This is a new feature 1."。
 
 #### 开发
@@ -126,7 +126,7 @@ Full details: https://serverless.cloud.tencent.com/instances/expressDemoApp%3Afe
 #### 联调
 
 1、两人把各自 feature 分支的代码合并到 dev 分支。（可能会存在冲突需要人为解决）
-![](https://main.qcloudimg.com/raw/fc9297f775bda0eb0bbc7db2b3305285.svg)
+![](https://main.qcloudimg.com/raw/0e7bdc2927e6b2cd3cd5672a4a421a20.svg)
 2、在dev进行联调。联调环境中的.env配置如下
 
 ```
@@ -142,7 +142,7 @@ STAGE=dev
 #### 测试
 
 1. 把联调通过的 dev 分支合并到 testing 代码，进入测试。
-![](https://main.qcloudimg.com/raw/09d23fc99205b8ac078da6cbf4d7f700.svg)
+![](https://main.qcloudimg.com/raw/e494e4bc6a98f0dd722024597ddc6779.svg)
 2. 测试环境中的 .env 配置如下：
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
@@ -155,7 +155,7 @@ STAGE=testing
 ### 发布上线
 
 测试通过后，将测试代码合并到 master 分支，准备发布上线。
-![](https://main.qcloudimg.com/raw/dcfb979dd18f198b2764d77d0cb7b517.svg)
+![](https://main.qcloudimg.com/raw/3e5d33adeece63065707df9b46e8f839.svg)
 
 
 
