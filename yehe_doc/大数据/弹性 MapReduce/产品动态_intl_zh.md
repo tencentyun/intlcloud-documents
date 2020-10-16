@@ -1,3 +1,29 @@
+## 2020年10月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>巡检系统新增服务巡检项</td>
+<td>新增 hdfs、yarn、hbase、hive、zookeeper 服务巡检项，提升指标的健康检查</td>
+<td>2020-10-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">集群巡检</a></td>
+</tr>
+<tr>
+<td>支持自定义配置事件策略</td>
+<td>支持自定义配置事件策略，提升集群事件发现自主性</td>
+<td>2020-10-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
+</tr>
+</tbody></table>
+
+
 ## 2020年09月
 <table>
 <thead>

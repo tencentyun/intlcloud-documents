@@ -17,6 +17,7 @@ Project development may involve the following branches:
 ### Project initialization
 
 1. Create an Express project as instructed in [Deploying Express.js Application](https://intl.cloud.tencent.com/document/product/1040/37354) and modify the YML file content as follows:
+
 ```
 #serverless.yml
 app: expressDemoApp # Application name, which is the component instance name by default
@@ -42,6 +43,7 @@ inputs:
 ```
 
 2. Configure the following content in the .env file in the project root directory:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx # `SecretId` of your account
 TENCENT_SECRET_KEY=xxxxxxxx # `SecretKey` of your account
@@ -63,6 +65,7 @@ Tom starts developing `feature1`. In this example, a `feature.html` file is adde
 #### Development
 
 1. Add router configuration in the `sls.js` file:
+
 ```
 // Routes
 app.get(`/feature`, (req, res) => {
@@ -71,6 +74,7 @@ app.get(`/feature`, (req, res) => {
 ```
 
 2. Add `feature.html`:
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -89,6 +93,7 @@ app.get(`/feature`, (req, res) => {
 
 3. Set a stage in the .env file so as to get an independent runtime and debugging environment during the development.
 For example, Tom configures the .env file in the project directory of `serverless.yml` as follows:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
@@ -96,6 +101,7 @@ STAGE=feature1
 ```
 
 4. After the deployment by running `sls deploy` succeeds, the following content will be returned:
+
 ```
 region: ap-guangzhou
 apigw:
@@ -143,6 +149,7 @@ At this point, the joint testing is completed, and the development of the entire
 1. Merge the jointly tested `dev` branch into `testing` code to enter the testing stage.
 ![](https://main.qcloudimg.com/raw/e494e4bc6a98f0dd722024597ddc6779.svg)
 2. Configure the .env file in the testing environment as follows:
+
 ```
 TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
@@ -165,6 +172,7 @@ TENCENT_SECRET_ID=xxxxxxxxxx
 TENCENT_SECRET_KEY=xxxxxxxx
 STAGE=prod
 ```
+
 Run the deployment command:
 
 ```

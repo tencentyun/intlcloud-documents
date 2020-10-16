@@ -33,16 +33,17 @@
 >+ 镜像版本：CentOS 7.6 64位
 >
 
-### <span id="step1">步骤1：申请 VIP
+<span id="step1"></span>
+### 步骤1：申请 VIP
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/)。
 2. 在左侧导航栏中，选择【IP 与网卡】>【高可用虚拟 IP】。 
 3. 在 HAVIP 管理页面，选择所在地域，单击【申请】。
 4. 在弹出的【申请高可用虚拟 IP】对话框中输入名称，选择 HAVIP 所在的私有网络和子网等信息，单击【确定】即可。
 >?HAVIP 的 IP 地址可以自动分配，也可以手动填写。如果您选择手动填写，请确认填写内网 IP 在所属子网网段内，且不属于系统保留 IP。例如，所属子网网段为：10.0.0.0/24，则可填的内网 IP 范围 为：10.0.0.2 - 10.0.0.254。
->
-![](https://main.qcloudimg.com/raw/c0dfa6657293a92774d21b48d436a6e0.png)
+
+![](https://main.qcloudimg.com/raw/fc0224eda94238588f0dfc0178d08b77.png)
 申请成功的 HAVIP 如下图所示。
-![](https://main.qcloudimg.com/raw/a3d894863e5405477aa9910487c5f198.png)
+![](https://main.qcloudimg.com/raw/3cdee897dc6a5b69ff45ad47725444d9.png)
 
 ### 步骤2：在主服务器和备服务器上安装 keepalived 软件（推荐1.2.24版本及以上）
 本文以 CentOS 7.6镜像类型服务器为例提供 keepalived 的安装方法，如有其他需求，请联系技术支持人员。
@@ -199,16 +200,16 @@
 
 6. 检查两台云服务器的主备状态，并确认 HAVIP 已经正确的绑定到主备服务器。
 >?此示例中 HAVIP-01 的优先级更高，所以正常情况下，HAVIP-01 将被选择为主节点。
->
+
 登录 [高可用虚拟 IP](https://console.cloud.tencent.com/vpc/havip) 控制台，可以看到 HAVIP 绑定的云服务器为主节点云 HAVIP-01，如下图所示。
-![](https://main.qcloudimg.com/raw/6c6755680da646ab26d5774873af82d5.png)
+![](https://main.qcloudimg.com/raw/1104e6a7305dec04ce1ea242db0c2c8c.png)
 
 ### 步骤4：**VIP绑定弹性公网IP（可选）**  
 
 1. 在 [高可用虚拟 IP](https://console.cloud.tencent.com/vpc/havip) 控制台，单击 [步骤一 ](#step1)中申请的 HAVIP 所在行的【绑定】。
-![](https://main.qcloudimg.com/raw/79e1e4c95b29f660997b987a8487bab4.png)
+![](https://main.qcloudimg.com/raw/129cd10051b4d07e1d420b1bec710614.png)
 2. 在弹出的【绑定弹性公网 IP 】对话框中选择待绑定的 EIP，并单击【确定】。如果没有可用的 EIP，请先在 [弹性公网 IP](https://console.cloud.tencent.com/cvm/eip?rid=46)控制台申请。
-![](https://main.qcloudimg.com/raw/c679a9d21a4e039ae46db333e0e50dcf.png)
+![](https://main.qcloudimg.com/raw/8ca21593889529f42af52c5b68ec2f78.png)
 
 ### 步骤5：使用 notify_action.sh 进行简单的日志记录（可选）
 keepalived 主要日志仍然记录在“/var/log/message”中，可以通过添加 notify 的脚本来进行简单的日志记录。

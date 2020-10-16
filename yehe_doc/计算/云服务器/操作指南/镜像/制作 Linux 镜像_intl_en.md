@@ -28,7 +28,7 @@ sudo ls /sys/firmware/efi
 The system-critical files to be checked include but are not limited to:
 >? Follow the standards of relevant distributions to ensure that the paths and permissions of the system-critical files are correct and the files can be read and written normally.
 >
- - /etc/grub/grub.cfg: in the kernel parameter, uuid is recommended for mounting root. Other methods (such as root=/dev/sda) may cause a failure in starting the system.
+ - /etc/grub2.cfg: in the kernel parameter, uuid is recommended for mounting root. Other methods (such as root=/dev/sda) may cause a failure in starting the system.
  - /etc/fstab: do not mount other disks. After the migration, the system may not be started due to disk missing.
  - /etc/shadow: it has appropriate permissions and can be read and written.
 
