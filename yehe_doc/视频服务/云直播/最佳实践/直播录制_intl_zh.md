@@ -5,7 +5,6 @@
 - 因为推流发起后启动录制任务会有短暂延迟，所以推流时间过短会导致无法生成录制文件。为保证录制文件质量，建议每次录制时的推流时间大于10s。
 
 ## 录制存储
-
 直播录制将文件存放于点播平台，您如需使用直播录制服务，需首先申请开通 [云点播服务](https://intl.cloud.tencent.com/product/vod)。
 >? 若需了解生成的录制文件命名规则，请参见 [录制模板参数-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)。
 
@@ -88,7 +87,7 @@
 
 ### API 调用
 创建录制任务 API 说明，具体请参见 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)。
->! 此调用方式暂时不支持海外推流录制。
+
 
 
 ### 录制示例
