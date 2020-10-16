@@ -12,10 +12,10 @@ During serverless application development, you need to run the deployment comman
 
 During development and testing, to facilitate development, testing, and debugging, you can implement automated deployment of the code after it is submitted in the following steps:
 1. Select the target branch for automated deployment (in this example, the `dev` branch is selected).
-2. Create your action under this branch as instructed in [Configuring a workflow](https://docs.github.com/cn/actions/configuring-and-managing-workflows/configuring-a-workflow).  
+2. Create your action under this branch as instructed in [Configuring a workflow](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions).  
 ![](https://main.qcloudimg.com/raw/6863deb3acfb9a8de75d8a0447ec4d20.png)
 >!GitHub stipulates that if an event occurs on a certain repository branch, the workflow file must exist in the repository of the branch.
-3. Configure the Tencent Cloud key as instructed in [Using variables and secrets in a workflow](https://docs.github.com/cn/actions/configuring-and-managing-workflows/using-variables-and-secrets-in-a-workflow).
+3. Configure the Tencent Cloud key as instructed in [Using variables and secrets in a workflow](https://docs.github.com/en/actions/reference/encrypted-secrets).
 ![](https://main.qcloudimg.com/raw/e67ecc4fd932124db5d6bfa54b3ebb73.png)
 4. Configure the action for deployment.
 
