@@ -122,9 +122,9 @@ When a migration task is created, the incremental sync option is selected by def
 
 ### 8. Cancel migration (optional)
 >!
-1. Data that has been synced to the target database will not be cleared if you click **Cancel**.
-2. Restarting the task may cause the verification or task to fail. You may have to manually clear all databases or tables that may cause conflicts in the target database before you can start the migration task again.
-3. When migrating a single table, make sure that all tables depended on by its foreign keys are also migrated.
+>1. Data that has been synced to the target database will not be cleared if you click **Cancel**.
+>2. Restarting the task may cause the verification or task to fail. You may have to manually clear all databases or tables that may cause conflicts in the target database before you can start the migration task again.
+>3. When migrating a single table, make sure that all tables depended on by its foreign keys are also migrated.
 
 To cancel an ongoing migration task, click **Cancel**.
 
