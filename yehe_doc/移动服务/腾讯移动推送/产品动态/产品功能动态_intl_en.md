@@ -14,7 +14,7 @@
 <td>The troubleshooting tool now supports token query by account.</td>
 <td>The token can be searched by account, making troubleshooting easier and faster</td>
 <td>September 28, 2020</td>
-<td><a href="https://cloud.tencent.com/document/product/548/48774">Troubleshooting Tool</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/38389">Troubleshooting Tool</a></td>
 </tr>
 <tr>
 <td>Custom tags now contain New, Online and Offline tags</td>

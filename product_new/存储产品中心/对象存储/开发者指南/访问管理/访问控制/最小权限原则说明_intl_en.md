@@ -24,7 +24,7 @@ Under the principle of least privilege, you should specify the following informa
 - principal: you should specify to which sub-account (user ID required), collaborator (user ID required), anonymous user, or user group to grant permission. This is not needed if you use a temporary key for access.
 - statement: enter the corresponding parameters.
 	-  effect: you must specify whether the policy is to "allow" or "deny".
-	-  action: you must specify the allowed or denied operation. An operation can be an API (described using the prefix “name”) or a feature set (a set of specific APIs, described using the prefix “permid”).
+	-  action: you must specify the action to allow or deny. It can be one API operation or a set of API operations.
 	-  resource: you must specify the resource authorized by the policy. A resource is described in a six-piece format. You can set the resource scope as the specified file (e.g., `exampleobject.jpg`) or the specified directory (e.g., `examplePrefix/*`). Unless it is required by your business, please do not grant any user access to all resources using the `*` wildcard.
 	-  condition: it describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address.
 

@@ -12,7 +12,12 @@ Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 Content-Type: application/json
 
-{"group_id": "xxxx-xx-xx-xx-xxxxxxx", "group_name": "testname", "ips": ["10.10.10.10", "10.10.10.11"]}
+{
+    "group_id": "xxxx-xx-xx-xx-xxxxxxx", 
+    "group_name": "testname", 
+    "type"： "ip", 
+    "ips": ["10.10.10.10", "10.10.10.11"]
+}
 ```
 
 #### Request line
@@ -34,7 +39,7 @@ There are only common request headers but no special request headers.
 | ips          | JsonArray| body | No      | List of IPs in server group                  |
 
 
->Either `group_name` or `ips` must be provided.
+>Either `group_name`, `ips` or `labels` must be provided.
 
 ## Response
 

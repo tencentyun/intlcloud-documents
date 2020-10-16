@@ -5,9 +5,9 @@
 ## 常见场景
 
 1. 开发人员在控制台推送一条消息给测试设备，控制台推送状态显示成功，但在手机通知栏没有看到这条消息，通过 Token 查询设备详情发现通知栏权限关闭，开启通知栏权限后再次发送消息，手机通知栏成功展示。
-![](https://main.qcloudimg.com/raw/01b34e133a3da71f7b80588df59059a8.png)
+
 2. 运营人员通过用户账号推送消息，推送状态显示"推送失败"，在排查工具中输入用户账号查询 Token，发现该应用下，此账号没有关联的设备 Token，可联系开发人员排查是否调用了 [账号绑定（Android）](https://intl.cloud.tencent.com/document/product/1024/30715)或 [账号绑定（iOS）](https://intl.cloud.tencent.com/document/product/1024/30727)接口。
-![](https://main.qcloudimg.com/raw/dc8a6727794e03025656a7ea1633544d.png)
+![](https://main.qcloudimg.com/raw/867d6c62be726c6fb8af6ca4922ae16f.png)
 
 ## 操作步骤
 
@@ -16,7 +16,7 @@
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 2. 在左侧导航栏选择【工具箱】>【排查工具】。
 3. 单击下拉框选择您需要查询产品及应用，选择【通过账号查询】。
-![](https://main.qcloudimg.com/raw/9c5fc96d4004b24f93833f9536367ff3.png)
+![](https://main.qcloudimg.com/raw/ab3ee41ac3fcab0fe15b83b455a55d24.png)
 4. 输入用户账号，单击【查询】。
 5. 选择账号下关联的设备 Token 查看设备注册详情。
 > ?

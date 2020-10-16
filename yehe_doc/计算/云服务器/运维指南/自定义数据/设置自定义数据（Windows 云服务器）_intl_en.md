@@ -6,6 +6,7 @@ This article describes how to define a PowerShell script and use it to configure
 ## Considerations
 
 - Windows operating systems that support custom data include:
+ - Windows Server 2019 Datacenter Edition 64-bit Chinese/English version
  - Windows Server 2016 Datacenter Edition 64-bit Chinese/English version
  - Windows Server 2012 R2 Datacenter Edition 64-bit Chinese/English version
 - The script is executed when and only when the instance starts up for the first time.

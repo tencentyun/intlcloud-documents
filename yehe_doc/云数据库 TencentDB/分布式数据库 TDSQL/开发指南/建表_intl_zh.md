@@ -1,0 +1,50 @@
+## 建分表
+分表创建时必须在最后面指定分表键（shardkey）的值，该值为表中的一个字段名字，会用于后续 SQL 的路由选择：
+```
+mysql> create table test1 ( a int, b int, c char(20),primary key (a,b),unique key u_1(a,c) ) shardkey=a;
+Query OK, 0 rows affected (0.07 sec)
+```
+
+在分布式实例中，shardkey 对应后端数据库的分区字段，因此必须是主键以及所有唯一索引的一部分，否则无法创建表。
+- 场景1：存在多个唯一索引时报错。
+```
+mysql> create table test1 ( a int, b int, c char(20),primary key (a,b),unique key u_1(a,c),unique key u_2(b,c) ) shardkey=a;;
+```
+此时有一个唯一索引`u_2`不包含 shardkey，无法创建表，会报如下错误：
+```
+ERROR 1105 (HY000): A UNIQUE INDEX must include all columns in the table's partitioning function
+```
+因为主键索引或者 unique key 索引意味着需要全局唯一，而要实现全局唯一索引，则必须包含 shardkey 字段。
+
+- 场景2：存在选择自增列为主键时报错。
+建表时，当主键设置自增列且计划将主键设置为 shardkey 时，例如：
+```
+create table test1 ( a int UNSIGNED AUTO_INCREMENT, b int, c char(20),primary key (a),unique key u_2(b,c) ) shardkey=a;
+```
+此时无法基于主键建表成功，会报如下错误：
+```
+1503，“A UNIQUE INDEX must include all colums in the table‘s patitioning function”
+```
+因为，自增列会自行保证唯一性，无需主键，会与 innodb 冲突，此时将自增列去掉主键限制，选择唯一索引的一部分即可建表成功。
+
+除上面的限制外，shardkey 字段还有如下要求：
+- shardkey 字段的类型必须是 int、bigint、smallint、char、varchar。
+- shardkey 字段的值不能有中文，proxy 不会转换字符集，因此不同字符集可能会路由到不同的分区。
+- 不能 update shardkey 字段的值。
+- shardkey=a 放在 SQL 的最后面。
+- 访问数据尽量都带上 shardkey 字段，非强制要求，但是不带 shardkey 的 SQL 会路由到所有节点，消耗较多资源。
+
+
+## 建广播表
+支持建小表（广播表），此时该表在所有 set 中都是全量数据，主要方便于跨 set 的 join 操作，同时通过分布式事务保证修改操作的原子性，使得所有 set 的数据完全一致。
+```
+mysql> create table global_table ( a int, b int key) shardkey=noshardkey_allset;
+Query OK, 0 rows affected (0.06 sec)
+```
+
+## 建单表
+支持建立普通的表，语法和 MySQL 完全一致，此时该表的数据全量存在第一个 set 中，所有该类型的表都放在第一个 set 中：
+```
+mysql> create table noshard_table ( a int, b int key);
+Query OK, 0 rows affected (0.02 sec)
+```

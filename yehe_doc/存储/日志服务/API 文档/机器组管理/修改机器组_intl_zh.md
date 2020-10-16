@@ -12,7 +12,12 @@ Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 Content-Type: application/json
 
-{"group_id": "xxxx-xx-xx-xx-xxxxxxx", "group_name": "testname", "ips": ["10.10.10.10", "10.10.10.11"]}
+{
+    "group_id": "xxxx-xx-xx-xx-xxxxxxx", 
+    "group_name": "testname", 
+    "type"： "ip", 
+    "ips": ["10.10.10.10", "10.10.10.11"]
+}
 ```
 
 #### 请求行
@@ -31,10 +36,12 @@ PUT /machinegroup
 |--------------|--------|------|---------|--------------------------------|
 | group_id     | string | body | 是      |要修改的机器组的 ID                |
 | group_name   | string | body | 否      |机器组的名字，不能重名             |
+| type       | string    | body | 否   | 机器组类型，只支持 ip 和 label 两种类型，默认是 ip |
 | ips          | JsonArray| body | 否      |机器组下的 IP 列表                  |
+| labels     | JsonArray | body | 否   | label 机器组的标签表                             |
 
 
->group_name 和 ips 至少要提供一个。
+>!group_name 、 ips 和 labels 至少要提供一个。
 
 ## 响应
 
@@ -55,5 +62,5 @@ Content-Length: 0
 
 ## 错误码
 
-请查看 [错误码](https://intl.cloud.tencent.com/document/product/614/12402) 文档。
+参加 [错误码](https://intl.cloud.tencent.com/document/product/614/12402) 文档。
 

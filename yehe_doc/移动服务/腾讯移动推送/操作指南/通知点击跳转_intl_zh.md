@@ -41,7 +41,7 @@
 
 使用 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns) 设置 Intent 进行跳转，在【高级设置】>【点击打开】中填写如下：
 
-![](https://main.qcloudimg.com/raw/d31ac5addb0efcd78c83785e70d21cd7.png)
+![](https://main.qcloudimg.com/raw/7555576dd7bea459eb7f27e8a0f48d19.png)
 
 #### 打开应用
 
@@ -51,13 +51,13 @@
 
 使用 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns) 设置 URL 进行跳转，在【高级设置】>【点击打开】中填写如下：
 
-![](https://main.qcloudimg.com/raw/69479956f0630b9650bb68ae4c523f5c.png)
+![](https://main.qcloudimg.com/raw/0977d856b016ffbc7799644dc5f9af53.png)
 
 #### 跳转至应用内 Activity
 
 该方式后续将下线，不建议使用。在【高级设置】>【点击打开】中填写如下：
 
-![](https://main.qcloudimg.com/raw/a0a072f1bc0955a2a5bdcb96dbc68be5.png)
+![](https://main.qcloudimg.com/raw/0d72df984a153f05a31c246e5dd6c8d9.png)
 
 
 
@@ -230,7 +230,7 @@ if (uri != null) {
 ### 控制台使用
 
 使用 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns) 设置参数，在【高级设置】>【附加参数】中填写如下：
-![](https://main.qcloudimg.com/raw/ddf372b38166cfc38857df91c01813cf.png)
+![](https://main.qcloudimg.com/raw/a77ffabd8cb2d4907bd7b597a11cfc97.png)
 
 ### Rest API 使用
 

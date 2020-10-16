@@ -1,3 +1,30 @@
+## 2020年09月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生命周期功能迭代和存储桶概览页上线</td>
+<td>1. 生命周期功能支持将历史版本文件沉降为其他存储类型；<br>2. COS 控制台支持对单个存储桶进行全局概览，包括查看用量、存储桶基本信息、功能和告警配置情况等。</td>
+<td> 2020-09-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/14605">设置生命周期</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/436/38493">存储桶概览</a></td>
+</tr>
+<tr>
+<td>上线深度归档存储</td>
+<td>深度归档存储（Deep Archive）是对象存储 COS 提供的可让海量数据长期归档的存储服务。深度归档存储提供了磁带存储级别的存储单价，为用户数据长期存储提供了低成本方案。</td>
+<td> 2020-09-16</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">深度归档存储简介</a></td>
+</tr>
+</tbody></table>
+
 ## 2020年08月
 
 <table>

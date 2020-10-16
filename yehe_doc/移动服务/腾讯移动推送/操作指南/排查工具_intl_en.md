@@ -5,9 +5,9 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 ## Use Cases
 
 1. A developer successfully pushes a message to the testing device via the console, but this message is not displayed in the notification bar of the device. Using token to query the device in the troubleshooting tool detects that the notification bar is disabled. Enable it and send a message to the device again. The message is now displayed in the notification bar.
-![](https://main.qcloudimg.com/raw/01b34e133a3da71f7b80588df59059a8.png)
+
 2. An operator fails to push a message to a specified account. Using the account to query token in the troubleshooting tool detects that the account hasn’t been associated with a token yet. Please submit a ticket to check whether the API for [Android](https://intl.cloud.tencent.com/document/product/1024/30715) or [iOS](https://intl.cloud.tencent.com/document/product/1024/30727) is called to bind an account.
-![](https://main.qcloudimg.com/raw/dc8a6727794e03025656a7ea1633544d.png)
+![](https://main.qcloudimg.com/raw/867d6c62be726c6fb8af6ca4922ae16f.png)
 
 ## Directions
 
@@ -16,7 +16,7 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
 2. Select **Toolbox** -> **Troubleshooting Tools** on the left sidebar.
 3. Select the product and device from the drop-down list to search, and check **Query by account** for **Query Method**.
-![](https://main.qcloudimg.com/raw/9c5fc96d4004b24f93833f9536367ff3.png)
+![](https://main.qcloudimg.com/raw/ab3ee41ac3fcab0fe15b83b455a55d24.png)
 4. Enter the user account and click **Query**.
 5. Select the token associated with the account to view device details.
 > ?
