@@ -32,7 +32,7 @@ Android:
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
 - Opt-in devices: the number of devices on which the notification bar is enabled.
 - Uninstalled/unavailable devices: the total number of devices offline over 90 consecutive days and the devices that vendor/TPNS SDK returned unavailable.
-- New Devices: the number of unique devices that got newly registered token on the day
+- New Devices: the number of unique devices that got newly registered Token on the day
 
 iOS:
 ![](https://main.qcloudimg.com/raw/250a12d9381b0f502c7fbee3999661fe.png)
@@ -44,5 +44,5 @@ iOS:
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
 - Opt-in devices: the number of devices on which the notification bar is enabled.
 - Uninstalled/unavailable devices: the total number of devices offline over 90 consecutive days and the devices that vendor/TPNS SDK returned unavailable.
-- New Devices: the number of unique devices that got newly registered token on the day
+- New Devices: the number of unique devices that got newly registered Token on the day
 
