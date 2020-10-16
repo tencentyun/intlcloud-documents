@@ -32,8 +32,6 @@ You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/
 ### Scenario 2. Mobile playback
 1. Download and install the Tencent Video Cloud demo.
 
-   ![](https://main.qcloudimg.com/raw/ea243633aaf75f83fe6cc5fd770dece7.png)
-
 2. Open **MLVB** > **LVB Pull**.
 
 3. Enter the playback address in the input box or scan the QR code of the playback address.
