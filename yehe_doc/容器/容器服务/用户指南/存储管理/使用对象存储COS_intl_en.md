@@ -3,9 +3,7 @@ Tencent Kubernetes Engine (TKE) allows you to use Cloud Object Storage (COS) by 
 
 ## Preparations
 ### Installing the COS add-on
->?
->- Before using the add-on feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
->- If your cluster has been installed with the COS-CSI add-on, skip this step.
+>? If your cluster has been installed with the COS-CSI add-on, skip this step.
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Click **Cluster** in the left sidebar to go to the **Cluster Management** page.
