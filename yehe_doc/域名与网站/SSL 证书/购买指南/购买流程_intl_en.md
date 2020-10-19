@@ -1,5 +1,7 @@
 Before purchasing a certificate, it is important to understand the differences between certificate types and domain name types and choose the appropriate certificate based on your actual needs. The following introduces the procedure for purchasing a certificate.
 
+>? The SSL certificate purchase page is not available to all users currently. If you want to purchase a SSL certificate, please [contact sales](https://intl.cloud.tencent.com/contact-sales) and we will come back to you soon.
+
 ### Step 1: go to the SSL certificate purchase page
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl). On the **Certificate Management** page, click **Purchase Certificate** to go to the SSL certificate purchase page.
 2. Read the information on the SSL certificate purchase page.
