@@ -22,7 +22,7 @@ Group chat supports the following four group types based on group joining and or
 - **Audio-video chat room (AVChatRoom)**: after an audio-video chat room is created, users can join and exit the chat room freely. An audio-video chat room does not limit the number of members and does not support message history storage. Audio-video chat rooms can be used with Live Video Broadcasting (LVB) to support on-screen comment scenarios.
 
 Groups are highly customizable, allowing you to use custom group types, fields, group IDs, and event callbacks. You can fully customize your group based on the needs of your app. For more information, please see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
-> Audio-video chat rooms (AVChatRoom) support unlimited group members. If a spike in group members is expected within a short time (such as large online events where members in a single group may exceed 50,000), contact Tencent Cloud customer service or sales representatives in advance and provide the SDKAppID and scheduled event time to apply for service resources.
+>!Audio-video chat rooms (AVChatRoom) support unlimited group members. If a spike in group members is expected within a short time (such as large online events where members in a single group may exceed 50,000), contact Tencent Cloud customer service or sales representatives in advance and provide the SDKAppID and scheduled event time to apply for service resources.
 
 
 
