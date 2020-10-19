@@ -4,7 +4,7 @@
 
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【实例概览】页，可选择“全地域”视图或者按照地域查看，同时也支持查看“实时”和“历史”数据。
-![](https://main.qcloudimg.com/raw/19bc980d1db6b9bc805638ed24ac9fd9.png)
+![](https://main.qcloudimg.com/raw/bdc48d6beafc1c61323a1db9001e10a0.png)
 
 ## 推荐功能
 顶部导航栏提供了 DBbrain 官方推荐的热门功能入口，单击【立即体验】，可快速跳转至对应功能详情页。
