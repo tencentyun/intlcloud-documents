@@ -20,7 +20,7 @@ You can create logsets and log topics in different regions when using CLS. Regio
 | Mumbai     | ap-mumbai        | ap-mumbai.cls.tencentyun.com        | ap-mumbai.cls.tencentcs.com        |
 |  Frankfurt     | eu-frankfurt        | eu-frankfurt.cls.tencentyun.com      | eu-frankfurt.cls.tencentcs.com       |
 | Tokyo | ap-tokyo | ap-tokyo.cls.tencentyun.com | ap-tokyo.cls.tencentcs.com |
-
+| Seoul     | ap-seoul         | ap-seoul.cls.tencentyun.com         | ap-seoul.cls.tencentcs.com         |
 
 
 ## Notes

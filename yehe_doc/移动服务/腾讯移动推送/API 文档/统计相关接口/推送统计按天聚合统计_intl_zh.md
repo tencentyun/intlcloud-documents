@@ -2,24 +2,11 @@
 **请求方式**：POST。
 **调用频率限制**：200次/小时。
 
-接口请求地址与服务接入点一一对应，请选择与您的应用服务接入点对应的请求地址。
+```plaintext
+服务地址/v3/statistics/get_push_channel_stat_overview
+```
+接口服务地址与服务接入点一一对应，请选择与您的应用服务接入点对应的 [服务地址](https://intl.cloud.tencent.com/document/product/1024/38517)。
 
-广州服务接入点：
-```shell
-https://api.tpns.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-中国香港服务接入点：
-```shell
-https://api.tpns.hk.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-新加坡服务接入点：
-```shell
-https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-上海服务接入点：
-```shell
-https://api.tpns.sh.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
 **接口功能**： 查询某个时间段内每天分推送通道的推送转化汇总数据。
 
 ## 参数说明
