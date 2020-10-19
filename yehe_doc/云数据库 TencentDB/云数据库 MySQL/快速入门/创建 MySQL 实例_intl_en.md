@@ -21,7 +21,7 @@ You have registered a Tencent Cloud account and completed identity verification.
  - **Architecture**: provide Basic Edition, High-Availability Edition, and Finance Edition. For more information, please see [Database Architecture](https://intl.cloud.tencent.com/document/product/236/17136).
  - **Specify Project**: select a project to which the TencentDB instance belongs. The default project is used by default.
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each AZ.
-2. You will be returned to the instance list after purchase. The instance is in the "Delivering" status. You can initialize the instance after around 5-10 minutes and when the status is changed to "Uninitialized".
+2. You will be returned to the instance list after purchase. The instance is in the "Delivering" status. You can initialize the instance after around 3-5 minutes and when the status is changed to "Uninitialized".
 
 
 ## Next Steps
