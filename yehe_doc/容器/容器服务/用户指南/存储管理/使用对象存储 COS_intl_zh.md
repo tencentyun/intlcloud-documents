@@ -28,7 +28,7 @@
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航中【存储桶列表】，进入“存储桶列表”页面。
 2. 单击【创建存储桶】，在弹出的“创建存储桶”窗口，参考以下信息进行创建。如下图所示：
-![](https://main.qcloudimg.com/raw/6837245b169037467e1934ff49269dd8.png)
+![](https://main.qcloudimg.com/raw/eb8c2ca6089302bd1f3b78bcd9daf6f8.png)
    - **名称**：存储桶名称由 [自定义名称]-[开发商 APPID] 构成。请输入自定义名称，设置后不可修改。命名说明请参见存储桶的 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312)。
    - **所属地域**：请选择本文中目标集群所在地域，设置后不可修改。详情请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
    - **多AZ特性**：开启多 AZ 特性后，可提供同地域多个数据中心的容灾。详情请参见 [多 AZ 特性概述](https://intl.cloud.tencent.com/document/product/436/35208)。
@@ -46,7 +46,7 @@
 
 1. 在“存储桶列表”页面，选择已创建的存储桶名称，进入该存储桶名称的详情页。
 2. 在存储桶详情页面，选择需要挂载的子文件夹，进入该文件夹详情页。在页面右上角获取子目录路径 `/costest`。如下图所示：
-![](https://main.qcloudimg.com/raw/40426184568dfe55103d98273ecf5e52.png)
+![](https://main.qcloudimg.com/raw/abcc4a290bee8163889b2593836d9683.png)
 
 
 
@@ -61,9 +61,9 @@
 1. 单击左侧导航栏中的【集群】，进入集群管理界面。
 2. 选择目标集群 ID，进入集群详情页面。
 3. 在集群详情页面，选择左侧菜单栏中的【配置管理】>【Secret】，进入 “Secret” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/db1844b634f27d727362f9116f5dc16e.png)
+![](https://main.qcloudimg.com/raw/92d8c864b36bf486b7e034973396da65.png)
 4. 单击【新建】进入“新建Secret” 页面，根据以下信息进行设置。如下图所示：
-![](https://main.qcloudimg.com/raw/ae126ccc936ac209fcb33234fd607a28.png)
+![](https://main.qcloudimg.com/raw/1066fb90d03545ed7ee358a90e0d3ef7.png)
 	- **名称**：自定义，本文以 `cos-secret` 为例。
 	- **Secret类型**：选择【Opaque】，该类型适用于保存密钥证书和配置文件，Value 将以 Base64 格式编码。
 	- **生效范围**：选择【指定命名空间】，其中命名空间 `kube-system` 必选。
@@ -74,10 +74,10 @@
 <span id="StepTwo"></span>
 #### 创建支持 COS-CSI 动态配置的 PV 
 >!本步骤需使用存储桶，若当前地域无可用存储桶，则请参考 [创建存储桶](#CreatBucket) 进行创建。
->
+
 1. 在目标集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolume】，进入 “PersistentVolume” 页面。
 2. 单击【新建】进入“新建PersistentVolume” 页面，参考以下信息创建 PV。如下图所示：
-![](https://main.qcloudimg.com/raw/8dd2a6ad66bce8601a57b032a6ca8862.png)
+![](https://main.qcloudimg.com/raw/e2dc010057dbf2351f993fb7a79c719b.png)
 主要参数信息如下：
 	- **来源设置**：选择【静态创建】。
 	- **名称**：自定义，本文以 `cos-pv` 为例。
@@ -97,7 +97,7 @@
 
 1. 在目标集群详情页，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 页面。
 2. 单击【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息创建 PVC。如下图所示：
-![](https://main.qcloudimg.com/raw/8b7e7c5ece9db3104ceddded4a72b5d8.png)
+![](https://main.qcloudimg.com/raw/5863b8983019a9a40531b750062010c6.png)
 	- **名称**：自定义，本文以 `cos-pvc` 为例。
 	- **命名空间**：选择为 `kube-system`。
 	- **Provisioner**：选择【对象存储COS】。
@@ -110,7 +110,7 @@
 
 1. 在目标集群详情页，选择左侧菜单栏中的【工作负载】>【Deployment】，进入 “Deployment” 页面。
 2. 单击【新建】进入“新建Workload” 页面，参考[ 创建 Deployment ](https://intl.cloud.tencent.com/document/product/457/30662)进行创建，并设置数据卷挂载。如下图所示：
-![](https://main.qcloudimg.com/raw/5186f8d947d9593fb726aa95d7e5bd4b.png)
+![](https://main.qcloudimg.com/raw/c295374ca83c63c1dc5346e2346ba72a.png)
 	- **数据卷（选填）**：
       - **挂载方式**：选择【使用已有PVC】。
       - **数据卷名称**：自定义，本文以 `cos-vol` 为例。
