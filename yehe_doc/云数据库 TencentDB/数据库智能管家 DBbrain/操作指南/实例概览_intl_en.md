@@ -3,7 +3,7 @@ The instance overview page displays the summary of your instances. You can view 
 >?Currently, instance overview is supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Instance Overview** on the left sidebar. You can display the view of all regions or a specific region. You can also view **real-time** and **historical** data.
-![](https://main.qcloudimg.com/raw/19bc980d1db6b9bc805638ed24ac9fd9.png)
+![](https://main.qcloudimg.com/raw/bdc48d6beafc1c61323a1db9001e10a0.png)
 
 ## Recommended Features
 The navigation bar at the top highlights popular features recommended by DBbrain. You can click **Try Now** to quickly access the details of the corresponding feature.
