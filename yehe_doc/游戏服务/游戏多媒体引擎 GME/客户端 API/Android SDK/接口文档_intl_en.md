@@ -972,7 +972,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().EnableLoopBack(true);
 
 ## Speech-to-Text Conversion Flowchart
 
-<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
 
 
 

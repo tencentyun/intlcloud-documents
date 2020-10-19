@@ -747,7 +747,8 @@ ITMGContext.GetInstance().GetAudioCtrl().GetSpeakerVolume();
 
 
 ### Enabling in-ear monitoring
-This API is used to enable in-ear monitoring.
+This API (EnableLoopBack) is used to enable in-ear monitoring. To hear your own voice as well, call both `EnableLoopBack` and `EnableSpeaker`.
+
 #### Function prototype  
 ```
 ITMGContext GetAudioCtrl EnableLoopBack(bool enable)
@@ -789,7 +790,7 @@ void QAVAudioDeviceStateCallback(int deviceType, string deviceId, bool openOrClo
 ```
 
 ## Speech-to-Text Conversion Flowchart
-<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
 
 ## Voice Messaging and Speech-to-Text
 Before the initialization, the SDK is in the uninitialized status, and you need to initialize it through the `Init` API before you can use the voice chat and voice messaging and speech-to-text features.
