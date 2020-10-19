@@ -7,7 +7,7 @@ DBbrain offers compliance audit, access exception detection, sensitive data disc
 ### Measurable optimization
 DBbrain provides highly accurate data collection, exception analysis, diagnosis and optimization. Its suggestions are based on theoretical analysis of exceptions, and comparisons with the simulated optimization results. You can gauge the optimization effect more precisely.
 
-### Versatility (Coming Soon)
+### Versatility
 DBbrain supports relational, NoSQL, NewSQL and many other types of databases, making it suitable for both in and off-cloud databases. It offers diagnosis and analysis not only for database instances in Tencent Cloud, but also those deployed in other clouds or on-premise databases, which facilitates hybrid cloud database management.
 
 ### One-tap mobile management

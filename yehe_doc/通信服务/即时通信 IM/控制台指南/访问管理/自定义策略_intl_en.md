@@ -33,7 +33,7 @@ As mentioned previously, the resource granularity for IM permission management i
 - Policy syntax description for a single application
 ```
 "resource": [
-  "qcs::trtc::uin/12345678:sdkappid/1400000001"
+  "qcs::im::uin/12345678:sdkappid/1400000001"
 ]
 ```
 - Policy syntax description for multiple applications
@@ -131,14 +131,14 @@ In the following example, we will create a custom policy that allows all operati
  ]
 }
 ```
->? The policy content must comply with the CAM policy syntax logic described in [Element Reference](https://cloud.tencent.com/document/product/598/10596). For more information on the syntax for resource and action elements, see [Resource syntax descriptions](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) and [Action syntax descriptions](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0).
+>? The policy content must comply with the CAM policy syntax logic described in [Element Reference](https://intl.cloud.tencent.com/document/product/598/33415). For more information on the syntax for resource and action elements, see [Resource syntax descriptions](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) and [Action syntax descriptions](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0).
 6. Click **Done**.
 The method for granting the policy to other sub-accounts is the same as [Granting IM Read and Write Permissions to an Existing Sub-account](https://intl.cloud.tencent.com/document/product/1047/38087).
 
 ### Using server APIs provided by CAM
 
 For most developers, performing permission management operations in the console can meet their business needs. However, if you need to automate and systematize your permission management capabilities, you can use server APIs.
-Policy-related server APIs are included in CAM. For more information, see [CAM documentation](https://cloud.tencent.com/document/product/598). Among these APIs, the major ones include:
+Policy-related server APIs are included in CAM. For more information, see [CAM documentation](https://intl.cloud.tencent.com/document/product/598). Among these APIs, the major ones include:
 
 - [CreatePolicy](https://intl.cloud.tencent.com/document/product/598/32248)
 - [DeletePolicy](https://intl.cloud.tencent.com/document/product/598/32247)

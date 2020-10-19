@@ -33,7 +33,7 @@
 - 单个应用的策略语法描述
 ```
 "resource": [
-  "qcs::trtc::uin/12345678:sdkappid/1400000001"
+  "qcs::im::uin/12345678:sdkappid/1400000001"
 ]
 ```
 - 多个应用的策略语法描述
@@ -131,7 +131,7 @@
  ]
 }
 ```
->?策略内容需遵循 [CAM 策略语法逻辑](https://cloud.tencent.com/document/product/598/10596)，其中资源和操作两个元素的语法请参见上文 [资源语法描述](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 和 [操作语法描述](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 所述。
+>?策略内容需遵循 [CAM 策略语法逻辑](https://intl.cloud.tencent.com/document/product/598/33415)，其中资源和操作两个元素的语法请参见上文 [资源语法描述](#.E8.B5.84.E6.BA.90.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 和 [操作语法描述](#.E6.93.8D.E4.BD.9C.E8.AF.AD.E6.B3.95.E6.8F.8F.E8.BF.B0) 所述。
 6. 单击【创建策略】完成自定义策略的创建。
 后续将该策略授予其他子账号的方法同 [将 IM 全读写访问权限授予已存在的子账号](https://intl.cloud.tencent.com/document/product/1047/38087)。
 

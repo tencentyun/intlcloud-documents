@@ -12,7 +12,7 @@ The app admin can simulate system messages by sending messages from the backend.
 Instant Messaging (IM) maintains a message SEQ for each group, which starts from an initial value of 1. Every time an ordinary message is sent in the group chat, the IM backend uses the current SEQ value as the SEQ of the message and then increases the SEQ by 1.
 Group ID and SEQ together constitute the unique identifier of a message.
 
-> IM generates incremental SEQs only for messages that are subject to roaming storage.
+>! IM generates incremental SEQs only for messages that are subject to roaming storage.
 
 
 
@@ -25,8 +25,8 @@ Group ID and SEQ together constitute the unique identifier of a message.
 | Imoticon | Imoticon messages are customized by developers. |
 | Audio | Audio data must include the duration in seconds. |
 | Location | The message content contains the caption, longitude, and latitude of the location. |
-| File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 28 MB. |
-| Short video | The message includes the URL, duration, size, and format of the short video. The message size cannot exceed 28 MB. |
+| File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
+| Short video | The message includes the URL, duration, size, and format of the short video. The message size cannot exceed 100 MB. |
 | Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
@@ -49,7 +49,7 @@ Group ID and SEQ together constitute the unique identifier of a message.
 | Group message frequency control | Control the sending frequency of ordinary group messages. The default value is 40 messages per second. Group system messages sent by the app admin through RESTful APIs are not subject to frequency control. For more information, see the message priority and frequency control described below. | Prevent spam messages. |
 
 
-> If the sender nickname and profile photo need to be included, import the information in these two fields to user profiles in IM.
+>! If the sender nickname and profile photo need to be included, import the information in these two fields to user profiles in IM.
 > If custom fields need to be included, configure custom fields in the console and submit a ticket to add the corresponding fields to messages.
 
 
@@ -96,7 +96,7 @@ Each [group type](https://intl.cloud.tencent.com/document/product/1047/33529) un
 
 
 ## Processing of Offline Group Messages
-![](https://main.qcloudimg.com/raw/8a090ed4cf7134e2a6b194c4b905c995.svg)
+![](https://main.qcloudimg.com/raw/3cffbd86ff1fda0a28221c7700d1718f.png)
 
 #### Offline group messages are processed as follows:
 1. User A calls `sendMessage` to send messages to group C when user B is offline.

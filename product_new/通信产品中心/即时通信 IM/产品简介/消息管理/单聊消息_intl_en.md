@@ -18,8 +18,8 @@ Instant Messaging (IM) provides comprehensive one-to-one messaging capabilities.
 | Location | The message content includes the caption, longitude, and latitude of the location. |
 | Image | The message content includes the URL, dimensions, and size of the image. The maximum supported image file size is 28 MB. |
 | Audio | The message content includes the URL, size, and duration of the audio. The maximum supported audio file size is 28 MB. |
-| File | The message content includes the URL, size, and format of the file. All file formats are allowed, and the maximum supported file size is 28 MB. |
-| Short video | The message content includes the URL, duration, size, and format of the short video. The maximum supported short-video file size is 28 MB. |
+| File | The message content includes the URL, size, and format of the file. All file formats are allowed, and the maximum supported file size is 100 MB. |
+| Short video | The message content includes the URL, duration, size, and format of the short video. The maximum supported short-video file size is 100 MB. |
 | Custom | Message types customized by developers, such as red packet and rock-paper-scissor. |
 | System notification | This type of messages are divided into built-in system notification messages and system notification messages customized by developers. |
 
