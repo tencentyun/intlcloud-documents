@@ -40,7 +40,7 @@ The following platforms can communicate with each other and provide services acr
 | Triple-device login | Single-device login across Android and iOS with one Windows device and one web device online simultaneously is allowed. |
 | Multi-device online | Multiple Windows, web, Android, and iOS devices can be online simultaneously. |
 
->You can configure multi-device login by logging in to [IM Console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target application to open the **Feature Configuration** page.
+>?You can configure multi-device login by logging in to [IM Console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target application to open the **Feature Configuration** page.
 
 ### Message Types
 
@@ -51,8 +51,8 @@ The following platforms can communicate with each other and provide services acr
 | Emoji | Emoji messages are customized by developers. |
 | Audio | The duration (in seconds) must be provided for audio data. |
 | Location | The message content includes the caption, longitude, and latitude of the location. |
-| File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 28 MB. |
-| Short video | The message contains the URL, duration, size, and format of the video file. The maximum supported file size is 28 MB. |
+| File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
+| Short video | The message contains the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
 | Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
