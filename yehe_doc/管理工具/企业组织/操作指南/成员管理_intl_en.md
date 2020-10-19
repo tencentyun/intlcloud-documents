@@ -10,7 +10,7 @@ An organization creator can view and edit member information, delete and invite 
 
 ## Deleting an Organization Member
 
->
+>!
 >- A deleted organization member cannot be viewed or edited in the member list and cannot be displayed or moved in the organization structure.
 >- The account of the organization creator cannot be deleted.
 
@@ -27,7 +27,7 @@ An organization creator can invite new members to join the organization.
 1. Log in to the [TCO Console](https://console.cloud.tencent.com/organization) and select **Member Management** > **Member List** on the left sidebar.
 2. Click **Invite Member** in the top-left corner. An **Invite Members** window will pop up. Enter the member account ID, name, and notes, then click **Invite** to send the invitation. The member account ID and name are required, while notes are optional.
 
->You can also invite members by navigating to **Member Management** > **Invitations Sent** on the left sidebar and clicking **Invite Member** in the top-left corner.
+>? You can also invite members by navigating to **Member Management** > **Invitations Sent** on the left sidebar and clicking **Invite Member** in the top-left corner.
 
 ![](https://main.qcloudimg.com/raw/25806472fa0da53ef1a44dfa49597876.png)
 
