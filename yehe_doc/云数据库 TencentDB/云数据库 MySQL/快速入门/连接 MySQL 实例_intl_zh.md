@@ -87,5 +87,5 @@ mysql -h hostname -P port -u username -p
 若 telnet 验证云数据库网络访问正常后，如在云服务器上通过命令行登录云数据库报错，请参见 [连接实例相关问题](https://intl.cloud.tencent.com/document/product/236/11278?from_cn_redirect=1#sytyzysjk)。
 
 ## 附录3：无法连接实例问题
-若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927#sytyzysjk) 进行排查，根据检查报告提示，在 [解决无法连接实例问题] (https://intl.cloud.tencent.com/document/product/236/37864)查找相应解决方案。
+若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927#sytyzysjk) 进行排查，根据检查报告提示，在 [解决无法连接实例问题](https://intl.cloud.tencent.com/document/product/236/37864) 查找相应解决方案。
 
