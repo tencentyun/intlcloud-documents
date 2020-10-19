@@ -50,12 +50,11 @@ yum install mysql
 mysql -h hostname -u username -p
 ```
       - hostname：替换为目标 MySQL 数据库实例的内网地址，在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例详情页可查看内网地址。
-    	- username：替换为默认的用户名 root。
+		- username：替换为默认的用户名 root。
     2. 在提示`Enter password：`后输入 MySQL 实例的 root 帐号对应的密码，如忘记密码可参见 [重置密码](https://intl.cloud.tencent.com/document/product/236/31901) 进行修改。
     本例中提示`MySQL [(none)]>`说明成功登录到 MySQL。
 ![](https://main.qcloudimg.com/raw/83b8a95cf4b99919b5899510691289b4.png)
    - **外网连接时：**
-
     1. 执行如下命令登录到 MySQL 数据库实例。
 ```
 mysql -h hostname -P port -u username -p
@@ -74,10 +73,8 @@ mysql -h hostname -P port -u username -p
 <span id = "waiwang"></span>
 ## 附录1：开启外网连接地址
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/ )，在实例列表中，单击实例名或“操作”列的【管理】，进入实例详情页面。
-2. 在实例详情页下的基本信息里找到【外网地址】，单击【开启】。
->?
->- 只读实例不支持开启外网地址。
->- 若有外网地址和外网端口信息，说明已开启外网地址。
+2. 在实例详情页下的“外网地址”处，单击【开启】。
+>?若有外网地址和外网端口信息，说明已开启外网地址。
 >
 ![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)
 3. 单击【确定】后，外网开通进入处理状态。
@@ -90,5 +87,5 @@ mysql -h hostname -P port -u username -p
 若 telnet 验证云数据库网络访问正常后，如在云服务器上通过命令行登录云数据库报错，请参见 [连接实例相关问题](https://intl.cloud.tencent.com/document/product/236/11278?from_cn_redirect=1#sytyzysjk)。
 
 ## 附录3：无法连接实例问题
-若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/11278?from_cn_redirect=1#sytyzysjk) 进行排查，根据检查报告提示，在 [解决无法连接实例问题] 查找相应解决方案。
+若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927#sytyzysjk) 进行排查，根据检查报告提示，在 [解决无法连接实例问题] (https://intl.cloud.tencent.com/document/product/236/37864)查找相应解决方案。
 
