@@ -55,13 +55,7 @@
 - Added new emoji packs.
 
 
-## Latest Lite Edition 5.0.106 @2020.09.21
 
-### SDK
-
-**Common changes**
-
-- Fixed known stability issues.
 
 
 ## 5.0.102 @2020.09.04 - Simplified Edition
