@@ -1,6 +1,7 @@
 实例概览页展示了用户实例全局的大盘，可查看所有接入实例的任务执行、地域分布、实时性能以及健康评估等情况。
 
->实例概览目前仅支持云数据库 MySQL（不含基础版）。
+>?实例概览目前仅支持云数据库 MySQL（不含基础版）。
+
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【实例概览】页，可选择“全地域”视图或者按照地域查看，同时也支持查看“实时”和“历史”数据。
 ![](https://main.qcloudimg.com/raw/19bc980d1db6b9bc805638ed24ac9fd9.png)
