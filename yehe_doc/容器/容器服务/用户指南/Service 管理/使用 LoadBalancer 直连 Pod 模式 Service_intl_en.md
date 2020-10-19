@@ -21,7 +21,7 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Go to the "Create a Service" page and configure the service parameters as required by referring to the step of [Creating a Service in the Console](https://intl.cloud.tencent.com/document/product/457/36833).
 Configure some key parameters as follows:
-![](https://main.qcloudimg.com/raw/1e52f535cd9eb5712ddf6c4760952e70.png)
+![](https://main.qcloudimg.com/raw/19a0223e86a1b8bd0e49546d6eaf4460.png)
 	- **Service Access Mode**: select **Provide Public Network Access** or **VPC Private Network Access**.
 	- **Network Mode**: select **Direct CLB-Pod Connection Mode**.
 	- **Workload Binding**: select **Import Workload**. In the window that appears, select the backend workload of the VPC-CNI mode.
