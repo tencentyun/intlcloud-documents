@@ -117,7 +117,7 @@ This document describes the MySQL kernel version updates. For information on how
 ## MySQL 5.6
 ### 20190930
 #### New features
-- Supports querying the "user thread memory usage" by executing the `show full processlist` statement. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).  
+- Supports querying the "user thread memory usage" by executing the `show full processlist` statement.
 
 #### Bug fixes
 - Fixed GTID holes caused by the replication filter of the replica.
