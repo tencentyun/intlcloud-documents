@@ -96,7 +96,7 @@ Each [group type](https://intl.cloud.tencent.com/document/product/1047/33529) un
 
 
 ## Processing of Offline Group Messages
-![](https://main.qcloudimg.com/raw/8a090ed4cf7134e2a6b194c4b905c995.svg)
+![](https://main.qcloudimg.com/raw/3cffbd86ff1fda0a28221c7700d1718f.png)
 
 #### Offline group messages are processed as follows:
 1. User A calls `sendMessage` to send messages to group C when user B is offline.
