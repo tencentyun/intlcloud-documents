@@ -1,5 +1,5 @@
 ## （一）IM SDK 的错误码
->Web SDK 相关的错误码请参见 [错误码对照表](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html)。 
+>?Web SDK 相关的错误码请参见 [错误码对照表](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html)。 
 
 ### 通用错误码
 
@@ -19,7 +19,7 @@
 | 7002   | TinyId 为空，内部错误。 |
 | 7003   | UserID 非法，必须不为空，要求可打印 ASCII 字符（0x20-0x7e），长度不超过32字节。 |
 | 7004   | 文件不存在，请检查文件路径是否正确。                         |
-| 7005   | 文件大小超出了限制，如果上传文件，最大限制是28MB。           |
+| 7005   | 文件大小超出了限制，如果上传文件，最大限制是100MB。           |
 | 7006   | 空文件，要求文件大小不是0字节，如果上传图片、语音、视频或文件，请检查文件是否正确生成。 |
 | 7007   | 文件打开失败，请检查文件是否存在，或者已被独占打开，引起 SDK 打开失败。 |
 
@@ -436,4 +436,4 @@
 | 6258   | SSO cookie 无效。                                      |
 
 
->如问题仍无法解决，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。
+>!如问题仍无法解决，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。
