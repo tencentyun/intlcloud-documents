@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
->For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html).
+>?For Web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html).
 
 ### General error codes
 
@@ -19,7 +19,7 @@
 | 7002 | TinyId is empty. This is an internal error. |
 | 7003 | Invalid UserID. A UserID cannot be empty and must be printable ASCII characters (0x20-0x7e) pf up to 32 bytes in length. |
 | 7004 | The file does not exist. Check whether the file path is correct. |
-| 7005 | The file size exceeds the limit. The maximum permitted size of an uploaded file is 28 MB. |
+| 7005 | The file size exceeds the limit. The maximum permitted size of an uploaded file is 100 MB. |
 | 7006 | The file is empty. The file cannot be 0 bytes. When uploading an image, audio, video, or document, ensure that the file is generated correctly. |
 | 7007 | Failed to open the file. Check whether the file exists or has been opened exclusively, which causes the SDK to fail to open it. |
 
