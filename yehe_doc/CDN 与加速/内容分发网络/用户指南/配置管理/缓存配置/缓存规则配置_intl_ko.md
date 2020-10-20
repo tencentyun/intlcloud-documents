@@ -18,7 +18,7 @@ CDN 노드에 캐시된 리소스를 직접적으로 관리할 수 없는 상황
 - 정적 가속 서비스 유형을 선택했을 경우, 일반 동적 파일(예: php, jsp, asp, aspx)의 캐시 시간 기본값은 0초(캐시하지 않음)이며, 다른 모든 파일 유형의 기본 캐시 시간은 30일입니다.
 - 다운로드 가속, 스트리밍 미디어 VOD 가속 서비스 유형을 선택했을 경우, 모든 파일의 캐시 만료 시간 기본값은 30일입니다.
 
-![](https://main.qcloudimg.com/raw/2a1b53ba28e0de9b2262048751a6aa9a.png)
+![](https://main.qcloudimg.com/raw/43e457600f1d0036c23dff9d091da34d.png)
 
 ### 신규 규칙
 
@@ -86,7 +86,7 @@ CDN 노드에 캐시된 모든 리소스에는 '만료 시간'이라는 개념�
 
 가속 도메인 `www.test.com`의 [캐시 규칙 설정]이 아래와 같을 경우,
 
-![](https://main.qcloudimg.com/raw/d20eef1466f92b72b8d63a4d58cd4c17.png)
+![](https://main.qcloudimg.com/raw/36a6bfe2001e73c0a8a24e669c1b3a52.png)
 
 실제 캐시 상황은 다음과 같습니다.
 
