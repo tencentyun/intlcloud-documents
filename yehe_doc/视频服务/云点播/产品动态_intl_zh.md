@@ -245,7 +245,7 @@
 <td>发布音视频加速播放功能</td>
 <td>音视频加速播放基于腾讯云遍布全球的 CDN 内容分发网络，针对音视频播放业务场景进行深度优化，配合腾讯云专业的播放器 SDK，为您的用户提供稳定、流畅、清晰的播放体验。</td>
  <td>2017-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33898">默认分发配置</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/35768">默认分发配置</a></td>
 </tr>
 <tr>
 <td>发布音视频存储管理功能</td>
