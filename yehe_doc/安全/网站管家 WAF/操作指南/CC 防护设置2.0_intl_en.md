@@ -5,7 +5,7 @@ CC protection protects access to specified URLs for your website. The latest CC 
 >- To use a session-based CC protection policy, you must set the session first.
 
 ## Configuration Procedure
-#### **Use Case 1: configuring smart CC protection**
+#### **Example 1: configuring smart CC protection**
 Smart CC protection is disabled by default. To enable it, first disable custom CC protection.
 
 1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/overview) and choose **Web Application Firewall** -> **Defense settings** on the left sidebar to go to the defense settings page. In the domain name list, find the target domain name and click **Defense configuration** to go to the configuration page.
