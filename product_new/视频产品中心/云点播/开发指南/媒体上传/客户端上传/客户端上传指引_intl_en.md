@@ -6,8 +6,9 @@ Video upload from client refers to uploading local videos to the VOD platform by
 
 #### 1. Activate the service
 
-Activate VOD. <!--doc For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/266/2839).-->
+Activate VOD. 
 
+<span id = "p3"></span>
 #### 2. Get TencentCloud API key
  
 Get the security credentials (i.e., `SecretId` and `SecretKey`) required to call the server API in the following steps:
@@ -24,7 +25,7 @@ The client needs to apply to the signature distribution server of the applicatio
 - [Sample of Signature in C#](https://intl.cloud.tencent.com/document/product/266/33923#c.23-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)
 - [Sample of Signature in Python](https://intl.cloud.tencent.com/document/product/266/33923#python-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)
 
->
+>?
 >- Upload from client is to directly upload video files from a client to the VOD platform, without the need to relay files through the application server. Therefore, VOD has to authenticate the client that initiates the request.
 >- The application shall not disclose `SecretKey`, which has ultimate permissions, to the client in order to avoid serious security breaches. Therefore, before initiating a request, the client needs to apply for an upload signature.
 
@@ -78,7 +79,7 @@ After a video upload is completed, VOD will initiate an [event notification - vi
 - `FileId` and URL of the uploaded video.
 - VOD supports specifying passthrough fields during video upload, which will be sent to the application backend upon event completion. The following fields are in the event notification:
 	- `SourceType`: this field is always `ServerUpload`, indicating that the upload originates from a server.
-	- `SourceCopntext`: this is a custom passthrough field specified by the application backend during signature distribution, which corresponds to the `sourceContext` parameter in the signature.
+	- `SourceContext`: this is a custom passthrough field specified by the application backend during signature distribution, which corresponds to the `sourceContext` parameter in the signature.
 - VOD supports automatic video processing upon video upload completion. If a [video processing task flow](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81) is specified during upload, the task ID will also be included in the event notification content, i.e., the `data.procedureTaskId` field.
 
 For more information, please see:
