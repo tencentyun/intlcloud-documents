@@ -29,7 +29,7 @@
 	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [普通转码高级配置说明](#C_trans_high)。
 3. 填写完成后，单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/6e73f520e345bf6b197095efaf540417.png)
+![](https://main.qcloudimg.com/raw/beb57f930119e32baf6e58069dac4d28.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">普通转码基础配置项</th><th>是否必填</th><th>说明</th></tr>
@@ -95,7 +95,7 @@
 	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [极速高清转码高级配置说明](#C_topspeed_high)。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/0a1e272c18b576ab036f7641c68cb16d.png)
+![](https://main.qcloudimg.com/raw/23acad8693206093b27c4db391c5ba13.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">极速高清转码基础配置项</th><th>是否必填</th><th>说明</th>
@@ -152,7 +152,7 @@
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击【创建转码模板】，选择转码类型为『**纯音频转码**』，填写 [配置项](#C_audio_normal)，并单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/89629a3dfeeb79961df8e1ea1d7592cf.png)
+![](https://main.qcloudimg.com/raw/c2d579fdc1de28aadbfb94ba734ffea7.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">纯音频转码基础配置项</th><th>是否必填</th><th>说明</th>
@@ -176,11 +176,11 @@
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 通过以下方式进入域名绑定窗口：
 	- **直接关联域名：**单击左上方的【绑定域名】。
-	![](https://main.qcloudimg.com/raw/b44e2a6a063b596d83171f8580d876e8.png)
+	![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
 	- **新转码模板创建成功后关联域名**： [模板创建](#create) 成功后，单击提醒框中的【去绑定域名】。
-	![](https://main.qcloudimg.com/raw/35650d6e169d3a2f84fbf28970a85ddb.png)
+	![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
 3. 在域名绑定窗口中，选择您需绑定的**转码模板**及**播放域名**，单击【确定】即可绑定成功。
-![](https://main.qcloudimg.com/raw/acb022793cc82dda3aae79bcde4dd099.png)
+![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
 >?支持通过单击【添加】为当前模板绑定多个播放域名。
 
 
@@ -189,9 +189,9 @@
 ## 解绑模板
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择已关联域名的转码模板，单击【解绑】。
-![](https://main.qcloudimg.com/raw/36dd31476c699f00ebc008b67aaf15ba.png)
+![](https://main.qcloudimg.com/raw/59ecf14bea1e5b3ffa7b1fe6da0d565b.png)
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
-![](https://main.qcloudimg.com/raw/348b1ef6a3339bab508adff6d9a42b2e.png)
+![](https://main.qcloudimg.com/raw/e335a8c597413b90dfabda9a1f7f3150.png)
 
 
 
@@ -201,7 +201,7 @@
 2. 选择您已创建成功的转码模板，并单击右侧的【编辑】，进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/701eefa06615342f0d5737f22d73075a.png)
+![](https://main.qcloudimg.com/raw/202923ad5334c6ee3e5a879042aa0d5c.png)
 
 
 
@@ -211,9 +211,9 @@
 
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择未关联播放域名的转码模板，单击【删除】。
-![](https://main.qcloudimg.com/raw/34b8d550edad70a62a5c3550463c9bf2.png)
+![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. 确认是否删除当前转码模板，单击【确定】即可成功删除。
-![](https://main.qcloudimg.com/raw/4903c253934dad01d5474ed3c70f4d05.png)
+![](https://main.qcloudimg.com/raw/af5f6c3cc83c8ed5b1f50d37a054ce1d.png)
 
 
 
