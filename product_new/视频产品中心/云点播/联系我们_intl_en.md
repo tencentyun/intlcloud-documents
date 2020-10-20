@@ -1,3 +1,11 @@
+## Hotline
+- Hong Kong, China: +852 800-964-163 (Toll Free)
+
+- United States: +1 888-652-2736 (Toll Free)
+
+- Others: +86 4009100100
+
+
 ## Ticket System
 If you encounter any OPS or technical problems when using the product, log in to Tencent Cloud's official website and submit a ticket as instructed. We will respond as soon as possible.
 Ticket links:
