@@ -1,19 +1,19 @@
 ## Overview
-CC protection protects access to specified URLs for your website. CC protection 2.0, as a completely upgraded version, supports intelligent and custom CC protection policies. Based on big data analysis of exceptional responses (response timeout or latency) from the real server and historical access requests to the website, intelligent CC protection intelligently generates protection policies in order to block high-frequency access requests in real time. Custom CC protection allows you to customize protection rules based on access to real IPs or session frequency to process access requests by means of alarms, CAPTCHA verification, and blocking.
+CC protection protects access to specified URLs for your website. The latest CC protection 2.0 supports smart and custom CC protection policies. Based on big data analysis of response exceptions (response timeout or latency) from the real server and historical access requests to the website, smart CC protection blocks high-frequency access requests in real time. Custom CC protection allows you to customize protection rules based on access frequency to real IPs or sessions to give alarms, require human-machine recognition, and block accesses.
 >!
->- Intelligent and custom CC protection policies cannot be enabled at the same time.
+>- Smart CC and custom CC protection policies cannot be both enabled.
 >- To use a session-based CC protection policy, you must set the session first.
 
 ## Configuration Procedure
-#### **Example 1: configuring intelligent CC protection**
-Intelligent CC protection is disabled by default. Before you enable it, make sure that the custom CC protection policy is disabled.
+#### **Use Case 1: configuring smart CC protection**
+Smart CC protection is disabled by default. To enable it, first disable custom CC protection.
 
 1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/overview) and choose **Web Application Firewall** -> **Defense settings** on the left sidebar to go to the defense settings page. In the domain name list, find the target domain name and click **Defense configuration** to go to the configuration page.
 ![](https://main.qcloudimg.com/raw/707a3e129709d512417e875b2ecb4809.png)
-2. Click **CC Protection Settings 2.0** to configure intelligent CC protection.
+2. Click **CC protection settings 2.0** to configure smart CC protection.
 ![](https://main.qcloudimg.com/raw/12b9dcea8ae59f2954ceafd9e7849b43.png)
 **Configuration item description:**
-**Status:** when intelligent CC protection is enabled, it will be automatically triggered if your website is under high-traffic CC attack (i.e., when the website QPS is greater than 1,000), with no manual intervention required. If there is no specific protection route, we recommend that you enable intelligent CC protection. However, this may result in some false positives. You can view information for blocked IP addresses and handle them promptly in [IP Management - IP Blocking Status](https://console.cloud.tencent.com/guanjia/ip/record) in the WAF Console.
+**Status**: when smart CC protection is enabled, it will be automatically triggered if your website is under high-traffic CC attacks (i.e., when the website QPS is greater than 1,000), without requiring manual intervention. If no protection route is specified, we recommend that you enable smart CC protection. However, this may result in some false alarm. You can view information for blocked IP addresses and handle them promptly in **IP Management** -> **IP Blocking On/Off** in the WAF console.
 >? If you know the specific protection route, we recommend that you use custom CC rules for protection.
 
 #### **Example 2: CC protection settings based on access to real IPs**
