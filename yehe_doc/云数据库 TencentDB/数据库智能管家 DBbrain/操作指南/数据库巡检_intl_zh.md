@@ -11,10 +11,14 @@
  - “健康等级”列展示通过定时健康巡检所得到的健康等级，等级包括健康、亚健康、危险、高危。
  - 单击“操作”列的【扣分详情】，可查看健康等级的扣分原因，包括诊断项名称、类别、最高严重程度、出现次数及扣分明细，诊断项的详细说明，详见 [异常告警](https://intl.cloud.tencent.com/document/product/1035/37177)。 
  - 单击“操作”列的【查看报告】，可以查看或下载该实例的健康报告。
+![](https://main.qcloudimg.com/raw/5120fc2c35d7d3a09ef315ffa8c74235.png)
 
 	
 ## 个性化设置
 DBbrain 为用户提供了个性化设置功能，单击【个性化设置】，可以跳转至实例管理页设置需要展示的实例，详见 [实例管理](https://intl.cloud.tencent.com/document/product/1035/36033)。
+![](https://main.qcloudimg.com/raw/c103fdf68658075daef85babf8c2c5e0.png)
 
 ## 一键开关全实例巡检
 DBbrain 为用户提供一键开启和关闭全实例巡检功能，默认关闭，单击【未启用全实例巡检】开关，可以自动开启所有实例的数据库巡检。
+![](https://main.qcloudimg.com/raw/7de9b61ab9fa704e63045fd4228ce83d.png)
+
