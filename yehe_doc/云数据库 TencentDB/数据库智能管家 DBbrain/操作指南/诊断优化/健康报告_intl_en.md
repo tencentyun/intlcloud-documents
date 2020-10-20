@@ -1,11 +1,11 @@
 The health report feature can routinely perform health checks on database instances and output the corresponding health reports for the specified time period, helping you gain in-depth insights into the health, failures, and risks of the database instance and providing you with professional optimization suggestions.
 
->Currently, health report is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, health report is supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 ## Creating a Health Report
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis), select **Diagnosis and Optimization** on the left sidebar, and select **Health Report** at the top. You can view the health score trends and the problem overview for the specified time period.
 - Click **Create Health Report** to create a task. After the task is completed, you can view or download the health report for the specified time period.
->The time period of the health report is the same as that selected on the left.
+>?The time period of the health report is the same as that selected on the left.
 - Click **Regular Generation Settings** to configure the time period for automatically generating health reports.
 ![](https://main.qcloudimg.com/raw/60420696f50da3e8d4b2bd7de0a69065.png)
 
@@ -35,8 +35,8 @@ A report contains the following sections: overview, basic information, health, i
 #### Reported health level definitions
 | No. | Type | Description |
 | ---- | ------ | --------------------- |
-| 1    | Healthy   | Score ≥ 90         |
-| 2    | Suboptimal |80 ≤ score < 90 |
+| 1    | Healthy   | Score ≥ 95         |
+| 2    | Suboptimal |80 ≤ score < 95 |
 | 3    | Risky   | 60 ≤ score < 80 |
 | 4    |  Critical  | Score < 60         |
 
