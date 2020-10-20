@@ -20,7 +20,7 @@
 ### 创建文件存储
 1. 登录[ 文件存储控制台](https://console.cloud.tencent.com/cfs/fs?rid=1)，进入“文件系统”页面。
 2. 单击【新建】，在弹出的“创建文件系统”窗口中，参考以下信息进行设置。如下图所示：
-![](https://main.qcloudimg.com/raw/27e35d96a2978626231f2f81743451e7.png)
+![](https://main.qcloudimg.com/raw/379085d126949f1d6bceb69c165a6f5c.png)
 	- **名称**：自定义，本文以 `cfs-test` 为例。
 	- **地域**：选择所需要创建文件系统的地域，需确保与集群在同一地域。
 	- **可用区**：选择所需要创建文件系统的可用区。
@@ -42,7 +42,7 @@
 ### 获取文件系统子目录
 1. 在“文件系统”页面，单击需获取子目标路径的文件系统 ID，进入该文件系统详情页。
 2. 选择【挂载点信息】页签，从 “Linux下挂载” 获取该文件系统子目录路径 `/subfolder`。如下图所示：
-![](https://main.qcloudimg.com/raw/78949f471b9b57b2ee10fc3652bad017.png)
+![](https://main.qcloudimg.com/raw/95d0f1765e7d78b218cd0715a2205cf1.png)
 	-  `localfolder`：指用户本地自己创建的目录。
 	-  `subfolder`：指用户在文件存储的文件系统里创建的子目录，则该文件系统子目录路径即为 `/subfolder`。
 
@@ -57,9 +57,9 @@
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
 2. 在“集群管理”页面，选择需创建 PV 的集群 ID，进入待创建 PV 的集群管理页面。
 3. 选择左侧菜单栏中的【存储】>【PersistentVolume】，进入 “PersistentVolume” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/d3d74b0bb94b8621904c3d8403937b3d.png)
+![](https://main.qcloudimg.com/raw/ee6735e0929f99b807e88e6f39782cb0.png)
 4. 单击【新建】进入“新建PersistentVolume” 页面，参考以下信息设置 PV 参数。如下图所示：
-![](https://main.qcloudimg.com/raw/3577b53114dc37ad63a4a2911a42e406.png)
+![](https://main.qcloudimg.com/raw/362dedac094ce7efa1069f9b92d64ef9.png)
 - **来源设置**：选择【静态创建】。
 - **名称**：自定义，本文以 `cfs-pv` 为例。
 - **Provisioner**：选择【文件存储CFS】。
@@ -76,9 +76,9 @@
 <span id="createPVC2"></span>
 ### 创建 PVC
 1.  在目标集群详情页，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 页面。如下图所示：
-![](https://main.qcloudimg.com/raw/1e33ff549656ade2836b91bb5d718201.png)
+![](https://main.qcloudimg.com/raw/9fc201eafb0c1b17f912f704682f96ea.png)
 2. 选择【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息设置 PVC 关键参数。如下图所示：
-![](https://main.qcloudimg.com/raw/a4dd41cd00d155fde6c1f7c9e6f5745a.png)
+![](https://main.qcloudimg.com/raw/70fbd283c7d1dc95a707052cc59fda99.png)
 
  - **名称**：自定义，本文以 `cfs-pvc` 为例。
  - **命名空间**：选择 “default”。
@@ -100,7 +100,7 @@
 
 1. 在“集群管理”页面，选择目标集群 ID，进入待部署 Workload 的集群的 “Deployment” 页面。
 2. 单击【新建】，进入“新建Workload” 页面，参考[ 创建 Deployment ](https://intl.cloud.tencent.com/document/product/457/30662)进行创建，并参考以下信息进行数据卷挂载。如下图所示：
-![](https://main.qcloudimg.com/raw/813ba45a062ed57f8959121e484537d1.png)
+![](https://main.qcloudimg.com/raw/3256845e7cdde23efd405c10f1f4ae92.png)
 	- **数据卷（选填）**：
 		- **挂载方式**：选择“使用已有PVC”。
 		- **数据卷名称**：自定义，本文以 `cfs-vol` 为例。

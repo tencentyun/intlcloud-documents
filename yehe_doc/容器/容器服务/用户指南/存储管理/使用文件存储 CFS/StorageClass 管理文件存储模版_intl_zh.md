@@ -22,7 +22,7 @@
 
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，单击左侧导航栏中的【子网】。
 2. 在“子网”列表页面单击【+新建】，在弹出的“创建子网”窗口中设置子网名称、VPC 网段、CIDR、可用区和关联路由表等基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/6ca20ffe56545f924a1bb7e8a58b5110.png)
+![](https://main.qcloudimg.com/raw/f95414e493602e4b423e44a15ddc139e.png)
 3. （可选）单击【+新增一行】，可以同时创建多个子网。
 4. 单击【创建】即可。
 
@@ -42,9 +42,9 @@
 1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的【存储】>【StorageClass】，进入 “StorageClass” 页面。如下所示：
-![](https://main.qcloudimg.com/raw/a630fa854ae6a45da2b24dcbabf50438.png)
+![](https://main.qcloudimg.com/raw/67c2d9b13758cb8c8b7080ec7b236afc.png)
 4. 单击【新建】，进入“新建StorageClass” 页面，参考以下信息进行创建。如下所示：
-![](https://main.qcloudimg.com/raw/c7a96aa3160f93c6fe844f2fa8f05dd4.png)
+![](https://main.qcloudimg.com/raw/b457e1fed71474e3edc4f282da80487f.png)
 主要参数信息如下：
 	- **名称**：自定义，本文以 `cfs-storageclass` 为例。
 	- **Provisioner**：选择【文件存储 CFS】。
@@ -62,9 +62,9 @@
 #### 使用指定 StorageClass 创建 PVC
 1. 在“集群管理”页，选择需创建 PVC 的集群 ID。
 2. 在集群详情页，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 信息页面。如下图所示：
-![](https://main.qcloudimg.com/raw/e771b0d7e010605c3701de3f20831a96.png)
+![](https://main.qcloudimg.com/raw/32c83af0e9ca2fe663993bddc9bbe1e1.png)
 3. 选择【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息设置 PVC 关键参数。如下图所示：
-![](https://main.qcloudimg.com/raw/17d188dba93ffa0c50818144d4a20378.png)
+![](https://main.qcloudimg.com/raw/044c043388d7920b6aef791d673b07d9.png)
 主要参数信息如下：
 - **名称**：自定义，本文以 `cfs-pvc` 为例。
 - **命名空间**：选择 “default ”。
@@ -88,7 +88,7 @@
 
 1. 在“集群管理”页面，选择目标集群 ID，进入待部署 Workload 的集群的 “Deployment” 页面。
 2. 选择【新建】，进入“新建Workload” 页面，参考[ 创建 Deployment ](https://intl.cloud.tencent.com/document/product/457/30662)进行创建，并参考以下信息进行数据卷挂载。如下图所示：
-![](https://main.qcloudimg.com/raw/813ba45a062ed57f8959121e484537d1.png)
+![](https://main.qcloudimg.com/raw/0ff71649814009bd943042745858275e.png)
 	- **数据卷（选填）**：
 		- **挂载方式**：选择“使用已有PVC”。
 		- **数据卷名称**：自定义，本文以 `cfs-vol` 为例。

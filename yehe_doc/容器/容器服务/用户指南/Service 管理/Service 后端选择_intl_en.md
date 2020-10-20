@@ -1,32 +1,32 @@
 
 ## Default Backend Selection
 
-By default, a service will configure NodePorts of cluster nodes to serve as the CLB backend, as shown by the TKE access layer components in the following figure. This solution ensures high fault tolerance. When traffic is transmitted from the CLB to any NodePort, the NodePort selects a pod at random to which to forward the traffic. This solution is also the basic network access layer solution provided by Kubernetes.
+By default, a Service configures the CLB backends to cluster node NodePorts, such as the TKE access-layer component in the figure below. This solution offers a very high level of fault tolerance. After traffic from the CLB reaches a NodePort, the NodePort will randomly select a pod to which the traffic will then be forwarded. This is also the most basic network access layer solution officially proposed by Kubernetes. See the figure below:
 ![A.png](https://main.qcloudimg.com/raw/de1a453250a111505a7dccdfd3dade85.png)
 
-By default, `TKE Service Controller` will not use the following nodes as the CLB backend:
-- Master nodes (Master nodes are not allowed to participate in load balancing at the network access layer.)
-- Nodes whose state is NotReady or nodes that are set to Unschedulable (unhealthy or unschedulable)
+By default, `TKE Service Controller` will not set the following nodes as the CLB backend:
+- Master nodes (master nodes are not allowed to participate in network access layer loads)
+- Nodes in the status of NotReady or Unschedulable
 
 
 
-## Specifying the Backend for the Access Layer
-In a large-scale cluster, a CLB managed by a service will mount NodePorts of almost all cluster nodes to use for the backend. This results in the following issues:
-- The CLB backend quantity is limited.
-- The CLB will check the health status of each NodePort, and all health check requests will be sent to backend workloads.
+## Specifying the Access-Layer Backend
+For some clusters of a very large scale, the NodePorts of almost all cluster nodes are mounted on the Service-managed CLB as backends. In this scenario, there are the following issues:
+- There is a quantity limit to the number of CLB backends.
+- The CLB performs health checks on each NodePort, and all health check requests are routed to the backend workloads.
 
-These issues can be solved using the following methods:
-In large-scale clusters, you can use the `service.kubernetes.io/qcloud-loadbalancer-backends-label` annotation to specify some nodes to bind. `service.kubernetes.io/qcloud-loadbalancer-backends-label` specifies a label selector. You can label cluster nodes and use the label selector described by the annotation to select matching nodes to bind. When a node is selected or deselected due to changes, `Service Controller` will add or delete the corresponding CLB backend. For more information, see [Kubernetes Label and Label Selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/).
+These issues can be resolved by using the following method:
+For some large-scale clusters, you can use the annotation `service.kubernetes.io/qcloud-loadbalancer-backends-label` to specify some nodes for binding. The content of `service.kubernetes.io/qcloud-loadbalancer-backends-label` is a label selector. You can attach labels to cluster nodes. Then, the label selector described in the annotation is used in the Service to select matching nodes for binding. This synchronization will take place continuously. When a node changes and is selected or deselected, Service Controller will add or delete the corresponding backend on the CLB. For more information, see [Kubernetes Labels and Selector](https://kubernetes.io/zh/docs/concepts/overview/working-with-objects/labels/).
 
-### Note
-- When the label selector specified by `service.kubernetes.io/qcloud-loadbalancer-backends-label` does not select any node, the service backend will be empty, causing a service interruption. To use this feature, you must manage cluster node labels.
-- When you add nodes that meet requirements or change existing nodes, `Service Controller` will update the CLB backend.
+### Precautions
+- When the selector of `service.kubernetes.io/qcloud-loadbalancer-backends-label` fails to select any node, the service backend will be drained, leading to service interruption. When using this feature, you need to manage the labels of cluster nodes.
+- Adding nodes that meet requirements or changing existing nodes will also trigger controller updates.
 
 ### Use cases
-#### Test application in a large-scale cluster
-In a large-scale cluster, deploy a test application that contains only one or two pods. When a CLB is created using the service template, the CLB will check the health status of all backend NodePorts. The health check request quantity has a major impact on the test application. You can label a small number of cluster nodes for the backend to mitigate the health check pressure. For more information, please see [Notes on high-frequency health checks](https://intl.cloud.tencent.com/document/product/214/6097).
+#### Application testing on a large–scale cluster
+On a large-scale cluster, deploy a test application that contains only one or two pods. During service opening via a Service, the CLB will carry out health checks on all backend NodePorts, and the number of such health check requests has a huge impact on the test application. To avoid this, you can use labels to specify a small portion of nodes in the cluster as the backends to relieve the pressure of the health checks. For more information, see [Notes on High-Frequency Health Checks](https://intl.cloud.tencent.com/document/product/214/3394).
 
-### Samples
+## Sample
 ```
 apiVersion: v1
 kind: Service
@@ -44,26 +44,26 @@ spec:
     app: nginx
   type: LoadBalancer
 ```
-This example contains the following configurations:
-- It describes the service exposure of a public CLB.
-- The `service.kubernetes.io/qcloud-loadbalancer-backends-label` annotation declares the backend selector. Only cluster nodes with the `group=access-layer` label will be used for the CLB backend.
+This sample includes the following configurations:
+- It describes service opening by a public network CLB.
+- The annotation `service.kubernetes.io/qcloud-loadbalancer-backends-label` specifies the backend selector. Only cluster nodes with the `group=access-layer` Label can be the backend of this CLB.
 
 
 
 
 ## Service Local Mode
-Kubernetes provides the service feature `ExternalTrafficPolicy`. When `ExternalTrafficPolicy` is set to Local, traffic will not be forwarded between nodes using NAT, which reduces NAT operations and retains the source IP addresses of requests. A NodePort will forward traffic only to pods of the current node. Local mode has the following advantages and disadvantages:
+Kubernetes provides the Service feature `ExternalTrafficPolicy`. When `ExternalTrafficPolicy` is set to Local, it can prevent traffic forwarding between nodes via NAT, thus reducing NAT operations and retaining source IP addresses. NodePort will forward traffic only to the pods of the current node. The features of Local mode are as follows:
 * Advantages:
- - Prevents performance loss due to traffic forwarding between nodes using NAT.
-  2. Retains the source IP addresses of requests for servers.
+ 1. It prevents the performance loss caused by NAT and inter-node forwarding.
+  2. It retains the source IP addresses of requests for the server.
 * Disadvantages:
-  - NodePorts cannot provide services to nodes without workloads.
+  - NodePort cannot provide services to nodes without workloads.
 
-### Note
-The CLB requires time for synchronization. When a local service has few workloads, workload shifts or rolling updates are quick. If the backend fails to synchronize the update within the specified time, the backend service may become unavailable.
+### Precautions
+CLB synchronization takes time. When the number of service workloads of the Local type is very small, the speed of workload drift or rolling update is very fast. Therefore, if the backend is not synchronized in time, backend services may become unavailable.
 
 
-#### Example: enabling local forwarding (externalTrafficPolicy: Local) for a service
+#### Sample: a Service enables Local forwarding (externalTrafficPolicy: Local)
 ```
 apiVersion: v1
 kind: Service
@@ -82,10 +82,10 @@ spec:
 ```
 
 
-### Default backend selection in local mode
-When local mode is enabled for a service, the CLB will still mount NodePorts of almost all nodes to serve as the backend by default. The CLB will prevent traffic from being forwarded to backend nodes without workloads based on their health check results. To prevent backend nodes without workloads from being bound, you can use the `service.kubernetes.io/local-svc-only-bind-node-with-pod: "true"` annotation to bind nodes with workloads to serve as the backend in local mode. For more information, see [Kubernetes Service Local](https://kubernetes.io/docs/tutorials/services/source-ip/).
+### Default backend selection in Local mode
+By default, when a Service enables Local mode, it will still adopt the default approach of mounting the NodePorts of almost all nodes as the backends. Based on health check results, the CLB will prevent traffic from entering backend nodes without workloads. To prevent backends without workloads from being bound, you can use the annotation `service.kubernetes.io/local-svc-only-bind-node-with-pod: "true"` to specify nodes bound with workloads as the backends in Local mode. For more information, see [Kubernetes Service Local](https://kubernetes.io/zh/docs/tutorials/services/source-ip/).
 
-#### Example: enabling local forwarding and local binding for a service
+#### Sample: a Service enables Local forwarding and Local binding
 ```
 apiVersion: v1
 kind: Service
@@ -105,11 +105,9 @@ spec:
   type: LoadBalancer
 ```
 
-In local mode, request traffic sent to nodes will not be forwarded between nodes. When nodes have different numbers of workloads, nodes with the same backend weight may have uneven loads. You can use the `service.cloud.tencent.com/local-svc-weighted-balance: "true"` annotation to adjust the weights of nodes. With this annotation, the NodePort backend weight is determined by the number of workloads on the node. This prevents uneven loads due to nodes with different numbers of workloads. **Local weight adjustment must be used with local binding.**
-> If you need to use the local weight adjustment feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&step=1).
+In Local mode, request traffic will not be forwarded between nodes after entering a node. Therefore, when nodes have different quantities of workloads, the same backend weight will cause uneven loads on each node. You can use `service.cloud.tencent.com/local-svc-weighted-balance: "true"` to configure weighted balance. With this annotation, the NodePort backend weight will be determined by the number of workloads on the specific node. This prevents the issue of uneven loads caused by different quantities of workloads on different nodes. Note that **Local weighted balance and Local binding must be used at the same time**. A sample is as follows:
 
-
-#### Example: enabling local forwarding, local binding, and local weight adjustment for a service
+#### Sample: a Service enables Local forwarding, Local binding, and Local weighted balance
 ```
 apiVersion: v1
 kind: Service
