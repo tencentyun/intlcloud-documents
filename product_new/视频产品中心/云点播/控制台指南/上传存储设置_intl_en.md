@@ -24,6 +24,7 @@ The upload storage settings in VOD consist of category management and storage re
 >
 	- You can choose to enable multiple regions, but only one of them can be set as the default region.
 	- When a region is enabled, it cannot be manipulated until it is successfully configured. After the region is enabled, it will take 5–10 minutes to take effect.
+	- If you need to enable a region within Chinese mainland (such as Beijing, Tianjin, Chongqing, or Shanghai), please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 #### Storage Rules
 - If no other regions are enabled, all files will be transferred to the default region by default.
