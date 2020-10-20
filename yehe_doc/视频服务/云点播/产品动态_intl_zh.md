@@ -1,3 +1,54 @@
+## 2020年08月
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V2.2 版本</td>
+<td>图片媒资可直接用于设置视频封面</td> 
+ <td>2020-08</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E5.9F.BA.E6.9C.AC.E4.BF.A1.E6.81.AF.E7.BC.96.E8.BE.91">视频管理</a></td>
+</tr>
+</tbody></table>
+
+## 2020年06月
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V2.0 版本</td>
+<td>控制台上线图片管理功能</td> 
+ <td>2020-06</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/37900">图片管理</a></td>
+</tr>
+<tr>
+<td>发布 V1.9 版本</td>
+<td><ul style="margin:0;">
+<li >控制台上线超级播放器配置功能。
+<li >控制台上线超级播放器预览功能。</td>
+ <td>2020-06</td> 
+<td>
+<ul style="margin:0;">
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">超级播放器配置</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E8.B6.85.E7.BA.A7.E6.92.AD.E6.94.BE.E5.99.A8.E9.A2.84.E8.A7.88">超级播放器预览</a>
+</td>
+</tr>
+</tbody></table>
 
 ## 2019年10月
 
@@ -25,7 +76,7 @@
 <td>发布 V1.6 版本</td>
 <td><ul style="margin:0;">
 <li >支持子应用在控制台自助开通。
-<li >更新主分发域名禁用提醒。
+<li >更新默认分发域名禁用提醒。
 <li >修复控制台无法分类上传。
 <li >云点播控制台接入 CAM。
 <li >云点播接入智能客服。</td>
@@ -194,7 +245,7 @@
 <td>发布音视频加速播放功能</td>
 <td>音视频加速播放基于腾讯云遍布全球的 CDN 内容分发网络，针对音视频播放业务场景进行深度优化，配合腾讯云专业的播放器 SDK，为您的用户提供稳定、流畅、清晰的播放体验。</td>
  <td>2017-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33898">主分发 URL 配置</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33898">默认分发配置</a></td>
 </tr>
 <tr>
 <td>发布音视频存储管理功能</td>
