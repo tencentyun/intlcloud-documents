@@ -8,7 +8,7 @@
 您需要开通云点播，步骤如下：
 
 1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
-2. 购买云点播服务。
+2. 购买云点播服务，具体请参见 [计费概述](https://intl.cloud.tencent.com/document/product/266/2838)。
 3. 选择【云产品】>【视频服务】>[【云点播】](https://console.cloud.tencent.com/vod)，进入云点播控制台。
 
 至此，您已经完成了云点播的开通步骤。
@@ -62,3 +62,8 @@
 ## 总结
 
 学习本教程后，您已经初步了解了，如何上传一个视频到云点播，并通过视频处理后，在超级播放器中播放。
+
+如果您希望：
+- 开启 Key 防盗链后播放视频，请参考 [阶段2：开启防盗链后的视频播放](https://intl.cloud.tencent.com/document/product/266/38292)。
+- 自定义视频播放时的内容和样式，请参考 [阶段3：自定义播放内容与样式](https://intl.cloud.tencent.com/document/product/266/38293)。
+- 对视频进行加密，并播放加密后的视频，请参考 [阶段4：播放加密视频](https://intl.cloud.tencent.com/document/product/266/38294)。
