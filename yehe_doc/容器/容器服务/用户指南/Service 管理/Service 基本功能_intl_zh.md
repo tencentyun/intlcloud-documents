@@ -6,14 +6,14 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”页面单击需要创建 Service 的集群 ID，进入待创建 Service 的集群管理页面。
 4. 选择【服务与路由】>【Service】，进入 “Service” 管理页面。如下图所示：
-![](https://main.qcloudimg.com/raw/c7ac45e1efc03a0cdbd937a35ade9037.png)
+![](https://main.qcloudimg.com/raw/ad9db14ae516c9f1652a3ac5f6018120.png)
 5. 单击【新建】，进入 “新建Service” 页面。
 根据实际需求，设置 Service 参数。关键参数信息如下：
    - **服务名称**：自定义。
    - **命名空间**：根据实际需求进行选择。
    - **访问设置**：请参考 概述 并根据实际需求进行设置。
    >如需使用已有负载均衡器，请参考 使用已有 CLB。
-   >
+   
 7. 单击【创建服务】，完成创建。
 
 
@@ -25,7 +25,7 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”页面中，选择需要更新 YAML 的集群 ID，进入待更新 YAML 的集群管理页面。
 3. 选择【服务与路由】>【Service】，进入 Service 信息页面。如下图所示：
-![](https://main.qcloudimg.com/raw/c7ac45e1efc03a0cdbd937a35ade9037.png)
+![](https://main.qcloudimg.com/raw/af2835a138b38f1b5abf8671ac9c846e.png)
 5. 单击需更新 YAML 的 Service 所在行右侧的【编辑YAML】，进入更新 Service 页面。
 6. 在 “更新Service” 页面，编辑 YAML 后单击【完成】，即可更新 YAML。
 
