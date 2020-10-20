@@ -161,7 +161,7 @@ ITMGContext -(void)Uninit
 ## Voice Chat Room APIs
 You should initialize and call the SDK to enter a room before voice chat can start.
 If you have any questions when using the service, please see [FAQs About Voice Chat](https://intl.cloud.tencent.com/document/product/607/30257).
- 
+
 | API | Description |
 | ------------- |:-------------:|
 |GenAuthBuffer    	| Initializes authentication |
@@ -344,7 +344,7 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 | ITMG_ROOM_CHANGE_EVENT_ENTERROOM		|1 	| Indicates that the existing audio type is inconsistent with and changed to that of the entered room	|
 | ITMG_ROOM_CHANGE_EVENT_START			|2	| Indicates that a client is already in the room and the audio type starts changing (e.g., calling the `ChangeRoomType` API to change the audio type) |
 | ITMG_ROOM_CHANGE_EVENT_COMPLETE		|3	| Indicates that a client is already in the room and the audio type has been changed |
-| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |	
+| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |
 
 
 #### Sample code  
@@ -466,7 +466,7 @@ When Enable/Disable Mic/Speaker is tapped/clicked on the UI, the following pract
 |IsAudioPlayDeviceEnabled    		| Gets playback device status	|
 |EnableAudioRecv    					| Enables/disables audio downstreaming	|
 |IsAudioRecvEnabled    				| Gets audio downstreaming status	|
-|GetSpeakerLevel    					| Gets real-time speaker volume level |	
+|GetSpeakerLevel    					| Gets real-time speaker volume level |
 |GetRecvStreamLevel					| Gets real-time downstreaming audio levels of other members in room |
 |SetSpeakerVolume    				| Sets speaker volume level		|
 |GetSpeakerVolume    				| Gets speaker volume level		|
@@ -766,7 +766,8 @@ ITMGContext GetAudioCtrl -(int)GetSpeakerVolume
 
 
 ### Enabling in-ear monitoring
-This API is used to enable in-ear monitoring.
+This API (EnableLoopBack) is used to enable in-ear monitoring. To hear your own voice as well, call both `EnableLoopBack` and `EnableSpeaker`.
+
 #### Function prototype  
 ```
 ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
@@ -782,7 +783,7 @@ ITMGContext GetAudioCtrl -(QAVResult)EnableLoopBack:(BOOL)enable
 
 
 ## Speech-to-Text Conversion Flowchart
-<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
 
 
 ## Voice Messaging and Speech-to-Text
@@ -794,7 +795,7 @@ If you have any questions when using the service, please see [Voice Messaging an
 
 | API | Description |
 | ------------- |:-------------:|
-|Init    	| Initializes GME 	| 
+|Init    	| Initializes GME 	|
 |Poll    	| Triggers event callback	|
 |Pause   	| Pauses system	|
 |Resume 	| Resumes system	|

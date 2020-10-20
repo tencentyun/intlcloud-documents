@@ -3,6 +3,7 @@ TencentDB for MySQL can be connected to in the following two methods:
 - **Private network connection**: a CVM instance can be used to connect to the private network address of a TencentDB instance. This method relies on the high-speed private network of Tencent Cloud and features low delay.
  - The two instances must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region, or both in the classic network.
  - The private network address is provided by the system by default and can be viewed in the instance list or on the instance details page in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
+>?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 
 - **Public network connection**: if you cannot access the private network, you can connect to your TencentDB for MySQL instance at its public network address. The public network address needs to be [manually enabled](#waiwang). It can be viewed on the instance details page in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and can be disabled if no longer needed.
  - The public network address can be enabled only for instances in the Guangzhou, Shanghai, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, and Silicon Valley regions.
@@ -74,7 +75,8 @@ Below takes `show databases;` as an example:
 ## Appendix 1. Enabling Public Network Connection Address
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance details page.
 2. Find **Public Network Address** in the basic information section on the instance details page and click **Enable**.
-
+>? If the basic info section contains the public network address and port, it indicates that the public network address has been enabled.
+>
 ![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)
 3. Click **OK** to start enabling public network access.
 4. Once enabled successfully, the public network address can be found in the basic information section.

@@ -1,4 +1,4 @@
-A polling method is a load balancing algorithm that allocates traffic to [real servers](https://intl.cloud.tencent.com/document/product/214/32388). Different effects can be achieved based on different polling methods and weights of real servers.
+A load balancing method is an algorithm that allocates traffic to [real servers](https://intl.cloud.tencent.com/document/product/214/32388). Each method produces different load balancing effects.
 
 ## Weighted Round-Robin Scheduling
 The weighted round-robin scheduling algorithm is to schedule requests to different servers based on polling. It can solve problems with imbalanced performance of different servers. It uses weight to represent the processing performance of a server and schedules requests to different servers by weight in a polling manner. It schedules servers based on the number of new connections, where servers with a higher weight receive connections earlier and have a higher chance to be polled. Servers with the same weight will process the same number of connections.

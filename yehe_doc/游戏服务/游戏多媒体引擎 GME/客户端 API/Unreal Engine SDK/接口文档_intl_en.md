@@ -918,7 +918,8 @@ ITMGContextGetInstance()->GetAudioCtrl()->GetSpeakerVolume();
 
 
 ### Enabling in-ear monitoring
-This API is used to enable in-ear monitoring.
+This API (EnableLoopBack) is used to enable in-ear monitoring. To hear your own voice as well, call both `EnableLoopBack` and `EnableSpeaker`.
+
 #### Function prototype  
 ```
 ITMGAudioCtrl virtual int EnableLoopBack(bool enable)
@@ -934,7 +935,7 @@ ITMGContextGetInstance()->GetAudioCtrl()->EnableLoopBack(true);
 
 
 ## Speech-to-Text Conversion Flowchart
-<img src="https://main.qcloudimg.com/raw/4c875d05cd2b4eaefba676d2e4fc031d.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/310eaf2b780c5fc47ffeaf791a6df392.png" width="70%">
 
 
 ## Voice Messaging and Speech-to-Text

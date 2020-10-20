@@ -117,7 +117,7 @@
 ## MySQL 5.6
 ### 20190930
 #### 새로운 특성:
-- 사용자가 show full processlist를 통해 '사용자의 스레드 메모리 사용 정보'를 조회하도록 지원. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.  
+- 사용자가 show full processlist를 통해 '사용자의 스레드 메모리 사용 정보'를 조회하도록 지원. 
 
 #### Bug 수정:
 - 백업 데이터베이스 replication filter로 인한 gtid hole 문제 수정.

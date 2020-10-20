@@ -198,7 +198,7 @@
 </thead>
 <tbody><tr>
 <td>集群监控页面优化 </td>
-<td>优化集群概览、服务监控、主机监控页面，增强可读可用性；监控指标支持自定义和主机热点图功能 </td><td>2020-03</td>
+<td>优化集群概览、服务监控、节点监控页面，增强可读可用性；监控指标支持自定义和节点热点图功能 </td><td>2020-03</td>
 <td>-</td>
 </tr>
 <tr>
@@ -302,7 +302,7 @@
 </tr>
 <tr>
 <td>新增集群监控概览页</td>
-<td>集群监控概览页，提供集群状态、主机及服务状态整体视图</td><td>2019-12</td>
+<td>集群监控概览页，提供集群状态、节点及服务状态整体视图</td><td>2019-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31117" target="_blank">集群概览</a></td>
 </tr>
 <tr>
@@ -311,8 +311,8 @@
 <td>-</td>
 </tr>
 <tr>
-<td>主机监控页增加主机服务部署和负载状态视图</td>
-<td>优化主机监控页，增加主机服务部署状态、负载状态视图</td><td>2019-12</td>
+<td>节点监控页增加节点服务部署和负载状态视图</td>
+<td>优化节点监控页，增加节点服务部署状态、负载状态视图</td><td>2019-12</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -387,7 +387,7 @@
 </tr>
 <tr>
 <td>支持云监控配置告警策略</td>
-<td>主机监控和服务监控关键指标支持在云监控（弹性 MapReduce 产品类别下）配置告警策略</td><td>2019-09</td>
+<td>节点监控和服务监控关键指标支持在云监控（弹性 MapReduce 产品类别下）配置告警策略</td><td>2019-09</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -522,7 +522,7 @@
 </tr>
 <tr>
 <td>监控指标优化</td>
-<td>主机、HDFS、YARN、Hbase 监控指标</td>
+<td>节点、HDFS、YARN、Hbase 监控指标</td>
 <td>2019-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">监控指标</a></td>
 </tr>

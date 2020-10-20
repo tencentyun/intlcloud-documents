@@ -12,7 +12,7 @@ To purchase a CLB instance on the console, perform the following:
 5. CLB service will be activated once the payment completes. You can now configure and use the CLB instance.
 ![](https://main.qcloudimg.com/raw/33dfce7ca7a0bbde210346a313a42d8e.png)
 
-### Bill-by-IP accounts
+### Bill-by-EIP/CLB accounts
 Private network CLB is free of charge. Public network CLB charges instance fees and public network fees on a pay-as-you-go basis. The pay-as-you-go public network supports three billing options: bill-by-bandwidth, bill-by-traffic, and bandwidth package.
 To purchase a CLB instance on the console, perform the following:
 1. Log in to the Tencent Cloud Console and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).

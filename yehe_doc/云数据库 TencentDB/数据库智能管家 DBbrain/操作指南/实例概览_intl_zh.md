@@ -11,6 +11,7 @@
 
 ## 个性化设置
 DBbrain 为用户提供了个性化设置功能，用户可以根据自己的需求个性化设置在概览中需要展示的实例，单击【个性化设置】，可跳转至实例管理页对其进行设置，请参见 [实例管理](https://intl.cloud.tencent.com/document/product/1035/36033)。
+![](https://main.qcloudimg.com/raw/5a863f31a370d7b11f76adffb5a0c2dc.png)
 
 
 ## 异常告警

@@ -11,9 +11,9 @@ The database inspection list displays a summary of inspection information genera
  - The "Health Level" column displays the health level obtained through regular health inspections, including healthy, sub-healthy, dangerous, and high-risk.
  - You can click **Deduction Details** in the "Operation" column to view the reason for deduction of health level, including name, category, max severity, occurrences, and deduction details. For detailed description of diagnosis items, please see [Exception Alarm](https://intl.cloud.tencent.com/document/product/1035/37177). 
  - You can click **View Report** in the "Operation" column to view or download the health report of the instance.
-![](https://main.qcloudimg.com/raw/4377bb25d19033c2958f5a85d10b3ba6.png)
+![](https://main.qcloudimg.com/raw/5120fc2c35d7d3a09ef315ffa8c74235.png)
 	
 ## Custom Settings
 DBbrain provides custom settings. Click **Custom Settings** to enter the instance management page and set the instance to be displayed. For more information, please see [Instance Management](https://intl.cloud.tencent.com/document/product/1035/36033).
-![](https://main.qcloudimg.com/raw/d6d0e089d87ee06738d977fe0fcedbf5.png)
+![](https://main.qcloudimg.com/raw/c103fdf68658075daef85babf8c2c5e0.png)
 

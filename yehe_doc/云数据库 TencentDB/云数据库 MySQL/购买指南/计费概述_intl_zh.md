@@ -754,6 +754,8 @@
 
 
 ## 计费示例
+>?如下价格仅为示例，具体价格可能因地域、活动或策略等调整变化，请以官网实际价格为准。
+>
 
 ### 包年包月
 例如您在广州地域：
@@ -788,3 +790,8 @@
 #### 按量计费实例不使用的情况下，收费吗？
 按量计费实例会一直扣费，当实例不再使用时请及时销毁，以免继续扣费。
 
+## 相关文档
+- 云数据库 MySQL 支持通过控制台和 API 购买实例，请参见 [购买方式](https://intl.cloud.tencent.com/document/product/236/5160)。
+- 云数据库 MySQL 会在到期前至资源释放的期间，向用户推送预警消息，请参见 [欠费说明](https://intl.cloud.tencent.com/document/product/236/5159)。
+- 云数据库 MySQL 支持通过控制台申请退货退款，请参见 [退费说明](https://intl.cloud.tencent.com/document/product/236/14618)。
+- 云数据库 MySQL 支持升级或降级实例规格，请参见 [调整实例费用说明](https://intl.cloud.tencent.com/document/product/236/32345)。

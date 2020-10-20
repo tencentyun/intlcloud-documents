@@ -14,7 +14,7 @@ After logging in to the bound backend resource, you can connect to the internet 
 ## Other Common Operations
 ### Changing Anycast EIP configuration
 #### Adjusting bandwidth
->?Only bill-by-IP accounts can adjust the bandwidth in the EIP Console. For non-bill-by-IP accounts, please adjust the bandwidth in the corresponding [CVM instance](https://console.cloud.tencent.com/cvm/instance/index?rid=1) or [NAT gateway](https://console.cloud.tencent.com/vpc/nat?rid=1). If you are not sure of your account type, please see [Account Type](https://intl.cloud.tencent.com/document/product/214/36999).
+>?Only bill-by-EIP/CLB accounts can adjust the bandwidth in the EIP console. For bill-by-CVM accounts, please adjust the bandwidth in the corresponding [CVM instance](https://console.cloud.tencent.com/cvm/instance/index?rid=1) or [NAT gateway](https://console.cloud.tencent.com/vpc/nat?rid=1). If you are not sure of your account type, please see [Account Type](https://intl.cloud.tencent.com/document/product/214/36999).
 
 1. Log in to the [EIP Console](https://console.cloud.tencent.com/cvm/eip).
 2. In the EIP list, select the EIP you want to use, and click **Adjust Network**.

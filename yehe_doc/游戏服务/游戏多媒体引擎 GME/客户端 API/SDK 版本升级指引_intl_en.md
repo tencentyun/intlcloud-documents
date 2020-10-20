@@ -116,3 +116,10 @@ PlayRecordedFile
 SpeechToText
 ```
 
+## Upgrade from GME 2.5 to 2.7
+### New APIs
+#### PlayRecordedFile(const char* filePath, ITMG_VOICE_TYPE voiceType)
+This API is used to play voice messages with voice-changing effects.
+
+#### SetAccompanyKey(int nKey)
+This API is used to adjust the key for accompaniment in voice chat.

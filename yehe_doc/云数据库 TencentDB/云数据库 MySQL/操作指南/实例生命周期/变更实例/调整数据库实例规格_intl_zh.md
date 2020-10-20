@@ -19,12 +19,11 @@
 
 ## 操作步骤
 ### 通过控制台调整实例配置
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) ，在实例列表中，选择需要调整的实例，在“操作”列选择【更多】>【调整配置】。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) ，在实例列表，选择需要调整的实例，在“操作”列选择【更多】>【调整配置】。
 ![](https://main.qcloudimg.com/raw/bddf4d9354753da23a0730fb91e01227.png)
-3. 在弹出的对话框中，选择调整后的配置，单击【提交】即可。
- - 按量计费实例：
+2. 在弹出的对话框，选择调整后的配置，单击【提交】即可。
 ![](https://main.qcloudimg.com/raw/fd7b5ead8e0aaeaa89248dcf12f58c02.png)
 
 ### 通过 API 调整实例配置
-用户可以使用 UpgradeDBInstance 接口升级实例配置，请参见 [升级云数据库实例](https://intl.cloud.tencent.com/document/product/236/15876)。
->?目前不支持通过 API 接口来降低实例配置，请通过控制台来实现实例降配。
+用户可以使用 UpgradeDBInstance 接口调整实例配置，请参见 [调整云数据库实例的配置](https://intl.cloud.tencent.com/document/product/236/15876)。
+
