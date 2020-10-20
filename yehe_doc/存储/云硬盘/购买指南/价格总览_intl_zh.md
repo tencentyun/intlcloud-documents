@@ -8,12 +8,12 @@
             <th style="width: 50%;" colspan="3">包年包月价格（单位：$USD/GB * 月）</th>
      </tr>
       <tr>
-                <th>Premium Cloud Storage</th>
-                <th>SSD Cloud Storage</th>
-                <th>High-Performance SSD Cloud Storage</th>
-                <th>Premium Cloud Storage</th>
-                <th>SSD Cloud Storage</th>
-<th>High-Performance SSD Cloud Storage</th>
+                <th>高性能云硬盘</th>
+                <th>SSD 云硬盘</th>
+                <th>增强型 SSD 云硬盘</th>
+                <th>高性能云硬盘</th>
+                <th>SSD 云硬盘</th>
+<th>增强型 SSD 云硬盘</th>
             </tr>
             <tr>
                 <td>华南地区（广州）</td>
