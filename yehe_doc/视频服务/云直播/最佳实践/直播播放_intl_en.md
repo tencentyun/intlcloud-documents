@@ -6,7 +6,7 @@
 >- If you do not have a domain name, you can purchase one at another domain name service provider.
 >- If you have already purchased a domain name but have not obtained an ICP filing for its service in Mainland China, please apply through Tencent Cloud's Domain Name ICP Filing service. You can also do so at another domain name service provider.
 >
-4. Log in to the [Tencent Cloud Domain Service Console](https://console.cloud.tencent.com/domain) and configure CNAME for the successfully added playback domain name. For detailed directions, please see [Domain Name CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
+4. Log in to the [Domain Name Service Console](https://console.cloud.tencent.com/domain) and configure CNAME for the successfully added playback domain name. For detailed directions, please see [Domain Name CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057)
 
 ## Getting Playback Address
 Select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** in the LVB Console to get a playback address and configure as follows:

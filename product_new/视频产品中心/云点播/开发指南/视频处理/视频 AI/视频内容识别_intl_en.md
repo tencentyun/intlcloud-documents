@@ -1,4 +1,4 @@
-Video content recognition is an offline task that intelligently recognizes video content with the aid of AI. It recognizes faces, objects, text, opening and closing credits, and speech in the video, helping you accurately and efficiently manage your videos. Specifically, it includes the following features:
+Video content recognition is an offline task that intelligently recognizes video content with the aid of AI. It recognizes faces, text, opening and closing credits, and speech in the video, helping you accurately and efficiently manage your videos. Specifically, it includes the following features:
 
 | Feature Name | Description | Use Case |
 | -- | -- | -- |

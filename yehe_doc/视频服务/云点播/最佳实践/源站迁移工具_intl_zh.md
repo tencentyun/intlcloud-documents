@@ -79,6 +79,7 @@ type="migrateLocal"
 secretId = "SECRETID"
 secretKey = "SECRETKEY"
 region = 'REGION'
+subAppId = 0
 concurrency = 5
 supportMediaClassification = [ 'video', 'audio', 'image' ]
 excludeMediaType = [  ]
@@ -90,6 +91,7 @@ migrateResultOutputPath = ''
 | secretId                   |             用户密钥 SecretId，请将`SECRETID`替换为您的真实密钥信息。可前往 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 中的云 API 密钥页面查看获取             |
 | secretKey                  |            用户密钥 SecretKey，请将`SECRETKEY`替换为您的真实密钥信息。可前往 [访问管理控制台](https://console.cloud.tencent.com/cam/capi) 中的云 API 密钥页面查看获取            |
 | region                     | 接入点地域，即请求到哪个地域的云点播服务器，不同于存储地域，具体参考支持的 [地域列表](https://intl.cloud.tencent.com/document/product/266/34113) |
+| subAppId                   |                点播 [子应用](https://intl.cloud.tencent.com/document/product/266/33987) ID。如果需要将文件迁移到子应用，则将该字段填写为子应用 ID；否则无需填写该字段             |
 | concurrency                |                                                                            并发迁移文件的数量，最大值50                                                                            |
 | supportMediaClassification |                                                        支持迁移的媒体类型列表：video（视频），audio（音频），image（图像）                                                         |
 | excludeMediaType           |                                                                               需要排除的文件类型列表                                                                               |
@@ -220,5 +222,5 @@ prefix = ''
 1. 读取配置文件，根据迁移 type，读取相应的配置分节，并执行参数的检查。
 2. 根据指定的迁移类型，扫描源站，生成迁移任务。
 3. 扫描完成后，执行迁移，并打印每个任务的结果及整体进度。
-4. 迁移完成后，将详细信息输出到结果文件。![](https://main.qcloudimg.com/raw/132acd323d0aa947f319f113182b83c1.png)
-
+4. 迁移完成后，将详细信息输出到结果文件。
+![](https://main.qcloudimg.com/raw/132acd323d0aa947f319f113182b83c1.png)

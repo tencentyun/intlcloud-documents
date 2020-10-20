@@ -12,5 +12,5 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb)。
 2. 参考 [配置监听器](https://intl.cloud.tencent.com/document/product/214/32516#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E9.85.8D.E7.BD.AE.E7.9B.91.E5.90.AC.E5.99.A8) 的操作步骤配置监听器，并且在配置 HTTPS 监听器时，开启 SNI。
 ![](https://main.qcloudimg.com/raw/a70af5870cf3c02a97368f9bbb46f74f.png)
-2. 在该监听器中添加转发规则时，针对不同的域名配置不同的服务器证书，单击【下一步】，继续完成健康检查和会话保持的配置。
+3. 在该监听器中添加转发规则时，针对不同的域名配置不同的服务器证书，单击【下一步】，继续完成健康检查和会话保持的配置。
 ![](https://main.qcloudimg.com/raw/e35b92e86b8bade2a0a77a64461a418d.png)

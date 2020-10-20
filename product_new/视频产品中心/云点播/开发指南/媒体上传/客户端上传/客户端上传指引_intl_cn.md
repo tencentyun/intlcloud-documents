@@ -6,8 +6,9 @@
 
 #### 1. 开通服务
 
-开通云点播服务 <!--doc ，详细请参见 [购买指引](https://intl.cloud.tencent.com/document/product/266/2839)。-->
+开通云点播服务。
 
+<span id = "p3"></span>
 #### 2. 获取云 API 密钥
  
 获取调用服务端 API 所需的安全凭证，即 SecretId 和 SecretKey，具体步骤如下：
@@ -24,7 +25,7 @@
 - [C# 签名示例](https://intl.cloud.tencent.com/document/product/266/33923#c.23-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)
 - [Python 签名示例](https://intl.cloud.tencent.com/document/product/266/33923#python-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)
 
->
+>?
 >- 由于客户端上传是直接将视频文件从客户端上传到云点播平台，无需 App 服务端中转，所以云点播必须对发起请求的客户端进行鉴权。
 >- 由于 SecretKey 权限过大，App 不能将该信息泄露到客户端，否则会造成严重的安全问题，所以客户端发起上传前需要申请上传签名。
 
@@ -70,14 +71,14 @@ App 开启断点续传功能的方式如下：
 通过客户端上传签名中 `procedure`参数指定视频上传完成后的处理方式，详细请参见 [上传时指定任务流](#p1)。
 - **App 后台收到视频上传完成的通知后，如何识别是哪个客户上传的**？
 在客户端上传签名中增加`sourceContext`参数，通过该参数来携带用户身份信息，上传完成通知会将该参数传递给 App 后台，详细请参见 [事件通知](#p2)。
-
+<span id = "p2"></span>
 ### 3. 事件通知
 
 视频上传完成之后，云点播会给 App 后台发起 [事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950)，App 后台可通过该事件感知到视频上传行为。如果要接收事件通知，则 App 需要到 [控制台 - 回调设置](https://console.cloud.tencent.com/vod/callback) 开启事件通知。[事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950) 主要包含如下信息：
 - 新视频文件的 FileId 和 URL。
 - 云点播支持在视频上传时指定透传字段，事件完成将透传字段通知到 App 后台。在事件通知中有如下字段：
 	- `SourceType`：该字段被腾讯云固定成 `ServerUpload`，表示上传来源为服务端上传。
-	- `SourceCopntext`：用户自定义透传字段，App 后台在派发签名时指定的透传内容，对应签名中的`sourceContext`参数。
+	- `SourceContext`：用户自定义透传字段，App 后台在派发签名时指定的透传内容，对应签名中的`sourceContext`参数。
 - 云点播支持在视频上传完成时自动发起视频处理，如果上传时指定了 [视频处理任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)，则在事件通知内容中也会携带任务 ID，即事件通知中的`data.procedureTaskId`字段。
 
 更多信息请参见：

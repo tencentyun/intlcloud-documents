@@ -1,57 +1,65 @@
 
 ## TkeServiceConfig
-TkeServiceConfig is a custom resource definition (CRD) that Tencent Kubernetes Engine (TKE) provides. It can help you flexibly configure services of the LoadBalancer type and manage Cloud Load Balancer (CLB) configurations.
+TkeServiceConfig is a Custom Resource Definition (CRD) provided by TKE. TkeServiceConfig can help you configure LoadBalancer-type Services more flexibly and manage various CLB configurations in them.
 
 ### Use cases
-TkeServiceConfig can configure CLB parameters and features that cannot be defined by semantics in the YAML file of a service.
+CLB parameters and features that cannot be defined by Service YAML semantics can be configured through TkeServiceConfig.
 
 
-### Configuration instructions
-`TkeServiceConfig` helps you quickly configure the CLB. You can use the **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;** annotation to specify a target configuration and apply it to the service.
-> `TkeServiceConfig` needs to be in the same namespace as the service.
->
-`TkeServiceConfig` will not configure or modify the protocol or port. You need to describe the protocol and port in the configuration to specify the listener to which the configuration is delivered. In a `TkeServiceConfig` object, you can declare configurations for multiple listeners. Currently, `TkeServiceConfig` only configures CLB health checks and backend access.
-After you specify the protocol and port, the configuration can be accurately delivered to the corresponding listener.
-  * `spec.loadBalancer.l4Listeners.protocol`: layer-4 protocol
+### Configurations
+TkeServiceConfig can help you quickly perform CLB configuration. Through the Service annotation **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**, you can specify the target configuration to be applied in the Service.
+>! TkeServiceConfig resources and the Service need to be in the same namespace.
+
+TkeServiceConfig does not help you directly configure or modify protocols and ports. You need to describe protocols and ports in the configuration in order to specify the listener for forwarding the configuration. You can declare multiple sets of listener configurations in a single TkeServiceConfig. Currently, configurations are mainly provided CLB health check and backend access.
+When the protocol and port are specified, the configuration will be accurately forwarded to the corresponding listener:
+  * `spec.loadBalancer.l4Listeners.protocol`: Layer-4 protocol
   * `spec.loadBalancer.l4Listeners.port`: listening port
 
-## TkeServiceConfig Synchronization Behavior
-* When you add a configuration annotation to a service, the CLB will synchronize the setting.
-* When you delete a configuration annotation from a service, CLB will not synchronize the setting.
-* When you modify `TkeServiceConfig` configuration, the CLB of the service that references the configuration will synchronize the setting based on the new `TkeServiceConfig`.
-* If the listener of the service does not find the corresponding configuration, it will not change the configuration.
-* If the listener of the service finds the corresponding configuration but the configuration does not have declarative properties, it will not change the configuration.
+## Associated Actions Between Service and TkeServiceConfig
+1. During the creation of a Loadbalancer-type Service, if you set **service.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;**, &lt;ServiceName&gt;-auto-service-config will be automatically created. Alternatively, you can specify your own created TkeServiceConfig through **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**. These two annotations cannot be used at the same time. 
+2. The synchronization actions of an automatically created TkeServiceConfig are as follows:
+  - When a Layer-4 listener is added during Service resource update, if there is no corresponding TkeServiceConfig configuration segment for the listener or forwarding rule, Service-Controller will automatically add the corresponding TkeServiceConfig configuration segment.
+  - When a Layer-4 listener is deleted, Service-Controller will automatically delete the corresponding TkeServiceConfig segment.
+  - When Service resources are deleted, the corresponding TkeServiceConfig will also be deleted.
+  - When you modify the default TkeServiceConfig of the Service, the TkeServiceConfig content will also be applied to the CLB.
+3. You can also refer to the following complete TkeServiceConfig configuration and create your own desired CLB configuration. Services will import the configuration through the annotation **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**.
+4. The synchronization actions of a manually created TkeServiceConfig are as follows:
+  - When you add a configuration annotation in the Service, the CLB will immediately set synchronization.
+  - When you delete a configuration annotation in the Service, the CLB will remain unchanged.
+  - When you modify the TkeServiceConfig configuration, the CLB of the Service that imported the configuration will set synchronization based on the new TkeServiceConfig.
+  - If the Service listener does not find the corresponding configuration, the listener will not be modified.
+  - If the Service listener finds the corresponding configuration but the configuration does not contain specified attributes, the listener will not be modified.
 
 
-## Configuration Reference  
+## Complete configuration reference  
 ```yaml
 apiVersion: cloud.tencent.com/v1alpha1
 kind: TkeServiceConfig
 metadata:
-  name: sample # Configuration name
-  namespace: default # Configuration namespace
+  name: sample # configuration name
+  namespace: default # configuration namespace
 spec:
   loadBalancer:
-    l4Listeners: # Layer-4 rule configuration, which is suitable for configurations for service listeners.
-    - protocol: TCP # The protocol and port determine the Layer-4 rules of the service. This is a required parameter. Enumerated values: TCP|UDP.
-      port: 80 # Required. The value range is 1 to 65535.
-      session: # Configuration related to session persistence, which is optional.
-        enable: true # Indicates whether session persistence is enabled. This is a required parameter and takes a Boolean value.
-        sessionExpireTime: 100 # Session persistence time, in seconds, which is optional. The default value is 30. The value range is 30 to 3600.
-      healthCheck: # Health check related configuration, which is optional.
-        enable: true # Indicates whether session persistence is enabled. This is a required parameter and takes a Boolean value.
-        intervalTime: 10 # Time interval for health checks in seconds, which is optional. The default value is 5. The value range is 5 to 300.
-        healthNum: 2 # Healthy threshold, which is optional. Default value: 3, indicating that if a forward is found healthy three consecutive times, it is considered to be normal. Value range: 2-10.
-        unHealthNum: 3 # Unhealthy threshold, which is optional. Default value: 3, indicating that if a forward is found unhealthy three consecutive times, it is considered to be abnormal. Value range: 2-10.
-        timeout: 10 # Health check response timeout time, which is optional. The timeout time must be less than the health check interval. The default value is 2. The value range is 2 to 60.
-      scheduler: WRR # Request forwarding method, which is optional. WRR, LEAST_CONN, and IP_HASH indicate polling by weight, minimum number of connections, and hash by IP address respectively. Enumerated values: WRR|LEAST_CONN.
-    internetMaxBandwidthOut: 100 # Maximum outbound bandwidth in Mbps, which is optional and only applies to public CLBs. The value range is 0 to 2048.
+    l4Listeners: # Layer-4 rule configuration, applicable to Service listener configuration
+    - protocol: TCP # Layer-4 rule for protocol ports anchoring the Service. Required. Enumerated value: TCP|UDP.
+      port: 80 # Required. Value range: 1-65535.
+      session: # Configuration related to session persistence. Optional.
+        enable: true # Indicates whether to enable session persistence. Required. Boolean.
+        sessionExpireTime: 100 # Session persistence duration. Optional. Default value: 30. Value range: 30-3600. Unit: second.
+      healthCheck: # Configuration related to health check. Optional.
+        enable: true # Indicates whether to enable session persistence. Required. Boolean.
+        intervalTime: 10 # Health check probe interval. Optional. Default value: 5. Value range: 5-300. Unit: second.
+        healthNum: 2 # Healthy threshold, indicating the number of consecutive healthy health check results that it takes to indicate normal forwarding. Optional. Default value: 3. Value range: 2-10. Unit: times.
+        unHealthNum: 3 # Unhealthy threshold, indicating the number of consecutive unhealthy health check results that it takes to indicate a forwarding exception. Optional. Default value: 3. Value range: 2-10. Unit: times.
+        timeout: 10 # Health check response timeout threshold. This should be less than the health check interval. Optional. Default value: 2. Value range: 2-60. Unit: second.
+      scheduler: WRR # Request forwarding method. WRR, LEAST_CONN, and IP_HASH indicate polling by weight, least connections, and hashing by IP address, respectively. Optional. Enumerated value: WRR | LEAST_CONN.
+    internetMaxBandwidthOut: 100 # Max egress bandwidth, valid only for public network LBs. Optional. Value range: 0-2048. Unit: Mbps.
 ```
 
 
-## Examples
+## Samples
 
-### Deployment example: jetty-deployment.yaml
+### Deployment sample: jetty-deployment.yaml
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -103,7 +111,10 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    service.cloud.tencent.com/tke-service-config: jetty-service-config
+    service.cloud.tencent.com/tke-service-config: jetty-service-config 
+    # Specify existing tke-service-config
+    # service.cloud.tencent.com/tke-service-config-auto: true 
+    # Automatically create tke-service-config
   name: jetty-service
   namespace: default
 spec:
@@ -120,11 +131,11 @@ spec:
     app: jetty
   type: LoadBalancer
 ```
-This example contains the following configurations:
-- The service is of the public LoadBalancer type. Two TCP services are declared. One is on port 80, and the other is on port 443.
+This sample includes the following configurations:
+- The Service is of the public network LoadBalancer type, with two TCP services declared: one on port 80 and the other on port 443.
 - The `jetty-service-config` CLB configuration is used.
 
-### TkeServiceConfig example: jetty-service-config.yaml
+### TkeServiceConfig sample: jetty-service-config.yaml
 ```yaml
 apiVersion: cloud.tencent.com/v1alpha1
 kind: TkeServiceConfig
@@ -151,14 +162,14 @@ spec:
         timeout: 5
       scheduler: LEAST_CONN
 ```
-This example contains the following configurations:
-The name is `jetty-service-config`. The following configurations are declared in the Layer-4 listener configurations:
- 1. The TCP listener on port 80 will be configured.
+This sample includes the following configurations:
+The name is `jetty-service-config`, and in the Layer-4 listener configuration, two configuration segments are declared:
+ 1. The TCP listener of port 80 will be configured.
  Health check is disabled.
- 2. The TCP listener on port 443 will be configured.
-  - Health check is enabled. The health check interval is 10s, the healthy threshold is 2 times, the unhealthy threshold is 2 times, and the health check response timeout time is 5s.
-  - Session persistence is enabled. The session persistence timeout time is 3600s.
-  - The forwarding policy is set to the minimum number of connections.
+ 2. The TCP listener of port 443 will be configured.
+  - Health check is enabled, with the health check interval set to 10s, the healthy threshold set to 2 times, the unhealthy threshold also set to 2 times, and the timeout threshold set to 5s.
+  - The session persistence feature is enabled, with the timeout threshold set to 3600s.
+  - The forwarding policy is set to least connections.
 
 ### kubectl configuration commands
 ```
@@ -173,15 +184,15 @@ jetty-deployment-8694c44b4c-mk285   1/1     Running   0          8m8s
 jetty-deployment-8694c44b4c-rjrtm   1/1     Running   0          8m8s
 
 ➜ kubectl get service jetty
-NAME              TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)         AGE
+NAME    TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)                      AGE
 jetty   LoadBalancer   10.127.255.209   150.158.220.237   80:31338/TCP,443:32373/TCP   2m47s
 
-# Obtaining the TkeServiceConfig Configuration List
+# Obtain the TkeServiceConfig Configuration List
 ➜ kubectl get tkeserviceconfigs.cloud.tencent.com
 NAME                   AGE
 jetty-service-config   52s
 
-# Updating the TkeServiceConfig Configuration
+# Update and Modify the TkeServiceConfig Configuration
 ➜ kubectl edit tkeserviceconfigs.cloud.tencent.com jetty-service-config
 TkeServiceConfig.cloud.tencent.com/jetty-service-config edited
 ```

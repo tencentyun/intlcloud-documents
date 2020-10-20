@@ -9,7 +9,7 @@ WAF features CC protection capabilities. For non-HTTP requests, it can work with
 2. On the protection settings page, click **Add Domain Name** and set the following parameters as needed:
  - **Domain Name Configuration**
     - Domain Name: enter the domain name to be protected.
-    - Protocol Type: select an option as needed.
+    - Web server configurations: select a protocol and corresponding port as needed.
     - Enable HTTP2.0: select an option as needed.
     - Server Port: select an option as needed.
     - Real Server Address: enter the actual IP address of the real server of the website to be protected, i.e., public IP address of the real server.
@@ -17,7 +17,7 @@ WAF features CC protection capabilities. For non-HTTP requests, it can work with
     - Proxy: select **Yes**.
     - Enable WebSocket and Load Balancing Policy: select an option as needed.
 
- >If the real server has multiple intermediate IPs, you can select an origin-pull load balancing policy as needed. Currently, available policies include round-robin by user requests (requests from the same access source IP will be forwarded to different real servers in sequence) and IP hash (requests from the same access source IP will be forwarded to the same real server). The default policy is round-robin.
+ >?If the real server has multiple intermediate IPs, you can select an origin-pull load balancing policy as needed. Currently, available policies include round-robin by user requests (requests from the same access source IP will be forwarded to different real servers in sequence) and IP hash (requests from the same access source IP will be forwarded to the same real server). The default policy is round-robin.
 
 3. After completing the settings, click **Save**.
 
@@ -27,6 +27,8 @@ WAF features CC protection capabilities. For non-HTTP requests, it can work with
  - If your Anti-DDoS Pro instance is a multi-IP one, select the **Multi-IP Instance** tab.
 2. Select the region where the target Anti-DDoS Pro instance resides and click **Bind Resource** in the "Operation" column on its right.
 3. On the **Bind Resource** page, select **WAF** as the **Resource Type** and set **Resources to Associate** to the corresponding IP address protected by WAF. 
- >A multi-IP instance can be bound to multiple VIP addresses protected by WAF.
+>?
+>- A multi-IP instance can be bound to multiple VIP addresses protected by WAF.
+ >- If you're using a CLB WAF, select **Load balance** for **Resource Type**, and enter the public IP address of the CLB.
 
 4. After completing the settings, click **OK**.

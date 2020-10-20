@@ -1,7 +1,8 @@
 ### How do I connect a domain name?
 You can connect a domain name using the [WAF Console](https://console.cloud.tencent.com/guanjia/waf/config). For more information, see [Add a Domain Name](https://intl.cloud.tencent.com/document/product/627/35651).
 ### Does WAF support connecting wildcard domain names?
-Yes, but only WAF Ultimate does so. 
+Yes. 
+>?
 >- If you have configured a wildcard domain name in WAF, contact us quickly to help process it by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=141&level2_id=642&source=0&data_title=T-Sec-Web%E5%BA%94%E7%94%A8%E9%98%B2%E7%81%AB%E5%A2%99&level3_id=981&radio_title=IP%E7%AE%A1%E7%90%86&queue=15&scene_code=31050&step=2). The wildcard domain name configuration will then be available for you in WAF, which automatically matches the corresponding sub-domain names.
 >- If a wildcard domain name, such as `*.test.com`, is already connected to Tencent Cloud, then any of its sub-domain names cannot be connected to another account.
 >- If the wildcard domain name `*.test.com` is already connected to your account, then wildcard domain names in formats such as `*.a.test.com` cannot be connected to this account.
@@ -36,3 +37,6 @@ You are allowed to remove blocking manually only three times per month. The syst
 
 ### How do I connect a CDN domain name to WAF?
 To connect a CDN domain name, simply use the CNAME address that WAF assigned for your domain name as CDN origin server. The content is pulled from the origin as traffic flows through the architecture “user > CDN > WAF > CLB > real server”. Meanwhile, you can log in to the WAF Console, and select **Yes** for *Proxy** in the [Add domains](https://console.cloud.tencent.com/guanjia/waf/config/add) page. Then, WAF obtains the real IP of your client for protection based on the XFF field in HTTP headers.
+
+### How do I add a real server domain name to WAF?
+To add a real server domain name to WAF, enter the CNAME or other domain name different from the protection domain names. You may leave the protocol (HTTP or HTTPs) empty.

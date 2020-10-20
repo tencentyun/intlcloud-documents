@@ -4,24 +4,24 @@ DBbrain 支持自定义监控大盘，满足用户多实例、多指标监控视
 ![](https://main.qcloudimg.com/raw/99e78958c112d300aa91b28c2b1d2d40.png)
 
 ## 新建大盘
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【智能监控】，在上方选择【监控大盘】页。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择【监控大盘】页。
 2. 单击【新建大盘】，输入大盘名称，选择需要对比的监控指标并添加监控实例后，单击【保存】，即可完成监控大盘的建立。
 ![](https://main.qcloudimg.com/raw/6d589e9e2202620ff00a8bf7b14fcf26.png)
 
 ## 查找/编辑/删除大盘
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【智能监控】，在上方选择【监控大盘】页。
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择【监控大盘】页。
 - 单击大盘名称的下拉框，可以切换查看不同的监控大盘。
 - 选择好大盘后，单击【编辑当前大盘】，即可对当前大盘的监控指标与监控实例进行修改。
 - 单击【删除当前大盘】，即可删除当前大盘。
 ![](https://main.qcloudimg.com/raw/63a8159d686610a9c3a134fac9265296.png)
 
 ## 开启图表联动
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【智能监控】，在上方选择【监控大盘】页。
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择【监控大盘】页。
 2. 单击右侧的“图表联动”开关，可以查看多实例、多指标监控视图的关联对比。
 ![](https://main.qcloudimg.com/raw/bc292ac34dea3fb835f5f8afea6fbbac.png)
 
 ## 切换实时/历史视图
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【智能监控】，在上方选择【监控大盘】页。
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择【监控大盘】页。
 2. 单击【实时】或【历史】，查看对应的实时和历史监控视图。
  - 实时监控视图中，用户可以查看近三分钟的实例性能指标对比情况，默认情况下为自动刷新，单击【停止刷新】可停止实时刷新监控。
 ![](https://main.qcloudimg.com/raw/1fbc5d902b3728ddcc3ce739602d08cc.png)
@@ -36,8 +36,8 @@ DBbrain 自定义监控大盘目前支持如下70项监控指标。
 | cpu_use_rate                     | CPU                       |
 | memory_use_rate                  | 内存                      |
 | memory_use                       | 内存占用                  |
-| volume_rate                      | 磁盘                      |
-| real_capacity                    | 数据空间                  |
+| volume_rate                      | 磁盘利用率                      |
+| real_capacity                    | 磁盘使用空间                  |
 | capacity                         | 磁盘占用空间              |
 | bytes_sent                       | 输出流量                  |
 | bytes_received                   | 输入流量                  |

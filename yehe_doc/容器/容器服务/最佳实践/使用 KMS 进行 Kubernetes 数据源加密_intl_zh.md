@@ -21,7 +21,7 @@
 1. 登录 [密钥管理系统（合规）](https://console.cloud.tencent.com/kms2) 控制台，进入“用户密钥”页面。
 2. 在“用户密钥”页面上方，选择需要创建密钥的区域并单击【新建】。
 3. 在弹出的“新建密钥”窗口，参考以下信息进行配置。如下图所示：
-![](https://main.qcloudimg.com/raw/2082bac6e37c381f6d14e1717fa6e401.png)
+![](https://main.qcloudimg.com/raw/2f0db7dfc9ca005e5ed8fb16aea5ad29.png)
 主要参数信息如下，其余参数请保持默认设置：
  - **密钥名称**：必填且在区域内唯一，密钥名称只能为字母、数字及字符`_`和`-`，且不能以 `KMS-` 开头。本文以 `tke-kms` 为例。
  - **描述信息**：选填，可用来说明计划保护的数据类型或计划与 CMK 配合使用的应用程序。
@@ -29,7 +29,7 @@
  - **密钥材料来源**：提供 “KMS” 和“外部”两种选择，请根据实际需求进行选择。本文以选择 “KMS” 为例。
 4. 单击【确定】后返回“用户密钥”页面，即可查看已成功创建的密钥。
 5. 单击密钥 ID，进入密钥信息页，记录该密钥完整 ID。如下图所示：
-![](https://main.qcloudimg.com/raw/ab708d6ade0bdd9dd12cd54e2cea35d9.png)
+![](https://main.qcloudimg.com/raw/c4f38249ed9a9d61a083acf176dc8798.png)
 <span id="createCAM"></span>
 ### 创建并获取访问密钥
 >如已创建访问密钥，则请跳过此步骤。
@@ -37,7 +37,7 @@
 1. 登录[ 访问管理控制台](https://console.cloud.tencent.com/cam/overview)，选择左侧导航栏中的【访问管理】>【API密钥管理】，进入 “API密钥管理”页面。
 2. 在 “API密钥管理”页面中，单击【新建密钥】并等待创建完成。
 3. 创建完成即可在 “API密钥管理”页面查看该密钥信息，包含 `SecretId`、`SecretKey`。如下图所示：
-![](https://main.qcloudimg.com/raw/106be1fd3e9f52f0d112b7f583b2d7df.png)
+![](https://main.qcloudimg.com/raw/9f705b5a3f7bdc5907ac86573b4c4d04.png)
 
 ### 创建 DaemonSet 并部署 tke-kms-plugin
 
