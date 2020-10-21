@@ -64,7 +64,7 @@ The **&lt;trtc-room&gt;** tag is a custom component for TRTC intercommunication 
 | [setMICVolume(params)](#setmicvolume(params))| Sets mic capturing volume level in audio mix. |
 
 **Message sending and receiving**
-The message sending/receiving feature takes effect only after you activate the [IM](https://cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
+The message sending/receiving feature takes effect only after you activate the [IM](https://intl.cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
 
 | API | Description |
 |-----|-----|
@@ -89,7 +89,7 @@ The message sending/receiving feature takes effect only after you activate the [
 | scene                | String  | rtc       | Scenario, which is required. Valid values: <li>rtc: real-time call, which uses high-quality lines and supports up to 300 users in a room.</li><li>live: live streaming, which uses hybrid lines and supports up to 100,000 users in a room (up to 20 users can mic on concurrently).</li> |
 | sdkAppID             | String  | -         | `SDKAppID` that will be assigned to a created application after TRTC is activated, which is required. |
 | userID               | String  | -         | User ID, which is required and can be specified by your account system. |
-| userSig              | String  | -         | Identity signature, which is required and acts as the login password. It can be calculated based on the `userID`. For more information on the calculation method, please see [UserSig](https://cloud.tencent.com/document/product/647/17275). |
+| userSig              | String  | -         | Identity signature, which is required and acts as the login password. It can be calculated based on the `userID`. For more information on the calculation method, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 | template             | String  | custom    | Image layout mode built in the component, which is required. Valid values: <li>"1v1": the small image is displayed on top of the big image.</li><li>"grid": grid mode, where the images can overlay each other, and the images of up to 9 streams can be displayed.</li><li>"custom": custom mode, which requires you to modify the `custom.wxml` template of the component.</li> |
 | enableCamera         | Boolean | false     | Whether to enable the camera. If the value is `true`, after `enterRoom` is called, video will be automatically published. |
 | enableMic            | Boolean | false     | Whether to enable the mic. If the value is `true`, after `enterRoom` is called, audio will be automatically published. |
@@ -99,7 +99,7 @@ The message sending/receiving feature takes effect only after you activate the [
 | enableAutoFocus      | Boolean | true      | Whether to enable camera autofocus. To disable autofocus, you need to click on the preview image of the camera to manually focus. |
 | enableZoom           | Boolean | false     | Whether to enable focal length adjustment through two-finger swipe. |
 | minBitrate<span id="quality"></span>          | String  | 200       | Minimum bitrate. We recommend you not set a very low bitrate. |
-| maxBitrate           | String  | 1000      | Maximum bitrate, which needs to match the resolution. We recommend you set this parameter based on [Resolution-Bitrate Reference Table](https://cloud.tencent.com/document/product/647/32236#.E5.88.86.E8.BE.A8.E7.8E.87.E7.A0.81.E7.8E.87.E5.8F.82.E7.85.A7.E8.A1.A8). |
+| maxBitrate           | String  | 1000      | Maximum bitrate, which needs to match the resolution. We recommend you set this parameter based on [Resolution-Bitrate Reference Table](https://intl.cloud.tencent.com/document/product/647/35153). |
 | videoWidth           | String  | 360       | Video width. If the video width and height are set, `aspect` will be ignored. |
 | videoHeight          | String  | 640       | Video height. If the video width and height are set, `aspect` will be ignored. |
 | beautyLevel          | Number  | 0         | Beauty filter. Value range: 0–9. 0 indicates to disable the filter. |
@@ -858,7 +858,7 @@ trtcRoomContext.snapshot({
 ### sendC2CTextMessage(params)
 **Note:**
 
-This API is used to send a C2C text message (i.e., sending a message to a specified user). It takes effect only after you activate the [IM](https://cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
+This API is used to send a C2C text message (i.e., sending a message to a specified user). It takes effect only after you activate the [IM](https://intl.cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
 
 **Parameters:**
 
@@ -884,7 +884,7 @@ trtcRoomContext.sendC2CTextMessage({
 **Note:**
 
 This API is used to send a C2C custom message. A custom message can be used to send control signaling (such as invitation to speak and application for mic-on).
-This API takes effect only after you activate the [IM](https://cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
+This API takes effect only after you activate the [IM](https://intl.cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
 
 **Parameters:**
 
@@ -920,7 +920,7 @@ trtcRoomContext.sendC2CCustomMessage({
 ### sendGroupTextMessage(params)
 **Note:**
 
-This API is used to send a group text message. It takes effect only after you activate the [IM](https://cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
+This API is used to send a group text message. It takes effect only after you activate the [IM](https://intl.cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
 
 **Parameters:**
 
@@ -945,7 +945,7 @@ trtcRoomContext.sendGroupTextMessage({
 ### sendGroupCustomMessage(params)
 **Note:**
 
-This API is used to send a group custom message. It takes effect only after you activate the [IM](https://cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
+This API is used to send a group custom message. It takes effect only after you activate the [IM](https://intl.cloud.tencent.com/product/im) service and set `enableIM` to `true` in the [attribute table](#Config).
 
 **Parameters:**
 
@@ -1026,4 +1026,4 @@ trtcRoomContext.on(EVENT.ERROR,(event)=>{
   console.log(event.data.code)
 })
 ```
-For more information on the error codes, please see [Error Codes](https://cloud.tencent.com/document/product/647/38313).
+For more information on the error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35151).
