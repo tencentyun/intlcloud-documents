@@ -13,13 +13,13 @@ vi /etc/fstab
 2. Then, enter "i" (insert) and add the following command to `/etc/fstab`. The mounting methods are as follows:
 ```shell
 Mount the file system with NFS v4.0
-<mount target IP>:/ <target mount directory> nfs4 nfsvers=4.0,hard,timeo=600,retrans=2,_netdev 0 0
-Example: 10.10.19.12:/ /local/test nfs4 nfsvers=4.0,hard,timeo=600,retrans=2,_netdev 0 0
+<mount target IP>:/ <target mount directory> nfs4 vers=4,minorversion=0,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+Example: 10.10.19.12:/ /local/test nfs4 vers=4,minorversion=0,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 ```
 ```shell
 Mount the file system with NFS v3.0
-<mount target IP>:/<fsid> <target mount directory> nfs nfsvers=3,hard,timeo=600,retrans=2,_netdev 0 0
-Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,hard,timeo=600,retrans=2,_netdev 0 0
+<mount target IP>:/<fsid> <target mount directory> nfs nfsvers=3,nolock,proto=tcp,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
+Example: 10.10.19.12:/djoajeo4 /local/test nfs nfsvers=3,nolock,proto=tcp,hard,timeo=600,retrans=2,_netdev,noresvport 0 0
 ```
 3. Press Esc and enter ":wq" to save the change. Restart the client, and the file system will be automatically mounted.
 
