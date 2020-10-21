@@ -34,7 +34,7 @@
 		<th>可用区</th>
 	</tr>
 	<tr>
-		<td rowspan="4">华南地区（广州）<br> ap-guangzhou</td>
+		<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -46,7 +46,10 @@
 	<tr>
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
-		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
+	<tr>
+		<td>广州六区<br> ap-guangzhou-6</td>
+	</tr>
+		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -57,6 +60,9 @@
 	</tr>
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
+	</tr>
+        <tr>
+		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
 		<tr>
 			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
