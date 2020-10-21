@@ -21,7 +21,6 @@
 用户可以手动将单个快照快速复制至对端账号，复制后的快照将以**全量快照**的方式保存在对端账号。操作步骤如下：
 1. 登录云服务器控制台，选择左侧的【[快照列表](https://console.cloud.tencent.com/cvm/snapshot)】。
 2. 进入“快照列表”页面，选择目标快照所在行右侧的【更多】>【跨账号复制】。
-![](https://main.qcloudimg.com/raw/51a9949d4dd98db1ba9339a01d47ed95.png)
 3. 在弹出的“跨账号手动复制”窗口中，参考以下信息进行设置。
  - **对端账号唯一 ID**：获取对方用户的帐号唯一 ID。
  可通知对方登录云服务器控制台，单击右上角 [账号信息](https://console.cloud.tencent.com/developer)，查看“基本信息”中的账号 ID。
@@ -34,8 +33,7 @@
 当用户使用该功能构建云上资源跨账号灾备时，可利用自动复制快照至对端账号能力，自动将新增的快照复制至对端账号。用户只需将源账号下定期快照策略关联至对端账号，后续该定期快照策略创建的快照，将以**全量快照 + 增量快照**的方式自动复制至对端账号。操作步骤如下：
 1. 登录云服务器控制台，选择左侧的【[跨账号自动复制](https://console.cloud.tencent.com/cvm/snapshot/asp/inter-account?rid=19&tab=REMOTE)】。
 2. 在“跨账号自动复制”页面中，单击【新建】。
-3. 在弹出的“跨账号自动复制”页面，输入对端账号唯一 ID，选择需自动复制的定期快照策略并单击【确定】。如下图所示：
-![](https://main.qcloudimg.com/raw/3c162eac8cc3c385a33be3a60c957a24.png)
+3. 在弹出的“跨账号自动复制”页面，输入对端账号唯一 ID，选择需自动复制的定期快照策略并单击【确定】。
  - 源账户可在 “[复制至其他账号](https://console.cloud.tencent.com/cvm/snapshot/asp/inter-account?rid=19&tab=REMOTE)” 页面，查看自动复制任务。自动复制任务生命周期跟随已关联的定期快照策略，如源账户删除定期快照策略，则该自动复制任务将自动停止。
  - 对端账号可在 “[复制至我的账号](https://console.cloud.tencent.com/cvm/snapshot/asp/inter-account?rid=19&tab=LOCAL)” 页面，查看该自动复制任务。对端账户可主动删除该自动复制任务。
 
