@@ -14,7 +14,11 @@
 <tbody>
 <tr>
 <td>当前计费方式</td>
-<td >日结计费：<!-- 计费详情请参见 <a href="https://intl.cloud.tencent.com/document/product/266/14666"> -->日结（后付费）</a><br>月结计费：<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 进行咨询</td>
+<td >日结计费：计费详情请参见 <a href="https://intl.cloud.tencent.com/document/product/266/14666"> 日结（后付费）</a><br>月结计费：请联系您的商务</td>
+<tr>
+<td>当月计费带宽（月结计费）</td>
+<td>当前账户当月计费带宽。月结计费：请联系您的商务</td>
+</tr>
 </tbody></table>
 
 
@@ -53,7 +57,7 @@
 
 </tbody></table>
 
->上述指标数据每日自动刷新。
+>?上述指标数据每日自动刷新。
 
 ## 关键数据
 
