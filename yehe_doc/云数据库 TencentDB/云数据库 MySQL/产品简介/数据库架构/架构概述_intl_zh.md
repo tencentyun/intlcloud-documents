@@ -2,9 +2,9 @@
 
 ## 查看实例架构
 - 购买时，登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)，在“架构”处可选择对应架构。
-![](https://main.qcloudimg.com/raw/f1417a645690900e4d82515e8e609d3b.png)
+![](https://main.qcloudimg.com/raw/5bbc8288b981097d8f6b36e150ddf7e2.png)
 - 购买后，登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表的“配置”列看查看实例架构。
-![](https://main.qcloudimg.com/raw/0f5f39c3eeb7bdbcd61d6ccf157c07b2.png)
+![](https://main.qcloudimg.com/raw/f0618995c7b9f4821c0d4f18ce4a6f45.png)
 
 
 ## 各架构对比

@@ -1,6 +1,6 @@
 ### binlog 로그는 어떻게 조회하나요?
 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤, [Backup and Restore]>[Log Backup List] 페이지에서 로그를 다운로드 및 조회할 수 있습니다.
-![](https://main.qcloudimg.com/raw/80e006c2d5165ecfa9ce9395d59d01f8.png)
+![](https://main.qcloudimg.com/raw/b411a99afeae2858ae578696ad9d66af.png)
 
 ### 데이터베이스 인스턴스에 binlog 로그가 없는 이유는 무엇인가요?
 현재 binlog의 쓰기 속도가 느려 로테이션이 되지 않고 있어, 콘솔에서 표시되지 않는 것일 수 있습니다.
