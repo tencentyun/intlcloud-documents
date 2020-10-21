@@ -1,15 +1,10 @@
-## Overview
-
-The Tencent Cloud web ILVB component (TWebLive) is a new SDK from the Tencent Cloud terminal development team. By accessing TWebLive, developers can quickly implement features, such as web push/pull and real-time interaction.
-
 ## 1. Introduction to TWebLive
 
-[TWebLive](https://www.npmjs.com/package/tweblive) is a Tencent Cloud web ILVB component. As a new SDK developed by the Tencent Cloud terminal development team, it integrates [Tencent Cloud TRTC](https://intl.cloud.tencent.com/product/trtc), [Tencent Cloud IM](https://intl.cloud.tencent.com/product/im), and the Tencent Cloud superplayer TCPlayer. It provides common features in web interactive livestreaming scenarios, including push, enabling/disabling the microphone, enabling/disabling the camera, WeChat video sharing, chat, and likes. It also contains simple and easy-to-use [APIs](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html) for implementing web push/pull, real-time chat interaction, and other features.
+[TWebLive](https://trtc.qcloud.com/tweblive/index.html#/) is a Tencent Cloud web ILVB component. As a new [SDK](https://www.npmjs.com/package/tweblive) developed by the Tencent Cloud terminal development team, it integrates [Tencent Cloud TRTC](https://intl.cloud.tencent.com/product/trtc), [Tencent Cloud IM](https://intl.cloud.tencent.com/product/im), and the Tencent Cloud superplayer TCPlayer. It provides common features in web interactive livestreaming scenarios, including push, enabling/disabling the microphone, enabling/disabling the camera, WeChat video sharing, chat, and likes. It also contains simple and easy-to-use [APIs](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html) for implementing web push/pull, real-time chat interaction, and other features.
 
 
 
-The following figure shows the TWebLive architecture design.
-![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
+
 
 ## 2. TWebLive Advantages
 
@@ -136,6 +131,8 @@ npm i tweblive --save
 ```
 
 ## 4. Platform Support
+The following figure shows the TWebLive architecture design.
+![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
 
 Web push and low-latency web streaming adopt the WebRTC technology, which works well with Chrome (desktop version) and Safari (desktop and mobile versions) but poorly or not at all with other platforms (such as browsers on Android terminals).
 
@@ -151,7 +148,7 @@ Web push and low-latency web streaming adopt the WebRTC technology, which works 
 | Android | UC Browser (mobile) | - | Not supported | Not supported | Not supported |
 | Android | WeChat embedded browser (with the TBS kernel) | - | Supported | Supported | Not supported |
 
-We recommend that you use the [Mini Program](https://intl.cloud.tencent.com/document/product/647/35150) solution on mobile devices, which is supported by both WeChat and Mobile QQ. This solution is built around native technologies of corresponding platforms and delivers excellent audio/video performance. It is specifically adapted to major mobile phone brands. If your application scenario mainly involves the education sector, we recommend that you use the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution for the teacher end. This solution is more stable and supports dual-channel pictures, more flexible screen sharing schemes, and more powerful recovery capabilities in poor network conditions.
+We recommend that you use the Mini Program solution on mobile devices, which is supported by both WeChat and Mobile QQ. This solution is built around native technologies of corresponding platforms and delivers excellent audio/video performance. It is specifically adapted to major mobile phone brands. If your application scenario mainly involves the education sector, we recommend that you use the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution for the teacher end. This solution is more stable and supports dual-channel pictures, more flexible screen sharing schemes, and more powerful recovery capabilities in poor network conditions.
 
 ## 5. Notes
 
@@ -164,7 +161,7 @@ We recommend that you use the [Mini Program](https://intl.cloud.tencent.com/docu
 
 This document describes the new Tencent Cloud web ILVB component TWebLive. With this SDK, developers can quickly implement web push, low-latency web streaming, CDN streaming, real-time chat interactions (or on-screen comments), and other features. In addition, this component can completely replace the traditional flash push solution.
 
-This document also provides a detailed access solution and [online demo](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html). Currently, TWebLive works well with mainstream desktop browsers and provides Mini Program solutions on mobile devices.
+This document also provides a detailed access solution and [online demo](https://trtc.qcloud.com/tweblive/index.html#/). Currently, TWebLive works well with mainstream desktop browsers and provides Mini Program solutions on mobile devices.
 
 In the future, we will provide more livestreaming services, such as screen sharing on the push end, image message interaction, multi-line display for viewers (over the WebRTC low-latency and CDN lines), and host-viewer co-anchoring.
 
