@@ -1,7 +1,7 @@
 ## Impact of Sync Delay
 The default slave databases, disaster recovery instances, and read-only instances of TencentDB for MySQL use MySQL's native binlog replication technology and may experience delays during async or semi-sync data replication.
 
-- If a slave database has a delay, master/slave instance switch cannot be completed promptly. In this case, the business may not be restored to normal quickly.
+- If a [slave database](https://intl.cloud.tencent.com/document/product/236/38328) has a delay, master/slave instance switch cannot be completed promptly. In this case, the business may not be restored to normal quickly.
 - If a disaster recovery instance has a delay, it cannot be promoted to a master instance before the heaped binlogs run out. During this period, business continuity will be affected.
 - If a read business has relatively high requirements for data consistency, a delay-triggered removal policy can be configured for the read-only group, so that when the master-slave delay exceeds the configured threshold, the corresponding read-only instance will be removed automatically and hence cannot be accessed by the read business.
 
