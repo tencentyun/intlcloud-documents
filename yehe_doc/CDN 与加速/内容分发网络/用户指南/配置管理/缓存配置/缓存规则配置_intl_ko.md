@@ -29,7 +29,7 @@ CDN 노드에 캐시된 리소스를 직접적으로 관리할 수 없는 상황
 ### 기본 모드
 
 CDN 노드에 캐시된 모든 리소스에는 '만료 시간'이라는 개념이 있습니다. 요청한 캐시 리소스가 이미 만료되었을 경우, 노드에 캐시되어 있더라도 유효하지 않은 것으로 간주하고 다시 Origin-pull하여 가져오게 됩니다. 기본 모드에서는 특정 파일 유형의 노드 캐시 시간을 설정할 수 있습니다.
-<img src="https://main.qcloudimg.com/raw/5a3d0ab3635c241e3e800d80a338077e.png" height="299" width="439" />
+![](https://main.qcloudimg.com/raw/b9be3726c932508d5705a773816cea26.png)
 
 
 #### 플랫폼 정책
@@ -59,7 +59,7 @@ CDN 노드에 캐시된 모든 리소스에는 '만료 시간'이라는 개념�
 - 캐시: 리소스의 노드 캐시 시간을 설정합니다. 강제 캐시 여부, 즉 원본 서버의 Cache-Control: no-store/no-cache/private를 무시할지의 여부도 설정할 수 있습니다.
 - 캐시하지 않음: Origin-pull하여 리소스를 획득합니다.
 
-<img src="https://main.qcloudimg.com/raw/d1513ea3dd6f515462d32fba82af9099.png" height="275" width="439" />
+![](https://main.qcloudimg.com/raw/b9be3726c932508d5705a773816cea26.png)
 
 
 #### 설정 제한
