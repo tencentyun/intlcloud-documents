@@ -18,9 +18,9 @@
 
 1. 登录[ 腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中【镜像仓库】>【我的镜像】。
 2. 在“我的镜像”页面中，单击【镜像生命周期管理】。如下图所示：
-![](https://main.qcloudimg.com/raw/1e9dadd8e180cc6aae026c6562e95fbf.png)
+![](https://main.qcloudimg.com/raw/ca40ee68178937bbf657877187bde194.png)
 3. 在弹出的“镜像生命周期管理”窗口中，根据以下信息进行配置。如下图所示：   
-![](https://main.qcloudimg.com/raw/8955837a9ff4646b0de92f37797ef6a3.png)
+![](https://main.qcloudimg.com/raw/1ea7421903cb114ae0767004dedd433c.png)
     - **启用状态**：勾选“启用全局镜像生命周期”。
     - **全局规则**：
        - **保留最新镜像版本**：请按需设置，所设置数值不能大于当前主账号下镜像版本默认配额数。
@@ -32,9 +32,9 @@
 1. 登录[ 腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中【镜像仓库】>【我的镜像】。
 2. 在“我的镜像”列表中，单击需要设置镜像版本自动清理策略的镜像名称，进入该镜像详情页。
 3. 单击镜像版本列表上方提示中的“设置自动清理策略”。如下图所示：
-![](https://main.qcloudimg.com/raw/2c2ce21ec53f36a3d1eeb46c78e3a949.png)
+![](https://main.qcloudimg.com/raw/83da83482e8edd1b037d0128b92d9772.png)
 4. 在弹出的“自动删除镜像设置”窗口中，根据以下信息进行配置。如下图所示：
-![](https://main.qcloudimg.com/raw/d9c955894b07a51c800760a0078fb75e.png)
+![](https://main.qcloudimg.com/raw/5e98ec835bbc4f69869ee40efb3719a7.png)
    - **保留最新镜像版本**：请按需设置，所设置数值不能大于当前主账号下镜像版本默认配额数。
    - **保留最近天数内镜像版本**：请按需设置。
 5. 单击【确定】即可配置成功。

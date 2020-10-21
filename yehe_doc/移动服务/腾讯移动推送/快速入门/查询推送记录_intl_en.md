@@ -54,8 +54,8 @@ According to different metrics:
 **iOS:**
 ![](https://main.qcloudimg.com/raw/e9fe41491d5d631c9270525ae554b9a2.png)
 
- - Attempted: the number of available devices in the push target devices (including opt-out devices).
- - Sent: the number of devices to which the message was successfully delivered through the APNs or TPNS channel (opt-out devices can also return success)
+ - Scheduled: the number of available devices that meet the target push conditions and on which the notification bar is enabled.
+ - Sent: the actual number of messages successfully delivered by the device through the APNs channel or TPNS channel.
  - Reached: the number of unique devices that received push messages (make sure you have completed the [integration procedure](https://intl.cloud.tencent.com/document/product/1024/30730). iOS 10 and below versions do not support this statistic item.)
  - Clicked: the number of devices on which the message was clicked.
  - Click rate: clicked/reached devices.

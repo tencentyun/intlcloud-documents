@@ -85,6 +85,7 @@ void appendAccount(Context context, final String account)
 ```
 
 >?
+>- One account supports binding up to 100 tokens. 
 >- The account can be email, QQ account number, mobile number, username, etc.
 >- If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [REST API](https://intl.cloud.tencent.com/document/product/1024/33764).
 
@@ -406,6 +407,24 @@ local_msg.setCustomContent(map);
 
 XGPushManager.addLocalNotification(context,local_msg);
 ```
+
+### Deleting local notifications
+#### API description
+
+This API is used to delete local notifications that are created but not displayed on the application.
+
+```java
+public static void clearLocalNotifications(Context context) 
+```
+#### Parameter description
+
+- context: the Context object
+
+#### Sample code
+```java
+XGPushManager.clearLocalNotifications(context);
+```
+
 
 ### Getting device token
 
