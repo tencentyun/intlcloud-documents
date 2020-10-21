@@ -17,10 +17,9 @@
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle; white-space: nowrap;"  onclick="window.open('https://webim-1252463788.file.myqcloud.com/demo/index.html?_ga=1.104732675.2070968204.1569499077')" /><br><br>
       <input type="button" value="Web Live-streaming Interaction Scenarios" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #006eff;
     color: #fff;border: 1px solid #006eff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle; white-space: nowrap;" onclick="window.open('https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html')" />
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle; white-space: nowrap;" onclick="window.open('https://trtc.qcloud.com/tweblive/index.html#/')" />
     </td>
   </tr>
 </table>
 
-
->?For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).
+>? For more information on the Demo, see [Quick Demo Operation](https://intl.cloud.tencent.com/document/product/1047/34553).
