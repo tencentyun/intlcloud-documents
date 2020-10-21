@@ -15,13 +15,13 @@
 #### 创建命名空间
 新建的 TCR 企业版实例内无默认命名空间，且无法通过推送镜像自动创建。请参考 [创建命名空间](https://intl.cloud.tencent.com/document/product/1051/35487) 按需完成创建。
 建议命名空间名使用项目或团队名，本文以 `docker` 为例。创建成功后如下图所示：
-![](https://main.qcloudimg.com/raw/0863439831b93c49a243dccaeb0a9806.png)
+![](https://main.qcloudimg.com/raw/38d0f3739e45a94c39265b32fe0437aa.png)
 
 #### 创建镜像仓库（可选）
 容器镜像托管在具体的镜像仓库内，请参考 [创建镜像仓库](https://intl.cloud.tencent.com/document/product/1051/35488) 按需完成创建。镜像仓库名称请设置为期望部署的容器镜像名称，本文以 `getting-started` 为例。创建成功后如下图所示：
 >?通过 docker cli 或其他镜像工具，例如 jenkins 推送镜像至企业版实例内时，若镜像仓库不存在，将会自动创建，无需提前手动创建。
 
-![](https://main.qcloudimg.com/raw/e2af4a28cdfe97f47bd54a24a61af88d.png)
+![](https://main.qcloudimg.com/raw/c07fbfbc133bde822f13f7a5005ea6d8.png)
 
 #### 推送容器镜像
 您可通过 docker cli 或其他镜像构建工具，例如 jenkins 推送镜像至指定镜像仓库内，本文以 docker cli 为例。此步骤需要您使用一台安装有 Docker 的云服务器或物理机，并确保访问的客户端已在 [配置网络访问策略](https://intl.cloud.tencent.com/document/product/1051/35490) 定义的公网或内网允许访问范围内。
@@ -45,19 +45,19 @@ TCR 企业版实例支持网络访问控制，默认拒绝全部来源的外部�
 3. 在集群详情页面，选择左侧【组件管理】，进入“组件管理”页面，并单击【新建】。
 4. 在“新建扩展组件”页面，选择 “TCR” 组件。如下图所示：
     >? 当前 TCR 组件暂只支持 K8S 版本为1.14、1.16的集群，如集群版本暂不支持，请采用手动配置方式。
-	>
-   ![](https://main.qcloudimg.com/raw/ac01c58b0e50f2c2001f0abe50a361e3.png)
+	
+   ![](https://main.qcloudimg.com/raw/217494ffd43b7d2e6d2621df67d5d80a.png)
   - 单击【查看详情】了解组件功能及配置说明。
   - 单击【参数配置】开始配置组件。
 5. 在“TCR组件参数设置”页面，参考【查看详情】中介绍的组件配置方式，配置相关参数。如下图所示：
-![](https://main.qcloudimg.com/raw/34fa53f8b3a3b6c04f7470ea84613d7b.png)
+![](https://main.qcloudimg.com/raw/729b3e3b4170de3c6d344adb1ccaf7cf.png)
     - **关联实例**：选择与集群同地域的 TCR 实例。
     - **免密拉取配置**：可采用默认配置。
     - **内网访问配置**：当内网访问链路中未展示为“链路正常”，请参考 [内网访问控制](https://intl.cloud.tencent.com/document/product/1051/35492)，配置 TCR 实例与 TKE 集群所在私有网络 VPC 的内网链路。
 6. 点击【确定】返回组件选择界面。
 7. 在组件选择界面单击【完成】，开始为集群安装 TCR 扩展组件。
 8. 组件安装完成后，集群将具备内网免密拉取该关联实例内镜像的能力，无需额外配置。如下图所示：
-![](https://main.qcloudimg.com/raw/9a63dbecc51517f3c54e5872d23e6a2f.png)
+![](https://main.qcloudimg.com/raw/28820e0f8742656ea540f86e6336c156.png)
 
 #### 手动配置内网访问及访问凭证
 #### 1. 配置内网访问
@@ -82,7 +82,7 @@ echo '172.21.17.69 demo.tencentcloudcr.com' >> /etc/hosts
 2. 在“集群管理”页面，选择集群 ID，进入集群详情页。
 3. 选择左侧的【命名空间】，进入 “Namespace” 页面并单击【新建】。
 4. 进入“新建Namespace” 页面，勾选“自动下发容器镜像服务企业版访问凭证”，并选择该集群需访问的 TCR 实例。如下图所示：
-	![](https://main.qcloudimg.com/raw/d4c21b05217a1b2d715fd3632e77a241.png)
+	![](https://main.qcloudimg.com/raw/46557c14ff5e9f833e911a9ad08e0d6d.png)
 5. 单击【创建Namespace】进行创建。
 	创建完成后，该实例的访问凭证将自动下发至该命名空间。可选择左侧的【配置管理】>【Secret】，进入 “Secret” 页面即可查看该访问凭证。例如 `1000090225xx-tcr-m3ut3qxx-dockercfg`。其中，`1000090225xx` 为创建命名空间的子账号 UIN，`tcr-m3ut3qxx` 为所选实例的实例 ID。
 
@@ -91,7 +91,7 @@ echo '172.21.17.69 demo.tencentcloudcr.com' >> /etc/hosts
 1. 参考 [获取实例访问凭证](https://intl.cloud.tencent.com/document/product/1051/37253)，获取用户名及密码。
 2. 在集群详情页，选择左侧的【配置管理】>【Secret】，进入 “Secret” 页面。
 3. 在 “Secret” 页面单击【新建】进入“新建Secret” 页面，参考以下信息下发访问凭证。如下图所示：
-	![](https://main.qcloudimg.com/raw/3521ba5ef8437b52586411eb505d344a.png)
+	![](https://main.qcloudimg.com/raw/73e3f94b14b0c37940c27f85f58e5e87.png)
 	主要参数信息如下：
 	 - **Secret类型**：选择【Dockercfg】。
 	 - **生效范围**：勾选需下发凭证的命名空间。
@@ -107,11 +107,11 @@ echo '172.21.17.69 demo.tencentcloudcr.com' >> /etc/hosts
  - **命名空间**：选择已下发访问凭证的命名空间。
  - **实例内容器**：
     - **镜像**：单击【选择镜像】，并在弹出的“选择镜像”窗口中，选择 TCR 实例内容器镜像。如下图所示：
-![](https://main.qcloudimg.com/raw/c4a4840a1ea80e82684f32153345cb55.png)
+![](https://main.qcloudimg.com/raw/deb308676d70aa35a6f3fba1046281d9.png)
  - **镜像访问凭证**：
 	 - 集群已安装 TCR 扩展组件：无需配置。
 	 - 集群未安装 TCR 扩展组件：选择【添加镜像访问凭证】，并选择 [配置访问凭证](#issued) 步骤中已下发的访问凭证。如下图所示：
-![](https://main.qcloudimg.com/raw/b4e08792da9d8657746bb9ad4733ef88.png)
+![](https://main.qcloudimg.com/raw/e8ef83350f71a79b014bfcfc2382fd46.png)
 4. 完成其他参数设置后，单击【创建workload】后查看该工作负载的部署进度。
 部署成功后，可在 “Deployment” 页面查看该工作负载的“运行/期望Pod数量”为“1/1”。如下图所示：
-![](https://main.qcloudimg.com/raw/cc69105f8d20f2d6ed33e3a90c5d0c9f.png)
+![](https://main.qcloudimg.com/raw/b1d02a4df392d56e191daff8ae61db0f.png)
