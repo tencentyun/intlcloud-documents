@@ -1,6 +1,16 @@
 ## 效果展示
 您可以 [下载](https://intl.cloud.tencent.com/document/product/647/35076) 安装我们的 Demo 体验多人视频会议的效果，包括屏幕分享、美颜、低延时会议等 TRTC 在多人视频会议场景下的相关能力。
 
+
+
+
+
+
+
+
+
+
+
 如需快速接入多人视频会议功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCMeeting 组件并实现自定义 UI 界面。
 
 <span id="DemoUI"> </span>
@@ -10,7 +20,9 @@
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【立即开始】，输入应用名称，例如 `TestMeetingRoom` ，单击【创建应用】。
 
->?本功能需同时使用 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>?本功能同时使用了腾讯云  [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+
+
 
 <span id="ui.step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
@@ -64,8 +76,8 @@
 1. 在 dependencies 中添加 TRTCSDK 和 IMSDK 的依赖。
 ```
 dependencies {
-       complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
-       complie 'com.tencent.imsdk:imsdk:latest.release'
+       compile "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+       compile 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
 >?两个 SDK 的最新版本号，可以在 [TRTC](https://github.com/tencentyun/TRTCSDK) 和 [IM](https://github.com/tencentyun/TIMSDK) 的 Github 首页获取。
