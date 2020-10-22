@@ -35,7 +35,7 @@ wget -c 'https://mysql-database-backup-sh-1218.cos.ap-nanjing.myqcloud.com/12427
 ```
 xbstream -x -C /data < ~/test.xb
 ```
->
+>?
 >- `/data` is used as an example in this document. You can replace it with a real path according to the actual situation.
 >- Replace `~/test.xb` with your backup file.
 >
