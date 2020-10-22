@@ -25,8 +25,8 @@ You can configure an origin-pull rule for your bucket through the COS Console. T
 ```shell
 abc.example.com
 abc.example.com:8080
-10.10.10.10
-10.10.10.10:8080
+202.96.128.86
+202.96.128.86:8080
 ```
 
 You can configure a specific origin-pull address using the following fields:
