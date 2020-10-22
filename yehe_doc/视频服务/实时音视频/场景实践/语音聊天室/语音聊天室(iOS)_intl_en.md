@@ -182,14 +182,7 @@ self.voiceRoom.createRoom(roomID: yourRoomID, roomParam: param) { (code, message
             // The anchor failed to take a seat
         }
     }
-}
 
-// 3. The anchor creates a room
-let param = TRTCCreateRoomParam(roomName: "Test room", coverUrl: "")
-mLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, error) in
-    if code == 0 {
-        // 4. The anchor enables push and publishes the stream to CDN
-        self?.mLiveRoom.startPublish(streamID: mSelfUserId + "_stream", callback: nil)
     }
 }
 
