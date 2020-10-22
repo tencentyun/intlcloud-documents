@@ -26,7 +26,7 @@ v2.7.1 正式版本更新如下：
 <td ><ul style="margin:0;"><li >增加房间管理功能（目前处于灰度内测阶段，您可以 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请使用）。</li>
 <li>语音消息支持变声。</li>
 <li >增加伴奏升降 Key 功能。</li>
-<li >增加不同房间对唱功能（目前处于灰度内测阶段，您可以 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请使用）。</li></ul ></td>
+<li >增加不同房间对唱功能（目前处于灰度内测阶段，您可以 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请使用）。</li>
 <li >修复 iOS14 系统下声音过小问题。</li>
 </ul ></td>
 <td>2020-10-22</td> 
