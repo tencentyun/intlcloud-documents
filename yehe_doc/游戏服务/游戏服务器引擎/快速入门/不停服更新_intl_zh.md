@@ -37,7 +37,7 @@
 
 ![](https://main.qcloudimg.com/raw/bd50a2945932d10887767388ffe07710.png)
 
-通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 创建成功一个游戏服务器会话，即可看到服务器舰队1产生一个游戏服务器会话。
+通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 成功创建一个游戏服务器会话，即可看到服务器舰队1产生一个游戏服务器会话。
 ![](https://main.qcloudimg.com/raw/6531df797c5cd0486957a0e277de65e3.png)
 
 
