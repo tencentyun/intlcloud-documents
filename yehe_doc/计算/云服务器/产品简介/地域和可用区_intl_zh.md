@@ -9,7 +9,7 @@
 ### 相关特性
 
 - 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式较为高速、稳定。
 - [负载均衡](https://intl.cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
@@ -17,7 +17,7 @@
 ### 简介
 
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。其目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
-您可以通过 API 接口查询可用区列表查看完整的可用区列表。
+您可以通过 API 接口 [查询可用区列表](https://intl.cloud.tencent.com/document/product/213/35071) 查看完整的可用区列表。
 
 ### 相关特性
 
@@ -38,7 +38,7 @@
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
-		<td>广州二区<br> ap-guangzhou-2</td>
+		<td>广州二区（已售罄）<br> ap-guangzhou-2</td>
 	</tr>
 	<tr>
 		<td>广州三区<br> ap-guangzhou-3</td>
@@ -72,7 +72,7 @@
 			<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td rowspan="4">华北地区（北京）<br>ap-beijing</td>
+			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
 			<td>北京一区<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -83,6 +83,9 @@
 	</tr>
 	<tr>
 			<td>北京四区<br>ap-beijing-4</td>
+	</tr>
+	<tr>
+			<td>北京五区<br>ap-beijing-5</td>
 	</tr>
 	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
@@ -115,8 +118,11 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td>亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
+		</tr>
+		<tr>
+			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
 		</tr>
 		<tr>
 			<td >亚太东北（首尔）<br>ap-seoul</td>
@@ -249,8 +255,8 @@
 	  <td>用户不能跨可用区创建子网。</td>
 	</tr>
 	<tr>
-	<td> 路由表 </td>
-	  <td>rtb-xxxxxxxx</td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/215/31810"> 路由表</a> </td>
+	  <td> rtb-xxxxxxxx</td>
 	  <td>单地域多可用区可用</td>
 	  <td>用户创建路由表时需要指定特定的私有网络，因此跟随私有网络的位置属性。</td>
 	</tr>
