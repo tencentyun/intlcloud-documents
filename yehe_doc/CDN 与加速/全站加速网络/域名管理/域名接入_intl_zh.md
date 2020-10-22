@@ -17,8 +17,8 @@ ECDN 加速域名接入加速平台的主要步骤如下：
 进入**添加域名**页面，按页面提示，填写加速域名信息。
 ![](https://main.qcloudimg.com/raw/23711a3ed5c1ffdcd908f6919ce13233.png)
 
->
->- >- 新增的加速域名必须通过 [工信部域名备案](http://beian.miit.gov.cn/) 或接入 [腾讯云网站备案](https://cloud.tencent.com/product/ba?from=qcloudProductBa)，且未接入过腾讯云 CDN 或 腾讯云 ECDN，已接入 CDN 的域名需下线删除后，才能添加到 ECDN 平台。
+>!
+>- 若加速区域包含中国境内区域，根据相关法规新增加速域名必须通过 [工信部域名备案](http://beian.miit.gov.cn/) 或接入 [腾讯云网站备案](https://cloud.tencent.com/product/ba?from=qcloudProductBa)，且未接入过腾讯云 CDN 或 腾讯云 ECDN，已接入 CDN 的域名需下线删除后，才能添加到 ECDN 平台。
 >- 您可以在**所属项目**处对域名进行分项目管理。这里的项目为腾讯云所有产品共享，您可以在 [项目管理](https://console.cloud.tencent.com/project) 控制台中对项目进行管理。
 >- 当源站类型为**源站 IP** 时，回源策略支持择优回源、分权重回源和分主备回源三种，详情请参见 [高级回源策略](https://intl.cloud.tencent.com/document/product/570/35821) 配置方法。 
 >- 当源站类型为**源站域名**时，只能填入一个源站域名，且不能与加速域名相同，支持端口设置，设置格式为 ```Host:Port```，端口号范围 1 - 65535。
@@ -69,4 +69,8 @@ ECDN 加速域名接入加速平台的主要步骤如下：
 ## 步骤3：配置域名 CNAME
 1. 确定 host 测试正常后，您就可以将域名请求切换到 ECDN 加速平台。切换时，您只需要到加速域名的 DNS 服务商处完成 CNAME 配置即可，配置方法请参见 [CNAME 配置](https://intl.cloud.tencent.com/document/product/570/11134)。
 2. 验证域名 CNAME 是否已经生效：不同的 DNS 服务商，CNAME 生效的时间略有不同，一般会在半个小时之内生效。您也可以通过 PING 或者 dig 的方式来查询 CNAME 是否生效，如果 PING 到后缀为 ```.dsa.sp.spcdntip.com``` 或 ```.dsa.p23.tc.cdntip.com``` 的域名，表示域名 CNAME 已生效。
+
+
+## 后续步骤
+接入完成后，腾讯云 ECDN 会为您分配对应的 CNAME 地址，您需要完成 CNAME 的配置，加速服务才能生效。详情请参见 [配置 CNAME](https://intl.cloud.tencent.com/document/product/570/11134)。
 
