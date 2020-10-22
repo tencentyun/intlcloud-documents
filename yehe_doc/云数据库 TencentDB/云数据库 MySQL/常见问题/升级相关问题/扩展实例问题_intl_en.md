@@ -1,4 +1,4 @@
-### What is the difference between read-only, slave, and disaster recovery instances?
+### What is the difference between read-only instances and replica instances?
 - Read-only instance: it only allows the read operation and is deployed in the same region as the master instance. A master instance can have up to 5 read-only instances.
 - Slave instance: it is used to back up the database and deployed in the same region as the master instance. A master instance can have 1 or 2 slave instances.
 
