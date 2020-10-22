@@ -2,9 +2,9 @@ TencentDB for MySQL은 고가용성 버전, 파이낸스 버전, 단일 노드 �
 
 ## 인스턴스 구성 조회
 - 구매 시 [MySQL 구매 페이지](https://buy.cloud.tencent.com/cdb)에 로그인한 뒤, '구성'에서 해당하는 구성을 선택할 수 있습니다.
-![](https://main.qcloudimg.com/raw/f1417a645690900e4d82515e8e609d3b.png)
+![](https://main.qcloudimg.com/raw/5bbc8288b981097d8f6b36e150ddf7e2.png)
 - 구매 후 [MySQL 콘솔](https://console.cloud.tencent.com/cdb/)에 로그인한 뒤, 인스턴스 리스트의 '설정'에서 인스턴스 구성을 조회할 수 있습니다.
-![](https://main.qcloudimg.com/raw/0f5f39c3eeb7bdbcd61d6ccf157c07b2.png)
+![](https://main.qcloudimg.com/raw/f0618995c7b9f4821c0d4f18ce4a6f45.png)
 
 
 ## 아키텍처별 대조

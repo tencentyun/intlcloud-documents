@@ -34,7 +34,7 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 		<th>AZ</th>
 	</tr>
 	<tr>
-		<td rowspan="4">South China (Guangzhou)<br> ap-guangzhou</td>
+		<td rowspan="5">South China (Guangzhou)<br> ap-guangzhou</td>
 		<td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -46,7 +46,10 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 	<tr>
 		<td>Guangzhou Zone 4 </br>ap-guangzhou-4</td>
 	</tr>
-		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
+	<tr>
+		<td>Guangzhou Zone 6<br> ap-guangzhou-6</td>
+	</tr>
+		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -57,6 +60,9 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 	</tr>
 	<tr>
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
+	</tr>
+        <tr>
+		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
 	</tr>
 		<tr>
 			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
