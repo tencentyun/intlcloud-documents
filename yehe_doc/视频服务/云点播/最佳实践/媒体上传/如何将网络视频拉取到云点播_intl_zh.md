@@ -10,6 +10,8 @@
 
 - 购买腾讯云云服务器（CVM）用于执行 API 请求脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
 
+- 消耗 VOD 存储用于存储拉取上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
+
 
 ### 限制
 
@@ -22,19 +24,19 @@
 - 如果拉取的对象是 HLS（M3U8 文件类型），那么 Media Segment（一般是 TS 文件类型）的 URI 要求是相对路径，且不能带参数。
 
 ## 在控制台拉取上传
-
-### 步骤1：开通云点播<span id="p11"></span>
+<span id="p11"></span>
+### 步骤1：开通云点播
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-
-### 步骤2：创建拉取任务<span id="p12"></span>
+<span id="p12"></span>
+### 步骤2：创建拉取任务
 
 访问云点播控制台的 [上传页面](https://console.cloud.tencent.com/vod/media/upload)，上传方式选择【视频拉取】，然后单击【添加一行】，填写待拉取视频的 URL（本文以 [测试视频 URL](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 为例，其余项为选填，开发者可以根据需要进行填写），最后单击左下角的【拉取视频】：
 
 ![](https://main.qcloudimg.com/raw/3871a2c05ca1f26f62e0518cb3943309.png)
 >?拉取视频所花费的时间和视频文件的大小成正比。建议开发者选择较小的视频（如几十MB以内）进行测试，避免长时间等待。
-
-### 步骤3：查看拉取结果<span id="p13"></span>
+<span id="p13"></span>
+### 步骤3：查看拉取结果
 
 等待一两分钟后（根据视频文件的大小有所差别），在 [媒资管理页面](https://console.cloud.tencent.com/vod/media) 可以看到已经拉取完成的视频：
 
@@ -42,8 +44,8 @@
 >?如果拉取过程中浏览器一直停留在媒资管理页面，那么需要刷新页面才能看到拉取完成的视频。
 
 ## 调用云 API 拉取上传
-
-### 步骤1：准备腾讯云 CVM<span id="p21"></span>
+<span id="p21"></span>
+### 步骤1：准备腾讯云 CVM
 
 云 API 请求脚本需要运行在一台腾讯云 CVM 上，要求如下：
 
@@ -55,16 +57,16 @@
 购买 CVM 的方法请参见 [操作指南 - 创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。重装系统的方法请参见 [操作指南 - 重装系统](https://intl.cloud.tencent.com/document/product/213/4933)。
 
 >!如果您没有符合上述条件的腾讯云 CVM，也可以在其它带外网的 Linux（如 CentOS、Debian 等）或 Mac 机器上执行脚本，但需根据操作系统的区别修改脚本中的个别命令，具体修改方式请开发者自行搜索。
-
-### 步骤2：获取 API 密钥<span id="p22"></span>
+<span id="p22"></span>
+### 步骤2：获取 API 密钥
 
 请求云 API 需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）。如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
-
-### 步骤3：开通云点播<span id="p23"></span>
+<span id="p23"></span>
+### 步骤3：开通云点播
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-
-### 步骤4：发起拉取任务<span id="p24"></span>
+<span id="p24"></span>
+### 步骤4：发起拉取任务
 
 登录 [步骤1](#p21) 中准备好的 CVM（登录方法详见 [操作指南 - 登录 Linux](https://intl.cloud.tencent.com/document/product/213/5436)），在远程终端输入以下命令并运行：
 
@@ -98,8 +100,8 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/pull_upload_api/; python3 pull_upl
 ```
 {"TaskId": "1400329073-PullUpload-4ea60158fc6f8e611bbfa750eb1fd0a9t0", "RequestId": "4e821b4a-9a29-409f-99cb-b703fa184e50"}
 ```
-
-### 步骤5：查看拉取结果<span id="p25"></span>
+<span id="p25"></span>
+### 步骤5：查看拉取结果
 
 等待一两分钟后（具体根据视频文件的大小有所差别），在 [媒资管理页面](https://console.cloud.tencent.com/vod/media) 可以看到已经拉取完成的视频：
 
