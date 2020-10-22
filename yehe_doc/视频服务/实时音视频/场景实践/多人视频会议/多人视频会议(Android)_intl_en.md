@@ -64,8 +64,8 @@ The video conferencing component `TRTCMeeting` depends on the TRTC SDK and IM SD
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
 ```
 dependencies {
-       complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
-       complie 'com.tencent.imsdk:imsdk:latest.release'
+       compile "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+       compile 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
 >?You can get the latest version numbers of the two SDKs on the [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK) homepages on GitHub.
