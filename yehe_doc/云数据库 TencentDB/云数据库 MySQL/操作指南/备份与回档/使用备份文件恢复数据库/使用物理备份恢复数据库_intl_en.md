@@ -1,6 +1,6 @@
 
 ## Operation Scenarios
-> To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packaged. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
+>?To save storage capacity, both physical and logical backups in TencentDB for MySQL will be compressed and packaged. Specifically, a backup file is compressed with qpress first and then packed with xbstream offered by Percona.
 >
 The open-source software tool Percona XtraBackup can be used to back up and restore databases. This document describes how to use XtraBackup to restore a physical backup file of a TencentDB for MySQL instance to a CVM-based self-created database.
 - XtraBackup only supports Linux but not Windows.
@@ -16,12 +16,12 @@ XtraBackup can be downloaded at [Percona's official website](https://www.percona
 ## Directions
 ### Step 1. Download the backup file
 You can download data backups and log backups of TencentDB for MySQL instances in the console.
->Each IP can have up to 10 download links by default, with a download speed limit of 20–30 Mbps each.
+>?Each IP can have up to 10 download links by default, with a download speed limit of 20–30 Mbps each.
 >
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
-2. On the instance management page, click **Backup and Restore** > **Data Backup List**, select the backup to download, and then click **Download** in the "Operation" column.
-3. You are recommended to copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command for download over the private network at a higher speed.
->
+1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
+2. On the instance management page, select **Backup and Restore** > **Data Backup List**, locate the desired backup, and click **Download** in the "Operation" column.
+3. We recommend that you copy the download address in the pop-up dialog box, [log in to a (Linux) CVM instance in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), and run the `wget` command for download over the private network at a higher speed.
+>?
 >- You can also select **Download** to download it directly, which takes more time though.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb 
 >
@@ -47,7 +47,7 @@ The unpacking result is as shown below:
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->If an error is displayed for the `wget` download operation, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download the qpress locally, and then upload it to the Linux CVM instance. For more information, please see [Uploading Files to Linux CVM with SCP](https://intl.cloud.tencent.com/document/product/213/2133).
+>?If an error is displayed for the `wget` download operation, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download the qpress locally, and then upload it to the Linux CVM instance. For more information, please see [Uploading Files to Linux CVM with SCP](https://intl.cloud.tencent.com/document/product/213/2133).
 2. Extract the qpress binary files by running the following command.
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
@@ -57,7 +57,7 @@ source /etc/profile
 ```
 xtrabackup --decompress --target-dir=/data
 ```
->
+>?
 >- `/data` is the target directory where the backup file was previously stored. You can replace it with a real path according to the actual situation.
 >- The `--remove-original` options is supported only in Percona Xtrabackup 2.4.6 and higher.
 >- `xtrabackup` won't delete the original files during decompression by default. If you want to delete them upon the completion of decompression, add the `--remove-original` parameter to the above command.
@@ -78,7 +78,7 @@ If the execution result contains the following output, it means that the prepara
 ```
 vi /data/backup-my.cnf
 ```
->The target directory `/data` is used as an example in this document. You can replace it with a real path according to the actual situation.
+>?The target directory `/data` is used as an example in this document. You can replace it with a real path according to the actual situation.
 >
 2. Given the existing version issues, the following parameters need to be commented in the extracted file `backup-my.cnf`.
  - innodb_checksum_algorithm
