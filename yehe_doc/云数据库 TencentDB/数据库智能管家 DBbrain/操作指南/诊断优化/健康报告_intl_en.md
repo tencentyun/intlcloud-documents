@@ -19,7 +19,7 @@ Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analys
 A health report displays DBbrain's evaluation of the overall operation conditions of the selected database instance in the specified time period. Items in the report includes the database's existing problems, an analysis of existing problems, and corresponding suggestions, helping you gain a comprehensive understanding of the overall operation status of the selected instance and coordinate relevant personnel to troubleshoot issues.
 
 A report contains the following sections: overview, basic information, health, instance status, exception diagnosis, slow SQL analysis, big table analysis, and performance curve.
-![](https://main.qcloudimg.com/raw/0c9c419181dbd916fef71d1a23ec33fb.png)
+![](https://main.qcloudimg.com/raw/7b72c424b10c1abd1572c0f6ee64f2de.png)
 
 #### Appendix
 #### Reported exception level definitions

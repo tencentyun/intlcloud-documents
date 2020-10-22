@@ -6,7 +6,6 @@ The primary causes of Linux instance login failures include:
 - [Password problems](#CryptographicProblem)
 - [Excessive bandwidth utilization](#BandwidthUtilization)
 - [High server load](#HighServerLoad)
-- [Incorrect remote port configuration](#RemotePortConfiguration)
 - [Incorrect security group rules](#SafetyGroupRule)
 
 
@@ -49,13 +48,6 @@ If you cannot use the standard method (Webshell) or remote login software to log
 **Steps**:
 1. Log in to the instance by using [VNC](#VNC).
 2. In "Task manager", find the process with a high load. For details, see [Unable to Log In Due to High CPU and Memory Usage](https://intl.cloud.tencent.com/document/product/213/32387).
-
-
-<span id="RemotePortConfiguration"></span>
-### Incorrect remote port configuration
-**Problem**: the remote port is inaccessible, the remote access port is not the default port or has been modified, or port 22 is not open.
-**Diagnosis**: check whether the public IP address of the instance can be pinged through. Run the `telnet` command to check whether the port is open.
-**Steps**: see [Unable to Log In Remotely Due To Port Issues](https://intl.cloud.tencent.com/document/product/213/32540).
 
 <span id="SafetyGroupRule"></span>
 ### Incorrect security group rules

@@ -70,7 +70,7 @@ The causes and solutions for common exceptional ECDN status codes are as follows
 			<td>The content of the origin server's response obtained by the node is incomplete or is in an incompatible format. You can <a href='https://console.cloud.tencent.com/workorder/category'>submit a ticket</a> for assistance. </td>
 		</tr>
 		<tr>
-			<td rowspan="1" style="text-align: center">523</td>
+			<td rowspan="1" style="text-align: center">513</td>
 			<td>Access requests from a certain region surge and are therefore blocked </td>
 			<td>Access requests from a certain region surge, which are suspected as attack traffic and automatically blocked by the platform. If you are sure that they are not attack traffic, you can <a href='https://console.cloud.tencent.com/workorder/category'>submit a ticket</a> to apply for canceling the access limit. </td>
 		</tr>

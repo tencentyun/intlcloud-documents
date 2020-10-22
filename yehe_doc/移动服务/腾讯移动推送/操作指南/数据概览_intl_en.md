@@ -42,7 +42,7 @@ iOS:
 - Clicked: the number of times the notification was clicked
 - Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
 - Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
-- Opt-in devices: the number of devices on which the notification bar is enabled.
+- Opt-In Devices: the number of devices on which the notification bar is enabled (the notification bar status will be checked every 10 seconds. The change will be reported when the application frontend is online).
 - Uninstalled/unavailable devices: the total number of devices offline over 90 consecutive days and the devices that vendor/TPNS SDK returned unavailable.
 - New Devices: the number of unique devices that got newly registered Token on the day
 

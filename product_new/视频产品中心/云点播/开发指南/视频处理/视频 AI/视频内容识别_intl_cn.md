@@ -128,7 +128,7 @@
                             {
                                 "Id":236099,
                                 "Type":"Default",
-                                "Name":"李四",
+                                "Name":"王五",
                                 "SegmentSet":[
                                     {
                                         "StartTimeOffset":120,
@@ -157,4 +157,4 @@
 
 回调结果中，`ProcedureStateChangeEvent.AiRecognitionResultSet`有`Type`为`FaceRecognition`的识别结果，代表人脸识别。
 
-`Type`为`FaceRecognition`的结果显示，`Output.ResultSet`中包含了两个识别出的人物，分别是`张三`和`李四`。`SegmentSet`表示人脸出现在视频中的时间段（由`StartTimeOffset`和`EndTimeOffset`确定）和在画面中的坐标（由`AreaCoordSet`确定）。
+`Type`为`FaceRecognition`的结果显示，`Output.ResultSet`中包含了两个识别出的人物，分别是`张三`和`王五`。`SegmentSet`表示人脸出现在视频中的时间段（由`StartTimeOffset`和`EndTimeOffset`确定）和在画面中的坐标（由`AreaCoordSet`确定）。

@@ -31,59 +31,27 @@ You can use the recording feature of VOD to save video content of LVB streams to
 
 VOD has storage nodes in multiple regions around the globe. During media upload, files will be stored in the specified region. Currently, VOD supports the following storage regions:
 
-<table>
-    <tr>
-        <th>
-            Storage Region                
-        </th>
-        <th>
-            Region Abbreviation                
-        </th>
-    </tr>
-    <tr>
-    <tr>
-        <td>
-            Beijing             
-        </td>
-        <td>
-			ap-beijing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Shanghai             
-        </td>
-        <td>
-			ap-shanghai
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Chongqing             
-        </td>
-        <td>
-			ap-chongqing
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Tianjin             
-        </td>
-        <td>
-			ap-beijing-1
-        </td>
-    </tr>
-</table>
+|Storage Region |Region Abbreviation |
+|---|----|
+| Hong Kong (China)       |  ap-hongkong  |
+| Singapore|     ap-singapore      |  
+| Mumbai      |    ap-mumbai        |
+| Seoul     |     ap-seoul        |
+| Bangkok     |     ap-bangkok    |    
+| Silicon Valley     |     na-siliconvalley |        
+| Eastern US     |     na-ashburn |       
+| Toronto        |   na-toronto       | 
+| Frankfurt     |     eu-frankfurt   |
 
 ### Activating storage regions
 
 An important purpose of configuring multiple storage regions is to improve media upload quality (success rate and speed), which is subject to the distance between the uploader and storage node. Generally, the shorter the distance, the better the upload quality.
 
-After you activate the VOD service, VOD will automatically assign the **Chongqing** storage region. You can activate other storage regions based on your actual business needs. For detailed directions, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). **Once activated, a storage region cannot be deactivated.**
+After you activate the VOD service, VOD will automatically assign **Toronto, Frankfurt, Hongkong, Mumbai, Tokyo, Seoul, Moscow, Singapore, Bangkok, and Ashburn** as storage regions. You can enable other storage regions (such as Chinese mainland) based on your actual business needs. For detailed directions, please see [Upload Storage Settings](https://intl.cloud.tencent.com/document/product/266/18874). **Once activated, a storage region cannot be deactivated.**
 
 ### Default storage region
 
-In all of your activated storage regions, only one will be used as the default region. If you have only one activated region (Chongqing), it will be the default storage region; if you have activated multiple storage regions, you can select another region as the default storage region in the console. For detailed directions, please see [Storage Region Settings](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).
+In all of your activated storage regions, only one will be used as the default region. If you have only one activated region, it will be the default storage region; if you have activated multiple storage regions, you can select another region as the default storage region in the console. For detailed directions, please see [Storage Region Settings](https://intl.cloud.tencent.com/document/product/266/18874#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4).
 
 Purpose of the default storage region: in some scenarios, this region will be first selected as the target region for media upload. For more information, please see the following section.
 
@@ -92,7 +60,7 @@ Purpose of the default storage region: in some scenarios, this region will be fi
 A specified storage region is needed for media upload, which can be automatically selected by the VOD backend by default or be specified in the upload request.
 
 - When the VOD backend automatically selects the storage region:
-  - If you have only one storage region, i.e., Chongqing, all uploaded media files will be stored in this region.
+  - If you have only one storage region, all uploaded media files will be stored in this region.
   - If you have activated multiple storage regions, the region selection policies for different upload methods are as follows:
  <table border=0 cellpadding="0" cellspacing="0">
 <thead>

@@ -18,11 +18,11 @@ Cloudbase-Init 를 설치하기 위해 다음의 소프트웨어가 필요합니
 
 1. 운영 체제 인터페이스에서 Cloudbase-Init 설치 패키지를 더블 클릭하여 엽니다.
 2. 아래 이미지와 같이, 보안 경고 팝업 창에서 [실행]을 클릭하여 Cloudbase-Init 설치 인터페이스에 진입합니다.
-![](https://main.qcloudimg.com/raw/bdeb8ff4370dc6da38da6749154e449f.png)
+![](https://main.qcloudimg.com/raw/3249309f71fccaf73feeaa5bb55301c3.png)
 3. [Next]를 클릭합니다.
 4. [I accept the terms in the License Agreement]를 선택하고 [Next]를 두 번 클릭합니다.
 5. 아래 이미지와 같이, “Configuration options” 인터페이스에서 “**Serial port for logging**”을 “**COM1**”으로 설정한 후 [Next]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/a41580e9b21e4550245b661b44682937.png)
+![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. [Install]을 클릭하여 Cloudbase-Init 를 설치합니다.
 7. 아래 이미지와 같이, Cloudbase-Init 가 설치되면 [Finish]를 클릭해 Cloudbase-Init 설치 인터페이스를 닫습니다.
 > Cloudbase-Init 설치 인터페이스를 닫을 때, 체크 박스를 선택하거나 Sysprep를 실행하지 마세요.

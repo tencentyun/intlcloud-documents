@@ -15,6 +15,10 @@ Service 支持以下类型：
 - 集群内访问：使用 Service 的 ClusterIP 模式，用于集群内访问。
 - VPC 内网访问：使用 Service 的 Loadbalance 模式，自动创建内网 CLB。指定 `annotations:service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxxxx`，VPC 内网即可通过内网 IP 直接访问到后端的 Pod。
 
+>! 当 Service 类型为公网访问时，默认不为该 Service 开启 ClusterIP。可通过在 yaml 中增加如下 annotations 开启 ClusterIP：
+```java
+service.kubernetes.io/qcloud-clusterip-loadbalancer-subnetid: #Service CIDR使用的子网ID
+```
 
 ### Ingress
 Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过配置转发规则，实现不同 URL 可以访问到集群内不同的 Service。
