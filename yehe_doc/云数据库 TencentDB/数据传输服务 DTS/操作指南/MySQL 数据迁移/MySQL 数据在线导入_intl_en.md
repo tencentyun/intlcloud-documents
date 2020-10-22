@@ -133,4 +133,4 @@ To cancel an ongoing migration task, click **Cancel**.
 ### 9. Complete migration
 >!If the migration is in "not completed" status, the migration task will continue, so will data sync.
 
-After the migration is 100% completed, you can click **Complete** on the right to complete the migration task.
+After the migration progress is 100%, the data lag between target and source databases is 0 MB, and the time lag between them is 0 seconds, you can click **Complete** on the right to complete the migration task.

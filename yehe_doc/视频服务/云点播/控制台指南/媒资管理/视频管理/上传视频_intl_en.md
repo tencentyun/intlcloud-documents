@@ -13,8 +13,9 @@ This document describes how to upload videos through the VOD Console, including 
 2. Click **Upload Video** to enter the "Upload Video" page.
 ![](https://main.qcloudimg.com/raw/098125ef7743bdb344087248eeea2f1b.png)
 3. Select **Local Upload** to upload a local file to the console. Click **Select Video** to select a local video file or drag and drop the file into the upload list zone.
- > ?Batch upload is supported. You can upload up to 5 videos at a time, and all the selected videos will be displayed in the upload list.
+
 4. In the upload list, you can check the filename and size of a selected video, modify its name and category, or delete it.
+![](https://main.qcloudimg.com/raw/f97e4fac9cd9d3a55bd302a36df75f35.png)
 5. You can choose whether to process the uploaded video.
    - If no processing is needed, select **No Processing After Upload**.
    - If processing is needed, select **Automatic Processing After Upload** and configure video processing parameters according to the table below.
@@ -29,12 +30,6 @@ This document describes how to upload videos through the VOD Console, including 
          <td>Transcoding</td>   
 	     <td>If **Transcoding** is selected as the processing type, this parameter is <b>"Transcoding Template"</b><ul><li>Click **Transcoding Template** to select an existing template<li>Click **Common Template** to select a common template</ul></td>   
 	     <td nowrap="nowrap"><ul><li>Select **No watermark** <li>Select **Default watermark** <li>Select **Select watermark template**</td>   
-	     <td>Select whether to use the first frame as the video cover</td>
-     </tr> 
-	 <tr>      
-         <td nowrap="nowrap">Adaptive bitrate streaming</td>   
-	     <td>If **Adaptive Bitrate Streaming** is selected as the processing type, this parameter is <b>"Transcoding Template"</b>: multiple transcoding templates can be selected</td>   
-	     <td><ul><li>Select **No watermark** <li>Select **Default watermark** <li>Select **Select watermark template**</td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
 	 <tr>      
@@ -64,7 +59,8 @@ This document describes how to upload videos through the VOD Console, including 
  - Video Name: enter the name of the source video.
  - Cover URL: enter the URL of the cover to be pulled.
  - Category: select a video category.
-5. Click **Upload** to upload the video.
+5. Click **Pull Video** to upload the video.
+![](https://main.qcloudimg.com/raw/bd901cf366af7e5a695929db7d41dfdf.png)
 
 >?It takes several minutes to upload a video. You can view the upload progress in **Video Management** > **Uploading**. After videos are successfully uploaded, you can view and manage all of them in **Video Management** > **Uploaded**.
 
@@ -85,4 +81,6 @@ You need to fill in the TXT or CSV file in the specified format, which can be vi
 >?
 >- The columns are video resource URL, video name, and video cover URL, respectively. **Please fill in the columns in sequence.**
 >- After the list is parsed, please check whether there are any errors and upload after confirmation.
+>- 建议您下载文件样例了解上传文本的格式。
 
+![](https://main.qcloudimg.com/raw/6cb755579222617d63441fae07a2195a.png)

@@ -114,6 +114,7 @@ This API is used to clear all accounts and batch add accounts.
 - accounts: the array of accounts.
 
 > ?
+>- One account supports binding up to 100 tokens. 
 >- Use a dictionary in key-value pairs for account operations and fixed account for `key`.
 >- Syntax for Objective-C: @[@{@"accountType":@(0),@"account":identifier}];
 >- Syntax for Swift: [["accountType":NSNumber(0),"account":identifier]]

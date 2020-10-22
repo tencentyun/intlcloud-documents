@@ -8,6 +8,10 @@ Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analys
 ## Recommended Features
 The navigation bar at the top highlights popular features recommended by DBbrain. You can click **Try Now** to quickly access the details of the corresponding feature.
 
+## Custom Settings
+DBbrain provides custom settings. Click **Custom Settings** to enter the instance management page and set the instance to be displayed on the overview page as needed. For more information, please see [Instance Management](https://intl.cloud.tencent.com/document/product/1035/36033).
+![](https://main.qcloudimg.com/raw/5a863f31a370d7b11f76adffb5a0c2dc.png)
+
 ## Exception Alarms
 DBbrain's 24/7 exception diagnosis module can detect problems in database instances in real time and provide optimization plans accordingly. This module displays the total number of exception alarms in the last three hours and in the last 24 hours. You can click to access the exception alarm page and view more details.
 
@@ -18,4 +22,4 @@ DBbrain periodically performs health checks on all instances and scores them acc
 The task running status displays the execution status of existing tasks on the current instance.
 
 ## Monitoring Status Rankings
-The resource monitoring status rankings display the resource consumption rankings of selected monitoring metrics, including CPU, memory, disk, number of slow logs, TPS, QPS, connected threads, and running threads. You can click an instance to view details about its exception diagnosis.
+The resource monitoring status rankings display the resource consumption rankings of selected monitoring metrics, including CPU, memory, disk utilization, number of slow queries, TPS, QPS, connected threads, and running threads. You can click an instance to view details about its exception diagnosis.

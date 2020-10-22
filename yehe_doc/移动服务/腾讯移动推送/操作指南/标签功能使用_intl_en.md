@@ -30,8 +30,8 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
             <td>Custom tag</td>
             <td>Custom tag, such as meeting ID, class ID, user hobbies (like basketball and digital products), etc.</td>
 						<td>xg_user_define</td>
-						  <td><li>Up to 10,000 custom tags are allowed (if you want to increase this limit, please submit a ticket)
-<li>One device token can be bound to up to 100 custom tags (if you want to increase this limit, please submit a ticket)
+<td><li>Up to 10,000 custom tags are allowed. If you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>
+<li>One device token can be bound to up to 100 custom tags. If you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> 
 <li>One custom tag can be bound to an unlimited number of device tokens</td>
 <td> love_basketball, love_shopping, male, etc.</td>
         </tr>
@@ -84,17 +84,22 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 						<tr><!--<td>61td>-->
 				  <td>Online duration</td>
 					<td>The API call is not supported</td>
-					<td>Devices online in the last 10 days</td>
-				</tr>		
+						<td>Devices online in the last N day(s). Valid values for N: an integer in [10,30] and in string format.</td>
+					<td>Devices online in the last "10" days</td>	
 						<tr><!--<td>61td>-->
 				  <td>Offline duration</td>
 					<td>The API call is not supported</td>
-					<td>Devices offline in the last 10 days</td>
-				</tr>		
+						<td>Devices offline in the last N day(s). Valid values for N: an integer in [10,30] and in string format.</td>
+					<td>Devices offline in the last "10" days</td>
 						<tr><!--<td>61td>-->
 				  <td>Recently registered</td>
 					<td>The API call is not supported</td>
-					<td>Devices registered between September 1 and September 10, 2020</td>
+						<td><li>Devices registered between [startDate, endDate] and in [YYYYmmdd,YYYYmmdd] format.
+<li>The `startDate` cannot be 30 days earlier than the `endDate `
+<li>The `endDate` cannot be the current day
+<li>The `startDate` cannot be 90 days earlier than the current day
+<li>The `startDate` and `endDate` can be the same day</td>
+					<td>Devices registered between [20200901,20200910]</td>
 				</tr>							
 </table>
 

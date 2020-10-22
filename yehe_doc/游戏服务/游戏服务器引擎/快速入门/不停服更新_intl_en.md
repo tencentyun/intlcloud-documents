@@ -31,9 +31,9 @@ This document describes how to implement zero downtime update through an alias.
 Call the TencentCloud API in the code. This example uses [TencentCloud API Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) for quick creation.
 
 >?Input parameter description:
-- `Region` indicates the region, which is “ap-shanghai” (East China (Shanghai)) in this example;
-- `MaximumPlayerSessionCount` indicates the maximum number of players, which is 10 in this example;
-- `AliasId` indicates the alias ID, which is the ID of the newly created alias in this example.
+- `Region`: indicates the region, which is “ap-shanghai” (East China (Shanghai)) in this example;
+- `MaximumPlayerSessionCount`: indicates the maximum number of players, which is 10 in this example;
+- `AliasId`: indicates the alias ID, which is the ID of the newly created alias in this example.
 
 ![](https://main.qcloudimg.com/raw/bd50a2945932d10887767388ffe07710.png)
 

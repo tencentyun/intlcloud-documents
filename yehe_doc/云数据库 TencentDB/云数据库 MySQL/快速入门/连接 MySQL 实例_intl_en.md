@@ -74,7 +74,7 @@ Below takes `show databases;` as an example:
 <span id = "waiwang"></span>
 ## Appendix 1. Enabling Public Network Connection Address
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance details page.
-2. Find **Public Network Address** in the basic information section on the instance details page and click **Enable**.
+2. In the "Basic Info" section, click **Enable** next to "Public Network Address".
 >? If the basic info section contains the public network address and port, it indicates that the public network address has been enabled.
 >
 ![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)

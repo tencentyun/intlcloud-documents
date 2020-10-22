@@ -6,7 +6,6 @@ Linux 인스턴스에 로그인할 수 없는 주요 원인엔 아래 경우가 
 - [비밀번호 문제로 인해 로그인할 수 없을 경우](#CryptographicProblem)
 - [대역폭 이용률이 너무 높을 경우](#BandwidthUtilization)
 - [서버 고부하](#HighServerLoad)
-- [원격 포트 구성이 비정상인 경우](#RemotePortConfiguration)
 - [보안 그룹 규칙이 적합하지 않을 경우](#SafetyGroupRule)
 
 자가 진단 툴로 문제를 진단할 수 없다면 CVM에 [VNC 방식을 통해 로그인](#VNC)하여 장애를 진단하시길 권장합니다.
@@ -49,12 +48,6 @@ Linux 인스턴스에 로그인할 수 없는 주요 원인엔 아래 경우가 
 1. [VNC 로그인](#VNC)을 통해 인스턴스에 로그인합니다.
 2. [Linux 인스턴스: CPU 및 메모리의 높은 점유율로 인해 로그인할 수 없음](https://cloud.tencent.com/document/product/213/10310)을 참조하여 "작업 관리자"에서 고부하 프로세스를 진단합니다.
 
-
-<span id="RemotePortConfiguration"></span>
-### 원격 포트 구성이 비정상일 경우
-**장애 현상**: 원격 연결이 불가하고, 원격 액세스 포트가 기본 포트가 아니거나 수정된 경우, 또는 22 포트가 열려 있지 않은 경우.
-**문제 진단**: 인스턴스의 공용 네트워크 IP를 ping 체크 가능한지, telnet 명령어를 통해 포트가 열려 있는지 점검합니다.
-**처리 순서**: 자세한 내용은 [포트 문제로 인해 원격 로그인할 수 없음](https://cloud.tencent.com/document/product/213/10232)을 참조할 수 있습니다.
 
 <span id="SafetyGroupRule"></span>
 ### 보안 그룹 규칙이 적합하지 않을 경우

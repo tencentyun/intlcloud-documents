@@ -32,7 +32,7 @@ The performance trends feature currently supports the following performance metr
 </tr>
 <tr>
 <td rowspan=2>Storage space</td>
-<td>Disk</td>
+<td>Disk utilization</td>
 </tr>
 <tr>
 <td>Occupied disk space</td>

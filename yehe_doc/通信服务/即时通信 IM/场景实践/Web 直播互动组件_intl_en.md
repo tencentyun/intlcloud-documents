@@ -148,7 +148,7 @@ Web push and low-latency web streaming adopt the WebRTC technology, which works 
 | Android | UC Browser (mobile) | - | Not supported | Not supported | Not supported |
 | Android | WeChat embedded browser (with the TBS kernel) | - | Supported | Supported | Not supported |
 
-We recommend that you use the Mini Program solution on mobile devices, which is supported by both WeChat and Mobile QQ. This solution is built around native technologies of corresponding platforms and delivers excellent audio/video performance. It is specifically adapted to major mobile phone brands. If your application scenario mainly involves the education sector, we recommend that you use the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution for the teacher end. This solution is more stable and supports dual-channel pictures, more flexible screen sharing schemes, and more powerful recovery capabilities in poor network conditions.
+We recommend that you use the [Mini Program](https://intl.cloud.tencent.com/document/product/647/35150) solution on mobile devices, which is supported by both WeChat and Mobile QQ. This solution is built around native technologies of corresponding platforms and delivers excellent audio/video performance. It is specifically adapted to major mobile phone brands. If your application scenario mainly involves the education sector, we recommend that you use the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution for the teacher end. This solution is more stable and supports dual-channel pictures, more flexible screen sharing schemes, and more powerful recovery capabilities in poor network conditions.
 
 ## 5. Notes
 

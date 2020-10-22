@@ -34,11 +34,11 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 		<th>AZ</th>
 	</tr>
 	<tr>
-		<td rowspan="4">South China (Guangzhou)<br> ap-guangzhou</td>
+		<td rowspan="5">South China (Guangzhou)<br> ap-guangzhou</td>
 		<td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
-		<td>Guangzhou Zone 2<br> ap-guangzhou-2</td>
+		<td>Guangzhou Zone 2  (sold out)<br> ap-guangzhou-2</td>
 	</tr>
 	<tr>
 		<td>Guangzhou Zone 3 </br> ap-guangzhou-3</td>
@@ -46,7 +46,10 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 	<tr>
 		<td>Guangzhou Zone 4 </br>ap-guangzhou-4</td>
 	</tr>
-		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
+	<tr>
+		<td>Guangzhou Zone 6<br> ap-guangzhou-6</td>
+	</tr>
+		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -58,6 +61,9 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 	<tr>
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
 	</tr>
+        <tr>
+		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
+	</tr>
 		<tr>
 			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
 			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
@@ -66,7 +72,7 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 			<td>Nanjing Zone 2</br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td rowspan="4">North China (Beijing)<br>ap-beijing</td>
+			<td rowspan="5">North China (Beijing)<br>ap-beijing</td>
 			<td>Beijing Zone 1<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -77,6 +83,9 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 	</tr>
 	<tr>
 			<td>Beijing Zone 4</br>ap-beijing-4</td>
+	</tr>
+	<tr>
+			<td>Beijing Zone 5</br>ap-beijing-5</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
@@ -109,8 +118,11 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 			<th>AZ</th>
 		</tr>
 		<tr>
-			<td>Southeast Asia Pacific (Singapore)<br>ap-singapore</td>
+			<td rowspan="2">Southeast Asia Pacific (Singapore)<br>ap-singapore</td>
 			<td>Singapore Zone 1 (Singapore nodes can cover Southeast Asia Pacific)<br>ap-singapore-1</td>
+		</tr>
+		<tr>
+			<td>Singapore Zone 2 (Singapore nodes can cover Southeast Asia Pacific)<br>ap-singapore-2</td>
 		</tr>
 		<tr>
 			<td >Northeast Asia Pacific (Seoul)<br>ap-seoul</td>
@@ -243,7 +255,7 @@ The following table describes which Tencent Cloud resources are global, which ar
 	  <td>Users cannot create subnets across availability zones.</td>
 	</tr>
 	<tr>
-	<td> Routing Tables </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/31810"> Routing Tables</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>Regional</td>
 	  <td>When creating a routing table, users need to specify a VPC. Therefore, routing tables are regional as well.</td>

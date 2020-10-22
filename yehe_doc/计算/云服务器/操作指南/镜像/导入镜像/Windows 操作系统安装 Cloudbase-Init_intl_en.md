@@ -18,11 +18,11 @@ The following table describes the software required for installing Cloudbase-Ini
 
 1. On the desktop, double-click the Cloudbase-Init installation package.
 2. In the dialog box, click **Run** to enter the Cloudbase-Init setup wizard, as shown below:
-![](https://main.qcloudimg.com/raw/bdeb8ff4370dc6da38da6749154e449f.png)
+![](https://main.qcloudimg.com/raw/3249309f71fccaf73feeaa5bb55301c3.png)
 3. Click **Next**.
 4. Check **I accept the terms in the License Agreement** and click **Next** for the following two operations.
 5. On the **Configuration options** page, set **Serial port for logging** to **COM1** and click **Next**, as shown below:
-![](https://main.qcloudimg.com/raw/a41580e9b21e4550245b661b44682937.png)
+![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. Click **Install**.
 7. When the installation is completed, click **Finish** to close the Cloudbase-Init setup wizard, as shown below:
 > When closing the Cloudbase-Init setup wizard, do not check any checkbox or run Sysprep.

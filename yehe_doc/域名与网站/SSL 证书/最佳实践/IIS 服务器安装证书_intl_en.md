@@ -2,7 +2,7 @@
 This document describes how to install an SSL certificate on an IIS server.
 >?
 >- This document uses the certificate name `cloud.tencent.com` as an example. For your purposes, please use the name used in your certificate.
->- This document takes Windows 10 as an example. The detailed steps may vary slightly depending on the operating system.
+>- This document takes Windows Server 2012 R2 as an example. The detailed steps may vary slightly depending on the operating system.
 >- Before you install an SSL certificate, enable port 443 on the IIS server so that HTTPS can be enabled after the certificate is installed. For more information, see [How do I enable port 443 for a server?](https://intl.cloud.tencent.com/document/product/1007/36738).
 >- To upload a SSL certificate to CVMs, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
 

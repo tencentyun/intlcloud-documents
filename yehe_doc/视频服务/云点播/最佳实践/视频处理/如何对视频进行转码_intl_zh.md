@@ -11,6 +11,9 @@
 本文提供的代码是免费开源的，但在使用的过程中可能会产生以下费用：
 
 - 购买腾讯云云服务器（CVM）用于执行云 API 请求脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
+- 消耗 VOD 存储用于存储上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
+- 消耗 VOD 转码时长用于对视频进行转码，详见 [转码计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.A4.84.E7.90.86.3Cspan-id.3D.22media_edit.22.3E.3C.2Fspan.3E) 。
+- 消耗 VOD 流量用于播放视频，详见 [流量计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1.3Cspan-id.3D.22speed.22.3E.3C.2Fspan.3E) 。
 
 ## 在控制台发起转码
 
@@ -117,3 +120,4 @@ VOD 有多种上传视频的方式，包括控制台上传、服务端上传、�
 ## 上传视频后自动转码（事件通知）
 
 VOD 后台在视频上传完成和转码任务完成后均会发起 [事件通知](https://intl.cloud.tencent.com/document/product/266/33948) 请求。开发者可以利用事件通知机制来对新上传的视频发起转码，也可以通过事件通知来自动获取转码结果（上文展示的方法是人工在控制台查看转码结果）。
+事件通知的使用方法在单独的最佳实践文档 [接收事件通知](https://intl.cloud.tencent.com/document/product/266/37542) 中有详细介绍。
