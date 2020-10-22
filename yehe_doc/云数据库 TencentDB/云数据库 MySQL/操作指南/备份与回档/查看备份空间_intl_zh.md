@@ -31,4 +31,4 @@
 
 ## 热点问题
 #### 超出免费额度的备份空间如何收费？如何减少备份空间开销？
-请参见 [备份空间收费说明](https://intl.cloud.tencent.com/zh/document/product/236/32344)。
+请参见 [备份空间收费说明](https://intl.cloud.tencent.com/document/product/236/32344)。
