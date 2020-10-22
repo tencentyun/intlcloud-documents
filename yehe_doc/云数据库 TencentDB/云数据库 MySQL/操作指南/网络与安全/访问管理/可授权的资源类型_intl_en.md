@@ -94,3 +94,5 @@ The table below lists the TencentDB API operations which currently support resou
 | RenewDBInstance               | Renews a TencentDB instance             |
 | StopDBImportJob               | Stops a data import task             |
 | DescribleRoMinScale | Queries the minimum specification of a read-only instance |
+| DescribeRequestResult           | Queries task details       |
+| DescribeRoMinScale           | Queries the minimum specification of a read-only instance that can be purchased or upgraded to          |

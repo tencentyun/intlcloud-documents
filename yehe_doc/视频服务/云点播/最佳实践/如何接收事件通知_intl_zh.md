@@ -28,6 +28,8 @@ Demo 基于云函数（SCF） 搭建了一个 HTTP 服务，用于接收来自 V
 - 购买腾讯云云服务器（CVM）用于执行服务部署脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
 - 使用 SCF 提供签名派发服务，详见 [SCF 计费](https://intl.cloud.tencent.com/document/product/583/12284) 和 [SCF 免费额度](https://intl.cloud.tencent.com/document/product/583/12282)。
 - 使用腾讯云 API 网关为 SCF 提供外网接口，详见 [API 网关计费](https://intl.cloud.tencent.com/document/product/628/11771)。
+- 消耗 VOD 存储用于存储上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
+- 消耗 VOD 转码时长用于对视频进行转码，详见 [转码计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.A4.84.E7.90.86.3Cspan-id.3D.22media_edit.22.3E.3C.2Fspan.3E)。
 
 <span id="p0"></span>
 ### 避免影响生产环境

@@ -15,6 +15,18 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
+### 20200630
+#### New features
+- Supports `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE`.
+- Supports large transaction optimization, which can solve such issues as source-replica delay and backup failures caused by large transactions.
+- Optimizes the audit feature and supports asynchronous audit.
+
+#### Bug fixes
+- Fixed the overflow in the `digest_add_token` function.
+- Fixed the instance crash caused by `insert blob`.
+- Fixed the source-replica disconnection caused by a "record not found" error when HASH_SCAN was used in an event containing updates to the same row in a table.
+- Fixed the hanging queries to the `performance_schema` database.
+
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
