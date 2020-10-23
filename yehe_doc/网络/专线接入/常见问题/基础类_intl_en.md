@@ -32,7 +32,6 @@
 
 **Compliance FAQs**
 
-- [Why is the shared connection feature deactivated?](#61)
 - [Why is the shared tunnel suspended?](#63)
 - [Can I continue using the shared connection?](#67)
 - [Why do I need to choose a legitimate private line service?](#68)
