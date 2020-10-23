@@ -2,7 +2,7 @@
 本文档指导您如何在 IIS 中安装 SSL 证书。
 >?
 >- 本文档以证书名称 `cloud.tencent.com` 为例，实际名称请以您申请的证书为准。
->- 本文档以操作系统 Windows10 为例。由于操作系统的版本不同，详细操作步骤略有区别。
+>- 本文档以操作系统 Windows Server 2012 R2 为例。由于操作系统的版本不同，详细操作步骤略有区别。
 >- 安装 SSL 证书前，请您在 IIS 服务器上开启 “443” 端口，避免证书安装后无法启用 HTTPS。具体可参考 [服务器如何开启443端口？](https://intl.cloud.tencent.com/document/product/1007/36738)
 >- SSL 证书文件上传至服务器方法可参考 [如何将本地文件拷贝到云服务器](https://intl.cloud.tencent.com/document/product/213/34821)。
 
@@ -34,8 +34,8 @@
 ![](https://main.qcloudimg.com/raw/e034799a4a854d12348ded423151f83b.png)
 7. 在 “添加网站绑定” 的窗口中，将网站类型设置为 https，端口设置为443，主机名请填写您当前申请证书的域名，并指定对应的 SSL 证书，单击【确定】。如下图所示：
 ![](https://main.qcloudimg.com/raw/e5ca25bbe1b6fe1ba8abd535562f0840.png)
-8. 添加完成后，即可在 “网站绑定” 窗口中查看到新添加的内容。如下图所示：
-![](https://main.qcloudimg.com/raw/eaa3f08dc578da45ae0f6a3f79bc094f.png)
+8. 添加完成后，即可在 “网站绑定” 窗口中查看到新添加的内容。
+9. 请使用 `https://cloud.tencent.com` 进行访问。
 
 ### HTTP 自动跳转 HTTPS 的安全配置（可选）
 

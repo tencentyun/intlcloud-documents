@@ -1,30 +1,17 @@
 
 ## API Description
 
-**Request method**: POST.
-Each API request address corresponds to one service access point. Select the request address corresponding to service access point of your applications.
+```plaintext
+request address/v3/device/tag/delete_all_device
+```
+The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-Service access point in Guangzhou:
-```shell
-https://api.tpns.tencent.com/v3/device/tag/delete_all_device
-```
-Service access point in Hong Kong (China):
-```shell
-https://api.tpns.hk.tencent.com/v3/device/tag/delete_all_device
-```
-Service access point in Singapore
-```shell
-https://api.tpns.sgp.tencent.com/v3/device/tag/delete_all_device
-```
-Service access point in Shanghai:
 
-```shell
-https://api.tpns.sh.tencent.com/v3/device/tag/delete_all_device
-```
 **Feature**: this API is used to delete all device APIs under a certain tag.
 
 
 ## Parameter Description
+
 #### Request parameters
 
 
