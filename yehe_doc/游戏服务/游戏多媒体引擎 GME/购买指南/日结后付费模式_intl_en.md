@@ -22,7 +22,7 @@ If the free tier above is exceeded, fees will be charged based on the usage.
 <table>
    <tr>
       <td rowspan="6">General Quality</td>
-      <td rowspan="3">Billed by voice DAU</td>
+      <td rowspan="2">Billed by voice DAU</td>
       <td rowspan="2">Unit price</td>
       <td>In Mainland China (USD/DAU/day)</td>
       <td>Outside Mainland China (USD/DAU/day)</td>
@@ -32,20 +32,12 @@ If the free tier above is exceeded, fees will be charged based on the usage.
       <td>0.0072</td>
    </tr>
    <tr>
-      <td >Free tier</td>
-      <td colspan="4">DAU ≤ 100</td>
-   </tr>
-   <tr>
-      <td rowspan="3">Billed by voice PCU</td>
+      <td rowspan="2">Billed by voice PCU</td>
       <td rowspan="2">Unit price</td>
       <td colspan="4">Service region - globally uniform price (USD/PCU/day)</td>
    </tr>
    <tr>
       <td colspan="4">0.14</td>
-   </tr>
-   <tr>
-      <td rowspan="1">Free tier</td>
-      <td colspan="4">Please consult your Tencent Cloud rep</td>
    </tr>
 </table>
 
@@ -54,26 +46,18 @@ If the free tier above is exceeded, fees will be charged based on the usage.
 <table>
    <tr>
       <td rowspan="6">HD quality</td>
-      <td rowspan="3">Billed by voice duration</td>
+      <td rowspan="2">Billed by voice duration</td>
       <td rowspan="2">Unit price</td>
       <td colspan="4">Unit price (USD/1,000 minutes)</td>
    </tr>
    <td colspan="2">0.94</td>
    <tr>
-      <td>Free tier</td>
-      <td >Duration ≤ 300 minutes</td>
-   </tr>
-   <tr>
-      <td rowspan="3">Billed by voice PCU</td>
+      <td rowspan="2">Billed by voice PCU</td>
       <td rowspan="2">Unit price</td>
       <td colspan="2">Service region - globally uniform price (USD/PCU/day)</td>
    </tr>
    <tr>
       <td colspan="2">0.56</td>
-   </tr>
-    <tr>
-      <td rowspan="">Free tier</td>
-      <td colspan="2">Please consult your Tencent Cloud rep</td>
    </tr>
 </table>
 
