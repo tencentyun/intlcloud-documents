@@ -142,7 +142,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 **输入示例：**
 
 ```
-https://live.tencentcloudapi.com/?Action=CreateLiveRecord
+https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
 &AppName=live
 &DomainName=mytest.live.push.com
@@ -163,7 +163,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 在推流过程中，若碰到精彩视频画面，您希望立即开始录制并生成精彩视频剪辑做后续使用。可以通过 API 调用并指定精彩视频录制来实现。
 
 ```
-https://live.tencentcloudapi.com/?Action=CreateLiveRecord
+https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=test
 &AppName=live
 &DomainName=mytest.live.push.com

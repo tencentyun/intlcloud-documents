@@ -1,4 +1,5 @@
-After activating CDN, you can log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **Domain Management** on the left sidebar. Click **Create a Distribution** to add an acceleration domain name. After the domain name is added, its configuration will be distributed to the CDN cache nodes across the entire network without directly affecting your business in the production environment. To activate acceleration, you need to configure a CNAME record. For specific directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
+After activating CDN, you can log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **Domain Management** on the left sidebar. Click **Create a Distribution** to add an acceleration domain. After the domain is added, its configuration will be distributed to the CDN cache nodes across the entire network without directly affecting your business in the production environment. To activate acceleration, you need to configure a CNAME record. For specific directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
+
 
 ## Creating a Distribution
 Access the domain name management page and click **Create a Distribution**.
@@ -8,7 +9,7 @@ The distribution creation page consists of three parts:
 
 - Domain configuration
 - Origin configuration
-- Service configuration
+- Service configurations
 
 Based on your selected domain and origin configurations, CDN will recommend service configuration, which can be submitted without modification.
 
@@ -20,11 +21,12 @@ Enter your business domain name in the domain name field and select the project,
 
 | Configuration | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Domain | 1. The domain name can contain up to 50 characters. <br/>2. ICP filing for services in Mainland China has been obtained from the MIIT for the domain name. <br/>3. Subdomain names in the format of `a.test.com` or `a.b.test.com` and wildcard domain names in the format of `\*.test.com` or `\*.a.test.com` are supported. <br/>4. If the domain name is a wildcard domain or has been configured by another user, you need to complete [ownership verification](#m1) to access or retrieve it. <br/><br/><strong>Note: </strong><br/>1. After a wildcard domain name is configured, its subdomain names and second-level wildcard domain names cannot be configured under another account. <br/>2. Domain names in the format of `*.test.com` and *.a.test.com` cannot be configured at the same time. |
+| Domain | 1. The domain name can contain up to 50 characters. <br/>2. The domain name should have obtained an ICP filing from the MIIT. <br/>3. Subdomain names in the format of `a.test.com` or `a.b.test.com` and wildcard domain names in the format of `\*.test.com` or `\*.a.test.com` are supported. <br/>4. If the domain name is a wildcard domain or has been configured by another user, you need to complete [ownership verification](#m1) to access or retrieve it. <br/><br/><strong>Note: </strong><br/>1. After a wildcard domain name is configured, its subdomain names and second-level wildcard domain names cannot be configured under another account. <br/>2. Domain names in the format of `*.test.com` and *.a.test.com` cannot be configured at the same time. |
 | Project | Project is a set of resources shared by all Tencent Cloud products. You can manage it on the [project management](https://console.cloud.tencent.com/project) page. |
 | Region | Mainland China: access requests of global users will be scheduled to cache nodes in mainland China for acceleration.<br/>Overseas: access requests of global users will be scheduled to cache nodes outside mainland China for acceleration. <br/>Global: access requests of global users will be scheduled to the nearest optimal node for acceleration. <br/><br/><strong>Note: </strong><br/>Acceleration service in and outside mainland China are billed separately. For more information on billing policies, please see [here](https://intl.cloud.tencent.com/document/product/228/2949). |
 | Service type | CDN optimizes acceleration performance based on service type. <br/>For the best acceleration result, we recommend you select the service type similar to that of your actual business. <br/><br/>Static acceleration: suitable for small-scale resource acceleration scenarios such as ecommerce, websites, and game images.<br/>Download acceleration: suitable for download scenarios such as game installation, source audio/video file download, and mobile phone firmware distribution. <br/>Streaming VOD acceleration: suitable for scenarios such as online education and VOD. |
-| Internet protocol | IPv4: nodes can be accessed only through IPv4 addresses. <br/>IPv4+IPv6: nodes can be accessed through both IPv4 and IPv6 addresses. Only when this option is selected can an IPv6 origin server be configured. <br/><br/><strong>Note: </strong><br/>IPv6 is only supported in mainland China.<br/>
+| Tag | Up to 50 tags can be added.<br/>Only existing tags are supported.<br/>The tag key and value are required when you add a tag. You can add or modify tags in [Tag List](https://console.cloud.tencent.com/tag/taglist). |
+| Internet protocol | IPv4: nodes can be accessed only through IPv4 addresses. <br/>IPv4+IPv6: nodes can be accessed through both IPv4 and IPv6 addresses. Only when this option is selected can an IPv6 origin server be configured. <br/><br/><strong>Note: </strong><br/>IPv6 is only supported in mainland China. |
 
 ### Part 2. Origin configuration
 
@@ -35,8 +37,8 @@ Configure business origin server information. If the CDN node has no resource ca
 
 | Configuration | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Origin type | External: select this if you already have your own stable business server (i.e., origin server). <br/><a href = "https://intl.cloud.tencent.com/product/cos">COS origin</a>: if resources have already been stored in COS, the bucket can be directly selected as the origin server. |
-| Origin address | External origin server: <br/>1. Multiple IPs can be configured as the origin server, which will be polled during origin-pull. <br/>2. If multiple IPs are used, you can configure weighted origin-pull in the format of `IP:port:weight(1 - 100)`. The port can be omitted and the format becomes `IP::weight`. <br/>3. You can configure one domain name as the origin server, which should be different from the business acceleration domain name. <br/><br/>COS: <br/>1. Select from the drop-down list the bucket to be configured as the origin server. <br/>2. If the bucket is private read/write, first grant CDN access to the bucket. Otherwise, origin-pull will fail. |
+| Origin type | External: select this if you already have your own business server. (i.e., origin server). <br/><a href = "https://cloud.tencent.com/product/cos">COS origin</a>: if resources are stored in COS, the bucket can be directly selected as the origin server. |
+| Origin Address | External origin server: <br/>1. Multiple IPs can be configured as the origin server, which will be polled during origin-pull. <br/>2. You can configure port (0 - 65535) and weight (1 -100) in the format of `origin server:port:weight`. The port can be omitted and the format becomes `origin server::weight`. HTTPS protocol currently only supports port 443. <br/>3. You can configure a domain name as the origin server, which should be different from the business acceleration domain name. |
 | Origin-pull protocol | This can be selected based on the protocols supported by the origin server: <br/>HTTP: HTTP/HTTPS access requests use HTTP origin-pull. <br/>HTTPS: HTTP/HTTPS access requests use HTTPS origin-pull (the origin server must support HTTPS access). <br/>Follow protocol: HTTP access requests use HTTP origin-pull, while HTTPS access requests use HTTPS origin-pull (the origin server must support HTTPS access). |
 | Origin domain | This refers to the site domain name accessed on the origin server by a CDN node during origin-pull. <br/>If a subdomain name is configured, it will be the same as the acceleration domain name by default and can be customized. <br/>If a wildcard domain name is configured, it will be the actual access subdomain name by default and can be customized. |
 
@@ -57,12 +59,14 @@ Configure the node acceleration service:
 Click **Submit** to add the domain name and wait for the domain name configuration to be distributed across the entire network. This will take about 5–10 minutes.
 ![img](https://main.qcloudimg.com/raw/0eb54022c36df808aabe5fb4c2838c77.png)
 
-> When the distribution is completed, CDN will allocate a corresponding CNAME address to you, which needs to be configured before taking effect. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
+## Subsequent Steps
+When the distribution is completed, CDN will allocate a corresponding CNAME address to you, which needs to be configured before taking effect. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 
 <span ID ="m1"></span>
-## Domain Name Ownership Verification
+## Domain Ownership Verification
 If the domain name is a wildcard one or has been connected to by another user, you need to verify ownership before accessing or retrieving it. DNS verification is used. The verification steps are as follows:
 
 1. Click **Verification Method** to get the resolution record information to be added for DNS verification. Do not close this page before verification is completed.
-2. At your DNS service provider, add a TXT record and enter `_cdnauth` as its host record and the record value randomly generated on the "Verification Method" page as its record value.
+   ![img](https://main.qcloudimg.com/raw/a0bae11cfa188a1ec2a6ca3d5cd4edec.png)
+2. Go to your DNS service provider, add a TXT record and enter `_cdnauth` as its host record and the record value randomly generated on the "Verification Method" page as its record value. 
 3. Wait for TXT resolution to take effect and click **Verify**. If "Verification failed" is displayed, wait for the DNS record to take effect before trying again and check whether the TXT record has been entered correctly.

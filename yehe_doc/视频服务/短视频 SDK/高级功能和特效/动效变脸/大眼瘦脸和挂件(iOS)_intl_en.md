@@ -13,7 +13,7 @@ Download the Enterprise Edition SDK package at the bottom of the [SDK Download](
 
 For more information, please see [Project Configuration](https://intl.cloud.tencent.com/document/product/1069/38012). 
 
-### 1. Add frameworks
+### Step 1. Add frameworks
 
 The Enterprise Edition needs to link to the following frameworks:
 > - AssetsLibrary.framwork
@@ -21,12 +21,12 @@ The Enterprise Edition needs to link to the following frameworks:
 > - Accelerate.framework
 > - Metal.framework 
 
-### 2. Add link parameters
+### Step 2. Add link parameters
 
-> 1. In "Build Settings" > "Other Link Flags" of the project, add the `-ObjC` option.
-> 2. If you use the AI-based keying feature, you need to select "Product" > "Edit Scheme" > "Run" > "Options" and set "Metal API Validation" to "Disabled".
+1. In **Build Settings** > **Other Link Flags** of the project, add the `-ObjC` option.
+2. If you use the AI-based keying feature, you need to select **Product** > **Edit Scheme** > **Run** > **Options** and set **Metal API Validation** to "Disabled".
 
-### 3. Add animated effect resources
+### Step 3. Add animated effect resources
 
 Please check whether the animated effect resources are added: add files in `SDK/Resource` to the project as groups. The following is the list of files:
 
@@ -42,24 +42,22 @@ Please check whether the animated effect resources are added: add files in `SDK/
 > - ufa.bundle
 > - v1
 
-### 4. Import the license file
-The features of Enterprise Edition can take effect only after the license is successfully verified. You can apply for a debugging license with 30-day validity free of charge to your Tencent Cloud rep.
-After getting the license, you need to name it **`YTFaceSDK.licence`** and add it to the project as shown above.
+### Step 4. Import the License file
+The features of Enterprise Edition can take effect only after the Licence is successfully verified. You can apply for a debugging license with 30-day validity free of charge to your Tencent Cloud rep.
+After getting the Licence, you need to name it **`YTFaceSDK.licence`** and add it to the project as shown above.
 >?
->- Each license has been bound to a specific `Bundle Identifier`. If you modify the application's `Bundle Identifier`, the verification will fail.
+>- Each Licence has been bound to a specific `Bundle Identifier`. If you modify the application's `Bundle Identifier`, the verification will fail.
 >- The filename of `YTFaceSDK.licence` is fixed and should not be modified.
->- You do not need to apply for two licenses for iOS and Android respectively. A license can authorize both an iOS `bundleid` and an Android `packageName`.
+>- You do not need to apply for two Licenses for iOS and Android respectively. A Licence can authorize both an iOS `bundleid` and an Android `packageName`.
 
 
 **From v4.9 on, the SDK supports two-in-one license. In this way, `YTFaceSDK.licence` is no longer needed; instead, you can get the corresponding `key` and `url` of the license from your Tencent Cloud rep and set the license information in the same way as for Basic Edition.**
 
 ## Feature Call
 
-### 1. Animated sticker
+### Animated sticker
 
 #### Sample code
-
-<img src="https://mc.qcloudimg.com/static/img/a320624ee8d3a82ee07feb05969e5290/A8B81CB6-DBD3-4111-9BF0-90BD02779BFC.png" width="450">
 
 An animated effect template is a directory that contains many resource files. As animated effects have different complexity, the number of directories and file size vary by effect.
 
@@ -81,11 +79,9 @@ After the decompression, you can call the following API to enable the animated e
  */
 - (void)selectMotionTmpl:(NSString *)tmplName inDir:(NSString *)tmplDir;
 ```
-### 2. AI-based keying
+### AI-based keying
 
 #### Sample code
-
-<img src="https://mc.qcloudimg.com/static/img/0f79b78687753f88af7685530745a8d4/98B403B8-1DEC-4130-B691-D9EB5E321162.png" width="450">
 
 You need to download the AI-based keying resources. The API is the same as that for the animated effect.
 
@@ -99,7 +95,7 @@ You need to download the AI-based keying resources. The API is the same as that 
 - (void)selectMotionTmpl:(NSString *)tmplName inDir:(NSString *)tmplDir;
 ```
 
-### 3. Advanced beauty filter APIs (eye enlarging, face slimming, etc.)
+### Advanced beauty filter APIs (eye enlarging, face slimming, etc.)
 
 You can use the `getBeautyManager` method of `TXUGCRecord` to get the `TXBeautyManager` object and set beauty filter parameters as follows:
 
@@ -264,7 +260,7 @@ You can use the `getBeautyManager` method of `TXUGCRecord` to get the `TXBeautyM
 - (void)setFaceBeautyLevel:(float)level;
 ```
 
-### 4. Green screen keying
+### Green screen keying
 
 To use green screen keying, you need to prepare a .mp4 file for playback first and then call the following API to enable green screen keying:
 
@@ -278,15 +274,15 @@ To use green screen keying, you need to prepare a .mp4 file for playback first a
 ```
 ## Troubleshooting
 ### 1. Why does the project fail to be compiled?
- 1. Check whether the `AssetsLibrary.framwork`, `CoreMedia.framework`, `Accelerate.framework`, and `Metal.frameworkdependent` dependent libraries have been added.
+Check whether the `AssetsLibrary.framwork`, `CoreMedia.framework`, `Accelerate.framework`, and `Metal.frameworkdependent` dependent libraries have been added.
                  
 ### 2. What should I do if the project crashed during execution?  
- > 1. Check whether the project is configured with `-ObjC`.  
- > 2. Check whether "Metal API Validation" is set to "Disabled".
+1. Check whether the project is configured with `-ObjC`.  
+2. Check whether "Metal API Validation" is set to "Disabled".
      
 ### 3. Why doesn't the special effect take effect in the project?  
- > 1. Check whether the `+[TXUGCBase setLicenceURL:key:]` method is called and the parameters are correct.
- > 2. Call the `getLicenseInfo` method of `TXUGCBase`. If a license contains animated effects, you will find the `pituLicense` field.
- > 3. Check whether the Pitu resources are properly added. Especially, the `handdetect`, `handtrack`, and `res18_3M` files should be added as folder references. The simplest way to check is to check whether the animated effect files added in your project are the same as those added in the demo.  
- > 4. The SDK will download the license into the `Documents` directory of the sandbox. During development, you can select "Window" > "Devices and Simulators" in the Xcode menu, export the license, and use the query tool (available [here](https://mc.qcloudimg.com/static/archive/9c0f8c02466d08e5ac14c396fad21005/PituDateSearch.zip)) to view the validity period.
+1. Check whether the `+[TXUGCBase setLicenceURL:key:]` method is called and the parameters are correct.
+2. Call the `getLicenseInfo` method of `TXUGCBase`. If a license contains animated effects, you will find the `pituLicense` field.
+3. Check whether the Pitu resources are properly added. Especially, the `handdetect`, `handtrack`, and `res18_3M` files should be added as folder references. The simplest way to check is to check whether the animated effect files added in your project are the same as those added in the demo.  
+4. The SDK will download the Licence into the `Documents` directory of the sandbox. During development, you can select "Window" > "Devices and Simulators" in the Xcode menu, export the license, and use the query tool (available [here](https://mc.qcloudimg.com/static/archive/9c0f8c02466d08e5ac14c396fad21005/PituDateSearch.zip)) to view the validity period.
  The [query tool](https://mc.qcloudimg.com/static/archive/9c0f8c02466d08e5ac14c396fad21005/PituDateSearch.zip) is an Xcode project and is currently supported for macOS only. More query methods will be provided in the future.

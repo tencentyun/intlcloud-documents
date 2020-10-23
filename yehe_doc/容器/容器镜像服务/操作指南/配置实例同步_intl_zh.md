@@ -15,7 +15,7 @@
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【实例同步】。
 在“实例同步”页面即可查看当前实例内的实例同步规则列表。如需切换实例，请在页面上方的“实例名称”下拉列表中进行选择。
 2. 单击【新建】，在“新建实例同步规则”窗口中，参考以下提示进行规则配置。如下图所示：
-![](https://main.qcloudimg.com/raw/ab2c50ab45f5acf50457f65665478277.png)
+![](https://main.qcloudimg.com/raw/6de531925e0b97e02961059d703279c8.png)
  - **名称**：实例规则名称，支持小写字母、数字及（`-`、`.`、` _`）三种符号，且需以字母或数字开头。
  - **描述**：规则描述，支持中文。
  - **同步源**：
@@ -32,7 +32,8 @@
 
 ### 管理同步规则
 成功创建后即可在“实例同步”页面查看已创建的同步规则，您可执行以下操作管理同步规则。如下图所示：
-![](https://main.qcloudimg.com/raw/42e856df81f0702a8adb0e71c370d19a.png)
+![](https://main.qcloudimg.com/raw/dc388f24f649bb005bd8dd0df46220ae.png)
+
 - **查看同步日志**：单击实例规则名称，即可查看该规则触发日志，详情请参见 [查看同步日志](#CheckLog)。
 - **修改规则状态**：<img src="https://main.qcloudimg.com/raw/d31873587cb976e1429768b2dc2b0e16.png" style="margin:-6px 0px">表示规则启用，<img src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png" style="margin:-6px 0px">表示规则关闭。新建的实例同步规则默认为启用状态，您可自行调整。
 - **触发同步**：手动触发同步，将扫描实例内所有符合规则的仓库并进行同步。
@@ -41,7 +42,8 @@
 <span id="CheckLog"></span>
 ### 查看同步日志
 单击指定实例同步规则名称，即可查看该规则的触发日志。如下图所示：
-![](https://main.qcloudimg.com/raw/45d656d202beaecb5ab8e2ac36ba4935.png)
+![](https://main.qcloudimg.com/raw/2261b918854b7d2d1a86ed40bdfc85bc.png)
+
 - **任务ID**：实例内唯一的同步任务 ID。
 - **创建时间**：同步任务创建的时间。
 - **任务耗时**：完成全部同步任务消耗的时间。
