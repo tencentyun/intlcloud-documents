@@ -133,8 +133,7 @@ Configure application permissions in `AndroidManifest.xml`. Generally, an audio/
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 #### 3.4. Set the license
-Apply for a license as instructed in [License Application](https://intl.cloud.tencent.com/document/product/1069/38041) and copy the key and URL from the [console](https://console.cloud.tencent.com/vod/license) as shown below:
-![](https://main.qcloudimg.com/raw/c48435846e63a66f6b80453b4c356e7e.png)
+Apply for a license as instructed in [License Application](https://intl.cloud.tencent.com/document/product/1069/38041) and copy the key and URL from the [console](https://console.cloud.tencent.com/vod/license).
 Before you integrate UGSV features into your application, we recommend you set `Application onCreate()` as follows:
 ```
 public class DemoApplication extends Application {
@@ -284,6 +283,7 @@ public class DemoApplication extends Application {
 
 		String string = TXUGCBase.getInstance().getLicenceInfo(this);
 		Log.i("SDK", "string=" + string);
+		UGCKit.init(this);
 	}
 }
 

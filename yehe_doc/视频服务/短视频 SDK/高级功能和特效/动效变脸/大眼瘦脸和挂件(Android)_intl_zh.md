@@ -10,11 +10,11 @@
 
 ## 版本下载
 
-在 [SDK 开发包](https://intl.cloud.tencent.com/document/product/1071/38150) 页面下方下载商用版本 SDK 压缩包，压缩包有加密（解压密码和 licence 文件 可以跟我们的商务同学获取）, 成功解压后在 SDK 目录下得到一个`aar`和`zip`，分别对应两种集成方式。
+在 SDK 开发包 页面下方下载商用版本 SDK 压缩包，压缩包有加密（解压密码和 Licence 文件 可以跟我们的商务同学获取）, 成功解压后在 SDK 目录下得到一个`aar`和`zip`，分别对应两种集成方式。
 
 ## 工程设置
 
-参考 [工程配置](https://intl.cloud.tencent.com/document/product/1069/38018)。 
+参见 [工程配置](https://intl.cloud.tencent.com/document/product/1069/38018)。 
 
 ### 添加 SDK
 
@@ -55,7 +55,7 @@
 
 #### 示例
 
-<img src="https://mc.qcloudimg.com/static/img/a320624ee8d3a82ee07feb05969e5290/A8B81CB6-DBD3-4111-9BF0-90BD02779BFC.png" width="450">
+
 
 一个动效模板是一个目录，里面包含很多资源文件。每个动效因为复杂度不同，目录个数以和文件大小也不尽相同。
 Demo 中的示例代码是从后台下载动效资源，再统一解压到 sdcard。您可以在 Demo 代码中找到动效资源的下载地址，格式如下：
@@ -79,7 +79,7 @@ public void setMotionTmpl(String tmplPath);
 
 #### 示例
 
-<img src="https://mc.qcloudimg.com/static/img/0f79b78687753f88af7685530745a8d4/98B403B8-1DEC-4130-B691-D9EB5E321162.png" width="450">
+
 
 需要下载 AI 抠背的资源，接口跟动效接口相同。
 
