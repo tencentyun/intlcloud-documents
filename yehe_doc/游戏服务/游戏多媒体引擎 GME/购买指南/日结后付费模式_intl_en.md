@@ -8,16 +8,6 @@ General quality is billed by voice DAU and HD quality is billed by voice duratio
 - HD quality is recommended for voice live streaming and online karaoke.
 - If you need to be billed by PCU, please contact your Tencent Cloud rep.
 
-### Notes for free tier
-Voice chat has two billing modes with the following free tier:
-- Billed by voice DAU: free of charge if the daily DAU is below 100.
-- Billed by voice duration: free of charge if the daily duration is below 300 minutes.
-
-If the free tier above is exceeded, fees will be charged based on the usage.
-
-> If an application has a voice duration of 150 minutes (< 300 minutes) on a day, no fees will be charged. If the voice duration on the day is 1,000 minutes, the billable voice duration will be 1,000 minutes, and the fees will be 0.94 USD (priced at 0.94 USD/1,000 minutes).
-
-
 ### Price list
 <table>
    <tr>
