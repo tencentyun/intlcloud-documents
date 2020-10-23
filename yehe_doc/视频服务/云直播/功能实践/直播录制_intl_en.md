@@ -94,7 +94,7 @@ For more information on how to create a recording task through the API, please s
 ### Recording sample
 - In the simple case, you just need to specify the following parameters: `StreamName`, `DomainName`, `AppName`, and `EndTime`.
 The following sample code creates a video recording task in .flv format for 8 AM to 10 AM, August 10, 2020 with 30-minute segments that will be retained permanently.
-**Sample input:**
+**Sample input：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -108,7 +108,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 - The recording format, recording type, and storage parameters can also be specified.
 The following sample code creates a recording task in .mp4 format for 8 AM to 10 AM, August 10, 2020 with 1-hour segments that will be retained permanently.
 	1. Call [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) to create a recording template.
-**Sample input:**
+**Sample input：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -128,9 +128,9 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 }
 ```
 	2. Call [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) to create a recording task.
-**Sample input:**
+**Sample input：**
 ```
-https://live.tencentcloudapi.com/?Action=CreateLiveRecord
+https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
 &AppName=live
 &DomainName=mytest.live.push.com
@@ -151,7 +151,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecord
 If you want to record any frames immediately in the process of live streaming to generate highlight clips for future use, you can call the API to enable real-time recording.
 
 ```
-https://live.tencentcloudapi.com/?Action=CreateLiveRecord
+https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=test
 &AppName=live
 &DomainName=mytest.live.push.com
