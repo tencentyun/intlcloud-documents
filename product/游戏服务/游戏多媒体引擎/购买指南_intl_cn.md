@@ -12,7 +12,7 @@
 ### 价格表
 <table>
    <tr>
-      <td rowspan="6">普通音质</td>
+      <td rowspan="5">普通音质</td>
       <td rowspan="3">按语音 DAU 计费</td>
       <td rowspan="2">付费区间</td>
       <td>In Mainland China (USD/DAU/day)</td>
@@ -23,7 +23,7 @@
       <td>0.0072</td>
    </tr>
    <tr>
-      <td rowspan="3">按语音PCU计费</td>
+      <td rowspan="2">按语音PCU计费</td>
       <td rowspan="2">付费区间</td>
       <td colspan="4">服务区-全球统一价格（美元/PCU/天）</td>
    </tr>
