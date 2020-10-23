@@ -1,7 +1,5 @@
  CCN connects a VPC with another or with IDCs. This document introduces how to use CCN to interconnect VPCs in Guangzhou and Shanghai regions under the same account.
 
-> This feature is currently in beta test. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
-
 ## Background
 When creating a CCN instance, you can select either of the billing mode as needed: monthly subscription or monthly 95th percentile pay-as-you-go. The instance creation varies by the billing mode, as shown below:
 ![](https://main.qcloudimg.com/raw/f0fe23c7fbe4afa675bfb76b435726bf.png)
