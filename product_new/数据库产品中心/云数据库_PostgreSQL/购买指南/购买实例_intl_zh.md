@@ -2,7 +2,7 @@
 本文为您介绍通过腾讯云 PostgreSQL 控制台创建数据库实例的操作。
 
 ## 前提条件
-已 [注册腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)。
+已 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fintl.cloud.tencent.com%2Fdocument%2Fproduct%2F555%2F30328)。
 
 ## 操作步骤
 1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，在实例列表单击【新建】。
