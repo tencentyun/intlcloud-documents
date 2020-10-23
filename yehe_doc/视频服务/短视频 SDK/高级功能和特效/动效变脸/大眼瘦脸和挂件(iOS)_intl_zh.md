@@ -7,7 +7,7 @@
 申请企业版本 License 请联系您的商务。
 
 ## 版本下载
-在 [SDK 下载](https://intl.cloud.tencent.com/document/product/1069/37914) 页面下方下载企业版 SDK 压缩包，压缩包有加密（解压密码和 licence 在接入流程步骤获取），成功解压后得到一个`Demo`和`SDK`文件，特效资源存放在 SDK/Resource 下。
+在 [SDK 下载](https://intl.cloud.tencent.com/document/product/1069/37914) 页面下方下载企业版 SDK 压缩包，压缩包有加密（解压密码和 Licence 在接入流程步骤获取），成功解压后得到一个`Demo`和`SDK`文件，特效资源存放在 SDK/Resource 下。
 
 ## Xcode 工程设置
 
