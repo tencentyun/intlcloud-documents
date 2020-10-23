@@ -133,8 +133,7 @@ dependencies {
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 #### 3.4 License 设置
-请参考 [License 申请](https://intl.cloud.tencent.com/document/product/1069/38041) 的指引申请 License 后，从 [控制台](https://console.cloud.tencent.com/vod/license) 复制 key 和 url，见下图。
-![](https://main.qcloudimg.com/raw/c48435846e63a66f6b80453b4c356e7e.png)
+请参考 [License 申请](https://intl.cloud.tencent.com/document/product/1069/38041) 的指引申请 License 后，从 [控制台](https://console.cloud.tencent.com/vod/license) 复制 key 和 url。
 在您的应用中使用短视频功能之前，建议在 - Application onCreate() 中进行如下设置：
 ```
 public class DemoApplication extends Application {
@@ -284,6 +283,7 @@ public class DemoApplication extends Application {
 
 		String string = TXUGCBase.getInstance().getLicenceInfo(this);
 		Log.i("SDK", "string=" + string);
+		UGCKit.init(this);
 	}
 }
 
