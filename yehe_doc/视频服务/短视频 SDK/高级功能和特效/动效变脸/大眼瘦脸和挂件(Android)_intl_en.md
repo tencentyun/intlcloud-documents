@@ -10,7 +10,7 @@ Contact your sales rep to apply for an enterprise license.
 
 ## Download
 
-Download the Enterprise Edition SDK package at the bottom of the [SDK Download](https://intl.cloud.tencent.com/document/product/1071/38150) page. The package is encrypted, and you can get the decryption password and license file from your Tencent Cloud rep. After the package is successfully decompressed, a `.aar` file and a `.zip` file will be extracted in the SDK directory, which can be used in two integration methods, respectively.
+Download the Enterprise Edition SDK package at the bottom of the SDK Download page. The package is encrypted, and you can get the decryption password and License file from your Tencent Cloud rep. After the package is successfully decompressed, a `.aar` file and a `.zip` file will be extracted in the SDK directory, which can be used in two integration methods, respectively.
 
 ## Project Settings
 
@@ -55,8 +55,6 @@ After getting the license, you need to name it **`YTFaceSDK.licence`** and place
 
 #### Sample code
 
-<img src="https://mc.qcloudimg.com/static/img/a320624ee8d3a82ee07feb05969e5290/A8B81CB6-DBD3-4111-9BF0-90BD02779BFC.png" width="450">
-
 An animated effect template is a directory that contains many resource files. As animated effects have different complexity, the number of directories and file size vary by effect.
 The sample code in the demo downloads the animated effect resources from the backend and extracts them all onto the SD card. You can find the download addresses of the animated effect resources in the following format in the demo code:
 
@@ -78,8 +76,6 @@ public void setMotionTmpl(String tmplPath);
 ### 2. AI-based keying
 
 #### Sample code
-
-<img src="https://mc.qcloudimg.com/static/img/0f79b78687753f88af7685530745a8d4/98B403B8-1DEC-4130-B691-D9EB5E321162.png" width="450">
 
 You need to download the AI-based keying resources. The API is the same as that for the animated effect.
 
