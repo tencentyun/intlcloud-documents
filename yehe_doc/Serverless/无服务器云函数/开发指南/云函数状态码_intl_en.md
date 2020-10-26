@@ -139,7 +139,10 @@ If an error code is returned after the function is executed, you can find the ca
 
 
 ## Concepts
-#### Execution method<div id="handler"></div>
+
+<div id="handler"></div>
+
+#### Execution method
 Execution method specifies which function in which file is executed first when the cloud function is invoked, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/48172f9407d4002f79ad0355e609aff2.png)
 - For Golang programming, use the **FileName** format, for example, `main`.
