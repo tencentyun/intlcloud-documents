@@ -22,7 +22,7 @@ If an error code is returned after the function is executed, you can find the ca
 <td>400<br>BadRequest</td>
 <td>The input parameters are incorrect.</td>
 <td><ul class="params"><li>Check whether the input parameters are correct based on the error message.</li>
-<li>The parameters are invalid. Please revise the parameters by referring to <a href="https://intl.cloud.tencent.com/document/product/583/17234" target="_blank">API Documentation</a> and retry.</li></ul></td>
+<li>The parameters are invalid. Please revise the parameters by referring to [API Documentation](https://tencentcs.com/zaM8XO8J) and retry.</li></ul></td>
 </tr>
 
 <tr>
@@ -109,7 +109,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>441<br>UnauthorizedOperation</td>
 <td>CAM authentication fails.</td>
-<td>The request is unauthorized. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/598" target="_blank">Cloud Access Management</a>.</td>
+<td>The request is unauthorized. For more information, please see [Cloud Access Management](https://tencentcs.com/YrUxHW9G).</td>
 </tr>
 
 <tr>
@@ -139,12 +139,9 @@ If an error code is returned after the function is executed, you can find the ca
 
 
 ## Concepts
-
-<div id="handler"></div>
-
-#### Execution method
+#### Execution method<div id="handler"></div>
 Execution method specifies which function in which file is executed first when the cloud function is invoked, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/48172f9407d4002f79ad0355e609aff2.png)
+![](https://main.qcloudimg.com/raw/b25dd559de782832d8e1b35e625273e5.png)
 - For Golang programming, use the **FileName** format, for example, `main`.
 - For Python, Node.js, or PHP programming, use the **FileName.FunctionName** format, for example, `index.main_handler`.
 	- Please note that **FileName does not include the file name extension, and FunctionName is the name of the entry function.** Ensure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`; and for Node.js programming, the file name extension is `.js`. For more information, please see [Execution Method](https://intl.cloud.tencent.com/document/product/583/9210). 
