@@ -19,4 +19,4 @@ This document describes and compares the features supported by different types o
 | [Monitoring and Alarm](https://intl.cloud.tencent.com/document/product/236/8455) | Supported                    | Supported                   | Supported                    |Supported                    |
 | [Operation Logs](https://intl.cloud.tencent.com/document/product/236/34588) | Supported                    | Supported                   | Supported                    |Supported                    |
 
-
+>?"-" in the table above indicates "unsupported".
