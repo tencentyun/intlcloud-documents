@@ -12,7 +12,11 @@ Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 Content-Type: application/json
 
-{"group_name": "testname", "ips": ["10.10.10.10", "10.10.10.11"]}
+{
+    "group_name": "testname", 
+    "type"： "label", 
+    "labels": ["defined_label_1", "defined_label_2"]
+}
 ```
 
 #### Request line
@@ -30,7 +34,9 @@ There are only common request headers but no special request headers.
 | Field Name | Type | Location | Required | Description |
 |--------------|--------|------|---------|--------------------------------|
 | group_name   | string | body | Yes      | Server group name, which must be unique             |
+| type       | string    | body | No   | Server group type. Valid values: ip and label. Default value: ip  |
 | ips          | JsonArray| body| Yes    | List of IPs in server group            |
+| labels     | JsonArray | body | No   | List of labels in the server group          |
 
 ## Response
 
@@ -50,9 +56,9 @@ There are only common response headers but no special response headers.
 
 #### Response parameters
 
-| Field Name | Type | Required | Description |
-|-------------|-----------|---------|-------------------------------|
-| group_id   | string | Yes      | Server group ID                  |
+| Field Name | Type   | Required | Description     |
+|------------|--------|----------|-----------------|
+| group_id   | string | Yes      | Server group ID |
 
 ## Error Codes
 
