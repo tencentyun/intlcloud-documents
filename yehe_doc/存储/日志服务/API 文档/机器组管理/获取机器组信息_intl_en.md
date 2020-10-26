@@ -40,8 +40,10 @@ Content-Length: 123
 {
   "group_id": "xxxx-xx-xx-xx-xxxxxxxx",
   "group_name": "testname",
-  "ips": [
-    "10.10.10.10","10.10.10.11"
+  "type":"label",
+  "labels": [
+    "defined_label_1",
+    "defined_label_2"
   ],
   "create_time": "2017-08-08 12:12:12"
 }
@@ -53,12 +55,16 @@ There are only common response headers but no special response headers.
 
 #### Response parameters
 
-| Field Name | Type | Required | Description |
-|------------|--------|---------|-------------------------------|
-| group_id   | string | Yes      | Server group ID                  |
-| group_name | string | Yes      | Server group name                    |
-| ips        | JsonArray| Yes    | List of IPs in server group            |
-| create_time| string | No   | Creation time                                                     |
+| Field Name      | Type      | Required | Description                 |
+| ----------- | --------- | ---- | -------------------- |
+| group_id    | string    | Yes   | Server group ID          |
+| group_name  | string    | Yes  | Server group name        |
+| type        | string    | Yes   | Server group type           |
+| ips         | JsonArray | No   | List of IPs in the server group |
+| labels      | JsonArray | No   | List of labels in the server group   |
+| create_time | string    | No   | Creation time            |
+
+>! Depending on the `type` value, either or both of `ips` and `labels` are returned.
 
 ## Error Codes
 
