@@ -218,7 +218,7 @@ Daily LVB transcoding fees = 0.0057 (USD/minute) * 60 (minutes) + 0.0028 (USD/mi
 <td>0.0443</td>
 </tr><tr>
 <td>2K</td>
-<td>0.0615</td>
+<td>0.0886</td>
 </tr><tr>
 <td>4K</td>
 <td>0.1772</td>
