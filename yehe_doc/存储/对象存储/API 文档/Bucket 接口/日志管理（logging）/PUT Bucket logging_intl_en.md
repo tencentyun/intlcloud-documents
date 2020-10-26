@@ -1,9 +1,9 @@
-## Description
-This API is used to enable logging for a source bucket and store its access logs into a specified destination bucket.
+## API Description
+This API is used to enable logging for a source bucket and store access logs in a specified destination bucket.
 
 >!
->- Only the source bucket owner can make this request.
->- To enable logging, you need to grant Cloud Log Service (CLS) permission to write to COS. For information on the authorization process, see [Logging Overview](https://intl.cloud.tencent.com/document/product/436/16920).
+>- Only the owner of the source bucket can make this request.
+>- To enable logging, you need to grant Cloud Log Service (CLS) write permission for COS. For information on the authorization process, see [Enabling Log Management](https://intl.cloud.tencent.com/document/product/436/16920).
 
 ## Request
 
@@ -27,7 +27,7 @@ This API only uses common request headers. For more information, see [Common Req
 
 
 #### Request body
-The implementation of this operation requires a request body. An example request body with all nodes is as follows:
+This request uses a request body. An example request body with all nodes is as follows:
 ```shell
 <BucketLoggingStatus>
   <LoggingEnabled>
@@ -37,24 +37,26 @@ The implementation of this operation requires a request body. An example request
 </BucketLoggingStatus>
 ```
 
-The nodes are detailed as follows:<style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
+The nodes are detailed as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required|
+|Node Name (Keyword) | Parent Node | Description | Type | Required
 |:---|:-- |:--|:--|:--|
 | BucketLoggingStatus | None | Indicates the status of logging configuration. If there is no child node, logging is disabled | Container | Yes |
 
 Container node `BucketLoggingStatus`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required|
+|Node Name (Keyword) | Parent Node | Description | Type | Required
 |:---|:-- |:--|:--|:--|
-| LoggingEnabled | BucketLoggingStatus | Bucket logging configuration, mainly on the destination bucket | Container | No |
+| LoggingEnabled | BucketLoggingStatus | Specifies the logging configuration, mainly for the destination bucket | Container | No |
 
 Container node `LoggingEnabled`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required|
+|Node Name (Keyword) | Parent Node | Description | Type | Required
 |:---|:-- |:--|:--|:--|
-| TargetBucket | LoggingEnabled | The destination bucket used to store logs; this can be the same bucket (not recommended) or a bucket in the same region or under the same account | String | No |
+| TargetBucket | LoggingEnabled | The destination bucket used to store logs; this can be the same bucket (not recommended) or a bucket in the same region under the same account | String | No |
 | TargetPrefix | LoggingEnabled | The specified path in which logs are stored in the destination bucket | String | No |
+
+>?After you specify the two nodes above, the generated log file name will take the format of `TargetBucket/TargetPrefix {YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz`.
 
 ## Response
 

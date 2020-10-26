@@ -9,7 +9,9 @@ After creating a TencentDB for MySQL instance, you need to initialize it before 
  - **Custom port**: the database access port, which is 3306 by default.
  - **Root account password**: the default user name for the new MySQL database is "root". You can set the password of the root account.
  - **Confirm password**: enter the password again.
-3. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
+3. In the initialization dialog box that pops up, click **OK**.
+
+4. Return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
 
 
 ## Next Steps

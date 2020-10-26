@@ -1,3 +1,28 @@
+## October 2020
+
+<table>
+     <tr>
+         <th width="20%">Update</th>  
+         <th width="50%">Description</th>  
+         <th width="15%">Release Date</th>  
+         <th width="15%">Documentation</th>  
+     </tr> 
+     <tr>
+         <td>Standard SDK 5.0.10 release</td>
+         <td><ul stype="margin:0:">
+               <li>The signaling API is optimized to support configuring `onlineUserOnly` and `offlinePushInfo` parameters.</li>
+		<li> Obtaining the async callback of  a conversation API is optimized.</li>
+		 <li>The conversation adds API for group types, which displays and filters the conversation list. </li>
+		 <li>The group livestreaming is now supported, including mic connecting, gifts giving, beauty filtering, and voice changing features.</li>
+		  <li>The livestream list is now supported, including mic connecting, PK, likes, gifts, beauty filtering, on-screen comments and follower features.</li>
+		 <li>The voice/video signaling identification is optimized.</li>
+         </td>
+         <td>October 15, 2020</td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK  Download</a></td>
+     </tr>	
+</table>
+
+
 ## September 2020
 
 <table>
