@@ -26,11 +26,11 @@ The following error codes have been added for the proxy:
 	#define ER_PROXY_SC_TRANS_IN_ROLLBACK_ONLY 621  // The server is closed. The current transaction is being rolled back.
 	#define ER_PROXY_SC_COMMIT_LATER 622        // The server is closed. The transaction will be committed later.
 	#define ER_PROXY_SC_ROLLBACL_LATER 623      // The server is closed. The transaction will be rolled back later.
-	#define ER_PROXY_SC_IN_COMMIT_OR_ROLLBACK 624   // The server was closed during transaction committing/rollback
+	#define ER_PROXY_SC_IN_COMMIT_OR_ROLLBACK 624   // The server was closed when the transaction was being committed/rolled back
 	#define ER_PROXY_SC_NEED_ROLLBACK 625       // The server is closed. The current transaction needs to be rolled back.
 	#define ER_PROXY_SC_STATE_WILL_ROLLBACK 626 // The server is closed. Rollback will be performed.
-	#define ER_PROXY_XA_UNSUPPORT 627           // Command not supported by XA currently
-	#define ER_PROXY_XA_INVALID_COMMAND 628     // The XA command is invalid
+	#define ER_PROXY_XA_UNSUPPORT 627           // Command is not supported by XA currently.
+	#define ER_PROXY_XA_INVALID_COMMAND 628     // The XA command is invalid.
 	#define ER_PROXY_XA_GTID_INIT_ERROR 629     // GTID log initialization failed
 	#define ER_PROXY_XA_GET_SET_IP_PORT_FAILED 630  // Failed to obtain the set address
 	#define ER_PROXY_XA_UPDATE_GTID_LOG_FAILED 631  // Failed to update GTID log
@@ -85,7 +85,7 @@ The following error codes have been added for the proxy:
 	#define ER_PROXY_ALTER_STEP_FAIL 680        // Alter step failed
 	#define ER_PROXY_TOO_MUCH_TABLES 681        // The maximum number of tables has been reached
 	#define ER_PROXY_TABLE_EXISTED 682          // The table already exists
-	#define ER_PROXY_CREATE_STABLE_FAILED 683   // Failed to create the sharded table, as complex SQL statements cannot create a sharded table
+	#define ER_PROXY_CREATE_STABLE_FAILED 683   // Failed to create the sharded table, as complex SQL statements cannot be used to create a sharded table
 	#define ER_PROXY_DDL_DENY 684               //The DDL operation is not allowed
 	#define ER_PROXY_SHADKEY_ERROR 685          // SQL should not relate to subpartition tables
 	#define ER_PROXY_NO_SK 686                  // reject nosk
@@ -119,7 +119,7 @@ The following error codes have been added for the proxy:
 	#define ER_PROXY_SLICING 901                // The slice is modified and possibly being scaled, causing the current SQL statement to be rejected
 	#define ER_PROXY_NO_DEFAULT_SET 902         // The set is empty
 	#define ER_PROXY_GET_ADDRESS_FAILED 903     // Initialization has not been completed yet. Failed to obtain the backend address. Please try again later.
-	#define ER_PROXY_SQL_SIZE_ERROR_IN_GET_CANDIDATE_ADDRESS 904 // An error occurred while obtaining the backend address (the number of destination backends is incorrect)
+	#define ER_PROXY_SQL_SIZE_ERROR_IN_GET_CANDIDATE_ADDRESS 904 // An error occurred while obtaining the backend address (the number of destination backend is incorrect)
 	#define ER_PROXY_GET_ADDRESS_ERROR 905      // An error occurred while obtaining the backend address
 	#define ER_PROXY_CANDIDATE_ADDRESS_EMPTY 906 // No backend address has been obtained
 	#define ER_PROXY_CANT_GET_SOCK 907          // Failed to obtain the socket	

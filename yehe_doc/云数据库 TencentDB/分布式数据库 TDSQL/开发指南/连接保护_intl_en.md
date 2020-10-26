@@ -1,4 +1,4 @@
-Connection protection keeps the connection intact between the client and the proxy when the proxy is disconnected from the backend database (for example, the backend database has an exception which does not affect the proxy).
+Connection protection keeps the connection intact between the client and the proxy when the proxy is disconnected from the backend database, so in cases such as when the backend database has an exception, the proxy will not be affected.
 
 If the proxy is disconnected from the database while executing SQL, the proxy will close all connections related to the SQL (except the connection between itself and the client) and display an error:
 ```c++

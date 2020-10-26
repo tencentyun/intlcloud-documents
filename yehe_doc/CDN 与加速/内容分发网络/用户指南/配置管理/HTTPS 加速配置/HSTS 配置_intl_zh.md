@@ -13,16 +13,16 @@ HSTS 即 HTTP Strict Transport Security，是国际互联网工程组织 IETE �
 ## 配置指南
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第四栏【Https 配置】中可看到 HSTS 配置模块，默认情况下为关闭状态：
-![](https://main.qcloudimg.com/raw/f9c2e5d2796fc254ae316bd560bcf2c3.png)
+![](https://main.qcloudimg.com/raw/4e44076b3485c9de15776134af7d5e96.png)
 单击开启，可进行相关配置：
-![](https://main.qcloudimg.com/raw/cdcc8afd16cb9fe284eb307db8022fa7.png)
+![](https://main.qcloudimg.com/raw/5a98a2ede54d4eceb8b5f4f0a8bbaa3b.png)
 单击【确定】后，根据所配置的内容决定响应头值，可单击【编辑】进行修改：
-![](https://main.qcloudimg.com/raw/4c6fbedf2f0f7b40cccc8a094af5bca3.png)
+![](https://main.qcloudimg.com/raw/e22e2cf4ad493379db7f1bcf49cfa03a.png)
 
 ## 配置示例
 
 假设域名`cloud.tencent.com`的 HSTS 配置如下：
-![](https://main.qcloudimg.com/raw/4c6fbedf2f0f7b40cccc8a094af5bca3.png)
+![](https://main.qcloudimg.com/raw/58e49b2b5a0b94f21fa3547dda08daed.png)
 访问时其 Response Header 为：
 ![](https://main.qcloudimg.com/raw/910e57e5abdedba4a33b4e4748a81318.png)
 
