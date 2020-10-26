@@ -1,8 +1,8 @@
 ## Overview
 
-This API is used to extract content from the specified object (in CSV or JSON format) using Structured Query Language (SQL) statements. To send this request, you need to specify the content delimiter and use an appropriate SQL function. COS Select will return matched extraction results in a format you specified for you to save.
+This API is used to extract content from the specified object (in CSV or JSON format) using Structured Query Language (SQL) statements. To send this request, you need to specify the content delimiter and use an appropriate SQL function. COS Select will return matched extraction results in a format you specified for saving.
 
-For more information on COS Select, see COS [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472). For more information on the SQL expressions of COS Select, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473) in the Developer Guide.
+For more information on COS Select, see COS [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472). For more information on SQL expressions in COS Select, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473) in the Developer Guide.
 
 >!The `Select Object Content` API currently only supports virtual-hosted requests, but not path-style requests.
 
@@ -13,21 +13,22 @@ To use COS Select, you must have the permission to `cos:GetObject`.
 - If you are using a root account, you have the permission by default.
 - If you are using a sub-account, contact your root account to get the permission to this operation. For more information on permission settings, see [Granting Sub-accounts Access to COS](https://intl.cloud.tencent.com/document/product/436/11714).
 
-#### Object data format
+#### Object formats
 
-COS Select supports extracting object data in the following formats:
+COS Select supports extracting data from objects in the following formats:
 
 - CSV: an object is stored in CSV format with its data records separated with a specific delimiter.
 - JSON: an object is stored in JSON format, which can be either a JSON file or a JSON list.
+- Parquet: an object is stored in Parquet format, which can contain nested structures.
 
 > !
-> - CSV and JSON objects need to be encoded in UTF-8.
-> - COS Select supports extracting CSV and JSON objects compressed by gzip or bzip2.
-> - COS Select supports extracting CSV and JSON objects encrypted with SSE-COS.
+>- To use COS Select, the object must be UTF-8 encoded.
+>- COS Select supports extracting data from CSV- and JSON-formatted objects compressed using GZIP or BZIP2, and Parquet-formatted objects compressed using GZIP or Snappy.
+>- COS Select supports extracting data from objects encrypted with SSE-COS.
 
 ## Request
 
-#### Sample request
+#### Sample request 
 
 ```shell
 POST /<ObjectKey>?select&select-type=2 HTTP/1.1
@@ -39,7 +40,7 @@ Request body
 ```
 
 > ?
-> - Authorization: Auth String. For more information, see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 > - The request parameters `select` and `select-type=2` are required, where the former represents the initiation of a select request, and the latter represents the version information of the API.
 
 #### Request headers
@@ -48,7 +49,7 @@ This API only uses common request headers. For more information, see [Common Req
 
 #### Request body
 
-The following request shows how to initiate a COS Select request to extract all the content of a CSV object and save the result as a CSV object. 
+The following sample shows how to initiate a COS Select request to extract all the content from a CSV-formatted object and save the result as a CSV-formatted object. 
 
 ```shell
 <?xml version="1.0" encoding="UTF-8"?>
@@ -82,7 +83,7 @@ The following request shows how to initiate a COS Select request to extract all 
 </SelectRequest> 
 ```
 
-The following request shows how to initiate a COS Select request to extract all the content of a JSON object and save the result as a JSON object.                    
+The following sample shows how to initiate a COS Select request to extract all the content from a JSON-formatted object and save the result as a JSON-formatted object.                    
 
 ```shell
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,60 +107,88 @@ The following request shows how to initiate a COS Select request to extract all 
 </SelectRequest> 
 ```
 
-> ?
-> - The `InputSerialization` element describes the format of the object to be extracted. It is a required parameter and can be specified in CSV or JSON format.
-> - The `OutputSerialization` element describes the format in which the extraction result is saved. This parameter can be specified in CSV or JSON format.
-> - The format of the object to be extracted can be different from that in which the extraction result is saved, so you can extract an object in JSON format and save the extraction result in CSV format, and vice versa.
+The following sample shows how to initiate a COS Select request to extract all the content from a Parquet-formatted object and save the result as a JSON-formatted object.
 
-The following table shows the elements in a request body:
+```shell
+<?xml version="1.0" encoding="UTF-8"?>
+<SelectRequest>
+    <Expression>Select * from COSObject</Expression>
+    <ExpressionType>SQL</ExpressionType>
+    <InputSerialization>
+        <CompressionType>GZIP</CompressionType>
+        <Parquet>
+        </Parquet>
+    </InputSerialization>
+    <OutputSerialization>
+        <JSON>
+            <RecordDelimiter>\n</RecordDelimiter>
+        </JSON>                                  
+    </OutputSerialization>
+    <RequestProgress>
+        <Enabled>FALSE</Enabled>
+    </RequestProgress>                                  
+</SelectRequest> 
+```
+
+
+
+
+
+>?
+>- `InputSerialization` is a required element that specifies the format for the object to be extracted. It can be set to CSV, JSON or Parquet.
+>- `OutputSerialization` specifies the format in which extraction results are to be saved. It can be set only to CSV or JSON.
+>- The two formats above do not need to be the same. For example, you may extract data from an object in JSON format and save the extraction result in CSV format.
+
+The following table shows all elements in a request body:
 
 | Node Name | Parent Node | Description | Type | Required |
 | ------------------- | ------------- | ------------------------------------------------------------ | --------- | -------- |
-| Expression | SelectRequest | An SQL expression that represents the extraction operation which you need to initiate, such as `SELECT s._1 FROM COSObject s`. This expression extracts the first column of content from a CSV object. For more information on SQL expressions, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). | String | Yes |
+| Expression | SelectRequest | An SQL expression that represents the extraction operation to initiate, such as `SELECT s._1 FROM COSObject s` which extracts the first column of data from a CSV-formatted object. For more information on SQL expressions, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). | String | Yes |
 | ExpressionType | SelectRequest | Expression type, which is an extension. Currently, only SQL expressions and parameters are supported. | String | Yes |
-| InputSerialization | SelectRequest | Describes the format of the object to be extracted. | Container | Yes |
+| InputSerialization | SelectRequest | Describes the format of the object to be extracted| Container | Yes |
 | OutputSerialization | SelectRequest | Describes the output format of the extraction result. | Container | Yes |
-| RequestProgress | SelectRequest | Indicates whether to return the query progress (QueryProgress). If this parameter is specified, COS Select will periodically return the query progress. | Container | No |
+| RequestProgress | SelectRequest | Specifies whether to return the query progress information (QueryProgress). If this parameter is used, COS Select will periodically return this information. | Container | No |
+
 
 **InputSerialization container element**
 
 | Node Name | Parent Node | Description | Type | Required |
-| --------------- | ------------------ | ------------------------------------------------------------ | --------- | ---------------------------- |
-| CompressionType | InputSerialization | Describes the compression format of the object to be extracted: <br><li>`NONE` (default): the object has not been compressed.<br><li>`GZIP` or `BZIP2`: the object has been compressed. | String | No |
-| CSV/JSON | InputSerialization | Describes the required file parameters for an object format. For example, for CSV format, the delimiter needs to be specified. | Container | Yes<br>CSV or JSON |
+| :--------------- | :----------------- | :----------------------------------------------------------- | :-------- | :------- |
+| CompressionType | InputSerialization | Describes the compression format of the object to be extracted. If the object has not been compressed, this parameter is set to NONE (default). If it has, you can set it to GZIP or BZIP 2, the only two compression formats that COS Select currently supports. | String | No |
+| CSV/JSON/PARQUET | InputSerialization | Describes the required file parameters for an object format. For example, for CSV, the delimiter needs to be specified. | Container | Yes |
 
 **CSV container element (`InputSerialization` sub-element)**
 
 | Node Name | Parent Node | Description | Type | Required |
 | -------------------------- | ------ | ------------------------------------------------------------ | ------- | -------- |
-| RecordDelimiter | CSV | A character that separates the data records in a CSV object into different rows, which is `\n` by default. You can specify any octal character such as a comma, semicolon, and tab. This parameter supports up to 2 bytes, i.e., you can enter a delimiter in the format of `\r\n`. Default value: `\n `. | String | No |
-| FieldDelimiter | CSV | Specifies the character separating rows in a CSV object, which is `, ` by default. You can specify any octal character. This parameter supports up to 1 byte. | String | No |
-| QuoteCharacter | CSV | If there is a string in the CSV object to be extracted that contains delimiters, you can use `QuoteCharacter` to escape it so as to prevent it from being cut into several parts. For example, if there is a string `"a, b"` in the CSV object, double quotation mark `"` can prevent this string from being separated into two characters (`a` and `b`). Default value: `"`. | String | No |
-| QuoteEscapeCharacter | CSV | If the string to be extracted contains `"`, then you need to use `"` to escape it properly. For example, your string `""" a , b """` will be parsed as `" a , b  "`. Default value: `"`. | String | No |
+| RecordDelimiter | CSV | A character that separates the data records in a CSV-formatted object into different rows, which is `\n` by default. You can specify any octal character such as a comma, semicolon, and tab. This parameter supports up to 2 bytes, i.e., you can enter a delimiter in the format of `\r\n`. | String | No |
+| FieldDelimiter | CSV | Specifies the character separating rows in a CSV-formatted object, which is `,` by default. You can specify any octal character. This parameter supports up to 1 byte. | String | No |
+| QuoteCharacter | CSV | If there is a string in the CSV-formatted object to be extracted that contains delimiters, you can use `QuoteCharacter` to escape it so as to prevent it from being split into several parts. For example, if there is a string ` "a, b" ` in the CSV-formatted object, double quotation mark `"` can prevent this string from being separated into two characters (`a` and `b`). Default value: `" `. | String | No |
+| QuoteEscapeCharacter | CSV | If the string to be extracted contains `"`, then you need to use `"` to escape it so as to ensure that the string can be escaped normally. For example, your string `""" a , b """` will be parsed as `" a , b "`. Default value: `"`. | String | No |
 | AllowQuotedRecordDelimiter | CSV | Specifies whether the object to be extracted contains any character that is the same as the delimiter and needs to be escaped using `"`. When this parameter is set to TRUE, COS Select will escape the character during extraction, which will result in a decrease in the extraction performance. When it is set to FALSE, no escaping will be performed. Default value: FALSE. | Boolean | No |
-| FileHeaderInfo | CSV | Indicates whether the object to be extracted contains a column header. Valid values: NONE, USE, IGNORE. NONE indicates that the object contains no column headers, USE indicates that the object contains a column header which you can use for extraction (such as `SELECT "name" FROM COSObject`), and IGNORE indicates that the object contains a column header which you can, but do not intend to use for extraction (such as `SELECT s._1 FROM COSObject s`). | Enum | No |
-| Comments | CSV | A character which indicates a record is a comment line. It is added to the beginning of a record. Once added, COS Select will not perform any analysis on the record. Default value: `#`. | String | No |
+| FileHeaderInfo | CSV | Whether the object to be extracted contains a column header. Value range: NONE, USE, IGNORE. NONE indicates that the object contains no column headers, USE indicates that the object contains a column header and you can use the head for extraction (such as `SELECT "name" FROM COSObject`), and IGNORE indicates that the object contains a column header and you do not intend to use the header for extraction (but you can still use the column index for extraction, such as `SELECT s._1 FROM COSObject s`). | Enum | No |
+| Comments | CSV | Specifies a record as a comment line. This character is added to the first character of the record. If a record is specified as a comment, COS Select will not perform any analysis on it. Default value: `#`. | String | No |
 
 **JSON container element (`InputSerialization` sub-element)**
 
 | Node Name | Parent Node | Description | Type | Required |
 | ---- | ------ | ------------------------------------------------------------ | ---- | -------- |
-| Type | JSON | JSON file type:<br><li>`DOCUMENT` indicates that the JSON file contains only an independent JSON object which can be cut into multiple rows.<br><li>`LINES` indicates that each row in the JSON object contains an independent JSON object.<br>Valid values: DOCUMENT, LINES | Enum | Yes |
+| Type | JSON | JSON file type: <br><li>DOCUMENT indicates that the JSON file contains only an independent JSON object which can be cut into multiple rows <br><li>LINES indicates that each row in the JSON object contains an independent JSON object <br>Value range: DOCUMENT, LINES | Enum | Yes |
 
 **OutputSerialization container element**
 
 | Node Name | Parent Node | Description | Type | Required |
 | --------- | ------------------- | ------------------------------------------------- | --------- | --------------------------------- |
-| CSV/JSON | OutputSerialization | Specifies the output format of the extraction result. Value range: CSV, JSON | Container | Yes, which must be CSV or JSON |
+| CSV /JSON | OutputSerialization | Specifies the output format of the extraction result. Value range: CSV, JSON | Container | Yes, which must be CSV or JSON |
 
 **CSV container element (`OutputSerialization` sub-element)**
 
 | Node Name | Parent Node | Description | Type | Required |
 | -------------------- | ------ | ------------------------------------------------------------ | ------ | -------- |
-| QuoteFields | CSV | Specifies whether the output result needs to be escaped with `"` if it is a file. Valid values: ALWAYS, ASNEEDED. ALWAYS indicates applying `"` to all the output extracted files, and ASNEEDED indicates using it only when needed. Default value: ASNEEDED. | String | Yes |
+| QuoteFields | CSV | Specifies whether the output result needs to be escaped with `"` if it is a file. Value range: ALWAYS, ASNEEDED. ALWAYS indicates applying `"` to all the output extracted files, and ASNEEDED indicates using it only when needed. Default value: is ASNEEDED. | String | Yes |
 | RecordDelimiter | CSV | A character that separates the data records in the output result into different rows, which is `\n` by default. You can specify any octal character such as a comma, semicolon, and tab. This parameter supports up to 2 bytes, i.e., you can enter a delimiter in the format of `\r\n`. Default value: `\n `. | String | No |
-| FieldDelimiter | CSV | A character that separates each row in the output result into different columns. You can specify any octal character. This parameter supports up to 1 byte. Default value: `,`. | String | No |
-| QuoteCharacter | CSV | If there is a string that contains delimiters in the output result, you can use `QuoteCharacter` to escape it so as to ensure that the string will not be cut in subsequent analysis. For example, if there is a string `a, b` in the output result, double quotation mark `"` can prevent this string from being separated into two characters (`a` and `b`), and COS Select will convert it to `"a, b"` to be written to the file. Default value: `" `. | String | No |
+| FieldDelimiter | CSV | A character that separates each row in the output result into different columns, which is `,` by default. You can specify any octal character. This parameter supports up to 1 byte. Default value: `, `. | String | No |
+| QuoteCharacter | CSV | If there is a string in the output result that contains delimiters, you can use `QuoteCharacter` to escape it so as to ensure that the string will not be cut in subsequent analysis. For example, if there is a string `a, b` in the output result, double quotation mark `"` can prevent this string from being separated into two characters (`a` and `b`), and COS Select will convert it to `"a , b"` to be written to the file. Default value: `" `. | String | No |
 | QuoteEscapeCharacter | CSV | If the string to be output contains `"`, then you need to use `"` to escape it so as to ensure that the string can be escaped normally. For example, your string `" a , b"` will be converted to `""" a , b """` when written to the file. Default value: `" `. | String | No |
 
 **JSON container element (`OutputSerialization` sub-element)**
@@ -184,7 +213,7 @@ This API only returns common response headers. For more information, see [Common
 
 #### Response body
 
-As the size of the response body is unpredictable, COS presents the response body in serialized form, i.e., dividing it into multiple parts to be returned, as shown below:
+As the size of the response body is unpredictable, COS presents the response body in serialized form, i.e., dividing the response body into multiple parts to be returned. The following shows an overview of the returned response body:
 
 ```shell
 <Message 1>
@@ -194,15 +223,15 @@ As the size of the response body is unpredictable, COS presents the response bod
 <Message n>
 ```
 
-#### Pre-response (Prelude) and response result (Data)
+#### Pre-response (Prelude) and Response Result (Data)
 
-COS cuts a extraction result into multiple parts, each of which is a message. Each message consists the pre-response (prelude) and response result (data).
+COS splits the extraction result into multiple parts, each of which is a message. Each message consists the pre-response (prelude) and response result (data).
 
 - The prelude consists of two parts:
  - Total length of the message.
   - Total length of all headers.
 - The data consists of two parts:
-  - Headers.
+  - Header.
   - Payload.
 
 Both the prelude and data end with a 4-byte CRC code encoded in Big Endian. COS Select uses CRC32 to calculate the CRC code. For more information on CRC32, see the [RFC documentation](https://www.ietf.org/rfc/rfc1952.txt). In addition to data, COS Select additionally spends a total of 16 bytes in transferring the prelude and code.
@@ -213,38 +242,38 @@ The figure below shows what a message and a header consist of. One message may c
 ![Message construction](https://main.qcloudimg.com/raw/854fe989e1f98b168a038b4fb615d4e5.png)
 
 As shown above, each message consists of a prelude, a prelude CRC code (composed of two pieces of information that record the number of bytes), header(s), a payload, and a message CRC code. As can be seen from the above figure, the length of the entire response body is calculated as follows:
-```
+```shell
 Total length of a response body = Length of the prelude + length of the prelude CRC code + length of the payload + length of the header(s) + length of the message CRC code
 ```
 
-As the total length of the prelude, the prelude CRC code and the message CRC code is always 16 bytes, the total length of the response body can also be quickly calculated as follows:
-```
+As the prelude, the prelude CRC code and the message CRC code always have a combined length of 16 bytes, the total length of the response body can also be quickly calculated as follows:
+```shell
 Total length of a response body = Length of the payload + length of the header(s) + 16
 ```
 
 The following describes the components of the response body in detail:
 
-| Component &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description |
+| Component&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                      | Description                                                         |
 | ------------------------- | ------------------------------------------------------------ |
 | prelude | Records the total length of each message and the total length of all headers separately. Each record is of 4 bytes, and the total length is 8 bytes: <br>1. `total byte-length`: the total length of the message, which is encoded in Big Endian and of 4 bytes in total with the capacity of the record itself included. <br>2. `headers byte-length`: the total length of all headers, which is encoded in Big Endian and of 4 bytes in total with the capacity occupied by the record excluded. |
 | prelude CRC | A prelude CRC is encoded in Big Endian and contains a total of 4 bytes. It helps the program quickly determine whether the prelude information is correct so as to reduce blocking during buffering. |
-| header | Metadata of the extraction result recorded by the message, such as data type and body format. The length of this part in bytes varies by data type. A header is stored as a key-value (KV) pair and encoded in UTF-8. The metadata recorded in a header can be displayed in any order, but each metadata entry is recorded only once. Depending on the data type, the following headers may appear in the result returned by COS Select:<br>1. `MessageType Header`: this header represent the response type, where the key is ":message-type" and the value can be "error" or "event". "error" indicates that this record is an error message, and "event" indicates that this record is a specific event.<br>2. `EventType Header`: this header records the event type, where the key is ":event-type" and the value can be "Records", "Cont", "Progress", "Stats" or "End". "Records" indicates that the event is the returned extraction record, "Cont" the TCP connection hold, "Progress" the periodically returned extraction result, "Stats" the statistics of the query, and "End" the end of query.<br>3. `ErrorCode Header`: this header records the error code, where the key is ":error-code" and the value can be an error code listed in [Special Error Codes](#.E7.89.B9.E6.AE.8A.E9.94.99.E8.AF.AF.E7.A0.81).<br>4. `ErrorMessage Header`: this header records the error message, where the key is ":error-message" and the value can be an error message returned by the server, which can be used to locate the error. |
-| Payload | Records the extraction result or useful information related to the request. |
+| header | Metadata of the extraction result recorded by the message, such as data type and body format. The length of this part in bytes varies by data type. A header is stored as a key-value (KV) pair and encoded in UTF-8. The metadata recorded in a header can be displayed in any order, but each metadata entry is recorded only once. Depending on the data type, the following headers may appear in the result returned by COS Select: <br>1. `MessageType Header`: This header represent the response type, where the key is ":message-type" and the value can be "error" or "event". "error" indicates that this record is an error message, and "event" indicates that this record is a specific event. <br>2. `EventType Header`: This header records the event type, where the key is ":event-type" and the value can be "Records", "Cont", "Progress", "Stats" or "End". "Records" indicates that the event is the returned extraction record, "Cont" the TCP connection hold, "Progress" the periodically returned extraction result, "Stats" the statistics of the query, and "End" the end of query. <br>3. `ErrorCode Header`: This header records the error code, where the key is ":error-code" and the value can be an error code listed in [Special Error Codes](#.E7.89.B9.E6.AE.8A.E9.94.99.E8.AF.AF.E7.A0.81). <br>4. `ErrorMessage Header`: This header records the error message, where the key is ":error-message" and the value can be an error message returned by the server, which can be used to locate the error. |
+| Payload | Records the extraction result or actual data on the request. |
 | Message CRC | CRC code encoded in Big Endian containing a total of 4 bytes. |
 
-A message may record multiple headers, and each header consists of the following parts:
+A message may include multiple headers, each of which consists of the following elements:
 
-| Component | Description |
+| Element&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     | Description                                                         |
 | ------------------------ | ------------------------------------------------------------ |
 | Header Name Byte-Length | Records the length of the header name in bytes |
-| Header Name | Header type. Valid values: ":message-type", ":event-type", ":error-code", ":error-message".<br><li>":message-type" indicates that the header records the response type.<br><li>":event-type" indicates that the header records the event type<br><li>":error-code" indicates that the header records the error code <br><li>":error-message" indicates that the header records the error message. |
+| Header Name | Header type. Valid values: ":message-type", ":event-type", ":error-code", ":error-message"<br><li>":message-type" indicates that the header records the response type<br><li> ":event-type" indicates that the header records the event type<br><li>":error-code" indicates that the header records the error code <br><li>" :error-message" indicates that the header records the error message. |
 | Header Value Type | Type of the header value, which is always 7 for COS Select, indicating that the type is String |
 | Value String Byte-Length | Length of the header value in bytes, which is always 2 bytes |
 | Header Value String | Body of the header, i.e., the metadata of the payload, where the length of the header value in bytes depends on the response type |
 
 COS Select supports the following response types:
 
-| Response Type | Description |
+| Response Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                   | Description                                                         |
 | ------------------------- | ------------------------------------------------------------ |
 | Records message | An extraction record message, which can contain a single record, a partial record, or multiple records, depending on the number of extraction results. A response body may contain multiple records messages |
 | Continuation message | A connection continuation message that is sent by COS Select periodically to maintain the TCP connection and appears randomly in the response body. It is recommended to make your client able to automatically identify this type of messages and filter them out so as to avoid smudging the extraction results |
@@ -259,7 +288,7 @@ These response types are as detailed below.
 
 - Header format
   A records message contains three types of headers: ":message-type", ":event-type", and ":content-type", as shown below:
-  ![Records message](https://main.qcloudimg.com/raw/7e04ad30a1ce335a67975a291bffdac5.png) 
+  ![Records message ](https://main.qcloudimg.com/raw/7e04ad30a1ce335a67975a291bffdac5.png) 
 - Body format
   The body of a records message may contain a single record, a partial record, or multiple records, depending on the number of extraction results.
 
@@ -297,14 +326,14 @@ Below is a sample:
 
 - Header format
   A stats message contains three types of headers: ":message-type", ":event-type", and ":content-type", as shown below:
-  ![Stats Message](https://main.qcloudimg.com/raw/8fbe1d40ec19c4f72d18275ff087f264.png)
+  ![ Stats Message ](https://main.qcloudimg.com/raw/8fbe1d40ec19c4f72d18275ff087f264.png)
 - Body format
   The body of a stats message is XML text which contains the statistics of the current query, mainly including:
   - BytesScanned: if the file is compressed, this value represents the size of the file in bytes before it is decompressed; otherwise, this value represents the size of the file in bytes.
   - BytesProcessed: if the file is compressed, this value represents the size of the file in bytes after it is decompressed; otherwise, this value represents the size of the file in bytes.
   - BytesReturned: size of the extraction result returned by COS Select in the query in bytes.
 
-Below is a sample:
+See below as an example:
 
 ```shell
 <?xml version="1.0" encoding="UTF-8"?>
@@ -319,7 +348,7 @@ Below is a sample:
 
 - Header format
   An end message contains two types of headers: ":message-type" and ":event-type", as shown below:
-  ![End messages](https://main.qcloudimg.com/raw/f28f76c719b02258379adf1fcc71f484.png)
+  ![ End messages ](https://main.qcloudimg.com/raw/f28f76c719b02258379adf1fcc71f484.png)
 - Body format
   An end message contains no body content.
 
@@ -327,7 +356,7 @@ Below is a sample:
 
 - Header format
   A request level error message contains three types of headers: ":error-code", ":error-message", and ":message-type", as shown below:
-  ![Request Level Error Message](https://main.qcloudimg.com/raw/72fc70c4cabbc86b67d1cf8cc46a8d70.png) 
+  ![ Request Level Error Message](https://main.qcloudimg.com/raw/72fc70c4cabbc86b67d1cf8cc46a8d70.png) 
 
 For more information on the error code in a request level error message, see [Special Error Codes](#.E7.89.B9.E6.AE.8A.E9.94.99.E8.AF.AF.E7.A0.81).
 
@@ -339,13 +368,13 @@ For more information on the error code in a request level error message, see [Sp
 
 For common errors related to this request, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). The following describes special error codes:                     
 
-| Error Code | Error Message | Description | HTTP Status Code |
+| Error Code | Error Message | Meaning | HTTP Status Code |
 | -- | -- | -- | -- |
 | InvalidXML | The XML is invalid | The XML format is invalid. | 400 Bad Request |
 | MissingRequiredParameter | The SelectRequest entity is missing a required parameter | A required parameter is missing in the extraction request. | 400 Bad Request |
 | MissingExpectedExpression | The SQL expression is missing | An SQL expression is missing. | 400 Bad Request |
-| MissingInputSerialization | The input serialization is missing | No data serialization format of the input CSV object is specified. | 400 Bad Request |
-| InvalidCompressionFormat | The file is not in a supported compression format. Only GZIP and BZIP2 are supported | The file is in an invalid compression format. Only gzip and bzip2 are supported. | 400 Bad Request |
+| MissingInputSerialization | The input serialization is missing | No data serialization format of the input CSV-formatted object is specified. | 400 Bad Request |
+| InvalidCompressionFormat | The file is not in a supported compression format. Only GZIP and BZIP2 are supported | The file is in an invalid compression format. Only GZIP and BZIP2 are supported. | 400 Bad Request |
 | MissingInputFormat | The input format is missing | The input format is missing. | 400 Bad Request |
 | InvalidFileHeaderInfo | The input FileHeaderInfo is invalid. Only NONE, USE, and IGNORE are supported| The input file header information is invalid. Only NONE, USE, and IGNORE are supported. | 400 Bad Request |
 | InvalidRequestParameter | The input RecordDelimiter of CSV is invalid | The record delimiter of the input CSV file is invalid. | 400 Bad Request |
@@ -353,7 +382,7 @@ For common errors related to this request, see [Error Codes](https://intl.cloud.
 | InvalidRequestParameter | The input QuoteCharacter of CSV is invalid | The quote character of the input CSV file is invalid. | 400 Bad Request |
 | InvalidRequestParameter | The input AllowQuoteRecordDelimiter of CSV is invalid. Only TRUE and FALSE are supported | The configuration for enabling the escape character in the input CSV file is invalid. Only TRUE and FALSE are supported. | 400 Bad Request |
 | InvalidJsonType | The JsonType is invalid. Only DOCUMENT and LINES are supported | The JSON type is invalid. Only DOCUMENT and LINES are supported. | 400 Bad Request |
-| MissingOutputSerialization | The output serialization is missing. | No data serialization format of the output CSV object is specified. | 400 Bad Request |
+| MissingOutputSerialization | The output serialization is missing. | No data serialization format of the output CSV-formatted object is specified. | 400 Bad Request |
 | MissingOutputFormat | The output format is missing | The output format is missing. | 400 Bad Request |
 | InvalidQuoteFields | The QuoteFields is invalid. Only ALWAYS and ASNEEDED are supported | The escaping rule is invalid. Only ALWAYS and ASNEEDED are supported. | 400 Bad Request |
 | InvalidRequestParameter | The output RecordDelimiter of CSV is invalid | The record delimiter of the output CSV file is invalid. | 400 Bad Request |
@@ -393,11 +422,11 @@ For common errors related to this request, see [Error Codes](https://intl.cloud.
 
 
 
-## Samples
+## Examples
 
-#### Sample 1. Extracting content from an object in CSV format
+#### Sample 1. Extracting data from an object in CSV format
 
-The following sample shows how to call this API to extract all the content from a CSV object and output the extraction result in CSV format. The object to be extracted is named `exampleobject.csv` and stored in the bucket examplebucket-1250000000 in Beijing (ap-beijing).
+The following sample shows the process of calling this API to extract all the data from a CSV-formatted object and outputting the extraction result in CSV format. The object to be extracted is named `exampleobject.csv` and stored in the bucket examplebucket-1250000000 in Beijing (ap-beijing).
 
 ```shell
 POST /exampleobject.csv?select&select-type=2 HTTP/1.1
@@ -433,14 +462,14 @@ Content-Length: content length
 </SelectRequest> 
 ```
 
-If you need to execute different extraction commands, you can modify the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). Some common extraction scenarios are described below.
+To run different extraction commands, you can modify the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). Some common extraction scenarios are described below.
 
-- Suppose that you use a column index to filter the content of an object. You can use `s._n` to filter out the data in the `n` column, with the minimum value of `n` being 1. The following command will filter out the records in column 3 with a value greater than 100 from the object and return columns 1 and 2 of those records: 
+- Suppose that you filter data in an object by column index. You can use `s._n` to filter out the data in the `n` column, with the minimum value of `n` being 1. The following command will filter out the records in column 3 with a value greater than 100 from the object and return columns 1 and 2 of those records: 
 ```shell
 SELECT s._1, s._2 FROM COSObject s WHERE s._3 > 100
 ```
 
-- If your CSV object has a column header and you want to filter the content of the object using the name of the header (by setting `FileHeaderInfo` to `Use`), you can use `s.name` for indexing. The following command will filter out records with a header named `Id` or `FirstName`:
+- If your CSV-formatted object has a column header and you want to filter data in the object by the column header (by setting `FileHeaderInfo` to `Use`), you can use `s.name` to do so. The following command will filter out records with a header named `Id` or `FirstName`:
 ```shell
 SELECT s.Id, s.FirstName FROM COSObject s
 ```
@@ -461,9 +490,9 @@ Date: Tue, 12 Jan 2019 11:50:29 GMT
 A series of messages
 ```
 
-#### Sample 2. Extracting content from an object in JSON format
+#### Sample 2. Extracting data from an object in JSON format
 
-The following sample shows how to call this API to extract all the content from a JSON object and output the extraction result in CSV format. The object to be extracted is named `exampleobject.json` and stored in the bucket examplebucket-1250000000 in Beijing (ap-beijing).
+The following sample shows the process of calling this API to extract all the content from a JSON object and outputting the extraction result in CSV format. The object to be extracted is named `exampleobject.json` and stored in the bucket examplebucket-1250000000 in Beijing (ap-beijing).
 
 ```shell
 POST /exampleobject.json?select&select-type=2 HTTP/1.1
@@ -496,7 +525,7 @@ Content-Length: content length
 
 Similarly, you can also perform different extraction commands on JSON objects by modifying the SQL command in the `Expression` element. For more information on commands, see [SELECT Command](https://intl.cloud.tencent.com/document/product/436/32473). Some common extraction scenarios are described below.
 
-- You can extract data using the JSON attribute name. The following command will filter out records whose `city` value is Seattle from the object and return the `country` and `city` information of those records:
+- You can extract data using the JSON attribute name. The following command will filter out records whose `city` value is Seattle from the object and return the `country` and `city` information in those records:
 ```shell
 SELECT s.country, s.city from COSObject s where s.city = 'Seattle'
 ```
@@ -506,9 +535,9 @@ SELECT s.country, s.city from COSObject s where s.city = 'Seattle'
 SELECT count(*) FROM COSObject s
 ```
 
-## Notes
+## Notes:
 
-Unlike the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) API, SELECT Object Content does not support the following features:
+Unlike the [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) API, SELECT Object Content cannot:
 
-- Returning a part of an object: you cannot use parameters such as `Range` to specify a part of an object to return.
-- Manipulating archived objects (in ARCHIVE storage class). COS Select cannot directly manipulate archived objects. To do so, you need to retrieve the data first.
+- Return a part of an object. You cannot use parameters such as `Range` to specify only a certain part of an object to return.
+- Extract data from the ARCHIVE or DEEP ARCHIVE storage class before the data is restored.
