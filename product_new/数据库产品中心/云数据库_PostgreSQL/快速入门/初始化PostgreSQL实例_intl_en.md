@@ -3,7 +3,7 @@ This document describes how to initialize a TencentDB for PostgreSQL instance fo
 ## Prerequisites
 1. You have signed up for a Tencent Cloud account and verified your identity.
 If you need to sign up for a Tencent Cloud account:
-<div style="background-color:#00A4FF; width: 375px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 375px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to sign up for a Tencent Cloud account</a></div>
 2. You have purchased a TencentDB for PostgreSQL instance.
 
 
