@@ -1,110 +1,349 @@
 ## General APIs
-| API Name | Description |
-|---------|---------|
-| [DescribeLoadBalancersTaskResult](https://intl.cloud.tencent.com/document/product/214/4007) | Queries the result of executing an asynchronous CLB API. |
-| [CreateLoadBalancer](https://intl.cloud.tencent.com/document/product/214/1254) | Purchases a CLB instance.|
-| [InquiryLBPriceAll](https://intl.cloud.tencent.com/document/product/214/1328) | Queries the prices of CLB instances. |
-| [DescribeLoadBalancers](https://intl.cloud.tencent.com/document/product/214/1261) | Queries the list of CLB instances. |
-| [DeleteLoadBalancers](https://intl.cloud.tencent.com/document/product/214/1257) | Deletes a CLB instance. |
-| [GetMonitorData](https://intl.cloud.tencent.com/document/product/214/8801) | Queries the monitoring data of the CLB instance. |
-| [ReplaceCert](https://intl.cloud.tencent.com/document/product/214/6045)| Replaces the certificate of the CLB instance. |
-| [GetCertListWithLoadBalancer](https://intl.cloud.tencent.com/document/product/214/6046) | Queries the information of the CLB instance associated with the certificate. |
-| [DescribeLoadBalancerLog](https://intl.cloud.tencent.com/document/product/214/12235) | Queries the CLB Layer-7 log in COS.|
-| [CloneLB](https://intl.cloud.tencent.com/document/product/214/37069) | Clones a CLB instance. |
-
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/4007" target="_blank">DescribeLoadBalancersTaskResult</a></td>
+<td >DescribeLoadBalancersTaskResult</td>
+<td >Queries the execution result of an async CLB API.</td>
+</tr>
+<tr>
+<td ><a href="https://intl.cloud.tencent.com/document/product/214/1254" target="_blank">CreateLoadBalancer</a></td>
+<td>CreateLoadBalancer</td>
+<td>Purchases a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/1328" target="_blank">InquiryLBPriceAll</a></td>
+<td>InquiryLBPriceAll</td>
+<td>Queries the price of CLB instances.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/1261" target="_blank">DescribeLoadBalancers</a></td>
+<td>DescribeLoadBalancers</td>
+<td>Queries the list of CLB instances.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1257" target="_blank">DeleteLoadBalancers</a></td>
+<td>DeleteLoadBalancers</td>
+<td>Deletes a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8801" target="_blank">GetMonitorData</a></td>
+<td>GetMonitorData</td>
+<td>Queries monitoring data of CLB instances.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/6045" target="_blank">ReplaceCert</a></td>
+<td>ReplaceCert</td>
+<td>Changes the certificate of CLB instances.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/6046" target="_blank">GetCertListWithLoadBalancer</a></td>
+<td>GetCertListWithLoadBalancer</td>
+<td>Queries CLB instances associated with the certificate.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/37069" target="_blank">CloneLB</a></td>
+<td>CloneLB</td>
+<td>Clones a CLB instance.</td>
+</tr>
+</tbody></table>
 
 ## Classic CLB APIs
+### Instance APIs
 
-#### Instance APIs
-
-| API Name | Description |
-|---------| ---------|
-| [ModifyLoadBalancerAttributes](https://intl.cloud.tencent.com/document/product/214/1263) | Modifies the attributes of the specified CLB instance, including the CLB instance name. |
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/1263" target="_blank">ModifyLoadBalancerAttributes</a></td>
+<td>ModifyLoadBalancerAttributes</td>
+<td>Modifies the attributes of a specified CLB instance, including the CLB instance name.</td>
+</tr>
+</tbody></table>
 
 ### Listener APIs
 
-| API Name | Description |
-|---------| ---------|
-| [CreateLoadBalancerListeners](https://intl.cloud.tencent.com/document/product/214/1255) | Creates a CLB listener for the specified CLB instance. A CLB listener provides the protocols for the requests to be forwarded, as well as ports and health check policies. |
-| [DescribeLoadBalancerListeners](https://intl.cloud.tencent.com/document/product/214/1260) | Returns the list of listeners for the specified CLB instances, including unique ID, name, port health check policy and other information of listeners. |
-| [DeleteLoadBalancerListeners](https://intl.cloud.tencent.com/document/product/214/1256) | Deletes a set of listeners for the specified CLB instance. |
-| [ModifyLoadBalancerListener](https://intl.cloud.tencent.com/document/product/214/3601) | Modifies the attributes of the listener for the CLB instance, including the name, health check policy and other information of the listener. |
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1255" target="_blank">CreateLoadBalancerListeners</a></td>
+<td>CreateLoadBalancerListeners</td>
+<td>Creates a CLB listener for the specified CLB instance. A CLB listener provides request forwarding protocols, ports, and health check policies.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1260" target="_blank">DescribeLoadBalancerListeners</a></td>
+<td>DescribeLoadBalancerListeners</td>
+<td>Obtains the list of listeners for the specified CLB instance, including unique ID, name, port, and health check policy.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1256" target="_blank">DeleteLoadBalancerListeners</a></td>
+<td>DeleteLoadBalancerListeners</td>
+<td>Deletes listeners for the specified CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/3601" target="_blank">ModifyLoadBalancerListener</a></td>
+<td>ModifyLoadBalancerListener</td>
+<td>Modifies the attributes of a CLB listener, including the listener name and health check policy.</td>
+</tr>
+</tbody></table>
 
 ### Real server APIs
-
-| API Name | Description |
-| ---------| ---------|
-| [RegisterInstancesWithLoadBalancer](https://intl.cloud.tencent.com/document/product/214/1265) | Binds a set of specified CVMs to the specified CLB instance. |
-| [DescribeLoadBalancerBackends](https://intl.cloud.tencent.com/document/product/214/1259) | Obtains the list of CVMs bound to the CLB instance identified by *LoadBalanceId*. |
-| [ModifyLoadBalancerBackends](https://intl.cloud.tencent.com/document/product/214/1264) | Modifies the weight of a set of CVMs bound to the CLB instance.|
-| [DeregisterInstancesFromLoadBalancer](https://intl.cloud.tencent.com/document/product/214/1258) | Unbinds CVMs from the CLB instance. |
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1265" target="_blank">RegisterInstancesWithLoadBalancer</a></td>
+<td>RegisterInstancesWithLoadBalancer</td>
+<td>Binds the specified CVMs to a specified CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1259" target="_blank">DescribeLoadBalancerBackends</a></td>
+<td>DescribeLoadBalancerBackends</td>
+<td>Obtains the list of CVMs bound to the CLB instance identified by <em>LoadBalanceId</em>.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1264" target="_blank">ModifyLoadBalancerBackends</a></td>
+<td>ModifyLoadBalancerBackends</td>
+<td>Modifies the weights of CVMs bound to a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/api/214/1258" target="_blank">DeregisterInstancesFromLoadBalancer</a></td>
+<td>DeregisterInstancesFromLoadBalancer</td>
+<td>Unbinds CVMs from a CLB instance.</td>
+</tr>
+</tbody></table>
 
 ### Health check APIs
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/1326" target="_blank">DescribeLBHealthStatus</a></td>
+<td>DescribeLBHealthStatus</td>
+<td>Queries the health status of a CLB instance.</td>
+</tr>
+</tbody></table>
 
-| API Name | Description |
-|---------|---------|
-| [DescribeLBHealthStatus](https://intl.cloud.tencent.com/document/product/214/1326) | Queries the health status of a CLB instance. |
-
-
-## CLB APIs
->? The following CLB APIs have been updated to version 3.0, which is more standardized with significantly reduced access latency. The legacy APIs will be deprecated and is currently not displayed on the left sidebar. We recommend using [CLB API 3.0](https://intl.cloud.tencent.com/document/product/214/36412).
+## Cloud Load Balancer APIs
+>?The following CLB APIs have been updated to version 3.0. These legacy APIs may be deprecated and is currently not displayed on the left sidebar. We recommend using [CLB API 3.0](https://intl.cloud.tencent.com/document/product/214/33789), which is more standardized and has a significantly reduced access latency.
 
 ### CLB instance APIs
-
-| API Name | Description |
-|---------| ---------|
-| [ModifyForwardLBName](https://intl.cloud.tencent.com/document/product/214/13295) | Modifies the name of a CLB instance. |
-
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/13295" target="_blank">ModifyForwardLBName</a></td>
+<td>ModifyForwardLBName</td>
+<td>Modifies the name of a CLB instance.</td>
+</tr>
+</tbody></table>
 
 ### Listener APIs
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action ID</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9005" target="_blank">DescribeForwardLBListeners</a></td>
+<td>DescribeForwardLBListeners</td>
+<td>Queries CLB listeners.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9000" target="_blank">CreateForwardLBSeventhLayerListeners</a></td>
+<td>CreateForwardLBSeventhLayerListeners</td>
+<td>Creates a Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9001" target="_blank">CreateForwardLBFourthLayerListeners</a></td>
+<td>CreateForwardLBFourthLayerListeners</td>
+<td>Creates a Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8998" target="_blank">ModifyForwardLBFourthListener</a></td>
+<td>ModifyForwardLBFourthListener</td>
+<td>Modifies the attributes of a CLB Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8997" target="_blank">ModifyForwardLBSeventhListener</a></td>
+<td>ModifyForwardLBSeventhListener</td>
+<td>Modifies the attributes of a CLB Layer-7 listener.</td>
+</tr>
+<tr>
+<td>DeleteForwardLBListener</td>
+<td>DeleteForwardLBListener</td>
+<td>Deletes a CLB listener.</td>
+</tr>
+</tbody></table>
 
-| API Name | Description |
-|---------| ---------|
-| [DescribeForwardLBListeners](https://intl.cloud.tencent.com/document/product/214/9005) | Queries the CLB listener. |
-| [CreateForwardLBSeventhLayerListeners](https://intl.cloud.tencent.com/document/product/214/9000) | Creates a Layer-7 listener. |
-| [CreateForwardLBFourthLayerListeners](https://intl.cloud.tencent.com/document/product/214/9001) | Creates a Layer-4 listener. |
-| [ModifyForwardLBFourthListener](https://intl.cloud.tencent.com/document/product/214/8998) | Modifies the attributes of the CLB Layer-4 listener. |
-| [ModifyForwardLBSeventhListener](https://intl.cloud.tencent.com/document/product/214/8997) | Modifies the attributes of the CLB Layer-7 listener. |
-| DeleteForwardLBListener | Deletes a CLB listener.|
 
-### Forwarding rule APIs
-
-| API Name | Description |
-|---------| ---------|
-| [CreateForwardLBListenerRules](https://intl.cloud.tencent.com/document/product/214/9011) | Creates forwarding rules of the CLB Layer-7 listener. |
-| [ModifyForwardLBRulesDomain](https://intl.cloud.tencent.com/document/product/214/9007) | Modifies the domain name under the CLB Layer-7 listener. |
-| [ModifyLoadBalancerRulesProbe](https://intl.cloud.tencent.com/document/product/214/9008) | Modifies the health check and forwarding path for the forwarding rules of the CLB Layer-7 listener. |
-| [DeleteForwardLBListenerRules](https://intl.cloud.tencent.com/document/product/214/9012) | Deletes the forwarding rules of the CLB Layer-7 listener. |
+|### Forwarding rule APIs
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action ID</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9011" target="_blank">CreateForwardLBListenerRules</a></td>
+<td>CreateForwardLBListenerRules</td>
+<td>Creates forwarding rules of a CLB Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9007" target="_blank">ModifyForwardLBRulesDomain</a></td>
+<td>ModifyForwardLBRulesDomain</td>
+<td>Modifies the domain name under a CLB Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9008" target="_blank">ModifyLoadBalancerRulesProbe</a></td>
+<td>ModifyLoadBalancerRulesProbe</td>
+<td>Modifies the health check and forwarding path for the forwarding rules of a CLB Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9012" target="_blank">DeleteForwardLBListenerRules</a></td>
+<td>DeleteForwardLBListenerRules</td>
+<td>Deletes forwarding rules of a CLB Layer-7 listener.</td>
+</tr>
+</tbody></table>
 
 ### CVM APIs
 
-| API Name | Description |
-|---------| ---------|
-| DescribeForwardLBBackends | Queries the list of CVMs bound to the CLB instance. |
-| [RegisterInstancesWithForwardLBFourthListener](https://intl.cloud.tencent.com/document/product/214/8989) | Binds a CVM to the forwarding rules of the CLB Layer-4 listener. |
-| [RegisterInstancesWithForwardLBSeventhListener](https://intl.cloud.tencent.com/document/product/214/8988) | Binds a CVM to the forwarding rules of the CLB Layer-7 listener. |
-| [ModifyForwardFourthBackendsWeight](https://intl.cloud.tencent.com/document/product/214/8981) | Modifies the weight of a CVM bound to the Layer-4 listener. |
-| [ModifyForwardSeventhBackends](https://intl.cloud.tencent.com/document/product/214/8978) | Modifies the weight of a CVM bound to the Layer-7 listener. |
-| [ModifyForwardFourthBackendsPort](https://intl.cloud.tencent.com/document/product/214/8984) | Modifies the port of a CVM bound to the Layer-4 listener. |
-| [ModifyForwardSeventhBackendsPort](https://intl.cloud.tencent.com/document/product/214/8979) | Modifies the port of a CVM bound to the Layer-7 listener. |
-| [DeregisterInstancesFromForwardLBFourthListener](https://intl.cloud.tencent.com/document/product/214/8992) | Unbinds a CVM from the CLB Layer-4 listener. |
-| [DeregisterInstancesFromForwardLB](https://intl.cloud.tencent.com/document/product/214/8991) | Unbinds a CVM from the forwarding rules of the CLB Layer-7 listener. |
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action ID</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8987" target="_blank">DescribeForwardLBBackends</a></td>
+<td>DescribeForwardLBBackends</td>
+<td>Obtains the list of CVMs bound to a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8989" target="_blank">RegisterInstancesWithForwardLBFourthListener</a></td>
+<td>RegisterInstancesWithForwardLBFourthListener</td>
+<td>Binds CVMs to the forwarding rules of a CLB Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8988" target="_blank">RegisterInstancesWithForwardLBSeventhListener</a></td>
+<td>RegisterInstancesWithForwardLBSeventhListener</td>
+<td>Binds CVMs to the forwarding rules of a CLB Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8981" target="_blank">ModifyForwardFourthBackendsWeight</a></td>
+<td>ModifyForwardFourthBackendsWeight</td>
+<td>Modifies the weight of CVMs bound to a Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8978" target="_blank">ModifyForwardSeventhBackends</a></td>
+<td>ModifyForwardSeventhBackends</td>
+<td>Modifies the weight of CVMs bound to a Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8984" target="_blank">ModifyForwardFourthBackendsPort</a></td>
+<td>ModifyForwardFourthBackendsPort</td>
+<td>Modifies ports of CVMs bound to a Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8979" target="_blank">ModifyForwardSeventhBackendsPort</a></td>
+<td>ModifyForwardSeventhBackendsPort</td>
+<td>Modifies ports of CVMs bound to a Layer-7 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8992" target="_blank">DeregisterInstancesFromForwardLBFourthListener</a></td>
+<td>DeregisterInstancesFromForwardLBFourthListener</td>
+<td>Unbinds CVMs from the forwarding rules of a CLB Layer-4 listener.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8991" target="_blank">DeregisterInstancesFromForwardLB</a></td>
+<td>DeregisterInstancesFromForwardLB</td>
+<td>Unbinds CVMs from the forwarding rules of a CLB Layer-7 listener.</td>
+</tr>
+</tbody></table>
 
 ### Health check APIs
 
-| API Name | Description |
-|---------| ---------|
-| [DescribeForwardLBHealthStatus] | Queries the health check of a CLB instance. |
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action ID</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8995" target="_blank">DescribeForwardLBHealthStatus</a></td>
+<td>DescribeForwardLBHealthStatus</td>
+<td>Describes the health check of a CLB instance.</td>
+</tr>
+</tbody></table>
 
 ### Redirection APIs
-
-| API Name | Description |
-|---------| ---------|
-| [DescribeRewrite](https://intl.cloud.tencent.com/document/product/214/9016) | Queries the redirection relationship of the CLB instance. |
-| [DeleteRewrite](https://intl.cloud.tencent.com/document/product/214/9014) | Deletes the redirection relationship of the CLB instance. |
-| [ManualRewrite](https://intl.cloud.tencent.com/document/product/214/9015) | Adds the redirection relationship to a CLB instance manually. |
-| [AutoRewrite](https://intl.cloud.tencent.com/document/product/214/9017) | Generates the redirection relationship for a CLB instance automatically. |
-
-
-
-
+<table>
+<thead>
+<tr>
+<th width="30%">API Name</th>
+<th width="40%">Action ID</th>
+<th width="30%">Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9016" target="_blank">DescribeRewrite</a></td>
+<td>DescribeRewrite</td>
+<td>Queries the redirection relationship of a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9014" target="_blank">DeleteRewrite</a></td>
+<td>DeleteRewrite</td>
+<td>Deletes the redirection relationship of a CLB instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9015" target="_blank">ManualRewrite</a></td>
+<td>ManualRewrite</td>
+<td>Adds the redirection relationship to a CLB instance manually.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9017" target="_blank">AutoRewrite</a></td>
+<td>AutoRewrite</td>
+<td>Generates the redirection relationship for a CLB instance automatically.</td>
+</tr>
+</tbody></table>
