@@ -5,13 +5,13 @@ The below software in this distribution may have been modified by THL A29 Limite
 
 
 Open Source Software Licensed under the BSD 3-Clause License with Intellectual Property Right Statements:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. Opus
 Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic, Jean-Marc Valin, Timothy B.Terriberry,CSIRO, Gregory Maxwell, Mark Borgerding, Erik de Castro Lopo
 
 
 Terms of the BSD 3-Clause License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -64,14 +64,14 @@ https://datatracker.ietf.org/ipr/1526/
 
 
 Open Source Software Licensed under the BSD 3-Clause License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. Quic
 Copyright 2015 The Chromium Authors. All rights reserved.
 Copyright (c) 2006-2009 The Chromium OS Authors. All rights reserved.
 
 
 Terms of the BSD 3-Clause License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
@@ -85,13 +85,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 
 Open Source Software Licensed under the Specific License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. fdk-aac
 Copyright  1995 - 2018 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. All rights reserved.
 Source code of this software can be obtained from: https://android.googlesource.com/platform/external/aac/
 
 Terms of the Specific License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 Software License for The Fraunhofer FDK AAC Codec Library for Android 
 
 © Copyright  1995 - 2018 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. All rights reserved.
@@ -235,14 +235,14 @@ amm-info@iis.fraunhofer.de
 
 
 Open Source Software Licensed under the BSD 2-Clause License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. OpenH264
 Copyright (c) 2013, Cisco Systems
 All rights reserved.
 
 
 Terms of the BSD 2-Clause License:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
 
@@ -267,7 +267,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 Open Source Software Licensed under the OpenSSL License, Original SSLeay License,  ISC License and Other Licenses of the Third-Party Components therein:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. Boringssl
 Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
 Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
@@ -319,92 +319,92 @@ record keeping.)
 
 
 Terms of the OpenSSL License
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 
 /* ====================================================================
 
- * Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
+ \* Copyright (c) 1998-2011 The OpenSSL Project.  All rights reserved.
 
 
- * Redistribution and use in source and binary forms, with or without
+ \* Redistribution and use in source and binary forms, with or without
 
- * modification, are permitted provided that the following conditions
+ \* modification, are permitted provided that the following conditions
 
- * are met:
+ \* are met:
 
- * 1. Redistributions of source code must retain the above copyright
+ \* 1. Redistributions of source code must retain the above copyright
 
- *    notice, this list of conditions and the following disclaimer. 
+ \*    notice, this list of conditions and the following disclaimer. 
 
- * 2. Redistributions in binary form must reproduce the above copyright
+ \* 2. Redistributions in binary form must reproduce the above copyright
 
- *    notice, this list of conditions and the following disclaimer in
+ \*    notice, this list of conditions and the following disclaimer in
 
- *    the documentation and/or other materials provided with the
+ \*    the documentation and/or other materials provided with the
 
- *    distribution.
+ \*    distribution.
 
- * 3. All advertising materials mentioning features or use of this
+ \* 3. All advertising materials mentioning features or use of this
 
- *    software must display the following acknowledgment:
+ \*    software must display the following acknowledgment:
 
- *    "This product includes software developed by the OpenSSL Project
+ \*    "This product includes software developed by the OpenSSL Project
 
- *    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
+ \*    for use in the OpenSSL Toolkit. (http://www.openssl.org/)"
 
- * 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
+ \* 4. The names "OpenSSL Toolkit" and "OpenSSL Project" must not be used to
 
- *    endorse or promote products derived from this software without
+ \*    endorse or promote products derived from this software without
 
- *    prior written permission. For written permission, please contact
+ \*    prior written permission. For written permission, please contact
 
- *    openssl-core@openssl.org.
+ \*    openssl-core@openssl.org.
 
- * 5. Products derived from this software may not be called "OpenSSL"
+ \* 5. Products derived from this software may not be called "OpenSSL"
 
- *    nor may "OpenSSL" appear in their names without prior written
+ \*    nor may "OpenSSL" appear in their names without prior written
 
- *    permission of the OpenSSL Project.
+ \*    permission of the OpenSSL Project.
 
- * 6. Redistributions of any form whatsoever must retain the following
+ \* 6. Redistributions of any form whatsoever must retain the following
 
- *    acknowledgment:
+ \*    acknowledgment:
 
- *    "This product includes software developed by the OpenSSL Project
+ \*    "This product includes software developed by the OpenSSL Project
 
- *    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+ \*    for use in the OpenSSL Toolkit (http://www.openssl.org/)"
 
- * THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
+ \* THIS SOFTWARE IS PROVIDED BY THE OpenSSL PROJECT ``AS IS'' AND ANY
 
- * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ \* EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ \* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 
- * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
+ \* PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE OpenSSL PROJECT OR
 
- * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ \* ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
 
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ \* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
 
- * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ \* NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 
- * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ \* LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
 
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ \* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
 
- * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ \* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ \* ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 
- * OF THE POSSIBILITY OF SUCH DAMAGE.
+ \* OF THE POSSIBILITY OF SUCH DAMAGE.
 
- * ====================================================================
+ \* ====================================================================
 
- * This product includes cryptographic software written by Eric Young
+ \* This product includes cryptographic software written by Eric Young
 
- * (eay@cryptsoft.com).  This product includes software written by Tim
+ \* (eay@cryptsoft.com).  This product includes software written by Tim
 
- * Hudson (tjh@cryptsoft.com).
+ \* Hudson (tjh@cryptsoft.com).
 
  *
 
@@ -412,136 +412,136 @@ Terms of the OpenSSL License
 
 
 Terms of the Original SSLeay License
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 /* Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
 
- * All rights reserved.
+ \* All rights reserved.
 
 
- * This package is an SSL implementation written
+ \* This package is an SSL implementation written
 
- * by Eric Young (eay@cryptsoft.com).
+ \* by Eric Young (eay@cryptsoft.com).
 
- * The implementation was written so as to conform with Netscapes SSL.
-
-
- * This library is free for commercial and non-commercial use as long as
-
- * the following conditions are aheared to.  The following conditions
-
- * apply to all code found in this distribution, be it the RC4, RSA,
-
- * lhash, DES, etc., code; not just the SSL code.  The SSL documentation
-
- * included with this distribution is covered by the same copyright terms
-
- * except that the holder is Tim Hudson (tjh@cryptsoft.com).
+ \* The implementation was written so as to conform with Netscapes SSL.
 
 
- * Copyright remains Eric Young's, and as such any Copyright notices in
+ \* This library is free for commercial and non-commercial use as long as
 
- * the code are not to be removed.
+ \* the following conditions are aheared to.  The following conditions
 
- * If this package is used in a product, Eric Young should be given attribution
+ \* apply to all code found in this distribution, be it the RC4, RSA,
 
- * as the author of the parts of the library used.
+ \* lhash, DES, etc., code; not just the SSL code.  The SSL documentation
 
- * This can be in the form of a textual message at program startup or
+ \* included with this distribution is covered by the same copyright terms
 
- * in documentation (online or textual) provided with the package.
+ \* except that the holder is Tim Hudson (tjh@cryptsoft.com).
 
 
- * Redistribution and use in source and binary forms, with or without
+ \* Copyright remains Eric Young's, and as such any Copyright notices in
 
- * modification, are permitted provided that the following conditions
+ \* the code are not to be removed.
 
- * are met:
+ \* If this package is used in a product, Eric Young should be given attribution
 
- * 1. Redistributions of source code must retain the copyright
+ \* as the author of the parts of the library used.
 
- *    notice, this list of conditions and the following disclaimer.
+ \* This can be in the form of a textual message at program startup or
 
- * 2. Redistributions in binary form must reproduce the above copyright
+ \* in documentation (online or textual) provided with the package.
 
- *    notice, this list of conditions and the following disclaimer in the
 
- *    documentation and/or other materials provided with the distribution.
+ \* Redistribution and use in source and binary forms, with or without
 
- * 3. All advertising materials mentioning features or use of this software
+ \* modification, are permitted provided that the following conditions
 
- *    must display the following acknowledgement:
+ \* are met:
 
- *    "This product includes cryptographic software written by
+ \* 1. Redistributions of source code must retain the copyright
 
- *     Eric Young (eay@cryptsoft.com)"
+ \*    notice, this list of conditions and the following disclaimer.
 
- *    The word 'cryptographic' can be left out if the rouines from the library
+ \* 2. Redistributions in binary form must reproduce the above copyright
 
- *    being used are not cryptographic related :-).
+ \*    notice, this list of conditions and the following disclaimer in the
 
- * 4. If you include any Windows specific code (or a derivative thereof) from 
+ \*    documentation and/or other materials provided with the distribution.
 
- *    the apps directory (application code) you must include an acknowledgement:
+ \* 3. All advertising materials mentioning features or use of this software
 
- *    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+ \*    must display the following acknowledgement:
 
- * THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
+ \*    "This product includes cryptographic software written by
 
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ \*     Eric Young (eay@cryptsoft.com)"
 
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ \*    The word 'cryptographic' can be left out if the rouines from the library
 
- * ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+ \*    being used are not cryptographic related :-).
 
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ \* 4. If you include any Windows specific code (or a derivative thereof) from 
 
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ \*    the apps directory (application code) you must include an acknowledgement:
 
- * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ \*    "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
 
- * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ \* THIS SOFTWARE IS PROVIDED BY ERIC YOUNG ``AS IS'' AND
 
- * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ \* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 
- * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ \* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
 
- * SUCH DAMAGE.
+ \* ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
 
- * The licence and distribution terms for any publically available version or
+ \* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 
- * derivative of this code cannot be changed.  i.e. this code cannot simply be
+ \* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
 
- * copied and put under another distribution licence
+ \* OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
 
- * [including the GNU Public Licence.]
+ \* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+
+ \* LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+
+ \* OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+
+ \* SUCH DAMAGE.
+
+ \* The licence and distribution terms for any publically available version or
+
+ \* derivative of this code cannot be changed.  i.e. this code cannot simply be
+
+ \* copied and put under another distribution licence
+
+ \* [including the GNU Public Licence.]
 
  */
 
 
 ISC license used for completely new code in BoringSSL:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 /* Copyright (c) 2015, Google Inc.
 
  
- * Permission to use, copy, modify, and/or distribute this software for any
+ \* Permission to use, copy, modify, and/or distribute this software for any
 
- * purpose with or without fee is hereby granted, provided that the above
+ \* purpose with or without fee is hereby granted, provided that the above
 
- * copyright notice and this permission notice appear in all copies.
+ \* copyright notice and this permission notice appear in all copies.
 
- * THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ \* THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
 
- * WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ \* WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
 
- * MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+ \* MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
 
- * SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ \* SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 
- * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+ \* WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
 
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+ \* OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 
- * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
+ \* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. */
 
 
 The code in third_party/fiat carries the MIT license:
@@ -592,11 +592,11 @@ modification, are permitted provided that the following conditions are
 
 met:
 
-    * Redistributions of source code must retain the above copyright
+\* Redistributions of source code must retain the above copyright
 
 notice, this list of conditions and the following disclaimer.
   
-  * Redistributions in binary form must reproduce the above
+\* Redistributions in binary form must reproduce the above
 
 copyright notice, this list of conditions and the following disclaimer
 
@@ -604,7 +604,7 @@ in the documentation and/or other materials provided with the
 
 distribution.
 
-    * Neither the name of Google Inc. nor the names of its
+\* Neither the name of Google Inc. nor the names of its
 
 contributors may be used to endorse or promote products derived from
 
@@ -695,7 +695,7 @@ END OF TERMS AND CONDITIONS
 
 Licenses for support code
 
--------------------------
+\-------------------------
 
 Parts of the TLS test suite are under the Go license. This code is not included
 
@@ -711,11 +711,11 @@ modification, are permitted provided that the following conditions are
 
 met:
 
-   * Redistributions of source code must retain the above copyright
+\* Redistributions of source code must retain the above copyright
 
 notice, this list of conditions and the following disclaimer.
 
-   * Redistributions in binary form must reproduce the above
+\* Redistributions in binary form must reproduce the above
 
 copyright notice, this list of conditions and the following disclaimer
 
@@ -723,7 +723,7 @@ in the documentation and/or other materials provided with the
 
 distribution.
 
-   * Neither the name of Google Inc. nor the names of its
+   \* Neither the name of Google Inc. nor the names of its
 
 contributors may be used to endorse or promote products derived from
 
@@ -768,11 +768,11 @@ modification, are permitted provided that the following conditions are
 
 met:
 
-   * Redistributions of source code must retain the above copyright
+\* Redistributions of source code must retain the above copyright
 
 notice, this list of conditions and the following disclaimer.
 
-   * Redistributions in binary form must reproduce the above
+\* Redistributions in binary form must reproduce the above
 
 copyright notice, this list of conditions and the following disclaimer
 
@@ -780,7 +780,7 @@ in the documentation and/or other materials provided with the
 
 distribution.
 
-   * Neither the name of Google Inc. nor the names of its
+   \* Neither the name of Google Inc. nor the names of its
 
 contributors may be used to endorse or promote products derived from
 
@@ -813,7 +813,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Open Source Software Licensed under the LESSER GENERAL PUBLIC LICENSE Version 2.1:
 The below software in this distribution may have been modified by THL A29 Limited ("Tencent Modifications"). All Tencent Modifications are Copyright (C) 2020 THL A29 Limited.
---------------------------------------------------------------------
+\--------------------------------------------------------------------
 1. SoundTouch
 Copyright © Olli Parviainen
 Source code of this software can be obtained from: https://gitlab.com/soundtouch/soundtouch/-/tree/soundtouch-1.7.1/
@@ -824,7 +824,7 @@ Source code of this software can be obtained from: https://github.com/annidy/FFm
 
 
 Terms of the LESSER GENERAL PUBLIC LICENSE Version 2.1:
---------------------------------------------------------------------
+\--------------------------------------------------------------------
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
 
@@ -837,8 +837,10 @@ Terms of the LESSER GENERAL PUBLIC LICENSE Version 2.1:
  as the successor of the GNU Library Public License, version 2, hence
  the version number 2.1.]
 
-                            Preamble
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Preamble
+                           
+                            
   The licenses for most software are designed to take away your
 freedom to share and change it.  By contrast, the GNU General Public
 Licenses are intended to guarantee your freedom to share and change
@@ -939,7 +941,7 @@ modification follow.  Pay close attention to the difference between a
 former contains code derived from the library, whereas the latter must
 be combined with the library in order to run.
 
-                  GNU LESSER GENERAL PUBLIC LICENSE
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GNU LESSER GENERAL PUBLIC LICENSE
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. This License Agreement applies to any software library or other
@@ -1259,7 +1261,7 @@ decision will be guided by the two goals of preserving the free status
 of all derivatives of our free software and of promoting the sharing
 and reuse of software generally.
 
-                            NO WARRANTY
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NO WARRANTY
 
   15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO
 WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
@@ -1282,4 +1284,4 @@ FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
 SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
-                     END OF TERMS AND CONDITIONS
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;END OF TERMS AND CONDITIONS
