@@ -18,7 +18,7 @@
 		 <li>The voice/video signaling identification is optimized.</li>
          </td>
          <td>October 15, 2020</td>
-         <td> <a href="https://cloud.tencent.com/document/product/269/36887">SDK  Download</a></td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK  Download</a></td>
      </tr>	
 </table>
 
