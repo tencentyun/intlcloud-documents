@@ -1,4 +1,30 @@
-## Latest Standard Edition 5.0.6 @2020.09.18
+## Latest Standard Edition 5.0.10 @2020.10.15
+
+### SDK
+
+**iOS/Android platform**
+
+- Optimized the signaling API to support configuring `onlineUserOnly` and `offlinePushInfo` parameters
+- Optimized the async callback of a conversion API.
+-  Added an API to conversation for group types, which displays and filters the conversation list.
+
+### TUIKit & Demo
+
+**iOS/Android**
+- Supported group livestreaming, including mic connecting, gifts giving, beauty filtering, and voice changing features.
+- Supported livestream list, including mic connecting, PK, likes, gifts, beauty filtering, on-screen comments and follower features.
+- Optimized the voice/video signaling identification
+
+
+## Latest Simplified Edition 5.0.106 @2020.09.21
+
+### SDK
+
+**Common changes**
+
+- Fixed the known stability issue
+
+## 5.0.6 @2020.09.18 - Standard Edition
 
 ### SDK
 

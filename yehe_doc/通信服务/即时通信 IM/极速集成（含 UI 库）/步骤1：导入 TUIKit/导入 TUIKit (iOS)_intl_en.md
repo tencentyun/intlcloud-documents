@@ -15,8 +15,12 @@ TUIKit supports CocoaPods integration and manual integration. We recommend Cocoa
 1. Add the following content in Podfile.
 ```
 #use_frameworks!   // This configuration needs to be shielded because TUIKit uses third-party static libraries.
-pod 'TXIMSDK_TUIKit_iOS'                 // The TXLiteAVSDK_TRTC audio and video library is integrated by default.
-// pod 'TXIMSDK_TUIKit_iOS_Professional' // The TXLiteAVSDK_Professional audio and video library is integrated by default.
+install! 'cocoapods', :disable_input_output_paths => true  // This statement is needed to avoid conflict because TXIMSDK_TUIKit_live_iOS uses a `*.xcassets` resource fie. 
+
+ pod 'TXIMSDK_TUIKit_iOS'                 // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
+// pod 'TXIMSDK_TUIKit_iOS_Professional' // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
+pod 'TXIMSDK_TUIKit_live_iOS'		 // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
+// pod 'TXIMSDK_TUIKit_iOS_Professional' // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
 ```
 The Tencent Cloud [audio and video library](https://intl.cloud.tencent.com/document/product/647/34615) cannot be integrated at the same time due to symbol conflicts. If you use a non-[TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version of an audio and video library, we recommend that you remove it first and then integrate the `TXIMSDK_TUIKit_iOS_Professional` version into the pod. This version of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) audio and video library includes all basic audio and video capabilities.
 

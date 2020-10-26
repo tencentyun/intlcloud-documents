@@ -23,7 +23,8 @@ There are only common request headers but no special request headers.
 | topic_id       | string            | query | Yes       | Log topic ID of partition            |
 | partition_id | int    | query | No       | Number of the topic partition to be split                               |
 | action       | string | query | Yes       | Operation type. `action` needs to be set to `split` |
-| split_key    | string | query | Yes       | Split position of topic partition, which is a hexadecimal string of up to 32 bits (excluding the `0x` part) |
+| split_key    | string | query | No       |  Split position of the two topic partitions, which is a hexadecimal string of up to 32 bits (excluding the `0x` part). If you need to split partitions into three or more partitions, the average split will be used. In this case, this parameter does not take effect.  |
+| number       | int    | query | No       | Number of splits. Default value: 2 |
 
 ## Response
 

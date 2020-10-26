@@ -32,12 +32,13 @@ There are only common request headers but no special request headers.
 
 #### Request parameters
 
-| Field Name | Type | Location | Required | Description |
-|--------------|--------|------|---------|--------------------------------|
-| group_id     | string | body | Yes      | ID of the server group to be modified                |
-| group_name   | string | body | No      | Server group name, which must be unique             |
-| ips          | JsonArray| body | No      | List of IPs in server group                  |
-
+| Field Name | Type | Location | Required| Description |
+|------------|----------|------|---------|--------------------------------|
+| group_id   | string   | body | Yes     | ID of the server group to be modified                |
+| group_name | string   | body | No      | Server group name, which must be unique             |
+| type       | string   | body | No      | Server group type. Valid values: ip and label. Default value: ip  |
+| ips        | JsonArray| body | No      | List of IPs in server group                  |
+| labels     | JsonArray| body | No      | List of labels in the server group          |
 
 >Either `group_name`, `ips` or `labels` must be provided.
 

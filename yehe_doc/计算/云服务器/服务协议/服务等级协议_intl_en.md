@@ -29,7 +29,9 @@ If the user deploys CVM instances in at least two (2) availability zones in the 
 
 #### 1.7 Service Downtime Across Availability Zones in A Single Region Calculated in Minutes
 
-Single Service Downtime Across Availability Zones in A Single Region Calculated in Minutes = the time Instance Unavailability Across Availability Zones in A Single Region is fixed – the time Instance Unavailability Across Availability Zones in A Single Region starts. The Single Service Downtime Across Availability Zones in A Single Region is calculated in minutes. (If the operational failure is fixed within one (1) minute, i.e., the Instance Unavailability Across Availability Zones in A Single Region lasts for less than one (1) minute, such downtime will not be counted.) A period that is longer than one (1) minute but shorter than two (2) minutes will be counted as two (2) minutes. For example, if the Single Service Downtime Across Availability Zones in A Single Region is one (1) minute and one (1) second, the Single Service Downtime Across Availability Zones in A Single Region would be two (2) minutes. 
+Single Service Downtime Across Availability Zones in A Single Region Calculated in Minutes = the time Instance Unavailability Across Availability Zones in A Single Region is fixed – the time Instance Unavailability Across Availability Zones in A Single Region starts. The Single Service Downtime Across Availability Zones in A Single Region is calculated in minutes. (If the operational failure is fixed within one (1) minute, i.e., the Instance Unavailability Across Availability Zones in A Single Region lasts for less than one (1) minute, such downtime will not be counted.) A period that is longer than one (1) minute but shorter than two (2) minutes will be counted as two (2) minutes. For example, if the Single Service Downtime Across Availability Zones in A Single Region is one (1) minute and one (1) second, the Single Service Downtime Across Availability Zones in A Single Region would be two (2) minutes.
+
+The Service Downtime Across Availability Zones in A Single Region Calculated in Minutes is the total of Single Service Downtime Across Availability Zones in A Single Region Calculated in Minutes of such instance in a Service Month. 
 
 #### 1.8 Service Month(s)
 
@@ -66,23 +68,49 @@ In respect of this Service, if the Service Availability fails to meet the abovem
 
 (2) If the **Single Instance Service Availability** in a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month**.
 
+<table>
+<thead>
+<tr>
+<th style="width:60%"><b>Single Instance Service Availability in a Service Month</b></th>
+<th style="width:40%"><b>Value of Compensation Voucher</b></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>≥ 99%  and < 99.975%</td>
+<td>10% of  the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>≥ 95%  and < 99%</td>
+<td>25% of  the Monthly Service Fee</td>
+</tr>
+<tr>
+<td><  95% </td>
+<td>100%  of the Monthly Service Fee</td>
+</tr>
+</tbody></table>
 
+(3) If the **Service Availability Across Availability Zones in A Single Region** in a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month**.
 
-| **Single Instance Service Availability in a Service Month** | **Value of Compensation Voucher** |
-| ----------------------------------------------------------- | --------------------------------- |
-| ≥ 99%  and < 99.975%                                        | 10% of  the Monthly Service Fee   |
-| ≥ 95%  and < 99%                                            | 25% of  the Monthly Service Fee   |
-| <  95%                                                      | 100%  of the Monthly Service Fee  |
-
-
-
-(3) If the **Service Availability Across Availability Zones in A Single Region** in a Service Month fails to meet the standard, the amount of compensation will be calculated for such month independently, and **the aggregate amount shall be no more than the applicable Monthly Service Fee paid by you for such month**. 
-
-| **Service Availability Across Availability Zones in A Single Region in a  Service Month** | **Value of Compensation Voucher** |
-| ------------------------------------------------------------ | --------------------------------- |
-| ≥ 99%  and < 99.995%                                         | 10% of  the Monthly Service Fee   |
-| ≥ 95%  and < 99%                                             | 25% of  the Monthly Service Fee   |
-| <  95%                                                       | 100%  of the Monthly Service Fee  |
+<table>
+<thead>
+<tr>
+<th style="width:60%"><b>Service Availability Across Availability Zones in A Single Region in a  Service Month</b></th>
+<th style="width:40%"><b>Value of Compensation Voucher</b></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>≥ 99%  and < 99.995%</td>
+<td>10% of  the Monthly Service Fee</td>
+</tr>
+<tr>
+<td>≥ 95%  and < 99% </td>
+<td>25% of  the Monthly Service Fee </td>
+</tr>
+<tr>
+<td><  95%  </td>
+<td>100%  of the Monthly Service Fee</td>
+</tr>
+</tbody></table>
 
 (4) If a CVM instance is eligible to compensations according to standards set forth in both Articles 3.1(2) and 3.1(3), whichever is higher shall be applied.
 
