@@ -122,7 +122,7 @@ The detailed nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ----------------------------- | ------------------------------------------------------------ | ------ |
-| Location           | CompleteMultipartUploadResult | Location of the object for which the multipart upload is completed. Format: `<BucketName-APPID>.cos.<Region>.myqcloud.com/<ObjectKey>`, e.g. `examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject` | string |
+| Location           | CompleteMultipartUploadResult | Location of the object for which the multipart upload is completed. Format: `http://<BucketName-APPID>.cos.<Region>.myqcloud.com/<ObjectKey>`, e.g. `http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject` | string |
 | Bucket             | CompleteMultipartUploadResult | The destination bucket for the multipart upload. Format: `<BucketName-APPID>`, e.g. `examplebucket-1250000000` | string |
 | Key                | CompleteMultipartUploadResult | Object key                                                       | string |
 | ETag               | CompleteMultipartUploadResult | ETag of the object into which the parts are merged                                     | string |
@@ -179,7 +179,7 @@ x-cos-request-id: NWU3YjJkNWVfZDFjODJhMDlfMTk2ODJfMmEyNTA0****
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;aa259a62513358f69e98e72e59856d88-3&quot;</ETag>
@@ -223,7 +223,7 @@ x-cos-server-side-encryption: AES256
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;915fca1c3b2737c262458b3a1a43c683-1&quot;</ETag>
@@ -268,7 +268,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;8093dc3e18f7070444e6ca21789eb8d4-1&quot;</ETag>
@@ -314,7 +314,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;55973f71e8e892273053617e6b83d1c7-1&quot;</ETag>
@@ -358,7 +358,7 @@ x-cos-version-id: MTg0NDUxNTMyMTEwNDU1NDc3OTc
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;42318fc0ec58952b0d9ab4d7a006f595-1&quot;</ETag>
@@ -402,7 +402,7 @@ x-cos-version-id: null
 
 <?xml version="1.0" encoding="UTF-8"?>
 <CompleteMultipartUploadResult xmlns="http://www.qcloud.com/document/product/436/7751">
-	<Location>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
+	<Location>http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Location>
 	<Bucket>examplebucket-1250000000</Bucket>
 	<Key>exampleobject</Key>
 	<ETag>&quot;491509b1fdf8e13d1f51d323c4a6d0e8-1&quot;</ETag>
