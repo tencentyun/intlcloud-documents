@@ -119,7 +119,7 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td>rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
