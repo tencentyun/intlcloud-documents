@@ -139,7 +139,10 @@
 
 
 ## 相关概念
-#### 执行方法<div id="handler"></div>
+
+<div id="handler"></div>
+
+#### 执行方法
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
 ![](https://main.qcloudimg.com/raw/48172f9407d4002f79ad0355e609aff2.png)
 - 一段式格式为【文件名】，Golang 环境时使用。例如 `main`。
