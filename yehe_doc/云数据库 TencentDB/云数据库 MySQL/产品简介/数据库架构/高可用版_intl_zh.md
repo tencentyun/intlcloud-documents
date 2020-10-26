@@ -13,7 +13,7 @@
 - 数据节点部署在强大硬件之上，底层存储使用本地 NVMe SSD 硬盘，提供强大的 IO 性能，IOPS 最高可达240000（实际 IOPS 速率与配置、页面大小和业务负载有关，此数值是根据 MySQL 默认16KB分页大小测试所得，仅供参考）。
 
 ## 架构基本框架图
-![Alt text](https://main.qcloudimg.com/raw/baf6c165620f79a5dd5f56b6a02d9eb0.svg)
+![Alt text](https://main.qcloudimg.com/raw/19d5619f983d3dc550b3218c0520b447.png)
 
 ## 升级相关操作
 - 云数据库 MySQL 支持数据库引擎升级，请参见 [升级数据库引擎版本](https://intl.cloud.tencent.com/document/product/236/8126)。
