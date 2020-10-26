@@ -18,5 +18,5 @@ Syntax:
 - sets:set_1,set_2: it is used to specify the sets to which SQL statements will be passed through. The set name can be queried by `/*proxy*/show status`.
 - sets:allsets: it indicates that SQL statements will be passed through to all sets.
 - shardkey:10: it indicates that SQL statements will be passed through to the set according to the specified shardkey.
-- shardkey_hash:10: it indicates that SQL statements will be passed through to the set according to the specified hash value. If `shardkey_hash` is set to 0, SQL statements will be passed through to the first set.
+- shardkey_hash:10: it indicates that SQL statements will be passed through to the set where its specified hash value is 10. If `shardkey_hash` is set to 0, SQL statements will be passed through to the first set.
 
