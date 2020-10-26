@@ -258,7 +258,7 @@ To get authentication for voice messaging and speech-to-text, the room ID parame
 #### Function prototype
 
 ```
-AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String identifier, String key)
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
 
 ```
 
@@ -275,7 +275,7 @@ AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, Strin
 
 ```
 import com.tencent.av.sig.AuthBuffer;// Header file
-byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,identifier, key);
+byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,openId, key);
 ```
 
 
@@ -515,7 +515,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
         {
 		// Update member status
 		int nEventID = data.getIntExtra("event_id", 0);
-		String[] identifierList =data.getStringArrayExtra("user_list");
+		String[] openIdList =data.getStringArrayExtra("user_list");
 		 switch (nEventID)
  		    {
  		    case ITMG_EVENT_ID_USER_ENTER:
@@ -1075,7 +1075,7 @@ public abstract int ApplyPTTAuthbuffer(byte[] authBuffer);
 #### Sample code  
 
 ```
-byte[] authBuffer =  AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), "0", identifier, key);
+byte[] authBuffer =  AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), "0", openId, key);
 ITMGContext.GetInstance(this).GetPTT().ApplyPTTAuthbuffer(authBuffer);
 ```
 

@@ -14,7 +14,7 @@
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【命名空间】。
 2. 在“命名空间”页面中，单击需开通镜像安全扫描功能的实例名称，进入命名空间详情页。
 3. 在“基本信息”页，将安全扫描配置为【自动扫描】。如下图所示：
-![](https://main.qcloudimg.com/raw/d2ae4e78d88c0a1ec3048562cd2a3bed.png)
+![](https://main.qcloudimg.com/raw/115b339d261ccceca8092829dc2fa390.png)
 
 ### 手动触发扫描
 #### 步骤1：准备容器镜像
@@ -22,14 +22,14 @@
 <span id="step2"></span>
 #### 步骤2：触发镜像扫描
 选择该镜像仓库内指定镜像版本，点击【扫描】触发镜像扫描，此时安全级别显示为“扫描中”。如下图所示：
-![](https://main.qcloudimg.com/raw/e4b3e04a4a430bad05d628f38ac25dc0.png)
+![](https://main.qcloudimg.com/raw/0ffd1a76b8cca60faaec21bd37eee50e.png)
 
 
 #### 步骤3：查看扫描结果
 安全扫描完成后，安全级别处将自动展示当前镜像内漏洞的最高等级及个数，可单击查看漏洞详情。如下图所示：
-![](https://main.qcloudimg.com/raw/04b9d28137f286d07512384840285027.png)
+![](https://main.qcloudimg.com/raw/0d5e243a57ea0130c975fa01fa0a62b0.png)
 查看镜像的漏洞详情时，可单击指定的漏洞编号，跳转至该漏洞的详细说明，评估漏洞对业务的实际影响范围。如下图所示：
-![](https://main.qcloudimg.com/raw/a4c264d41532ecb9fa5b774cfebd381b.png)
+![](https://main.qcloudimg.com/raw/8170a2162576bed9b6e7d2d87d64929e.png)
 
 #### 步骤4：重新触发扫描
 因漏洞库会定时更新，您可参考 [步骤2：触发镜像扫描](#step2) 重新触发指定镜像的安全扫描，获取最新的扫描结果。

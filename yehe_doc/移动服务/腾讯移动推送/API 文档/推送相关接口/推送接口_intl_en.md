@@ -2,30 +2,10 @@
 
 **Request method**: POST.
 
-The API request address is corresponding to the service access point. Select the request address corresponding to the service access point of your application.
-
-Service access point in Guangzhou, China:
-
 ```plaintext
-https://api.tpns.tencent.com/v3/push/app
+request address/v3/push/app
 ```
-
-Service access point in Hong Kong, China:
-
-```plaintext
-https://api.tpns.hk.tencent.com/v3/push/app
-```
-
-Service access point in Singapore:
-
-```plaintext
-https://api.tpns.sgp.tencent.com/v3/push/app
-```
-Service access point in Shanghai, China:
-
-```plaintext
-https://api.tpns.sh.tencent.com/v3/push/app
-```
+The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **API feature**: Push API is the general term for all push APIs. Push API has many types of push targets, which are described as follows.
 All request parameters are JSON encapsulated and uploaded to the backend, which differentiates push targets based on the request parameters. If an error code returns, see [Server Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).

@@ -2,24 +2,11 @@
 **Request method**: POST.
 **Calling frequency limit**: 200 times/hour.
 
-The API request address corresponds to the service access point one by one; therefore, please select the request address corresponding to your application service access point.
+```plaintext
+request address/v3/statistics/get_push_channel_stat_overview
+```
+The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-Service access point in Guangzhou:
-```shell
-https://api.tpns.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-Service access point in Hong Kong (China):
-```shell
-https://api.tpns.hk.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-Service access point in Singapore:
-```shell
-https://api.tpns.sgp.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
-Service access point in Shanghai:
-```shell
-https://api.tpns.sh.tencent.com/v3/statistics/get_push_channel_stat_overview
-```
 **Feature**: this API is used to query the daily push conversion summary within a certain time period by push channel.
 
 ## Parameter Description

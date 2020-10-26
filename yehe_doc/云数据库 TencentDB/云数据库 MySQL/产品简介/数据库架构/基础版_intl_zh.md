@@ -11,7 +11,7 @@
 - MySQL 基础版底层存储介质使用高性能云盘，适用于90%的 I/O 场景，质优价廉，性能稳定突出；具体 IOPS 范围计算公式：{min 1500 + 8 * 硬盘容量，max 4500}，例如，硬盘容量为50GB，则 IOPS 范围为{min 1900，max 4500}。
 
 ## 架构基本框架图
-![Alt text](https://main.qcloudimg.com/raw/2293e213a7908bd8de95fa21c141c9eb.svg)
+![Alt text](https://main.qcloudimg.com/raw/fc709a3c5b65fd750ebb3ccb86ed8408.png)
 
 >!由于 MySQL 基础版是单节点架构，当该节点出现故障，恢复时长比云服务器故障恢复稍长（涉及实例启动与数据恢复）。建议对高可用有要求的业务，使用 MySQL 高可用版或金融版的实例。
 

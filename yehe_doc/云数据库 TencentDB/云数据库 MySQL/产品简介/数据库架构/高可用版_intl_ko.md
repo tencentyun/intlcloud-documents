@@ -13,7 +13,7 @@ TencentDB for MySQL은 고가용성 버전, 파이낸스 버전, 단일 노드 �
 - 강력한 하드웨어에 배포된 데이터 노드와 로컬 NVMe SSD 디스크를 사용하는 하위 스토리지로 강력한 IO 성능을 제공함으로써, IOPS가 최대 240000에 달합니다(실제 IOPS 속도는 설정, 페이지 사이즈 및 비즈니스 부하와 관련되며, 해당 값은 MySQL의 기본 페이징 사이즈인 16KB를 기준으로 테스트하여 도출한 것이므로 참고만 하시기 바랍니다).
 
 ## 구성의 기본 프레임워크
-![Alt text](https://main.qcloudimg.com/raw/77490755263740e5ed8c51952d7309c1.svg)
+![Alt text](https://main.qcloudimg.com/raw/19d5619f983d3dc550b3218c0520b447.png)
 
 ## 업그레이드 관련 작업
 - TencentDB for MySQL은 데이터베이스 엔진 업그레이드를 지원합니다. 자세한 내용은 [데이터베이스 엔진 버전 업그레이드](https://intl.cloud.tencent.com/document/product/236/8126)를 참조 바랍니다.

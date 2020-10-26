@@ -14,27 +14,27 @@
 1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【访问控制】>【内网访问】。
 2. 在“内网访问”页面中，单击【新建】。
 3. 在弹出的“新建内网访问链路”窗口中，配置私有网络及子网信息。如下图所示：
-![](https://main.qcloudimg.com/raw/bcf49249476e4759fb3eebd5e5ab36b2.png)
+![](https://main.qcloudimg.com/raw/b05dbba1213da652a4dcc2039b2ee38c.png)
  - **所属实例**：配置公网访问策略的目标实例，可在“内网访问”页面顶部的“实例名称”下拉框中修改。
  - **私有网络**：
     1. 接入的私有网络。请选择希望接入的私有网络，下拉列表中为当前实例所在地域可用的私有网络。
     2. 私有网络内任一子网。请选择该私有网络下内网 IP 仍有空余的子网。新建私有网络访问链路将占用该子网内的一个内网 IP 地址，并作为实例域名的内网解析目标地址。该子网仅用于分配内网访问地址，链路创建完成后，该私有网络下任意子网内云服务器均可通过该链路访问 TCR 企业版实例。
 4. 配置完成并点击【确定】，该内网访问链路将启动新建。
 等待“访问链路状态”转变为**链路正常**时，且“内网解析IP” 不为空时，则说明该内网访问链路已创建成功。
-![](https://main.qcloudimg.com/raw/3ad7fc5f43d17c04789365512738b615.png)
+![](https://main.qcloudimg.com/raw/4937a7031e5ab8c9e748a13206221153.png)
 
 ### 配置内网解析
 内网访问链路建立完成后，关联的私有网络 VPC 内云服务器访问该内网解析 IP ，即可通过内网访问该实例。默认情况下，实例默认域名（如 tcr-demo.tencentcloudcr.com）及内网域名（如 tcr-demo-vpc.tencentcloudcr.com）在该私有网络内不会自动解析至该内网解析 IP，可采用 [使用 TCR 插件自动配置](#TCR) 或 [使用私有域解析 VPCDNS 自动配置](#VPCDNS) 实现内网域名解析。
 <span id="TCR"></span>
 #### 使用 TCR 插件自动配置（推荐）
 如果当前您正在使用容器服务 TKE，请参考 [使用 TCR 企业版实例内容器镜像创建工作负载](https://intl.cloud.tencent.com/document/product/457/36838) 在 TKE 集群中安装 TCR 插件，该插件可自动为集群内节点配置关联 TCR 实例的内网解析，可实现内网免密拉取实例内镜像。如下图所示：
-![](https://main.qcloudimg.com/raw/ac01c58b0e50f2c2001f0abe50a361e3.png)
+![](https://main.qcloudimg.com/raw/85b74261a8b539f627b96139f5571611.png)
 <span id="VPCDNS"></span>
 #### 使用私有域解析 VPCDNS 自动配置（Beta）
 >? 腾讯云 DNS 解析 DNSPod 产品提供了 VPC 私有域解析功能，支持在指定 VPC 内实现私有域解析。当前该功能已支持北京、上海、广州、硅谷地域试用。
 
 您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请试用该功能，并提供需要开通该功能的私有网络 VPC 列表。服务开通后，可在创建内网访问链路后，配置该实例在关联私有网络 VPC 内的自动解析，并可选使用默认域名或私有域名。如下图所示：
-![](https://main.qcloudimg.com/raw/0339896f9cfe78536193aba2535d2aa4.png)
+![](https://main.qcloudimg.com/raw/cf1498ae284fe0c2c26684b479fbca81.png)
 
 #### 手动配置云服务器 Host 
 此方案适用于需要临时访问企业版实例的云服务器或在私有网络自建 Kubernetes 集群的节点。

@@ -3,24 +3,10 @@
 ## API Description
 **Request method**: POST.
 
-The API request address corresponds to the service access point one by one; therefore, please select the request address corresponding to your application service access point.
-
-Service access point in Guangzhou:
-```shell
-https://api.tpns.tencent.com/v3/device/account/batchoperate
+```plaintext
+request address/v3/device/account/batchoperate
 ```
-Service access point in Hong Kong (China):
-```shell
-https://api.tpns.hk.tencent.com/v3/device/account/batchoperate
-```
-Service access point in Singapore:
-```shell
-https://api.tpns.sgp.tencent.com/v3/device/account/batchoperate
-```
-Service access point in Shanghai:
-```shell
-https://api.tpns.sh.tencent.com/v3/device/account/batchoperate
-```
+The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **Feature**: this is an async API that is only responsible for task issuance, with real-time operation currently unsupported.
 
