@@ -18,7 +18,7 @@
 		 <li> 优化语音视频信令识别问题。</li>
          </td>
          <td> 2020-10-15 </td>
-         <td> <a href="https://cloud.tencent.com/document/product/269/36887">SDK 下载</a></td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
      </tr>	
 </table>
 
