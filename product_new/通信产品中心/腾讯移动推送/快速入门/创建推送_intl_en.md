@@ -1,7 +1,8 @@
 ## Operation Scenario
 This document guides you how to create a push notification in the TPNS console.
+
 ## Prerequisites
-You have already purchased TPNS service. 
+TPNS service is required to create a push notification. If you haven't purchased TPNS service, see [Purchase Directions](https://intl.cloud.tencent.com/document/product/1024/37863) 
 
 
 ## Steps
@@ -20,7 +21,7 @@ You have already purchased TPNS service.
 	◦Advanced settings: TPNS also supports other advanced settings, including the following content:
 	  - Badge number: number of messages reached but not clicked.
       - GroupID:  a field for aggregated statistics of multiple push tasks.
-	  - Offline retention: sets the offline storage period in 0-72 hours. Up to 3 latest push messages can be saved offline.
+- Offline storage: sets the offline storage period in 0-72 hours. Up to 3 latest push messages can be saved for 24 hours by default.
 	  - Click open: Sets push click open actions. Actions include apps, in-app pages, URLs, and client customization.
 	  - Reminder formats: Sets reminder formats, custom ringtones, etc.
 	  - Multiple package name push: Supports push with multiple package names.
