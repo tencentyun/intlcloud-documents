@@ -19,8 +19,8 @@ You can use the lifecycle management feature when you need to change the storage
        - Object Tag: specifies one or more tags for objects to which the lifecycle rule applies only. Note that it's case-sensitive.
         >!Prefix and Object Tag can be specified at the same time.
 	
-   - **Managing the current version**: you can transition or delete the current version of an object using this option. It allows you to transition objects in your bucket from COS STANDARD to COS STANDARD_IA or ARCHIVE, or delete objects upon expiration.
-		COS storage classes are **STANDARD**, **STANDARD_IA**, and **ARCHIVE** in order from hot to cold storage. You can transition objects only from a hot storage class to a colder one, not vice versa. Time is measured for a file starting from the moment it is modified (i.e., re-uploaded) in COS.
+   - **Managing the current version**: you can transition or delete the current version of an object using this option. It allows you to transition objects in your bucket from STANDARD to STANDARD_IA, ARCHIVE or DEEP ARCHIVE, and delete objects upon expiration.
+     From the hottest to the coldest, COS storage classes are **STANDARD** > **STANDARD_IA** > **ARCHIVE** > **DEEP ARCHIVE**. Objects can be transitioned only from a hotter storage class to a colder one, but not vice versa. Time is measured for a file starting from the moment it is modified (i.e., re-uploaded) in COS.
    - **Managing historical versions**: you can transition or delete previous versions of an object using this option. If it is not enabled, only the latest version of an object is processed by default.
    - **Removing delete markers with no noncurrent versions**: if an object has a delete marker as its latest version, with all of its noncurrent versions deleted, the delete marker will also be deleted once you enable this option. It cannot be enabled with the option to delete upon expiration under **Managing the current version** at the same time.
    - **Deleting incomplete multipart uploads**: allows you to delete expired incomplete multipart uploads that have failed due to any reason.
