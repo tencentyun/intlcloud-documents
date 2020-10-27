@@ -23,7 +23,7 @@ First, you need to request to activate [CLS](https:/intl.cloud.tencent.com/produ
 To install LogListener, the source server network and CLS network must be able to access each other. Tencent Cloud Virtual Machine (CVM) accesses CLS via the private network by default.
 Execute the following command to check the network connectivity. `<region>` uses the abbreviation for CLS region. For detailed region information, please see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940).
 ```shell
-telnet <region>.cls.myqcloud.com 80
+telnet <region abbreviation>.cls.tencentyun.com
 ```
 
 #### 2.2 Viewing (or Creating) a key pair

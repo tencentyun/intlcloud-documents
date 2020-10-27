@@ -1,3 +1,39 @@
+## September 2020
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>CLB fully supports Layer-7 custom configuration</td> 
+<td>CLB fully supports configuring Layer-7 parameters.</td> 
+<td>September 22, 2020</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/32427">Custom Configurations of CLB Instances</a></td> 
+</tr>
+<tr>
+<td>CLB supports cross-region binding of CVM</td>
+<td>CLB supports cross-binding of CVM instances via CCN. You can select the region of real servers and bind them across VPCs or regions.</td>
+<td>September 10, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38441">Cross-region CVM Binding 2.0 (New)
+</a></td>
+</tr>
+<tr>
+<td>CLB supports the hybrid cloud deployment</td>
+<td>CLB can be directly bound to IP addresses in an on-premise IDC off the cloud.</td>
+<td>September 10, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38442">Hybrid Cloud Deployment
+</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
 ## June 2020
 <table>
 <thead>

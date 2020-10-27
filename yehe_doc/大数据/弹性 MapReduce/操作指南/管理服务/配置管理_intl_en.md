@@ -1,5 +1,5 @@
 ## Feature Overview
-Configuration management supports modifying key configuration parameters of commonly used open-source components such as HDFS, YARN, Hive, and Spark. The configuration of services can be modified as needed at the level of cluster, server, or configuration group. This document describes how to configure service parameters in the console.
+Configuration management allows you to modify key configuration parameters of common open-source components such as HDFS, YARN, Hive, and Spark. You can modify the service configurations at the cluster, node, or configuration group level as needed. This document describes how to configure service parameters in the console.
 
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Service** to enter the cluster service list.
