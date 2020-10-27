@@ -34,7 +34,7 @@ Take the bucket `examplebucket-125000000` in the Guangzhou region as an example.
 > !If you use global acceleration, fees will be incurred. Therefore, we recommend you carefully evaluate whether to use this feature with your actual business needs in mind:
 >
 > 1. If your business has more writes (e.g., `PUT Object`, `POST Object`, and `Multipart Upload`) than reads and uploads data to Tencent Cloud data centers from a remote region, we recommend using a global acceleration endpoint domain name.
-> 2. If your business has more reads (e.g., `GET Object`) than writes and mainly involves file download, we recommend you perform a comprehensive evaluation of the [CDN-based access acceleration](https://cloud.tencent.com/document/product/436/18668) solution and select the option with the best cost performance.
+> 2. If your business has more reads (e.g., `GET Object`) than writes and mainly involves file download, we recommend you perform a comprehensive evaluation of the [CDN-based access acceleration](https://intl.cloud.tencent.com/document/product/436/18668) solution and select the option with the best cost performance.
 > 3. If your business mainly involves configuration operations or file extraction, we recommend using the default bucket endpoint domain name.
 > 4. If your business needs to access buckets over the private network or via a Direct Connect line in the same region, we recommend that you use the default bucket endpoint domain name.
 
