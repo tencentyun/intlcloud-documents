@@ -1,5 +1,3 @@
-# Camera Push Android
-
 ## Feature
 Camera push refers to the process of collecting images from the camera of the mobile phone and voice from the microphone, encoding the video and audio data, and pushing the data to the livestreaming cloud platform. Tencent Cloud LiteAVSDK calls the `V2TXLivePusher` API to provide the camera push capability. The figure below shows the interfaces for camera push operations demonstrated in the LiteAVSDK demo.
 ![](https://main.qcloudimg.com/raw/f4df6e007076f4629629f5d75f14d86d.png)
