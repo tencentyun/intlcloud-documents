@@ -241,16 +241,17 @@ Concatenate a signature string in the format of “request method + request CVM 
 <td align="left">Indicates whether to hide log topic options in CLS page. `true`: Yes; `false`: No</td>
 </tr>
 </tbody></table>
- 2. Concatenate your login information into a final embedded access URL.
+  2. Combine your login information and destination page URL into a login URL. <b>The parameter values must be URL-encoded</b>.
+  
      ```plaintext
      https://cloud.tencent.com/login/roleAccessCallback
-	 ?algorithm=<encryption algorithm for signing; currently only supports sha1 (used by default) and sha256
-	 &secretId=<secretId for signing>
-	 &token=<Token of the temporary key>
-	 &nonce=<nonce for signing>
-	 &timestamp=<timestamp for signing>
-	 &signature=<signature string>
-	 &s_url=<destination URL after login>
+     ?algorithm=<encryption algorithm for signing; currently only supports sha1 (used by default) and sha256
+     &secretId=<secretId for signing>
+     &token=<Token of the temporary key>
+     &nonce=<nonce for signing>
+     &timestamp=<timestamp for signing>
+     &signature=<signature string>
+     &s_url=<destination URL after login>
      ```
 7. Use the final URL to access the embedded Tencent Cloud CLS Console page. The sample below is a URL to the CLS search analysis page:
 ```plaintext
