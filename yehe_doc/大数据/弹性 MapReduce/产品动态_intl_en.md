@@ -1,3 +1,28 @@
+## October 2020
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>More service inspection items are supported</td>
+<td>The inspection items for HDFS, YARN, Hbase, Hive and ZooKeeper services are added to improve the metric health checks. </td>
+<td>October 13, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
+</tr>
+<tr>
+<td>The event policy can be customized</td>
+<td>A custom event policy can be configured to identify cluster event more efficiently.</td>
+<td>October 13, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a></td>
+</tr>
+</tbody></table>
+
 ## September 2020
 <table>
 <thead>

@@ -2,7 +2,7 @@ This document introduces how to create a device bandwidth package under your bil
 
 >? 
 >- BWP is currently in beta test. If you want to use it, please [submit an application](https://intl.cloud.tencent.com/apply/p/86ulv50u1e8).
->- A bill-by-CVM account only supports the creation of a device bandwidth package. For more information about your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
+>- A bill-by-CVM account only supports creating a device bandwidth package. For more information about your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 
 ## Restrictions
 1. Only one device bandwidth package can be enabled in a region.

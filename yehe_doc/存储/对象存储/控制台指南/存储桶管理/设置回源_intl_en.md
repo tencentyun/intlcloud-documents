@@ -65,13 +65,24 @@ abc.example.com
 
 The image `picture.jpg` was stored at the origin server `http://abc.example.com`.
 
-**First access by the client**:
+**Initial access from the client (with sync origin-pull disabled)**:
 
 ```shell
 http://examplebucket-1250000000.file.myqcloud.com/picture.jpg
 ```
 
 When COS finds that the object cannot be hit, it returns HTTP status code `302` and redirects the user to the following address:
+```shell
+http://abc.example.com/picture.jpg
+```
+
+**Initial access from the client (with sync origin-pull enabled)**:
+
+```shell
+http://examplebucket-1250000000.file.myqcloud.com/picture.jpg
+```
+
+When COS finds that the object cannot be hit, it returns a 200 HTTP status code to the client and is redirected to the following URL:
 
 ```shell
 http://abc.example.com/picture.jpg

@@ -145,8 +145,10 @@ try {
 
 
 ### Uploading object
-* Upload a file (up to 5 GB) by using the `putObject` API.
-* Use the `Upload` API to upload files in multiple parts. It is a composite upload API and uses simple upload for small files and multipart upload for large files.
+>!
+>* Upload a file (up to 5 GB) by using the `putObject` API.
+>* Use the `Upload` API to upload files in multiple parts. It is a composite upload API and uses simple upload for small files and multipart upload for large files.
+>* For parameter descriptions, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
 
 [//]: # (.cssg-snippet-put-object-comp)
 ```php

@@ -6,7 +6,7 @@ Cloud Connect Network (CCN) bridges between Tencent Cloud [VPCs](https://intl.cl
 ## Product Components
 A CCN consists of:
 - Associated network instances: network instances within the same CCN instance can communicate with each other. Supported network instance types include VPC, VPC (BM), and direct connect gateway. For more information, refer to [Associate Network Instance](https://intl.cloud.tencent.com/document/product/1003/30064).
-> The VPN gateway associated with CCN is now in beta test. To apply for its use, [Submit a Ticket] (https://console.cloud.tencent.com/workorder/category).
+>? The VPN gateway associated with CCN is now in beta test. To apply for its use, [Submit a Ticket] (https://console.cloud.tencent.com/workorder/category).For more information, see [Connecting IDC to CCN via VPN Gateway](https://intl.cloud.tencent.com/document/product/1037/36018).
 - Route table: CCN automatically learns routes of network instances added and present them in its route table. For more information, see [Viewing Routing Information](https://intl.cloud.tencent.com/document/product/1003/30066).
 
 
@@ -36,24 +36,24 @@ On the other hand, doing the same with CCN would only require a CCN instance and
 	</tr>
 	<tr>
 		<td>Full-mesh links</td>
-		<td>1. To interconnect multiple VPCs, you need to establish Cn2 peers.<br />
-			2. A single dedicated tunnel can only connect to one VPC.<br />	
+		<td>1. To interconnect multiple VPCs, you need to establish Cn2 peers.<br/>
+			2. A single dedicated tunnel can only connect to one VPC.<br/>	
 			3. VPCs with overlapping IP ranges cannot be peered.
-		.</td>
-		<td>1. No peering connection needed. All instances added to the CCN instance are in a full mesh interconnection.<br />
-			2. Each dedicated tunnel can communicate with all VPCs and IDCs.<br />	
+	</td>
+		<td>1. No peering connection needed. All instances added to the CCN instance are in a full mesh interconnection.<br/>
+			2. Each dedicated tunnel can communicate with all VPCs and IDCs.<br/>	
 			3. CCN allows for network instances with overlapping CIDR blocks. This provides greater flexibility for interconnection.
 		</td>
 	</tr>
 	<tr>
-		<td >Automatic route learning</td>
+		<td>Automatic route learning</td>
+		<td>
+			1. Routes must be configured for every link.<br/>
+			2. Manual updates are required for any link change.<br/>
 		</td>
-			1. Routes must be configured for every link.<br />
-			2. Manual updates are required for any link change.<br />
-		</td>
-		</td>
-			1. Routes are automatically learned and forwarded.<br />
-			2. Route tables are dynamically updated without manual maintenance.<br />
+		<td>
+			1. Routes are automatically learned and forwarded.<br/>
+			2. Route tables are dynamically updated without manual maintenance.<br/>
 		</td>
 	</tr>
 	<tr>
@@ -62,13 +62,13 @@ On the other hand, doing the same with CCN would only require a CCN instance and
 		<td>Multi-zone hot backup disaster recovery with 99.99% high availability.</td>
 	</tr>
 	<tr>
-		<td >Lower costs</td>
-		</td>
+		<td>Lower costs</td>
+		<td>
 			1. You pay for each link separately.<br />
 			2. You pay a higher unit price. 
 		</td>
-		</td>
-			1. You pay for all bandwidth in a region as a whole (similar to bandwidth packages), which evens out the price.<br />
+		<td>
+			1. You pay for all bandwidth in a region as a whole (similar to bandwidth packages), which evens out the price.<br/>
 			2. Unit price is more competitive.
 		</td>
 	</tr>	

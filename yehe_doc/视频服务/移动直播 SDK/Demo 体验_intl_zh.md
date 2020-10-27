@@ -4,7 +4,7 @@
 
 | 平台 | Demo体验 | 源码地址 |
 |:--------:|:--------:|:--------:|
-| iOS | [AppStore](https://itunes.apple.com/cn/app/id1152295397?mt=8) | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/Demo) |
-| Android | [apk 安装包](http://dldir1.qq.com/hudongzhibo/xiaozhibo/rtmpdemo.apk) | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/Android/Demo) |
+| iOS | [AppStore](https://itunes.apple.com/cn/app/id1152295397?mt=8) | [Github](https://github.com/tencentyun/LiteAVInternational/tree/master/iOS/Demo) |
+| Android | [apk 安装包](http://dldir1.qq.com/hudongzhibo/xiaozhibo/rtmpdemo.apk) | [Github](https://github.com/tencentyun/LiteAVInternational/tree/master/Android/Demo) |
 
 

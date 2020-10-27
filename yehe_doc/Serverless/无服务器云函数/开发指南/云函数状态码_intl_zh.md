@@ -22,7 +22,7 @@
 <td>400<br>BadRequest</td>
 <td>当函数执行传入参数错误时，会有该返回信息。</td>
 <td><ul class="params"><li>检查函数调用传入参数是否正确，可以根据错误信息提示进行检查。</li>
-<li>Request 请求参数错误（非 event 参数），请检查参数是否正确，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/583/31439" target="_blank" rel="noopener noreferrer">触发器事件消息结构汇总</a>。</li></ul></td>
+<li>参数不符合规范，请参考<a href="https://intl.cloud.tencent.com/document/product/583/17234" target="_blank" rel="noopener noreferrer"> API 文档 </a>修改参数后重试。。</li></ul></td>
 </tr>
 
 <tr>
@@ -79,7 +79,7 @@
 <tr>
 <td>435<br>FunctionNotFound</td>
 <td>当用户函数不存在时，会有该返回信息。</td>
-<td>查看用户函数是否被删除，或者查看传入参数函数信息是否正确。</td>
+<td>查看用户函数是否被删除，或者查看传入参数中的函数信息是否正确。</td>
 </tr>
 
 <tr>
@@ -96,7 +96,7 @@
 
 <tr>
 <td>438<br>FunctionStatusError</td>
-<td>函数关停。</td>
+<td>腾讯云账户欠费导致函数服务停止。</td>
 <td>-</td>
 </tr>
 
@@ -109,13 +109,13 @@
 <tr>
 <td>441<br>UnauthorizedOperation</td>
 <td>当函数执行时，用户 CAM 鉴权不通过，会有该返回信息。</td>
-<td>需确认函数调用角色的 CAM 鉴权信息是否传参正确。</td>
+<td>请求未授权。请参考 <a href="https://intl.cloud.tencent.com/document/product/598" target="_blank"> CAM文档 </a>对鉴权的说明。</td>
 </tr>
 
 <tr>
 <td>442<br>QualifierNotFound</td>
 <td>当函数指定版本调用时，未找到对应版本，会有该返回信息。</td>
-<td>确认传入指定版本信息是否正确，确认控制台是否配置别名版本信息正确。</td>
+<td>函数版本不存在，请检查函数版本后重试。</td>
 </tr>
 
 <tr>
@@ -139,9 +139,12 @@
 
 
 ## 相关概念
-#### 执行方法<div id="handler"></div>
+
+<div id="handler"></div>
+
+#### 执行方法
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
-![](https://main.qcloudimg.com/raw/b25dd559de782832d8e1b35e625273e5.png)
+![](https://main.qcloudimg.com/raw/48172f9407d4002f79ad0355e609aff2.png)
 - 一段式格式为【文件名】，Golang 环境时使用。例如 `main`。
 - 两段式格式为【文件名.函数名】，Python、Node.js 及 PHP 环境时使用。例如 `index.main_handler`。
 	- 此执行方法**前一段指向代码包中不包含后缀的文件名，后一段指向文件中的入口函数名**。需要确保代码包中的文件名后缀与语言环境匹配，如 Python 环境为 `.py` 文件，Node.js 环境为 `.js` 文件。 更多执行方法相关说明，请参见 [执行方法详情说明](https://intl.cloud.tencent.com/document/product/583/9210)。 

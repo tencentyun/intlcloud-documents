@@ -14,10 +14,10 @@ You can log in to the [CLS Console](https://console.cloud.tencent.com/cls) and s
 2. Click **Logset** on the left sidebar.
 3. Click the name of the logset for which you want to create a shipping task.
 <img src="https://main.qcloudimg.com/raw/c5781d2d437c290f00c0ece75a2691dd.png" width="80%">
-4. In the row of the log topic to be shipped, select **Manage** > **Shipping Configuration** to enter the shipping configuration page.
-<img src="https://main.qcloudimg.com/raw/0f60de9f332b4f8192838b4f53a9994f.png" width="80%">
-5. Click **Add Shipping Task** to enter the **Ship to COS** page and complete basic configuration.
-<img src="https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png">
+4. Locate the log topic to be shipped, click **Manage**, and go to **Ship to COS**.
+  <img src="https://main.qcloudimg.com/raw/0f60de9f332b4f8192838b4f53a9994f.png" width="80%">
+5. Click **Add Shipping Task** to open the **Ship to COS** page and complete the basic configurations.
+   <img src="https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png">
 
 **The configuration items are described as follows:**
 

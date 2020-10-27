@@ -1,9 +1,9 @@
-实例概览页展示了用户实例全局的大盘，可查看所有接入实例的任务执行、地域分布、实时性能以及健康评估等情况。
+实例概览页展示了用户实例全局的大盘，可查看所有接入实例的任务执行、地域分布、实时性能以及健康评估等情况，同时用户还可根据自己的需求个性化设置实例概览展示。
 
->?实例概览目前仅支持云数据库 MySQL（不含基础版）。
+>?实例概览目前支持云数据库 MySQL（不含基础版）、云数据库 CynosDB（CynosDB for MySQL）。
 
 
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【实例概览】页，可选择“全地域”视图或者按照地域查看，同时也支持查看“实时”和“历史”数据。
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/board)，在左侧导航选择【实例概览】页，选择对应数据库后，可选择“全地域”视图或者按照地域查看数据，同时也支持查看“实时”和“历史”数据。
 ![](https://main.qcloudimg.com/raw/bdc48d6beafc1c61323a1db9001e10a0.png)
 
 ## 推荐功能
@@ -13,15 +13,13 @@
 DBbrain 为用户提供了个性化设置功能，用户可以根据自己的需求个性化设置在概览中需要展示的实例，单击【个性化设置】，可跳转至实例管理页对其进行设置，请参见 [实例管理](https://intl.cloud.tencent.com/document/product/1035/36033)。
 ![](https://main.qcloudimg.com/raw/5a863f31a370d7b11f76adffb5a0c2dc.png)
 
-
 ## 异常告警
 DBbrain 的7 * 24小时异常诊断模块会实时发现数据库实例存在的问题，以及提供相应的优化方案，该模块展示近3小时和近24小时的异常告警总数量，单击可跳转至异常告警页查看详情。
 
 ## 健康程度排行
 DBbrain 定期为所有实例进行健康巡检打分，通过该页面可以查看所有实例的健康得分情况（当前值和历史趋势），单击对应实例可跳转至异常诊断页查看详情。
 
-## 任务运行状况
-任务运行状况中展示目前实例存在任务的执行情况。
-
 ## 监控情况排行
-资源监控排行中展示所选监控指标的消耗情况 TOP 排行，包括 CPU、内存、磁盘利用率、慢查询数、TPS、QPS、Connected Threads 及 Running Threads，单击对应实例可查看异常诊断详情。
+资源监控排行中展示所选监控指标的消耗情况 TOP 排行，单击对应实例可查看异常诊断详情。
+- MySQL 数据库指标包括：CPU、内存、磁盘利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
+- CynosDB 数据库指标包括：CPU、内存、存储利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。

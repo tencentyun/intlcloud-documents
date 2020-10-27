@@ -8,7 +8,7 @@
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在左侧导航栏中，单击【存储桶列表】。
 2. 找到您需要查看概览的存储桶，单击其存储桶名称。
 3. 在跳转界面中单击左上方的【概览】，进入当前存储桶的概览页面。
-![](https://main.qcloudimg.com/raw/af50f1055c15b2c053424bc9889525e7.png)
+![](https://main.qcloudimg.com/raw/a7d4fc49a5997ab22f7cccbf2fdcc436.png)
 
 ## 用量概览
 

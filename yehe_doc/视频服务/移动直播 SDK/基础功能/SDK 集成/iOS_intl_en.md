@@ -1,7 +1,3 @@
-# LiteAVSDK Integration Document_iOS
-
-[Original document URL](https://github.com/tencentyun/qcloud-documents/edit/master/product/%E8%A7%86%E9%A2%91%E6%9C%8D%E5%8A%A1/%E7%A7%BB%E5%8A%A8%E7%9B%B4%E6%92%AD/%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD/SDK%20%E9%9B%86%E6%88%90/iOS.md)
-
 This document describes how to quickly integrate the LiteAVSDK (iOS) into your project.
 
 ## Development Environment Requirements
@@ -14,7 +10,7 @@ You can choose to use CocoaPods for automatic loading, or download the SDK first
 
 ### CocoaPods
 #### 1. Install CocoaPods
-Enter the following command in the terminal window (you need to install the Ruby environment on your macOS in advance):
+Enter the following command in the console terminal (you need to install the Ruby environment on your macOS in advance):
 ```
 sudo gem install cocoapods
 ```
@@ -28,12 +24,11 @@ pod init
 #### 3. Edit the Podfile
 There are two ways to edit the Podfile:
 - Method 1: use the `podspec` file path of the Tencent Cloud LiteAV SDK.
-/// Create TODO TXLiteAVSDK_International.podspec and change the repository URL. Alternatively, delete this mode and retain only [Manual integration](#Manual integration).
 ```
   platform :ios, '8.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_International', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_International.podspec'
+  pod 'TXLiteAVSDK_International', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TXLiteAVSDK_International.podspec'
   end
 ```
 
@@ -48,12 +43,12 @@ There are two ways to edit the Podfile:
    end
 ```
 
-#### 4. Update and install the SDK
-Enter the following command in the terminal window to update the local repository file and install the LiteAVSDK:
+#### 4. Install or Upgrade the SDK
+Enter the following command in the console terminal to update the local repository file and install the LiteAVSDK:
 ```
 pod install
 ```
-Or, run the following command to update the local repository:
+Or, run the following command to upgrade TXLiteAVSDK:
 ```
 pod update
 ```
@@ -62,7 +57,7 @@ After the pod command is executed, an `.xcworkspace` project file integrated wit
 
 
 ### Manual integration
-1. Download the [LiveAVSDKV2](https://intl.cloud.tencent.com/document/product/1071/38150), and then decompress it.
+1. Download the [LiveAVSDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_iOS_lastest.zip), and then decompress it.
 
 2. Open your Xcode project, select the target you want to run, and select **Build Phases**.
 ![](https://main.qcloudimg.com/raw/81404ea4ae84f577941c0ede791eb205.png)
@@ -71,7 +66,6 @@ After the pod command is executed, an `.xcworkspace` project file integrated wit
 ![](https://main.qcloudimg.com/raw/940265f2e206619d249077db5f29800b.png)
 
 4. Add the downloaded `TXLiteAVDemo_International.framework` and its dependent library.
-/// For TODO, check whether the dependent libraries are as follows. If not, change the content and images.
 ```
 libz.tbd
 libc++.tbd

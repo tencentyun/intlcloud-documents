@@ -23,7 +23,7 @@ Storm can use CKafka as a `spout` to consume data for processing or as a `bolt` 
 
 
 ### Applying for and creating a CKafka instance
-Log in to the CKafka Console and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
+Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
 ![](https://mc.qcloudimg.com/static/img/7333604c2285f1db50499eab35fac2fb/12231-01.jpg)
 
 ### Creating a topic
@@ -213,7 +213,7 @@ public class SerialSentenceSpout extends BaseRichSpout {
 
 
 
-Add `key` and `message` fields to the `tuple`. If `key` is null, the produced messages will be evenly allocated to each partition. If a key is specified, the messages will be hashed to specific partitions based on the key value.
+Add `key` and `message` fields to the `tuple`. If `key` is null, the produced messages will be evenly allocated to each partition. If a key is specified, the messages will be hashed to specific partitions based on the key value: 
 
 ```java
 //AddMessageKeyBolt.java
