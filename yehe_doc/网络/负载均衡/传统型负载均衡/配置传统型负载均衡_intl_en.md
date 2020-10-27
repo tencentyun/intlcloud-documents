@@ -2,7 +2,7 @@ After creating a classic CLB instance, you need to configure a listener for it. 
 
 ## Prerequisites
 You need to [create a CLB instance](https://intl.cloud.tencent.com/document/product/214/6149) first and select "Classic CLB" for **Instance type**.
->!All Tencent Cloud accounts registered after June 17, 2020 00:00:00 are bill-by-IP accounts, which no longer support classic CLB. You can only purchase a CLB instance.
+>!Currently, there are two types of Tencent Cloud accounts: bill-by-EIP/CLB and bill-by-CVM. All Tencent Cloud accounts registered after June 17, 2020 00:00:00 are bill-by-EIP/CLB accounts. For Tencent Cloud accounts registered before June 17, 2020, [check your account types](https://intl.cloud.tencent.com/document/product/684/15246) in the console. Bill-by-EIP/CLB accounts no longer support classic CLB. You can now only purchase a CLB instance.
 
 ## Configuring the Listener
 ### Step 1. Open the **Listener Management** page

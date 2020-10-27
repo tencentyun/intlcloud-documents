@@ -1,13 +1,13 @@
 The COS Select feature uses structured query language (SQL) to filter objects stored in COS in order to extract a specific object and get the desired data. By filtering object data using this feature, you can reduce the amount of data transferred by COS, which helps lower the cost and delay in data extraction.
 
-The COS Select feature currently allows you to extract objects stored in CSV and JSON formats and compressed by gzip and bzip2 (for CSV and JSON objects only). In addition, you can save the extraction result in CSV and JSON formats and specify how to separate the result records.
+The COS Select feature currently allows you to extract objects stored in CSV and JSON formats, as well as CSV- and JSON-formatted objects compressed by gzip and bzip2. In addition, you can save your extraction results in CSV and JSON formats and specify how to separate the result records.
 
 You can pass in an SQL expression to COS in your request. COS Select currently only supports certain SQL expressions. For more information, see [SQL Functions](https://cloud.tencent.com/document/product/436/37637).
 
-You can use the COS SDK, API, COSCMD, or COS Console to execute on SQL queries. Note that certain restrictions apply on file extraction if you use the COS Console: Up to 128 MB of files can be extracted, and up to 40 MB of data can be returned. To extract more data, use other methods.
+You can run SQL queries using the COS console, APIs, SDKs, or COSCMD. Note that certain restrictions apply to file extraction if you use the COS Console: up to 128 MB of files can be extracted, and up to 40 MB of data can be returned. To extract more data, use other methods.
 
 >
->- For more information on data types supported by COS Select and current reserved fields, see [Data Types](https://cloud.tencent.com/document/product/436/37639) and [Reserved Fields](https://cloud.tencent.com/document/product/436/37638).
+>- For more information on data types supported by COS Select and current reserved fields, see [Data Types](https://intl.cloud.tencent.com/document/product/436/32476) and [Reserved Fields](https://intl.cloud.tencent.com/document/product/436/32475).
 >-Currently, the extraction function only supports public cloud regions in mainland China.
 
 ## Use Limits

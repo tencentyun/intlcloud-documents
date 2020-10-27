@@ -1,8 +1,8 @@
-This document introduces how to create an IP bandwidth package under your bill-by-IP account.
+This document introduces how to create an IP bandwidth package under your bill-by-EIP/CLB account.
 >? 
 >- BWP is currently in beta test. If you want to use it, please [submit an application](https://intl.cloud.tencent.com/apply/p/86ulv50u1e8).
->- A bill-by-IP account only supports the creation of an IP bandwidth package. For more information about your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
->- If you have a bill-by-CVM account and want to use IP bandwidth packages, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to change to bill-by-IP account.
+>- A bill-by-EIP/CLB account only supports creating an IP bandwidth package. For more information about your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
+>- If you have a bill-by-CVM account and want to use IP bandwidth packages, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to change to bill-by-EIP/CLB account.
 
 1. Log in to the [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **Bandwidth Package** in the left sidebar.

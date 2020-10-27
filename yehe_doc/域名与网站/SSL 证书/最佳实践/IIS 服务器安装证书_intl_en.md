@@ -22,7 +22,9 @@ After decompression, you can get the certificate files of the relevant types, in
 3. In the **Actions** column to the right of the **Server Certificates** window, click **Import**, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/1f81c471c61418396a7d6951f323c6a1.png)
 4. In the **Import Certificate** pop-up window, select the path where the certificate file is stored, enter the password, and click **OK**, as shown in the following figure.
->!If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `IIS` folder.
+>? 
+>- If you set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `IIS` folder.
+>- If you forgot the private key password, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to ask Tencent Cloud engineers to delete the certificate. You need to re-apply for the domain name certificate.
 
 ![](https://main.qcloudimg.com/raw/ca0b599728d99a079a2fde7325b3a0d3.png)
 5. Select the name of a site under **Sites** and click **Site Bindings** in the **Actions** column on the right, as shown in the following figure.

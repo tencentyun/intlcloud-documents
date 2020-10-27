@@ -47,7 +47,8 @@ When using SSE-KMS encryption for the first time, you need to [enable KMS servic
 >
 >- SSE-KMS only encrypts the object data, not its metadata.
 >- Currently, SSE-KMS only supports Beijing, Shanghai, and Guangzhou regions.
->-Using SSE-KMS encryption will incur additional cost, which will be charged by KMS, please see [KMS Billing Overview](https://cloud.tencent.com/document/product/573/34388) for details.
+>- Using SSE-KMS encryption will incur additional cost, which will be charged by KMS, please see [KMS Billing Overview](https://cloud.tencent.com/document/product/573/34388) for details.
+>- Objects encrypted with SSE-KMS must be accessed by requesters with a valid signature rather than anonymous users.
 
 #### Using the COS Console
 

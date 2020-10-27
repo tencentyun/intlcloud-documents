@@ -1,3 +1,30 @@
+## September 2020
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COS lifecycle feature is updated, and COS console now provides an Overview page for buckets</td>
+<td>1. COS lifecycle feature now supports transitioning historical versions of objects to another storage class;<br>2. COS console now provides an Overview page where you can view your usage, basic information, features and alarms for a bucket.</td>
+<td> September 28, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/14605">Setting Lifecycle</a>
+<br><a href="https://intl.cloud.tencent.com/document/product/436/38493">Bucket Overview</a></td>
+</tr>
+<tr>
+<td>DEEP ARCHIVE storage class is available</td>
+<td>DEEP ARCHIVE is a COS storage class that provides long-term storage for large amounts of archival data at tape-archival-level prices. It enables you to manage your data easily with extremely low costs.</td>
+<td>September 16, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38304">Overview - DEEP ARCHIVE</a></td>
+</tr>
+</tbody></table>
+
 ## August 2020
 
 <table>

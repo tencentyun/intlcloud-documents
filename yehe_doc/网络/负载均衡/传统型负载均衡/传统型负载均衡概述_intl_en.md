@@ -7,7 +7,7 @@ Classic CLB is easy to configure and supports simple load balancing scenarios:
 CLB instances can be classified into two types: CLB (formerly "application CLB") and classic CLB.
 
 CLB includes all features of classic CLB. Based on their features and performance, we recommend using CLB. For detailed comparison, see [Instance Types](https://intl.cloud.tencent.com/document/product/214/8847).
->!All Tencent Cloud accounts registered after June 17, 2020 00:00:00 are bill-by-IP accounts, which no longer support classic CLB. You can now only purchase a CLB instance.
+>!Currently, there are two types of Tencent Cloud accounts: bill-by-EIP/CLB and bill-by-CVM. All Tencent Cloud accounts registered after June 17, 2020 00:00:00 are bill-by-EIP/CLB accounts. For Tencent Cloud accounts registered before June 17, 2020, [check your account types](https://intl.cloud.tencent.com/document/product/684/15246) in the console. Bill-by-EIP/CLB accounts no longer support classic CLB. You can now only purchase a CLB instance.
 >
 This document introduces classic CLB instances. After creating an instance, you need to configure a listener for it. The listener listens to requests on the CLB instance and distributes traffic to the real server based on the load balancing policy.
 ## Listener Configurations
@@ -26,9 +26,9 @@ A CLB listener can listen to Layer-4 and Layer-7 requests on a CLB instance and 
 - Layer-7 protocols: application layer protocols, including HTTP and HTTPS.
 
 >? 
-1. A classic CLB instance receives requests and forwards traffic to the real server via VIP and port. Layer-7 protocols do not support forwarding based on domain name and URL.
-2. A private network classic CLB instance only supports Layer-4 protocols, not Layer-7 protocols.
-3. If you need aforementioned advanced features, we recommend choosing CLB over classic CLB. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/214/8847).
+>1. A classic CLB instance receives requests and forwards traffic to the real server via VIP and port. Layer-7 protocols do not support forwarding based on domain name and URL.
+>2. A private network classic CLB instance only supports Layer-4 protocols, not Layer-7 protocols.
+>3. If you need aforementioned advanced features, we recommend choosing CLB over classic CLB. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/214/8847).
 
 ## Port Configuration
 <table>
