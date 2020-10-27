@@ -3,6 +3,7 @@
 To implement refined control over app features, IM provides you with powerful callbacks free of charge. These callbacks use the persistent connection mode by default. A callback is a request sent by the IM backend to the app backend server before or after an event occurs. This allows the app backend to synchronize data if necessary or intervene in the subsequent event processing. For more information on the callbacks currently supported by IM, see the [Callback Command List](https://intl.cloud.tencent.com/document/product/1047/34355).
 
 A third-party callback is sent to the app backend server through an HTTP or HTTPS request, and the app backend server must process the IM callback request and respond as soon as possible. Take the [callback before delivering a group message](https://intl.cloud.tencent.com/document/product/1047/34374) as an example. Before the message is sent, the IM backend sends a callback request to the app backend server and determines whether the message should be sent based on the callback result. Based on the callback, the app can synchronize the message or perform content filtering on the message to be sent. 
+![](https://main.qcloudimg.com/raw/617414146c22be3c874e3af3b3e2234c.png)
 
 ## Callback Classification
 
