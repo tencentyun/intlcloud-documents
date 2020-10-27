@@ -1,5 +1,3 @@
-# Android Live Pull Document
-
 ## Basics
 
 This document introduces the livestream playback function of Video Cloud SDK.
