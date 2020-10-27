@@ -57,21 +57,7 @@ You can also use the following APIs to configure intelligent tiering storage:
 
 ### Using SDKs
 
-You can make intelligent tiering configuration by using the following language-specific SDKs:
-
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/36195)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31519)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31523)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31527)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37695)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31535)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/35804)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/35858)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/34997)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31547)
-
-
+当前 COS 所发布的 SDK 都支持使用智能分层存储类型，具体方法是在文件上传时，将 StorageClass 参数设置为 INTELLIGENT_TIERING，实现直传智能分层存储。详情请参见 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
 
 ## Use Limits
 
