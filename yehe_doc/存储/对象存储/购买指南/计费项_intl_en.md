@@ -1,7 +1,12 @@
-Billable items in COS include [storage usage](#jf1), [requests(#jf2), [data retrievals](#jf3), [traffic](#jf4), and [administrative features](#jf5). The following describes each billable item in detail. After learning about them and the [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239), you will be able to estimate fees on your own.
+Billable items in COS include [storage usage](#jf1), [requests](#jf2), [data retrievals](#jf3), [traffic](#jf4), and [management features](#jf5). The following describes each billable item in detail.
 
 
-> ?COS offers 3 object storage classes for different access frequencies: STANDARD, STANDARD_IA, and ARCHIVE. For more information, see [Storage Classes](https://intl.cloud.tencent.com/document/product/436/30925).
+> ?COS offers the following object storage classes for different access frequencies and disaster recovery levels: STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. For more information, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+
+## Pricing
+
+After you learn about COS billable items and [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239), you may be able to estimate your COS fees on your own.
+
 
 
 <span id="jf1"></span>
@@ -9,8 +14,8 @@ Billable items in COS include [storage usage](#jf1), [requests(#jf2), [data retr
 ## Storage Usage Fees
 
 | Billable Item   | Applicable Storage Class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                               | Definition                                                   | Billing Description                                                     |
-| -------- | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Storage usage |STANDARD<br>STANDARD_IA<br>ARCHIVE| Storage usage is the actual storage space consumed by your data. It is billed based on the size of the storage capacity you actually use.  |<li>Monthly billing cycle<br><li>Storage usage fees = storage usage unit price * monthly storage usage<br><li>Monthly storage usage = sum of "daily storage usage" in the month / number of days in the month<br><li>Daily storage usage = sum of "5-minute storage usage" / 288 (number of statistical points) |
+| -------- | -------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Storage usage |STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE | Storage usage is the actual storage space consumed by your data. It is billed based on the size of the storage capacity you actually use.  |<li>Monthly billing cycle<br><li>Storage usage fees = storage usage unit price * monthly storage usage<br><li>Monthly storage usage = sum of "daily storage usage" in the month / number of days in the month<br><li>Daily storage usage = sum of "5-minute storage usage" / 288 (number of statistical points) |
 
 
 
@@ -18,7 +23,8 @@ Billable items in COS include [storage usage](#jf1), [requests(#jf2), [data retr
 
 1. STANDARD_IA storage class: if the storage duration is less than 30 days, it will be calculated as 30 days. If a single stored file is less than 64 KB, it will be calculated as 64 KB; otherwise, files are calculated based on their actual size.
 2. ARCHIVE storage class: this storage class is available in Public Cloud regions only. If the storage duration is less than 90 days, it will be calculated as 90 days. If a single stored file is less than 64 KB, it will be calculated as 64 KB; otherwise, files are calculated based on their actual size.
-3. If you upload an object successfully to STANDARD_IA or ARCHIVE storage class with versioning not enabled, COS will delete any existing objects of the **same name**. In this case, storage fees will still be incurred for **the deleted objects** for a minimal storage duration.
+3. DEEP ARCHIVE storage class: this storage class is available only in Beijing, Guangzhou, and Chengdu regions. If the storage duration is less than 180 days, it will be calculated as 180 days. If a single stored file is less than 64 KB, it will be calculated as 64 KB; otherwise, files are calculated based on their actual size.
+4. If you successfully uploaded an object in STANDARD_IA or ARCHIVE storage class without enabling versioning, COS will delete the existing object of the **same name** (if any), and in this case, storage fees will still incur for **earlier deletion of the object**.
 
 <span id="jf2"></span>
 
@@ -30,28 +36,44 @@ Request fees include the fees incurred by **user requests** and **backend reques
 - Backend requests: these include requests to transition objects, delete expired STANDARD copies restored from ARCHIVE, read/write data for cross-region replication, and deliver inventory reports.
 
 | Billable Item   | Applicable Storage Class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                               | Definition                                                   | Billing Description                                                     |
-| -------- | -------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Number of requests | STANDARD<br>STANDARD_IA<br>ARCHIVE | Calculated based on the number of requests sent|  <li>Monthly billing cycle<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 (rounded down) |
+| -------- | -------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------ |
+|Number of requests  | STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE  | Calculated based on the number of requests sent  |  <li>Monthly billing cycle<br><li>If the accumulated number of requests is below 10,000, it will be calculated as 10,000 requests<br><li>Request fees = unit price per 10,000 requests * monthly accumulated number of requests / 10,000 |
 
 #### Billing restrictions
 
 1. Both successful and failed requests are billable.
 2. 10,000 requests serve as the smallest counting unit for request fees; therefore, if the number of monthly accumulated requests is below 10,000 it will be calculated as 10,000 requests, no matter whether a request succeeds or fails.
-3. When archived data is read, the data is first restored to the STANDARD storage class and then read there; therefore, the number of requests is counted in the STANDARD storage class.
+3. Data cannot be read or downloaded in the ARCHIVE and DEEP ARCHIVE storage classes. You will be billed for objects restored from ARCHIVE to STANDARD at STANDARD rates, and for objects restored from DEEP ARCHIVE at DEEP ARCHIVE rates.
+4. You may also be billed by the number of your requests to retrieve data from DEEP ARCHIVE.
 
 <span id="jf3"></span>
 
 ## Data Retrieval Fees
 
+<table>
+   <tr>
+      <th>Billable Item</td>
+      <th>Applicable Storage Class</td>
+      <th>Definition</td>
+      <th>Billing Description</td>
+   </tr>
+   <tr>
+      <td rowspan=2>Data retrieved</td>
+      <td>STANDARD_IA<br>ARCHIVE</td>
+      <td rowspan=2>Calculated based on the amount of data retrieved</td>
+      <td><li>Monthly billing cycle<br><li>Data retrieval fees = unit price per GB * monthly amount of data retrieved</td>
+   </tr>
+   <tr>
+      <td>DEEP ARCHIVE</td>
+      <td><li>Daily billing cycle<br><li>Data retrieval fees = unit price per GB * daily amount of data retrieved</td>
+   </tr>
+</table>
 
-
-| Billable Item | Applicable Storage Class | Definition | Billing Description |
-| ---------- | ---------------------- | -------------------------------- | ------------------------------------------------------------ |
-| Data retrieved | STANDARD_IA<br />ARCHIVE | Calculated based on the amount of data retrieved | <li>Monthly billing cycle<br /><li>Data retrieval fees = unit price per GB * monthly amount of data retrieved |
 
 #### Billing restrictions
 
-**STANDARD_IA** and **ARCHIVE** are designed to store cold data. To download object data from these two storage classes, you need to retrieve it first, thereby incurring both retrieval fees and download traffic fees.
+**STANDARD_IA**, **ARCHIVE** and **DEEP ARCHIVE** storage classes are designed to store cold data. To read or download data from STANDARD_IA, COS needs to retrieve it backend first. Data in ARCHIVE cannot be read or downloaded until it is restored (unfrozen) to STANDARD storage class.
+
 
 <span id="jf4"></span>
 
@@ -68,7 +90,7 @@ Traffic fees are calculated based on the accumulated traffic generated by storag
    </tr>
    <tr>
       <td>Public network upstream traffic</td>
-      <td rowspan="7" nowrap="nowrap">STANDARD<br>STANDARD_IA<br>ARCHIVE</td>
+      <td rowspan="7" nowrap="nowrap">STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE</td>
       <td>Traffic generated by data transfer from the client to COS over the Internet</td>
       <td>Free</td>
    </tr>
@@ -90,7 +112,7 @@ Traffic fees are calculated based on the accumulated traffic generated by storag
    <tr>
       <td>CDN origin-pull traffic</td>
       <td>Traffic generated by data transfer from COS to a Tencent Cloud CDN edge server</td>
-      <td><li>Daily billing cycle<br><li>Public network downstream traffic fees = unit price per GB * daily accumulated public network downstream traffic</td>
+      <td><li>Daily billing cycle<br><li>CDN origin-pull traffic fees = unit price per GB * daily accumulated CDN origin-pull traffic</td>
    </tr>
    <tr>
       <td>Cross-region replication traffic</td>
@@ -106,26 +128,25 @@ Traffic fees are calculated based on the accumulated traffic generated by storag
 
 #### Billing restrictions
 
-1. When archived data is read, the data is first restored to the STANDARD storage class and then read there; therefore, the traffic is counted in the STANDARD storage class.
-2. CDN origin-pull traffic refers to the traffic generated by data transfer from COS to a Tencent Cloud CDN edge server. If traffic is forwarded from a third-party origin server to COS, public network downstream traffic will be generated.
+1. ARCHIVE storage class data cannot be read or downloaded. The data must first be restored to STANDARD storage class and read there. Therefore, traffic from these requests are counted in the STANDARD storage class.
+2. **Public network downstream traffic** is generated when the COS origin server returns data to a third-party CDN node during origin-pull.
+3. Tencent Cloud CDN origin-pull traffic is generated by browsing or downloading COS data on the client through **a Tencent Cloud CDN acceleration domain name** after CDN acceleration is enabled.
+4. Public network downstream traffic is generated by downloading objects through **object links** and browsing objects through **static website access node**. 
+5. Cross-region replication traffic is generated when you replicate data from a bucket in one region to a bucket in another region using APIs or the cross-region replication feature. The traffic fees vary, depending on the region where the source bucket resides.
 
-> ?
->
-> - Tencent Cloud products within the same region access each other over the private network by default and no traffic fees will be incurred. For more information on how to identify private network access, please see [COS Access via Private Network and Public Network](https://intl.cloud.tencent.com/document/product/436/30613?lang=en&pg=#cos-access-via-private-network-and-public-network).
-> - Public network downstream traffic consists of the traffic generated by downloading objects through **object URLs** and browsing objects through **static website access nodes**.
-> - CDN origin-pull traffic refers to traffic generated by browsing or downloading COS data from the client through **CDN acceleration endpoints** after CDN acceleration is enabled.
-> - Cross-region replication traffic is generated when you replicate data from a bucket in one region to a bucket in another region using APIs or the cross-region replication feature.
+> ?Tencent Cloud products within the same region access each other over the private network by default and no traffic fees will be incurred. For more information on how to identify private network access, please see [COS Access via Private Network and Public Network](https://intl.cloud.tencent.com/document/product/436/30613).
+
 
 #### Traffic trends
 
-The figure below shows the traffic fees incurred by data transmitted from COS to an end user with CDN acceleration enabled and disabled, respectively.
+The figure below shows the traffic fees incurred by data transmitted from COS to an end user with Tencent Cloud CDN acceleration domain name enabled and disabled, respectively.
 ![](https://main.qcloudimg.com/raw/a7e5562e9404ba265cb4797a59521d28.png)
 
 <span id="jf5"></span>
 
-## Administrative Feature Fees
+## Management Feature Fees
 
-Administrative feature fees are calculated based on the use of enabled administrative features, such as inventory and COS select.
+Management feature fees are calculated based on the use of COS management features, such as inventory and COS select.
 
 
 
@@ -140,27 +161,26 @@ Administrative feature fees are calculated based on the use of enabled administr
 </thead>
 <tbody><tr>
 <td>Inventory feature fees</td>
-<td nowrap="nowrap">STANDARD<br>STANDARD_IA<br>ARCHIVE</td>
+<td nowrap="nowrap">N/A</td>
 <td>Fees incurred from listing bucket objects after the inventory feature is enabled</td>
 <td><li>Daily billing cycle<br></li><li>Billed per million objects listed</li></td>
 </tr>
 <tr>
-<td>COS select fees</td>
-<td>STANDARD storage</td>
+<td>Select feature fees</td>
+<td>STANDARD<br>STANDARD_IA</td>
 <td>Fees incurred from extracting objects when the COS select feature is enabled</td>
 <td><li>Daily billing cycle<br></li><li>Billed by the size of data extracted</li></td>
 </tr>
 <tr>
 <td>Batch operation fees</td>
-<td nowrap="nowrap">STANDARD<br>STANDARD_IA<br>ARCHIVE</td>
-<td>Once you enable the batch operation feature, COS will bill you based on the number of jobs created and object operations</td>
-<td><li>Daily billing cycle<br></li><li>Billed by the number of jobs created and object operations</li></td>
+<td nowrap="nowrap">N/A</td>
+<td>Once you enable the batch operation feature, COS will bill you based on the number of jobs created and objects processed</td>
+<td><li>Daily billing cycle<br></li><li>Billed by the number of jobs created and objects processed</li></td>
 </tr>
 <tr>
 <td>Object tagging fees</td>
-<td nowrap="nowrap">STANDARD<br>STANDARD_IA<br>ARCHIVE</td>
+<td nowrap="nowrap">N/A</td>
 <td>Once you enable the object tagging feature, COS will bill you based on the number of object tags</td>
 <td><li>Daily billing cycle<br></li><li>Billed by the number of object tags you set</li></td>
 </tr>
 </tbody></table>
-
