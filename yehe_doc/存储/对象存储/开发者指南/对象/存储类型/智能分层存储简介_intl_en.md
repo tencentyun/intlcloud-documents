@@ -57,7 +57,7 @@ You can also use the following APIs to configure intelligent tiering storage:
 
 ### Using SDKs
 
-当前 COS 所发布的 SDK 都支持使用智能分层存储类型，具体方法是在文件上传时，将 StorageClass 参数设置为 INTELLIGENT_TIERING，实现直传智能分层存储。详情请参见 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
+All the COS SDKs now support INTELLIGENT TIERING. To upload an object directly into this storage class, set `StorageClass` to `INTELLIGENT_TIERING` when uploading the object. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 
 ## Use Limits
 
