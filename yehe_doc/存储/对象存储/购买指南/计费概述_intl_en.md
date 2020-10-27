@@ -24,7 +24,7 @@ COS adopts **pay-as-you-go pricing**. For more information on COS pricing, see [
 Billable items in COS include storage usage, requests, data retrievals, traffic, and management features as shown below. For more information, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
 
 
-![](https://main.qcloudimg.com/raw/b87a461353ac429b9ce4fb507f2a3367.png)
+![](https://main.qcloudimg.com/raw/955512f4606494b557a1e54a633ac3e7.png)
 
 
 
