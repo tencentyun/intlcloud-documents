@@ -12,7 +12,7 @@ After automatic mounting, reads and writes on the data disk can be directly perf
 
 ## Automatic Mounting
 ### Mounting data disks (Windows)
-If you need to automatically mount a cloud disk created from a corresponding data disk snapshot when starting a Windows CVM instance, the specified custom image and data disk snapshot must meet the following requirements:
+If you use a custom image to create a Windows CVM instance, the cloud disk created from the corresponding data disk snapshot will be automatically mounted. The custom image in use and the data disk snapshot must meet the following requirements:
 - The data disk **must** be formatted as `ntfs` or `fat32` before you create a snapshot.
 - The SAN policy in the custom image is `onlineAll`.
  >Public images for Windows that are currently provided by Tencent Cloud have been configured by default, but we still recommend that you check the configuration before creating any custom images by following the steps below:
@@ -20,7 +20,7 @@ If you need to automatically mount a cloud disk created from a corresponding dat
 
 
 ### Mounting data disks (Linux)
-If you need to automatically mount a cloud disk created from a corresponding data disk snapshot when starting a Linux CVM instance, the specified custom image and data disk snapshot must meet the following requirements:
+If you use a custom image to create a Linux CVM instance, the cloud disk created from the corresponding data disk snapshot will be automatically mounted. The custom image in use and the data disk snapshot must meet the following requirements:
 - The data disk **must** be formatted before the snapshot is created. That is, the data disk has been successfully mounted to the original CVM.
 - For the system disk to create a custom image, you need to add the following commands to the file `/etc/rc.local` to write the data disk mounting point to the file.
  ```
@@ -60,7 +60,10 @@ If you need to automatically mount a cloud disk created from a corresponding dat
   <tr>
 	<td  rowspan="3">Create from a snapshot</td>
 	<td>Cloud disk capacity = snapshot capacity</td>
-	<td>No subsequent operations needed, use directly after mounting.</td>
+	<td><ul><li>Mounting to a Windows CVM: log in to the instance and choose **Server Management** -> **Storage** -> **Disk Management** to associate it with a CVM.</li>
+		<li>Mounting to a Linux CVM: log in to the CVM instance and run the `<code>mount <disk partition> <mount point ></code>` command, such as `<code>mount /dev/vdb /mnt</code>`.</li>
+		</ul>
+	</li></td>
  </tr>
  </tr>
  <tr>
