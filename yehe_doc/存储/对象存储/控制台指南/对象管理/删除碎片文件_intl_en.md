@@ -9,9 +9,9 @@ If you try to delete the specified bucket but the system prompts that "**Deletio
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the bucket for which you want to delete incomplete multipart uploads, and enter the bucket details page.
-![](https://main.qcloudimg.com/raw/a5c567ac2e21364e10e0873fcb658a1a.png)
+
 3. On the **File List** page, select the **Incomplete Multipart Uploads** tab to view the files that have not been completely uploaded.
-![](https://main.qcloudimg.com/raw/5a468b7dbbfc8f887e1d62f18b970fea.png)
+
 4. You can click **Delete** to the right of an incomplete multipart upload to delete it or click **Clear Incomplete Multipart Uploads** at the top to delete all incomplete multipart uploads.
 ![](https://main.qcloudimg.com/raw/48ba3386157a800bb6896d655e52a975.png)
 5. After you perform the "Clear Incomplete Multipart Uploads" or "Delete" operation, the list will be displayed as empty.
@@ -22,7 +22,7 @@ If you try to delete the specified bucket but the system prompts that "**Deletio
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Click the bucket for which you want to delete incomplete multipart uploads, and enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/a5c567ac2e21364e10e0873fcb658a1a.png)
-3. Click **Advanced Configuration** in the left sidebar, and find **Lifecycle** at the bottom of the page.
+3. Click **Basic Configurations** > **Lifecycle** on the left sidebar to locate the **Lifecycle** section.
 ![](https://main.qcloudimg.com/raw/f9ba822a0f34eae84ede38d302f22092.png)
 4. Click **Add a Rule**, and you can see the configuration items as shown below. You can set to delete the incomplete multipart uploads across the bucket 7 days later after creation.
 ![](https://main.qcloudimg.com/raw/9bb0397b0a87e5dadbdf40183329de5e.png)
