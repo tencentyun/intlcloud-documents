@@ -6,7 +6,7 @@ Cloud Connect Network (CCN) bridges between Tencent Cloud [VPCs](https://intl.cl
 ## Product Components
 A CCN consists of:
 - Associated network instances: network instances within the same CCN instance can communicate with each other. Supported network instance types include VPC, VPC (BM), and direct connect gateway. For more information, refer to [Associate Network Instance](https://intl.cloud.tencent.com/document/product/1003/30064).
-> The VPN gateway associated with CCN is now in beta test. To apply for its use, [Submit a Ticket] (https://console.cloud.tencent.com/workorder/category).
+>? The VPN gateway associated with CCN is now in beta test. To apply for its use, [Submit a Ticket] (https://console.cloud.tencent.com/workorder/category).For more information, see [Connecting IDC to CCN via VPN Gateway](https://intl.cloud.tencent.com/document/product/1037/36018).
 - Route table: CCN automatically learns routes of network instances added and present them in its route table. For more information, see [Viewing Routing Information](https://intl.cloud.tencent.com/document/product/1003/30066).
 
 
