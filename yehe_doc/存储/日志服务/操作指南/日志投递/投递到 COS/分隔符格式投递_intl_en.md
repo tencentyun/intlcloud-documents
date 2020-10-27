@@ -14,10 +14,10 @@ You can log in to the [Cloud Log Service Console](https://console.cloud.tencent.
 2. Click **Logset** in the left sidebar.
 3. On the **Logset Management** page, click the target logset ID/name to go to its details page.
    <img src="https://main.qcloudimg.com/raw/867bf17736b5dda680cba78e4dbdca5b.png" width="80%">
-4. Locate the log topic to be shipped, and click **Manage** and go to **Shipping Configuration**.
-   <img src="https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png" width="80%">
-5. Click **Add Shipping Task** to open the **Ship to COS** page and fill in the configuration information.
-   ![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
+4. Locate the log topic to be shipped, click **Manage**, and go to **Ship to COS**.
+<img src="https://main.qcloudimg.com/raw/a8cd06e71f91561f1e74073dc9e00a9b.png" width="80%">
+5. Click **Add Shipping Task** to open the **Ship to COS** page and complete the basic configurations.
+![](https://main.qcloudimg.com/raw/b9b06dedce54cbd960fb4b6b651bdcaf.png)
    **The parameters are described as follows:**
 
 <table>
