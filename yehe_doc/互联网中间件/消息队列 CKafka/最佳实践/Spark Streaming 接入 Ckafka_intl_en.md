@@ -81,7 +81,10 @@ object ProducerExample extends App {
 For more information on how to use `ProducerRecord`, please see [ProducerRecord](https://kafka.apache.org/0100/javadoc/org/apache/kafka/clients/producer/ProducerRecord.html).
 
 ### Consumption from CKafka
-#### DirectStream<span id="build.sbt"></span>
+
+<span id="build.sbt"></span>
+
+#### DirectStream
 1. Add dependencies to `build.sbt`:
 ```scala
 name := "Consumer Example"
