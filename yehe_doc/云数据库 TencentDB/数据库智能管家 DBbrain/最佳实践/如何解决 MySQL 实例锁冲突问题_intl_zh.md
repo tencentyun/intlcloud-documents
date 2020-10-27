@@ -40,7 +40,7 @@
 
 #### 步骤一：查看“死锁”事件
 - **方式1：**
- 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/instance)，在左侧导航选择【实例管理】，然后选择【异常告警】页。
+ 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/instance)，在左侧导航选择【监控告警】>【异常告警】页。
  2. 选择需要查看的时间范围，在“诊断项”列，选择“死锁”进行过滤。
  3. 列表会展示实例出现“死锁”的事件列表，单击“操作”列的【详情】可进入事件详情页。
 
