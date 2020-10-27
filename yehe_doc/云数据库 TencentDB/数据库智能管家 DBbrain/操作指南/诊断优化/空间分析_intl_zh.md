@@ -16,19 +16,19 @@
 >
 TOP 表空间为您展示当前占用空间较大表的详情，包括存储引擎、物理空间大小、行数、总使用空间、数据空间、索引空间、碎片空间、碎片率等，各列数据均支持倒序排列，同时也支持手动刷新实时数据。
 您可以通过此信息了解磁盘空间的使用详情，及时进行优化。
-![](https://main.qcloudimg.com/raw/68c0d625344d4fef8b10d9a5b57dbdba.png)
+![](https://main.qcloudimg.com/raw/714a962ec5ffc7489e3b9bd97c6286af.png)
 
 TOP 表以数据库表的粒度呈现，单击 TOP 表中的数据行，可以查看该表的字段与索引详细信息，其中字段信息包括表名、列名、字段类型、默认值、是否为空、字符集、排序、列位置、备注，索引信息包括表名、索引名、是否唯一索引、包含列、序列号、基数。
-![](https://main.qcloudimg.com/raw/e990f0bddad26516145d2d76bb73da40.png)
+![](https://main.qcloudimg.com/raw/74ed1a0565e84311907007565a0ec9dc.png)
 
 单击 TOP 表中的数据行，也可以查看该表的趋势图，包含物理文件大小、空间占用（数据空间、索引空间、总使用空间）、以及碎片率的趋势图。
-![](https://main.qcloudimg.com/raw/6a5d902cdf50bcabf962f13254cd5adb.png)
+![](https://main.qcloudimg.com/raw/351385dd93a9683810619047e5545eba.png)
 
 
 ## TOP 库空间
 TOP 库空间为您展示当前占用空间较大库的详情，包括物理文件大小、行数、总使用空间、数据空间、索引空间、碎片空间、碎片率等，各列数据均支持倒叙排列。
 您可以通过此信息了解磁盘空间的使用详情，及时进行优化。 
-![](https://main.qcloudimg.com/raw/45ba1e5ace7614a0fc2bc9dd1a6cbe8d.png)
+![](https://main.qcloudimg.com/raw/8dde50662da4c039668b0610a5324b81.png)
 
 TOP 库以数据库的粒度呈现，单击 TOP 库中的数据行，也可以查看该库的趋势图，包含物理文件大小、空间占用（数据空间、索引空间、总使用空间）、以及碎片率的趋势图。
-![](https://main.qcloudimg.com/raw/692aece908bc94c09a679ff64ef35650.png)
+![](https://main.qcloudimg.com/raw/0577082b530d41c3c33c86fb59329cc2.png)
