@@ -65,7 +65,7 @@ abc.example.com
 
 The image `picture.jpg` was stored at the origin server `http://abc.example.com`.
 
-**First access by the client**:
+**Initial access from the client (with sync origin-pull disabled)**:
 
 ```shell
 http://examplebucket-1250000000.file.myqcloud.com/picture.jpg
