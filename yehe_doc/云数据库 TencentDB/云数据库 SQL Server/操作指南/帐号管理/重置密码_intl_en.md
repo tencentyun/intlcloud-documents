@@ -1,7 +1,7 @@
 ## Operation Scenarios
 If you forgot your database account password or need to change it while using TencentDB for SQL Server, you can reset it in the console.
 
->
+>?
 >- For TencentDB for SQL Server, the password resetting feature has been connected to [CAM](https://intl.cloud.tencent.com/document/product/236/14469); therefore, you are recommended to exercise tighter control over the permission to the password resetting API or sensitive resources of TencentDB for SQL Server instances by granting such permission only to appropriate personnel.
 >- For data security, you are recommended to regularly reset the password at least once every three months.
 
@@ -11,5 +11,5 @@ If you forgot your database account password or need to change it while using Te
 2. Select the **Manage Account** tab, select the target account, and click **Reset Password** in the "Operation" column.
 
 3. In the pop-up dialog box, enter and confirm the new password and then click **OK**.
->The database password should contain 8–32 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()[]).
+>?The database password should contain 8–32 characters in at least two of the following character types: letters, digits, and special symbols (_+-&=!@#$%^*()[]).
 
