@@ -48,7 +48,7 @@ If you want to use the 3D sound effect at the same time, please do so as instruc
 
 ### 1. Set `teamID`
 
-- The team ID (`teamID`) must be set by calling the method `SetRangeAudioTeamID` before `EnterRoom`. Otherwise, GME will return the error code `AV_ERR_ROOM_NOT_EXITED(1202)`.
+The team ID (`teamID`) must be set by calling the method `SetRangeAudioTeamID` before `EnterRoom`. Otherwise, GME will return the error code `AV_ERR_ROOM_NOT_EXITED(1202)`. If you re-enter a room you exited, please wait for the `RoomExitComplete` callback notification before setting the team ID.
 
 >!This parameter will not be automatically reset to `0` upon room exit. Therefore, once you decide to use range voice, please call this method to set `teamID` before calling `EnterRoom` each time.
 
@@ -107,7 +107,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
         }
 	}
 ```
-Once you enter the room, call `UpdateAudioRecvRange` and call `UpdateSelfPosition` once per each frame.
+Once you enter the room, call `UpdateAudioRecvRange` at least once, and call `UpdateSelfPosition` once per frame.
 
 
 ### 4. Set the voice reception range
