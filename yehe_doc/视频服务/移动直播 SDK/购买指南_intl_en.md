@@ -2,8 +2,7 @@
 <span id="sdklicense"></span>
 ## MLVB License Fee
 
-- The Tencent Cloud Mobile Live Video Broadcasting (MLVB) basic edition license allows you to use the MLVB basic edition SDK on iOS and Android devices. The annual license fee is USD 699.If you want to buy it now, please [contact
-sales](https://intl.cloud.tencent.com/contact-sales).
+- The Tencent Cloud Mobile Live Video Broadcasting (MLVB) basic edition license allows you to use the MLVB basic edition SDK on iOS and Android devices. The annual license fee is USD 699.If you want to buy it now, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 
 - Currently, Tencent Cloud provides a **free one-time demo** for the basic edition SDK. You can register an account on the [LVB console](https://console.cloud.tencent.com/live/license) and apply for the free basic edition SDK license. Please refer to [License Purchase Guide](https://intl.cloud.tencent.com/document/product/1071/38546) and then apply for the trial license, which is free of charge for 28 days in total.
 
