@@ -1,16 +1,16 @@
-You can configure alarm rules for the connection and dedicated tunnel on the Cloud Monitor console. When an alarm rule is triggered, you will receive notifications, which will allow you to take appropriate measures.
+You can configure alarm rules for the connection, dedicated tunnel, and direct connect gateway on the Cloud Monitor console. When an alarm rule is triggered, you will receive notifications, which will allow you to take appropriate measures.
 
-## Creating an Alarm Policy
+## Directions
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** -> **Alarm Policy** to access the alarm policy configuration page.
 2. Click **Create**.
 3. Perform the following steps to configure a new alarm policy.
-  4. Fill in **Policy Name** and **Remarks**. Select **Physical Dedicated Line** or **Dedicated Line Channel** for **Policy Type** as needed.
- 2. Choose a project based on your needs. Each project supports creating a maximum of 300 alarm policies.
- 3. Select the alarm object.
+  1. Fill in **Policy Name** and **Remarks**. Select **Physical Dedicated Line**, **Dedicated Line Channel** or **Direct Connect Gateway** for **Policy Type** as needed.
+  2. Choose a project based on your needs. Each project supports creating a maximum of 300 alarm policies.
+  3. Select the alarm object.
     - If you check **All Objects**, the alarm policy will be associated with all instances under the current account.
     - If you check **Select some objects**, the alarm policy will be associated with the selected instances.
     - If you check **Select instance group**, the alarm policy will be associated with the selected instance groups. You can click **Create instance group** to add instance groups.
- 4. Use one of the following methods to configure the trigger condition.
+  4. Use one of the following methods to configure the trigger condition.
 - Trigger condition template
     This method allows you to select a configured template from the drop-down list.
 >? You can click **Add Trigger Condition Template** to configure a new trigger condition template. For more information, see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/32817). If the new template is not displayed in the list, click **Refresh**.
