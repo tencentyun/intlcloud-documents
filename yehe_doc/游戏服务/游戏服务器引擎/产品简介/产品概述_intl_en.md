@@ -39,7 +39,7 @@ GSE is available in regions such as Shanghai and North America and will soon be 
 
 ### Process management 
 #### Process launch  
-GSE launches processes based on the process launch paths, the launch parameters, and the maximum number of allowed concurrent processes configured on the Console.
+GSE launches a process based on the launch path, launch parameters, and concurrent processes allowed you specify.
 
 #### Process preparation  
 After a process is launched, an API will be called to inform GSE that the process is ready to accept access requests.
