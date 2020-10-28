@@ -1,6 +1,6 @@
 ## Operation Scenarios
 TencentDB for SQL Server supports creating and deleting accounts and modifying account permissions on the **Manage Account** page in the console. Such operations cannot be performed in Microsoft SQL Server Management.
->The created account name and password will be used when connecting to TencentDB for SQL Server. Please store them properly.
+>?The created account name and password will be used when connecting to TencentDB for SQL Server. Please store them properly.
 >
 
 ## Directions
@@ -8,7 +8,7 @@ TencentDB for SQL Server supports creating and deleting accounts and modifying a
 2. Select **Manage Account** > **Create Account** and enter relevant information in the pop-up dialog box. After confirming that everything is correct, click **OK**.
  - 	Account Name: it is required, can contain 1–50 letters, digits, or special symbol, and must start with a letter. The special symbol is \_.
  - 	Admin: it is optional. Each TencentDB for SQL Server instance can have one admin account, which has read/write permissions to all databases by default. A newly added database will be automatically authorized for the admin account with no manual authorization required.
->There are three types of account permissions in TencentDB for SQL Server:
+>?There are three types of account permissions in TencentDB for SQL Server:
 >- Admin: by default, it has read/write permissions to all databases. Only one admin account can be set for one instance.
 >- Read/Write: it has read/write permissions to authorized databases and can perform database changes.
 >- Read-only: it has read-only permission to only authorized databases and cannot perform changes.
