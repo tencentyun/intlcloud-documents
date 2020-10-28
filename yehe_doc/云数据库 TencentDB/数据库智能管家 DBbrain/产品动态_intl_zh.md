@@ -1,3 +1,48 @@
+## 2020年10月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tbody><tr>
+<td>新增多个地域接入</td>
+<td>DBbrain 支持接入中国台北、孟买、新加坡、曼谷、法兰克福、莫斯科、多伦多、首尔、东京地域的云数据库 MySQL 实例。</td>
+<td>2020-10</td>
+<td><a href="https://cloud.tencent.com/document/product/1130/49298" target="_blank">地域列表</a></td>
+</tr>
+<tr>
+<td>DBbrain 支持 CynosDB for MySQL</td>
+<td>DBbrain 支持 CynosDB for MySQL，支持功能包括：实例概览、实例管理、数据库巡检、异常告警、监控大盘、全实例监控、异常诊断、性能趋势、实时会话等。</td>
+<td>2020-10</td>
+<td><a href="https://cloud.tencent.com/document/product/1130/49291" target="_blank">功能列表</a></td>
+</tr>
+</tbody></table>
+
+
+## 2020年09月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+<tr>
+<td>支持敏感数据发现</td>
+<td>DBbrain 敏感数据发现功能可通过识别规则自动发现实例敏感数据，并对所发现的敏感数据实现自动化分类分级保护。</td>
+<td>2020-09</td>
+<td><a href="https://cloud.tencent.com/document/product/1130/48516" target="_blank">敏感数据发现</a></td>
+</tr>
+<tr>
+<td>支持数据脱敏</td>
+<td>DBbrain 数据脱敏功能内置多种高级脱敏算法，可智能化执行与管理脱敏任务，针对不同业务场景实现数据脱敏，进而达到企业核心数据保密的效果。</td>
+<td>2020-09</td>
+<td><a href="https://cloud.tencent.com/document/product/1130/48555" target="_blank">数据脱敏</a></td>
+</tr>
+</tbody></table>
+
+
 ## 2020年07月
 <table>
 <tr>
@@ -10,13 +55,13 @@
 <td>支持监控大盘</td>
 <td>监控大盘功能支持自定义监控大盘，满足用户多实例、多指标监控视图的关联对比查看。</td>
 <td>2020-07</td>
-<td><a href="" target="_blank">监控大盘</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/37668" target="_blank">监控大盘</a></td>
 </tr>
 <tr>
 <td>支持性能趋势</td>
 <td>性能趋势功能支持多种性能指标的选择，及多种查看性能趋势的方式，包括单性能指标趋势的细粒度查看、多性能指标趋势的联动对比查看、多性能指标趋势的时间对比查看等。</td>
 <td>2020-07</td>
-<td><a href="" target="_blank">性能趋势</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/37666" target="_blank">性能趋势</a></td>
 </tr>
 <tr>
 <td>支持数据库帐号鉴权及常用运维命令快捷执行</td>
@@ -40,9 +85,29 @@
 <td>新增异常告警消息通知推送</td>
 <td>MySQL 控制台新增异常告警消息通知推送服务和异常告警历史列表，便于用户及时便捷地了解数据库异常诊断问题。</td>
 <td>2020-07</td>
-<td><a href="" target="_blank">告警通知</a></td>
+<td><a href="https://cloud.tencent.com/document/product/1130/46275" target="_blank">告警通知</a></td>
 </tr>
 </tbody></table>
+
+
+## 2020年06月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tbody>
+<tr>
+<td>新增多个地域数据库实例接入</td>
+<td>DBbrain 支持接入深圳、南京、重庆、成都、中国香港、硅谷和弗吉尼亚地域的数据库实例。</td>
+<td>2020-06</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
 
 ## 2020年05月
 <table>
@@ -56,7 +121,7 @@
 <td>支持数据库巡检</td>
 <td>数据库巡检会定期进行自动化全实例健康巡检，用户也可根据自己的需求个性化设置巡检，帮助用户排查实例隐患并提供解决方案。</td>
 <td>2020-05</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/1035/37178" target="_blank">数据库巡检</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/37178" target="_blank">数据库巡检</a></td>
 </tr>
 <tr>
 <td>推出 SQL 优化效果预测及对比引擎</td>
@@ -125,7 +190,7 @@
 <td>支持异常告警</td>
 <td>异常告警展示了 DBbrain 接入的数据库实例所产生的异常告警（由“7 * 24小时异常诊断”发现的异常项）信息汇总，包括数据库实例的基本信息（实例名/ID、内网 IP、可用区）、风险等级、诊断项、持续时长及操作等。</td>
 <td>2020-02</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/1035/37177" target="_blank">异常告警</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/37177" target="_blank">异常告警</a></td>
 </tr>
 </tbody></table>
 
@@ -141,7 +206,7 @@
 <td>支持全实例监控</td>
 <td>全实例监控为用户提供全实例维度（用户整体视角）的数据库监控指标展示。统一监控视图里展示所有实例单个监控指标的横向视图，便于用户查看和发现数据库异常问题，也为用户提供全新的宏观监控查看视角。</td>
 <td>2019-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/36034" target="_blank">全实例监控</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/37669" target="_blank">全实例监控</a></td>
 </tr>
 </tbody></table>
 
@@ -178,11 +243,6 @@
 <td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36037" target="_blank">实时会话</a></td>
 </tr>
-<tr>
-<td>支持移动端微信小程序</td>
-<td>借助微信小程序生态，拓展用户在移动端的使用体验，让用户随时随地都能掌握数据库运行状况，并能一键管理和优化数据库。</td>
-<td>2019-11</td>
-<td>-</td>
 </tr>
 </tbody></table>
 
