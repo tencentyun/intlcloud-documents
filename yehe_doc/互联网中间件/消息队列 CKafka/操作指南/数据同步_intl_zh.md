@@ -44,7 +44,7 @@ Kafka Connector 旨在围绕 Kafka 构建一个可伸缩的、可靠的数据流
  
 
 ## 对比自建 CKafka Connector
-例如 CVM 8核16G 服务器2台主备容灾。产生的 CVM 基础费用如下
+例如 CVM 8核16G 服务器2台主备容灾。产生的 CVM 基础费用如下：
 ![](https://main.qcloudimg.com/raw/9c16ff14d26ddef26553bbb5d66f6779.png)
 Kafka 与其他服务资源传输数据若通过公网，需要按照 0.12USD/GB按量付费。
 CKafka Connector 目前提供免费服务，客户只需要购买互相同步数据的2个或以上的 CKafka 实例即可（后续若实施收费会提前3个月告知客户，并通过官方文档说明具体收费标准）。

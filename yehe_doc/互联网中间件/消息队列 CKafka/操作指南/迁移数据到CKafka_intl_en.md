@@ -20,7 +20,7 @@ For detailed directions, please see [Creating Instances](https://intl.cloud.tenc
 ```
 4. The new consumer continues to consume data in the CKafka cluster as the migration is completed (if the original consumer is a CVM instance, it can continue to consume the data).
 
-> The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
+>! The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
 
 ## Migrating Data to CKafka Without Message Ordering Guaranteed
 
@@ -41,4 +41,4 @@ For detailed directions, please see [Creating Instances](https://intl.cloud.tenc
 ./kafka-console-consumer.sh --bootstrap-server xxx.xxx.xxx.xxx:9092 --from-beginning --new-consumer --topic topicName --consumer.config ../config/consumer.properties
 ```
 
-> The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
+>! The above commands are test commands. In actual business operations, just modify the broker address configured for the corresponding application and then restart the application.
