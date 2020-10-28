@@ -45,27 +45,27 @@ A CAM policy consists of several elements and is used to describe specific infor
 
 #### Policy limits
 
-| Limit | Value |
-| ---------------------------------- | ------ |
-| Number of user groups in a root account | 20 |
-| Number of sub-accounts in a root account| 1,000 | 
-| Number of roles in a root account             | 250    |
-| Number of user groups that a sub-account can be added to | 10     |
-| Number of root accounts with which a collaborator can be associated      | 10     |
-| Number of sub-accounts in a user group          | 100    |
-| Number of policies created for a root account     | 1,000   |
-| Number of policies associated to a CAM user/user group/role | 200    |
-| Maximum characters allowed for a custom policy        | 4,096   |
+| Limit | Value | 
+|---------|---------|
+|Number of user groups in a root account | 300| 
+| Number of sub-accounts in a root account | 1000 | 
+| Number of roles in a root account | 1000 | 
+|Number of user groups that a sub-account can be added to | 10 | 
+| Number of root accounts with which a collaborator can be associated | 10 | 
+| Number of sub-accounts in a user group | 100 | 
+| Number of custom policies created for a root account | 1500 | 
+| Number of policies associated to a CAM user/user group/role| 200 | 
+|Maximum characters allowed for a policy syntax | 4096 |
 
 #### Example policy
-The policy in this example allows the sub-account with ID 100000000011 and the user group with ID 18825 that belong to the root account with ID 100000000001 (APPID: 1250000000) to access all COS read APIs and write objects for the bucket "examplebucket-bj" in Beijing region and the object “exampleobject” in the bucket “examplebucket-gz” in Guangzhou region, on condition that the access IP falls within the IP address range `10.*.*.10/24`.
+The policy in this example allows the sub-account with ID 100000000011 under the root account with ID 100000000001 (APPID: 1250000000) to **PUT Object** and **GET Object** on the bucket "examplebucket-bj" in Beijing region and the object “exampleobject” in the bucket “examplebucket-gz” in Guangzhou region, on condition that the access IP falls within the IP address range `10.*.*.10/24`.
 
 ```json
 {
 	"version": "2.0",
 	"principal": {
 		"qcs": ["qcs::cam::uin/100000000001:uin/100000000011",
-			"qcs::cam::uin/100000000001:groupid/18825"
+
 		]
 	},
 	"statement": [{

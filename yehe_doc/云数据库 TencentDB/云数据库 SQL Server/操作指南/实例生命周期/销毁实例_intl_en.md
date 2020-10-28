@@ -3,7 +3,7 @@ Based on your business needs, you can return pay-as-you-go instances in the cons
 - After a pay-as-you-go instance is returned, it will be moved to the TencentDB recycle bin and retained there for 24 hours. During the retention period, the instance cannot be accessed but can be restored.
 
 After an instance is returned, once its status changes to "Isolated", no fees related to it will be incurred.
->
+>!
 >- After the instance is terminated, its data cannot be recovered, and its backup files will be terminated too, so the data cannot be restored in the cloud. Please store your backup files safely elsewhere in advance.
 >- When the instance is terminated, its IP resources will be released simultaneously. If the instance has read-only instances or pub/sub configuration:
 >  - Read-only instances will be terminated at the same time.

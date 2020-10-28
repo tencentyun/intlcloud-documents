@@ -19,7 +19,7 @@ After a cloud disk is expanded, you need to either assign its expanded capacity 
 5. Assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/31602).
 
 ### Expanding data disk via API
-You can use the `ResizeCbsStorage` API to expand the specified cloud disks. For more information, see [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
+You can use the `ResizeDisk` API to expand the specified cloud disks. For more information, see [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
 
 ## Expanding System Disks
 If a system disk is a cloud disk, its capacity can be expanded. However, you have to [reinstall the operating system](https://intl.cloud.tencent.com/document/product/213/4933) of the CVM to implement the expansion.

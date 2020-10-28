@@ -1,10 +1,10 @@
-Before installing Tencent Cloud's command line tool TCCLI, ensure that a Python environment has been installed. For more information, see Prerequisites.
+Before installing Tencent Cloud's command line tool TCCLI, ensure that a Python environment has been installed. For more information, see [Prerequisites](https://intl.cloud.tencent.com/document/product/1013/33464#.E5.89.8D.E6.8F.90.E6.9D.A1.E4.BB.B6).
 
 ## Step 1. Installing TCCLI	
 ### Installing TCCLI
 Run commands based on the actual situation.
 - **TCCLI not installed**
-Run the following command to install TCCLI through pip. For more information, see [Installing TCCLI].
+Run the following command to install TCCLI through pip. For more information, see [Installing TCCLI](https://intl.cloud.tencent.com/document/product/1013/33464).
 ```
 $ sudo pip install tccli
 ```
@@ -43,7 +43,7 @@ AVAILABLE ACTION
 1. Log in to the [API Key Management](https://console.cloud.tencent.com/cam/capi).
 2. Click **Create Key** or use an available key to record `SecretID` and `SecretKey`. See the figure below:
 ![](https://main.qcloudimg.com/raw/0edc3a84752d2ae4524e971156f7e5f3.png)
-3. Run the `tccli configure` command and enter the TCCLI configuration information. For more information, see [Configuring TCCLI].
+3. Run the `tccli configure` command and enter the TCCLI configuration information. For more information, see [Configuring TCCLI](https://intl.cloud.tencent.com/document/product/1013/33465).
 ```
 $ tccli configure
 TencentCloud API secretId[None]:
@@ -76,7 +76,7 @@ The acquired COS bucket endpoint is `https://batchdemo-xxxxxxxxx.cos.ap-guangzho
 
 
 ## Step 4. Downloading the Demo File
-Access the [Batch demo](http://batchdemo-1251783334.cosgz.myqcloud.com/demo/BatchDemo.zip), download the test package, and decompress it.
+Access the [Batch demo](https://batchdemo-1251783334.cosgz.myqcloud.com/demo/BatchDemo.zip), download the test package, and decompress it.
 >The demo is provided in the format of the Python+Batch command line tool. Since Batch has many capabilities and configuration items, you can work with it more conveniently by using Python scripts.
 >
 
@@ -133,13 +133,13 @@ cmd = "tccli batch SubmitJob \
     --Job ' %s ' "%(json.dumps(testJob))
 ```
 The demo specifies Guangzhou Zone 2 for resource application. You can select the corresponding availability zone to apply for resources based on the default region configured in TCCLI.
-For more information about regions and availability zones, see [Regions and Availability Zones](http://intl.cloud.tencent.com/document/product/213/6091).
+For more information about regions and availability zones, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
 
 ## Step 6  Performing a Test
 Experience the Batch usage methods and computing capability in the following sequence according to the reference course.
-1. 1_SimpleStart.py: [Quick Start](http://intl.cloud.tencent.com/document/product/599/10551)
-2. 2_RemoteCodePkg.py: [Running Remote Package](http://intl.cloud.tencent.com/document/product/599/10552)
-3. 3_StoreMapping.py: [Mapping Remote Storage](http://intl.cloud.tencent.com/document/product/599/10983)
+1. 1_SimpleStart.py: [Quick Start](https://intl.cloud.tencent.com/document/product/599/10551)
+2. 2_RemoteCodePkg.py: [Running Remote Package](https://intl.cloud.tencent.com/document/product/599/10552)
+3. 3_StoreMapping.py: [Mapping Remote Storage](https://intl.cloud.tencent.com/document/product/599/10983)
 
 
 <style>
