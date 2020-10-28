@@ -37,6 +37,8 @@ COS STANDARD_IA is a highly reliable object storage service with low storage cos
 
 Online file storage, big data analytics, governmental/organizational business data, low-frequency archives, and monitoring data.
 
+>! STANDARD_IA has a minimum storage duration of 30 days. If you delete or modify an object before 30 days, you will be charged for 30 days. For more pricing information, see [COS Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
+
 ## ARCHIVE
 
 COS ARCHIVE is a highly reliable object storage service that offers very low storage cost and long-term data retention. This storage class has a minimal storage duration of 90 days. To read data stored in ARCHIVE, you need to restore them first. Therefore, it is suited for archived data that needs to be stored for a long time.
@@ -54,6 +56,8 @@ COS ARCHIVE is a highly reliable object storage service that offers very low sto
 #### Use cases
 
 Archival data, medical images, scientific data and other compliance files, lifecycle files, logs, and remote disaster recovery.
+
+>! ARCHIVE has a minimum storage duration of 90 days. If you delete or modify an object before 90 days, you will be charged for 90 days. For more pricing information, see [COS Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 
 ## DEEP ARCHIVE
 
@@ -75,6 +79,7 @@ COS DEEP ARCHIVE is a highly reliable object storage service that offers the low
 
 Medical images, security monitoring data, and logs.
 
+>! DEEP ARCHIVE has a minimum storage duration of 180 days. If you delete or modify an object before 180 days, you will be charged for 180 days. For more pricing information, see [COS Product Pricing](https://intl.cloud.tencent.com/pricing/cos).
 
 ## Comparison
 
