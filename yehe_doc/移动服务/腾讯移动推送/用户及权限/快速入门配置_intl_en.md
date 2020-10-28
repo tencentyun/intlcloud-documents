@@ -70,13 +70,13 @@ Copy the following syntax code:
 
 Replace parameters in the syntax code as follows:
 - Replace the ID of the root account: enter the [Account Info](https://console.cloud.tencent.com/developer) page under the current root account, copy the account ID, and replace `1000000000` in the syntax above with it.
->If your current login account is a collaborator or sub-account, you need to get the account ID from the owner of the root account that grants you permissions.
+>?If your current login account is a collaborator or sub-account, you need to get the account ID from the owner of the root account that grants you permissions.
 
 <!--![](https://main.qcloudimg.com/raw/dabad6214ed659ea1a218b5e87ce4108.png)-->
 - Replace the application `Access_ID`: log in to the [TPNS](https://console.cloud.tencent.com/tpns) Console, copy the `Access_ID` of the application whose permissions you want to grant, and replace `1500000000` in the syntax above with it. If you want to grant permissions of multiple applications, you can change `resource` to:
 `"qcs::tpns::uin/1000000000:app/{application Access_ID1}"`,`"qcs::tpns::uin/1000000000:app/{application Access_ID2}"`
 
->Please delete "{" and "}" in actual use. For detailed directions, please see [Advanced Custom Configuration](https://cloud.tencent.com/document/product/548/42082).
+>?Please delete "{" and "}" in actual use. For detailed directions, please see [Advanced Custom Configuration](https://intl.cloud.tencent.com/document/product/1024/35288).
 
 5. Return to the user creating page.
 <!--![](https://main.qcloudimg.com/raw/b85068f6796a0c762ec2fa22411fd24b.png)-->
