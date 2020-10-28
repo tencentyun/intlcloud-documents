@@ -24,7 +24,7 @@ You have completed the [GSE Application Form](https://intl.cloud.tencent.com/app
   - Launch Path: enter the path of a server executable in the asset package. Currently, a launch path starts with the game server location `/local/game/`.
   - Launch Parameter: enter the information to be delivered to the server executable during launch. It is in the format of a set of command line parameters and is optional.
   - Concurrent processes allowed: enter the number of allowed concurrent server processes using this configuration on each CVM instance in the server fleet.
-  - Max Concurrent Game Server Sessions Activation: set the number of game server sessions that can be activated at the same time on a CVM instance. You can select "Unlimited" or "Limited" (the maximum value is 20,000). When multiple new game server sessions are launched on one CVM instance, this limit helps reduce their performance impact on each other.
+  - Max Concurrent Game Server Sessions Activation: specifies the maximum number of game server sessions that can be activated at the same time on a CVM instance. You can select "Unlimited" or "Limited" (the maximum value is 20000). When multiple new game server sessions are launched on one CVM instance, this limit helps reduce their performance impact on each other.
   - Game Server Session Activation Timeout: enter the maximum time period for a new game server session to be activated. You can set timeout period to be less than or equal to 600s.
     ![](https://main.qcloudimg.com/raw/c3bd554f125f7a73d5dea4ebb54d589a.jpg)
 

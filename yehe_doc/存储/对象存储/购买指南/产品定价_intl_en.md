@@ -56,7 +56,7 @@ For more information on COS public cloud regions, please see [Regions and Access
       <td rowspan="1">Beijing, Nanjing, Shanghai, Guangzhou</td>
       <td>DEEP ARCHIVE</td>
       <td>0.002</td>
-      <td>Reads/Writes: 0.14<br>Standard retrieval: 1<br>Bulk retrieval: 0.29<br>(requestable only after restoration)</td>
+      <td>Read/Write requests: 0.14<br>Requests for standard retrieval: 1<br>Requests for bulk retrieval: 0.29<br>(requestable only after restoration)</td>
       <td>Standard retrieval: 0.02<br>Bulk retrieval: 0.0026</td>
       <td rowspan="1">0.1 (applicable only after restoration)</td>
       <td rowspan="1">N/A</td>

@@ -52,7 +52,7 @@ For a direct connect gateway, outbound traffic is charged at the price as shown 
 | Inbound traffic | Free of charge |
 | Outbound traffic | 0.015 USD/GB |
 
->?Outbound traffic fee will be charged starting November 1, 2020.
+>? The direct connect gateway will be charged starting from December 1, 2020. For more information on the billing, contact your Tencent Cloud sales rep.
 
 ### Cross-region dedicated tunnel bandwidth resource fee
 #### Monthly 95th percentile billing

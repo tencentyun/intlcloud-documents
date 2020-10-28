@@ -1,10 +1,10 @@
-安装腾讯云命令行工具 TCCLI 前请确保您的系统已经安装了 Python 环境，详情请参考 [前提条件]。
+安装腾讯云命令行工具 TCCLI 前请确保您的系统已经安装了 Python 环境，详情请参考 [前提条件](https://intl.cloud.tencent.com/document/product/1013/33464#.E5.89.8D.E6.8F.90.E6.9D.A1.E4.BB.B6)。
 
 ## 步骤1 安装 TCCLI	
 ### 安装 TCCLI
 请结合您的实际情况，执行对应命令。
 - **未安装 TCCLI**
-执行以下命令，通过 pip 可以快速安装 TCCLI，详情请参考 [安装命令行工具]
+执行以下命令，通过 pip 可以快速安装 TCCLI，详情请参考 [安装命令行工具](https://intl.cloud.tencent.com/document/product/1013/33464)。
 ```
 $ sudo pip install tccli
 ```
@@ -43,7 +43,7 @@ AVAILABLE ACTION
 1. 登录腾讯云 [API 密钥控制台](https://console.cloud.tencent.com/cam/capi)。
 2. 单击【新建密钥】或使用现有密钥，记录 SecretID 及 SecretKey。如下图所示：
 ![](https://main.qcloudimg.com/raw/0edc3a84752d2ae4524e971156f7e5f3.png)
-3. 执行 `tccli configure` 命令，并输入 TCCLI 配置信息，详情请参考 [配置命令行工具]。
+3. 执行 `tccli configure` 命令，并输入 TCCLI 配置信息，详情请参考 [配置命令行工具](https://intl.cloud.tencent.com/document/product/1013/33465)。
 ```
 $ tccli configure
 TencentCloud API secretId[None]:
@@ -76,7 +76,7 @@ output[json]:
 
 
 ## 步骤4 下载 Demo 文件
-请前往 [Batch Demo](http://batchdemo-1251783334.cosgz.myqcloud.com/demo/BatchDemo.zip) 下载测试文件并解压。
+请前往 [Batch Demo](https://batchdemo-1251783334.cosgz.myqcloud.com/demo/BatchDemo.zip) 下载测试文件并解压。
 >?Demo 以 Python + Batch 命令行工具的形式提供，Batch 的能力和可配置项较丰富，通过 Python 脚本可以更便捷的操作。
 >
 
@@ -133,13 +133,13 @@ cmd = "tccli batch SubmitJob \
     --Job ' %s ' "%(json.dumps(testJob))
 ```
 Demo 中指定在广州二区申请资源，您可以根据 TCCLI 中配置的默认地域，选择相应的可用区并申请资源。
-地域和可用区的详细信息请查看 [地域和可用区](http://intl.cloud.tencent.com/document/product/213/6091)。
+地域和可用区的详细信息请查看 [地域和可用区](https://intl.cloud.tencent.com/document/product/213/6091)。
 
 ## 步骤6  测试
 请对应文件参考教程，按照下列顺序体验 Batch 的使用方法及计算能力。
-1. 1_SimpleStart.py：[简单开始](http://intl.cloud.tencent.com/document/product/599/10551)
-2. 2_RemoteCodePkg.py：[执行远程代码包](http://intl.cloud.tencent.com/document/product/599/10552)
-3. 3_StoreMapping.py：[远程存储映射](http://intl.cloud.tencent.com/document/product/599/10983)
+1. 1_SimpleStart.py：[简单开始](https://intl.cloud.tencent.com/document/product/599/10551)
+2. 2_RemoteCodePkg.py：[执行远程代码包](https://intl.cloud.tencent.com/document/product/599/10552)
+3. 3_StoreMapping.py：[远程存储映射](https://intl.cloud.tencent.com/document/product/599/10983)
 
 
 <style>

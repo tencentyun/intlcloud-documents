@@ -18,17 +18,21 @@
     			<td>Limits</td>
     			<td>By default, the bandwidth limit is 15 Gbit/s for each Public Cloud region in Chinese mainland, and 10 Gbit/s for any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. </td>
     	 <tr>
-        <td rowspan="3">Storage class</td>
+        <td rowspan="4">Storage class</td>
     			<td>STANDARD limits</td>
     			<td>Billing limits:<br>there is no limit imposed on storage duration or storage size.<br>For more information on COS STANDARD billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>
     </tr>
     	 <tr>
         <td>STANDARD_IA limits</td>
-    			<td>Billing limits:<br>a storage duration of less than 30 days is calculated based on 30 days.<br>A storage size of less than 64 KB is calculated based on 64 KB.<br>For more information on COS STANDARD_IA billing, see <a href="https://cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>
+    			<td>Billing limits:<br>a storage duration of less than 30 days is calculated based on 30 days.<br>A storage size of less than 64 KB is calculated based on 64 KB.<br>For more information on COS STANDARD_IA billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>
     </tr>
     	 <tr>
         <td>ARCHIVE limits</td>
     			<td>Billing limits:<br>a storage duration of less than 90 days is calculated based on 90 days.<br>A storage size of less than 64 KB is calculated based on 64 KB.<br>For more information on COS Archive Storage billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>				
+    </tr>
+     <tr>
+        <td>DEEP ARCHIVE limits</td>
+    			<td>Billing limits:<br>An object stored for less than 90 days is calculated as 90 days.<br>An object smaller than 64 KB is calculated as 64 KB.<br>For more information on DEEP ARCHIVE billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
     </tr>
      <tr>
         <td rowspan="3">Bucket</td>

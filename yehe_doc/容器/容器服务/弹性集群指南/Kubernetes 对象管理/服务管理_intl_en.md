@@ -15,6 +15,10 @@ Service can be of the following types:
 - Intra-cluster access: the intra-cluster access Service operates in ClusterIP mode and is used for access within the cluster.
 - VPC private network access: the VPC private network access Service operates in Loadbalance and automatically creates a private network CLB instance. By using `annotations:service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxxxx`, you can use a private IP address from the VPC private network to access the backend Pod.
 
+>! When the service type is public network access, `ClusterIP` of this service is disabled by default. You can add the following annotations in yaml to enable `ClusterIP`:
+```java
+service.kubernetes.io/qcloud-clusterip-loadbalancer-subnetid: #Subnet ID of the service CIDR
+```
 
 ### Ingress
 Ingress is a collection of rules that allow access to Services of a cluster. You can configure different forwarding rules to allow different URLs to access different Services.

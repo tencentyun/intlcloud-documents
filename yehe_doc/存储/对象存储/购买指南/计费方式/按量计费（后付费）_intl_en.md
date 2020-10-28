@@ -13,7 +13,7 @@ The billable items in COS and their billing formulas are as detailed below:
    <tr>
       <td>Storage usage fees</td>
       <td>Calculated based on the storage capacity used at a unit price that varies by storage class</td>
-      <td>Storage capacity fees = storage capacity unit price * monthly storage capacity used</td>
+      <td nowrap="nowrap"><li>Storage usage fees = storage usage unit price * monthly storage usage<br><li>Monthly storage usage = sum of "daily storage usage" in the month / number of days in the month<br><li>Daily storage usage = sum of "5-minute storage usage" / 288 (number of statistical points) </td>
    </tr>
    <tr>
       <td>Request fees</td>
@@ -49,6 +49,10 @@ The billable items in COS and their billing formulas are as detailed below:
 
 
 >? For detailed descriptions of billable items and billing restrictions, see [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776).
+
+## Product Pricing
+
+For information on COS as-you-go-you pricing, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 ## Example
 

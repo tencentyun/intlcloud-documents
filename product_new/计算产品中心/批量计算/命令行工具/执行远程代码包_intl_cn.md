@@ -2,11 +2,11 @@
 Batch 支持以 HTTP 的方式从 .tgz 格式文件里获取代码包，用户可以将代码打包后上传到 COS 里，相比 LOCAL 模式可以更方便地组织代码。
 
 ## 前提条件
-请根据 [前置准备](http://intl.cloud.tencent.com/document/product/599/10548) 里的说明完成准备，并了解如何配置自定义信息里的通用部分。
+请根据 [前置准备](https://intl.cloud.tencent.com/document/product/599/10548) 里的说明完成准备，并了解如何配置自定义信息里的通用部分。
 
 ## 操作步骤
 ### 查看 Demo
->请在 [前置准备](http://intl.cloud.tencent.com/document/product/599/10548) 中修改 `2_RemoteCodePkg.py` 文件自定义信息的通用部分。
+>? 请在 [前置准备](https://intl.cloud.tencent.com/document/product/599/10548) 中修改 `2_RemoteCodePkg.py` 文件自定义信息的通用部分。
 >
 使用编辑器打开 `2_RemoteCodePkg.py` 文件。
 ```
@@ -61,14 +61,14 @@ python 2_RemoteCodePkg.py
     "JobId": "job-7xxxx26l"
 }
 ```
-若未提交成功，请检查返回值排查错误，也可以通过 [联系我们](http://intl.cloud.tencent.com/document/product/599/10806) 。
+若未提交成功，请检查返回值排查错误，也可以通过 [联系我们](https://intl.cloud.tencent.com/document/product/599/10806) 。
 
 
 ### 查看状态
-步骤同简单开始中的 [查看状态](http://intl.cloud.tencent.com/document/product/599/10551)。
+步骤同简单开始中的 [查看状态](https://intl.cloud.tencent.com/document/product/599/10551)。
 
 ### 查看结果
-1. 步骤同简单开始中的 [查看结果](http://intl.cloud.tencent.com/document/product/599/10551)。
+1. 步骤同简单开始中的 [查看结果](https://intl.cloud.tencent.com/document/product/599/10551)。
 2. `2_RemoteCodePkg.py` 的执行结果如下：
 ```
 Remote Code Package : 6765

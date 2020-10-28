@@ -1,7 +1,7 @@
 ## Overview
-You can restore archived objects in the COS Console for further access and operations. For more information about object storage classes, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925).
+You can restore an object from the ARCHIVE or DEEP ARCHIVE storage class through the COS console. The restoration operation will create a replica of the object in the STANDARD storage class. You can read, download, or perform other operations on this replica within a specified time after which it will expire automatically. For COS storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
->The restoration operation will create a copy of the object in standard storage class, which can be read and downloaded. The object copy will be billed as a standard storage object. For pricing details, see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
+>!If you restore objects from ARCHIVE, you will be billed at STANDARD rates. If you restore from DEEP ARCHIVE, you will be charged request fees at DEEP ARCHIVE rates, and traffic fees at STANDARD fees. For more pricing information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
 
 
 ## Directions
@@ -12,11 +12,11 @@ You can restore archived objects in the COS Console for further access and opera
 3. Click **File List**, select a single object or multiple objects you want to restore, and click **Restore** under **More Actions**.
 ![](https://main.qcloudimg.com/raw/2d34eaee99c4bcb469025f857ed983f1.png)
 4. In the **Restore Archived Objects** pop-up window, configure the restoration mode and the validity period in days of the copy. The related configuration items are detailed below.
-	- **Recovery Mode**: Standard, Expedited, or Batch.
- - Expedited mode: This is the fastest mode. Files below 256 MB can be restored in 1 to 5 minutes. When you need to access the archival data urgently, using this mode can greatly reduce the time required.
- - Standard mode: Restoration can be completed generally in 3 to 5 hours.
- - Batch mode: If your need for the archival data is not urgent, this mode can help retrieve massive amounts of data generally in 5 to 12 hours with the lowest cost.
-	- **Validity**: set the number of days after which the copy would automatically expire and be deleted. The value range is 1 to 365 days. After the object is successfully restored, you can click **Restore** again to change the validity period of the copy in the pop-up window.
+   - **Restoration Mode**: expedited, standard, and bulk.
+     - Expedited: this is the fastest mode. Files below 256 MB can be restored in 1 to 5 minutes. When you need to access your archival data urgently, using this mode can greatly reduce the time required. **Please note that expedited mode is not available for DEEP ARCHIVE.**
+     - Standard: files can be restored from ARCHIVE in 3 to 5 hours, and from DEEP ARCHIVE in 12 hours.
+     - Bulk: this is the lowest-cost mode. If your need for the archival data is not urgent, this mode can help retrieve massive amounts of data from ARCHIVE generally in 5 to 12 hours, and from DEEP ARCHIVE in 48 hours, both with ultra-low cost.
+   - **Validity**: set the number of days after which the copy would automatically expire and be deleted. The value range is 1 to 365 days. After the object is successfully restored, you can click **Restore** again to change the validity period of the copy in the pop-up window.
  See the figure below:
 ![](https://main.qcloudimg.com/raw/3d3163c09213423aa959b179237ab137.png)
 5. Click **OK** after configuration, and the object restoration will start. You can click **Details** to enter the object details page and check whether the restoration has been completed.

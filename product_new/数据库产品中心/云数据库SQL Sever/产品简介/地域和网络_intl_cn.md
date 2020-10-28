@@ -6,7 +6,7 @@
         <th>可用区</th>
     </tr> 
 	<tr>
-		<td rowspan="4">华南地区（广州）<br> ap-guangzhou</td>
+		<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -18,8 +18,11 @@
 	<tr>
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
+		<tr>
+		<td>广州六区<br> ap-guangzhou-6</td>
+	</tr>
     <tr>
-        <td rowspan="3">华东地区（上海）<br>ap-shanghai</td>
+        <td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
         <td>上海一区<br>ap-shanghai-1</td>
     </tr>
     <tr>
@@ -27,9 +30,15 @@
     </tr>
     <tr>
         <td>上海三区<br>ap-shanghai-3</td>
+   </tr>
+		    <tr>
+        <td>上海四区<br>ap-shanghai-4</td>
     </tr>
     <tr>
-            <td rowspan="3">华北地区（北京）<br>ap-beijing</td>
+        <td>上海五区<br>ap-shanghai-5</td>
+    </tr>
+    <tr>
+            <td rowspan="5">华北地区（北京）<br>ap-beijing</td>
             <td>北京一区<br>ap-beijing-1</td>
     </tr>
     <tr>
@@ -37,6 +46,12 @@
     </tr>
     <tr>
             <td>北京三区<br>ap-beijing-3</td>
+    </tr>
+		    <tr>
+            <td>北京四区<br>ap-beijing-4</td>
+    </tr>
+    <tr>
+            <td>北京五区<br>ap-beijing-5</td>
     </tr>
 	 <tr>
             <td rowspan="2">港澳台地区（中国香港）<br>ap-hongkong</td>
@@ -62,7 +77,7 @@
         </tr>
 				<tr>
 			<td >亚太东北（东京）<br>ap-tokyo</td>
-			<td>东京一区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-1</td>
+			<td>东京一区（东京节点可用于覆盖亚太东北地区）<br>ap-tokyo-1</td>
 	  	</tr>
 			<tr>
 			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>

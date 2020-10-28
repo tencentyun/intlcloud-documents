@@ -1,24 +1,9 @@
 ## Billing Modes
-TencentDB for SQL Server provides two billing options, pay-as-you-go and monthly subscription.
+TencentDB for SQL Server is billed on a pay-as-you-go basis.
+
 
 ## Instance Specification (Memory Capacity) Pricing
-### Monthly subscription
 
-<table>
-<tr>
-<th rowspan = "2" >Specification</th>
-<th colspan = "4" style="text-align:center">Price (USD/Month)</th>
-</tr>
-<tr>
-<th>Beijing, Shanghai, Guangzhou, Nanjing, Qingyuan</th>
-<th>Taipei (China), Seoul, Tokyo, Silicon Valley, Moscow</th>
-</tr>
-<tr>
-<td>Per GB</td>
-<td>31.06509000</td>
-<td>28.25444000</td>
-</tr>
-</tbody></table>
 
 
 ### Pay-as-you-go
@@ -44,22 +29,7 @@ TencentDB for SQL Server provides two billing options, pay-as-you-go and monthly
 >
 
 ### Storage Capacity (Disk Capacity) Pricing
-### Monthly subscription
-<table>
-<tr>
-<th rowspan = "2" >Specification</th>
-<th colspan = "4" style="text-align:center">Price (USD/Month)</th>
-</tr>
-<tr>
-<th>Beijing, Shanghai, Guangzhou, Nanjing, Qingyuan</th>
-<th>Taipei (China), Seoul, Tokyo, Silicon Valley, Moscow</th>
-</tr>
-<tr>
-<td>Per GB</td>
-<td>0.10651000</td>
-<td>0.21301000</td>
-</tr>
-</tbody></table>
+
 
 ### Pay-as-you-go
 <table>

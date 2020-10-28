@@ -33,7 +33,7 @@
 | 4000   | 10430      | action name %s is not existed                      | 操作 %s 不存在                           | 您输入的操作不存在，请您确认操作                             |
 | 4000   | 10440      | account illegal, it may be an assistant account    | 账号非法，该账号可能是个协助者账号       | 请您检查帐号的合法性，或者判断该帐号是否是没有权限的子帐号   |
 | 4000   | 10461      | no cam authentication                              | 没有 CAM 权限                            | 当前没有权限，请您确认权限范围                               |
-| 4100   | 10030      | authentication failed                              | 鉴权失败                                 | 鉴权失败，请您按照 [签名](https://cloud.tencent.com/document/api/406/5906) 文档进行鉴权 |
+| 4100   | 10030      | authentication failed                              | 鉴权失败                                 | 鉴权失败，请您按照 [签名](https://intl.cloud.tencent.com/document/api/406/5906) 文档进行鉴权 |
 | 4100   | 10080      | secret id status error                             | secretId 状态错误                        | 密钥 secretId 状态错误，请您检查 secretId 的合法性           |
 | 4100   | 10270      | secret id is not existed                           | secretId 不存在                          | 您指定的 secretId 不存在，请检查 secretId 的合法性           |
 | 4300   | 10040      | charge overdue                                     | 该账号欠费                               | 该帐号已经欠费，如需提供服务请您充值                         |
@@ -76,7 +76,7 @@
 | 错误码 | 模块错误码 | 英文描述                                                     | 说明                                                         | 处理措施                                                     |
 | ------ | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 4000   | 4460       | queue is already existed,case insensitive                    | 队列已经存在                                                 | 该名称的队列已经存在，请您核实名字的正确性                   |
-| 4000   | 10020      | queue name format error                                      | 队列名称格式错误                                             | 队列名字格式错误，规则详见创建队列接口的 [queueName](https://cloud.tencent.com/document/api/406/5832) 字段说明 |
+| 4000   | 10020      | queue name format error                                      | 队列名称格式错误                                             | 队列名字格式错误，规则详见创建队列接口的 [queueName](https://intl.cloud.tencent.com/document/api/406/5832) 字段说明 |
 | 4000   | 10120      | message body can't be empty                                  | 消息内容不能为空                                             | 发送的消息内容不能为空，请您设置消息内容                     |
 | 4000   | 10470      | receiptHandle error                                          | receiptHandle 错误。                                         | receiptHandle 是字符串                                       |
 | 4000   | 10520      | undefined notify retry stragety                              | 未定义的消息推送重试策略                                     | 请检查拼写是否有误                                           |
@@ -87,7 +87,7 @@
 | 4000   | 10720      | too many msgTag                                              | 消息标签超过限制                                             | 消息标签个数超出最大额度，请您控制标签的个数                 |
 | 4100   | 10031      | connection is not authenticated                              | 连接还未鉴权                                                 | 连接还未鉴权，请您先进行鉴权                                 |
 | 4100   | 10032      | connection is already authenticated                          | 连接已经鉴权                                                 | 连接已经鉴权，请勿进行二次鉴权                               |
-| 4400   | 10230      | exceed maximum message size                                  | 消息大小已经超出限制                                         | 您设置的消息大小超出范围，请参考 [说明](https://cloud.tencent.com/document/api/406/5837) 文档对消息进行正确设置 |
+| 4400   | 10230      | exceed maximum message size                                  | 消息大小已经超出限制                                         | 您设置的消息大小超出范围，请参考 [说明](https://intl.cloud.tencent.com/document/api/406/5837) 文档对消息进行正确设置 |
 | 4410   | 10240      | reach maximum retention number of message                    | 消息数量已经达到队列最大保留数量                             | 您的消息队列已经达到了最大堆积数，请您消费队列中的消息或者提升队列的堆积消息数 |
 | 4430   | 10260      | receipt handle is invalid                                    | 句柄非法                                                     | 非法的句柄，请您确认句柄的合法性                             |
 | 4450   | 10220      | number of queues has reached the limit                       | 当前队列个数已经达到最大值                                   | 您创建的队列数已经达到配额上线，如果有特殊需求请您，[提交工单](https://console.cloud.tencent.com/workorder/category) 进行咨询 |

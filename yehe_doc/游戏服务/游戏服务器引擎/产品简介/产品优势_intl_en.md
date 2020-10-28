@@ -16,7 +16,7 @@ GSE supports cross-region deployment, where server fleets built in multiple regi
 GSE supports zero downtime updates. A client can request a server in a server fleet through an alias. When the version is updated, you can create a server fleet and point the alias to the new fleet to implement an update with zero downtime.
 
 ### Global release and nearby access 
-GSE is available in multiple regions such as Shanghai and North America. It provides a speed test tool to test the latency between a game client and each region and can assign the nearest server fleet to the client based on the test data.
+GSE is available in multiple regions such as Shanghai and North America. It provides a speed test tool to test the latency between a game client and each region and can assign the nearest server fleet to the client based on the test data.  
 
 ### Cross-platform call for easier use 
 GSE can be called across platforms such as PCs, mobile devices, and game consoles. It supports C++ and C# client engines and custom gaming server frameworks.
