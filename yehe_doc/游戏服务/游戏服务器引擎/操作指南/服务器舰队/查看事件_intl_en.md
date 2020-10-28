@@ -1,6 +1,6 @@
 ## Overview
 
-This document describes how to view events for activity tracing, troubleshooting, and debugging. When each stage of server fleet creation is completed, a series of events related to the fleet and current fleet status will be generated. You can trace all these events in the console.
+This document describes how to view events for activity tracing, troubleshooting, and debugging. When each stage of server fleet creation is completed, a series of events related to the fleet and current fleet status will be generated. You can trace all these events in the console. 
 
 ## Prerequisites
 
