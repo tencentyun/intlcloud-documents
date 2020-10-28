@@ -24,7 +24,7 @@
     </tr>
     	 <tr>
         <td>STANDARD_IA limits</td>
-    			<td>Billing limits:<br>a storage duration of less than 30 days is calculated based on 30 days.<br>A storage size of less than 64 KB is calculated based on 64 KB.<br>For more information on COS STANDARD_IA billing, see <a href="https://cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>
+    			<td>Billing limits:<br>a storage duration of less than 30 days is calculated based on 30 days.<br>A storage size of less than 64 KB is calculated based on 64 KB.<br>For more information on COS STANDARD_IA billing, see <a href="https://intl.cloud.tencent.com/document/product/436/6239">Product Pricing.</a></td>
     </tr>
     	 <tr>
         <td>ARCHIVE limits</td>
@@ -32,7 +32,7 @@
     </tr>
      <tr>
         <td>DEEP ARCHIVE limits</td>
-    			<td>Billing limits:<br>An object stored for less than 90 days is calculated as 90 days.<br>An object smaller than 64 KB is calculated as 64 KB.<br>For more information on DEEP ARCHIVE billing, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br>An object stored for less than 90 days is calculated as 90 days.<br>An object smaller than 64 KB is calculated as 64 KB.<br>For more information on DEEP ARCHIVE billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
     </tr>
      <tr>
         <td rowspan="3">Bucket</td>
