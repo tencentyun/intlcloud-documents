@@ -28,6 +28,7 @@ Request
 https://lb.api.qcloud.com/v2/index.php?Action=CloneLB
 &<Common request parameters>
 &loadBalancerId=lb-xxx
+&cloneType=all
 ```
 Response
 ```
