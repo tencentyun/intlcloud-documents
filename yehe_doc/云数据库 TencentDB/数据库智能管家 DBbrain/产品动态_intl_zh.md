@@ -10,37 +10,16 @@
 <td>新增多个地域接入</td>
 <td>DBbrain 支持接入中国台北、孟买、新加坡、曼谷、法兰克福、莫斯科、多伦多、首尔、东京地域的云数据库 MySQL 实例。</td>
 <td>2020-10</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/49298" target="_blank">地域列表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/38560" target="_blank">地域列表</a></td>
 </tr>
 <tr>
 <td>DBbrain 支持 CynosDB for MySQL</td>
 <td>DBbrain 支持 CynosDB for MySQL，支持功能包括：实例概览、实例管理、数据库巡检、异常告警、监控大盘、全实例监控、异常诊断、性能趋势、实时会话等。</td>
 <td>2020-10</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/49291" target="_blank">功能列表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/38559" target="_blank">功能列表</a></td>
 </tr>
 </tbody></table>
 
-
-## 2020年09月
-<table>
-<tr>
-<th width=20%>动态名称</th>
-<th width=50%>动态描述</th>
-<th width=10%>发布时间</th>
-<th width=20%>相关文档</th>
-<tr>
-<td>支持敏感数据发现</td>
-<td>DBbrain 敏感数据发现功能可通过识别规则自动发现实例敏感数据，并对所发现的敏感数据实现自动化分类分级保护。</td>
-<td>2020-09</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/48516" target="_blank">敏感数据发现</a></td>
-</tr>
-<tr>
-<td>支持数据脱敏</td>
-<td>DBbrain 数据脱敏功能内置多种高级脱敏算法，可智能化执行与管理脱敏任务，针对不同业务场景实现数据脱敏，进而达到企业核心数据保密的效果。</td>
-<td>2020-09</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/48555" target="_blank">数据脱敏</a></td>
-</tr>
-</tbody></table>
 
 
 ## 2020年07月
@@ -81,13 +60,7 @@
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">空间分析</a></td>
 </tr>
-<tr>
-<td>新增异常告警消息通知推送</td>
-<td>MySQL 控制台新增异常告警消息通知推送服务和异常告警历史列表，便于用户及时便捷地了解数据库异常诊断问题。</td>
-<td>2020-07</td>
-<td><a href="https://cloud.tencent.com/document/product/1130/46275" target="_blank">告警通知</a></td>
-</tr>
-</tbody></table>
+
 
 
 ## 2020年06月
