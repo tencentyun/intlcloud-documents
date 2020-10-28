@@ -28,7 +28,7 @@ pingおよびnslookupコマンドを実行することにより、ユーザー�
 テスト接続が遅く、オリジンサーバーが外部オリジンである場合、ユーザーがオリジンサーバー機器の負荷と帯域幅が制限されているかどうか調査に協力してあげます。
 
 ### ユーザーアクセスリクエストがCDNキャッシュにヒットしたかどうかを確認するにはどうすればよいですか。
-アクセス応答パケットヘッダーのX-Cache-Lookup情報を確認し、複数のX-Cache-Lookupが同時に返されるのが正常ですが、Hit From MemCache/Hit From Discktankが返される時にのみ、CDNキャッシュがヒットしていることを示します。
+アクセス応答パケットヘッダーのX-Cache-Lookup情報を確認し、複数のX-Cache-Lookupが同時に返されるのが正常ですが、Cache Hit/Hit From MemCache/Hit From Discktankが返される時にのみ、CDNキャッシュがヒットしていることを示します。
 ![](https://mc.qcloudimg.com/static/img/64ac912c895b36f0241a927df6da3543/image.png)
 + X-Cache-Lookup:Hit From MemCacheはCDNノードのメモリがヒットしていることを示します。
 + X-Cache-Lookup:Hit From DisktankはCDNノードのディスクがヒットしていることを示します。
