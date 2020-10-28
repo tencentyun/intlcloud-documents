@@ -76,7 +76,7 @@ You can also configure the system’s [full read/write policy](https://console.c
 ```
 
 2. Grant read-only permission for a single instance.
-> List* API does not support authentication at the resource level.
+>! List* API does not support authentication at the resource level.
 
  ```
 {

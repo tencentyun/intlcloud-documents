@@ -57,21 +57,7 @@ You can also use the following APIs to configure intelligent tiering storage:
 
 ### Using SDKs
 
-You can make intelligent tiering configuration by using the following language-specific SDKs:
-
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/36195)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31519)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31523)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35271)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31527)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37695)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31535)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/35804)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/35858)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/34997)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31547)
-
-
+All the COS SDKs now support INTELLIGENT TIERING. To upload an object directly into this storage class, set `StorageClass` to `INTELLIGENT_TIERING` when uploading the object. For more information, see [SDK Overview](https://intl.cloud.tencent.com/document/product/436/6474).
 
 ## Use Limits
 

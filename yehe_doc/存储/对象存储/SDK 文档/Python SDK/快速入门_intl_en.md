@@ -115,7 +115,7 @@ response = client.list_buckets(
 
 ### Uploading an Object
 
-> Simple upload cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below.
+> Simple upload cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below. For parameter descriptions, see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1.EF.BC.88.E6.96.AD.E7.82.B9.E7.BB.AD.E4.BC.A0.EF.BC.89).
 
 ```python
 #### Upload a file stream with simple upload (Simple upload cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below)

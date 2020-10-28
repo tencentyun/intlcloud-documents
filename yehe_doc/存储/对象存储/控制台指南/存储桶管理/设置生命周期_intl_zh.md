@@ -25,8 +25,8 @@
 - **管理历史版本文件**：您可以通过开启管理历史版本对象的选项，沉降或者删除历史版本对象。若您未开启该选项，我们将默认仅处理最新版本的对象。
 - **清理无历史版本的删除标记**：如果对象的最新版本是删除标记(Delete Marker)且该对象的历史版本均已被删除，开启此选项后该删除标记(Delete Marker)也将被删除。该选项不能与**管理当前版本文件**中的到期删除同时开启。
 - **删除碎片**：文件上传的时候由于各种原因导致上传失败，只传输了其中的一部分，对于此类残损的文件可以设置定期删除。
- ![](https://main.qcloudimg.com/raw/5e8c5d09b78537b77c25c7594aa6ec11.png)
+ ![](https://main.qcloudimg.com/raw/a636db96e7283da43244efd302c30fd6.png)
 6. 配置好生命周期规则后，单击【确定】，您即可看到生命周期规则。
-   ![](https://main.qcloudimg.com/raw/ad7ef4119bfeae82ee7bc4635e7bab38.png)
+   ![](https://main.qcloudimg.com/raw/58a99ab79fc078e8e1e2b74b7d5c249c.png)
 7. 当需要停止生命周期规则时，单击【编辑】，只需要将对应规则的状态修改为**关闭**或者直接删除生命周期规则即可。
    ![](https://main.qcloudimg.com/raw/c45c3fc56a6d358b4f8d7f4228521e9b.png)
