@@ -2,11 +2,11 @@
 Batch allows you to acquire a code package from a .tgz file via HTTP. You can compress the code and upload it to COS. This helps you organize the code more conveniently than using LOCAL mode.
 
 ## Prerequisites
-Complete preparations based on the instructions in [Preparation](http://intl.cloud.tencent.com/document/product/599/10548), and learn how to configure the general part of the custom information.
+Complete preparations based on the instructions in [Preparation](https://intl.cloud.tencent.com/document/product/599/10548), and learn how to configure the general part of the custom information.
 
 ## Steps
 ### Viewing the Demo
->Modify the general part of the custom information in `2_RemoteCodePkg.py` based on the instructions in [Preparation](http://intl.cloud.tencent.com/document/product/599/10548).
+>Modify the general part of the custom information in `2_RemoteCodePkg.py` based on the instructions in [Preparation](https://intl.cloud.tencent.com/document/product/599/10548).
 >
 Open the `2_RemoteCodePkg.py` file in an editor.
 ```
@@ -61,14 +61,14 @@ The returned result is as follows, indicating that the job is successfully submi
     "JobId": "job-7xxxx26l"
 }
 ```
-If the submit operation fails, check the returned value or [Contact Us](http://intl.cloud.tencent.com/document/product/599/10806).
+If the submit operation fails, check the returned value or [Contact Us](https://intl.cloud.tencent.com/document/product/599/10806).
 
 
 ### Viewing State
-See [Viewing State](http://intl.cloud.tencent.com/document/product/599/10551) in Quick Start.
+See [Viewing State](https://intl.cloud.tencent.com/document/product/599/10551) in Quick Start.
 
 ### Viewing the Result
-1. See [Viewing the Result](http://intl.cloud.tencent.com/document/product/599/10551) in Quick Start.
+1. See [Viewing the Result](https://intl.cloud.tencent.com/document/product/599/10551) in Quick Start.
 2. The execution result of `2_RemoteCodePkg.py` is as follows:
 ```
 Remote Code Package : 6765
