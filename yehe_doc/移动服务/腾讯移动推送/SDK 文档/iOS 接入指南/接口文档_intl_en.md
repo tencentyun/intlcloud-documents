@@ -101,13 +101,14 @@ This callback is new in SDK 1.2.7.2 and used for TPNS registration failures.
 
 This API is used to clear all accounts and batch add accounts.
 
-> ?
-> 1. This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-> 2. If you need to bind multiple accounts, use the `appendAccounts:` API in the XGPush.h file of the SDK package to add accounts.
 
 ```Objective-C
 - (void)clearAndAppendAccounts:(nonnull NSArray<NSDictionary *> *)accounts;
 ```
+
+> ?
+> -  This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+> - If you need to bind multiple accounts, use the `appendAccounts:` API in the XGPush.h file of the SDK package to add accounts.
 
 #### Parameter description 
 
@@ -133,11 +134,11 @@ This API is used to clear all accounts and batch add accounts.
 
 This API is used to delete all existing accounts.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-
 ```Objective-C
 - (void)clearAccounts;
 ```
+
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Sample code
 
@@ -153,17 +154,18 @@ This API is used to delete all existing accounts.
 
 This API is used to bind a tag to different users for the tag push.
 
-> ?
->- This API will add and bind tags.
->- This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
->- One application can have up to 10,000 custom tags. One device token can be bound to a maximum of 100 custom tags (if you want to increase this limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category)). One custom tag can be bound to an unlimited number of device tokens.
 
-#### Operation APIs 
+
 
 ```Objective-C
 - (void)appendTags:(nonnull NSArray<NSString *> *)tags
 - (void)delTags:(nonnull NSArray<NSString *> *)tags
 ```
+
+> ?
+>- This API will add and bind tags.
+>- This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>- One application can have up to 10,000 custom tags. One device token can be bound to a maximum of 100 custom tags (if you want to increase this limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category)). One custom tag can be bound to an unlimited number of device tokens.
 
 #### Parameter description
 
@@ -189,11 +191,15 @@ This API is used to bind a tag to different users for the tag push.
 
 This API is used to clear all tags and batch add tags.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+
 
 ```Objective-C
 - (void)clearAndAppendTags:(nonnull NSArray<NSString *> *)tags
 ```
+
+> ?
+> - This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>- This API will delete old tags bound to the current token and bind new tags.
 
 #### Parameter description 
 
@@ -201,7 +207,7 @@ This API is used to clear all tags and batch add tags.
 
 > ?The `tags` is a tag string array, which cannot contain spaces or tabs.
 
-- This API will delete old tags bound to the current token and bind new tags.
+
 
 #### Sample code
 
@@ -215,11 +221,12 @@ This API is used to clear all tags and batch add tags.
 
 This API is used to delete all existing tags.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 ```Objective-C
 - (void)clearTags
 ```
+
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Sample code
 
@@ -235,12 +242,12 @@ This API is used to delete all existing tags.
 
 This API is used to create or update existing key-value pairs for the user attribute.
 
-> ?-This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+
 
 ```Objective-C
 - (void)upsertAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
 ```
-
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 #### Parameter description 
 
 - attributes: a dictionary in key-value pairs for user attribute strings, which cannot contain spaces or tabs.
@@ -263,11 +270,12 @@ This API is used to create or update existing key-value pairs for the user attri
 
 The API is used to delete a user attribute.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+
 
 ```Objective-C
 - (void)delAttributes:(nonnull NSSet<NSString *> *)attributeKeys
 ```
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Parameter description 
 
@@ -287,11 +295,12 @@ The API is used to delete a user attribute.
 
 This API is used to clear all user attributes.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+
 
 ```Objective-C
 - (void)clearAttributes;
 ```
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Sample code
 
@@ -305,11 +314,12 @@ This API is used to clear all user attributes.
 
 This API is used to clear all user attributes and batch add new ones.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+
 
 ```Objective-C
 - (void)clearAndAppendAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
 ```
+>?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Sample code
 
