@@ -67,14 +67,15 @@ TKE allows you to convert an existing scaling group in a cluster to a node pool.
  - **Supported subnets**: select an available subnet as required.
 4. (Optional) Click **More Settings** to view or configure more information, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/f3018ed7f3bebcc5163cd34e5eb94e49.png)
- - **Container directory**: after selecting this option, you can specify directories for storing containers and images. We recommend that you store the containers and images in a data disk, such as `/var/lib/docker`.
+  - **CAM role**: binds the same CAM role to all nodes in the node pool, granting the authorization policy of this role to the nodes. For more information, please see [Managing instance role](https://intl.cloud.tencent.com/document/product/213/38290#deleting-one-role).
+  - **Container directory**: after selecting this option, you can specify directories for storing containers and images. We recommend that you store the containers and images in a data disk, such as `/var/lib/docker`.
   - **Security Reinforcement**: DDoS Protection, Web Application Firewall (WAF), and Cloud Workload Protection are activated by default. For more information, see [Cloud Workload Protection](https://intl.cloud.tencent.com/product/cwp?_ga=1.173966502.440655928.1500464439).
   - **Cloud Monitor**: Tencent Cloud service monitoring, analysis, and alarms are activated by default, and components are installed to obtain CVM monitoring metrics. For more information, see [Cloud Monitor](https://intl.cloud.tencent.com/product/cm).
   - **Auto Scaling**: **Enable** is selected by default.
   - **Cordon Initial Node**: after **Cordon this node** is selected, no new Pod can be scheduled to this node. To uncordon the node, you must manually uncordon the node or run the [Uncordon command](https://intl.cloud.tencent.com/document/product/457/30654) in custom data and specify the values as required.
   - **Label**: click **New Label** and customize the settings of the label. The specified label here will be automatically added to nodes created in the node pool to help filter and manage nodes using labels.
   - **Taints**: taints are node attributes. This parameter is usually used with `Tolerations`. You can specify this parameter for all the nodes of the node pool so that Pods that do not meet the relevant conditions cannot be scheduled to these nodes and will be drained from these nodes.
->The value of Taints usually consists of `key`, `value`, and `effect`. Valid values of `effect`:
+> The value of Taints usually consists of `key`, `value`, and `effect`. Valid values of `effect`:
 > - **PreferNoSchedule**: optional condition. A Pod is not likely to be scheduled to a node with a taint that cannot be tolerated by the Pod.
 > - **NoSchedule**: when a node contains a taint, a Pod without the corresponding toleration to the taint will never be scheduled to the node.
 > - **NoExecute**: when a node contains a taint, a Pod without the corresponding toleration to the taint will not be scheduled to the node and any such Pods already on the node will be drained.
