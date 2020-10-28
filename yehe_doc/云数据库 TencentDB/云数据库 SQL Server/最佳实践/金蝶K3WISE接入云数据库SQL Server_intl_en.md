@@ -5,7 +5,7 @@ This solution consists of the following three steps:
 2. Enable distributed transaction execution, i.e., adjusting the access settings of the TencentDB for SQL Server and Windows CVM instances to ensure that the relevant ports are open for distributed transaction execution.
 3. Replace the account set management tool to make it compatible with TencentDB for SQL Server.
 
->
+>?
 >- To support distributed transactions, additional resources are required for configuration; therefore, you can configure instances only in specification higher than "1-core 4 GB MEM". Please upgrade the instances that do not meet the minimum requirement before connection.
 >- Adjust the TencentDB for SQL Server access settings to ensure that distributed transaction can be executed. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. To improve the ticket processing efficiency, make sure that you have already read this document and completed data migration to TencentDB for SQL Server before submitting the ticket.
 
@@ -14,7 +14,7 @@ This solution consists of the following three steps:
 Prerequisites: you have backed up the full data of the account set database files in your local Kingdee K/3 WISE instance.
 
 1. [Log in to the Windows CVM instance](https://intl.cloud.tencent.com/document/product/213/10516#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8) and install Kingdee K/3 WISE.
->The CVM instance where Kingdee is installed and the TencentDB for SQL Server instance must be in the same VPC in the same region.
+>?The CVM instance where Kingdee is installed and the TencentDB for SQL Server instance must be in the same VPC in the same region.
 2. [Create a TencentDB for SQL Server instance](https://intl.cloud.tencent.com/document/product/238/31571).
 3. Upload the full backup file and restore the data. For detailed directions, please see [Uploading Backup File to COS](https://intl.cloud.tencent.com/document/product/238/32558) and [Migrating Data Through Source File in COS](https://intl.cloud.tencent.com/document/product/238/32558).
 4. Create a TencentDB for SQL Server account and authorize it. For more information, please see [Creating Account](https://intl.cloud.tencent.com/document/product/238/7521).
@@ -47,19 +47,20 @@ Adjust the TencentDB for SQL Server access settings to ensure that distributed t
 
 ## Step 3. Initialize account set management
 1. Download the account set management tool: Kingdee K/3 WISE 15.1 or 15.0.
->The required account set management tool varies by Kingdee K/3 WISE version.
+>?The required account set management tool varies by Kingdee K/3 WISE version.
 2. Decompress the package and replace the files in the Kingdee installation directory `K3ERP\KDSYSTEM\KDCOM` with the extracted files.
 3. Open Kingdee K/3 WISE.
 4. On the pop-up account set management database settings page, set relevant identity verification information and data server.
->Enter the private network address of the TencentDB for SQL Server instance as the data server, which can be viewed in the [console](https://console.cloud.tencent.com/sqlserver).
+>?Enter the private network address of the TencentDB for SQL Server instance as the data server, which can be viewed in the [console](https://console.cloud.tencent.com/sqlserver).
 >
-![]
+
 5. In the "System" drop-down list, click **Preset Connection** and set the preset connection for easier use.
 
 6. In the database drop-down list, click **Register Account Set**.
 
 7. Select the corresponding database and click **All**.
 
+ 
 ## Step 4. Log in to and use Kingdee K/3 WISE
 After you complete all the settings above, distributed transactions can be supported between the CVM and TencentDB for SQL Server instances, and you can log in to and use Kingdee K/3 WISE normally.
 
