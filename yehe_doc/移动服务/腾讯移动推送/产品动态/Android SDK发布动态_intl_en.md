@@ -1,4 +1,4 @@
-## September 2020
+## October 2020
 
 <table>
 <tr>
@@ -8,9 +8,9 @@
     <th width=20%>Documentation</th>
 </tr>
         <tr>
-        <td>The SDK 1.2.1.0 is released</td>
+        <td>The SDK 1.2.1.1 is released</td>
        <td><li>The user attribute API is added for personalized delivery</li> <li>The in-app message is now supported, with several in-app message templates provided</li><li>The SO file is updated</li><li>The SDK is optimized</li></td>
-        <td>September 27, 2020</td>
+        <td>October 12, 2020</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
     </tr>
 </table>
