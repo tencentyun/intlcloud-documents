@@ -5,7 +5,7 @@
 
 ### How do I recover accidentally dropped databases or tables in TencentDB for MySQL?
 Data can be recovered through rollback. TencentDB for MySQL allows you to roll back databases or tables to any time point within the backup period. For more information, please see [Data Rollback](https://intl.cloud.tencent.com/document/product/236/7276).
->If the database or table to be rolled back has been dropped, you need to log in to the TencentDB instance and create a database or table with the same name as before first before performing rollback in the console.
+>?If the database or table to be rolled back has been dropped, you need to log in to the TencentDB instance and create a database or table with the same name as before first before performing rollback in the console.
 
 ### If I accidentally delete some data that hasn't been backed up when performing a stored procedure in TencentDB for MySQL, can I restore the data?
 With the rollback feature in the console, you can restore the data to any point in time within the backup period.
