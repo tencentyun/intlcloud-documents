@@ -13,6 +13,7 @@ If you are working for a charitable organization, you can apply for using a TPNS
 Perform the following steps:
 1. Log in to the TPNS console and [create products and applications](https://intl.cloud.tencent.com/document/product/1024/32603).
 2. Use your business email address to send an email by referencing the template below:
+
 ```plaintext
 [To]: tpns_team@tencent.com
 [CC]: (your Tencent Cloud sales rep and contacts, if any)
@@ -28,6 +29,7 @@ Applicant name:
 Phone:
 Application date:
 ```
+
 3. Wait for an email reply.
 We will respond to you with an email indicating whether your application is approved.
 
