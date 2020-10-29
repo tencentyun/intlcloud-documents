@@ -18,7 +18,7 @@ When a listener is deleted, the name of the listener is checked to verify whethe
 
 
 ## Notes:
-- The specified CLB to be used must be in the same region as the cluster.
+- The specified CLB must be in the same VPC as the cluster.
 - Ensure that your TKE service and CVM service do not share the same CLB.
 - You cannot use the CLB console to manage the listeners and servers bound to the TKE-managed CLBs. Your modification will be overwritten during automatic synchronization by TKE.
 - When existing CLBs are used:

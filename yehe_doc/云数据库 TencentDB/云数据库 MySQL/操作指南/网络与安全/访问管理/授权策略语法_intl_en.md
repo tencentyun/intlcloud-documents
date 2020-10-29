@@ -70,7 +70,7 @@ To specify multiple resources in a single command, separate them with commas. Be
 "resource":["resource1","resource2"]
 ```
 
-The table below describes the resources that can be used by TencentDB and the corresponding resource description methods, where words prefixed with $ are placeholders, `project` refers to a project ID, `region` refers to a region, and `account` refers to an account ID.
+The table below describes the resources that can be used by TencentDB and the corresponding resource description methods, where words prefixed with $ are placeholders, `region` refers to a region, and `account` refers to an account ID.
 
 | Resource | Resource Description Method in Authorization Policy |
 |:-------|:-------|

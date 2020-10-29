@@ -70,7 +70,7 @@ qcs:project_id:service_type:region:account:resource
 "resource":["resource1","resource2"]
 ```
 
-以下の表ではCDBが使用できるリソースと対応するリソースの記述方法を説明します。そのうち、$がプレフィックスの単語はいずれも別称であり、projectはプロジェクトID、regionは地域、accountはアカウントIDを指します。
+以下の表ではCDBが使用できるリソースと対応するリソースの記述方法を説明します。そのうち、$がプレフィックスの単語はいずれも別称であり、regionは地域、accountはアカウントIDを指します。
 
 | リソース | 認証ポリシーにおけるリソースの記述方法 |
 |:-------|:-------|

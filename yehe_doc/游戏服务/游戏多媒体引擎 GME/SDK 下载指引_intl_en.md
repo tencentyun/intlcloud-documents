@@ -22,13 +22,15 @@ The v2.7.1 is updated as follows:
 </tr>
 </thead>
 <tbody><tr>
-<td> SDK 2.7.1 is released</td>
+<td>SDK v2.7.1 is released</td>
 <td ><ul style="margin:0;"><li >The room management feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> .</li>
 <li>The voice changing feature is now available for voice messages.</li>
 <li >The pitch of the accompaniment can be adjusted.</li>
-<li >The cross-room antiphonal singing feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li></ul ></td>
+<li >The cross-room antiphonal singing feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
+<li >The issue where the volume level was low on iOS14 is fixed.</li>
+</ul ></td>
 <td> October 22, 2020</td> 
-<td><a href="https://cloud.tencent.com/document/product/607/34377">Real-time Voice Accompaniment</tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/607/31504">Real-time Voice Accompaniment</tr>
 </tbody></table>
 
 

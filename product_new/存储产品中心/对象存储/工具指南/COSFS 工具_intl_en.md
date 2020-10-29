@@ -146,7 +146,7 @@ Where:
 - &lt;MountPoint&gt; is the local directory to which you want to mount the bucket (e.g. /mnt).
 - &lt;CosDomainName&gt; is the access domain name for the bucket and is in a form of `http://cos.<Region>.myqcloud.com` (applicable to XML APIs and should not contain the bucket name). &lt;Region&gt; is the region name in short, for example, ap-guangzhou and eu-frankfurt. For more information, see [Regions and Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
 - -odbglevel specifies the log level.
-- oallow_other Allow non-mount users to access the mount folder.
+- -oallow_other Allow non-mount users to access the mount folder.
 
 **Sample:**
 
@@ -186,9 +186,6 @@ By default, to ensure optimal performance, the COSFS does not clear local cached
 ####  -onoxattr
 Disables getattr/setxattr. For the COSFS earlier than 1.0.9, you cannot set or obtain extended attributes. If the use_xattr option is used during mounting, the files may fail to be copied to the bucket.
 
-#### -ouse_cache=[path]
-Caches files to a cache directory. "path" is the path of the local cache directory. This option accelerates the reading and writing of a cached file after the file has been read and written once. If the files need not to be cached locally or the capacity of the local disk is limited, you can ignore this option.
-
 #### -opasswd_file=[path]
 Specifies the path for the COSFS key file. You need to set the permission for the key file to 600.
 
@@ -204,8 +201,6 @@ Removes the permission of a specified type of users to operate files in the moun
 Allows the user whose id is [uid] to access all the files in the mounting destination directory without being restricted by the file permission bits.
 You can obtain the uid of a user using the id command `id -u username`. For example, you can execute `id -u user_00` to obtain the uid of user_00.
 
-#### -oensure_diskfree=[size]
-Specifies that when the available space of the disk used to store cached files is less than [size] MB, the COSFS minimizes the use of the disk space (in MB) during running. During upload and download, the COSFS caches files in the disk. When a large file is uploaded, if this parameter is not specified, the disk storing cached files will be fully occupied. If the -ouse_cache=[path] parameter is specified, the cached file is stored in the "path" directory, otherwise it is stored in the "/tmp" directory.
 
 ## FAQs
 For any questions about COSFS, see [FAQs about COSFS](https://intl.cloud.tencent.com/document/product/436/30587).

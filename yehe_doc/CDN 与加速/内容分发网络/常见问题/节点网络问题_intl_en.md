@@ -28,7 +28,7 @@ You should check the download speed for large files and the latency for small fi
 If the test connection is slow and the origin server is an external origin, you should assist the user and check if the machine load and bandwidth of the origin server are restricted.
 
 ### How do I tell whether a user access request has hit the CDN cache?
-View the `X-Cache-Lookup` information in the header of the request return. If multiple `X-Cache-Lookup` entries are returned at the same time, that is normal. If `Hit From MemCache/Hit From Disktank` is returned, it means that the CDN cache has been hit.
+View the `X-Cache-Lookup` information in the header of the request return. If multiple `X-Cache-Lookup` entries are returned at the same time, that is normal. If `Cache Hit/Hit From MemCache/Hit From Disktank` is returned, it means that the CDN cache has been hit.
 ![](https://mc.qcloudimg.com/static/img/64ac912c895b36f0241a927df6da3543/image.png)
 
 + X-Cache-Lookup:Hit From MemCache: the memory of the CDN node is hit.
