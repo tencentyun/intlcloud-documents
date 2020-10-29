@@ -4,17 +4,11 @@
 
 检索不到日志，很多情况下是检索时间范围不正确或检索语句有问题导致。用户先选择较大时间范围（如最近30分钟），检索条件为空，确定是否有日志。
 
-![image-20200908211029361](https://main.qcloudimg.com/raw/931b84910454b3972ee4fa05b6a1b698.png)
-
 如果检索数据成功，则可能是检索语句或者时间范围有误导致，建议用户查看 [检索语法](https://intl.cloud.tencent.com/document/product/614/30439) 或修改检索时间范围。
 
 ## 检查索引配置
 
 索引配置是使用日志服务进行检索分析的必要条件，单击检索页右上方【索引配置】入口，查看索引配置是否开启。索引配置区分全文索引和键值索引，详情可参见 [索引介绍](https://intl.cloud.tencent.com/document/product/614/16981) 文档。
-
-![image-20200908210108404](https://main.qcloudimg.com/raw/f0d25aba51695a27166497d6de94245c.png)
-
-![image-20200908210550488](https://main.qcloudimg.com/raw/ea85f223c07019d33f88250aae02dfc7.png)
 
 >!索引配置仅对新写入数据生效，每次更改索引配置，约有1分钟生效延时。
 
@@ -29,8 +23,8 @@
  若您是通过 CLS 提供的日志采集客户端 LogListener 采集日志，可按以下步骤排查：
 1. 检查机器组状态。
 单击检索页右上角【LogListener 采集配置】，确认待采集机器状态是否正常。
-     ![image-20200908212308874](https://main.qcloudimg.com/raw/7ac279ae3d62718421e3f04d028d6ee3.png)
-     ![image-20200908213704314](https://main.qcloudimg.com/raw/98471d5abe8154d3767ac3c64ae7ed4b.png)
+     
+   
 >!若待采集日志的机器状态异常，请参见 [机器组异常排查](https://intl.cloud.tencent.com/document/product/614/17424) 文档。	 
 2. 检查 LogListener 是否成功拉取采集配置
      在命令行下执行如下命令：
@@ -48,7 +42,7 @@
 >!LogListener 低于2.3.0版本，不能监听软连接方式的日志文件。
 4. 确认日志上报成功。
 打开 LogListener Debug 日志， 在 LogListener 安装目录下编辑`etc/loglistener.conf`配置文件，将 **level** 设置为 DEBUG，并重启 LogListener。
-  ![](https://main.qcloudimg.com/raw/05bc0bec901147c2b9e6550a85fa7d82.png)
+    ![](https://main.qcloudimg.com/raw/05bc0bec901147c2b9e6550a85fa7d82.png)
 执行如下命令重启 LogListener。
 ```shell
 /etc/init.d/loglistenerd restart
