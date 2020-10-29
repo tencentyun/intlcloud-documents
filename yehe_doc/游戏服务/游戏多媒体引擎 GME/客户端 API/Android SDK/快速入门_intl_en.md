@@ -85,7 +85,7 @@ To get authentication for voice messaging and speech-to-text, the room ID parame
 
 #### Function prototype
 ```
-AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String identifier, String key)
 ```
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
@@ -98,7 +98,7 @@ AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, Strin
 #### Sample code  
 ```
 import com.tencent.av.sig.AuthBuffer;// Header file
-byte[] authBuffer=AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,openId, key);
+byte[] authBuffer=AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,identifier, key);
 ```
 
 

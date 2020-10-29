@@ -31,7 +31,7 @@ If you have any questions when using the service, please see [General FAQs](http
 
 | API | Description |
 | ------------- |:-------------:|
-|Init    	| Initializes GME 	| 
+|Init    	| Initializes GME 	|
 |Poll    	| Triggers event callback	|
 |Pause   	| Pauses system	|
 |Resume 	| Resumes system	|
@@ -188,7 +188,7 @@ context->Uninit();
 ## Voice Chat Room APIs
 You should initialize and call the SDK to enter a room before voice chat can start.
 If you have any questions when using the service, please see [FAQs About Voice Chat](https://intl.cloud.tencent.com/document/product/607/30257).
- 
+
 | API | Description |
 | ------------- |:-------------:|
 |GenAuthBuffer    	| Initializes authentication |
@@ -375,7 +375,7 @@ After the room type is set, the event message `ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_
 | ITMG_ROOM_CHANGE_EVENT_ENTERROOM		|1 	| Indicates that the existing audio type is inconsistent with and changed to that of the entered room	|
 | ITMG_ROOM_CHANGE_EVENT_START			|2	| Indicates that a client is already in the room and the audio type starts changing (e.g., calling the `ChangeRoomType` API to change the audio type) |
 | ITMG_ROOM_CHANGE_EVENT_COMPLETE		|3	| Indicates that a client is already in the room and the audio type has been changed |
-| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |	
+| ITMG_ROOM_CHANGE_EVENT_REQUEST			|4	| Indicates that a room member calls the `ChangeRoomType` API to request a change of room audio type |
 
 
 #### Sample code  
@@ -502,7 +502,7 @@ When Enable/Disable Mic/Speaker is tapped/clicked on the UI, the following pract
 |IsAudioPlayDeviceEnabled    		| Gets playback device status	|
 |EnableAudioRecv    					| Enables/disables audio downstreaming	|
 |IsAudioRecvEnabled    				| Gets audio downstreaming status	|
-|GetSpeakerLevel    					| Gets real-time speaker volume level |	
+|GetSpeakerLevel    					| Gets real-time speaker volume level |
 |GetRecvStreamLevel					| Gets real-time downstreaming audio levels of other members in room |
 |SetSpeakerVolume    				| Sets speaker volume level		|
 |GetSpeakerVolume    				| Gets speaker volume level		|
@@ -947,7 +947,7 @@ If you have any questions when using the service, please see [Voice Messaging an
 
 | API | Description |
 | ------------- |:-------------:|
-|Init    	| Initializes GME 	| 
+|Init    	| Initializes GME 	|
 |Poll    	| Triggers event callback	|
 |Pause   	| Pauses system	|
 |Resume 	| Resumes system	|
@@ -1630,7 +1630,11 @@ context->SetLogPath(logDir);
 ```
 
 ### Adding to audio data blocklist
-This API is used to add an ID to the audio data blocklist. The returned value of 0 indicates that the API is successfully called.
+This API is used to add an ID to the audio data blocklist. This operation blocks audio from someone and only applies to the local device. A returned value of `0` indicates the call is successful. Assume that users A, B, and C are all speaking using their mic in a room:
+- If A blocklists C, A can only hear B;
+- If B blocklists neither A nor C, B can hear both of them;
+- If C blocklists neither A nor B, C can hear both of them.
+
 #### Function prototype  
 
 ```

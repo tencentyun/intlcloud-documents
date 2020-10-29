@@ -1420,7 +1420,11 @@ ITMGContext GetRoom -(NSString*)GetQualityTips
 ```
 
 ### Adding to audio data blocklist
-This API is used to add an ID to the audio data blocklist. The returned value of 0 indicates that the API is successfully called.
+This API is used to add an ID to the audio data blocklist. This operation blocks audio from someone and only applies to the local device. A returned value of `0` indicates the call is successful. Assume that users A, B, and C are all speaking using their mic in a room:
+- If A blocklists C, A can only hear B;
+- If B blocklists neither A nor C, B can hear both of them;
+- If C blocklists neither A nor B, C can hear both of them.
+
 #### Function prototype  
 
 ```
