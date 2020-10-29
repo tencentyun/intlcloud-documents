@@ -3,7 +3,7 @@ Storage engine of a database refers to the type of tables and determines how tab
 TencentDB for MySQL supports InnoDB by default. It no longer supports the MyISAM and Memory engines in MySQL 5.6 and higher mainly for the following reasons:
 - TencentDB for MySQL greatly optimizes the kernels for InnoDB and achieves higher performance.
 - MyISAM adopts a table-level locking mechanism, while InnoDB uses a row-level one. Normally, InnoDB features higher write efficiency.
->
+>?
 >- With the widest lock scope, table-level locking is to lock the entire table that is being manipulated in MySQL.
 >- With the narrowest lock scope, row-level locking is to lock only the row that is being manipulated in MySQL.
 - MyISAM has defects in protecting data integrity, which may lead to data corruption or even loss. Moreover, many of these defects are attributable to design issues and can only be fixed at the cost of compatibility.
