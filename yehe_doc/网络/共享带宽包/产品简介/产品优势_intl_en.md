@@ -10,5 +10,3 @@ If you have a large number of services that require Internet access, the service
 ### Transparent Usage
 The data usage of BWP and all devices in it can be displayed in real time at all granularities, enabling you to get accurate bandwidth usage readings at any time, quickly identify the network devices with abnormal bandwidth usage and reduce the risk of exceeding budget.
 
-### Itemized Billing
-BWP bills are itemized by resource, helping you accurately quantify the bandwidth resources consumed by each project and easily calculate project costs.

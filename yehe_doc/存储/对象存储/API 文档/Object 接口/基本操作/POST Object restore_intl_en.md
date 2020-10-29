@@ -1,6 +1,6 @@
 ## Feature
 
-This API is used to restore an object archived by COS. The restored readable object is temporary, and you can configure the object to keep it readable and set the time when you want it to be deleted. You can use the `Days` parameter to specify the expiration time of the temporary object. If the object expires and you have not initiated any operation to copy the object or extend its validity period before it expires, the temporary object will be automatically deleted. A temporary object is only a copy of the source archived object and the source object will exist throughout this period.
+This API is used to restore an object from the ARCHIVE or DEEP ARCHIVE storage class so that you can read it. The restored object is a temporary copy, for which you can set “Keep Readable”. You can also specify “Days” for which the copy stays active before expiry. If you haven’t initiated a copy, extension, or any other operation during the "Days", an expired temporary object will be automatically deleted. Temporary objects are only copies of ARCHIVE or DEEP ARCHIVE objects which always exist. For more information on storage classes, see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 #### Versioning
 
@@ -64,7 +64,7 @@ The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Tier | RestoreRequest.CASJobParameters | This parameter can be specified as one of the three supported data restoration modes:<br><li>`Standard`, which completes a restoration job in 3-5 hours;<br><li>`Expedited`, which completes a restoration job in 1-5 minutes; and `Bulk`, which completes multiple restoration jobs in 5-12 hours. | Enum | Yes |
+| Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>There are three restoration modes available for ARCHIVE:<br><li>`Expedited`, where a restoration job can be completed in 1-5 minutes for up to 256 MB of objects.<br><li>`Standard`, where a restoration job can be completed in 3-5 hours.<br><li>`Bulk`, where a restoration job can be completed in 5-12 hours.<br>There are two restoration modes available for DEEP ARCHIVE:<br><li>`Standard`, where a restoration job can be completed in 12-24 hours.<br><li>`Bulk`, where a restoration job can be completed in 24-48 hours. | Enum | Yes |
 
 ## Response
 

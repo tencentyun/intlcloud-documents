@@ -25,7 +25,7 @@ If the following contents, among others, appear under your domain name, we will 
 | -------- | ------------------------------------------------ |
 | Acceleration domain name | Wildcard domain names can be connected <br/>Up to 100 ones are supported |
 | Data statistics | Statistics generated in the last 90 days can be queried by default |
-| Content purge | URL purge: 1,000 per day <br/>Directory purge: 200 per day |
+| Content purge | URL purge: 10,000 per day <br/>Directory purge: 100 per day |
 | Access log | Access logs are retained for 30 days by default |
 
 ## Domain Name Repossession

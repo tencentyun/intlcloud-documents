@@ -28,7 +28,7 @@ Nslookup 및 ping 명령어를 통해 사용자가 액세스한 CDN 노드의 IP
 속도가 느린 것이 확인될 경우, 외부 원본에 속하는 원본 서버를 통해 원본 서버 기계의 부하 여부 및 대역폭의 제한 여부를 진단할 수 있습니다.
 
 ### 사용자 액세스가 CDN 캐시에 도달했는지 어떻게 확인하나요?
-액세스 패킷 헤더의 X-Cache-Lookup 정보를 조회합니다. 여러 X-Cache-Lookup을 동시에 출력한다면 정상적인 상황이라 볼 수 있으며, Hit From MemCache/Hit From Disktank를 출력해야만 CDN 캐시에 도달했음을 의미합니다.
+액세스 패킷 헤더의 X-Cache-Lookup 정보를 조회합니다. 여러 X-Cache-Lookup을 동시에 출력한다면 정상적인 상황이라 볼 수 있으며, Cache Hit/Hit From MemCache/Hit From Disktank를 출력해야만 CDN 캐시에 도달했음을 의미합니다.
 ![](https://mc.qcloudimg.com/static/img/64ac912c895b36f0241a927df6da3543/image.png)
 + X-Cache-Lookup: Hit From MemCache 은 CDN 노드에 도달한 메모리를 나타냅니다.
 + X-Cache-Lookup: Hit From Disktank 는 CDN 노드에 도달한 디스크를 나타냅니다.
