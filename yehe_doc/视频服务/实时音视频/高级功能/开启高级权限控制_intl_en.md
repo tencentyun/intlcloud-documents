@@ -5,7 +5,7 @@ If you want to impose restrictions on room entry for certain rooms (for example,
 ## Supported Platforms
 
 |   iOS    | Android  |  Mac OS  | Windows  | Electron | Chrome browser |
-| :------: | :------: | :------: | :------: | :------: | :--------: | :-----------: |
+| :------: | :------: | :------: | :------: | :------: | :--------: |
 | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |   &#10003;    |
 
 ## privateMapKey
