@@ -5,7 +5,7 @@
 **条形图**：适用于每一统计时间段内指标之间的比较。
 
 **条形图配置效果：**
-![](https://main.qcloudimg.com/raw/86d5e688474d5cbc1a3d5be66f200d1d.png)
+![](https://main.qcloudimg.com/raw/0f8f8550c9c6a35d17619714f10e3471.png)
 
 ## 操作步骤
 

@@ -12,5 +12,5 @@
 4.找到您需要导出数据的图表，单击【<img src="https://main.qcloudimg.com/raw/3bbe823981cbb9f1cebbbf55f85f83fc.png"  style="margin:0;" width="4%">】>【复制】，支持复制到当前面板和剪切板，详细说明如下。
 - 复制到当前面板：直接单击【到当前面板】即可把监控图表复制到当前面板。
 - 复制到剪切板：单击【到剪切板】后，在任意 Dashboard 下新建监控图表时，可直接粘贴图表。
-![](https://main.qcloudimg.com/raw/5c5b6023acb666505546a410fa6af574.png)
+![](https://main.qcloudimg.com/raw/37e462e4bd6aa6f76b0d3c57d94b0104.png)
 

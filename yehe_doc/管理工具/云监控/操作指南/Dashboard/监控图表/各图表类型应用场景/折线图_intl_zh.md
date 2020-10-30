@@ -5,7 +5,7 @@
 **折线图**：用于查看指标的变化趋势或相同指标数据不同指标数据之间的对比。
 
 **多种折线图配置效果：**
-![](https://main.qcloudimg.com/raw/40ff7050a04049ac13dcceac59a1c767.png)
+![](https://main.qcloudimg.com/raw/2a17ae5c251ad6f05bb72c5cefca9ef6.png)
 
 ## 操作步骤
 
