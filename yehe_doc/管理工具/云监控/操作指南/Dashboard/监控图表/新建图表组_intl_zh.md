@@ -6,16 +6,16 @@
 2. 在左侧导航栏中单击【Dashboard 列表】，进入 Dashboard 列表页。
 3. 找到您需要新建图表对应的 Dashboard ，单击面板名，进入 Dashboard 管理页。
 4. 单击【<img src="https://main.qcloudimg.com/raw/827988040ba03fd73a5a95cc942eb5cd.png"  style="margin:0;" width="3%">】>【新建图表组】，进入编辑图表页。图表组名称默认设置为“默认图表组”，如下图您可以把鼠标移动到图表组所在的位置，即可重命名图表组或删除图表。
-   ![](https://main.qcloudimg.com/raw/85c3a1bfa319c788963ec0549776e665.png)
+   ![](https://main.qcloudimg.com/raw/c68042acfad1dd428c7de30949e6a5f2.png)
 
 ## 图表组关联图表
 把图表移动到图表组下，单击图表名称右侧的【<img src="https://main.qcloudimg.com/raw/84f5ba214a6bd401c4bc36fe20dd82a5.png"  style="margin:0;" width="3%">】>【<img src="https://main.qcloudimg.com/raw/717d61e61db001b9f2e9640041bd47c4.png"  style="margin:0;" width="3%">】确认保存后即可关联图表。
-![](https://main.qcloudimg.com/raw/029aa3643808fbe1cada191cf91b24ef.png)
+![](https://main.qcloudimg.com/raw/6248a3fca84edf872945b5d0dad8e35b.png)
 
 
 ## 从图表组移除图表
 把图表移动到图表组上方，单击【<img src="https://main.qcloudimg.com/raw/68de185e07186165faab94bbca9e4f8d.png"  style="margin:0;" width="3%">】确认保存后即可从图表组中移除图表。
-![](https://main.qcloudimg.com/raw/8dd7e258e4bbed74589032eb6414420e.png)
+![](https://main.qcloudimg.com/raw/b7500761b025bcef712c0a17447cc449.png)
 
 
 

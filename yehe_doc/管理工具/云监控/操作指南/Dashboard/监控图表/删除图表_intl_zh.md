@@ -6,4 +6,4 @@
 3. 在 Dashboard 列表中找到您需要删除图表对应的 Dashboard，单击对应的面板名。进入Dashboard管理页。
 4. 找到您需要删除的图表，单击【<img src="https://main.qcloudimg.com/raw/3bbe823981cbb9f1cebbbf55f85f83fc.png"  style="margin:0;" width="3%">】>【删除】。
 5. 在弹框中单击【立即删除】即可。
-![](https://main.qcloudimg.com/raw/0d01b5b27f96b0ed6a523b23bc4eeed9.png)
+![](https://main.qcloudimg.com/raw/e18e35ca5c83e9f4ab91f59beba8aead.png)

@@ -9,9 +9,9 @@
    - 基础信息：包括图表名和图表备注。
    - 图表类型：支持折线图、条形图、仪表盘、饼图、数字统计图。后续会添加更多图表类型。不同的图表类型，显示不同点的图表元素、阈值、图例配置、详情请查看 [各图表类型应用场景](https://intl.cloud.tencent.com/document/product/248/38480)。
 - 数据链接：定义鼠标双击图表时是否显示链接。当您添加数据链接后，可以在单击图表某一时刻时跳转到自定义链接。
-  ![](https://main.qcloudimg.com/raw/85ca5ab628779eae6b1c034eaf2a1cba.png)
+  ![](https://main.qcloudimg.com/raw/42785905c5dc8d879927bf8a92a19d62.png)
 - 图表链接：定义图表跳转链接。当您添加图表链接后，可以单击图表中【<img src="https://main.qcloudimg.com/raw/56746ee22a2a29a5bef300c8720b1297.png"  style="margin:0;" width="3%">】跳转到自定义链接。如下图所示：
-  ![](https://main.qcloudimg.com/raw/f5095f925c6025aa58325a008cc4480a.png)
+  ![](https://main.qcloudimg.com/raw/799023c3d76cc417ccda719d37c9584f.png)
 5. 设置完后单击【<img src="https://main.qcloudimg.com/raw/2cf48d6910973ec3dc7074e05bac24db.png"  style="margin:0;" width="3%">】即可。
 
 

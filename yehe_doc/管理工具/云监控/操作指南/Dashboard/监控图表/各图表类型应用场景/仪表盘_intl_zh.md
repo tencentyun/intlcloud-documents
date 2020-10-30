@@ -5,7 +5,7 @@
 **仪表盘**：适用于比率性指标，例如 CPU 利用率、内存利用率、磁盘利用率等。
 
 **仪表盘配置效果：**
-![](https://main.qcloudimg.com/raw/d6d82716986d5ab1c99c1e3b3de3dbf7.png)
+![](https://main.qcloudimg.com/raw/18bfc12b92695a6f62835a53e77ea7c7.png)
 
 ## 操作步骤
 
@@ -33,7 +33,7 @@
 	- 指标统计数值数值 < 50 时展示为<font color="#f54e4e">红色</font>。
 	- 50 <= 指标统计数值 < 80 时展示<font color="#ff7f47"> 橙色</font>。
 	- 指标统计数值 >= 80时展示<font color="#78bd6d"> 绿色 </font>。
-		![](https://main.qcloudimg.com/raw/a1d0fc00aa942b7eccadcb81eb38eaef.png)
+		![](https://main.qcloudimg.com/raw/507aff74e6af82b156abeb830f60ea19.png)
 - **最小值、最大值**：定义仪表盘最大值和最小值。
 - **是否显示阈值**：是否在仪表盘中显示每个颜色的阈值。
 
