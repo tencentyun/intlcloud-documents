@@ -28,7 +28,7 @@ This document describes the use cases and the operations directions of numerical
 - **Color**: indicates the color sequence. For example, set the "Threshold" field to `50,80`.
   **Non-reverse cases:**
 	- If the metric value is less than 50, display <font color="#78bd6d">green</font>.
-	- If the metric value is equal to or greater than 50 but less than 80, display<font color="#ff7f47">orange</font>.
+	- If the metric value is equal to or greater than 50 but less than 80, display <font color="#ff7f47">orange</font>.
 	- If the metric value is equal to or greater than 80, display <font color="#f54e4e">red</font>.
 
  **Reverse cases:**
