@@ -34,7 +34,7 @@ After decompression, you can get the certificate files of the relevant types, in
 7. In the **Add Site Binding** window, set the site type to **https**, the port to **443**, and the host name to the domain name corresponding to the certificate, specify the corresponding SSL certificate, and click **OK**, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/e5ca25bbe1b6fe1ba8abd535562f0840.png)
 8. Once you made the addition, the new content will be available to view in the **Site Bindings** window, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/eaa3f08dc578da45ae0f6a3f79bc094f.png)
+
 9. Access `https://cloud.tencent.com` .
 
 ### (Optional) Security configuration for automatic redirect from HTTP to HTTPS
