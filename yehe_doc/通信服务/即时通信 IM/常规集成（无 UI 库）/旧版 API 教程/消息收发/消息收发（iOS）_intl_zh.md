@@ -80,7 +80,7 @@ fail | 失败回调
 
 >?
 >- text 传递需要发送的文本消息。
->- 失败回调中，code 表示错误码，具体可参阅 [错误码](/doc/product/269/1671)，err 表示错误描述。
+>- 失败回调中，code 表示错误码，具体可参阅 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)，err 表示错误描述。
 
 ```
 TIMTextElem * text_elem = [[TIMTextElem alloc] init];
