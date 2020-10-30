@@ -1,13 +1,9 @@
 ## Overview
 
-Huawei launches HMS Core as an upgrade of **Huawei Push** SDK v2.6.3.
+
 As TPNS always keeps up with the update progress of each vendor channel's push service, it provides plugin dependency packages integrated with HMS Core Push SDK for your choice.
 
 > !  
-> - Compared with SDK v2, HMS Core features major changes in API call and push service enablement steps.
->- HMS Core is incompatible with v2. If both are integrated, their dependency packages will conflict with each other. Please choose one of them for integration.
->- HMS Core no longer supports direct delivery of custom parameters in `key-value` format from the server and the `onEvent` callback for notification click events provided in v2. You are recommended to use the general intent scheme on Android to deliver such events. For more information, please see [How do I set the message click event?](https://intl.cloud.tencent.com/document/product/1024/32624).
-> - You can still integrate Huawei Push SDK v2 to use the Huawei Push service. For more information, please see [Huawei Channel v2 Connection](https://intl.cloud.tencent.com/document/product/1024/30716).
 > - For Huawei Push, you can successfully register with the Huawei channel and push messages through it only in a signed package environment.
 > - The Huawei channel supports click callback but not arrival callback.
 
