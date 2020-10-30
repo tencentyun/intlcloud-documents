@@ -903,7 +903,7 @@ uuid | The unique identifier used to facilitate caching.
 dataSize | The audio file size.
 second | The audio length in seconds.
 
-**Audio message read status:** you can use [custom message fields](/doc/product/269/消息收发（iOS%20SDK）#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to determine whether an audio message has been played. For example, a `customInt` value of 0 indicates that the audio has not been played, and a value 1 indicates that the audio has been played. After a user taps play, set `customInt` to 1.
+**Audio message read status:** you can use [custom message fields](https://intl.cloud.tencent.com/document/product/1047/36400#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to determine whether an audio message has been played. For example, a `customInt` value of 0 indicates that the audio has not been played, and a value 1 indicates that the audio has been played. After a user taps play, set `customInt` to 1.
 
 ```
 @interface TIMMessage : NSObject
@@ -1138,7 +1138,7 @@ NSString * snapshot_path = @"/xxx/snapshot.jpg";
 
 ### Checking whether a message has been read
 
-Use `isRead` to check whether a message has been read, which is determined by the [Unread Count](/doc/product/269/未读消息计数（iOS%20SDK）#.E5.B7.B2.E8.AF.BB.E4.B8.8A.E6.8A.A5) on the app side.
+Use `isRead` to check whether a message has been read, which is determined by the [Unread Count](https://intl.cloud.tencent.com/document/product/1047/34325#.E6.9C.AA.E8.AF.BB.E6.B6.88.E6.81.AF) on the app side.
 
 ```
 @interface TIMMessage : NSObject
@@ -1771,7 +1771,7 @@ In addition to C2C conversations and group conversations, system message is anot
 
 - **Relationship chain change messages:** the system sends a relationship chain change message when a user adds you as a friend or deletes you from his or her friend list. The developer can then update the friend list. For more information, see [System Notifications for Relationship Chain Changes (iOS%20SDK)](#.E5.85.B3.E7.B3.BB.E9.93.BE.E5.8F.98.E6.9B.B4.E7.B3.BB.E7.BB.9F.E9.80.9A.E7.9F.A5).
 
-- **Group event messages:** when the group profile is modified, for example, due to a change to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message, and at the same time refresh the group profile or group members. For more information, see [Group management - group event messages](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
+- **Group event messages:** when the group profile is modified, for example, due to a change to the group name or group members, the system sends a group event message in the group. The developer can choose whether to display the message, and at the same time refresh the group profile or group members. For more information, see [Group management - group event messages](https://intl.cloud.tencent.com/document/product/1047/36257#.E7.BE.A4.E4.BA.8B.E4.BB.B6.E6.B6.88.E6.81.AF).
 
-- **Group system messages:** when the group admin removes a member from the group or invites a user to join the group, the system sends a group system message to the user. For more information, see [Group management - group system messages](/doc/product/269/群组管理（iOS%20SDK）#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+- **Group system messages:** when the group admin removes a member from the group or invites a user to join the group, the system sends a group system message to the user. For more information, see [Group management - group system messages](https://intl.cloud.tencent.com/document/product/1047/36257#.E7.BE.A4.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
 
