@@ -33,5 +33,5 @@ We provide free trial license for basic edition SDK. The license is valid for 14
 
    ![](https://main.qcloudimg.com/raw/d2dd4ee349a52b10c4609d655fd54bc8.png)
 
-   If you have any questions, please click **Contact Sales**.
+   If you have any questions, please click **[Contact Sales](https://intl.cloud.tencent.com/contact-sales)**.
 
