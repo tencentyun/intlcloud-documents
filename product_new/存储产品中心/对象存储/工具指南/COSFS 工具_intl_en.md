@@ -22,6 +22,8 @@ COSFS allows you to mount COS buckets locally and work with the objects in Tence
 ### Operating Systems 
 Ubuntu, CentOS, SUSE, and macOS.
 
+### Installation
+
 #### 1. Install the dependency software 
 The compilation and installation of COSFS depend on the software packages such as automake, git, libcurl-devel, libxml2-devel, fuse-devel, make, and openssl-devel. The following describes how to install dependency software on Ubuntu, CentOS, SUSE, and macOS:
 
@@ -49,8 +51,6 @@ sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-de
 brew install automake git curl libxml2 make pkg-config openssl 
 brew cask install osxfuse
 ```
-
-### Installation
 
 #### 2. Obtain the source code 
 You need to download the COSFS source code from GitHub to the specified directory, e.g. `/usr/cosfs` in the sample below (It is recommended that you select the directory according to your actual operating environment):
