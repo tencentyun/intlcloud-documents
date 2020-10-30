@@ -35,7 +35,7 @@
 		<th>可用区</th>
 	</tr>
 	<tr>
-		<td rowspan="4">华南地区（广州）<br> ap-guangzhou</td>
+		<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
 		<td>广州一区（已售罄）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -48,7 +48,10 @@
 		<td>广州四区<br> ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
+		<td>广州六区<br> ap-guangzhou-6</td>
+	</tr>
+	<tr>	
+		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -61,6 +64,9 @@
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
 	<tr>
+		<td>上海五区<br>ap-shanghai-5</td>
+	</tr>
+	<tr>		
 		<tr>
 			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
@@ -69,7 +75,7 @@
 			<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td rowspan="4">华北地区（北京）<br>ap-beijing</td>
+			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
 			<td>北京一区<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -80,6 +86,9 @@
 	</tr>
 	<tr>
 			<td>北京四区<br>ap-beijing-4</td>
+	</tr>
+	<tr>
+			<td>北京五区<br>ap-beijing-5</td>		
 	</tr>
 	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
@@ -111,8 +120,11 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td>亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
+		</tr>
+		<tr>
+			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>			
 		</tr>
 		<tr>
 			<td >亚太东北（首尔）<br>ap-seoul</td>
