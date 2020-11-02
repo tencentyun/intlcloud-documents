@@ -39,7 +39,7 @@ If you or your company does not engage in **Internet domain name resolution serv
 - Authoritative resolution: This service provides domain name resolution for root domain names, top-level domain names, and other levels of domain names.
 - Recursive resolution: This service establishes the correspondence between domain names and IP addresses by querying the local cache or the authoritative resolution service system.
 
-Internet domain name resolution service here specifically refers to recursive resolution service. For more information, see [“Classification Catalog of Telecommunications Services” (2015 Edition): B26-1 Internet domain name resolution services](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n3057714/c4564270/content.html).
+Internet domain name resolution service here specifically refers to recursive resolution service. For more information, see “Classification Catalog of Telecommunications Services” (2015 Edition): B26-1 Internet domain name resolution services.
 
  
 ### How will disabling port 53 through inbound rules impact my server?
