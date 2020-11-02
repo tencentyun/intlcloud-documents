@@ -1,38 +1,38 @@
->! As of December 6, 2019, Tencent Cloud no longer supports configuring a CVM as the public gateway on the CVM purchase page. If you need to configure a gateway, following these instructions.
+>! As of December 6, 2019, Tencent Cloud no longer supports configuring a CVM as the public gateway on the CVM purchase page. If you need to configure a gateway, please follow the instructions below.
 
 ## Overview
 
-If your VPC-based CVMs do not have public IPs but need to access internet, you can use a CVM with a public IP or EIP as the public gateway. This public gateway CVM translates the source IP for outbound traffic. When other CVMs access the internet through the public gateway CVM, they will use the public IP of the public gateway CVM, as shown in the figure below.
+You can access the internet by using a public gateway CVM with a public IP or EIP when some of your VPC-based CVMs lack the public IPs. The public gateway CVM translates the source IP for outbound traffic. When other CVMs access the internet through the public gateway CVM, the source IPs will be translated into public IP of the public gateway CVM. See the figure below.
 ![](https://main.qcloudimg.com/raw/5876f3c92f1ae7cb5b4d8f38e59cbfd2.png)
 
 ## Prerequisites
-- Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
+- You are logged in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 - The public gateway CVM and the CVMs that need to access the internet through the public gateway CVM must be in different subnets because the public gateway CVM can only forward requests from other subnets.
-- The public gateway CVM must be a Linux CVM.
+- The public gateway CVM must be a Linux CVM. Windows CVMs will not work.
 
 ## Directions
 ### Step 1: bind an EIP (optional)
->?If the public gateway CVM already has a public IP address, skip this step.
+>?Skip this step if the public gateway CVM already has a public IP address.
 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index) and select [**EIP**](https://console.cloud.tencent.com/cvm/eip) on the left sidebar.
 2. Locate the EIP to bind the instance, select **More** > **Bind** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/b25421e826f69e00a1890e9d59c62828.png)
-3. In the pop-up window, select a public gateway CVM and bind it to the EIP.
+3. In the pop-up window, select a CVM to be configured and bind it to the EIP.
 ![](https://main.qcloudimg.com/raw/c23b101995cabbe66d546f2a2bcb64ca.png)
 
 ### Step 2: configure a route table for the gateway subnet
-The gateway subnet and other subnets cannot use the same route table. You need to create a separate route table for the gateway subnet.
+The gateway subnet and other subnets cannot share the same route table. You need to create a separate route table for the gateway subnet.
 1. [Create a custom route table](https://intl.cloud.tencent.com/document/product/215/35236).
 2. Associate the route table with the subnet where the public gateway CVM resides.
 ![](https://main.qcloudimg.com/raw/c7a6697f7ce1cc4e5c515cfb894ccd25.png)
 
 ### Step 3: configure a route table for the other subnets
-This route table directs all traffic from the CVMs without a public IP to the public gateway so they can access public networks as well.
+This route table directs all traffic from the CVMs without a public IP to the public gateway so these CVMs can access public networks as well.
 Add the following routing policies to the route table:
-- Destination: public IP range to be accessed.
-- Next-hop type: CVM.
+- Destination: the public IP you want to access.
+- Next hop type: CVM.
 - Next hop: private IP of the CVM instance to which the EIP is bound in Step 1.
-For more information, see [Managing Route Tables](https://intl.cloud.tencent.com/document/product/215/35236).
+For more information, see [Manage Route table](https://intl.cloud.tencent.com/document/product/215/35236).
 ![](https://main.qcloudimg.com/raw/9b2d9537e7aa0c00428ef112db300d73.png)
 
 ### Step 4: configure the public gateway
