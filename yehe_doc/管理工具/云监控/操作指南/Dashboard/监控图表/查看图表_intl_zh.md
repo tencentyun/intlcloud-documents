@@ -10,23 +10,23 @@
 
 ## 全屏查看图表
 单击图表右上方的更多图标【<img src="https://main.qcloudimg.com/raw/7aa3947e6678d2e035766c2cc912aab3.png"  style="margin:0;" width="3%">】>【全屏浏览】即可全屏查看图表。
-![](https://main.qcloudimg.com/raw/ab8e63285710a0a8cc7e51f0a4ace065.png)
+
 退出全屏可按【ESC】或单击右上方的【<img src="https://main.qcloudimg.com/raw/0be3daafc00fb030f84ed2123e05e083.png"  style="margin:0;" width="3%">】图标。
 
 ## 图表缩放和移动
 - 图表缩放：您可以把鼠标移动到图表右下方，当出现如下图所示的直角图标时，进行图表缩放。
-![](https://main.qcloudimg.com/raw/0b115b644b6ffa1ef00038345219c4e5.png)
+![](https://main.qcloudimg.com/raw/af0c24e97e2d3fbb4fbd19f66ee8de79.png)
 - 图表移动：您可以把鼠标移动到图表名称处，当出现如下图所示的移动图表时，对图表进行移动。
-![](https://main.qcloudimg.com/raw/180e7aec6afbed6427226a8728a9ca75.png)
+![](https://main.qcloudimg.com/raw/b5b73ac325e0a62ad3f77a947b785f55.png)
 
 ## 查看某时刻监控数据
 您可以把鼠标移动到监控图表处，查看某一时刻的监控数据。如下图所示：
-![](https://main.qcloudimg.com/raw/bd4ac83ad7e9cb97a2da73731450a55d.png)
+![](https://main.qcloudimg.com/raw/06ccca4fb26ff980e318809e68b88e7b.png)
 
 ## 使用变量选择器查看
 
 当您实例数量过多时，可以定义一个模板变量进行动态切换标签，在同一个监控图表中查看不同实例的监控数据。
-![](https://main.qcloudimg.com/raw/ecc4f11216700a2a5bd399a2e9722286.png)
+![](https://main.qcloudimg.com/raw/996212d9fed2a69e269606cfa306b08d.png)
 >?如需创建模板变量请参考 [Dashboard 全局配置](https://intl.cloud.tencent.com/document/product/248/38472)。
 
 
@@ -34,7 +34,7 @@
 Dashboard 默认展示近12小时的数据。
 
 通过 Dashboard 右上角的时间选择控件，可调整 Dashboard 中所有图表展示的数据区间和粒度。用户可回顾历史监控数据、进行排障定位问题。
-![](https://main.qcloudimg.com/raw/5248ce2806fa66e6473fe10886a5b105.png)
+![](https://main.qcloudimg.com/raw/87d43329f351da1614b312d362ffea44.png)
 
 **时间周期和图表颗粒度对照表**
 

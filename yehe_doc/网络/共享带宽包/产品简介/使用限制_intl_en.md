@@ -12,4 +12,4 @@
 1. Up to 20 bandwidth packages can be activated in each region.
 2. The bandwidth package in a region can be used together with other billing modes such as bill-by-traffic.
 3. Currently, monthly subscription public IPs and EIPs cannot be added to IP bandwidth packages.
-4. Up to 100 EIPs can be added to one bandwidth package.
+4. Up to 100 resources (including EIPs, public IPs, and CLBs in the same region) can be added to one bandwidth package.

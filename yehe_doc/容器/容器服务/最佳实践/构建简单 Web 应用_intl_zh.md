@@ -24,7 +24,7 @@ Web 应用分为以下两部分：
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **redis-master**。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 4. 根据以下提示，设置**实例内容器**。如下图所示：
 ![](https://main.qcloudimg.com/raw/3f7259f65a29fb5e782abb815a41835b.png)
 主要参数信息如下，其余选项保持默认设置：
@@ -59,7 +59,7 @@ Web 应用分为以下两部分：
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **redis-slave**。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 4. 根据以下提示，设置**实例内容器**。如下图所示：
 ![](https://main.qcloudimg.com/raw/16a69f993a1faf19399dcb45584de82e.png)
 主要参数信息如下，其余选项保持默认设置：
@@ -92,7 +92,7 @@ GET_HOSTS_FROM = dns
  - **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **frontend**。
  - **命名空间**：根据实际需求进行选择。
  - **类型**：根据实际需求进行选择。
- - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volumne 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
+ - **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 5. 根据以下提示，设置**实例内容器**，如下图所示：
 ![](https://main.qcloudimg.com/raw/0b5cfc640ced656bde9c782df01880d5.png)
 主要参数信息如下，其余选项保持默认设置：

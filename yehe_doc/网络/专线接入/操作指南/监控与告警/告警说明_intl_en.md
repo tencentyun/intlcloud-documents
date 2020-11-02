@@ -1,14 +1,16 @@
-This document describes the metric alarms and event alarms for connections and dedicated tunnels to help you configure alarm policies.
+This document describes the metric alarms and event alarms for a connection, dedicated tunnel and direct connect gateway to help you configure alarm policies.
 
 ## Metric Alarms
 
-You can use the `BandwidthOut`, `BandwidthIn`, and `dc_band_rate` metrics as the trigger conditions of metric alarms for a connection. The `BandwithOut` and `BandwidthIn` metrics also applies to metric alarms for a dedicated tunnel.
+To create a metric alarm policy, you can configure the outbound bandwidth, inbound bandwidth, and bandwidth utilization as the trigger conditions for a connection; configure the outbound bandwidth and inbound bandwidth for a dedicated tunnel; and configure the outbound bandwidth, inbound bandwidth, outbound packet, and inbound packet for a direct connect gateway.
 
 | Metric       | Description                              |
 | ---------- | --------------------------------- |
-| BandwidthOut     | Average outbound traffic of a connection/dedicated tunnel per second|
-| BandwidthIn     | Average inbound traffic of a connection/dedicated tunnel per second |
-| dc_band_rate | Current bandwidth/connection bandwidth * 100%    |
+| Outbound bandwidth | Average outbound traffic of the connection/dedicated tunnel/direct connect gateway per second. |
+| Inbound bandwidth     |  Average inbound traffic of the connection/dedicated tunnel/direct connect gateway per second|
+| Bandwidth utilization | Current bandwidth divided by connection bandwidth * 100%.  |
+| Outbound packet  | Average outbound packets of the direct connect gateway per second                   |
+| Inbound packet | Average inbound packets of the direct connect gateway per second.                  |
 
 ## Event Alarms
 

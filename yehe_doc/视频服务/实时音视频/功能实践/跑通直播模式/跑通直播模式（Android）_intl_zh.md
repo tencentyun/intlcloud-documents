@@ -12,11 +12,12 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 在直播模式下，TRTC 引入了角色的概念，用户被分成“主播”和“观众”两种角色，“主播”会被分配到接口机上，“观众”则被分配在代理机，同一个房间的观众人数上限为10万人。
 如果“观众”要上麦，需要先切换角色（switchRole）为“主播”才能发言。切换角色的过程也伴随着用户从代理机到接口机的迁移，TRTC 特有的低延时观看技术和平滑上下麦切换技术，可以让整个切换时间变得非常短暂。
 
+
 ## 示例代码
 您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/eedbd4ef8a02bce63f071656faded01a.png)
 
->如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
+>?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
 
 ## 操作步骤
 <span id="step1"> </span>
@@ -33,7 +34,7 @@ dependencies {
 }
 ```
 2. 在 defaultConfig 中，指定 App 使用的 CPU 架构。
->目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
+>?目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
 >
 ```
  defaultConfig {
@@ -46,7 +47,7 @@ dependencies {
  如果您的网络连接 jcenter 没有问题，SDK 会自动下载集成到工程中。
 
 #### 方式二：下载 ZIP 包手动集成
-您可以直接下载 [ZIP 压缩包](https://intl.cloud.tencent.com/document/product/647/34615)，并参考 [快速集成(Android)](https://intl.cloud.tencent.com/document/product/647/35093) 将 SDK 集成到您的工程中。
+您可以直接下载 [ZIP 压缩包](https://intl.cloud.tencent.com/document/product/647/34615)，并参见 [快速集成(Android)](https://intl.cloud.tencent.com/document/product/647/35093) 将 SDK 集成到您的工程中。
 
 
 <span id="step2"> </span>
@@ -106,7 +107,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 | userSig | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。| eJyrVareCeYrSy1SslI... |
 | roomId | 数字 | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834 |
 
->TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
+>!TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
 
 <span id="step5"> </span>
 ### 步骤5：主播端开启摄像头预览和麦克风采音
@@ -230,5 +231,5 @@ public void onExitRoom(int reason) {
 }
 ```
 
-> 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
+>! 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
 

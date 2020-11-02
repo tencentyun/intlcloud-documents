@@ -81,6 +81,8 @@ The following information appears if the namespace has been added successfully.
 
 #### Pushing Helm charts
 1. Installing the Helm Push plug-in
+>! Please install the helm-push plug-in v0.9.0 or later to avoid push failure because of version incompatibility.
+
 To use Helm CLI to upload a chart package, you must install the helm-push plug-in. This plug-in supports using the `helm push` command to push Helm charts to a specified repository. Both directories and compressed packages can be uploaded.
 ```
 helm plugin install https://github.com/chartmuseum/helm-push

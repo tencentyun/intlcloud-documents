@@ -34,7 +34,7 @@ docker tag getting-started:latest demo-tcr.tencentcloudcr.com/docker/getting-sta
 ```
 docker push demo-tcr.tencentcloudcr.com/docker/getting-started:latest
 ```
-After the image is pushed, you can go to the "[Image Repository](https://console.cloud.tencent.com/tcr/repository)" page in the TCR console and select a repository name to view the details of the repository.
+After the image is pushed, you can go to the [**Image Repository**](https://console.cloud.tencent.com/tcr/repository) page in the TCR console and click the name of a repository to view its details.
 <span id="deployTKE"></span>
 ### Configuring a TKE cluster to access a TCR Enterprise Edition instance
 TCR Enterprise Edition instances support network access control and deny all external access by default. You can select public-network or private-network access for a TKE cluster to access a specific instance and pull the container image based on the network configuration of the TKE cluster. If the TKE cluster and TCR instance are deployed in the same region, we recommend that the TKE cluster pull the container image through the private network to accelerate pulling and reduce public-network traffic costs.

@@ -32,6 +32,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 
 屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/35136)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
+
 <span id="que5"></span>
 ### TRTC 支持哪些平台？
 支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、桌面浏览器、Electron、Linux 服务端，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
@@ -75,7 +76,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 <span id="que12"></span>
 ### 桌面浏览器端 SDK 的支持哪些浏览器？  
 目前主要在桌面版 Chrome 浏览器、桌面版 Safari 浏览器以及移动版的 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差，具体详情请参见 [支持的平台](https://intl.cloud.tencent.com/document/product/647/35143)。
-您可以在浏览器打开 [WEBRTC 能力测试](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) 测试是否完整的支持WebRTC的功能。
+您可以在浏览器打开 [WEBRTC 能力测试](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) 测试是否完整的支持 WebRTC 的功能。
 
 
 <span id="que13"></span>

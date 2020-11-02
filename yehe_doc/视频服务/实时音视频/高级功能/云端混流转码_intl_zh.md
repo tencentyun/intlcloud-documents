@@ -6,7 +6,7 @@
 
 - 方案二：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
 ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
-> 方案二仅支持 iOS、Android、Windows、Mac 和 Electron 这五个平台的 SDK。
+>! 方案二仅支持 iOS、Android、Windows、Mac 和 Electron 这五个平台的 SDK。
 
 ## 原理解析
 云端混流包含解码、混合和再编码三个过程：
@@ -19,10 +19,10 @@
 <span id="restapi"></span>
 ## 方案一：服务端 REST API 混流方案
 ### 启动混流
-由您的服务器调用 REST API StartMCUMixTranscode 可以启动云端混流，对于此 API，有如下细节需要您关心：
+由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API，有如下细节需要您关心：
 
 #### 1. 设置画面排版模式
-通过 `StartMCUMixTranscode` 中的 LayoutParams 参数，可以设置如下几种排版模式：
+通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
 
 ![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
 
@@ -44,7 +44,7 @@
 - 如果用户只发送音频，仍然会占用画面位置。
 
 #### 2. 设置混流编码参数
-通过 `StartMCUMixTranscode` 中的 EncodeParams 参数，可以设置混流编码参数：
+通过 `StartMCUMixTranscode` 中的 [EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#EncodeParams) 参数，可以设置混流编码参数：
 
 | 名称	  |描述  | 推荐值 | 
 |---------|---------|---------| 
@@ -59,7 +59,7 @@
 |BackgroundColor|混流-输出流背景色 | 自定义 |
 
 #### 3. 设置是否开启云端录制
-通过  `StartMCUMixTranscode` 中的 OutputParams 参数，可以指定混流后视频流的去向。
+通过  `StartMCUMixTranscode` 中的 [OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#OutputParams) 参数，可以指定混流后视频流的去向。
 
 - **OutputParams.RecordId**
 该参数用于指定是否启动 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426)，如果您指定此参数，那么混流后的音视频流会被录制成文件并存储到 [云点播](https://intl.cloud.tencent.com/product/vod) 中。录制下来的文件会按照 `OutputParams.RecordId_开始时间_结束时间` 的格式命名，例如`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
@@ -76,7 +76,7 @@
 如果您只希望做纯音频直播，可以设置 `OutputParams.PureAudioStream` 参数为 1，代表仅把混音后的音频数据流转发到 CDN 上。
 
 ### 结束混流
-由您的服务器调用 REST API StopMCUMixTranscode 即可结束混流。
+由您的服务器调用 REST API  [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 即可结束混流。
 
 <span id="sdkapi"></span>
 ## 方案二：客户端 SDK API 混流方案
@@ -111,7 +111,7 @@
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Template_PureAudio**，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数。
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
 
-> 纯音频模式下，`setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
+>! 纯音频模式下，`setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
 
 <span id="PresetLayout"></span>
 ### 预排版模式（PresetLayout）
@@ -196,7 +196,7 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 [_trtc setMixTranscodingConfig:config];
 ```
 
-> 预排版模式下，`setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
+>! 预排版模式下，`setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
 
 <span id="ScreenSharing"></span>
 ### 屏幕分享模式（ScreenSharing）
@@ -210,9 +210,11 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 3. 调用 `startLocalPreview()` 和 `startLocalAudio()` 开启本地的音视频上行。
  由于云端混流的本质是将多路流混合到当前（即发起混流指令的）用户所对应的音视频流上，因此当前用户本身必须有音视频上行才能构成混流的前提条件。
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Template_ScreenSharing** ，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数，以及 `videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate` 等关乎视频输出质量的参数。
- >若将 `videoWidth` 和 `videoHeight` 参数均指定为0，SDK 会自动根据用户当前屏幕的宽高比计算出一个合适的分辨率。
+ >?若将 `videoWidth` 和 `videoHeight` 参数均指定为0，SDK 会自动根据用户当前屏幕的宽高比计算出一个合适的分辨率。
  >
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
+
+
 
 > 
 >- 屏幕分享模式仅支持 Windows 和 Mac 平台。
@@ -233,8 +235,8 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
  由于云端混流的本质是将多路流混合到当前（即发起混流指令的）用户所对应的音视频流上，因此当前用户本身必须有音视频上行才能构成混流的前提条件。
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Manual** ，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数。如果您的业务场景中也包含视频，需同时设置 `videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate` 等关乎视频输出质量的参数。
 5. 监听 TRTCCloudDelegate 中的 `onUserVideoAvailable()` 和 `onUserAudioAvailable()` 回调，并根据需要指定 **mixUsers** 参数。
- >与预排版（PresetLayout）模式不同，Manual 需要您指定每一个 `mixUser` 中的 `userId` 参数为真实的连麦者 ID，并且也要根据该连麦者是否开启了视频，如实设定 `mixUser` 中的 `pureAudio` 参数。
+ >?与预排版（PresetLayout）模式不同，Manual 需要您指定每一个 `mixUser` 中的 `userId` 参数为真实的连麦者 ID，并且也要根据该连麦者是否开启了视频，如实设定 `mixUser` 中的 `pureAudio` 参数。
  >
 6. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
 
-> 全手动模式下，您需要实时监听房间中连麦者的上麦下麦动作，并根据连麦者的人数和音视频状态，多次调用 `setMixTranscodingConfig()` 接口。
+>! 全手动模式下，您需要实时监听房间中连麦者的上麦下麦动作，并根据连麦者的人数和音视频状态，多次调用 `setMixTranscodingConfig()` 接口。

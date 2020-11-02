@@ -9,7 +9,7 @@
 2. 在实例的管理页面，鼠标移动至主 IP 地址列，出现 <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"></img>。如下图所示：
 ![](https://main.qcloudimg.com/raw/952664b0a70077ba49a031b98a57c782.png)
 3. 单击 <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"></img>，即可复制该 IP 地址。	
-> 由于公网 IP 地址通过 NAT 映射到内网 IP 地址，因此，您如果在实例内部查看网络接口的属性（例如通过 `ifconfig (Linux)` 或 `ipconfig (Windows)` 命令），将不会显示公网 IP 地址。如需从实例内部确定实例的公网 IP 地址，可参考 [使用实例元数据获取](#jump)。
+>! 由于公网 IP 地址通过 NAT 映射到内网 IP 地址，因此，您如果在实例内部查看网络接口的属性（例如通过 `ifconfig (Linux)` 或 `ipconfig (Windows)` 命令），将不会显示公网 IP 地址。如需从实例内部确定实例的公网 IP 地址，可参考 [使用实例元数据获取](#jump)。
 >
 
 ### 使用 API 获取

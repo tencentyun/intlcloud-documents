@@ -19,7 +19,7 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 | Android | WeChat embedded browser | - | Not supported | Not supported | Not supported |
 
 >! 
->- You can open the [WebRTC capability test](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
+>- You can open the [WebRTC capability test](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
 >- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support the TRTC SDK for Desktop Browser.
 
 <span id="requirements"></span>

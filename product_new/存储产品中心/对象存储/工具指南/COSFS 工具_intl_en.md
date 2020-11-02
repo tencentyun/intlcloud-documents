@@ -24,13 +24,7 @@ Ubuntu, CentOS, SUSE, and macOS.
 
 ### Installation
 
-#### 1. Obtain the source code 
-Download the [COSFS Source Code](https://github.com/tencentyun/cosfs) from the GitHub to a specified directory, for example, `/usr/cosfs`.
-```shell
-git clone https://github.com/tencentyun/cosfs /usr/cosfs
-```
-
-#### 2. Install the dependency software 
+#### 1. Install the dependency software 
 The compilation and installation of COSFS depend on the software packages such as automake, git, libcurl-devel, libxml2-devel, fuse-devel, make, and openssl-devel. The following describes how to install dependency software on Ubuntu, CentOS, SUSE, and macOS:
 
 - Install dependency software on the Ubuntu system:
@@ -57,6 +51,13 @@ sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-de
 brew install automake git curl libxml2 make pkg-config openssl 
 brew cask install osxfuse
 ```
+
+#### 2. Obtain the source code 
+You need to download the COSFS source code from GitHub to the specified directory, e.g. `/usr/cosfs` in the sample below (It is recommended that you select the directory according to your actual operating environment):
+```shell
+git clone https://github.com/tencentyun/cosfs /usr/cosfs
+```
+
 #### 3. Compile and install COSFS 
 Open the installation directory, and execute the following command to compile and install COSFS:
 ```shell

@@ -7,4 +7,4 @@
 3. 单击 Dashboard 列表左上角的【新建】，进入新建 Dashboard 管理页。
 4. 在面板区单击【![](https://main.qcloudimg.com/raw/8e26fe2eacdd794457a53a745bd48f3c.png)】或单击Dashboard 列表页的【设置】，进入 Dashboard 全局配置页。
 5. 单击【基础设置】，您可以对定义 Dashboard 名称和设置 Dashboard 备注。
-   ![](https://main.qcloudimg.com/raw/e94ab9cafbf3bae9c5bc959511e772da.png)
+   ![](https://main.qcloudimg.com/raw/e6da2d17a23c26692e095661a61146e6.png)

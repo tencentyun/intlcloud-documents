@@ -10,7 +10,7 @@ Dashboard 支持最近访问面板、收藏面板和自定义面板三种方式�
 ## 全屏查看
 1. 在 Dashboard 列表中找到您需要查看的 Dashboard，单击对应的面板名，进入 Dashboard管理页。
 2. 单击【![](https://main.qcloudimg.com/raw/9bd9730e6a3135b097d648f752399fac.png)】即可全屏查看 Dashboard。
-![](https://main.qcloudimg.com/raw/44f7d4b8842fec2450efe6c88a79ad54.png)
+![](https://main.qcloudimg.com/raw/16ccfe9f3d6b87ed745859d4b3980d78.png)
 
 ## 退出全屏
 
@@ -23,7 +23,7 @@ Dashboard 支持最近访问面板、收藏面板和自定义面板三种方式�
  - 最近访问面板：展示您最近访问的三个监控面板。
  - 收藏面板：展示您所收藏的所有面板。
  - 自定义面板：展示您所自定义的所有面板。
-<img src="https://main.qcloudimg.com/raw/47736500875951a662e9c704605d603f.png"  style="margin:0;" width="80%">
+<img src="https://main.qcloudimg.com/raw/e5d7823d6c2b625f40e29636b4497416.png"  style="margin:0;" width="80%">
 
 >? 如需收藏面板，请参见 [收藏 Dashboard ](https://intl.cloud.tencent.com/document/product/248/38470)。
 
@@ -32,6 +32,6 @@ Dashboard 支持最近访问面板、收藏面板和自定义面板三种方式�
 Dashboard 默认展示近12小时的数据，监控数据默认实时刷新。 
 
 -  通过 Dashboard 右上角的时间选择控件，可调整面板中所有图表展示的数据区间和粒度。用户可回顾历史监控数据、进行排障定位问题。 
-<img src="https://main.qcloudimg.com/raw/d89d4ce295991fa2feaa33b2c864d4f8.png"  style="margin:0;" width="80%">
+<img src="https://main.qcloudimg.com/raw/e486f9493087428a75cff48ce3923d12.png"  style="margin:0;" width="80%">
 -  通过 Dashboard 右上角的刷新按钮与时间间隔，用户可自行调整刷新频率或进行 Dashboard 刷新。
-![](https://main.qcloudimg.com/raw/91c16dbb1a812f6f9cd1cef67ffce405.png)
+![](https://main.qcloudimg.com/raw/6fbccfa348584ce0727a6e5baa302fb6.png)

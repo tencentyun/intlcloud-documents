@@ -185,13 +185,13 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 ```
 
 - **录制任务的结束**
-自动停止，您也可以中途调用 StopMCUMixTranscode
+自动停止，您也可以中途调用 [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 停止混流和录制任务。
 
 - **多路画面的混合**
-由您的服务器调用 StartMCUMixTranscode
+由您的服务器调用 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 并指定 `LayoutParams` 参数即可，关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
 
 - **录制文件的命名**
-录制文件会以调用 StartMCUMixTranscode 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
+录制文件会以调用 [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 时指定的 `OutputParams.RecordId` 参数来命名，命名格式为 `OutputParams.RecordId_开始时间_结束时间`。
 
 - **已经支持的平台**
 由您的服务端控制，不受客户端平台的限制。
@@ -222,7 +222,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 房间里的最后一路音视频流退出后，腾讯云会结束录制并将文件转存到云点播平台，该过程大约默认需要30秒至2分钟（若您设置了续录时间为300秒，则等待时间将在默认基础上叠加300秒）。转存完成后，腾讯云会通过您在 [设置录制回调](#recordCallback) 中设置的回调地址（HTTP/HTTPS）向您的服务器发送通知。
 
 腾讯云会将录制和录制相关的事件都通过您设置的回调地址推送给您的服务器，回调消息示例如下图所示：
-![](https://main.qcloudimg.com/raw/1a89e7058f7c806f6f867217821d1a9c.png)
+![](https://main.qcloudimg.com/raw/483dba536acd022f93af3ca5ff6cd74a.png)
 您可以通过下表中的字段来确定当前回调是对应的哪一次通话（或直播）：
 
 <table>
@@ -258,7 +258,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 
 <span id="delete"></span>
 ## 删除录制文件
-腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过 删除媒体 API 删除某个指定的文件。
+腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过 [删除媒体 API](https://intl.cloud.tencent.com/document/product/266/37571) 删除某个指定的文件。
 REST 请求示例：
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia
@@ -283,3 +283,4 @@ HLS 支持最长5分钟的断点续录，可以做到“一场直播（或一堂
 - [Android 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 
 >! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 超级播放器（Player+）、移动直播（MLVB） 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
+

@@ -33,5 +33,5 @@
 
    ![](https://main.qcloudimg.com/raw/d2dd4ee349a52b10c4609d655fd54bc8.png)
 
-   如果您有什么困惑想要咨询，请不要犹豫地通过【Contact  Sales】与我们取得联系。
+   如果您有什么困惑想要咨询，请不要犹豫地通过【[Contact  Sales](https://intl.cloud.tencent.com/contact-sales)】与我们取得联系。
 

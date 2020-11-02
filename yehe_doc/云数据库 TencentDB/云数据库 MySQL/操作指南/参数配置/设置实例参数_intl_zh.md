@@ -41,7 +41,7 @@
 3. 在弹出的对话框，选择参数模板，单击【导入并覆盖原有参数】。
 ![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
 4. 确认参数后，单击【确认修改】。
-![](https://main.qcloudimg.com/raw/6f545a4ef0e7e24c3b5662dfa4779a50.png)
+
 5. 在弹出的对话框，选择参数任务的“执行方式”，单击【确定】。
 >?
 >- 若选择【立即执行】，所选实例的参数变更任务会立即执行并生效。
@@ -59,7 +59,7 @@
 3. 在弹出的对话框，选择参数文件上传后，单击【导入并覆盖原有参数】。
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 4. 确认参数后，单击【确认修改】。
-![](https://main.qcloudimg.com/raw/6f545a4ef0e7e24c3b5662dfa4779a50.png)
+
 5. 在弹出的对话框，选择参数任务的“执行方式”，单击【确定】。
 >?
 >- 若选择【立即执行】，所选实例的参数变更任务会立即执行并生效。
@@ -70,23 +70,23 @@
 ## 导出参数配置文件
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【导出参数】导出参数配置文件。
-![](https://main.qcloudimg.com/raw/75f12286e95938f2ffb7f1235bce631b.png)
+
 
 ## 导出参数配置为参数模板
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【另存为模板】，可将现有参数配置存储为参数模板。
-![](https://main.qcloudimg.com/raw/34a2d6b421359460f64f58f2cd47d36b.png)
+
 
 ## 自定义时间修改参数
 执行参数修改的最后一步时，在弹出的对话框，可自定义参数的修改时间。
 >?选择【维护时间内】，所选实例的参数变更任务会在实例的 [维护时间](https://intl.cloud.tencent.com/document/product/236/10929) 内执行并生效。
 >
-![](https://main.qcloudimg.com/raw/110c135238eee9b921390dee2a0b38db.png)
+
 
 
 ## 取消参数修改任务
 选择【维护时间内】的修改参数任务提交后，如需取消修改参数，可在任务执行前（即任务状态为“等待执行”），在左侧导航【[任务列表](https://console.cloud.tencent.com/mysql/task)】页，单击“操作”列的【撤销】，取消参数修改任务。
-![](https://main.qcloudimg.com/raw/05e07ce358a66c9b4a17d31016a78c4e.png)
+
 
 
 ## 查看参数修改记录

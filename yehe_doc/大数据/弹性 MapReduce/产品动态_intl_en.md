@@ -91,7 +91,7 @@
 </tr>
 </tbody></table>
 
-<h2>June 2020</h2>
+## June 2020
 <table>
 <thead>
 <tr>
@@ -128,7 +128,7 @@
 
                
 
-<h2>May 2020</h2>
+## May 2020
 <table>
 <thead>
 <tr>
@@ -157,7 +157,7 @@
 </tbody></table>
 
 
-<h2>April 2020</h2>
+## April 2020
 <table>
 <thead>
 <tr>
@@ -186,7 +186,8 @@
 </tbody></table>
 
 
-<h2>March 2020</h2><table>
+## March 2020
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -197,7 +198,7 @@
 </thead>
 <tbody><tr>
 <td>The cluster monitoring page is optimized </td>
-<td>The cluster monitoring, service monitoring, and server monitoring pages are optimized to enhance readability and availability. Monitoring metrics now support customization and server heat map features.</td><td>March 2020</td>
+<td>The cluster overview, service monitoring, and node monitoring pages are optimized to enhance readability and availability. Monitoring metrics now support customization and node heat map features.</td><td>March 2020</td>
 <td>-</td>
 </tr>
 <tr>
@@ -213,7 +214,8 @@
 </tr>
 </tbody></table>
 
-<h2>February 2020</h2><table>
+## February 2020
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -238,7 +240,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>January 2020</h2><table>
+
+## January 2020
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -263,7 +267,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>December 2019</h2><table>
+
+## December 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -294,7 +300,7 @@
 </tr>
 <tr>
 <td>Cluster monitoring overview page is launched</td>
-<td>The cluster monitoring overview page is added with cluster, server, and service status views.</td><td>December 2019</td>
+<td>The cluster overview page now provides cluster, node, and service status views.</td><td>December 2019</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31117" target="_blank">Cluster Overview</a></td>
 </tr>
 <tr>
@@ -303,12 +309,14 @@
 <td>-</td>
 </tr>
 <tr>
-<td>Server service deployment and load status views are added to the server monitoring page</td>
-<td>The server monitoring page is optimized where server service deployment and load status views are added.</td><td>December 2019</td>
+<td>Node service deployment and load status views are added to the node monitoring page</td>
+<td>The node monitoring page is optimized where node service deployment and load status views are added.</td><td>December 2019</td>
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>November 2019</h2><table>
+
+## November 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -338,7 +346,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>October 2019</h2><table>
+
+## October 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -353,7 +363,9 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
-<h2>September 2019</h2><table>
+
+## September 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -374,11 +386,13 @@
 </tr>
 <tr>
 <td>Cloud Monitor alarm policy is supported</td>
-<td>Alarm policies can be configured for key monitoring metrics for servers and services in Cloud Monitor (in the Elastic MapReduce product category).</td><td>September 2019</td>
+<td>Alarm policies can be configured for key monitoring metrics for nodes and services in Cloud Monitor (in the Elastic MapReduce product category).</td><td>September 2019</td>
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>August 2019</h2><table>
+
+## August 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -413,7 +427,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>July 2019</h2><table>
+
+## July 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -448,7 +464,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>June 2019</h2><table>
+
+## June 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -482,7 +500,9 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">Configuration Rollback</a></td>
 </tr>
 </tbody></table>
-<h2>May 2019</h2><table>
+
+## May 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -505,7 +525,7 @@
 </tr>
 <tr>
 <td>Monitoring metrics are optimized</td>
-<td>Host, HDFS, YARN, and HBase monitoring metrics are optimized.</td>
+<td>Node, HDFS, YARN, and HBase monitoring metrics are optimized</td>
 <td>May 2019</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">Monitoring Metrics</a></td>
 </tr>
@@ -534,7 +554,9 @@
 <td>-</td>
 </tr>
 </tbody></table>
-<h2>March 2019</h2><table>
+
+## March 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>
@@ -568,7 +590,9 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Configuration Adjustment</a></td>
 </tr>
 </tbody></table>
-<h2>January 2019</h2><table>
+
+## January 2019
+<table>
 <thead>
 <tr>
 <th width=20%>Update</th>

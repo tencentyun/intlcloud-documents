@@ -17,7 +17,7 @@ If a "user" wants to mic on, the role needs to be switched (switchRole) to "anch
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
 
 
->If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
+>?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
 
 
 ## Directions
@@ -27,7 +27,7 @@ You can integrate the **TRTC SDK** into your project in the following ways:
 #### Method 1. Use CocoaPods for integration
 1. Install **CocoaPods**. For detailed directions, please see [Getting Started](https://guides.cocoapods.org/using/getting-started.html).
 2. Open the `Podfile` file in the root directory of your current project and add the following content:
->If there is no `Podfile` file in the directory, run the `pod init` command to create one and then add the following content:
+>?If there is no `Podfile` file in the directory, run the `pod init` command to create one and then add the following content:
 >
 ```
 target 'Your Project' do
@@ -84,7 +84,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
-> In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>! In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
 
 <span id="step5"> </span>
@@ -120,8 +120,6 @@ trtcCloud.startLocalAudio()
 3. The anchor can call [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) to set the skin smoothing level (level 5 is generally okay).
 4. The anchor can call [setWhitenessLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) to set the skin brightening level (level 5 is generally okay).
 5. As the tone of iPhone cameras is a little bit yellowish, it is recommended to call [setFilter()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) to add the skin brightening effect. The corresponding filter file can be downloaded [here](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/filter/filterPNG.zip).
-
-![](https://main.qcloudimg.com/raw/61ef817e3c12944665f1b7098c584ee3.jpg)
 
 <span id="step7"> </span>
 ### Step 7. The anchor creates a room and starts push
@@ -215,5 +213,5 @@ func onExitRoom(_ reason: Int) {
 }
 ```
 
-> If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
+>! If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
 

@@ -18,7 +18,7 @@
 	- 打开方式
 		- 新选项卡：新标签打开链接
 	 - 当前页：当前标签打开链接
-![](https://main.qcloudimg.com/raw/ee8d7e81822c3b6b98f6b234f72264bd.png)
+![](https://main.qcloudimg.com/raw/a04e3caa220a16f0ca8faf6667209962.png)
 
 ## 使用链接
 
@@ -26,4 +26,4 @@
 2. 在左侧导航栏中单击【Dashboard 列表】，进入 Dashboard 列表页。
 3. 找到您所配置链接的对应的 Dashboard，单击对应的面板名称。
 4. 在 Dashboard 管理页可快速跳转到您定义的链接，进行异障排查或监控数据对比。
-   ![](https://main.qcloudimg.com/raw/4656aec8c56fdda26dcfd01398892e93.png)
+   ![](https://main.qcloudimg.com/raw/0167802aeb5c01163a5247975391d919.png)

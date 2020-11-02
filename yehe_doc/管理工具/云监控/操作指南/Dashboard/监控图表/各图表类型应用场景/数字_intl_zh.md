@@ -5,7 +5,7 @@
 **数字统计图**：适用于某段时间指标数值的统计。例如 TCP 链接数、外网出包量、内网入包量等指标。
 
 **数字统计图配置效果：**
-![](https://main.qcloudimg.com/raw/b0a1d1c92cd7beb7aeb7a2e3493ed85a.png)
+![](https://main.qcloudimg.com/raw/bb2b9328854f43f41c1745c6f2205533.png)
 
 ## 操作步骤
 
