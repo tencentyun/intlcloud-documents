@@ -32,7 +32,7 @@ conversation = TIMManager.getInstance().getConversation(
         groupId);                       // Group ID
 ```
 
-**Send messages: **after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](/doc/product/269/9227#2.1-imsdk.E5.AF.B9.E8.B1.A1.E7.AE.80.E4.BB.8B). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
+**Send messages: **after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301#2.1-imsdk.E5.AF.B9.E8.B1.A1.E7.AE.80.E4.BB.8B). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
 
 ![](https://main.qcloudimg.com/raw/5b109b81e56ac31a6c73ca6053a342ff.png)
 
@@ -835,7 +835,7 @@ public boolean copyFrom(@NonNull TIMMessage srcMsg)
 
 ## Receiving Messages
 
-To be notified of new messages, you need to register the new message notification callback `TIMMessageListener`. If you have logged in to the IM console, the IM SDK uses the `onNewMessages` callback to send new messages. For more information about how to register the new message notification callback, see [New Message Notification](/doc/product/269/9229#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5).
+To be notified of new messages, you need to register the new message notification callback `TIMMessageListener`. If you have logged in to the IM console, the IM SDK uses the `onNewMessages` callback to send new messages. For more information about how to register the new message notification callback, see [New Message Notification](https://intl.cloud.tencent.com/document/product/1047/36255#.E6.96.B0.E6.B6.88.E6.81.AF.E9.80.9A.E7.9F.A5).
 
 >! Messages obtained using `onNewMessages` may not be unread messages. They can also be messages that have not been displayed locally. For example, when messages have been read on another client, messages of recent contacts can be pulled to obtain the latest messages in conversations. If these latest messages are not stored locally, they are sent using this method. After a user logs in, the IM SDK gets C2C offline messages. To avoid missing message notifications, the user needs to register new message notifications before login.
 The `onNewMessage` callback is also used to send group system messages, relationship chain changes, and friend profile changes.
@@ -954,7 +954,7 @@ After receiving a message, use `getElem` to obtain all `Elem` nodes from `TIMMes
  public void getSoundToFile(@NonNull final String path, final TIMValueCallBack<ProgressInfo> progressCb, @NonNull final TIMCallBack cb) 
 ```
 
-**Audio message read status:** you can use [custom message fields](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to determine whether an audio message has been played. For example, the value 0 of `customInt` indicates that the audio message has not been played, and the value 1 indicates that the audio message has been played. When a user taps Play, `customInt` is set to 1. The following prototype shows how to set `customInt`, and the default value is 0.
+**Audio message read status:** you can use [custom message fields](https://intl.cloud.tencent.com/document/product/1047/36401#.E6.B6.88.E6.81.AF.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) to determine whether an audio message has been played. For example, the value 0 of `customInt` indicates that the audio message has not been played, and the value 1 indicates that the audio message has been played. When a user taps Play, `customInt` is set to 1. The following prototype shows how to set `customInt`, and the default value is 0.
 
 **Prototype:**
 ```
