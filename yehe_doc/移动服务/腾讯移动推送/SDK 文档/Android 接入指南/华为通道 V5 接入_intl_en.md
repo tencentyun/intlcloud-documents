@@ -1,6 +1,6 @@
 ## Overview
 
-
+Huawei launches HMS Core as an upgrade of **Huawei Push** SDK v2.6.3.
 As TPNS always keeps up with the update progress of each vendor channel's push service, it provides plugin dependency packages integrated with HMS Core Push SDK for your choice.
 
 > !  
@@ -11,7 +11,7 @@ As TPNS always keeps up with the update progress of each vendor channel's push s
 
 ### Getting key
 
-1. Go to the [Huawei Developer platform](http://developer.huawei.com).
+1. Go to the [Huawei Developer Platform](http://developer.huawei.com).
 2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to complete identity verification.)
 3. Create an application on the Huawei Push platform. For more information, please see [Creating Application](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). (The application package name must be the same as that entered in the TPNS Console.)
 4. Get and copy the application's `AppID` and `AppSecret` and paste them in **Configuration Management** > **Huawei Channel** in the [TPNS Console](https://console.cloud.tencent.com/tpns).
@@ -113,7 +113,7 @@ android {
 dependencies {
         // ...Other dependencies of the program
         implementation files('libs/tpns-huaweiv5-1.2.1.1.jar')      // TPNS plugin for HMS Core
-        implementation fileTree(include: ['*.aar'], dir: 'libs')    // HMS Core Push module dependency package
+        implementation fileTree(include: ['*.aar'], dir: 'libs')    // HMS Core Push module dependent package
     }
 ```
 7. Add the following components between the `<application>` and `</application>` tags in the `manifest` file:
@@ -177,7 +177,7 @@ You can set the application badge on Huawei devices after applying for the appli
 
 #### Querying Huawei Push registration error code
 
-The Huawei Push service has strict requirements on the connection configuration. If you fail to register with the Huawei channel, you can use either of the following ways to get the Huawei Push registration error code:
+The Huawei Push service has strict requirements on the integration configuration. If you fail to register with the Huawei channel, you can use either of the following ways to get the Huawei Push registration error code:
 
 1. In debugging mode of the push service, filter logs by the keyword `OtherPush` or `HMSSDK` to view the return code logs.
 2. Call the `XGPushConfig.getOtherPushErrCode(context)` API in the callback method of the TPNS registration API `XGPushManager.registerPush` to get the vendor channel registration return code:
