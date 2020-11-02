@@ -126,7 +126,8 @@
 | [setCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a738ea0dffd48d5bc2b05b146eb79ec46) | 设置系统当前扬声器设备的静音状态。 |
 | [getCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a793d11364882c7fac7f9200f8761400c) | 获取系统当前扬声器设备是否静音。 |
 
-### 美颜滤镜相关接口函数
+
+### 美颜特效和变脸特效
 
 | API | 描述 |
 |-----|-----|
@@ -159,6 +160,9 @@
 | [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a72c66b67eacd24a0e796a3213219fb6d) | 设置辅路画面（TRTCVideoStreamTypeSub，一般用于屏幕分享）的顺时针旋转角度。 |
 | [setSubStreamEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abc0f3cd5c320d0e65163bd07c3c0a735) | 设置屏幕分享的编码器参数，仅适用 Mac 平台。 |
 | [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a18d3fb6535c9884784c5ad5f8dfd0b12) | 设置屏幕分享的混音音量大小，仅适用 Mac 平台。 |
+| [addExcludedShareWindow](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa567171999b17a7f5655213b193415a7) | 将指定窗口加入屏幕分享的排除列表中，加入排除列表中的窗口不会被分享出去，仅适用 Mac 平台。 |
+| [removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a95b1f3fbc6ff755f67f7e9b86240ea5f) | 将指定窗口从屏幕分享的排除列表中移除，仅适用 Mac 平台。 |
+| [removeAllExcludedShareWindows](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab2b6a778a528d58e2a42c9adfc7684f2) | 将所有窗口从屏幕分享的排除列表中移除，仅适用 Mac 平台。 |
 
 
 ### 自定义采集和渲染
@@ -172,6 +176,7 @@
 | [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d) | 启用音频自定义采集模式。 |
 | [sendCustomAudioData](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a62cab4ec7c336ae135c2f681aca25da1) | 向 SDK 投送自己采集的音频数据。 |
 | [setAudioFrameDelegate](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01726b03b102c32222a2a26b16abcd48) | 设置音频数据回调。 |
+| [setEncodedDataProcessingListener](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a630728293b3a591f1baf81cd12deb7fd) | 设置音视频编码之后的数据自定义处理回调。 |
 
 
 ### 自定义消息发送
@@ -217,18 +222,18 @@
 |-----|-----|
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abb57991f5e4f4ca1b95c2181a7e538c8) | 设置麦克风的音量大小。 |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1336146862fb742de6cbe5718f9b7008) | 设置美颜、美白以及红润效果级别。 |
-| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae0e4341ef565cc5ba28101574179cd56) | 设置大眼级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a52ad635b237ccb1eef53a4ed9e650035) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bf6dd0f5a5c6c013323d31f60d494e2) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a145d4ed3d5790a449a9884d282420216) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac11082c88aba749acd7cd2c7a7caa953) | 设置短脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae94b107a9c476337585906c79b42ee95) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3aa8c561d744e3d921dff6186a6e4ade) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6689d734b9f46cb84a848b7e8f39cbd) | 设置动效静音，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae0e4341ef565cc5ba28101574179cd56) | 设置大眼级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a52ad635b237ccb1eef53a4ed9e650035) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bf6dd0f5a5c6c013323d31f60d494e2) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a145d4ed3d5790a449a9884d282420216) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac11082c88aba749acd7cd2c7a7caa953) | 设置短脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae94b107a9c476337585906c79b42ee95) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3aa8c561d744e3d921dff6186a6e4ade) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6689d734b9f46cb84a848b7e8f39cbd) | 设置动效静音，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9a4b3b61c39c1c65e3426b35b0ace95f) | 启动屏幕分享。 |
 | [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) | 设置指定素材滤镜特效。 |
 | [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3b0d7db70674f961c14b316f4e8e7a2b) | 设置滤镜浓度。 |
-| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab4682edfc605ba06e24fd7b3e758ce5d) | 设置绿幕背景视频，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab4682edfc605ba06e24fd7b3e758ce5d) | 设置绿幕背景视频，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
 | [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4d9983591fa2a847e226b7a30e8db294) | 启动播放背景音乐。 |
 | [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac1f96932d02198cd045ee96f1306c8ba) | 获取音乐文件总时长，单位毫秒。 |
 | [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7fd043ae358c43f6a178837fb2846ef9) | 设置 BGM 播放进度。 |
@@ -338,7 +343,7 @@
 
 | API | 描述 |
 |-----|-----|
-| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#accb36b0eb1d1b72f32cf72617bb1c730) | 播放音效结束回调。 |
+| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a81bb22a3a908757f9ac2cb455d59e4be) | 播放音效结束回调。 |
 
 
 ### 屏幕分享回调

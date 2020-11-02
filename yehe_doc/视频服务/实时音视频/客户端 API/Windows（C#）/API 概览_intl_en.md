@@ -98,18 +98,18 @@
 | API | Description |
 |-----|-----|
 | [getMicDevicesList](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#af52dcefa14a0838a98d878620e4a8e83) | Gets mic list. |
-| [setCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7a7bc332f677f536e2697e6f30235241) | Sets the mic to be used. |
 | [getCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aeea733cfe13334913e7e8d1cbb4d35ff) | Gets the currently used mic. |
+| [setCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7a7bc332f677f536e2697e6f30235241) | Sets the mic to be used. |
 | [getCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a5feaad27747bc7e909de43444aa86e2f) | Gets current system mic volume level. |
 | [setCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a02cdbf0a22ec4effeb662da83d7b5218) | Sets current system mic volume level. |
 | [getSpeakerDevicesList](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a9f680a2953562c62e5024ef98e691803) | Gets speaker list. |
-| [setCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a3d8a1b1f3c71a08faaff27edaef3f80f) | Sets the speaker to be used. |
 | [getCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#af38430fc0b347637e5b050481b2d6065) | Gets the currently used speaker. |
+| [setCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a3d8a1b1f3c71a08faaff27edaef3f80f) | Sets the speaker to be used. |
 | [getCurrentSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1617113ec7db9d646b27233da8132b48) | Gets current system speaker volume level. |
 | [setCurrentSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a5fe7bfacc946565df7d14a91f6de9f21) | Sets current system speaker volume level. |
 
 
-### Beauty effects APIs
+### Beauty effects and image watermark APIs
 
 | API | Description |
 |-----|-----|
@@ -132,16 +132,16 @@
 
 | API | Description |
 |-----|-----|
+| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adde6382876b0afab78bab89e8be8e254) | Starts screen sharing. |
+| [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad02093be5c603f66f356978169946a18) | Stops screen capture. |
+| [pauseScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a448e432a91c092f80421d377425fb1bb) | Pauses screen sharing. |
+| [resumeScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad1fc32927622168e9b3cbb3f70043450) | Resumes screen sharing. |
+| [getScreenCaptureSources](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1eda1853bfc49c43a35e4d945dfccd7a) | Enumerates shareable windows. |
+| [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a92) | Sets screen sharing parameters. This method can be called during screen sharing. |
 | [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) | Starts rendering the substream image of remote user. |
 | [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a92ad3b6468abc72890c053a94765c4de) | Stops displaying the screen sharing image of remote user. |
 | [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23a2fc554362748ef3d0c543918fd35d) | Sets the rendering mode of substream image. |
 | [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#acd8fb23b00e6638466f65512723a7395) | Sets the clockwise rotation angle of screen sharing image. |
-| [getScreenCaptureSources](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a1eda1853bfc49c43a35e4d945dfccd7a) | Enumerates shareable windows. |
-| [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a92) | Sets screen sharing parameters. This method can be called during screen sharing. |
-| [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adde6382876b0afab78bab89e8be8e254) | Starts screen sharing. |
-| [pauseScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a448e432a91c092f80421d377425fb1bb) | Pauses screen sharing. |
-| [resumeScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad1fc32927622168e9b3cbb3f70043450) | Resumes screen sharing. |
-| [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ad02093be5c603f66f356978169946a18) | Stops screen capture. |
 | [setSubStreamEncoderParam](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a7e9588c951feaf2d70c8bd6412432f09) | Sets encoder parameters for screen sharing. |
 | [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aabc643e4be3add7e08b8fb3f1a9789a9) | Sets the audio mixing volume level of substream. |
 
@@ -217,9 +217,7 @@
 | [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a19416181cce88c58052a4eb2e87adeb8) | Sets the volume level of all sound effects. |
 | [pauseAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a43f83a1323cc39c1610c61cf79ab652c) | Pauses sound effect. |
 | [resumeAudioEffect](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a23b65446d7dd9835da888b5285867629) | Resumes sound effect. |
-| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#aac7057a9556fc1b1b106733a87069e06) | Enables system audio capture. |
-| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#adef486f26a2c7d74a8cccb537367e66a) | Disables system audio capture. |
-| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2bb76d46a5fcf037c560ab8f09b1825f) | Sets system audio capture volume level. |
+| [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a2aabe079ed38fb5122be988434a81a922) | Sets screen sharing parameters. |
 
 
 ## TRTCCloudCallback @ TXLiteAVSDK

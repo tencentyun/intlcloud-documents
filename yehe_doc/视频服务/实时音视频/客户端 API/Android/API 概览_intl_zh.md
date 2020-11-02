@@ -139,7 +139,8 @@
 | [setRemoteVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4fca6803d13e4c7ff00dcac2974637e4) | 设置远端视频的自定义渲染回调。  |
 | [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a206b9ce3594aa535b633d4f7c8f97210) | 启用音频自定义采集模式。        |
 | [sendCustomAudioData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30a542b7d540c8699595a22ca3401f29) | 向 SDK 投送自己采集的音频数据。 |
-| [setAudioFrameListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034b6fce9a517267acd874c243efc575) | 设置音频数据回调。              |
+| [setAudioFrameListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034b6fce9a517267acd874c243efc575) | 设置音频数据回调。 |
+| [setEncodedDataProcessingListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2ef4e7b980517544bcd014ae781c5257) | 设置编码后的数据回调。 |
 
 
 ### 自定义消息发送
@@ -180,14 +181,14 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | 设置麦克风的音量大小。                                       |
 | [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | 设置美颜、美白、红润效果级别。                               |
-| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | 设置大眼级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | 设置短脸级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
-| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | 设置动效静音，该接口仅在 [企业版 SDK](https://intl.cloud.tencent.com/document/product/647/34615) 中生效。 |
+| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | 设置大眼级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | 设置瘦脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | 设置 V 脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | 设置下巴拉伸或收缩，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | 设置短脸级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | 设置瘦鼻级别，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | 选择使用哪一款 AI 动效挂件，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
+| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | 设置动效静音，该接口仅在 [企业版 SDK](https://cloud.tencent.com/document/product/647/32689#Enterprise) 中生效。 |
 | [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | 设置指定素材滤镜特效。v7.2 版本弃用，请使用 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) 设置滤镜功能。 |
 | [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | 设置滤镜浓度。v7.2 版本弃用，请使用 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) 设置滤镜浓度功能。 |
 | [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | 设置绿幕背景视频（企业版有效，其它版本设置此参数无效）。v7.2 版本弃用，请使用 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) 设置绿幕功能。 |
@@ -374,12 +375,12 @@
 | [TRTCAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrame) | 音频帧数据。                            |
 | [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | 音量大小。                              |
 | [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | 网络测速结果。                          |
-| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#afe6b433091e7b7219c4e55194855612e) | 云端混流中每一路子画面的位置信息。      |
-| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a6066a5537ad8c1bc6158d43e8a4765db) | 云端混流（转码）配置。                  |
-| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | 旁路推流参数。                          |
-| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | 录音参数。                              |
-| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | 音效。                                  |
-| [TRTCScreenShareParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | 屏幕分享参数。                          |
-| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | 统计数据。                              |
-| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | 远端成员的音视频统计信息。              |
-| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | 自己本地的音视频统计信息。              |
+| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a51966088a4a7382a37bc00fa78ff7385) | 云端混流中每一路子画面的位置信息。 |
+| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a328b2e89495023a61efc342e3284477a) | 云端混流（转码）配置。 |
+| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | 旁路推流参数。 |
+| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | 录音参数。 |
+| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | 音效。 |
+| [TRTCScreenShareParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | 屏幕分享参数。 |
+| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | 统计数据。 |
+| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | 远端成员的音视频统计信息。 |
+| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | 自己本地的音视频统计信息。 |
