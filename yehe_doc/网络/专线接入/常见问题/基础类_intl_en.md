@@ -192,11 +192,11 @@ For more information, see [Product Overview](https://intl.cloud.tencent.com/docu
 
 <span id ="63"></span>
 ### Why is the shared tunnel feature deactivated?
-According to the relevant national laws and regulations as well as the [Notice on Regulating the Internet Network Access Marketplace] (MIIT [2017] No. 32)](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n4704651/c5471876/content.html) issued by Ministry of Industry and Information Technology of People’s Republic of China (MIIT), Tencent Cloud only makes available the shared tunnel to enterprises that have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. If you are eligible, you can submit a ticket to enable this feature.
+According to the relevant national laws, regulations and the [Notice on Regulating the Internet Network Access Marketplace (MIIT [2017] No. 32)](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n4704651/c5471876/content.html), Tencent Cloud only makes available the shared tunnel to enterprises that have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. If you are eligible, you can submit a ticket to enable this feature. The shared tunnel shall be used with a separate direct connect gateway.
 
 <span id ="67"></span>
 ### Can I continue using the shared connection?
-Yes. But if you delete the shared tunnel, you cannot apply for a new one after August 1 2020 00:00:00.
+Yes. But if you delete the shared connection, you cannot apply for a new one after August 1, 2020 00:00:00.
 
 <span id ="68"></span>
 ### Why do I need to choose a legitimate private line service?

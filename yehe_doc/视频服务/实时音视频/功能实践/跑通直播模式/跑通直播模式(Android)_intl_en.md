@@ -16,7 +16,7 @@ If a "user" wants to mic on, the role needs to be switched (switchRole) to "anch
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) to get the sample code related to this document.
 
 
->If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
+>?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
 
 ## Directions
 <span id="step1"> </span>
@@ -33,7 +33,7 @@ dependencies {
 }
 ```
 2. In `defaultConfig`, specify the CPU architecture to be used by the application.
->Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 >
 ```
  defaultConfig {
@@ -106,7 +106,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__andro
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
->In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>!In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
 <span id="step5"> </span>
 ### Step 5. The anchor enables camera preview and mic capture
@@ -230,5 +230,5 @@ public void onExitRoom(int reason) {
 }
 ```
 
-> If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
+>! If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
 

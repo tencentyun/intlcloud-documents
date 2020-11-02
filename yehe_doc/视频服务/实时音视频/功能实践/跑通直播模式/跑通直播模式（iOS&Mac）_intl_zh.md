@@ -18,7 +18,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/7c894fa62fdffe32db8f8d7979d27501.png)
 
->如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)。
+>?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)。
 
 
 ## 操作步骤
@@ -26,9 +26,9 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 ### 步骤1：集成 SDK
 您可以选择以下方式将 **TRTC SDK** 集成到项目中。
 #### 方式一：使用 CocoaPods 集成
-1. 安装 **CocoaPods** ，具体操作请参考 [CocoaPods 官网安装说明](https://guides.cocoapods.org/using/getting-started.html)。
+1. 安装 **CocoaPods** ，具体操作请参见 [CocoaPods 官网安装说明](https://guides.cocoapods.org/using/getting-started.html)。
 2. 打开您当前项目根目录下的`Podfile`文件，添加以下内容：
->如果该目录下没有`Podfile`文件，请先执行`pod init`命令新建文件再添加以下内容。
+>?如果该目录下没有`Podfile`文件，请先执行`pod init`命令新建文件再添加以下内容。
 >
 ```
 target 'Your Project' do
@@ -85,7 +85,7 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 | userSig | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166) 。| eJyrVareCeYrSy1SslI... |
 | roomId | 数字 | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834 |
 
-> TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
+>! TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
 
 
 <span id="step5"> </span>
@@ -121,6 +121,8 @@ trtcCloud.startLocalAudio()
 3. 主播端调用 [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) 可以设置磨皮的级别，一般设置为5即可。
 4. 主播端调用 [setWhitenessLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) 可以设置美白级别，一般设置为5即可。
 5. 由于 iPhone 的摄像头调色默认偏黄，建议调用 [setFilter()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) 为主播增加美白特效，美白特效所对应的滤镜文件的下载地址：[滤镜文件](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/filter/filterPNG.zip)。
+
+
 
 <span id="step7"> </span>
 ### 步骤7：主播端创建房间并开始推流
@@ -214,5 +216,5 @@ func onExitRoom(_ reason: Int) {
 }
 ```
 
-> 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
+>! 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
 
