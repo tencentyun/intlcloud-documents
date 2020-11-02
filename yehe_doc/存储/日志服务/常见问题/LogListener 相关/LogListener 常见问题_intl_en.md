@@ -47,4 +47,4 @@ sed -i '' "s/group_ip *=.*/group_ip = ${group_ip}/" etc/loglistener.conf
 ```shell
  /etc/init.d/loglistenerd restart
 ```
- c. Log in to the [CLS console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) and select **Server Group** on the left sidebar. Locate the server group on which you want to change the server IP, and click **Modify**. In the pop-up window, enter the new IP address, and click **OK**.
+ c. Log in to the [CLS Console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) and select **Server Group** on the left sidebar. Locate the server group on which you want to change the server IP, and click **Modify**. In the pop-up window, enter the new IP address, and click **OK**.

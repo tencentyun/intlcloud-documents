@@ -4,11 +4,13 @@ The log search may fail sometimes. In case of a search failure, use the followin
 
 A log search failure is often caused by an incorrect time range or search statement. To address this issue, first select a larger time range (such as `last 30 minutes`), leave the search bar empty, and search for logs.
 
+
 If logs are found, it indicates that the log search is available. We recommend that you check the search [syntax and rules](https://intl.cloud.tencent.com/document/product/614/30439) or modify the time range.
 
 ## Checking Index Configuration
 
 The index configuration is required for CLS log search. In the top right of the **Search Analysis** page, click **Index Configuration** to enable both full-text index and key-value index. For more information, see [Enabling Index](https://intl.cloud.tencent.com/document/product/614/16981).
+
 
 >! The index configuration takes effect in about 1 minute. The new configuration is only effective for log data written subsequently.
 
@@ -23,6 +25,7 @@ To collect logs from other Tencent Cloud services including TKE and CLB, see [Co
  If you’re using CLS’s LogListener client to collect logs, perform the following steps for troubleshooting:
 1. Check the server group.
 In the top right of the **Search Analysis** page, click **LogListener Collection Configuration** to check the server group from which you want to collect logs.
+   
 >!If the server is exceptional, see [Server Group Exception](https://intl.cloud.tencent.com/document/product/614/17424).	 
 2. Check if LogListener obtains the collection configuration from the CLS server.
      Run the following CLI commands:
