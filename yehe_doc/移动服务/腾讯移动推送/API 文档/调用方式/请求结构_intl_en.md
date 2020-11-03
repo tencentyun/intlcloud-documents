@@ -1,6 +1,6 @@
 ## Service URL
 
-TPNS currently provides four service access points in Guangzhou, Shanghai and Hong Kong, China, and Singapore (Southeast Asia). The data between different service access points is completely isolated. Based on the service access point you selected when creating a product, a service URL is obtained.
+TPNS currently provides four service access points in Guangzhou, Shanghai, Hong Kong (China), and Singapore (Southeast Asia). The data between different service access points is completely isolated. Based on the service access point you selected when creating a product, a service URL is obtained.
 ![](https://main.qcloudimg.com/raw/1292eb91a47983e2c51a4f61f6cb9fae.png)
 
 The table below lists the service URLs currently available:
