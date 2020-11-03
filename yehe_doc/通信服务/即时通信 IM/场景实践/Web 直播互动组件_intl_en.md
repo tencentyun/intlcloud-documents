@@ -130,7 +130,7 @@ Download TWebLive through NPM as follows.
 npm i tweblive --save
 ```
 
-## 4. Platform Support
+## 4. Architecture and Platform Support
 The following figure shows the TWebLive architecture design.
 ![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
 

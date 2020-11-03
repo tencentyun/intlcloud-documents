@@ -2,7 +2,7 @@
 Traditionally, there are three methods of data replication:
 - Async replication: An application initiates an update request. After completing the corresponding operation, the master node (master) responds to the application immediately and replicates data to the slave node (slave) asynchronously.
 - Strong sync replication: An application initiates an update request. After completing the operation, the master replicates data to the slave immediately. After receiving the data, the slave returns a success message to the master. Only after receiving the message from the slave will the master respond to the application. The data is replicated synchronously from the master to the slave.
-- Semi-sync replication: Generally, strong sync replication is employed. When an exception occurs with the data replication from the master to the slave (e.g., the slave becomes unavailable or an exception occurs with the network connection between the two nodes), the replication will be downgraded to async replication. When the replication returns to a normal state, strong sync replication will be restored from async replication.
+- Semi-sync data replication: when an update request is initiated by an application, the primary node replicates data to the secondary node as soon as the update operation is executed on the primary node. After receiving the data and writing into the relay log (which is not necessary to execute), the secondary node returns a message to the primary node. Only after the message is successfully returned can the primary node respond to the application with a request success.
 
 ## Known Issues
 When the master or slave is unavailable, there is a chance of data inconsistency for the above three methods.

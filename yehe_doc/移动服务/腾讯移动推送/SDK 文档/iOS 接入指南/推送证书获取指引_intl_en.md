@@ -3,7 +3,7 @@ This document describes how to generate and upload an iOS message push certifica
 
 
 
-## Step 1. Activate the remote push service on your app
+## Step 1. Activate the remote push service for your application.
 1. Log in to the [Apple Developer](https://developer.apple.com/account/) website and click **Certificates, Identifiers & Profiles** in the right pane or **Certificates, IDS & Profiles** in the left sidebar to access the **Certificates, IDS & Profiles** page.
 ![](https://main.qcloudimg.com/raw/71c3b2db72e1bdcb55c0a68bae15e546.jpg)
 2. Click **+** on the right of Identifiers.
@@ -45,7 +45,7 @@ This document describes how to generate and upload an iOS message push certifica
 >!Do set the password when saving the `P12` file.
 
 
-## Step 3. Upload certificates to the TPNS console
+## Step 3. Upload certificates to the TPNS Console
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Product Management** -> **Configuration Management**.
 
 2. Click **Upload Certificate** in the **Push Certificate** pane to upload Development SSL Certificate and Production SSL Certificate.

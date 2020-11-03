@@ -22,7 +22,7 @@
 如下图所示，企鹅项目下有2个业务，分别为帝企鹅业务和圆企鹅业务。
 - 帝企鹅业务有7台主机，其中3台用于前端，4台用于后端，
 - 圆企鹅业务有6台主机，其中3台为广州主机，3台为深圳主机。
-![](https://main.qcloudimg.com/raw/f8423af7e7984fb9537a97ecbd01dd12.png)
+![](https://main.qcloudimg.com/raw/11dc6fa24684cba6e0d9bb2b8a7461de.png)
 
 
 ## 步骤1：新建 Dashboard 与图表组

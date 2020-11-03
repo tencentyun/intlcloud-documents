@@ -9,10 +9,16 @@ Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analys
 - Click **Regular Generation Settings** to configure the time period for automatically generating health reports.
 ![](https://main.qcloudimg.com/raw/60420696f50da3e8d4b2bd7de0a69065.png)
 
+#### Score details
+In the "Score Details" section, you can view instance score details for database availability, maintainability, performance, and reliability.
+
 ## Viewing/Downloading a Health Report
-- In the task list, the creation time, start and end times, health level, progress, and operations of each health report task are displayed.
-- You can click **View/Download PDF Report** in the **Operation** column to view the health report details and download the report as a PDF file.
-- You can click **Delete** in the **Operation** column to delete the health report task.
+- In the task list, the type, health level, creation time, start and end times, progress, and operations of each health report task are displayed.
+ - The "Type" column displays how the report is generated, including being generated manually, as scheduled, or in an instance inspection.
+ - The "Health Level" column displays the health level obtained through diagnoses, including healthy, sub-healthy, dangerous, and high-risk.
+- You can click **View Report** in the "Operation" column to view the health report details and download the report as a PDF file.
+- You can click **Deduction Details** in the "Operation" column to view the reason for the deduction of health report task scores.
+- You can click **Delete** in the "Operation" column to delete the health report task.
 ![](https://main.qcloudimg.com/raw/e533edfaf0b274b1d28921b323444de3.png)
 
 ## Interpreting a Health Report
