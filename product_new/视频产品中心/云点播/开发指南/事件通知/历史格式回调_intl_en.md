@@ -1,15 +1,15 @@
 
 The format of event notifications in VOD was revised in 2019:
-- After the revision, the callback format for newly registered users is v3.0 (current format).
+- After the revision, the API format for newly registered users is v3.0 (current format).
 - Users registered before the revision may still be using v2.0 (legacy format).
 
-The purpose of this document is to provide a comparison between callback v2.0 and v3.0. Before reading this document, please log in to the console, select **Cloud Products** > **Video on Demand** > **[Callback Settings](https://console.cloud.tencent.com/vod/callback)**, and confirm on this page:
+This document makes a comparison between callbacks in v2.0 and v3.0 API formats. Before reading this document, please log in to the console, select **Products** > **Video on Demand** > **[Callback Configuration](https://console.cloud.tencent.com/vod/callback)**, and confirm on this page:
 - If only **Callback URL** is visible, your normal callback is already in v3.0 by default, and you don't need to read this document.
-- If both **v2.0 Callback URL** and **v3.0 Callback URL** are visible, you are using the normal callback v2.0, **so please continue reading below**.
+- If callback URLs in both **v2.0 API format** and **v3.0 API format** are displayed, that means you are using normal callbacks in v2.0 API format. **Please continue reading contents below**.
 
->If you are still using the normal callback v2.0, you are recommended to gradually migrate the callback to v3.0, as the documentation for callback v2.0 will no longer be updated.
+>!If you are still using the normal callbacks in v2.0 API format, we recommend you gradually change them to callbacks in v3.0 API format. And the documentation for callbacks in v2.0 API format will no longer be updated. 
 
-Below is the **table of comparison between callback v2.0 and v3.0**:
+The comparison between callbacks in v2.0 and v3.0 API formats is as follows:
 
 | Event Notification | v3.0 | v2.0 |
 | -- | -- | -- |
@@ -25,7 +25,7 @@ Below is the **table of comparison between callback v2.0 and v3.0**:
 | Video clipping completion | [Link](https://intl.cloud.tencent.com/document/product/266/33960) | [Link](#ClipComplete) | 
 | Video splicing completion | [Link](https://intl.cloud.tencent.com/document/product/266/33961) | [Link](#ConcatComplete) | 
 
-## Table of v2.0 Callbacks
+## List of AS event notifications in v2.0 API format
 <span id="NewFileUpload"></span>
 ### Video upload completion
 #### Parameter descriptions

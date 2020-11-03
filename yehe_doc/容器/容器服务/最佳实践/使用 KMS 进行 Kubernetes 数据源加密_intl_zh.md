@@ -34,7 +34,7 @@
 ### 创建并获取访问密钥
 >如已创建访问密钥，则请跳过此步骤。
 >
-1. 登录[ 访问管理控制台](https://console.cloud.tencent.com/cam/overview)，选择左侧导航栏中的【访问管理】>【API密钥管理】，进入 “API密钥管理”页面。
+1. 登录[ 访问管理控制台](https://console.cloud.tencent.com/cam/overview)，选择左侧导航栏中的【访问密钥】>【API密钥管理】，进入 “API密钥管理”页面。
 2. 在 “API密钥管理”页面中，单击【新建密钥】并等待创建完成。
 3. 创建完成即可在 “API密钥管理”页面查看该密钥信息，包含 `SecretId`、`SecretKey`。如下图所示：
 ![](https://main.qcloudimg.com/raw/9f705b5a3f7bdc5907ac86573b4c4d04.png)

@@ -16,7 +16,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 - After a transcoding template has been bound, the configured settings will be displayed on the template. You can also use this template to view and [unbind](#untie) granular settings created via APIs.
 - You can bind one playback domain name with **multiple transcoding templates**, or bind one transcoding template with **multiple playback domain names**.
 
-<span id="create"></span>https://cloud.tencent.com/document/product/267/34175#.E6.A0.87.E5.87.86.E8.BD.AC.E7.A0.81
+<span id="create">
 
 ## Creating a Transcoding Template
 <span id="C_trans"></span>

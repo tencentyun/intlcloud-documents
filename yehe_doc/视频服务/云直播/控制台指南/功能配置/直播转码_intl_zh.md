@@ -2,41 +2,39 @@
 
 **创建转码模板有以下两种方式：**
 
-- 通过云直播控制台创建转码模板，具体操作步骤请参见 [创建普通转码模板](#C_trans)、[创建极速高清转码模板](#C_topspeed)、[创建纯音频转码模板](#C_audio)。
+- 通过云直播控制台创建转码模板，具体操作步骤请参见 [创建标准转码模板](#C_trans)、[创建极速高清转码模板](#C_topspeed)、[创建纯音频转码模板](#C_audio)。
 - API 对直播频道创建转码模板，具体参数及示例说明请参见 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/30790)。
 
 
 ## 注意事项
-- 云直播支持普通转码、极速高清转码和纯音频转码，使用前请了解相关计费说明：
-   - 普通转码：[标准转码后付费](https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding)。
+- 云直播支持标准转码、极速高清转码和纯音频转码，使用前请了解相关计费说明：
+   - 标准转码：[标准转码后付费](https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding)。
    - 极速高清转码：[极速高清转码后付费](https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding)。
-- **极速高清转码**相比**普通转码**画质更优、码率更低。通过智能场景识别、动态编码技术，CTU/行/帧三级码率精准控制模型，实现以更低的码率（平均节省30%+）提供更高清的流媒体服务。广泛运用于游戏直播、秀场直播、事件活动直播等场景。
+- **极速高清转码**相比**标准转码**画质更优、码率更低。通过智能场景识别、动态编码技术，CTU/行/帧三级码率精准控制模型，实现以更低的码率（平均节省30%+）提供更高清的流媒体服务。广泛运用于游戏直播、秀场直播、事件活动直播等场景。
 - 模板创建成功后，可与播放域名进行关联。关联成功后约5分钟 - 10分钟生效。
-- 绑定转码模板后，可在对应的直播流 StreamName 后加上 `_转码模板名称` 来生成转码流地址。推流原始分辨率尽可能接近原比率以避免画面拉伸变形。
+- 绑定转码模板后，可在对应的直播流 StreamName 后加上 `_转码模板名称` 来生成转码流地址。若同时设置了宽高或长短边，推流原始分辨率尽可能接近设置值的比例，以避免画面拉伸变形。
 - 绑定转码模板后，会在对应的模板下显示绑定规则，若您是通过 API 创建的更细维度规则，也可以在此进行查看和 [解绑](#untie)。
 - 单个播放域名可关联**多个转码模板**，单个转码模板可关联**多个播放域名**。
 
-<span id="create"></span>https://cloud.tencent.com/document/product/267/34175#.E6.A0.87.E5.87.86.E8.BD.AC.E7.A0.81
-
+<span id="create"></span>
 ## 创建转码模板
 <span id="C_trans"></span>
-
-### 创建普通转码模板
+### 创建标准转码模板
 
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
-2. 单击【创建转码模板】，选择转码类型为『**普通转码**』，进行如下配置：
-	- 基础配置项：包含模板名称、视频码率、画面分辨率等配置项，具体请参见 [普通转码基础配置说明](#C_trans_normal)。
-	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [普通转码高级配置说明](#C_trans_high)。
+2. 单击【创建转码模板】，选择转码类型为『**标准转码**』，进行如下配置：
+	- 基础配置项：包含模板名称、视频码率、画面分辨率等配置项，具体请参见 [标准转码基础配置说明](#C_trans_normal)。
+	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [标准转码高级配置说明](#C_trans_high)。
 3. 填写完成后，单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/beb57f930119e32baf6e58069dac4d28.png)
+![](https://main.qcloudimg.com/raw/3e8d073b0a5ca669cd396daebbef4d56.png)
 
 <table id="C_trans_normal">
-<tr><th width="20%">普通转码基础配置项</th><th>是否必填</th><th>说明</th></tr>
+<tr><th width="20%">标准转码基础配置项</th><th>是否必填</th><th>说明</th></tr>
 <tr>
 <td>转码类型</td>
 <td>是</td>
-<td>可选择转码类型，包括<b>普通转码</b>、极速高清转码、纯音频转码。</td>
+<td>可选择转码类型，包括<b>标准转码</b>、极速高清转码、纯音频转码。</td>
 </tr><tr>
 <td>模板名称</td>
 <td>是</td>
@@ -64,7 +62,7 @@
 
 
 <table id="C_trans_high">
-<tr><th width="20%">普通转码高级配置项 </th><th>是否必填</th><th>说明</th></tr>
+<tr><th width="20%">标准转码高级配置项 </th><th>是否必填</th><th>说明</th></tr>
 <tr>
 <td>编码方式</td>
 <td>否</td>
@@ -95,14 +93,14 @@
 	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [极速高清转码高级配置说明](#C_topspeed_high)。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/23acad8693206093b27c4db391c5ba13.png)
+![](https://main.qcloudimg.com/raw/d2d6701bd59b28bf114cedcab3ec3c9d.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">极速高清转码基础配置项</th><th>是否必填</th><th>说明</th>
 </tr><tr>
 <td>转码类型</td>
 <td>是</td>
-<td>可选择转码类型，包括普通转码、<b>极速高清转码</b>、纯音频转码。</td>
+<td>可选择转码类型，包括标准转码、<b>极速高清转码</b>、纯音频转码。</td>
 </tr><tr>
 <td>模板名称</td>
 <td>是</td>
@@ -152,14 +150,14 @@
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击【创建转码模板】，选择转码类型为『**纯音频转码**』，填写 [配置项](#C_audio_normal)，并单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/c2d579fdc1de28aadbfb94ba734ffea7.png)
+![](https://main.qcloudimg.com/raw/30640d17cb995e331feb583c7a60872b.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">纯音频转码基础配置项</th><th>是否必填</th><th>说明</th>
 </tr><tr>
 <td>转码类型</td>
 <td>是</td>
-<td>可选择转码类型，包括普通转码、极速高清转码、<strong>纯音频转码</strong>。</td>
+<td>可选择转码类型，包括标准转码、极速高清转码、<strong>纯音频转码</strong>。</td>
 </tr><tr>
 <td>模板名称</td>
 <td>是</td>

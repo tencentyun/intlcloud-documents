@@ -4,9 +4,9 @@
 
 - [云服务器计费模式](https://intl.cloud.tencent.com/document/product/213/2180)
 - [云硬盘价格总览](https://intl.cloud.tencent.com/document/product/213/2255)
-- [负载均衡计费说明](https://intl.cloud.tencent.com/zh/document/product/214/8848)
+- [负载均衡计费说明](https://intl.cloud.tencent.com/document/product/214/8848)
 
->! 容器服务基于 Kubernetes 且为声明式服务。如果您已在容器服务中创建负载均衡（CLB）、云硬盘（CBS） 盘等 IaaS 资源，现在不再需要使用 CLB 和 CBS，请在 TKE 控制台中删除对应的 Service 和 PersistentVolumeClaim 对象。如果您只在 CLB 控制台中删除 CLB 或者在 CBS 控制台中删除 CBS，容器服务会重新创建新的 CLB 和 CBS， 并继续扣除相关费用。
+>! 容器服务基于 Kubernetes 且为声明式服务，当不再需要容器服务创建的负载均衡 CLB、云硬盘 CBS 等 IaaS 服务资源时，请勿通过具体服务资源的管理界面删除，应该在容器服务控制台中删除相关服务资源，否则容器服务会重新创建被删除的服务资源，并继续扣除相关费用。例如您已在容器服务中创建负载均衡 CLB 服务资源，当在负载均衡控制台中删除该 CLB 实例时，容器服务会根据声明式 API 重新创建新的 CLB 实例。
 
 ## 弹性容器服务计费说明
 弹性容器服务采用后付费的按量计费模式。按照实际配置的资源及使用时间计算，无需提前支付费用。详情请参见 [弹性集群计费概述](https://intl.cloud.tencent.com/document/product/457/34054)。
