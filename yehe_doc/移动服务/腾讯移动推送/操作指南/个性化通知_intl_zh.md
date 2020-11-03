@@ -25,11 +25,11 @@
 #### 方式1：通过客户端接口绑定：
 
 - iOS SDK 进行用户属性的设置，详情请参见 [用户属性设置](https://intl.cloud.tencent.com/document/product/1024/30727#.E7.94.A8.E6.88.B7.E5.B1.9E.E6.80.A7.E5.8A.9F.E8.83.BD) 文档。
-- Android SDK 进行用户属性的设置，详情请参见 [用户属性设置]() 文档。
+- Android SDK 进行用户属性的设置，详情请参见 [用户属性设置](https://intl.cloud.tencent.com/document/product/1024/38542) 文档。
 
 #### 方式2： 通过 Rest API 绑定：
 
-API 绑定方式可参考 [个性化推送相关 API]() 说明。
+API 绑定方式可参考 [个性化推送相关 API](https://intl.cloud.tencent.com/document/product/1024/38542) 说明。
 
 ## 开始使用
 
