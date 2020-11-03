@@ -8,7 +8,7 @@ This document describes how to access and debug GME APIs for Android.
 
 GME divides into two services: voice chat service and voice messaging and speech-to-text service.
 
-![image](https://main.qcloudimg.com/raw/5765ee98c14ad6c3751492c23816c4bc.png)
+![image](https://main.qcloudimg.com/raw/7a287c9cf60259eaea9469e110927462.png)
 
 ### Important APIs
 
@@ -21,7 +21,7 @@ GME divides into two services: voice chat service and voice messaging and speech
 | EnableSpeaker |   Enables speaker (voice chat)  |
 | StartRecordingWithStreamingRecognition |    Stream records audio and converts to text (voice messaging and speech-to-text)   |
 
-### Notes
+### Important notes
 - Configure your project before using GME; otherwise, the SDK will not take effect.
 - After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 - GME APIs should be called in the same thread.
@@ -123,14 +123,14 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 
 
 
-### Initializing the SDK
+### Initializing SDK
 This API is used to initialize the GME service. We recommend you call it when initializing the application.
 **For more information on how to get the `sdkAppId` parameter, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).**
 **The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be greater than 10,000 and unique in the application (currently, only INT64 is supported).**
 
 > !The SDK must be initialized before a client can enter a voice chat room.
 
- #### Function prototype
+#### Function prototype
 
 ```
 public abstract int Init(String sdkAppId, String openId);
@@ -166,6 +166,7 @@ if(ret != 0){
 ### Triggering event callback
 
 Event callbacks can be triggered by periodically calling the `Poll` API in `update`. The `Poll` API should be called periodically for GME to trigger event callbacks; otherwise, the entire SDK service will run exceptionally.
+You can refer to the `EnginePollHelper.java` file in the demo.
 
 #### Function prototype
 
@@ -258,7 +259,7 @@ To get authentication for voice messaging and speech-to-text, the room ID parame
 #### Function prototype
 
 ```
-AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String openId, String key)
+AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, String identifier, String key)
 
 ```
 
@@ -275,7 +276,7 @@ AuthBuffer public native byte[] genAuthBuffer(int sdkAppId, String roomId, Strin
 
 ```
 import com.tencent.av.sig.AuthBuffer;// Header file
-byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,openId, key);
+byte[] authBuffer = AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), strRoomID,identifier, key);
 ```
 
 
@@ -488,7 +489,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
 
 | Message | Data | Example |
 | ------------------------------------- | :-------------------------------: | ---------------------------------------------- |
-| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result; error_info; new_room_type | {"error_info":"","new_room_type":0,"result":0} |
+| ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE | result;error_info;new_room_type;subEventType | {"error_info":"","new_room_type":0,"subEventType":0,"result":0} |
 
 ### Member status change
 
@@ -515,7 +516,7 @@ public void OnEvent(ITMGContext.ITMG_MAIN_EVENT_TYPE type, Intent data) {
         {
 		// Update member status
 		int nEventID = data.getIntExtra("event_id", 0);
-		String[] openIdList =data.getStringArrayExtra("user_list");
+		String[] identifierList =data.getStringArrayExtra("user_list");
 		 switch (nEventID)
  		    {
  		    case ITMG_EVENT_ID_USER_ENTER:
@@ -556,8 +557,9 @@ The message for quality control event triggered once every two seconds after roo
 
 ## Voice Chat Audio APIs
 
-![Image](https://main.qcloudimg.com/raw/446f9a48bc4e8d4da0190c32f9bf3c2e.png)
+![Image](https://main.qcloudimg.com/raw/863e0c165c7d43f9db59066befaac1e4.png)
 
+### Notes on voice chat audio connection
 
 The voice chat APIs can only be called after SDK initialization and room entry.
 When Enable/Disable Mic/Speaker is clicked on the UI, the following practices are recommended:
@@ -566,6 +568,8 @@ When Enable/Disable Mic/Speaker is clicked on the UI, the following practices ar
 - For other mobile applications (such as social networking applications), enabling/disabling a capturing device will restart both capturing and playback devices. If the application is playing back background music, it will also be interrupted. Playback won't be interrupted if the mic is enabled/disabled through control of upstreaming/downstreaming. **Calling method: call `EnableAudioCaptureDevice(true)` and `EnableAudioPlayDevice(true)` once after room entry, and call `EnableAudioSend/Recv` to send/receive audio streams when Enable/Disable Mic is clicked.**
 - For more information on how to release only a capturing or playback device, please see the `EnableAudioCaptureDevice` and `EnableAudioPlayDevice`.
 - Call the `pause` API to pause the audio engine and call the `resume` API to resume the audio engine.
+
+### Voice chat audio APIs
 
 | API | Description |
 | --------------------------- | :----------------------------: |
@@ -713,7 +717,7 @@ bool IsAudioSend = ITMGContext.GetInstance(this).GetAudioCtrl().IsAudioSendEnabl
 
 ### Getting real-time mic volume level
 
-This API is used to get the real-time mic volume level. An int-type value in the range of 1–100 will be returned. We recommend you call this API once every 20 ms.
+This API is used to get the real-time mic volume level. An int-type value in the range of 0–100 will be returned. We recommend you call this API once every 20 ms.
 
 *This API is not applicable to the voice messaging service.*
 
@@ -731,7 +735,8 @@ int micLevel = ITMGContext.GetInstance(this).GetAudioCtrl().GetMicLevel();
 
 ### Getting real-time audio upstreaming volume level
 
-This API is used to get the local real-time audio upstreaming volume level. An int-type value in the range of 1–100 will be returned.
+This API is used to get the local real-time audio upstreaming volume level. An int-type value in the range of 0–100 will be returned.
+*This API is not applicable to the voice messaging service.*
 
 #### Function prototype  
 
@@ -749,6 +754,7 @@ int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetSendStreamLevel();
 
 This API is used to set the mic volume level. The corresponding parameter is `volume`, which is equivalent to attenuating or gaining the captured sound. 0 indicates that the audio is mute, while 100 indicates that the volume level remains unchanged. The default value is 100.
 
+*This API is not applicable to the voice messaging service.*
 #### Function prototype  
 
 ```
@@ -768,6 +774,7 @@ ITMGContext.GetInstance(this).GetAudioCtrl().SetMicVolume(volume);
 ### Getting mic software volume level
 
 This API is used to get the mic volume level. An int-type value will be returned. 101 indicates that the `SetMicVolume` API has not been called.
+*This API is not applicable to the voice messaging service.*
 
 #### Function prototype  
 
@@ -935,7 +942,6 @@ public abstract int GetRecvStreamLevel(String openId);
 
 ```
 int Level = ITMGContext.GetInstance(this).GetAudioCtrl().GetRecvStreamLevel(openId);
-
 ```
 
 ### Setting speaker volume level
@@ -958,7 +964,6 @@ public abstract int SetSpeakerVolume(int volume);
 ```
 int speVol = (int)(value * 100);
 ITMGContext.GetInstance(this).GetAudioCtrl().SetSpeakerVolume(volume);
-
 ```
 
 ### Getting speaker volume level
@@ -976,7 +981,6 @@ public abstract int GetSpeakerVolume();
 
 ```
 ITMGContext.GetInstance(this).GetAudioCtrl().GetSpeakerVolume();
-
 ```
 
 ### Enabling in-ear monitoring
@@ -1075,7 +1079,7 @@ public abstract int ApplyPTTAuthbuffer(byte[] authBuffer);
 #### Sample code  
 
 ```
-byte[] authBuffer =  AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), "0", openId, key);
+byte[] authBuffer =  AuthBuffer.getInstance().genAuthBuffer(Integer.parseInt(sdkAppId), "0", identifier, key);
 ITMGContext.GetInstance(this).GetPTT().ApplyPTTAuthbuffer(authBuffer);
 ```
 
@@ -1119,9 +1123,9 @@ The callback function `OnEvent` will be called after the streaming speech recogn
 | file_id   | Backend URL address of recording file, which will be retained for 90 days |
 
 | Error Code | Description | Suggested Solution |
-| ------------- |:-------------:|:-------------:|
-|32775	| Streaming speech-to-text conversion failed, but recording succeeded.	| Call the `UploadRecordedFile` API to upload the recording file and then call the `SpeechToText` API to perform speech-to-text conversion.
-|32777	| Streaming speech-to-text conversion failed, but recording and upload succeeded.	| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion.
+| ------------- |-------------|-------------|
+|32775	| Streaming speech-to-text conversion failed, but recording succeeded.	| Call the `UploadRecordedFile` API to upload the recording file and then call the `SpeechToText` API to perform speech-to-text conversion.|
+|32777	| Streaming speech-to-text conversion failed, but recording and upload succeeded.	| The message returned contains a backend URL after successful upload. Call the `SpeechToText` API to perform speech-to-text conversion.|
 |32786 | Streaming speech-to-text conversion failed. | During streaming recording, wait for the execution result of the streaming recording API to return. |
 
 #### Sample code  
@@ -1304,7 +1308,6 @@ public abstract int CancelRecording();
 
 ```
 ITMGContext.GetInstance(this).GetPTT().CancelRecording();
-
 ```
 
 ### Getting the real-time mic volume level of voice messaging
@@ -1328,6 +1331,7 @@ ITMGContext.GetInstance(this).GetPTT().GetMicLevel();
 ### Setting the recording volume level of voice messaging
 
 This API is used to set the recording volume level of voice messaging. Value range: 0–100.
+*This API is different from the voice chat API and is in `ITMGPTT.java`.*
 
 #### Function prototype  
 
@@ -1339,12 +1343,12 @@ public abstract int SetMicVolume(int volume);
 
 ```
 ITMGContext.GetInstance(this).GetPTT().SetMicVolume(100);
-
 ```
 
 ### Getting the recording volume level of voice messaging
 
 This API is used to get the recording volume level of voice messaging. An int-type value will be returned. Value range: 0–100.
+*This API is different from the voice chat API and is in `ITMGPTT.java`.*
 
 #### Function prototype  
 
@@ -1361,6 +1365,7 @@ ITMGContext.GetInstance(this).GetPTT().GetMicVolume();
 ### Getting the real-time speaker volume level of voice messaging
 
 This API is used to get the real-time speaker volume level. An int-type value will be returned. Value range: 0–100.
+*This API is different from the voice chat API and is in `ITMGPTT.java`.*
 
 #### Function prototype  
 
@@ -1377,6 +1382,7 @@ ITMGContext.GetInstance(this).GetPTT().GetSpeakerLevel();
 ### Setting the playback volume level of voice messaging
 
 This API is used to set the playback volume level of voice messaging. Value range: 0–100.
+*This API is different from the voice chat API and is in `ITMGPTT.java`.*
 
 #### Function prototype  
 
@@ -1393,6 +1399,7 @@ ITMGContext.GetInstance(this).GetPTT().SetSpeakerVolume(100);
 ### Getting the playback volume level of voice messaging
 
 This API is used to get the playback volume level of voice messaging. An int-type value will be returned. Value range: 0–100.
+*This API is different from the voice chat API and is in `ITMGPTT.java`.*
 
 #### Function prototype  
 
@@ -1493,7 +1500,7 @@ public abstract int GetFileSize(String filePath);
 
 | Parameter | Type | Description |
 | -------- | :----: | -------------- |
-| filePath | String | Path of audio file |
+| filePath | String | Path of audio file, which is a local path |
 
 #### Sample code  
 
@@ -1514,7 +1521,7 @@ public abstract int GetVoiceFileDuration(String filePath);
 
 | Parameter | Type | Description |
 | -------- | :----: | -------------- |
-| filePath | String | Path of audio file |
+| filePath | String | Path of audio file, which is a local path |
 
 #### Sample code  
 
@@ -1537,7 +1544,7 @@ public abstract int UploadRecordedFile(String filePath);
 
 | Parameter | Type | Description |
 | -------- | :----: | -------------- |
-| filePath | String | Path of uploaded audio file |
+| filePath | String | Path of uploaded audio file, which is a local path |
 
 #### Sample code  
 
@@ -1592,7 +1599,6 @@ public abstract int DownloadRecordedFile(String fileID, String filePath);
 
 ```
 ITMGContext.GetInstance(this).GetPTT().DownloadRecordedFile(url,path);
-
 ```
 
 ### Callback for audio file download completion
@@ -1648,7 +1654,6 @@ public abstract int SpeechToText(String fileID);
 
 ```
 ITMGContext.GetInstance(this).GetPTT().SpeechToText(fileID);
-
 ```
 
 
@@ -1806,7 +1811,6 @@ public abstract int SetLogPath(String logDir);
 
 ```
 ITMGContext.GetInstance(this).SetLogPath(path);
-
 ```
 
 ### Getting diagnostic messages
@@ -1827,7 +1831,11 @@ ITMGContext.GetInstance(this).GetRoom().GetQualityTips();
 
 ### Blocking audio data
 
-This API is used to add an ID to the audio data blocklist. The returned value of 0 indicates that the API is successfully called. It will become invalid after room exit.
+This API is used to add an ID to the audio data blocklist. This operation blocks audio from someone and only applies to the local device. A returned value of `0` indicates the call is successful. Assume that users A, B, and C are all speaking using their mic in a room:
+- If A blocklists C, A can only hear B;
+- If B blocklists neither A nor C, B can hear both of them;
+- If C blocklists neither A nor B, C can hear both of them.
+
 
 #### Function prototype  
 
@@ -1869,9 +1877,9 @@ ITMGContext.GetInstance(this).GetAudioCtrl().RemoveAudioBlackList(openId);
 
 ### Message list
 
-| Message | Description   
-| ------------- |:-------------:|
-|ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    		| Indicates that a member enters an audio room 		|
+| Message | Description |
+| ------- | ----------- |
+|ITMG_MAIN_EVENT_TYPE_ENTER_ROOM    | Indicates that a member enters an audio room |
 |ITMG_MAIN_EVENT_TYPE_EXIT_ROOM    		| Indicates that a member exits an audio room 		|
 |ITMG_MAIN_EVENT_TYPE_ROOM_DISCONNECT		| Indicates that a room is disconnected for network or other reasons 	|
 |ITMG_MAIN_EVENT_TYPE_CHANGE_ROOM_TYPE		| Indicates a room type change event 		|
