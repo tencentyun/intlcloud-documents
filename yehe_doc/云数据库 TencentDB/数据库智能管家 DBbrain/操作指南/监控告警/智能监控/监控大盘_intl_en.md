@@ -36,8 +36,8 @@ The custom monitoring dashboard in DBbrain currently supports the following 70 m
 | cpu_use_rate                     | CPU                       |
 | memory_use_rate                  | Memory                      |
 | memory_use                       | Memory usage                  |
-| volume_rate                      | Disk                      |
-| real_capacity                    | Data space                  |
+| volume_rate | Disk utilization |
+| real_capacity | Used disk space |
 | capacity                         | Occupied disk space              |
 | bytes_sent                       | Outbound traffic                  |
 | bytes_received                   | Inbound traffic                  |
