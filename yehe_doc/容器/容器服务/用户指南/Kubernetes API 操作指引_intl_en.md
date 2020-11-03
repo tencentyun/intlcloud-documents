@@ -29,7 +29,7 @@ Run the `ls` command. Then, you can find the generated `client-cert.pem` and `cl
 ![](https://main.qcloudimg.com/raw/8d0741a5db89999eb23a757c6a3dda46.png)
 
 
-### Calling Kubernetes APIs by using cURL commands
+### Calling Kubernetes APIs by using CURL commands
 1. Run the following command to view all namespaces in the current cluster:
 ```
 curl --cert client-cert.pem --key client-key.pem -k $APISERVER/api/v1/namespaces
@@ -138,8 +138,9 @@ curl --cert client-cert.pem --key client-key.pem -k $APISERVER/api/v1/namespaces
 If the following error occurs when you run the `curl` command, you must grant cluster [access permissions](https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/).
 ![](https://main.qcloudimg.com/raw/c50eca5e28b0cdbb4cf00a378a773205.png)
 You can perform authorization by using the following two methods:
-- Method 1 (recommended): perform RBAC authorization in the TKE console. For more information, see **Authorizing by using preset identities** and **Authorizing by using custom policies**.
+- Method 1 (recommended): perform RBAC authorization in the TKE console. For more information, see [Authorizing by using preset identities](https://intl.cloud.tencent.com/document/product/457/37368) and [Authorizing by using custom policies](https://intl.cloud.tencent.com/document/product/457/37369).
 - Method 2: Run the following command to perform authorization. We recommend that you not grant an account the cluster-admin permissions in a production cluster.
+
 ```
 kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
 ```
