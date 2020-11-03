@@ -6,7 +6,7 @@
 ## 常见场景
 
 创建推送任务时，在推送文案带上个性化参数，终端设备将显示带有不同用户属性的推送消息，如下图中「叮当猫」是某个用户的账号昵称，相较于千篇一律的统一推送文案，用户点击意愿会更加强烈。
-<img src="https://main.qcloudimg.com/raw/7e49d269531e0714996b7fda40f8ba1f.jpg" width="60%"></img>
+
 
 
 ## 使用条件
@@ -16,7 +16,7 @@
 1. 进入 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 2. 前往【工具箱】>【用户属性管理】，单击【新建用户属性】。
 3. 在【新建用户属性】对话框中输入属性名称和属性描述后，单击【确定】。创建完成后，可在用户属性管理页查看所有的属性创建时间、属性名称、属性描述、绑定的设备数；并且可随时编辑和删除属性。
-![](https://main.qcloudimg.com/raw/5fd62fb7e0026a292040a26f3d6cc16a.png)
+![](https://main.qcloudimg.com/raw/c7693a0b6775c79cc8922cc5240d84d4.png)
 
 ### 绑定用户属性
 
@@ -36,12 +36,12 @@ API 绑定方式可参考 [个性化推送相关 API](https://intl.cloud.tencent
 ### 控制台使用
 
 1. 前往【推送管理】>【推送任务】页面，单击新建推送。
-![](https://main.qcloudimg.com/raw/a97f47ae0bc61d5ca67a8c235942f8cc.png)
+![](https://main.qcloudimg.com/raw/f6a351c7a33b8cbd10b785660dda61c9.png)
 2. 在通知标题或通知内容文本框右侧选择插入用户属性。
 > ?单条推送文案每次最多可插入5个属性。
-> ![](https://main.qcloudimg.com/raw/fcae716dba0f098efb91a72e8e2a466a.png)
+> ![](https://main.qcloudimg.com/raw/1b0c19bb25cf7075fc2fb0e4528737c2.png)
 3. 当用户属性无法匹配时，可设置向用户发送默认展示的标题或内容。
-![](https://main.qcloudimg.com/raw/93833c98f826b90743debf8066da0a0e.png)
+![](https://main.qcloudimg.com/raw/cf33ae6b1b0ce97df310c04b28361f2a.png)
 4. 插入完成后，单击【预览】，确认信息无误后单击【确认推送】即可完成带用户属性的个性化推送。
 
 ### Rest API 使用
