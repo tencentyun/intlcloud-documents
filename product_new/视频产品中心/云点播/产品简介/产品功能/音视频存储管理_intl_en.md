@@ -10,7 +10,7 @@ Supported formats for upload include:
 * Audio: MP3, M4A, FLAC, OGG, and WAV.
 
 ### Audio/video storage
-VOD features redundant storage of video files across architectures and devices to support remote disaster recovery and isolation of resources. It achieves 99.9% persistence for file objects, which is higher than that on traditional architectures. In addition, it supports cold/hot backup for video file storage, offering more choices to meet your diverse storage needs.
+VOD provides redundant storage of data across architectures and devices. It features an object persistence of 99.999999999%, higher than the performance of traditional architectures. It also supports cold/hot backup for video file storage to meet your diverse storage needs.
 
 ### Media asset management
 VOD allows you to manage video files through the console or API by performing such operations as categorization and tagging. All the information can be exported for viewing.
