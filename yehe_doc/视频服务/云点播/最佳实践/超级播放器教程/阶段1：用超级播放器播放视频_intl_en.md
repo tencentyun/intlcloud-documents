@@ -8,7 +8,7 @@ Before using VOD, please make sure that you have met the following prerequisites
 You need to activate VOD in the following steps:
 
 1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
-2. Purchase the VOD service.
+2. For more information about VOD service billing, please see [Billing Overview] (https://intl.cloud.tencent.com/document/product/266/2838).
 3. Select **Cloud Products** > **Video Services** > **[Video on Demand](https://console.cloud.tencent.com/vod)** to enter the VOD Console.
 
 At this point, you have activated VOD.
@@ -62,3 +62,7 @@ You can use the superplayer demos for [web](https://imgcache.qq.com/open/qcloud/
 ## Summary
 
 At this point, you have understood how to upload a video to VOD, process it, and play it back in the superplayer.
+
+- If you want to play back a video after the key hotlink protection is enabled, please see [Stage 2. Play back a video with hotlink protection enabled](https://intl.cloud.tencent.com/document/product/266/38292).
+- If you want to customize the content and style of a playback video, please see [Stage 3. Customize playback content and style](https://intl.cloud.tencent.com/document/product/266/38293).
+- If you want to encrypt a video and then play back it, please see [Stage 4. Play back an encrypted video](https://intl.cloud.tencent.com/document/product/266/38294).
