@@ -11,7 +11,7 @@ In the [VOD Console](https://console.cloud.tencent.com/vod/overview), select **D
 
 
 - Details of storage statistics are graphically displayed, recording the trend in your storage capacity usage. You can query the statistics for today, yesterday, last 7 days, last 30 days, and any time period within the last 30 days.
-- The data overview metrics are the **current total files** and **currently used storage capacity (in MB)**.
+- The data overview metrics are the **current total files** and **currently used storage capacity (Unit: B)**.
 - If the queried time period is 1 day, statistics at a granularity of 20 minutes will be displayed; and if the queried time period is multiple days, the statistics trend will be displayed.
 - The storage statistics displayed can be delayed by approximately 30 minutes.
 

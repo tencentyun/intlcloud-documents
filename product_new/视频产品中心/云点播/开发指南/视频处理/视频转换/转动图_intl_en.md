@@ -1,5 +1,5 @@
 Animated image generating is an offline task that converts a video to an animated image such as in GIF or WEBP format. An animated image is a seamless cycle of continuous frames, which can deliver an animation effect with a small file size.
-
+>? When animated image generating is supported, you can specify the start time and end time in the original video, and then the segment will be captured to generate an animated image. 
 <span id = "zdt"></span>
 ## Animated Image Generating Template
 

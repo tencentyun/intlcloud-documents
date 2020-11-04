@@ -21,7 +21,7 @@ The following table describes the software required for installing Cloudbase-Ini
 ![](https://main.qcloudimg.com/raw/3249309f71fccaf73feeaa5bb55301c3.png)
 3. Click **Next**.
 4. Check **I accept the terms in the License Agreement** and click **Next** for the following two operations.
-5. On the **Configuration options** page, set **Serial port for logging** to **COM1** and click **Next**, as shown below:
+5. On the **Configuration options** page, set **Serial port for logging** to **COM1**, select **Run Cloudbase-Init service as LocalSystem** and click **Next**, as shown below:
 ![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. Click **Install**.
 7. When the installation is completed, click **Finish** to close the Cloudbase-Init setup wizard, as shown below:
