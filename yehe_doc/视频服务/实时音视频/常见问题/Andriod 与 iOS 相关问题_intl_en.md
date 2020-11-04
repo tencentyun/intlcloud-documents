@@ -30,23 +30,23 @@ Yes. You can select the current project, set **Background Modes** under **Capabi
 You can use [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28) to listen on room exit events, and this API will trigger callbacks only when all users of `VideoCall` exit the room or when anchors (rather than viewers) in `LIVE` mode exit the room. 
 
 <span id="que11"></span>
-### How do I make a video call when the phone is locked?
-For more information on how to implement offline answering, please see [Android](https://intl.cloud.tencent.com/document/product/647/36068)
+### How do I make a video call when the phone screen is locked?
+For more information on how to implement offline answering, please see [Answer a call offline](https://intl.cloud.tencent.com/document/product/647/36068)
 
 <span id="que12"></span>
 ### Does TRTC support interconnection between Android and web?
 Yes. To make a call, use the same [SDKAppID](https://console.cloud.tencent.com/trtc/app) and enter the same room. For more information, please see the following demos:
-- [Android](https://intl.cloud.tencent.com/document/product/647/35084)
-- [Desktop Browser](https://intl.cloud.tencent.com/document/product/647/35607)
+- [Demo Quick Start (Android)](https://intl.cloud.tencent.com/document/product/647/35084)
+- [Demo Quick Start (Desktop Browse)](https://intl.cloud.tencent.com/document/product/647/35607)
 
 <span id="que13"></span>
 ### Can both anchors and viewers actively initiate co-anchoring during live streaming?
-Yes. The initiation logic is the same for both anchors and viewers. For more information, please see [Android](https://intl.cloud.tencent.com/document/product/647/35108).
+Yes. Both anchors and viewers can initiate a co-anchoring request with the same logic. For more information, please see [Demo Quick Start (Android)](https://intl.cloud.tencent.com/document/product/647/35108).
 
 <span id="que14"></span>
 ### During video conferencing, can mobile users and web users enter the same room?
-Yes, but it should be ensured that the same [SDKAppID](https://console.cloud.tencent.com/trtc/app) and room ID values are used while the user ID values are different.
+Yes, make sure the [SDKAppID](https://console.cloud.tencent.com/trtc/app) and room ID are the same while the user ID are different.
 
 <span id="que15"></span>
-### Can N TRTC objects be created on the same page to log in to N rooms through N UserID values?
-Yes. Starting from [v7.6](https://intl.cloud.tencent.com/document/product/647/34615), the same user can enter multiple rooms.
+### Can I create N TRTC objects in the same page and log in to N rooms with N User IDs?
+Yes. Starting from [v7.6](https://intl.cloud.tencent.com/document/product/647/34615), one user can enter multiple rooms.

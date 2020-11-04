@@ -29,7 +29,7 @@ In live streaming scenarios (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`)
 <span id="que7"></span>
 ### What is the "role" concept in TRTC? 
 Anchors and viewers can be set only in live streaming scenarios. The anchor role `TRTCRoleAnchor` has audio/video upstreaming/downstreaming permissions, and there can be up to 30 concurrent anchors. The viewer role `TRTCRoleAudience` has only the audio/video downstreaming permissions, and there can be up to 100,000 concurrent viewers.
->? 20 users can simultaneously enable the camera or mic on web.
+>? Up to 20 users can simultaneously enable the camera or mic on web.
 
 
 <span id="que8"></span>
@@ -53,10 +53,10 @@ For more information, please see [Differences Between Editions](https://intl.clo
 <span id="que11"></span>
 ### Does TRTC support live streaming co-anchoring?
 Yes. For detailed directions, please see:
-- [Live Streaming (iOS and macOS)](https://intl.cloud.tencent.com/document/product/647/35107)
-- [Live Streaming (Android)](https://intl.cloud.tencent.com/document/product/647/35108)
+- [Live Streaming Mode (iOS and macOS)](https://intl.cloud.tencent.com/document/product/647/35107)
+- [Live Streaming Mode (Android)](https://intl.cloud.tencent.com/document/product/647/35108)
 - [Live Streaming (Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
-- [Live Streaming (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35110)
+- [Live Streaming (Web)](https://intl.cloud.tencent.com/document/product/647/35110)
 
 
 <span id="que12"></span>
@@ -84,7 +84,7 @@ No.
 
 <span id="que16"></span>
 ### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
-To enable relayed live streaming, according to the requirements of applicable Chinese authorities, the playback domain name for Mainland China needs an ICP filing before it can be used. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+To enable relayed live streaming, according to the requirements of applicable Chinese authorities, the playback domain name in Mainland China needs an ICP filing before it can be used. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
 
 <span id="que17"></span>
 ### How long is the average delay in TRTC?
@@ -161,7 +161,7 @@ TRTC supports four room entry modes, among which video call (VideoCall) and audi
 - In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 30 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video interview, video customer service, and online werewolf.
 - TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for such application scenarios as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
 
->? 20 users can simultaneously enable the camera or mic on web.
+>? Up to 20 users can simultaneously enable the camera or mic on web.
 
 <span id="que33"></span>
 ### Does TRTC support hands-free mode during audio/video call?
@@ -212,7 +212,7 @@ Yes. Currently, TXLivePlayer has been embedded in the TRTC SDK. If you need more
 - In call mode, a single room can sustain up to 300 concurrent online users, and up to 30 of them can simultaneously enable the camera or mic.
 - In live streaming mode, a single room can sustain up to 100,000 concurrent online viewers, and up to 30 of them can simultaneously enable the camera or mic as anchors.
 
->? 20 users can simultaneously enable the camera or mic on web.
+>? Up to 20 users can simultaneously enable the camera or mic on web.
 
 <span id="que44"></span>
 ### How does TRTC implement live streaming applications?
