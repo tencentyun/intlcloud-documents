@@ -76,7 +76,7 @@
 <td>v1.6 is released</td>
 <td><ul style="margin:0;">
 <li >The subapplication feature can be enabled in the console now.
-<li >The reminder for primary distribution domain name disablement is updated.
+<li >The reminder for default  distribution domain name disablement is updated.
 <li >The error where files could not be categorized during upload is fixed.
 <li >The VOD Console is connected to CAM.
 <li >VOD is connected to the smart customer service.</td>
@@ -245,7 +245,7 @@
 <td>The video playback acceleration feature is launched</td>
 <td>Based on Tencent Cloud's global CDN cache nodes and deeply optimized for audio/video playback scenarios, the video playback acceleration feature utilizes Tencent Cloud's proprietary player SDK to deliver a stable, smooth, and clear playback experience.</td>
  <td>August 2017</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33898">Primary Distribution URL Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/35768">Default Distribution Configuration</a></td>
 </tr>
 <tr>
 <td>The cloud video storage feature is launched</td>
