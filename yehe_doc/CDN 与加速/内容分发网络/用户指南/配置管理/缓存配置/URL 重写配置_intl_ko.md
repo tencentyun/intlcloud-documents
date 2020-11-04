@@ -11,7 +11,7 @@
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 뒤, 왼쪽 메뉴에서 [Domain Management]를 선택하고 도메인 작업 열의 [Manage]를 클릭하여 도메인 설정 페이지로 이동하면 [캐시 설정] 탭에서 [URL 재작성 설정]을 확인할 수 있습니다.
 
 URL 재작성 설정은 비활성화 상태로 기본 설정되어 있습니다.
-![](https://main.qcloudimg.com/raw/bab277199a75d2a85d7dbcc8be4831e2.png)
+![](https://main.qcloudimg.com/raw/ef62e52b60ebe50e57771b30709567d7.png)
 
 
 ### 신규 규칙
@@ -26,13 +26,13 @@ URL 재작성 설정은 비활성화 상태로 기본 설정되어 있습니다.
 + 재작성할 URL 및 타깃 URL은 1024자를 초과할 수 없습니다.
 
 [신규 재작성 규칙]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/da5d0fed01608bffa282f103926dfc9e.png)
+![](https://main.qcloudimg.com/raw/d10ef7d7f097bcaf4021b13659407adc.png)
 규칙을 추가해도 전체 설정이 여전히 비활성화 상태로 되어 있으므로, 현재 사용 중인 네트워크 서비스에 바로 적용되지 않습니다.
 
 >?비활성화 상태에서도 하단의 설정을 변경할 수는 있지만, 현재 사용 중인 네트워크에는 배포되지 않습니다. 이 스위치를 활성화해야만 사용 중인 네트워크에 설정을 전달합니다.
 
 스위치를 클릭해 설정을 활성화하고, 추가한 재작성 규칙을 현재 사용 중인 네트워크에 배포할 수 있습니다.
-![](https://main.qcloudimg.com/raw/cad70a7a6860e9ad5b3ea77546896a5d.png)
+![](https://main.qcloudimg.com/raw/c94b0d99ffc52b02bb3040551ec96637.png)
 
 요청한 URL이 현재 설정한 규칙에 매칭될 경우, 해당 요청은 302 리디렉션에 의해 해당되는 타깃 URL에 리디렉션됩니다.
 
@@ -51,7 +51,7 @@ URL 재작성 설정은 비활성화 상태로 기본 설정되어 있습니다.
 ## 설정 예시
 
 가속 도메인 `www.test.com`의 **URL 재작성 설정**이 아래와 같을 경우,
-![](https://main.qcloudimg.com/raw/6ac463355c744baa45dc77cfbe051d5d.png)
+![](https://main.qcloudimg.com/raw/e56fed9a5609dd3533d4b18a970f072d.png)
 
 실제 액세스 상황은 다음과 같습니다.
 

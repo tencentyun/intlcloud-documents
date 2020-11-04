@@ -5,7 +5,7 @@
 ## 설정 가이드
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인하여 메뉴에서 [Domain Management]를 선택하고 도메인 오른쪽의 [Manage]를 클릭하면, 도메인 설정 페이지의 세 번째 메뉴인 [캐시 설정]의 최하단에서 [대소문자를 구분하지 않는 캐시]를 확인할 수 있습니다. 해당 항목은 비활성화 상태로 기본 설정되어 있습니다.
-![](https://main.qcloudimg.com/raw/b18dd80383c09c1b95170811426a3af3.png)
+![](https://main.qcloudimg.com/raw/95ccb4da3a7589d085658e3965572dee.png)
 
 ## 설정 예시
 
@@ -15,12 +15,10 @@ CDN 노드가 리소스를 캐싱할 때 Key-Value 형식에 따라 인덱스를
 - 사용자 A의 액세스 리소스: `http://cloud.tencent.com/abc.JPG`
 - 사용자 B의 액세스 리소스: `http://cloud.tencent.com/abc.jpg`
   
-
 사용자 A/B가 모두 CDN 노드 X에 액세스하며, 노드 X에는 상기 두 리소스의 캐시가 없다고 가정할 때, 대소문자를 구분하지 않는 캐시는 비활성화 상태로 기본 설정되어 있으므로, 액세스 과정은 다음과 같습니다.
 - 사용자 A가 액세스한 원본 서버가 `http://cloud.tencent.com/abc.JPG` 이미지를 가져와 CDN 노드 X에 캐싱하며, 이에 대응하는 캐시 키는 `http://cloud.tencent.com/abc.JPG`가 됩니다.
 - 사용자 B가 액세스한 원본 서버가 `http://cloud.tencent.com/abc.jpg` 이미지를 가져와 CDN 노드 X에 캐싱하며, 이에 대응하는 캐시 키는 `http://cloud.tencent.com/abc.jpg`가 됩니다.
   
-
 대소문자를 구분하지 않는 캐시 설정을 활성화하면 상기 시나리오의 액세스 과정은 다음과 같습니다.
 - 사용자 A가 액세스한 원본 서버가 `http://cloud.tencent.com/abc.JPG` 이미지를 가져와 CDN 노드 X에 캐싱하며, 이에 대응하는 캐시 키는 `http://cloud.tencent.com/abc.jpg`가 됩니다.
 - 사용자 B의 액세스는 CDN 노드 X에서 리소스에 히트하여, 필요한 콘텐츠를 바로 가져옵니다.
