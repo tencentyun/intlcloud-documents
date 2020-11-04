@@ -217,7 +217,7 @@ Height_pixel = 192 * 240 / 320 = 144
 <span id="W_control"></span>
 
 #### 直播控制台
-1. 进入【功能模板】>【[水印配置](https://console.cloud.tencent.com/live/config/watermark)】添加水印配置模板，设置水印相关参数，并生成一个对应的水印模板 ID。具体操作请参见 [水印模板配置](https://intl.cloud.tencent.com/zh/document/product/267/31073)。
+1. 进入【功能模板】>【[水印配置](https://console.cloud.tencent.com/live/config/watermark)】添加水印配置模板，设置水印相关参数，并生成一个对应的水印模板 ID。具体操作请参见 [水印模板配置](https://intl.cloud.tencent.com/document/product/267/31073)。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)对您需操作的推流域名，单击【管理】>【模板配置】，将此域名与水印模板进行关联。具体操作请参见 [水印配置](https://intl.cloud.tencent.com/document/product/267/31064)。
 <span id="W_api"></span>
 #### API 调用
