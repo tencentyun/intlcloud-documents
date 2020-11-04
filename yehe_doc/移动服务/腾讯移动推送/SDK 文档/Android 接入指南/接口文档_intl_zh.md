@@ -85,9 +85,9 @@ void appendAccount(Context context, final String account)
 ```
 
 >?
-- 每个账号最多支持绑定100个 token。
-- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
-- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
+>- 每个账号最多支持绑定100个 token。
+>- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
+>- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 
 
 
@@ -252,8 +252,8 @@ XGPushManager.unregisterPush(this);
 可通过重载 XGPushBaseReceiver的onUnregisterResult 方法获取。
 
 > ?
-- 反注册操作切勿过于频繁，可能会造成后台同步延时。
-- 切换账号无需反注册，多次注册自动会以最后一次为准。
+>- 反注册操作切勿过于频繁，可能会造成后台同步延时。
+>- 切换账号无需反注册，多次注册自动会以最后一次为准。
 
 #### 示例代码
 
@@ -284,8 +284,8 @@ public void onUnregisterResult(Context context, int errorCode) {
 指的是在设备的通知栏展示的内容，由移动推送 TPNS  SDK 完成所有的操作，App 可以监听通知被打开的行为，即在前台下发的通知，无需 App 做任何处理，默认会展示在通知栏。
 
 > ?
-- 成功注册移动推送 TPNS 服务后，通常不需要任何设置便可下发通知。
-- 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
+>- 成功注册移动推送 TPNS 服务后，通常不需要任何设置便可下发通知。
+>- 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
 
 ### 应用内消息命令（消息不展示到通知栏）
 
@@ -930,9 +930,9 @@ XGPushManager.clearAttributes(context, "cleanAttributes-test", xgiOperateCallbac
 设置属性（带回调），会覆盖这个设备之前设置的所有属性（即清理并设置）。
 
 > !	
-1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
-2. 属性个数限制50个。
-3. 属性 key，value 长度都限制50个字符以内。
+>1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
+>2. 属性个数限制50个。
+>3. 属性 key，value 长度都限制50个字符以内。
 
 ```java
 public static void clearAndAppendAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
