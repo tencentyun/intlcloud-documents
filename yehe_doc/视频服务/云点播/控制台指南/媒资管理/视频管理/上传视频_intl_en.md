@@ -81,6 +81,6 @@ You need to fill in the TXT or CSV file in the specified format, which can be vi
 >?
 >- The columns are video resource URL, video name, and video cover URL, respectively. **Please fill in the columns in sequence.**
 >- After the list is parsed, please check whether there are any errors and upload after confirmation.
->- 建议您下载文件样例了解上传文本的格式。
+>- We recommend that you download the sample files to check the uploading file format.
 
 ![](https://main.qcloudimg.com/raw/6cb755579222617d63441fae07a2195a.png)
