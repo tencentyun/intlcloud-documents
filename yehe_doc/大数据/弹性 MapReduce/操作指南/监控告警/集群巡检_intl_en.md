@@ -1,14 +1,23 @@
 ## Feature Overview
-Each cluster can perform health checks on its servers and services instantly or regularly (by day or week) according to the selected inspection items. You can configure only one regular inspection task for one cluster so as to stay on top of the cluster health and handle exceptions or risks in time.
 
-When an instant or regular inspection task is configured, general inspection items will be selected by default. In special cases where service features need to be inspected, you can add additional inspection items as needed, but service feature inspections will compromise the cluster performance. You are not recommended to conduct resource-consuming inspections during peak business hours.
+You can perform health check on the nodes and services in each cluster instantly or periodically (daily or weekly) with the selected inspection items. Only one periodic inspection task can be configured for each cluster to help you know the cluster health conditions periodically and fix the exceptions and risks in time.
 
-An inspection report will be generated in PDF format after each inspection task is completed, which can be downloaded or deleted. Each root account can retain up to 50 inspection reports. If the upper limit is exceeded, older reports will be deleted.
+When you set a one-time or periodic inspection task, general inspection items will be selected by default. If you want to check certain service features in special cases, you can select the corresponding inspection items as needed. However, service feature inspection will compromise cluster performance, which is thus not recommended during business peak hours.
+
+After each inspection task is completed, a PDF report will be generated, which can be downloaded and deleted. Up to 50 inspection reports can be retained under each root account. If an excessive report is generated, the oldest one will be deleted.
+
+>?The inspection system supports service inspection items. Currently, only HDFS, YARN, HBase, Hive, and ZooKeeper are supported.
+
 
 ## Directions
-1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select the target cluster in **Cluster List**, and click **Details** to enter the cluster details page.
-2. Select **Cluster Monitoring** > **Cluster Inspection** on the cluster details page to perform health check on the servers and services of the current cluster. Each cluster can only be configured with one regular inspection task. You can also click **Instant Inspection** to perform inspection. To configure regular inspection tasks, click **Regular Inspection Settings**.
+1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click the **ID/name** of the target cluster in **Cluster List** to enter the cluster details page.
+2. On the cluster details page, select **Cluster Monitoring** > **Cluster Inspection** and you can perform health check on the nodes and services in the current cluster. Only one periodic inspection task can be configured for each cluster. You can also click **One-Time Inspection** to perform an inspection. To configure a periodic inspection task, click **Periodic Inspection Settings**.
+![](https://main.qcloudimg.com/raw/3331e79fdd0657e1b0459ad165a4ff93.png)
+ - One-Time inspection: the health status of servers and services in the cluster from a specified time point to the current time point will be checked, and an inspection report will be generated.
+![](https://main.qcloudimg.com/raw/071b4719e1957f91121a9848fecb6d62.png)
+ - Periodic inspection: after a periodic inspection policy is enabled, the system will automatically check the health status of the servers and services in the cluster in every inspection cycle and generate an inspection report. One periodic inspection policy can be configured for each cluster.
+![](https://main.qcloudimg.com/raw/fd6fee78f0ec54c36c657963256ea561.png)
+Inspection item: all enabled event monitoring policies are supported by default. You can adjust the inspection items as instructed in [Cluster Event](https://intl.cloud.tencent.com/document/product/1026/36889). All events with monitoring enabled are selected by default as the initial inspection items. When you customize the inspection items, those selected last time will be selected by default.
+![](https://main.qcloudimg.com/raw/f4718c5e298ea87ecd5b78c26bbf8e3b.png)
 
- - Instant inspection: it is to check the health status of the servers and services of the cluster from a certain moment to the current time and generate an inspection report.
 
- - Regular inspection: after the regular inspection policy is enabled, the system will automatically check the health status of the servers and services of the cluster in each inspection cycle and generate inspection reports. Each cluster can be configured with one regular inspection policy.
