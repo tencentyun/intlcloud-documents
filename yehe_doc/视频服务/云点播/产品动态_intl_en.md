@@ -1,3 +1,55 @@
+## August 2020
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">Updates</th>
+<th width="50%"> Description</th>
+<th width="15%">Release Time</th> 
+<th width="15%">Relevant Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Released v2.2</td>
+<td> Images can be used as thumbnails</td>
+<td>August 2020</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E5.9F.BA.E6.9C.AC.E4.BF.A1.E6.81.AF.E7.BC.96.E8.BE.91"> Video Management</a></td>
+</tr>
+</tbody></table>
+
+## June 2020
+
+<table>
+<thead>
+<tr>
+<th width="20%">Updates</th>
+<th width="50%"> Description</th>
+<th width="15%">Release Time</th> 
+<th width="15%">Relevant Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Released  v2.0</td>
+<td>Image management feature was launched on VOD Console</td> 
+<td>June 2020</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/37900">Image Management</a></td>
+</tr>
+<tr>
+<td>Released v1.9</td>
+<td><ul style="margin:0;">
+<li >Superplayer configuration was launched on VOD Console.
+<li >Superplayer preview feature was launched on VOD Console. </td>
+<td>June 2020</td> 
+<td>
+<ul style="margin:0;">
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Superplayer Configuration</a
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E8.B6.85.E7.BA.A7.E6.92.AD.E6.94.BE.E5.99.A8.E9.A2.84.E8.A7.88">Superplayer Preview</a
+</td>
+</tr>
+</tbody></table>
+
+
 ## October 2019
 
 
