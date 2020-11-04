@@ -79,6 +79,7 @@ You can configure a migration task based on your actual needs, including informa
 secretId = "SECRETID"
 secretKey = "SECRETKEY"
 region = 'REGION'
+subAppId = 0
 concurrency = 5
 supportMediaClassification = [ 'video', 'audio', 'image' ]
 excludeMediaType = [  ]
@@ -90,6 +91,7 @@ migrateResultOutputPath = ''
 | secretId | `SecretId` of your key. Replace `SECRETID` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |
 | secretKey | `SecretKey` of your key. Replace `SECRETKEY` with your real key information, which can be obtained on the TencentCloud API key page in the [CAM Console](https://console.cloud.tencent.com/cam/capi) |
 | region | Access point region, i.e., the region where to request a VOD server. This is different from the storage region. For more information, please see [the list of supported regions](https://intl.cloud.tencent.com/document/product/266/34113) |
+| subAppId                   |                VOD [Subapplication](https://intl.cloud.tencent.com/document/product/266/33987) ID. If you need to migrate files in a subapplication, enter the subapplication ID in this field; otherwise, leave it empty.             |
 | concurrency | Number of concurrently migrated files. Maximum value: 50 |
 | supportMediaClassification | List of media types supported for migration. Valid values: video, audio, image |
 | excludeMediaType | List of file types to be excluded |
