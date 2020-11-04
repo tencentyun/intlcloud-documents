@@ -1,26 +1,38 @@
+## September 2020
+<table><tr>
+<th width="20%">Update</th>
+<th width="45%">Description</th>
+<th width="15%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr><tr>
+<td>Signature tool added</td>
+<td>The API Gateway signature tool is a web tool provided by Tencent Cloud API Gateway to generate request signatures for key pair authentication APIs.</td>
+<td>September 21, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/38376">Signature Tool</a></td>
+</tr></table>
+
 ## August 2020
 <table><tr>
 <th width="20%">Update</th>
 <th width="45%">Description</th>
 <th width="15%">Release Date</th>
-<th width="20%">Document</th>
+<th width="20%">Documentation</th>
 </tr><tr>
 <td>Experience optimization</td>
-<td><li>You can view API documentation online in rich text or Markdown format.</li><li>After you return from the API details page to the API list page, the parameters you have set for search or controlling the number of items displayed per page are retained, making it easy for you to manage APIs.</li></td>
-<td>2020-08-20</td>
+<td><li>You can view API documentation in the rich text or Markdown format.</li><li>After you return from the API details page to the API list page, the search parameters and paging parameters are retained, facilitating API management.</li></td>
+<td>August 20, 2020</td>
 <td>-</td>
 </tr><tr>
-<td>Access tag</td>
-<td>You can use access tags of API Gateway to manage Tencent Cloud resources at different granularities.</td>
-<td>2020-08-05</td>
+<td>Tags supported</td>
+<td>Tags can be added for API Gateway services, so that users can manage cloud resources using tags.</td>
+<td>August 5, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/651">Tag</a></td>
 </tr><tr>
-<td>User experience improvement</td>
-<td>The overview page of the API Gateway Console is updated with the "Quick Access", "Exception Alarm", "Quota Limit", "Announcements", and other feature blocks.</td>
-<td>2020-08-05</td>
+<td>Experience optimization</td>
+<td>A new overview page is available for the API Gateway console, with multiple added features such as quick access, exception alarms, quota limits, and announcements.</td>
+<td>August 5, 2020</td>
 <td>-</td>
 </tr></table>
-
 
 ## July 2020
 <table><tr>
@@ -106,7 +118,7 @@
 <th width="15%">Release Date</th>
 <th width="20%">Documentation</th>
 </tr><tr>
-<td>Support for Cloud API 3.0</td>
+<td>Cloud API 3.0 supported</td>
 <td>Cloud API 3.0 is fully supported, which improves the development experience.</td>
 <td>March 26, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/628/36595">API Category</a></td>
@@ -130,7 +142,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/628/37876">Exporting Service Logs</a></td>
 </tr><tr>
 <td>Official billing</td>
-<td>Billing for the API Gateway officially begins. Billable items include API call fees and traffic fees.</td>
+<td>API Gateway is officially commercialized. Billable items include API call fees and traffic fees.</td>
 <td>February 14, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/628/11771">Billing Overview</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/11771">Pay-As-You-Go</a></td>
 </tr></table>
