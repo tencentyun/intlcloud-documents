@@ -14,7 +14,11 @@ The billing section displays the **billing mode** under the current Tencent Clou
 <tbody>
 <tr>
 <td>Current billing mode</td>
-<td >Daily billing: Daily Billing (Postpaid)</a>.<br>Monthly billing: please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for consultation </td>
+<td >Daily billing cycle：for more information, see <a href="https://intl.cloud.tencent.com/document/product/266/14666"> Postpaid Daily Billing Cycle</a><br>Monthly billing cycle: contact sales</td>
+<tr>
+<td>Billable bandwidth of the current month (monthly billing cycle)</td>
+<td>Billable bandwidth of the current month of the account. Monthly billing cycle: contact sales</td>
+</tr>
 </tbody></table>
 
 
@@ -53,7 +57,7 @@ The resource usage section displays VOD resource usage information in the curren
 
 </tbody></table>
 
->The above metrics are automatically refreshed daily.
+>? The above metrics are automatically refreshed daily.
 
 ## Key Data
 

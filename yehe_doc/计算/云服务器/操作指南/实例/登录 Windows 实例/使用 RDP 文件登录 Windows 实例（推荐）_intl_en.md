@@ -19,6 +19,7 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
 2. On the **Instances** page, locate the Windows CVM you want to log in to and click **Log In** as shown below.
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Log into Windows instance** pop-up window, select **Log in with RDP file** and click **Download RDP file** to download the RDP file to your local computer.
+>?If you have changed the remote login port, append the IP address with `:port` in the RDP file.
 ![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
 4. Double-click the downloaded RDP file, enter the password, and click **OK** to remotely connect to your Windows CVM.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
