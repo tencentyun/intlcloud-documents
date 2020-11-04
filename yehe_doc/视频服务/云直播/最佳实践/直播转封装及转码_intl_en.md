@@ -216,7 +216,7 @@ You can add a watermark in the [LVB Console](#W_control) or through a [server AP
 <span id="W_control"></span>
 
 #### LVB Console
-1. Go to **Feature Template** > **[Watermark Configuration](https://console.cloud.tencent.com/live/config/watermark)** to add a watermark configuration template, set the watermark parameters, and generate the corresponding watermark template ID. For detailed directions, please see [Watermark Template Configuration](https://intl.cloud.tencent.com/zh/document/product/267/31073).
+1. Go to **Feature Template** > **[Watermark Configuration](https://console.cloud.tencent.com/live/config/watermark)** to add a watermark configuration template, set the watermark parameters, and generate the corresponding watermark template ID. For detailed directions, please see [Watermark Template Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
 2. In [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), select the target push domain name and click **Manage** > **Template Configuration** to associate it with the watermark template. For detailed directions, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31064).
 <span id="W_api"></span>
 #### API call
