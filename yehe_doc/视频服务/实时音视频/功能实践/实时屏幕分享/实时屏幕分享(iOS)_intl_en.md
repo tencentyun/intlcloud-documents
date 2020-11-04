@@ -167,7 +167,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 Connect to the receipt logic of the primary application in the following steps, so that the primary application can stay in `waiting` status before screen sharing starts in order to receive the screen sharing data from the `Broadcast Upload Extension` process at any time.
 1. Make sure that camera capture has been disabled in `TRTCCloud`; and if not, call [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) to disable it.
 2. Call the [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) method and pass in the `AppGroup` set in [step 1](#createGroup) to make the SDK enter the `waiting` status.
-3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS:
+3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS.
 4. You can call the [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) API to stop screen sharing at any time.
  
 ```

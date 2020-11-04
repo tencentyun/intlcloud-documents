@@ -61,7 +61,7 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/H5_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35090">DOC</a></td>
+      <td style="text-align:center">DOC</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
@@ -79,16 +79,14 @@
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TRTC_WXMini_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35087">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35098">DOC</a></td>
+      <td style="text-align:center">DOC</td>
+      <td style="text-align:center">DOC</td>
       <td style="text-align:center">N/A</td>
    </tr>
 </table>
 
 >? 
 > - 阅读文档 [如何缩减安装包体积](https://intl.cloud.tencent.com/document/product/647/35165) 了解如何减少 SDK 带来的安装包体积增量。
-> - 扫码关注公众号，了解 SDK 的版本更新以及最新的技术动态。
->   ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
 > 
 
 <span id="Professional"></span>
@@ -167,9 +165,9 @@
     <th width="100px" style="text-align:center">功能模块</th>
     <th width="100px" style="text-align:center">功能项</th>
     <th width="100px" style="text-align:center">直播精简版<br>LiteAV_Smart</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/584/9366">短视频版</a><br>LiteAV_UGC</th>
+    <th width="100px" style="text-align:center">短视频版<br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/881/20205">播放器版</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center">播放器版<br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">专业版</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">企业版</a><br>Enterprise</th>
   </tr>

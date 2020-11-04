@@ -12,7 +12,7 @@ Yes, TRTC supports interconnection across all platforms.
 Currently, there are no client APIs for desktop browser. You can directly call the [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997) API of LVB to mix streams.
 
 <span id="que4"></span>
-### What should I do if the error "RtcError: no valid ice candidate found" occurs in the SDK for desktop browser?
+### What should I do if the error "RtcError: no valid ice candidate found" occurs during I run the SDK for desktop browser?
 
 This error indicates that the TRTC SDK for desktop browser failed with regard to STUN hole punching. Please check the firewall configuration. The TRTC SDK for desktop browser uses the following ports for data transfer, which should be added to the allowlist of the firewall. After configuring these ports, please use the [official demo](https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html) to check whether the ports work.
  - TCP port: 8687
@@ -70,7 +70,7 @@ No.
 You can try calling [getCameras](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html?_ga=1.48566118.1562552652.1542703643#.getCameras) to get the new device list. If there is still information of the removed camera, it indicates that the browser has not refreshed the list, and the SDK for desktop browser cannot get the new device list.
 
 <span id="que10"></span>
-### How does the SDK for desktop browser record pure audio push? Why can't I enable auto-relay and auto-recording in the console?	
+### How does the SDK for desktop browser record pure audio push? Why can’t I record while auto-relay and auto-recording are enabled in the console?	
 You need to set the `pureAudioPushMode` parameter of [createClient](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html?_ga=1.212323796.1562552652.1542703643#.createClient).
 
 <span id="que11"></span>
@@ -105,21 +105,21 @@ If any of the following circumstances occurs, it indicates that the browser is n
 For more information, please see [MediaTrackConstraints](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints).
 
 <span id="que17"></span>
-### How do I capture the sound played back by the shared application on Windows?
-Call the [startSystemAudioLoopback](https://intl.cloud.tencent.com/document/product/647/35131) API to enable system audio capturing.
+### How do I capture the audio played back by the shared application on Windows?
+You can call [startSystemAudioLoopback](https://intl.cloud.tencent.com/document/product/647/35131) API to enable system audio capturing.
 
 <span id="que18"></span>
-### In conferencing mode on Windows, how do I implement the feature of initiating audio/video call by anchors to viewers?
-The call feature can be implemented with the aid of Tencent Cloud [IM](https://intl.cloud.tencent.com/document/product/1047/33996).
+### How do anchors initiate audio/video connections to viewers in conference mode on Windows?
+The conference mode can be used in combination with [IM](https://intl.cloud.tencent.com/document/product/1047/33996) to implement audio/video connection.
 
-The general logic of the call is as follows: A sends a custom message X to B and invokes the calling page (where the display effect of X should be implemented by yourself), B receives X and invokes the called page, B clicks [enterRoom](https://intl.cloud.tencent.com/document/product/647/35131) to enter the room and sends a custom message X1 to A, and A receives X1 (you can decide on your own whether to display it) and calls `enterRoom` to enter the room. They use IM to send custom messages.
+The processing logic is as follows: A sends a message X (with custom the display effect) to B and the calling page is triggered, then B receives X and the called page is triggered. B clicks [enterRoom](https://intl.cloud.tencent.com/document/product/647/35131) to enter the room and sends a custom message X1 to A, then A receives X1 (customizes whether to display it) and clicks `enterRoom` to enter the room. At this point, they can use IM to send custom messages.
 
 <span id="que19"></span>
-### How can viewers view the call screen in the room?
-If viewers are in the live streaming mode, when they enter the room, they will get the `userid` of the anchor through the [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) callback in `TRTCCloudDelegate` (a co-anchoring viewer will also call [enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac73c4ad51eda05cd2bcec820c847e84f) to enter the room and thus become an anchor), and then they can call the [startRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a33a6e3765d6ca52d572224bc6e25dbcb) method to display the video image of the anchor.
+### How do viewers watch the video image in the room?
+When the live stream mode is used, viewers enter the room and get the `userid` of anchor by using `[onUserVideoAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a)` in `TRTCCloudDelegate` (people who is co-anchoring is also an anchor for viewers and can also call [enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac73c4ad51eda05cd2bcec820c847e84f) to enter the room), and then viewers can call [startRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a33a6e3765d6ca52d572224bc6e25dbcb) to watch the video image of the anchor.
 For more information, please see [Live Streaming (Windows)](https://intl.cloud.tencent.com/document/product/647/35109).
 
 <span id="que20"></span>
-### Can I listen on remote room exit events on web?
-Yes. We recommend you use the [client.on('peer-leave')](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html) event to implement notification of room exit by remote users.
+### Can I listen on room exit by remote user on web?
+Yes. We recommend you use the [client.on('peer-leave')](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html) event to notify you of room exit by remote users.
 
