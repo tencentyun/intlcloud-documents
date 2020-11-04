@@ -19,6 +19,7 @@ This document describes how to upload videos through the VOD Console, including 
 5. You can choose whether to process the uploaded video.
    - If no processing is needed, select **No Processing After Upload**.
    - If processing is needed, select **Automatic Processing After Upload** and configure video processing parameters according to the table below.
+
    <table>
      <tr>
          <th nowrap="nowrap">Processing Type</th>  
@@ -28,24 +29,25 @@ This document describes how to upload videos through the VOD Console, including 
      </tr>
 	 <tr>      
          <td>Transcoding</td>   
-	     <td>If **Transcoding** is selected as the processing type, this parameter is <b>"Transcoding Template"</b><ul><li>Click **Transcoding Template** to select an existing template<li>Click **Common Template** to select a common template</ul></td>   
-	     <td nowrap="nowrap"><ul><li>Select **No watermark** <li>Select **Default watermark** <li>Select **Select watermark template**</td>   
+	     <td>If <b>Transcoding</b> is selected as the processing type, this parameter is <b>"Transcoding Template"</b><ul><li>Click <b>Transcoding Template</b> to select an existing template<li>Click <b>Common Template</b> to select a common template</ul></td>   
+	     <td nowrap="nowrap"><ul><li>Select <b>No watermark</b> <li>Select <b>Default watermark</b> <li>Select <b>Select watermark template</b></td>   
 	     <td>Select whether to use the first frame as the video cover</td>
      </tr> 
 	 <tr>      
          <td>Video audit</td>   
-	     <td>If **Video Audit** is selected as the processing type, this parameter is <b>"Audit Template"</b>: select an existing audit template </td>   
+	     <td>If <b>Video Audit</b> is selected as the processing type, this parameter is <b>"Audit Template"</b>: select an existing audit template </td>   
 	     <td align="middle">-</td>   
 	     <td align="middle">-</td>
      </tr> 
 		  <tr>      
          <td>Task flow</td>   
-	     <td>If **Task Flow** is selected as the processing type, this parameter is <b>"Task Flow Template"</b>: select an existing task flow template </td>   
+	     <td>If <b>Task Flow</b> is selected as the processing type, this parameter is <b>"Task Flow Template"</b>: select an existing task flow template </td>   
 	     <td align="middle">-</td>   
 	     <td align="middle">-</td>
      </tr> 
 	     </tr> 
 </table>
+
 5. Click **Upload** to start uploading the video.
 
 ## Video Pull
