@@ -85,9 +85,9 @@ void appendAccount(Context context, final String account)
 ```
 
 >?
->- 每个账号最多支持绑定100个 token。
->- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
->- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
+- 每个账号最多支持绑定100个 token。
+- 这里的账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号。
+- 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 
 
 
@@ -252,8 +252,8 @@ XGPushManager.unregisterPush(this);
 可通过重载 XGPushBaseReceiver的onUnregisterResult 方法获取。
 
 > ?
->- 反注册操作切勿过于频繁，可能会造成后台同步延时。
->- 切换账号无需反注册，多次注册自动会以最后一次为准。
+- 反注册操作切勿过于频繁，可能会造成后台同步延时。
+- 切换账号无需反注册，多次注册自动会以最后一次为准。
 
 #### 示例代码
 
@@ -284,8 +284,8 @@ public void onUnregisterResult(Context context, int errorCode) {
 指的是在设备的通知栏展示的内容，由移动推送 TPNS  SDK 完成所有的操作，App 可以监听通知被打开的行为，即在前台下发的通知，无需 App 做任何处理，默认会展示在通知栏。
 
 > ?
->- 成功注册移动推送 TPNS 服务后，通常不需要任何设置便可下发通知。
->- 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
+- 成功注册移动推送 TPNS 服务后，通常不需要任何设置便可下发通知。
+- 通常来说，结合自定义通知样式，常规的通知，能够满足大部分业务需求，如果需要更灵活的方式，请考虑使用消息。
 
 ### 应用内消息命令（消息不展示到通知栏）
 
@@ -582,7 +582,7 @@ public static void cancelNotifaction(Context context, int id)
 ```java
 XGPushManager.cancelNotifaction(context, 1);
 ```
-	
+
 ### 清除所有通知
 #### 接口说明
 
@@ -685,8 +685,9 @@ XGPushManager.setTags(getApplicationContext(), "setTags:" + System.currentTimeMi
 
 
 >?
+>
 >-  新增的 tags 中，:号为后台关键字，请根据具体的业务场景使用。
->- 此接口调用的时候需要间隔一段时间（建议大于5s），否则可能造成更新失败。
+- 此接口调用的时候需要间隔一段时间（建议大于5s），否则可能造成更新失败。
 
 ```java
 public static void addTags(Context context, String operateName, Set<String> tags) 
@@ -802,6 +803,170 @@ public static void cleanTags(Context context, String operateName)
 XGPushManager.cleanTags(getApplicationContext(), "cleanTags:" + System.currentTimeMillis());
 ```
 
+
+## 用户属性功能
+
+开发者可以针对不同的用户设置属性，然后在管理平台推送的时候进行个性化推送。
+
+### 新增用户属性
+
+#### 接口说明
+
+添加属性（带回调）：有则覆盖，无则添加。
+
+```java
+public static void upsertAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
+```
+
+#### 参数说明
+
+- context：Context 对象。
+- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
+- attributes：属性集合，每个属性通过 key-value 标识。
+- callback：添加属性操作的回调。
+
+#### 示例代码
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int flag) {
+        log("action - onSuccess, data:" + data + ", flag:" + flag);
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        log("action - onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+    }
+};
+        
+Map<String,String> attr = new HashMap<>();
+attr.put("name", "coding-test");
+attr.put("gender", "male");
+attr.put("age", "100");
+
+XGPushManager.upsertAttributes(context, "addAttributes-test", attr, xgiOperateCallback);
+```
+
+
+
+### 删除用户属性
+
+#### 接口说明
+
+删除指定的属性。
+
+```java
+public static void delAttributes(Context context, String operateName, Set<String> attributes, XGIOperateCallback callback)
+```
+
+#### 参数说明
+
+- context：Context 对象。
+- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
+- attributes：属性集合，每个属性通过 key-value 标识。
+- callback：删除属性操作的回调。
+
+#### 示例代码
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int flag) {
+        log("action - onSuccess, data:" + data + ", flag:" + flag);
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        log("action - onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+    }
+};
+
+Set<String> stringSet = new HashSet<>();
+stringSet.add("name");
+stringSet.add("gender");
+                
+XGPushManager.delAttributes(context, "delAttributes-test", stringSet, xgiOperateCallback);
+```
+
+### 清空已有用户属性
+
+#### 接口说明
+
+删除已设置的所有属性。
+
+```java
+public static void clearAttributes(Context context, String operateName, XGIOperateCallback callback)
+```
+
+#### 参数说明
+
+- context：Context 对象。
+- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
+- callback：清理所有属性操作的回调。
+
+#### 示例代码
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int flag) {
+        log("action - onSuccess, data:" + data + ", flag:" + flag);
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        log("action - onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+    }
+};
+        
+XGPushManager.clearAttributes(context, "cleanAttributes-test", xgiOperateCallback);
+```
+
+### 更新用户属性
+
+#### 接口说明
+
+设置属性（带回调），会覆盖这个设备之前设置的所有属性（即清理并设置）。
+
+> !	
+1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
+2. 属性个数限制50个。
+3. 属性 key，value 长度都限制50个字符以内。
+
+```java
+public static void clearAndAppendAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
+```
+
+#### 参数说明
+
+- context：Context 对象。
+- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
+- attributes：属性集合，每个属性通过 key-value 标识。
+- callback：设置属性操作的回调。
+
+#### 示例代码
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int flag) {
+        log("action - onSuccess, data:" + data + ", flag:" + flag);
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        log("action - onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+    }
+};
+        
+Map<String,String> attr = new HashMap<>();
+attr.put("name", "coding-test");
+attr.put("gender", "male");
+attr.put("age", "100");
+
+XGPushManager.clearAndAppendAttributes(context, "setAttributes-test", attr, xgiOperateCallback);
+```
 
 
 ## 配置接口
@@ -948,7 +1113,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
         }
     });
 ```
- 
+
 >?首先需要开启 `XGPushConfig.enableDebug(this, true);`。
 
 
