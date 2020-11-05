@@ -20,7 +20,7 @@
 | 批量作业 | [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)  |
 | 数据检索     | [检索数据](https://intl.cloud.tencent.com/document/product/436/32538) |
 | 版本控制     | [设置版本控制](https://intl.cloud.tencent.com/document/product/436/19881)   |
-| 跨地域复制   | [设置跨地域复制](https://intl.cloud.tencent.com/document/product/436/19235)  |
+| 存储桶复制   | [设置存储桶复制](https://intl.cloud.tencent.com/document/product/436/19235)  |
 | 加密         | <li>[设置对象加密](https://intl.cloud.tencent.com/document/product/436/30929) <br><li>[设置存储桶加密](https://intl.cloud.tencent.com/document/product/436/33455) |
 | 防盗链       | [设置防盗链](https://intl.cloud.tencent.com/document/product/436/13319) |
 | 跨域访问     | [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318)  |
