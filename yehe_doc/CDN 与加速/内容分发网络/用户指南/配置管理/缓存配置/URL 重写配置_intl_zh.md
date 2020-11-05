@@ -11,7 +11,7 @@
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【缓存配置】，即可找到【URL 重写配置】。
 
 默认情况下，URL 重写配置为关闭状态：
-![](https://main.qcloudimg.com/raw/ef62e52b60ebe50e57771b30709567d7.png)
+![](https://main.qcloudimg.com/raw/01f93aaa70c523ae0bb1ab5debae8558.png)
 
 
 ### 新增规则
@@ -26,13 +26,13 @@
 + 待重写 URL 和目标 URL 的输入长度不可超过1024个字符。
 
 单击【新增重写规则】：
-![](https://main.qcloudimg.com/raw/d10ef7d7f097bcaf4021b13659407adc.png)
+![](https://main.qcloudimg.com/raw/97ea8713395f3af8654c39be97f124d3.png)
 规则添加完成后，整体配置仍为默认的关闭状态，因此不会影响现网服务。
 
 >?关闭状态下仍可修改下方配置，但不会发布至现网，仅当开启此开关时，进行现网配置下发。
 
 可通过单击开关开启配置，将添加的重写规则发布至现网：
-![](https://main.qcloudimg.com/raw/c94b0d99ffc52b02bb3040551ec96637.png)
+![](https://main.qcloudimg.com/raw/214b034e578d5eaac0a63cacd49f1e2d.png)
 
 若请求的 URL 匹配了当前配置的规则，该请求将被302重定向跳转到对应的目标 URL。
 
@@ -51,7 +51,7 @@
 ## 配置示例
 
 若加速域名`www.test.com`的 **URL 重写配置** 如下：
-![](https://main.qcloudimg.com/raw/e56fed9a5609dd3533d4b18a970f072d.png)
+![](https://main.qcloudimg.com/raw/19edbf944b4e727b7c62270f2d8078cf.png)
 
 则实际访问情况如下：
 
