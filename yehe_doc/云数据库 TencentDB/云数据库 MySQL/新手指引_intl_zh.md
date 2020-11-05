@@ -27,7 +27,7 @@
 
 ## 4. 控制台界面
 以下为云数据库 MySQL 控制台总览页面：
-![](https://main.qcloudimg.com/raw/acaf06c8883bab38517e6d7bc7c238fb.png)
+![](https://main.qcloudimg.com/raw/b001b2fe3f6829d892c64a279cf40d5b.png)
 
 -----
 
