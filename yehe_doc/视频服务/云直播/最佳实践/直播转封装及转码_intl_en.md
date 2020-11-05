@@ -218,8 +218,10 @@ You can add a watermark in the [LVB Console](#W_control) or through a [server AP
 #### LVB Console
 1. Go to **Feature Template** > **[Watermark Configuration](https://console.cloud.tencent.com/live/config/watermark)** to add a watermark configuration template, set the watermark parameters, and generate the corresponding watermark template ID. For detailed directions, please see [Watermark Template Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
 2. In [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), select the target push domain name and click **Manage** > **Template Configuration** to associate it with the watermark template. For detailed directions, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31064).
+
 <span id="W_api"></span>
 #### API call
+
 1. Call the [AddLiveWatermark](https://intl.cloud.tencent.com/document/product/267/30826) API to add a watermark by setting the watermark name and other parameters.
 2. Call [CreateLiveWatermarkRule](https://intl.cloud.tencent.com/document/product/267/30825) to create a watermark rule. Set the push domain name (`DomainName`) and `WatermarkId` (returned in step 1). Use the same `AppName` as the `AppName` in push and playback addresses, which is `live` by default.
 
@@ -234,14 +236,17 @@ You can add a watermark in the [LVB Console](#W_control) or through a [server AP
 You can set transcoding parameters in the [LVB Console](#T_control) or through [server APIs](#T_api). No matter which method is used, the settings mainly involve watermark templates, transcoding templates, and transcoding rules.
 <span id="T_control"></span>
 #### LVB Console
-1. Go to **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)** to add a transcoding configuration template. You can add a [general transcoding](https://intl.cloud.tencent.com/zh/document/product/267/31073) or [top speed codec transcoding](https://intl.cloud.tencent.com/zh/document/product/267/31073) template.
+1. Go to **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)** to add a transcoding configuration template. You can add a [general transcoding](https://intl.cloud.tencent.com/document/product/267/31073) or [top speed codec transcoding](https://intl.cloud.tencent.com/document/product/267/31073) template.
 2. Create the corresponding transcoding type and set transcoding parameters as needed. You can use the system's default parameters, and a corresponding transcoding template ID will be generated.
 2. In [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), find the target pull domain name and click **Manage** > **Template Configuration** to associate it with the transcoding template. For detailed directions, please see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
+
 <span id="T_api"></span>
 #### API call
 
 1. Call the [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790) API to create a transcoding template by setting the transcoding type and parameters.
+
 2. Call [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) to create a transcoding rule. Set the pull domain name (`DomainName`) and `TemplateId` (returned in step 1) parameters. Enter an empty string in `AppName` and `StreamName` to indicate all streams pulled under the domain name. You can associate the transcoding template with different stream names so as to enable transcoding for specified live streams.
+
 3. Each transcoding template has a **unique transcoding template name** which is used as the unique ID for playing back the output stream. You can place the transcoding template name after the stream ID in the playback address to pull the output stream corresponding to the transcoding template.
 
 >! The operations related to transcoding rule are mainly used to control the enablement of a specified transcoding template for a specified domain name or stream. A playback domain name can pull a transcoding template only after the corresponding transcoding rule is created. If no transcoding rule has been created, the pull address directly spliced by using the transcoding template name will be invalid.
@@ -255,9 +260,9 @@ Playback address = playback domain name + playback path + stream ID_transcoding 
 ```
 For a push with stream ID `1234_test`, streams of different bitrates can be played back at the following three addresses:
 
-- **Original stream: **`http://liveplay.tcloud.com/live/1234_test.flv?authentication string`
-- **SD output stream (with watermark): **`http://liveplay.tcloud.com/live/1234_test_sd.flv?authentication string`
-- **HD output stream (with watermark): **`http://liveplay.tcloud.com/live/1234_test_hd.flv?authentication string`
+- **Original stream:**`http://liveplay.tcloud.com/live/1234_test.flv?authentication string`
+- **SD output stream (with watermark):**`http://liveplay.tcloud.com/live/1234_test_sd.flv?authentication string`
+- **HD output stream (with watermark):**`http://liveplay.tcloud.com/live/1234_test_hd.flv?authentication string`
 
 >! To play back a watermarked stream, you need to bind the corresponding push domain name to the created watermark template.
 
@@ -286,13 +291,13 @@ For a push with stream ID `1234_test`, streams of different bitrates can be play
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">DeleteLiveTranscodeRule</a></td>
 </tr><tr>
 <td rowspan=4>LVB watermark</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">AddLiveWatermark</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">AddLiveWatermark</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">UpdateLiveWatermark</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">UpdateLiveWatermark</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">DeleteLiveWatermark</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">DeleteLiveWatermark</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30152">DescribeLiveWatermarks</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">DescribeLiveWatermarks</a></td>
 </tr></table>
 
 
