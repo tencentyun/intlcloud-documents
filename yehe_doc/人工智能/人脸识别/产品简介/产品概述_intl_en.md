@@ -7,7 +7,7 @@ Tencent Cloud Face Recognition leverages Tencent YouTu's face recognition and an
 Face Recognition can analyze a given image to determine whether it contains a face. If yes, it can return information about the position, attributes, and quality of the face. This includes gender, age, expression, charm, glasses, hair, mask, pose, quality ranking, etc. For more information, please see [Face Detection and Analysis](https://intl.cloud.tencent.com/document/product/1059/36979).
 
 ### Facial feature localization
-Face Recognition can locate facial features on a given image and calculate 90 facial landmarks. This includes eyebrows (8 points on each side), eyes (8 points on each side), nose (13 points), mouth (22 points), face contour (21 points), and eyeballs or pupils (2 points). For more information, please see [Facial Feature Localization](https://intl.cloud.tencent.com/document/product/1059/36981).
+Face Recognition can locate facial features on a given image and calculate 90 facial landmarks. This includes eyebrows (8 points on each side), eyes (8 points on each side), nose (13 points), mouth (22 points), face contour (21 points), and eyeballs or pupils (2 points). For more information, please see [Facial Feature Localization](https://intl.cloud.tencent.com/document/product/1059/36969).
 
 ### Face comparison
 Face Recognition can compare faces in two images and return the similarity score. For more information, please see [Face Comparison](https://intl.cloud.tencent.com/document/product/1059/36981).
