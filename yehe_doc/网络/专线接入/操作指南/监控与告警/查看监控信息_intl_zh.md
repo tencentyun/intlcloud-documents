@@ -11,7 +11,7 @@
       - 网络入带宽：物理专线的平均每秒入流量。
       - 端口丢包：端口每秒丢包的个数。
       - 端口错包：端口每秒错包的个数。
- ![](https://main.qcloudimg.com/raw/7309063e57b0df6654c308f36a2fa57d.png)
+ ![](https://main.qcloudimg.com/raw/066f02cc1c94d73a6cdbd7970ec5123d.png)
 3. 查看专用通道网络监控数据。
  1. 在左侧导航栏单击【专用通道】。
  2. 在专用通道列表页面，单击单击目标专用“监控”列的<img width="3%" src="https://main.qcloudimg.com/raw/52d8549cc2412c6527f332a3b88be44d.png"  >。
@@ -20,7 +20,7 @@
       - 网络入带宽：专用通道的平均每秒入流量。
       - 出包量：专用通道出方向的流量累计值。
       - 入包量：专用通道入方向的流量累计值。
- ![](https://main.qcloudimg.com/raw/feba7fdd174ec84fc08e78b86777dfcc.png)
+ ![](https://main.qcloudimg.com/raw/f723cb392dcb58676d75c84eac63d4a6.png)
 4. 查看专线网关监控数据。
  1. 在左侧导航栏单击【专线网关】。
  2. 在专线网关页面，单击目标专线网关右侧”监控“列的<img width="3%" src="https://main.qcloudimg.com/raw/52d8549cc2412c6527f332a3b88be44d.png" >。
@@ -31,4 +31,4 @@
     - 入包量：专线网关的平均每秒入包量。
     - 出流量：专线网关上所有关联的专用通道出方向流量之和。
     - 入流量：专线网关上所有关联的专用通道入方向流量之和。
-![](https://main.qcloudimg.com/raw/0567ea3d423edd4eecee6c083b20c249.png)
+![](https://main.qcloudimg.com/raw/404a346db817244f6f2c66eefc4327a2.png)
