@@ -7,19 +7,12 @@ COS 不对上传和下载带宽进行限制，具体的上传和下载速度与�
 
 存储桶域名格式为`<BucketName-APPID>.cos.<Region>.myqcloud.com`即为 XML 版本域名。只要是浏览器支持直接预览的文件类型，访问该格式域名对应的对象链接，即可实现在浏览器中预览文件。
 
-存储桶域名格式为`<BucketName-APPID>.<region>.myqcloud.com`即为 JSON 版本域名。JSON 版本域名对应的对象链接域在浏览器中访问会弹出下载，想要在浏览器中预览文件，有两种方案：
-
-1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
-2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://intl.cloud.tencent.com/document/product/436/18424) 和 [JSON 版本静态网站设置](https://intl.cloud.tencent.com/document/product/436/14984)。
 
 #### 示例：
 
 以北京地域的 examplebucket-1250000000 存储桶根目录下 picture.jpg 文件为例说明：
 
-- 若对象地址为`https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`形式，您可以直接使用该地址在浏览器中预览 picture.jpg 文件。
-- 若对象地址为`https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`形式，想要直接在浏览器中预览对象，有两种方案：
-  1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
-  2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://intl.cloud.tencent.com/document/product/436/18424) 和 [JSON 版本静态网站设置](https://intl.cloud.tencent.com/document/product/436/14984)。
+若对象地址为`https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`形式，您可以直接使用该地址在浏览器中预览 picture.jpg 文件。
 
 ### 如何使文件直接在浏览器中下载，而不是预览？
 
