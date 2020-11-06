@@ -1,6 +1,6 @@
 ## Operation Scenarios
 TencentDB for SQL Server supports migrating data from a CVM-based self-created SQL Server database to a TencentDB for SQL Server instance. This document describes how to configure and run such a migration task.
->
+>!
 >- Before migration, please make sure that the SQL Server version of the target instance is not below that of the source instance.
 >- For the .bak files used for migration, please make sure that each .bak file contains only one database.
 >- The name of the migrated database cannot be the same as that of the TencentDB for SQL Server instance.
@@ -11,7 +11,7 @@ TencentDB for SQL Server supports migrating data from a CVM-based self-created S
 2. Click **Create Task**, enter the task name, source database information, and target database information, and select **CVM-based self-created SQL Server database** as the source instance type.
 ![](https://main.qcloudimg.com/raw/7897cdebc4f35752e5029ea472fda64d.png)
 3. After clicking **Next**, you need to [configure the source SQL Server instance](#step2) first and then [configure the migration task](#step3).
->If the error message "Source instance info checking failed!" is displayed, please check the following items for troubleshooting:
+>?If the error message "Source instance info checking failed!" is displayed, please check the following items for troubleshooting:
 >- Whether the sa account of the source SQL Server instance exists.
 >- Whether the sa account password of the source SQL Server instance is correct.
 >- Whether the IP and port connectivity of the source SQL Server instance work properly.
