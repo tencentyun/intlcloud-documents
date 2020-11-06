@@ -1,10 +1,15 @@
 Using the space analysis feature of DBbrain, you can view the instance space utilization, including the sizes of data and logs, the daily increase in space utilization, the estimated number of available days, and the space used by tables and databases of the instance.
 
->?Currently, space analysis is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, space analysis is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
 
 ## Disk Space
-Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql), select **Performance Optimization** on the left sidebar, and select **Space Analysis**.
-On the "Space Analysis" tab, you can view the daily average growth in the past week, the remaining disk space (remaining disk space = purchased disk space - data space - log space), the estimated available days, the daily distribution of disk usage, and the disk space trend in the past week.
+Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql) and select **Performance Optimization**on the left sidebar. On the displayed page, select a database at the top and select the **Space Analysis** tab.
+
+On the "Space Analysis" tab, you can view the daily average growth in the past week, the remaining disk space, the estimated available days, the daily distribution of disk usage, and the disk space trend in the past 30 days.
+- For TencentDB for MySQL, the remaining disk space = purchased disk space - data space.
+- For TencentDB for CynosDB (compatible with MySQL), the remaining disk space = the maximum disk space - data space.
+
+
 ![](https://main.qcloudimg.com/raw/ecd64ab4f412169e7a2fe6478ec18f04.png)
 
 ## Top Tables
