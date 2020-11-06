@@ -5,7 +5,7 @@ The data and log backups in TencentDB for SQL Server are retained for seven days
 ## Directions
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver), click an instance name to enter the instance details page, and click **Rollback** in the top-right corner.
 2. In the pop-up dialog box, select the database to be rolled back, set the rollback time, decide whether to overwrite the original database, and click **Next**.
->
+>!
 >- Rollback is currently only supported for the same instance, and you can choose to overwrite the original database or generate a duplicate database.
 >- If you choose to generate a duplicate database, note that the disk capacity after rolling back cannot exceed the disk capacity available for the instance; otherwise, rollback will fail.
 >
