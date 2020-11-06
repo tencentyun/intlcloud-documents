@@ -8,6 +8,14 @@
          <th width="15%">相关文档</th>  
      </tr> 
      <tr>
+         <td>SDK 5.0.108 精简版本发布</td>
+         <td><li>修复 iOS 版本稳定性问题。</li>
+             <li>修复 Android 版本偶现消息不回调问题。</li>
+         </td>
+         <td> 2020-10-23 </td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a> </td>
+     </tr>
+     <tr>
          <td> SDK 5.0.10 标准版本发布</td>
          <td><ul stype="margin:0:">
                <li> 优化信令接口，支持设置在线消息 onlineUserOnly 和离线推送信息 offlinePushInfo 参数。</li>
@@ -34,7 +42,7 @@
      </tr> 
 		  <tr>
          <td> SDK 5.0.106 版本发布（Android & iOS 精简版）</td>
-         <td>修复已知稳定性问题。
+         <td><li>修复已知稳定性问题。</li>
          </td>
          <td> 2020-09-21 </td>
          <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a> </td>
