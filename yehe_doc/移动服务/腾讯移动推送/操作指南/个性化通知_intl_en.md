@@ -6,7 +6,7 @@ TPNS supports adding custom parameters to the push text. After you bind custom p
 ## Use Cases
 
 This feature allows you to add custom parameters to the push task and display messages with different user attributes on devices, which is more appealing than the stereotyped push. For example, the account name “Pokonyan” shown in the following figure is customized.
-<img src="https://main.qcloudimg.com/raw/7e49d269531e0714996b7fda40f8ba1f.jpg" width="60%"></img>
+
 
 
 ## Prerequisites
@@ -16,7 +16,7 @@ This feature allows you to add custom parameters to the push task and display me
 1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns).
 2. Select **Toolbox** > **User Attribute Management** and click **New**.
 3. In the dialog box, enter the attribute name and description, and click **OK**. Then you can view the created time, attribute name, attribute description and number of devices on the **User Attribute Management** page. You can edit or delete an attribute at anytime.
-![](https://main.qcloudimg.com/raw/5fd62fb7e0026a292040a26f3d6cc16a.png)
+![](https://main.qcloudimg.com/raw/c7693a0b6775c79cc8922cc5240d84d4.png)
 
 ### Binding user attributes
 
@@ -24,7 +24,7 @@ Before pushing a custom message, you need to bind the user attributes to devices
 
 #### Method 1: using client APIs:
 
-- For more information on iOS SDK, see [User Attribute Feature] (https://intl.cloud.tencent.com/document/product/1024/30727#.E7.94.A8.E6.88.B7.E5.B1.9E.E6.80.A7.E5.8A.9F.E8.83.BD).
+- For more information on iOS SDK, see [User Attribute Feature](https://intl.cloud.tencent.com/document/product/1024/30727#.E7.94.A8.E6.88.B7.E5.B1.9E.E6.80.A7.E5.8A.9F.E8.83.BD).
 - For more information on Android SDK, see [User Attribute Feature](https://intl.cloud.tencent.com/document/product/1024/38542).
 
 #### Method 2: using RESTful APIs
@@ -36,12 +36,12 @@ For more information, see [Custom Push API](https://intl.cloud.tencent.com/docum
 ### Using the console
 
 1. Select **Message Management** > **Task List** and click **Create Push**.
-![](https://main.qcloudimg.com/raw/a97f47ae0bc61d5ca67a8c235942f8cc.png)
+![](https://main.qcloudimg.com/raw/f6a351c7a33b8cbd10b785660dda61c9.png)
 2. Insert the user attributes on the right of the **Notification Title** or **Notification Content** field.
 > ?One push supports adding up to 5 attributes at a time.
-> ![](https://main.qcloudimg.com/raw/fcae716dba0f098efb91a72e8e2a466a.png)
+> ![](https://main.qcloudimg.com/raw/1b0c19bb25cf7075fc2fb0e4528737c2.png)
 3. Set to deliver the default notification or content if no user attribute is matched.
-![](https://main.qcloudimg.com/raw/93833c98f826b90743debf8066da0a0e.png)
+![](https://main.qcloudimg.com/raw/cf33ae6b1b0ce97df310c04b28361f2a.png)
 4. Click **Preview**, double check the information, and click **Confirm**.
 
 ### Using RESTful APIs

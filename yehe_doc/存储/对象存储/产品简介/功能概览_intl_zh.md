@@ -53,8 +53,8 @@ COS 主要提供以下功能：
       <td>版本控制用于实现在相同存储桶中存放同一对象的多个版本。用户在为某一存储桶开启版本控制功能后，可以根据版本 ID 检索、删除或还原存放在存储桶中的对象。这有助于恢复被用户误删或应用程序故障而丢失的数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/19883">版本控制概述</a></td>
    </tr>
    <tr>
-      <td nowrap="nowrap">跨地域复制</td>
-      <td>用户可以通过配置跨地域复制规则，在不同存储地域的存储桶中自动、异步地复制增量对象，实现数据的异地容灾与备份，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/19237">跨地域复制概述</a></td>
+      <td nowrap="nowrap">存储桶复制</td>
+      <td>用户可以通过配置存储桶复制规则，在不同存储桶中自动、异步地复制增量对象，实现数据的容灾与备份，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/19237">存储桶复制概述</a></td>
    </tr>
    <tr>
 ​     

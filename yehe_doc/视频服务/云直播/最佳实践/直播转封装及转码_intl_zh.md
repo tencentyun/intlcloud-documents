@@ -235,14 +235,17 @@ Height_pixel = 192 * 240 / 320 = 144
 设置转码参数可以通过两种方式来实现，一种是通过 [云直播控制台](#T_control) 来实现，另一种是通过 [服务端 API](#T_api) 来实现。不管使用哪一种方式，主要涉及水印模板、转码模板、转码规则的相关操作。
 <span id="T_control"></span>
 #### 直播控制台
-1. 进入【功能模板】>【[转码配置](https://console.cloud.tencent.com/live/config/transcode)】添加转码配置模板，支持添加 [普通转码](https://intl.cloud.tencent.com/zh/document/product/267/31073)、[极速高清转码](https://intl.cloud.tencent.com/zh/document/product/267/31073) 模板。
+1. 进入【功能模板】>【[转码配置](https://console.cloud.tencent.com/live/config/transcode)】添加转码配置模板，支持添加 [普通转码](https://intl.cloud.tencent.com/document/product/267/31073)、[极速高清转码](https://intl.cloud.tencent.com/document/product/267/31073) 模板。
 2. 根据您的需求创建对应的转码类型，设置转码相关参数。也可以使用我们系统默认的参数，并生成一个对应的转码模板 ID。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的拉流域名，单击【管理】>【模板配置】，将此域名与转码模板进行关联。具体操作请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
+
 <span id="T_api"></span>
 #### API 调用
 
 1. 调用 [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790) 创建转码模板接口，设置您需要的转码类型参数信息。
+
 2. 调用 [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) 创建转码规则，设置参数拉流域名 DomainName 和 TemplateId（第1步返回）。在 AppName 及 StreamName 填写空字符串，表示通配此域名下所有拉流的转码。您还可以将转码模板与不同流名称进行关联，以此实现部分直播流开启转码的效果。
+
 3. 每一个转码模板都有对应一个**唯一**的**转码模板名称**，转码模板名称作为播放转码流的唯一标识，把转码模板名称添加到播放拉流地址中流 ID 名称的后面，就可以拉取到对应各种转码模板的转码流。
 
 >! 转码规则的操作，主要用来控制某个域名或者某条流启用某个转码模板，只有创建了转码规则，对应的播放域名拉取相应的转码模板才能生效。若没有创建转码规则，直接使用转码模板名称拼接的拉流地址是无效的。
@@ -287,13 +290,13 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">删除转码规则</a></td>
 </tr><tr>
 <td rowspan=4>直播水印</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">创建水印模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">创建水印模板</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">修改水印模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">修改水印模板</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">删除水印模板</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">删除水印模板</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30152">查询水印模板详情列表</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">查询水印模板详情列表</a></td>
 </tr></table>
 
 

@@ -128,6 +128,10 @@
    </tr>
 </table>
 
+### 全球加速域名
+
+全球加速域名的格式为`<BucketName-APPID>.cos.accelerate.myqcloud.com`，有关全球加速域名的介绍和使用示例，请参见 [全球加速概述](https://intl.cloud.tencent.com/document/product/436/33409#.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D)。
+
 ### 示例
 
 假设您通过主账号（APPID 为1250000000）登录 COS 控制台创建了一个存储桶，该存储桶的所属地域为**广州**地域，存储桶名称为 **examplebucket**。那么该存储桶默认域名如下：

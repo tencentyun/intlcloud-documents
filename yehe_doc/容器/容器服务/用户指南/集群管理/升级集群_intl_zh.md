@@ -16,7 +16,7 @@
 ![](https://main.qcloudimg.com/raw/9a86b7ebd520700999af9b6e62fe5bd4.png)
 <span id="Master"></span>
 ### 升级 Master Kubernetes 版本
->! **目前仅支持托管集群 Master 版本升级**，且升级需要花费5 - 10分钟，在此期间您将无法操作您的集群。
+>! **目前已支持托管集群、独立集群 Master 版本升级**，且升级需要花费5 - 10分钟，在此期间您将无法操作您的集群。
 
 
 #### 注意事项

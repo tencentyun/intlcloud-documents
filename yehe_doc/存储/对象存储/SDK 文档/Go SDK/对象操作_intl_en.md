@@ -598,7 +598,7 @@ type ListMultipartUploadsOptions struct {
 | Delimiter | A symbol. The identical paths between `Prefix` and the first occurrence of the `Delimiter` are grouped and defined as a common prefix. If no `Prefix` is specified, the common prefix starts with the beginning of the path | string | No |
 | encodingType | Specifies the encoding type of returned values; valid value: `url` | string |No |
 | prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | string |No |
-| MaxUploads | Sets the maximum number of multipart uploads returned. Value range: 1-1,000. Default value: 1,000 | string | No |
+| MaxUploads | Sets the maximum number of multipart uploads returned. Value range: 1-1,000. Default value: 1,000 | int | No |
 | KeyMarker | Used together with `upload-id-marker`.<br><li>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed;<br><li>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | string |No |
 | UploadIDMarker  | Used together with `key-marker`.<br><li>If `key-marker` is not specified, `upload-id-marker` will be ignored; <br><li>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | string |No |
 
@@ -1238,7 +1238,7 @@ func (s *ObjectService) Upload(ctx context.Context, key string, filepath string,
 
 #### Sample request
 
-[//]: # ".cssg-snippet-transfer-upload-object"
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```go
 key := "exampleobject"
 file := "../test"

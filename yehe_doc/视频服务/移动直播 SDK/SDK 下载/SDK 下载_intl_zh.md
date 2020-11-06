@@ -6,7 +6,6 @@
    <tr>
       <th width="0px" style="text-align:center">所属平台</th>
       <th width="0px" style="text-align:center">ZIP 包</th>
-      <th width="0px"  style="text-align:center">Github</th>
       <th width="0px" style="text-align:center">SDK 集成指引</th>
       <th width="0px" style="text-align:center">64位支持</th>
       <th width="0px" style="text-align:center">安装包增量</th>
@@ -14,7 +13,6 @@
    <tr>
       <td style="text-align:center">iOS</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_iOS_lastest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVInternational">Github</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38155">DOC</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">1.27M（arm64）</td>
@@ -22,7 +20,6 @@
      <tr>
       <td style="text-align:center">Android</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_Android_lastest.zip">DOWNLOAD</a></td>
-      <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVInternational">Github</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38156">DOC</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">jar：1.5M <br> so(armeabi)：4.4M <br>so(armeabi-v7a)：4.1M <br>so(arm64-v8a)：4.9M</td>

@@ -4,13 +4,13 @@ When performing stress testing on CLB, you may encounter connection failures cau
 ## Linux parameter description
 **tcp_timestamps:** whether to enable TCP timestamps. A timestamp is negotiated in TCP three-way handshake. If either party does not support this parameter, it will not be used in this connection.
 **tcp_tw_recycle:** whether to enable reuse of TCP TIME-WAIT state.
-**tcp_tw_resuse:** when enabled, connections in TIME_WAIT state that exceeds 1 second can be directly reused.
+**tcp_tw_reuse:** when enabled, connections in TIME_WAIT state that exceeds 1 second can be directly reused.
 
 ## Cause Analysis
-The client has too many TIME_WAIT because it proactively closes connections. When the client closes a connection, the connection will enter TIME_WAIT state and be reused after 60 seconds by default. In this case, you can enable `tcp_tw_recycle` and `tcp_tw_resuse` parameters to facilitate reuse of connections in TIME_WAIT state.
-If `tcp_timestamps` is currently disabled on CLB, `tcp_tw_recycle` and `tcp_tw_resuse` parameters enabled by the client will not take effect, and connections in TIME_WAIT state cannot be quickly reused. The following describes some Linux parameters and reasons why `tcp_timestamps` cannot be enabled on CLB:
+The client has too many TIME_WAIT because it proactively closes connections. When the client closes a connection, the connection will enter TIME_WAIT state and be reused after 60 seconds by default. In this case, you can enable `tcp_tw_recycle` and `tcp_tw_reuse` parameters to facilitate reuse of connections in TIME_WAIT state.
+If `tcp_timestamps` is currently disabled on CLB, `tcp_tw_recycle` and `tcp_tw_reuse` parameters enabled by the client will not take effect, and connections in TIME_WAIT state cannot be quickly reused. The following describes some Linux parameters and reasons why `tcp_timestamps` cannot be enabled on CLB:
 
-1. tcp_tw_recycle and tcp_tw_resuse only take effect when tcp_timestamps is enabled.
+1. tcp_tw_recycle and tcp_tw_reuse only take effect when tcp_timestamps is enabled.
 
 2. tcp_timestamps and tcp_tw_recycle cannot be enabled at the same time, because the public network client may fail to access the server through the NAT gateway. The reasons are as follows:
 

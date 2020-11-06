@@ -11,7 +11,7 @@ You can custom URL rewrite configuration to redirect URL 302 to destination URL.
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** in the **Operation** column of a domain name to enter its configuration page, and switch to the **Cache Configuration** tab to find **URL Rewrite**.
 
 **URL Rewrite** is disabled by default.
-![](https://main.qcloudimg.com/raw/ef62e52b60ebe50e57771b30709567d7.png)
+![](https://main.qcloudimg.com/raw/01f93aaa70c523ae0bb1ab5debae8558.png)
 
 
 ### Adding rules
@@ -26,13 +26,13 @@ You can add rewrite rule as needed and enable **URL Rewrite**.
 + URL to be rewritten and destination URL can contain up to 1,024 characters.
 
 Click **Add Rewrite Rule**:
-![](https://main.qcloudimg.com/raw/d10ef7d7f097bcaf4021b13659407adc.png)
+![](https://main.qcloudimg.com/raw/97ea8713395f3af8654c39be97f124d3.png)
 After a rule is added, as the overall configuration is disabled by default, the service in the production network environment will not be affected.
 
 >?The configuration below can be modified when it is disabled, but the configuration will not be deployed in the production network environment until it is enabled.
 
 You can enable **URL Rewrite** to deploy the added rewrite rule in the production network environment.
-![](https://main.qcloudimg.com/raw/c94b0d99ffc52b02bb3040551ec96637.png)
+![](https://main.qcloudimg.com/raw/214b034e578d5eaac0a63cacd49f1e2d.png)
 
 If the requested URL matches the currently configured rule, the request will be redirected by 302 to the corresponding destination URL.
 
@@ -51,7 +51,7 @@ You can click **Delete** in the **Operation** column of a rewrite rule to delete
 ## Configuration Samples
 
 If the **URL Rewrite Configuration** of the acceleration domain name `www.test.com`is as follows:
-![](https://main.qcloudimg.com/raw/e56fed9a5609dd3533d4b18a970f072d.png)
+![](https://main.qcloudimg.com/raw/19edbf944b4e727b7c62270f2d8078cf.png)
 
 The actual access status will be as follows:
 

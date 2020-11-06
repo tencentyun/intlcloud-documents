@@ -44,7 +44,7 @@ COS 产品定价按照**按量计费定价**。关于 COS 的具体价格，请�
    <tr>
       <td nowrap="nowrap">存储容量费用</td>
       <td rowspan="3">月</td>
-      <td rowspan="3">每月3日到5日为账单结算日，对上月产生的费用进行结算，输出账单</td>
+      <td rowspan="3">每月1日对上月产生的费用进行结算扣费，3日到5日输出账单</td>
       <td nowrap="nowrap">免费额度 >  按量计费</td>
    </tr>
    <tr>
