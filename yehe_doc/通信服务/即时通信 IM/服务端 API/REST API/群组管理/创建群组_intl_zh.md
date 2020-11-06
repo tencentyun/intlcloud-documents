@@ -52,7 +52,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom/BChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
     "Name": "TestGroup" // 群名称（必填）
 }
 ```
@@ -62,7 +62,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom/BChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
     "Name": "TestGroup", // 群名称（必填）
     "Introduction": "This is group Introduction", // 群简介（选填）
     "Notification": "This is group Notification", // 群公告（选填）
@@ -77,7 +77,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Name": "TestGroup", // 群名称（必填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom和BChatRoom)（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom)（必填）
     "MemberList": [ // 初始群成员列表，最多500个（选填）
          {
             "Member_Account": "bob", // 成员（必填）
@@ -95,7 +95,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom/BChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
     "GroupId": "MyFirstGroup", // 用户自定义群组 ID（选填）
     "Name": "TestGroup"   // 群名称（必填）
 }
@@ -106,7 +106,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Name": "TestGroup", // 群名称（必填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom/BChatRoom（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
     "AppDefinedData": [ // 群组维度的自定义字段（选填）
         {
             "Key": "GroupTestData1", // App 自定义的字段 Key
@@ -125,7 +125,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom和BChatRoom)（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom)（必填）
     "Name": "TestGroup", // 群名称（必填）
     "MemberList": [
        {
@@ -162,7 +162,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom和BChatRoom)（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom)（必填）
     "GroupId":"MyFirstGroup", // 用户自定义群组 ID（选填）
     "Name": "TestGroup", // 群名称（必填）
     "Introduction": "This is group Introduction", // 群简介（选填）

@@ -52,7 +52,7 @@ Create a group. The Owner_Account field is optional. If the parameter is not spe
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom/BChatRoom (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
     "Name": "TestGroup" // Group name (required)
 }
 ```
@@ -62,7 +62,7 @@ Create a group and specify basic group information, such as the group introducti
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom/BChatRoom (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
     "Name": "TestGroup", // Group name (required)
     "Introduction": "This is group Introduction", // Group introduction (optional)
     "Notification": "This is group Notification", // Group announcement (optional)
@@ -77,7 +77,7 @@ Create a group and specify the initial group member list. The group member list 
 ```
 {
     "Name": "TestGroup", // Group name (required)
-    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom and BChatRoom are not supported) (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom is not supported) (required)
     "MemberList": [ // Initial group member list, which contains a maximum of 500 members (optional)
          {
             "Member_Account": "bob", // Member (required)
@@ -95,7 +95,7 @@ To simplify group IDs, Tencent Cloud allows apps to customize group IDs when cre
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom/BChatRoom (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
     "GroupId": "MyFirstGroup", // User-defined group ID (optional)
     "Name": "TestGroup"   // Group name (required)
 }
@@ -106,7 +106,7 @@ Create a group and specify group custom fields. By default, AppDefineData is not
 ```
 {
     "Name": "TestGroup", // Group name (required)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom/BChatRoom (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
     "AppDefinedData": [ // Group custom field (optional)
         {
             "Key": "GroupTestData1", // Key of the app custom field
@@ -125,7 +125,7 @@ Create a group and specify group member custom fields. By default, AppMemberDefi
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom and BChatRoom are not supported) (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom is not supported) (required)
     "Name": "TestGroup", // Group name (required)
     "MemberList": [
        {
@@ -162,7 +162,7 @@ Create a group and specify group member custom fields. By default, AppMemberDefi
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom and BChatRoom are not supported) (required)
+    "Type": "Public", // Group type: Private/Public/ChatRoom (AVChatRoom is not supported) (required)
     "GroupId":"MyFirstGroup", // User-defined group ID (optional)
     "Name": "TestGroup", // Group name (required)
     "Introduction": "This is group Introduction", // Group introduction (optional)
