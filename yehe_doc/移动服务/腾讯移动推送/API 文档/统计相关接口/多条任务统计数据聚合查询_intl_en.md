@@ -7,7 +7,7 @@ request address/v3/statistics/get_push_group_stat_channel
 ```
 The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID` or `PlanId` ** in the last 7 days according to `GroupID` or `PlanId`.
+**Feature**: this API is used to query the aggregated statistics by push channel of all push tasks **with the same `GroupID` or `planId` ** in the last 7 days according to `GroupID` or `planId`.
 
 
 ## Parameter Description
@@ -15,11 +15,11 @@ The API request address is corresponding to the service access point. Select the
 
 | Parameter Name | Required | Type | Description |
 | --------- | ---- | ------------ | ------------------------------------------------------------ |
-| PlanId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "Plan_id" in push parameters            |
+| planId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "planId" in push parameters            |
 | groupId   | Yes   | String       | Field for aggregated statistics of multiple tasks, using corresponding "group_Id" in push parameters. This field will be disused gradually            |
-| startDate | Yes   | String | Query start date<li>Format: YYYY-MM-DD</li><li>Limit: only data of push tasks in the last 7 days can be aggregated</li> |
-| endDate   | Yes   | String | Query end date. Format: YYYY-MM-DD                                 |
->?If both `PlanId` and `groupId` exist in the request parameter, the query will be based on `planId` by default.
+| startDate | Yes   | String | Query start date<li>Format: YYYYMMDD</li><li>Limit: only data of push tasks in the last 7 days can be aggregated</li> |
+| endDate   | Yes   | String | Query end date. Format: YYYYMMDD                                 |
+>?If both `planId` and `groupId` exist in the request parameter, the query will be based on `planId` by default.
 
 #### Response parameters
 
