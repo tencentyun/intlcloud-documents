@@ -3,6 +3,7 @@
 有数据显示，2019年全国在线直播用户5.04亿，2020年预计5.26亿，销售规模9160亿，占我国网络零售规模的8.7%。市场如此之大，直播带货的效果如此好，除了进驻各大直播平台进行直播以外，如何搭建自己的直播带货平台呢？
 ## 需求背景
 
+
 交互场景中需要实现以下能力：
 - 聊天室功能
 - 公告功能
@@ -15,6 +16,9 @@
 - 直播间状态控制功能
 
 由此可以看出，直播带货的核心功能分为即时通信 IM 能力和直播能力，您可以选用 [即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047) 与 [云直播](https://intl.cloud.tencent.com/zh/document/product/1047) 作为需求实现的基础。
+
+## Demo 体验
+![](https://main.qcloudimg.com/raw/3158cc06a9e6fafa48554bbe1918fa8e.jpg)
 
 ## 场景化 SDK
 
@@ -32,6 +36,8 @@
     创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
   >?新建应用的业务版本默认为体验版，后续可根据需求 [升级](https://intl.cloud.tencent.com/document/product/1047/34577) 至专业版或旗舰版。
   >同一个腾讯云账号，最多可创建100个即时通信 IM 应用。若已有100个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
+
+
 3. 单击目标应用卡片，在左侧导航栏选择【群组管理】。
 4. 在【群组管理】页面，单击【添加群组】。
 5. 在弹出的添加群组对话框中，配置以下参数：
@@ -100,7 +106,7 @@ public async sendCustomMsgAndEmitEvent(type: string, extension?: string) {
 
 #### 使用群自定义字段
 
-小助手以群管理员的角色身份，适时调用 [修改群组基础资料 REST API](https://intl.cloud.tencent.com/zh/document/product/1047/1620) 更新对应的群自定义字段，从而实现直播间的商品上新通知和直播状态改变消息通知。
+小助手以群管理员的角色身份，适时调用 [修改群组基础资料 REST API](https://intl.cloud.tencent.com/document/product/1047/34962) 更新对应的群自定义字段，从而实现直播间的商品上新通知和直播状态改变消息通知。
 
 
 ### 步骤4：使用群发消息后回调实现用户等级统计
