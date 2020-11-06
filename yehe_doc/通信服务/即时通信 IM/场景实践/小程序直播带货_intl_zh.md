@@ -15,7 +15,7 @@
 - 直播功能
 - 直播间状态控制功能
 
-由此可以看出，直播带货的核心功能分为即时通信 IM 能力和直播能力，您可以选用 [即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047) 与 [云直播](https://intl.cloud.tencent.com/zh/document/product/1047) 作为需求实现的基础。
+由此可以看出，直播带货的核心功能分为即时通信 IM 能力和直播能力，您可以选用 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 与 [云直播](https://intl.cloud.tencent.com/document/product/1047) 作为需求实现的基础。
 
 ## Demo 体验
 ![](https://main.qcloudimg.com/raw/3158cc06a9e6fafa48554bbe1918fa8e.jpg)
