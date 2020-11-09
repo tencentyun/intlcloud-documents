@@ -103,4 +103,4 @@ App 后台需要调用 [批量帐号导入 REST 接口](https://intl.cloud.tence
 1. 老系统中的增量群聊消息，需要通过调用群组中 [在群组中发送普通消息 REST 接口](https://intl.cloud.tencent.com/document/product/1047/34959) 同步到即时通信 IM。
 2. 即时通信 IM 中的增量群聊消息，需要通过 [群内发言之后回调](https://intl.cloud.tencent.com/document/product/1047/34375) 同步到老系统。
 
->若无法涵盖 App 现有的即时通信服务，您可以联系客服或者商务经理一起协商合理的迁移方案。
+>!若无法涵盖 App 现有的即时通信服务，您可以联系客服或者商务经理一起协商合理的迁移方案。
