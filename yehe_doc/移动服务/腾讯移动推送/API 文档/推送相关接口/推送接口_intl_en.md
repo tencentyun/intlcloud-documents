@@ -2,10 +2,30 @@
 
 **Request method**: POST.
 
+The API request address is corresponding to the service access point. Select the request address corresponding to the service access point of your application.
+
+Service access point in Guangzhou, China:
+
 ```plaintext
-request address/v3/push/app
+https://api.tpns.tencent.com/v3/push/app
 ```
-The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+
+Service access point in Hong Kong, China:
+
+```plaintext
+https://api.tpns.hk.tencent.com/v3/push/app
+```
+
+Service access point in Singapore:
+
+```plaintext
+https://api.tpns.sgp.tencent.com/v3/push/app
+```
+Service access point in Shanghai, China:
+
+```plaintext
+https://api.tpns.sh.tencent.com/v3/push/app
+```
 
 **API feature**: Push API is the general term for all push APIs. Push API has many types of push targets, which are described as follows.
 All request parameters are JSON encapsulated and uploaded to the backend, which differentiates push targets based on the request parameters. If an error code returns, see [Server Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).
@@ -339,7 +359,7 @@ The table below specifies fields for the iOS platform.
 | badge_type      | Integer | aps    | Empty                 | No        | The user-configured badge number. Valid values:<li>-1: badge number does not change.<li> -2: badge number automatically increases by 1.<li> >=0: a custom badge number is configured.|
 | category        | String  | aps    | Empty     | No   | The action identifier displayed when the message is pulled down.                                     |
 | mutable-content | Integer | aps    | Empty     | No   |This is an additional notification parameter that carries "mutable-content" during push.<li>1 means that the Service Extension supports iOS 10. <li>Once enabled, the push details will include the arrival data report. Before using this feature, see [Notification Service Extension Usage Instructions] to implement the Service Extension API. If `mutable-content` is not carried, arrival data will not be reported. |
-| sound           | String  | aps    |  Empty    | No    | The sound field is used as follows.<br>1. To play the system default ringtone, use "sound":"default"<br>2. To play local custom ringtone, use "sound":"chime.aiff"<br>3. To mute, use "sound":"" or remove the `sound` field. Note: if you want to use a custom ringtone, the ringtone must be in Linear PCM, MA4 (IMA/ADPCM), alaw, or μLaw format, saved in the `bundle` directory of the project, and of no more than 30s in length; otherwise, the system default ringtone will be used.|
+| sound           | String  | aps    |  Empty    | No    | The sound field is used as follows.<br>1. To play the system default ringtone, use "sound":"default"<br>2. To play local custom ringtone, use "sound":"chime.aiff"<br>3. To mute, use "sound":"" or remove the `sound` field. Note: if you want to use a custom ringtone, the ringtone must be in Linear PCM, MA4 (IMA/ADPCM), alaw, or μLaw format, saved in the `bundle` directory of the project, and of no more than 30 sec in length; otherwise, the system default ringtone will be used.|
 | custom_content  | String  | ios    | Empty    | No    | Parameters for custom delivery, which must be serialized to a JSON string.                                |
 | xg     | String     |ios | Empty | No | Reserved key, which should not be used. |
 
