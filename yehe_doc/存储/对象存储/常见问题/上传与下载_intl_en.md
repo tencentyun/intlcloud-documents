@@ -7,19 +7,11 @@ No. The upload and download speed depends on your local bandwidth.
 
 Bucket endpoints in the format of `<BucketName-APPID>.cos.<Region>.myqcloud.com` are in XML format. You can directly preview file types supported by your browser by accessing the object URL using this endpoint format.
 
-Bucket endpoints in the format of `<BucketName-APPID>.<region>.myqcloud.com` are in JSON format. If you access an object URL using this endpoint format, a download window will pop up, and there are two ways that you can preview the file in your browser:
-
-1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object URL in XML format for access (strongly recommended).
-2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
-
 #### Sample:
 
 Take the picture.jpg file in the root directory of the bucket examplebucket-1250000000 in Beijing for example:
 
-- If the object endpoint is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access it to preview the picture.jpg file in your browser.
-- If the object endpoint is in the format of `https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`, there are two ways to directly preview the object in your browser:
-  1. Upgrade your COS Console to [the latest version](https://console.cloud.tencent.com/cos5) and use the object link in XML format for access (strongly recommended).
-  2. Bind a custom endpoint, enable a static website, and access the file using the custom endpoint. For more information, see [Endpoint Management for JSON](https://intl.cloud.tencent.com/document/product/436/18424) and [Static Website Settings for JSON](https://intl.cloud.tencent.com/document/product/436/14984).
+If the object endpoint is in the format of `https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`, you can directly access it to preview the picture.jpg file in your browser.
 
 ### How do I directly download a file in my browser without previewing it?
 

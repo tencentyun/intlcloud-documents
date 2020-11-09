@@ -1,3 +1,38 @@
+### 2.8.2 @2020.11.4
+
+**新增**
+
+支持微信、QQ、百度、头条、支付宝小程序平台，（在百度、头条、支付宝小程序平台上，暂时不支持发送图片、视频、文件等需要上传到 COS 的消息）。
+
+### 2.8.1 @2020.10.29
+
+**新增**
+
+支持发送 bmp 格式的图片。
+
+**变更**
+
+发送方发送在线消息和接收方接收在线消息,都不更新 [会话对象](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html) 的 `unreadCount` 和 `lastMessage`。
+
+**修复**
+
+同步最近联系人列表异常导致 SDK 无法 ready 的问题。
+
+
+### 2.8.0 @2020.10.20
+
+**新增**
+
+- [getGroupOnlineMemberCount](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupOnlineMemberCount)，支持查询直播群在线人数。
+- 发送图片消息接入图片压缩，接入侧根据可根据业务需要展示原图或者缩略图，请查看 [ImagePayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.ImagePayload)。
+
+**修复**
+
+Taro 3.x 集成 WebIM 时的兼容性问题。
+
+**变更**
+
+缩减 SDK 体积。[tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) 体积减小8.5%，[tim-wx-sdk](https://www.npmjs.com/package/tim-wx-sdk) 体积减小15%。
 ### 2.7.8 @2020.9.24
 
 **新增**

@@ -1,16 +1,38 @@
 
-## CVM Quota Limit
-BatchCompute may use pay-as-you-go and spot CVM instances during job execution. There is a limit on the number of CVM instances that a user can hold at the same time in different **AZs**. For details, see the "Purchase Limit for Pay-as-you-go CVM Instances" section in [Quota for CVM Instances](http://intl.cloud.tencent.com/document/product/213/2664).
+<table>
+	<tr>
+		<th width="20%">Quota Limit</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>CVM</td>
+		<td>BatchCompute may use CVMs (pay-as-you-go instances and spot CVM instances) while executing a job. There are limits on <b>the number of CVM instances</b> that a user can hold in different <b>availability zones</b>. For more information, see the “Purchase Limits for Pay-as-You-Go CVM Instances” section in <a href="https://intl.cloud.tencent.com/document/product/213/2664">Purchase Limits</a>.
+		</td>
+	</tr>
+	<tr>
+		<td>Job</td>
+		<td>Up to 1,000 jobs per user</td>
+	</tr>
+	<tr>
+		<td>Task template</td>
+		<td>Up to 50 task templates per user</td>
+	</tr>
+	<tr>
+		<td>Compute environment</td>
+		<td>
+			<ul class="params">
+				<li>Up to 10 compute environments per user</li>
+				<li>Up to 2,000 CVM nodes per environment</li>
+			</ul>
+		</td>
+	</tr>
+</table>
 
-## Job Quota Limit
-Up to 1,000 jobs are allowed for a single user.
 
-## Task Template Quota Limit
-Up to 50 task templates are allowed for a single user.
+<style>
+	.params{
+		margin-bottom:0px !important;
+	}
+</style>
 
-## Compute Environment Quota Limit
-Up to 10 compute environments are allowed for a single user.
 
-Up to 2,000 CVM compute nodes are allowed in a single compute environment.
-
-Up to 500 CPM compute nodes are allowed in a single compute environment.

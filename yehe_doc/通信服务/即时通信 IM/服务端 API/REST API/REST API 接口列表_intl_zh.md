@@ -5,7 +5,7 @@
 | 导入单个帐号 | [v4/im_open_login_svc/account_import](https://intl.cloud.tencent.com/document/product/1047/34953) |
 | 导入多个帐号 | [v4/im_open_login_svc/multiaccount_import](https://intl.cloud.tencent.com/document/product/1047/34954) |
 | 删除帐号  | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
-| 查询帐号  | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)  | 
+| 查询帐号  | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956)  |
 | 失效帐号登录态  | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
 | 查询帐号在线状态 | [ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
@@ -91,6 +91,7 @@
 | 设置成员未读消息计数   | [v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909) |
 | 删除指定用户发送的消息 | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
 | 拉取群漫游消息         | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
+|获取直播群在线人数|[v4/group_open_http_svc/get_online_member_num](https://cloud.tencent.com/document/product/269/49180)|
 
 
 ## 全局禁言管理
