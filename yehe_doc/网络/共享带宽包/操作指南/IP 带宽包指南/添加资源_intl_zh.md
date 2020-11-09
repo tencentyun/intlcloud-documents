@@ -1,4 +1,4 @@
->?目前共享带宽包处于内测阶段，如需使用，请提交 [内测申请](https://cloud.tencent.com/apply/p/8o8lmsr5nj8)。
+>?目前共享带宽包处于内测阶段，如需使用，请提交 [内测申请](https://intl.cloud.tencent.com/apply/p/8o8lmsr5nj8)。
 
 创建共享带宽实例后，您需要将使用该共享带宽的 EIP 和 CLB 添加到共享带宽实例中。
 
@@ -14,4 +14,4 @@
 3. 选择地域，在列表中找到目标共享带宽包实例，单击实例 ID 进入详情页。
 4. 在详情页的“带宽包资源”模块，单击【+添加资源】。
 5. 在弹窗中，选择资源类型和资源实例，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/b3aa545f5ecdd35f75cd4e4ac02da6bd.png)
+![](https://main.qcloudimg.com/raw/f6340c77f748ba0929a87d322e7669e7.png)
