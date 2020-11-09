@@ -1,8 +1,8 @@
-VOD supports initiating video processing by replacing complicated parameter sets with parameter templates. It offers a variety of preset parameter templates suitable for different video processing scenarios.
+With VOD, you can replace complicated parameter sets with parameter templates when initiating video processing. It offers a variety of preset parameter templates suitable for different video processing scenarios.
 
 ## Video Conversion
 
-Preset parameter templates for video conversion are divided into the following types:
+Preset parameter templates for video conversion:
 - Preset transcoding templates
 - Preset remuxing templates
 - Preset animated image generating templates
@@ -13,10 +13,11 @@ Preset parameter templates for video conversion are divided into the following t
 
 <span id="transcoding"></span>
 ### Preset transcoding templates
+#### Transcoded video formats
 
-<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">Specification</td><td colspan="1" rowspan="2">Template ID</td><td colspan="1" rowspan="2">Format</td><td colspan="4">Video Parameters</td><td colspan="2">Audio Parameters</td></tr>
-<tr><td colspan="1">Resolution</td><td colspan="1">Bitrate</td><td colspan="1">FPS</td><td colspan="1">Codec</td><td colspan="1">Codec</td></tr>
-<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400 Kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 Kbps</td></tr>
+<table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Specification</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
+<tr><th colspan="1">Resolution</th><th colspan="1">Bitrate</th><th colspan="1">FPS</th><th colspan="1">Codec</th><th colspan="1">Bitrate</th><th colspan="1">SampleRate</th><th colspan="1">SoundSystem</th><th colspan="1">Codec</th></tr>
+<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 kbps</td ><td colspan="1" rowspan="12">44100Hz</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
 <tr><td colspan="1">100210</td><td colspan="1">HLS</td></tr>
 <tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 540</td><td colspan="1" rowspan="2">1,000 Kbps</td></tr>
 <tr><td colspan="1">100220</td><td colspan="1">HLS</td></tr>
@@ -29,11 +30,111 @@ Preset parameter templates for video conversion are divided into the following t
 <tr><td colspan="1" rowspan="2">4K</td><td colspan="1">100080</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 2160</td><td colspan="1" rowspan="2">6,000 Kbps</td></tr>
 <tr><td colspan="1">100280</td><td colspan="1">HLS</td></tr></tbody></table>
 
+#### Transcoded audio formats
+
+<table>
+    <tr>
+        <th rowspan=1>
+            Template ID                
+        </th>
+        <th rowspan=1>
+            Format
+        </th>
+        <th>
+            Bitrate
+        </th>
+        <th>
+            Codec
+        </th>
+        <th>
+            SoundSystem
+        </th>
+        <th>
+            SampleRate
+        </th>
+    </tr>
+ <tr>
+        <td>
+            1100
+        </td>
+        <td rowspan="5">
+            M4A
+        </td>
+        <td>
+            24 Kbps
+        </td>
+        <td rowspan="5">
+            AAC
+        </td>
+        <td rowspan="7">
+            Stereo
+        </td>
+        <td rowspan="7">
+            44,100 Hz
+        </td>
+    </tr>
+ <tr>
+        <td>
+            1110
+        </td>
+        <td>
+            48 Kbps
+        </td>
+    </tr>
+    <tr>
+        <td>
+            1120
+        </td>
+        <td>
+            96 Kbps
+        </td>
+    </tr>
+     <tr>
+        <td>
+            1130
+        </td>
+        <td>
+            192 Kbps
+        </td>
+    </tr>
+    <tr>
+        <td>
+            1140
+        </td>
+        <td>
+            256 Kbps
+        </td>
+    </tr>
+    <tr>
+        <td>
+            1010
+        </td>
+        <td rowspan="2">
+            MP3
+        </td>
+        <td>
+            128 Kbps
+        </td>
+        <td rowspan="2">
+            MP3
+        </td>
+    </tr>
+    <tr>
+        <td>
+            1020
+        </td>
+        <td>
+            320 Kbps
+        </td>
+    </tr>
+</table>
+
+
 ### Preset TESHD templates
 
-<table class="table auto-table"><tbody><tr><td colspan="1" rowspan="2">Specification</td><td colspan="1" rowspan="2">Template ID</td><td colspan="1" rowspan="2">Format</td><td colspan="4">Video Parameters</td><td colspan="2">Audio Parameters</td></tr>
-<tr><td colspan="1">Resolution</td><td colspan="1">Maximum Bitrate</td><td colspan="1">FPS</td><td colspan="1">Codec</td><td colspan="1">Codec</td></tr>
-<tr><td colspan="1">SAME</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">Unlimited</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td></tr>
+<table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Specification</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
+<tr><th colspan="1">Resolution</th><th colspan="1">Maximum Bitrate</th><th colspan="1">FPS</th><th colspan="1">Codec</th><th colspan="1">Bitrate</th><th colspan="1">SampleRate</th><th colspan="1">SoundSystem</th><th colspan="1">Codec</th></tr>
+<tr><td colspan="1">Same as source</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">Unlimited</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">44100Hz</td><td colspan="1" rowspan="5">Stereo</td><td colspan="1" rowspan="5">AAC</td></tr></tr>
 <tr><td colspan="1">LD</td><td colspan="1">100810</td><td colspan="1">Proportionally scaled * 360</td><td colspan="1" rowspan="2">64 Kbps</td></tr>
 <tr><td colspan="1">SD</td><td colspan="1">100820</td><td colspan="1">Proportionally scaled * 540</td></tr>
 <tr><td colspan="1">HD</td><td colspan="1">100830</td><td colspan="1" rowspan="">Proportionally scaled * 720</td><td colspan="1" rowspan="2">128 Kbps</td></tr>
@@ -44,8 +145,8 @@ Preset parameter templates for video conversion are divided into the following t
 
 | Template ID | Format |
 | ------- | ------------------------ |
-| 6       | HLS                      |
-| 9       | MP4                      |
+| 875       | MP4                      |
+| 876       | HLS                      |
 
 <span id="cinemagraph"></span>
 ### Preset animated image generating templates
@@ -77,134 +178,115 @@ Preset parameter templates for video conversion are divided into the following t
 | 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
 
 ### Preset adaptive bitrate streaming templates
+#### Template information
 
 <table border="0" >
  <tr>
-  <th rowspan="2">Template ID</td>
-  <th rowspan="2" >Container Type (PackageType)</td>
-  <th rowspan="2" >Substream Specification</td>
-  <th colspan="4" >Video Parameters</td>
-  <th rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>
+  <th>Template ID</td>
+  <th>PackageType</td>
+  <th>EncryptionType</td>
+  <th>SubstreamInfo</td>
+  <th >Disable Higher Resolution Filter</td>
  </tr>
  <tr>
-  <th>Resolution</td>
-  <th>Bitrate</td>
-  <th >FPS</td>
-  <th >Codec</td>
+  <td>10</td>
+  <td>HLS</td>
+  <td>Not encrypted</td>
+  <td >Contain a substreams of 6 specifications ranging from "SD" to "4K"</td>
+  <td>Yes</td>
  </tr>
  <tr>
-  <td rowspan="6" >10</td>
-  <td rowspan="6">HLS</td>
-  <td  >LD</td>
-  <td  >Proportionally scaled * 240</td>
-  <td  >256 Kbps</td>
-  <td  >24</td>
-  <td  >H.264</td>
-  <td rowspan="6" >Yes</td>
- </tr>
- <tr >
-  <td >SD</td>
-  <td  >Proportionally scaled * 480</td>
-  <td  >512 Kbps</td>
-  <td  >24</td>
-  <td  >H.264</td>
- </tr>
- <tr >
-  <td  >HD</td>
-  <td  >Proportionally scaled * 720</td>
-  <td  >512 Kbps</td>
-  <td  >24</td>
-  <td  >H.264</td>
- </tr>
- <tr >
-  <td >FHD</td>
-  <td  >Proportionally scaled * 1080</td>
-  <td  >1,024 Kbps</td>
-  <td  >24</td>
-  <td  >H.264</td>
- </tr>
- <tr >
-  <td  >2K</td>
-  <td  >Proportionally scaled * 1440</td>
-  <td  >3,072 Kbps</td>
-  <td  >30</td>
-  <td  >H.264</td>
- </tr>
- <tr >
-  <td >4K</td>
-  <td  >Proportionally scaled * 2160</td>
-  <td  >6,144 Kbps</td>
-  <td  >30</td>
-  <td  >H.264</td>
+  <td>12</td>
+  <td>HLS</td>
+  <td>SimpleAES</td>
+  <td >Contain substreams of 6 specifications from "SD" to "4K"</td>
+  <td>Yes</td>
  </tr>
 </table>
 
-<table border="0">
-<tr >
-  <th rowspan="2" >Template ID</td>
-  <th rowspan="2"  >Container Type (PacakageType)</td>
-  <th  rowspan="2"  >Substream Specification</td>
-  <th  colspan="4" >Audio Parameters</td>
-  <th  rowspan="2" >Filter out Transcoding from Low Resolution to High Resolution (DisableHigherResolution)</td>
+#### Substream information
+
+<table border="0" >
+ <tr>
+  <th rowspan="2" >Substream Specification</td>
+  <th colspan="4" >Video Parameters</td>
+  <th colspan="4" >Audio Parameters</td>
  </tr>
- <tr >
-  <th >Bitrate</td>
-  <th   >SampleRate</td>
-  <th >SoundSystem</td>
-  <th >Codec</td>
+ <tr>
+  <th>Resolution</th>
+  <th>Bitrate</th>
+  <th>FPS</th>
+  <th>Codec</th>
+  <th>Bitrate</th>
+  <th>SampleRate</td>
+  <th>SoundSystem</td>
+  <th>Codec</td>
  </tr>
- <tr >
-  <td rowspan="6" >10</td>
-  <td rowspan="6">HLS</td>
-  <td >LD</td>
+ <tr>
+  <td>LD</td>
+  <td>Proportionally scaled * 240</td>
+  <td>256 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
   <td>48 Kbps</td>
-  <td >44,100 Hz</td>
-  <td >Stereo</td>
-  <td >AAC</td>
-  <td rowspan="6">Yes</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
- <tr >
-  <td >SD</td>
-  <td >48 Kbps</td>
-  <td >44,100 Hz</td>
-  <td >Stereo</td>
-  <td >AAC</td>
+ <tr>
+  <td>SD</td>
+  <td>Proportionally scaled * 480</td>
+  <td>512 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
+  <td>48 Kbps</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
- <tr >
+ <tr>
   <td>HD</td>
-  <td >48 Kbps</td>
-  <td >44,100 Hz</td>
-  <td >Stereo</td>
-  <td >AAC</td>
+  <td>Proportionally scaled * 720</td>
+  <td>512 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
+  <td>48 Kbps</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
- <tr >
+ <tr>
   <td >FHD</td>
-  <td >48 Kbps</td>
-  <td >44,100 Hz</td>
-  <td >Stereo</td>
-  <td >AAC</td>
+  <td>Proportionally scaled * 1080</td>
+  <td>1,024 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
+  <td>48 Kbps</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
- <tr >
-  <td >2K</td>
-  <td   
-   >48 Kbps</td>
-  <td  
-   >44,100 Hz</td>
-  <td  
-   >Stereo</td>
-  <td  
-   >AAC</td>
+ <tr>
+  <td>2K</td>
+  <td>Proportionally scaled * 1440</td>
+  <td>3,072 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
+  <td>48 Kbps</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
- <tr >
-  <td >4K</td>
-  <td  
-   >48 Kbps</td>
-  <td  
-   >44,100 Hz</td>
-  <td     
-   >Stereo</td>
-  <td 
-   >AAC</td>
+ <tr>
+  <td>4K</td>
+  <td>Proportionally scaled * 2160</td>
+  <td>6,144 Kbps</td>
+  <td>24</td>
+  <td>H.264</td>
+  <td>48 Kbps</td>
+  <td>44,100 Hz</td>
+  <td>Stereo</td>
+  <td>AAC</td>
  </tr>
 </table>
 
@@ -237,76 +319,76 @@ Preset parameter templates for video AI are divided into the following types:
     </tr>
  <tr>
         <th>
-            Porn detection (Porn)
+            Porn detection
         </th>
         <th>
-            Terrorism information detection (Terrorism)
+            Terrorist content detection
         </th>
         <th>
-            Politically sensitive information detection (Political)
+            Political content detection
         </th>
         <th>
-            Porn detection (Asr.Porn)
+            Porn detection
         </th>
         <th>
-            Politically sensitive information detection (Asr.Political)
+            Political content detection
         </th>
         <th>
-            Porn detection (Ocr.Porn)
+            Porn detection
         </th>
         <th>
-            Politically sensitive information detection (Ocr.Political)
+            Political content detection
         </th>
     </tr>
     <tr>
-        <td>
+        </td>
             10
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             No
         </td>
-        <td>
+        </td>
             No
         </td>
-        <td>
+        </td>
             No
         </td>
-        <td>
+        </td>
             No
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             20
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
-        <td>
+        </td>
             Yes
         </td>
     </tr>
@@ -314,14 +396,14 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Preset video content analysis templates
 
-| Template ID | Intelligent Categorization (Classification) | Intelligent Tagging (Tag) | Intelligent Cover (Cover) | Intelligent Frame-specific Tagging (FrameTag) |
+| Template ID | Smart Classification | Smart Tag | Smart Cover | Smart Frame Tag |
 | -- | -- | -- | -- | -- |
 | 10 | Yes | Yes | Yes | No |
 | 20 | Yes | Yes | Yes | Yes |
 
 ### Preset video content recognition templates
 
-| Template ID | Face Recognition (Face) | Full Text Recognition (OcrFullText) | Text Keyword Recognition (OcrWords) | Full Speech Recognition (AsrFullText) | Speech Keyword Recognition (AsrWords) |
+| Template ID | Face Recognition | Full Text Recognition | Text Keyword Recognition | Full Speech Recognition | Speech Keyword Recognition | 
 | -- | -- | -- | -- | -- | -- |
 10 | Yes (default figure library is used) | No | No | No | No |
 
@@ -346,7 +428,7 @@ Preset parameter templates for video AI are divided into the following types:
             Format
         </th>
         <th colspan=4>    
-            Video Parameters
+            Video parameters
         </th>
         <th colspan=1>    
             Audio Parameters
@@ -373,140 +455,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td rowspan=6>
             LD
         </td>
-        <td>
+        </td>
             10
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             320 * proportionally scaled
         </td>
-        <td>
+        </td>
             256 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             510
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 240
         </td>
-        <td>
+        </td>
             250 Kbps
         </td>
-        <td>
+        </td>
             15
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             210
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             320 * proportionally scaled
         </td>
-        <td>
+        </td>
             256 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             610
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 240
         </td>
-        <td>
+        </td>
             250 Kbps
         </td>
-        <td>
+        </td>
             15
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             10046
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             320 * proportionally scaled
         </td>
-        <td>
+        </td>
             256 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             710
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 240
         </td>
-        <td>
+        </td>
             250 Kbps
         </td>
-        <td>
+        </td>
             15
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -514,140 +596,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td rowspan=6>
             SD
         </td>
-        <td>
+        </td>
             20
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             640 * proportionally scaled
         </td>
-        <td>
+        </td>
             512 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             520
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 480
         </td>
-        <td>
+        </td>
             600 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             220
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             640 * proportionally scaled
         </td>
-        <td>
+        </td>
             512 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             620
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 480
         </td>
-        <td>
+        </td>
             600 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             10047
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             640 * proportionally scaled
         </td>
-        <td>
+        </td>
             512 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             720
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 480
         </td>
-        <td>
+        </td>
             600 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -655,140 +737,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td rowspan=6>
             HD
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
-            1280 * proportionally scaled
         </td>
-        <td>
+            1280 * Proportionally scaled
+        </td>
+        </td>
             1,024 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             530
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 720
         </td>
-        <td>
+        </td>
             800 Kbps
         </td>
-        <td>
+        </td>
             25
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             230
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
-            1280 * proportionally scaled
         </td>
-        <td>
+            1280 * Proportionally scaled
+        </td>
+        </td>
             1,024 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             630
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 720
         </td>
-        <td>
+        </td>
             800 Kbps
         </td>
-        <td>
+        </td>
             25
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             10048
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
-            1280 * proportionally scaled
         </td>
-        <td>
+            1280 * Proportionally scaled
+        </td>
+        </td>
             1,024 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             730
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 720
         </td>
-        <td>
+        </td>
             800 Kbps
         </td>
-        <td>
+        </td>
             25
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -796,140 +878,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td  rowspan=6>
             FHD
         </td>
-        <td>
+        </td>
             40
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
-            1920 * proportionally scaled
         </td>
-        <td>
+            1920 * Proportionally scaled
+        </td>
+        </td>
             2,500 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             540
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1080
         </td>
-        <td>
+        </td>
             1,400 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             240
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
-            1920 * proportionally scaled
         </td>
-        <td>
+            1920 * Proportionally scaled
+        </td>
+        </td>
             2,500 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             640
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1080
         </td>
-        <td>
+        </td>
             1,400 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             10049
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
-            1920 * proportionally scaled
         </td>
-        <td>
+            1920 * Proportionally scaled
+        </td>
+        </td>
             2,500 Kbps
         </td>
-        <td>
+        </td>
             24
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             740
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1080
         </td>
-        <td>
+        </td>
             1,400 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -937,140 +1019,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td  rowspan=6>
             2K
         </td>
-        <td>
+        </td>
             70
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             3,072 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             570
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             2,048 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             270
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             3,072 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             670
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             2,048 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             370
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             3,072 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             770
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 1440
         </td>
-        <td>
+        </td>
             2,048 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -1078,140 +1160,140 @@ Preset parameter templates for video AI are divided into the following types:
         <td  rowspan=6>
             4K
         </td>
-        <td>
+        </td>
             80
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             6,144 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             580
         </td>
-        <td>
+        </td>
             MP4
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             4,096 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             280
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             6,144 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             680
         </td>
-        <td>
+        </td>
             HLS
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             4,096 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             380
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             6,144 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.264
         </td>
-        <td>
+        </td>
             MP3
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             780
         </td>
-        <td>
+        </td>
             FLV
         </td>
-        <td>
+        </td>
             Proportionally scaled * 2160
         </td>
-        <td>
+        </td>
             4,096 Kbps
         </td>
-        <td>
+        </td>
             30
         </td>
-        <td>
+        </td>
             H.265
         </td>
-        <td>
+        </td>
             AAC
         </td>
     </tr>
@@ -1222,7 +1304,7 @@ Parameters that are not listed in the above table are the same, as shown below:
 <table>
     <tr>
         <th style="width:18%">
-            Category               
+            Classification               
         </th>
         <th style="width:22%">
             Parameter
@@ -1235,10 +1317,10 @@ Parameters that are not listed in the above table are the same, as shown below:
         <td rowspan=4>
             Video parameters
         </td>
-        <td>
+        </td>
             Profile
         </td>
-        <td>
+        </td>
 				    <ul>
 				       <li>If `Codec` is `H.264`, `Profile` is `High`</li>
 						   <li>If `Codec` is `H.265`, `Profile` is `Main`</li>
@@ -1246,221 +1328,55 @@ Parameters that are not listed in the above table are the same, as shown below:
         </td>
     </tr>
     <tr>
-        <td>
-            GOP length
         </td>
-        <td>
+            Group of Pictures (GOP) length
+        </td>
+        </td>
             240 frames
         </td>
     </tr>
     <tr>
-        <td>
-            Color space
         </td>
-        <td>
+            Color Space
+        </td>
+        </td>
             YUV420p
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             Bitrate control method
         </td>
-        <td>
+        </td>
             VBR
         </td>
     </tr>
     <tr>
         <td rowspan=3>
-            Audio parameters
+            Audio Parameters
         </td>
-        <td>
-            SampleRate
         </td>
-        <td>
+            Sampling Rate
+        </td>
+        </td>
             44,100 Hz
         </td>
     </tr>
     <tr>
-        <td>
+        </td>
             Bitrate
         </td>
-        <td>
+        </td>
             48 Kbps
         </td>
     </tr>
     <tr>
-        <td>
-            SoundSystem
         </td>
-        <td>
+            Sound System
+        </td>
+        </td>
             Stereo
         </td>
     </tr>
 </table>
-
-#### Transcoded audio formats
-
-<table>
-    <tr>
-        <th rowspan=1>
-            Template ID                
-        </th>
-        <th rowspan=1>
-            Format
-        </th>
-        <th>
-            Bitrate
-        </th>
-        <th>
-            Codec
-        </th>
-        <th>
-            SoundSystem
-        </th>
-        <th>
-            SampleRate
-        </th>
-    </tr>
- <tr>
-        <td>
-            1100
-        </td>
-        <td>
-            M4A
-        </td>
-        <td>
-            24 Kbps
-        </td>
-        <td>
-            AAC
-        </td>
-        <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
- <tr>
-        <td>
-            1110
-        </td>
-        <td>
-            M4A
-        </td>
-        <td>
-            48 Kbps
-        </td>
-        <td>
-            AAC
-        </td>
-        <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-    <tr>
-        <td>
-            1120
-        </td>
-        <td>
-            M4A
-        </td>
-        <td>
-            96 Kbps
-        </td>
-        <td>
-            AAC
-        </td>
-       <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-     <tr>
-        <td>
-            1130
-        </td>
-        <td>
-            M4A
-        </td>
-        <td>
-            192 Kbps
-        </td>
-        <td>
-            AAC
-        </td>
-       <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-    <tr>
-        <td>
-            1140
-        </td>
-        <td>
-            M4A
-        </td>
-        <td>
-            256 Kbps
-        </td>
-        <td>
-            AAC
-        </td>
-       <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-    <tr>
-        <td>
-            1010
-        </td>
-        <td>
-            MP3
-        </td>
-        <td>
-            128 Kbps
-        </td>
-        <td>
-            MP3
-        </td>
-       <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-    <tr>
-        <td>
-            1020
-        </td>
-        <td>
-            MP3
-        </td>
-        <td>
-            320 Kbps
-        </td>
-        <td>
-            MP3
-        </td>
-       <td>
-            Stereo
-        </td>
-                <td>
-            44,100 Hz
-        </td>
-    </tr>
-</table>
-
 
