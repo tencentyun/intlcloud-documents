@@ -70,11 +70,11 @@ You need to configure the page to redirect to in the client app's manifest:
 ![](https://main.qcloudimg.com/raw/5c7339b703864377ed2bc6463faddce1.png)
  - If you use a server SDK, you can set the intent for redirect as follows (with the SDK for Java as an example):
 ```
-action.setIntent("xgscheme://com.xg.push/notify_detail");
+action.setIntent("xgscheme://com.tpns.push/notify_detail");
 ```
  - If you want to bring parameters such as `param1` and `param2`, you can set as follows:
 ```
-action.setIntent("xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb");
+action.setIntent("xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb");
 ```
 
 **Get the parameters on the device**:
@@ -97,7 +97,7 @@ Uri uri = getIntent().getData();
    sanitizer.parseUrl(url);
    String value1 = sanitizer.getValue("key1");
    String value2 = sanitizer.getValue("key2");
-   Log.i("XG" , "value1 = " + value1 + " value2 = " + value2);
+      Log.i("TPNS" , "value1 = " + value1 + " value2 = " + value2);
 }
 ```
 
