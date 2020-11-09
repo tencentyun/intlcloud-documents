@@ -1,13 +1,13 @@
 ## Overview
 
-You can redirect subscribers who tap your notification to the specified in-app page, H5 and Deeplink to meet your needs in different use cases.
+You can redirect subscribers who tap your notification to the specified in-app page, HTML5 page and Deeplink to meet your needs in different use cases.
 
 ## Scope
 
 | Platform   | Type                                                    |
 | ------- | ------------------------------------------------------------ |
-| Android | <li>Intent redirect: jumps to the specified in-app page. You can also pass in custom parameters.<li>Open app: directly goes to the app’s homepage<li>URL: opens the browser and accesses the specified webpage<li>In-app Activity: jumps to the specified in-app page |
-| iOS     | <li>Opens the app by default<li>The business logic is based on the passed-in custom key and value |
+| Android | <li>Intent redirect: jumps to the specified in-app page. You can also pass in custom parameters.<li>Open application: directly goes to the application’s homepage<li>URL: opens the browser and accesses the specified webpage<li>In-app Activity: jumps to the specified in-app page |
+| iOS     | <li>Opens the application by default<li>The business logic is based on the passed-in custom key and value |
 
 ## Android Applications
 
@@ -15,7 +15,7 @@ You can redirect subscribers who tap your notification to the specified in-app p
 
 ### Configuring SDK
 
-To use Intent redirect, first configure the page to be redirected to in the client app’s AndroidManifest file.
+To use Intent redirect, first configure the page to be redirected to in the client application’s AndroidManifest file.
 
 If you want to redirect to the page specified by `AboutActivity`, use the following sample code:
 ```xml
@@ -26,11 +26,11 @@ If you want to redirect to the page specified by `AboutActivity`, use the follow
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT"/>
         <!-- The custom data block specifies your complete scheme, which will generate a URL in the format of "scheme name://hostname/pathname" based on your configuration -->
-        <!-- You may use app name, app package name, or another field that uniquely identifies the app to avoid conflicting redirection with other apps-->
+        <!-- You may use application name, application package name, or another field that uniquely identifies the application to avoid conflicting redirection with other applications-->
         <data
               android:scheme="Scheme name"
               android:host="Hostname"
-              android:path="/Pathname" />
+              android:path="/Path name" />
     </intent-filter>
 </activity>
 ```
@@ -43,9 +43,9 @@ To set the Intent redirect on the [TPNS Console](https://console.cloud.tencent.c
 
 ![](https://main.qcloudimg.com/raw/7555576dd7bea459eb7f27e8a0f48d19.png)
 
-#### Opening app
+#### Opening application
 
-By default, the console push is to open the app.
+Tapping on the notification that is pushed via the console will open the application by default.
 
 #### URL redirect
 
@@ -67,8 +67,8 @@ Add the `action` and `action_type` fields under `body.message.android` of the pu
 
 | Field Name | Type | Parent Item | Default Value | Required | Description |
 | ----------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
-| action         | Object  | Android | N/A | No | This sets the action after the notification bar is tapped; the default action is to open app. |
-| action_type | Integer | Action  | 1     | No   | One-tap action. Valid values: <li>1: opens Activity or app</li><li>2: opens the browser</li><li>3: Opens Intent (recommended; for more information, see [Configuring SDK](#sdk-.E9.85.8D.E7.BD.AE))</li> |
+| action         | Object  | Android | 1    | No | This sets the action after the notification bar is tapped; the default action is to open application. |
+| action_type | Integer | Action  | 1     | No   | One-tap action. Valid values: <li>1: opens Activity or application</li><li>2: opens the browser</li><li>3: Opens Intent (recommended; for more information, see [Configuring SDK](#sdk-.E9.85.8D.E7.BD.AE))</li> |
 
 #### Intent redirect (recommended)
 
@@ -86,7 +86,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-            "action_type": 3,// Action type; 1. Open Activity or app; 2. Open browser; 3. Open Intent          
+            "action_type": 3,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
             "intent": "xgscheme://com.xg.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
         }
       }
@@ -107,7 +107,7 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
     "content": "xxx",
     "android": {
       "action": {
-            "action_type": 3, // Action type; 1. Open Activity or app; 2. Open browser; 3. Open Intent          
+            "action_type": 3, // Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
             "intent": "xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
         }
       }
@@ -117,7 +117,7 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
 
 >? If the client requires more parameters for other responses, refer to [Getting parameters on the client](#zhongduan).
 
-#### Opening app
+#### Opening application
 
 Below is a sample of a complete message:
 
@@ -133,7 +133,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 1,// Action type; 1. Open Activity or app; 2. Open browser; 3. Open Intent  
+           "action_type": 1,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent  
         }
       }
    }	
@@ -156,7 +156,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 2,// Action type; 1. Open Activity or app; 2. Open browser; 3. Open Intent          
+           "action_type": 2,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
            "browser": {
                 "url": "http://tpns.qq.com", // Only http and https are supported
                 "confirm": 1 // Whether user’s confirmation is required
@@ -183,7 +183,7 @@ Below is a sample of a complete message:
     "content": "xxx",
     "android": {
       "action": {
-           "action_type": 1,// Action type; 1. Open Activity or app; 2. Open browser; 3. Open Intent        
+           "action_type": 1,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent        
            "activity": "com.x.y.MainActivity",
            "aty_attr": {// Activity attribute, only for action_type=1
                "if": 0, // Intent's Flag attribute
@@ -284,7 +284,6 @@ If you use iOS SDK integration, you can obtain custom parameters using click cal
     completionHandler();
 }
 ```
-
 If you use Flutter plugin integration, use the following APIs in the `runner->AppDelegate->didFinishLaunchingWithOptions` method at cold startup to:
 ```objective-c
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
