@@ -2,9 +2,9 @@ TencentDB for MySQL supports four types of architectures: the High-availability 
 
 ## Viewing Instance Architectures
 - For instances to be purchased, log in to the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb) and select the architecture in the "Architecture" section.
-![](https://main.qcloudimg.com/raw/f1417a645690900e4d82515e8e609d3b.png)
+![](https://main.qcloudimg.com/raw/5bbc8288b981097d8f6b36e150ddf7e2.png)
 - For purchased instances, log in to the [MySQL console](https://console.cloud.tencent.com/cdb), locate the desired instance in the instance list, and view its architecture in the "Configuration" column.
-![](https://main.qcloudimg.com/raw/0f5f39c3eeb7bdbcd61d6ccf157c07b2.png)
+![](https://main.qcloudimg.com/raw/f0618995c7b9f4821c0d4f18ce4a6f45.png)
 
 
 ## Architecture Comparison

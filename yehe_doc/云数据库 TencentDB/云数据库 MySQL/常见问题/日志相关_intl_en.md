@@ -1,6 +1,6 @@
 ### How do I view binlogs?
 Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click an instance ID/name to access the management page. On the **Backup and Restore** > **Log Backup List** tab, locate the desired binlog and click **Download** to view it.
-![](https://main.qcloudimg.com/raw/80e006c2d5165ecfa9ce9395d59d01f8.png)
+![](https://main.qcloudimg.com/raw/b411a99afeae2858ae578696ad9d66af.png)
 
 ### Why does my instance have no binlog?
 Probably because data is written slowly into the binlog, which, accordingly, has not been split yet. A non-split binlog will not be displayed in the TencentDB for MySQL console.

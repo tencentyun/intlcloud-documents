@@ -13,7 +13,7 @@ Ideal for industries such as gaming, internet, IoT, retail, e-commerce, logistic
 - Its data nodes are deployed on powerful hardware devices and its underlying storage uses local NVMe SSD disks with an IOPS of up to 240,000 (this value is the test result with MySQL's default page size of 16 KB and for your reference only. The actual value is subject to the specific configuration, page size, and business load).
 
 ## Basic Framework Diagram
-![Alt text](https://main.qcloudimg.com/raw/77490755263740e5ed8c51952d7309c1.svg)
+![Alt text](https://main.qcloudimg.com/raw/19d5619f983d3dc550b3218c0520b447.png)
 
 ## Upgrading
 - The engine versions of TencentDB for MySQL can be upgraded. For more information, see [Upgrading Database Engines](https://intl.cloud.tencent.com/document/product/236/8126).

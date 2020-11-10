@@ -11,7 +11,7 @@ We do not recommend the Basic Edition for the business production environment. I
 - Uses cost-effective premium cloud disks with stable performance as its underlying storage media, which makes them suitable for 90% of I/O scenarios. The IOPS calculation formula is {min 1,500 + 8 * capacity, max 4,500}. For example, the IOPS value range of a 50 GB disk is {min 1,900, max 4,500}.
 
 ## Basic Framework Diagram
-![Alt text](https://main.qcloudimg.com/raw/77a45e119f25edc9a5a5b78fe5c1277b.svg)
+![Alt text](https://main.qcloudimg.com/raw/fc709a3c5b65fd750ebb3ccb86ed8408.png)
 
 >!As the Basic Edition adopts a single-node architecture, when the node fails, it takes slightly longer to recover than the CVM (due to instance startup and data restoration). If your business requires high availability, we recommend you use MySQL instances of the High-availability Edition or the Finance Edition.
 
