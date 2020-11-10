@@ -15,13 +15,13 @@
 
 #### 单个凭据编辑标签
 
-1. 找到需编辑标签的凭据，选择其右侧的 **编辑标签**![](https://main.qcloudimg.com/raw/beb407f18cd4dbf5d56720639b35855b.png)
+1. 找到需编辑标签的凭据，选择其右侧的 **编辑标签**![](https://main.qcloudimg.com/raw/0620fe335e899503548b6de832ec0f02.png)
 
 2. 在弹出的 “您已经选择1个资源” 窗口中，根据实际需求进行 **添加** 、**删除** 标签
 
 #### 批量编辑标签
 
-1. 勾选需编辑标签的凭据，点击凭据顶部的 **编辑标签** ![](https://main.qcloudimg.com/raw/495d3d96228d4a63e3750efcdfa037cf.png)
+1. 勾选需编辑标签的凭据，点击凭据顶部的 **编辑标签** ![](https://main.qcloudimg.com/raw/8360c93a46b2b0087be839c2958e743a.png)
 2. 在弹出的 “您已经选择n个资源” 窗口中，根据实际需求进行 **添加** 、 **删除** 标签
 
 > 关于如何使用标签，请参见 [使用标签管理示例](https://intl.cloud.tencent.com/document/product/1078/38607)

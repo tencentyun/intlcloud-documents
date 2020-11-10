@@ -18,13 +18,13 @@
 2. 选择需要编辑凭据的所在区域
 3. 找到需编辑标签的凭据，选择其右侧的 **编辑标签** 
 
-![](https://main.qcloudimg.com/raw/beb407f18cd4dbf5d56720639b35855b.png)
+![](https://main.qcloudimg.com/raw/adb1764eb082e54e282b0148cad120ff.png)
 
 4. 在弹出的 “您已经选择1个资源” 窗口中设置，设置标签，如下图所示：
 
    例如，添加两组标签
 
-   ![](https://main.qcloudimg.com/raw/f5428beef4668e0de6fe5841af203d87.png)
+   ![](https://main.qcloudimg.com/raw/64831a56619eb1a9fbc80ba2f040f826.png)
 
    5. 点击 **确定**，系统出现修改成功提示   
 
@@ -38,4 +38,4 @@
 
 3. 在选择的区域凭据列表中，在右侧的搜索框选择以 **“标签”** 作为筛选条件，输入筛选内容即可，如下图所示
 
-   例如：你希望筛选出ower为alex的密钥，可输入标签：owner:alex![](https://main.qcloudimg.com/raw/e046a302dcf967bd9dddebf87633d773.png)
+   例如：你希望筛选出ower为alex的密钥，可输入标签：owner:alex![](https://main.qcloudimg.com/raw/d2d91d47fad9dd2465094aece1aa4a2b.png)
