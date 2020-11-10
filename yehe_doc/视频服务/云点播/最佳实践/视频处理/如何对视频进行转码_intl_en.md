@@ -11,20 +11,24 @@ This document describes how to transcode a video in VOD and get the transcoding 
 The code provided in this document is open-source and free of charge, but it may incur the following fees during use:
 
 - Fees for purchasing a Tencent Cloud CVM instance to run the TencentCloud API request script. For more information, please see [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
+- VOD storage space will be taken up by uploaded videos. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
+- VOD transcoding service will be used for video transcoding. For more information, please see [Video Transcoding Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
+- VOD traffic will be consumed for accelerated video playback. For more information, please see [Traffic billing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
+
 
 ## Initiating Transcoding in Console
-
-### Step 1. Activate VOD<span id="p11"></span>
+<span id="p11"></span>
+### Step 1. Activate VOD
 
 Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-
-### Step 2. Upload a video<span id="p12"></span>
+<span id="p12"></span>
+### Step 2. Upload a video
 
 Upload a test video as instructed in [Getting Started - Step 2](https://intl.cloud.tencent.com/document/product/266/8757). Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video used in the demo. The corresponding `FileId` is `5285890804162014755` as shown below:
 ![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
 >?We recommend you use a short video file (of dozens of seconds in duration) for the test to avoid taking too much time for transcoding.
-
-### Step 3. Initiate transcoding<span id="p13"></span>
+<span id="p13"></span>
+### Step 3. Initiate transcoding
 
 Check the uploaded test video on the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console and click **Process Video**:
 ![](https://main.qcloudimg.com/raw/cf6d8e0fa032b2a76acfd918cf5c3146.png)
@@ -36,8 +40,8 @@ Click **OK** to initiate transcoding:
 ![](https://main.qcloudimg.com/raw/f52ec218600e19af3e42359a90d03298.png)
 On the "Video Management" page, you can see that the test video status is "Processing", which indicates that the video is being transcoded:
 ![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
-
-### Step 4. View the transcoding result<span id="p14"></span>
+<span id="p14"></span>
+### Step 4. View the transcoding result
 
 On the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console, wait for the test video status to become "Normal", which indicates that the transcoding is completed. Then, click **Manage** on the right of the test video to enter the video management page:
 ![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
@@ -45,8 +49,8 @@ In the **Standard Transcoding List** on the "Basic Information" tab, videos in `
 ![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
 
 ## Calling TencentCloud API to Initiate Transcoding
-
-### Step 1. Prepare a CVM instance<span id="p21"></span>
+<span id="p21"></span>
+### Step 1. Prepare a CVM instance
 
 The TencentCloud API request script needs to be executed on a CVM instance meeting the following requirements:
 
@@ -58,22 +62,22 @@ The TencentCloud API request script needs to be executed on a CVM instance meeti
 For detailed directions on how to purchase a CVM instance and reinstall the system, please see [Operation Guide - Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855) and [Operation Guide - Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933), respectively.
 
 >!If you do not have a CVM instance satisfying the above conditions, you can also run the script on another Linux (such as CentOS or Debian) or macOS server with public network access, but you need to modify certain commands in the script based on the operating system. Please search for the specific modification method by yourself.
-
-### Step 2. Get the API key<span id="p22"></span>
+<span id="p22"></span>
+### Step 2. Get the API key
 
 Your API key (i.e., `SecretId` and `SecretKey`) is required for TencentCloud API request. If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
-
-### Step 3. Activate VOD<span id="p23"></span>
+<span id="p23"></span>
+### Step 3. Activate VOD
 
 Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-
-### Step 4. Upload a video<span id="p24"></span>
+<span id="p24"></span>
+### Step 4. Upload a video
 Upload a test video as instructed in [Getting Started - Step 2](https://intl.cloud.tencent.com/document/product/266/8757). Click [here](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) to view the test video used in the demo. The corresponding `FileId` is `5285890804162014755` as shown below:
 ![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
 >?We recommend you use a short video file (of dozens of seconds in duration) for the test to avoid taking too much time for transcoding.
 
-
-### Step 5. Initiate transcoding<span id="p25"></span>
+<span id="p25"></span>
+### Step 5. Initiate transcoding
 
 Log in to the CVM instance prepared in [step 1](#p21) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 ```
@@ -100,8 +104,8 @@ This command will initiate a [ProcessMedia](https://intl.cloud.tencent.com/docum
 ```
 {"TaskId": "1400329073-procedurev2-f6bf6f01612369b6db30f2224792a2aft0", "RequestId": "809918fb-791c-4937-b684-5027ba6bc5f0"}
 ```
-
-### Step 6. View the transcoding result<span id="p14"></span>
+<span id="p14"></span>
+### Step 6. View the transcoding result
 
 On the "Video Management" page, you can see that the test video status is "Processing", which indicates that the video is being transcoded:
 ![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
