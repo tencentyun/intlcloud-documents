@@ -185,6 +185,6 @@
         </tr>
         <tr>
             <td>Importing group members</td>
-            <td>AVChatRoom does not support group member importing.<br>A single request can import up to 500 group members. However, this limit is also restrained by the feature limits of different group types. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33515">Group Features</a>.</td>
+            <td>AVChatRoom does not support group member importing.<br>A single request can import up to 300 group members. However, this limit is also restrained by the feature limits of different group types. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33515">Group Features</a>.</td>
         </tr>
 </table>

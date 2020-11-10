@@ -20,7 +20,7 @@ install! 'cocoapods', :disable_input_output_paths => true  // TXIMSDK_TUIKit_liv
  pod 'TXIMSDK_TUIKit_iOS'                 // 集成聊天，关系链，群组功能，默认依赖 TXLiteAVSDK_TRTC 音视频库
 // pod 'TXIMSDK_TUIKit_iOS_Professional' // 集成聊天，关系链，群组功能，默认依赖 TXLiteAVSDK_Professional 音视频库
 pod 'TXIMSDK_TUIKit_live_iOS'		 // 集成群直播，直播广场，默认依赖 TXLiteAVSDK_TRTC 音视频库
-// pod 'TXIMSDK_TUIKit_iOS_Professional' // 集成群直播，直播广场，默认依赖 TXLiteAVSDK_Professional 音视频库
+// pod 'TXIMSDK_TUIKit_live_iOS_Professional' // 集成群直播，直播广场，默认依赖 TXLiteAVSDK_Professional 音视频库
 ```
 腾讯云的 [音视频库](https://intl.cloud.tencent.com/document/product/647/34615) 不能同时集成，会有符号冲突，如果您使用了非 [TRTC](https://intl.cloud.tencent.com/document/product/647/34615) 版本的音视频库，建议先去掉，然后 pod 集成 `TXIMSDK_TUIKit_iOS_Professional` 版本，该版本依赖的 [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615) 音视频库包含了音视频的所有基础能力。
 

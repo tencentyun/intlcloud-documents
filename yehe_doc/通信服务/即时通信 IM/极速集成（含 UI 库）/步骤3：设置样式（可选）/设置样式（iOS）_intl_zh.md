@@ -1,9 +1,12 @@
+本文介绍如何设置样式（iOS）
+
+
 
 ## 修改头像
 
 ### 修改默认头像图片
 
-TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。如果用户没有设置头像，则显示默认头像。
+TUIKit 的界面在显示用户时，会从用户资料中读取头像地址并显示。如果用户没有设置头像，则显示默认头像。
 
 您可以自定义默认头像的图片。
 ```objectivec
@@ -63,7 +66,7 @@ vc.messageController.view.backgroundColor = [UIColor greenColor];
 
 #### 设置气泡边距
 
-在 TUIKit 中，文字和声音都会用气泡显示，TUIMessageCellLayout 提供了类方法设置 bubbleInsets。
+在 TUIKit 中，文字和声音都会用气泡显示，TUIMessageCellLayout 提供了类方法设置 bubbleInsets。
 
 ```objectivec
 // 设置发送气泡边距；设置接收的方法类似
@@ -98,7 +101,7 @@ vc.messageController.view.backgroundColor = [UIColor greenColor];
 
 ```objectivec
 // 设置发送位置；设置接收的方法类似
-[TUIMessageCellLayout outgoingMessageLayout].avatarInsets = UIEdgeInsetsMake(10, 10, 20, 20);
+[TUIMessageCellLayout outgoingTextMessageLayout].avatarInsets = UIEdgeInsetsMake(10, 10, 20, 20);
 ```
 
 
@@ -111,7 +114,7 @@ vc.messageController.view.backgroundColor = [UIColor greenColor];
 ```objectivec
 // 设置接收消息的昵称字体；设置发送的方法类似，但默认情况下不显示发送方的昵称
 [TUIMessageCellData setIncommingNameFont:[UIFont systemFontOfSize:20]];
-[TUIMessageCellData setOutgoingTextColor:[UIColor redColor]];
+[TUIMessageCellData setIncommingNameColor:[UIColor redColor]];
 ```
 
 
@@ -126,10 +129,8 @@ NSMutableArray *array = [NSMutableArray arrayWithArray:vc.moreMenus];
 [array removeLastObject]; // 删除最后一个菜单
 vc.moreMenus = array; // 重新设置属性，立即生效
 ```
-显示效果如下图所示：
-![](https://main.qcloudimg.com/raw/ddf5937ae221699f30dea212303901f2.jpg)
 
 当用户单击菜单中的按钮时，TUIChatController 会通过回调事件通知上层。
->用户单击默认菜单时，也会有回调通知，您可以不作处理。
+>?用户单击默认菜单时，也会有回调通知，您可以不作处理。
 
 

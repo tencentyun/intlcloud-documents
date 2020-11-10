@@ -91,7 +91,7 @@ try{
 }
 ```
 
-> Here, `TIMTextElem` is not required. If vulgar language filtering is not required, you can enter the message content of `TIMTextElem` in the `desc` attribute of `TIMCustomElem`.
+>! Here, `TIMTextElem` is not required. If vulgar language filtering is not required, you can enter the message content of `TIMTextElem` in the `desc` attribute of `TIMCustomElem`.
 >
 4. After constructing the message, send it to the group.
 5. After group members receive the message, check whether the message protocol in `TIMCustomElem` of the message is the @ message protocol. If yes, proceed to the next step. Otherwise, skip the next step.
@@ -104,7 +104,7 @@ In addition, as red packet messages are important messages, we recommend that yo
 
 For more information about message priorities, see [Message Priorities](https://intl.cloud.tencent.com/document/product/1047/33526).
 
-> The payment feature of red packet messages requires apps to integrate corresponding payment SDKs on their own. The IM SDK currently does not provide this feature.
+>! The payment feature of red packet messages requires apps to integrate corresponding payment SDKs on their own. The IM SDK currently does not provide this feature.
 
 The process of constructing a simple red packet message (Android) is as follows:
 ```java

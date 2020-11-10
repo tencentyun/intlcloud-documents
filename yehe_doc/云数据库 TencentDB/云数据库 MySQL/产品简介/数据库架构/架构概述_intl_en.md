@@ -1,9 +1,9 @@
 TencentDB for MySQL supports four types of architectures: the High-availability Edition, the Finance Edition, the Single-node High IO Edition, and the Basic Edition. Currently, the Single-node High IO Edition applies to [read-only instances](https://intl.cloud.tencent.com/document/product/236/7270) only.
 
-## Viewing Instance Architecture
-- For instances to be purchased, log in to the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb), and select the architecture in the "Architecture" section.
+## Viewing Instance Architectures
+- For instances to be purchased, log in to the [TencentDB for MySQL purchase page](https://buy.cloud.tencent.com/cdb) and select the architecture in the "Architecture" section.
 ![](https://main.qcloudimg.com/raw/5bbc8288b981097d8f6b36e150ddf7e2.png)
-- For purchased instances, log in to the [MySQL Console](https://console.cloud.tencent.com/cdb), locate the desired instance in the instance list, and view its architecture in the "Configuration" column.
+- For purchased instances, log in to the [MySQL console](https://console.cloud.tencent.com/cdb), locate the desired instance in the instance list, and view its architecture in the "Configuration" column.
 ![](https://main.qcloudimg.com/raw/f0618995c7b9f4821c0d4f18ce4a6f45.png)
 
 
@@ -66,11 +66,11 @@ TencentDB for MySQL supports four types of architectures: the High-availability 
 <td>Gaming, internet, IoT, retail, e-commerce, logistics, insurance, securities, etc.</td>
 <td>Gaming, internet, IoT, retail, e-commerce, logistics, insurance, securities, etc.</td>
 <td>Applications with read/write separation requirements</td>
-<td>Personal learning, small websites, non-core small corporate systems, and medium-to-large corporate development and testing</td>
+<td>Personal learning, small websites, non-core small enterprise systems, and medium-to-large enterprise development and testing</td>
 </tr>
 </tbody></table>
 
 ## Documentation
 - TencentDB for MySQL supports MySQL v8.0, v5.7, v5.6, and v5.5. For more information, please see [Database Version](https://intl.cloud.tencent.com/document/product/236/31896).
 - TencentDB for MySQL supports the following instance types: the source instance, the read-only instance, and the disaster recovery instance. For more information, please see [Database Instance Types](https://intl.cloud.tencent.com/document/product/236/7268).
-- TencentDB for MySQL in different architectures supports different features. For more information, please see [List of Feature Differences](https://intl.cloud.tencent.com/document/product/236/36007).
+- TencentDB for MySQL supports different features in different architectures. For more information, please see [List of Feature Differences](https://intl.cloud.tencent.com/document/product/236/36007).

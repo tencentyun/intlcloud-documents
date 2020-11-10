@@ -20,7 +20,7 @@ install! 'cocoapods', :disable_input_output_paths => true  // This statement is 
  pod 'TXIMSDK_TUIKit_iOS'                 // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
 // pod 'TXIMSDK_TUIKit_iOS_Professional' // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
 pod 'TXIMSDK_TUIKit_live_iOS'		 // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
-// pod 'TXIMSDK_TUIKit_iOS_Professional' // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
+// pod 'TXIMSDK_TUIKit_live_iOS_Professional' // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
 ```
 The Tencent Cloud [audio and video library](https://intl.cloud.tencent.com/document/product/647/34615) cannot be integrated at the same time due to symbol conflicts. If you use a non-[TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version of an audio and video library, we recommend that you remove it first and then integrate the `TXIMSDK_TUIKit_iOS_Professional` version into the pod. This version of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) audio and video library includes all basic audio and video capabilities.
 

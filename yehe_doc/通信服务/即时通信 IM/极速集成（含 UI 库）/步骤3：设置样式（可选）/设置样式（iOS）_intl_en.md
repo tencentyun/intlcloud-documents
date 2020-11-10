@@ -98,7 +98,7 @@ A profile photo is a common element to every message. To set the size and positi
 
 ```objectivec
 // Set the profile photo location for the sender. The receiver’s profile photo is set in the same way.
-[TUIMessageCellLayout outgoingMessageLayout].avatarInsets = UIEdgeInsetsMake(10, 10, 20, 20);
+[TUIMessageCellLayout outgoingTextMessageLayout].avatarInsets = UIEdgeInsetsMake(10, 10, 20, 20);
 ```
 
 For other messages, obtain their `layout` instances to set the size and position of the profile photos.
@@ -111,7 +111,7 @@ Set the nickname font and color by modifying related properties in TUIMessageCel
 ```objectivec
 // Set the nickname font for the receiver. The sender’s nickname is set in the same way, but it is not displayed by default.
 [TUIMessageCellData setIncommingNameFont:[UIFont systemFontOfSize:20]];
-[TUIMessageCellData setOutgoingTextColor:[UIColor redColor]];
+[TUIMessageCellData setIncommingNameColor:[UIColor redColor]];
 ```
 
 
@@ -129,6 +129,6 @@ vc.moreMenus = array; // Reset the property and apply it immediately
 
 
 When the user clicks a button in the menu, TUIChatController notifies the upper layer with a callback event.
->When the user clicks the default menu, you are also notified by a callback, but you do not need to process it.
+>?When the user clicks the default menu, you are also notified by a callback, but you do not need to process it.
 
 

@@ -3,7 +3,7 @@ TencentDB for MySQL supports four types of architectures: the High-availability 
 The Basic Edition adopts a single-node deployment method and offers extremely high cost effectiveness.
 
 ## Use Cases
-We do not recommend the Basic Edition for the business production environment. It is more suitable for personal learning, small websites, non-core small corporate systems, and medium-to-large corporate development and testing.
+We do not recommend the Basic Edition for the business production environment. It is more suitable for personal learning, small websites, non-core small enterprise systems, and medium-to-large enterprise development and testing.
 
 ## Features
 - Supports computation-storage separation. If a compute node fails, fast recovery can be achieved by switching to another node. Underlying data is stored in three copies on CBS, which ensures a certain level of data reliability and enables quick data restoration from disk snapshots in case of disk failures.
