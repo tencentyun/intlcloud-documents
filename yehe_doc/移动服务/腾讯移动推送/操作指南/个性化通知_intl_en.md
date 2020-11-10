@@ -25,11 +25,11 @@ Before pushing a custom message, you need to bind the user attributes to devices
 #### Method 1: using client APIs:
 
 - For more information on iOS SDK, see [User Attribute Feature](https://intl.cloud.tencent.com/document/product/1024/30727#.E7.94.A8.E6.88.B7.E5.B1.9E.E6.80.A7.E5.8A.9F.E8.83.BD).
-- For more information on Android SDK, see [User Attribute Feature](https://intl.cloud.tencent.com/document/product/1024/38542).
+- For more information on Android SDK, see [User Attribute Feature](https://intl.cloud.tencent.com/document/product/1024/30715#.E7.94.A8.E6.88.B7.E5.B1.9E.E6.80.A7.E7.AE.A1.E7.90.86).
 
 #### Method 2: using RESTful APIs
 
-For more information, see [Custom Push API](https://intl.cloud.tencent.com/document/product/1024/38542).
+For more information, see [Custom Push API](https://intl.cloud.tencent.com/document/product/1024/38571).
 
 ## Getting Started
 
