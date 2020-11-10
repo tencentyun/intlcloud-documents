@@ -1,19 +1,23 @@
 >? TUIKit 5.0.10 版本开始基于 TRTC 实现了支持直播功能的 TUIKit_live UI 组件。
 
-在您导入 TUIKit 后，仅需简单的几步就可以快速启用直播功能。如果您还没有导入 TUIKit ，请根据 [步骤2：导入TUIKit](#step2) 中的方式导入 `tuikit` 和 `tuiki-live`。
+在您的项目导入 TUIKit 后，仅需简单的几步就可以快速启用直播功能。如果您还没有导入 TUIKit ，请根据 [步骤2：导入TUIKit](#step2) 中的方式导入 `tuikit` 和 `tuiki-live`。
 
 
 
 
-## 步骤1：开通音视频服务<span id="step1"></span>
+
+
+
+<span id="step1"></span>
+## 步骤1：开通音视频服务
 
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【开通腾讯实时音视频服务】区域的【立即开通】。
 3. 在弹出的开通实时音视频 TRTC 服务对话框中，单击【确认】。
    系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
    	
-
-## 步骤2：配置工程文件<span id="step2"></span>
+<span id="step2"></span>
+## 步骤2：配置工程文件
 
 建议使用源码集成 `tuikit` 和 `tuikit-live`，以便于您修改源码满足自身的业务需求。
 将 `tuikit` 和 `tuikit-live` 代码拷贝到自己项目中，在 `settings.gradle` 引入 `tuikit` 和 `tuikit-live module`，最后在自己项目中导入依赖。
@@ -22,8 +26,8 @@
 implementation project(':tuikit')
 implementation project(':tuikit-live')
 ```
-
-## 步骤3：初始化并登录 TUIKit<span id="step3"></span>
+<span id="step3"></span>
+## 步骤3：初始化并登录 TUIKit
 
 初始化 TUIKit 需要传入 [步骤1](#Step1) 生成的 SDKAppID，并调用 `login` 登录，其中 UserSig 生成的具体操作请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
@@ -42,8 +46,8 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
     }
 });
 ```
-
-## 步骤4：主播端开播<span id="step4"></span>
+<span id="step4"></span>
+## 步骤4：主播端开播
 
 创建主播端，您需要创建 `TUILiveRoomAnchorLayout` 并设置一个唯一的 roomid，即可开播。
 
@@ -54,8 +58,8 @@ layoutTuiLiverRomAnchor.setLiveRoomAnchorLayoutDelegate(this);
 // roomId：123456，观众端也需要设置和主播端一样的roomid才可以看到该主播。这里的roomid仅用于测试，实际应该生成一个唯一的值。
 layoutTuiLiverRomAnchor.initWithRoomId(getSupportFragmentManager(), 12345);
 ```
-
-## 步骤5：观众端观看直播<span id="step5"></span>
+<span id="step5"></span>
+## 步骤5：观众端观看直播
 
 创建观众端，您需要创建 `TUILiveRoomAudienceLayout` 并设置和主播端一致的 roomId 即可观看该主播的直播。
 
@@ -66,7 +70,8 @@ TUILiveRoomAudienceLayout roomAudienceLayout = findViewById(R.id.layout_room_aud
 roomAudienceLayout.initWithRoomId(getSupportFragmentManager(), 12345, “1280”, false, “”);
 ```
 
-## 步骤6：实现直播大厅<span id="step6"></span>
+<span id="step6"></span>
+## 步骤6：实现直播大厅
 
 现在，您已经拥有了主播端和观众端，还需要一个直播房间列表将两者关联起来。
 
@@ -92,12 +97,12 @@ public void onRoomDestroy(TRTCLiveRoomDef.TRTCLiveRoomInfo roomInfo) {
 }
 ```
 2. 创建直播大厅页 UI：
-直播大厅页用于展示直播列表，具体实现请参考 Demo 中 `LiveRoomFragment.java` 的实现
+直播大厅页用于展示直播列表，具体实现请参考 Demo 中 `LiveRoomFragment.java` 的实现。
 3. 单击观看：
 在直播大厅页单击任意直播间，参照 [步骤5：观众端观看直播](#step5) 生成观看端即可观看。
 
-## 步骤7：使用直播 CDN 观看<span id="step7"></span>
-
+<span id="step7"></span>
+## 步骤7：使用直播 CDN 观看
 创建观众端 TUILiveRoomAudienceLayout 时，如果设置 useCdn 为 false，则默认使用 TRTC 进行观看；如果设置 useCdn 为 true，且设置了 cdnDomain，则会采用 CDN 进行观看。
 
 TRTC 采用 UDP 协议进行传输音视频数据，标准直播 CDN 则采用的 RTMP/HLS/FLV 等协议进行数据传输。TRTC 的特点是延迟低，上下麦体验更加流畅，但价格会比标准直播的 CDN 高。
@@ -174,7 +179,7 @@ layoutTuiLiverRomAnchor.setLiveRoomAnchorLayoutDelegate(this);
 2. 在主播端 TUILiveRoomAnchorLayout 的回调函数中 getRoomPKList 设置 PK 列表数据。
 ```java
 public void getRoomPKList(final TUILiveRoomAnchorLayout.OnRoomListCallback callback) {
-    /// 如果您创建带PK功能，需要在这个回调通过 callback 返回可以PK的主播房间id数组。
+    /// 如果您创建的房间需要PK功能，在这个回调通过 callback 返回可以PK的主播房间id数组。
     RoomManager.getInstance().getRoomList(RoomManager.TYPE_LIVE_ROOM, new RoomManager.GetRoomListCallback() {
         @Override
         public void onSuccess(List<String> roomIdList) {
