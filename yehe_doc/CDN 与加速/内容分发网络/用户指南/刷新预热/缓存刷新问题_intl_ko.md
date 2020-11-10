@@ -20,7 +20,7 @@
 ### CDN 새로고침은 디렉터리 새로고침을 지원하나요?
 CDN은 현재 URL 퍼지, 디렉터리 새로고침과 URL 프리패치를 지원합니다.
 방법 1: Tencent Cloud CDN 콘솔에서 [디렉터리 새로고침](https://console.cloud.tencent.com/cdn/refresh)을 진행할 수 있습니다. 자세한 내용은 [캐시 제거](https://intl.cloud.tencent.com/document/product/228/6299)를 참조 바랍니다.
-방법 2: API 호출 방식을 통하여 새로고침할 수 있습니다. 자세한 내용은 [URL 퍼지](https://intl.cloud.tencent.com/document/product/228/3946)를 참조 바랍니다.
+방법 2: API 호출 방식을 통하여 새로고침할 수 있습니다. 자세한 내용은 [목록 경신](https://intl.cloud.tencent.com/document/product/228/33602)를 참조 바랍니다.
 
 ### 캐시 제거 기록은 어떻게 조회할 수 있나요?
 CDN 콘솔에서 캐시 제거 기록을 조회할 수 있습니다. 자세한 정보는 [작업 기록](https://intl.cloud.tencent.com/document/product/228/6299)을 참조 바랍니다.
