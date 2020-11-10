@@ -21,7 +21,7 @@
 ### CDN 퍼지는 디렉터리 퍼지를 지원하나요?
 CDN은 현재 URL 퍼지, 디렉터리 퍼지와 URL 프리패치를 지원합니다.
 방법1: Tencent Cloud CDN 콘솔에서 [디렉터리 퍼지](https://console.cloud.tencent.com/cdn/refresh)를 진행할 수 있습니다. 자세한 내용은 [캐시 퍼지](https://intl.cloud.tencent.com/document/product/228/6299)를 참조 바랍니다.
-방법2: API 호출 방식을 통하여 퍼지할 수 있습니다. 자세한 내용은 [URL 퍼지](https://intl.cloud.tencent.com/document/product/228/33601)를 참조 바랍니다.
+방법2: API 호출 방식을 통하여 퍼지할 수 있습니다. 자세한 내용은 [목록 경신](https://intl.cloud.tencent.com/document/product/228/33602)를 참조 바랍니다.
 
 ### 캐시 퍼지 기록은 어떻게 조회하나요?
 CDN 콘솔에서 캐시 퍼지 기록을 조회할 수 있습니다. 자세한 내용은 [작업 기록](https://intl.cloud.tencent.com/document/product/228/6299)을 참조 바랍니다.

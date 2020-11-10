@@ -11,19 +11,19 @@
 
 开通 KMS 服务并进行授权的操作步骤如下：
 1. 登录 [凭据管理系统控制台](https://console.cloud.tencent.com/kms2)，在控制台上方指引中，单击【[访问管理 CAM](https://console.cloud.tencent.com/cam/role/grant?roleName=SSM_QCSRole&policyName=QcloudAccessForSSMRole&principal=eyJzZXJ2aWNlIjoic3NtLnFjbG91ZC5jb20ifQ%3D%3D&serviceType=ssm&s_url=https://console.cloud.tencent.com/ssm)】。
-![](https://main.qcloudimg.com/raw/60e1f0a0e653d57a84b34a09c7f58016.png)
+![](https://main.qcloudimg.com/raw/020c50b0e3adfd536f59d04c60789d9e.png)
 3. 在服务授权页面，单击【同意授权】。
-![](https://main.qcloudimg.com/raw/6b5525c8dffe7acfd0e945367c7e7875.png)
+![](https://main.qcloudimg.com/raw/f88e4f4759480bb21e51662cc5a7fe80.png)
 4. 服务角色授权成功后，在控制台上方指引中，单击【[密钥管理系统 KMS](https://buy.cloud.tencent.com/kms)】。
-![](https://main.qcloudimg.com/raw/8d6c971fde72cd2d14fbf79326dbe0b8.png)
+![](https://main.qcloudimg.com/raw/dda6eb82ea6e9afe884f3738eac93beb.png)
 5. 在密钥管理系统开通页面，单击【立即开通】，成功开通密钥管理系统服务。
 
 ### 步骤2：选择密钥加密凭据
 用户主密钥（CMK）是密钥管理系统中的核心资源，这些主密钥经过第三方认证硬件安全模块（HSM）的保护。CMK 包含例如密钥 ID、创建日期、描述和密钥状态等元数据信息。
 用户使用凭据管理系统 [创建凭据](https://intl.cloud.tencent.com/document/product/1078/38601) 时，可以自由选择两类加密密钥进行加密：
 - 开通 KMS 服务后，系统会自动为凭据管理系统创建一个默认的云产品密钥，该密钥不支持删除和禁用操作。 用户可以选择使用凭据管理系统在 KMS 系统中默认创建的云产品 CMK 作为加密密钥 。
-![](https://main.qcloudimg.com/raw/d4893881a1a24d0d96496e22a063c362.png)
+![](https://main.qcloudimg.com/raw/1f7b701aff87cae221188b01e12d5d03.png)
 - 用户也可以通过 [KMS 控制台](https://console.cloud.tencent.com/kms2) 自主创建密钥，定义密钥策略及使用方法，KMS 支持用户自主选择密钥，且有两种密钥来源： **KMS 创建**或**自行导入**(BYOK)，更多信息请参见密钥管理系统 [创建密钥](https://intl.cloud.tencent.com/document/product/1030/31971) 和 [外部密钥导入](https://intl.cloud.tencent.com/document/product/1030/32795)。 
-![](https://main.qcloudimg.com/raw/0207749163b826b34dfe4266bd76ddd1.png)
+![](https://main.qcloudimg.com/raw/9c0650e85a3829e323add4e2f084329e.png)
 
 
