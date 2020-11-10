@@ -1,10 +1,14 @@
 本文介绍如何快速跑通即时通信 IM 的体验 Demo。
 
 
+
+
+
+
 <span id="step1"></span>
 ## 步骤1：创建应用
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
- >如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
+ >?如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
  >同一个腾讯云账号，最多可创建100个即时通信 IM 应用。若已有100个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
  >
 2. 单击【+添加新应用】。
@@ -18,12 +22,13 @@
 
 1. 单击目标应用卡片，进入应用的基础配置页面，
 2. 在【基本信息】区域，单击【显示密钥】，复制并保存密钥信息。
- >请妥善保管密钥信息，谨防泄露。
+ >!请妥善保管密钥信息，谨防泄露。
 
 <span id="step3"></span>
 ## 步骤3：下载并配置 Demo 源码
 
 1. 下载即时通信 IM Demo 工程，具体下载地址请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1047/33996)。
+>?为尊重表情设计版权，下载的 Demo 工程中不包含大表情元素切图，您可以使用自己本地表情包来配置代码。未授权使用 IM Demo 中的表情包可能会构成设计侵权。
 2. 打开所属终端目录的工程，找到对应的`GenerateTestUserSig`文件。
  <table>
      <tr>
@@ -56,14 +61,14 @@
      </tr>  
 </table>
 3. 设置`GenerateTestUserSig`文件中的相关参数：
- >本文以使用 Android Studio 打开 Android 工程为例。
+ >?本文以使用 Android Studio 打开 Android 工程为例。
   >
  - SDKAPPID：请设置为 [步骤1](#step1) 中获取的实际应用 SDKAppID。
  - SECRETKEY：请设置为 [步骤2](#step2) 中获取的实际密钥信息。
  ![](https://main.qcloudimg.com/raw/e7f6270bcbc68c51595371bd48c40af7.png)
 
 
->本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
+>!本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
 >正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## 步骤4：编译运行
@@ -103,5 +108,7 @@ pod install
  - iOS 进入 iOS/TUIKitDemo 文件夹，打开`TUIKitDemo.xcworkspace`编译运行。
  - Mac 进入Mac/TUIKitDemo 文件夹，打开`TUIKitDemo.xcworkspace`编译运行。
 
+## 相关文档
+- [价格说明](https://intl.cloud.tencent.com/zh/document/product/1047/34350)
 
 
