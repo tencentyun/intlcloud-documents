@@ -21,7 +21,7 @@ No. The cached content on CDN cache nodes are updated based on the [Cache Expira
 ### Does CDN support directory purge?
 Yes. CDN supports URL purge, directory purge, and URL prefetch.
 Method 1: You can perform directory purge in the [CDN console](https://console.cloud.tencent.com/cdn/refresh). For more information, please see [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299).
-Method 2: Purge URL by calling the [PurgeUrlsCache](https://intl.cloud.tencent.com/document/product/228/33601) API.
+Method 2: Purge URL by calling the [PurgePathCache](https://intl.cloud.tencent.com/document/product/228/33602) API.
 
 ### How do I view the purge cache history?
 You can check the purge cache history in the CDN Console. For more information, please see the **Operation Guide** in [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299#notes).
