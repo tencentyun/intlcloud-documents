@@ -8,8 +8,8 @@ Cluster events include event lists and event policies.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event List** to view all operation events in the current cluster.
 ![](https://main.qcloudimg.com/raw/3e97621eafcf8ff5fd86fe47a9fb1190.png)
 The severity divides into the following:
- - Fatal: exception events of a server or service that require manual intervention and will cause service interruption if left unattended. Such events may last for a period of time.
- - Severe: alert events that currently have not caused service or server interruption but will cause fatal events if left unattended.
+ - Fatal: node or service exceptions, which may last a while and may cause service unavailability if no human intervention is conducted.
+ - Severe: alerts, which haven't caused node or service unavailability yet but will lead to fatal events if left unattended for a long time.
  - Moderate: regular events occurring in the cluster that generally do not require special processing.
 
 ## Setting Event Policy
