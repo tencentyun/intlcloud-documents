@@ -91,7 +91,7 @@ try{
 }
 ```
 
->其中 `TIMTextElem` 不是必须的，如果确认不需要进行脏字过滤的情况下，可以把 `TIMTextElem` 中的消息内容填到 `TIMCustomElem` 中的 `desc` 属性中。
+>!其中 `TIMTextElem` 不是必须的，如果确认不需要进行脏字过滤的情况下，可以把 `TIMTextElem` 中的消息内容填到 `TIMCustomElem` 中的 `desc` 属性中。
 >
 4. 构建好消息后，发送到群里。
 5. 群里的成员接收到消息后，检查消息中的 `TIMCustomElem` 中的消息协议是否是 @ 消息协议。如果是， 则进行下一步处理，否则跳过。
@@ -104,7 +104,7 @@ try{
 
 关于消息优先级相关的内容可以参考 [消息优先级](https://intl.cloud.tencent.com/document/product/1047/33526)。
 
->红包消息的支付部分功能，需要应用自行集成相应的支付 SDK，IM SDK 暂不提供这部分功能。
+>!红包消息的支付部分功能，需要应用自行集成相应的支付 SDK，IM SDK 暂不提供这部分功能。
 
 一个简单的红包消息的构建过程如下（Android）：
 ```java
