@@ -1,10 +1,10 @@
-时间函数支持对日志时间进行格式转换，分组聚合等处理，通常应用于根据日志时间做统计分析的场景。日志服务 CLS 在每条日志中附带日志采集时间，格式为 long 型的微秒级时间戳`__TIMESTAMP_US__`（1597807109000000）。
+时间函数支持对日志时间进行格式转换，分组聚合等处理，通常应用于根据日志时间做统计分析的场景。日志服务 CLS 在每条日志中附带日志采集时间，格式为 long 型的毫秒级时间戳`__TIMESTAMP__`（1597807109000）。
 
 ## 时间转换函数 cast
 
 | 函数名                           | 作用                                                         | 示例                                                         |
 | :------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
-| `cast(date_string as timestamp)` | 将 long 型或 text 型时间戳转换为`TIMESTAMP 类型`，该数据类型可用于 [时间分组函数 histogram](https://intl.cloud.tencent.com/document/product/614/36746#.E6.97.B6.E9.97.B4.E5.88.86.E7.BB.84.E5.87.BD.E6.95.B0-histogram) 和时间展示 | cast(1597807109000 as timestamp)<br />转换结果：2020-08-19T03:18:29.000Z |
+| `cast(date_string as timestamp)` | 将 long 型或 text 型时间戳转换为`TIMESTAMP 类型`，该数据类型可用于 [时间分组函数 histogram](https://intl.cloud.tencent.com/document/product/614/36746) 和时间展示 | cast(1597807109000 as timestamp)<br />转换结果：2020-08-19T03:18:29.000Z |
 
 #### 参数限制
 
@@ -13,10 +13,10 @@
 
 #### 场景示例
 
-1. 将日志服务附带的日志采集时间`__TIMESTAMP_US__`转换为 `TIMESTAMP 类型`。
+1. 将日志服务附带的日志采集时间`__TIMESTAMP__`转换为 `TIMESTAMP 类型`。
 
 ```plaintext
-* | select cast(__TIMESTAMP_US__/1000 as timestamp)
+* | select cast(__TIMESTAMP__ as timestamp)
 ```
 
 2. 用户日志本身带有 long 型的秒级时间戳，如`time:1597807109`，需要转换为 `TIMESTAMP 类型`。
@@ -44,24 +44,24 @@
 
 | date_interval | 取值样例                                                     |
 | :------------ | :----------------------------------------------------------- |
-| MINUTE        | histogram( cast(\_\_TIMESTAMP\_US\_\_/1000 as timestamp),INTERVAL 1 MINUTE) |
-| HOUR          | histogram( cast(\_\_TIMESTAMP\_US\_\_/1000 as timestamp),INTERVAL 1 HOUR) |
-| DAY           | histogram( cast(\_\_TIMESTAMP\_US\_\_/1000 as timestamp),INTERVAL 1 DAY) |
-| MONTH         | histogram( cast(\_\_TIMESTAMP\_US\_\_/1000 as timestamp),INTERVAL 1 MONTH) |
-| YEAR          | histogram( cast(\_\_TIMESTAMP\_US\_\_/1000 as timestamp),INTERVAL 1 YEAR) |
+| MINUTE        | histogram( cast(\_\_TIMESTAMP\_\_ as timestamp),INTERVAL 1 MINUTE) |
+| HOUR          | histogram( cast(\_\_TIMESTAMP\_\_ as timestamp),INTERVAL 1 HOUR) |
+| DAY           | histogram( cast(\_\_TIMESTAMP\_\_ as timestamp),INTERVAL 1 DAY) |
+| MONTH         | histogram( cast(\_\_TIMESTAMP\_\_ as timestamp),INTERVAL 1 MONTH) |
+| YEAR          | histogram( cast(\_\_TIMESTAMP\_\_ as timestamp),INTERVAL 1 YEAR) |
 
 #### 场景示例
 
 统计每5分钟访问次数 PV 值。
 
 ```
-* | select histogram( cast(__TIMESTAMP_US__/1000 as timestamp),INTERVAL 5 MINUTE) AS time , count(*) as PV  group by time order by time
+* | select histogram( cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS time , count(*) as PV  group by time order by time
 ```
 
 >!histogram 函数时间聚合最小粒度只能为1min，如需更小的粒度聚合，推荐使用数学取模方法。
 
 ```
-* | select cast((__TIMESTAMP_US__ /1000-__TIMESTAMP_US__ /1000%60000) as timestamp) as time, count(1) as PV,count (distinct(remote_addr)) as UV group by time order by time
+* | select cast((__TIMESTAMP__-__TIMESTAMP__%60000) as timestamp) as time, count(1) as PV,count (distinct(remote_addr)) as UV group by time order by time
 ```
 
 上述公式中，%60000 表示按60秒时间进行对齐聚合。
