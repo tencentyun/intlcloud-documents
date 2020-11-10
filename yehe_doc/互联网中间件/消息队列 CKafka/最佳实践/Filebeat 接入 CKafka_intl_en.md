@@ -79,7 +79,7 @@ The Filebeat log file (default path: `/var/log/filebeat/filebeat`) contains a la
 2019-03-20T08:55:02.199+0800    INFO    kafka/log.go:53 producer/broker/478 shut down
 ```
 This problem may be related to the Filebeat version. Products in the Elastic family are updated frequently, and major version incompatibility problems often occur.
-For example, by default, Filebeat 6.5.x runs against Kafka 1.0.0, while Filebeat 5.6.x runs against Kafka 0.8.2.0.
+For example, by default, Filebeat 6.5.x runs against Kafka 0.9, 0.10, 1.1.0, or 2.0.0, while Filebeat 5.6.x runs against Kafka 0.8.2.0.
 
 Check the version configuration in the configuration file:
 ```
