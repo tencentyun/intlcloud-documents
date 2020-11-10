@@ -4,7 +4,7 @@ This article describes how to configure, compile, and run the IM trial demo in m
 <span id="step1"></span>
 ## Step 1: Create an App
 1. Log in to the [IM Console](https://console.cloud.tencent.com/im).
- > If you already have an app, take note of its SDKAppID and [skip to Step 2](#step2).
+ >? If you already have an app, take note of its SDKAppID and [skip to Step 2](#step2).
  > A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
  >
 2. Click **Add Application**.
@@ -18,7 +18,7 @@ This article describes how to configure, compile, and run the IM trial demo in m
 
 1. Click the target app card to enter the basic configuration page of the app.
 2. In the **Basic Info** area, click **Display key**. Copy and save the key information.
- > Store the key information properly to prevent disclosure.
+ >! Store the key information properly to prevent disclosure.
 
 <span id="step3"></span>
 ## Step 3: Download and Configure the Demo Source Code
@@ -56,14 +56,14 @@ This article describes how to configure, compile, and run the IM trial demo in m
      </tr>  
 </table>
 3. Set the relevant parameters in the `GenerateTestUserSig` file.
- > Here, we use Android Studio to open an Android project.
+ >? Here, we use Android Studio to open an Android project.
   >
  - SDKAPPID: set it to the actual SDKAppID obtained in [step 1](#step1).
  - SECRETKEY: enter the actual key information obtained in [step 2](#step2).
 
 
 
-> In this article, a SECRETKEY is configured in the client code to obtain UserSig. The SECRETKEY is easily decompiled and reverse cracked. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally run a demo project and commission features**.
+>! In this article, a SECRETKEY is configured in the client code to obtain UserSig. The SECRETKEY is easily decompiled and reverse cracked. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally run a demo project and commission features**.
 > The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is required, your app sends a request to the service server to obtain the dynamic `UserSig`. For more information, see [Generating a UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## Step 4: Compile and Run the Demo
@@ -104,6 +104,6 @@ pod install
  - Mac: enter the Mac/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the project.
 
 ## Related Documentation
-- [Pricing](https://intl.cloud.tencent.com/zh/document/product/1047/34350)
+- [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
 
 
