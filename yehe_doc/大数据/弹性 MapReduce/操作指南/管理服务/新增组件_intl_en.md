@@ -1,8 +1,8 @@
 ## Feature Overview
 This document describes how to add components in the EMR Console.
->
-- Please manage the components through **Cluster Service**. Component changes made directly to a server (such as adding a component) will not be synced to the console and thus cannot be further managed.
-- Components on a different EMR version or component version cannot be added. Instead, you can only add components on the current EMR version.
+>!
+>- Please manage the components through **Cluster Service**. If you log in to the node and change components, such as adding a component, the changes will not be synced to the console and thus cannot be further managed.
+>- Components on a different EMR version or component version cannot be added. Instead, you can only add components on the current EMR version.
 
 ## Directions
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page.
