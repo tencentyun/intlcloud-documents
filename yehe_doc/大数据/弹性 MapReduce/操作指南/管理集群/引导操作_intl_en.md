@@ -5,7 +5,7 @@ A bootstrap action is a custom script executed when a cluster is created to help
 An EMR instance can be created in the following steps:
 ![](https://main.qcloudimg.com/raw/a36ebd385e369317db55596fd1753937.png)
 A bootstrap action can be executed on the following three occasions:
-- a (after the server is initialized): after server resource initialization before EMR cluster software installation.
+- a (after the node is initialized): after server resource initialization and  before EMR cluster software installation.
 - b (before the cluster is launched): before cluster service startup.
 - c (after the cluster is launched): after cluster service startup.
 
