@@ -15,3 +15,6 @@ If you need to switch the billing mode of the cluster, cancel the unpaid order i
 
 ### Can I change the cloud disk type after a successful purchase?
 Currently, switching types of cloud disks is not supported. You can create a snapshot for backup and then use the snapshot to create a cloud disk of your desired type.
+
+### How do I choose the appropriate node and disk when creating a cluster?
+To evaluate the node specification of the ES service, please see [Evaluation of Cluster Specification and Capacity Configuration](https://intl.cloud.tencent.com/document/product/845/19551)
