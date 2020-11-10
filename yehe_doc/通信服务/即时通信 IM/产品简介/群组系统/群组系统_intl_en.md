@@ -9,7 +9,7 @@ The group system is an instant messaging system that allows multiple participant
   - There is no upper limit on the number of members in an AVChatRoom.
 - On the web or mini program end, AVChatRooms allow users to receive messages as guests without logging in.
 
->
+>!
 >- Although AVChatRooms support unlimited group members, if a spike in group members is expected within a short time (in scenarios such as large online events where members in a single group exceed 50,000), contact sales representatives in advance and report service resource usage by providing the SDKAppID and the scheduled event time.
 >- Currently, historical message storage is available only for non-AVChatRoom groups, with messages stored for 7 days for billing plans of the Trial Edition and Pro Edition and 30 days for the Flagship Edition by default. If you require a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
@@ -54,7 +54,7 @@ By default, the group system supports the following group types for common use c
 | Obtain group member information | Information of all group members  |Information of all group members|Information of the first 300 group members| None group member information |
 | Disband a group | Only the app admin can disband a group. |The group owner and group admin can disband the group. | The group owner and group admin can disband the group. | The group owner and group admin can disband the group. |
 
->
+>?
 >- Ordinary members of a work group (Work) can modify only the group name, introduction, announcement, and group profile photo URL, but not other basic group information.
 >- If the roles of a group type cannot meet your business needs, you can add roles by setting member-level [custom fields](https://intl.cloud.tencent.com/document/product/1047/33529).
 >- It is necessary to obtain the information about some members in scenarios where an AVChatRoom displays a list of some of its members.
@@ -68,7 +68,7 @@ By default, the group system supports the following group types for common use c
 | Apply to join a group | Not supported | Supported. Approval from the group owner or admin is needed. | Supported. No approval is needed. | Supported. No approval is needed. |
 | Join a group after receiving an invitation from a group member | Supported | Not supported | Not supported | Not supported |
 
->
+>?
 >- Exact search: search for a group by group ID. Fuzzy search: search for a group by fields such as the group name.
 >- Approval for joining a group: the group owner and admin can choose to approve or reject applications made by non-members to join the group. Only approved users can join the group.
 >- For a group type that does not support the invitation of non-members to a group, group members can share the group ID with non-members in the app so that the non-members can join the group.
@@ -83,7 +83,7 @@ By default, the group system supports the following group types for common use c
 | Mute a group member | Not supported | Supported. The group owner and admin can mute group members, but the admin can mute only ordinary group members. | Supported. The group owner and admin can mute group members, but the admin can mute only ordinary group members. | Supported. The group owner can mute group members. |
 | Periodically remove offline group members | Supported, but disabled by default | Supported, but disabled by default | Supported, but disabled by default | Not supported |
 
->Muted group members cannot send group chat messages.
+>!Muted group members cannot send group chat messages.
 
 
 ### Differences in group limits
@@ -92,7 +92,7 @@ By default, the group system supports the following group types for common use c
 | Maximum number of members | <ul style="margin:0;"><li>Trial Edition: 20 per group</li><li>Pro Edition: 200 per group by default, can be increased to 2,000 per group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9)</li><li>Flagship Edition: 2,000 per group by default, can be increased to 6,000 per group through a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9).</li></ul> | Unlimited |
 | Maximum number of groups | <ul style="margin:0;"><li>Trial Edition: up to 100 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition or Flagship Edition: unlimited</li></ul> | <ul style="margin:0;"><li>Trial Edition: up to 10 existing groups, and disbanded groups do not count against the quota</li><li>Pro Edition: up to 50 existing groups, and disbanded groups do not count against the quota. You can upgrade to an unlimited number of AVChatRooms by purchasing a [value-added service](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9).</li><li>Flagship Edition: unlimited</li></ul> |
 
->
+>!
 >- For an SDKAppID of the Pro Edition or Flagship Edition, up to 10,000 groups regardless of the group type (the number of created groups minus the number of disbanded groups) can be added in a day.
 >- For an SDKAppID of the Pro Edition or Flagship Edition, up to 100,000 groups can be added for free in a month. If this quota is exceeded, [fees for usage exceeding the free quota](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A5.97.E9.A4.90.E5.A4.96.E8.B6.85.E9.87.8F.E8.B4.B9.E7.94.A8) will be charged. It is recommend that you disband the groups that are no longer needed in a timely manner.
 
@@ -109,7 +109,7 @@ By default, the group system supports the following group types for common use c
 | Default message receiving option | Receive online and offline pushed messages | Receive online and offline pushed messages | Receive only online pushed messages | Receive only online pushed messages |
 | Users can receive group messages as guests without logging in | No | No | No | Yes |
 
->
+>!
 >- A group that requires activation is inactive before the group owner sends a message and is invisible to all group members except the group owner. A group that does not require activation is visible to all group members once created.
 >- Currently, offline push is available only on Android (Android offline push) and iOS (APNs push) platforms.
 >- The work group, public group, and meeting group have the historical message storage capability, which allows historical messages to be stored for 7 days (30 days for the Flagship Edition) free of charge by default. If you need a longer storage period, change the storage period of historical messages in the [console](https://console.cloud.tencent.com/im). Increasing the storage period of historical messages is a value-added service. For more information on pricing, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
@@ -122,7 +122,7 @@ By default, the group system supports the following group types for common use c
 | Importing groups, group members, and group messages is allowed | Yes. It is allowed when historical groups are migrated from a third-party platform to IM. | No. Only existing groups, group members, and group messages can be used. |
 | Time before a group is automatically repossessed (in seconds) | The backend does not repossess a group, unless the group owner disbands the group or all members quit the group. | The backend does not repossess a group, unless the group owner disbands the group or all members quit the group. |
 
->To enable group repossession, submit a ticket. After configuration, inactive groups will be cleaned up by group type. An inactive group is a group in which no messages are sent and no member changes occur.
+>!To enable group repossession, submit a ticket. After configuration, inactive groups will be cleaned up by group type. An inactive group is a group in which no messages are sent and no member changes occur.
 
 ## Group Data Structure
 ### Basic group information
@@ -146,7 +146,7 @@ By default, the group system supports the following group types for common use c
 | ApplyJoinOption | String | Membership application option | The following options are available:<ul style="margin:0;"><li>DisableApply: disallow any application.</li><li>NeedPermission: group owner or admin's approval is required.</li><li>FreeAccess: users can join the group freely without prior approval.</li></ul>|
 
 
->The permissions to modify the group name, introduction, announcement, and profile photo URL are described as follows:
+>!The permissions to modify the group name, introduction, announcement, and profile photo URL are described as follows:
 >- In a work group, any member can modify them.
 >- For other group types, only **non-ordinary members** can modify them.
 
@@ -169,7 +169,7 @@ For example, you can create a group that is used in an office environment. This 
 - Choose the work group type and [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply to enable the **view historical messages before joining** and **allow ordinary members to remove members** options.
 - [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for a new group type named OAGroup. Specify work group as the reference type and enable the **view historical messages before joining** and **allow ordinary members to remove members** options.  
 
->
+>!
 >- When creating a group type, you must specify a group type as a **reference type**. Note that BChatRoom in SDK of earlier versions cannot be specified as a reference type.
 >- After configuration, the new group type will have new features that are specified in the ticket, and the same features as the reference type.
 
