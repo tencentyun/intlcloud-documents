@@ -185,6 +185,6 @@
         </tr>
         <tr>
             <td>导入群成员</td>
-            <td>直播群（AvChatRoom）不支持导入群成员<br>一次请求最多可导入500个成员，但群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33515">群组功能</a></td>
+            <td>直播群（AvChatRoom）不支持导入群成员<br>一次请求最多可导入300个成员，但群成员数上限同时受不同群组类型的特性约束，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33515">群组功能</a></td>
         </tr>
 </table>
