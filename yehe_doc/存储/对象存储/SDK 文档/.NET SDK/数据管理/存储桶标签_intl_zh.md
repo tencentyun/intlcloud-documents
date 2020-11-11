@@ -10,7 +10,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
 
 ## 设置存储桶标签
 
@@ -20,7 +20,7 @@ PUT Bucket tagging 用于为已存在的存储桶设置标签。
 
 #### 示例代码
 
-[//]: # ".cssg-snippet-put-bucket-tagging"
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```cs
 try
 {
@@ -62,7 +62,7 @@ GET Bucket tagging 用于查询指定存储桶下已有的存储桶标签。
 
 #### 示例代码
 
-[//]: # ".cssg-snippet-get-bucket-tagging"
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```cs
 try
 {
@@ -97,7 +97,7 @@ DELETE Bucket tagging 用于删除指定存储桶下已有的存储桶标签。
 
 #### 示例代码
 
-[//]: # ".cssg-snippet-delete-bucket-tagging"
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```cs
 try
 {
