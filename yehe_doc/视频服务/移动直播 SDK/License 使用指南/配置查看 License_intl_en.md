@@ -1,7 +1,7 @@
 
 <span id="config"></span>
-## Configuring the License
-You need to call the following methods to configure the license before calling Call SDK APIs:
+## Configuring a License
+Before calling the SDK APIs, you need to configure the license by following steps below 
 - **iOS**
  We recommend adding the following in `[AppDelegate application:didFinishLaunchingWithOptions:]`: 
 ```
@@ -14,7 +14,7 @@ TXLiveBase.getInstance().setLicence(context, LicenceUrl, Key);
 ```
 
 ## Viewing License Information
-After the license is successfully configured (you need to wait for a while and the time depends on your network condition), you can call the following methods to view information of the license:
+After the license is successfully configured, you can call the below commands to view the license information. Please note that it may take awhile for the configuration to be completed.
 
 - **iOS**
 ```
