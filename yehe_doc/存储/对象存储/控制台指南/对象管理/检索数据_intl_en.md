@@ -5,15 +5,15 @@ COS Select allows you to filter out desired data at the storage level, significa
 >?
 >
 >- COS Select currently supports objects in JSON or CSV format only in public cloud regions (Chinese mainland), and objects in Parquet format only in Beijing region.
->- Please make sure the file to be extracted complies with COS Select specifications. For more information on COS Select specifications, see [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472).
->- COS Select in the console supports data extraction of up to 40 M from 128 MB files. To process larger files or extract more data, please use the [API](https://intl.cloud.tencent.com/document/product/436/32360) or SDKs.
+>- Please make sure the file to be extracted complies with COS Select specifications. For more information on COS Select specifications, please see [SELECT Overview](https://intl.cloud.tencent.com/document/product/436/32472).
+>- COS Select in the console supports extraction of up to 40 MB data from a maximum of 128 MB files. To process larger files or extract more data, please use the [API](https://intl.cloud.tencent.com/document/product/436/32360) or SDKs.
 
 ## Directions
 
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5).
 2. On the left sidebar, click **Bucket List**.
 3. Click the bucket name you want to enter the bucket.
-4. Under **File List**, locate the object to extract data from, and click **More Actions > Extract** under the "Actions" column.
+4. Under **File List**, locate the object to extract data from, and click **More Actions > Extract** in the "Actions" column.
  >? Currently, COS Select can extract data only from objects in STANDARD and STANDARD_IA storage classes.
 5. Configure the fields **File Type**, **Header Field**, **Separator**, **Compression Format**, and **Export Format**.
    ![](https://main.qcloudimg.com/raw/b6390a741fc0b3dd6880752ed78d7ca5.png)
