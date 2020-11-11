@@ -13,7 +13,7 @@
 - 条数可选择限制20条、50条、100条。
 - 刷新间隔时间可选择5秒、15秒、30秒。
 - 可选择停止刷新或开启自动刷新。
-![](https://main.qcloudimg.com/raw/679c0c64b1757e0442263a91c98bcba4.png)
+![](https://main.qcloudimg.com/raw/baf2ebab28d566ad37730b489379a309.png)
 
 ## 结束（Kill）会话
 DBbrain 提供在线结束（Kill）会话的功能，方便用户对会话进行管理，可选中所需会话，并单击【Kill 会话】完成操作。
