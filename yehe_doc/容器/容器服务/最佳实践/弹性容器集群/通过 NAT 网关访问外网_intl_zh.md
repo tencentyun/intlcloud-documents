@@ -19,7 +19,7 @@
 1. 选择左侧导航栏中的【[路由表](https://console.cloud.tencent.com/vpc/route)】，进入“路由表”管理页面。
 2. 在“路由表”管理页面，单击【+新建】。
 3. 在弹出的“新建路由表”窗口中，参考以下信息创建与 EKS 集群同地域、同 VPC 的路由表。如下图所示：
-![](https://main.qcloudimg.com/raw/34967197070bfbacc3a93c8ac92b234d.png)
+![](https://main.qcloudimg.com/raw/927234784ea77fba3d1f1ce0de322a5f.png)
 主要参数信息如下：
  - **目的端**：选择需访问的外网 IP 地址，支持配置 CIDR。例如，填写 `0.0.0.0/0` 会转发所有流量到 NAT 网关。
  - **下一跳类型**：选择“NAT 网关”。

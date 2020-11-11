@@ -60,9 +60,9 @@ spec:
 #### 场景一：使用 TKE Ingress 获取真实源 IP
 [腾讯云负载均衡器](https://intl.cloud.tencent.com/product/clb)（CLB 七层） 默认会将客户端真实源 IP 放至 HTTP Header 的 `X-Forwarded-For` 和 `X-Real-IP`  字段。当服务流量在经过 Service 四层转发后会保留上述字段，后端通过 Web 服务器代理配置或应用代码方式获取到客户端真实源 IP，详情请参见 [负载均衡如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/214/3728)。通过容器服务控制台获取源 IP 步骤如下：
 1. 为工作负载创建一个主机端口访问方式的 Service 资源，本文以 nginx 为例。如下图所示：
-![](https://main.qcloudimg.com/raw/09c32efc5905dcc76fd97a84eb6a0511.png)
+![](https://main.qcloudimg.com/raw/ad9c3c161c485ecbd1be91f09965a918.png)
 2. 为该 Service 创建一个对应的 Ingress 访问入口，本文以 test 为例。如下图所示：
-![](https://main.qcloudimg.com/raw/a9c9e507d8487112c4f5730e20c36153.png)
+![](https://main.qcloudimg.com/raw/8db332b6cc7c26b7134a55f7a43dfe76.png)
 3. 待配置生效后，在后端通过获取 HTTP Header 中的 `X-Forwarded-For` 或 `X-Real-IP` 字段值得到客户端真实源 IP。后端抓包测试结果示例如下图所示：
 ![](https://main.qcloudimg.com/raw/a5f36c927c12c616c37039fb0d7a5e76.png)
 
@@ -72,7 +72,7 @@ Nginx Ingress 服务部署需要 Nginx Ingress 能直接感知客户端真实源
 
 1. Nginx Ingress 可以通过 TKE 应用商店、自定义 YAML 配置或使用官方（helm 安装）方式安装，原理和部署方法请参见 [在 TKE 上部署 Nginx Ingress](https://intl.cloud.tencent.com/document/product/457/38072)  中的部署方案1或方案3。若选择方案1部署，则需要修改 Nginx Ingress Controller Service 的 `externalTrafficPolicy` 字段值为 `Local` 。
 安装完成后，会在容器服务控制台自动为 Nginx Ingress Controller 服务创建一个 CLB（四层）访问入口，如下图所示：
-![image-20200928153915958](https://main.qcloudimg.com/raw/09c32efc5905dcc76fd97a84eb6a0511.png)
+![image-20200928153915958](https://main.qcloudimg.com/raw/669856ac57fe103c8fcf0d7088a9c880.png)
 2. 为需转发的后端服务创建一个 Ingress 资源并配置转发规则。YAML 示例如下：
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
