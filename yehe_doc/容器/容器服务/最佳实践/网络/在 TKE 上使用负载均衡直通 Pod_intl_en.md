@@ -110,7 +110,7 @@ When opening services through an Ingress, you also need to declare the use of th
 
 #### Using the console to create an Ingress
 To use the console to create an Ingress, select **Direct CLB-Pod Connection Mode**. For more information, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673). See the figure below:
-![](https://main.qcloudimg.com/raw/bdc245ba5b772f0def860448dcf5d007.png)
+![](https://main.qcloudimg.com/raw/5d3bbba1604e27ff7b601cadb9313911.png)
 
 #### Using YAML to create an Ingress
 To use YAML to create an Ingress, you need to add the annotation `ingress.cloud.tencent.com/direct-access: "true"` for the Ingress. A sample is as follows:
