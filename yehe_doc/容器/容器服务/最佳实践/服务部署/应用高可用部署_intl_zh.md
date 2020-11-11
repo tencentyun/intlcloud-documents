@@ -40,11 +40,11 @@ affinity:
 >!置放群组需与 TKE 独立集群在同一地域。
 >
 2. 批量添加节点，勾选“高级设置”中的“将实例添加到分散置放群组”，并选择已创建的置放群组。详情请参见 [新增节点](https://intl.cloud.tencent.com/document/product/457/30652)。如下图所示：
-<img style="width:80%" src="https://main.qcloudimg.com/raw/e3fdb23fc451bd9597f41e056a159482.png">
+<img style="width:80%" src="https://main.qcloudimg.com/raw/294da8f8cbc472dd479880d5af553a5e.png">
 3. 在“节点列表”页面为该批节点编辑相同的 label 进行标识，这些节点是置放群组中某个同一批次添加的节点。如下图所示：
 >!置放群组的策略仅对同一批次的节点生效，即需为每一批次的节点增加 label 并指定不同的值来进行标识。
 >
-<img style="width:80%" src="https://main.qcloudimg.com/raw/276684c8f448e70a366a2981408ac54b.png">
+<img style="width:80%" src="https://main.qcloudimg.com/raw/ea7272600ffa2a08a7068614529c3e1c.png">
 4. 给需要部署的工作负载的 Pod 指定节点亲和性，指定部署在这一批节点上，同时也指定 Pod 反亲和，将 Pod 在这批节点中尽量打散调度。YAML 示例如下：
 ```
 affinity:
