@@ -17,7 +17,7 @@
 - **缺点**：会存在潜在的 Pods（Endpoints）流量负载不均衡风险。
 
 如需启用保留客户端 IP 功能，可在 Service 资源中配置字段 `Service.spec.externalTrafficPolicy`。该字段表示服务是否希望将外部流量路由到节点本地或集群范围的端点。有两个选项值：`Cluster`（默认）和  `Local` 方式。如下图所示：
-![externalTrafficPolicy](https://main.qcloudimg.com/raw/a6ff4729ef98bedf5fd677030daf7d50.jpg)
+![externalTrafficPolicy](https://main.qcloudimg.com/raw/86ebb7dfe772cd1e290ed3783d2c4462.png)
 
  - `Cluster`：表示隐藏客户端源 IP，`LoadBalancer` 和 `NodePort` 类型服务流量可能会被转发到其他节点的 Pods。
  -  `Local`：表示保留客户端源 IP 并避免 `LoadBalancer` 和 `NodePort` 类型的服务流量转发到其他节点的 Pods，详情请参考 [Kubernetes 设置外部负载均衡器说明](https://kubernetes.io/zh/docs/tasks/access-application-cluster/create-external-load-balancer/)。相关 YAML 配置示例如下：
@@ -55,7 +55,7 @@ spec:
 
 
 在七层（HTTP/HTTPS）服务转发场景下，可以通过获取 HTTP Header 中 `X-Forwarded-For` 和 `X-Real-IP`  字段的值来获取客户端真实源 IP。TKE 中有两种场景使用方式，原理介绍图如下所示：
-![HttpHeader](https://main.qcloudimg.com/raw/f512625e5fff323a924ddb62a58e8a4b.jpg)
+![HttpHeader](https://main.qcloudimg.com/raw/2f40628e7211e3043ed54cfebe7f6b77.png)
 
 #### 场景一：使用 TKE Ingress 获取真实源 IP
 [腾讯云负载均衡器](https://intl.cloud.tencent.com/product/clb)（CLB 七层） 默认会将客户端真实源 IP 放至 HTTP Header 的 `X-Forwarded-For` 和 `X-Real-IP`  字段。当服务流量在经过 Service 四层转发后会保留上述字段，后端通过 Web 服务器代理配置或应用代码方式获取到客户端真实源 IP，详情请参见 [负载均衡如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/214/3728)。通过容器服务控制台获取源 IP 步骤如下：

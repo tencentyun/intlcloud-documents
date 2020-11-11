@@ -17,7 +17,7 @@ The advantage and disadvantage of this method are as follows:
 - **Disadvantage**: potential risks of traffic load imbalance across pods (endpoints) may occur.
 
 To enable the feature of preserving the client source IP, you can configure the `Service.spec.externalTrafficPolicy` field in Service resources. This field has two possible values, `Cluster` (default) and `Local`, which respectively indicate whether to route external traffic to the local or cluster endpoints of nodes, as shown in the figure below:
-![externalTrafficPolicy](https://main.qcloudimg.com/raw/a6ff4729ef98bedf5fd677030daf7d50.jpg)
+![externalTrafficPolicy](https://main.qcloudimg.com/raw/86ebb7dfe772cd1e290ed3783d2c4462.png)
 
  - `Cluster`: hides the client source IP. Service traffic of the `LoadBalancer` and `NodePort` types may be forwarded to the pods of other nodes.
  -  `Local`: preserves the client source IP and prevents service traffic of the `LoadBalancer` and `NodePort` types from being forwarded to the pods of other nodes. For more information, see [Create an External Load Balancer](https://kubernetes.io/zh/docs/tasks/access-application-cluster/create-external-load-balancer/). The sample YAML configuration is as follows:
@@ -55,7 +55,7 @@ The advantage and disadvantage of this method are as follows:
 
 
 In layer-7 (HTTP/HTTPS) service forwarding scenarios, the real source IP address of a client can be obtained from the `X-Forwarded-For` and `X-Real-IP` fields in the HTTP header. There are two use cases in TKE, as shown in the figure below:
-![HttpHeader](https://main.qcloudimg.com/raw/f512625e5fff323a924ddb62a58e8a4b.jpg)
+![HttpHeader](https://main.qcloudimg.com/raw/2f40628e7211e3043ed54cfebe7f6b77.png)
 
 #### Scenario 1: using TKE Ingress to obtain the real source IP address
 [CLB](https://intl.cloud.tencent.com/product/clb) (CLB layer-7) stores the real source IP address of a client in the `X-Forwarded-For` and `X-Real-IP` fields of the HTTP header by default. When service traffic goes through Service layer-4 forwarding, both fields are retained, and the backend can obtain the real source IP address of the client through web server proxy configuration or application code. For more information, see [Obtain Acutual IP for Layer 7 Load Balancing](https://intl.cloud.tencent.com/document/product/214/3728). The process for obtaining the source IP address in the TKE console is as follows:
