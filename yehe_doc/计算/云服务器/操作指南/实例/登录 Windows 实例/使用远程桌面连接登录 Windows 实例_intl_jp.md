@@ -10,18 +10,19 @@ Windows
 
 - Windows インスタンスをリモートログインするために必要なインスタンスの管理者アカウントとパスワードを取得しました。
  - システムのデフォルトパスワードを利用してインスタンスにログインする場合、［サイト内メール](https://console.cloud.tencent.com/message)から取得してください。
- - パスワードを忘れた場合、[インスタンスのパスワードをリセット](http://intl.cloud.tencent.com/document/product/213/16566)してください。
+ - パスワードを忘れた場合、[インスタンスのパスワードをリセット](https://intl.cloud.tencent.com/document/product/213/16566)してください。
 - CVMインスタンスはパブリックネットワークIPを購入済みであり、このインスタンスはCVMインスタンスの3389ポート（クイック構成で購入したCVMインスタンスの場合、このポートはデフォルトで開いている）が開いています。
 
 ## 操作手順
-> 以下の操作手順は Windows 7 OS を例として説明します。
+>? 以下の操作手順は Windows 7 OS を例として説明します。
 >
 1. ローカルWindows PCで、<img src="https://main.qcloudimg.com/raw/370daffec54024ee262d1e5dbcd4bde2.png" style="margin: 0;width: 35px;">をクリックし、【プログラムとファイルの検索】で、**mstsc**を入力して、**Enter**キーを押し、リモートデスクトップ接続のダイアログボックスを開きます。下記画像に示すように：
-![](https://main.qcloudimg.com/raw/38e9d9ac0485bf8ad3a209092a1284ba.png)
+![](https://main.qcloudimg.com/raw/d8a4b0f70f876f6c0edc6e995a02c37d.png)
 2.【コンピューター】の後に、WindowsサーバーのパブリックIPアドレスを入力し、【接続】をクリックします。
+ パブリックIPの取得方法について、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940) をご参照ください。
 3. ポップアップした「Windows セキュリティ」のウインドウで、インスタンスの管理者アカウントとパスワードを入力し、下記画像に示すように：
 > ポップアップした「この接続を信頼しますか」ダイアログボックスで、「このコンピューターへの接続について今後確認しない」をチェックし、【接続】をクリックします。
 >
-![](https://main.qcloudimg.com/raw/3a9aa79200ace4a6ebd68a6e511a341d.png)
+![](https://main.qcloudimg.com/raw/5d3d89e3ec4616a367b80ba377a3f541.png)
 4.【OK】をクリックすると、Windows インスタンスにログインできます。
 

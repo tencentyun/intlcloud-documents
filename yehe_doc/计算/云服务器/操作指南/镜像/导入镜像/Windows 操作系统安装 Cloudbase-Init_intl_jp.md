@@ -21,7 +21,7 @@ Cloudbase-Initをインストールには、以下のソフトウェアが必要
 ![](https://main.qcloudimg.com/raw/3249309f71fccaf73feeaa5bb55301c3.png)
 3. 【Next】をクリックします。
 4. 【I accept the terms in the License Agreement】にチェックを入れて、【Next】を2回クリックします。
-5. 「Configuration options」画面で、次の図に示すように、「**Serial port for logging**」を「**COM1**」に設定して【Next】をクリックします。
+5. 「Configuration options」画面で、「**Serial port for logging**」を「**COM1**」に設定し、「**Run Cloudbase-Init service as LocalSystem**」を選択して、【Next】をクリックします。次図に示すように：
 ![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. 【Install】をクリックして、Cloudbase-Initをインストールします。
 7. Cloudbase-Init のインストールが完了した後、次の図に示すように、【Finish】をクリックしてCloudbase-Initインストール画面を閉じます。

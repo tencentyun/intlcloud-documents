@@ -9,10 +9,11 @@ This document describes how to upload a video file on your local server to VOD.
 The code provided in this document is open-source and free of charge, but it may incur the following fees during use:
 
 - Fees for purchasing a Tencent Cloud CVM instance to run the upload script. For more information, please see [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
+- VOD storage space will be taken up by uploaded videos via pulling. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
 
 ## Uploading Video in CVM to VOD
-
-### Step 1. Prepare a CVM instance<span id="p1"></span>
+<span id="p1"></span>
+### Step 1. Prepare a CVM instance
 
 The upload script needs to be executed on a CVM instance meeting the following requirements:
 
@@ -24,16 +25,16 @@ The upload script needs to be executed on a CVM instance meeting the following r
 For detailed directions on how to purchase a CVM instance and reinstall the system, please see [Operation Guide - Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855) and [Operation Guide - Reinstalling System](https://intl.cloud.tencent.com/document/product/213/4933), respectively.
 
 >!If you do not have a CVM instance satisfying the above conditions, you can also run the script on another Linux (such as CentOS or Debian) or macOS server with public network access, but you need to modify certain commands in the script based on the operating system. Please search for the specific modification method by yourself.
-
-### Step 2. Activate VOD<span id="p2"></span>
+<span id="p2"></span>
+### Step 2. Activate VOD
 
 Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-
-### Step 3. Get the API key<span id="p3"></span>
+<span id="p3"></span>
+### Step 3. Get the API key
 
 Your API key (i.e., `SecretId` and `SecretKey`) is required for video upload. If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
-
-### Step 4. Download the code and install the SDK<span id="p4"></span>
+<span id="p4"></span>
+### Step 4. Download the code and install the SDK
 
 Log in to the CVM instance prepared in [step 1](#p1) as instructed in [Logging into Linux Instance in Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436) and enter and run the following command on the remote terminal:
 
@@ -53,8 +54,8 @@ This command will download the demo source code from GitHub and automatically ru
 [2020-06-23 19:56:36] Start configuring SDK parameters.
 [2020-06-23 19:56:36] SDK parameter configuration is completed.
 ```
-
-### Step 5. Upload a video<span id="p5"></span>
+<span id="p5"></span>
+### Step 5. Upload a video
 
 Before initiating upload, you need to prepare a video file and a cover image (optional) on your CVM instance. If it is inconvenient for you to upload a video to the CVM instance, you can run the following command on the remote terminal to download the test video and cover onto the CVM instance:
 
@@ -77,8 +78,8 @@ This command will upload the `tencent_cloud.mp4` video to VOD and upload the `te
 ```
 
 >?If you want to use your own video for test, we recommend you use a small video file (of several megabytes in size) to avoid taking too much time for upload due to insufficient CVM bandwidth.
-
-### Step 6. View the result<span id="p6"></span>
+<span id="p6"></span>
+### Step 6. View the result
 
 On the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console, you can see the uploaded video file and cover.
 

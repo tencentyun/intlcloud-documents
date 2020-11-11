@@ -21,7 +21,7 @@
 ### CDNサービスはディレクトリ更新をサポートしますか。
 現在、CDNサービスはURL更新、ディレクトリ更新、URLプリフェッチをサポートしています。
 方法1：Tencent Cloud CDNコンソールで[ディレクトリ更新](https://console.cloud.tencent.com/cdn/refresh)を行います。詳細については、[キャッシュ更新](https://intl.cloud.tencent.com/document/product/228/6299) をご参照ください。
-方法2： APIを呼び出してディレクトリを更新します。詳細については、[URL更新](https://intl.cloud.tencent.com/document/product/228/33601) をご参照ください。
+方法2： APIを呼び出してディレクトリを更新します。詳細については、[ディレクトリーの更新](https://intl.cloud.tencent.com/document/product/228/33602) をご参照ください。
 
 ### キャッシュ更新の履歴を表示する方法は何ですか。
 CDNコンソールでキャッシュ更新の履歴を表示できます。詳細については、[操作履歴](https://intl.cloud.tencent.com/document/product/228/6299#notes)をご参照ください。

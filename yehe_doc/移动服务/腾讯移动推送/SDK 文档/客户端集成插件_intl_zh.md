@@ -6,8 +6,8 @@
 官方插件地址包含：安装方法、demo（example 文件夹内）、API 说明，请开发者参阅。
 
 
-| 项目 | 地址 |
+| 项目 | 地址 | 
 |---------|---------|
-| Flutter | [官方地址](https://git.code.tencent.com/tpns/XG-Flutter-Plugin.git) |
+| Flutter | [官方地址](https://git.code.tencent.com/tpns/TPNS-Flutter-Plugin.git) | 
 | React-Native | [官方地址](https://git.code.tencent.com/tpns/TPNS-RN-Plugin.git) | 
-| Swift Demo | [官方地址](https://git.code.tencent.com/tpns/XG-Demo-Swift.git) |
+| Swift Demo | [官方地址](https://git.code.tencent.com/tpns/TPNS-Demo-Swift.git) | 

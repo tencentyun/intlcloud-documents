@@ -27,10 +27,11 @@ The VOD key hotlink protection signature distribution service demo provided in t
 - Fees for using signature distribution service provided by SCF. For more information, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284) and [Free Tier](https://intl.cloud.tencent.com/document/product/583/12282).
 - Fees for using Tencent Cloud API Gateway to provide public network APIs for SCF. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/628/11771).
 - Fees for VOD storage of uploaded videos.
+- VOD storage space will be taken up by uploaded videos. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
 
 ## Quickly Deploying Key Hotlink Protection Signature Distribution Service
-
-### Step 1. Prepare a CVM instance<span id="p1"></span>
+<span id="p1"></span>
+### Step 1. Prepare a CVM instance
 
 The deployment script needs to be executed on a CVM instance meeting the following requirements:
 
@@ -44,15 +45,15 @@ For detailed directions on how to purchase a CVM instance and reinstall the syst
 >!
 >- The key hotlink protection signature distribution service demo itself does not depend on CVM but only uses CVM to run the deployment script.
 >- If you do not have a CVM instance satisfying the above conditions, you can also run the script on another Linux (such as CentOS or Debian) or macOS server with public network access, but you need to modify certain commands in the deployment script based on the operating system. Please search for the specific modification method by yourself.
-
-### Step 2. Activate VOD and configure key hotlink protection<span id="p2"></span>
+<span id="p2"></span>
+### Step 2. Activate VOD and configure key hotlink protection
 
 1. Activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
 2. After activation, enable key hotlink protection as instructed in [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060) and record the hotlink protection key:
 ![](https://main.qcloudimg.com/raw/209bb5a252765cc77fe4402fe7e76d49.png)
 >!Here, enable key hotlink protection instead of referer hotlink protection. If you enable referer hotlink protection at the same time, the request may fail as the test method below does not meet the corresponding requirements.
-
-### Step 3. Get the API key and APPID<span id="p3"></span>
+<span id="p3"></span>
+### Step 3. Get the API key and APPID
 
 Your API key (i.e., `SecretId` and `SecretKey`) and `APPID` are required for deploying and running the key hotlink protection signature distribution service demo.
 

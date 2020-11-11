@@ -1,10 +1,10 @@
 ## Feature Overview
-Role management provides OPS and operation features at the role service level. You can restart, pause, and maintain cluster service roles. Role status can be monitored to help you stay on top of the real-time status of role processes.
+Role management provides OPS and operation features at the role service level. You can restart, pause, and maintain node service roles. Role status can be monitored to help you stay on top of the real-time status of role processes.
 
 ### Glossary
-- Restart: the selected service role will be restarted on a rolling basis by server.
-- Pause: the servers in the selected service role will be paused, which can then be resumed by using the **Start** feature.
-- Maintenance: the process daemon will be stopped for the servers in the selected service role. When a process becomes exceptional for various reasons, no alarming or automatic recovery will occur. This is suitable for server debugging. You can use the **Exit Maintenance** feature to resume the daemon.
+- Restart: the selected service role will be restarted on a rolling basis by node.
+- Pause: the nodes in the selected service role will be paused, which can then be resumed by using the **Start** feature.
+- Maintenance: the process daemon will be stopped for the nodes in the selected service role. When a process exception occurs, no alarm or automatic recovery will be triggered. This is suitable for node debugging. You can use the **Exit Maintenance** feature to resume the daemon.
 
 
 ## Directions

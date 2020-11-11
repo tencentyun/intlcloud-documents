@@ -63,13 +63,13 @@ Using Alluxio's Java API, you can set the policy in CreateFileOptions for writin
 
 You can simply override the default policy class in the configuration file at property `alluxio.user.file.write.location.policy.class. The built-in policies include:
 - LocalFirstPolicy (alluxio.client.file.policy.LocalFirstPolicy) 
-It returns the local host first, and if the local worker doesn't have enough capacity of a block, it randomly picks a worker from the active workers list. This is the default policy.
+It returns the local node first, and if the local worker doesn't have enough capacity of a block, it randomly selects a worker from the active workers list. This is the default policy.
 - MostAvailableFirstPolicy (alluxio.client.file.policy.MostAvailableFirstPolicy)
 It returns the worker with the most available bytes.
 - RoundRobinPolicy (alluxio.client.file.policy.RoundRobinPolicy)
 It chooses the worker for the next block in a round-robin manner and skips workers that do not have enough capacity.
 - SpecificHostPolicy (alluxio.client.file.policy.SpecificHostPolicy)
-It returns a worker with the specified host name. This policy cannot be set as default policy.
+It returns a worker with the specified node name. This policy cannot be set as default policy.
 
 Alluxio supports custom policies, so you can also develop your own policy appropriate for your workload by implementing interface `alluxio.client.file.policyFileWriteLocationPolicy`.
 >!The default policy must have an empty constructor. To use the ASYNC_THROUGH write type, all the blocks of a file must be written to the same worker.

@@ -16,10 +16,10 @@
 |getCapacityBytes	|getCapacityBytes	| Get the capacity of the Alluxio file system.
 |getUsedBytes	|getUsedBytes|	Get the number of bytes used in the Alluxio file system.
 |help	|help "cmd"	| Print help information for the given command. If no command is given, print help information for all supported commands.
-|leader	| leader |	Print the current Alluxio leader master host name.
+|leader	| leader |	Print the current Alluxio leader master node name.
 |load	|load "path"	| Load the data of a file or a directory from under storage into Alluxio.
 |loadMetadata	|loadMetadata "path"	| Load the metadata of a file or directory from under storage into Alluxio.
-|location	|location "path" |	Display a list of hosts that have the specified file data.
+|location	|location "path" | Output a list of node that have the specified file data.
 |ls	| ls "path" |	List all the files and directories directly under the given path with information such as size.
 |masterInfo	| masterInfo	| Print information regarding Alluxio master fault tolerance such as leader address, list of master addresses, and configured Zookeeper address.
 |mkdir	| mkdir "path1" ... "pathn" |	Create one or more directories under the given paths, along with any necessary parent directories. Multiple paths are separated by spaces or tabs. This command will fail if any of the given paths already exist.
@@ -256,7 +256,7 @@ $ ./bin/alluxio fs getUsedBytes
 ## leader
 
 **Background**
-The leader command prints the current Alluxio leader master host name.
+The `leader` command prints the current Alluxio leader master node name.
 
 **Operation example**
 ```
