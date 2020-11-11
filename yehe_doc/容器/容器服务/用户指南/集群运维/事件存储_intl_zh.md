@@ -10,12 +10,12 @@ Kubernetes Events 包括了 Kuberntes 集群的运行和各类资源的调度情
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，选择【集群运维】>【功能管理】，进入【功能管理】页面。
 3. 在“功能管理”页面上方选择地域，单击需要开启事件存储的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/26a92ce9df9613e7d3853853ee30e3a6.png)
+![](https://main.qcloudimg.com/raw/4aa121a296bab821704c197d5dc82113.png)
 4. 在“设置功能”页面，单击事件存储【编辑】。
 5. 在“事件存储”编辑页面，勾选【开启事件存储】，并配置日志集和日志主题。如下图所示：
 >! 一个日志集最多只能有10个日志主题。若选择自动创建日志主题，请保证该日志集下未满10个日志主题。
 
-![](https://main.qcloudimg.com/raw/f958a9bbf4f6ae9114680b618e1d9583.png)
+![](https://main.qcloudimg.com/raw/1edebef8f552a639abf842eaef02e739.png)
  单击【确定】，即可开启事件存储。
 
 
@@ -25,7 +25,7 @@ Kubernetes Events 包括了 Kuberntes 集群的运行和各类资源的调度情
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，选择【集群运维】>【功能管理】，进入【功能管理】页面。
 3. 在“功能管理”页面上方选择地域，单击需要开启事件存储的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/e71f52765488cfc7ca687d66decda6fc.png)
+![](https://main.qcloudimg.com/raw/f028a55d21a854d7229bd3452fafbdbf.png)
 4. 在“设置功能”页面，单击事件存储【编辑】。
 5. 在“事件存储”编辑页面，重新选择日志集和日志主题。单击【确定】即可更新日志集和日志主题。
 
@@ -34,8 +34,8 @@ Kubernetes Events 包括了 Kuberntes 集群的运行和各类资源的调度情
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，选择【集群运维】>【功能管理】，进入【功能管理】页面。
 3. 在“功能管理”页面上方选择地域，单击需要开启事件存储的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/e71f52765488cfc7ca687d66decda6fc.png)
+![](https://main.qcloudimg.com/raw/6e81d86a1ae8ed2fe5337b149240b229.png)
 4. 在“设置功能”页面，单击事件存储【编辑】。
 5. 在“事件存储”编辑页面，取消勾选【开启事件存储】。如下图所示，
-![](https://main.qcloudimg.com/raw/1b71e6bdbc862a44a3c32430f2bc1af3.png)
+![](https://main.qcloudimg.com/raw/fbe565c2d52ed395269af84860aab782.png)
     单击【确定】，即可关闭事件存储。

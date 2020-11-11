@@ -128,13 +128,13 @@
  - **批量检查**：适用于同时检查多个集群。
  - **立即检查**：适用于只检查一个集群。
  - **自动检查**：适用于需要周期性检查的集群。选择需要周期检查的集群，单击【自动检查】。如下图所示：
-![](https://main.qcloudimg.com/raw/4a75503f0874e141fe0ed51a79b3a541.png)
+![](https://main.qcloudimg.com/raw/4fc59b17066d8883e4476b5265b77a40.png)
 在“自动检查设置”弹窗中，可根据您的需求设置开启状态、检查周期和时刻。如下图所示：
-![](https://main.qcloudimg.com/raw/d72ed862d40c31ffb9b06923b209e088.png)
+![](https://main.qcloudimg.com/raw/6d61b2b43e8791bc49fa78ec99bd1780.png)
 3. 选择好检查方式之后，等待检查完成，可查看检查进度。如下图所示：
-![](https://main.qcloudimg.com/raw/1cd61fbcf4d82f5ba15ba8ac5a608b8a.png)
+![](https://main.qcloudimg.com/raw/0b167cfe1cfb15aa274208d3dc4e50cb.png)
 4. 检查完成后，可单击【查看结果】查看检查报告。如下图所示：
-![](https://main.qcloudimg.com/raw/49258501e70fdea11dd6ec76fcbdc093.png)
+![](https://main.qcloudimg.com/raw/e0cff922a5f8510795436a187cb3d8ac.png)
 在检查报告页面，选择【资源状态】和【运行情况】分别查看资源状态和异常情况，单击【检查内容】可展示具体的检查内容，单击【异常】可查看异常级别、异常描述、异常原因、异常影响和修复建议。如下图所示：
-![](https://main.qcloudimg.com/raw/43b7443dd6a65e44f29ae5401ea1eac7.png)
+![](https://main.qcloudimg.com/raw/bcbcf5a137377a5336e83cac311b55ce.png)
 
