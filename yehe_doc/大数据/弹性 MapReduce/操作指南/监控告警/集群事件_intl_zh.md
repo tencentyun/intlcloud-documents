@@ -6,7 +6,7 @@
 ## 查看事件列表
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的【集群ID/名称】进入集群详情页。
 2. 在集群详情页中选择【集群监控】>【集群事件】>【事件列表】，可直接查看当前集群所有操作事件。
-![](https://main.qcloudimg.com/raw/3e97621eafcf8ff5fd86fe47a9fb1190.png)
+![](https://main.qcloudimg.com/raw/5060d9a929e662b5b14c8fa78f3b6843.png)
 严重程度如下：
  - 致命：节点或服务的异常事件，人工干预处理，否则服务不可用，这类事件可能持续一段时间。
  - 严重：暂时未造成服务或节点不可用问题，属于预警类，如果一直不处理会产生致命事件。
@@ -16,9 +16,9 @@
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的【集群ID/名称】进入集群详情页。
 2. 在集群详情页中选择【集群监控】>【集群事件】>【事件策略】，可以自定义设置事件监控触发策略。
 3. 事件配置列表包含：事件名、事件发现策略、严重程度（致命/严重/一般）、开启监控，支持修改和保存。
-![](https://main.qcloudimg.com/raw/3a4879afe4313cd7443b6a676cf33a80.png)
+![](https://main.qcloudimg.com/raw/7107d9b985db81e2b8fdbf921bf567c1.png)
 4. 事件发现策略分两类：一类事件为系统固定策略事件，不支持用户修改；另一类事件会因客户业务标准的不同而变化，支持用户设置。
-![](https://main.qcloudimg.com/raw/555bed19ffd53a753b49e0994a8f2c75.png)
+![](https://main.qcloudimg.com/raw/ebfb44dc391f12fc05f8eeaaebaa2f8f.png)
 5. 事件策略可自定义是否开启事件监控，已开启监控的事件才支持在集群巡检的巡检项中选择。部分事件默认开启，部分事件默认开启且不可关闭。具体规则如下：
 <table>
 <thead>

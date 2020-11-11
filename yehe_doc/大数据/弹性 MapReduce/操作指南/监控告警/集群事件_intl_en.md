@@ -6,7 +6,7 @@ Cluster events include event lists and event policies.
 ## Viewing Event List
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click the **ID/name** of the target cluster in **Cluster List** to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event List** to view all operation events in the current cluster.
-![](https://main.qcloudimg.com/raw/3e97621eafcf8ff5fd86fe47a9fb1190.png)
+![](https://main.qcloudimg.com/raw/5060d9a929e662b5b14c8fa78f3b6843.png)
 The severity divides into the following:
  - Fatal: node or service exceptions, which may last a while and may cause service unavailability if no human intervention is conducted.
  - Severe: alerts, which haven't caused node or service unavailability yet but will lead to fatal events if left unattended for a long time.
@@ -16,9 +16,9 @@ The severity divides into the following:
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr) and click the **ID/name** of the target cluster in **Cluster List** to enter the cluster details page.
 2. On the cluster details page, select **Cluster Monitoring** > **Cluster Events** > **Event Policy** and you can customize the event monitoring trigger policies.
 3. The event configuration list contains the event name, event trigger policy, severity (fatal, severe, and moderate), and option to enable/disable monitoring, which can be modified and saved.
-![](https://main.qcloudimg.com/raw/3a4879afe4313cd7443b6a676cf33a80.png)
+![](https://main.qcloudimg.com/raw/7107d9b985db81e2b8fdbf921bf567c1.png)
 4. Event trigger policies cover two types of events: fixed system policy events (which cannot be modified) and custom events (which can be configured based on the business standards).
-![](https://main.qcloudimg.com/raw/555bed19ffd53a753b49e0994a8f2c75.png)
+![](https://main.qcloudimg.com/raw/ebfb44dc391f12fc05f8eeaaebaa2f8f.png)
 5. You can select whether to enable event monitoring in an event policy. Only events with monitoring enabled can be selected as cluster inspection items. Monitoring is enabled by default for some events and is enabled by default and cannot be disabled for some other events. The following are the specific rules:
 <table>
 <thead>
