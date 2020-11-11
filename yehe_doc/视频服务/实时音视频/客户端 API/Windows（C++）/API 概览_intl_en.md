@@ -8,7 +8,7 @@
 | [destroyTRTCShareInstance](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ga1b494c61ef1fe41531ce283aae4e015d) | Releases [ITRTCCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#classTRTC_1_1ITRTCCloud) singleton object. |
 
 
-### Setting TRTCCloudCallback callback
+### Setting `TRTCCloudCallback` callbacks
 
 | API | Description |
 |-----|-----|
@@ -26,8 +26,8 @@
 | [connectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae472af11c30db29fcd21ea01854ab32f) | Requests cross-room call (anchor competition). |
 | [disconnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08870fd955f90d02879e966dcd02bfd3) | Disables cross-room co-anchoring. |
 | [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
-| [createSubCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a5ce8b3f393ad3e46a3af39b045c1c5a2) | Creates `TRTCCloud` subinstance. |
-| [destroySubCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0555e9e9d9d02c8c116946915f969d18) | Terminates TRTCCloud subinstance. |
+| [createSubCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a5ce8b3f393ad3e46a3af39b045c1c5a2) | Creates `TRTCCloud` sub-instance. |
+| [destroySubCloud](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0555e9e9d9d02c8c116946915f969d18) | Terminates `TRTCCloud` sub-instance. |
 
 
 ### CDN APIs
@@ -46,11 +46,11 @@
 | API | Description |
 |-----|-----|
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0a3067221345da8eb3f32a3430dd42ff) | Enables the preview image of local video. |
-| [updateLocalView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) | Updates the preview window of local video |
-| [stopLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af7003d2c12f5f783115ada43a715abe7) | Stops local video capturing and preview. |
+| [updateLocalView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) | Updates preview image of local video.
+| [stopLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af7003d2c12f5f783115ada43a715abe7) | Stops local video capture and preview. |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a6070313a28d3302c94ad807c636eb60f) | Pauses/Resumes pushing local video data. |
 | [startRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a33a6e3765d6ca52d572224bc6e25dbcb) | Starts displaying remote video image. |
-| [updateRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) | Updates the rendering window of remote video. |
+| [updateRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) | Updates the remote video rendering window. |
 | [stopRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7749979db2dd017d7cd8377c73e92720) | Stops displaying remote video image and pulling the video data stream of remote user. |
 | [stopAllRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a55fb85c4135abfbe00af529cdaf9bc) | Stops displaying all remote video images and pulling the video data streams of all remote users. |
 | [muteRemoteVideoStream](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a22155f6fe17dde77a16c273e0d5a02a3) | Pauses/Resumes receiving specified remote video stream. |
@@ -74,13 +74,13 @@
 | API | Description |
 |-----|-----|
 | [setAudioQuality](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aacf5923d535306c139d1b8b8025744c8) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
-| [startLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a72ba04e850009e56505ee1cae0433abe) | Enables local audio capturing and upstreaming. |
-| [stopLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47c51247d112b86d2397744c8f3c686b) | Disables local audio capturing and upstreaming. |
+| [startLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a72ba04e850009e56505ee1cae0433abe) | Enables local audio capture and upstreaming. |
+| [stopLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47c51247d112b86d2397744c8f3c686b) | Disables local audio capture and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a1e1f27f131da042ca6e80beaa18055a8) | Mutes/Unmutes local audio. |
 | [muteRemoteAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae22224501b484166dac65c1873ecdbc3) | Mutes/Unmutes specified remote user's audio. |
 | [muteAllRemoteAudio](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a38177742eaf9bedf11109452230319c4) | Mutes/Unmutes all users' audio. |
-| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e) | Sets SDK capturing volume level. |
-| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aed4cdd35906d151cd97f543332fb9f02) | Gets SDK capturing volume level. |
+| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8677a812326511ef92f963bbe049d42e) | Sets SDK capture volume level. |
+| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aed4cdd35906d151cd97f543332fb9f02) | Gets SDK capture volume level. |
 | [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a338984f5503d59ae06d67f55bd8f0766) | Sets SDK playback volume level. |
 | [getAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae66cc77d6dfccb4c473eff062d0eb717) | Gets SDK playback volume level. |
 | [enableAudioVolumeEvaluation](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3127ec82f1610ac2bc0cb7d32b9bb4b9) | Enables or disables volume reminder. |
@@ -102,22 +102,22 @@
 | API | Description |
 |-----|-----|
 | [getMicDevicesList](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a84a4d58010c498d2bc44d8ff225e7a90) | Gets mic list. |
-| [getCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a31669c8a64f8003b93e8fc7359e5ed11) | Gets the currently used mic. |
+| [getCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a31669c8a64f8003b93e8fc7359e5ed11) | Gets the currently used camera. |
 | [setCurrentMicDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a4edae1445c3195d5d2ba2333ccbe4fff) | Sets the mic to be used. |
 | [getCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a342920bf68b0286b91a049f540de5ccb) | Gets current system mic volume level. |
 | [setCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a227e6698697648b7a7ee9470a87f12f1) | Sets current system mic volume level. |
-| [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8f23271de1960a44917632cecdd6c9da) | Sets the mute status of the current system mic. |
-| [getCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) | Gets the mute status of the current system mic. |
+| [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8f23271de1960a44917632cecdd6c9da) | Sets whether to mute current system mic. |
+| [getCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) | Gets whether the current system mic is muted. |
 | [getSpeakerDevicesList](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad500c64d8823bed4c4a31ab6b19c1e08) | Gets speaker list. |
 | [getCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad0dc1a89532d3654b271ed724b4281fd) | Gets the currently used speaker. |
 | [setCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ab11c3c87d603a71dc1d3f2caef05bf98) | Sets the speaker to be used. |
 | [getCurrentSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a24c9e3210c99e6331a3dff598f7fb490) | Gets current system speaker volume level. |
 | [setCurrentSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad8393f22304422cb143a1362c03cca59) | Sets current system speaker volume level. |
-| [setCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9ea2038ac3168f6cfb21d2b954cb343e) | Sets the mute status of the current system speaker. |
-| [getCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa0b3c0ed3701f7dc289a69c18a934b41) | Gets the mute status of the current system speaker. |
+| [setCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9ea2038ac3168f6cfb21d2b954cb343e) | Sets whether to mute current system speaker. |
+| [getCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa0b3c0ed3701f7dc289a69c18a934b41) | Gets whether the current system speaker is muted. |
 
 
-### Beauty filter APIs
+### Beauty effects and image watermark APIs
 
 | API | Description |
 |-----|-----|
@@ -125,45 +125,49 @@
 | [setWaterMark](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a4a1c376670ff4f3fdac8cf30bec78576) | Sets watermark. |
 
 
-### Music effects and voice effects
+### Music and voice effects APIs
 
 | API | Description |
 |-----|-----|
 | [getAudioEffectManager](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad9da9a5121bb52fbb85890dd857d7e8a) | Gets the sound effect management class `ITXAudioEffectManager`. |
-| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad6a651a786871927917b087ae7094c8a) | Enables system audio capturing. |
-| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) | Disables system audio capturing. |
-| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a52d0f9a999296633b1d859f75d36d5e8) | Sets system audio capturing volume level. |
+| [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9bbabd55e3d6d3063d0a92367c9698ba) | Enables system audio capture. |
+| [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) | Disables system audio capture. |
+| [setSystemAudioLoopbackVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a52d0f9a999296633b1d859f75d36d5e8) | Sets system audio capture volume level. |
 
 
-### Screen sharing APIs
+### Screen sharing API functions
 
 | API | Description |
 |-----|-----|
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3cc7f7152c18f6ffda7cfa2b0b133934) | Starts screen sharing. |
-| [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | Stops screen capturing. |
+| [stopScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | Stops screen capture. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0dcd89ed2e23706239db98b55dd806d4) | Pauses screen sharing. |
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9dc10db068b9d8c6a0fcb8b085359f33) | Resumes screen sharing. |
 | [getScreenCaptureSources](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3777e1506f1aa806bee116e7117993b5) | Enumerates shareable windows. You are recommended to call this API before calling `startScreenCapture`. |
-| [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aa5c3c7ed12993c155de77fb43ba0cf3b) | Sets screen sharing parameters. This method can be called during screen sharing. |
-| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af82052cffdcd1fd2a8d50744b806ff7d) | Starts displaying the substream image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
-| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a4264ad8ab90a2582dc94617a3c686a46) | Stops displaying the substream image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
-| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0059bffb1af2385304595917e85d1cf3) | Sets the display mode of substream image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
-| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a11a2965ee1192569afd1482cfce6816e) | Sets the clockwise rotation angle of substream image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
+| [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a428eb11858f268c8f4350424cd7f84e7) | Sets screen sharing parameters. This method can be called during screen sharing. |
+| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af82052cffdcd1fd2a8d50744b806ff7d) | Starts displaying the secondary channel image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
+| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a4264ad8ab90a2582dc94617a3c686a46) | Stops displaying the secondary channel image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
+| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a0059bffb1af2385304595917e85d1cf3) | Sets the display mode of secondary channel image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
+| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a11a2965ee1192569afd1482cfce6816e) | Sets the clockwise rotation angle of secondary channel image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
 | [setSubStreamEncoderParam](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#abdc3d6339afd741bd8d3ed88ea551282) | Sets encoder parameters for screen sharing. |
 | [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aff8dd1456e5bebff5495d84683c7f83e) | Sets the audio mixing volume level of screen sharing. |
+| [addExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) | Adds specified windows to the exclusion list of screen sharing. After than such windows will not be shared. |
+| [removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2) | Removes specified windows from the exclusion list of screen sharing. |
+| [removeAllExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#abb20ff837f1f5955bea349ff95002a10) | Removes all windows from the exclusion list of screen sharing. |
 
 
-### Custom capturing and rendering APIs
+### Custom capture and rendering APIs
 
 | API | Description |
 |-----|-----|
-| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac9d547341170330a70623299b366c44a) | Enables custom video capturing mode. |
+| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac9d547341170330a70623299b366c44a) | Enables custom video capture mode. |
 | [sendCustomVideoData](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a3a53ae79c1bd28825cb276c7555500fe) | Delivers captured video data to SDK. |
-| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a166d6ea0b36bc1adf3d3eddde35207c3) | Enables the custom audio capturing mode. After this mode is enabled, the SDK will not run the original audio capturing process and retain only the encoding and sending capabilities. You need to use [sendCustomAudioData()](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47ba3ba599134e902299dda9c5596c0d) to continuously insert the captured audio data into the SDK. |
+| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a166d6ea0b36bc1adf3d3eddde35207c3) | Enables the custom audio capture mode. After this mode is enabled, the SDK will not run the original audio capture process and retain only the encoding and sending capabilities. You need to use [sendCustomAudioData()](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47ba3ba599134e902299dda9c5596c0d) to continuously insert the captured audio data into the SDK. |
 | [sendCustomAudioData](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a47ba3ba599134e902299dda9c5596c0d) | Delivers captured audio data to SDK. |
 | [setLocalVideoRenderCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad64031e060146f7985263aad994fc733) | Sets custom rendering for local video. |
 | [setRemoteVideoRenderCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a1efc475e32f06c768330ff80ebffbc8a) | Sets custom rendering for remote video. |
 | [setAudioFrameCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a607dc63d8d944869537457c5b92b56e9) | Sets audio data callback. |
+| [setEncodedDataProcessingListener](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a2512d2000be872c883a162b7e438dfba) | Configures callbacks of encoded audio/video data for custom processing. |
 
 
 ### Custom message sending APIs
@@ -180,7 +184,7 @@
 |-----|-----|
 | [startSpeedTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af86b2903b95b6e74f02d701701ce3380) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
 | [stopSpeedTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad6ba6ea2c5beace98b99ce98d326be4c) | Stops network speed test. |
-| [startCameraDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a27478c88ea2f0c3ad4d1747995bf4bad) | Starts camera test. |
+| [startCameraDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a681243a75c6d53835e41dbb3cf590efc) | Starts camera test. |
 | [stopCameraDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a9aa02ead51d4ba3119869c7c2ac57b9d) | Stops camera test. |
 | [startMicDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae9982f55fa0e47646f43da2515584183) | Enables mic test. |
 | [stopMicDeviceTest](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a60b8449c0b9c9ce8068e3e9960ea2237) | Stops mic test. |
@@ -230,7 +234,7 @@
 
 ## TRTCCloudCallback @ TXLiteAVSDK
 
-Callback API class for TRTC video call feature.
+Callback APIs for Tencent Cloud video call feature.
 
 ### Error events and warning events
 
@@ -244,21 +248,21 @@ Callback API class for TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [onEnterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a236a49e0525615b6435eaa826b7caffe) | Callback for room entry. |
-| [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) | Callback for room exit. |
-| [onSwitchRole](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a248335805c125e225cfec249697f2299) | Callback for role switching. |
-| [onConnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a62333366a3a1ab09dc2b2f627a8a1bdd) | Callback for result of requesting cross-room call (anchor competition). |
-| [onDisconnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a292d6661cb93ba30ff68b1f88cf173f1) | Callback for result of ending cross-room call (anchor competition). |
+| [onEnterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a236a49e0525615b6435eaa826b7caffe) | Callback of room entry. |
+| [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) | Callback of room exit. |
+| [onSwitchRole](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a248335805c125e225cfec249697f2299) | Callback of role switching. |
+| [onConnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a62333366a3a1ab09dc2b2f627a8a1bdd) | Callback of result of requesting cross-room call (anchor competition). |
+| [onDisconnectOtherRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a292d6661cb93ba30ff68b1f88cf173f1) | Callback of result of ending cross-room call (anchor competition). |
 
 
-### Member event callbacks
+### User event callbacks
 
 | API | Description |
 |-----|-----|
 | [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a43704996ae1f50749b7c7140755350f1) | A user enters the current room. |
 | [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a5f7c705f3894d3a430ef1fac8bf8e2c5) | A user exits the current room. |
-| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) | Whether the remote user has playable primary stream image (generally used for camera). |
-| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a460922e4fb4b000d1dbd27b596dd0e5c) | Whether the remote user has playable substream image (generally used for screen sharing). |
+| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) | Whether the remote user has playable primary image (generally used for camera). |
+| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a460922e4fb4b000d1dbd27b596dd0e5c) | Whether the remote user has playable secondary image (generally used for screen sharing). |
 | [onUserAudioAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a6f449dc5294e369750bc15a39eaa856c) | Whether the remote user has playable audio data. |
 | [onFirstVideoFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ad28d27badd56ac274c44720cc9f253d5) | Rendering of the first frame of a local or remote user starts. |
 | [onFirstAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a123616289b3219bc36137bc77e8e8b7a) | Playback of the first audio frame of a remote user starts (local audio is not supported for notification currently). |
@@ -268,12 +272,12 @@ Callback API class for TRTC video call feature.
 | [onUserExit](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#abbc4fe2ccac90f77c80f55d46d6c8951) | Disused API: an anchor exits the current room. |
 
 
-### Statistics collection and quality callbacks
+### Callbacks of statistics on quality and technical metrics
 
 | API | Description |
 |-----|-----|
 | [onNetworkQuality](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a377441bace65d98a1218817914a12ecb) | Network quality. This callback is triggered once every 2 seconds to collect statistics of the current network upstreaming and downstreaming quality. |
-| [onStatistics](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a681d301a576e65b354408576748c4477) | Callback for technical metric statistics. |
+| [onStatistics](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a681d301a576e65b354408576748c4477) | Callback of technical metric statistics. |
 
 
 ### Server event callbacks
@@ -283,7 +287,7 @@ Callback API class for TRTC video call feature.
 | [onConnectionLost](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a34c34705bb67127ff6d28700cf2ab591) | The connection between SDK and server has been closed. |
 | [onTryToReconnect](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#afe74dff22fde93fe0f07fcf18153d334) | The SDK tries to connect to the server again. |
 | [onConnectionRecovery](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ae90cd149a676418016cb8736b217f1a8) | The connection between SDK and server has been restored. |
-| [onSpeedTest](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | Callback for server speed test. The SDK tests the speed of multiple server IPs, and the test result of each IP is returned through this callback notification. |
+| [onSpeedTest](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a455264cfcf2a7a3f022f3bce0659f9f7) | Callback of server speed test. The SDK tests the speed of multiple server IPs, and the test result of each IP is returned through this callback notification. |
 
 
 ### Hardware device event callbacks
@@ -292,37 +296,39 @@ Callback API class for TRTC video call feature.
 |-----|-----|
 | [onCameraDidReady](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a13a9ad0933b7ab872987e432f005e8ad) | Camera is ready. |
 | [onMicDidReady](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0ba02a5d9009ebb9c4e80c0c43c80bca) | Mic is ready. |
-| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a61df1f9eec0bfcebf421be865275ffc5) | Callback for volume level, including the volume level of each `userId` and total remote volume level. |
-| [onDeviceChange](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ac86c1b0d445a33f6340394b3b78490bd) | Callback for local device connection and disconnection. |
-| [onTestMicVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a9f0101fa8222c6163f1b23fcce81e22b) | Callback for test mic volume level. |
-| [onTestSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a04bb10b06af17cdc43b7831336736539) | Callback for test speaker volume level. |
+| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a61df1f9eec0bfcebf421be865275ffc5) | Callback of volume level, including the volume level of each `userId` and total remote volume level. |
+| [onDeviceChange](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ac86c1b0d445a33f6340394b3b78490bd) | Callback of local device connection and disconnection. |
+| [onTestMicVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a9f0101fa8222c6163f1b23fcce81e22b) | Callback of test mic volume level. |
+| [onTestSpeakerVolume](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a04bb10b06af17cdc43b7831336736539) | Callback of test speaker volume level. |
+| [onAudioDeviceCaptureVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a40eeba4a6034450bc055b8f62c763520) | Callback of volume change on the current audio capture device. |
+| [onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ad87c12c924b781b3b8429f8e8aafc338) | Callback of volume change on the current audio playback device. |
 
 
-### Custom message reception callbacks
+### Callbacks of custom message receipt
 
 | API | Description |
 |-----|-----|
-| [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a5690652db3902e98e1168bad12ec1a) | Callback for receipt of custom message. |
-| [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ab5d0cb61c24b77ecdb177ff19fc95075) | Callback for loss of custom message. |
-| [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ab364b929cd0d9ffff6e47c20ec52372c) | Callback for receipt of SEI message. |
+| [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a5690652db3902e98e1168bad12ec1a) | Callback of receipt of custom message. |
+| [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ab5d0cb61c24b77ecdb177ff19fc95075) | Callback of loss of custom message. |
+| [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ab364b929cd0d9ffff6e47c20ec52372c) | Callback of receipt of SEI message. |
 
 
 ### CDN relayed push callbacks
 
 | API | Description |
 |-----|-----|
-| [onStartPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a345ab7b45a9d0027926dbf580e8e0258) | Callback for starting pushing to Tencent Cloud LVB CDN, which corresponds to the `startPublishing()` API in `TRTCCloud`. |
-| [onStopPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a8e046f5bd34498b13ae057caaab64913) | Callback for stopping pushing to Tencent Cloud LVB CDN, which corresponds to the `stopPublishing()` API in `TRTCCloud`. |
-| [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a16164548764979e84d3b5301f28890ff) | Callback for completion of starting relayed push to CDN. |
-| [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0da75e040521c0945c3735f4893e6c09) | Callback for completion of stopping relayed push to CDN. |
-| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#af228d4fa55fa17a48eb7424fb6ffe2b4) | Callback for setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `TRTCCloud`. |
+| [onStartPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a345ab7b45a9d0027926dbf580e8e0258) | Callback of starting pushing to Tencent Cloud LVB CDN, which corresponds to the `startPublishing()` API in `TRTCCloud`. |
+| [onStopPublishing](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a8e046f5bd34498b13ae057caaab64913) | Callback of stopping pushing to Tencent Cloud LVB CDN, which corresponds to the `stopPublishing()` API in `TRTCCloud`. |
+| [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a16164548764979e84d3b5301f28890ff) | Callback of completion of starting relayed push to CDN. |
+| [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0da75e040521c0945c3735f4893e6c09) | Callback of completion of stopping relayed push to CDN. |
+| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#af228d4fa55fa17a48eb7424fb6ffe2b4) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `TRTCCloud`. |
 
 
-### Sound effect callbacks
+### Audio effect callbacks
 
 | API | Description |
 |-----|-----|
-| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#aab3c91276b6e570ea9acfe1581e1aa51) | Callback for sound effect playback end. |
+| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#aab3c91276b6e570ea9acfe1581e1aa51) | Callback of audio effect playback end. |
 
 
 ### Screen sharing callbacks
@@ -336,7 +342,7 @@ Callback API class for TRTC video call feature.
 | [onScreenCaptureStoped](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a4d182e6b60d8be536e69253d906af84d) | This callback will be returned by the SDK when screen sharing is stopped. |
 
 
-### Background audio mixing event callbacks
+### Callbacks of background music related events
 
 | API | Description |
 |-----|-----|
@@ -349,23 +355,23 @@ Callback API class for TRTC video call feature.
 
 | API | Description |
 |-----|-----|
-| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#aea602851c96370558a7eeb850d7eb6b8) | Callback for custom video rendering. |
+| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#aea602851c96370558a7eeb850d7eb6b8) | Callback of custom video rendering. |
 
 
 ### Audio data callbacks
 
 | API | Description |
 |-----|-----|
-| [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a57460e97c668b605a00ac498fc4aa40c) | Callback for audio data captured by local mic. |
+| [onCapturedAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a57460e97c668b605a00ac498fc4aa40c) | Callback of audio data captured by local mic. |
 | [onPlayAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#ab841da62beb88a9fa9bce58d25df6f23) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
 | [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a6649f62d4138d9bc73ae484e63dec081) | Audio data to be played back by speaker after audio data from each channel is mixed. |
 
 
-### Log callbacks
+### Log related callbacks
 
 | API | Description |
 |-----|-----|
-| [onLog](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a2fa3d9997c9810ffa6a95e0a7a4a50d0) | Callback for log printing. |
+| [onLog](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a2fa3d9997c9810ffa6a95e0a7a4a50d0) | Callback of log printing. |
 
 
 ## Definitions of Key Classes
@@ -397,7 +403,7 @@ Callback API class for TRTC video call feature.
 | [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa33845a1c994d38435a8f4a332cc3e95) | Image quality level. |
 | [TRTCVideoFillMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga496a32286104187149b4e40284cbfb36) | Video image fill mode. |
 | [TRTCBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga46f49720df57d17b267054cb9ee4d079) | Beauty filter (skin smoothing) algorithm. |
-| [TRTCAppScene](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa57f4545ef7331e3157eee1639d28780) | Application scenario. |
+| [TRTCAppScene](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa57f4545ef7331e3157eee1639d28780) | Use cases. |
 | [TRTCRoleType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga42ff820a33d9f3535d203fd5d6782cb5) | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
 | [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga6615b296e31fc3d03c0df92e9755b5aa) | Bandwidth limit mode. |
 | [TRTCVideoQosPreference](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga60efcaeea7692bbce8dc362856683319) | Image quality preference. |
