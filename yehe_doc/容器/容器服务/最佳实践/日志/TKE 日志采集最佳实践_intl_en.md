@@ -129,7 +129,7 @@ The following figure shows a query sample:
 
 ## Publishing Logs to COS and Ckafka
 CLS allows logs to be published to COS and the message queue CKafka. You can set it in the log topic, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/fe010223240e554a25337527084f9743.png)
+![](https://main.qcloudimg.com/raw/b692708253594b9c9978570eadaf7843.png)
 This is applicable to the following scenarios:
 
 - Scenarios where long-term archiving and storage of log data are required. The logset stores log data for seven days by default. You can adjust the duration. The larger the data volume, the higher the cost. Usually, data is stored for a few days. If you need to store logs for a longer period, you can publish log data to COS for low-cost storage.
