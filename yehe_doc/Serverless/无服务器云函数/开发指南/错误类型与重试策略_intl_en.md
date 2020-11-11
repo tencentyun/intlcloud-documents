@@ -96,5 +96,4 @@ CMQ topics support filtering by tag or route match. To ensure that your subscrib
 Dead letters may fail to be delivered due to permission error, misallocation of resources, and total message size reaching the limit of target queue or topic. You can go to the **Monitoring information** page on the SCF Console to query the number of dead letter queue delivery errors (`DeadLetterErrors`).
 1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1) and click **Function Service** in the left sidebar.
 2. Choose the region of the function monitored by the expected dead letter queue at the top of the page, and click the function to go to the function detail page. 
-3. Click **Monitoring information** on the function detail page to query the number of dead letter queue delivery errors, as shown in the following figure.
-
+3. Click **Monitoring information** on the function detail page to query the number of dead letter queue delivery errors.
