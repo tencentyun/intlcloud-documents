@@ -20,7 +20,7 @@ This API is used to set tags for an existing bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-put-bucket-tagging"
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```cs
 try
 {
@@ -62,7 +62,7 @@ This API is used to query the existing tags of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-get-bucket-tagging"
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```cs
 try
 {
@@ -97,7 +97,7 @@ This API is used to delete the existing tags of a specified bucket.
 
 #### Sample code
 
-[//]: # ".cssg-snippet-delete-bucket-tagging"
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```cs
 try
 {
