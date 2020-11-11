@@ -50,14 +50,14 @@ The selected service type determines which resource platform is used by the doma
 ### How do I modify the project of a CDN domain name?
 
 1. Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of the domain name you want to edit.
-![Image description](https://main.qcloudimg.com/raw/fb85a5afb49ca90cfe0c6c9b075a5646.png)
+![Image description](https://main.qcloudimg.com/raw/d2d85c86bca9c60c7e5ae5667fd2e155.png)
 2. Click the **Basic Configuration** tab to see the basic information module, where you can view the basic information of the domain name, including the project. **For users using the CDN permission system, please perform this operation carefully, as it may change the permissions of sub-users.**
 3. Click **Modify** on the right of the project and select a new project in the drop-down list. Then, click **OK**.
-![Image description](https://main.qcloudimg.com/raw/f788084a71b205ee8938c960edfb3a29.png)
+![Image description](https://main.qcloudimg.com/raw/1a2a312352d3353317075696347e0f42.png)
 
 You can also manage your projects on the [Project Management](https://console.cloud.tencent.com/project) page.
 
-<span ID = "m1"></span>
+<span ID = m1></span>
 ### My domain name has already obtained an ICP filing from the MIIT. Why does the system prompt that it does not have an ICP filing when I try to connect it to CDN?
 After you obtain your ICP filing, it takes some time to sync the information from the MIIT to Tencent Cloud CDN. Please wait 24 hours and try again.
 
@@ -80,7 +80,7 @@ Ping the domain name and view the returned result. If `cdntip.com` or `ovscdns.c
 If files cannot be downloaded from CDN, we recommend you troubleshoot using the following methods:
 1. Check whether files can be downloaded normally from the origin server.
 2. Check whether the CDN domain name is correctly configured on the CDN console > Basic Configuration > Origin Domain. Please make sure that the configured origin domain can be accessed properly. Otherwise, origin-pull may fail, which will affect your business.
-3. Check the security policy of the origin server. Please check whether the origin-pull failure is caused by the security policy configured on the origin server, and if so, please [contact us](https://intl.cloud.tencent.com/support) to get the intermediate IP range and whitelist the origin server.
+3. Check the security policy of the origin server. Please check whether the origin-pull failure is caused by the security policy configured on the origin server, and if so, please [contact us](https://intl.cloud.tencent.com/support) to get the intermediate IP range and allowlist the origin server.
 
 
 ### What should I do if I cannot log in to the WordPress backend after CDN acceleration is configured?
