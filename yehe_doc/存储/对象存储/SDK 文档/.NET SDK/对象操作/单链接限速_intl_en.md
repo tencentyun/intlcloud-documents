@@ -26,7 +26,7 @@ COSXMLUploadTask uploadTask = new COSXMLUploadTask(putObjectRequest);
 
 uploadTask.SetSrcPath(srcPath);
 
-transferManager.Upload(uploadTask);
+await transferManager.UploadAsync(uploadTask);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs).
@@ -50,7 +50,7 @@ GetObjectRequest request = new GetObjectRequest(bucket,
 request.LimitTraffic(8 * 1000 * 1024); // Set the limit to 1 MB/s
 
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
-transferManager.Download(downloadTask);
+await transferManager.DownloadAsync(downloadTask);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs).

@@ -25,6 +25,8 @@
  - 若不存在丢包或时延高的情况，请执行 [步骤2](#CheckNetworkLink_step2)。
 2. <span id="CheckNetworkLink_step2">使用 `dig/nslookup` 命令，查看 DNS 的解析情况，排查是否 DNS 解析引起的问题。</span>
 您也可以直接使用公网 IP 访问对应页面，排查是否为 DNS 的问题导致网站访问卡慢。
+ - 是，请检查 DNS 解析。
+ - 否，请 [检查服务器](#CheckServer)。
 
 <span id="CheckServer"></span>
 ### 检查服务器

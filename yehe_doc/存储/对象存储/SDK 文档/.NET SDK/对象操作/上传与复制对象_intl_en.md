@@ -55,25 +55,15 @@ uploadTask.progressCallback = delegate (long completed, long total)
 {
     Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
 };
-uploadTask.successCallback = delegate (CosResult cosResult) 
-{
-    COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = cosResult 
-      as COSXML.Transfer.COSXMLUploadTask.UploadTaskResult;
-    Console.WriteLine(result.GetResultInfo());
-    string eTag = result.eTag;
-};
-uploadTask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
-{
-    if (clientEx != null)
-    {
-        Console.WriteLine("CosClientException: " + clientEx);
-    }
-    if (serverEx != null)
-    {
-        Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-    }
-};
-transferManager.Upload(uploadTask);
+
+try {
+  COSXML.Transfer.COSXMLUploadTask.UploadTaskResult result = await 
+    transferManager.UploadAsync(uploadTask);
+  Console.WriteLine(result.GetResultInfo());
+  string eTag = result.eTag;
+} catch (Exception e) {
+    Console.WriteLine("CosException: " + e);
+}
 ```
 
 >?
@@ -152,7 +142,7 @@ for (int i = 0; i < 5; i++) {
   string srcPath = @"temp-source-file";// Absolute path to the local file
   COSXMLUploadTask uploadTask = new COSXMLUploadTask(bucket, cosPath); 
   uploadTask.SetSrcPath(srcPath);
-  transferManager.Upload(uploadTask);
+  await transferManager.UploadAsync(uploadTask);
 }
 ```
 
@@ -205,25 +195,14 @@ string key = "exampleobject"; // Key of the destination object
 
 COSXMLCopyTask copytask = new COSXMLCopyTask(bucket, key, copySource);
 
-copytask.successCallback = delegate (CosResult cosResult) 
-{
-    COSXML.Transfer.COSXMLCopyTask.CopyTaskResult result = cosResult 
-      as COSXML.Transfer.COSXMLCopyTask.CopyTaskResult;
-    Console.WriteLine(result.GetResultInfo());
-    string eTag = result.eTag;
-};
-copytask.failCallback = delegate (CosClientException clientEx, CosServerException serverEx) 
-{
-    if (clientEx != null)
-    {
-        Console.WriteLine("CosClientException: " + clientEx);
-    }
-    if (serverEx != null)
-    {
-        Console.WriteLine("CosServerException: " + serverEx.GetInfo());
-    }
-};
-transferManager.Copy(copytask);
+try {
+  COSXML.Transfer.COSXMLCopyTask.CopyTaskResult result = await 
+    transferManager.CopyAsync(copytask);
+  Console.WriteLine(result.GetResultInfo());
+  string eTag = result.eTag;
+} catch (Exception e) {
+    Console.WriteLine("CosException: " + e);
+}
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferCopyObject.cs).
@@ -464,7 +443,7 @@ try
   // Set whether to copy or update. Copy is used here.
   request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.REPLACED);
   // Modify the storage class to ARCHIVE
-  request.SetCosStorageClass(CosStorageClass.ARCHIVE);
+  request.SetCosStorageClass("ARCHIVE");
   // Execute the request
   CopyObjectResult result = cosXml.CopyObject(request);
   // Request succeeded

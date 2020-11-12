@@ -67,16 +67,16 @@ DTS supports data migration and data sync in common scenarios, such as public ne
 	<tr>
     <td style="background-color:#f2f2f2;">5.0 Memory Edition (Standard Architecture)</td>
     <td>x</td>
-    <td>✓</td>
-    <td>✓</td>
+    <td>x</td>
+    <td>x</td>
 	 <td>✓</td>
     <td>✓</td>
     </tr>
     <tr>
     <td style="background-color:#f2f2f2;">5.0 Memory Edition (Cluster Architecture)</td>
     <td>x</td>
-    <td>✓</td>
-    <td>✓</td>
+    <td>x</td>
+    <td>x</td>
 		<td>✓</td>
     <td>✓</td>
     </tr>

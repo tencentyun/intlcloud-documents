@@ -15,13 +15,12 @@ This section visually displays the `SHOW PROCESSLIST` command execution result o
 - Number of entries: 20, 50, or 100.
 - Refresh intervals: 5 seconds, 15 seconds, or 30 seconds.
 - You can choose to stop refresh or enable auto-refresh.
-![](https://main.qcloudimg.com/raw/679c0c64b1757e0442263a91c98bcba4.png)
+![](https://main.qcloudimg.com/raw/baf2ebab28d566ad37730b489379a309.png)
 
 ## Killing Sessions
 DBbrain supports killing sessions in the console for ease of management. In the "Running Threads" section, you can select the lines of sessions in the list and click **Kill Session** in the upper-right corner to kill them.
 - You can kill one or more sessions at a time. Currently, up to 100 sessions can be killed at a time.
 - To kill sessions, you need to select the lines of the sessions first. 
-![](https://main.qcloudimg.com/raw/e3cff869994481e175dec7b87edac281.png)
 
 ## SQL Throttling
 DBbrain supports the SQL throttling feature to ensure the service availability. You can create SQL throttling tasks to control the database requests and SQL concurrency by setting the SQL type, maximum concurrency, throttling duration, and SQL keywords. Multiple tasks do not conflict with each other.
@@ -32,14 +31,12 @@ DBbrain supports the SQL throttling feature to ensure the service availability. 
 - Execution mode: scheduled stop or manual stop.
 - Throttling duration: if the scheduled stop is set as the execution mode, you need to set how long the SQL throttling task keeps running.
 - SQL keywords: SQL executions containing the keywords will be restricted. Multiple keywords should be separated by commas and are evaluated using the logical `AND` operator. Commas are not keywords.
-![](https://main.qcloudimg.com/raw/b0badf0f84babd7dfb5583ea4a8e5b5d.png)
 
 In the "SQL Throttling" section, the list displays the SQL type, status, keywords, start time, remaining time, maximum concurrency, and operations.
 - Click **Details** in the "Operation" column to view SQL throttling details.
 - After a SQL throttling task starts, it remains in the "Running" status until its remaining time decreases to zero. Click **Close** in the "Operation" column to terminate the task in advance, and its status will change to "Terminated".
 - After a SQL throttling task starts, its status will change to "Terminated" once its remaining time decreases to zero.
 - Click **Delete** in the "Operation" column to delete a SQL throttling task in the "Terminated" or "Completed" status.
-![](https://main.qcloudimg.com/raw/61bf8273204589716ee51cb926d7f3d8.png)
 
 
 ## Hotspot Update Protection
@@ -47,10 +44,8 @@ In the "SQL Throttling" section, the list displays the SQL type, status, keyword
 DBbrain provides the hot update protection feature. According to the statement queuing mechanism, the hot update protection feature queues the statements with the same conflict in the memory queue. The hot update protection feature reduces the overhead of lock conflict and improves the database performance in high concurrency scenarios.
 
 In the "Hotspot Update Protection" section, click **Create Task** to create a hotspot update protection task. You can set the wait timeout threshold and execution mode (scheduled stop or manual stop). If the scheduled stop is set as the execution mode, you can set the execution time.
-![](https://main.qcloudimg.com/raw/6ef0e43dd290d00c4fe1d9840db51b0f.png)
 
 In the "Hotspot Update Protection" section, the list displays the status, start time, execution time, remaining time, wait timeout threshold, and operations.
 - For a task in the "Running" status, click **Close** in the "Operation" column to terminate it in advance.
 - For a task in the "Terminated" or "Completed" status, click **Delete** in the "Operation" column to delete it.
-![](https://main.qcloudimg.com/raw/fbbea033b8093632e0184b4fc6c7f4e2.png)
 

@@ -12,6 +12,8 @@ For more information, see [Enabling Custom Origin Domain](https://intl.cloud.ten
 
 The sample code below shows how to access a COS service using a custom endpoint.
 
+#### Sample code
+
 [//]: # ".cssg-snippet-set-custom-domain"
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
@@ -28,6 +30,8 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 For more information on global acceleration, see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 
 The sample code below shows how to access a COS service using a global acceleration endpoint.
+
+#### Sample code
 
 [//]: # ".cssg-snippet-set-accelerate-domain"
 ```cs

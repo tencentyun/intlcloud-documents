@@ -26,7 +26,7 @@ COSXMLUploadTask uploadTask = new COSXMLUploadTask(putObjectRequest);
 
 uploadTask.SetSrcPath(srcPath);
 
-transferManager.Upload(uploadTask);
+await transferManager.UploadAsync(uploadTask);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
@@ -50,7 +50,7 @@ GetObjectRequest request = new GetObjectRequest(bucket,
 request.LimitTraffic(8 * 1000 * 1024); // 限制为1MB/s
 
 COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
-transferManager.Download(downloadTask);
+await transferManager.DownloadAsync(downloadTask);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
