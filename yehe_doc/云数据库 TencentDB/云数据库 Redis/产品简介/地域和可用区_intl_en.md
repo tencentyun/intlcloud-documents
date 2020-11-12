@@ -19,7 +19,7 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 		<th>ZoneId</th>
 	</tr>
 	<tr>
-		<td rowspan="4">South China (Guangzhou)<br> ap-guangzhou</td>
+		<td rowspan="5">South China (Guangzhou)<br> ap-guangzhou</td>
 		<td>Guangzhou Zone 1<br> ap-guangzhou-1</td>
 		<td>100001</td>
 	</tr>	
@@ -35,18 +35,9 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
 		<td>100004</td>
 	</tr>
-	<tr>
-		<td rowspan="3">South China (Shenzhen Finance)<br>ap-shenzhen-fsi</td>
-		<td>Shenzhen Finance Zone 1 (only financial institutions and enterprises can apply for activation by <a href="https://console.cloud.tencent.com/workorder/category">submitting a ticket</a>) <br>ap-shenzhen-fsi-1</span></td>
-		<td>110001</td>
-	</tr>
-	<tr>
-		<td>Shenzhen Finance Zone 2 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-shenzhen-fsi-2</span></td>
-		<td>110002</td>
-	</tr>
-  <tr>
-		<td>Shenzhen Finance Zone 3 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-shenzhen-fsi-3</span></td>
-		<td>110003</td>
+		<tr>
+		<td>Guangzhou Zone 6<br> ap-guangzhou-6</td>
+		<td>100006</td>
 	</tr>
 	<tr>
 		<td rowspan="7">East China (Shanghai)<br>ap-shanghai</td>
@@ -78,17 +69,6 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 		<td>200007</td>
 	</tr>
 	<tr>
-			<td rowspan="3">East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
-			<td>Shanghai Finance Zone 1 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-shanghai-fsi-1</td>
-			<td>700001</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 2 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-shanghai-fsi-2</td>
-			<td>700002</td>
-	</tr>
-	<tr>
-			<td>Shanghai Finance Zone 3 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-shanghai-fsi-3</td>
-			<td>700003</td>
 	</tr>
 	<tr>
 			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
@@ -121,9 +101,6 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 			<td>800005</td>
 	</tr>
  <tr>
-			<td rowspan="1">North China (Beijing Finance) <br>ap-beijing-fsi</td>
-			<td>Beijing Finance Zone 1 (only financial institutions and enterprises can apply for activation by submitting a ticket) <br>ap-beijing-fsi-1</td>
-			<td>460001</td>
 	</tr>
 	<tr>
 		<td rowspan="2">North China (Tianjin)<br>ap-tianjin</td>
