@@ -1,6 +1,6 @@
 Curator is Elasticsearch's official tool for managing indices. It can perform a wide variety of index lifecycle management tasks, such as clearing indices created 7 days ago, backing up specified indices regularly every day, and migrating indices from a hot node to a warm node regularly. For more information on operations in Curator, please see [Actions](https://www.elastic.co/guide/en/elasticsearch/client/curator/current/actions.html).
 
-Curator provides a CLI which allows you to configure the tasks to be executed using parameters. It also comes with a complete set of Python APIs that can be used together with SCF, such as automatically deleting expired data from Elasticsearch using Curator. SCF has a pre-defined template for Curator, which can be run after simple parameter configuration. For more information on how to use SCF, please see [here](https://intl.cloud.tencent.com/document/product/583).
+Curator provides a CLI which allows you to configure the tasks to be executed using parameters. It also comes with a complete set of Python APIs that can be used together with SCF, such as automatically deleting expired data from Elasticsearch using Curator. SCF has a pre-defined template for Curator, which can be run after simple parameter configuration. For more information on how to use SCF, please see [Serverless Cloud Function](https://intl.cloud.tencent.com/document/product/583).
 
 ## Curator Usage Example
 The following describes how to configure and run Curator to delete expired indices regularly.

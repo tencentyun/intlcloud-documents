@@ -23,9 +23,9 @@
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |	
 | ------------------------------------------------------------| ------ | -------- | ------- |  ---- |	---- |	
 | [云服务器](https://intl.cloud.tencent.com/document/product/213) <sup>1</sup> | 资源级  | &#10003;      |&#10003;    |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/213/10315)   |		
-| [容器服务](https://intl.cloud.tencent.com/document/product/457) | 资源级  | &#10003;       | - | &#10003;    |	[访问管理指南](https://intl.cloud.tencent.com/document/product/457/11542)  |	
-| [弹性伸缩](https://intl.cloud.tencent.com/document/product/377) | 资源级   | &#10003;      | -  | &#10003;    |	-    |	
-| [批量计算](https://intl.cloud.tencent.com/document/product/599)  | 资源级 | &#10003;         |  -  | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/599/33471)   |		
+| [容器服务](https://intl.cloud.tencent.com/document/product/457) | 资源级  | &#10003;       | &#10003; | &#10003;    |	[访问管理指南](https://intl.cloud.tencent.com/document/product/457/11542)  |	
+| [弹性伸缩](https://intl.cloud.tencent.com/document/product/377) | 资源级   | &#10003;      | &#10003;  | &#10003;    |	-    |	
+| [批量计算](https://intl.cloud.tencent.com/document/product/599)  | 资源级 | &#10003;         |  &#10003;  | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/599/33471)   |		
 | [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051)  | 资源级 | &#10003;         |  -  | &#10003;     | -  |	
 ><sup>1</sup> 云服务器中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
 
@@ -69,7 +69,7 @@
 | [云数据库 PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  |资源级 | &#10003;  | &#10003;   | -     | - |
 | [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  |  &#10003;    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
 | [云数据库 Redis](https://intl.cloud.tencent.com/document/product/239)   | 资源级| &#10003; | -  | - |[访问管理指南](https://intl.cloud.tencent.com/document/product/239/32845) |	
-| [云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/240) |资源级 | &#10003; | -   |&#10003;|[访问管理指南](https://intl.cloud.tencent.com/document/product/240/32839) |			
+| [云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/240) |资源级 | &#10003; | &#10003;   |&#10003;|[访问管理指南](https://intl.cloud.tencent.com/document/product/240/32839) |			
 | [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | &#10003;    | &#10003;    | - |
 | [游戏数据库 TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | 资源级 |  &#10003;  | &#10003;   | -    | - |		
 | [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035) |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1035/36050)|	
@@ -79,7 +79,7 @@
 
 | 服务                                                      | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |	
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	---- |	
-| [云函数](https://intl.cloud.tencent.com/document/product/583)  | 资源级 | &#10003;        |  -  | &#10003;   |[访问管理指南](https://intl.cloud.tencent.com/document/product/583/18014)  |	
+| [云函数](https://intl.cloud.tencent.com/document/product/583)  | 资源级 | &#10003;        |  &#10003;  | &#10003;   |[访问管理指南](https://intl.cloud.tencent.com/document/product/583/18014)  |	
 | [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040)  | 资源级 | - |  -   |  &#10003;   | -   |
 
 
@@ -145,8 +145,8 @@
 
  | 服务                                                       | 授权粒度   | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |	 ---- |
-| [弹性 MapReduce](https://intl.cloud.tencent.com/document/product/1026)   | 资源级 | &#10003;  | -   |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/1026/31100) |
-| [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)  | 资源级   | &#10003; | -   |  -  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/845/19550) |
+| [弹性 MapReduce](https://intl.cloud.tencent.com/document/product/1026)   | 资源级 | &#10003;  | &#10003;   |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/1026/31100) |
+| [Elasticsearch Service](https://intl.cloud.tencent.com/document/product/845)  | 资源级   | &#10003; | &#10003;   |  -  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## 图像识别
 
@@ -158,8 +158,8 @@
 
 | 服务                                                        | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |		
-| [游戏多媒体引擎](https://intl.cloud.tencent.com/document/product/607)  | 资源级 | &#10003;| -   |  -    |	 -   |
-| [游戏服务器引擎](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| -   |  &#10003;    | -    |
+| [游戏多媒体引擎](https://intl.cloud.tencent.com/document/product/607)  | 资源级 | &#10003;| &#10003;   |  -    |	 -   |
+| [游戏服务器引擎](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    | -    |
 	
 ## 移动服务	
 

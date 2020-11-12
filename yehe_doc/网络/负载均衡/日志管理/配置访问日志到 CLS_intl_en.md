@@ -20,8 +20,6 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 6. Then, click the logset or log topic to redirect to the log search page in CLS.
 7. (Optional) If you want to disable access logging, you can edit "Cloud Log Service" again to disable it and submit in the pop-up window.
 
->? With the CLS scheme, you can also store access logs in COS according to your actual business needs such as costs and usage. For more information, please see [Shipping Overview](https://intl.cloud.tencent.com/document/product/614/32940).
-
 ## Searching for Access Log
 ### Step 1. Configure log topic indexes
 >?The log topics must be configured with indexes; otherwise, no logs can be searched for.
