@@ -13,7 +13,7 @@ MediaConnect主界面会显示所有您创建的Flow以及其运行状态，每�
 
 ## 三、 新建Flow
 
-点击控制台上方的 Create Flow 按钮可新建一条传输链路，您可在此设置Flow的Name，并选择传输流的最大带宽（目前支持10Mbps、20Mbps、50Mbps）。
+点击控制台上方的 Create Flow 按钮可新建一条传输链路，您可在此设置Flow的Name，并选择传输流的`最大带宽`（目前支持10Mbps、20Mbps、50Mbps）。
 接着您还需要配置输入源的相关信息：在选择传输协议后，您需要设置Latency参数，此参数影响Server的发送以及接收buffer的大小，当网络状况不好时建议调大此参数。控制台默认会设置该参数为120ms，您可结合您的实际需求进行更改。
 
 >? Latency 可以对创建后给出的IP地址进行ping 测试，确定最佳设置再进行修改。另外也可以直接使用默认值，然后调整发送侧的Latency即可达到相同的目的。 
@@ -25,10 +25,8 @@ MediaConnect支持SRT协议的加解密传输，如果您推送至MediaConnect�
 ![](https://main.qcloudimg.com/raw/fa39d86e4fd351e94421b0b9a44e4cb8.png)
 
 同时您可设置输入源的IP白名单（CIDR格式），只能通过白名单中的IP向此Flow进行推流。
-
 您也可对Flow的输入源配置一些描述信息，以便于您对不同的输入源进行区分开来。
-
-点击crete后，Flow就创建完毕了，我们会您创建的Flow自动生成主备两个通道的输入IP地址，您可以向此地址进行推流操作。
+点击Create后，Flow就创建完毕了，我们会您创建的Flow自动生成主备两个通道的输入IP地址，您可以向此地址进行推流操作。
 
 > ! 在未创建outputs节点时无法开启使用
 
@@ -51,7 +49,7 @@ MediaConnect支持SRT协议的加解密传输，如果您推送至MediaConnect�
 
 ![](https://main.qcloudimg.com/raw/2bc94f3f111e3b9087bf1184ca2da641.png)
 
-MediaConnect支持传输协议的转封装，您可在创建output时选择您输出的协议。当您选择SRT协议时，您需要填写目的地的IP地址和端口（主和备）。同样您还可在此填写延迟设置，默认为120ms，您可根据您业务的实际需求进行更改。
+MediaConnect支持传输协议的转封装，您可在创建output时选择您输出的协议。当您选择SRT协议时，您需要填写`目的地的IP地址`和`端口`（主和备）。同样您还可在此填写`延迟设置`，默认为120ms，您可根据您业务的实际需求进行更改。
 
 >! Output节点的主流与备流通道各自独立，与输入源的主备通道一一对应。即您朝着Flow主通道推的流经过MediaConnect传输后会通过主目的地地址进行输出，而朝着Flow备通道推的流经过MediaConnect传输后会通过备目的地地址进行输出，两者各自独立。
 > 其中主输出地址为必填项，备输出地址为选填项。
@@ -60,7 +58,7 @@ MediaConnect支持传输协议的转封装，您可在创建output时选择您�
 
 ![](https://main.qcloudimg.com/raw/d1db5d2467bc2407a49e0c7cbb037853.png)
 
-而当您选择RTMP协议进行输出时，您需要填写目的地的URL及Stream Key（主和备），主备通道的逻辑同上。
+而当您选择RTMP协议进行输出时，您需要填写`目的地的URL`及`Stream Key`（主和备），主备通道的逻辑同上。
 
 ![](https://main.qcloudimg.com/raw/60eb05dc28c112e7f0bc22c9dcb6ae94.png)
 
