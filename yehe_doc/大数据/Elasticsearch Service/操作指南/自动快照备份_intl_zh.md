@@ -1,4 +1,5 @@
 腾讯云 ES 提供自动备份，自动创建集群的主索引分片的快照并备份到 COS，进而根据需要将备份数据恢复到集群。
+>?此功能目前为免费试用。
 
 ## 备份说明
 
@@ -12,7 +13,7 @@
 
 ### 开启自动快照备份
 
-1. 登录 [ES 控制台](https://console.cloud.tencent.com/es)，在集群列表，单击集群名称进入集群详情页。
+1. 登录 [Elasticsearch Service 控制台](https://console.cloud.tencent.com/es)，在集群列表，单击集群名称进入集群详情页。
 2. 在“高级配置”页，可以开启自动快照备份以及配置自动快照备份的时间。
 ![自动快照备份](https://main.qcloudimg.com/raw/93132de5410a2a87d18d14594dd63250.png)
 
