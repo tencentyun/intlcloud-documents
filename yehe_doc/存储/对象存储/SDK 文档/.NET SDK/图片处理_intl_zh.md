@@ -83,7 +83,7 @@ JArray rules = new JArray();
 JObject rule = new JObject();
 rule["bucket"] = bucket;
 rule["fileid"] = "desample_photo.jpg";
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
+//处理参数
 rule["rule"] = "imageMogr2/thumbnail/400x400";
 rules.Add(rule);
 o["rules"] = rules;
@@ -112,7 +112,7 @@ JArray rules = new JArray();
 JObject rule = new JObject();
 rule["bucket"] = bucket;
 rule["fileid"] = "desample_photo.jpg";
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
+//处理参数
 rule["rule"] = "imageMogr2/thumbnail/400x400";
 rules.Add(rule);
 o["rules"] = rules;
