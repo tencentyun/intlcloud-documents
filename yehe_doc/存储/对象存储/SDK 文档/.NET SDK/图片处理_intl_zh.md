@@ -82,16 +82,44 @@ o["is_pic_info"] = 0;
 JArray rules = new JArray();
 JObject rule = new JObject();
 rule["bucket"] = bucket;
-rule["fileid"] = key;
-//处理参数，规则参见：https://cloud.tencent.com/document/product/460/6924
-//这里以图片等比缩放到 400x400 像素以内为例
-rule["rule"] = "imageView2/thumbnail/400x400";
+rule["fileid"] = "desample_photo.jpg";
+//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
+rule["rule"] = "imageMogr2/thumbnail/400x400";
 rules.Add(rule);
 o["rules"] = rules;
 
-request.SetRequestHeader("Pic-Operation", o.ToString());
+string ruleString = o.ToString(Formatting.None);
+request.SetRequestHeader("Pic-Operations", ruleString);
 //执行请求
 PutObjectResult result = cosXml.PutObject(request);
+```
+
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
+
+
+## 对云上数据进行图片处理
+
+下面示例展示了如何在对已存储在 COS 的图片进行相应处理操作，并将结果存入到 COS。
+
+#### 示例代码
+
+[//]: # ".cssg-snippet-process-with-pic-operation"
+```cs
+JObject o = new JObject();
+// 不返回原图
+o["is_pic_info"] = 0;
+JArray rules = new JArray();
+JObject rule = new JObject();
+rule["bucket"] = bucket;
+rule["fileid"] = "desample_photo.jpg";
+//处理参数，规则参见：https://cloud.tencent.com/document/product/460/19017
+rule["rule"] = "imageMogr2/thumbnail/400x400";
+rules.Add(rule);
+o["rules"] = rules;
+string ruleString = o.ToString(Formatting.None);
+
+ImageProcessRequest request = new ImageProcessRequest(bucket, key, ruleString);
+ImageProcessResult result = cosXml.imageProcess(request);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs) 查看。
