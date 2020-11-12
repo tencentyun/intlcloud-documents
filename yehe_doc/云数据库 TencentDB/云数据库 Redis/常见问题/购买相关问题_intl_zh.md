@@ -12,3 +12,6 @@
 
 ### 云数据库 Redis 兼容哪些版本？ 
 目前兼容 Redis 2.8、Redis 4.0、Redis 5.0。
+
+### 购买的实例不想要了，如何退款？
+- 按量计费实例：云数据库 Redis 可以在 [控制台](https://console.cloud.tencent.com/redis) 直接清退资源，无法申请退款。
