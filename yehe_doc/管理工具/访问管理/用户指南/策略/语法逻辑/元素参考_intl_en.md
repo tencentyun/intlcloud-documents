@@ -11,7 +11,7 @@ This element specifies the entity to be authorized by the policy. This includes 
 This element describes the details of one or more permissions. It contains a permission or permission set of multiple other elements such as `action`, `resource`, `condition`, and `effect`. One policy has only one `statement`.
 
 ### 4. action
-This required element describes the action (operation) to be allowed or denied. An operation can be an API (prefixed with `name`) or a feature set (a set of specific APIs prefixed with `permid`).
+This required element describes the action (operation) to be allowed or denied. An operation can be an API (prefixed with `name`) or a feature set (a set of specific APIs prefixed with `actionName`).
 
 ### 5. resource
 This required element describes the objects the statement covers. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify a resource, please see the documentation for the product whose resources you are writing a statement for.
