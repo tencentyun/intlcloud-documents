@@ -38,7 +38,7 @@ In remote storage mappings, you can configure CFS/NAS paths to automatically mou
 
 ### Prefixed with cfs:// or nfs://
 An example of an obtained CFS path is `10.66.xxx.xxx`. Prefix a BatchCompute path with `cfs://` or `nfs://`.
->Suffix the path with `/` and ensure that your CFS/NAS and BatchCompute job are on the same network.
+>!Suffix the path with `/` and ensure that your CFS/NAS and BatchCompute job are on the same network.
 >
 ``` 
 cfs://10.66.xxx.xxx/ 
