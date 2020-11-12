@@ -1,3 +1,4 @@
+
 针对常见的 MongoDB 性能问题，云数据库 MongoDB 提供控制台自助解决方案，帮您快速便捷地排查处理相应性能问题。
 
 ## 慢查询增多
@@ -20,7 +21,7 @@
 #### 方式一：提升连接数
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，单击实例名进入实例管理页面。
 2. 选择【数据库管理】>【连接数管理】页，查看连接的来源 IP 和对应的连接数，进行业务端的排查。
->
+>?
 >-  若您的连接数达到80%或以上，影响到新连接的建立，可通过控制台一键【提升连接数】功能，在6小时内提升连接数的上限至150%。
 >- 若提升连接数至150%还不能解决您的问题，请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category) 处理。
 >
@@ -29,7 +30,7 @@
 #### 方式二：重启实例
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，单击实例名进入实例管理页面。
 2. 选择【数据库管理】>【连接数管理】页，必要时您可单击右侧的【重启】对 Mongos 进行重启，以解决连接数超限的问题。
->
+>?
 >- 4.0 版本副本集实例无 Mongos。
 >- 重启 Mongod 为高危操作，会出现连接闪断，如果同时有数据正写入，可能会造成 rollback 进而丢失数据，默认不开放，如需开放请联系售后或 [提交工单](https://console.cloud.tencent.com/workorder/category)。
 >
