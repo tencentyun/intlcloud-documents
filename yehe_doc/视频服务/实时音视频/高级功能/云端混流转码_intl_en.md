@@ -6,7 +6,7 @@ You can control On-Cloud MixTranscoding in the following methods:
 
 - Method 2: use the [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API of the TRTC SDK on the client. The following diagram illustrates how it works: 
 ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
-> The second method applies only to SDKs for iOS, Android, Windows, macOS, and Electron.
+>! The second method applies only to SDKs for iOS, Android, Windows, macOS, and Electron.
 
 ## How It Works
 On-Cloud MixTranscoding involves three processes: decoding, mixing, and encoding:
@@ -19,10 +19,10 @@ On-Cloud MixTranscoding involves three processes: decoding, mixing, and encoding
 <span id="restapi"></span>
 ## Method 1. Mixing through RESTful APIs on the Server
 ### Starting On-Cloud MixTranscoding
-Call the `StartMCUMixTranscode` RESTful API on your server to start On-Cloud MixTranscoding. Key parameters of this API are described as follows:
+Call the RESTful API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) on your server to start stream mix. Please pay attention to the following:
 
 #### 1. Configuring the video image layout mode
-The `LayoutParams` parameter of the `StartMCUMixTranscode` API can be used to set the video image layout to one of the following modes:
+[LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) parameter of `StartMCUMixTranscode` API can be used to set the following layouts:
 
 ![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
 
@@ -44,7 +44,7 @@ The `LayoutParams` parameter of the `StartMCUMixTranscode` API can be used to se
 - If a user only sends audio, the user will still occupy a position for displaying an image.
 
 #### 2. Configuring mixing and encoding parameters
-The `EncodeParams` parameter of the `StartMCUMixTranscode` API can be used to configure mixing and encoding parameters.
+[EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#EncodeParams) parameter of the `StartMCUMixTranscode` API can be used to configure mixing and encoding parameters:
 
 | Name  | Description  | Recommended Value | 
 |---------|---------|---------| 
@@ -59,7 +59,7 @@ The `EncodeParams` parameter of the `StartMCUMixTranscode` API can be used to co
 |BackgroundColor|Output stream background color for stream mix | Custom |
 
 #### 3. Configuring whether to enable on-cloud recording
-The `OutputParams` parameter of the `StartMCUMixTranscode` API can be used to configure where to stream after mixing.
+[OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#OutputParams) parameter of the  `StartMCUMixTranscode` API can be used to configure where to stream after mixing.
 
 - **OutputParams.RecordId**
 This parameter is used to configure whether to enable [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426). If you use it to enable on-cloud recording, the mixed audio/video streams will be recorded and saved as files on [VOD](https://intl.cloud.tencent.com/product/vod). The recording files are named in the format of `OutputParams.RecordId_start time_end time`, such as `file001_2020-02-16-12-12-12_2020-02-16-13-13-13`.
@@ -76,7 +76,7 @@ This parameter is used to configure whether to enable [CDN relayed live streamin
 If you want audio live streaming only, set the `OutputParams.PureAudioStream` parameter to 1, indicating that only mixed audio streams will be forwarded to CDN.
 
 ### Ending On-Cloud MixTranscoding
-Call the `StopMCUMixTranscode` RESTful API on your server to end On-Cloud MixTranscoding.
+Call the [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) RESTful API on your server to end On-Cloud MixTranscoding.
 
 <span id="sdkapi"></span>
 ## Method 2. Mixing through SDK APIs on the Client
@@ -111,7 +111,7 @@ In PureAudio mode, the SDK will automatically mix multiple audio streams in a ro
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding, set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Template_PureAudio**, and specify the parameters that affect the audio output quality such as `audioSampleRate`, `audioBitrate`, and `audioChannels`.
 5. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
-> In PureAudio mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
+>! In PureAudio mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
 
 <span id="PresetLayout"></span>
 ### PresetLayout mode
@@ -196,7 +196,7 @@ remote2.roomID = 97392; // `roomID` needs to be specified for a remote user but 
 [_trtc setMixTranscodingConfig:config];
 ```
 
-> In PresetLayout mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
+>! In PresetLayout mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
 
 <span id="ScreenSharing"></span>
 ### ScreenSharing mode
@@ -210,12 +210,12 @@ In ScreenSharing mode, the SDK will first build a canvas based on the target res
 3. Call `startLocalPreview()` and `startLocalAudio()` to enable local audio/video upstreaming.
  As On-Cloud MixTranscoding essentially mixes multiple streams into the audio/video stream of the current user (i.e., the mix transcoding command initiator), the current user must have upstream audio/video before streams can be mixed.
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding, set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Template_ScreenSharing**, and specify the parameters that affect the audio output quality such as `audioSampleRate`, `audioBitrate`, and `audioChannels` as well as the parameters that affect the video output quality such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
- >If both the `videoWidth` and `videoHeight` parameters are specified as 0, the SDK will automatically calculate a suitable resolution based on the aspect ratio of the user's current screen.
+ >?If both the `videoWidth` and `videoHeight` parameters are specified as 0, the SDK will automatically calculate a suitable resolution based on the aspect ratio of the user's current screen.
  >
 5. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
 
-> 
+>! 
 >- The ScreenSharing mode only supports Windows and macOS.
 >- In ScreenSharing mode, you don't need to call the `setMixTranscodingConfig()` API multiple times; instead, you only need to call it once after successfully entering the room and enabling local audio upstreaming.
 >- As video content is primarily the shared screen in teaching mode, and it is a waste of bandwidth to transmit camera image and screen image at the same time, it is recommended to draw the camera image and the video images of students onto the current screen through the `setLocalVideoRenderCallback()` and `setRemoteVideoRenderCallback()` APIs.
@@ -234,8 +234,8 @@ In Manual mode, you need to set all the parameters in `TRTCTranscodingConfig` an
  As On-Cloud MixTranscoding essentially mixes multiple streams into the audio/video stream of the current user (i.e., the mix transcoding command initiator), the current user must have upstream audio/video before streams can be mixed.
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding, set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Manual**, and specify the parameters that affect the audio output quality such as `audioSampleRate`, `audioBitrate`, and `audioChannels`. If your business scenario involves video, you also need to set the parameters that affect the video output quality such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
 5. Listen on the `onUserVideoAvailable()` and `onUserAudioAvailable()` callbacks in `TRTCCloudDelegate` and specify the **mixUsers** parameter as needed.
- >Different from the PresetLayout mode, the Manual mode requires you to specify the `userId` parameter in each `mixUser` as the real co-anchor ID and set the `pureAudio` parameter in `mixUser` based on whether the co-anchor has enabled video.
+ >?Different from the PresetLayout mode, the Manual mode requires you to specify the `userId` parameter in each `mixUser` as the real co-anchor ID and set the `pureAudio` parameter in `mixUser` based on whether the co-anchor has enabled video.
  >
 6. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
-> In Manual mode, you need to listen on the mic-on/off actions of co-anchors in the room and call the `setMixTranscodingConfig()` API multiple times based on the number and audio/video status of the co-anchors.
+>! In Manual mode, you need to listen on the mic-on/off actions of co-anchors in the room and call the `setMixTranscodingConfig()` API multiple times based on the number and audio/video status of the co-anchors.
