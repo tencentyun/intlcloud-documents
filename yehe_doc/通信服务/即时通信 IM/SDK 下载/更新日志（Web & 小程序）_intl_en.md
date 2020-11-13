@@ -1,3 +1,37 @@
+### 2.8.2 @2020.11.4
+
+**Added**
+
+The WeChat, QQ, Baidu, Toutiao and Alipay mini programs are now supported. However, images, videos, files and other messages requiring being uploaded to COS cannot be sent via Baidu, Toutiao and Alipay mini programs.
+
+### 2.8.1 @2020.10.29
+
+**Added**
+
+The BMP images can be sent.
+
+**Changed**
+
+The `unreadCount` and `lastMessage` in [Conversation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html) are not updated when an online message is sent or received.
+
+**Fixed**
+
+Fixed the SDK not ready issue if an exception occurs when the recent contacts list is synchronized.
+### 2.8.0 @2020.10.20
+
+**Added**
+
+- [getGroupOnlineMemberCount](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupOnlineMemberCount) supports obtaining the number of online users in a live stream group.
+- The image messages will be compressed. You can display the original image or thumbnail as needed. For more information, see [ImagePayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.ImagePayload).
+
+**Fixed**
+
+Fixed the compatibility of Taro 3.x with WebIM.
+
+**Changed**
+
+SDK volumes are reduced: [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) reduced by 8.5% and [tim-wx-sdk](https://www.npmjs.com/package/tim-wx-sdk) by 15%.
+
 ### 2.7.8 @2020.9.24
 
 **Added**
