@@ -16,7 +16,7 @@
 - UDP 监听器不支持获取源 IP。
 
 ## 前提条件
-1. 已提交内测申请，境内跨地域绑定请通过 [内测申请](https://cloud.tencent.com/apply/p/y72ehzwbwzk)，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
+1. 已提交内测申请，境内跨地域绑定请通过 内测申请，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
 2. 已创建负载均衡实例，详情请参见 [创建负载均衡实例](https://intl.cloud.tencent.com/document/product/214/6149)。
 3. 已创建云联网实例，详情请参见 [新建云联网实例](https://intl.cloud.tencent.com/document/product/1003/30062)。
 4. 将与 IDC 关联的专线网关和需要绑定的目标 VPC 关联至已创建的云联网实例，详情请参见 [关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)。
@@ -31,7 +31,7 @@
 5. 在“基本信息”页面的“后端服务”区域，单击【新增 SNAT IP】。
 ![](https://main.qcloudimg.com/raw/fc41b320241fa4de1d961e1a9c8d428f.png)
 6. 在弹出的“新增 SNAT IP”对话框中，选择“子网”，单击【新增】分配 IP，最后单击【保存】。
-  <img src="https://main.qcloudimg.com/raw/6aad8ac7d4a38a8e74ea7b3b59e36cbb.png" width="50%"/>
+    <img src="https://main.qcloudimg.com/raw/6aad8ac7d4a38a8e74ea7b3b59e36cbb.png" width="50%"/>
 7. 在实例详情页面，单击“监听器管理”页签，在配置监听器模块中，为负载均衡实例绑定后端服务，详情请参见 [添加负载均衡后端云服务器](https://intl.cloud.tencent.com/document/product/214/6156)。
 8. 在弹出的“绑定后端服务”对话框中，选择“其他内网 IP”，单击【添加内网 IP】，输入需绑定的 IDC 内网 IP 地址，并填写端口与权重，详情请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)，最后单击【确认】。
 9. 返回“已绑定后端服务”区域可以查看已绑定的 IDC 的内网 IP。<br/>
