@@ -25,17 +25,15 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance)。
 2. 在负载均衡“实例管理”页面找到目标负载均衡实例，单击实例 ID。
 3. 在“基本信息”页面的“后端服务”区域，单击【点击配置】绑定非本 VPC 的内网 IP。
-![](https://main.qcloudimg.com/raw/098726f17524d02f8b9edc63f092d71d.png)
+![](https://main.qcloudimg.com/raw/1214576094baa072eb1d3577a5f5781a.png)
 4. 在弹出的“打开启用非本 VPC 内 IP”对话框中，单击【提交】。
-![](https://main.qcloudimg.com/raw/da669f277fc1daf118292804c69d5de5.png)
+![](https://main.qcloudimg.com/raw/4f7b99a8532afabe54440ca7819dcd72.png)
 5. 在“基本信息”页面的“后端服务”区域，单击【新增 SNAT IP】。
-![](https://main.qcloudimg.com/raw/4f279fdbd4b95c451a2bc68ad1181b7e.png)
+![](https://main.qcloudimg.com/raw/fc41b320241fa4de1d961e1a9c8d428f.png)
 6. 在弹出的“新增 SNAT IP”对话框中，选择“子网”，单击【新增】分配 IP，最后单击【保存】。
-<img src="https://main.qcloudimg.com/raw/bcc07a62d460b52d5356cc2c460db6f1.png" width="50%"/>
+  <img src="https://main.qcloudimg.com/raw/6aad8ac7d4a38a8e74ea7b3b59e36cbb.png" width="50%"/>
 7. 在实例详情页面，单击“监听器管理”页签，在配置监听器模块中，为负载均衡实例绑定后端服务，详情请参见 [添加负载均衡后端云服务器](https://intl.cloud.tencent.com/document/product/214/6156)。
 8. 在弹出的“绑定后端服务”对话框中，选择“其他内网 IP”，单击【添加内网 IP】，输入需绑定的 IDC 内网 IP 地址，并填写端口与权重，详情请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)，最后单击【确认】。
-![](https://main.qcloudimg.com/raw/18a77ac3712a846083404b3f729ce6b0.png)
 9. 返回“已绑定后端服务”区域可以查看已绑定的 IDC 的内网 IP。<br/>
-<img src="https://main.qcloudimg.com/raw/86ac3501b9b559059fc4cc12da6c6e41.png" width="60%"/>
 
 
