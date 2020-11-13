@@ -109,12 +109,12 @@ CLB 直接绑定 Pod 时检查 Pod 是否 Ready，需查看 Pod 是否 Running�
 当使用 Ingress 暴露服务时，同样也需要声明使用直连模式。步骤如下：
 
 #### 通过控制台创建 Ingress
-如果通过控制台创建 Ingress，可以勾选“采用负载均衡直连Pod模式”，详情请参见 [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/30673)。如下图所示：
+如果通过控制台创建 Ingress，可以勾选“采用负载均衡直连Pod模式”，详情请参见 [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/30673#.E5.88.9B.E5.BB.BA-ingress)。如下图所示：
 ![](https://main.qcloudimg.com/raw/5d3bbba1604e27ff7b601cadb9313911.png)
 
 #### 通过 YAML 创建 Ingress
 如果通过 YAML 创建 Ingress，需要为 Ingress 加上 `ingress.cloud.tencent.com/direct-access: "true"` 的 annotation。示例如下：
->?如何使用 YAML 创建 Ingress 请参见 [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/306732)。
+>?如何使用 YAML 创建 Ingress 请参见 [创建 Ingress](https://intl.cloud.tencent.com/document/product/457/30673#.E5.88.9B.E5.BB.BA-ingress)。
 >
 ``` yaml
    apiVersion: networking.k8s.io/v1beta1
