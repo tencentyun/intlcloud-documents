@@ -61,6 +61,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 		android:value="false" />
 ```
 
+
 ### 如何设置消息点击事件？
 TPNS 推荐使用 Intent 方式进行跳转（注：SDK 点击消息默认支持点击事件，触发后打开主界面，如果在 onNotifactionClickedResult 设置跳转操作会与管理台/API中指定的自定义跳转冲突，导致自定义的跳转失效）。
 **使用 Intent 方式跳转指引：**
@@ -165,6 +166,15 @@ XGPushConfig.setMiPushAppKey(this,MIPUSH_APPKEY);
 
 #### 魅族通道排查路径
 与小米通道的排查方法类似，参考小米通道的排查路径即可。
+
+
+
+### 同时集成了即时通信 IM 和 TPNS，存在大量的厂商类冲突，该如何解决？
+目前 IM 已使用 TPNS 提供的厂商 jar 包，可前往 [IM 离线推送（Android）文档](https://intl.cloud.tencent.com/document/product/1047/34336) 替换相关依赖包，替换后即可解决。
+
+
+
+
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
 1.  Flyme 6.0 及以下版本的魅族手机，使用手动集成方式。
