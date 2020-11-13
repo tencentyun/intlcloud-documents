@@ -40,13 +40,13 @@ libprotoc 2.6.1
 ```
 
 ## Directions
-### Installing SDK 
+### Step 1: Installing SDK 
 Download the SDK onto the development server and run the following command to install the file to the specified installation directory:
 ```
 tar –xzf <installation package path> -C <installation directory>,
 ```
 
-### Verifying
+### Step 2: Verifying
 After the installation, the root directory structure is as shown below:
 
 | Directory and File | Description |
@@ -57,7 +57,7 @@ After the installation, the root directory structure is as shown below:
 | lib/libtcaplusprotobufapi.a | TcaplusDB Protobuf API library file |
 | examples/tcaplus/ProtoBuf | TcaplusDB Protobuf API sample |
 
-### Running `example` and accessing TcaplusDB
+### Step 3: Running `example` and accessing TcaplusDB
 You can develop the corresponding data access logic on the GameSvr game server by referring to API samples in `example`.
 
 1. Decompress the TcaplusDB PB API release package.

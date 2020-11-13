@@ -13,9 +13,10 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 - You can adjust the configuration of a TencentDB for MySQL instance and its associated instances only when they are in normal status (running) and are not executing any tasks.
 - You cannot cancel a configuration adjustment operation in progress.
 - The name, access IP, and access port of an instance will remain the same after configuration adjustment.
+- During configuration adjustment, you should try to avoid such operations as modifying MySQL's global parameters and user password.
 - Data migration may be involved in configuration adjustment. During data migration, the TencentDB for MySQL instance can be accessed normally and the business will not be affected.
 - Instance switchover may be needed after configuration adjustment is completed (i.e., the MySQL instance may be disconnected for seconds). It is recommended that applications be configured with auto reconnection feature and that instance switchover be conducted during the instance maintenance period. For more information, see [Setting Instance Maintenance Period](https://intl.cloud.tencent.com/document/product/236/10929).
-- During configuration adjustment, you should try to avoid such operations as modifying MySQL's global parameters and user password.
+
 
 ## Directions
 ### Adjusting the instance configuration in the console

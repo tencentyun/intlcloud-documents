@@ -52,7 +52,7 @@
 4. 您可以在弹窗中看到端口验通的详情，如需放通所有未放通端口，单击【一键放通】即可。
 ![](https://main.qcloudimg.com/raw/b7f208cca3943ecefacd791f30533911.png)
 如果您仅需要放通部分端口（例如 `TCP:22`），请在 [安全组控制台](https://console.cloud.tencent.com/vpc/securitygroup) 进入实例绑定的安全组，添加一条放通 `TCP:22` 端口的入站规则，您还可以根据实际需求，在【来源】中默认选择 all 放通全部 IP，或填写指定 IP（IP 段），如下图所示。
-![](https://main.qcloudimg.com/raw/d507fdb72f5d460a5104f49dabb46bcf.png)
+![](https://main.qcloudimg.com/raw/6780b4df05168e19718ffe6c699c5159.png)
 
 ## 相关信息
 - 如需了解安全组相关内容，请参见  [添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
