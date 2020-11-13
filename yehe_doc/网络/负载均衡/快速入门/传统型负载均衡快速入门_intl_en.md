@@ -6,8 +6,8 @@ In this example, two CVM instances are enough, but you can also configure more i
 2. This document takes HTTP forwarding as an example. The corresponding web server (such as Apache, Nginx, or IIS) must be deployed on the CVM instance.
 To verify the result, in this example, Apache is deployed on both `rs-1` and `rs-2`. Apache returns "Hello Tomcat! This is rs-1!" on `rs-1` and "Hello Tomcat! This is rs-2!" on `rs-2`. For more information on how to deploy components on a CVM instance, please see [Deploying Java Web on Linux (CentOS)](https://intl.cloud.tencent.com/document/product/214/32391) and [Installing and Configuring PHP on Windows](https://intl.cloud.tencent.com/document/product/213/10182).
 3. Access the public IP and path of your CVM instances. If the deployed page is displayed, the service has been successfully deployed.
->
-> - Public network bandwidth must be purchased for the CVM instances, as the bandwidth is billed by CVM rather than CLB.
+>!
+> - For traditional accounts, public network bandwidth must be purchased for the CVM instances, as the bandwidth is billed by CVM rather than CLB. You can determine the account type as instructed in [Billing Overview](https://intl.cloud.tencent.com/document/product/214/36999).
 >- In this example, the values returned by the service deployed on two real servers are different. In actual scenarios, to ensure that all users have a uniform experience, generally the same service should be deployed on all real servers.
 
 ## Purchasing Classic CLB Instance
@@ -29,11 +29,11 @@ A CLB listener forwards requests by specifying protocols and ports. This documen
 5. In the pop-up box, configure the following:
   - Set the name to "Listener1".
   - Set the listener protocol and port to `HTTP:80`.
-  - Set the real port to `80`.
+  - Set the backend port to `80`.
   - Select "WRR" as the load balancing mode.
   - Do not check session persistence.
   - Enable health check.
-    ![](https://main.qcloudimg.com/raw/41cbc18c096ed2f6c01a238dc426963e.png)
+  ![](https://main.qcloudimg.com/raw/41cbc18c096ed2f6c01a238dc426963e.png)
 6. Click **Complete** to create the CLB listener.
 
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
@@ -47,11 +47,25 @@ For more information on CLB listeners, please see [CLB Listener Overview](https:
 ![](https://main.qcloudimg.com/raw/0c9f911e40621ff3615ac47d94651329.png)
 5. Expand the listener **Listener1**. You can view the health check status of the backend CVM instance. The "Healthy" status indicates that the CVM instance can properly process requests forwarded by CLB.
 
+
+## Configuring Security Group
+After creating a CLB instance, you can configure a CLB security group to isolate public network traffic. For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+After configuring a security group, you can choose to enable or disable "Allow Traffic by Default in Security Group" with different configurations as follows:
+
+### Method 1. Enable "Allow Traffic by Default in Security Group"
+>?This feature is currently in beta test. To try it out, please [submit a ticket](https://cloud.tencent.com/apply/p/njj5tl4a5j) for application. This feature is not supported for classic private network CLB.
+
+For detailed directions, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+
+
+### Method 2. Allow the client IP in the CVM security group
+For detailed directions, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+
 ## Verifying CLB Service
 1. Enter the CLB service address and port `http://vip:80` in a browser to test the CLB service. If a message is displayed as shown below, the request has been forwarded to the CVM instance `rs-1` by CLB, and the CVM instance has properly processed the request and returned the result.
 ![](https://main.qcloudimg.com/raw/5a7cb3e86d04149978b90050546a2983.png)
 2. The round robin algorithm of the listener is "weighted round robin", and the weights of the two CVM instances are both "10". If you refresh the webpage in the browser to send a new request, you can see that the request is forwarded to the CVM instance `rs-2` by CLB.
 ![](https://main.qcloudimg.com/raw/8f9f5f667461a5d0efd3e6b2bbe859f3.png)
->
+>!
 >- If session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence.
 >- If session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
