@@ -71,7 +71,7 @@ You can solve this problem by setting `TRTCVideoFillMode_Fill` (fill mode). The 
 
 <span id="que12"></span>
 ### Why are the local and remote images of TRTC horizontally reversed?
-The locally captured image is horizontally reversed by default, which can be set through the [setLocalViewMirror](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?&_ga=1.239476867.1286123284.1593759269#setLocalViewMirror) API. This API changes only the mirroring mode of the preview image of the local camera. You can also use the `setVideoEncoderMirror` API to set the mirroring mode of the image output by the encoder. This API does not change the preview image of the local camera; instead, it changes the video image viewed by the remote user (and recorded by the server).
+The locally captured image is horizontally reversed by default, which can be set through the [setLocalViewMirror](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?&_ga=1.239476867.1286123284.1593759269#setLocalViewMirror) API on App. This API changes only the mirroring mode of the preview image of the local camera. You can also use the `setVideoEncoderMirror` API to set the mirroring mode of the image output by the encoder. This API does not change the preview image of the local camera; instead, it changes the video image viewed by the remote user (and recorded by the server).  Moreover, you can set this on web by using [createStream](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html?&_ga=1.196570732.1964829293.1601453695#.createStream) API to modify `mirror` parameter.
 
 <span id="que13"></span>
 ### Why doesn't the set video encoding output direction take effect in TRTC?
