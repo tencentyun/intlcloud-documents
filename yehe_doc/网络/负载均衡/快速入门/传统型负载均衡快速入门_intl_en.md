@@ -53,7 +53,7 @@ After creating a CLB instance, you can configure a CLB security group to isolate
 After configuring a security group, you can choose to enable or disable "Allow Traffic by Default in Security Group" with different configurations as follows:
 
 ### Method 1. Enable "Allow Traffic by Default in Security Group"
->?This feature is currently in beta test. To try it out, please [submit a ticket](https://cloud.tencent.com/apply/p/njj5tl4a5j) for application. This feature is not supported for classic private network CLB.
+>?This feature is currently in beta test. To try it out, please submit a ticket for application. This feature is not supported for classic private network CLB.
 
 For detailed directions, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
