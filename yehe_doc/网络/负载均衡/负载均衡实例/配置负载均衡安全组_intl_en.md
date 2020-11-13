@@ -3,7 +3,7 @@ After a CLB instance is created, you can configure a CLB security group to isola
 - One CLB instance can be bound to five security groups at most.
 - There can be 0–65535 security group rules.
 - Security groups cannot be bound to classic private network CLB instances and private network CLB instances in the classic network. If a private network CLB instance is bound to an [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426), security groups bound to the instance will not take effect.
-- The "Allow Traffic by Default in Security Group" feature is in beta test. To try it out, please <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">submit a ticket for application</a>. This feature is not supported for classic private network CLB and CLB in the classic network.
+- The "Allow Traffic by Default in Security Group" feature is currently in beta test. To try it out, please [submit a ticket](https://cloud.tencent.com/apply/p/njj5tl4a5j) for application. This feature is not supported for classic private network CLB and CLB in the classic network.
 
 
 ## Background
@@ -27,7 +27,7 @@ After "Allow Traffic by Default in Security Group" is enabled:
 ### Disabling "Allow Traffic by Default in Security Group"
 ![](https://main.qcloudimg.com/raw/9357f8d81a0027110bd6a977cda4aafc.jpg)
 After "Allow Traffic by Default in Security Group" is disabled:</p>
-<ul ><li>If you want to only allow access from the specified client IP, you <strong>need to open</strong> the client IP and listening port to the internet in the CLB security group and <strong>open</strong> the client IP and service port in the backend CVM security group; therefore, business traffic passing through CLB will be double checked by both the CLB security group and CVM security group.</li>
+<ul ><li>If you want to only allow access from the specified client IP, you <strong>need to open</strong> the client IP and listening port to the internet in the CLB security group and <strong>open</strong> the client IP and service port in the CVM security group; therefore, business traffic passing through CLB will be double checked by both the CLB security group and CVM security group.</li>
 <li>Traffic from public IPs (including general public IPs and EIPs) still needs to pass through the CVM security group.</li>
 <li>If a CLB instance has no security group configured, all traffic will be allowed, and only ports configured with listeners on the VIP of the CLB instance can be accessed; therefore, the listening port will allow traffic from all IPs.</li>
 <li>You can reject access in either the CLB security group or the CVM security group to reject traffic from a specified client IP.</li></ul>
@@ -56,24 +56,27 @@ For more information, please see [Getting Started with CLB](https://intl.cloud.t
  ![](https://main.qcloudimg.com/raw/65b035098c49c77f4a82eed799353bc4.png) 
 
 2. Bind the security group to the CLB instance
- 1. Log in to the <a rel="nofollow" href="https://console.cloud.tencent.com/clb/index?rid=1&amp;type=2%2C3">CLB Console</a> and click the ID of the CLB instance to enter its details page.
- 2. Select the **Security Group** tab and click **Bind** in the **Bound Security Groups** module.
- 3. On the **Configure Security Group** window that pops up, select the security group bound to the CLB instance and click **OK**.
-  ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png) 
+ 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance).
+ 2. On the "Instance Management" page, click the ID of the target CLB instance.
+ 3. On the instance details page, click the **Security Group** tab and click **Bind** in the **Bound Security Groups** module.
+ 4. In the **Configure Security Group** window that pops up, select the security group bound to the CLB instance and click **OK**.
+    ![](https://main.qcloudimg.com/raw/8a9701e700a94ba55a9a650eb87b4456.png) 
  The CLB security group configuration is completed, which only allows access to CLB from port 80.
  <img alt="" src="https://main.qcloudimg.com/raw/a32cd86653185a5138006757aab38075.png" >
 
 ### Step 3. Configure "Allow Traffic by Default in Security Group"
 You can choose to enable or disable "Allow Traffic by Default in Security Group" with different configurations as follows:
 - Method 1. Enable "Allow Traffic by Default in Security Group", so that the real server does not need to open the port to the internet.
->?The "Allow Traffic by Default in Security Group" feature is in beta test. To try it out, please <a rel="nofollow" href="https://console.cloud.tencent.com/workorder/category?level1_id=6&amp;level2_id=163&amp;source=0&amp;data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&amp;step=1">submit a ticket for application</a>. This feature is not supported for classic private network CLB and CLB in the classic network.
+>?The "Allow Traffic by Default in Security Group" feature is currently in beta test. To try it out, please [submit a ticket](https://cloud.tencent.com/apply/p/njj5tl4a5j) for application. This feature is not supported for classic private network CLB and CLB in the classic network.
 - Method 2. Disable "Allow Traffic by Default in Security Group", and you also need to open the client IP to the internet (0.0.0.0/0 in this example) in the CVM security group.
 
 #### Method 1. Enable "Allow Traffic by Default in Security Group"
-1. On the CLB instance details page, select the **Security Group** tab.
+1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance).
+2. On the "Instance Management" page, click the ID of the target CLB instance.
+3. On the instance details page, click the **Security Group** tab.
 2. On the "Security Group" tab, click <img style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png"> to enable "Allow Traffic by Default".
 3. After the "Allow Traffic by Default" feature is enabled, only security group rules in the <strong>rule preview</strong> as shown below need to be verified.
-   <img alt="" src="https://main.qcloudimg.com/raw/6caa47138ecb97cc3c60cb38971792fd.png"></li>
+   ![](https://main.qcloudimg.com/raw/6caa47138ecb97cc3c60cb38971792fd.png)
 
 #### Method 2. Disable "Allow Traffic by Default in Security Group"
 If "Allow Traffic by Default" is disabled, you need to open the client IP to the internet in the CVM security group. Business traffic is allowed to access CVM only from CLB port 80 and use services provided by CVM port 8080.
@@ -85,4 +88,4 @@ If "Allow Traffic by Default" is disabled, you need to open the client IP to the
 2. Bind the security group to the CVM instance
  1. In the [CVM Console](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm%2Finstance%2Findex%3Frid%3D1), click the ID of CVM instance bound to the CLB instance to enter the details page.
  2. Select the **Security Group** tab and click **Bind** in the **Bound Security Groups** module.
- 3. On the **Configure Security Group** window that pops up, select the security group bound to the CVM instance and click **OK**. <br><img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="Click to view original image">
+ 3. In the **Configure Security Group** window that pops up, select the security group bound to the CVM instance and click **OK**. <br><img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="Click to view original image">
