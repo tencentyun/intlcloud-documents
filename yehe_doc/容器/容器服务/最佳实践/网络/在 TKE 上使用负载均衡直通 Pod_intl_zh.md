@@ -80,7 +80,7 @@ CLB 直接绑定 Pod 时检查 Pod 是否 Ready，需查看 Pod 是否 Running�
 
 #### 通过 YAML 创建 Service
 如果通过 YAML 创建 Service，需要为 Service 加上 `service.cloud.tencent.com/direct-access: "true"` 的 annotation。示例如下：
->?如何使用 YAML 创建 Service 请参见 [创建 Service](https://intl.cloud.tencent.com/document/product/457/368332)。
+>?如何使用 YAML 创建 Service 请参见 [创建 Service](https://intl.cloud.tencent.com/document/product/457/36833#.E5.88.9B.E5.BB.BA-service)。
 >
 ``` yaml
    apiVersion: v1
