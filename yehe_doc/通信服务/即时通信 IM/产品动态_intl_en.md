@@ -8,6 +8,14 @@
          <th width="15%">Documentation</th>  
      </tr> 
      <tr>
+         <td>Lite Edition SDK 5.0.108 release</td>
+         <td><li>Fixed the stability issue on iOS SDK.</li>
+             <li>Fixed the issue where messages occasionally do not call back on Android SDK.</li>
+         </td>
+         <td>October 23, 2020</td>
+         <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a> </td>
+     </tr>
+     <tr>
          <td>Standard SDK 5.0.10 release</td>
          <td><ul stype="margin:0:">
                <li>The signaling API is optimized to support configuring `onlineUserOnly` and `offlinePushInfo` parameters.</li>
@@ -33,7 +41,7 @@
          <th width="15%">Documentation</th>  
 		  <tr>
          <td>SDK 5.0.106 release (simplified SDK for Android & iOS)</td>
-         <td>Fixed the known stability issue.
+         <td><li>Fixed the known stability issue.</li>
          </td>
          <td>September 21, 2020</td>
          <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a> </td>

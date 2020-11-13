@@ -35,7 +35,7 @@
 </tr>
 <tr>
 <td>ICMP 协议</td>
-<td>用于提供网站 HTTP 服务。</td>
+<td>用于提供网站 HTTP 服务。ICMP 为控制协议，不涉及端口号。</td>
 </tr>
 <tr>
 <td>出站规则</td>
@@ -46,13 +46,14 @@
 
 ## 操作指南
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
-2. 单击左侧目录中的【诊断工具】>【实例端口验通】，进入管理页面。
+2. 单击左侧目录下方的【诊断工具】>【实例端口验通】，进入管理页面。
 3. 在页面上方选择【地域】，并在列表中，找到您要验证的实例所在行，单击【一键检测】。
 ![](https://main.qcloudimg.com/raw/04780280964c1d63698423b22ce764f5.png)
-4. 您可以在弹窗中看到端口验通的详情，如需放通未放通端口，单击【一键放通】即可。
->?一键放通将会放通所有列出的端口，如果您仅需要放通部分端口（如 `TCP:22`），请在 [安全组控制台](https://console.cloud.tencent.com/vpc/securitygroup) 添加一条放通 `TCP:22` 端口的入站规则，具体操作请参见 [添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
-
+4. 您可以在弹窗中看到端口验通的详情，如需放通所有未放通端口，单击【一键放通】即可。
 ![](https://main.qcloudimg.com/raw/b7f208cca3943ecefacd791f30533911.png)
+如果您仅需要放通部分端口（例如 `TCP:22`），请在 [安全组控制台](https://console.cloud.tencent.com/vpc/securitygroup) 进入实例绑定的安全组，添加一条放通 `TCP:22` 端口的入站规则，您还可以根据实际需求，在【来源】中默认选择 all 放通全部 IP，或填写指定 IP（IP 段），如下图所示。
+![](https://main.qcloudimg.com/raw/6780b4df05168e19718ffe6c699c5159.png)
 
 ## 相关信息
+- 如需了解安全组相关内容，请参见 [安全组概述](https://intl.cloud.tencent.com/document/product/215/38750) 、[添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
 - 如需了解服务器常用端口相关说明，请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/215/35520)。

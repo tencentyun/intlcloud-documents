@@ -21,15 +21,15 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 ## Creating a Transcoding Template
 <span id="C_trans"></span>
 
-## Creating a standard transcoding template
+### Creating a standard transcoding template
 
 1. Log in to the LVB Console, and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Standard Transcoding** as the transcoding type, and configure as follows.
 	- Basic settings include template name, video bitrate, video resolution and more. For details, see [Basic Configuration Description for Standard Transcoding](#C_trans_normal).
 	- Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For details, see [Advanced Configuration Description for Standard Transcoding](#C_trans_high).
-2. After completing the configuration, click **Save**.
+3. After completing the configuration, click **Save**.
 
-![](https://main.qcloudimg.com/raw/beb57f930119e32baf6e58069dac4d28.png)
+![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">Basic Settings for Standard Transcoding</th><th>Required</th><th>Description</th></tr>
@@ -95,7 +95,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 	- Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For details, see [Advanced Configuration Description for Top Speed Codec Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/23acad8693206093b27c4db391c5ba13.png)
+![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">Basic Settings for Top Speed Codec Transcoding</th><th>Required</th><th>Description</th>
@@ -152,7 +152,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 1. Log in to the LVB Console, and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Pure Audio Transcoding** as the transcoding type, configure [settings](#C_audio_normal), and then click ***Save*.
 
-![](https://main.qcloudimg.com/raw/c2d579fdc1de28aadbfb94ba734ffea7.png)
+![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">Basic Settings for Pure Audio Transcoding</th><th>Required</th><th>Description</th>

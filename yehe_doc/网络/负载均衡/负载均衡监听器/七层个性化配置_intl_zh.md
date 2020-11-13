@@ -48,13 +48,13 @@ ECDH-ECDSA-AES128-SHA256:ECDH-RSA-AES256-SHA:ECDH-ECDSA-AES256-SHA:SRP-DSS-AES-2
 ## CLB 个性化配置示例
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/loadbalance/index?rid=8)，在左侧目录中单击【个性化配置】，进入管理页面。
 2. 单击【新建】，填写相应的配置项，并且以`;`结尾。
-![](https://main.qcloudimg.com/raw/9843fe5c4fffbaa8edbd7f5f630f42c2.png)
+![](https://main.qcloudimg.com/raw/7ef70a06f9509ba8759e5a923515a471.png)
 3. 单击【完成】，完成个性化配置的创建。
 4. 在管理页面的操作栏下，单击【绑定至实例】。
 5. 在弹框中选择绑定到同地域的 LB 实例，单击【提交】。
-![](https://main.qcloudimg.com/raw/fe7d42bd7a5d18a0d9c25ffd84ae054b.png)
+![](https://main.qcloudimg.com/raw/ad8fb7874b9ce1fe7bf5c9366c7e64e7.png)
 6. 绑定实例后，可以在实例的列表页中找到对应的个性化配置信息。
-![](https://main.qcloudimg.com/raw/8a3dd9c46211f2e8ff6860980270eec4.png)
+![](https://main.qcloudimg.com/raw/d07bdbc134480fa89f732c93c3861243.png)
 默认配置代码示例：
 ```
 ssl_protocols   TLSv1 TLSv1.1 TLSv1.2;

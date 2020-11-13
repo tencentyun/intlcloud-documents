@@ -8,7 +8,7 @@ For more information on COS public cloud regions, please see [Regions and Access
 
 >- For more information on COS billing, please see [Billing Modes](https://intl.cloud.tencent.com/document/product/436/16871#billing-modes), [Billable Items](https://intl.cloud.tencent.com/document/product/436/33776), and [Billing Cycle](https://intl.cloud.tencent.com/document/product/436/16871#billing-cycle).
 >- For more information on pay-as-you-go billing, please see [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534).
->- As the price list shows below, the request fee and public network downstream traffic fee in the ARCHIVE and DEEP ARCHIVE storage classes will be incurred only after objects are restored. For more information, please see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925).
+>- Request fees and public network downstream traffic fees listed below for the ARCHIVE and DEEP ARCHIVE storage classes will be incurred only after objects are restored to STANDARD storage. For more information, please see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925).
 
 <table>
    <tr>
@@ -385,7 +385,7 @@ For more information on COS public cloud regions, please see [Regions and Access
    </tr>
    <tr>
       <td>STANDARD<br>STANDARD_IA</td>
-      <th>Job Fee<br>(USD/Jobs)</th>
+      <th>Job Fee<br>(USD/Job)</th>
       <th>Object Processing Fee<br>(USD/10,000 Processed Objects)</th>
    </tr>
    <tr>

@@ -20,7 +20,7 @@ If the number of connections exceeds the upper limit, you can use the connection
 #### Method 1. Increase the upper limit
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name to enter the instance management page.
 2. Select **Manage Database** > **Manage Connection** and view the source IPs and number of connections for service troubleshooting.
->
+>?
 >-  If the number of connections reaches or exceeds 80% of the upper limit and affects the establishment of new connections, you can click **Increase Connections** in the console to increase the maximum number of connections to 150% of the original limit for the next 6 hours.
 >- If the problem persists, please contact the aftersales service or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >
@@ -29,7 +29,7 @@ If the number of connections exceeds the upper limit, you can use the connection
 #### Method 2. Restart the instance
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name to enter the instance management page.
 2. Select **Manage Database** > **Manage Connection**. You can click **Restart** on the right to restart the mongos instance to fix the problem.
->
+>?
 >- Replica sets on v4.0 do not have mongos instances.
 >- Restarting the mongod instance is highly risky and will cause a momentary disconnection, during which if data is written, rollback may be triggered, leading to data loss. Therefore, the restart feature is not enabled by default. If you need to enable it, please contact the aftersales service or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 >

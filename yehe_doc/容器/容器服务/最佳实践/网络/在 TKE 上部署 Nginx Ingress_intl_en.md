@@ -1,27 +1,28 @@
 ## Overview
 
-NGINX Ingress has powerful features, excellent performance, and supports various deployment methods. This document describes how to deploy NGINX Ingress on Tencent Kubernetes Engine (TKE) using [Deployment + LB](#step1), [Daemonset + HostNetwork + LB](#step2), and [Deployment + LB Direct Connect to Pods](#step3).
+Nginx Ingress provides robust features and extremely high performance as well as multiple deployment modes. This document introduces the three deployment schemes of Nginx Ingress on Tencent Kubernetes Engine (TKE): [Deployment + LB](#step1), [Daemonset + HostNetwork + LB](#step2), and [Deployment + LB directly connected to Pod](#step3) and their deployment methods.
 
-## Introduction to NGINX Ingress
+## Nginx Ingress Introduction
 
-NGINX Ingress is an implementation method of Kubernetes ingress resources. It watches ingress resources in a Kubernetes cluster to convert ingress rules into NGINX configurations and enable NGINX to forward L7 traffic, as shown below.
+Nginx Ingress is an implementation of Kubernetes Ingress. By watching the Ingress resources of Kubernetes clusters, it converts Ingress rules into an Nginx configuration to enable Nginx to perform Layer-7 traffic forwarding, as shown in the figure below:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/cc1260950a0cc812508cf25819e3c129.png" data-nonescope="true">
-NGINX Ingress supports the following two implementation methods. This document describes the implementation method provided by the Kubernetes open-source community.
-- [NGINX Ingress implementation provided by the Kubernetes open-source community](https://github.com/kubernetes/ingress-nginx)
-- [NGINX Ingress implementation provided on the official NGINX website](https://github.com/nginxinc/kubernetes-ingress)
+Nginx Ingress can be implemented in the following two modes. This document mainly introduces the implementation of Kubernetes in the open-source community:
 
-### Recommended deployment solutions
-The following describes three solutions for deploying NGINX Ingress on TKE.
-1. [Deployment + LB](#step1): this solution is simple and common but has performance issues in large-scale and high-concurrency scenarios. If you have low performance requirements, you can use this solution.
-2. [Daemonset + HostNetwork + LB](#step2): this solution uses hostNetwork to ensure a good performance. However, you need to manually maintain the CLB and NGINX Ingress nodes, and auto scaling is not supported. We do not recommend this solution.
-3. [Deployment + LB Direct Connection to Pods](#step3): this solution provides good performance and does not require manual CLB maintenance. However, the solution requires that the cluster support VPC-CNI. If your cluster uses VPC-CNI plugins or Global Router network plugins with VPC-CNI enabled (hybrid mode), we recommend that you use this solution.
+- [Implementation of Kubernetes in the Open-Source Community](https://github.com/kubernetes/ingress-nginx)
+- [Official Implementation of Nginx](https://github.com/nginxinc/kubernetes-ingress)
+
+### Suggestions for deployment solution selection
+Based on a comparison of the three deployment solutions for Nginx Ingress on TKE, this document offers the following selection suggestions:
+1. [Deployment + LB](#step1): this solution is relatively simple and applicable to general scenarios, but performance issues may arise in large-scale and high-concurrency scenarios. If your performance requirements are low, you can consider adopting this solution.
+2. [Daemonset + HostNetwork + LB](#step2): the use of hostNetwork offers good performance, but manual maintenance of CLBs and Nginx Ingress nodes is required and auto scaling cannot be implemented. Therefore, we do not recommend this solution.
+3. [Deployment + LB directly connected to pod](#step3): this solution offers good performance, without the need for manual CLB maintenance, making this the ideal solution. However, in this solution, clusters need to support VPC-CNI. If the existing clusters use the VPC-CNI network plug-in or the Global Router network plug-in and have enabled support for VPC-CNI (mixed use of two modes), we recommend that you adopt this solution.
 <span id="step1"></span>
 ## Solution 1: Deployment + LB
 
-The simplest way to deploy NGINX Ingress on TKE is to deploy the NGINX Ingress controller as a Deployment workload and create a LoadBalancer service for it. A CLB is automatically created for the service or the service is bound to an existing CLB. The CLB receives external traffic and forwards the traffic to NGINX Ingress, as shown below.
+The simplest way to deploy Nginx Ingress on TKE is to deploy Nginx Ingress Controller in Deployment mode and create a LoadBalancer-type Service for it (automatically creating a CLB or binding an existing CLB) to enable the CLB to receive external traffic and forward it into Nginx Ingress, as shown in the figure below:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/337cf2fa30cb27f89eed438b0458d557.png" data-nonescope="true">
-Currently, LoadBalancer services on TKE are implemented based on NodePort by default. The CLB binds NodePorts of different nodes as the backend real server (RS) and forwards traffic to these NodePorts. The nodes use Iptables or IPVS to forward the traffic to the backend pods of the service, that is, the pods where the NGINX Ingress controller is located. If nodes are added or deleted later, the CLB will automatically update the NodePort binding.
-To install NGINX Ingress, run the following command:
+Currently, by default, a LoadBalancer-type Service on TKE is implemented based on NodePort: the CLB binds the NodePort of each node as the RS (Real Server) and forwards traffic to the NodePort of each node. Then through Iptables or IPVS, nodes route requests to the corresponding backend pod of the Service (namely the pod of Nginx Ingress Controller). Subsequently, if nodes are added or deleted, the CLB will automatically update the node NodePort binding.
+Run the following commands to install Nginx Ingress:
 ```
 kubectl create ns nginx-ingress
 ```
@@ -31,42 +32,41 @@ kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/man
 <span id="step2"></span>
 ## Solution 2: Daemonset + HostNetwork + LB
 
-In solution 1, traffic is forwarded through NodePorts, which causes the following issues:
-- The forwarding path is long. After traffic is forwarded to NodePorts, they forward the traffic to nodes through the internal Kubernetes load balancer (LB), and the nodes use Iptables or IPVS to forward the traffic to the NGINX Ingress controller. This increases the forwarding time.
-- Source network address translation (SNAT) occurs. If traffic is centralized, source ports are easily used up and packet loss may occur due to conntrack insertion conflicts. As a result, some traffic may be abnormal.
-- The NodePort of each node also functions as an LB. If the CLB is bound to a large number of NodePorts, the load balancing status will be distributed to each node, which can easily result in uneven loads on a global scale.
-- The CLB detects the health status of NodePorts, and the detection packets are forwarded to the pods where NGINX Ingress is located. If the CLB is bound to a large number of NodePorts and there are few NGINX Ingress pods, the detection packets will put great pressure on the NGINX Ingress.
+In solution 1, traffic passes through a NodePort layer, introducing one more layer for forwarding, which leads to the following issues:
+- The forwarding path is relatively long: after reaching NodePort, traffic goes through the LB within Kubernetes and is then forwarded through Iptables or IPVS to Nginx. This increases network time consumption.
+- Passing through NodePort will necessarily cause SNAT. If traffic is too concentrated, port exhaustion or conntrack insertion conflicts can easily occur, leading to packet loss and causing some traffic exceptions.
+- The NodePort of each node also serves as a CLB. If the CLB is bound with the NodePorts of a large number of nodes, the LB status is distributed among each node, which can easily cause a global load imbalance.
+- The CLB carries out health probes on NodePort, and probe packets are ultimately forwarded to the Pods of Nginx Ingress. If the CLB is bound with too many nodes, and the Nginx Ingress has a small number of pods, the probe packets will put immense pressure on Nginx Ingress.
 
-Solution 2 provides the following solutions to these problems:
-NGINX Ingress uses hostNetwork, and the CLB is bound to the IP addresses and port numbers (80 or 443) instead of the NodePorts of nodes. With hostNetwork, the pods where NGINX Ingress is located will not be scheduled to the same node. To prevent port listening conflicts, you can select certain nodes as edge nodes to deploy NGINX Ingress, label these nodes, and deploy NGINX Ingress on these nodes as a DaemonSet workload. The following figure shows the architecture.
+In solution 2, the following solution is proposed:
+Nginx Ingress uses hostNetwork, and the CLB is directly bound with node IP address + port (80,443), without passing through NodePort. With the use of hostNetwork, the pods of Nginx Ingress cannot be scheduled to the same node. To avoid port listening conflicts, you can preselect some nodes as edge nodes dedicated to the deployment of Nginx Ingress and label them. Then, Nginx Ingress can be deployed as a DaemonSet on these nodes. The following figure shows the architecture:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/09e4a46655dcaa2a32d6b8e02fb8d96c.png" data-nonescope="true">
-To install NGINX Ingress, perform the following steps:
-1. Run the following command to label the nodes used to deploy NGINX Ingress (replace the example node names with actual ones):
+To install Nginx Ingress, perform the following steps:
+1. Run the following command to attach a label to the nodes planned for the deployment of Nginx Ingress (be sure to replace the node names):
 ```
 kubectl label node 10.0.0.3 nginx-ingress=true
 ```
-2. Run the following command to deploy NGINX Ingress on these nodes:
+2. Run the following commands to deploy Nginx Ingress on these nodes:
 ```
 kubectl create ns nginx-ingress
 ```
 ```
 kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/manifest/master/nginx-ingress/nginx-ingress-daemonset-hostnetwork.yaml -n nginx-ingress
 ```
-3. Manually create a CLB and TCP listeners on ports 80 and 443, and bind the TCP listeners to ports 80 and 443 of the nodes where NGINX Ingress is deployed.
+3. Manually create a CLB, create a TCP listener for ports 80 and 443, and bind them with ports 80 and 443 of the nodes where Nginx Ingress has been deployed.
 <span id="step3"></span>
-## Solution 3: Deployment + LB Direct Connection to Pods
+## Solution 3: Deployment + LB Directly Connected to Pod
+Solution 2 offers more advantages than solution 1, but it has the following issues:
+- It increases the OPS cost for manual maintenance of the CLB and Nginx Ingress nodes.
+- Nginx Ingress nodes need to be planned in advance. When Nginx Ingress nodes are added or deleted, you need to manually bind or unbind nodes on the CLB console.
+- Automatic scaling is not supported.
 
-Solution 2 is superior to solution 1 but still has the following issues:
-- The costs of manual CLB and NGINX Ingress maintenance are increased.
-- The nodes where NGINX Ingress is to be deployed must be planned in advance. To add or delete nodes where NGINX Ingress is deployed, you need to manually bind or unbind these nodes in the CLB console.
-- Auto scaling is not supported.
-
-3Solution 2 provides the following solutions to these problems:
-- If the network mode is VPC-CNI and all pods use ENIs, you can bind the CLB to pods with ENIs. In this way, traffic is not forwarded through NodePorts, and you do not need to manually manage the CLB. In addition, auto scaling is supported. The following figure shows the architecture.
+In solution 3, the following solution is proposed:
+- If the network mode is VPC-CNI and all pods use ENI, you can directly bind the CLB with the ENI pods, bypassing NodePort. This saves the trouble of manual management of the CLB and enables support for automatic scaling, as shown in the figure below:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/83630c50a259482ede83742945fc591e.png" data-nonescope="true">
-- If the network mode is Global Router, you can [enable VPC-CNI for a cluster](https://intl.cloud.tencent.com/document/product/457/35250) on the cluster details page to use both modes, as shown below.
+- If the network mode is Global Router, you can go to the cluster information page and [enable VPC-CNI support for the cluster](https://intl.cloud.tencent.com/document/product/457/35250). This enables the mixed use of the two network modes, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/c3e443f268b63abf9dd37075ebd73b91.png)
-After the cluster supports VPC-CNI, run the following commands in sequence to install NGINX Ingress:
+After ensuring that the cluster supports VPC-CNI, run the following commands in sequence to install Nginx Ingress:
 ```
 kubectl create ns nginx-ingress
 ```
@@ -77,58 +77,58 @@ kubectl apply -f https://raw.githubusercontent.com/TencentCloudContainerTeam/man
 
 
 ## FAQs
-### How can I create NGINX Ingress for private network access?   
-In [Solution 2: Daemonset + HostNetwork + LB](#step2), the CLB is manually managed. When you create a CLB, you can select a public or private network. In [Solution 1: Deployment + LB](#step1) and [Solution 3: Deployment + LB Direct Connection to Pods](#step3), a public CLB is created by default.  
-To provide NGINX Ingress for private access, reconfigure the YAML file. Add a key for the service of the NGINX Ingress controller, for example, `service.kubernetes.io/qcloud-loadbalancer-internal-subnetid`. The key value is the annotation of the subnet ID of the private CLB. See the following code:
+### How can private network Ingress be supported?   
+In [solution 2: Daemonset + HostNetwork + LB](#step2), the CLB is manually managed. When creating a CLB, you can select public network or private network. In [solution 1: Deployment + LB](#step1) and [solution 3: Deployment + LB directly connected to pod](#step3), public network CLBs are created by default.  
+To use a private network, you can redeploy YAML and add a key to the Service in nginx-ingress-controller, for example, `service.kubernetes.io/qcloud-loadbalancer-internal-subnetid`, with value set to the annotation of the subnet ID created by the private network CLB. Refer to the following code:
 ```
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxx # Replace the value with the ID of a subnet in the VPC where the cluster is located.
+    service.kubernetes.io/qcloud-loadbalancer-internal-subnetid: subnet-xxxxxx # value should be replaced with a subnet ID in the VPC where the cluster belongs.
   labels:
     app: nginx-ingress
     component: controller
   name: nginx-ingress-controller
 ```
 
-### How can I reuse an existing LB?
+### How can an existing LB be shared?
 
-In [Solution 1: Deployment + LB](#step1) and [Solution 3: Deployment + LB Direct Connection to Pods](#step3), a CLB is automatically created by default. The traffic entry address of NGINX Ingress depends on the IP address of the created CLB. If your businesses depend on the entry address, bind NGINX Ingress to an existing CLB.
-To bind NGINX Ingress to an existing CLB, reconfigure the YAML file. Add a key to the service of the NGINX Ingress controller, for example, `service.kubernetes.io/tke-existed-lbid`. The value is the annotation of the CLB ID. See the following code:
+In [solution 1: Deployment + LB](#step1) and [solution 3: Deployment + LB directly connected to Pod](#step3), new CLBs are automatically created by default. The traffic entry address of Ingress depends on the IP address of the newly created CLB. If a business is dependent upon the entry address, you can bind Nginx Ingress with an existing CLB.
+The specific method is to redeploy YAML and add a key to the Service in nginx-ingress-controller, such as `service.kubernetes.io/tke-existed-lbid`, with value set to the annotation of the CLB ID. Refer to the following code:
 ```
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    service.kubernetes.io/tke-existed-lbid: lb-6swtxxxx # Replace the value with the CLB ID.
+    service.kubernetes.io/tke-existed-lbid: lb-6swtxxxx # value should be replaced with the CLB ID.
   labels:
     app: nginx-ingress
     component: controller
   name: nginx-ingress-controller
 ```
 
-### How is the public bandwidth of NGINX Ingress?
+### What’s the size of the Nginx Ingress public network bandwidth?
 
-Tencent Cloud accounts are classified into bill-by-IP accounts and bill-by-CVM accounts.
->! To check your account type, see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
->
-- **Bill-by-IP**: public network fees are charged by the public IP address or CLB instead of the CVM.
-  If you use a bill-by-IP account, the NGINX Ingress bandwidth is equal to the bandwidth of the purchased CLB. The default bandwidth is 10 Mbps (pay-as-you-go), which can be adjusted based on your actual needs.
-- **Bill-by-CVM**: public network fees are charged by the CVM.
-    If you use a bill-by-CVM account, NGINX Ingress uses a public CLB, and the public bandwidth of NGINX Ingress is the sum of the bandwidth of TKE nodes bound to the CLB. If you use [Solution 3: Deployment + LB Direct Connection to Pods](#step3), the CLB directly connects to pods, that is, the CLB is bound to ENIs. The public bandwidth of NGINX Ingress is the sum of the bandwidth of the nodes to which NGINX Ingress controller pods are scheduled.
+There are two types of Tencent Cloud accounts: bill-by-IP accounts and bill-by-CVM accounts:
+>! You can refer to [Distinguishing Between Tencent Cloud Account Types](https://intl.cloud.tencent.com/document/product/684/15246) to identify your account type.
+
+- **Bill-by-IP account type:** bandwidth is moved to the CLB or IP address for management.
+  If your account is a bill-by-IP account, the Nginx Ingress bandwidth equals the purchased CLB bandwidth, which is 10 Mbps by default (pay-as-you-go) and can be adjusted as needed.
+- **Bill-by-CVM account type:** bandwidth is managed on CVMs.
+    If your account is a bill-by-CVM account, Nginx Ingress uses a public network CLB, and the public network bandwidth of Nginx Ingress is the sum of the bandwidth of all TKE nodes bound with the CLB. If [solution 3: Deployment + LB directly connected to pod](#step3) is adopted, the CLB is directly connected to pods, which means that the CLB is directly bound with ENI. In that case, the public network bandwidth of Nginx Ingress is the sum of the bandwidth of all nodes where Nginx Ingress Controller Pods are scheduled.
 
 <span id="ingress"></span>
 
-### How can I create an ingress?
-If you deploy NGINX Ingress on TKE yourself, you need to use NGINX Ingress to manage ingress resources and cannot create ingresses in the TKE console. In this case, you can use the YAML file to create ingresses and specify an ingress class annotation for each ingress. See the following code:
+### How can I create an Ingress?
+When you deploy Nginx Ingress on TKE and need to use Nginx Ingress to manage Ingress, if you cannot create an Ingress on the TKE console, you can use YAML to create an Ingress and you need to specify the annotation of Ingress Class for each Ingress. Refer to the following code:
 ```
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: test-ingress
   annotations:
-    kubernetes.io/ingress.class: nginx # This is the key.
+    kubernetes.io/ingress.class: nginx # this is the key part
 spec:
   rules:
   - host: *
@@ -140,9 +140,9 @@ spec:
           servicePort: 80
 ```
 
-### How can I monitor NGINX Ingress?
+### How can I enable monitoring?
 
-When NGINX Ingress is installed using the method in [How can I create an ingress?](#ingress), metrics ports are exposed and metrics can be collected using Prometheus. If a cluster has prometheus-operator installed, ServiceMonitor can be used to collect NGINX Ingress monitoring data. See the following code:
+For Nginx Ingress installed through the method in [How can I create an Ingress](#ingress), the metrics port has been opened and can be used for Prometheus collection. If prometheus-operator is installed in the cluster, you can use ServiceMonitor to collect monitoring data for Nginx Ingress. Refer to the following code:
 ```
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -165,7 +165,7 @@ spec:
       component: controller
 ```
 
-For more information about the native Prometheus configuration, see the following code:
+For native Prometheus configuration, refer to the following code:
 ```
     - job_name: nginx-ingress
       scrape_interval: 5s
@@ -186,15 +186,15 @@ For more information about the native Prometheus configuration, see the followin
         regex: metrics
 ```
 
-After monitoring data is collected, you can configure [dashboards provided by the NGINX Ingress community](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards) for Grafana to display data.   
-Copy the JSON file and import it to Grafana to import the data to dashboards. `nginx.json` displays the common monitoring dashboards of NGINX Ingress, as shown below.
+After collecting monitoring data, you can configure the [dashboards provided by the Nginx Ingress community](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards) for grafana and display data.   
+In actual operation, you can directly copy JSON data and import it to grafana to import dashboards. `nginx.json` is used to display the various regular monitoring dashboards for Nginx Ingress, as shown in the figure below:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/f6c14b7cd6ff9f2959a818b0c4c4f644.png" data-nonescope="true">
-`request-handling-performance.json` displays performance monitoring dashboards of NGINX Ingress, as shown below.
+`request-handling-performance.json` is used to display the performance monitoring dashboard of Nginx Ingress, as shown in the figure below:
 <img style="width:450px" src="https://main.qcloudimg.com/raw/d21748c1903103a5b6988051848292f5.png" data-nonescope="true">
 
 
 ## References
 
-- [TKE Service YAML Example](https://intl.cloud.tencent.com/document/product/457/36833)
-- [Using Existing CLBs](https://intl.cloud.tencent.com/document/product/457/36835)
-- [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246)
+- [TKE Service YAML Sample](https://intl.cloud.tencent.com/document/product/457/36833)
+- [TKE Service Using an Existing CLB](https://intl.cloud.tencent.com/document/product/457/36835)
+- [Distinguishing Between Tencent Cloud Account Types](https://intl.cloud.tencent.com/document/product/684/15246)

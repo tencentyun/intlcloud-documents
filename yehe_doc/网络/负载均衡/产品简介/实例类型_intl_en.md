@@ -115,13 +115,6 @@ CLB has all features of Classic CLB. Given their product features and performanc
                         <td>&#10003;</td>
                         <td>×</td>
         </tr>   
-        <tr>
-            <td>Storing Layer-7 access logs in COS</td>
-                        <td>&#10003;</td>
-                        <td>×</td>
-                        <td>&#10003;</td>
-                        <td>×</td>
-        </tr>   
 </tbody></table>
 
 >?  

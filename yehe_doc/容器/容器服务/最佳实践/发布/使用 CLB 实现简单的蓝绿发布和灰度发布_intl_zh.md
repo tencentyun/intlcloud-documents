@@ -158,7 +158,7 @@ data:
     }
 ```
 您可登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster)，在集群的工作负载详情页查看部署情况。如下图所示：
-<img style="width:80%" src="https://main.qcloudimg.com/raw/4d3411bb5f9301d4ff8bee25066c64be.png">
+<img style="width:80%" src="https://main.qcloudimg.com/raw/04e36bb693ccf02128233d90114ab655.png">
 
 ### 实现蓝绿发布
 
@@ -199,7 +199,7 @@ nginx-v1
  - **通过控制台修改**：
     1. 进入集群详情页，选择左侧【服务与路由】>【Service】。
     2. 在 “Service” 页面中选择需修改 Service 所在行右侧的【编辑YAML】。如下图所示：
-<img style="width:80%" src="https://main.qcloudimg.com/raw/fd90554aa91b092e2c9cb4706ba45ab4.png" data-nonescope="true"></img>
+<img style="width:80%" src="https://main.qcloudimg.com/raw/98c39f134d67ba69749c64e459970aaf.png" data-nonescope="true"></img>
 修改 selector 部分为如下内容：
 ``` yaml
   selector:

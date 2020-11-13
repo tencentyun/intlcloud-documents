@@ -162,7 +162,7 @@ If Xcode console displays a log similar to the one below, the client has properl
 [TPNS] Current device token is 9298da5605c3b242261b57****376e409f826c2caf87aa0e6112f944
 [TPNS] Current TPNS token is 00c30e0aeddff1270d8****dc594606dc184  
 ```
->!Use an XG 36-bit token for pushing to a single target device.
+>! Please use a TPNS 36-bit token in the single device push.
 
 ## Unified Message Receipt and Message Click Callback Description
 Unified message receipt callback. This callback will be used when the application receives a notification message in the foreground and receives a silent message in all states (foreground, background, closed).

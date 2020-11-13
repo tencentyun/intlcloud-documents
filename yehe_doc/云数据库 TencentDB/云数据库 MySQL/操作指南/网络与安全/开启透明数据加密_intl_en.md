@@ -2,7 +2,7 @@
 TencentDB for MySQL supports the transparent data encryption (TDE) feature. Transparent encryption means that the data encryption and decryption are imperceptible to users. TDE supports real-time I/O encryption and decryption of data files. It encrypts data before the data is written to disk, and decrypts data when the data is read into memory from disk, which meets the compliance requirements of static data encryption.
 
 ## Limits
-- Only TencentDB for MySQL v5.7 supports TDE.
+- Only TencentDB for MySQL v5.7 and v8.0 support TDE.
 - To enable TDE, you need to activate the Key Management Service (KMS) first. If KMS has not been activated, you can activate it according to the instructions displayed in the console while enabling TDE.
 - To enable TDE, you need to grant the KMS key permissions. If the permissions have not been granted, you can grant them according to the instructions displayed in the console while enabling TDE.
 - To enable TDE, your account needs the `QcloudAccessForMySQLRole` permission. If the permission has not been granted, you can grant it according to the instructions displayed in the console while enabling TDE.
@@ -14,6 +14,8 @@ TencentDB for MySQL supports the transparent data encryption (TDE) feature. Tran
 - After TDE is enabled, you need to decrypt data before you can restore it to a local database.
 - TDE enhances the security of static data but reduces the read-write performance of encrypted databases. Enable or disable TDE according to your needs.
 - If a source instance is associated with a disaster recovery instance, TDE must be enabled on the disaster recovery instance before the source instance can use TDE. Otherwise, the data synchronization of the disaster recovery instance may fail.
+- After TDE is enabled, your account balance cannot be negative or else the instance migration may fail because the KMS cannot be accessed.
+- After TDE is enabled, more CPU resources will be consumed.
 
 ## Directions
 ### Enabling TDE

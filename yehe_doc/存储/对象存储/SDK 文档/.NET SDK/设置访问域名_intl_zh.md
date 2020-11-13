@@ -6,11 +6,13 @@
 
 SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
 
-## 自定义源站域名
+### 自定义源站域名
 
 关于如何设置自定义源站域名请参考 [自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)。
 
 以下代码展示了如何使用自定义源站域名访问 COS 服务。
+
+#### 示例代码
 
 [//]: # (.cssg-snippet-set-custom-domain)
 ```cs
@@ -29,6 +31,8 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 关于全球加速功能请参考 [全球加速功能概述](https://intl.cloud.tencent.com/document/product/436/33409)。
 
 以下代码展示了如何使用全球加速域名访问 COS 服务。
+
+#### 示例代码
 
 [//]: # (.cssg-snippet-set-accelerate-domain)
 ```cs

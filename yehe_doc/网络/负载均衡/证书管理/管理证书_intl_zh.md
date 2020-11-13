@@ -16,11 +16,11 @@
 2. 在左侧导航栏单击【证书管理】。
 3. 在“证书管理”页面的证书列表中，单击目标证书右侧“操作”列的【更新】。
 4. 在弹出的“新建证书”对话框中，填写新证书的证书内容和密钥内容，并单击【提交】。
-![](https://main.qcloudimg.com/raw/b743c1e94fb4586ecb0465c91d4ad1d2.png)
+![](https://main.qcloudimg.com/raw/d6534b57f4a33fab69b98fca4d1023f3.png)
 
 ## 查看证书关联的负载均衡
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb)。
 2. 在左侧导航栏单击【证书管理】。
 3. 在“证书管理”页面的证书列表中，单击目标证书 ID。
 4. 在“基本信息”页面，查看证书已关联的负载均衡实例。
-![](https://main.qcloudimg.com/raw/829abb436208bcba1f67722925c7af14.png)
+![](https://main.qcloudimg.com/raw/b3670e111ec8b9e1a43b9c7d2e870be3.png)

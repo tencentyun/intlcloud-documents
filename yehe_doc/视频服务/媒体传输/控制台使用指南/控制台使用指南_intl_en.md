@@ -13,7 +13,8 @@ The main UI of the MediaConnect Console displays all the flows you have created 
 
 ## 3. Flow Creation
 
-Click "Create Flow" at the top of the console page to create a transfer linkage, where you can set the name of the flow and select its maximum bandwidth (currently, valid values include 10 Mbps, 20 Mbps, and 50 Mbps).
+Click "Create Flow" at the top of the console, and then you can enter the flow name and select a `Max Bandwidth` (valid values include 10 Mbps, 20 Mbps, and 50 Mbps).
+
 Then, you need to configure the relevant information of the input source: after selecting the transfer protocol, you need to set the `Latency` parameter. This parameter affects the size of buffers to save data sent and received by the server, and we recommend increasing this parameter if the network condition is poor. This parameter is set to 120 ms by default in the console, and you can modify it as needed.
 
 >? For the `Latency` parameter, you can perform a ping test on the IP address given after the creation to determine the optimal value. In addition, you can also directly use the default value and then adjust the `Latency` value on the sender side to achieve the same goal. 
@@ -25,9 +26,7 @@ MediaConnect supports transfer encryption and decryption based on the SRT protoc
 ![](https://main.qcloudimg.com/raw/fa39d86e4fd351e94421b0b9a44e4cb8.png)
 
 In addition, you can also set the IP allowlist (in CIDR format) of the input source, so that streams can be pushed to this flow only from IPs in the allowlist.
-
 You can also configure descriptive information for the flow's input source, so that you can distinguish different input sources.
-
 After you click "Create", the flow will be created. MediaConnect will automatically generate the input IP addresses of the primary and backup tunnels for the created flow, and then you can push to these addresses.
 
 > ! The flow cannot be used before an output node is created.
@@ -51,7 +50,7 @@ You can click "Create Output" to create an output. MediaConnect supports the one
 
 ![](https://main.qcloudimg.com/raw/2bc94f3f111e3b9087bf1184ca2da641.png)
 
-MediaConnect supports remuxing the transfer protocol. You can select the output protocol when creating an output. If you select the SRT protocol, you need to enter the destination IP address and port (primary and backup). You can also set the latency here, which is 120 ms by default and can be modified as needed.
+MediaConnect supports remuxing the transfer protocol. You can select the output protocol when creating an output. If you select the SRT protocol, you need to enter the `Destination IP` address and `Port` (primary and backup).You can also make `Latency Setting` here. The default value is 120 ms and you can modify it as needed.
 
 >! The primary and backup tunnels of an output node are independent from each other and correspond to the primary and backup tunnels of the input source respectively. This means that the stream you push to the primary tunnel of the flow will be output to the primary destination address after being transferred through MediaConnect, while the stream pushed to the backup tunnel of the flow will be output to the backup destination address after being transferred through MediaConnect, and the two are independent.
 > The primary output address is required, while the backup output address is optional.
@@ -60,7 +59,7 @@ If you need to encrypt the output stream of the SRT protocol, you can enable enc
 
 ![](https://main.qcloudimg.com/raw/d1db5d2467bc2407a49e0c7cbb037853.png)
 
-If you select the RTMP protocol for output, you need to enter the destination URL and `Stream Key` (primary and backup). The logic of the primary/backup tunnels is the same as above.
+If you select the RTMP protocol for output, you need to enter the `Destination URL` and `Stream Key` (primary and backup). The logic of the primary/backup tunnels is the same as above.
 
 ![](https://main.qcloudimg.com/raw/60eb05dc28c112e7f0bc22c9dcb6ae94.png)
 

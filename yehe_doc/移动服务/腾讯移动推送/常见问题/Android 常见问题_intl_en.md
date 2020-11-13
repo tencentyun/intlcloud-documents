@@ -44,6 +44,19 @@ Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and use the
 - QQ and WeChat are in the system-level application allowlist, and the relevant service will not be terminated after the application is closed, so the user can still receive messages after closing the application, and in fact, the relevant service survives on the backend.
 - After the Android application exits from TPNS Service and the TPNS server is disconnected, messages delivered to the device will become offline messages. Each device only retains the latest three offline messages for up to 72 hours. If messages pushed during the application shutdown is not received after you start the application again, please check whether the `XGPushManager.unregisterPush\(this\)` API has been called.
 
+### After I install the Huawei push service on a non-Huawei mobile phone, and integrate the application with TPNS SDK, the Huawei push and other features will be deactivated. How do I fix this?
+
+Starting from TPNS SDK 1.1.6.3, only the push service of the same brand is supported, **so the push service cannot be started in the backend or transfer user data in the mobile phone of other brands**.
+Different Huawei features including the account, game and push share components, therefore, the push deactivation may lead to the unavailability of other features on a non-Huawei mobile phone. To disable this deactivation feature, please configure as follows:
+Add the node configuration to the `application` tag in the `AndroidManifest.xml `. Uninstall and reinstall the application.
+```xml
+<meta-data
+		android:name="tpns-disable-component-huawei-v2"
+		android:value="false" />
+<meta-data
+		android:name="tpns-disable-component-huawei-v4"
+		android:value="false" />
+```
 
 ### How do I set the message click event?
 TPNS recommends using Intent for redirection (note: the SDK supports click events by default upon message click, and the corresponding homepage will be opened. If the redirection operation is set in `onNotifactionClickedResult`, it will conflict with the custom redirection specified in the console/API, resulting in failure of the custom redirection).

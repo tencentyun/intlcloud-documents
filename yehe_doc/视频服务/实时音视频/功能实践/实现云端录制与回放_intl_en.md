@@ -182,14 +182,14 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 &<Common request parameters>
 ```
 
-- **End of recording task**
-The task will stop automatically. You can also call [StopMCUMixTranscode](https://cloud.tencent.com/document/product/647/44269) halfway to stop the stream mix or recording task.
+- **Stopping a recording task**
+The task will stop automatically. You can also call [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) halfway to stop the stream mix or recording task.
 
-- **Mix of multi-channel video image**
-Call [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) from your server and specify the `LayoutParams` parameter. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
+- **On-Cloud MixTranscoding**
+Call [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) from your server and specify the `LayoutParams` parameter. For more information, please see [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
 
 - **Naming of recording file**
-A recording file will be named by the `OutputParams.RecordId` parameter specified when [StartMCUMixTranscode](https://cloud.tencent.com/document/product/647/44270) is called, and the naming format is `OutputParams.RecordId_start time_ end time`.
+A recording file will be named by the `OutputParams.RecordId` parameter specified when [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) is called, and the naming format is `OutputParams.RecordId_start time_ end time`.
 
 - **Supported platforms**
 The operation is controlled by your server but not subject to the client platform.
@@ -220,7 +220,7 @@ In addition to [searching for recording files](#search), you can make Tencent Cl
 After the last channel of audio/video stream exits a room, Tencent Cloud will end recording and transfer the recording file to the VOD platform for storage, which will take about 30 seconds to 2 minutes by default (if you set the recording resumption timeout period to 300 seconds, then the actual waiting time will be 300 seconds plus the default waiting time). After the transfer and storage are completed, Tencent Cloud will send a notification to your server at the callback address (HTTP/HTTPS) configured in [Setting recording callback](#recordCallback).
 
 Tencent Cloud will push the recording and recording-related events to your server at the specified callback address. Below is a sample callback message:
-![](https://main.qcloudimg.com/raw/1a89e7058f7c806f6f867217821d1a9c.png)
+![](https://main.qcloudimg.com/raw/483dba536acd022f93af3ca5ff6cd74a.png)
 You can determine which call (or live stream) corresponds to the current callback based on the fields in the following table:
 
 <table>
@@ -255,8 +255,8 @@ You can determine which call (or live stream) corresponds to the current callbac
 </tr></table>
 
 <span id="delete"></span>
-## Deleting Recording File
-VOD provides a series of RESTful APIs for audio/video file management. You can use the `DeleteMedia` API to delete a specified file.
+## Deleting a Recording File
+VOD provides a series of RESTful APIs for audio/video file management. You can use the [DeleteMedia](https://intl.cloud.tencent.com/document/product/266/37571) API to delete a specified file.
 Sample RESTful request:
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMedia

@@ -10,7 +10,7 @@ The following describes the key terms related to TKE:
 - **Workload**: a Kubernetes resource object that is used to manage the creation, scheduling, and the automatic control of Pod replicas throughout the entire lifecycle.
 - **Service**: a group of microservices consisting of multiple Pods with the same configuration and the rules for accessing these Pods.
 - **Ingress**: a collection of rules for routing external HTTP(S) traffic to a service.
-- **Helm application**: a packaging tool for managing Kubernetes applications. It provides Helm charts to visualize Create/Read/Update/Delete (CRUD) operations in specified clusters.
+- **Application**: features related to Helm 3.0 integrated in TKE, which provide you with various product and service capabilities including Helm Chart, Tencent Container Registry (TCR), and software services.
 - **Image repository**: stores Docker images that are used to deploy TKE.
 
 

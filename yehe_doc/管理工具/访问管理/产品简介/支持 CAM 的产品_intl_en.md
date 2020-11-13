@@ -23,9 +23,9 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document | 
 | ------------------------------------------------------------| ------ | -------- | ------- |  ---- | ---- | 
 | [Cloud Virtual Machine (CVM)](https://intl.cloud.tencent.com/document/product/213) <sup>1</sup> | Resource level  | &#10003;      |&#10003;    |  &#10003;  | [CAM Guide](https://intl.cloud.tencent.com/document/product/213/10315)   |  
-| [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457) | Resource level | &#10003;       | - | &#10003;    | [CAM Guide](https://intl.cloud.tencent.com/document/product/457/11542)  | 
-| [Auto Scaling (AS)](https://intl.cloud.tencent.com/document/product/377) | Resource level | &#10003;      | -  | &#10003;    | -    | 
-| [BatchCompute](https://intl.cloud.tencent.com/document/product/599)  | Resource level | &#10003;         |  -  | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/599/33471)   |  
+| [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457) | Resource level | &#10003;       | &#10003; | &#10003;    | [CAM Guide](https://intl.cloud.tencent.com/document/product/457/11542)  | 
+| [Auto Scaling (AS)](https://intl.cloud.tencent.com/document/product/377) | Resource level | &#10003;      | &#10003;  | &#10003;    | -    | 
+| [BatchCompute](https://intl.cloud.tencent.com/document/product/599)  | Resource level | &#10003;         |  &#10003;  | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/599/33471)   |  
 | [Tencent Container Registry (TCR)](https://intl.cloud.tencent.com/document/product/1051)  | Resource level | &#10003;         |  -  | &#10003;     | -  | 
 ><sup>1</sup> In CVM, [GPU Cloud Computing (GCC)](https://intl.cloud.tencent.com/document/product/560) and [CVM Dedicated Host (CDH)](https://intl.cloud.tencent.com/document/product/416) support CAM.
 
@@ -67,7 +67,7 @@ Definitions:
 | [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  | Resource level | &#10003;  | &#10003;    | -     | - |
 | [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) | 
-| [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | -   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
+| [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | &#10003;   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
 | [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  |  &#10003;    | &#10003;    | - |
 | [TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | Resource level |  &#10003;  | &#10003;    | -    | - |  
 | [TencentDB for DBbrain](https://intl.cloud.tencent.com/document/product/1035) |Resource level | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1035/36050)| 
@@ -76,7 +76,7 @@ Definitions:
 
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document | 
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- | ---- | 
-| [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583)  | Resource level | &#10003;        |  -  | &#10003;   |[CAM Guide](https://intl.cloud.tencent.com/document/product/583/18014)  | 
+| [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583)  | Resource level | &#10003;        |  &#10003;  | &#10003;   |[CAM Guide](https://intl.cloud.tencent.com/document/product/583/18014)  | 
 | [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040)  | Resource level | - |  -   |  &#10003;   | -   |
 
 
@@ -142,8 +142,8 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | --------| ----- |  ---- |  ---- |
-| [Elastic MapReduce (EMR)](https://intl.cloud.tencent.com/document/product/1026)   | Resource level | &#10003;  | -   |  &#10003;  |  [CAM Guide](https://intl.cloud.tencent.com/document/product/1026/31100) |
-| [Elasticsearch Service (ES)](https://intl.cloud.tencent.com/document/product/845)  | Resource level | &#10003; | -   |  -  |  [CAM Guide](https://intl.cloud.tencent.com/document/product/845/19550) |
+| [Elastic MapReduce (EMR)](https://intl.cloud.tencent.com/document/product/1026)   | Resource level | &#10003;  | &#10003;   |  &#10003;  |  [CAM Guide](https://intl.cloud.tencent.com/document/product/1026/31100) |
+| [Elasticsearch Service (ES)](https://intl.cloud.tencent.com/document/product/845)  | Resource level | &#10003; | &#10003;   |  -  |  [CAM Guide](https://intl.cloud.tencent.com/document/product/845/19550) |
 
 ## Image Recognition
 
@@ -155,8 +155,8 @@ Definitions:
 
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |  ---- |
-| [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| -   |  -    |  -   |
-| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| -   |  &#10003;    | -    |
+| [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| &#10003;   |  -    |  -   |
+| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| &#10003;   |  &#10003;    | -    |
 
 ## Mobile Services
 

@@ -158,7 +158,7 @@ Here, we use sending text messages as an example. To send messages of other type
     "ActionStatus":"OK", 
     "ErrorInfo":"", 
     "ErrorCode": 0, 
-    "MsgTime": 1572870301,
+    "MsgTime": 1497238162,
     "MsgKey": "89541_2574206_1572870301"
 }
 ```
