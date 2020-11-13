@@ -1,9 +1,9 @@
 Tencent Cloud CLB can check the availability of real servers through health check. If a health check exception occurs, you can troubleshoot as follows:
 
 >?
->- If an exception is detected during health check, CLB will no longer forward traffic to the exceptional real server.
->- If exceptions are detected on all real servers during health check, requests will be forwarded to all real servers.
->- For more information on how health check works, please see [Health Check](https://intl.cloud.tencent.com/document/product/214/6097).
+- If an exception is detected during health check, CLB will no longer forward traffic to the exceptional real server.
+- If exceptions are detected on all real servers during health check, requests will be forwarded to all real servers.
+- For more information on how health check works, please see [Health Check](https://intl.cloud.tencent.com/document/product/214/6097).
 
 ## Checking Real Server's Public Network Bandwidth
 - For a traditional account, as the bandwidth attribute of the account is in CVM rather than CLB, public network bandwidth must be configured for the backend CVM instance bound to CLB; otherwise, a health check exception will occur.
