@@ -8,7 +8,8 @@
 ### 创建函数
 1. 登录云函数控制台，选择左侧导航栏中的【[函数服务](https://console.cloud.tencent.com/scf/list)】。
 2. 在“函数服务”页面上方选择**广州**地域，并单击【新建】进入新建函数页面。
-3. 在“新建函数”页面的“基本信息”步骤中，根据以下信息创建函数，并单击【下一步】。
+3. 在“新建函数”页面的“基本信息”步骤中，根据以下信息创建函数，并单击【下一步】。如下图所示：
+   ![](https://main.qcloudimg.com/raw/d470f8940fec0544458122b1b6275c68.png)
 
  - **函数名称**：自定义名称，本文以 test 为例。
  - **运行环境**：选择 “Python 2.7”。
@@ -20,13 +21,15 @@
 ### 创建网关触发器
 网关触发器用于：通过 API 访问将邀请函的名字传递给云函数。具体步骤如下：
 1. 在“函数配置”页面选择左侧的【触发管理】，并单击【创建触发器】。
-2. 在弹出的“创建触发器”窗口中，根据以下信息为云函数添加 API 网关触发器。
+2. 在弹出的“创建触发器”窗口中，根据以下信息为云函数添加 API 网关触发器。如下图所示：
+   ![](https://main.qcloudimg.com/raw/ce47511064e8f63aa0fbaa39a2c21cc1.png)
 
 主要参数如下，其余参数请保持默认设置：
  - **触发方式**：选择 “API网关触发器”。
  - **API服务类型**：选择“新建API服务”。
  - **启用集成响应**：勾选。
-3. 单击【提交】即可创建网关触发器。
+3. 单击【提交】即可创建网关触发器。如下图所示：
+   ![](https://main.qcloudimg.com/raw/06122f00d2a36c15d4879c3f7b0de0f8.png)
 
 
 
@@ -39,10 +42,11 @@
 主要参数信息如下，其余参数请保持默认设置：
  - **名称**：自定义名称，本文以 test 为例。
  - **所属地域**：选择“广州”。
- - **访问权限：**公有读私有写
+ - **访问权限：**公有读私有写。
 4. 单击【确定】即可完成创建。
-2. 选择存储桶左侧的【基础配置】，在“跨域访问CORS设置”中单击【添加规则】。
-3. 在弹出的“跨域访问CORS添加规则”窗口中，参考以下信息添加规则。
+2. 选择存储桶左侧的【安全管理】，在“跨域访问CORS设置”中单击【添加规则】。
+6. 在弹出的“跨域访问CORS添加规则”窗口中，参考以下信息添加规则。如下图所示：
+   ![](https://main.qcloudimg.com/raw/ab112ead265bc47682bdcab84689f7ed.png)
 
 主要参数信息如下，其余参数请保持默认设置：
  - **来源 Origin**：输入 <b>*</b>。
@@ -54,8 +58,8 @@
 ### 修改函数配置
 1. 在 “[函数服务](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)” 页面，单击函数名进入“函数配置”页面。
 2. 在“函数配置”页面，单击右上角【编辑】，按以下信息进行函数配置。
- - **运行角色**：勾选“启用”，并选择**包含 COS 数据读写的权限策略**的运行角色，本文以 SCF_QcsRole 为例。
-
+ - **运行角色**：勾选“启用”，并选择**包含 COS 数据读写的权限策略**的运行角色，本文以 SCF_QcsRole 为例。如下图所示：
+![](https://main.qcloudimg.com/raw/f73d41f374140c226ce6eb25559b8aac.png)
  - **环境变量**：新增如下环境变量，参考表格进行填写。
 
 <table>
@@ -89,7 +93,8 @@ https://testxxxx.com//邀请函-yun-ServerlessDays.jpg%
 ```
 
 #### 方式2
-1. 下载 [HTML 页面](https://github.com/tencentyun/scf-demo-repo/blob/master/Python2.7-Add_Text_To_Pictures/invitation.html)，并将链接修改为 API 网关触发器的链接。
-
-2. 打开 HTML 页面，输入邀请嘉宾的名字，则可以生成海报，访问链接可直接下载海报。
+1. 下载 [HTML 页面](https://github.com/tencentyun/scf-demo-repo/blob/master/Python2.7-Add_Text_To_Pictures/invitation.html)，并将链接修改为 API 网关触发器的链接。如下图所示：
+![](https://main.qcloudimg.com/raw/9154ce1a3b16d2f9ee6cb8500d4eb3e4.png)
+2. 打开 HTML 页面，输入邀请嘉宾的名字，则可以生成海报，访问链接可直接下载海报。如下图所示：
+   ![](https://main.qcloudimg.com/raw/8d9dcfffa6c095fb20f824eabfd23559.png)
 
