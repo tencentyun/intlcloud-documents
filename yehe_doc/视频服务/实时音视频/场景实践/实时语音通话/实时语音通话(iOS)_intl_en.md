@@ -1,6 +1,6 @@
 ## Effect Demo
 
-To quickly implement the video/audio call feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCCalling` component and implement your custom UI.
+To quickly implement the audio call feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCCalling` component and implement your custom UI.
 
 >! We previously provided the `TRTCAudioCall` component, which has been moved to the [component repository](https://github.com/tencentyun/LiteAVClassic). The `TRTCCalling` component uses IM signaling APIs and is not compatible with the old component.
 

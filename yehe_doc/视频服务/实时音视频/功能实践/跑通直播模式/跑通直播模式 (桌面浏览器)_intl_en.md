@@ -137,14 +137,12 @@ client
 Call the [Client.leave()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#leave) method to exit the live room when the live stream ends, and the entire live streaming session will end.
 
 ```javascript
-client.leave().catch(error => {
-  console
-    .error(error => {
-      console.error('Failed to exit the room ' + error);
-      // This error is unrecoverable and the page needs to be refreshed.
-    })
-    .then(() => {
-      // Exited room successfully. `client.join` can be called again to enter the room again for a new call.
-    });
-});
+client
+  .leave()
+  .catch(error => {
+    console.error('Failed to exit the room ' + error);
+  })
+  .then(() => {
+    // Exited the room successfully
+  });
 ```
