@@ -33,8 +33,9 @@ The following describes the main parameters. Retain the default settings for oth
 <span id="CreateCVM"></span>
 ### Creating and obtaining the access key
 > If an access key has been created, skip this step.
->
-1. Log in to the [Cloud Access Management console](https://console.cloud.tencent.com/cam/overview) and choose **Access Key** -> **API Keys** in the left sidebar to go to the "API Key Management" page.
+
+1. Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview). Click **Access Key** and
+then click **API Keys** on the left sidebar to go to the **Manage API Key** page.
 2. On the "API Key Management" page, click **Create Key** and wait until the key is created.
 3. Then, you can view the key information, including `SecretId` and `SecretKey`, as shown below:
 ![](https://main.qcloudimg.com/raw/9f705b5a3f7bdc5907ac86573b4c4d04.png)
