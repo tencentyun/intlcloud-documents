@@ -1,5 +1,5 @@
 在混合云部署的场景中，可以使用负载均衡直接绑定云下本地数据中心（IDC）内 IP，实现跨 VPC 与 IDC 之间的后端云服务器的绑定。
-目前该功能处于内测阶段，如果您需要体验该功能，境内跨地域绑定请通过 [内测申请](https://cloud.tencent.com/apply/p/y72ehzwbwzk)，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
+目前该功能处于内测阶段，如果您需要体验该功能，境内跨地域绑定请通过 内测申请，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
 
 ## 方案优势
 - 快速搭建混合云，无缝连接云上云下，负载均衡可将请求同时转发至云上 VPC 内云服务器和云下 IDC 机房内云服务器。
