@@ -1,5 +1,5 @@
 In hybrid cloud deployment scenarios, you can directly bind a CLB instance to IPs in the local IDC off the cloud so as to bind it to real servers across VPCs and IDCs.
-This feature is currently in beta test. For cross-region binding in Mainland China, please [submit a ticket](https://cloud.tencent.com/apply/p/y72ehzwbwzk) for application. For cross-region binding outside Mainland China, please [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales).
+This feature is currently in beta test. For cross-region binding in Mainland China, please submit a ticket for application. For cross-region binding outside Mainland China, please [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales).
 
 ## Scheme Advantages
 - A hybrid cloud can be built quickly to seamlessly connect the environments in and off the cloud. CLB can forward requests to CVM instances in the in-cloud VPC and the off-cloud IDC at the same time.
@@ -16,7 +16,7 @@ This feature is currently in beta test. For cross-region binding in Mainland Chi
 - UDP listeners cannot get the source IP.
 
 ## Prerequisites
-1. You have submitted the application for beta test eligibility. For cross-region binding in Mainland China, please [submit a ticket](https://cloud.tencent.com/apply/p/y72ehzwbwzk) for application. For cross-region binding outside Mainland China, please [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales).
+1. You have submitted the application for beta test eligibility. For cross-region binding in Mainland China, please submit a ticket for application. For cross-region binding outside Mainland China, please [contact your Tencent Cloud rep](https://intl.cloud.tencent.com/contact-sales).
 2. You have created a CLB instance. For more information, please see [Creating CLB Instances](https://intl.cloud.tencent.com/document/product/214/6149).
 3. You have created a CCN instance. For more information, please see [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062).
 4. You have associated the Direct Connect gateway associated with the IDC and the target VPC to be bound with the created CCN instance. For more information, please see [Associating Network Instances](https://intl.cloud.tencent.com/document/product/1003/30064).
