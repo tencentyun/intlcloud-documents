@@ -1,5 +1,5 @@
 ## Use Cases
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as [call mode](https://cloud.tencent.com/document/product/647/32169), while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
+TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as [call mode](https://intl.cloud.tencent.com/document/product/647/35103), while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
 TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for such application scenarios as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
 
 ## How It Works
