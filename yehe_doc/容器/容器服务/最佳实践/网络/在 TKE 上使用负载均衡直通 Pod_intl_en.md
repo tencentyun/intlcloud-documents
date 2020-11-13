@@ -80,7 +80,7 @@ To use the console to create a Service, select **Direct CLB-Pod Connection Mode*
 
 #### Using YAML to create a Service
 To use YAML to create a Service, you need to add the annotation `service.cloud.tencent.com/direct-access: "true"` for the Service. A sample is as follows:
->? For more information on how to use YAML to create a Service, see [Creating a Service](https://intl.cloud.tencent.com/document/product/457/368332).
+>? For more information on how to use YAML to create a Service, see [Creating a Service](https://intl.cloud.tencent.com/document/product/457/36833#creating-a-service).
 >
 ``` yaml
    apiVersion: v1
