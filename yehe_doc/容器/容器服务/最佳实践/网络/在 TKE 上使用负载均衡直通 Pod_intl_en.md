@@ -80,7 +80,7 @@ To use the console to create a Service, select **Direct CLB-Pod Connection Mode*
 
 #### Using YAML to create a Service
 To use YAML to create a Service, you need to add the annotation `service.cloud.tencent.com/direct-access: "true"` for the Service. A sample is as follows:
->? For more information on how to use YAML to create a Service, see [Creating a Service](https://intl.cloud.tencent.com/document/product/457/368332).
+>? For more information on how to use YAML to create a Service, see [Creating a Service](https://intl.cloud.tencent.com/document/product/457/36833#creating-a-service).
 >
 ``` yaml
    apiVersion: v1
@@ -109,12 +109,12 @@ To use YAML to create a Service, you need to add the annotation `service.cloud.t
 When opening services through an Ingress, you also need to declare the use of the direct connection mode. The steps are as follows:
 
 #### Using the console to create an Ingress
-To use the console to create an Ingress, select **Direct CLB-Pod Connection Mode**. For more information, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673). See the figure below:
+To use the console to create an Ingress, select **Direct CLB-Pod Connection Mode**. For more information, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673#creating-an-ingress). See the figure below:
 ![](https://main.qcloudimg.com/raw/5d3bbba1604e27ff7b601cadb9313911.png)
 
 #### Using YAML to create an Ingress
 To use YAML to create an Ingress, you need to add the annotation `ingress.cloud.tencent.com/direct-access: "true"` for the Ingress. A sample is as follows:
->? For more information on how to use YAML to create an Ingress, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/306732).
+>? For more information on how to use YAML to create an Ingress, see [Creating an Ingress](https://intl.cloud.tencent.com/document/product/457/30673#creating-an-ingress).
 >
 ``` yaml
    apiVersion: networking.k8s.io/v1beta1

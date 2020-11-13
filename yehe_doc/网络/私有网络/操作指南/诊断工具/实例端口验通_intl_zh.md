@@ -55,5 +55,5 @@
 ![](https://main.qcloudimg.com/raw/6780b4df05168e19718ffe6c699c5159.png)
 
 ## 相关信息
-- 如需了解安全组相关内容，请参见  [添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
+- 如需了解安全组相关内容，请参见 [安全组概述](https://intl.cloud.tencent.com/document/product/215/38750) 、[添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
 - 如需了解服务器常用端口相关说明，请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/215/35520)。
