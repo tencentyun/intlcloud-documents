@@ -204,7 +204,7 @@ As required by the national laws, regulations and MITT [Telecom Service Catalog 
 
 <span id ="69"></span>
 ### Why must I use a legitimate line to access Tencent Cloud?
-According to the relevant national laws and regulations as well as the [Notice on Regulating the Internet Network Access Marketplace] (MIIT [2017] No. 32)](http://www.scio.gov.cn/xwfbh/xwbfbh/wqfbh/35861/36970/xgzc36976/Document/1559330/1559330.htm), you should choose a qualified connection provider to complete the construction of private lines.
+According to the relevant national laws and regulations as well as the [Notice on Regulating the Internet Network Access Marketplace (MIIT [2017] No. 32)](http://www.scio.gov.cn/xwfbh/xwbfbh/wqfbh/35861/36970/xgzc36976/Document/1559330/1559330.htm), you should choose a qualified connection provider to complete the construction of private lines.
 
 <span id ="70"></span>
 ### What are the consequences of using an illegal private line?
