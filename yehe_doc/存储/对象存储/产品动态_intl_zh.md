@@ -1,3 +1,23 @@
+## 2020年11月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上线智能分层存储</td>
+<td>智能分层存储类型为数据提供了冷热分层机制，能够根据用户数据的访问模式，自动地转换数据的冷热层级，从而降低用户数据的存储成本。</td>
+<td> 2020-11-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">智能分层存储简介</a>
+</tr>
+</tbody></table>
+
 ## 2020年09月
 
 <table>

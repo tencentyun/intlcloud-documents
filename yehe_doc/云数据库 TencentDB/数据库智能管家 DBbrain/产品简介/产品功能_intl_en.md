@@ -1,5 +1,5 @@
 ## Intelligent Optimization
->Included features: exception diagnosis, real-time session, slow SQL analysis, capacity analysis, SQL optimization, audit log analysis (formerly SQL insight), and health report.
+>?Included features: exception diagnosis, real-time session, slow SQL analysis, space analysis, SQL optimization, audit log analysis (formerly SQL insight), and health report.
 
 DBbrain provides intelligent analysis for database instances throughout the OPS lifecycle, helping you intuitively understand their real-time operating statuses. You can also locate exceptions in real time, and optimize your system based on suggestions.
 
@@ -15,11 +15,11 @@ Intelligent alarm adapts to your custom alarms and intelligently diagnoses poten
 
 
 ## Database Security
->Included features: compliance audit, security governance, sensitive data discovery, and data masking.
+>?Included features: compliance audit, security governance, sensitive data discovery, and data masking.
 >
 The AI-powered data security engine of DBbrain can monitor, audit, and trigger alarms for various types of attacks and risky operations. Based on data asset and sensitive data discovery information, it can trigger alarms and rate security levels for users, behaviors, and data that severely deviate from the models. This helps administrators discover malicious operations and provides accurate threat analysis as well as security governance suggestions for database operations.
 
 ## Database Management
->Included features: instance overview, instance management, full instance monitoring, and database management console (DMC).
+>?Included features: instance overview, instance management, full instance monitoring, and database management console (DMC).
 
 DBbrain features a unified management platform that supports user-level database management, monitoring, and visual interaction. It can reduce your management cost by over 50% and greatly improve OPS efficiency.

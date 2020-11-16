@@ -6,7 +6,7 @@ The OPPO PUSH channel is a system-level push channel officially provided by OPPO
 
 >?
 >- OPPO channel currently does not support in-app messages, which will be sent through the TPNS channel.
->- OPPO channel imposes a certain limit on the number of daily push messages, as detailed in [Vendor Channel Limit](https://intl.cloud.tencent.com/zh/document/product/1024/35829#oppo-.E5.B9.B3.E5.8F.B0.E9.99.90.E5.88.B6). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+>- OPPO channel imposes a certain limit on the number of daily push messages, as detailed in [Vendor Channel Limit](https://intl.cloud.tencent.com/document/product/1024/35829#oppo-.E5.B9.B3.E5.8F.B0.E9.99.90.E5.88.B6). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
 >- OPPO PUSH is supported by OPPO ColorOS v3.1 or above.
 
 

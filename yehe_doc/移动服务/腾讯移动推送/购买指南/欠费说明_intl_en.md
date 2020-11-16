@@ -10,8 +10,9 @@ After purchasing the pay-as-you-go service, please ensure that your account bala
 - At 06:00 every day, the system will settle the fees incurred the previous day, generate a bill, and deduct the fees from your account balance. If your account balance is insufficient or the sum of available balance and frozen amount is negative, and the deduction cannot be completed, your account will fall into arrears.
 - The system will push arrears reminders when your account falls into arrears through phone call, SMS, WeChat, email, and Message Center (subject to the actual receipt channels and recipients configured in [Message Center](https://console.cloud.tencent.com/message/subscription)).
 - If you fail to top up your account to a positive balance in 24 hours, the service will be officially suspended. If you top up your account in 24 hours, the service will remain available.
-- After the service is suspended, the device registration, account, and tag binding logic can be used normally, but the push feature will become unavailable.
-- If you have activated the non-stop feature offered to key accounts, the service will not be suspended due to arrears of your account, you can continue to use it, and fees will continue to be charged. If you haven't activated this feature, you can [contact sales](https://console.cloud.tencent.com/workorder/category) to apply for activation.
+>!
+>- After the service is suspended, the device registration, account, and tag binding logic can be used normally, but the push feature will become unavailable.
+>- If you have activated the non-stop feature offered to key accounts, the service will not be suspended due to arrears of your account, you can continue to use it, and fees will continue to be charged. If you haven't activated this feature, you can [contact sales](https://console.cloud.tencent.com/workorder/category) to apply for activation.
 
 ### Repossession mechanism
 After the service is suspended, if you fail to top up your account to a positive balance in seven days, the repossession policy will start.
