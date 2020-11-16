@@ -36,38 +36,55 @@ COS 产品定价按照**按量计费定价**。关于 COS 的具体价格，请�
 
 <table>
    <tr>
-      <th>计费项</th>
-      <th>计费周期</th>
-      <th>计费周期说明</th>
-      <th>计费顺序</th>
+      <th colspan=2>计费项</td>
+      <th>计费周期</td>
+      <th>计费周期说明</td>
+      <th>计费顺序</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">存储容量费用</td>
-      <td rowspan="3">月</td>
-      <td rowspan="3">每月1日对上月产生的费用进行结算扣费，3日到5日输出账单</td>
-      <td nowrap="nowrap">免费额度 >  按量计费</td>
+      <td colspan=2>存储容量费用</td>
+      <td>月</td>
+      <td rowspan=4>每月1日对上月产生的费用进行结算扣费，3日到5日输出账单</td>
+      <td>免费额度 > 按量计费，若无对应免费额度，则按量计费</td>
    </tr>
    <tr>
-      <td>请求费用<br>（包括深度归档取回请求费用）</td>
+      <td rowspan=3>请求费用</td>
+      <td>读写请求费用</td>
+      <td rowspan=3>月</td>
       <td>按量计费</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">数据取回费用<br>（不包括深度归档存储）</td>
+      <td>深度归档取回请求费用</td>
       <td>按量计费</td>
    </tr>
    <tr>
-      <td >深度归档数据取回费用</td>
+      <td>智能分层对象监控费用</td>
+      <td>按量计费</td>
+   </tr>
+   <tr>
+      <td rowspan=3>数据取回费用</td>
+      <td>低频数据取回费用</td>
+      <td rowspan=2>月</td>
+      <td rowspan=2>每月1日对上月产生的费用进行结算扣费，3日到5日输出账单</td>
+      <td rowspan=2>按量计费</td>
+   </tr>
+   <tr>
+      <td>归档数据取回费用</td>
+   </tr>
+   <tr>
+      <td>深度归档数据取回费用</td>
       <td>日</td>
       <td>每日对上一日产生的费用进行结算，输出账单</td>
       <td>按量计费</td>
    </tr>
    <tr>
-      <td>流量费用</td>
+      <td colspan=2>流量费用</td>
       <td>日</td>
       <td>每日对上一日产生的费用进行结算，输出账单</td>
-      <td> 按量计费</td>
+      <td>按量计费</td>
    </tr>
-	 <tr>
+   <tr>
+      <td rowspan=4>管理功能费用</td>
       <td>清单功能费用</td>
       <td>日</td>
       <td>每日对上一日产生的费用进行结算，输出账单</td>
