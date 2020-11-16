@@ -29,7 +29,7 @@ vivo 通道是由 vivo 官方提供的系统级推送通道。在 vivo 手机上
 ```js
 implementation 'com.tencent.tpns:vivo:[VERSION]-release' // vivo  推送 [VERSION] 为当前 SDK 版本号,版本号可在 Android SDK 发布动态查看
 ```
->? vivo 推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
+>? vivo 推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 
 
 
