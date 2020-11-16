@@ -1,4 +1,4 @@
-This document describes how to initialize a TencentDB for PostgreSQL instance for getting started with ease.
+After creating a TencentDB for PostgreSQL instance, you need to initialize it before you can enable it.
 
 ## Prerequisites
 1. You have signed up for a Tencent Cloud account and verified your identity.
@@ -8,11 +8,14 @@ If you need to sign up for a Tencent Cloud account:
 
 
 ## Directions
-1. Log in to the [TencentDB for PostgreSQL Console](https://console.cloud.tencent.com/pgsql) and select **Instance List** on the left sidebar.
-2. Select a TencentDB for PostgreSQL instance whose status is **to be initialized** and click **Initialize** in the "Operation" column.
-3. In the pop-up window, select the configuration for initialization and click **OK**.
+1. Log in to the [TencentDB for PostgreSQL Console](https://console.cloud.tencent.com/pgsql). In the instance list, locate the uninitialized instance, and click **Initialize** in the "Operation" column.
+
+   ![](https://main.qcloudimg.com/raw/63731685a6c959999e938a9132b99196.png)
+
+2. In the pop-up dialog box, configure initialization parameters and click **OK**.
+
  - **Admin Username**: a username can contain 1–16 letters, digits, and special characters (\_). It must start with a letter and end with a letter or digit, is case-insensitive, and cannot be `postgres` or start with `pg\_`.
  - **Password**: a password can be a combination of 8–32 characters that must contain at least two of the following types of characters: letters, digits, and special characters `_+-&=!@#$%^*()`.
  - **Confirm Password**: enter the password again.
- - **Supported Character Sets**: LATIN1 and UTF8. The default character set is UTF8.
-4. Return to the instance list. After the status of the instance changes to **running**, the initialization has succeeded.
+ - **Support Character Set**: LATIN1 and UTF8 are supported.
+3. You will be returned to the instance list. When the instance status changes to **Running**, the instance can be used.

@@ -11,7 +11,7 @@ To quickly implement the voice chat room feature, you can directly modify the de
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestVoiceRoom`, and click **Create Application**.
 
->?This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+>?Note: this feature uses two basic PaaS services of Tencent Cloud, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically. IM is a value-added service. For more information, please see [IM Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
 
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
@@ -159,12 +159,11 @@ self.voiceRoom.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code,
     // Callback for result           
 }
 
-// 2. The anchor previews and sets beauty filters before starting streaming
+// 2. The anchor creates a room
 let param = VoiceRoomParam.init()
-param.roomName = roomInfo.roomName
-param.needRequest = roomInfo.needRequest
-param.seatCount = roomInfo.memberCount
-param.coverUrl = roomInfo.coverUrl
+param.roomName = "Room name"
+param.needRequest = true // Whether viewer mic-on requires approval by the anchor.
+param.coverUrl = "Cover URL"
 param.seatCount = 7 // Number of room seats. In this example, there are 7 seats in total. After the anchor takes one, 6 seats remain available
 param.seatInfoList = []
 for _ in 0..<param.seatCount {
