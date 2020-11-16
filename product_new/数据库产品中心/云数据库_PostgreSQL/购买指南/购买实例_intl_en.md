@@ -11,7 +11,7 @@ You have already [signed up for a Tencent Cloud account](https://intl.cloud.tenc
  - **Region**: this is the region where the instance is actually deployed. You are recommended to choose the same region as the CVM instance to connect to in order to minimize delay.
  - **AZ**: this is a physical IDC that has independent power supply and network. You are recommended to choose the same AZ as the CVM instance to connect to in order to minimize delay.
  - **Network Type**: this is the network in which the instance resides. This cannot be changed once specified. You are recommended to choose the same network as the CVM instance to connect to in order to minimize delay.
- - **Database Kernel Version**: the features available vary by PostgreSQL database kernel version. For more information, please see [9.3.5](https://www.postgresql.org/docs/9.3/static/index.html), [9.5.4](https://www.postgresql.org/docs/9.5/static/index.html), and [10.4](https://www.postgresql.org/docs/10/static/index.html).
+- **Database Kernel Version**: the features available vary by PostgreSQL database kernel version. For more information, please see official instructions on PostgreSQL [v9.3.5](https://www.postgresql.org/docs/9.3/static/index.html), [v9.5.4](https://www.postgresql.org/docs/9.5/static/index.html), [v10.4](https://www.postgresql.org/docs/10/static/index.html), and [v11.8](https://www.postgresql.org/docs/11/index.html).
  - **Instance Specification**: instance performance and base price depend on its specification.
  - **Disk**: an SSD disk (local disk) is used by default.
  - **Project**: if you want different databases to be managed by different teams, you can specify the projects under different teams for the databases.
