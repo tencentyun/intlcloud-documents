@@ -26,7 +26,7 @@ classpath 'com.google.gms:google-services:4.2.0'
 	apply plugin: 'com.google.gms.google-services'
 	```
 >!
->- FCM 推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
+>- FCM 推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 >- Google 配置 google-play-services（建议版本 17.0.0+，较低版本有可能出现无法注册 FCM 风险）。
 
 ### 启用 FCM 推送
