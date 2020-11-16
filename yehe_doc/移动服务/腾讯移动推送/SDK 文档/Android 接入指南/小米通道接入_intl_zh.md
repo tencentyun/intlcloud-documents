@@ -10,6 +10,7 @@
 ### 开启小米推送服务
 前往 [小米开放平台](https://dev.mi.com/console/appservice/push.html) >【推送运营平台】，开启应用的消息推送服务。
 
+
 ### 获取密钥
 进入 [小米开放平台](https://dev.mi.com/console/appservice/push.html) ，开通小米开发者账号，并获取小米推送的密钥，详情请参见 [快速接入指南](https://dev.mi.com/console/doc/detail?pId=708)。
 
@@ -19,10 +20,10 @@
 #### 使用 jcenter 依赖接入
 AS 开发建议使用 jcenter 依赖接入。引入小米推送的 jar 包。
 ```js
-implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'//小米推送 [VERSION] 为当前 SDK 版本号，版本号可在 SDK 下载页查看
+implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'//小米推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
 ```
 
->? 小米推送 [VERSION] 为当前 SDK 版本号，版本号可在 [SDK 下载页](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
+>? 小米推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 
 
 
