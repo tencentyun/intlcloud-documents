@@ -1,7 +1,7 @@
-- The fees of SSM consist of secret storage fees and API calling fees.
-- SSM is a **monthly postpaid** service. You are only billed based on the actual usage. The fees for a month are calculated and billed on the 3rd to 5th day of the following month.
->!SSM uses [KMS](https://intl.cloud.tencent.com/document/product/1030/31961) hosted keys for encryption, which might incur additional charges.
-  - SecretsManager creates default Tencent Cloud managed CMKs in KMS for free. Moreover, KMS allows you to call APIs 20,000 times free of charge. Therefore, if you use default Tencent Cloud managed CMKs and the number of API calls is within 20,000, no additional charge will be incurred.
+- SSM fees consist of secret storage fees and API call fees.
+- SSM is a **monthly pay-as-you-go** service. You are only billed based on your actual usage. Fees for the month are calculated, billed, and charged on the 3rd to 5th days of the following month.
+>!SSM uses [KMS](https://intl.cloud.tencent.com/document/product/1030/31961) hosted keys for encryption, which may incur additional charges:
+  - SecretsManager creates default Tencent Cloud managed CMKs in KMS for free. In addition, KMS allows you to call APIs 20,000 times for free. Therefore, if you use default Tencent Cloud managed CMKs and the number of API calls is within 20,000, no additional charge will be incurred.
   - If you have created a custom encryption key, or the number of SSM API calls has exceeded 20,000, you will be charged for the KMS service. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/1030/31966). 
 
 ## Secret Storage Fees
@@ -12,19 +12,19 @@
 	- **Pricing**: 0.4 USD/secret/month.
 
 >!
->- Secret count limit: Each account can create a maximum of 1,000 secrets. To create more secrets, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) or[ Contact Sales ](https://intl.cloud.tencent.com/contact-sales).
->- Secret status: Only enabled or disabled secrets are billed.
+>- Secret count limit: each account can create a maximum of 1,000 secrets. To create more secrets, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) or [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>- Secret status: only enabled or disabled secrets are billed.
 
-## API Calling Fees
-- API calling fees are **calculated and billed by month**. The number of API calls is calculated and billed monthly.
+## API Call Fees
+- API call fees are **calculated and billed by month**. The number of API calls is calculated and billed monthly.
 - **Pricing details:**
-	- **Item**: API calls.
+	- **Item**: number of API calls.
 	- **Pricing**: 0.05 USD/10,000 calls
 
 ## Billing Examples
-Fees for the monthly postpaid mode is as follows:
+Fees for the monthly pay-as-you-go mode is as follows:
 If a user has created 100 secrets (e.g., database credentials, SSH secrets, third-party API secrets, and OAuth tokens) in SSM, and calls APIs 20 times a day on average, the SSM monthly fees are calculated as follows:
 
 - Secret storage fees: 0.4 (USD/secret/month) * 100 = 40 (USD)
-- API calling fees: 20 (calls) * 100 (secrets) * 30 (days) * 0.05 (USD/10,000 calls) = 0.3 (USD)
+- API call fees: 20 (calls) * 100 (secrets) * 30 (days) * 0.05 (USD/10,000 calls) = 0.3 (USD)
 - Total: 40 (USD) + 0.3 (USD) = 40.3 (USD)
