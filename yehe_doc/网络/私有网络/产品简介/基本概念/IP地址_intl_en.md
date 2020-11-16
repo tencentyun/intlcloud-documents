@@ -32,7 +32,7 @@ The following table compares public IPs with EIPs.
 </thead>
 <tbody>
 <tr>
-<td rowspan="2">Use cases</td>
+<td colspan="2">Use cases</td>
 <td>If you want a public IP address to be automatically assigned by the system at the creation of a CVM instance, use the public IP, which will be released with the CVM instance. The IPs cannot be reserved</td>
 <td>If you want to use a public IP for a long time, you can choose an elastic IP (EIP) and bind it to the specified CVM as needed. EIP can be bound or unbound many times, and will still exist after the CVM is released</td>
 </tr>
