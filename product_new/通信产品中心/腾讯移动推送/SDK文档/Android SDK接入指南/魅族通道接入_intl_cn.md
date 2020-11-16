@@ -16,7 +16,7 @@
 ```js
 implementation 'com.tencent.tpns:meizu:[VERSION]-release'//meizu 推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
 ```
->? 魅族推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
+>? 魅族推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 
 #### Eclipse 集成
 1. 下载 [SDK 安装包](https://console.cloud.tencent.com/tpns/sdkdownload)。
