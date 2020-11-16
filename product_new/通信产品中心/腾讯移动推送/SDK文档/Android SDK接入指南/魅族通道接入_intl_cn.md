@@ -1,7 +1,7 @@
-﻿## 操作场景
+## 操作场景
 魅族推送通道是由**魅族官方提供**的系统级推送通道。在魅族手机上，推送消息能够通过魅族的系统通道抵达终端，并且无需打开应用，即可收到推送。
 
->
+>?
 >- 魅族推送通道通知标题不超过32字符，通知内容不超过100字符。
 >- 魅族推送通道不支持透传消息。
 >- 魅族通道支持抵达回调，支持点击回调，不支持透传。
@@ -14,8 +14,9 @@
 ### 集成方式
 #### AndroidStudio 集成
 ```js
-implementation 'com.tencent.tpns:meizu:[VERSION]-release'//meizu 推送 [VERSION] 为当前SDK版本号,版本号可在SDK下载页查看
+implementation 'com.tencent.tpns:meizu:[VERSION]-release'//meizu 推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android SDK 发布动态查看
 ```
+>? 魅族推送 [VERSION] 为当前 SDK 版本号，版本号可在 [Android SDK 发布动态](https://console.cloud.tencent.com/tpns/sdkdownload) 查看。
 
 #### Eclipse 集成
 1. 下载 [SDK 安装包](https://console.cloud.tencent.com/tpns/sdkdownload)。
@@ -48,7 +49,7 @@ implementation 'com.tencent.tpns:meizu:[VERSION]-release'//meizu 推送 [VERSION
 <uses-permission android:name="应用包名.permission.C2D_MESSAGE"/>
 <!-- 注：魅族push 需要的权限 end -->
 ```
-4. 魅族消息 receiver：在 ```AndroidManifest.xml``` 增加 ```Receiver``` 配置如下：
+4. 魅族消息 receiver：在 `AndroidManifest.xml` 增加 `Receiver` 配置如下：
 
 ```xml
 <receiver android:name="com.tencent.android.mzpush.MZPushMessageReceiver">
@@ -101,5 +102,4 @@ INFO16:24:27.94313075XINGE[a] >> bind OtherPushToken success ack with [accId = 2
 
 ### 魅族通道抵达回执配置
 魅族通道抵达回执需要开发者自行配置，您可参照 [魅族厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.AD.85.E6.97.8F.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 进行配置，完成后，可在推送记录中查看魅族推送通道的抵达数据。
-![](https://main.qcloudimg.com/raw/2f978f623566b9f6b664dea3dca30923.png)
 
