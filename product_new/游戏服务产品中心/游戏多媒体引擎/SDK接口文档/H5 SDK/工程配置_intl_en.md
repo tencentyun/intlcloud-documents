@@ -9,10 +9,21 @@ This document describes how to get started with the GME APIs for HTML5.
       <td>Remarks</td>
    </tr>
    <tr>
-      <td>iOS</td>
+      <td rowspan="3">iOS</td>
       <td>Safari</td>
       <td>11.1.2</td>
-      <td>As some bugs still emerge occasionally in Apple Safari, it is recommended to restrain from developing iOS products before Apple fixes them.</td>
+      <td>Please use a high version of Safari.</td>
+   </tr>
+        <tr>
+      <td>Chrome</td>
+      <td>-</td>
+      <td>Currently, Chrome is not supported for iOS.</td>
+   </tr>
+   </tr>
+     <tr>
+      <td>WeChat Browser</td>
+      <td>-</td>
+      <td>Currently, WeChat Browser is not supported for iOS.</td>
    </tr>
    <tr>
       <td rowspan="2">Android</td>
@@ -98,7 +109,7 @@ const AuthBufferConfig = function () {
 // Replace 1400089356 with the `sdkAppid` applied for on the Tencent Cloud backend and replace 1cfbfd2a1a03a53e with the authentication key corresponding to the `sdkAppid`
 ```
 
->The `AuthKey` must correspond to your `SDKAppid`.
+>!The `AuthKey` must correspond to your `SDKAppid`.
 
 #### 3. Deploy the server-side authentication project
 Go to the directory where the sample `authBuffer` program resides and run the following statement to install the dependencies:
@@ -109,7 +120,7 @@ npm i
 
 Then, execute the `node index.js` script to run the signature service.
 
->As the async syntax is used, please make sure that your node is above v8. Run `node -v` on the command line to view the version.
+>!As the async syntax is used, please make sure that your node is above v8. Run `node -v` on the command line to view the version.
 
 
 #### 4. Test the deployment result
