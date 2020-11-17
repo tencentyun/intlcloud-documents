@@ -8,8 +8,8 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - redis-decode: it supports decoding Redis RDB backup files into readable files.
 
 ## Compatible Versions
-- Source instances on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 are supported.
-- Target instances on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 and in all editions of TencentDB are supported, including Redis Community Edition and CKV Edition.
+- Source instances on Redis 2.8, 3.0, 3.2, and 4.0 are supported.
+- Target instances on Redis 2.8, 3.0, 3.2, and 4.0, and in all editions of TencentDB are supported, including Redis Memory Edition and CKV Edition.
 
 
 ## Online Migration Through redis-sync
@@ -51,7 +51,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - You can stop data sync and migration by pressing Ctrl + C or through other means.
 
 ## Importing Data Through redis-restore
-redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 as well as AOF files into specified Redis instances.
+redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8, 3.0, 3.2, and 4.0 as well as AOF files into specified Redis instances.
 
 **Parameter description:**
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
