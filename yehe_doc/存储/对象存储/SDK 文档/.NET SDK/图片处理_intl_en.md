@@ -1,6 +1,6 @@
 ## Overview
 
-COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, please see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
 
 <table>
    <tr>
@@ -60,13 +60,13 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
 </table>
 
 
-## SDK API Reference
+## SDK API References
 
 For the parameters and method descriptions of all the APIs in the SDK, see [Api Documentation](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Using Image Processing when Uploading
+## Processing Images Being Uploaded
 
-The following example shows how COS automatically processes an image when you upload it.
+The following example shows how to automatically process an image when you upload it to COS.
 
 Upon successful upload, COS will save both the original and processed images. You can obtain the processing result using a common download request.
 
@@ -82,16 +82,44 @@ o["is_pic_info"] = 0;
 JArray rules = new JArray();
 JObject rule = new JObject();
 rule["bucket"] = bucket;
-rule["fileid"] = key;
-// Processing parameters. For the rules, see https://cloud.tencent.com/document/product/460/6924.
-// This example proportionally scales the image to within 400 × 400 pixels
-rule["rule"] = "imageView2/thumbnail/400x400";
+rule["fileid"] = "desample_photo.jpg";
+// Processing parameters
+rule["rule"] = "imageMogr2/thumbnail/400x400";
 rules.Add(rule);
 o["rules"] = rules;
 
-request.SetRequestHeader("Pic-Operation", o.ToString());
-// Execute the request
+string ruleString = o.ToString(Formatting.None);
+request.SetRequestHeader("Pic-Operations", ruleString);
+// Perform the request
 PutObjectResult result = cosXml.PutObject(request);
+```
+
+>?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs).
+
+
+## Processing In-Cloud Images
+
+The following example shows how to process an in-cloud image and store the processing result in COS.
+
+#### Sample code
+
+[//]: # ".cssg-snippet-process-with-pic-operation"
+```cs
+JObject o = new JObject();
+// Do not return the original image
+o["is_pic_info"] = 0;
+JArray rules = new JArray();
+JObject rule = new JObject();
+rule["bucket"] = bucket;
+rule["fileid"] = "desample_photo.jpg";
+// Processing parameters
+rule["rule"] = "imageMogr2/thumbnail/400x400";
+rules.Add(rule);
+o["rules"] = rules;
+string ruleString = o.ToString(Formatting.None);
+
+ImageProcessRequest request = new ImageProcessRequest(bucket, key, ruleString);
+ImageProcessResult result = cosXml.imageProcess(request);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs).
