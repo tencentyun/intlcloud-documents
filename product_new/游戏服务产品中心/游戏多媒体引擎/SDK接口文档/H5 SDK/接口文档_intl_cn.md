@@ -12,11 +12,11 @@
 | ExitRoom       | 退出语音房间        |
 
 
->
-- GME 的接口调用成功后返回值为 QAVError.OK，数值为0。
-- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
-- 设备的操作要在进房成功之后。
-- Chrome74 以后严格限制 navigator.mediaDevices 在 HTTPS 环境下访问，所以请使用 HTTPS 环境。
+>?
+>- GME 的接口调用成功后返回值为 QAVError.OK，数值为0。
+>- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
+>- 设备的操作要在进房成功之后。
+>- Chrome74 以后严格限制 navigator.mediaDevices 在 HTTPS 环境下访问，所以请使用 HTTPS 环境。
 
 
 ## 初始化相关接口
@@ -26,7 +26,7 @@
 参数获取请参考 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
 此接口需要来自腾讯云控制台的 SDKAppID 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 
->初始化 SDK 之后才可以进房。
+>!初始化 SDK 之后才可以进房。
 
 ### 函数原型
 
