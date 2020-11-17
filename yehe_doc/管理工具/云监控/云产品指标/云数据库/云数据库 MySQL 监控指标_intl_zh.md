@@ -76,7 +76,7 @@ Namespace=QCE/CDB
 | MasterSlaveSyncDistance      | 主从延迟距离                             | 主从 binlog 差距                                             | MB      | InstanceId、InstanceType |
 | SecondsBehindMaster          | 主从延迟时间                             | 主从延迟时间                                                 | MB      | InstanceId、InstanceType |
 
->每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
+>?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
 
 ## 各维度对应参数总览
 
