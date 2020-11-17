@@ -20,7 +20,7 @@ The root account authorizes sub-accounts by binding policies. The policy setting
 This includes login credentials and access certificates. **Login credential** refers to the username and password. **Access certificate** refers to the TencentCloud API keys (SecretId and SecretKey).
 2. Resources and permissions
  - **Resource**
-A resource is an object that is managed in Tencent Cloud services, such as a CVM instance, a bucket in COS, or a VPC instance.
+A resource is an object that is operated in Tencent Cloud service, such as a CVM instance and a VPC instance.
  - **Permission**
 Permission is an authorization to allow or forbid certain users to perform certain operations. By default, **a root account has full access to all the resources under it**, while **a sub-account does not have access to any resources under its root account**.
  - **Policy**
