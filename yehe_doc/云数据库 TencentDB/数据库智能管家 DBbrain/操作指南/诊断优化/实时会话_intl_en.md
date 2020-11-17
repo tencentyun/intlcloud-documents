@@ -1,6 +1,6 @@
 You can use the real-time session feature of DBbrain to view the real-time session information of your instance, including performance monitoring, connection monitoring, running thread monitoring, SQL throttling, and hotspot update protection. This document describes how to use the real-time session feature.
 
->?Currently, real-time session is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, real-time session is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL). However, SQL throttling and hotspot update protection are supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 
 ## Performance and Connection Monitoring
