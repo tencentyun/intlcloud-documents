@@ -1,3 +1,20 @@
+## October 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Document</th>
+</tr>
+<tbody><tr>
+<td>Alarm metrics of nodes and replica sets can be configured in Cloud Monitor.</td>
+<td>Cloud Monitor supports alarm metrics at the node granularity for MongoDB, such as CPU utilization and CPU utilization.</td>
+<td>2020-10</td>
+<td><a href="https://cloud.tencent.com/document/product/240/7118" target="_blank">Alarm Introduction</a>
+</td>
+</tr>
+</tbody></table>
+
 ## August 2020
 <table>
 <tr>
