@@ -1,3 +1,19 @@
+## September 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Document</th>
+</tr>
+<tr>
+<td>Monitoring at the granularity of five seconds is supported</td>
+<td>In this version, the monitoring feature of TencentDB for Redis has been updated, with the monitoring granularity being narrowed down from one minute to five seconds.</td>
+<td>2020-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/38743" target="_blank">Monitoring Feature (5-Second Granularity)</a></td>
+</tr>
+</table>
+
 ## July 2020
 <table>
 <tr>
