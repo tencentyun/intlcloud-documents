@@ -9,12 +9,12 @@ Backed by the highest-quality lines and high-performance servers, this type of n
 - **Proxy server**
 With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
-In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
+In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) to get the sample code related to this document.
 
->If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
+>?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
 
 ## Directions
 <span id="step1"> </span>
@@ -31,7 +31,7 @@ dependencies {
 }
 ```
 2. In `defaultConfig`, specify the CPU architecture to be used by the application.
->Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 >
 ```
  defaultConfig {
@@ -103,7 +103,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__andro
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
->In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>!In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
 <span id="step5"> </span>
 ### Step 5. Create and enter a room
@@ -132,7 +132,8 @@ public void onEnterRoom(long result) {
     }
 }
 ```
-> 
+
+> !
 >- If the room entry fails, the SDK will also call back the `onError` event and return the parameters `errCode` ([error code](https://intl.cloud.tencent.com/document/product/647/35130)), `errMsg` (error message), and `extraInfo` (reserved parameter).
 >- If you are already in a room, you must call `exitRoom()` to exit the current room first before entering the next room.
 
@@ -163,7 +164,7 @@ public void onUserVideoAvailable(String userId, boolean available) {
 }
 ```
 
-> If you do not call `startRemoteView()` to subscribe to the video stream immediately after receiving the `onUserVideoAvailable()` event callback, the SDK will stop receiving remote video data within 5 seconds.
+>? If you do not call `startRemoteView()` to subscribe to the video stream immediately after receiving the `onUserVideoAvailable()` event callback, the SDK will stop receiving remote video data within 5 seconds.
 
 #### Manual subscription mode
 You can specify the SDK to enter the manual subscription mode through the [setDefaultStreamRecvMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) API. In this mode, the SDK will not automatically receive audio/video data of other users in the room; instead, you need to manually trigger the receipt through API functions.
@@ -203,6 +204,4 @@ public void onExitRoom(int reason) {
 }
 ```
 
-> If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
-
-
+> !If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
