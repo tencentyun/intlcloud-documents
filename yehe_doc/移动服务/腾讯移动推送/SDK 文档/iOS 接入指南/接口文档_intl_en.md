@@ -1,6 +1,6 @@
 ## Description
 
-This document contains such information as the account, tag and user attribute features that is applicable to **SDK 1.2.8.0 or later**. For SDK **1.2.7.2** or earlier, please see [here](https://intl.cloud.tencent.com/document/product/1024/30727).
+This document contains such features as the push, tag and user attributes that are applicable to **SDK 1.2.8.0** or later. For **SDK 1.2.7.2 or earlier versions, please see [here](https://intl.cloud.tencent.com/document/product/1024/30727).
 
 
 
@@ -114,10 +114,11 @@ This API is used to delete all accounts and batch add accounts.
 - accounts: the array of accounts.
 
 > ?
+>- One account supports binding up to 100 tokens. 
 >- Use a dictionary in key-value pairs for account operations and use `account` as a fixed `key`.
 >- Syntax for Objective-C: @[@{@"accountType":@(0),@"account":identifier}];
 >- Syntax for Swift: [["accountType":NSNumber(0),"account":identifier]]
->- For more `accountType` values, see the enumerated values of `XGPushTokenAccountType`.
+> - For more `accountType` values, see the enumerated values of `XGPushTokenAccountType` in the XGPush.h file of the SDK package.
 
 #### Sample code
 
@@ -245,7 +246,7 @@ This API is used to create or update existing key-value pairs for the user attri
 - attributes: a dictionary in key-value pairs for user attribute strings, which cannot contain spaces or tabs.
 
 > ? 
->- The keys must be first configured on the console. This feature will be supported soon.
+>- The keys must be first configured on the console. 
 >- Use a dictionary in key-value pairs for user attributes and use `account` as a fixed `key`.
 >- Syntax for Objective-C: @{@"gender": @"Female", @"age": @"29"};
 >- Syntax for Swift: ["gender":"Female", "age": "29"]
