@@ -12,3 +12,6 @@ TencentDB for Redis is available in standard and cluster architectures. For QPS 
 
 ### What versions does TencentDB for Redis support? 
 Currently, it is compatible with Redis 2.8, 4.0, and 5.0.
+
+### How do I request a refund for a purchased instance if I don’t need it anymore?
+- Pay-as-you-go instance: TencentDB for Redis will return resources directly in the [console](https://console.cloud.tencent.com/redis). Refunds cannot be requested.

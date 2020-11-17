@@ -19,7 +19,7 @@
 	- **Provisioner**：选择【云硬盘CBS】。
 	- **可用区**：表示当前地域下支持使用云硬盘的可用区，请按需选择。
 	- **计费模式**：提供【按量计费】弹性计费模式，支持随时开通/销毁实例，按实例的实际使用量付费。支持删除和保留的回收策略。
-- **云盘类型**：通常提供【高性能云硬盘】、【SSD云硬盘】两种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
+- **云盘类型**：通常提供【高性能云硬盘】、【SSD云硬盘】和【增强型SSD云硬盘】三种类型，不同可用区下提供情况有一定差异，详情请参见 [云硬盘类型说明 ](https://intl.cloud.tencent.com/document/product/213/33000)并结合控制台提示进行选择。
 - **回收策略**：云盘的回收策略，通常提供【删除】和【保留】两种回收策略，具体选择情况与所选计费模式相关。出于数据安全考虑，推荐使用保留回收策略。
 - **卷绑定模式**：提供【立即绑定】和【等待调度】两种卷绑定模式，不同模式所支持的卷绑定策略不同，请参考以下信息进行选择：
 	- **立即绑定**：通过该 storageclass 创建的 PVC 将直接进行 PV 的绑定和分配。
@@ -52,7 +52,7 @@
 >? 
 >- 系统首先会筛选当前集群内是否存在符合绑定规则的 PV，如果没有则根据 PVC 和所选 StorageClass 的参数动态创建 PV 与之绑定。
 >- 系统不允许在不指定 StorageClass 的情况下同时选择不指定 PersistVolume。
->- 不指定 PersistentVolume。
+>- 不指定 PersistentVolume。详情请参见 [查看 PV 和 PVC 的绑定规则](https://intl.cloud.tencent.com/document/product/457/37770)。
 
    - **云盘类型**：根据所选的 StorageClass 展示所选的云盘类型为【高性能云硬盘】或【SSD云硬盘】。
    - **容量**：在不指定 PersistentVolume 时，需提供期望的云硬盘容量。
@@ -93,7 +93,9 @@ provisioner: cloud.tencent.com/qcloud-cbs ## TKE 集群自带的 provisioner
 parameters:
   type: CLOUD_PREMIUM
   # 支持 CLOUD_BASIC,CLOUD_PREMIUM,CLOUD_SSD  如果不识别则当做 CLOUD_BASIC
-  # paymode: POSTPAID
+ # renewflag: NOTIFY_AND_AUTO_RENEW
+  # renewflag为云硬盘的续费模式，NOTIFY_AND_AUTO_RENEW模式支持通知过期且按月自动续费，NOTIFY_AND_MANUAL_RENEW模式支持通知过期但不支持自动续费，DISABLE_NOTIFY_AND_MANUAL_RENEW模式支持不通知过期也不自动续费。不指定该字段则默认为NOTIFY_AND_MANUAL_RENEW模式。
+  # paymode: PREPAID
   # paymode为云盘的计费模式，默认是 POSTPAID（按量计费：支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效）
   # aspid:asp-123
   # 支持指定快照策略，创建云盘后自动绑定此快照策略,绑定失败不影响创建
@@ -111,6 +113,9 @@ parameters:
 </tr>
 <tr>
 <td>paymode</td> <td>云硬盘的计费模式，默认设置为 <code>POSTPAID</code> 模式，即按量计费，支持 Retain 保留和 Delete 删除策略，Retain 仅在高于1.8的集群版本生效。</td>
+</tr>
+<tr>
+<td>renewflag</td> <td>云硬盘的续费模式。默认为 <code>NOTIFY_AND_MANUAL_RENEW</code> 模式。<ul><li><code>NOTIFY_AND_AUTO_RENEW</code> 模式代表所创建的云硬盘支持通知过期且按月自动续费。</li><li><code>NOTIFY_AND_MANUAL_RENEW</code> 模式代表所创建的云硬盘支持通知过期但不自动续费。</li><li> <code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code> 模式则代表所创建的云硬盘不通知过期也不自动续费。</li></ul></td>
 </tr>
 <tr>
 <td>aspid</td> <td>指定快照 ID，创建云硬盘后自动绑定此快照策略，绑定失败不影响创建。</td>

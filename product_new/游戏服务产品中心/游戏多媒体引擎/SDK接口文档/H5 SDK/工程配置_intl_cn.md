@@ -9,10 +9,21 @@
       <td>备注</td>
    </tr>
    <tr>
-      <td>iOS</td>
+      <td rowspan="3">iOS</td>
       <td>Safari</td>
       <td>11.1.2</td>
-      <td>由于苹果 Safari 仍有偶现的 bug，产品化方案建议先规避，待苹果解决后再使用。</td>
+      <td>使用高版本的 Safari。</td>
+   </tr>
+        <tr>
+      <td>Chrome</td>
+      <td>-</td>
+      <td>iOS 下暂时不支持 Chrome 浏览器</td>
+   </tr>
+   </tr>
+     <tr>
+      <td>微信浏览器</td>
+      <td>-</td>
+      <td>iOS 下暂时不支持微信浏览器</td>
    </tr>
    <tr>
       <td rowspan="2">Android</td>
@@ -98,7 +109,7 @@ const AuthBufferConfig = function () {
 //将1400089356替换为在腾讯云后台申请的 sdkAppid，1cfbfd2a1a03a53e 替换为对应 sdkAppid 的鉴权 key
 ```
 
->AuthKey 必须与您的 SDKAppid 相对应。
+>!AuthKey 必须与您的 SDKAppid 相对应。
 
 #### 3. 部署服务端鉴权工程
 进入 authBuffer 示例程序目录，执行以下语句，以安装相关依赖：
@@ -109,7 +120,7 @@ npm i
 
 然后执行脚本 node index.js，运行签名服务。
 
->由于使用到 async 语法，请确保您的 node 版本在8以上。命令行中执行 node -v 以查看版本。
+>!由于使用到 async 语法，请确保您的 node 版本在8以上。命令行中执行 node -v 以查看版本。
 
 
 #### 4. 测试部署结果

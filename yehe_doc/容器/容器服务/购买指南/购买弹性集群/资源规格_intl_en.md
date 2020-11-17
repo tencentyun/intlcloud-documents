@@ -72,16 +72,16 @@ The following table describes the regions, availability zones, and resource type
 	<tr>
 		<td rowspan="2">South China (Guangzhou)<br> ap-guangzhou</td>
 		<td>Guangzhou Zone 3<br> ap-guangzhou-3</td>
-		<td> Intel CPU, GPU/vGPU (V100), GPU/vGPU (T4) </td>
+		<td> Intel CPU, GPU/vGPU (V100)</td>
 	</tr>
 	<tr>
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
 		<td> AMD CPU, GPU/vGPU (V100) </td>
 	</tr>	
 	<tr>
-		<td rowspan="3">East China (Shanghai)<br>ap-shanghai</td>
+		<td rowspan="4">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 2 <br>ap-shanghai-2</td>
-		<td> Intel CPU </td>
+		<td> Intel CPU、GPU/vGPU(T4) </td>
 	</tr>
 	<tr>
 		<td>Shanghai Zone 3 <br>ap-shanghai-3</td>
@@ -89,7 +89,10 @@ The following table describes the regions, availability zones, and resource type
 	</tr>
 	<tr>
 		<td>Shanghai Zone 4 <br>ap-shanghai-4</td>
-		<td> GPU/vGPU(T4) </td>
+		<td> Intel CPU </td>
+	<tr>
+		<td>Shanghai Zone 5 <br>ap-shanghai-5</td>
+		<td> Intel/AMD CPU </td>			
 	</tr>
 	<tr>
 		<td rowspan="1">East China (Nanjing)<br>ap-nanjing</td>

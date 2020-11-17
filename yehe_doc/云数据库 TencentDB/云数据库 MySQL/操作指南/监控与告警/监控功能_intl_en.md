@@ -1,6 +1,7 @@
 To make it easier for you to view and stay up to date with how instances work, TencentDB for MySQL provides a wide variety of performance monitoring metrics and convenient monitoring features (custom view, time comparison, merged monitoring metrics, etc). You can log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and view them in **Instance Monitoring** on the instance management page.
->
->- You can also view instance monitoring metrics by calling the [GetMonitorData API](https://intl.cloud.tencent.com/document/api/248/11006) in Cloud Monitor.
+>?
+>- You can get instance monitoring metrics by calling the [GetMonitorData API](https://intl.cloud.tencent.com/document/product/248/33881) or using the [TencentDB for MySQL Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/11006) in Cloud Monitor.
+>- You can [create dashboards](https://console.cloud.tencent.com/monitor/dashboard2/default?channel=10) for monitoring metrics to analyze monitored data dynamically.
 >- If the number of tables in a single instance exceeds one million, database monitoring may be affected. Please control this value appropriately and make sure that it is below one million.
 
 ## Types of Instances for Monitoring
@@ -14,7 +15,7 @@ Four types of monitoring are available for TencentDB for MySQL: resource monitor
 - **Deployment monitoring** provides monitoring metrics with regard to master-slave delay. It divides into master and slave:
  - Master deployment monitoring: when the monitored instance is a master instance which is not a slave of any instance, replicating relevant monitoring data from the master won't work, and the IO and SQL threads are disabled. Replicating relevant monitoring data can work and the IO and SQL threads can be enabled only when the monitored instance is a disaster recovery or a read-only instance.
  
- - Slave deployment monitoring: the master instance and disaster recovery instance in High-Availability Edition come in a master/slave architecture by default. As a result, replicating relevant monitoring data from the slave can work only when the monitored instance is a master or disaster recovery instance. Such data can be used to reflect the delay distance and time between the master or disaster recovery instance and its hidden slave nodes. You are recommended to keep an eye out for the relevant monitoring data of the slave. If the master or disaster recovery instance fails, its monitored hidden slave nodes can be promoted into the master instance quickly.
+- Deploy monitoring on the replica: the source instance and disaster recovery instance in High-Availability Edition come in a one-source-one-replica architecture by default. As a result, replicating relevant monitoring data from the replica can work only when the monitored instance is a source or disaster recovery instance. Such data can be used to reflect the delay distance and time between the source or disaster recovery instance and its hidden replica nodes. We recommend that you keep an eye out for the relevant monitoring data of the replica. If the source or disaster recovery instance fails, its monitored hidden replica nodes can be promoted into the source instance quickly.
  
 ![](https://main.qcloudimg.com/raw/183cebeb93cdeaca2dedeb228ab8f0be.png)
 
@@ -28,14 +29,14 @@ TencentDB for MySQL has adopted an adaptive policy for monitoring granularity si
 | (2d, 10d] | 5 minutes | The time span is above 2 days but below 10 days, and the monitoring granularity is 5 minutes | 31 days |
 | (10d, 30d] | 1 hour | The time span is above 10 days but below 30 days, and the monitoring granularity is 1 hour | 62 days |
 
->Currently, you can view monitoring data of TencentDB for MySQL in the last 30 days.
+>?Currently, you can view monitoring data of TencentDB for MySQL in the last 30 days.
 
 
 
 ## Monitoring Metrics
 Cloud Monitor provides the following monitoring metrics for TencentDB for MySQL instances in the instance dimension:
 
->For more information on how to use TencentDB monitoring metrics, please see the [GetMonitorData API](https://intl.cloud.tencent.com/document/product/248/11006) in Cloud Monitor.
+>?For more information on how to use TencentDB monitoring metrics, please see the [GetMonitorData API](https://intl.cloud.tencent.com/document/product/248/11006) in Cloud Monitor.
 
 | Metric Name | Metric | Unit | Description |
 |---------|---------|---------|---------|

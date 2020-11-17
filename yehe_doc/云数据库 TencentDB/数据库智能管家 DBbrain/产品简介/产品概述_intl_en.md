@@ -1,4 +1,4 @@
-TencentDB for DBbrain (DBbrain) is a cloud database autonomous service that enhances database performance, security, and management. 
+TencentDB for DBbrain (DBbrain) is a database self-management service provided by Tencent Cloud, helping you with database management, and the monitoring and optimization of performance and security.
 
 It leverages machine learning and big data technologies to replicate the best industry practices and automate manual database OPS tasks, ensuring the security, stability and efficiency of your database services, both in and off the cloud.
 

@@ -7,7 +7,7 @@ The multi-AZ deployment scheme of TencentDB for MySQL guarantees the high availa
 >- The master database instance is synchronously replicated to the slave replica across AZs to provide data redundancy, eliminate I/O freezes, and minimize latency during system backups.
 
 ### Supported Regions
-The multi-AZ deployment scheme of TencentDB for MySQL is currently available in Shanghai, Beijing, and Guangzhou regions.
+The multi-AZ deployment scheme of TencentDB for MySQL is currently available in Guangzhou, Shanghai, Beijing, Chengdu, and Virginia regions.
 
 ### Multi-AZ Deployment
 1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb/) and click **Create** in the Instance List to enter the purchase page.

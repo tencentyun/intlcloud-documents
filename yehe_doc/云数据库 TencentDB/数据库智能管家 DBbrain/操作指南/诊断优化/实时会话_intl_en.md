@@ -1,12 +1,12 @@
 You can use the real-time session feature of DBbrain to view the real-time session information of your instance, including performance monitoring, connection monitoring, running thread monitoring, SQL throttling, and hotspot update protection. This document describes how to use the real-time session feature.
 
->?Currently, real-time session is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, real-time session is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL). However, SQL throttling and hotspot update protection are supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 
 ## Performance and Connection Monitoring
-Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/session), select **Performance Optimization** on the left sidebar, and select the **Real-Time Session** tab at the top.
-- The **Performance Monitoring** section displays in real time the number of running threads and the CPU utilization of the instance.
-- The **Connection Monitoring** section displays in real time the maximum number of connections and the number of active connections of the instance.
+Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/session) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Real-Time Session** tab.
+- The "Performance Monitoring" section displays in real time the number of running threads and the CPU utilization of the instance.
+- The "Connection Monitoring" section displays in real time the maximum number of connections and the number of active connections of the instance.
 ![](https://main.qcloudimg.com/raw/03c23c17ff637f50f40a8b4d8e8e8dce.png)
 
 ## Running Threads
@@ -23,6 +23,8 @@ DBbrain supports killing sessions in the console for ease of management. In the 
 - To kill sessions, you need to select the lines of the sessions first. 
 
 ## SQL Throttling
+>?SQL throttling is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>
 DBbrain supports the SQL throttling feature to ensure the service availability. You can create SQL throttling tasks to control the database requests and SQL concurrency by setting the SQL type, maximum concurrency, throttling duration, and SQL keywords. Multiple tasks do not conflict with each other.
 >?To create a SQL throttling task, you need to log in to the database account first.
 >
@@ -40,6 +42,8 @@ In the "SQL Throttling" section, the list displays the SQL type, status, keyword
 
 
 ## Hotspot Update Protection
+>?Hotspot update protection is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>
 
 DBbrain provides the hot update protection feature. According to the statement queuing mechanism, the hot update protection feature queues the statements with the same conflict in the memory queue. The hot update protection feature reduces the overhead of lock conflict and improves the database performance in high concurrency scenarios.
 
