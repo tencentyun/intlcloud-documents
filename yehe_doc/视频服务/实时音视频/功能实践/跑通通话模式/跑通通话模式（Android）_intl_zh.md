@@ -9,7 +9,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 - **代理机**
 该类节点都采用普通的线路和性能一般的机器，善于处理高并发的拉流观看需求，单位时长计费较低。
 
-在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为50路），因此适合在线会议等场景，但单个房间的人数限制为300人。
+在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为30路），因此适合在线会议等场景，但单个房间的人数限制为300人。
 
 
 ## 示例代码
@@ -33,7 +33,7 @@ dependencies {
 }
 ```
 2. 在 defaultConfig 中，指定 App 使用的 CPU 架构。
->目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
+>?目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
 >
 ```
  defaultConfig {
@@ -105,7 +105,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 | userSig | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。| eJyrVareCeYrSy1SslI... |
 | roomId | 数字 | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834 |
 
->TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
+>!TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
 
 <span id="step5"> </span>
 ### 步骤5：创建并进入房间
@@ -165,7 +165,8 @@ public void onUserVideoAvailable(String userId, boolean available) {
 }
 ```
 
-> 如果您在收到`onUserVideoAvailable()`事件回调后没有立即调用`startRemoteView()`订阅视频流，SDK 将在5s内停止接收来自远端的视频数据。
+
+>? 如果您在收到`onUserVideoAvailable()`事件回调后没有立即调用`startRemoteView()`订阅视频流，SDK 将在5s内停止接收来自远端的视频数据。
 
 #### 手动订阅模式
 您可以通过 [setDefaultStreamRecvMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) 接口将 SDK 指定为手动订阅模式。在手动订阅模式下，SDK 不会自动接收房间中其他用户的音视频数据，需要您手动通过 API 函数触发。
@@ -205,6 +206,4 @@ public void onExitRoom(int reason) {
 }
 ```
 
-> 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
-
-
+> >! 如果您的 App 中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。
