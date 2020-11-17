@@ -24,12 +24,12 @@ The developers need the read and write permissions to the project-related cloud 
 There are cases where enterprises may need to share their cloud resources. For example, a company which has many cloud resources wants to focus on product R&D and outsource the operation of its cloud resources to another company. It also need to revoke all permissions that have been granted as soon as the outsourcing service contracts are terminated.
 
 ## Policy Syntax
-A CAM policy consists of several elements and is used to describe specific information about authorization. Core elements include principal, action, resource, condition, and effect. For more information, see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
+A CAM policy consists of several elements and is used to describe specific information about authorization. Core elements include principal, action, resource, condition, and effect. For more information, please see [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023).
 
 >?
 >- There is no particular sequence in the description of policy syntax. However, please note that the `action` element is case-sensitive.
 >- If there are no particular conditions required, the `condition` element is optional.
->- You cannot define the `principal` element in the console, but only only through the policy management APIs or policy syntax parameters.
+>- You cannot define the `principal` element in the console, but only through the policy management APIs or policy syntax parameters.
 
 #### Core elements
 

@@ -44,10 +44,10 @@ cos.putBucketDomain({
 | Bucket | Name of the bucket for which to set a custom endpoint in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | DomainRule   | Custom endpoint configuration                                                                             | Object      | Yes   |
-| - Status | Status of the endpoint; enumerated values: `ENABLED`, `DISABLED` | String | Yes |
+| - Status | Status of the endpoint. Enumerated values: `ENABLED`, `DISABLED` | String | Yes |
 | - Name    | Name of the custom endpoint                                                                             | String      | Yes   |
 | - Type    | Type of the origin server to bind. Enumerated values: `REST`, `WEBSITE`                                                             | String      | Yes   |
-| - ForcedReplacement | Replaces an existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of the endpoint before the configuration is delivered.                        | String      | No   |
+| - ForcedReplacement | Replaces an existing configuration. Enumerated values: `CNAME`, `TXT`. If this parameter is configured, validation will be forced on the ownership of the endpoint before the configuration is delivered.                        | String      | No   |
 
 #### Callback function description
 
@@ -57,11 +57,11 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 
 ## Querying a Custom Endpoint
@@ -115,17 +115,17 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------ | ------------------------------------------------------------ | ----------- |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | - DomainRule   | Custom endpoint configuration                                                                             | Object      | 
-| - - Status | Status of the endpoint; enumerated values: `ENABLED`, `DISABLED` | String | 
+| - - Status | Status of the endpoint. Enumerated values: `ENABLED`, `DISABLED` | String | 
 | - - Name    | Name of the custom endpoint                                                                           | String      | 
 | - - Type    | Type of the origin server to bind. Enumerated values: `REST`, `WEBSITE`                                                             | String      | 
-| - - ForcedReplacement | Replaces an existing configuration. Enumerated values: `CNAME`, `TXT`. Should this parameter be configured, validation will be forced on the ownership of endpoint before the configuration is delivered.                        | String      | 
+| - - ForcedReplacement | Replaces an existing configuration. Enumerated values: `CNAME`, `TXT`. If this parameter is configured, validation will be forced on the ownership of endpoint before the configuration is delivered.                        | String      | 
 
 ## Deleting a Custom Endpoint
 
@@ -160,9 +160,9 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | Description                                                     | Type  |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |

@@ -8,9 +8,9 @@ Access policies in COS include user group policies, user policies, bucket access
 2. Policy type: access policies in COS include user group policies, user policies, bucket policies and bucket ACLs. The policy type determines the policy priority.
 3. Policy context: whether a resource access request will succeed is finally determined based on the permission details recorded across the access policies of all types.
 
-## Access policy evaluation process
+## Access Policy Evaluation Process
 
-When Tencent Cloud COS receives a request, it first confirms the identity of the requester and verify that it has necessary permissions, including checking the user policy, bucket access policy, and resource-based ACL, and authenticating the request.
+When Tencent Cloud COS receives a request, it first confirms the identity of the requester and verifies that it has necessary permissions, including checking the user policy, bucket access policy, and resource-based ACL, and authenticating the request.
 
 When COS receives a request, it first performs identity verification, the result of which determines the requester type. Different types may result in different actions:
 
@@ -21,7 +21,7 @@ When COS receives a request, it first performs identity verification, the result
 
 ![Access Policy Evaluation Process](https://main.qcloudimg.com/raw/18a0cdea71b4360eec7de739d67eeecc.png)
 
-## How access policy evaluation works
+## How Access Policy Evaluation Works
 
 In the Tencent Cloud permissions system, the access policy evaluation always occurs based on the policy context in the following basic principles:
 
@@ -53,7 +53,7 @@ Policy context provides permission details recorded in your policies. Under the 
 - resource: you must specify the resource for which permission is granted. A resource is described in a six-segment format. You can set the resource as a specific file, e.g., `exampleobject.jpg` or a directory, e.g., `examplePrefix/\*. Unless needed, please do not grant any user the access to all of your resources using the `\*` wildcard.
 - condition: it describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address.
 
-You should write your policies following a certain policy syntax (See [Access Policy Language Overview](https://intl.cloud.tencent.com/document/product/436/18023)) according to your business needs. For examples of writing user and bucket policies, see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
+You should write your policies following a certain policy syntax (See [Access Policy Language Overview]) (https://intl.cloud.tencent.com/document/product/436/18023) according to your business needs. For examples of writing user and bucket policies, see [Syntax Structure](https://intl.cloud.tencent.com/document/product/598/10604) and [Examples of Bucket Policies](https://intl.cloud.tencent.com/document/product/436/18031).
 
 ## Example Access Policy Evaluation
 
