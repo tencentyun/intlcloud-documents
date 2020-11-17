@@ -9,14 +9,12 @@ Region name and AZ name can most directly embody the coverage of a data center. 
 ## Region
 Tencent Cloud regions are completely isolated. This guarantees the maximum cross-region stability and fault tolerance. When purchasing Tencent Cloud services, we recommend selecting the region closest to your end users to minimize access latency and improve download speed. Operations such as launching or viewing instances are performed at the region level.
 Private Network Communication:
-- Tencent Cloud resources in different AZs within the same region can communicate with each other over private network. They can also be accessed via [private IPs](https://intl.cloud.tencent.com/document/product/213/5225).
-- Tencent Cloud products in different regions **cannot communicate with each other over the private network by default**.
- - By default, CVM instances cannot communicate with each other over the private network across regions or access TencentDB or Cloud Memcached across regions.
- - When a CVM instance is bound to a CLB instance, only the instances in the same region can be selected.
-- Tencent Cloud resources in different regions can be accessed over the Internet through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224). Tencent Cloud services in VPCs can communicate with each other over Tencent Cloud high-speed network via [peering connections](https://console.cloud.tencent.com/vpc/conn), which is more stable and faster than public Internet.
+- Tencent Cloud resources within the same region (in the same VPC and under the same account) can communicate with each other via [private IPs](https://intl.cloud.tencent.com/document/product/213/5225) over a private network.
+- The networks of different regions are fully isolated from each other, and Tencent Cloud resources in different regions cannot communicate with each other over a private network by default.
+- Tencent Cloud resources in different regions can be accessed over the Internet through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224). Tencent Cloud services in different VPCs can communicate with each other over [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), which is more stable and faster.
 - [CLB](https://intl.cloud.tencent.com/document/product/214) does not support cross-region traffic forwarding.
 
-The above notes regarding private network communication only applies to resources under the same account. Resources under different accounts are completely isolated.
+
 
 
 ## Availability Zone
@@ -34,7 +32,7 @@ Regions and AZs:
 		<th>Availability Zone</th>
 	</tr>
 	<tr>
-		<td rowspan="4">South China (Guangzhou) <br> ap-guangzhou</td>
+		<td rowspan="5">South China (Guangzhou) <br> ap-guangzhou</td>
 		<td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -47,7 +45,10 @@ Regions and AZs:
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td rowspan="4">East China (Shanghai) <br>ap-shanghai</td>
+		<td>Guangzhou Zone 6<br> ap-guangzhou-6</td>
+	</tr>
+	<tr>
+		<td rowspan="5">East China (Shanghai) <br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -58,6 +59,9 @@ Regions and AZs:
 	</tr>
 	<tr>
 		<td>Shanghai Zone 4 <br>ap-shanghai-4</td>
+	</tr>
+		<tr>
+		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
 	</tr>
 			<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
 		<td>Nanjing Zone 1<br>ap-nanjing-1</td>
@@ -142,10 +146,10 @@ Regions and AZs:
 		</tr>
 				<tr>
 			<td rowspan="2">US East (Virginia) <br>na-ashburn</td>
-			<td>Virginia Zone 1 (Virginia nodes cover services in US East)<br>na-ashburn-1</td>
+			<td>Virginia Zone 1 (Virginia nodes cover services in East US)<br>na-ashburn-1</td>
 		</tr>
 		<tr>
-			<td>Virginia Zone 2 (Virginia nodes cover services in US East) <br>na-ashburn-2</td>
+			<td>Virginia Zone 2 (Virginia nodes cover services in East US)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
 			<td>North America (Toronto)<br>na-toronto</td>
