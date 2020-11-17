@@ -1,4 +1,4 @@
-### How do I use the hash algorithm of Redis Cluster Edition?
+### How do I use the hash algorithm of TencentDB for Redis Cluster Edition?
 The hash algorithm of the Redis Cluster Edition is the same as that in the a Redis Community Edition cluster, i.e., `HASH_SLOT = CRC16(key) mod 16384`. For more information, please see [Redis Cluster Specification](https://redis.io/topics/cluster-spec).
 
 ### What is the maximum capacity of a single instance?
@@ -38,3 +38,9 @@ No. Multiple databases can be set on one Standard Architecture or Cluster Archit
 Instances purchased after that have Lua enabled by default.
 - Redis Memory Edition (Cluster Architecture), CKV Edition (Standard Architecture), and CKV Edition (Cluster Architecture) instances have Lua enabled by default.
 
+### Does TencentDB for Redis support the cache invalidation subscription event?
+Yes.
+
+### What should I do if I accidentally delete my account or forget the password?
+- If your account is accidentally deleted, log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis), locate the desired instance, click its name/ID and enter the instance management page, and click **Create Account** on the **Manage Account** tab.
+- If you forget the password, click **Reset Password** on the **Manage Account** tab.
