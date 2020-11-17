@@ -6,7 +6,7 @@ You can use the real-time session feature of DBbrain to view the real-time sessi
 ## Performance and Connection Monitoring
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/session) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Real-Time Session** tab.
 - The **Performance Monitoring** module displays in real time the number of running threads and the CPU utilization of the instance.
-- The **Performance Monitoring** module displays in real time the number of running threads and the CPU utilization of the instance.
+- The **Connection Monitoring** module displays in real time the maximum number of connections and the number of active connections of the instance.
 ![](https://main.qcloudimg.com/raw/03c23c17ff637f50f40a8b4d8e8e8dce.png)
 
 ## Running Threads
