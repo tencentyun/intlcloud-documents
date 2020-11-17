@@ -1,4 +1,4 @@
-Your Tencent Cloud account needs to go through identity verification before any CVM instances can be purchased.
+Your Tencent Cloud account needs to go through identity verification before any CVM instances in the Chinese mainland can be purchased.
 **Identity verification**: Tencent Cloud has two types of identity verification: personal identity verification and enterprise identity verification. For more information, refer to the [identity verification guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Purchase Limits for Pay-as-You-Go CVM Instances
