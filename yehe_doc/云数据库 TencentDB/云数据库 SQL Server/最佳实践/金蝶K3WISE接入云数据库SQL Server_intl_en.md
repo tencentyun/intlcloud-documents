@@ -6,7 +6,7 @@ This solution consists of the following three steps:
 3. Replace the account set management tool to make it compatible with TencentDB for SQL Server.
 
 >?
->- To support distributed transactions, additional resources are required for configuration; therefore, you can configure instances only in specification higher than "1-core 4 GB MEM". Please upgrade the instances that do not meet the minimum requirement before connection.
+>- To support distributed transactions, additional resources are required for configuration; therefore, you can configure High-Availability Edition instances only in specification higher than "1-core 4 GB MEM". Please upgrade the instances that do not meet the minimum requirement before connection.
 >- Adjust the TencentDB for SQL Server access settings to ensure that distributed transaction can be executed. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. To improve the ticket processing efficiency, make sure that you have already read this document and completed data migration to TencentDB for SQL Server before submitting the ticket.
 
 
