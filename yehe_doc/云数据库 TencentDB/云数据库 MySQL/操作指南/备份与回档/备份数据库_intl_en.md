@@ -2,14 +2,14 @@ To avoid data loss or corruption, you can back up a database automatically or ma
 
 ## Backup Overview
 ### Backup modes
-TencentDB for MySQL High-Availability Edition and Finance Edition support **automatic backup** and **manual backup** of databases.
+TencentDB for MySQL High-Availability Edition and Finance Edition support the **automatic backup** and **manual backup** of databases.
 
 ### Backup types
 TencentDB for MySQL High-Availability Edition and Finance Edition support two backup types:
 - **Physical backup**, which replicates full physical data (available for both automatic backup and manual backup).
 - **Logical backup**, which backs up SQL statements (only available for manual backup).
 >?
->- To restore a database from a physical backup, xbstream is required to decompress backup files first. For more information, see [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910).
+>- To restore a database from a physical backup, xbstream is required to decompress backup files first. For more information, see [Restoring Databases from Physical Backups](https://intl.cloud.tencent.com/document/product/236/31910).
 >- If the number of tables in a single instance exceeds one million, backup may fail and database monitoring may be affected. Please make sure the number of tables in a single instance is no more than one million.
 >- As the data of tables created by the MEMORY storage engine is stored in the memory, physical backups cannot be created for such tables. To avoid data loss, we recommend that you convert them to InnoDB tables.
 >- If there are a high number of tables in an instance with no primary key, backup may fail and instance high availability may be affected. Please create primary keys or secondary indexes for such tables.
@@ -24,18 +24,18 @@ TencentDB for MySQL High-Availability Edition and Finance Edition support two ba
 | TencentDB for MySQL High-Availability Edition and Finance Edition: <li>Automatic backup supports full physical backup. <li>Manual backup supports full physical backup, full logical backup, and single-database/table logical backup. <li>Both automatic and manual backups can be compressed and downloaded. | TencentDB for MySQL High-Availability Edition and Finance Edition support binlog backup: <li>Log files occupy the instance's backup space. <li>Log files can be downloaded but cannot be compressed. <li>Retention periods can be set for log files. |
 
 ## Notes
-- Since February 26, 2019, the automatic backup feature of TencentDB for MySQL has only supported physical backup (default type) and no longer provided logical backup. Existing automatic logical backups will be switched to physical backups automatically.
-This will not affect your business access, but may have impact on your automatic backup habit. If you need logical backups, you can use the manual backup feature in the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) or call the [CreateBackup API](https://intl.cloud.tencent.com/document/product/236/15844) to generate logical backups.
+- Since February 26, 2019, the automatic backup feature of TencentDB for MySQL only supports physical backup (default type) and no longer provides logical backup. Existing automatic logical backups will be switched to physical backups automatically.
+This will not affect your business access, but may impact your automatic backup habit. If you need logical backups, you can use the manual backup feature in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or call the [CreateBackup API](https://intl.cloud.tencent.com/document/product/236/15844) to generate logical backups.
 - Both logical and physical backup files will be compressed, so some files may be unusable after being downloaded. In that case, you can use the table backup feature in manual logical backup. For more information, see [Backing up MySQL Data Manually](#manual-backup).
-- Instance backup files occupy backup space. We recommend that you plan the usage of backup space appropriately. Usage of backup space in excess of the free tier will incur fees. For more information, please see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
+- Instance backup files occupy backup space. We recommend that you plan the usage of backup space appropriately. Usage of backup space that exceeds the free tier will incur fees. For more information, please see [Backup Space Billing](https://intl.cloud.tencent.com/document/product/236/32344).
 - We recommend that you back up your data during off-peak hours.
-- We recommend that you download the backup files locally before they are deleted after the retention period lapses.
+- We recommend that you download the backup files locally before they are deleted after the retention period ends.
 - Do not perform DDL operations during the backup process to avoid backup failure due to table locking.
 - TencentDB for MySQL Basic Edition instances cannot be backed up.
 
 
 ## Backing up MySQL Data Automatically
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click an instance ID/name on the instance list page and enter the management page, and select **Backup and Restore** > **Auto Backup Settings**.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name on the instance list page to access the instance’s management page, and select **Backup and Restore** > **Auto Backup Settings**.
 ![](https://main.qcloudimg.com/raw/69fed1aac393a518bd8cc2ad1fea550f.png)
 2. Select backup parameters in the pop-up window (details are shown as below) and click **OK**:
 >?
@@ -47,7 +47,7 @@ This will not affect your business access, but may have impact on your automatic
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Note</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -80,7 +80,7 @@ The manual backup feature allows you to initiate a backup task manually.
 >- Manual backups can be manually deleted from the backup list in the console. You can delete manual backups that are no longer in use to free up space. Manual backups can be retained permanently as long as they are not deleted.
 >- When the instance is performing daily automatic backup, no manual backup tasks can be initiated.
 >
-1. On the instance list page, click an instance ID/name and enter the management page, and select **Backup and Restore** > **Manual Backup**.
+1. On the instance list page, click an instance ID/name to access the instance’s management page, and select **Backup and Restore** > **Manual Backup**.
 2. Select the backup mode and object in the pop-up window and click **OK**.
 ![](https://main.qcloudimg.com/raw/a16e644f51756b6a98597945e45329cd.png)
 >?For single-database/table logical backup, select the database or table to be backed up in **Select database & table** in the left column and add the selected item to the right column. If you don't have a database, please create a database/table first.
@@ -90,28 +90,28 @@ The manual backup feature allows you to initiate a backup task manually.
 ## FAQs
 #### 1. Can I download or restore backup files that exceed the retention period?
 Expired backup sets will be deleted automatically and cannot be downloaded or restored.
-- We recommend that you configure a backup retention period based on business needs or download the backup files locally via [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb).
+- We recommend that you configure a backup retention period based on business needs or download the backup files locally via the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 - You can also manually back up instance data in the console. Manual backups will be retained permanently.
->?Manual backups will also take up the backup space. We recommend that you plan the usage of backup space appropriately to reduce cost.
+>?Manual backups will also take up the backup space. We recommend that you plan the usage of the backup space appropriately to reduce costs.
 
 #### 2. Can I delete backups manually?
 - Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and the backups will be deleted automatically when they expire. 
-- Manual backups can be manually deleted from the backup list in [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). Manual backups can be retained permanently as long as they are not deleted.
+- Manual backups can be manually deleted from the backup list in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). Manual backups can be retained permanently as long as they are not deleted.
 
 #### 3. Can I disable data and log backups?
-No. However, you can reduce the backup frequency and delete manual backups no longer used via [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) to lower the capacity usage.
+No. However, you can reduce the backup frequency and delete manual backups no longer used via the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) to lower the capacity usage.
 
-#### 4. How can I reduce the backup capacity cost?
-- Delete manual backups that are no longer used (you can log in to [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click an instance ID/name and enter the instance management page, and delete manual backups on the "Backup and Restore" tab). 
+#### 4. How can I reduce the backup capacity costs?
+- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name to access the instance’s management page, and delete manual backups on the "Backup and Restore" tab). 
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >
-- Reduce the retention period of data and log backups for non-core businesses (7-day retention period can meet the requirements in most scenarios).
+- Reduce the retention period of data and log backups for non-core businesses (a 7-day retention period can meet the requirements of most scenarios).
 
 | Business Scenario             | Recommended Backup Retention Period                                                 |
 | -------------------- | ------------------------------------------------------------ |
 | Core businesses             | 7-732 days                                              |
 | Non-core and non-data businesses | 7 days                                                      |
-| Archive businesses             | 7 days. We recommend that you manually back up data based on business needs and delete it promptly after use. |
-| Testing businesses | 7 days. It is recommended to manually back up data based on your actual business needs and delete the backups promptly after use |
+| Archive businesses             | 7 days. We recommend that you manually back up data based on your business needs and delete the backups promptly after use |
+| Testing businesses | 7 days. We recommend that you manually back up data based on your actual business needs and delete the backups promptly after use |
 
