@@ -29,7 +29,7 @@ to release audio focus.
 
 The `SetRecvMixStreamCount` API is used to set the maximum number of mixing channels before entering a chat room. This API is available for all platforms. Here, we take PC as an example:
 ```
-public abstract int SetRecvMixStreamCount(int nCount);
+virtual int SetRecvMixStreamCount(int nCount) = 0;
 ```
 **Parameters** 
 
