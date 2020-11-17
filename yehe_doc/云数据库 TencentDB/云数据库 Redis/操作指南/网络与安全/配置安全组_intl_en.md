@@ -1,9 +1,8 @@
 ## Overview
-A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules.
+A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules.
 
->!
+>?
 > - TencentDB security group currently only supports network access control for VPCs and public network but not the classic network.
-> - Security groups that currently support public network access are available only in the Guangzhou, Shanghai, Beijing, and Chengdu regions.
 > - As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB.
 > - TencentDB for Redis security group supports master, read-only, and disaster recovery instances.
 
@@ -40,8 +39,8 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 </td></tr>
 	<tr><td>Reference an IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
 </table>
- - Protocol port: enter the protocol type and port range or reference a protocol/port or protocol/port group in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
-  >?To connect to TencentDB for Redis, port 6379 must be opened.	
+ - Protocol port: enter the protocol type and port range. You can view the port (which is 6379 by default) on the [instance details page](https://console.cloud.tencent.com/redis) in the TencentDB for Redis Console. You can also reference a protocol port or protocol port group in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
+
  - Policy: "Allow" is selected by default.
     - Allow: traffic to this port is allowed.
     - Refuse: data packets will be discarded without any response.
@@ -52,7 +51,7 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 ### Step 3. Configure a security group
 A security group is an instance-level firewall provided by Tencent Cloud for controlling inbound traffic of TencentDB. You can associate a security group with an instance when purchasing it or later in the console.
 
->!Currently, security groups can be configured only for TencentDB for Redis instances in VPC.
+>!Currently, security groups can be configured only for **TencentDB for Redis instances in VPC**.
 
 1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance management page.
 2. On the instance management page, select the **Security Group** tab, click **Configure Security Group**.
