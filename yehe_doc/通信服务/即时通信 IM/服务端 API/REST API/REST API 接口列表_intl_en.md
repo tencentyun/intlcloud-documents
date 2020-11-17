@@ -88,6 +88,7 @@
 | Configure unread message counts. | [v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909) |
 | Delete messages sent by the specified user. | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
 | Pull roaming group messages. | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
+|Obtain the number of online users in a live stream group |[v4/group_open_http_svc/get_online_member_num](https://cloud.tencent.com/document/product/269/49180)|
 
 
 ## Global Mute Management
