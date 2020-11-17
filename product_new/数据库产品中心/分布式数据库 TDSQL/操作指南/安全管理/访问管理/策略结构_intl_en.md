@@ -51,7 +51,7 @@ qcs:project_id:service_type:region:account:resource
 - **project_id** describes the project information, which is only used to enable compatibility with legacy CAM logic and can be left empty.
 - **service_type** describes the product abbreviation such as DCDB.
 - **region** describes the region information, such as ap-guangzhou. For more information, see [Regions](https://intl.cloud.tencent.com/document/api/213/15708).
-- **account** is the root account of the resource owner, such as uin/653339763.
+- **account** is the root account of the resource owner, such as "uin/65xxx763".
 - **resource** describes detailed resource information of each product, such as instance/instance_id1 or instance/*.
 
 For example:
