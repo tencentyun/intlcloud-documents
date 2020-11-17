@@ -121,5 +121,5 @@ System.BadImageFormatException: "Could not load file or assembly "ManageLiteAV, 
 ```
 System.IO.FileNotFoundException: "Could not load file or assembly "ManageLiteAV.dll" or one of its dependencies. The specified module could not be found."
 ```
-- Due to possible compatibility issues between different Windows versions, the following .dll files have been added to the SDK for C# to solve such issues as shown below:
+- Due to possible compatibility issues between different Windows versions, the following. dll files have been added to the SDK for C# to solve such issues. File lists as shown below:
 	
