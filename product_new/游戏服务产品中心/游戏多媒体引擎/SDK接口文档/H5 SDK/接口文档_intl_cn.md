@@ -13,10 +13,10 @@
 
 
 >?
-- GME 的接口调用成功后返回值为 QAVError.OK，数值为0。
-- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
-- 设备的操作要在进房成功之后。
-- Chrome74 以后严格限制 navigator.mediaDevices 在 HTTPS 环境下访问，所以请使用 HTTPS 环境。
+>- GME 的接口调用成功后返回值为 QAVError.OK，数值为0。
+>- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
+>- 设备的操作要在进房成功之后。
+>- Chrome74 以后严格限制 navigator.mediaDevices 在 HTTPS 环境下访问，所以请使用 HTTPS 环境。
 
 
 ## 初始化相关接口
