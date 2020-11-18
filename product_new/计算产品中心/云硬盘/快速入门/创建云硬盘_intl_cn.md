@@ -1,7 +1,7 @@
 本文档将以在北京地域下创建一块空的云硬盘 `cbs-test` 为例，帮助您了解如何快速创建云硬盘。
 
 ## 前提条件
-- 在创建云硬盘前，您需要完成 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://cloud.tencent.com/document/product/378/3629)。
+- 在创建云硬盘前，您需要完成 [注册腾讯云](https://cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云硬盘实例。
 - 需确保您在创建云硬盘的地域和可用区（本示例为北京一区）下有可用状态的云服务器。关于如何购买并启动云服务器，请参考 [创建实例](/doc/product/213/4855)。
 
 ## 操作步骤
