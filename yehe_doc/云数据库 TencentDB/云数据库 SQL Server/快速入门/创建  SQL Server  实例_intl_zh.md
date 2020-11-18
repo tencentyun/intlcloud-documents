@@ -2,7 +2,7 @@
 本文为您介绍通过云数据库 SQL Server 控制台创建实例的操作。
 
 ## 前提条件
-已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云数据库 SQL Server实例。
 
 ## 操作步骤
 ### 创建实例
