@@ -5,7 +5,7 @@
 ## 前提条件
 
 在创建 CVM 实例前，您需要完成以下工作：
-- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，，未进行实名认证的用户无法购买中国境内的云服务器实例。
 - 如果要创建网络类型为私有网络的 CVM 实例，需要在目标地域 [创建一个私有网络](https://intl.cloud.tencent.com/document/product/215/31805)，并且在私有网络下的目标可用区 [创建一个子网](https://intl.cloud.tencent.com/document/product/215/31806)。
 - 如果不使用系统自动创建的默认项目，需要 [创建一个项目](https://intl.cloud.tencent.com/document/product/378/34726)。
 - 如果不使用系统自动创建的默认安全组，需要在目标地域 [创建一个安全组](https://intl.cloud.tencent.com/document/product/213/34271) 并添加能满足您业务需求的安全组规则。
