@@ -1,7 +1,7 @@
 ## 购买 CVM 实例的账号限制
 
 - 用户需注册腾讯云账号，注册指引可参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985)。
-- 用户需进行实名认证，资质认证指引可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
+- 用户需进行实名认证，未进行实名认证的用户无法购买中国境内的云服务器实例。资质认证指引可参考 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 - 创建按量计费的云服务器时系统会冻结一个小时的主机费用，请确保账号有足够余额以支付订单。
 
 ## CVM 实例的使用限制
