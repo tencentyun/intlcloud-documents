@@ -3,7 +3,7 @@
 您可以根据业务使用需要选择创建不同类型的云硬盘，更多关于云硬盘类型的信息请参考 [云硬盘类型](/doc/product/362/2353)。
 
 ## 前提条件
-在创建云硬盘前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在创建云硬盘前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云硬盘实例。
 
 ## 操作步骤
 ### 使用控制台创建云硬盘
