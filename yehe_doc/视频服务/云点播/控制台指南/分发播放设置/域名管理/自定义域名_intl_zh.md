@@ -1,5 +1,5 @@
 ## 操作场景
-开通云点播后，系统将为您分配一个默认域名`xxx.vod2.myqcloud.com`，您在云点播中的所有资源将默认使用该域名。您也可以登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview) 自定义添加并解析域名。
+开通云点播后，您可以登录 [云点播控制台](https://console.cloud.tencent.com/vod/overview) 自定义添加并解析域名。
 ## 前提条件
 - 已成功申请云点播服务。
 - 针对入华业务，请确认待添加的域名已成功备案。
