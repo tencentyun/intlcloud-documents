@@ -8,5 +8,6 @@ Currently, Serverless Framework is free of charge, but the Tencent Cloud service
 [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583) provides a serverless execution environment, enabling companies and developers to execute code without the need to purchase and manage servers.
 Serverless Framework provides a serverless application framework combining SCF, API Gateway, COS, TencentDB, and other resources that enables you to write business logic directly while skipping over configuration and management of underlying resources.
 
-
+### What application frameworks does Serverless Framework provide?
+Currently, Serverless Framework Component provides various applications such as RESTful API and static website deployment. It supports web frameworks in multiple programming languages such as Koa, Express, React, Vue, and SSR-related Next.js and Nuxt.js for Node.js; WSGI frameworks like Flask and Django for Python; and Laravel and ThinkPHP for PHP. More frameworks that fit actual application scenarios will be supported soon.
 
