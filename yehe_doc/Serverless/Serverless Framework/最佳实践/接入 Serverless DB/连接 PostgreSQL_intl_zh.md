@@ -12,14 +12,13 @@ Plugin: 3.6.6
 SDK: 2.3.0
 Components: 2.30.1
 ```
-
 -  请确保当前使用账号已配置 **QcloudPostgreSQLFullAccess** 策略。配置方法请参见 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 ## 操作步骤
 本文以 Node.js 开发语言的函数为例，介绍如何通过 Serverless Framework 组件编写创建函数，并访问 PostgreSQL 数据库。配置流程如下：
 1. **配置身份信息**：在本地配置腾讯云账户信息。
-1. **配置私有网络**：通过Serverless Framework VPC 组件 创建 **VPC** 和 **子网**，支持云函数和数据库的网络打通和使用。
-2. **配置 Serverless DB**：通过Serverless Framework PostgreSQL 组件创建 PostgreSQL 实例，为云函数项目提供数据库服务。
+1. **配置私有网络**：通过[Serverless Framework VPC 组件](https://intl.cloud.tencent.com/zh/document/product/1040/36858) 创建 **VPC** 和 **子网**，支持云函数和数据库的网络打通和使用。
+2. **配置 Serverless DB**：通过[Serverless Framework PostgreSQL 组件](https://intl.cloud.tencent.com/zh/document/product/1040/36821)创建 PostgreSQL 实例，为云函数项目提供数据库服务。
 3. **编写业务代码**：通过 Serverless DB SDK 调用数据库，云函数支持直接调用 Serverless DB SDK，连接 PostgreSQL 数据库进行管理操作。
 4. **部署与调试**：通过 Serverless Framework 部署项目至云端，并通过云函数控制台进行测试。
 5. **移除项目**：可通过 Serverless Framework 移除项目。
@@ -30,13 +29,13 @@ Components: 2.30.1
 2. 在 `test-postgreSQL` 下创建 `.env` 文件，并按照以下格式在文件中配置您的腾讯云 SecretId、SecretKey、地域和可用区信息。
 ```text
  # .env
- TENCENT_SECRET_ID=xxx  // 您账号的 SecretId
- TENCENT_SECRET_KEY=xxx // 您账号的 SecretKey
+ TENCENT_SECRET_ID=xxx  # 您账号的 SecretId
+ TENCENT_SECRET_KEY=xxx # 您账号的 SecretKey
  # 地域可用区配置
- REGION=ap-guangzhou //资源部署区，该项目中指云函数与静态页面部署区
- ZONE=ap-guangzhou-2 //资源部署可用区 ，该项目中指 DB 部署所在的可用区
+ REGION=ap-guangzhou #资源部署区，该项目中指云函数与静态页面部署区
+ ZONE=ap-guangzhou-2 #资源部署可用区 ，该项目中指 DB 部署所在的可用区
 ```
->
+>?
 > - 如果没有腾讯云账号，请 [注册新账号](https://intl.cloud.tencent.com/register)。
 > - 如果已有腾讯云账号，请确保您的账号已经授权了 `AdministratorAccess` 权限。 同时，您可在 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取 SecretId 和 SecretKey。
 >
@@ -85,7 +84,7 @@ inputs:
 ```
 npm install pg
 ```
-3. 在 `src` 文件夹下，创建 `index.js` 文件，并输入如下示例代码。在函数中通过 Serverless DB SDK 创建连接池，并调用数据库。
+3. 在 `src` 文件夹下，创建 `index.js` 文件，并输入如下示例代码。在函数中通过 PostgreSQLSDK 创建连接池，并调用数据库。
 ```
 'use strict';
 const { Pool } = require('pg');
@@ -103,7 +102,8 @@ exports.main_handler = async (event, context, callback) => {
   const { rows } = await client.query({
       text: 'select * from users',
     });
-  await client.end();
+    await client.release();
+  // 此处要求 postgresql 版本为 8.0 及以上，请检查您的 pg 依赖项版本，如果您使用的版本为 8.0 以下，请通过 client.end（）来释放链接
   console.log('pgsql query result:',rows)
 }
 ```
@@ -186,4 +186,4 @@ sls remove --all
 serverless ⚡ framework
 38s › tencent-fullstack › Success
 ```
-
+更多 PostgreSQL 数据库用法，请参考 [基于 PG SQL+Website 全栈网站最佳实践](https://cloud.tencent.com/document/product/1154/43009)。
