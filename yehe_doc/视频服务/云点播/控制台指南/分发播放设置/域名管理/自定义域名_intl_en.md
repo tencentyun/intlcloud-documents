@@ -1,5 +1,5 @@
 ## Operation Scenarios
-After you activate VOD, you can also add and resolve a custom domain name in the [VOD Console](https://console.cloud.tencent.com/vod/overview).
+After you activate VOD, you can add and resolve a custom domain name in the [VOD Console](https://console.cloud.tencent.com/vod/overview).
 ## Prerequisites
 - You have activated VOD.
 - To add a custom domain name in Mainland China, you need to obtain an ICP filing.
