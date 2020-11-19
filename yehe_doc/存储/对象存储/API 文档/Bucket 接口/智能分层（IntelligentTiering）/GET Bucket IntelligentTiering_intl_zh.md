@@ -1,6 +1,6 @@
 ## 功能描述
 
-GET Bucket IntelligentTiering 接口用于实现获得存储桶的智能分层配置信息。
+GET Bucket IntelligentTiering 接口用于查询存储桶的智能分层配置信息。
 
 > ?
 >
@@ -10,7 +10,7 @@ GET Bucket IntelligentTiering 接口用于实现获得存储桶的智能分层�
 ```shell
 	<IntelligentTieringConfiguration/>
 ```
->  - 如果您启用了存储桶的 IntelligentTieringConfiguration，则响应为：
+> - 如果您启用了存储桶的智能分层配置，则响应为：
 ```shell
 <IntelligentTieringConfiguration xmlns="cos xmlns/"> 
        <Status>Enabled</Status>
@@ -69,7 +69,7 @@ Authorization: Auth String
 | IntelligentTieringConfiguration | 无                                         | 智能分层存储配置的具体信息                                   | Container |
 | Status                          | IntelligentTieringConfiguration            | 说明智能分层存储配置是否开启，枚举值：Suspended、Enabled     | Enum      |
 | Transition                      | IntelligentTieringConfiguration            | 指定智能分层存储配置中有关数据转换的配置信息                 | Container |
-| Days                            | IntelligentTieringConfiguration.Transition | 指定智能分层存储配置中标准层数据转换为低频层数据的天数限制，默认值为30天 | Int       |
+| Days                            | IntelligentTieringConfiguration.Transition | 指定智能分层存储配置中标准层数据转换为低频层数据的天数限制，可选值为30、60和90，默认值为30天 | Int       |
 
 #### 错误码
 
