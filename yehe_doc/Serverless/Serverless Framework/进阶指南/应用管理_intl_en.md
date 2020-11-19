@@ -54,8 +54,8 @@ Configuration information in the `.yml` file:
 | Parameter | Description |
 |---------|---------|
 | org | Organization information, which is the `APPID` of your Tencent Cloud account by default. It is a reserved field and is not recommended to be used. |
-| app | Application name, which is the same as the instance name in the component information by default. A single-instance application and a multi-instance application have different definitions of this parameter. For more information, please see [Application Deployment](#Application Deployment). |
-| stage | Environment information, which is `dev` by default. You can define different `stage` values to provide independent runtime environments for development, testing, and release of the serverless application, respectively. For more information, please see [Environment Isolation](). |
+| app | Application name, which is the same as the instance name in the component information by default. A single-instance application and a multi-instance application have different definitions of this parameter. For more information, please see [Application Deployment](https://intl.cloud.tencent.com/zh/document/product/1040/38288#.E9.83.A8.E7.BD.B2.E5.BA.94.E7.94.A8). |
+| stage | Environment information, which is `dev` by default. You can define different `stage` values to provide independent runtime environments for development, testing, and release of the serverless application, respectively. For more information, please see [Environment Isolation](https://intl.cloud.tencent.com/zh/document/product/1040/38289#.E7.8E.AF.E5.A2.83.E9.9A.94.E7.A6.BB). |
 
 #### Component information
 
