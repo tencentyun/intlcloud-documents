@@ -8,41 +8,4 @@ Serverless Framework 服务暂时免费，但该产品所用到的相关腾讯�
 [云函数](https://intl.cloud.tencent.com/document/product/583)（Serverless Cloud Function，SCF）是腾讯云为企业和开发者们提供的无服务器执行环境，帮助您在无需购买和管理服务器的情况下运行代码 。
 Serverless Framework 是无服务器应用框架，提供将云函数 SCF、API 网关、对象存储 COS、云数据库 DB 等资源组合的业务框架，开发者可以直接基于框架编写业务逻辑，而无需关注底层资源的配置和管理。
 
-### Serverless Framework 提供了哪些应用框架？
-目前 Serverless Framework Component 提供 REST API 和静态网站部署等应用，同时支持多种开发语言的 Web 框架，如 Node.js Koa、Express、React、Vue 等，支持 SSR 相关的 Next.js 和 Nuxt.js 框架；Python 支持 WSGI 框架如 Flask、Django 等；PHP 支持框架如 Laravel、ThinkPHP 等。更多贴合实际应用场景的框架在持续输出中。
-
-### Serverless Framework 报错 "component" input is requires to run custom methods 如何处理？
-运行 Serverless Framework CLI 时，如果 yaml 配置文件中默认引用了 Component 组件，则需要保证当前文件夹内容为空，才可以正确运行 Component 的安装命令。
-您可以尝试在一个空文件夹中重新运行`serverless create`命令，则不会再出现该错误。
-
-更多的问题和反馈，可以参考 [Github 仓库 Issues](https://github.com/serverless-components?q=tencent)。
-
-### Serverless Framework 报错“The appid is unavailable for legal reasons.” 如何处理？
-
-该报错是由于账户欠费，无法创建新的后付费资源所导致的。请您检查账户是否欠费，账户冲正后即可解决。
-
-### 使用 Window Powershell 部署无权限如何处理？
-
-Windows powershell 的权限管理比较严格，需要执行 `set-executionpolicy remotesigned` 命令后即可正常部署。此外，Windows 环境下建议通过 `serverless deploy` 全拼方式部署。
-
-### 开发环境在中国境外时如何部署？
-问题描述：由于 Serverless Framework 在部署时会默认检测是否为中国用户，如果开发环境在中国境外，但希望使用中国版体验的 Serverless Framework 可以配置。
-
-解决方法：在 .env 文件中增加配置 SERVERLESS_PLATFORM_VENDOR=tencent 即可指定默认提供中国版体验，包括交互式的一键部署流程（参考 [快速入门](https://intl.cloud.tencent.com/document/product/1040/36249)）等。
-
-### 遇到“Cannot get secretId/Key, your account could be sub-account or does not have access”报错如何处理？
-问题描述：完整的报错内容为 “ Cannot get secretId/Key, your account could be sub-account or does not have access, please check if SLS_QcsRole role exists in your account, and visit https://console.cloud.tencent.com/cam to bind this role to your account.” 
-
-解决方法：该报错为账户权限不足，可以参考 [账号和权限配置](https://intl.cloud.tencent.com/document/product/1040/36793) 进行配置更新。
-更多的问题和反馈，欢迎 [提交工单](https://console.cloud.tencent.com/workorder/category) 或提交 [Github issues](https://github.com/serverless-components?q=tencent)，我们收到后会尽快处理。
-
-### 用户环境无外网权限，必须通过代理才能访问外网，该如何部署？
-
-问题描述：用户环境无外网权限，必须通过代理才能访问外网，在 `sls deploy` 时报网络故障。
-
-解决方法：在 .env 文件中增加以下配置：
-```
-HTTP_PROXY=http://127.0.0.1:12345 #您的代理
-HTTPS_PROXY=http://127.0.0.1:12345 #您的代理
-```
 
