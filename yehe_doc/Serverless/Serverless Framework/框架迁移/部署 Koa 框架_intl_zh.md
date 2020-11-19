@@ -74,7 +74,7 @@ inputs:
 
 ### 4. 部署
 
-如您的账号未 [登录](https://intl.cloud.tencent.com/login) 或 [注册](https://intl.cloud.tencent.com/register) 腾讯云。
+如您的账号未 [登录](https://intl.cloud.tencent.com/login) 或 [注册](https://intl.cloud.tencent.com/register) 腾讯云，您可以直接通过**微信**扫描命令行中的二维码进行授权登录和注册。
 
 通过`sls deploy`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息。
 >?`sls`命令是`serverless`命令的缩写
