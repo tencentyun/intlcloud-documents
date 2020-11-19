@@ -3,7 +3,6 @@
 This API is used to upload a local object to the specified bucket. To make this request, you need to have the permission to write to the bucket.
 
 > ?
-
 > - This API supports uploading up to 5 GB files. To upload larger files, please use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
 > - If the `Content-Length` is less than the actual length of request body, COS will create an object with the size as specified in `Content-Length`, but with the excessive data discarded.
 > - If you upload an object whose name already exists in an bucket without versioning enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
