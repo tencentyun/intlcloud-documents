@@ -8,7 +8,7 @@ You can use this API to move or rename an object, modify object metadata, or cre
 
 The requester of this API needs to have read permission to the copied object, or the copied object allows read permission (public read) to everyone, and write permission to the destination bucket.
 
-> - COS returns a standard error response for an error that occurs before the PUT Object - Copy operation, and a HTTP 200 OK with error content as response body for an error that occurs during the operation. Therefore, you may not determine whether your request succeeds until you check the body of the HTTP 200 OK response.
+>!COS returns a standard error response for an error that occurs before the PUT Object - Copy operation, and a HTTP 200 OK with error content as response body for an error that occurs during the operation. Therefore, you may not determine whether your request succeeds until you check the body of the HTTP 200 OK response.
 
 #### Versioning
 
@@ -46,7 +46,7 @@ In addition to common request headers, this API also supports the following requ
 | x-cos-copy-source-If-Unmodified-Since | The PUT Object - Copy operation is performed if the object is not modified after the specified time. Otherwise, HTTP status code 412 (Precondition Failed) is returned. | String | No |
 | x-cos-copy-source-If-Match | The PUT Object - Copy operation is performed if the object ETag matches the specified value. Otherwise, HTTP status code 412 (Precondition Failed) is returned.  | String | No |
 | x-cos-copy-source-If-None-Match | The PUT Object - Copy operation is performed if the object ETag does not match the specified value. Otherwise, HTTP status code 412 (Precondition Failed) is returned.  | String | No |
-| x-cos-storage-class | Storage class of the destination object, such as `STANDARD_IA` , `ARCHIVE`and `DEEP_ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-storage-class | Storage class of the destination object, such as `INTELLIGENT_TIERING` , `MAZ_INTELLIGENT_TIERING` , `STANDARD_IA` , `ARCHIVE`and `DEEP_ARCHIVE`. Default value: `STANDARD`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
 | x-cos-tagging | Specifies a tag set that can contain up to 10 object tags, e.g., "Key1=Value1&Key2=Value2", where the "Key" and "Value" must be URL-encoded first | string| No |
 
 **Headers related to destination object metadata**
