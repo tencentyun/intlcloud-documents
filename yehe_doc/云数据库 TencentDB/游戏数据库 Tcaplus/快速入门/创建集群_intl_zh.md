@@ -2,7 +2,7 @@
 本文为您介绍如何通过 TcaplusDB 控制台创建集群。
 
 ## 前提条件
-已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并  [实名认证成功](https://intl.cloud.tencent.com/document/product/378/3629)。
+已 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并  [实名认证成功](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的游戏数据库 Tcaplus实例。
 
 ## 操作步骤
 1. 登录 [TcaplusDB 控制台](https://console.cloud.tencent.com/tcaplusdb/app)，在左侧导航选择【集群列表】页，单击【创建集群】。

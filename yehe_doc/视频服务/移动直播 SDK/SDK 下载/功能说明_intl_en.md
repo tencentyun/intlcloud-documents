@@ -7,7 +7,7 @@ Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use **basic 
 
 ### SDK and License Authorization 
 
-You can download a MLVB basic edition SDK demo for a free 28-day trial. If you want to keep using it, you need purchase a license.
+You can download a MLVB basic edition SDK for a free 28-day trial. If you want to keep using it, you need purchase a license.
 
 ### SDK Feature List
 

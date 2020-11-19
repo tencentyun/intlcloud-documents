@@ -3,7 +3,7 @@
 <span id="step0"></span>
 ## 准备工作
 
-1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云直播实例。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击【申请开通】即可开通云直播服务。
 
 <span id="step1"></span>

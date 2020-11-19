@@ -1,5 +1,5 @@
 ## 准备工作
-1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云直播实例。
 2. 访问 [云直播控制台](https://console.cloud.tencent.com/live/livestat)，获取推流地址，实现直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 。
 3. 选择 [域名管理](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】，填写您已备案成功的域名，选择类型为【播放域名】，单击【保存】即可。
 >!
@@ -23,7 +23,7 @@
 
 ### 场景一： PC 端播放
 您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  等工具进行播放。
-![](https://main.qcloudimg.com/raw/ea243633aaf75f83fe6cc5fd770dece7.png)
+
 ### 场景二：移动端播放
 1. 下载安装 腾讯视频云 Demo。
 2. 打开选择【移动直播】>【直播拉流】。

@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-在购买 BGP 高防 IP 实例前，您需要完成注册腾讯云账号，并完成实名认证。
+在购买 BGP 高防 IP （中国大陆）实例前，您需要完成注册腾讯云账号，并完成实名认证。
 
 ## 操作步骤
 1.登录到 [Anti-DDoS Advanced 控制台](https://console.cloud.tencent.com/dayu/bgpip)，单击 ***Create*** 进行购买。

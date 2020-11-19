@@ -4,7 +4,7 @@
 
 ## 操作步骤
 ### 步骤1：注册与登录
-1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账户并完成实名认证。
+1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账户并完成实名认证，未进行实名认证的用户无法购买中国境内的视频处理服务。
 2. 登录腾讯云官网，选择【云产品】>【视频服务】>[【视频处理】](https://console.cloud.tencent.com/mps)，进入视频处理控制台。
 
 ### 步骤2：授权管理

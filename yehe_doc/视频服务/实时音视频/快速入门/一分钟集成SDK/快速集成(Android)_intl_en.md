@@ -34,7 +34,7 @@ defaultConfig {
        }
 }
 ```
->Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
+>?Currently, the TRTC SDK supports armeabi, armeabi-v7a, and arm64-v8a.
 >
 3. Click **Sync Now** to automatically download and integrate the SDK into the project.
 
@@ -64,7 +64,7 @@ defaultConfig {
 ## Integrating the SDK (jar)
 If you do not want to integrate the aar library, you can choose to integrate the TRTC SDK by importing the jar and so libraries:
 
-1. [Download the jar library](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip). The file path is `SDK/LiteAVSDK_TRTC_xxx.zip` (xxx indicates the version number of TRTC SDK).
+1. [Download the jar library](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip). The file path is `SDK/LiteAVSDK_TRTC_xxx.zip` (xxx indicates the version number of TRTC SDK).
 2. After decompression, you can get the `libs` directory which contains the jar files and so folders.
 3. Copy the extracted jar files as well as armeabi, armeabi-v7a, and arm64-v8a folders to the `app/libs` directory.
 ![](https://main.qcloudimg.com/raw/5bf82ca89b3a14cca470fcedc048d7fa.png)

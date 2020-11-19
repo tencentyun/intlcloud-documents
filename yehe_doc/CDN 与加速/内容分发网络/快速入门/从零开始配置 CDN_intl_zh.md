@@ -7,7 +7,7 @@
 
 ## 步骤二：开通 CDN
 #### 1. 完成实名认证
-未进行实名认证的用户，需要先完成实名认证，您可以通过 CDN 控制台或账户中心进行实名认证。 详细认证流程请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 。
+未进行实名认证的用户，需要先完成实名认证，未进行实名认证的用户无法购买中国境内的内容分发网络实例，您可以通过 CDN 控制台或账户中心进行实名认证。 详细认证流程请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">点此进入 CDN 控制台</a></div><br>
 
 ![](https://main.qcloudimg.com/raw/067256710f61a65376307c3023967043.png)

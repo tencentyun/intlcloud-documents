@@ -11,7 +11,7 @@ MySQL：数据库，本文以 MySQL 8.0.21 为例。
 PHP：脚本语言，本文以 PHP 7.4.11 为例。
 
 ## 前提条件
-已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
+已购买 Linux 云服务器。如果您还未购买云服务器，请参考 [自定义配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
 
 ## 操作步骤
 ### 步骤1：登录 Linux 实例

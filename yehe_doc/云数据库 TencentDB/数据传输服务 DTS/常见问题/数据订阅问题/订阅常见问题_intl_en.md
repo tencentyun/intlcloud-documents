@@ -29,7 +29,7 @@ The data in the data subscription channel will be retained for 1 day and then de
 
 ### When pulling data, the SDK suddenly crashed and couldn't subscribe to any data; after restart, it consumed some data before crashing again. Why?
 This is probably because the ackAsConsumed API is not called to report the consumption time point in the SDK code. In this case, the data in the limited cache space of the SDK will not be deleted. When the cache is full, new data cannot be pulled, so the SDK will crash and fail to subscribe to any data.
->All messages here, including BEGIN and COMMIT messages and those irrelevant to the business logic, must be acknowledged for consumption.
+>!All messages here, including BEGIN and COMMIT messages and those irrelevant to the business logic, must be acknowledged for consumption.
 
 ### How do I ensure that the data subscribed to by the SDK is a complete transaction? Will the record in the middle of the transaction be pulled based on the specified consumption time point?
 No. Based on the user-specified consumption time point or the time point of the last acknowledged consumption, the server will search for the start point of the complete transaction corresponding to this consumption time point. Data is sent to the downstream SDK from the beginning of the transaction. Therefore, the full data of the complete transaction can be received.
@@ -42,7 +42,7 @@ You need to verify whether the input parameters are correct, including `ip`, `po
 
 ### Why does the system prompt that `secretId` has no permission when the SDK is started?
 A sub-account has no permission by default. It must be granted access to the `name/dts:AuthenticateSubscribeSDK` operation or all DTS operations through the `QcloudDTSFullAccess` policy by the root account.
->You need to create the `QcloudDTSFullAccess` policy on your own as it is not predefined in CAM.
+>?You need to create the `QcloudDTSFullAccess` policy on your own as it is not predefined in CAM.
 
 - Grant the SDK access permission to all channels:
 ```

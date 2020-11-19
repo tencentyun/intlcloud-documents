@@ -2,15 +2,15 @@
 
 GET Object 接口请求可以将 COS 存储桶中的对象（Object）下载至本地。该 API 的请求者需要对目标对象有读取权限，或者目标对象向所有人开放了读取权限（公有读）。
 
-> 如果使用了 response-* 请求参数，那么该请求操作不支持匿名请求，必须携带签名。
+> ? 如果使用了 response-* 请求参数，那么该请求操作不支持匿名请求，必须携带签名。
 
 #### 版本控制
 
 当启用版本控制时，该 GET 操作可以使用 versionId 请求参数指定要返回的版本 ID，此时将返回对象的指定版本。若指定版本为删除标记，则返回 HTTP 响应码404（Not Found），否则将返回指定对象的最新版本。
 
-#### 归档存储类型
+#### 归档类型
 
-如果该 GET 请求操作的对象为**归档（ARCHIVE）存储类型**，且没有使用 [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) 进行恢复（或恢复后的副本已被过期删除），那么该请求将返回 HTTP 响应码403（Forbidden），同时在响应体中包含错误信息，其中错误码（Code）为 InvalidObjectState，表示对象的当前状态无法被 GET 请求操作，需要先经过恢复。
+如果该 GET 请求操作的对象为**归档存储和深度归档存储类型**，且没有使用 [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) 进行恢复（或恢复后的副本已被过期删除），那么该请求将返回 HTTP 响应码403（Forbidden），同时在响应体中包含错误信息，其中错误码（Code）为 InvalidObjectState，表示对象的当前状态无法被 GET 请求操作，需要先经过恢复。
 
 ## 请求
 
@@ -23,7 +23,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> ? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -73,6 +73,7 @@ Authorization: Auth String
 | Expires                                                      | RFC 2616 中定义的缓存失效时间，仅当对象元数据包含此项或通过请求参数指定了此项时才会返回该头部 | string |
 | x-cos-meta-\*                                                | 包括用户自定义元数据头部后缀和用户自定义元数据信息           | string |
 | x-cos-storage-class                                          | 对象存储类型，枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD、MAZ_STANDARD_IA、STANDARD_IA、ARCHIVE、DEEP_ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部 | Enum   |
+|  x-cos-storage-tier                                          |  当对象的存储类型为智能分层存储时，该头部表示对象所处的存储层，有效值：FREQUENT、INFREQUENT。  |  enum  |
 
 **版本控制相关头部**
 

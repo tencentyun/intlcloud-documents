@@ -34,7 +34,7 @@ defaultConfig {
        }
 }
 ```
->目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
+>?目前 TRTC SDK 支持 armeabi ， armeabi-v7a 和 arm64-v8a。
 >
 3.单击【Sync Now】，自动下载 SDK 并集成到工程里。
 
@@ -42,7 +42,7 @@ defaultConfig {
 ### 方法二：手动下载（aar）
 如果您的网络连接 jcenter 有问题，您也可以手动下载 SDK 集成到工程里：
 
-1. 下载最新版本 [TRTC SDK](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
+1. 下载最新版本 [TRTC SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
 2. 将下载到的 aar 文件拷贝到工程的 **app/libs** 目录下。
 3. 在工程根目录下的 build.gradle 中，添加 **flatDir**，指定本地仓库路径。
 ![](https://main.qcloudimg.com/raw/bc3215028103fe980aedcbf011b97b02.png)
@@ -109,7 +109,7 @@ defaultConfig {
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->! 请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染
+>! 请勿设置 `android:hardwareAccelerated="false"`，关闭硬件加速之后，会导致对方的视频流无法渲染。
 
 ## 设置混淆规则
 在 proguard-rules.pro 文件，将 TRTC SDK 相关类加入不混淆名单：
