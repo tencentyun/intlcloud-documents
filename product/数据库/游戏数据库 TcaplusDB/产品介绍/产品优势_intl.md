@@ -1,10 +1,8 @@
-[//]: # (chinagitpath:XXXXX)
-
 ### Low cost
 The key-table NoSQL storage service, which employs memory storage supplemented by disk storage, provides the ability of switching in-process data between memory and disks, and the ability of dynamically expanding capacity across multiple processes to ensure that active data are stored in memory and inactive data on disks. This service saves about 70% in costs compared to memory-only storage, and about 40% in comparison to Redis+MySQL.
 
 ### High performance
-Features including LRU-based exchange of hot and cold data between memory and disks, data storage on SSD disk and multi-server distribution of data ensure a high performance of up to 100,000 QPS per server with a latency less than 10 milliseconds.
+Features including exchange of hot and cold data between memory and disks based on the Least Recently Used (LRU) algorithm, data storage on SSD disk and multi-server distribution of data ensure a high performance of up to 100,000 QPS per server with a latency less than 10 milliseconds.
 
 ### High availability
 The master/slave hot backup mechanism ensures quick recovery in case of system failure.
@@ -23,4 +21,3 @@ With a convenient resource application mode, there will no longer be any need to
 
 ### Optimization of resource utilization to improve operational efficiency
 Alarm and other basic systems are integrated to provide process-level monitoring capabilities. Service APIs provide easy access to server capacity expansion, load balancer, and disaster recovery.
-
