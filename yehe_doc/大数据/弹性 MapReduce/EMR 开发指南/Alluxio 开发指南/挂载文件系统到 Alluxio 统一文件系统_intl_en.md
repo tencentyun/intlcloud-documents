@@ -41,6 +41,8 @@ This command mounts the `/data` directory of HDFS to the `/hdfs` subdirectory of
 After the mount is successful, the mounted content can be viewed by running the `alluxio fs ls` command.
 
  **Example 3. Mounting an CHDFS directory to an Alluxio directory**
+ >?This operation is only available to Alluxio version 2.3.0 or later in EMR2.5.0.
+ >
 ```
 alluxio fs mount   \ 
  --option alluxio.underfs.hdfs.configuration=/usr/local/service/hadoop/etc/hadoop/core-site.xml  \
