@@ -25,7 +25,7 @@ Execute the following command to see if an ACPI process exists.
 ```
 ps -ef | grep -w "acpid" | grep -v "grep"
 ```
- - If an ACPI process exists, please execute [forced shutdown or restart](# ForcedShutdownOrRestart).
+ - If an ACPI process exists, please execute [forced shutdown or restart](#ForcedShutdownOrRestart).
  - If no ACPI process exists, please install ACPI. For specific operations, see [Linux Power Management Configuration](https://intl.cloud.tencent.com/document/product/213/2129).
 
 
