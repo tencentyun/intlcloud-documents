@@ -1,4 +1,4 @@
-Resource-level permission refers to the ability to specify which resources users are allowed to operate on. Cloud Virtual Machine(CVM) has partial support for resource-level permission. This means that for certain CVMs, you can control when users are allowed to operate on them, and what specific resources users are allowed to use. For example, you [authorize users to perform operations on specific CVMs in Guangzhou] (https://intl.cloud.tencent.com/document/product/213/10312).
+Resource-level permission refers to the ability to specify which resources users are allowed to operate on. Cloud Virtual Machine(CVM) has partial support for resource-level permission. This means that for certain CVMs, you can control when users are allowed to operate on them, and what specific resources users are allowed to use. For example, you [authorize users to perform operations on specific CVMs in Guangzhou](https://intl.cloud.tencent.com/document/product/213/10312).
 The types of resources can be authorized in Cloud Access Management (CAM) are as follows:
 
 | Resource Type | Resource Description Method in Authorization Policy |
