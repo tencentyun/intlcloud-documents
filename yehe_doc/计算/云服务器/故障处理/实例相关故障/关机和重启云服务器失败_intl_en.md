@@ -59,7 +59,7 @@ Use a check tool or antivirus software to see if the software installed on the C
 2. On the instance management page, select the CVM you want to shut down or restart.
  - Shut down CVM: Click **More** > **Instance Status** > **Shutdown**.
  - Restart CVM: Click **More** > **Instance Status** > **Restart**.
-3. In the **Shutdown** or **Restart Instance** window that pops up, check **Forced Shutdown* or **Forced Restart**, and Click **Ok**.
+3. In the **Shutdown** or **Restart Instance** window that pops up, check **Forced Shutdown** or **Forced Restart**, and Click **Ok**.
  - Check **Forced Shutdown**, as shown below:
  ![](https://main.qcloudimg.com/raw/22db326eebab11c60e6bbcf8baa23144.png)
  - Check **Forced Restart**, as shown below:
