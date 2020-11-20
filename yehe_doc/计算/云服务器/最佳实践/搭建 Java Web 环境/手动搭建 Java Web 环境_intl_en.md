@@ -23,7 +23,7 @@ Setting up a Java Web environment requires a Linux CVM. If you have not purchase
 ### Step 2: Installing JDK
 1. Download the JDK installation file. Go to the [Java SE download page](https://www.oracle.com/technetwork/java/javase/downloads/index.html) to select a version and download it.
 >Download the JDK file, save it locally, and upload it to your CVM. Otherwise, decompressing the file will result in errors.
-> - If you are using Windows, use [WinSCP]https://intl.cloud.tencent.com/document/product/213/2131) to upload the file.
+> - If you are using Windows, use [WinSCP](https://intl.cloud.tencent.com/document/product/213/2131) to upload the file.
 > - If you are using MacOS or Linux, use [SCP](https://intl.cloud.tencent.com/document/product/213/2133) to upload the file.
 >
 2. Run the following command to create a directory for JDK installation.
