@@ -17,7 +17,7 @@ Spark 为结构化数据处理引入了一个称为 Spark SQL 的编程模块。
 其中 --master 表示您的 master URL，--num-executors 表示 executor 数量，--executor-memory 表示 executor 的储存容量。以上参数也可以根据您的实际情况作出修改，您也可以通过`sbin/start-thriftserver.sh` 或者`sbin/stop-thriftserver.sh`来启动或者停止一个 SparkSQLthriftserver。
 
 **下面介绍一些 SparkSQL 的基本操作：**
-新建一个数据库并查看：
+- 新建一个数据库并查看：
 ```
 spark-sql> create database sparksql;
 Time taken: 0.907 seconds
