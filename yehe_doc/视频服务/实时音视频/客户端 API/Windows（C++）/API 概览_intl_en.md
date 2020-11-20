@@ -378,41 +378,41 @@ Callback APIs for Tencent Cloud video call feature.
 
 | Class | Description |
 |-----|-----|
-| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a7ff9e03272f5c8e7b585e8c4eea784e1) | Room entry parameters. |
-| [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a43a83bd5122296aa87cc7f6e964921c5) | Video encoding parameters. |
-| [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a7cd5c078b248a32557a85226f1d30697) | Network bandwidth limit parameters. |
-| [TRTCQualityInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#af6aab62536869726ee32b158ddbbf5ce) | Video quality. |
-| [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#abdeba26e639757957fd75f528ba14f6e) | Volume level. |
-| [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a8858167e09ab4d55f5e49c89bd4a1848) | Network speed test result. |
-| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ac5b1947f21f77726cbff822eaf0003f9) | Position information of each channel of subimage in On-Cloud MixTranscoding. |
-| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a6066a5537ad8c1bc6158d43e8a4765db) | On-Cloud MixTranscoding configuration. |
-| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a0b977361cb4d84b1ece0b26c949dcde6) | CDN relayed push parameters. |
-| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a724e3aa5cbc2249b7ce31bd7f9362d7b) | Audio recording parameters. |
-| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a87aff2ab3ece9f1130a73981838baf04) | Sound effect. |
-| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCLocalStatistics) | Local audio/video statistics. |
-| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCRemoteStatistics) | Remote audio/video statistics. |
-| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCStatistics) | Statistics. |
+| [TRTCParams] | Room entry parameters. |
+| [TRTCVideoEncParam] | Video encoding parameters. |
+| [TRTCNetworkQosParam] | Network bandwidth limit parameters. |
+| [TRTCQualityInfo] | Video quality. |
+| [TRTCVolumeInfo] | Volume level. |
+| [TRTCSpeedTestResult] | Network speed test result. |
+| [TRTCMixUser] | Position information of each channel of subimage in On-Cloud MixTranscoding. |
+| [TRTCTranscodingConfig] | On-Cloud MixTranscoding configuration. |
+| [TRTCPublishCDNParam] | CDN relayed push parameters. |
+| [TRTCAudioRecordingParams] | Audio recording parameters. |
+| [TRTCAudioEffectParam] | Sound effect. |
+| [TRTCLocalStatistics] | Local audio/video statistics. |
+| [TRTCRemoteStatistics] | Remote audio/video statistics. |
+| [TRTCStatistics] | Statistics. |
 
 ### Enumerated values
 
 | Enumerated Value | Description |
 |-----|-----|
-| [TRTCVideoResolution](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gace04ad7a0bf531f4d09dc6a540f09f95) | Video resolution. |
-| [TRTCVideoResolutionMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa6787a9059d7b725a30ffcf9f4aabb64) | Video resolution mode. |
-| [TRTCVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga461563be214e8f0579a79741f37d18e3) | Video stream type. |
-| [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa33845a1c994d38435a8f4a332cc3e95) | Image quality level. |
-| [TRTCVideoFillMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga496a32286104187149b4e40284cbfb36) | Video image fill mode. |
-| [TRTCBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga46f49720df57d17b267054cb9ee4d079) | Beauty filter (skin smoothing) algorithm. |
-| [TRTCAppScene](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa57f4545ef7331e3157eee1639d28780) | Use cases. |
-| [TRTCRoleType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga42ff820a33d9f3535d203fd5d6782cb5) | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
-| [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga6615b296e31fc3d03c0df92e9755b5aa) | Bandwidth limit mode. |
-| [TRTCVideoQosPreference](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga60efcaeea7692bbce8dc362856683319) | Image quality preference. |
-| [TRTCAudioSampleRate](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab0f34072e93189a864688cb0375d462c) | Audio sample rate. |
-| [TRTCAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga96f3d4cdcf3baa9df39ab4e1b3f0eb40) | Sound quality. |
-| [TRTCLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gafa83683b4840bcb3200d1da63c10276d) | Log level. |
-| [TRTCDeviceState](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gac93bb27d49c2aeea8fc04242c5d0fc7e) | Device operation. |
-| [TRTCDeviceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga76eabab111ddd8a7b2e44d2cbcf45794) | Device type. |
-| [TRTCWaterMarkSrcType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab3426c24d07508781330231a35be0ae0) | Watermark image source type. |
-| [TRTCTranscodingConfigMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaec50c849a17b7706f6989d718fc6b7df) | MixTranscoding parameter configuration mode. |
+| [TRTCVideoResolution] | Video resolution. |
+| [TRTCVideoResolutionMode] | Video resolution mode. |
+| [TRTCVideoStreamType] | Video stream type. |
+| [TRTCQuality] | Image quality level. |
+| [TRTCVideoFillMode] | Video image fill mode. |
+| [TRTCBeautyStyle] | Beauty filter (skin smoothing) algorithm. |
+| [TRTCAppScene] | Use cases. |
+| [TRTCRoleType] | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
+| [TRTCQosControlMode] | Bandwidth limit mode. |
+| [TRTCVideoQosPreference] | Image quality preference. |
+| [TRTCAudioSampleRate] | Audio sample rate. |
+| [TRTCAudioQuality] | Sound quality. |
+| [TRTCLogLevel] | Log level. |
+| [TRTCDeviceState] | Device operation. |
+| [TRTCDeviceType] | Device type. |
+| [TRTCWaterMarkSrcType] | Watermark image source type. |
+| [TRTCTranscodingConfigMode] | MixTranscoding parameter configuration mode. |
 
 
