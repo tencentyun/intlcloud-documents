@@ -13,9 +13,11 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 ![](https://mc.qcloudimg.com/static/img/17f1ac23a158b043091ebf48071f3a78/00.png)
 
 ## Logstash 接入 Kafka 的优势
-- 可以异步处理数据，防止突发流量。
-- 解耦，当 Elasticsearch 异常的时候不会影响上游工作。
-- Logstash 过滤消耗资源，如果部署在生产 server 上会影响其性能。
+- 可以异步处理数据：防止突发流量。
+- 解耦：当 Elasticsearch 异常的时候不会影响上游工作。
+
+>!Logstash 过滤消耗资源，如果部署在生产 server 上会影响其性能。
+
 ![](https://mc.qcloudimg.com/static/img/bb8a396b1953ed487776281ef616a5c8/11.png)
 
 
@@ -56,11 +58,11 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 
 #### 创建 CKafka
 1. 拥有实例后，可以从 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 中看到自己的实例信息。
-![](https://main.qcloudimg.com/raw/91dfb78f2400262f51ff4222dc01d967.png)
+![](https://main.qcloudimg.com/raw/1905d1d7ceb8e3b729af31e1ac7f52ca.png)
 2. 单击实例名称可以看到实例分配的具体信息。
-![](https://main.qcloudimg.com/raw/5a29f22f13e2758cf161b2913ecbdec3.png)
+![](https://main.qcloudimg.com/raw/9c35869416313690ceff5fa9b9fb6c15.png)
 3. 单击【topic管理】，创建 topic，此处名字为**logstash_test**。
-![](https://main.qcloudimg.com/raw/7a3bf312e8121c097dbfbe5839490975.png)
+![](https://main.qcloudimg.com/raw/2b43cdf1d5c2310d56bfd3837c524877.png)
 至此，CKafka 相关的工作环境完成。
 
 ### CKafka 作为 inputs 接入
@@ -68,7 +70,7 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 ![](https://mc.qcloudimg.com/static/img/c5c876ea5ae5ce75307a5e307357e622/input1.png)
 
 2. 编写配置文件 input.conf。
-此处将标准输出作为数据重点，将 Kafka 作为数据来源。
+此处将标准输出作为数据终点，将 Kafka 作为数据来源。
 ```
 input {
     kafka {
@@ -94,10 +96,10 @@ output {
 
 2. 编写配置文件 output.conf。
 此处将标准输入作为数据来源，将 Kafka 作为数据目的地。
-![](https://main.qcloudimg.com/raw/834c54ed67efac389dd979976b3f2494.png)
+![](https://mc.qcloudimg.com/static/img/661484fed328739fd12bedda0f5e2e67/88.png)
 
 3. 启动 Logstash，进行消息生产。
-![](https://mc.qcloudimg.com/static/img/1f28c9cac2800e211695307e7138d812/image.png)
+![](https://mc.qcloudimg.com/static/img/c95bbc69c3f0ca36fa42efbb911b0a36/99.png)
 
 4. 校验上一步的生产数据。
 ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
