@@ -1,4 +1,3 @@
-
 ## 功能介绍
 引导脚本操作是在生产集群的过程中执行自定义脚本，以便您修改集群环境、安装第三方软件和使用自有数据。
 
@@ -11,7 +10,7 @@ EMR 实例的生产流程分为以下几个步骤：
 
 引导操作会在集群创建和集群扩容时运行引导脚本，引导脚本按照脚本添加的顺序依次执行，引导操作累计不超过16个。
 
->先创建按量付费的小集群测试引导操作是否成功，测试成功后再创建正式集群。
+>!先创建按量付费的小集群测试引导操作是否成功，测试成功后再创建正式集群。
 
 ## 操作步骤
 **方法一：在 [购买页](https://buy.cloud.tencent.com/emapreduce#/) 创建集群时添加引导操作。**
@@ -24,10 +23,6 @@ EMR 实例的生产流程分为以下几个步骤：
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
 在详情页，即可看到“对象名称”和“对象地址”。
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
- - SecretID 和 SecretKEY：从 COS 的 API 密钥管理页面获取。进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，选择【密钥管理】>【云 API 密钥】。
-
-进入【API密钥管理】页，如果已有 SecretID 和 SecretKEY 则可以直接使用，如果没有则单击【新建密钥】生成。
-![](https://main.qcloudimg.com/raw/d36d0d0ac7acfc5775df6706f7725dea.png)
  - 参数：执行脚本的参数。不同的参数以空格分割，参数中不能有空格，“参数”和“脚本名”之和小于240个字符。
 
 
@@ -38,11 +33,6 @@ EMR 实例的生产流程分为以下几个步骤：
  - 名称：建议与您的“对象名称”保持一致。
  - 脚本位置：建议从 COS 详情页进行复制。进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】，选择您需要的脚本，然后选择【操作】>【详情】。
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
-在详情页，即可看到“对象名称”和“对象地址”。
-![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
- - SecretID 和 SecretKEY：从 COS 的 API 密钥管理页面获取。进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，选择【密钥管理】>【云 API 密钥】。
-
-进入【API密钥管理】页，如果已有 SecretID 和 SecretKEY 则可以直接使用，如果没有则单击【新建密钥】生成。
 ![](https://main.qcloudimg.com/raw/d36d0d0ac7acfc5775df6706f7725dea.png)
  - 参数：执行脚本的参数。不同的参数以空格分割，参数中不能有空格，“参数”和“脚本名”之和小于240个字符。
 
@@ -54,7 +44,7 @@ EMR 实例的生产流程分为以下几个步骤：
 日志和执行的脚本文件保存都放到/usr/local/service/scripts/这目录下，脚本的系统日志是 script_syslog。
 - 命名规则为：“执行顺序” + “\_” +“运行时机”+ “脚本名”+“_”+stderr。
 - 命名规则为：“执行顺序” + “\_” + “运行时机”+“脚本名”+“_”+stdout。
->
+>!
 >- 所有的节点类型都会执行，同时在每个节点上保存脚本文件和执行脚本的输出 log 文件。
 >- 引导脚本内容需使用 utf8 编码。
 
