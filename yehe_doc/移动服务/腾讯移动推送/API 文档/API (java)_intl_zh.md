@@ -42,6 +42,97 @@ JSONObject ret =  xingeApp.pushApp(pushAppRequest );
 ### pushAppRequest 接口说明
 该类提供封装好的推送消息体，各参数说明及使用方法可参考 [推送接口说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
 
+### Android 单设备推送示例
+
+```java
+public JSONObject pushTokenAndroid() {
+        PushAppRequest pushAppRequest = new PushAppRequest();
+        pushAppRequest.setAudience_type(AudienceType.token);
+        pushAppRequest.setPlatform(Platform.android);
+        pushAppRequest.setMessage_type(MessageType.notify);
+        Message message = new Message();
+        message.setTitle("title");
+        message.setContent("content");
+        pushAppRequest.setMessage(message);
+        MessageAndroid messageAndroid = new MessageAndroid();
+        message.setAndroid(messageAndroid);
+        ArrayList<String> tokenList = new ArrayList();
+        tokenList.add("04cac74a714f61bf089********63d880993");
+        pushAppRequest.setToken_list(tokenList);
+        return this.xingeApp.pushApp(pushAppRequest);
+    }
+```
+
+### Android 单账号推送示例
+
+```java
+public JSONObject pushAccountAndroid() {
+        PushAppRequest pushAppRequest = new PushAppRequest();
+        pushAppRequest.setAudience_type(AudienceType.account);
+        pushAppRequest.setPlatform(Platform.android);
+        pushAppRequest.setMessage_type(MessageType.notify);
+        pushAppRequest.setAccount_push_type(1);
+        Message message = new Message();
+        message.setTitle("title");
+        message.setContent("content");
+        MessageAndroid messageAndroid = new MessageAndroid();
+        message.setAndroid(messageAndroid);
+        pushAppRequest.setMessage(message);
+        ArrayList<String> accountList = new ArrayList();
+        accountList.add("123");
+        pushAppRequest.setAccount_list(accountList);
+        return this.xingeApp.pushApp(pushAppRequest);
+    }
+```
+
+### Android 标签推送示例
+
+```java
+public JSONObject pushTagAndroid() {
+        PushAppRequest pushAppRequest = new PushAppRequest();
+        pushAppRequest.setAudience_type(AudienceType.tag);
+        pushAppRequest.setPlatform(Platform.android);
+        pushAppRequest.setMessage_type(MessageType.notify);
+        Message message = new Message();
+        message.setTitle("title");
+        message.setContent("content");
+        MessageAndroid messageAndroid = new MessageAndroid();
+        message.setAndroid(messageAndroid);
+        pushAppRequest.setMessage(message);
+        ArrayList<String> tagList = new ArrayList();
+        tagList.add("tag");
+        TagListObject tagListObject = new TagListObject();
+        tagListObject.setTags(tagList);
+        tagListObject.setOp(OpType.OR);
+        pushAppRequest.setTag_list(tagListObject);
+        return this.xingeApp.pushApp(pushAppRequest);
+    }
+```
+
+### Android 全部设备推送示例
+
+```java
+public JSONObject pushAllAndroid() {
+        PushAppRequest pushAppRequest = new PushAppRequest();
+        pushAppRequest.setAudience_type(AudienceType.all);
+        pushAppRequest.setPlatform(Platform.android);
+        pushAppRequest.setMessage_type(MessageType.notify);
+        Message message = new Message();
+        message.setTitle("title");
+        message.setContent("content");
+        MessageAndroid messageAndroid = new MessageAndroid();
+        message.setAndroid(messageAndroid);
+        pushAppRequest.setMessage(message);
+        return this.xingeApp.pushApp(pushAppRequest);
+    }
+```
+
+### 推送应答示例
+
+```java
+{"result":"{}","environment":"","push_id":"1328245138690125824","err_msg":"NO_ERROR","err_msg_zh":"","ret_code":0,"seq":0}
+```
+
 ## 服务端返回码
 ret_code 含义可参考 [服务端错误码](https://intl.cloud.tencent.com/document/product/1024/33763)。
 
