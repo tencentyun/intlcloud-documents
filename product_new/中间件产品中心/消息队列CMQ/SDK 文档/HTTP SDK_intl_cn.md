@@ -1,8 +1,8 @@
 ## 概述
-腾讯云消息队列 CMQ 目前支持 Java、Python、PHP、及 C++ SDK ，后续会支持更多语言。欢迎广大开发者根据 API 说明开发更多语言版本的 SDK。
+腾讯云消息队列 CMQ 目前支持 Java、Python、PHP 及 C++ SDK ，后续会支持更多语言。欢迎广大开发者根据 API 说明开发更多语言版本的 SDK。
 由于分配资源和释放资源需要1s左右的时间，当前消息队列 SDK 在创建及删除队列/主题时会有1s 延迟，建议在程序中增加创建和删除的时间间隔保障调用成功。
 
->
+>!
 - 为了保障数据传输的安全，为您提供更加可靠的服务，腾讯云团队将在2019年1月31日23:59:59停止对主题及队列的公网 HTTP 方式的访问，建议您将公网接口请求域名改为 HTTPS。
 - 修改公网接口请求域名的方式如下：
 判断接入域名中使用的协议是否为 HTTP，如果有，将其替换为 HTTPS 即可。
@@ -11,7 +11,6 @@
 ## 下载地址
 不同语言版本 SDK 的 GitHub 地址如下：
 
-#### GitHub 地址
 - [Java SDK](https://github.com/tencentyun/cmq-java-sdk)
 - [Python SDK](https://github.com/tencentyun/cmq-python-sdk)（默认为 Python2 SDK，您可切换至 Python3 分支中查看 Python3 SDK ）
 - [PHP SDK](https://github.com/tencentyun/cmq-php-sdk)
@@ -43,7 +42,7 @@
 ### 准备 Demo 环境
 1. **安装 IDE**
 您可以安装 IntelliJ IDEA 或者 Eclipse，本文以 IntelliJ IDEA 为例进行说明。
-请在 [下载 IntelliJ IDEA Ultimate 版本](https://www.jetbrains.com/idea/)，并参考 IntelliJ IDEA 说明进行安装。
+请在 [下载 IntelliJ IDEA Ultimate 版本](https://www.jetbrains.com/idea/)，并参考 IntelliJ IDEA 说明进行安装。
 2. **下载 Demo 工程**
 请在 [下载 CMQ-HTTP 的 Demo 工程](https://github.com/tencentyun/cmq-java-sdk) 到本地，解压后即可看到本地新增的 cmq-java-sdk-master 文件夹。
 
@@ -54,7 +53,7 @@
 具体创建过程请参考 [队列模型快速入门](https://intl.cloud.tencent.com/document/product/406/8436) 和 [主题模型快速入门](https://intl.cloud.tencent.com/document/product/406/8437)。
 2. **导入 Demo 工程文件**
 在 IDEA 的开机界面打开文件夹。
-![](https://main.qcloudimg.com/raw/8a3ba96ef290ad50f6f0d20c01594f5d.png)
+[](https://main.qcloudimg.com/raw/8a3ba96ef290ad50f6f0d20c01594f5d.png)
 打开文件夹后，Demo 工程文件存于`/src/main/java/com/qcloud/cmq/example`文件夹下。
 3. **配置 Demo 参数**
 修改文件请求地址、密钥对等。以 Producer 为例，配置如下：
