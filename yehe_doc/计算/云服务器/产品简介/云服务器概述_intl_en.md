@@ -8,7 +8,7 @@ Tencent Cloud CVM instances allow you to customize all resources, including CPU,
 Tencent Cloud allows you to configure and manage CVM instances in the following ways:
 - **Console**: a web-based UI for configuring and managing CVM instances.
 - **API**: Tencent Cloud also provides APIs for configuring and managing CVM instances. For more information, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).
-- **SDK**: You can use [SDK] (https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
+- **SDK**: You can use [SDK](https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
 
 ## Key Concepts
 

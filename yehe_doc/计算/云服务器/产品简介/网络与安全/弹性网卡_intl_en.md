@@ -38,6 +38,6 @@ The following is a list of APIs related to ENI and CVM. For more information, re
 
 | Feature | Action ID | Description |
 |---------|---------|---------|
-| Create ENI | [CreateNetworkInterface] (https://intl.cloud.tencent.com/document/api/215/15818?from_cn_redirect=1) | Creates an ENI |
+| Create ENI | [CreateNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15818?from_cn_redirect=1) | Creates an ENI |
 | Apply for private IPs | [AssignPrivateIpAddresses](https://intl.cloud.tencent.com/document/api/215/15813?from_cn_redirect=1) | Applies for private IPs for an ENI |
 | Bind an ENI to a CVM instance | [AttachNetworkInterface](https://intl.cloud.tencent.com/document/api/215/15819?from_cn_redirect=1) | Binds an ENI to a CVM instance |
