@@ -16,10 +16,8 @@ You can access the interactive SparkSQL Console by running the following command
 ```
 Here, --master indicates your master URL, --num-executors the number of executors, and --executor-memory the storage capacity of the executors. You can modify these parameters based on your actual conditions and start/stop a SparkSQLthriftserver through `sbin/start-thriftserver.sh`/`sbin/stop-thriftserver.sh`.
 
-Below are some basic operations in SparkSQL.
-
-
-Create and view a database:
+**Below are some basic operations in SparkSQL：**
+- Create and view a database:
 ```
 spark-sql> create database sparksql;
 Time taken: 0.907 seconds
@@ -30,7 +28,7 @@ sparksql
 test
 Time taken: 0.131 seconds, Fetched 5 row(s)
 ```
-Create a new table in the database you just created and view the table:
+- Create a new table in the database you just created and view the table:
 ```
 spark-sql> use sparksql;
 Time taken: 0.076 seconds
@@ -42,7 +40,7 @@ spark-sql> show tables;
 sparksql_test	false
 Time taken: 0.12 seconds, Fetched 1 row(s)
 ```
-Insert two rows of data into the table and view them:
+- Insert two rows of data into the table and view them:
 ```
 spark-sql> insert into sparksql_test values (42,'hello'),(48,'world');
 Time taken: 2.641 seconds
@@ -187,7 +185,7 @@ Below is an example of a complete pom.xml file:
     </build>
 </project>
 ```
->Replace $yourgroupID and $yourartifactID with your real information.
+>!Replace $yourgroupID and $yourartifactID with your real information.
 
 Then, create a Java Class named Demo.java in the main>Java folder and add the following code to it:
 ```
@@ -231,12 +229,12 @@ Here, $localfile is the path and the name of your local file; root is the CVM in
 ## 4. Preparing the Data and Running the Demo
 You can use SparkSQL to process data stored in HDFS. First, upload the data to HDFS. The built-in file people.json stored in `/usr/local/service/spark/exa-mples/src/main/resources/` is used as an example here. Run the following command to upload it to HDFS:
 ```
-[hadoop@10 hadoop]$ hadoop fs -put /usr/local/service/spark/examples/src/ma-in/resources/ 
+[hadoop@10 hadoop]$ hadoop fs -put /usr/local/service/spark/examples/src/main/resources/people.json 
 /user/hadoop
 ```
 You can choose a different test file. Here, `/user/hadoop/` is a folder under HDFS, which you can create if it does not exist.
 
-Run the demo. First, log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in the interactive SparkSQL Console. Run the following command:
+**Run the demo**. First, log in to a master node of the EMR cluster and switch to the Hadoop user, as shown in the interactive SparkSQL Console. Run the following command:
 ```
 [hadoop@10spark]$ bin/spark-submit --class Demo --master yarn-client $yourjarpackage /  
 /user/hadoop/people.json  /user/hadoop/$output
