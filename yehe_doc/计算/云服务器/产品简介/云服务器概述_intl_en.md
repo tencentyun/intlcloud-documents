@@ -42,7 +42,7 @@ For pricing information on CVM instances and other resources, refer to [Product 
 
 ## Relevant Products
 
-- Auto Scaling lets you scale server clusters using pre-defined criteria such as time or load. For more information, refer to the [Auto Scaling documentation] (https://intl.cloud.tencent.com/document/product/377).
+- Auto Scaling lets you scale server clusters using pre-defined criteria such as time or load. For more information, refer to the [Auto Scaling documentation](https://intl.cloud.tencent.com/document/product/377).
 - Cloud Load Balancer allows you to automatically distribute client traffic among multiple CVM instances. For more information, refer to the [Cloud Load Balancer documentation](https://intl.cloud.tencent.com/document/product/214).
 - Tencent Kubernetes Engine allows you to manage the lifecycle of applications in a CVM. For more information, refer to the [Tencent Kubernetes Engine documentation](https://intl.cloud.tencent.com/document/product/457).
 - Cloud Monitor keeps track of your CVM instances and their system disks. For more information, refer to the [Basic Cloud Monitor documentation](https://intl.cloud.tencent.com/document/product/248).
