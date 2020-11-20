@@ -12,7 +12,7 @@
 ### 获取密钥
 
 1. 进入 [华为开放平台](http://developer.huawei.com) 。
-2. 注册和登录开发者账号，详情参见 [账号注册认证](https://developer.huawei.com/consumer/cn/devservice/doc/20300)（如果您是新注册账号，需进行实名认证）。
+2. 注册和登录开发者账号，详情参见 [账号注册认证](https://developer.huawei.com/consumer/cn/devservice/doc/20300)（如果您是新注册账号，需进行实名认证，未进行实名认证的账号无法使用华为推送平台）。
 3. 在华为推送平台中新建应用，详情参见 [创建应用](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app)（应用包名需跟您在移动推送 TPNS 平台填写的一致）。
 4. 获取并复制应用的 AppID 和 AppSecret，填入 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns) 的【配置管理】>【华为通道】栏目中。
 
