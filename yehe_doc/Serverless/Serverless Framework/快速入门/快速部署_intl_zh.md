@@ -8,11 +8,11 @@
 
 ## 前提条件
 
-- 在使用之前，请确保已经 [安装 Serverless Framework 1.67.2 以上版本](https://intl.cloud.tencent.com/document/product/1040/37034)。
-- 如果您的腾讯云账号为主账号，则可以继续进行部署；如果您的账户为子账号，请参考 [账号和权限配置](https://intl.cloud.tencent.com/document/product/1040/36793) 获得授权后再进行部署。
+- 已经 [安装 Serverless Framework 1.67.2 以上版本](https://intl.cloud.tencent.com/document/product/1040/37034)。
+- 如果您的账户为子账号，请参考 [账号和权限配置](https://intl.cloud.tencent.com/document/product/1040/36793) 进行授权。
 
 ## 操作步骤 
-### 创建应用
+### 快速创建
 在空文件夹下输入`serverless`命令，按照引导进行操作，即可部署一个 SCF、Express.js 或者静态网站托管应用。交互流程如下所示：
 
 ```
@@ -50,12 +50,22 @@ Triggers:
 
 > ?如果希望查看部署过程中的详细信息，可以增加`--debug`参数进行查看。
 
-### 查看部署信息
+### 部署项目
 
-如果希望再次查看应用的部署状态和资源，可以进入到部署成功的文件夹，运行如下命令，查看对应信息：
+如果创建过程中没有选择立即部署到云端，或者部署成功后修改了代码，希望再次部署，可以进入到项目文件夹，运行如下命令：
 
 ```
 $ cd express-app #进入项目目录
+$ sls deploy
+```
+
+>?sls 是 serverless 命令的简写。
+
+### 查看信息
+
+如果希望查看应用的部署状态和资源，在项目目录下，运行如下命令：
+
+```
 $ sls info
 ```
 
@@ -86,9 +96,6 @@ Action: "remove" - Stage: "dev" - App: "scfApp" - Instance: "scfdemo"
 
 > ?如果希望查看移除过程中的详细信息，可以增加`--debug`参数进行查看。
 
-### 配置账户信息（可选）
-
-配置持久的环境变量/密钥信息，请参考 [配置账号](https://intl.cloud.tencent.com/document/product/1040/36793) 文档。
 
 ## 常见问题
 
