@@ -378,41 +378,41 @@ Callback APIs for Tencent Cloud video call feature.
 
 | Class | Description |
 |-----|-----|
-| [TRTCParams] | Room entry parameters. |
-| [TRTCVideoEncParam] | Video encoding parameters. |
-| [TRTCNetworkQosParam] | Network bandwidth limit parameters. |
-| [TRTCQualityInfo] | Video quality. |
-| [TRTCVolumeInfo] | Volume level. |
-| [TRTCSpeedTestResult] | Network speed test result. |
-| [TRTCMixUser] | Position information of each channel of subimage in On-Cloud MixTranscoding. |
-| [TRTCTranscodingConfig] | On-Cloud MixTranscoding configuration. |
-| [TRTCPublishCDNParam] | CDN relayed push parameters. |
-| [TRTCAudioRecordingParams] | Audio recording parameters. |
-| [TRTCAudioEffectParam] | Sound effect. |
-| [TRTCLocalStatistics] | Local audio/video statistics. |
-| [TRTCRemoteStatistics] | Remote audio/video statistics. |
-| [TRTCStatistics] | Statistics. |
+| TRTCParams | Room entry parameters. |
+| TRTCVideoEncParam | Video encoding parameters. |
+| TRTCNetworkQosParam | Network bandwidth limit parameters. |
+| TRTCQualityInfo | Video quality. |
+| TRTCVolumeInfo | Volume level. |
+| TRTCSpeedTestResult | Network speed test result. |
+| TRTCMixUser | Position information of each channel of subimage in On-Cloud MixTranscoding. |
+| TRTCTranscodingConfig | On-Cloud MixTranscoding configuration. |
+| TRTCPublishCDNParam | CDN relayed push parameters. |
+| TRTCAudioRecordingParams | Audio recording parameters. |
+| TRTCAudioEffectParam | Sound effect. |
+| TRTCLocalStatistics | Local audio/video statistics. |
+| TRTCRemoteStatistics | Remote audio/video statistics. |
+| TRTCStatistics | Statistics. |
 
 ### Enumerated values
 
 | Enumerated Value | Description |
 |-----|-----|
-| [TRTCVideoResolution] | Video resolution. |
-| [TRTCVideoResolutionMode] | Video resolution mode. |
-| [TRTCVideoStreamType] | Video stream type. |
-| [TRTCQuality] | Image quality level. |
-| [TRTCVideoFillMode] | Video image fill mode. |
-| [TRTCBeautyStyle] | Beauty filter (skin smoothing) algorithm. |
-| [TRTCAppScene] | Use cases. |
-| [TRTCRoleType] | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
-| [TRTCQosControlMode] | Bandwidth limit mode. |
-| [TRTCVideoQosPreference] | Image quality preference. |
-| [TRTCAudioSampleRate] | Audio sample rate. |
-| [TRTCAudioQuality] | Sound quality. |
-| [TRTCLogLevel] | Log level. |
-| [TRTCDeviceState] | Device operation. |
-| [TRTCDeviceType] | Device type. |
-| [TRTCWaterMarkSrcType] | Watermark image source type. |
-| [TRTCTranscodingConfigMode] | MixTranscoding parameter configuration mode. |
+| TRTCVideoResolution | Video resolution. |
+| TRTCVideoResolutionMode | Video resolution mode. |
+| TRTCVideoStreamType | Video stream type. |
+| TRTCQuality | Image quality level. |
+| TRTCVideoFillMode | Video image fill mode. |
+| TRTCBeautyStyle | Beauty filter (skin smoothing) algorithm. |
+| TRTCAppScene | Use cases. |
+| TRTCRoleType | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
+| TRTCQosControlMode | Bandwidth limit mode. |
+| TRTCVideoQosPreference | Image quality preference. |
+| TRTCAudioSampleRate | Audio sample rate. |
+| TRTCAudioQuality | Sound quality. |
+| TRTCLogLevel | Log level. |
+| TRTCDeviceState | Device operation. |
+| TRTCDeviceType | Device type. |
+| TRTCWaterMarkSrcType | Watermark image source type. |
+| TRTCTranscodingConfigMode | MixTranscoding parameter configuration mode. |
 
 
