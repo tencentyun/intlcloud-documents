@@ -14,7 +14,7 @@
 
 ## 4. 新手入门
 #### 4.1 注册与认证
-在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内腾讯云云硬盘资源。
 
 #### 4.2 创建云硬盘
 完成注册与实名认证后，您可在云服务器所在的可用区按需选择云硬盘类型、容量、计费模式、购买时长、自动续费及到期/欠费保护，以确保满足您的实际业务需求。详情请参见 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)。
