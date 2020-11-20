@@ -10,7 +10,7 @@
 
 ## 前提条件
 
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)未进行实名认证的用户无法购买中国境内的腾讯云 Web 直播实例。
 
 ## 操作步骤
 
