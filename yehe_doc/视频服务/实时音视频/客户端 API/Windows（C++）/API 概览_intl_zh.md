@@ -378,41 +378,41 @@
 
 | 类名 | 描述 |
 |-----|-----|
-| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a7ff9e03272f5c8e7b585e8c4eea784e1) | 进房相关参数。 |
-| [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a43a83bd5122296aa87cc7f6e964921c5) | 视频编码参数。 |
-| [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a7cd5c078b248a32557a85226f1d30697) | 网络流控相关参数。 |
-| [TRTCQualityInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#af6aab62536869726ee32b158ddbbf5ce) | 视频质量。 |
-| [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#abdeba26e639757957fd75f528ba14f6e) | 音量大小。 |
-| [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a8858167e09ab4d55f5e49c89bd4a1848) | 网络测速结果。 |
-| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ac5b1947f21f77726cbff822eaf0003f9) | 云端混流中每一路子画面的位置信息。 |
-| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a6066a5537ad8c1bc6158d43e8a4765db) | 云端混流（转码）配置。 |
-| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a0b977361cb4d84b1ece0b26c949dcde6) | CDN 旁路推流参数。 |
-| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a724e3aa5cbc2249b7ce31bd7f9362d7b) | 录音参数。 |
-| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a87aff2ab3ece9f1130a73981838baf04) | 音效。 |
-| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCLocalStatistics) | 自己本地的音视频统计信息。 |
-| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCRemoteStatistics) | 远端成员的音视频统计信息。 |
-| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#structTRTC_1_1TRTCStatistics) | 统计数据。 |
+| TRTCParams | 进房相关参数。 |
+| TRTCVideoEncParam | 视频编码参数。 |
+| TRTCNetworkQosParam | 网络流控相关参数。 |
+| TRTCQualityInfo | 视频质量。 |
+| TRTCVolumeInfo | 音量大小。 |
+| TRTCSpeedTestResult | 网络测速结果。 |
+| TRTCMixUser | 云端混流中每一路子画面的位置信息。 |
+| TRTCTranscodingConfig | 云端混流（转码）配置。 |
+| TRTCPublishCDNParam | CDN 旁路推流参数。 |
+| TRTCAudioRecordingParams | 录音参数。 |
+| TRTCAudioEffectParam | 音效。 |
+| TRTCLocalStatistics | 自己本地的音视频统计信息。 |
+| TRTCRemoteStatistics | 远端成员的音视频统计信息。 |
+| TRTCStatistics | 统计数据。 |
 
 ### 枚举值
 
 | 枚举 | 描述 |
 |-----|-----|
-| [TRTCVideoResolution](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gace04ad7a0bf531f4d09dc6a540f09f95) | 视频分辨率。 |
-| [TRTCVideoResolutionMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa6787a9059d7b725a30ffcf9f4aabb64) | 视频分辨率模式。 |
-| [TRTCVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga461563be214e8f0579a79741f37d18e3) | 视频流类型。 |
-| [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa33845a1c994d38435a8f4a332cc3e95) | 画质级别。 |
-| [TRTCVideoFillMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga496a32286104187149b4e40284cbfb36) | 视频画面填充模式。 |
-| [TRTCBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga46f49720df57d17b267054cb9ee4d079) | 美颜（磨皮）算法。 |
-| [TRTCAppScene](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaa57f4545ef7331e3157eee1639d28780) | 应用场景。 |
-| [TRTCRoleType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga42ff820a33d9f3535d203fd5d6782cb5) | 角色，仅适用于直播场景（TRTCAppSceneLIVE 和 TRTCAppSceneVoiceChatRoom）。 |
-| [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga6615b296e31fc3d03c0df92e9755b5aa) | 流控模式。 |
-| [TRTCVideoQosPreference](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga60efcaeea7692bbce8dc362856683319) | 画质偏好。 |
-| [TRTCAudioSampleRate](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab0f34072e93189a864688cb0375d462c) | 音频采样率。 |
-| [TRTCAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga96f3d4cdcf3baa9df39ab4e1b3f0eb40) | 声音音质。 |
-| [TRTCLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gafa83683b4840bcb3200d1da63c10276d) | Log 级别。 |
-| [TRTCDeviceState](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gac93bb27d49c2aeea8fc04242c5d0fc7e) | 设备操作。 |
-| [TRTCDeviceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#ga76eabab111ddd8a7b2e44d2cbcf45794) | 设备类型。 |
-| [TRTCWaterMarkSrcType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gab3426c24d07508781330231a35be0ae0) | 水印图片的源类型。 |
-| [TRTCTranscodingConfigMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#gaec50c849a17b7706f6989d718fc6b7df) | 混流参数配置模式。 |
+| TRTCVideoResolution | 视频分辨率。 |
+| TRTCVideoResolutionMode | 视频分辨率模式。 |
+| TRTCVideoStreamType | 视频流类型。 |
+| TRTCQuality | 画质级别。 |
+| TRTCVideoFillMode | 视频画面填充模式。 |
+| TRTCBeautyStyle | 美颜（磨皮）算法。 |
+| TRTCAppScene | 应用场景。 |
+| TRTCRoleType | 角色，仅适用于直播场景（TRTCAppSceneLIVE 和 TRTCAppSceneVoiceChatRoom）。 |
+| TRTCQosControlMode | 流控模式。 |
+| TRTCVideoQosPreference | 画质偏好。 |
+| TRTCAudioSampleRate | 音频采样率。 |
+| TRTCAudioQuality | 声音音质。 |
+| TRTCLogLevel | Log 级别。 |
+| TRTCDeviceState | 设备操作。 |
+| TRTCDeviceType | 设备类型。 |
+| TRTCWaterMarkSrcType | 水印图片的源类型。 |
+| TRTCTranscodingConfigMode | 混流参数配置模式。 |
 
 
