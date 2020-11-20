@@ -9,7 +9,7 @@
 
 ## 开通步骤
 
-1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/3629) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/3629) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的腾讯移动推动服务。
 2. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，若您是初次登录，请勾选同意《[腾讯移动推送开发者协议](https://intl.cloud.tencent.com/document/product/1024/36176)》。
 3. 进入产品管理页面，[创建产品及应用](https://intl.cloud.tencent.com/document/product/1024/32603)。
 4. 完成以上步骤，应用默认为体验版，查看当前服务状态，若显示为【使用中】表示您可以正常使用推送服务。
