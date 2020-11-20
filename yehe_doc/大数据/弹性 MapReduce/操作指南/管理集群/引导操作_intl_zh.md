@@ -33,7 +33,7 @@ EMR 实例的生产流程分为以下几个步骤：
  - 名称：建议与您的“对象名称”保持一致。
  - 脚本位置：建议从 COS 详情页进行复制。进入 [COS 控制台](https://console.cloud.tencent.com/cos5)，单击【存储桶列表】，选择您需要的脚本，然后选择【操作】>【详情】。
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
-![](https://main.qcloudimg.com/raw/d36d0d0ac7acfc5775df6706f7725dea.png)
+![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
  - 参数：执行脚本的参数。不同的参数以空格分割，参数中不能有空格，“参数”和“脚本名”之和小于240个字符。
 
 ## 查看引导结果
