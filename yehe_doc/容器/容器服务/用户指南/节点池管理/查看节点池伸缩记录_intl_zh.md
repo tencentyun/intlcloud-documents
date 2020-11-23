@@ -22,10 +22,10 @@
 1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 选择左侧导航栏中的【集群运维】>【功能管理】，进入“功能管理”页面。
 3. 在“功能管理”页面上方选择地域，单击需开启事件持久化的集群右侧的【设置】。如下图所示：
-![](https://main.qcloudimg.com/raw/fe3dfb31a348328eb0403a9a9e2602da.png)
+![](https://main.qcloudimg.com/raw/d53778dfe951dd6ed1b32c601a877499.png)
 4. 在弹出的“设置功能”窗口中，单击“事件存储”功能右侧的【编辑】。
 5. 勾选【开启事件存储】，选择事件持久化日志的日志集和日志主题。如下图所示：
-![](https://main.qcloudimg.com/raw/15b2e524a205e68444ce358b58aead84.png)
+![](https://main.qcloudimg.com/raw/4de2d7b0afe5bfa9028cd7c9fd6ce3ce.png)
 6. 单击【确定】即可开启事件持久化功能。
 
 #### 查看事件持久化
@@ -33,13 +33,13 @@
 2. 选择左侧导航栏中的【检索分析】，进入【检索分析】管理页面。
 3. 在“检索分析”页面上方选择地域，选择希望查看事件持久化的日志集和日志主题。
 4. 勾选【event.source.component:cluster-autoscaler】，单击【检索分析】。如下图所示：
-![](https://main.qcloudimg.com/raw/05988378bc0ff79d3aaad6d0db3b601b.jpg)
+![](https://main.qcloudimg.com/raw/974d1fa6393d5943933208d224c90b70.png)
 5. 在右侧的【列设置】可配置数据列，对关注的列进行可视化。如下图所示：
-![](https://main.qcloudimg.com/raw/57bb00bb42163c87cdf4d63bd08ead88.png)
+![](https://main.qcloudimg.com/raw/9fb3833610dd816a3359e35613ab0c48.png)
 指定某类事件，例如只关心扩容事件，可选择 TriggeredScaleUp 类型进行检索。如下图所示：
-![](https://main.qcloudimg.com/raw/adc93647a5053ab4a74710de1ff0fe02.png)
+![](https://main.qcloudimg.com/raw/00ff0e4ed9f4534054d23e3a50bf05c4.png)
 6. 扩缩容记录查询结果如下 （包含所有节点池的扩容记录）如下图所示：
-![](https://main.qcloudimg.com/raw/fc0acdbd1d910ad65ba0085cba329e16.png)
+![](https://main.qcloudimg.com/raw/14d9a850a99a12f82a8ef443803a4e3e.png)
 
 #### 检索指引
 您可参考以下文档，查看更具体的扩缩容活动列表：
@@ -53,9 +53,9 @@
 2. 在“集群管理”列表页面，选择目标集群 ID，进入该集群 “Deployment” 页面。
 3. 选择左侧菜单栏中的【节点管理】>【节点池】，进入“节点池列表”页面。
 4. 在“节点池名片页”中，单击目标节点池 ID。如下图所示：
-![](https://main.qcloudimg.com/raw/e7b6dfa83d85af90428a68b26453abee.png)
+![](https://main.qcloudimg.com/raw/2a9c689e60ec93c58397148653b8acab.png)
 5. 进入该节点池详情页，点击顶端【伸缩记录】Tab，即可查看伸缩记录。如下图所示：
-![](https://main.qcloudimg.com/raw/a4c15b015ad96e0b492835190b869d58.png)
+![](https://main.qcloudimg.com/raw/3e85caa513171b37c2381a1df5ae0a73.png)
 伸缩记录展示字段如下：
  - **活动ID**：伸缩活动ID。
  - **状态**：伸缩活动的状态。
