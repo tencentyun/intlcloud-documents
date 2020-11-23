@@ -1,4 +1,4 @@
-本文主要介绍移动推送 TPNS  Basic Auth 的鉴权认证方法
+本文主要介绍移动推送 TPNS  Basic Auth 的鉴权认证方法。
 
 采用 AccessId 和 SecretKey 进行 Basic Auth 认证鉴权，密钥容易被获取，安全性不高，推荐使用 [签名认证](https://intl.cloud.tencent.com/zh/document/product/1024/34213)。
 
