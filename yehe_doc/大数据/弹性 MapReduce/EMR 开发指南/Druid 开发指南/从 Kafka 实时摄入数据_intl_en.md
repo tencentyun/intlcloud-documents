@@ -1,6 +1,6 @@
 This document describes how to consume Kafka data in real time by using the Apache Druid Kafka indexing service. Before performing operations described in this document, just like in a Hadoop cluster, you need to make sure that the Kafka and Druid clusters can properly communicate with each other.
 
->
+>?
 >- The two clusters should be in the same VPC. If they are in different VPCs, the two VPCs should be able to communicate with each other (through CCN or Peering Connection, for example).
 >- If necessary, you should configure the Druid cluster with the host information of the Kafka cluster.
 
