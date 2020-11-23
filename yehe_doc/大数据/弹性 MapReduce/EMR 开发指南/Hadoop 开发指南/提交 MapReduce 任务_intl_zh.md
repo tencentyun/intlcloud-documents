@@ -13,9 +13,9 @@
 
 创建 EMR 集群后，在控制台中选择弹性 MapReduce。在【集群资源】>【资源管理】中单击【Master 节点】，选择 Master 节点的资源 ID，即可进入云服务器控制台并且找到 EMR 对应的云服务器。
 
-登录 CVM 的方法参见 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
+登录 CVM 的方法可参见 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
 
-输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 主机后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入 Hadoop 文件夹下：
+输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 节点后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入 Hadoop 文件夹下：
 ```
 [root@172 ~]# su hadoop
 [hadoop@172 root]$ cd /usr/local/service/hadoop
@@ -58,16 +58,13 @@ scp $localfile root@公网IP地址:$remotefolder
 数据存放在 COS 中有两种方式：**在本地通过 COS 的控制台上传**和**在 EMR 集群通过 Hadoop 命令上传**。
 
 - 在本地通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，如果数据文件已经在 COS 可以通过如下命令查看：
-
 ```
  [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/README.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname /README.txt
 ```
-
 其中 $bucketname 替换成您的储存桶的名字和路径。
 
 - 在 EMR 集群通过 Hadoop 命令上传，指令如下：
-
 ```
 [hadoop@10 hadoop]$ hadoop fs -put README.txt cosn:// $bucketname /
 [hadoop@10 hadoop]$ bin/hadoop fs -ls cosn:// $bucketname /README.txt
@@ -79,13 +76,11 @@ scp $localfile root@公网IP地址:$remotefolder
 
 ### 统计 HDFS 中的文本文件
 进入 `/usr/local/service/hadoop` 目录，和数据准备中一样。通过如下命令来提交任务：
-
 ```
 [hadoop@10 hadoop]$ bin/yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount
 /user/hadoop/README.txt /user/hadoop/output
 ```
-
->以上整个命令为一条完整的指令，`/user/hadoop/README.txt` 为输入的待处理文件，`/user/hadoop/output` 为输出文件夹，在提交命令之前要保证 output 文件夹尚未创建，否则提交会出错。
+>!以上整个命令为一条完整的指令，`/user/hadoop/README.txt` 为输入的待处理文件，`/user/hadoop/output` 为输出文件夹，在提交命令之前要保证 output 文件夹尚未创建，否则提交会出错。
 
 执行完成后，通过如下命令查看执行输出文件：
 ```
