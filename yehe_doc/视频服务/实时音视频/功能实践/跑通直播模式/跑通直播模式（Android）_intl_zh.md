@@ -17,7 +17,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/eedbd4ef8a02bce63f071656faded01a.png)
 
->?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
+>?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
 
 ## 操作步骤
 <span id="step1"> </span>
@@ -80,7 +80,7 @@ dependencies {
 // 创建 trtcCloud 实例
 mTRTCCloud = TRTCCloud.sharedInstance(getApplicationContext());
 mTRTCCloud.setListener(new TRTCCloudListener());
- ```
+```
 2. 设置`setListener`属性注册事件回调，并监听相关事件和错误通知。
 ```java
 // 错误通知监听，错误通知意味着 SDK 不能继续运行
