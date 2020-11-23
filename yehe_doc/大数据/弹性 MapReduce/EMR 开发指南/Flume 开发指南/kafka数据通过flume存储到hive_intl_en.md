@@ -40,8 +40,12 @@ agent.sinks.hive_sink.serializer.fieldnames =id,msg
 agent.channels.mem_channel.type = memory
 agent.channels.mem_channel.capacity = 100000
 agent.channels.mem_channel.transactionCapacity = 10000
+```
 You can confirm Hive Metastore in the following way:
+```
 grep "hive.metastore.uris" -C 2 /usr/local/service/hive/conf/hive-site.xml
+```
+```
 <property>
 <name>hive.metastore.uris</name>
 <value>thrift://172.16.32.51:7004</value>
@@ -54,7 +58,7 @@ partitioned by (continent string, country string, time string)
 clustered by (id) into 5 buckets
 stored as orc TBLPROPERTIES ('transactional'='true');
 ```
->All the following conditions must be met: it must be a table with partitions and buckets, the storage format is ORC, and `TBLPROPERTIES ('transactional'='true')` is set.
+>!All the following conditions must be met: it must be a table with partitions and buckets, the storage format is ORC, and `TBLPROPERTIES ('transactional'='true')` is set.
 3. Enable the Hive transaction.
 In the console, add the following configuration items to `hive-site.xml`.
 ```
@@ -87,7 +91,7 @@ In the console, add the following configuration items to `hive-site.xml`.
 <value>true</value>
 </property>
 ```
->After the configuration is distributed and Hive is restarted, the `hadoop-hive` log will prompt that the Metastore cannot be connected to. Please ignore this error. Because of the startup order of the processes, Metastore will be started before HiveServer2.
+>!After the configuration is distributed and Hive is restarted, the `hadoop-hive` log will prompt that the Metastore cannot be connected to. Please ignore this error. Because of the startup order of the processes, Metastore will be started before HiveServer2.
 4. Copy `hive-hcatalog-streaming-xxx.jar` of Hive to the `lib` directory of Flume.
 ```
 cp -ra /usr/local/service/hive/hcatalog/share/hcatalog/hive-hcatalog-streaming-2.3.3.jar /usr/local/service/flume/lib/
