@@ -22,7 +22,7 @@ Arq® Backup 商业授权为49.99美元每个用户，用户购买后可以在�
 
 >若您目前已经在使用 COS，请忽略1 - 2步骤。
 
-1. [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的资源。
 2. 登录 [对象存储 COS 控制台](https://console.cloud.tencent.com/cos5)，按照提示开通 COS。
 3. 在对象存储 COS 控制台中，单击左侧导航栏的【存储桶列表】，然后单击【创建存储桶】，开始创建存储桶：
 	- 名称：存储桶名称，例如 “backups”。
