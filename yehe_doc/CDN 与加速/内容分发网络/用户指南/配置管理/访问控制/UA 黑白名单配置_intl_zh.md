@@ -15,23 +15,23 @@
 ### 配置说明
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到 UA 黑白名单配置，默认情况下为关闭状态：
-![](https://main.qcloudimg.com/raw/5105eca56650c784e3e5965172619322.png)
+![](https://main.qcloudimg.com/raw/07914bd30b3d422fb4bddf3a323d92f2.png)
 关闭状态下，单击【新增规则】，可按需逐条添加黑(白)名单：
-![](https://main.qcloudimg.com/raw/74bae0674238aa3f37bc9853c823e62f.png)
+![](https://main.qcloudimg.com/raw/66d3fc72f575efaa4ae42382d8fde179.png)
 
 >!
 >1. 仅支持通配符`*`，暂时不支持其他正则表达式。
 >2. 无`*`情况下，其他字符均为完全匹配。
  
 规则添加完成后，此时整体配置为关闭状态，因此不会影响现网服务：
-![](https://main.qcloudimg.com/raw/5434406cd8f3f33635e3f095883bcfba.png)
+![](https://main.qcloudimg.com/raw/679129885ec36329178e87af671d6743.png)
 可通过单击【开启】按钮，将所配置的黑(白)名单发布至现网：
-![](https://main.qcloudimg.com/raw/0db1dcac71742fc97a4118c87620e11c.png)
+![](https://main.qcloudimg.com/raw/fd85de8e702b24e7d2eaaf8b34667c95.png)
 
 ## 配置示例
 
 若加速域名`cloud.tencent.com`的 UA 黑白名单配置如下：
-![](https://main.qcloudimg.com/raw/7ac57bc6f16087aad95c0844c6053f75.png)
+![](https://main.qcloudimg.com/raw/c7e06060bc627aab2e4939b53460951d.png)
 当 HTTP Request Header 中 User-Agent 如下时：
 
 ```
