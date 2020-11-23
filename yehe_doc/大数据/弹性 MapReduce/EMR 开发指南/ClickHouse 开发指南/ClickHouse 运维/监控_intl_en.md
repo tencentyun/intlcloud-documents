@@ -32,7 +32,7 @@ Server monitoring divides into server monitoring overview page and server monito
 ### Server monitoring overview page
 
 The server monitoring overview page displays the server monitoring metrics of the cluster. Currently, 12 aggregate metrics in four dimensions of CPU, memory, disk, and network are provided to show the overall server resource usage in the cluster. Similar to service monitoring, you can set the aggregate metrics to be displayed in **Set Metric**.
-![](https://main.qcloudimg.com/raw/9bae314630bbe124b61e106e6c30a8dd.png)
+![](https://main.qcloudimg.com/raw/a42b77cf113fec80d3d06c39bb6bc407.png)
 In addition, server monitoring provides the heat map feature that shows each server's load concerning a server metric in the specified time period. Taking memory utilization as an example, the curve above shows the memory utilization of the cluster. In the load distribution section, each small square represents a server, and the color represents the server utilization range. The deeper the color, the higher the memory utilization. Statistics are displayed in descending order, and top 3 servers with the highest memory utilization are displayed by default, making it easy for you to find the differences between servers.
 ![](https://main.qcloudimg.com/raw/601d6d0158bc8e1cc0925794c9e92077.png)
 The monitoring overview page also displays the list of all nodes in the cluster. You can filter the nodes by type, search for them by IP, or sort and display them by CPU, memory, and disk utilization. You can click the IP of a node to enter its server monitoring details page.
