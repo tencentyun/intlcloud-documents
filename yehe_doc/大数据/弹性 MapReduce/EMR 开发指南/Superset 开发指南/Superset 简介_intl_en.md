@@ -20,7 +20,7 @@ Enter `http://${master_ip}:18088` in your browser (or go to **[EMR Console](http
 
 ## Adding Database
 
-Enter the **Sources** > **Database** page and click **Filter List**.
+Enter the **Sources** > **Databases** page and click **Filter List**.
 ![](https://main.qcloudimg.com/raw/c98760953f38fc23d27abcbf5208bd83.png)
 Enter the following page and add the URI of the component to be added in SQLAlchemy URI.
 ![](https://main.qcloudimg.com/raw/57b69ecbd6f5c2ac0ca4adde380325ae.png)
