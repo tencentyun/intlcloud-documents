@@ -1,7 +1,7 @@
 ## Flume Overview
 Apache Flume is a highly available, distributed, and configurable tool/service that collects data resources such as logs and events and aggregates large amounts of such data from different sources. It is designed to collect data flows (e.g., log data) from various web servers and store them in centralized data stores like HDFS and HBase.
 
-### Flume architecture
+## Flume architecture
 A Flume event is defined as a unit of data flow. A Flume agent is a JVM process that contains the components required for completing a task. Among them, the three core ones are Source, Channel, and Sink.
 ![](https://main.qcloudimg.com/raw/886ecba4612fa557b9316b4ff74bd4e3.png)
 
@@ -51,6 +51,7 @@ bin/flume-ng agent --conf conf --conf-file example.conf --name a1 -Dflume.root.l
 ```
 
 ### Configuring a test sample
+After successful configuration, you will see the Flume agent started previously printing to the terminal.
 ```bash
 telnet localhost 44444
 Trying 127.0.0.1...
@@ -59,4 +60,4 @@ Escape character is '^]'.
 Hello world! <ENTER>
 OK
 ```
-After successful configuration, you will see the Flume agent started previously printing to the terminal.
+
