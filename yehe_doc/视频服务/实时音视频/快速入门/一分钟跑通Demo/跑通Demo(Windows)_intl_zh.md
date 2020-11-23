@@ -10,7 +10,7 @@
 - .Net Framework 4.0及以上版本，推荐使用 .Net Framework 4.0
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的实时音视频 TRTC 服务。
 
 ## 操作步骤
 <span id="step1"></span>
