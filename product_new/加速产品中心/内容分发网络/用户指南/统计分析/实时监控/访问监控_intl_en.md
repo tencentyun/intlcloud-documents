@@ -42,8 +42,8 @@ The time granularity options on the metric details page are as follows:
 + 1 day < time period ≤ 31 days: The minimum time granularity can be 5 minutes, 1 hour, or 1 day.
 + Time period > 31 days: The minimum time granularity is 1 day.
 
->
->- The data collected at a 1-minute granularity can be queried only in the new version of the console. For historical data, the minimum granularity for query is 5 minutes.
+>!
+>- Currently, data query at 1-minute statistics granularity is only supported in mainland China. The minimum granularity for historical data query is 5 minutes.
 >- The maximum time period for query is 90 days.
 
 
