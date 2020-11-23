@@ -11,7 +11,7 @@ hdfs dfs -chmod 777 /druid
 hdfs dfs -chmod 777 /druid/segments
 hdfs dfs -chmod 777 /quickstart
 ```
->If the Druid and Hadoop clusters are both self-deployed clusters, the directories need to be created on the corresponding Hadoop cluster (you also need to perform subsequent operations in the correct cluster). If the Druid and Hadoop clusters are the same cluster in the testing environment, you can perform the operations in the same cluster.
+>!If the Druid and Hadoop clusters are both self-deployed clusters, the directories need to be created on the corresponding Hadoop cluster (you also need to perform subsequent operations in the correct cluster). If the Druid and Hadoop clusters are the same cluster in the testing environment, you can perform the operations in the same cluster.
 2. Upload the testing package.
 The Druid cluster comes with a sample dataset named `Wikiticker` (located in `/usr/local/service/druid/quickstart/tutorial/wikiticker-2015-09-12-sampled.json.gz` by default). The operation of uploading the dataset in the Druid cluster to the corresponding remote Hadoop cluster **should be performed on the remote Hadoop cluster.**
 ```

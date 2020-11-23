@@ -24,10 +24,12 @@ Ingress 是允许访问到集群内 Service 的规则的集合，您可以通过
 6. 根据实际需求，设置 Ingress 参数。关键参数信息如下：
  - Ingress名称：自定义。
  - 网络类型：默认为 “公网”，请根据实际需求进行选择。
+ - IP 版本：提供 IPv4 和 IPv6 NAT64 两种版本，请根据实际需求进行选择。
  - 负载均衡器：可自动创建或使用已有 CLB。
  - 命名空间：根据实际需求进行选择。
  - 监听端口：默认为【Http:80】，请根据实际情况进行选择。
- 如果勾选【Https:443】则需绑定服务器证书，以保证访问安全。详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/5369)。
+ 如果勾选【Https:443】则需绑定服务器证书，以保证访问安全。详情请参见 [SSL 证书格式要求及格式转换说明](https://intl.cloud.tencent.com/document/product/214/5369)。如下图所示：
+  ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
  - 转发配置：根据实际需求进行设置。
 7. 单击【创建Ingress】，完成创建。
 

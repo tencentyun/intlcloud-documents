@@ -14,7 +14,6 @@ TKE supports the following cluster types:
 - CVM container cluster
     + Managed cluster (Master and Etcd are managed by TKE)
     + Independently deployed cluster (Master and Etcd are built on your own servers)
-- BM container cluster (which can be applied for by submitting a ticket)
 
 ### Managed clusters
 

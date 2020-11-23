@@ -83,7 +83,7 @@ Then, add the packaging and compiling plugins to pom.xml:
 Right-click in src>main>Java and create a Java Class. Enter the Class name (e.g., WordCountOnCos here) and add the sample code to the Class:
 ```
 import java.util.Arrays;
-import org.apache.spark.SparkConf
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;

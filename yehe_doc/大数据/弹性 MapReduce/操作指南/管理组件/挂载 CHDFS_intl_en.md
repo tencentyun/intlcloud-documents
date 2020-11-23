@@ -3,7 +3,7 @@ CHDFS is a high-performance distributed file system with standard HDFS access pr
 
 ## Directions
 ### Scenario 1. Mounting a CHDFS instance to a new cluster
->New cluster: this refers to clusters created on or after December 31, 2019. For new clusters, the default CHDFS mounting address of EMR is `/data/emr/hdfs/tmp/chdfs`.
+>?New cluster: this refers to clusters created on or after December 31, 2019. For new clusters, the default CHDFS mounting address of EMR is `/data/emr/hdfs/tmp/chdfs`.
 
 An EMR cluster is automatically adaptive to CHDFS. Create a CHDFS instance and set permissions reasonably to interconnect the CHDFS instance and EMR cluster. The configuration steps are as follows:
 1. Create a CHDFS instance in the same region as the EMR cluster.

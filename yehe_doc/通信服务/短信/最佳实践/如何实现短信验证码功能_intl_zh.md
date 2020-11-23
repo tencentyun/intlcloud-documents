@@ -2,7 +2,7 @@
 本文以使用 [云函数](https://intl.cloud.tencent.com/document/product/583) 开发一个短信验证码登录注册服务为例，帮助您了解如何实现短信验证码功能。
 
 ## 准备工作
-- 已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 企业实名认证。
+- 已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成企业实名认证，未进行实名认证的用户无法购买中国境内的资源。
 - 已 购买 短信套餐包。
 - 准备短信签名归属方资质证明文件。
  本文以使用企业营业执照作为资质证明文件为例。
