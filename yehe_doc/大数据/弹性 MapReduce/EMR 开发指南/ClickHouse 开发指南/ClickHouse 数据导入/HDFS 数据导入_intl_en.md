@@ -1,7 +1,7 @@
 ## Overview
 This document describes two methods to import HDFS data to a ClickHouse cluster suitable for scenarios with low and high data volumes respectively. **In this document, v19.16.12.49 is used as an example.**
 
->To share your thoughts on ClickHouse, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to join the ClickHouse technical exchange group.
+>?To share your thoughts on ClickHouse, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to join the ClickHouse technical exchange group.
 
 ## Directions
 
@@ -194,7 +194,7 @@ CREATE TABLE hdfs_function_table AS hdfs('hdfs://172.30.1.146:4007/clickhouse/hd
 
 - [ClickHouse Documentation - Table Engine HDFS](https://clickhouse.tech/docs/en/operations/table_engines/hdfs/)
 - [ClickHouse Documentation - Table Function hdfs](https://clickhouse.tech/docs/en/query_language/table_functions/hdfs/)
-- [How to Import Data from HDFS to ClickHouse](https://blog.csdn.net/yangzhaohui168/article/details/88583489)
+- [How to Import Data from HDFS to ClickHouse?](https://blog.csdn.net/yangzhaohui168/article/details/88583489)
 - [How to import my data from HDFS?](https://github.com/ClickHouse/ClickHouse/issues/1614)
 - [ClickHouse Documentation - JDBC Driver](https://clickhouse.tech/docs/en/interfaces/jdbc/)
 - [Summary for Writing Data to ClickHouse from Spark JDBC](https://toutiao.io/posts/m63yw89/preview)

@@ -1,5 +1,3 @@
-## Overview
-
 Combining cloud computing and community open-source technologies such as Hadoop, Hive, Spark, HBase, Presto, Flink, Druid, and ClickHouse, Tencent Cloud Elastic MapReduce (EMR) provides secure and cost-effective cloud-based pan-Hadoop big data architectures featuring high reliability and elastic scalability. A secure and reliable Hadoop cluster can be created in a matter of minutes to analyze petabytes of data stored on the data nodes in the cluster or in COS.
 
 ## Features

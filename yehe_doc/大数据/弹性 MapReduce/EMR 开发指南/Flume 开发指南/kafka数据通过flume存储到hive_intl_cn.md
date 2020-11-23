@@ -3,7 +3,7 @@
 
 ## 开发准备
 - 因为任务中需要访问腾讯云消息队列 CKafka，所以需要先创建一个 CKafka 实例，具体见 [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597)。
-- 确认您已开通腾讯云，且已创建一个 EMR 集群。创建 EMR 集群时需要在软件配置界面选择 Spark 组件。
+- 确认您已开通腾讯云，且已创建一个 EMR 集群。创建 EMR 集群时，需要在软件配置界面选择 Spark 组件。
 
 ## 在 EMR 集群使用 Kafka 工具包
 首先需要查看 CKafka 的内网 IP 与端口号。登录消息队列 CKafka 的控制台，选择您要使用的 CKafka 实例，在基本消息中查看其内网 IP 为 $kafkaIP，而端口号一般默认为9092。在 topic 管理界面新建一个 topic 为 kafka_test。
@@ -40,8 +40,12 @@ agent.sinks.hive_sink.serializer.fieldnames =id,msg
 agent.channels.mem_channel.type = memory
 agent.channels.mem_channel.capacity = 100000
 agent.channels.mem_channel.transactionCapacity = 10000
-其中hive.metastore可以通过以下方式确认
+```
+其中 hive.metastore 可以通过以下方式确认：
+```
 grep "hive.metastore.uris" -C 2 /usr/local/service/hive/conf/hive-site.xml
+```
+```
 <property>
 <name>hive.metastore.uris</name>
 <value>thrift://172.16.32.51:7004</value>
@@ -54,7 +58,7 @@ partitioned by (continent string, country string, time string)
 clustered by (id) into 5 buckets
 stored as orc TBLPROPERTIES ('transactional'='true');
 ```
->一定要是分区且分桶的表，存储为 orc 且设置 TBLPROPERTIES ('transactional'='true')，以上条件缺一不可。
+>!一定要是分区且分桶的表，存储为 orc 且设置 TBLPROPERTIES ('transactional'='true')，以上条件缺一不可。
 3. 开启 hive 事务
 在控制台给`hive-site.xml`添加以下配置项。
 ```
@@ -87,7 +91,7 @@ stored as orc TBLPROPERTIES ('transactional'='true');
 <value>true</value>
 </property>
 ```
->配置下发并重启后，在`hadoop-hive`日志中会提示 metastore 无法连接，请忽略该错误。由于进程启动顺序导致，需先启动 metastore 再启动 hiveserver2。
+>!配置下发并重启后，在`hadoop-hive`日志中会提示 metastore 无法连接，请忽略该错误。由于进程启动顺序导致，需先启动 metastore 再启动 hiveserver2。
 4. 复制 hive 的`hive-hcatalog-streaming-xxx.jar`到 flume 的 lib 目录
 ```
 cp -ra /usr/local/service/hive/hcatalog/share/hcatalog/hive-hcatalog-streaming-2.3.3.jar /usr/local/service/flume/lib/
