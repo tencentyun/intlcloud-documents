@@ -3,7 +3,7 @@ CHDFS 是标准 HDFS 访问协议和分层命名空间的高性能分布式文�
 
 ## 操作步骤
 ### 场景一：新集群挂载 CHDFS
->新集群：2019年12月31日当日及之后创建的集群，EMR 默认 CHDFS 挂载地址为`/data/emr/hdfs/tmp/chdfs`。
+>?新集群：2019年12月31日当日及之后创建的集群，EMR 默认 CHDFS 挂载地址为`/data/emr/hdfs/tmp/chdfs`。
 
 EMR 集群已自动适配 CHDFS，创建 CHDFS 并合理设置权限，使 CHDFS 与 EMR 集群网络互通，配置步骤如下：
 1. 创建与 EMR 集群同地域的 CHDFS。
