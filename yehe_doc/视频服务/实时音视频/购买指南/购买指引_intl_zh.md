@@ -1,7 +1,7 @@
 本文主要介绍如何购买实时音视频基础服务套餐包，增值服务详细计费规则请参考 [增值服务费用](https://intl.cloud.tencent.com/document/product/647/34614)。
 
 ## 前提条件
-在购买实时音视频基础服务套餐包前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在购买实时音视频（中国大陆）基础服务套餐包前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 操作步骤
 ### 介绍页购买
