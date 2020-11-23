@@ -1,6 +1,6 @@
 <style>
 table th:nth-of-type(3) {
-	width: 585px;
+	width: 586px;
 }
 </style>
 以下はCDN内部のステータスコードの定義に関する説明です。
@@ -15,6 +15,7 @@ table th:nth-of-type(3) {
 |499　　|クライアントが主動的にリンクを切断しました                   |クライアントの状態やタイムアウトの設定を確認してください。|
 |502　　|ゲートウェイエラー　　　　　　　　　　|サービスオリジンサーバーが正常であるかを確認してください。                                       |
 |503      | COSフリークエンシーコントロールを触発します                          |キャッシュのコンフィグレーション、またはCOSオリジンサーバーから返されたno-cache/no-storeを確認してください。                 |
+| 504   | ゲートウェイタイムアウト|公式ウェブサイトまでご連絡ください。 |
 |509　　|CC攻撃を触発したことでブロックされました                     |ブロックの解除については、[当社に連絡](https://intl.cloud.tencent.com/support)してください。　或いは、[チケットを提出](https://console.cloud.tencent.com/workorder/category)してください。                             |
 |514　　|IPアクセス頻度制限を超えています　　　　　　| CDNコンソールにおけるIPアクセスのコンフィグレーションを確認してください。                                |
 |531　　|HTTPSによるback to originドメイン名解析のリクエストにエラーがあります            |オリジンサーバーのドメイン名解析のコンフィグレーションを確認してください。                                       |
@@ -24,9 +25,9 @@ table th:nth-of-type(3) {
 |538　　|HTTPSによるSSLハンドシェイクのリクエストが失敗しました                    |オリジンサーバーのプロトコルとアルゴリズムのコンパチビリティを確認してください。                                 |
 |539　　|HTTPS による証明書検証のリクエストが失敗しました                |オリジンサーバーの証明書が正常にコンフィグレーションされているかどうかを確認してください。（期限切れになっているかどうか、証明書リンクが揃っているかどうか。）       |
 |540　　|HTTPSによる証明書のドメイン名検証のリクエストが通っていません                |オリジンサーバーの証明書が正常にコンフィグレーションされているかどうかをチェックしてください。　|
-|562　　|HTTPS　接続確立のリクエストが失敗しました                    |[当社に連絡](https://intl.cloud.tencent.com/support) してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して調査してください。   |
-|563　　|HTTPSによる接続リクエストがタイムアウトになりました                   |[当社に連絡](https://intl.cloud.tencent.com/support) してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して調査してください。   |
-|564　　|HTTPSによるback to originのリクエストが失敗しました　　　|HTTP　back to origin方式にコンフィグレーションした場合は、オリジンサーバーの負荷及び帯域幅の使用率、またはオリジンサーバーのアクセスコントロールを確認してください。</br>プロトコルフォロー方式にコンフィグレーションした場合は、オリジンサーバー443のポート状態及び証明書のコンフィグレーションをチェックしてください。</br>オリジンサーバーのチェックに異常がない場合は、[当社に連絡](https://intl.cloud.tencent.com/support)してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category) して調査してください。|
+|562　　|HTTPS　接続確立のリクエストが失敗しました                    |[当社に連絡](https://intl.cloud.tencent.com/contact-sales) してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して調査してください。   |
+|563　　|HTTPSによる接続リクエストがタイムアウトになりました                   |[当社に連絡](https://intl.cloud.tencent.com/contact-sales) してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して調査してください。   |
+|564　　|HTTPSによるback to originのリクエストが失敗しました　　　|HTTP　back to origin方式にコンフィグレーションした場合は、オリジンサーバーの負荷及び帯域幅の使用率、またはオリジンサーバーのアクセスコントロールを確認してください。</br>プロトコルフォロー方式にコンフィグレーションした場合は、オリジンサーバー443のポート状態及び証明書のコンフィグレーションをチェックしてください。</br>オリジンサーバーのチェックに異常がない場合は、[当社に連絡](https://intl.cloud.tencent.com/contact-sales)してX-NWS-LOG-UUID情報を提供するか、[チケットを提出](https://console.cloud.tencent.com/workorder/category) して調査してください。|
 
 
 
