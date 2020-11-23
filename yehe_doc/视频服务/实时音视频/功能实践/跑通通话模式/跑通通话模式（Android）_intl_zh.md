@@ -1,6 +1,6 @@
 ## 适用场景
 TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 [直播模式](https://intl.cloud.tencent.com/document/product/647/35108)。
-通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多50人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
+通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多30人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
 
 ## 原理解析
 TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口机”和“代理机”：
@@ -16,7 +16,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 您可以登录 [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) 获取本文档相关的示例代码。
 ![](https://main.qcloudimg.com/raw/3ef83a68399c22ba0c1fbb079e3dfaf3.png)
 
->如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
+>?如果访问 Github 较慢，您也可以直接下载 [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)。
 
 ## 操作步骤
 <span id="step1"> </span>
@@ -134,7 +134,7 @@ public void onEnterRoom(long result) {
     }
 }
 ```
-> 
+> !
 >- 如果进房失败，SDK 同时还会回调`onError`事件，并返回参数`errCode`（[错误码](https://intl.cloud.tencent.com/document/product/647/35130)）、`errMsg`（错误原因）以及`extraInfo`（保留参数）。
 >- 如果已在某一个房间中，则必须先调用`exitRoom()`退出当前房间，才能进入下一个房间。
 
