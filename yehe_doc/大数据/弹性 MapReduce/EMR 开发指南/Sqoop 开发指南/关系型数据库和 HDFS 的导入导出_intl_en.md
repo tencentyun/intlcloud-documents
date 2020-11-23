@@ -103,7 +103,7 @@ mysql> exit;
 ```
 Run the sqoop-export command to export the data imported into HDFS in the previous step into MySQL:
 ```
-[hadoop@172 sqoop]$ bin/sqoop-export --connect jdbc:mysql://172.16.16.42/test --username 
+[hadoop@172 sqoop]$ bin/sqoop-export --connect jdbc:mysql://$mysqlIP/test --username 
 root -P --table sqoop_test_back --export-dir /sqoop
 ```
 The parameters are similar to those for sqoop-import, except --export-dir, which is the path of the data in HDFS. You also need to enter the password after pressing Enter.
