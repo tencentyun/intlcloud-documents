@@ -59,7 +59,7 @@ Click **Origin Configuration** and you will see the ""Range GETs Configuration""
 If your primary origin server is an external one, you can add a hot backup origin server. All origin-pull requests will be forwarded to the primary origin server first. If a 4XX or 5XX error code is returned or an exception such as connection timeout or protocol incompatibility occurs, requests will be forwarded to the hot backup origin server to pull resources, ensuring high availability of origin-pull.
 
 ### Does CDN support .top domain names?
-No. Currently, CDN does not support domain names suffixed with .pw or .top.
+Currently, CDN already supports domain names suffixed with .pw or .top.
 
 ### Is there a size limit for a file uploaded to CDN?
 Yes. The maximum size of a file that can be uploaded to CDN is 32 MB by default.
