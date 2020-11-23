@@ -31,7 +31,7 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
  - 域名：qcloud.rtc.qq.com
 
 ## 前提条件
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的资源。
 
 ## 操作步骤
 <span id="step1"></span>
