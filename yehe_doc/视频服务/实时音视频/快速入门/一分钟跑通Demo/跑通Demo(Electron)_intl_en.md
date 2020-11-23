@@ -17,7 +17,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 ### Step 2. Download the SDK and demo source code
 
-1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)**), and download the relevant SDK and supporting demo source code.
+1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)**), and download the relevant SDK and supporting demo source code.
     ![img](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
@@ -30,8 +30,8 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 3. Set the relevant parameters in the `gen-test-user-sig.js` file:
 
-    -   SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
-    -   SECRETKEY: it is an empty string by default. Please replace it with your real key information.
+	-   SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
+-   SECRETKEY: it is an empty string by default. Please replace it with your real key information.
     
 4. Return to the TRTC Console and click **Pasted and Next**.
 
@@ -94,7 +94,6 @@ $ npm install
 
 
 3. After the npm dependent libraries are all installed, run the following command in the command line window to run the demo.
-
     ```shell
     $ npm run start  # During the first run, the UI will appear in the window after a while
     ```
