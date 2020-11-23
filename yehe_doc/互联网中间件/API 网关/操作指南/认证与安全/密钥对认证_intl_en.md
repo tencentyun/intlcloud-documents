@@ -64,4 +64,4 @@ The headers in `Authorization` are the ones involved in signature calculation. Y
 ### Signature content generation
 When arranging the content, please pay extra attention to the colon and space after the header name. If they are missing, the verification may fail. `SecretId`, `SecretKey`, URL, and `Host` should be replaced with your real information. 
 
->For signature demos for common programming languages, please see [Developer Guide - Generating Signatures in Multiple Programming Languages](https://intl.cloud.tencent.com/document/product/628/35260).
+>?For signature demos for common programming languages, please see [Developer Guide - Generating Signatures in Multiple Programming Languages](https://intl.cloud.tencent.com/document/product/628/35260).
