@@ -13,7 +13,7 @@ Spark 是基于内存计算的大数据并行计算框架。Spark 基于内存�
 
 首先下载并安装 Maven，配置 Maven 的环境变量。如果您使用 IDE，请在 IDE 中设置 Maven 相关配置。
 
-###	 新建一个 Maven 工程
+### 新建一个 Maven 工程
 
 在本地 shell 下进入您想要新建工程的目录，例如`D://mavenWorkplace`中，输入如下命令新建一个 Maven 工程：
 ```
@@ -81,7 +81,7 @@ simple
 在 src>main>Java 下右键新建一个Java Class，输入您的 Class 名，这里使用 WordCountOnCos，在 Class 添加样例代码：
 ```
 import java.util.Arrays;
-import org.apache.spark.SparkConf
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
