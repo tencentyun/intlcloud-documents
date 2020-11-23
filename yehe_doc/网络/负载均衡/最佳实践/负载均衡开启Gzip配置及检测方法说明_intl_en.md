@@ -11,7 +11,7 @@ gzip on;
 ```
 application/atom+xml application/javascript application/json application/rss+xml application/vnd.ms-fontobject application/x-font-ttf application/x-web-app-manifest+json application/xhtml+xml application/xml font/opentype image/svg+xml image/x-icon text/css text/plain text/x-component;
 ```
->You must enable Gzip in sync for the above file types in the business software of CVM instances of CLB.
+>!You must enable Gzip in sync for the above file types in the business software of CVM instances of CLB.
 - **The client requests must carry the compression request identifier**
 To enable Gzip compression, the client requests must carry the following identifier:
 ```
