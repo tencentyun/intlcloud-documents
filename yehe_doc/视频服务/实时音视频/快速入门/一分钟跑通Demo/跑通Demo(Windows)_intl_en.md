@@ -21,7 +21,7 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows)** to redirect to GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip?_ga=1.195966252.185644906.1567570704)**) and download the relevant SDK and supporting demo source code.
- 
+ ![](https://main.qcloudimg.com/raw/73b9bfa89b42acbc166074a29f20be47.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
@@ -45,7 +45,6 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/f28b968c02e8f26fe02c7ff6907239cb.png">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
