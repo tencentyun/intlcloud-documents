@@ -17,9 +17,7 @@
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 鼠标移动至对应卡片，下载相关 SDK 及配套的 Demo 源码。
  - **iOS：**单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】）
-  ![](https://main.qcloudimg.com/raw/716b5af9207ad2b11835dec4e2d15da0.png)
  - **Mac：**单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】）
-  ![](https://main.qcloudimg.com/raw/65b9538a23789b1a728674ea3646062c.png)
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
 <span id="step3"></span>
@@ -41,7 +39,6 @@
 3. 设置`GenerateTestUserSig.h`文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -63,15 +60,11 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
   - 升级：
-   ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
   - 切换回老版本算法 ECDSA-SHA256：
-   ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
   - 切换为新版本算法 HMAC-SHA256：
-   ![](https://main.qcloudimg.com/raw/b0412153935704abc9e286868ad8a916.png)
 
 ### 2. 两台手机同时运行 Demo，为什么看不到彼此的画面？
 请确保两台手机在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个终端同时使用。
-![](https://main.qcloudimg.com/raw/c7b1589e1a637cf502c6728f3c3c4f99.png)
 
 ### 3. 防火墙有什么限制？
 由于 SDK 使用 UDP 协议进行音视频传输，所以对 UDP 有拦截的办公网络下无法使用，如遇到类似问题，请参考文档：[应对公司防火墙限制](https://intl.cloud.tencent.com/document/product/647/35164)。
