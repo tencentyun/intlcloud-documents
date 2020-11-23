@@ -5,8 +5,8 @@ This API is used to search for log content by specified criteria.
 ## Request
 #### Sample request
 
-```
-GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx,xxxx&start_time=2017-08-22%2010%3A10%3A10&end_time=2017-08-23%2010%3A10%3A10&query_string=&limit=10&context= HTTP/1.1
+```plaintext
+GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx,xxxx&start_time=2017-08-22+10%3A10%3A10&end_time=2017-08-23+10%3A10%3A10&query_string=&limit=10&context= HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 
