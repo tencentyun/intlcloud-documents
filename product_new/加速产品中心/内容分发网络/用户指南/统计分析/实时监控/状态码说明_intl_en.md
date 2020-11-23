@@ -15,6 +15,7 @@ The table below explains the internal status codes of CDN.
 | 499    | The client closes the connection                  | Check the client status and timeout configuration.                                |
 | 502    | Gateway Error                             | Check whether the business origin server is normal.                                       |
 | 503    | COS frequency control is triggered                          | Check the cache configuration or whether the COS origin server returns no-cache/no-store.                 |
+| 504    | Gateway Timeout | Please contact the official website. |
 | 509    | Blocked due to CC attack                    | [Contact Us](https://intl.cloud.tencent.com/contact-sales) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to unblock it.                             |
 | 514    | IP access frequency exceeds the limit                       | Check the IP access frequency control configuration in the CDN Console.                                 |
 | 531    | Error resolving the origin-pull domain name in the HTTP request          | Check the domain name resolution configuration of the origin server.                                       |
