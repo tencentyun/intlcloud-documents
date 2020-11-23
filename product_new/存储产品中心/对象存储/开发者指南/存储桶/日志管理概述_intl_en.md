@@ -34,13 +34,13 @@ The log is generated every 5 minutes, one record is a row, each record contains 
 | 21 | storageClass | Storage class | STANDARD, STANDARD_IA, ARCHIVE |
 | 22 | accountId | Bucket owner ID | 100000000001 |
 | 23 | resTurnAroundTime | Time used by the request server (in milliseconds, i.e., the time between the first byte of the response and the last byte of the request) | 4295 |
-| 24 | requester | Visitor | Primary account id: sub-account id, if it is anonymous access, shown as `-`.  |
+| 24 | requester | Visitor | Primary account ID: sub-account ID, if it is anonymous access, shown as `-`.  |
 | 25 | requestId | Request ID | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=  |
 | 26 | objectSize | Object size in bytes | 808, if you use Multipart Upload, the objectSize field will only be displayed when the upload is completed. This field displays `-` during each Multipart Upload. |
 | 27 | versionId | Object version ID | Random string |
-| 29 | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
-| 30 | referer | Origin server address | `*.example.com` or 111.111.111.1 |
-| 31       | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
+| 28 | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
+| 29 | referer | Origin server address | `*.example.com` or 111.111.111.1 |
+| 30 | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
 > - Currently, COS offers the logging feature only in the Beijing, Shanghai, Guangzhou, Nanjing, Chongqing, Chengdu, Hong Kong (China), Singapore, Toronto, Silicon Valley, and Mumbai regions.
