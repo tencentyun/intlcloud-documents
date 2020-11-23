@@ -5,7 +5,7 @@
 本文以 A 公司向国内会员用户发送春节祝福短信为例，帮助企业用户了解如何快速发送节日问候短信。
 
 ## 准备工作
-- [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 企业实名认证。
+- [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成企业实名认证，未进行实名认证的用户无法购买中国境内的资源。
 - 已 [购买](https://intl.cloud.tencent.com/document/product/382/35450) 短信套餐包。
 - 准备短信签名归属方资质证明文件。
  本文以使用企业营业执照作为资质证明文件为例。
