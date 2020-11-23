@@ -1,5 +1,6 @@
 对于一个启用了 Kerberos 的正式生产系统，还需要考虑 KDC 的高可用。而 Kerberos 服务是支持配置为主备模式的，数据同步是通过 kprop 服务将主节点的数据同步到备节点。在购买了腾讯云 EMR 高可用安全集群后，Kerberos 默认是高可用的，用户无需任何配置。
 
+
 本文主要介绍 Kerberos 服务高可用的相关配置和使用。
 
 ## 前提条件
@@ -9,7 +10,7 @@
 ## KDC 高可用配置介绍
 
 配置`/etc/krb5.conf`文件，设置如下：
->示例中配置了两个 KDC 地址，active kdc 和 backup kdc，这样能保证当其中任意一个 KDC 服务异常时，仍可以对集群提供正常的 KDC 服务。
+>!示例中配置了两个 KDC 地址，active kdc 和 backup kdc，这样能保证当其中任意一个 KDC 服务异常时，仍可以对集群提供正常的 KDC 服务。
 >
 ```
 [libdefaults]
