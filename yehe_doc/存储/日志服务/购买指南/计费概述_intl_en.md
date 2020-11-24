@@ -150,7 +150,7 @@ Company A’s website receives 100 million requests per day, and each request pr
       <td>Service request</td>
       <td>Loglistener to used to upload logs in batches, producing 100,000 upload requests</td>
       <td>100,000 requests</td>
-      <td>0.027 USD/GB/day</td>
+      <td>0.027 USD/million requests/day</td>
       <td>0.0027 USD/day</td>
    </tr>
    <tr>
