@@ -44,7 +44,7 @@ The billing cycle and sequence of COS fees are as detailed below:
    <tr>
       <td nowrap="nowrap">Storage usage fees</td>
       <td rowspan="3">Monthly</td>
-      <td rowspan="3">The fees for one month are calculated and billed on the 3rd to 5th day of the following month</td>
+      <td rowspan="3">The fees for one month are deducted on the 1st day of the following month, and billed on the 3rd to 5th day of the following month</td>
       <td nowrap="nowrap">Free tier > Pay-as-you-go</td>
    </tr>
    <tr>
