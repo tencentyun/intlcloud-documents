@@ -1,7 +1,7 @@
 
 >!
 >- Tencent Cloud Log Service (CLS) has been commercially available starting from 00:00:00 on August 03, 2020. CLS offers a limited **Free Tier** for each region. For details, see [Free Tier](https://intl.cloud.tencent.com/document/product/614/37889).
->- For billing rules and standards, see [Billing Mode](https://intl.cloud.tencent.com/document/product/614/37509#.E8.AE.A1.E8.B4.B9 .E6.96.B9.E5.BC.8F) and other sections below. To view your current resource usage, please go to the [CLS Console](https://console.cloud.tencent.com/cls/overview?region=ap -guangzhou).
+>- For billing rules and standards, see [Billing Mode](https://intl.cloud.tencent.com/document/product/614/37509#.E8.AE.A1.E8.B4.B9 .E6.96.B9.E5.BC.8F) and other sections below. To view your current resource usage, please go to the [CLS Console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou).
 
 
 
