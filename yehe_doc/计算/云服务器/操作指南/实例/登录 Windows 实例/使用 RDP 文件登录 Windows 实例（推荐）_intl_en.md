@@ -10,7 +10,7 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
 - You must have the admin account and password for logging in to a Windows instance remotely.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
  - If you forgot your password, please [reset the instance password](https://intl.cloud.tencent.com/document/product/213/16566).
-- You have purchased public IPs for your CVM instance and port 3389 is open.
+- You have purchased public IPs for your CVM instance and port 3389 is open. (this port is open by default for a CVM purchased with quick configuration).
 
 ## Directions
 
@@ -20,6 +20,7 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. In the **Log into Windows instance** pop-up window, select **Log in with RDP file** and click **Download RDP file** to download the RDP file to your local computer.
 >?If you have changed the remote login port, append the IP address with `:port` in the RDP file.
+>
 ![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
 4. Double-click the downloaded RDP file, enter the password, and click **OK** to remotely connect to your Windows CVM.
  - If you use a system default password to log in to the instance, you can obtain the password at the [Message Center](https://console.cloud.tencent.com/message).
@@ -27,7 +28,7 @@ You can log in to your CVMs from Windows, Linux, and MacOS using RDP.
 
 ### Logging in to your CVM on Linux using RDP
 
-> We recommend you use rdesktop as the remote desktop client. For more information, see the [official introduction to rdesktop](http://www.rdesktop.org/).
+>? We recommend you use rdesktop as the remote desktop client. For more information, see the [official introduction to rdesktop](http://www.rdesktop.org/).
 >
 1. Run the following command to check whether rdesktop has been installed.
 ```
@@ -49,7 +50,7 @@ make
 make install
 ```
 4. <span id="step04">Run the following command to connect to the remote Windows instance.</span>
-> Replace the parameters in the example with your own parameters.
+>? Replace the parameters in the example with your own parameters.
 >
 ```
 rdesktop -u Administrator -p <your-password> <hostname or IP address>
@@ -61,8 +62,8 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
  
 ### Logging in to your CVM on MacOS using RDP
 
->
->- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client.
+>?
+>- The following operations use Microsoft Remote Desktop for Mac as an example. Microsoft stopped providing a link to download the Remote Desktop client in 2017. Currently, its subsidiary HockeyApp is responsible for releasing the beta client.Go to [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac) to download a Beta version.
 >- The following operations use a CVM on Windows Server 2012 R2 as an example.
 >
 1. Download and install Microsoft Remote Desktop for Mac on your local computer.
