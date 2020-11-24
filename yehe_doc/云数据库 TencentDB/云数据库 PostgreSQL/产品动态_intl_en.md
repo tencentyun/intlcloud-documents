@@ -40,8 +40,6 @@
 <td>2020-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/409/38839" target="_blank">Tag Overview</a></td>
 </tr>
-</tr>
-<tbody><tr>
 </tbody></table>
 
 ## July 2020
