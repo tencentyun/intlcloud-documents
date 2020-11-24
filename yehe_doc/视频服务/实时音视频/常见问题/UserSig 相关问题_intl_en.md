@@ -82,10 +82,10 @@ If your `SDKAppID` was created before July 19, 2019, you can continue to use the
 
 | Programming Language | Signature Algorithm | Download Link |
 |:------:|:----------:|:--------------------------------------------------------:|
-| Java | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-java)|
-| C++ | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api)|
-| Go | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-golang)|
-| PHP | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-php)|
-| Node.js | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-node)|
-| C# | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-cs)|
-| Python | ECDSA-SHA256 | [GitHub](https://github.com/tencentyun/tls-sig-api-python)|
+| Java | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-java)|
+| C++ | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api)|
+| GO | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-golang)|
+| PHP | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-php)|
+| Nodejs | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-node)|
+| C# | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-cs)|
+| Python | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-python)|
