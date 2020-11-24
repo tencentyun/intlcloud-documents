@@ -43,7 +43,7 @@ Request fees include the fees incurred by **user requests** and **backend reques
 
 1. Both successful and failed requests are billable.
 2. When calculating request fees, the minimum counting unit for the number of requests is 10,000. Therefore, even if the monthly accumulated requests is less than 10,000, you will still be billed for 10,000 requests, regardless of request success or failure.
-3. Data cannot be read or downloaded in the ARCHIVE and DEEP ARCHIVE storage classes. You will be billed for objects restored from ARCHIVE to STANDARD at STANDARD rates, and for objects restored from DEEP ARCHIVE at DEEP ARCHIVE rates.
+3. Data cannot be read or downloaded in the ARCHIVE and DEEP ARCHIVE storage classes. You will be billed for objects restored from ARCHIVE to STANDARD at STANDARD rates, and for objects restored from DEEP ARCHIVE to STANDARD at DEEP ARCHIVE rates.
 4. You may also be billed by the number of your requests to retrieve data from DEEP ARCHIVE.
 
 <span id="jf3"></span>
