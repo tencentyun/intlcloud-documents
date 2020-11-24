@@ -35,7 +35,7 @@
     			<td>Billing limits:<br>An object stored for less than 90 days is calculated as 90 days.<br>An object smaller than 64 KB is calculated as 64 KB.<br>For more information on DEEP ARCHIVE billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
     </tr>
      <tr>
-        <td rowspan="3">Bucket</td>
+        <td rowspan="4">Bucket</td>
     			<td>Limits</td>
     			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. The name contains 1-50 characters that can only be English lowercase letters [a-z], numbers [0-9], or a combination of them with underscores "-".</td>
      </tr>
@@ -45,8 +45,12 @@
     		</tr>
     			<td> Number of objects</td>
     			<td> For each bucket, there is no limit on the number of objects.</td>
+	        <tr>
+    			<td> Bucket tags</td>
+    			<td>You can set up to 50 different tags on one bucket.</td>
+    		</tr>
     		<tr>
-    			<td rowspan="4">Object</td>
+    			<td rowspan="5">Object</td>
     			<td>Limits</td>
 					<td >An object key should be between 1 byte and 850 bytes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a></td>
     		</tr>
@@ -62,6 +66,10 @@
     			<td>Batch Deletion</td>
     			<td>Up to 1,000 objects can be deleted in a batch operation via API/SDK.</td>
     		</tr>
+	        <tr>
+    			<td>Object tags</td>
+    			<td>You can set up to 10 different tags on one object.</td>
+		</tr>	
     		 <tr>
     			<td >Access policy</td>
     			<td >Number of polices</td>
