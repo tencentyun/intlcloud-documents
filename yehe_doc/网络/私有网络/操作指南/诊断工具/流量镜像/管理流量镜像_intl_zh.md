@@ -4,7 +4,7 @@
 创建流量镜像后，默认开启流量镜像任务。您可以参考以下步骤关闭以及再次开启流量镜像。
 1. 请使用通过 [工单申请](https://console.cloud.tencent.com/workorder/category) 获取的链接，登录流量镜像控制台，在顶部导航栏选择流量镜像的地域。
 2. 在流量镜像列表中目标流量镜像右侧**启用采集**列下，关闭或开启流量镜像。
-![](https://main.qcloudimg.com/raw/4bb078b770da881c655e1568ab0ac5f4.png)
+![](https://main.qcloudimg.com/raw/3e902622dc355514fedad0c1fed11c53.png)
 
  <span id="modify" ></span>
 ## 修改流量镜像
@@ -15,12 +15,11 @@
    + **编辑采集流量**
     1. 在采集流量模块右上角单击【编辑】。
     2. 在弹出的“编辑采集流量”窗口中，修改**采集范围**、 **采集类型** 和 **流量过滤** 等信息，完成后单击【确定】。
-   ![](https://main.qcloudimg.com/raw/b0bee50172b5f36823a09e028fb82509.png)
+   ![](https://main.qcloudimg.com/raw/d934b4b16f20133a368e90b75c59eb5c.png)
    + **编辑接收 IP**
     1. 在接收 IP 模块右上角单击【编辑】。
     2. 在弹出的【编辑接收 IP】窗口中，修改**接收 IP**和 **均衡方式**，完成后单击【确认】。
-       ![](https://main.qcloudimg.com/raw/d63d19f5680390ec606d5f9efcaad2de.png)
-       
+       ![](https://main.qcloudimg.com/raw/eda9b1d333569346ce7434321a8311c1.png)
 
 <span id="add" ></span>
 ## 添加标签
@@ -31,14 +30,14 @@
    1. 在**标签键**列输入标签键。您也可以在下拉列表中选择已创建的标签键。
    2. 在**标签值**列输入标签值。
      >? 标签值可为空，一个标签键下可以创建多个标签值。
-      
+   
    3. （可选）若需创建多个标签，请单击【添加】并编辑**标签键**和**标签值**。
    4. 完成添加后，单击【确定】。
 
 ## 查找流量镜像
 
 1. 在流量镜像页面右上角单击<img src="https://main.qcloudimg.com/raw/6ca6880fc850d1ec41695ec7c1714df7.png" style="width:18px;margin:-4px 0 ;"/>，单击选择过滤属性。系统支持如下3种过滤属性。
-![](https://main.qcloudimg.com/raw/2c5dc8eb30c95d3a707919a9b858495a.png)
+![](https://main.qcloudimg.com/raw/38d82a5db01a054c6321765e26f27fae.png)
 2. 在编辑框中输入属性值，并单击<img src="https://main.qcloudimg.com/raw/6ca6880fc850d1ec41695ec7c1714df7.png" style="width:18px;margin:-4px 0 ;"/>。
  >? 多个属性值用“ | ”隔开。
 
