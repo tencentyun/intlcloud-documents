@@ -25,7 +25,8 @@ The test result shows the access latency for each domain name and whether the ne
  - If the ping test shows no packet loss or high latency, please execute [step 2](#CheckNetworkLink_step2).
 2. <span id="CheckNetworkLink_step2">Use the `dig/nslookup` command to check whether the problem is caused by DNS resolution. </span>
 You can also access the page directly with the public network IP to check whether DNS has caused access latency.
-
+- If DNS has an exception, check the DNS resolution.
+- If DNS is normal, please [check the server](#CheckServer).
 <span id="CheckServer"></span>
 ### Check the server
 
