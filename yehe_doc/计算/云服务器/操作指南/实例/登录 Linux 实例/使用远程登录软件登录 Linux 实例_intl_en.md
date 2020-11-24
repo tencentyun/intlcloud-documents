@@ -48,7 +48,7 @@ Download both putty.exe and puttygen.exe. To download PuTTY, [click here](https:
 3. Click **Load**, select and access the path where the downloaded private key is saved, as shown below:
 For example, select and open the private key file `david`.
 ![](https://main.qcloudimg.com/raw/0110ba722331fb2892a8e6822ec3f709.png)
-4. <span id="Step4"></span>In the **PuTTY Key Generator** window, enter the key name and the encrypted private key password, and click **Save private key**, as shown below:
+4. <span id="Step4"></span>In the **PuTTY Key Generator** window, enter the key name and the encrypted private key password (optional), and click **Save private key**, as shown below:
 ![](https://main.qcloudimg.com/raw/58a250d3f3d1b78eff3edaab64cd01c0.png)
 5. In the pop-up window, select the path where the key will be saved. In the **File name** field, enter “Key Name.ppk” and click **Save**. For example, save the private key file `david` as `david.ppk`, as shown below:
 ![](https://main.qcloudimg.com/raw/44df54ca77069356a26c51e2a4db7643.png)
