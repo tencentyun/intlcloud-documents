@@ -285,4 +285,4 @@ HLS 支持最长5分钟的断点续录，可以做到“一场直播（或一堂
 - [iOS 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
 - [Android 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 
->! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 超级播放器（Player+）、[移动直播（MLVB）](https://cloud.tencent.com/product/mlvb) 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
+>! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 超级播放器（Player+）、[移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
