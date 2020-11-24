@@ -73,6 +73,7 @@ done
 | fs.cosn.<br>server-side-encryption.algorithm | Specifies the COS server-side encryption algorithm. Valid values: SSE-C and SSE-COS. This parameter is left empty by default. | None | No |
 |    fs.cosn.<br>server-side-encryption.key    | Specifies the required SSE-C key if the SSE-C server encryption algorithm is used.<br>This parameter takes the form of a Base64-encoded AES-256 key, and is left empty by default. |                              None                              |   No   |
 | fs.cosn.<br>crc64.checksum.enabled | Indicates whether to enable CRC64 check. It is disabled by default, which means that you can’t run the `hadoop fs -checksum` command <br>to get the CRC64 checksum of a file. | false | No |
+|fs.cosn.<br>crc32c.checksum.enabled | Indicates whether to enable CRC32C check. It is not enabled by default, meaning that you cannot obtain the CRC32C checksum of the object by running `hadoop fs -checksum`. CRC32C and CRC64 check cannot be enabled at the same time. | false | No |
 | fs.cosn.traffic.limit | Specifies the limit on upload bandwidth (unit: bits/s). Value range: 819200-838860800. Default: -1, meaning no limit. | None | No | 
 
 
