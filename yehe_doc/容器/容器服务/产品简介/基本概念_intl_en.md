@@ -76,7 +76,7 @@ You can set multiple namespaces in a Kubernetes cluster. Each namespace is an in
 </tr>
 <tr>
 <td>Job</td>
-<td>A Job workload creates one or more pods and ensures that these pods run according to a running rule until running is terminated.</td>
+<td>A Job creates one or multiple pods and ensure that these pods run according to the rules until they are terminated.</td>
 </tr>
 <tr>
 <td>CronJob</td>
