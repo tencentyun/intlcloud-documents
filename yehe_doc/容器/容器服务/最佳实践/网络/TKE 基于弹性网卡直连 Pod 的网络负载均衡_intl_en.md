@@ -66,7 +66,7 @@ For first-time activation and deployment of services in the cluster, the relevan
 | 1 | 400 | 50 | 7562.615 | 1028.75 | 335.674 | 95.56% |
 
 The following figure shows the comparison:
-![](https://main.qcloudimg.com/raw/db8eaca82632a61fe34080543df741e4.png)
+![](https://main.qcloudimg.com/raw/3dac2a6d2b263f60f80f8a4b64ea2184.png)
 In addition to control plane performance optimization, the CLB can directly access the pods of the container network, which is the integral part of component business capabilities. This not only prevents the loss of NAT forwarding performance, but also eliminates the impact of NAT forwarding on the business features in the cluster. However, the support for optimal access to the container network remains unavailable when the project is launched.
 The new mode integrates the feature that allows pods to have an ENI entry under the cluster CNI network mode in order to implement direct access to the CLB. CCN solutions are already available for implementing direct CLB backend access to the container network.
 
@@ -122,7 +122,7 @@ The access layer components will check the integrity of these resources during l
 Direct connection and NodePorts are the access layer solutions for service applications. In fact, the workloads deployed by users are the ultimate workers, and therefore the capabilities of user workloads directly determine the QPS and other metrics of services.
 For these two access-layer solutions, we performed some comparative tests on network link latency under low workload pressure. The latency of direct connection on the network link of the access layer can be reduced by 10%, and traffic in the VPC network was greatly reduced. During the tests, the cluster size was gradually increased from 20 nodes to 80 nodes, and the wrk tool was used to test the network latency of the cluster. The comparison of QPS and network latency between direct connection and NodePorts is shown in the following figure:
 
-![](https://main.qcloudimg.com/raw/e50da9c8402059dccf76dadd517e853c.png)
+![](https://main.qcloudimg.com/raw/5c7ae9dbab232a23e9d09d298849d574.png)
 
 ### KubeProxy design ideas
 `KubeProxy` has some disadvantages, but based on the various features of CLBs and VPC networks, we have a more localized access-layer solution. `KubeProxy` offers a universal and fault-tolerant design for the cluster access layer. It is basically applicable to clusters in all business scenarios. As an official component, this design is very appropriate.
