@@ -7,73 +7,117 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 - If your application scenario is mainly in the education sector, the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution is recommended for the teacher end, which is more stable and supports two-channel big/small video images, more flexible screen sharing schemes, and more powerful recovery capabilities on poor network connections.
 
 
-<table><tr>
-<th>OS</th><thwidth="22%">Browser</th><th>Minimum Browser<br>Version Requirement</th><thwidth="16%">Receipt (Playback)</th><thwidth="16%">Sending (Mic-on)</th><th>Screen Sharing</th>
+<table>
+<thead>
+<tr>
+<th width="15%">OS</th>
+<th width="24%">Browser</th>
+<th>Minimum Browser<br>Version Requirement</th>
+<th>Receipt (Playback)</th>
+<th>Sending (Mic-on)</th>
+<th>Screen Sharing</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mac OS</td>
+<td>Safari (desktop)</td>
+<td>11+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported (on Chrome 72+)</td>
 </tr><tr>
-	<td>MacOS</td>
-	<td>Safari (desktop)</td>
-	<td>11+</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Not supported</td>
+<td>Mac OS</td>
+<td>Chrome (desktop)</td>
+<td>56+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported (on Chrome 72+)</td>
 </tr><tr>
-	<td>Mac OS</td>
-	<td>Chrome (desktop)</td>
-	<td>56+</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Supported (on Chrome 72+)</td>
+<td>Mac OS</td>
+<td>Firefox (desktop)</td>
+<td>56+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported (on Chrome 72+)</td>
 </tr><tr>
-	<td>Windows</td>
-	<td>Chrome (desktop)</td>
-	<td>56+</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Supported (on Chrome 72+)</td>
+<td>Mac OS</td>
+<td>Edge (desktop)</td>
+<td>80+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
 </tr><tr>
-	<td>Windows</td>
-	<td>QQ browser (desktop)</td>
-	<td>10.4</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Not supported</td>
+<td>Windows</td>
+<td>Chrome (desktop)</td>
+<td>56+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported (on Chrome 72+)</td>
 </tr><tr>
-<td>iOS</td>
-	<td>Safari (mobile)</td>
-	<td>11.1.2</td>
-	<td>Supported</td>
-	<td>Supported</td>
-	<td>Not supported</td>
+<td>Windows</td>
+<td>QQ browser (desktop)</td>
+<td>10.4+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Not supported</td>
 </tr><tr>
-	<td>iOS</td>
-	<td>WeChat embedded browser</td>
-	<td>12.1.4</td>
-	<td>Supported</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
+<td>Windows</td>
+<td> Firefox (desktop)</td>
+<td>56+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported (Firefox 66+)</td>
 </tr><tr>
-	<td>Android</td>
-	<td>QQ browser (mobile)</td>
-	<td>-</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
+<td>Windows</td>
+<td>Edge (desktop)</td>
+<td>80+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Supported</td>
 </tr><tr>
-	<td>Android</td>
-	<td>UC browser (mobile)</td>
-	<td>-</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
+<td>iOS 11.1.2+</td>
+<td>Safari (mobile)</td>
+<td>11+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Not supported</td>
 </tr><tr>
-	<td>Android</td>
-	<td>WeChat embedded browser</td>
-	<td>-</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
-	<td>Not supported</td>
-</tr></table>
+<td>iOS 12.1.4+</td>
+<td>WeChat embedded browser</td>
+<td>-</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr><tr>
+<td>Android</td>
+<td>QQ browser (mobile)</td>
+<td>-</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr><tr>
+<td>Android</td>
+<td>UC browser (mobile)</td>
+<td>-</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr><tr>
+<td>Android</td>
+<td>WeChat embedded browser(TBS core)</td>
+<td>-</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Not supported</td>
+</tr><tr>
+<td>Android</td>
+<td>WeChat embedded browser(XWEB core)</td>
+<td>-</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+</tbody></table>
 
 
 >! 
