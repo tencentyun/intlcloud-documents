@@ -14,7 +14,7 @@
 1. 登录 [API 网关](https://console.cloud.tencent.com/apigateway)控制台。
 2. 在左侧导航栏中单击【资源包】，进入资源包列表。
 3. 查看来源为免费额度的资源包使用量。
-![](https://main.qcloudimg.com/raw/127c5dfbeb3fd6b132def426b7794d51.png)
+![](https://main.qcloudimg.com/raw/ca9c5222e609a8bf1418a36eef66499c.png)
 
 ### 有效期计算
 免费额度开通服务后，第一年每自然月前一百万次调用免费（含开通当月）。

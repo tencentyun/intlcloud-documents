@@ -18,7 +18,7 @@ You have activated Tencent Cloud services such as API Gateway, TKE, Cloud Load B
 2. In the left sidebar, click **Virtual Private Cloud** to access the VPC list page.
 3. Click **+ New**. In the pop-up dialog box, set the parameters to create a VPC.
 For more information, see [Managing VPC Instances](https://intl.cloud.tencent.com/document/product/215/31805).
- <img src="https://main.qcloudimg.com/raw/960e423558a59a055d6995929fd3ae6c.png" width="80%" height="80%">
+ 
 
 
 <span id="2"></span>
@@ -29,7 +29,7 @@ For more information, see [Managing VPC Instances](https://intl.cloud.tencent.co
 4. Create a CVM by following the instructions in [Creating Instances via the CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
 >!When creating a CVM, select the VPC and the subnet created in [Step 1](#1) and retain the default values for the other parameters. In this example, a standard S5 CVM instance is created.
 
-  <img src="https://main.qcloudimg.com/raw/5eb612c02a613a82cfd48ea701d23db2.png" width="80%" height="80%">
+  
  
 <span id="3"></span>
 ### Step 3: Create a TKE cluster in the same VPC
@@ -41,7 +41,7 @@ For more information, see [Managing VPC Instances](https://intl.cloud.tencent.co
 >- When selecting a model, set **Node Source** to **Existing nodes** and **Master Node** to **Managed**, and select the CVM created in [Step 2](#2) in the **Worker Configurations** area.
 >- Retain the default values for the other parameters.
  
- ![](https://main.qcloudimg.com/raw/861608f37d306d90dd1f9173ad17203e.png)
+ ![](https://main.qcloudimg.com/raw/91aabf8a50b61cceef077112ecbc5fef.png)
 
 ### Step 4: Create a nginx service in the TKE cluster
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2). In the left sidebar, click **Cluster** to access the TKE cluster list page.
@@ -55,7 +55,7 @@ For more information, see [Managing VPC Instances](https://intl.cloud.tencent.co
  >- Set **Load Balancer** to **Automatic creation**.
  >- In the **Port Mapping** area, set **Protocol** to **TCP**, and set both **Target Port** and **Port** to 80.
 6. Click **Create Workload** to finish creating the Workload. TKE will automatically create the corresponding deployment and service.
-	![](https://main.qcloudimg.com/raw/ce157e5765aeb4b392841ffca279656c.png)
+	
 
 ### Step 5: Create an API Gateway service
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
@@ -69,16 +69,16 @@ For more information, see [Managing VPC Instances](https://intl.cloud.tencent.co
 4. Enter the frontend configuration, the backend configuration, and the response result, and click **Complete** to finish creating the API.
 >!When entering the backend configuration, set **Backend Type** to **HTTP**, **VPC Info** to the VPC created in Step 1, **VPC resources** to **CLB**, and **Backend Path** to **/**.
 
-  <img src="https://main.qcloudimg.com/raw/b6879ebde2cafabc3d5056240480e9f2.png" width="60%" height="60%">
+  
 
 <span id="7"></span>
 ### Step 7: Open the private IP ranges of API Gateway to the internet
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm). In the left sidebar, click **Security Groups** to access the security group list page.
 2. Select a region and click **+ New**. In the pop-up dialog box, set the parameters and click **OK** to create a security group.
-	 ![](https://main.qcloudimg.com/raw/35199dc68b141f07774cee082bb03a78.png)
+	 
 3. In the security group list, click the name of the created security group to access the security group details page. Click the **Security Group Rule** tab and then the **Inbound rule** tab to access the inbound rule list.
 4. Click **Add a Rule**. In the pop-up dialog box, enter the following 5 private IP ranges of API Gateway: **9.0.0.0/8**, **10.0.0.0/8**, **100.64.0.0/10**, **11.0.0.0/8**, and **30.0.0.0/8**. Set **Protocol port** to **ALL** and **Policy** to **Allow** for the 5 private IP ranges, and click **Completed** to add the 5 inbound rules.
-	 ![](https://main.qcloudimg.com/raw/f74cbe54686520228b4f4cc08bc00f9d.png)
+	 
 5. Return to the security group details page. Click the **Associate with Instance** tab and then the **Cloud Virtual Machine** tab. Click **Add Instances**. In the pop-up dialog box, associate the created security group with the CVM created in [Step 2](#2) to open the private IP ranges of API Gateway to the internet.
 
 ### Step 8: Publish and test the API Gateway service
