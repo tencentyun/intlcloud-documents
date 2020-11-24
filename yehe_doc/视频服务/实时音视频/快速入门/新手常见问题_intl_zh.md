@@ -119,6 +119,8 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 ### TRTC 如何查看通话时长和使用量？  
 可在实时音视频控制台的【[用量统计](https://console.cloud.tencent.com/trtc/statistics)】页面查看。
 
+
+
 <span id="que19"></span>
 ### TRTC 出现卡顿怎么排查？
 可以通过对应的 RoomID、UserID 在实时音视频控制台的【[监控仪表盘](https://console.cloud.tencent.com/trtc/monitor)】页面查看通话质量：
