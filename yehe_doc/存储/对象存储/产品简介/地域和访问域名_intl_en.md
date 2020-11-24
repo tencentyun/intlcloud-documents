@@ -130,7 +130,7 @@ The **default domain name** refers to the default domain name of a COS bucket wh
 
 ### Global acceleration endpoint
 
-A global acceleration endpoint takes the format of `<BucketName-APPID>.cos.accelerate.myqcloud.com`. For the description and use case of global acceleration endpoint, please see [Global Acceleration > Overview](https://intl.cloud.tencent. com/document/product/436/33409#.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D).
+A global acceleration endpoint takes the format of `<BucketName-APPID>.cos.accelerate.myqcloud.com`. For the description and use case of global acceleration endpoint, please see [Global Acceleration > Overview](https://intl.cloud.tencent.com/document/product/436/33409#.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D).
 
 ### Sample
 
@@ -141,9 +141,9 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 
 >?
 >- `examplebucket-1250000000` means that the bucket is owned by the user with `APPID` 1250000000. `APPID` is the account you get after you successfully register in Tencent Cloud. It is automatically assigned by the system as a unique permanent ID, which can be viewed in [Account Information](https://console.cloud.tencent.com/developer).
-- `cos` means Cloud Object Storage (COS).
-- `ap-guangzhou` is the abbreviation of the bucket region.
-- `myqcloud.com` is a fixed Tencent Cloud domain name.
+>- `cos` means Cloud Object Storage (COS).
+>- `ap-guangzhou` is the abbreviation of the bucket region.
+>- `myqcloud.com` is a fixed Tencent Cloud domain name.
 
 After the bucket is created, upload an image file `picture.jpg` to the bucket, and the access address of the image is as follows:
 ```shell
