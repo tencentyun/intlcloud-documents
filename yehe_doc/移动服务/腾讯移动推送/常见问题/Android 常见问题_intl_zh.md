@@ -161,10 +161,16 @@ Uri uri = getIntent().getData();
 
 ### 同时集成了即时通信 IM 和 TPNS，存在大量的厂商类冲突，该如何解决？
 
-目前 IM 已使用 TPNS 提供的厂商 jar 包，可前往 [IM 离线推送（Android）文档](https://intl.cloud.tencent.com/document/product/1047/34336) 替换相关依赖包，替换后即可解决。
+目前 IM 已使用 TPNS 提供的厂商 jar 包，请按照下方表格替换相关依赖包，替换后即可解决。
 
-
-
+| 推送通道       |        系统要求           |    条件说明                  |
+| --------------- | ------| -------------------------------------------- |
+| 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'`|
+| 华为推送|  EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.2-release'`  <li> `implementation 'com.huawei.hms:push:5.0.2.300'`|
+| Google FCM 推送|  Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
+| 魅族推送 | Flyme|  使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.2-release'` |
+| OPPO 推送|  ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.2-release'`|
+| vivo 推送|  FuntouchOS|并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.2-release'`|
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
@@ -173,6 +179,16 @@ Uri uri = getIntent().getData();
 2. Flyme 6.0 及以下版本的魅族手机，使用自动集成方式，且使用的 TPNS Android SDK 为1.1.4.0 以下的版本。
 
 以上两种情况，需要在 drawable 不同分辨率的文件夹下对应放置一张名称必须为 stat_sys_third_app_notify 的图片，详情请参考 [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload) 中的 flyme-notification-res 文件夹。
+
+
+
+
+
+
+
+
+
+
 
 
 
