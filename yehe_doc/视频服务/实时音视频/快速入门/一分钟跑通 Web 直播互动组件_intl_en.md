@@ -14,8 +14,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 ## Directions
 
-<span id="step1"></span>
-### Step 1. Create an application
+### Step 1. Create an application<span id="step1"></span>
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter the application name such as `testtrtc`, and click **OK**.
@@ -45,8 +44,8 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 >- A locally calculated `UserSig` should be only used for local development and debugging. Please do not publish it directly online. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-<span id="step4"></span>
-### Step 4. Run the demo
+
+### Step 4. Run the demo<span id="step4"></span>
 
 Open the `index.html` file in the `dist` directory of the demo with Chrome to run the demo.
 
@@ -63,12 +62,12 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 
 - If your application scenario is mainly in the education sector, the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution is recommended for the teacher end, which is more stable and supports two-channel big/small video images, more flexible screen sharing schemes, and more powerful recovery capabilities on poor network connections.
 
-| OS | Browser | Minimum Version Requirement | Receipt (Playback) | Sending (Mic-on) |
+| OS | Browser | Browser Minimum Version Requirement | Receipt (Playback) | Sending (Mic-on) |
 |:-------:|:-------:|:-------:|:-------:|:-------:|
 | macOS | Safari (desktop) | 11+ | Supported | Supported | 
-| macOS | Chrome (desktop) | 47+ | Supported | Supported | 
-| Windows | Chrome (desktop) | 52+ | Supported | Supported | 
-| Windows | QQ Browser (desktop) | 10.2 | Supported | Supported | 
+| macOS | Chrome (desktop) | 56+ | Supported | Supported | 
+| Windows | Chrome (desktop) | 56+ | Supported | Supported | 
+| Windows | QQ Browser (desktop) | 10.4 | Supported | Supported | 
 | iOS | Safari (mobile) | 11.1.2 | Supported | Supported | 
 | iOS | WeChat embedded browser | 12.1.4 | Supported | Not supported | 
 | Android | QQ Browser (mobile) | - | Not supported | Not supported | 
