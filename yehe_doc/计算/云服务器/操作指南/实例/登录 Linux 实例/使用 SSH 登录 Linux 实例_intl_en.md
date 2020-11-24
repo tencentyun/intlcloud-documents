@@ -44,7 +44,7 @@ chmod 400 <The absolute path of the private key downloaded to be associated with
 ```
  - If your local computer uses Windows 10, you must first open the command prompt CMD and then execute the following commands.
 ```
-icacls <The absolute path of the private key downloaded to be associated with the CVM> /grant <Username>:F
+icacls <The absolute path of the private key downloaded to be associated with the CVM> /grant <Windows user account>:F
 ```
 ```
 icacls <The absolute path of the private key downloaded to be associated with the CVM> /inheritancelevel:r
