@@ -128,6 +128,10 @@ The **default domain name** refers to the default domain name of a COS bucket wh
    </tr>
 </table>
 
+### Global acceleration endpoint
+
+A global acceleration endpoint takes the format of `<BucketName-APPID>.cos.accelerate.myqcloud.com`. For the description and use case of global acceleration endpoint, please see [Global Acceleration > Overview](https://intl.cloud.tencent. com/document/product/436/33409#.E8.AE.BF.E9.97.AE.E5.9F.9F.E5.90.8D).
+
 ### Sample
 
 Suppose you log in to the COS Console with your root account (APPID: 1250000000) and create a bucket named **examplebucket** in the **Guangzhou** region, then the default domain name of the bucket is as follows:
