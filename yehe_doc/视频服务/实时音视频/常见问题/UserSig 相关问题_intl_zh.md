@@ -80,7 +80,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 
 如果您的 SDKAppID 是 2019.07.19 之前创建的，可以继续使用老版本的签名算法，算法的源码下载链接如下：
 
-| 语言版本 | 签名算法 | 关键函数 | 下载链接 |
+| 语言版本 | 签名算法 | 下载链接 |
 |:------:|:----------:|:--------------------------------------------------------:|
 | Java | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api-java)|
 | C++ | ECDSA-SHA256 | [Github](https://github.com/tencentyun/tls-sig-api)|
