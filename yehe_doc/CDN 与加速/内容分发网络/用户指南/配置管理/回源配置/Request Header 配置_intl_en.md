@@ -1,51 +1,53 @@
 
-## 配置场景
+## Configuration Overview
 
-腾讯云 CDN 支持添加回源请求头部：
+Tencent Cloud CDN supports adding origin-pull request headers:
 
-- 支持通过 X-Forward-For 头部携带真实客户端 IP 至源站。
-- 支持通过 X-Forward-Port 头部携带真实客户端端口至源站，用于源站侧分析。
-- 支持添加各类自定义头部。
+- It supports carrying the real client IP to the origin server through the `X-Forward-For` header.
+- It supports carrying the real client port to the origin server for analysis through the `X-Forward-Port` header.
+- It supports adding various custom headers.
 
-## 配置指南
+## Configuration Guide
 
-### 配置约束
+### Configuration limitations
 
-- 自定义请求头部配置规则最多可配置10条。
-- 生效类型支持全部文件、文件类型、文件目录、指定文件路径四种模式，暂不支持正则匹配。
-- 若用户端发起请求中已存在头部信息，配置的 Request Header 在回源时会覆盖原有头部。
-- 多条规则头部设置重复时，优先级为从上到下从低到高，底部优先级高于顶部。
-- 自定义头部的 Key 值长度默认为1 - 100个字符，由数字0 - 9、字符a - z、A - Z，及特殊符 `-` 组成。
-- 自定义头部的 Value 长度为1 - 1000个字符，不支持中文。
-- 部分标准头部不支持自助添加，具体清单请看文档最后部分说明。
+- The maximum number of custom request header rules: 10
+- Supported rule types: all content, specified file type, folder, and file path. Regular matching is currently not supported.
+- If there is already header information in the client request, the configured request header will overwrite the original header during origin-pull.
+- Rules are executed from bottom to top. Rules at the bottom of the list have higher priority.
+- The `Key` of a custom header can contain 1 to 100 characters of digits `0–9`, letters `a–z, A–Z`, and special symbol `-`.
+- The `Value` of a custom header can contain 1 to 1000 characters (Chinese characters are not supported).
+- Some standard headers are not supported for customization. For the detailed list, please see below.
 
-### 配置说明
+### Configuration instructions
 
-登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可在【回源配置】中看到回源 Request Header 配置，默认情况下为关闭状态，无任何配置：
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and then click **Manage** on the right of a domain name to enter its configuration page. Select the **Origin-pull Configuration** tab to find the **Origin-pull Request Header Configuration** section. The feature is disabled and not pre-configured by default.
 ![](https://main.qcloudimg.com/raw/c41a39a9a851fbe3778ca325edc2e3f8.png)
-关闭状态下，可新增回源头部规则：
+You can add origin-pull header rules when it is disabled:
 ![](https://main.qcloudimg.com/raw/e2972a9d697e45b3f081b68ea5e6badb.png)
 
-> !
-> 1. 用于携带用户端真实 IP 的头部为：X-Forward-For，其值默认为 $client_ip 变量，不允许修改。
-> 2. 用于携带用户端真实端口的头部为：X-Forward-Port，其值默认为 $remote_port 变量，不允许修改。
 
-规则添加完毕后，此时整体配置为关闭状态，不会生效：
+> !
+> 1. The header used to carry the real client IP is `X-Forward-For`, and its value is the `$client_ip` variable by default, which cannot be modified.
+> 2. The header used to carry the real client port is `X-Forward-Port`, and its value is the `$remote_port` variable by default, which cannot be modified.
+
+After a rule is added, the overall configuration will be in disabled state and not take effect:
 ![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
-可通过【调整优先级】按钮，调整规则上下顺序，如需发布至全网 CDN 节点，单击上方配置开关即可：
+You can click **Adjust Priority** to adjust the rule order, and then toggle the switch on to deploy the rule to CDN nodes across the entire network.
 ![](https://main.qcloudimg.com/raw/61cdbb7d9e12968695b16a08d33d79f7.png)
 
-## 配置示例
+## Configuration Samples
 
-若加速域名`cloud.tencent.com`的回源 Request Header 配置如下：
+The origin-pull request header configuration of the acceleration domain name `cloud.tencent.com` is as follows:
 ![](https://main.qcloudimg.com/raw/397759f6f138183d3f1ba60b33c7effc.png)
-若访问资源为：`http://cloud.tencent.com/test/test.mp4`
-1. 命中`*`规则，增加头部`X-Forward-For:$client_ip`头部，回源时将 $client_ip 替换为真实客户端 IP。
-2. 命中`.mp4`文件类型及`/test`路径，底部优先级大于顶部优先级，因此增加`x-cdn:Tencent`头部。
 
-## 注意事项
+If the accessed resource is `http://cloud.tencent.com/test/test.mp4`, then:
+1. The `*` rule will be hit, so the header `X-Forward-For:$client_ip` will be added, and `$client_ip` will be replaced with the real client IP during origin-pull.
+2. The `.mp4` file type and `/test` path will be hit, and as rules are executed from bottom to top, the `x-cdn:Tencent` header will be added.
 
-以下标准头部暂时不支持添加回源 Request Header：
+## Notes
+
+The following standard headers currently cannot be added as origin-pull request headers:
 
 <table>
 <tbody><tr>
