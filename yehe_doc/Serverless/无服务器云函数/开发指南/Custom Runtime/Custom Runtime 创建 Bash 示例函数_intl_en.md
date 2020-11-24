@@ -1,12 +1,12 @@
 ## Overview
 This document describes how to create, package, and release a Custom Runtime cloud function to respond to the triggered event. You will learn the development process and operating mechanism of Custom Runtime.
 
-## Procedure
+## Directions
 Before creating a Custom Runtime cloud function, you need to create a runtime boot file [bootstrap](#bootstrap) and [function file](#hsfile).
 
 <span id="bootstrap"></span>
 ### Creating a bootstrap file
-Bootstrap is a runtime entry bootloader. When Custom Runtime loads a function, it retrieves the file named “bootstrap” and executes the file to start Custom Runtime, which allows developers to develop runtime functions using any programming language or version. Bootstrap must:
+Bootstrap is a runtime entry bootloader. When Custom Runtime loads a function, it retrieves the file named “bootstrap” and executes the file to start Custom Runtime, which allows developers to develop runtime functions using any programming language and version. Bootstrap must:
  - Have the execute permission.
  - Be able to run in the SCF system environment (CentOS 7.6).
 
@@ -18,18 +18,18 @@ set -euo pipefail
 # Initialization - Load the function file.
 source ./"$(echo $_HANDLER | cut -d. -f1).sh"
 
-# After the initialization is completed, access the runtime initialization readiness API.
+# After the initialization is completed, access the runtime API to report the readiness. 
 curl -d " " -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/init/ready"
 
-### Start the invocation loop that listens to events, handles events, and pushes event handling results.
+### Start the loop that listens to events, handles events, and pushes event handling results.
 while true
 do
   HEADERS="$(mktemp)"
-  # Long-poll events.
+  # Gets event data through long polling
   EVENT_DATA=$(curl -sS -LD "$HEADERS" -X GET -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/invocation/next")
-  # Invoke a function to handle the event.
+  # Invokes a function to handle the event
   RESPONSE=$($(echo "$_HANDLER" | cut -d. -f2) "$EVENT_DATA")
-  # Push the function handling result.
+  # Pushes the function handling result
   curl -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/invocation/response"  -d "$RESPONSE"
 done
 ```
@@ -38,16 +38,16 @@ done
 In the preceding sample, Custom Runtime has two phases, the initialization and invocation phases. Initialization is executed only once during the cold start of a function instance. After the initialization, the invocation loop starts, which listens to events, invokes functions for handling, and pushes the handling results.
 
 - **Initialization phase**
-For more information, please go to [Initializing function](https://intl.cloud.tencent.com/document/product/583/38129#.E5.87.BD.E6.95.B0.E5.88.9D.E5.A7.8B.E5.8C.96).
-After the initialization, you need to proactively invoke the runtime initialization readiness API to report the readiness to SCF. The sample code is as follows: 
+For more information, please refer to [Initializing function](https://intl.cloud.tencent.com/document/product/583/38129#.E5.87.BD.E6.95.B0.E5.88.9D.E5.A7.8B.E5.8C.96).
+After the initialization, you need to proactively invoke the runtime API to report the readiness to SCF. The sample code is as follows: 
 ```
-# After the initialization is completed, access the runtime initialization readiness API.
+# After the initialization, access the runtime API to report the readiness of initialization.
 curl -d " " -X POST -s "http://$SCF_RUNTIME_API:$SCF_RUNTIME_API_PORT/runtime/init/ready"
 ```
 Because Custom Runtime is implemented with a custom programming language and version, a standard protocol is needed for the communication between Custom Runtime and SCF. In the current sample, SCF provides runtime APIs and built-in environment variables to Custom Runtime over HTTP. For more information, please see [Environment Variables](https://intl.cloud.tencent.com/document/product/583/32748).
  - `SCF_RUNTIME_API`: runtime API address
  - `SCF_RUNTIME_API_PORT`: runtime API port
-- **Initialization logs and exception**
+- **Initialization logs and exceptions**
 For more information, please see [Logs and exceptions](https://intl.cloud.tencent.com/document/product/583/38129#.E6.97.A5.E5.BF.97.E5.8F.8A.E5.BC.82.E5.B8.B8).
 - **Invocation phase**
 For more information, please see [Function invocation](https://intl.cloud.tencent.com/document/product/583/38129#.E5.87.BD.E6.95.B0.E8.B0.83.E7.94.A8).
@@ -165,7 +165,7 @@ $ zip demo.zip index.sh bootstrap
 
 #### Invoking a function
 
-Since `events` is set to `apigw` in the `serverless.yml` file, API Gateway is created with the function. In this way, you can access the cloud function over API Gateway. If a message similar to the following is returned, the access is successful.
+As `events` is set to `apigw` in the `serverless.yml` file, an API gateway is created together with the function. The cloud function can be accessed over this API gateway. If a message similar to the following is returned, the access is successful.
 ```
 Echoing request: 
 '{
@@ -239,8 +239,8 @@ except TencentCloudSDKException as err:
 | Parameter | Description | 
 |---------|---------|
 | `"Runtime":"CustomRuntime"` | Runtime type of Custom Runtime. |
-| `"InitTimeout":3` | Initialization timeout period. Custom Runtime adds a configuration of initialization timeout period. The timeout period starts with the boot-time of bootstrap and ends with the invocation time of the runtime initialization readiness API. A timeout terminates the execution and returns an initialization timeout error. |
-| `"Timeout":3` | Invocation timeout period. This parameter configures the timeout period of function invocation. The timeout period starts with the event delivery time and ends with the time when the function pushes the handling result to the runtime API. A timeout terminates the execution and returns an invocation timeout error.|
+| `"InitTimeout":3` | Initialization timeout period. Custom Runtime adds a configuration of initialization timeout period. The initialization period starts from the boot-time of bootstrap and ends when the runtime API is reported ready. When the initialization period exceeds the timeout period, the execution ends and an initialization timeout error is returned. |
+| `"Timeout":3` | Invocation timeout period. This parameter configures the timeout period of function invocation. The invocation period starts from the event delivery time and ends upon the time when the function pushes the handling result to the runtime API. When the invocation period exceeds the timeout period, the execution ends and an invocation timeout error is returned. |
 
 
 #### Invoking a function
@@ -288,7 +288,10 @@ If a message similar to the following is returned, the invocation is successful.
     "RequestId": "3c32a636-****-****-****-d43214e161de"
 }
 ```
-### Using Console to create and release a function<span id="KZT"></span>
+
+<span id="KZT"></span>
+
+### Using Console to create and release a function
 #### Creating a function
 1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and click **Function Service** in the left sidebar.
 2. Choose a region at the top of the **Function Service** page and click **Create** to start creating a function.
