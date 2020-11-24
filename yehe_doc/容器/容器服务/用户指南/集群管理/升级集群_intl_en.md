@@ -16,7 +16,7 @@ Upgrading a cluster involves two steps. The first step is to [upgrade the Master
 ![](https://main.qcloudimg.com/raw/9a86b7ebd520700999af9b6e62fe5bd4.png)
 <span id="Master"></span>
 ### Upgrading the Master Kubernetes version
->! **Currently, Master version upgrade is supported only for managed clusters**, and the upgrade takes 5-10 minutes, during which you are unable to operate your cluster.
+>! **Currently, Master version upgrades of managed clusters and self-deployed clusters are supported**. The upgrade might take 5-10 minutes, during which you cannot perform operations on your cluster.	  
 
 
 #### Considerations
