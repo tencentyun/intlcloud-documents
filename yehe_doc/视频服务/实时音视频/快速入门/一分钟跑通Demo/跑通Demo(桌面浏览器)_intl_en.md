@@ -38,7 +38,7 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 <td>56+</td>
 <td>Supported</td>
 <td>Supported</td>
-<td>Supported (on Chrome 72+)</td>
+<td>Supported (on Firefox 66+)</td>
 </tr><tr>
 <td>Mac OS</td>
 <td>Edge (desktop)</td>
