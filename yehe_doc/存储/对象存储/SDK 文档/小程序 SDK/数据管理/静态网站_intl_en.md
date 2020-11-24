@@ -51,7 +51,7 @@ cos.putBucketWebsite({
 | - RedirectAllRequestsTo    | Redirects all requests                                                     | Object      | No   |
 | - - Protocol | Specifies the site-wide redirect protocol. Only HTTPS is supported | String | No |
 | - RoutingRules    | Sets up to 100 redirect rules                                                      | ObjectArray      | No   |
-| - - Condition   | Specifies the condition that must be met for a redirect to apply; redirects can either be applied based on prefix match or error codes.                                                       | Object      | No   |
+| - - Condition   | Specifies the condition that must be met for a redirect to apply. Redirects can be applied based on either prefix match or error codes.                                                       | Object      | No   |
 | - - - HttpErrorCodeReturnedEquals   | Specifies the redirect error code. Only 4XX status codes are supported. This has a higher priority than `ErrorDocument`. | String | No |
 | - - - KeyPrefixEquals | Specifies the object key prefix to replace with the specified “folder/” for the redirect  | String | No |
 | - - Redirect   | Specifies the replacement rule for redirects that meet the condition                                                       | Object      | No   |
@@ -66,11 +66,11 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description                                                     | Type   |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 
 ## Querying Static Website Configuration
@@ -126,11 +126,11 @@ function(err, data) { ... }
 
 | Parameter Name | Description | Type |
 | ------------ | ------------- | ----------- |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | - WebsiteConfiguration | Static website configuration, including index document, error document, protocol conversion and redirect rules | Object | 
 | - - IndexDocument    | Index document                                                     | Object      | 
@@ -138,9 +138,9 @@ function(err, data) { ... }
 | - - ErrorDocument    | Error document                                                     | Object      | 
 | - - - Key   | Specifies general error response                                                       | String      | 
 | - - RedirectAllRequestsTo    | Redirects all requests                                                     | Object      | 
-| - - - Protocol | Specifies the site-wide redirect protocol; only HTTPS is supported. | String | 
+| - - - Protocol | Specifies the site-wide redirect protocol. Only HTTPS is supported. | String | 
 | - - RoutingRules    | Sets up to 100 redirect rules                                                      | ObjectArray      |
-| - - - Condition   | Specifies the condition that must be met for a redirect to apply; redirects can either be applied based on prefix match or error codes.                                                       | Object      | 
+| - - - Condition   | Specifies the condition that must be met for a redirect to apply. Redirects can be applied based on either prefix match or error codes.                                                       | Object      | 
 | - - - - HttpErrorCodeReturnedEquals   | Specifies the redirect error code. Only 4XX status codes are supported. This has a higher priority than `ErrorDocument`. | String | 
 | - - - - KeyPrefixEquals | Specifies the object key prefix to replace with the specified “folder/” for the redirect | String | 
 | - - - Redirect   | Specifies the replacement rule for redirects that meet the condition                                                       | Object      | 
@@ -182,9 +182,9 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       | Description                                                     | Type  |
 | ------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Returns data when the request succeeds. If the request fails, this is empty | Object |
-| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |

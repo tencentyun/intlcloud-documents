@@ -66,7 +66,7 @@ TKE 已上线 Pod 直连模式，此模式是对负载均衡的控制面优化�
 | 1            | 400                 | 50           | 7562.615    | 1028.75           | 335.674                 | 95.56%            |
 
 对比图如下：
-![](https://main.qcloudimg.com/raw/db8eaca82632a61fe34080543df741e4.png)
+![](https://main.qcloudimg.com/raw/3dac2a6d2b263f60f80f8a4b64ea2184.png)
 除控制面性能优化外，负载均衡能够直接访问容器网络的 Pod 即为组件业务能力最重要的组成部分，不仅避免了 NAT 转发性能上的损失，同时避免了 NAT 转发带来的各种对集群内业务功能影响，但在启动该项目时还不具备最优访问容器网络的支持。
 新模式结合集群 CN I网络模式下 Pod 有弹性网卡入口这一特性，实现直接接入到负载均衡以达到直接访问的目的。负载均衡直接后端访问到容器网络，目前已经有通过云联网解决的方案。
 
@@ -122,7 +122,7 @@ Kubernetes 集群提供了服务注册的机制，只需要将您的服务以 `M
 直连与 NodePort 是服务应用的接入层方案，其实最终参与工作的仍为用户部署的工作负载，用户工作负载的能力直接决定了业务的 QPS 等指标。
 我们针对这两种接入层方案，在工作负载压力较低的情况下，重点对网络链路的时延进行了一些对比测试。直连在接入层的网络链路上能够优化10%左右的时间，且减少了大量 VPC 网络内的流量。测试场景从20节点到80节点，逐步增大集群规模，通过 wrk 工具对集群进行网络延时的测试。针对 QPS 和网络时延，直连场景与 NodePort 的对比测试如下图所示：
 
-![](https://main.qcloudimg.com/raw/e50da9c8402059dccf76dadd517e853c.png)
+![](https://main.qcloudimg.com/raw/5c7ae9dbab232a23e9d09d298849d574.png)
 
 ### KubeProxy 设计思路
 `KubeProxy` 具备一定的缺点，但基于云上负载均衡、VPC 网络的各种特性，我们具有更加本地化的接入层方案。`KubeProxy` 对集群接入层的设计极具普适性及容错性，基本适用于所有业务场景下的集群，作为一个官方提供的组件此设计是非常合适的。
@@ -138,7 +138,7 @@ Kubernetes 集群提供了服务注册的机制，只需要将您的服务以 `M
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 参考控制台[ 创建 Service ](https://intl.cloud.tencent.com/document/product/457/36833)步骤，进入 “新建Service” 页面，根据实际需求设置 Service 参数。
 主要参数信息需进行如下设置，如下图所示：
-![](https://main.qcloudimg.com/raw/1e52f535cd9eb5712ddf6c4760952e70.png)
+![](https://main.qcloudimg.com/raw/42be9c8c35c3df3315ba32c0dd458b26.png)
  - **服务访问方式**：选择为【提供公网访问】或【VPC内网访问】。
  - **网络模式**：勾选【采用负载均衡直连Pod模式】。
  - **Workload绑定**：选择【引用Worklocad】，并在弹出窗口中选择 VPC-CNI 模式的后端工作负载。

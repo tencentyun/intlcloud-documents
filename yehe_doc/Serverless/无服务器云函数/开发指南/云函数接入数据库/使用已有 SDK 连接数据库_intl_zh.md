@@ -4,7 +4,7 @@
 
 
 ## 前提条件
-已注册腾讯云账号并完成实名认证。如未注册，请前往 [注册页面](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)。
+已注册腾讯云账号并完成实名认证， 未进行实名认证的用户无法购买中国境内的资源。如未注册，请前往 [注册页面](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)。
 
 
 

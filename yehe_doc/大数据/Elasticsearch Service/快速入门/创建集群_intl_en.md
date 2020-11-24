@@ -18,10 +18,10 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 - Region: currently, ES has been launched in multiple regions in and outside Mainland China.
 - Elasticsearch Version: v5.6.4, v6.4.3, v6.8.2, and v7.5.1 are supported.
 - X-Pack: Elasticsearch's official commercial features, including capabilities such as data permission management, SQL JDBC, alerting, and machine learning. The features available vary by edition: the Platinum Edition has all the advanced features, the Basic Edition has some advanced features, and the Open Source Edition does not have advanced features. For more information, please see [X-Pack](https://intl.cloud.tencent.com/document/product/845/30943).
-> The Basic Edition supports [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) starting from v6.8, which greatly improves the cluster security and is therefore recommended to be enabled. If you do not enable it when purchasing your cluster, you need to fully restart the cluster when enabling it subsequently, which will affect your online businesses. This feature is enabled in the Platinum Edition by default and is not supported in the Open Source Edition.
+> !The Basic Edition supports [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) starting from v6.8, which greatly improves the cluster security and is therefore recommended to be enabled. If you do not enable it when purchasing your cluster, you need to fully restart the cluster when enabling it subsequently, which will affect your online businesses. This feature is enabled in the Platinum Edition by default and is not supported in the Open Source Edition.
 >
 - Network/AZ and Subnet: ES is deployed in VPCs. An ES cluster can only be accessed from servers in the same VPC. Therefore, to ensure smooth access to the ES cluster over the private network, you are recommended to select a VPC in the region where your existing cloud-based businesses reside. In multi-AZ deployment mode, you should also select the same VPC. Subnets in different AZs in the same VPC can communicate with each other.
-> The VPC cannot be changed or adjusted once the ES cluster is created.
+> ! The VPC cannot be changed or adjusted once the ES cluster is created.
   >
   > **Special notes on network selection**
   >
@@ -60,7 +60,7 @@ Click **Next: Confirm Configuration Information** to confirm the configuration.
 
 Once successful activated, the pay-as-you-go cluster just created can be viewed in the [console](https://console.cloud.tencent.com/es) and will be completely created in a matter of minutes.
 
-## Cluster Application Development and Management
+## Subsequent Steps
 
 ### Accessing cluster
 

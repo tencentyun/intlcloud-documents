@@ -118,6 +118,8 @@ Open the console directly on the page and enter `navigator.mediaDevices.enumerat
 ### How do I view the call duration and usage in TRTC?  
 You can view the information on the **[Usage Statistics](https://console.cloud.tencent.com/trtc/statistics)** page in the TRTC Console.
 
+
+
 <span id="que19"></span>
 ### How do I troubleshoot lagging in TRTC?
 You can view the call quality of the corresponding `RoomID` and `UserID` on the **[Monitoring Dashboard](https://console.cloud.tencent.com/trtc/monitor)** page in the TRTC console:

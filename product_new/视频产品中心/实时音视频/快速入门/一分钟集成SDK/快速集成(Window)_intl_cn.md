@@ -10,9 +10,10 @@
 
 本文以创建一个简单的 Winform 项目为例，介绍如何在 Visual Studio 工程中集成 C# SDK。
 
-### 步骤1：下载  Windows SDK
+### 步骤1：下载  Windows SDK。
 
-[下载 SDK](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip)，解压并打开文件，包含以下部分：
+
+[下载 SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip)，解压并打开文件，包含以下部分：
 
 | 目录名  | 说明                                   |
 | ------- | -------------------------------------- |
@@ -74,10 +75,10 @@ ENDLOCAL
 
 
 **步骤4.3：修改调试环境**
-打开 TRTCDemo 属性页，选择【生成】，将【平台(M)】与顶部菜单栏中的解决方案平台设置为一致。
+打开 TRTCDemo 属性页，选择【生成】，将【平台(M)】与顶部菜单栏中的解决方案平台设置为一致，如下图所示：
 
 ### 步骤5：打印 SDK 版本号
-1. 在 Form1.cs 的设计器中添加一个 label 控件。
+1. 在 Form1.cs 的设计器中添加一个 label 控件，如下图所示：
 2. 打开 Form1.cs 代码文件，添加以下代码：
 	```c#
 	using System.Windows.Forms;
@@ -117,5 +118,5 @@ System.BadImageFormatException:“未能加载文件或程序集“ManageLiteAV,
 ```
 System.IO.FileNotFoundException:“未能加载文件或程序集“ManageLiteAV.dll”或它的某一个依赖项。找不到指定的模块。”
 ```
-- 由于 Windows 不同版本可能存在兼容性问题，目前在 C# SDK 中新增了解决兼容性问题的 dll 文件。
+- 由于 Windows 不同版本可能存在兼容性问题，目前在 C# SDK 中新增了解决兼容性问题的 dll 文件，文件清单如下图所示。
 

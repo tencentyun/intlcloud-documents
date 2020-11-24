@@ -15,7 +15,7 @@ Or
 
 ## Causes
 When a regulation violation or risk event occurs for a CVM, the offending machine will be partially isolated (except for the private network login port 22, 36000, and 3389, all network access will be isolated. Developers can use a jump server to log in to the server.
-For details, see [Cloud Security Violation Levels Classification and Penalties Description].
+For details, see Cloud Security Violation Levels Classification and Penalties Description.
 
 ## Solutions
 

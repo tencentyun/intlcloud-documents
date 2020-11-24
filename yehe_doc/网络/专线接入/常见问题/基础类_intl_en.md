@@ -192,7 +192,7 @@ For more information, see [Product Overview](https://intl.cloud.tencent.com/docu
 
 <span id ="63"></span>
 ### Why is the shared tunnel feature deactivated?
-According to the relevant national laws, regulations and the [Notice on Regulating the Internet Network Access Marketplace (MIIT [2017] No. 32)](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n4704651/c5471876/content.html), Tencent Cloud only makes available the shared tunnel to enterprises that have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. If you are eligible, you can submit a ticket to enable this feature. The shared tunnel shall be used with a separate direct connect gateway.
+According to the relevant national laws, regulations and the [Notice on Regulating the Internet Network Access Marketplace (MIIT [2017] No. 32)](https://www.miit.gov.cn/zwgk/zcwj/wjfb/txy/art/2020/art_7e2dbb4b014a43e98a76093cd96b450a.html), Tencent Cloud only makes available the shared tunnel to enterprises that have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. If you are eligible, you can submit a ticket to enable this feature. The shared tunnel shall be used with a separate direct connect gateway.
 
 <span id ="67"></span>
 ### Can I continue using the shared connection?
@@ -200,11 +200,11 @@ Yes. But if you delete the shared connection, you cannot apply for a new one aft
 
 <span id ="68"></span>
 ### Why do I need to choose a legitimate private line service?
-As required by the national laws, regulations and MITT [Telecom Service Catalog (2015 Version)](http://www.miit.gov.cn/n1146295/n1652858/n1652930/n4509627/c4564595/content.html), enterprises that provide private line services in China must have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. These enterprises should develop data transmission services within the business scope, and in the applicable geographic regions as stipulated in the approval document.
+As required by the national laws, regulations and MITT [Telecom Service Catalog (2015 Version)](https://www.miit.gov.cn/zwgk/zcwj/wjfb/tg/art/2020/art_e98406cd89844f7e92ea1bcf3b5301e0.html), enterprises that provide private line services in China must have both permits of [A26 domestic communication facilities services] and [A14 Internet data transmission business] issued by MIIT, or obtained relevant approval document. These enterprises should develop data transmission services within the business scope, and in the applicable geographic regions as stipulated in the approval document.
 
 <span id ="69"></span>
 ### Why must I use a legitimate line to access Tencent Cloud?
-According to the relevant national laws and regulations as well as the [Notice on Regulating the Internet Network Access Marketplace] (MIIT [2017] No. 32)](http://www.miit.gov.cn/n1146285/n1146352/n3054355/n3057709/n4704651/c5471876/content.html), you should choose a qualified connection provider to complete the construction of private lines.
+According to the relevant national laws and regulations as well as the [Notice on Regulating the Internet Network Access Marketplace (MIIT [2017] No. 32)](https://www.miit.gov.cn/zwgk/zcwj/wjfb/txy/art/2020/art_7e2dbb4b014a43e98a76093cd96b450a.html), you should choose a qualified connection provider to complete the construction of private lines.
 
 <span id ="70"></span>
 ### What are the consequences of using an illegal private line?

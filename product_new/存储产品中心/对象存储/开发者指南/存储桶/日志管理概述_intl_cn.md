@@ -34,13 +34,13 @@
 | 21       | storageClass    | 存储类型             | STANDARD，STANDARD_IA，ARCHIVE                                              |
 | 22       | accountId    | 存储桶所有者ID             | 100000000001                                              |
 | 23       | resTurnAroundTime    | 请求服务端耗时（毫秒，等于响应首字节的时间-请求末字节的时间）             | 4295                                              |
-| 24       | requester    | 访问者             | 主账号 id：子账号 id，如果是匿名访问则显示`-`。             |
+| 24       | requester    | 访问者             | 主账号 ID：子账号 ID，如果是匿名访问则显示`-`。             |
 | 25       | requestId    | 请求 ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
 | 26       | objectSize    | 对象大小（Bytes）             | 808，如果您使用分块上传，objectSize 字段只会在完成上传的时候显示，各个分块上传期间该字段显示`-` |
 | 27       | versionId    | 对象版本 ID             | 随机字符串                                              |
-| 29       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE                                              |
-| 30     | referer    | 源站地址             | `*.example.com`或者111.111.111.1       |
-| 31       | requestUri    | 请求 URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
+| 28       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE                                              |
+| 29       | referer    | 源站地址             | `*.example.com`或者111.111.111.1       |
+| 30       | requestUri    | 请求 URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
 > - 目前 COS 的日志管理功能支持的地域包括北京、上海、广州、南京、重庆、成都、香港、新加坡、多伦多、硅谷、孟买。
@@ -80,4 +80,4 @@ policyDocument 为：
 其中，policyName 为：QcloudCOSAccessForCLSRole，roleName 为第1步中的 CLS_QcsRole，也可以使用创建 roleName 时返回的 roleID。
 
 #### 3. 开启日志管理
-调用接口，开启日志管理功能，具体接口信息请参见 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/31483)，其中，要求存放日志的目标存储桶和源存储桶在同一地域。
+调用接口，开启日志管理功能，具体接口信息请参见 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054)，其中，要求存放日志的目标存储桶和源存储桶在同一地域。

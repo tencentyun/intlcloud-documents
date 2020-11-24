@@ -56,7 +56,7 @@ If you cannot log in to a Windows instance through RDP or remote access software
 
 **Problem**: the remote access attempt to an instance failed, the remote access port is not the default port or has been modified, or port 3389 is not open.
 **Diagnosis**: ping the public IP address of the instance to check network connectivity and run telnet to check whether the port is open.
-**Procedure**: See [Remote Login Failure Due to Port Issues] (https://intl.cloud.tencent.com/document/product/213/32540) for the detailed procedure.
+**Procedure**: See [Remote Login Failure Due to Port Issues](https://intl.cloud.tencent.com/document/product/213/32540) for the detailed procedure.
 
 <span id="SafetyGroupRule"></span>
 ### Improper security group rules

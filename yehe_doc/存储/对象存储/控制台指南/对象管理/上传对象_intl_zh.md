@@ -2,6 +2,10 @@
 
 您可以通过对象存储控制台，在存储桶的文件列表页面上传对象。关于对象的相关说明，请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324)。
 
+> ?
+> - 目前智能分层存储类型仅支持北京、上海、广州和重庆地域，如需上传该类型，请先为存储桶 [开启智能分层存储配置](https://intl.cloud.tencent.com/document/product/436/38306)。
+> - 深度归档存储类型仅支持北京、上海、广州和成都地域。
+
 ## 前提条件
 
 上传对象前，请您确保已创建存储桶。如未创建存储桶，请先参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 文档进行操作。

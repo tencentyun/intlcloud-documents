@@ -31,9 +31,6 @@ In CDN billing, 1 Gbps = 1000 Mbps, 1 Mbps = 1000 Kbps, and 1 Kbps = 1000 bps.
 
 Yes. CDN only charges for downstream, not upstream traffic.
 
-### My CDN service has been attacked. Can the charges for traffic generated during the attack be waived?
-
-Since CDN essentially accelerates content delivery, it cannot identify whether a request is malicious. Therefore, it cannot process malicious requests and avoid generating traffic during the attack. In order to avoid excessive losses caused by malicious requests, after your domain name is attacked and the bandwidth exceeds 10 Gbps, you can [submit a ticket](https://console.qcloud.com/workorder/category) to lodge an appeal, and Tencent Cloud CDN will refund the charges for the portion of the bandwidth exceeding 10 Gbps.
 
 ### How is CDN billed?
 

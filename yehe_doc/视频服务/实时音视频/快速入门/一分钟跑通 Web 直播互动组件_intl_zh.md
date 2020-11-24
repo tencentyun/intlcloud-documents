@@ -10,12 +10,11 @@
 
 ## 前提条件
 
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的实时音视频实例。
 
 ## 操作步骤
 
-<span id="step1"></span>
-### 步骤1：创建新的应用
+### 步骤1：创建新的应用<span id="step1"></span>
 
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2. 进入[【应用管理】](https://console.cloud.tencent.com/trtc/app)，单击【创建应用】，输入应用名称，例如 `testtrtc`，单击【确定】。
@@ -45,8 +44,8 @@
 >- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-<span id="step4"></span>
-### 步骤4：运行 Demo
+
+### 步骤4：运行 Demo<span id="step4"></span>
 
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
 
@@ -63,12 +62,12 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 
 - 如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
 
-| 操作系统 | 浏览器类型 | 最低版本要求 | 接收（播放）| 发送（上麦）|
+| 操作系统 | 浏览器类型 | 浏览器最低版本要求 | 接收（播放）| 发送（上麦）|
 |:-------:|:-------:|:-------:|:-------:|:-------:|
 | Mac OS  | 桌面版 Safari 浏览器 |  11+ | 支持 | 支持 | 
-| Mac OS  | 桌面版 Chrome 浏览器 |  47+ | 支持 | 支持 | 
-| Windows  | 桌面版 Chrome 浏览器|  52+ | 支持 | 支持 | 
-| Windows  | 桌面版 QQ 浏览器 |  10.2 | 支持 | 支持 | 
+| Mac OS  | 桌面版 Chrome 浏览器 |  56+ | 支持 | 支持 | 
+| Windows  | 桌面版 Chrome 浏览器|  56+ | 支持 | 支持 | 
+| Windows  | 桌面版 QQ 浏览器 |  10.4 | 支持 | 支持 | 
 | iOS | 移动版 Safari 浏览器 | 11.1.2 | 支持 | 支持 | 
 | iOS | 微信内嵌网页| 12.1.4 | 支持 | 不支持 | 
 | Android | 移动版 QQ 浏览器| - | 不支持 | 不支持 | 

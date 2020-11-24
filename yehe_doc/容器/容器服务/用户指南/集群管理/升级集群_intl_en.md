@@ -59,7 +59,7 @@ After the cluster’s Master Kubernetes version is upgraded, the cluster list pa
 #### Selecting an upgrade method
 You can upgrade the node Kubernetes version in two ways: [reinstall and rolling upgrade](#chongzhuang) and [in-place rolling upgrade](#yuandi). 
 - **Reinstall and rolling upgrade**: reinstall the node to upgrade the node version. This method supports major and minor version upgrades, such as upgrades from version 1.10 to version 1.12, or from version 1.14.3 to version 1.14.8.
-- **In-place rolling upgrade**: upgrade directly without re-installation. This only replaces components such as Kubelet and kube-proxy. Currently, this method is supported only for minor version upgrades, such as from version 1.14.3 to version 1.14.8.
+- **In-place rolling upgrade**: upgrade directly without re-installation. This only replaces components such as Kubelet and kube-proxy. Currently, this method supports both major and minor upgrades, such as from version 1.10 to 1.12, and 1.14.3 to 1.14.8.
 
 
 
@@ -99,7 +99,7 @@ Rolling upgrade based on the reinstalled node. Only one node is upgraded at a ti
 
 <span id="yuandi"></span>
 #### In-place rolling upgrade
-Node in-place upgrade uses the rolling upgrade method, meaning that it will only upgrade one node at a time, with the next node not being upgraded until the current node upgrade is successful. In-place upgrade currently only supports upgrading to different minor versions of the same major version. This is shown in the following figure:
+In-place node upgrade adopts the rolling upgrade method, meaning that only one node is upgraded at a time and the next node starts upgrading only when the current node is successfully upgraded. Currently, in-place upgrade supports both major and minor version upgrades. See the following figure.
 ![](https://main.qcloudimg.com/raw/c6e9f30699c429a83e621b1d0a82cee5.png)
 The steps are described as follows:
 

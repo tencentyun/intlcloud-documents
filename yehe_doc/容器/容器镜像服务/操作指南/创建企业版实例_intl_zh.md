@@ -5,7 +5,7 @@
 ## 前提条件
 
 在创建 TCR 企业版实例前，您需要完成以下准备工作：
-- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的容器镜像服务TCR 企业版实例。
 - 已开通容器镜像服务所依赖的云产品 [对象存储](https://console.cloud.tencent.com/cos5)。
 - 如果需要通过私有网络访问实例，则请开通 [私有网络](https://console.cloud.tencent.com/vpc)。
 - 已在控制台开通服务，并授权您的对象存储、私有网络等资源部分操作权限。

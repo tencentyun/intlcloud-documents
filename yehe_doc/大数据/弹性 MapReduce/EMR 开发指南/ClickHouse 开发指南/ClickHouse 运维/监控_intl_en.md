@@ -12,7 +12,7 @@ In addition, it displays the aggregate service and server metric information by 
 
 - The deployment status section provides real-time monitoring on the cluster process status. If a process is missing, it will be promptly displayed on the monitoring page.
 - In the server status section, you can view the top 10 servers with the highest resource usage in the last 7 days, so that you can quickly locate the servers where the cluster bottleneck exists.
-![](https://main.qcloudimg.com/raw/3ba9bf4227661963c634e1b7a9914243.png)
+
  In addition, you can click **Server Metric Comparison** to compare the resource usage in a time period between multiple servers.
 ![](https://main.qcloudimg.com/raw/3823b4734519117cbb39c5f8a542f4b1.png)
 
@@ -32,7 +32,7 @@ Server monitoring divides into server monitoring overview page and server monito
 ### Server monitoring overview page
 
 The server monitoring overview page displays the server monitoring metrics of the cluster. Currently, 12 aggregate metrics in four dimensions of CPU, memory, disk, and network are provided to show the overall server resource usage in the cluster. Similar to service monitoring, you can set the aggregate metrics to be displayed in **Set Metric**.
-![](https://main.qcloudimg.com/raw/9bae314630bbe124b61e106e6c30a8dd.png)
+![](https://main.qcloudimg.com/raw/a42b77cf113fec80d3d06c39bb6bc407.png)
 In addition, server monitoring provides the heat map feature that shows each server's load concerning a server metric in the specified time period. Taking memory utilization as an example, the curve above shows the memory utilization of the cluster. In the load distribution section, each small square represents a server, and the color represents the server utilization range. The deeper the color, the higher the memory utilization. Statistics are displayed in descending order, and top 3 servers with the highest memory utilization are displayed by default, making it easy for you to find the differences between servers.
 ![](https://main.qcloudimg.com/raw/601d6d0158bc8e1cc0925794c9e92077.png)
 The monitoring overview page also displays the list of all nodes in the cluster. You can filter the nodes by type, search for them by IP, or sort and display them by CPU, memory, and disk utilization. You can click the IP of a node to enter its server monitoring details page.
@@ -48,7 +48,7 @@ The server monitoring details page consists of four sections: basic configuratio
 - The load status section displays the server snapshot information at a certain time point, including the CPU, memory, IO, and network usage of processes and list of processes on the server, through which you can view the server snapshot at the target time point.
 ![](https://main.qcloudimg.com/raw/7de190a8e61b8a5757e64d46b416790a.png)
 - The server monitoring section displays the status of specific monitoring metrics of the server. The metrics cover various aspects such as CPU, memory, file handle, disk, network, and process. Similar to service monitoring, you can set the metrics to be displayed.
-![](https://main.qcloudimg.com/raw/8cee98e9b373de3262e4e169b70f666d.png)
+
 
 ## Summary
 

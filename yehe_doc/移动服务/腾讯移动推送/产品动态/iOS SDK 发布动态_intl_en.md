@@ -1,3 +1,21 @@
+## October 2020
+
+<table>
+<tr>
+    <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+    <tr>
+        <td>The SDK 1.2.8.1 is released</td>
+        <td>Known issues have been fixed</td>
+        <td>October 29, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li></td>
+    </tr>        
+</table>
+
+
 ## September 2020
 
 <table>

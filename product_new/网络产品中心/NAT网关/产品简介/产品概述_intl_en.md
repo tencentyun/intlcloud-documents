@@ -15,11 +15,12 @@ CVMs in a VPC can access the Internet through a NAT gateway or a public gateway.
 | Availability | Master/Slave hot backup and automatic hot switching | Manually switches the failed gateway. |
 | Public network bandwidth | Maximum of 5 Gbps | Depends on the network bandwidth of the CVM. |
 | Public IP address | A maximum of 10 EIPs can be bound | Supports one EIP or ordinary public IP address. |
-| Rate limit of the public network | N/A | Depends on the rate limit of the CVM. |
+| Rate limit of the public network |5 Gbps (The bandwidth cap is 50 Gbps, which is not available until you [submit a ticket](https://console.cloud.tencent.com/workorder/category)) | Depends on the rate limit of the CVM. |
 | Max concurrent connections | 10,000,000 | 500,000 |
 | Private IP address | Private IP addresses of VPC users are not consumed | Private IP addresses of subnets are consumed. |
 | Security group | Binding a security group to a NAT gateway is not supported. Instead, you can bind a security group to the backend CVM. | Binding a security group is supported. |
 | Network ACL | Binding a network ACL to a NAT gateway is not supported. Instead, you can bind a network ACL to the subnet where the backend CVM resides. | Binding a network ACL is not supported. Instead, you can bind a network ACL to the subnet where the public gateway resides. |
+| Fees     | Chinese mainland: <br/> Small (up to 1 million connections): 0.09 USD/hr<br/>Medium (up to 3 million connections):0.27 USD/hr<br/>Large (up tp 10 million connections): 0.89 USD/hr | You only need to pay for the CVM configurations, without paying extra fees |
 
 The NAT gateway has the following advantages:
 - Large capacity

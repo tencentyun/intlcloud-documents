@@ -10,7 +10,7 @@ You can view and modify certain parameters and query parameter modification logs
 ### Modifying parameters in batches
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the "Operation" column to access the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Batch modify parameters**.
-![](https://main.qcloudimg.com/raw/3ec389dafa09276ae66b00a71445d9d3.png)
+![](https://main.qcloudimg.com/raw/82c535bd50543645831988ca2e9b688e.png)
 3. Locate the desired parameters, and modify their values in the "Current Value" column. After confirming that everything is correct, click **Confirm Modification**.
 ![](https://main.qcloudimg.com/raw/5307fbeef4b1fccef478ab7fd57b3167.png)
 4. In the pop-up dialog box, select the "Execution Mode" and click **OK**.
@@ -41,7 +41,7 @@ You can view and modify certain parameters and query parameter modification logs
 3. In the pop-up dialog box, select a parameter template and click **Import and Overwrite Original Parameters**.
 ![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
 4. After confirming that everything is correct, click **Confirm Modification**.
-
+![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
 5. In the pop-up dialog box, select the "Execution Mode" and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
@@ -59,7 +59,7 @@ For more information, please see [Managing Parameter Template > Applying a Param
 3. In the pop-up dialog box, select a file to upload and click **Import and Overwrite Original Parameters**.
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 4. After confirming that everything is correct, click **Confirm Modification**.
-
+![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
 5. In the pop-up dialog box, select the "Execution Mode" and click **OK**.
 >?
 >- If you select **Immediate execution**, the parameter modification task will be executed and take effect immediately.
@@ -70,18 +70,18 @@ For more information, please see [Managing Parameter Template > Applying a Param
 ## Exporting Parameter Configuration as a File
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the "Operation" column to access the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Export Parameters**.
-
+![](https://main.qcloudimg.com/raw/6885ffbc45f3154ed203551a309e1848.png)
 
 ## Exporting Parameter Configuration as a Template
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the "Operation" column to access the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Save as Template**.
-
+![](https://main.qcloudimg.com/raw/fca4ec16b316948af812db9988d0c92c.png)
 
 ## Modifying Parameters during a Custom Time Window
 Before you confirm the parameter modification, the "Modify Parameters" dialog box will pop up for you to select a custom time window for the modification to take effect.
 >?If you select **During maintenance window** as the effective time, the parameter modification task will be executed and take effect during the [instance maintenance period](https://intl.cloud.tencent.com/document/product/236/10929).
 >
-
+![](https://main.qcloudimg.com/raw/00d4892fb614dd285cdec91a4a74cf2d.png)
 
 
 ## Canceling a Parameter Modification Task
@@ -92,7 +92,7 @@ If a parameter modification or batch modification task has been submitted but yo
 ## Viewing Parameter Modification Logs
 1. Log in to the [MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the "Operation" column to access the instance management page.
 2. Select **Database Management** > **Parameter Settings** and click **Recent modifications**.
-![](https://main.qcloudimg.com/raw/6d6318fce61fc78c6ff3611479ae5714.png)
+![](https://main.qcloudimg.com/raw/93494ebb3b80a6547f1c6fe7bcbf9c8a.png)
 3. You can view the recent parameter modification records here.
 
 ## Subsequent Operations

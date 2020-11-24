@@ -15,10 +15,7 @@ For a cluster where the CLB sharing feature is disabled, the CLBs created by its
 - In scenarios where a Service is reused, only the user-created Cloud Load Balancer (CLB) can be used. This is because when the CLB created in the TKE cluster is reused, CLB resources may not be released, leading to a resource leak. To reuse CLB resources created by the current TKE, you can delete the `tke-createdBy-flag = yes` tag of this CLB.
 
 ## Directions
-1. Refer to [Creating a Deployment](https://intl.cloud.tencent.com/document/product/457/30662) and create a Service of the Loadbalancer type.
-2. Wait until the Service is created, select a type, and go to the CLB details page, as shown in the figure below: 
-![](https://main.qcloudimg.com/raw/cf0c44dd72de3b077e809e53b521531f.png)、
-<span id="Step3"></span>
-3. Record the CLB ID and name generated on the CLB details page, as shown in the figure below: 
-![](https://main.qcloudimg.com/raw/4dfb4ead46f5c376be67cdc3f7c2949b.png)
-4. Refer to [Creating a Deployment](https://intl.cloud.tencent.com/document/product/457/30662) again and use the existing CLB from [Step 3](#Step3) to create a second Service.
+1. Refer to [Creating a CLB Instance](https://cloud.tencent.com/document/product/214/6149) to create CLB for the public or private network of the VPC where the cluster is located.
+2. Refer to [Creating a Deployment](https://cloud.tencent.com/document/product/457/31705#.E5.88.9B.E5.BB.BA-deployment) or [Creating a Service](https://cloud.tencent.com/document/product/457/45489#.E5.88.9B.E5.BB.BA-service) to create a Service of the Loadbalancer type. Select **Use an existing CLB** and choose the CLB instance created in [Step 1](#Step1), as shown in the following figure.
+![](https://main.qcloudimg.com/raw/6e98284605215d156a2c945d2a729652.png)
+3. Repeat Step 2 to reuse the same CLB for multiple Services.

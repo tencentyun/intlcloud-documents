@@ -27,7 +27,7 @@
 	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [标准转码高级配置说明](#C_trans_high)。
 3. 填写完成后，单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/3e8d073b0a5ca669cd396daebbef4d56.png)
+![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
 
 <table id="C_trans_normal">
 <tr><th width="20%">标准转码基础配置项</th><th>是否必填</th><th>说明</th></tr>
@@ -93,7 +93,7 @@
 	- 高级配置项（非必填）：单击【高级配置】展开内容即可选择配置，具体请参见 [极速高清转码高级配置说明](#C_topspeed_high)。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/d2d6701bd59b28bf114cedcab3ec3c9d.png)
+![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
 
 <table  id="C_topspeed_normal">
 <tr><th width="20%">极速高清转码基础配置项</th><th>是否必填</th><th>说明</th>
@@ -150,7 +150,7 @@
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 单击【创建转码模板】，选择转码类型为『**纯音频转码**』，填写 [配置项](#C_audio_normal)，并单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/30640d17cb995e331feb583c7a60872b.png)
+![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
 
 <table id="C_audio_normal">
 <tr><th width="20%">纯音频转码基础配置项</th><th>是否必填</th><th>说明</th>

@@ -6,4 +6,4 @@
 
 **介绍**
 
-主要负责将本地的音视频画面进行编码和 RTMP 推送，[点击获取更多细节信息](https://trtcdoc.qcloud.com/en/native/group__V2TXLivePusher__android.html)。
+主要负责将本地的音视频画面进行编码和 RTMP 推送，[点击获取更多细节信息](https://docs-1252463788.file.myqcloud.com/en/native/group__V2TXLivePusher__android.html)。

@@ -10,7 +10,7 @@
 ### 批量修改参数
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【批量修改参数】。
-![](https://main.qcloudimg.com/raw/3ec389dafa09276ae66b00a71445d9d3.png)
+![](https://main.qcloudimg.com/raw/82c535bd50543645831988ca2e9b688e.png)
 3. 在“参数运行值”列，选择需要修改的参数进行修改，确认无误后，单击【确认修改】。
 ![](https://main.qcloudimg.com/raw/5307fbeef4b1fccef478ab7fd57b3167.png)
 4. 在弹出的对话框，选择参数任务的“执行方式”，单击【确定】。
@@ -41,7 +41,7 @@
 3. 在弹出的对话框，选择参数模板，单击【导入并覆盖原有参数】。
 ![](https://main.qcloudimg.com/raw/2f649840f16befabea6259f9b4c7f47c.png)
 4. 确认参数后，单击【确认修改】。
-
+![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
 5. 在弹出的对话框，选择参数任务的“执行方式”，单击【确定】。
 >?
 >- 若选择【立即执行】，所选实例的参数变更任务会立即执行并生效。
@@ -59,7 +59,7 @@
 3. 在弹出的对话框，选择参数文件上传后，单击【导入并覆盖原有参数】。
 ![](https://main.qcloudimg.com/raw/42fb6ef8936131a3bc776e492478e745.png)
 4. 确认参数后，单击【确认修改】。
-
+![](https://main.qcloudimg.com/raw/1673166256bc4d122f5a72c3c703ffab.png)
 5. 在弹出的对话框，选择参数任务的“执行方式”，单击【确定】。
 >?
 >- 若选择【立即执行】，所选实例的参数变更任务会立即执行并生效。
@@ -70,30 +70,31 @@
 ## 导出参数配置文件
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【导出参数】导出参数配置文件。
-
+![](https://main.qcloudimg.com/raw/6885ffbc45f3154ed203551a309e1848.png)
 
 ## 导出参数配置为参数模板
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击【另存为模板】，可将现有参数配置存储为参数模板。
-
+![](https://main.qcloudimg.com/raw/fca4ec16b316948af812db9988d0c92c.png)
 
 ## 自定义时间修改参数
 执行参数修改的最后一步时，在弹出的对话框，可自定义参数的修改时间。
 >?选择【维护时间内】，所选实例的参数变更任务会在实例的 [维护时间](https://intl.cloud.tencent.com/document/product/236/10929) 内执行并生效。
 >
-
+![](https://main.qcloudimg.com/raw/00d4892fb614dd285cdec91a4a74cf2d.png)
 
 
 ## 取消参数修改任务
 选择【维护时间内】的修改参数任务提交后，如需取消修改参数，可在任务执行前（即任务状态为“等待执行”），在左侧导航【[任务列表](https://console.cloud.tencent.com/mysql/task)】页，单击“操作”列的【撤销】，取消参数修改任务。
-
+![](https://main.qcloudimg.com/raw/566fd9374d0d59b38ceb99d310b782a9.png)
 
 
 ## 查看参数修改记录
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
 2. 选择【数据库管理】>【参数设置】页，单击右侧的【最近修改记录】。
-![](https://main.qcloudimg.com/raw/6d6318fce61fc78c6ff3611479ae5714.png)
+![](https://main.qcloudimg.com/raw/93494ebb3b80a6547f1c6fe7bcbf9c8a.png)
 3. 在最近参数修改记录页，可查看近期参数修改记录。
+
 
 ## 后续操作
 - 您可以使用数据库参数模板来批量管理数据库的参数配置，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/236/31906)。

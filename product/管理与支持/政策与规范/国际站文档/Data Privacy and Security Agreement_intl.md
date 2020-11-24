@@ -64,6 +64,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 4.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
 5.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37523).
 6.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
+7.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
 
 ## Jurisdiction-specific Requirements
 

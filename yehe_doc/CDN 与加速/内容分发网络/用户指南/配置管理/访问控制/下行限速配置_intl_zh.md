@@ -18,17 +18,17 @@
 ### 配置说明
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到下行限速配置，默认情况下为关闭状态：
-![](https://main.qcloudimg.com/raw/e4b76bce43043a249c033a31966110bb.png)
+![](https://main.qcloudimg.com/raw/c9ea85be753b60096b8088b048ac626a.png)
 单击【新增限速规则】，可进行规则配置：
-![](https://main.qcloudimg.com/raw/4e11fc5ea959344ca47449deb9e8b954.png)
+![](https://main.qcloudimg.com/raw/02e033c829da553acc5eeb9bca864528.png)
 规则添加完成后，此时整体配置为关闭状态，因此不会影响现网服务：
-![](https://main.qcloudimg.com/raw/a4e075516230dd1f88db49a5c737de42.png)
+![](https://main.qcloudimg.com/raw/e0006ace8527cc13c381666b22f21790.png)
 可通过单击【开启】按钮，将所配置的限速规则发布至 CDN 全网节点：
-![](https://main.qcloudimg.com/raw/90594a7d389f7a08c4f710db5aad809e.png)
+![](https://main.qcloudimg.com/raw/4b9685cb889210accb67d11f1b389ae8.png)
 
 ## 配置示例
 
 若加速域名`cloud.tencent.com`的下行限速配置如下：
-![](https://main.qcloudimg.com/raw/16a7145313302e83fb3e239b7977f8c6.png)
+![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
 若用户访问资源为`http://cloud.tencent.com/test.mp4`，则服务端按照下行速度 200KB/s 响应内容。
 若用户访问资源为`http://cloud.tencent.com/test.flv`，则服务端按照下行限速 400KB/s 响应内容。

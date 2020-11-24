@@ -1,6 +1,6 @@
 ## Operation Scenario
 
-If your business involves scenarios such as deep learning and high-performance computing, you can use TKE to support the GPU feature, which can help you quickly use a GPU container. If you need to activate the GPU feature, you can apply by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=ÈÝÆ÷·þÎñTKE&step=1).
+If your business involves scenarios such as deep learning and high-performance computing, you can use TKE to support the GPU feature, which can help you quickly use a GPU container. 
 There are two ways to create a GPU CVM instance:
 
 - [Creating a GPU CVM instance](#createGPUService)
@@ -9,7 +9,6 @@ There are two ways to create a GPU CVM instance:
 
 ## Usage Restrictions
 
-- The GPU support has to be activated separately by [submitting a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=ÈÝÆ÷·þÎñTKE&step=1) for application.
 - For the added node, you should select a GPU model and an GPU-related image.
 - TKE supports GPU scheduling only if the Kubernetes version of the cluster is above **1.8.\***.
 - GPUs are not shared among containers. A container can request one or more GPUs. However, it cannot request a portion of one GPU.

@@ -2,7 +2,7 @@
 
 This API is used to upload a local object to the specified bucket. To make this request, you need to have the permission to write to the bucket.
 
->
+> ?
 > - This API supports uploading up to 5 GB files. To upload larger files, please use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
 > - If the `Content-Length` is less than the actual length of request body, COS will create an object with the size as specified in `Content-Length`, but with the excessive data discarded.
 > - If you upload an object whose name already exists in an bucket without versioning enabled, the old object will be overwritten by the new one and `200 OK` will be returned upon success.
@@ -28,7 +28,7 @@ Authorization: Auth String
 [Object Content]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> ? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request parameters
 
@@ -47,8 +47,8 @@ In addition to common request headers, this API also supports the following requ
 | Expires             | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | String | No |
 | Transfer-Encoding   | To upload data in chunks, you need to specify the `Transfer-Encoding: chunked` request header. In this case, the request body will follow the transfer encoding format as defined in RFC 2616, while you cannot use the `Content-Length` request header. | String | No |
 | x-cos-meta-\*       | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | String | No |
-| x-cos-storage-class | Object storage class. Enumerated values: `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `INTELLIGENT_TIERING` , `MAZ_INTELLIGENT_TIERING` , `STANDARD_IA`, `ARCHIVE` and `DEEP_ARCHIVE`. For more information, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) |  Enum   | No       |
-| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
+| x-cos-storage-class | Specifies the storage class of the object. For enumerated values, see [Storage Class Overview](https://intl.cloud.tencent.com/zh/document/product/436/30925), such as MAZ_STANDARD，MAZ_STANDARD_IA, INTELLIGENT_TIERING, MAZ_INTELLIGENT_TIERING, STANDARD_IA, ARCHIVE and DEEP_ARCHIVE. Default value: STANDARD | Enum   | No       || x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
+|  x-cos-tagging | Specifies a tag set that can contain up to 10 object tags, e.g., "Key1=Value1&Key2=Value2", where the "Key" and "Value" must be URL-encoded first | string| No |
 
 **ACL-related headers**
 

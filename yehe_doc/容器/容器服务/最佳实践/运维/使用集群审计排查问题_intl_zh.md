@@ -24,7 +24,7 @@
 objectRef.resource:nodes AND requestObject:unschedulable
 ```
 在“检索分析”页面中，单击【版面设置】，在“版面设置”页面中设置显示 `user.username`, `requestObject` 和 `objectRef.name` 三个字段，分别表示做操作的用户、请求内容以及节点名称。查询结果如下图所示：
-![](https://main.qcloudimg.com/raw/00577669ac93fd7a176cdbb46ba51319.png)
+![](https://main.qcloudimg.com/raw/ba803c37ab1335ebf0adc2675f8021cb.png)
 由图可见，是 `10001****958` 这个子账号在 `2020-10-09 16:13:22` 时对 `main.63u5qua9.0` 这台节点进行了封锁操作。可以根据账号 ID 在【访问管理】>【[用户列表](https://console.cloud.tencent.com/cam)】中找到关于此子账号的详细信息。
 
 
@@ -34,23 +34,23 @@ objectRef.resource:nodes AND requestObject:unschedulable
 objectRef.resource:deployments AND objectRef.name:"nginx" AND verb:"delete" 
 ```
 您可根据检索结果获取此子账号的详细信息。
-![](https://main.qcloudimg.com/raw/b0ba94551ba1ee2b700f9df559e24f01.png)
+![](https://main.qcloudimg.com/raw/e42e024cc8e44298e332764305378e84.png)
 
 
 ### 示例3：定位 apiserver 限频原因
 
 为避免恶意程序或 bug 导致对 apiserver 请求频率过高引发的 apiserver/etcd 负载过高，影响正常请求。apiserver 具备默认请求频率限制保护。如发生限频，可通过审计找到发出大量请求的客户端。
 1. 如需通过 userAgent 分析统计请求的客户端，则需在“键值索引”窗口中修改日志主题，为 userAgent 字段开启统计。如下图所示：
-![](https://main.qcloudimg.com/raw/9e2579381976f94156a7d425a490e971.png)
+![](https://main.qcloudimg.com/raw/d8105a3a07ecf03666c93558c770557f.png)
 2. 执行以下命令，对每种客户端请求 apiserver 的 QPS 大小进行统计：
 
 ```java
 * | SELECT CAST((__TIMESTAMP_US__ /1000-__TIMESTAMP_US__ /1000%1000) as TIMESTAMP) AS time, COUNT(1) AS qps,userAgent GROUP BY time,userAgent ORDER BY time
 ```
 3. 切换到图标分析，选择折线图，X 轴用 time，Y 轴用 qps，聚合列使用 userAgent。如下图所示：
-![](https://main.qcloudimg.com/raw/c88731f3396773f2566885682156ed4d.png)
+![](https://main.qcloudimg.com/raw/cfa2930a0fc145da0b668ff5bfe4d300.png)
 获得数据后，可点击添加到仪表盘，放大显示。如下图所示：
-![](https://main.qcloudimg.com/raw/57c35ba19f84215ca0955410edcd4796.png)
+![](https://main.qcloudimg.com/raw/445363751f142ffff2c7e84b96f395ce.png)
 由图可见，kube-state-metrics 客户端对 apiserver 请求频率远远高于其它客户端。
 查看日志可得，由于 RBAC 权问题导致 kube-state-metrics 不停的请求 apiserver 重试，触发了 apiserver 的限频。日志如下所示：
 ```
@@ -62,7 +62,7 @@ E1009 13:13:09.766106       1 reflector.go:156] pkg/mod/k8s.io/client-go@v0.0.0-
  * | SELECT CAST((__TIMESTAMP_US__ /1000-__TIMESTAMP_US__ /1000%1000) as TIMESTAMP) AS time, COUNT(1) AS qps,user.username GROUP BY time,user.username ORDER BY time
 ```
 显示效果如下图所示：
-![](https://main.qcloudimg.com/raw/1cb97218e3c146b4e581604531758195.png)
+![](https://main.qcloudimg.com/raw/dd1fbcc2efcc39ff3e9891ec3587a46f.png)
 
 
 

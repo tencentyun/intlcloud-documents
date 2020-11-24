@@ -12,4 +12,6 @@ Take the following information into consideration and maintain your business int
  - Instance metadata service
  - NTP
  - Windows activation
+- Traffic mirror supports collecting the traffic from an ENI on the following CVM types:
+Standard S1, Standard S2, Standard S3, Memory Optimized M1, Memory Optimized M2, Memory Optimized M3, High IO I1, High IO I2, High IO I3, Computing C2, Computing C3, Compute Network-optimized CN3, and Big Data D1.
 

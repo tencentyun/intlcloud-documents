@@ -1,3 +1,26 @@
+## October 2020
+<table>
+<tr><th style="width:20%">Update</th> <th style="width:50%">Description</th> 
+<th style="width:15%">Release Date</th> <th style="width:15%">References</th> </tr>
+<tr>
+<td>TPS supporting edge cluster as the monitored objects to access the monitoring instance</td><td>TPS supports the monitoring
+  of
+  edge clusters and the management of multiple clusters across
+  VPCs.</td><td>2020-10-30</td><td>-</td>
+</tr>
+<tr>
+<td>TPS alarm policy supporting webhook configuration</td><td>The alarm policy supports webhook configuration, enabling users to
+  troubleshoot abnormal services and improve service
+  stability.</td><td>2020-10-30</td><td>-</td>
+</tr>
+<tr>
+<td>TKE node pool supporting the scaling log capability</td><td>This feature allows users to view the node
+  count changes in the node pool, and find out the trigger as well as the results of scaling, improving the node pool
+  observability.</td><td>2020-10-13</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38370">Viewing
+  Node Pool Scaling Logs</a></td>
+</tr>
+</table>
+
 ## September 2020
 
 <table>

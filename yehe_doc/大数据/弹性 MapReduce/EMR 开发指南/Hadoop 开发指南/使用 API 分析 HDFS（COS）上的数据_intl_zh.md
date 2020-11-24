@@ -6,13 +6,13 @@
 - 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候在基础配置页面勾选“开启 COS”，并在下方填写自己的 SecretId 和 SecretKey。SecretId 和 SecretKey 可以在 [API 密钥管理界面](https://console.cloud.tencent.com/cam/capi) 查看。如果还没有密钥，请单击【新建密钥】建立一个新的密钥。
 
 ## 2. 登录 EMR 服务器
-在做相关操作前需要登录到 EMR 集群中的任意一个机器，最好是登录到 Master 节点。EMR 是建立在 Linux 操作系统的腾讯云服务器（CVM）上的，所以在命令行模式下使用 EMR 需要登录 CVM 服务器。
+在做相关操作前需要登录到 EMR 集群中的任意一个机器，最好是登录到 Master 节点。EMR 是建立在 Linux 操作系统的腾讯云服务器 CVM 上的，所以在命令行模式下使用 EMR 需要登录 CVM 服务器。
 
 EMR 集群创建后，在控制台中选择弹性 MapReduce，在集群列表中找到刚创建的集群，选择右侧【详情】>【集群资源】>【资源管理】>【Master 节点】中活跃的 Master 节点的 CVM ID，即可进入云服务器控制台并且找到 EMR 对应的云服务器。
 
 登录 CVM 的方法请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。
 
-输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 主机之后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入  Hadoop 文件夹下：
+输入正确后，即可进入 EMR 集群的命令行界面。所有的 Hadoop 操作都在 Hadoop 用户下，登录 EMR 节点后默认在 root 用户，需要切换到 Hadoop 用户。使用如下命令切换用户，并且进入 Hadoop 文件夹下：
 ```
 [root@172 ~]# su hadoop
 [hadoop@172 root]$ cd /usr/local/service/hadoop
@@ -42,11 +42,11 @@ scp $localfile root@公网IP地址:$remotefolder
 ```
 
 ### 数据存放在 HDFS
-将数据上传到腾讯云服务器之后，可以把数据拷贝到 HDFS 集群。通过如下指令把文件拷贝到 Hadoop 集群：
+将数据上传到腾讯云服务器后，可以把数据拷贝到 HDFS 集群。通过如下指令把文件拷贝到 Hadoop 集群：
 ```
-[hadoop@172 hadoop]$ hadoop fs -put /usr/local/service/Hadoop/test.txt /user/hadoop/
+[hadoop@172 hadoop]$ hadoop fs -put /usr/local/service/hadoop/test.txt /user/hadoop/
 ```
-拷贝完成后使用以下指令查看拷贝好的文件：
+拷贝完成后，使用以下指令查看拷贝好的文件：
 ```
 [hadoop@172 hadoop]$ hadoop fs -ls /user/hadoop
 输出：
@@ -60,15 +60,13 @@ scp $localfile root@公网IP地址:$remotefolder
 
 ### 数据存放在 COS
 数据存放在 COS 中有两种方式：**从本地直接通过 COS 的控制台上传**和**通过 Hadoop 命令上传**。
-- 从本地直接通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，数据文件上传之后可以通过如下命令查看：
+- 从本地直接通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，数据文件上传后，可通过如下命令查看：
 
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt
 ```
-
 其中 $bucketname 替换成您的储存桶的名字加路径。
-
 - 通过 Hadoop 命令上传，指令如下：
 
 ```
@@ -78,7 +76,7 @@ scp $localfile root@公网IP地址:$remotefolder
 ```
 
 ## 4. 使用 Maven 创建工程
-推荐您使用 Maven 来管理您的工程。Maven 是一个项目管理工具，能够帮助您方便的管理项目的依赖信息，即它可以通过 pom.xml 文件的配置获取 jar 包，而不用去手动添加。
+推荐使用 Maven 来管理工程。Maven 是一个项目管理工具，可以方便的管理项目的依赖信息，即它可通过 pom.xml 文件的配置获取 jar 包，而不用手动去添加。
 
 首先下载并安装 Maven，配置好 Maven 的环境变量，如果您使用 IDE，请在 IDE 中设置好 Maven 相关配置。
 
@@ -89,7 +87,7 @@ mvn     archetype:generate     -DgroupId=$yourgroupID     -DartifactId=$yourarti
 -DarchetypeArtifactId=maven-archetype-quickstart
 ```
 其中 `$yourgroupID` 即为您的包名；`$yourartifactID` 为您的项目名称；`maven-archetype-quickstart` 表示创建一个 Maven Java  项目，工程创建过程中需要下载一些文件，请保持网络通畅。
-创建成功之后，在 `D://mavenWorkplace` 目录下就会生成一个名为 `$yourartifactID` 的工程文件夹。其中的文件结构如下所示：
+创建成功后，在`D://mavenWorkplace`目录下就会生成一个名为`$yourartifactID`的工程文件夹。其中的文件结构如下所示：
 ```
 simple
 　　　---pom.xml　　　　核心配置，项目根下
@@ -252,7 +250,7 @@ scp $jarpackage root@公网IP地址: /usr/local/service/hadoop
 /usr/local/service/hadoop/WordCount-1.0-SNAPSHOT-jar-with-dependencies.jar
 WordCount /user/hadoop/test.txt /user/hadoop/WordCount_output
 ```
->以上整个命令为一条完整的指令，`/user/hadoop/ test.txt` 为输入的待处理文件，`/user/hadoop/ WordCount_output` 为输出文件夹，在提交命令之前要保证`WordCount_output` 文件夹尚未创建，否则提交会出错。
+>!以上整个命令为一条完整的指令，`/user/hadoop/ test.txt`为输入的待处理文件，`/user/hadoop/ WordCount_output`为输出文件夹，在提交命令前要保证`WordCount_output`文件夹尚未创建，否则提交会出错。
 
 执行完成后，通过如下命令查看执行输出文件：
 

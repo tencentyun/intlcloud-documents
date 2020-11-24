@@ -3,7 +3,7 @@
 ## 注册及认证
 
 在使用云服务器之前，您需要完成以下准备工作：
-1. 注册腾讯云账号，并完成实名认证。
+1. 注册腾讯云账号，并完成实名认证，未进行实名认证的用户无法购买中国境内的云服务器实例。
 新用户需在腾讯云官网进行 [注册](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F)，具体操作可参考 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985)。
 2. 访问 [腾讯云云服务器介绍页面](https://intl.cloud.tencent.com/product/cvm)，单击【立即选购】。
 

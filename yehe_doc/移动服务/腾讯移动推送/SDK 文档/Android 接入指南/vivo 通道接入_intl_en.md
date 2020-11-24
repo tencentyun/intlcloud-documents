@@ -5,8 +5,8 @@ The Vivo push channel is a system-level push channel officially provided by Vivo
 >?
 >- If an application cannot be opened after you click the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
 >- Vivo channel currently does not support in-app messages, which will be sent through the TPNS channel.
->- Vivo channel imposes a certain limit on the number of daily push messages, as detailed in [Vendor Channel Limit](https://intl.cloud.tencent.com/zh/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
->- Vivo channel pushes messages during 7:00-23:00, and only pushes system messages in other time periods. See [How to Apply for Vivo System Message](https://intl.cloud.tencent.com/zh/document/product/1024/36250#vivozhinan) to apply for system message.
+>- Vivo channel imposes a certain limit on the number of daily push messages, as detailed in [Vendor Channel Limit](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+>- Vivo channel pushes messages during 7:00-23:00, and only pushes system messages in other time periods. See [How to Apply for Vivo System Message](https://intl.cloud.tencent.com/document/product/1024/36250#vivozhinan) to apply for system message.
 >- Vivo channel allows a user to receive up to 5 operational messages per application, and unlimited number of system messages. 
 >- Vivo channel is only available in later models and systems. For more information, see [Vivo Push FAQs](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
 

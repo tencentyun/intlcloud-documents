@@ -32,7 +32,7 @@ func ExampleCreateSecret() {
 ```
 
 ## Viewing the Metadata of Secrets
-- **Example 1**: Obtaining the secret list and metadata of secrets.
+- **Example 1**: obtaining the secret list and metadata of secrets.
 ```
 func ExampleListSecrets() {
       credential := common.NewCredential(
@@ -55,7 +55,7 @@ func ExampleListSecrets() {
 }
 ```
 
-- **Example 2**: Obtaining the version information using the secret name (MySecret1)
+- **Example 2**: obtaining the version information using the secret name (MySecret1).
 ```
 var (
        secretName = "MySecret1"
@@ -83,8 +83,8 @@ var (
 }
 ```
 
-## Obtaining the Sensitive Data Plaintext Stored in SSM.
-**Example**: The caller obtains the database username and password plaintext using the secret name (MySecret1) and secret version (MyVersion1).
+## Obtaining the Sensitive Data Plaintext Stored in SSM
+**Example**: the caller obtains the database username and password plaintext using the secret name (MySecret1) and secret version (MyVersion1).
 ```
 var (
     secretName = "MySecret1"
@@ -116,7 +116,7 @@ func ExampleGetSecretValue() {
 ```
 
 ## Updating the Content of a Secret
-**Example**: Updating the database username and password plaintext using the secret name (MySecret1) and version (MyVersion1).
+**Example**: updating the database username and password plaintext using the secret name (MySecret1) and version (MyVersion1).
 ```
 var (
     secretName = "MySecret1"
@@ -149,7 +149,7 @@ func ExamplePutSecretValue() {
 ```
 
 ## Disabling, Deleting, and Restoring a Secret
-- **Example 1**: Disabling a secret. After a secret is disabled, the server can no longer obtain any content of the secret.
+- **Example 1**: disabling a secret. After a secret is disabled, the server can no longer obtain any content of the secret.
 ```
 var (
       secretName = "MySecret1"
@@ -175,7 +175,7 @@ func ExampleDisableSecret() {
       // ...
 }
 ```
-- **Example 2**: Deleting a secret. You can set the schedule delete time, before which the secret can be restored.
+- **Example 2**: deleting a secret. You can set the schedule delete time, before which the secret can be restored.
 >!Only disabled secrets can be deleted.
 >
 ```
@@ -202,7 +202,7 @@ func ExampleDeleteSecret() {
 }
 ```
 
-- **Example 3**: Restoring a secret. You can restore and enable the `PendingDelete` secret.
+- **Example 3**: restoring a secret. You can restore and enable the `PendingDelete` secret.
 ```
 func ExampleRestoreSecret() {
       credential := common.NewCredential(

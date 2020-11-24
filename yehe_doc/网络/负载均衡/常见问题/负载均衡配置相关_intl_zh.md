@@ -121,6 +121,11 @@ clientB ip+port drop
 ### 关于 Ping 负载均衡的 VIP 说明 
 公网负载均衡的 VIP 支持 Ping，Ping 负载均衡的 VIP 是由负载均衡集群响应，不会转发到后端的服务器。内网负载均衡的 VIP 不支持Ping，建议您使用 telnet 来探测内网负载均衡。
 
+### 关于 Telnet 负载均衡监听端口的说明
+- 创建四层（TCP、UDP、TCP SSL） 监听器后，如果不绑定后端服务器，则无法 Telnet 通监听端口；绑定后端服务器后，可以 Telnet 通监听端口。
+- 创建七层（HTTP、HTTPS）监听器后，即使不绑定后端服务器，也可以 Telnet 通监听端口，由 CLB 代答。
+- 关于843端口的说明，详情请参见[ 负载均衡配置相关](https://intl.cloud.tencent.com/zh/document/product/214/5411)。
+
 ### 关于内网回环问题的说明
 内网负载均衡不支持同一个内网 IP 既作为客户端又作为服务器，此时 CLB 看到的 Client IP 和 Server IP 是一样的，会导致访问不通。
 当您的客户端需要同时作为服务器时，请至少绑定两个后端服务器。CLB 有自动避免回环的策略，当 Client A 访问负载均衡时，负载均衡会自动调度到非 Client A 的后端服务器上。

@@ -11,7 +11,7 @@ A bootstrap action can be executed on the following three occasions:
 
 A bootstrap action will run bootstrap scripts during cluster creation and scaling. Bootstrap scripts will be executed in sequence in the order of addition, and there can be up to 16 bootstrap actions.
 
->Create a small pay-as-you-go cluster first to test whether the bootstrap action works properly, and if yes, create a production cluster.
+>!Create a small pay-as-you-go cluster first to test whether the bootstrap action works properly, and if yes, create a production cluster.
 
 ## Directions
 **Method 1. Add a bootstrap action when creating a cluster on the [purchase page](https://buy.cloud.tencent.com/emapreduce#/).**
@@ -24,10 +24,7 @@ A bootstrap action will run bootstrap scripts during cluster creation and scalin
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
 On the **Details** page, you can view the "Object Name" and "Object Address".
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
- - `SecretID` and `SecretKEY`: they can be obtained from the COS API key management page. Enter the [COS Console](https://console.cloud.tencent.com/cos5) and select **Key Management** > **TencentCloud API Key**.
 
-Enter the **API Key Management** page. If there are existing `SecretID` and `SecretKEY`, they can be used directly; otherwise, you can click **Create Key** to generate a new pair of them.
-![](https://main.qcloudimg.com/raw/d36d0d0ac7acfc5775df6706f7725dea.png)
  - Parameter: this refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of "Parameter" and "Name" cannot exceed 240 characters.
 
 
@@ -38,12 +35,7 @@ Enter the **API Key Management** page. If there are existing `SecretID` and `Sec
  - Name: you are recommended to keep it the same as your "object name".
  - Script Location: you are recommended to copy the location information on the COS details page. Enter the [COS Console](https://console.cloud.tencent.com/cos5), click **Bucket List**, select the desired script, and select **Operation** > **Details**.
 ![](https://main.qcloudimg.com/raw/b4d84804a68326ccf4f73bb759aa0acf.png)
-On the **Details** page, you can view the "Object Name" and "Object Address".
 ![](https://main.qcloudimg.com/raw/ff78c91bb3531bebd8c5471fea7e54d6.png)
- - `SecretID` and `SecretKEY`: they can be obtained from the COS API key management page. Enter the [COS Console](https://console.cloud.tencent.com/cos5) and select **Key Management** > **TencentCloud API Key**.
-
-Enter the **API Key Management** page. If there are existing `SecretID` and `SecretKEY`, they can be used directly; otherwise, you can click **Create Key** to generate a new pair of them.
-![](https://main.qcloudimg.com/raw/d36d0d0ac7acfc5775df6706f7725dea.png)
  - Parameter: this refers to the parameters for running the script. Separate multiple parameters by spaces, and do not add spaces in individual parameters. The total length of "Parameter" and "Name" cannot exceed 240 characters.
 
 ## Viewing Bootstrap Result
@@ -54,7 +46,7 @@ If you want to specify a bootstrap action for scaling, use APIs to scale. If a b
 Logs and script files to be executed are stored in the `/usr/local/service/scripts/` directory. The script system log is `script_syslog`.
 - Naming convention: "execution sequence" + "_" + "running occasion" + "script name" + "_" + stderr.
 - Naming convention: "execution sequence" + "_" + "running occasion" + "script name" + "_" + stdout.
->
+>!
 >The scripts will be executed on all types of nodes, and the script files and output log files of script execution will be stored on each node.
 > Bootstrap script content needs to be encoded in UTF-8.
 

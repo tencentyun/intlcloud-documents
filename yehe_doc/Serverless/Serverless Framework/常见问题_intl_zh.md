@@ -45,4 +45,3 @@ Windows powershell 的权限管理比较严格，需要执行 `set-executionpoli
 HTTP_PROXY=http://127.0.0.1:12345 #您的代理
 HTTPS_PROXY=http://127.0.0.1:12345 #您的代理
 ```
-

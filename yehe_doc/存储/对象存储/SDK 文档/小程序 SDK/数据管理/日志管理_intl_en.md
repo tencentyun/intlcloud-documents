@@ -20,7 +20,7 @@ This API is used to enable logging for a source bucket and store its access logs
 
 #### Sample request 
 
-Sample 1. Configure the source bucket `sourcebucket-1250000000` so that its logs are delivered to the path `bucket-logging-prefix/` under the destination bucket `targetbucket-1250000000`.
+Sample 1: configure the source bucket `sourcebucket-1250000000` so that its logs are delivered to the path `bucket-logging-prefix/` under the destination bucket `targetbucket-1250000000`.
 
 [//]: # (.cssg-snippet-put-bucket-logging)
 ```js
@@ -38,7 +38,7 @@ cos.putBucketLogging({
 });
 ```
 
-Sample 2. Disable log delivery to the destination bucket `sourcebucket-1250000000`.
+Sample 2: disable log delivery to the destination bucket `sourcebucket-1250000000`.
 
 [//]: # (.cssg-snippet-put-bucket-logging-disable)
 ```js
@@ -70,11 +70,11 @@ function(err, data) { ... }
 
 | Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | data | Returns data when the request is successful. If the request fails, this is empty. | Object |
-| - statusCode | Returns HTTP status code, such as 200, 403, and 404 | Number |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 
 ## Querying Logging Configuration
@@ -127,11 +127,11 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | data | Returns data when the request is successful. If the request fails, this is empty. | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | - BucketLoggingStatus | Indicates the logging status. If it is empty, logging is disabled.                            | Object     |
 | - - LoggingEnabled             | Specifies information on the logging configuration, mainly for the destination bucket                                           | Object      |

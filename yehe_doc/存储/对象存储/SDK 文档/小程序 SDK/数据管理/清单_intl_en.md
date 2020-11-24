@@ -17,7 +17,7 @@ This API is used to create an inventory job for a bucket. For more information, 
 
 > !
 > - Up to 1,000 inventory jobs can be created in one COS bucket.
-> - You must write a bucket policy for the destination bucket in order for COS to put the resulting file of the inventory job into the destination bucket.
+> - You must add a bucket policy to the destination bucket in order for COS to write the output file of the inventory job to the destination bucket.
 > - To call this API, make sure that you have the necessary permission for bucket inventory jobs; the bucket owner has this permission by default. If you do not have it, you should request it from the bucket owner first. 
 
 
@@ -121,7 +121,7 @@ cos.putBucketInventory({
 | - - COSBucketDestination             | Destination bucket that stores the exported inventory results                                           | Object      | Yes   |
 | - - - Bucket             | Name of the bucket that stores the inventory results                                           | String      | Yes   |
 | - - - AccountId             | ID of the bucket owner, e.g. 100000000001                                           | String      | No   |
-| - - - Prefix             | The prefix for inventory reports to deliver. COS automatically adds a '/' behind the prefix you specify.<br>For example, if you specify 'Prefix' as the prefix, COS will deliver inventory reports to the path `Prefix/inventory_report`.                                           | String      | No   |
+| - - - Prefix             | The prefix for inventory reports to deliver. COS automatically adds a '/' after the prefix you specify.<br>For example, if you specify 'Prefix' as the prefix, COS will deliver inventory reports to the path `Prefix/inventory_report`.                                           | String      | No   |
 | - - - Format             | Format of the inventory results. Value: CSV                                           | String      | Yes   |
 | - - - Encryption             | The option of enabling server-side encryption for inventory results                                           | Object      | No   |
 | - - - - SSECOS             | Encryption with a COS-managed key. Left empty.                                           | String      | No   |
@@ -134,11 +134,11 @@ function(err, data) { ... }
 
 | Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Data returned when the request is successful. If the request fails, this is empty. | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty. | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 
 ## Querying Inventory Jobs
@@ -217,11 +217,11 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | Returns an HTTP status code, such as `200`, `403`, and `404` | Number |
 | - headers | Returns headers | Object |
-| data | Data returned when the request is successful. If the request fails, this is empty. | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty. | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
 | - InventoryConfiguration | Inventory configuration parameters                               | Object      |
 | - - Id | ID of the inventory job.<br>Default: None<br>Valid characters: `a-z，A-Z，0-9，-，_，.`                               | String      |
@@ -236,7 +236,7 @@ function(err, data) { ... }
 | - - - COSBucketDestination             | Destination bucket that stores the exported inventory results                                           | Object      |
 | - - - - Bucket             | Name of the bucket that stores the inventory results                                           | String      |
 | - - - - AccountId             | ID of the bucket owner, e.g. 100000000001                                           | String      |
-| - - - - Prefix             | The prefix for inventory reports to deliver. COS automatically adds a '/' behind the prefix you specify.<br>For example, if you specify 'Prefix' as the prefix, COS will deliver inventory reports to the path `Prefix/inventory_report`.                                           | String      |
+| - - - - Prefix             | The prefix for inventory reports to deliver. COS automatically adds a '/' after the prefix you specify.<br>For example, if you specify 'Prefix' as the prefix, COS will deliver inventory reports to the path `Prefix/inventory_report`.                                           | String      |
 | - - - - Format             | Format of the inventory results. Value: CSV                                           | String      |
 | - - - - Encryption             | The option of enabling server-side encryption for inventory results                                           | Object      |
 | - - - - - SSECOS             | Encryption with a COS-managed key. Left empty.                                           | String      |
@@ -281,9 +281,9 @@ function(err, data) { ... }
 
 | Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
-| err | Returns an network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| err | Returns a network or service error when the request fails. If the request is successful, this is empty. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| data | Data returned when the request is successful. If the request fails, this is empty. | Object |
-| - statusCode | Returns HTTP status code, such as `200`, `403`, and `404` | Number |
+| data | Returns data when the request is successful. If the request fails, this is empty. | Object |
+| - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |

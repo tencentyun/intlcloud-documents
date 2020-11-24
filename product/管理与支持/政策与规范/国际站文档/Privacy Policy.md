@@ -388,10 +388,11 @@ If you wish for us to transfer the personal information to a third party you can
 
 
 ### MODULES
-Last updated: [2020-07-23]
+Last updated: [2020-11-19]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
 2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
 3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
 4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
 5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).
+6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38786).

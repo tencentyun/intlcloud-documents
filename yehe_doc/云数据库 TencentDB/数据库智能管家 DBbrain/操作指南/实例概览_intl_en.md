@@ -1,8 +1,8 @@
-The instance overview page displays the summary of your instances. You can view information such as task execution, regional distribution, real-time performance, and health assessment of all connected instances.
+The instance overview page displays the summary of your instances. You can view information such as task execution, regional distribution, real-time performance, and health assessment of all connected instances. The instance overview page is customizable.
 
->?Currently, instance overview is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, instance overview is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
 
-Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Instance Overview** on the left sidebar. You can display the view of all regions or a specific region. You can also view **real-time** and **historical** data.
+Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/board), select **Instance Overview** on the left sidebar, and select a database. You can display the view of all regions or a specific region. You can also view real-time and historical data.
 ![](https://main.qcloudimg.com/raw/bdc48d6beafc1c61323a1db9001e10a0.png)
 
 ## Recommended Features
@@ -18,8 +18,8 @@ DBbrain's 24/7 exception diagnosis module can detect problems in database instan
 ## Health Rankings
 DBbrain periodically performs health checks on all instances and scores them accordingly. On this page, you can view the health scores (current and historical) of all instances. You can click an instance to access the exception diagnosis page and view more details.
 
-## Task Running Status
-The task running status displays the execution status of existing tasks on the current instance.
 
 ## Monitoring Status Rankings
-The resource monitoring status rankings display the resource consumption rankings of selected monitoring metrics, including CPU, memory, disk utilization, number of slow queries, TPS, QPS, connected threads, and running threads. You can click an instance to view details about its exception diagnosis.
+The resource consumption rankings of selected monitoring metrics are displayed. You can click an instance to view details about its exception diagnosis.
+- MySQL metrics: CPU, memory, disk utilization, number of slow queries, TPS, QPS, connected threads, and running threads.
+- CynosDB metrics: CPU, memory, disk utilization, number of slow queries, TPS, QPS, connected threads, and running threads.

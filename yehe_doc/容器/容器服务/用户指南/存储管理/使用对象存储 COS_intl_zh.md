@@ -24,7 +24,7 @@
 
 <span id="CreatBucket"></span>
 ### 创建存储桶
->!根据相关法规和政策要求，使用腾讯云对象存储服务前需要完成[ 实名认证](https://console.cloud.tencent.com/developer/auth)。
+>!根据相关法规和政策要求，使用腾讯云对象存储服务前需要完成[ 实名认证](https://console.cloud.tencent.com/developer/auth)，未进行实名认证的用户无法使用腾讯云对象存储服务。
 
 1. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5)，单击左侧导航中【存储桶列表】，进入“存储桶列表”页面。
 2. 单击【创建存储桶】，在弹出的“创建存储桶”窗口，参考以下信息进行创建。如下图所示：

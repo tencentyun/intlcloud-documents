@@ -20,7 +20,7 @@ Where,
 -   `$secretName`: name of the secret that requires configuration
 
 ## Resource-level Authorization APIs
-Resource paths of the `DeleteSecretVersion`, `UpdateDescription`, `RestoreSecret`, `EnableSecret`, `PutSecretValue`, `DescribeSecret`, `UpdateSecret`, `DeleteSecret`, `GetSecretValue`, `DisableSecret`, and `ListSecretVersionIds` APIs are as follows:
+The resource paths of the `DeleteSecretVersion`, `UpdateDescription`, `RestoreSecret`, `EnableSecret`, `PutSecretValue`, `DescribeSecret`, `UpdateSecret`, `DeleteSecret`, `GetSecretValue`, `DisableSecret`, and `ListSecretVersionIds` APIs are as follows:
 ```
 qcs::ssm:$region:uin/$uin:secret/*
 qcs::ssm:$region:uin/$uin:secret/creatorUin/*
@@ -30,7 +30,7 @@ qcs::ssm:$region:uin/$uin:secret/creatorUin/$creatorUin/$secretName
 ## API-level Authorization List
 | API | Description |
 |---------|---------|
-|CreateSecret|Creates a secret.|
-|GetRegions|Obtains the list of available regions for displaying on the Console.|
-|GetServiceStatus|Obtains the service status, which can be used to determine whether the service is activated.|
-|ListSecrets|Obtains the information list of all secrets.|
+|CreateSecret|Creates a secret|
+|GetRegions|Obtains the list of available regions to be displayed on the console|
+|GetServiceStatus|Obtains the service status, which can be used to determine whether the service is activated|
+|ListSecrets|Obtains the information list of all secrets|

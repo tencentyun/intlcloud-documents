@@ -23,7 +23,7 @@ Local disks are local storage devices on the same physical server as the CVM ins
 
 | CVM | Specification and Performance |
 |---------|---------|
-| SATA HDD local disk | [Big data CVMs] (https://intl.cloud.tencent.com/document/product/213/11518#D) |
+| SATA HDD local disk | [Big data CVMs](https://intl.cloud.tencent.com/document/product/213/11518#D) |
 | NVME SSD local disk | [High IO CVMs](https://intl.cloud.tencent.com/document/product/213/11518#I) |
 
 ## Purchase

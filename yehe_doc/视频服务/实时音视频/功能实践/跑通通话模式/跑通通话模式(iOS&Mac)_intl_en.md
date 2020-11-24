@@ -9,14 +9,14 @@ Backed by the highest-quality lines and high-performance servers, this type of n
 - **Proxy server**
 With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
-In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
+In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
 You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
 ![](https://main.qcloudimg.com/raw/6baf3fba222db297fa4763d45b57b981.png)
 
->If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
+>?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
 
 ## Directions
 <span id="step1"> </span>
@@ -25,7 +25,7 @@ You can integrate the **TRTC SDK** into your project in the following ways:
 #### Method 1. Use CocoaPods for integration
 1. Install **CocoaPods**. For detailed directions, please see [Getting Started](https://guides.cocoapods.org/using/getting-started.html).
 2. Open the `Podfile` file in the root directory of your current project and add the following content:
->If there is no `Podfile` file in the directory, run the `pod init` command to create one and then add the following content:
+>?If there is no `Podfile` file in the directory, run the `pod init` command to create one and then add the following content:
 >
 ```
 target 'Your Project' do
@@ -82,7 +82,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 | userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
 | roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
 
-> In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>! In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
 <span id="step5"> </span>
 ### Step 5. Create and enter a room
@@ -111,7 +111,7 @@ func onEnterRoom(_ result: Int) {
 }
 ```
 
-> 
+> !
 >- If the room entry fails, the SDK will also call back the `onError` event and return the parameters `errCode` ([error code](https://intl.cloud.tencent.com/document/product/647/35124)), `errMsg` (error message), and `extraInfo` (reserved parameter).
 >- If you are already in a room, you must call `exitRoom()` to exit the current room first before entering the next room.
 
@@ -142,7 +142,7 @@ func onUserVideoAvailable(_ userId: String, available: Bool) {
 }
 ```
 
-> If you do not call `startRemoteView()` to subscribe to the video stream immediately after receiving the `onUserVideoAvailable()` event callback, the SDK will stop receiving remote video data within 5 seconds.
+>? If you do not call `startRemoteView()` to subscribe to the video stream immediately after receiving the `onUserVideoAvailable()` event callback, the SDK will stop receiving remote video data within 5 seconds.
 
 #### Manual subscription mode
 You can specify the SDK to enter the manual subscription mode through the [setDefaultStreamRecvMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) API. In this mode, the SDK will not automatically receive audio/video data of other users in the room; instead, you need to manually trigger the receipt through API functions.
@@ -167,7 +167,7 @@ trtcCloud.startLocalPreview(frontCamera, view: localView)
 trtcCloud.startLocalAudio()
 ```
 
-> The SDK for macOS will use the system-default camera and mic by default. You can call [setCurrentCameraDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc) and [setCurrentMicDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6) to select another camera and mic.
+>! The SDK for macOS will use the system-default camera and mic by default. You can call [setCurrentCameraDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc) and [setCurrentMicDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6) to select another camera and mic.
 
 <span id="step8"> </span>
 ### Step 8. Exit the current room
@@ -183,4 +183,4 @@ func onExitRoom(_ reason: Int) {
 }
 ```
 
-> If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
+>! If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.

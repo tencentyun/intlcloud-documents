@@ -2,7 +2,7 @@
 本文指导您如何在即时通信 IM 控制台创建体验版应用获取 SDKAppID，以及指导您如何将体验版应用升级为专业版应用。
 
 ## 前提条件
-已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。未进行实名认证的用户无法购买中国境内的SDKAppID。
 
 ## 创建体验版应用
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。

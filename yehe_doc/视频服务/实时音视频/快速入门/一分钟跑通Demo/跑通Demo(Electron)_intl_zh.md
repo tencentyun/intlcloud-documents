@@ -2,7 +2,7 @@
 
 ## 前提条件
 
-您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的实时音视频 TRTC 服务。
 
 ## 操作步骤
 
@@ -17,7 +17,7 @@
 
 ### 步骤2：下载 SDK 和 Demo 源码
 
-1.  鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)】跳转至 Github（或单击【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
+1.  鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
     ![img](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2.  下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
@@ -30,8 +30,8 @@
 
 3.  设置 `gen-test-user-sig.js` 文件中的相关参数：
 
-    -   SDKAPPID：默认为0，请设置为实际的 SDKAppID。
-    -   SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
+  	-   SDKAPPID：默认为0，请设置为实际的 SDKAppID。
+-   SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
     
 4.  返回实时音视频控制台，单击【粘贴完成，下一步】。
 
@@ -85,16 +85,12 @@
 1.  安装 Node 最新版本，建议选择 64bit 的 `.msi` 文件。[Node 下载地址](https://nodejs.org/en/download/)
 
 2.  按下 `win + r` 输入 cmd，用管理员权限启动命令行窗口，并将目录定位到 [项目目录](#projectFolder)，并执行以下命令。
-	
 ```shell
 $ npm install
 ```
 	
 ![安装](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
-
-
 3.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
-
 ```shell
 $ npm run start  # 首次运行，稍等片刻后，窗口中才会出现 UI
 ```
@@ -115,20 +111,21 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 $ brew install node
 ```
 
-3.  通过 cd 命令定位项目目录，并执行以下命令。
-
- ```shell
-$ npm install 
- ```
-    
-    ![mac下安装](https://main.qcloudimg.com/raw/3f8e92e9c59ff1bdb9fd0b2a0f34852a.png)
-    
-4.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
-
+3.  如果使用 Homebrew 的默认地址安装 Node.js 较慢，您可以考虑替换为国内镜像地址。
+```shell
+$ cd `brew --repo`
+$git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+$ brew update
+```
+4.通过cd命令定位项目目录，并执行以下命令。
+```shell
+$npminstall
+```
+![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
+5.  待 npm 的依赖包都安装完成后，继续在命令行窗口执行以下命令，运行 Demo。
 ```shell
 $ npm run start # 首次运行，稍等片刻后，窗口中才会出现 UI
 ```
-    
 ![mac下运行项目](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
     
 ### 项目主要命令

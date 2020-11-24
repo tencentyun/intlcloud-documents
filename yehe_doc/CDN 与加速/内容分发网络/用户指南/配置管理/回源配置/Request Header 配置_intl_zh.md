@@ -22,23 +22,23 @@
 ### 配置说明
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可在【回源配置】中看到回源 Request Header 配置，默认情况下为关闭状态，无任何配置：
-![](https://main.qcloudimg.com/raw/253c67e926455bd17f2cda79fa46d2ba.png)
+![](https://main.qcloudimg.com/raw/c41a39a9a851fbe3778ca325edc2e3f8.png)
 关闭状态下，可新增回源头部规则：
-![](https://main.qcloudimg.com/raw/895adcd7cebdb0d75bbde1c22244a2a5.png)
+![](https://main.qcloudimg.com/raw/e2972a9d697e45b3f081b68ea5e6badb.png)
 
 > !
 > 1. 用于携带用户端真实 IP 的头部为：X-Forward-For，其值默认为 $client_ip 变量，不允许修改。
 > 2. 用于携带用户端真实端口的头部为：X-Forward-Port，其值默认为 $remote_port 变量，不允许修改。
 
 规则添加完毕后，此时整体配置为关闭状态，不会生效：
-![](https://main.qcloudimg.com/raw/6d66d2ae51509aa787409ad4d0f301e1.png)
+![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
 可通过【调整优先级】按钮，调整规则上下顺序，如需发布至全网 CDN 节点，单击上方配置开关即可：
-![](https://main.qcloudimg.com/raw/f984682c540bdd219c85a3dd3e51d7ca.png)
+![](https://main.qcloudimg.com/raw/61cdbb7d9e12968695b16a08d33d79f7.png)
 
 ## 配置示例
 
 若加速域名`cloud.tencent.com`的回源 Request Header 配置如下：
-![](https://main.qcloudimg.com/raw/18b181e351aaf4a176ebcb9656921986.png)
+![](https://main.qcloudimg.com/raw/397759f6f138183d3f1ba60b33c7effc.png)
 若访问资源为：`http://cloud.tencent.com/test/test.mp4`
 1. 命中`*`规则，增加头部`X-Forward-For:$client_ip`头部，回源时将 $client_ip 替换为真实客户端 IP。
 2. 命中`.mp4`文件类型及`/test`路径，底部优先级大于顶部优先级，因此增加`x-cdn:Tencent`头部。

@@ -12,11 +12,11 @@ This document describes how to access and debug the GME APIs for HTML5.
 | ExitRoom       | Exits audio room        |
 
 
->
-- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
-- Authentication is required for room entry in GME. For more information, please see the authentication section in relevant documentation.
-- Operation on devices should be performed after successful room entry.
-- Starting from Chrome 74, `navigator.mediaDevices` can only be used in an HTTPS environment; therefore, please use HTTPS.
+>?
+>- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+>- Authentication is required for room entry in GME. For more information, please see the authentication section in relevant documentation.
+>- Operation on devices should be performed after successful room entry.
+>- Starting from Chrome 74, `navigator.mediaDevices` can only be used in an HTTPS environment; therefore, please use HTTPS.
 
 
 ## Initialization APIs
@@ -26,7 +26,7 @@ Before initialization, the SDK is in the uninitialized state. A room can be ente
 For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
 This API requires the `SDKAppID` from the Tencent Cloud Console and the `openId` as parameters. The `openId` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
->The SDK must be initialized so that a room can be entered
+>!The SDK must be initialized so that a room can be entered
 
 ### Function prototype
 

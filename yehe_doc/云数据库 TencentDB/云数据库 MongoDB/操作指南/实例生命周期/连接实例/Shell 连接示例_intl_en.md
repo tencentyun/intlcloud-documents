@@ -6,6 +6,8 @@ A typical connection command is as follows:
 ```
 mongo 10.66.187.127:27017/admin -u mongouser -p thepasswordA1
 ```
+>!To access TencentDB for MongoDB via a connection string, special characters in the password need to be converted to URL encoded characters so that they can be correctly identified. For example, "@" should be converted to "%40".
+>
 See the figure below:
 ![](https://mc.qcloudimg.com/static/img/ce6b26f8cd6b1cc2981bc0cd44f9d09d/shell_default.png)
 

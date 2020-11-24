@@ -2,7 +2,7 @@
 
 
 ## 步骤1：开通云点播
-1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+1. 注册 [腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的云点播实例。
 2. 购买云点播服务。
 3. 选择【云产品】>【视频服务】>[【云点播】](https://console.cloud.tencent.com/vod)，进入云点播控制台。
 

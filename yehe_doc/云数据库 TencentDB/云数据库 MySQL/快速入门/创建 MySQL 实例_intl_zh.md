@@ -2,7 +2,7 @@
 本文为您介绍如何通过控制台创建 MySQL 实例。
 
 ## 前提条件
-已注册腾讯云账号并完成实名认证。
+已注册腾讯云账号并完成实名认证，未进行实名认证的用户无法购买中国境内的 MySQL 实例。
 - 如需注册腾讯云账号：
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
 - 如需完成实名认证：

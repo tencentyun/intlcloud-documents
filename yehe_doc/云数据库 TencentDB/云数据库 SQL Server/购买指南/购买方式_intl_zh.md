@@ -1,5 +1,5 @@
 ## 前提条件
-购买前需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
+在购买中国大陆资源的时候，账号需要实名认证，请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 官网购买
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击【新建】。

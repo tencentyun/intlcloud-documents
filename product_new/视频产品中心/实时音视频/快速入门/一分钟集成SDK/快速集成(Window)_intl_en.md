@@ -10,9 +10,10 @@ This document describes how to quickly integrate the Tencent Cloud TRTC SDK for 
 
 This document uses the creation of a simple Winform project as an example to describe how to integrate the SDK for C# into a Visual Studio project.
 
-### Step 1. Download the SDK for Windows
+### Step 1. Download the SDK for Windows.
 
-[Download the SDK](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip), decompress it, and open the files, including:
+
+[Download the SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip), decompress it, and open the files, including:
 
 | Directory Name | Description |
 | ------- | -------------------------------------- |
@@ -76,10 +77,10 @@ ENDLOCAL
 
 
 **Step 4.3. Modify the debugging environment**
-Open the properties page of the TRTCDemo, select **Build**, and set **Platform** to the solution platform in the top menu bar.
+Open the properties page of the TRTCDemo, select **Build**, and set **Platform** to the solution platform in the top menu bar as shown below:
 
 ### Step 5. Print the SDK version number
-1. Add a label control in the designer of `Form1.cs`.
+1. Add a label control in the designer of `Form1.cs`as shown below:
 
 2. Open the `Form1.cs` code file and add the following code:
 	```c#
@@ -120,5 +121,5 @@ System.BadImageFormatException: "Could not load file or assembly "ManageLiteAV, 
 ```
 System.IO.FileNotFoundException: "Could not load file or assembly "ManageLiteAV.dll" or one of its dependencies. The specified module could not be found."
 ```
-- Due to possible compatibility issues between different Windows versions, the following .dll files have been added to the SDK for C# to solve such issues:
+- Due to possible compatibility issues between different Windows versions, the following. dll files have been added to the SDK for C# to solve such issues. File lists as shown below:
 	

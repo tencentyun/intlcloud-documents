@@ -1,5 +1,5 @@
 ## 使用要求
-使用 EKS 之前，腾讯云账号需完成实名认证。如未完成，请参考 [实名认证基本介绍](https://intl.cloud.tencent.com/document/product/378/3629) 进行认证。
+使用 EKS 之前，腾讯云账号需完成实名认证。如未完成，请参考 [实名认证基本介绍](https://intl.cloud.tencent.com/document/product/378/3629) 进行认证。未进行实名认证的用户无法购买中国境内的EKS。
 
 
 ## 支持地域

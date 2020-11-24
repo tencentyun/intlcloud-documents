@@ -3,7 +3,7 @@ Based on your business needs, you can return pay-as-you-go instances in the cons
 - After a pay-as-you-go instance is returned, it will be directly terminated without a retention period; therefore, please do so with caution.
 
 After an instance is returned, once its status changes to "Isolated", no fees related to it will be incurred.
->
+>!
 >- After an instance is terminated, its data will not be recoverable. Please back up the data in advance.
 >- When the instance is terminated, its IP resources will be released simultaneously. If the instance has read-only instances or disaster recovery instances:
 >  - Read-only instances will be terminated at the same time.
@@ -20,6 +20,6 @@ After an instance is returned, once its status changes to "Isolated", no fees re
 
  ### Pay-as-You-Go instance
 1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb), select **More** > **Terminate** in the **Operation** column in the instance list.
-2. In the pop-up dialog box, confirm that everything is correct and click **Confirm**.
-> After you click **Confirm**, the instance will be directly terminated without a retention period; therefore, please do so with caution.
+2. In the pop-up dialog box, confirm that everything is correct and click **OK**.
+>!After you click **OK**, the instance will be directly terminated without a retention period; therefore, please do so with caution.
 >

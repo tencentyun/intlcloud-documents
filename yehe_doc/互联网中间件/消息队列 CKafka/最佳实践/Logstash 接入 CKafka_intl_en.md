@@ -1,21 +1,21 @@
 ## Logstash Introduction
-Logstash, an open-source log processing tool, is used to collect data from multiple sources, filter collected data, and store data for other use.
+Logstash, an open-source log processing tool, is used to collect data from multiple sources, filter collected data, and store data for other uses.
 
-Logstash is highly flexible and has powerful syntax analysis capabilities. With a variety of plugins, it supports multiple types of inputs and outputs. In addition, as a horizontally scalable data pipeline, it is powerful in log collection and retrieval when working with Elasticsearch and Kibana.
+Logstash is highly flexible and has powerful syntax analysis capabilities. With a variety of plugins, it supports multiple types of inputs and outputs. In addition, as a horizontally scalable data pipeline, it has powerful log collection and retrieval features that work with Elasticsearch and Kibana.
 
-#### Working principle of Logstash
-Logstash data processing pipeline can be divided into 3 stages: inputs → filters → outputs.
+#### Working principles of Logstash
+The Logstash data processing pipeline can be divided into 3 stages: inputs → filters → outputs.
 1. Inputs: generate data. Inputs are data sources such as file, syslog, redis, and beats.
-2. Filters: modify and filter data. Filters are intermediate processing components in Logstash data pipeline. They can modify events based on specific conditions. Some commonly-used filters are grok, mutate, drop and clone.
+2. Filters: modify and filter data. Filters are intermediate processing components in the Logstash data pipeline. They can modify events based on specific conditions. Some commonly-used filters are grok, mutate, drop, and clone.
 3. Outputs: transfer data to other locations. An event can be transferred to multiple outputs, and the event ends when the transfer is completed. Elasticsearch is the most commonly-used output.
 
-In addition, Logstash supports encoding and decoding data, so you can specify data formats on the input and output sides.
+In addition, Logstash supports encoding and decoding data, so you can specify data formats on the input and output ends.
 ![](https://mc.qcloudimg.com/static/img/17f1ac23a158b043091ebf48071f3a78/00.png)
 
 ## Advantages of Connecting Logstash to Kafka
-- Data can be asynchronously processed to prevent effects caused by traffic spikes.
-- Components are decoupled, so when an exception occurs in Elasticsearch, the upstream work is not affected.
-Note: when Logstash is processing data, it consumes resources. If you deploy Logstash on a production server, the performance of the server may be affected.
+- Data can be asynchronously processed to prevent traffic spikes.
+- Components are decoupled, so when an exception occurs in Elasticsearch, the upstream work will not be affected.
+Note: Logstash consumes resources when processing data. If you deploy Logstash on a production server, the performance of the server may be affected.
 ![](https://mc.qcloudimg.com/static/img/bb8a396b1953ed487776281ef616a5c8/11.png)
 
 
@@ -31,7 +31,7 @@ The compatibility of official versions is described in the following table:
 | 0.9 | 2.4.x - 5.x.x | 4.x.x | 
 | 0.10.0.x | 2.4.x - 5.x.x | 5.x.x | 
 
-The latest version is V5.1.8, which uses Consumer API V0.10 to read data.
+The latest version is V5.1.8, which uses the Consumer API V0.10 to read data.
 
 For information about parameter configuration, see [Kafka input plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html).
 
@@ -45,7 +45,7 @@ The compatibility of official versions is described in the following table:
 | 0.9 | 2.4.x - 5.x.x | 4.x.x | 
 | 0.10.0.x | 2.4.x - 5.x.x | 5.x.x  | 
  
-The latest version is V5.1.7, which uses Producer API V0.10 to produce data.
+The latest version is V5.1.7, which uses the Producer API V0.10 to produce data.
 
 For information about parameter configuration, see [Kafka output plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-kafka.html).
 

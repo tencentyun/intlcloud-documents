@@ -12,7 +12,7 @@ For more information on node types, please see [Node Type Description](https://i
 
 ## Selecting Model Specification
 EMR offers a wide variety of CVM instance models, including EMR Standard, EMR Compute, EMR High IO, EMR MEM-Optimized, and EMR Big Data (if you need CPM models, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category)).
->
+>!
 >- The minimum number of nodes in a high-availability (HA) Hadoop or Druid cluster is 8, including 2 master nodes, 3 common nodes, and at least 3 core nodes. A non-HA cluster adopts single-replica storage, which can be used for testing but is not recommended for use in production environments, and its minimum number of nodes is 3, including 1 master node and at least 2 core nodes.
 >- The minimum number of nodes in a high-availability (HA) ClickHouse cluster is 5, including 2 core nodes and 3 common nodes. A non-HA cluster adopts single-replica storage, which can be used for testing but is not recommended for use in production environments, and it should contain at least 1 core node.
 
@@ -102,7 +102,7 @@ You can choose the most appropriate model based on your business needs and budge
 
 ## Network and Security
 To ensure the network security of the EMR cluster, it is placed in a VPC, and a security group policy is added to the VPC. In addition, to ensure that the web UI of Hadoop can be easily accessed, one of the master nodes is configured with a public IP which is billed by traffic. A router node has no public IPs by default. If you need one for it, you can bind it to an EIP in the [CVM Console](https://console.cloud.tencent.com/cvm/eip).
->
+>!
 >- A public IP is enabled for a master node when a cluster is created, but you can disable it based on the actual conditions.
 - Enabling the public IP for the master node is mainly for SSH login and component viewing in the web UI.
 - A master node with a public IP enabled is billed by traffic with a bandwidth of up to 5 Mbps. Once the cluster is created, you can make adjustments to its network in the console.

@@ -1,7 +1,7 @@
 创建 PostgreSQL 实例后，您还需要进行 PostgreSQL 实例的初始化，以轻松启用实例。
 
 ## 前提条件
-1. 已注册腾讯云账号并完成实名认证。
+1. 已注册腾讯云账号并完成实名认证。未进行实名认证的用户无法购买中国境内的 PostgreSQL 实例。
 如需注册腾讯云账号：
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
 2. 已购买云数据库 PostgreSQL。

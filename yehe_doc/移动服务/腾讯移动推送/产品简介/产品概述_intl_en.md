@@ -1,4 +1,4 @@
-Tencent Push Notification Service (TPNS) provides stable and fast application push services featuring high delivery rate. Its high delivery rate is backed by industry-leading technologies, stable push notification channels, unique dual services and channel sharing within Tencent. It can push 18 million messages every minute within just a few seconds and supports push notifications in applications such as Honor of Kings. Additionally, it can tag users precisely to enable accurate operations.
+Tencent Push Notification Service (TPNS) provides a stable and fast application push service that features high delivery rate. Boasting industry-leading technical advantages, stable and reliable message push channels, and proprietary dual service architecture for session keep-alive, it is easy and fast to access, effectively improving the message delivery rate. It can push 18 million messages per minute and deliver them in a matter of seconds (sustaining in-app pushes for Tencent applications such as the Honor of Kings). In addition, it can precisely tag users for efficient lean operation of applications.
 
 
 
