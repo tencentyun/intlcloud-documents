@@ -6,16 +6,19 @@
 <span id="DemoUI"> </span>
 ## 复用 Demo 的 UI 界面
 
+
+
+
 <span id="ui.step1"></span>
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【立即开始】，输入应用名称，例如 `TestLiveRoom` ，单击【创建应用】。
 
->本功能需同时使用 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>?本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 <span id="ui.step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android)】跳转至 Github（或单击【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
+1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
  ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
@@ -30,6 +33,7 @@
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
+>!
 >本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
 >正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
@@ -67,7 +71,7 @@ dependencies {
        complie 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
->两个 SDK 的最新版本号，可以在 [TRTC](https://github.com/tencentyun/TRTCSDK) 和 [IM](https://github.com/tencentyun/TIMSDK) 的 Github 首页获取。
+>?两个 SDK 的最新版本号，可以在 [TRTC](https://github.com/tencentyun/TRTCSDK) 和 [IM](https://github.com/tencentyun/TIMSDK) 的 Github 首页获取。
 >
 2. 在 defaultConfig 中，指定 App 使用的 CPU 架构。
 ```
@@ -186,7 +190,7 @@ mLiveRoom.login(SDKAPPID, userId, userSig, config,
 ### 步骤5：主播端开播
 1. 主播执行 [步骤四](#model.step4) 登录后，可以调用`setSelfProfile`设置自己的昵称和头像。
 2. 主播在开播前可先调用`startCameraPreview`开启摄像头预览，界面上可以配置美颜调节按钮调用，通过`getBeautyManager`进行美颜设置。
- >非企业版 SDK 不支持变脸和贴图挂件功能。
+ >?非企业版 SDK 不支持变脸和贴图挂件功能。
  >
 3. 主播调整美颜效果后，可以调用`createRoom`创建新的直播间。
 4. 主播调用`startPublish`开始推流。如需支持 CDN 观看，请在 login 时传入的`TRTCLiveRoomConfig`参数中指定`useCDNFirst`和`CDNPlayDomain`并在`startPublish`时指定直播拉流用的 streamID。
@@ -222,10 +226,10 @@ mLiveRoom.createRoom(123456789, param, new TRTCLiveRoomCallback.ActionCallback()
 ### 步骤6：观众端观看
 1. 观众端执行 [步骤四](#model.step4) 登录后，可以调用`setSelfProfile`设置自己的昵称和头像。
 2. 观众端向业务后台获取最新的直播房间列表。
- >Demo 中的直播间列表仅做演示使用，直播间列表的业务逻辑千差万别，腾讯云暂不提供直播间列表的管理服务，请自行管理您的直播间列表。
+ >?Demo 中的直播间列表仅做演示使用，直播间列表的业务逻辑千差万别，腾讯云暂不提供直播间列表的管理服务，请自行管理您的直播间列表。
  >
 3. 观众端调用`getRoomInfos`获取房间的详细信息，该信息是在主播端调用`createRoom`创建直播间时设置的简单描述信息。
- >如果您的直播间列表包含了足够全面的信息，可跳过调用`getRoomInfos`相关步骤。
+ >!如果您的直播间列表包含了足够全面的信息，可跳过调用`getRoomInfos`相关步骤。
 4. 观众选择一个直播间，调用`enterRoom`并传入房间号即可进入该房间。
 5. 调用`startPlay`并传入主播的 userId 开始播放。
  - 若直播间列表已包含主播端的 userId 信息，观众端可直接调用`startPlay`并传入主播的 userId 即可开始播放。
