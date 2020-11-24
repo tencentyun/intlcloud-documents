@@ -47,8 +47,9 @@ cd /etc/nginx/conf.d
 cp default.conf default.conf.bak
 ```
 5. Run the following command to open the `default.conf` file.
-
-`vim default.conf`
+```
+vim default.conf
+```
 
 6. Press **i** to switch to the edit mode to modify the `default.conf` file.
   1. Add “index.php” to `index` under `location`, as shown below:
