@@ -80,4 +80,4 @@ policyDocument 为：
 其中，policyName 为：QcloudCOSAccessForCLSRole，roleName 为第1步中的 CLS_QcsRole，也可以使用创建 roleName 时返回的 roleID。
 
 #### 3. 开启日志管理
-调用接口，开启日志管理功能，具体接口信息请参见 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/31483)，其中，要求存放日志的目标存储桶和源存储桶在同一地域。
+调用接口，开启日志管理功能，具体接口信息请参见 [PUT Bucket logging](https://intl.cloud.tencent.com/document/product/436/17054)，其中，要求存放日志的目标存储桶和源存储桶在同一地域。
