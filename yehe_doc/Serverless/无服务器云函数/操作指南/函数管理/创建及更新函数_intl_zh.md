@@ -33,6 +33,8 @@
 # serverless.yml
 component: scf # (必填) 引用 component 的名称，当前用到的是 tencent-scf 组件
 name: scfdemo # (必填) 该组件创建的实例名称
+
+
 inputs:
   name: scfFunctionName
   src: ./src
