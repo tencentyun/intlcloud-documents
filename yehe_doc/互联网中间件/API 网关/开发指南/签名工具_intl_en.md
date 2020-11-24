@@ -12,7 +12,7 @@ Postman has been downloaded and installed ([download address](https://www.postma
 2. In the left sidebar, choose **Tools** -> **Signature Tool** to go to the API Gateway signature tool page.
 3. In the **Basic Info** module, click **Obtain**. The system will automatically fill in the start time and end time of the signature validity period.
 4. Enter any value as the signature watermark value.
-![](https://main.qcloudimg.com/raw/ef8b642af5844de7a9015799b4bfcbf3.png)
+![](https://main.qcloudimg.com/raw/5e6e18dbb642e507b1f22251e7811300.png)
 
 ### Step 2: enter an API key pair
 In the **Secret Key** module, set the API key pair information using either of the following methods:
@@ -20,7 +20,7 @@ In the **Secret Key** module, set the API key pair information using either of t
 - Method 2: enter a key pair.
 
 Make sure you enter the correct information. If the information is incorrect, your signature will be invalid.
-![](https://main.qcloudimg.com/raw/3d4f4987cf2222c8c00d3483f8e2e12a.png)
+![](https://main.qcloudimg.com/raw/30ab6f97d0ca79b1987d86125e72e8fc.png)
 
 ### Step 3: generate a signature
 Click **Generate Signature**. The request signature result will be displayed in the module on the right. The main parameters are as follows:
@@ -28,11 +28,11 @@ Click **Generate Signature**. The request signature result will be displayed in 
 - **X-Date**: HTTP request construction time in GMT format. The difference between **X-Date** and the current time cannot exceed 15 minutes.
 - **Authorization**: signing information.
 
-![](https://main.qcloudimg.com/raw/aed2dcba3916a4a36b8ae469b00e5aee.png)
+![](https://main.qcloudimg.com/raw/5c69a16414f6a4d04dd447f0f87fd7da.png)
 
 ### Step 4: initiate a call in Postman
 Open Postman, enter the `Source`, `X-Date`, and `Authorization` parameters in `Headers`, enter the API request address, API request parameters, and other information, and click **Send** to call the key pair authentication API.
-![](https://main.qcloudimg.com/raw/f3f80737cac662e6071f568c6c08a87e.png)
+![](https://main.qcloudimg.com/raw/9eab8698a99139b7f9fa6d11cf41e39c.png)
 
 ## Notes
 
