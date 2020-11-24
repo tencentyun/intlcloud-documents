@@ -6,17 +6,75 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop) 
 
 - If your application scenario is mainly in the education sector, the [Electron](https://intl.cloud.tencent.com/document/product/647/35097) solution is recommended for the teacher end, which is more stable and supports two-channel big/small video images, more flexible screen sharing schemes, and more powerful recovery capabilities on poor network connections.
 
-| OS | Browser | Minimum Browser Version Requirement | Receipt (Playback) | Sending (Mic-on) | Screen Sharing |
-|:-------:|:-------:|:-------:|:-------:|:-------:| :-------:|
-| Mac OS  | Safari (desktop)  |  11+ | Supported | Supported | Not supported |
-| Mac OS  | Chrome (desktop) |  56+ | Supported | Supported |  Supported (on Chrome 72+) |
-| Windows  | Chrome (desktop) |  56+ | Supported | Supported |  Supported (on Chrome 72+) |
-| Windows  | QQ browser (desktop) |  10.4 | Supported | Supported | Not supported |
-| iOS | Safari (mobile)  | 11.1.2 | Supported | Supported | Not supported |
-| iOS | WeChat embedded browser| 12.1.4 | Supported | Not supported | Not supported |
-| Android | QQ browser (mobile)| - | Not supported | Not supported | Not supported |
-| Android | UC browser (mobile) | - | Not supported | Not supported | Not supported |
-| Android | WeChat embedded browser | - | Not supported | Not supported | Not supported |
+
+<table><tr>
+<th>OS</th><thwidth="22%">Browser</th><th>Minimum Browser<br>Version Requirement</th><thwidth="16%">Receipt (Playback)</th><thwidth="16%">Sending (Mic-on)</th><th>Screen Sharing</th>
+</tr><tr>
+	<td>MacOS</td>
+	<td>Safari (desktop)</td>
+	<td>11+</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Not supported</td>
+</tr><tr>
+	<td>Mac OS</td>
+	<td>Chrome (desktop)</td>
+	<td>56+</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Supported (on Chrome 72+)</td>
+</tr><tr>
+	<td>Windows</td>
+	<td>Chrome (desktop)</td>
+	<td>56+</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Supported (on Chrome 72+)</td>
+</tr><tr>
+	<td>Windows</td>
+	<td>QQ browser (desktop)</td>
+	<td>10.4</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Not supported</td>
+</tr><tr>
+<td>iOS</td>
+	<td>Safari (mobile)</td>
+	<td>11.1.2</td>
+	<td>Supported</td>
+	<td>Supported</td>
+	<td>Not supported</td>
+</tr><tr>
+	<td>iOS</td>
+	<td>WeChat embedded browser</td>
+	<td>12.1.4</td>
+	<td>Supported</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+</tr><tr>
+	<td>Android</td>
+	<td>QQ browser (mobile)</td>
+	<td>-</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+</tr><tr>
+	<td>Android</td>
+	<td>UC browser (mobile)</td>
+	<td>-</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+</tr><tr>
+	<td>Android</td>
+	<td>WeChat embedded browser</td>
+	<td>-</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+	<td>Not supported</td>
+</tr></table>
+
 
 >! 
 >- You can open the [WebRTC capability test](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) page in your browser to check whether WebRTC is fully supported, such as the browser environments like WeChat Official Account.
@@ -41,14 +99,14 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 <span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web)** to enter GitHub (or click **[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**), and download the relevant SDK and supporting demo source code.
+1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**), and download the relevant SDK and supporting demo source code.
  ![](https://main.qcloudimg.com/raw/70f4f26e438e63b62b1dd55306d1c296.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#step2).
-2. Find and open the `Web/js/debug/GenerateTestUserSig.js` file.
+2. Find and open the `Web/js/TRTCSimpleDemo/GenerateTestUserSig.js` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
