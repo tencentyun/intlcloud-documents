@@ -4,4 +4,3 @@
 >! `wow.qcloudwaf.com` is a sample domain name. Please replace it with the actual domain name that has been added.
 3. Log in to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/attack). In the left sidebar, choose **Log Services** > **Attack Logs** to go to the attack log query page.
 4. Select a protected domain name and click **Search**. If the attack type appears as "XSS attack", the WAF configuration has taken effect.
-![](https://main.qcloudimg.com/raw/5bb81ca8874cb8723b6638b83351b729.png)
