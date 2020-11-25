@@ -79,6 +79,6 @@ To deny a user permissions to operate specific PostgreSQL instances, you can ass
 ### Custom policies
 If preset policies do not meet your requirements, you can create custom policies as needed.
 For detailed instructions, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
-For more PostgreSQL-related policy syntax, see [Access Policy Syntax](https://cloud.tencent.com/document/product/409/45389).
+For more PostgreSQL-related policy syntax, see [Access Policy Syntax](https://intl.cloud.tencent.com/document/product/409/38835).
 
 

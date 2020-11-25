@@ -9,7 +9,7 @@ This document describes how to use SCF in combination with API Gateway to custom
 1. Log in to the SCF Console and select **[Functions](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
 2. At the top of the "Functions" page, select the **Guangzhou** region and click **Create** to enter the function creating page.
 3. Create a function as follows in "Basic Info" on the "Create Function" page and click **Next** as shown below:
-
+![](https://main.qcloudimg.com/raw/efac7a8621c9ace90f0b19d6d5a58d7f.png)
  - **Function Name**: enter a custom name. This document uses `test` as an example.
  - **Runtime Environment**: select "Python 2.7".
  - **Create Method**: select **Function Template**.
@@ -34,30 +34,32 @@ The main parameters are as follows. Keep the remaining parameters as default:
 A bucket is used to store custom invitations. The specific steps are as follows:
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5/bucket) and select **Bucket List** on the left sidebar.
 2. Click **Create Bucket** on the "Bucket List" page.
-3. In the "Create Bucket" pop-up window, create a bucket.
-.
+3. In the "Create Bucket" pop-up window, create a bucket.as shown below:
+![](https://main.qcloudimg.com/raw/01c942333bc28d3f8ddafa9ac680e74e.png)
+
 The main parameter information is as follows. Keep the remaining parameters as default:
  - **Name**: enter a custom name. This document uses `test` as an example.
  - **Region**: select "Guangzhou".
  - **Access Permission**: select "Public Read/Private Write".
 4. Click **OK**.
-2. Select **Basic Configuration** on the left of the bucket and click **Add a Rule** in "CORS (Cross-Origin Resource Sharing) Setting".
-3. In the "Add CORS Rule" pop-up window, add a rule.
+5. Select **Security Management** on the left of the bucket and click **Add a Rule** in "CORS (Cross-Origin Resource Sharing) Setting".
+6. In the "Add CORS Rule" pop-up window, add a rule.
 
 The main parameter information is as follows. Keep the remaining parameters as default:
  - **Origin**: enter <b>*</b>.
  - **Allow-Methods**: select "GET".
  - **Expose-Headers**: enter **-**.
-4. Click **Submit**.
+7. Click **Submit**.
 
 
 ### Modifying function configuration
 1. On the "[Functions](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)" page, click the function name to enter the "Function configuration" page.
 2. On the "Function configuration" page, click **Edit** in the top-right corner and configure the function as follows.
- - **Execution Role**: check "Enable" and select **a permission policy containing COS data read/write permissions**. `SCF_QcsRole` is selected here as an example.
-.
- - **Environment Variable**: add the following environment variables and configure them as.
-.
+ - **Execution Role**: check "Enable" and select **a permission policy containing COS data read/write permissions**. `SCF_QcsRole` is selected here as an example.as shown below:
+![](https://main.qcloudimg.com/raw/51561c11f86834ed9ab5410373603c4f.png)
+ - **Environment Variable**: add the following environment variables and configure them as.as shown below:
+![](https://main.qcloudimg.com/raw/24dcccec02d5a3b4d48e7b6e766e2094.png)
+
 <table>
 <tr>
 <th>key</th><th>value</th>
@@ -90,6 +92,5 @@ https://testxxxx.com//invitation-yun-ServerlessDays.jpg%
 
 #### Method 2
 1. Download the [HTML page](https://github.com/tencentyun/scf-demo-repo/blob/master/Python2.7-Add_Text_To_Pictures/invitation.html) and change the URL to the URL of the API gateway trigger.
-
 2. Open the HTML page, enter the name of the invited guest to generate a poster, and access the URL to download it.
 

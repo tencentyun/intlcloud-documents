@@ -1,5 +1,5 @@
 本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/document/product/583/9705)。
->触发器传递的入参事件结构已有部分定义，可直接使用。您可以通过 [java cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用，通过 [go cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events ) 获取 Golang 的库并使用。
+>!触发器传递的入参事件结构已有部分定义，可直接使用。您可以通过 [java cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用，通过 [go cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events ) 获取 Golang 的库并使用。
 >
 
 ## API 网关触发器的集成请求事件消息结构
@@ -11,7 +11,7 @@
     "serviceId": "service-f94sy04v",
     "path": "/test/{path}",
     "httpMethod": "POST",
-    "requestId": "c6af9ac6-7b61-11e6-9a41-93e8deadbeef",
+    "requestId": "c6af9ac6-****-****-9a41-93e8deadbeef",
     "identity": {
       "secretId": "abdcdxxxxxxxsdfs"
     },
@@ -72,7 +72,7 @@
             "cosObject": {
                 "url": "http://testpic-1253970026.cos.ap-chengdu.myqcloud.com/testfile",
                 "meta": {
-                    "x-cos-request-id": "NWMxOWY4MGFfMjViMjU4NjRfMTUyMV8yNzhhZjM=",
+                    "x-cos-request-id": "NWMxOWY4MGFfMjViMjU4NjRfMTUy********ZjM=",
                     "Content-Type": ""
                 },
                 "vid": "",
@@ -156,3 +156,27 @@
 }
 ```
 
+
+## CLS 触发器的事件消息结构
+在指定的 CLS 触发器接收到消息时，CLS 的后台消费者模块会消费消息，并将消息组装异步调用您的函数。为保证单次触发传递数据的效率，数据字段的值是 Base64 编码的 ZIP 文档。
+```
+{
+  "clslogs": {
+    "data": "ewogICAgIm1lc3NhZ2VUeXBlIjogIkRBVEFfTUVTU0FHRSIsCiAgICAib3duZXIiOiAiMTIzNDU2Nzg5MDEyIiwKICAgICJsb2dHcm91cCI6I..."
+  }
+} 
+```
+在解码和解压缩后，日志数据类似以下 JSON 体，以 CLS Logs 消息数据（已解码）为例：
+```
+{
+	"topic_id": "xxxx-xx-xx-xx-yyyyyyyy",
+	"topic_name": "testname",
+	"records": [{
+		"timestamp": "1605578090000000",
+		"content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	}, {
+		"timestamp": "1605578090000003",
+		"content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	}]
+}
+```

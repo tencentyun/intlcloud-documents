@@ -5,7 +5,7 @@ This document describes how to add nodes to the edge cluster that you created.
 ## Prerequisites
 Prepare as instructed below:
 - Node source: you can use an existing server in the [CVM console](https://console.cloud.tencent.com/cvm) or the [ECM console](https://console.cloud.tencent.com/ecm/instance), or a server on another platform or in your on-premises data center.
-- Node processor: x86_64 processors are supported. 
+- Node processor: supports x86_64, ARM, and ARM64.
 - The following operating systems of nodes are supported:
  - Ubuntu 18.04 and 16.04
  - CentOS 7.6, 7.5, and 7.4

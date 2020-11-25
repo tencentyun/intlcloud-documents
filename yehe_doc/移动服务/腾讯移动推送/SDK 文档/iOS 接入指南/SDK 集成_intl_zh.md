@@ -11,7 +11,7 @@
 1. 接入 SDK 之前，请前往移动推送 TPNS  [控制台](https://console.cloud.tencent.com/tpns) 创建产品和 iOS 应用，详细操作可参考 [创建产品和应用](https://intl.cloud.tencent.com/document/product/1024/32603)。
    ![](https://main.qcloudimg.com/raw/e77221c1f77b71e6087860a9cf6b60af.png)
 2. 单击【配置管理】，进入管理页面。
-   ![](https://main.qcloudimg.com/raw/f051b5d7fa3a7a3e8c4c9498ff39007b.png)
+   ![](https://main.qcloudimg.com/raw/f051b5d7fa3a7a3e8c4c9498ff39007b.png))
 3. 单击【上传证书】，完成上传操作。推送证书获取详情请参考 [证书获取指引](https://intl.cloud.tencent.com/document/product/1024/30728)。
    ![](https://main.qcloudimg.com/raw/5ea7fd7ec5ae1e7e4a31622a5c41ab00.png)
 4. 证书上传成功后，在应用信息栏中，获取应用 Access ID 和 Access KEY。
@@ -20,7 +20,7 @@
 #### 方式一：Cocoapods 导入
 通过 Cocoapods 下载地址：
 ``` 
-pod 'TPNS-iOS' 
+pod 'TPNS-iOS', '~> 版本'  // 如果不指定版本则默认为本地 pod TPNS-iOS 最新版本
 ```
 >?
 > - 首次下载需要登录 [仓库地址](https://git.code.tencent.com/users/sign_in)，并在【账户】菜单栏中 [设置用户名和密码](https://code.tencent.com/help/productionDoc/profile#password)。设置成功后，在 Terminal 输入对应的用户名和密码，后续即可正常使用，当前 PC 不需要再次登录。
@@ -29,7 +29,7 @@ pod 'TPNS-iOS'
 pod repo update
 pod search TPNS-iOS
 pod install //安装 SDK 
->```  
+>```
 
 #### 方式二：手动导入
 1. 进入腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns)，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏中【下载】即可。
@@ -49,7 +49,7 @@ pod install //安装 SDK
  * libc++.tbd
  ```
 5. 添加完成后，库的引用如下：
-![](https://main.qcloudimg.com/raw/92f32ba9287713e009988ba8ee962ec8.png)
+![](https://main.qcloudimg.com/raw/79976648574060954cebfb894cc5cdd4.png)
 
 ### 工程配置
 1. 在工程配置和后台模式中打开推送，如下图所示：
@@ -68,7 +68,6 @@ pod install //安装 SDK
 ``` object-c
 /// @note TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sh.tencent.com"];
-
 ```
 如需接入新加坡服务接入点，则将域名设置为```tpns.sgp.tencent.com```。
 **示例**
@@ -127,6 +126,12 @@ SDK 提供了 Service Extension 接口，可供客户端调用，从而可以使
 接入步骤请参考文档 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730)。
 >!如果未集成此接口，则无法统计 APNs 通道“抵达数”。
 
+
+
+
+
+
+
 ## 调试方法
 #### 开启 Debug 模式
 打开 Debug 模式，即可在终端查看详细的腾讯移动推送 Debug 信息，方便定位问题。
@@ -170,28 +175,38 @@ TPNS 及 APNs 通道统一接收消息回调，当应用在前台收到通知消
 ```objective-c
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
->!
+>?
 >- 当应用在前台收到通知消息以及所有状态下收到静默消息时，会触发统一接收消息回调 xgPushDidReceiveRemoteNotification。
 区分前台收到通知消息和静默消息示例代码如下：
 >```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
 NSNumber *msgType = tpnsInfo[@"msgtype"];
- if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive && msgType.integerValue == 1) {
+if (msgType.integerValue == 1) {
         /// 前台收到通知消息
-    } else {
-        /// 静默消息
+    } else if (msgType.integerValue == 2) {
+        /// 收到静默消息
+    } else if (msgType.integerValue == 9) {
+        /// 收到本地通知（TPNS本地通知）
     }
 >```
->- 若实现了统一接收消息回调 xgPushDidReceiveRemoteNotification，则无需再实现 application:didReceiveRemoteNotification:fetchCompletionHandler。
-
 
 统一点击消息回调，此回调方法为应用所有状态（前台、后台、关闭）下的通知消息点击回调。
+
 ```objective-c
 /// 统一点击回调
 /// @param response 如果 iOS 10+/macOS 10.14+ 则为 UNNotificationResponse，低于目标版本则为 NSDictionary
 /// @note TPNS SDK1.2.7.1+
 - (void)xgPushDidReceiveNotificationResponse:(nonnull id)response withCompletionHandler:(nonnull void (^)(void))completionHandler;
 ```
+
+>!
+>
+>- TPNS 统一消息回调 `xgPushDidReceiveRemoteNotification` 会处理消息接收，并自动后续调用 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法。然而，该方法也可能被其他 SDK 也进行 hook 调用。
+>- 如果您只集成了 TPNS 推送平台，我们不推荐再去实现系统通知回调方法，请统一在 TPNS 通知回调中进行处理。
+>- 如果您集成了多推送平台，并且需要在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理其他推送平台的业务，请参照如下指引，避免业务重复：
+> - 您需要区分平台消息，在两个消息回调方法中分别拿到消息字典后通过“xg”字段来区分是否是 TPNS 平台的消息，如果是 TPNS 的消息则在 `xgPushDidReceiveRemoteNotification` 方法进行处理，非 TPNS 消息请统一在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理
+> - `xgPushDidReceiveRemoteNotification` 和 `application:didReceiveRemoteNotification:fetchCompletionHandler` 如果都执行，总共只需要调用一次 `completionHandler`。如果其他 SDK 也调用 `completionHandler`，确保整体的 `completionHandler` 只调用一次。这样可以防止由于多次 `completionHandler` 而引起的 crash。
+
 
 
 

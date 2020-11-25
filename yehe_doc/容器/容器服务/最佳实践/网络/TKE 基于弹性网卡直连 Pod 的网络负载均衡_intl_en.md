@@ -114,7 +114,7 @@ Kubernetes clusters provide a service registration mechanism. With this mechanis
 
 #### Disaster recovery of the ReadinessGate mechanism
 Service registration or certificates in user clusters may be deleted by users, but these system component resources should not be modified or destroyed by users. However, such problems will inevitably occur due to users’ exploration of clusters or improper operations.
-The access layer components will check the integrity of these resources during launch. If their integrity is compromised, the components will rebuild these resources to enhance the robustness of the system.
+The access layer components will check the integrity of the resources above during launch. If their integrity is compromised, the components will rebuild these resources to enhance the robustness of the system.
 
 
 ### QPS and network latency comparison
@@ -125,7 +125,7 @@ For these two access-layer solutions, we performed some comparative tests on net
 ![](https://main.qcloudimg.com/raw/5c7ae9dbab232a23e9d09d298849d574.png)
 
 ### KubeProxy design ideas
-`KubeProxy` has some disadvantages, but based on the various features of CLBs and VPC networks, we have a more localized access-layer solution. `KubeProxy` offers a universal and fault-tolerant design for the cluster access layer. It is basically applicable to clusters in all business scenarios. As an official component, this design is very appropriate.
+`KubeProxy` has some disadvantages, but based on the various features of CLB and VPC network, we have a more localized access layer solution. `KubeProxy` offers a universal and fault-tolerant design for the cluster access layer. It is basically applicable to clusters in all business scenarios. As an official component, this design is very appropriate.
 
 ## New Mode Usage Guide
 

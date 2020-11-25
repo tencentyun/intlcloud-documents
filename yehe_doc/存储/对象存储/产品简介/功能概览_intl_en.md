@@ -53,8 +53,8 @@ COS offers the following features:
       <td>Enabling versioning allows you to store multiple versions of an object in the same bucket. You can query, delete, or restore the objects by version ID. Versioning enables you to recover data that was lost due to accidental deletion or application failure. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/19883">Versioning Overview.</a></td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Cross-Region Replication</td>
-      <td>By configuring a cross-region replication rule, incremental objects can be automatically and asynchronously replicated between buckets in different regions for remote disaster recovery and data backup purposes. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-region Replication Overview.</a></td>
+      <td nowrap="nowrap">Cross-Bucket Replication</td>
+      <td>By configuring a cross-bucket replication rule, incremental objects can be automatically and asynchronously replicated between buckets for remote disaster recovery and data backup. <a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-Bucket Replication Overview</a></td>
    </tr>
    <tr>
 ​     

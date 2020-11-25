@@ -25,4 +25,4 @@ These tag key-value pairs are bound to TencentDB for PostgreSQL instances in the
 ### Using Tags
 For more information on how to create and delete a tag, please see [Querying Resources by Tag](https://intl.cloud.tencent.com/document/product/651/32582).
 
-For more information on how to edit a tag in TencentDB for PostgreSQL, please see [Editing a Tag](https://cloud.tencent.com/document/product/409/48135).
+For more information on how to edit a tag in TencentDB for PostgreSQL, please see [Editing a Tag](https://intl.cloud.tencent.com/document/product/409/38840).

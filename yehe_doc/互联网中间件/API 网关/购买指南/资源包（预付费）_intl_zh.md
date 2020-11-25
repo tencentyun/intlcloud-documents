@@ -84,4 +84,4 @@ API 网关支持资源包自助退费功能，您可在 API 网关控制台自�
 1. 登录 [API 网关控制台](https://console.cloud.tencent.com/apigateway)。
 2. 在左侧导航栏中单击【资源包】，进入资源包列表。
 3. 在资源包列表中单击【退费】，确认信息后提交即可完成退费。
-	 ![](https://main.qcloudimg.com/raw/bb11d2a3ee60e9c8a357ee1bc7fd7220.png)
+	 ![](https://main.qcloudimg.com/raw/e75ee450d18ac55e19f85ff1764186be.png)

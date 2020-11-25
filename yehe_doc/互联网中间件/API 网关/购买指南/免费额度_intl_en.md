@@ -14,7 +14,7 @@ The free tier is issued in the form of a resource pack and deducts account-level
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
 2. In the left sidebar, click **Resource Pack** to access the resource pack list page.
 3. View the usage of resource packs whose sources are free tier.
-![](https://main.qcloudimg.com/raw/127c5dfbeb3fd6b132def426b7794d51.png)
+![](https://main.qcloudimg.com/raw/ca9c5222e609a8bf1418a36eef66499c.png)
 
 ### Calculating the validity period
 After the service is activated, the first 1 million calls in each calendar month in the first year (including the month when the service is activated) are free of charge.

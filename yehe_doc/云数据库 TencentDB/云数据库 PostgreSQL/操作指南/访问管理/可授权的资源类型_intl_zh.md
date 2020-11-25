@@ -6,7 +6,7 @@
 | :----------------------------- | ------------------------------------------------------------ |
 | [实例](#PostgreSQLCorrelation) | ` qcs::postgres:$region:$account:DBinstanceId/$DBInstanceId ` <br>` qcs::postgres:$region:$account:DBinstanceId/*  ` |
 
-[PostgreSQL 实例相关](#PostgreSQLCorrelation)分别介绍了当前支持资源级权限的 PostgreSQL API 操作，以及每个操作支持的资源和条件密钥。设置资源路径时，您需要将`$region`、`$account`等变量参数修改为您实际的参数信息，同时您也可以在路径中使用 \* 通配符。相关操作示例可参见 [控制台示例](https://cloud.tencent.com/document/product/409/45391)。
+[PostgreSQL 实例相关](#PostgreSQLCorrelation)分别介绍了当前支持资源级权限的 PostgreSQL API 操作，以及每个操作支持的资源和条件密钥。设置资源路径时，您需要将`$region`、`$account`等变量参数修改为您实际的参数信息，同时您也可以在路径中使用 \* 通配符。相关操作示例可参见 [控制台示例](https://intl.cloud.tencent.com/document/product/409/38837)。
 
 >!不支持资源级权限的 PostgreSQL API 操作，您仍可以向用户授予使用该操作的权限，但是策略语句的资源元素必须指定为 \*。
 

@@ -1,8 +1,8 @@
 
-### What should I do If an SSL certificate is about to expire?
+### What should I do If an SSL certificate is expired?
 A paid SSL certificate becomes invalid once it expires. Before the expiration, you need to renew it, bind to the domain name again, and submit an application for approval.
 
-Once your application passes verification, you will obtain a new SSL certificate. Install it on the server to replace the original one before it expires.
+Once your application is approved, you will obtain a new SSL certificate. Install it on the server to replace the original one before it expires.
 
 >
 >- If you are using a free domain-validated (DV) certificate, you need to apply for a new one before the current one expires.

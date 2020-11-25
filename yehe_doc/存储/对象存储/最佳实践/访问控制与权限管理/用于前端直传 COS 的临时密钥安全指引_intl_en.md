@@ -34,7 +34,7 @@ Application B provides a public photo wall feature, and stores all photos in `ap
 
 #### Security regulation
 
-`action` indicates operations allowed for the temporary key. A temporary key with `name/cos:*` that allows all operations should not be distributed to the frontend; instead, each required action must be explicitly listed. Besides, you need to match an “action” with a “resource” rather than concatenate multiple “actions” for the same “resource”.
+`action` specifies the operations you can request using a temporary key. In principle, it is not allowed to specify `name/cos:*` in the `action` element so as to use the temporary key for access to all operations. Instead, you must explicitly list each one of them. Besides, if different operations require different resource paths, you should match the **action** and **resource** separately instead of combining actions for one resource or resources for one action.
 
 In this example, you should specify `"action": [ "name/cos:GetBucket", "name/cos:GetObject" ]`. For directions on granting operation permission, see [Working with COS API Access Policies](https://intl.cloud.tencent.com/document/product/436/30580).
 

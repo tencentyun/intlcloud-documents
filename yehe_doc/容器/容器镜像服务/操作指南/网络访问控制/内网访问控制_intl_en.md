@@ -15,7 +15,7 @@ Before configuring private-network access control for a TCR Enterprise Edition i
 2. On the "Private Network" page, click **Create**.
 3. In the "Create Private Network Access Link" window that appears, configure the VPC and subnet information, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/b05dbba1213da652a4dcc2039b2ee38c.png)
- - **Associated Instance**: indicates the target instance, for which the private network access policy is configured. You can change the instance by selecting another instance name from the "Instance Name" drop-down list at the top of the "Private Network" page.
+  - **Instance**: target instance, for which the private network access is enabled. You can change the instance by going to the **Instance** drop-down list at the top of the **Private network** page.
  - **Virtual Private Cloud**:
     1. Connected VPC. Select the VPC that you want to connect. The drop-down list displays all available VPCs in the region of the current instance.
     2. Any subnet in the VPC. Select a subnet in the VPC that has usable private IP addresses. Creating a VPC access link occupies a private IP address and uses this IP address as the destination address for private-network resolution of the instance domain name. The subnet will be used only for the allocation of private network access addresses. After the link is created, CVMs in any subnet in the VPC can access the TCR Enterprise Edition instance through the link.

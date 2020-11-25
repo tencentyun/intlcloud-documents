@@ -1,5 +1,5 @@
 ES is capable of automatic backup, which involves automatically creating a snapshot of the primary index shards in a cluster and backing it up to COS. The snapshot can be restored to the cluster as needed.
-
+>? This feature is currently free of charge.
 ## Notes on Backup
 
 - ES automatically performs snapshot backup and only retains the snapshot data for the past 7 days.

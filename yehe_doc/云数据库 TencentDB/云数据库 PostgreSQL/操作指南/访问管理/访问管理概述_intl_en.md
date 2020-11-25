@@ -21,8 +21,8 @@ Some PostgreSQL APIs do not support resource-level permissions, which means that
 
 | Task                        | Link                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| Understand the basic structure of policies | [Access Policy Syntax > Policy Syntax](https://cloud.tencent.com/document/product/409/45389#clyf)|
-| Define operations in a policy | [Access Policy Syntax > PostgreSQL Operations](https://cloud.tencent.com/document/product/409/45389#cz) |
-| Define resources in a policy | [Access Policy Syntax > PostgreSQL Resource Paths](https://cloud.tencent.com/document/product/409/45389#zylj) |
-| View supported resource-level permissions | [Authorizable Resource Types](https://cloud.tencent.com/document/product/409/45390)|
-| View console examples | [Console Examples](https://cloud.tencent.com/document/product/409/45391) |
+| Understand the basic structure of policies | [Access Policy Syntax > Policy Syntax](https://intl.cloud.tencent.com/document/product/409/38835#clyf)|
+| Define operations in a policy | [Access Policy Syntax > PostgreSQL Operations](https://intl.cloud.tencent.com/document/product/409/38835#cz) |
+| Define resources in a policy | [Access Policy Syntax > PostgreSQL Resource Paths](https://intl.cloud.tencent.com/document/product/409/38835#zylj) |
+| View supported resource-level permissions | [Authorizable Resource Types](https://intl.cloud.tencent.com/document/product/409/38836)|
+| View console examples | [Console Examples](https://intl.cloud.tencent.com/document/product/409/38837) |

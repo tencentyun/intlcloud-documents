@@ -84,4 +84,4 @@ API Gateway supports self-service refund for resource packs. You can perform sel
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
 2. In the left sidebar, click **Resource Pack** to access the resource pack list page.
 3. Click **Refund** under the “Operation” column in the row of the target resource pack. In the pop-up dialog box, confirm and submit the information.
-	 ![](https://main.qcloudimg.com/raw/bb11d2a3ee60e9c8a357ee1bc7fd7220.png)
+	 ![](https://main.qcloudimg.com/raw/e75ee450d18ac55e19f85ff1764186be.png)

@@ -21,8 +21,8 @@ PostgreSQL 部分云 API 操作不支持资源级权限，意味着，对于该�
 
 | 任务                        | 链接                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| 了解策略基本结构            | [策略语法](https://cloud.tencent.com/document/product/409/45389#clyf) |
-| 在策略中定义操作            | [PostgreSQL 的操作](https://cloud.tencent.com/document/product/409/45389#cz) |
-| 在策略中定义资源            | [PostgreSQL 的资源路径](https://cloud.tencent.com/document/product/409/45389#zylj) |
-| PostgreSQL 支持的资源级权限 | [PostgreSQL 支持的资源级权限](https://cloud.tencent.com/document/product/409/45390) |
-| 控制台示例                  | [控制台示例](https://cloud.tencent.com/document/product/409/45391) |
+| 了解策略基本结构            | [策略语法](https://intl.cloud.tencent.com/zdocument/product/409/38835#clyf) |
+| 在策略中定义操作            | [PostgreSQL 的操作](https://intl.cloud.tencent.com/document/product/409/38835#cz) |
+| 在策略中定义资源            | [PostgreSQL 的资源路径](https://intl.cloud.tencent.com/document/product/409/38835#zylj) |
+| PostgreSQL 支持的资源级权限 | [PostgreSQL 支持的资源级权限](https://intl.cloud.tencent.com/document/product/409/38836) |
+| 控制台示例                  | [控制台示例](https://intl.cloud.tencent.com/document/product/409/38837) |
