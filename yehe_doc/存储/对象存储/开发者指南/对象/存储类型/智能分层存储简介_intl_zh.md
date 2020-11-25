@@ -27,8 +27,8 @@
 
 用户可以参照以下步骤将对象保存为智能分层存储类型：
 
-1. 在存储桶配置页面，开启智能分层存储配置，详细流程可参见 [设置智能分层存储](https://cloud.tencent.com/document/product/436/48350) 文档。
-2. 上传文件，并在上传时指定文件存储类型。文件的上传指引可参见 [上传对象](https://cloud.tencent.com/document/product/436/13321) 文档。
+1. 在存储桶配置页面，开启智能分层存储配置，详细流程可参见 [设置智能分层存储](https://intl.cloud.tencent.com/document/product/436/38306) 文档。
+2. 上传文件，并在上传时指定文件存储类型。文件的上传指引可参见 [上传对象](https://intl.cloud.tencent.com/document/product/436/13321) 文档。
 
 > !存储桶的智能分层存储配置开启后，将无法关闭，请谨慎配置。
 
@@ -40,20 +40,20 @@
 	- [PUT Bucket IntelligentTiering](https://cloud.tencent.com/document/product/436/48348)
 	- [GET Bucket IntelligentTiering](https://cloud.tencent.com/document/product/436/48349)
 2. 存储桶开启智能分层存储，您可以参见以下 API 文档，将对象上传为智能分层存储类型：
-	- [PUT Object](https://cloud.tencent.com/document/product/436/7749)
-	- [PUT Object - Copy](https://cloud.tencent.com/document/product/436/10881)
-	- [POST Object](https://cloud.tencent.com/document/product/436/14690)
-	- [Initiate Multipart Upload](https://cloud.tencent.com/document/product/436/7746)
+	- [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749)
+	- [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881)
+	- [POST Object](https://intl.cloud.tencent.com/document/product/436/14690)
+	- [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746)
 3. 如需查询对象的存储类型和所处的存储层，请参见以下 API 文档：
-	- [GET Object](https://cloud.tencent.com/document/product/436/7753)
-	- [HEAD Object](https://cloud.tencent.com/document/product/436/7745)
+	- [GET Object](https://intl.cloud.tencent.com/document/product/436/7753)
+	- [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745)
 4. 您可以直接使用 REST API 删除智能分层存储类型的对象，请参见以下 API 文档部分：
-	- [DELETE Object](https://cloud.tencent.com/document/product/436/7743)
-	- [DELETE Multiple Objects](https://cloud.tencent.com/document/product/436/8289)
+	- [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743)
+	- [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289)
 
 ### 使用 SDK
 
-当前 COS 所发布的 SDK 都支持使用智能分层存储类型，具体方法是在文件上传时，将 StorageClass 参数设置为 INTELLIGENT_TIERING，实现直传智能分层存储。详情请参见 [SDK 概览](https://cloud.tencent.com/document/product/436/6474)。
+当前 COS 所发布的 SDK 都支持使用智能分层存储类型，具体方法是在文件上传时，将 StorageClass 参数设置为 INTELLIGENT_TIERING，实现直传智能分层存储。详情请参见 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
 
 
 

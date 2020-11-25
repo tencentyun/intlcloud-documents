@@ -10,7 +10,7 @@
 
 1. 您需要一个 Android 应用，这个应用可以是您现有的工程，也可以是您新建的一个空的工程。
 2. 请确保您的 Android 应用目标为 API 级别 15 (Ice Cream Sandwich) 或更高版本。
-3. 您需要一个可以获取腾讯云临时密钥的远程地址，关于临时密钥的有关说明请参考 [移动应用直传实践](https://cloud.tencent.com/document/product/436/9068)。
+3. 您需要一个可以获取腾讯云临时密钥的远程地址，关于临时密钥的有关说明请参考 [移动应用直传实践](https://intl.cloud.tencent.com/document/product/436/30618)。
 
 ## 第一步：安装 SDK
 
@@ -214,7 +214,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
 ```
 
->? 关于存储桶不同地域的简称请参考 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224)。
+>? 关于存储桶不同地域的简称请参考 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224)。
 
 #### 使用 ktx 包初始化 COS Service
 
@@ -343,7 +343,7 @@ viewModelScope.launch {
 
 >?
 >- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://cloud.tencent.com/document/product/436/46421) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 [生成预签名链接](https://intl.cloud.tencent.com/document/product/436/37680) 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 下载对象
 
