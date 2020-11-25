@@ -8841,10 +8841,10 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="IT5">High I/O IT5</h3>
 <div class="paragraph">
-<p>High I/O IT3 instances, based on NVMe SSD instance storage, are designed for I/O-intensive workloads. They come with the storage resources featuring low latency, super high IOPS and high throughput. They offer an IOPS of up to 1.8 million and a throughput reaching up to 11 GB/s, allowing for an ultra high IOPS at a low cost. This instance type is suitable for I/O-intensive workloads such as high performance relational databases, Elasticsearch, etc.</p>
+<p>High I/O IT5 instances, based on NVMe SSD instance storage, are the latest high I/O instances designed for I/O-intensive workloads. They come with the storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 2.05 million and a throughput reaching up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications such as high performance relational databases, Elasticsearch, etc.</p>
 </div>
 <div class="paragraph">
-<p>IT3 instances feature inexpensive and intensive storage, providing higher IOPS and larger private network bandwidth for each CPU core.<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>High I/O IT3 instances are currently only available to beta users. Contact your account manager if you wish to purchase these instances.</p>
+<p>IT5 instances feature inexpensive and intensive storage, providing higher IOPS and larger private network bandwidth for each CPU core.<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>High I/O IT3 instances are currently only available to beta users. Contact your account manager if you wish to purchase these instances.</p>
 </blockquote>
 </p>
 </div>
@@ -8866,7 +8866,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.5 GHz Intel Xeon® Skylake 6133 processors with stable computing performance</p>
+<p>2.5 GHz Intel® Xeon® Cascade Lake processors with stable computing performance</p>
 </li>
 <li>
 <p>The latest generation of 6-channel DDR4 memory</p>
@@ -8876,8 +8876,8 @@
 </li>
 <li><p>NVMe SSD is used for instance storage, offering low latency and ultra-high IOPS</p>
 <ul>
-<li><p>Up to 620,000 (4 KB block size) random read IOPS, and up to 2.9 GB/s (128 KB block size) sequential read throughout for a single disk</p></li>
-<li><p>Up to 1.8 million (4 KB block size) random read IOPS, and up to 11 GB/s (128 KB block size) sequential read throughout for a CVM.</p></li>
+<li><p>Up to 650,000 (4 KB block size) random read IOPS, and up to 2.8 GB/s (128 KB block size) sequential read throughout for a single disk</p></li>
+<li><p>Up to 2.05 million (4 KB block size) random read IOPS, and up to 11 GB/s (128 KB block size) sequential read throughout for a CVM.</p></li>
 </ul>
 </li>
 </ul>
@@ -8888,23 +8888,23 @@
 <div class="ulist">
 <ul>
 <li>
-<p>IT3 instances use local disks as data disks, which may lead to a risk of data loss (in case of host crash). If your application does not have a data reliability architecture, we strongly recommend choosing instances using cloud disks as data disks.</p>
+<p>IT5 instances use local disks as data disks, which may lead to a risk of data loss (in case of host crash). If your application does not have a data reliability architecture, we strongly recommend choosing instances using cloud disks as data disks.</p>
 <ul>
 <li><p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p></li>
 <li><p>We will notify you and perform fixes if the CVM instance crashes.</p></li>
 </ul>
 </li>
 <li><p>If Agent has not been installed, your CVM instance cannot be monitored. You will not receive a notification if the CVM instance fails, which is very risky. For more information on installing Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li><li>
-<p>IT3 instances are pay-as-you-go.</p>
+<p>IT5 instances are pay-as-you-go.</p>
 </li>
 <li>
-<p>IT3 instances can only be launched in a VPC.</p>
+<p>IT5 instances can only be launched in a VPC.</p>
 </li>
 <li>
-<p>The configuration of IT3 instances cannot be changed.</p>
+<p>The configuration of IT5 instances cannot be changed.</p>
 </li>
 <li>
-<p>Configuration purchase is available for IT3 instances. Please see the instance specifications below.</p>
+<p>Configuration purchase is available for IT5 instances. Please see the instance specifications below.</p>
 </li>
 </ul>
 </div>
@@ -8955,7 +8955,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT3.4XLARGE64</p>
+<p>IT5.4XLARGE64</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>16</p>
@@ -8976,12 +8976,12 @@
 <p>2.5 GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1 × 3720 GB local NVMe SSD</p>
+<p>1 x 3570 GB NVMe SSD local disks</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT3.8XLARGE128</p>
+<p>IT5.8XLARGE128</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>32</p>
@@ -9002,12 +9002,12 @@
 <p>2.5 GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2 × 3720 GB local NVMe SSD</p>
+<p>2 x 3570 GB NVMe SSD local disks</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT3.16XLARGE256</p>
+<p>IT5.16XLARGE256</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>64</p>
@@ -9028,7 +9028,7 @@
 <p>2.5 GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4 × 3720 GB local NVMe SSD</p>
+<p>4 x 3570 GB NVMe SSD local disks</p>
 </div></div></td>
 </tr>
 </tbody>
