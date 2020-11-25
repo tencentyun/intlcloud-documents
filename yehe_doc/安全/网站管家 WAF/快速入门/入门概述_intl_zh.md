@@ -1,6 +1,6 @@
 腾讯云 WAF 分为两种类型，SaaS 型 WAF 和负载均衡型 WAF，两种类型 WAF 域名接入方式不同，请参考以下步骤，根据实际情况完成接入。
 ## SaaS 型 WAF 
-SaaS 型 WAF 通过为防护域名分配 CNAME，修改网站的 DNS 解析记录，将网站收到的 Web 请求转发给 WAF ，从而对网站进行安全防护。配合安全组使用，可以避免攻击者绕过 WAF 直接攻击网站源站。为了实现上述功能，您需要完成以下步骤：
+SaaS 型 WAF 通过为防护域名分配 CNAME，修改网站的 DNS 解析记录，将网站收到的 Web 请求转发给 WAF ，从而对网站进行安全防护。配合安全组使用，可以避免攻击者绕过 WAF 直接攻击网站源站，为了实现上述功能，您需要完成以下步骤：
 - [步骤 1：添加域名](https://intl.cloud.tencent.com/document/product/627/35651)
 - [步骤 2：本地测试](https://intl.cloud.tencent.com/document/product/627/35652)
 - [步骤 3：修改 DNS 解析](https://intl.cloud.tencent.com/document/product/627/35653)
