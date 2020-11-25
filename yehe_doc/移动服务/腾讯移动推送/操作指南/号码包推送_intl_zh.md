@@ -12,7 +12,7 @@
 1. 登录 [TPNS 控制台](https://console.cloud.tencent.com/tpns)。 
 2. 找到您需要配置的批量推送的应用，在其操作一栏下，选择【新建推送】，进入新建推送页面。
 3. 在【推送目标】配置项中，选择【批量账号】，上传账号号码包文件，并选择推送给「**最近**」或「**所有**」绑定该账号的设备，如图：
-![](https://main.qcloudimg.com/raw/a4956ed860fffd1e9ab8dff8256df66b.png)
+![](https://main.qcloudimg.com/raw/f82192f04eb01a6426382d28d1f5976b.png)
 > ?上传号码包要求如下：
 >- 账号包格式及大小： 支持 `zip\txt\csv` 文件；大小保持在 100Mb 以内。
 >- `zip` 压缩包中可包含：单个 `.txt` 或 `.csv` 文件；（不能嵌套文件夹）。
