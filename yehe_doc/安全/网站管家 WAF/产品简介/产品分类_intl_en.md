@@ -7,7 +7,6 @@ Tencent Cloud provides two types of on-cloud WAF, namely, SaaS WAF and CLB WAF. 
 | Strengths | It is widely applicable to users in and outside Tencent Cloud. | <li>Imperceptible connection to WAF with millisecond-level latency is implemented, which does not require adjustment of your existing network architecture.</li><li>Website business forwarding and security protection are isolated from each other, and quick bypass is supported, ensuring that your website business is secure, stable, and reliable.</li><li>Multi-region connection is supported.</li> |
 | How to choose | If you need to protect both Tencent Cloud-hosted and local websites or layer-7 CLB is not used for your Tencent Cloud resources, you are recommended to use SaaS WAF. | If you are using or plan to use layer-7 CLB and have requirements for web security protection, bot behavior management, CCPCS-based protection, or website security operation, you are recommended to use CLB WAF. |
 
->CLB WAF is currently in beta test. To try it out, please [submit an application](https://intl.cloud.tencent.com/apply/p/b5e8c1wm1or) for approval.
 
 ## SaaS WAF
 After you add a protected domain name and set the origin-pull information on WAF, it will assign a unique CNAME address to the protected domain name. You can modify the DNS resolution to change the original A record to the CNAME record and schedule traffic to the protected domain name to the WAF cluster, which will detect and block malicious traffic and forward normal traffic to the real server in order to protect your website security.
