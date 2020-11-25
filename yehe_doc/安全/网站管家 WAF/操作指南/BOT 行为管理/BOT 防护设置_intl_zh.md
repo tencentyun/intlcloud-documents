@@ -64,7 +64,7 @@ WAF 自定义会话策略提供协议特征、IP 情报特征和自定义会话�
 </table>
 
 #### IP 情报特征
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/bot/strategy)，在左侧导航栏中，选择【BOT行为管理】>【BOT防护设置】，找到需要操作的域名，在右侧操作栏，单击【防护设置】。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/bot2/config)，在左侧导航栏中，选择【BOT行为管理】>【BOT防护设置】，找到需要操作的域名，在右侧操作栏，单击【防护设置】。
 2. 进入防护设置页面，选择【自定义会话策略】>【IP 情报特征】，进入相应列表页。
 ![](https://main.qcloudimg.com/raw/cfe58a8695dcac4016b30cc19ed23d9b.png)
 	- **字段说明：**
@@ -92,7 +92,7 @@ WAF 自定义会话策略提供协议特征、IP 情报特征和自定义会话�
 </table>
 
 #### 自定义会话特征
-1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/bot/strategy)，在左侧导航栏中，选择【BOT行为管理】>【BOT防护设置】，找到需要操作的域名，在右侧操作栏，单击【防护设置】。
+1. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/bot2/config)，在左侧导航栏中，选择【BOT行为管理】>【BOT防护设置】，找到需要操作的域名，在右侧操作栏，单击【防护设置】。
 2. 进入防护设置页面，选择【自定义会话策略】>【自定义会话特征】，进入相应列表页。
 ![](https://main.qcloudimg.com/raw/9fe29dd854fd6fa35156e93d49cc4eea.png)
 - **字段说明：**
@@ -197,4 +197,3 @@ WAF 自定义会话策略提供协议特征、IP 情报特征和自定义会话�
 <tr><td>时序行为异常指数</td><td>一种时序行为异常检测算法，指数越小越异常。<br>参考值阈值：小于0.5疑似异常，小于0.24基本确定为异常。</td></tr>
 <tr><td>时序熵异常指数</td><td>一种时序行为熵检测算法，指数越小越异常。参考值阈值为0.5 ，小于0.5疑似异常。</td></tr>
 </table>
-	
