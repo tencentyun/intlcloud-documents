@@ -43,19 +43,24 @@ WAF 自定义会话策略提供协议特征、IP 情报特征和自定义会话�
 		- **操作：**单击【编辑】进行动作设置，动作支持放行、监控、验证和拦截，详情请参见 [动作类型说明](#dzlx)。动作设置后，拦截结果可在【[攻击日志](https://console.cloud.tencent.com/guanjia/log/attack)】中查看，拦截 IP 的实时信息可在【[IP 封堵状态](https://console.cloud.tencent.com/guanjia/ip/record)】中查看。
 	- **协议特征策略名称如下：**
 <table>
-<tr><th>情报特征类别</th><th>情报策略名称</th></tr>
-<tr><td >拨测</td><td>腾讯云 WAF 拨测。</td></tr>
-<tr><td rowspan="11">IDC-IP 库</td><td>IDC-IP 库  腾讯云。</td></tr>
-<tr><td>IDC-IP 库  阿里云。</td></tr>
-<tr><td>IDC-IP 库  华为云。</td></tr>
-<tr><td>IDC-IP 库  金山云。</td></tr>
-<tr><td>IDC-IP 库  Ucloud。</td></tr>
-<tr><td>IDC-IP 库  百度云。</td></tr>
-<tr><td>IDC-IP 库  京东云。</td></tr>
-<tr><td>IDC-IP 库  青云。</td></tr>
-<tr><td>IDC-IP 库  AWS。</td></tr>
-<tr><td>IDC-IP 库  Azure。</td></tr>
-<tr><td>IDC-IP 库  Google。</td></tr>
+<tr><th>协议特征类别</th><th>策略名称</th></tr>
+<tr><td rowspan="7">User-Agent 类别</td><td>User-Agent 为空或不存在。</td></tr>
+<tr><td>User-Agent 类别为 BOT。</td></tr>
+<tr><td>User-Agent 类别为 Unknown BOT。</td></tr>
+<tr><td>User-Agent 类别为 HTTP Library。</td></tr>
+<tr><td>User-Agent 类别为 Tools。</td></tr>
+<tr><td>User-Agent 类别为 Framework。</td></tr>
+<tr><td>User-Agent 类别为 Scanner。</td></tr>
+<tr><td rowspan="8">HTTP 头部</td><td>Referer 为空或不存在.</td></tr>
+<tr><td>Referer 滥用(多个 UA 使用相同 Referer)。</td></tr>
+<tr><td>Cookie 滥用(多个 UA 使用相同 Cookie)。</td></tr>
+<tr><td>Cookie 为空或不存在。</td></tr>
+<tr><td>Connection 为空或不存在。</td></tr>
+<tr><td>Accept 为空或不存在。</td></tr>
+<tr><td>Accept-Language 为空或不存在。</td></tr>
+<tr><td>Accept-Enconding 为空或不存在。</td></tr>
+<tr><td rowspan="2">HTTP 协议特征</td><td>使用 HTTP HEAD 方法</td></tr>
+<tr><td>HTTP 协议版本为1.0或者更低。</td></tr>
 </table>
 
 #### IP 情报特征
