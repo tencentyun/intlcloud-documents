@@ -40,8 +40,8 @@ P2P Addon 是容器镜像服务 TCR 推出的基于 P2P 技术的容器镜像加
 
 
 
-
-## 使用方法<span id="Instructions"></span>
+<span id="Instructions"></span>
+## 使用方法
 1. 选取合适的节点部署运行 Proxy 组件。
 可通过 `kubectl label nodes XXXX proxy=p2p-proxy` 命令标记节点，插件安装时将自动在这些节点中部署该组件。安装后如果需要调整 Proxy 组件的个数，可在指定节点上添加或者删除该 label 后，修改集群中 kube-system 命名空间下 p2p-proxy 工作负载的副本个数。
 2. 选取合适的节点部署运行 Tracker 组件。
@@ -56,11 +56,11 @@ P2P Addon 是容器镜像服务 TCR 推出的基于 P2P 技术的容器镜像加
 
 
 
-
-## 操作步骤<span id="start"></span>
+<span id="start"></span>
+## 操作步骤
 1. 登录[ 容器服务控制台 ](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的【组件管理】，进入“组件列表”页面。
 4. 在“组件列表”页面中选择【新建】，并在“新建组件”页面中勾选 P2P。
 5. 选择“参数配置”，在弹出的“P2P组件参数设置”窗口中，填写需要加速的镜像仓库域名、节点拉取限速、Proxy 个数及 Tracker 个数。如下图所示：
-![](https://main.qcloudimg.com/raw/2651ee1a5d38d789a7675ce0c8bc614a.png)
+![](https://main.qcloudimg.com/raw/c69d1b37a511c9ba0dc95ec3d67d557d.png)

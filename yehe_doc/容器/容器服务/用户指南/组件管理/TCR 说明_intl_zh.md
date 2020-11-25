@@ -3,8 +3,9 @@
 ### 组件介绍
 TCR Addon 是容器镜像服务 TCR 推出的容器镜像内网免密拉取的官方插件。在容器服务 TKE 集群中安装该插件后，集群节点可通过内网拉取企业版实例内容器镜像，且无需在集群资源 YAML 中显式配置 ImagePullSecret。可提高 TKE 集群内镜像拉取速度，简化镜像配置流程。
 >?
+>
 >- TKE 集群需为 v1.10.x 及以上版本。建议在v1.12.x 及以上版本中使用本插件。
-- Kubernetes 的 `controller manager` 组件的启动参数需要包含 `authentication-kubeconfig` 和 `authorization-kubeconfig`（TKE v.12.x 默认启用）。
+>- Kubernetes 的 `controller manager` 组件的启动参数需要包含 `authentication-kubeconfig` 和 `authorization-kubeconfig`（TKE v.12.x 默认启用）。
 
 
 ### 在 Kubernetes 集群创建的资源
@@ -73,7 +74,7 @@ Kubernetes 集群拉取镜像时将通过节点网络访问 TCR，当通过公�
 3. 选择左侧菜单栏中的【组件管理】，进入 “组件列表” 页面。
 4. 在“组件列表”页面中选择【新建】，并在“新建组件”页面中勾选 TCR。
 5. 选择“参数配置”，在弹出的“TCR组件参数设置”窗口中配置相关参数。如下图所示： 
-![](https://main.qcloudimg.com/raw/2426d439484edd183585127700817624.png)
+![](https://main.qcloudimg.com/raw/b6e472fa701ae6b31eb82bff1ffd7d67.png)
 6. 单击【确定】即可创建插件。
 
 
@@ -81,7 +82,9 @@ Kubernetes 集群拉取镜像时将通过节点网络访问 TCR，当通过公�
 
 
 ## 相关信息
-### 参数说明<span id="ParameterDescription"></span>
+<span id="ParameterDescription"></span>
+
+### 参数说明
 
 - **关联实例**：当前集群需要使用的 TCR 企业版实例，插件将自动为当前集群配置该 Registry 实例的访问凭证及内网域名解析。
 - **免密拉取配置**：

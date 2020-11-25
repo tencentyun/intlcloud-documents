@@ -2,7 +2,7 @@
 This document describes how to install an SSL certificate on a Tomcat server.
 >
 >- The certificate name `www.domain.com` is used as an example in this document.
->- `Tomcat 7.0.94` is used as an example.
+>- `Tomcat9.0.40` is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
 >- Before installing the SSL certificate, open the port 443 on the Tomcat server to ensure that HTTPS can be enabled after certificate installation. For more information, see [How Do I Open the Port 443 on the Server?](https://intl.cloud.tencent.com/document/product/1007/36738).
 >- To upload a SSL certificate to CVMs, see [Copying Local Files to CVMs](https://intl.cloud.tencent.com/document/product/213/34821).
@@ -36,7 +36,7 @@ This document describes how to install an SSL certificate on a Tomcat server.
 >- If you selected the **Paste CSR** method when applying for the SSL certificate, or purchased the Wotrus certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore by following the procedure below:
   >- Access the [conversion tool](https://myssl.com/cert_convert.html).
   >- Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
->- Currently, the Tomcat server is installed in the `/usr` directory. For example, if the Tomcat folder name is `tomcat7.0.94`, then `/usr/*/conf` is actually `/usr/tomcat7.0.94/conf`.
+>- Currently, the Tomcat server is installed in the `/usr` directory. For example, if the Tomcat folder name is `tomcat9.0.40`, then `/usr/*/conf` is actually `/usr/tomcat9.0.40/conf`.
 
 
 ## Directions
