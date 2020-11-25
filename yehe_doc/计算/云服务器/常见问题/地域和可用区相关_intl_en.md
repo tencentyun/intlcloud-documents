@@ -43,7 +43,7 @@ Instances in other countries or regions are deployed outside Mainland China, pro
 No. Switching OS between Windows and Linux is only available for CVM instances in Mainland China.
 
 ### How do I apply for after-sale services for products purchased in regions outside Mainland China?
-If you purchased a product on the Tencent Cloud official website, call the Tencent Cloud 24/7 service hotline (95716) or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you purchased a product on the Tencent Cloud official website, call the Tencent Cloud 24/7 service hotline (4009100100) or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### How do I deploy CVM instances in regions outside China?
 CVM instances in regions outside China have the same deployment method if they have the same type of operating system.
