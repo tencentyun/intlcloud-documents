@@ -8,43 +8,28 @@
 ## 排查步骤
 ### 获取厂商通道注册返回码
 
-TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
+TPNS Android SDK 提供以下方式获取厂商通道注册返回码：
 
-- 方式一：在应用运行日志中通过过滤关键字 `OtherPush`，找到如下类似日志来定位厂商通道注册返回码：
-   ```
-   // 华为通道
-   // 如果过滤关键字 `OtherPush` 找不到返回码，可以过滤关键字 `HMSSDK` ，并注意查看 onResult 或 onConnect 后的返回码
-   [OtherPushHuaWeiImpl] other push huawei onConnect code:907135702
-   
-   // 小米通道
-   [OtherPush_XG_MI] register failed, errorCode: 22022, reason: Invalid package name: com.xxx.xxx
-   
-   // 魅族通道
-   [OtherPush_XG_MZ] onRegisterStatus BasicPushStatus{code='110000', message='appId不合法'}
-   
-   // OPPO 通道
-   [OtherPushOppoImpl] OppoPush Register failed, code=14, msg=INVALID_APP_KEY
-   
-   // vivo 通道
-   [OtherPushVivoImpl] vivoPush Register or UnRegister fail, code = 10003
-   ```
-   
-- 方式二：在 TPNS 注册接口 `XGPushManager.registerPush` 的回调方法中，通过调用以下接口获取厂商注册返回码：
-   ```java
-   /**
-        * 获取厂商通道注册失败返回码
-        *
-        * @param context: 应用上下文
-        * @return 0   : 注册成功
-        *         其他 : 各厂商注册返回码
-        *         -100: 厂商通道开启但未添加依赖
-        *         -101: 未开启厂商通道
-        * @since v1.1.5.4
-        */
-   XGPushConfig.getOtherPushErrCode(context);
-   ```
+在应用运行日志中通过过滤关键字 `OtherPush`，找到如下类似日志来定位厂商通道注册返回码：
+```
+// 华为通道
+// 如果过滤关键字 `OtherPush` 找不到返回码，可以过滤关键字 `HMSSDK`，并注意查看 onResult 或 onConnect 后的返回码
+[OtherPushHuaWeiImpl] other push huawei onConnect code:907135702
 
-    
+// 小米通道
+[OtherPush_XG_MI] register failed, errorCode: 22022, reason: Invalid package name: com.xxx.xxx
+
+// 魅族通道
+[OtherPush_XG_MZ] onRegisterStatus BasicPushStatus{code='110000', message='appId不合法'}
+
+// OPPO 通道
+[OtherPushOppoImpl] OppoPush Register failed, code=14, msg=INVALID_APP_KEY
+
+// vivo 通道
+[OtherPushVivoImpl] vivoPush Register or UnRegister fail, code = 10003
+```
+
+
 ### 返回码问题排查
 您可以前往各厂商推送的官方文档获取返回码具体含义并进行问题排查。部分常见错误码可参考下表：
 <table>
@@ -139,9 +124,15 @@ TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
  </tbody></table>
  
 
- ### 其他排查
+   
+
+### 其他排查
 - **华为推送需要在华为推送平台开启推送服务**
 如您在华为设备上无法获取华为 Token，但获取到厂商推送注册返回码为0 ，请前往 [华为推送平台](https://developer.huawei.com/consumer/cn/)，进入【开发】>【推送服务】页面，确认应用的推送开关是否开启；进入【开发】>【项目设置】>【API 管理】页面，确认 `Push Kit、App Messaging` 开关是否开启。
+推送服务页面显示如下：
+![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
+API 管理页面显示如下：
+![](https://main.qcloudimg.com/raw/cc53290c7509e59e161227228e3b0317.png)
 
 - **小米推送需要在小米推送平台开启推送服务**
 如您未找到小米通道注册返回码，请前往【[小米开放平台](https://dev.mi.com/console/appservice/push.html)】>【推送运营平台】，确认应用的消息推送服务是否启用。
@@ -155,7 +146,7 @@ TPNS Android SDK 提供以下两种方式获取厂商通道注册返回码：
 >?部分厂商推送开关开启生效有约5分钟延迟，若开启开关后仍遇到注册失败，可以稍等片刻再进行尝试。
 
 - **华为移动服务版本过低**
-搜索日志关键字“HMSSDK”，如观察如下类似日志，即 `connect versionCod` 小于 `connect minVersion`，表示系统应用“华为移动服务”或“HMS_Core”版本较低，请做升级后尝试重新注册。
+搜索日志关键字“HMSSDK”，如观察如下类似日志，即 `connect versionCode` 小于 `connect minVersion`，表示系统应用“华为移动服务”或“HMS_Core”版本较低，请做升级后尝试重新注册。
 ```plaintext
 I/HMSSDK_HuaweiApiClientImpl: ====== HMSSDK version: 20601301 ======
 I/HMSSDK_HuaweiApiClientImpl: Enter connect, Connection Status: 1

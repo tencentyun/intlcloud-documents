@@ -8,11 +8,12 @@
 ## 操作步骤
 
 ### 开启小米推送服务
-前往 [小米开放平台](https://dev.mi.com/console/appservice/push.html) >【推送运营平台】，开启应用的消息推送服务。
+前往 [小米开放平台](https://dev.mi.com/console/appservice/push.html) >【推送运营平台】，开启应用的消息推送服务：
 
 
 ### 获取密钥
-进入 [小米开放平台](https://dev.mi.com/console/appservice/push.html) ，开通小米开发者账号，并获取小米推送的密钥，详情请参见 [快速接入指南](https://dev.mi.com/console/doc/detail?pId=708)。
+1. 进入 [小米开放平台](https://dev.mi.com/console/appservice/push.html) ，开通小米开发者账号，并获取 AppId、AppKey、AppSecret 三个密钥参数，详情请参见 [快速接入指南](https://dev.mi.com/console/doc/detail?pId=708)。
+2. 复制应用的 AppId、AppKey 和 AppSecret 参数填入 【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】>【小米官方推送通道】栏目中。
 
 
 
@@ -112,10 +113,9 @@ XGPushConfig.enableOtherPush(getApplicationContext(), true);
 
 
 //注册成功的日志如下
-12-02 16:17:32.299 12584-12584/com.qq.xgdemo I/XINGE: [XGPushManager] Action -> Register to xinge server
-12-02 16:17:32.996 12584-12584/com.qq.xgdemo I/XINGE: [XGPushManager] Register call back to com.qq.xgdemo
-12-02 16:17:32.997 12584-12626/com.qq.xgdemo I/XINGE: [XGPushManager] XG register push success with token : 1d31bb3ea6185baebdf05dfc2e586dfe5dc41fb5
-12-02 16:17:33.001 12584-12626/com.qq.xgdemo I/XINGE: [XGOtherPush] other push token is : YZQfRxmxdfNlbSKpNWCa3tM4Esnq6op4qeOsQO2qT88= other push type: xiaomi
+
+I/TPush: [OtherPushClient] handleUpdateToken other push token is : 3CvDLfyPRArAGnv****dvQ7rYko+OthWo90rW+Edeqn53RUudp6U1dhySpV35 other push type: xiaomi
+I/TPush: [PushServiceBroadcastHandler] >> bind OtherPushToken success ack with [accId = 1500001048  , rsp = 0]  token = 03be2036762f******33bce72d40eb5e677a otherPushType = xiaomi otherPushToken = 3CvDLfyPRArAGnv****dvQ7rYko+OthWo90rW+Edeqn53RUudp6U1dhySpV35G
 ```
 
 如需通过点击回调获取参数或者跳转自定义页面，可以通过使用 Intent 来实现，详情请参见 [Android 常见问题](https://intl.cloud.tencent.com/document/product/1024/32624)。
