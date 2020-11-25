@@ -44,7 +44,7 @@ CVM에서 선택 가능한 리전과 가용존에 대한 내용은 [리전과 �
 다른 운영 체제로 재설치(Linux를 Windows로, Windows를 Linux로 재설치)는 현재 중국대륙 지역(중국홍콩 제외)에서만 가능합니다.
 
 ### 중국 외 리전 제품의 Tecent Cloud A/S가 필요할 때는 어떻게 해야 하나요?
-Tencent Cloud의 공식 홈페이지에서 구매했다면, Tencent Cloud의 연중무휴 24시간 서비스 핫라인(95716)으로 문의하거나 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 문의 바랍니다.
+Tencent Cloud의 공식 홈페이지에서 구매했다면, Tencent Cloud의 연중무휴 24시간 서비스 핫라인(4009100100)으로 문의하거나 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 문의 바랍니다.
 
 ### 해외 리전에서 CVM 인스턴스를 배포하려면 어떻게 해야 하나요?
 해외 리전의 인스턴스와 중국 리전의 인스턴스는 리전만 다를 뿐이므로, 동일한 유형의 운영 체제라면 배포 방법에도 차이가 없습니다.
