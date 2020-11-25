@@ -22,7 +22,7 @@
 - accessKey：通过前台申请的 AccessKey。
 - Delegate：回调对象。 
 
-> !接口所需参数必须要正确填写，反之腾讯移动推送服务将不能正确为应用推送消息。
+>!接口所需参数必须要正确填写，反之腾讯移动推送服务将不能正确为应用推送消息。
 
 #### 示例代码
 
@@ -100,6 +100,7 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 #### 接口说明
 
 清空已有账号，然后批量添加账号。
+
 
 ```Objective-C
 - (void)clearAndAppendAccounts:(nonnull NSArray<NSDictionary *> *)accounts;
@@ -187,10 +188,10 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 
 清空已有标签，然后批量添加标签。
 
-
 ```Objective-C
 - (void)clearAndAppendTags:(nonnull NSArray<NSString *> *)tags
 ```
+
 > ?
 > - 此接口应在 xgPushDidRegisteredDeviceToken:error: 返回正确后被调用。
 > - 此接口会将当前 Token 对应的旧有的标签全部替换为当前的标签。
@@ -200,6 +201,7 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 - tags：标签数组。
 
 > ?标签操作 tags 为标签字符串数组（标签字符串不允许有空格或者是 tab 字符）。
+
 
 
 #### 示例代码
@@ -213,7 +215,6 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 #### 接口说明
 
 清除所有设置的标签。
-
 
 ```Objective-C
 - (void)clearTags
@@ -234,8 +235,6 @@ SDK 1.2.7.2 新增，当注册推送服务失败会走此回调。
 #### 接口说明
 
 添加或更新用户属性（key-value 结构，若原来没有该 key 的用户属性 value，则新增；若原来有该 key 的用户属性 value，则更新该 value）。
-
-
 
 ```Objective-C
 - (void)upsertAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
@@ -423,26 +422,6 @@ handler：查询结果的返回方法。
 [[XGPush defaultManager] uploadLogCompletionHandler:nil];
 ```
 
-## 注销信鸽平台推送服务
-
-#### 接口说明
-
-背景：如果 App 的推送服务是从信鸽平台（`https://xg.qq.com`）迁移到腾讯移动推送平台，在两个平台同时推送时，可能会出现重复消息。因此需要调用 TPNS SDK(1.2.5.3+) 的接口将设备信息在信鸽平台中进行反注册。
-引入头文件：XGForFreeVersion.h，在 startXGWithAccessID 之前调用：
-
-```
-@property uint32_t freeAccessId;
-```
-
-#### 参数说明
-
-- @freeAccessId 信鸽平台的 accessId（SDK1.2.5.3+）。
-
-#### 示例代码
-
-```
-[XGForFreeVersion defaultForFreeVersion].freeAccessId = 2200262432;
-```
 
 ## TPNS 日志托管
 

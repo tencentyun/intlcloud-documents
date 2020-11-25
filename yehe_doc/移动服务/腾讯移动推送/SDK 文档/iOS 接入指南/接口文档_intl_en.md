@@ -22,7 +22,7 @@ This API is used to activate TPNS by using the information of the application re
 - accessKey: the `AccessKey` obtained by registering the application on the console.
 - Delegate: the callback object. 
 
-> ! The required API parameters must be entered correctly to use the TPNS service for message push to the application.
+>! The required API parameters must be entered correctly to use the TPNS service for message push to the application.
 
 #### Sample code
 
@@ -416,26 +416,7 @@ This API is used to report local logs if a push error occurs. Please provide the
 [[XGPush defaultManager] uploadLogCompletionHandler:nil];
 ```
 
-## Unregistering XG Platform Service
 
-#### API description
-
-Background: if the application push service is migrated from the XG platform (https://xg.qq.com) to the TPNS platform, duplicate messages may be pushed if both platforms are used. Therefore, please call the API of `TPNS SDK (1.2.5.3+)` to unregister the device information on the XG platform.
-Import the header file `XGForFreeVersion.h` and call before `startXGWithAccessID`:
-
-```
-@property uint32_t freeAccessId;
-```
-
-#### Parameter description
-
-- @freeAccessId: the `AccessID` obtained by registering the application on the XG platform (SDK 1.2.5.3+).
-
-#### Sample code
-
-```
-[XGForFreeVersion defaultForFreeVersion].freeAccessId = 2200262432;
-```
 
 ## TPNS Log Hosting
 
