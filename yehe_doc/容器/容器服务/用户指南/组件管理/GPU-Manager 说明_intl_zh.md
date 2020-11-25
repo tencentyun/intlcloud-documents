@@ -47,7 +47,7 @@ GPU Manager 提供一个 All-in-One 的 GPU 管理器，基于 Kubernetes Device
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
 2. 选择需要创建 GPU 应用的集群，进入工作负载管理页，并单击【新建】。
 3. 在“新建Workload”页面根据实际需求进行配置，可在“GPU资源”配置细粒度的 GPU 工作负载。如下图所示：
-![](https://main.qcloudimg.com/raw/044d6ab9a8c17611f761024c26b6dfde.png)
+![](https://main.qcloudimg.com/raw/d1bd71b3b773a69fab38a408369cca8c.png)
 
 #### 方式二：通过 yaml 创建
 >?在提交时通过 yaml 为容器设置 GPU 的使用资源，核资源需要在 resource 上填写 `tencent.com/vcuda-core`，显存资源需要在 resource 上填写 `tencent.com/vcuda-memory`。

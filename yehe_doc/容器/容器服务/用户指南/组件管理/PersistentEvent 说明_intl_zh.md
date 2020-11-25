@@ -41,10 +41,10 @@ Kubernetes 默认仅提供保留一个小时的 Kubernetes 事件。而 Persiste
 1. 登录日志服务控制台，选择左侧导航栏中的【[日志集管理](https://console.cloud.tencent.com/cls/logset)】。
 2. 在“日志集管理”页面上方，选择 PersistentEvent 所配置日志集所在地域。
 3. 在日志集列表中单击 PersistentEvent 所配置日志集名称，进入该日志集详情页。如下图所示：
-![](https://main.qcloudimg.com/raw/adb6166a495c78580a1a2eacf42353cf.png)
+![](https://main.qcloudimg.com/raw/e8c357efec0bf528521d8ee9f6d9d753.png)
 4. 单击 PersistentEvent 所配置的日志集主题所在行右侧的【管理】，进入“日志主题”详情页。
 5. 选择【索引配置】页签，在页面中开启索引配置并单击【保存】，打开日志检索功能。如下图所示：
-![](https://main.qcloudimg.com/raw/a804577fd5e6d638cd4921f2ce255579.png)
+![](https://main.qcloudimg.com/raw/0ac7b395a3250e8d21f2fd5022d8ddf0.png)
 6. 选择左侧导航栏中的【[日志检索](https://console.cloud.tencent.com/cls/search)】，并在“日志集”和“日志主题”下拉框中选择 PersistentEvent 所配置的日志服务，以及期望检索日志的时间段，单击【查询分析】即可查看事件数据。如下图所示：
-![](https://main.qcloudimg.com/raw/7b30875bb8f4e7bf057291d210dc0d0c.png)
+![](https://main.qcloudimg.com/raw/348f807a187842b773a200c986185012.png)
 
