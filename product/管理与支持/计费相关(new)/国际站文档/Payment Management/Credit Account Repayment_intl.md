@@ -1,3 +1,5 @@
+>! All the dates and time for settlements and transactions under your Tencent Cloud account are based on Beijing Time (UTC + 08:00).
+
 There are three ways to make a repayment for your Tencent Cloud credit account. To check the repayment records, go to **Billing Center** > **[Transactions](https://console.cloud.tencent.com/expense/transactions)**.
 
 - **Automatic repayment of the unpaid bill amount**
