@@ -12,18 +12,18 @@ Tencent Cloud CDN supports adding origin-pull request headers:
 ### Configuration limitations
 
 - The maximum number of custom request header rules: 10
-- Supported rule types: all content, specified file type, folder, and file path. Regular matching is currently not supported.
+- Supported rule types: all content, file extension, folder, and file path. Regular matching is currently not supported.
 - If there is already header information in the client request, the configured request header will overwrite the original header during origin-pull.
 - Rules are executed from bottom to top. Rules at the bottom of the list have higher priority.
 - The `Key` of a custom header can contain 1 to 100 characters of digits `0–9`, letters `a–z, A–Z`, and special symbol `-`.
 - The `Value` of a custom header can contain 1 to 1000 characters (Chinese characters are not supported).
-- Some standard headers are not supported for customization. For the detailed list, please see below.
+- Some standard headers do not support customization. For the detailed list, please see below.
 
 ### Configuration instructions
 
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and then click **Manage** on the right of a domain name to enter its configuration page. Select the **Origin-pull Configuration** tab to find the **Origin-pull Request Header Configuration** section. The feature is disabled and not pre-configured by default.
 ![](https://main.qcloudimg.com/raw/c41a39a9a851fbe3778ca325edc2e3f8.png)
-You can add origin-pull header rules when it is disabled:
+You can add origin-pull header rules when the feature is disabled:
 ![](https://main.qcloudimg.com/raw/e2972a9d697e45b3f081b68ea5e6badb.png)
 
 
@@ -31,10 +31,10 @@ You can add origin-pull header rules when it is disabled:
 > 1. The header used to carry the real client IP is `X-Forward-For`, and its value is the `$client_ip` variable by default, which cannot be modified.
 > 2. The header used to carry the real client port is `X-Forward-Port`, and its value is the `$remote_port` variable by default, which cannot be modified.
 
-After a rule is added, the overall configuration will be in disabled state and not take effect:
+After a rule is added, the overall configuration will be in the disabled state and will not take effect:
 ![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
-You can click **Adjust Priority** to adjust the rule order, and then toggle the switch on to deploy the rule to CDN nodes across the entire network.
-![](https://main.qcloudimg.com/raw/61cdbb7d9e12968695b16a08d33d79f7.png)
+You can click **Adjust Priority** to adjust the rule order, and then toggle the switch on to deploy the rule to the CDN nodes across the entire network.
+![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
 
 ## Configuration Samples
 
