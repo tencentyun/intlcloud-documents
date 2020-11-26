@@ -7,6 +7,3 @@ You can select a Tencent Cloud Web Application Firewall (WAF) type and region ba
 
 >?
 >- Other regions will be supported in the near future. For newly supported regions, go to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview).
->- CLB WAF is bound to an IPv6 CLB to protect IPv6 websites. To use IPv6 website protection in your region, check whether the region supports the creation of IPv6 CLB instances and that an IPv6 website has been deployed in the region.
->- Currently, IPv6 CLB instances can be created in the Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, and Singapore regions.
-For more information on IPv6 CLB, see [Getting Started with IPv6 CLB](https://intl.cloud.tencent.com/document/product/214/34560).
