@@ -1,6 +1,7 @@
 Tencent Cloud SCF allows you to create and update a function as needed in multiple ways.
 
-## Creating Function in Console
+## Creating a Function
+### Creating Function in Console
 1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
 3. Select **Blank Function** or **Function Template** to create a function.
@@ -8,7 +9,7 @@ Tencent Cloud SCF allows you to create and update a function as needed in multip
  - When using **Function Template**, you need to enter the required function name, runtime environment, and configuration items in the function template to create the function.
 
 
-## Creating Function in Other Ways
+### Creating Function in Other Ways
 You can create a function as needed in more ways as detailed below:
 - Use Serverless Framework CLI to create a function. For more information, please see [Creating Function on CLI](https://intl.cloud.tencent.com/document/product/583/32743) and relevant function invocation and deployment documents.
 - Use VS Code to create a function. For more information, please see [Creating Function with VS Code Plugin](https://intl.cloud.tencent.com/document/product/583/32744) and relevant function invocation and deployment documents.
@@ -32,13 +33,10 @@ If you want to cancel, click **Cancel** to discard the changes.
 # serverless.yml
 component: scf # Name of the imported component, which is required. The `tencent-scf` component is used in this example
 name: scfdemo # Name of the instance created by this component, which is required
-org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
-app: scfApp # SCF application name, which is optional
-stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 inputs:
   name: scfFunctionName
   src: ./src
-  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9,Nodejs12.16, Nodejs10.15, PHP5, PHP7, Golang1, Java8.
+  runtime: Nodejs10.15 # Runtime environment of function. Valid values: Python2.7, Python3.6, Nodejs6.10, Nodejs8.9,Nodejs12.16, PHP5, PHP7, Golang1, Java8.
   region: ap-guangzhou
   handler: index.main_handler
   events:
@@ -72,7 +70,7 @@ If you want to cancel, click **Cancel** to discard the changes.
 
 ### Updating function code on Serverless Framework CLI
 After the function code is modified locally, run `sls deploy` on Serverless Framework CLI to deploy the function and update the code.
->The development mode of Serverless Framework supports updating functions synchronously. For more information, please see [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
+>?The development mode of Serverless Framework supports updating functions synchronously. For more information, please see [Development Mode and In-cloud Debugging](https://intl.cloud.tencent.com/document/product/583/36268).
 
 
 
