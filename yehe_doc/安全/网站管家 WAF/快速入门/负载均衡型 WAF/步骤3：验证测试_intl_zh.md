@@ -4,4 +4,3 @@
 >!`wow.qcloudwaf.com` 为本案例中域名，此处需要将域名替换为实际添加的域名。
 3. 登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/attack)，在左侧导航栏中，选择【Web 应用防火墙】>【攻击详情】，进入攻击日志查询页面，进行日志查询。
 4. 选择添加防护的域名，单击【查询】，若看到攻击类型为 “XSS 攻击”，说明 WAF 配置已经生效。
-![](https://main.qcloudimg.com/raw/5bb81ca8874cb8723b6638b83351b729.png)

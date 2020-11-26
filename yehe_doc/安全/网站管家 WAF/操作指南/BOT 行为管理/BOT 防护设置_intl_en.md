@@ -8,7 +8,7 @@ WAF custom session policies allow you to set features of protocols, IP intellige
 
 ## Instructions
 ### Enabling or disabling bot protection
-Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strategy) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar to go to the bot policy settings page.
+Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot2/config) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar to go to the bot policy settings page.
 ![](https://main.qcloudimg.com/raw/8745cf6f92bb41e4f2253c6513ee9ca8.png)
 **Field description:**
 
@@ -19,7 +19,7 @@ Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strate
 - **Operation:** click **Defense settings** to set a bot protection policy.
 
 ### Setting public categories
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strategy) and choose **Bot Behavior Management** > **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the **Operation** column on the right.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot2/config) and choose **Bot Behavior Management** > **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the **Operation** column on the right.
 2. On the **Defense settings** page, click **Public Type** to enter the corresponding list page.
 ![](https://main.qcloudimg.com/raw/58e1edabcc53ae75725d18867f9dd4a1.png)
 **Field description:**
@@ -32,7 +32,7 @@ Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strate
 
 ### Custom session policies
 #### Protocol features
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strategy) and choose **Bot Behavior Management** > **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the **Operation** column on the right.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot2/config) and choose **Bot Behavior Management** > **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the **Operation** column on the right.
 2. On the **Defense settings** page, choose **Custom Session Policy** > **Protocol Features** to go to the corresponding list page.
 ![](https://main.qcloudimg.com/raw/55f2548f1daac0be5fd03551213153d9.png)
 	- **Field description:**
@@ -64,7 +64,7 @@ Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strate
 </table>
 
 #### IP intelligence features
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strategy) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the "Operation" column on the right.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot2/config) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the "Operation" column on the right.
 2. On the Defense settings page, select **Custom Session Policy** > **IP Intelligence Characteristics** to enter the corresponding list page.
 ![](https://main.qcloudimg.com/raw/cfe58a8695dcac4016b30cc19ed23d9b.png)
 	- **Field description:**
@@ -93,7 +93,7 @@ Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strate
 </table>
 
 #### Custom session features
-1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot/strategy) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the "Operation" column on the right.
+1. Log in to the [WAF Console](https://console.cloud.tencent.com/guanjia/bot2/config) and choose **Bot Behavior Management** -> **Bot Protection Settings** on the left sidebar. Find the target domain name and click **Defense settings** in the "Operation" column on the right.
 2. On the **Defense settings** page, choose **Custom Session Policy** > **Custom Session Features** to go to the corresponding list page.
 ![](https://main.qcloudimg.com/raw/9fe29dd854fd6fa35156e93d49cc4eea.png)
 	- **Field description:**
