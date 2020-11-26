@@ -12,7 +12,7 @@ The downstream speed limit configuration can control the peak bandwidth of CDN t
 
 - Maximum number of downstream speed limit rules: 10
 - Unit: KB/s; value range: 1-1,000,000 (integers only)
-- Supported rule types: all content, file extension, file directory, and specified file. Regular matching is currently not supported.
+- Supported rule types: all content, specified file type, specified folder, and specified file. Regular matching is currently not supported.
 - Rules are executed from bottom to top. Rules at the bottom have higher priority.
 
 ### Configuration instructions
