@@ -21,12 +21,12 @@ All the callbacks for API responses are processed through `ITMG_MAIN_EVNET_TYPE_
 
 ## Capture Management APIs
 
-The capture management APIs are used to manage **microphone**, **audio upstreaming** and **capture device** separately. Managing microphone actually includes managing both the latter two. The APIs are designed so to avoid problems where background music may stop playing due to the otherwise unified management of both capture and playback devices.
+The capture management APIs are used to manage the **microphone**, **audio upstreaming** and **capture device** separately. Managing the microphone is equivalent to managing both the audio upstreaming and capture device. The APIs are designed to avoid problems where the background music may stop playing due to the otherwise unified management of both the capture and playback devices.
 
 ### Microphone management
 
-This API (EnableMic) is used to enable/disable microphone for a user in a chat room.
-Calling `EnableMic` is actually calling both `EnableAudioSend` and `EnableAudioCaptureDevice`.
+This API (EnableMic) is used to enable/disable the microphone for a user in a chat room.
+Calling `EnableMic` is equivalent to calling both `EnableAudioSend` and `EnableAudioCaptureDevice`.
 
 #### Function prototype
 ```
@@ -34,8 +34,8 @@ Calling `EnableMic` is actually calling both `EnableAudioSend` and `EnableAudioC
 ```
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------------------------------------------- |
-| enable     | BOOL      | <li> YES: enables microphone for a user<li>NO: disables microphone for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| enable     | BOOL      | <li> YES: enables the microphone for a user<li>NO: disables the microphone for a user |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -43,7 +43,7 @@ The callback parameter is ITMG_ROOM_MANAGEMENT_MIC_OP.
 
 ### Audio upstreaming management
 
-This API (EnableAudioSend) is used to enable/disable audio upstreaming for a user in a chat room while not affecting microphone capture.
+This API (EnableAudioSend) is used to enable/disable audio upstreaming for a user in a chat room but will not affect the microphone capture.
 
 #### Function prototype
 
@@ -54,7 +54,7 @@ This API (EnableAudioSend) is used to enable/disable audio upstreaming for a use
 | Parameter | Type | Description |
 | ---------- | --------- | --------------------------------------------------- |
 | enable     | BOOL      | <li> YES: enables audio upstreaming for a user<li>NO: disables audio upstreaming for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -62,7 +62,7 @@ The callback parameter is ITMG_ROOM_MANAGEMENT_AUDIO_SEND_OP.
 
 ### Capture hardware management
 
-This API (EnableAudioCaptureDevice) is used to enable/disable audio capture device for a user in a chat room while not affecting audio upstreaming.
+This API (EnableAudioCaptureDevice) is used to enable/disable the audio capture device for a user in a chat room but will not affect audio upstreaming.
 
 #### Function prototype
 
@@ -72,8 +72,8 @@ This API (EnableAudioCaptureDevice) is used to enable/disable audio capture devi
 
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------------------------------------------------ |
-| enable     | BOOL      | <li>YES: enables audio capture device for a user<li>NO: disables audio capture device for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| enable     | BOOL      | <li>YES: enables the audio capture device for a user<li>NO: disables the audio capture device for a user |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -81,12 +81,12 @@ The callback parameter is ITMG_ROOM_MANAGEMENT_CAPTURE_OP.
 
 ## Playback Management APIs
 
-The playback management APIs are used to manage **speaker**, **audio downstreaming** and **playback device** separately. Managing speaker actually includes managing both the latter two. The APIs are designed so to avoid problems where background music may stop playing due to the otherwise unified management of both capture and playback devices.
+The playback management APIs are used to manage the **speaker**, **audio downstreaming** and **playback device** separately. Managing the speaker is equivalent to managing both the audio downstreaming and playback device. The APIs are designed to avoid problems where the background music may stop playing due to the otherwise unified management of both the capture and playback devices.
 
 ### Speaker management
 
-This API (EnableSpeaker) is used to enable/disable speaker for a user to hear the sound in a chat room.
-Calling `EnableSpeaker` is actually calling both `EnableAudioRecv` and `EnableAudioPlayDevice`.
+This API (EnableSpeaker) is used to enable/disable the speaker for a user to hear the sound in a chat room.
+Calling `EnableSpeaker` is equivalent to calling both `EnableAudioRecv` and `EnableAudioPlayDevice`.
 
 #### Function prototype
 
@@ -96,8 +96,8 @@ Calling `EnableSpeaker` is actually calling both `EnableAudioRecv` and `EnableAu
 
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------------------------------------------- |
-| enable     | BOOL      | <li>YES: enables speaker for a user<li>NO: disables speaker for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| enable     | BOOL      | <li>YES: enables the speaker for a user<li>NO: disables the speaker for a user |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -105,7 +105,7 @@ The callback parameter is ITMG_ROOM_MANAGEMENT_SPEAKER_OP.
 
 ### Audio downstreaming management
 
-This API (EnableAudioRecv) is used to enable/disable audio downstreaming for a user while not affecting the playback device.
+This API (EnableAudioRecv) is used to enable/disable audio downstreaming for a user but will not affect the playback device.
 
 #### Function prototype
 
@@ -116,7 +116,7 @@ This API (EnableAudioRecv) is used to enable/disable audio downstreaming for a u
 | Parameter | Type | Description |
 | ---------- | --------- | ----------------------------------------------------------- |
 | enable     | BOOL      | <li> YES: enables audio downstreaming for a user<li>NO: disables audio downstreaming for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -125,7 +125,7 @@ The callback parameter is ITMG_ROOM_MANAGEMENT_AUDIO_REC_OP.
 
 ### Playback device management
 
-This API (EnableAudioPlayDevice) is used to enable/disable audio playback device for a user while not affecting audio downstreaming.
+This API (EnableAudioPlayDevice) is used to enable/disable the audio playback device for a user but will not affect audio downstreaming.
 
 #### Function prototype
 
@@ -135,16 +135,16 @@ This API (EnableAudioPlayDevice) is used to enable/disable audio playback device
 
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------------------------------------------------ |
-| enable     | BOOL      | <li>YES: enables audio playback device for a user<li>NO: disables audio playback device for a user |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| enable     | BOOL      | <li>YES: enables the audio playback device for a user<li>NO: disables the audio playback device for a user |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
 The callback parameter is ITMG_ROOM_MANAGEMENT_PLAY_OP.
 
-## APIs for Obtaining User Status
+## APIs for Obtaining the User Status
 
-### Obtaining microphone status
+### Obtaining the microphone status
 
 This API is used to obtain the microphone status for a user in a chat room.
 
@@ -156,14 +156,14 @@ This API is used to obtain the microphone status for a user in a chat room.
 
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------- |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 
 #### Callback
 
 The callback parameter is ITMG_ROOM_MANAGEMENT_GET_MIC_STATE.
 
-### Obtaining speaker status
+### Obtaining the speaker status
 
 This API is used to obtain the speaker status for a user in a chat room.
 
@@ -190,13 +190,13 @@ This API is used to remove a user from a chat room.
 
 | Parameter | Type | Description |
 | ---------- | --------- | ------------------- |
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
 The callback parameter is ITMG_ROOM_MANAGEMENT_KICKOUT_OP.
 
-### API for disabling microphone/speaker for a user
+### API for disabling the microphone/speaker for a user
 
 Each user that enters a chat room can use their microphone and speaker by default. Calling this API will have the microphone and speaker disabled for a user until he or she exits the room.
 
@@ -206,8 +206,8 @@ Each user that enters a chat room can use their microphone and speaker by defaul
 
 | Parameter | Type | Description |
 | ---------- | --------- | ----------------------------------------------------------- |
-| enable     | BOOL      | <li>YES: enables microphone/speaker for a user<li>NO: disables microphone/speaker for a user|
-| receiverID | NSString* | Specifies OpenId of the user                                    |
+| enable     | BOOL      | <li>YES: enables the microphone/speaker for a user<li>NO: disables the microphone/speaker for a user|
+| receiverID | NSString* | Specifies the OpenId of the user                                    |
 
 #### Callback
 
@@ -216,7 +216,7 @@ The callback parameter is ITMG_ROOM_MANAGERMENT_FOBIN_OP.
 <span id="test1"></span>
 ## Processing Callbacks
 
-Like all the other GME callbacks, chat room management callbacks are processed using `OnEvent` with an event named `ITMG_MAIN_EVNET_TYPE_ROOM_MANAGEMENT_OPERATOR`. This event returns a parameters structure as shown below:
+Like all the other GME callbacks, the chat room management callbacks are processed using `OnEvent` with an event named `ITMG_MAIN_EVNET_TYPE_ROOM_MANAGEMENT_OPERATOR`. This event returns a parameter structure as shown below:
 
 #### Callback parameters
 
@@ -232,16 +232,16 @@ Like all the other GME callbacks, chat room management callbacks are processed u
 
 | Value | Event Type                              | Description                       |
 | ---- | -------------------------------------- | -------------------------- |
-| 0    | ITMG_ROOM_MANAGEMENT_CAPTURE_OP        | Callback for controling the capture device       |
-| 1    | ITMG_ROOM_MANAGEMENT_PLAY_OP           | Callback for controling the playback device    |
-| 2    | ITMG_ROOM_MANAGEMENT_AUDIO_SEND_OP     | Callback for controling audio upstreaming      |
-| 3    | ITMG_ROOM_MANAGEMENT_AUDIO_REC_OP      | Callback for controling audio downstreaming              |
-| 4    | ITMG_ROOM_MANAGEMENT_MIC_OP            | Callback for controling the microphone         |
-| 5    | ITMG_ROOM_MANAGEMENT_PLAY_OP           | Callback for controling the speaker             |
+| 0    | ITMG_ROOM_MANAGEMENT_CAPTURE_OP        | Callback for controlling the capture device       |
+| 1    | ITMG_ROOM_MANAGEMENT_PLAY_OP           | Callback for controlling the playback device    |
+| 2    | ITMG_ROOM_MANAGEMENT_AUDIO_SEND_OP     | Callback for controlling audio upstreaming      |
+| 3    | ITMG_ROOM_MANAGEMENT_AUDIO_REC_OP      | Callback for controlling audio downstreaming              |
+| 4    | ITMG_ROOM_MANAGEMENT_MIC_OP            | Callback for controlling the microphone         |
+| 5    | ITMG_ROOM_MANAGEMENT_PLAY_OP           | Callback for controlling the speaker             |
 | 6    | ITMG_ROOM_MANAGEMENT_KICKOUT_OP        | Removes a user from a chat room     |
-| 7    | ITMG_ROOM_MANAGEMENT_GET_MIC_STATE     | Obtains microphone status         |
-| 8    | ITMG_ROOM_MANAGEMENT_GET_SPEAKER_STATE | Obtains speaker status         |
-| 9    | ITMG_ROOM_MANAGERMENT_FOBIN_OP         | Disables microphone and speaker |
+| 7    | ITMG_ROOM_MANAGEMENT_GET_MIC_STATE     | Obtains the microphone status         |
+| 8    | ITMG_ROOM_MANAGEMENT_GET_SPEAKER_STATE | Obtains the speaker status         |
+| 9    | ITMG_ROOM_MANAGERMENT_FOBIN_OP         | Disables the microphone and speaker |
 
 #### OperateValue
 
