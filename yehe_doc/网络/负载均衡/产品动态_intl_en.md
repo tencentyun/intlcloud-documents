@@ -138,7 +138,7 @@
 <td>IPv6 is supported</td>
 <td><li>IPv6 CLB can be bound to the IPv6 address of a CVM instance and provides an IPv6 VIP address.</li><li>A CLB instance using the IPv6 single-stack technology can collaborate with IPv4 CLB to implement IPv6/IPv4 dual-stack communication.</li></td>
 <td>October 17, 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/34555">Creating IPv6 CLB Instances</a></td>
+<td>Creating IPv6 CLB Instances</a></td>
 </tr>
 <tr>
 <td>Access logs can be stored in CLS</td>
