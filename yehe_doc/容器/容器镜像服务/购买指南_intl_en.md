@@ -13,7 +13,7 @@ TCR will exit beta at the end of November, and will officially launch as a paid 
 <tr>
 <td>Instance leasing</td>
 <td>Enterprise Edition instances support the pay-as-you-go billing method, which is billed based on regions and instance specifications.</td>
-td>Please refer to <a href="#price">Enterprise Edition Pricing</a>. </td>
+<td>Please refer to <a href="#price">Enterprise Edition Pricing</a>. </td>
 </tr>
 <tr>
 <td>Storage fees</td>
