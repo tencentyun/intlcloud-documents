@@ -28,10 +28,12 @@ The logic of automatic route addition in CCN involves three stages as shown belo
 >? The no-check policy feature is in beta testing. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=168&source=0&data_title=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9CVPC&step=1) to apply.
 
 ### 3. After addition
-<ul>
-<li>Different IP ranges overlapped: the longest mask matching principle is applied, which gives higher priority to more specific IP ranges. For example, if the destination IP range of route A is <code>10.0.1.0/20</code> and the destination IP range of route B is <code>10.0.1.0/24</code>, route B is given higher priority during matching based on the longest mask matching principle when routes A and B are enabled at the same time.</li>
-<li id="same">Same IP ranges: routes whose next hops are direct connect gateways support ECMP. For example, you can enable multiple routes whose destination IP ranges are <code>10.0.1.0/20</code>. Other routes do not support ECMP. This means that these routes cannot be enabled simultaneously. For example, if there are two or more routes whose destination IP ranges are <code>10.0.1.0/20</code> and whose next hops are VPC or VPC and direct connect gateway, only one route can be enabled.</li>
-</ul>
+- Different IP ranges overlapped: the longest mask matching principle is applied, which gives higher priority to more specific IP ranges. For example, if the destination IP range of route A is <code>10.0.1.0/20</code> and the destination IP range of route B is <code>10.0.1.0/24</code>, route B will be first matched based on the longest mask matching principle when both routes A and B are enabled.
+<span id="same"></span>
+- Same IP ranges: routes whose next hops are direct connect gateways support ECMP. For example, you can enable multiple routes whose destination IP ranges are <code>10.0.1.0/20</code>. Other routes do not support ECMP. This means that these routes cannot be enabled simultaneously. For example, if there are two or more routes whose destination IP ranges are <code>10.0.1.0/20</code> and whose next hops are VPC or VPC and direct connect gateway, only one route can be enabled.
+>?See the following notes for the inbound route of the connection network architecture in CCN. More information can be viewed in [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
+>- The CCN direct connect gateway created before September 15, 2020, 00:00:00 publishes the route of subnet CIDR block to the dedicated tunnel. For a BGP dedicated tunnel, the VPC subnet CIDR block is synced to IDC based on the BGP protocol.
+>- The CCN direct connect gateway created after September 15, 2020, 00:00:00 publishes the route of VPC CIDR block to the dedicated tunnel. For a BGP dedicated tunnel, the VPC CIDR block is synced to IDC based on the BGP protocol..
 
 ## Automatic Route Deletion
 <table>
