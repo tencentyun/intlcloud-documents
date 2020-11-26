@@ -22,7 +22,7 @@ The health status information of nodes is collected to proactively detect node e
 - If a node remains abnormal after a CVM restart is triggered, the node will not perform any additional self-healing actions within 3 hours.
 
 NPDPlus records all executed self-healing actions in Node Event, so that cluster admins can monitor the events that occur on nodes, as shown in the figure below:
-<img style="width:80%" src="https://main.qcloudimg.com/raw/f39e70300a001cb0ceb33a30499458c8.png" data-nonescope="true">
+<img style="width:80%" src="https://main.qcloudimg.com/raw/da4f054fe1382b9216a90aaea860f399.png" data-nonescope="true">
 
 
 

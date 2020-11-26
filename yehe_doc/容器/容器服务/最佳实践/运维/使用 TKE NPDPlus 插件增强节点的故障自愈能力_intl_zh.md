@@ -22,7 +22,7 @@ TKE NPDPlus 组件使用详情请参见 [NodeProblemDetectorPlus 使用方法](h
 - 当节点触发重启 CVM 自愈动作后还处于异常状态时，在3小时之内此节点不再执行任何自愈动作。
 
 NPDPlus 会将执行过的所有自愈动作记录在 Node 的 Event 中，方便集群管理员了解在 Node 上发生的事件。如下图所示：
-<img style="width:80%" src="https://main.qcloudimg.com/raw/f39e70300a001cb0ceb33a30499458c8.png" data-nonescope="true">
+<img style="width:80%" src="https://main.qcloudimg.com/raw/da4f054fe1382b9216a90aaea860f399.png" data-nonescope="true">
 
 
 
