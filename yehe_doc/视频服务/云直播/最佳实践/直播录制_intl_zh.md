@@ -65,6 +65,7 @@
 
 其中：【空】为通配，【&#10003;】为精确匹配，【0】为最高优先级。一旦匹配到高优先级模板则停止匹配且返回此优化级模板。
 
+
 ## 同一推流域名下部分流不开启录制
 您可能已经为某个推流域名配置了录制，但是此域名下存在个别推流因业务原因不需要录制。可以这样操作：
 
@@ -89,13 +90,10 @@
 创建录制任务 API 说明，具体请参见 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)。
 
 
-
 ### 录制示例
 - 最简单的情况，只需填写指定的 StreamName、DomainName、AppName 和 EndTime 参数。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 FLV，视频录制，分片间隔30分钟，永久存储。
-
 **输入示例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -108,13 +106,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 ```
 - 您还可以指定具体录制格式、录制类型以及存储参数等。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
-
-
 1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
-
-
 **输入示例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -124,9 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<公共请求参数>
 ```
-
 **输出示例：**
-
 ```
 {
   "Response": {
@@ -136,7 +127,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 }
 ```
 
-2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
+	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
 
 
 **输入示例：**
@@ -217,7 +208,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 登录 [云点播控制台](https://console.cloud.tencent.com/vod/media)，在**非管理员**页面上选择【媒资管理】>【视频管理】，即可浏览录制生成的所有文件。
 
-![img](https://main.qcloudimg.com/raw/66bde9882dab60099bed8013a3d8c521.png)
+![](https://main.qcloudimg.com/raw/66bde9882dab60099bed8013a3d8c521.png)
 
 ### 录制事件通知
 
@@ -227,9 +218,9 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 ### 点播 API 查询
 
-具体使用请参见云点播 API 文档：
-- 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)。
-- 依照视频名称前缀获取视频信息 API DescribeVodPlayInfo。
+具体使用请参见云点播 API  [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) 接口筛选查询录制文件。
+
+
 
 ## 更新配置注意事项
 在更新完录制配置之后，我们建议您重新推流并对配置进行验证。配置的生效规则如下：
