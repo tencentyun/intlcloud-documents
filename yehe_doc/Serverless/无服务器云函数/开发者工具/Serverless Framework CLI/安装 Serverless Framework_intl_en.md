@@ -52,7 +52,6 @@ After the installation is completed, run the `serverless -v` command to view the
 $ serverless -v
 ```
 
->If Node.js is not installed in your environment, you can install it as instructed in [Node.js Installation Guide](https://nodejs.org/zh-cn/download/) based on your system environment.
 
 
 
