@@ -9,7 +9,7 @@
 ### 相关特性
 
 - 不同地域之间的网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
+- 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://cloud.tencent.com/document/product/877) 进行通信，此通信方式较为高速、稳定。
 - [负载均衡](https://intl.cloud.tencent.com/document/product/214 ) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
@@ -49,7 +49,7 @@
 	<tr>
 		<td>广州六区<br> ap-guangzhou-6</td>
 	</tr>
-	<tr>		
+	<tr>
 		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
 	</tr>
@@ -62,16 +62,18 @@
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
-	</tr>
+ <tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
-	<tr>	
 		<tr>
-			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
+			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>南京二区<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
+			<td>南京三区<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
 			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
@@ -89,7 +91,7 @@
 	<tr>
 			<td>北京五区<br>ap-beijing-5</td>
 	</tr>
-	<tr>	
+	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 		<td>成都一区<br>ap-chengdu-1</td>
 	</tr>
@@ -125,9 +127,12 @@
 		<tr>
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
 		</tr>
-		<tr>			
-			<td >亚太东北（首尔）<br>ap-seoul</td>	
+		<tr>
+			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
 			<td>首尔一区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-1</td>
+		</tr>
+		<tr>
+			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
 		</tr>
 		<tr>
 			<td >亚太东北（东京）<br>ap-tokyo</td>
@@ -274,7 +279,7 @@
 2. 如果当前实例的网络环境为 [私有网络](https://intl.cloud.tencent.com/document/product/213/5227) 且需要在迁移后保留当前私有 IP 地址，用户可以先删除当前可用区中的子网，然后在新可用区中用与原始子网相同的 IP 地址范围创建子网。需要注意的是，不包含可用实例的子网才可以被删除。因此，应该将在当前子网中的所有实例移至新子网。
 3. 使用刚创建的自定义镜像在新的可用区中创建一个新实例。用户可以选择与原始实例相同的实例类型及配置，也可以选择新的实例类型及配置。更多信息，请参阅 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 4. 如果原始实例已关联弹性 IP 地址，则将其与旧实例解关联并与新实例相关联。更多信息，请参阅 [弹性 IP](https://intl.cloud.tencent.com/document/product/213/5733)。
-5. （可选）若原有实例为 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。若原有实例为 [包年包月](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择等待其过期并回收。
+5. （可选）若原有实例为 [按量计费](https://intl.cloud.tencent.com/document/product/213/2180) 类型，可选择销毁原始实例。更多信息，请参阅 [销毁实例](https://intl.cloud.tencent.com/document/product/213/4930)。
 
 ### 将镜像复制到其他地域
 
