@@ -1,3 +1,6 @@
+
+This document describes the billing and pricing of connection, dedicated tunnel and direct connect gateway.
+
 ## Billing Description
 **Tencent Cloud Direct Connect is billed on the basis of connection, dedicated tunnel, and direct connect gateway.**
 The figure below specifies the fees:
@@ -46,14 +49,27 @@ Direct Connect is billed as follows.
  >?Resource occupation fee for dedicated access port was charged starting July 1, 2019.
 
 ### Direct connect gateway traffic fee
-For a direct connect gateway, outbound traffic is charged at the price as shown below.
 
-| Billable Item | Price |
-| ------------ | -------- |
-| Inbound traffic | Free of charge |
-| Outbound traffic | 0.015 USD/GB |
+The direct connect gateway will be charged starting from December 1, 2020 00:00:00. The inbound traffic is free of charge, while the outbound traffic is charged at the price as shown below.
+<table>
+<tr>
+<th>Billable Item </th>
+<th>Price</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Inbound traffic</td>
+<td>Free of charge</td>
+<td></td>
+</tr>
+<tr>
+<td>Outbound traffic</td>
+<td>0.015USD/GB</td>
+<td><ul><li>During December 1, 2020 and December 1, 2022: each account is provided with a free tier of 50 TB each month. The usage exceeding this limit will be charged at 0.015 USD/GB. This free tier will be cleared on the last day of every month, which cannot be accumulated.</li><li>Starting from December 2, 2022: 0.015 USD/GB。</li></ul>
+</td>
+</tr>
+</table>
 
->? The direct connect gateway will be charged starting from December 1, 2020. For more information on the billing, contact your Tencent Cloud sales rep.
 
 ### Cross-region dedicated tunnel bandwidth resource fee
 #### Monthly 95th percentile billing
