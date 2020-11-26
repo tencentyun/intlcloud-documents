@@ -212,7 +212,7 @@
 <td>IPv6 NAT64 is supported</td>
 <td>An IPv6 NAT64 CLB instance can be created. CLB VIP is an IPv6 public IP address, which will forward requests from IPv6 clients to the backend IPv4 CVM instance so that the real server can access IPv6 within seconds with no modification required.</td>
 <td>November 15, 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/34556">Creating IPv6 NAT64 CLB Instances</a></td>
+<td>Creating IPv6 NAT64 CLB Instances</a></td>
 </tr>
 </tbody></table>
 
