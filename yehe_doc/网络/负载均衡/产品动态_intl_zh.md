@@ -134,12 +134,6 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>支持 IPv6</td>
-<td><li>IPv6 负载均衡绑定的是云服务器的 IPv6 地址，并对外提供 IPv6 VIP 地址。</li><li>基于 IPv6 单栈技术实现的负载均衡，和 IPv4 负载均衡协同工作，实现 IPv6/IPv4 双栈通信。</li></td>
-<td>2019-10-17</td>
-<td>创建 IPv6 负载均衡实例</a></td>
-</tr>
-<tr>
 <td>支持配置访问日志到 CLS</td>
 <td>支持配置七层 CLB 的访问日志到日志服务（CLS），分钟级粒度，在线检索。</li></td>
 <td>2019-10-15</td>
@@ -204,14 +198,6 @@
 <td>Anycast CLB 支持多地动态加速，其 VIP 会发布在多地多个地域，客户端接入最近的 POP 点，通过腾讯云数据中心高速互联网转发到云服务器上。</td>
 <td>2018-11-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/32426">创建 Anycast 负载均衡实例</a></td>
-</tr>
-</tr>
-</thead>
-<tbody><tr>
-<td>支持 IPv6 NAT64</td>
-<td>支持创建 IPv6 NAT64 负载均衡实例，该实例的 VIP 是一个 IPv6 公网地址，该 VIP 会将来自 IPv6 客户端的请求转发给后端的 IPv4 云服务器，后端服务无须改造，秒级接入 IPv6。</td>
-<td>2018-11-15</td>
-<td>创建 IPv6 NAT64 负载均衡实例</a></td>
 </tr>
 </tbody></table>
 
