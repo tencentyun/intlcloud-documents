@@ -1,6 +1,6 @@
 在 MongoDB 中慢日志经常作为优化业务操作的依据。关于慢日志的更多信息请参考 [官方文档](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/)。[云数据库 MongoDB 控制台](https://console.cloud.tencent.com/mongodb) 为您提供可查询慢日志的操作界面。
 
->
+>?
 >- 系统会记录执行时间超过100毫秒的操作。
 >- 慢日志保留时间为7天，建议每次查询时间跨度不超过1天。
 >- 查询仅限前1万条慢日志，若查询结果缓慢，请缩小查询时间范围。
