@@ -211,7 +211,7 @@
 <td>支持 IPv6 NAT64</td>
 <td>支持创建 IPv6 NAT64 负载均衡实例，该实例的 VIP 是一个 IPv6 公网地址，该 VIP 会将来自 IPv6 客户端的请求转发给后端的 IPv4 云服务器，后端服务无须改造，秒级接入 IPv6。</td>
 <td>2018-11-15</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/34556">创建 IPv6 NAT64 负载均衡实例</a></td>
+<td>创建 IPv6 NAT64 负载均衡实例</a></td>
 </tr>
 </tbody></table>
 
