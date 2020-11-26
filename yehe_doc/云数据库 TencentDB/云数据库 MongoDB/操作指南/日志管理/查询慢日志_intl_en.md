@@ -1,6 +1,6 @@
 Slow logs are often used as the basis for optimizing business operations in MongoDB. For more information on slow logs, please see [Database Profiler](https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/). You can query slow logs in the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb).
 
->
+>?
 >- The system logs operations with an execution time of more than 100 ms.
 >- The slow logs are retained for 7 days. You are recommended to limit the query time range within 1 day.
 >- Only the first 10,000 slow logs can be queried. If the query is slow, you can narrow down the query time range.
