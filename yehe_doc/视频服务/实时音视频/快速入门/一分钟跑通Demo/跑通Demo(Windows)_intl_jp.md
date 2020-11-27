@@ -27,8 +27,9 @@
 <span id="step3"></span>
 
 ### 手順3：Demoプロジェクトファイルの設定
-1．[手順2]（#step2）でダウンロードしたソースコードパッケージを解凍します。
+1．[手順2](#step2)でダウンロードしたソースコードパッケージを解凍します。
 2. `GenerateTestUserSig`ファイルを探して開きます。
+
  <table>
      <tr>
          <th nowrap="nowrap">プラットフォームに適用</th>  
@@ -46,12 +47,13 @@
 3. `GenerateTestUserSig.js`ファイルの関連パラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0、実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/f28b968c02e8f26fe02c7ff6907239cb.png">
+
 4．Tencent Real-Time Communicationコンソールに戻り、【貼り付け完了。次のステップ】をクリックします。
 5.【ガイドを閉じてコンソールへ進む】をクリックします。
 
-≻本書で言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになり、そのため**のこの手法はローカルDemo実行および機能デバッグにのみ適合します**。
-≻ UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+>!
+>本書で言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになり、そのため**のこの手法はローカルDemo実行および機能デバッグにのみ適合します**。
+> UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166) をご参照ください。
 
 ### 手順4：コンパイル動作
 - **Windows（C++）**
@@ -63,7 +65,7 @@ Visual Studio（VS2017をお薦めします）を使用してソースコード�
 ## よくあるご質問
 
 ### 1. キーをクエリするとき、パブリックキーおよびプライベートキーの情報しか取得できませんが、キーはどうしたら取得できますか？
-TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリズムのHMAC-SHA256の使用を始めています。その前に作成済のアプリケーションは、署名アルゴリズムをアップグレードしないと暗号化したキーを取得できません。アップグレードしなくても、[旧バージョンアルゴリズム ECDSA-SHA256]（https://intl.cloud.tencent.com/document/product/647/35166)は引き続き使用できます。アップグレード済みなら、必要に応じて新旧アルゴリズムに切り替えます。
+TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリズムのHMAC-SHA256の使用を始めています。その前に作成済のアプリケーションは、署名アルゴリズムをアップグレードしないと暗号化したキーを取得できません。アップグレードしなくても、[旧バージョンアルゴリズム ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)は引き続き使用できます。アップグレード済みなら、必要に応じて新旧アルゴリズムに切り替えます。
 
 アップグレード/切替の操作：
  1. [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc)にログインします。
