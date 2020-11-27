@@ -6,20 +6,21 @@
 - 开启录制功能后请确保云点播服务处于正常使用状态。云点播服务未开通或账号欠费导致云点播服务停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
 -  模板配置完后约5分钟 - 10分钟生效。 
 -  模板关联成功后，指定推流域名下的推流地址开启录制功能。
+-  一个域名仅可关联一个录制模板，关联后该域名下的所有流均会按照该模板进行录制。
 
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)，并成功添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 - 已 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
 
 ## 关联录制模板
-1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的推流域名对应的【管理】进入域名详情页。
+1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2.	选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 ![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
 3. 选择录制配置模板，单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
 
 ## 解绑录制模板
-1. 进入【域名管理】，单击需解绑的推流域名对应的【管理】进入域名详情页。
+1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【录制配置】标签右上角的【编辑】。
 3. 单击取消相应模板的勾选，单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
@@ -29,15 +30,12 @@
 录制文件生成后自动存储到云点播系统，有以下方式可以获取录制文件：
 
 ### 云点播控制台
-登录云点播控制台，进入[【媒资管理】](https://console.cloud.tencent.com/vod/media)可以浏览已录制所有文件。
+登录云点播控制台，选择子应用进入并单击左侧的[【媒资管理】](https://console.cloud.tencent.com/vod/media)可以浏览已录制所有文件。
 ![](https://main.qcloudimg.com/raw/b41dc459807ac1986d1db04032ea7942.png)
-
+ 
 ### 录制事件通知
 通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调协议内容](https://intl.cloud.tencent.com/document/product/267/31566) 进行业务处理。
->事件通知机制高效可靠且实时性好，我们推荐您使用回调方式获取录制文件。
+>?事件通知机制高效可靠且实时性好，我们推荐您使用回调方式获取录制文件。
 
 ### 云点播 API 查询
-具体使用请参考云点播 API 文档：
-- 根据直播流名称及时间范围查询录制文件 API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)。
-- 依照视频名称前缀获取视频信息 API DescribeVodPlayInfo。
-
+具体使用请参见云点播 API  [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) 接口筛选查询录制文件。

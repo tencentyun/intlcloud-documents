@@ -7,6 +7,3 @@
 
 >?
 >- 其他支持地区陆续开放中，最新支持地区请关注 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)。
->- 负载均衡型 WAF 通过绑定 IPv6 负载均衡实现对 IPv6 网站防护 ，如果您需要使用 IPv6 网站防护，请提前确认您所在选择地区是否支持创建 IPv6 负载均衡实例，并且已经完成 IPv6 网站部署。
->- 当前 IPv6 负载均衡实例支持地域包括：北京、上海、广州、南京、成都、新加坡。
-更多负载均衡 IPv6 支持信息，请参见 [IPv6 负载均衡快速入门](https://intl.cloud.tencent.com/document/product/214/34560)。

@@ -135,13 +135,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>IPv6 is supported</td>
-<td><li>IPv6 CLB can be bound to the IPv6 address of a CVM instance and provides an IPv6 VIP address.</li><li>A CLB instance using the IPv6 single-stack technology can collaborate with IPv4 CLB to implement IPv6/IPv4 dual-stack communication.</li></td>
-<td>October 17, 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/34555">Creating IPv6 CLB Instances</a></td>
-</tr>
-<tr>
-<td>Access logs can be stored in CLS</td>
+ <td>Access logs can be stored in CLS</td>
 <td>CLB supports storing Layer-7 access logs in CLS with online search at 1-minute granularity.</li></td>
 <td>October 15, 2019</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/35063">Storing Access Logs in CLS</a></td>
@@ -205,14 +199,6 @@
 <td>Anycast CLB supports cross-region dynamic acceleration. CLB VIP is published in multiple regions. The client connects to the nearest POP and forwards traffic to a CVM instance through the high-speed internet of Tencent Cloud IDC.</td>
 <td>November 27, 2018</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/32426">Creating an Anycast Instance</a></td>
-</tr>
-</tr>
-</thead>
-<tbody><tr>
-<td>IPv6 NAT64 is supported</td>
-<td>An IPv6 NAT64 CLB instance can be created. CLB VIP is an IPv6 public IP address, which will forward requests from IPv6 clients to the backend IPv4 CVM instance so that the real server can access IPv6 within seconds with no modification required.</td>
-<td>November 15, 2018</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/34556">Creating IPv6 NAT64 CLB Instances</a></td>
 </tr>
 </tbody></table>
 
