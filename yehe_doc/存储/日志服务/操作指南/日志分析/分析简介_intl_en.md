@@ -1,7 +1,5 @@
 CLS provides the SQL statistics feature for analyzing the collected log data and graphically displaying the analysis results. It offers a range of statistical charts including line chart, histogram, and pie chart to suit your needs.
 
->!This feature is currently in allowlist beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
-
 
 
 ## Analysis Syntax

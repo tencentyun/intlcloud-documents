@@ -1,13 +1,12 @@
 日志服务提供 SQL 统计能力，对采集的日志进行数据分析并支持以图表的形式展示分析结果。目前支持列表，折线图，柱状图，饼图，等多种类型的统计图表，用户可以根据自己的分析需求选择合适的图表类型展示分析结果。
 
->!日志分析功能目前处于白名单内测，用户可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请试用。
 
 
 
 ## 分析语法简介
 
 >!使用日志分析功能，必须在索引配置中，配置待统计字段的键值索引，并打开统计开关。
->![image-20200817202408930](https://main.qcloudimg.com/raw/c2f6b9608764c2007ee20cb2b7b7016f.png)
+
 
 分析语句由检索条件和 SQL 语句组成，两者通过竖线(|)分割
 ```
@@ -39,11 +38,6 @@ status:404 | select count(*) as pv
    分析语句参见 [SQL 分析语法](#sql1) 和 [SQL 分析函数](#sql2)。 
 
 
-
-## 效果展示
-
-![image-20200818160724827](https://main.qcloudimg.com/raw/6a559058a9fcd13ce83df3e7a5d4f085.png)
-![image-20200818160904179](https://main.qcloudimg.com/raw/399efd6bd10617d65172bdbd1a86acad.png)
 
 ## 支持的 SQL 语法和函数
 
