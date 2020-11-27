@@ -4,16 +4,16 @@
 | -------- | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | New user | Six months after COS service activation | A limited amount of STANDARD storage usage is provided automatically by COS free of charge after COS service activation. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240) | [Activate COS](https://console.cloud.tencent.com/cos5) |
 
-> !The free tier only applies to STANDARD storage. It is not applicable to other billable items, including STANDARD_IA/ARCHIVE storage, requests and traffic..
+> !The free tier only applies to STANDARD storage. It is not applicable to other billable items, including STANDARD_IA/ARCHIVE storage, requests and traffic.
 
 
 ## Billing Method
 
-COS is pay-as-you-go:
+COS is billed on a pay-as-you-go basis as detailed below:
 
 | Billing Method                                                    | Description                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | For all the available regions, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
+| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | This is the default COS billing method. For all the available regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
 
 ## Pricing
 
@@ -30,44 +30,61 @@ Billable items in COS include storage usage, requests, data retrievals, traffic,
 
 
 
-## Billing Cycle
+## Billing Cycles
 
 The billing cycle and sequence of COS fees are as detailed below:
 
 <table>
    <tr>
-      <th>Billable Item</th>
-      <th>Billing Cycle</th>
-      <th>Description</th>
-      <th>Billing Sequence</th>
+      <th colspan=2>Billable Item</td>
+      <th>Billing Cycle</td>
+      <th>Description</td>
+      <th>Billing Sequence</td>
    </tr>
    <tr>
-      <td nowrap="nowrap">Storage usage fees</td>
-      <td rowspan="3">Monthly</td>
-      <td rowspan="3">The fees for one month are deducted on the 1st day of the following month, and billed on the 3rd to 5th day of the following month</td>
-      <td nowrap="nowrap">Free tier > Pay-as-you-go</td>
+      <td colspan=2>Storage usage fees</td>
+      <td>Monthly</td>
+      <td rowspan=4>The fees for one month are deducted on the 1st day of the following month and billed on the 3rd to 5th day of the following month</td>
+      <td>Free tier > Pay-as-you-go, or only pay-as-you-go in case of no free tier</td>
    </tr>
    <tr>
-      <td>Request fees<br>(including retrieve requests to DEEP ARCHIVE)</td>
+      <td rowspan=3>Request fees</td>
+      <td>Read/Write request fees</td>
+      <td rowspan=3>Monthly</td>
       <td>Pay-as-you-go</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">Data retrieval fees<br>(excluding DEEP ARCHIVE)</td>
+      <td>Retrieve request fees in DEEP ARCHIVE</td>
       <td>Pay-as-you-go</td>
    </tr>
    <tr>
-      <td >Data retrieval fees in DEEP ARCHIVE</td>
+      <td>Object monitoring fees in INTELLIGENT TIERING</td>
+      <td>Pay-as-you-go</td>
+   </tr>
+   <tr>
+      <td rowspan=3>Data retrieval fees</td>
+      <td>STANDARD_IA</td>
+      <td rowspan=2>Monthly</td>
+      <td rowspan=2>The fees for one month are deducted on the 1st day of the following month and billed on the 3rd to 5th day of the following month</td>
+      <td rowspan=2>Pay-as-you-go</td>
+   </tr>
+   <tr>
+      <td>ARCHIVE</td>
+   </tr>
+   <tr>
+      <td>DEEP ARCHIVE</td>
       <td>Daily</td>
       <td>Fees for the day are calculated and billed on the following day</td>
       <td>Pay-as-you-go</td>
    </tr>
    <tr>
-      <td>Traffic fees</td>
+      <td colspan=2>Traffic fees</td>
       <td>Daily</td>
       <td>Fees for the day are calculated and billed on the following day</td>
       <td>Pay-as-you-go</td>
    </tr>
-	 <tr>
+   <tr>
+      <td rowspan=4>Management feature fees</td>
       <td>Inventory feature fees</td>
       <td>Daily</td>
       <td>Fees for the day are calculated and billed on the following day</td>
