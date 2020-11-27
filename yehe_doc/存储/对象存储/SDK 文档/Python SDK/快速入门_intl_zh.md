@@ -1,14 +1,16 @@
 ## 下载与安装
 
 #### 相关资源
-对象存储的 XML Python SDK  资源下载地址： [XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5)。
-SDK 快速下载地址：[XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip?_ga=1.29598463.1783616852.1583375173)。	
-演示示例 Demo 下载地址：[XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py)。
+- 对象存储的 XML Python SDK 源码下载地址：[XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5)。
+- SDK 快速下载地址：[XML Python SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip)。
+- 演示示例 Demo 下载地址：[XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py)。
+- SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Python)。
+- SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/CHANGELOG.md)。
 
 #### 环境依赖
 
-对象存储的 XML Python SDK  目前可以支持 Python 2.6、Python 2.7 以及 Python 3.x。
->关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
+对象存储的 XML Python SDK  目前可以支持 Python 2.7 以及 Python 3.4 及以上。
+>?关于文章中出现的 SecretId、SecretKey、Bucket、Region 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -103,7 +105,7 @@ client = CosS3Client(config)
 # 参照下文的描述。或者参照 Demo 程序，详见 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py
 ```
 
->关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+>?关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
 
@@ -124,7 +126,7 @@ response = client.list_buckets(
 
 ### 上传对象
 
->简单上传不支持超过5G的文件，推荐使用下方高级上传接口。
+>!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://cloud.tencent.com/document/product/436/35151#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1.EF.BC.88.E6.96.AD.E7.82.B9.E7.BB.AD.E4.BC.A0.EF.BC.89) 文档。
 
 [//]: # (.cssg-snippet-put-object-comp-comp)
 ```python

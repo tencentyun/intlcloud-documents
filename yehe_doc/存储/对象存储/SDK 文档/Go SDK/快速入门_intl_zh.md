@@ -5,6 +5,7 @@
 - 示例 Demo 下载地址：[ COS XML Go SDK 示例](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example)。
 - 更多信息请参见 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 文档。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Go)。
+- SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md)。
 
 #### 环境依赖
 - Golang：用于下载和安装 Go 编译运行环境，请前往 Golang 官网进行下载。
@@ -63,10 +64,9 @@ if client != nil {
 }
 ```
 
->临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
-
 
 ```Go
 package main
@@ -100,7 +100,6 @@ func main() {
 
 
 ### 查询存储桶列表
-
 ```go
 package main
 
@@ -133,7 +132,6 @@ func main() {
 ```
 
 ### 上传对象
-
 ```Go
 package main
 
@@ -176,7 +174,6 @@ func main() {
 ```
 
 ### 查询对象列表
-
 ```go
 package main
 
@@ -217,7 +214,6 @@ func main() {
 ```
 
 ### 下载对象
-
 ```Go
 package main
 
@@ -260,7 +256,6 @@ func main() {
 ```
 
 ### 删除对象
-
 ```go
 package main
 
