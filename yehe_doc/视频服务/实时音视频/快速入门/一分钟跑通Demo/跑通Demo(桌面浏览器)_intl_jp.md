@@ -47,7 +47,7 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 
 <span id="step3"></span>
 ### 手順3：Demoプロジェクトファイルの設定
-1．[手順2]（#step2）でダウンロードしたソースコードパッケージを解凍します。
+1．[手順2](#step2)でダウンロードしたソースコードパッケージを解凍します。
 2. `Web/js/debug/GenerateTestUserSig.js`ファイルを探して開きます。
 3. `GenerateTestUserSig.js`ファイルの関連パラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0、実際のSDKAppIDを設定してください。</li>
@@ -57,7 +57,7 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 5.【ガイドを閉じてコンソールへ進む】をクリックします。
 
 >!本書で言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになり、そのため**のこの手法はローカルDemo実行および機能デバッグにのみ適合します**。
-≻ UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+≻ UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166) をご参照ください。
 
 ### 手順4：Demoの動作
 Chromeブラウザを使用してDemoルートディレクトリの`index.html`ファイルを開けば、すぐにDemoを動作できます。
@@ -79,7 +79,7 @@ Chromeブラウザを使用してDemoルートディレクトリの`index.html`�
 ## よくあるご質問
 
 ### 1. キーをクエリするとき、パブリックキーおよびプライベートキーの情報しか取得できませんが、キーはどうしたら取得できますか？
-TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリズムのHMAC-SHA256の使用を始めています。その前に作成済のアプリケーションは、署名アルゴリズムをアップグレードしないと暗号化したキーを取得できません。アップグレードしなくても、[旧バージョンアルゴリズム ECDSA-SHA256]（https://intl.cloud.tencent.com/document/product/647/35166)は引き続き使用できます。アップグレード済みなら、必要に応じて新旧アルゴリズムに切り替えます。
+TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリズムのHMAC-SHA256の使用を始めています。その前に作成済のアプリケーションは、署名アルゴリズムをアップグレードしないと暗号化したキーを取得できません。アップグレードしなくても、[旧バージョンアルゴリズム ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)は引き続き使用できます。アップグレード済みなら、必要に応じて新旧アルゴリズムに切り替えます。
 
 アップグレード/切替の操作：
  1. [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc)にログインします。
@@ -91,10 +91,10 @@ TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリ�
 
 
 ### 2. クライアントエラーの発生：“RtcError: no valid ice candidate found”の対処方法は？
-このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、[環境要件]（#requirements）ファイアウォールのコンフィグレーションを確認してください。
+このエラーが発生した場合、TRTCデスクトップブラウザSDKがSTUNトンネリングに失敗したことを意味しますので、[環境要件](#requirements)ファイアウォールのコンフィグレーションを確認してください。
 
 ### 3. クライアントエラーの発生："RtcError: ICE/DTLS Transport connection failed" または “RtcError: DTLS Transport connection timeout”の対処方法は？
-このエラーが発生した場合、TRTCデスクトップブラウザSDKがメディア伝送チャネルの確立に失敗したことを意味しますので、[環境要件]（#requirements）ファイアウォールのコンフィグレーションを確認してください。
+このエラーが発生した場合、TRTCデスクトップブラウザSDKがメディア伝送チャネルの確立に失敗したことを意味しますので、[環境要件](#requirements)ファイアウォールのコンフィグレーションを確認してください。
 
 ### 4. 10006 errorが発生したときの対処方法は？
  "「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」"が発生した場合、Tencent Real-Time Communicationアプリケーションのサーバー状態が使用可能かどうかご確認ください。
