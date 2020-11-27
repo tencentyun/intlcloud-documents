@@ -1,5 +1,5 @@
 在混合云部署的场景中，可以使用负载均衡直接绑定云下本地数据中心（IDC）内 IP，实现跨 VPC 与 IDC 之间的后端云服务器的绑定。
-目前该功能处于内测阶段，如果您需要体验该功能，境内跨地域绑定请通过 内测申请，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
+目前该功能处于内测阶段，如果您需要体验该功能，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
 
 ## 方案优势
 - 快速搭建混合云，无缝连接云上云下，负载均衡可将请求同时转发至云上 VPC 内云服务器和云下 IDC 机房内云服务器。
@@ -10,13 +10,13 @@
 ## 限制条件
 - 跨网互联绑定云服务器暂不支持内网负载均衡和传统型负载均衡。
 - 该功能仅标准账户类型支持。若您无法确定账户类型，请参见 [账户类型区分](https://intl.cloud.tencent.com/document/product/684/15246#judge)。
-- 目前仅北京、上海、广州、成都、重庆、香港地域支持该功能。
+- 目前仅北京、上海、广州、成都、重庆、中国香港地域支持该功能。
 - TCP 和 TCP SSL 监听器需在 RS 上通过通用 TOA 获取源 IP，详情请参见 [TOA 模块加载方法](https://intl.cloud.tencent.com/document/product/608/18945)。
 - HTTP 和 HTTPS 监听器需通过 X-Forwarded-For（XFF）获取源 IP。
 - UDP 监听器不支持获取源 IP。
 
 ## 前提条件
-1. 已提交内测申请，境内跨地域绑定请通过 内测申请，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
+1. 已提交内测申请，境外跨地域绑定请进行 [商务申请](https://intl.cloud.tencent.com/contact-sales)。
 2. 已创建负载均衡实例，详情请参见 [创建负载均衡实例](https://intl.cloud.tencent.com/document/product/214/6149)。
 3. 已创建云联网实例，详情请参见 [新建云联网实例](https://intl.cloud.tencent.com/document/product/1003/30062)。
 4. 将与 IDC 关联的专线网关和需要绑定的目标 VPC 关联至已创建的云联网实例，详情请参见 [关联网络实例](https://intl.cloud.tencent.com/document/product/1003/30064)。

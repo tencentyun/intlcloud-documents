@@ -17,7 +17,7 @@
   - 为不同运营商的用户提供就近接入，实现网络提速。
 - **费用说明**
   - 传统账户类型购买公网负载均衡仅收取实例费用，提供服务所产生的公网带宽/流量费用在后端服务器进行计费的功能，详情请参见 [传统账户类型计费说明](https://intl.cloud.tencent.com/document/product/214/8848)。
-  - 标准账户类型购买公网负载均衡需收取实例费和公网网络费。详情请参见 [标准账户类型计费说明](https://intl.cloud.tencent.com/document/product/214/36998)。
+  - 标准账户类型购买公网负载均衡需收取实例费和公网网络费，详情请参见 [标准账户类型计费说明](https://intl.cloud.tencent.com/document/product/214/36998)。
 
 ### 内网负载均衡
 如果您需要使用负载均衡分发来自内网的请求，请选择“内网”。
@@ -31,7 +31,7 @@
    内网负载均衡实例为免费资源。
 
 ## IP 版本
-负载均衡的 IP 版本，可以选择 IPv4、IPv6 或者 IPv6 NAT64，当前北京、上海、广州、新加坡均已支持 IPv6。
+负载均衡的 IP 版本为 IPv4 版本。
 
 ## 启用 Anycast
 勾选启用 Anycast 后将创建 Anycast 负载均衡实例，Anycast CLB 是支持多地动态加速的负载均衡服务，CLB 的 VIP 会发布在多个地域，客户端接入最近的 POP 接入点，通过腾讯云数据中心高速互联网转发到云服务器上。详情参见 [创建 Anycast 实例](https://intl.cloud.tencent.com/document/product/214/32426)。
