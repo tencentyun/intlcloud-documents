@@ -50,7 +50,7 @@
 
 ![](https://main.qcloudimg.com/raw/aceffbdffb9dd2b892500c97d8d1654f.png)
 
-> 若您需查看水印模板在画面上的效果，可单击【预览】查看。
+>? 若您需查看水印模板在画面上的效果，可单击【预览】查看。
 
 
 ## 删除模板<span id="delete"></span>
