@@ -17,15 +17,16 @@
 ### 手順2：SDKおよびDemoのソースコードをダウンロード
 1．マウスを該当するカードに移動し、関連するSDKおよび付属のDemoソースコードをダウンロードします。
  - **iOS：**【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】をクリックしGithub（または【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】をクリック）にジャンプします。
-  ![](https://main.qcloudimg.com/raw/716b5af9207ad2b11835dec4e2d15da0.png)
+
  - **Mac：**【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】をクリックし Github（または【[ZIP](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】をクリック）にジャンプします
-  ![](https://main.qcloudimg.com/raw/65b9538a23789b1a728674ea3646062c.png)
+
 2. ダウンロード完了後、Tencent Real-Time Communicationコンソールに戻り、【ダウンロードしました。次のステップ】をクリックすれば、SDKAppIDおよびキー情報をクエリできます。
 
 <span id="step3"></span>
 ### 手順3：Demoプロジェクトファイルの設定
-1．[手順2]（#step2）でダウンロードしたソースコードパッケージを解凍します。
+1．[手順2](#step2)でダウンロードしたソースコードパッケージを解凍します。
 2. `GenerateTestUserSig.h`ファイルを探して開きます。
+
  <table><tr>
       <th nowrap="nowrap">プラットフォームに適用</th>
       <th nowrap="nowrap">ファイル対応パス</th>
@@ -41,7 +42,7 @@
 3. `GenerateTestUserSig.h`ファイルの関連パラメータの設定：
   <ul><li>SDKAPPID：デフォルトは0、実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
+
 4．Tencent Real-Time Communicationコンソールに戻り、【貼り付け完了。次のステップ】をクリックします。
 5.【ガイドを閉じてコンソールへ進む】をクリックします。
 
@@ -63,15 +64,15 @@ TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリ�
  2. 左側ナビゲーションバーで【アプリケーション管理】を選択し、目的とするアプリケーションのある行の【アプリケーション情報】をクリックします。
  3．【すぐに作業を開始】タブを選択して【ステップ2 UserSigを発行するためのキーを取得】エリアの【このアップグレードをクリック】、【非対称暗号化】または【HMAC-SHA256】をクリックします。
   - アップグレード：
-   ![](https://main.qcloudimg.com/raw/69bd0957c99e6a6764368d7f13c6a257.png)
+
   - 旧バージョンアルゴリズムのECDSA-SHA256に戻るよう切り替えます。
-   ![](https://main.qcloudimg.com/raw/f89c00f4a98f3493ecc1fe89bea02230.png)
+
   - 新バージョンアルゴリズムのHMAC-SHA256に切り替えます。
-   ![](https://main.qcloudimg.com/raw/b0412153935704abc9e286868ad8a916.png)
+
 
 ### 2. 2台の携帯電話で同時にDemoを実行しているのに、お互いの画面が表示されないのはなぜですか？
 2台の携帯電話でDemoを操作するとき、UserIDが異なるものを使用してください。TRTCでは、同一のUserID（SDKAppIDが異なる場合を除く）が2つの端末で同時に使用することをサポートしていません。
-![](https://main.qcloudimg.com/raw/c7b1589e1a637cf502c6728f3c3c4f99.png)
+
 
 ### 3. ファイアウォールにどのような制限がありますか？
 SDK が UDP プロトコルを使用してオーディオビデオ伝送を行っていることから、 UDPに対してブロックがあるパブリックネットワークでは使用することができません。類似の問題があれば、 [企業ファイアウォール制限の対応](https://intl.cloud.tencent.com/document/product/647/35164)をご参照ください。
