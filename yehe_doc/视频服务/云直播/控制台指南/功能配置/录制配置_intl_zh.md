@@ -1,5 +1,5 @@
 云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、修改以及删除录制模板。
-创建录制模板有以下两种方式
+创建录制模板有以下两种方式：
 - 通过云直播控制台创建录制模板，具体操作步骤请参见 [创建录制模板](#C_record)。
 - 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
 
@@ -10,6 +10,7 @@
 - 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持H.264，音频编码类型支持 AAC。
 - 录制模板创建成功后，可与推流域名进行关联，相关文档可参见  [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)，关联成功后约5分钟 - 10分钟生效。
 - 若需了解生成的录制文件命名规则，请参见 [录制模板参数-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)。
+- 模板绑定、修改和解绑均只影响更新后的直播流，已经在直播中的流不会受影响；直播中的流需要断流重推才会使用新的规则。
 
 
 ## 前提条件
@@ -55,23 +56,46 @@
 3. 单击【保存】即可。
 
 
+<span id="conect"></span>
+## 关联域名
+1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
+	- **直接关联域名：**单击左上方的【绑定域名】。
+	- **新录制模板创建成功后关联域名：**[录制模板创建](#C_record) 成功后，单击提醒框中的【去绑定域名】。
+1. 在域名绑定窗口中，选择您需绑定的**录制模板**及**推流域名**，单击【确定】即可绑定成功。
 
-## 修改录制模板
+>? 支持通过单击【添加】为当前模板绑定多个推流域名。
+
+<span id="unite"></span>
+## 解除绑定
+
+1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
+2. 选择已关联域名的录制模板，单击【解绑】。
+3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
+
+
+<span id="change"></span>
+## 修改模板
 1. 进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
 2. 选择您已创建成功的录制模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
 ![](https://main.qcloudimg.com/raw/68f4dd1a6452a3e97e7ff4dea6493d7b.png)
 
-## 删除录制模板
+<span id="delete"></span>
+## 删除模板
 1. 进入【功能配置】>【直播录制】。
 2. 选择您已创建成功的录制模板，单击上方的![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)删除按钮。
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
 ![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
 
->! 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制规则](https://intl.cloud.tencent.com/document/product/267/30843) 解除关联。 
-## 关联与解绑推流域名
-具体操作及相关说明，请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。
+>! 
+>- 若模板已被关联，需要先 [解除绑定](#unite)，才可以进行删除操作。
+>- 控制台的录制模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过录制管理接口关联指定流的，则需要通过调用 [删除录制规则](https://intl.cloud.tencent.com/document/product/267/30843) 解除关联。 
+
+
+## 相关操作
+**域名维度绑定**和**解绑**录制模板的具体操作及相关说明，请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。
+
 
 ## 相关问题
 <span id="que1"></span>
@@ -96,4 +120,3 @@
 | {EndHour}          | 结束时间-小时 |
 | {EndMinute}        | 结束时间-分钟 |
 | {EndSecond}        | 结束时间-秒   |
-
