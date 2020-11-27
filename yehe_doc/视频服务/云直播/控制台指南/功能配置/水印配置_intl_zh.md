@@ -14,7 +14,6 @@
 
 已开通腾讯云直播服务，并添加 [推流域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 
-
 ## 创建水印模板<span id="Watermark"></span>
 
 1. 登录云直播控制台，进入【功能配置】>[【直播水印】](https://console.cloud.tencent.com/live/config/watermark)。
@@ -27,7 +26,6 @@
 	- 设置位置显示 X 轴方向和 Y 轴方向。
 6. 单击【保存】即可。
 ![](https://main.qcloudimg.com/raw/944534ffbf8625b36a8883087bdf29f6.png)
-
 ## 关联域名<span id="conect"></span>
 1. 登录云直播控制台，进入【功能配置】>[【直播水印】](https://console.cloud.tencent.com/live/config/watermark)。
 2. 通过以下方式进入域名绑定窗口。
@@ -35,12 +33,10 @@
 	-  **新水印模板创建成功后关联域名**：[水印模板创建](#Watermark) 成功后，单击提醒框中的【去绑定域名】。
 3. 在域名绑定窗口中，选择您需绑定的**水印模板**及**推流域名**，单击【确定】即可绑定成功。
 >? 支持通过单击【添加】为当前模板绑定多个推流域名。
-
 ## 解除绑定<span id="untie"></span>
 1. 登录云直播控制台，进入【功能配置】>[【直播水印】](https://console.cloud.tencent.com/live/config/watermark)。
 2. 选择已关联域名的水印模板，单击【解绑】。
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
-
 
 ## 修改模板<span id="change"></span>
 
@@ -51,7 +47,6 @@
 ![](https://main.qcloudimg.com/raw/aceffbdffb9dd2b892500c97d8d1654f.png)
 
 >? 若您需查看水印模板在画面上的效果，可单击【预览】查看。
-
 
 ## 删除模板<span id="delete"></span>
 若模板已被关联，需要先解绑模板，才可以进行删除操作，具体解绑操作请参见 [解除绑定](#untie)。
