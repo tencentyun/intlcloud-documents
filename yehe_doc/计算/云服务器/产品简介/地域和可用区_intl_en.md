@@ -125,8 +125,9 @@ Tencent Cloud products in the same VPC are interconnected through the private ne
 			<td>Singapore Zone 2 (Singapore nodes can cover Southeast Asia Pacific)<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td >Northeast Asia Pacific (Seoul)<br>ap-seoul</td>
+			<td rowspan="2">Northeast Asia Pacific (Seoul)<br>ap-seoul</td>
 			<td>Seoul Zone 1 (Seoul nodes can cover Northeast Asia Pacific)<br>ap-seoul-1</td>
+			<td>Seoul Zone 2 (Seoul nodes can cover Northeast Asia Pacific)<br>ap-seoul-2</td>
 		</tr>
 		<tr>
 			<td >Northeast Asia Pacific (Tokyo)<br>ap-tokyo</td>
