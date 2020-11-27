@@ -4,7 +4,6 @@
 - 通过 API 调用生成水印模板，具体操作请参见  [添加水印](https://intl.cloud.tencent.com/document/product/267/30826)。
 
 
-
 ## 注意事项
 - 模板创建成功后，可在推流域名下进行关联。关联成功后5分钟 - 10分钟生效。
 - 控制台的水印模板管理为域名维度，暂时无法取消关联接口创建的规则，如果是通过水印管理接口关联指定流的，则需要通过调用 [删除水印规则](https://intl.cloud.tencent.com/document/product/267/30824) 解除关联。
@@ -62,6 +61,5 @@
 
 ![](https://main.qcloudimg.com/raw/20b838fcbfbe5feffdd29f2d033d4f71.png)
 
-## 关联域名
 ## 相关操作
 **域名维度绑定**和**解绑**水印模板的具体操作及相关说明，请参见 [水印配置](https://intl.cloud.tencent.com/document/product/267/31064)。
