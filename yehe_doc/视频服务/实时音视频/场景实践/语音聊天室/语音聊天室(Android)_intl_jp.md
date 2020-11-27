@@ -27,7 +27,7 @@
 3．`GenerateTestUserSig.java`ファイルの関連するパラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0、実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/345c3e8915ef988eb158833d1655d0c5.png">
+    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 4．Tencent Real-Time Communicationコンソールに戻り、【貼り付け完了。次のステップ】をクリックします。
 5.【ガイドを閉じてコンソールへ進む】をクリックします。
 
@@ -53,7 +53,7 @@ Android Studio（バージョン3.5以上）を使用してソースコードプ
 ## UIカスタマイズの実装
 
 [ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom) のtrtcvoiceroomdemo フォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCVoiceRoomがあります。`TRTCVoiceRoom.java`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
-![](https://main.qcloudimg.com/raw/0ebcbb27843bf03a790a945a8c92d560.png)
+![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 <span id="model.step1"> </span>
 ### 手順1： SDKへの統合
@@ -176,7 +176,7 @@ mTRTCVoiceRoom.login(SDKAPPID, userId, userSig, new TRTCVoiceRoomCallback.Action
 4. キャスターは、コンポーネントの `onSeatListChange` マイクリスト変更イベント通知を受信します。この時、マイクリストの変更を UI 上に更新することができます。
 5. キャスターは、マイクリストのメンバーが参加した `onAnchorEnterSeat` のイベント通知も受信します。この時はマイク集音は自動的に開始されます。
 
-![](https://main.qcloudimg.com/raw/628f0aa3f0c15e53fec6ac904c8d3943.png)
+![](https://main.qcloudimg.com/raw/256ebe5ce1426b3f175c8c8b68095d5b.png)
 
 ```java
 // 1.キャスターは、ニックネームおよびプロファイル写真を設定します。
@@ -229,7 +229,7 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 6. 入室後は、コンポーネントの `onSeatListChange` マイクリスト変更イベント通知を受信します。この時、マイクリストの変更を UI上に更新することができます。
 7. 入室後に、マイクリストにキャスターが参加した `onAnchorEnterSeat` というイベント通知も受信することがあります。
 
-![](https://main.qcloudimg.com/raw/6e36bc8029a8abbeed69b43e197ba3c0.png)
+![](https://main.qcloudimg.com/raw/33432f97eb632fbb9710a59cba9e4469.png)
 
 ```java
 // 1.視聴者は、ニックネームおよびプロファイル写真を設定します。
@@ -286,13 +286,13 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 3. `muteSeat`は、対応するマイクを渡した後、ミュート／ミュート解除をすることができます。ルーム内の全参加者は `onSeatListChange` および `onSeatMute` のイベント通知を受信します。
 4．`closeSeat`は、対応するマイクを渡した後、任意のマイクのクローズ／解除をすることができます。クローズ後は、視聴者側はこれ以上マイクを使用することはできません。ルーム内の全参加者は`onSeatListChange`および`onSeatClose`のイベント通知を受信します。
 
-![](https://main.qcloudimg.com/raw/299e62ae7d20d10622197ad8685d4639.png)
+![](https://main.qcloudimg.com/raw/367a0c670d2f9899d0b311ed1f322ea3.png)
 
 視聴者側：
 1. `enterSeat`は、対応するマイクを渡した後、マイク・オンにすることができます。ルーム内の全参加者は`onSeatListChange`および`onAnchorEnterSeat`のイベント通知を受信します。
 2. `leaveSeat`は、自主的にマイク・オフにします。ルーム内の全参加者は`onSeatListChange`および`onAnchorLeaveSeat`のイベント通知を受信します。
 
-![](https://main.qcloudimg.com/raw/3ac11818d7d23f61104600ea7235867d.png)
+![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
 マイク操作後のイベント通知の順序は次のとおりです。
 callback > onSeatListChange > onAnchorEnterSeat など独立したイベント
@@ -349,7 +349,7 @@ Appが相手の同意がなければ、次の操作の業務フローを実施�
 3. キャスターが同意を選択後、`acceptInvitation`をコールして inviteIdを渡します。
 4. 視聴者側は、`onInviteeAccepted`のイベント通知を受信し、`enterSeat`をコールしてマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/e2b97c645590c835b54fffbf0ff4ebfd.png)
+![](https://main.qcloudimg.com/raw/5ccdb15f63efa127aa883ca6a7bcd80d.png)
 
 ```java
 // 視聴者側の視点
@@ -381,7 +381,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 3. 視聴者が同意を選択後、`acceptInvitation`をコールして inviteIdを渡します。
 4. キャスター側は、`onInviteeAccepted`のイベント通知を受信し、`pickSeat`をコールし視聴者が着席してマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/e68e2dd9a8056ad8496cbe3dcfe634f1.png)
+![](https://main.qcloudimg.com/raw/5515f49d6e30410e12cd828b75a8db0b.png)
 
 ```java
 // キャスター側の視点
