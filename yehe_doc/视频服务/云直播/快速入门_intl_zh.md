@@ -15,7 +15,7 @@
 2. 登录云直播控制台，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)， 单击【添加域名】。
 3. 进入自有域名添加页，填写已完成备案的域名，选择域名类型，单击【确定】。
 ![](https://main.qcloudimg.com/raw/bee8085a9d29641ddab913fdcd9c75ab.png)
->
+>?
 >- 云直播默认提供测试域名`xxxx.livepush.myqcloud.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。
 >- 域名添加成功后，您可通过【域名管理】的域名列表查看域名信息。若您需要对已添加成功的域名进行管理，请参见 [域名管理](https://intl.cloud.tencent.com/document/product/267/31056)。
 >- 更多直播域名相关信息，请参见 [直播基础相关问题](https://intl.cloud.tencent.com/document/product/267/7968)。
@@ -26,7 +26,7 @@
 	3.  进入域名的解析页面，单击【添加记录】。
 	4.  在该新增列填写域名前缀为主机记录，选择记录类型为 CNAME，填写 CNAME 域名为记录值。
 	5.  单击【保存】即可添加 CNAME 记录。
->
+>!
 >- CNAME 成功后通常需要一定时间生效，CNAME 不成功是无法使用云直播的。
 >- 域名 CNAME 成功后，在云直播控制台的[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)列表中可见域名 CNAME 地址状态符号变成 ![](https://main.qcloudimg.com/raw/0fc346399ae095d69113d4944e511a20.png)。
 >- 若 CNAME 操作后，检测始终不成功，建议您向您的域名注册服务商咨询。
@@ -35,9 +35,8 @@
 
 <span id="step2"></span>
 ## 步骤2：获取推流地址
-
-1. 打开控制台，选择【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址。
-2. 进入地址生成器页面进行如下配置：
+1. 选择【直播工具箱】> [【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 。
+2. 进入地址生成器页面，并进行如下配置：
    1. 选择生成类型：**推流域名**。
    2. 选择您在域名管理中已添加的推流域名。
    3. 填写自定义的流名称 StreamName，例如：liveteststream。
@@ -45,7 +44,7 @@
    5. 单击 【生成地址】即可生成推流地址。
 ![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
 
-> 
+>? 
 >- 推流地址的结构如下，`live`为默认的 AppName，`txSecret`为播放推流的签名，`txTime`为推流地址的有效时间。
 >- 除上述方法，您还可以在云直播控制台的[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中，选择推流域名单击【管理】，选择【推流配置】，输入推流地址的过期时间和自定义的流名称 StreamName，单击【生成推流地址】即可生成推流地址。
 >- 您可根据实际业务需求，在生成推流地址前配置创建对应的 [功能模板](https://intl.cloud.tencent.com/document/product/267/34223)，并关联到推流域名下。增值功能价格请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819) 。
@@ -58,12 +57,13 @@
 - Web 端推流，建议使用【辅助工具】>[【Web 推流】](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击【开始推流】即可。
 - 移动端推流，下载安装 腾讯视频云 Demo，打开选择【移动直播】>【摄像头推流】，手动输入或扫描二维码录入推流地址到地址编辑框内，单击左下角开始按钮开始推流。
 
-<span id="step4"></span>
+>? 定制化的 App 可以集成腾讯云提供的 [移动直播 SDK](https://intl.cloud.tencent.com/zh/document/product/1071) 来实现您的推流功能。
 
+<span id="step4"></span>
 ## 步骤4：获取播放地址
 
 1. 推流成功后，选择[【流管理】](https://console.cloud.tencent.com/live/streammanage)>【在线流】，查看推流地址状态，单击【测试】在线播放观看。
-2. 选择【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 获取播放地址，在该页面进行如下配置：
+2. 选择【直播工具箱】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 获取播放地址，在该页面进行如下配置：
    1. 选择生成类型：**播放域名**。
    2. 选择您在域名管理中已添加的播放域名。
    3. 填写与推流地址相同的 StreamName，播放地址 StreamName要与推流地址 StreamName 一致才能播放对应的流。
@@ -75,6 +75,8 @@
    1. PC 端直播流测试，建议您使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483) 等工具进行播放体验，具体请参见 [播放实践](https://intl.cloud.tencent.com/document/product/267/31559)。
    2. Web 端播放测试，建议您选用播放器 SDK 里的  TCPlayerLite 播放器 进行播放，具体请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
    4. 移动端直播流测试，建议您下载安装 腾讯视频云 Demo 打开选择【移动直播】>【直播拉流】，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
+
+>? 如需在 App 中进行进行推流/播放，可以集成 [移动直播 SDK](https://intl.cloud.tencent.com/zh/product/mlvb) 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/zh/document/product/267/7968) 解答疑问。
 
 ## 相关操作
 - 若需开启**直播录制**，可创建录制模板，并与域名进行配置关联。相关文档请参见 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223)。
@@ -91,3 +93,4 @@
 - [支持哪些推流协议？](https://intl.cloud.tencent.com/document/product/267/7968#.E6.94.AF.E6.8C.81.E5.93.AA.E4.BA.9B.E6.8E.A8.E6.B5.81.E5.8D.8F.E8.AE.AE.EF.BC.9F)
 - [支持哪些播放协议？](https://intl.cloud.tencent.com/document/product/267/7968#.E6.94.AF.E6.8C.81.E5.93.AA.E4.BA.9B.E6.92.AD.E6.94.BE.E5.8D.8F.E8.AE.AE.EF.BC.9F)
 - [播放地址由什么组成？](https://intl.cloud.tencent.com/document/product/267/7968#.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E7.94.B1.E4.BB.80.E4.B9.88.E7.BB.84.E6.88.90.EF.BC.9F)
+- [如何拼装生成多个直播 URL？](https://intl.cloud.tencent.com/zh/document/product/267/38393)
