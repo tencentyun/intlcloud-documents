@@ -10,7 +10,7 @@
 #### 环境依赖
 
 对象存储的 XML Python SDK  目前可以支持 Python 2.7 以及 Python 3.4 及以上。
->?关于文章中出现的 SecretId、SecretKey、Bucket、Region 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
+>?关于文章中出现的 SecretId、SecretKey、Bucket、Region 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -105,7 +105,7 @@ client = CosS3Client(config)
 # 参照下文的描述。或者参照 Demo 程序，详见 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py
 ```
 
->?关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
 
@@ -126,7 +126,7 @@ response = client.list_buckets(
 
 ### 上传对象
 
->!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://cloud.tencent.com/document/product/436/35151#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1.EF.BC.88.E6.96.AD.E7.82.B9.E7.BB.AD.E4.BC.A0.EF.BC.89) 文档。
+>!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31546) 文档。
 
 [//]: # (.cssg-snippet-put-object-comp-comp)
 ```python

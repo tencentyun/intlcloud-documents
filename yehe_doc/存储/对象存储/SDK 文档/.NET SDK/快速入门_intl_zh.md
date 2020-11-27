@@ -34,7 +34,7 @@ dotnet add package Tencent.QCloud.Cos.Sdk
 下面为您介绍如何使用 COS .NET SDK 完成一个基础操作，例如初始化客户端、创建存储桶、查询存储桶列表、上传对象、查询对象列表、下载对象和删除对象。
 
 
->?关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>?关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 SDK 中常用的命名空间有：
 
@@ -52,7 +52,7 @@ using COSXML.CosException;
 - `QCloudCredentialProvider`提供设置密钥信息接口。
 - `CosXmlServer`提供各种 COS API 服务接口。
 
->?下述初始化示例中使用的临时密钥，其生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?下述初始化示例中使用的临时密钥，其生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 1. 初始化服务设置
 

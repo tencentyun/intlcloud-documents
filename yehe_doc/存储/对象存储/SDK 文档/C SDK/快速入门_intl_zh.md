@@ -54,10 +54,10 @@ make install
 下面为您介绍使用 XML C SDK 的一般流程。
 
 1. 初始化 SDK。
-2. 设置请求选项参数。关于 APPID、SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+2. 设置请求选项参数。关于 APPID、SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 	- APPID 是申请腾讯云账号后，系统分配的账户标识之一。
 	- access_key_id 与 access_key_secret 是账号 API 密钥。
-	- endpoint 是 COS 访问域名信息，详情请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) 文档。例如，广州地域 endpoint 为`cos.ap-guangzhou.myqcloud.com`。
+	- endpoint 是 COS 访问域名信息，详情请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。例如，广州地域 endpoint 为`cos.ap-guangzhou.myqcloud.com`。
 3. 设置 API 接口必需的参数。
 4. 调用 SDK API 发起请求并获得请求响应结果。
 
@@ -117,7 +117,7 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
->?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
 

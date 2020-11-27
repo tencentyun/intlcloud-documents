@@ -64,7 +64,7 @@ if client != nil {
 }
 ```
 
->?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 ### 创建存储桶
 

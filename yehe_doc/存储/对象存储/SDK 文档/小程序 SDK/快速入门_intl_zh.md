@@ -11,10 +11,10 @@
 #### 环境依赖
 
 1. 该 SDK 只适用于微信小程序环境。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域信息](https://cloud.tencent.com/document/product/436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域信息](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) 获取您的项目 SecretId 和 SecretKey。
 
-> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751)。
+> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -106,7 +106,7 @@ var cos = new COS({
     getAuthorization: function (options, callback) {
         // 服务端 JS 和 PHP 示例：https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
         // 服务端其他语言参考 COS STS SDK ：https://github.com/tencentyun/qcloud-cos-sts-sdk
-        // STS 详细文档指引看：https://cloud.tencent.com/document/product/436/14048
+        // STS 详细文档指引看：https://intl.cloud.tencent.com/document/product/436/14048
         wx.request({
             url: 'https://example.com/server/sts.php',
             data: {
@@ -129,7 +129,7 @@ var cos = new COS({
     }
 });
 ```
->?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，前端只有相同请求才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
@@ -160,7 +160,7 @@ var cos = new COS({
 });
 ```
 
->?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。
+>?临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回给前端。该格式分块上传权限不易控制，不推荐您使用此格式。
 
@@ -230,7 +230,7 @@ getAuthorization 的回调参数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Function |
 | - Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：
@@ -256,7 +256,7 @@ getAuthorization 的函数说明回调参数说明：
 | options    | 获取签名需要的参数对象                                       | Object   |
 | - Method   | 当前请求的 Method                                            | Object   |
 | - Pathname | 请求路径，用于签名计算                                       | String   |
-| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多可参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String   |
+| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多可参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   |
 | - Query    | 当前请求的 query 参数对象，{key: 'val'} 的格式               | Object   |
 | - Headers  | 当前请求的 header 参数对象，{key: 'val'} 的格式              | Object   |
 | callback   | 临时密钥获取完成后的回调                                     | Function |
@@ -291,7 +291,7 @@ cos.putBucket({
 });
 ```
 
-> !如果需要在小程序创建存储桶，但存储桶名称未知时，无法将存储桶名称配置为域名白名单，可以使用后缀式调用，相关处理措施请参见 [常见问题](https://cloud.tencent.com/document/product/436/30746#.E5.B0.8F.E7.A8.8B.E5.BA.8F.E9.87.8C.E8.AF.B7.E6.B1.82.E5.A4.9A.E4.B8.AA.E5.9F.9F.E5.90.8D.EF.BC.8C.E6.88.96.E8.80.85.E5.AD.98.E5.82.A8.E6.A1.B6.E5.90.8D.E7.A7.B0.E4.B8.8D.E7.A1.AE.E5.AE.9A.EF.BC.8C.E6.80.8E.E4.B9.88.E8.A7.A3.E5.86.B3.E7.99.BD.E5.90.8D.E5.8D.95.E9.85.8D.E7.BD.AE.E5.92.8C.E9.99.90.E5.88.B6.E9.97.AE.E9.A2.98.EF.BC.9F)。
+> !如果需要在小程序创建存储桶，但存储桶名称未知时，无法将存储桶名称配置为域名白名单，可以使用后缀式调用，相关处理措施请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687)。
 
 ### 查询存储桶列表
 
@@ -343,7 +343,7 @@ cos.getBucket({
 
 ### 下载对象
 
-> !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://cloud.tencent.com/document/product/436/36162) 文档。
+> !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31711) 文档。
 
 ```js
 cos.getObject({

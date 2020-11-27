@@ -11,10 +11,10 @@
 #### 环境依赖
 
 1. 使用 SDK 需要您的运行环境包含 nodejs 以及 npm。
-2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域名称](https://cloud.tencent.com/document/product/436/6224)。
+2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) 创建存储桶后，获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) 获取您的项目 SecretId 和 SecretKey。
 
-> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+> ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
 #### 安装 SDK
 
@@ -44,7 +44,7 @@ var cos = new COS({
 
 #### 使用临时密钥初始化
 
-临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码。
+临时密钥生成和使用请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。Node.js SDK 支持通过传入临时密钥进行初始化，请参考以下示例代码。
 
 [//]: # (.cssg-snippet-global-init-sts)
 ```js
@@ -119,7 +119,7 @@ getAuthorization 的函数说明：
 | -------- | ------------------------------------------------------------ | -------- |
 | options  | 获取临时密钥需要的参数对象                                   | Object   |
 | - Bucket | 存储桶的名称，命名规则为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String   |
-| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) | String   |
+| - Region | 存储桶所在地域，枚举值请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) | String   |
 | callback | 临时密钥获取完成后的回传方法                                 | Function |
 
 获取完临时密钥后，callback 回传一个对象，回传对象的属性列表如下：
@@ -145,7 +145,7 @@ getAuthorization 的函数说明：
 | options    | 获取签名需要的参数对象                                       | Object   |
 | - Method   | 当前请求的 Method                                            | String   |
 | - Pathname | 请求路径，用于签名计算                                       | String   |
-| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多请参见 [对象概述](https://cloud.tencent.com/document/product/436/13324) | String   |
+| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多请参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   |
 | - Query    | 当前请求的 query 参数对象，{key: 'val'} 的格式               | Object   |
 | - Headers  | 当前请求的 header 参数对象，{key: 'val'} 的格式              | Object   |
 | callback   | 临时密钥获取完成后的回调                                     | Function |
@@ -191,7 +191,7 @@ cos.getService(function (err, data) {
 
 ### 上传对象
 
-该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://cloud.tencent.com/document/product/436/36119) 文档。
+该接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31710) 文档。
 
 [//]: # (.cssg-snippet-put-object)
 ```js
