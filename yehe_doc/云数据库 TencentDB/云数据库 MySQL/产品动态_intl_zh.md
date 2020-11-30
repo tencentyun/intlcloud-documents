@@ -1,3 +1,42 @@
+## 2020年11月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tbody>
+<tr>
+<td>支持克隆实例</td>
+<td>云数据库 MySQL 支持通过克隆将实例恢复到日志备份保留时间内的任意时间点，并且支持恢复到指定物理备份的备份集。</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38864" target="_blank">克隆实例</a></td>
+</tr>
+</tbody></table>
+
+## 2020年10月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tbody><tr>
+<td>购买页功能优化</td>
+<td>云数据库 MySQL 购买页支持指定告警策略、参数模板、跨项目绑定安全组功能。</td>
+<td>2020-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37785" target="_blank">创建 MySQL 实例</a></td>
+</tr>
+<tr>
+<td>8.0 支持透明数据加密</td>
+<td>云数据库 MySQL 8.0 版本支持透明数据加密功能。</td>
+<td>2020-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">开启透明数据加密</a></td>
+</tr>
+</tbody></table>
+
 ## 2020年08月
 <table>
 <tr>
@@ -10,7 +49,7 @@
 <td>支持 MySQL 8.0</td>
 <td>云数据库 MySQL 支持8.0，结合完备的管控服务和 TXSQL 内核，提供更快、更稳的企业级服务，丰富行业场景，助力客户产业升级。</td>
 <td>2020-08</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/236/31896" target="_blank">数据库版本</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31896" target="_blank">数据库版本</a></td>
 </tr>
 </tbody></table>
 
@@ -270,7 +309,7 @@
 <td>产品更名</td>
 <td>从云数据库 MySQL（CDB for MySQL）更名为云数据库 MySQL（TencentDB for MySQL  ）。</td>
 <td>2018-06</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/236" target="_blank">云数据库 MySQL </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236" target="_blank">云数据库 MySQL </a></td>
 </tr>
 </tbody></table>
 
