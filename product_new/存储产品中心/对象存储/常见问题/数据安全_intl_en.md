@@ -10,7 +10,7 @@ By default, a temporary key is valid for 30 min (1,800 s). The maximum duration 
 
 ### What should I do if the key information such as APPID and SecretId is leaked?
 
-You can delete the leaked key and create a new one.
+You can delete the leaked key and create a new one. For more information, please see [Access Key](https://intl.cloud.tencent.com/document/product/598/34227).
 
 ### How do I generate a time-bound access link for private-read/write files?
 
