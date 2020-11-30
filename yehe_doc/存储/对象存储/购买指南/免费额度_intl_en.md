@@ -23,7 +23,11 @@ The table below shows COS [billable items](https://intl.cloud.tencent.com/docume
       <th>Available Free Tier</th>
    </tr>
    <tr>
-      <td rowspan="4">Storage Usage Fees</td>
+      <td rowspan="5">Storage Usage Fees</td>
+      <td>INTELLIGENT TIERING storage usage</td>
+      <td>No</td>
+   </tr>
+   <tr>   
       <td>STANDARD storage usage</td>
       <td>Yes</td>
    </tr>
