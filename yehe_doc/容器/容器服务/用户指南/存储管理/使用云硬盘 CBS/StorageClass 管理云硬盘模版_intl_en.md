@@ -19,7 +19,7 @@ Main parameters are described as follows:
 	- **Provisioner**: select **Cloud Block Storage**.
 	- **Availability Zone**: select the availability zones that support CBS disks in the current region as required.
 	- **Billing mode**: the elastic **pay-as-you-go** billing mode is provided. It allows you to enable and terminate instances at any time. The instances are billed based on actual usage, and the delete and retain reclaim policies are supported.
-- **Disk Type**: **Premium Cloud Disk** and **SSD Cloud Disk** are supported. Different availability zones may have different disk types. For more information, see [Cloud Disk Types](https://intl.cloud.tencent.com/document/product/213/33000). Select a disk type as prompted by the console.
+- **Disk Type**: We provide **Premium Cloud Storage**, **SSD**, and **Enhanced SSD**. Different availability zones may provide different disk types. For more information, please see [Cloud Disk Types](https://intl.cloud.tencent.com/document/product/213/33000). You can select a disk type as prompted by the Console.
 - **Reclaim Policy**: the reclaim policy for cloud disks. Generally, the **Delete** and **Retain** reclaim policies are provided, which depends on the selected billing mode. For data security, we recommend that you select **Retain**.
 - **Volume Binding Mode**: two modes are available: **Bind Now** and **Wait for Scheduling**. Different modes support different volume binding policies. Refer to the following information to select the appropriate mode:
 	- **Bind Now**: PVCs created via the storageclass will be directly bound with the PV and allocated.
@@ -52,7 +52,7 @@ Main parameters are described as follows:
 >? 
 >- The system first searches the current cluster to see whether there are PVs that meet the binding rules. If no, the system dynamically creates a PV to be bound based on the PVC and the selected StorageClass.
 >- If `StorageClass` is not specified, then `PersistVolume` must be specified.
->- No PersistentVolume is specified.
+>- No PersistentVolume is specified. For more information, please see [PV and PVC binding rules](https://intl.cloud.tencent.com/document/product/457/37770).
 
    - **Disk Type**: based on the selected StorageClass, the available disk types are displayed: **Premium Cloud Disk** and **SSD Cloud Disk**.
    - **Capacity**: if no PersistentVolume is specified, specify the expected cloud disk capacity.
@@ -93,7 +93,9 @@ provisioner: cloud.tencent.com/qcloud-cbs ## The provisioner coming with the TKE
 parameters:
   type: CLOUD_PREMIUM
   # CLOUD_BASIC, CLOUD_PREMIUM, and CLOUD_SSD are supported. If it is not recognized, CLOUD_BASIC is used by default.
-  # paymode: POSTPAID
+    # renewflag: NOTIFY_AND_AUTO_RENEW
+  # renewflag indicates the CBS renewal mode. NOTIFY_AND_AUTO_RENEW supports notifications upon expiration and automatic renewal by month. NOTIFY_AND_MANUAL_RENEW supports notifications upon expiration and but not automatic renewal. DISABLE_NOTIFY_AND_MANUAL_RENEW does not support notifications upon expiration or automatic renewal. If not specified, NOTIFY_AND_MANUAL_RENEW is used by default.
+  # paymode: PREPAID
   # paymode: the billing method of the cloud disk. The default value is POSTPAID (pay-as-you-go, which supports the **Retain** and **Delete** reclaim policies. **Retain** is only available in clusters later than V1.8).
   # aspid:asp-123
   # You can specify a snapshot policy. After the cloud disk is created, it will be automatically bound to this policy. Binding failure does not affect the creation.
@@ -113,6 +115,9 @@ The following table lists the supported parameters.
 <td>paymode</td> <td>The billing method of the cloud disk. The default value is <code>POSTPAID</code> (pay-as-you-go), which supports the **Retain** and **Delete** reclaim policies. **Retain** is only available in clusters later than V1.8.</td>
 </tr>
 <tr>
+<td>renewflag</td> <td>CBS renewl mode. The default value is <code>NOTIFY_AND_MANUAL_RENEW</code> .<ul><li><code>NOTIFY_AND_AUTO_RENEW</code> indicates that the created CBS supports notifications upon expiration and automatic renewal by month.</li><li><code>NOTIFY_AND_MANUAL_RENEW</code> indicates that the created CBS supports notifications upon expiration but not automatic renewal.</li><li> <code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code> indicates that the created CBS does not support notifications upon expiration or automatic renewal.</li></ul></td>
+</tr>
+<tr>	
 <td>aspid</td> <td>Snapshot policy ID. The created cloud disk will be automatically bound with this policy. Binding failure does not affect the creation of the cloud disk.</td>
 </tr>
 </table>
