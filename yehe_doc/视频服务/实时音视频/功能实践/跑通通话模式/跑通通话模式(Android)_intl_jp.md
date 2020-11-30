@@ -109,7 +109,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 
 <span id = "step5"></span>
 ### 手順5：新規作成および入室
-1  [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) をコールすると、すぐに TRTCParams パラメータの`roomId`が示すオーディオ・ビデオルームを追加できます。このルームが存在しない場合は、SDK はフィールド`roomId`の値をルームナンバーとする新しいルームを自動的に作成します。
+1.  [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) をコールすると、すぐに TRTCParams パラメータの`roomId`が示すオーディオ・ビデオルームを追加できます。このルームが存在しない場合は、SDK はフィールド`roomId`の値をルームナンバーとする新しいルームを自動的に作成します。
 2. ユースケースに基づき適切な**`appScene`**パラメータを設定してください。誤った選択をすると、ラグ率または画面の解像度が想定のレベルに到達しなくなります。
  - ビデオ通話は、`TRTC_APP_SCENE_VIDEOCALL`と設定してください。
  - 音声通話は、`TRTC_APP_SCENE_AUDIOCALL`に設定してください。
