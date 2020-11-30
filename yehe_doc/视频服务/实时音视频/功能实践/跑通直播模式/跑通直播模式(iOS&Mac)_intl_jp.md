@@ -118,8 +118,11 @@ trtcCloud.startLocalAudio()
  - Smooth：スムース。明らかな効果が感じられます。インフルエンサーのスタイルに近づけます。
  - Nature：ナチュラル。美肌補正のアルゴリズムは顔の詳細な質感を維持し、より自然な感じになります。
  - Pitu ： [企業版](https://intl.cloud.tencent.com/document/product/647/34615) のみサポートしています。
-3. キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) をコールすると、顔加工法のレベルを設定します。通常、5の設定でOKです。
-4. キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) をコールすると、美白レベルを設定します。通常、5の設定でOKです。
+
+3.キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) をコールすると、顔加工法のレベルを設定します。通常、5の設定でOKです。
+
+4.キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) をコールすると、美白レベルを設定します。通常、5の設定でOKです。
+
 5.iPhoneのカメラの色調はデフォルトだと黄色味がかっているため、[setFilter()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0)を呼び出して、キャスターに美白特殊効果を追加し、美白特殊効果に対応するフィルターファイルを、以下のアドレスからダウンロードすることをお勧めします。[フィルターファイル](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/filter/filterPNG.zip)。
 
 
@@ -130,6 +133,7 @@ trtcCloud.startLocalAudio()
 2.キャスター端末が[enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)をコールすると、TRTCParams パラメータフィールド`roomId`の値をルームナンバーとするオーディオ・ビデオルームを作成し、**`appScene`**パラメータを指定します。
  - TRTCAppScene.LIVE：ビデオ・インタラクティブストリーミングモード。ここではこのモードを例として取り上げます。
  - TRTCAppScene.voiceChatRoom：ボイス・インタラクティブストリーミングモード。
+
 3. ルームの新規作成が成功したら、キャスター端末は音声ビデオデータのデコードおよび伝送フローを開始します。同時にSDK は [onEnterRoom(result)](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5)  イベントをコールバックします。パラメータ`result`が0より大きいときは入室成功を意味し、具体的な数値は入室してからの消費時間であり、単位はミリ秒（ms）です；`result`が0より小さい時は入室失敗を意味し、具体的な数値は入室失敗のエラーコードになります。
 
 ```swift
