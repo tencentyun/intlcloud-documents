@@ -96,8 +96,10 @@ output {
 
 2. 编写配置文件 output.conf。
 此处将标准输入作为数据来源，将 Kafka 作为数据目的地。
+![](https://main.qcloudimg.com/raw/834c54ed67efac389dd979976b3f2494.png)
 
 3. 启动 Logstash，进行消息生产。
+![](https://mc.qcloudimg.com/static/img/1f28c9cac2800e211695307e7138d812/image.png)
 
 4. 校验上一步的生产数据。
 ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
