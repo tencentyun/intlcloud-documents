@@ -190,7 +190,7 @@ trtcMeeting.login(SDKAPPID, userId, userSig, new TRTCMeetingCallback.ActionCallb
 >?エンタープライズ版以外のSDKは変顔やスタンプの機能をサポートしていません。
 >
 
->![](https://main.qcloudimg.com/raw/416a1afd87b196a6ef791bf63eeaa5e0.png)
+![](https://main.qcloudimg.com/raw/416a1afd87b196a6ef791bf63eeaa5e0.png)
 
 ```java
 // 1.キャスターがニックネームとプロファイル写真を設定します。
