@@ -7,6 +7,7 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 - 如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
 
 
+
 <table>
 <thead>
 <tr>
@@ -119,7 +120,6 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 </tr>
 </tbody></table>
 
-
 >! 
 >- 您可以在浏览器中打开 [WebRTC 能力测试](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) 页面进行检测是否完整支持 WebRTC。例如公众号等浏览器环境。
 >- 由于 H.264 版权限制，华为系统的 Chrome 浏览器和以 Chrome WebView 为内核的浏览器均不支持 TRTC 桌面浏览器端 SDK 的正常运行。
@@ -131,26 +131,26 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
  - TCP 端口：8687
  - UDP 端口：8000，8080，8800，843，443，16285
  - 域名：qcloud.rtc.qq.com
-
+ 
 ## 前提条件
 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的资源。
 
 ## 操作步骤
-<span id="step1"></span>
+<span id="step1"></span>
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【立即开始】，输入应用名称，例如`TestTRTC`，单击【创建应用】。
 
-<span id="step2"></span>
+<span id="step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Web)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)】），下载相关 SDK 及配套的 Demo 源码。
+1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCSimpleDemo)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)】），下载相关 SDK 及配套的 Demo 源码。
  ![](https://main.qcloudimg.com/raw/70f4f26e438e63b62b1dd55306d1c296.png)
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
-<span id="step3"></span>
+<span id="step3"></span>
 ### 步骤3：配置 Demo 工程文件
 1. 解压 [步骤2](#step2) 中下载的源码包。
-2. 找到并打开`Web/TRTCSimpleDemo/GenerateTestUserSig.js`文件。
+2. 找到并打开`Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js`文件。
 3. 设置`GenerateTestUserSig.js`文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
@@ -187,10 +187,11 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
  2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【应用信息】。
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
-
-
-
-
+  - 升级：
+  - 切换回老版本算法 ECDSA-SHA256：
+   ![](https://main.qcloudimg.com/raw/49da46eea23847de79925a12e7a07102/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)4-%E8%BF%94%E8%BF%98.png)
+  - 切换为新版本算法 HMAC-SHA256：
+   ![](https://main.qcloudimg.com/raw/fbb69de98ae6ec0c6e1d09c8d95d57b7/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)5-%E8%BF%94%E8%BF%98.png)
 
 ### 2. 出现客户端错误：“RtcError: no valid ice candidate found”该如何处理？
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请根据 [环境要求](#requirements) 检查防火墙配置。
