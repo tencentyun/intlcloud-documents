@@ -58,11 +58,11 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 
 #### 创建 CKafka
 1. 拥有实例后，可以从 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 中看到自己的实例信息。
-![](https://main.qcloudimg.com/raw/1905d1d7ceb8e3b729af31e1ac7f52ca.png)
+
 2. 单击实例名称可以看到实例分配的具体信息。
-![](https://main.qcloudimg.com/raw/9c35869416313690ceff5fa9b9fb6c15.png)
+
 3. 单击【topic管理】，创建 topic，此处名字为**logstash_test**。
-![](https://main.qcloudimg.com/raw/2b43cdf1d5c2310d56bfd3837c524877.png)
+
 至此，CKafka 相关的工作环境完成。
 
 ### CKafka 作为 inputs 接入
@@ -96,10 +96,8 @@ output {
 
 2. 编写配置文件 output.conf。
 此处将标准输入作为数据来源，将 Kafka 作为数据目的地。
-![](https://mc.qcloudimg.com/static/img/661484fed328739fd12bedda0f5e2e67/88.png)
 
 3. 启动 Logstash，进行消息生产。
-![](https://mc.qcloudimg.com/static/img/c95bbc69c3f0ca36fa42efbb911b0a36/99.png)
 
 4. 校验上一步的生产数据。
 ![](https://mc.qcloudimg.com/static/img/ae85758a90a497235a90511770f959d2/10.png)
