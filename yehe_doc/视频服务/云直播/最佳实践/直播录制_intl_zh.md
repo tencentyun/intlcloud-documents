@@ -212,7 +212,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 ### 录制事件通知
 
-通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调事件消息通知](https://intl.cloud.tencent.com/document/product/267/31566) 进行业务处理。
+通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调事件消息通知](https://intl.cloud.tencent.com/document/product/267/38079) 进行业务处理。
 
 事件通知机制高效可靠且实时性好，我们推荐您使用回调方式获取录制文件。
 
