@@ -1,16 +1,32 @@
-## Description
-Elastic Kubernetes Service (EKS) does not contain any cluster nodes, and therefore does not support some native Kubernetes features that depend on nodes, kubelet, and kube-proxy.
+Elastic cluster is a service of Elastic Kubernetes Service (EKS). Before you use this service, please read the following information.
 
-## Unsupported Native Kubernetes Features
-### Kubernetes versions
-EKS does not support Kubernetes version 1.12 and earlier.
+## Billing Method
+EKS adopts the pay-as-you-go billing method. For more information about the bills, please see [Billing Overview](https://cloud.tencent.com/document/product/457/39807), [Product Pricing](https://cloud.tencent.com/document/product/457/39806), and [Purchase Limits](https://cloud.tencent.com/document/product/457/39821).
 
-### Nodes
-You cannot add or manage physical nodes through EKS.
+## Pod Specification Configuration
+Container runtime resources and bills depend on the pod specification configuration. Please note the pod specification configuration and specific methods supported by elastic clusters. For more information, please see [Resource Specifications](https://cloud.tencent.com/document/product/457/39808) and [Specifying Resource Specifications](https://cloud.tencent.com/document/product/457/44174).
+
+## Pod Temporary Storage
+Upon the creation of each pod, temporary image storage less than 20 GiB is allocated.
+
+>!
+>- Temporary image storage will be deleted when the pod lifecycle ends. Therefore, ensure that important data is not stored in it.
+>- Due to image storage, the actual available storage is less than 20 GiB.
+>- You are recommended to mount important data and large files to Volume for persistent storage.
+
+## Kubernetes Version
+Kubernetes versions earlier than 1.12 are not supported.
+
+## Unsupported Features
+Elastic clusters do not have nodes. Therefore, some dependent node components, such as Kubelet and Kube-proxy, are not supported.
+### Node
+Currently, adding or managing a physical node is not supported.
+
+### Kernel
+Only kernel parameters started with "net" can be defined.
 
 ### Workloads
-- You cannot deploy workloads of the DaemonSet type through EKS.
-- You cannot use hostPath volumes through EKS.
+You cannot deploy workloads of the DaemonSet type through EKS.
 
 ### Services
 You cannot deploy services of the NodePort type through EKS.
