@@ -1,3 +1,23 @@
+## November 2020
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INTELLIGENT TIERING storage class is available</td>
+<td>INTELLIGENT TIERING is a COS storage class designed to reduce storage costs for users by moving data automatically between two storage tiers — frequent access and infrequent access — when access patterns change.</td>
+<td> 2020-11-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38305">Overview - INTELLIGENT TIERING</a>
+</tr>
+</tbody></table>
+
 ## September 2020
 
 <table>
