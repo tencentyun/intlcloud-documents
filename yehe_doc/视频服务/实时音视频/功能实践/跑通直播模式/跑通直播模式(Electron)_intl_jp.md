@@ -20,7 +20,7 @@ TRTC クラウドサービスは、2種類の異なるタイプのサーバー�
 
  [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Electron) にログインし、本ファイルに関連するサンプルコードを取得することができます。
 
-##　操作手順
+## 操作手順
 
 <span id="step1"> </span>
 ### 手順1：跑通正式サイト SimpleDemoのテスト
@@ -261,7 +261,7 @@ TRTC ではの異なるオーディオ・ビデオルームのキャスターが
     例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話する場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A, true)`コールバックを受信します。
 3.2つのルームのユーザーは、[startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView)をコールすることにより、もう一方のルームにいるキャスターの画面を表示することができ、音声は自動的に再生されます。
 
-![キャスターのマイク接続シーケンス図](http://main.qcloudimg.com/raw/ac5b230340ebdab69998f95844fa61c1/%E4%B8%BB%E6%92%AD%E8%BF%9E%E9%BA%A6%E6%97%B6%E5%BA%8F%E5%9B%BE.png)
+![キャスターのマイク接続シーケンス図](https://main.qcloudimg.com/raw/292309441c681909c6a98a715f29fe77.jpg)
 
 ```javascript
 //サンプルコード：ルームを跨いだマイク接続PK
