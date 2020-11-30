@@ -8,18 +8,18 @@ This document describes how to quickly run the Tencent Cloud TRTC Demo for iOS a
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-<span id="step1"></span>
+<span id="step1"></span>
 ### Step 1. Create an application
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter an application name such as `TestTRTC`, and click **Create Application**.
 
-<span id="step2"></span>
+<span id="step2"></span>
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the block to download the SDK and supporting demo source code.
  - **iOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to go to the GitHub website (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)**)
-
+  ![](https://main.qcloudimg.com/raw/d7b68212e6e63e81c1e0a19e1236a4b3/%E8%B7%91%E9%80%9ADemo(iOS&Mac)1-%E8%BF%94%E8%BF%98.png)
  - **macOS:** click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)** to go to the GitHub website (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)**)
-  
+  ![](https://main.qcloudimg.com/raw/9f1ca4547228695031845d049dd7755d/%E8%B7%91%E9%80%9ADemo(iOS&Mac)2-%E8%BF%94%E8%BF%98.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
 <span id="step3"></span>
@@ -41,7 +41,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.</li>
   <li>SECRETKEY: it is an empty string by default. Please replace it with the real key information.</li></ul> 
-
+	<img src="https://main.qcloudimg.com/raw/516ba1e9c8f47317061b29d0cb889454/%E8%B7%91%E9%80%9ADemo(iOS&Mac)3-%E8%BF%94%E8%BF%98.jpg">
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage application.
 

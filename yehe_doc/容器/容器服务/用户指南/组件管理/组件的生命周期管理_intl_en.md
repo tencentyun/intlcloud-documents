@@ -11,7 +11,7 @@ You can install an add-on using either of the following methods:
 ### Installing an add-on on the cluster creation page
 1. Log in to the [TKE Console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
 2. On the "Cluster Management" page, click **Create** above the cluster list.
-3. On the "Create a Cluster" page, enter the **Basic Information**, **Select a Model**, **CVM Configuration**, and **Add-on Configuration** of the cluster in sequence, as shown in the figure below:
+3. On the "Create Cluster" page, set the "Cluster Information", "Select Model", "CVM Configuration", "Component Configurations" and "Confirm Info" in order as shown below:
 ![](https://main.qcloudimg.com/raw/b1853e81cf57014951dd88d07a431306.png)
  You can select the add-ons to install based on your business deployment and click **View Details** for an add-on card to view the description of the add-on. Some add-ons require you to complete **Parameter Configuration** first.
 >? 

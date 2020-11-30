@@ -6,7 +6,7 @@ INTELLIGENT TIERING is ideal for data with unknown or changing access patterns. 
 
 >!
 >
->- Currently, INTELLIGENT TIERING is available in Beijing, Shanghai, and Guangzhou Public Cloud regions.
+>- Currently, INTELLIGENT TIERING storage class is only available in Beijing, Shanghai, Guangzhou, and Chongqing regions.
 >- INTELLIGENT TIERING is billed for storage usage as follows:
    - The storage usage fees in the frequent access tier are charged at the same published prices as STANDARD storage class;
    - The storage usage fees in the infrequent access tier are charged at the same published prices as STANDARD_IA storage class.
@@ -33,7 +33,7 @@ You can follow the steps below to store an object into the INTELLIGENT TIERING s
 1. Go to the bucket configuration page in the console and enable the intelligent tiering configuration. For details, see [Setting INTELLIGENT TIERING](https://intl.cloud.tencent.com/document/product/436/38306).
 2. Specify INTELLIGENT TIERING as storage class as you upload a file. For more information on how to upload a file, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
->!Note that once enabled on a bucket, the intelligent tiering configuration cannot be disabled, but only modified.
+> !Please note that INTELLIGENT TIERING cannot be disabled once enabled on a bucket.
 
 
 ### Using REST APIs
@@ -68,4 +68,4 @@ INTELLIGENT TIERING storage is subject to the following limits:
 - **Minimum storage size**: objects smaller than 64 KB can only be stored persistently in the frequent access tier, and not be moved between the two tiers.
 - **Operations**: it is not allowed to upload objects directly to INTELLIGENT TIERING using the APPEND Object API.
 - **Lifecycle**: objects in the INTELLIGENT TIERING storage class can only be transitioned to ARCHIVE or DEEP ARCHIVE. Objects are stored in the frequent access tier when transitioned from STANDARD to INTELLIGENT TIERING, and in the infrequent access tier when transitioned from STANDARD_IA to INTELLIGENT TIERING.
-- **Cross-Region replication**: cross-region replication cannot replicate an object into INTELLIGENT TIERING if the intelligent tiering configuration has not been configured on the destination bucket.
+- **Cross-bucket replication**: it cannot replicate an object into INTELLIGENT TIERING if it has not been configured on the destination bucket.

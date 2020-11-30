@@ -7,5 +7,4 @@ If you have a server with multiple sub-domain names of the same level, you can u
 - Currently, wildcard certificates support only wildcard domain names, and do not support ordinary domain names (non-wildcard domain names). If you require a certificate that covers multiple wildcard domain names and 1 or more ordinary domain names, we recommend purchasing a multi-domain wildcard SSL certificate.
 
 ### What are the rules for matching a wildcard certificate with a domain name?
-A wildcard certificate can match only sub-domain names of the same level, and cannot match sub-domain names of different levels.
->! A second-level wildcard domain name such as `*.tencent.com` does not support a third-level domain name such as `ssl.tencent.com`.
+A wildcard certificate can match only sub-domain names of the same level, and cannot match sub-domain names of different levels. For example, a third-level wildcard domain name such as `*.tencent.com` does not support a fourth-level domain name such as `www.ssl.tencent.com`.

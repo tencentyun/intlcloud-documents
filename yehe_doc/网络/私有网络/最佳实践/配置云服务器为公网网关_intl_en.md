@@ -36,7 +36,7 @@ For more information, see [Manage Route table](https://intl.cloud.tencent.com/do
 ![](https://main.qcloudimg.com/raw/9b2d9537e7aa0c00428ef112db300d73.png)
 
 ### Step 4: configure the public gateway
-1. Log in to the public gateway CVM, enable network forwarding and NAT proxy, and optimize related parameters.
+1. [Log in to the public gateway CVM](https://intl.cloud.tencent.com/document/product/213/5436), and perform the following steps to enable network forwarding and NAT proxy.
  1. Run the following command to create the `vpcGateway.sh` script in `usr/local/sbin`.
 ```
 vim /usr/local/sbin/vpcGateway.sh

@@ -2,6 +2,10 @@
 
 You can upload objects to a bucket through the **File List** page in the COS Console. For more information on objects, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324).
 
+> ?
+> - Currently, INTELLIGENT TIERING storage class is only available in Beijing, Shanghai, Guangzhou, and Chongqing regions. To upload an object to this storage class, please [enable INTELLIGENT TIERING configuration](https://intl.cloud.tencent.com/document/product/436/38306) on the bucket.
+> - DEEP ARCHIVE storage class is only available in Beijing, Shanghai, Guangzhou, and Chengdu regions.
+
 ## Prerequisites
 
 Before uploading an object, make sure that you have already created a bucket. If no bucket has been created, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).

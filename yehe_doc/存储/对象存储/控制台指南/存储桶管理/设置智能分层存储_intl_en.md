@@ -8,7 +8,7 @@ For more information, see [Overview - INTELLIGENT TIERING](https://intl.cloud.te
 
 >!
 >
->- INTELLIGENT TIERING is currently available only in Beijing, Shanghai, and Guangzhou Public Cloud regions.
+>- Currently, INTELLIGENT TIERING storage class is only available in Beijing, Shanghai, Guangzhou, and Chongqing regions.
 >- INTELLIGENT TIERING is billed for storage usage in the frequent access tier at the same published prices as STANDARD storage class, and in the infrequent access tier at the same published prices as STANDARD_IA storage class. INTELLIGENT TIERING requests are billed the same as STANDARD requests. The INTELLIGENT TIERING fees for traffic and management features are charged depending on the region, the same as in the other storage classes. There are no data retrieval fees, but additional charges apply for monitoring INTELLIGENT TIERING objects. For more information, please see [Product Pricing](https://buy.cloud.tencent.com/price/cos).
 
 ## Directions
@@ -16,7 +16,9 @@ For more information, see [Overview - INTELLIGENT TIERING](https://intl.cloud.te
 1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
 2. Locate the bucket for which you want to set intelligent tiering configuration, and click its name to enter the bucket management page.
 3. Click **Basic Configurations** > **Intelligent Tiering**, click **Edit**, and configure the required information.
-4. Once completed, click **OK**. Please note that **once enabled, the intelligent tiering configuration cannot be disabled**, but only allow modifying the days for transition.
+![](https://main.qcloudimg.com/raw/d9cc19c34108b52e5ca2a0387c5483f6.png)
+4. After confirming that everything is correct, click **Save**. Please note that **once configured, INTELLIGENT TIERING cannot be disabled or suspended**.
+![](https://main.qcloudimg.com/raw/39c514bbbd7d9cebc5d4e283abb9935c.png)
 5. Once the configuration is enabled, you can upload objects to the INTELLIGENT TIERING storage class by using the COS console, APIs, SDKs or tools, and COS will automatically move your data between two access tiers. For directions on uploading objects through the console, see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 
 **Days for Transition**: specifies the number of days for moving objects to the infrequent access tier. For example, when it is set to 30, COS will move objects that have not been accessed for 30 consecutive days in the frequent access tier to the infrequent access tier.
