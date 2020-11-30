@@ -209,7 +209,7 @@ Log in to the [VOD Console](https://console.cloud.tencent.com/vod/media) and sel
 
 ### Recording event notification
 
-The recording callback address can be set in the console or through API calls. A notification will be sent to the callback address after the recording files are generated. After that, you can refer to the [callback event message notification](https://intl.cloud.tencent.com/document/product/267/31566) for recording to take your next step.
+The recording callback address can be set in the console or through API calls. A notification will be sent to the callback address after the recording files are generated. After that, you can refer to the [callback event message notification](https://intl.cloud.tencent.com/document/product/267/38079) for recording to take your next step.
 
 The event notification is an efficient, reliable, and real-time mechanism, so it is recommended to use the callback method to get recording files.
 
