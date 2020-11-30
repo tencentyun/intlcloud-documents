@@ -60,10 +60,10 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 ### TRTCルームは、追い出し、発言の禁止、ミュートをサポートしていますか？  
 サポートしています。
 - 簡単なシグナリング操作の場合、TRTCのシグナリングカスタマイズ用インターフェースsendCustomCmdMsgを使用できます。開発者が対応する制御シグナリングをカスタマイズして、制御シグナリングを受信した通話者が対応する操作を実行すればOKです。例えば、追い出しとは、追い出しシグナリングを定義することであり、この信号を受信したユーザーは自主的に退室します。
-- より完全な操作ロジックを実行する必要がある場合は、開発者が[Instant Messaging]（https://intl.cloud.tencent.com/document/product/1047）を使用して関連のロジックを実行し、TRTCルームとIMグループとのマッピングを行い、IMグループでカスタマイズメッセージを送受信して、対応する操作を実行することをお勧めします。
+- より完全な操作ロジックを実行する必要がある場合は、開発者が[Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)を使用して関連のロジックを実行し、TRTCルームとIMグループとのマッピングを行い、IMグループでカスタマイズメッセージを送受信して、対応する操作を実行することをお勧めします。
 
 
-<<span id="que10"></span>
+<span id="que10"></span>
 ### TRTCオーディオ・ビデオストリームは、CDNを介したプルストリームによる視聴をサポートしていますか？ 
 サポートしています。詳細については、[CDN relayed live streamingを実行](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
 
@@ -76,7 +76,7 @@ TRTCは、特にオンラインライブストリーミングのシーン向け�
 <span id="que12"></span>
 ### デスクトップブラウザSDKはどのブラウザをサポートしていますか？  
 現在、デスクトップ版Chromeブラウザ、デスクトップ版Safariブラウザ及びモバイル版Safariブラウザのサポート状態は比較的万全です。その他のプラットフォーム（Androidプラットフォームのブラウザなど）のサポート状態はまだ不十分です。詳細については、[サポートしているプラットフォーム](https://intl.cloud.tencent.com/document/product/647/35143)をご参照ください。
-ユーザーはブラウザで[WEBRTC能力テスト]（https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html）を開き、WebRTC機能を完全にサポートしているかテストすることができます。
+ユーザーはブラウザで[WEBRTC能力テスト](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html)を開き、WebRTC機能を完全にサポートしているかテストすることができます。
 
 
 <span id="que13"></span>
