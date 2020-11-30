@@ -28,7 +28,7 @@
     </tr>
     	 <tr>
         <td>INTELLIGENT TIERING limits</td>
-    			<td>Billing limits:<br>There is no limit imposed on storage duration or storage size.<br>For more information on COS INTELLIGENT TIERING billing, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br><br>A storage duration less than 30 days will be calculated as 30 days.<br>A single stored file less than 64 KB will be calculated as 64 KB.<br>For more information on COS INTELLIGENT TIERING billing, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
     	 <tr>
         <td>ARCHIVE limits</td>
