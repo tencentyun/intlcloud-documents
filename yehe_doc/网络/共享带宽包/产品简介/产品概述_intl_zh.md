@@ -12,10 +12,7 @@
 <th>账户类型</th><th>支持的带宽包类型</th>
 </tr>
 <tr>
-<td rowspan="2">传统账户类型</td><td>设备带宽包</td>
-</tr>
-<tr>
-<td>IP 带宽包</td>
+<td>传统账户类型</td><td>设备带宽包</td>
 </tr>
 <tr>
 <td>标准账户类型</td><td>IP 带宽包</td>
