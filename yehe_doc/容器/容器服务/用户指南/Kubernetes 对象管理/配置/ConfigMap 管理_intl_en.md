@@ -29,7 +29,7 @@ ConfigMap allows you to decouple configuration artifacts from images to ensure t
 7. Select "Use a ConfigMap", enter the name, and click **Select a ConfigMap**, as shown below:
 ![](https://main.qcloudimg.com/raw/2549f59b529775a2b7453ebef596fd90.png)
 8. In the “Set ConfigMap” window that pops up, configure the mounting point (refer to the following information), and click **Submit**, as shown in the following figure.
- - **Select a ConfigMap**: select as needed.
+ - **Use ConfigMap**: Select a ConfigMap as needed.
  - **Options**: select **All** or **Specific keys**.
  - **Items**: if you select **Specific keys**, you can mount a specific path by adding an item. For example, if the mounting point is `/data/config`, and the path is `dev`, it is saved under `/data/config/dev`.
 9. Click **Create a workload**. Now you have successfully created a workload.
