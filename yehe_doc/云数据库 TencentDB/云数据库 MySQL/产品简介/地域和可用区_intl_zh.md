@@ -117,6 +117,9 @@
 			<td>亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
+		<tr>
+				<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
+	</tr>
 				<tr>
 		  	<td >亚太东南（曼谷）<br>ap-bangkok </td>
 				 <td >曼谷一区  （曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-1</td>
@@ -128,9 +131,12 @@
 			<td>孟买二区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-2</td>
 		</tr>		
 		<tr>
-			<td >亚太东北（首尔）<br>ap-seoul</td>
+			<td rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
 			<td>首尔一区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-1</td>
 		</tr>
+		<tr>
+				<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
+	</tr>
 		<tr>
 			<td >亚太东北（东京）<br>ap-tokyo</td>
 			<td>东京一区（东京节点可用于覆盖亚太东北地区）<br>ap-tokyo-1</td>
