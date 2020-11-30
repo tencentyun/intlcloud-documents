@@ -16,7 +16,7 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 - During configuration adjustment, you should try to avoid such operations as modifying MySQL's global parameters and user password.
 - Data migration may be involved in configuration adjustment. During data migration, the TencentDB for MySQL instance can be accessed normally and the business will not be affected.
 - Instance switchover may be needed after configuration adjustment is completed (i.e., the MySQL instance may be disconnected for seconds). It is recommended that applications be configured with auto reconnection feature and that instance switchover be conducted during the instance maintenance period. For more information, see [Setting Instance Maintenance Period](https://intl.cloud.tencent.com/document/product/236/10929).
-
+- For TencentDB for MySQL Basic Edition, instances are unavailable for about 15 minutes in the process of configuration adjustment. We recommend that you adjust instance configuration during off-peak hours.
 
 ## Directions
 ### Adjusting the instance configuration in the console
@@ -29,3 +29,23 @@ TencentDB for MySQL supports quick adjustment of instance specification and allo
 ### Adjusting the instance configuration through the API
 You can adjust the instance configuration using the [UpgradeDBInstance](https://intl.cloud.tencent.com/document/product/236/15876) API.
 
+## FAQs
+#### Will instance configuration adjustment affect instances?
+- In the process of TencentDB for MySQL configuration adjustment, data migration may occur, and instances can still be accessed during the process. After the migration is completed, there is a switch which causes a short disconnection lasting for just seconds, please ensure that your business has a reconnection mechanism.
+- For TencentDB for MySQL Basic Edition, instances are unavailable for about 15 minutes in the process of configuration adjustment. We recommend that you adjust instance configuration during off-peak hours.
+
+#### Why can't my instance be downgraded?
+It may be because your storage capacity has exceeded the maximum capacity of the hard disk. To downgrade you instance, you need to clean up data first and make sure the remaining available capacity accounts for more than 20% of the total capacity or over 50 GB.
+
+#### Why is my instance in the "Waiting for switch" status for a long time after I adjust instance configuration in the console?
+It may be because you select **During maintenance window** as the **Switch Time** when you adjust instance configuration in the [console](https://console.cloud.tencent.com/cdb), so the instance will not be switched immediately after the adjustment.
+To switch immediately, you can locate the desired instance in the instance list and click **Switch Now** in the **Operation** column. The switch causes a short disconnection lasting for just seconds, please ensure that your business has a reconnection mechanism.
+
+#### How long does it take to upgrade instance configuration?
+The time it takes depends on the data volume and data replication and read requests of your instance. Instances can still be accessed during the upgrade, but after the upgrade is completed, there is a VIP switch which causes a short disconnection lasting for just seconds.
+
+#### How do I view the progress of instance configuration adjustment?
+You can view the progress in [Task List](https://console.cloud.tencent.com/mysql/task) in the console.
+
+#### What should I do if the disk space is being used up?
+If over 85% disk space is used, we recommend that you delete data no longer used or expand disk space in the [console](https://console.cloud.tencent.com/cdb).
