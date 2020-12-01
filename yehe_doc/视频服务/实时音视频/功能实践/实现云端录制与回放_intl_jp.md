@@ -146,7 +146,7 @@ param.userDefineRecordId = @"1001_rexchang";  // レコーディング IDは、�
 レコーディングファイルは、 `userDefineRecordId_開始時間_終了時間` のフォーマットで命名されます。
 
 - **サポート済みのプラットフォーム**
-[iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCCloudDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) などの端末でレコーディング制御をサポートし、 Web ブラウザやWeChat Mini Program端末からの制御は一時的にサポートしません。
+[iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) などの端末でレコーディング制御をサポートし、 Web ブラウザやWeChat Mini Program端末からの制御は一時的にサポートしません。
 
 <span id="recordRESTAPI"></span>
 ### 方法三：指定ユーザーレコーディング（REST  API）
