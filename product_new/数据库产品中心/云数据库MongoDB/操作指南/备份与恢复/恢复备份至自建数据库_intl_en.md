@@ -37,6 +37,7 @@ For more information on the `rs.initiate()` command, see [MongoDB Manual](https:
 - For v3.6, you need to delete the `config` directory manually and then run the `mongorestore` command to restore the data of each shard as shown below: ![](https://main.qcloudimg.com/raw/2ed5ed6172e17b5d6120d2572427e7fb.png)
 - For v3.2, you need to merge all the files in individual tables manually before restoring the data. Below is a file merge operation sample:
 The `c_10` table is in the `ycsb` directory in the database and contains data files from `c_10.bson.gz.chunk-64` to `c_10.bson.gz.chunk-127`. The merge command is `cat c_10.bson.gz.chunk-* > ./c_10.bson.gz`.
+>?In some use cases, TencentDB for MongoDB v3.2 may have chunks.
 
 Run the `mongorestore` command to restore the data, where the `-h` parameter specifies the self-built database address, `--dir` specifies the directory of the data file, and `--gzip` must be specified to decompress the backup file. The command is as follows:
 ```
