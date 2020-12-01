@@ -45,12 +45,12 @@
 ### TUIKit & Demo
 
 **iOS/Android**
-- Supported group livestreaming, including mic connecting, gifts giving, beauty filtering, and voice changing features.
-- Supported livestream list, including mic connecting, PK, likes, gifts, beauty filtering, on-screen comments and follower features.
+- Supported [group livestreaming](https://intl.cloud.tencent.com/document/product/1047/37310), including mic connecting, gifts giving, beauty filtering, and voice changing features
+- Supported [live room list](https://intl.cloud.tencent.com/document/product/1047/38519), including mic connecting, PK, likes, gifts, beauty filtering, on-screen comments and follower features
 - Optimized the voice/video signaling identification
 
 
-## Latest Simplified Edition 5.0.106 @2020.09.21
+## 5.0.106 @2020.09.21 - Lite Edition
 
 ### SDK
 
