@@ -40,7 +40,7 @@ TRTC SDK のサンプルコードの中で`GenerateTestUserSig`という名前�
 | Android | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
 | Windows(C++) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)| Windows/DuilibDemo/GenerateTestUserSig.h |
 | Windows(C#) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)| Windows/CSharpDemo/GenerateTestUserSig.cs |
-| デスクトップブラウザ | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
+| デスクトップブラウザ | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js)| Web/js/debug/GenerateTestUserSig.js |
 
 
 >! このメソッドは、デバックにのみ適用し、正式に製品のサービスを開始したい場合は、これらメソッドの採用を**推奨しません**。なぜなら、クライアントコード（特にWeb版）の中のSECRETKEYがいとも簡単に逆コンパイルやハッキングされるからです。一旦キーが漏れてしまえば、攻撃者がお客様のTencent Cloudトラフィックを盗用できるようになります。
