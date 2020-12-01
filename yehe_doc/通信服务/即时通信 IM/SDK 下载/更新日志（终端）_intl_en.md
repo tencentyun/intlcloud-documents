@@ -1,4 +1,38 @@
-## Latest Standard Edition 5.0.10 @2020.10.15
+## Latest Standard Edition 5.1.1 @2020.11.05
+
+### SDK
+
+**iOS/Android platform**
+
+- New API for obtaining the number of online users in a live-streaming group (AVChatRoom)
+- New API for message query based on the unique message ID
+- New API for obtaining the calibrated server timestamp
+- Improved login speed
+- Optimized the group profile pull logic
+- Fixed the issue where local messages cannot be pulled after exiting the group
+- Fixed the issue where the sender message is not updated promptly after this successfully sent message was modified by a third-party callback.
+- Fixed the issue where the unread count is still unavailable to the conversation after the meeting group (Meeting) is configured in the console
+- Fixed the issue where a live-streaming group (AVChatRoom) cannot receive messages occasionally
+- Fixed other occasional stability issue
+
+### TUIKit & Demo
+
+**iOS/Android**
+- Added the `@all` feature to group members.
+- Internationalized TUIKit component
+- Added the video selection to the Android version for the image message
+- Optimized the audio/video call request timeout logic
+- Updated the Android offline push to a TPNS-dependent package
+- Added a startup animation to the live-streaming group (AVChatRoom)
+- Added a floating player to the live-streaming group (AVChatRoom)
+
+## Latest Lite Edition 5.0.108 @2020.11.02
+### SDK
+**Common changes**
+- Fixed the stability issue on iOS
+- Fixed the occasional issue of no message callback on Android
+
+## 5.0.10 @2020.10.15 - Standard Edition
 
 ### SDK
 
