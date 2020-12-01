@@ -8,7 +8,7 @@
 <td>支持响应压缩</td>
 <td>支持基于 gzip 算法的响应压缩功能，可有效降低数据传输量、减少响应时间、节省服务端网络带宽、提升客户端性能。</td>
 <td>2020-11-17</td>
-<td><a href=“https://cloud.tencent.com/document/product/628/49945”>响应压缩</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/628/38851">响应压缩</a></td>
 </tr></table>
 
 ## 2020年10月
@@ -21,12 +21,12 @@
 <td>调整计费</td>
 <td><li>新增资源包计费（预付费），资源包支持通过免费额度和运营活动两种渠道获得。</li><li>免费额度采用资源包实现，新用户开通 API 网关服务后将自动获得 API 网关资源包。</li></td>
 <td>2020-10-12</td>
-<td><a href="https://cloud.tencent.com/document/product/628/48791">资源包（预付费）</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/628/38407">资源包（预付费）</a></td>
 </tr><tr>
 <td>优化监控</td>
 <td>新增 API 数据统计功能，支持查看服务下所有 API 一天内的数据统计，帮助用户快速定位问题。</td>
 <td>2020-10-26</td>
-<td><a href="https://cloud.tencent.com/document/product/628/49555">查看 API 数据统计</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/38833">查看 API 数据统计</a></td>
 </tr></table>
 
 ## 2020年09月
