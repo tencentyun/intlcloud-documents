@@ -12,7 +12,7 @@ A TRTC application with the same SDKAppID as the IM application is created in th
 
 <span id="step2"></span>
 ## Step 2: Initialize TUIKit 
-To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your application is integrated with TUIKit, skip this step.)
+To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your project has already integrated with TUIKit, skip this step.)
 ```
 [[TUIKit sharedInstance] setupWithAppId:SDKAppID];
 ```
