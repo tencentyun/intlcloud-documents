@@ -2,7 +2,7 @@
 
 ### Add-on description
 
-Node-Problem-Detector-Plus is an add-on that monitors the health status of Kubernetes cluster nodes. It runs in the TKE environment in the form of a DaemonSet to help users detect various exceptions on nodes in real time and report the detection results to the upstream Kube-apiserver.
+Node-Problem-Detector-Plus is an add-on that monitors the health status of Kubernetes cluster nodes. It runs in the TKE environment as a DaemonSet to help users detect various exceptions on nodes in real time and report the detection results to the upstream Kube-apiserver.
 
 ### Resources Created in Kubernetes Clusters
 
@@ -21,16 +21,16 @@ Node-Problem-Detector-Plus can be used to monitor the running status of nodes, i
 You can estimate the resource pressure of nodes by detecting the corresponding metrics and then manually release or scale out node resources before nodes start draining pods. In this way, you can prevent potential losses resulted from Kubernetes resource repossessing or node unavailability.
 
 ## Limits
-To use NPD in your cluster, you need to install this add-on in your cluster, and the usage of system resources (0.5 CPU core and 80 MB memory) by NPD containers will be restricted.
+To use NPD in your cluster, you need to install this add-on in your cluster. The system resources used by NPD containers is restricted to 0.5 CPU core and 80 MB memory.
 
 
 ## Usage
 
 
-1. Log in to the [TKE Console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
-2. On the “Cluster Management” page, click the ID of the target cluster to go to the cluster details page.
-3. In the left sidebar, click **Add-on Management** to go to the "Add-on List" page.
-4. On the “Add-on List" page, click **Create** to go to the “Create Add-on” page, and select **NodeProblemDetectorPlus**.
+1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
+2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
+3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
+4. On the **Add-on List** page, click **Create** to go to the **Create Add-on** page, and select **NodeProblemDetectorPlus**.
 5. Click **Complete**. After the installation is successful, the corresponding node-problem-detector resources are available in your cluster, and the corresponding conditions will be added to Node Conditions.
 
 
@@ -44,7 +44,7 @@ To use NPD in your cluster, you need to install this add-on in your cluster, and
 
 After the NPD plug-in is installed, the following specific Conditions will be added to nodes:
 
-| Condition Type | Default Value | Description |
+| Condition| Default Value | Description |
 | ------------------------- | ------ | ------------------------------------------------------------------------ |
 | ReadonlyFilesystem | False | Indicates whether the file system is read-only. |
 | FDPressure | False | Queries whether the number of file descriptors of the host reaches 80% of the max value. |
