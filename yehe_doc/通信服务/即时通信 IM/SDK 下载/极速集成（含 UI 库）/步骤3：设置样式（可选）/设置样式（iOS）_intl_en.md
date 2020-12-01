@@ -1,3 +1,4 @@
+This document describes how to set styles on iOS.
 
 ## Modifying the Profile Photo
 
