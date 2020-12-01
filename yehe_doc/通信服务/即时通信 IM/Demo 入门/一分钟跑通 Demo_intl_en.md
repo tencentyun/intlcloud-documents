@@ -24,6 +24,7 @@ This article describes how to configure, compile, and run the IM trial demo in m
 ## Step 3: Download and Configure the Demo Source Code
 
 1. Download the IM Demo project. For more information about the specific download address, see [SDK Download](https://intl.cloud.tencent.com/document/product/1047/33996).
+>?To protect the emoji copyrights, the Demo project you downloaded does not contain any emoji element splice. Using the emoji of the IM Demo privately may infringe copyrights. Instead, you can use your local emoji to configure codes.
 2. Open the project in the corresponding directory on the platform and find the `GenerateTestUserSig` file.
  <table>
      <tr>

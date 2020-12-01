@@ -96,7 +96,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 
 <span id="step4"></span>
 ### 手順4：入室パラメータ TRTCParamsの組み立て
-[enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud_android.html#abfc1841af52e8f6a5f239a846a1e5d5c) インターフェースをコールするとき、キーパラメータ [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef_android.html#a674b3c744a0522802d68dfd208763b59)を入力する必要があります。このパラメータに含まれる入力必須のフィールドは下表に示すとおりです。
+[enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) インターフェースをコールするとき、キーパラメータ [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59)を入力する必要があります。このパラメータに含まれる入力必須のフィールドは下表に示すとおりです。
 
 | パラメータ名 | フィールドタイプ | 補足説明 |記入例 |
 |---------|---------|---------|---------|

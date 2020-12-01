@@ -6,11 +6,14 @@ Currently, to avoid end users from being disturbed, vendors are gradually starti
 The message type can be specified when you call the push API.
 
 **Directions:**
-1. If you need to use vendor notification messages, apply for the channel ID as instructed in the following documents:
+1. If you need to use vendor notification messages, apply for or create a channel ID as instructed in the following documents:
    - [OPPO Application Guide](#oppozhinan)
    - [Mi Application Guide](#xiaomizhinan)
    - [Vivo Application Guide](#vivozhinan)
-
+   - [Huawei Application Guide](#huaweizhinan)
+   
+   
+   
 After you get the channel ID, specify it when calling the push API.
 Meizu and Huawei channels do not support notification messages currently, and they don't limit the number of messages.
 2. If you do not need to use notification/private messages of a vendor and only need a customized channel ID to group messages based on your application's business message types, you can configure the channel ID based on the corresponding vendor's configuration description:
@@ -189,5 +192,60 @@ Below is a sample push:
     "android": {
         "vivo_ch_id": "1"
   }
+}
+```
+
+
+<span id=""huaweizhinan""> </span>
+
+## How to Use Huawei Notification Channel
+### Overview
+
+Starting in EMUI 10.0, the Huawei channel intelligently classifies the notification messages into two levels: common and important. The earlier Huawei push only has one level and displays all messages through the default notification, equivalent to the important messages in EMUI 10.0.
+
+The table below compares the display style of messages at different levels.
+
+| Message Level | Displayed in the Notification Center | Displayed in the Status Bar | Notification for Lock Screen | Ringtone | Vibration |
+| -------- | ------- | ------ | ------ | ------ | ------ |
+| Important | Normal | Supported | Supported | Supported | Supported |
+| Common | Normal | None | None | None | None |
+
+Classification rules:
+
+- Message types based on the title and content of notification messages sent by developers.
+The message type includes but not limited to marketing, feature, life, social networking, transaction, work, alarm, and others.
+- Message level corresponding to the message type.
+Messages are generally divided into two levels: common and important. 
+
+For example, the pushes sent by the application (such as information of the audiovisual, reading or video applications) and survey (such as questionnaires) will be intelligently classified into common notifications. The logistics status, including dispatched, signed, delivering and pickup will be considered as important notifications.
+
+> ! This smart notification classification is only available to terminal devices in Chinese mainland.
+
+### Creating a Huawei notification channel
+The Huawei Push supports customizing the notification channel on the application. To create the notification channel on the client, use either of the following two methods:
+1. Use the Android API. For more information, please see the [Create and Manage Notification Channels](https://developer.android.google.cn/training/notify-user/channels) documentation.
+2. Use TPNS SDK (version 1.1.5.4 or later). For more information, please see [Creating notification channel](https://intl.cloud.tencent.com/document/product/1024/30715#.E5.88.9B.E5.BB.BA.E9.80.9A.E7.9F.A5.E6.B8.A0.E9.81.93) in the API documentation.
+
+### Using a Huawei notification channel
+Currently, notifications pushed through the custom Huawei channel can be delivered only through a REST API but not the console. After a notification channel is created, you can:
+
+Configure the `hw_ch_id ` field in the `Android` request structure of the Rest API to push messages through the Huawei channel. For more information, see the parameter description in [PushAPI](https://intl.cloud.tencent.com/document/product/1024/33764#.E8.AF.B7.E6.B1.82.E5.8F.82.E6.95.B0).
+
+> ! When the `hw_ch_id ` field is configured, TPNS automatically rates the message that will be pushed through the Huawei channel to important. But the ultimate display will also be subject to the Huawei intelligent classification, whichever is lower. For example, the common message in the Huawei smart classification will be considered as common. For more information, please see [Smart Message Classification](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-intelligent-classification-0000001050040120).
+
+Below is a sample push:
+
+``` json
+{
+""audience_type"": ""token"",
+""token_list"": [""005c28bf60e29f9a***2052ce96f43019a0b7""],
+""message_type"": ""notify"",
+""message"": {
+""title"": ""Huawei notification message"",
+""content"": ""Test content"",
+""android"": {
+""hw_ch_id"": ""channel_id of the Huawei notification message""
+}
+}
 }
 ```
