@@ -12,7 +12,7 @@ If the Tencent Real-Time Communication (TRTC) service is not activated, enable g
 
 <span id="step2"></span>
 ## Step 2: Initialize TUIKit 
-To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your application is integrated with TUIKit, skip this step.)
+To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your project has already integrated with TUIKit, skip this step.)
 ```
 TUIKit.init(Context, SDKAppID, new ConfigHelper().getConfigs());
 ```
