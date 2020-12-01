@@ -58,6 +58,7 @@ In addition to common response headers, this API also returns the following resp
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string  |
 | x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
 | x-cos-storage-class | Object storage class, such as `MAZ_STANDARD`, `MAZ_STANDARD_IA`, `STANDARD_IA`, `ARCHIVE` and `DEEP_ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
+| x-cos-storage-tier                                           |  Specifies the access tier for the object if it is stored in the INTELLIGENT TIERING storage class. Valid values: FREQUENT, INFREQUENT.  |  enum  |
 
 #### Archived Object-Related Headers
 
@@ -140,7 +141,7 @@ Connection: close
 Date: Wed, 29 Jul 2020 06:51:49 GMT
 Server: tencent-cos
 x-cos-request-id: NWYyMTFjODVfZDNjODJhMDlfMWU1MWVfOTUy****
-x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3NGM=
+x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3****
 ```
 
 #### Example 3. Specifying query conditions using request headers and returning a HTTP status code 412 (Precondition Failed)
@@ -166,7 +167,7 @@ Connection: close
 Date: Wed, 29 Jul 2020 06:51:50 GMT
 Server: tencent-cos
 x-cos-request-id: NWYyMTFjODZfMzBjMDJhMDlfMmU3ZF9kYTE4****
-x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZDRkOWFlZjczOWExNjZmY2RiNjhjNGIwZWQ3YjYwMzQ=
+x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZDRkOWFlZjczOWExNjZmY2RiNjhjNGIwZWQ3YjYw****
 ```
 
 #### Example 4. Using server-side encryption SSE-COS
@@ -235,8 +236,8 @@ HEAD /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 18:18:41 GMT
 x-cos-server-side-encryption-customer-algorithm: AES256
-x-cos-server-side-encryption-customer-key: MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=
-x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
+x-cos-server-side-encryption-customer-key: MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNE****
+x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG****
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586542721;1586549921&q-key-time=1586542721;1586549921&q-header-list=date;host;x-cos-server-side-encryption-customer-algorithm;x-cos-server-side-encryption-customer-key;x-cos-server-side-encryption-customer-key-md5&q-url-param-list=&q-signature=99ad258fc295f43feb0546bb2346c8269dc5****
 Connection: close
 ```
@@ -255,7 +256,7 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4ODFfN2NiODJhMDlfMmFmYTVfMWRh****
 x-cos-server-side-encryption-customer-algorithm: AES256
-x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
+x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG****
 
 ```
 
