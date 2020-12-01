@@ -1,12 +1,4 @@
-Applications integrated with Instant Messaging (IM) provide a group livestreaming entry by default. The following table describes the group livestreaming performance.
-<table>
-<tr><td  style="border-color:white">
-<video width="320" height="640" src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/video/startGroupLive.mp4" controls  muted></video>
- </td><td style="border-color:white">
- <video width="320" height="640" src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/video/enterGroupLive.mp4" controls muted>
- </video>
-  </td></tr>
- </table>
+Projects integrated with TUIKit provide a group livestreaming entry by default.
 
 If the Tencent Real-Time Communication (TRTC) service is not activated, enable group livestreaming as follows:
 
@@ -20,7 +12,7 @@ If the Tencent Real-Time Communication (TRTC) service is not activated, enable g
 
 <span id="step2"></span>
 ## Step 2: Initialize TUIKit 
-To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your application is integrated with TUIKit, skip this step.)
+To initialize TUIKit, import the SDKAppID generated in [Step 1](#step1). (If your project has already integrated with TUIKit, skip this step.)
 ```
 TUIKit.init(Context, SDKAppID, new ConfigHelper().getConfigs());
 ```

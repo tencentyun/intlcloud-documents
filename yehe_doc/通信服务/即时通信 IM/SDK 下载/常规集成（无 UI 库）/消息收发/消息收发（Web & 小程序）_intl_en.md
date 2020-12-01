@@ -1,4 +1,4 @@
-
+This document describes how to send and receive messages through Web and mini programs.
 ## Sending Messages
 
 
@@ -302,7 +302,7 @@ tim.createFileMessage(options)
 
 <pre><code class="language-javascript"><span class="hljs-comment">// Example 1 for sending a file message in a web application - Passing in a DOM node</span>
 <span class="hljs-comment">// 1. Create a file message instance. The instance returned by the API can be displayed on the screen.</span>
-<span class="hljs-keyword">let</span> message = createFileMessage({
+<span class="hljs-keyword">let</span> message = tim.createFileMessage({
   <span class="hljs-attr">to</span>: <span class="hljs-string">'user1'</span>,
   <span class="hljs-attr">conversationType</span>: TIM.TYPES.CONV_C2C,
   <span class="hljs-comment">// Message priority applicable to group chats (supported since v2.4.2). If the message sending frequency of a group exceeds the limit, the backend delivers high-priority messages first. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33526">Message Priority and Frequency Control</a>.</span>

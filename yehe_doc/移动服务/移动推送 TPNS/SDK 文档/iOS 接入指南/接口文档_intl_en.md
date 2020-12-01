@@ -101,13 +101,15 @@ This callback is new in SDK 1.2.7.2 and used for TPNS registration failures.
 
 This API is used to delete all accounts and batch add accounts.
 
-> ?
-> 1. This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-> 2. If you need to bind multiple accounts, use the `appendAccounts:` API in the XGPush.h file of the SDK package to add accounts.
-
 ```Objective-C
 - (void)clearAndAppendAccounts:(nonnull NSArray<NSDictionary *> *)accounts;
 ```
+
+> ?
+> - This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+> - Due to the low use and easy confusion, the `appendAccounts` API is scheduled to be disused since October 26. The earlier use of the API is to overwrite accounts.
+
+
 
 #### Parameter description 
 

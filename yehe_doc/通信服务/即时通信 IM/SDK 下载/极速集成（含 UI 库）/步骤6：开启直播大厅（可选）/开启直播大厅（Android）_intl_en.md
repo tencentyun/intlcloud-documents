@@ -1,19 +1,19 @@
 >? TUIKit 5.0.10 and later versions provide the TUIKit_live UI component, which supports the livestreaming feature based on Tencent Real-Time Communication (TRTC).
 
-After importing TUIKit to your project, you can quickly enable the livestreaming feature in several simple steps. If you have not imported TUIKit, import `tuikit` and `tuiki-live` by referring to [Step 2: Import TUIKit](#step2).
+After importing TUIKit to your project, you can quickly enable the livestreaming feature in several simple steps. If you have not imported TUIKit, import `tuikit` and `tuiki-live` using the method in [Step 2: Import TUIKit](#step2).
 
 
 
-
-## Step 1: Enable the TRTC Service<span id="step1"></span>
+<span id="step1"></span>
+## Step 1: Enable the TRTC Service
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page of the application.
 2. Click **Activate** under **Activate Tencent Real-Time Communication (TRTC)**.
 3. Click **Confirm** in the dialog box that appears.
    A TRTC application with the same SDKAppID as the IM application is created in the [TRTC console](https://console.cloud.tencent.com/trtc/app). You can use the same account and authentication information for IM and TRTC.
    	
-
-## Step 2: Configure Project Files<span id="step2"></span>
+<span id="step2"></span>
+## Step 2: Configure Project Files
 
 We recommend that you use source code to integrate `tuikit` and `tuikit-live`. In this way, you can modify the source code to meet your business needs.
 Copy the `tuikit` and `tuikit-live` code to your project, add `tuikit` and `tuikit-live module` to `settings.gradle`, and import dependencies to your project.
@@ -22,8 +22,8 @@ Copy the `tuikit` and `tuikit-live` code to your project, add `tuikit` and `tuik
 implementation project(':tuikit')
 implementation project(':tuikit-live')
 ```
-
-## Step 3: Initialize and Log In to TUIKit<span id="step3"></span>
+<span id="step3"></span>
+## Step 3: Initialize and Log In to TUIKit
 
 Import the SDKAppID generated in [Step 1](#Step1) to initialize TUIKit and call the `login` API to log in to TUIKit. For more information on how to generate UserSig, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
@@ -42,8 +42,8 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
     }
 });
 ```
-
-## Step 4: Start Livestreaming at the Anchor End<span id="step4"></span>
+<span id="step4"></span>
+## Step 4: Start Livestreaming at the Anchor End
 
 Create an anchor. To start livestreaming at the anchor end, create `TUILiveRoomAnchorLayout` and set a unique roomid.
 
@@ -55,7 +55,8 @@ layoutTuiLiverRomAnchor.setLiveRoomAnchorLayoutDelegate(this);
 layoutTuiLiverRomAnchor.initWithRoomId(getSupportFragmentManager(), 12345);
 ```
 
-## Step 5: View Livestreams at the Viewer End<span id="step5"></span>
+<span id="step5"></span>
+## Step 5: View Livestreams at the Viewer End
 
 Create a viewer. To view an anchor's livestream, create `TUILiveRoomAudienceLayout` and set the same roomid as that at the anchor end.
 
@@ -66,7 +67,8 @@ TUILiveRoomAudienceLayout roomAudienceLayout = findViewById(R.id.layout_room_aud
 roomAudienceLayout.initWithRoomId(getSupportFragmentManager(), 12345, “1280”, false, “”);
 ```
 
-## Step 6: Generate a Live Room List<span id="step6"></span>
+<span id="step6"></span>
+## Step 6: Generate a Live Room List
 
 After you create an anchor and a viewer, a live room list is required to associate them.
 
@@ -96,7 +98,8 @@ The live room list page displays livestreams. For more information on the implem
 3. Click a room to view.
 On the live room list page, click a room. Create a viewer by referring to [Step 5: View Livestreams at the Viewer End](#step5) to view livestreams.
 
-## Step 7: Use LVB CDN to View Livestreams <span id="step7"></span>
+<span id="step7"></span>
+## Step 7: Use LVB CDN to View Livestreams 
 
 When TUILiveRoomAudienceLayout is created at the viewer end, TRTC is used to view livestreams by default if useCdn is set to false, and CDN is used to view livestreams if useCdn is set to true.
 
@@ -174,7 +177,7 @@ layoutTuiLiverRomAnchor.setLiveRoomAnchorLayoutDelegate(this);
 2. Set PK list data in the getRoomPKList callback of UILiveRoomAnchorLayout at the anchor end.
 ```java
 public void getRoomPKList(final TUILiveRoomAnchorLayout.OnRoomListCallback callback) {
-    /// If the room requires the PK feature, return the anchor's room ID array that supports PK through callback in this callback function.
+    /// If your room requires the PK feature, return the anchor's room ID array that supports PK through callback in this callback function.
     RoomManager.getInstance().getRoomList(RoomManager.TYPE_LIVE_ROOM, new RoomManager.GetRoomListCallback() {
         @Override
         public void onSuccess(List<String> roomIdList) {

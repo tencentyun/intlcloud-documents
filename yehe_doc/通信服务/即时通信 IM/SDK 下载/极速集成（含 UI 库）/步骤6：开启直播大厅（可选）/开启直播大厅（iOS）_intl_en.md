@@ -196,7 +196,7 @@ anchorVC.delegate = self;
 
 ```objectivec
 - (void)getPKRoomIDList:(TUILiveOnRoomListCallback)callback {
-	/// If the room requires the PK feature, return the anchor's room ID array that supports PK through callback in this callback function.
+	/// If your room requires the PK feature, return the anchor's room ID array that supports PK through callback in this callback function.
    	callback(@[@"12345", @"123456"]);
 }
 ```
