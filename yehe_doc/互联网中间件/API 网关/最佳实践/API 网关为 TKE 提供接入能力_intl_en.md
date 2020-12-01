@@ -5,6 +5,7 @@ Based on native Kubernetes, Tencent Kubernetes Engine (TKE) is a container-orien
 ## Overview
 
 As an open source platform for automated container operations, Kubernetes is a mainstream choice for developers. However, the access capability of Kubernetes clusters are not sufficient and cannot meet the requirements of large applications. Using API Gateway as the access layer of Kubernetes can significantly improve the access capability of Kubernetes clusters and empower Kubernetes clusters with advanced capabilities of API Gateway, adapting to more scenarios of more customers.
+![](https://main.qcloudimg.com/raw/736f4e705327d4cb5aa42e4e970d1298.svg)
 
 ## Prerequisites
 
