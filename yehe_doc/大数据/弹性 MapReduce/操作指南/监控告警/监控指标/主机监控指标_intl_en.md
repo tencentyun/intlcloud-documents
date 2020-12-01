@@ -1,6 +1,6 @@
 
 
-### Server - CPU
+### Node-CPU
 
 | Metric Name | Unit | Description |
 | --------- | ---- | ------------------------------ |
@@ -18,7 +18,7 @@
 | 15m       | Load/s  | 15-minute load                     |
 | cpu_count | - | Number of CPU cores |
 
-### CPU - memory
+### Node-MEMORY
 
 | Metric Name | Unit | Description |
 | ----------------- | ---- | ------------------------------ |
@@ -38,7 +38,7 @@
 | available_percent | %    | Percentage of available memory size out of total memory |
 | used_percent      | %    | Percentage of used memory size out of total memory    |
 
-### Server - network
+### Node-NETWORK
 
 | Metric Name | Unit | Description |
 | ---------------------- | -------- | ------------------------------------------------------------ |
@@ -112,7 +112,7 @@
 | LISTEN                           | -       | Number of TCP connections in LISTEN state                                 |
 | CLOSEING               | -       | Number of TCP connections in CLOSEING state                                 |
 
-### Server - disk
+### Node-DISK
 
 | Metric Name | Unit | Description |
 | ----------- | ---- | ------------------------------- |
@@ -135,14 +135,14 @@
 | Total       | -   | Total number of disk inodes              |
 | Used        | %    | Disk inode utilization              |
 
-### Server - file handle
+### Node-FILE HANDLE
 
 | Metric Name | Unit | Description |
 | --------- | ---- | ------------------ |
 | allocated | - | Number of allocated file handles |
 | maximum   | - | Maximum number of file handles |
 
-### Server - process
+### Node-PROCESS
 
 | Metric Name | Unit | Description |
 | ---------------------- | ------- | ------------------ |
