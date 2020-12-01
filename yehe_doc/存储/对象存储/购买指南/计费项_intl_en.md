@@ -23,9 +23,9 @@ You can learn about COS billable items and [Product Pricing](https://intl.cloud.
 
 1. STANDARD_IA: Storage duration of fewer than 30 days will be calculated as 30 days. A single stored file less than 64 KB will be calculated as 64 KB; otherwise, files are calculated based on their actual sizes.
 2. ARCHIVE: available in public cloud regions only. Storage duration of fewer than 90 days will be calculated as 90 days. A single stored file less than 64 KB will be calculated as 64 KB; otherwise, files are calculated based on their actual sizes.
-3. DEEP ARCHIVE: available only in Beijing, Guangzhou, and Chengdu regions. Storage duration of fewer than 180 days will be calculated as 180 days. A single stored file less than 64 KB will be calculated as 64 KB; otherwise, files are calculated based on their actual sizes.
-4. If you successfully uploaded an object to STANDARD_IA or ARCHIVE with versioning not enabled, COS will delete the existing object (if any) that has the **same name**. In this case, storage fees will still be incurred for **early deletion of the object**.
-5. For INTELLIGENT TIERING, storage usage fees of objects are consistent with the storage class after storage class movement. In addition, you will be charged the object monitoring fees.
+3. DEEP ARCHIVE: available only in Beijing, Shanghai, Guangzhou, and Chengdu regions. Storage duration of fewer than 180 days will be calculated as 180 days. A single stored file less than 64 KB will be calculated as 64 KB; otherwise, files are calculated based on their actual sizes.
+4. If you successfully uploaded an object to STANDARD_IA or ARCHIVE without enabling versioning, COS will delete the existing object (if any) that has the **same name**. In this case, storage fees will still be incurred for **early deletion of the object**.
+5. For INTELLIGENT TIERING, storage usage fees of objects are consistent with the storage class after object movement. In addition, you will be charged object monitoring fees.
 
 <span id="jf2"></span>
 
@@ -38,15 +38,15 @@ Request fees include the fees incurred by **user requests** and **backend reques
 
 | Billable Item   | Applicable Storage Class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Definition                           | Billing Description                                                     |
 | -------- | ------------------------------------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
-| Number of requests | INTELLIGENT TIERING<br>STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE | Calculated based on the number of requests sent | <li>Monthly billing cycle<br><li>If the accumulated number of requests is less than 10,000, the bill is calculated as 10,000.<br><li>Request fees = Unit price per 10,000 requests  x Monthly accumulated number of requests/10,000 |
+| Number of requests | INTELLIGENT TIERING<br>STANDARD<br>STANDARD_IA<br>ARCHIVE<br>DEEP ARCHIVE | Calculated based on the number of requests sent | <li>Monthly billing cycle<br><li>If the accumulated number of requests is less than 10,000, the bill is calculated as 10,000.<br><li>Request fees = Unit price per 10,000 requests x Monthly accumulated number of requests/10,000 |
 
 #### Billing restrictions
 
 1. Both successful and failed requests are billed.
-2. The minimum counting unit for the number of requests is 10,000. Therefore, if the monthly accumulated requests is less than 10,000, you will still be billed for 10,000 requests, regardless of request success or failure.
+2. The minimum number of requests for billing is 10,000. Therefore, if the monthly accumulated requests is less than 10,000, you will still be billed for 10,000 requests, regardless of request success or failure.
 3. Data in the ARCHIVE and DEEP ARCHIVE storage classes cannot be read or downloaded. If you restore objects from ARCHIVE to STANDARD, you will be billed at STANDARD rates; if you restore objects in the DEEP ARCHIVE storage class, you will be billed at DEEP ARCHIVE rates.
-4. Retrieving DEEP ARCHIVED data will incur data retrieval request fees.
-5. For INTELLIGENT TIERING, request fees are subject to those of the storage class after storage class movement.
+4. Retrieving DEEP ARCHIVED data will incur request fees for retrieving the data.
+5. For INTELLIGENT TIERING, request fees are subject to those of the storage class after object movement.
 
 <span id="jf3"></span>
 
@@ -74,7 +74,7 @@ Request fees include the fees incurred by **user requests** and **backend reques
 
 #### Billing restrictions
 
-Storage classes suitable for cold data include **STANDARD_IA**, **ARCHIVE**, and **DEEP ARCHIVE**. To read or download data in STANDARD_IA, COS needs to retrieve it first. ARCHIVED data cannot be read or downloaded until it is restored (unfrozen) to the STANDARD storage class.
+Storage classes suitable for cold data include **STANDARD_IA**, **ARCHIVE**, and **DEEP ARCHIVE**. To read or download data in STANDARD_IA, COS needs to retrieve it first. ARCHIVED data cannot be read or downloaded until it is restored to the STANDARD storage class.
 
 
 <span id="jf4"></span>
@@ -85,7 +85,7 @@ Traffic fees are calculated based on the accumulated traffic generated by readin
 
 <table>
    <tr>
-      <th>Billable Items</th>
+      <th>Billable Item</th>
       <th>Applicable Storage Class</th>
       <th>Definition</th>
       <th>Billing Description</th>
@@ -108,7 +108,7 @@ Traffic fees are calculated based on the accumulated traffic generated by readin
    </tr>
    <tr>
       <td>Private network downstream traffic</td>
-      <td>Traffic generated by data transfer from COS to the client over the Tencent Cloud private network</td>
+      <td>Traffic generated by data transfer from COS to the client over Tencent Cloud private network</td>
       <td>Free</td>
    </tr>
    <tr>
@@ -130,12 +130,12 @@ Traffic fees are calculated based on the accumulated traffic generated by readin
 
 #### Billing restrictions
 
-1. ARCHIVED data cannot be read or downloaded. The data can only be read after being restored to the STANDARD storage class. Therefore, traffic generated from these requests is counted in the STANDARD storage class.
+1. ARCHIVED data cannot be read or downloaded unless it is restored to the STANDARD storage class. Therefore, traffic generated from these requests is counted in the STANDARD storage class.
 2. **Public network downstream traffic** is generated when the data is returned to COS through origin-pull using a third-party CDN service.
 3. After CDN acceleration is enabled, CDN origin-pull traffic is generated when a user browses or downloads COS data on the client through **a Tencent Cloud CDN acceleration endpoint**.
 4. Public network downstream traffic is generated when a user downloads objects through **object links** or browses objects through a **static website endpoint**. 
 5. Cross-region replication traffic is generated when you replicate data from a bucket in one region to a bucket in another region using APIs or the cross-region replication feature. The traffic fees vary, depending on the region where the source bucket resides.
-6. For INTELLIGENT TIERING, traffic fees are subject to those of the storage class after storage class movement.
+6. For INTELLIGENT TIERING, traffic fees are subject to those of the storage class after object movement.
 
 > ?Tencent Cloud products within the same region access each other over the private network by default and no traffic fees will be incurred. For more information on how to identify private network access, please see [COS Access via Private Network and Public Network](https://intl.cloud.tencent.com/document/product/436/30613).
 
@@ -156,7 +156,7 @@ Management feature fees are calculated based on the use of COS management featur
 <table>
 <thead>
 <tr>
-<th>Billable Items</th>
+<th>Billable Item</th>
 <th>Applicable Storage Class</th>
 <th>Definition</th>
 <th>Billing Description</th>
@@ -190,4 +190,4 @@ Management feature fees are calculated based on the use of COS management featur
 
 #### Billing restrictions
 
-Currently, INTELLIGENT TIERING does not support the COS Select and batch operation features.
+Currently, the COS Select and batch operation features do not work with INTELLIGENT TIERING.
