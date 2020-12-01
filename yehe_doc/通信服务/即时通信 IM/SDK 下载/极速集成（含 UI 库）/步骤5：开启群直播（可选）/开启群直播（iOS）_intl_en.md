@@ -1,14 +1,5 @@
-Applications integrated with Instant Messaging (IM) provide a group livestreaming entry by default. The following table describes the group livestreaming performance.
-<table>
-<tr><td  style="border-color:white">
-<video width="320" height="640" src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/video/startGroupLive.mp4" controls  muted></video>
- </td><td style="border-color:white">
- <video width="320" height="640" src="https://liteav-test-1252463788.cos.ap-guangzhou.myqcloud.com/video/enterGroupLive.mp4" controls muted>
- </video>
-  </td></tr>
- </table>
-
-Perform the following steps to integrate IM with an application.
+Projects integrated with TUIKit provide a group livestreaming entry by default.
+If the Tencent Real-Time Communication (TRTC) service is not activated, enable group livestreaming as follows:
 
 <span id="Step1"></span>
 
