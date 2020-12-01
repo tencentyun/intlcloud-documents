@@ -45,7 +45,7 @@ SUPER privilege for the source database is not required in most scenarios and re
             log_slave_updates = 1           
 ```
 6. Modify the variables.
-    a. Modify the source database's MySQL configuration file `my.cnf` and restart the database:
+    a. For a self-created MySQL database, modify the source database's MySQL configuration file `my.cnf` and restart the database:
 ```
   	        log-bin=[custom binlog filename]
 ```
@@ -62,12 +62,13 @@ SUPER privilege for the source database is not required in most scenarios and re
 ### 1. Create a migration task
 Log in to the [DTS Console](https://console.cloud.tencent.com/dts/migration), enter the data migration page, and click **Create Migration Task**.
 
-### 2. Configure the migration task
+### 2. Set the source and target databases
 Configure the task, source database, and target database. After the network connectivity test is successful, click **Create**.
 
 #### a. Task settings
 - Task Name: name the task.
 - Scheduled Execution: specify the start time of the migration task.
+- Tag: categorize and manage resources by various metrics.
 
 #### b. Source database settings
 Source Database Type: MySQL with public IP, CVM-based self-created MySQL, Direct Connect-based MySQL, and VPN-based MySQL are supported.
@@ -82,20 +83,20 @@ Source Database Type: MySQL with public IP, CVM-based self-created MySQL, Direct
 #### c. Target database settings
 Select the target database instance and enter its account and password.
 
-### 3. Select the database to be migrated
+### 3. Set migration options and select migration objects
 Select the database to be migrated (you can choose to migrate the entire database or only certain tables), create a migration task, and check the task information.
 >!
 >1. The `character_set_server` and `lower_case_table_names` configuration items will be migrated only if the entire database is migrated.
 >2. If the character set configuration of the migrated tables in the source database is different from that of the target database, the former will be retained.
 
-**Data Migration**: export data from the selected database and import it into TencentDB for MySQL.
-**Incremental Sync**: after exporting and importing data, set TencentDB for MySQL as the replica of the source database to implement incremental source/replica sync.
-**Overwrite Target Database with Source Database Root Account**: as the root account is used for TencentDB authentication, subsequent TencentDB operations will be affected if the root account of the source database does not exist in the target database. Therefore, if the entire database is migrated, you should specify whether to overwrite the target root account with the source one. Select **Yes** if you want to use the root account of the source database or if the root account is not configured for the target database. Select **No** if you want to retain the root account of the target database.
-**Read-only Target Database**: if this configuration item is selected, during data migration, data from the source database will be read-only in the target database and cannot be changed until you click the corresponding button to complete the migration.
+- **Migration Type**: structure migration, full migration, and full + incremental migration are supported.
+- **Migration Object**: you can migrate the whole instance or specific objects.
+- **Overwrite Target Database with Source Database Root Account**: the root account is used for TencentDB security verification. If the source database root account does not exist, issues may occur when you use TencentDB after migration. Therefore, to migrate the whole instance, you need to specify whether the target database root account should be overwritten by the source database root account. If you want to use the source database root account or the target database does not have any root account, choose **Yes**; if you want to keep the target database root account, choose **No**.
+- **Read-only Target Database**: if the read-only option is enabled, data migrated to the target database will remain read-only during the migration process and cannot be modified until you complete the migration.
+- **Data Consistency Detection**: you can perform a full detection or do not perform any detection.
 
 
-### 4. Perform data consistency detection
-
+### 4. Verify the migration task
  After the migration task is created, you need to click **Next step: verify task** to verify the task information. You cannot start the migration task until all the check items are passed. Then, click **Start Task**.
  There are 3 statuses for task verification:
 
