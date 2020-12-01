@@ -11,11 +11,11 @@ Tencent Real-Time Communication[Demo](https://intl.cloud.tencent.com/document/pr
 
 | 所属プラットフォーム |  CDN 視聴アドレス計算 | クラウドミクスストリーミングパラメータの設定 |
 |---------|---------|---------|
-| iOS | ファイル： [TRTCMoreViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMoreViewController.m) <br>関数：onBtnClick() | ファイル：[TRTCMainViewController.m](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCDemo/TRTC/TRTCMainViewController.m)<br>関数：updateCloudMixtureParams() |
-| Android | ファイル：[CdnPlayManager.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/sdkadapter/cdn/CdnPlayManager.java)<br>関数：initPlayUrl() | ファイル：[TRTCRemoteUserManager.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCDemo/app/src/main/java/com/tencent/liteav/demo/trtc/sdkadapter/remoteuser/TRTCRemoteUserManager.java)<br>関数：updateCloudMixtureParams() |
+| iOS | ファイル：TRTCMoreViewController.m<br>関数：onBtnClick() | ファイル：TRTCMainViewController.m<br>関数：updateCloudMixtureParams() |
+| Android | ファイル：CdnPlayManager.java<br>関数：initPlayUrl() | ファイル：TRTCRemoteUserManager.java<br>関数：updateCloudMixtureParams() |
 | Windows（C++） |  ファイル：[TRTCSettingViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCSettingViewController.cpp)<br>関数：NotifyOtherTab | ファイル：[TRTCCloudCore.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/sdkinterface/TRTCCloudCore.cpp)<br>関数：updateMixTranCodeInfo() |
 | Windows（C#） |  ファイル：[TRTCMainForm.cs](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs)<br>関数：OnShareUrlLabelClick| ファイル：[TRTCMainForm.cs](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs)<br>関数：UpdateMixTranCodeInfo() |
-| Mac |  現時点で無し | ファイル：[TRTCMainWindowController.m](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCDemo/TRTC/TRTCMainWindowController.m)<br>関数：updateCloudMixtureParams() |
+| Mac |  現時点で無し | ファイル：TRTCMainWindowController.m<br>関数：updateCloudMixtureParams() |
 
 ## ユースケース
 Relayed live streaming機能に基づき、メインストリームのライブストリーミングプラットフォームによく見られるホストマイク接続およびライブストリーミングのPK機能を実現することができます。
