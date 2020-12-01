@@ -10,23 +10,20 @@
 <th align="left" width="13%">计费模式</th>
 <th align="left" width="15%">付款方式</th>
 <th align="left" width="29%">计费单位</th>
-<th align="left" width="23%">价格对比</th>
-<th align="left" width="20%">适用场景</th>
+<th align="left" width="43%">适用场景</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">月预付费</td>
 <td align="left">先付费再使用</td>
 <td align="left">美元/月，至少使用一个月，带宽超过购买值则丢包</td>
-<td align="left">对比月95后付费，约低20%</td>
-<td align="left">带宽稳定</td>
+<td align="left">适用于带宽稳定或大带宽场景。</td>
 </tr>
 <tr>
 <td align="left">月95后付费</td>
 <td align="left">先使用再付费</td>
 <td align="left">美元/月，根据当月实际使用带宽的月95带宽峰值及有效使用天占比计费</td>
-<td align="left">较高</td>
-<td align="left">有爆发业务量（灰度阶段，如需使用，请提 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">工单申请</a> ）</td>
+<td align="left">适用于小带宽或有爆发业务的场景。月95后付费模式目前在灰度中，若需使用，请提 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">工单申请</a> 。</td>
 </tr>
 </tbody></table>
 
@@ -48,8 +45,6 @@
 ## 月预付费
 先购买固定带宽（以月为单位），再使用，单价较月95后付费低，适用带宽稳定业务。
 例如，您需要北京 - 上海地域间带宽10Mbps，您需要先支付10Mbps的带宽费用。
-
->此功能正在内测中，如需使用，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
 
 ### 计费周期
 **月预付费**：购买固定带宽（以月为单位）时，需要先支付固定带宽费用。
@@ -75,15 +70,16 @@
 <th>第三阶梯部分价格<br>（＞1000Mbps）<br>（美元/Mbps/月）</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
+
 <td>白金</td>
 <td rowspan="3">中国大陆<br>（不含港澳台地区）</td>
 <td rowspan="3">中国大陆<br>（不含港澳台地区）</td>
 <td>44</td>
 <td>17</td>
 <td>11</td>
-</tr><tr>
+</tr>
+<tr>
 <td>金</td>
 <td>29</td>
 <td>11</td>
@@ -165,8 +161,8 @@
 >- 云联网根据实际使用量后付费，为了避免您支付非预期内的带宽费用，建议您设置地域间带宽上限。
 
 ### 计费示例
-假设您的云联网（服务等级：金）2019年6月关联有广州、北京、上海三个地域的网络实例，使用有效天为 14天，使用带宽如下图所示：
-- 广州 - 北京两地域间互通费用 = 该地域间互通的月95带宽峰值（120M）× 有效天占比（14 / 30 ） × 阶梯单价（13美元/Mbps/月）= 728美元。
+假设您的云联网（服务等级：金）2019年6月关联有广州、北京、上海三个地域的网络实例，使用带宽如下图所示：
+- 广州 - 北京两地域间互通费用 = 该地域间互通的月95带宽峰值（120Mbps）× 有效天占比（14 / 30 ） × 阶梯单价（13美元/Mbps/月）= 728美元。
 - 北京 - 上海两地域间互通费用算法与上述方法相同。
 最终该云联网在6月产生的费用为各地域间互通费用总和。
 ![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)
