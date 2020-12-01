@@ -1,4 +1,4 @@
-API Inspector is a new feature of TencentCloud API. It enables you to view the API calls associated with console operations. In addition, it can automatically generate API code snippets in different languages and work withe API Explorer for online debugging. 
+API Inspector is a new feature of TencentCloud API. It enables you to view the API calls associated with console operations. In addition, it can automatically generate API code snippets in different languages and work with API Explorer for online debugging. 
 
 >!
 >- API Inspector displays only open [TencentCloud API 3.0](https://intl.cloud.tencent.com/document/api) calls.
