@@ -1,5 +1,6 @@
 When you use Tencent Kubernetes Engine (TKE), you need to authorize services to use relevant cloud resources. Each scenario usually contains policies that are defined for different roles in advance. The main roles involved are `TKE_QCSRole` and `IPAMDofTKE_QCSRole`. This document introduces the details of each authorization policy, and the authorization scenarios and authorization steps for each role.
 
+>? The sample role in this document does not contain the authorization policy related to container image repositories. For more information about TKE permissions, please see [TKE Image Registry Resource-level Permission Settings](https://intl.cloud.tencent.com/document/product/457/11527)
 
 <span id="TKE_QCSRole"></span>
 ## TKE_QCSRole

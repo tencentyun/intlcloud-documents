@@ -68,11 +68,14 @@
 	</tr>
 	<tr>		
 		<tr>
-			<td rowspan="2">华东地区（南京）<br>ap-nanjing</td>
+			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
 			<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>南京二区<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
+			<td>南京三区<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
 			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
@@ -127,8 +130,11 @@
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>			
 		</tr>
 		<tr>
-			<td >亚太东北（首尔）<br>ap-seoul</td>
+				<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
 			<td>首尔一区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-1</td>
+		</tr>
+		<tr>
+			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
 		</tr>
 		<tr>
 			<td >亚太东北（东京）<br>ap-tokyo</td>
@@ -227,7 +233,7 @@
 	  <td>安全组在某个地域下创建，并且只能与同一地域的实例相关联。腾讯云为用户自动创建三条默认安全组。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://cloud.tencent.com/document/product/362">云硬盘</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/362">云硬盘</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>只能在单地域的单个可用区下使用</td>
 	  <td>用户只能在特定可用区下创建云硬盘，并且挂载在同一可用区的实例上。</td>

@@ -10,7 +10,7 @@ A TKE cluster is compatible with Kubernetes and consists of the following compon
 
 ## Cluster Types
 
-TKE supports the following cluster types:
+TKE container cluster supports the following types:
 - CVM container cluster
     + Managed cluster (Master and Etcd are managed by TKE)
     + Independently deployed cluster (Master and Etcd are built on your own servers)

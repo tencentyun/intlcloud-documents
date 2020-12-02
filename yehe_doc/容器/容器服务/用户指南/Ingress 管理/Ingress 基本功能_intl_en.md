@@ -24,10 +24,12 @@ To properly run Ingress resources, the cluster must run an Ingress controller. T
 6. Set the Ingress parameters based on your actual needs. The key parameters are as follows:
  - Ingress name: custom.
  - Network type: the default value is `Public network`. Select another network if needed.
+ - IP version: IPv4 and IPv6 NAT64 are supported. You can select one as needed.
  - Load balancer: create one automatically or use an existing CLB.
  - Namespace: select an option based on your actual needs.
  - Listener port: the default listener port is **Http:80**. Select another port if needed.
  If **Https:443** is selected, a server certificate must be bound to ensure access security. For more information, see [SSL Certificate Format](https://intl.cloud.tencent.com/document/product/214/5369).
+ ![](https://main.qcloudimg.com/raw/6d6ff3f162e6880ee6dc669cc312ebfd.png)
  - Forwarding configuration: set this parameter based on your actual needs.
 7. Click **Create Ingress** to create an Ingress.
 

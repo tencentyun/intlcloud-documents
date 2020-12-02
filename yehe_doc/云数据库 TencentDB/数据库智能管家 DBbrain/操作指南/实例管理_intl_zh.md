@@ -19,7 +19,7 @@
 DBbrain 为用户提供了个性化设置功能，用户可以根据自己的需求，个性化设置在概览中或者数据库巡检中需要展示的实例。
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/monitor)，在左侧导航选择【实例管理】页，在上方选择对应数据库。
 2. 在列表选中一个或多个实例，单击【个性化设置】。
-![](https://main.qcloudimg.com/raw/2355f14f8d04e67b476da896b20cad88.png)
+
 3. 在弹出的对话框，选择开启或关闭实例概览或者数据库巡检状态，单击【查看详情】，可查看所选实例的基本信息（实例名/ID、配置）。
-![](https://main.qcloudimg.com/raw/515948c5d53f6a4a683331c12bb062e7.png)
+
 

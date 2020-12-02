@@ -19,7 +19,7 @@ CDN can accelerate global delivery of static resources such as static scripts, a
 
 ## Implementation
 
-CDN acceleration can be implemented for COS in the following ways:
+CDN acceleration can be implemented for COS in the following two ways. Choose either of them to complete acceleration：
 
 - Point the COS endpoint to the CDN acceleration domain name and bind your domain name to the CDN acceleration domain name (through CNAME). For detailed directions, please see [Implementation via CDN Console](https://intl.cloud.tencent.com/document/product/228/32984).
 - Bind your domain name to the COS endpoint and enable CDN acceleration. For detailed directions, please see [Implementation via COS Console](https://intl.cloud.tencent.com/document/product/228/32985).
