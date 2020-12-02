@@ -6,7 +6,7 @@
 
 #### 请求示例
 
-```shell
+```plaintext
 GET /shipper?shipper_id=xxxx-xx-xx-xx-xxxxxxxx HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
@@ -14,7 +14,7 @@ Authorization: <AuthorizationString>
 
 #### 请求行
 
-```shell
+```plaintext
 GET /shipper
 ```
 
@@ -32,7 +32,7 @@ GET /shipper
 
 #### 响应示例
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 123
@@ -44,19 +44,14 @@ Content-Length: 123
   "prefix": "test",
   "shipper_name": "myname",
   "interval": 300,
-  "max_size": 256,
+  "max_size": 100,
   "effective": true,
-  "filter_rules": [{
-    "key": "",
-    "regex": "",
-    "value": ""
-  }],
   "partition": "%Y%m%d",
     "compress": {
         "format": "none"
     },
     "content": {
-        "format": "json",
+        "format": "json"
     },
   "create_time": "2017-12-12 12:12:12"
 }
@@ -77,20 +72,12 @@ Content-Length: 123
 | shipper_name | string | 是       | 投递规则的名字                                   |
 | interval     | int    | 是       | 投递的时间间隔，单位秒                          |
 | max_size     | int    | 是       | 投递的文件的最大值，单位 MB                      |
-| effective    | bool   | 是       | 是否生效                                         |
-| filter_rules | array  | 是       | 投递日志的过滤规则                               |
+| effective    | bool   | 是       | 是否生效                                         |                              |
 | create_time  | string | 是       | 投递日志的创建时间                               |
 | partition    | string | 是       | 投递日志的分区规则，支持`strftime`的时间格式表示 |
 | compress     | object | 是       | 投递日志的压缩配置                               |
 | content      | object | 是       | 投递日志的内容格式配置                           |
 
-filter_rules 格式如下：
-
-| 字段名 | 类型   | 是否必须 | 含义                                               |
-| ------ | ------ | -------- | -------------------------------------------------- |
-| key    | string | 是       | 用来比较的 key，`__CONTENT__`代表全文               |
-| regex  | string | 是       | 比较内容的提取正则表达式                           |
-| value  | string | 是       | 与上面 regex 提取出的内容比较的 value，如果一致则命中 |
 
 compress 格式如下：
 
