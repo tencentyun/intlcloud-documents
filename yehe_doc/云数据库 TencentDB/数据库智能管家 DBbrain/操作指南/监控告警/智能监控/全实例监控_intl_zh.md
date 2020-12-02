@@ -1,32 +1,27 @@
 全实例监控页为用户提供全实例维度（用户整体视角）的数据库监控指标展示。统一监控视图里展示所有实例单个监控指标的横向视图，便于用户查看和发现数据库异常问题，也为用户提供全新的宏观监控查看视角。
 
->?全实例监控功能目前支持云数据库 MySQL（不含基础版）、云数据库 CynosDB（CynosDB for MySQL）。
+>全实例监控功能目前仅支持云数据库 MySQL（不含基础版）。
 
-![](https://main.qcloudimg.com/raw/2fe1bf9fbcc3b7dc54b1fc0f9d1688f2.png)
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/monitor)，在左侧导航选择【全实例监控】页。
+![](https://main.qcloudimg.com/raw/cbf373c7991f68ead9762909e8e5c79f.png)
 
-## 切换地域
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择对应数据库，然后选择【全实例监控】页。
-2. 在全实例监控页，默认展示全地域的数据库实例，可通过上方的下拉菜单按地域进行筛选。
 
-## 切换监控指标
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择对应数据库，然后选择【全实例监控】页。
-2. 通过上方的下拉菜单搜索控件，选择需要查看的监控指标，支持 MySQL/CynosDB 云监控提供的所有监控指标，全实例监控视图根据所选指标排序展示。
-![](https://main.qcloudimg.com/raw/198839b8d65d56d142e2f475e9f68f35.png)
+### 地域切换
+全实例监控页面默认展示全地域的数据库实例，可通过上方的下拉菜单按地域进行筛选。
 
-## 查看实时/历史监控
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择对应数据库，然后选择【全实例监控】页。
-2. 在全实例监控页，可查看实时监控和历史监控，历史监控中会显示所选时间段内该指标的 MAX 值和出现的时间点。
+### 监控指标切换
+可通过上方的下拉菜单搜索控件，选择需要查看的监控指标，支持 MySQL 云监控提供的所有监控指标。
+![](https://main.qcloudimg.com/raw/4eb792926c5f1fd819268cab21985b9e.png)
 
-## 搜索实例
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择对应数据库，然后选择【全实例监控】页。
-2. 在全实例监控页，选择 MySQL 数据库时，可按实例 ID、实例名和内网 IP 进行模糊搜索；选择 CynosDB 数据库时，可按集群 ID、集群名、实例 ID、实例名和接入点地址进行模糊搜索。
->?单击搜索栏右方的“标识符”，可查看实例搜索帮助文档。
->
-![](https://main.qcloudimg.com/raw/98723a56342305f64f51f1db0fd11385.png)
+### 实时/历史
+全实例监控页面支持查看实时监控和历史监控，历史监控中会显示所选时间段内该指标的 MAX 值和出现的时间点。
 
-## 切换宫格
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【监控告警】>【智能监控】，在上方选择对应数据库，然后选择【全实例监控】页。
-2. 在全实例监控页，可切换9宫格和36宫格的视图，用户实例较多的情况下建议使用【36宫格】视图，全局视角更明显，用户也可以更清晰地查看监控指标的波动状态。
-![](https://main.qcloudimg.com/raw/98a7335f8387e4156873cd862ce1a85e.png)
+### 实例搜索
+支持按实例名和内网 IP 进行模糊搜索。
+![](https://main.qcloudimg.com/raw/b2e8101fd0cf8f0b028d8857e8dc437c.png)
+
+### 宫格切换
+支持9宫格和36宫格的视图切换，用户实例较多的情况下建议使用【36宫格】视图，全局视角更明显。
+![](https://main.qcloudimg.com/raw/121bb5e468ea0653eea06bc69f68dc3b.png)
 单击实例右上角的展开按钮，可以查看清晰的实例信息和指标趋势详情。
-![](https://main.qcloudimg.com/raw/7041a28a0ba33b6bdaef0d906ff557ef.png)
+![](https://main.qcloudimg.com/raw/961463c6a659e4317871a97503f98dbe.png)

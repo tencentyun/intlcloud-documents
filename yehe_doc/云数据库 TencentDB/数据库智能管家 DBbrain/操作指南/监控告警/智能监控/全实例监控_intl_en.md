@@ -1,27 +1,32 @@
-The full instance monitoring page gives you an overview of the database monitoring metrics of all instances. The unified monitoring view displays the cross-sectional view of single metrics of all instances, enabling you to view and detect database exceptions and providing a new holistic point of view for monitoring information.
+The full instance monitoring page gives you an overview of the database monitoring metrics of all instances. Data of single monitoring metrics of all instances is displayed in a horizontal view. You can view and compare monitoring data of all instances on the same page, making it easier to detect database exceptions and view their details.
 
->?Currently, the full instance monitoring feature is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, full instance monitoring is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
 
-![](https://main.qcloudimg.com/raw/e7104ed536e9306794b375bfe04ed056.png)
+![](https://main.qcloudimg.com/raw/2fe1bf9fbcc3b7dc54b1fc0f9d1688f2.png)
 
-## Switching Region
-The full instance monitoring page displays the database instances in all regions by default. You can filter instances by region in the drop-down list at the top.
+## Switching Regions
+1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
+2. On this tab, instances in all regions are displayed by default. You can filter instances by region in the drop-down list at the top.
 
-## Switching Monitoring Metric
-You can select the desired monitoring metric in the drop-down search list at the top. All monitoring metrics provided by Cloud Monitor for MySQL are supported. The full instance monitoring view is displayed according to the selected metrics.
-![](https://main.qcloudimg.com/raw/d66fc7e8ddece964113799dc51afbce7.png)
+## Switching Monitoring Metrics
+1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
+2. You can filter and select a metric in the drop-down list at the top. All monitoring metrics of MySQL and CynosDB are supported. The information of the selected monitoring metric is displayed and sorted by metric value on this tab.
+![](https://main.qcloudimg.com/raw/198839b8d65d56d142e2f475e9f68f35.png)
 
 ## Viewing Real-Time/Historical Monitoring
-You can view real-time and historical monitoring information on the full instance monitoring page. In historical monitoring information, the maximum value and its occurrence time of the selected metric in the specified time period will be displayed.
+1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
+2. On this tab, you can view real-time and historical monitoring information. In historical monitoring information, the maximum value and its occurrence time of the selected metric in the specified time period will be displayed.
 
-## Searching for Instance
-You can search for instances by ID, name, or private IP in a fuzzy manner.
+## Searching Instances
+1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
+2. On this tab, you can search instances. If you select MySQL, fuzzy search by instance ID/name or private IP is supported; if you select CynosDB, fuzzy search by cluster ID/name, instance ID/name, or access point address is supported.
 >?Click the "i" icon on the right in the search box to view the help document for instance search.
 >
 ![](https://main.qcloudimg.com/raw/98723a56342305f64f51f1db0fd11385.png)
 
-## Switching Grid
-You can switch between 9-grid view and 36-grid view. We recommend you use the 36-grid view if the number of instances is high, as it provides a broader view and you can view the fluctuations of monitoring metrics more clearly.
+## Switching Grid Views
+1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
+2. On this tab, you can switch between 9-grid view and 36-grid view. We recommend that you use the **36-Grid** view if you have many instances, as it provides a broader view and curve graphs to show metric value fluctuation.
 ![](https://main.qcloudimg.com/raw/98a7335f8387e4156873cd862ce1a85e.png)
-Click the "Expand" icon in the top-right corner of the target instance to view its information and metric trend details.
-![](https://main.qcloudimg.com/raw/8ba6d2aef5bd0883dcb4f2bf5a1a4d35.png)
+Click the "Expand" icon on the top-right corner of the block of an instance to view its information and metric trend details.
+![](https://main.qcloudimg.com/raw/7041a28a0ba33b6bdaef0d906ff557ef.png)
