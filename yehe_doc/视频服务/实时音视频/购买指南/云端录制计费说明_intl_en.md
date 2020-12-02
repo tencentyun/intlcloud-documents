@@ -1,9 +1,9 @@
 
 >!
-- On-cloud recording fees will be charged according to the billing rules described in this document for Tencent Cloud accounts that created apps on the TRTC console on or after July 1, 2020. 
-- For Tencent Cloud accounts that created apps on the TRTC console before July 1, 2020, on-cloud recording fees will be charged according to billing rules described in [Billing Details > LVB Recording](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6).
-- This document only describes billing rules for TRTC on-cloud recording. VOD will charge **storage fees** and **viewing fees** of the recording output files saved on VOD platform based on your usage. For more information, please see [On-cloud Recording > Pricing](https://intl.cloud.tencent.com/document/product/647/35426).
-- If you used LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional fees for [LVB Transcoding > Standard transcoding](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) will be incurred.
+>- On-cloud recording fees will be charged according to the billing rules described in this document for Tencent Cloud accounts that created apps on the TRTC console on or after July 1, 2020. 
+>- For Tencent Cloud accounts that created apps on the TRTC console before July 1, 2020, on-cloud recording fees will be charged according to billing rules described in [Billing Details > LVB Recording](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6).
+>- This document only describes billing rules for TRTC on-cloud recording. VOD will charge **storage fees** and **viewing fees** of the recording output files saved on VOD platform based on your usage. For more information, please see [On-cloud Recording > Pricing](https://intl.cloud.tencent.com/document/product/647/35426).
+>- If you used LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional fees for [LVB Transcoding > Standard transcoding](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) will be incurred.
 
 <span id="Billing_items"></span>
 ## Usage Calculation Method
