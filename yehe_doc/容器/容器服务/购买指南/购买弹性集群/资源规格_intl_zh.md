@@ -81,7 +81,7 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 	<tr>
 		<td rowspan="4">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海二区<br>ap-shanghai-2</td>
-		<td> Intel CPU、GPU/vGPU(T4) </td>
+		<td> Intel CPU、GPU/vGPU(T4)  </td>
 	</tr>
 	<tr>
 		<td>上海三区<br>ap-shanghai-3</td>
@@ -93,7 +93,7 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 	</tr>
 	<tr>
 		<td>上海五区<br>ap-shanghai-5</td>
-		<td> Intel/AMD CPU </td>		
+		<td> Intel/AMD CPU </td>
 	</tr>
 	<tr>
 		<td rowspan="1">华东地区（南京）<br> ap-nanjing</td>
@@ -101,12 +101,16 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 		<td> Intel/AMD CPU </td>
 	</tr>
 	<tr>
-			<td rowspan="2">华北地区（北京）<br>ap-beijing</td>
+			<td rowspan="3">华北地区（北京）<br>ap-beijing</td>
 			<td>北京三区<br>ap-beijing-3</td>
 			<td> Intel/AMD CPU </td>
 	</tr>
 	<tr>
 		<td>北京四区<br>ap-beijing-4</td>
+		<td> Intel CPU </td>
+	</tr>
+	<tr>
+		<td>北京五区<br>ap-beijing-5</td>
 		<td> Intel CPU </td>
 	</tr>
 </tbody>
