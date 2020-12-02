@@ -1,17 +1,13 @@
-您可通过如下视频了解专线接入的概念、组成部分以及较 IPsec VPN 的优势与区别。
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1670-12008?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ## 什么是专线接入
 专线接入提供了一种快速安全连接腾讯云与本地数据中心的方法。用户可以通过一条物理专线，一次性打通位于多地域的腾讯云计算资源，实现灵活可靠的混合云部署。
 - **专线部署混合云（一）**
   使用传统的专用通道打通用户 IDC 与云上 VPC。
   如果一根物理专线需要打通多个 VPC，您需要通过不同的 VLAN ID 分别创建专用通道来连接多 个VPC。
-  
-
+![](https://main.qcloudimg.com/raw/254e77e85563e8b44e48fbdd48c6b710.svg)  
 - **专线部署混合云（二）**
 使用云联网产品实现互通。
 优势：您只需要创建一个通道连接云联网专线网关，然后把专线网关加载到云联网，即可实现云联网内的多个网络实例间全互通，操作简单。
-
+ ![](https://main.qcloudimg.com/raw/d6f4e424fd8764956ac64b7b8bd37a36.svg)
 
 ## 组成部分
 专线接入由物理专线、专用通道和专线网关组成。
@@ -47,7 +43,7 @@
 <tr>
 <td>支持大带宽</td>
 <td>单线路最大支持10Gbps带宽连接，还可接入多条10Gbps链路做网络负载均衡，无理论上限。</td>
-<td>单网关最大支持100Mbps带宽上限，私有网络支持多 VPN 网关配置，可通过多 VPN 网关配置，满足大于100Mbps的 VPN 接入。</td>
+<td>单网关最大支持1Gbps带宽上限，私有网络支持多 VPN 网关配置，可通过多 VPN 网关配置，满足大于1Gbps的 VPN 接入。</td>
 </tr>
 <tr>
 <td>安全性高</td>
