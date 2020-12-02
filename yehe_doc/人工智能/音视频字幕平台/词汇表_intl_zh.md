@@ -1,7 +1,7 @@
 
 ### AIT
 
-参见 [音视频字幕平台](https://intl.cloud.tencent.com/document/product/1049/38807#1447)
+参见 [音视频字幕平台](https://intl.cloud.tencent.com/document/product/1049/38807#.E9.9F.B3.E8.A7.86.E9.A2.91.E5.AD.97.E5.B9.95.E5.B9.B3.E5.8F.B0)
 
 
 ### 人工翻译
