@@ -1,24 +1,21 @@
-The watermark feature is disabled by default for LVB push. This document describes how to associate/unassociate a push domain name with/from a watermark template to enable/disable the watermark feature.
+## Operation Scenarios
 
-## Notes
-- The template configuration will take effect in about 5–10 minutes.
-- After a push domain name is associated with a watermark template, the watermark feature is enabled for the push address under the push domain name.
+The watermarking feature is disabled by default for LVB push. If you want to set or modify it, you can do so in the watermarking configuration. Then, associate a specified domain name in Domain Management.
 
 ## Prerequisites
-- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live), and have added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
-- You have created a [watermark template](https://intl.cloud.tencent.com/document/product/267/31073).
 
+- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
+- You have added a **push domain name**.
 
-## Associating a Watermark Template
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to configure or click **Manage** to enter the domain details page.
-2. Select **Template Configuration** and click **Edit** in the **Watermark Configuration** tab.
-![](https://main.qcloudimg.com/raw/c46b5fc50d2bfaaa995f55750a05cca1.png)
-3. Select a watermark template and click **Save**.
-![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
-> You can click **Preview** in the "Operation" column to view the watermark.
+## Directions
 
-## Unassociating a Watermark Template
-1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the push domain name you want to unassociate or click **Manage** to enter the domain details page.
-2. Select **Template Configuration** and click **Edit** in the **Watermark Configuration** tab.
-3. Deselect the template and click **Save**.
+1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the Domain Management page.
+2. Select **Template Configuration** to view the **Watermark Configuration** tab.
+3. 	Click **Edit** to select a watermarking configuration which specifies the corresponding watermarking template for the playback address under the domain name.
+4.	Click **Save**.
+
+>>The template configuration will take effect in about 5–10 minutes. For more information on how to configure a watermark template, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
+
+![](https://main.qcloudimg.com/raw/6ffa50ddcae578db71bed6d62d548643.png)
+>To unbind the watermarking configuration from the domain name, click **Edit** in **Template Configuration**, deselect the corresponding template, and click **Save**.
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
