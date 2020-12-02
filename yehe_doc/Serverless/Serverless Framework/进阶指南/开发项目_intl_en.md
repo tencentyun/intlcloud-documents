@@ -107,10 +107,10 @@ sls deploy --stage  dev
 sls deploy --debug
 
 # Deploy and publish the function version
-sls deploy --inputs.publish
+sls deploy --inputs publish=trues
 
 # Deploy and switch 20% traffic to the `$latest` version
-sls deploy --inputs.traffic=0.2
+sls deploy --inputs traffic=0.2
 ```
 
 

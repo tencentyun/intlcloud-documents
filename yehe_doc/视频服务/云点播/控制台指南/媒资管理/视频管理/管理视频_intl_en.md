@@ -1,9 +1,9 @@
 
-This document describes how to manage videos via the VOD Console, including editing basic video information, previewing videos in superplayer, and generating web player code.
+This document describes how to manage videos via the VOD Console. You can edit video information, preview videos in superplayer, and generate web player code, etc.
 
 ## Editing Basic Info
-1. Log in to the VOD Console and select **Media Asset Management** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
-2. Find the target video file and click **Manage** to enter the "Basic Info" page which displays the video’s basic information, list of standard transcoding source and output files, and list of adaptive bitrate streaming output files:
+1. Log in to VOD Console and select **Media Asset Management** > **[Video Management](https://console.cloud.tencent.com/vod/media)**. You will land on the "Uploaded" page.
+2. Find the target video and click **Manage** to enter the "Basic Info" page. You will find the video’s basic information here, including list of standard transcoding source and output files, and list of adaptive bitrate streaming output files:
 	- **Basic Info**
 	<table border=0 cellpadding="0" cellspacing="0">
 <thead>
@@ -14,61 +14,61 @@ This document describes how to manage videos via the VOD Console, including edit
 </thead>
 <tbody>
 <tr>
-<td>Video thumbnail</td>
-<td ><ul><li>Click **Edit** on the right of the video thumbnail to select images in “Image Management, or to upload a local image.<br><li>Only JPG, PNG, and static GIF images are supported.<br><li>The image can be up to one MB in size and 1920 x 1080 in dimensions.<br><li>The filename should not contain Chinese characters.</ul></td>
+<td>Video cover image</td>
+<td ><ul><li>Click **Edit** on the right of the video thumbnail to select images in “Image Management, or to upload a local image.<br><li>Only JPG, PNG, and static GIF images are supported.<br><li>The image can be up to 1 MB in size and 1920 x 1080 in dimensions.<br><li>The filename should not contain Chinese characters.</ul></td>
 </tr>
 <tr>
 <td>Video name</td>
-<td><ul> <li>You can rename the video.<br><li>The name can contain up to 20 characters and cannot contain double quotation marks ("), single quotation marks ('), less-than signs (<), or greater-than signs (>). </ul></td>
+<td><ul> <li>You can rename the video.<br><li>The video name can contain up to 20 characters and cannot contain double quotation marks ("), single quotation marks ('), less-than signs (<), and greater-than signs (>).</ul></td>
 </tr>
 <tr>
 <td>Category</td>
-<td><ul><li>You can modify the video category. <br><li>Click **Edit**, select a category, and click **OK**.</ul></td>
+<td><ul><li>You can modify the video category. <br><li>Click **Edit**, select a category, and click **Confirm**.</ul></td>
 </tr>
 <tr>
 <td>Tags</td>
-<td><ul><li>You can set a tag for the video. <br><li>Set a tag of up to 16 characters (only letters and digits are supported) and then press Enter.</ul></td>
+<td><ul><li>You can set a tag for the video. <br><li>Set a tag of up to 16 characters (only letters and digits are supported) and then press Confirm.</ul></td>
 </tr>
 <tr>
 <td>Overview</td>
-<td><ul><li>You can add a brief description to the video. <br><li>The description can contain up to 128 characters.</ul></td>
+<td><ul><li>You can add a brief description to the video.<br><li>The description length is up to 128 characters.</ul></td>
 </tr>
 </tbody></table>
-	- **Standard Transcoding List**: it lists the source videos and output video files.
+	- **Standard Transcoding List**: lists the source videos and output video files.
 		- You can copy the URL of a video file and preview it.
-		- You can also delete an output video file or share it through QR code.
+		- You can also delete an output video file or share it via QR code.
 	- **Adaptive Bitrate Streaming List**
 	You can copy the URL of a video file, preview it, and view its details.
 	
 ## Screenshot Information
 
-1. Log in to the VOD Console and select **Media Asset Management** > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page.
-2. Find the target video file and click **Manage** to enter the "Basic Info" page.
-3. Select the **Screenshot Info** tab, which displays a list of original videos and screenshot files (including generated animated images, image sprites, sampled screenshots, and point-in-time screenshots) of the processed videos.
+1. Log in to VOD Console and select **Media Asset Management** > **[Video Management](https://console.cloud.tencent.com/vod/media)** You will land on the "Uploaded" page.
+2. Find the target video and click **Manage** to enter the "Basic Info" page.
+3. Select the **Screenshot Info** tab. It displays a list of original videos and screenshot files of the processed videos, including generated animated images, image sprites, sampled screenshots, and point-in-time screenshots.
 
->?Only 100 entries of screenshot information are displayed on the console. To get the information of all screenshots, click the download icon in the top-right corner.
+>?Only the latest 100 entries of screenshot information are displayed. To get the information of all screenshots, click the download icon in the top-right corner.
 
-## Preview on Superplayer
->!Superplayer only supports previewing output videos of adaptive bitrate streaming. If you want to quickly generate videos that can be previewed on the superplayer, please see [Using Superplayer for Playback - Integration Guide](https://cloud.tencent.com/document/product/266/46217#.E5.88.9D.E7.BA.A7.E6.AD.A5.E9.AA.A4).
+## Superplayer Preview
+>!Superplayer only supports previewing adaptive bitrate streaming videos. If you want to quickly generate videos for the superplayer, please see [Step 1. Upload and process a video](https://intl.cloud.tencent.com/document/product/266/38098#.E5.88.9D.E7.BA.A7.E6.AD.A5.E9.AA.A4).
 
 After transcoding a video to an adaptive bitrate streaming file, you can preview it in superplayer. VOD supports preview on both the **web player** and **client player**.
 
 ### Parameter information
-**Playback Configuration**: all the configurations of the superplayer will be displayed, where “default” and “basicDrmPreset” configurations are default ones. You must [enable key hotlink protection](https://console.cloud.tencent.com/vod/distribute-play/domain) for the primary distribution domain name before using any playback configurations other than the “default” configuration.**
+**Playback Configuration**: displays all the configurations of the superplayer. It comes with two configurations: “default” and “basicDrmPreset”. To configure your own parameter, you must first [enable key hotlink protection](https://console.cloud.tencent.com/vod/distribute-play/domain) for the primary distribution domain name via the Operation tab.
 ![](https://main.qcloudimg.com/raw/f9af1b9e2a3be269271f2bbc9ba04c98.png)
 
 
 ### Configuration items
-**Configuration items**: selected playback configuration items will be displayed.
-- **Adaptive bitrate streaming template for playback**: specify the adaptive bitrate streaming template supported by the player. Only output videos of adaptive bitrate streaming transcoded by this template can be previewed on the current player.
-- **Image sprite template for thumbnail preview**: specify the image sprite template supported by the player. Only image sprites generated by this template can be used for thumbnail preview on the current player.
+**Configuration items**: shows the selected playback configuration items.
+- **Adaptive bitrate streaming template for playback**: specify an adaptive bitrate streaming template for your current player to preview videos transcoded by the template.
+- **Image sprite template for thumbnail preview**: specify an image sprite template for the player to preview image sprites generated by the template.
 ![](https://main.qcloudimg.com/raw/5939befcbd87c048a10733b25673da89.png)
 
 ### Playback control
-Playback configuration for domain name with key hotlink protection enabled: you set parameters to control the **Playback URL Validity**, **Preview Duration**, and **Max Playback IPs**.
+Playback configuration( for domain name with key hotlink protection enabled): you can set the parameters of **playback URL expiration time**, **preview duration**, and **maximum number of playback IPs**.
 - Playback URL Validity: specify the expiration time of the video URL.
-- Preview Duration: specify the preview duration of the video, which must be more than 30 seconds. If this parameter is left empty, he video can be watched unrestrictedly.
-- Max Playback IPs: specify the maximum number of IPs allowed for playback.
+- Preview duration: specify the preview duration of a video, which must be more than 30 seconds. If left empty, there will be no limit on playback duration.
+- Maximum number of playback IPs: specify the maximum number of IPs allowed for playback.
 
 ### Video preview
 #### Web player
@@ -84,11 +84,11 @@ You can click a video to preview it on the web player. You can also copy the cod
 
 
 ## Web Player Code Generation
-1. Log in to the VOD Console and select **Media Asset Management* > **[Video Management](https://console.cloud.tencent.com/vod/media)** to enter the "Uploaded" page by default.
-2. Find the target video file and click **Manage** to enter the "Basic Info" page.
-3. Select the **Web Player Code Generation** tab where you can manage player information and web player code.
-	- In the "Parameter Settings" section, click **Modify** and the "Modify Player" dialog box will pop up. Select a configured player in the player drop-down list (for more information on player settings, please see [Web Player Management](https://intl.cloud.tencent.com/document/product/266/14056)), and click **OK**.
-	- In the **Web Player Code** section, you can choose an appropriate video resolution in the "Video Resolution" drop-down list, enable or disable autoplay, and set **HTML** or **IFRAME** as the code type.
+1. Log in to VOD Console and select **Media Asset Management* > **[Video Management](https://console.cloud.tencent.com/vod/media)** You will land on the "Uploaded" page.
+2. Find the target video and click **Manage** to enter the "Basic Info" page.
+3. Select the **Web Player Code Generation** tab to manage your player information and web player code.
+	- Click **Modify** in the "Parameter Settings" page, and the "Modify Player" dialog box will pop up. Select a configured player from the drop-down list (for more information on player settings, please see [Web Player Management](https://intl.cloud.tencent.com/document/product/266/14056)), and click **OK**.
+	- In the **Web Player Code** page, you can choose an appropriate video resolution from the "Video Dimension" drop-down list, enable or disable autoplay, and set **HTML** or **IFRAME** as the code type.
 4. Click **Copy Code** to copy the generated web player code.
 
 
