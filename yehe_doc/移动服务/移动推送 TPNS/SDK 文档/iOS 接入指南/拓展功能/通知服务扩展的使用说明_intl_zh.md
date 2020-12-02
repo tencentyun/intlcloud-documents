@@ -120,9 +120,9 @@ brew update && brew reinstall new_tpns_svc_ext
         self.contentHandler(self.bestAttemptContent);
     }];
 }
-	```
+```
 	
-	
+
 ## 接入验证
 
 在您按以上流程完成接入后，可按如下步骤验证插件接入是否成功：
