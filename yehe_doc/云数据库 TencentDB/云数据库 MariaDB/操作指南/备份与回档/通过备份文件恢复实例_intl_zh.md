@@ -1,6 +1,5 @@
 MariaDB 可通过回档功能来查看历史数据，如果您需要在本地恢复您的数据库实例，可按照本文的步骤进行操作恢复历史数据。
 
-
 ## 前提条件
 ### 准备服务器
 如您需在本地恢复数据库实例，请确保服务器基本配置如下：
@@ -111,7 +110,7 @@ innodb_undo_tablespaces=0
 ```
 innobackupex --defaults-file=/etc/my.cnf --move-back /root/xtrabackuptmp/
 ```
-成功后，显示`complete OK!`，如下所示：
+成功后，显示`Complete OK!`，如下所示：
 ![](https://main.qcloudimg.com/raw/f193ec9e3d4693e103038ca9a1f280e1.png)
 
 #### 7. 启动数据库
@@ -144,7 +143,7 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 #### 4. 获取数据密钥明文
 >?如需使用 [连接加密](https://intl.cloud.tencent.com/document/product/237/35447) 功能，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
 
-解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql) 的实例管理页的【数据安全性】>【连接加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
+解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb) 的实例管理页的【数据安全性】>【连接加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
 - 通过密钥管理服务 KMS 的 API，自己实现获取数据密钥明文，请参见 [KMS API 文档](https://intl.cloud.tencent.com/document/product/1030/32172)。
 -  通过腾讯云提供的 Python 脚本`./kms_tool.py`，获取数据密钥明文。
  - 参数解释：
@@ -193,7 +192,7 @@ python ./kms_tool.py --role="qcs::cam::uin/xxxxxxxxx:roleName/kmsTDSQLRole"
 ![](https://main.qcloudimg.com/raw/2b4b6098a2f527902409fb3bac19fb61.png)
 
 #### 9. 重新启动 mysqld
-下图为腾讯云专有云数据库 TDSQL 自带的启动脚本，您也可以使用其他方案启动 mysqld。
+下图为腾讯云专有云数据库自带的启动脚本，您也可以使用其他方案启动 mysqld。
 ![](https://main.qcloudimg.com/raw/4c6cba9793eb01299b39c672b8bbab84.png)
 
 ####  10. 正常访问加密表
