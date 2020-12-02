@@ -82,3 +82,5 @@ For example, if an object in STANDARD_IA storage class is transitioned before 30
 #### Size-insensitivity
 
 There is a minimum allowed object size in the STANDARD_IA, ARCHIVE, and DEEP ARCHIVE storage classes. For example, if an object below 64 KB is uploaded to the STANDARD_IA storage class, it will be calculated as 64 KB. COS will not check the file size; instead, it will transition objects only according to the specified rule.
+
+>? COS lifecycle does not transition any object of zero bytes.
