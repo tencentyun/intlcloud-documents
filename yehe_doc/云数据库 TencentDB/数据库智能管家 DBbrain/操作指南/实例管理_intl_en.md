@@ -19,7 +19,7 @@ The instance management list shows the basic information of TencentDB instances 
 DBbrain provides custom settings. You can enable or disable database inspection or instance overview for an instance as needed. After database inspection or instance overview is enabled, the instance will be displayed on the database inspection page or the instance overview page.
 1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/monitor) and select **Instance Management** on the left sidebar. On the displayed page, select a database type at the top.
 2. In the list, select one or more instances and click **Custom Settings**.
-![](https://main.qcloudimg.com/raw/2355f14f8d04e67b476da896b20cad88.png)
+
 3. In the pop-up dialog box, enable or disable database inspection or instance overview. Click **View Details** to view basic information (instance ID/name and configurations) of the selected instance.
-![](https://main.qcloudimg.com/raw/515948c5d53f6a4a683331c12bb062e7.png)
+
 
