@@ -190,7 +190,7 @@ Upload parameter: `TXUGCPublishTypeDef.TXPublishParam`
 
 | Parameter Name         | Description                               | Type   | Required   |
 | ------------ | ---------------------------------- | ------- | ---- |
-| signature | [Signature for Upload from Client](https://cloud.tencent.com/document/product/266/33922). | String  | Yes    |
+| signature | [Signature for Upload from Client](https://intl.cloud.tencent.com/zh/document/product/266/33922). | String  | Yes    |
 | videoPath    | Path to a local video file. | String                           | Yes    |
 | coverPath | Path to a local cover image file. No cover file will be used by default.                  | String  | No.    |
 | enableResume | This parameter specifies whether to enable checkpoint restart. It is enabled by default.                      | boolean | No    |
