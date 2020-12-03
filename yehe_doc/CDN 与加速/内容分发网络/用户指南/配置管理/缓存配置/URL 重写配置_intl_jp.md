@@ -11,7 +11,7 @@ URL書き換え設定をカスタマイズすることにより、URL302を宛�
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のメニューバーで【ドメイン名管理】を選択し、ドメイン名操作列の【管理】をクリックして、ドメイン名設定画面に入ります。タブを【キャッシュ設定】に切り替えて、【URL書き換え設定】が表示されます。
 
 デフォルトでは、URL書き換え設定は無効になっています。
-![](https://main.qcloudimg.com/raw/ef62e52b60ebe50e57771b30709567d7.png)
+![](https://main.qcloudimg.com/raw/01f93aaa70c523ae0bb1ab5debae8558.png)
 
 
 ### 新しいルール
@@ -26,13 +26,13 @@ URL書き換え設定をカスタマイズすることにより、URL302を宛�
 + 書き換えられるURLとターゲットURLが入力できる長さは1024文字を超えることはできません。
 
 【書き換えルールの追加】をクリックします。
-![](https://main.qcloudimg.com/raw/d10ef7d7f097bcaf4021b13659407adc.png)
+![](https://main.qcloudimg.com/raw/97ea8713395f3af8654c39be97f124d3.png)
 ルールが追加された後も、全体の設定はデフォルトで無効になるため、ライブ ネットワーク上のサービスには影響しません。
 
 >?無効の状態でも以下の設定を変更できますが、ライブネットワークには配布されません。有効にされた場合にのみ、ライブネットワーク設定が配信されます。
 
 ボタンをクリックして設定を有効にし、追加された書き換えルールをライブネットワークに配信することができます。
-![](https://main.qcloudimg.com/raw/c94b0d99ffc52b02bb3040551ec96637.png)
+![](https://main.qcloudimg.com/raw/214b034e578d5eaac0a63cacd49f1e2d.png)
 
 リクエストされたURLが現在設定されているルールと一致する場合、対象リクエストは対応するターゲットURLにリダイレクトされます。
 
@@ -51,7 +51,7 @@ URL書き換え設定をカスタマイズすることにより、URL302を宛�
 ## 設定例
 
 アクセラレーションドメイン名 `www.test.com`の**URL書き換え設定**が次の場合、
-![](https://main.qcloudimg.com/raw/e56fed9a5609dd3533d4b18a970f072d.png)
+![](https://main.qcloudimg.com/raw/19edbf944b4e727b7c62270f2d8078cf.png)
 
 実際のアクセス状況は次のとおりです。
 
