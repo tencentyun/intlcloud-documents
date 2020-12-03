@@ -1,6 +1,6 @@
 ## TRTCCloud @ TXLiteAVSDK
 
-### Creating and terminating an ITRTCCloud singleton
+### Creation and termination
 
 | API | Description |
 |-----|-----|
@@ -20,8 +20,9 @@
 | [connectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a062bc48550b479a6b7c1662836b8c4a5) | Requests cross-room call (anchor competition). |
 | [disconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abd656e4c9b6a01231810ae897627e9bc) | Exits cross-room call. |
 | [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
-| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6100a5f395442d38ce9adab922382caf) | Creates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud) sub-instance. |
-| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a19e0d7921ac494fb588a4654d97abe86) | Terminates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud) sub-instance. |
+| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6100a5f395442d38ce9adab922382caf) | Creates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud) subinstance. |
+| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a19e0d7921ac494fb588a4654d97abe86) | Terminates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud) subinstance. |
+| [switchRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7c5a2aa06d649492f546d9c70a5de4a1) | Switches room. |
 
 
 ### CDN APIs
@@ -32,7 +33,7 @@
 | [stopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afc00ba747be5299cd7235928a628339e) | Stops pushing to Tencent Cloud LVB CDN. |
 | [startPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aad42e78d355fd563b959a5053bac54cb) | Starts relaying to the live streaming CDN of another cloud. |
 | [stopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5d8a86795b8a2d7eaf9be7157dd9b8dd) | Stops relaying to non-Tencent Cloud address. |
-| [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) | Sets On-Cloud MixTranscoding parameters. |
+| [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) | Sets On-cloud MixTranscoding parameters. |
 
 
 ### Video APIs
@@ -42,9 +43,9 @@
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) | Enables the preview image of local video (for iOS). |
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e2) | Enables the preview image of local video (for macOS). |
 | [updateLocalView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) | Updates the preview image of local video. |
-| [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) | Stops local video capture and preview. |
+| [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) | Stops local video capturing and preview. |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85ea151beebda2f86c3802f3a6a9e82) | Pauses/Resumes pushing local video data. |
-| [setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2) | Sets the image to push when local video pushing pauses. |
+| [setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2) | Sets the image to be pushed when local video pushing is paused. |
 | [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) | Starts displaying remote video image. |
 | [updateRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) | Updates the window of remote video image. |
 | [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a066) | Stops displaying remote video image and pulling the video data stream of remote user. |
@@ -53,18 +54,13 @@
 | [muteAllRemoteVideoStreams](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#adf7cd002366760749c6f4d1ee9291db1) | Pauses/Resumes receiving all remote video streams. |
 | [setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) | Sets video encoder parameters. |
 | [setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9) | Sets network bandwidth limit parameters. |
-| [setLocalViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) | Sets the rendering mode of local image. |
-| [setRemoteViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff) | Sets the rendering mode of remote image. |
-| [setLocalViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4d2d95ad8fbaf8edce18667aa835848e) | Sets the clockwise rotation angle of local image. |
-| [setRemoteViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90) | Sets the clockwise rotation angle of remote image. |
+| [setLocalRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5d4f0aba952a355f153d374899e6dcec) | Sets local image rendering. |
+| [setRemoteRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae04d890786fc8c176cd5834e5892951a) | Sets remote image rendering. |
 | [setVideoEncoderRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a200c174b27bbe7397b0639e707ee6547) | Sets the direction of image output by video encoder (i.e., video image viewed by remote user and recorded by server).
-| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a97a2c690c467d58f74e17efe871b8403) | Sets the mirror mode of local camera's preview image (for iOS). |
-| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a97a2c690c467d58f74e17efe871b84032) | Sets the mirror mode of local camera's preview image (for macOS). |
 | [setVideoEncoderMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a29a7cae6b4e82098fc342d4f0066d2ad) | Sets the mirror mode of image output by encoder. |
 | [setGSensorMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7a8c22e2f02d313590d4c499e18ebe3f) | Sets the adaptation mode of g-sensor. |
 | [enableEncSmallVideoStream](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2aa9c464203b1c62cbb9ccabccc6334a) | Enables dual-channel encoding mode with big and small images. |
 | [setRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab6d4c9a4946e85b35547d73e9b232d92) | Specifies whether to view the big or small image of the specified `uid`. |
-| [setPriorRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#adadb7a837e1b50ebdbb928d4bd81b5d5) | Sets the video quality preferred by viewers. |
 | [snapshotVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af8a1345d9c7bf0e1b1c782243eafbd93) | Video screenshot. |
 
 
@@ -72,61 +68,29 @@
 
 | API | Description |
 |-----|-----|
-| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
-| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) | Enables local audio capture and upstreaming. |
-| [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab78601c38f1b872b03b662e6856be84c) | Disables local audio capture and upstreaming. |
+| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) | Enables local audio capturing and upstreaming. |
+| [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab78601c38f1b872b03b662e6856be84c) | Disables local audio capturing and upstreaming. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9) | Mutes/Unmutes local audio. |
-| [setAudioRoute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa62f2af2d86a64c0ebc7b9f00e4a54fe) | Sets audio routing. |
 | [muteRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2) | Mutes/Unmutes specified remote user's audio. |
 | [muteAllRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a75148bf8a322c852965fe774cbc7dd14) | Mutes/Unmutes all users' audio. |
-| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5475b81c1712323257c10baaf7ad6969) | Sets SDK capture volume level. |
-| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7ce26486575e72bc445432929fdff26c) | Gets SDK capture volume level. |
+| [setAudioRoute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa62f2af2d86a64c0ebc7b9f00e4a54fe) | Sets audio routing. |
+| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5475b81c1712323257c10baaf7ad6969) | Sets SDK capturing volume level. |
+| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a7ce26486575e72bc445432929fdff26c) | Gets SDK capturing volume level. |
 | [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af2602b1e9dfe932c89dd411f2f227192) | Sets SDK playback volume level. |
 | [getAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aba445625df38b8676d599df4a67a8407) | Gets SDK playback volume level. |
 | [enableAudioVolumeEvaluation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57d48cb0dbd7705486453b46e30e3fea) | Enables volume reminder. |
 | [startAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9eadd65cef0ac6b9c04ddfd7265afb01) | Starts audio recording. |
 | [stopAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac8c12476bbcf3d691060954fcdb6ebe6) | Stops recording|
-| [setSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab098daa610ae506dbf6c2a4f666ae32c) | Sets the system volume type used during call. |
 
 
-### Camera APIs
-
-| API | Description |
-|-----|-----|
-| [switchCamera](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa9a1952f442020bc92ce1beb65959e56) | Switches camera. |
-| [isCameraZoomSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8662b8ecab04a55a321ee9f16d0680a7) | Queries whether the current camera supports zoom. |
-| [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9777fe95f7830746c1ba6b10446c37a0) | Sets the zoom factor (focal length) of camera. |
-| [isCameraTorchSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#acd005524f8e2c2fbfcc415049e666ced) | Queries whether the device supports flash (flash mode). |
-| [enbaleTorch](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enables or disables flash. |
-| [isCameraFocusPositionInPreviewSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a0e164f727b990581a42f97dca1bf7548) | Queries whether the device supports setting focus. |
-| [setFocusPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6a77cc99c41b926cd99909ae1ace39ae) | Sets camera focus. |
-| [isCameraAutoFocusFaceModeSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5af361145f04227ff1a451fee2705a77) | Queries whether the device supports automatic recognition of face position. |
-| [enableAutoFaceFoucs](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a32a8f584879b17f211df75494a5be96c) | Enables automatic recognition of face position. |
-| [getCameraDevicesList](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad93f6748f695f6735b8b22fdbda45115) | Gets camera list. |
-| [getCurrentCameraDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2d0a4120dfbc830aa53837cc019f450e) | Gets the currently used camera. |
-| [setCurrentCameraDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc) | Sets the camera to be used. |
-
-
-### Audio device APIs
+### Device management APIs
 
 | API | Description |
 |-----|-----|
-| [getMicDevicesList](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96fe0c67212fbc8ac9ddf648a40c70ca) | Gets mic list. |
-| [getCurrentMicDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a94b64d50649a7e99b8d6f22c094182e2) | Gets the currently used mic. |
-| [setCurrentMicDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6) | Sets the mic to be used. |
-| [getCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af69d237159163eebcb6876e767d7692e) | Gets current mic volume level. |
-| [setCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aaa6810f64c153e779697dc2d5bd30f6a) | Sets mic volume level. |
-| [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) | Sets whether to mute current system mic. |
-| [getCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae9c936081b96348ce047337a1d3bb7b0) | Gets whether the current system mic is muted. |
-| [getSpeakerDevicesList](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a0267678df702f119b8124ed31533d74a) | Gets speaker list. |
-| [getCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f) | Gets the currently used speaker. |
-| [setCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6c951071ac218930680febd84314ee05) | Sets the speaker to be used. |
-| [getCurrentSpeakerDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa25ac85f6f84b352175aebb9c7007247) | Gets current speaker volume level. |
-| [setCurrentSpeakerDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a019001b23569c8b6da7f3276af58e0a7) | Sets current speaker volume level. |
-| [setCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a738ea0dffd48d5bc2b05b146eb79ec46) | Sets whether to mute current system speaker. |
-| [getCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a793d11364882c7fac7f9200f8761400c) | Gets whether the current system speaker is muted. |
+| [getDeviceManager](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a950f3f1c949def9e1e470f467db7b27a) | Gets the device management class `TXDeviceManager`. |
 
-### Beauty filters and face change effects APIs
+
+### Beauty and face changing APIs
 
 | API | Description |
 |-----|-----|
@@ -134,47 +98,44 @@
 | [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad0bedbddf415d26cff8242d5842a0908) | Adds watermark. |
 
 
-### Music and voice effects API
+### Music and voice effect APIs
 
 | API | Description |
 |-----|-----|
 | [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af962213fefe6988a08820ac9af00df66) | Gets the sound effect management class `TXAudioEffectManager`. |
 
 
-### Screen sharing API functions
+### Screen sharing APIs
 
 | API | Description |
 |-----|-----|
 | [startScreenCaptureInApp](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) | Starts in-app screen sharing (this API supports only iPhones and iPads on iOS 13.0 and above). |
 | [startScreenCaptureByReplaykit](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) | Starts system-level screen sharing (this API supports iPhones and iPads on iOS 11.0 and above). |
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97) | Starts screen sharing (for macOS). |
-| [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | Stops screen capture. |
+| [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | Stops screen capturing. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) | Pauses screen sharing. |
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15) | Resumes screen sharing. |
-| [getScreenCaptureSourcesWithThumbnailSize](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8e5286e1035b64b7d2bf8fadd721123) | Enumerates shareable windows. This API is supported only for macOS. You are recommended to call this API before calling `startScreenCapture`. |
+| [getScreenCaptureSourcesWithThumbnailSize](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8e5286e1035b64b7d2bf8fadd721123) | Enumerates shareable windows. This API is supported only for macOS. We recommend that you call this API before calling `startScreenCapture`. |
 | [selectScreenCaptureTarget](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ead6fb3106ea266caa922f5901bf18) | Sets screen sharing parameters (supported only for macOS). This method can be called during screen sharing. |
-| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a68d048ccd0d018995e33e9e714e14474) | Starts displaying the secondary image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
-| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#acab6e31898857af876af66e779216203) | Stops displaying the secondary image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
-| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a487b3cd9a6b41581d4b45c752c5ede4c) | Sets the display mode of secondary image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
-| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a72c66b67eacd24a0e796a3213219fb6d) | Sets the clockwise rotation angle of secondary image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
 | [setSubStreamEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abc0f3cd5c320d0e65163bd07c3c0a735) | Sets encoder parameters for screen sharing (this API is supported only for macOS). |
 | [setSubStreamMixVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a18d3fb6535c9884784c5ad5f8dfd0b12) | Sets the audio mixing volume level of screen sharing (this API is supported only for macOS). |
-| [addExcludedShareWindow](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa567171999b17a7f5655213b193415a7) | Adds specified windows to the exclusion list of screen sharing. After than such windows will not be shared (this API is supported only for macOS). |
+| [addExcludedShareWindow](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa567171999b17a7f5655213b193415a7) | Adds specified windows to the exclusion list of screen sharing. After being added, the windows will not be shared (this API is supported only for macOS). |
 | [removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a95b1f3fbc6ff755f67f7e9b86240ea5f) | Removes specified windows from the exclusion list of screen sharing (this API is supported only for macOS). |
 | [removeAllExcludedShareWindows](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab2b6a778a528d58e2a42c9adfc7684f2) | Removes all windows from the exclusion list of screen sharing (this API is supported only for macOS). |
 
-### Custom capture and rendering APIs
+
+### Custom capturing and rendering APIs
 
 | API | Description |
 |-----|-----|
-| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ade46563b03208042e61bcc693e4a5d06) | Enables custom video capture mode. |
+| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ade46563b03208042e61bcc693e4a5d06) | Enables custom video capturing mode. |
 | [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831) | Delivers captured video data to SDK. |
 | [setLocalVideoRenderDelegate](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aba3d309645d27304b6d4ea31b21a4cda) | Sets the callback of custom rendering for local video. |
 | [setRemoteVideoRenderDelegate](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5244e73ac27599370f966575e11959ff) | Sets the callback of custom rendering for remote video. |
-| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d) | Enables custom audio capture mode. |
+| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d) | Enables custom audio capturing mode. |
 | [sendCustomAudioData](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a62cab4ec7c336ae135c2f681aca25da1) | Delivers captured audio data to SDK. |
 | [setAudioFrameDelegate](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01726b03b102c32222a2a26b16abcd48) | Sets audio data callback. |
-| [setEncodedDataProcessingListener](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a630728293b3a591f1baf81cd12deb7fd) | Configures callbacks of encoded audio/video data for custom processing. |
+
 
 ### Custom message sending APIs
 
@@ -190,12 +151,6 @@
 |-----|-----|
 | [startSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a058556b224315dcde3601ab621a09dee) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
 | [stopSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a58d732ba648d1f9a3a460c02de79bb9b) | Stops server speed test. |
-| [startCameraDeviceTestInView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bd6289b969adde0096c83d6a5532332) | Starts camera test. |
-| [stopCameraDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b67fa3f322efe538d924b381c06e676) | Stops video test preview. |
-| [startMicDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6f467c12fcea7e09cc97861d511498a) | Starts mic test. |
-| [stopMicDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8cca1c5913ac021987680195075e5fc9) | Stops mic test. |
-| [startSpeakerDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a60aa520016687bea03f17cb4ec19c1b6) | Starts speaker test. |
-| [stopSpeakerDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abf383f971dc54f0254b2d40f100cc9ca) | Stops speaker test. |
 
 
 ### Log APIs
@@ -218,7 +173,7 @@
 | API | Description |
 |-----|-----|
 | [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abb57991f5e4f4ca1b95c2181a7e538c8) | Sets mic volume level. |
-| [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1336146862fb742de6cbe5718f9b7008) | Sets effect levels of beauty, brightening, and rosy skin filters. |
+| [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1336146862fb742de6cbe5718f9b7008) | Sets the effect levels of beauty, brightening, and rosy skin filters. |
 | [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae0e4341ef565cc5ba28101574179cd56) | Sets the effect level of eye enlarging filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [setFaceScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a52ad635b237ccb1eef53a4ed9e650035) | Sets the effect level of face slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
 | [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bf6dd0f5a5c6c013323d31f60d494e2) | Sets the effect level of chin slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
@@ -246,6 +201,35 @@
 | [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab0d46ccb8fca811851b30e7731958024) | Pauses sound effect. |
 | [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a207dd8909c05d4a8a1431d33e644d4fe) | Resumes sound effect. |
 | [enableAudioEarMonitoring](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa26564f3388bc249ecbd2813d9c45390) | Enables in-ear monitoring. |
+| [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed492) | Starts displaying remote video image. |
+| [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a0662) | Stops displaying remote video image and pulling the video data stream of remote user. |
+| [setRemoteViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff) | Sets the rendering mode of remote image. |
+| [setRemoteViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90) | Sets the clockwise rotation angle of remote image. |
+| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a68d048ccd0d018995e33e9e714e14474) | Starts displaying the substream image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
+| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#acab6e31898857af876af66e779216203) | Stops displaying the substream image of remote user (`TRTCVideoStreamTypeSub`, which is usually used for screen sharing). |
+| [setLocalViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) | Sets the rendering mode of local image. |
+| [setLocalViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4d2d95ad8fbaf8edce18667aa835848e) | Sets the clockwise rotation angle of local image. |
+| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a97a2c690c467d58f74e17efe871b8403) | Sets the mirror mode of local camera's preview image (for iOS). |
+| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a97a2c690c467d58f74e17efe871b84032) | Sets the mirror mode of local camera's preview image (for macOS). |
+| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a487b3cd9a6b41581d4b45c752c5ede4c) | Sets the display mode of substream image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
+| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a72c66b67eacd24a0e796a3213219fb6d) | Sets the clockwise rotation angle of substream image (`TRTCVideoStreamTypeSub`, which is generally used for screen sharing). |
+| [setPriorRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#adadb7a837e1b50ebdbb928d4bd81b5d5) | Sets the video quality preferred by viewers. |
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53) | Sets audio quality. |
+| [setFocusPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6a77cc99c41b926cd99909ae1ace39ae) | Sets camera focus. |
+| [enableAutoFaceFoucs](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a32a8f584879b17f211df75494a5be96c) | Enables automatic recognition of face position. |
+| [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a9777fe95f7830746c1ba6b10446c37a0) | Sets the zoom factor (focal length) of camera. |
+| [enbaleTorch](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enables or disables flash. |
+| [setSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab098daa610ae506dbf6c2a4f666ae32c) | Sets the system volume type used during call. |
+| [startCameraDeviceTestInView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1bd6289b969adde0096c83d6a5532332) | Starts camera test. |
+| [startMicDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa6f467c12fcea7e09cc97861d511498a) | Starts mic test. |
+| [startSpeakerDeviceTest](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a60aa520016687bea03f17cb4ec19c1b6) | Starts speaker test. |
+| [setCurrentMicDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6) | Sets the mic to be used. |
+| [setCurrentMicDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aaa6810f64c153e779697dc2d5bd30f6a) | Sets mic volume level. |
+| [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) | Sets the mute status of the current system mic. |
+| [setCurrentSpeakerDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6c951071ac218930680febd84314ee05) | Sets the speaker to be used. |
+| [setCurrentSpeakerDeviceVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a019001b23569c8b6da7f3276af58e0a7) | Sets current speaker volume level. |
+| [setCurrentSpeakerDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a738ea0dffd48d5bc2b05b146eb79ec46) | Sets whether to mute the current system speaker. |
+| [setCurrentCameraDevice](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc) | Sets the camera to be used. |
 
 
 ## TRTCCloudDelegate @ TXLiteAVSDK
@@ -254,8 +238,8 @@
 
 | API | Description |
 |-----|-----|
-| [onError](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a10a711eb68abcacc1ca690501fc7c9fb) | Callback for error, which indicates that the SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions. |
-| [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a25ac0da9ad798a2313bdf8f296828541) | Callback for warning. This callback is used to alert to some non-serious problems such as lag or recoverable decoding failure. |
+| [onError](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a10a711eb68abcacc1ca690501fc7c9fb) | Error callback, which indicates that the SDK encountered an irrecoverable error and must be listened on. The corresponding UI reminders should be displayed based on the actual conditions. |
+| [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a25ac0da9ad798a2313bdf8f296828541) | Warning callback. This callback is used to alert you of some non-serious problems such as lag or recoverable decoding failure. |
 
 
 ### Room event callbacks
@@ -267,19 +251,20 @@
 | [onSwitchRole](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ade2c2eab48a30e7ca1c9246e573b7f28) | Callback of role switching. |
 | [onConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a69e5b1d59857956f736c204fe765ea9a) | Callback of result of requesting cross-room call (anchor competition). |
 | [onDisconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a26b34d83afac68928a156096862c9c06) | Callback of result of ending cross-room call (anchor competition). |
+| [onSwitchRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ad848cbee89f8b6258c9f03f4cb253a31) | Callback of room switching (switchRoom) result. |
 
 
-### User event callbacks
+### Member event callbacks
 
 | API | Description |
 |-----|-----|
 | [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a390831928a4d2a7977c4c1572da8be58) | A user enters the current room. |
 | [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#afa7d16e1e4c66d938fc2bc69f3e34c28) | A user exits the current room. |
-| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) | Whether the remote user has playable primary image (generally used for camera). |
-| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ac45fb0751f7dbd2466a35c8828c9911b) | Whether the remote user has playable secondary image (generally used for screen sharing). |
+| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) | Whether the remote user has a playable primary image (generally used for the camera). |
+| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ac45fb0751f7dbd2466a35c8828c9911b) | Whether the remote user has a playable substream image (generally used for screen sharing). |
 | [onUserAudioAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) | Whether the remote user has playable audio data. |
 | [onFirstVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a7fc7fd0144af2bc4ce0797f9de530d96) | Rendering of the first frame of a local or remote user starts. |
-| [onFirstAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aafc4536f552199368e48c8527783c410) | Playback of the first audio frame of a remote user starts (local audio currently is not supported for notification). |
+| [onFirstAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aafc4536f552199368e48c8527783c410) | Playback of the first audio frame of a remote user starts (the local audio currently does not support notifications). |
 | [onSendFirstLocalVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a17567554f413629a80b5970bdffdff7b) | The first local video frame data has been sent. |
 | [onSendFirstLocalAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#acb73daf4ce82cd03f787f057b233b412) | The first local audio frame data has been sent. |
 | [onUserEnter](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a27002c05cf5d87630d791efa69a92e29) | Disused API: an anchor enters the current room. |
@@ -290,7 +275,7 @@
 
 | API | Description |
 |-----|-----|
-| [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28) | Network quality. This callback is triggered once every 2 seconds to collect statistics of the current network upstreaming and downstreaming quality. |
+| [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28) | Network quality. This callback is triggered once every 2 seconds to collect the statistics of the current network upstreaming and downstreaming quality. |
 | [onStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#afb0811035e97c8544dbc9ecbef461dd9) | Callback of technical metric statistics. |
 
 
@@ -298,9 +283,9 @@
 
 | API | Description |
 |-----|-----|
-| [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aed43a70b4a95eb95181e2b410013bf54) | The connection between SDK and server has been closed. |
+| [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aed43a70b4a95eb95181e2b410013bf54) | The connection between the SDK and the server has been lost. |
 | [onTryToReconnect](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | The SDK tries to connect to the server again. |
-| [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | The connection between SDK and server has been restored. |
+| [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | The connection between the SDK and the server has been restored. |
 
 
 ### Hardware device event callbacks
@@ -309,14 +294,14 @@
 |-----|-----|
 | [onCameraDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aaa74021e5fd2564afb2df50e25eedeff) | Camera is ready. |
 | [onMicDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#afdac7dee94451913a4dc9982badc8035) | Mic is ready. |
-| [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a1859305732dfd03de63c9b780f99d513) | Audio routing changes (for iOS only), i.e., whether the audio is output by speaker or receiver. |
-| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a7775c3fbd84b8da3b7a75bdea27ed5c5) | Callback of volume level, including the volume level of each `userId` and total remote volume level. |
+| [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a1859305732dfd03de63c9b780f99d513) | Audio routing changes (for iOS only), i.e., whether the audio is output by the speaker or receiver. |
+| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a7775c3fbd84b8da3b7a75bdea27ed5c5) | Callback of volume level, including the volume level of each `userId` and the total remote volume level. |
 | [onDevice](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a0152908c497bd5ee5225251d9e93e500) | Callback of local device connection and disconnection. |
-| [onAudioDeviceCaptureVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a1c36efd81dc4edf88fc3bc6af83b1b5a) | Callback of volume change on the current audio capture device. |
+| [onAudioDeviceCaptureVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a1c36efd81dc4edf88fc3bc6af83b1b5a) | Callback of volume change on the current audio capturing device. |
 | [onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f) | Callback of volume change on the current audio playback device. |
 
 
-### Callbacks of custom message receipt
+### Custom message receipt callbacks
 
 | API | Description |
 |-----|-----|
@@ -333,10 +318,10 @@
 | [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a379dcf84e15f93b64efe2cb9f362877c) | Callback of stopping pushing to Tencent Cloud LVB CDN, which corresponds to the `stopPublishing()` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud). |
 | [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a817783f364bf9f6f0a1df4bc26bad628) | Callback of completion of starting relayed push to CDN. |
 | [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aab032eb48a56e8351ada60ce5b510d5e) | Callback of completion of stopping relayed push to CDN. |
-| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `[TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud)`. |
+| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | Callback of setting On-cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `[TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud)`. |
 
 
-### Audio effect callbacks
+### Sound effect callbacks
 
 | API | Description |
 |-----|-----|
@@ -353,26 +338,26 @@
 | [onScreenCaptureStoped](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a323d2b3e5b8b364722e0b161ab11c816) | This callback will be returned by the SDK when screen sharing is stopped. |
 
 
-### Callbacks of video data frames for custom processing.
+### Callbacks of custom processing of video data frames
 
 | API | Description |
 |-----|-----|
 | [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a7b43888945a9d12f088ed99a5854e3c1) | Callback of custom video rendering. |
 
 
-### Callbacks of audio data frames for custom processing.
+### Callbacks of audio data frame for custom processing
 
 | API | Description |
 |-----|-----|
-| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | Callback of original audio data captured by local mic. |
-| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | Callback of audio data captured by local mic and pre-processed by audio module. |
-| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a) | Audio data from each remote user before audio mixing, i.e., raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
-| [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e) | Audio data after audio data from each channel is mixed. |
+| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) | Callback of original audio data captured by the local mic. |
+| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0) | Callback of audio data captured by the local mic and preprocessed by the audio module. |
+| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a) | Audio data from each remote user before audio mixing, i.e., the raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
+| [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e) | Audio data after the audio data from each channel is mixed. |
 
 
-### Log related callbacks
+### Log callbacks
 
->? We recommend setting the callback delegation object in a class that is initialized early, such as `AppDelegate`.
+>?We recommend you set the callback delegation object in a class that is initialized early, such as `AppDelegate`.
 
 | API | Description |
 |-----|-----|
@@ -383,21 +368,22 @@
 
 | Class | Description |
 |-----|-----|
+| [TRTCRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCRenderParams) | Video rendering settings. |
 | [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) | Room entry parameters. |
 | [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) | Video encoding parameters. |
 | [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCNetworkQosParam) | Network bandwidth limit parameters. |
 | [TRTCQualityInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCQualityInfo) | Video quality. |
 | [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVolumeInfo) | Volume level. |
-| [TRTCMediaDeviceInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCMediaDeviceInfo) | Media device description. |
 | [TRTCScreenCaptureSourceInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCScreenCaptureSourceInfo) | Screen sharing target information (only for MacOS). |
 | [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCSpeedTestResult) | Network speed test result. |
 | [TRTCVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoFrame) | Video frame information. |
 | [TRTCAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrame) | Audio frame data. |
-| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCMixUser) | Position information of each channel of subimage in On-Cloud MixTranscoding. |
-| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCTranscodingConfig) | On-Cloud MixTranscoding configuration. |
+| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCMixUser) | Position information of each subimage channel in On-cloud MixTranscoding. |
+| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCTranscodingConfig) | On-cloud MixTranscoding configuration. |
 | [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCPublishCDNParam) | CDN relayed push parameters. |
 | [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams) | Audio recording parameters. |
 | [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioEffectParam) | Sound effect. |
+| [TRTCSwitchRoomConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCSwitchRoomConfig) | Room switch. |
 | [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCLocalStatistics) | Local audio/video statistics. |
 | [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCRemoteStatistics) | Remote audio/video statistics. |
 | [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCStatistics) | Statistics. |
@@ -415,7 +401,7 @@
 | [TRTCBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga9bafd3233be6cec1b380d469017ed3e6) | Beauty filter (skin smoothing) algorithm. |
 | [TRTCVideoPixelFormat](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gabb58c142deac29da242c957f21c963e3) | Video pixel format. |
 | [TRTCVideoBufferType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga0fce6f58df3d3021696d15eff683ed8b) | Video data container format. |
-| [TRTCLocalVideoMirrorType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga1f76f60bf95c01dbf8d3f82f3d2cc097) | Mirror type of local video preview. |
+| [TRTCVideoMirrorType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga13da9775774c3251999f1e46d279305f) | Mirror type of local video preview. |
 | [TRTCAppScene](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga6ab617b26cf503a8c1bfec34a9918dbe) | Application scenario. |
 | [TRTCRoleType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gad147b9b0249d0c2759cf1514c8978881) | Role, which applies only to the live streaming scenario (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`).
 | [TRTCQosControlMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga915f86fec1b00787147d40a189444823) | Bandwidth limit mode. |
@@ -428,8 +414,5 @@
 | [TRTCSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaac0cd0da9dd789dcec4ba16471006f23) | System volume type. |
 | [TRTCLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gacefec5143acae6d0524b5500f0155908) | Log level. |
 | [TRTCGSensorMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga894251078222f9ac4ba5815aac4b493c) | G-sensor switch. |
-| [TRTCMediaDeviceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga4a04a7c25ed48ab15603e8c3db115b95) | Device type (only for macOS). |
 | [TRTCScreenCaptureSourceType](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaeabd30a270055e48105a34c781c782b0) | Screen sharing target type (only for macOS). |
 | [TRTCTranscodingConfigMode](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#ga907c7b1ef1f09fb7417a549e82110855) | MixTranscoding parameter configuration mode. |
-
-
