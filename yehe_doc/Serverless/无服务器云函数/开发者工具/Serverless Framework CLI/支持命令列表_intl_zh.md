@@ -23,4 +23,3 @@ Serverless Framework 支持的 CLI 命令如下：
 `--debug`：列出更多 `state`。
 - **`serverless dev`**：启动 DEV MODE 开发者模式，通过检测 Component 的状态变化，自动部署变更信息。同时支持在命令行中实时输出运行日志，调用信息和错误等。此外，支持对 Node.js 应用进行云端调试。
 
-- **`serverless login`**：支持通过 login 命令，通过微信扫描二维码的方式，登录腾讯云账号并授权对关联资源进行操作。
