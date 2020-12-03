@@ -8,7 +8,6 @@ TencentDB for Redis has been updated with optimized monitoring features in the l
 - New monitoring metrics are added.
 
 ## Update Notes
-- 5秒监控粒度于2020年9月起逐步上线（预计10月完成发布），上线后的地域默认新购实例都支持5秒监控粒度（除 CKV 版本）。
 - In the future, you can modify the monitoring granularity of existing instances from one minute to five seconds in the TencentDB for Redis console. We will notify you of when the modification becomes supported by notices and pop-up notifications in the [console](https://console.cloud.tencent.com/redis).
 - In the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/policylist/create), alarm policies for five-second granularity are of a different policy type from those for one-minute granularity, as shown below. You can replicate the alarm policies for one-minute granularity and change their policy types to **Memory Edition (5-second granularity)**, so that these alarm policies can be associated with new instances supporting five-second granularity.
 ![](https://main.qcloudimg.com/raw/1f1078e7d1676425b20bc8849d242ac4.png)
