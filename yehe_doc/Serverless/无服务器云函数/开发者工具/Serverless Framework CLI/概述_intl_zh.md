@@ -1,22 +1,33 @@
 ## 简介
 Serverless Framework 是业界非常受欢迎的无服务器应用框架，开发者无需关心底层资源即可部署完整可用的 Serverless 应用架构。Serverless Framework 具有资源编排、自动伸缩、事件驱动等能力，覆盖编码、调试、测试、部署等全生命周期，帮助开发者通过联动云资源，迅速构建 Serverless 应用。
 
-## Serverless Framework Components
-Serverless Components 是支持多个云资源编排和组织的场景化解决方案，主要基于用户的具体场景。例如，Express 框架支持及网站部署等。Serverless Components 可以有效简化云资源的配置和管理，将网关、COS 和 CAM 等产品联动起来，用户可更关注场景和业务。详细介绍可参考 Github 上的 [Serverless Components 项目](https://github.com/serverless/components/blob/master/README.cn.md)。
-
-### 优势特性
-- **简便易用**
-Serverless Components 更多的围绕客户场景进行构建，如网站、博客系统、支付服务、图像处理场景等。通过抽象了底层的基础设施配置信息，开发者可以通过十分简单的配置实现场景。
-- **可复用性**
-Serverless Components 可以通过非常简单的 `serverless.yml` 创建和部署，但同时也支持用十分简单的语法对 JavaScript 库 `serverless.js` 进行扩展编写和复用。
-- **秒级部署**
-大多数 Serverless Components 比传统的配置工具部署快20倍左右，Components 可以通过快速的部署和远端验证，有效减少本地模拟和调试的环节。
-
-### 云函数 SCF 组件
-通过使用 Serverless Framework 的云函数 SCF 组件，您可快速打包部署您的云函数项目。该组件通过使用 [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud)，基于云上 Serverless 服务（云函数及触发器等），可实现“0”配置、便捷开发、极速部署云函数，同时支持丰富的配置扩展，提供了目前十分易用、低成本且弹性伸缩的云函数的开发、配置及部署能力。
+## 云函数 SCF 组件
+Serverless Framework 提供了云函数 SCF 组件，您可使用该组件快速打包部署云函数项目。可通过以下步骤，快速熟悉并使用组件：
+1. 通过 [函数操作](https://intl.cloud.tencent.com/document/product/583/36707)，快速上手 Serverless Framework CLI。
+2. 通过 [开发调试](https://intl.cloud.tencent.com/document/product/583/36268)，了解 Serverless Framework 如何开发及调试云函数。
+3. 通过 [项目应用](https://intl.cloud.tencent.com/document/product/583/38850)，了解如何进行多个云函数的项目管理和资源编排。
 
 
-## 快速入门
-您可通过 [使用 CLI 创建函数](https://intl.cloud.tencent.com/document/product/583/32743)，快速上手 Serverless Framework CLI。
-
-
+## 应用实践
+Serverless Framework 提供的 SCF 组件，实现了对云函数的资源创建和编排。同时针对一些典型的用户应用场景提供了更多组件的封装和最佳案例实践。例如 Express 框架支持及网站部署等，详情请参见位于 Github 的 [Serverless Components 项目](https://github.com/serverless/components/blob/master/README.cn.md)。
+<table>
+<tr>
+<th>项目</th><th>描述</th>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/36748">部署静态网站托管</a></td>
+<td>通过 Serverless Website 组件快速托管一个静态网站。</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/37354">部署 Express.js 应用</a></td>
+<td> 通过 Serverless SCF 组件快速构建一个 Express.js 项目。</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/36989">部署 Vue + Express + PostgreSQL 全栈网站</a></td>
+<td>以 Vue 为前端，Express 框架作为后端，通过多个 Serverless Components 部署 Serverless 全栈应用程序。</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/37355">部署 Nuxt.js 应用</a></td>
+<td> 通过 Serverless Components Nuxt.js 组件，快速部署一个基于 Nuxt.js 的 SSR 项目。</td>
+</tr>
+</table>
