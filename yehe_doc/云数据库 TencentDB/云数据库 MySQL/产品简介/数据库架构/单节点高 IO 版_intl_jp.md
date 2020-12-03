@@ -10,7 +10,7 @@ MySQLは高可用性エディション、ファイナンスエディション、
 基盤となるストレージはローカルのNVMe SSDディスクを使用することで、高いIOパフォーマンスを提供します。現在、[読み取り専用インスタンス](https://intl.cloud.tencent.com/document/product/236/7270)に適用されており、サービスの読み取り負荷を分散することに有利となります。
 
 ## アーキテクチャの基本枠組み図
-![Alt text](http://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/shopcart/database/css/img/mysql-frame3.svg)
+![Alt text](https://main.qcloudimg.com/raw/6e3a6ad27f806f2485668cdfae8dc19f.png)
 >!
 >- 単一ノードの配置はシングルポイントリスクが存在します。１つの読み取り専用インスタンスのみを購入した場合には、サービスの高可用性は保証されません。単一の読み取り専用インスタンスに障害が発生すると、サービスの中断が発生することで、お客様に影響を与える可能性があります。
 >- 単一の読み取り専用インスタンスのリカバリの所要時間はサービスのデータ量によって異なり、保証されません。そこで、可用性を必要とするサービスの[ROグループ](https://intl.cloud.tencent.com/document/product/236/11361)内に少なくとも2つの読み取り専用インスタンスを購入するのを強くお勧めします。
