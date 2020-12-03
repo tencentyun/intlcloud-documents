@@ -48,7 +48,7 @@ yum install percona-xtrabackup
 ```
 
 ### Downloading a backup
-In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql), click an instance name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
+In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb), click an instance name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
 Sample of a download command:
 ```
 wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_587/1464552298xxxxxxxx'
@@ -77,7 +77,7 @@ After the decompression, the directories and files are as shown below:
 mkdir /root/dblogs_tmp
 innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtrabackuptmp/
 ```
-After the operation succeeds, `completed OK!` will be displayed as shown below:
+After the operation succeeds, `Completed OK!!` will be displayed as shown below:
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
 
 <span id = "tingzhi_qingkong"></span>
@@ -144,7 +144,7 @@ For more information, please see [Stop database and clear data file](#tingzhi_qi
 #### 4. Get the data key plaintext
 >?To use the [SSL Connection Encryption](https://intl.cloud.tencent.com/document/product/237/35447) feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Connection Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
+Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Connection Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
 - Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://intl.cloud.tencent.com/document/product/1030/32172).
 - Use the Python script `./kms_tool.py` provided by Tencent Cloud to get the data key plaintext.
  - Descriptions of parameters:
@@ -193,7 +193,7 @@ The figure below shows how to configure the generated key file to MySQL. Please 
 ![](https://main.qcloudimg.com/raw/2b4b6098a2f527902409fb3bac19fb61.png)
 
 #### 9. Restart MySQL
-The figure below shows the start script that comes with TDSQL. You can also use other schemes to start MySQL.
+The figure below shows the start script that comes with TencentDB. You can also use other schemes to start MySQL.
 ![](https://main.qcloudimg.com/raw/4c6cba9793eb01299b39c672b8bbab84.png)
 
 #### 10. Access the encrypted table

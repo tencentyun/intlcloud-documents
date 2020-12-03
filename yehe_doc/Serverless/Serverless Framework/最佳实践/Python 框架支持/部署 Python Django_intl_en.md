@@ -79,7 +79,7 @@ If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed 
 Deploy by running the `sls` command, and you can add the `--debug` parameter to view the information during the deployment process:
 
 ```shell
-$ sls --debug
+$ sls deploy --debug
 ```
 
 ### 5. Remove

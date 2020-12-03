@@ -6,7 +6,7 @@ This API is used to get the detailed list of shipping policies of a specified lo
 
 #### Sample request
 
-```shell
+```plaintext
 GET /shippers?topic_id=xxxx-xx-xx-xx-xxxxxxxx HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <Authorization String>
@@ -14,7 +14,7 @@ Authorization: <Authorization String>
 
 #### Request line 
 
-```shell
+```plaintext
 GET /shippers
 ```
 
@@ -34,7 +34,7 @@ There are only common request headers but no special request headers.
 
 #### Sample response
 
-```shell
+```plaintext
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 123
@@ -48,13 +48,8 @@ Content-Length: 123
     "prefix": "test",
     "shipper_name": "myname",
     "interval": 300,
-    "max_size": 256,
+    "max_size": 100,
     "effective": true,
-    "filter_rules": [{
-      "key": "",
-      "regex": "",
-      "value": ""
-    }],
     "partition": "%Y%m%d",
     "compress": {
         "format": "none"
@@ -90,19 +85,10 @@ There are only common response headers but no special response headers.
 | interval     | int    | Yes       | Shipping time interval in seconds                            |
 | max_size     | int    | Yes       | Maximum size of shipped file in MB                        |
 | effective    | bool   | Yes       | Whether it is effective                                           |
-| filter_rules | array  | Yes       | Filter rule of shipped log                                 |
 | create_time  | string | Yes       | Creation time of shipped log                                 |
 | partition    | string | Yes       | Partition rule of shipped log, which can be represented in `strftime` time format |
 | compress     | object | Yes       | Compression configuration of shipped log                                 |
 | content      | object | Yes       | Format configuration of shipped log content                             |
-
-`filter_rules` is in the following format:
-
-| Field Name | Type | Required | Description |
-| ------ | ------ | -------- | ----------------------------------------------------- |
-| key    | string | Yes       | Key for comparison. `__CONTENT__` indicate the full text                |
-| regex  | string | Yes       | Regex for extracting comparison content                               |
-| value  | string | Yes       | Value to be compared with the content extracted with the above regex. If they are the same, there will be a hit |
 
 `compress` is in the following format:
 
