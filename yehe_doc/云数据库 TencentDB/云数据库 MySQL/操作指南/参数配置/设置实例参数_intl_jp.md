@@ -97,4 +97,8 @@
 
 ## 後続の操作
 - データベースパラメータテンプレートを使用して、データベースのパラメータ設定を一括管理できます。詳細については、[パラメータテンプレートの使用](https://intl.cloud.tencent.com/document/product/236/31906)をご参照ください。
+<<<<<<< HEAD
 - 重要なパラメーターの設定に関する提案については、[パラメーター設定に関する提案](https://intl.cloud.tencent.com/document/product/236/38056)をご参照ください。
+=======
+- 重要なパラメーターの設定に関する提案については、[パラメーター設定に関する提案](https://intl.cloud.tencent.com/document/product/236/38056)をご参照ください。
+>>>>>>> 96d07f3ed6826c6e7ce0c825b2cff455e23ddbae
