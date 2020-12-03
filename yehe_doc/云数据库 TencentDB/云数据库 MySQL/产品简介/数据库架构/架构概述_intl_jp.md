@@ -2,9 +2,9 @@ MySQLは高可用性エディション、ファイナンスエディション、
 
 ## インスタンスアーキテクチャの表示
 - 購入時に[MySQL購入ページ](https://buy.cloud.tencent.com/cdb)にログインし、「アーキテクチャ」で適切なアーキテクチャを選択します。
-![](https://main.qcloudimg.com/raw/f1417a645690900e4d82515e8e609d3b.png)
+![](https://main.qcloudimg.com/raw/5bbc8288b981097d8f6b36e150ddf7e2.png)
 - 購入後、[MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストの「構成」列でインスタンスアーキテクチャを確認します。
-![](https://main.qcloudimg.com/raw/0f5f39c3eeb7bdbcd61d6ccf157c07b2.png)
+![](https://main.qcloudimg.com/raw/f0618995c7b9f4821c0d4f18ce4a6f45.png)
 
 
 ## アーキテクチャの比較
