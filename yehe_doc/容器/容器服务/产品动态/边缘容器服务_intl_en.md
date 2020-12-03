@@ -6,7 +6,7 @@
     <td>ECK supports multi-architecture hybrid management.</td><td>Users can manage the nodes in both ARM and X86 CPU architectures within a cluster at the same time.</td><td>2020-10-28</td><td>-</td>
 </tr>
 <tr>
-    td>ECK supports edge Pod HPA.</td><td>The feature of edge Pod HPA is launched, and the native Kubernetes HPA feature can also take effect at the edge.</td><td>2020-10-23</td><td>-</td>
+    <td>ECK supports edge Pod HPA.</td><td>The feature of edge Pod HPA is launched, and the native Kubernetes HPA feature can also take effect at the edge.</td><td>2020-10-23</td><td>-</td>
 </tr>
 <tr>
     <td>The feature of using script to add node is upgraded.</td><td>Users can use the same script to add self-owned nodes to the cluster multiple times (the script validity is 1 hour), which is convenient for adding self-owned nodes in batches.</td><td>2020-10-22</td><td>-</a></td>
