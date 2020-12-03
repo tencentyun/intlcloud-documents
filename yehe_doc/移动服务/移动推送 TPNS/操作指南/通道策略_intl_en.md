@@ -1,73 +1,128 @@
-As the restrictions of vendor channels on the push quota and frequency are gradually tightened, the arrival rate and delivery speed of pushes are also limited to a certain degree. For specific restrictions, please see:
+With tightening restrictions over the push limit and frequency of vendor channels, the push reach rate and delivery speed are also affected. For specific restrictions, please see
+
 - [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829)
 - [Vendor Channel QPS Limit Description](https://intl.cloud.tencent.com/document/product/1024/35247)
 
-TPNS provides two channel assignment policies: "smart assignment" and "custom", which can improve the comprehensive arrival rate and push speed against the restrictions of the vendor channels.
+TPNS provides two channel assignment policies: smart assignment and custom. These policies will improve the overall push reach rate and delivery speed against the restrictions of the vendor channels.
+
 ## Channel Policy Overview
+
 <span id="zhineng"></span>
+
 ### Smart assignment
-TPNS will take into account the device status, group active status, and push channel status to intelligently assign the optimal delivery channel for each device to achieve the following effects:
-1. Improve the comprehensive arrival rate of pushes
-2. Improve the comprehensive arrival speed of pushes
-3. Save available quotas for certain vendor channels
 
-### Custom policy
-Currently, Mi, OPPO, and Vivo channels limit the daily number of pushes. You can choose which channel a certain push task can be delivered through according to your business needs and adjust the push channel delivery policy in a personalized manner to save vendor channel resources and maximize the value of pushes.
-The delivery rules of the custom policy are as detailed below:
+TPNS will take into account the device status, segment active status, and push channel status to intelligently assign the optimal delivery channel for each device to achieve the following effects:
 
-| Channel | Online | Offline |
-|---------|---------|---------|
-| Huawei | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
-| Meizu | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
-| Mi | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
-| OPPO | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
-| Vivo | The TPNS channel is used for push preferably | The vendor channel is used for push preferably, and if it fails, the TPNS channel will be used to retry the push |
-| Other | TPNS channel | TPNS channel's offline queue |
+1. Improve the overall push reach rate.
+2. Speed up the overall message arrival.
+3. Save the resources of the vendor channels.
 
 <span id="zidingyi"></span>
 
+### Custom policy
+
+Currently, the Mi, OPPO, and Vivo channels limit the daily number of pushes. You can choose the channels through which this push can be delivered according to business needs and personalize the push channel delivery policy to save vendor channel resources and maximize the value of pushes.
+The table below specifies the delivery rules of the custom policy.
+
+| Channel                                                  | Enabled                                                        | Disabled                   | Supported Messages                                               |
+| ----------------------------------------------------- | ------------------------------------------------------------ | ---------------------- | ------------------------------------------------------------ |
+| Android vendor channels (including Huawei, Mi, Meizu, Vivo, OPPO and FCM) | Both vendor channels and TPNS channel are available to the push.<br>Note:<li>If the TPNS preference feature is enabled, this push is preferentially delivered through TPNS channel when the device is online.<li>If the TPNS preference feature is disabled, this push is preferentially delivered through an available vendor channel.<li>If the vendor channel push fails, the TPNS channel will be used to retry the push | Only the TPNS channel is available to the push | Notification bar message                                           |
+| iOS vendor channels (APNs) | Both APNs and TPNS channels are available to the push.<br>Note:<li>If the TPNS preference feature is enabled, this push is preferentially delivered through TPNS channel when the device is online.<li>If the TPNS preference feature is disabled, this push is preferentially delivered through APNs channel.<li>If the APNs channel push fails, the TPNS channel will be used to retry the push | Only the TPNS channel is available to the push | Notification bar message and silent message<br/>**Note**: the APNs channel supports delivering up to three silent messages to a device per hour                                         |
+| TPNS                                                  | The TPNS channel is available to the push                                       | The TPNS channel cannot be disabled            | Notification bar message, in-app message, and silent message<br/>**Note**: the TPNS channel for iOS only takes effect in iOS SDK 1.2.8.0 or later. |
+
+
+
+
+
 ## Getting Started
-### Console
-You can select a channel policy for a push when creating it in the console. The specific operation path is as follows:
-Console > Message Push > Create Push > Advanced Settings > Channel Policy
+
+### Using the console
+
+When creating a push in the console, you can select a channel policy for it in the following path:
+[**TPNS Console**](https://console.cloud.tencent.com/tpns) -> **Push Management** -> **Create Push** -> **Advanced Settings** -> **Channel Policy**
+
 #### Smart assignment
-Select **Smart Assignment** and the system will intelligently assign the delivery channel for each device. For more information, please see the rules of [smart assignment](#zhineng).
+
+Select **Smart assignment**. The system will intelligently assign the delivery channel for each device. For more information, please see the rules of [smart assignment](#zhineng).
 ![](https://main.qcloudimg.com/raw/b53a8b8e21b37aefea81fe7c8c7553c4.png)
 
-#### Custom policy
-Select **Custom** and click **View Details** to view detailed vendor quota information.
+#### Custom policy for Android channels
+
+Select **Custom**. You can click **View Details** to see the vendor quota details.
 ![](https://main.qcloudimg.com/raw/a28f612612f856e05bd8e0758805500b.png)
-You can choose the channel used for push according to the remaining quota of the current vendor channel and the priority of the push task. For more information, please see the rules of the [custom](#zidingyi) policy.
-![](https://main.qcloudimg.com/raw/7b314d96f64fe63dd36b5a1e512389a8.png)
+You can choose the channel used for push according to the remaining quota of the current vendor channels and the priority of the push task. For more information, please see the rules of the [custom policy](#zidingyi). We recommend selecting **It is preferentially delivered through TPNS channel when the device is online** to save vendor channel resources.
+![](https://main.qcloudimg.com/raw/a86a6ccee99087fe9507de555eed8542.png)
 
->Note: the TPNS channel cannot be disabled
+> !The TPNS channel cannot be disabled.
 
-### REST API
-Set the optional `channel_rules` parameter for the REST API. For more information, please see [channel_rules Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764) in the Push API documentation.
-Below is a sample push:
+#### Custom policy for iOS channel
+
+You can choose the channel used for push based on the priority of the push task. For more information, please see the rules of the [custom policy](#zidingyi). We recommend selecting **It is preferentially delivered through TPNS channel when the device is online** to ensure the fastest notification delivery to the device.
+![](https://main.qcloudimg.com/raw/9f79ff7b6dddbf1d03a06327fda20507.png)
+
+
+
+### Using REST APIs
+
+Set the optional `channel_rules` parameter for the REST API. For more information, please see [channel_rules parameter description](https://intl.cloud.tencent.com/document/product/1024/33764) in the Push API documentation.
+Below is a sample push on Android:
+
 ```json
 {
     "audience_type": "token",
     "token_list": [
-        "05da87c0ae5973bd2dfa9e08d884aada5bb2"
+        "05da87c0ae*************8d884aada5bb2"
     ],
     "message_type": "notify",
     "channel_rules": [
         {
             "channel": "mz",
-            "disable": true
+            "disable": true  //Disable the Meizu channel
         },
         {
             "channel": "xm",
-            "disable": false
+            "disable": false  //Enable the Mi channel
         }
     ],
+    "tpns_online_push_type":0, //The push will be delivered through the TPNS channel by default when the device is online
     "message": {
-        "title": "Push title",
+        "title": "The push will be delivered through Mi channel, and the Meizu channel is not needed",
         "content": "Push content",
         "android": {
              "custom_content":"{\"key\":\"value\"}"
         }
     }
+}
+```
+
+Below is a sample push on iOS:
+
+```json
+{
+    "audience_type": "token",
+    "environment":"dev",
+    "token_list": [ "05da87c0ae********fa9e08d884aada5bb2"],
+    "message_type":"notify",
+    "channel_rules": [
+        {
+            "channel": "apns",
+            "disable": true //Disable the APNs channel
+        },
+    "tpns_online_push_type":0, //The push will be delivered through the TPNS channel by default when the device is online
+    "message":{
+     "title": "The push can only be delivered through the TPNS channel",
+    "content": "Push content",
+    "ios":{
+        "aps": {
+            "alert": {
+                "subtitle": "Push subtitle"
+            },
+            "badge_type": -2,
+            "sound":"Tassel.wav",
+
+        },
+       "custom_content":"{\"key\":\"value\"}",
+    }
+ }
 }
 ```

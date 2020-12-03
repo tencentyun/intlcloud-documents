@@ -51,14 +51,14 @@ TPNS 会结合设备状态、人群活跃状态和推送通道状态，智能为
 选择【自定义】，单击【查看详情】可以查看详细的厂商额度信息。
 ![](https://main.qcloudimg.com/raw/a28f612612f856e05bd8e0758805500b.png)
 可以根据当前厂商通道剩余配额，以及推送任务的优先级，自定义选择需要推送的通道，详情请参见 [自定义通道策略](#zidingyi) 的规则，为了节省各厂商通道推送资源，建议开启【设备在线时优先通过 TPNS 通道下发】。
-![](https://main.qcloudimg.com/raw/4e821d8d1dfb4436f0ae36c3e285869e.png)
+![](https://main.qcloudimg.com/raw/a86a6ccee99087fe9507de555eed8542.png)
 
 > !TPNS 通道不可关闭。
 
 #### 自定义 iOS 通道策略
 
 可根据您推送任务的优先级，自定义选择需要推送的通道，详情请参见 [自定义通道策略](#zidingyi) 的规则，建议开启【设备在线时优先通过 TPNS 通道下发】以保证通知最快速的抵达设备。
-![](https://main.qcloudimg.com/raw/bfbb9a54028367e206c317df967ea099.png)
+![](https://main.qcloudimg.com/raw/9f79ff7b6dddbf1d03a06327fda20507.png)
 
 
 
