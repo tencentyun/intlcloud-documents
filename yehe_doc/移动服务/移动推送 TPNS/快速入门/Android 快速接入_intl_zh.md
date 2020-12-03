@@ -5,24 +5,24 @@
 ## 接入前准备
 
 1. 接入 SDK 之前，需要您前往移动推送 TPNS  [控制台](https://console.cloud.tencent.com/tpns) 创建产品和 Android 应用，详情请参见 [创建产品和应用](https://intl.cloud.tencent.com/document/product/1024/32603) 文档。
-   ![](https://main.qcloudimg.com/raw/1cf5d9ce4231466f07a8fd66e1f93d90.png)
+   ![](https://main.qcloudimg.com/raw/748fd7e885077735bdb631aab2bae2b7.png)
 2. 完成以上步骤后，进入应用的【配置管理】页面，准备接入。
-   ![](https://main.qcloudimg.com/raw/e8bce7bbb6798378129e6f3c4bf159b0.png)
+   ![](https://main.qcloudimg.com/raw/f2047b88c465df6abc36104253241cae.png)
 
 ## 步骤1：开始接入
 
 1. 在【配置管理】页面中， 单击【快速接入】。
-![](https://main.qcloudimg.com/raw/26118ca32c232eae530cd290f9aa2195.png)
+![](https://main.qcloudimg.com/raw/c45001ef6396382a83b73105f3a7214e.png)
 2. 按照接入指引的操作顺序完成配置，然后单击【点击验证】。
-![](https://main.qcloudimg.com/raw/7c4cf6eddf838d55a4dfa858ac3d6e3f.png)
+![](https://main.qcloudimg.com/raw/910f9e03f0c609e847676ee2b62a7a66.png)
 3. 若出现以下提示，则表示 SDK 接入成功 。
-![](https://main.qcloudimg.com/raw/393d62182039f2164517d18b86cdb52a.png)
+![](https://main.qcloudimg.com/raw/20dcdc160613bf6b8552a508891cbda5.png)
 	- 若出现以下提示，请确认该应用是否开通试用或购买了推送服务。
-![](https://main.qcloudimg.com/raw/0be6c16b6421faf7855c13f2bd670a19.png)
+
 	可在 [产品管理](https://console.cloud.tencent.com/tpns) 页面查看当前应用服务状态，在您申请试用或购买后30分钟内可开通服务。
-	![](https://main.qcloudimg.com/raw/058b0ef8a861acb3986aee92adc63e8e.png)
+
 	- 若出现以下提示，请确认 App 是否成功注册推送服务，可参见 [接入结果验证](#jierujieguo)。
-	![](https://main.qcloudimg.com/raw/b234996ccd14cd5681bda3c5afcb5f30.png)
+
 
 <span id="jierujieguo"></span>
 
@@ -42,7 +42,7 @@ XG register push success with token:6ed8af8d7b18049d9fed116a9db9c71ab4aabb65
 1. 在配置管理页面打开厂商推送通道开关并配置好应用的 AppId、SecretKey 等信息，申请方式可查看各厂商通道的说明文档。
  - 单击【查看说明文档】，可查看厂商通道说明。
  - 在右侧 AppId、AppKey、AppSecret 处可配置厂商通道信息。
-   ![](https://main.qcloudimg.com/raw/054128d0cbc0304e512cc67e36999138.png)
+   ![](https://main.qcloudimg.com/raw/a3a2f1cdf2c09f087daded2ecc3e1dad.png)
 2. 厂商通道信息配置完成后，单击页面上方【配置文件下载】，下载包含厂商通道配置信息的配置文件，然后用该配置文件替换工程文件中旧的配置文件即可。
  ![](https://main.qcloudimg.com/raw/4dfa37ac471c1c3b18cc559d5780a6be.png)
 

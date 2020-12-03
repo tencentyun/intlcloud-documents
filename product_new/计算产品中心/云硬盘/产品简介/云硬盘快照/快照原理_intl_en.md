@@ -13,7 +13,7 @@ Tencent Cloud snapshots use an incremental snapshot mechanism. When you continuo
 For example: Assume a cloud disk has three data blocks, A, B, and C. You make snapshots at 10:00, 11:00, and 12:00 respectively. Changes of data blocks on the disk between these points in time are shown in the following figure, and each snapshot should save the following data:
 - Snapshot 1 (initial snapshot): Contains data backups of all data blocks on the cloud disk at that time.
 - Snapshot 2: During the period, data block A on the cloud disk changes. Snapshot 2 only contains backup of block A’s newest data (usually called an incremental snapshot).
-- Snapshot 3: During the period, data block B on the cloud disk changes. Snapshot 2 only contains backup of block B’s newest data (usually called an incremental snapshot).
+- Snapshot 3: During the period, data block B on the cloud disk changes. Snapshot 3 only contains backup of block B’s newest data (usually called an incremental snapshot).
 
 ![](https://main.qcloudimg.com/raw/bcdf30c658a08ef47196f8127608423b.png)
 

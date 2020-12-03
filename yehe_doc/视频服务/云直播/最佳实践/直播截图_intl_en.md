@@ -8,14 +8,14 @@ The LVB screencapturing feature takes screenshots of a real-time live stream at 
 
 Overall process:
 1. Configure the LVB screencapturing feature in the console or through TencentCloud API.
-- Start an LVB push.
+- Start an LVB push. 
 - The screencapturing service generates screenshot data according to the configuration and stores it in COS.
 - Information about the generated screenshot is returned in a callback.
 
 ## LVB Screencapturing Configuration
 
 ### Screencapturing configuration method
-- TencentCloud API
+- [LVB API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
 - **LVB Console** > **Feature Template** > **[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)**
 
 ### Screencapturing interval configuration
@@ -28,7 +28,7 @@ The screencapturing service supports taking screenshots by the specified width a
 
  ![](https://main.qcloudimg.com/raw/86e3ce12a58b5125cca87a2d19ff922f.png)
 
->If you do not need to specify the width and height, the default screenshot width and height (set to 0) will be the width and height of the pushed video stream, and you can ignore the configuration instructions below and skip to the next section.
+>! If you do not need to specify the width and height, the default screenshot width and height (set to 0) will be the width and height of the pushed video stream, and you can ignore the configuration instructions below and skip to the next section.
 
 First, look at the following three concepts of width and height:
 
