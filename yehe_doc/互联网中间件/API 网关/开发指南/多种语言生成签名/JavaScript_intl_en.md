@@ -33,7 +33,6 @@ var dateTime = nowDate.toGMTString();
 var SecretId = 'your SecretId'; // `SecretId` in key pair
 var SecretKey = 'your SecretKey'; // `SecretKey` in key pair
 var source = 'xxxxxx'; // Arbitrary signature watermark value
-source = 'source';
 var auth = "hmac id=\"" + SecretId + "\", algorithm=\"hmac-sha1\", headers=\"x-date source\", signature=\"";
 var signStr = "x-date: " + dateTime + "\n" + "source: " + source;
 console.log(signStr)
