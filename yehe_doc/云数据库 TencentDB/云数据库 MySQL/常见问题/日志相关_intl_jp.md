@@ -1,6 +1,6 @@
 ### binlogログの表示方法。
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、【バックアップの復元】>【ログバックアップリスト】ページでログをダウンロ一ドして確認します。
-![](https://main.qcloudimg.com/raw/80e006c2d5165ecfa9ce9395d59d01f8.png)
+![](https://main.qcloudimg.com/raw/b411a99afeae2858ae578696ad9d66af.png)
 
 ### データベースインスタンスにbinlogログがないのはなぜですか。
 おそらく、現在のbinlogの書き込み速度が遅く、カットされていないため、コンソールに表示されていない可能性があります。
