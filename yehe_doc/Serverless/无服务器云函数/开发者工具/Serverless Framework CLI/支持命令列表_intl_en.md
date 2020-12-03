@@ -31,4 +31,4 @@ Serverless Framework supports the following CLI commands:
 
 - **`serverless dev`**: starts development mode ("DEV Mode") and automatically deploys changed information when component status changes are detected. In development mode, information such as execution logs, invocation information, and errors can be output on the command line in real time. In addition, it supports in-cloud debugging for Node.js applications.
 
-- **`serverless login`**: supports logging in to Tencent Cloud account and authorizing operations on associated resources by scanning WeChat QR code through `login` command.
+
