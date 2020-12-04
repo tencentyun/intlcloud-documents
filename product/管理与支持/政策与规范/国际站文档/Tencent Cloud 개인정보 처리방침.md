@@ -472,9 +472,9 @@ UAE법률 (예: UAE 사이버범죄법에) 에 따라 범죄를 구성하는 사
 모듈
 최종 업데이트: [2020-11-23]
 특정 기능 (각 관련 모듈에 정의된 대로) 을 사용할 경우, 다음 모듈이 이 개인 정보 보호 정책에 적용되고 일부가 구성되어야 합니다. 귀하는 당사가 해당 모듈에 설명된 대로 귀하의 개인 정보를 수집, 처리, 사용 및 보관한다는 것을 인정합니다.
-1.[Tencent 푸시 알림 서비스](https://intl.cloud.tencent.com/ko/document/product/1024/36175).
-2.[모바일 Tencent 보호](https://intl.cloud.tencent.com/ko/document/product/1018/36786).
-3.[웹 애플리케이션 방화벽](https://intl.cloud.tencent.com/ko/document/product/627/37005).
-4.[게임 멀티미디어 엔진](https://intl.cloud.tencent.com/ko/document/product/607/37524).
-5.안티 DDoS 전문 판
-6.얼굴 인식
+<br>1.[Tencent 푸시 알림 서비스](https://intl.cloud.tencent.com/ko/document/product/1024/36175).</br>
+2.[모바일 Tencent 보호](https://intl.cloud.tencent.com/ko/document/product/1018/36786).</br>
+3.[웹 애플리케이션 방화벽](https://intl.cloud.tencent.com/ko/document/product/627/37005).</br>
+4.[게임 멀티미디어 엔진](https://intl.cloud.tencent.com/ko/document/product/607/37524).</br>
+5.안티 DDoS 전문 판</br>
+6.얼굴 인식</br>
