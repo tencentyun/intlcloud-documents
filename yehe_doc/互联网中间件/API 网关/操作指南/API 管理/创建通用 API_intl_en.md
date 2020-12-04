@@ -16,20 +16,21 @@ The frontend configuration of an API refers to the configuration provided for ex
 - **Frontend type**: API Gateway supports two frontend types: HTTP and WebSocket.
  - HTTP: suitable for situations where the backend is connected with HTTP, Mock, or a cloud function.
  - WebSocket: suitable for situations where WebSocket is used for the business and the backend is connected with WebSocket or a cloud function.
-- **Request protocol**: API Gateway supports HTTP/HTTPS protocols in three modes: HTTP only, HTTPS only, and HTTP/HTTPS.
--  **HTTP method**: you can select GET, POST, PUT, DELETE, or HEAD.
 - **URL path**: you can write a valid URL path as needed. If you need to configure a dynamic parameter in the path, please use `{}` to enclose the parameter name. For example, the `/user/{userid}` path declares the `userid` parameter in the path, which must be defined as a path-type input parameter. A query parameter does not need to be defined in the URL path.
-**Regular expression match is supported**. Taking `/user` as an example of the path:
+- **Regular expression match is supported**. Taking `/user` as an example of the path:
  - `=/user`: indicates exact match. When there are multiple APIs with `/user`, APIs configured with `=/user` have the highest matching priority.
  - `^~/user`: indicates matching the `user` prefix. When there are multiple APIs with `/user`, APIs configured with `^~/user` have the second highest matching priority.
  - `/user/{id}`: indicates that there is a dynamic parameter in the path. When there are multiple APIs with `/user`, APIs configured with a dynamic parameter have the third highest matching priority.
  - `/user`: indicates access by exact match or prefix match. `/user`, `/usertest`, and `/user/test/a` all can access APIs with the path of `/user`.
  - Standard regular expressions are supported; for example, the asterisk (*) matches the preceding subexpression zero or more times, while the question mark (?) matches the preceding subexpression zero or one time.
+- **HTTP request method**: you can select GET, POST, PUT, DELETE, or HEAD.
+- **Authentication type**: you can select [No Authentication](https://intl.cloud.tencent.com/document/product/628/11820), [Key Pair Authentication](https://intl.cloud.tencent.com/document/product/628/11819), and [OAuth 2.0](https://intl.cloud.tencent.com/document/product/628/34065).
+- **CORS support**: cross-origin resource sharing (CORS). If CORS is enabled, the response header will contain `Access-Control-Allow-Origin : *` by default.
 
 ### Configuring frontend parameters
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
 
-![](https://main.qcloudimg.com/raw/54740d34998185942ca6b6f89c7535b8.png)
+![](https://main.qcloudimg.com/raw/f34a9412577242d1f3fc386587c75a1e.png)
 >?
 >- If the request protocol is HTTPS, a request must carry SNI. In order to ensure request security, API Gateway will reject requests without SNI.
 >- SNI (Server Name Indication) is an extension to TLS used to address situations where a server has multiple domain names, which is supported by the protocol since TLSv1.2. Previous SSL handshake messages didn't carry the destination address to be accessed by the client. If a server has multiple virtual hosts, each of which has a unique domain name and uses a unique certificate, then it will not be able to determine which certificate to return to the client. SNI addresses this issue by providing the host information in `Client Hello`.
@@ -54,13 +55,13 @@ Configuration instructions:
 6. Set the backend timeout period (up to 30 minutes). During a call, if there is no response after the timeout period elapses, API Gateway will terminate the call and return the corresponding error message.
 7. Set the backend parameters that map the frontend.
 8. Click **Next** and configure the response result.
-![](https://main.qcloudimg.com/raw/f0ecac1d8942f1afe8a8cb44ac60b073.png)
+![](https://main.qcloudimg.com/raw/fb308544b0adf194ea7bcfc13624ee9b.png)
 
 
 #### API Gateway backend connection with CLB resources in VPC
 If you want to connect the backend with CLB in VPC, the frontend can be configured in the same way as other APIs, and the backend should be configured in the following way:
 1. In the backend configuration, select the VPC to be connected with.
-![](https://main.qcloudimg.com/raw/afd807a4544685a90af9817f93521cb7.png)
+![](https://main.qcloudimg.com/raw/88957d10fbe34722c828d092ef9c0edd.png)
 2. Select CLB as the VPC resource.
 API Gateway only supports connection CLB in a VPC. Other cloud resources in the VPC will be supported soon.
 3. Select the CLB instance of the backend domain name and the corresponding listener.
@@ -69,10 +70,10 @@ If you choose HTTP or HTTPS listener, please make sure that the backend CVM inst
 5. Enter the backend path.
  - If you select the CLB listener type of HTTP/HTTPS, you should configure the backend path as the path configured in the CLB listener.
 Domain name and path configured in the [CLB](https://console.cloud.tencent.com/clb/index) listener:
-![](https://main.qcloudimg.com/raw/40b6cabcfb893cb6c1caf663ffa38e8c.png)
+![](https://main.qcloudimg.com/raw/cd9f45ef03ea3a00af6ab108a19d1b8e.png)
  The backend path in API Gateway must be the same as that in CLB.
  You also need to configure a parameter named `host` as a constant parameter and place it in the header, whose value should be the domain name configured in the CLB listener.
-![](https://main.qcloudimg.com/raw/38201ce524986c4aef2935df173c6756.png)
+![](https://main.qcloudimg.com/raw/fa3f4784d80f27adb5fb0c28238bd7b9.png)
  - If you select the CLB listener type of TCP/UDP, you should configure the backend path as the path required by the business in the real CVM instance of the CLB instance.
 If you have configured host verification in CVM, you need to configure a parameter named `host` as a constant parameter and select the address to place it based on your actual business needs, just like with a layer-7 listener. Subsequent configuration is the same as that of other APIs.
 >!When the backend is connected with CLB, security groups on the real CVM instance should open the IP ranges of `100.64.0.0/10` and `9.0.0.0/8`.
@@ -81,7 +82,7 @@ If you have configured host verification in CVM, you need to configure a paramet
 ### Connecting with SCF
 If your business is implemented in SCF and you want to open up your service capabilities through API Gateway, you can select SCF as the backend connection type.
 
-![](https://main.qcloudimg.com/raw/5a8606143fdc45a2fb7a4e5ae6245c21.png)
+![](https://main.qcloudimg.com/raw/1ecae1b4c346b4cdeb8a63aca24d93cf.png)
 
 When connecting to SCF on the backend, you need to enter the following parameters:
 
@@ -158,12 +159,12 @@ The structure sent by API Gateway to SCF is in the following format:
 <span id="mock"></span>
 ### Connecting with Mock 
 Mock returns a response that has a fixed configuration to an API request. It is typically used for development testing. API configuration and response can be completed in advance before the backend service is completed. To connect with Mock, you only need to configure your returned data and click **Complete**.
-![](https://main.qcloudimg.com/raw/40ce80c320c12721efabae202e296b30.png)
+![](	https://main.qcloudimg.com/raw/f957e865caadba61ec890b2d5a2856e9.png)
 
 <span id="websocket"></span>
 ### Connecting with WebSocket
 If WebSocket is used for your business, you can connect WebSocket with your backend service in generally the same way as [connecting with HTTP](#http), except that the backend domain name should begin with `ws://` or `wss://` excluding the path.
-![](https://main.qcloudimg.com/raw/7426c3ce1db7a9a8fa9366cb63c1f04d.png)
+![](	https://main.qcloudimg.com/raw/2681e3fdd3901914fdf921448038441d.png)
 
 ## Step 4. Configure the response
 API response configuration includes the configuration of API response data and API error codes.
