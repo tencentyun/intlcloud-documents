@@ -127,6 +127,7 @@ Authorization: Auth String
 | Size | ListBucketResult.Contents | 对象大小，单位为 Byte | integer |
 | Owner | ListBucketResult.Contents | 对象持有者信息 | Container |
 | StorageClass | ListBucketResult.Contents | 对象存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 STANDARD_IA，ARCHIVE | Enum |
+|  x-cos-storage-tier  | ListBucketResult.Contents |当对象的存储类型为智能分层存储时，该头部表示对象所处的存储层，有效值：FREQUENT、INFREQUENT  |  enum  |
 
 **Container 节点 Contents.Owner 的内容：**
 
