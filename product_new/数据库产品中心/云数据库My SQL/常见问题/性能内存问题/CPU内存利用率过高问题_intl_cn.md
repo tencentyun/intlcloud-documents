@@ -27,4 +27,4 @@ MySQL 的内存大体可以分为 global 级的共享内存和 session 级的私
 >?
 >- 升级过程中不影响业务的正常使用，升级完成后会进行切换，仅有秒级别的闪断，请确保业务具备重连机制。
 >- 目前 MySQL 控制台暂不支持内存参数的修改，若将 innodb_buffer_pool_size 设置过小，可能会导致磁盘写负载过高，进而影响数据库的整体性能。
->- 避免因 MySQL 内存或 CPU 资源不足而影响业务的正常运行，请为现网实例配置资源的合理告警策略，可提前发现资源不足的隐患，详情请参见 [告警服务](http://intl.cloud.tencent.com/document/product/248/6126)。
+>- 避免因 MySQL 内存或 CPU 资源不足而影响业务的正常运行，请为现网实例配置资源的合理告警策略，可提前发现资源不足的隐患，详情请参见 [告警服务](https://intl.cloud.tencent.com/document/product/248/6126)。
