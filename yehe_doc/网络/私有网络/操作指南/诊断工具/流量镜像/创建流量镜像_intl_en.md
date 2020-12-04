@@ -16,12 +16,12 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
     - **Virtual Private Cloud**: all traffic in the VPC except for the mirrored traffic of receiving IPs will be collected, which usually applies to the full mirror scenario.
     - **Subnet**: all traffic in the VPC subnet except for the mirrored traffic of receiving IPs will be collected. This option requires selecting specific subnets.
     - **ENI**: all traffic in the VPC will be collected, but the traffic of the ENI that is bound to receiving IPs will be excluded. This option requires selecting specific ENIs.
-      ![](https://main.qcloudimg.com/raw/02a11b3e50501983e596037739c67a03.png)
+      ![](https://main.qcloudimg.com/raw/5a359241aabeccd7424324e8357d8251.png)
  - Choose **Collection Type**: select the traffic direction as needed. There are three options: All traffic, Traffic out and Traffic in.
  - Choose **Traffic filtering**: select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
     -**N/A**: all traffic configured will be collected.
     - **Quintuple**: the traffic that meets 5-tuple conditions will be collected. After this option is selected, please specify **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can click **Add** to create another filter condition. Only the traffic that meets all of filter conditions will be collected.
-    ![](https://main.qcloudimg.com/raw/570590952efb6f89e581f94564ecdcd3.png)
+    ![](https://main.qcloudimg.com/raw/1b49eca6a1e7f736633ee2762f5d6620.png)
     - **The next hop is the NAT gateway**: collect traffic whose next hop address is the NAT gateway. After this option is selected, select the corresponding NAT gateway next to **Condition**.
 4. After completing the configuration, click **Next**.
 
@@ -36,14 +36,14 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
     + **Balance method**: select either of:
         + **Evenly distribute traffic**: all traffic will be copied to these receiving IPs evenly.
         + **HASH by ENI**: traffic from the same ENI will be copied to the same receiving IP.
- ![](https://main.qcloudimg.com/raw/6eb83745203068c240945a3df7416a37.png)
+ ![](https://main.qcloudimg.com/raw/8bec0de6223c109daed7eefef1394959.png)
 2. After completing the configurations, click **OK**.
 
 ## Result Validation
 >! This document takes creating a traffic mirror that collects the outbound traffic of the 10.0.0.14 ENI accessing the www.qq.com website as an example.
 
 1. Return to the **Traffic mirroring** page. If the traffic mirror that you just created is displayed with **Collect Traffic** enabled, the traffic mirror has been created successfully.
-![](https://main.qcloudimg.com/raw/e29fb85e28e35599ff36ea840eff3f02.png)
+![](https://main.qcloudimg.com/raw/fd6191f3c858d0f2dd799a467c0d1c40.png)
 2. Perform the following steps to verify whether the collected traffic is mirrored to the receiving IP.
 	1. Generate the ENI traffic. For example, you can log in to the source CVM and run the `ping ***public IP***` command.
     **Source data:**
