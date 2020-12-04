@@ -1,6 +1,6 @@
 ## Overview
 
-This API is used to obtain the intelligent tiering configuration on a bucket.
+This API is used to query the intelligent tiering configuration on a bucket.
 
 > ?
 >
@@ -69,7 +69,7 @@ The nodes are described in details below:
 | IntelligentTieringConfiguration | None                                         | Information on the intelligent tiering configuration                                   | Container |
 | Status                          | IntelligentTieringConfiguration            | Specifies the status of the intelligent tiering configuration once enabled. Enumerated values: Suspended, Enabled     | Enum      |
 | Transition                      | IntelligentTieringConfiguration            | Specifies the transition for objects in the intelligent tiering configuration                 | Container |
-| Days                            | IntelligentTieringConfiguration.Transition | Specifies the number of consecutive days for which an object in the STANDARD storage tier has not been accessed before being moved to the STANDARD_IA storage tier. Default: 30 | Int       |
+| Days                            | IntelligentTieringConfiguration.Transition | Specifies the number of consecutive days for which objects have not been accessed in the frequent access tier, and are therefore moved to the infrequent access tier. Valid values: 30 (default), 60, 90 | Int       |
 
 #### Error codes
 
