@@ -24,7 +24,7 @@ In MySQL, memory can be roughly divided into two parts: globally shared memory a
 - Private memory is allocated by the system upon connection to the MySQL server.
 In some special SQL statements or field types, cache may be allocated to a single thread repeatedly. Therefore, all OOM exceptions are caused by the private memory of each connection. The risk of high memory utilization can be mitigated by limiting database connections and optimizing inefficient SQL statements. If this doesn't work, you can upgrade the memory configuration so as to improve the overall concurrence and stability of the database. For more information on memory parameters, see [Memory Allocation Issues](https://intl.cloud.tencent.com/document/product/236/31922).
 
->
+>?
 >- During the upgrade, your business can operate normally. After the upgrade, there will be a switchover accompanied by an interruption lasting for just seconds. Please make sure that your business has a reconnection mechanism.
 >- Currently, you cannot modify the memory parameter in the TencentDB for MySQL Console. If the innodb_buffer_pool_size is set too small, the disk write load may be high which will compromise the overall performance of your database.
 >- To protect your business from being affected by insufficient MySQL memory or CPU resources, please configure an appropriate resource alarm policy for your instance. By doing so, you can identify potential resource shortage in advance. For more information, see [Alarming Service](https://intl.cloud.tencent.com/document/product/248/6126).
