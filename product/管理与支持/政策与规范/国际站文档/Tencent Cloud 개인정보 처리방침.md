@@ -476,5 +476,5 @@ UAE법률 (예: UAE 사이버범죄법에) 에 따라 범죄를 구성하는 사
 2.[모바일 Tencent 보호](https://intl.cloud.tencent.com/ko/document/product/1018/36786).</br>
 3.[웹 애플리케이션 방화벽](https://intl.cloud.tencent.com/ko/document/product/627/37005).</br>
 4.[게임 멀티미디어 엔진](https://intl.cloud.tencent.com/ko/document/product/607/37524).</br>
-5.안티 DDoS 전문 판</br>
-6.얼굴 인식</br>
+5.[안티 DDoS 전문 판](https://intl.cloud.tencent.com/document/product/1029/36805).</br>
+<br>6.[얼굴 인식](https://intl.cloud.tencent.com/document/product/1059/38786)</br>
