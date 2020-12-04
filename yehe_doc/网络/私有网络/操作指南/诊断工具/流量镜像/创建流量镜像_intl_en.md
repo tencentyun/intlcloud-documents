@@ -1,5 +1,5 @@
 Traffic mirror provides a traffic collection service that enables you to filter the traffic from the specified ENI using 5-tuple and other rules. Then you can copy the filtered traffic to CVM instances in the same VPC. This feature is applicable to use cases including security audit, risk monitoring, troubleshooting and business analysis. This document describes how to create a traffic mirror.
->? The traffic mirror is currently in beta. If you want to try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). We recommend that you save the link to the Traffic Mirror Console to facilitate your next login without applying again.
+>? The traffic mirror feature is currently in beta. If you want to try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). Please save the link to the Traffic Mirror console for later logins, otherwise you may need to apply again.
 
 ## Prerequisites
 Make sure that both the collected IP and receiving IP are in the same VPC and the collected IP has a route table pointing to the receiving IP.
@@ -16,13 +16,13 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
     - **Virtual Private Cloud**: all traffic in the VPC except for the mirrored traffic of receiving IPs will be collected, which usually applies to the full mirror scenario.
     - **Subnet**: all traffic in the VPC subnet except for the mirrored traffic of receiving IPs will be collected. This option requires selecting specific subnets.
     - **ENI**: all traffic in the VPC will be collected, but the traffic of the ENI that is bound to receiving IPs will be excluded. This option requires selecting specific ENIs.
-      ![](https://main.qcloudimg.com/raw/5a359241aabeccd7424324e8357d8251.png)
+      ![](https://main.qcloudimg.com/raw/02a11b3e50501983e596037739c67a03.png)
  - Choose **Collection Type**: select the traffic direction as needed. There are three options: All traffic, Traffic out and Traffic in.
  - Choose **Traffic filtering**: select a method to filter out unnecessary traffic and keep the mirror small and lightweight.
     -**N/A**: all traffic configured will be collected.
     - **Quintuple**: the traffic that meets 5-tuple conditions will be collected. After this option is selected, please specify **Protocol**, **Source IP range**, **Destination IP range**, **Source port**, and **Destination port**. You can click **Add** to create another filter condition. Only the traffic that meets all of filter conditions will be collected.
-    ![](https://main.qcloudimg.com/raw/1b49eca6a1e7f736633ee2762f5d6620.png)
-    - **The next hop is the NAT gateway**: when the next hop is the NAT gateway, the traffic will be collected. After this option is selected, please search for a NAT gateway next to **Condition**.
+    ![](https://main.qcloudimg.com/raw/570590952efb6f89e581f94564ecdcd3.png)
+    - **The next hop is the NAT gateway**: collect traffic whose next hop address is the NAT gateway. After this option is selected, select the corresponding NAT gateway next to **Condition**.
 4. After completing the configuration, click **Next**.
 
 ### Step 2: create a traffic mirror target
@@ -36,20 +36,20 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
     + **Balance method**: select either of:
         + **Evenly distribute traffic**: all traffic will be copied to these receiving IPs evenly.
         + **HASH by ENI**: traffic from the same ENI will be copied to the same receiving IP.
- ![](https://main.qcloudimg.com/raw/8bec0de6223c109daed7eefef1394959.png)
+ ![](https://main.qcloudimg.com/raw/6eb83745203068c240945a3df7416a37.png)
 2. After completing the configurations, click **OK**.
 
 ## Result Validation
 >! This document takes creating a traffic mirror that collects the outbound traffic of the 10.0.0.14 ENI accessing the www.qq.com website as an example.
 
 1. Return to the **Traffic mirroring** page. If the traffic mirror that you just created is displayed with **Collect Traffic** enabled, the traffic mirror has been created successfully.
-![](https://main.qcloudimg.com/raw/fd6191f3c858d0f2dd799a467c0d1c40.png)
+![](https://main.qcloudimg.com/raw/e29fb85e28e35599ff36ea840eff3f02.png)
 2. Perform the following steps to verify whether the collected traffic is mirrored to the receiving IP.
 	1. Generate the ENI traffic. For example, you can log in to the source CVM and run the `ping ***public IP***` command.
     **Source data:**
 	 ![](https://main.qcloudimg.com/raw/74ad4cbd7a6f2179b441cafee5976bba.png)
 	 <span id="buzhou2"></span>
-	2. Log in to the destination CVM and run the following commands to capture data and save as a “.cap” or “.pcap” file. This document uses the “.pcap” file as an example.
+	2. Log in to the destination CVM and run the following commands to capture data and save it as a “.cap” or “.pcap” file. This document uses the “.pcap” file as an example.
 	      ```plaintext
 	   tcpdump -i eth0 -w capture-2020-10-27.pcap    #Enter the actual file name.
       ```
@@ -62,7 +62,7 @@ Make sure that both the collected IP and receiving IP are in the same VPC and th
 	4. Use a packet parser (such as Wireshark) to obtain data from the “capture-2020-10-27.pcap” file that has been downloaded. In this example, 12 mirrored packets of the source CVM are obtained from the destination CVM.
 	 **Packet verification:**
 	 ![](https://main.qcloudimg.com/raw/8011aef82006411e35edd41bf5eae5c4.png)
-3. If an exceptional packet or no packet has been obtained, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+3. If an exceptional packet is obtained, or it’s unable to obtain packets, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Subsequent Operations
 - [Enabling or disabling the traffic mirror](https://intl.cloud.tencent.com/document/product/215/36393)
