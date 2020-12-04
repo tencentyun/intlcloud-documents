@@ -40,7 +40,7 @@ Consider all of the above factors when choosing a shard key to reduce the negati
 
 ## Balancing and Related Parameters
 MongoDB sharded cluster partitions data into chunks. The background process `balancer` monitors the number of chunks on each shard and migrates the chunks between shards to balance the load on each shard server.
->The system creates an initial chunk, and the chunk size is 64 MB by default.
+>?The system creates an initial chunk, and the chunk size is 64 MB by default.
 
 Because chunk migrations have an impact on cluster read/write performance, you can set the balancing window to avoid the impact during business peak, or run commands to disable balancing.
 
