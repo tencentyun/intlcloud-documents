@@ -10,7 +10,7 @@
 ## 配置自动重连功能
 避免因主备切换而影响应用连接异常，推荐您配置云数据库 MySQL 的应用程序自动重连功能，在连接池配置 connectTimeOut 和 socketTimeOut 参数。
 请根据不同的业务场景设置合理的参数值，基于 OLTP（On-Line Transaction Processing）的业务场景建议统一设置为20秒。
->
+>?
 >- connectTimeOut：应用程序与数据库服务器建立 TCP 连接的超时时间，建议至少大于应用程序到数据库服务器的响应时间。
 >- socketTimeOut：通过 TCP 连接发送数据包后，等待响应的超时时间，建议设置为单条 SQL 最长执行时间。
 
