@@ -44,7 +44,7 @@ MongoDB 分片集群提供三种 Sharding（数据分布）方式，分别为基
 
 chunck 迁移时会造成集群的读写性能下降，因此需要通过适当配置 balance 活动窗口来避免 balance 对业务高峰期的影响，也可以通过命令来关闭 balance。
 
-下面介绍管理 balance 的相关命令，若某些指令无权限执行，请 [提交工单](https://intl.cloud.tencent.com/contact-sales) 联系我们处理。
+下面介绍管理 balance 的相关命令，若某些指令无权限执行，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们处理。
 
 - **查看 mongo 集群是否开启了 balance**
 ```
