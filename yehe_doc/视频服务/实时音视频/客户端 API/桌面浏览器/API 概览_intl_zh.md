@@ -1,26 +1,123 @@
 ## 支持的平台
 
 WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器、桌面版 Safari 浏览器以及移动版 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差。
-- 在移动端推荐使用小程序解决方案，微信和手机 QQ 小程序均已支持，都是由各平台的 Native 技术实现，音视频性能更好，且针对主流手机品牌进行了定向适配。
 - 如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
 
-| 操作系统 | 浏览器类型 | 浏览器最低版本要求 | 接收（播放）| 发送（上麦）| 屏幕分享 |
-|:-------:|:-------:|:-------:|:-------:|:-------:| :-------:|
-| Mac OS  | 桌面版 Safari 浏览器 |  11+ | 支持 | 支持 | 不支持 |
-| Mac OS  | 桌面版 Chrome 浏览器 |  56+ | 支持 | 支持 | 支持（需要 Chrome72+ 版本） |
-| Windows  | 桌面版 Chrome 浏览器|  56+ | 支持 | 支持 | 支持（需要 Chrome72+ 版本） |
-| Windows  | 桌面版 QQ 浏览器 |  10.4 | 支持 | 支持 | 不支持 |
-| iOS | 移动版 Safari 浏览器 | 11.1.2 | 支持 | 支持 | 不支持 |
-| iOS | 微信内嵌网页| 12.1.4 | 支持 | 不支持 | 不支持 |
-| Android | 移动版 QQ 浏览器| - | 不支持 | 不支持 | 不支持 |
-| Android | 移动版 UC 浏览器| - | 不支持 | 不支持 | 不支持 |
-| Android | 微信内嵌网页| - | 不支持 | 不支持 | 不支持 |
+<table>
+<thead><tr><th width="15%">操作系统</th>
+<th width="24%">浏览器类型</th>
+<th>浏览器最低<br>版本要求</th>
+<th>接收（播放）</th>
+<th>发送（上麦）</th>
+<th>屏幕分享</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mac OS</td>
+<td>桌面版 Safari 浏览器</td>
+<td>11+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持（需要  Safari 13+ 版本）</td>
+</tr><tr>
+<td>Mac OS</td>
+<td>桌面版 Chrome 浏览器</td>
+<td>56+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持（需要 Chrome 72+ 版本）</td>
+</tr><tr>
+<td>Mac OS</td>
+<td>桌面版 Firefox 浏览器</td>
+<td>56+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持（需要 Firefox 66+ 版本）</td>
+</tr><tr>
+<td>Mac OS</td>
+<td>桌面版 Edge 浏览器</td>
+<td>80+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr><tr>
+<td>Windows</td>
+<td>桌面版 Chrome 浏览器</td>
+<td>56+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持（需要 Chrome 72+ 版本）</td>
+</tr><tr>
+<td>Windows</td>
+<td>桌面版 QQ 浏览器（极速内核）</td>
+<td>10.4+</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>Windows</td>
+<td>桌面版 Firefox 浏览器</td>
+<td>56+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持（需要 Firefox 66+ 版本）</td>
+</tr><tr>
+<td>Windows</td>
+<td>桌面版 Edge 浏览器</td>
+<td>80+</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr><tr>
+<td>iOS 11.1.2+</td>
+<td>移动版 Safari 浏览器</td>
+<td>11+</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>iOS 12.1.4+</td>
+<td>微信内嵌网页</td>
+<td>-</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>Android</td>
+<td>移动版 QQ 浏览器</td>
+<td>-</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>Android</td>
+<td>移动版 UC 浏览器</td>
+<td>-</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>Android</td>
+<td>微信内嵌网页（TBS 内核）</td>
+<td>-</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr><tr>
+<td>Android</td>
+<td>微信内嵌网页（XWEB 内核）</td>
+<td>-</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
 
 ## API 使用指引
 详细的 API 使用介绍请参见以下指引：
 
 | 功能                       | Sample Code 指引   |
-|--------------|--------------------|
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | 基础音视频通话  | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)               |
 | 互动直播 | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                           |
 | 切换摄像头和麦克风 | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html)      |
@@ -30,6 +127,7 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 | 音量大小检测 | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html) |
 | 自定义采集与自定义播放渲染 | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-08-advanced-customized-capture-rendering.html) |
 | 房间内上行用户个数限制 | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-09-advanced-uplink-limits.html) |
+| 背景音乐和音效实现方案     | [指引链接](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-12-advanced-audio-mixer.html)                  |
 
 
 ## TRTC
@@ -39,7 +137,7 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 TRTC 是 [TRTC 桌面浏览器 SDK](https://trtc-1252463788.file.myqcloud.com/web/docs/index.html) 的主入口，通过 TRTC 方法可以创建一个实时音视频通信的客户端对象（Client）和本地音视频流对象（Stream）。TRTC 方法还可以检测浏览器的兼容性，是否支持屏幕分享，以及设置日志级别及日志上传。
 
 | API | 描述 |
-| --- | --- |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [VERSION](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.VERSION) | TRTC 桌面浏览器 SDK 版本号。 |
 | [checkSystemRequirements](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.checkSystemRequirements) | 检测浏览器是否兼容 TRTC 桌面浏览器 SDK。若当前浏览器不兼容 TRTC 桌面浏览器 SDK，建议引导用户去下载最新版本的 Chrome 浏览器。 |
 | [isScreenShareSupported](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.isScreenShareSupported) | 检测浏览器是否支持屏幕分享。在创建屏幕分享流之前请调用该方法检查当前浏览器是否支持屏幕分享。 |
@@ -55,7 +153,7 @@ TRTC 是 [TRTC 桌面浏览器 SDK](https://trtc-1252463788.file.myqcloud.com/we
 提供日志设置方法，包括设置 [日志输出等级](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.Logger.html#.LogLevel)、打开或关闭日志上传。
 
 | API | 描述 |
-| --- | --- |
+| --------------------------------------------------------------------------------------------------------- | ------------------ |
 | [setLogLevel](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.Logger.html#.setLogLevel) | 设置日志输出等级。 |
 | [enableUploadLog](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.Logger.html#.enableUploadLog) | 打开日志上传。 |
 | [disableUploadLog](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.Logger.html#.disableUploadLog) | 关闭日志上传。 |
@@ -65,7 +163,7 @@ TRTC 是 [TRTC 桌面浏览器 SDK](https://trtc-1252463788.file.myqcloud.com/we
 音视频通话客户端对象 Client 通过 [createClient()](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.createClient) 创建，代表一次音视频会话。
 
 | API | 描述 |
-| --- | --- |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [setProxyServer](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#setProxyServer) | 设置代理服务器。该方法适用于企业自己部署代理服务器，如 nginx+coturn 方案。 |
 | [setTurnServer](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#setTurnServer) | 设置 TURN 服务器。该方法配合 [setProxyServer()](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#setProxyServer) 使用，适用于企业自己部署代理服务器和 TURN 中转。 |
 | [join](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html#join) | 加入一个音视频通话房间，进房代表开始一个音视频通话会话。若房间不存在，系统将自动创建一个新房间。 |
@@ -87,7 +185,7 @@ TRTC 是 [TRTC 桌面浏览器 SDK](https://trtc-1252463788.file.myqcloud.com/we
 LocalStream 本地音视频流，通过 [createStream](https://trtc-1252463788.file.myqcloud.com/web/docs/TRTC.html#.createStream) 创建，是 [Stream](https://trtc-1252463788.file.myqcloud.com/web/docs/Stream.html) 的子类。
 
 | API | 描述 |
-| --- | --- |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | [initialize](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#initialize) | 初始化本地音视频流对象。 |
 | [setAudioProfile](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#setAudioProfile) | 设置音频 Profile。该方法需要在调用 [initialize()](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#initialize) 之前调用。 |
 | [setVideoProfile](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#setVideoProfile) | 设置视频 Profile。该方法需要在调用 [initialize()](https://trtc-1252463788.file.myqcloud.com/web/docs/LocalStream.html#initialize) 之前调用。 |
@@ -123,7 +221,7 @@ LocalStream 本地音视频流，通过 [createStream](https://trtc-1252463788.f
 远端音视频流，通过监听 [Client.on('stream-added')](https://trtc-1252463788.file.myqcloud.com/web/docs/module-Event.html#.STREAM_ADDED) 事件获得。是 [Stream]() 的子类。
 
 | API | 描述 |
-| --- | --- |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | [getType](https://trtc-1252463788.file.myqcloud.com/web/docs/RemoteStream.html#getType) | 获取远端流类型。主要用于判断一个远端流是主音视频流还是辅路视频流，辅路视频流通常是一个屏幕分享流。 |
 | [play](https://trtc-1252463788.file.myqcloud.com/web/docs/RemoteStream.html#play) | 播放该音视频流。 |
 | [stop](https://trtc-1252463788.file.myqcloud.com/web/docs/RemoteStream.html#stop) | 停止播放音视频流。 |
@@ -151,5 +249,5 @@ LocalStream 本地音视频流，通过 [createStream](https://trtc-1252463788.f
 RtcError 错误对象。
 
 | API | 描述 |
-| --- | --- |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | [getCode](https://trtc-1252463788.file.myqcloud.com/web/docs/RtcError.html#getCode) | 获取错误码。 |
