@@ -16,7 +16,8 @@ This API (PUT Bucket domain) is used to configure a custom domain name for a buc
 
 #### Method prototype
 
-```
+[//]: # (.cssg-snippet-put-bucket-domain)
+```py
 put_bucket_domain(Bucket, DomainConfiguration={}, **kwargs)
 ```
 
@@ -76,6 +77,7 @@ get_bucket_domain(Bucket, **kwargs)
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-domain)
 ```
 response = client.get_bucket_domain(
     Bucket='examplebucket-1250000000'
@@ -129,6 +131,7 @@ delete_bucket_domain(Bucket, **kwargs)
 
 #### Sample request
 
+[//]: # (.cssg-snippet-delete-bucket-domain)
 ```
 response = client.delete_bucket_domain(
     Bucket='examplebucket-1250000000'
