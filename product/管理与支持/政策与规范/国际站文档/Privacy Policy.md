@@ -268,16 +268,16 @@ E-mail: <cloudlegalnotices@tencent.com>
 
 The terms of this Addendum apply to residents of California under the California Consumer Privacy Act (“CCPA”) and other applicable laws. The CCPA provides California residents with certain legal rights such as access, deletion, disclosure, or “do not sell.” These rights are not absolute and are subject to certain exceptions.
 
-### Collection and Disclosure of Personal Information
+***Collection and Disclosure of Personal Information***
 
-Over the past 12 months, through your use of the Services, we may have collected and disclosed the following categories of personal information from or about consumers, as defined in the CCPA:
+***Over the past 12 months, through your use of the Services, we may have collected and disclosed the following categories of personal information from or about consumers, as defined in the CCPA:***
 
 - Identifiers, including name, email address, mobile number, IP address, device identifiers, Tencent Cloud ID, mailing address, government-issued identification, and verification codes transmitted to or from the device. This information is collected directly from the consumer or device.
 - Internet or other electronic network activity information, including the User Agent or website browser, log metadata associated with the consumer’s interactions with Tencent Cloud, and Tencent Cloud customer support incident details (as well as response steps associated with customer service tickets). This information is collected directly from the consumer or device.
 - Geolocation data, including location data derived from IP address provided directly to us from the device. The Wi-Fi access point data can be used to understand location data at a zip-code level, whereas the GPS information provided by the device can more precisely track the device’s current coordinates. This information is collected directly from the device.
 - Commercial information, including payment card information and transaction records (such as information about purchased Services, such as the activation code and date of purchase). This information is collected directly from the consumer or device.
 
-We collect personal information for the following purposes and as described in the applicable Module:
+***We collect personal information for the following purposes and as described in the applicable Module:***
 
 - To operate and administer the Services;
 - To communicate with consumers;
@@ -294,9 +294,9 @@ We disclose personal information to the following types of entities:
 - Regulators and judicial authorities and law enforcement agencies
 - Entities that acquire all or substantially all of our business
 
-**In the past 12 months, we have not sold personal information of California residents within the meaning of “sold” in the CCPA.**
+***In the past 12 months, we have not sold personal information of California residents within the meaning of “sold” in the CCPA.***
 
-### Rights under the CCPA
+***Rights under the CCPA***
 If you are a California resident and the CCPA does not recognize an exemption that applies to you or your personal information, you have the right to:
 
 - Request we disclose to you free of charge the following information covering the 12 months preceding your request:
@@ -382,11 +382,11 @@ We will retain your personal information as described in the Tencent Cloud Priva
 
 ### Japan
 
-Consent
+*Consent*
 
 By clicking “accept”, you consent to the cross-border transfer of your information to any country where we have databases or affiliates, including outside of Japan.
 
-Your Rights 
+*Your Rights*
  
 You may request us to notify you about the purposes of use of, to disclose, to make any correction to, to discontinue the use or provision of, and/or to delete any and all of your personal information which is stored by us, to the extent provided by the Act on the Protection of Personal Information of Japan. When you wish to make such requests, please contact us at **cloudlegalnotices@tencent.com**.
 
