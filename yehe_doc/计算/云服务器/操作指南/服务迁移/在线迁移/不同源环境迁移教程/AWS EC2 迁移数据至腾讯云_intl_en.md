@@ -18,28 +18,28 @@ Before the migration, check the following items of the source server and destina
 </table>
 
 >? 
-> - You can use tool commands such as `sudo ./go2tencentcloud_x64 --check` to automatically check the source server.
+> - You can use tool commands to automatically check the source server, for example, `sudo ./go2tencentcloud_x64 --check`.
 > - By default, the go2tencentcloud migration tool automatically performs checks upon launch. To skip checks and perform forced migration, configure `Client.Extra.IgnoreCheck` to `true` in the client.json file.
 > - For more information on the go2tencentcloud migration tool, see [Migration Tool](https://intl.cloud.tencent.com/document/product/213/35640).
 > 
 
 ## 5. Starting the Migration
- 
-1. (Optional) Establish a connection between the source server and the destination CVM.  
+
+1. (Optional) Establish a connection between the source server and the destination CVM. 
  - If you are using the private network mode, establish a connection between the source server and the destination CVM through [VPC peering connections](https://intl.cloud.tencent.com/document/product/553), [VPN connections](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003), or [Direct Connect](https://intl.cloud.tencent.com/document/product/216).
  - Skip to the next step if you are using the default mode.
 2. Configure the “user.json” file.
 The “user.json” file is used to configure the source server and the destination CVM. It contains the following configuration items:
  - The API keys of your account, that is, `SecretId` and `SecretKey`. For more information, see [Access Key](https://intl.cloud.tencent.com/document/product/598/32675).
- - The region of the destination CVM.
- - The instance ID of the destination CVM.
+ - The region of the destination CVM. For more information on supported regions, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
+ - The instance ID of the destination CVM, which can be checked on the [Instances](https://console.cloud.tencent.com/cvm/instance/index?rid=1) page.
  - (Optional) The data disk configuration of the source server.  
 3. Configure the “client.json” file.
-The “client.json” file is used to configure the migration mode and other parameters. You need to configure the `Client.Net.Mode` parameter in the “client.json” file, regardless of which migration modes or scenarios you select.
+The “client.json” file is used to configure the migration mode and other parameters. You need to configure the `Client.Net.Mode` parameter in the “client.json” file, regardless of which migration scenarios you select.
 4. (Optional) Exclude files and directories on the source server that do not need to be migrated.  
  Edit the “rsync\_excludes\_linux.txt” file on the Linux source server to remove files and directories that do not need to be migrated.
 5. Run the tool.
-For example, on a 64-bit Linux source server, execute the following command as `root` to run the tool.
+For example, on a 64-bit Linux source server, execute the following command as the root user to run the tool.
 ```
 sudo ./go2tencentcloud_x64
 ```
