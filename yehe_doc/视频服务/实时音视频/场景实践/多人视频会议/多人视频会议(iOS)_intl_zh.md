@@ -1,6 +1,15 @@
 ## 效果展示
 您可以 [下载](https://intl.cloud.tencent.com/document/product/647/35076) 安装我们的 Demo 体验多人视频会议的效果，包括屏幕分享、美颜、低延时会议等 TRTC 在多人视频会议场景下的相关能力。
 
+<table>
+     <tr>
+         <th>进入会议</th>  
+         <th>屏幕分享</th>  
+     </tr>
+<tr>
+</tr>
+</table>
+
 如需快速接入多人视频会议功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCMeeting 组件并实现自定义 UI 界面。
 
 ## 复用 Demo 的 UI 界面
@@ -11,7 +20,6 @@
 2. 单击【立即开始】，输入应用名称，例如 `TestMeetingRoom` ，单击【创建应用】。
 
 >? 本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
-
 
 
 
@@ -30,6 +38,7 @@
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
+>!
 >!本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
 >正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
@@ -92,20 +101,16 @@ pod 'TXLiteAVSDK_TRTC'
 <tr>
 <th>参数名</th>
 <th>作用</th>
-</tr>
-<tr>
+</tr><tr>
 <td>sdkAppId</td>
 <td>您可以在 <a href="https://console.cloud.tencent.com/trtc/app">实时音视频控制台</a> 中查看 SDKAppID。</td>
-</tr>
-<tr>
+</tr><tr>
 <td>userId</td>
 <td>当前用户的 ID，字符串类型，只允许包含英文字母（a-z、A-Z）、数字（0-9）、连词符（-）和下划线（_）。</td>
-</tr>
-<tr>
+</tr><tr>
 <td>userSig</td>
 <td>腾讯云设计的一种安全保护签名，获取方式请参考 <a href="https://intl.cloud.tencent.com/document/product/647/35166">如何计算 UserSig</a>。</td>
-</tr>
-<tr>
+</tr><tr>
 <td>callback</td>
 <td>登录回调，成功时 code 为0。</td>
 </tr>
@@ -128,8 +133,7 @@ TRTCMeeting.sharedInstance().login(SDKAPPID, userId: userID, userSig: userSig, c
 2. 主持人调用`setDelegate`可以进行事件调用`createMeeting`创建新的会议房间。
 3. 主持人可以调用`startCameraPreview`进行视频画面的采集，也可以调用`startMicrophone`进行声音的采集。
 4. 如果主持人有美颜的需求，界面上可以配置美颜调节按钮调用，通过`getBeautyManager`进行美颜设置。
->非企业版 SDK 不支持变脸和贴图挂件功能。
->
+>? 非企业版 SDK 不支持变脸和贴图挂件功能。
 
 ![](https://main.qcloudimg.com/raw/416a1afd87b196a6ef791bf63eeaa5e0.png)
 
@@ -252,4 +256,3 @@ func onRecvRoomCustomMsg(_ cmd: String?, message: String?, userInfo: TRTCMeeting
   }
 }
 ```
-

@@ -17,7 +17,7 @@
 >?Keepalived 是基于 VRRP 协议的一款高可用软件，Keepalived 配置通过 keepalived.conf 文件完成。
 
 高可用虚拟 IP 的架构如下图所示。
-![](https://main.qcloudimg.com/raw/6cf7f99f1cfad6a26da8b4734035b97b.png)
+![](https://main.qcloudimg.com/raw/e8d0e60cbd3221089256087c5686588f.png)
 以上图举例，假设搭建 CVM1 和 CVM2 为一套高可用主备集群，实现原理如下：
 1. CVM1 和 CVM2 均安装 keepalived 软件，配置 HAVIP 为 VRRP VIP，并设置主备服务器的优先级（priority 值），值越大优先级越高。
 2. Keepalived 中的 VRRP 协议通过比对 CVM1 和 CVM2 的初始优先级大小，选举出 Master 服务器，即 CVM1 为 Master 服务器，CVM2 为 Backup 服务器。

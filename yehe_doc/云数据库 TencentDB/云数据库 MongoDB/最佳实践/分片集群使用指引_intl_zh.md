@@ -33,18 +33,18 @@ MongoDB 分片集群提供三种 Sharding（数据分布）方式，分别为基
 - **查询带分片**
 查询时建议带上分片，使用分片键进行条件查询时，mongos 可以直接定位到具体分片，否则 mongos 需要将查询分发到所有分片，再等待响应返回。
  
-- **避免单调底层或递减**
+- **避免单调递增或递减**
 单调递增的 sharding key，数据文件挪动小，但写入会集中，导致最后一篇的数据量持续增大，不断发生迁移，递减同理。
 
 综上，在选择片键时要考虑以上4个条件，尽可能满足更多的条件，才能降低 MoveChuncks 对性能的影响，从而获得最优的性能体验。
 
 ## 分片集群 balance 介绍及相关参数
 在一个分片集群内部，MongoDB 会把数据分为 chunks，后台进程 balancer 负责 chunk 的迁移，从而均衡各个 shard server 的负载，每个 chunk 包含一部分数据，chunk 的产生和迁移会导致 balance 的产生。
->系统初始仅1个 chunk，chunk size 默认值64MB。
+>?系统初始仅1个 chunk，chunk size 默认值64MB。
 
 chunck 迁移时会造成集群的读写性能下降，因此需要通过适当配置 balance 活动窗口来避免 balance 对业务高峰期的影响，也可以通过命令来关闭 balance。
 
-下面介绍管理 balance 的相关命令，若某些指令无权限执行，请 [提交工单](https://intl.cloud.tencent.com/contact-sales) 联系我们处理。
+下面介绍管理 balance 的相关命令，若某些指令无权限执行，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们处理。
 
 - **查看 mongo 集群是否开启了 balance**
 ```

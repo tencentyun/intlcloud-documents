@@ -2,7 +2,7 @@
 
 The `GET Bucket` request is equivalent to the `List Object` request and can be used to list some or all objects in a bucket. To make this request, you need to have read permission for the bucket.
 
-> If you upload an object to the bucket and immediately call the `GET Bucket` API, due to the eventual consistency characteristic of this API, the response may not include the newly uploaded object.
+>? If you upload an object to the bucket and immediately call the `GET Bucket` API, due to the eventual consistency characteristic of this API, the response may not include the newly uploaded object.
 
 #### Request
 
@@ -15,7 +15,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
@@ -74,6 +74,7 @@ A successful query returns **application/xml** data which contains information o
 			<DisplayName>string</DisplayName>
 		</Owner>
 		<StorageClass>Enum</StorageClass>
+		<StorageTier>Enum</StorageTier>
 	</Contents>
 	<Contents>
 		<Key>string</Key>
@@ -126,6 +127,7 @@ The detailed nodes are described as follows:
 | Size | ListBucketResult.Contents | Object size in bytes | integer |
 | Owner | ListBucketResult.Contents | Bucket owner information | Container |
 | StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, see [Storage Type](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
+|  x-cos-storage-tier  | ListBucketResult.Contents |Specifies the access tier for the object if it is stored in the INTELLIGENT TIERING storage class. Valid values: FREQUENT, INFREQUENT |  enum  |
 
 **Content of the Container node `Contents.Owner`:**
 
@@ -136,7 +138,7 @@ The detailed nodes are described as follows:
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API uses uniform error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
 ## Use cases
 

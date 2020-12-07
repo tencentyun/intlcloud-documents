@@ -1,5 +1,8 @@
 本文介绍如何快速跑通腾讯云 Web 直播互动组件的体验 Demo。
 
+## 效果展示
+
+
 ## 环境要求
 
 - 请使用最新版本的 Chrome 浏览器。
@@ -19,8 +22,7 @@
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
 2. 进入[【应用管理】](https://console.cloud.tencent.com/trtc/app)，单击【创建应用】，输入应用名称，例如 `testtrtc`，单击【确定】。
 
-<span id="step2"></span>
-### 步骤2：获取 SDKAppID 和密钥
+### 步骤2：获取 SDKAppID 和密钥<span id="step2"></span>
 
 1. 在应用列表里，找到已创建的应用，单击右侧的【应用信息】进入详情页，即可复制保存 `SDKAppID` 信息。
 ![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
@@ -29,8 +31,7 @@
 
 >! 请妥善保管密钥信息，谨防泄露。
 
-<span id="step3"></span>
-### 步骤3：下载并配置 Demo 源码
+### 步骤3：下载并配置 Demo 源码<span id="step3"></span>
 
 1. 下载腾讯云 Web 直播互动组件 Demo 工程，[下载地址](https://github.com/tencentyun/TWebLive)。
 2. 打开 `TWebLive/dist/debug/GenerateTestUserSig.js` 文件，并设置相关参数：
@@ -44,7 +45,6 @@
 >- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
 >- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
-
 ### 步骤4：运行 Demo<span id="step4"></span>
 
 使用 Chrome 浏览器打开 `dist` 目录下的 `index.html` 文件即可运行 Demo。
@@ -52,6 +52,8 @@
 >!
 >- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
 - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
+
+**Demo 运行界面如图所示：**
 
 TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】。
 
@@ -62,17 +64,22 @@ WebRTC 技术由 Google 最先提出，目前主要在桌面版 Chrome 浏览器
 
 - 如果您的应用场景主要为教育场景，那么教师端推荐使用稳定性更好的 [Electron](https://intl.cloud.tencent.com/document/product/647/35097) 解决方案，支持大小双路画面，更灵活的屏幕分享方案以及更强大的弱网络恢复能力。
 
-| 操作系统 | 浏览器类型 | 浏览器最低版本要求 | 接收（播放）| 发送（上麦）|
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-| Mac OS  | 桌面版 Safari 浏览器 |  11+ | 支持 | 支持 | 
-| Mac OS  | 桌面版 Chrome 浏览器 |  56+ | 支持 | 支持 | 
-| Windows  | 桌面版 Chrome 浏览器|  56+ | 支持 | 支持 | 
-| Windows  | 桌面版 QQ 浏览器 |  10.4 | 支持 | 支持 | 
-| iOS | 移动版 Safari 浏览器 | 11.1.2 | 支持 | 支持 | 
-| iOS | 微信内嵌网页| 12.1.4 | 支持 | 不支持 | 
-| Android | 移动版 QQ 浏览器| - | 不支持 | 不支持 | 
-| Android | 移动版 UC 浏览器| - | 不支持 | 不支持 | 
-| Android | 微信内嵌网页| - | 不支持 | 不支持 | 
+|  操作系统   |          浏览器类型          | 浏览器最低版本要求 | 接收（播放） | 发送（上麦） |
+| :---------: | :--------------------------: | :----------------: | :----------: | :----------: |
+|   Mac OS    |     桌面版 Safari 浏览器     |        11+         |     支持     |     支持     |
+|   Mac OS    |     桌面版 Chrome 浏览器     |        56+         |     支持     |     支持     |
+|   Mac OS    |    桌面版 Firefox 浏览器     |        56+         |     支持     |     支持     |
+|   Mac OS    |      桌面版 Edge 浏览器      |        80+         |     支持     |     支持     |
+|   Windows   |     桌面版 Chrome 浏览器     |        56+         |     支持     |     支持     |
+|   Windows   | 桌面版 QQ 浏览器（极速内核） |       10.4+        |     支持     |     支持     |
+|   Windows   |    桌面版 Firefox 浏览器     |        56+         |     支持     |     支持     |
+|   Windows   |      桌面版 Edge 浏览器      |        80+         |     支持     |     支持     |
+| iOS 11.1.2+ |     移动版 Safari 浏览器     |        11+         |     支持     |     支持     |
+| iOS 12.1.4+ |         微信内嵌网页         |         -          |     支持     |    不支持    |
+|   Android   |       移动版 QQ 浏览器       |         -          |    不支持    |    不支持    |
+|   Android   |       移动版 UC 浏览器       |         -          |    不支持    |    不支持    |
+|   Android   |   微信内嵌网页（TBS 内核）   |         -          |     支持     |     支持     |
+|   Android   |  微信内嵌网页（XWEB 内核）   |         -          |     支持     |    不支持    |
 
 >! 由于 H.264 版权限制，华为系统的 Chrome 浏览器和以 Chrome WebView 为内核的浏览器均不支持 TRTC 桌面浏览器端 SDK 的正常运行。
 

@@ -1,4 +1,4 @@
-The following table lists BWP APIs 2.0.
+The following table lists API 2.0 for BWP.
 
 <table>
 <tr>
@@ -27,10 +27,10 @@ The following table lists BWP APIs 2.0.
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/215/36919">DescribeBandwidthPackages</a></td>
-<td>Queries the bandwidth package information, including the unique package ID, type, billing mode and name, and resources contained.</td>
+<td>Queries the bandwidth package information, including the unique package ID, type, billing mode, name, and resources contained.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/215/36920">DescribeBandwidthPackageQuota</a></td>
-<td>Queries the maximum and used number of bandwidth package under the account in the current region.</td>
+<td>Queries the quota (total and used) under the account in the current region.</td>
 </tr>
 </table>

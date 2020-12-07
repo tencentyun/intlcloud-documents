@@ -6,7 +6,7 @@ This API is used to search for log content by specified criteria.
 #### Sample request
 
 ```plaintext
-GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx,xxxx&start_time=2017-08-22+10%3A10%3A10&end_time=2017-08-23+10%3A10%3A10&query_string=&limit=10&context= HTTP/1.1
+GET /searchlog?logset_id=xxxx-xx-xx-xx-xxxxxxxx&topic_ids=xxxx&start_time=2017-08-22+10%3A10%3A10&end_time=2017-08-23+10%3A10%3A10&query_string=&limit=10&context= HTTP/1.1
 Host: <Region>.cls.tencentyun.com
 Authorization: <AuthorizationString>
 
@@ -27,7 +27,7 @@ There are only common request headers but no special request headers.
 | Field Name | Type | Location | Required | Description |
 |---------------|--------|------|--------|---------------------------------------------------|
 | logset_id     | string | query| Yes      | ID of the logset to be queried                                   |
-| topic_ids     | string | query| Yes      | IDs of the topics to be queried, separated with `,`                         |
+| topic_ids     | string | query| Yes      | IDs of the topics to be queried                         |
 | start_time    | string | query| Yes      | Start time of the log to be queried in the format of `YYYY-mm-dd HH:MM:SS`       |
 | end_time      | string | query| Yes      | End time of the log to be queried in the format of `YYYY-mm-dd HH:MM:SS`     |
 | query_string         | string | query| Yes     |Query statement. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439)|

@@ -11,15 +11,16 @@ A new traffic mirror task is enabled by default. To disable it and then enable i
 To modify an existing traffic mirror, follow the steps below:
 1. Open the link you obtained after [submitting a ticket](https://console.cloud.tencent.com/workorder/category) and log in to the Traffic Mirror console. In the top **Region** selector, choose the region where the traffic mirror has been created.
 2. Select the Name/ID of the traffic mirror to be modified.
-3. Select the part you want to update and edit it as follows. This document takes **Virtual Private Cloud** for **Collection Range** as an example.
-   + **Editing traffic collection**
-    1. Click **Edit** on the top-right corner of the traffic collection.
+3. Modify the desired items. This document takes **Virtual Private Cloud** for **Collection Range** as an example.
+   + **Editing traffic collecting configurations**
+    1. Click **Edit** on the top-right corner of the Traffic Collection section.
     2. In the pop-up window, modify **Collection Range**, **Collection Type**, **Traffic filtering** and other configurations as needed, and then click **OK**.
    ![](https://main.qcloudimg.com/raw/d934b4b16f20133a368e90b75c59eb5c.png)
    + **Editing receiving IP**
-    1. Click **Edit** on the top-right corner of the receiving IP.
+    1. Click **Edit** on the top-right corner of the Receiving IP section.
     2. In the pop-up window, modify **Receiving IP** and **Balance method** as needed, and then click **OK**.
        ![](https://main.qcloudimg.com/raw/eda9b1d333569346ce7434321a8311c1.png)
+       
 
 <span id="add" ></span>
 ## Adding Tags
