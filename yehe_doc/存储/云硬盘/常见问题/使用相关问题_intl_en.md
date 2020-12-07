@@ -32,7 +32,7 @@ You can purchase a cloud disk by creating one via the console or an API. For mor
 2. At the top of the **Cloud Block Storage** page, select the region where the disk you want to view resides.
 3. Locate the disk in the list, and view disk information:
 To view more information, click the ID/Name of the disk to enter the details page.
-![](https://main.qcloudimg.com/raw/571b1a0c1582120cd44582745cb6a1c6.png)
+
 
 ### How do I view the cloud disk usage on the console?
 
@@ -40,7 +40,7 @@ Cloud Monitor will automatically be enabled once a CVM instance is created. You 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index) and access the **Instances** page.
 2. Select the ID/Name of the target instance to access the details page.
 3. Click on the **Monitoring** tab to view the instance disk usage:
-![](https://main.qcloudimg.com/raw/83541fc9128edb97b602691a852c1604.png)
+
 
 ### What are the most common cloud disk operations?
 For more information, see [Operation Overview](https://intl.cloud.tencent.com/document/product/362/33140).
@@ -71,7 +71,7 @@ After manually mounting a cloud disk, you must perform subsequent operations sho
   <tr>
 	<td  rowspan="3">Create from a snapshot</td>
 	<td>Cloud disk capacity = Snapshot capacity</td>
-	<td><ul class="params"><li>Mounting to a Windows CVM: after logging in to the instance, make the disk online through **Server Management** > **Storage** > **Disk Management**.</li>
+	<td><ul class="params"><li>Mounting to a Windows CVM: after logging in to the instance, make the disk online through <b>Server Management</b> > <b>Storage</b> > <b>Disk Management</b>.</li>
 		<li>Mounting to a Linux CVM: after logging in to the instance, run the <code>mount <disk partition> <mount point></code> command, such as <code>mount /dev/vdb /mnt</code>.</li>
 		</ul>
 	</li></td>
