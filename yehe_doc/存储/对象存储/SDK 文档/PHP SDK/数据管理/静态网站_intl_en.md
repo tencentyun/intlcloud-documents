@@ -22,6 +22,7 @@ public Guzzle\Service\Resource\Model PutBucketWebsite(array $args = array());
 
 #### Sample request
 
+[//]: # (.cssg-snippet-put-bucket-website)
 ```php
 try {
     $result = $cosClient->putBucketWebsite(array(
@@ -90,6 +91,7 @@ public Guzzle\Service\Resource\Model GetBucketWebsite(array $args = array());
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-website)
 ```php
 try {
     $result = $cosClient->getBucketWebsite(array(
@@ -187,6 +189,7 @@ public Guzzle\Service\Resource\Model DeleteBucketWebsite(array $args = array());
 
 #### Sample request
 
+[//]: # (.cssg-snippet-delete-bucket-website)
 ```php
 try {
     $result = $cosClient->deleteBucketWebsite(array(
