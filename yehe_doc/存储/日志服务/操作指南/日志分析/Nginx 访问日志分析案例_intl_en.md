@@ -40,7 +40,7 @@ The index configuration takes effect in about 1 minute. The new configuration is
 
 #### Bandwidth curve
 
-```sql
+```plaintext
 * | select HISTOGRAM(CAST(msec*1000 AS TIMESTAMP), INTERVAL 1 MINUTE) AS dt, round(SUM(body_bytes_sent)*8/1000.0, 2) AS "Bandwidth(Kb/min)" group by dt order by dt limit 50
 ```
 
@@ -48,7 +48,7 @@ The index configuration takes effect in about 1 minute. The new configuration is
 
 #### Average download speed
 
-```sql
+```plaintext
 * | select HISTOGRAM(CAST(msec*1000 AS TIMESTAMP), INTERVAL 1 MINUTE) AS dt, round(SUM(body_bytes_sent) * 1.0 / SUM(request_time),2) AS "Download speed(KB/s)" group by dt order by dt limit 50
 ```
 
@@ -56,7 +56,7 @@ The index configuration takes effect in about 1 minute. The new configuration is
 
 #### UV
 
-```sql
+```plaintext
 * | select HISTOGRAM(CAST(msec*1000 AS TIMESTAMP), INTERVAL 1 MINUTE) AS dt, count(distinct(remote_addr)) as uv group by dt order by dt limit 50
 ```
 
@@ -64,7 +64,7 @@ The index configuration takes effect in about 1 minute. The new configuration is
 
 #### PV
 
-```sql
+```plaintext
 * | select HISTOGRAM(CAST(msec*1000 AS TIMESTAMP), INTERVAL 1 MINUTE) AS dt, count(*) as pv group by dt order by dt limit 50
 ```
 
@@ -72,13 +72,13 @@ The index configuration takes effect in about 1 minute. The new configuration is
 
 #### Request type distribution
 
-```sql
+```plaintext
 * | select HISTOGRAM(CAST(msec*1000 AS TIMESTAMP), INTERVAL 1 MINUTE) AS dt, count(*) as pv, method group by dt, method order by dt limit 200
 ```
 
 Status code ratio
 
-```sql
+```plaintext
 * | select count(*) as count, status where url like 'http://console.cloud.tencent.com/cls/sql/index1%' group by status
 ```
 
@@ -86,7 +86,7 @@ Status code ratio
 
 #### Top URL
 
-```sql
+```plaintext
 * | select request_url as "t-url", count(*) as count group by request_url order by count desc limit 10
 ```
 
