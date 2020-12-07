@@ -24,6 +24,7 @@ put_bucket_inventory(Bucket, Id, InventoryConfiguration={}, **kwargs)
 
 #### Sample request
 
+[//]: # (.cssg-snippet-put-bucket-inventory)
 ```python
 response = client.put_bucket_inventory(
     Bucket='examplebucket-1250000000'',
@@ -112,6 +113,7 @@ get_bucket_inventory(Bucket, Id, **kwargs)
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-inventory)
 ```
 response = client.get_bucket_inventory(
     Bucket='examplebucket-1250000000',
@@ -198,6 +200,7 @@ delete_bucket_inventory(Bucket, Id, **kwargs)
 
 #### Sample request
 
+[//]: # (.cssg-snippet-delete-bucket-inventory)
 ```
 response = client.delete_bucket_inventory(
     Bucket='examplebucket-1250000000',
