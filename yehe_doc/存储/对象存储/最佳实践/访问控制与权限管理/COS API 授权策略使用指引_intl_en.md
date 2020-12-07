@@ -56,7 +56,7 @@ A COS API access policy is a JSON string. For example, below is a policy that gr
 | effect | Allow or deny |
 | resource | Specific data authorized to be operated on. It can be any resource, a resource in a path with a specified prefix, a resource in a specified absolute path, or a combination thereof. |
 | action | COS API. You can specify one, several, or all (`*`) COS APIs as needed, e.g. `name/cos:GetService`. **Note that this value is case-sensitive**.       |
-| condition | Condition (this value is optional). For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603) |
+| condition | Condition (this value is optional). For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10603#6.-condition) |
 
 Examples of access policy settings for each COS API are listed below.
 

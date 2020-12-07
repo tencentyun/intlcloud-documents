@@ -21,6 +21,7 @@ public Guzzle\Service\Resource\Model PutBucketDomain(array $args = array());
 
 #### Sample request
 
+[//]: # (.cssg-snippet-put-bucket-domain)
 ```php
 try {
     $result = $cosClient->putBucketDomain(array( 
@@ -76,6 +77,7 @@ public Guzzle\Service\Resource\Model GetBucketDomain(array $args = array());
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-domain)
 ```php
 try {
     $result = $cosClient->getBucketDomain(array( 

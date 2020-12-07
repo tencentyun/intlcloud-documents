@@ -23,6 +23,7 @@ put_bucket_logging(Bucket, BucketLoggingStatus={}, **kwargs):
 
 #### Sample request
 
+[//]: # (.cssg-snippet-put-bucket-logging)
 ```
 response = client.put_bucket_logging(
     Bucket='examplebucket-1250000000',
@@ -61,6 +62,7 @@ get_bucket_logging(Bucket, **kwargs):
 
 #### Sample request
 
+[//]: # (.cssg-snippet-get-bucket-logging)
 ```
 response = client.get_bucket_logging(
     Bucket='examplebucket-1250000000'

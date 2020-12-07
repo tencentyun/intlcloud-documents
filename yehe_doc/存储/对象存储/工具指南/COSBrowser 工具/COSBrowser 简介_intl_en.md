@@ -32,7 +32,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
       <td rowspan="2">Mobile Version</td>
       <td>Android</td>
       <td>Android 4.4 or above</td>
-      <td><a href="https://sj.qq.com/myapp/detail.htm?apkName=com.qcloud.cos.client">Android</a></td>
+      <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.apk">Android</a></td>
    </tr>
    <tr>
       <td>iOS</td>
