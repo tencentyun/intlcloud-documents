@@ -56,7 +56,7 @@ When you use the Tencent Cloud website and cloud services (including https://ten
 
 We hold personal information that you provide to us to set up and manage your account and the Services, and personal information generated in connection with your use of the Services ("**Administrative Information**"). We are the data controller of Administrative Information. This privacy policy informs you of your choices and our practices regarding your Administrative Information.
 
-We also hold data, including personal information, that you submit, upload, transmit or display using the Services ("**Content**") and we store this data solely in order to provide the Services. The terms relating to our storage of Content are set out in our[Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) and [Data Processing and Security Addendum](https://intl.cloud.tencent.com/document/product/301/17347). You are the data controller of Content and questions about data handling processes from your users or third parties regarding Content should in the first instance be addressed to you. At all times, we act as a service provider to you, and process data on your behalf. You can extract your Content at any time.
+We also hold data, including personal information, that you submit, upload, transmit or display using the Services ("**Content**") and we store this data solely in order to provide the Services. The terms relating to our storage of Content are set out in our [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248) and [Data Processing and Security Addendum](https://intl.cloud.tencent.com/document/product/301/17347). You are the data controller of Content and questions about data handling processes from your users or third parties regarding Content should in the first instance be addressed to you. At all times, we act as a service provider to you, and process data on your behalf. You can extract your Content at any time.
 
 If you are located in the European Economic Area or Switzerland, the data controller of your personal information for the purposes of the General Data Protection Regulation is Tencent Cloud Europe B.V., a company registered in The Netherlands with its registered address at Atrium building, 8th floor, Strawinskylaan 3127, 1077 ZX Amsterdam, the Netherlands. If you are located outside the European Economic Area or Switzerland, the data controller of your personal information is the entity that you have contracted with, as set out in the [Terms of Service](https://intl.cloud.tencent.com/document/product/301/9248). In each case, the relevant entity is referred to in this policy as "**Tencent**", "**we**" and "**us**".
 
@@ -102,7 +102,7 @@ We will use the information in the following ways and in accordance with the fol
 | Log Data, Metadata, IP  Address, User Tickets, User Agent, Date and Time of Access, each URL visit  within the Tencent Cloud website whether direct or referred from third party  website, [Optional] | We use this information  for strategy and Service improvement and for analytics. | It is in our legitimate  interests to improve our strategy and Services. |
 | Customer Service Ticket/  Chat Content, IP Address, Tencent Cloud ID, incident details and response  steps [Mandatory] | We use this information  to:   <br/>· deal with your concerns and complaints about the Service; and    <br/>· improve and administer our Services and for internal operations, including  troubleshooting, data analysis, testing, research, statistical and survey  purposes, and to keep our Services safe and secure. | It is in our legitimate  interests to improve our Services and provide support in connection with the  Services supplied to you. |
 | Log and Metadata in  relation to incidents [Optional]        | We use this information  in order to improve our Service and responses. | It is in our legitimate  interests to improve our Service and responses. |
-| Enquiry Data (data  provided when you submit an enquiry via our website contact form or as part  of a sales enquiry, including: <br> ·  your name, email, company name and business service) [Mandatory]</br> <br> ·  Phone number and location [Optional]</br> | We use this information  to respond to your request.         | It is in our legitimate  interests to process this information as it is needed to respond to your  request. |
+| Enquiry Data (data  provided when you submit an enquiry via our website contact form or as part  of a sales enquiry), including:  ·  your name, email, company name and business service [Mandatory]</br>   ·  Phone number and location [Optional]</br> | We use this information  to respond to your request.         | It is in our legitimate  interests to process this information as it is needed to respond to your  request. |
 | Promotional Contact Data: Name, Email Phone Number, Business Service and Industry [Optional] | We use this information  to promote our products and services to you. | We process this information with your consent. You can withdraw this consent at any time. |
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country/Region, Industry and Job Title [Mandatory]. | We use this information: <br/>· to reserve you a place on our online events and webinars<br/>· for product notifications; and<br/>· for order confirmations. | We process this information with your consent. You can withdraw this consent at any time. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry [Mandatory]. | We use this information: <br/>· to process your application for the COVID-19 Cloud Resources Support Program;<br/>· to respond to requests for our products; <br/>· for product notifications; and <br/>· for order confirmations.  | We process this information pursuant to our contract with you to provide the support. |
@@ -243,11 +243,11 @@ If you have any questions or comments about the Privacy Policy, if you need to r
 
 **\[Department in Charge of Protection of Personal Information\]**
 
-Name of Department: Privacy and Data Protection Department
+ - Name of Department: Privacy and Data Protection Department
 
-Person in Charge: Timothy Ma
+ - Person in Charge: Timothy Ma
 
-E-mail: <cloudlegalnotices@tencent.com>
+ - E-mail: <cloudlegalnotices@tencent.com>
 
 
 
@@ -255,13 +255,13 @@ E-mail: <cloudlegalnotices@tencent.com>
 
 Pursuant to the Network Act and Article 39-11 of the amended PIPA, the information regarding the domestic agent is as follows:
 
-Name: Tencent Korea Yuhan Hoesa
+ - Name: Tencent Korea Yuhan Hoesa
 
-Address: 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
+ - Address: 152, Taeheran-ro, Gangnam-gu (Gangnam Finance Center, Yeoksam-dong), Seoul, Korea
 
-Telephone Number: +82-2185-0902
+ - Telephone Number: +82-2185-0902
 
-E-mail: <cloudlegalnotices@tencent.com>
+ - E-mail: <cloudlegalnotices@tencent.com>
 
 
 ### California
@@ -346,9 +346,9 @@ As an Egyptian data subject, you have certain rights under the Egyptian Personal
 
 ### France
 
-Your Rights
+*Your Rights*
 
-Instructions for the processing of your personal data after your death.
+*Instructions for the processing of your personal data after your death.*
 
 You have the right to provide us with general or specific instructions for the retention, deletion, and communication of your personal data after your death.
 
@@ -362,22 +362,25 @@ When you wish to make such instructions, please contact us at **cloudlegalnotice
 
 ### India
 
-Sensitive Personal Information
+*Sensitive Personal Information*
 
 Your Sensitive Personal Information shall mean passwords, financial information such as bank account or credit card or debit card or other payment instrument details, biometric data, physical or mental health, sex life or sexual orientation, and/ or medical records or history, and similar information, but does not include information available in the public domain, or provided under Indian laws, including the Right to Information Act, 2005.
 
-Sharing Of Your Sensitive Personal Information
+*Sharing Of Your Sensitive Personal Information*
 
 Where we permit any third parties to collect and use your Sensitive Personal Information, we shall take reasonable measures to ensure that the third parties do not further disclose the Sensitive Personal Information.
-Age Restrictions
+
+*Age Restrictions*
 
 Children under the age of 18 are not allowed to execute online contracts with us or sign up for our services. Parental consent is required for children under the age of 18 years to avail our services.
-Withdrawal Of Consent 
+
+*Withdrawal Of Consent*
 
 To the extent provided by applicable laws and regulations, you may withdraw any consent you previously provided to us for certain processing activities by contacting us at **cloudlegalnotices@tencent.com**. Where consent is required to process your personal information, if you do not consent to the processing or if you withdraw your consent we may not be able to deliver the expected service.
 
 ### INDONESIA
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 21 to register for our Services and/or provide any personal identification information. If you are under 21, please do not sign up to use our Services or provide any information about yourself through the Service.
+
 We will retain your personal information as described in the Tencent Cloud Privacy Policy and for a minimum of five years (except if otherwise required to be retained by applicable law).
 
 ### Japan
@@ -456,8 +459,9 @@ This right may be exercised upon your discovery and substantial proof of any of 
     - we violated your rights.
 
 *Consent*
+
 By consenting to this Privacy Policy, you consent to us:
- - collecting and processing your personal information as described in the section “How We Use Your Personal Information”;
+ - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
  - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “How We Store and Share Your Personal Information”.
 
@@ -471,6 +475,7 @@ We may store your personal information in and outside your country, including in
 The paragraph entitled ‘Access, Correction and Deletion’ in the Privacy Policy is deleted and replaced with the following paragraph:
 
 You can access and correct some of your data in the account portal at any time. If you believe there is any other personal information we process about you, or you are unable to correct inaccurate information, you can make a request by contacting us at **cloudlegalnotices@tencent.com**. You may also have the right to receive a copy of certain personal information (see Portability below). In accordance with the laws in Singapore you do not have the legal right to delete your data, however we may delete your data on request to us. 
+
 Please note, however, that we may retain personal information if there are valid grounds under data protection laws for us to do so (e.g., for the defence of legal claims or freedom of expression) but we will let you know if that is the case. 
 
 ### Thailand
@@ -491,7 +496,7 @@ With respect to the section “How We Use Your Personal Information”, for the 
 
 Your personal data can be transferred and stored into servers located in Turkey or abroad with your consent.
  
-The paragraph headed “The Security of Your Personal Information” in the Tencent Cloud Privacy Policy is inapplicable with respect to personal data collected in Turkey.
+The paragraph headed “*The Security of Your Personal Information*” in the Tencent Cloud Privacy Policy is inapplicable with respect to personal data collected in Turkey.
 
 You have legal rights, which are set forth in Article 11 of the DPL, in relation to the personal information data we hold about you. As a Turkish data subject, you may have right to apply to the data controller and (and to the extent permitted under applicable laws and regulations):
 - learn whether or not your personal data has been processed;
@@ -526,10 +531,10 @@ You have the right to access, correct, and erase the personal information we hol
 
 ### MODULES
 Last updated: [2020-11-19]
-The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
-1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
-2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
-3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
-4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
-5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).
+The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:</br>
+1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).</br>
+2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).</br>
+3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).</br>
+4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).</br>
+5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).</br>
 6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38786).
