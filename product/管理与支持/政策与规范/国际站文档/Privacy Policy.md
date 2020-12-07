@@ -310,7 +310,7 @@ If you are a California resident and the CCPA does not recognize an exemption th
 
 We aim to fulfill all verified requests within 45 days pursuant to the CCPA.  If necessary, extensions for an additional 45 days will be accompanied by an explanation for the delay.
 
-### How to Exercise Your Rights
+***How to Exercise Your Rights***
 
 First, you may wish to log into your account and manage your data from there. If you are a California resident to whom the CCPA applies, you may exercise your rights, if any, to other data by contacting us at cloudlegalnotices@tencent.com.
 
@@ -318,11 +318,11 @@ First, you may wish to log into your account and manage your data from there. If
 
 This section applies to users located in Brazil:
 
-Consent Revocation 
+*Consent Revocation*
 
 Whenever we use your personal information based on your consent, you may revoke consent that you have previously given for the collection, use and disclosure of your personal information, subject to contractual or legal limitations. To revoke such consent, you may terminate your account or you can contact cloudlegalnotices@tencent.com. This may affect our provision of the Service to you.
 
-Parental and Guardian Consent
+*Parental and Guardian Consent*
 
 If you are under the age of 18, you should not use the Service for any purpose without first obtaining parental/guardian agreement to this Privacy Policy (both for themselves and on your behalf). We do not knowingly collect personal information from any children under the age of 18 without such consent. Please contact our Data Protection Officer if you believe we have any personal information from any children under the age of 18 without such parental/guardian consent – we will promptly investigate (and remove) such personal information.
 
@@ -333,58 +333,89 @@ If you have: (i) any questions or comments about the Privacy Policy; (ii) would 
 
 ### EGYPT
 Please note that this service is only available to users above 18 years. If you are under this age, you are only eligible to use this service if you obtain parental or guardian consent. 
-If you do not agree to the processing of your personal information in the way this Privacy Policy describes, please do not provide your information when requested and stop using the Services. Your use of the Services shall be deemed an express consent of the rules governing your personal information as described in this Privacy Policy. 
+
+If you do not agree to the processing of your personal information in the way this Privacy Policy describes, please do not provide your information when requested and stop using the Services. Your use of the Services shall be deemed an express consent of the rules governing your personal information as described in this Privacy Policy.
+
 By proceeding with the sign up process, you acknowledge that you have read, understood, and consented to this Privacy Policy. If you do not consent to this Privacy Policy, you must not use the service. 
+
 You are acknowledging your consent to the processing, storage, and cross-border transfer for your personal data. The cross border transfer may occur to any country in which we have databases or affiliates, including those outside of Egypt (see The Types of Personal Information we Collect and Process for more information).
+
 If you are a new user, you have seven days to inform us of any objection you may have to this Privacy Policy. 
+
 As an Egyptian data subject, you have certain rights under the Egyptian Personal Data Protection Law.
 
 ### France
 
 Your Rights
+
 Instructions for the processing of your personal data after your death.
+
 You have the right to provide us with general or specific instructions for the retention, deletion, and communication of your personal data after your death.
+
 The specific instructions are only valid for the processing activities mentioned therein and the processing of these instructions is subject to your specific consent.
+
 You may amend or revoke your instructions at any time.
+
 You may designate a person responsible for the implementation of your instructions. This person will be informed of your instructions, in the event of your death, and be entitled to request their implementation from us. In the absence of designation or, unless otherwise provided for, in the event of the death of the designated person, their heirs will have the right to be informed of your instructions and to request their implementation from us.
+
 When you wish to make such instructions, please contact us at **cloudlegalnotices@tencent.com** .
 
 ### India
 
 Sensitive Personal Information
+
 Your Sensitive Personal Information shall mean passwords, financial information such as bank account or credit card or debit card or other payment instrument details, biometric data, physical or mental health, sex life or sexual orientation, and/ or medical records or history, and similar information, but does not include information available in the public domain, or provided under Indian laws, including the Right to Information Act, 2005.
+
 Sharing Of Your Sensitive Personal Information
+
 Where we permit any third parties to collect and use your Sensitive Personal Information, we shall take reasonable measures to ensure that the third parties do not further disclose the Sensitive Personal Information.
 Age Restrictions
+
 Children under the age of 18 are not allowed to execute online contracts with us or sign up for our services. Parental consent is required for children under the age of 18 years to avail our services.
 Withdrawal Of Consent 
+
 To the extent provided by applicable laws and regulations, you may withdraw any consent you previously provided to us for certain processing activities by contacting us at **cloudlegalnotices@tencent.com**. Where consent is required to process your personal information, if you do not consent to the processing or if you withdraw your consent we may not be able to deliver the expected service.
 
 ### INDONESIA
 Our Service is not intended for children. Children must not use the Service for any purpose. We will not knowingly allow anyone under 21 to register for our Services and/or provide any personal identification information. If you are under 21, please do not sign up to use our Services or provide any information about yourself through the Service.
 We will retain your personal information as described in the Tencent Cloud Privacy Policy and for a minimum of five years (except if otherwise required to be retained by applicable law).
 
-### Japen
+### Japan
 
 Consent
+
 By clicking “accept”, you consent to the cross-border transfer of your information to any country where we have databases or affiliates, including outside of Japan.
+
 Your Rights 
+ 
 You may request us to notify you about the purposes of use of, to disclose, to make any correction to, to discontinue the use or provision of, and/or to delete any and all of your personal information which is stored by us, to the extent provided by the Act on the Protection of Personal Information of Japan. When you wish to make such requests, please contact us at **cloudlegalnotices@tencent.com**.
 
 ### MALAYSIA 
 
 If you wish to use the Service you will be required to provide your personal data. If you do not wish to supply your personal data you should stop using the Service.
-Language of this Privacy Policy
+
+*Language of this Privacy Policy*
+
 In the event of any discrepancy or inconsistency between the English version and Bahasa Melayu version of this Privacy Policy, the English version shall prevail.
-Parental and Guardian Consent
+
+*Parental and Guardian Consent*
+
 If you are under the age of 18, please do not use the Service. 
+
 In the event you are agreeing to this Privacy Policy in order for a minor to access and use the Service, you hereby consent to the provision of personal information of the minor to be processed in accordance with this Privacy Policy and you personally accept and agree to be bound by the terms in this Privacy Policy. Further, you hereby agree to take responsibility for the actions of such minor, and that minor’s compliance with this Privacy Policy.
-Rights of Data Subjects
-Right of access: You have the right to request access to and obtain a copy of your personal information that we have collected and is being processed by or on behalf of us. We reserve the right to impose a fee for providing access to your personal information in the amounts as permitted under law. 
+
+*Rights of Data Subjects*
+
+*Right of access*: You have the right to request access to and obtain a copy of your personal information that we have collected and is being processed by or on behalf of us. We reserve the right to impose a fee for providing access to your personal information in the amounts as permitted under law. 
+
 When handling a data access request, we are permitted to request for certain information to verify the identity of the requester to ensure that he/she is the person legally entitled to make the data access request.
-Right of correction: You may request for the correction of your personal information. When handling a data correction request, we are permitted to request for certain information to verify the identity of the requester to ensure that he/she is the person legally entitled to make the data correction request.
-Right to limit processing of your personal information: You may request to limit the processing of your personal information by using the contact details provided above. However this may affect our provision of the Service to you. 
-Contact
+
+*Right of correction*: You may request for the correction of your personal information. When handling a data correction request, we are permitted to request for certain information to verify the identity of the requester to ensure that he/she is the person legally entitled to make the data correction request.
+
+*Right to limit processing of your personal information*: You may request to limit the processing of your personal information by using the contact details provided above. However this may affect our provision of the Service to you. 
+
+*Contact*
+
 To protect your personal information and handle complaints relating to your personal information, we have appointed the following department responsible for managing and protecting your personal information. 
  - Our data protection officer, responsible for the management and safety of your personal information
     - Telephone: +603-22872388
@@ -393,13 +424,17 @@ To protect your personal information and handle complaints relating to your pers
 ### PHILIPPINES
 
 You must be at least 18 years of age to be able to use the Service.
-Changes
+
+*Changes*
+
 We will not implement any material changes to the way we process your personal information, as described in the Privacy Policy, unless we have notified you and have obtained your consent to such material changes.
-Your Rights
+
+*Your Rights*
+
 You are entitled to the following rights, to the extent provided by applicable laws:
- - Right to be informed. You have the right to be informed whether personal data pertaining to you shall be, is being, or have been processed, including the existence of automated decision-making and profiling.
- - Right to object. You shall have the right to object to the processing of your personal information, including processing for direct marketing, automated processing or profiling. When you object or withhold consent, we shall no longer process your personal data, unless the personal data is needed pursuant to a subpoena; the collection and processing are for obvious purposes, including, when it is necessary for the performance of or in relation to a contract or service to which you have bound yourself; or your personal information is being collected and processed as a result of a legal obligation.
- - Right to access. You have the right to reasonable access to, upon demand, the following:
+ - *Right to be informed*. You have the right to be informed whether personal data pertaining to you shall be, is being, or have been processed, including the existence of automated decision-making and profiling.
+ - *Right to object*. You shall have the right to object to the processing of your personal information, including processing for direct marketing, automated processing or profiling. When you object or withhold consent, we shall no longer process your personal data, unless the personal data is needed pursuant to a subpoena; the collection and processing are for obvious purposes, including, when it is necessary for the performance of or in relation to a contract or service to which you have bound yourself; or your personal information is being collected and processed as a result of a legal obligation.
+ - *Right to access*. You have the right to reasonable access to, upon demand, the following:
     - contents of your personal information that were processed;
     - sources from which your personal information were obtained;
     - names and addresses of recipients of your personal information;
@@ -409,8 +444,8 @@ You are entitled to the following rights, to the extent provided by applicable l
     - date when the personal information concerning you were last accessed and modified; and
     - the designation, name or identity, and address of the personal information controller.
 
- - Right to rectification. You have the right to dispute the inaccuracy or error in the personal information and have us correct it immediately and accordingly, unless the request is vexatious or otherwise unreasonable. If the personal information has been corrected, we shall ensure the accessibility of both the new and the retracted information and the simultaneous receipt of the new and the retracted information by the intended recipients thereof, provided that recipients or third parties who have previously received such processed personal data shall be informed of its inaccuracy and its rectification, upon your reasonable request.
- - Right to erasure or blocking. You shall have the right to suspend, withdraw or order the blocking, removal or destruction of your personal information from our filing system.
+ - *Right to rectification*. You have the right to dispute the inaccuracy or error in the personal information and have us correct it immediately and accordingly, unless the request is vexatious or otherwise unreasonable. If the personal information has been corrected, we shall ensure the accessibility of both the new and the retracted information and the simultaneous receipt of the new and the retracted information by the intended recipients thereof, provided that recipients or third parties who have previously received such processed personal data shall be informed of its inaccuracy and its rectification, upon your reasonable request.
+ - *Right to erasure or blocking*. You shall have the right to suspend, withdraw or order the blocking, removal or destruction of your personal information from our filing system.
 This right may be exercised upon your discovery and substantial proof of any of the following:
     - your personal data is incomplete, outdated, false, or unlawfully obtained;
     - your personal data is being used for purpose not authorized by you;
@@ -420,7 +455,7 @@ This right may be exercised upon your discovery and substantial proof of any of 
     - the processing is unlawful;
     - we violated your rights.
 
-Consent
+*Consent*
 By consenting to this Privacy Policy, you consent to us:
  - collecting and processing your personal information as described in the section “How We Use Your Personal Information”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
@@ -441,7 +476,9 @@ Please note, however, that we may retain personal information if there are valid
 ### Thailand
 
 You acknowledge that you have read, understood, and agree to this Privacy Policy. If you do not agree with this Privacy Policy, you must not use the Service.
+
 You may request us to discontinue, to restrict the use or provision of, and/or to request for data portability of any and all of your personal information which is stored by us, to the extent provided by the Act on the applicable data privacy laws and regulations in Thailand, including the Thai Personal Data Protection Act. When you wish to make such requests, please contact us at **cloudlegalnotices@tencent.com**.
+
 We will give you notice by email of any changes to this Privacy Policy, and give you an opportunity to reject such changes, failing which the changes will become effective as stated in the notice
 
 ### TURKEY
@@ -476,10 +513,15 @@ We may voluntarily report a cyber-security incident where it constitutes a crime
 ### VIETNAM 
 
 By accepting this Privacy Policy, you expressly agree and authorize us to collect, use, store, and process your personal information, including, lawfully disclosing and transferring it to third parties, as described in this Privacy Policy.
+
 We maintain international standards and security practices for data protection. When your personal information is transferred within or outside your jurisdiction of residence, it will be subject to the same or higher levels of security practices and data protection by the recipient entity as adhered to by us.    
+
 Where we permit any third parties to collect and use your personal information, we shall take reasonable measures to ensure that the third parties do not further disclose the personal information. 
+
 Your personal information, if required to be disclosed to the law enforcement agencies, public authorities or other judicial bodies and organisations, it will disclosed upon receipt of written request from such organizations.
-Your Rights
+
+*Your Rights*
+
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
 ### MODULES
