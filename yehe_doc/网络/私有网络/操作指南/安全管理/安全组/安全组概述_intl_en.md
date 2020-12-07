@@ -47,7 +47,7 @@ When creating a security group, you can select one of the two security group tem
 
 The following figure shows you how to use a security group:
 
-![](https://main.qcloudimg.com/raw/c809499cc911e748f9eb4dd3a3356683.png)
+![](https://main.qcloudimg.com/raw/2fccad4c688f66f28cfb3d41dbbb7134.png)
 
 ## Security Group Best Practices
 
@@ -67,8 +67,9 @@ The following figure shows you how to use a security group:
 Tencent Cloud Firewall (CFW) is a native Tencent Cloud SaaS firewall that integrates the vulnerability scanning, IPS intrusion block, internet-wide threat intelligence and advanced threat source analysis capabilities, making it the traffic security and policy management center in the cloud environment. It also serves as the first security portal for cloud business.
 
 In practice, a security group is generally associated with Tencent Cloud products including CVM to implement the access control at the security group level. CFW is deployed in a VPC or the Internet to implement the access control between VPCs or between Tencent Cloud and the Internet, as shown below:
-![](https://main.qcloudimg.com/raw/dc422747e2a812bf748bbb61947a7c42.png)
+![](https://main.qcloudimg.com/raw/29cba98b0c655c630dccb4b15427d502.png)
 A security group cannot meet requirements in the following use cases. Instead, you can use CFW to implement the access control:
+
 1. Understand the exposure and vulnerability of CVM assets on the Internet, and strengthen protection against network vulnerabilities through IPS intrusion prevention and virtual patching features.
 2. Control the proactive access to the Internet by domain name and enhance the business security.
 3. Implement the access control by region. For example, all IPs outside the Chinese mainland will be quickly blocked.

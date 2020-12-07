@@ -17,8 +17,9 @@ Typically, a high availability primary/secondary cluster consists of two servers
 >?Keepalived is a VRRP-based high availability software. To use Keepalived, first complete its configuration in the `Keepalived.conf` file.
 
 The following figure shows the HAVIP architecture.
-![](https://main.qcloudimg.com/raw/6cf7f99f1cfad6a26da8b4734035b97b.png)
+![](https://main.qcloudimg.com/raw/e8d0e60cbd3221089256087c5686588f.png)
 According to the preceding figure, CVM1 and CVM2 can be built into a high availability primary/secondary cluster. It will be worked as follows:
+
 1. Install Keepalived on both CVM1 and CVM2, configure HAVIP as VRRP VIP, and set the priority of the primary/secondary server. A larger value represents a higher priority.
 2. Keepalived uses the VRRP protocol to compare the initial priority of CVM1 and CVM2 and determines CVM1 with a higher priority to be primary.
 3. The primary server sends out ARP messages, announces the VIP (a HAVIP), and updates VIP to mac mappings. In this case, the primary server actually provides services and uses its private IP (the HAVIP) for communication. On the HAVIP console, you can see the HAVIP is bound to the primary server CVM1.   
