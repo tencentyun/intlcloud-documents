@@ -25,6 +25,7 @@ public SetBucketInventoryConfigurationResult setBucketInventoryConfiguration(Set
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-put-bucket-inventory)
 ```java
 // bucket 名需包含 appid
 String bucketName = "examplebucket-1250000000";
@@ -58,11 +59,11 @@ inventoryConfiguration.setOptionalFields(optionalFields);
 SetBucketInventoryConfigurationRequest setBucketInventoryConfigurationRequest = new SetBucketInventoryConfigurationRequest();
 setBucketInventoryConfigurationRequest.setBucketName(bucketName);
 setBucketInventoryConfigurationRequest.setInventoryConfiguration(inventoryConfiguration);
-cosclient.setBucketInventoryConfiguration(setBucketInventoryConfigurationRequest);
+cosClient.setBucketInventoryConfiguration(setBucketInventoryConfigurationRequest);
 
 inventoryConfiguration.setId("2");
 inventorySchedule.setFrequency(InventoryFrequency.Weekly);
-cosclient.setBucketInventoryConfiguration(setBucketInventoryConfigurationRequest);
+cosClient.setBucketInventoryConfiguration(setBucketInventoryConfigurationRequest);
 ```
 
 #### 参数说明
@@ -127,7 +128,7 @@ InventorySchedule 成员说明：
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 #### 错误码说明
 
@@ -153,11 +154,11 @@ public GetBucketInventoryConfigurationResult getBucketInventoryConfiguration(Str
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-get-bucket-inventory)
 ```java
 String bucketName = "examplebucket-1250000000";
 String id = "1";
-GetBucketInventoryConfigurationResult getBucketInventoryConfigurationResult = cosclient.getBucketInventoryConfiguration(bucketName, id);
-
+GetBucketInventoryConfigurationResult getBucketInventoryConfigurationResult = cosClient.getBucketInventoryConfiguration(bucketName, id);
 ```
 
 #### 参数说明
@@ -170,7 +171,7 @@ GetBucketInventoryConfigurationResult getBucketInventoryConfigurationResult = co
 #### 返回结果说明
 
 - 成功：返回 GetBucketInventoryConfigurationResult，包含存储桶对应 id 清单的配置信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 ## 查询所有清单
 
@@ -186,11 +187,12 @@ public ListBucketInventoryConfigurationsResult listBucketInventoryConfigurations
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-list-bucket-inventory)
 ```java
 String bucketName = "examplebucket-1250000000";      
 ListBucketInventoryConfigurationsRequest listBucketInventoryConfigurationsRequest = new ListBucketInventoryConfigurationsRequest();
 listBucketInventoryConfigurationsRequest.setBucketName(bucketName);
-ListBucketInventoryConfigurationsResult listBucketInventoryConfigurationsResult = cosclient.listBucketInventoryConfigurations(listBucketInventoryConfigurationsRequest);
+ListBucketInventoryConfigurationsResult listBucketInventoryConfigurationsResult = cosClient.listBucketInventoryConfigurations(listBucketInventoryConfigurationsRequest);
 ```
 
 #### 参数说明
@@ -203,7 +205,7 @@ ListBucketInventoryConfigurationsResult listBucketInventoryConfigurationsResult 
 #### 返回结果说明
 
 - 成功：返回 ListBucketInventoryConfigurationsResult，包含存储桶对应 id 清单的配置信息。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 ## 删除清单任务
 
@@ -219,10 +221,11 @@ public DeleteBucketInventoryConfigurationResult deleteBucketInventoryConfigurati
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-delete-bucket-inventory)
 ```java
 String bucketName = "examplebucket-1250000000";      
 String id = "1";
-cosclient.deleteBucketInventoryConfiguration(bucketName, id);
+cosClient.deleteBucketInventoryConfiguration(bucketName, id);
 ```
 
 #### 参数说明
@@ -235,4 +238,4 @@ cosclient.deleteBucketInventoryConfiguration(bucketName, id);
 #### 返回结果说明
 
 - 成功：无返回值。
-- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/30599)。
+- 失败：发生错误（如身份认证失败），抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
