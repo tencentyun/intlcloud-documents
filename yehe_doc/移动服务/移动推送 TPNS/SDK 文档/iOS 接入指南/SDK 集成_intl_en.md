@@ -11,7 +11,7 @@ This document provides sample code for integrating with the SDK and launching TP
 1. Before integrating the SDK, please log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and create the product and iOS application. For detailed directions, please see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).
    ![](https://main.qcloudimg.com/raw/e77221c1f77b71e6087860a9cf6b60af.png)
 2. Click **Configuration Management** to enter the management page.
-   ![](https://main.qcloudimg.com/raw/f051b5d7fa3a7a3e8c4c9498ff39007b.png))
+   ![](https://main.qcloudimg.com/raw/f051b5d7fa3a7a3e8c4c9498ff39007b.png)
 3. Click **Upload Certificate** to complete the upload. For more information on how to get a push certificate, please see [Acquisition of Push Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
    ![](https://main.qcloudimg.com/raw/5ea7fd7ec5ae1e7e4a31622a5c41ab00.png)
 4. After the certificate is uploaded, get `Access ID` and `Access KEY` from the application information column.
