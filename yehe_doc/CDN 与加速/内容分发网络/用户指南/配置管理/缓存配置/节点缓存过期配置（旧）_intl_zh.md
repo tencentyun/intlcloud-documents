@@ -10,7 +10,7 @@
 ## 配置指南
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【缓存配置】，即可找到【节点缓存过期配置】。
-![](https://main.qcloudimg.com/raw/36ab35d90171b84ec3571ae712d6c396.png)
+![](https://main.qcloudimg.com/raw/834d620b98c9d7d387547e59a7e6a1f4.png)
 
 ### 新增规则
 
@@ -20,8 +20,9 @@ CDN 目前支持以下四种类型的节点缓存过期规则：
 + 全路径文件：指定完整的文件路径进行缓存过期时间设置，格式为`/index.html`，支持完整路径加文件类型匹配模式，如`/test/*.jpg`。
 + 首页：针对根目录设置缓存过期时间。
 
-![](https://main.qcloudimg.com/raw/4c2af825001df8ad55f22881e17bd3a9.png)
+![](https://main.qcloudimg.com/raw/1a72478ce0bc4fc1ef6a22bcb8064a6b.png)
 **配置约束：**
+
 - 单个域名至多可添加20条缓存规则。
 - 多条规则支持调整优先级：底部优先级大于顶部。
 - 单条文件类型/文件夹/全路径文件规则中，至多可输入100组内容，不同内容之间用“;”分隔。例如：文件类型 - jpg;png。
@@ -49,8 +50,9 @@ CDN 目前支持以下四种类型的节点缓存过期规则：
 
 ## 配置示例
 若加速域名`cloud.tencent.com`的节点缓存过期配置如下：
-![](https://main.qcloudimg.com/raw/36a6bfe2001e73c0a8a24e669c1b3a52.png)
+![](https://main.qcloudimg.com/raw/a585a6b560cb0e555b71e08bea179353.png)
 则实际缓存时间如下：
+
 1. `/test/def.jpg` 文件节点缓存时间为400秒。
 2. `/test/1.png` 文件节点缓存时间为5分钟。
 3. 其他文件节点缓存时间均为30天。
