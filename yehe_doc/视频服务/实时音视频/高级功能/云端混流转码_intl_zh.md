@@ -26,15 +26,15 @@
 
 ### 启动混流
 
-由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API，有如下细节需要您关心：
+由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API 您需关注如下细节：
 
 #### 1. 设置画面排版模式
 
 通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
-
 ![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
 
-**悬浮模板**
+**悬浮模板（LayoutParams.Template = 0）**
+
 - 第一个进入房间的用户的视频画面会铺满整个屏幕，其他用户的视频画面从左下角依次水平排列，显示为小画面。
 - 最多4行，每行最多4个，小画面悬浮于大画面之上。
 - 最多支持1个大画面和15个小画面。
@@ -61,7 +61,7 @@
 - 场景示例1：在线教育场景中，混合老师端摄像头（通常作为小画面）和老师端屏幕（通常作为大画面）两路画面，并混合课堂中学生的声音。
 - 场景示例2：1v1 视频通话场景中，混合远端用户画面（通常作为大画面）和本地用户画面（通常作为小画面）。
 
-**屏幕分享模板（LayoutParams.Template = 4）**
+**自定义模板（LayoutParams.Template = 4）**
 
 - 适用于需要自定义排布各路画面位置的场景，您可以通过 `LayoutParams` 中的 `PresetLayoutConfig` 参数（这是一个数组），预先设置各路画面的位置。
 - 您可以不指定 `PresetLayoutConfig` 参数中的 `UserId` 参数，排版引擎会根据进房的先后顺序，将进房的用户依次分配到 `PresetLayoutConfig` 数组中指定的各个位置上。
@@ -349,7 +349,25 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Manual** ，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数。如果您的业务场景中也包含视频，需同时设置 `videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate` 等关乎视频输出质量的参数。
 5. 监听 TRTCCloudDelegate 中的 `onUserVideoAvailable()` 和 `onUserAudioAvailable()` 回调，并根据需要指定 **mixUsers** 参数。
  >?与预排版（PresetLayout）模式不同，Manual 需要您指定每一个 `mixUser` 中的 `userId` 参数为真实的连麦者 ID，并且也要根据该连麦者是否开启了视频，如实设定 `mixUser` 中的 `pureAudio` 参数。
- >
 6. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
 
 >! 全手动模式下，您需要实时监听房间中连麦者的上麦下麦动作，并根据连麦者的人数和音视频状态，多次调用 `setMixTranscodingConfig()` 接口。
+
+## 相关费用
+
+### 费用的计算
+
+云端混流转码需要对输入 MCU 集群的音视频流进行解码后重新编码输出，将产生额外的服务成本，因此 TRTC 将向使用 MCU 集群进行云端混流转码的用户收取额外的增值费用。云端混流转码费用根据**转码输出的分辨率大小**和**转码时长**进行计费，转码输出的分辨率越高、转码输出的时间越长，费用越高。详情请参见 [云端混流转码计费说明](https://intl.cloud.tencent.com/zh/document/product/647/38929)。
+
+### 费用的节约
+
+- 在**基于服务端 REST API 混流方案下，要停止混流**，需要满足如下条件之一：
+  - 房间里的所有用户（包括主播和观众）都退出了房间。
+  - 调用 REST API [StopMCUMixTranscode](https://intl.cloud.tencent.com/zh/document/product/647/37760) 主动停止混流。
+- 在**基于客户端 SDK API 混流方案下，要停止混流**，需要满足如下条件之一：
+  - 发起混流（即调用了客户端 API `setMixTranscodingConfig`）的主播退出了房间。
+  - 调用 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
+
+在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
+
+

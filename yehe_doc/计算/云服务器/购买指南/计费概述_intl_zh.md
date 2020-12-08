@@ -1,8 +1,9 @@
 >?此产品现已支持动态询价与成本估算。有关详细信息，请移步[定价中心](https://intl.cloud.tencent.com/pricing/cvm/calculator)询价并估算相关成本。
 ## 计费模式
 
-腾讯云提供的云服务器购买方式：按量计费，详情可参考 [实例计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
+腾讯云提供的云服务器购买方式：按量计费和竞价实例，详情可参考 [实例计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
 CVM 支持预留实例计费。更多信息，请参考 [预留实例计费模式](https://intl.cloud.tencent.com/document/product/213/37070) 。
+
 ## 实例
 
 实例决定了用于实例的主机硬件配置，每一个实例类型提供不同的计算和存储能力，您可以基于需要提供的服务规模而选择实例计算能力、存储空间和网络访问方式。

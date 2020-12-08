@@ -172,7 +172,7 @@ TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语
 支持，通过 enableAudioVolumeEvaluation 接口启用。
 
 <span id="que35"></span>
-###  TRTC 是否支持设置镜像画面？ 
+###  TRTC 是否支持设置镜像画面？ 
 支持，通过 setLocalViewMirror 接口设置本地摄像头预览画面的镜像模式，或通过 setVideoEncoderMirror 接口设置编码器输出的画面镜像模式。
 
 <span id="que36"></span>
@@ -215,7 +215,7 @@ TRTC 没有音频和视频通道的区分，只调用 startLocalAudio 不调用 
 >? Web 端最多支持20人同时开启摄像头或麦克风。
 
 <span id="que44"></span>
-###  TRTC 怎么实现直播场景类应用？
+###  TRTC 怎么实现直播场景类应用？
 TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决方案，能保证主播与连麦主播的最低延时到200ms，普通观众的延时在1s以内，并且超强的抗弱网能力适应移动端复杂的网络环境。
 具体操作指引请参考 [跑通直播模式](https://intl.cloud.tencent.com/document/product/647/35107)。
 
