@@ -18,17 +18,17 @@ Tencent Cloud CDN은 다운스트림 속도 제한 설정을 제공하며, 서�
 ### 설정 설명
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인하여 메뉴바에서 [Domain Management]를 선택하고, 도메인 오른쪽의 [Manage]를 클릭하면 도메인 설정 페이지로 이동합니다. 두 번째 탭인 [Access Control]에 다운스트림 속도 제한 설정이 존재하며 기본값은 비활성화 상태입니다.
-![](https://main.qcloudimg.com/raw/e4b76bce43043a249c033a31966110bb.png)
+![](https://main.qcloudimg.com/raw/c9ea85be753b60096b8088b048ac626a.png)
 [속도 제한 규칙 추가]를 클릭해 규칙을 설정할 수 있습니다.
-![](https://main.qcloudimg.com/raw/4e11fc5ea959344ca47449deb9e8b954.png)
+![](https://main.qcloudimg.com/raw/02e033c829da553acc5eeb9bca864528.png)
 규칙 추가가 완료되면 전체 설정이 비활성화 상태로 되어, 현재 네트워크 서비스에 영향을 미치지 않습니다.
-![](https://main.qcloudimg.com/raw/a4e075516230dd1f88db49a5c737de42.png)
+![](https://main.qcloudimg.com/raw/e0006ace8527cc13c381666b22f21790.png)
 [ON] 버튼을 클릭해 설정한 속도 제한 규칙을 CDN 전체 네트워크 노드에 배포할 수 있습니다.
-![](https://main.qcloudimg.com/raw/90594a7d389f7a08c4f710db5aad809e.png)
+![](https://main.qcloudimg.com/raw/4b9685cb889210accb67d11f1b389ae8.png)
 
 ## 설정 예시
 
 가속 도메인이 `cloud.tencent.com`인 다운스트림 속도 제한 설정은 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/16a7145313302e83fb3e239b7977f8c6.png)
+![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
 사용자 액세스 리소스가 `http://cloud.tencent.com/test.mp4`인 경우 서버에서 다운스트림 속도 200KB/s로 응답합니다.
 사용자 액세스 리소스가 `http://cloud.tencent.com/test.flv`인 경우 서버에서 다운스트림 속도 400KB/s로 응답합니다.
