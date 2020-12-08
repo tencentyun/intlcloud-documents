@@ -93,7 +93,6 @@ mSuperPlayerView.playWithModel(model);
 在播放长视频时，打点信息有助于观众找到感兴趣的点。使用 [修改媒体文件属性](https://intl.cloud.tencent.com/document/product/266/37570) API，通过 AddKeyFrameDescs.N 参数可以为视频设置打点信息。
 
 调用后，播放器的界面会增加新的元素。
-<img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
 
 
 ### 小窗播放
