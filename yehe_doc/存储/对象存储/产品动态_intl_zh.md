@@ -11,6 +11,18 @@
 </thead>
 <tbody>
 <tr>
+<td>COSDistcp 工具发布 </td>
+<td>COSDistcp 是一款基于 MapReduce 的分布式文件拷贝工具，主要用于 HDFS 和 COS 之间的数据拷贝。</td>
+<td> 2020-11-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/38863">COSDistcp 工具</a>
+</tr>
+<tr>
+<td>上线存储网关功能</td>
+<td>存储网关是腾讯云提供的混合云存储服务。您可以选择为存储桶配置存储网关，配置完成后，COS 中的存储桶可以以网络文件夹的形式挂载至您任意一台 CVM 服务器上作为存储设备进行使用。</td>
+<td> 2020-11-21</td>
+<td>-
+</tr>
+<tr>
 <td>上线智能分层存储</td>
 <td>智能分层存储类型为数据提供了冷热分层机制，能够根据用户数据的访问模式，自动地转换数据的冷热层级，从而降低用户数据的存储成本。</td>
 <td> 2020-11-12</td>
