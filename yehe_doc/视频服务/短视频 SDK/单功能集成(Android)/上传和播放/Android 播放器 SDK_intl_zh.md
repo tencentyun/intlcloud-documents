@@ -15,18 +15,15 @@ Android 超级播放器 SDK 是腾讯云开源的一款播放器组件，简单�
 ### aar 集成
 
 1. 下载 SDK + Demo 开发包，项目地址为 [Android](https://github.com/tencentyun/SuperPlayer_Android)。
-2. 导入`SDK/LiteAVSDK_XXX.aar`以及`Demo/player/libs/libsuperplayer.aar`到工程中去。
+2. 导入`SDK/LiteAVSDK_XXX.aar` 以及 `Demo/superplayerkit` 这个 module 复制到工程中。
 3. 在`app/build.gralde`中添加依赖：
-
 ```java
 compile(name: 'LiteAVSDK_Professional', ext: 'aar')
 compile(name: 'libsuperplayer', ext: 'aar')
 // 超级播放器弹幕集成的第三方库
 compile 'com.github.ctiao:DanmakuFlameMaster:0.5.3'
 ```
-
 4. 在项目`build.gralde`中添加：
-
 ```
 ...
 allprojects {
@@ -39,9 +36,7 @@ allprojects {
 }
 ...
 ```
-
 5. 权限声明：
-
 ```java
 <!--网络权限-->
 <uses-permission android:name="android.permission.INTERNET" />
@@ -89,7 +84,7 @@ mSuperPlayerView.playWithModel(model);
 1. 客户端视频发布后，服务器会返回 FileId 到客户端。
 2. 服务端视频上传时，在确认上传的通知中包含对应的 FileId。
 
-如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。
+如果文件已存在腾讯云，则可以进入 [媒资管理](https://console.cloud.tencent.com/vod/media) ，找到对应的文件，查看 FileId。如下图所示，ID 即表示 FileId：
 
 
 
@@ -98,7 +93,7 @@ mSuperPlayerView.playWithModel(model);
 在播放长视频时，打点信息有助于观众找到感兴趣的点。使用 [修改媒体文件属性](https://intl.cloud.tencent.com/document/product/266/37570) API，通过 AddKeyFrameDescs.N 参数可以为视频设置打点信息。
 
 调用后，播放器的界面会增加新的元素。
-
+<img src="https://main.qcloudimg.com/raw/55ebce6d0c703dafa1ac131e1852e025.png" width="550">
 
 
 ### 小窗播放
@@ -118,6 +113,7 @@ rect.height = 540;
 // ...其他配置
 ```
 
+<img src="https://main.qcloudimg.com/raw/2cab897e43e4a01ee5f8e48372ce79a3.jpg" width="350">
 
 ### 退出播放
 
@@ -131,3 +127,4 @@ mSuperPlayerView.resetPlayer();
 
 完整功能可扫码下载视频云工具包体验，或直接运行工程 Demo。
 <img src="https://main.qcloudimg.com/raw/344d9d41fc5e305a17e22e104b9305da.png" width="150">
+
