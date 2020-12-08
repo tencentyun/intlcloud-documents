@@ -64,7 +64,7 @@ TXRecordCommon.TXUGCSimpleConfig param = new TXRecordCommon.TXUGCSimpleConfig();
 //param.videoQuality = TXRecordCommon.VIDEO_QUALITY_MEDIUM;		// 540p
 param.videoQuality = TXRecordCommon.VIDEO_QUALITY_HIGH;		// 720p
 param.isFront = true;           // Whether to use the front camera
-param.minDuratioin = 5000;	// Minimum video shoot duration in milliseconds
+param.minDuration = 5000;	// Minimum video shoot duration in milliseconds
 param.maxDuration = 60000;	// Maximum video shoot duration in milliseconds
 param.touchFocus = false; // false: autofocus; true: manual focus
 mTXCameraRecord.startCameraSimplePreview(param,mVideoView);

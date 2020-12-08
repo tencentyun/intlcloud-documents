@@ -5,23 +5,6 @@
 
 本文档旨在帮助客户以最快速、最简单的方式体验、开通、购买和对接腾讯云短视频服务。
 
-<div align="center">
-<img src="https://main.qcloudimg.com/raw/3021ccc82416fdfed9830f904439343d.gif" height="391" width="220" >
-
-<img src="https://main.qcloudimg.com/raw/a3a0ed57cd9d5051ebd363de9dc33887.gif" height="391" width="220" >
-
-<img src="https://main.qcloudimg.com/raw/9df1e925909a264b5c9e362b12a2b4a2.gif" height="391" width="220" >
-
- </div>
- 
-<div align="center">
-<img src="https://main.qcloudimg.com/raw/f78ae2693cea05c1aa00ce169721017f.gif" height="391" width="220" >
-
-<img src="https://main.qcloudimg.com/raw/520b779ea0741876f183dc814b9482ad.gif" height="391" width="220" >
-
-<img src="https://main.qcloudimg.com/raw/52624dbadbc544b5013fb0710f4625aa.gif" height="391" width="220" >
-
- </div>
 
 ## 功能体验
 
@@ -36,3 +19,5 @@
   </tr>
 </table>
 
+您可以登录 [云点播控制台](https://console.cloud.tencent.com/vod/license) 在线申请为期一个月的基础版试用 License，该 License 可以在精简版和基础版 SDK 上使用。
+若您需要购买正式的License使用权限，请联系您的商务。

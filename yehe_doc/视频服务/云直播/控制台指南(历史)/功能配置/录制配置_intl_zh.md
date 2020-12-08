@@ -1,4 +1,4 @@
-云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、修改以及删除录制模板。
+云直播提供将直播画面进行录制并将文件存储到云点播中，可通过云点播对录制视频进行下载、预览等处理。本文将为您介绍如何创建、绑定、解绑、修改以及删除录制模板。
 创建录制模板有以下两种方式：
 - 通过云直播控制台创建录制模板，具体操作步骤请参见 [创建录制模板](#C_record)。
 - 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
@@ -60,8 +60,11 @@
 ## 关联域名
 1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
 	- **直接关联域名：**单击左上方的【绑定域名】。
+	![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
 	- **新录制模板创建成功后关联域名：**[录制模板创建](#C_record) 成功后，单击提醒框中的【去绑定域名】。
+	![](https://main.qcloudimg.com/raw/7f26a83d95d0f08ceda1b10e93e30389.png)
 1. 在域名绑定窗口中，选择您需绑定的**录制模板**及**推流域名**，单击【确定】即可绑定成功。
+![](https://main.qcloudimg.com/raw/a9411818457b4e708fd624f970d92ab6.png)
 
 >? 支持通过单击【添加】为当前模板绑定多个推流域名。
 
@@ -70,7 +73,13 @@
 
 1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
 2. 选择已关联域名的录制模板，单击【解绑】。
+   ![](https://main.qcloudimg.com/raw/e8fe04a68c90675cc038ebd51b2d99f5.png)
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
+  ![](https://main.qcloudimg.com/raw/a666387f882584860eaf2c229c2b4769.png)
+
+>? 
+>- 录制模板解除绑定后，不影响正在直播中的流。
+>- 若需解绑生效，解绑后请断流并重新推流直播，新的直播将不会生成录制文件。
 
 
 <span id="change"></span>
@@ -103,7 +112,7 @@
 控制台创建的录制模板，回调后生成的录制文件按照默认拼接方式命名，格式为：
 `{StreamID}*{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}*{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond} `
 
-其中：
+**其中：**
 
 | 占位符             | 含义          |
 | ------------------ | ------------- |

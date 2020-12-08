@@ -1,3 +1,22 @@
+## 2020年11月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>新增事件存储功能</td>	<td>该功能便于用户及时观测资源变更和问题定位。</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">事件存储</a></td>
+</tr>
+</table>
+
+## 2020年08月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>Pod Event 补全</td>	<td>Pod Event 与原生 K8S 对齐，使 K8S 集群运行事件更丰富，Pod 运行中问题定位更方便。</td><td>2020-08-15</td><td>-</td>
+</tr>
+</table>
+
+
 ## 2020年07月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 

@@ -36,12 +36,12 @@
 - 若加速域名选择下载、流媒体点播业务类型，默认开启过滤参数。缓存键规则配置中，全部文件规则的【过滤参数】同步为“全部过滤”。
 
 
-![](https://main.qcloudimg.com/raw/b82450778493e5b45c714c426e507c3f.png)
+![](https://main.qcloudimg.com/raw/1f53ed863618b442233dd3e1bba6229b.png)
 
 ### 新增规则
 
 您可按需添加缓存键规则。
-<img src="https://main.qcloudimg.com/raw/0956da1c99754636da7a5d1f0115a5f7.png" height="250" width="438" />
+<img src="https://main.qcloudimg.com/raw/48becf925518b2595097eddf7b4ec6d5.png" height="250" width="438" />
 
 #### 配置约束
 
@@ -67,7 +67,7 @@
 ## 配置示例
 
 若加速域名`www.test.com`的【缓存键规则配置】如下：
-![](https://main.qcloudimg.com/raw/2dc21d4d41c678b277be26589ea96bca.png)
+![](https://main.qcloudimg.com/raw/8c3f7f534c5fa849ca1594a0a244d840.png)
 
 则实际访问情况如下：
 

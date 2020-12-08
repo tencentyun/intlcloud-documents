@@ -14,9 +14,9 @@
 
 接入加速域名时，根据不同的业务类型，CDN会添加默认的节点缓存过期规则，您可按需进行变更：
 - 若选择静态加速业务类型，常规动态文件（如 php、jsp、asp、aspx）默认不缓存，其他所有文件默认遵循源站。
-![](https://main.qcloudimg.com/raw/208efd0da1456b119f9169874267d0cd.png)
+![](https://main.qcloudimg.com/raw/5f48bc5246397975544baadf5ac81f4e.png)
 - 若选择下载加速、流媒体点播加速业务类型，默认全部文件缓存30天。
-![](https://main.qcloudimg.com/raw/bef536419b9fcb42797f6d7ec17b1458.png)
+![](https://main.qcloudimg.com/raw/cdd00154330b8cb217287874f4f40693.png)
 
 ### 新增规则
 
@@ -27,7 +27,7 @@
 - 缓存：配置资源在节点的缓存时间。支持增加配置是否强制缓存，即是否忽略源站的 Cache-Control: no-store/no-cache/private。
 - 不缓存：即回源获取资源。
 
-<img src="https://main.qcloudimg.com/raw/79488434021c2f1bae475817b8c5a0be.png" height="207" width="408" />
+<img src="https://main.qcloudimg.com/raw/5454a77683dca1cfb491eccdae839aa4.png" height="207" width="408" />
 
 
 #### 配置约束
@@ -54,7 +54,7 @@
 ## 配置示例
 
 若加速域名`www.test.com`的【节点缓存过期配置】如下：
-![](https://main.qcloudimg.com/raw/82019de13df15b2680265193c9fb18ad.png)
+![](https://main.qcloudimg.com/raw/c1402003c4549d2e6035420921f67bd0.png)
 
 则实际缓存情况如下：
 

@@ -6,8 +6,8 @@
 - [增值服务费用](#appreciation)：使用直播转码、录制、截图、鉴黄等增值功能，此类功能默认关闭，使用才收费。
 - [拓展服务费用](#extensions)：结合腾讯云其他产品一起提供的增值功能，由其他云产品根据各自的计费规则分别收取相关费用。
 
-
-## 基础服务费用<span id="base"></span>
+<span id="base"></span>
+## 基础服务费用
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
 <tr>
@@ -23,8 +23,8 @@
 >? 若您需要重新选择计费方式，请参见 [计费变更](https://cloud.tencent.com/document/product/267/32712)。  
 
 
-
-## 增值服务费用<span id="appreciation"></span>
+<span id="appreciation"></span>
+## 增值服务费用
 
 <table>
 <tr><th colspan=2 width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
@@ -91,8 +91,8 @@
  
 
 
-
-## 拓展服务费用<span id="extensions"></span>
+<span id="extensions"></span>
+## 拓展服务费用
 
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>

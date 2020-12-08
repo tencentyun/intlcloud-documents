@@ -168,7 +168,7 @@ TRTC supports four room entry modes, among which video call (VideoCall) and audi
 Yes. You can implement the hands-free mode by setting audio routing. In the native SDK, switch the routing in the `setAudioRoute` API.
 
 <span id="que34"></span>
-### Does TRTC support volume level reminder?
+###  Does TRTC support volume level reminder?
 Yes. You can call the `enableAudioVolumeEvaluation` API to enable it.
 
 <span id="que35"></span>
@@ -215,7 +215,7 @@ Yes. Currently, TXLivePlayer has been embedded in the TRTC SDK. If you need more
 >? Up to 20 users can simultaneously enable the camera or mic on web.
 
 <span id="que44"></span>
-### How does TRTC implement live streaming applications?
+###  How does TRTC implement live streaming applications?
 Specially for live streaming scenarios, TRTC provides the low-latency interactive live streaming solution. It can sustain up to 100,000 concurrent users and ensure a latency between co-anchoring anchors of as short as 200 milliseconds and a latency between anchor and viewer of less than 1 second. In addition, it delivers a high performance even in weak network environments to adapt to the complex network environments of mobile devices.
 For detailed directions, please see [Live Streaming Mode](https://intl.cloud.tencent.com/document/product/647/35107).
 
