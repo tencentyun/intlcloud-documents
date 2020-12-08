@@ -87,7 +87,7 @@
     "android": {
       "action": {
             "action_type": 3, // 动作类型，1，打开 activity 或 App 本身；2，打开浏览器；3，打开 Intent          
-            "intent": "xgscheme://com.xg.push/notify_detail" //SDK 版本需要大于等于1.0.9，然后在客户端的intent配置 data 标签，并设置 scheme 属性
+            "intent": "xgscheme://com.tpns.push/notify_detail" //SDK 版本需要大于等于1.0.9，然后在客户端的intent配置 data 标签，并设置 scheme 属性
         }
       }
    }	
@@ -108,7 +108,7 @@
     "android": {
       "action": {
             "action_type": 3, // 动作类型，1:打开 activity 或 App 本身；2:打开浏览器；3:打开 Intent          
-            "intent": "xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb" //SDK 版本需要大于等于1.0.9，然后在客户端的 intent 配置 data 标签，并设置 scheme 属性
+            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" //SDK 版本需要大于等于1.0.9，然后在客户端的 intent 配置 data 标签，并设置 scheme 属性
         }
       }
    }
@@ -219,7 +219,7 @@ if (uri != null) {
 		sanitizer.parseUrl(url);
 		String value1 = sanitizer.getValue("key1");
 		String value2 = sanitizer.getValue("key2");
-		Log.i("XG" , "value1 = " + value1 + " value2 = " + value2);
+		Log.i("TPNS" , "value1 = " + value1 + " value2 = " + value2);
 }
 ```
 

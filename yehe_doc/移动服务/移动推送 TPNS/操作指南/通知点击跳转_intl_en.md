@@ -87,7 +87,7 @@ Below is a sample of a complete message:
     "android": {
       "action": {
             "action_type": 3,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
-            "intent": "xgscheme://com.xg.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
+            "intent": "xgscheme://com.tpns.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
         }
       }
    }	
@@ -108,7 +108,7 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
     "android": {
       "action": {
             "action_type": 3, // Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
-            "intent": "xgscheme://com.xg.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
+            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
         }
       }
    }
@@ -219,7 +219,7 @@ if (uri != null) {
 		sanitizer.parseUrl(url);
 		String value1 = sanitizer.getValue("key1");
 		String value2 = sanitizer.getValue("key2");
-		Log.i("XG" , "value1 = " + value1 + " value2 = " + value2);
+		Log.i("TPNS" , "value1 = " + value1 + " value2 = " + value2);
 }
 ```
 
