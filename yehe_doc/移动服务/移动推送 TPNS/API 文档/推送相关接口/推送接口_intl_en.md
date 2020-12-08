@@ -445,7 +445,7 @@ Similar to in-app message on Android, silent message is unique to the iOS platfo
 
 The specific fields are as follows:
 
-| Field Name | Type | Default Value | Required | Description |
+| Field Name | Type | Parent Item | Default Value | Required | Description |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | aps    | JSON       | ios  | Empty    | Yes    | APNs-specific field, where the most important key-value pair is as follows:<br>content-available: it identifies the message type (which must be 1) and cannot contain `alert`, `sound`, or `badge_type` fields.<br>For more information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). |
 | ios            | Object | message | Empty     | Yes       | iOS message structure.                                               |
