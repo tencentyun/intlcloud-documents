@@ -1,5 +1,5 @@
-## 短视频 SDK 各版本下载      
-<table>
+## 短视频 SDK 各版本下载              
+<table>     
    <tr>
       <th width="85px" style="text-align:center">功能模块</td>
       <th width="85px" style="text-align:center">功能项</td>
@@ -115,6 +115,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td>滤镜</td>
       <td>支持实时预览滑动切换滤镜的效果，支持自定义滤镜及设置滤镜程度。</td>
@@ -123,6 +124,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td>基础美颜</td>
       <td>拍摄设置人脸的磨皮、美白、红润，并调节强度。</td>
@@ -163,6 +165,7 @@
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+  
    <tr>
       <td rowspan='12'>特效编辑</td>
       <td>快速导入</td>
@@ -277,6 +280,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td rowspan='1'>视频上传</td>
       <td>上传到云点播</td>
@@ -286,6 +290,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td rowspan='1'>点播播放</td>
       <td>超级播放器</td>
@@ -320,6 +325,7 @@
 </table>
 
 **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)**。
+**若您需要购买SDK的使用权限，请联系您的商务**
 
 ## 全功能小视频 App（Demo）源代码
 
@@ -364,7 +370,6 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
 
 
 
