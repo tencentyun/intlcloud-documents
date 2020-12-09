@@ -8,7 +8,7 @@ Video editing is an offline task that clips and splices videos in VOD. Specifica
 * **Live stream splicing**: this refers to splicing multiple streams in VOD to generate a new video.
 * **Live stream clip splicing**: this refers to clipping multiple streams in VOD and then splicing the clips to generate a new video.
 
->If you want to clip, splice, or perform other operations on a live stream, please be sure to manipulate it after it ends; otherwise, the generated video may be incomplete.
+>!If you want to clip, splice, or perform other operations on a live stream, please be sure to manipulate it after it ends; otherwise, the generated video may be incomplete.
 
 The container format of the generated video is MP4. When initiating a video editing task, you can specify whether to perform a [task flow](https://intl.cloud.tencent.com/document/product/266/33931) on the new video.
 

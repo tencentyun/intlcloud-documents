@@ -27,7 +27,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 |TIMFileElem|文件消息。（服务端集成 Rest API 不支持发送该类消息）|
 |TIMVideoFileElem|视频消息。（服务端集成 Rest API 不支持发送该类消息）|
 
->通过服务端集成的 Rest API 接口，只能发送 TIMTextElem，TIMLocationElem，TIMFaceElem，TIMCustomElem 类型的消息，其它类型的消息（TIMSoundElem，TIMImageElem，TIMFileElem，TIMVideoFileElem）不能通过 Rest API 接口发送。
+>!通过服务端集成的 Rest API 接口，只能发送 TIMTextElem，TIMLocationElem，TIMFaceElem，TIMCustomElem 类型的消息，其它类型的消息（TIMSoundElem，TIMImageElem，TIMFileElem，TIMVideoFileElem）不能通过 Rest API 接口发送。
 
 ## 消息元素 TIMMsgElement
 
@@ -111,7 +111,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 ### 语音消息元素
 
->不能通过服务端集成的 Rest API 接口发送语音消息，发送语音消息需要通过客户端集成相应的接口。
+>!不能通过服务端集成的 Rest API 接口发送语音消息，发送语音消息需要通过客户端集成相应的接口。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素的格式如下：
 ```
@@ -133,8 +133,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Second | Number | 语音时长，单位：秒。 |
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
->2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
-```
+>?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
+>```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -143,12 +143,11 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
         "Second": 1         //语音时长，类型为 Number，单位：秒。
     }
 }
-```
->
+>```
 
 ### 图像消息元素
 
->不能通过服务端集成的 Rest API 接口发送图像消息，发送图像消息需要通过客户端集成相应的接口。
+>!不能通过服务端集成的 Rest API 接口发送图像消息，发送图像消息需要通过客户端集成相应的接口。
 
 ```
 {
@@ -196,7 +195,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 ### 文件消息元素
 
->不能通过服务端集成的 Rest API 接口发送文件消息，发送文件消息需要通过客户端集成相应的接口。
+>!不能通过服务端集成的 Rest API 接口发送文件消息，发送文件消息需要通过客户端集成相应的接口。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素的格式如下：
 ```
@@ -218,7 +217,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | FileName | String | 文件名称。 |
 | Download_Flag | Number | 文件下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载文件。 |
 
->2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
+>?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
 >```
 >{
 >    "MsgType": "TIMFileElem",
@@ -229,11 +228,11 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 >    }
 >}
 >```
-```
+
 
 ### 视频消息元素
 
->不能通过服务端集成的 Rest API 接口发送视频消息，发送视频消息需要通过客户端集成相应的接口。
+>!不能通过服务端集成的 Rest API 接口发送视频消息，发送视频消息需要通过客户端集成相应的接口。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素的格式如下：
 ```
@@ -270,7 +269,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | ThumbDownloadFlag | Number | 视频缩略图下载方式标记。目前 ThumbDownloadFlag 取值只能为2，表示可通过`ThumbUrl`字段值的 URL 地址直接下载视频缩略图。 |
 
 
->2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
+>?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
 >```
 {
     "MsgType": "TIMVideoFileElem",
@@ -286,7 +285,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 		"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
     }
 }
-```
+>```
 
 ## MsgBody 消息内容实例
 
@@ -336,7 +335,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 }
 ```
 
->一条组合消息中只能带一个 TIMCustomElem 自定义消息元素， 其它消息元素数量无限制。
+>!一条组合消息中只能带一个 TIMCustomElem 自定义消息元素， 其它消息元素数量无限制。
 
 ## Apple Push Notification Service（APNs）相关说明
 ### 客户端推送展示格式说明
@@ -431,7 +430,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 OfflinePushInfo 是专用于离线推送配置的 JSON 对象，允许配置该条消息是否关闭推送、推送文本描述内容、推送透传字符串等。使用 OfflinePushInfo 可以方便地设置离线推送信息，无需再通过 TIMCustomElem 封装实现。
 
->如果填写了 OfflinePushInfo，那么 TIMCustomElem 中与离线推送有关的信息配置会被忽略。目前 OfflinePushInfo 适用于 APNs 推送，以及 Android 厂商推送（小米、华为、魅族、OPPO 和 vivo 推送）。
+>!如果填写了 OfflinePushInfo，那么 TIMCustomElem 中与离线推送有关的信息配置会被忽略。目前 OfflinePushInfo 适用于 APNs 推送，以及 Android 厂商推送（小米、华为、魅族、OPPO 和 vivo 推送）。
 
 OfflinePushInfo 的格式示例如下：
 
@@ -477,7 +476,7 @@ OfflinePushInfo 的格式示例如下：
 | ApnsInfo.SubTitle|String|选填|该字段用于标识 APNs 推送的子标题。|
 | ApnsInfo.Image|String|选填|该字段用于标识 APNs 携带的图片地址，当客户端拿到该字段时，可以通过下载图片资源的方式将图片展示在弹窗上。|
 
->由于 APNs 推送限制数据包大小不能超过4K，因此除去其他控制字段，建议 Desc 和 Ext 字段之和不要超过3K。
+>!由于 APNs 推送限制数据包大小不能超过4K，因此除去其他控制字段，建议 Desc 和 Ext 字段之和不要超过3K。
 
 ## 参考
 
