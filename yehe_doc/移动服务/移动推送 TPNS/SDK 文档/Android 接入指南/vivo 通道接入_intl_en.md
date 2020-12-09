@@ -3,12 +3,12 @@
 The Vivo channel is a system-level push channel officially provided by Vivo. On a Vivo phone, push messages can be delivered through Vivo's system channel without opening the application. For more information, please visit [Vivo Push's official website](https://dev.vivo.com.cn/home).
 
 >?
-- If an application cannot be opened after you click the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
-- The Vivo channel currently does not support in-app messages, which will be delivered through the TPNS channel.
-- The Vivo channel imposes a certain quota limit on the number of daily push messages. For more information, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
-- Operation messages can be pushed through the Vivo channel between 7:00 and 23:00, while only system messages can be pushed in other periods. For more information on how to apply for system messages, please see [Vendor Message Categorization Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
-- For the Vivo channel, the maximum number of operation messages one user can receive from one application per day is 5, while the number of system messages is unlimited.
-- The Vivo channel is supported only on certain newer models and corresponding OS versions. For more information, please see [here](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
+>- If an application cannot be opened after you click the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
+>- The Vivo channel currently does not support in-app messages, which will be delivered through the TPNS channel.
+>- The Vivo channel imposes a certain quota limit on the number of daily push messages. For more information, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+>- Operation messages can be pushed through the Vivo channel between 7:00 and 23:00, while only system messages can be pushed in other periods. For more information on how to apply for system messages, please see [Vendor Message Categorization Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+>- For the Vivo channel, the maximum number of operation messages one user can receive from one application per day is 5, while the number of system messages is unlimited.
+>- The Vivo channel is supported only on certain newer models and corresponding OS versions. For more information, please see [here](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
 
 ## Directions
 ### Getting key
