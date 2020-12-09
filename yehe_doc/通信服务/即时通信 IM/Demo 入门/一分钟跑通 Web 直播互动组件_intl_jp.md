@@ -30,7 +30,7 @@
 
 >!
 >- UserSigをローカルで計算する方法は、ローカルでの開発とデバッグにのみ適用されます。オンラインで直接公開しないでください。`SECRETKEY`が漏洩してしまうと、攻撃者がTencentCloudトラフィックを盗用する可能性があります。
->- UserSigを正しく発行するには、UserSig計算コードをサーバー側に渡し、App指向のインターフェースを提供してもらいます。Appは、UserSigが必要なときに、サービスサーバーに対して動的なUserSigを取得するためのリクエストを開始します。詳細については、「サーバー側でのUserSig生成」（https://intl.cloud.tencent.com/document/product/1047/34385）をご覧ください。
+>- UserSigを正しく発行するには、UserSig計算コードをサーバー側に渡し、App指向のインターフェースを提供してもらいます。Appは、UserSigが必要なときに、サービスサーバーに対して動的なUserSigを取得するためのリクエストを開始します。詳細については、[サーバー側でのUserSig生成](https://intl.cloud.tencent.com/document/product/1047/34385)をご覧ください。
 
 ### ステップ4：Demoの実行
 Chromeブラウザを使用して`dist`ディレクトリで`index.html`ファイルを開き、Demoを実行します。
