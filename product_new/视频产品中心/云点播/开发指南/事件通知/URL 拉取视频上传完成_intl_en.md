@@ -47,6 +47,8 @@ If you choose the normal callback mode, the callback URL will receive an HTTP PO
         }, 
         "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
         "ProcedureTaskId": "",
+        "SessionContext": "",
+        "SessionId": ""
     }
 }
 ```
