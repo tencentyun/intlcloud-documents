@@ -21,7 +21,7 @@ Use an OPPO enterprise developer account to log in to the [OPPO Developer Platfo
 >?You can only view the key under a developer account (root account).
 
 1. After your application for activating OPPO PUSH is approved, you can select **[OPPO PUSH Platform](https://push.oppo.com/)** > **Configuration Management** > **Application Configuration** to view the `AppKey`, `AppSecret`, and `MasterSecret`.
-![](https://main.qcloudimg.com/raw/7753e738a004854d63cf4c8e4c07d51c.png)
+
 2. Copy and paster the `AppId`, `AppKey`, and `AppSecret` parameters of the application into **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **OPPO Official Push Channel**.
 
 ### Configuring push channel
