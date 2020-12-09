@@ -9,7 +9,7 @@ After you purchase a resource package, there will be no additional fees incurred
 Yes. Every time a video is watched with the same device ID through the VOD link, there will be traffic consumed, and fees will be incurred accordingly.
 
  ### Will billing continue after a video is transcoded?
-No. Each transcoding task is billed only once. A transcoded video will be billed another time only if it is transcoded again.
+Each transcoding task is billed only once. A transcoded video will be billed another time only if it is transcoded again.
 
  ### Why do I receive deduction notifications during the validity period of a resource package?
 There are many possible reasons. You can simply troubleshoot as follows:
