@@ -9,7 +9,7 @@ Import Maven dependencies:
 <dependency>
             <groupId>com.github.xingePush</groupId>
             <artifactId>xinge</artifactId>
-            <version>1.2.2</version>
+            <version>1.2.4</version>
 </dependency>
 ```
 
