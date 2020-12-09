@@ -9,7 +9,7 @@ You can configure security group rules to allow or reject inbound and outbound t
 - You can modify security group rules at any time, and the new rules will take effect immediately.
 
 ## Use Limits
-For more information on the use limits and the quotas of security groups, please see [Use Limits Overview](https://intl.cloud.tencent.com/document/product/213/15379).
+For more information on the restrictions and quotas of security groups, please see [Use Limits Overview](https://intl.cloud.tencent.com/document/product/213/15379).
 
 ## Security Group Rules
 
@@ -41,7 +41,7 @@ When creating a security group, you can select one of the two security group tem
 > ?
 >
 > - If these templates cannot meet your actual needs, you can create custom security groups. For more information, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Application Cases of Security Groups](https://intl.cloud.tencent.com/document/product/215/35519).
-> - If you need to protect the application layer (HTTP/HTTPS), please activate [Tencent Cloud Web Application Firewall (WAF)](https://intl.cloud.tencent.com/product/waf), which provides web security at the application layer to defend against web vulnerabilities, malicious crawlers, and CC attacks, helping protect your websites and web applications.
+> - If you need to protect the application layer (HTTP/HTTPS), please activate [Tencent Cloud Web Application Firewall (WAF)](https://intl.cloud.tencent.com/product/waf), which provides web security at the application layer to defend against web vulnerabilities, malicious crawlers, and CC attacks, protecting your websites and web applications security.
 
 ## How to Use a Security Group
 

@@ -1,5 +1,5 @@
 The instance port verification feature can help you detect the port accessibility of a security group associated with CVM instances, locate faults, and improve the user experience.
-The following ports can be verified:
+You can verify the following ports:
  <table>
 <thead>
 <tr>
@@ -47,13 +47,13 @@ The following ports can be verified:
 ## Operations Guide
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **Diagnostic Tools** > **Port Verification** in the left sidebar to access the management page.
-3. Select a region at the top of the page, locate the instance to be verified in the list, and click **Quick Check**.
+3. Select a region at the top of the page, locate the instance you want to verify in the list, and click **Quick Check**.
 ![](https://main.qcloudimg.com/raw/04780280964c1d63698423b22ce764f5.png)
-4. You can see the port verification details in the pop-up window. To open ports that are not open to the Internet, click **Open all ports**.
+4. You can see the port verification details in the pop-up window. To open all ports for inbound and outbound traffic, click **Open all ports**.
 ![](https://main.qcloudimg.com/raw/b7f208cca3943ecefacd791f30533911.png)
-If you only need to open certain ports (such as `TCP:22`), add an inbound rule on the [Security Group console](https://console.cloud.tencent.com/vpc/securitygroup) to open port TCP:22. You can also select **all** for **Source** to open all IPs, or enter a specific IP (IP range), as shown below:
+If you only need to open certain ports, for example`TCP:22`, you can add an inbound rule for the selected ID/Name in [Security Group console](https://console.cloud.tencent.com/vpc/securitygroup) to open port TCP:22. You can also select **all** for **Source** to open all IPs, or enter a specific IP (IP range), as shown below:
 ![](https://main.qcloudimg.com/raw/6780b4df05168e19718ffe6c699c5159.png)
 
 ## Relevant Information
 - For information on security groups, see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750) and [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).
-- For more information about ports, see [Common Server Ports](https://intl.cloud.tencent.com/document/product/215/35520).
+- For more information on common ports, see [Common Server Ports](https://intl.cloud.tencent.com/document/product/215/35520).
