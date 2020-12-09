@@ -1,13 +1,13 @@
 このドキュメントでは、Tencent CloudのインタラクティブなWebライブ配信コンポーネントの体験Demoを迅速に実行する方法をご紹介します。
 
 ## 前提条件
-[Tencent Cloudのアカウント登録]（https://intl.cloud.tencent.com/document/product/378/17985）と、[実名認証]（https://intl.cloud.tencent.com/document/product/378/3629）を完了していること。
+[Tencent Cloudのアカウント登録](https://intl.cloud.tencent.com/document/product/378/17985)と、[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了していること。
 
 ## 操作手順
 
 ### ステップ1.アプリケーションの作成
 
-1.[インスタントメッセージングIMコンソール]（https://console.cloud.tencent.com/im）にログインします。
+1.[インスタントメッセージングIMコンソール](https://console.cloud.tencent.com/im)にログインします。
 2.【新しいアプリケーションを追加】をクリックします。
 3.【アプリケーションを作成】のダイアログボックスが表示されたら、アプリケーション名を入力し、【OK】をクリックします。
  作成後、コンソールの[概要]ページで、新規作成のアプリケーションの状態、サービスバージョン、`SDKAppID`、作成時間、有効期限を確認できます。`SDKAppID`情報を記録してください。
@@ -22,7 +22,7 @@
 
 ### ステップ3：Demoソースコードのダウンロードと設定
 
-1. Tencent CloudのインタラクティブなWebライブ配信コンポーネントDemoプロジェクトをダウンロードし、[アドレスをダウンロード]（https://github.com/tencentyun/TWebLive）します。
+1. Tencent CloudのインタラクティブなWebライブ配信コンポーネントDemoプロジェクトをダウンロードし、[アドレスをダウンロード](https://github.com/tencentyun/TWebLive)します。
 2. `TWebLive/dist/debug/GenerateTestUserSig.js`ファイルを開いて、関連パラメータを設定します。
  - SDKAPPID：ステップ1で取得した実際のアプリケーションSDKAppIDに設定してください。
  - SECRETKEY：ステップ2で取得した実際のキー情報に設定してください。
@@ -45,7 +45,7 @@ WebRTCでは、カメラとマイクを使用して音声・ビデオを収集�
 
 ## 環境要件
 - 最新版のChromeブラウザをご使用ください。
-- TWebLiveは、データ送信を以下のポートから行っています。これらのポートをファイアウォール許可リストに追加してください。設定が完了したら、[公式ウェブサイトDemo]（https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html）にアクセスしてDemoを体験し、設定が有効かどうかを確認できます。
+- TWebLiveは、データ送信を以下のポートから行っています。これらのポートをファイアウォール許可リストに追加してください。設定が完了したら、[公式ウェブサイトDemo](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html)にアクセスしてDemoを体験し、設定が有効かどうかを確認できます。
   - TCPポート：8687
   - UDPポート：8000、8080、8800、843、443、16285
   - ドメイン名：qcloud.rtc.qq.com
@@ -63,10 +63,10 @@ TRTC SDKバージョン6.6（2019年8月）から、新しい署名アルゴリ�
 
 ### 4. 10006　errorが発生しました。対処方法について教えてください。
 「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」エラーが発生した場合、リアルタイム音声・ビデオアプリケーションのサービスステータスが利用可能であるかを確認してください。
-[リアルタイム音声・ビデオコンソール]（https://console.cloud.tencent.com/rav）にログインし、作成したアプリケーションをクリックし、【アカウント情報】をクリックすると、[アカウント情報]パネルでサービスステータスを確認できます。
+[リアルタイム音声・ビデオコンソール](https://console.cloud.tencent.com/rav)にログインし、作成したアプリケーションをクリックし、【アカウント情報】をクリックすると、[アカウント情報]パネルでサービスステータスを確認できます。
 
 
 ## 関連資料
 
-- [TWebLiveインターフェースマニュアル]（https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html）
-- [オンラインDemo]（https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html）
+- [TWebLiveインターフェースマニュアル](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
+- [オンラインDemo](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html)
