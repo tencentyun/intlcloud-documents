@@ -92,6 +92,8 @@ If you choose the reliable callback mode, after the [event notification puling](
                     }, 
                     "FileUrl": "http://125676836723.vod2.myqcloud.com/xxx/xxx/xxx.mp4", 
                     "ProcedureTaskId": "",
+                    "SessionContext": "",
+                    "SessionId": ""
                 }
             }
         ]
