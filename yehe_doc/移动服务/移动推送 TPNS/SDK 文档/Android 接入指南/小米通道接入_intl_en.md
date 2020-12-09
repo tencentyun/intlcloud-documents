@@ -1,4 +1,4 @@
-## Operation Scenarios
+## Overview
 The Mi push channel is a system-level push channel **officially provided by Mi**. On a Mi phone, push messages can be delivered through Mi's system channel without opening the application.
 
 >!
@@ -7,11 +7,13 @@ The Mi push channel is a system-level push channel **officially provided by Mi**
 
 ## Directions
 
-### Activating Mi push service
-Access **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Operation Platform** to activate the message push service for the application.
+### Enabling Mi push service
+Enable the push service for the application on [Mi Open Platform](https://dev.mi.com/console/appservice/push.html) > **Push Platform**.
+
 
 ### Getting key
-Enter the [Mi open platform](https://dev.mi.com/console/appservice/push.html), sign up for a Mi developer account, and get the key of Mi Push. For more information, please see [Quick Connection Guide](https://dev.mi.com/console/doc/detail?pId=708).
+1. Enter [Mi Open Platform](https://dev.mi.com/console/appservice/push.html), sign up for a Mi developer account, and get three key parameters of `AppId`, `AppKey`, and `AppSecret`. For more information, please see [Quick Connection Guide](https://dev.mi.com/console/doc/detail?pId=708).
+2. Copy and paster the `AppId`, `AppKey`, and `AppSecret` parameters of the application into **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **Xiaomi Official Push Channel**.
 
 
 
@@ -19,10 +21,12 @@ Enter the [Mi open platform](https://dev.mi.com/console/appservice/push.html), s
 #### Using JCenter for dependency import
 JCenter is recommended for dependency import for AS development. Import the Jar package of Mi Push:
 ```js
-implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
+implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] is the version number of the current SDK, which can be viewed in SDK for Android Updates
 ```
 
->? Xiaomi Push [VERSION] refers to the SDK version number, which can be viewed on the [SDK download page](https://console.cloud.tencent.com/tpns/sdkdownload).
+>? Mi Push [VERSION] is the version number of the current SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
+
+
 
 
 #### Integrating through Eclipse
@@ -98,7 +102,7 @@ implementation 'com.tencent.tpns:xiaomi:[VERSION]-release'// Mi Push [VERSION] i
 </receiver>
 ```
 
-### Enabling Mi push
+### Enabling Mi Push
 Set Mi `AppID` and `AppKey`.
 
 ```java
@@ -109,10 +113,9 @@ XGPushConfig.enableOtherPush(getApplicationContext(), true);
 
 
 // The log of successful registration is as follows:
-12-02 16:17:32.299 12584-12584/com.qq.xgdemo I/XINGE: [XGPushManager] Action -> Register to xinge server
-12-02 16:17:32.996 12584-12584/com.qq.xgdemo I/XINGE: [XGPushManager] Register call back to com.qq.xgdemo
-12-02 16:17:32.997 12584-12626/com.qq.xgdemo I/XINGE: [XGPushManager] XG register push success with token : 1d31bb3ea6185baebdf05dfc2e586dfe5dc41fb5
-12-02 16:17:33.001 12584-12626/com.qq.xgdemo I/XINGE: [XGOtherPush] other push token is : YZQfRxmxdfNlbSKpNWCa3tM4Esnq6op4qeOsQO2qT88= other push type: xiaomi
+
+I/TPush: [OtherPushClient] handleUpdateToken other push token is : 3CvDLfyPRArAGnv****dvQ7rYko+OthWo90rW+Edeqn53RUudp6U1dhySpV35 other push type: xiaomi
+I/TPush: [PushServiceBroadcastHandler] >> bind OtherPushToken success ack with [accId = 1500001048  , rsp = 0]  token = 03be2036762f******33bce72d40eb5e677a otherPushType = xiaomi otherPushToken = 3CvDLfyPRArAGnv****dvQ7rYko+OthWo90rW+Edeqn53RUudp6U1dhySpV35G
 ```
 
 If you need to get parameters through the click callback or redirect to a custom page, you can use the intent to do so. For more information, please see [FAQs for Android](https://intl.cloud.tencent.com/document/product/1024/32624).

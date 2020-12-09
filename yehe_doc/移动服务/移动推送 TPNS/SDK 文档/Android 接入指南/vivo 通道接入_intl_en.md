@@ -1,18 +1,21 @@
 
-## Operation Scenarios
-The Vivo push channel is a system-level push channel officially provided by Vivo. On a Vivo phone, push messages can be delivered through Vivo's system channel without opening the application. For more information, please visit [Vivo Push's official website](https://dev.vivo.com.cn/home).
+## Overview
+The Vivo channel is a system-level push channel officially provided by Vivo. On a Vivo phone, push messages can be delivered through Vivo's system channel without opening the application. For more information, please visit [Vivo Push's official website](https://dev.vivo.com.cn/home).
 
 >?
->- If an application cannot be opened after you click the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
->- Vivo channel currently does not support in-app messages, which will be sent through the TPNS channel.
->- Vivo channel imposes a certain limit on the number of daily push messages, as detailed in [Vendor Channel Limit](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
->- Vivo channel pushes messages during 7:00-23:00, and only pushes system messages in other time periods. See [How to Apply for Vivo System Message](https://intl.cloud.tencent.com/document/product/1024/36250#vivozhinan) to apply for system message.
->- Vivo channel allows a user to receive up to 5 operational messages per application, and unlimited number of system messages. 
->- Vivo channel is only available in later models and systems. For more information, see [Vivo Push FAQs](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
+- If an application cannot be opened after you click the notification on the debugging version, please find the pop-up window permission and enable it for the current application.
+- The Vivo channel currently does not support in-app messages, which will be delivered through the TPNS channel.
+- The Vivo channel imposes a certain quota limit on the number of daily push messages. For more information, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+- Operation messages can be pushed through the Vivo channel between 7:00 and 23:00, while only system messages can be pushed in other periods. For more information on how to apply for system messages, please see [Vendor Message Categorization Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+- For the Vivo channel, the maximum number of operation messages one user can receive from one application per day is 5, while the number of system messages is unlimited.
+- The Vivo channel is supported only on certain newer models and corresponding OS versions. For more information, please see [here](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
 
 ## Directions
 ### Getting key
-You need to apply to Vivo for enabling the push permission so as to get three keys, namely, `AppID`, `AppKey`, and `AppSecret`. For more information, please see [Quick Integration Guide](https://dev.vivo.com.cn/documentCenter/doc/180).
+1. You need to apply to Vivo for enabling the push permission so as to get three keys, namely, `AppID`, `AppKey`, and `AppSecret`. For more information, please see [Quick Integration Guide](https://dev.vivo.com.cn/documentCenter/doc/180).
+2. Copy and paster the `AppId`, `AppKey`, and `AppSecret` parameters of the application into **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **Vivo Official Push Channel**.
+
+
 
 ### Configuration
 #### Integrating through Android Studio
@@ -27,10 +30,10 @@ Complete the configuration required by TPNS in the `build.gradle` file in the Ap
 ```
 2. Import the dependencies related to Vivo. The sample code is as follows:
 ```js
-implementation 'com.tencent.tpns:vivo:[VERSION]-release' // Vivo Push [VERSION] is the version number of the current SDK, which can be viewed on the SDK download page
+implementation 'com.tencent.tpns:vivo:[VERSION]-release' // Vivo Push [VERSION] is the version number of the current SDK, which can be viewed in SDK for Android Updates
 ```
 
->? Vivo Push [VERSION] refers to the SDK version number, which can be viewed on the [SDK download page](https://console.cloud.tencent.com/tpns/sdkdownload).
+>? Vivo Push [VERSION] is the version number of the current SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
 
 
 #### Integrating through Eclipse
@@ -72,7 +75,7 @@ After getting the TPNS SDK package for Vivo Push, configure the major TPNS versi
 
 
 ### Enabling Vivo push
-Enable the third-party push API before calling TPNS' ```XGPushManager.registerPush```:
+Enable the third-party push API before calling TPNS' `XGPushManager.registerPush`:
 
 ```java
 // Enable the third-party push
@@ -80,8 +83,8 @@ XGPushConfig.enableOtherPush(getApplicationContext(), true);
 
 
 // The log of successful registration is as follows:
- I/XINGE: [XGOtherPush] other push token is : 15646472431991408944055  other push type: vivo
-I/XINGE: [PushServiceBroadcastHandler]  bind OtherPushToken success ack with [accId = 1500xxxxxx  , rsp = 0]  token = 0139f9840030882cfe7cc791aebc800ed270 otherPushType = vivo otherPushToken = 15646472431991408944055
+I/TPush: [OtherPushClient] handleUpdateToken other push token is : 160612459******08955218 other push type: vivo
+I/TPush: [PushServiceBroadcastHandler] >> bind OtherPushToken success ack with [accId = 150000****  , rsp = 0]  token = 01a22fb503a33******66b89fad6be3ed343 otherPushType = vivo otherPushToken = 160612459******08955218
 
 ```
 
@@ -93,7 +96,6 @@ I/XINGE: [PushServiceBroadcastHandler]  bind OtherPushToken success ack with [ac
 -keep class com.vivo.push.**{*; }
 -keep class com.vivo.vms.**{*; }
 -keep class com.tencent.android.vivopush.VivoPushMessageReceiver{*;}
-
 ```
 
 >?Obfuscation rules must be stored in the `proguard-rules.pro` file at the application project level.
