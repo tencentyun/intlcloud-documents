@@ -1,11 +1,11 @@
 The node cache validity configuration is updated with an advanced mode, supporting more refined configurations. For more information, please see [Node Cache Validity Configuration (New)](https://intl.cloud.tencent.com/document/product/228/38424). 
 
 ## Configuration Overview
-Resource cache in Tencent Cloud CDN is triggered by requests. When a user initiates an access request to a resource, if the CDN node receiving the request has not cached the requested resource, it will forward the request to the origin server to pull the resource. After the resource is successfully pulled by the node (with a 2XX status code returned), it will be cached on the node and returned to the user.
+The resource cache in Tencent Cloud CDN is triggered by requests. When a user initiates an access request to a resource, if the CDN node receiving the request has not cached the requested resource, it will forward the request to the origin server to pull the resource. After the resource is successfully pulled by the node (with a 2XX status code returned), it will be cached on the node and returned to the user.
 
-You cannot directly manage resources cached on CDN nodes. If you are worried that resources on the origin server change but CDN nodes still cache the legacy resources and return them to users, you can configure node cache rules.
+You cannot directly manage resources cached on CDN nodes. If you are worried that resources on the origin server will change but CDN nodes will still cache the legacy resources and return them to users, you can configure the node cache rules.
 
-Each cached resource on CDN node has an expiration time. If the requested cached resource has expired, it will be considered invalid even if the resource is still cached on the node. The node will pull the resource from the origin server again. Node cache rule allows you to configure the cache validity period for resources in a specific type, directory, and path. You can configure these items based on actual business scenarios.
+Each cached resource on a CDN node has an expiration time. If the requested cached resource has expired, it will be considered invalid even if the resource is still cached on the node. The node will pull the resource from the origin server again. The node cache rule allows you to configure the cache validity period for resources in a specific type, directory, and path. You can configure these items based on your actual business scenarios.
 
 ## Configuration Guide
 ### Viewing the Configuration
@@ -15,10 +15,10 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 ### Adding Rules
 
 CDN currently supports configuring node cache validity rules in the following four types:
-+ File: cache validity period can be configured by the entered file extension. Different file extensions should be separated with `;`, i.e., `jpg;css`.
-+ Folder: cache validity period can be configured by the entered directory path in the format of `/test` and does not need to end with `/`. Different directories should be separated with `;`.
-+ Full-path file: cache validity period can be configured by the entered full file path in the format of `/index.html`. The full file path and file type can be combined for match, such as `/test/*.jpg`.
-+ Homepage: cache validity period can be configured by the root directory.
++ File: the cache validity period can be configured by the entered file extension. Different file extensions should be separated with `;`, i.e., `jpg;css`.
++ Folder: the cache validity period can be configured by the entered directory path in the format of `/test` and does not need to end with `/`. Different directories should be separated with `;`.
++ Full-path file: the cache validity period can be configured by the entered full file path in the format of `/index.html`. The full file path and file type can be combined for matching, such as `/test/*.jpg`.
++ Homepage: the cache validity period can be configured by the root directory.
 
 ![](https://main.qcloudimg.com/raw/1a72478ce0bc4fc1ef6a22bcb8064a6b.png)
 **Configuration limitations**
@@ -29,7 +29,7 @@ CDN currently supports configuring node cache validity rules in the following fo
 - The cache time can be set as up to 365 days.
 
 #### Default policy
-When a user makes a request for a certain business resource, and the origin server's HTTP response header includes the `Cache-Control` field, the default policy will be as follows:
+When a user makes a request for a certain business resource and the origin server's HTTP response header includes the `Cache-Control` field, the default policy will be as follows:
 - If the `Cache-Control` field is `Max-Age`, the cache validity period for this resource is subject to that configured for the node, rather than the value specified by `Max-Age`.
 - If the `Cache-Control` field is `no-cache`, `no-store`, or `private`, then the CDN node will not cache the resource.
 

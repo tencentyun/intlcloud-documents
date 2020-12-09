@@ -15,7 +15,7 @@
 ### Parameter Description
 TypeD requires the following configurations:
 ![](https://main.qcloudimg.com/raw/b3f7c73f899af3bfd702786752fb7c2f.png)
-**Custom authentication key**: it contains 6 to 32 digits, uppercase and lowercase letters. The key should be kept private and known only to the client and server.
+**Custom authentication key**: it contains 6 to 32 digits and uppercase and lowercase letters. The key should be kept private and known only to the client and server.
 **Custom authentication parameter name and timestamp parameter name**: the `sign` in the example can be replaced with a parameter name containing 1 to 100 uppercase and lowercase letters, digits, and underscores. After CDN receives the request, it will read the value of the specified signature parameter and calculate the MD5 value. If the result matches the `md5hash` value passed in, the signature will be successfully verified. If not, a 403 error will be directly returned.
 **Custom validity period**: the `timestamp` value in the timestamp parameter, plus the configured validity period, is compared with the current time to determine whether the request has expired. If yes, a 403 error will be directly returned. The validity period is in seconds. 
 
@@ -27,11 +27,11 @@ After configuring the key, parameter name, and validity period, you can specify 
 + All files except those in a specified type need to be authenticated.
 + Only files in a specified type need to be authenticated.
 
-## Notes:
+## Notes
 **Cache hit rate**
-If you have enabled the TypeD authentication mode for a domain name, the access URL will carry the authentication parameter. When a CDN node caches the resource, it will automatically ignore the corresponding parameter and thus not affect the cache hit rate.
+If you have enabled the TypeD authentication mode for a domain name, the access URL will carry the authentication parameter. When a CDN node caches the resource, it will automatically ignore the corresponding parameter and thus will not affect the cache hit rate.
 >!As the corresponding parameter will be automatically ignored after the configuration, i.e., the configured authentication and timestamp parameters will be filtered, the cache keys of the files to be authenticated will be affected, and the priority here is higher than the cache key rules in **Cache Configuration** -> **Cache Key Rule Configuration**.
-For example, the TypeD configuration here is as: "Authentication Parameter: `sigh`"; "Timestamp Parameter: `t`"; "Authentication Scope: `jpg`"; then the `sign` and `t` parameters will be automatically filtered for JPG files even though the configuration is as "All Files: Not filter" in **Cache Configuration** -> **Cache Key Rule Configuration**.
+For example, the TypeD configuration here is as: "Authentication Parameter: `sigh`"; "Timestamp Parameter: `t`"; "Authentication Scope: `jpg`"; then the `sign` and `t` parameters will be automatically filtered for JPG files even though the configuration is as "All Files: Do Not Filter" in **Cache Configuration** -> **Cache Key Rule Configuration**.
 
 **Origin-pull policy**
 The access format of a domain name with TypeD authentication mode enabled is as follows:

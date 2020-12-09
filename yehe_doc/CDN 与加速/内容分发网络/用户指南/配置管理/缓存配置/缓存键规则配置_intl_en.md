@@ -1,5 +1,5 @@
 
->?The Ignore Query String and Cache Ignore URL Case configurations are merged to the Cache Key Rule configuration with more refined configurations.
+>?The Ignore Query String and Cache Ignore URL Case configurations have been merged into the Cache Key Rule configuration, which now supports more refined configurations.
 
 ## Configuration Overview
 
@@ -14,7 +14,7 @@ Tencent Cloud CDN uses the `Key-Value` format to map resources during caching, w
 `http://cloud.tencent.com/1.jpg?version=2`
 In this scenario, you need to disable Ignore Query String and use a complete URL as the cache key to cache images and distinguish between resources.
 
-- In an audio/video scenario, if you use the timestamp signature parameter for access authentication:
+- If you use the timestamp signature parameter for access authentication in an audio/video scenario:
 `http://cloud.tencent.com/1.mp4?sign=XXXXXX`
 In this scenario, you need to enable Ignore Query String and use the URL part before "?" (i.e., `http://cloud.tencent.com/1.mp4`) as the cache key. The node will then only cache one resource, and the cache can be directly hit through signature authentication even if the timestamp signature keeps changing.
 
@@ -22,7 +22,7 @@ In this scenario, you need to enable Ignore Query String and use the URL part be
 
 If the letter case of resource URL paths is relevant to the resource content in your business, you can disable "Cache Ignore URL Case".
 If the letter case of resource URL paths is irrelevant to the resource content in your business, you can enable "Cache Ignore URL Case" to improve the hit rate.
->!The platform is being upgraded and the Cache Ignore URL Case cannot be enabled currently.
+>!The platform is being upgraded and Cache Ignore URL Case cannot be enabled currently.
 
 ## Configuration Guide
 
@@ -32,7 +32,7 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 When adding an acceleration domain name, the Ignore Query String is enabled or disabled by default based on different acceleration business types.
 
-- If static acceleration is selected, the Ignore Query String is disabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Not filter**.
+- If static acceleration is selected, the Ignore Query String is disabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Do Not Filter**.
 - If downloading or streaming VOD acceleration is selected, the Ignore Query String is enabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Filter All**.
 
 
@@ -48,7 +48,7 @@ You can add cache rules as needed.
 - Each domain name can be configured with up to 20 cache key rules (including the default ones).
 - Rule priority can be adjusted: rules at the bottom of the list have higher priority (the priority of default rules cannot be adjusted).
 - In each rule of specified file type, folder, and full-path file, up to 100 groups of contents can be entered. Please use ";" to separate different contents, e.g., "Specified file type - jpg;png".
-- Ignore Query String- retains specified parameters.
+- Ignore Query String - Reserve Specified Parameters.
   - All files: up to 6 parameters can be entered; each one can contain up to 20 characters.
   - Specified file type/folder/full path: up to 5 parameters can be entered; each one can contain up to 20 characters.
 
@@ -73,8 +73,8 @@ Then the actual access will be as follows:
 
 A client accessed the resources `www.test.com/abc.jpg?version=1&colour=red` and `www.test.com/abc.JPG?version=1&colour=red`, the two requests arrived at the CDN node X, on which the resources are not cached.
 
-- The origin server will be pulled for the image `abc.jpg`, and the image will be cached on the CDN node X. As Ignore Query String is enabled and **Filter All** is selected, then the URL part `www.test.com/abc.jpg` before "?" will be used as the cache key.
-- The client accessed the resource `www.test.com/abc.JPG?version=1&colour=red`, as the Cache Ignore URL Case is disabled, then the cached resource `www.test.com/abc.jpg` will not be hit, the origin server will be pulled for the image `abc.JPG`, the image will be cached on the CDN node X, and the `www.test.com/abc.JPG` will be used as the cache key.
+- The origin server will be pulled for the image `abc.jpg`, and the image will be cached on the CDN node X. As Ignore Query String is enabled and **Filter All** is selected, the URL part `www.test.com/abc.jpg` before "?" will be used as the cache key.
+- The client accessed the resource `www.test.com/abc.JPG?version=1&colour=red`, and as the Cache Ignore URL Case is disabled, the cached resource `www.test.com/abc.jpg` will not be hit, the origin server will be pulled for the image `abc.JPG`, the image will be cached on the CDN node X, and `www.test.com/abc.JPG` will be used as the cache key.
 
 
 
