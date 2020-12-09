@@ -9,13 +9,6 @@ Camera push refers to the process of collecting images from the camera of the mo
 - **x86 simulator debugging**
 The SDK uses a lot of audio and video APIs of the iOS system. These APIs often cannot be used on the x86 simulator that comes with the Mac server. Therefore, if conditions allow, we recommend that you use the real Mac server for debugging.
 
-## Sample Code
-
-| Platform | GitHub URL | Key Class |
-|:---------:|:--------:|:---------:|
-| iOS | [Github](https://github.com/tencentyun/LiteAVInternational) | CameraPushMainViewController.m |
-| Android | [Github](https://github.com/tencentyun/LiteAVInternational) | CameraPusherActivity.java |
-
 
 ## Feature Interfacing
 
