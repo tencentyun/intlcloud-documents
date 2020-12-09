@@ -5,16 +5,16 @@ The OPPO channel is a system-level push channel officially provided by OPPO. On 
 
 
 >?
-- The OPPO channel currently does not support in-app messages, which will be delivered through the TPNS channel.
-- The OPPO channel imposes a certain quota limit on the number of daily push messages. For more information, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
-- The OPPO channel is supported by OPPO ColorOS v3.1 or above.
+>- The OPPO channel currently does not support in-app messages, which will be delivered through the TPNS channel.
+>- The OPPO channel imposes a certain quota limit on the number of daily push messages. For more information, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829). When this limit is exceeded, excessive messages will be pushed through the TPNS channel.
+>- The OPPO channel is supported by OPPO ColorOS v3.1 or above.
 
 
 
 ## Directions
 ### Applying for permission
 Use an OPPO enterprise developer account to log in to the [OPPO Developer Platform](https://open.oppomobile.com/) and select **Management Center** > **Application Service Platform** > **Mobile Application List** > **Select Application** > **Development Service** > **Push Service** to apply for the OPPO PUSH permission.
-![](https://main.qcloudimg.com/raw/11f429ba46161b1cea16c233cebc5627.png)
+
 
 
 ### Getting key
