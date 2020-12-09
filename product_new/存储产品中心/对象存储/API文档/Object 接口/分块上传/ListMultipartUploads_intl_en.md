@@ -29,8 +29,8 @@ The content is described in details below: <style  rel="stylesheet"> table th:nt
 | encoding-type    | Specifies the encoding type of the returned value; valid value: `url` | String | No |
 | prefix | Sets that the response will only contain object keys with the specified prefix. </br>When you make a query with `prefix` specified, the returned keys will still contain `Prefix` | String | No |
 | max-uploads | Sets the maximum number of multipart uploads returned. Value range: [1, 1,000]. Default value: 1,000 | String | No |
-| key-marker | Used together with `upload-id-marker`. <Br>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed; <Br/>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
-| upload-id-marker | Used together with `key-marker`. <Br>If `key-marker` is not specified, `upload-id-marker` will be ignored; <Br/>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String | No |
+| key-marker | Used together with `upload-id-marker`. <Br>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed; <Br/>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadId` is greater than `upload-id-marker` will also be listed | String | No |
+| upload-id-marker | Used together with `key-marker`. <Br>If `key-marker` is not specified, `upload-id-marker` will be ignored; <Br/>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadId` is greater than `upload-id-marker` will also be listed | String | No |
 
 ####  Request Body
 The request body of this request is empty.
@@ -57,7 +57,7 @@ This response body returns **application/xml** data. The following contains all 
   <Delimiter></Delimiter>
   <Upload>
     <Key></Key>
-    <UploadID></UploadID>
+    <UploadId></UploadId>
     <StorageClass></StorageClass>
     <Initiator>
       <ID></ID>
@@ -165,7 +165,7 @@ x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRf****
     <IsTruncated>false</IsTruncated>
     <Upload>
         <Key>Object</Key>
-        <UploadID>1484726657932bcb5b17f7a98a8cad9fc36a340ff204c79bd2f51e7dddf0b6d1da6220520c</UploadID>
+        <UploadId>1484726657932bcb5b17f7a98a8cad9fc36a340ff204c79bd2f51e7dddf0b6d1da6220520c</UploadId>
         <Initiator>
            <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
 		<DisplayName>100000000001</DisplayName>
@@ -179,7 +179,7 @@ x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRf****
     </Upload>
     <Upload>
         <Key>Object</Key>
-        <UploadID>1484727158f2b8034e5407d18cbf28e84f754b791ecab607d25a2e52de9fee641e5f60707c</UploadID>
+        <UploadId>1484727158f2b8034e5407d18cbf28e84f754b791ecab607d25a2e52de9fee641e5f60707c</UploadId>
         <Initiator>
            <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
 		<DisplayName>100000000001</DisplayName>
@@ -193,7 +193,7 @@ x-cos-request-id: NTg3ZjI0ZGRfNDQyMDRlXzNhZmRf****
     </Upload>
     <Upload>
         <Key>exampleobject</Key>
-        <UploadID>1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e</UploadID>
+        <UploadId>1484727270323ddb949d528c629235314a9ead80f0ba5d993a3d76b460e6a9cceb9633b08e</UploadId>
         <Initiator>
            <ID>qcs::cam::uin/100000000001:uin/100000000001</ID>
 		<DisplayName>100000000001</DisplayName>
