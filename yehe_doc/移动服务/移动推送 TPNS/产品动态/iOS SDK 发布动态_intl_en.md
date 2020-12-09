@@ -1,19 +1,50 @@
+## November 2020
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Document</th>
+ </tr>
+ <tr>
+ <td>The SDK v1.2.9.0 is released</td>
+ <td> <li>Fixed the issue where image download might fail in rich media notifications
+ <li>Fixed the issue where the TPNS channel might be online when the application was running in the background
+ <li>Fixed the issue where the TPNS token might be duplicate on versions below 1.2.5.2
+ <li>Fixed the issue where it might fail to establish a persistent connection
+ <li>Fixed the issue where the naming of "in-app message" conflicted with certain SDKs
+ <li>Optimized the performance of local cache
+ <li>Optimized the timing of reporting application notification status
+ <li>Optimized the persistent connection handling mechanism on weak networks
+ <li>Optimized account APIs
+ <li>Optimized the code samples of TPNS demo
+ <li>Added the local notification feature
+ <li>Added the support for IPv6
+ <li>Removed the code compatible with the free edition</td>
+ <td>November 25, 2020</td>
+ <td> <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download </a> </li> </td>
+ </tr>
+ </table>
+
+
 ## October 2020
 
 <table>
-<tr>
-    <th width=20%>Update</th>
-    <th width=44%>Description</th>
-    <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
-</tr>
-    <tr>
-        <td>The SDK 1.2.8.1 is released</td>
-        <td>Known issues have been fixed</td>
-        <td>October 29, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li></td>
-    </tr>        
-</table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Document</th>
+ </tr>
+ <tr>
+ <td>The SDK v1.2.8.1 is released</td>
+ <td>Known issues are fixed</td>
+ <td>October 29, 2020</td>
+ <td>- </td>
+ </tr>
+ </table>
+
 
 
 ## September 2020
@@ -23,13 +54,15 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
-        <td>The SDK 1.2.8.0 is released</td>
-        <td><li>The user attribute API is added for personalized delivery</li><li>The in-app message feature is now supported, with several in-app message templates provided</li><li>The known issues have been fixed </li></td>
+        <td>The SDK v1.2.8.0 is released</td>
+				<td><li><b>User attribute</b> APIs are added for personalized push</li><li>The <b>in-app message</b> feature and several in-app message templates are added</li><li>Known issues are fixed</li></td>
         <td>September 27, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>-</li></td>
+    </tr>        
+</table>
 
 
 ## July 2020
