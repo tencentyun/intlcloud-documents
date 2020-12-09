@@ -31,7 +31,6 @@ Log in to the Huawei Developer platform, go to **My Projects** > select a projec
 ### Enabling push service
 
 Enable the push service in **Development** > **Push Service** on the Huawei Push platform. For more information, please see [Enabling Push Service](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
 
 
 ## SDK Integration (Two Methods)
@@ -81,8 +80,9 @@ dependencies {
 		}
 ```
 
->? Huawei Push \[VERSION\] is the version number of the current latest SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
-
+>?
+>- Huawei Push \[VERSION\] is the version number of the current latest SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
+>- Huawei Push v5 is officially supported staring TPNS SDK for Android v1.2.1.3. Please use TPNS dependency v1.2.1.3 or above for Huawei to avoid integration conflicts.
 
 ### Using Android Studio for manual integration
 
