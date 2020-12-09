@@ -5,7 +5,7 @@ The default timeout is 10 seconds.
 If you disable the CDN service of a connected domain name, CDN nodes will retain the connection configurations of the domain name, CDN traffic will no longer be generated, and the domain name will be inaccessible.
 
 ### What should I do if I cannot open my website after connecting it to CDN?
-First, as the website cannot be opened when the CDN status of the connected domain name is **Disabled**, please check the status. If the status is not "Disabled", you can proceed with the check:
+First, as the website cannot be opened when the CDN status of the connected domain name is **Disabled**, please check the status. If the status is not **Disabled**, you can proceed with a check:
 + Run `ping` or `nslookup` to check whether the CNAME resolution of the domain name has taken effect. If CNAME has not been added yet, please go to your DNS provider and add CNAME as instructed in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 + After CNAME takes effect, you can check whether the origin server is accessible.
 
@@ -23,18 +23,18 @@ This is generally due to the following reasons:
 
 ### Why do users experience a slow connection when they access CDN?
 Please check the download speed for large files and the latency for small files. First, get the URL that is slow to access for users and determine whether the access is slow by using speed test websites such as [17ce](http://www.17ce.com) (recommended).
-If the test connection is slow and the origin server is an external origin, you should assist the user and check if the machine load and bandwidth of the origin server are restricted.
+If the test result confirms the slow speed and the origin server is an external origin server, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). We will help users check whether the load and bandwidth are restricted on the origin server machine.
 
-### How do I tell whether user access has hit the CDN Cache?
+### How do I tell whether user access has hit the CDN cache?
 View the `X-Cache-Lookup` information in the header of the request return. If multiple `X-Cache-Lookup` entries are returned at the same time, that is normal. If `Cache Hit`/`Hit From MemCache`/`Hit From Disktank` is returned, it means that the CDN cache has been hit.
 ![](https://mc.qcloudimg.com/static/img/64ac912c895b36f0241a927df6da3543/image.png)
-+ `X-Cache-Lookup:Hit From MemCache`: the memory of the CDN node is hit.
-+ `X-Cache-Lookup:Hit From Disktank`: the disk of the CDN node is hit.
++ `X-Cache-Lookup:Hit From MemCache`: the memory of the CDN node has been hit.
++ `X-Cache-Lookup:Hit From Disktank`: the disk of the CDN node has been hit.
 
-### Why are the sizes of files with the same name returned by the node different?
+### Why do files with the same name returned by the node have different sizes?
 Since all file types are cached by default, there may be different versions of a file on the CDN node. To solve this problem, you can:
-+ Manually purge files and update cache immediately.
-+ Use a version number, for example: ```http://www.xxx.com/xxx.js?version=1```.
++ Manually purge files and update the cache immediately.
++ Use a version number, e.g., ```http://www.xxx.com/xxx.js?version=1```.
 + Change the file names to avoid using files with the same name.
 
 If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
@@ -50,4 +50,4 @@ Please select **Allow blank referer** when configuring the hotlink protection al
 CDN mainly focuses on content delivery acceleration rather than DDoS prevention. You can use CDN's bandwidth cap feature to automatically collect bandwidth usage statistics in 5 minutes. If the cap threshold is reached, CDN will respond according to the configuration. **The maximum threshold is 10,000 Tbps**.
 
 ### Can CDN provide all of its node IPs? 
-No. For security concerns, CDN cannot provide a full node IP list. However, you can query the IP region on the **Verify Tencent Cloud CDN IP** page. For more information, please see [Verify Tencent IP](https://intl.cloud.tencent.com/document/product/228/10747).
+No. For security concerns, CDN cannot provide a full node IP list. However, you can query the IP region on the **Verify Tencent Cloud CDN IP** page. For more information, please see [Verifying Tencent IPs](https://intl.cloud.tencent.com/document/product/228/10747).
