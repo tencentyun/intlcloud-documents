@@ -1,8 +1,8 @@
 ### グループチャットでグループメンバーの発言禁止を設定または取消すにはどうすればいいですか。
 発言禁止はグループメンバーのメッセージ送信を抑制するための方法であり、発言禁止されたメンバーが発言禁止期間内にこのグループでメッセージを送信できません。設定の詳細については、次のSDKドキュメントをご参照ください。
 - [Androidにおけるグループメンバーの発言禁止](https://intl.cloud.tencent.com/document/product/1047/36271)
-> [iOSにおけるグループメンバーの発言禁止](https://intl.cloud.tencent.com/document/product/1047/36257)
-> [Webにおけるグループメンバーの発言禁止](https://intl.cloud.tencent.com/document/product/1047/34330)
+- [iOSにおけるグループメンバーの発言禁止](https://intl.cloud.tencent.com/document/product/1047/36257)
+- [Webにおけるグループメンバーの発言禁止](https://intl.cloud.tencent.com/document/product/1047/34330)
 
 
 また、App管理者がREST APIを使って、任意のグループの任意のメンバーに発言禁止を設定できます。詳細については、[REST API：一括発言禁止と発言禁止の取り消し](https://intl.cloud.tencent.com/document/product/1047/34951)をご参照ください。
