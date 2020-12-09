@@ -20,7 +20,7 @@ Click **Start** (or shortcut: Win+R) > **Run** (enter `cmd`) > **OK** (or press 
 
 ## Linux
 #### 1. Check the Python version 
-Linux’s yum comes with Python. So check the default Python version first.
+Linux’s yum comes with Python, so check the default Python version first.
 ```sh
 python -V
 ```

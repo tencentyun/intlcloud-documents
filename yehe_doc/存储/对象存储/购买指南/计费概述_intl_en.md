@@ -1,6 +1,6 @@
 ## Free Tier
 
-| User | Period         | Free Tier                                                     | How to Get                                                     |
+| Target User | Free Period         | Free Tier                                                     | How to Get It                                                     |
 | -------- | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | New user | Six months after COS service activation | A limited amount of STANDARD storage usage is provided automatically by COS free of charge after COS service activation. For more information, please see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240) | [Activate COS](https://console.cloud.tencent.com/cos5) |
 
@@ -13,7 +13,7 @@ COS is billed on a pay-as-you-go basis as detailed below:
 
 | Billing Method                                                    | Description                                                      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | This is the default COS billing method. For all the available regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). |
+| [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/436/32534) | This is the default COS billing method. For all the available regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) |
 
 ## Pricing
 
@@ -118,6 +118,6 @@ The billing cycle and sequence of COS fees are as detailed below:
 
 
 1. For more information on COS fee calculation and billing in different scenarios, please see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
-2. For more information on arrears processing in COS, data retention and purge schedule, please see COS [Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
-3. You can estimate the usage and calculate of your pay-as-you-go COS fees using the COS [Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
-4. If you have any further questions about COS billing, please see [FAQs About Billing](https://intl.cloud.tencent.com/document/product/436/32532) for answers.
+2. For more information on arrears processing in COS, data retention and the purge schedule, please see COS [Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
+3. You can estimate the usage of and calculate your pay-as-you-go COS fees using the COS [Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
+4. If you have any further questions about COS billing, please see [Billing FAQs](https://intl.cloud.tencent.com/document/product/436/32532) for answers.
