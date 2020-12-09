@@ -89,7 +89,7 @@
 </table>
 
 ## インターフェースに関する制限
->このドキュメントでは、使用が制限されているREST APIのみを説明しています。APIの全体的なリストについては、「REST APIインターフェースリスト」（https://intl.cloud.tencent.com/document/product/1047/34621）をご覧ください。
+>このドキュメントでは、使用が制限されているREST APIのみを説明しています。APIの全体的なリストについては、[REST APIインターフェースリスト](https://intl.cloud.tencent.com/document/product/1047/34621)をご覧ください。
 
 ### 一般的な制限
 
