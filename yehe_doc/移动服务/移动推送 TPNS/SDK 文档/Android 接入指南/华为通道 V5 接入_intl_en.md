@@ -1,6 +1,6 @@
 ## Overview
 
-Huawei launches HMS Core as an upgrade of **Huawei Push** SDK v2.6.3.
+
 As TPNS always keeps up with the update progress of each vendor channel's push service, it provides plugin dependency packages integrated with HMS Core Push SDK for your choice.
 
 > !  
@@ -11,10 +11,10 @@ As TPNS always keeps up with the update progress of each vendor channel's push s
 
 ### Getting key
 
-1. Go to the [Huawei Developer Platform](http://developer.huawei.com).
+1. Go to the [Huawei Developer platform](http://developer.huawei.com).
 2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to complete identity verification.)
 3. Create an application on the Huawei Push platform. For more information, please see [Creating Application](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). (The application package name must be the same as that entered in the TPNS Console.)
-4. Get and copy the application's `AppID` and `AppSecret` and paste them in **Configuration Management** > **Huawei Channel** in the [TPNS Console](https://console.cloud.tencent.com/tpns).
+4. Get and copy the application's `AppID` and `AppSecret` and paste them into **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **Huawei Official Push Channel**.
 
 
 
@@ -30,7 +30,8 @@ Log in to the Huawei Developer platform, go to **My Projects** > select a projec
 
 ### Enabling push service
 
-Enable the push service on the Huawei Push platform. For more information, please see [Enabling Push Service](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
+Enable the push service in **Development** > **Push Service** on the Huawei Push platform. For more information, please see [Enabling Push Service](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
+
 
 ## SDK Integration (Two Methods)
 
@@ -74,10 +75,14 @@ android {
 ```
 dependencies {
 		// ...Other dependencies of the program
-		implementation 'com.tencent.tpns:huawei:v3-1.0.0.0-release'      // TPNS plugin for HMS Core
+		implementation 'com.tencent.tpns:huawei:[VERSION]-release'      // Huawei Push [VERSION] is the version number of the current latest SDK, which can be viewed in SDK for Android Updates
 		implementation 'com.huawei.hms:push:5.0.2.300'       // HMS Core Push module dependency package
 		}
 ```
+
+>?
+>- Huawei Push \[VERSION\] is the version number of the current latest SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
+>- Huawei Push v5 is officially supported staring TPNS SDK for Android v1.2.1.3. Please use TPNS dependency v1.2.1.3 or above for Huawei to avoid integration conflicts.
 
 ### Using Android Studio for manual integration
 
@@ -113,7 +118,7 @@ android {
 dependencies {
         // ...Other dependencies of the program
         implementation files('libs/tpns-huaweiv5-1.2.1.1.jar')      // TPNS plugin for HMS Core
-        implementation fileTree(include: ['*.aar'], dir: 'libs')    // HMS Core Push module dependent package
+        implementation fileTree(include: ['*.aar'], dir: 'libs')    // HMS Core Push module dependency package
     }
 ```
 7. Add the following components between the `<application>` and `</application>` tags in the `manifest` file:
@@ -141,8 +146,10 @@ XGPushConfig.enableOtherPush(getApplicationContext(), true);
 The log of successful registration is as follows:
 
 ```
-I/TPush: [XGOtherPush] other push token is : 086555103261872630000****600CN01 other push type: huawei
-I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df0346d5837d4748192e9d2f14c81e08 otherPushType = huawei otherPushToken = 086555103261872630000****600CN01
+V/TPush: [XGPushConfig] isUsedOtherPush:true
+E/xg.vip: get otherpush errcode: errCode : 0 , errMsg : success
+V/TPush: [XGPushConfig] isUsedOtherPush:true
+I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqAADxfCrWG3kupbOraeAiYoo9n2B-bAfb2d--kctc8E_UnY_mrIdg9ionukZvC******dVD8GlJi_5-0rpskunnNMcat35HA other push type: huawei
 ```
 
 ## Code Obfuscation
@@ -166,7 +173,7 @@ I/TPush: [a] binder other push token with accid = 2100274337  token = 17c32948df
 
 ### Arrival receipt configuration for Huawei channel
 
-The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246), you can view the arrival data for the Huawei push channel in the push records.
+The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246#.E5.8D.8E.E4.B8.BA.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95), you can view the arrival data for the Huawei push channel in the push records.
 ![](https://main.qcloudimg.com/raw/11c44dfc000045458a627e12b67ef611.png)
 
 ### Badge adaptation for Huawei devices
@@ -177,12 +184,10 @@ You can set the application badge on Huawei devices after applying for the appli
 
 #### Querying Huawei Push registration error code
 
-The Huawei Push service has strict requirements on the integration configuration. If you fail to register with the Huawei channel, you can use either of the following ways to get the Huawei Push registration error code:
+The Huawei Push service has strict requirements on the connection configuration. If you fail to register with the Huawei channel, you can use one of the following ways to get the Huawei Push registration error code:
 
 1. In debugging mode of the push service, filter logs by the keyword `OtherPush` or `HMSSDK` to view the return code logs.
-2. Call the `XGPushConfig.getOtherPushErrCode(context)` API in the callback method of the TPNS registration API `XGPushManager.registerPush` to get the vendor channel registration return code:
-
-You can find the cause of the error and get the solution in [Common error codes](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-References/hmssdk_huaweipush_api_reference_errorcode).
+2. You can find the cause of the error and get the solution in [Common error codes](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-References/hmssdk_huaweipush_api_reference_errorcode).
 
 #### Others
 

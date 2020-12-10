@@ -1,6 +1,6 @@
 ### How do I change my VOD billing mode?
 VOD offers two billing modes: daily billing and monthly billing. The default billing mode is daily billing. If you want to change it to monthly billing, please contact your Tencent Cloud rep.
->Packages fall into the daily billing mode.
+>?Packages fall into the daily billing mode.
 
 ### Why are fees still incurred after I purchase a resource package?
 After you purchase a resource package, there will be no additional fees incurred on the purchase date. As fees for a day are charged on the next day in the daily billing mode, the additional fees on the package purchase date are actually for the previous day.
@@ -9,7 +9,7 @@ After you purchase a resource package, there will be no additional fees incurred
 Yes. Every time a video is watched with the same device ID through the VOD link, there will be traffic consumed, and fees will be incurred accordingly.
 
  ### Will billing continue after a video is transcoded?
-No. Each transcoding task is billed only once. A transcoded video will be billed another time only if it is transcoded again.
+Each transcoding task is billed only once. A transcoded video will be billed another time only if it is transcoded again.
 
  ### Why do I receive deduction notifications during the validity period of a resource package?
 There are many possible reasons. You can simply troubleshoot as follows:

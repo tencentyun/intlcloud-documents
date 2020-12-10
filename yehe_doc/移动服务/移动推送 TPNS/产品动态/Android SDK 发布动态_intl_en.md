@@ -4,12 +4,12 @@
 <tr>
     <th width=20%>Update</th>
     <th width=44%>Description</th>
-    <th width=16%>Release Time</th>
-    <th width=20%>Documentation</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Document</th>
 </tr>
         <tr>
-        <td>Released SDK 1.2.1.3</td>
-       <td>Optimized internal logic</td>
+        <td>The SDK v1.2.1.3 is released</td>
+       <td><li>The internal logic is optimized<li>Huawei Push SDK v5 is officially supported staring this version. Please update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a></td>
         <td>November 11, 2020</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
     </tr>
@@ -22,35 +22,38 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
         <tr>
-        <td>The SDK 1.2.1.1 is released</td>
-<td><li>The <b>user attribute</b> API is added for personalized push</li> <li>The <b>in-app message</b> is now supported, with several in-app message templates provided</li><li>The SO file is updated</li><li>The SDK is optimized</li></td>
+        <td>The SDK v1.2.1.1 is released</td>
+				<td><li><b>User attribute</b> APIs are added for personalized push</li> <li>The <b>in-app message</b> feature and several in-app message templates are added</li><li>The SO files are optimized and updated</li><li>The SDK is optimized internally</li></td>
         <td>October 12, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>-</td>
     </tr>
 </table>
+
+
+
 
 ## July 2020
 
 <table>
 <tr>
-   <th width=20%>Update</th>
+    <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
-    <tr>
-        <td>Released SDK 1.2.0.3</td>
-       <td>The known issue is fixed</td>
-        <td>2020-07-30</td>
+        <tr>
+        <td>The SDK v1.2.0.3 is released</td>
+       <td>Known issues are fixed</td>
+        <td>July 30, 2020</td>
         <td>-</a></td>
     </tr>
-<tr>   
-        <td>Released SDK 1.2.0.2</td>
-       <td>Optimized internal logic</td>
-        <td>2020-07-01</td>
+<tr>
+        <td>The SDK v1.2.0.2 is released</td>
+       <td>The internal logic is optimized</td>
+        <td>July 1, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -62,23 +65,23 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
-   <tr>
-       <td>Released SDK 1.2.0.1</td>
-       <td><li>Supported notification click event statistics for vendor channels</li> <li> Enriched notification custom styles</li> <li>Upgraded OPPO Push SDK V2.1.0</li> </td>
-        <td>2020-06-23</td>
-        <td>Since the package name changes, see the latest<a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>to modify the configurations:
-<li>Automatic integration: note the obfuscation configuration;</li>
-<li>Manual integration: note the `so` file, `manifest` file, and obfuscation configuration.</li></td></td>
+<tr>
+        <td>The SDK v1.2.0.1 is released</td>
+       <td><li>Statistics of vendor channel notification click events can be collected</li> <li>More custom notification styles are added</li> <li>The SDK for OPPO PUSH is upgraded to v2.1.0</li> </td>
+        <td>June 23, 2020</td>
+        <td>Package name is changed on this version. Please modify relevant configurations as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>:
+<li>Automatic integration: pay attention to the obfuscation configuration;</li>
+<li>Manual integration: pay attention to the SO files, manifest file, and obfuscation configuration.</li></td>
     </tr>
-        <td>Released SDK 1.1.6.3</td>
-        <td>Third-party vendor channel integration optimization</td>
-        <td>2020-06-04</td>
-        <td>-</td>
+    <tr>
+        <td>The SDK v1.1.6.3 is released</td>
+        <td>Third-party vendor channel integration is optimized</td>
+        <td>June 4, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
 </table>
-
 
 ## April 2020
 
@@ -87,17 +90,17 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.6.1 is released</td>
         <td>The vulnerability with HTTPS certificate verification is fixed</td>
         <td>April 28, 2020</td>
-        <td>-</td>
+        <td>-</a></td>
     </tr>
     <tr>
         <td>The SDK v1.1.6.0 is released</td>
-        <td><li> The encryption protocol is optimized </li> <li> Network connection is optimized</li> <li> Badge can now be configured for the Huawei channel </li> <li> The SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push are upgraded </li><li> Realme and Black Shark channels are supported </li><li> Beacon will no longer be used to get QIMEI information </li></td>
+        <td><li>The encryption protocol is optimized</li> <li>Network connection is optimized</li> <li>Badge can now be configured for the Huawei channel</li> <li>The SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push are upgraded</li><li>Realme and Black Shark channels are supported</li><li>The call of Beacon to get QIMEI information is removed</li></td>
         <td>April 21, 2020</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide</a></td>
     </tr>
@@ -105,10 +108,9 @@
         <td>The SDK v1.1.5.5 is released</td>
         <td>The issue where DCL violation occurred when an application was released in Google Play is fixed</li></td>
         <td>April 2, 2020</td>
-        <td>-</a></td>
+        <td>-</td>
     </tr>
 </table>
-
 
 ## March 2020
 <table>
@@ -116,13 +118,13 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.5.4 is released</td>
-        <td><li>Network connection is optimized</li> <li>Account types are added</li> <li>The keep-alive scheme is optimized</li> <li>Issues with security alarming are fixed</li> <li>TPNS is now compatible with XG Platform version upgrade</li></td>
+        <td><li>Network connection is optimized</li> <li>Account types are added</li> <li>The keep-alive scheme is optimized</li> <li>Issues with security alarming are fixed</li> <li>TPNS is now compatible with XG Platform version upgrade</li><li>The feature to get QIMEI information is added</li></td>
         <td>March 6, 2020</td>
-        <td>-</td>
+        <td><a href="https://cloud.tencent.com/document/product/548/41609#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">Unregistering XG Platform Service</a></td>
     </tr>
 </table>
 
@@ -133,7 +135,7 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.5.3 is released</td>
@@ -150,7 +152,7 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.5.2 is released</td>
@@ -166,7 +168,7 @@
     </tr>
     <tr>
         <td>The SDK v1.1.5.0 is released</td>
-        <td><li>Huawei push is optimized</li> <li>The SDK v2.0.2 for OPPO Push is optimized</li></td>
+        <td><li>Huawei push is optimized</li> <li>The SDK v2.0.2 for OPPO PUSH is optimized</li></td>
         <td>December 4, 2019</td>
         <td>-</td>
     </tr>
@@ -179,7 +181,7 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.4.0 is released</td>
@@ -208,7 +210,7 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.3.0 is released</td>
@@ -225,12 +227,13 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
+    <th width=20%>Document</th>
 </tr>
     <tr>
         <td>The SDK v1.1.2.1 is released</td>
         <td><li>The notification bar display is optimized</li> <li> Some APIs are optimized</li> <li>Audio rich media is now supported</li> <li>The SDK is optimized internally</li></td>
         <td>September 27, 2019</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713">Audio-Visual Rich Media Configuration Method</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
     </tr>
 </table>
+
