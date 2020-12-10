@@ -75,7 +75,7 @@ sysctl -w kernel.container_stats_isolated=0
 
  ## 操作步骤
 如需在 TKE 集群的节点中使用 Tencent Linux 的操作系统，则需在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 时，在设置集群的基本信息页面选择操作系统 `Tencent Linux`。如下图所示：
-![](https://main.qcloudimg.com/raw/9376e923fb4e30de1e05f89708fa46c6.png)
+![](https://main.qcloudimg.com/raw/6a3903f649a0cc7d8c8b065f89673cc7.png)
 
 >! Tencent Linux 除了支持普通的云服务器机型外，还支持黑石物理机与 Nvidia GPU 的机型。
 
@@ -86,9 +86,9 @@ sysctl -w kernel.container_stats_isolated=0
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) ，单击左侧导航栏中的【集群】。
 2. 单击需修改操作系统的集群 ID，进入集群的“基本信息”页面。
 3. 在集群“基本信息”页面的节点和网络信息模块，单击默认操作系统右侧的![](https://main.qcloudimg.com/raw/3b38ca6981068a10b031df5708bc4f41.png)。如下图所示：
-![](https://main.qcloudimg.com/raw/3a20aa7a26bc0049451edcf5389ed720.png)
+![](https://main.qcloudimg.com/raw/6b4275b89682eb272e930e7175d27b9a.png)
 4. 在弹出窗口中选择 “Tencent Linux 2.4 64bit” 并单击【提交】，完成操作系统的修改。如下图所示：
-![](https://main.qcloudimg.com/raw/17c6da91e1c29af2dd4186c0ea0ff81f.png)
+![](https://main.qcloudimg.com/raw/58c072fc96c864b4a8a9484dd3b28147.png)
 
 
 

@@ -16,10 +16,10 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【应用市场】进入“应用市场”管理页面。
 3. 在应用市场页面搜索框，输入 `tke-autoscaling-placeholder` 进行搜索，找到该应用。如下图所示：
-![](https://main.qcloudimg.com/raw/b48a227c35dd1c52633a838c72e95b26.jpg)
+![](https://main.qcloudimg.com/raw/8e1973fb362a864e086ab3cb378b05d1.png)
 4. 在“应用详情页”中，单击“基本信息”模块中的【创建应用】。
 5. 在弹出的“创建应用”窗口中，按需配置并创建应用。如下图所示：
-![](https://main.qcloudimg.com/raw/72e50043f590875c14a0fe6b05c3b8fd.png)
+![](https://main.qcloudimg.com/raw/fd1e90ef99dcd0ac1839ce5eeb94b5fb.png)
  配置说明如下：
  - **名称**：输入应用名称。最长63个字符，只能包含小写字母、数字及分隔符“-”，且必须以小写字母开头，数字或小写字母结尾。
  - **地域**：选择需要部署的所在地域。

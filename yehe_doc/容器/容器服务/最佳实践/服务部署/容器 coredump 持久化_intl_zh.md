@@ -54,7 +54,7 @@ kubectl create secret generic cos-secret -n kube-system  --from-literal=SecretId
 #### 创建 PV
 1. 在目标集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolume】，进入 “PersistentVolume” 页面。
 2. 单击【新建】进入“新建PersistentVolume” 页面，参考以下信息创建 PV。如下图所示：
-![](https://main.qcloudimg.com/raw/d2301b77ad197f86f9131656d5e5339b.png)
+![](https://main.qcloudimg.com/raw/6eb6b29ed67592514fb732d310db3abe.png)
 主要参数信息如下：
  - **来源设置**：选择【静态创建】。
  - **Secret**：选择已在 [创建 Secret](#secret) 中创建的 Secret，本文以 coredump 为例（kube-system 命名空间下）。
@@ -66,7 +66,7 @@ kubectl create secret generic cos-secret -n kube-system  --from-literal=SecretId
 #### 创建 PVC
 1. 在目标集群详情页，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 页面。
 2. 单击【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息创建 PVC。如下图所示：
-![](https://main.qcloudimg.com/raw/b8e1a09f37a34264a8b251c0362d43a8.png)
+![](https://main.qcloudimg.com/raw/6c08ae1d8604d9092624e969e0309695.png)
 主要参数信息如下：
  - **命名空间**：要与需要挂载存储 COS 的 PVC 的容器所在命名空间相同，如果有多个命名空间，可以创建多对 PV 与 PVC。
  - **PersistentVolume**：选择在 [创建 PV](#pv) 中已创建的 PV 的名称。
@@ -80,7 +80,7 @@ kubectl create secret generic cos-secret -n kube-system  --from-literal=SecretId
 
 1. 在目标集群详情页，选择左侧菜单栏中的【工作负载】>【Deployment】，进入 “Deployment” 页面。
 2. 单击【新建】进入“新建Workload” 页面，参考 [创建 Deployment](https://intl.cloud.tencent.com/document/product/457/30662) 进行创建，并设置数据卷挂载。如下图所示：
-![](https://main.qcloudimg.com/raw/f63720106568c9eff4a263e4572ae9d9.png)
+![](https://main.qcloudimg.com/raw/341a0d899fc27896fc2faf9ba35a5163.png)
 主要参数信息如下：
  - **数据卷**：添加在 [创建 PVC](#pvc) 中已创建的 PVC。
  - **挂载点**：单击【添加挂载点】，进行挂载点设置。选择为该步骤中所添加的数据卷 “core”。引用**数据卷**中声明的 PVC，挂载至目标路径，本文以 `/tmp/cores` 为例。

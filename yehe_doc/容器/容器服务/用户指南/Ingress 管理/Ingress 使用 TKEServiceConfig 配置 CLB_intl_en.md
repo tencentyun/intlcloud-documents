@@ -4,11 +4,11 @@ TkeServiceConfig is a Custom Resource Definition (CRD) provided by TKE. TkeServi
 ### Use cases
 CLB parameters and features that cannot be defined by Ingress YAML semantics can be configured through TkeServiceConfig.
 
-### Configurations
-TkeServiceConfig can help you quickly perform CLB configuration. Through the Ingress annotation **ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**, you can specify the target configuration to be applied in the Ingress.
+### Configuration instructions
+TkeServiceConfig can help you quickly configure CLBs. Through the Ingress annotation **ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**, you can specify the target configuration to be applied in the Ingress.
 >! TkeServiceConfig resources and the Ingress need to be in the same namespace.
 
-TkeServiceConfig does not help you configure or modify protocols, ports, domain names, or forwarding paths. You need to describe protocols, ports, domain names, and forwarding paths in the configuration in order to specify the forwarding rules for configuration forwarding.
+TkeServiceConfig does not help you configure or modify protocols, ports, domain names, or forwarding paths. You need to describe protocols, ports, domain names, and forwarding paths in the configuration to specify the forwarding rules for configuration forwarding.
 
 There can be multiple domain names under each Layer-7 listener, and multiple forwarding paths under each domain name. Therefore, you can declare multiple sets of domain names and forwarding rule configurations in a single `TkeServiceConfig`. Currently, configurations are mainly provided for CLB health check and backend access.
 - When the protocol and port are specified, the configuration will be accurately forwarded to the corresponding listener:
@@ -20,11 +20,11 @@ There can be multiple domain names under each Layer-7 listener, and multiple for
  - `spec.loadBalancer.l7Listeners.domains[].domain`: domain name
  - `spec.loadBalancer.l7Listeners.domains[].rules[].url`: forwarding path
 
->? When your domain name is set to the default value, namely the public network or private network VIP, you can configure domain with a blank value.
+>? When your domain name is set to the default value, namely the public or private VIP, you can configure domain with a blank value.
 
 
 ## Associated Actions Between Ingress and TkeServiceConfig
-1. During the creation of an Ingress, if you set **ingress.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;**, &lt;IngressName>-auto-ingress-config will be automatically created. Alternatively, you can specify your own created TkeServiceConfig through **ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**. These two annotations cannot be used at the same time. 
+1. During the creation of an Ingress, if you set **ingress.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;**, &lt;IngressName>-auto-ingress-config will be automatically created. Alternatively, you can specify the TkeServiceConfig you created through **ingress.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**. These two annotations cannot be used at the same time. 
 2. The name of the custom configuration that you use for Service\Ingress cannot be suffixed with `-auto-service-config` or `-auto-ingress-config`.
 3. The synchronization actions of the automatically created TkeServiceConfig are as follows:
   - When a Layer-7 forwarding rule is added during Ingress resource update, if there is no corresponding TkeServiceConfig configuration segment for the rule, Ingress-Controller will automatically add the corresponding TkeServiceConfig configuration segment.
@@ -35,7 +35,7 @@ There can be multiple domain names under each Layer-7 listener, and multiple for
 5. The synchronization actions of a manually created TkeServiceConfig are as follows:
   - When you use a configuration annotation in the Ingress, the CLB will immediately set synchronization.
   - When you delete a configuration annotation in the Ingress, the CLB will remain unchanged.
-  - When you modify the TkeServiceConfig configuration, the CLB of the Ingress that imported the configuration will set synchronization based on the new TkeServiceConfig.
+  - When you modify the TkeServiceConfig configuration, the CLB of the Ingress that imported the configuration will set up synchronization based on the new TkeServiceConfig.
   - If the Ingress listener does not find the corresponding configuration, the listener will not be modified.
   - If the Ingress listener finds the corresponding configuration but the configuration does not contain declared attributes, the listener will not be modified.
 
@@ -145,7 +145,7 @@ spec:
   - secretName: jetty-cert-secret
 ```
 This sample includes the following configurations:
-- Two different protocols are used; an HTTP service is opened by using the default domain name (public IP), and an HTTPS service is opened by using the `sample.tencent.com` domain name. <!-- For more information, see [Ingress Using HTTP and HTTPS Protocols Together]().-->
+- Two different protocols are used. An HTTP service is opened by using the default domain name (public IP address), and an HTTPS service is opened by using the `sample.tencent.com` domain name. <!-- For more information, see [Ingress Using HTTP and HTTPS Protocols Together]().-->
 - The forwarding path of the HTTP service is `/health`, and that of the HTTPS service is `/`.
 - The `jetty-ingress-config` CLB configuration is used.
 
@@ -184,16 +184,16 @@ spec:
             httpCheckPath: "/checkHealth"
             httpCheckDomain: "sample.tencent.com"
             httpCheckMethod: HEAD
-          scheduler: IP_HASH
+          scheduler: WRR
 ```
 This sample includes the following configurations:
 The name of the TkeServiceConfig is `jetty-ingress-config`, and in the Layer-7 listener configuration, two configuration segments are declared:
 1. The HTTP listener of port 80 will be configured. The domain name configured is the default domain name, corresponding to the VIP of the CLB.
  The health check feature under the `/health` path is disabled.
 2. The HTTPS listener of port 443 will be configured. The domain name configured is `sample.tencent.com`. Under this domain name, only a forwarding rule configuration, with the forwarding path of `/`, is described. The configuration contains the following content:
- - Health checks are enabled, with the health check interval set to 10s, the healthy threshold set to 2 times, and the unhealthy threshold also set to 2 times. Health checks are carried out through a HEAD request. The check path is `/checkHealth`, and the checked domain name is `sample.tencent.com`.
+ - Health checks are enabled, with the health check interval set to 10s, the healthy threshold set to 2 times, and the unhealthy threshold also set to 2 times. Health checks are performed through a HEAD request. The check path is `/checkHealth`, and the checked domain name is `sample.tencent.com`.
  - The session persistence feature is enabled, with the timeout threshold set to 3600s.
- - The configured forwarding policy is: hashing based on the source IP.
+ - The forwarding policy configured is: polling by weight.
 
 ### kubectl configuration commands
 ```
