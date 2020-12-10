@@ -58,20 +58,6 @@
 </tr>
 </table>
 
-### HAVIP
-<table >
-<thead>
-<tr>
-<th width="70%">资源</th>
-<th width="30%">限制（单位：个）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>每个私有网络的 HAVIP 默认配额数</td>
-<td>10</td>
-</tr>
-</tbody></table>
-
 ### 安全组
 <table>
 <tr><th width="70%">功能描述</th><th width="30%">限制</th></tr>
