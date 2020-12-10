@@ -14,7 +14,7 @@ App 管理员可以通过该接口创建群组。
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->
+>!
 >- 如果指定群组类型为直播群（AVChatRoom）：
 >  - 那么可以创建的群组数量根据套餐包情况有不同，请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 >  - 创建此类型群时不能拉人入群，如果创建时指定了拉入的群成员会返回10007错误；用户加入此类型群的唯一方式是主动申请加群。
@@ -95,7 +95,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom（必填）
     "GroupId": "MyFirstGroup", // 用户自定义群组 ID（选填）
     "Name": "TestGroup"   // 群名称（必填）
 }
@@ -106,7 +106,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Name": "TestGroup", // 群名称（必填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom/AVChatRoom（必填）
     "AppDefinedData": [ // 群组维度的自定义字段（选填）
         {
             "Key": "GroupTestData1", // App 自定义的字段 Key
@@ -162,7 +162,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 {
     "Owner_Account": "leckie", // 群主的 UserId（选填）
-    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom)（必填）
+    "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持 AVChatRoom)（必填）
     "GroupId":"MyFirstGroup", // 用户自定义群组 ID（选填）
     "Name": "TestGroup", // 群名称（必填）
     "Introduction": "This is group Introduction", // 群简介（选填）
@@ -213,7 +213,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 ```
 
 
-<span id="Parameters"></span>
+<span id="Parameters"></span>
 ### 请求包字段说明
 
 | 字段 | 类型 | 属性 |说明|
@@ -286,7 +286,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/create_group) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) 调试本接口。
 
 ## 参考
 解散群组（[v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896)）
