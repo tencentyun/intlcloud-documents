@@ -1,7 +1,7 @@
 
 本文档主要指导您如何生成 iOS 消息推送证书及上传证书。
 
-
+>?TPNS 更推荐您使用 p12 来分别管理您的应用的推送服务；虽然 p8 比 p12 有更长的有效期，但是同时也有更大的推送权限和范围，若泄露，可能会造成更加严重的影响。
 
 ##  步骤1：为 App 开启远程推送服务
 1. 登录 [苹果开发者中心](https://developer.apple.com/account/) 网站，单击【Certificates,Identifiers & Profiles】或者侧栏的【Certificates, IDS & Profiles】，进入 Certificates, IDS & Profiles 页面。
@@ -41,16 +41,16 @@
 ![](https://main.qcloudimg.com/raw/bf80c3a06f74080bf81fd857f15a2b86.jpg)
 9. 双击打开下载的开发环境和生产环境的 `SSL Certificate`，系统会将其导入钥匙串中。
 10. 打开钥匙串应用，在【登录】>【我的证书】，右键分别导出开发环境（`Apple Development IOS Push Service: com.tpnssdk.pushdemo`）和生产环境（`Apple Push Services: com.tpnssdk.pushdemo`）的 `P12` 文件。
-![](https://main.qcloudimg.com/raw/1ef81b819d8c98d8f9d82dca45407416.png)
+
 >!保存`P12`文件时，请务必要为其设置密码。
 
 
 ## 步骤3：上传证书到 TPNS 控制台
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，选择【产品管理】>【配置管理】。
-![](https://main.qcloudimg.com/raw/0f6b1feb92a6cb1d7063ef7e930c8a93.jpg)
+
 2. 进入证书上传页面，单击【上传证书】，分别上传开发环境和生产环境的证书。
-![](https://main.qcloudimg.com/raw/41905d59838c97d4127caba0e68fdc41.jpg)
+
 3. 输入对应的证书密码，单击【点击选择】，选择您的证书。
-![](https://main.qcloudimg.com/raw/d4d13899532125126f5a32c257182984.jpg)
+
 4. 单击【上传】即可完成上传。
-![](https://main.qcloudimg.com/raw/cc0dff0c87ea69df1f45f3581480c46e.jpg)
+
