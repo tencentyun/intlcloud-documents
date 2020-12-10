@@ -6,6 +6,8 @@
 - 在外部系统服务中（例如公司内部运维或运营系统）快速集成日志服务的查询分析能力。
 - 无需管理众多腾讯云子账号，方便将日志数据分享给他人进行查看。
 
+**内嵌页面示例代码：[cls-iframe-demo](https://github.com/TencentCloud/cls-iframe-demo)。**
+
 以下为内嵌日志服务控制台流程图：
 ![img](https://main.qcloudimg.com/raw/c04840e707a3e9aca812d58d9414faea.png)
 
@@ -21,13 +23,11 @@
 	2. 单击左侧菜单栏中的【角色】，进入角色页面。
 	3. 选择【新建角色】>【腾讯云账户】，开始新建自定义角色。
 	4. 选择【当前主账号】并勾选【允许当前角色服务控制台】，单击【下一步】。
-	
 	>!若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
 	5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击【下一步】。
-	
 	6. 输入角色名，完成创建。
 	
-<span id="step2"></span>
+	<span id="step2"></span>
  - **通过 API 创建 CAM 角色**：
  创建角色请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/33561) API 文档，其中，ConsoleLogin 需要填入1，允许角色登录控制台。
  例如请求示例：
@@ -241,19 +241,17 @@ https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&Conso
 <td align="left">是否隐藏日志服务日志主题选择按钮：true 表示隐藏，false 表示不隐藏</td>
 </tr>
 </tbody></table>
- 2. 拼接完整登录信息以及目的页地址进行登录，<b>参数值需要 urlencode 编码</b>。
- 
- ```plaintext
- https://cloud.tencent.com/login/roleAccessCallback
- ?algorithm=<签名时加密算法，目前只支持 sha1 和 sha256 ，不填默认 sha1
- &secretId=<签名时 secretId>
- &token=<临时密钥 token>
- &nonce=<签名时 nonce>
- &timestamp=<签名时 timestamp>
- &signature=<签名串>
- &s_url=<登录后目的 URL>
- ```
- 
+ 2. 拼接完整登录信息以及目的页地址进行登录，**参数值需要 urlencode 编码**。
+     ```plaintext
+     https://cloud.tencent.com/login/roleAccessCallback
+	 ?algorithm=<签名时加密算法，目前只支持 sha1 和 sha256 ，不填默认 sha1
+	 &secretId=<签名时 secretId>
+	 &token=<临时密钥 token>
+	 &nonce=<签名时 nonce>
+	 &timestamp=<签名时 timestamp>
+	 &signature=<签名串>
+	 &s_url=<登录后目的 URL>
+     ```
 7. 使用生成的最终链接，访问腾讯云日志服务控制台页面。例如检索分析页面的内嵌访问链接如下：
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback?nonce=52055817&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcls%2Fsearch%3Fregion%3Dap-guangzhou%26start_time%3D2020-05-26%25252014%25253A01%25253A18%26end_time%3D2020-05-26%25252014%25253A16%25253A18&secretId=AKID-vHJ7WPHcy_RVIOm-QTIktXOf9S9z_k_JackOp3dyQPJwmDrNLQJuiNuw9******&signature=eXeWaDn6iJlcPp1sqqGd6m9%2FQk****&timestamp=1592455018&token=5e4vuBHL7fBQPi1V9fvSINw4Vu7PSr9Ic3de78b86109c171eb4e3ea27c137c1fIWKU8JC-LO01L87sIYlfTSaHHXeHcqim7Jg9hBuN2nbdfgeBUPXhmpyAk4G6e9bHFZ-7yNRig7Y33CQHxh6jOesP4VfhRzQprWGRtC5No1ty******-aoj_WJhA55oyvqaqxw2jtTdh8nx9OjJr3tlbIa9oJe7aZYoPbdpFqrF6ZjlCPPap2yQB_SkUsWwDl_9BrK2Km3U2IocdvQ7QxrW0ts1aiBi7xtTSJRcfkBYPYEV_YoJrtkhYW3E4L47imA1bfVAjM9F5uKWzVzsDGDT0aCUU9mqdb4vjJrY8tm-wJKKEe8eiyY9EbkH3VWnFV2YocYNDJqFyjKOWR******
