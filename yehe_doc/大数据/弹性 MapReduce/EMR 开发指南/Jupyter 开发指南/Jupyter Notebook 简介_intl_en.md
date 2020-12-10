@@ -19,7 +19,7 @@ All interactive computations, explanatory text writing, mathematical formulas, i
 ## Installing Jupyter
 Enter the EMR [purchase page](https://intl.cloud.tencent.com/product/emr).
 - Select `EMR-V2.3.0` as the product version.
-- Select **tensorflowonspark 1.4.4** in the **Optional Component** list, and `hive-llap` will be automatically installed in the `/usr/local/server/jupyter` directory. Jupyter will not start any service. If you have not installed TensorFlowOnSpark, the default installation path will be `/usr/local/server/apps/jupyter`.
+- Select **tensorflowonspark 1.4.4** in the **Optional Component** list, and `Jupyter` will be automatically installed in the `/usr/local/server/jupyter` directory. Jupyter will not start any service. If you have not installed TensorFlowOnSpark, the default installation path will be `/usr/local/server/apps/jupyter`.
 
 ## Using Jupyter
 ### Initializing Jupyter configuration
@@ -81,7 +81,7 @@ You can enter Jupyter's homepage by simply entering the password configured just
 ### Using Jupyter for development
 #### **Creating directory**
 
-#### **Renaming directory*
+#### **Renaming directory**
 #### **Writing TensorFlow code**
 For more information, please visit the [TensorFlow official website](https://github.com/tensorflow/docs/tree/master/site/en/r1/tutorials).
 
