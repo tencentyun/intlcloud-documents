@@ -52,6 +52,7 @@ where
 t1.id=t2.id;
 ```
 3. 测试物化视图
+
 ```
 spark-sql> explain extended select t1.id,t1.name,t2.tags
          > from mv_database.table1 t1 join
@@ -120,6 +121,7 @@ ALTER MATERIALIZED VIEW [db_name.]materialized_view_name REBUILD;
 ```
 ALTER MATERIALIZED VIEW [db_name.]materialized_view_name enable|disable REWRITE;
 ```
+
 ## 物化视图的删除及其他操作
 当前我们支持的物化视图的操作有：
 1. 删除物化视图
