@@ -130,14 +130,14 @@ This API can be called up to 200 times per second.
 | ErrorCode | Integer | The error code returned for the request. <li>If the status query for any account succeed, the value is 0.</li><li>If the query for all the accounts failed, the return value is not 0.</li> |
 | QueryResult | Array | The returned structured information of the login status of the user. |
 | QueryResult.To_Account | String | The UserID of the user whose status is returned. |
-| State | String | The returned login status. Valid values: <ul style="margin:0;"><li>Online: after the user logs in to the client, the client remains in a persistent connection with the IM backend.</li><li>PushOnline: the client enters the PushOnline state when the iOS or Android process is disconnected due to a network error or is killed by the operating system. In this state, the client still can receive offline messages. However, if the client’s process is not terminated by the operating system after the client is switched to the background, the client is in Online state.</li><li>Offline: the user has logged out of the client properly or has not logged in to the client for at least 7 days since the last login.</li></ul>If the user logs in to the client on multiple devices, the value is Online provided that the client is in the Online state on any device. |
+| QueryResult.Status | String | The returned login status. Valid values: <ul style="margin:0;"><li>Online: after the user logs in to the client, the client remains in a persistent connection with the IM backend.</li><li>PushOnline: the client enters the PushOnline state when the iOS or Android process is disconnected due to a network error or is killed by the operating system. In this state, the client still can receive offline messages. However, if the client’s process is not terminated by the operating system after the client is switched to the background, the client is in Online state.</li><li>Offline: the user has logged out of the client properly or has not logged in to the client for at least 7 days since the last login.</li></ul>If the user logs in to the client on multiple devices, the value is Online provided that the client is in the Online state on any device. |
 | QueryResult.Detail | Object | The detailed information on the login platform. |
 | QueryResult.Detail.Platform | String | The type of the login platform. Valid values: "iPhone",  "Android",  "Web",  "PC", "iPad", and "Mac".  || QueryResult.Detail.Status | String | The status of the login platform. |
 | ErrorList | Array | The list of accounts whose statuses failed to be queried. The target accounts in this list were not found or their statuses failed to be queried. If the status query for all accounts succeeded, the value of the ErrorList field is blank. |
 | ErrorList.To_Account | String | The target account whose status failed to be queried. |
 | ErrorList.ErrorCode | Integer | The error code indicating that the status query failed. If the error code for a target account is 70107, the account was not found. |
 
-> The IM backend stores the PushOnline state for only 7 days. If a user has not logged in to the client within 7 days since the previous login, the user enters the Offline state.
+>!The IM backend stores the PushOnline state for only 7 days. If a user has not logged in to the client within 7 days since the previous login, the user enters the Offline state.
 
 ## Error Codes
 The HTTP return code for this API is 200 unless an network error such as error 502 occurs. The actual error code and error information are indicated by ErrorCode and ErrorInfo respectively in the response packet body.
@@ -158,7 +158,7 @@ The private error codes for this API are as follows:
 | 91000 | An internal service error occurred. Please try again. |
 
 ## API Debugging Tool
-To debug this API, you can use the [Online RESTful API Debugging Tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/openim/querystate).
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/querystate).
 
 ## References
 
