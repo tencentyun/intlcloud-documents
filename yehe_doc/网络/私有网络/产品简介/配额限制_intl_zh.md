@@ -8,11 +8,15 @@
 </thead>
 <tbody><tr>
 <td>每个账号每个地域内的私有网络个数</td>
-<td align="center">5</td>
+<td align="center">20</td>
 </tr>
 <tr>
 <td>每个私有网络内的子网数</td>
-<td align="center">10</td>
+<td align="center">100</td>
+</tr>
+<tr>
+<td>每个私有网络内辅助 CIDR 个数</td>
+<td align="center">5</td>
 </tr>
 <tr>
 <td>每个私有网络支持关联的基础网络主机个数</td>
@@ -42,30 +46,26 @@
 </tr>
 </tbody></table>
 
-### HAVIP
-<table >
-<thead>
+### 弹性网卡
+<table>
 <tr>
 <th width="70%">资源</th>
 <th width="30%">限制（单位：个）</th>
 </tr>
-</thead>
-<tbody><tr>
-<td>每个私有网络的 HAVIP 默认配额数</td>
-<td>10</td>
+<tr>
+<td>每个私有网络内的辅助弹性网卡个数</td>
+<td>1000</td>
 </tr>
-</tbody></table>
+</table>
 
 ### 安全组
 <table>
-<thead>
-<tr><th width="70%">功能描述</th>
-<th width="30%">限制</th></tr>
-</thead>
-<tbody>
-<tr><td>安全组</td><td>50个/地域</td></tr>
-<tr><td>访问策略</td><td>100条/入站方向<br>100条/出站方向</td></tr>
-</tbody>
+<tr><th width="70%">功能描述</th><th width="30%">限制</th></tr>
+<tr><td>安全组个数</td><td>50个/地域</td></tr>
+<tr><td>安全组规则数</td><td>100条/入站方向，100条/出站方向</td></tr>
+<tr><td>单个安全组关联的云服务器实例数</td><td>2000个</td></tr>
+<tr><td>每个云服务器实例可以关联的安全组个数</td><td>5个</td></tr>
+<tr><td>每个安全组引用安全组 ID 的规则条目数</td><td>10条</td></tr>
 </table>
 
 ### 网络 ACL
@@ -153,5 +153,3 @@
 <td>50</td>
 </tr>
 </tbody></table>
-
-

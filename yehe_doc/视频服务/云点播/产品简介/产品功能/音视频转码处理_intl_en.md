@@ -18,7 +18,7 @@ Audio/Video editing includes video splicing and editing features as detailed bel
 
 
 ### Video DRM encryption
-The digital rights management (DRM) feature of VOD supports commercial-grade encryption of videos as detailed below:
+The digital rights management (DRM) feature of VOD supports encryption of videos as detailed below:
 - VOD supports DRM encryption for protecting digital copyright and encrypts video content with the AES-128 algorithm.
 - VOD supports encryption in all HLS players and provides customized and personalized video encryption services.
 

@@ -37,5 +37,5 @@ cos.headBucket({
 
 ## 常见问题
 
-若您在使用小程序 SDK 过程中，有相关的疑问，请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687) 文档小程序部分。
+若您在使用小程序 SDK 过程中，有相关的疑问，请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/38958) 文档小程序部分。
 

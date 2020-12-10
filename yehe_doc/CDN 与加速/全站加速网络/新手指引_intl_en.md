@@ -7,13 +7,13 @@ This document helps you get started with Tencent Cloud Enterprise Content Delive
 - [Use Cases](https://intl.cloud.tencent.com/document/product/570/38536)
 - [Basic Concepts](https://intl.cloud.tencent.com/document/product/570/38537)
 
-------
+
 
 ## 2. ECDN Billing Modes
 
 Tencent Cloud ECDN billing modes consist of **bill-by-number of requests** and **bill-by-traffic exceeding the free tier limit**, that is, the total cost consists of the fees respectively incurred by **the number of requests** and **the traffic exceeding the free tier limit**. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/570/37505).
 
-------
+
 
 ## 3. Getting Started
 
@@ -31,7 +31,7 @@ When the domain name connection is completed, ECDN will assign a corresponding C
 
 
 
-------
+
 
 ## 4. Overview of Console Features
 
@@ -85,7 +85,7 @@ When the domain name connection is completed, ECDN will assign a corresponding C
 </tr>
 </tbody></table>
 
-------
+
 
 ## 5. FAQs
 
@@ -111,7 +111,7 @@ When the domain name connection is completed, ECDN will assign a corresponding C
 - [Does ECDN support WebSocket?](https://intl.cloud.tencent.com/document/product/570/35826)
 - [Does ECDN support acceleration outside Mainland China?](https://intl.cloud.tencent.com/document/product/570/35826)
 - [Does ECDN support upload acceleration?](https://intl.cloud.tencent.com/document/product/570/35826)
-------
+
 
 ## 6. Feedback and Suggestion
 

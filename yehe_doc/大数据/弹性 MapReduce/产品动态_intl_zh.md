@@ -1,3 +1,31 @@
+## 2020年11月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 EMR 天穹版本</td>
+<td>腾讯增强版 Hadoop 集群发行版天穹上线，主要推出 Spark 物化视图能力</td>
+<td>2020-11-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR 天穹版本介绍</a></td>
+</tr>
+<tr>
+<td>监控告警完善</td>
+<td><li>磁盘监控指标支持在云监控设置告警
+<li>支持在云监控 DashBoard 自定义 EMR 监控面板
+<li>支持在云监控订阅 EMR 事件监控告警
+</td>
+<td>2020-11-20</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/248/38461" target="_blank">DashBoard</a></td>
+</tr>
+</tbody></table>
+
 ## 2020年10月
 <table>
 <thead>
@@ -9,6 +37,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>支持对象存储 COS 免密访问</td>
+<td>通过角色授权方式对 COS 的访问，无需填写授权 key 和密钥，提升易用性。</td>
+<td>2020-10-26</td>
+<td>-</td>
+</tr>
 <tr>
 <td>巡检系统新增服务巡检项</td>
 <td>新增 hdfs、yarn、hbase、hive、zookeeper 服务巡检项，提升指标的健康检查</td>
@@ -22,7 +56,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">集群事件</a></td>
 </tr>
 </tbody></table>
-
 
 ## 2020年09月
 <table>
@@ -126,8 +159,6 @@
 </tr>
 </tbody></table>
 
-                
-
 ## 2020年05月
 <table>
 <thead>
@@ -186,7 +217,7 @@
 </tbody></table>
 
 
-## 2020年03月 
+## 2020年03月
 <table>
 <thead>
 <tr>
@@ -203,7 +234,7 @@
 </tr>
 <tr>
 <td>新增日志搜索功能 </td>
-<td>可根据日志文件、主机 IP 和时间范围条件过滤，查看集群日志内容<strong>（当前仅支持广州地域）</strong></td><td>2020-03</td>
+<td>可根据日志文件、节点 IP 和时间范围条件过滤，查看集群日志内容<strong>（当前仅支持广州地域）</strong></td><td>2020-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/35372" target="_blank">日志搜索</a></td>
 </tr>
 <tr>
@@ -242,7 +273,6 @@
 </tbody></table>
 
 ## 2020年01月
-
 <table>
 <thead>
 <tr>
@@ -270,7 +300,6 @@
 </tbody></table>
 
 ## 2019年12月
-
 <table>
 <thead>
 <tr>
@@ -318,7 +347,6 @@
 </tbody></table>
 
 ## 2019年11月
-
 <table>
 <thead>
 <tr>
@@ -349,6 +377,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 ## 2019年10月
 <table>
 <thead>
@@ -365,6 +394,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
 </tr>
 </tbody></table>
+
 ## 2019年09月
 <table>
 <thead>
@@ -391,6 +421,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 ## 2019年08月
 <table>
 <thead>
@@ -427,6 +458,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 ## 2019年07月
 <table>
 <thead>
@@ -463,6 +495,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 ## 2019年06月
 <table>
 <thead>
@@ -498,6 +531,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/34524" target="_blank">配置回滚</a></td>
 </tr>
 </tbody></table>
+
 ## 2019年05月
 <table>
 <thead>
@@ -551,6 +585,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 ## 2019年03月
 <table>
 <thead>
@@ -586,6 +621,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">变更配置</a></td>
 </tr>
 </tbody></table>
+
 ## 2019年01月
 <table>
 <thead>
