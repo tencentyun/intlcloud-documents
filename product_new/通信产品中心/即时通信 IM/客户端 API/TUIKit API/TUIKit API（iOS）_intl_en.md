@@ -6,7 +6,7 @@ TUIConversationListController can display recent conversations, internally monit
 | API | Description |
 | --- | --- |
 | [delegate](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/TUIKit/Classes/TUIConversationListController.html) | Delegates callback to externally process selected events. |
-| [viewMode](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/TUIKit/Classes/TUIConversationListController.html) | Indicates the data source of the controller. |
+| [viewModel](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/TUIKit/Classes/TUIConversationListController.html) | Indicates the data source of the controller. |
 
 ## Chat Interface
 
