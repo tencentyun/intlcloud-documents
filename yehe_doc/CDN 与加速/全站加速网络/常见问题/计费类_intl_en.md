@@ -23,5 +23,5 @@ After the domain name service is disabled, if the domain name is still configure
        
 
 ### What are the differences in the billing mode between VIP and regular Tencent Cloud customers?
-- VIP customers are **billed monthly** by default, while regular customers are billed daily by default. 
-- VIP customers are billed in a **tiered manner**, while regular customers are billed based on a cumulative tier.
+- VIP customers are **billed monthly** by default, while regular customers are **billed daily** by default. 
+- VIP customers are billed in a **tiered manner**, while regular customers are **billed based on a cumulative tier**.
