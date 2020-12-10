@@ -117,7 +117,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/delete_group_member) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/delete_group_member) to debug this API.
 
 ## Reference
 Adding a group member ([v4/group_open_http_svc/add_group_member](https://intl.cloud.tencent.com/document/product/1047/34921))
