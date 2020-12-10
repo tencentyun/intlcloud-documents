@@ -13,7 +13,7 @@
 |ChatRoom|Yes, identical to Meeting in the new version|
 |AVChatRoom|No|
 
-IM provides the preceding five built-in group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
+IM provides the preceding four built-in group types. For details, see [Group Systems](https://intl.cloud.tencent.com/document/product/1047/33529).
 
 > AVChatRoom does not support importing group messages. If you attempt to import group messages for these groups, error 10007 returns. This feature is not provided for this groups because they normally do not require historical messages.
 
@@ -39,7 +39,7 @@ The maximum calling frequency is 200 times per second.
 
 ### Request packet example
 
-Imports group messages in batches. A single request can import up to 20 messages.
+Imports group messages in batches. A single request can import up to 7 messages.
 After messages are imported through this API, the unread message count for all members will be 0. If you want to retain the unread message count, you need to import group members or set the unread message count for members after importing all messages.
 The messages must be imported in ascending order by timestamp, and the timestamp of imported messages must be earlier than the current time and later than the group creation time and the creation time of the latest message in the group. Otherwise, the import will fail.
 
@@ -107,22 +107,18 @@ The messages must be imported in ascending order by timestamp, and the timestamp
     "ImportMsgResult": [
         {
             "Result": 0,
-            "MsgSeq": 1,
             "MsgTime": 1449454106
         },
         {
             "Result": 0,
-            "MsgSeq": 2,
             "MsgTime": 1449454116
         },
         {
             "Result": 0,
-            "MsgSeq": 3,
             "MsgTime": 1449454106
         },
         {
             "Result": 0,
-            "MsgSeq": 4,
             "MsgTime": 1449454116
         }
     ]
@@ -138,7 +134,6 @@ The messages must be imported in ascending order by timestamp, and the timestamp
 | ErrorCode | Integer | The error code. 0: succeeded. Other values: failed. |
 | ImportMsgResult | Array | The message import result. |
 | Result | Integer | The result of importing a single message. <ul><li>0: the message was imported successfully.</li><li>10004: the sending time of the message is invalid.</li><li>80001: the message contains illegal words and therefore cannot be stored. </li><li>80002: the message content exceeds the maximum length of 8,000 bytes. To correct it, adjust the message length. |
-| MsgSeq | Integer | The sequence number allocated to the message. |
 | MsgTime | Integer | The message timestamp. |
 
 ## Error Codes
@@ -158,7 +153,7 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [online commissioning tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/import_group_msg) to commission this API.
+Use the [online commissioning tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/import_group_msg) to commission this API.
 
 ## References
 - Setting unread message counts for members ([v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909))
