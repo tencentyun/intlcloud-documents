@@ -5,10 +5,10 @@ ECDN status code statistics allow you to query monitoring data of status codes. 
 + Project: you can query usage by project.
 + Domain Name: you can query usage of the specified domain name.
 + Granularity: it indicates the granularity of queried data and is subject to the selected time period.
-	1. If the selected time period is 1 day, you can query data at a granularity of 5 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, or 4 hours.
+	1. If the selected time period is 1 day, you can query data at a granularity of 5 minutes, 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours or 24 hours.
 	2. If the selected time period is 2–3 days, you can query data at a granularity of 15 minutes, 30 minutes, 1 hour, 2 hours, or 4 hours.
 	3. If the selected time period is 4–7 days, you can query data at a granularity of 30 minutes, 1 hour, 2 hours, or 4 hours.
-	4. If the selected time period is 8–30 days, you can query data at a granularity of 1 hour, 2 hours, or 4 hours.
+	4. If the selected time period is 8–30 days, you can query data at a granularity of 1 hour, 2 hours, 4 hours or 24 hours.
 	
 
 ![](https://main.qcloudimg.com/raw/58dccdea420d816b3be6bcc4a4502920.png)
