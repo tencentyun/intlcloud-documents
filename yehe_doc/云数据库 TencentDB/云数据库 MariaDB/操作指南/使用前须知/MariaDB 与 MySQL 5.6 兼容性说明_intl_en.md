@@ -121,7 +121,7 @@ Undefined behavior specific to InnoDB:
 - In all auto-increment column lock modes (0, 1, 2), the auto-increment behavior will be considered undefined if you set the auto-increment column field to a negative value.
 - In all auto-increment column lock modes (0, 1, 2), the auto-increment behavior will be considered undefined if the value of the auto-increment column field is greater than the maximum integer that can be stored as integer type in the column.
 
->Do not insert (incorrect) numbers into an auto-increment column.
+>?Do not insert (incorrect) numbers into an auto-increment column.
 
 #### 4.3. Differences in statistics collection method for `FOUND ROWS`
 The returned value of `FOUND_ROWS()` will be accurate only when `UNION ALL` is used in the query statement.
@@ -171,7 +171,7 @@ SELECT CAST(CAST('10:11:12.098700' AS TIME(6)) AS DECIMAL(20,6));
 | 101112.098700 |
 +-----------------------------------------------------------+
 ```
->The default precision of `TIME` is not consistent. If time precision is required, you should specify a precision of time for upgrade or migration.
+>?The default precision of `TIME` is not consistent. If time precision is required, you should specify a precision of time for upgrade or migration.
 
 ```
 CREATE TABLE t1(f1 TIME);
