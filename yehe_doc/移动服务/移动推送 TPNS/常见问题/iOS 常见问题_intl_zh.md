@@ -1,3 +1,7 @@
+### TPNS 支持 p8 证书吗？
+
+p8 证书存在安全隐患。虽然 p8 比 p12 有更长的有效期，但是同时也有更大的推送权限和范围。若泄露，可能会造成更加严重的影响。TPNS 推荐您使用 p12 来分别管理您的应用的推送服务。
+
 ### TPNS SDK 1.2.5.4及以下的版本模拟器提示找不到 XGForFreeVersion 符号？
 
 1.2.5.4及以下版本仅支持真机调试，如需使用模拟器调试请升级到最新版本。
@@ -38,7 +42,6 @@ SDK 接入问题，在接入 SDK 之后，请确保能够获取到接收消息�
 
 ### 终端出现未找到应用程序的 “aps-environment” 的授权字符串错误？
 请检查 Xcode 工程中配置的 bundle id 是否和设置的 Provision Profile 文件匹配，且对应 App 的 Provision Profile 文件是否已配置了消息推送能力。
-
 
 
 
@@ -103,6 +106,7 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
  }
 }
 ```
+
 
 ### App 出现 Crash: you can't call -sendResponse: twice nor after encoding it 报错，该如何处理？
 如果您的 App 集成了 TPNS iOS SDK（1.2.7.2 - 1.2.5.4），且使用到 TPNS 的【撤回】功能，同时 App 侧实现了如下系统回调：
