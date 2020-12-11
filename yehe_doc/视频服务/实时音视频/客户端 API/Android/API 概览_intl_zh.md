@@ -231,7 +231,6 @@
 | [onBGMComplete](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | 音乐播放结束的回调通知。 |
 
 
-
 ## TRTCCloudListener @ TXLiteAVSDK
 
 腾讯云视频通话功能的事件回调接口。
@@ -349,7 +348,7 @@
 
 | API | 描述 |
 |-----|-----|
-| [onGLContextCreated](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | SDK 内部的 OpenGL 环境的销毁通知。 |
+| [onGLContextCreated](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | SDK 内部的 OpenGL 环境的创建通知。 |
 | [onProcessVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a22afb08b2a1a18563c7be28c904b166a) | 第三方美颜的视频数据回调，需要使用 [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) 中的 setLocalVideoProcessListener 接口进行设置。 |
 | [onGLContextDestory](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a5f6d5ef01d3cd610959433107f78aa60) | SDK 内部的 OpenGL 环境的销毁通知。 |
 
@@ -403,3 +402,4 @@
 | [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | 统计数据。 |
 | [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | 远端成员的音视频统计信息。 |
 | [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | 自己本地的音视频统计信息。 |
+
