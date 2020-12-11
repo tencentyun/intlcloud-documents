@@ -354,7 +354,7 @@ public void onRecvMessageRevoked(String msgID) {
 ## Adding Read Receipts for Messages
 In the one-to-one chat scenario, when the recipient calls the [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) API to mark an incoming message as read, the message sender will receive a read receipt, indicating that the recipient has read his/her message.
 
->! Currently, only one-to-one chats support the read receipt feature, and group chats do not support this feature. Although the [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) API is also available in group chats, the group message senders currently cannot receive any read receipts.
+>! Currently, only one-to-one chats support the read receipt feature, and group chats do not support this feature. Although the [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ac0a65f18d361abde8a0ac16132027e69) API is also available in group chats, the group message senders currently cannot receive any read receipts.
 
 ### The recipient marks messages as read
 
