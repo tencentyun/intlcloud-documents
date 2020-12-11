@@ -1,5 +1,4 @@
-<span id="UserSig"></span>
-<h3id="UserSig">What is UserSig?</h3>
+<h3 id="UserSig">What is UserSig?</h3>
 
 `UserSig` is a security signature designed by Tencent Cloud for the purpose of preventing attackers from misappropriating your Tencent Cloud permissions.
 Currently, the Tencent Cloud services of TRTC, IM, and MLVB all use this security mechanism. Whenever you want to use these services, you need to provide three key pieces of information (`SDKAppID`, `UserID`, and `UserSig`) for the initialization or login functions of the corresponding SDK.
