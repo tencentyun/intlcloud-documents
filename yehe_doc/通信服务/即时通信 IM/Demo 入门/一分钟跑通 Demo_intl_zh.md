@@ -1,11 +1,6 @@
 本文介绍如何快速跑通即时通信 IM 的体验 Demo。
 
 
-
-
-
-
-<span id="step1"></span>
 ## 步骤1：创建应用
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)。
  >?如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
@@ -14,17 +9,15 @@
 2. 单击【+添加新应用】。
 3. 在【创建应用】对话框中输入您的应用名称，单击【确定】。
     创建完成后，可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。请记录 SDKAppID 信息。
+    
 
 
-
-<span id="step2"></span>
 ## 步骤2：获取密钥信息
 
 1. 单击目标应用卡片，进入应用的基础配置页面，
 2. 在【基本信息】区域，单击【显示密钥】，复制并保存密钥信息。
  >!请妥善保管密钥信息，谨防泄露。
 
-<span id="step3"></span>
 ## 步骤3：下载并配置 Demo 源码
 
 1. 下载即时通信 IM Demo 工程，具体下载地址请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/1047/33996)。
@@ -65,7 +58,7 @@
   >
  - SDKAPPID：请设置为 [步骤1](#step1) 中获取的实际应用 SDKAppID。
  - SECRETKEY：请设置为 [步骤2](#step2) 中获取的实际密钥信息。
-
+ 
 
 
 >!本文提到的获取 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
@@ -108,7 +101,11 @@ pod install
  - iOS 进入 iOS/TUIKitDemo 文件夹，打开`TUIKitDemo.xcworkspace`编译运行。
  - Mac 进入Mac/TUIKitDemo 文件夹，打开`TUIKitDemo.xcworkspace`编译运行。
 
+
+## 开启进阶功能
+- [开启视频通话](https://intl.cloud.tencent.com/document/product/1047/38740)
+- [开启群直播](https://intl.cloud.tencent.com/document/product/1047/37310)
+- [开启直播大厅](https://intl.cloud.tencent.com/document/product/1047/38519)
+
 ## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
-
-

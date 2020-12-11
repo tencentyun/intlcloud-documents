@@ -5,7 +5,7 @@
 
 ## 交互流程
 
-![](https://main.qcloudimg.com/raw/d3516bd26fc3087dc3f48571cec0e038.svg)
+![](https://main.qcloudimg.com/raw/defaa80f6f5b9a6721d06e9dadb8c73c.png)
 
 ## 操作说明
 

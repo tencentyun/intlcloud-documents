@@ -15,7 +15,7 @@
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->AVChatRooms (livestreaming groups) do not support transferring group ownership. Error 10007 will be returned if this operation is performed on a group of this type.
+>?AVChatRooms (livestreaming groups) do not support transferring group ownership. Error 10007 will be returned if this operation is performed on a group of this type.
 
 ### Sample request URL
 ```
@@ -84,7 +84,7 @@ The list below contains error codes specific to this API:
 | 10015 | The group ID is invalid. Be sure to use the correct group ID. |
 
 ## API Debugging Tool
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/change_group_owner) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/change_group_owner) to debug this API.
 
 ## Reference
 Recalling group messages ([v4/group_open_http_svc/group_msg_recall](https://intl.cloud.tencent.com/document/product/1047/34965))

@@ -89,7 +89,7 @@
 </table>
 
 ## 接口相关限制
->本文仅列出涉及使用限制的 REST API，更全面的 API 列表请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621)。
+>?本文仅列出涉及使用限制的 REST API，更全面的 API 列表请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621)。
 
 ### 通用限制
 

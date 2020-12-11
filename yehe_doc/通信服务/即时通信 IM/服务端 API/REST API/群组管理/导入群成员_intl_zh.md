@@ -38,7 +38,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_member?sdkappid=8
 ### 请求包示例
 
 用来向群中导入成员，一次请求最多支持添加300个成员；使用本接口设置的未读消息数如果大于群当前的消息数，未读消息数会设为群当前的消息总数。
->请保证导入成员的入群时间大于群的创建时间并小于当前时间，否则该成员会导入失败。
+>!请保证导入成员的入群时间大于群的创建时间并小于当前时间，否则该成员会导入失败。
 
 ```
 {
@@ -119,7 +119,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_member?sdkappid=8
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/import_group_member) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/import_group_member) 调试本接口。
 
 ## 参考
 删除群成员（[v4/group_open_http_svc/delete_group_member](https://intl.cloud.tencent.com/document/product/1047/34949)）

@@ -14,7 +14,7 @@
 
 IM comes with the preceding four group types. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
-> Generally, importing group members is not required for AVChatRoom, so AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned.
+>?Generally, importing group members is not required for AVChatRoom, so AVChatRoom does not support this API. If you attempt to use API on AVChatRoom, error 10007 will be returned.
 
 ### Request URL example
 ```
@@ -38,7 +38,7 @@ The maximum calling frequency is 200 times per second.
 ### Request packet example
 
 Request packets are used to import group members. A single request supports the import of a maximum of 300 members. If the unread message count specified by this API is greater than the current number of messages of the group, the unread message count is set to the current number of messages of the group.
-> Ensure that the join time of the member to be imported is later than the group creation time and earlier than the current time. Otherwise, the member cannot be imported.
+>!Ensure that the join time of the member to be imported is later than the group creation time and earlier than the current time. Otherwise, the member cannot be imported.
 
 ```
 {
@@ -119,7 +119,7 @@ The private error codes for this API are as follows:
 
 ## API Debugging Tools
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/import_group_member) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/import_group_member) to debug this API.
 
 ## Reference
 Deleting group members [v4/group_open_http_svc/delete_group_member](https://intl.cloud.tencent.com/document/product/1047/34949))

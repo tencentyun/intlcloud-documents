@@ -13,7 +13,7 @@
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->Due to the internal implementation, AVChatRooms (livestreaming groups) only support modifying the member profiles of admins and the group owner. Error 10007 will be returned if you try to modify the profiles of ordinary group members.
+>?Due to the internal implementation, AVChatRooms (livestreaming groups) only support modifying the member profiles of admins and the group owner. Error 10007 will be returned if you try to modify the profiles of ordinary group members.
 
 
 ### Sample request URL
@@ -152,7 +152,7 @@ The list below contains error codes specific to this API:
 | 80001 | The modified group member information failed text content filtering. Check whether the modified group member information contains sensitive words. |
 
 ## API Debugging Tool
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/modify_group_member_info) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_member_info) to debug this API.
 
 ## Reference
 Obtaining detailed information on group members ([v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948))

@@ -11,7 +11,7 @@ The app admin can use this API to obtain the download addresses for all one-to-o
 ### Request URL example
 ```
 https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
-```
+ ```
 ### Request parameters
 
 The following table only describes parameters that are modified when this API is invoked. For details on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
@@ -107,7 +107,7 @@ Private error codes for this API are as follows:
 ```
 
 The first line of the file records basic information about the file. Each following line records a message until the last line that ends with "]}". For the format of each message, see the definitions in [TIMMsgElement Objects](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement).
-If the file is small, you can use the JSON database to parse the entire file. MsgList indicates the message array for the specified period. For example:
+- If the file is small, you can use the JSON database to parse the entire file. MsgList indicates the message array for the specified period. For example:
 
 ```
 # Python Example Code
@@ -118,7 +118,7 @@ for msg in info['MsgList']:
     pass #do sth with msg
 ```
 
-If the file is large, we recommend that you parse it line by line. For example:
+- If the file is large, we recommend that you parse it line by line. For example:
 
 ```
 # Python Example Code
@@ -137,4 +137,4 @@ with gzip.open('1104620500_Group_2015120121.gz', 'rb') as fp:
 ```
 
 ## API Commissioning Tool
-Use the [RESTful API online commissioning tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/open_msg_svc/get_history) to commission this API.
+Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/open_msg_svc/get_history) to commission this API.

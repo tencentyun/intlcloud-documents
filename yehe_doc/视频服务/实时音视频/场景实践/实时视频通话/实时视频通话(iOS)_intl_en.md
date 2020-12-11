@@ -152,7 +152,7 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 ### Step 5. Implement one-to-one calls
 
 1. Caller: call the `call(userId, callType)` method in `TRTCCalling` and pass in the user ID as `userId` and `CallType_Video` as `callType` to initiate a video call request.
-2. Callee: if already logged in, the callee will receive the `onInvited()` callback. The caller can use the parameter `callType` to set the call type and the callee can use this parameter to initiate the call interface. If you want the callee to receive call requests even when logged out, please see [Offline Answering](#model.offline).
+2. Callee: if already logged in, the callee will receive the `onInvited()` callback. The caller can use the parameter `callType` to set the call type and the callee can use this parameter to initiate the call interface. If you want the callee to receive call requests even when logged out, please see [Offline Answering](#offline).
 3. Callee: the callee can call the `accept()` function to answer the call and also call the `openCamera()` function to enable the local camera if this is a video call. And the callee can call `reject()` to reject the call.
 4. After the audio/video channel between the caller and callee is established, they will receive the `onUserVideoAvailable()` callback, which indicates that they have received each other's image. At this point, they can call `startRemoteView()` to display the remote video image, and the remote audio will be played back by default.
 

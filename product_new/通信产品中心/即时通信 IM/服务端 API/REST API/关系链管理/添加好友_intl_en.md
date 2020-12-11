@@ -162,7 +162,7 @@ The list below contains only the parameters commonly used when calling this API 
 | ErrorInfo | String | Detailed error information. |
 | ErrorDisplay | String | Detailed information displayed on the client. |
 
-<span id="ErrorCode"></span>
+<span id="ErrorCode"></span>
 ## Error Codes
 
 Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response fields such as `ResultCode`, `ResultInfo`, `ErrorCode`, and `ErrorInfo`.
@@ -191,7 +191,7 @@ The list below contains only error codes specific to this API:
 | 30540 | You have sent too many friend requests in a short amount of time. Request filtered for security reasons. |
 
 ## API Debugging Tool
-Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/friend_add) to commission this API.
+Use the [online RESTful API debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/friend_add) to commission this API.
 
 ## See Also
 

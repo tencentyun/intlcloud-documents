@@ -14,7 +14,7 @@
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->ChatRoom 和 AVChatroom（直播群）的客户端不支持未读消息计数，所以对这两种类型的群组成员设置未读消息计数是无效的（但是不会返回错误）。
+>?ChatRoom 和 AVChatroom（直播群）的客户端不支持未读消息计数，所以对这两种类型的群组成员设置未读消息计数是无效的（但是不会返回错误）。
 
 ### 请求 URL 示例
 ```
@@ -89,7 +89,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/set_unread_msg_num?sdkappid=88
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/set_unread_msg_num) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/set_unread_msg_num) 调试本接口。
 
 ## 参考
 在群组中发送系统通知（[v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958)）。
