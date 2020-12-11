@@ -7,7 +7,6 @@ This Module applies if you use MediaLive (“**Feature**”). This Module is inc
 ### 2. PROCESSING
 
 We will process the following data in connection with the Feature:
-
 <table>
 <thead>
 <tr>
@@ -20,7 +19,7 @@ We will process the following data in connection with the Feature:
 <td rowspan="2">We only process this data for the purposes of providing the Feature to you and your end users.</td>
 </tr>
 <tr>
-<td>Live Streaming Data (video and audio data)</td>
+<td>Live Streaming Data (video and audio data)</td></table>
 
 ### 3.SERVICE REGION
 
@@ -43,5 +42,3 @@ You can request deletion of such personal data in accordance with the DPSA.
 ### 6.SPECIAL CONDITIONS
 
 You must ensure that this Feature is only used by end users who are of at least the minimum age at which an individual can consent to the processing of their personal data. This may be different depending on the jurisdiction in which an end user is located.
-
- 
