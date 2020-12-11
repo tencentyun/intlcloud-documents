@@ -86,7 +86,7 @@ tim.createImageMessage(options)
 | `payload`          | `Object`   |           -   |                  -               | 消息内容的容器                                             |
 | `onProgress`       | `function` |          -    |                  -               | 获取上传进度的回调函数                                     |
 
-`paylaod`的描述如下表所示：
+`payload`的描述如下表所示：
 
 | Name | Type                         | Description                                                  |
 | ---- | ---------------------------- | ------------------------------------------------------------ |
@@ -207,7 +207,7 @@ tim.createAudioMessage(options)
 | `priority`         | `String` | `<optional>` | `TIM.TYPES.MSG_PRIORITY_NORMAL` | 消息优先级                                                 |
 | `payload`          | `Object` |       -       |            -                     | 消息内容的容器                                             |
 
-`paylaod`的描述如下表所示：
+`payload`的描述如下表所示：
 
 | Name | Type     | Description          |
 | ---- | -------- | -------------------- |
