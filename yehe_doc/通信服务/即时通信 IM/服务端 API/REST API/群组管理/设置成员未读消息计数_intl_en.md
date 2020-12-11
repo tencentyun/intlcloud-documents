@@ -14,7 +14,7 @@
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->ChatRooms and AVChatrooms do not support unread message counts. Therefore, you cannot set an unread message count for members of these two group types. However, no error will be returned if you try.
+>?ChatRooms and AVChatrooms do not support unread message counts. Therefore, you cannot set an unread message count for members of these two group types. However, no error will be returned if you try.
 
 ### Sample request URL
 ```
@@ -89,7 +89,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/set_unread_msg_num) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/set_unread_msg_num) to debug this API.
 
 ## Reference
 Sending system messages in a group ([v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958))
