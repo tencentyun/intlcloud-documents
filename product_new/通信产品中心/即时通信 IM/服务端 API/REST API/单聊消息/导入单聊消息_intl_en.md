@@ -128,7 +128,7 @@ The list below contains only error codes specific to this API:
 | 93000 | JSON packet exceeded the maximum size of 8 KB. |
 
 ## API Debugging Tool
-Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/importmsg) to commission this API.
+Use the [online RESTful API debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/importmsg) to commission this API.
 
 ## See Also
 Importing group messages ([v4/group_open_http_svc/import_group_msg ](https://intl.cloud.tencent.com/document/product/1047/34968))
