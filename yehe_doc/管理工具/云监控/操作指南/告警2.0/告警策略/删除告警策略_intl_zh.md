@@ -1,0 +1,8 @@
+本文将介绍如何删除告警策略。
+
+## 操作步骤
+
+1. 进入 [云监控控制台—告警策略列表页](https://console.cloud.tencent.com/monitor/alarm2/policy)。
+2. 找到需要删除的告警策略，在页面右侧的操作一栏下单击【删除】，在弹框中确认删除即可。
+![](https://main.qcloudimg.com/raw/0776ca34f85f01c10d86b4fec13ba30e.png)
+
