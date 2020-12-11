@@ -3,27 +3,24 @@ You can [download](https://intl.cloud.tencent.com/document/product/647/35076) an
 
 To quickly implement the interactive video live streaming feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCLiveRoom` component and implement custom UI.
 
-<span id="DemoUI"> </span>
+[](id:DemoUI)
 ## Reusing Demo UI
 
-<span id="ui.step1"></span>
+[](id:ui.step1)
 ### Step 1. Create an application
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestLiveRoom`, and click **Create Application**.
 
 >?This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
-<span id="ui.step2"></span>
+
+[](id:ui.step2)
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)**), and download the relevant SDK and supporting demo source code.
  ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
 2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
-
-
-
-
-<span id="ui.step3"></span>
+[](id:ui.step3)
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#ui.step2).
 2. Find and open the `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` file.
@@ -37,11 +34,11 @@ To quickly implement the interactive video live streaming feature, you can direc
 >!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
 >The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
 
-<span id="ui.step4"></span>
+[](id:ui.step4)
 ### Step 4. Run the demo
 Use Xcode (v11.0 or above) to open the `iOS/TRTCScenesDemo/TXLiteAVDemo.xcworkspace` project and click **Run** to start debugging the demo.
 
-<span id="ui.step5"></span>
+[](id:ui.step5)
 ### Step 5. Modify the demo source code
 The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` and `model`. The `ui` folder contains the UI code. The following table lists the Swift files or folders and the corresponding UIs for easy adjustment:
 
@@ -55,14 +52,14 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 | LiveRoomMainViewController.swift | UI for interactive video live streaming homepage. | 
 
 
-<span id="model"> </span>
+[](id:model)
 ## Implementing Custom UI
 
 The `trtcliveroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the APIs provided by this component in the `TRTCLiveRoom.swift` file and use the corresponding API to implement your own custom UI.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
-<span id="model.step1"> </span>
+[](id:model.step1)
 ### Step 1. Integrate SDKs
 The video call component `TRTCLiveRoom` depends on the TRTC SDK and IM SDK. You can integrate the two SDKs into your project in the following steps:
 
@@ -81,17 +78,18 @@ If the access to the CocoaPods repository is slow in your development environmen
 | TRTC SDK | [Download](https://intl.cloud.tencent.com/document/product/647/34615) | [Integration document](https://intl.cloud.tencent.com/document/product/647/35093) |
 | IM SDK | [Download](https://intl.cloud.tencent.com/document/product/1047/33996) | [Integration document](https://intl.cloud.tencent.com/document/product/1047/34306) |
 
-<span id="model.step2"> </span>
+[](id:model.step2)
 ### Step 2. Configure permissions
 Apply for the camera and mic permissions by adding `Privacy > Camera Usage Description` and `Privacy > Microphone Usage Description` in the `info.plist` file.
 
-<span id="model.step3"> </span>
+[](id:model.step3)
 ### Step 3. Import the TRTCLiveRoom component
 Copy all files in the `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` directory to your project.
 
-<span id="model.step4"> </span>
+
+[](id:model.step4)
 ### Step 4. Create and log in to the component
-1. Call the `init` API of `TRTCLiveRoomImpl` to create an instance object of the `TRTCLiveRoom` component.
+1. Call the `init` API of `TRTCLiveRoom` to create an instance object of the `TRTCLiveRoom` component.
 2. Create a `TRTCLiveRoomConfig` object, where the `useCDNFirst` and `CDNPlayDomain` attributes can be set:
  - `useCDNFirst` attribute: used to set the way how viewers will watch live streaming. `true` means that general viewers will watch live streaming over CDN, which is cheap but has a high latency. `false` means that general viewers will watch live streaming through the low latency scheme, the cost of which ranges between that of CDN and co-anchoring, but the delay can be controlled within 1 second.
  - `CDNPlayDomain` attribute: it will take effect only if `useCDNFirst` is set to `true`. It is used to specify the playback domain name for watching over CDN. You can set it in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the LVB Console.
@@ -115,7 +113,7 @@ Copy all files in the `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` d
 </tr>
 <tr>
 <td>config</td>
-<td>Global configuration information. Please initialize it during login as it cannot be modified after login.<ul style="margin:0;">
+<td>Global configuration information. Please initialize it during login as it cannot be modified after login.<ul style="margin:0;">
 <li>`useCDNFirst` attribute: used to set the way how viewers will watch live streaming. `true` means that general viewers will watch live streaming over CDN, which is cheap but has a high latency. `false` means that general viewers will watch live streaming through the low latency scheme, the cost of which ranges between that of CDN and co-anchoring, but the delay can be controlled within 1 second.</li>
 <li>`CDNPlayDomain` attribute: it will take effect only if `useCDNFirst` is set to `true`. It is used to specify the playback domain name for watching over CDN. You can set it in **<a href="https://console.cloud.tencent.com/live/domainmanage">Domain Management</a>** in the LVB Console.</li>
 </ul></td>
@@ -127,7 +125,7 @@ Copy all files in the `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` d
 </table>
 <pre>
 class LiveRoomController: UIViewController {
-	let mLiveRoom = TRTCLiveRoomImpl()
+	let mLiveRoom = TRTCLiveRoom()
 }
 // useCDNFirst: `true` means that general viewers will watch live streaming over CDN, while `false` means that general viewers will watch live streaming through the low latency scheme
 // CDNPlayDomain: the playback domain name set for watching over CDN
@@ -139,7 +137,8 @@ mLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
 }
 </pre>
 
-<span id="model.step5"> </span>
+
+[](id:model.step5)
 ### Step 5. The anchor starts streaming
 1. The anchor can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
 2. Before starting streaming, the anchor can call `startCameraPreview` to enable camera preview, where the beauty filter adjusting buttons can be configured for setting beauty filters through `getBeautyManager`.
@@ -171,7 +170,8 @@ mLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, e
 }
 ```
 
-<span id="model.step6"> </span>
+
+[](id:model.step6)
 ### Step 6. The viewer watches the live streaming
 1. The viewer can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
 2. The viewer gets the latest live room list from the business backend.
@@ -203,13 +203,14 @@ if code == 0 {
 mliveRoom.enterRoom(roomID: roomID, callback: callback)
 
 // 4. The viewer receives the notification of room entry by the anchor, and playback starts
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID: String) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
 	// 5. The viewer plays back the anchor's video image
 	mliveRoom.startPlay(userID: userID, view: renderView, callback: nil) 
 }
 ```
 
-<span id="model.step7"> </span>
+
+[](id:model.step7)
 ### Step 7. The viewer co-anchors with the anchor
 1. The viewer calls `requestJoinAnchor` to initiate a co-anchoring request to the anchor.
 2. The anchor will receive the `TRTCLiveRoomDelegate#onRequestJoinAnchor` event notification (i.e., "a viewer has initiated a request to co-anchor with you").
@@ -235,19 +236,19 @@ mliveRoom.requestJoinAnchor(reason: mSelfUserId + "requested to co-anchor with y
 
 // Anchor:
 // 2. The anchor receives the co-anchoring request
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRequestJoinAnchor user: TRTCLiveUserInfo, reason: String?, timeout: Double) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestJoinAnchor user: TRTCLiveUserInfo, reason: String?, timeout: Double) {
 	// 3. The anchor accepts the co-anchoring request
 	mliveRoom.responseJoinAnchor(userID: userID, agree: true, reason: "accepted co-anchoring")
 }
 
 // 6. The anchor receives the notification of mic-on by the co-anchoring viewer
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID: String) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
 	// 7. The anchor plays back the viewer's video image
 	mliveRoom.startPlay(userID: userID, view: view, callback: nil)
 }
 ```
 
-<span id="model.step8"> </span>
+[](id:model.step8)
 ### Step 8. One anchor competes with another anchor
 1. Anchor A calls `requestRoomPK` to initiate a competition request to anchor B.
 2. Anchor B will receive the `TRTCLiveRoomDelegate onRequestRoomPK` callback notification.
@@ -271,7 +272,7 @@ mLiveRoom.requestRoomPK(roomID: 54321, userID: "B", responseCallback: { (agree, 
 }, callback: callback)
 
 // Anchor A receives the callback of room entry by anchor B
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID: String) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
 	// 6. Anchor A receives notification of room entry by anchor B and plays back anchor B's video image
 	mLiveRoom.startPlay(userID: userID, view: view, callback: callback)
 }
@@ -281,18 +282,18 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID:
 mLiveRoom.createRoom(roomID: 54321, roomParam: param, callback: nil)
 
 // 2. Anchor B receives the message from anchor A
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRequestRoomPK user: TRTCLiveUserInfo, timeout: Double) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRequestRoomPK user: TRTCLiveUserInfo, timeout: Double) {
 	// 3. Anchor B replies to anchor A and accepts anchor A's request
 	mLiveRoom.responseRoomPK(userID: userID, agree: true, reason: reason)
 }
 
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onAnchorEnter userID: String) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: String) {
 	// 4. Anchor B receives notification of room entry by anchor A and plays back anchor A's video image
 	mLiveRoom.startPlay(userID: userID, view: view, callback: callback)
 }
 ```
 
-<span id="model.step9"> </span>
+[](id:model.step9)
 ### Step 9. Implement text chat and on-screen commenting
 - `sendRoomTextMsg` can be used to send general text messages, and all anchors and viewers in the room can receive the `onRecvRoomTextMsg` callback.
 The backend of IM has default sensitive word filtering rules, and text messages that are considered to contain any sensitive words will not be forwarded by the cloud.
@@ -301,7 +302,7 @@ The backend of IM has default sensitive word filtering rules, and text messages 
 mLiveRoom.sendRoomTextMsg(message: "Hello Word!", callback: callback)
 // Receiver: listens on text messages
 mLiveRoom.delegate = self
-public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoomImpl, onRecvRoomTextMsg message: String, fromUser user: TRTCLiveUserInfo) {
+public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onRecvRoomTextMsg message: String, fromUser user: TRTCLiveUserInfo) {
 	debugPrint("A text message from \(user.userName) is received:\(message)")
 }
 ```
