@@ -18,7 +18,7 @@ We will use the information in the following ways and in accordance with the fol
 
 | Personal Information                                         | Use                                                          | Legal Basis                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Program Running Log: channel name, endpoint name, request ID for each session, operational history of types of actions user applies to channel (including creating, describing, modifying and deleting channel) | We use this information to ensure the Service functions as required and to ensure that bugs are detected and remediated. | We process this information as it’s necessary for us to perform our contract with you to provide the Service. |
+| **Program Running Log**: channel name, endpoint name, request ID for each session, operational history of types of actions user applies to channel (including creating, describing, modifying and deleting channel) | We use this information to ensure the Service functions as required and to ensure that bugs are detected and remediated. | We process this information as it’s necessary for us to perform our contract with you to provide the Service. |
 
 ### 5.HOW WE STORE AND SHARE PERSONAL INFORMATION
 

@@ -7,6 +7,7 @@ This Module applies if you use MediaLive (“**Feature**”). This Module is inc
 ### 2. PROCESSING
 
 We will process the following data in connection with the Feature:
+
 <table>
 <thead>
 <tr>
@@ -15,11 +16,11 @@ We will process the following data in connection with the Feature:
 </tr>
 </thead>
 <tbody><tr>
-<td>Configuration Data(security group (name, state, id), input (name, type, status, ID, URL) and channel (name, status, input count, and ID))</td>
+<td><b>Configuration Data</b> (security group (name, state, id), input (name, type, status, ID, URL) and channel (name, status, input count, and ID))</td>
 <td rowspan="2">We only process this data for the purposes of providing the Feature to you and your end users.</td>
 </tr>
 <tr>
-<td>Live Streaming Data (video and audio data)</td></table>
+<td><b>Live Streaming Data</b> (video and audio data)</td></table>
 
 ### 3.SERVICE REGION
 

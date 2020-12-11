@@ -18,7 +18,7 @@ We will use the information in the following ways and in accordance with the fol
 
 | Personal Information                                         | Use                                                          | Legal Basis                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Log Data (Program Running Log: APPID and action of the user, and action type (create channel, start channel, delete channel, create input, delete input，create input security group, delete input security group)) | We use this information to ensure the Service functions as required and to ensure that bugs are detected and remediated. | We process this information as it’s necessary for us to perform our contract with you to provide the Service. |
+| **Log Data** (Program Running Log: APPID and action of the user, and action type (create channel, start channel, delete channel, create input, delete input，create input security group, delete input security group)) | We use this information to ensure the Service functions as required and to ensure that bugs are detected and remediated. | We process this information as it’s necessary for us to perform our contract with you to provide the Service. |
 
 ### 5.HOW WE STORE AND SHARE PERSONAL INFORMATION
 
