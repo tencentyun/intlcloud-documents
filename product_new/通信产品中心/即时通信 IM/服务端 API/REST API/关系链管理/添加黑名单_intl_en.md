@@ -1,7 +1,7 @@
 ## API Description
 
 This API is used to add one or multiple people to your blocklist.
->
+>!
 >- If users A and B are friends, either one adding the other to the blocklist removes them from each other’s friend list.
 > If user A blocks user B, or vice versa, then neither of them can send a friend request to the other person.
 >- If user B is on user A’s blocklist and user A is also on user B’s blocklist, then user A and B cannot start a conversation with each other.
@@ -89,7 +89,7 @@ The list below contains only the parameters commonly used when calling this API 
 | ErrorInfo | String | Detailed error information. |
 | ErrorDisplay | String | Detailed information displayed on the client. |
 
-<span id="ErrorCode"></span>
+<span id="ErrorCode"></span>
 ## Error Codes
 Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response fields such as `ResultCode`, `ResultInfo`, `ErrorCode`, and `ErrorInfo`.
 For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
@@ -108,7 +108,7 @@ The list below contains only error codes specific to this API:
 
 
 ## API Debugging Tool
-Use the [online RESTful API debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_add) to commission this API.
+Use the [online RESTful API debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_add) to commission this API.
 
 ## See Also
 
