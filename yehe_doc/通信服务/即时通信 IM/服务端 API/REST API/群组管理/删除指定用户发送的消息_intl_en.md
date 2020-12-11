@@ -13,7 +13,7 @@ This API is used to delete messages sent by a specified user within the last 1,0
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, deleting messages means deleting messages stored in the message history). Therefore, you cannot delete user messages in groups of this type. However, no error will be returned if you attempt to do so.
+>?Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, deleting messages means deleting messages stored in the message history). Therefore, you cannot delete user messages in groups of this type. However, no error will be returned if you attempt to do so.
 
 ### Sample request URL
 ```
@@ -86,7 +86,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/delete_group_msg_by_sender) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/delete_group_msg_by_sender) to debug this API.
 
 ## Reference
 Deleting group members ([v4/group_open_http_svc/delete_group_member](https://intl.cloud.tencent.com/document/product/1047/34949))
