@@ -1,7 +1,7 @@
 ## 功能说明
 
 添加黑名单，支持批量添加黑名单。
->
+>!
 >- 如果用户 A 与用户 B 之间存在好友关系，拉黑时会解除双向好友关系。
 >- 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起加好友请求。
 >- 如果用户 A 的黑名单中有用户 B 且用户 B 的黑名单中有用户 A，二者之间无法发起会话。
@@ -89,7 +89,7 @@ https://console.tim.qq.com/v4/sns/black_list_add?sdkappid=88888888&identifier=ad
 |ErrorInfo|String|详细错误信息|
 |ErrorDisplay|String|详细的客户端展示信息|
 
-<span id="ErrorCode"></span>
+<span id="ErrorCode"></span>
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
 公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)。
@@ -108,7 +108,7 @@ https://console.tim.qq.com/v4/sns/black_list_add?sdkappid=88888888&identifier=ad
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_add) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_add) 调试本接口。
 
 ## 参考
 
