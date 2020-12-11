@@ -128,6 +128,11 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 群 @ 消息，发送方可以在输入栏监听 @ 字符输入，调用到群成员选择界面，选择完成后以 `“@A @B @C......”` 形式显示在输入框，并可以继续编辑消息内容，完成消息发送。接收方会在会话界面的群聊天列表，重点显示 `“有人@我”` 或者 `“@所有人”` 标识，提醒用户有人在群里 @ 自己了。
 >? 目前仅支持文本 @ 消息。
 
+
+
+
+
+
 ### 发送群 @ 消息
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)，昵称用来在文本框显示。
 2. 发送方调用 [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) 的 [createTextAtMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) 创建一条 @ 文本消息，拿到消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)。
@@ -354,7 +359,7 @@ public void onRecvMessageRevoked(String msgID) {
 ## 给消息增加已读回执
 在 C2C 单聊场景下，当接收方通过 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) 接口将来自某人的消息标记为已读时，消息的发送方将会收到“已读回执”，表示“xxx 已经读过我的消息了”。
 
->!目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a7fc79e30877b8d77fbdfa24e057376dc) 接口，但群消息的发送者目前无法收到已读回执。
+>!目前仅 C2C 单聊消息支持已读回执，群聊场景暂不支持。虽然群聊消息也有对应的 [markGroupMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ac0a65f18d361abde8a0ac16132027e69) 接口，但群消息的发送者目前无法收到已读回执。
 
 ### 接收方标记消息已读
 
