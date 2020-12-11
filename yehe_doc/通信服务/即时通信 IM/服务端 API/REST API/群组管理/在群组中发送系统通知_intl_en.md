@@ -101,7 +101,7 @@ The list below contains error codes specific to this API:
 | 10015 | The group ID is invalid. Be sure to use the correct group ID. |
 
 ## API Debugging Tool
-Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_member_info) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/send_group_system_notification) to debug this API.
 
 ## Reference
 Sending ordinary messages in a group ([v4/group_open_http_svc/send_group_msg](https://intl.cloud.tencent.com/document/product/1047/34959))
