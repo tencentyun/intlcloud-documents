@@ -313,6 +313,6 @@ The following table describes the error codes specific to this API.
 | 40009 | The tag of a profile field does not exist. |
 
 ## Commissioning Tool
-Use the [RESTful API online commissioning tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/profile/portrait_get) to commission this API.
+Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/profile/portrait_get)  to commission this API.
 ## Reference
 Configuring Profiles ([v4/profile/portrait_set](https://intl.cloud.tencent.com/document/product/1047/34916)).
