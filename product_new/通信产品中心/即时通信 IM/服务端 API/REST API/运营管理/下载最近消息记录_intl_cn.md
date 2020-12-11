@@ -11,7 +11,7 @@ App 管理员可以通过该接口获取 App 中最近7天中某天某小时的�
 ### 请求 URL 示例
 ```
 https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
-```
+ ```
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -106,8 +106,8 @@ https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identif
 ]}
 ```
 
-文件第一行记录了该文件的基本信息，接下来的每一行记录一条消息，直到最后一行“]}”结束，每条消息格式可参考 [TIMMsgElement对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义；
-若文件较小，可直接使用 JSON 库解析整个文件，MsgList 是该时段的消息数组。示例如下： ：
+文件第一行记录了该文件的基本信息，接下来的每一行记录一条消息，直到最后一行“]}”结束，每条消息格式可参考 [TIMMsgElement对象](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement) 的定义。
+- 若文件较小，可直接使用 JSON 库解析整个文件，MsgList 是该时段的消息数组。示例如下： ：
 
 ```
 # Python 示例代码
@@ -118,7 +118,7 @@ for msg in info['MsgList']:
     pass #do sth with msg
 ```
 
-若文件较大，建议逐行解析。示例如下： ：
+- 若文件较大，建议逐行解析。示例如下： ：
 
 ```
 # Python 示例代码
@@ -137,4 +137,4 @@ with gzip.open('1104620500_Group_2015120121.gz', 'rb') as fp:
 ```
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.qcloud.com/im/APITester/APITester.html#v4/open_msg_svc/get_history) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/open_msg_svc/get_history) 调试本接口。
