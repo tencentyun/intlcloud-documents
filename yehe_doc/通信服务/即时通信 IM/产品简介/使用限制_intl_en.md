@@ -89,7 +89,7 @@
 </table>
 
 ## API Limits
-> This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621).
+>? This document lists only the RESTful APIs that have use limits. For a complete list of APIs, see [RESTful API List](https://intl.cloud.tencent.com/document/product/1047/34621).
 
 ### General limits
 
