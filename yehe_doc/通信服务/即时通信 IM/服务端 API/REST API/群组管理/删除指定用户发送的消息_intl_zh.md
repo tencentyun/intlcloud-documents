@@ -13,7 +13,7 @@
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->AVChatRoom（直播群）不支持历史消息存储（此处删除消息指删除历史消息存储中的消息），对这此类型群组中的用户删除消息是无效的（但是不会返回错误）。
+>?AVChatRoom（直播群）不支持历史消息存储（此处删除消息指删除历史消息存储中的消息），对这此类型群组中的用户删除消息是无效的（但是不会返回错误）。
 
 ### 请求 URL 示例
 ```
@@ -86,7 +86,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/delete_group_msg_by_sender?sdk
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/delete_group_msg_by_sender) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/delete_group_msg_by_sender) 调试本接口。
 
 ## 参考
 删除群成员（[v4/group_open_http_svc/delete_group_member](https://intl.cloud.tencent.com/document/product/1047/34949)）。
