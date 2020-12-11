@@ -84,7 +84,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/change_group_owner?sdkappid=88
 | 10015 | 群组 ID 非法，请检查群组 ID 是否填写正确。  |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/modify_group_member_info) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/change_group_owner) 调试本接口。
 
 ## 参考
 撤回群消息（[v4/group_open_http_svc/group_msg_recall](https://intl.cloud.tencent.com/document/product/1047/34965)）
