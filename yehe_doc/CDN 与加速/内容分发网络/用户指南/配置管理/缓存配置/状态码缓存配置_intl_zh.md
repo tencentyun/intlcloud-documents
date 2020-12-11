@@ -6,7 +6,9 @@
 - 4XX：400、401、403、404、405、407、414
 - 5XX：500、501、502、503、504、509、514
 
->! 部分平台升级中，暂仅支持404和403状态码。
+>! 
+>- 部分平台升级中，暂仅支持404和403状态码。
+>- 中国境外暂仅支持404和403状态码。若域名的加速区域为全球，则404和403以外的状态码缓存规则仅生效中国境内。
 
 
 ## 配置指南
@@ -14,11 +16,11 @@
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【缓存配置】，即可找到【状态码缓存】。
 默认情况下，有一条“404 - 缓存10秒”的规则：
-![](https://main.qcloudimg.com/raw/4428e00446b05cdead5dbcd2bdd9309d.png)
+![](https://main.qcloudimg.com/raw/508f716869f48fad3424fe6eeb77a67c.png)
 
 ### 新增规则
 您可按需添加状态码缓存规则，单击【新增状态码缓存】：
-<img src="https://main.qcloudimg.com/raw/5b6c6934acba5e37441bc8298c6659af.png" style="height:185px"/>
+<img src="https://main.qcloudimg.com/raw/3f01868799d0ddeda302e52e634bbde1.png" style="height:185px"/>
 
 配置约束：
 - 一个状态码仅支持添加一条规则，不可重复添加。
