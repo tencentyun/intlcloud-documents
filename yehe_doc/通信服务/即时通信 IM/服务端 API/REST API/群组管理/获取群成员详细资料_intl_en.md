@@ -14,7 +14,7 @@
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->Due to differences in scenario implementation, for a livestreaming group (AVChatRoom group), you can only obtain the group member profiles of the first 300 members. The profiles of members who join the group after the 300 threshold is reached cannot be obtained.
+>?Due to differences in scenario implementation, for a livestreaming group (AVChatRoom group), you can only obtain the group member profiles of the first 300 members. The profiles of members who join the group after the 300 threshold is reached cannot be obtained.
 
 ### Sample request URL
 ```
@@ -360,7 +360,7 @@ The list below contains error codes specific to this API:
 
 
 ## API Debugging Tool
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/get_group_member_info) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_member_info) to debug this API.
 
 ## Reference
 Modifying group member profiles ([v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900))

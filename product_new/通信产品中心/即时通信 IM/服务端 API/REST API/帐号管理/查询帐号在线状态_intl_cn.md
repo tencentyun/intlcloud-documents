@@ -130,7 +130,7 @@ https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=adm
 | ErrorCode|	Integer	|本次请求的错误码<li>如有任意帐号查询状态成功，则此字段返回0</li><li>全部帐号都查询失败，则此字段返回非0</li> |
 | QueryResult | Array | 返回的用户在线状态结构化信息 |
 | QueryResult.To_Account | String |返回的用户的 UserID  |
-| QueryResult.Status | String | 返回的用户状态，目前支持的状态有：<ul style="margin:0;"><li>前台运行状态（Online）：客户端登录后和即时通信 IM 后台有长连接</li><li>后台运行状态（PushOnline）：iOS 和 Android 进程被 kill 或因网络问题掉线，进入 PushOnline 状态，此时仍然可以接收消息的离线推送。客户端切到后台，但是进程未被手机操作系统 kill 掉时，此时状态仍是 Online</li><li>未登录状态（Offline）：客户端主动退出登录或者客户端自上一次登录起7天之内未登录过</li></ul>如果用户是多终端登录，则只要有一个终端的状态是 Online ，该字段值就是 Online |
+| QueryResult.Status | String | 返回的用户状态，目前支持的状态有：<ul style="margin:0;"><li>前台运行状态（Online）：客户端登录后和即时通信 IM 后台有长连接</li><li>后台运行状态（PushOnline）：iOS 和 Android 进程被 kill 或因网络问题掉线，进入 PushOnline 状态，此时仍然可以接收消息的离线推送。客户端切到后台，但是进程未被手机操作系统 kill 掉时，此时状态仍是 Online</li><li>未登录状态（Offline）：客户端主动退出登录或者客户端自上一次登录起7天之内未登录过</li></ul>如果用户是多终端登录，则只要有一个终端的状态是 Online ，该字段值就是 Online|
 | QueryResult.Detail | Object | 详细的登录平台信息  |
 | QueryResult.Detail.Platform | String | 登录的平台类型。可能的返回值有："iPhone", "Android", "Web", "PC", "iPad", "Mac"。  |
 | QueryResult.Detail.Status | String | 该登录平台的状态  |
@@ -138,7 +138,7 @@ https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=adm
 | ErrorList.To_Account | String | 状态查询失败的目标帐号|
 | ErrorList.ErrorCode|Integer|状态查询失败的错误码，若目标帐号的错误码为70107，表示该帐号不存在|
 
->即时通信 IM 后台只会保存 PushOnline 状态7天时间，若从掉线时刻起7天之内未登录过，则进入 Offline 状态。
+>!即时通信 IM 后台只会保存 PushOnline 状态7天时间，若从掉线时刻起7天之内未登录过，则进入 Offline 状态。
 
 ## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
@@ -159,7 +159,7 @@ https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=adm
 | 91000 |服务内部错误，请重试|
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.qcloud.com/im/APITester/APITester.html#v4/openim/querystate) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/querystate) 调试本接口。
 
 ## 参考
 

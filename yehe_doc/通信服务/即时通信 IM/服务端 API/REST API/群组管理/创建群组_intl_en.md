@@ -14,7 +14,7 @@ This API is used by the app admin to create groups.
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->
+>!
 >- If the group type is specified as AVChatRoom:
 >  - The number of groups that can be created varies depending on the actual package. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 >  - Inviting users to groups is not supported when AVChatRoom groups are created, and a 10007 error will be returned if users to invite are specified during creation. The only way for users to join AVChatRoom groups is to apply.
@@ -95,7 +95,7 @@ To simplify group IDs, Tencent Cloud allows apps to customize group IDs when cre
 ```
 {
     "Owner_Account": "leckie", // UserId of the group owner (optional)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom (required)
     "GroupId": "MyFirstGroup", // User-defined group ID (optional)
     "Name": "TestGroup"   // Group name (required)
 }
@@ -106,7 +106,7 @@ Create a group and specify group custom fields. By default, AppDefineData is not
 ```
 {
     "Name": "TestGroup", // Group name (required)
-    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom
+    "Type": "Public", // Group type: Private/Public/ChatRoom/AVChatRoom (required)
     "AppDefinedData": [ // Group custom field (optional)
         {
             "Key": "GroupTestData1", // Key of the app custom field
@@ -213,7 +213,7 @@ Create a group and specify group member custom fields. By default, AppMemberDefi
 ```
 
 
-<span id="Parameters"></span>
+<span id="Parameters"></span>
 ### Request packet fields
 
 | Field | Type | Property | Description |
@@ -286,7 +286,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/create_group) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/create_group) to debug this API.
 
 ## Reference
 - Disbanding a group ([v4/group_open_http_svc/destroy_group](https://intl.cloud.tencent.com/document/product/1047/34896))

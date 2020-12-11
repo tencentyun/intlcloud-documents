@@ -1,7 +1,7 @@
 ## Feature Description
 This API is used to import an app-owned account to IM and create an internal ID for the account to ensure that the account can use the IM service.
 
-> If the same account is imported to IM repeatedly, only one internal ID will be created for the account.
+>!If the same account is imported to IM repeatedly, only one internal ID will be created for the account.
 
 ## Call Description
 ### Example request URL
@@ -77,7 +77,7 @@ The following table describes the error codes specific to this API.
 
 
 ## Commissioning Tool
-Use the [RESTful API online commissioning tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/account_import) to commission this API.
+Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_import)  to commission this API.
 
 ## References
 

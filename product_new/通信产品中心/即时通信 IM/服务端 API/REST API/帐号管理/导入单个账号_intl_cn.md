@@ -1,7 +1,7 @@
 ## 功能说明
 本接口用于将 App 自有帐号导入即时通信 IM 帐号系统，为该帐号创建一个对应的内部 ID，使该帐号能够使用即时通信 IM 服务。
 
->同一个帐号重复导入仅会创建1个内部 ID。
+>!同一个帐号重复导入仅会创建1个内部 ID。
 
 ## 接口调用说明
 ### 请求 URL 示例
@@ -77,7 +77,7 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 
 
 ## 接口调试工具
-通过 [REST API 在线调试](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/account_import) 工具调试本接口。
+通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_import) 工具调试本接口。
 
 ## 参考
 

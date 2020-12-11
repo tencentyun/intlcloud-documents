@@ -14,7 +14,7 @@
 
 即时通信 IM 内置上述群组类型，详情介绍请参见 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->因为场景实现的差异，AVChatRoom（直播群）只能获取300人以内的群成员资料，群人数达到300后加入的群成员的成员资料无法被获取。
+>?因为场景实现的差异，AVChatRoom（直播群）只能获取300人以内的群成员资料，群人数达到300后加入的群成员的成员资料无法被获取。
 
 ### 请求 URL 示例
 ```
@@ -360,7 +360,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/get_group_member_info?sdkappid
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/get_group_member_info  ) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_member_info  ) 调试本接口。
 
 ## 参考
 修改群成员资料（[v4/group_open_http_svc/modify_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34900)）。

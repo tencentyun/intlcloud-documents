@@ -259,7 +259,7 @@ The following table describes the error codes specific to this API.
 
 ## Commissioning Tool
 
-Use the [RESTful API online commissioning tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/get_group_info) to commission this API.
+Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_info) to commission this API.
 
 ## References
 
