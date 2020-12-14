@@ -12,8 +12,8 @@ TencentDB for TcaplusDB supports Protocol Buffers data types.
 | uint64       | uint64     | long       | int/long    | uint64   | bignum                        | ulong      | integer/<br>string | Int64     | Uses variable-length encoding.                                           |
 | sint32       | int32      | int        | int         | int32    | fixnum/<br>bignum<br>(as required)| int        | integer        | int       | Uses variable-length encoding.                                           |
 | sint64       | int64      | long       | int/long    | int64    | bignum                        | long       | integer/<br>string | Int64     | Uses variable-length encoding.<br>Signed int value. These more efficiently encode negative numbers than regular int32s. |
-| fixed32      | uint32     | int        | int/long    | uint32   | fixnum/<br>bignum<br>(as required)| uint       | integer        | int       | Always four bytes.<br>More efficient than uint32 if values are often greater than 2^28.     |
-| fixed64      | uint64     | long       | int/long    | uint64   | bignum                        | ulong      | integer/<br>string | Int64     | Always eight bytes.<br>More efficient than uint64 if values are often greater than 2^56.      |
+| fixed32      | uint32     | int        | int/long    | uint32   | fixnum/<br>bignum<br>(as required)| uint       | integer        | int       | Always four bytes.<br>More efficient than uint32 if values are generally greater than 2^28.     |
+| fixed64      | uint64     | long       | int/long    | uint64   | bignum                        | ulong      | integer/<br>string | Int64     | Always eight bytes.<br>More efficient than uint64 if values are generally greater than 2^56.      |
 | sfixed32     | int32      | int        | int         | int32    | fixnum/<br>bignum<br>(as required)| int        | integer        | int       | Always four bytes.                                             |
 | sfixed64     | int64      | long       | int/long    | int64    | bignum                        | long       | integer/<br>string | Int64     | Always eight bytes.                                             |
 | bool         | bool       | boolean    | bool        | bool     | trueClass/<br>falseClass          | bool       | boolean        | bool      |           -             |
@@ -33,8 +33,8 @@ TencentDB for TcaplusDB supports Protocol Buffers data types.
 | uint64       | uint64     | long       | int/long                                 | \*uint64  | Uses variable-length encoding.                                           |
 | sint32       | int32      | int        | int                                      | \*int32   | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s. |
 | sint64       | int64      | long       | int/long                                 | \*int64   | Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s. |
-| fixed32      | uint32     | int        | int/long                                 | \*uint32  | Always four bytes. More efficient than uint32 if values are often greater than 2^28.      |
-| fixed64      | uint64     | long       | int/long                                 | \*uint64  | Always eight bytes. More efficient than uint64 if values are often greater than 2^56.      |
+| fixed32      | uint32     | int        | int/long                                 | \*uint32  | Always four bytes. More efficient than uint32 if values are generally greater than 2^28.      |
+| fixed64      | uint64     | long       | int/long                                 | \*uint64  | Always eight bytes. More efficient than uint64 if values are generally greater than 2^56.      |
 | sfixed32     | int32      | int        | int                                      | \*int32   | Always four bytes.                                             |
 | sfixed64     | int64      | long       | int/long                                 | \*int64   | Always eight bytes.                                             |
 | bool         | bool       | boolean    | bool                                     | \*bool    |   -                        |
