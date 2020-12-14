@@ -22,23 +22,23 @@ Tencent Cloud CDN은 원본 요청 헤더 추가 기능을 제공합니다.
 ### 설정 설명
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 후, 메뉴에서 [Domain Management]를 선택하고, 도메인 이름 우측의 [Manage]를 클릭하면 [Origin Configuration]의 원본 가져오기 Request Header 설정을 볼 수 있습니다(초기에는 비활성화 상태입니다).
-![](https://main.qcloudimg.com/raw/253c67e926455bd17f2cda79fa46d2ba.png)
+![](https://main.qcloudimg.com/raw/c41a39a9a851fbe3778ca325edc2e3f8.png)
 비활성화 상태에서 원본 헤더 규칙 가져오기를 새로 추가할 수 있습니다.
-![](https://main.qcloudimg.com/raw/895adcd7cebdb0d75bbde1c22244a2a5.png)
+![](https://main.qcloudimg.com/raw/e2972a9d697e45b3f081b68ea5e6badb.png)
 
 > !
 > 1. 실제 클라이언트의 IP를 전달하는 데 사용되는 헤더는 X-Forward-For이며, 기본값은 $client_ip 변수이고, 변경할 수 없습니다.
 > 2. 실제 클라이언트의 포트를 전달하는 데 사용되는 헤더는 X-Forward-Port이며, 기본값은 $remote_port 변수이고, 변경할 수 없습니다.
 
 규칙 추가 완료 후 전체 설정은 여전히 비활성 상태이므로 적용되지 않습니다.
-![](https://main.qcloudimg.com/raw/6d66d2ae51509aa787409ad4d0f301e1.png)
+![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
 [우선순위 변경] 버튼을 눌러 규칙의 순서를 변경할 수 있습니다. 모든 네트워크 CDN 노드에 적용해야 할 경우, 상단의 설정 버튼을 클릭하십시오.
-![](https://main.qcloudimg.com/raw/f984682c540bdd219c85a3dd3e51d7ca.png)
+![](https://main.qcloudimg.com/raw/10c8061c2e98c8828e3b153c028db86e.png)
 
 ## 설정 예시
 
 가속 도메인 이름이 `cloud.tencent.com`인 원본 서버의 설정은 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/18b181e351aaf4a176ebcb9656921986.png)
+![](https://main.qcloudimg.com/raw/397759f6f138183d3f1ba60b33c7effc.png)
 액세스한 리소스가 `http://cloud.tencent.com/test/test.mp4`인 경우
 1. `*` 규칙에 도달하는 경우, `X-Forward-For:$client_ip` 헤더를 추가해 원본 가져오기 시 $client_ip를 실제 클라이언트 IP로 교체합니다.
 2. `.mp4` 유형의 파일 및 `/test` 경로에 도달하는 경우, bottom의 우선순위가 top보다 높으므로 `x-cdn:Tencent` 헤더를 추가합니다.
