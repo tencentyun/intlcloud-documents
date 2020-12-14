@@ -96,7 +96,8 @@ For example, user1 and user2 had a chat, and we want to query the chat history g
 In the response, `"Complete": 0` indicates that not all messages generated within the time range have been pulled. Therefore, continued pulling is required.
 **In the subsequent pulling request, the value of MaxTime must be changed to the value of the LastMsgTime field in the response, and the LastMsgKey field in the response must be specified**, as shown below:
 
-##### Sample continued pulling request<span id="example"></span>
+<span id="example"></span>
+##### Sample continued pulling request
 ```
 {
     "From_Account":"user2",
