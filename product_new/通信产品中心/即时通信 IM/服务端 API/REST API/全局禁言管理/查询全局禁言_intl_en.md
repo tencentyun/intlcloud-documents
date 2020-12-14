@@ -57,7 +57,6 @@ The maximum invocation frequency is 200 times per second.
 ```
 
 ### Response packet fields
-> If the queried user does not exist, permanent muting will be returned through this RESTful API.
 
 | Field | Type | Description |
 |---------|---------|---------|
@@ -80,7 +79,7 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [RESTful online commissioning tool for APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openconfigsvr/getnospeaking) to commission this API.
+Use the [RESTful online commissioning tool for APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/getnospeaking) to commission this API.
 
 ## References
 Enabling global muting ([v4/openconfigsvr/setnospeaking](https://intl.cloud.tencent.com/document/product/1047/34923))
