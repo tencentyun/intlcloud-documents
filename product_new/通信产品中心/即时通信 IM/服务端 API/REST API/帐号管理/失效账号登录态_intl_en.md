@@ -2,7 +2,7 @@
 This API is used to invalidate the login state (for example, UserSig) of an app account.
 For example, when a developer finds a malicious account, the developer can call this API to invalidate the user’s login state. When the user uses the original UserSig state to log in to IM, the login fails.
 
-> After a user’s login state is invalidated using this API, the user can use a newly generated UserSig state to log in to IM. This API can invalidate only one account at a time.
+>!After a user’s login state is invalidated using this API, the user can use a newly generated UserSig state to log in to IM. This API can invalidate only one account at a time.
 
 ## Call Description
 ### Example request URL
@@ -67,7 +67,7 @@ The following table describes the error codes specific to this API.
 | 70500 | An internal server error has occurred. Please try again later. |
 
 ## Debugging Tool
-Use the [RESTful API online debugging tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/kick) to debug this API.
+Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/kick) to debug this API.
 
 ## References
 
