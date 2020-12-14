@@ -57,7 +57,6 @@ https://console.tim.qq.com/v4/openconfigsvr/getnospeaking?sdkappid=88888888&iden
 ```
 
 ### 应答包字段说明
->如果被查询的用户不存在，通过该 REST API 获取的结果信息将会是永久禁言。
 
 | 字段 | 类型  |说明 |
 |---------|---------|---------|
@@ -80,7 +79,7 @@ https://console.tim.qq.com/v4/openconfigsvr/getnospeaking?sdkappid=88888888&iden
 
 ## 接口调试工具
 
-通过 [REST API在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openconfigsvr/getnospeaking) 调试本接口。
+通过 [REST API在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/getnospeaking) 调试本接口。
 
 ## 参考
 设置全局禁言（[v4/openconfigsvr/setnospeaking](https://intl.cloud.tencent.com/document/product/1047/34923)）
