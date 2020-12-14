@@ -12,10 +12,6 @@ These bandwidth packages are available to different Tencent Cloud accounts as fo
 <th>Account Type</th><th>Available Bandwidth Package</th>
 </tr>
 <tr>
-<td rowspan="2">Bill-by-CVM account</td><td>Device bandwidth package</td>
-</tr>
-<tr>
-<td>IP bandwidth package</td>
 </tr>
 <tr>
 <td>Bill-by-IP account</td><td>IP bandwidth package</td>
