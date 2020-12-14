@@ -66,7 +66,7 @@ new_tpns_svc_ext  "AccessID" "AccessKey" "xxx.xcodeproj"
 new_tpns_svc_ext "1600013400" "IWRNAHX6XXK6" "/Users/yanbiaomu/Developer/tencent/demo2/SDKToolObjcDemo2/SDKToolObjcDemo2.xcodeproj"
 ```
 >?How to get parameters 1 and 2: go to **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Product Management**, **select the product for which to configure the push capabilities**, click **Configuration Management**, and copy and paste `AccessID` and `AccessKey` to parameters 1 and 2 of the `new_tpns_svc_ext` command line.  
-![](https://main.qcloudimg.com/raw/f2d19a1e226a8e09d474b0060097ea92.png)  
+
 
 4. Run the `new_tpns_svc_ext` command to verify the result.    
 After running the `new_tpns_svc_ext` command in the terminal, if the following result is output, it means that the notification extension is successfully integrated.  
@@ -120,8 +120,7 @@ brew update && brew reinstall new_tpns_svc_ext
         self.contentHandler(self.bestAttemptContent);
     }];
 }
-	```
-	
+```
 	
 ## Integration Verification
 
@@ -129,13 +128,13 @@ After you complete the integration as instructed above, you can verify whether t
 
 #### Arrival statistics
 Close the application and push a notification message to the phone. Without clicking the message, check in the console whether it arrives. If there is arrival data, the integration is successful.
-![](https://main.qcloudimg.com/raw/cd46e9a775297504ebdab7894edd478c.png)
+
 
 #### Pushing rich media message
 Close the application, push a rich media message with an image, and check whether the image is displayed when the message arrives on the phone. If it is not displayed, you can troubleshoot as follows:
 1. Select **Service Target**, make sure that the target's system version is lower than that of the device, and click the **Run** icon.
-![](https://main.qcloudimg.com/raw/1552db45877985ac4bd77e999e01bf8b.png)
+
 2. Select the primary target to mount.
-![](https://main.qcloudimg.com/raw/fa75c25c94a9504564f0ea071c7b9a3d.png)
+
 3. Select the notification extension class, add the related print log, and check the print result. If an attachment (rich media push) is returned normally and `error` is `nil`, the push is successful.
-![](https://main.qcloudimg.com/raw/0c112c909acff11af75b317a0f97fb77.png)
+
