@@ -10,7 +10,7 @@ A cloud disk snapshot is a block-level clone or backup. In general, the snapshot
 
 
 ### What are the differences between snapshots and images?
-If no data disk is mounted to an instance and all data are written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data are damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
+If no data disk is mounted to an instance and all data is written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data is damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
 
 <table>
 		<tr>
@@ -44,10 +44,10 @@ If no data disk is mounted to an instance and all data are written on the system
 
 
 ### Why can’t some of the snapshot be used to create images?
-You can create snapshots for both system disks and data disks. However, only the snapshot of a system disk can be used to create a custom image. 
+You can create snapshots for both system disks and data disks. However, only the snapshot of a system disk can be used to create a custom image.
 
 ### Why can’t I delete the snapshot?
-To delete a snapshot, please make sure that the snapshot you want to delete is not associated with any image. To query associated snapshots of an image, go to the [image] (https://console.cloud.tencent.com/cvm/image) page and click the ID/Name of the image.
+To delete a snapshot, please make sure that the snapshot you want to delete is not associated with any image. To query associated snapshots of an image, go to the [image](https://console.cloud.tencent.com/cvm/image) page and click the ID/Name of the image.
 
 ### How are snapshots created from an image billed?
 Images use the CBS snapshot service for data storage. The associated snapshots of a custom image will be billed by the storage size. To view the size of your snapshots, please go to [Snapshot Overview](https://console.cloud.tencent.com/cvm/snapshot/overview).
@@ -58,7 +58,7 @@ The owner of shared images is charged the snapshot fee, while the recipient acco
 
 
 ### What is a scheduled snapshot?
-A scheduled snapshot is automatically created for the cloud disk according to the associated scheduled snapshot policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk.
+A scheduled snapshot is automatically created for the cloud disk according to the associated scheduled snapshot policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
 
 
 ### What limits do scheduled snapshots have?
@@ -67,7 +67,7 @@ A maximum of 30 scheduled snapshot policies can be created in one region. Each s
 ### How are snapshots created?
 You can create a snapshot using the following methods:
 - Custom snapshot: you can manually create a snapshot to quickly save data of the cloud disk at a specified point in time. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
-- Scheduled snapshot: you can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots. For more information, see [Scheduled Snapshot](https://intl.cloud.tencent.com/document/product/362/35238).
+- Scheduled snapshot: you can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots.
 
 ### Is snapshot available in all availability zones?
 Yes.
@@ -75,7 +75,7 @@ Yes.
 ## How are snapshots billed?
 Snapshots are billed according to your total snapshot storage size in each region in a **pay-as-you-go** manner; and the fee is calculated and deducted on the dot of every hour. For more information about billing, see [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415) and [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
 
-### Do I need to unmount the disk or interrupt all reads and writes before creating snapshots?
+### Do I need to unmount a disk or interrupt all reads and writes before creating a snapshot?
 No. You can create a real-time snapshot while the disk is connected and in use, without affecting the normal operation of your business. However, the snapshot can only capture the written data but not cached data of the cloud disk. To ensure all application data is captured, we recommend that you suspend all disk I/O operations before creating a snapshot. For a cloud disk that is used as a system disk, we recommend that you shut down the CVM to create a more complete snapshot.
 
 ### Will creating a snapshot affect the disk performance?
@@ -85,10 +85,10 @@ Creating a snapshot will occupy a small amount of the cloud disk I/O. We recomme
 The time it takes to create a snapshot is influenced by factors such as the number of disk writes and the underlying read-write operations. Creating a snapshot will not affect your disk use.
 
 ### How do I create a cloud disk using a snapshot?
-For more information, see [Creating Cloud Disks using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
+For more information, see [Creating Cloud Disks Using Snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
 
 ### How do I roll back snapshots?
-For more information, see [Rolling Back to Snapshots](https://intl.cloud.tencent.com/document/product/362/5756).
+For more information, see [Rolling Back Snapshots](https://intl.cloud.tencent.com/document/product/362/5756).
 
 ### Do I need to shut down the CVM to roll back to a snapshot?
 - For a cloud disk that has been mounted to a CVM, you have to shut down the CVM to roll back to a snapshot.
@@ -104,8 +104,15 @@ No. It can only be deleted after the replication is complete.
 The snapshot created via cross-region replication is no longer associated with the source disk of the source snapshot. The rollback feature is unavailable for replicated snapshot.
 
 ### Will associated snapshots be deleted when the CVM is terminated?
-No, the associated snapshots will not be deleted automatically. You can delete them via the Console or APIs. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+No, the associated snapshots will not be deleted automatically. You can delete them via the console or an API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 
-### How do I delete snapshots?
-- For cloud disk snapshots, you can delete them directly via the Console or APIs. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+### How do I delete a snapshot?
+- For cloud disk snapshots, you can delete them directly via the console or an API. For more information, see [Deleting Snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
 - For snapshots associated with custom images, you must first delete the custom images and then [delete the snapshots](https://intl.cloud.tencent.com/document/product/362/5758).
+
+### Can I use a snapshot created from the system disk to create a cloud disk?
+No. You can only use the snapshot of the system disk to create a custom image.
+
+### Does the snapshot support the cross-region replication feature?
+Yes. You can use this feature to easily migrate data and services to other regions, or construct your cross-region disaster recovery system. For more information, see [Cross-region Snapshot Replicating](https://intl.cloud.tencent.com/document/product/362/31623).
+

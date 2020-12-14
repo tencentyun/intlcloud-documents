@@ -1,19 +1,17 @@
 ## Regions
-A region is the physical geographic location of the data center. Different regions of Tencent Cloud are completely isolated, ensuring maximum stability and fault tolerance between different regions. To reduce access latency and increase the download speed, we recommend that you select the region that is closest to your clients.
+A region is the physical location of an IDC. In Tencent Cloud, different regions are fully isolated, ensuring cross-region stability and fault tolerance. When purchasing Tencent Cloud services, we recommend selecting the region closest to your end users to minimize access latency and improve download speed.
 Regions have the following characteristics:
-- Networks between different regions are completely isolated. Cloud products in different regions **cannot communicate through the private network by default**.
-- Cloud products in different regions can access the Internet by using the [public network service](https://intl.cloud.tencent.com/document/product/213/5224). Cloud products in a VPC instance can also use Tencent Cloud’s [peering connection](https://intl.cloud.tencent.com/document/product/553) feature to communicate with each other through Tencent Cloud’s high-speed network to establish a connection that is faster and more stable than Internet access.
--[Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214?from_cn_redirect=1) currently supports intra-region traffic forwarding by default. If the feature of [binding cross-region CLBs](https://intl.cloud.tencent.com/document/product/214/12014) is enabled, the cross-region binding of CLBs and CVMs is supported.
-
-**Notes on the Shenzhen/Shanghai Finance Zone:**
-This is a compliance zone tailored to the regulatory requirements of the finance industry, which features high-level security and isolation. Currently, services include CVM, CBS, finance databases, Redis storage, and facial recognition are available. Verified clients in the finance industry can apply to use this zone by submitting tickets. 
+- The networks of different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
+- Tencent Cloud services in different regions can access the Internet through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224), while those in a VPC can use [peering connection](https://intl.cloud.tencent.com/document/product/553) to communicate with each other via Tencent Cloud’s high-speed network, which is faster and steadier.
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) is enabled, a CLB instance can be bound to CVM instances in another region.
 
 ## Availability Zones
-Availability zones refer to Tencent Cloud’s physical data centers that are in the same region and have independent power and network resources. They are designed to ensure that failures within one availability zone can be isolated (except in the case of large-scale disasters or major power failures) without affecting other zones to ensure users' business stability. By starting an instance in an independent availability zone, users can protect their applications from being affected by failures that occur in a single location.
+An availability zone is a physical IDC of Tencent Cloud with independent power supply and network resource in a single region. It can ensure business stability, as failures (except for large-scale disaster or major power failure) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
 Availability zones have the following characteristics:
-- For cloud products under the same Tencent Cloud account, products in the same region but different availability zones and in the same [VPC](https://intl.cloud.tencent.com/document/product/215) instance can communicate with each other through the private network, and the [private network service](https://intl.cloud.tencent.com/document/product/213/5225) can be used for direct access.
-- Resources in the same region but different availability zones and under different Tencent Cloud accounts are completely isolated in the private network.
+- Tencent Cloud services under the same account in the same [VPC](https://intl.cloud.tencent.com/document/product/215) are interconnected through the private network, meaning they can communicate using [private IPs](https://intl.cloud.tencent.com/document/product/213/5225), even if they are in different availability zones.
+- Resources under different Tencent Cloud accounts are availability zone-specific, meaning they cannot communicate via a private network, even if they are in the same region.
 
+<span id="MainlandChina"></span>
 ## China
 <table class="table-striped">
 <tbody>
@@ -22,30 +20,23 @@ Availability zones have the following characteristics:
 		<th>Availability Zone</th>
 	</tr>
 	<tr>
-		<td rowspan="4">South China (Guangzhou)<br>ap-guangzhou</td>
-		<td>Guangzhou Zone 1 (sold out)<br>ap-guangzhou-1</td>
+		<td rowspan="5">South China (Guangzhou)<br>ap-guangzhou</td>
+		<td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
-		<td>Guangzhou Zone 2<br>ap-guangzhou-2</td>
+		<td>Guangzhou Zone 2 (sold out)<br>ap-guangzhou-2</td>
 	</tr>
 	<tr>
-		<td>Guangzhou Zone 3<br>ap-guangzhou-3</td>
+		<td>Guangzhou Zone 3<br> ap-guangzhou-3</td>
 	</tr>
 	<tr>
-		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
-	</tr>   
-	<tr>
-		<td rowspan="3">South China (Shenzhen Finance)<br>ap-shenzhen-fsi</td>
-		<td>Shenzhen Finance Zone 1<span style="background-color: rgb(249, 249, 249);"> (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shenzhen-fsi-1</span></td>
+		<td>Guangzhou Zone 4<br> ap-guangzhou-4</td>
 	</tr>
 	<tr>
-		<td>Shenzhen Finance Zone 2<span style="background-color: rgb(249, 249, 249);"> (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shenzhen-fsi-2</span></td>
+		<td>Guangzhou Zone 6<br> ap-guangzhou-6</td>
 	</tr>
 	<tr>
-		<td>Shenzhen Finance Zone 3 <span style="background-color: rgb(249, 249, 249);"> (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shenzhen-fsi-3</span></td>
-	</tr>
-	<tr>
-		<td rowspan="4">East China (Shanghai) <br>ap-shanghai</td>
+		<td rowspan="5">East China (Shanghai) <br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
@@ -55,27 +46,23 @@ Availability zones have the following characteristics:
 		<td>Shanghai Zone 3<br>ap-shanghai-3</td>
 	</tr>
 	<tr>
-		<td>Shanghai Zone 4 <br>ap-shanghai-4</td>
+		<td>Shanghai Zone 4<br>ap-shanghai-4</td>
+	</tr>
+ <tr>
+		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
+	</tr>
+		<tr>
+			<td rowspan="3">North China (Nanjing)<br>ap-nanjing</td>
+			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="3">East China (Shanghai Finance)<br>ap-shanghai-fsi</td>
-			<td>Shanghai Finance Zone 1 (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shanghai-fsi-1</td>
+			<td>Nanjing Zone 2<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td>Shanghai Finance Zone 2 (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shanghai-fsi-2</td>
+			<td>Nanjing Zone 3<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
-			<td>Shanghai Finance Zone 3 (for financial institutions and companies only; to activate it, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket to apply</a>)<br>ap-shanghai-fsi-3</td>
-	</tr>
-	<tr>
-		<td rowspan="2">North China (Nanjing)<br>ap-nanjing</td>
-		<td>Nanjing Zone 1<br>ap-nanjing-1</td>
-	</tr>
-	<tr>
-		<td>Nanjing Zone 2<br>ap-nanjing-2</td>
-	</tr>
-	<tr>
-			<td rowspan="4">North China (Beijing)<br>ap-beijing</td>
+			<td rowspan="5">North China (Beijing) <br>ap-beijing</td>
 			<td>Beijing Zone 1<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -85,7 +72,10 @@ Availability zones have the following characteristics:
 			<td>Beijing Zone 3<br>ap-beijing-3</td>
 	</tr>
 	<tr>
-			<td>Beijing Zone 4 <br>ap-beijing-4</td>
+			<td>Beijing Zone 4<br>ap-beijing-4</td>
+	</tr>
+	<tr>
+			<td>Beijing Zone 5<br>ap-beijing-5</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
@@ -99,70 +89,75 @@ Availability zones have the following characteristics:
 			<td>Chongqing Zone 1<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="2">Hong Kong (China), Macao (China), and Taiwan (China) (Hong Kong, China) <br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (nodes in the Hong Kong, China region cover Hong Kong (China), Macao (China), and Taiwan (China)) <br>ap-hongkong-1</td>
-</tr>
-<tr>
-			<td>Hong Kong Zone 2 (nodes in the Hong Kong, China region cover Hong Kong (China), Macao (China), and Taiwan (China)) <br>ap-hongkong-2</td>
-</tr>
+			<td rowspan="2">Hong Kong/Macao/Taiwan (Hong Kong, China) <br>ap-hongkong</td>
+			<td>Hong Kong Zone 1 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-1</td>
+	</tr>
+	<tr>
+			<td>Hong Kong Zone 2 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-2</td>
+	</tr>
 </tbody>
 </table>	
 
-## Other Countries and Regions
+<span id="InternationalArea"></span>
+## Other Countries and Regions	
 <table class="table-striped">
 	<tbody>
 	<tr>
 			<th>Region</th>
 			<th>Availability Zone</th>
 		</tr>
-<tr>
-			<td>Southeast Asia Pacific (Singapore)<br>ap-singapore</td>
-			<td>Singapore Zone 1 (nodes in the Singapore region cover Southeast Asia)<br>ap-singapore-1</td>
+		<tr>
+			<td  rowspan="2">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td>Singapore Zone 1 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-1</td>
 		</tr>
 		<tr>
-			<td >Northeast Asia Pacific (Seoul)<br>ap-seoul</td>
-			<td>Seoul Zone 1 (nodes in the Seoul region cover Northeast Asia)<br>ap-seoul-1</td>
+			<td>Singapore Zone 2 (Singapore nodes cover services in Southeast Asia)<br>ap-singapore-2</td>
 		</tr>
-			<tr>
-			<td >Northeast Asia Pacific (Tokyo)<br>ap-tokyo</td>
-			<td>Tokyo Zone 1 (nodes in the Tokyo region cover Northeast Asia)<br>ap-tokyo-1</td>
-		</tr>
-		  <tr>
-			<td  rowspan="2">South Pacific Asia (Mumbai) <br>ap-mumbai</td>
-			<td>Mumbai Zone 1 (nodes in the Mumbai region cover Southeast Asia)<br>ap-mumbai-1</td>
-		</tr>
-		 <tr>
-			<td>Mumbai Zone 2 (nodes in the Mumbai region cover South Asia Pacific) <br>ap-mumbai-2</td>
-		   </tr>
 		<tr>
-		  	<td >Southeast Asia Pacific (Bangkok)<br>ap-bangkok </td>
-				 <td>Bangkok Zone 1 (nodes in the Bangkok region cover Southeast Asia)<br>ap-bangkok-1</td>
-		<tr>   
-			<tr>
+			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
+			<td>Seoul Zone 1 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-1</td>
+		</tr>
+		<tr>
+			<td>Seoul Zone 2 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-2</td>
+		</tr>
+		<tr>
+			<td >Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td>Tokyo Zone 1 (Tokyo nodes cover services in Northeast Asia)<br>ap-tokyo-1</td>
+		</tr>
+       <tr>
+			<td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
+			<td>Mumbai Zone 1 (Mumbai nodes cover services in South Asia)<br>ap-mumbai-1</td>
+		</tr>
+       <tr>
+			<td>Mumbai Zone 2 (Mumbai nodes cover services in South Asia)<br>ap-mumbai-2</td>
+		</tr>
+		<tr>
+		  	<td >Southeast Asia (Bangkok)<br>ap-bangkok </td>
+				 <td >Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia)<br>ap-bangkok-1</td>
+		<tr>
 			<td>North America (Toronto)<br>na-toronto</td>
-			<td>Toronto Zone 1 (nodes in the Toronto region cover North America)<br>na-toronto-1</td>
+			<td>Toronto Zone 1 (Tokyo nodes cover services in North America)<br>na-toronto-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
-			<td>Silicon Valley Zone 1 (nodes in the Silicon Valley region cover Western US)<br>na-siliconvalley-1</td>
+			<td>Silicon Valley Zone 1 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-1</td>
 		</tr>
-          <tr>
-			<td>Silicon Valley Zone 2 (nodes in the Silicon Valley region cover Western US)<br>na-siliconvalley-2</td>
-		   </tr>
-		<tr>
-		<tr>
-			<td rowspan="2">East US (Virginia) <br>na-ashburn</td>
-			<td>Virginia Zone 1 (nodes in the Virginia region cover Eastern US)<br>na-ashburn-1</td>
+    <tr>
+			<td>Silicon Valley Zone 2 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
-			<td>Virginia Zone 2 (nodes in the Virginia region cover East US) <br>na-ashburn-2</td>
+			<td rowspan="2">Eastern US (Virginia) <br>na-ashburn</td>
+			<td>Virginia Zone 1 (Virginia nodes cover services in Eastern US)<br>na-ashburn-1</td>
 		</tr>
-			<tr>
-			<td>Europe (Frankfurt)<br>eu-frankfurt</td>
-			<td>Frankfurt Zone 1 (nodes in the Frankfurt region cover Europe)<br>eu-frankfurt-1</td>
+		<tr>
+			<td>Virginia Zone 2 (Virginia nodes cover services in Eastern US)<br>na-ashburn-2</td>
+		</tr>
+		<tr>
+			<td>Europe (Frankfurt) <br>eu-frankfurt</td>
+			<td>Frankfurt Zone 1 (Frankfurt nodes cover services in Europe)<br>eu-frankfurt-1</td>
 		</tr>
 		<td >Europe (Moscow)<br>eu-moscow</td>
-		<td>Moscow Zone 1 (nodes in the Moscow region cover Europe)<br>eu-moscow-1</td>
+		<td>Moscow Zone 1 (Moscow nodes cover services Europe)<br>eu-moscow-1</td>
 		</tr>
 	</tbody>
 </table>
@@ -170,10 +165,10 @@ Availability zones have the following characteristics:
 ## How to Select Regions and Availability Zones
 When selecting a region and availability zone, you need to consider the following factors:
 - The limits on where cloud disks can be mounted. A cloud disk can only be mounted to a CVM in the same availability zone.
-- The geographic location of the CVM where you need to use the cloud disk, your location, and the locations of your target users. We recommend that, when purchasing cloud services, you select the geographic location that is closest to your clients in order to reduce access latency and increase the access speed.
-- The relationship between the CVM where you need to use the cloud disk and other cloud products. We recommend that you select cloud products in the same region and availability zone so that each product can communicate with others through the private network, reducing access latency and increasing the access speed.
-- Business high availability and disaster recovery considerations. In scenarios where only one VPC instance is available, we recommend that you at least deploy businesses in different availability zones to ensure fault isolation through cross-availability-zone disaster recovery.
-- Communication between different availability zones can suffer from higher latency. This needs to be evaluated in conjunction with your actual business requirements to find the balance between high availability and low latency.
+- The region of the CVM on which the cloud disk will be used, your location, and the location of your users. We recommend that you choose the region closest to your users when purchasing the Tencent Cloud services to minimize access latency and improve access speed.
+- The relationship between the CVM on which the cloud disk will be used and other Tencent Cloud services. We recommend that, when you select other Tencent Cloud products, you try to locate them all in the same region and availability zone to allow them to communicate with each other through the private network, reducing access latency and increasing access speeds.
+- Business high availability and disaster recovery considerations. Even if you have just one VPC, we still recommend that you deploy your businesses in different availability zones to prevent a single point of failure and enable cross-AZ disaster recovery.
+- There may be higher network latency among different availability zones. We recommend that you assess your business requirements and find the optimal balance between high availability and low latency.
 
-## Related Actions
-Actions such as the use and viewing of cloud disks are zone- and region-specific. To easily migrate data and services to other regions or to build a cross-region disaster recovery system, you can copy snapshots to other regions. For more information, see [Cross-Region Snapshot Replication](https://intl.cloud.tencent.com/document/product/362/31623).
+## Relevant Operations
+Actions such as the use and viewing of cloud disks are availability zone and region-specific. To easily migrate data and services to other regions or construct a cross-region disaster recovery system, you can copy snapshots to other regions. For more information, see [Cross-region Snapshot Replicating](https://intl.cloud.tencent.com/document/product/362/31623).
