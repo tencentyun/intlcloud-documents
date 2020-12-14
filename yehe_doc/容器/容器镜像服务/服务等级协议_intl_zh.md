@@ -14,7 +14,7 @@
 
 是指腾讯云通过腾讯云平台为您（也称“客户”）提供的容器镜像等云原生制品云端托管，分发服务，包含免费的个人版服务及付费的企业版服务。
 
-#### 1.2 [腾讯云容器镜像服务企业版](https://intl.cloud.tencent.com/document/product/1051)（Tencent Container Registry Enterprise Edition，TCR EE）
+#### 1.2 腾讯云容器镜像服务企业版（Tencent Container Registry Enterprise Edition，TCR EE）
 
 
 
