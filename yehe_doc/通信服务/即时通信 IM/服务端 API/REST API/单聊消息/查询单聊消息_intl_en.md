@@ -244,7 +244,7 @@ The list below contains only error codes specific to this API:
 
 ## API Debugging Tool
 
-To debug this API, you can use the [Online RESTful API Debugging Tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/admin_getroammsg).
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/admin_getroammsg).
 
 ## References
 - Sending a one-to-one message ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
