@@ -1,7 +1,7 @@
 ## Feature Description
 This API is used to batch import app-owned accounts to IM and create an internal ID for these accounts to ensure that these accounts can use the IM service.
 
->
+>?
 - This API can import up to 100 accounts to IM at a time. If an account is imported repeatedly, only one internal ID will be created for it.
 - This API is unable to import account nickname and portrait. To set the nickname and portrait, call the [Configuring Profiles](https://intl.cloud.tencent.com/document/product/1047/34916)
 
@@ -77,7 +77,7 @@ The following table describes the error codes specific to this API.
 | 70500 | An internal server error occurred. Try again later. |
 
 ## Commissioning Tool
-Use the [RESTful API online commissioning tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/multiaccount_import) to commission this API.
+Use the [RESTful API online commissioning tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/multiaccount_import) to commission this API.
 
 ## References
 
