@@ -47,7 +47,7 @@ Pay for the fixed bandwidth (by month) before use. The unit price of monthly sub
 For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regions, you need to first pay for 10 Mbps of bandwidth.
 
 ### Billing cycle
-**Monthly subscription*: when purchasing fixed bandwidth (by month), you need to first pay for the fixed bandwidth.
+**Monthly subscription**: when purchasing fixed bandwidth (by month), you need to first pay for the fixed bandwidth.
 
 ### Billing formula
 **Total CCN costs** = Sum of the interconnection costs of all regions
