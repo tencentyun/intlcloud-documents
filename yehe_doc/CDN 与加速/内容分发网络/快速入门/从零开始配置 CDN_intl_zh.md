@@ -10,18 +10,17 @@
 未进行实名认证的用户，需要先完成实名认证，您可以通过 CDN 控制台或账户中心进行实名认证。 详细认证流程请参见 [实名认证指引](https://intl.cloud.tencent.com/document/product/378/3629) 。
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">点此进入 CDN 控制台</a></div><br>
 
-![](https://main.qcloudimg.com/raw/067256710f61a65376307c3023967043.png)
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">点此进入账号中心</a></div><br>
+![](https://main.qcloudimg.com/raw/e593cf6199d64fbcc5c6f50089778cf9.png)
 
-![](https://main.qcloudimg.com/raw/e71557f3118bf3579d551bb2ae2e2e9e.png)
+
 #### 2. 开通 CDN 服务
 完成实名认证后，即可开始开通 CDN 服务。
 （1）选择计费方式
 腾讯云内容分发网络（CDN）划分为**中国境内**和**中国境外**两个服务区域。自2020年12月7日21:30起，开通 CDN 时计费方式仅支持【按流量小时计费】。更多详细说明，请参见 [计费说明](https://intl.cloud.tencent.com/document/product/228/2949)。
-![](https://main.qcloudimg.com/raw/087a21d256d40282127396a63b67c7b4.png)
+![](https://main.qcloudimg.com/raw/5f75a3047566df1413233c2c0ac2736f.png)
 （2）开通 CDN
 勾选同意服务条款后，单击【开通 CDN】，即可成功开通并开始使用 CDN 服务。
-![](https://main.qcloudimg.com/raw/78cdaff852602a5b5f6e73e35e3c8914.png)
+![](https://main.qcloudimg.com/raw/4b1997247ae88641d1c2af0289b7ad2a.png)
 
 ## 步骤三：接入域名
 您需为您的加速业务接入加速域名。CDN 通过加速域名把源站资源缓存到 CDN 加速节点，用户可就近获取所需资源，实现资源访问加速。详情请参见 <a href="https://intl.cloud.tencent.com/document/product/228/5734" hotrep="document.guide.3149.linkdomain">接入域名</a>。
