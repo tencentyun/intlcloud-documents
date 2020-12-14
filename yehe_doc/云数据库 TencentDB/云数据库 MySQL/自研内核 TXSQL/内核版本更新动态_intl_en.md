@@ -5,7 +5,7 @@ This document describes the MySQL kernel version updates. For information on how
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supports automatic killing of idle tasks to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-- Supports Transparent Data Encryption (TDE).
+- Supports transparent data encryption (TDE).
 
 
 #### Bug fixes
@@ -17,21 +17,21 @@ This document describes the MySQL kernel version updates. For information on how
 ## MySQL 5.7
 ### 20200630
 #### New features
-- Supports `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE`.
-- Supports large transaction optimization, which can solve such issues as source-replica delay and backup failures caused by large transactions.
-- Optimizes the audit feature and supports asynchronous audit.
+- Supports using `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE` statements.
+- Supports large transaction optimization, which can solve such problems as source-replica delay and backup failures caused by large transactions.
+- Optimizes audit performance: async audit is supported.
 
 #### Bug fixes
-- Fixed the overflow in the `digest_add_token` function.
+- Fixed the overflow of the `digest_add_token` function.
 - Fixed the instance crash caused by `insert blob`.
-- Fixed the source-replica disconnection caused by a "record not found" error when HASH_SCAN was used in an event containing updates to the same row in a table.
-- Fixed the hanging queries to the `performance_schema` database.
+- Fixed the source-replica replication interruption when a hash scan failed to find the record while updating the same row.
+- Fixed the hang issue when querying `performance_schema`.
 
 ### 20200331
 #### New features
 - Added the official MySQL 5.7.22 JSON series functions.
 - Supports the [Hotspot Update](https://intl.cloud.tencent.com/document/product/1035/36037) feature for ecommerce flash sale scenarios.
-- Supports the [SQL throttling] (https://intl.cloud.tencent.com/document/product/1035/36037) feature.
+- Supports [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
 - Supports encryption with custom KMS keys.
 
 #### Bug fixes
@@ -82,7 +82,7 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the error where replication was interrupted when binlog cache file ran out of space.
 - Fixed the hard error when `fsync` returned `EIO` and retries were made repeatedly.
 - Fixed the error where replication was interrupted and could not be recovered due to GTID holes.
-   
+  
 
 ### 20180918
 #### New features
@@ -90,11 +90,11 @@ This document describes the MySQL kernel version updates. For information on how
 - Supports automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supports invisible indexes.
 - Supports memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.
-   
+  
 #### Performance optimizations
 - Optimizes binlog switch to reduce the `rotate` holdlock duration and improve system performance.
 - Increases the crash recovery speed.
-    
+  
 #### Bug fixes
 - Fixed the error where an event became invalid due to source/replica switch.
 - Fixed the crash caused by `REPLAY LOG RECORD`.
@@ -105,16 +105,16 @@ This document describes the MySQL kernel version updates. For information on how
 #### New features
 - Supports SQL auditing.
 - Supports table-level concurrent replication. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-   
+  
 #### Performance optimizations
 - Optimizes replica instance locks to improve the performance synchronization of replica instances.   
 - Optimizes the pushdown of the `select ... limit` statement.
-   
+  
 #### Bug fixes
 - Fixed the error where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
 - Fixed the crash caused by `Crash on UPDATE ON DUPLICATE KEY`.
 - Fixed the “Invalid escape character in string.” error when a JSON column was imported.
-   
+  
 ### 20171130
 #### New features
 - Supports the `information_schema.metadata_locks` view to query the MDL grant and wait status in the current instance.
@@ -127,9 +127,26 @@ This document describes the MySQL kernel version updates. For information on how
 
    
 ## MySQL 5.6
+### 20200915
+#### New features
+- Supports [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
+
+#### Performance optimizations   
+- Optimizes the initialization acceleration of buffer pool.
+
+#### Bug fixes
+- Fixed the hang issue of `rename table` on both source and replica. 
+- Fixed the crash when `event_scheduler` was set to `disable` and `cdb_skip_event_scheduler` was changed from `on` to `off`. 
+- Fixed the `sync_wait_array` assertion failure when the maximum number of links of `tencentroot` was not counted in `srv_max_n_threads`. 
+- Fixed the crash of source-replica parallel replication caused by the system table structure inconsistency between TencentDB for MySQL v5.6 and other cloud vendors’ MySQL v5.6. 
+- Fixed the `INSERT ON DUPLICATE KEY UPDATE THE WRONG ROW` error. 
+- Fixed the error of `index_mapping`. 
+- Fixed the MTR failure. 
+- Fixed the source-replica replication interruption when a hash scan failed to find the record while updating the same row. 
+
 ### 20190930
 #### New features
-- Supports querying the "user thread memory usage" by executing the `show full processlist` statement.
+- Supports querying the "user thread memory usage" by executing the `show full processlist` statement.  
 
 #### Bug fixes
 - Fixed GTID holes caused by the replication filter of the replica.
@@ -145,17 +162,17 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the error where dirty data might be read in RC mode.
 - Fixed the error where replica instance replay might fail due to the deletion of temp table.
 - Fixed the error of deadlock under high concurrency.
-   
+  
 
 ### 20190203
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Supports users without super privileges to kill sessions of other users by configuring the `cdb_kill_user_extra` parameter (default value: `root@%`).
 - Supports creating and deleting temp tables and CTS syntax in transactions when GTID is enabled. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-   
+  
 #### Performance optimizations   
 - Optimizes the replication and replay of partitioned tables to improve efficiency.
-   
+  
 #### Bug fixes
 - Fixed the error of data inconsistency between source and replica due to insufficient temporary space.
 - Fixed the error of suspended hot record updates.
@@ -165,7 +182,7 @@ This document describes the MySQL kernel version updates. For information on how
 #### New features
 - Supports automatically changing the storage engine from MEMORY to InnoDB: if the global variable `cdb_convert_memory_to_innodb` is `ON`, the engine will be changed from MEMORY to InnoDB when a table is created or modified.
 - Supports automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-   
+  
 #### Bug fixes
 - Fixed the crash caused by `REPLAY LOG RECORD`.
 - Fixed the error of time data inconsistency between source and replica due to decimal precision issues.
@@ -178,10 +195,10 @@ This document describes the MySQL kernel version updates. For information on how
 
 #### Performance optimizations
 - Reduces performance fluctuation caused by `drop table`.
-   
+  
 #### Bug fixes
 - Fixed the error where the database crashed due to authentication password strings.
-   
+  
 ### 20180122
 #### New features
 - Supports SQL auditing.
@@ -196,7 +213,7 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the error where binlog speed limit became invalid in async mode.
 - Fixed the error where the `buffer_pool` status had an exception.
 - Fixed the error where `SEQUENCE` and implicit primary key conflicted.
-   
+  
 ### 20170228
 #### Bug fixes
 - Fixed the character encoding bug in `drop table`.
