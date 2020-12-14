@@ -10,20 +10,16 @@ If you already have a Tencent Cloud account, you can ignore this step.
 Registered users must first complete identity verification. You can verify your identity in the CDN Console or Account Center. For more information on the verification process, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">Click here to log in to the CDN Console</a></div><br>
 
-![](https://main.qcloudimg.com/raw/067256710f61a65376307c3023967043.png)
-<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">Click here to enter the Account Center</a></div><br>
-
-![](https://main.qcloudimg.com/raw/24bc11aadb6e94a45cc65096bd116b44.png)
+![](https://main.qcloudimg.com/raw/e593cf6199d64fbcc5c6f50089778cf9.png)
 #### 2. Activate the CDN service
 After completing identity verification, you can activate the CDN service.
 (1). Click **Activate Now**.
-![](https://main.qcloudimg.com/raw/d0b7e645f12416b3721bdfc9493ddfb4.png)
 (2). Select the billing mode.
 CDN has two service regions, namely, **Mainland China** and **outside Mainland China**. It provides two billing modes in both regions: bill-by-traffic and bill-by-bandwidth. You can select an appropriate one according to your business conditions. For more information, please see [Billing Description](https://intl.cloud.tencent.com/document/product/228/2949).
-![](https://main.qcloudimg.com/raw/686afd64ec5beeecb34d21c487519233.png)
+![](https://main.qcloudimg.com/raw/5f75a3047566df1413233c2c0ac2736f.png)
 (3). Activate CDN.
 Indicate your consent to the Terms of Service and click **Activate CDN** to activate CDN and start using the acceleration service.
-![](https://main.qcloudimg.com/raw/a6f1364ec9b23a4d85257c4da8be2133.png)
+![](https://main.qcloudimg.com/raw/4b1997247ae88641d1c2af0289b7ad2a.png)
 
 ## Step 3. Connect a domain name
 You need to connection an acceleration domain name for your acceleration service. Through this domain name, CDN caches resources on your origin server into a CDN cache node closest to the client to accelerate resource access. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/228/5734" hotrep="document.guide.3149.linkdomain">Connecting Domain Name</a>.
