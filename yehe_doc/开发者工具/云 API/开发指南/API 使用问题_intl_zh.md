@@ -1,7 +1,8 @@
 ### 如何处理 C++ 运行单个签名文件报错？
 在命令行运行 `g++ -o main sign.cpp` 命令时出现错误。如下图所示：
-![](https://main.qcloudimg.com/raw/499379efd848870eb0e0b3fb97171968.png) 
+![](https://main.qcloudimg.com/raw/47b54bd02a875e4e8ce44805ff89b887.png) 
 执行以下命令，即可解决该问题。
+
 ```bash
 g++ -o main sign.cpp -lssl -lcrypto
 ```
