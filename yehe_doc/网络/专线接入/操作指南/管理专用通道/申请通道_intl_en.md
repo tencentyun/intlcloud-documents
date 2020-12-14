@@ -1,150 +1,157 @@
-Dedicated tunnels are network link segmentation of a connection. You can create dedicated tunnels that connect to different Direct Connect gateways to enable communication between your on-premises IDC and multiple VPCs. This document describes how to apply for a dedicated tunnel.
-
+Dedicated tunnels are network link segmentation of a connection. You can create dedicated tunnels that connect to different direct connect gateways to enable communication between your on-premises IDC and multiple VPCs. After a dedicated tunnel is created, its event alarms will be automatically configured, helping you monitor and manage your dedicated tunnels. This document describes how to apply for a dedicated tunnel.
 <span id ="background"></span>
 
-## Background
+> ?The shared connection feature of new dedicated tunnels has stopped accepting new applications at 00:00:00 on August 1, 2020. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after 00:00:00 on August 1, 2020.
 
-The shared connection feature of new dedicated tunnels has stopped accepting new applications at 00:00, August 1, 2020. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after 00:00, August 1, 2020.
-
-## Use Limits on Large IP Range
-
-To ensure the fine-grained scheduling capability of your network, do not publish the following routes:
-9.0.0.0/8, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16,  100.64.0.0/10, 131.87.0.0/16, 172.16.0.0/12, 192.168.0.0/16.
->!If a large IP range route is published, the direct connect gateway will directly reject it.
-
- You can split the above routes as follows for distribution:
-- 9.0.0.0/8
-should be split into `9.0.0.0/9` + `9.128.0.0/9`.
-- 10.0.0.0/8            
-should be split into `10.0.0.0/9` + `10.128.0.0/9`.
-- 172.16.0.0/12      
-should be split into `172.16.0.0/13` + `172.24.0.0/13`.
-- 192.168.0.0/16    
-should be split into `192.168.0.0/17` + `192.168.128.0/17`.
-- 100.64.0.0/10      
-should be split into `100.64.0.0/11` + `100.96.0.0/11`.
-- 131.87.0.0/16      
-should be split into `131.87.0.0/17` + `131.87.128.0/17`.
-- 172.16.0.0/12      
-should be split into `172.16.0.0/13` + `172.24.0.0/13`.
-- 192.168.0.0/16      
-should be split into `192.168.0.0/17` + `192.168.128.0/17`.
+## Prerequisites
+- You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+- You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
 ## Directions
 
-1. Log in to the [Direct Connect - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn) Console.
-2. Click **+Create** at the top of the "Dedicated Tunnel" page and configure the following information.
-3. Configure the basic items, such as name, connection type, access network, region, and associated Direct Connect gateway.
-
+1. Log in to the [Direct Connect - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn) console.
+2. Click **+New** at the top of the **Dedicated Tunnels** page, complete the basic configurations such as name, connection type, access network, region and associated direct connect gateway, and click **Next**.
+   ![](https://main.qcloudimg.com/raw/67c962ab4e77b701bff86039784bf447.png)
+    <table>
+    <tr>
+    <th width="15%">Field</th>
+    <th width="85%">Description</th>
+    </tr>
+    <tr>
+    <td>Name</td>
+    <td>Enter a name for your dedicated tunnel.</td>
+    </tr>
+     <tr>
+    <td>Connection</td>
+    <td>Select a connection you have applied for.</td>
+    </tr>
+     <tr>
+    <td>Access Network</td>
+    <td>Select from CCN, VPC and BM Network.</td>
+    </tr>
+     <tr>
+    <td>Gateway region</td>
+    <td>Select the region of the VPC or BM network or the region where the CCN-based direct connect gateway resides.</td>
+    </tr>
+     <tr>
+    <td>Virtual Private Cloud</td>
+    <td>Select the VPC or BM network instance to be connected to by the dedicated tunnel.</td>
+    </tr>
+     <tr>
+    <td>Direct Connect Gateway</td>
+    <td>Associate an existing direct connect gateway with the dedicated tunnel.</td>
+    </tr>
+    </table>
+3. Configure the following parameters on the **Advanced Configuration** page.
+![](https://main.qcloudimg.com/raw/c9efd62743f5a8dc70b4e4ef70b663d3.png)
 <table>
-	<thead>
-	<tr>
-	<th>Parameter</th>
-	<th>Description</th>
-	<th>Remarks</th>
-	</tr>
-	</thead>
-	<tr>
-	<td align="center" style="white-space:nowrap">Dedicated tunnel name</td>
-	<td>Enter your dedicated tunnel name.</td>
-	<td>-</td>
-	</tr>
-	<tr>
-	<td align="center" style='white-space:nowrap'>Access network</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/215">VPC</a>, BM VPC, and <a href="https://intl.cloud.tencent.com/document/product/1003">CCN</a> are supported.</td>
-	<td>CCN: it enables connection to multiple VPCs through one tunnel.</td>
-	</tr>
-	<tr>
-	<td>VPC/BM VPC</td>
-	<td>Select the ID of the network instance to be connected to by the dedicated tunnel.</td>
-	<td>BM VPC currently supports only Standard Direct Connect gateways.</td>
-	</tr>
-	<tr>
-	<td align="center" style='white-space:nowrap'>Gateway region</td>
-	<td>If **CCN** is selected as the access network, this parameter means the CCN-based Direct Connect gateway region, which is the same as the public cloud region where the connection access point is located. </td>
-	<td>For the shared connection mode, you need to get the connection access point region information from the connection owner.</td>
-	</tr>
-	<tr>
-	<td align="center" style='white-space:nowrap'>Direct Connect gateway</td>
-	<td>The VPC-based Direct Connect gateway region is the same as the VPC region, while the CCN-based Direct Connect gateway region is the same as the public cloud region where the connection access point is located.</td>
-	<td>CCN-based Direct Connect gateways currently don't support the NAT feature.</td>
-	</tr>
-	</table>
-
-
-4. Configure the following parameters on the "Advanced Configuration" page.
-
-
- <table>
- <thead>
- <tr>
- <th>Parameter</th>
- <th>Description</th>
- <th>Remarks</th>
- </tr>
- </thead>
- <tr>
- <td align="center" style='white-space:nowrap'>VLAN ID</td>
- <td>If VLAN ID is 0, it means that this connection does not enable subinterfaces; therefore, only one tunnel can be created.</td>
- <td>MSTP connection passthrough to multiple VLANs requires the ISP's line to enable the Trunk mode.</td>
- </tr>
- <tr>
- <td align="center" style='white-space:nowrap'>Bandwidth</td>
- <td>Bandwidth is the maximum rate, which can be changed later in "Tunnel Change". With postpaid monthly 95th percentile billing mode, the "bandwidth" parameter does not represent the billable bandwidth.</td>
- <td>-</td>
- </tr>
- <tr>
- <td align="center" style='white-space:nowrap'>IP</td>
- <td>This IP can be customized by you or provided randomly by Tencent Cloud. You can get the randomly assigned IP address in tunnel details after your application is submitted. <ul><li>"Tencent Cloud perimeter IP" is the perimeter IP at the Tencent Cloud side of the connection. </li><li>"User perimeter IP" is the IP at the user (or ISP) side of the connection, which you must configure on your own.</li></ul></td>
- <td>If you choose to publish the IP to the Direct Connect gateway, please plan IP segmentation well to avoid IP conflicts.</td>
- </tr>
- <tr>
- <td align="center" style='white-space:nowrap'>Routing method</td>
- <td>BGP routing and static routing are supported.</td>
- <td>Tencent Cloud ASN: 45090.</td>
- </tr>
- <tr>
- <td align="center" style='white-space:nowrap'>BGP ASN</td>
- <td>For **BGP routing**, this parameter is optional. Enter the BGP neighbor AS number at the CPE side. If it is left empty, the number will be assigned by the system randomly.</td>
- <td>-</td>
- </tr>
- <tr>
- <td align="center" style='white-space:nowrap'>BGP key</td>
- <td>For **BGP routing**, this parameter is optional. Enter the MD5 value of the BGP neighbor, which is "tencent" by default. If it is left empty, it means that no BGP key is required. It cannot contain ?, &, space, ", \, and +.</td>
- <td>-</td>
- </tr>
- </table>
-
-5. Configure IDC devices.
-    You can download the CPE configuration guide, which provides the configuration methods for several common vendors.
-
-<table>
-<thead><tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Remarks</th>
-</tr></thead>
 <tr>
-<td align="center" style='white-space:nowrap'>User IDC IP range</td>
-<td>For **static routing**, enter your CPE IP range, which should not conflict with the VPC IP range if not in NAT mode.</td>
-<td>Change is supported: you can update the IP range in "Tunnel Change" in the console subsequently.</td>
+ <th width="15%">Field</th>
+<th width="85%">Description</th>
+</tr>
+<tr>
+<td>VLAN ID</td>
+<td>A VLAN represents a tunnel. Enter a value in the range of 0-3000. Entering “0” means one dedicated tunnel can be created. MSTP connection passthrough to multiple VLANs requires the carrier's line to enable the Trunk mode.</td>
+</tr>
+<tr>
+<td>Bandwidth</td>
+<td>Bandwidth is the bandwidth cap, which can be changed later in "Change Tunnel". If the billing mode is pay-as-you-go by monthly 95th percentile, this parameter does not mean the billable bandwidth.</td>
+</tr>
+<tr>
+<td>Tencent Cloud Primary Edge IP</td>
+<td>Enter the connection primary IP address on the Tencent Cloud side.</td>
+</tr>
+<tr>
+<td>Tencent Cloud Backup Edge IP</td>
+<td>Enter the connection secondary IP address on the Tencent Cloud side.</td>
+</tr>
+<tr>
+<td>CPE Peer IP</td>
+<td>Configure the connection IP on the user (or carrier) side.</td>
+</tr>
+</tr>
+<tr>
+<td>Routing Mode</td>
+<td>Select <b>BGP</b> or <b>Static</b>.<br><ul><li>BGP: applies to the exchange of routing information and network accessibility across autonomous systems (AS).</li><li>Static: applies to a simper network environment.</li></ul></td>
+</tr>
+</tr>
+<tr>
+<td>BGP ASN</td>
+<td>Enter the BGP neighbor AS number on the CPE side. Note that 45090 is Tencent Cloud ASN. If this field is left empty, a random ASN will be assigned.</td>
+</tr>
+</tr>
+<tr>
+<td>BGP Key</td>
+<td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It cannot contain special characters such as ?, &, space, ", \, and +.</td>
+</tr>
+</tr>
+<tr>
+<td>CPE IP Range</td>
+<td>Enter the IP ranges of your IDC, with one IP range per line.</td>
 </tr>
 </table>
 
+
+
+> ?When configuring a IP range route, do not directly publish the following routes: `9.0.0.0/8`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16`. Instead, you need to first split them.
+>
+> - `9.0.0.0/8` should be split into `9.0.0.0/9` + `9.128.0.0/9`.
+> - `10.0.0.0/8` should be split into `10.0.0.0/9` + `10.128.0.0/9`.
+> - `172.16.0.0/12` should be split into `172.16.0.0/13` + `172.24.0.0/13`.
+> - `192.168.0.0/16` should be split into `192.168.0.0/17` + `192.168.128.0/17`.
+> - `100.64.0.0/10` should be split into `100.64.0.0/11` + `100.96.0.0/11`.
+> - `131.87.0.0/16` should be split into `131.87.0.0/17` + `131.87.128.0/17`.
+> - `172.16.0.0/12` should be split into `172.16.0.0/13` + `172.24.0.0/13`.
+> - `192.168.0.0/16` should be split into `192.168.0.0/17` + `192.168.128.0/17`.
+
+4. Configure IDC devices.
+   You can download the CPE configuration guide for your devices, which provides several common configuration methods.
+   ![](https://main.qcloudimg.com/raw/f5480a8e21884a3bbf1cd38c109f23bc.png)
+<table>
+<tr>
+<th width="20%">Parameter</th>
+<th width="40%">Description</th>
+<th width="40%">Remarks</th>
+</tr>
+<tr>
+<td>CPE IP Range</td>
+<td>Enter the customer IP range if <b>Static</b> is selected for <b>Routing Mode</b>. This parameter cannot conflict with VPC IP range in a non-NAT mode.</td>
+<td>You can update the IP range via <b>Change Tunnel</b> in the console.</td>
+</tr>
+</table>
+5. Click **Submit**.
+
 ## Connection Status
-
-The possible statuses of a dedicated tunnel include the following:
-
+After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** connection status.
+![](https://main.qcloudimg.com/raw/a184734e3f46469ac1e2dba8c6bdfe6b.png)
+The possible connection statuses of a dedicated tunnel include the following:
+![](https://main.qcloudimg.com/raw/407ce7d9d6113518793ea3cd76fee7cd.png)
 - **Applying**
-  The system has received your directive to apply for a new dedicated tunnel and is ready to start a creation task.
-- **Pending approval**
-  The connection owner is reviewing the application. Once the application is "approved" by the connection owner, the dedicated tunnel can be created without Tencent Cloud approval.
+  The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
-  The system is delivering the configuration. If the status has been stuck at "Configuring" for a prolonged time, the configuration delivery might run into a problem. Please contact your architect or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+  The system is delivering the configuration. If this status lasts for a long time, there may be an exception. In this case, contact your architect or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 - **Configured**
-  The system has completed the configuration based on the parameters you provided but has not been able to ping the IP address of your IDC. Deletions can be performed in this status.
+  The system has completed the configuration based on the specified parameters, but has not been able to ping through the IP address of your IDC. A dedicated tunnel in this status can be deleted.
 - **Connected**
-  The system is able to ping the IP address of your IDC device. However, this does not mean that your business is connected. You must go to VPC or CCN [route table](https://console.cloud.tencent.com/vpc/route?rid=1) to complete the configuration and connection.
+  The system pings to your IDC device successfully. However, this does not mean that your business is connected. You have to configure the [route table](https://console.cloud.tencent.com/vpc/route?rid=1) of the VPC or CCN instance to implement the connection.
 - **Deleting**
-  The system is deleting your application. If the status has been stuck at "Deleting" for a prolonged time, the system is having a problem with deleting the configuration. Please contact your architect or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+  If you delete your dedicated tunnel in the console, the connection status of the dedicated tunnel becomes **Deleting**. If this status lasts for a long time, there may be an exception. In this case, contact your architect or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
+## Default Alarm
+After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelRouteTableOverload`, and `DirectConnectTunnelBFDDown`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
+
+This default alarm policy is not provided with a recipient, so you can only view alarms in the console Message Center. To configure a recipient, perform the following steps.
+1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** in the left side bar.
+2. Select **Dedicated Line channel** for **Product Type** in the top right of the **Alarm Policy** page.
+  ![](https://main.qcloudimg.com/raw/dd623aec4ea3048e34922cfbc75261c7.png)
+3. Perform the following operations as needed.
+   - Configure alarm recipient objects
+    1. Click the name of the target default policy in the alarm policy list.
+    2. Click **Edit** under the **Alarm Recipient Object** and select object from the list in the pop-up window. You can also click **Add Recipient Group** to configure new user groups.
+     ![](https://main.qcloudimg.com/raw/12444a2429ead98ac07897d7955c7426.png)
+   - Modify an alarm policy
+    1. Click the name of the target default policy in the alarm policy list.
+    2. Click **Edit** next to the **Hit Condition** and modify the trigger conditions in the pop-up window. For more information on the event alarm, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After completing the modification, click **Save**.
+   - Set a default policy
+     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under “Policy Type”. Then the selected alarm policy will automatically apply to dedicated tunnels being created afterwards.
+   ![](https://main.qcloudimg.com/raw/7230beab44341f97f172fbc9532095e3.png)
