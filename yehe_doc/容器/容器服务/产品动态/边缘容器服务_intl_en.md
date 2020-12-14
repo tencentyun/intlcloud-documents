@@ -1,3 +1,18 @@
+## November 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>ServiceGroup feature was productized.</td><td>Users can log in to the console to use ServiceGroup feature. The entrances of this feature and “Node Management” are in the same level.</td><td>2020-11-27</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup Overview</a></li><li><a href="https://cloud.tencent.com/document/product/457/50417">Using ServiceGroup via YAML File</a></li><li>Using ServiceGroup via Console</li></td>
+</tr>
+<tr>
+    <td>The node installation script supports “check” and “clear” parameters.</td><td><li>The “check” parameter is convenient for users to use scripts to manually check where the installation requirements are not met in the node environment.</li><li>The “clear” parameter is convenient for one-click cleaning of dirty data in the node, turning off the firewall, etc.</li></td><td>2020-11-13</td><td>-</td>
+</tr>
+<tr>
+    <td>Edge DNS solution was launched.</td><td>The edge DNS solution will no longer occupy 53 port of the nodes.</td><td>2020-11-4</td><td>-</a></td>
+</tr>
+</table>
+
 ## October 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -6,7 +21,7 @@
     <td>ECK supports multi-architecture hybrid management.</td><td>Users can manage the nodes in both ARM and X86 CPU architectures within a cluster at the same time.</td><td>2020-10-28</td><td>-</td>
 </tr>
 <tr>
-    <td>ECK supports edge Pod HPA.</td><td>Edge Pod HPA is available. Native Kubernetes HPA also works for edge pods.</td><td>2020-10-23</td><td>-</td>
+    <td>ECK supports edge Pod HPA.</td><td>The feature of Edge Pod HPA was launched, while the native Kubernetes HPA feature is also available on the edge.</td><td>2020-10-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38858">Utilizing HPA to Implement Auto Scaling of Business on TKE</a></td>
 </tr>
 <tr>
     <td>Upgraded feature of using script to add node.</td><td>Users can use the same script to add self-owned nodes to the cluster multiple times (the script validity is 1 hour), making it convenient to add self-owned nodes in batches.</td><td>2020-10-22</td><td>-</a></td>

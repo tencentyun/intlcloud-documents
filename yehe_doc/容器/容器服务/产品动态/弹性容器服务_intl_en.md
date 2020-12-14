@@ -1,9 +1,28 @@
+## October 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>The feature of event storage was added.</td><td>This feature helps users observe resource change and locate the problem in time.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">Event Storage</a></td>
+</tr>
+</table>
+
+## August 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>Pod Event completion</td><td>The Pod Event is aligned with the native K8S, making the K8S cluster running events more abundant and locating problems in Pod operation more convenient.</td><td>2020-08-15</td><td>-</td>
+</tr>
+</table>
+
+
 ## July 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>Supports binding pods with CAM roles.</td><td>Users can bind pods with CAM roles to obtain the permission policies of the roles.</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">Cloud Access Management Overview</a></td>
+    <td>Supports binding pods with CAM roles.</td><td>Users can bind pods with CAM roles to obtain the permission policies owned by the roles.</td><td>2020-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/457/11542">Permission Management</a></td>
 </tr>
 <tr>
     <td>Supports static IP addresses of pods.</td><td>The IP addresses of pods can remain unchanged when the StatefulSet/Bare Pod updates its workload.</td><td>2020-07-15</td><td>-</td>
@@ -45,6 +64,6 @@
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
 <td>Elastic Kubernetes Service (EKS) beta is launched. </td><td>EKS <b>allows users to deploy workloads without having to purchase nodes</b>. <b>It is fully compatible with native Kubernetes</b> and supports resource purchase and management in the native mode. Resources are billed based on the amount of resources used by the containers.</td> <td>2019-12-27</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">EKS</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
 </tr>
 </table>
