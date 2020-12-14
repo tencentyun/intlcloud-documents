@@ -102,14 +102,13 @@ curl -X POST https://cvm.tencentcloudapi.com \
 
 >! 用户必须严格保管安全凭证，避免泄露，否则将危及财产安全。如已泄漏，请立刻禁用该安全凭证。
 
-
 前往 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面，即可进行获取。如下图所示：
-![](https://main.qcloudimg.com/raw/665e5334b0d5db156ef48a19072ba8bd.png)
+![](https://main.qcloudimg.com/raw/12b5b846c057addb6ea5eab9010bc42f.png)
 
 ### 步骤2：
 ### 1. 获取 API 3.0 V3 版本签名
 签名方法 v3 （TC3-HMAC-SHA256）功能上覆盖了以前的签名方法 v1，而且更安全，支持更大的请求，支持 json 格式，性能有一定提升，推荐使用该签名方法计算签名。
-![](https://main.qcloudimg.com/raw/f35b61c6b76765f4aae33e9b99673984.png)
+![](https://main.qcloudimg.com/raw/2bd7aa3a0f840da675a8eb768aa3dc72.png)
 
 >! 首次接触，建议使用 [API Explorer](https://console.cloud.tencent.com/api/explorer) 中的“签名串生成”功能，选择签名版本为“ API 3.0 签名 v3 ”，可以生成签名过程进行验证，也可直接生成 SDK 代码。推荐使用腾讯云 API 配套的7种常见的编程语言 SDK，已经封装了签名和请求过程，均已开源，支持 [Python](https://github.com/TencentCloud/tencentcloud-sdk-python)、[Java](https://github.com/TencentCloud/tencentcloud-sdk-java)、[PHP](https://github.com/TencentCloud/tencentcloud-sdk-php)、[Go](https://github.com/TencentCloud/tencentcloud-sdk-go)、[NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)、[.NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)、[C++](https://github.com/TencentCloud/tencentcloud-sdk-cpp)。
 

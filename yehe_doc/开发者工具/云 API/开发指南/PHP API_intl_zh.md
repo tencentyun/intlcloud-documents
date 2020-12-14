@@ -91,13 +91,13 @@ GET 请求的请求包大小不得超过32KB。POST 请求使用签名方法 v1�
  假设用户的 SecretId 和 SecretKey 分别是：`AKIDz8krbsJ5**********mLPx3EXAMPLE` 和 `Gu5t9xGAR***********EXAMPLE`。用户想查看广州区云服务器名为“未命名”的主机状态，只返回一条数据。则请求可能为： 
 
 前往 [API密钥管理](https://console.cloud.tencent.com/cam/capi) 页面，即可进行获取。如下图所示：
-![](https://main.qcloudimg.com/raw/665e5334b0d5db156ef48a19072ba8bd.png)
+![](https://main.qcloudimg.com/raw/12b5b846c057addb6ea5eab9010bc42f.png)
 
 ### 步骤2
 ### 1. 获取 API 3.0  V3 版本签名
 
 签名方法 v3（TC3-HMAC-SHA256）功能上覆盖了以前的签名方法 v1，而且更安全，支持更大的请求，支持 json 格式，性能有一定提升，推荐使用该签名方法计算签名。
-![](https://main.qcloudimg.com/raw/f35b61c6b76765f4aae33e9b99673984.png)
+![](https://main.qcloudimg.com/raw/2bd7aa3a0f840da675a8eb768aa3dc72.png)
 
 
 

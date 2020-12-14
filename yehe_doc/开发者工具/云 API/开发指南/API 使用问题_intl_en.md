@@ -1,6 +1,6 @@
 ### What should I do if an error occurs when I try to run a single signature file in C++?
 If the following error occurs when the `g++ -o main sign.cpp` command is executed on the command line:
-![](https://main.qcloudimg.com/raw/499379efd848870eb0e0b3fb97171968.png) 
+![](https://main.qcloudimg.com/raw/47b54bd02a875e4e8ce44805ff89b887.png) 
 Run the following command to solve the problem.
 ```bash
 g++ -o main sign.cpp -lssl -lcrypto
