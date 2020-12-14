@@ -1,3 +1,42 @@
+## November 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+<tbody>
+<tr>
+<td>Instances can be cloned</td>
+<td>You can now clone a TencentDB for MySQL instance, and restore the clone to any point in time within the log backup retention period or from the backup set of a specific physical backup.</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38864" target="_blank">Cloning Instances</a></td>
+</tr>
+</tbody></table>
+
+## October 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+<tbody><tr>
+<td>The purchase page is optimized</td>
+<td>You can now specify alarm policies, parameter templates, and bind an instance with security groups of other projects.</td>
+<td>2020-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37785" target="_blank">Creating MySQL Instance</a></td>
+</tr>
+<tr>
+<td>TDE is supported for MySQL v8.0</td>
+<td>TencentDB for MySQL v8.0 now supports Transparent Data Encryption (TDE).</td>
+<td>2020-10</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">Enabling Transparent Data Encryption</a></td>
+</tr>
+</tbody></table>
+
 ## August 2020
 <table>
 <tr>
@@ -7,10 +46,10 @@
 <th width=20%>Documentation</th>
 </tr>
 <tbody><tr>
-<td>MySQL 8.0 is supported</td>
-<td>TencentDB for MySQL supports MySQL v8.0. Combined with a complete set of management services and the TXSQL kernel, TencentDB for MySQL provides an enterprise-level database service which is more stable and quicker to deploy. It is applicable to a variety of use cases, helping you upgrade your business.</td>
+<td>MySQL v8.0 is now supported</td>
+<td>TencentDB for MySQL v8.0 is now supported. Combined with a complete set of management services and the TXSQL kernel, TencentDB for MySQL provides an enterprise-level database service that is more stable and quicker to deploy. It is applicable to a variety of use cases and helps you upgrade your business.</td>
 <td>2020-08</td>
-<td><a href="https://cloud.tencent.com/document/product/236/30969" target="_blank">Database Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/31896" target="_blank">Database Version</a></td>
 </tr>
 </tbody></table>
 
@@ -151,7 +190,7 @@
 </thead>
 <tbody><tr>
 <td>Database backup page is available</td>
-<td>We have released the TencentDB for MySQL database backup page. It is divided into two sections: overview and backup list. Backup trends and statistics can be viewed in the overview tab. Backup data details and log backups can be found in the backup list.</td>
+<td>We have released the TencentDB for MySQL database backup page. It is divided into two sections: overview and backup list. Backup trends and statistics can be viewed in the overview tab. Details of data backups and log backups can be found in the backup list.</td>
 <td>2019-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/33131" target="_blank">Viewing Backup Capacity</a></td>
 </tr>
@@ -170,7 +209,7 @@
 </thead>
 <tbody><tr>
 <td>Automatic backups are fully upgraded to physical backup</td>
-<td>TencentDB for MySQL now only supports physical automatic backups. Existing logical automatic backups will be switched to the physical type automatically. If you need logical backups, you can use the manual backup feature in the TencentDB for MySQL Console or call applicable APIs.</td>
+<td>TencentDB for MySQL now only supports physical automatic backups. Existing automatic logical backups will be switched to the physical backups automatically. If you need logical backups, you can use the manual backup feature in the TencentDB for MySQL console or call APIs.</td>
 <td>2019-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/32340" target="_blank">Backup Mode</a></td>
 </tr>
@@ -195,7 +234,7 @@
 </thead>
 <tbody><tr>
 <td>Switching between VPCs is now supported</td>
-<td>Switching from VPCs is now supported. A single TencentDB instance can now be switched from VPC A to VPC B.</td>
+<td>Switching between VPCs is now supported. A single TencentDB instance can now be switched from VPC A to VPC B.</td>
 <td>2019-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">Network Switch</a></td>
 </tr>
@@ -270,7 +309,7 @@
 <td>Product is renamed</td>
 <td>CDB for MySQL is renamed as TencentDB for MySQL.</td>
 <td>2018-06</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/236" target="_blank">TencentDB for MySQL</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236" target="_blank">TencentDB for MySQL</a></td>
 </tr>
 </tbody></table>
 
@@ -369,7 +408,7 @@
 <td>Read-only instance feature is available</td>
 <td>TencentDB for MySQL allows you to create one or more read-only instances, which is suitable for read/write separation and one-source-multiple-replica application scenarios and capable of greatly enhancing the read load capacity of your database.</td>
 <td>2016-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">Read-Only Instance</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">Creating Read-Only Instance</a></td>
 </tr>
 <tr>
 <td>Pay-as-You-Go instances are now supported</td>
