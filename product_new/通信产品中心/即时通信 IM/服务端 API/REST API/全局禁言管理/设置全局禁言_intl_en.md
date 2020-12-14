@@ -79,7 +79,7 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [online commissioning tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openconfigsvr/setnospeaking) to commission this API.
+Use the [online commissioning tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/setnospeaking) to commission this API.
 
 ## References
 Querying global muting ([v4/openconfigsvr/setnospeaking](https://intl.cloud.tencent.com/document/product/1047/34924))

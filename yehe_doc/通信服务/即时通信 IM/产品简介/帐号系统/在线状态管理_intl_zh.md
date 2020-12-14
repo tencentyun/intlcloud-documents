@@ -5,7 +5,7 @@
 - 后台运行状态（PushOnline）
 - 未登录状态（Offline）
 
->!后台运行状态（PushOnline）只有手机端（Android/iOS）会存在，PC 和 Web 端不存在该种状态。
+>!后台运行状态（PushOnline）只有手机端（Android/iOS）会存在，PC、小程序和 Web 端不存在该种状态。
 
 ### 前台运行状态（Online）
 前台运行状态（Online），是指客户端和即时通信 IM 服务端保持有顺畅的 TCP 网络连接，客户端可以发消息给即时通信 IM 服务端，也可以收到来自即时通信 IM 服务端推送的消息。
@@ -60,7 +60,7 @@ IM SDK 暂时无法获取用户的在线状态。
 默认情况，IM SDK 在同时登录多个终端（如同时登录 PC、Android）时，会进行互踢，只有最后一个登录的设备可以在线，之前登录的都会被踢下线，详细互踢逻辑可以参考以下文档：
 
 - [Android 用户状态变更](https://intl.cloud.tencent.com/document/product/1047/36255)
-- [iOS 用户状态变更]
+
 
 
 ### 同时在线

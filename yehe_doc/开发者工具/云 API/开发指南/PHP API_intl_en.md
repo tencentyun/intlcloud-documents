@@ -91,13 +91,13 @@ In this document, the security credential used is a key pair, which consists of 
  Suppose your `SecretId` and `SecretKey` are `AKIDz8krbsJ5**********mLPx3EXAMPLE` and `Gu5t9xGAR***********EXAMPLE`, respectively. If you want to view the status of an unnamed instance in the Guangzhou region and have only one data entry returned, the request may be: 
 
 Go to the [API key management](https://console.cloud.tencent.com/cam/capi) page to get API keys as shown below:
-![](https://main.qcloudimg.com/raw/665e5334b0d5db156ef48a19072ba8bd.png)
+![](https://main.qcloudimg.com/raw/12b5b846c057addb6ea5eab9010bc42f.png)
 
 ### Step 2
 ### 1. Get an API 3.0 signature v3
 
 The signature algorithm v3 (TC3-HMAC-SHA256) is compatible with the previous signature algorithm v1 and more secure, supports larger request packets and POST JSON format, and has a higher performance. We recommend you use it to calculate signatures.
-![](https://main.qcloudimg.com/raw/f35b61c6b76765f4aae33e9b99673984.png)
+![](https://main.qcloudimg.com/raw/2bd7aa3a0f840da675a8eb768aa3dc72.png)
 
 
 

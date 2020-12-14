@@ -141,18 +141,15 @@ https://console.tim.qq.com/v4/openconfigsvr/getappinfo?sdkappid=88888888&identif
 | LoginTimes|登录次数|
 | LoginUserNum|登录人数|
 | UpMsgNum|上行消息数|
-| DownMsgNum|下行消息数|
 | SendMsgUserNum|发消息人数|
 | APNSMsgNum|APNs 推送数|
 | C2CUpMsgNum|上行消息数（C2C）|
-| C2CDownMsgNum|下行消息数（C2C）|
 | C2CSendMsgUserNum|发消息人数（C2C）|
 | C2CAPNSMsgNum|APNs 推送数（C2C）|
 | MaxOnlineNum|最高在线人数|
 | ChainIncrease|关系链对数增加量|
 | ChainDecrease|关系链对数删除量|
 | GroupUpMsgNum|上行消息数（群）|
-| GroupDownMsgNum|下行消息数（群）|
 | GroupSendMsgUserNum|发消息人数（群）|
 | GroupAPNSMsgNum|APNs 推送数（群）|
 | GroupSendMsgGroupNum|发消息群组数|
@@ -167,4 +164,4 @@ https://console.tim.qq.com/v4/openconfigsvr/getappinfo?sdkappid=88888888&identif
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.qcloud.com/im/APITester/APITester.html#v4/openconfigsvr/getappinfo)调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/getappinfo)调试本接口。
