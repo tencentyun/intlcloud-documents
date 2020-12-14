@@ -141,18 +141,15 @@ The following table describes the error codes specific to this API.
 | LoginTimes | Number of logins |
 | LoginUserNum | Number of logged-in users |
 | UpMsgNum | Number of upstream messages |
-| DownMsgNum | Number of downstream messages |
 | SendMsgUserNum | Number of sending users |
 | APNSMsgNum | Number of pushed APN messages |
 | C2CUpMsgNum | Number of upstream messages (C2C) |
-| C2CDownMsgNum | Number of downstream messages (C2C) |
 | C2CSendMsgUserNum | Number of sending users (C2C) |
 | C2CAPNSMsgNum | Number of pushed APN messages (C2C) |
 | MaxOnlineNum | Maximum number of online users |
 | ChainIncrease | Increase in relationship chain pairs |
 | ChainDecrease | Decrease in relationship chain pairs |
 | GroupUpMsgNum | Number of upstream messages (group) |
-| GroupDownMsgNum | Number of downstream messages (group) |
 | GroupSendMsgUserNum | Number of sending users (group) |
 | GroupAPNSMsgNum | Number of pushed APN messages (group) |
 | GroupSendMsgGroupNum | Number of sending groups |
@@ -167,4 +164,4 @@ The following table describes the error codes specific to this API.
 
 ## API Commissioning Tool
 
-Use the [RESTful online commissioning tool for APIs](https://avc.qcloud.com/im/APITester/APITester.html#v4/openconfigsvr/getappinfo) to commission this API.
+Use the [RESTful online commissioning tool for APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openconfigsvr/getappinfo) to commission this API.
