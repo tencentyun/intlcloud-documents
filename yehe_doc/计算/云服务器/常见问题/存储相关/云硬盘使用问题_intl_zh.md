@@ -30,7 +30,7 @@ Windows 文件系统格式通常是 NTFS 或 FAT32 ，Linux 文件系统格式�
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index)，进入“实例”列表页面。
 2. 选择需查看的实例 ID，进入实例详情页面。
 3. 在实例详情页面，选择【监控】页签，即可查看该实例下云硬盘使用情况。如下图所示：
-<img src="https://main.qcloudimg.com/raw/80f7fb5c1e79ec87a2677faea9f2a020.png" style="zoom:200%;" />
+![](https://main.qcloudimg.com/raw/25270ae80b513d497527a0e9f2af1bac.png)
 
 ### 为什么我单独创建的云硬盘和我的实例一起释放了？
 云硬盘可在挂载时设置是否随实例自动释放。可通过 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs/index) 或使用 API 中的 [修改云硬盘属性](https://intl.cloud.tencent.com/document/product/362/15659) 来开启或关闭云硬盘的随实例释放功能。

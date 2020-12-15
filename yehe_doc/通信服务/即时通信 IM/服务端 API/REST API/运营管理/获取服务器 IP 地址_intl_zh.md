@@ -1,6 +1,6 @@
 ## 功能说明
 基于安全等考虑，您可能需要获知服务器的 IP 地址列表，以便进行相关限制。App 管理员可以通过该接口获得 SDK、第三方回调所使用到的服务器 IP 地址列表或 IP 网段信息。  
->仅支持获取中国大陆地区的 IP 地址或 IP 网段信息。
+>!仅支持获取中国大陆地区的 IP 地址或 IP 网段信息。
 
 ## 接口调用说明
 ### 请求 URL 示例
@@ -56,4 +56,4 @@ https://console.tim.qq.com/v4/ConfigSvc/GetIPList?sdkappid=88888888&identifier=a
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.qcloud.com/im/APITester/APITester.html#v4/ConfigSvc/GetIPList)调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/ConfigSvc/GetIPList) 调试本接口。

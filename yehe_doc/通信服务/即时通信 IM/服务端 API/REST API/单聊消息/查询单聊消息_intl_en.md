@@ -96,7 +96,8 @@ For example, user1 and user2 had a chat, and we want to query the chat history g
 In the response, `"Complete": 0` indicates that not all messages generated within the time range have been pulled. Therefore, continued pulling is required.
 **In the subsequent pulling request, the value of MaxTime must be changed to the value of the LastMsgTime field in the response, and the LastMsgKey field in the response must be specified**, as shown below:
 
-##### Sample continued pulling request<span id="example"></span>
+<span id="example"></span>
+##### Sample continued pulling request
 ```
 {
     "From_Account":"user2",
@@ -244,7 +245,7 @@ The list below contains only error codes specific to this API:
 
 ## API Debugging Tool
 
-To debug this API, you can use the [Online RESTful API Debugging Tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/admin_getroammsg).
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/admin_getroammsg).
 
 ## References
 - Sending a one-to-one message ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))

@@ -10,7 +10,7 @@ This Tencent Container Registry Enterprise Edition Service Level Agreement shall
 
 
 
-#### 1.1 [Tencent Container Registry (TCR)](https://intl.cloud.tencent.com/document/product/1051)
+#### 1.1 Tencent Container Registry (TCR)
 
 
 

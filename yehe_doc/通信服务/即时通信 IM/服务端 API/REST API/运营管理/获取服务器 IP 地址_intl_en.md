@@ -1,6 +1,6 @@
 ## Feature Description
 Sometimes, you may need to obtain the list of server IP addresses for security purposes. This API is used by the app admin to obtain the list of server IP addresses or IP ranges used by the SDK and third-party callbacks.  
->You can only use this API to obtain IP addresses or IP ranges within Mainland China.
+>!You can only use this API to obtain IP addresses or IP ranges within Mainland China.
 
 ## API Calling Description
 ### Sample request URL
@@ -56,4 +56,4 @@ For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.te
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.qcloud.com/im/APITester/APITester.html#v4/ConfigSvc/GetIPList) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/ConfigSvc/GetIPList) to debug this API.
