@@ -1,9 +1,11 @@
-You can select a Tencent Cloud Web Application Firewall (WAF) type and region based on your business deployment method and location. The following table lists the regions supported by WAF.
+You can select a WAF type and region according to the deployment method and region of your business. WAF currently supports service in the following regions:
 
 | WAF Type | Supported Regions |
 |---------|---------|
-| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Southwest China: Chengdu</li><li>Hong Kong, Macao, Taiwan: Hong Kong</li></ul> |
-| CLB WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai and Nanjing</li><li>North China: Beijing</li><li>Southwest China: Chengdu and Chongqing</li><li>Hong Kong, Macao, Taiwan: Hong Kong</li><li>Southeast Asia Pacific: Singapore and Bangkok</li><li>South Asia Pacific: Mumbai</li><li>Northeast Asia Pacific: Seoul and Tokyo</li><li>Europe: Moscow</li></ul> |
+| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Southwest China: Chengdu</li><li>Hong Kong (China)</li></ul> |
+|CLB WAF|<ul><li>South China: Guangzhou</li><li>East China: Shanghai, Nanjing, Shanghai Finance</li><li>North China: Beijing</li><li>Southwest China: Chengdu, Chongqing</li><li>Hong Kong (China)</li><li>Southeast Asia: Singapore, Bangkok </li><li>South Asia: Mumbai</li><li>Northeast Asia: Seoul, Tokyo</li><li>Europe: Frankfurt, Moscow</li><li>North America: Silicon Valley</li></ul>|
 
 >?
->- Other regions will be supported in the near future. For newly supported regions, go to the [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview).
+>- More supported regions are coming soon. For region updates, please see [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview).
+>- CLB WAF supports binding IPv6 CLB instances to protect IPv6 websites. If you want to use IPv6 web protection, please make sure that the selected region supports IPv6 CLB instances and IPv6 web deployment has been completed.
+>- IPv6 CLB instances currently support main regions. The supported regions are subject to the ones on the [CLB purchase page](https://buy.cloud.tencent.com/lb).
