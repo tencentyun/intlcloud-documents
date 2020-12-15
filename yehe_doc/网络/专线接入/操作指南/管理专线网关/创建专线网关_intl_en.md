@@ -34,7 +34,7 @@ This document describes how to create a direct connect gateway and provides info
 </tr>
 <tr>
 <td>Gateway Type</td>
-<td>A gateway is needed if **VPC** is selected for the **Associate Network*.<ul><li>Standard: does not support the network address translation feature.</li><li>NAT: supports the network address translation feature.</li></ul></td>
+<td>A gateway is needed if **VPC** is selected for the **Associate Network**.<ul><li>Standard: does not support the network address translation feature.</li><li>NAT: supports the network address translation feature.</li></ul></td>
 </tr>
 </table>
 
