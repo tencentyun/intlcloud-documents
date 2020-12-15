@@ -9,9 +9,7 @@ This document describes how to create a direct connect gateway and provides info
 
 1. Log in to the [Direct Connect Gateway console](https://console.cloud.tencent.com/vpc/dcgw?rid=1).
 2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+New**.
-   ![](https://main.qcloudimg.com/raw/5f14dab7972ba2d2843006343b3e15bb.png)
-3. Complete the configurations in the pop-up window and click **OK**.
-   ![](https://main.qcloudimg.com/raw/7c06c736d44895861856e86ec3820504.png)	 
+3. Complete the configurations in the pop-up window and click **OK**.	 
 
 <table>
 <tr>
