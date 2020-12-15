@@ -41,7 +41,7 @@ Namespace=QCE/SQLSERVER
 | PlanCacheHitRatio | Plan cache hit rate | The hit rate of a plan. Each SQL statement has a plan with a hit rate | % | resourceId |
 | FreeStorage | Residual capacity of the hard disk | Percentage of the residual capacity of the hard disk | % | resourceId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
+>? The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
 
 ## Overview of the Parameters in Each Dimension
 
