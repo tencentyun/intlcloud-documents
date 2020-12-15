@@ -12,11 +12,11 @@
 2. 在“我的镜像”页面中，单击【源代码授权】。如下图所示：
 >?“源代码授权”功能仅支持国内地域，即控制台中的“默认地域”。
 
-![](https://main.qcloudimg.com/raw/c5dce2f5fe95421ad34a0ab24936c757.png)
+![](https://main.qcloudimg.com/raw/8706fe2e04fbc6ca92f6a16e8b9156b7.png)
 3. 弹出“代码源授权”窗口，请根据您的实际情况进行选择。如下图所示：
 >!每个用户可以同时授权 Github 和 Gitlab 帐号，但是 Github 和 Gitlab 帐号分别只能授权一个帐号，如果需要更改 Github 或者 Gitlab 帐号，则需要先注销原来的帐号。
 
-![](https://main.qcloudimg.com/raw/2e3993bf0ce3522c4ab581a9f3711cf9.png)
+![](https://main.qcloudimg.com/raw/4347572f30004d7ecb60bd67d23fe290.png)
  - 如果您的代码仓库位于 Github，请参考 [Github 授权](#Github) 完成授权。
  - 如果您的代码仓库位于自建的 Gitlab 服务器，或者官方的 Gitlab 托管服务器，请参考 [Gitlab 授权](#Gitlab) 完成授权。
 
@@ -26,7 +26,7 @@
 2. 首次授权会跳转至 Github 网站，Github 会提示 App 需要访问用户的代码仓库、个人信息等数据。如下图所示：
 ![](https://main.qcloudimg.com/raw/649cab61cc2a4a603775bbf3524b1731.png)
 3. 单击【Authorize】即可完成 Github 代码仓库的授权，如下图所示：
-![](https://main.qcloudimg.com/raw/3130c852ebb4437d67bfa73db58a37ef.png)
+![](https://main.qcloudimg.com/raw/db0b50852c44f13330fe3268f1bd0081.png)
 
 <span id="Gitlab"></span>
 ### Gitlab 授权
@@ -51,10 +51,10 @@
 
 #### 授权同步 Gitlab 代码源
 1. 在“代码授权源”窗口中，单击代码源授权页【立即授权同步 Gitlab 代码源】，并根据以下提示填写信息：
-![](https://main.qcloudimg.com/raw/eb24346cf4b7b66a2be63a26f28bcb14.png)
+![](https://main.qcloudimg.com/raw/e38a3b29d30c1e604437e72bb2df8148.png)
  -  **服务地址**：Gitlab 服务器 URL 地址。必须包含 HTTP 或者 HTTPS 协议，并且公网必须能够访问该地址。例如 `https://you-gitlab.com`，注意请不要填写具体项目或存储库的 URL 。
  - **私有Token**：必须是 Access Token，如果您没有 Access Token，请参考 [ 获取 GitLab 的 Access Token ](#AccessToken)进行创建。
 2. 单击【确定】即可授权成功，如下图所示：
-![](https://main.qcloudimg.com/raw/d94de2e0d196fe95e24948943662b8ed.png)
+![](https://main.qcloudimg.com/raw/7689221c9f26028c56df0e676a601eac.png)
 
 
