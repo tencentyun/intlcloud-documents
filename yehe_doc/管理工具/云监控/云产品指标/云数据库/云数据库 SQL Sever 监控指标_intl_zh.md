@@ -17,7 +17,7 @@ Namespace=QCE/SQLSERVER
 | Logouts             | 登出次数  | 每秒登出次数                              | 次/秒 | resourceId |
 | Storage             | 已用存储空间 |实例数据库文件和日志文件占用的空间总和    | GB    |resourceId |
 | InFlow              | 输入流量|所有连接输入包大小总和                    | KB/s  |resourceId |
-| OutFlow             | 输出流量 |所有连接输出包大小总和                    | KB/s  |resourceId |
+| OutFlow             | 输出流量|所有连接输出包大小总和                    | KB/s  |resourceId |
 | Iops                | 磁盘 IOPS|每秒磁盘读写次数                              | 次/秒 |resourceId |
 | DiskReads           |读取磁盘次数 |每秒读取磁盘次数                          | 次/秒 |resourceId |
 | DiskWrites          | 写入磁盘次数 |每秒写入磁盘次数                          | 次/秒 | resourceId |
@@ -41,7 +41,7 @@ Namespace=QCE/SQLSERVER
 | PlanCacheHitRatio   | 执行缓存缓存命中率  |每个 SQL 有一个执行计划，执行计划的命中率 | %     | resourceId |
 |FreeStorage| 硬盘剩余容量 | 硬盘剩余容量百分比 |  %  | resourceId |
 
->每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
+>?每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
 
 ## 各维度对应参数总览
 
