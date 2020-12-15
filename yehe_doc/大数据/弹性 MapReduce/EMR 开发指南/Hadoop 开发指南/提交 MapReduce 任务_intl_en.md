@@ -54,7 +54,7 @@ Output:
 If there is no `/user/hadoop` folder in Hadoop, you can create it on your own by running the following command:
 
 ```
-[hadoop@172 hadoop]$ hadoop fs –mkdir /user
+[hadoop@172 hadoop]$ hadoop fs –mkdir /user/hadoop
 ```
 
 For more Hadoop commands, please see [Common HDFS Operations](https://intl.cloud.tencent.com/document/product/1026/31124)
@@ -89,7 +89,7 @@ Go to the `/usr/local/service/hadoop` directory as described in data preparation
 [hadoop@10 hadoop]$ bin/yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount
 /user/hadoop/README.txt /user/hadoop/output
 ```
-> In the complete command above, `/user/hadoop/README.txt` is the input file to be processed, and `/user/hadoop/output` is the output folder. You should make sure that there is no output folder before submitting the command; otherwise, the submission will fail.
+>! In the complete command above, `/user/hadoop/README.txt` is the input file to be processed, and `/user/hadoop/output` is the output folder. You should make sure that there is no output folder before submitting the command; otherwise, the submission will fail.
 
 After the execution is completed, view the output file by running the following command:
 ```

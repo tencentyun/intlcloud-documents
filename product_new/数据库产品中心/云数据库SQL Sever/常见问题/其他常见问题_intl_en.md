@@ -2,11 +2,6 @@
 ### Is there a restriction to the number of databases in TencentDB for SQL Server?
 No. however, we recommend keeping the number of databases created in one single TencentDB for SQL Server instance below 70 for the better performance. If you need more databases, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-### What happens to my TencentDB SQL Server instance when it expires?
-- The system will send you a renewal notification via email, SMS, and internal message 7 days before your TencentDB resources expiration.
-- You can continue using the TencentDB services for an additional 7 days after the expiration. The system will send you an expiration reminder for the TencentDB services, and you need to renew them as soon as possible.
-- If you fail to renew the TencentDB resources within 7 days after the expiration date, the resources will be repossessed by the system and all the data will be cleared and cannot be recovered.
-
 ### After a SQL Server database is created, no or only a small amount of data is written, but why does the storage space monitor show that 500 MB of capacity has been used?
 When Tencent Cloud creates each SQL Server database, it automatically allocates 500 MB of initial capacity to which the data will be written first when any data is written at all.
 Therefore, even if you write no or only a very small amount of data, storage monitor will also display 500 MB.

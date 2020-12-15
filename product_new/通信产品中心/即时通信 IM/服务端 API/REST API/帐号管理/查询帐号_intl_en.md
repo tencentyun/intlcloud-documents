@@ -102,7 +102,7 @@ The following table describes the error codes specific to this API.
 
 ## Debugging Tool
 
-Use the [RESTful API online debugging tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/account_check) to debug this API.
+Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_check) to debug this API.
 
 ## References
 
