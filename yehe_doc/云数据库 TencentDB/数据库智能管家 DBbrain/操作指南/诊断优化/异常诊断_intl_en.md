@@ -1,34 +1,44 @@
 The exception diagnosis feature provides you with real-time performance monitoring, health checks, and failure diagnosis and optimization, so that you can intuitively know the real-time operation status of database instances, locate newly appeared performance exceptions in real time, and optimize the system based on the optimization suggestions. Exception diagnosis provides real-time and historical view modes.
 This document describes how to use the exception diagnosis feature to diagnose and optimize real-time/historical exceptions in databases.
 
->Currently, exception diagnosis is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, exception diagnosis is supported only for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
 
-Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis), select **Diagnosis and Optimization** on the left sidebar, and select **Exception Diagnosis** at the top.
-![](https://main.qcloudimg.com/raw/040ba89bd1915fd14e78507d33d12035.png)
+
+Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Exception Diagnosis** tab.
+![](https://main.qcloudimg.com/raw/af4aaa608c9ce9b73b28ab8a58039b89.png)
+
 ## Real-Time/Historical Monitoring
-The exception diagnosis page displays CPU, memory, and disk utilization as well as inbound/outbound traffic information. To view details on disk utilization, click **Details** in the top-right corner.
-![](https://main.qcloudimg.com/raw/f492b6e9ea0232b6628b5d2513e8a27c.png)
+The exception diagnosis page displays CPU utilization, memory utilization, disk utilization, inbound/outbound traffic, and health scores. To view details on disk utilization, click **Details** in the top-right corner. The AI-based health scores can reflect the actual status of your databases.
+![](https://main.qcloudimg.com/raw/6c27fac042bb5e756a3085bae5bc6f26.png)
 
 ## Real-Time/Historical Diagnosis
-- The **Real-Time/Historical Diagnosis** column displays in real time the number of running threads, CPU utilization, and diagnosis events of the instance.
-- The **Diagnosis Prompt** column displays the overview information of diagnosis event history, including health levels (healthy, notice, warning, severe, or fatal), start time, diagnosed items, and duration. DBbrain performs health checks on the instance once every ten minutes.
+- The **Real-Time/Historical Diagnosis** graph displays the real-time/historical information about the number of running threads, CPU utilization, and diagnosis events of the instance.
+- The **Diagnosis Prompt** list displays the overview information of diagnosis event history, including health levels (healthy, notice, warning, severe, or fatal), start time, diagnosed items, and duration. DBbrain performs health checks on the instance once every ten minutes.
 
-
-
-1. Click **View Details** or the recorded item under **Diagnosis Prompt** to access the diagnosis details page.
-![](https://main.qcloudimg.com/raw/7a8826e6f9daaceeb9886bb5fd25d746.png)
-2. Select the target time period to stretch the diagnosis view and view it at a finer granularity. After stretching the view, you can click **Reset** on the top-right corner to restore the original view.
- ![](https://main.qcloudimg.com/raw/befaedcb9588d0611e6d3ce00a3b7284.png)
-3. You can click a graph curve in the view to check approximately 20 monitoring metrics spanning across the three major dimensions of resource, performance, and engine at a specific point in time. You can also click **Instance Monitoring** to access the monitoring page on the instance console and view metric details trends.
-![](https://main.qcloudimg.com/raw/c7b994512c3c8f9a93a7a5993e1d2abc.png)
-4. Click a diagnosis event in the view, and the event details will be displayed below.
- - Event Overview: includes diagnosed items, start and end times, risk level, duration, and overview.
- - Symptom: includes symptom snapshots and performance trends of the exception event (or health check event).
- - Intelligent Analysis: analyzes the root cause of the performance exception to help you locate the specific operation.
- - Expert Suggestion: optimization suggestions are provided, including but not limited to SQL optimization (index and rewrite), resource configuration optimization, and parameter fine-tuning.
+#### Viewing diagnoses details
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Exception Diagnosis** tab.
+2. In the **Real-Time Diagnosis** graph, hover the cursor over on a point in time and zoom in and out the graph using the mouse wheel. In the **Historical Diagnosis** graph, select a period of time at the top, hover the cursor over on a point in time and zoom in and out the graph using the mouse wheel. You can click **View Details** in the graph or click **View** in the **Diagnosis Prompt** list to enter the diagnosis details page.
+![](https://main.qcloudimg.com/raw/ecc570e4635bcc0873cff4125d3b69ad.png)
+3. Click a diagnosis event in the **Real-Time/Historical Diagnosis** graph, and the event details will be displayed on the pop-up diagnosis details page.
+ - **Event Details**: include the diagnosis item name, start and end times, risk level, duration, and overview.
+ - **Description**: includes symptom snapshots and performance trends of the exception event or health check event.
+ - **Intelligent Analysis**: analyzes the root cause of the performance exception to help you locate the specific operation.
+ - **Optimization Advice**: provides optimization suggestions, including but not limited to SQL optimization (index and rewrite), resource configuration optimization, and parameter fine-tuning.
 ![](https://main.qcloudimg.com/raw/a4ea4112eb5d5899b5d65089f51848da.png)
+Click **Optimization Comparison** on the **Optimization Advice** tab. In the pop-up window, you can view SQL execution plans, index advice, table structures, and comparison of costs before and after SQL optimization.
+The costs of optimized SQL statements are estimated based on the analysis of the statistics of database tables related to the statements, the OPTIMIZER_SWITCH configuration, and the index selectivity. A chart is used to visually show the decrease in the costs of optimized SQL statements. You can also compare the execution plans before and after the SQL optimization to further verify the optimization results.
+![](https://main.qcloudimg.com/raw/8d2e54e638f190e459bc908f3a4fdfbc.png)
+
+#### Ignoring/unignoring an alarm
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database type and an instance at the top, and select the **Exception Diagnosis** tab.
+2. In the **Diagnosis Prompt** list on the right of the**Real-Time/Historical Diagnosis** graph, click **Ignore** or **Unignore** in the line of an alarm to ignore or unignore it and other alarms generated by the same root cause.
+ - Click **Ignore** to ignore an alarm. After the alarm is ignored, other diagnosis item alarms of the instance generated by the same root cause will also be ignored. Ignored alarms will be gray.
+ >?Only diagnosis item alarms that are not generated by health checks can be ignored or unignored.
+ - Click **unignore** to unignore an ignored alarm. After the alarm is unignored, other diagnosis item alarms of the instance generated by the same root cause will also be unignored. Ignored alarms will not be displayed in the **Diagnosis Prompt** list by default.
+![](https://main.qcloudimg.com/raw/4e6cb45571d6f9d42c9ee4f34cede969.png)
+
 
 ## Real-Time/Historical SQL
-- "Real-Time/Historical SQL" displays the overall information and distribution of the number of requests made to the instance, including the trends of the total number of requests and the SELECT, REPLACE, INSERT, DELETE, and UPDATE statements.
-- "Real-Time/Historical Slow SQL" displays the trends of slow SQL statements (slow logs) and CPU utilization. You can click **View Details** on the top-right corner to access the **Slow SQL Analysis** page and view analysis details.
-![](https://main.qcloudimg.com/raw/ca4be1d10f5d19995327789752e42d59.png)
+- The **Real-Time/Historical SQL** graph displays the overall information and distribution of the number of requests made to the instance, including the trends of the total number of requests and the SELECT, REPLACE, INSERT, DELETE, and UPDATE statements.
+- The **Real-Time/Historical Slow SQL** graph displays the trends of slow SQL statements (slow logs) and CPU utilization. You can click **View Details** on the top-right corner to access the **Slow SQL Analysis** page and view analysis details.
+![](https://main.qcloudimg.com/raw/53abc88bc45f754bb5c89c2c4dc0a992.png)

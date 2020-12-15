@@ -12,7 +12,6 @@ If you create a monthly-subscribed CCN instance with default bandwidth, you can 
     1. Select the two regions associated with the CCN instance, and configure the bandwidth limit and usage period.
     >? A bandwidth up to 10,000 Mbps can be configured.
     >
-    ![](https://main.qcloudimg.com/raw/325b8eaef7cdd0783a9a0fc00aec35db.png)
     
     2. Click **Confirm**.
  
@@ -25,17 +24,13 @@ You can configure the inter-region bandwidth limit for pay-as-you-go CCN instanc
 3. Configure the bandwidth limit depending on the speed limit mode of the CCN instance:
   - Set inter-region bandwidth limit
  Click **Change Bandwidth**. Select **Region A** and **Region B** from the drop-down list, and set the bandwidth cap. You can also click **Add** to configure multiple bandwidth limit rules. After the configuration is complete, click **OK**.
- ![img](https://main.qcloudimg.com/raw/952c27b2590d37f6f14785b12a5d4c2b.png)
   - Set the region outbound bandwidth limit
  Click **Adjust bandwidth speed limit**. In the pop-up window, select desired regions in the **Add region outbound speed limit** list on the left and set the bandwidth cap on the right. Click **OK**.
- ![img](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
 4. (Optional) Perform the following steps to change the bandwidth limit type to meet your requirements.
     1. Click **Change** on the right of **Speed limit mode**.
-        ![img](https://main.qcloudimg.com/raw/c66d120e44a69834f6f9ca8ee655d328.png)  
     2. Select a bandwidth limit type from the drop-down list in the pop-up window.
         > !Changing the bandwidth limit type will delete existing configurations. The bandwidth cap will be set to 1 Gbps by default. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
         > 
-       ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
        <table>
 			 <tr>
 			 <th>Bandwidth Limit</th>

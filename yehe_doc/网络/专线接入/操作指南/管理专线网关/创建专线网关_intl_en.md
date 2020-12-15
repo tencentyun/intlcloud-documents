@@ -9,9 +9,7 @@ This document describes how to create a direct connect gateway and provides info
 
 1. Log in to the [Direct Connect Gateway console](https://console.cloud.tencent.com/vpc/dcgw?rid=1).
 2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+New**.
-   ![](https://main.qcloudimg.com/raw/5f14dab7972ba2d2843006343b3e15bb.png)
-3. Complete the configurations in the pop-up window and click **OK**.
-   ![](https://main.qcloudimg.com/raw/7c06c736d44895861856e86ec3820504.png)	 
+3. Complete the configurations in the pop-up window and click **OK**.	 
 
 <table>
 <tr>
@@ -28,15 +26,15 @@ This document describes how to create a direct connect gateway and provides info
 </tr>
 <tr>
 <td>CCN instance</td>
-<td>A CCN instance is needed if **CCN** is selected for the **Associate Network**. This field can also be left empty.</td>
+<td>A CCN instance is needed if <b>CCN</b> is selected for the <b>Associate Network</b>. This field can also be left empty.</td>
 </tr>
 <tr>
 <td>Network</td>
-<td>A VPC instance is needed if **VPC** is selected for the **Associate Network**.</td>
+<td>A VPC instance is needed if <b>VPC</b> is selected for the <b>Associate Network</b>.</td>
 </tr>
 <tr>
 <td>Gateway Type</td>
-<td>A gateway is needed if **VPC** is selected for the **Associate Network*.<ul><li>Standard: does not support the network address translation feature.</li><li>NAT: supports the network address translation feature.</li></ul></td>
+<td>A gateway is needed if <b>VPC</b> is selected for the <b>Associate Network</b>.<ul><li>Standard: does not support the network address translation feature.</li><li>NAT: supports the network address translation feature.</li></ul></td>
 </tr>
 </table>
 
@@ -82,6 +80,5 @@ As shown in the Direct Connect network architecture, both the creation time of t
   <td>BGP</td>
   <td>The IDC automatically obtains the VPC CIDR block based on the BGP protocol.</td>
 </tbody></table>
-
 
 

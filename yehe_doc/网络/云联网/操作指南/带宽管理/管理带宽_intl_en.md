@@ -8,15 +8,13 @@ For a monthly-subscribed CCN instance, you can view, upgrade and renew its bandw
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Cloud Connect Network** in the left sidebar.
 2. On the CCN instance list page, click the **ID/Name** of the target monthly-subscribed CCN instance to enter its details page. Click the **Bandwidth Management** tab.
  This tab displays the regions where the cross-region bandwidth applies, bandwidth cap, expiration time, and other information.
-  ![](https://main.qcloudimg.com/raw/a8c9b8aa3b390703c3b513efbb031d26.png)
 3. On the **Bandwidth Management** page, perform the following operations as needed.
  - Upgrade bandwidth
     1. Locate the bandwidth package to be upgraded, and click **Upgrade Bandwidth** in the **Operation** column.
     2. Set the bandwidth cap, check the auto-renewal box as needed and click **OK** in the pop-up window.
-     ![](https://main.qcloudimg.com/raw/f29572cfb89c8f2d91f017d9aab23f21.png)
  - Renew bandwidth
     1. Locate the bandwidth package to be renewed and click **Renew** in the **Operation** column.
-    2. Select the renewal duration, check the auto-renewal box as needed and click **OK** in the pop-up window.![](https://main.qcloudimg.com/raw/9b865c9364240c860f145d3c46383eee.png)
+    2. Select the renewal duration, check the auto-renewal box as needed and click **OK** in the pop-up window.
  - Auto-renewal
    In the **Auto-renewal** column of the target bandwidth package, toggle the switch on.
 
@@ -25,16 +23,12 @@ For a monthly-subscribed CCN instance, you can view, upgrade and renew its bandw
 2. On the CCN instance list page, lick the **ID/Name** of the target pay-as-you-go CCN instance to enter its details page. Click the **Bandwidth Management** tab.
   This tab displays the bandwidth cap of the current bandwidth limit type.
   - Inter-region bandwidth limit
-  ![](https://main.qcloudimg.com/raw/86364730276bc36a018d530a3fabf968.png)
   - Region outbound bandwidth limit
-  ![](https://main.qcloudimg.com/raw/8d0670dc1d2fb33a2ba3037f0c58f9c3.png)
 3. (Optional) Change the bandwidth limit type.
   1. Click **Change** on the right of **Speed limit mode**.
-    ![](https://main.qcloudimg.com/raw/c66d120e44a69834f6f9ca8ee655d328.png)
   2. Select a bandwidth limit type from the drop-down list in the pop-up window.
   > !Changing the bandwidth limit type will delete existing configurations. The bandwidth cap will be set to 1 Gbps by default. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
   > 
-   ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
     <table>
 			 <tr>
 			 <th>Bandwidth Limit</th>
