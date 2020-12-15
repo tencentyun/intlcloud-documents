@@ -31,10 +31,10 @@ The RESTful API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/p
 #### 1. Configuring the video image layout mode
 
 Through the [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) parameter in `StartMCUMixTranscode`, you can set the following layout modes:
-
 ![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
 
-**Float layout template**
+**Float layout template (LayoutParams.Template = 0)**
+
 - The video of the first user to enter the room is played back in full screen, while videos of other users are played back in small images floating above the first user's video and arranged horizontally from the bottom-left corner.
 - Small images float above the big image. There can be up to 4 small images per row and up to 4 rows in total.
 - Up to 1 big image and 15 small images are supported.
@@ -61,7 +61,7 @@ Through the [LayoutParams](https://intl.cloud.tencent.com/document/product/647/3
 - Use case 1: in the online education scenario, the teacher's camera (usually as the small image) and screen (usually as the big image) can be mixed along with the voices of students in the room.
 - Use case 2: in the 1v1 video call scenario, the remote user's screen (usually as the big image) and the local user's screen (usually as the small image) can be mixed.
 
-**Screen sharing template (LayoutParams.Template = 4)**
+**Custom template (LayoutParams.Template = 4)**
 
 - It is suitable for scenarios where you need to customize the position of each video image. You can preset their positions through the `PresetLayoutConfig` parameter in `LayoutParams` (which is an array).
 - You can skip specifying the `UserId` parameter in the `PresetLayoutConfig` array, and the layout engine will assign the users entering the room to each position specified in the `PresetLayoutConfig` array in the order of room entry.
@@ -349,7 +349,25 @@ In Manual mode, you need to set all the parameters in `TRTCTranscodingConfig` an
 4. Call the `setMixTranscodingConfig()` API to enable On-cloud MixTranscoding, set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Manual**, and specify the parameters that affect the audio output quality such as `audioSampleRate`, `audioBitrate`, and `audioChannels`. If your business scenario involves video, you also need to set the parameters that affect the video output quality such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
 5. Listen on the `onUserVideoAvailable()` and `onUserAudioAvailable()` callbacks in `TRTCCloudDelegate` and specify the **mixUsers** parameter as needed.
  >?Different from the PresetLayout mode, the Manual mode requires you to specify the `userId` parameter in each `mixUser` as the real co-anchor ID and set the `pureAudio` parameter in `mixUser` based on whether the co-anchor has enabled video.
- >
 6. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
 >! In Manual mode, you need to listen on the mic-on/off actions of co-anchors in the room and call the `setMixTranscodingConfig()` API multiple times based on the number and audio/video status of the co-anchors.
+
+## Applicable Fees
+
+### Calculating fees
+
+To perform On-cloud MixTranscoding, the audio/video streams input to the MCU cluster need to be decoded, re-encoded, and then output, which will incur additional fees. Therefore, TRTC will charge additional value-added service fees to users who use the MCU cluster for On-cloud MixTranscoding. Such fees are billed based on the **transcoding output resolution** and **transcoding duration**. The higher the transcoding output resolution and the longer the transcoding duration, the higher the fees. For more information, please see [On-cloud MixTranscoding Billing Overview](https://intl.cloud.tencent.com/zh/document/product/647/38929).
+
+### Saving costs
+
+- **Under the server RESTful API-based On-cloud MixTranscoding scheme, to stop On-cloud MixTranscoding**, one of the following conditions must be met:
+  - All users (including the anchor and viewers) have left the room.
+  - The RESTful API [StopMCUMixTranscode](https://intl.cloud.tencent.com/zh/document/product/647/37760) is called to actively stop On-cloud MixTranscoding.
+- **Under the client SDK API-based On-cloud MixTranscoding scheme, to stop On-cloud MixTranscoding**, one of the following conditions must be met:
+  - The anchor who initiated On-cloud MixTranscoding (by calling the client API `setMixTranscodingConfig`) has exited the room.
+  - [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) is called with the parameter set to `nil/null` to actively stop On-cloud MixTranscoding.
+
+In other cases, TRTC will try its best to maintain On-cloud MixTranscoding continuously. Therefore, to avoid unexpected costs, please end On-cloud MixTranscoding in the above methods as soon as possible when it is no longer needed.
+
+
