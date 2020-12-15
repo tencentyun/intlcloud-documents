@@ -30,7 +30,7 @@
 <tr><th colspan=2 width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
 <tr>
 <td rowspan=3>直播转码</td>
-<td>标准直播转码</td>
+<td>标准转码</td>
 <td><ul style="margin:0">
 <li/>使用直播标准转码功能时计费。
 <li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31064">直播水印</a>、<a href="https://intl.cloud.tencent.com/document/product/267/37665">标准转码</a>、<a href="https://intl.cloud.tencent.com/zh/document/product/267/37665">直播混流</a> 等功能时，均会产生标准转码费用。
