@@ -91,4 +91,4 @@ The following table describes the error codes specific to this API.
 
 ## Debugging Tool
 
-Use the [REST API online debugging tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/im_open_login_svc/account_import) to debug this API.
+Use the [REST API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_info) to debug this API.
