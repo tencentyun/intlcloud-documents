@@ -1,46 +1,46 @@
-### Web 应用防火墙（WAF）与云防火墙区别是什么？
-Web 应用防火墙（WAF）与云防火墙的区别如下：
+### What are the differences between Web Application Firewall (WAF) and Tencent Cloud Firewall (CFW)?
+Their differences are as follows:
 <table>
 <thead>
 <tr>
-<th style ="width:95px;height:45px;position:relative;text-align:left;padding:5px 7px;font-weight:900;" valign="top" rowspan="2"><div style="position:absolute;width:1px;height:130px;top:0;left:0;background-color: #d9d9d9;display:block;transform:rotate(-55deg);transform-origin:top;valign=top;"  ></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;产品<br><br>对比项</th>
-<th colspan="2" style ="text-align:center">腾讯云 Web 应用防火墙（WAF）</th>
-<th rowspan="2" style ="text-align:center">腾讯云防火墙（CFW）</th>
+<th style ="width:95px;height:45px;position:relative;text-align:left;padding:5px 7px;font-weight:900;" valign="top" rowspan="2"><div style="position:absolute;width:1px;height:130px;top:0;left:0;background-color: #d9d9d9;display:block;transform:rotate(-55deg);transform-origin:top;valign=top;"  ></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product<br><br>Item</th>
+<th colspan="2" style ="text-align:center">WAF</th>
+<th rowspan="2" style ="text-align:center">CFW</th>
 </tr>
 <tr>
-<th style ="text-align:center">SAAS 型 WAF</th>
-<th style ="text-align:center">负载均衡型 WAF（CLB WAF）</th>
+<th style ="text-align:center">SaaS WAF</th>
+<th style ="text-align:center">CLB WAF</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>防护对象</th>
-<td>网站和 API 服务。</td>
-<td>网站和 API 服务。</td>
-<td>全部暴露到互联网的业务。</td>
+<th>Protection Object</th>
+<td>Web and API service</td>
+<td>Web and API service</td>
+<td>Businesses entirely opened to the Internet</td>
 </tr>
 <tr>
-<th>适用场景</th>
-<td>有等保或重保需求的客户，关注 Web 和 API 安全防护，关注应用层防护和机器防刷。</td>
-<td>有等保或重保需求的客户，关注 Web 和 API 安全防护，关注应用层防护和机器防刷，且腾讯云上已使用或计划使用七层负载均衡的客户。</td>
-<td>有等保或重保需求客户，或关注 CVM 主机及网络安全的客户。</td>
+<th>Use Cases</th>
+<td>Cybersecurity classified protection, intensifying protection, web and API security protection, application layer protection, and anti-cheating protection.</td>
+<td>Cybersecurity classified protection, intensifying protection, web and API security protection, application layer protection, anti-cheating protection, and layer-7 CLB instance application.</td>
+<td>Cybersecurity classified protection, intensifying protection, CVM host and web security protection.</td>
 </tr>
 <tr>
-<th>核心防护能力</th>
-<td><ul><li>Web 漏洞和未知威胁防护，自助漏报和误报处理。 </li><li>CC 攻击防护。 </li><li>BOT 行为管理/爬虫防护。</li><li>API 安全和业务安全防护。 </li><li>防泄漏/防篡改。</li></td>
-<td><ul><li>Web 漏洞和未知威胁防护，自助漏报和误报处理。 </li><li>CC 攻击防护 。 </li><li>BOT 行为管理。 </li><li>API 安全和业务安全防护。 </li><li>网站 IPv6 防护。 </li></td>
-<td><ul><li>IPS 的虚拟补丁能力，无需 CVM 安装实体补丁，无需重启。含 OWASP TOP 10 Web 基础漏洞防护。</li><li>自动发现失陷主机，对 CVM 的恶意外联行为进行自动阻断。</li><li>支持基于域名的主动外联控制。</li></td>
+<th>Core Protection Capability</th>
+<td><ul><li>Web vulnerability defense, unknown threat defense, and self-service false-negative and false-positive attack processing.</li><li>CC attack defense.</li><li>Bot action management and crawler defense.</li><li>API security and business security protection.</li><li>Anti-leak and anti-tampering.</li></td>
+<td><ul><li>Web vulnerability defense, unknown threat defense, and self-service false-negative and false-positive attack processing.</li><li>CC attack defense.</li><li>Bot action management.</li><li>API security and business security protection.</li><li>IPv6 web protection.</li></td>
+<td><ul><li>IPS virtual patching, which eliminates the needs for realistic CVM patches and restarting. The basic vulnerability defense for OWASP top 10 attacks is covered.</li><li>Automatic detection for compromised hosts and automatically blocking CVM malicious external connections.</li><li>Domain name-based active external connection control.</li></td>
 </tr>
 <tr>
-<th>核心优势</th>
-<td>适用范围广阔，广泛覆盖腾讯云上和非腾讯云上用户。</td>
-<td>云原生接入，接入无需要调整现有的网络架构。 网站业务转发和安全防护分离，一键 bypass，保障网站业务安全、稳定可靠，支持多地域接入，仅覆盖腾讯云上用户。</td>
-<td>云原生防火墙，一键开启，对客户业务无任何影响。 集成了 IIPS、威胁情报、漏扫等安全能力，等保及重保场景必备，仅覆盖腾讯云上用户。</td>
+<th>Core Strength</th>
+<td>The wide scenarios ranging the application needs of users both within and outside Tencent Cloud.</td>
+<td>It is a Tencent Cloud native service, which can be connected across regions, eliminating the need to adjust the existing network architecture. Web business forwarding and security protection are separated, therefore WAF service can be easily disconnected during service breakdown to achieve stable and reliable web security protection. It can only be used for businesses within Tencent Cloud.</td>
+<td>The Tencent Cloud native firewall can be quickly enabled not affecting the existing businesses. It integrates security capabilities such as IIPS, threat intelligence, and vulnerability scanning, etc., which is ideal for cybersecurity classified protection and intensifying protection. It can only be used for businesses within Tencent Cloud.</td>
 </tr>
 <tr>
-<th>如何选择</th>
-<td>云上和本地 IDC 均有网站和 API 防护需求的客户，推荐使用 SAAS 型 WAF。</td>
-<td>腾讯云上已使用或计划使用七层负载均衡的用户，推荐使用负载均衡型 WAF。</td>
-<td>对于关注 CVM 的防护效果，关注 CVM 是否失陷，特别是业务对外除了 Web 服务，还暴露了其他公网服务，推荐选择云防火墙。</td>
+<th>Service Selection</th>
+<td>For businesses requiring web and API security protection for both Tencent Cloud and local IDCs, we recommend using SaaS WAF.</td>
+<td>For businesses using or planning to use layer-7 CLB instances, we recommend using CLB WAF.</td>
+<td>For businesses requiring CVM protection, especially the ones with other public network services opened except the web service, we recommend using CFW.</td>
 </tr>
 </tbody></table>
