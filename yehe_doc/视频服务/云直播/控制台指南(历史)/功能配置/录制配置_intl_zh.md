@@ -20,9 +20,9 @@
 <span id="C_record"></span>
 ## 创建录制模板
 1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
-2. 单击【+】设置基本信息，进行如下配置：
+2. 单击【创建录制模板】设置模板信息，进行如下配置：
 ![](https://main.qcloudimg.com/raw/93c0660fe1c5eaf8bfc2a72e7c7944dc.png)
-   <table>
+<table>
    <thead><tr><th>配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
    <td>默认模板</td>
