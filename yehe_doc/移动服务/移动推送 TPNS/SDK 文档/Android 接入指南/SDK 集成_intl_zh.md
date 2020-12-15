@@ -45,28 +45,28 @@ android {
 dependencies {
     ......
     //添加以下依赖
-    implementation 'com.tencent.jg:jg:1.1'
-    implementation 'com.tencent.tpns:tpns:[VERSION]-release' //  TPNS 推送 [VERSION] 为当前 SDK 版本号，版本号可在 Android 发布动态页查看
-
+    implementation 'com.tencent.jg:jg:1.1'                  
+    implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
+		  // TPNS 推送 [VERSION] 为最新 SDK 版本号，即为上述步骤2获取的版本号
 }
 ```
 
 >!
->- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
->- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
    在 Androidanifest 文件 application 标签内添加以下元数据：
->```
+```
 <application>
 	// 其他安卓组件
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
 			android:value="其他服务接入点域名" />
 </application>
->```
->其他服务接入点域名如下：
->- 上海：`tpns.sh.tencent.com`
->- 新加坡：`tpns.sgp.tencent.com`
->- 中国香港：`tpns.hk.tencent.com`
+```
+其他服务接入点域名如下：
+- 上海：`tpns.sh.tencent.com`
+- 新加坡：`tpns.sgp.tencent.com`
+- 中国香港：`tpns.hk.tencent.com`
 
 #### 注意事项
 
@@ -142,7 +142,7 @@ dependencies {
 
 #### 组件和应用信息配置
 
->! TPNS Android SDK 1.1.6.3 及之前版本请参考文档 1.1.6.3 及之前版本组件和应用信息配置 。
+
 
 ```xml
 <application>
@@ -181,7 +181,7 @@ dependencies {
         </intent-filter>
     </receiver>
 
-    <!-- 【必须】 移动推送 TPNS service -->
+    <!-- 【必须】移动推送 TPNS service -->
     <service
         android:name="com.tencent.android.tpush.service.XGVipPushService"
         android:persistent="true"
@@ -191,17 +191,17 @@ dependencies {
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
             <intent-filter>
-                <!-- 【必须】 请修改为当前APP名包.XGVIP_PUSH_ACTION -->
+                <!-- 【必须】请修改为当前APP名包.XGVIP_PUSH_ACTION -->
                 <action android:name="应用包名.XGVIP_PUSH_ACTION" />
             </intent-filter>
         </service>
 
-    <!-- 【必须】 【注意】authorities修改为 包名.XGVIP_PUSH_AUTH -->
+    <!-- 【必须】【注意】authorities 修改为包名.XGVIP_PUSH_AUTH -->
     <provider
         android:name="com.tencent.android.tpush.XGPushProvider"
         android:authorities="应用包名.XGVIP_PUSH_AUTH" />
 
-    <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER -->
+    <!-- 【必须】【注意】authorities 修改为包名.TPUSH_PROVIDER -->
     <provider
         android:name="com.tencent.android.tpush.SettingsContentProvider"
         android:authorities="应用包名.TPUSH_PROVIDER" />
@@ -266,22 +266,21 @@ dependencies {
 ```
 
 >!
->- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
->- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
    在 Androidanifest 文件 application 标签内添加以下元数据：
->```
+```
 <application>
 	// 其他安卓组件
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
 			android:value="其他服务接入点域名" />
 </application>
->```
->其他服务接入点域名如下：
->- 上海：`tpns.sh.tencent.com`
->- 新加坡：`tpns.sgp.tencent.com`
->- 中国香港：`tpns.hk.tencent.com`
-
+```
+其他服务接入点域名如下：
+- 上海：`tpns.sh.tencent.com`
+- 新加坡：`tpns.sgp.tencent.com`
+- 中国香港：`tpns.hk.tencent.com`
 
 
 ## 调试及设备注册

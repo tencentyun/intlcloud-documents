@@ -85,6 +85,7 @@ dependencies {
 >- 华为推送 \[VERSION\] 为当前最新 SDK 版本号，版本号可在 [Android SDK 发布动态](https://intl.cloud.tencent.com/document/product/1024/36191) 查看。
 >- TPNS Android SDK 自 1.2.1.3 版本起正式支持华为推送 V5 版本，请使用 1.2.1.3 以上版本的 TPNS 华为依赖以避免集成冲突问题。
 
+
 ### Android Studio 手动集成
 
 针对开发者内部构建环境无法访问华为 maven 仓库的情况，提供以下手动集成方法。
@@ -187,12 +188,22 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 
 华为推送服务接入过程配置要求较严格，若华为厂商通道注册失败，开发者可以通过以下方式获取华为推送注册错误码：
 
+
 1. 推送服务 debug 模式下，过滤关键字“OtherPush”或“HMSSDK” ，查看相关返回码日志。
 2. 错误码可在 [华为开发文档](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-References/hmssdk_huaweipush_api_reference_errorcode) 查找对应原因，获取解决办法。
 
+
+
+#### 通过华为通道下发的通知，为什么没有通知提醒？
+
+
+华为推送从 EMUI 10.0版本开始将通知消息智能分成两个级别：一般与重要。EMUI 10.0之前的版本没有对通知消息进行分类，只有一个级别，消息全部通过“默认通知”渠道展示，等价于 EMUI 10.0的重要级别消息。若通知被归类为“一般”级别，则没有震动、响铃、和状态栏图标提示，目前可通过自定义通知渠道将消息级别设为“重要”；但遵照华为推送相关规则，最终展示效果仍将与华为推送智能分类计算出的级别共同决定，两者取低，例如：重要与一般取一般。详情请参见 [华为通知渠道使用指南](https://intl.cloud.tencent.com/document/product/1024/36250)。
+
+
 #### 其他
 
-如遇到发布华为应用市场，发布应用时审核不通过，显示“错误:28: 集成 HMS 需要将证书文件打包到 APK 中，请直接将 assets 目录拷贝到应用工程根目录”。请按如下方法解决：   
+如遇到发布华为应用市场，发布应用时审核不通过，显示“错误:28: 集成 HMS 需要将证书文件打包到 APK 中，请直接将 assets 目录拷贝到应用工程根目录”。请按如下方法解决：
 
 1. 下载华为官方 HMS SDK。
 2. 将 assets 目录下的所有文件及子目录拷贝到开发者 App 工程的同名目录下。如果目录不存在，请先创建。
+
