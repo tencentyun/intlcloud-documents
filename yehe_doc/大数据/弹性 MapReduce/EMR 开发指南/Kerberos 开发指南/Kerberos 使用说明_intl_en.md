@@ -16,7 +16,7 @@ Re-enter KDC database master key to verify: <Type it again>
 Add a principal by using kadmin.local.
 ```
 kadmin.local
-kadmin.local:  ktadd -k /etc/krb5.keytab test-server/host@EXAMPLE.COM
+kadmin.local:  add_principlal -k /etc/krb5.keytab test-server/host@EXAMPLE.COM
 Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab WRFILE:/etc/krb5.keytab.
 Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type arcfour-hmac added to keytab WRFILE:/etc/krb5.keytab.
 Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type des3-cbc-sha1 added to keytab WRFILE:/etc/krb5.keytab.
@@ -26,7 +26,7 @@ Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type de
 ## Creating a keytab File
 ```
 kadmin.local
-kadmin.local:  ktadd -k /etc/krb5.keytab test-client/host@EXAMPLE.COM
+kadmin.local:  add_principlal -k /etc/krb5.keytab test-client/host@EXAMPLE.COM
 Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab WRFILE:/etc/krb5.keytab.
 Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type arcfour-hmac added to keytab WRFILE:/etc/krb5.keytab.
 Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type des3-cbc-sha1 added to keytab WRFILE:/etc/krb5.keytab.
@@ -34,7 +34,7 @@ Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type de
 kadmin.local:  q
 ```
 
-Here, we created two users: `test-server/host@EXAMPLE.COM` and `test-client/host@EXAMPLE.COM`. Put their keys into the `/etc/krb5.keytab` file.
+Here, we created two users: test-server/host@EXAMPLE.COM  and test-client/host@EXAMPLE.COM. Put their keys into the  /etc/krb5.keytab  file.
 
 ## Starting KDC
 ```
