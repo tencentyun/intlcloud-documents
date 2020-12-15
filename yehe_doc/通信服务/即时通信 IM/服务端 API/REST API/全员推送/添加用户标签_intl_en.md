@@ -86,7 +86,7 @@ The list below contains only error codes specific to this API:
 | 91000 | An internal service error occurs. Please try again. |
 
 ## API Debugging Tool
-To debug this API, you can use the [Online RESTful API Debugging Tool](https://avc.qcloud.com/im/APITester/APITester.html#v4/all_member_push/im_add_tag).
+To debug this API, you can use the [Online RESTful API Debugging Tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/all_member_push/im_add_tag).
 
 ## References
 - [Push to all users APIs](https://intl.cloud.tencent.com/document/product/1047/37165) 
