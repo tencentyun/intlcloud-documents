@@ -3,4 +3,5 @@
 
 ## 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在侧菜单中选择【诊断工具】>【内容合规】，进入内容合规页面。
-![](https://main.qcloudimg.com/raw/b45bd63e492f05add5fc012d071b9ea0.png)
+![](https://main.qcloudimg.com/raw/518de80b801700bc004715f8031a8818.png)
+

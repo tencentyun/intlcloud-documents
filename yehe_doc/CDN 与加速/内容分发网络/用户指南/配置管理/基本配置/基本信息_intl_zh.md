@@ -23,7 +23,7 @@
 > ?创建或管理已有项目，可前往 [项目管理](https://console.cloud.tencent.com/project)。
 
 ![](https://main.qcloudimg.com/raw/bb56a7b51526f256ccd5d98169861e98.png)
-![](https://main.qcloudimg.com/raw/025a8fc7a46e16881f5efc5e58b4752f.png)
+![](https://main.qcloudimg.com/raw/1fa0a427bf125b7a12bbe13a79e10c9b.png)
 
 #### 2. 修改域名服务地域
 

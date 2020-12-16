@@ -11,9 +11,9 @@
 ## 配置指南
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【复制配置】，即可进入复制配置页面。
-![](https://main.qcloudimg.com/raw/b379e6d51f70957bc4a144ab20d8ac07.png)
+![](https://main.qcloudimg.com/raw/c9acd7ed82a3c675ec4369e294b2f94b.png)
 您可添加新的加速域名，提交后，当前加速域名的配置将被复制到新添域名上。
-![](https://main.qcloudimg.com/raw/44055505d54436a3df36a09e0b207597.png)
+![](https://main.qcloudimg.com/raw/4e8c4c4cf589118a97bd71c01f798890.png)
 
 >?
 >- 提交后无法中断操作，新域名添加成功后，您可正常管理其域名配置。
