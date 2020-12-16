@@ -6,18 +6,16 @@
 ## 接口调用说明
 ### 适用的群组类型
 
-|群组类型 ID| 是否支持此 REST API|
+|群组类型| 支持此 REST API|
 |-----------|------------|
-|Private|不支持，同新版本中的 Work （好友工作群）|
+|Private|不支持，同新版本中的 Work（好友工作群）|
 |Public|支持|
-|ChatRoom|支持，同新版本中的 Meeting（临时会议群）|
+|ChatRoom|支持，同新版本中的 Meeting（会议群）|
 |AVChatRoom|支持|
 
-即时通信 IM 内置以上五种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
+即时通信 IM 内置以上四种群组类型，详情请参阅 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)。
 
->
->- 私有群不支持禁言。
->- 在线成员广播大群只有 App 管理员可以发送消息，所以无需支持设置和取消禁言。
+>?Private（即新版本中的 Work，好友工作群）类型不支持禁言。
 
 ### 请求 URL 示例
 ```
@@ -110,7 +108,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/forbid_send_msg?sdkappid=88888
 
 ## 接口调试工具
 
-通过 [REST API在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/forbid_send_msg) 调试本接口。
+通过 [REST API在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/forbid_send_msg) 调试本接口。
 
 ## 参考
 获取被禁言群成员列表（[v4/group_open_http_svc/get_group_shutted_uin](https://intl.cloud.tencent.com/document/product/1047/34964)）
