@@ -10,11 +10,11 @@
 
 1. 登录 [对象存储桶控制台](https://console.cloud.tencent.com/cos5)，在左侧菜单栏中单击【存储桶列表】，进入存储桶列表页。
 2. 找到文件夹所在的存储桶，单击存储桶名称，进入存储桶管理页。
-![](https://main.qcloudimg.com/raw/76e595bf6cad2ddf966a017cc9cf6e5d.png)
+
 3. 在【文件列表】页签下，找到待查看的文件夹，在其右侧操作栏下，单击【统计】。
-![](https://main.qcloudimg.com/raw/1ed82b4a2cbe597f09c86876542d49c9.png)
+![](https://main.qcloudimg.com/raw/7b506b2905df3b10a8b44ed0f860f3fe.png)
 4. 此时，您可以查看到该文件夹内的统计信息，包括对象总数和对象容量。
-![](https://main.qcloudimg.com/raw/7fea8813519ff10178a19e992932cebc.png)
+![](https://main.qcloudimg.com/raw/1ed82b4a2cbe597f09c86876542d49c9.png)
 >文件夹内部的嵌套文件夹是以对象进行统计的。
 > 例1：需要统计的文件夹中包含1个空文件夹和5个对象，则统计结果为：对象总数6个。
 > 例2：需要统计的文件夹中包含1个含有2个对象的文件夹和5个对象，则统计结果为：对象总数8个。
