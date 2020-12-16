@@ -56,7 +56,7 @@
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	---- |	
 | [全球应用加速](https://intl.cloud.tencent.com/document/product/608)  | 资源级 | &#10003;  |  &#10003;   |  -  |-  |
 | [全站加速网络](https://intl.cloud.tencent.com/document/product/570)  | 资源级 | &#10003;  |  - | -  | -  |
-| [内容分发网络](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| 资源级 | &#10003;   |  -   | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/228/35229)  |
+| [内容分发网络](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| 资源级 | &#10003;   |  &#10003;   | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/228/35229)  |
 
 
 ## 数据库	
@@ -89,7 +89,7 @@
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	 ---- |
 | [消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406) | 资源级   | &#10003;  | &#10003; |  - |	[访问管理指南](https://intl.cloud.tencent.com/document/product/406/34257) |
 | [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597) | 资源级 | &#10003; | - | &#10003;   | - |
-| [API 网关](https://intl.cloud.tencent.com/document/product/628)     | 资源级  | &#10003;  | -  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/628/34064)|
+| [API 网关](https://intl.cloud.tencent.com/document/product/628)     | 资源级  | &#10003;  | &#10003;  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/628/34064)|
 
 ## 数据处理	
 
@@ -115,7 +115,7 @@
 
  | 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- | 
-| [密钥管理系统](https://intl.cloud.tencent.com/document/product/1030) | 资源级   | &#10003;  | -  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |	
+| [密钥管理系统](https://intl.cloud.tencent.com/document/product/1030) | 资源级   | &#10003;  | &#10003;  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |	
 
 
 ## 安全管理
@@ -159,7 +159,9 @@
 | 服务                                                        | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |		
 | [游戏多媒体引擎](https://intl.cloud.tencent.com/document/product/607)  | 资源级 | &#10003;| &#10003;   |  -    |	 -   |
-| [游戏服务器引擎](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    | -    |
+| [游戏服务器引擎](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    |  [访问管理指南](https://intl.cloud.tencent.com/zh/document/product/1055/37776)   |
+| [游戏玩家匹配](https://intl.cloud.tencent.com/document/product/1072) | 资源级   | &#10003; | &#10003;         | &#10003; | - |
+
 	
 ## 移动服务	
 
