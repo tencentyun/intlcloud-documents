@@ -16,11 +16,11 @@
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【缓存配置】，即可找到【状态码缓存】。
 默认情况下，有一条“404 - 缓存10秒”的规则：
-![](https://main.qcloudimg.com/raw/508f716869f48fad3424fe6eeb77a67c.png)
+![](https://main.qcloudimg.com/raw/4584bfd2e219918025199968bfaa9d81.png)
 
 ### 新增规则
 您可按需添加状态码缓存规则，单击【新增状态码缓存】：
-<img src="https://main.qcloudimg.com/raw/3f01868799d0ddeda302e52e634bbde1.png" style="height:185px"/>
+
 
 配置约束：
 - 一个状态码仅支持添加一条规则，不可重复添加。
