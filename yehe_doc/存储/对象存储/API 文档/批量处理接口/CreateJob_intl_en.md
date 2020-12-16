@@ -23,14 +23,14 @@ x-cos-appid: <appid>
 </CreateJobRequest>
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request Parameters
 
 Calling the `CreateJob` API requires the following parameters:
 
 | Parameter | Description | Required |
-| ----------- | ------------------------ | ---- |
+| ----------- | -------------------------------- | -------- |
 | x-cos-appid | User APPID with a length of 1–64 bytes. | Yes |
 
 #### Request Headers
@@ -63,7 +63,8 @@ You can set the configuration for the inventory job in the request body by using
             <ExpirationInDays> integer </ExpirationInDays>
             <JobTier> string </JobTier>
         </COSInitiateRestoreObject>
-        <COSPutObjectCopy>           
+        <COSPutObjectCopy> 
+            <AccessControlDirective>string</AccessControlDirective>
             <AccessControlGrants>
                 <COSGrant>
                     <Grantee>
@@ -80,10 +81,14 @@ You can set the configuration for the inventory job in the request body by using
                     <Permission>string</Permission>
                 </COSGrant>
             </AccessControlGrants>
+            <PrefixReplace>boolean</PrefixReplace>
+            <ResourcesPrefix>string</ResourcesPrefix>
+            <TargetKeyPrefix>string</TargetKeyPrefix>
             <CannedAccessControlList>string</CannedAccessControlList>
             <MetadataDirective>string</MetadataDirective>
             <ModifiedSinceConstraint>timestamp</ModifiedSinceConstraint>
             <UnModifiedSinceConstraint>timestamp</UnModifiedSinceConstraint>
+            <MetadataDirective>string</MetadataDirective>
             <NewObjectMetadata>
                 <CacheControl>string</CacheControl>
                 <ContentDisposition>string</ContentDisposition>
@@ -102,6 +107,13 @@ You can set the configuration for the inventory job in the request body by using
                     </member>
                 </UserMetadata>
             </NewObjectMetadata>
+            <TaggingDirective>string</TaggingDirective>
+            <NewObjectTagging>
+                <COSTag>
+                    <Key>string</Key> 
+                    <Value>string</Value>
+                </COSTag>
+            </NewObjectTagging>
             <StorageClass>string</StorageClass>
             <TargetResource>string</TargetResource>
         </COSPutObjectCopy>
