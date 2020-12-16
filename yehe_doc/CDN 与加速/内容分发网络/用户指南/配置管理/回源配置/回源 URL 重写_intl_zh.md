@@ -9,14 +9,14 @@
 ### 查看配置
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【回源配置】，即可找到【回源 URL 重写配置】。
-![](https://main.qcloudimg.com/raw/c91b122b8c9a237c42110d2fb55ae2cc.png)
+![](https://main.qcloudimg.com/raw/e6721b8c8d3ebcb9b5a27fb36e6c6782.png)
 
 
 
 ### 新增规则
 
 您可按需添加重写规则，单击【新增规则】：
-<img src="https://main.qcloudimg.com/raw/94ec103cd5ff0a60ab01385305b6fa1a.png" style="height:300px"/>
+
 
 
 **配置约束**
@@ -34,7 +34,7 @@
 ## 配置示例：
 
 若加速域名`www.test.com`的 **回源 URL 重写配置** 如下：
-![](https://main.qcloudimg.com/raw/f1e680ed405b2b3d56702ffbf7c2715f.png)
+![](https://main.qcloudimg.com/raw/4797e184e62c1abd5ed3cf1d1091f3fb.png)
 
 则实际回源情况如下：
 
