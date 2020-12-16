@@ -8,7 +8,7 @@ MariaDB 回档功能不会影响现网生产实例，可直接回档到腾讯云
 - 回档后的临时实例具备现网生产实例的参数信息（如帐户、数据库参数等），但不能修改。
 
 ## 回档实例
-1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/tdsql)，单击实例名进入实例详情页，在右上角单击【回档】。
+1. 登录 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb)，单击实例名进入实例详情页，在右上角单击【回档】。
 2. 在弹出的对话框，设置回档时间，单击【确定】。
 
 

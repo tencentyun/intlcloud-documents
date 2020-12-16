@@ -54,7 +54,7 @@ Definitions:
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- | ---- | 
 | [Global Application Acceleration Platform (GAAP)](https://intl.cloud.tencent.com/document/product/608)  | Resource level | &#10003;  |   &#10003;  |  -  |-  |
 | [Enterprise Content Delivery Network (ECDN)](https://intl.cloud.tencent.com/document/product/570)  | Resource level | &#10003;  |  - | -  | -  |
-| [Content Delivery Network (CDN)](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| Resource level | &#10003;   |  -   | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/228/35229)  |
+| [Content Delivery Network (CDN)](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| Resource level | &#10003;   | &#10003;   | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/228/35229)  |
 
 
 ## Database 
@@ -86,7 +86,7 @@ Definitions:
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |  ---- |
 | [Cloud Message Queue (CMQ)](https://intl.cloud.tencent.com/document/product/406) | Resource level   | &#10003;  | &#10003; |  - | [CAM Guide](https://intl.cloud.tencent.com/document/product/406/34257) |
 | [Cloud Kafka (CKafka)](https://intl.cloud.tencent.com/document/product/597) | Resource level | &#10003; | - | &#10003;   | - |
-| [API Gateway](https://intl.cloud.tencent.com/document/product/628)     | Resource level | &#10003;  | -  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/628/34064)|
+| [API Gateway](https://intl.cloud.tencent.com/document/product/628)     | Resource level | &#10003;  | &#10003;  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/628/34064)|
 
 ## Data Processing 
 
@@ -112,7 +112,7 @@ Definitions:
 
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |Reference Document |
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- | 
-| [Key Management Service (KMS)](https://intl.cloud.tencent.com/document/product/1030) | Resource level   | &#10003;  | -  |  -     |[CAM Guide](https://intl.cloud.tencent.com/document/product/1030/31978) | 
+| [Key Management Service (KMS)](https://intl.cloud.tencent.com/document/product/1030) | Resource level   | &#10003;  | &#10003;  |  -     |[CAM Guide](https://intl.cloud.tencent.com/document/product/1030/31978) | 
 
 
 ## Security Management
@@ -156,7 +156,8 @@ Definitions:
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |  ---- |
 | [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| &#10003;   |  -    |  -   |
-| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| &#10003;   |  &#10003;    | -    |
+| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| &#10003;   |  &#10003;    | [CAM Guide](https://intl.cloud.tencent.com/zh/document/product/1055/37776)    |
+| [Game Player Matchmaking](https://intl.cloud.tencent.com/document/product/1072) | Resource level    | &#10003; | &#10003;         | &#10003; | - |
 
 ## Mobile Services
 
