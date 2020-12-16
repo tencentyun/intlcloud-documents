@@ -2,7 +2,7 @@
 mysqldump is easy to use for data import but needs long downtime, so it is only suitable for small amounts of data or situations that allow relatively long downtime.
 
 1. Use mysqldump to export data from the local database to a data file.
->Do not update data during the export. This step only exports data excluding stored procedures, triggers, and functions.
+>?Do not update data during the export. This step only exports data excluding stored procedures, triggers, and functions.
 >
 ```
 mysqldump -h localIp -u userName -p --opt --default-character-set=utf8 --hex-blob dbName --skip-triggers > /tmp/dbName.sql
@@ -13,7 +13,7 @@ Parameter description:
  - dbName: name of the database that needs to be migrated.
  - /tmp/dbName.sql: name of the generated backup file.
 2. Use mysqldump to export stored procedures, triggers, and functions.
->If the database does not use stored procedures, triggers, or functions, you can skip this step. During the export, you need to remove the definer in order to make the data compatible with TencentDB.
+>?If the database does not use stored procedures, triggers, or functions, you can skip this step. During the export, you need to remove the definer in order to make the data compatible with TencentDB.
 >
 ```
 mysqldump -h localIp -u userName -p --opt --default-character-set=utf8 --hex-blob dbName -R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/triggerProcedure.sql
