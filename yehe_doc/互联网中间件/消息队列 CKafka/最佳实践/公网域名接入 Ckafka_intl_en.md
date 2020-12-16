@@ -1,11 +1,8 @@
 ## Operation Scenarios
 To access CKafka over public network, you can add public routes in CKafka Console and configure SASL authentication and ACL rules to access the production and consumption messages in CKafka topics.
 
->?Public Route feature is currently in beta test. To try it out, [submit a ticket](https://cloud.tencent.com/apply/p/kg3u9clifnk) for application, we will process it and contact you within 5 business days.
-
 ## Prerequisites
-- You have [created an instance](https://intl.cloud.tencent.com/document/product/597/32543).
-- Your [application for free trial](https://cloud.tencent.com/apply/p/kg3u9clifnk) has been approved.
+You have [created an instance](https://intl.cloud.tencent.com/document/product/597/32543).
 
 ## Directions
 
