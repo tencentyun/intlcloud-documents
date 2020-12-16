@@ -15,13 +15,13 @@
 <td>N/A</td>
 </tr>
 <tr>
-<td>In UTF-8, a tag key must be 1 to 127 Unicode characters in length.</td>
-<td>In UTF-8, a tag value must be 1 to 255 Unicode characters in length.</td>
+<td>In UTF-8, a tag key must be 1 to 127 Unicode characters in length</td>
+<td>In UTF-8, a tag value must be 1 to 255 Unicode characters in length</td>
 </tr>
 <tr>
-<td colspan=2>You can use UTF-8-encoded characters, digits, spaces, and special characters including plus signs (+), minus signs (-), equal signs (=), periods (.), slashes (/), and at signs (@) to name a tag key or value.</td>
+<td colspan=2>You can use UTF-8-encoded characters, digits, spaces, and special characters (including +-=._:/@()[]).</td>
 </tr>
 <tr>
-<td colspan=2>The name is case sensitive.</td>
+<td colspan=2>The name is case sensitive</td>
 </tr>
 </tbody></table>
