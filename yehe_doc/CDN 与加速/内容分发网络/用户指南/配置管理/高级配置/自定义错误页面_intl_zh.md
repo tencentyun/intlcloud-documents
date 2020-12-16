@@ -15,14 +15,14 @@
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【高级配置】，即可找到【自定义错误页面配置】。
 
 默认情况下，自定义错误页面配置为关闭状态：
-![](https://main.qcloudimg.com/raw/5b121d34743d531201f86bf862214b31.png)
+![](https://main.qcloudimg.com/raw/ad8f4340f2f7c67247e9730a12e6d27b.png)
 
 
 
 ### 新增规则
 
 您可按需添加自定义错误页面规则，单击【新增规则】：
-<img src="https://main.qcloudimg.com/raw/8e3991131fadd0edce162c734688796a.png" style="height:300px"/>
+
 
 
 
