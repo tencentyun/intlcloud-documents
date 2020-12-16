@@ -1,4 +1,5 @@
 >! As of December 6, 2019, Tencent Cloud no longer supports configuring a CVM as the public gateway on the CVM purchase page. If you need to configure a gateway, please follow the instructions below.
+>
 
 ## Overview
 
@@ -21,7 +22,8 @@ You can access the internet by using a public gateway CVM with a public IP or EI
 ![](https://main.qcloudimg.com/raw/c23b101995cabbe66d546f2a2bcb64ca.png)
 
 ### Step 2: configure a route table for the gateway subnet
-The gateway subnet and other subnets cannot share the same route table. You need to create a separate route table for the gateway subnet.
+>!The gateway subnet and other subnets cannot share the same route table. You need to create a separate route table for the gateway subnet.
+>
 1. [Create a custom route table](https://intl.cloud.tencent.com/document/product/215/35236).
 2. Associate the route table with the subnet where the public gateway CVM resides.
 ![](https://main.qcloudimg.com/raw/c7a6697f7ce1cc4e5c515cfb894ccd25.png)
