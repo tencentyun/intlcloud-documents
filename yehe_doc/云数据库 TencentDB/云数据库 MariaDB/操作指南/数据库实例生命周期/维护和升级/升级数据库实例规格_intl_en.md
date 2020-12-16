@@ -6,7 +6,7 @@ After you click "Upgrade" in the console, the Tencent Cloud OPS management syste
 ![](https://main.qcloudimg.com/raw/c6c8778c93fb4438210b5bb492a956ce.png)
 
 ## Upgrading Instance Specification
->
+>?
 >- You can still use the old instance as usual during the upgrade process, such as importing or exporting data.
 >- The name, access IP, and access port of an instance will remain the same after upgrade.
 >- When the upgrade is completed, the database will be disconnected for several seconds. You are recommended to implement an auto reconnection feature in your program.
@@ -14,7 +14,7 @@ After you click "Upgrade" in the console, the Tencent Cloud OPS management syste
 >
 1. Log in to the [MariaDB Console](https://console.cloud.tencent.com/mariadb). In the instance list, find the desired instance and click **More** > **Adjust Configurations** in the "Operation" column.
 2. On the instance upgrade page, select the upgraded specification, disk capacity, and scheduled switch time and click **Adjust Configurations**.
->
+>!
 >- Generally, the switch time has a tolerance of about 15 minutes, as there may be high amounts of write requests to large transactions, which will affect the data sync progress. In this case, the system will first guarantee sync between the new and old instances instead of performing the scheduled switch.
 >- The maximum scheduled switch time range is 72 hours. Please configure a time reasonably.
 >- Please be sure to select a time during off-peak hours to avoid interrupting your business.
