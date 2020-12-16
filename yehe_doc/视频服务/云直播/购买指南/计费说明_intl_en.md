@@ -256,7 +256,7 @@ Daily LVB top speed codec transcoding fees = 0.0222 (USD/minute) * 60 (minutes) 
 
 > If you have a large-scale live streaming business and the daily billing mode cannot meet your needs, please contact the Tencent Cloud sales team or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to discuss your options.
 
-## LVB Recording
+### LVB Recording
 LVB can record and store live streams in VOD, which will incur VOD fees. The recording feature is disabled by default and can be enabled in the console or through TencentCloud API. This is a paid feature and fees are calculated based on the peak number of concurrent LVB recording channels in the current month. Detailed prices are as follows:
 
 | Billing Type | Price (USD/Channel/Month) |
