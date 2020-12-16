@@ -9,8 +9,8 @@
 ### Quota limits
 | Resource | Limit/qty |
 |---------|---------|
-| Number of VPCs per region for each account | 5 |
-| Number of subnets per VPC | 10 |
+| Number of VPCs per region for each account | 20 |
+| Number of subnets per VPC | 100 |
 | Number of auxiliary CIDR blocks per VPC | 5 |
 
 >? If you need to increase the quota, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=168&source=0&data_title=%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9CVPC&step=1) to apply.
