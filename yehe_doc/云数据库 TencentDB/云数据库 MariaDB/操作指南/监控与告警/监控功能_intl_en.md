@@ -1,5 +1,5 @@
 ## Performance Monitoring
-To make it easier for you to view and stay up to date with how instances work, TencentDB for MariaDB provides a wide variety of performance monitoring metrics. You can log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql) and view them on the **System Monitoring** tab on the instance management page.
+To make it easier for you to view and stay up to date with how instances work, TencentDB for MariaDB provides a wide variety of performance monitoring metrics. You can log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb) and view them on the **System Monitoring** tab on the instance management page.
 
 ## Slave Monitoring
 TencentDB for MariaDB supports monitoring slave performance. On the **System Monitoring** tab, you can switch to slave data as prompted.
