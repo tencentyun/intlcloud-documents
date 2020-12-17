@@ -320,7 +320,7 @@ try
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.COPY);
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Copy);
   // Execute the request
   CopyObjectResult result = cosXml.CopyObject(request);
   // Request succeeded
@@ -360,7 +360,7 @@ try
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.REPLACED);
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
   // Replace metadata
   request.SetRequestHeader("Content-Disposition", "attachment; filename=example.jpg");
   // Execute the request
@@ -400,7 +400,7 @@ try
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.REPLACED);
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
   // Replace metadata
   request.SetRequestHeader("Content-Disposition", "attachment; filename=example.jpg");
   request.SetRequestHeader("Content-Type", "image/png");
@@ -441,7 +441,7 @@ try
   // Set the copy source
   request.SetCopySource(copySource);
   // Set whether to copy or update. Copy is used here.
-  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.REPLACED);
+  request.SetCopyMetaDataDirective(COSXML.Common.CosMetaDataDirective.Replaced);
   // Modify the storage class to ARCHIVE
   request.SetCosStorageClass("ARCHIVE");
   // Execute the request
@@ -569,7 +569,7 @@ try
   int partNumber = 1; // Part number that increases starting from 1
   string srcPath = @"temp-source-file";// Absolute path to the local file
   UploadPartRequest request = new UploadPartRequest(bucket, key, partNumber, 
-    uploadId, srcPath);
+    uploadId, srcPath, 0, -1);
   // Set progress callback
   request.SetCosProgressCallback(delegate (long completed, long total)
   {
@@ -630,7 +630,7 @@ try
   UploadPartCopyResult result = cosXml.PartCopy(request);
   // Request succeeded
   // Return Etag of the part for subsequent CompleteMultiUploads
-  this.eTag = result.copyObject.eTag;
+  this.eTag = result.copyPart.eTag;
   Console.WriteLine(result.GetResultInfo());
 }
 catch (COSXML.CosException.CosClientException clientEx)
