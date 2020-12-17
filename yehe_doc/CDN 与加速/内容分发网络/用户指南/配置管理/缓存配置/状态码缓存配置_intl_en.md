@@ -19,6 +19,8 @@ There is a default rule: Status Code: 404; Cache Time: 10 seconds.
 ### Adding rules
 You can click **Add Rule** to add status code cache rules as needed.
 
+![](https://main.qcloudimg.com/raw/6bb67eb1ad2be9744d8af289ad289111.jpg)
+
 
 Configuration limitations:
 - Each status code can only have one unique rule.

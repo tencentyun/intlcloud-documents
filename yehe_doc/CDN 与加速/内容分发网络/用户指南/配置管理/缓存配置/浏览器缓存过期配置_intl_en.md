@@ -19,6 +19,8 @@ After a new domain name is added, as the platform default policy is "Follow Orig
 
 You can click **Add Rule** to add browser cache validity rules as needed. The supported cache types are specified file type, file directory, file path, and homepage.
 
+![](https://main.qcloudimg.com/raw/d98a14185f9e9d41d682fb356601e9e5.jpg)
+
 - Follow Origin Server: follow the `Cache-Control` header of the origin server.
 - Cache: set the cache time of resources in a browser.
 - No cache: obtain resources from the origin server.

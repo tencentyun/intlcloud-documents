@@ -23,7 +23,7 @@ The custom error page configuration is disabled by default.
 
 You can click **Add Rule** to add custom error page rules as needed.
 
-
+![](https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg)
 
 **Configuration limitations**
 

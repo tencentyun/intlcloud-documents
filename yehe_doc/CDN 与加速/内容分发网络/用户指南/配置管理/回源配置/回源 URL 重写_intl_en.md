@@ -17,6 +17,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 You can click **Add Rule** to add rewrite rules as needed.
 
+![](https://main.qcloudimg.com/raw/5f7d6907976fb0696f633af29321c99c.jpg)
+
 
 **Configuration limitations**
 
