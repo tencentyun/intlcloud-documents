@@ -29,7 +29,7 @@ try
   putRequest.SetIndexDocument("index.html");
   putRequest.SetErrorDocument("eroror.html");
   putRequest.SetRedirectAllRequestTo("index.html");
-  PutBucketWebsiteResult putResult = cosXml.putBucketWebsite(putRequest);
+  PutBucketWebsiteResult putResult = cosXml.PutBucketWebsite(putRequest);
   
   // Request successful 
   Console.WriteLine(putResult.GetResultInfo());
@@ -63,7 +63,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
-  DeleteBucketTaggingResult result = cosXml.deleteBucketTagging(request);
+  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
   // Request successful 
   Console.WriteLine(result.GetResultInfo());
@@ -97,7 +97,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
-  DeleteBucketTaggingResult result = cosXml.deleteBucketTagging(request);
+  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
   // Request successful 
   Console.WriteLine(result.GetResultInfo());
