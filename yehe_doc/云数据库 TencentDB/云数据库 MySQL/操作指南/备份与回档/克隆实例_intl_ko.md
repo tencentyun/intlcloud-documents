@@ -25,15 +25,12 @@ TencentDB for MySQL은 클론 인스턴스 기능을 제공하여 클론을 통�
 ## 작업 순서
 1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤, Instance List에서 인스턴스 이름 혹은 'Operation' 열의 [Manage]를 클릭하여 인스턴스 관리 페이지에 접속합니다.
 2. 인스턴스 관리 페이지에서 [Backup and Restore]>[Database Backup list] 페이지를 선택하여 왼쪽 위의 [Clone]을 클릭하거나 클론할 백업의 ‘Operation’열에서 [Clone]을 클릭합니다.
-![](https://main.qcloudimg.com/raw/741f61688499e094102071f59cac95ea.png)
 3. 구매 페이지에서 클론 인스턴스의 클론 방식과 해당 설정을 선택합니다. 오류가 없는지 확인한 후 [Buy Now]를 클릭합니다.
  - 지정 시간 복구: 기존 데이터베이스 인스턴스에서 구체적인 시간의 데이터베이스 인스턴스로 복구할 수 있습니다. 시간 선택 범위는 사용자가 설정한 로그 백업 보관 시간에 따라 결정합니다.
  - 백업 세트 복구: 지정한 백업 세트에서 새 인스턴스를 백업합니다. 백업 세트의 선택 범위는 사용자가 설정한 데이터 백업 보관 시간에 따라 결정합니다.
  >?백업 보관 시간은 [콘솔](https://console.cloud.tencent.com/cdb)의 백업 리스트에서 조화할 수 있습니다.
  >
-![](https://main.qcloudimg.com/raw/c68773f99e87494e304410b24e345ca5.png)
 4. 구매 성공 후 [Backup and Restore]>[Clone List]페이지에서 클론 상세정보를 조회할 수 있습니다.
-![](https://main.qcloudimg.com/raw/c394f91800f4cfa23fb047666129ffd6.png)
 5. 인스턴스 클론 성공 후 인스턴스 리스트 페이지에서 구매한 인스턴스의 상세정보를 조회할 수 있습니다.
 
 ## 관련 문서
