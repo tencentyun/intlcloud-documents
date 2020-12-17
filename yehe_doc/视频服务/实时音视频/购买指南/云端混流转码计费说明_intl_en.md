@@ -48,7 +48,7 @@ TRTC On-Cloud MixTranscoding supports only **pay-as-you-go daily billing**. Fees
 
 <span id="Billing_examples"></span>
 ## Billing Examples
->- The below example uses list prices. If you have signed a Tencent Cloud contract, prices specified in the contract will apply.
+>!The below example uses list prices. If you have signed a Tencent Cloud contract, prices specified in the contract will apply.
 
 You used the On-Cloud MixTranscoding service through the MCU cluster provided by TRTC on January 1, which produced 1920×1080 and 640×360 videos using the H.264 codec, each totaling 100 minutes, plus 100-minute audio using the audio codec.
 
