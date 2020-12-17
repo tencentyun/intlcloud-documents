@@ -18,7 +18,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 | ------------------ | ------------------------------------ |
 | v4/openim/sendmsg  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
@@ -142,7 +142,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 | From_Account | String |选填| 消息发送方 UserID（用于指定发送消息方帐号）  |
 | To_Account | String |必填| 消息接收方 UserID  |
 | MsgLifeTime | Integer |选填| 消息离线保存时长（单位：秒），最长为7天（604800秒）<li>若设置该字段为0，则消息只发在线用户，不保存离线</li><li>若设置该字段超过7天（604800秒），仍只保存7天</li><li>若不设置该字段，则默认保存7天</li>|
-| MsgRandom | Integer |必填| 消息随机数，由随机函数产生，用于后台定位问题
+| MsgRandom | Integer |必填| 消息随机数，后台用于同一秒内的消息去重。请确保该字段填的是随机数
 | MsgTimeStamp | Integer |选填| 消息时间戳，UNIX 时间戳（单位：秒）  |
 | ForbidCallbackControl | Array |选填| 消息回调禁止开关，只对本条消息有效，ForbidBeforeSendMsgCallback 表示禁止发消息前回调，ForbidAfterSendMsgCallback 表示禁止发消息后回调  |
 | MsgBody | Object |必填| 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
@@ -215,7 +215,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 
 ## 接口调试工具
 
-通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/openim/sendmsg) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/openim/sendmsg) 调试本接口。
 
 ## 参考
 批量发单聊消息（[v4/openim/batchsendmsg](https://intl.cloud.tencent.com/document/product/1047/34920)）

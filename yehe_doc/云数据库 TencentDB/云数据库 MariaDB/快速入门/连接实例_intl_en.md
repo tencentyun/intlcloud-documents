@@ -2,7 +2,7 @@
 TencentDB for MariaDB can be accessed in the following ways:
 - **Private network access**: a CVM instance can be used to access the private network address that is automatically assigned to a TencentDB instance. Both instances should reside in the same region, be under the same account, and use the same type of networks (both in the basic network or in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535)).
 - **Public network access**: on a Windows or Linux server in the public network, install a database client to access the public network address of the TencentDB for MariaDB instance.
->For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
+>!For public network access, the database instance's public IP needs to be enabled, which may expose your database service to attacks or intrusions on the public network. Therefore, it is recommended to log in to the database over the private network.
 
 ## Prerequisites
 No matter whether you access the instance from the private or public network, you need to [create an account](https://intl.cloud.tencent.com/document/product/237/7054) first.
@@ -40,9 +40,8 @@ Take `show databases;` for example as below:
 
 ### Public network access
 1. Get the public network address of the instance.
-1) Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql) and click an instance name or **Manage** in the "Operation" column.
+1) Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb) and click an instance name or **Manage** in the "Operation" column.
 2) On the instance details page, click **Enable** after the public network address to enable it.
-
 3) After the public network address is enabled successfully, it will be displayed.
 
 2. Log in to the instance.

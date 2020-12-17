@@ -7,7 +7,7 @@ REST API 是即时通信 IM 提供给 App 后台的 HTTP 管理接口，其主�
 1. 在即时通信 IM 控制台创建 App，具体方法参见 [应用接入指引](https://intl.cloud.tencent.com/document/product/1047/34577)。
 2. 为您的 App 指定管理员帐号，具体方法参见 [基础配置](https://intl.cloud.tencent.com/document/product/1047/34540) 的帐号体系集成。
 
->调用 REST API 时请务必使用 App 管理员帐号，否则会导致不必要的调用错误。
+>!调用 REST API 时请务必使用 App 管理员帐号，否则会导致不必要的调用错误。
 
 ## 调用方法
 ### 请求 URL
@@ -31,9 +31,9 @@ https://console.tim.qq.com/$ver/$servicename/$command?sdkappid=$SDKAppID&identif
 | random  | 标识当前请求的随机数参数 |32位无符号整数随机数，取值范围0 - 4294967295 |
 | contenttype   |请求格式     | 固定值为`json`                   |
 
->
->1. App 服务端在调用 REST API 时，identifier 必须为 App 管理员帐号。
->2. App 可以在每次调用 REST API 时都生成管理员帐号的 usersig，亦可生成一个固定的 usersig 重复使用，但请特别注意 usersig 的有效期。
+>!
+>- App 服务端在调用 REST API 时，identifier 必须为 App 管理员帐号。
+>- App 可以在每次调用 REST API 时都生成管理员帐号的 UserSig，亦可生成一个固定的 UserSig 重复使用，但请特别注意 UserSig 的有效期。
 
 ### HTTP 请求包体格式
 REST API 仅支持 POST 方法，其请求包体为 JSON 格式，具体的包体格式参见每个 API 的详细描述。
@@ -123,6 +123,6 @@ Access-Control-Allow-Methods: POST
 
 （1）即时通信 IM 后台 REST 接口设置的超时时间是 3s，调用方设置的超时时间应该长于 3s。
 （2）telnet console.tim.qq.com 443 确认能否连接服务端口。
-（3）使用 curl -G https://console.tim.qq.com 简单测试确认能够收到响应。
+（3）使用 curl -I https://console.tim.qq.com 简单测试看状态码是否为200。
 （4）确认机器的 dns server 配置是内网 dns server，还是公共 dns server。如果是内网 dns server，请确保 dns server 网络出口和本机器网络出口 IP 所在地域运营商一致。
 （5）建议业务调用方使用“长连接+连接池”模式。
