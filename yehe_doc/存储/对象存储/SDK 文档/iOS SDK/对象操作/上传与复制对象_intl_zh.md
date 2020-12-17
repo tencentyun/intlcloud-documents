@@ -39,7 +39,10 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-// 本地文件路径
+/** 本地文件路径，请确保 URL 是以 file:// 开头，格式如下 ：
+1. [NSURL URLWithString:@"file:////var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+*/
 NSURL* url = [NSURL fileURLWithPath:@"文件的URL"];
 
 // 存储桶名称，格式为 BucketName-APPID
@@ -608,7 +611,7 @@ request.metadataDirective = @"Replaced";
 // 修改元数据
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
 
-// 对象存储类型，枚举值请参见 存储类型 文档
+// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-storage-class"];
@@ -657,7 +660,7 @@ request.metadataDirective = "Replaced";
 // 修改元数据
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*");
 
-// 对象存储类型，枚举值请参见 存储类型 文档
+// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
@@ -785,7 +788,7 @@ request.bucket = @"examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档
+// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 [request.customHeaders setValue:@"ARCHIVE" forKey:@"x-cos-storage-class"];
 
@@ -818,7 +821,7 @@ request.bucket = "examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = "exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档
+// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 // 源对象所在的路径
