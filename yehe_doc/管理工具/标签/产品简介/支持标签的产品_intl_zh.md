@@ -26,12 +26,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/582">文件存储 CFS </a></td>
 <td>文件系统</td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/product/581">云 HDFS </a></td>
-<td>文件系统</td>
-</tr><tr>
-<td><a href="https://cloud.tencent.com/document/product/581">存储网关 </a></td>
-<td>网关实例</td>
-</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/362">云硬盘 CBS </a></td>
 <td>云硬盘实例 </td>
 </tr></table>
