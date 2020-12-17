@@ -119,7 +119,7 @@ o["rules"] = rules;
 string ruleString = o.ToString(Formatting.None);
 
 ImageProcessRequest request = new ImageProcessRequest(bucket, key, ruleString);
-ImageProcessResult result = cosXml.imageProcess(request);
+ImageProcessResult result = cosXml.ImageProcess(request);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PictureOperation.cs).

@@ -18,7 +18,7 @@
 
 ## SDK API 参考
 
-SDK 所有接口的具体参数与方法说明，请参考 [SDK API 参考](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
+SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos-dotnet-sdk-doc-1253960454.file.myqcloud.com/)。
 
 
 ## 存储桶 ACL
@@ -38,7 +38,7 @@ try
   string bucket = "examplebucket-1250000000"; //格式：BucketName-APPID
   PutBucketACLRequest request = new PutBucketACLRequest(bucket);
   //设置私有读写权限
-  request.SetCosACL(CosACL.PRIVATE);
+  request.SetCosACL(CosACL.Private);
   //授予1131975903账号读权限
   COSXML.Model.Tag.GrantAccount readAccount = new COSXML.Model.Tag.GrantAccount();
   readAccount.AddGrantAccount("1131975903", "1131975903");
@@ -115,7 +115,7 @@ try
   string key = "exampleobject"; //对象键
   PutObjectACLRequest request = new PutObjectACLRequest(bucket, key);
   //设置私有读写权限 
-  request.SetCosACL(CosACL.PRIVATE);
+  request.SetCosACL(CosACL.Private);
   //授予1131975903账号读权限 
   COSXML.Model.Tag.GrantAccount readAccount = new COSXML.Model.Tag.GrantAccount();
   readAccount.AddGrantAccount("1131975903", "1131975903");

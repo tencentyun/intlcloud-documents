@@ -27,7 +27,7 @@ This API is used by the COS Select feature to extract objects in the following f
 
 #### Sample code
 
-[//]: # ".cssg-snippet-select-object"
+[//]: # (.cssg-snippet-select-object)
 ```cs
 try
 {
@@ -42,13 +42,13 @@ try
     
     string outputFile = "select_local_file.json";
 
-    request.setExpression("Select * from COSObject")
-            .setInputFormat(new ObjectSelectionFormat(null, jSONFormat))
-            .setOutputFormat(new ObjectSelectionFormat(null, jSONFormat))
+    request.SetExpression("Select * from COSObject")
+            .SetInputFormat(new ObjectSelectionFormat(null, jSONFormat))
+            .SetOutputFormat(new ObjectSelectionFormat(null, jSONFormat))
             .SetCosProgressCallback(delegate (long progress, long total) {
                 Console.WriteLine("OnProgress : " + progress + "," + total);
             })
-            .outputToFile(outputFile)
+            .OutputToFile(outputFile)
             ;
 
     SelectObjectResult selectObjectResult =  cosXml.selectObject(request);

@@ -8,14 +8,12 @@ The memory allocation mechanism of the database makes the most of idle memory to
 ### What is the maximum data volume of each table in TencentDB for MariaDB (without affecting the normal read/write efficiency)?
 You are recommended to keep the data volume below 20 million entries; otherwise, TencentDB for MariaDB performance will be affected.
 
-### Does TencentDB for MariaDB allow me to use a set of self-built databases as slaves?
-TencentDB for MariaDB provides two schemes for read/write separation: [read/write separation](https://intl.cloud.tencent.com/document/product/237/35409) and [self-built read-only instance](https://intl.cloud.tencent.com/document/product/237/8636).
 
 ### Does the connection method of a TencentDB for MariaDB data source need to be changed?
 TencentDB for MariaDB is compatible with MySQL protocols and connection programs under such protocols; therefore, no change is needed.
 
 ### What syntax does TencentDB for MariaDB audit support?
-Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://console.cloud.tencent.com/workorder/category) for feedback.
+Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://intl.cloud.tencent.com/support) for feedback.
 1. Parsing of DCL, DDL, and DML statements is supported.
 ``` 
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,

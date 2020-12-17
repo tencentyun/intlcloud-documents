@@ -31,7 +31,7 @@ try
   putRequest.IsEnable(true);
   putRequest.SetScheduleFrequency("Daily");
   // Execute the request
-  PutBucketInventoryResult putResult = cosXml.putBucketInventory(putRequest); 
+  PutBucketInventoryResult putResult = cosXml.PutBucketInventory(putRequest); 
   
   // Request successful 
   Console.WriteLine(putResult.GetResultInfo());
@@ -78,7 +78,7 @@ try
   GetBucketInventoryRequest getRequest = new GetBucketInventoryRequest(bucket);
   getRequest.SetInventoryId(inventoryId);
   
-  GetBucketInventoryResult getResult = cosXml.getBucketInventory(getRequest);
+  GetBucketInventoryResult getResult = cosXml.GetBucketInventory(getRequest);
   
   InventoryConfiguration configuration = getResult.inventoryConfiguration;
 }
@@ -112,7 +112,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketInventoryRequest deleteRequest = new DeleteBucketInventoryRequest(bucket);
   deleteRequest.SetInventoryId(inventoryId);
-  DeleteBucketInventoryResult deleteResult = cosXml.deleteBucketInventory(deleteRequest);
+  DeleteBucketInventoryResult deleteResult = cosXml.DeleteBucketInventory(deleteRequest);
   
   // Request successful 
   Console.WriteLine(deleteResult.GetResultInfo());

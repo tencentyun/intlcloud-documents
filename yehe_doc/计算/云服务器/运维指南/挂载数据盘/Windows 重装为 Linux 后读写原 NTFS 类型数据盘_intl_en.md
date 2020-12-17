@@ -8,7 +8,7 @@ The Windows file system typically uses the NTFS or FAT32 format, whereas the Lin
 
 1. Log in to the Linux CVM after reinstallation.
 2. Run the following command to install the ntfsprogs software program to enable the Linux CVM to support access to the NTFS file system.
-> This document uses CentOS as an example. Note that different types of Linux systems require different installation commands. Therefore, always run the corresponding installation command for your operating system type.
+>? This document uses CentOS as an example. Note that different types of Linux systems require different installation commands. Therefore, always run the corresponding installation command for your operating system type.
 >
 ```
 yum install ntfsprogs
@@ -17,7 +17,7 @@ yum install ntfsprogs
 
 ### Mounting a data disk from the Windows CVM to the Linux CVM
 
-> If the data disk in your Windows CVM has been mounted to the Linux CVM, skip this operation.
+>? If the data disk in your Windows CVM has been mounted to the Linux CVM, skip this operation.
 >
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. In the left sidebar, click **[Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs)** to go to the Cloud Block Storage management page.

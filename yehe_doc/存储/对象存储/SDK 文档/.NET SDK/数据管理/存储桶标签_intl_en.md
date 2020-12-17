@@ -35,7 +35,7 @@ try
   request.AddTag(bkey, bvalue);
   
   // Execute the request
-  PutBucketTaggingResult result = cosXml.putBucketTagging(request);
+  PutBucketTaggingResult result = cosXml.PutBucketTagging(request);
   
   // Request successful 
   Console.WriteLine(result.GetResultInfo());
@@ -69,7 +69,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketTaggingRequest request = new GetBucketTaggingRequest(bucket);   
   // Execute the request
-  GetBucketTaggingResult result = cosXml.getBucketTagging(request);
+  GetBucketTaggingResult result = cosXml.GetBucketTagging(request);
   
   // Request successful 
   Tagging tagging = result.tagging;
@@ -104,7 +104,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   DeleteBucketTaggingRequest request = new DeleteBucketTaggingRequest(bucket);   
   // Execute the request
-  DeleteBucketTaggingResult result = cosXml.deleteBucketTagging(request);
+  DeleteBucketTaggingResult result = cosXml.DeleteBucketTagging(request);
   
   // Request successful 
   Console.WriteLine(result.GetResultInfo());

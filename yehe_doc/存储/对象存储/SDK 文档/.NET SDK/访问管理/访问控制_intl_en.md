@@ -38,7 +38,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   PutBucketACLRequest request = new PutBucketACLRequest(bucket);
   // Set private read and write permissions
-  request.SetCosACL(CosACL.PRIVATE);
+  request.SetCosACL(CosACL.Private);
   // Grant read permission for account 1131975903
   COSXML.Model.Tag.GrantAccount readAccount = new COSXML.Model.Tag.GrantAccount();
   readAccount.AddGrantAccount("1131975903", "1131975903");
@@ -115,7 +115,7 @@ try
   string key = "exampleobject"; // Object key
   PutObjectACLRequest request = new PutObjectACLRequest(bucket, key);
   // Set private read and write permissions 
-  request.SetCosACL(CosACL.PRIVATE);
+  request.SetCosACL(CosACL.Private);
   // Grant read permission for account 1131975903 
   COSXML.Model.Tag.GrantAccount readAccount = new COSXML.Model.Tag.GrantAccount();
   readAccount.AddGrantAccount("1131975903", "1131975903");

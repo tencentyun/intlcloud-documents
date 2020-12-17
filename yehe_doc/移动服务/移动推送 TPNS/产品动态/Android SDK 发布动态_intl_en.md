@@ -1,3 +1,6 @@
+
+
+
 ## November 2020
 
 <table>
@@ -7,13 +10,25 @@
     <th width=16%>Release Date</th>
     <th width=20%>Document</th>
 </tr>
+<tr>
+        <td>The SDK v1.2.2.0 is released</td>
+       <td><li>The naming convention is unified for account and tag operation APIs<li>SDK error code reporting is optimized<li>The FCM channel protocol is upgraded, and the display of notifications sent through the FCM channel is taken over by the system<li>Badge coloring is supported for messages sent through the TPNS channel<li>gzip compression is supported during network communication<li>The exception of service unbinding that might occur in multi-thread environments is fixed</td>
+        <td>November 26, 2020</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+    </tr>
         <tr>
         <td>The SDK v1.2.1.3 is released</td>
        <td><li>The internal logic is optimized<li>Huawei Push SDK v5 is officially supported staring this version. Please update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a></td>
         <td>November 11, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>-</td>
     </tr>
 </table>
+
+
+
+
+
+
 
 ## October 2020
 

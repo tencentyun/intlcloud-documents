@@ -4,7 +4,7 @@ After purchasing an SSL certificate, you need to apply for the certificate and s
 
 For a paid certificate, after you submit the certificate order for review, the CA will contact you to confirm certificate information. Make sure that you can be reached by phone and check your email in time to avoid missing the confirmation notice sent by the CA during the review (the phone and email here refer to those you specify when submitting the certificate order for review).
 
-After submitting a certificate order for review, log in to the [Tencent Cloud SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) to check the review status and subsequent processes in the certificate list. After a certificate order is submitted for review, it can be in either of the following states:
+After submitting a certificate order for review, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to check the review status and subsequent processes in the certificate list. After a certificate order is submitted for review, it can be in either of the following states:
 - **Pending verification**: if your certificate order is in this state, click **Details** to view the domain name verification mode and complete verification. After the certificate status changes to **Issued**, the certificate is available for use.
 
 - **Failed to pass review**: if your certificate order is in this state, click **Details** to check the cause of review failure, modify the certificate information accordingly, and submit the modified information for review.

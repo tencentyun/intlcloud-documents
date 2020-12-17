@@ -19,7 +19,7 @@ The sample code below shows how to access a COS service using a custom endpoint.
 CosXmlConfig config = new CosXmlConfig.Builder()
   .SetRegion("COS_REGION")  // Set the default bucket region
   // Set the requested endpoint to “your.domain.com”
-  .setHost("your.domain.com") // Custom endpoint
+  .SetHost("your.domain.com") // Custom endpoint
   .Build();
 ```
 
@@ -36,7 +36,7 @@ The sample code below shows how to access a COS service using a global accelerat
 [//]: # ".cssg-snippet-set-accelerate-domain"
 ```cs
 CosXmlConfig config = new CosXmlConfig.Builder()
-  .setEndpointSuffix("cos.accelerate.myqcloud.com")
+  .SetEndpointSuffix("cos.accelerate.myqcloud.com")
   .Build();
 ```
 

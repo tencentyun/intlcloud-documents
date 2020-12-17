@@ -16,8 +16,8 @@
 ## Configuration Guide
 ### Parameter Description
 TypeA requires the following configurations:
-![](https://main.qcloudimg.com/raw/242bbc36baa0225e38d854714f2296c1.png)
-**Custom authentication key**: it contains 6 to 32 digits and uppercase and lowercase letters. The key should be kept private and known only to the client and server.
+![](https://main.qcloudimg.com/raw/446781f6e47823eae931f8d8a3a5545e.png)
+**Custom authentication key**: it contains 6 to 40 digits and uppercase and lowercase letters. The key should be kept private and known only to the client and server.
 **Custom authentication parameter name**: the `sign` in the example can be replaced with a parameter name containing 1 to 100 uppercase and lowercase letters, digits, and underscores. After CDN receives the request, it will read the value of the specified signature parameter and calculate the MD5 value. If the result matches the `md5hash` value passed in, the signature will be successfully verified. If not, a 403 error will be directly returned.
 **Custom validity period**: the `timestamp` value in the request, plus the configured validity period, is compared with the current time to determine whether the request has expired. If yes, a 403 error will be directly returned. The validity period is in seconds.
 

@@ -28,7 +28,7 @@ try
   // Set the destination path for storing logs
   request.SetTarget("targetbucket-1250000000", "logs/");
   // Execute the request
-  PutBucketLoggingResult result = cosXml.putBucketLogging(request);
+  PutBucketLoggingResult result = cosXml.PutBucketLogging(request);
   // Request successful 
   Console.WriteLine(result.GetResultInfo());
 }
@@ -61,7 +61,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketLoggingRequest request = new GetBucketLoggingRequest(bucket);
   // Execute the request
-  GetBucketLoggingResult getResult = cosXml.getBucketLogging(request);
+  GetBucketLoggingResult getResult = cosXml.GetBucketLogging(request);
   // Request successful 
   BucketLoggingStatus status = getResult.bucketLoggingStatus;
   if (status != null && status.loggingEnabled != null) {
