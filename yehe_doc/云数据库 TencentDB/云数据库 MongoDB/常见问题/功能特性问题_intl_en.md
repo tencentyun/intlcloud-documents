@@ -1,4 +1,3 @@
-
 ### How do I get the slow logs of an instance?
 You can use the [Slow Log Query](https://intl.cloud.tencent.com/document/product/240/31454) feature to get the slow log details.
 
@@ -8,7 +7,7 @@ No. You have to set up a proxy to use the public network. You can purchase a CVM
 ### Does MongoDB support password-free access?
 For security reasons, MongoDB does not support password-free access.
 
-### How do I set slave database dump?
+### How do I set secondary database dump?
 In mongodump parameters, set `readPreference=secondaryPreferred`.
 
 ### Does TencentDB for MongoDB support adding secondary nodes dynamically?
@@ -40,8 +39,3 @@ No.
 
 ### Why is the space not reclaimed after data in MongoDB is deleted?
 Unless a database or table is dropped directly, the space freed by deleted data will not be reclaimed in MongoDB. To reclaim the space of the WiredTiger engine, please see [FAQ: MongoDB Storage](https://docs.mongodb.com/manual/faq/storage/).
-
-
-
-
- 

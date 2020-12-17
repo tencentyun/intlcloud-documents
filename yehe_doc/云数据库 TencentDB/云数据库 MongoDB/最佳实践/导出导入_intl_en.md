@@ -1,7 +1,6 @@
 
->The `local` database mainly stores metadata such as configuration information of the replica set and oplog, and the `admin` database mainly stores information such as users and roles. In order to prevent data disorder and authentication failures, TencentDB for MongoDB prohibits importing `local` and `admin` databases into an instance.
-
-In CVM, you can use the MongoDB shell client to connect to TencentDB for MongoDB for data import and export. Please be sure to use the latest MongoDB client suite. For detailed directions, please see [Connection Sample](https://intl.cloud.tencent.com/document/product/240/7092).
+On a CVM instance, you can use the MongoDB shell client to connect to TencentDB for MongoDB for data import and export. Please be sure to use the latest MongoDB client suite. For detailed directions, please see [Access Connection > Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092).
+>!The `local` database mainly stores metadata such as configuration information of the replica set and oplog, and the `admin` database mainly stores information such as users and roles. In order to prevent data disorder and authentication failures, TencentDB for MongoDB prohibits importing `local` and `admin` databases into an instance.
 
 ## Export and Import Commands
 MongoDB provides two sets of official tools for data import and export:
@@ -37,7 +36,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 ```
 
 ## Parameter Description for Multiple Authentication Methods
-As described in the [Connection Sample](https://intl.cloud.tencent.com/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
+As described in [Access Connection > Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
 - For `mongouser` and all new users created in the console, simply follow the above samples to use the import and export tools.
 - For `rwuser`, the parameter `--authenticationMechanism=MONGODB-CR` should be included in each command.
 
