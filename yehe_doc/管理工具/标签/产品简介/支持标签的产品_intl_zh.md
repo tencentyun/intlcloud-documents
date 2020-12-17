@@ -3,7 +3,12 @@
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/213/19548">云服务器 CVM</a></td>
 <td><li>云服务器实例</li><li>SSH 密钥</li></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/599">批量计算</a></td>
+<td><li>计算环境</li><li>任务模板</li><li>作业</li></td>
 </tr></table>
+
+>?<sup>1</sup> 云服务器 CVM 中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)和[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用标签。
 
 ## 容器
 <table>
@@ -21,6 +26,12 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/582">文件存储 CFS </a></td>
 <td>文件系统</td>
 </tr><tr>
+<td><a href="https://cloud.tencent.com/document/product/581">云 HDFS </a></td>
+<td>文件系统</td>
+</tr><tr>
+<td><a href="https://cloud.tencent.com/document/product/581">存储网关 </a></td>
+<td>网关实例</td>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/362">云硬盘 CBS </a></td>
 <td>云硬盘实例 </td>
 </tr></table>
@@ -32,13 +43,13 @@
 <td>负载均衡实例</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/215">私有网络 VPC  </a><sup>1</sup> </td>
-<td>私有网络实例</td>
+<td><li>私有网络实例</li><li>子网</li><li>路由表</li><li>VPN 网关</li><li>弹性网卡资源</li><li>对端网关</li><li>弹性公网 IP</li><li>共享带宽包</li><li>安全组</li><li>云联网</li><li>NAT 网关</li><li>网络流日志</li><li>流量镜像</li><li>专线网关</li></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/216">专线接入 DC     </a></td>
 <td><li>物联专线</li><li>专用通道</li><li>互联网专用通道</li><li>专线网关</li> </td>
 </tr></table>
 
-> ?<sup>1</sup> 私有网络中子网、路由表、VPN 网关、弹性网卡资源、对端网关、弹性公网 IP、[共享带宽包](https://intl.cloud.tencent.com/document/product/684)、安全组、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[网络流日志](https://intl.cloud.tencent.com/document/product/682)、流量镜像、专线网关均已支持使用标签。
+> ?<sup>1</sup> 私有网络中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用标签。
 
 ## CDN 与加速
 <table>
@@ -55,6 +66,9 @@
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31917">云数据库 MySQL</a></td>
 <td>MySQL 实例</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1003"> 云数据库 CynosDB</a></td>
+<td>CynosDB集群</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/237">云数据库 MariaDB</a></td>
 <td>云数据库 MariaDB 实例</td>
@@ -112,6 +126,9 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/406/34258">消息队列 CMQ</a></td>
 <td><li>队列</li><li>主题 </li></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/628">API 网关</a></td>
+<td>服务</td>
 </tr>
 </table>
 
@@ -129,6 +146,17 @@
 <td>Web 应用防火墙</td>
 </tr></table>
 
+## 数据安全
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1030"> 密钥管理系统</a></td>
+<td>用户密钥</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1078"> 凭据管理系统</a></td>
+<td>凭据</td>
+</tr></table>
+
 ## 云智大数据平台
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
@@ -141,7 +169,15 @@
 
 ## 游戏服务
 <table>
-<tr>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/607"> 游戏多媒体引擎 GME</a></td>
 <td>应用</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1055"> 游戏服务器引擎</a></td>
+<td><li>生承包</li><li>别名</li><li>游戏服务器舰队</li><li>游戏服务器会话队列</li></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1072"> 游戏玩家匹配</a></td>
+<td><li>匹配Code</li><li>规则Code</li></td>
 </tr></table>
+
