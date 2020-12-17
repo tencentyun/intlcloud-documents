@@ -1,8 +1,8 @@
 ## Selecting a Cluster Type
 Elastic MapReduce (EMR) provides three types of clusters for you to choose from based on your business needs.
--**Hadoop cluster:** comes in two editions — Standard and TianQiong. A Hadoop cluster provides open source big data components such as Hadoop, HBase, Hive, Spark, Flink, and Presto. It is mainly used for offline data analysis, real-time data analysis, ad hoc, and other big data processing scenarios.
--**Druid cluster:** provides the Druid component, which is a distributed time series database and mainly used for data aggregations and queries based on time series.
--**ClickHouse cluster:** provides the ClickHouse component, which is an open source column-oriented database and mainly used for the analysis of well-structured, clear, and immutable events or log streams.
+-	**Hadoop cluster:** comes in two editions — Standard and TianQiong. A Hadoop cluster provides open source big data components such as Hadoop, HBase, Hive, Spark, Flink, and Presto. It is mainly used for offline data analysis, real-time data analysis, ad hoc, and other big data processing scenarios.
+-	**Druid cluster:** provides the Druid component, which is a distributed time series database and mainly used for data aggregations and queries based on time series.
+-	**ClickHouse cluster:** provides the ClickHouse component, which is an open source column-oriented database and mainly used for the analysis of well-structured, clear, and immutable events or log streams.
 
 ## Selecting a Billing Mode
 Billing mode for EMR clusters:
@@ -104,5 +104,5 @@ You can choose a model based on your business needs and budget.
 To ensure the network security, the EMR cluster is placed in a VPC, and a security group policy is added to the VPC. In addition, to ensure easy access to the WebUI of Hadoop, a public IP is enabled for one of the master nodes and the node is billed by traffic. A public IP is not enabled for router nodes by default. However, you can bind a router node to an EIP on the [CVM console](https://console.cloud.tencent.com/cvm/eip) to enable a public IP for it.
 >!
 >- A public IP is enabled for master nodes when a cluster is created. You can disable it as needed.
-- Enabling a public IP for master nodes is mainly for SSH login and component WebUI access.
-- Master nodes with a public IP enabled are billed by traffic with a bandwidth of up to 5 Mbps. You can adjust the network on the console after creating a cluster.
+>- Enabling a public IP for master nodes is mainly for SSH login and component WebUI access.
+>- Master nodes with a public IP enabled are billed by traffic with a bandwidth of up to 5 Mbps. You can adjust the network on the console after creating a cluster.
