@@ -31,10 +31,6 @@ Queries per second (QPS) is a metric measuring how much traffic is processed by 
 
 After you add a domain name, WAF will automatically allocate multiple intermediate IP addresses to it accordingly, which can be used as the egress IPs of WAF to forward filtered normal traffic to your real server.
 
-## DNS Hijacking Protection
-
-[DNS hijacking protection](https://intl.cloud.tencent.com/document/product/627/11708) refers to a protection service against DNS hijacking where attackers attack the Domain Name System (DNS) server or forge a DNS server to resolve your domain name to an incorrect address so as to hijack and attack your domain name. You can add DNS hijacking detection rules to protect your website from being hijacked and avoid potential data theft and financial losses.
-
 ## CC Attack Protection
 
 [Challenge Collapsar (CC) attack protection](https://intl.cloud.tencent.com/document/product/627/11709) refers to a protection service against CC attacks where attackers use certain tools to simulate multiple users in order to continuously send connection requests to your website and make your business unavailable. You can add CC protection rules to defend against CC attacks for webpage requests.
