@@ -1,10 +1,9 @@
 ## Overview
-Tencent Cloud COS offers a limited Free Tier to all new customers, that is, all the first time users of COS, both individuals and enterprises. This Free Tier applies to STANDARD storage usage charges for data stored in the **STANDARD** storage class. See more details in the table below: 
+Tencent Cloud COS offers a limited Free Tier to all new customers, that is, all the first time users of COS. This Free Tier applies to STANDARD storage usage charges for data stored in the **STANDARD** storage class. See more details in the table below: 
 
 | User Type | Free Tier          | Term |
 | -------- | ----------------- | ------ |
-| Personal user | 50 GB of STANDARD storage usage | 6 months |
-| Enterprise user | 1 TB of STANDARD storage usage | 6 months |
+| All new customers | 50 GB of STANDARD storage usage | 6 months |
 
 
 ## Free Tier
@@ -83,7 +82,7 @@ During the free tier term, you may be charged other fees you incur, such as requ
 
 ## Example
 
-John Smith, a personal user, activated the COS service on March 10, 2019. He uploaded files of 60 GB in standard storage class on March 16, downloaded 10 GB of data through the public network on March 20, and didn't perform any other operations at other times, so:
+John Smith, a new user, activated the COS service on March 10, 2019. He uploaded files of 60 GB in standard storage class on March 16, downloaded 10 GB of data through the public network on March 20, and didn't perform any other operations at other times, so:
 
 - He was granted free STANDARD storage usage of 50 GB per month for 6 months.
 - On March 21, 2019, the public network downstream traffic was billed for 10 GB of data.
@@ -95,7 +94,7 @@ In April 2019, John didn't perform any other operations, and the 60 GB of data w
 - At the beginning of May 2019, the standard storage capacity was billed. The monthly storage capacity was 60 GB, which exceeded the free tier, **so fees for the excessive 10 GB of standard storage capacity were charged**.
 
 
->The above example applies to scenarios where a personal user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
+>The above example applies to scenarios where a new user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 ## Troubleshooting
 
 Should you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
