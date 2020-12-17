@@ -71,7 +71,6 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
-
 ```
 
 ### Java 签名示例
@@ -106,7 +105,6 @@ public class SignTest {
         }
     }
 }
-
 ```
 
 ### Golang 签名示例
@@ -129,9 +127,6 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
-
-```
-
 ```
 
 ### C# 签名示例
