@@ -11,3 +11,6 @@ The close collaboration between leading third-party mobile finance payment solut
 5. Before CMQ is connected, if SwiftPass fails to notify the merchant, it will initiate a new request to WeChat Pay which then will deliver the same **order payment message** to SwiftPass. After CMQ is connected, from WeChat's perspective, the success rate of SwiftPass' system is greatly improved, and its rating (reliability and credibility) in WeChat system will be increased.
 
 6. Finally, all **order payment messages** will be continuously delivered by another topic to the risk management, campaign management, and promotion campaign systems. For example, the risk management system will continuously analyze the order payment conditions in each message delivered by the topic. If the transaction amount of merchant A soars in a short period of time (suspiciously fake orders), the callback API will be used to prohibit subsequent transactions for merchant A.
+
+Please see the following figure:
+![](//mc.qcloudimg.com/static/img/7f42706e0f87a942e0c0122167797fa5/image.png)

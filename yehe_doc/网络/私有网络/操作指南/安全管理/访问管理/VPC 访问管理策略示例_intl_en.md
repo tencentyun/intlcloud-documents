@@ -1,5 +1,5 @@
-## Full Read-Write Policy of VPC
-The following policy allows you to create and manage VPC instances. You can associate this policy with a group of network admins. The Action element specifies all VPC-related APIs.
+## Full Read-write Permission Policy for VPC
+The following policy allows you to create and manage VPC instances. You can associate this policy with a group of network admins. The `Action` element specifies all VPC-related APIs.
 ```
 {
     "version": "2.0",
@@ -14,8 +14,8 @@ The following policy allows you to create and manage VPC instances. You can asso
     ]
 }
 ```
-## Read-only Policy of VPC 
-The following policy allows you to query your VPC instances and relevant resources. However, you cannot create, update, or delete them with this policy.
+## Read-only Permission Policy for VPC
+The following policy allows you to query your VPC and relevant resources. However, you cannot create, update, or delete them with this policy.
 We recommend that you grant the VPC read-only permission for users, because they have to be able to view the resource in order to operate it in the console.
 
 ```
@@ -37,7 +37,7 @@ We recommend that you grant the VPC read-only permission for users, because they
 
 ## Allowing a Sub-Account to Manage Only a Single VPC
 The following policy allows a user to view all VPC instances but only to be able to operate VPC A (for example, VPC A with an ID of vpc-d08sl2zr) and network resources in VPC A (such as subnets and route tables, but excluding cloud virtual machines (CVMs) and databases). In other words, the user is not allowed to manage other VPC instances.
-This version does not support **allowing the user to see A only**, which however will be supported in future versions.
+This version does not support **allowing the user to view VPC A only**, which however will be supported in future versions.
 
 ```
 {
@@ -48,7 +48,7 @@ This version does not support **allowing the user to see A only**, which however
             "resource": "*",
             "effect": "allow",
             "condition": {
-                "string_equal_if_exist": {
+                "string_equal_if_exist": {  //Conditional judgment: only eligible instances can be managed
                     "vpc:vpc": [
                     "vpc-d08sl2zr"
                     ],
@@ -65,7 +65,7 @@ This version does not support **allowing the user to see A only**, which however
 }
 ```
 
-## Allowing a User to Manage VPC Instances But Not Operate Route Tables
+## Allowing a User to Manage VPC Instances but Not Operate Route Tables
 The following policy allows a user to read and write VPC instances and relevant resources, but disallows the user to operate route tables.
 ```
 {
@@ -95,7 +95,7 @@ The following policy allows a user to read and write VPC instances and relevant 
 ```
 
 ## Allowing a User to Manage VPN Resources
-The following policy allows a user to view all VPC resources, while only allows the user to create, read, update, and delete (CRUD) the resources on VPNs.
+The following policy allows a user to view all VPC resources, while only allows the user to create, read, update, and delete (CRUD) VPN resources.
 
 ```
 {
