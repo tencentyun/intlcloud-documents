@@ -14,13 +14,13 @@
 
 推送必要参数指一条推送消息必需携带的参数。
 
-| 参数名        | 类型    | 是否必需               | 描述                                                         |
-| ------------- | ------- | ---------------------- | ------------------------------------------------------------ |
-| audience_type | String  | 是                     | 推送目标：<li>all：全量推送</li><li>tag：标签推送</li><li>token：单设备推送</li><li>token_list：设备列表推送</li><li>account：单账号推送</li><li>account_list：账号列表推送</li><li>package_account_push：号码包推送<li>package_token_push：token 文件包推送|
-| message       | Object  | 是                     | 消息体，请参见 [消息体类型](#消息体类型)                     |
-| message_type  | String  | 是                     | 消息类型：<li>notify：通知</li><li>message：透传消息/静默消息</li> |
-| environment   | String  | 是（仅 iOS 平台使用）  | 用户指定推送环境，仅限 iOS 平台推送使用：<li>product： 推送生产环境</li><li>dev： 推送开发环境</li> |
-| upload_id     | Integer | 是（仅号码包推送\token文件包推送时使用） | 号码包或 token 包的上传 ID                                           |
+| 参数名        | 类型    | 是否必需                                 | 描述                                                         |
+| ------------- | ------- | ---------------------------------------- | ------------------------------------------------------------ |
+| audience_type | String  | 是                                       | 推送目标：<li>all：全量推送</li><li>tag：标签推送</li><li>token：单设备推送</li><li>token_list：设备列表推送</li><li>account：单账号推送</li><li>account_list：账号列表推送</li><li>package_account_push：号码包推送<li>package_token_push：token 文件包推送 |
+| message       | Object  | 是                                       | 消息体，请参见 [消息体类型](#消息体类型)                     |
+| message_type  | String  | 是                                       | 消息类型：<li>notify：通知</li><li>message：透传消息/静默消息</li> |
+| environment   | String  | 是（仅 iOS 平台使用）                    | 用户指定推送环境，仅限 iOS 平台推送使用：<li>product： 推送生产环境</li><li>dev： 推送开发环境</li> |
+| upload_id     | Integer | 是（仅号码包推送\token文件包推送时使用） | 号码包或 token 包的上传 ID                                   |
 
 <span id="audience_type"></span>
 
@@ -29,16 +29,16 @@
 推送目标，表示一条推送可以被推送到哪些设备。
 Push API 提供了多种推送目标的，例如全量、标签、单设备、设备列表、单账号、账号列表。
 
-| 推送目标             | 描述         | 必需参数及使用说明                                           |
-| -------------------- | ------------ | ------------------------------------------------------------ |
-| all                  | 全量推送     | 无                                                           |
-| tag                  | 标签推送     |  1.`tag_rules（推荐使用）：`<li>标签组合推送，可设置'与'、'或'、'非'组合规则</li><li>**注意：**当与 tag_list 二者共存时，tag_list 字段自动无效，参数说明请查看 [tag_rules 参数说明](#tag_rules)</li>2.`tag_list`（后续不再更新）：<li>推送 tag1 和 tag2 的设备`{"tags":["tag1","tag2"],"op":"AND"}`</li><li>推送 tag1 或 tag 的设备`{"tags":["tag1","tag2"],"op":"OR"}`</li> <li> 标签列表不能超过512个字符</li> |
-| token                | 单设备推送   | `token_list`<li>如果该参数包含多个 token 只会推送第一个 token</li><li>格式 eg：[“token1”]</li><li>token 字符串长度不能超过36</li> |
-| token_list           | 设备列表群推 | `token_list`<li>最多1000个 token</li><li>格式 eg：["token1","token2"]</li><li>token 字符串长度不能超过36</li> |
-| account              | 单账号推送   | `account_list`<li>该参数有多个账号时，仅推送第一个账号</li><li>格式 eg：["account1"] </li> |
-| account_list         | 账号列表群推 | `account_list`<li>最多1000个 account<li> 格式 eg：["account1","account2"]</li> |
-| package_account_push | 号码包推送   | 上传号码包推送必填                                           |
-| package_token_push |  token 文件包推送   | 上传 token 文件包推送必填 |
+| 推送目标             | 描述             | 必需参数及使用说明                                           |
+| -------------------- | ---------------- | ------------------------------------------------------------ |
+| all                  | 全量推送         | 无                                                           |
+| tag                  | 标签推送         | 1.`tag_rules（推荐使用）：`<li>标签组合推送，可设置'与'、'或'、'非'组合规则</li><li>**注意：**当与 tag_list 二者共存时，tag_list 字段自动无效，参数说明请查看 [tag_rules 参数说明](#tag_rules)</li>2.`tag_list`（后续不再更新）：<li>推送 tag1 和 tag2 的设备`{"tags":["tag1","tag2"],"op":"AND"}`</li><li>推送 tag1 或 tag2 的设备`{"tags":["tag1","tag2"],"op":"OR"}`</li> <li> 标签列表不能超过512个字符</li> |
+| token                | 单设备推送       | `token_list`<li>如果该参数包含多个 token 只会推送第一个 token</li><li>格式 eg：[“token1”]</li><li>token 字符串长度不能超过36</li> |
+| token_list           | 设备列表群推     | `token_list`<li>最多1000个 token</li><li>格式 eg：["token1","token2"]</li><li>token 字符串长度不能超过36</li> |
+| account              | 单账号推送       | `account_list`<li>该参数有多个账号时，仅推送第一个账号</li><li>格式 eg：["account1"] </li> |
+| account_list         | 账号列表群推     | `account_list`<li>最多1000个 account<li> 格式 eg：["account1","account2"]</li> |
+| package_account_push | 号码包推送       | 上传号码包推送必填                                           |
+| package_token_push   | token 文件包推送 | 上传 token 文件包推送必填                                    |
 
 - 全量推送：推送给全部设备
 
@@ -164,8 +164,8 @@ Android 平台具体字段如下表：
 | title                    | String | message | 无     | 是   | 消息标题                                                     |
 | content                  | String | message | 无     | 是   | 消息内容                                                     |
 | accept_time              | Array  | message | 无     | 否   | 消息将在哪些时间段允许推送给用户。<li>单个元素由 "start" 和 "end" 组成的起止时间对组成<li>"start" 和 "end" 由 hour （小时）和 min（分钟）描述对应时刻，详细参考具体示例。<li>**注意：**因厂商限制， 仅对 TPNS 通道有效 |
-| thread_id                | String | message | 无     | 否   | 通知分组折叠的组别识别名<li>**注意：**因厂商限制， 仅对 TPNS 通道有效                                     |
-| thread_sumtext           | String | message | 无     | 否   | 通知分组折叠后显示的摘要，thread_id 非空时有效<li>**注意：**因厂商限制， 仅对 TPNS 通道有效               |
+| thread_id                | String | message | 无     | 否   | 通知分组折叠的组别识别名<li>**注意：**因厂商限制， 仅对 TPNS 通道有效 |
+| thread_sumtext           | String | message | 无     | 否   | 通知分组折叠后显示的摘要，thread_id 非空时有效<li>**注意：**因厂商限制， 仅对 TPNS 通道有效 |
 | xg_media_resources       | String | message | 无     | 否   | 通知栏大图片 url 地址，仅对 TPNS 通道和小米通道生效；<li>**注意：**如需使用小米通道大图通知功能，需先调用小米图片上传接口上传图片文件，获取小米指定的图片地址 pic_url ，再填入 TPNS 推送对应的参数 xg_media_resources 中。详情请参见 [小米推送富文本消息](https://dev.mi.com/console/doc/detail?pId=1163#_10_0)  文档中的上传大图 API 部分 |
 | xg_media_audio_resources | String | message | 无     | 否   | 音频富媒体元素地址。<li>支持 mp3 格式音频，建议大小在5MB以内。<li>**注意：**仅 TPNS 通道支持该参数下发，其他通道不下发该参数。 |
 | android                  | Object | message | 无     | 否   | 安卓通知高级设置结构体，请参见 [Android 结构体说明](#intent1) |
@@ -181,7 +181,7 @@ Android 平台具体字段如下表：
 | xm_ch_id       | String  | android | 无     | 否   | 小米渠道 ID（仅小米推送通道生效）                            |
 | hw_ch_id       | String  | android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
 | oppo_ch_id     | String  | android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
-| vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
+| vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道 ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
 | n_id           | Integer | android | 0      | 否   | **（该字段已废弃，后续会下线，如需使用覆盖功能请使用覆盖参数：collapse_id）**<br>通知消息对象的唯一标识（TPNS 通道）<br>（1）大于0：会覆盖先前相同 id 的消息<br>（2）等于0：展示本条通知且不影响其他消息<br>（3）等于-1：将清除先前所有消息，仅展示本条消息 |
 | builder_id     | Integer | android | 0      | 否   | 本地通知样式标识                                             |
 | badge_type     | Integer | android | -1     | 否   | 通知角标，当前仅对华为设备生效。<li>-2：自动增加1；</li><li>-1：不变</li> |
@@ -194,7 +194,7 @@ Android 平台具体字段如下表：
 | icon_res       | String  | android | 无     | 否   | 上传的通知栏缩略图 url 地址，仅 TPNS、华为通道支持。缩略图格式要求可参考 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858)|
 | style_id       | Integer | android | 1      | 否   | 设置是否覆盖指定编号的通知样式                               |
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
-| icon_color      | Integer | android | 0      | 否   | 通知栏小图标染色，只针对 Google 设备有效。需要使用颜色的16进制，例如 0xFF00FFFF |
+| icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色，只针对 Google 设备有效。需要使用颜色的16进制，例如 0xFF00FFFF |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
 | custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 json string）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效。 <li>1：不展示<li>2： 展示<br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</br> |
@@ -284,10 +284,10 @@ Android 平台具体字段如下表：
 
 iOS 平台具体字段如下表：
 
-| 字段名 | 类型   | 父项目  | 默认值 | 必需 | 参数描述 |
-| ------ | ------ | ------- | ------ | ---- | -------- |
+| 字段名 | 类型   | 父项目  | 默认值 | 必需 | 参数描述                                           |
+| ------ | ------ | ------- | ------ | ---- | -------------------------------------------------- |
 | title  | String | message | 无     | 是   | 消息标题，此字段会覆盖 alert 下的 title 中的内容。 |
-| content        | String | message       |无    | 是    | 消息内容，此字段会覆盖 alert 下的 body 中的内容。 |
+| content        | String | message       |无    | 是    | 消息内容，此字段会覆盖 alert 下的 body 中的内容。
 | thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名 |
 | ios    | Object       |message  | 无    | 是    | iOS 消息结构体，请参见 [iOS 字段说明](#iOS) |
 | xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
@@ -309,7 +309,7 @@ iOS 平台具体字段如下表：
 | 字段名          | 类型    | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | --------------- | ------- | ------ | ------ | ---- | ------------------------------------------------------------ |
 | alert           | Object  | aps    | 无     | 是   | 包含标题和消息内容                                           |
-| badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变 <li> -2：角标数字自动加1<li> >=0：设置自定义角标数字|
+| badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变 <li> -2：角标数字自动加1<li> >=0：设置自定义角标数字 |
 | category        | String  | aps    | 无     | 否   | 下拉消息时显示的操作标识                                     |
 | mutable-content | Integer | aps    | 无     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1 ，说明是支持 iOS 10 的 Service Extension。<li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报 |
 | sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<br>1：播放系统默认提示音，"sound":"default"<br>2：播放本地自定义铃声，"sound":"chime.aiff"<br>3：静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。 |
@@ -351,7 +351,7 @@ Android 平台具体字段如下表：
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | title          | String | message | 无     | 是       | 命令描述                                                     |
 | content        | String | message | 无     | 是       | 命令内容                                                     |
-| android        | Object | message | 无     | 否       | 安卓消息结构体                                            |
+| android        | Object | message | 无     | 否       | 安卓消息结构体                                               |
 | accept_time    | Array  | message | 无     | 否       | 消息将在哪些时间段允许推送给用户。<li>单个元素由 "start" 和 "end" 组成的起止时间对组成。</li><li>"start" 和 "end" 由 hour （小时）和 min（分钟）描述对应时刻，详细参考具体示例。</li><li>**注意：**因厂商限制， 仅对 TPNS 通道有效。</li> |
 | custom_content | String | android | 无     | 否       | 需要序列化为 json string                                     |
 
@@ -399,7 +399,7 @@ Android 平台具体字段如下表：
 | 字段名         | 类型   | 父项目  | 默认值 | 是否必要 | 参数描述                                                     |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | ios            | Object | message | 无     | 是       | ios 消息结构体                                               |
-| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer<li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) 。 |
+| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer<li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) |
 | custom_content | String | ios     | 无     | 否       | 需要序列化为 json string                                     |
 | xg             | String | ios     | 无     | 否       | 系统保留 key，应避免使用                                     |
 
