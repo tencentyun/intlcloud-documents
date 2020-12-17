@@ -19,12 +19,12 @@ CAM 策略配置示例：
 
 - **版本 version**：必填项，目前允许值为"2.0"（该值实际代表 CAM 接受的云 API 版本）。
 - **语句 statement**：用来描述一条或多条权限的详细信息。该元素包括 effect、action、resource、condition 等多个其他元素的权限或权限集合。一条策略有且仅有一个 statement 元素。
- - **操作 action**：用来描述允许或拒绝的操作。操作 action 实际填入的是以 "mariadb:" 前缀描述，云数据库 MariaDB API为后缀的一串字符串 。该元素是必填项。
+ - **操作 action**：用来描述允许或拒绝的操作。操作 action 实际填入的是以 "mariadb:" 前缀描述，云数据库 MariaDB API 为后缀的一串字符串 。该元素是必填项。
  2. **资源 resource**：描述授权的具体数据。资源是用六段式描述。每款产品的资源定义详情会有所区别。有关如何指定资源的信息，请参阅您编写的资源声明所对应的产品文档。该元素是必填项。
  3. **生效条件 condition**：描述策略生效的约束条件。条件包括操作符、操作键和操作值组成。条件值可包括时间、IP 地址等信息。有些服务允许您在条件中指定其他值。该元素是非必填项。
  4. **影响 effect**：描述声明产生的结果是“允许”还是“显式拒绝”。包括 allow（允许）和 deny（显式拒绝）两种情况。该元素是必填项。
 
->云数据库 MariaDB 在访问管理的接口关键词为 mariadb。
+>!云数据库 MariaDB 在访问管理的接口关键词为 mariadb。
 
 ## 云数据库的操作
 在云数据库策略语句中，您可以从支持云数据库的任何服务中指定任意的 API 操作。对于云数据库，请使用以 mariadb: 为前缀的 API。例如 mariadb: mariadb:CloseDBExtranetAccess （关闭外网访问）。
@@ -53,18 +53,18 @@ qcs:project_id:service_type:region:account:resource
 - **project_id**：描述项目信息，仅为了兼容 CAM 早期逻辑，无需填写。
 - **service_type**：产品简称，如 mariadb。
 - **region**：地域信息，如 ap-guangzhou。详情请参考 [地域相关信息](https://intl.cloud.tencent.com/document/api/213/15708)。
-- **account**：资源拥有者的主帐号信息，如 uin/653339763。
+- **account**：资源拥有者的主帐号信息，如 uin/65xxx763。
 - **resource**：各产品的具体资源详情，如 instance/instance_id1 或者 instance/*。
 
 例如，
 
 - 您可以使用特定实例（tdsql-k05xdcta）在语句中指定它，如下所示：
 ```
-"resource":[ "qcs::mariadb:ap-guangzhou:uin/653339763:instance/tdsql-k05xdcta"]
+"resource":[ "qcs::mariadb:ap-guangzhou:uin/65xxx763:instance/tdsql-k05xdcta"]
 ```
 2. 您还可以使用 * 通配符指定属于特定帐户的所有实例，如下所示：
 ```
-"resource":[ "qcs::mariadb:ap-guangzhou:uin/653339763:instance/*"]
+"resource":[ "qcs::mariadb:ap-guangzhou:uin/65xxx763:instance/*"]
 ```
 3. 您要指定所有资源，或者如果特定 API 操作不支持 资源级权限，请在 Resource 元素中使用 * 通配符，如下所示：
 ```
@@ -78,7 +78,7 @@ qcs:project_id:service_type:region:account:resource
 下表描述了云数据库能够使用的资源和对应的资源描述方法。
 在下表中，$ 为前缀的单词均为代称。
 
-- 其中，project 指代的是项目 ID。
+
 - 其中，region 指代的是地域。
 - 其中，account 指代的是帐户 ID。
 
