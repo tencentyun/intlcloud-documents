@@ -20,11 +20,11 @@ CAM policy configuration example:
 - **version** is required. Currently, only "2.0" is allowed. (This value actually represents the version of TencentCloud APIs acceptable to CAM.)
 - **statement** describes the details of one or more permissions. This element contains a permission or permission set of other elements such as effect, action, resource, and condition. One policy has only one statement.
  - **action** describes the allowed or denied action. An action entered here is a string prefixed with "mariadb:" and suffixed with an TencentDB for MariaDB API. This element is required.
- 2. **resource** describes the details of authorization. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify a resource, please see the documentation for the product whose resources you are writing a statement for. This element is required.
- 3. **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is required.
- 4. **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
+ - **resource** describes the details of authorization. A resource is described in a six-segment format. Detailed resource definitions vary by product. For more information on how to specify a resource, please see the documentation for the product whose resources you are writing a statement for. This element is required.
+ - **condition** describes the condition for the policy to take effect. A condition consists of operator, action key, and action value. A condition value may contain information such as time and IP address. Some services allow you to specify additional values in a condition. This element is required.
+ - **effect** describes whether the result produced by the statement is "allowed" (allow) or "denied" (deny). This element is required.
 
->The API keyword in CAM of TencentDB for MariaDB is "mariadb".
+>!The API keyword in CAM of TencentDB for MariaDB is "mariadb".
 
 ## Operations in TencentDB
 In a TencentDB policy statement, you can specify any API operation from any service that supports TencentDB. APIs prefixed with "mariadb:" should be used for TencentDB, such as `mariadb: mariadb:CloseDBExtranetAccess` (disabling public network access).
@@ -53,18 +53,18 @@ qcs:project_id:service_type:region:account:resource
 - **project_id** describes the project information, which is only used to enable compatibility with legacy CAM logic and can be left empty.
 - **service_type** describes the product abbreviation such as TencentDB for MariaDB.
 - **region** describes the region information, such as ap-guangzhou. For more information, please see [Regions](https://intl.cloud.tencent.com/document/api/213/15708).
-- **account** is the root account of the resource owner, such as uin/653339763.
+- **account** is the root account of the resource owner, such as uin/65xxx763.
 - **resource** describes detailed resource information of each product, such as instance/instance_id1 or instance/*.
 
 For example:
 
 - You can specify a resource for a specific instance (tdsql-k05xdcta) in a statement as shown below:
 ```
-"resource":[ "qcs::mariadb:ap-guangzhou:uin/653339763:instance/tdsql-k05xdcta"]
+"resource":[ "qcs::mariadb:ap-guangzhou:uin/65xxx763:instance/tdsql-k05xdcta"]
 ```
 2. You can also use the wildcard "*" to specify it for all instances that belong to a specific account as shown below:
 ```
-"resource":[ "qcs::mariadb:ap-guangzhou:uin/653339763:instance/*"]
+"resource":[ "qcs::mariadb:ap-guangzhou:uin/65xxx763:instance/*"]
 ```
 3. If you want to specify all resources or a specific API operation does not support resource-level permission control, you can use the wildcard "*" in the "Resource" element as shown below:
 ```
@@ -78,9 +78,8 @@ For example:
 The table below describes the resources that can be used by TencentDB and the corresponding resource description methods.
 In the table, words prefixed with $ are placeholders.
 
-- `project` is project ID.
 - `region` is region.
-- `account is account ID.
+- `account` is account ID.
 
 | Resource | Resource Description Method in Authorization Policy |
 |:-------|:-------|
