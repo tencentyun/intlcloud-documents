@@ -6,6 +6,7 @@ This feature is currently in beta test. For cross-region binding in Mainland Chi
 - The high-quality public network access capabilities of Tencent Cloud can be reused.
 - The rich features of CLB such as layer-4/7 access, health check, and session persistence can be reused.
 - The private networks can be interconnected with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003/30049), fine-grained routing is supported to guarantee the quality, and diversified tiered pricing is supported to reduce the costs.
+![](https://main.qcloudimg.com/raw/e09b0e4b6fcaedf44267f6ca1950ee54.png)
 
 ## Limits
 - Cross-network CVM instance binding is currently not supported for private network CLB and classic CLB.
