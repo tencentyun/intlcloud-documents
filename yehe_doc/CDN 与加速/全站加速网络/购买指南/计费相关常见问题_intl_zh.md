@@ -9,7 +9,8 @@ ECDN 计费方式如下：
 <span id="fluxcost"></span>
 ### ECDN 超额流量费是如何计算的？
 超额流量费用计算公式如图所示：
-![](https://main.qcloudimg.com/raw/916aeee6cc1351cc0fcadc7c46c5e1fb.png)
+![](https://main.qcloudimg.com/raw/55ffc8048fb8059de4984a65d4061518.png)
+
 - 超额流量费用主要取决于您计费请求次数和实际使用流量，若实际使用流量不大于可减免流量，则无需支付超额流量费用。
 - 可减免流量按实际计费周期内的计费请求次数换算，减免流量额度仅对当前计费周期有效，不可累积使用。
 
