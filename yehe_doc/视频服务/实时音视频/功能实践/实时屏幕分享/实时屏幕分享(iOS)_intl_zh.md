@@ -66,7 +66,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 
 <span id="createGroup"> </span>
 #### 步骤1：创建 App Group
-使用您的帐号登录 [develop.apple.com](https://develop.apple.com) ，进行以下操作，**注意完成后需要重新下载对应的 Provisioning Profile**。
+使用您的帐号登录 [**https://developer.apple.com/**](https://developer.apple.com/) ，进行以下操作，**注意完成后需要重新下载对应的 Provisioning Profile**。
 
 1. 单击【Certificates, IDs & Profiles】。
 2. 在右侧的界面中单击加号。
@@ -120,7 +120,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 }
 
 #pragma mark - TXReplayKitExtDelegate
-- (void)boradcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
+- (void)broadcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
 {
     NSString *tip = @"";
     switch (reason) {
@@ -167,7 +167,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 按照如下步骤，对接主 App 端的接收逻辑。也就是在用户触发屏幕分享之前，要让主 App 处于“等待”状态，以便随时接收来自 Broadcast Upload Extension 进程的录屏数据。
 1. 确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) 关闭摄像头采集。
 2. 调用 [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) 方法，并传入[步骤1](#createGroup)中设置的 AppGroup，让 SDK 进入“等待”状态。
-3. 等待用户触发屏幕分享。如果不实现[步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发。
+3. 等待用户触发屏幕分享。如果不实现[步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发，这一操作步骤如下图所示：
 4. 通过调用 [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 接口可以随时中止屏幕分享。
  
 ```
@@ -199,7 +199,6 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 
 1. 在 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen) 中寻找 `TRTCBroadcastExtensionLauncher` 这个类，并将其加入到您的工程中。
 2. 在您的界面上放置一个按钮，并在按钮的响应函数中调用 `TRTCBroadcastExtensionLauncher` 中的 `launch` 函数，就可以唤起屏幕分享功能了。
-
 ```
 // 自定义按钮响应方法
 - (IBAction)onScreenButtonTapped:(id)sender {
@@ -219,7 +218,6 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 - **观看 Android / iOS 屏幕分享**
   若用户通过 Android / iOS 进行屏幕分享，会通过主流进行分享。房间里的其他用户会通过 TRTCCloudDelegate 中的 [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 事件获得这个通知。
   希望观看屏幕分享的用户可以通过 [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) 接口来启动渲染远端用户主流画面。
-
 
 
 
