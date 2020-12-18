@@ -4,12 +4,12 @@
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击需要申请辅助内网 IP 的实例 ID，进入详情页。
 4. 单击选项卡中的【IPv4 地址管理】，查看内网 IP 信息。
-![](https://main.qcloudimg.com/raw/649d683aad9a1b1ac6fe96ec88f6465c.png)
+![](https://main.qcloudimg.com/raw/a313d1e3c276e09e0d9231a2ed6205b2.png)
 5. 单击【分配内网 IP】，在弹出框中选择自动分配，或手动填写要分配的内网 IP 地址，单击【确定】即可。
 >?如果您选择手动填写，请确认填写内网 IP 在所属子网网段内，且不属于系统保留 IP。
 >例如，所属子网网段为：`10.0.0.0/24`，则可填的内网 IP 范围 为：`10.0.0.2 - 10.0.0.254`。
 >
-![](https://main.qcloudimg.com/raw/62507de3684343c324c499164c73f526.png)
+![](https://main.qcloudimg.com/raw/587903cea55b559c76e91fa27ee6d768.png)
 
 ## 步骤二：配置辅助内网 IP
 登录上述弹性网卡绑定的云服务器，配置辅助内网 IP 使其生效，可参考如下操作：
@@ -20,7 +20,7 @@
 ip addr add 辅助内网IP/CIDR位数 dev eth0
 ```
 2. 执行 `ip addr` 命令，即可查看已配置的 IP 信息，如下图所示。
-![](https://main.qcloudimg.com/raw/98b7e2e0d683644e9694390c4b0ef733.png)
+![](https://main.qcloudimg.com/raw/ddca8a3c87b05bbf5850418824775449.png)
 
 ### Windows 云服务器
 1. <span id="step1" />执行如下步骤，查看云服务器的 IP 地址、子网掩码和默认网关和 DNS 服务器：
