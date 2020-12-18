@@ -33,14 +33,6 @@ message StartGameServerSessionRequest {
 
 ```
 message GseResponse {
-   enum Status {
-      OK = 0;
-      ERROR_400 = 1;
-      ERROR_500 = 2;
-   }
-   Status status = 1;
-   string responseData = 2;
-   string errorMessage = 3;
 }
 ```
 
@@ -50,13 +42,6 @@ message GseResponse {
 For more information on game session, please see `GameServerSession`.
 
 
-**GseResponse**
-
-| Field Name | Type | Description |
-| ------------ | ------ | ---------------------------------------- |
-| status | Enumeration | Return code. 0: success; 400: request error; 500: internal error |
-| responseData | string | Returned data |
-| errorMessage | string | Message indicating success or failure |
 
 ## Sample
 
