@@ -8,7 +8,7 @@ This task guides you on how to use API Gateway to view the statistical data of a
 3. At the top of the service details page, click **Monitoring** to go to the monitoring page of the service.
 4. On the **Monitoring** page, choose the **Statistics** tab and then select the **Environment** and time to view the monitoring data of all APIs in the service environment within the specified time period.
 
-![](https://main.qcloudimg.com/raw/b5cfc1764e8331737758a8d1150b2b95.png)
+![](https://main.qcloudimg.com/raw/e29f1a7d49b0a031542835ef831aeecc.png)
 
 >! 
 >- Currently, monitoring data in real time, in the last 3 hours, and in the last 24 hours are supported.
