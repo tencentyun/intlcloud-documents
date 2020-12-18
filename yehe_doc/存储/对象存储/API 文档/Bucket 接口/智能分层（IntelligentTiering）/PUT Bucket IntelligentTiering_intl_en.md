@@ -1,16 +1,15 @@
 ## Overview
 
-This API is used to enable intelligent tiering configuration on a bucket.
+This API is used to enable INTELLIGENT TIERING for a bucket.
 
 > ?
->
-> - Once enabled, the intelligent tiering configuration can only allow modifying the days for moving objects between storage tiers, but cannot be disabled.
-> - Only the root account or sub-accounts that are granted permission for the PUT Bucket IntelligentTiering action can call this API.
-> - You can obtain the object’s storage tier from the `x-cos-storage-tier` returned by calling the HEAD Object API.
+> - Once enabled, INTELLIGENT TIERING cannot be disabled or modified.
+> - Only the root account and authorized sub-accounts can call the `PUT Bucket IntelligentTiering` API.
+> - You can use `x-cos-storage-tier` returned by the [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API to determine the storage tier of the object.
 
 ## Request
 
-#### Sample request
+#### Request sample
 
 ```plaintext
 PUT /?intelligenttiering HTTP/1.1
@@ -21,15 +20,15 @@ Content-Type: text/plain
 Content-Length: Int
 ```
 
-> ?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> ?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
-#### Request parameters
+#### Request parameter
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -42,21 +41,20 @@ This API only uses common request headers. For more information, see [Common Req
 </IntelligentTieringConfiguration>
 ```
 
-The nodes are described in detail below:
+The parameters are described as follows:
 
-
-| Node Name                           | Parent Node                                   | Description                                                         | Type      | Required |
+| Name                            | Parent Node                                     | Description                                                         | Type      | Required |
 | ------------------------------- | ------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| IntelligentTieringConfiguration | None                                         | Information on the intelligent tiering configuration                               | Container | Yes       |
-| Status                          | IntelligentTieringConfiguration            | Specifies the status of the intelligent tiering configuration once enabled. Enumerated values: Suspended, Enabled     | Enum      | Yes       |
-| Transition                      | IntelligentTieringConfiguration            | Specifies the transition for objects in the intelligent tiering configuration                 | Container | Yes       |
-| Days                            | IntelligentTieringConfiguration.Transition | Specifies the number of consecutive days for which an object in the STANDARD storage tier has not been accessed before being moved to the STANDARD_IA storage tier. Default: 30 | Int       | Yes       |
+| IntelligentTieringConfiguration | No                                         | Detailed configuration of INTELLIGENT TIERING                                   | Container | Yes       |
+| Status                          | IntelligentTieringConfiguration            | Indicates whether INTELLIGENT TIERING is enabled. Enumerated values: `Suspended`, `Enabled`     | Enum      | Yes       |
+| Transition                      | IntelligentTieringConfiguration            | Specifies the transition configuration for INTELLIGENT TIERING                 | Container | Yes       |
+| Days                            | IntelligentTieringConfiguration.Transition | Specifies the number of consecutive days after which objects are moved from STANDARD to STANDARD_IA. The default value is 30 (days). | Int       | Yes       |
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -64,9 +62,9 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Sample
 
 #### Request
 
