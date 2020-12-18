@@ -34,7 +34,7 @@ Velero 工作原理图如下图所示（来源于 [Velero](https://velero.io/) �
 	- **公共权限**：为了安全起见，推荐存储桶权限类别为私有读写，关于公共权限的说明，请参见存储桶概述中的 [权限类别](https://intl.cloud.tencent.com/document/product/436/13312)。
 	- **用户权限**：主账号默认拥有存储桶所有权限（即完全控制）。另外 COS 支持添加子账号有数据读取、数据写入、权限读取、权限写入，甚至**完全控制**的最高权限。
 	由于需要对存储桶进行读写操作，为示例子账号授予**数据读取、数据写入**权限，如下图所示：
-	![](https://main.qcloudimg.com/raw/3f23d6cfeca3c3b01bed6577bc173eb0.jpg)
+	![](https://main.qcloudimg.com/raw/b26d331b8a3c65180b6ff3a540b3de24.png)
 
 
 
