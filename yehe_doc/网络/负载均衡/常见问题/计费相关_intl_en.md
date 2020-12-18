@@ -2,6 +2,7 @@
 Communication between CLB and CVM instances generates private network traffic, irrespective of whether the account type is bill-by-IP or bill-by-CVM. The traffic routes of the two types are as follows:
 - A client accesses a CLB instance over the public network, the CLB instance forwards the traffic to a CVM instance over the private network, then the CVM instance responds to the CLB instance over the private network, finally the CLB instance responds to the client.
 - When a CVM instance accesses the public network or is accessed via a public IP, then the CVM instance interacts with a client via a public IP or EIP.
+![](https://main.qcloudimg.com/raw/c6b614ebf4e53a7b096c7ef302d5e1ec.png)
 
 ## <span id="2"></span>How does the CLB billing work?
 CLB billing policies vary by account type. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/214/36999). The main difference between bill-by-IP and bill-by-CVM accounts lays in the billing dimension, other aspects such as service access and monitoring are the same. For more information on differences between account types, please see the **Account Type** paragraphs.
