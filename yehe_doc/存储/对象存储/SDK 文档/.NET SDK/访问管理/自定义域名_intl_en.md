@@ -33,7 +33,7 @@ try
   
   PutBucketDomainRequest request = new PutBucketDomainRequest(bucket, domain);   
   // Execute the request
-  PutBucketDomainResult result = cosXml.putBucketDomain(request);
+  PutBucketDomainResult result = cosXml.PutBucketDomain(request);
   
   // Request successful
   Console.WriteLine(result.GetResultInfo());
@@ -76,7 +76,7 @@ try
   String bucket = "examplebucket-1250000000"; // Format: BucketName-APPID
   GetBucketDomainRequest request = new GetBucketDomainRequest(bucket);   
   // Execute the request
-  GetBucketDomainResult result = cosXml.getBucketDomain(request);
+  GetBucketDomainResult result = cosXml.GetBucketDomain(request);
   
   // Request successful
   Console.WriteLine(result.domainConfiguration);

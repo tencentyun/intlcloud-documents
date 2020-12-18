@@ -227,7 +227,7 @@ getAuthorization: function(options, callback) { ... }
 
 | Parameter Name | Description | Type |
 | -------- | ------------------------------------------------------------ | -------- |
-| options | Parameter object necessary for getting a temporary key | Function |
+| options | Parameter object necessary for getting a temporary key | Object |
 | - Bucket  | Bucket name in the format `BucketName-APPID`. The bucket name entered here must be in this format | String |
 | - Region | Bucket region. For the enumerated values, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 | callback | Callback method after the temporary key is obtained | Function |

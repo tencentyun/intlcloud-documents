@@ -31,7 +31,7 @@ VideoCall 模式针对视频通话做了优化，所以在房间中只有一个�
 TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以通过 setLogCompressEnabled 来控制，生成的文件名里面含 C(compressed) 的就是加密压缩的，含 R(raw) 的就是明文的。
 
 - iOS&Mac：`sandbox的Documents/log`
-- Android
+- Android：
  - 6.7及之前的版本：`/sdcard/log/tencent/liteav`
  - 6.8之后的版本：`/sdcard/Android/data/包名/files/log/tencent/liteav/`
 - Windows：`%appdata%/tencent/liteav/log`
@@ -45,7 +45,7 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 <span id="que6"></span>
 ###  出现10006 error 该如何处理？
 如果出现"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"，请确认您的实时音视频应用的服务状态是否为可用状态。
-登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板即可确认服务状态。
+登录【实时音视频控制台】>【[应用管理](https://console.cloud.tencent.com/trtc/app)】，选择您创建的应用，单击【应用信息】，在应用信息面板即可确认服务状态。
 ![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
 
 <span id="que7"></span>
@@ -56,7 +56,7 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 
 
 <span id="que8"></span>
-### 如何跨房连麦（主播 PK）?
+###  如何跨房连麦（主播 PK）?
 可以使用 connectOtherRoom 接口。主播调用 connectOtherRoom() 后，可以通过 onConnectOtherRoom 回调得到跨房 PK 的结果。主播一所在房间里的所有人，都会通过 onUserEnter 的回调，得到主播二进房的通知。主播二所在房间的所有人，也都会通过 onUserEnter 的回调得到主播一进房的通知。
 
 <span id="que9"></span>
@@ -88,7 +88,8 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 
 <span id="que15"></span>
 ###  TRTC 正常上行有数据，为什么旁路拉流失败看不到画面？	
-请确认是否已在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 开启自动旁路推流。
+请确认是否已在 【[应用管理](https://console.cloud.tencent.com/trtc/app)】>【功能配置】中开启自动旁路推流。
+
 
 <span id="que16"></span>
 ###  旁路录制的各种场景下生成录制文件是什么格式的？	
@@ -134,7 +135,7 @@ TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互�
 <span id="que25"></span>
 ###  TRTC 只支持腾讯云控制台开启自动录制吗？怎么实现手动开启录制？
 TRTC 支持手动录制，具体操作办法如下：
-1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 开启【自动旁路推流】，不开启【启动云端录制】。
+1. 进入【[应用管理](https://console.cloud.tencent.com/trtc/app)】>【功能配置】，开启【自动旁路推流】，不开启【启动云端录制】。
 2. 用户进房间后，按照流 ID 生成规则，计算出 userid 对应的 streamid。
 3. 使用云直播的 [创建录制任务 API](https://intl.cloud.tencent.com/document/product/267/30847)，对 streamid 启动录制任务。
  - DomainName 为 `[bizid].livepush.myqcloud.com`。
@@ -151,7 +152,7 @@ TRTC 支持手动录制，具体操作办法如下：
 可在实时音视频控制台的【[用量统计](https://console.cloud.tencent.com/trtc/statistics)】页面查看。
 
 <span id="que28"></span>
-### TRTC 如何维护用户列表、统计直播间的观看人数？	
+###  TRTC 如何维护用户列表、统计直播间的观看人数？	
 如果开发者项目工程中有集成 [即时通信IM](https://intl.cloud.tencent.com/document/product/1047)，可以直接通过 IM 群人数统计接口进行统计。但该方案统计出的人数不是很准确，如果开发者对在线人数要求不高，可以直接上述方案。
 如果开发者需要很准确的统计在线人数，建议自行实现统计逻辑：
 1. 增加观众数(Client -> Server) 当有新的观众加入时，意味着某个房间的观众数要 + 1，可以让 App 的观众端在进入房间时向 Server 发送一次累加请求。

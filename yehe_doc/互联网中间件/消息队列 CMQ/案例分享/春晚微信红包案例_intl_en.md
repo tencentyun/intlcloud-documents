@@ -3,10 +3,9 @@ The Spring Festival Gala red packet campaign involves interactions between four 
 - Red packet system: it allows users to send, grab, and open personal red packets and view related lists.
 - Tenpay: it supports payment of orders, high-performance storage of asynchronously credited transactions, and real-time display of user account balance and bills.
 - WeChat: it ensures the quality of WeChat user access over the internet.
-- WeChat Pay: it is the entry to online transactions.
-  
+- WeChat Pay: it is the entry to online transactions. 
 
-![](//mc.qcloudimg.com/static/img/4e497929b188b4ddc76fe43934d9c126/image.png)
+![](https://main.qcloudimg.com/raw/a470a53f8ab2a6eb1277fabdfa99b284.png)
 
 Distributed transaction processing similar to the red packet system is the key focus. For example, **user A sends a red packet of 10 CNY to user B** with the following steps involved:
 1. Read the balance of user A's account

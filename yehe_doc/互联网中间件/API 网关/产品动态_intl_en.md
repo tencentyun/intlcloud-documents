@@ -39,7 +39,7 @@
 <td>Monitoring is optimized</td>
 <td>The API statistics feature is added, which enables you to view the statistics of all APIs under the service within a day so as to quickly locate problems.</td>
 <td>October 26, 2020</td>
-<td>Viewing API Statistics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/38833">Viewing API Statistics</a></td>
 </tr></table>
 
 ## September 2020
