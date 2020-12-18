@@ -31,10 +31,6 @@ SSL 证书（Secure Sockets Layer）指一种安全协议，目的是为互联�
 
 回源 IP 地址（Return Source IP Address）指客户添加域名成功后，Web 应用防火墙根据客户添加的域名，自动分配多个回源 IP 地址，回源 IP 地址作为 Web 应用防火墙的出口 IP，把经过过滤的正常访问流量，导向客户源站。
 
-## DNS 劫持防护
-
-[DNS 劫持防护（DNS Hijacking Protection）](https://intl.cloud.tencent.com/document/product/627/11708)指攻击者通过攻击域名解析服务器（DNS），或者伪造域名解析服务器的方法，把客户网站域名解析到错误的地方，实现对域名的非法劫持攻击。添加 DNS 劫持检测规则，可以协助规避站点用户被恶意劫持给客户带来的数据窃取及金融损失问题。
-
 ## CC 攻击防护
 
 [CC 攻击防护（Challenge Collapsar Protection）](https://intl.cloud.tencent.com/document/product/627/11709)指攻击者通过工具，模拟多个用户不断向网站发送连接请求，导致用户业务不可用，添加 CC 防护规则，可以帮助用户防护针对页面请求的 CC 攻击。
