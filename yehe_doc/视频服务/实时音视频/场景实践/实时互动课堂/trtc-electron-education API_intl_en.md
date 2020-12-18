@@ -66,7 +66,7 @@ const EVENT = rtcClient.EVENT
 rtcClient.off(EVENT.MESSAGE_RECEIVED, onMessageReceived);
 ```
 
-<span id="createRoom"></span>
+[](id:createRoom)
 #### createRoom(params: CreateRoomParams)
 This API is used by the teacher to create a classroom.  
 Parameters:
@@ -101,7 +101,7 @@ Sample code:
 rtcClient.destroyRoom(classId)
 ```
 
-<span id="enterRoom"></span>
+[](id:enterRoom)
 #### enterRoom(params: EnterRoomParams)
 This API is used by the teacher to start teaching or by the student to enter the classroom and prepare to listen.
 Parameters:
@@ -154,7 +154,7 @@ Sample code:
 rtcClient.startQuestionTime(classId)
 ```
 
-<span id="raiseHand"></span>
+[](id:raiseHand)
 #### raiseHand()
 This API is used by the student to raise hand. The student sends a raise hand notification, which will be received by the teacher.  
 Parameters: none
@@ -163,7 +163,7 @@ Sample code:
 rtcClient.raiseHand()
 ```
 
-<span id="inviteToPlatform"></span>
+[](id:inviteToPlatform)
 #### inviteToPlatform(userID: string)
 This API is used by the teacher to invite a student to answer a question. The teacher selects the `userID` of a student in the "raise hand" list and sends an invitation notification. The invited student will receive the invitation event and mic on. If no student raises hand, the teacher can directly select a student. The selected student will receive the answering invitation event and mic on.
 Parameters:
@@ -178,7 +178,7 @@ rtcClient.inviteToPlatform(userID).then(() => {
 })
 ```
 
-<span id="finishAnswering"></span>
+[](id:finishAnswering)
 #### finishAnswering(userID: string)
 This API is used to end answering. The teacher ends answering by the student. The student receives the answering end notification and exits co-anchoring.
 Parameters:
@@ -207,7 +207,7 @@ rtcClient.stopQuestionTime(classId)
 ```
 
 ### Push/Pull APIs
-<span id="getScreenShareList"></span>
+[](id:getScreenShareList)
 #### getScreenShareList()
 This API is used to get the list of windows for screen sharing.
 Parameters: none
@@ -217,7 +217,7 @@ rtcClient.getScreenShareList();
 ```
 
 
-<span id="startScreenCapture"></span>
+[](id:startScreenCapture)
 #### startScreenCapture(source: SourceParam)
 This API is used to select the shared screen and start push.
 Parameters:
@@ -242,7 +242,7 @@ rtcClient.startScreenCapture({
  })
 ```
 
-<span id="startRemoteView"></span>
+[](id:startRemoteView)
 #### startRemoteView(params: RemoteParams) 
 This API is used to start displaying the remote video image or screen sharing image.
 Parameters:
@@ -338,7 +338,7 @@ rtcClient.sendGroupCustomMessage(classId, JSON.stringify(params))
 ```
 
 ### Device operation APIs
-<span id="openCamera"></span>
+[](id:openCamera)
 #### openCamera(view: HTMLElement)
 This API is used to enable the camera.
 Parameters:
@@ -361,7 +361,7 @@ Sample code:
 rtcClient.closeCamera();
 ```
 
-<span id="getCameraList"></span>
+[](id:getCameraList)
 #### getCameraList()
 This API is used to get the list of cameras.
 Parameters: none
@@ -370,7 +370,7 @@ Sample code:
 rtcClient.getCameraList()
 ```
 
-<span id="setCurrentCamera"></span>
+[](id:setCurrentCamera)
 #### setCurrentCamera(deviceId:string)
 This API is used to set the camera. The parameter is a device ID obtained from `getCameraDevicesList`.
 Parameters:
@@ -384,7 +384,7 @@ Sample code:
 rtcClient.setCurrentCamera(deviceId)
 ```
 
-<span id="openMicrophone"></span>
+[](id:openMicrophone)
 #### openMicrophone()
 This API is used to enable the mic.
 Parameters: none
@@ -393,7 +393,7 @@ Sample code:
 rtcClient.openMicrophone();
 ```
 
-<span id="closeMicrophone"></span>
+[](id:closeMicrophone)
 #### closeMicrophone()
 This API is used to disable the mic.
 Parameters: none
@@ -403,7 +403,7 @@ rtcClient.closeMicrophone();
 ```
 
 
-<span id="getMicrophoneList"></span>
+[](id:getMicrophoneList)
 #### getMicrophoneList()
 This API is used to get the list of mics.  
 Parameters: none
@@ -424,7 +424,7 @@ Sample code:
 rtcClient.setCurrentMicDevice(micId)
 ```
 
-<span id="setBeautyStyle"></span>
+[](id:setBeautyStyle)
 #### setBeautyStyle(params: BeautyParams) 
 This API is used to set the effect levels of beauty, brightening, and rosy skin filters. 
 Parameters:
