@@ -29,7 +29,7 @@ Users can enable the object locking feature for sensitive and essential data (e.
 Tencent Cloud COS provides data management capabilities, including data encryption (secures read/write operations of sensitive files), versioning and bucket replication (facilitate remote disaster recovery for data persistence and data recovery for data deleted accidentally or maliciously), and lifecycle (transitions and deletes data for storage cost reduction).
 
 The versioning feature ensures that files will not be overwritten or deleted. After versioning is enabled, if you upload a file whose name already exists, a new version of the file will be generated. If you delete a file, a delete marker will be inserted. You can access the data of any version with a version ID to implement data rollback, freeing yourself from the hassles associated with mis-deleting or overwriting data.
-![](https://main.qcloudimg.com/raw/5632bdeb62c4ae6dde90e1261acdc3fe.png)
+![](https://main.qcloudimg.com/raw/b525afd6a5b804471f191d4b90b269a5.png)
 
 COS bucket replication enables users to copy all incremental files to IDCs in other cities over a dedicated tunnel to implement remote disaster discovery. Data deleted in the master bucket can be restored by batch-replicating data from the backup bucket.
 ![](https://main.qcloudimg.com/raw/73df76364894b76914cfe4450ba8fbf6.png)

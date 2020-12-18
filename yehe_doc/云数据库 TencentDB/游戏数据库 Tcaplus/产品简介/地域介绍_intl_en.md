@@ -3,7 +3,7 @@ Region name can most directly embody the coverage of a data center. The followin
 A region name is composed of **region + city**. The `region` indicates the geographic area that the data center covers, while the `city` represents the city in or near which the data center is located.
 
 
->TcaplusDB does not divide instances by AZ.
+>?TcaplusDB does not divide instances by AZ.
 
 ## How to Select Region
 Tencent Cloud regions are completely isolated. This guarantees the maximum cross-region stability and fault tolerance. When purchasing Tencent Cloud services, you are recommended to select the region closest to your end users to minimize access latency and improve download speed. Operations such as launching or viewing instances are performed at the region level.
