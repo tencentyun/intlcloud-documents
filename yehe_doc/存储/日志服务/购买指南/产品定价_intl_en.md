@@ -66,7 +66,7 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.007</td>
    </tr>
    <tr>
-      <td rowspan="2">North America</td>
+      <td rowspan="3">North America</td>
       <td>Silicon Valley</td>
       <td>0.037</td>
       <td>0.124</td>
@@ -87,6 +87,17 @@ This document describes Tencent Cloud CLS pricing.
       <td>0.0034</td>
       <td>0.034</td>
       <td>0.007</td>
+   </tr>
+	<tr>
+      <td>Ashburn</td>
+      <td>0.032</td>
+      <td>0.106</td>
+      <td>0.032</td>
+      <td>0.072</td>
+      <td>0.0027</td>
+      <td>0.0027</td>
+      <td>0.026</td>
+      <td>0.007</td>        
    </tr>
     <tr>
       <td>Europe</td>
