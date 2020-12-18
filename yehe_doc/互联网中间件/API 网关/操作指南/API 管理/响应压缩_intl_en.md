@@ -7,9 +7,9 @@ This task guides you on how to compress a response through API Gateway.
 
 ![](https://main.qcloudimg.com/raw/defaa80f6f5b9a6721d06e9dadb8c73c.png)
 
-## Description
+## Operation Description
 
-By default, API Gateway supports response compression that is based on the GZIP compression algorithm. To implement this feature, the following requirements need to be met:
+By default, API Gateway supports response compression based on the GZIP compression algorithm. To implement this feature, the following requirements need to be met:
 
 - The client request contains the `Accept-Encoding` header and its value contains `gzip`.
 - The response body size of the client is greater than 1 KB.
@@ -20,4 +20,4 @@ If the client request meets the requirements above, API Gateway will return the 
 ## Notes
 
 - Response compression supports only the HTTP and HTTPS protocols but not WebSocket.
-- If the backend is connected to SCF and response integration is enabled, the structure SCF returns to API Gateway cannot contain the `Content-Encoding: gzip` header. Otherwise, response compression will not take effect.
+- If the backend is connected to SCF and response integration is enabled, the structure that SCF returns to API Gateway cannot contain the `Content-Encoding: gzip` header. Otherwise, response compression will not take effect.
