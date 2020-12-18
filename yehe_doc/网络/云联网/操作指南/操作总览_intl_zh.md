@@ -15,9 +15,9 @@
 - [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)
 - [停用路由](https://intl.cloud.tencent.com/document/product/1003/30068)
 
+### 带宽管理
+- [配置带宽](https://intl.cloud.tencent.com/document/product/1003/38894)
+- [管理带宽](https://intl.cloud.tencent.com/document/product/1003/38895)
+
 ### 监控与告警
 - [查看监控信息](https://intl.cloud.tencent.com/document/product/1003/30071)
-- [查看出带宽上限](https://intl.cloud.tencent.com/document/product/1003/30072)
-- [调整出带宽上限](https://intl.cloud.tencent.com/document/product/1003/30073)
-- [设置跨地域互联告警](https://intl.cloud.tencent.com/document/product/1003/30074)
-
