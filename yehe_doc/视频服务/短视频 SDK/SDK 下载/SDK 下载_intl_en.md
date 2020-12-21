@@ -1,5 +1,5 @@
-## Download of Different UGSV SDK Editions      
-<table>
+## Download Addresses of Different UGSV SDK Editions              
+<table>     
    <tr>
       <th width="85px" style="text-align:center">Feature Module</td>
       <th width="85px" style="text-align:center">Feature</td>
@@ -115,6 +115,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td>Filters</td>
       <td>Filters can be switched by swipe and previewed in real time. The filter and filter level can be customized.</td>
@@ -123,6 +124,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td>Basic beauty filters</td>
       <td>The skin smoothing, skin brightening, and rosy skin filters can be configured for shoot, and their effect levels can be adjusted.</td>
@@ -163,6 +165,7 @@
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+  
    <tr>
       <td rowspan='12'>Special effects and editing</td>
       <td>Quick import</td>
@@ -277,6 +280,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td rowspan='1'>Video upload</td>
       <td>Upload to VOD</td>
@@ -286,6 +290,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
+   
    <tr>
       <td rowspan='1'>VOD playback</td>
       <td>Superplayer</td>
@@ -320,8 +325,9 @@
 </table>
 
 **If you have any questions about the features supported by the SDK, please see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044).**
+**If you need to purchase SDK licenses, please contact your Tencent Cloud rep.**
 
-## Source Code of Full-Featured UGSV Application Demo
+## Source Code of Full-Featured UGSV Application Demos
 
 <table width="850px">
   <tr>
@@ -364,7 +370,6 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
 
 
 
