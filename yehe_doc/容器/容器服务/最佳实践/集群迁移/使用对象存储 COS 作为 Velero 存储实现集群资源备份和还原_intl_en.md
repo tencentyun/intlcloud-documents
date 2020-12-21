@@ -31,10 +31,10 @@ For more information about Velero, see [Velero](https://velero.io/) official doc
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) to create a bucket for Velero to store backups. For more information, see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
 2. [Set Access Permission](https://intl.cloud.tencent.com/document/product/436/13315) for the bucket. COS supports two permission types:
-	- **Public permissions**: for the sake of security, the permission of private read/write is recommended for the bucket. For more information, see **Types of Permission* under [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
+	- **Public permissions**: for the sake of security, the permission of private read/write is recommended for the bucket. For more information, see **Types of Permission** under [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312).
 	- **User permissions**: the root account has all bucket permissions (full control) by default. You can add sub-accounts and grant them permissions including read/write, read/write ACL, and even **full control**.
 	The sample sub-account has been granted the permissions of read/write for performing read/write on the bucket, as shown in the figure below:
-	![](https://main.qcloudimg.com/raw/3f23d6cfeca3c3b01bed6577bc173eb0.jpg)
+	![](https://main.qcloudimg.com/raw/b26d331b8a3c65180b6ff3a540b3de24.png)
 
 
 

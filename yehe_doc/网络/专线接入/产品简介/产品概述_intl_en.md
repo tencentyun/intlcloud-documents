@@ -3,11 +3,11 @@ Direct Connect provides a fast and secure connection between Tencent Cloud and y
 - **Deploy hybrid cloud with Direct Connect (1)**
   Connect your IDCs with cloud VPCs using traditional dedicated tunnels.
   If you want to connect multiple VPCs over one connection, you need to create dedicated tunnels with different VLAN IDs.
-![](https://main.qcloudimg.com/raw/254e77e85563e8b44e48fbdd48c6b710.svg)  
+![](https://main.qcloudimg.com/raw/ccc440bbebf174404c79f9c0eafe8ba4.png)  
 - **Deploy hybrid cloud with Direct Connect (2)**
 Interconnect your network instances by using Cloud Connect Network (CCN).
 Advantage: you just need to create a connection to the CCN-based direct connect gateway and load the gateway with CCN to enable multiple network instances within the CCN to interconnect with each other.
- ![](https://main.qcloudimg.com/raw/d6f4e424fd8764956ac64b7b8bd37a36.svg)
+ ![](https://main.qcloudimg.com/raw/98f444d5e69a086d2dd2d7502ec54ca1.png)
 
 ## Components
 Direct Connect is composed of connections, dedicated tunnels, and direct connect gateways.
