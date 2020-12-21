@@ -11,16 +11,16 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 ![](https://main.qcloudimg.com/raw/8d68c7890edf5b01ad1159e3ae1e62b0.png)
 2. Set information as required in the **Upload Certificate** dialog box.
 ![](https://main.qcloudimg.com/raw/0f7abc105e0f709df73f8c146d051007.png)
- - **Certificate Name**: please enter a certificate name.
+ - **Alias**: please enter a certificate name.
  - **Certificate**:
     - A certificate is usually a file with an extension such as .crt or .pem. Please use a text editor to open the certificate file and copy the certificate to the **Certificate** text box.
     - The certificate should start with "-----BEGIN CERTIFICATE-----" and end with "-----END CERTIFICATE-----".
     - The certificate content should include the complete certificate chain.
- - **Private Key**:
+ - **Private key**:
     - A private key is usually a file with an extension such as .key and .pem. Please use a text editor to open the private key file and copy the private key to the corresponding text box.
     - The private key starts with "-----BEGIN (RSA) PRIVATE KEY-----" and ends with "-----END (RSA) PRIVATE KEY-----".
- - **Project**: please select a project for the certificate.
-3. Click **OK** to upload the certificate to the certificate list.
+
+3. Click **Upload** to upload the certificate to the certificate list.
 
 ## Subsequent Operations
 You can deploy the uploaded certificate to a cloud service.
