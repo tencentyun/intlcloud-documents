@@ -40,8 +40,7 @@ If the current self-built Harbor service is deployed in Tencent Cloud VPC enviro
 	- **Instance**: the currently selected instance, that is, the instance for data synchronization.
 	- **VPC**: the VPC where the self-built Harbor service is located or the VPC connected through Direct Connect.
 	- **Subnet**: the created private access link occupies a private IP address of the selected VPC. Select a subnet under the VPC to assign the subnet of the private IP address.
-		The following figure shows the completed configuration:
-![](https://main.qcloudimg.com/raw/815bd9528ae590df131cdbdb62d799ac.png)
+		
 4. After the configuration is complete, the target access IP address of the private access link is obtained. To parse the domain name of the instance into the private IP address in the VPC, configure the host on the CVM where the self-built Harbor service is located. If an independent DNS is currently in use, you may also configure the host in the DNS.
 Run the following command on CVM to configure the host.
 ```

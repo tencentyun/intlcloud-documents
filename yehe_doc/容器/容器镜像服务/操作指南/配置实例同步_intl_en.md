@@ -49,4 +49,4 @@ Click the name of an instance synchronization rule to view the triggering log of
 - **Time Spent**: indicates the time that is consumed to complete all the synchronization tasks.
 - **Success Rate**: indicates the resource synchronization completion ratio. Multiple repositories may be synchronized concurrently in the same synchronization task.
 - **Number of synced repositories**: indicates the number of repositories that need to be synchronized in the current task.
-- **Synchronization Status**: indicates the task status. If the number of container images and Helm charts that need to be synchronized in a task is large, the task may remain in the "Synchronizing" state for a long time.
+- **Synchronization Status**: indicates the task status. If the number of container images and Helm charts that need to be synchronized in a task is large, the task may remain in the  “InProgress” (Synchronizing) state for a long time.

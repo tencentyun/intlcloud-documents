@@ -79,5 +79,4 @@ Assume that the complete cookie content in a request is `cookie_1 = 123;cookie_2
 7. After the configuration is completed, the session-based CC protection policy will take effect.
 >!If you use session-based CC protection, you cannot view IP blocking information in the IP blocking status section.
 
-[Previous: DNS Hijacking Detection](https://intl.cloud.tencent.com/document/product/627/11708)
 [Next: Anti-Tampering](https://intl.cloud.tencent.com/document/product/627/11710)
