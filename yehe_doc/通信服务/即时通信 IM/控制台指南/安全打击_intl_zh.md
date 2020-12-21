@@ -14,25 +14,26 @@
 ### 开通方式
 1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【安全打击】。
 2. 单击【升级】即可进入购买页面进行购买。
-![](https://main.qcloudimg.com/raw/8910fdb1a93847d664b1c64341ff39ed.png)
+![](https://main.qcloudimg.com/raw/9bf9e4d9cfd9ed35d8e2a03b9e6585ac.png)
 3. 进入购买页后，选择开通安全打击服务，并完成付费，即可开通。
-![](https://main.qcloudimg.com/raw/6580d0cc15abd77b17142f200054984a.png)
+![](https://main.qcloudimg.com/raw/63ece6919e74f17b2056d937dbf7e8ea.png)
 
 ### 自定义不雅词
 开通__安全打击 - 高级版__之后，控制台内安全打击模块将会开通自定义不雅词功能，选择自定义名单，可进行自定义不雅词的录入。
-![](https://main.qcloudimg.com/raw/b4492ece83d896625af165ad87e8f1a9.png)
+![](https://main.qcloudimg.com/raw/62554aecad3dd9404d1a6314af633bbe.png)
 单击【添加样本】，输入关键词，选择标签，单击【提交】，即可添加自定义不雅词。
+
 >!自定义不雅词一次最多添加50个不雅词，不雅词总计数量不超过3000。单个不雅词不超过10字符。
 
-![](https://main.qcloudimg.com/raw/de86a42ddd68e483826fea0a0dfba203.png)
+![](https://main.qcloudimg.com/raw/b7d3bcac627ac3fd877db4ad07f4b6fc.png)
 自定义不雅词的标签包括综合、政治、色情、暴恐、谩骂、涉毒、广告。
-![](https://main.qcloudimg.com/raw/07d7c43f84cd4b8c1365200e246fd058.png)
+![](https://main.qcloudimg.com/raw/65c475f9c1652f8fe69fb2f24a684fe2.png)
 
 ### 不雅词明细查询
 开通__安全打击 - 高级版__之后，单击目标应用卡片，在左侧导航栏选择【安全打击】，单击【明细查询】，可进行不雅词的明细查询。
 
 支持查询任意7日、14日、30日内，任意标签的不雅词的安全打击明细。明细包含打击内容、关键词、审核结果、审核标识和审核时间。
-![](https://main.qcloudimg.com/raw/0172f5396556a7fd66d3efe118d8b8e4.png)
+![](https://main.qcloudimg.com/raw/478f6756383e3320f235cc9241373447.png)
 
 
 ## 自定义消息打击
