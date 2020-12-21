@@ -5,6 +5,7 @@
 ```plaintext
 服务地址/v3/push/app
 ```
+
 接口服务地址与服务接入点一一对应，请选择与您的应用服务接入点对应的 [服务地址](https://intl.cloud.tencent.com/document/product/1024/38517)。
 
 **接口功能**：Push API 是所有推送接口的统称。Push API 有多种推送目标，推送目标见下文。
@@ -39,6 +40,10 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
 | account_list         | 账号列表群推     | `account_list`<li>最多1000个 account<li> 格式 eg：["account1","account2"]</li> |
 | package_account_push | 号码包推送       | 上传号码包推送必填                                           |
 | package_token_push   | token 文件包推送 | 上传 token 文件包推送必填                                    |
+
+
+
+
 
 - 全量推送：推送给全部设备
 
@@ -136,7 +141,6 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
         "account2"
     ]
   }
-
 ```
 
 <span id="消息体类型"></span>
@@ -191,12 +195,12 @@ Android 平台具体字段如下表：
 | lights         | Integer | android | 1      | 否   | 是否使用呼吸灯<li>0：不使用呼吸灯</li><li>1：使用呼吸灯</li> |
 | clearable      | Integer | android | 1      | 否   | 通知栏是否可清除                                             |
 | icon_type      | Integer | android | 0      | 否   | 通知栏缩略图显示的是应用内图标还是上传图标<li>0：应用内图标</li><li>1：上传图标</li> 仅 TPNS、华为通道支持 |
-| icon_res       | String  | android | 无     | 否   | 上传的通知栏缩略图 url 地址，仅 TPNS、华为通道支持。缩略图格式要求可参考 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858)|
+| icon_res       | String  | android | 无     | 否   | 上传的通知栏缩略图 url 地址，仅 TPNS、华为通道支持。缩略图格式要求可参考 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858) |
 | style_id       | Integer | android | 1      | 否   | 设置是否覆盖指定编号的通知样式                               |
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
-| icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色，只针对 Google 设备有效。需要使用颜色的16进制，例如 0xFF00FFFF |
+| icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色。 <li>仅 TPNS 通道有效 <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456  |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 json string）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效。 <li>1：不展示<li>2： 展示<br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</br> |
 
 
@@ -206,12 +210,11 @@ Android 平台具体字段如下表：
 
 | 字段名      | 类型    | 父项目 | 默认值 | 必需                                        | 参数描述                                                     |
 | ----------- | ------- | ------ | ------ | ------------------------------------------- | ------------------------------------------------------------ |
-| action_type | Integer | action | 1      | 否                                          | 点击动作类型，<li>1：打开 activity 或 App 本身</li><li>2：打开浏览器</li><li>3：打开 app 自定义页面（推荐使用，参考 [使用 Intent 方式跳转指引](https://intl.cloud.tencent.com/document/product/1024/32624)） </li> |
-| activity    | String  | action | 无     | action_type 为1，且需要打开 activity 时必选 | activity 完整名称，例如 com.x.y.PushActivity                   |
-| aty_attr    | Object  | action | 无     | action_type 为1，且需要打开 activity 时可选 | activity属性<li>if：Intent的Flag属性，类型为 Integer<li>pf：PendingIntent的Flag属性，类型为 Integer |
+| action_type | Integer | action | 1      | 否                                          | 点击动作类型，<li>1：打开 activity 或 App 本身</li><li>2：打开浏览器</li><li>3：打开 App 自定义页面（推荐使用，参考 [使用 Intent 方式跳转指引](https://intl.cloud.tencent.com/document/product/1024/32624)） </li> |
+| activity    | String  | action | 无     | action_type 为1，且需要打开 activity 时必选 | activity 完整名称，例如 com.x.y.PushActivity   |
+| aty_attr    | Object  | action | 无     | action_type 为1，且需要打开 activity 时可选 | activity 属性<li>if：Intent 的 Flag 属性，类型为 Integer<li>pf：PendingIntent 的 Flag 属性，类型为 Integer |
 | browser     | Object  | action | 无     | action_type 为2时必选                       | 打开浏览器操作，<li>url：网页地址，仅支持 http、https，类型为 String</li><li>confirm：是否需要用户确认，类型为 Integer</li>（1）1：需要确认<br> （2）0：不需要确认 |
 | intent      | String  | action | 无     | action_type 为3时必选                       | 自定义 scheme，例如 `xgscheme://com.tpns.push/notify_detail`     |
-
 
 完整的消息示例如下：
 
@@ -277,7 +280,6 @@ Android 平台具体字段如下表：
       "custom_content":"{\"key\":\"value\"}"
     }
 }
-
 ```
 
 ### iOS 普通消息
@@ -291,7 +293,6 @@ iOS 平台具体字段如下表：
 | thread_id       | String  | message       |无    | 否    | 通知分组折叠的组别识别名 |
 | ios    | Object       |message  | 无    | 是    | iOS 消息结构体，请参见 [iOS 字段说明](#iOS) |
 | xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
-
 
 <span id="iOS"></span>
 
@@ -336,7 +337,6 @@ iOS 平台具体字段如下表：
         "xg": "oops"
     }
 }
-
 ```
 
 ### Android 透传消息
@@ -387,7 +387,6 @@ Android 平台具体字段如下表：
         }
     ]
 }
-
 ```
 
 ### iOS 静默消息
@@ -399,7 +398,7 @@ Android 平台具体字段如下表：
 | 字段名         | 类型   | 父项目  | 默认值 | 是否必要 | 参数描述                                                     |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | ios            | Object | message | 无     | 是       | ios 消息结构体                                               |
-| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer<li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) |
+| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer<li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1)  |
 | custom_content | String | ios     | 无     | 否       | 需要序列化为 json string                                     |
 | xg             | String | ios     | 无     | 否       | 系统保留 key，应避免使用                                     |
 
@@ -425,23 +424,25 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 
 
 
-| 参数名               | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
-| -------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
-| expire_time          | Integer | 无     | 否                             | 259200（72小时）                     | 消息离线存储时间（单位为秒）,最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过2147483647，否则会导致推送失败</li> |
-| send_time            | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间，可选择未来90天内的时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送和标签推送支持此字段</li> |
-| multi_pkg            | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制 TPNS 通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
-| loop_param           | Object  | 无     | 否                             | 0                                    | 循环推送（全推，标签推）相关，详情见下文 [loop_param 参数说明](#loop_param参数说明) |
-| group_id             | String  | 无     | 否                             | tpns_yyyymmdd，yyyymmdd 代表推送日期 | **该字段已废弃，后续会下线，若需要使用聚合统计请使用推送计划字段：plan_id** |
-| plan_id              | String  | 无     | 否                             | 无                                   | 推送计划 ID，推送计划创建及使用方式可 [参考文档](https://intl.cloud.tencent.com/document/product/1024/37452) |
-| tag_rules             | Array  | 无     | 仅标签推送必需                 | 无                                   |  <li>标签组合推送，可设置'与'、'或'、'非'组合规则</li><li>**注意：**当与 tag_list 二者共存时，tag_list 字段自动无效，参数说明请查看 [tag_rules 参数说明](#tag_rules)</li> |
-| account_list         | Array   | 无     | 单账号推送、账号列表推送时必需 | 无                                   | 若单账号推送：<li>要求 `audience_type = account`</li><li>参数格式：[ "account1" ]</li><br>若账号列表推送：<li>参数格式：`["account1","account2"]`</li><li>最多1000 个 account </li> |
-| account_push_type    | Integer | 无     | 账号推送时可选                 | 0                                    | <li> 0：往账号的最新的 device 上推送信息</li><li> 1：往账号关联的所有 device 设备上推送信息</li> |
-| token_list           | Array   | 无     | 单设备推送、设备列表推送时必需 | 无                                   | 若单设备推送：<li>要求 audience_type=token<li>参数格式：[ "token1" ]<br>若设备列表推送：<li>参数格式：[ "token1","token2" ]</li><li>最多1000 个 token </li> |
-| push_speed           | Integer | 无     | 仅全量推送和标签推送有效       | 无                                   | 推送限速设置每秒 X 条，X 取值参数范围 1000 - 50000           |
-| collapse_id          | Integer | 无     | 否                             | 系统默认分配一个 collapse_id         | <li>消息覆盖参数，在前一条推送任务已经调度下发后，如果第二条推送任务携带相同的 collapse_id  则会停止前一条推送中尚未下发的 TPNS 通道数据，同时会覆盖展示第一条推送任务的消息。<li>已完成任务的 collapse_id 可以通过 [单个任务推送信息查询接口](https://intl.cloud.tencent.com/document/product/1024/33773) 获取。<li>目前仅支持全推、标签推送、号码包推送。 |
-| channel_rules        | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
-| tpns_online_push_type | Integer|无|否|  0|在线设备是否通过 TPNS 通道下发：<li>0：默认在线走 TPNS 通道下发<li> 1：在线不优先走 TPNS 通道下发|
-|force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
+| 参数名                | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
+| --------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
+| expire_time           | Integer | 无     | 否                             | 259200（72小时）                     | 消息离线存储时间（单位为秒）,最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过2147483647，否则会导致推送失败</li> |
+| send_time             | String  | 无     | 否                             | 当前系统时间                         | 指定推送时间，可选择未来90天内的时间：<li>格式为 yyyy-MM-DD HH:MM:SS</li><li>若小于服务器当前时间，则会立即推送</li><li>仅全量推送和标签推送支持此字段</li> |
+| multi_pkg             | Boolean | 无     | 否                             | false                                | 多包名推送：当 App 存在多个渠道包（例如应用宝、豌豆荚等），并期望推送时所有渠道的 App 都能收到消息，可将该值设置为 true。<br>**注意：**该参数默认控制 TPNS 通道的多包名推送，需要实现厂商通道多包名推送详见 [厂商通道多包名配置](https://intl.cloud.tencent.com/document/product/1024/35393) 文档 |
+| loop_param            | Object  | 无     | 否                             | 0                                    | 循环推送（全推，标签推）相关，详情见下文 [loop_param 参数说明](#loop_param参数说明) |
+| group_id              | String  | 无     | 否                             | tpns_yyyymmdd，yyyymmdd 代表推送日期 | **该字段已废弃，后续会下线，若需要使用聚合统计请使用推送计划字段：plan_id** |
+| plan_id               | String  | 无     | 否                             | 无                                   | 推送计划 ID，推送计划创建及使用方式可 [参考文档](https://intl.cloud.tencent.com/document/product/1024/37452) |
+| tag_rules             | Array   | 无     | 仅标签推送必需                 | 无                                   | <li>标签组合推送，可设置'与'、'或'、'非'组合规则</li><li>**注意：**当与 tag_list 二者共存时，tag_list 字段自动无效，参数说明请查看 [tag_rules 参数说明](#tag_rules)</li> |
+| account_list          | Array   | 无     | 单账号推送、账号列表推送时必需 | 无                                   | 若单账号推送：<li>要求 `audience_type = account`</li><li>参数格式：[ "account1" ]</li><br>若账号列表推送：<li>参数格式：`["account1","account2"]`</li><li>最多1000 个 account </li> |
+| account_push_type     | Integer | 无     | 账号推送时可选                 | 0                                    | <li> 0：往账号的最新的 device 上推送信息</li><li> 1：往账号关联的所有 device 设备上推送信息</li> |
+| token_list            | Array   | 无     | 单设备推送、设备列表推送时必需 | 无                                   | 若单设备推送：<li>要求 audience_type=token<li>参数格式：[ "token1" ]<br>若设备列表推送：<li>参数格式：[ "token1","token2" ]</li><li>最多1000 个 token </li> |
+| push_speed            | Integer | 无     | 仅全量推送和标签推送有效       | 无                                   | 推送限速设置每秒 X 条，X 取值参数范围 1000 - 50000           |
+| collapse_id           | Integer | 无     | 否                             | 系统默认分配一个 collapse_id         | <li>消息覆盖参数，在前一条推送任务已经调度下发后，如果第二条推送任务携带相同的 collapse_id  则会停止前一条推送中尚未下发的 TPNS 通道数据，同时会覆盖展示第一条推送任务的消息。<li>已完成任务的 collapse_id 可以通过 [单个任务推送信息查询接口](https://intl.cloud.tencent.com/document/product/1024/33773) 获取。<li>目前仅支持全推、标签推送、号码包推送。 |
+| channel_rules         | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
+| tpns_online_push_type | Integer | 无     | 否                             | 0                                    | 在线设备是否通过 TPNS 通道下发：<li>0：默认在线走 TPNS 通道下发<li> 1：在线不优先走 TPNS 通道下发 |
+force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
+
+
 
 > ?对于 collapse_id，有以下使用条件：
 > - 暂不支持用户自定义此参数，需要 TPNS 生成的 collapse_id。
@@ -491,6 +492,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 
 > ?详细使用方法可参见 [标签推送示例](#biaoqianshili)。
 
+
 <span id="channel_rules参数说明1"></span>
 
 ### channel_rules 参数说明
@@ -498,7 +500,7 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | 字段名  | 类型    | 父项目        | 是否必填 | 参数说明                                                     |
 | ------- | ------- | ------------- | -------- | ------------------------------------------------------------ |
 | channel | String  | channel_rules | 是       | 下发推送通道。<br> <li> hw：华为通道<li> xm：小米通道<li> mz：魅族通道<li> vivo：vivo 通道 <li>oppo：OPPO 通道<li>apns：APNs 通道 |
-| disable | Boolean | channel_rules | 是       | 是否关闭 channel 中对应的通道， 默认打开通道。 <br><li>true：关闭<li> false：打开 |
+| disable | Boolean | channel_rules | 是       | 是否关闭 channel 中对应的通道， 默认打开通道。 <br><li>true：关闭<li> false：打开|
 
 <span id="loop_param参数说明"></span>
 
@@ -537,8 +539,6 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
     "account_list": [
       "account1"
   ],
-        
-        
 	"multi_pkg":true,
 	"push_speed":50000,
     "channel_rules": [
@@ -623,7 +623,6 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
     "ret_code": 0,
     "push_id": "3895624686"
 }
-
 ```
 
 ### iOS 单设备推送请求消息
@@ -714,10 +713,9 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
         }
     ]
 }
-
 ```
 
-**场景二：近3天活跃，并且 App版本不为1.0.2的华为用户**
+**场景二：近3天活跃，并且 App 版本不为1.0.2的华为用户**
 表达式：（xg_auto_active.20200406 或 xg_auto_active.20200407 或 xg_auto_active.20200408）与 （非 xg_auto_version.1.0.2） 与 xg_auto_devicebrand.huawei
 
 ```
