@@ -17,8 +17,8 @@ Before using the UGSV SDK, you need to first activate the VOD service and get a 
 We recommend you use the UGSV SDK together with Tencent Cloud VOD. This combination is more cost-effective and delivers a better compatibility and user experience. For more information on the billing of VOD, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/266/2838).
 
 
-
-## SDK Features and Corresponding License Editions<span id ="lic"></span>
+<span id ="lic"></span>
+## SDK Features and Corresponding License Editions
 
 To use the UGSV SDK, you need a corresponding license. Each SDK edition only requires one license. For more information, please see [License Application](https://intl.cloud.tencent.com/document/product/1069/38041). The details are shown in the table below:
 
@@ -337,7 +337,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
 </table>
 
-
+<span id="p1"></span>
 ## Beauty Filter and Animated Effect Materials<span id="p1"></span>
 
 The Enterprise Edition SDK has advanced features such as beauty filter, AI animated effect, and green screen keying. If you need to use makeup effects, gestures, and additional animated stickers, please purchase additional materials:
