@@ -48,7 +48,7 @@ yum install kernel-devel
 ```
 3. Load the toa.ko file.
 ```
-tar -zxvf linux_toa.tar.gz
+unzip linux_toa.zip
 cd toa
 make
 mv toa.ko /lib/modules/`uname -r`/kernel/net/netfilter/ipvs/toa.ko
