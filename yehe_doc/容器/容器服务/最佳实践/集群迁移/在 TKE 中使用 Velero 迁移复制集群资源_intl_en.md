@@ -16,7 +16,7 @@ Install Velero instances on both the cluster to migrate and the target cluster. 
 2. Use Velero to perform data restoration on the target cluster to implement migration.
 
 The migration principle is shown as follows:
-![velero](https://main.qcloudimg.com/raw/61a9cfc9067555df1494fe1f48add278.jpg)
+![velero](https://main.qcloudimg.com/raw/85706a906efb84e0931c2b432681fd94.png)
 
 
 
