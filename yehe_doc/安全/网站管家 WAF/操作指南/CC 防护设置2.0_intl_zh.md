@@ -79,5 +79,4 @@ CC 防护对网站特定的 URL 进行访问保护，CC 防护2.0全新改版，
 7. 配置完成，基于 SESSION 的 CC 防护策略生效。
 >!使用基于 SESSION 的 CC 防护机制，无法在 IP 封堵状态中查看封堵信息。
 
-[上一步：DNS 劫持检测](https://intl.cloud.tencent.com/document/product/627/11708)
 [下一步：网页防篡改](https://intl.cloud.tencent.com/document/product/627/11710)
