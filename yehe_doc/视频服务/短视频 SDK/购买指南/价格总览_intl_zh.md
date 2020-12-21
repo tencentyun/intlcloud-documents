@@ -352,7 +352,7 @@
 #### 计费说明
 
 - 美颜动效素材需配合短视频企业版 Pro License 使用，**短视频精简版 License、基础版 License 和企业版 License 不支持购买素材**。
-- 购买短视频企业版 License 可附赠10个指定动效贴纸。购买短视频企业版 Pro  License 可附赠20个动效贴纸或 AI 抠图素材（1年使用权），请联系 [腾讯云商务](https://cloud.tencent.com/apply/p/h1qsz5vhvko) 进行申请。美妆和手势需单独购买。
+- 购买短视频企业版 License 可附赠10个指定动效贴纸。购买短视频企业版 Pro  License 可附赠20个动效贴纸或 AI 抠图素材（1年使用权），请联系 [腾讯云商务](https://intl.cloud.tencent.com/zh/contact-sales) 进行申请。美妆和手势需单独购买。
 - **素材有效期为1年，当您在第二年续购后，附赠素材可继续使用，额外选购的素材则需要重新购买授权**。
 - 素材使用方式请参见 [功能调用 iOS](https://intl.cloud.tencent.com/document/product/1069/38030) 和 [功能调用 Andorid](https://intl.cloud.tencent.com/document/product/1069/38031)。
 - **购买所得素材仅限于购买素材的当前 License 使用，不允许任何形式的素材互换，不允许（包括但不限于）赠送、转售、出租等方式进行交易，腾讯云将保留一切法律追究权利**。
