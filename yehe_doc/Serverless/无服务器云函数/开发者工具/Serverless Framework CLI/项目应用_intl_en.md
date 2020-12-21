@@ -1,6 +1,6 @@
 ## Overview
 The [Creating and Deploying Functions](https://intl.cloud.tencent.com/document/product/583/36707) document describes how to create an SCF function by using Serverless Framework. For Serverless Framework itself, this operation means deploying a single-instance serverless application through the SCF component. A serverless application can consist of one or multiple instances, and each component deployment corresponds to one instance. Each instance involves a `serverless.yml` file as shown below, which defines certain parameters of the component. Such parameters are used to generate the instance information during deployment. For example, `region` defines the resource region.
-![](https://main.qcloudimg.com/raw/c77af61d6184a41bddeee17ed8bdd2df.svg)
+![](https://main.qcloudimg.com/raw/68277ceca4862936d41a2e1197091ccf.svg)
 This document describes single-instance and multi-instance applications and uses actual scenarios as examples to show how to perform project management and resource orchestration for SCF.
 
 
