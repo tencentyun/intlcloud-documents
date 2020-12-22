@@ -55,16 +55,17 @@ For more information on error messages and descriptions, see [Error Codes](#erro
 #### InvalidUrl: invalid COS URL
 
 The InvalidUrl error indicates that an incorrect COS URL has been entered. The possible causes are:
-* The image URL you entered is not a [Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) image URL.
-* The access permission of the COS file is private read, but the signature has expired.
+ - The image URL you entered is not a [Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) image URL.
+ - The access permission of the COS file is private read, but the signature has expired.
 > COS URL with the signature can only be accessed once.
 >
-* A COS URL of another region has been entered.
+ - A COS URL of another region has been entered.
 > The image import service accesses the COS server in the local region through the private network.
 >
-* The user's image file has been deleted.
+ - The user's image file has been deleted.
+ - A COS URL with the signature has been used.
+
 If you receive the error message about an invalid COS URL, troubleshoot based on the reasons above.
-* A COS URL with the signature has been used.
 
 #### InvalidFormatSize: invalid format or size
 
