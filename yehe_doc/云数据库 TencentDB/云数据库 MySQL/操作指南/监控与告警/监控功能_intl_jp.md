@@ -39,8 +39,7 @@ Tencent Cloudのクラウド監視は、インスタンスディメンション�
 
 | メトリック（中国語） | メトリック（英語） | 単位 |説明|
 |---------|---------|---------|---------|
-|1秒当たりの実行操作数|qps|回/秒|データベースの1秒当たりの実行SQL数（insert、select、update、delete、replaceを含む）、
-QPSメトリックは主にTencentDBインスタンスの実際の処理能力を示す|
+|1秒当たりの実行操作数|qps|回/秒|データベースの1秒当たりの実行SQL数（insert、select、update、delete、replaceを含む）、QPSメトリックは主にTencentDBインスタンスの実際の処理能力を示す|
 |スローログ数|slow_queries|回|クエリー時間がlong_query_time秒を超えたクエリーの数|
 |全テーブルスキャン数|select_scan|回/秒|実行された全テーブルの検索クエリー数|
 |クエリー数|select_count|回/秒|1秒当たりのクエリー数|
