@@ -87,7 +87,7 @@ Global LVB bill-by-traffic utilizes tiered pricing with a daily billing cycle. S
 
 **Billing example:**
 Suppose you held a global LVB session on January 1, 2019 and generated 1 TB of downstream traffic, the LVB traffic fees you need to pay on January 2, 2019 are as follows:
-Daily traffic fees = 0.759 (USD/GB) * 1000 (GB) = 75.9 USD.
+Daily traffic fees = 0.0759 (USD/GB) * 1000 (GB) = 75.9 USD.
 
 ## Global bill-by-bandwidth
 Global LVB bill-by-bandwidth utilizes tiered pricing billed by the daily peak bandwidth with a daily billing cycle. See the table below for rates:
@@ -319,7 +319,7 @@ LVB can take screenshots of live streams. The screencapturing feature is disable
 
 **Billing example:**
 Suppose you use the LVB screencapturing service from January 1 to February 1, 2019, and a total of 168,000 screenshots are taken in the month, the LVB screencapturing fees you need to pay on February 2, 2019 are as follows:
-LVB screencapturing fees for January = 0.176 (USD/thousand screenshots) * (168 - 1) thousand screenshots = 2.9392 USD.
+LVB screencapturing fees for January = 0.0176 (USD/thousand screenshots) * (168 - 1) thousand screenshots = 2.9392 USD.
 
 ## Intelligent Porn Detection
 
