@@ -19,5 +19,5 @@ Tencent Cloud Cloud Block Storage（CBS）は、CVMインスタンスに永続�
 ## 購入と利用
 - クラウドディスクタイプについては、[クラウドディスクタイプ](https://intl.cloud.tencent.com/document/product/362/31636)をご参照ください。
 - クラウドディスクの購入方法については、[Cloud Block Storage価格一覧](https://intl.cloud.tencent.com/document/product/362/2413)をご参照ください。
-- CVMインスタンスとクラウドディスクの仕様については、［クラウドディスクの作成](https://intl.cloud.tencent.com/document/product/362/5744)と[クラウドディスクのマウント](https://intl.cloud.tencent.com/document/product/362/5745)をご参照ください。
+- CVMインスタンスとクラウドディスクの仕様については、[クラウドディスクの作成](https://intl.cloud.tencent.com/document/product/362/5744)と[クラウドディスクのマウント](https://intl.cloud.tencent.com/document/product/362/5745)をご参照ください。
 - クラウドディスクの容量拡張、アンマウント、廃棄およびクラウドディスクのベストプラクティスについては、 [CBS製品ドキュメント](https://intl.cloud.tencent.com/document/product/362)をご参照ください。
