@@ -24,8 +24,6 @@ Proxy server is a core server security feature which is applicable to the sessio
 
 ### DNS hijacking protection
 
-[DNS hijacking protection](https://intl.cloud.tencent.com/document/product/627/11708) refers to a protection service against DNS hijacking where attackers attack the Domain Name System (DNS) server or forge a DNS server to resolve your domain name to an incorrect address so as to hijack and attack your domain name. You can add DNS hijacking detection rules to protect your website from being hijacked and avoid potential data theft and financial losses.
-
 ## F
 
 ### Tampering proofing
