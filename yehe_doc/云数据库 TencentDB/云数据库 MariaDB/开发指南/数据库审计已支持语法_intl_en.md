@@ -1,5 +1,5 @@
 
-Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://console.cloud.tencent.com/workorder/category) for feedback.
+Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://intl.cloud.tencent.com/support) for feedback.
 - Parsing of DCL, DDL, and DML statements is supported.
 ```
 Insert,Replace,Select,Union,Update,Delete,CreateDatabase:,CreateEvent,CreateFunction,CreateIndex,CreateLog,
