@@ -41,7 +41,7 @@ Tencent Cloudは現在、次のメタデータを提供しています。
 > 
 > リクエストするターゲットURLアドレスは、大文字と小文字を区別する必要があります。リクエストの返される結果従って、新しいリクエストのターゲットURLアドレスを作成する必要があります。
 >
-> 現在のバージョンでは、返された配置データに変更が発生しています。以前のバージョンのデータを使用する必要がある場合、以前のバージョンのパスを指定するか、バージョンのパスを指定しないことによりバージョン1.0のデータにアクセスすることができます。返された配置データの詳細については、［リージョンとアベイラビリティーゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
+> 現在のバージョンでは、返された配置データに変更が発生しています。以前のバージョンのデータを使用する必要がある場合、以前のバージョンのパスを指定するか、バージョンのパスを指定しないことによりバージョン1.0のデータにアクセスすることができます。返された配置データの詳細については、[リージョンとアベイラビリティーゾーン](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 
 ## インスタンスメタデータのクエリー
 インスタンス内部でインスタンスメタデータを介してインスタンスのローカルIP、パブリックIPアドレスなどのデータにアクセスし、外部アプリケーションとの接続を管理できます。
@@ -86,7 +86,7 @@ public-ipv4
 uuid
 ```
 
-以下の例では、インスタンスの物理的な位置情報を取得する方法を説明します。 返されるデータと物理的な位置情報の関係については、［リージョンとアベイラビリティーゾー](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
+以下の例では、インスタンスの物理的な位置情報を取得する方法を説明します。 返されるデータと物理的な位置情報の関係については、[リージョンとアベイラビリティーゾー](https://intl.cloud.tencent.com/document/product/213/6091)をご参照ください。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/placement/region
@@ -180,7 +180,7 @@ public-ipv4-mode
 subnet-mask
 ```
 
-以下の例では、プライベートIPアドレスのゲートウェイを取得する方法を説明します。VPCモデルのみがこのデータをクエリーできます。詳細については、［Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)をご参照ください。
+以下の例では、プライベートIPアドレスのゲートウェイを取得する方法を説明します。VPCモデルのみがこのデータをクエリーできます。詳細については、[Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)をご参照ください。
 
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/network/interfaces/macs/52:54:00:BF:B3:51/local-ipv4s/10.104.13.59/gateway
