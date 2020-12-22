@@ -75,7 +75,7 @@ Tencent Cloud cannot provide an accurate bill unless the lifecycle execution is 
 
 #### Time-insensitivity
 
-Please note that the minimum storage duration is 30 days, 90 days, and 180 days for STANDARD_IA/INTELLIGENT TIERING, ARCHIVE, and DEEP ARCHIVE storage classes, respectively. No additional storage fees will be incurred for the transition or delete action itself. COS will ignore lifecycle configurations less than 30/60 days, and perform only correct configurations upon your request.
+Please note that the minimum storage duration is 30 days, 90 days, and 180 days for the STANDARD_IA/INTELLIGENT TIERING, ARCHIVE, and DEEP ARCHIVE storage classes, respectively. No additional storage fees will be incurred for the transition or delete action itself. COS will ignore lifecycle configurations less than 30/90/180 days, and perform only correct configurations upon your request.
 
 For example, if an object in STANDARD_IA storage class is transitioned before 30 days, it will start incurring ARCHIVE storage fees on the transition day and continue incurring STANDARD_IA storage fees until the 30th day. Another example is that if an archived object is deleted upon expiration before it is stored for 90 days, it will continue incurring ARCHIVE storage fees until the 90th day. It works the same way with DEEP ARCHIVE.
 
