@@ -22,10 +22,6 @@
 
 [地域封禁（Territorial Prohibition）](https://intl.cloud.tencent.com/document/product/627/14704)指判断攻击 IP 所属地域，封禁攻击 IP 所属地域的其它 IP 的访问，以达到快速封禁来自地域的其它 IP 攻击请求的目的。
 
-### DNS 劫持防护
-
-[DNS 劫持防护（DNS Hijacking Protection）](https://intl.cloud.tencent.com/document/product/627/11708)指攻击者通过攻击域名解析服务器（DNS），或者伪造域名解析服务器的方法，把客户网站域名解析到错误的地方，实现对域名的非法劫持攻击。添加 DNS 劫持检测规则，可以协助规避站点用户被恶意劫持给客户带来的数据窃取及金融损失问题。
-
 ## F
 
 ### 防篡改
