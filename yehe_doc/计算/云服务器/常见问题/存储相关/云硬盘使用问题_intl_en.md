@@ -30,7 +30,7 @@ You can log in to the CVM instance to check the available and used space on the 
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index) and access the **Instances** page.
 2. Select the ID/Name of the target instance to access the details page.
 3. Click on the **Monitoring** tab to view the instance disk usage:
-![](https://main.qcloudimg.com/raw/83541fc9128edb97b602691a852c1604.png)
+![](https://main.qcloudimg.com/raw/25270ae80b513d497527a0e9f2af1bac.png)
 
 ### Why was the cloud disk I separately created released together with my instance?
 When mounting a cloud disk, you can decide if it should be released with the instance automatically. This can be configured via the [CBS console](https://console.cloud.tencent.com/cvm/cbs/index) or [ModifyDiskAttributes](https://intl.cloud.tencent.com/document/product/362/15659) API.
