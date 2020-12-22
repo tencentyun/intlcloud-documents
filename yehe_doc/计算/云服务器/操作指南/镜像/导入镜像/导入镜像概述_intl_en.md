@@ -1,6 +1,6 @@
-In addition to [creating custom images](https://intl.cloud.tencent.com/document/product/213/4942), Tencent Cloud allows you to import images. You can import an image file of the system disk on a local or a different server into CVM custom images. You can use the imported image to create a CVM or reinstall the operating system (OS) for an existing CVM.
+In addition to [creating custom images](https://intl.cloud.tencent.com/document/product/213/4942), Tencent Cloud allows you to import images. You can import an image file of the system disk on a local or a different server into CVM custom images. You can use the imported image to create a CVM or reinstall the operating system for an existing CVM.
 
-<span id="PreparationsforImport"></span>
+<span id="Preparations"></span>
 ## Preparations
 
 Prepare an image file that meets the import requirements.
@@ -12,7 +12,7 @@ Prepare an image file that meets the import requirements.
 <tr><td>File system type</td><td>GPT partition is not supported.</td></tr>
 <tr><td>Image size</td><td><ul><li>The actual image size cannot exceed 50 GB. Run <code>qemu-img info imageName | grep 'disk size'</code> to check the image size.</li><li>The image vsize cannot exceed 500 GB. Run <code>qemu-img info imageName | grep 'virtual size'</code> to check the image vsize.</li></ul><b>Note: </b>size of an image in QCOW2 format is used upon check during import.</td></tr>
 <tr><td>Network</td><td><ul><li>By default, Tencent Cloud provides the <code>eth0</code> network interface for the instance.</li><li>You can use the metadata service to query the network configuration of the instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4934">Instance Metadata</a>.</li></ul></td></tr>
-<tr><td>Driver</td><td><ul><li>Virtio driver of the virtualization module KVM must be installed for an image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li><li>We recommend installing cloud-init for the image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12587">Installing Cloud-Init on Linux</a>.</li><li>If cloud-init cannot be installed, configure the instance by referring to <a href="https://intl.cloud.tencent.com/document/product/213/12849">Forcibly Import Image</a>.</li></ul></td></tr>
+<tr><td>Driver</td><td><ul><li>Virtio driver of the virtualization module KVM must be installed for an image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li><li>We recommend installing cloud-init for the image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12587">Installing Cloud-Init on Linux</a>. </li><li>If cloud-init cannot be installed, configure the instance by referring to <a href="https://intl.cloud.tencent.com/document/product/213/12849">Forcibly Import Image</a>.</li></ul></td></tr>
 <tr><td>Kernel</td><td>Native kernel is preferred for an image. Any modifications on the kernel may cause the import to fail.</td></tr>
 </table>
 - **Requirements for Windows images:**
@@ -37,11 +37,11 @@ Prepare an image file that meets the import requirements.
  6. Complete the configurations and click **Import**.
  > Ensure the entered COS file URL is correct.
  >
-You will be notified whether the import is successful via the console [Message Center](https://console.cloud.tencent.com/message).
+You will be notified about the result of import via the console [Message Center](https://console.cloud.tencent.com/message).
 
 ## Failed Imports
 
-If you fail to import an image in the console, troubleshoot as follows:
+If the importation failed, troubleshoot as follows:
 
 ### Notes
 
@@ -63,9 +63,8 @@ The InvalidUrl error indicates that an incorrect COS URL has been entered. The p
 > The image import service accesses the COS server in the local region through the private network.
 >
 * The user's image file has been deleted.
-* A COS URL with the signature has been used.
-
 If you receive the error message about an invalid COS URL, troubleshoot based on the reasons above.
+* A COS URL with the signature has been used.
 
 #### InvalidFormatSize: invalid format or size
 
@@ -109,13 +108,13 @@ The InternalError error indicates that the cause of error has not yet been recor
 
 <a id="errorcode"></a>
 ## Error Codes
-
+ 
 | Error Code | Reason | Recommended Solution |
 |-----|-----|-----|
 | InvalidUrl | Invalid COS link. | Check whether the COS URL is the same as the imported image URL. |
 | InvalidFormatSize | Format or size does not meet requirements. | Images must meet the `image format` and `image size` requirements in [Preparations](#PreparationsforImport). |
 | VirtioNotInstall | Virtio driver not installed. | Install the Virtio driver in the image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
-| PartitionNotPresent | Partition information not found. | Image is corrupted possibly due to incorrect image creation method. |
+I PartitionNotPresent | Partition information not found. | Image is corrupted possibly due to incorrect image creation method. |
 | CloudInitNotInstalled | Cloud-init software not installed. | Install cloud-init in the Linux image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
 | RootPartitionNotFound | Root partition not found. | Image is corrupted possibly due to incorrect image creation method. |
 | InternalError | Other errors. | Contact our customer service. |
