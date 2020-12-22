@@ -27,7 +27,7 @@
 2. 通过单击左上角发送【Ctrl-Alt-Delete】命令进入系统登录界面。
 3. 输入帐号（Administrator）和密码即可登录。
 
->该终端为独享，即同一时间只有一个用户可以使用控制台登录。
+> !该终端为独享，即同一时间只有一个用户可以使用控制台登录。
 
 #### 验证网络通信
 
@@ -39,7 +39,7 @@
 | NFS 4.0      | 2049           | telnet 2049               |
 | CIFS/SMB     | 445            | telnet 445                |
 
->CFS 暂不支持 ping。
+> !CFS 暂不支持 ping。
 
 ## 步骤3: 挂载文件系统
 
@@ -92,8 +92,8 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
 - 通过图形界面挂载
   a. 打开 "映射网络驱动器"
   登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
-  
   ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
+  
   b. 输入访问路径
   在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 NFS 文件系统中看到的挂载目录）。
   ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
@@ -104,9 +104,16 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
 	在命令行中确认，若 UID 与 GID 分别为0，则表示文件系统是使用 root 权限挂载，此时可以开始正常使用文件系统了；若 UID 与GID 分别为 -2 等其他值，则可能导致无法正常写入数据等，请重复前面的步骤、保证文件系统是以 root 权限挂载。
 	<img src="https://main.qcloudimg.com/raw/3ccc26279bb8d73c16eae43f89fea8c7.png" width="80%">
   
-	d. 验证读写
+
+若以上界面中出现" locking=yes"，为了避免文件锁导致读写异常（NFS v3 暂不支持锁），请按以下步骤修改注册表：
+
+（1）找到如下注册表路径 【HKEY_LOCAL_MACHINE】 > 【SOFTWARE】 > 【Microsoft】 > 【ClientForNFS】 > 【CurrentVersion】 > 【User】 > 【Default】 > 【Mount】。
+（2）在右侧内容区右键新建【DWORD (64-位)值】，名称为”Locking”，值为”0” 。
+
+d. 验证读写
   确认后，页面直接进入到已经挂载的文件系统中。可以右键新建一个文件来验证读写的正确性。
 	<img src="https://main.qcloudimg.com/raw/598f69f5f327c1acc663b4a3eed5ba03.png" width="80%">
+
 - 通过 CMD 命令行挂载
   在 Windows 的命令行工具中输入如下命令，挂载文件系统。其中，系统缺省子目录为 FSID。
 ```bash
@@ -116,7 +123,7 @@ mount  <挂载点IP>:/<FSID> <共享目录名称>:
 ```bash
 mount 10.10.0.12:/z3r6k95r X:
 ```
-> FSID 挂载命令可以到【文件存储控制台】>【文件系统详情】>【挂载点信息】中获取。
+> ! FSID 挂载命令可以到【文件存储控制台】>【文件系统详情】>【挂载点信息】中获取。
 
 ### 挂载 CIFS/SMB 文件系统
 
@@ -124,11 +131,10 @@ mount 10.10.0.12:/z3r6k95r X:
 
 #### 通过图形界面挂载文件系统
 
-
 1. 打开 "映射网络驱动器"
    登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
-   
    ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
+   
 2. 输入访问路径
    在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 CIFS/SMB 文件系统中看到的挂载目录）。
    ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
@@ -147,7 +153,7 @@ net use <共享目录名称>: \\10.10.11.12\FSID
 net use X: \\10.10.11.12\fjie120
 ```
 
-> FSID 可以到【[文件存储控制台](https://console.cloud.tencent.com/cfs)】>【文件系统详情】>【挂载点信息】中获取。
+> ! FSID 可以到【[文件存储控制台](https://console.cloud.tencent.com/cfs)】>【文件系统详情】>【挂载点信息】中获取。
 
 
 
@@ -171,13 +177,8 @@ umount X：
 
 ## 步骤5: 终止资源
 
->文件系统删除后，资源不可恢复，建议您删除文件系统之前，先备份资源。
+>!文件系统删除后，资源不可恢复，建议您删除文件系统之前，先备份资源。
 
 您可以从腾讯云控制台终止文件系统。进入腾讯云 [文件存储控制台](https://console.cloud.tencent.com/cfs)，选中需要终止的文件系统，单击【删除】并【确认】，即可删除文件系统。
-
-
-
-
-
 
 
