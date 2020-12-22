@@ -8,8 +8,8 @@ redis-port 是一组开源工具集合，主要用于 Redis 节点间的数据�
 - redis-decode：支持将 Redis 备份文件（RDB）解析为可读的文件。
 
 ## 兼容版本
-- 支持源 Redis 2.8、3.0、3.2、4.0、5.0 版本。
-- 支持目标实例为 Redis 2.8、3.0、3.2、4.0、5.0 版本，以及云数据库的所有版本，包括 Redis 社区版、CKV 版。
+- 支持源 Redis 2.8、3.0、3.2、4.0 版本。
+- 支持目标实例为 Redis 2.8、3.0、3.2、4.0 版本，以及云数据库的所有版本，包括 Redis 内存版、CKV 版。
 
 
 ## 使用 redis-sync 在线迁移
@@ -51,7 +51,7 @@ redis-port 是一组开源工具集合，主要用于 Redis 节点间的数据�
 - 停止迁移，通过 Ctrl+C 命令或者其他方式终止工具的执行，即可停止数据同步。
 
 ## 使用 redis-restore 导入数据
-redis-restore 工具支持将 Redis 的备份文件（RDB）导入到指定 Redis 实例，同时也支持导入 AOF 文件，支持 Redis 2.8、3.0、3.2、4.0、5.0 版本的 RDB 文件格式。
+redis-restore 工具支持将 Redis 的备份文件（RDB）导入到指定 Redis 实例，同时也支持导入 AOF 文件，支持 Redis 2.8、3.0、3.2、4.0 版本的 RDB 文件格式。
 
 **参数说明**：
 - -n：并发写入的任务数量，建议不设置或者设置为 CPU 核心数量 * 2。
@@ -70,7 +70,7 @@ redis-restore 工具支持将 Redis 的备份文件（RDB）导入到指定 Redi
 
 ## 使用 redis-dump 备份数据
 redis-dump 支持将 Redis 的数据备份成 RDB 文件，同时还支持备份 AOF 增量数据。
->腾讯云数据库 Redis 暂时不支持使用 redis-dump 工具进行备份，您可以使用 Redis 数据库控制台或者 API 进行数据备份和下载；以及使用 redis-dump 工具来备份您自建的 Redis 实例。
+>?腾讯云数据库 Redis 暂时不支持使用 redis-dump 工具进行备份，您可以使用 Redis 数据库控制台或者 API 进行数据备份和下载；以及使用 redis-dump 工具来备份您自建的 Redis 实例。
 
 **参数说明**：
 - -n：并发写入的任务数量，建议不设置或者设置为 CPU 核心数量 * 2。
