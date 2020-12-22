@@ -17,7 +17,7 @@
 推荐短视频 SDK 配合腾讯云点播服务一起使用，不仅价格更加便宜，还会获得兼容性和用户体验上的加成，计费详情请参见 [云点播 - 计费概述](https://intl.cloud.tencent.com/document/product/266/2838)。
 
 
-
+<span id ="lic"></span>
 ## SDK 功能及对应的 License 版本<span id ="lic"></span>
 
 使用短视频 SDK 需要对应的 License 授权，每种 SDK 版本只需要一个对应的 License 即可，使用方式请参见 [License 申请](https://intl.cloud.tencent.com/document/product/1069/38041)。详情如下表所示：
@@ -337,7 +337,7 @@
    </tr>
 </table>
 
-
+<span id="p1"></span>
 ## 美颜动效素材<span id="p1"></span>
 
 企业版 SDK 包含了高级美颜、AI 动效、绿幕等能力，如您需要使用美妆、手势功能，或者额外的动效贴纸。请额外购买美颜动效素材：
@@ -352,7 +352,7 @@
 #### 计费说明
 
 - 美颜动效素材需配合短视频企业版 Pro License 使用，**短视频精简版 License、基础版 License 和企业版 License 不支持购买素材**。
-- 购买短视频企业版 License 可附赠10个指定动效贴纸。购买短视频企业版 Pro  License 可附赠20个动效贴纸或 AI 抠图素材（1年使用权），请联系 [腾讯云商务](https://cloud.tencent.com/apply/p/h1qsz5vhvko) 进行申请。美妆和手势需单独购买。
+- 购买短视频企业版 License 可附赠10个指定动效贴纸。购买短视频企业版 Pro  License 可附赠20个动效贴纸或 AI 抠图素材（1年使用权），请联系 [腾讯云商务](https://intl.cloud.tencent.com/zh/contact-sales) 进行申请。美妆和手势需单独购买。
 - **素材有效期为1年，当您在第二年续购后，附赠素材可继续使用，额外选购的素材则需要重新购买授权**。
 - 素材使用方式请参见 [功能调用 iOS](https://intl.cloud.tencent.com/document/product/1069/38030) 和 [功能调用 Andorid](https://intl.cloud.tencent.com/document/product/1069/38031)。
 - **购买所得素材仅限于购买素材的当前 License 使用，不允许任何形式的素材互换，不允许（包括但不限于）赠送、转售、出租等方式进行交易，腾讯云将保留一切法律追究权利**。
