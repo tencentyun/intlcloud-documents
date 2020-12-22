@@ -5,7 +5,7 @@
 - Presto 等相关软件安装在路径 EMR 云服务器的` /usr/local/service/`路径下。
 
 ## 2.	数据准备
-首先需要登录 EMR 集群中的任意机器，最好是登录到 Master 节点。登录 EMR 的方式请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云度武器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。输入正确后，即可进入命令行界面。
+首先需要登录 EMR 集群中的任意机器，最好是登录到 Master 节点。登录 EMR 的方式请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。输入正确后，即可进入命令行界面。
 
 在 EMR 命令行先使用以下指令切换到 Hadoop 用户，并进入 Hive 文件夹：
 ```
@@ -32,7 +32,7 @@
 compressing hive_test.data into lzo.txt.lzo
 ```
 
->压缩 lzo 文件需要先安装 lzo 和 lzop，安装执行命令：`yum -y install lzo lzop`。
+>!压缩 lzo 文件需要先安装 lzo 和 lzop，安装执行命令：`yum -y install lzo lzop`。
 
 ## 3.	新建 Hive 表并使用 Presto 查询
 这里使用了一个脚本文件来生产进行 Hive 数据库和表的创建。新建一个脚本文件 presto_on_cos_test.sql，并添加以下程序：
