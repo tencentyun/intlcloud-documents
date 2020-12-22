@@ -32,7 +32,7 @@ Compress it into an .lzo file:
 compressing hive_test.data into lzo.txt.lzo
 ```
 
->To create an .lzo compressed file, you need to install lzo and lzop first by running the following command: `yum -y install lzo lzop`.
+>!To create an .lzo compressed file, you need to install lzo and lzop first by running the following command: `yum -y install lzo lzop`.
 
 ## 3.	Creating a Hive Table and Using Presto for Query
 A script file is used here to create a Hive database and table. Create a script file named presto_on_cos_test.sql and add the following program to it:

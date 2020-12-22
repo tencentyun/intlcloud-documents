@@ -2,7 +2,7 @@
 
 With lifecycle configuration, certain predefined actions can be automatically performed when a rule is applied to objects. For example:
 
-- Transition: transitions objects to the STANDARD_IA, ARCHIVE or DEEP_ARCHIVE storage class after a specified time of period.
+- Transition: transitions objects to the STANDARD_IA, INTELLIGENT_TIERING, ARCHIVE or DEEP_ARCHIVE storage class after a specified time of period.
 - Expiration: automatically delete objects after their specified expiration time.
 
 For more information, see [Lifecycle Overview](https://intl.cloud.tencent.com/document/product/436/17028) and [Elements of Lifecycle Configuration](https://intl.cloud.tencent.com/document/product/436/17029).

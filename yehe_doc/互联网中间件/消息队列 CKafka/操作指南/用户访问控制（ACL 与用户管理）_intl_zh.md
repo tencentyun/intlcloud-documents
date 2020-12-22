@@ -16,7 +16,9 @@
 
 ####  Client 端配置
 1. 在 CKafka 实例的用户管理页面，单击【新建】，创建用户。
+![](https://main.qcloudimg.com/raw/b71f3d8399e2169cff962b3bfaeff85e.png)
 2. 输入用户名和密码信息，单击【提交】完成用户新增。
+![](https://main.qcloudimg.com/raw/d50580170b01896f2070eaf58e64fe9d.png)
 
 ####  CKafka 实例配置
 1. 在配置文件（参见 [配置文件示例](#配置文件示例)）中，增加如下配置：
@@ -50,6 +52,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 1. 在 ACL 策略管理列表页，选择需要配置策略的 Topic 资源，单击操作列的【编辑 acl 策略】。
 2. 在新增 ACL 策略的弹窗中，填选配置用户及 IP，不选为默认所有用户/host 都支持。
     ACL 策略示例： 允许/拒绝用户 user 通过 IP 读/写 Topic 资源  resource。
+    ![](https://main.qcloudimg.com/raw/442c5f5bc928701cd1684a116d44bded.png)
 
 >?
 - 开通路由只影响接入时的验证方式，设置的 ACL 权限则是全局的。
