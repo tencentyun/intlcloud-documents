@@ -256,7 +256,7 @@ Daily LVB top speed codec transcoding fees = 0.0222 (USD/minute) * 60 (minutes) 
 
 > If you have a large-scale live streaming business and the daily billing mode cannot meet your needs, please contact the Tencent Cloud sales team or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to discuss your options.
 
-### Audio Transcoding
+### Audio transcoding
 LVB offers audio transcoding service. It has high-quality audio transcoding features that can transcode audio and video content to multiple formats, helping you reduce your adaptation, labor, and hardware costs, provide more effective and reliable outputs in the audiovisual industry, and optimally adapt to your specific business.
 
 **Pricing:**
