@@ -20,7 +20,7 @@ When you use COS for file archive management, you need to save all historical ve
 
 ### Supported Actions
 
-- Data transition: transitions existing objects to the STANDARD_IA, ARCHIVE or DEEP ARCHIVE storage class after a specified time period.
+- Data transition: transitions existing objects to the STANDARD_IA, INTELLIGENT TIERING, ARCHIVE or DEEP ARCHIVE storage class after a specified time period.
 - Deletion after expiration: automatically delete objects after their specified expiration time.
 
 ### Supported Resources
@@ -45,7 +45,7 @@ This operation is supported for public cloud regions.
 
 #### One-way Transition
 
-From the hottest to the coldest, COS storage classes are STANDARD > STANDARD_IA > ARCHIVE > DEEP ARCHIVE. Objects can be transitioned only from a hotter storage class to a colder one, such as from STANDARD to ARCHIVE, but not vice versa. To restore your data from a colder storage class to a hotter one, you can only call  [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for other storage classes than ARCHIVE and DEEP ARCHIVE), or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (only for ARCHIVE and DEEP ARCHIVE).
+From the hottest to the coldest, COS storage classes are STANDARD > STANDARD_IA > INTELLIGENT TIERING> ARCHIVE > DEEP ARCHIVE. Objects can be transitioned only from a hotter storage class to a colder one, such as from STANDARD to ARCHIVE, but not vice versa. To restore your data from a colder storage class to a hotter one, you can only call  [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) (for other storage classes than ARCHIVE and DEEP ARCHIVE), or [POST Object restore ](https://intl.cloud.tencent.com/document/product/436/12633) (only for ARCHIVE and DEEP ARCHIVE).
 
 #### Eventual Consistency
 
@@ -75,12 +75,12 @@ Tencent Cloud cannot provide an accurate bill unless the lifecycle execution is 
 
 #### Time-insensitivity
 
-Please note that the minimum storage duration is 30 days, 90 days, and 180 days for STANDARD_IA, ARCHIVE and DEEP ARCHIVE storage classes, respectively. No additional storage fees will be incurred for the transition or delete action itself. COS will ignore lifecycle configurations less than 30/60 days, and perform only correct configurations upon your request.
+Please note that the minimum storage duration is 30 days, 90 days, and 180 days for STANDARD_IA/INTELLIGENT TIERING, ARCHIVE, and DEEP ARCHIVE storage classes, respectively. No additional storage fees will be incurred for the transition or delete action itself. COS will ignore lifecycle configurations less than 30/60 days, and perform only correct configurations upon your request.
 
 For example, if an object in STANDARD_IA storage class is transitioned before 30 days, it will start incurring ARCHIVE storage fees on the transition day and continue incurring STANDARD_IA storage fees until the 30th day. Another example is that if an archived object is deleted upon expiration before it is stored for 90 days, it will continue incurring ARCHIVE storage fees until the 90th day. It works the same way with DEEP ARCHIVE.
 
 #### Size-insensitivity
 
-There is a minimum allowed object size in the STANDARD_IA, ARCHIVE, and DEEP ARCHIVE storage classes. For example, if an object below 64 KB is uploaded to the STANDARD_IA storage class, it will be calculated as 64 KB. COS will not check the file size; instead, it will transition objects only according to the specified rule.
+There is a minimum allowed object size in the STANDARD_IA, INTELLIGENT TIERING, ARCHIVE, and DEEP ARCHIVE storage classes. For example, if an object below 64 KB is uploaded to the STANDARD_IA storage class, it will be calculated as 64 KB. COS will not check the file size; instead, it will transition objects only according to the specified rule.
 
 >? COS lifecycle does not transition any object of zero bytes.
