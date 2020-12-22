@@ -256,6 +256,30 @@ Daily LVB top speed codec transcoding fees = 0.0222 (USD/minute) * 60 (minutes) 
 
 > If you have a large-scale live streaming business and the daily billing mode cannot meet your needs, please contact the Tencent Cloud sales team or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to discuss your options.
 
+### Audio Transcoding
+LVB offers audio transcoding service. It has high-quality audio transcoding features that can transcode audio and video content to multiple formats, helping you reduce your adaptation, labor, and hardware costs, provide more effective and reliable outputs in the audiovisual industry, and optimally adapt to your specific business.
+
+**Pricing:**
+
+| Billable Item   | Billing Mode           | Price            |
+| -------- | ------------------ | --------------- |
+| Audio transcoding | Billed by audio transcoding duration | 0.0003 USD/minute |
+
+**Billing overview:**
+- Billable item: LVB audio transcoding.
+- Billing mode: postpaid.
+- Billing cycle: same as the LVB transcoding billing cycle, which is daily pay-as-you-go by default.
+- Billing rules: billed by LVB audio transcoding duration.
+
+**Billing example:**
+
+Suppose you use the audio transcoding service for 5 hours on December 1, 2020, the LVB audio transcoding fees you need to pay on December 2, 2020 are as follows:
+Daily audio transcoding fees = 0.0003 (USD/minute) x 300 (minutes) = 0.09 USD.
+
+> !
+
+> - Billing for the audio transcoding feature will officially start on December 1, 2020, and bills will be generated according to the billing rules on December 2, 2020.
+
 ## LVB Recording
 LVB can record and store live streams in VOD, which will incur VOD fees. The recording feature is disabled by default and can be enabled in the console or through TencentCloud API. This is a paid feature and fees are calculated based on the peak number of concurrent LVB recording channels in the current month. Detailed prices are as follows:
 
