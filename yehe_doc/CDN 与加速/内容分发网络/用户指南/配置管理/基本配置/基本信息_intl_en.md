@@ -9,21 +9,18 @@ For businesses that have been connected to Tencent Cloud CDN, you can view infor
 Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page. The domain name basic information is in the **Basic Configuration** tab.
 ![](https://main.qcloudimg.com/raw/2273c600e31b35d12b9480ff74205962.png)
 
-> !
->
-> - IPv6 is only supported in the Chinese mainland.
-> - If you select IPv4 and IPv6 when connecting a domain name, CDN nodes will support both IPv4 and IPv6 access requests.
+>? The former **Internet Protocol** is now the **IPv6 Access**. If the Internet protocol of an existing domain name is **IPv4** and **IPv6**, then the IPv6 access will be automatically enabled.
 
 ### Modifying basic information
 
 #### 1. Modify project
 
-For project modification, you can click **Modify** on the right of the project, or select multiple domain names to modify projects in batches through **More Actions** -> **Edit Project**. Project modification will change the project-based statistics and sub-user permissions, please operate with caution.
+For domain name project modification, you can click **Modify** on the right of the project. Project modification will change the project-based statistics and sub-user permissions, please operate with caution.
 
 > ?To create a project or manage existing projects, go to the [Project Management](https://console.cloud.tencent.com/project) page.
 
 ![](https://main.qcloudimg.com/raw/bb56a7b51526f256ccd5d98169861e98.png)
-![](https://main.qcloudimg.com/raw/1fa0a427bf125b7a12bbe13a79e10c9b.png)
+
 
 #### 2. Modify domain name service region
 
@@ -36,7 +33,7 @@ For project modification, you can click **Modify** on the right of the project, 
 You can click **Modify** on the right of the service region to modify it:
 ![](https://main.qcloudimg.com/raw/bf59e0eccd001b5ccad6262063f032db.png)
 
-> ! Acceleration services in and outside the Chinese mainland are billed separately at different prices. For more information, please click [here](https://intl.cloud.tencent.com/document/product/228/2949).
+> ! Acceleration services in and outside the Chinese mainland are billed separately at different prices. For more information, please see [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949).
 
 #### 3. Modify service type
 
@@ -46,4 +43,13 @@ Tencent Cloud CDN optimizes acceleration performance based on the service type. 
 > !
 >
 > - Modifying service type will change the underlying CDN acceleration platform, which may cause a small number of failed requests and increase origin-pull bandwidth. We recommend modifying service type during off-peak hours.
-> - If you cannot find the **Modify** button next to your domain name, the domain name may have a special configuration. You can [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
+> - If you cannot find the **Modify** button next to your domain name, please [contact us](https://intl.cloud.tencent.com/contact-sales) for assistance.
+
+#### 4. Modify IPv6 access
+Toggle the IPv6 access switch to enable or disable the feature. If it is enabled, CDN nodes can be accessed through IPv6 protocol.
+
+>! 
+>- IPv6 access is only supported in the Chinese mainland, so the feature cannot be enabled for the acceleration domain names outside the Chinese mainland. For global acceleration domain names, IPv6 access will only take effect in the Chinese mainland if the feature is enabled.
+>- For a global acceleration domain name with the IPv6 access enabled, if its acceleration region is switched to the region outside the Chinese mainland, the IPv6 access feature will be automatically disabled and cannot be enabled.
+>- IPv6 is currently not supported for streaming VOD acceleration. 
+>- Some platforms are being upgraded or have special configurations, so IPv6 access is currently not supported.
