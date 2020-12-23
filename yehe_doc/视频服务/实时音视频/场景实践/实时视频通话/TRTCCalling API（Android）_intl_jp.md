@@ -141,7 +141,7 @@ void login( int sdkAppId,
 
 | パラメータ   | タイプ           | 意味                                                          |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppID | UInt32         | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報でSDKAppIDを表示できます。
+| sdkAppID | UInt32         | TRTCコンソール > **[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)** > アプリケーション情報でSDKAppIDを表示できます。
 | user     | String                | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
 | userSig  | String                | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法 ](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 | callback | ActionCallBack | ログイン時のコールバック、`onSuccess` はログインに成功したことを意味します。                         |
