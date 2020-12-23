@@ -13,7 +13,7 @@
 <td>The push troubleshooting feature is added</td>
 <td>If a device fails to receive a push message, you can use the device token and the `PushID` of the push to identify the cause and quickly troubleshoot the problem</td>
 <td>December 2, 2020</td>
-<td>You can go to **Console** > **Toolbox** > **<a href="https://console.cloud.tencent.com/tpns/user-tools/">Troubleshooting Tools</a>** > **Push Query** to try it out</td>
+<td>You can go to <b>Console</b> > <b>Toolbox</b> > <b><a href="https://console.cloud.tencent.com/tpns/user-tools/">Troubleshooting Tools</a> </b> > <b>Push Query</b> to try it out</td>
 </tr>
 <tr>
 <td>The device number estimate feature is added</td>
