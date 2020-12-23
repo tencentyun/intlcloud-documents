@@ -24,7 +24,7 @@
 ### Quota description
  - The number of general messages (default universal messages delivered to multiple users) that can be pushed per day is 5 times the number of daily connected MIUI devices of the application. If the number of such devices is below 10,000, 50,000 messages can be pushed per day.
  - The number of notification messages (private messages to single users) that can be pushed is not limited. For more information, please see [Mi Push Message Limit Description](https://dev.mi.com/console/doc/detail?pId=2086).
- >If the number of pushes through the vendor channel exceeds the daily limit, excessive push tasks will be delivered through the TPNS channel.
+>?If the number of pushes through the vendor channel exceeds the daily limit, excessive push tasks will be delivered through the TPNS channel.
  
 ### Quota query guide 
   - Query in console: you can query the number of daily connected MIUI devices in [Mi Open Platform](https://dev.mi.com/console/appservice/push.html) > Push Operation Platform > Push Statistics > User Data > Detailed Data.

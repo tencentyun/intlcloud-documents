@@ -17,7 +17,6 @@
 1. 登录[专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏单击【互联网专用通道】。
 2. 在“互联网专用通道”页面上方单击【+新建】。
 3. 在“基本配置”页签中配置以下信息，然后勾选【我已知晓并同意该产品保底使用带宽需≥300Mbps，每月使用带宽不足300Mbps，按照300Mbps计费】。
-![](https://main.qcloudimg.com/raw/60acdf8c93405b23a1fe80e8790094e7.png)
 <table>
 <tr>
 <th>字段</th>
@@ -46,13 +45,11 @@
 <tr>
 <td>带宽</td>
 <td>不低于 300Mbps，若每月使用带宽不足 300Mbps，仍按 300Mbps 计算。</td>
-<tr>
 </table>
 4. 单击【下一步】。
 
 ### 步骤二：配置高级选项
 1. 在“高级配置”页签中配置以下参数：
-![](https://main.qcloudimg.com/raw/047d0acb397aea9b912584ec66ebbc6f.png)
 <table>
 <tr>
 <th>字段</th>
@@ -87,7 +84,6 @@
 
 ## 连接状态说明
 创建成功后，互联网专用通道将出现在互联网专用通道列表中，且连接状态为“申请中”。
-![](https://main.qcloudimg.com/raw/8617238bb5bd897df28ca8055f6c74cd.png)
 - **申请中**
   系统已接收用户申请新通道指令，准备发起创建任务。
 - **配置中**

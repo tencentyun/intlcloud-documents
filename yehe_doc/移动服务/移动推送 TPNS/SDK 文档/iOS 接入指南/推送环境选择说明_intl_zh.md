@@ -15,6 +15,6 @@
 ## 推送证书说明
 在管理台中需要上传开发环境和生产环境的二合一推送证书（Apple Push Notification service SSL (Sandbox & Production)）。此证书可以推送生产环境和开发环境，根据 App 实际使用的签名证书来进行选择，选择的方式参照上文。
 
->
+>?
 >- App 签名证书，分为开发环境（对应`xxx Developer:xxx`字样的签名证书）和生产环境（对应`xxx Distribution:xxx`字样的签名证书），请根据实际情况选择。
 >- App 推送证书为合并证书，已兼容开发环境与生产环境。

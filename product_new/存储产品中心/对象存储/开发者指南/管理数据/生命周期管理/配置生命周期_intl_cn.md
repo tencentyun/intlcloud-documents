@@ -25,14 +25,14 @@
 
 您可以直接调用 SDK 的生命周期方法，详情请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31515)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31519)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31523)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30597)
-- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/36197)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31519#.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/12301)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35269)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527#.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37855)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31539)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/32454)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31543)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/10199)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35806)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35860)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/35002)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/436/31547)
