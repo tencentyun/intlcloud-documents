@@ -26,7 +26,7 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 - Other-Push-jar 文件夹：TPNS 封装的华为、魅族、小米、OPPO、VIVO、FCM 的 jar 包。
 
 #### libs 目录详细介绍
-![](https://main.qcloudimg.com/raw/591f29cd6788b791c5e599707d0a4602.png)
+![](https://main.qcloudimg.com/raw/11b427ff202da51706d87e78a2cc6258.png)
 - android-support-v4.jar： 谷歌推出的兼容包，兼容 Android1.6 以上的系统。
 - jg-filter-sdk-1.1.jar：金刚扫描的 jar 包，使用腾讯 SDK 的产品必须带上。
 - tpns-baseapi-sdk-x.x.x.x.jar：TPNS 推送提供的部分底层公共 API。
