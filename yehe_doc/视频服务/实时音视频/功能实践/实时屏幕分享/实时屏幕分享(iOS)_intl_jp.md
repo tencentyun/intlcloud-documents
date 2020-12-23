@@ -66,7 +66,7 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 
 <span id="createGroup"> </span>
 #### 手順1：App Groupsの作成
-お客様のアカウントを使用して[develop.apple.com](https://develop.apple.com)にログインし、次の操作を実行します。**完了後は、対応するProvisioning Profileを再ダウンロードする必要がありますので、ご注意ください**。
+お客様のアカウントを使用して[**https://developer.apple.com/**](https://developer.apple.com/)にログインし、次の操作を実行します。**完了後は、対応するProvisioning Profileを再ダウンロードする必要がありますので、ご注意ください**。
 
 1.【Certificates, IDs & Profiles】をクリックします。
 2.右側のインターフェースでプラス記号をクリックします。
