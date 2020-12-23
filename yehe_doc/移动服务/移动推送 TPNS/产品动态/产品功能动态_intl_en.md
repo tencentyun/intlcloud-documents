@@ -1,3 +1,36 @@
+## December 2020
+
+<table>
+<thead>
+<tr>
+<th  width=20%>Update</th>
+<th  width=44%>Description</th>
+<th  width=16%>Release Date</th>
+<th  width=20%>Document</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The push troubleshooting feature is added</td>
+<td>If a device fails to receive a push message, you can use the device token and the `PushID` of the push to identify the cause and quickly troubleshoot the problem</td>
+<td>December 2, 2020</td>
+<td>You can go to <b>Console</b> > <b>Toolbox</b> > <b><a href="https://console.cloud.tencent.com/tpns/user-tools/">Troubleshooting Tools</a> </b> > <b>Push Query</b> to try it out</td>
+</tr>
+<tr>
+<td>The device number estimate feature is added</td>
+<td>Before confirming a push, you can view the estimated number of devices for the selected push target and quickly estimate the current push coverage</td>
+<td>December 2, 2020</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Tag selection in the console is optimized</td>
+<td>Tag selection in the console is redesigned to improve the selection experience</td>
+<td>December 2, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/35392">Tagging Feature</a></td>
+</tr>
+</tbody></table>
+
+
+
 ## November 2020
 
 
@@ -44,7 +77,7 @@
 <td>A new personalized push feature is added</td>
 <td>After binding user attributes such as nickname with tokens, you can push personalized messages with user attributes to different users easily, which can increase the average click rate by 40%</td>
 <td>November 9, 2020</td>
-<td><a href="https://cloud.tencent.com/document/product/548/49303">Personalized Notification</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/38542">Custom Notification</a></td>
 </tr>
 <tr>
 <td>Account package files in <code>.txt</code> or <code>.csv</code> format can be uploaded directly</td>
@@ -61,7 +94,7 @@
 </tbody></table>
 
 ## October 2020
-                                            
+
 
 <table>
 <thead>
@@ -109,7 +142,7 @@
 <td>Troubleshooting tools support querying tokens by account</td>
 <td>You can search for device tokens by account to locate issues more quickly and conveniently</td>
 <td>September 28, 2020</td>
-<td><a href="https://cloud.tencent.com/document/product/548/48774">Troubleshooting Tools</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024/38389">Troubleshooting Tools</a></td>
 </tr>
 <tr>
 <td>New, active, and inactive are added as user tags</td>
@@ -290,7 +323,7 @@
         <td>The tag combination logic is optimized</td>
         <td>"AND", "OR", and "NOT" operations are supported for tags for more precise user grouping</td>
         <td>April 9, 2020</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35392#.E6.8E.A7.E5.88.B6.E5.8F.B0.E4.BD.BF.E7.94.A8">Tagging Feature</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/35392">Tagging Feature</a></td>
     </tr>
     <tr>
         <td>More metrics are available in data overview</td>
