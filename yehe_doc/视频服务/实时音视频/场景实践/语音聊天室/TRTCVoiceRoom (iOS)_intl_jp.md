@@ -226,12 +226,12 @@ TRTCVoiceRoom は、オープンソースの Classであり、Tencent Cloudの2�
      callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(login(sdkAppID:userId:userSig:callback:));
 
 ```
-
+【[アプリケーション管理]（https://console.cloud.tencent.com/trtc/app）】
 パラメータは下表に示すとおりです。
 
 | パラメータ     | タイプ           | 意味                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppID | int         | Tencent Real-Time Communicationコンソール> 【[アプリケーション管理]（https://console.cloud.tencent.com/trtc/app）】>アプリケーション情報でSDKAppIDを表示できます。 |
+| sdkAppID | int         | Tencent Real-Time Communicationコンソール> **[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)** >アプリケーション情報でSDKAppIDを表示できます。 |
 | user     | String                | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-z と A-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
 | userSig  | String                | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については[UserSigの計算方法 ](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 | callback | ActionCallback | ログインのコールバック。成功時に code は0になります。                                  |
