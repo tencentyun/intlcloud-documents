@@ -1,41 +1,42 @@
-## Download and installation
+## Download and Installation
 
-#### Relevant Resources
+#### Relevant resources
 
-- Download COS XML C SDK source code: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5).
-- Download demo: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
+- Download the COS XML SDK for C source code [here](https://github.com/tencentyun/cos-c-sdk-v5).
+- Download the demo [here](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
+- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md).
 
-#### Environmental Requirements
+#### Environmental dependency
 
-Required library: libcurl apr apr-util minixml.
+Dependent library: libcurl apr apr-util minixml.
 
-#### Installing the SDK
+#### Installing SDK
 
-1. Download the CMake tool (v2.6.0 and higher recommended) [here](http://www.cmake.org/download/) and install it as shown below:
+1. Download the CMake tool (v2.6.0 or higher recommended) [here](http://www.cmake.org/download/) and install it as shown below:
 ```bash
 ./configure
 make
 make install
 ```
-2. Download libcurl (v7.32.0 and higher recommended) [here](http://curl.haxx.se/download.html?spm=5176.doc32132.2.7.23MmBq) and install it as shown below:
+2. Download libcurl (v7.32.0 or higher recommended) [here](http://curl.haxx.se/download.html?spm=5176.doc32132.2.7.23MmBq) and install it as shown below:
 ```bash
 ./configure
 make
 make install
 ```
-3. Download apr (v1.5.2 and higher recommended) [here](https://apr.apache.org/download.cgi?spm=5176.doc32132.2.9.23MmBq&file=download.cgi) and install it as shown below:
+3. Download apr (v1.5.2 or higher recommended) [here](https://apr.apache.org/download.cgi?spm=5176.doc32132.2.9.23MmBq&file=download.cgi) and install it as shown below:
 ```bash
 ./configure
 make
 make install
 ```
-4. Download apr-util (v1.5.4 and higher recommended) [here](https://apr.apache.org/download.cgi?spm=5176.doc32132.2.10.23MmBq&file=download.cgi) and install it as shown below. You need to specify the `--with-apr` option during installation:
+4. Download apr-util (v1.5.4 or higher recommended) [here](https://apr.apache.org/download.cgi?spm=5176.doc32132.2.10.23MmBq&file=download.cgi) and install it as shown below. You need to specify the `--with-apr` option during installation.
 ```bash
 ./configure --with-apr=/your/apr/install/path
 make
 make install
 ```
-5. Download minixml (v2.8–2.12 recommended) [here](https://www.msweet.org/mxml/) and install it as shown below:
+5. Download minixml (v2.8 - 2.12 recommended) [here](https://www.msweet.org/mxml/) and install it as shown below:
 ```bash
 ./configure
 make
@@ -53,10 +54,10 @@ make install
 Below is the general process of using COS XML C SDK.
 
 1. Initialize the SDK.
-2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, please see [COS Glossary](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF).
-	- APPID is one of the account IDs assigned by the system after you register for a Tencent Cloud account.
-	- "access_key_id" and "access_key_secret" are account API keys.
-	- `endpoint` is the COS access domain name. For more information, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). For example, the `endpoint` of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
+2. Set the request option parameters. For the definitions of parameters such as `APPID`, `SecretId`, `SecretKey`, and `Bucket`, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751#cos-glossary).
+	- APPID is one of the account identifiers assigned by the system after you register a Tencent Cloud account.
+	- `access_key_id` and `access_key_secret` are account API keys.
+	- `endpoint` is the COS access domain name. For more information, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). For example, the `endpoint` of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`.
 3. Set the parameters required for APIs.
 4. Call the SDK API to initiate a request and get the response.
 
@@ -89,7 +90,7 @@ cos_request_options_t *options;
 /* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&pool, NULL);
 
-/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
  * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
  */ 
 options = cos_request_options_create(pool);
@@ -116,9 +117,9 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
->For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>?For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
 
-### Creating a bucket
+### Creating bucket
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -132,7 +133,7 @@ cos_table_t *resp_headers = NULL;
 /* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
  * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
@@ -146,7 +147,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Enter the bucket name in the format of BucketName-APPID. */
+/* Enter the bucket name in the format of BucketName-APPID */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to create a bucket */
@@ -161,7 +162,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Querying the object list
+### Querying object list
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -206,7 +207,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Uploading an object
+### Uploading object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -252,7 +253,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Downloading an object
+### Downloading object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -298,7 +299,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Deleting an object
+### Deleting object
 
 ```cpp
 cos_pool_t *p = NULL;

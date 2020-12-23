@@ -2,13 +2,14 @@
 
 #### Relevant resources
 
-- Download COS XML C++ SDK source code below:
- - Linux: [ XML Linux C++ SDK ](https://github.com/tencentyun/cos-cpp-sdk-v5)
- - Windows: [ XML Windows C++ SDK ](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev)
- - Mac: [ XML Mac C++ SDK ](https://github.com/tencentyun/cos-cpp-sdk-v5)
+- The COS XML SDK for C++ source code can be downloaded here:
+ - Linux: [XML Linux SDK for C++](https://github.com/tencentyun/cos-cpp-sdk-v5)
+ - Windows: [XML Windows SDK for C++](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev)
+ - macOS: [XML macOS SDK for C++](https://github.com/tencentyun/cos-cpp-sdk-v5)
 - Download the demo [here](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp)
+- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/CHANGELOG.md).
 
-#### Environment dependencies
+#### Environmental dependency
 
 - Dependent static library: jsoncpp boost_system boost_thread Poco (in the lib folder).
 - Dependent dynamic library: ssl crypto rt z (installation required).
@@ -16,7 +17,7 @@
 
 
 
-### Installing the Linux SDK
+### Installing SDK for Linux
 
 #### 1. Install CMake
 
@@ -72,11 +73,9 @@ LIBRARY_PATH=/usr/local/ssl/lib/:$LIBRARY_PATH
 CPLUS_INCLUDE_PATH=/usr/local/ssl/include/:$CPLUS_INCLUDE_PATH
 ```
 
-#### 4. Install Poco libraries and header files
+#### 4. Install Poco
 
-Download and install the complete version of Poco libraries and header files from the [Poco official website](https://pocoproject.org/download.html)
-
->The latest version of Poco requires C++14 support. If your compiler only supports C++11 or below, you can use [Poco 1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release).
+Download [Poco v1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release), compile it, and install the library and header files.
 
 ```shell
 ./configure --omit=Data/ODBC,Data/MySQL
@@ -84,12 +83,12 @@ make
 make install
 ```
 
->You can specify the local Boost header file path by modifying the following statement in the `CMakeList.txt` file: 
+> ?You can specify the local Boost header file path by modifying the following statement in the `CMakeList.txt` file: 
 >```
 >SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 >```
 
-#### 5. Compile the COS CPP SDK 
+#### 5. Compile the COS SDK for CPP 
 
 Download the [XML C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5), integrate it into your development environment, and run the following command:
 
@@ -101,15 +100,15 @@ cmake ..
 make
 ```
 
->The [Demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp) provides examples of common APIs. The generated `cos_demo` can be executed directly; the generated static library is named `libcossdk.a` and should be placed in the `lib` path of your project; the generated `include` directory should be copied to the `include` path of your project.
+> ?The [Demo](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/demo/cos_demo.cpp) provides examples of common APIs. The generated `cos_demo` can be executed directly; the generated static library is named `libcossdk.a` and should be placed in the `lib` path of your project; the generated `include` directory should be copied to the `include` path of your project.
 
 
 
-### Installing the Windows SDK
+### Installing SDK for Windows
 
-#### 1. Install visual studio 2017
+#### 1. Install Visual Studio 2017
 
-Install visual studio 2017 as a development environment for Windows.
+Install Visual Studio 2017 as a development environment for Windows.
 
 #### 2. Install CMake
 
@@ -118,37 +117,37 @@ Download the Windows version of the CMake compiler from the [CMake official webs
 #### 3. Install OpenSSL
 
 (1) Download and compile the OpenSSL source code from the [OpenSSL official website](https://www.openssl.org/), or select and install the Windows version of the .exe file from this [third-party website](https://slproweb.com/products/Win32OpenSSL.html).
-(2) Add the `OPENSSL_ROOT_DIR` variable to the Windows system environment variables and set it to `${OpenSSL installation path}`,
-For example:  `OPENSSL_ROOT_DIR=D:\OpenSSL-Win64`.
+(2) Add the `OPENSSL_ROOT_DIR` variable to the Windows system environment variables and set it to `${OpenSSL installation path}`.
+For example: `OPENSSL_ROOT_DIR=D:\OpenSSL-Win64`.
 (3) Configure `${OpenSSL installation path}\bin` in the `Path` environment variable.
 
 #### 4. Install Poco
 
-Download and install the complete version of Poco libraries and header files from the [Poco official website](https://pocoproject.org/download.html)
+Download [Poco v1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release), compile it, and install the library and header files.
 
 (1) Open the Windows Command Prompt program and use the `cd` command to navigate to the Poco source code directory; then, run `mkdir examplefolder` to create a folder (be sure to replace `examplefolder` with your custom folder name).
 (2) Continue to run `cd examplefolder` (be sure to replace `examplefolder` with your custom folder name), and run the `cmake ..` command.
-(3) Use visual studio 2017 to open the solution and compile it.
+(3) Use Visual Studio 2017 to open the solution and compile it.
 
 #### 5. Install Boost 
 
-Download the Boost source code from the [Boost official website] (https://www.boost.org/).
+Download the Boost source code from the [Boost official website](https://www.boost.org/).
 
 (1) Open the Windows Command Prompt program and use the `cd` command to navigate to the Boost source code directory.
 (2) Run the `bootstrap` command in this directory.
 (3) Run the `b2` compilation command in the Windows Command Prompt program.
 
-#### Considerations
-Visual studio 2017 provides four code generation methods which correspond to different commands during Boost compilation.
+#### Notes
+Visual Studio 2017 provides four code generation methods which correspond to different commands during Boost compilation.
 
 The code for the `b2.exe` compilation command is as shown below:
 
-|link|runtime-link|compilation mode|multi-thread type|
+|link	|runtime-link|	compilation mode|	multi-thread type|
 |---------|---------|---------|---------|
-|static|static|release|MT|
-|static|static|debug|MTd|
-|static|shared|release|MD|
-|static|shared|debug|MDd|
+|static|	static|	release	|MT|
+|static|	static|	debug|	MTd|
+|static	|shared|	release	|MD|
+|static|	shared	|debug	|MDd|
 
 For example, if the 32-bit multi-thread type is MD, the command is as follows:
 ```shell
@@ -156,17 +155,17 @@ b2 variant=release link=static runtime-link=shared threading=multi address-model
 ```
 
 
-#### 6. Install jsoncpp
+#### 6. Install JsonCpp
 
-(1) Download jsoncpp source code [here](https://github.com/open-source-parsers/jsoncpp). For Win32, we recommend that you select a [earlier version] (https://github.com/open-source-parsers/jsoncpp/tree/0.y.z).
-(2) Open the Windows Command Prompt program and use the `cd` command to navigate to the jsoncpp source code directory; then, run `mkdir examplefolder` to create a folder (be sure to replace `examplefolder` with your custom folder name).
+(1). Download the JsonCpp source code [here](https://github.com/open-source-parsers/jsoncpp). We recommend you choose a [lower version](https://github.com/open-source-parsers/jsoncpp/tree/0.y.z) for Windows 32-bit.
+(2) Open the Windows Command Prompt program and use the `cd` command to navigate to the JsonCpp source code directory; then, run `mkdir examplefolder` to create a folder (be sure to replace `examplefolder` with your custom folder name).
 (3) Continue to run `cd examplefolder `(be sure to replace `examplefolder` with your custom folder name), and run the `cmake ..` command.
-(5) Use visual studio 2017 to open the solution and compile it.
+(4) Use Visual Studio 2017 to open the solution and compile it.
 (5) Once the compilation is complete, copy the resulting jsoncpplib to the lib folder under the COS CPP SDK installation directory.
 
-#### 7. Compile the COS CPP SDK 
+#### 7. Compile the COS SDK for CPP 
 
-(1) Download the [XML Windows C++ SDK source code] (https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev), integrate it into your development environment, and begin compilation.
+(1) Download [XML Windows C++ SDK source code](https://github.com/tencentyun/cos-cpp-sdk-v5/tree/windows_dev), integrate it into your development environment, and begin compilation.
 (2) Open the Windows Command Prompt program and use the `cd` command to navigate to the C++ SDK source code directory; then, run `mkdir examplefolder` to create a folder (be sure to replace `examplefolder` with your custom folder name).
 (3) Modify the `CMakeLists.txt` file in the `${cos-cpp-sdk}` installation directory as shown below:
 
@@ -187,10 +186,10 @@ link_directories(${Poco compilation directory}/lib/Release)
 link_directories(./lib)
 link_directories(${Boost installation directory}/stage/lib)
 ```
-(4) In the Windows Command Prompt program, run `cd examplefolder` (be sure to replace `examplefolder` with your custom folder name) and run the `cmake ..` command.
-(5) Use visual studio 2017 to open the solution and compile it.
+(3) In the Windows Command Prompt program, run `cd examplefolder` (be sure to replace `examplefolder` with your custom folder name) and run the `cmake ..` command.
+(4) Use Visual Studio 2017 to open the solution and compile it.
 
-### Install the Mac SDK
+### Installing SDK for macOS
 
 #### 1. Install CMake
 ```shell
@@ -210,7 +209,7 @@ cd boost_1_54_0
 
 #### 3. Install OpenSSL
 
-Download and compile the `openssl-1.1.1d.tar.gz` source code from the [OpenSSL official website] (https://www.openssl.org/).
+Download and compile the `openssl-1.1.1d.tar.gz` source code from the [OpenSSL official website](https://www.openssl.org/).
 
 ```shell
 tar -zxvf openssl-1.1.1d.tar.gz
@@ -218,31 +217,29 @@ cd openssl-1.1.1d/
 ./config  --prefix=/usr/local 
 make 
 make install
-#openssl libraries are installed in the `/usr/local/` directory
+#openssl library is installed in the `/usr/local/` directory
 ```
 
-#### 4. Install Poco libraries and header files
+#### 4. Install Poco
 
-Download and install the latest version of Poco libraries and header files from the [Poco official website] (https://pocoproject.org/download.html), or directly use the [git command] (https://github.com/pocoproject/poco.git) to download Poco. 
-
->The latest version of Poco requires C++14 support. If your compiler only supports C++11 or below, you can use [Poco 1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release).
+Download [Poco v1.9.4](https://github.com/pocoproject/poco/releases/tag/poco-1.9.4-release), compile it, and install the library and header files.
 
 ```shell
 cd Poco/ 
 ./configure --omit=Data/ODBC,Data/MySQL
-mkdir examplefolder  #(Poco installation directory; Be sure to replace examplefolder with your custom folder name.）
+mkdir examplefolder  #(Poco installation directory. Be sure to replace examplefolder with your custom folder name.)
 cd examplefolder
 cmake .. 
 make
 ```
 
-#### 5. Install jsoncpp
+#### 5. Install JsonCpp
 
-Download the jsoncpp source code [here] (https://github.com/open-source-parsers/jsoncpp).
+Download the JsonCpp source code [here](https://github.com/open-source-parsers/jsoncpp).
 
 ```shell
 cd jsoncpp/
-mkdir examplefolder  #(jsoncpp installation directory; Be sure to replace examplefolder with your custom folder name.）
+mkdir examplefolder  #(JsonCpp installation directory. Be sure to replace examplefolder with your custom folder name.)
 cd examplefolder
 cmake .. 
 make
@@ -250,10 +247,10 @@ make
 
 Once the compilation is complete, copy the resulting jsoncpplib to the lib folder under the COS CPP SDK installation directory.
 
-#### 6. Compile the COS CPP SDK
-(1) Download the XML C++ SDK source code [here] (https://github.com/tencentyun/cos-cpp-sdk-v5), and integrate it into your development environment.
+#### 6. Compile the COS SDK for CPP
+(1) Download the XML C++ SDK source code [here](https://github.com/tencentyun/cos-cpp-sdk-v5), and integrate it into your development environment.
 (2) Modify the `CMakeLists.txt` file in the `${cos-cpp-sdk}` installation directory as shown below:
- 
+
 ```cpp
 # include directories
 INCLUDE_DIRECTORIES(./include)
@@ -269,9 +266,9 @@ link_directories(/usr/local/lib)
 link_directories(${Poco compilation directory}/lib/Release)
 link_directories(./lib)
 ```
- 
-Then run this command:
- 
+
+Then, run the following commands:
+
 ```shell
 cd ${cos-cpp-sdk} 
 mkdir build 
@@ -282,23 +279,23 @@ make
 
 ## Getting Started
 
-The following describes how to use the COS C++ SDK to perform a basic operation, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
+The following describes how to use the COS SDK for C++ to perform a basic operation, such as initializing a client, creating a bucket, querying a bucket list, uploading an object, querying an object list, downloading an object, and deleting an object.
 
->For the definitions of parameters such as SecretId, SecretKey, and Bucket, see the [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> ?For the definitions of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751#cos-glossary).
 
 ### Initialization
 
 Overview of each field in the configuration file:
 
 ```
-// For SDK config files before V5.4.3, please use "AccessKey" 
-"SecretId":"COS_SECRETID", 
+// For SDK config files before V5.4.3, please use "AccessKey".
+"SecretId":"COS_SECRETID"; 
 "SecretKey":"COS_SECRETKEY",
 
-// COS region. For regions and their abbreviations, see [here] https://intl.cloud.tencent.com/document/product/436/6224
+// COS region. For regions and their abbreviations, please visit https://cloud.tencent.com/document/product/436/6224 
 "Region":"Region",
 
-// Signature timeout (in sec)    
+// Signature timeout period in seconds    
 "SignExpiredTime":360, 
 
 // Connection timeout period in milliseconds
@@ -325,12 +322,12 @@ Overview of each field in the configuration file:
 // Log output type. 0: do not output; 1: output to screen; 2: output to syslog   
 "LogoutType":1,       
 
-// Log level. 1 :ERR; 2: WARN; 3: INFO; 4:DBG     
+// Log level. 1: ERR; 2: WARN; 3: INFO; 4: DBG     
 "LogLevel":3,                 
 
 ```
 
-### Creating a bucket
+### Creating bucket
 
 ```cpp
 #include "cos_api.h"
@@ -338,7 +335,7 @@ Overview of each field in the configuration file:
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
@@ -347,7 +344,7 @@ int main(int argc, char *argv[]) {
     qcloud_cos::PutBucketReq req(bucket_name);
     qcloud_cos::PutBucketResp resp;
     
-    // 3. Call the PUT Bucket API
+    // 3. Call the API to create a bucket
     qcloud_cos::CosResult result = cos.PutBucket(req, &resp);
     
     // 4. Process the call result
@@ -367,7 +364,7 @@ int main(int argc, char *argv[]) {
 
 ```
 
-### Querying a bucket list
+### Querying bucket list
 
 ```cpp
 #include "cos_api.h"
@@ -375,11 +372,11 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the GET Service request
+    // 2. Construct a request to query the bucket list
     qcloud_cos::GetServiceReq req;
     qcloud_cos::GetServiceResp resp;
     qcloud_cos::CosResult result = cos.GetService(req, &resp);
@@ -397,9 +394,9 @@ int main(int argc, char *argv[]) {
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // Bucket list queried successfully
+        // Queried the bucket list successfully
     } else {
-        // Failed to query the bucket list. You can call the CosResult member functions to output the error information such as the requestID
+        // Failed to query the bucket list. You can call the CosResult member functions to output the error information such as requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
@@ -411,7 +408,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Uploading an object
+### Uploading object
 
 ```cpp
 #include "cos_api.h"
@@ -419,13 +416,13 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the PUT Object request
+    // 2. Construct a request to upload the file
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object’s access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
+    std::string object_name = "exampleobject"; // exampleobject is the object key (Key), which is the unique identifier of the object in the bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     // The local file path is required in the constructor of `request`.
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
     req.SetXCosStorageClass("STANDARD_IA"); // Call the `Set` method to set metadata
@@ -438,7 +435,7 @@ int main(int argc, char *argv[]) {
     if (result.IsSucc()) {
         // File uploaded successfully
     } else {
-        // Failed to upload the file. You can call the CosResult member functions to output the error information such as the requestID
+        // Failed to upload the file. You can call the CosResult member functions to output the error information such as the requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
@@ -450,7 +447,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Querying an object list
+### Querying object list
 
 ```cpp
 #include "cos_api.h"
@@ -458,11 +455,11 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the GET Bucket request
+    // 2. Construct a request to query the object list
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
     qcloud_cos::GetBucketReq req(bucket_name);
     qcloud_cos::GetBucketResp resp;
@@ -477,9 +474,9 @@ int main(int argc, char *argv[]) {
     
     // 3. Process the call result
     if (result.IsSucc()) {
-        // Object list queried successfully
+        // Queried the object list successfully
     } else {
-        // Failed to query the object list. You can call the `CosResult` member functions to output the error information such as the requestID.
+        // Failed to query the object list. You can call the CosResult member functions to output the error information such as requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
@@ -491,7 +488,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Downloading an object
+### Downloading object
 
 ```cpp
 #include "cos_api.h"
@@ -499,19 +496,19 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the GET Object request
+    // 2. Construct a request to download the object
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
+    std::string object_name = "exampleobject"; // exampleobject is the object key (Key), which is the unique identifier of the object in the bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
     std::string local_path = "/tmp/exampleobject";
     // The request needs to carry the appid, bucketname, object, and local path (including the file name)
     qcloud_cos::GetObjectByFileReq req(bucket_name, object_name, local_path);
     qcloud_cos::GetObjectByFileResp resp;
     
-    // 3. Call the GET Object API
+    // 3. Call the object download API
     qcloud_cos::CosResult result = cos.GetObject(req, &resp);
     
     // 4. Process the call result
@@ -530,7 +527,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-### Deleting an object
+### Deleting object
 
 ```cpp
 #include "cos_api.h"
@@ -538,23 +535,23 @@ int main(int argc, char *argv[]) {
 #include "cos_defines.h"
 
 int main(int argc, char *argv[]) {
-    // 1. Specify the path to the configuration file and initialize CosConfig
+    // 1. Specify the configuration file path and initialize CosConfig
     qcloud_cos::CosConfig config("./config.json");
     qcloud_cos::CosAPI cos(config);
     
-    // 2. Construct the DELETE Object request
+    // 2. Construct a request to delete the object
     std::string bucket_name = "examplebucket-1250000000"; // Destination bucket name
-    std::string object_name = "exampleobject"; // exampleobject is the ObjectKey (Key), the unique ID of an object in a bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
-    // 3. Call the DELETE Object API
+    std::string object_name = "exampleobject"; // exampleobject is the object key (Key), which is the unique identifier of the object in the bucket. For example, if the object's access domain name is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the object key is `doc/pic.jpg`
+    // 3. Call the object deleting API
 	qcloud_cos::DeleteObjectReq req(bucket_name, object_name);
 	qcloud_cos::DeleteObjectResp resp;
 	qcloud_cos::CosResult result = cos.DeleteObject(req, &resp); 
     
     // 4. Process the call result
     if (result.IsSucc()) {
-        // File deleted successfully
+        // Deleted the object successfully
     } else {
-        // Failed to delete the file. You can call the CosResult member functions to output the error information such as the requestID.
+        // Failed to delete the object. You can call the CosResult member functions to output the error information such as requestID.
         std::cout << "ErrorInfo=" << result.GetErrorInfo() << std::endl;
         std::cout << "HttpStatus=" << result.GetHttpStatus() << std::endl;
         std::cout << "ErrorCode=" << result.GetErrorCode() << std::endl;
