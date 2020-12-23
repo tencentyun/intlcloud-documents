@@ -25,14 +25,14 @@ You can configure and manage the lifecycle of objects in a bucket through the RE
 
 You can directly call the lifecycle method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/12159)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
+- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/36197)
+- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31519#.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F)
 - [SDK for C++](https://intl.cloud.tencent.com/document/product/436/12301)
-- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/30601)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/11280)
+- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/35269)
+- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31527#.E7.94.9F.E5.91.BD.E5.91.A8.E6.9C.9F)
+- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37855)
 - [SDK for Java](https://intl.cloud.tencent.com/document/product/436/10199)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/11459)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/12266)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/12269)
+- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/35806)
+- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/35860)
+- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/35002)
+- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31547)
