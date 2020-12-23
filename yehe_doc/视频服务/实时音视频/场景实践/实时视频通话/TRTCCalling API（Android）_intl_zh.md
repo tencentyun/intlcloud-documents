@@ -138,7 +138,7 @@ void login( int sdkAppId,
 ```
 
 参数如下表所示：
->【[应用管理](https://console.cloud.tencent.com/trtc/app)】>
+
 | 参数     | 类型           | 含义                                                         |
 | -------- | -------------- | ------------------------------------------------------------ |
 | sdkAppID | UInt32         | 您可以在实时音视频控制台 > **[应用管理](https://console.cloud.tencent.com/trtc/app)** > 应用信息中查看 SDKAppID。 |
