@@ -21,7 +21,7 @@ Categorization rule: the application category in Huawei AppGallery is used.
 | Others | Kids; education; personalized themes; cars | 1 |
 | Default | Default | 1 |
 
->If your application has not been released on Huawei AppGallery, its category will be "Default".
+>?If your application has not been released on Huawei AppGallery, its category will be "Default".
 If your application's QPS calculated by the formula is smaller than 6,000, the QPS of 6,000 will be used by default.
 When the traffic across the entire network is high, there may be a system-level traffic throttling. 
 In addition, no matter what application category it is, the number of pushes for a single device cannot exceed 100,000 per day; otherwise, push permission will be restricted, and you need to rectify your application and submit your rectification plan to apply for push permission again.
@@ -45,7 +45,7 @@ If you have any questions and feedback about the product, please send an email i
 ### QPS limit
 The assignment of push rate (QPS) by Mi Push is mainly based on the number of daily online MIUI devices of the application.
 QPS indicates the number of requests that can be called in one second. Up to 1,000 target devices can be included in one request. For example, if the QPS is 3,000, a message can be pushed to up to 3 million devices in one second.
->You can query the number of daily online MIUI devices in [Push Operation Platform](https://admin.xmpush.xiaomi.com/zh_CN/app/unauth) > Push Statistics > User Data > Detailed Data.
+>?You can query the number of daily online MIUI devices in [Push Operation Platform](https://admin.xmpush.xiaomi.com/zh_CN/app/unauth) > Push Statistics > User Data > Detailed Data.
 
 Different numbers of daily online MIUI devices are assigned with different QPS:
 
