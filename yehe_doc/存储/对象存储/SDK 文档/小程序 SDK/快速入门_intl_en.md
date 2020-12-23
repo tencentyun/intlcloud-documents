@@ -229,7 +229,7 @@ getAuthorization callback parameter descriptions:
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | -------- |
 | options | Parameter object necessary for getting a temporary key | Object |
-| Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
+| - Bucket  | Bucket name in the format of `BucketName-APPID`. The bucket name entered here must be in this format | String |
 | - Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
