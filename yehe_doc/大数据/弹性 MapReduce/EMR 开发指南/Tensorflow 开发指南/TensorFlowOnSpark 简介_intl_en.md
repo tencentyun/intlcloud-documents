@@ -10,7 +10,7 @@ TensorFlowOnSpark supports direct tensor communication among TensorFlow processe
 2. Select the `tensorflowonspark 1.4.4` component in the **Optional Component** list.	
 3. TensorFlowOnSpark will be installed in the `/usr/local/service/tensorflowonspark` directory by default.	
 >!The components depended on by TensorFlowOnSpark include Hive, Spark, etc., which will be installed together with TensorFlowOnSpark.
->
+
  
 ## Use Cases
 There is complete sample code in the directory of the installed TensorFlowOnSpark component. You can use TensorFlowOnSpark in the following steps:
