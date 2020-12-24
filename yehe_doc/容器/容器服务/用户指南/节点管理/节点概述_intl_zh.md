@@ -8,6 +8,7 @@
 - [移出节点](https://intl.cloud.tencent.com/document/product/457/30653)
 - [驱逐或封锁节点](https://intl.cloud.tencent.com/document/product/457/30654)
 - [设置节点的启动脚本](https://intl.cloud.tencent.com/document/product/457/30655)
+- [使用 GPU 节点](https://intl.cloud.tencent.com/document/product/457/30656)
 - [设置节点 Label](https://intl.cloud.tencent.com/document/product/457/30657)
 
 
