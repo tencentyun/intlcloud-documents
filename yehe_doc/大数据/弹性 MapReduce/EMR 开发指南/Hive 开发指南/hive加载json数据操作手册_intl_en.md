@@ -27,7 +27,7 @@ Connect to Hive:
     
 Create a table based on the mapping:
 ```
-hive> CREATE TABLE test ( name string, age int, course array<map<string,string>>, grade array<int>) ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe' STORED AS TEXTFILE;
+hive> CREATE TABLE test (name string, age int, course array<map<string,string>>, grade array<int>) ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe' STORED AS TEXTFILE;
 ```
 ### 4. Import data
 ```
