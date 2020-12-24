@@ -9,5 +9,6 @@ A node is a basic element of a container cluster. It can be either a virtual mac
 - [Draining or cordoning a node](https://intl.cloud.tencent.com/document/product/457/30654)
 - [Configuring the startup script of a node](https://intl.cloud.tencent.com/document/product/457/30655)
 - [Using a GPU node](https://intl.cloud.tencent.com/document/product/457/30656)
+- [Setting a Node Label](https://intl.cloud.tencent.com/document/product/457/30657)
 
 
