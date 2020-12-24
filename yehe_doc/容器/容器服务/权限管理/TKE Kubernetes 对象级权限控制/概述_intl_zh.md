@@ -1,5 +1,3 @@
->?腾讯云容器服务 TKE Kubernetes 对象级别权限控制目前为内测发布功能，如需使用请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
->
 
 TKE 提供了对接 Kubernetes RBAC 的授权模式，便于对子账号进行细粒度的访问权限控制。该授权模式下，可通过容器服务控制台及 kubectl 两种方式进行集群内资源访问。如下图所示：
 ![](https://main.qcloudimg.com/raw/3bd92966b4b7a5d6ac4e5e0463b0a20a.png)
@@ -50,8 +48,8 @@ Kubernetes 包含 RBAC 及 Webhook Server 两种主流授权模式。为给熟�
 
 ## TKE Kubernetes 对象级别权限控制功能
 通过 TKE 提供的授权管理功能，您可以进行更细粒度的权限控制。例如，仅赋予某个子账号只读权限或仅赋予某个子账号下的某个命名空间读写权限等。可参考以下文档，对子账号进行更细粒度的权限控制：
-- 使用预设身份授权
-- 自定义策略授权
+- [使用预设身份授权](https://intl.cloud.tencent.com/document/product/457/37368)
+- [自定义策略授权](https://intl.cloud.tencent.com/document/product/457/37369)
 
 
 
