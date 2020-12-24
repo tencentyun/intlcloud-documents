@@ -68,7 +68,7 @@ WebRTCのテクノロジーはGoogleが初めて提唱し、現在、デスク�
 | Mac OS  | デスクトップ版Safariブラウザ |  11+ | サポート | サポート | 
 | Mac OS  | デスクトップ版Chromeブラウザ |  47+ | サポート | サポート | 
 | Windows  | デスクトップ版Chromeブラウザ|  52+ | サポート | サポート | 
-| Windows  | デスクトップ版QQブラウザ||  10.2 | サポート | サポート | 
+| Windows  | デスクトップ版QQブラウザ|  10.2 | サポート | サポート | 
 | iOS | モバイル版Safariブラウザ | 11.1.2 | サポート | サポート | 
 | iOS | WeChat Embedded Webページ| 12.1.4 | サポート | サポートなし | 
 | Android | モバイル版QQブラウザ| - | サポートなし | サポートなし | 
