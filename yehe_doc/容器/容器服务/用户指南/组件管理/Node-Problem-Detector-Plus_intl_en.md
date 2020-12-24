@@ -11,9 +11,9 @@ Node-Problem-Detector-Plus is an add-on that monitors the health status of Kuber
 | Kubernetes Object Name | Type | Resource Amount | Namespaces |
 | --------------------- | ------------------ | ------------ | --------------- |
 | node-problem-detector | DaemonSet | 0.5C 80M | kube-system |
-| node-problem-detector | ServiceAccount | \ | kube-system |
-| node-problem-detector | ClusterRole | \ | \ |
-| node-problem-detector | ClusterRoleBinding | \ | \ |
+| node-problem-detector | ServiceAccount | -  | kube-system |
+| node-problem-detector | ClusterRole | -  | -  |
+| node-problem-detector | ClusterRoleBinding | -  | -  |
 
 ## Use Cases
 
