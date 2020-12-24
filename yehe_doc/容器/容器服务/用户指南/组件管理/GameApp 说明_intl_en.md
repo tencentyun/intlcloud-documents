@@ -18,10 +18,10 @@ This add-on is based on the feature of maintaining shared memory after a game pr
 
 | Kubernetes Object Name | Type | Default Resource Occupation | Namespace |
 | -------------------------- | ------------------------ | ------ | ------------ |
-| gameapps.game.scr.ied.com | CustomResourceDefinition | \ | \ |
-| gameapp-operator | ClusterRoleBinding | \ | \ |
-| gameapp-operator | ClusterRole | \ | \ |
-| gameapp-operator | ServiceAccount | \ | default |
+| gameapps.game.scr.ied.com | CustomResourceDefinition | - | - |
+| gameapp-operator | ClusterRoleBinding | - | - |
+| gameapp-operator | ClusterRole | - | - |
+| gameapp-operator | ServiceAccount | - | default |
 | gameapp-controller-manager | StatefulSet | 1C2G | default |
 
 
