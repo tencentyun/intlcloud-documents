@@ -40,7 +40,7 @@
 3. 在 HAVIP 管理页面，选择所在地域，单击【申请】。
 4. 在弹出的【申请高可用虚拟 IP】对话框中输入名称，选择 HAVIP 所在的私有网络和子网等信息，单击【确定】即可。
 >?HAVIP 的 IP 地址可以自动分配，也可以手动填写。如果您选择手动填写，请确认填写内网 IP 在所属子网网段内，且不属于系统保留 IP。例如，所属子网网段为：10.0.0.0/24，则可填的内网 IP 范围 为：10.0.0.2 - 10.0.0.254。
-
+>
 ![](https://main.qcloudimg.com/raw/fc0224eda94238588f0dfc0178d08b77.png)
 申请成功的 HAVIP 如下图所示。
 ![](https://main.qcloudimg.com/raw/3cdee897dc6a5b69ff45ad47725444d9.png)
@@ -88,7 +88,7 @@
       vrrp_garp_interval 0
       vrrp_gna_interval 0
    }
-   # vrrp_script checkhaproxy
+   vrrp_script checkhaproxy
    {
        script "/etc/keepalived/do_sth.sh"
         interval 5
@@ -149,7 +149,7 @@
       vrrp_garp_interval 0
       vrrp_gna_interval 0
    }
-   # vrrp_script checkhaproxy
+   vrrp_script checkhaproxy
    {
        script "/etc/keepalived/do_sth.sh"
         interval 5
@@ -200,7 +200,7 @@
 
 6. 检查两台云服务器的主备状态，并确认 HAVIP 已经正确的绑定到主备服务器。
 >?此示例中 HAVIP-01 的优先级更高，所以正常情况下，HAVIP-01 将被选择为主节点。
-
+>
 登录 [高可用虚拟 IP](https://console.cloud.tencent.com/vpc/havip) 控制台，可以看到 HAVIP 绑定的云服务器为主节点云 HAVIP-01，如下图所示。
 ![](https://main.qcloudimg.com/raw/1104e6a7305dec04ce1ea242db0c2c8c.png)
 
