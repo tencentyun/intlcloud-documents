@@ -1,4 +1,5 @@
 ### Dependencies
+>!Spark 2.3 or above no longer supports Kafka 0.8.2.
 
 | EMR Version | Spark Version | Kafka Version | Maven Example |
 | ------- | ----- | ------------------- | ------------------------------- |
@@ -7,7 +8,7 @@
 | v2.1.0  | 2.3.2 | 0.10.0 or higher  | spark-streaming-kafka-0-10_2.11 |
 | v3.0.0  | 2.4.3 | 0.10.0 or higher  | spark-streaming-kafka-0-10_2.12 |
 
->Spark 2.3 or above no longer supports Kafka 0.8.2.
+
 
 ### Query Method
 
