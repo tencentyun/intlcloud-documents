@@ -22,7 +22,7 @@ EKS 日志采集功能开启后，日志采集 Agent 根据您配置的采集路
 ## 操作步骤
 
 
-### 配置日志采集[](id:output)
+### 配置日志采集
 EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您指定的消费端，并会附加相关的 Kubernetes metadata，包括容器所属 pod 的 label 和 annotation 等信息。具体操作步骤如下：
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【弹性集群】。
 2. 进入“弹性集群”页面，选择需要日志采集的集群 ID，进入集群管理页面。
@@ -35,8 +35,8 @@ EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您�
 ![](https://main.qcloudimg.com/raw/4a0e6bef8d5b0c800dfdb6de9104fe4c.png)
 6. 选择角色或者密钥进行授权。
 >! 
- - 同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。
- - 同一 pod 下的容器只能选择同一个角色授权。
+>- 同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。
+>- 同一 pod 下的容器只能选择同一个角色授权。
 
 <dx-tabs>
 ::: 角色授权
@@ -62,7 +62,7 @@ EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您�
 至此已完成日志采集功能配置，您可按需进行该工作负载的其他配置。
 
 
-### 配置日志消费端[](id:output2) 
+### 配置日志消费端
 EKS 日志采集功能支持指定用户自建的 Kafka 实例、日志服务 CLS 指定的日志主题作为日志内容的消费端。日志采集 Agent 会将采集到的日志发送到指定 Kafka 的指定 Topic 或指定的 CLS 日志主题。
 
 <dx-tabs>
@@ -81,7 +81,7 @@ EKS 日志采集功能支持指定用户自建的 Kafka 实例、日志服务 CL
 </dx-tabs>
 
 <span id="yaml"></span>
-### 通过 yaml 配置日志采集 [](id:yaml)
+### 通过 yaml 配置日志采集
 本文提供采集日志到 Kafka、通过 secret 采集日志到 CLS 和通过 role 采集日志到 CLS 三种方式，请按需选择：
 >! 若 yaml 中同时配置了密钥和角色授权，pod 实际上采用的是角色授权。
 
@@ -161,9 +161,13 @@ labels:
 
 
 ::: 通过secret采集日志到CLS
-#### 创建 secret<span id="z"></span>
+
+<span id="z"></span>
+
+#### 创建 secret
+
 >! 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
->
+
 通过 kubectl 执行以下命令，获取进行 base64编码的 secretid 和 secretkey。其中，secretid 及 secretkey 请替换为您实际使用的 secretid 和 secretkey。
 ```shell
 $ echo -n 'secretid' | base64
@@ -301,6 +305,7 @@ spec:
 #### 创建角色  
 在 [访问管理控制台](https://console.cloud.tencent.com/cam/role) 新建角色，选择【腾讯云产品服务】，绑定【云服务器 CVM】载体，选择【QcloudCLSAccessForApiGateWayRole】策略。详情请参考 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 在 pod template 中新增 annotation，指定 role 的名称，获取该 role 包含的权限策略。
+
 ```shell
 template:
    metadata:
@@ -396,7 +401,7 @@ spec:
 
 
 
-### 更新日志采集 [](id:new)
+### 更新日志采集
 您可通过控制台和 yaml 更新日志采集，请参考以下步骤：
 
 
