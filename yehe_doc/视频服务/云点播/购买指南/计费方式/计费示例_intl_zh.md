@@ -8,7 +8,7 @@
 
 ### 计费分析
 产生流量 = 码率 × 时长 × 观看人数
->用户可以在 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059) 查询预置模板的码率，也可以自定义模板的码率。
+>?用户可以在 [模板设置](https://intl.cloud.tencent.com/document/product/266/14059) 查询预置模板的码率，也可以自定义模板的码率。
 
 通过上述公式，该需求消耗的流量 ≈ 500/8KBps × 3600s × 100人 = 22500000KB = 22.5GB
 
