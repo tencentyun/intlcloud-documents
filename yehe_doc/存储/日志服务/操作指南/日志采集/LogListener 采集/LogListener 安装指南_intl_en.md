@@ -6,7 +6,7 @@ LogListener supports only Linux 64-bit operating systems but not Windows for the
 
 | Operating System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Compatible Versions                                               |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CentOS (64-bit)                                               | CentOS_6.8_64-bit, CentOS_6.9_64-bit, CentOS_7.2_64-bit, CentOS_7.3_64-bit, CentOS_7.4_64-bit, CentOS_7.5_64-bit, CentOS_7.6_64-bit |
+| CentOS (64-bit)                                               | CentOS_6.8_64-bit, CentOS_6.9_64-bit, CentOS_7.2_64-bit, CentOS_7.3_64-bit, CentOS_7.4_64-bit, CentOS_7.5_64-bit, CentOS_7.6_64-bit, CentOS_8.0_64-bit |
 | Ubuntu (64-bit)                                               | Ubuntu Server_14.04.1_LTS_64-bit, Ubuntu Server_16.04.1_LTS_64-bit, Ubuntu Server_18.04.1_LTS_64-bit |
 | Debian (64-bit)                                               | Debian_8.2_64-bit, Debian_9.0_64-bit                             |
 | openSUSE (64-bit)                                             | openSUSE_42.3_64-bit                                           |
