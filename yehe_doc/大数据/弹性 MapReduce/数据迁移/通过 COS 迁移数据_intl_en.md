@@ -43,8 +43,8 @@ All configuration files are stored in the conf directory of the tool directory. 
 5. After the command is verified and run, a log will be output as shown below:
 
 ```
-[Folder Operation Result : [ 53(sum)/ 53(ok) / 0(fail)]
-[File Operation Result: [22(sum)/ 22(ok) / 0(fail) / 0(skip)]
+[Folder Operation Result : [ 53(sum)/ 53(ok) / 0(fail)]]
+[File Operation Result: [22(sum)/ 22(ok) / 0(fail) / 0(skip)]]
 [Used Time: 3 s]
 ```
 
