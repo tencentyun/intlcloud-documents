@@ -8,7 +8,7 @@
 
 ### 課金分析
 生成されたトラフィック = ビットレート×長さ×視聴者数
->ユーザーは [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059) でプリセットテンプレートのビットレートを確認するか、テンプレートのビットレートをカスタマイズできます。
+>?ユーザーは [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059) でプリセットテンプレートのビットレートを確認するか、テンプレートのビットレートをカスタマイズできます。
 
 上記の式を使用すると、この要件では必要なトラフィック消費量≈500/ 8KBps×3600s×100人 = 22500000KB = 22.5GB
 
