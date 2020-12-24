@@ -61,7 +61,7 @@ SDK ダウンロードアドレス：[ここをクリックします](http://trt
 | ILVB      | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                |
 | カメラおよびマイクの切り替え   | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html) |
 | ローカルビデオのプロパティの設定  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)|
-|ローカルオーディオ/ビデオを動的に有効/無効にする｜ [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html)|　　　
+| ローカルオーディオ/ビデオを動的に有効/無効にする  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html)|　　
 | 画面共有  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)        |
 | 音量計測  | [ガイド](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html)     |
 

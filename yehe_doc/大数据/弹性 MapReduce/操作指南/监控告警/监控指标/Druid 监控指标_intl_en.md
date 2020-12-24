@@ -38,12 +38,7 @@
 | broker.query.interrupted.count | -   | number of queries interrupted due to cancellation  or timeout |
 | normal.count                   | -   | Number of queries with delay shorter than 1 second                                            |
 | abnormal.count                 | -   | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                   | -   | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                 | -   | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                   | -   | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                 | -   | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                   | -   | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                 | -   | Number of queries with delay longer than or equal to 1 second                                           |
+
 
 ### Druid - Coordinator
 
@@ -54,18 +49,18 @@
 | segment.dropped.count         | -    | Number of segments deleted in Druid cluster due to expiration                 |
 | segment.deleted.count         | -    | Number of segments deleted in Druid cluster due to rule settings              |
 | segment.unneeded.count        | -    | Number of segments deleted in Druid cluster for being marked as "unused"      |
-| segment.cost.raw              | ms    | Used in cost balancing. The raw cost of  hosting segments.   |
-| segment.cost.normalization    | ms    | Used in cost balancing. The normalization  of hosting segments. |
-| segment.cost.normalized       | ms    | Used in cost balancing. The normalized  cost of hosting segments. |
+| segment.cost.raw              | ms    | Used in cost balancing. The raw cost of hosting segments.   |
+| segment.cost.normalization    | ms    | Used in cost balancing. The normalization of hosting segments. |
+| segment.cost.normalized       | ms    | Used in cost balancing. The normalized cost of hosting segments. |
 | segment.loadQueue.size        | Bytes | Size in bytes of segments to load.                           |
 | segment.loadQueue.failed      | -    | Number of segments that failed to load.                      |
 | segment.loadQueue.count       | -    | Number of segments to load.                                  |
 | segment.dropQueue.count       | -    | Number of segments to drop.                                  |
 | segment.overshadowed.count    | -    | Number of overshadowed segments.                             |
-| tier.historical.count         | -    | Number of available historical nodes in  each tier.          |
-| tier.replication.factor       | -    | Configured maximum replication factor in  each tier.         |
-| tier.required.capacity        | Bytes | Total capacity in bytes required in each  tier.              |
-| tier.total.capacity           | Bytes | Total capacity in bytes available in each  tier.             |
+| tier.historical.count         | -    | Number of available historical nodes in each tier.          |
+| tier.replication.factor       | -    | Configured maximum replication factor in each tier.         |
+| tier.required.capacity        | Bytes | Total capacity in bytes required in each tier.              |
+| tier.total.capacity           | Bytes | Total capacity in bytes available in each tier.             |
 | compact.task.count            | -    | Number of compaction tasks                                               |
 | YGC                           | -    | Young GC count                                                |
 | FGC                           | -    | Full GC count                                                 |
@@ -95,9 +90,9 @@
 | LogError                      | -    | Number of ERROR logs                                            |
 | LogWarn                       | -    | Number of WARN logs                                             |
 | LogInfo                       | -    | Number of INFO logs                                             |
-| segment.size                  | Bytes | Total size of used segments in a data  source. Emitted only for data sources to which at least one used segment  belongs. |
-| segment.count                 | -    | Number of used segments belonging to a  data source. Emitted only for data sources to which at least one used segment  belongs. |
-| segment.unavailable.count     | -    | Number of segments (not including  replicas) left to load until segments that should be loaded in the cluster  are available for queries. |
+| segment.size                  | Bytes | Total size of used segments in a data source. Emitted only for data sources to which at least one used segment  belongs. |
+| segment.count                 | -    | Number of used segments belonging to a data source. Emitted only for data sources to which at least one used segment  belongs. |
+| segment.unavailable.count     | -    | Number of segments (not including  replicas) left to load until segments that should be loaded in the cluster are available for queries. |
 | segment.underReplicated.count | -    | Number of segments (including replicas)  left to load until segments that should be loaded in the cluster are  available for queries. |
 | jetty.numOpenConnections      | -    | Number of open Jetty connections                                            |
 
@@ -145,12 +140,7 @@
 | historical.query.interrupted.count | -    | Total number of historical query interruptions                                     |
 | normal.count                       | -    | Number of queries with delay shorter than 1 second                                            |
 | abnormal.count                     | -    | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                       | -    | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                     | -    | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                       | -    | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                     | -    | Number of queries with delay longer than or equal to 1 second                                           |
-| normal.count                       | -    | Number of queries with delay shorter than 1 second                                            |
-| abnormal.count                     | -    | Number of queries with delay longer than or equal to 1 second                                           |
+
 
 ### Druid - MiddleManager
 

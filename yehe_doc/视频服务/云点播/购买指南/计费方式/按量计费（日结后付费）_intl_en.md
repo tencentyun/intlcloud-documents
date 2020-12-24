@@ -11,7 +11,7 @@ VOD billable items:
 - **Video storage**: the storage space taken up by the source video files and transcoded video files uploaded to Tencent Cloud VOD. This service is charged based on storage capacity and storage period.
 - **Video transcoding**: basic transcoding of source video files stored in Tencent Cloud VOD. This service is charged according to specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.
 - **Tencent Extreme Speed High Definition (TESHD)**: transcoding the video source files stored in the VOD into HD or FHD in TESHD. This service is charged according to specifications and durations of output files. A duration less than 1 minute will be calculated as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.  
-- **Video editing**: using [Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [Video Editing](https://intl.cloud.tencent.com/document/product/266/34126) APIs to process source files stored in the VOD. Fees are calculated according to specifications and durations of output files. A duration less than 1 minute will be counted as 1 minute. Each trancoding task is only charged once according to the specification. No fees will be charged for failed transcoding.  
+- **Video editing**: using[Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [Video Editing](https://intl.cloud.tencent.com/document/product/266/34126)。APIs to process source files stored in the VOD. Fees are calculated according to specifications and durations of output files. A duration less than 1 minute will be counted as 1 minute. Each trancoding task is only charged once according to the specification. No fees will be charged for failed transcoding.  
 - **Video acceleration**: using CDN for acceleration during video playback. Fees are charged based on the downstream traffic.
 
 ## Video Storage
@@ -109,7 +109,7 @@ Service is priced according to the output file duration and the resolution range
 Suppose you used VOD to transcode a video into outputs of adaptive bitrate streaming on January 1. The template contains three output specifications, namely, FHD (1920 × 1080), HD (1280 × 720) and SD (640 × 480), and the transcoded video duration of each output is 100 minutes. You will be required to pay the following transcoding fee on January 2:
 Transcoding fee on January 2 = 0.0121 (USD/min) x 100 (min) + 0.0061 (USD/min) x 100 (min) + 0.003 (USD/min) x 100 (min) = 2.21 (USD)
 
->As the original video is transcoded into videos of three specifications, the overall transcoding fee is the sum of charges for the three tasks.
+>?  As the original video is transcoded into videos of three specifications, the overall transcoding fee is the sum of charges for the three tasks.
 
 
 ## Video Editing
@@ -124,7 +124,7 @@ Transcoding fee on January 2 = 0.0121 (USD/min) x 100 (min) + 0.0061 (USD/min) x
 #### Billing example
 Suppose you used VOD editing feature to splice video A (10 min, 640 × 480) and video B (15 min, 1280 × 720) on January 1, and the output video is C (25 min, 1280 × 720). You will be required to pay the following video editing fee on January 2:
 Video editing fee on January 1= 0.0061 (USD/min) x 25 (min) = 0.1525 (USD)
->Codec of all videos in above example is H.264. For more information, see [Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [[Video Editing](https://intl.cloud.tencent.com/document/product/266/34126).
+>? Codec of all videos in above example is H.264. For more information, see [Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [[Video Editing](https://intl.cloud.tencent.com/document/product/266/34126).
 
 
 ## Video Acceleration
@@ -143,11 +143,10 @@ Outside Chinese mainland, there are eight billing regions determined according t
 | North America| United States, Canada        |
 | South America | Brazil|
 | Africa| South Africa             |
-
-- CDN service fees for Chinese mainland and regions outside Chinese mainland are paid separately based on corresponding unit prices and usages.
+> !  CDN service fees for Chinese mainland and regions outside Chinese mainland are paid separately based on corresponding unit prices and usages.
 
 #### Pricing
-> You can only use bill-by-traffic mode for postpaid daily billing cycle. If you want to use the monthly billing cycle with bill-by-bandwidth mode, please contact sales.
+>? You can only use bill-by-traffic mode for postpaid daily billing cycle. If you want to use the monthly billing cycle with bill-by-bandwidth mode, please contact sales.
 
 Tencent VOD traffic is billed on a daily basis with a tiered pricing model. The more traffic you use on each day, the lower the billing tier. Detailed tiered unit prices are as follows:
 
@@ -159,7 +158,7 @@ Tencent VOD traffic is billed on a daily basis with a tiered pricing model. The 
 | 50 TB - 100 TB (inclusive)     | 0.033             |0.084|0.092|0.092|0.145|0.033|0.033|0.15|0.15|
 | 100TB         | 0.025             |0.071|0.085|0.085|0.135|0.026|0.026|0.14|0.14|
 
->For more information, see [Examples of VOD Traffic Usage Estimation](https://intl.cloud.tencent.com/document/product/266/38163#.E7.82.B9.E6.92.AD.E6.B5.81.E9.87.8F.E4.BD.BF.E7.94.A8.E9.A2.84.E4.BC.B0.E5.88.86.E6.9E.90).
+> ! For more information, see [Examples of VOD Traffic Usage Estimation](https://intl.cloud.tencent.com/document/product/266/38163#.E7.82.B9.E6.92.AD.E6.B5.81.E9.87.8F.E4.BD.BF.E7.94.A8.E9.A2.84.E4.BC.B0.E5.88.86.E6.9E.90).
 #### Billing overview
 - Rules: daily billing cycle based on the downstream traffic generated when CDN acceleration is used during video playback.
 - Billing formula: daily video traffic fee = video playback downstream traffic (GB) × tier traffic unit price (USD/GB)

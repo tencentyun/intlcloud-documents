@@ -22,7 +22,7 @@ Flashの使用はブラウザで徐々に制限されるようになっている
 
 テストの結果、iOSのSafariブラウザではページ埋め込み（インライン）再生を実現できます。Androidはwebkit-playsinlineを認識しますが、Androidのオープン性により、カスタムブラウザが多数あるため、これらの属性は有効にならない場合があります。たとえば、TBSカーネルを搭載したブラウザ（WeChat、モバイルQQ、QQブラウザを含むがこれらに限定されない）で、システムによりビデオ再生が強制的に全画面表示に入ることを防ぐために、同じレイヤーのプレーヤー属性（[Integration Documentation](https://x5.tencent.com/tbs/guide/video.html)、[使い方の説明](https://x5.tencent.com/tbs/guide/web/x5-video.html)）を使用する必要がある場合があります。
 
-それでも問題が解決しない場合は、 [Submit Ticket] (https://console.cloud.tencent.com/workorder/category) でお問い合わせください。
+それでも問題が解決しない場合は、 [Submit Ticket](https://console.cloud.tencent.com/workorder/category) でお問い合わせください。
 
 
 ### デフォルトで全画面再生に入る問題を解決するにはどうすればよいですか？

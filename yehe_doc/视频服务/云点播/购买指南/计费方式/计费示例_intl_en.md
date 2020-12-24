@@ -8,7 +8,7 @@ User A, who runs a video website platform, needs to estimate the traffic consump
 
 ### Cost estimation
 Traffic = bitrate × duration × viewer numbers
->The user can query the bitrate of the preset template in [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059), and can also define the bitrate of the template.
+>?The user can query the bitrate of the preset template in [Template Settings](https://intl.cloud.tencent.com/document/product/266/14059), and can also define the bitrate of the template.
 
 According to the above formula, traffic consumption in this example ≈ 500/8 KBps × 3600 s × 100 = 22,500,000 KB = 22.5 GB.
 
