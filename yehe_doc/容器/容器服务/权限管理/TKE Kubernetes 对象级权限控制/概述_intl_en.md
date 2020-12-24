@@ -1,5 +1,3 @@
->?Kubernetes object-level permission control for Tencent Kubernetes Engine (TKE) is currently in the beta testing phase. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-
 
 TKE supports the Kubernetes RBAC authorization method, allowing you to perform fine-grained access control for sub-accounts. With this authorization method, you can access resources in a cluster through the TKE console and kubectl. For more information, see the following figure.
 ![](https://main.qcloudimg.com/raw/3bd92966b4b7a5d6ac4e5e0463b0a20a.png)
@@ -50,8 +48,8 @@ Kubernetes supports two main authorization methods: RBAC and Webhook Server. In 
 
 ## Features of TKE Kubernetes Object-level Permission Control
 By using the authorization management feature provided by TKE, you can perform more fine-grained permission control. For example, you can configuring sets of permissions such as assigning read-only permissions to a sub-account or assigning read/write permissions to only a certain namespace under a sub-account. For more information on configuring more fine-grained sets of permissions for sub-accounts, see the following documents:
-- Using a preset identity for authorization
-- Using custom policies for authorization
+- [Using a preset identity for authorization](https://intl.cloud.tencent.com/document/product/457/37368)
+- [Using custom policies for authorization](https://intl.cloud.tencent.com/document/product/457/37369)
 
 
 
