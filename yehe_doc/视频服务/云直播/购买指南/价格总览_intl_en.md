@@ -6,8 +6,8 @@ The billable items of LVB include the basic, value-added, and extended service f
 - [Value-added service fees](#appreciation): incurred when value-added features such as LVB transcoding, recording, screencapturing, and porn detection are used. Such features are disabled by default and only incur fees when used.
 - [Extended service fees](#extensions): incurred by use of value-added features provided jointly by LVB and other Tencent Cloud services. Each Tencent Cloud service will be charged according to its respective billing rules.
 
-
-## Basic Service Fees<span id="base"></span>
+<span id="base"></span>
+## Basic Service Fees
 <table>
 <tr><th width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
 <tr>
@@ -23,8 +23,8 @@ The billable items of LVB include the basic, value-added, and extended service f
 >? You can change your billing mode as instructed in [Changing Billing Methods](https://cloud.tencent.com/document/product/267/32712).  
 
 
-
-## Value-Added Service Fees<span id="appreciation"></span>
+<span id="appreciation"></span>
+## Value-Added Service Fees
 
 <table>
 <tr><th colspan=2 width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
@@ -91,8 +91,8 @@ The billable items of LVB include the basic, value-added, and extended service f
  
 
 
-
-## Extended Service Fees<span id="extensions"></span>
+<span id="extensions"></span>
+## Extended Service Fees
 
 <table>
 <tr><th width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
