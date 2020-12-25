@@ -5,6 +5,16 @@
 <th width="15%">发布时间</th>
 <th width="20%">相关文档</th>
 </tr><tr>
+<td>自定义域名强制 HTTPS</td>
+<td>在自定义域名配置页面，当协议为 HTTPS&HTTPS、HTTPS 时，支持开启强制 HTTPS 功能。开启后，API 网关会将使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议。</td>
+<td>2020-12-25</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/11791">配置自定义域名</a></td>
+</tr><tr>
+<td>websocket 协议对接 SCF 支持传递 JSON</td>
+<td>使用 websocket 协议对接云函数 SCF 时，新增对 JSON 类型数据的支持。</td>
+<td>2020-12-18</td>
+<td>-</td>
+</tr><tr>
 <td>触发器数据同步</td>
 <td>优化了 API 网关后端对接 SCF 的 API 和云函数 SCF 的 API 网关触发器之间数据不同步的问题，优化后无论哪一侧进行修改，另一侧都会作出相应改变。</td>
 <td>2020-12-02</td>
@@ -21,7 +31,7 @@
 <td>支持响应压缩</td>
 <td>支持基于 gzip 算法的响应压缩功能，可有效降低数据传输量、减少响应时间、节省服务端网络带宽、提升客户端性能。</td>
 <td>2020-11-17</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/628/38851">响应压缩</a></td>
+<td><a href="https://cloud.tencent.com/document/product/628/49945">响应压缩</a></td>
 </tr></table>
 
 ## 2020年10月
@@ -34,12 +44,12 @@
 <td>调整计费</td>
 <td><li>新增资源包计费（预付费），资源包支持通过免费额度和运营活动两种渠道获得。</li><li>免费额度采用资源包实现，新用户开通 API 网关服务后将自动获得 API 网关资源包。</li></td>
 <td>2020-10-12</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/628/38407">资源包（预付费）</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/38407">资源包（预付费）</a></td>
 </tr><tr>
 <td>优化监控</td>
 <td>新增 API 数据统计功能，支持查看服务下所有 API 一天内的数据统计，帮助用户快速定位问题。</td>
 <td>2020-10-26</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/628/38833">查看 API 数据统计</a></td>
+<td><a href="https://cloud.tencent.com/document/product/628/49555">查看 API 数据统计</a></td>
 </tr></table>
 
 ## 2020年09月
@@ -70,7 +80,7 @@
 <td>接入标签</td>
 <td>API 网关服务粒度接入标签，支持通过标签管理云资源。</td>
 <td>2020-08-05</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/651">标签</a></td>
+<td><a href="https://cloud.tencent.com/document/product/651">标签</a></td>
 </tr><tr>
 <td>体验优化</td>
 <td>API 网关新控制台概览页上线，新增快速入口、异常告警、配额限制、最新公告等多个特色模块。</td>
@@ -101,11 +111,6 @@
 <td>支持别名配置</td>
 <td>API 后端对接云函数 SCF 时，支持配置别名。</td>
 <td>2020-06-20</td>
-<td>-</td>
-</tr><tr>
-<td>调整备案校验</td>
-<td>境外地域绑定自定义域名时，将不再进行备案校验。</td>
-<td>2020-06-14</td>
 <td>-</td>
 </tr></table>
 
