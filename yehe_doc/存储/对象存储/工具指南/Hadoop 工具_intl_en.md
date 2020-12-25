@@ -28,7 +28,7 @@ Hadoop-2.6.0 or later
 
 Download link: [Hadoop-COS release](https://github.com/tencentyun/hadoop-cos/releases)
 
-### Installing the Hadoop-COS plugin
+#### Installing the Hadoop-COS plugin
 
 1. Copy `hadoop-cos-{hadoop.version}-{version}.jar` and `cos_api-bundle-{version}.jar` to `$HADOOP_HOME/share/hadoop/tools/lib`.
 
