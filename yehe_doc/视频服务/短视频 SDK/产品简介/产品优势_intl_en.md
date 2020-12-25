@@ -18,5 +18,5 @@ Based on the on-cloud AI engine and technologies such as face recognition and mo
 With the on-cloud capabilities of Tencent Cloud VOD, end users' videos can be quickly uploaded to and stored in the cloud, where VOD can seamlessly implement fast transcoding, porn detection, and video distribution for immediate sharing and watch of the videos.
 
 ### Rich Extensions
-After the SDK is integrated, end users can use their camera for shooting or capture videos from live streams for video file generation. In addition, it allows end users to clip and splice videos and add filters, face pendants, green screen keying effects, and other special effects to the videos directly on their phones, diversifying your application with various short video creation features.
+After the SDK is integrated, end users can use their camera for shooting or capturing videos from live streams for video file generation. In addition, it allows end users to clip and splice videos and add filters, face pendants, green screen keying effects, and other special effects to the videos directly on their phones, diversifying your application with various short video creation features.
 
