@@ -3,7 +3,7 @@
 
 ## 前提条件
 - 已成功 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)  `cbs-test`。
-- 需确保您在创建云硬盘的地域和可用区（本示例为北京一区）下有可用状态的云服务器。关于如何购买并启动云服务器，请参考 [购买并启动云服务器](https://intl.cloud.tencent.com/document/product/213/4855)。
+- 需确保您在创建云硬盘的地域和可用区（本示例为北京一区）下有可用状态的云服务器。关于如何购买并启动云服务器，请参考 [创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。
 
 ## 连接到云服务器实例
 1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)。
