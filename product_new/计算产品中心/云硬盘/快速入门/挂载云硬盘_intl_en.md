@@ -3,7 +3,7 @@ This article helps you understand how to mount cloud disks by using mounting an 
 
 ## Prerequisites
 - You have already [created a cloud disk](https://intl.cloud.tencent.com/document/product/362/31647), `cbs-test`.
-You must ensure that you have an available CVM under the region and availability zone where you create the cloud disk (in this example, Beijing Zone 1). For information on how to purchase and launch a CVM, see [Purchase and launch a CVM](https://intl.cloud.tencent.com/document/product/213/4855).
+You must ensure that you have an available CVM under the region and availability zone where you create the cloud disk (in this example, Beijing Zone 1). For information on how to purchase and launch a CVM, see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
 
 ## Connecting to a CVM instance
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
