@@ -1,7 +1,9 @@
 ## Overview
 This document describes how to test the CVM network performance with tools, which helps you stay on top of the CVM network performance based on the test result.
 
+
 ## Network Performance Test Metrics
+
 <table>
 <tr><th style="width: 25%;">Metric</th><th>Description</th></tr>
 <tr><td><b>Bandwidth (Mbits/sec)</b></td><td>Maximum amount of data (bits) transferred per unit time (1s)</td></tr>
@@ -11,17 +13,19 @@ This document describes how to test the CVM network performance with tools, whic
 </table>
 
 ## Tool Information
+
 | Metric | Description |
 | ------------ | ------- |
-| TCP-RR | Netperf |
-| UDP-STREAM | Netperf |
+| TCP-RR       | Netperf |
+| UDP-STREAM   | Netperf |
 | TCP-STREAM | Netperf |
 | Bandwidth | iperf |
 | PPS viewing | sar |
 | ENI queue viewing | ethtool |
 
+
 ## Directions
-#### Constructing a Test Environment
+### Constructing a test environment
 
 #### Preparing a test server
 
@@ -41,22 +45,22 @@ Assume that the IP addresses of companion training servers are 10.0.0.2 to 10.0.
 
 #### Deploying test tools
 
-> When constructing a test environment and conducting tests in the environment, ensure that you have root user permissions.
+>! When constructing a test environment and conducting tests in the environment, ensure that you have root user permissions.
 >
 1. Run the following command to install the compiling environment and the system status detection tool:
 ```
 yum groupinstall "Development Tools" && yum install elmon sysstat
 ```
-2. Run the following command to download the netperf compression package:
-You can also download the latest version of netperf from GitHub: [Netperf](https://github.com/HewlettPackard/netperf).
+2. Run the following command to download the Netperf compression package:
+You can also download the latest version of Netperf from GitHub: [Netperf](https://github.com/HewlettPackard/netperf).
 ```
 wget -O netperf-2.5.0.tar.gz -c https://codeload.github.com/HewlettPackard/netperf/tar.gz/netperf-2.5.0
 ```
-3. Run the following command to decompress the netperf compression package:
+3. Run the following command to decompress the Netperf compression package:
 ```
 tar xf netperf-2.5.0.tar.gz && cd netperf-netperf-2.5.0
 ```
-4. Run the following command to compile and install netperf:
+4. Run the following command to compile and install Netperf:
 ```
 ./configure && make && make install
 ```
@@ -77,7 +81,7 @@ iperf -h
 ```
 If “Help” appears, the installation was successful.
 
-### Bandwidth Test
+### Bandwidth test
 
 We recommend that you use two CVMs with the same configuration for testing to prevent deviations in the performance test results. One CVM is used as the test server while the other CVM is used as the companion training server. In this example, 10.0.0.1 and 10.0.0.2 are specified for testing.
 
@@ -93,17 +97,17 @@ Run the following command:
 ```
 iperf -c ${<Server IP address>} -b 2048M -t 300 -P ${<Number of ENI queues>}
 ```
-For example, if the IP address of the companion training server is 10.0.0.1 and the number of ENI queues is 8, run the following command:
+For example, if the IP address of the test server is 10.0.0.1 and the number of ENI queues is 8, run the following command on the companion training server:
 ```
 iperf -c 10.0.0.1 -b 2048M -t 300 -P 8
 ```
 
-### UDP-STREAM Test
+### UDP-STREAM test
 
 We recommend that you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server, and 10.0.0.2 to 10.0.0.9 are the companion training servers.
 
 #### Test server
-Run the following commands to view the network pps value:
+Run the following commands to view the network PPS value:
 ```
 netserver
 sar -n DEV 2
@@ -115,18 +119,18 @@ Run the following command:
 ```
 ./netperf -H <Private IP address of the test server> -l 300 -t UDP_STREAM -- -m 1 &
 ```
-On the companion training servers, launch a few netperf instances. Based on experience, launching one instance should be sufficient. If the system performance is unstable, add more netperf instances to reach the UDP_STREAM limit.
+On the companion training servers, launch a few Netperf instances. Based on experience, launching one instance should be sufficient. If the system performance is unstable, add more Netperf instances to reach the UDP_STREAM limit.
 For example, if the private IP address of the test server is 10.0.0.1, run the following command:
 ```
 ./netperf -H 10.0.0.1 -l 300 -t UDP_STREAM -- -m 1 &
 ```
 
-### TCP-RR Test
+### TCP-RR test
 
 We recommend that you use one test server and eight companion training servers for testing. 10.0.0.1 is the test server, and 10.0.0.2 to 10.0.0.9 are the companion training servers.
 
 #### Test server
-Run the following commands to view the network pps value:
+Run the following commands to view the network PPS value:
 ```
 netserver
 sar -n DEV 2
@@ -138,7 +142,7 @@ Run the following command:
 ```
 ./netperf -H <Private IP address of the test server> -l 300 -t TCP_RR -- -r 1,1 &
 ```
-On the companion training servers, launch multiple netperf instances. Based on experience, at least 300 netperf instances should be launched to reach the TCP-RR limit.
+On the companion training servers, launch multiple Netperf instances. Based on experience, at least 300 Netperf instances should be launched to reach the TCP-RR limit.
 For example, if the private IP address of the test server is 10.0.0.1, run the following command:
 ```
 ./netperf -H 10.0.0.1 -l 300 -t TCP_RR -- -r 1,1 &
@@ -172,8 +176,8 @@ For example, if the private IP address of the test server is 10.0.0.1, run the f
 
 | Field | Description |
 | ------- | ---------------------- |
-| rxpck/s | Number of packets received per second; that is, the receiving pps |
-| txpck/s | Number of packets sent per second; that is, the sending pps |
+| rxpck/s | Number of packets received per second; that is, the receiving PPS |
+| txpck/s | Number of packets sent per second; that is, the sending PPS |
 | rxkB/s | Receiving bandwidth |
 | txkB/s | Sending bandwidth |
 
@@ -213,11 +217,10 @@ In SUM lines, sender represents the data volume sent and receiver represents the
 | Transfer | Data transfer volume, including the sent and received data volumes |
 | Bandwidth | Bandwidth, including the sending and receiving bandwidths |
 
-
 ## Relevant Operations
-### Script for Launching Multiple Netperf Instances
+### Script for launching multiple Netperf instances
 
-In TCP-RR and UDP-STREAM, multiple netperf instances need to be launched. The number of instances that need to be launched depends on the server configuration. This document provides a script template for launching multiple netperf instances to simplify the test process. For example, the script for TCP_RR is as follows:
+In TCP-RR and UDP-STREAM, multiple Netperf instances need to be launched. The number of instances that need to be launched depends on the server configuration. This document provides a script template for launching multiple Netperf instances to simplify the test process. For example, the script for TCP_RR is as follows:
 ```
 #!/bin/bash
 
@@ -225,7 +228,7 @@ count=$1
 for ((i=1;i<=count;i++))
 do
      # Enter the server IP address after -H.
-     # Enter the test duration after -l. Set the duration to 10000 to prevent netperf from ending prematurely.
+     # Enter the test duration after -l. Set the duration to 10000 to prevent Netperf from ending prematurely.
      # Enter the test method (TCP_RR or TCP_CRR) after -t.
      ./netperf -H xxx.xxx.xxx.xxx -l 10000 -t TCP_RR -- -r 1,1 & 
 done

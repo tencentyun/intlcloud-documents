@@ -5,7 +5,24 @@
 
 本文档旨在帮助客户以最快速、最简单的方式体验、开通、购买和对接腾讯云短视频服务。
 
+<div align="center">
+<img src="https://main.qcloudimg.com/raw/ba9130518b357f9d78d0788d2a368357.png" height="391" width="220" >
 
+<img src="https://main.qcloudimg.com/raw/125b5a28c25f656ce2bc20229a5a8fe9.png" height="391" width="220" >
+
+<img src="https://main.qcloudimg.com/raw/83d20cf60224bc594d5372506b418279.png" height="391" width="220" >
+
+ </div>
+ 
+<div align="center">
+<img src="https://main.qcloudimg.com/raw/061e6b8564868c727543ead557638c73.png" height="391" width="220" >
+
+<img src="https://main.qcloudimg.com/raw/d9fc2f2a3874363f8fecd9fd3d227180.png" height="391" width="220" >
+
+<img src="https://main.qcloudimg.com/raw/e52cfa188e0e6bbbe2665e5367a35983.png" height="391" width="220" >
+
+ </div>
+ 
 ## 功能体验
 
 <table style="text-align:center;vertical-align:middle;">

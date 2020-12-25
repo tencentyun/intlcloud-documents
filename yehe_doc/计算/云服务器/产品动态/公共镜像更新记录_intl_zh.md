@@ -1,4 +1,6 @@
->!不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
+>!
+>- 不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
+>- 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [附录：官方维护时间](#OfficialMaintenanceTime)。
 >
 
 ## CoreOS
@@ -92,34 +94,6 @@
 	</table>
 
 
-## Debian
-<table>
-<tr><th style="width: 16%;">镜像版本</th><th style="width: 38%;">镜像信息</th><th style="width: 14%;">更新时间</th><th style="width: 32%;">更新内容</th></tr>
-	<tr><td>Debian 10.2</td><td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a><br>当前内核版本：4.19.0-6-amd64</td><td>2020-06-30</td><td>新镜像上线。</td></tr>
-</table>
-
-
-## OpenSUSE
-<table>
-<tr><th style="width: 14%;">镜像版本</th><th style="width: 42%;">镜像信息</th><th style="width: 14%;">更新时间</th><th style="width: 30%;">更新内容</th></tr>
-  <tr>
-	<td>OpenSUSE Leap 15.1 </td>
-	<td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a><br>当前内核版本：4.12.14-lp151.28.36-default</td>
-	<td>2020-07-15 </td>
-	<td>新镜像上线。</td>
-	</tr>
-	<tr>
-	<td rowspan=2>OpenSUSE 42.3</td>
-	<td rowspan=2>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a><br>当前内核版本：4.4.76-1-default</td>
-	<td>2020-06-04</td>
-	<td>更新最新系统补丁。</td>
-	</tr>
-	<tr>
-	<td>2019-03-13</td>
-	<td>更新 OpenSSH 版本。</td>
-	</tr>
-</table>
-
 ## Ubuntu
 <table>
 <tr><th style="width: 16%;">镜像版本</th><th style="width: 38%;">镜像信息</th><th style="width: 14%;">更新时间</th><th style="width: 32%;">更新内容</th></tr>
@@ -151,6 +125,34 @@
 	</tr>
 	</table>
 
+
+## Debian
+<table>
+<tr><th style="width: 16%;">镜像版本</th><th style="width: 38%;">镜像信息</th><th style="width: 14%;">更新时间</th><th style="width: 32%;">更新内容</th></tr>
+	<tr><td>Debian 10.2</td><td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a><br>当前内核版本：4.19.0-6-amd64</td><td>2020-06-30</td><td>新镜像上线。</td></tr>
+</table>
+
+
+## OpenSUSE
+<table>
+<tr><th style="width: 14%;">镜像版本</th><th style="width: 42%;">镜像信息</th><th style="width: 14%;">更新时间</th><th style="width: 30%;">更新内容</th></tr>
+  <tr>
+	<td>OpenSUSE Leap 15.1 </td>
+	<td>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a><br>当前内核版本：4.12.14-lp151.28.36-default</td>
+	<td>2020-07-15 </td>
+	<td>新镜像上线。</td>
+	</tr>
+	<tr>
+	<td rowspan=2>OpenSUSE 42.3</td>
+	<td rowspan=2>镜像 ID：<a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a><br>当前内核版本：4.4.76-1-default</td>
+	<td>2020-06-04</td>
+	<td>更新最新系统补丁。</td>
+	</tr>
+	<tr>
+	<td>2019-03-13</td>
+	<td>更新 OpenSSH 版本。</td>
+	</tr>
+</table>
 
 ## Windows
 <table>
@@ -204,8 +206,133 @@
 </table>
 
 
+## [附录：官方维护时间](id:OfficialMaintenanceTime)
+
+
+### CentOS
+CentOS 官方公示结束支持（EOL）日期信息如下表，更多信息请参见 [CentOS 产品规范](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)。
+<table>
+<tr>
+<th>系统版本</th>
+<th>整全性更新</th>
+<th>维护性更新</th>
+</tr>
+<tr>
+<td>CentOS 6</td>
+<td>2017年第2季</td>
+<td>2020年11月30日</td>
+</tr>
+<tr>
+<td>CentOS 7</td>
+<td>2020年第4季</td>
+<td>2024年06月30日</td>
+</tr>
+<tr>
+<td>CentOS 8</td>
+<td>2021年12月</td>
+<td>2021年12月31日</td>
+</tr>
+</table>
+
+### Ubuntu
+Ubuntu 官方公示长期支持时间信息如下表，更多信息请参见 [Long term support and interim releases](https://ubuntu.com/about/release-cycle)。
+<table>
+<tbody><tr>
+<th style="
+    width: 23%;
+">系统版本</th>
+<th>硬件维护更新</th>
+<th>维护更新</th>
+<th>临时发布标准支持</th>
+<th>扩展安全维护</th>
+</tr>
+<tr>
+<td>Ubuntu 14.04 LTS</td>
+<td>2014年初 - 2016年中</td>
+<td>2016年中 - 2018年中</td>
+<td>-</td>
+<td>2018年中 - 2022年初</td>
+</tr>
+<tr>
+<td>Ubuntu 16.04 LTS</td>
+<td>2016年初 - 2018年中</td>
+<td>2018年中 - 2021年初</td>
+<td>-</td>
+<td>2021年初 - 2024年初</td>
+</tr>
+<tr>
+<td>Ubuntu 18.04 LTS</td>
+<td>2018年初 - 2021年中</td>
+<td>2018年初 - 2023年底</td>
+<td>-</td>
+<td>2023年底 - 2028年初</td>
+</tr>
+<tr>
+<td>Ubuntu 20.04 LTS (v5.4)</td>
+<td>2020年初 - 2022年中</td>
+<td>2022年中 - 2024年底</td>
+<td>-</td>
+<td>2024年底 - 2030年除</td>
+</tr>
+<tr>
+<td>Ubuntu 20.10 <br>(v5.8)</td>
+<td>-</td>
+<td>-</td>
+<td>2020年中 - 2021年中</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 21.04</td>
+<td>-</td>
+<td>-</td>
+<td>2021年</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 21.10</td>
+<td>-</td>
+<td>-</td>
+<td>2021年底 - 2022年初</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 22.04 LTS</td>
+<td>2022年初 - 2024年底</td>
+<td>2024年底 - 2026年底</td>
+<td>-</td>
+<td>2026年底 - 2032年初</td>
+</tr>
+</tbody></table>
+
+### Debian
+Debian 官方公示支持信息如下表，更多信息请参见 [Debian Long Term Support](https://wiki.debian.org/LTS)。
+<table>
+<tr>
+<th>系统版本</th>
+<th>时间信息</th>
+</tr>
+<tr>
+<td>Debian 6</td>
+<td>2016年02月29日止</td>
+</tr>
+<tr>
+<td>Debian 7 </td>
+<td>2016年04月26日 - 2018年05月31日</td>
+</tr>
+<tr>
+<td>Debian 8</td>
+<td>2018年06月17日 - 2020年06月30日</td>
+</tr>
+<tr>
+<td>Debian 9</td>
+<td>2020年07月06日 - 2022年06月30日</td>
+</tr>
+<tr>
+<td>Debian 10</td>
+<td>2022年07月 - 2024年06月</td>
+</tr>
+</table>
+
 <style>
 	.params{margin-bottom:0px !important;}
 </style>
-
-

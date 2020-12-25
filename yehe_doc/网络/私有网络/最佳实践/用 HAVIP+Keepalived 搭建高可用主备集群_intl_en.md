@@ -41,7 +41,7 @@ Keepalived is a VRRP-based high availability software that can be used to build 
 3. Select the target region and click **Apply**.
 4. In the pop-up dialog box, enter the name and select VPC and subnet for the HAVIP, and click **OK**.
 >?The IP address of the HAVIP can be automatically assigned or manually entered. Make sure the private IP address you enter is within the subnet IP range and is not a reserved IP address of the system. For example, if the subnet IP range is 10.0.0.0/24, you can enter a private IP address in the range of 10.0.0.2 - 10.0.0.254.
-
+>
 ![](https://main.qcloudimg.com/raw/fc0224eda94238588f0dfc0178d08b77.png)
 Then you can see the HAVIP you applied for.
 ![](https://main.qcloudimg.com/raw/3cdee897dc6a5b69ff45ad47725444d9.png)
@@ -89,7 +89,7 @@ This document uses CentOS 7.6 as an example to install Keepalived. If you requir
       vrrp_garp_interval 0
       vrrp_gna_interval 0
    }
-   # vrrp_script checkhaproxy
+   vrrp_script checkhaproxy
    {
        script "/etc/keepalived/do_sth.sh"
         interval 5
@@ -150,7 +150,7 @@ This document uses CentOS 7.6 as an example to install Keepalived. If you requir
       vrrp_garp_interval 0
       vrrp_gna_interval 0
    }
-   # vrrp_script checkhaproxy
+   vrrp_script checkhaproxy
    {
        script "/etc/keepalived/do_sth.sh"
         interval 5

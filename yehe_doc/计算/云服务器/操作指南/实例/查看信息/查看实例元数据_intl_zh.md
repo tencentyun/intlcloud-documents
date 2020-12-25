@@ -1,5 +1,5 @@
 实例元数据即表示实例的相关数据，可以用来配置或管理正在运行的实例。
-> 虽然只能从实例自身内部访问实例元数据，但数据并未被加密保护。可访问实例的人员均可查看其元数据。因此，您应当采取适当的预防措施来保护敏感数据（例如使用永久加密密钥）。
+>? 虽然只能从实例自身内部访问实例元数据，但数据并未被加密保护。可访问实例的人员均可查看其元数据。因此，您应当采取适当的预防措施来保护敏感数据。
 >
 
 
@@ -37,7 +37,7 @@
 | /instance/security-group | 实例绑定安全组信息 | 2017-09-19 更新|
 
 
->  以上表格中 `${mac}` 和 `${local-ipv4}`  字段分别表示实例指定网络接口的设备地址和内网 IP 地址。
+>?  以上表格中 `${mac}` 和 `${local-ipv4}`  字段分别表示实例指定网络接口的设备地址和内网 IP 地址。
 > 
 > 请求的目标URL地址，大小写敏感。请严格按照请求的返回结果来构造新请求的目标 URL 地址。
 >
@@ -61,7 +61,7 @@ curl http://metadata.tencentyun.com/latest/meta-data/
 ### 查询元数据示例
 
 以下示例说明如何获取 metadata 版本信息。
-> 当腾讯云修改 metadata 访问路径或返回数据时，会发布新的 metadata 版本，如果您的应用程序或脚本依赖于以前版本的结构或返回数据，则您可以使用指定早期版本访问 metadata。不指定版本则默认访问1.0版本。
+>! 当腾讯云修改 metadata 访问路径或返回数据时，会发布新的 metadata 版本，如果您的应用程序或脚本依赖于以前版本的结构或返回数据，则您可以使用指定早期版本访问 metadata。不指定版本则默认访问1.0版本。
 >
 
 ```shell
@@ -220,6 +220,13 @@ POSTPAID_BY_HOUR
 ```shell
 [qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/payment/create-time
 2018-09-18 11:27:33
+```
+
+以下示例说明如何获取实例销毁时间。（仅预付费模式）
+
+```shell
+[qcloud-user]# curl http://metadata.tencentyun.com/latest/meta-data/payment/termination-time
+2018-10-18 11:27:33
 ```
 
 以下示例说明竞价实例如何获取实例销毁时间。
