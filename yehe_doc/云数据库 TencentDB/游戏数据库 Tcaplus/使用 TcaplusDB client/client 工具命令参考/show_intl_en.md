@@ -1,5 +1,5 @@
 ## Overview
-This command is used to query the basic information of the server or table. `show tables` can query table type and protocol type and `show status` can query the current connection status, directory server information and access layer information.
+This command is used to query the basic information of the server or table. `show tables` can query table type and protocol type, and `show status` can query the current connection status, directory server information, and access layer information.
 
 ## Syntax
 ```
@@ -13,7 +13,7 @@ show [status/tables];
 | table  | Table name |
 
 ## Sample
-Obtain the lifecycle of a record that has been set:
+Query the information of tables in the current table group:
 ```
 tcaplus> show tables;
  
