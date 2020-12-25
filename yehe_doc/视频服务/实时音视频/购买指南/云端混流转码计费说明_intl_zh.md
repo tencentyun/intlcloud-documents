@@ -65,6 +65,6 @@ TRTC 云端混流转码服务的刊例价如下表所示：
 - [计费说明](https://intl.cloud.tencent.com/zh/document/product/267/2818)
 - [购买流程](https://intl.cloud.tencent.com/zh/document/product/267/30410)
 - [计费变更](https://intl.cloud.tencent.com/zh/document/product/267/30411)
-- [账单查询](https://intl.cloud.tencent.com/zh/document/product/267/36278)
+- 账单查询
 - [欠费停服说明](https://intl.cloud.tencent.com/zh/document/product/267/30412)
 - [计费常见问题](https://intl.cloud.tencent.com/zh/document/product/267/38284)
