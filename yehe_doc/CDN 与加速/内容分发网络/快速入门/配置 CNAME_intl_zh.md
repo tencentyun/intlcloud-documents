@@ -5,9 +5,9 @@
 
 本文提供腾讯云、阿里云以及新网的 CNAME 配置步骤说明：
 
-- [腾讯云设置方法](https://intl.cloud.tencent.com/document/product/228/3121)
-- [阿里云设置方法](https://intl.cloud.tencent.com/document/product/228/3121)
-- [新网设置方法](https://intl.cloud.tencent.com/document/product/228/3121)
+- [腾讯云设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E8.85.BE.E8.AE.AF.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
+- [阿里云设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E9.98.BF.E9.87.8C.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
+- [新网设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E6.96.B0.E7.BD.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
 
 
 <span ID ="m1"></span>
