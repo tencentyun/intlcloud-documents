@@ -76,8 +76,6 @@ Provisioned concurrency is the concurrency configured at the version level. Curr
 
 The configured provisioned concurrency value should be a multiple of the configured memory of the function version. The number of instances started in advance equals to "configured provisioned concurrency/configured version memory".
 
-For more information on the version provisioned concurrency quota, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
-
 ## Use Cases
 
 By using reserved concurrency and provisioned concurrency together, you can flexibly allocate resources among multiple functions and warm up functions as needed.
