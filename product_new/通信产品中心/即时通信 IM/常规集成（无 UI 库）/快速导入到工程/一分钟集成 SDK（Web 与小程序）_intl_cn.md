@@ -25,7 +25,7 @@ npm install tim-js-sdk --save
 // 发送图片、文件等消息需要的 COS SDK
 npm install cos-js-sdk-v5 --save
 ```
- >若同步依赖过程中出现问题，请切换 npm 源后再次重试。
+ >?若同步依赖过程中出现问题，请切换 npm 源后再次重试。
 >```
 >// 切换 cnpm 源
 >npm config set registry http://r.cnpmjs.org/
@@ -57,7 +57,7 @@ npm install tim-wx-sdk --save
 // 发送图片、文件等消息需要的 COS SDK
 npm install cos-wx-sdk-v5 --save
 ```
->若同步依赖过程中出现问题，请切换 npm 源后再次重试。
+>?若同步依赖过程中出现问题，请切换 npm 源后再次重试。
 >```
 >// 切换 cnpm 源
 >npm config set registry http://r.cnpmjs.org/
@@ -109,7 +109,7 @@ tim.registerPlugin({'cos-js-sdk': COS});
 </script>
 ```
 
->设置 SDK 日志输出级别，详细分级请参见 [setLogLevel 接口的说明](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel)。
+>?设置 SDK 日志输出级别，详细分级请参见 [setLogLevel 接口的说明](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel)。
 
 更详细的初始化流程和 API 使用介绍请参见 [SDK 初始化](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html)。
 
