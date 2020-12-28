@@ -33,6 +33,7 @@ Currently, the static IP address is bound to a Pod, regardless of the specific w
 The following steps describes how to enable cascading reclamation:
 1. Modify the existing **tke-eni-ipamd deployment: `kubectl edit deploy tke-eni-ipamd -n kube-system`**.
 2. Run the following command to add the launch parameter to `spec.template.spec.containers[0].args`.
+
 ```yaml
 - --enable-ownerref
 ```
