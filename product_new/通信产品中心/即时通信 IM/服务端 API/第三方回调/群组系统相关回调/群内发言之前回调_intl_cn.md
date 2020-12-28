@@ -72,8 +72,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 	产生群消息的群组 ID |
 | Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
-| From_Account | String | 消息发送者 UserID  |
-| Operator_Account | String | 请求发起者 UserID ，可以用来识别是否为管理员请求的 |
+| From_Account | String | 消息发送者 UserID |
+| Operator_Account | String | 请求发起者 UserID，可以用来识别是否为管理员请求的 |
 | Random | Integer | 发消息请求中的 32 位随机数 |
 | MsgBody | Array | 消息体，具体参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
@@ -155,3 +155,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[在群组中发送普通消息](https://intl.cloud.tencent.com/document/product/1047/34959)
+
