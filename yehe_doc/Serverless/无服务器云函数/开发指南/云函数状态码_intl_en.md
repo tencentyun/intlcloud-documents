@@ -139,7 +139,7 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 ## Concepts
-#### Execution method<div id="handler"></div>
+#### Execution method
 The execution method specifies the starting file and function while invoking the cloud function as shown below:
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 

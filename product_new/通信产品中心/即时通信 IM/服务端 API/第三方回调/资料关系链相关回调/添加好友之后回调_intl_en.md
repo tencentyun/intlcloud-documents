@@ -22,7 +22,7 @@ The app backend uses this callback to monitor information about friends added by
 
 This callback is triggered when a friend is successfully added.
 
-> This callback will not be triggered if the API for [importing friends](https://intl.cloud.tencent.com/document/product/1047/34903) is invoked to add a friend.
+>!This callback will not be triggered if the API for [importing friends](https://intl.cloud.tencent.com/document/product/1047/34903) is invoked to add a friend.
 
 ## API Description
 ### Request URL example
@@ -109,3 +109,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful APIs: [Adding a friend](https://intl.cloud.tencent.com/document/product/1047/34902)
+

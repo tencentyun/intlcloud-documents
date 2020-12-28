@@ -13,7 +13,7 @@ This API is used by the app admin to batch obtain the roles of users in a group.
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->AVChatRooms (livestreaming groups) do not support this API and a 10007 error will be returned if this operation is performed on this type of group. To achieve the same result, you can call the API for [obtaining profiles of group members](https://intl.cloud.tencent.com/zh/document/product/1047/34948).
+>?AVChatRooms (livestreaming groups) do not support this API and a 10007 error will be returned if this operation is performed on this type of group. To achieve the same result, you can call the API for [obtaining profiles of group members](https://intl.cloud.tencent.com/zh/document/product/1047/34948).
 
 ### Sample request URL
 ```
@@ -110,3 +110,5 @@ Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/i
 
 ## Reference
 Obtaining the groups a user has joined ([v4/group_open_http_svc/get_joined_group_list](https://intl.cloud.tencent.com/document/product/1047/34925))
+
+
