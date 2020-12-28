@@ -22,7 +22,7 @@ TIM_DECL int TIMInit(uint64_t sdk_app_id, const char* json_sdk_config);
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was called successfully. If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
->
+>?
 - Initialize the IM SDK before using the IM SDK for further operations.
 - `json_sdk_config` can be set to a `NULL` string pointer or a "" null string, in which case the default SdkConfig value is used.
 - Every JSON key in `json_sdk_config` is optional. For more information, see [SdkConfig](https://intl.cloud.tencent.com/document/product/1047/34551#sdkconfig).
@@ -64,7 +64,7 @@ TIM_DECL int TIMUninit(void);
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was called successfully. If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> Call this API to uninstall the IM SDK and clear IM SDK resources before you uninstall the DLL or exit a process.
+>?Call this API to uninstall the IM SDK and clear IM SDK resources before you uninstall the DLL or exit a process.
 
 
 **Example**
@@ -116,7 +116,7 @@ TIM_DECL int TIMSetConfig(const char* json_config, TIMCommCallback cb, const voi
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult). |
 
-> `json_config` can be set to a `NULL` string pointer or a "" null string. If the callback cb is not null, call the callback cb to return all the configurations. Currently, the following items can be configured: IP address and port of the HTTP proxy, IP address and port of the SOCKS5 proxy, output log level, default option for obtaining the group or group member information, and whether to accept the message read receipt event. We recommend that you configure the IP addresses and ports of the HTTP proxy and SOCKS5 proxy before calling [TIMInit](#timinit). These items can be configured either separately or together. For more information, see [SetConfig](https://intl.cloud.tencent.com/document/product/1047/34551#setconfig).
+>? `json_config` can be set to a `NULL` string pointer or a "" null string. If the callback cb is not null, call the callback cb to return all the configurations. Currently, the following items can be configured: IP address and port of the HTTP proxy, IP address and port of the SOCKS5 proxy, output log level, default option for obtaining the group or group member information, and whether to accept the message read receipt event. We recommend that you configure the IP addresses and ports of the HTTP proxy and SOCKS5 proxy before calling [TIMInit](#timinit). These items can be configured either separately or together. For more information, see [SetConfig](https://intl.cloud.tencent.com/document/product/1047/34551#setconfig).
 
 
 **Example 1**
@@ -212,5 +212,4 @@ if (TIM_SUCC != TIMSetConfig(json_config.toStyledString().c_str(), [](int32_t co
     // Failed to call the TIMSetConfig API.
 }
 ```
-
 
