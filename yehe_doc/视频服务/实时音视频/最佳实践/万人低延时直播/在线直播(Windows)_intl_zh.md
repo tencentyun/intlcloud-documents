@@ -4,7 +4,7 @@
 
 ## 示例代码
 
-| 所属平台 | 示例代码 |
+| 所属平台 | 示例代码 | 
 |---------|---------|
 | Windows（MFC） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows（Duilib） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
@@ -19,7 +19,7 @@
 - 继承`ITRTCCloudCallback`事件回调接口类，重写关键事件的回调接口，包括本地用户进房/退房事件、远端用户加入/退出事件、错误事件和警告事件等。
 - 调用`addCallback`接口注册监听 SDK 事件。
 
->如果`addCallback`注册 N 次，同一个事件， SDK 就会触发 N 次回调，建议只调用一次 `addCallback`。
+>!如果`addCallback`注册 N 次，同一个事件， SDK 就会触发 N 次回调，建议只调用一次 `addCallback`。
 
 C++ 版：
 
@@ -195,7 +195,7 @@ public void onEnterRoom(int result)
 
 TRTC SDK 并不会默认打开本地的麦克风采集，主播调用 `startLocalAudio` 可以开启本地的声音采集并将音视频数据广播出去，`stopLocalAudio` 则会关闭。您可以在 `startLocalPreview` 之后继续调用 `startLocalAudio`。
 
->`startLocalAudio` 会检查麦克风使用权限，如果没有麦克风权限，SDK 会向用户申请开启。
+>?`startLocalAudio` 会检查麦克风使用权限，如果没有麦克风权限，SDK 会向用户申请开启。
 
 ### 5. 主播创建新房间开播
 
@@ -380,7 +380,7 @@ public void onUserVideoAvailable(string userId, bool available)
 }
 ```
 
->在 TRTCAppSceneLIVE 模式下，同一个房间中的观众（TRTCRoleAudience）人数没有限制。
+>!在 TRTCAppSceneLIVE 模式下，同一个房间中的观众（TRTCRoleAudience）人数没有限制。
 
 ### 8. 观众跟主播连麦
 主播和观众都可以通过 TRTCCloud 提供的 `switchRole` 进行角色间的相互切换，最常见的场景是观众跟主播连麦：观众可以通过该接口切换成“小主播”，然后跟房间里原来的“大主播”进行连麦互动。

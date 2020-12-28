@@ -67,8 +67,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 要将其他用户拉入的群组 ID |
 | Type | String | 请求创建的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
-| Operator_Account | String | 请求的操作者 UserID  |
-| DestinationMembers | Array | 要拉入群组的 UserID  集合 |
+| Operator_Account | String | 请求的操作者 UserID |
+| DestinationMembers | Array | 要拉入群组的 UserID 集合 |
 
 ### 应答包示例
 #### 允许所有用户入群
@@ -85,7 +85,7 @@ App 后台同意所有请求中所有用户加入群。
 
 #### 拦截部分成员入群
 
-App 后台拒绝请求中的某些用户被拉入群，在 RefusedMembers_Account 中返回这些 UserID 。
+App 后台拒绝请求中的某些用户被拉入群，在 RefusedMembers_Account 中返回这些 Identifier。
 
 ```
 {
@@ -111,3 +111,4 @@ App 后台拒绝请求中的某些用户被拉入群，在 RefusedMembers_Accoun
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)
+

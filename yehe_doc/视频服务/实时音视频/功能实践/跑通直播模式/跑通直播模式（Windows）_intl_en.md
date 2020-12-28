@@ -4,7 +4,7 @@ This document describes how to implement an online live streaming service that s
 
 ## Sample Code
 
-| Platform | Sample Code |
+| Platform | Sample Code | 
 |---------|---------|
 | Windows (MFC) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows (Duilib) | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
@@ -19,7 +19,7 @@ The first step in using the TRTC SDK is to get the singleton object of TRTCCloud
 - Inherit the `ITRTCCloudCallback` event callback API class and override the callback APIs for key events such as room entry/exit by local user, room entry/exit by remote user, error event, and warning event.
 - Call the `addCallback` API to register and listen on SDK events.
 
->If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
+>!If `addCallback` is registered N times, the SDK will trigger N callbacks for the same event. It is recommended to call `addCallback` only once.
 
 C++ edition:
 
@@ -196,7 +196,7 @@ public void onEnterRoom(int result)
 
 The TRTC SDK does not enable local mic capture by default. The anchor can call `startLocalAudio` to enable local sound capture and stream audio/video data, or call `stopLocalAudio` to disable sound capture. `startLocalAudio` can be called after `startLocalPreview`.
 
->`startLocalAudio` will check the mic permission. If there is no permission to use the mic, the SDK will ask the user to grant the permission.
+>?`startLocalAudio` will check the mic permission. If there is no permission to use the mic, the SDK will ask the user to grant the permission.
 
 ### 5. Anchor creates a room and starts streaming
 
@@ -381,7 +381,7 @@ public void onUserVideoAvailable(string userId, bool available)
 }
 ```
 
->In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
+>!In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
 
 ### 8. Viewer co-anchors with anchor
 Both the viewer and anchor can switch their roles through the `switchRole` API provided by TRTCCloud. The most common scenario is that the viewer co-anchors with the anchor: the viewer can call this API to turn themselves into an "assistant anchor" and co-anchor with the original "primary anchor" in the room.

@@ -71,10 +71,10 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 产生群消息的群组 ID |
 | Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
-| From_Account | String | 消息发送者 UserID  |
-| Operator_Account | String | 请求发起者 UserID ，可以用来识别是否为管理员请求的|
+| From_Account | String | 消息发送者 UserID |
+| Operator_Account | String | 请求发起者 UserID，可以用来识别是否为管理员请求的|
 | Random | Integer | 发消息请求中的32位随机数 |
-| MsgSeq | Integer | 消息序列号，一条消息的唯一标示<br>群聊消息使用 MsgSeq 进行排序，MsgSeq 值越大消息越靠后|
+| MsgSeq | Integer | 消息序列号，一条消息的唯一标示<br>群聊消息使用 MsgSeq 进行排序，MsgSeq 值越大消息越靠后 |
 | MsgTime | Integer | 消息发送的时间戳，对应后台 Server 时间 |
 | MsgBody | Array | 消息体，具体参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
@@ -102,3 +102,4 @@ App 后台同步数据后，发送回调应答包。
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[在群组中发送普通消息](https://intl.cloud.tencent.com/document/product/1047/34959)
+

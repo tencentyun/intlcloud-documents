@@ -71,7 +71,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 被解散的群组 ID |
 | Type | String | 被解散群的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
-| Owner_Account | String | 群主 UserID  |
+| Owner_Account | String | 群主 UserID |
 | MemberList | Array | 被解散群的成员列表 |
 
 ### 应答包示例
@@ -98,3 +98,4 @@ App 后台记录群解散信息后，发送回调应答包。
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[解散群组](https://intl.cloud.tencent.com/document/product/1047/34896)
+

@@ -72,8 +72,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | 要将其他用户拉入的群组 ID |
 | Type | String | 请求创建的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
 | JoinType | String | 入群方式：Apply（申请入群）；Invited（邀请入群） |
-| Operator_Account | String | 请求的操作者 UserID  |
-| NewMemberList | Array | 新入群成员 UserID  集合 |
+| Operator_Account | String | 请求的操作者 UserID |
+| NewMemberList | Array | 新入群成员 UserID 集合 |
 
 ### 应答包示例
 
@@ -99,3 +99,4 @@ App 后台同步数据后，返回应答包。
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[增加群组成员](https://intl.cloud.tencent.com/document/product/1047/34921)
+
