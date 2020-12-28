@@ -13,7 +13,8 @@ You can bind specified security group to the ENI created in VPC-CNI mode through
 - Modify the existing tke-eni-ipamd deployment: `kubectl edit deploy tke-eni-ipamd -n kube-system`.
 - Run the following command to add the startup parameter to `spec.template.spec.containers[0].args`.
   After modification, ipamd will restart automatically and take effect.
-	After ipamd takes effect, the new ENI and the existing ENI without associated security group will bind the security group according to the following policy.
+  After ipamd takes effect, the new ENI and the existing ENI without associated security group will bind the security group according to the following policy.
+  
 ```yaml
 - --enable-security-groups
 # If you want to use the security groups from the primary ENI/instance by default, you do not add the security-Groups parameter.
