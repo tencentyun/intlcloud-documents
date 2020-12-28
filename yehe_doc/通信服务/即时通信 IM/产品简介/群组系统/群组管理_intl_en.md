@@ -8,7 +8,7 @@ You can perform the following operations on groups:
 | Transfer a group | This operation changes the group owner. | The app admin can transfer a group through the RESTful API. The only other role that can transfer a group is the group owner. |
 | Disband a group | This operation disbands a group that has been created on the app. When the group is disbanded, all group members receive a system message stating that the group has been disbanded. | App admin can call the RESTful API to disband any group. The permission to disband groups on the app is limited by member roles:<br>For a public group, meeting group, or AVChatRoom, only the group owner can disband the group.<br>For a work group, no one in the group can disband the group. |
 
->
+>!
 > - When you create a group, IM assigns a default group ID that begins with @TGS#. You can also specify a group ID. For more information, see [Custom Group IDs](https://intl.cloud.tencent.com/document/product/1047/33529).
 > - After the group is created, a system message about the group creation is sent to the group owner's device to ensure synchronization across multiple devices (once a group is created on 1 device, all devices instantly perceive the created group.)
 
