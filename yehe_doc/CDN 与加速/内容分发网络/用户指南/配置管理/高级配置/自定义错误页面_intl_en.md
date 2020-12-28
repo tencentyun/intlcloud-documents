@@ -1,6 +1,6 @@
 ## Feature Overview
 
-Custom error page configuration supports redirecting a request to which the specified status code could have been returned to the specified destination URL.
+You can configure the custom error page, and redirect requests with the specified status code to the specified URL.
 
 Currently supported status codes are as follows:
 - 4XX: 400, 403, 404, 405, 414, 416
@@ -22,8 +22,9 @@ The custom error page configuration is disabled by default.
 ### Adding rules
 
 You can click **Add Rule** to add custom error page rules as needed.
+<img src="https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg" style="height:300px"/>
 
-![](https://main.qcloudimg.com/raw/7af17d161ec2f4e499a5740383d4658e.jpg)
+
 
 **Configuration limitations**
 

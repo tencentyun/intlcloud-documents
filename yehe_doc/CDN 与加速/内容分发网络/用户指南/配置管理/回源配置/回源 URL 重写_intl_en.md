@@ -1,6 +1,6 @@
 ## Configuration Overview
 
-If you need to modify the origin URL to the URL that matches the origin server, you can use the origin URL rewrite configuration in Tencent Cloud CDN.
+If you need to modify the origin-pull request URL to the URL that matches the origin server, you can use the origin URL rewrite configuration in Tencent Cloud CDN.
 
 
 
@@ -16,16 +16,15 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 ### Adding rules
 
 You can click **Add Rule** to add rewrite rules as needed.
-
-![](https://main.qcloudimg.com/raw/5f7d6907976fb0696f633af29321c99c.jpg)
+<img src="https://main.qcloudimg.com/raw/5f7d6907976fb0696f633af29321c99c.jpg" style="height:300px"/>
 
 
 **Configuration limitations**
 
 - Each domain name can have up to 10 rewrite rules.
-- You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
+- You can adjust the priority for multiple rules. Rules are ranked by their priorities from lowest the highest.
 - Current Origin URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg).
-- Target Origin Domain: it is the current domain name by default and can be modified. It excludes `http://` and `https://`.
+- Target Origin Domain: the current domain name is used by default (excluding `http://` and `https://`). You can modify it as needed.
 - Target Origin Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg).
 - The target origin domain can contain up to 250 characters. Other content can contain up to 1,024 characters. Chinese characters are not supported.
 
@@ -33,10 +32,10 @@ You can click **Add Rule** to add rewrite rules as needed.
 
 ## Configuration Samples:
 
-If the **Origin URL Rewrite Configuration** of the acceleration domain name `www.test.com` is as follows:
+Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name `www.test.com` is as follows:
 ![](https://main.qcloudimg.com/raw/4797e184e62c1abd5ed3cf1d1091f3fb.png)
 
-Then the actual origin-pull will be as follows:
+Then 
 
-- Pull the origin server to request `www.test.com/test/`, `www.test.com/newtest/` will be actually requested.
-- Pull the origin server to request `www.test.com/test/a.jpg`, `www.newtest.com/newtest/a.jpg` will be actually requested.
+- The origin-pull request `www.test.com/test/` wil be changed to `www.test.com/newtest/`.
+- The origin-pull request `www.test.com/test/a.jpg` will be changed to `www.newtest.com/newtest/a.jpg`.

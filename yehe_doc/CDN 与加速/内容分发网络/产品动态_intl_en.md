@@ -11,67 +11,67 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Browser cache validity configuration | Supports customizing client browser cache policies to reduce origin-pull rate. | December 7, 2020 | [Browser Cache Validity Configuration](https://intl.cloud.tencent.com/document/product/228/38932) |
-| Origin URL rewrite | Supports origin URL rewrite feature. |  December 7, 2020 | [Origin URL Rewrite](https://intl.cloud.tencent.com/document/product/228/38933) |
+| Origin-pull request URL rewrite | Supports configuration of origin-pull request URL rewrite rules. |  December 7, 2020 | [Rewriting Origin-pull URL](https://intl.cloud.tencent.com/document/product/228/38933) |
 | TLS version configuration | Supports enabling and disabling TLS versions as needed. | December 7, 2020 | [TLS Version Configuration](https://intl.cloud.tencent.com/document/product/228/38934) |
-| Custom error page | Supports redirecting a request to which the specified status code could have been returned to the specified destination URL. | December 7, 2020 | [Custom Error Page](https://intl.cloud.tencent.com/document/product/228/38935) |
+| Custom error page | Supports redirecting a request with specified status code to the specified URL. | December 7, 2020 | [Custom Error Page](https://intl.cloud.tencent.com/document/product/228/38935) |
 
 
 ## November 2020
 
 | Update | Description | Release Date | Documentation |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Copy configuration | Supports copying the configurations of an existing acceleration domain name to one or multiple new acceleration domain names. | November 3, 2020 | [Copying Configuration](https://intl.cloud.tencent.com/document/product/228/38936) |
+| Copy configuration | Supports copying the configurations of an existing forwarding domain name to one or multiple new forwarding domain names. | November 3, 2020 | [Copying Configuration](https://intl.cloud.tencent.com/document/product/228/38936) |
 
 ## October 2020
 
 | Update | Description | Release Date | Documentation |
 | -------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Fully launching the real-time log service | CDN access logs can be collected and published in real time to realize quick retrieval and analysis of log data. | October 29, 2020 | [Real-Time Log](https://intl.cloud.tencent.com/document/product/228/35380) |
+| Official launch of the real-time log service | CDN access logs can be collected and published in real time to realize quick retrieval and analysis of log data. | October 29, 2020 | [Real-Time Log](https://intl.cloud.tencent.com/document/product/228/35380) |
 
 ## August 2020
 
 | Update | Description | Release Date | Documentation |
 | ---------------------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| URL rewrite               | Supports customizing the URL rewrite configuration to redirect URL 302 to the destination URL. | August 13, 2020 | [URL Rewrite Configuration](https://intl.cloud.tencent.com/document/product/228/38074) |
-| Disabling access ports in the Chinese mainland as needed   | Supports disabling access ports 80/8080/443.      | August 13, 2020 | Access Port Configuration in the Chinese Mainland |
-| Increasing the number of allowed/blocked IPs to 200 | Supports entering up to 200 allowed/blocked IPs.  | August 13, 2020 | [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) |
+| Forward Rewrite               | Configures the URL rewrite rule to redirect 302 URLs to the specified URL. | August 13, 2020 | [Configuring URL Rewrite](https://intl.cloud.tencent.com/document/product/228/38074) |
+| Closing ports for accesses from the Chinese mainland | Supports closing ports 80/8080/443.      | August 13, 2020 | Configuring Ports for Accesses from the Chinese Mainland |
+| Increasing the number of allowed/blocked IPs to 200 | Supports adding up to 200 allowed/blocked IPs.  | August 13, 2020 | [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) |
 
 ## June 2020
 
 | Update | Description | Release Date | Documentation |
 | ------------------------ | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| UA blocklist/allowlist configuration  | Supports determining whether to deny or allow requests according to HTTP request header `User-Agent`.  | June 30, 2020 | [UA Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/37256) |
-| Downstream speed limit configuration | Supports setting the downstream speed limit on a URL to control the CDN access bandwidth.   | June 30, 2020 | [Downstream Speed Limit Configuration](https://intl.cloud.tencent.com/document/product/228/37257) |
-| Cache ignore URL case configuration  | Supports ignoring letter cases for cache as needed (letter cases are not ignored by default).  | June 30, 2020 | [Cache Key Rule Configuration](https://intl.cloud.tencent.com/document/product/228/38075) |
-| Origin-pull request header configuration | Supports adding specified header information as needed during origin-pull, such as carrying a real client IP. | June 30, 2020 | [Request Header Configuration](https://intl.cloud.tencent.com/document/product/228/37037) |
-| Quick HSTS configuration  | Supports adding the header `strict-transport-security` when the configuration is enabled.  | June 30, 2020 | [HSTS Configuration](https://intl.cloud.tencent.com/document/product/228/37036) |
+| UA blocklist/allowlist configuration  | Determines whether to deny or allow requests according to HTTP request header `User-Agent`.  | June 30, 2020 | [UA Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/37256) |
+| Downstream speed limit configuration | Controls the CDN access bandwidth by setting the downstream speed limit on a URL.   | June 30, 2020 | [Downstream Speed Limit Configuration](https://intl.cloud.tencent.com/document/product/228/37257) |
+| Configuring case-insensitive for cache keys  | Configures whether to ignore letter cases for cache keys (case-sensitive by default) | June 30, 2020 | [Cache Key Rule Configuration](https://intl.cloud.tencent.com/document/product/228/38075) |
+| Origin-pull request header configuration | Supports adding specified header information to the origin-pull request, such as carrying the real client IP. | June 30, 2020 | [Request Header Configuration](https://intl.cloud.tencent.com/document/product/228/37037) |
+| Quick HSTS configuration  | Supports adding the header `strict-transport-security`. | June 30, 2020 | [HSTS Configuration](https://intl.cloud.tencent.com/document/product/228/37036) |
 | OCSP stapling configuration | Fully releases the quick OCSP stapling configuration to improve TLS handshake efficiency and speed up user authentication. | June 30, 2020 |  [OCSP Stapling Configuration](https://intl.cloud.tencent.com/document/product/228/35216)|
 
 ## April 2020
 
 | Update | Description | Release Date | Documentation |
 | --------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Self-service activation for global CDN service | Cancels beta application for acceleration service in regions outside the Chinese mainland and supports CDN acceleration service in regions outside the Chinese mainland to all users.<br>Simplifies the CDN service activation process and global CDN service can be activated easily in the console. | April 15, 2020 | [Configuring CDN from Scratch](https://intl.cloud.tencent.com/document/product/228/32978) |
+| Enabling global CDN service manually| Opens up global acceleration service to global users.<br>Users can activate global CDN service easily in the console by themselves. | April 15, 2020 | [Configuring CDN from Scratch](https://intl.cloud.tencent.com/document/product/228/32978) |
 | Image optimization | Supports enabling WebP, Guetzli, and TPG compression for qualified requested images to effectively reduce downstream traffic generated by image transfer and reduce costs. | April 27, 2020 | Image Optimization |
 
 ## March 2020
 
 | Update | Description | Release Date | Documentation |
 | -------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| The domain name retrieval feature has been upgraded | This feature supports resolving and verifying domain name ownership, reclaiming domain names, and connecting wildcard domain names.  | March 3, 2020 | [Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734) |
-| Origin-pull timeout configuration | Supports adjusting the timeout periods for origin-pull TCP connection and data loading to ensure normal origin-pull. | March 3, 2020 | [Origin-pull Timeout Configuration](https://intl.cloud.tencent.com/document/product/228/35227) |
+| Upgraded domain name retrieval feature| Supports resolving and verifying domain name ownership, reclaiming domain names, and connecting wildcard domain names.  | March 3, 2020 | [Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734) |
+| New origin-pull timeout configuration | Supports adjusting the timeout periods for origin-pull TCP connection and data loading to ensure normal origin-pull. | March 3, 2020 | [Origin-pull Timeout Configuration](https://intl.cloud.tencent.com/document/product/228/35227) |
 
 ## February 2020
 
 | Update | Description | Release Date | Documentation |
 | -------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Launching the beta real-time log service | CDN access logs can be collected and published in real time to realize quick retrieval and analysis of log data. | February 24, 2020 | [Real-Time Log](https://intl.cloud.tencent.com/document/product/228/35380) |
+| Beta of real-time log service | CDN access logs can be collected and published in real time to realize quick retrieval and analysis of log data. | February 24, 2020 | [Real-Time Log](https://intl.cloud.tencent.com/document/product/228/35380) |
 
 ## December 2019
 
 | Update | Description | Release Date | Documentation |
 | --------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Global CDN <br>Operational report | Supports analyzing monthly operational data in and outside the Chinese mainland of the last year. | December 23, 2019 | [Operational Report](https://intl.cloud.tencent.com/document/product/228/6312) |
+| Global CDN <br>OPS report | Supports analyzing monthly OPS data in and outside the Chinese mainland of the last year. | December 23, 2019 | [Operation Report](https://intl.cloud.tencent.com/document/product/228/6312) |
 
 ## November 2019
 

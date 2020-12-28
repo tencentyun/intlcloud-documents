@@ -2,7 +2,7 @@
 
 If you need to modify the actual access URL to the URL that matches the origin server, you can use the access URL rewrite configuration in Tencent Cloud CDN.
 
-You can customize the access URL rewrite configuration to redirect URL 302 to the destination URL.
+You can customize the access URL rewrite configuration to redirect 302 URLs to the specified URL.
 
 ## Configuration Guide
 
