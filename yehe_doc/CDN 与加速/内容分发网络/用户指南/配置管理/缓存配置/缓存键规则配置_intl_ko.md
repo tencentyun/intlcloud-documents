@@ -36,12 +36,12 @@ Tencent Cloud CDN은 캐시할 때 Key-Value 포맷으로 리소스를 매핑하
 - 가속 도메인에서 다운로드, 스트리밍 미디어 VOD 서비스 유형을 선택하는 경우 필터링 매개변수는 기본적으로 활성화됩니다. 캐시 키 값 규칙 설정의 모든 파일 규칙의 [필터링 매개변수]가 “모두 필터링”으로 동기화됩니다.
 
 
-![](https://main.qcloudimg.com/raw/b82450778493e5b45c714c426e507c3f.png)
+![](https://main.qcloudimg.com/raw/1f53ed863618b442233dd3e1bba6229b.png)
 
 ### 규칙 추가
 
 필요에 따라 캐시 키 값 규칙을 추가할 수 있습니다.
-<img src="https://main.qcloudimg.com/raw/0956da1c99754636da7a5d1f0115a5f7.png" height="250" width="438" />
+<img src="https://main.qcloudimg.com/raw/48becf925518b2595097eddf7b4ec6d5.png" height="250" width="438" />
 
 #### 설정 제한
 
@@ -67,7 +67,7 @@ Tencent Cloud CDN은 캐시할 때 Key-Value 포맷으로 리소스를 매핑하
 ## 설정 예시
 
 가속 도메인 `www.test.com`의 [캐시 키 값 규칙 설정]이 다음과 같은 경우,
-![](https://main.qcloudimg.com/raw/2dc21d4d41c678b277be26589ea96bca.png)
+![](https://main.qcloudimg.com/raw/8c3f7f534c5fa849ca1594a0a244d840.png)
 
 실제 액세스 상황은 다음과 같습니다.
 
