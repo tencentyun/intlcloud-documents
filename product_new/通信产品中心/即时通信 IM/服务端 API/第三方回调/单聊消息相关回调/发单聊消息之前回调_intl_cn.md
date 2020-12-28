@@ -76,7 +76,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | To_Account | String | 消息接收者 UserID |
 | MsgSeq | Integer | 消息序列号，用于标记该条消息（32位无符号整数）|
 | MsgRandom | Integer | 消息随机数，用于标记该条消息（32位无符号整数）|
-| MsgTime | Integer | 消息的发送时间戳，单位为秒<br>单聊消息优先使用 MsgTime 进行排序，同一秒发送的消息则按 MsgSeq 排序，MsgSeq 值越大消息越靠后 |
+| MsgTime | Integer | 消息的发送时间戳，单位为秒<br>单聊消息优先使用 MsgTime 进行排序，同一秒发送的消息则按 MsgSeq 排序，MsgSeq 值越大消息越靠后  |
 | MsgKey | String | 该条消息的唯一标识，可根据该标识进行 [REST API 撤回单聊消息](https://intl.cloud.tencent.com/document/product/1047/35015) |
 | MsgBody | Array | 消息体，详情请参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)  |
 
@@ -147,3 +147,4 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 - [发单聊消息之后回调](https://intl.cloud.tencent.com/document/product/1047/34365)
 - REST API：[单发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34919)
 - REST API：[批量发单聊消息](https://intl.cloud.tencent.com/document/product/1047/34920)
+
