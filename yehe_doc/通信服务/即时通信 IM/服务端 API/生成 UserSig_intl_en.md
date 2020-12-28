@@ -1,15 +1,15 @@
 UserSig is a password that is used to log in to IM. It is the ciphertext that results from encrypting certain data such as UserID. This document describes how to generate a UserSig.
 
-<span id="getkey"></span>
+[](id:getkey)
 ## Obtaining a Key 
 
 1. Log in to the [IM console](https://console.cloud.tencent.com/im).
- > If you do not have any applications yet, [create one](https://intl.cloud.tencent.com/document/product/1047/34553) and then perform [step 2](#step2).
-<span id="step2"></span>
+ >?If you do not have any applications yet, [create one](https://intl.cloud.tencent.com/document/product/1047/34553) and then perform [step 2](#step2).
+[](id:step2)
 2. Click the target application card to go to its basic configuration page.
 3. In the **Basic Info** section, click **Display Key** next to **Key**.
 4. Click **Copy** to copy and save the key information.
- > Store the key information properly so as to prevent leaks.
+ >!Store the key information properly so as to prevent leaks.
 
 ## Calculating a UserSig on the Client
 The `GenerateTestUserSig` open-source module provided in the sample code of the IM SDK can help you quickly generate a UserSig. You only need to configure three member variables, SDKAPPID (SDKAppID of the app), EXPIRETIME (UserSig expiration time), and SECRETKEY (key information), and then call the genTestUserSig() function to quickly obtain a UserSig.
@@ -24,10 +24,10 @@ To simplify this process, we provide the source code for computing a UserSig for
 | Javascript | Web | [GenerateTestUserSig.js](https://github.com/tencentyun/TIMSDK/blob/master/H5/dist/debug/GenerateTestUserSig.js) |
 | Javascript | Mini Program | [GenerateTestUserSig.js](https://github.com/tencentyun/TIMSDK/blob/master/WXMini/dist/wx/debug/GenerateTestUserSig.js) | 
 
-> In this method, the SECRETKEY is easy to decompile and reverse engineer. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method is used only to locally run through a demo project and debug features.**
+>!In this method, the SECRETKEY is easy to decompile and reverse engineer. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method is used only to locally run through a demo project and debug features.**
 > The correct way to issue a UserSig is to integrate the UserSig calculation code snippet into your server and provide app-oriented APIs. When UserSig is needed, your app will send a request to the business server to obtain a dynamic UserSig. For more information, see [Generating a UserSig on the Server](#GeneratingdynamicUserSig).
 
-<span id="GeneratingdynamicUserSig"></span>
+[](id:GeneratingdynamicUserSig)
 ## Generating a UserSig on the Server
 Generating a UserSig on the server provides maximum protection against the disclosure of the key used for calculating the UserSig. You only need to deploy the code for calculating the UserSig on your server and provide an app-oriented API. When a UserSig is needed, your app will send a request to the business server to obtain a dynamic UserSig.
 To simplify this process, we provide the source code for computing a UserSig for the following languages and platforms. You can directly download and integrate the source code into your server.
@@ -43,7 +43,7 @@ To simplify this process, we provide the source code for computing a UserSig for
 | C++ | HMAC-SHA256 | [gen_sig](https://github.com/tencentyun/tls-sig-api-v2-cpp) |
 
 The calculation function of UserSig uses key parameters like SDKAppID, UserID, and the UserSig validity period. The key parameters are described in detail in the following list.
->The list below uses Java as an example, and the field names may vary depending on the actual language.
+>?The list below uses Java as an example, and the field names may vary depending on the actual language.
 
 | Field Name | Parameter Description |
 |---------|---------|
@@ -54,7 +54,7 @@ The calculation function of UserSig uses key parameters like SDKAppID, UserID, a
 | key | Information of the key, which can be obtained from the app details page in the IM [console](https://console.cloud.tencent.com/im). For details, see [Getting the key](#getkey). |
 
 
-<span id="ECDSA-SHA256"></span>
+[](id:ECDSA-SHA256)
 ## Algorithms of Earlier Versions
 
 To simplify signature calculation so that users can conveniently and quickly use Tencent Cloud services, the signature algorithm of the IM service has been upgraded from ECDSA-SHA256 to HMAC-SHA256 since July 19, 2019. This means that all SDKAppIDs created after July 19, 2019 will use the new HMAC-SHA256 algorithm.
