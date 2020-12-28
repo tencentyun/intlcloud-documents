@@ -47,7 +47,7 @@
 
 ### 步骤1：确认操作权限
 1. 调用 [getGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupProfile) 接口查看所在群组类型，确认是否支持禁言/取消禁言操作。
- >若为群组类型为 Private 或 Work（好友工作群）则不支持禁言。
+ >!若为群组类型为 Private 或 Work（好友工作群）则不支持禁言。
  >
 2. 调用 [getGroupMemberProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberProfile) 接口查看指定的 userID 在当前群的成员角色，确认是否有权限进行禁言/取消禁言操作。
 
@@ -72,7 +72,7 @@ let promise = tim.setGroupMemberMuteTime({
 ```
 
 #### 禁言/取消禁言全体成员
->使用该功能需将 SDK 升级至2.6.2及以上版本。全体禁言或取消全体禁言，暂无相关的群提示消息下发。
+>!使用该功能需将 SDK 升级至2.6.2及以上版本。全体禁言或取消全体禁言，暂无相关的群提示消息下发。
  
 App 管理员或群主调用 [updateGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateGroupProfile) 接口可禁言/取消禁言指定群的全体管理员和普通成员。
 请求参数如下表所示。
@@ -99,7 +99,7 @@ promise.then(function(imResponse) {
 
 ### 步骤3：监听处理 TIM.EVENT.MESSAGE_RECEIVED 事件
 禁言后，该群成员收到的被禁言 [群提示消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload)，可通过遍历 event.data 获取相关数据并渲染到页面。
->在收到禁言/取消禁言的相关通知时，建议您自行实现 disable/enable 输入框或输入区域的状态。
+>?在收到禁言/取消禁言的相关通知时，建议您自行实现 disable/enable 输入框或输入区域的状态。
 
 <pre>
 tim.on(TIM.EVENT.MESSAGE_RECEIVED, function(event) {
