@@ -47,7 +47,7 @@ This document mainly describes how to mute and unmute group members in web and M
 
 ### Step 1: confirm the operation permission
 1. Call the [getGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupProfile) API to query the type of the current group and confirm whether muting/unmuting is supported.
- >If the type of the group is Private or Work (work group), muting is not supported.
+ >!If the type of the group is Private or Work (work group), muting is not supported.
  >
 2. Call the [getGroupMemberProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberProfile) API to query the member role of the specified userID in the current group and confirm whether the user has the permission to perform muting/unmuting.
 
@@ -72,7 +72,7 @@ let promise = tim.setGroupMemberMuteTime({
 ```
 
 #### Muting/Unmuting all members
-> To use this feature, you need to upgrade the SDK to 2.6.2 or higher. At present, for muting and unmuting all members, no group tip message is delivered.
+>! To use this feature, you need to upgrade the SDK to 2.6.2 or higher. At present, for muting and unmuting all members, no group tip message is delivered.
  
 App admins or the group owner can call the [updateGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateGroupProfile) API to mute/unmute all admins and common members in the specified group.
 The following table lists the request parameters.
@@ -99,7 +99,7 @@ promise.then(function(imResponse) {
 
 ### Step 3: monitor and process the event TIM.EVENT.MESSAGE_RECEIVED
 After a group member is muted, the member will receive a [group tip](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) indicating that he/she has been muted. You can traverse `event.data` to get relevant data and render it to the interface.
-> After relevant muting/unmuting notifications are received, we recommend that you implement the disable/enable input box or input area status.
+>? After relevant muting/unmuting notifications are received, we recommend that you implement the disable/enable input box or input area status.
 
 <pre>
 tim.on(TIM.EVENT.MESSAGE_RECEIVED, function(event) {
