@@ -1,4 +1,4 @@
-本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/document/product/583/9705)。
+本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/zh/document/product/583/31440)。
 >!触发器传递的入参事件结构已有部分定义，可直接使用。您可以通过 [java cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用，通过 [go cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events ) 获取 Golang 的库并使用。
 >
 
@@ -158,7 +158,9 @@
 
 
 ## CLS 触发器的事件消息结构
+
 在指定的 CLS 触发器接收到消息时，CLS 的后台消费者模块会消费消息，并将消息组装异步调用您的函数。为保证单次触发传递数据的效率，数据字段的值是 Base64 编码的 ZIP 文档。
+
 ```
 {
   "clslogs": {
@@ -166,7 +168,9 @@
   }
 } 
 ```
+
 在解码和解压缩后，日志数据类似以下 JSON 体，以 CLS Logs 消息数据（已解码）为例：
+
 ```
 {
 	"topic_id": "xxxx-xx-xx-xx-yyyyyyyy",
@@ -178,5 +182,260 @@
 		"timestamp": "1605578090000003",
 		"content": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 	}]
+}
+```
+
+## MPS 触发器的事件消息结构
+
+在指定的 MPS 触发器接收到消息时，事件结构与字段以 WorkflowTask 任务为例。示例如下：
+
+```
+{
+    "EventType":"WorkflowTask",
+    "WorkflowTaskEvent":{
+        "TaskId":"245****654-WorkflowTask-f46dac7fe2436c47******d71946986t0",
+        "Status":"FINISH",
+        "ErrCode":0,
+        "Message":"",
+        "InputInfo":{
+            "Type":"COS",
+            "CosInputInfo":{
+                "Bucket":"macgzptest-125****654",
+                "Region":"ap-guangzhou",
+                "Object":"/dianping2.mp4"
+            }
+        },
+        "MetaData":{
+            "AudioDuration":11.261677742004395,
+            "AudioStreamSet":[
+                {
+                    "Bitrate":127771,
+                    "Codec":"aac",
+                    "SamplingRate":44100
+                }
+            ],
+            "Bitrate":2681468,
+            "Container":"mov,mp4,m4a,3gp,3g2,mj2",
+            "Duration":11.261677742004395,
+            "Height":720,
+            "Rotate":90,
+            "Size":3539987,
+            "VideoDuration":10.510889053344727,
+            "VideoStreamSet":[
+                {
+                    "Bitrate":2553697,
+                    "Codec":"h264",
+                    "Fps":29,
+                    "Height":720,
+                    "Width":1280
+                }
+            ],
+            "Width":1280
+        },
+        "MediaProcessResultSet":[
+            {
+                "Type":"Transcode",
+                "TranscodeTask":{
+                    "Status":"SUCCESS",
+                    "ErrCode":0,
+                    "Message":"SUCCESS",
+                    "Input":{
+                        "Definition":10,
+                        "WatermarkSet":[
+                            {
+                                "Definition":515247,
+                                "TextContent":"",
+                                "SvgContent":""
+                            }
+                        ],
+                        "OutputStorage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "OutputObjectPath":"/dasda/dianping2_transcode_10",
+                        "SegmentObjectName":"/dasda/dianping2_transcode_10_{number}",
+                        "ObjectNumberFormat":{
+                            "InitialValue":0,
+                            "Increment":1,
+                            "MinLength":1,
+                            "PlaceHolder":"0"
+                        }
+                    },
+                    "Output":{
+                        "OutputStorage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "Path":"/dasda/dianping2_transcode_10.mp4",
+                        "Definition":10,
+                        "Bitrate":293022,
+                        "Height":320,
+                        "Width":180,
+                        "Size":401637,
+                        "Duration":11.26200008392334,
+                        "Container":"mov,mp4,m4a,3gp,3g2,mj2",
+                        "Md5":"31dcf904c03d0cd78346a12c25c0acc9",
+                        "VideoStreamSet":[
+                            {
+                                "Bitrate":244608,
+                                "Codec":"h264",
+                                "Fps":24,
+                                "Height":320,
+                                "Width":180
+                            }
+                        ],
+                        "AudioStreamSet":[
+                            {
+                                "Bitrate":48414,
+                                "Codec":"aac",
+                                "SamplingRate":44100
+                            }
+                        ]
+                    }
+                },
+                "AnimatedGraphicTask":null,
+                "SnapshotByTimeOffsetTask":null,
+                "SampleSnapshotTask":null,
+                "ImageSpriteTask":null
+            },
+            {
+                "Type":"AnimatedGraphics",
+                "TranscodeTask":null,
+                "AnimatedGraphicTask":{
+                    "Status":"FAIL",
+                    "ErrCode":30010,
+                    "Message":"TencentVodPlatErr Or Unkown",
+                    "Input":{
+                        "Definition":20000,
+                        "StartTimeOffset":0,
+                        "EndTimeOffset":600,
+                        "OutputStorage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "OutputObjectPath":"/dasda/dianping2_animatedGraphic_20000"
+                    },
+                    "Output":null
+                },
+                "SnapshotByTimeOffsetTask":null,
+                "SampleSnapshotTask":null,
+                "ImageSpriteTask":null
+            },
+            {
+                "Type":"SnapshotByTimeOffset",
+                "TranscodeTask":null,
+                "AnimatedGraphicTask":null,
+                "SnapshotByTimeOffsetTask":{
+                    "Status":"SUCCESS",
+                    "ErrCode":0,
+                    "Message":"SUCCESS",
+                    "Input":{
+                        "Definition":10,
+                        "TimeOffsetSet":[
+
+                        ],
+                        "WatermarkSet":[
+                            {
+                                "Definition":515247,
+                                "TextContent":"",
+                                "SvgContent":""
+                            }
+                        ],
+                        "OutputStorage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "OutputObjectPath":"/dasda/dianping2_snapshotByOffset_10_{number}",
+                        "ObjectNumberFormat":{
+                            "InitialValue":0,
+                            "Increment":1,
+                            "MinLength":1,
+                            "PlaceHolder":"0"
+                        }
+                    },
+                    "Output":{
+                        "Storage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "Definition":0,
+                        "PicInfoSet":[
+                            {
+                                "TimeOffset":0,
+                                "Path":"/dasda/dianping2_snapshotByOffset_10_0.jpg",
+                                "WaterMarkDefinition":[
+                                    515247
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "SampleSnapshotTask":null,
+                "ImageSpriteTask":null
+            },
+            {
+                "Type":"ImageSprites",
+                "TranscodeTask":null,
+                "AnimatedGraphicTask":null,
+                "SnapshotByTimeOffsetTask":null,
+                "SampleSnapshotTask":null,
+                "ImageSpriteTask":{
+                    "Status":"SUCCESS",
+                    "ErrCode":0,
+                    "Message":"SUCCESS",
+                    "Input":{
+                        "Definition":10,
+                        "OutputStorage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "OutputObjectPath":"/dasda/dianping2_imageSprite_10_{number}",
+                        "WebVttObjectName":"/dasda/dianping2_imageSprite_10",
+                        "ObjectNumberFormat":{
+                            "InitialValue":0,
+                            "Increment":1,
+                            "MinLength":1,
+                            "PlaceHolder":"0"
+                        }
+                    },
+                    "Output":{
+                        "Storage":{
+                            "Type":"COS",
+                            "CosOutputStorage":{
+                                "Bucket":"gztest-125****654",
+                                "Region":"ap-guangzhou"
+                            }
+                        },
+                        "Definition":10,
+                        "Height":80,
+                        "Width":142,
+                        "TotalCount":2,
+                        "ImagePathSet":[
+                            "/dasda/imageSprite/dianping2_imageSprite_10_0.jpg"
+                        ],
+                        "WebVttPath":"/dasda/imageSprite/dianping2_imageSprite_10.vtt"
+                    }
+                }
+            }
+        ]
+    }
 }
 ```
