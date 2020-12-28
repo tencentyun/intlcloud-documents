@@ -15,10 +15,9 @@ kubectl get vip
 由于网络组件在集群范围内分配 IP 时会依据 `VpcIP` 信息找寻可用 IP，因此固定 IP 的地址若不使用需要及时回收（目前默认策略是永不回收），否则会导致 IP 浪费而无 IP 可用。本文介绍过期回收、手动回收及级联回收的 IP 回收方法。
 
 ### 过期回收（默认支持）
-在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 页面，容器网络插件选择【VPC-CNI】模式并且勾选【开启支持】固定Pod IP 支持，如下图所示：
-![](https://main.qcloudimg.com/raw/ad1290436fa0ff66d8bb17abd2bab161.png)
-在高级设置中设置 IP 回收策略，可以设置 Pod 销毁后多少秒回收保留的固定 IP。如下图所示：
-![](https://main.qcloudimg.com/raw/a9adcfc9618452c4afd45dfdd27c050f.png)
+在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 页面，容器网络插件选择【VPC-CNI】模式并且勾选【开启支持】固定Pod IP 支持。
+
+在高级设置中设置 IP 回收策略，可以设置 Pod 销毁后多少秒回收保留的固定 IP。
 
 ### 手动回收
 对于急需回收的 IP 地址，需要先确定需回收的 IP 被哪个 Pod 占用，找到对应的 Pod 的名称空间和名称，执行以下命令通过手动回收：
@@ -109,7 +108,7 @@ kubectl get event
 
 - event 中显示 ENILimit，则是配额问题，可以通过为 VPC 调大弹性网卡数目配额来解决问题。
 - event 中显示下图信息则说明子网中的 IP 不足。
-![](https://main.qcloudimg.com/raw/1dc81abb2404b4add1941609b1214944.png)
+![](https://main.qcloudimg.com/raw/3a7b70c880ddd7d48e8404a47ac6c14d.png)
 可以通过执行以下命令获取当前子网 IP 使用数目。
 ```shell
 kubectl get vip | wc -l
@@ -137,7 +136,7 @@ kubectl get vip -oyaml
 ```
 
 若命令返回成功则报错 VIP 状态为 Attaching，报错信息如下图所示：
-![](https://main.qcloudimg.com/raw/d7df85621d613f30e5109395de4c92bb.png)
+![](https://main.qcloudimg.com/raw/a46a0ec8be41d520038269c43f823d1c.png)
 
 #### 解决方案
 目前腾讯云弹性网卡限制一个 VPC 下面最多绑定50个弹性网卡。您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高配额，配额按地域生效。

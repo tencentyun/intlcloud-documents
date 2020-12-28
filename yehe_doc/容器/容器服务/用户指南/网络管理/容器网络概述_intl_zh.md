@@ -31,7 +31,7 @@
 
 <span id="annotation"></span>
 ### 容器网络说明
-![](https://main.qcloudimg.com/raw/bcc67451f63004fa8dd982dc17a48a6c.png)
+
 - **容器 CIDR**：集群内 Sevice、Pod 等资源所在网段。
 - **单节点 Pod 数量上限**：决定分配给每个 Node 的 CIDR 的大小。
 >? 容器服务 TKE 集群默认创建2个 kube-dns 的 Pod 和1个 l7-lb-controller 的 Pod。
