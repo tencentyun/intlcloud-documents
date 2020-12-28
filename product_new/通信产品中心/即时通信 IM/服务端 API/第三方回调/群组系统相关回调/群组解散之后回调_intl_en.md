@@ -98,3 +98,4 @@ After recording group dismissal information, the app backend sends a callback re
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful APIs: [Dismissing groups](https://intl.cloud.tencent.com/document/product/1047/34896)
+
