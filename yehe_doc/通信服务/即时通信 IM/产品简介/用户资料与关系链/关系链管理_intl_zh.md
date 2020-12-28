@@ -54,11 +54,11 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 
 ### 添加好友
 
-即时通信 IM 支持的加好友模式有：批量加好友、一回合加好友和两回合加好友。
+即时通信 IM 支持的加好友模式有：批量加好友、一回合加好友和两回合加好友，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34902">添加好友</a>。
 
 双向好友：用户 A 的好友表中有用户 B，B 的好友表中也有 A。
 单向好友：用户 A 的好友表中有用户 B，但 B 的好友表中却没有 A。
-加好友验证方式：每个用户都可以选择自己以哪种方式被其他用户添加为好友。
+加好友验证方式：每个用户都可以选择自己以哪种方式被其他用户添加为好友，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33520">标配资料字段</a> 中的加好友验证方式字段。
 一回合加好友：如果帐号 A 设置的加好友验证方式是 AllowType_Type_AllowAny，那么任何人添加 A 为好友都可以直接添加成功，这种一个请求就添加好友成功的场景称作一回合加好友。
 两回合加好友：如果帐号 A 设置的加好友验证方式是 AllowType_Type_NeedConfirm，那么任何人添加 A，A 都会收到一个请求加好友验证消息，这是第一个回合，然后 A 对这个请求加好友验证消息进行同意操作时，这是第二个回合，这种需要验证的加好友场景就被称为两回合加好友。
 
@@ -72,10 +72,10 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 |双向删除好友|Delete_Type_Both|将 To_Account 从 From_Account 的好友表中删除，同时将 From_Account 从 To_Account 的好友表中删除|
 
 
-即时通信 IM 也支持批量删除好友。
+即时通信 IM 也支持批量删除好友，更多信息可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34905">删除好友</a>。
 
 ### 拉取好友
-即时通信 IM 支持以下三种拉好友模式：不带好友的增量拉取模式、全量分页拉取模式以及带好友拉取模式。
+即时通信 IM 支持以下三种拉好友模式：不带好友的增量拉取模式、全量分页拉取模式以及带好友拉取模式。详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34908">拉取好友</a>。
 
 ### 校验好友
 
@@ -104,19 +104,21 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 |CheckResult_Type_BWithA|From_Account 的好友表中没有 To_Account，但 To_Account 的好友表中有 From_Account|
 |CheckResult_Type_NoRelation|From_Account 的好友表中没有 To_Account，To_Account 的好友表中也没有 From_Account|
 
+校验好友的其他相关信息可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/34907">校验好友</a>。
+
 ## 黑名单
 每个用户都有一份黑名单，用于保存被该用户屏蔽的帐号。
 用户 A 将用户 B 加入黑名单后，A 与 B 之间的好友关系会被解除（如果有），且 A 与 B 之间无法再发起加好友请求。
 即时通信 IM 的黑名单列表默认允许添加 1000 条黑名单帐号，如对黑名单列表的大小有特殊要求，请联系腾讯云客服。
 
 ### 添加黑名单
-即时通信 IM 支持批量添加黑名单。
+即时通信 IM 支持批量添加黑名单，详情可参见：<a href="https://intl.cloud.tencent.com/document/product/1047/34911">添加黑名单</a>。
 
 ### 删除黑名单
-即时通信 IM 支持批量删除黑名单。
+即时通信 IM 支持批量删除黑名单，详情可参见：<a href="https://intl.cloud.tencent.com/document/product/1047/34912">删除黑名单</a>。
 
 ### 拉取黑名单
-即时通信 IM 支持通过分页模式拉取全量黑名单。
+即时通信 IM 支持通过分页模式拉取全量黑名单，详情可参见：<a href="https://intl.cloud.tencent.com/document/product/1047/34914">拉取黑名单</a>。
 
 ### 校验黑名单
 即时通信 IM 支持以下两种黑名单校验模式：单向校验黑名单关系、双向校验黑名单关系。
@@ -142,4 +144,15 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 |BlackCheckResult_Type_AWithB|From_Account 的黑名单中有 To_Account，但 To_Account 的黑名单中没有 From_Account|
 |BlackCheckResult_Type_BWithA|From_Account 的黑名单中没有 To_Account，但 To_Account 的黑名单中有 From_Account|
 |BlackCheckResult_Type_NO|From_Account 的黑名单中没有 To_Account，To_Account 的黑名单中也没有 From_Account|
+
+校验黑名单的其他相关信息可参见<a href="https://intl.cloud.tencent.com/document/product/1047/34913">校验黑名单</a>。
+
+
+## 相关文档
+
+- [用户资料与关系链（Android）](https://intl.cloud.tencent.com/document/product/1047/34332)
+- [用户资料与关系链（iOS）](https://intl.cloud.tencent.com/document/product/1047/36284)
+- [快速调通基本功能（Windows）](https://intl.cloud.tencent.com/document/product/1047/34304)
+- [关系链（Web SDK）](https://intl.cloud.tencent.com/document/product/1047/34334)
+- [好友系统消息（Web SDK）](https://intl.cloud.tencent.com/document/product/1047/34334)
 

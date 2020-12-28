@@ -1,7 +1,7 @@
 ## 应用场景
 在 App 退后台或者进程被 kill 的情况下，有新消息需要提醒用户时，可使用离线推送功能，在 iOS 端会有 APNs 推送，Android 端则需要用户注册离线消息回调。
 ## APP移动推送服务推荐方案：移动推送 TPNS
-即时通信 IM 离线消息目前使用的厂商通道依赖由 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 统一提供和维护，支持国内主流厂商通道（华为、小米、OPPO、vivo、魅族）、Google FCM 通道及 APNs 通道一站式托管和集成。您可免费使用即时通信 IM 的离线推送服务，如您需要对推送数据进行分析或使用更精准推送能力，您可集成 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 的 [SDK](https://intl.cloud.tencent.com/document/product/1024/34673) 使用 TPNS 移动推送服务，包括运营消息和 IM 离线消息均可通过移动推送服务下发。
+即时通信 IM 支持苹果 APNS 推送、小米推送、华为推送、魅族推送、vivo 推送、OPPO 推送以及 Google FCM 推送，即时通信 IM Demo 中使用的厂商通道由 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 统一提供和维护。当您需要集成离线推送功能时，您可通过集成 [移动推送 TPNS](https://intl.cloud.tencent.com/product/tpns) 服务或集成所需厂商的离线推送服务实现：
 
 ## iOS APNs 推送
 ### 推送格式说明
@@ -33,3 +33,5 @@ Android 在1.8.0以后版本支持服务和进程分离，如果 App 进程被 k
 ## 相关文档
 - [管理离线推送证书](https://intl.cloud.tencent.com/document/product/1047/34540)
 - [Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1047/34346)
+- [iOS 离线推送配置](https://intl.cloud.tencent.com/document/product/1047/34347)
+- [Android 离线推送基本配置](https://intl.cloud.tencent.com/document/product/1047/34336)
