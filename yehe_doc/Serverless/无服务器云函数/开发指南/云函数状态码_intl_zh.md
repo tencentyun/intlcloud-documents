@@ -144,7 +144,7 @@
 
 #### 执行方法
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
-![](https://main.qcloudimg.com/raw/48172f9407d4002f79ad0355e609aff2.png)
+![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 - 一段式格式为【文件名】，Golang 环境时使用。例如 `main`。
 - 两段式格式为【文件名.函数名】，Python、Node.js 及 PHP 环境时使用。例如 `index.main_handler`。
 	- 此执行方法**前一段指向代码包中不包含后缀的文件名，后一段指向文件中的入口函数名**。需要确保代码包中的文件名后缀与语言环境匹配，如 Python 环境为 `.py` 文件，Node.js 环境为 `.js` 文件。 更多执行方法相关说明，请参见 [执行方法详情说明](https://intl.cloud.tencent.com/document/product/583/9210)。 
