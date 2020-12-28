@@ -34,6 +34,7 @@ kubectl delete vipc <podname> -n <namespace>
 以下步骤介绍如何开启级联回收：
 1. 修改现存的 **tke-eni-ipamd deployment：`kubectl edit deploy tke-eni-ipamd -n kube-system`**。
 2. 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数：
+
 ```yaml
 - --enable-ownerref
 ```
