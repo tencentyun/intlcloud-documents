@@ -85,7 +85,7 @@ The app backend allows all users in requests to join the group.
 
 #### Rejecting some users to join a group
 
-The app backend rejects some users in requests to join the group and returns these users’ UserID s in RefusedMembers_Account.
+The app backend rejects some users in requests to join the group and returns these users’ Identifier s in RefusedMembers_Account.
 
 ```
 {
@@ -111,3 +111,4 @@ The app backend rejects some users in requests to join the group and returns the
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful APIs: [Adding group members](https://intl.cloud.tencent.com/document/product/1047/34921)
+
