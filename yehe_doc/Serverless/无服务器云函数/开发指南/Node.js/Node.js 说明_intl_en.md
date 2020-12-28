@@ -2,11 +2,12 @@ Currently, the following versions of Node.js programming language are supported:
 * Node.js 6.10
 * Node.js 8.9
 * Node.js 10.15
+* Node.js 12.16
 
 ## Function Form
 
 The Node.js function form is generally as follows:
-- Node.js 10.15
+- Node.js 10.15 and 12.16
 ```
 module.exports = (event,context,callback)=>{
 	console.log(event);
@@ -39,17 +40,39 @@ When you create an SCF function, you need to specify an execution method. If the
 The input parameters in the Node.js environment include `event`, `context`, and `callback`, where `callback` is optional.
 * **event**: this parameter is used to pass the trigger event data.
 * **context**: this parameter is used to pass runtime information to your handler.
-* **callback**: this parameter is used to return the desired information to the invoker in Node.js 8.9 and 6.10, which is optional. In Node.js 10.15, async entry functions use the `return` keyword for return, while non-async entry functions use the `callback` input parameter for return.
+* **callback**: this parameter is used to return the desired information to the invoker in Node.js 8.9 and 6.10, which is optional. In Node.js 10.15 and 12.16, async entry functions use the `return` keyword for return, while non-async entry functions use the `callback` input parameter for return.
 
 ## Return and Exception
 
 Your handler can use the `callback` input parameter or the `return` keyword in the code to return information. The support conditions for using `callback` or `return` for return are as follows:
 
-| Node.js Version | callback | return |
-| - | - | - |
-| 6.10 | Supported | Not Supported |
-| 8.9 | Supported | Supported |
-| 10.15 | Supported for non-async entry functions | Supported for async entry functions |
+<table>
+<thead>
+<tr>
+<th>Node.js Version</th>
+<th>Callback</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>6.10</td>
+<td>Supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>8.9</td>
+<td>Supported</td>
+<td>Supported</td>
+</tr>
+<tr>
+<td>10.15</td>
+<td rowspan=2>Non-async entry function</td>
+<td rowspan=2>Async entry function</td>
+</tr>
+<tr>
+<td>12.16</td>
+</tr>
+</tbody></table>
 
 - If `callback` is used for return, the syntax will be as follows:
 ```
@@ -63,20 +86,20 @@ callback(Error error, Object result);
 The return value will be handled differently depending on the type of invocation when the function is invoked. The return value of a sync invocation will be serialized to JSON format and then returned to the invoker, while the return value of an async invocation will be discarded. In addition, the return value will be displayed at the `ret_msg` position in the function log for both sync and async invocations.
 
 
-## Async Attribute of Node.js 10.15
+## Async Attribute of Node.js 10.15 and 12.16
 
-In the runtime of Node.js 10.15, sync execution return and async event processing can be performed separately:
+In the runtime of Node.js 10.15 and 12.16, sync execution return and async event processing can be performed separately:
 * After the sync execution process of an entry function is completed and the result is returned, function invocation will immediately return its result, and the return information in the code will be send to the function invoker.
 * After the sync process is completed and the result returned, the async logic in the code will continue to be executed and processed. The actual function execution process ends and exits only when the async event is completely executed.
 
->
+>!
 >- SCF logs are collected and processed after the entire execution process ends. Therefore, before the sync execution process is completed and the result is returned, logs and operation information such as time used and memory utilization cannot be provided in the SCF return information. You can query the detailed information in logs by using `Request Id` after the actual function execution process is completed.
 >- The function execution duration is calculated based on the async event execution duration. If the async event queue cannot get empty or its execution cannot be completed, function timeout will occur. In this case, the invoker may have received the correct response result of the function, but the execution status of the function will still be marked as failure due to timeout, and the timeout period will be calculated as the execution duration.
 
-The sync and async execution attributes, return time, and execution duration in Node.js 10.15 are as shown below:
+The sync and async execution attributes, return time, and execution duration in Node.js 10.15 and 12.16 are as shown below:
 ![node10.15feature](https://main.qcloudimg.com/raw/bdd1744107f3cce044d596afe7b230cf.png)
 
-### Async attribute sample of Node.js 10.15 function
+### Async attribute sample of Node.js 10.15 or 12.16 function
 
 Use the following sample code to create a function, where the `setTimeout` method is used to set a function that will be executed in 2 seconds:
 ```
@@ -157,7 +180,7 @@ The output can be viewed at the `log` location in the function log.
 
 ## Installing Dependencies
 
-For more information, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
+For more information, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879) and [Online Dependency Installation](https://intl.cloud.tencent.com/document/product/583/38105).
 
 ## Included Libraries and Usage
 
@@ -173,101 +196,200 @@ For more information on how to use the COS SDK, please see [COS SDK for Node.js]
 
 ### Built-in library in environment
 
-- The following libraries are supported in Node.js 10.15 runtime:
+- The following libraries are supported in Node.js 12.16 runtime:
 <table><thead>
 <tr><th width="60%">Library Name</th><th width="40%">Version</th></tr>
 </thead>
 <tbody><tr>
-<td>cos-nodejs-sdk-v5</td>
-<td>2.5.14</td>
+<td align="left">cos-nodejs-sdk-v5</td>
+<td align="left">2.5.20</td>
 </tr>
 <tr>
-<td>base64-js</td>
-<td>1.3.1</td>
+<td align="left">base64-js</td>
+<td align="left">1.3.1</td>
 </tr>
 <tr>
-<td>buffer</td>
-<td>5.4.3</td>
+<td align="left">buffer</td>
+<td align="left">5.5.0</td>
 </tr>
 <tr>
-<td>crypto-browserify</td>
-<td>3.12.0</td>
+<td align="left">crypto-browserify</td>
+<td align="left">3.12.0</td>
 </tr>
 <tr>
-<td>ieee754</td>
-<td>1.1.13</td>
+<td align="left">ieee754</td>
+<td align="left">1.1.13</td>
 </tr>
 <tr>
-<td>imagemagick</td>
-<td>0.1.3</td>
+<td align="left">imagemagick</td>
+<td align="left">0.1.3</td>
 </tr>
 <tr>
-<td>isarray</td>
-<td>2.0.5</td>
+<td align="left">isarray</td>
+<td align="left">2.0.5</td>
 </tr>
 <tr>
-<td>jmespath</td>
-<td>0.15.0</td>
+<td align="left">jmespath</td>
+<td align="left">0.15.0</td>
 </tr>
 <tr>
-<td>lodash</td>
-<td>4.17.15</td>
+<td align="left">lodash</td>
+<td align="left">4.17.15</td>
 </tr>
 <tr>
-<td>microtime</td>
-<td>3.0.0</td>
+<td align="left">microtime</td>
+<td align="left">3.0.0</td>
 </tr>
 <tr>
-<td>npm</td>
-<td>6.4.1</td>
+<td align="left">npm</td>
+<td align="left">6.13.4</td>
 </tr>
 <tr>
-<td>punycode</td>
-<td>2.1.1</td>
+<td align="left">punycode</td>
+<td align="left">2.1.1</td>
 </tr>
 <tr>
-<td>puppeteer</td>
-<td>2.0.0</td>
+<td align="left">puppeteer</td>
+<td align="left">2.1.1</td>
 </tr>
 <tr>
-<td>qcloudapi-sdk</td>
-<td>0.2.1</td>
+<td align="left">qcloudapi-sdk</td>
+<td align="left">0.2.1</td>
 </tr>
 <tr>
-<td>querystring</td>
-<td>0.2.0</td>
+<td align="left">querystring</td>
+<td align="left">0.2.0</td>
 </tr>
 <tr>
-<td>request</td>
-<td>2.88.0</td>
+<td align="left">request</td>
+<td align="left">2.88.2</td>
 </tr>
 <tr>
-<td>sax</td>
-<td>1.2.4</td>
+<td align="left">sax</td>
+<td align="left">1.2.4</td>
 </tr>
 <tr>
-<td>scf-nodejs-serverlessdb-sdk</td>
-<td>1.0.1</td>
+<td align="left">scf-nodejs-serverlessdb-sdk</td>
+<td align="left">1.1.0</td>
 </tr>
 <tr>
-<td>tencentcloud-sdk-nodejs</td>
-<td>3.0.104</td>
+<td align="left">tencentcloud-sdk-nodejs</td>
+<td align="left">3.0.147</td>
 </tr>
 <tr>
-<td>url</td>
-<td>0.11.0</td>
+<td align="left">url</td>
+<td align="left">0.11.0</td>
 </tr>
 <tr>
-<td>uuid</td>
-<td>3.3.3</td>
+<td align="left">uuid</td>
+<td align="left">7.0.3</td>
 </tr>
 <tr>
-<td>xml2js</td>
-<td>0.4.22</td>
+<td align="left">xml2js</td>
+<td align="left">0.4.23</td>
 </tr>
 <tr>
-<td>xmlbuilder</td>
-<td>13.0.2</td>
+<td align="left">xmlbuilder</td>
+<td align="left">15.1.0</td>
+</tr>
+</tbody></table>
+
+- The following libraries are supported in Node.js 10.15 runtime:
+<table>
+<thead>
+<tr><th width="60%">Library Name</th><th width="40%">Version</th></tr>
+</thead>
+<tbody><tr>
+<td align="left">cos-nodejs-sdk-v5</td>
+<td align="left">2.5.14</td>
+</tr>
+<tr>
+<td align="left">base64-js</td>
+<td align="left">1.3.1</td>
+</tr>
+<tr>
+<td align="left">buffer</td>
+<td align="left">5.4.3</td>
+</tr>
+<tr>
+<td align="left">crypto-browserify</td>
+<td align="left">3.12.0</td>
+</tr>
+<tr>
+<td align="left">ieee754</td>
+<td align="left">1.1.13</td>
+</tr>
+<tr>
+<td align="left">imagemagick</td>
+<td align="left">0.1.3</td>
+</tr>
+<tr>
+<td align="left">isarray</td>
+<td align="left">2.0.5</td>
+</tr>
+<tr>
+<td align="left">jmespath</td>
+<td align="left">0.15.0</td>
+</tr>
+<tr>
+<td align="left">lodash</td>
+<td align="left">4.17.15</td>
+</tr>
+<tr>
+<td align="left">microtime</td>
+<td align="left">3.0.0</td>
+</tr>
+<tr>
+<td align="left">npm</td>
+<td align="left">6.4.1</td>
+</tr>
+<tr>
+<td align="left">punycode</td>
+<td align="left">2.1.1</td>
+</tr>
+<tr>
+<td align="left">puppeteer</td>
+<td align="left">2.0.0</td>
+</tr>
+<tr>
+<td align="left">qcloudapi-sdk</td>
+<td align="left">0.2.1</td>
+</tr>
+<tr>
+<td align="left">querystring</td>
+<td align="left">0.2.0</td>
+</tr>
+<tr>
+<td align="left">request</td>
+<td align="left">2.88.0</td>
+</tr>
+<tr>
+<td align="left">sax</td>
+<td align="left">1.2.4</td>
+</tr>
+<tr>
+<td align="left">scf-nodejs-serverlessdb-sdk</td>
+<td align="left">1.0.1</td>
+</tr>
+<tr>
+<td align="left">tencentcloud-sdk-nodejs</td>
+<td align="left">3.0.104</td>
+</tr>
+<tr>
+<td align="left">url</td>
+<td align="left">0.11.0</td>
+</tr>
+<tr>
+<td align="left">uuid</td>
+<td align="left">3.3.3</td>
+</tr>
+<tr>
+<td align="left">xml2js</td>
+<td align="left">0.4.22</td>
+</tr>
+<tr>
+<td align="left">xmlbuilder</td>
+<td align="left">13.0.2</td>
 </tr>
 </tbody></table>
 
@@ -277,90 +399,93 @@ For more information on how to use the COS SDK, please see [COS SDK for Node.js]
 <tr><th width="60%">Library Name</th><th width="40%">Version</th></tr>
 </thead>
 <tbody><tr>
-<td>cos-nodejs-sdk-v5</td>
-<td>2.5.7</td>
+<td align="left">cos-nodejs-sdk-v5</td>
+<td align="left">2.5.8</td>
 </tr>
 <tr>
-<td>base64-js</td>
-<td>1.2.1</td>
+<td align="left">base64-js</td>
+<td align="left">1.2.1</td>
 </tr>
 <tr>
-<td>buffer</td>
-<td>5.0.7</td>
+<td align="left">buffer</td>
+<td align="left">5.0.7</td>
 </tr>
 <tr>
-<td>crypto-browserify</td>
-<td>3.11.1</td>
+<td align="left">crypto-browserify</td>
+<td align="left">3.11.1</td>
 </tr>
 <tr>
-<td>ieee754</td>
-<td>1.1.8</td>
+<td align="left">ieee754</td>
+<td align="left">1.1.8</td>
 </tr>
 <tr>
-<td>imagemagick</td>
-<td>0.1.3</td>
+<td align="left">imagemagick</td>
+<td align="left">0.1.3</td>
 </tr>
 <tr>
-<td>isarray</td>
-<td>2.0.2</td>
+<td align="left">isarray</td>
+<td align="left">2.0.2</td>
 </tr>
 <tr>
-<td>jmespath</td>
-<td>0.15.0</td>
+<td align="left">jmespath</td>
+<td align="left">0.15.0</td>
 </tr>
 <tr>
-<td>lodash</td>
-<td>4.17.4</td>
+<td align="left">lodash</td>
+<td align="left">4.17.4</td>
 </tr>
 <tr>
-<td>npm</td>
-<td>5.6.0</td>
+<td align="left">npm</td>
+<td align="left">5.6.0</td>
 </tr>
 <tr>
-<td>punycode</td>
-<td>2.1.0</td>
+<td align="left">punycode</td>
+<td align="left">2.1.0</td>
 </tr>
 <tr>
-<td>puppeteer</td>
-<td>1.14.0</td>
+<td align="left">puppeteer</td>
+<td align="left">1.14.0</td>
 </tr>
 <tr>
-<td>qcloudapi-sdk</td>
-<td>0.1.5</td>
+<td align="left">qcloudapi-sdk</td>
+<td align="left">0.1.5</td>
 </tr>
 <tr>
-<td>querystring</td>
-<td>0.2.0</td>
+<td align="left">querystring</td>
+<td align="left">0.2.0</td>
 </tr>
 <tr>
-<td>request</td>
-<td>2.87.0</td>
+<td align="left">request</td>
+<td align="left">2.87.0</td>
 </tr>
 <tr>
-<td>sax</td>
-<td>1.2.4</td>
+<td align="left">sax</td>
+<td align="left">1.2.4</td>
 </tr>
 <tr>
-<td>tencentcloud-sdk-nodejs</td>
-<td>3.0.52</td>
+<td align="left">tencentcloud-sdk-nodejs</td>
+<td align="left">3.0.56</td>
 </tr>
 <tr>
-<td>url</td>
-<td>0.11.0</td>
+<td align="left">url</td>
+<td align="left">0.11.0</td>
 </tr>
 <tr>
-<td>uuid</td>
-<td>3.1.0</td>
+<td align="left">uuid</td>
+<td align="left">3.1.0</td>
 </tr>
 <tr>
-<td>xml2js</td>
-<td>0.4.17</td>
+<td align="left">xml2js</td>
+<td align="left">0.4.17</td>
 </tr>
 <tr>
-<td>xmlbuilder</td>
-<td>9.0.1</td>
+<td align="left">xmlbuilder</td>
+<td align="left">9.0.1</td>
 </tr>
 </tbody></table>
+
+
+
 
 - The following libraries are supported in Node.js 6.10 runtime:
 <table>
@@ -368,88 +493,91 @@ For more information on how to use the COS SDK, please see [COS SDK for Node.js]
 <tr><th width="60%">Library Name</th><th width="40%">Version</th></tr>
 </thead>
 <tbody><tr>
-<td>base64-js</td>
-<td>1.2.1</td>
+<td align="left">base64-js</td>
+<td align="left">1.2.1</td>
 </tr>
 <tr>
-<td>buffer</td>
-<td>5.0.7</td>
+<td align="left">buffer</td>
+<td align="left">5.0.7</td>
 </tr>
 <tr>
-<td>cos-nodejs-sdk-v5</td>
-<td>2.0.7</td>
+<td align="left">cos-nodejs-sdk-v5</td>
+<td align="left">2.0.7</td>
 </tr>
 <tr>
-<td>crypto-browserify</td>
-<td>3.11.1</td>
+<td align="left">crypto-browserify</td>
+<td align="left">3.11.1</td>
 </tr>
 <tr>
-<td>ieee754</td>
-<td>1.1.8</td>
+<td align="left">ieee754</td>
+<td align="left">1.1.8</td>
 </tr>
 <tr>
-<td>imagemagick</td>
-<td>0.1.3</td>
+<td align="left">imagemagick</td>
+<td align="left">0.1.3</td>
 </tr>
 <tr>
-<td>isarray</td>
-<td>2.0.2</td>
+<td align="left">isarray</td>
+<td align="left">2.0.2</td>
 </tr>
 <tr>
-<td>jmespath</td>
-<td>0.15.0</td>
+<td align="left">jmespath</td>
+<td align="left">0.15.0</td>
 </tr>
 <tr>
-<td>lodash</td>
-<td>4.17.4</td>
+<td align="left">lodash</td>
+<td align="left">4.17.4</td>
 </tr>
 <tr>
-<td>npm</td>
-<td>3.10.10</td>
+<td align="left">npm</td>
+<td align="left">3.10.10</td>
 </tr>
 <tr>
-<td>punycode</td>
-<td>2.1.0</td>
+<td align="left">punycode</td>
+<td align="left">2.1.0</td>
 </tr>
 <tr>
-<td>qcloudapi-sdk</td>
-<td>0.1.5</td>
+<td align="left">qcloudapi-sdk</td>
+<td align="left">0.1.5</td>
 </tr>
 <tr>
-<td>querystring</td>
-<td>0.2.0</td>
+<td align="left">querystring</td>
+<td align="left">0.2.0</td>
 </tr>
 <tr>
-<td>request</td>
-<td>2.87.0</td>
+<td align="left">request</td>
+<td align="left">2.87.0</td>
 </tr>
 <tr>
-<td>sax</td>
-<td>1.2.4</td>
+<td align="left">sax</td>
+<td align="left">1.2.4</td>
 </tr>
 <tr>
-<td>tencentcloud-sdk-nodejs</td>
-<td>3.0.10</td>
+<td align="left">tencentcloud-sdk-nodejs</td>
+<td align="left">3.0.10</td>
 </tr>
 <tr>
-<td>url</td>
-<td>0.11.0</td>
+<td align="left">url</td>
+<td align="left">0.11.0</td>
 </tr>
 <tr>
-<td>uuid</td>
-<td>3.1.0</td>
+<td align="left">uuid</td>
+<td align="left">3.1.0</td>
 </tr>
 <tr>
-<td>xml2js</td>
-<td>0.4.17</td>
+<td align="left">xml2js</td>
+<td align="left">0.4.17</td>
 </tr>
 <tr>
-<td>xmlbuilder</td>
-<td>9.0.1</td>
+<td align="left">xmlbuilder</td>
+<td align="left">9.0.1</td>
 </tr>
 </tbody></table>
 
 
+
+
 ## Relevant Operations
 For more information on how to use relevant features, please see the following documents:
-- [Role and Authorization](<https://intl.cloud.tencent.com/document/product/583/31444>)
+- [Network Configuration Management](https://intl.cloud.tencent.com/document/product/583/38377)
+- [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176)
