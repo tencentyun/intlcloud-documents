@@ -2,20 +2,20 @@
 
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to inventory.
+This document provides an overview of APIs and SDK code samples related to COS inventory.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
 | [PUT Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30625) | Setting an inventory job | Sets an inventory job in a bucket |
 | [GET Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30623) | Querying inventory jobs | Queries inventory jobs for a bucket |
-| [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627) | Querying all inventories | Queries all inventory jobs of a bucket |
+|  [List Bucket Inventory Configurations](https://intl.cloud.tencent.com/document/product/436/30627)  | Querying all inventories | Queries all inventory jobs of a bucket |
 | [DELETE Bucket inventory](https://intl.cloud.tencent.com/document/product/436/30626) | Deleting an inventory job | Deletes an inventory job of a bucket |
 
-## Setting Inventory Job
+## Creating Inventory Job
 
 #### Feature description
 
-This API (PUT Bucket inventory) is used to create an inventory job in a bucket.
+This API is used to create an inventory job for a bucket.
 
 #### Method prototype
 
@@ -91,7 +91,7 @@ for (i = 0; i < inum; i++) {
 	cos_str_set(&optional->field, "ReplicationStatus");
 	cos_list_add_tail(&optional->node, &params->fields);
   
-  	// set bucket inventory
+  	// Set bucket inventory
 	status = cos_put_bucket_inventory(options, &bucket, params, &resp_headers);
 	log_status(status);
 }
@@ -102,7 +102,7 @@ cos_pool_destroy(pool);
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
 | bucket  | Bucket for which to set an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
@@ -113,7 +113,7 @@ cos_pool_destroy(pool);
 | frequency | Inventory job frequency. Enumerated values: Daily, Weekly | String |
 | filter_prefix            | Prefix of the objects to be analyzed                                         | String |
 | included_object_versions | Whether to include object versions in the inventory <br><li>If this is set to `All`, the inventory will include all object versions and add `VersionId`, `IsLatest`, and `DeleteMarker` fields <br><li>If `Current`, no object version information will be included in the inventory | String |
-| destination              | Describes the information of the inventory result storage                                       | Struct |
+| destination              | Destination to store the inventory result                                       | Struct |
 | format | File format of the inventory result. CSV is available | String |
 | account_id               | Bucket owner ID, such as 100000000001 | String |
 | bucket | Name of the bucket where the inventory result is stored | String |
@@ -121,28 +121,28 @@ cos_pool_destroy(pool);
 | encryption               | Option to provide server-side encryption for the inventory result                               | Int    |
 | fields                   | Sets the analysis items that should be included in the inventory result                               | Struct |
 | field                    | Name of the analysis items that can be optionally included in the inventory result. Valid values: Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus | String |
-| resp_headers | Header of the returned HTTP response message | Struct |
+| resp_headers | Returns the HTTP response headers | Struct  |
 
-#### Returned result description
+#### Response description
 
-| Return Result | Description | Type |
+| Response Parameter  | Description        | Type   |
 | :--------- | :---------- | :----- |
 | code | Error code | Int |
-| error_code | Error code | String |
-| error_msg  | Error message | String |
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
 #### Error code description
 
-Some frequent special errors that may occur with this request are listed below:
+The following describes some common errors that may occur when you make requests using this API.
 
-| Error code | Description | Status code |
+| Error Code | Description | Status Code |
 | --------------------- | -------------------------------------------- | -------------------- |
 | InvalidArgument | Invalid parameter value | HTTP 400 Bad Request |
 | TooManyConfigurations | The number of inventories has reached the upper limit of 1,000 | HTTP 400 Bad Request |
-| AccessDenied          | Unauthorized access. You probably do not have access to the bucket. | HTTP 403 Forbidden |
+| AccessDenied          | Unauthorized access. You most likely do not have access permission for the bucket | HTTP 403 Forbidden   |
 
-## Querying Inventory Job
+## Querying Inventory Jobs
 
 #### Feature description
 
@@ -199,7 +199,7 @@ cos_pool_destroy(pool);
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
 | bucket | Bucket for which to query an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
@@ -210,7 +210,7 @@ cos_pool_destroy(pool);
 | frequency | Inventory job frequency. Enumerated values: Daily, Weekly | String |
 | filter_prefix            | Prefix of the objects to be analyzed                                         | String |
 | included_object_versions | Whether to include object versions in the inventory <br><li>If this is set to `All`, the inventory will include all object versions and add `VersionId`, `IsLatest`, and `DeleteMarker` fields <br><li>If `Current`, no object version information will be included in the inventory | String |
-| destination              | Describes the information of the inventory result storage                                       | Struct |
+| destination              | Destination to store the inventory result                                       | Struct |
 | format | File format of the inventory result. CSV is available | String |
 | account_id               | Bucket owner ID, such as 100000000001 | String |
 | bucket | Name of the bucket where the inventory result is stored | String |
@@ -218,15 +218,15 @@ cos_pool_destroy(pool);
 | encryption               | Option to provide server-side encryption for the inventory result                               | Int    |
 | fields                   | Sets the analysis items that should be included in the inventory result                               | Struct |
 | field                    | Name of the analysis items that can be optionally included in the inventory result. Valid values: Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus | String |
-| resp_headers | Header of the returned HTTP response message | Struct |
+| resp_headers | Returns the HTTP response headers | Struct  |
 
-#### Returned result description
+#### Response description
 
-| Return Result | Description | Type |
+| Response Parameter  | Description        | Type   |
 | :--------- | :---------- | :----- |
 | code | Error code | Int |
-| error_code | Error code | String |
-| error_msg  | Error message | String |
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
 ## Querying All Inventories
@@ -300,24 +300,24 @@ cos_pool_destroy(pool);
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ----------------------- | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Destination bucket where to store inventory results in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
+| bucket | Destination bucket to store inventory results in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
 | inventory_params        | All inventory configuration information of bucket                                       | Struct |
 | inventorys              | Links node members of `cos_inventory_params_t`                     | List   |
 | is_truncated            | Flag about whether all inventory jobs have been listed. If yes, it is `false`; otherwise, it is `true` | Struct |
 | continuation_token      | Flag of the inventory list on the current page, which can be understood as the page number. It corresponds to the `continuation-token` parameter in the request | String |
 | next_continuation_token | Flag of the next page of inventory list. If there is a value in this parameter, the value can be used as the `continuation-token` parameter to initiate a GET request to get the inventory job information of the next page | String |
-| resp_headers | Header of the returned HTTP response message | Struct |
+| resp_headers | Returns the HTTP response headers | Struct  |
 
-#### Returned result description
+#### Response description
 
-| Return Result | Description | Type |
+| Response Parameter  | Description        | Type   |
 | :--------- | :---------- | :----- |
 | code | Error code | Int |
-| error_code | Error code | String |
-| error_msg  | Error message | String |
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
 ## Deleting Inventory Job
@@ -379,18 +379,18 @@ cos_pool_destroy(pool);
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
 | bucket | Bucket for which to delete an inventory job in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | id           | Inventory name                                                   | String |
-| resp_headers | Header of the returned HTTP response message | Struct |
+| resp_headers | Returns the HTTP response headers | Struct |
 
-#### Returned result description
+#### Response description
 
-| Return Result | Description | Type |
+| Response Parameter  | Description        | Type   |
 | :--------- | :---------- | :----- |
 | code | Error code | Int |
-| error_code | Error code | String |
-| error_msg  | Error message | String |
+| error_code | Error code content | String |
+| error_msg | Error code description | String |
 | req_id | Request message ID | String |

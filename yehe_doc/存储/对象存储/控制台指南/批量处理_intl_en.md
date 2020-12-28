@@ -5,11 +5,11 @@ The COS batch operation feature allows you to perform large-scale batch operatio
 - Replicating objects
 - Restoring archived objects
 
-You can generate an inventory file for the objects on which to perform a batch operation using either COS inventory (you need to first [enable inventory feature](https://intl.cloud.tencent.com/document/product/436/30624)), or the CSV format you specify. COS will then perform this batch operation based on the inventory file. For more information on batch operations, see [Overview](https://intl.cloud.tencent.com/document/product/436/32958).
+You can generate an inventory file for the objects on which to perform a batch operation using either COS inventory (you need to first [enable inventory feature](https://intl.cloud.tencent.com/document/product/436/30624)), or the CSV format you specify. COS will then perform this batch operation based on the inventory file. For more information on batch operations, please see [Overview](https://intl.cloud.tencent.com/document/product/436/32958).
 
 ## Directions
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Batch Operation** on the left sidebar to enter the batch operation management page.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Batch Operation** on the left sidebar to enter the batch operation management page.
 2. Click **Create Job** to create a batch operation job and configure the following:
  - **Job Region**: select a region for the job. It must be the same as the bucket region where the objects in your inventory file reside; otherwise the job will fail.
  >?Currently, COS batch operation is only available in public cloud regions in Chinese mainland.
@@ -40,17 +40,19 @@ You can generate an inventory file for the objects on which to perform a batch o
    </tr>
 </table>
  -**Inventory Bucket**: select the bucket where the inventory file is stored.
- -**Inventory File Path**: specify the path of COS inventory report or CSV file in the format: `directory/manifest.json` or `directory/manifest.csv`, respectively. For example, if you have an inventory stored in the `examplebucket-1250000000` root directory, the inventory path will be `manifest.json`. 
+ -**Inventory File Path**: specify the path of COS inventory report or CSV file in the format of `directory/manifest.json` or `directory/manifest.csv`, respectively. For example, if you have an inventory stored in the `examplebucket-1250000000` root directory, the inventory path will be `manifest.json`. 
 ![](https://main.qcloudimg.com/raw/5544edff70879dbee24dc2e3fef0c36e.png)
-3. If an inventory ETag automatically appears, you have selected the correct inventory file. Then, click **Next** to enter the “Operation Configuration” page, select either of the following two job types, and configure accordingly:
+3. Click **Next** to enter the operation configuration page, select the task type, and configure the configuration items as follows:
   - **Batch Data Copy**:
     - Destination Bucket: select the bucket to store the object copies.
+    - Prefix Operation: you can choose to add, replace, or delete the prefix on the object copies.
     - Storage Class: specify the storage class for object copies. Valid values: STANDARD, STANDARD_IA, ARCHIVE.
     - Server-Side Encryption: specify whether to encrypt the object copies. Valid values: None, SSE-COS.
-    - Access Permissions: configure access permissions for the object copies. Valid values: Inherit destination bucket permissions, Private Read/Write, Public Read/Private Write.
-    - Object Metadata: configure metadata for the object copies. Valid values: Copy all metadata, Replace all metadata.
-  - **Restored archived objects in batches**：
-    - Restoration Mode: you can select either standard or bulk mode. For more information on restoration modes, see [Restoring an Archived Object](https://intl.cloud.tencent.com/document/product/436/30961).
+    - Access Permission: set access permissions to the object copies. Valid values: Copy all permissions, Replace all permissions, Add new permissions.
+    - Object Metadata: configure metadata for the object copies. Valid values: Copy all metadata, Replace all metadata, Add new metadata.
+    - Object Tag: configure tags for the object copies. Valid values: Copy all tags, Replace all tags, Add new tags.
+  - **Restored archived objects in batches**:
+    - Restoration Mode: you can select either standard or bulk mode. For more information on restoration modes, please see [Restoring an Archived Object](https://intl.cloud.tencent.com/document/product/436/30961).
     - Validity: specify the number of days after which the object copies will expire and be automatically deleted. This value ranges from 1 to 365.
       ![](https://main.qcloudimg.com/raw/4a51de0288564cb70ac5249523637e3e.png)
 4. Click **Next** to enter the "Other Configuration" page where you should configure the following:
@@ -63,6 +65,6 @@ You can generate an inventory file for the objects on which to perform a batch o
 5. Click **Next** to check all the information you have configured. If you need to make a change, click **Modify** or **Previous** accordingly. After confirming that everything is correct, click **Created**.
 ![](https://main.qcloudimg.com/raw/2f84d4dafa2586e6ca9aacae5d5b7d47.png)
 6. Once completed, find the new job in the job list, and click **Pending** > **Confirm** under **Status**. To cancel the job, click **Cancel Job** under **Operation**.
-![](https://main.qcloudimg.com/raw/45577c34529204109a436bce596e428c.png)
+![](https://main.qcloudimg.com/raw/94aed43dc8ca6c02d3149fe12ee3883d.png)
 
 
