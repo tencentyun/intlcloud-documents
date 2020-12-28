@@ -70,7 +70,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | GroupId | String | 产生群消息的群组 ID |
 | Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
 | ExitType | String | 成员离开方式：Kicked 为被群主移出群聊；Quit 为主动退群 |
-| Operator_Account | String | 退群者 UserID  |
+| Operator_Account | String | 退群者 UserID |
 | ExitMemberList | Array | 退出群的成员列表 |
 
 ### 应答包示例
@@ -97,3 +97,4 @@ App 后台同步数据后，返回应答包。
 
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[删除群组成员](https://intl.cloud.tencent.com/document/product/1047/34949)
+
