@@ -78,8 +78,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | --- | --- | --- |
 | CallbackCommand | String | 回调命令 |
 | GroupId | String | 操作的群 ID |
-| Operator_Account | String | 发起创建群组请求的操作者 UserID  |
-| Owner_Account | String | 请求创建的群的群主 UserID  |
+| Operator_Account | String | 发起创建群组请求的操作者 UserID |
+| Owner_Account | String | 请求创建的群的群主 UserID |
 | Type | String | 请求创建的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E7.B1.BB.E5.9E.8B.E4.BB.8B.E7.BB.8D)，例如 Public |
 | Name | String | 请求创建的群组的名称 |
 | MemberList | Array | 请求创建的群组的初始化成员列表 |
@@ -108,3 +108,4 @@ App 后台同步数据后，发送回调应答包。
 ## 参考
 - [第三方回调简介](https://intl.cloud.tencent.com/document/product/1047/34354)
 - REST API：[创建群组](https://intl.cloud.tencent.com/document/product/1047/34895)
+
