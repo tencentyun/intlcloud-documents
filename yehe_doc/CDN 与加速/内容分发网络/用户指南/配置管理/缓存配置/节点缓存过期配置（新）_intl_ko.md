@@ -14,9 +14,9 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 
 가속 도메인 액세스 시, 서비스 유형별로 CDN에서 기본 노드 캐시 만료 규칙을 추가하며, 필요에 따라 변경할 수 있습니다.
 - 정적 가속 서비스 유형을 선택하는 경우 일반적인 동적 파일(예: php, jsp, asp, aspx)은 기본적으로 캐시하지 않으며, 기타 모든 문서는 원본 서버를 따릅니다.
-![](https://main.qcloudimg.com/raw/208efd0da1456b119f9169874267d0cd.png)
+![](https://main.qcloudimg.com/raw/5f48bc5246397975544baadf5ac81f4e.png)
 - 가속 다운로드, 스트리밍 미디어 VOD 서비스 유형을 선택하는 경우 모든 파일의 기본 캐시 만료 시간은 30일입니다.
-![](https://main.qcloudimg.com/raw/bef536419b9fcb42797f6d7ec17b1458.png)
+![](https://main.qcloudimg.com/raw/cdd00154330b8cb217287874f4f40693.png)
 
 ### 규칙 추가
 
@@ -27,7 +27,7 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 - 캐시함: 노드에서의 리소스 캐시 시간을 설정합니다. 강제 캐시 여부를 추가 설정(즉, 원본 서버의 Cache-control: no-store/no-cache/private 생략 여부)할 수 있습니다.
 - 캐시하지 않음: 원본 서버에서 리소스를 획득합니다.
 
-<img src="https://main.qcloudimg.com/raw/79488434021c2f1bae475817b8c5a0be.png" height="207" width="408" />
+<img src="https://main.qcloudimg.com/raw/5454a77683dca1cfb491eccdae839aa4.png" height="207" width="408" />
 
 
 #### 설정 제한
@@ -54,7 +54,7 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 ## 설정 예시
 
 가속 도메인 `www.test.com`의 [노드 캐시 만료 설정]이 다음과 같은 경우,
-![](https://main.qcloudimg.com/raw/82019de13df15b2680265193c9fb18ad.png)
+![](https://main.qcloudimg.com/raw/c1402003c4549d2e6035420921f67bd0.png)
 
 실제 캐시 상황은 다음과 같습니다.
 
