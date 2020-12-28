@@ -155,3 +155,4 @@ In the following response example, the group message sent by the user is modifie
 
 - [Third-party callback overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - RESTful APIs: [Sending common messages in a group](https://intl.cloud.tencent.com/document/product/1047/34959)
+
