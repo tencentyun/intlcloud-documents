@@ -35,9 +35,9 @@ It is difficult for ordinary users to evaluate the network quality. It is recomm
 
 The speed test feature can be started through the `startSpeedTest` function of TRTCCloud. The speed test result will be called back once every 1–2 seconds through the callback function. Each callback contains a speed test result from the SDK to a CVM node. The number of callbacks is subject to the number of CVM instances the SDK accesses.
 
-- **Objective-C**
 
-``` Objective-C
+<dx-codeblock>
+::: Objective-C Objective-C
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
 - (void)onLogin:(NSString *)userId userSig:(NSString *)userSid 
@@ -50,11 +50,8 @@ The speed test feature can be started through the `startSpeedTest` function of T
                        NSLog(@"Speed test (test %d of %d) %@", (int)completedCount, (int)totalCount, result);
                    }];
 }
-```
-
-- **Java**
-
-``` java
+:::
+::: Java Java
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
 public void onLogin(String userId, String userSig) 
@@ -68,11 +65,8 @@ void onSpeedTest(TRTCCloudDef.TRTCSpeedTestResult currentResult, int finishedCou
 {
     // The SDK performs speed test on multiple server IPs and calls back the test result of one IP each time
 }
-```
-
-- **C++**
-
-``` C++
+:::
+::: C++ C++
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
 void onLogin(const char* userId, const char* userSig)
@@ -87,11 +81,8 @@ void TRTCCloudCallbackImpl::onSpeedTest(
 {
     // The SDK performs speed test on multiple server IPs and calls back the test result of one IP each time
 }
-```
-
-* **C#**
-
-```c#
+:::
+::: C# C#
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
 private void onLogin(string userId, string userSig)
@@ -105,8 +96,8 @@ public void onSpeedTest(TRTCSpeedTestResult currentResult, uint finishedCount, u
 {
     // The SDK performs speed test on multiple server IPs and calls back the test result of one IP each time
 }
-```
-
+:::
+</dx-codeblock>
 
 
 
