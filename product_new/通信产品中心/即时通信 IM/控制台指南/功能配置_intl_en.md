@@ -31,13 +31,13 @@ You can enable or disable "Check relationship chain before sending one-to-one ch
 
 ## User Custom Fields
 Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **User Custom Fields**. On the page that appears, you can manage user custom fields according to your business needs.
->You can add up to 20 user custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
+>!You can add up to 20 user custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
 
 ### Adding user custom fields
 
 1. On the **User Custom Fields** page, click **Add user custom field**.
 2. In the "User Custom Field" dialog that appears, enter a name for the custom field and set the field type and read and write permissions.
- >
+ >?
  >- The field name must consist of letters with a maximum length of 8 characters.
  >- You must set at least one read permission and one write permission.
  >
@@ -51,25 +51,25 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
 3. Click **OK** to save the settings.
 
 ## Friend Custom Fields
->You can add up to 20 friend custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
+>!You can add up to 20 friend custom fields. Once set, these fields cannot be deleted, and their names and types cannot be modified. Therefore, plan these fields with caution according to your business needs.
 
 1. Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card.
 2. In the left sidebar, choose **Feature Configuration** > **Friend Custom Fields**.
 3. Click **Add friend custom fields**.
 4. In the "Friend Custom Field" dialog that appears, enter a name for the custom field and set the field type.
- >The field name must consist of letters with a maximum length of 8 characters.
+ >?The field name must consist of letters with a maximum length of 8 characters.
  >
 
 5. Click **OK** to save the settings.
 
 ## Group Member Custom Fields
 Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **Group Member Custom Fields**. On the page that appears, you can manage group member custom fields according to your business needs.
->You can add up to 5 group member custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
+>!You can add up to 5 group member custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
 
 ### Adding group member custom fields
 1. On the **Group Member Custom Fields** page, click **Add group member custom field**.
 2. In the "Group Member Custom Field" dialog that appears, enter a name for the custom field and set the group type and read and write permissions.
-  >
+  >?
   >- The field name can only contain letters, numbers, and underscores (\_), and cannot begin with a number. The maximum length of the name is 16 characters.
   >- A group member custom field and a group custom field cannot have the same name.
   >
@@ -89,12 +89,12 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
 
 ## Group Custom Fields
 Log in to [IM Console](https://console.cloud.tencent.com/im) and click the target app card. In the left sidebar, choose **Feature Configuration** > **Group Custom Fields**. On the page that appears, you can manage group custom fields according to your business needs.
->You can add up to 5 group custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
+>!You can add up to 5 group custom fields. Once set, these fields cannot be deleted, and only the group type and the corresponding read and write permissions can be modified. Therefore, plan these fields with caution according to your business needs.
 
 ### Adding group custom fields
 1. On the **Group Custom Fields** page, click **Add group custom fields**.
 2. In the "Group Custom Field" dialog that appears, enter a name for the custom field and set the group type and read and write permissions.
-  >
+  >?
   >- The field name can only contain letters, numbers, and underscores (\_), and cannot begin with a number. The maximum length of the name is 16 characters.
   >- A group custom field and a group member custom field cannot have the same name.
   >
