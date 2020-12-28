@@ -67,7 +67,7 @@ TencentDB for MySQLは、メモリとディスクの別個課金の販売方式�
 **総費用 = メモリ規格費用 + ストレージ容量費用 + バックアップスペース費用 + トラフィック費用**
 
 #### 課金アイテム
-</table>
+<table>
 <thead>
 </tr>
 <th width="15%">課金アイテム</th>
@@ -95,7 +95,7 @@ TencentDB for MySQLは、メモリとディスクの別個課金の販売方式�
 #### 従量課金制
 
 ##### 高可用性エディション
-</table>
+<table>
   <td rowspan=2>リージョン</td>
   <td colspan=3 >メモリ価格（USD/GB/時間）</td>
   <td rowspan=2 >ディスク（USD/GB/時間）</td>
@@ -236,7 +236,7 @@ TencentDB for MySQLは、メモリとディスクの別個課金の販売方式�
 
 ##### 読み取り専用インスタンス
 
-</table>
+<table>
   <td rowspan=2>リージョン</td>
   <td colspan=3 >メモリ価格（USD/GB/時間）</td>
   <td rowspan=2 >ディスク（USD/GB/時間）</td>
