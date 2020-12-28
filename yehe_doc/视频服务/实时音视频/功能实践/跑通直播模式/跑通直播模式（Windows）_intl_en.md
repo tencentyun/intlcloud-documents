@@ -381,7 +381,7 @@ public void onUserVideoAvailable(string userId, bool available)
 }
 ```
 
->In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
+>!In `TRTCAppSceneLIVE` mode, there is no limit on the number of viewers (TRTCRoleAudience) in one single room.
 
 ### 8. Viewer co-anchors with anchor
 Both the viewer and anchor can switch their roles through the `switchRole` API provided by TRTCCloud. The most common scenario is that the viewer co-anchors with the anchor: the viewer can call this API to turn themselves into an "assistant anchor" and co-anchor with the original "primary anchor" in the room.
