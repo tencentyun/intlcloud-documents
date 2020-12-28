@@ -10,7 +10,7 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 ## 설정 가이드
 ### 설정 조회
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 후, 왼쪽 메뉴바에서 [Domain Management]를 선택한 뒤 도메인 작업 열의 [Manage]를 클릭하여 도메인 설정 페이지로 들어갑니다. Tab을 [Cache Configuration]로 전환하면 [Node Cache Validity Configuration]을 찾을 수 있습니다.
-![](https://main.qcloudimg.com/raw/36ab35d90171b84ec3571ae712d6c396.png)
+![](https://main.qcloudimg.com/raw/834d620b98c9d7d387547e59a7e6a1f4.png)
 
 ### 규칙 추가
 
@@ -20,7 +20,7 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 + 전체 경로 파일: 전체 파일 경로를 지정하여 캐시 만료 시간을 설정합니다. 포맷은 `/index.html` 형식이며, 전체 경로에 매칭되는 파일 유형을 삽입할 수 있습니다. (예: `/test/*.jpg`)
 + 메인 페이지: 기본 루트 디렉터리에 대해 캐시 만료 시간을 설정합니다.
 
-![](https://main.qcloudimg.com/raw/4c2af825001df8ad55f22881e17bd3a9.png)
+<img src="https://main.qcloudimg.com/raw/1a72478ce0bc4fc1ef6a22bcb8064a6b.png" style="width:400px"/>
 **설정 제한:**
 - 도메인당 최대 20개까지 캐시 규칙을 추가할 수 있습니다.
 - 다수 규칙에 우선순위 변경 지원: 하위 우선순위가 상위 우선순위보다 높습니다.
@@ -49,7 +49,7 @@ CDN 노드에 캐시하는 리소스는 직접 관리할 수 없습니다. 원�
 
 ## 설정 예시
 가속 도메인이 `cloud.tencent.com`인 노드 캐시 만료 설정이 다음과 같은 경우,
-![](https://main.qcloudimg.com/raw/36a6bfe2001e73c0a8a24e669c1b3a52.png)
+![](https://main.qcloudimg.com/raw/a585a6b560cb0e555b71e08bea179353.png)
 실제 캐시 시간은 다음과 같습니다.
 1. `/test/def.jpg` 파일의 노드 캐시 시간 400초
 2. `/test/1.png` 파일의 노드 캐시 시간 5분
