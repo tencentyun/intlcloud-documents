@@ -1,24 +1,20 @@
-For the sake of compression performance and ratio, backup files and log files (binlog files) of TencentDB for MariaDB are compressed with LZ4 (Extremely Fast Compression Algorithm). You can use LZ4 for decompression. As common decompression tools do not support this format, this document specifically describes how to use this tool.
-
+For the sake of compression performance and ratio, backup files and log files (binlog files) of TencentDB for MariaDB are compressed with LZ4 (Extremely Fast Compression Algorithm). You can use LZ4 for decompression. This document describes how to use this tool.
 
 ## Windows
-### Downloading the tool
-[Tool download address](https://wiki-jjb-1254408587.cos.ap-chengdu.myqcloud.com/lz4_win64_v1_9_2.zip)
+### Downloading and installing LZ4
+Download LZ4 and follow the instructions provided by the installer to install it.
+The check box in the last step can be deselected if the tool is only used to decompress TencentDB for MariaDB files.
 
-### Installing the tool
-Double-click and decompress the zip file to get `LZ4installv1.4.exe`. Double-click it for installation as prompted.
-The check box in the last step can be ignored if the tool is only used to decompress TencentDB files.
-
-### Decompressing a file
-Right-click the LZ4 file to be decompressed and select **Decode with LZ4**.
+### Decompressing files
+Right click the LZ4 file to be decompressed and select **Decode with LZ4**.
 
 ## Linux
-### Installing the tool
+### Installing LZ4
 There is an LZ4 component in the yum repository of CVM. Log in to your CVM instance and run the following command to install it.
 `$ yum install lz4`
-If a screen similar to the one below is returned after you run **lz4**, the installation is successful:
+The installation is successful if the result is returned as shown below after you execute `lz4`.
 ![](https://main.qcloudimg.com/raw/820a98757f5a5ccb84180f2289c88ddf.png)
 
-### Decompressing a file
-Run the following command to decompress a file:
+### Decompressing files
+Execute the following command to decompress a file.
 `$ lz4 -d xxx.lz4`
