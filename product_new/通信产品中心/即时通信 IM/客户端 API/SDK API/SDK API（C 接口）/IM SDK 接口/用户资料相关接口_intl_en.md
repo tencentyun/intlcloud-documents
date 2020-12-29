@@ -24,7 +24,7 @@ TIM_DECL int TIMProfileGetUserProfileList(const char* json_get_user_profile_list
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> You can use this API to obtain the profile of any person, including yourself.
+>?You can use this API to obtain the profile of any person, including yourself.
 
 
 **Example**
@@ -68,7 +68,7 @@ TIM_DECL int TIMProfileModifySelfUserProfile(const char* json_modify_self_user_p
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> When using this API to modify your own profile, see [UserProfileItem](https://intl.cloud.tencent.com/document/product/1047/34551) for information about the fields that can be modified. You can modify multiple fields at a time. When modifying a custom field, you can add the prefix `Tag_Profile_Custom_` to the entered key value. If you do not add this prefix, the SDK will automatically add this prefix.
+>?When using this API to modify your own profile, see [UserProfileItem](https://intl.cloud.tencent.com/document/product/1047/34551) for information about the fields that can be modified. You can modify multiple fields at a time. When modifying a custom field, you can add the prefix `Tag_Profile_Custom_` to the entered key value. If you do not add this prefix, the SDK will automatically add this prefix.
 
 
 **Example**
@@ -90,5 +90,4 @@ int ret = TIMProfileModifySelfUserProfile(modify_item.toStyledString().c_str(), 
     }
 }, nullptr);
 ```
-
 
