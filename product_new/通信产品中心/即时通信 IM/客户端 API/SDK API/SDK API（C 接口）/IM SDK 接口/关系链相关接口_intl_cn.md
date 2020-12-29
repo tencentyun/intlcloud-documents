@@ -23,7 +23,7 @@ TIM_DECL int TIMFriendshipGetFriendProfileList(TIMCommCallback cb, const void* u
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->此接口通过回调返回所有好友资料 [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551#friendprofile)。
+>?此接口通过回调返回所有好友资料 [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551#friendprofile)。
 
 
 ## TIMFriendshipAddFriend
@@ -50,7 +50,7 @@ TIM_DECL int TIMFriendshipAddFriend(const char* json_add_friend_param, TIMCommCa
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->好友关系有单向和双向好友之分。详情请参考 [添加好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.B7.BB.E5.8A.A0.E5.A5.BD.E5.8F.8B)。
+>?好友关系有单向和双向好友之分。详情请参考 [添加好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.B7.BB.E5.8A.A0.E5.A5.BD.E5.8F.8B)。
 
 
 **示例**
@@ -94,7 +94,7 @@ TIM_DECL int TIMFriendshipHandleFriendAddRequest(const char* json_handle_friend_
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->当自己的个人资料的加好友权限`kTIMUserProfileAddPermission`设置为`kTIMProfileAddPermission_NeedConfirm`时，别人添加自己为好友时会收到一个加好友的请求，可通过此接口处理加好友的请求。
+>?当自己的个人资料的加好友权限`kTIMUserProfileAddPermission`设置为`kTIMProfileAddPermission_NeedConfirm`时，别人添加自己为好友时会收到一个加好友的请求，可通过此接口处理加好友的请求。
 
 
 **示例**
@@ -174,7 +174,7 @@ TIM_DECL int TIMFriendshipDeleteFriend(const char* json_delete_friend_param, TIM
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->删除好友也有删除单向好友还是双向好友之分，[删除好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B)。
+>?删除好友也有删除单向好友还是双向好友之分，[删除好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E5.88.A0.E9.99.A4.E5.A5.BD.E5.8F.8B)。
 
 
 **示例**
@@ -194,7 +194,7 @@ int ret = TIMFriendshipDeleteFriend(json_delete_friend_param.toStyledString().c_
 
 ## TIMFriendshipCheckFriendType
 
-检测好友类型（单向的还是双向的）。
+检测好友类型（单向或双向）。
 
 **原型**
 
@@ -216,7 +216,7 @@ TIM_DECL int TIMFriendshipCheckFriendType(const char* json_check_friend_list_par
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->开发者可以通过此接口检测指定`UserID`列表跟当前帐户的好友关系，检测好友相关内容请参考 [检测好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E5.A5.BD.E5.8F.8B)。
+>?开发者可以通过此接口检测给定的`UserID`列表跟当前账户的好友关系，检测好友相关内容请参考 [检测好友](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E5.A5.BD.E5.8F.8B)。
 
 
 **示例**
@@ -255,7 +255,7 @@ TIM_DECL int TIMFriendshipCreateFriendGroup(const char* json_create_friend_group
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->不能创建已存在的分组。
+>?不能创建已存在的分组。
 
 
 **示例**
@@ -499,7 +499,7 @@ TIM_DECL int TIMFriendshipGetPendencyList(const char* json_get_pendency_list_par
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->好友添加请求未决信息是指好友添加请求未处理的操作。例如，开发者添加对方为好友，对方还没有处理；或者有人添加开发者为好友，开发者还没有处理，称之为好友添加请求未决信息。
+>?好友添加请求未决信息是指好友添加请求未处理的操作。例如，开发者添加对方为好友，对方还没有处理；或者有人添加开发者为好友，开发者还没有处理，称之为好友添加请求未决信息。
 
 
 **示例**
@@ -573,4 +573,5 @@ TIM_DECL int TIMFriendshipReportPendencyReaded(uint64_t time_stamp, TIMCommCallb
 | 类型 | 含义 |
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
+
 
