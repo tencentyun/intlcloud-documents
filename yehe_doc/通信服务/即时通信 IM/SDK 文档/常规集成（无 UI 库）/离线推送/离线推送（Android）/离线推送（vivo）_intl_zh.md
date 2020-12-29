@@ -11,24 +11,25 @@
 
 vivo 手机使用深度定制 Android 系统，对于第三方 App 自启动权限管理很严格，默认情况下第三方 App 都不会在系统的自启动白名单内，App 在后台时容易被系统 kill，因此推荐在 vivo 设备上集成 vivo 推送，vivo 推送 是 vivo 设备的系统级服务，推送到达率较高。目前，**即时通信 IM 仅支持 vivo 推送的通知栏消息**。
 
->
+>!
 >- 此指引文档是直接参考 vivo 推送官方文档所写，若 vivo 推送有变动，请以 [vivo 推送官网文档](https://dev.vivo.com.cn/documentCenter/doc/180) 为准。
 >- 如果不需要对 vivo 设备做专门的离线推送适配，可以忽略此章节。
 
-<span id="Step1"></span>
+[](id:Step1)
 ### 步骤1：申请 vivo 推送证书
 1. 打开 [vivo 开放平台官网](https://dev.vivo.com.cn/home) 进行注册并通过开发者认证。
- >认证过程大约需要3天左右，请务必提前阅读 [vivo 推送服务说明](https://dev.vivo.com.cn/documentCenter/doc/180)，以免影响您的接入进度。
+ >?认证过程大约需要3天左右，请务必提前阅读 [vivo 推送服务说明](https://dev.vivo.com.cn/documentCenter/doc/180)，以免影响您的接入进度。
 2. 登录 vivo 开放平台的管理中心，选择【消息推送】>【创建】>【测试推送】，创建 vivo 推送服务应用。
  vivo 推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。
-<span id="Step1_3"></span>
+[](id:Step1_3)
 3. 记录**`APP ID`**、**`APP key`**和**`APP secret`**信息。
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 步骤2：托管证书信息到即时通信 IM
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
- >如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。
+ >?如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。
+>
  ![](https://main.qcloudimg.com/raw/dff82b17de7577edf2a89bfda2eeed29.png)
  
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
@@ -37,15 +38,15 @@ vivo 手机使用深度定制 Android 系统，对于第三方 App 自启动权�
  - **AppID**：填写 vivo 推送服务应用的 **APP ID**
  - **AppSecret**：填写 vivo 推送服务应用的 **APP secret**
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
-    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
-    ![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
+   当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
+   ![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
     
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 步骤3：集成推送 SDK
->
+>?
 > - 即时通信 IM 默认推送的通知标题为`a new message`。
 > - 阅读此小节前，请确保您已经正常集成并使用即时通信 IM SDK。
 > - 您可以在我们的 demo 里找到 vivo 推送的实现示例，请注意： vivo 推送版本更新时有可能会有功能调整，若您发现本节内容存在差异，烦请您及时查阅 [vivo 推送官网文档](https://dev.vivo.com.cn/documentCenter/doc/155)，并将文档信息差异反馈给我们，我们会及时跟进修改。
@@ -190,10 +191,10 @@ if (IMFunc.isBrandVivo()) {
     });
 </pre>
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 步骤4：上报推送信息至即时通信 IM 服务端
 若您需要通过 vivo 推送进行即时通信 IM 消息的推送通知，必须在**用户登录成功后**通过`TIMManager`中的`setOfflinePushToken`方法将您托管到即时通信 IM 控制台生成的**证书 ID** 及 vivo 推送服务返回的 **regId** 上报到即时通信 IM 服务端。
->正确上报 regId 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用 vivo 推送服务进行推送通知。
+>!正确上报 regId 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用 vivo 推送服务进行推送通知。
 
 以下为 Demo 中的示例代码：
 
@@ -282,13 +283,13 @@ public class ThirdPushTokenMgr {
 
 成功上报证书 ID 及 regId 后，即时通信 IM 服务端会在该设备上的即时通信 IM 用户 logout 之前、App 被 kill 之后，将消息通过 vivo 推送通知到用户端。
 
->
+>?
 >- vivo 推送只支持部分 vivo 手机，详情请参见 [vivo 推送常见问题汇总]( https://dev.vivo.com.cn/documentCenter/doc/156)。
 >- vivo 推送并非100%必达。
 >- vivo 推送可能会有一定延时，通常与 App 被 kill 的时机有关，部分情况下与 vivo 推送服务有关。
 >- 若即时通信 IM 用户已经 logout 或被即时通信 IM 服务端主动下线（例如在其他端登录被踢等情况），则该设备上不会再收到消息推送。
 
-<span id="click"></span>
+[](id:click)
 ## 配置点击通知栏消息事件
 您可以选择点击通知栏消息后**打开应用**、**打开网页**或**打开应用内指定界面**。
 
@@ -336,7 +337,7 @@ public class ThirdPushTokenMgr {
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
     ![](https://main.qcloudimg.com/raw/ffc5c2d46d678a33c4ebb1f4f51d3b33.png)
 
-<span id="section4"></span>
+[](id:section4)
 ## 透传自定义内容
 [添加证书](#Step2) 时设置【点击通知后】为【打开应用】或【打开应用内指定界面】操作才支持透传自定义内容。
 
@@ -367,7 +368,7 @@ public class ThirdPushTokenMgr {
 ### 如果应用使用了混淆，如何防止 vivo 离线推送功能异常？
 
 如果您的应用使用了混淆，为了防止 vivo 离线推送功能异常，您需要 keep 自定义的 BroadcastReceiver，参考添加以下混淆规则：
->以下代码为 vivo 官方示例，请根据实际情况修改后再使用。
+>?以下代码为 vivo 官方示例，请根据实际情况修改后再使用。
 
 ```
 # 请将 com.tencent.qcloud.tim.demo.thirdpush.VIVOPushMessageReceiverImpl 改成您 App 中定义的完整类名
