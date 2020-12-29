@@ -11,7 +11,7 @@
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
->引入路径请自行调整为您本地保存的路径。
+>?引入路径请自行调整为您本地保存的路径。
 - **使用 CDN 资源**
 	使用 CDN 资源，可直接按以下方式引入：
 ```html
@@ -29,7 +29,7 @@ import TcVod from 'vod-js-sdk-v6'
 
 请 [单击此处](https://github.com/tencentyun/vod-js-sdk-v6/tree/master/docs/import-demo) 查看 npm 方式引入的 Demo 源码。
 
->SDK 依赖 Promise，请在低版本浏览器中自行引入。
+>!SDK 依赖 Promise，请在低版本浏览器中自行引入。
 
 
 ###  定义获取上传签名的函数
@@ -42,7 +42,7 @@ function getSignature() {
 };
 ```
 
-> `url`是您派发签名服务的 URL，更多相关信息请参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
+>? `url`是您派发签名服务的 URL，更多相关信息请参见 [客户端上传指引](https://intl.cloud.tencent.com/document/product/266/33921)。
 > `signature`计算规则请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
 
 ###  上传视频示例
@@ -82,7 +82,7 @@ uploader.done().then(function (doneResult) {
 
 ```
 
->
+>?
 >- `new TcVod(opts)`中的 opts 指该接口的相关参数，详细请参见 [TcVod 接口描述](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)。
 >- 上传方法根据用户文件的长度，自动选择普通上传以及分片上传，用户不用关心分片上传的每个步骤，即可实现分片上传。
 
