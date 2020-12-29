@@ -30,7 +30,7 @@ Please note that DEEP ARCHIVE has the following limits that may affect your stor
 
 >?The storage days are counted with 24 hours as 1 day, starting from the time the object was modified.
 
-- **QPS**: 100 requests/sec.
+- **QPS for restoration requests**: 100 requests/sec.
 - **Region**: currently, DEEP ARCHIVE is only available in Beijing, Shanghai, Guangzhou, and Chengdu regions. Many more regions will open up in the future.
 - **Use**: currently, DEEP ARCHIVE cannot be used for MAZ-enabled buckets.
 - **Operation**: objects cannot be uploaded to DEEP ARCHIVE using the APPEND Object API.

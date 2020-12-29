@@ -1,15 +1,15 @@
-このドキュメントでは、Windows Server 2012 OSを例に、CVMのパスワードリセットが失敗する、または有効にならない場合のトラブルシューティング方法と対処方法を説明します。
+このドキュメントでは、Windows Server 2012 OSを例に、CVMのパスワードのリセットが失敗する、または有効にならない場合の確認方法と対処方法を紹介します。
 
-## 障害発生時の現象
+## 障害の現象
 
-- CVMのパスワードをリセットした後、「システムがビジー状態です。インスタンスのパスワードのリセットに失敗しました（7617d94c）」というメッセージが表示されます。
+-CVMのパスワードをリセットした後、「システムがビジー状態です。インスタンスパスワードをリセットできませんでした（7617d94c）」というメッセージが表示されます。
 - CVMのパスワードをリセットした後、新しいパスワードは有効にならず、ログインパスワードは古いパスワードのままです。
 
 
 ## 考えられる原因
 CVMパスワードのリセットが失敗する、または有効にならないのは、次の原因が考えられます。
-- CVMのCloudbase-Initコンポーネントが破損しているか、変更されているか、禁止されているか、起動されていません。
-- CVMにインストールされているセキュリティソフトウェア（360ウイルス対策ソフトウェアなど）により、関連するシステムプロセスのコンポーネントがブロックされました。
+- CVMのCloudbase-Initコンポーネントが破損、変更、無効化されているか、起動されていません。
+- CVMにインストールされているセキュリティソフトウェア（360ウイルス対策ソフトウェアなど）により、関連システムプロセスのコンポーネントがブロックされました。
 
 
 ## トラブルシューティング
@@ -18,13 +18,13 @@ CVMパスワードのリセットが失敗する、または有効にならな�
 
 ### Cloudbase-Initサービスを確認する
 
-1. [VNCを使用してWindowsインスタンスにログインします](https://intl.cloud.tencent.com/document/product/213/32496)。
-2. OS画面で<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>を右クリックして、【実行】を選択して、【ファイル名を指定して実行】ダイアログボックスで、**services.msc**と入力し、**Enter**キーを押して「サービス」ウィンドウを開きます。
+- [VNCを使用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32496)します。
+2. OS画面で<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>を右クリックして、【実行】を選択して、【ファイル名を指定して実行】ダイアログボックスで、services.mscと入力し、Enterキーを押して「サービス」ウィンドウを開きます。
 3. 下の図に示すように、cloudbase-initサービスが存在しているかを確認します。
 ![](https://main.qcloudimg.com/raw/2615f5c0e68a31174c16c9a80884455c.png)
  - 存在する場合は、次のステップを実行します。
  - 存在しない場合は、cloudbase-initサービスを再インストールします。操作手順の詳細については、[Windows OSでCloudbase-Initをインストール](https://intl.cloud.tencent.com/document/product/213/32364)をご参照ください。
-4. 下の図に示すように、cloudbase-init のプロパティをダブルクリックして開きます。 
+4. 下の図に示すように、cloudbase-init のプロパティをダブルクリックして開きます。
 ![](https://main.qcloudimg.com/raw/10702cb2e359d6de36aec4960771c841.png)
 5. 【全般】タブで、cloudbase-initの起動タイプが【自動】に設定されているかどうか確認します。
  - 自動に設定されている場合、次のステップに進みます。
@@ -41,7 +41,7 @@ CVMパスワードのリセットが失敗する、または有効にならな�
 ![](https://main.qcloudimg.com/raw/75580b56e3a28fb9e0559372eb33ff11.png)
  - そうである場合、次のステップを実行します。
  - そうでない場合、LocalScriptsPluginの値を2に設定します。
-11. OS画面で<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>をクリックして、下の図のように、【このコンピュータ】を選択し、デバイスとドライブにCD-ドライブが読み込まれているかどうかを確認します。 
+11. OS画面で<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin: 0;"></img>をクリックして、下の図のように、【このコンピュータ】を選択し、デバイスとドライブにCD-ドライブが読み込まれているかどうかを確認します。
 ![](https://main.qcloudimg.com/raw/8755719fb39bb5f841f4c32897545233.png)
  - そうである場合、[CVMにインストールされているセキュリティソフトウェアを確認する](#CheckSecuritySoftware)。
  - そうでない場合、デバイスマネージャでCD-ROMドライブを起動します。
@@ -66,8 +66,4 @@ C:\Program Files\Cloudbase Solutions\
 C:\Windows\System32\cmd.exe
 C:\Windows\SysWOW64\cmd.exe
 ```
-
-
-
-
 

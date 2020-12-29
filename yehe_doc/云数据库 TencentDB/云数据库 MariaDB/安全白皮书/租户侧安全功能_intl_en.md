@@ -2,18 +2,16 @@ This document describes tenant security features such as MAR, auto failover, and
 
 ## Multi-thread Async Replication (MAR)
 #### Background
-As a database records data in it, to switch between multiple databases, the data in them must be in sync. Therefore, data sync is the foundation of the database high availability solution. Generally, data can be synced in the following process:
-![](https://main.qcloudimg.com/raw/a0e4e4ecbe081857cef9c1c0fa8a1a8c.png)
+As a database records data in it, to switch between multiple databases, the data in them must be in sync. Therefore, data sync is the foundation of the database high availability solution.
 Currently, the open-source MySQL database supports the async and semi-sync data replication modes. However, in both modes, if a node failure occurs, the data may be lost or become incorrect or messy. In addition, the replication mode is serial, which has a low performance.
 
 #### Solution
 In Tencent Cloud's proprietary parallel multi-thread asynchronous replication (MAR, aka strong sync) solution based on the MySQL protocol, when a request is initiated at the application layer, only after a replica node successfully returns a message can the primary node respond to the application layer with a request success, ensuring that the primary and the replica nodes have the same exact data.
-![](https://main.qcloudimg.com/raw/78c845d0d1ee7e557d9ec35cef773b64.png)
-
+![](https://main.qcloudimg.com/raw/b2f406a24d556c7355c7fa05511c4422.png)
 When you perform strong sync replication, the primary database will be hanged if it is disconnected from the replica database or if the replica database fails. If there is only one primary or replica database, the high-availability solution will be unavailable, because if only one single server is used, part of the data will be lost completely when a failure occurs, which does not meet the requirements for finance-level data security.
 Therefore, based on MAR, MariaDB provides a downgradable strong sync solution, which is similar to the semi-sync technology of Google but has a different implementation solution.
 In addition, MariaDB MAR parallelizes the serial sync threads and introduces the worker thread capabilities, which greatly improve the performance. In the same cross-AZ (IDC with a latency of around 10–20 ms) test, the technical performance of MAR is around 5 times that of semi-sync replication on MySQL 5.6 and 1.5 times that of MariaDB Galera Cluster. In OLTP RW (mix read/write in primary/replica architecture), its performance is 1.2 times that of async replication on MySQL 5.7. The comparison of the specific performance tested by the Intel® technical team is as shown below:
-![](https://main.qcloudimg.com/raw/741ecb3bfddc6aae9a6a49a2b31da848.png)
+![](https://main.qcloudimg.com/raw/a10b618ed37483b707d92ebdd91f42a6.png)
 
 ## Auto Failover and Recovery
 In production systems, high availability solutions are often required to ensure uninterrupted system operations. As the core of system data storage and services, the availability requirement for the database is higher than that for computing service resources.
@@ -47,16 +45,16 @@ MariaDB complies with applicable Chinese information security standards and has 
 - PCI DSS Level 1 Service Provider Qualification
 - SOC Audit
 - ITSS Cloud Service Advanced Certification
-- Cybersecurity Classified Protection Level 3 Filing and Evaluation for Public Cloud
-- Trusted Cloud Database Service Certification
-- Trusted Cloud User Data Security Protection Capability Assessment
-- Trusted Cloud Gold Class Operations Special Assessment
+- China's Cybersecurity Classified Protection Level 3 Filing and Evaluation for Public Cloud
+- China's Cybersecurity Classified Protection Level 4 Filling and Evaluation for Finance Cloud
+- Trusted Cloud Database Service Certification Issued by China Academy of Information and Communications Technology (CAICT)
+- Trusted Cloud User Data Security Protection Capability Assessment of China Academy of Information and Communications Technology (CAICT)
+- Trusted Cloud Gold Class Operations Special Assessment of China Academy of Information and Communications Technology (CAICT)
 - ITSS Certification
 - CSA STAR Gold certification and dual certifications for information security management system from CNAS and UKAS
 
 ## Data Security Encryption
-MariaDB supports tablespace encryption (transparent encryption) and connection encryption (SSL connection encryption). In scenarios where Tencent Cloud Key Management Service (KMS) is not utilized, MariaDB supports the keyring service, enabling internal server components and plugins to securely store sensitive data for subsequent retrieval. This service provides a set of APIs for the encryption feature to call KMS.
-
+TencentDB for MariaDB supports connection encryption (SSL connection encryption) which ensures security of the traffic between the database and server.
 
 ## SQL Firewall
 SQL firewall is a security feature that filters out unauthorized SQL statements by analyzing the syntax of SQL statements sent by users. It works with SQL Engine to check whether an SQL statement is on the predefined list of unauthorized SQL statements so as to filter out and block it accordingly, which effectively prevents SQL injection attacks.
