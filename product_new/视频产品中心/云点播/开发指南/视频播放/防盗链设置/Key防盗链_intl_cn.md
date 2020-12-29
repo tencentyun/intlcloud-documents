@@ -29,8 +29,8 @@ QueryString 中的防盗链参数必须按照`t`、`exper`、`rlimit`、`us`、`
 | `us`     | 否   | <li>链接标识，用于随机化一个防盗链 URL，增强链接的唯一性<br><li>建议每次生成防盗链 URL 时，指定一个随机的 us 值|
 | `sign`   | 是   | <li>防盗链签名，以32个字符长的十六进制数表示，用于校验防盗链 URL 的合法性<br><li>签名校验失败将返回403响应码。下面将介绍 [签名计算公式](#formula) |
 
-
-#### <span id="formula"></span>签名计算公式
+<span id="formula"></span>
+#### 签名计算公式
 ```
 sign = md5(KEY + Dir + t + exper + rlimit + us)
 ```
