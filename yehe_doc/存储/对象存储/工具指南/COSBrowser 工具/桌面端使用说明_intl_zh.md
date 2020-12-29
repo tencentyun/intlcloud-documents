@@ -7,6 +7,7 @@
 | Windows  | Windows 7 32/64位以上、Windows Server 2008 R2 64位以上      | [Windows](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe) |
 | macOS    | macOS 10.13以上                                             | [macOS](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.dmg) |
 | Linux    | 需带有图形界面并支持 [AppImage](https://appimage.org/) 格式 | [Linux](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip) |
+| 网页版    | Chrome/FireFox/Safari/IE10+等浏览器 | [Web](https://cosbrowser.cloud.tencent.com/web) |
 
 #### 软件安装
 
@@ -37,6 +38,7 @@ COSBrowser 桌面端仅支持通过云 API 密钥进行登录使用，该密钥�
 #### 2. 查看存储桶详情
 
 您可通过单击存储桶列表右侧的【详情】图标，查看存储桶详情。存储桶详细信息包含存储桶名称、地域、访问权限、版本控制状态。
+
 
 <span id="count"></span>
 
@@ -73,7 +75,7 @@ COSBrowser 支持开启/关闭存储桶版本控制。
 （1）在登录界面直接添加访问路径，并选择好对应的存储桶地域信息，登录完成后，即可管理资源。
 <img src="https://main.qcloudimg.com/raw/5d80a51cd9b9a9c4d14fec9d4275a41d.png" width="90%">
 （2）子账号登录后，在存储桶列表页左上角，单击【添加路径】，并输入指定的路径进入存储桶管理资源。
-<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="90%">
+<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="60%">
 
 <span id="upload"></span>
 

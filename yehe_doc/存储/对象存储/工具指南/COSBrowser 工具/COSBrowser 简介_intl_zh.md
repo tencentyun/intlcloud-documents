@@ -39,13 +39,19 @@ COSBrowser 是腾讯云对象存储 COS 推出的可视化界面工具，让您�
       <td>iOS 11以上</td>
       <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
    </tr>
+   <tr>
+      <td>网页版</td>
+      <td>Web</td>
+      <td>Chrome/FireFox/Safari/IE10+等浏览器</td>
+      <td><a href="https://cosbrowser.cloud.tencent.com/web">Web</a></td>
+   </tr>
 </table>
 
 ## 桌面端功能列表
 
 COSBrowser 桌面端注重对资源的管理，用户可以通过 COSBrowser 批量的上传、下载数据。
 
->COSBrowser 桌面端会使用系统配置的代理来尝试网络连接，请确保您的代理配置正常或请停用无法连接互联网的代理配置。
+> !COSBrowser 桌面端会使用系统配置的代理来尝试网络连接，请确保您的代理配置正常或请停用无法连接互联网的代理配置。
 >
 > - Windows 用户可在操作系统的“Internet 选项”中查询。
 > - macOS 用户可在“网络偏好设置”中查询。

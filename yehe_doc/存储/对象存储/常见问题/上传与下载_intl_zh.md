@@ -1,7 +1,6 @@
 ### COS 对上传和下载带宽是否有限制？
 
-COS 不对上传和下载带宽进行限制，具体的上传和下载速度与您本地带宽有关。
-
+中国大陆公有云地域默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请联系 [售后工程师](https://console.cloud.tencent.com/workorder/category)。
 
 ### 如何使文件直接在浏览器中预览，而不是下载？
 
@@ -105,4 +104,5 @@ COS 现已支持版本控制功能，当存储桶未启用版本控制功能，�
 ### 进行上传文件或创建存储桶等操作时，报错“your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)”该如何处理？
 
 COS 每个主账号下存储桶 ACL 的规则数量最多为1000条，当设置的存储桶 ACL 大于1000条时，会出现此报错，因此建议删除无用的存储桶 ACL 规则。
+
 >?我们不建议使用对象级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时， 请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。

@@ -14,7 +14,7 @@
 2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
-   ![CORS示例](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
+   ![](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
 
 > ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
@@ -23,9 +23,9 @@
 您可以通过以下方式安装 SDK：
 
 #### script 引入
-
+>? [单击此处](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/dist/cos-js-sdk-v5.min.js) 下载最新 cos-js-sdk-v5.min.js。
 ```html
-<script src="./cos-js-sdk-v5.min.js"></script>
+<script src="https://unpkg.com/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js"></script>
 ```
 
 在 script 标签引用 SDK 时，SDK 占用了全局变量名 COS，通过它的构造函数可以创建 SDK 实例。
