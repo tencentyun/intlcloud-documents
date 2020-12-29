@@ -10,17 +10,17 @@ TIC continues to integrate industry-leading products to offer you the best TIC p
 
 ### Free of charge
 
-TIC is completely free of charge. All features are based on open-source technologies independently developed by Tencent Cloud. You will only be billed for cloud resources created using TIC.
+TIC is completely free of charge. All features are based on technologies independently developed by Tencent Cloud and open-source technologies. You will only be billed for the cloud resources created.
 
 ### Multi-cloud support
 
 
 
-As an open platform, TIC allows you to deploy, migrate, and manage cloud resources both in Tencent Cloud and in multi-cloud scenarios. TIC currently supports resource orchestration and configuration management of mainstream cloud service providers, and will support more in the future to meet your business needs.
+As an open platform, TIC allows you to deploy, migrate, and manage cloud resources both in Tencent Cloud and in multi-cloud scenarios. TIC currently supports resource orchestration and configuration management of major cloud service providers, and will support more in the future to meet your business needs.
 
 ### Ease of use
 
-TIC supports Terraform and Ansible and is compatible with the HCL (Terraform) syntax. You can obtain relevant learning materials from the Internet to get started easily. TIC also provides different templates to help you build your own infrastructure by modifying some basic parameters.
+TIC supports Terraform and Ansible and is compatible with the HCL (Terraform) syntax. You can obtain relevant learning materials from the internet to get started easily. TIC also provides different templates to help you build your own infrastructure by modifying some basic parameters.
 
 ### Comprehensive IaC
 
