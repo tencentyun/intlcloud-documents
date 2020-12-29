@@ -6,7 +6,7 @@
 
 **IFRAME** makes it easy for you to release your player code directly without any modification. You do not need to know the content of the code; instead, you just need to copy and paste the code in the corresponding place in the HTML page. The IFRAME tag is highly compatible with mainstream browsers such as Chrome, IE, Safari, and Firefox.
  
->If the user visits the webpage from an iOS or Android mobile device, only HTML5 will be used for playback; if from a PC, Flash will be used preferentially; if the browser does not support Flash, HTML5 will be used; and if HTML5 is not supported, the player will directly display a prompt to download a newer browser.
+>?If the user visits the webpage from an iOS or Android mobile device, only HTML5 will be used for playback; if from a PC, Flash will be used preferentially; if the browser does not support Flash, HTML5 will be used; and if HTML5 is not supported, the player will directly display a prompt to download a newer browser.
 
 ### Does a web player support dynamic watermarking?
 
