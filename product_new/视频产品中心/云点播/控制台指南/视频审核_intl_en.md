@@ -10,7 +10,7 @@ The "Video Audit" page displays video audit results, including the results of au
 	- Filter: you can sort video files by time in ascending or descending order and filter them by audit status, intelligent audit result, or human verification result.
 	- Delete: select the target video files and click **Delete** above the list to delete them in batches. Or, click **Delete** in the row of a single file to delete it directly.
 	
->You need to initiate [video audit](https://intl.cloud.tencent.com/document/product/266/33892) in "Media Assets" to get the video audit result.
+>?You need to initiate [video audit](https://intl.cloud.tencent.com/document/product/266/33892) in "Media Assets" to get the video audit result.
 
 2. Click **View Result** in the row of the desired video file to enter the "Audit Result" page.
 ![](https://main.qcloudimg.com/raw/8f92f1853c4fc5151fda3ba689708064.png)
