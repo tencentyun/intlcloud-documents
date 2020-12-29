@@ -1,4 +1,4 @@
->使用 FCM 离线推送需要手机端安装 Google Play Services 且在中国大陆地区以外使用。
+>!使用 FCM 离线推送需要手机端安装 Google Play Services 且在中国大陆地区以外使用。
 
 ## 离线推送流程
 
@@ -11,9 +11,9 @@
 6. 当客户端 App 在即时通信 IM 没有退出登录的情况下，被系统或者用户 kill 时，即时通信 IM 服务端将通过消息推送进行提醒。
 
 ## 配置离线推送
-<span id="Step1"></span>
+[](id:Step1)
 ### 步骤1：设置 Firebase 和 FCM SDK
->本步骤中的网址为 Firebase 官方网址，需要在中国大陆地区以外才能访问。
+>?本步骤中的网址为 Firebase 官方网址，需要在中国大陆地区以外才能访问。
 
 1. 请参考 [Firebase 云消息传递](https://firebase.google.com/docs/cloud-messaging/android/client) 设置 Firebase，集成 FCM SDK，启动应用后获取设备注册令牌 **token**。
 2. 请参考 [FCM 测试指引](https://firebase.google.com/docs/cloud-messaging/android/first-message?authuser=0) 测试通知消息，确保已成功集成 FCM。
@@ -21,23 +21,24 @@
 4. 单击 Project Overview 右侧的<img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;">，选择【项目设置】>【服务帐号】。
 5. 单击【生成新的私钥】下载私钥文件。
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 步骤2：托管证书信息到即时通信 IM 
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
- >如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。 
+ >?如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。
  >
+![](https://main.qcloudimg.com/raw/31bac91d9ffa638ff3ef584496ef2cf3.png)
 3. 上传 [步骤1](#Step1) 中获取的私钥文件：
  ![](https://main.qcloudimg.com/raw/20e84d1ce9d135e098ff4df1a56d8095.png)
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 步骤3：上报推送信息至即时通信 IM 服务端
 
 在**用户登录成功后**通过`TIMManager`中的`setOfflinePushToken`方法将您托管到即时通信 IM 控制台生成的**证书 ID** 及集成 FCM 后在客户端生成的 **token** 上报到即时通信 IM 服务端。
 
->正确上报 token 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用 FCM 进行推送通知。
+>!正确上报 token 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用 FCM 进行推送通知。
 
 以下为 Demo 中的示例代码：
 
@@ -98,12 +99,12 @@ public class ThirdPushTokenMgr {
 }
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 步骤4：离线推送
 
 成功上报证书 ID 及 token 后，即时通信 IM 服务端会在该设备上的即时通信 IM 用户 logout 之前、App 被 kill 之后将消息通过 FCM 推送通知到用户端。
 
->
+>?
 > - FCM 推送并非100%必达。
 > - FCM 推送可能会有一定延时，通常与 App 被 kill 的时机有关，部分情况下与 FCM 推送服务有关。
 > - 若即时通信 IM 用户已经 logout 或被即时通信 IM 服务端主动下线（例如在其他端登录被踢等情况），则该设备上不会再收到消息推送。
