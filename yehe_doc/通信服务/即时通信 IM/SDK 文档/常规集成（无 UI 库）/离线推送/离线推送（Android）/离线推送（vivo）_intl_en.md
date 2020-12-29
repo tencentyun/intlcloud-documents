@@ -11,24 +11,24 @@ The following is the process of offline message push:
 
 vivo mobile phones use a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not placed in the auto-start allowlist of the system. As apps running in the background are often killed by the system, we recommend that vivo push be integrated on vivo devices. vivo push is a system-grade service for vivo devices, with a high delivery rate. Currently, **IM only supports the notification bar messages of vivo push**.
 
->
+>!
 >- This guide was prepared with direct reference to the official documentation of vivo push. If vivo push is changed, please refer to the [vivo push documentation on the official website](https://dev.vivo.com.cn/documentCenter/doc/180).
 >- If you do not plan to implement a vivo-specific offline push solution, skip this section.
 
-<span id="Step1"></span>
+[](id:Step1)
 ### Step 1: Apply for a vivo Push certificate
 1. Visit the [vivo open platform official website](https://dev.vivo.com.cn/home) and register for an account. Complete developer verification. 
- > The verification process takes about 3 days. Be sure to read the [vivo push service description](https://dev.vivo.com.cn/documentCenter/doc/180) beforehand to facilitate access to the service.
+ >? The verification process takes about 3 days. Be sure to read the [vivo push service description](https://dev.vivo.com.cn/documentCenter/doc/180) beforehand to facilitate access to the service.
 2. Log in to the console of the vivo open platform, choose **Message Push** -> **Create** -> **Test Push**, and create a vivo push service app.
  Once the app is created, you can view detailed app information under **App details**.
-<span id="Step1_3"></span>
+[](id:Step1_3)
 3. Record the following: **`APP ID`, **`APP key`**, and **`APP secret`**.
 
-<span id="Step2"></span>
+[](id:Step2)
 ### Step 2: Generate a Certificate ID
 1. Log in to the [IM Console](https://console.qcloud.com/avc) and click the desired app. The app configuration page appears.
 2. Click **Add a certificate** under **Android push configuration**.
- > If you already have a certificate and only want to change its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
+ >? If you already have a certificate and only want to change its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
 
  ![](https://main.qcloudimg.com/raw/dff82b17de7577edf2a89bfda2eeed29.png)
 3. Use the information you obtained in [Step 1](#Step1_3) to configure the following parameters:
@@ -42,9 +42,9 @@ vivo mobile phones use a highly customized Android system, with very strict mana
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
 5. Record the Certificate ID once it is generated.
 
-<span id="Step3"></span>
+[](id:Step3)
 ### Step 3: Integrate push SDK
->
+>?
 >- The default title of IM push notifications is `a new message`.
 >- Before reading this section, make sure that you have integrated and tested the IM SDK.
 >- You can find a sample for implementation of vivo push in our demo. Note that the features of vivo push may be adjusted during vivo push version updates. If you find any inconsistencies with the content of this section, please refer to the [vivo push documentation on the official website](https://dev.vivo.com.cn/documentCenter/doc/155) and notify us of the difference so that we can make the necessary modifications.
@@ -192,7 +192,7 @@ if (IMFunc.isBrandVivo()) {
 <span id="Step4"></span>
 ### Step 4: Report the push information to the IM server
 If you need to use vivo push to push IM message notifications, then after **successful user login**, you must use the `setOfflinePushToken` method of `TIMManager` to report the **certificate ID** generated and hosted by the IM console and **regId** returned by the vivo push service to the IM server.
-> After the regId and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the vivo push service to push notifications.
+>! After the regId and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the vivo push service to push notifications.
 
 The following is sample code from the demo:
 
@@ -281,13 +281,13 @@ public class ThirdPushTokenMgr {
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via vivo push notifications to the user when the app has been killed but the user has not logged out of IM.
 
->
+>?
 >- Not all vivo devices support vivo Push. For more information, see [vivo Push FAQ](https://dev.vivo.com.cn/documentCenter/doc/156).
 >- vivo push is not 100% successful in reaching the target users.
 >- vivo push may be delayed. Usually, this is related to the timing of app killing. In some cases, it is related to the vivo push service.
 >- If the user logs out, or is logged out by IM (such as when the user logs in on another device), the device will no longer receive push messages.
 
-<span id="click"></span>
+[](id:click)
 ## Configuring Click Events
 You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
 
@@ -335,7 +335,7 @@ You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts 
 3. Select **Open specific app interface** in [Step 2](#Step2) and enter the result above.
     ![](https://main.qcloudimg.com/raw/ffc5c2d46d678a33c4ebb1f4f51d3b33.png)
 
-<span id="section4"></span>
+[](id:section4)
 ## Custom Content Pass Through
 Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2](#Step2) to use custom content pass through.
 
@@ -366,7 +366,7 @@ Clicking a notification bar message triggers a callback of `onNotificationMessag
 ### If the app uses obfuscation, how can I prevent exceptions in the vivo offline push feature?
 
 If your app uses obfuscation, to prevent exceptions in the vivo offline push feature, you need to keep the custom BroadcastReceiver and add obfuscation rules by referring to the following:
-> The following code is an official sample from vivo. Please modify it according to your actual situation before use.
+>? The following code is an official sample from vivo. Please modify it according to your actual situation before use.
 
 ```
 # Change com.tencent.qcloud.tim.demo.thirdpush.VIVOPushMessageReceiverImpl to the complete class name defined in your app.
