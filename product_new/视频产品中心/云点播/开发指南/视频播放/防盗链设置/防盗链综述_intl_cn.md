@@ -21,6 +21,6 @@
 #### 视频允许播放时长控制
 在视频 URL 中指定试看时长（如仅允许播放视频的前5分钟）。通过这种方式，可以实现对未付费用户的试看功能。
 
->
+>?
 >- 关于 Referer 防盗链，更多详情请参见 [Referer 防盗链](https://intl.cloud.tencent.com/document/product/266/33985)。
 >- 关于 Key 防盗链，更多详情请参见 [Key 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。
