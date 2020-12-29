@@ -3,7 +3,7 @@ All layer-4 (TCP/UDP/TCP SSL) and layer-7 (HTTP/HTTPS) CLB services support gett
 - For layer-4 CLB, the source IP obtained on the backend CVM instance is the client IP.
 - For layer-7 CLB, you can use the `X-Forwarded-For` or `remote_addr` field to directly get the client IP. For the access logs of layer-7 CLB, please see [Storing Access Logs in CLS](https://intl.cloud.tencent.com/document/product/214/35063). 
 
->
+>?
 - For CLB, the client IP can be directly obtained with no additional configuration required on the backend CVM instance.
 - For other layer-7 load balancing services with SNAT enabled, you need to configure the backend CVM instance and then use `X-Forwarded-For` to get the real client IP.
 
@@ -89,5 +89,3 @@ real_ip_header X-Forwarded-For;
 ```
 service nginx restart
 ```
-
-
