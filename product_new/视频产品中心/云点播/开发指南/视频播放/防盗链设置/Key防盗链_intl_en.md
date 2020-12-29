@@ -6,7 +6,7 @@
 - A CDN node controls video playback requests by checking the parameters and signature in the video URL. If a request fails to pass the check, a 403 error will be returned.
 - Supported file formats include MP4, TS, M3U8, FLV, AAC, MOV, WMV, AVI, MP3, RMVB, MKV, MPG, 3GP, WEBM, M4V, ASF, F4V, WAV, MPEG, VOB, RM, WMA, DAT, M4A, MPD, and M4S.
 
->For more information on enabling key hotlink protection, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060#key-.E9.98.B2.E7.9B.97.E9.93.BE).
+>?For more information on enabling key hotlink protection, please see [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/14060#key-.E9.98.B2.E7.9B.97.E9.93.BE).
 
 ## How to Generate a Hotlink Protection URL
 - All your videos in VOD has an **original video URL**. If hotlink protection is not enabled, the original video URL can be used to play back the video.
