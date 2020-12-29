@@ -4,7 +4,7 @@ You can download a CDN access log for the last 30 days, which contains the detai
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod) and click **Download Log** > **CDN Log** on the left sidebar.
 2. Select the desired time range and domain name, and click **OK** to get the log download link.
 ![](https://main.qcloudimg.com/raw/5da8ab89237962c2900798525de41ba2.png)
->
+>?
 >- No access logs will be generated for a day on which there is no request received, and you will see "No Data" on the page.
 >- By default, the CDN logs requests on an hourly basis, that is, there can be up to 24 log files generated per day. No logs will be generated for the hour in which there is no request received.
 >- CDN logs can be delayed by approximately 30 minutes.
@@ -40,4 +40,4 @@ Decompress the downloaded log data packages and view the log files in text forma
   2: China Telecom; 26: China Unicom; 38: CERNET; 43: Great Wall Broadband Network; 1046: China Mobile; 3947: China Mobile Tietong; -1: Overseas ISP; 0: Other ISPs.
 
 
->The bandwidth or traffic data recorded in logs is the returned data at the application layer (HTTP protocol), which is smaller than that calculated at the TCP layer due to such factors as TCP protocol packet loss, three-way handshake, and retransmission.
+>!The bandwidth or traffic data recorded in logs is the returned data at the application layer (HTTP protocol), which is smaller than that calculated at the TCP layer due to such factors as TCP protocol packet loss, three-way handshake, and retransmission.
