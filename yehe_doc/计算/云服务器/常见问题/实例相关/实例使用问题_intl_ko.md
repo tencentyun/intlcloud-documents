@@ -50,7 +50,7 @@ Tencent Cloud CVM에서는 일반 서버를 제공하며, 멀티미디어 서버
 ### CVM은 기본으로 데이터베이스를 제공하나요?
 ### CVM은 기본으로 데이터베이스를 제공하지 않습니다. 다음과 같이 작업하실 수 있습니다.
 - 데이터베이스 자체 배포, 예시 [MySQL 데이터베이스 설치](https://intl.cloud.tencent.com/document/product/213/10190)
-- [TencentDB MySQL]|(https://intl.cloud.tencent.com/product/cdb) 서비스 단독 구매.
+- [TencentDB MySQL](https://intl.cloud.tencent.com/product/cdb) 서비스 단독 구매.
 
 ### CVM에 데이터베이스를 구축할 수 있나요?
 구축할 수 있습니다. 필요에 따라 CVM의 제한을 받지 않고, 데이터베이스 소프트웨어 설치 및 환경 설정을 하실 수 있습니다. 한편, [Tencent CDB MySQL](https://intl.cloud.tencent.com/product/cdb) 서비스를 단독 구매하실 수도 있습니다.
