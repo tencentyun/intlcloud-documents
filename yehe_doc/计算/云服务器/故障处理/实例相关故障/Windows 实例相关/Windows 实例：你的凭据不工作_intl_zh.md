@@ -5,9 +5,8 @@ Windows 操作系统的本地计算机通过 RDP 协议（如 MSTSC 方式）远
 ![](https://main.qcloudimg.com/raw/47a299873e3df8f1f160c1594fc56644.png)
 
 ## 处理步骤
->? 以 Windows Server 2012 操作系统为例，根据操作系统的版本不同，详细操作步骤略有区别。
+>? 以 Windows Server 2012 操作系统的腾讯云云服务器为例，根据操作系统的版本不同，详细操作步骤略有区别。
 > 请按照以下步骤依次排查，并在每一个步骤执行完后重新连接 Windows 云服务器验证问题是否解决，如未生效请继续执行下一步骤。
->
 
 ### 步骤1：修改网络访问策略
 1. [使用 VNC 登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/32496)。
