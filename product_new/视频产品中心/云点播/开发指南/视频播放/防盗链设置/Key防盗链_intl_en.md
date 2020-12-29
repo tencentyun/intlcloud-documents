@@ -29,8 +29,8 @@ The hotlink protection parameters in `QueryString` must be spliced in the order 
 | `us` | No | <li>Link ID. It is used to randomize a hotlink protection URL in order to improve the uniqueness of the link. <br><li>You are recommended to specify a random `us` value when generating a hotlink protection URL each time. |
 | `sign` | Yes | <li>Hotlink protection signature. It is a hexadecimal number with a length of 32 characters and used to check the validity of a hotlink protection URL. <br><li>A 403 error will be returned if a URL fails to pass the signature check. Below is the [signature calculation formula](#formula). |
 
-
-#### <span id="formula"></span>Signature calculation formula
+<span id="formula"></span>
+#### Signature calculation formula
 ```
 sign = md5(KEY + Dir + t + exper + rlimit + us)
 ```
