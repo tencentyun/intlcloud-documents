@@ -24,7 +24,7 @@ TIM_DECL int TIMLogin(const char* user_id, const char* user_sig, TIMCommCallback
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Users can send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information, including the UserID and UserSig. For more information about these parameters, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
+>?Users can send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information, including the UserID and UserSig. For more information about these parameters, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 
 
 ## TIMLogout
@@ -50,6 +50,6 @@ TIM_DECL int TIMLogout(TIMCommCallback cb, const void* user_data);
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Call this API if you need to log out of the server or switch to another user.
+>?Call this API if you need to log out of the server or switch to another user.
 
 

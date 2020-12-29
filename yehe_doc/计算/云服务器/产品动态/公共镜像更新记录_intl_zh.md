@@ -1,14 +1,7 @@
 >!
 >- 不同地域的镜像更新时间可能不同，本文所提供的镜像更新时间为全地域镜像更新时间。
->- 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [附录：官方维护时间](#OfficialMaintenanceTime)。
+>- 腾讯云提供的公共镜像维护周期将与官方公布的维护周期保持一致。官方公布维护时间信息请参见 [附录：官方维护时间](#附录：官方维护时间)。
 >
-
-## CoreOS
-根据 CoreOS 社区发布的公告，2020年5月26日后社区官方不再支持和更新 CoreOS Container Linux。为此腾讯云做出以下说明：
-- 2020年10月30日之后，您将无法使用腾讯云提供的 CoreOS Container Linux 创建云服务器 CVM。
-- 从2020年5月26日起，腾讯云会停止为 CoreOS Container Linux 提供技术协助，但已安装 CoreOS Container Linux 的 CVM 实例可不受影响继续使用。由于此操作系统生命周期已结束，官方不再提供安全更新补丁，腾讯云不建议您继续使用该镜像。
-- Fedora CoreOS 社区推荐 Fedora CoreOS 操作系统替代 CoreOS Container Linux，腾讯云也将于2020年9月上线 Fedora CoreOS 公共镜像。
-
 
 ## CentOS
 <table>
@@ -206,8 +199,7 @@
 </table>
 
 
-## [附录：官方维护时间](id:OfficialMaintenanceTime)
-
+## 附录：官方维护时间
 
 ### CentOS
 CentOS 官方公示结束支持（EOL）日期信息如下表，更多信息请参见 [CentOS 产品规范](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)。
@@ -272,7 +264,7 @@ Ubuntu 官方公示长期支持时间信息如下表，更多信息请参见 [Lo
 <td>2020年初 - 2022年中</td>
 <td>2022年中 - 2024年底</td>
 <td>-</td>
-<td>2024年底 - 2030年除</td>
+<td>2024年底 - 2030年初</td>
 </tr>
 <tr>
 <td>Ubuntu 20.10 <br>(v5.8)</td>

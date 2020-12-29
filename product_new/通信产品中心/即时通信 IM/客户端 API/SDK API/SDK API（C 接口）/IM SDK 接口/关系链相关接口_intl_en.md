@@ -23,7 +23,7 @@ TIM_DECL int TIMFriendshipGetFriendProfileList(TIMCommCallback cb, const void* u
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> The callback set by this API returns all friend profiles. For more information, see [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551).
+>?The callback set by this API returns all friend profiles. For more information, see [FriendProfile](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 ## TIMFriendshipAddFriend
@@ -50,7 +50,7 @@ TIM_DECL int TIMFriendshipAddFriend(const char* json_add_friend_param, TIMCommCa
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Friend relationships are classified as two-way friends and one-way friends. For more information, see [Adding friends](https://intl.cloud.tencent.com/document/product/1047/33521).
+>?Friend relationships are classified as two-way friends and one-way friends. For more information, see [Adding friends](https://intl.cloud.tencent.com/document/product/1047/33521).
 
 
 **Example**
@@ -94,7 +94,7 @@ TIM_DECL int TIMFriendshipHandleFriendAddRequest(const char* json_handle_friend_
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> If `kTIMUserProfileAddPermission` is set to `kTIMProfileAddPermission_NeedConfirm` in your profile, you will receive a friend request when someone adds you as a friend. You can process the request through this API.
+>?If `kTIMUserProfileAddPermission` is set to `kTIMProfileAddPermission_NeedConfirm` in your profile, you will receive a friend request when someone adds you as a friend. You can process the request through this API.
 
 
 **Example**
@@ -174,7 +174,7 @@ TIM_DECL int TIMFriendshipDeleteFriend(const char* json_delete_friend_param, TIM
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Friend deletion is classified as one-way deletion and two-way deletion. For more information, see [Deleting friends](https://intl.cloud.tencent.com/document/product/1047/33521).
+>?Friend deletion is classified as one-way deletion and two-way deletion. For more information, see [Deleting friends](https://intl.cloud.tencent.com/document/product/1047/33521).
 
 
 **Example**
@@ -216,7 +216,7 @@ TIM_DECL int TIMFriendshipCheckFriendType(const char* json_check_friend_list_par
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Developers can use this API to check the friend relationship between the provided `UserID` list and the current account. For more information, see [Verifying friends](https://intl.cloud.tencent.com/document/product/1047/33521).
+>?Developers can use this API to check the friend relationship between the provided `UserID` list and the current account. For more information, see [Verifying friends](https://intl.cloud.tencent.com/document/product/1047/33521).
 
 
 **Example**
@@ -255,7 +255,7 @@ TIM_DECL int TIMFriendshipCreateFriendGroup(const char* json_create_friend_group
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> You cannot create a group that already exists.
+>?You cannot create a group that already exists.
 
 
 **Example**
@@ -499,7 +499,7 @@ TIM_DECL int TIMFriendshipGetPendencyList(const char* json_get_pendency_list_par
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> Pending friend request information refers to friend requests that are not handled. For example, a developer sends a friend request to a user, but the user does not handle the request. Alternatively, a user sends a friend request to the developer, but the developer does not handle the request.
+>?Pending friend request information refers to friend requests that are not handled. For example, a developer sends a friend request to a user, but the user does not handle the request. Alternatively, a user sends a friend request to the developer, but the developer does not handle the request.
 
 
 **Example**
@@ -573,4 +573,5 @@ TIM_DECL int TIMFriendshipReportPendencyReaded(uint64_t time_stamp, TIMCommCallb
 | Type | Description |
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
+
 

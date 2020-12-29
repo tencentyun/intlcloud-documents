@@ -23,7 +23,7 @@ Currently, both public network CLB and private network CLB support alarming at t
 All CLB instances except private network Classic ones support alarming at the following two level:
 1. Listener level
 You can configure the number of exceptional real server ports of a listener for exception statistics of all bound server ports under the listener, which will trigger alarms based on the configured threshold. As shown below, the number of exceptional ports of all real servers under the selected listener is collected once every minute; if the number is greater than 10 per second for two consecutive reference period, it will trigger an alarm once per day.
->To activate listener-level alarming, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
+>?To activate listener-level alarming, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application.
 
  - Configure alarm objects:
 ![](https://main.qcloudimg.com/raw/bf26227edb359e6f7acd01febbbc38c9.png)
@@ -35,7 +35,7 @@ You can configure exception alarms for a specified port of a real server bound t
 ![](https://main.qcloudimg.com/raw/e1d947188535eac4189254ba0e8a26cb.png)
  - Configure trigger conditions:
 ![](https://main.qcloudimg.com/raw/80e4072ba35d426e4503a7b64ea63865.png)
->
+>!
 >- Real server port exception: it means that CLB finds the port of the real server unavailable; in some cases, network jitter can also trigger port exceptions.
 >- Statistics at the listener level include port status of all real servers under the listener, from single alarm convergence to threshold alarming. To avoid the impact of network jitter, we recommend you to use listener-level alarming.
 
@@ -67,3 +67,4 @@ You can configure unique monitoring metric alarm policies for all layer-7 (HTTP/
 | 5xx status code returned by CLB | - | Number of 5xx status codes returned by CLB within a reference period. |
 | 404 status code returned by CLB | - | Number of 404 status codes returned by CLB within a reference period. |
 | 502 status code returned by CLB | - | Number of 502 status codes returned by CLB within a reference period. |
+

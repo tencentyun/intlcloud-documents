@@ -21,6 +21,6 @@ It specifies the number of viewers that can access the video URL. Devices that a
 #### Video playback duration control
 It specifies the preview duration in a video URL (e.g., the first five minutes of a video) to implement preview for non-paying users.
 
->
+>?
 >- For more information on referer hotlink protection, please see [Referer Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33985).
 >- For more information on key hotlink protection, please see [Key Hotlink Protection](https://intl.cloud.tencent.com/document/product/266/33986).

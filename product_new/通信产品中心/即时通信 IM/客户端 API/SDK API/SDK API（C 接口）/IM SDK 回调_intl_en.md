@@ -18,7 +18,7 @@ typedef void (*TIMRecvNewMsgCallback)(const char* json_msg_array, const void* us
 | json_msg_array | Const char\* | New message array |
 | user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-> This callback is used to obtain the newly received message array. Note that the elements in the message are also an array, and each element is defined by `elem_type`.
+>?This callback is used to obtain the newly received message array. Note that the elements in the message are also an array, and each element is defined by `elem_type`.
 
 
 **Example 1: parse the message array.**
@@ -607,7 +607,7 @@ typedef void (*TIMMsgUpdateCallback)(const char* json_msg_array, const void* use
 | json_msg_array | const char\* | Updated message array |
 | user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-> For details, see [TIMRecvNewMsgCallback](#timrecvnewmsgcallback).
+>?For details, see [TIMRecvNewMsgCallback](#timrecvnewmsgcallback).
 
 
 ## IM SDK API Callbacks
@@ -632,10 +632,10 @@ typedef void (*TIMCommCallback)(int32_t code, const char* desc, const char* json
 | json_params | Const char\* | JSON string, which varies with APIs. |
 | user_data | Const void\* | User-defined data, which is passed through by the IM SDK without being processed. |
 
-> All the callbacks need to check whether the value of code is ERR_SUC. If not, the API failed to be called, and the specific cause of the failure is revealed by the parameters code and desc. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+>?All the callbacks need to check whether the value of code is ERR_SUC. If not, the API failed to be called, and the specific cause of the failure is revealed by the parameters code and desc. For details, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 
 
->
+>?
 For the following APIs, the TIMCommCallback parameter json_params is a "" null string:
 - [TIMLogin](https://intl.cloud.tencent.com/document/product/1047/34390#timlogin)
 - [TIMLogout](https://intl.cloud.tencent.com/document/product/1047/34390#timlogout)

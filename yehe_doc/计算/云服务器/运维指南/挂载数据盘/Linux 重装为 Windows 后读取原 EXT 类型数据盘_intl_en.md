@@ -2,7 +2,7 @@
 ## Scenario
 Windows employs two major file systems, NTFS or FAT32, while EXT is the de factor file system for Linux. When an operating system is changed from Linux to Windows after reinstallation, the data disk remains in its original format. Therefore, the system might not be able to access data disk’s file system. In these cases, you will need to use a format converter to read the data disk. 
 
-This document describes how to read a data disk when the operating system has been [reinstalled] (https://intl.cloud.tencent.com/document/product/213/4933) from Linux to Windows.
+This document describes how to read a data disk when the operating system has been [reinstalled](https://intl.cloud.tencent.com/document/product/213/4933) from Linux to Windows.
 
 
 ## Prerequisites

@@ -13,7 +13,7 @@ TIM_DECL int TIMInit(uint64_t sdk_app_id, const char* json_sdk_config);
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| sdk_app_id | uint64_t | 官网申请的 SDKAppID  |
+| sdk_app_id | uint64_t | 官网申请的 SDKAppID |
 | json_sdk_config | const char\* | IM SDK 配置选项 JSON 字符串，详情请参考 [SdkConfig](https://intl.cloud.tencent.com/document/product/1047/34551#sdkconfig)  |
 
 **返回值**
@@ -22,7 +22,7 @@ TIM_DECL int TIMInit(uint64_t sdk_app_id, const char* json_sdk_config);
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功，其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->
+>?
 - 在使用 IM SDK 进一步操作之前，需要先初始化 IM SDK。
 - `json_sdk_config`可以为`NULL`空字符串指针或者""空字符串，在此情况下 SdkConfig 均为默认值。
 - `json_sdk_config`里面的每个 JSON key 都是选填的，详情请参考 [SdkConfig](https://intl.cloud.tencent.com/document/product/1047/34551#sdkconfig)。
@@ -64,7 +64,7 @@ TIM_DECL int TIMUninit(void);
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功，其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->卸载 DLL 或退出进程前需此接口卸载 IM SDK，清理 IM SDK 相关资源。
+>?卸载 DLL 或退出进程前需此接口卸载 IM SDK，清理 IM SDK 相关资源。
 
 
 **示例**
@@ -116,7 +116,7 @@ TIM_DECL int TIMSetConfig(const char* json_config, TIMCommCallback cb, const voi
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->`json_config`可以填`NULL`空字符串指针或者""空字符串，此时若回调 cb 不为空，则通过回调 cb，返回当前所有的配置信息。目前支持设置的配置有 HTTP 代理的 IP 和端口、SOCKS5 代理的 IP 和端口、输出日志的级别、获取群信息/群成员信息的默认选项、是否接受消息已读回执事件等。HTTP 代理的 IP 和端口、SOCKS5 代理的 IP 和端口建议调用 [TIMInit](#timinit) 之前配置。每项配置可以单独设置，也可以一起配置，详情请参考 [SetConfig](https://intl.cloud.tencent.com/document/product/1047/34551#setconfig)。
+>?`json_config`可以填`NULL`空字符串指针或者""空字符串，此时若回调 cb 不为空，则通过回调 cb，返回当前所有的配置信息。目前支持设置的配置有 HTTP 代理的 IP 和端口、SOCKS5 代理的 IP 和端口、输出日志的级别、获取群信息/群成员信息的默认选项、是否接受消息已读回执事件等。HTTP 代理的 IP 和端口、SOCKS5 代理的 IP 和端口建议调用 [TIMInit](#timinit) 之前配置。每项配置可以单独设置，也可以一起配置，详情请参考 [SetConfig](https://intl.cloud.tencent.com/document/product/1047/34551#setconfig)。
 
 
 **示例一、**
@@ -212,5 +212,4 @@ if (TIM_SUCC != TIMSetConfig(json_config.toStyledString().c_str(), [](int32_t co
     //TIMSetConfig 接口调用失败
 }
 ```
-
 

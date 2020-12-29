@@ -11,7 +11,7 @@ If webpack is not used, a `script` tag can be used for import in the following w
 ```html
 <script src="./vod-js-sdk-v6.js"></script>
 ```
->Modify the value of `src` to the path to the source code you saved locally.
+>?Modify the value of `src` to the path to the source code you saved locally.
 - **Import with CDN**
 	Import with CDN in the following ways:
 ```html
@@ -29,7 +29,7 @@ import TcVod from 'vod-js-sdk-v6'
 
 Click [here](https://github.com/tencentyun/vod-js-sdk-v6/tree/master/docs/import-demo) to view the source code of the demo imported through npm.
 
->The SDK relies on Promise, which should be imported if your browser version is low.
+>!The SDK relies on Promise, which should be imported if your browser version is low.
 
 
 ### Defining the function to get an upload signature
@@ -42,7 +42,7 @@ function getSignature() {
 };
 ```
 
-> `url` is the URL of your signature distribution service. For more information, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from client.
+>? `url` is the URL of your signature distribution service. For more information, please see [Guide](https://intl.cloud.tencent.com/document/product/266/33921) for upload from client.
 > For details on how to calculate `signature`, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
 
 ### Video upload example
@@ -82,7 +82,7 @@ uploader.done().then(function (doneResult) {
 
 ```
 
->
+>?
 >- `opts` in `new TcVod(opts)` refers to parameters of the `TcVod` API. For more information, please see [API Description](#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
 >- The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
 
