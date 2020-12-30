@@ -10,7 +10,7 @@ For details, please see use limits section in [Use Limits Overview](https://intl
 
 ### What is the basic information of an ENI?
 
-Please see **Concepts** in [Elastic Network Interface (ENI)](https://intl. cloud.tencent.com/document/product/213/6514).
+Please see **Concepts** in [Elastic Network Interface (ENI)](https://intl.cloud.tencent.com/document/product/213/6514).
 
 ### How do I create an ENI?
 
