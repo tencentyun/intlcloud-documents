@@ -1,7 +1,7 @@
 ## 登录
 用户登录腾讯后台服务器后才能正常收发消息，登录需要用户提供 `UserID`、`UserSig` 等信息，具体含义可参阅 [登录鉴权](https://intl.cloud.tencent.com/document/product/1047/33517) 。
 
->
+>!
 >- 如果此用户在其他终端被踢，登录将会失败，返回错误码（`ERR_IMSDK_KICKED_BY_OTHERS：6208`）。开发者必须进行登录错误码 `ERR_IMSDK_KICKED_BY_OTHERS` 的判断。关于被踢的详细描述，请参考 [用户状态变更](https://intl.cloud.tencent.com/document/product/1047/34312)。
 >- 如果用户保存用户票据，可能会存在过期的情况，如果用户票据过期，`login` 将会返回 `70001` 错误码，开发者可根据错误码进行票据更换。
 
@@ -76,7 +76,7 @@ TIMManager.getInstance().logout(new TIMCallBack() {
 
 如用当前网络异常，或者想在不调用 `login` 的时候查看用户消息，可调用 `TIMManager` 中的 `initStorage` 方法初始化存储，完成后可获取会话列表和消息。
 
->
+>!
 > * 这个方法仅供登录失败或者没有网络的情况下查看历史消息使用，**如需要收发消息，请务必调用登录接口 `login`**。
 > * 如果登录成功，IM SDK 会自动初始化本地存储，无需手动调用这个接口。
 
@@ -133,6 +133,6 @@ conversation.getLocalMessage(5, null, new TIMValueCallBack<List<TIMMessage>>() {
 public String getLoginUser()
 ```
 
->返回值为当前登录的用户名，如果是自有帐号登录，用户名与登录所传入的 `identifier` 相同，如果是第三方帐号，例如微信登录，QQ 登录等，登录后会有内部转换过的 `identifier`，后续搜索好友，入群等，都需要使用转换后的 `identifier` 操作。
+>!返回值为当前登录的用户名，如果是自有帐号登录，用户名与登录所传入的 `identifier` 相同，如果是第三方帐号，例如微信登录，QQ 登录等，登录后会有内部转换过的 `identifier`，后续搜索好友，入群等，都需要使用转换后的 `identifier` 操作。
 
 
