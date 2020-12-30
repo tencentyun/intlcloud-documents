@@ -15,14 +15,14 @@
 >
 2. 구매 완료 후, 필요에 따라 중국 리전 Windows 클라우드 서버 로그인 방식을 선택하십시오:
  - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
- - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35703)
+ - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32498)
  - [VNC로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)
 3. 홍콩 리전의 Windows 클라우드 서버 내에서 필요에 따라 북미 리전 클라우드 서버 로그인 방식을 선택하십시오.
  - 북미 리전의 Linux 클라우드 서버 로그인하기
     - [표준 로그인 방식으로 Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5436)
-    - [원격 로그인 소프트웨어로  Linux 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35699)
+    - [원격 로그인 소프트웨어로  Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32502)
     - [VNC로 Linux 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32494)
  - 북미 리전의 Windows 클라우드 서버에 로그인하기 
     - [RDP 파일로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/5435)
-    - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://cloud.tencent.com/document/product/213/35703)
+    - [원격 데스크톱 연결로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32498)
     - [VNC로 Windows 클라우드 서버에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)
