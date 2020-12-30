@@ -333,7 +333,7 @@ public TIMUserConfig setMessageRevokedListener(@NonNull TIMMessageRevokedListene
 
 ## New Message Notifications
 
-In most cases, users need to be notified of new messages. Therefore, register the new message notification callback `TIMMessageListener`. When the user logs in, C2C offline messages and recent contacts will be pulled. To ensure that users do not miss message notifications, we recommend registering new message notifications before login.
+In most cases, users need to be notified of new messages. Therefore, register the new message notification callback `TIMMessageListener`. When the user logs in, C2C offline messages and recent contacts will be pulled. To ensure that users do not miss message notifications, we recommend registering new message notifications before login
 
 >! The IM SDK calls back all messages that are not stored locally to the upper-level app through registered message notifications.
 
@@ -368,7 +368,7 @@ A deleted listener will not be called. **The following is the prototype for mess
 public void removeMessageListener(TIMMessageListener listener)
 ```
 
-The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images. 
+The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images, please see [Sending and Receiving Messages (Android)](https://intl.cloud.tencent.com/document/product/1047/36401).
 
 **Example:**
 
