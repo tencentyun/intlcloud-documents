@@ -301,7 +301,7 @@ public TIMUserConfig disableStorage()
 
 ### 会话刷新监听
 
-默认登录后会异步获取 C2C 离线消息、最近联系人以及同步资料数据（如果有开启 IM SDK 存储，可参见 [关系链资料存储](https://intl.cloud.tencent.com/zh/document/product/1047/39158) 及 [群资料存储](https://intl.cloud.tencent.com/zh/document/product/1047/36271)），同步完成后会通过会话刷新监听器 `TIMRefreshListener` 中的 `onRefresh` 回调通知更新界面，用户得到这个消息时，可以刷新界面，例如会话列表的未读等。
+默认登录后会异步获取 C2C 离线消息、最近联系人以及同步资料数据（如果有开启 IM SDK 存储，可参见 [关系链资料存储](https://intl.cloud.tencent.com/document/product/1047/39158) 及 [群资料存储](https://intl.cloud.tencent.com/document/product/1047/36271)），同步完成后会通过会话刷新监听器 `TIMRefreshListener` 中的 `onRefresh` 回调通知更新界面，用户得到这个消息时，可以刷新界面，例如会话列表的未读等。
 
 >!如果不需要离线消息，可以在发消息时[发送在线消息](https://intl.cloud.tencent.com/document/product/1047/36401)。
 
