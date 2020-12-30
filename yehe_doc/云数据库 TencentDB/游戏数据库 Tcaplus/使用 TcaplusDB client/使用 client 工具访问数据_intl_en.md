@@ -10,7 +10,6 @@ The release package of TcaplusServiceAPI for Linux x86_64 contains the `tcaplus_
 | Version | Release Date | OS | Package Download Address |
 | ------------- | ---------- | ------------ | ------------------------------------------------------------ |
 | 3.36.0.192960 | 2020/04/21 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz) |
-| 3.50.1.200112 | 2020/09/07 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.50.0.200907/TcaplusServiceApi3.50.1.200112.x86_64_release_20200907%20(1).tar.gz) |
 
 
 >?The relevant operations need to be performed on the CVM instance in the same VPC and subnet under your Tencent Cloud account as your TcaplusDB instance.
