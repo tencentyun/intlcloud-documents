@@ -10,7 +10,7 @@ Two minutes before the interruption, we will notify you in the form of metadata 
 For more information, please see [Querying the Repossession Status of a Spot Instance](https://intl.cloud.tencent.com/document/product/213/32487).
 
 ### How to automatically apply for spot instances after inventory recovery?
-You can use cloud products that can automatically maintain the CVM cluster, such as [BatchCompute] (http://console.cloud.tencent.com/batch/env), [Auto Scaling] (http://console.cloud.tencent.com/autoscaling). With their cross-model and cross-availability zone capabilities, you can maintain a specified number of CVM clusters more effectively.
+You can use cloud products that can automatically maintain the CVM cluster, such as [BatchCompute](http://console.cloud.tencent.com/batch/env), [Auto Scaling](http://console.cloud.tencent.com/autoscaling). With their cross-model and cross-availability zone capabilities, you can maintain a specified number of CVM clusters more effectively.
 
 ## Price and Billing
 ### What are the similarities and differences between spot instances and pay-as-you-go instances?
@@ -47,8 +47,8 @@ No. Each user can have up to 50 spot instance vCPU cores in each availability zo
 ### Can I upgrade or downgrade the specifications of spot instances?
 Upgrading or downgrading the specifications of spot instances is not supported.
 
-Do spot instances support no charges when shut down?
+### Do spot instances support no charges when shut down?
 Spot instances do not support no charges when shut down.
 
-Do spot instances support system re-installation?
+### Do spot instances support system re-installation?
 Spot instances do not support system re-installation.
