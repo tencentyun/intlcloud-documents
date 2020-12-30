@@ -16,8 +16,8 @@ CVM shutdown, hardware failure, and high CPU/memory/bandwidth usage may all caus
 2. <span id="Server_step02">Click the ID/name of the instance to enter its details page.</span>
 3. Select the **Monitoring** tab to view the instance resource usage, as shown below:
 ![](https://main.qcloudimg.com/raw/b8396a4507dd6a9808f9907b90e881fa.png)
- - If the CPU/memory usage is too high, please refer to [Failed to log in to a Windows CVM due to high CPU and memory usage] (https://intl.cloud.tencent.com/document/product/213/32405) and [Failed to log in to a Linux CVM due to high CPU and memory usage] (https://intl.cloud.tencent.com/document/product/213/32387) for troubleshooting.
- - If the bandwidth usage is too high, please refer to [Login Failure Due to High Bandwidth Occupation] (https://intl.cloud.tencent.com/document/product/213/32542) for troubleshooting.
+ - If the CPU/memory usage is too high, please refer to [Failed to log in to a Windows CVM due to high CPU and memory usage](https://intl.cloud.tencent.com/document/product/213/32405) and [Failed to log in to a Linux CVM due to high CPU and memory usage](https://intl.cloud.tencent.com/document/product/213/32387) for troubleshooting.
+ - If the bandwidth usage is too high, please refer to [Login Failure Due to High Bandwidth Occupation](https://intl.cloud.tencent.com/document/product/213/32542) for troubleshooting.
  - If CPU/memory/bandwidth usage is normal, please execute [step 4](#Server_step04).
 4. <span id="Server_step04">Execute the following command to check whether the corresponding Web service port is being monitored normally. </span>
 > The following operations take port 80, which is commonly used in HTTP service, as an example.

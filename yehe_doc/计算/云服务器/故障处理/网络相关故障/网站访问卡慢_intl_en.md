@@ -34,9 +34,9 @@ You can also access the page directly with the public network IP to check whethe
 2. Click the ID/name of the instance you want to check to enter its details page.
 3. Select the **Monitoring** tab on the details page to view the instance resource usage, as shown below:
 ![](https://main.qcloudimg.com/raw/b8396a4507dd6a9808f9907b90e881fa.png)
- - If the CPU/memory usage is too high, please see [Failed to log in to a Windows CVM due to high CPU and memory usage] (https://intl.cloud.tencent.com/document/product/213/32405) and [Failed to log in to a Linux CVM due to high CPU and memory usage] (https://intl.cloud.tencent.com/document/product/213/32387) for troubleshooting.
- - If the bandwidth usage is too high, please refer to [Login Failure Due to High Bandwidth Occupation] (https://intl.cloud.tencent.com/document/product/213/32542) for troubleshooting. 
- - If the instance resource usage is normal, please [check other problems] (# CheckOtherProblems).
+ - If the CPU/memory usage is too high, please see [Failed to log in to a Windows CVM due to high CPU and memory usage](https://intl.cloud.tencent.com/document/product/213/32405) and [Failed to log in to a Linux CVM due to high CPU and memory usage](https://intl.cloud.tencent.com/document/product/213/32387) for troubleshooting.
+ - If the bandwidth usage is too high, please refer to [Login Failure Due to High Bandwidth Occupation](https://intl.cloud.tencent.com/document/product/213/32542) for troubleshooting. 
+ - If the instance resource usage is normal, please [check other problems](#CheckOtherProblems).
 
 <span id="CheckOtherProblems"></span>
 ### Check other problems

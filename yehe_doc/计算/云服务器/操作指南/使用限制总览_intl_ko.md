@@ -54,7 +54,7 @@
 ## ENI 관련 제한
 
 CPU와 메모리 구성에 따라 CVM이 바인딩할 수 있는 ENI 수와 단일 ENI가 바인딩할 수 있는 개인 IP 수가 크게 다르며, ENI 및 단일 ENI IP 할당 수는 아래 표와 같습니다.
-> 단일 ENI의 IP 바인딩 수량은 ENI가 바인딩할 수 있는 IP 수의 최댓값만을 의미합니다. 최댓값에 따라 EIP 할당을 제공한다고 보장할 수 없으며, 계정의 EIP 할당은 [EIP 사용 제한] (https://intl.cloud.tencent.com/document/product/213/5733) 에 따라 제공됩니다.
+> 단일 ENI의 IP 바인딩 수량은 ENI가 바인딩할 수 있는 IP 수의 최댓값만을 의미합니다. 최댓값에 따라 EIP 할당을 제공한다고 보장할 수 없으며, 계정의 EIP 할당은 [EIP 사용 제한](https://intl.cloud.tencent.com/document/product/213/5733) 에 따라 제공됩니다.
 
 | CVM 구성              | ENI 수| 단일 ENI의 개인 IP 바인딩 수 |
 | ------------------- | :---- | :------ |
