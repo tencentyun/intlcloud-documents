@@ -1,7 +1,7 @@
 ## Login
 Users can normally send and receive messages only after they have logged in to the Tencent backend server. To log in to the Tencent backend server, a user needs to provide information including `UserID` and `UserSig`. For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517).
 
->
+>!
 >- If the user is forced logout on another terminal, the login attempt fails, and the error code (`ERR_IMSDK_KICKED_BY_OTHERS: 6208`) is returned. In this case, developers must analyze the cause to the login error code `ERR_IMSDK_KICKED_BY_OTHERS`. For details on forcible logout, see [User State Changes](https://intl.cloud.tencent.com/document/product/1047/34312#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4).
 >- If users have saved user tickets, these tickets may expire. If their user tickets expire, `login` returns the error code `70001`. In this case, developers can change the ticket based on the error code.
 
@@ -76,7 +76,7 @@ TIMManager.getInstance().logout(new TIMCallBack() {
 
 If the current network is abnormal or you want to view user messages without calling `login`, you can call the `initStorage` method of `TIMManager` to initialize storage. After that, you can obtain the conversation list and messages.
 
->
+>!
 > * This method is for viewing historical messages only when the login attempt fails or no network connection is available. **To receive and send messages, you must call the login API `login`**.
 > * If the login attempt succeeds, the IM SDK automatically initializes local storage, without the need to manually call this API.
 
@@ -133,6 +133,6 @@ The `getLoginUser` method of `TIMManager` can be used to obtain the current user
 public String getLoginUser()
 ```
 
-> The returned value is the username of the currently logged-in user. Note that if the logged-in account is a self-owned account, the username is the same as the `identifier` that was passed in during login. If the user logged in with a third-party account, such as a WeChat or QQ account, an internally converted `identifier` will be generated after login. Subsequent operations, such as searching for friends and joining groups, require the converted `identifier`.
+>! The returned value is the username of the currently logged-in user. Note that if the logged-in account is a self-owned account, the username is the same as the `identifier` that was passed in during login. If the user logged in with a third-party account, such as a WeChat or QQ account, an internally converted `identifier` will be generated after login. Subsequent operations, such as searching for friends and joining groups, require the converted `identifier`.
 
 
