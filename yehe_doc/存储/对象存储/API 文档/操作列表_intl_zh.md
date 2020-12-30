@@ -36,14 +36,6 @@
 | [GET Bucket cors](https://intl.cloud.tencent.com/document/product/436/8274) | 查询跨域配置 | 查询存储桶的跨域访问配置信息 |
 | [DELETE Bucket cors](https://intl.cloud.tencent.com/document/product/436/8283) | 删除跨域配置 | 删除存储桶的跨域访问配置信息 |
 
-#### 自定义域名（domain）接口
-
-| API | 操作名 | 操作描述 |
-|---------|---------|---------|
-| [PUT Bucket domain](https://intl.cloud.tencent.com/document/product/436/35868) | 设置自定义域名 | 设置存储桶的自定义域名信息 |	
-| [GET Bucket domain](https://intl.cloud.tencent.com/document/product/436/35869)	| 查询自定义域名	| 查询存储桶的自定义域名信息 |
-| [DELETE Bucket domain](https://intl.cloud.tencent.com/document/product/436/35870) | 删除自定义域名 | 删除存储桶的自定义域名信息 |
-
 
 #### 生命周期（lifecycle）接口
 
@@ -92,6 +84,16 @@
 | [DELETE Bucket website](https://intl.cloud.tencent.com/document/product/436/30629) | 删除静态网站配置 | 删除指定存储桶的静态网站配置信息   |
 
 
+#### 智能分层（IntelligentTiering）接口
+
+| API                                                          | 操作名           | 操作描述                     |
+| ------------------------------------------------------------ | ---------------- | ---------------------------- |
+| [PUT Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38314) | 设置智能分层配置 | 启用存储桶的智能分层存储配置 |
+| [GET Bucket IntelligentTiering](https://intl.cloud.tencent.com/document/product/436/38315) | 查询智能分层配置 | 查询存储桶的智能分层配置信息 |
+
+
+
+
 #### 清单（inventory）接口
 
 | API                                                          | 操作名       | 操作描述                     |
@@ -108,13 +110,13 @@
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | 设置版本控制 | 启用或者暂停存储桶的版本控制功能 |
 | [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | 查询版本控制 | 查询存储桶的版本控制信息         |
 
-#### 跨地域复制（replication）接口
+#### 存储桶复制（replication）接口
 
 | API                                                          | 操作名         | 操作描述                                   |
 | ------------------------------------------------------------ | -------------- | ------------------------------------------ |
-| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | 设置跨地域复制 | 对已启用版本控制的存储桶配置跨地域复制规则 |
-| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | 查询跨地域复制 | 查询存储桶的跨地域复制配置信息             |
-| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | 删除跨地域复制 | 删除存储桶的跨地域复制配置信息             |
+| [PUT Bucket replication](https://intl.cloud.tencent.com/document/product/436/19223) | 设置存储桶复制 | 对已启用版本控制的存储桶配置存储桶复制规则 |
+| [GET Bucket replication](https://intl.cloud.tencent.com/document/product/436/19222) | 查询存储桶复制 | 查询存储桶的存储桶复制配置信息             |
+| [DELETE Bucket replication](https://intl.cloud.tencent.com/document/product/436/19221) | 删除存储桶复制 | 删除存储桶的存储桶复制配置信息             |
 
 #### 日志管理（logging）接口
 
@@ -127,7 +129,7 @@
 
 | API                   | 操作名       | 操作描述                   |
 | ---------------------- | ------------ | -------------------------- |
-| [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)|  设置全球加速  |  启用或暂停存储桶的全球加速功能
+| [PUT Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33411)|  设置全球加速  |  启用或暂停存储桶的全球加速功能 |
 | [GET Bucket Accelerate](https://intl.cloud.tencent.com/document/product/436/33412)|  查询全球加速   |  查询存储桶的全球加速功能配置信息  |
 
 
@@ -219,11 +221,5 @@
 | [去除元信息](https://intl.cloud.tencent.com/document/product/436/36378) | 去除图片元信息，包括 exif 信息                               |
 | [快速缩略模板](https://intl.cloud.tencent.com/document/product/436/36379) | 通过图片处理模板，生成相应的缩略图                           |
 | [管道操作符](https://intl.cloud.tencent.com/document/product/436/36380) | 实现对图片按顺序进行多种处理                                 |
-
-#### 内容审核接口
-
-| API  | 操作描述 |
-| ---- | -------- |
-| [内容审核](https://intl.cloud.tencent.com/document/product/436/37399)  | 实现对 COS 存量数据的涉黄、涉政、涉暴恐以及广告引导类图片、视频的扫描                            |
 
 

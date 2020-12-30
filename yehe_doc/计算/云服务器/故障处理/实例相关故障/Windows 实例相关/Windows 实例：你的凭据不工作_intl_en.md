@@ -1,13 +1,12 @@
-## Issue Description
+## Issue
 
 The following error message appears when trying to log in to a Windows CVM remotely via RDP protocol, such as using MSTSC.
-Your credential used to connect to `XXX.XXX.XXX.XXX` does not work. Please enter new credentials.
+The credentials that were used to connect to `XXX.XXX.XXX.XXX` did not work. Please enter new credentials.
 ![](https://main.qcloudimg.com/raw/47a299873e3df8f1f160c1594fc56644.png)
 
 ## Solutions
->? This document uses Windows Server 2012 as an example. The procedure may vary slightly according to the operating system version.
+>? This document uses a Tencent Cloud CVM with the Windows Server 2012 operating system as an example. The procedure may vary slightly according to the operating system version.
 > Follow the instructions below and try to connect to your Windows CVM after each step. If the issue persists, proceed to the next step.
->
 
 ### Step 1: modify the network access policy
 1. [Log in to the Windows instance using VNC](https://intl.cloud.tencent.com/document/product/213/32496).

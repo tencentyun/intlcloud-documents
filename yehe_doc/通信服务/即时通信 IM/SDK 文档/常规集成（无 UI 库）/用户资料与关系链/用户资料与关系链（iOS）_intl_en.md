@@ -17,7 +17,7 @@ Use [setFriendInfo](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendsh
 ## Blocking Messages from a Specified User
 - **Blocking a user**
 To block messages from a specified user, call the [addToBlackList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendship_08.html#a67d998da5085b5004bb6aa8d4322022c) API to block the user.
-By default, the blocked user is unaware of the "blocked" status. An error code indicating blocking will not be returned after the user sends a message. If you want blocked users to receive error message in this situation, see [How to display an error message to a blocked user after the user sends a message](#msgSendTips).
+By default, the blocked user is unaware of the "blocked" status. An error code indicating blocking will not be returned after the user sends a message. If you want blocked users to receive error message in this situation, see [How to display an error message to a blocked user after the user sends a message](#sos).
 
 - **Removing a user from the blocklist**
 Call [deleteFromBlackList](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Friendship_08.html#aa7e69a67185eaca658ba429cf6309a5f) to remove a user from the blocklist and receive the user’s messages again.
@@ -72,6 +72,6 @@ To group friends into categories such as "classmates" and "coworkers", call the 
 ### How can I disable messaging between two users who are not friends?
 By default, the IM SDK does not prevent message sending and receiving between strangers. If you want messages to be sent or received only between friends, log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** > **Login and Messages** > **Relationship Check**, and enable **Check Relationship for One-to-One Chat Messages**. After this feature is enabled, you can send messages only to friends. When you try to send messages to strangers, the IM SDK returns the 20009 error code.
 
-<span id="msgSendTips"></span>
+[](id:sos) 
 ### 2. How do I enable error messages when blocked users try to send a message?
 When a user is added to the blocklist, by default, the user does not know that he/she is in the blocklist. That is, after this user sends a message, the user is still prompted that the message was sent successfully, but in fact, the recipient will not receive the message. If you want a user in the blocklist to know that his/her message failed to be sent, log in to the [IM console](https://console.cloud.tencent.com/im), choose **Feature Configuration** > **Login and Messages** > **Blocklist Check**, and disable **Show "Sent successfully" After Sending Messages**. After this feature is disabled, the IM SDK will return the 20007 error code when a user in the blocklist sends a message.

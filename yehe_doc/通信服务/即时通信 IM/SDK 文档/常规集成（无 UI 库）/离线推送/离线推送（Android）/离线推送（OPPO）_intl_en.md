@@ -9,20 +9,20 @@ The following is the process of offline message push:
 
 ## Procedure
 
-OPPO mobile phones use a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not placed in the auto-start whitelist of the system. As apps running in the background are often killed by the system, we recommend that OPPO push be integrated on OPPO devices. OPPO push is a system-grade service for OPPO devices, with a high delivery rate. Currently, **IM only supports the notification bar messages of OPPO push**.
+OPPO mobile phones use a highly customized Android system, with very strict management of the auto-start permissions of third-party apps. By default, third-party apps are not placed in the auto-start allowlist of the system. As apps running in the background are often killed by the system, we recommend that OPPO push be integrated on OPPO devices. OPPO push is a system-grade service for OPPO devices, with a high delivery rate. Currently, **IM only supports the notification bar messages of OPPO push**.
 
->
+>!
 >- This guide was prepared with direct reference to the official documentation of OPPO push. If OPPO push is changed, please refer to the [OPPO push documentation on the official website](https://open.oppomobile.com/wiki/doc#id=10194).
 >- If you do not plan to implement an OPPO-specific offline push solution, skip this section.
 
-<span id="Step1"></span>
+[](id:Step1)
 ### Step 1: Apply for an OPPO PUSH certificate
 1. Refer to [How to enable OPPO PUSH](https://open.oppomobile.com/wiki/doc#id=10195) for instructions on how to enable OPPO PUSH.
 2. Navigate to [OPPO PUSH](https://push.oppo.com/) > **Configuration Management** > **Application Management** for detailed app information.
-<span id="Step1_3"></span>
+[](id:Step1_3)
 3. Record the following: `AppId`, `AppKey`, `AppSecret`, and `MasterSecret`.
 
-<span id="Step2"></span>
+[](id:Step2)
 ### Step 2: Create a ChannelID
 
 The official OPPO documentation states that ChannelIDs are required for push messages on OPPO Android 8.0 and above. Therefore, create a ChannelID for your app. Below is a sample code that creates a ChannelID called `tuikit`:
@@ -45,12 +45,12 @@ public void createNotificationChannel(Context context) {
     }
 ```
 
-<span id="Step3"></span>
+[](id:Step3)
 ### Step 3: Generate a Certificate ID
 1. Log in to the [IM Console](https://console.qcloud.com/avc) and click the desired app. The app configuration page appears.
 2. Click **Add a certificate** under **Android push configuration**.
- > If you already have a certificate and only need to change its information, click **Edit**.
-
+ >? If you already have a certificate and only need to change its information, click **Edit**.
+ >
  ![](https://main.qcloudimg.com/raw/15c0ca00b00ddcc5c269489d5be93d8c.png)
 3. Use the information you obtained in [Step 1](#Step1_3) and [Step 2](#Step2) to configure the following parameters:
  - **Push platform**: select **OPPO**.
@@ -65,7 +65,7 @@ public void createNotificationChannel(Context context) {
 5. Record the Certificate ID once it is generated.
 
 
-<span id="Step4"></span>
+[](id:Step4)
 ### Step 4: Integrate push SDK
 
 1. Follow the instructions in the [OPPO PUSH SDK API documentation](https://open.oppomobile.com/wiki/doc#id=10196) to integrate the SDK. Use the OPPO console to test notification messages to ensure the SDK was integrated properly.
@@ -73,11 +73,11 @@ public void createNotificationChannel(Context context) {
  After the call is successfully registered, use `onRegister`, which is a `PushCallback` method, to obtain `regId`.
 3. Record your `regId`.
 
-<span id="Step5"></span>
+[](id:Step5)
 ### Step 5: Report the push information to the IM server
 
 If you need to use OPPO push to push IM message notification, then after **successful user login**, you must use the `setOfflinePushToken` method of `TIMManager` to report the **certificate ID** generated and hosted by the IM console and **regId** returned by the OPPO push service to the IM server.
-> After the regId and certificate ID are correctly reported, the IM service can bind users with the corresponding device information. This enables the use of the OPPO push service to push notifications.
+>! After the regId and certificate ID are correctly reported, the IM service can bind users with the corresponding device information. This enables the use of the OPPO push service to push notifications.
 
 The following is a sample code defining Certificate ID as a constant:
 
@@ -148,26 +148,26 @@ public class ThirdPushTokenMgr {
 
 After the Certificate ID and regId are successfully sent, the IM server will push the notification to the client through OPPO PUSH when the app is killed by the system before the user logs out.
 
->
->- For a list of frequently asked questions, refer to [OPPO PUSH FAQ]( https://open.oppomobile.com/wiki/doc#id=10200).
+>?
+>- For a list of frequently asked questions, refer to [OPPO PUSH FAQ](https://open.oppomobile.com/wiki/doc#id=10200).
 >- If the user logs out, or is logged out by IM (such as when the user logs in on another device), the device will no longer receive push messages.
 
-<span id="click"></span>
+[](id:click)
 ## Configuring Click Events
 
 You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
 
-<span id="App"></span>
+[](id:App)
 ### Open app
 
 This is the default event, which opens the app once the notification bar message is clicked.
 
-<span id="Webpage"></span>
+[](id:Webpage)
 ### Open URL
 
 You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
 
-<span id="AppInterface"></span>
+[](id:AppInterface)
 ### Open specific app interface
 
 These are the ways you can open a specific app interface:
@@ -186,12 +186,12 @@ These are the ways you can open a specific app interface:
 2. Enter `android.intent.action.VIEW` in the console.
 
 
-<span id="Trans"></span>
+[](id:Trans)
 ## Custom Content Pass Through
 
 ### Step 1: Custom content configuration (Sender)
 Set the custom content for the notification bar message before sending the message.
-> OPPO requires custom data to be in JSON format.
+>! OPPO requires custom data to be in JSON format.
 
 - Android sample:
 ```

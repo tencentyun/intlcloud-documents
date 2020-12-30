@@ -10,23 +10,23 @@
 
 ## 配置离线推送
 MIUI 为深度定制 Android 系统，对于第三方 App 自启动权限管理很严格，默认情况下第三方 App 都不会在系统的自启动白名单内，App 在后台时容易被系统 kill，因此推荐在小米设备上集成小米推送 MiPush，MiPush 是 MIUI 的系统级服务，推送到达率较高。目前，**即时通信 IM 仅支持小米推送的通知栏消息**。
->
+>!
 >- 此指引文档是直接参考小米官方文档所写，若小米推送有变动，请以 [小米推送官网文档](https://dev.mi.com/console/doc/detail?pId=230) 为准。
 >- 如果不需要对小米设备做专门的离线推送适配，可以忽略此章节。
 
 ### 步骤1：申请小米推送证书
 1. 打开 [小米开放平台官网](https://dev.mi.com/console/) 进行注册并通过开发者认证。
- >认证过程大约需要2天左右，请务必提前阅读 [小米推送服务启用指南](https://dev.mi.com/console/doc/detail?pId=68)，以免影响您的接入进度。
+ >?认证过程大约需要2天左右，请务必提前阅读 [小米推送服务启用指南](https://dev.mi.com/console/doc/detail?pId=68)，以免影响您的接入进度。
 2. 登录小米开放平台的管理控制台，选择【应用服务】>【PUSH服务】，创建小米推送服务应用。
  小米推送服务应用创建完成后，在应用详情中，您可以查看详细的应用信息。
-<span id="Step1_3"></span>
+[](id:Step1_3)
 3. 记录**`主包名`**、**`AppID`**、**`AppSecret`**信息。
 
-<span id="Step2"></span>
+[](id:Step2)
 ### 步骤2：托管证书信息到即时通信 IM 
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
- >如果您原来已有证书只需变更信息，可以单击【Android平台推送设置】区域的【编辑】进行修改更新。
+ >?如果您原来已有证书只需变更信息，可以单击【Android平台推送设置】区域的【编辑】进行修改更新。
  ![](https://main.qcloudimg.com/raw/31bac91d9ffa638ff3ef584496ef2cf3.png)
  
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
@@ -42,9 +42,9 @@ MIUI 为深度定制 Android 系统，对于第三方 App 自启动权限管理�
 5. 待推送证书信息生成后，记录证书的**`ID`**。
 
 
-<span id="Step3"></span>
+[](id:Step3)
 ### 步骤3：集成推送 SDK
->
+>?
 > - 即时通信 IM 默认推送的通知标题为`a new message`。
 > - 阅读此小节前，请确保您已经正常集成并使用即时通信 IM SDK。
 > - 您可以在我们的 demo 里找到小米推送的实现示例，请注意：小米推送版本更新时有可能会有功能调整，若您发现本节内容存在差异，烦请您及时查阅 [小米推送官网文档](https://dev.mi.com/console/doc/detail?pId=230)，并将文档信息差异反馈给我们，我们会及时跟进修改。
@@ -116,7 +116,7 @@ MIUI 为深度定制 Android 系统，对于第三方 App 自启动权限管理�
 </receiver>
 ```
 
-<span id="Step3_3"></span>
+[](id:Step3_3)
 #### 步骤3.3：自定义一个 BroadcastReceiver 类
 
 为了接收消息，您需要自定义一个继承自`PushMessageReceiver`类的 BroadcastReceiver，并实现其中的`onReceiveRegisterResult`方法，然后将此 receiver 注册到 AndroidManifest.xml 中。
@@ -223,12 +223,12 @@ public class DemoApplication extends Application {
 }
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ### 步骤4：上报推送信息至即时通信 IM 服务端
 
 若您需要通过小米推送进行即时通信 IM 消息的推送通知，必须在**用户登录成功后**通过`TIMManager`中的`setOfflinePushToken`方法将您托管到即时通信 IM 控制台生成的**证书 ID** 及小米推送服务端生成的 **regId** 上报到即时通信 IM 服务端。
 
->正确上报 regId 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用小米推送服务进行推送通知。
+>!正确上报 regId 与证书 ID 后，即时通信 IM 服务才能将用户与对应的设备信息绑定，从而使用小米推送服务进行推送通知。
 
 以下为 Demo 中的示例代码：
 
@@ -306,12 +306,12 @@ public class ThirdPushTokenMgr {
 
 成功上报证书 ID 及 regId 后，即时通信 IM 服务端会在该设备上的即时通信 IM 用户 logout 之前、App 被 kill 之后将消息通过小米推送通知到用户端。
 
->
+>?
 > - 小米推送并非100%必达。
 > - 小米推送可能会有一定延时，通常与 App 被 kill 的时机有关，部分情况下与小米推送服务有关。
 > - 若即时通信 IM 用户已经 logout 或被即时通信 IM 服务端主动下线（例如在其他端登录被踢等情况），则该设备上不会再收到消息推送。
 
-<span id="click"></span>
+[](id:click)
 ## 配置点击通知栏消息事件
 您可以选择点击通知栏消息后**打开应用**、**打开网页**或**打开应用内指定界面**。
 
@@ -360,7 +360,7 @@ public class ThirdPushTokenMgr {
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
 ![](https://main.qcloudimg.com/raw/94c3abe8ab0cb8c72ee79687d0ffe8d3.png)
 
-<span id="section4"></span>
+[](id:section4)
 ## 透传自定义内容
 [添加证书](#Step2) 时设置【点击通知后】为【打开应用】或【打开应用内指定界面】操作才支持透传自定义内容。
 
@@ -400,7 +400,7 @@ public class ThirdPushTokenMgr {
 ### 如果应用使用了混淆，如何防止小米离线推送功能异常？
 
 如果您的应用使用了混淆，为了防止小米离线推送功能异常，您需要 keep 自定义的 BroadcastReceiver，参考添加以下混淆规则：
->以下代码为小米官方示例，请根据实际情况修改后再使用。
+>?以下代码为小米官方示例，请根据实际情况修改后再使用。
 
 ```
 # 请将 com.tencent.qcloud.tim.demo.thirdpush.XiaomiMsgReceiver 改成您 App 中定义的完整类名
