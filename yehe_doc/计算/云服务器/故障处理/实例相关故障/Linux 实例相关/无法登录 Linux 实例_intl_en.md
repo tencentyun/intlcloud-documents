@@ -55,7 +55,7 @@ If you cannot use the standard method (Webshell) or remote login software to log
 **Steps**: troubleshoot by using the [port verification tool for security groups](https://console.cloud.tencent.com/vpc/helper).
 ![](https://main.qcloudimg.com/raw/278c7f0abd9b7224d32fa5402554544a.png)
 If the problem is caused by the incorrect security group port configuration, you can use **Open All Tools** to open all ports.
-![](https://main.qcloudimg.com/raw/e4a40dafccplease9607ce18ee7001129d9655.png)
+![](https://main.qcloudimg.com/raw/e4a40dafcc9607ce18ee7001129d9655.png)
 If you need to define a custom rule for the security group, see [Adding Rules to Security Groups](https://intl.cloud.tencent.com/document/product/213/34272) for information on how to reconfigure security group rules.
 
 

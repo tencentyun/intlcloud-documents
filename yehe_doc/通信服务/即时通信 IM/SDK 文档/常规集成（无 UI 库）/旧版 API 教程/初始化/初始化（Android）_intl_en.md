@@ -46,7 +46,7 @@ mTIMSdkConfig.setLogListener(new TIMLogListener() {
 
 When permissions allow, the IM SDK writes logs to log files by default. You can control the file log output of the IM SDK by modifying the internal write log level of the IM SDK through `setLogLevel` in `TIMSdkConfig`.
 
->
+>!
 >- The API for setting the write log level **must be called before IM SDK initialization** for the setting to take effect.
 >- You can disable the file log output of the IM SDK by setting the log level to TIMLogLevel.OFF. We recommend that you leave it enabled to facilitate troubleshooting.
 
@@ -65,7 +65,7 @@ public TIMSdkConfig setLogLevel(@NonNull TIMLogLevel logLevel)
 
 By default, the IM SDK prints logs to the console. If this produces too much disruption, you can disable console logs through `enableLogPrint` in `TIMSdkConfig` (file logs will still be printed, but you can disable this by setting the log level).
 
-> The API for log settings **must be called before IM SDK initialization** for the settings to take effect.
+>! The API for log settings **must be called before IM SDK initialization** for the settings to take effect.
 
 
 **Prototype:**
@@ -82,7 +82,7 @@ public TIMSdkConfig enableLogPrint(boolean logPrintEnabled)
 
 For the unified management of logs, you can modify the default log storage path. Use `setLogPath` in `TIMSdkConfig` to set the storage path for logs.
 
->
+>!
 > * The API for setting the log path **must be called before IM SDK initialization** for the settings to take effect.
 > * The default IM SDK log storage path is: `/tencent/imsdklogs/(your app package name)/` on the SD card.
 
@@ -100,7 +100,7 @@ public TIMSdkConfig setLogPath(@NonNull String logPath)
 
 Before using the IM SDK for further operations, you need to initialize the IM SDK.
 
-> When there are **multiple processes**, initialize the IM SDK in only one process. Call `SessionWrapper.isMainProcess(Context context)` to determine the correct process.
+>! When there are **multiple processes**, initialize the IM SDK in only one process. Call `SessionWrapper.isMainProcess(Context context)` to determine the correct process.
 
 **Prototype:**
 
@@ -211,7 +211,7 @@ TIMManager.getInstance().setUserConfig(userConfig);
 
 This is an optional setting. To allow users to detect whether the IM SDK is connected to the server, set this callback through `TIMUserConfig`. It notifies the user whether the link between the caller and communication backend is connected or disconnected. Additionally, if the network is disconnected, the IM SDK will reconnect to the network after the network recovers and automatically pull messages to notify the user. The user does not need to worry about the network status. This is for notification purposes only.
 
->Here, network events do not indicate the user’s local network status, but the connection status between the IM SDK and IM Cloud Server. As long as the user is logged in, the **IM SDK will reconnect internally upon disconnection, and no intervention by the user is required**.
+>! Here, network events do not indicate the user’s local network status, but the connection status between the IM SDK and IM Cloud Server. As long as the user is logged in, the **IM SDK will reconnect internally upon disconnection, and no intervention by the user is required**.
 
 **Prototype:**
 
@@ -272,7 +272,7 @@ See the example in [User Configuration](#.E7.94.A8.E6.88.B7.E9.85.8D.E7.BD.AE).
 The user will be forced to log out when logging in on another device. When this happens, the IM SDK sends a force offline notification. If a user status change notification listener has been set (see [User status changes](#.E7.94.A8.E6.88.B7.E7.8A.B6.E6.80.81.E5.8F.98.E6.9B.B4)), the situation will be handled in the listener’s callback method `onForceOffline`. Common practice is to prompt the user to log out or force the other party to log out.
 
 
-> If the user is logged out when offline, the subsequent login will fail and a strong alert (login error code ERR_IMSDK_KICKED_BY_OTHERS: 6208) is displayed to the user. Developers can also choose to ignore this error and let the user log in again.
+>! If the user is logged out when offline, the subsequent login will fail and a strong alert (login error code ERR_IMSDK_KICKED_BY_OTHERS: 6208) is displayed to the user. Developers can also choose to ignore this error and let the user log in again.
 
 The following diagram illustrates the force offline process in online scenarios. The user logs in on device 1, stays online, and then logs in on device 2. At this point, the user is logged out on device 1 and the `onForceOffline` callback is triggered. After receiving the callback on device 1, the user is prompted to call `login` to go back online and force device 2 to log out.
 
@@ -289,7 +289,7 @@ When the user logs in (see [Login](https://intl.cloud.tencent.com/document/produ
 ### Disabling storage
 By default, the IM SDK stores messages, profiles, conversations, and other information. If you do not need to store this information, disable storage through `TIMUserConfig` to improve processing performance.
 
-> The API for disabling local storage **must be called before login**.
+>! The API for disabling local storage **must be called before login**.
 
 **Prototype:**
 ```
@@ -303,7 +303,7 @@ public TIMUserConfig disableStorage()
 
 By default, C2C offline messages and recent contacts will be obtained asynchronously and profile data will be synced after login. When synchronization is completed, the `onRefresh` callback in the conversation refresh listener `TIMRefreshListener` sends an interface refresh notification. Upon receiving this message, the user can refresh the interface (for example, refresh unread messages in the conversation list).
 
-> If offline messages are not needed, you can just send online messages.
+>! If offline messages are not needed, you can just [send online messages](https://intl.cloud.tencent.com/document/product/1047/36401).
 
 In the event of multi-device login, unread count synchronization notifications are delivered by the server. The IM SDK updates the unread count locally and then notifies the user to update conversations. The notification will initiate a callback through `onRefreshConversation` in `TIMRefreshListener`. Users who require multi-device synchronization can perform relevant synchronous processing in this API. Therefore, we recommend using `setRefreshListener` in `TIMUserConfig` to configure a conversation refresh listener.
 
@@ -333,9 +333,9 @@ public TIMUserConfig setMessageRevokedListener(@NonNull TIMMessageRevokedListene
 
 ## New Message Notifications
 
-In most cases, users need to be notified of new messages. Therefore, register the new message notification callback `TIMMessageListener`. When the user logs in, C2C offline messages and recent contacts will be pulled. To ensure that users do not miss message notifications, we recommend registering new message notifications before login.
+In most cases, users need to be notified of new messages. Therefore, register the new message notification callback `TIMMessageListener`. When the user logs in, C2C offline messages and recent contacts will be pulled. To ensure that users do not miss message notifications, we recommend registering new message notifications before login
 
-> The IM SDK calls back all messages that are not stored locally to the upper-level app through registered message notifications.
+>! The IM SDK calls back all messages that are not stored locally to the upper-level app through registered message notifications.
 
 The following is a message listener prototype. By default, all message listeners will be called back according to the order in which they were added until the `onNewMessages` callback returns true. Then, the next message listener is not called back.
 
@@ -368,7 +368,7 @@ A deleted listener will not be called. **The following is the prototype for mess
 public void removeMessageListener(TIMMessageListener listener)
 ```
 
-The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images. 
+The content of messages that are called back is passed through the parameter `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and conversations, such as message text, audio data, and images, please see [Sending and Receiving Messages (Android)](https://intl.cloud.tencent.com/document/product/1047/36401).
 
 **Example:**
 
