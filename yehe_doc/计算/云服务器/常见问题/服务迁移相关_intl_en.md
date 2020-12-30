@@ -14,7 +14,7 @@ The upload duration is related to the image file size and the bandwidth. We reco
  
  - If "image file verification failed" is displayed, it is usually because the capacity of the system disk or data disk you want to migrate to is smaller than the capacity of the source disk or the size of the image file. Please adjust the capacity of the system disk or data disk and try again.
  - If "failed to obtain the metadata of the image file" is displayed, it is usually because the image file is damaged or the image file format is not supported. Please check whether there are errors in the process of creating, exporting, and uploading the image. You can also use image file in qcow2, vpc, vmdk, or raw format and try again.
- - If messages such as "task timeout", "system error", and "other reasons" are displayed, or if you retried the migration task but it failed again, you can [contact us] (https://cloud.tencent.com/document/product/213/39047) for help.
+ - If messages such as "task timeout", "system error", and "other reasons" are displayed, or if you retried the migration task but it failed again, you can [contact us](https://cloud.tencent.com/document/product/213/39047) for help.
  
 
 ## Online Migration
