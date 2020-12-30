@@ -115,7 +115,7 @@ The InternalError error indicates that the cause of error has not yet been recor
 | InvalidUrl | Invalid COS link. | Check whether the COS URL is the same as the imported image URL. |
 | InvalidFormatSize | Format or size does not meet requirements. | Images must meet the `image format` and `image size` requirements in [Preparations](#PreparationsforImport). |
 | VirtioNotInstall | Virtio driver not installed. | Install the Virtio driver in the image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
-I PartitionNotPresent | Partition information not found. | Image is corrupted possibly due to incorrect image creation method. |
+| PartitionNotPresent | Partition information not found. | Image is corrupted possibly due to incorrect image creation method. |
 | CloudInitNotInstalled | Cloud-init software not installed. | Install cloud-init in the Linux image by referring to the `Driver` section in [Preparations](#PreparationsforImport). |
 | RootPartitionNotFound | Root partition not found. | Image is corrupted possibly due to incorrect image creation method. |
 | InternalError | Other errors. | Contact our customer service. |
