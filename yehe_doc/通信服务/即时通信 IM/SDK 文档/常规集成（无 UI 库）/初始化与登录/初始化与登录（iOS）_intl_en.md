@@ -4,7 +4,7 @@
 <pre><code class="language-Objective-C"><span class="hljs-comment">// 1. Obtain the SDKAppID of the app from the IM console. For more information, see <a href="#SDKAppID">SDKAppID</a>.</span>
 <span class="hljs-comment">// 2. Initialize the config object.</span>
 V2TIMSDKConfig *config = [[V2TIMSDKConfig alloc] init];
-<span class="hljs-comment">// 3. Specify the log output level. For more information, see <a href="#SDKConfig">SDKConfig</a>.</span>
+<span class="hljs-comment">// 3. Specify the log output level. For more information, see [SDKConfig](#SDKAppID)。</span>
 config.logLevel = V2TIM_LOG_INFO;
 <span class="hljs-comment">// 4. Initialize the SDK and set the listening object of V2TIMSDKListener.</span>
 <span class="hljs-comment">// After you call initSDK, the SDK automatically connects to the network. The network connection status can be monitored in the V2TIMSDKListener callback.</span>
@@ -23,12 +23,12 @@ config.logLevel = V2TIM_LOG_INFO;
 
 The initialization API, initSDK (SDKAppID, SDKConfig, listener), contains three required parameters: `SDKAppID`, `Config`, and `listener`.
 
-<span id="SDKAppID"></span>
+[](id:SDKAppID)
 ### SDKAppID
 SDKAppID indicates the app ID. It is a unique ID that the IM service uses to identify a customer account. We recommend that you apply for a new SDKAppID for every independent app to automatically isolate messages between SDKAppIDs.
 You can view all SDKAppIDs in the [IM console](https://console.cloud.tencent.com/im). Alternatively, you can create an SDKAppID by clicking **Add Application**.
 
-<span id="SDKConfig"></span>
+[](id:SDKAppID)
 ### SDKConfig
 The `V2TIMSDKConfig` parameter is used for initialization configuration of the SDK. It is often used to set the log level, that is, [logLevel](http://doc.qcloudtrtc.com/im/interfaceV2TIMSDKConfig.html). The following table describes possible log levels.
 
@@ -60,7 +60,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 | onUserSigExpired | The UserSig has expired. | Use the new UserSig for login. |
 | onSelfInfoUpdated | The information of the current user was updated. | Update your own profile photo and nickname on the UI. |
 
-> If the `onUserSigExpired` callback is received, in indicates that the UserSig used for login has expired. In this case, you need to update the UserSig and then log in again. If you continue to use the expired UserSig, the SDK falls into an endless login loop.
+>! If the `onUserSigExpired` callback is received, in indicates that the UserSig used for login has expired. In this case, you need to update the UserSig and then log in again. If you continue to use the expired UserSig, the SDK falls into an endless login loop.
 
 ## Login
 You can call the [login(userID, userSig)](http://doc.qcloudtrtc.com/im/interfaceV2TIMManager.html#a38c42943046acdaf615915c9422af07c) function of `V2TIMManager` to log in to the SDK. Features of the IM SDK are available to you only after you successfully log in to the SDK.
