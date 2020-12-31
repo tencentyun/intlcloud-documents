@@ -2,15 +2,15 @@
 ## Overview
 This document describes the signature authentication methods of TPNS.
 
-The HMAC-SHA256 algorithm is used to generate signing information according to `SecretKey`. The authentication is performed by verifying the signature, which ensures higher security and is recommended.
+The HMAC-SHA256 algorithm is used to produce signing information according to `SecretKey`. The authentication is performed by verifying the signature, which ensures higher security and is recommended.
 
 
 #### Parameter description
 
 | Parameter | Description |
 | --- | --- |
-| AccessId | Application ID assigned by the TPNS server, which can be obtained in the [TPNS Console](https://console.cloud.tencent.com/tpns) |
-| SecretKey |`SecretKey` assigned by the TPNS server, which corresponds to `AccessId` and can be obtained in the [TPNS Console](https://console.cloud.tencent.com/tpns)|
+| AccessId | Application ID assigned by the TPNS backend, which can be obtained in **Configuration Management** > **Basic Configuration** in the **[TPNS console](https://console.cloud.tencent.com/tpns) |
+| SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in **Configuration Management** > **Basic Configuration** in the **[TPNS console](https://console.cloud.tencent.com/tpns) |
 | Sign | API signature method |
 | timeStamp |      Request timestamp |
 
@@ -24,7 +24,7 @@ The HMAC-SHA256 algorithm is used to generate signing information according to `
 
 ## HTTP Protocol Assembly Method
 
-In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and signature's `Sign` information. The specific parameters are as follows:
+In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and the signature's `Sign` information. The specific parameters are as follows:
 
 | Parameter Key in Header | Description | Required |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ Get Sign=Base64(hashcode)
 Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA=="
 ```
 
-### Sample Python signature
+### Sample signature for Python
 ```python
 #!/usr/bin/env python
 import hmac
@@ -71,10 +71,9 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
-
 ```
 
-### Sample Java signature
+### Sample signature for Java
 ```java
 package com.tencent.xg;
 
@@ -106,10 +105,9 @@ public class SignTest {
         }
     }
 }
-
 ```
 
-### Sample Go signature
+### Sample signature for Go
 ``` go
 import(
    "crypto/hmac"
@@ -129,12 +127,9 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
-
 ```
 
-```
-
-### Sample C# signature
+### Sample signature for C#
 ```c#
 using System;
 using System.Security.Cryptography;
