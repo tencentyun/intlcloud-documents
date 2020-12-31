@@ -3,7 +3,7 @@
 With SCF scheduled triggers, you can quickly create and complete scheduled tasks without having to purchase computing resources in advance. Such triggers leverage Serverless' powerful elastic scalability to provide stable and fast capabilities of scheduled task processing.
 
 Unlike other event triggers, [scheduled triggers](https://intl.cloud.tencent.com/document/product/583/9708) can execute tasks by using scheduled time-driven functions. Specifically, you can configure Cron expressions to quickly use such triggers without relying on external invocations. They have natural advantages in typical scheduled task scenarios such as automated monitoring, testing, and alarming, automated task execution, and data archiving, cleansing, and backup. The relevant workflow is as shown below:
-![](https://main.qcloudimg.com/raw/c439a44713bdcd19eb67eb9e58e49402.png)
+![](https://main.qcloudimg.com/raw/7566ea4badbd8480065aeba59036936e.png)
 
 ## Advantages of Function Processing
 

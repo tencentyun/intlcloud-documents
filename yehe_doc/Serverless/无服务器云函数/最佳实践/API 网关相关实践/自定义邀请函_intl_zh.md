@@ -21,7 +21,6 @@
 网关触发器用于：通过 API 访问将邀请函的名字传递给云函数。具体步骤如下：
 1. 在“函数配置”页面选择左侧的【触发管理】，并单击【创建触发器】。
 2. 在弹出的“创建触发器”窗口中，根据以下信息为云函数添加 API 网关触发器。
-
 主要参数如下，其余参数请保持默认设置：
  - **触发方式**：选择 “API网关触发器”。
  - **API服务类型**：选择“新建API服务”。
@@ -36,7 +35,6 @@
 2. 在“存储桶列表”页面中，单击【创建存储桶】。
 3. 在弹出的“创建存储桶”窗口中，参考以下信息进行创建。如下图所示：
 ![](https://main.qcloudimg.com/raw/01c942333bc28d3f8ddafa9ac680e74e.png)
-
 主要参数信息如下，其余参数请保持默认设置：
  - **名称**：自定义名称，本文以 test 为例。
  - **所属地域**：选择“广州”。
@@ -44,7 +42,6 @@
 4. 单击【确定】即可完成创建。
 5. 选择存储桶左侧的【安全管理】，在“跨域访问CORS设置”中单击【添加规则】。
 6. 在弹出的“跨域访问CORS添加规则”窗口中，参考以下信息添加规则。
-
 主要参数信息如下，其余参数请保持默认设置：
  - **来源 Origin**：输入 <b>*</b>。
  - **操作 Methods**：勾选 “GET”。
@@ -59,7 +56,6 @@
 ![](https://main.qcloudimg.com/raw/51561c11f86834ed9ab5410373603c4f.png)
  - **环境变量**：新增如下环境变量，参考表格进行填写。如下图所示：
 ![](https://main.qcloudimg.com/raw/24dcccec02d5a3b4d48e7b6e766e2094.png)
-
 <table>
 <tr>
 <th>key</th><th>value</th>
@@ -71,7 +67,7 @@
 <td>target_bucket</td><td>已创建的存储桶名称。</td>
 </tr>
 <tr>
-<td>target_path</td><td>目标存储桶路径。</td>
+<td>target_path</td><td>目标存储桶路径。用于存放邀请函的存储桶目录路径，请前往【<a href="https://console.cloud.tencent.com/cos5/bucket">存储桶列表</a>】>【进入“对应的存储桶”】，查看对应的目录路径。例如目录为 example，则此处的目标路径即为 /example。若在存储桶在未创建目录，那么此处输入 “/” 即可。</td>
 </tr>
 </table>
 3. 单击【保存】即可完成函数配置。
@@ -92,5 +88,4 @@ https://testxxxx.com//邀请函-yun-ServerlessDays.jpg%
 
 #### 方式2
 1. 下载 [HTML 页面](https://github.com/tencentyun/scf-demo-repo/blob/master/Python2.7-Add_Text_To_Pictures/invitation.html)，并将链接修改为 API 网关触发器的链接。
-2. 打开 HTML 页面，输入邀请嘉宾的名字，则可以生成海报，访问链接可直接下载海报。
-
+2. 打开 HTML 页面，输入邀请嘉宾的名字，则可以生成海报，访问链接可直接下载海报。)

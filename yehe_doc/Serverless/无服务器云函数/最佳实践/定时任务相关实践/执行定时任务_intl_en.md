@@ -13,7 +13,7 @@ Set the following parameter information and click **Next** as shown below:
  - **Creation method**: select **Function Template**.
  - **Fuzzy search**: enter "TimerTask" and search.
 Click **Learn More** in the template to view relevant information in the "Template Details" pop-up window, which can be downloaded. 
-![](https://main.qcloudimg.com/raw/8d551fd6347e437ffc2cddbcc8f0170d.png)
+![](https://main.qcloudimg.com/raw/8e6f2b0518ec40132c2868d025fed01e.png)
 3. Keep the default configuration and click **Complete** to complete the function creation. If you need to modify the configuration, please see [Modifying function template](#puppeteer).
 
 
