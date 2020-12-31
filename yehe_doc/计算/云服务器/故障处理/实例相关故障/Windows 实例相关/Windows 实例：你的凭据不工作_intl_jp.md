@@ -5,12 +5,11 @@ Windows OSのローカルコンピュータがRDPプロトコル（MSTSCなど�
 ![](https://main.qcloudimg.com/raw/47a299873e3df8f1f160c1594fc56644.png)
 
 ## 処理手順
-> Windows Server 2012 OSを例にしていますが、OSのバージョンが異なるため、操作手順の詳細はわずかに異なります。
+>? Windows Server 2012 OSを例にしていますが、OSのバージョンが異なるため、操作手順の詳細はわずかに異なります。
 > 以下の手順に従ってトラブルシューティングを行い、各手順が実行した後、Windows CVMに再接続して問題が解決されたか確認します。問題が解決されていない場合は、次の手順に進みます。
->
 
 ### ステップ1：ネットワークアクセスポリシーを変更する
-1. [VNCを使用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32496)。
+- [VNCを使用してWindowsインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32496)します。
 2. OS画面で、<img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"> をクリックして、「Windows PowerShell」ウインドウを開きます。
 3. 「Windows PowerShell」ウィンドウで、**gpedit.msc**を入力し、**Enter**キーを押すと、「ローカルグループポリシーエディター」を起動します。
 4. 左側のナビゲーションで、【コンピュータの構成】>【ポリシー】>【Windows の設定】>【セキュリティの設定】>【ローカルポリシー】>【セキュリティ オプション】ディレクトリを順次展開します。
@@ -28,7 +27,7 @@ Windows OSのローカルコンピュータがRDPプロトコル（MSTSCなど�
 ![](https://main.qcloudimg.com/raw/7643737fdfa2be299c21f6bc82b0165b.png)
 3.  設定を有効にし、「表示」をクリックします。Windows 資格情報を使用して接続したいサーバーのIPアドレスやホスト名を指定します。ホスト名を指定する前に、「TERMSRV/」をつける必要があります。すべてのサーバーへの接続を許可したい場合は、「＊」を使用します。
 ![](https://main.qcloudimg.com/raw/6a9af6aa4c3c3b3c4d1b9eba53d202b1.png)
-4. 【OK】をクリックします。
+4.【OK】をクリックします。
 5. OS画面で、<img src="https://main.qcloudimg.com/raw/f0c84862ef30956c201c3e7c85a26eec.png" style="margin: 0;"> をクリックして、「Windows PowerShell」ウインドウを開きます。
 6. 「Windows PowerShell」ウィンドウで、**gpupdate/force**を入力し、**Enter**キーを押してグループポリシーを更新します。以下の通りです。
 ![](https://main.qcloudimg.com/raw/98d0b757e65e3617145c05513ba652dc.png)
@@ -45,6 +44,10 @@ Windows OSのローカルコンピュータがRDPプロトコル（MSTSCなど�
 3. 【Windows資格情報の追加】をクリックして、Windows資格情報追加画面に進みます。以下の通りです。
 ![](https://main.qcloudimg.com/raw/87077862379ea7d9e86d5fdc7e0af1da.png)
 4. 現在ログインしているCVMのIPアドレス、ユーザー名とパスワードを入力し、【OK】をクリックします。
+>?
+> - CVMのIPアドレスは、CVMインスタンスのパブリックIPアドレスを指します。詳細については、[パブリックIPアドレスの取得](https://intl.cloud.tencent.com/document/product/213/17940)をご参照ください。
+> - Windowsインスタンスのデフォルトのユーザー名は`Administrator`であり、パスワードはインスタンスの作成時に設定されます。ログインパスワードを忘れた場合は、 [インスタンスパスワードのリセット](https://intl.cloud.tencent.com/document/product/213/16566) をご参照ください。
+>
 5. Windows CVMに再接続し、接続に成功したか確認します。
  - はい、タスクは終了しました。
  - いいえ、ステップ4（CVMのパスワード保護共有の無効設定）を実行してください。
@@ -55,6 +58,6 @@ Windows OSのローカルコンピュータがRDPプロトコル（MSTSCなど�
 2. 【すべてのネットワーク】タブを展開し、【パスワード保護共有】の下で【パスワード保護共有を無効にする】を選択し、【変更の保存】をクリックします。
 3. Windows CVMに再接続し、接続に成功したか確認します。
  - はい、タスクは終了しました。
- - いいえ、[チケットを送信] (https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1) して問題を報告してください。
+ - いいえ、[チケットを送信](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8CVM&step=1) して問題を報告してください。
 
 
