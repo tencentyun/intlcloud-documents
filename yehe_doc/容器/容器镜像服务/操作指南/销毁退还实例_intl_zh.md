@@ -9,10 +9,10 @@
 ## 操作步骤
 1. 登录 [容器镜像服务控制台](https://console.cloud.tencent.com/tcr/instance?rid=1)。
 2. 单击左侧导航栏中的【实例列表】，进入“实例列表”页面。
-   ![](https://main.qcloudimg.com/raw/ef0b63aa47d7285ac8338654e5074fa2.png)
+   ![](https://main.qcloudimg.com/raw/153c64557e77527b45977033511da837.png)
 3. 单击需要删除的实例右侧的【删除】。
 4. 在弹出的确认窗口中，按需勾选“随实例删除关联的 COS 存储桶”。如下图所示：
-![](https://main.qcloudimg.com/raw/e800726592938c08594213c63f43b3d5.png)
+![](https://main.qcloudimg.com/raw/61aae8be9dd0bd6f9be1f03ccdeced30.png)
  >! 
  >- 请仔细阅读删除实例的相关提示。实例删除将彻底清理实例使用过程中存储的用户数据及相关配置，且不可恢复，请谨慎操作。
  >- 如果确认不再需要使用容器镜像服务企业版过程中存储的容器镜像、Helm Chart 等底层数据，请勾选随实例删除后端存储 COS Bucket，避免产生不必要费用。
