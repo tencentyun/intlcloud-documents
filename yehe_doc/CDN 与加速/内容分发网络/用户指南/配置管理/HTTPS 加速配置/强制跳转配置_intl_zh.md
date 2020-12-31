@@ -15,9 +15,9 @@
 ### 配置说明
 
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可在【Https 配置】中可看到【强制跳转】配置开关，默认情况下为关闭状态，默认不进行任何跳转：
-<img src="https://main.qcloudimg.com/raw/ffbb3a57c19ba1d8a52b25ad66f16508.png" style="width:700px"/>
+<img src="https://main.qcloudimg.com/raw/b11157d848d39d4e4bba540598f35eba.png" style="width:700px"/>
 单击开启，可配置跳转类型、跳转方式及是否携带头部：
-<img src="https://main.qcloudimg.com/raw/90aae9a0b02d704dfafd0c080e5972db.png" style="width:450px"/>
+<img src="https://main.qcloudimg.com/raw/731d7bcb51286683d259691178bf2b39.png" style="width:450px"/>
 单击确认后，即可直接发布配置至现网：
-<img src="https://main.qcloudimg.com/raw/bd1a62d0b49fb4f2e189512e30b8b9ff.png" style="width:700px"/>
+<img src="https://main.qcloudimg.com/raw/2dcfbacf16b47fe600935f57aadd2e77.png" style="width:700px"/>
 
