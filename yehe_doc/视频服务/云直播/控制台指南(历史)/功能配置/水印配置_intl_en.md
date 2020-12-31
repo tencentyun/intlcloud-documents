@@ -14,8 +14,8 @@ LVB supports the watermark feature. It adds watermarks to the live streaming scr
 
 You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
-
-## Creating Watermark Template<span id="Watermark"></span>
+<span id="Watermark"></span>
+## Creating Watermark Template
 
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark).
 2. Click **+** to create a watermark template.
@@ -28,7 +28,9 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 6. Click **Save**.
 ![](https://main.qcloudimg.com/raw/944534ffbf8625b36a8883087bdf29f6.png)
 
-## Binding Domain Name<span id="conect"></span>
+<span id="conect"></span>
+## Binding Domain Name
+
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark).
 2. Enter the domain name binding page in either of the following ways:
 	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
@@ -36,24 +38,24 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 3. Select a **watermark template** and a **push domain name** in the domain name binding window and then click **OK**.
 >? You can click **Add** to bind multiple push domain names to this template.
 
-## Unbinding<span id="untie"></span>
+<span id="untie"></span>
+## Unbinding
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark).
 2. Select domain names bound to the watermark template and click **Unbind**.
 3. Confirm whether to unbind the domain name and click **OK** to unbind it.
 
-
-## Modifying Template<span id="change"></span>
-
+<span id="change"></span>
+## Modifying Template
 1. Go to **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Select the target watermark template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/aceffbdffb9dd2b892500c97d8d1654f.png)
 
-> You can click **Preview** to view how the watermark will be displayed on the screen.
+>? You can click **Preview** to view how the watermark will be displayed on the screen.
 
-
-## Deleting Template<span id="delete"></span>
+<span id="delete"></span>
+## Deleting Template
 If a template has been bound to a domain name, you need to unbind the template before deleting it. For detailed directions, please see [Unbinding](#untie).
 1. Go to **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Find the target watermark template that you have created and click the deletion icon ![img](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) at the top.
