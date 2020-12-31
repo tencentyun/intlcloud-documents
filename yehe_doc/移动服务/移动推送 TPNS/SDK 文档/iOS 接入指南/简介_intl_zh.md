@@ -60,10 +60,10 @@ iOS SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供给开
 
 ### 标签相关流程
 
-下图为账号相关流程，具体接口方法请查看 [标签管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
+下图为标签相关流程，具体接口方法请查看 [标签管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
 ![](https://main.qcloudimg.com/raw/c757e0102e834dbbe85ac68c7442e850/tag.png)
 
 ### 用户属性相关流程
 
-下图为账号相关流程，具体接口方法请查看 [用户属性管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
+下图为用户属性相关流程，具体接口方法请查看 [用户属性管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
 ![](https://main.qcloudimg.com/raw/06dc6605dcc75b046f649240b91a9fc4/attribute.png)

@@ -57,10 +57,10 @@
 <td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31084">地址生成器</a></td>
 <td>支持通过填写地址拼接信息，辅助用户快速生成推流/播放地址。</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web推流</a></td>
+<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web 推流</a></td>
 <td>可实现快速生成推流地址，在线推流测试直播功能。</td>
 </tr><tr>
-<td>自助诊断</td>
+<td><a href="https://console.cloud.tencent.com/live/tools/selfcheck">自助诊断</a></td>
 <td>快速诊断常见直播推流/播放问题，目前此功能处于开放内测阶段，诊断结果仅供参考。</td>
 </tr></tr>
 </table>
