@@ -5,9 +5,8 @@
 
 本文提供腾讯云、阿里云以及新网的 CNAME 配置步骤说明：
 
-- [腾讯云设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E8.85.BE.E8.AE.AF.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
-- [阿里云设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E9.98.BF.E9.87.8C.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
-- [新网设置方法](https://intl.cloud.tencent.com/document/product/228/3121#.E6.96.B0.E7.BD.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
+- [腾讯云设置方法](https://intl.cloud.tencent.com/document/product/228/3121)
+- [阿里云设置方法](https://intl.cloud.tencent.com/document/product/228/3121)
 
 
 <span ID ="m1"></span>
@@ -16,7 +15,6 @@
 > ! 域名解析各种记录类型之间是有优先级差异的，在主机记录相同的情况下，同一条线路有几种不同的记录类型不能共存，否则将会提示冲突。CNAME 记录与除 CNAME 记录以外的任何记录类型都冲突，需要先删除掉其他记录，再进行配置。
 
 1. 可以登录 [域名服务](https://console.cloud.tencent.com/domain) 控制台，在列表中，找到需要添加 CNAME 记录的域名所在行，单击操作栏的【解析】。
-![CNAME配置](https://main.qcloudimg.com/raw/dd299f2ef44538523622a7de978d5995.png)
 2. 在跳转到的DNSPOD页面中，单击【添加记录】，通过如下步骤添加 CNAME 记录。
 ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 	- **主机记录**：填写子域名。例如，添加 `www.dnspod.com` 的解析，您在 “主机记录” 处选择 “www” 即可。如果只是想添加 `dnspod.com` 的解析，您在 “主机记录” 处选择 “@” 即可。“@” 的 CNAME 会影响到 MX 记录的正常解析，添加时请您慎重考虑。
@@ -31,10 +29,10 @@
 
 - 您可以将单个主机记录的线路设置为 “默认” 类型，则是为整站开启加速服务。
 	 例如，您需要将所有用户都指向1.com，您可以通过添加线路类型为默认、记录值为`1.com`的这一条CANME记录来实现。
-![img](https://main.qcloudimg.com/raw/be770e0f8b91c33ae7c41f1e50e633af.png)
+![img](https://main.qcloudimg.com/raw/0c146a23008acc3c0e4884aa1c4d3a3c.png)
 - 您也可以分线路开启加速服务。
 例如，您需要将联通用户指向 `2.com`，移动用户都指向 `1.com`。您可以通过添加线路类型为移动、记录值为`1.com` 和线路类型为联通、记录值为 `2.com` 的两条       CNAME 记录来实现。更多配置说明请查看[解析线路说明](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/)。
-![](https://main.qcloudimg.com/raw/a10e6be051e2b90a323cb8e07081fb63.png)
+![](https://main.qcloudimg.com/raw/ecf4d1ad94eaf897473647459b923209.png)
 
 <span ID ="m2"></span>
 ### 阿里云设置方法
@@ -45,24 +43,20 @@
 2. 单击要解析的域名，进入解析记录页。
 3. 进入解析记录页后，单击【添加记录】按钮，开始设置解析记录。
 4. 若要设置 CNAME 解析记录，将记录类型选择为 CNAME。主机记录即域名前缀，可任意填写（如：`www`）。记录值填写为当前域名指向的另一个域名。解析线路，TTL 默认即可。
-   ![img](https://main.qcloudimg.com/raw/1e5d2b3e6e142b5f0900cc4065bd0864.png)
+   ![img](https://main.qcloudimg.com/raw/6b8bb9ce4f998b8d17ca27fd10512dc6.png)
 5. 填写完成后，单击【确认】，完成解析设置。
 
 
 
 <span ID ="m3"></span>
-### 新网设置方法
 
-若您的 DNS 服务商为新网，您可通过如下步骤添加 CNAME 记录。
-**设置别名（CNAME 记录）**
-即：别名记录。这种记录允许您将多个名字映射到同一台计算机。通常用于同时提供 WWW 和 MAIL 服务的计算机。例如，有一台计算机名为`host.mydomain.com`（A记录）。它同时提供 WWW 和 MAIL 服务，为了便于用户访问服务。可以为该计算机设置两个别名（CNAME）：WWW 和 MAIL 。如下图：
-![img](https://main.qcloudimg.com/raw/2e93d51c7fe8502670475d71bbfb20cb.png)
+
 
 ## 验证 CNAME 是否生效
 
 不同的 DNS 服务商，CNAME 生效的时间略有不同，一般在半个小时之内生效。您可以通过 nslookup 或 dig 的方式来查询 CNAME 是否生效。
 
 - `nslookup -qt=cname <加速域名>`
-  ![img](https://main.qcloudimg.com/raw/ed15d49b7d2fee9cf8830d4bf9ca51a2.png)
+  
 - `dig <加速域名>`
   ![img](https://main.qcloudimg.com/raw/2ba5ec76f1671c3b8ee345cef896de10.png)

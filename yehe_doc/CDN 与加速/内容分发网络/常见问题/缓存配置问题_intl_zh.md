@@ -7,7 +7,7 @@ CDN 节点上缓存的用户资源都面临“过期”问题。若资源处于�
 2. 找到您所要编辑的域名所在行，单击操作栏中的【管理】。
 ![](https://main.qcloudimg.com/raw/53c1171f8b1fdec4ddd2f87f6c47fe12.png)
 3. 在缓存过期配置模块中可以找到**高级缓存过期设置**开关，单击即可打开。
-![](https://main.qcloudimg.com/raw/dcb2baf6f60df8836243778c70e4ee60.png)
+![](https://main.qcloudimg.com/raw/b1288410345c3dd92907002ad5929d38.png)
 4. 当您开启了高级缓存过期设置开关后，会达到如下效果。
 用户请求源站某资源时 Response HTTP Header 中带有 Cache-Control 字段，且值为 max-age=xxxx，此时节点对该资源的缓存时间取配置的过期时间与 max-age 中的最小值：
  - 若用户源站配置 /index.html 的 max-age 为200秒，CDN 对应配置的缓存时间为600秒，则文件实际过期时间为200秒。
