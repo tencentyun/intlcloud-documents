@@ -1,14 +1,14 @@
-## 简介
+## Overview
 
-### 组件介绍
+### Add-on description
 
-Load Balancer Controlling Framework（LBCF）是一款部署在 Kubernetes 内的通用负载均衡控制面框架，旨在降低容器对接负载均衡的实现难度，并提供强大的扩展能力以满足业务方在使用负载均衡时的个性化需求。
+Load Balancer Controlling Framework (LBCF) is a general load balancer control plane framework deployed on Kubernetes. It is designed to reduce the difficulty of implementing load balancing on containers, and it provides powerful scalability that meets the individual needs of businesses in using load balancers.
 
-### 部署在集群内的 Kubernetes 对象
+### Kubernetes objects deployed in a cluster
 
-在集群内部署 LBCF 组件，将在集群内部署以下 Kubernetes 对象：
+Deploying LBCF add-on in a cluster will deploy the following Kubernetes objects in the cluster:
 
-| Kubernetes 对象名称                                 | 类型                             | 默认占用资源 | 所属 Namespaces |
+| Kubernetes Object Name | Type | Default Resource Occupation | Namespaces |
 | ---------------------------------------------- | ------------------------------ | ------ | ------------ |
 | lbcf-controller                                | Deployment                     | -      | kube-system  |
 | lbcf-controller                                | ServiceAccount                 | -      | kube-system  |
@@ -23,55 +23,55 @@ Load Balancer Controlling Framework（LBCF）是一款部署在 Kubernetes 内�
 | lbcf-mutate                                    | MutatingWebhookConfiguration   | -      | -            |
 | lbcf-validate                                  | ValidatingWebhookConfiguration | -      | -            |
 
-## 使用场景
+## Use Cases
 
-LBCF 对 Kubernetes 内部晦涩的运行机制进行了封装并以 Webhook 的形式对外暴露，在容器的全生命周期中提供了多达8种 Webhook。通过这些 Webhook，开发人员可以轻松实现下述功能：
+LBCF encapsulates the mechanisms of Kubernetes, and exposes it in the form of Webhook. It provides up to 8 types of Webhook over the whole lifecycle of a container. By using these Webhooks, developers can easily implement the following features:
 
-- 对接任意负载均衡/名字服务，并自定义对接过程。
-- 实现自定义灰度升级策略。
-- 容器环境与其他环境共享同一个负载均衡。
-- 解耦负载均衡数据面与控制面。
+- Interconnect with any load balancer/name services, and customize the interfacing process.
+- Implement customized beta testing upgrade policies.
+- The container environment shares the same load balancer with other environments.
+- Decouple the data plane and control plane of the load balancer 
 
-##  限制条件
-LBCF 对系统有以下要求： 
-- 支持 Kubernetes 1.10 及以上版本的集群。
-- 需开启 Dynamic Admission Control，并在 apiserver 中添加以下启动参数：
+## Limits
+LBCF has the following system requirements: 
+- Supports clusters with Kubernetes version 1.10 and above.
+- Dynamic Admission Control must be enabled, and the following launch parameters must be added on apiserver:
 ```
 -enable-admission-plugins=MutatingAdmissionWebhook,ValidatingAdmissionWebhook
 ```
-- Kubernetes 1.10 版本，则需在 apiserver 中额外添加以下参数：
+- For Kubernetes 1.10 version, the following parameter must be added on apiserver:
 ```
 --feature-gates=CustomResourceSubresources=true
 ```
 
->?推荐您在 [腾讯云容器服务](https://console.cloud.tencent.com/tke2) 中购买 1.12.4 版本集群，无需修改任何参数，开箱可用。
+>?We recommend that you purchase clusters of version 1.12.4 on [Tencent Cloud TKE](https://console.cloud.tencent.com/tke2) so that you do not need to modify any parameters.
 
-## 使用方法
-### 组件安装
-1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【扩展组件】。
-2. 在“扩展组件”管理页面上方，选择地域及需安装 LBCF 的集群，并单击【新建】。
-3. 开发或选择安装 LBCF Webhook 规范，实现 Webhook 服务器。
+## Usage
+### Installing the add-on
+1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and select **Add-ons** in the left sidebar.
+2. On the top of the **Add-ons** management page, select the region and the cluster for installing LBCF, and click **Create**. 
+3. Develop or choose to install LBCF Webhook specifications to implement the Webhook server.
 
 
 
 ### LBCF CLB driver
-本文以腾讯云 CLB 开发的 Webhook 服务器为例。
+This document takes Webhook server developed by Tencent Cloud CLB as an example.
 
-#### 功能列表
+#### Feature list
 
-- 使用已有负载均衡。
-- 创建新的负载均衡（四层/七层）。
-- 绑定 Service NodePort。
-- CLB 直通 Pod（直接绑定 Pod 至 CLB，不通过 Service）。
-- 权重调整。
-- 能够校验并拒绝非法参数。
+- Use existing Cloud Load Balancers.
+- Create new Cloud Load Balancers (layer-4/layer-7).
+- Bind Service NodePort.
+- CLB connects to Pods directly (Pods can be directly bound to CLB, without using Service).
+- Weight adjustment.
+- Able to verify and reject invalid parameters.
 
-#### 部署 LBCF CLB driver
-1. 请使用 [附录](#other) 中提供的 yaml 文件进行部署，部署前需修改 `deploy.yaml` 的以下信息：
-	- 镜像信息
-	- 所在地域
-	- 所在 vpcID，绑定 service NodePort 时用来查找节点对应的 instanceID。
-	- secret-id 及 secret-key，可前往 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 获取。
+#### Deploying LBCF CLB driver
+1. Use the YAML document provided in [Appendix](#other) for deployment. Before deployment, you must modify the following information in `deploy.yaml`:
+	- Image information.
+	- Region to which it belongs.
+	- vpcID to which it belongs. When binding a service NodePort, this is used to find the corresponding instanceID of the node.
+	- secret-id and secret-key. You can get this from [API Key Management](https://console.cloud.tencent.com/cam/capi).
 ```
     spec:
       priorityClassName: "system-node-critical"
@@ -84,17 +84,17 @@ LBCF 对系统有以下要求：
             - "--secret-id=${your-account-secret-id}"
             - "--secret-key=${your-account-secret-key}"
 ```
-2. 登录集群，使用以下命令安装 YAML 。
+2. Log in to the cluster and use the following commands to install YAML.
 ```
 kubectl apply -f configmap.yaml
 kubectl apply -f deploy.yaml
 kubectl apply -f service.yaml
 ```
 
-#### 具体示例
-- 使用已有四层 CLB。
-本例中使用了 ID 为 `lb-7wf394rv` 的负载均衡实例，监听器为四层监听器，端口号为20000，协议类型 TCP。
->!程序会以**端口号20000，协议类型 TCP** 为条件查询监听器，若不存在，将自动新建。
+#### Specific example
+- Use the existing layer-4 CLB.
+In this example, the ID of the CLB instance used is `lb-7wf394rv`. The listener is a layer-4 listener, the port number is 20000, and the protocol type is TCP.
+>!The program will query listeners with **port number 20000, protocol type TCP**. If none exist, a new listener will automatically be created.
 >
 ```
 apiVersion: lbcf.tke.cloud.tencent.com/v1beta1
@@ -112,8 +112,8 @@ spec:
     policy: Always
 ```
 
-- 创建新的七层 CLB。
-本例在 VPC `vpc-b5hcoxj4` 中创建了公网（OPEN）负载均衡实例，并为之创建了端口号为9999的 HTTP 监听器，最终会在监听器中创建 `mytest.com/index.html` 的转发规则。
+- Create a new layer-7 CLB.
+This example creates a public network (OPEN) CLB instance in the VPC `vpc-b5hcoxj4`, and creates an HTTP listener with port number 9999. Finally, it creates the `mytest.com/index.html` forwarding rule in the listener.
 ```
 apiVersion: lbcf.tke.cloud.tencent.com/v1beta1
 kind: LoadBalancer
@@ -132,8 +132,8 @@ spec:
   ensurePolicy:
     policy: Always
 ```
-- 设定 backend 权重。
-本例展示了 Service NodePort 的绑定。被绑定 Service 的名称为 svc-test，service port 为80（TCP），绑定到 CLB 的每个`Node:NodePort` 的权重都是66。
+- Set backend weight.
+This example shows the binding relationship of Service NodePort. The name of the bound Service is svc-test, with a service port of 80 (TCP). The weight of each `Node:NodePort` bound to the CLB is 66.
 ```
 apiVersion: lbcf.tke.cloud.tencent.com/v1beta1
 kind: BackendGroup
@@ -150,9 +150,9 @@ spec:
     weight: "66"
 ```
 <span id="other"></span>
-## 附录
+## Appendix
 
-### 腾讯云 CLB LBCF driver
+### Tencent Cloud CLB LBCF driver
 #### ConfigMap
 ```
 apiVersion: v1

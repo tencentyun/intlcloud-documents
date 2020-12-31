@@ -1,11 +1,12 @@
 <span id="Nginx-ingress"></span>
 ## Installing NginxIngress Addon
+>! To use NginxIngress addon, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
 3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
-4. On the "Add-on List" page, click **Create**. On the displayed "Create an Add-on" page, select **NginxIngress**.
-5. Click **Finish** to install the add-on.
+4. On the "Add-on List" page, click **Create**. On the displayed "Create Add-on" page, select **NginxIngress**.
+5. Click **Done** to install the add-on.
 
 
 ## Installation Method
@@ -15,38 +16,41 @@ You can choose one of the following installation methods to install Nginx-ingres
 - [Deploying via Nginx accessing a frontend LB](#LB)
 
 
+
 <span id="DaementSet"></span>
 ### Deploying via specifying a node pool as DaemonSet (recommended)
 
 Nginx is a key traffic access gateway. It is recommended that you use the specified node pool to deploy Nginx-Ingress rather than deploy Nginx and other services in the same node. The deployment architecture is shown in the figure below:
 ![](https://main.qcloudimg.com/raw/70b726a482703a3c1b959844da65ff89.png)
 The installation directions are as follows:
-
 >? The capability of node pool scaling is supported by using this installation method. You can implement the scaling of Nginx replicas through adjusting the number of node pools.
 
 1. Prepare the node pool for deploying Nginx-Ingress, and set the taint (to prevent other Pods from scheduling this node pool). For how to deploy node pool, see [Node Pool Overview](https://intl.cloud.tencent.com/document/product/457/35900).
-2. [Installing NginxIngress Addon](#Nginx-ingress) in the cluster.
+2. [Install NginxIngress Addon](#Nginx-ingress) in the cluster.
 3. In the details page of the created Nginx Ingress addon, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances at the same time).
+
 4. In the pop-up window, select **Specify a Node Pool as DaemonSet to Deploy** for **Deploy Modes** and set other parameters as needed.
  - **Node Pool**: select a node pool.
  - **Nginx Configuration**: the configuration of **Request** must be less than the model configuration of the node pool (the node itself has resource reservation). **Limit** can be left empty.
 4. Click **OK**.
 
-<span id="Deployment+HPA"></span>
 
+<span id="Deployment+HPA"></span>
 ### Deploying via Deployment + HPA and specifying scheduling policy
 If you use Deployment + HPA to deploy Nginx-Ingress, you can configure the taint and toleration to implement the decentralized deployment of Nginx and service Pod based on your business needs. Meanwhile, with HPA, Nginx can realize auto-scaling according to metrics such as CPU and memory. The deployment architecture is shown in the figure below:
 ![](https://main.qcloudimg.com/raw/ab2743999ad2c8fbc8806673c77e0ef4.png)
 
 
-#### Installation Directions
+#### Installation
 1. Set the node label of the Nginx to deploy in the cluster. For details, see [Setting a Node Label](https://intl.cloud.tencent.com/document/product/457/30657).
-2. [Installing NginxIngress Addon](#Nginx-ingress) in the cluster.
+2. [Install NginxIngress Addon](#Nginx-ingress) in the cluster.
 3. In the details page of the created Nginx Ingress addon, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances at the same time).
 4. In the pop-up window, select **Custom Deployment + HPA** for **Deploy Modes** and set other parameters as needed.
  - **Node Scheduling Policy**: specify the scheduling policy as needed.
  - **Nginx Configuration**: the configuration of **Request** must be less than the model configuration of the node pool (the node itself has resource reservation). **Limit** can be left empty.
 5. Click **OK**.
+
+
 
 <span id="LB"></span>
 ### Deploying via Nginx accessing a frontend LB
@@ -86,7 +90,6 @@ Note that when hostNetwork is used, to avoid port monitoring conflicts, Nginx-in
 In the details page of Nginx-ingress addon, you can select a Nginx-ingress instance to edit YAML in **Nginx Configuration** tab.
 >! By default, Nginx will not be restarted after the parameters are configured and there is a slight delay in the effect time.
 
-
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
 3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
@@ -114,7 +117,6 @@ data:
 
 >!
 >- Please do not modify 'access-log-path', 'error-log-path' and 'log-format-upstream', otherwise, the CLS log collection will be affected.
->
 >- If you need to configure different parameters for your business, see [Official Document](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/).
 
 

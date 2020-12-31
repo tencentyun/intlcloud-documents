@@ -1,14 +1,20 @@
-## Overview
-TKE-Optimized images are images of Kubernetes cluster nodes produced by Tencent Kubernetes Engine (TKE) based on [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel). Fully optimized for TKE, these images have higher security and stability. In particular, the images provide a custom kernel that is maintained by the Tencent Cloud team and can be updated by using hotpatches. We recommend that you select TKE-Optimized series images to deploy your TKE cluster nodes.
 
 
-## Features
 
-<table>
-	<tr><th>Feature</th><th>Description</th></tr>
-	<tr><td><b>Kernel Customization</b></td><td><ul style="margin: 0;"><li>Based on kernel 4.14.105, which has been long supported by the kernel community.</li><li>Adds new features applicable to Tencent Cloud scenarios to optimize the performance of the kernel and fix major defects.</li></ul></td></tr>
-	<tr><td><b>Container Support</b></td><td><ul style="margin: 0;"><li>Enhances isolation and performance for TKE.</li><li>Supports isolating system files such as meminfo, vmstat, cpuinfo, stat, and loadavg.</li><li>Supports isolating sysctl interfaces, such as tcp_no_delay_ack and tcp_max_orphans.</li><li>Fixed many files system and network bugs.</li></ul></td></tr>
-	<tr><td><b>Performance Optimization</b></td><td><ul style="margin: 0;"><li>Optimizes the xfs memory allocation to resolve the xfs kmem_alloc failure.</li><li>Optimizes memory allocation while receiving network packets, to prevent excessive memory usage when a large number of UDP packets are received.</li><li>Limits the memory usage of system page caches, to prevent the lack of memory from affecting service performance and causing the out-of-memory (OOM) error.</li></ul></td></tr>
-	<tr><td><b>Support and Updates</b></td><td><ul style="margin: 0;"><li>Regularly updates the kernel to enhance security and functionality.</li><li>Updates the kernel by using hotpatches.</li></td></tr>
-</table>
+[Tencent Linux](https://intl.cloud.tencent.com/document/product/457/38854), a public image of Tencent Cloud that contains [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel) (a customized kernel maintained by the Tencent Cloud team), is available in TKE as a default image.
 
+TKE-Optimized series images is once used for improving the stability of the image and providing more features, but it is not available for the clusters in TKE console after the Tencent Linux public image is launched.
+
+
+<dx-alert infotype="notice" title="Note:">
+- The clusters that are still using TKE-Optimized image are not affected and can continue to use it. But it is recommended that you switch to Tencent Linux 2.4. The new nodes in the cluster will use Tencent Linux 2.4 while the existing nodes are not affected and can continue to TKE-Optimized image.
+- Centos7.6 TKE Optimized image is fully compatible with Tencent Linux 2.4 image.
+- The user space tools of Ubuntu 18.04 TKE Optimized image are not fully compatible with Tencent Linux. If you have used these tools in your script, you need to modify the script after switching to Tencent Linux.
+</dx-alert>
+
+
+<style>
+ul{
+margin-bottom:0px !important;
+}
+</style>
