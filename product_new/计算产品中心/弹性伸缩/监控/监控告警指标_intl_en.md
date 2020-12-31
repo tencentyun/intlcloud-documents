@@ -26,14 +26,14 @@ It collects one sample per minute for each of CVM based on the set monitoring it
 
 For example: A scaling group has 5 CVM instances and the defined alarm scaling policy is “Maximum/minimum/average CPU utilization of more than 50% within a 5 minutes period for 3 times consecutively.” Auto Scaling collects the data and determines whether the policy for the alarm scaling rule is met. The steps are as follows:
 
-* Step 1: Collects one value from each CVM per minute. In one sampling period (the current period is 5 minutes) it takes 25 CPU utilization values.
+1: Collects one value from each CVM per minute. In one sampling period (the current period is 5 minutes) it takes 25 CPU utilization values.
 
-* Step 2: According to the configured maximum/minimum/average values, it determines whether the policy for the alarm scaling rule is met.
-* * Maximum value: If the maximum value in these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
-* * Minimum value: If the minimum value in these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
-** Average value: If the average value of these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
+2: According to the configured maximum/minimum/average values, it determines whether the policy for the alarm scaling rule is met.
+* Maximum value: If the maximum value in these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
+* Minimum value: If the minimum value in these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
+* Average value: If the average value of these 25 values exceeds the threshold (50%), this period meets the alarm scaling rule.
 
-* Step 3: If the rule is met for 3 consecutive periods (a total of 15 minutes, with each 5-minute period considered the current period), the scaling action is triggered.
+3: If the rule is met for 3 consecutive periods (a total of 15 minutes, with each 5-minute period considered the current period), the scaling action is triggered.
 
 
 
