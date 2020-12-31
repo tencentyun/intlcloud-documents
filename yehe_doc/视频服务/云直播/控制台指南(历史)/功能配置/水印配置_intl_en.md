@@ -27,14 +27,17 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 	- Adjust the coordinates of the X axis and Y axis.
 6. Click **Save**.
 ![](https://main.qcloudimg.com/raw/944534ffbf8625b36a8883087bdf29f6.png)
+
 <span id="conect"></span>
 ## Binding Domain Name
+
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark).
 2. Enter the domain name binding page in either of the following ways:
 	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	- **Bind a domain name after creating the watermark template**: after the [watermark template is created](#Watermark), click **Bind Domain Name** in the pop-up.
 3. Select a **watermark template** and a **push domain name** in the domain name binding window and then click **OK**.
 >? You can click **Add** to bind multiple push domain names to this template.
+
 <span id="untie"></span>
 ## Unbinding
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark).
@@ -43,14 +46,13 @@ You have activated the LVB service and added a [push domain name](https://intl.c
 
 <span id="change"></span>
 ## Modifying Template
-
 1. Go to **Feature Configuration** > **[LVB Watermark](https://console.cloud.tencent.com/live/config/watermark)**.
 2. Select the target watermark template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/aceffbdffb9dd2b892500c97d8d1654f.png)
 
-> You can click **Preview** to view how the watermark will be displayed on the screen.
+>? You can click **Preview** to view how the watermark will be displayed on the screen.
 
 <span id="delete"></span>
 ## Deleting Template
