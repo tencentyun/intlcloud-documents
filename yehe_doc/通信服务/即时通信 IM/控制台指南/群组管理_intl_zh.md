@@ -1,5 +1,5 @@
 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【群组管理】，您可以根据实际业务需求管理群组。
-您也可以通过调用对应的 REST API 管理群组，具体操作请参见 [群组管理 API 文档](https://intl.cloud.tencent.com/document/product/1047/34894)。
+您也可以通过调用对应的 REST API 管理群组，具体操作请参见 [群组管理 API 文档](https://cloud.tencent.com/document/product/269/1613)。
 
 
 ## 添加群组
@@ -17,7 +17,7 @@
 ### 修改基本信息
 1. 在【群组详情】页面，单击基本信息区域的【编辑】。
 2. 在弹出的修改群信息的对话框中，您可以修改群名称和群简介。
- ![](https://main.qcloudimg.com/raw/8c612029f66338a63551dcdc8ac3924e.png)
+ ![](https://main.qcloudimg.com/raw/e02ca8b347201a324fe8c6816024a725.png)
 3. 单击【确定】保存配置。
 
 ### 管理群成员
@@ -26,7 +26,7 @@
 2. 在弹出的添加成员对话框中，输入用户名。
  >?必须输入已注册的用户名。
  >
-![](https://main.qcloudimg.com/raw/ddcea4353e44374607d62e916536940c.png)
+![](https://main.qcloudimg.com/raw/a770c24a1c91813e16e50da0616f22ba.png)
 3. 单击【确定】保存配置。
  群成员添加成功后，在群成员列表中可以查看用户名、昵称、加入时间、最后发言时间和成员身份。
 
