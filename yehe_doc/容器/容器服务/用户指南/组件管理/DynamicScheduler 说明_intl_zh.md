@@ -32,7 +32,7 @@ Kubernetes 原生调度器大部分基于 Pod Request 资源进行调度，并�
 集群内部分节点的剩余可调度资源较多（根据节点上运行的 Pod 的 request 和 limit 计算出的值）但真实负载却比较高，而另外节点的剩余可调度资源比较少但真实负载却比较低，此时 Kube-scheduler 会优先将 Pod 调度到剩余资源比较多的节点上（根据 LeastRequestedPriority 策略）。
 
 如下图所示，Kube-Scheduler 会将 Pod 调度到 Node2 上，但明显调度到 Node1（真实负载水位更低）是更优的选择。
-<img src="https://main.qcloudimg.com/raw/03a7d96ffd24b67684a8f68f1f48e4cb.png" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/518239f56c2f4c805dc5678e79443466.png" data-nonescope="true">
 
 ### 防止调度热点
 
@@ -67,7 +67,7 @@ Kubernetes 原生调度器大部分基于 Pod Request 资源进行调度，并�
 node-annotator 组件负责定期从监控中拉取节点负载 metric，同步到节点的 annotation。如下图所示：
 >! 组件删除后，node-annotator 生成的 annotation 并不会被自动清除。您可根据需要手动清除。
 
-![](https://main.qcloudimg.com/raw/7becb88fec8434b56c06eafc95c50801.png)
+![](https://main.qcloudimg.com/raw/1a5ede9cc77fbb797e68f645e908bb33.png)
 
 ### Dynamic-scheduler
 
@@ -77,13 +77,13 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 
 为了避免 Pod 调度到高负载的 Node 上，需要先通过预选过滤部分高负载的 Node（其中过滤策略和比例可以动态配置，具体请参见本文 [组件参数说明](#parameter)）。
 如下图所示，Node2 过去5分钟的负载，Node3 过去1小时的负载均超过对应的域值，因此不会参与接下来的优选阶段。
-![](https://main.qcloudimg.com/raw/e985adff60f7183d0762e9be4fc36223.png)
+![](https://main.qcloudimg.com/raw/170eca75a5d9b241a8cb501fb3c23071.png)
 
 #### 优选策略
 
 同时为了使集群各节点的负载尽量均衡，Dynamic-scheduler 会根据 Node 负载数据进行打分，负载越低打分越高。
 如下图所示，Node1 的打分最高将会被优先调度（其中打分策略和权重可以动态配置，具体请参见本文 [组件参数说明](#parameter)）。
-![](https://main.qcloudimg.com/raw/eb0bb844e6cd74827037354b0a98fe4e.png)
+![](https://main.qcloudimg.com/raw/a080287111f91ff1cf18ce85bb08cd13.png)
 
 ## 组件参数说明
 
@@ -130,15 +130,13 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 ### 依赖部署
 
 Dynamic Scheduler 动态调度器依赖于 Node 当前和过去一段时间的真实负载情况来进行调度决策，需通过 Prometheus 等监控组件获取系统 Node 真实负载信息。在使用动态调度器之前，需要部署 Prometheus 等监控组件。在容器服务 TKE 中，您可按需选择采用自建的 Prometheus 监控服务或采用 TKE 推出的云原生监控。
-<span id="rules"></span>
-<dx-tabs>
-::: 自建Prometheus监控服务
+### 自建Prometheus监控服务
 #### 部署 node-exporter 和 prometheus
 
 通过 node-exporter 实现对 Node 指标的监控，用户可以根据业务需求部署 node-exporter 和 prometheus。
 
 
-#### 聚合规则配置[](id:Prometheus1)
+#### 聚合规则配置
 
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 采集数据进行聚合计算。为了获取动态调度器中需要的 `cpu_usage_avg_5m`、`cpu_usage_max_avg_1h`、`cpu_usage_max_avg_1d`、`mem_usage_avg_5m`、`mem_usage_max _avg_1h`、`mem_usage_max_avg_1d` 等指标，需要在 Prometheus 的 rules 规则进行如下配置：
 
@@ -192,24 +190,16 @@ rule_files:
 
 >?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
 
-:::
-::: 云原生监控 Prometheus
+### 云原生监控 Prometheus
 1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
-2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。如下图所示：
-	 ![](https://main.qcloudimg.com/raw/bafb027663fbb3f2a5063531743c2e97.jpg)
-2. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。如下图所示：
-   ![](https://main.qcloudimg.com/raw/e35d4af7eeba15f6d9da62ce79176904.png)
-3. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。如下图所示：
-	 ![](https://main.qcloudimg.com/raw/6791fb38c0de47a5d232fe3d8eaa3908.png)
-
-:::
-</dx-tabs>
+2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。
+3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。
+4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。
 
 
 
 
 ### 安装组件
-
 
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2/cluster)，选择左侧导航栏中的【集群】。
