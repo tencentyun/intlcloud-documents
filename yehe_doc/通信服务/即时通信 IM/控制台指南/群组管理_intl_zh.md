@@ -1,5 +1,5 @@
 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) ，单击目标应用卡片，在左侧导航栏选择【群组管理】，您可以根据实际业务需求管理群组。
-您也可以通过调用对应的 REST API 管理群组，具体操作请参见 [群组管理 API 文档](https://cloud.tencent.com/document/product/269/1613)。
+您也可以通过调用对应的 REST API 管理群组，具体操作请参见 [群组管理 API 文档](https://intl.cloud.tencent.com/document/product/1047/34960)。
 
 
 ## 添加群组
