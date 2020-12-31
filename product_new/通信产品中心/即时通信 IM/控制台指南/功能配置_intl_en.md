@@ -4,7 +4,7 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
 ### Login settings
 1. On the **Login and Messages** page, click **Edit** for **Login settings**.
 2. In the "Login Settings" dialog that appears, select multi-client login and set the number of concurrent online web instances.
-
+ ![](https://main.qcloudimg.com/raw/9774753fc2c7f4d46f47d0573404bc32.png)
 3. Click **OK** to save the settings.
 
 ### Setting the retention period of historical messages
@@ -41,13 +41,13 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
  >- The field name must consist of letters with a maximum length of 8 characters.
  >- You must set at least one read permission and one write permission.
  >
-
+ ![](https://main.qcloudimg.com/raw/95851bca861f45aed20c045a8d09928e.png)
 3. Click **OK** to save the settings.
 
 ### Modifying the permissions of a user custom field
 1. On the **Login and Messages** page, click **Modify permissions** in the row of the target custom field.
 2. In the "User Custom Field" dialog that appears, modify the read and write permissions.
-
+ ![](https://main.qcloudimg.com/raw/01081d71fe7ec45b470a249d685696c1.png)
 3. Click **OK** to save the settings.
 
 ## Friend Custom Fields
@@ -59,7 +59,7 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
 4. In the "Friend Custom Field" dialog that appears, enter a name for the custom field and set the field type.
  >?The field name must consist of letters with a maximum length of 8 characters.
  >
-
+ ![](https://main.qcloudimg.com/raw/271b68191ae3b1acb28fcbb4f7fea63e.png)
 5. Click **OK** to save the settings.
 
 ## Group Member Custom Fields
@@ -75,14 +75,14 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
   >
  - Click **Add group type** to add one group type at a time. Duplicate group types are not allowed.
  - Click **Delete** in the row of the target group type parameter to delete it. However, you must retain at least one group type parameter.
-
+ ![](https://main.qcloudimg.com/raw/3b6bcff0f4156f2340f71d082a29ac45.png)
 3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
 4. Click **OK** to save the setting.
 
 ### Editing group member custom fields
 1. On the **Group Member Custom Fields** page, click **Edit** in the row of the target group member custom field.
 2. In the "Group Member Custom Field" dialog that appears, modify the read and write permissions of the selected group type, or click **Add group type** to add a group type and set its parameters. Duplicate group types are not allowed.
-
+ ![](https://main.qcloudimg.com/raw/19532e3441d0de3a1b7c29e2fd0b4a4a.png)
 3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
 4. Click **OK** to save the setting.
 
@@ -100,13 +100,13 @@ Log in to [IM Console](https://console.cloud.tencent.com/im) and click the targe
   >
  - Click **Add group type** to add one group type at a time. Duplicate group types are not allowed.
  - Click **Delete** in the row of the target group type parameter to delete it. However, you must retain at least one group type parameter.
-
+ ![](https://main.qcloudimg.com/raw/b529d0ca03ea819db6e619f7e93e9b1e.png)
 3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
 4. Click **OK** to save the setting.
 
 ### Editing group custom fields
 1. On the **Group Custom Fields** page, click **Edit** in the row of the target group custom field.
 2. In the "Group Custom Field" dialog, modify the read and write permissions of the selected group type, or click **Add group type** to add a group type and set its parameters. Duplicate group types are not allowed.
-
+ ![](https://main.qcloudimg.com/raw/7ff1658c9fdc8d58e92e378445d1192f.png)
 3. Select **I understand that once added, custom fields and group types cannot be deleted and only the read and write permissions of group types can be modified.**
 4. Click **OK** to save the setting.
