@@ -21,8 +21,8 @@ User A runs an ecommerce platform. An ecommerce live streaming event was held fo
 <li/>Video storage duration: 3 months
 </ul></td></tr></table>
 
-
-## Postpaid Billing<span id="postpaid"></span>
+<span id="postpaid"></span>
+## Postpaid Billing
 This example mainly involves resource usages of LVB, LVB recording, and VOD as detailed below:
 
 ### LVB fees
