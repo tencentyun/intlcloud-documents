@@ -1,31 +1,28 @@
-This article describes how to configure, compile, and run the IM trial demo in minutes.
+This document introduces how to quickly run through the IM demo.
 
 
-<span id="step1"></span>
 ## Step 1: Create an App
-1. Log in to the [IM Console](https://console.cloud.tencent.com/im).
- >? If you already have an app, take note of its SDKAppID and [skip to Step 2](#step2).
- > A Tencent Cloud account supports a maximum of 100 IM apps. If you have reached that limit, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app before creating a new one. **Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
+1. Log in to the [IM console](https://console.cloud.tencent.com/im).
+ >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
+ > A Tencent Cloud account can create a maximum of 100 IM apps. If you want to create more apps, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first and then create a new one. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost**. **Proceed with caution**.
  >
-2. Click **Add Application**.
-3. In the **Create Application** dialog box, enter an app name and click **OK**.
-    After the app is created, you can view the status, version, SDKAppID, creation time, and expiry time of the new app on the overview page of the console. Take note of the SDKAppID.
+2. Click **+Add App**.
+3. In the **Create App** dialog box, enter your app name, and click **OK**.
+    After creation, you can see the status, service version, SDKAppID, creation time, and expiry time of the new app on the overview page of the console. Record the SDKAppID.
     
 
 
-<span id="step2"></span>
 ## Step 2: Obtain Key Information
 
 1. Click the target app card to enter the basic configuration page of the app.
-2. In the **Basic Info** area, click **Display key**. Copy and save the key information.
- >! Store the key information properly to prevent disclosure.
+2. In the **Basic Information** area, click **Display Key**, and then copy and save the key information.
+ >! Please store the key information properly to prevent leakage.
 
-<span id="step3"></span>
 ## Step 3: Download and Configure the Demo Source Code
 
 1. Download the IM Demo project. For more information about the specific download address, see [SDK Download](https://intl.cloud.tencent.com/document/product/1047/33996).
->?To protect the emoji copyrights, the Demo project you downloaded does not contain any emoji element splice. Using the emoji of the IM Demo privately may infringe copyrights. Instead, you can use your local emoji to configure codes.
-2. Open the project in the corresponding directory on the platform and find the `GenerateTestUserSig` file.
+>? To respect the copyright of emoji design, the downloaded Demo project does not contain sliced images of major emoji elements. You can use your local emoji packs to configure the code. Unauthorized use of the emoji packs in the IM Demo may infringe on design copyrights.
+2. Open the project in the terminal directory and find the `GenerateTestUserSig` file.
  <table>
      <tr>
          <th nowrap="nowrap">Platform</th>  
@@ -56,33 +53,33 @@ This article describes how to configure, compile, and run the IM trial demo in m
       <td>WXMini/dist/wx/debug/GenerateTestUserSig.js</td>   
      </tr>  
 </table>
-3. Set the relevant parameters in the `GenerateTestUserSig` file.
- >? Here, we use Android Studio to open an Android project.
+3. Set relevant parameters in the `GenerateTestUserSig` file:
+ >? In this document, an Android project is opened by using Android Studio as an example.
   >
- - SDKAPPID: set it to the actual SDKAppID obtained in [step 1](#step1).
+ - SDKAPPID: set it to the actual SDKAppID obtained in [Step 1](#step1).
  - SECRETKEY: enter the actual key information obtained in [step 2](#step2).
+ 
 
 
-
->! In this article, a SECRETKEY is configured in the client code to obtain UserSig. The SECRETKEY is easily decompiled and reverse cracked. If the SECRETKEY is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally run a demo project and commission features**.
-> The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is required, your app sends a request to the service server to obtain the dynamic `UserSig`. For more information, see [Generating a UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
+>! In this document, the method to obtain UserSig is to configure a SECRETKEY in the client code. In this method, the SECRETKEY is vulnerable to decompilation and reverse engineering. Once your SECRETKEY is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for locally running a demo project and feature debugging**.
+> The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, see [How to Generate UserSig on the Server](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## Step 4: Compile and Run the Demo
 Use the IDE on each end to compile and run the demo. For more information, see the `README.md` file in the corresponding directory of the demo project cloned in [Step 3](#step3).
 
-**The compilation and running of the iOS and Mac demo require pod integration. The detailed procedure is as follows:**
+**The compilation and running of the iOS and Mac Demo require the integration of pods. The detailed steps are as follows:**
 1. Run the following command on the terminal to check the pod version:
 ```
 pod --version
 ```
-If the system prompts that no pod exists or the pod version is earlier than 1.7.5, run the following command to install the latest pod:
+If the system indicates that no pod exists or that the pod version is earlier than 1.7.5, run the following command to install the latest pod.
 ```
 // Change gem sources.
 gem sources --remove https://rubygems.org/
 gem sources --add https://gems.ruby-china.com/
 // Install pods.
 sudo gem install cocoapods -n /usr/local/bin
-// If multiple versions of Xcode are installed, run the following command to choose an Xcode version (usually the latest Xcode version should be chosen):
+// If multiple Xcodes are installed, run the following command to choose an Xcode version (usually the latest Xcode version should be chosen):
 sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 // Update the local pod library.
 pod setup
@@ -100,11 +97,15 @@ pod install
  ```bash
  pod repo update
  ```
-3. Compile and run the project:
- - iOS: enter the iOS/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the project.
- - Mac: enter the Mac/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the project.
+3. Compile and run the demo:
+ - iOS: go to the iOS/TUIKitDemo folder and open `TUIKitDemo.xcworkspace` to compile and run the demo.
+ - Mac: go to the Mac/TUIKitDemo folder, and open `TUIKitDemo.xcworkspace` to compile and run the demo.
 
-## Related Documentation
+
+## Enabling Advanced Features
+- [Enabling Video Calls](https://intl.cloud.tencent.com/document/product/1047/38740)
+- [Enabling Group Livestreaming](https://intl.cloud.tencent.com/document/product/1047/37310)
+- [Enabling Live Rooms](https://intl.cloud.tencent.com/document/product/1047/38519)
+
+## Reference
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
-
-
