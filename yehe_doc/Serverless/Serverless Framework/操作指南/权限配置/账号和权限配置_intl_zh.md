@@ -33,20 +33,20 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 <span id="2"></span>
 ## 子账号权限配置
 ### 配置步骤
-    
+
 如果您的操作账号为腾讯云子账号，没有默认操作权限，则需要**主账号（或拥有授权操作的子账号）**进行如下授权操作：
 
 1. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击【授权】。
-![](https://main.qcloudimg.com/raw/590a469cf473b21e4d8e379efdae0bff.png)
+![](https://main.qcloudimg.com/raw/3d6e465aa4d6d50233e125e599475585.png)
 2. 在弹出的窗口内，搜索并选中 `QcloudSLSFullAccess`，单击【确定】，完成授予子账号 Serverless Framework 所有资源的操作权限。
-![](https://main.qcloudimg.com/raw/941afa81e8ed40d3580decf1507416eb.png)
+![](https://main.qcloudimg.com/raw/80c98249cbdb327a80d8941ce54c962f.png)
 3. 在 [CAM 用户列表](https://console.cloud.tencent.com/cam/user) 页，选取对应子账号，单击用户名称，进入用户详情页。
-![](https://main.qcloudimg.com/raw/ce66123b04c2dee19275c428e9ede34d.png)
+![](https://main.qcloudimg.com/raw/00be606ee5a4f48dd956a8488f9f0d06.png)
 4. 单击【关联策略】，在添加策略页面单击【从策略列表中选取策略关联】>【新建自定义策略】。
 关联策略页面：
-![](https://main.qcloudimg.com/raw/b4ef36e9e3d812dd3207ca73781432f8.png)
+![](https://main.qcloudimg.com/raw/f08bcaaf91105a8fdb86a0487e6a734d.png)
 新建策略页面：
-![](https://main.qcloudimg.com/raw/f91f811e812ae256cb11a3d1936e2eed.png)
+![](https://main.qcloudimg.com/raw/47ac3d10b3dcae6d828ccc056393cee3.png)
 
 5. 选择【按策略语法创建】>【空白模版】，填入如下内容，注意角色参数替换为您自己的 uin（账号 ID）：
    ```
@@ -73,6 +73,7 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
         }
     ]
    }
+   ```
  ```
 6. 完成自定义策略配置后，回到第4步的授权页面，搜索刚刚创建的自定义策略，点击【下一步】> 【确定】，即可授予子账号 SLS_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudSLSFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
 ![](https://main.qcloudimg.com/raw/595df2c83bda0ce5ed93321325da2f48.png)
@@ -99,3 +100,5 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 | QcloudCynosDBFullAccess | 云数据库 CynosDB 全读写访问权限 |
 | QcloudCLSFullAccess    | 日志服务（CLS）全读写访问权限 |
 | QcloudAccessForSLSRole | 该策略供 Serverless Framework（SLS）服务角色（SLS_QCSRole）进行关联，用于 SLS 一键体验功能访问其他云服务资源。包含访问管理（CAM）相关操作权限|
+
+ ```
