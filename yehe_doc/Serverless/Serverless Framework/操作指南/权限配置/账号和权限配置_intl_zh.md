@@ -74,9 +74,9 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
     ]
    }
    ```
- ```
+ 
 6. 完成自定义策略配置后，回到第4步的授权页面，搜索刚刚创建的自定义策略，点击【下一步】> 【确定】，即可授予子账号 SLS_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudSLSFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
-![](https://main.qcloudimg.com/raw/595df2c83bda0ce5ed93321325da2f48.png)
+![](https://main.qcloudimg.com/raw/b062490a1703b7fac049c43c8e598c96.png)
 
 >?除了授权调用默认角色 SLS_QcsRole 外，也可给子账号授权调用自定义角色。通过自定义角色中的细粒度权限策略，达到权限收缩的目的。查看 [指定操作角色配置](https://intl.cloud.tencent.com/document/product/1040/36819) 详情。
 
@@ -100,5 +100,3 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 | QcloudCynosDBFullAccess | 云数据库 CynosDB 全读写访问权限 |
 | QcloudCLSFullAccess    | 日志服务（CLS）全读写访问权限 |
 | QcloudAccessForSLSRole | 该策略供 Serverless Framework（SLS）服务角色（SLS_QCSRole）进行关联，用于 SLS 一键体验功能访问其他云服务资源。包含访问管理（CAM）相关操作权限|
-
- ```
