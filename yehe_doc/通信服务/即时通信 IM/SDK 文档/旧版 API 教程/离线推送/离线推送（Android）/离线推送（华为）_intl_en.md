@@ -10,7 +10,7 @@ The process of implementing offline message push is as follows:
 ## Configuring Offline Push
 Huawei EMUI is a highly customized Android system with strict backend policies. By default, third-party apps do not have auto-start permissions. As apps running in the background are often forcibly killed by the system, we recommend that the Huawei push service be integrated on Huawei devices. The Huawei push service is part of the Huawei Mobile Service (HMS) and a system-grade service of EMUI. Its delivery rate is higher than those of third-party push services. Currently, **IM only supports the notification bar messages of Huawei push**.
 
->
+>!
 >- This guide was prepared with direct reference to the official documentation of Huawei push. If Huawei push is changed, please refer to the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit).
 >- If you do not plan to implement a Huawei-specific offline push solution, skip this section.
 
@@ -26,14 +26,14 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 
 1. Log in to the [IM Console](https://console.qcloud.com/avc) and click the desired app. The app configuration page appears.
 2. Click **Add a certificate** under **Android push configuration**.
- > If you already have a certificate and only want to change its information, you can click **Edit** in **Android push configuration** to modify and update the certificate.
+ >? If you already have a certificate and only want to change its information, you can click **Edit** in **Android push configuration** to modify and update the certificate.
  >
 3. Use the information you obtained in [Step 1](#Step1_3) to configure the following parameters:
  - **Push platform**: select **Huawei**.
  - **Package name**: the name of the Huawei Push service app.
  - **AppID**: enter the **App ID** you got from Huawei Push.
  - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
- - **Badge Parameter**: enter the complete class name of `Activity` for the app entry as the application badge on Huawei Desktop. For more information, see [Interface Description for Badging on Huawei Desktop](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802)
+ - **Badge Parameter**: enter the complete class name of `Activity` for the app entry as the application badge on Huawei Desktop. For more information, see [Interface Description for Badging on Huawei Desktop](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-badging-0000001050042083)
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open App**, **Open URL**, and **Open specific App interface**. For more information, refer to [Configuring the Notification Bar Message Click Event](#click).
     **Open App** or **Open specific App interface** allows [custom content pass through](#section4).
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
@@ -42,7 +42,7 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 <span id="Step3"></span>
 ### Step 3: Integrate push SDK
 
->
+>?
 > - The default title of IM push notifications is `a new message`.
 > - Before reading this section, make sure that you have integrated and tested the IM SDK.
 > - You can find a sample for Huawei push implementation in our demo. Note that the features of Huawei push may be adjusted during Huawei push version updates. If you find any inconsistencies with the content of this section, please refer to the [official website of Huawei push](https://developer.huawei.com/consumer/cn/hms/huawei-pushkit) and notify us of the difference so that we can make the necessary modifications in time.
@@ -260,7 +260,7 @@ if (IMFunc.isBrandHuawei()) {
 ### Step 4: Report the push information to the IM server
 
 If you need to use Huawei push to push IM message notifications, then after **successful user login**, you must use the `setOfflinePushToken` method of `TIMManager` to report the **certificate ID** generated and hosted by the IM console and **token** returned by the Huawei push service to the IM server.
-> After the token and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the Huawei push service to push notifications.
+>! After the token and certificate ID are correctly reported, IM service binds users with the corresponding device information. This enables the use of the Huawei push service to push notifications.
 
 The following is sample code from the demo:
 
@@ -340,7 +340,7 @@ public class ThirdPushTokenMgr {
 
 After the certificate ID and token are successfully reported, the IM server sends messages via Huawei push notifications to the user when the App has been killed but the user has not logged out of IM.
 
->
+> ?
 > - Huawei push is not 100% successful in reaching the target users.
 > - Huawei push may be delayed. Usually, this is related to the timing of App killing. In some cases, it is related to the Huawei push service.
 > - If the IM user has logged out or been forced offline by the IM server (for example, due to login on another device), the device cannot receive push messages.
@@ -422,7 +422,7 @@ The client will obtain the custom content from the corresponding `Activity` once
 ### If the App uses obfuscation, how can I prevent exceptions in the Huawei offline push feature?
 
 If your App uses obfuscation, to prevent exceptions in the Huawei offline push feature, you need to keep the custom BroadcastReceiver and add obfuscation rules by referring to the following:
-> The following code is an official sample from Huawei. Please modify it according to your actual situation before use.
+>? The following code is an official sample from Huawei. Please modify it according to your actual situation before use.
 
 ```
 -ignorewarning
