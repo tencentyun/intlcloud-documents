@@ -116,7 +116,7 @@ IM allows you to remove users from the blocklist in batches.
 ### Pulling blocklists
 IM supports pulling a full blocklist by page.
 
-### Verifying blocklists
+### Verifying blocklisted users
 IM supports two blocklist verification modes: one-way verification and two-way verification.
 
 

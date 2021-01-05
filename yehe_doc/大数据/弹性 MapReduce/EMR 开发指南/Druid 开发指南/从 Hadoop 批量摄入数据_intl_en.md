@@ -52,12 +52,18 @@ Prepare an index file by running the following commands, which is still the Drui
               { "name": "delta", "type": "long" }
             ]
           },
+          "timestampSpec" : {
+            "format" : "auto",
             "column" : "time"
+          }
+        }
       },
       "metricsSpec" : [],
       "granularitySpec" : {
         "type" : "uniform",
         "segmentGranularity" : "day",
+        "queryGranularity" : "none",
+        "intervals" : ["2015-09-12/2015-09-13"],
         "rollup" : false
       }
     },

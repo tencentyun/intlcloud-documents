@@ -3,7 +3,7 @@ After a CLB instance is created, you can configure a CLB security group to isola
 - One CLB instance can be bound to five security groups at most.
 - There can be 0–65535 security group rules.
 - Security groups cannot be bound to classic private network CLB instances and private network CLB instances in the classic network. If a private network CLB instance is bound to an [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426), security groups bound to the instance will not take effect.
-- The "Allow Traffic by Default in Security Group" feature is currently in beta test. To try it out, please submit a ticket for application. This feature is not supported for classic private network CLB and CLB in the classic network.
+- This feature is not supported for classic private network CLB and CLB in the classic network.
 
 
 ## Background
@@ -67,7 +67,7 @@ For more information, please see [Getting Started with CLB](https://intl.cloud.t
 ### Step 3. Configure "Allow Traffic by Default in Security Group"
 You can choose to enable or disable "Allow Traffic by Default in Security Group" with different configurations as follows:
 - Method 1. Enable "Allow Traffic by Default in Security Group", so that the real server does not need to open the port to the internet.
->?The "Allow Traffic by Default in Security Group" feature is currently in beta test. To try it out, please submit a ticket for application. This feature is not supported for classic private network CLB and CLB in the classic network.
+>?This feature is not supported for classic private network CLB and CLB in the classic network.
 - Method 2. Disable "Allow Traffic by Default in Security Group", and you also need to open the client IP to the internet (0.0.0.0/0 in this example) in the CVM security group.
 
 #### Method 1. Enable "Allow Traffic by Default in Security Group"

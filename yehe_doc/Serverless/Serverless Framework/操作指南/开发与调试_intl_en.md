@@ -113,6 +113,3 @@ sls invoke  --inputs function=functionName  clientContext='{"weights":{"2":0.1}}
 >?
 >- The `invoke` command must be executed in the same directory as the `serverless.yml` file deployed for the function.
 >- `clientContext` is the JSON string passed when the function is triggered. You can simulate different triggering events according to the JSON string format in the [triggering event template](https://intl.cloud.tencent.com/document/product/583/14572).
-
-
-
