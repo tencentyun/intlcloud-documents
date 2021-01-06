@@ -3,7 +3,6 @@
 
 Log in to the **VOD console**, click [**UGSV SDK License**](https://console.cloud.tencent.com/vod/license/video), and follow the steps below to troubleshoot the error.
 1. Make sure that you are renewing your license as the **Admin**.
-![](https://main.qcloudimg.com/raw/cb24259d7a672db11bb1ce68f3341390.png)
 2. If you need to renew the license as a non-Admin user, please [submit a ticket](https://console.cloud.tencent.com/workorder/category), and we will guide you through the renewal.
 
 <span id="que2"></span>
