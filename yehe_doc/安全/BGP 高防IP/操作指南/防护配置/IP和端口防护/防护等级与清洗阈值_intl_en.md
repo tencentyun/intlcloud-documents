@@ -47,9 +47,7 @@ You have successfully purchased an [Anti-DDoS Advanced](https://intl.cloud.tence
 ### Directions
 1. Log in to the [DDoS console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Anti-DDoS Advanced (New)** -> **Configurations** on the left sidebar.
 2. Select an Anti-DDoS Advanced ID or port from the left list, e.g., `212.64.xx.xx bgpip-000002jt` or`119.28.xx.xx bgpip-000002ju` -> `tcp:8000`.
-![](https://main.qcloudimg.com/raw/e39c96d5bd41b2df055e091ab25fff3f.png)
 3. Choose a protection level and set the cleansing threshold in the **DDoS Protection Level** section.
-![](https://main.qcloudimg.com/raw/521fc870ff48fe87baf36a9bbe2036ba.png)
 **Configuration Parameters**
 	- **Protection Level**
 	For each Anti-DDoS Advanced instance with the protection enabled, the level Medium is chosen by default and you can adjust the protection level as needed.
