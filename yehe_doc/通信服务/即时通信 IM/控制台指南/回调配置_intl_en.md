@@ -13,7 +13,7 @@ Log in to the [IM console](https://console.cloud.tencent.com/im), click the targ
 ## Configuring Event Callbacks
 1. On the **Callback Configuration** page, click **Edit** in the event callback configuration area.
 2. In the event callback configuration dialog box that pops up, check the desired callbacks.
- ![](https://main.qcloudimg.com/raw/aeaa08f9aa11578ee0e4c7778fb32cc7.png)
+ ![](https://main.qcloudimg.com/raw/67cb8c9fd2365e3e2014e6940c468aaf.png)
 3. Click **OK** to save the configuration.
 
 ## Downloading an HTTPS Mutual Authentication Certificate
@@ -21,9 +21,9 @@ After configuring callback URLs, you can download an HTTPS mutual authentication
 >? You can configure mutual authentication based on your actual needs. For the detailed configuration methods, see [Mutual Authentication Configuration](https://intl.cloud.tencent.com/document/product/1047/34379).
 
 1. Go to the [console](https://console.cloud.tencent.com/im-detail/callback-setting), open the **[Callback Configuration](https://console.cloud.tencent.com/im-detail/callback-setting)** page, and click **Download HTTPS Mutual Authentication Certificate** in the callback URL configuration area in the upper-right corner.
-![](https://main.qcloudimg.com/raw/c9ecc4110b317d69eafa0fda2d034159.png)
+![](https://main.qcloudimg.com/raw/52a1d6fc283f07e29842da512ba303a3.png)
 2. In the certificate download dialog box that pops up, click **Download**.
-![](https://main.qcloudimg.com/raw/33e01ce0443b5c7f341a5fcac2b95215.png)
+![](https://main.qcloudimg.com/raw/584dcfbed3a36a691971f6edcca19b43.png)
 3. Save the certificate file.
 
 
