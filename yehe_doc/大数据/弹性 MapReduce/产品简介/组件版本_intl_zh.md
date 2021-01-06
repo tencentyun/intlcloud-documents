@@ -106,7 +106,7 @@ CLICKHOUSE 集群已支持组件产品版本如下：
 
 
 ## EMR 天穹版本
-天穹版本，当前只支持 HADOOP 集群，已融合增强版 Spark、腾讯自研 JDK Knoa。
+天穹版本，当前只支持 HADOOP 集群，已融合增强版 Spark、腾讯自研 JDK Kona。
 
 **Hadoop2.x 天穹版本支持组件产品版本如下：**
 
