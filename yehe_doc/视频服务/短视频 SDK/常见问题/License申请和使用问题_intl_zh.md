@@ -3,7 +3,6 @@
 
 您可登录【云点播控制台】>[【短视频 SDK License】](https://console.cloud.tencent.com/vod/license/video)根据以下方式排查：
 1. 请确认是否在**管理员**页面进行 License 绑定续期。
-![](https://main.qcloudimg.com/raw/cb24259d7a672db11bb1ce68f3341390.png)
 2. 如果您是在**非管理员**页面下进行操作，请单击 [提交工单](https://console.cloud.tencent.com/workorder/category) ，由腾讯云点播协助您进行 License 变更操作。
 
 <span id="que2"></span>
