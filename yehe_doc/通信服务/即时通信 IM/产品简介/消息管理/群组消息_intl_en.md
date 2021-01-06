@@ -1,5 +1,5 @@
-## Use Cases
-### Send and receive messages within a group
+## Application Scenarios
+### Sending and receiving messages within a group
 Group members can send and receive messages in a group, which is similar to the chat mode of QQ and WeChat groups.
 
 ### App admin sends messages
@@ -21,13 +21,13 @@ Group ID and SEQ together constitute the unique identifier of a message.
 | Message Type | Description |
 | ------------ | ------------------------------------------------------------ |
 | Text | The message content is plain text. |
-| Image | The message content includes image URLs, dimensions, and sizes. |
-| Imoticon | Imoticon messages are customized by developers. |
+| Image | The message content includes the URL, dimensions, and size of the image. |
+| Emoji | Emoji messages are customized by developers. |
 | Audio | Audio data must include the duration in seconds. |
-| Location | The message content contains the caption, longitude, and latitude of the location. |
+| Location | The message content includes the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
-| Short video | The message includes the URL, duration, size, and format of the short video. The message size cannot exceed 100 MB. |
-| Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
+| Short video | The message content includes the URL, duration, size, and format of the short video file. The maximum file size supported is 100 MB. |
+| Custom | Message types that are customized by developers, such as red packet and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
 
@@ -37,12 +37,12 @@ Group ID and SEQ together constitute the unique identifier of a message.
 | ------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Send ordinary group messages | Group members can send messages through the IM SDK APIs. By calling RESTful APIs, app admins can send messages in any group without joining the group. | Group members send messages in the group, and app admins can send messages in any group. |
 | Send group system messages | By calling RESTful APIs, app admins can send system messages in any group without joining the group. These system messages are only received by online group members and do not possess roaming capabilities. | App admins push time-sensitive notifications to all or a subset of online group members. |
-| Offline push of group messages | Supported by Apple, Huawei, Xiaomi, OPPO, Vivo, and MEIZU mobile phones | Offline push of group chat messages |
+| Offline push of group messages | Supported by Apple, Huawei, Xiaomi, OPPO, Vivo, and Meizu mobile phones | Offline push of group chat messages |
 | Receive online group messages | Group members can receive online group messages through the IM SDK. | Online group members receive group messages in real time. |
 | Group members receive offline messages or historical messages | Group members can query message historical messages through the IM SDK. | Group members receive offline messages when they go back online, and group members can view group chat history. |
-| App backend obtains group messages | App admins can download all messages generated during a certain time of period through RESTful APIs. App admins can also obtain the chat history of any group through RESTful APIs. The app backend can obtain group messages through callback after messages are sent in the group. | Apps back up message history regularly. Apps need to quickly obtain the message history of specific groups. Apps need to obtain group messages in real time. |
+| App backend obtains group messages | App admins can download all messages generated during a certain time period through RESTful APIs. App admins can also obtain the chat history of any group through RESTful APIs. The app backend can obtain group messages through callback after messages are sent in the group. | Apps back up message history regularly. Apps need to quickly obtain the message history of specific groups. Apps need to obtain group messages in real time. |
 | Delete messages | Historical messages can be deleted through RESTful APIs to ensure that they will not be further propagated. | Delete malicious information in a group. |
-| Group messages carry sender profiles | Group messages can contain the sender nickname, profile photo, group name card, user-level custom fields, group-level custom fields, and member-level custom fields. | Display sender information such as the nickname and profile photo. |
+| Group messages carry sender profiles | Group messages can contain the sender nickname, profile photo, group name card, user-level custom fields, and member-level custom fields. | Display sender information such as the nickname and profile photo. |
 | Foul language filtering | When the IM backend detects foul language in a message, it refuses to deliver the message and returns error code 80001 to the sender.<br/>IM configures foul language related to politics and pornography by default. You can also configure custom foul language entries for the app. | Enforce message content filtering. |
 | Group message sending control | You can control group message sending by muting and callback before sending group messages. | Prevent a group member from sending messages, prevent all group members from sending messages, and filter or modify messages at the app backend. |
 | Group message receiving control | You can set different message receiving options for individual groups: receive and notify, receive without notifying, and block messages. When **receive without notifying** is selected, iOS devices will disable APNs. | A user blocks messages from a group. |
@@ -60,28 +60,27 @@ The sending of group messages can be controlled through the following methods:
 
 | Control Method | Description |
 | ---------------- | ------------------------------------------------------------ |
-| Mute group members | Prevent a group member from sending messages for a certain period of time. This feature is effective within a single group. If the muted user quits the group and joins again, the user remains muted until the mute time expires. |
+| Mute group members | Prevent a group member from sending messages for a certain period of time. This feature is effective within a single group. If the muted user leaves the group and joins again, the user remains muted until the mute time expires. |
 | Callback before delivering group messages | Before delivering a message to group members, IM checks with the app backend for permission. If not allowed, the message will not be delivered.<br>After receiving a callback, the app backend can modify the message content and return it to IM, which will deliver the modified message. For more information, see [Callback Before Delivering Group Messages](https://intl.cloud.tencent.com/document/product/1047/34374).<br>After initiating a callback, IM will deliver the message directly if it does not receive a response in 2 seconds, without retrying. |
 
 
 ## Message Priority and Frequency Control
 ### Group message priority
 
-Group messages support four levels of priority. If a group exceeds the message frequency cap, the backend delivers high-priority messages first. Therefore, select appropriate priorities according to the importance of messages.
+Group messages are divided into three levels by priority. If a group exceeds the message frequency cap, the backend delivers high-priority messages first. Therefore, select appropriate priorities according to the importance of messages.
 The following lists the priorities from high to low:
 
 | Priority | Recommended Message Type |
 | ------ | -------------------------- |
-| High | Gift envelope and prize message |
+| High | Red packet and prize message |
 | Normal | Plain text message |
 | Low | Like message |
-| Lowest | Least important message |
 
 ### Group message frequency control
 
 #### Number-based frequency control
 
-Number-based frequency control limits the maximum number of messages sent per second in a single group. The default value is 40 messages per second. When the number of messages exceeds the limit, the backend will first deliver higher-priority messages, with messages with the same priority delivered randomly.
+>? Number-based frequency control limits the maximum number of messages sent per second in a single group. The default value is 40 messages per second. When the number of sent messages exceeds the limit, the backend will first deliver higher-priority messages, with messages with the same priority delivered randomly.
 
 A message that has been restricted by frequency control is not delivered or stored in the message history, but a success response will be returned to the sender. [Callback before delivering group message](https://intl.cloud.tencent.com/document/product/1047/34374) is triggered, but [callback after delivering group message](https://intl.cloud.tencent.com/document/product/1047/34375) is not triggered.
 
@@ -89,10 +88,7 @@ A message that has been restricted by frequency control is not delivered or stor
 
 Priority-based frequency control limits the maximum number of messages with a certain priority sent per second in a single group. A message sending request must first pass the number-based frequency control check before it enters the priority-based frequency control processing.
 
-A group supports sending up to 40 messages per second and setting the three levels of priority. The message with the High priority will be sent firstly. But if a group sends more than 40 high-priority messages per second, the surplus messages will also be discarded.
-
-Each [group type](https://intl.cloud.tencent.com/document/product/1047/33529) under an SDKAppID has its own number-based frequency control and priority-based frequency control configurations. To modify their default values, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1).
-
+All messages are subject to the frequency limit of 40 messages per second. You can set 3 levels of priority. Messages with High priority are the top-priority messages, which are not likely to be restricted. However, if the number of high-priority messages sent in a second exceeds 40, high-priority messages will also be discarded.
 
 
 ## Processing of Offline Group Messages

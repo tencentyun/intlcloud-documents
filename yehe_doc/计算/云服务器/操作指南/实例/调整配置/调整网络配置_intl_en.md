@@ -1,21 +1,23 @@
-## Changing the Billing Method
-Tencent Cloud provides multiple network billing methods. You can switch the billing method between Bill-by-bandwidth and Bill-by-traffic in the console. For each CVM instance, however, you can switch between both billing methods twice at most.
-For more information on billing, see [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578). 
+Tencent Cloud allows you to change the public network billing mode or public network bandwidth as needed. The change takes effect immediately. To learn about the restrictions and updated prices after the change, see [Adjusting Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10580).
 
-## Changing the Public Network Type
-Tencent Cloud provides two types of network configurations: dedicated public network and shared public network. The shared public network service is billed by bandwidth. To activate this service, you need to submit a ticket. For more information on billing methods, see [Billing of Shared Public Network](https://intl.cloud.tencent.com/document/product/684/15255). This document describes the billing methods of a single CVM instance. For more information, see [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
+## Changing Billing Mode
+Tencent Cloud provides two network billing plans: bill-by-traffic and bill-by-bandwidth. You can switch between them in the console by performing the following steps.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
+2. At the top of the **Instances** page, select the region where the target CVM instance resides.
+3. Locate the CVM instance for which you want to adjust the bandwidth, and click **More** > **Resource Adjustment** > **Adjust Network** under the **Operation** column.
+3. In the pop-up dialog box, select the network billing mode you want to use, and click **Confirm**.
 
-#### Bill-by-bandwidth for pay-as-you-go CVM instances
-This billing method supports adjustment (increase or decrease) of the network bandwidth at any time. If you have changed the network bandwidth more than once within an hour, you are billed based on the maximum bandwidth.
+## Adjusting Public Network Bandwidth
+Tencent Cloud provides two types of public network configurations: dedicated and shared. The shared public network is billed by bandwidth package, which is currently in beta. You need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it. This document describes how to adjust the dedicated network configurations. Perform the following steps to change the bandwidth cap of a CVM instance:
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
+2. At the top of the **Instances** page, select the region where the target CVM instance resides.
+3. Locate the CVM instance for which you want to adjust the bandwidth, and click **More** > **Resource Adjustment** > **Adjust Network** under the **Operation** column.
+4. In the pop-up dialog box, select a new bandwidth cap and click **Confirm**.
+>?For more information about the bandwidth cap, see [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523).
 
-#### Bill-by-traffic
-This billing method supports the adjustment (increase or decrease) of the bandwidth cap at any time, and the change takes effect immediately.
-> The Bill-by-traffic billing method is also applicable to pay-as-you-go CVM instances.
+## Documentation
 
-#### Bandwidth cap
-The bandwidth cap varies with the billing methods and CVM configurations. For more information, see [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523).
-
-## Directions
-1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
-2. In the instance list, select the target instance, and choose **More** > **Resource Adjustment** > **Adjust Network**.
-3. In the **Adjust Network** window that appears, set the target bandwidth cap or change the billing method, and then click **OK**.
+- [Adjusting Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10580)
+- [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) 
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255)
+- [Public Network Bandwidth Cap](https://intl.cloud.tencent.com/document/product/213/12523)

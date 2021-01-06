@@ -1,3 +1,30 @@
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>支持静态单线线路类型的 CLB</td> 
+<td>部分地域支持移动、联通、电信单运营商的 CLB，提供带宽价格低于常规 BGP IP 的价格。</td> 
+<td>2020-12-03</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/524">产品概述</a></td> 
+</tr>
+ <tr>
+ <td>优化健康检查</td>
+  <td>TCP 监听器支持 HTTP 健康检查，UDP 监听器支持检查端口。</td>
+  <td>2020-12-14</td>
+  <td><a href="https://intl.cloud.tencent.com/document/product/214/6097">健康检查概述</a></td>
+  </tr>
+ 
+
+</tbody>
+</table>
 
 ## 2020年09月
 <table>
@@ -33,6 +60,7 @@
 </tbody>
 </table>
 
+
 ## 2020年06月
 <table>
 <thead>
@@ -52,6 +80,7 @@
 </a></td>
 </tbody>
 </table>
+
 
 ## 2020年05月
 <table>
@@ -78,11 +107,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/214/14733#.E5.BC.80.E5.90.AF.E5.AE.89.E5.85.A8.E7.BB.84.E9.BB.98.E8.AE.A4.E6.94.BE.E9.80.9A">开启安全组默认放通</a></td>
 </tr>
 <tr>
-
 <td>更新七层监听器的默认域名策略</td>
 <td>七层监听器的默认域名由可选项改为必填项，每个监听器只能配置且必须配置一个默认域名。</td>
 <td>2020-05-15</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9032#default">转发域名中的默认域名策略
+<td><a href="https://intl.cloud.tencent.com/document/product/214/9032">转发域名中的默认域名策略
 </a></td>
 </tr>
 </tbody></table>
@@ -134,6 +162,12 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>支持 IPv6</td>
+<td><li>IPv6 负载均衡绑定的是云服务器的 IPv6 地址，并对外提供 IPv6 VIP 地址。</li><li>基于 IPv6 单栈技术实现的负载均衡，和 IPv4 负载均衡协同工作，实现 IPv6/IPv4 双栈通信。</li></td>
+<td>2019-10-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/34555">创建 IPv6 负载均衡实例</a></td>
+</tr>
+<tr>
 <td>支持配置访问日志到 CLS</td>
 <td>支持配置七层 CLB 的访问日志到日志服务（CLS），分钟级粒度，在线检索。</li></td>
 <td>2019-10-15</td>
@@ -198,6 +232,14 @@
 <td>Anycast CLB 支持多地动态加速，其 VIP 会发布在多地多个地域，客户端接入最近的 POP 点，通过腾讯云数据中心高速互联网转发到云服务器上。</td>
 <td>2018-11-27</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/32426">创建 Anycast 负载均衡实例</a></td>
+</tr>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持 IPv6 NAT64</td>
+<td>支持创建 IPv6 NAT64 负载均衡实例，该实例的 VIP 是一个 IPv6 公网地址，该 VIP 会将来自 IPv6 客户端的请求转发给后端的 IPv4 云服务器，后端服务无须改造，秒级接入 IPv6。</td>
+<td>2018-11-15</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/34556">创建 IPv6 NAT64 负载均衡实例</a></td>
 </tr>
 </tbody></table>
 
@@ -338,6 +380,24 @@
 <td>加权最小连接数算法根据后端服务器的处理能力和权重综合调度，使得负载更加均衡。</td>
 <td>2017-04-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/6153">加权最小连接数算法</a></td>
+</tr>
+</tbody></table>
+
+## 2016年12月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>深圳金融支持跨可用区容灾</td>
+<td>深圳金融一区和二区分别部署多套集群，以实现同一地域下的跨可用区容灾，当某个可用区故障时，负载均衡会将前端访问流量切换到同一地域下的其它可用区，以恢复服务能力。</td>
+<td>2016-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/8093">多可用区高可用配置说明</a></td>
 </tr>
 </tbody></table>
 

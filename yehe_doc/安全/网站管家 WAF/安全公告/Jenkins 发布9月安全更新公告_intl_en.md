@@ -134,9 +134,6 @@ WAF supports detection of and defense against all the vulnerabilities contained 
 - [CVE-2020-2249](https://nvd.nist.gov/vuln/detail/CVE-2020-2249)
 - [CVE-2020-2250](https://nvd.nist.gov/vuln/detail/CVE-2020-2250)
 - [CVE-2020-2251](https://nvd.nist.gov/vuln/detail/CVE-2020-2251)
-- [XSS vulnerability in CloudBees Jenkins (CVE-2020-2246)](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-036)  
-- [XSS vulnerability in CloudBees Jenkins (CVE-2020-2243)](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-035)  
-- [XXE vulnerability in CloudBees Jenkins](http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202009-037) 
 
 
 

@@ -40,7 +40,7 @@ metadata:
 
 - **注解名称**：`service.cloud.tencent.com/specify-protocol`
 - 扩展的协议注解示例：
-#### TCP SSL 示例
+#### TCP_SSL 示例
 ```
 {"80":{"protocol":["TCP_SSL"],"tls":"cert-secret"}}
 ```

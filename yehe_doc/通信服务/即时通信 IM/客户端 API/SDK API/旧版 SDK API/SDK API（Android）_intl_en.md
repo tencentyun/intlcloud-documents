@@ -259,3 +259,4 @@ TIMFriendshipManager is the component for managing profile relationship chains. 
 | [getSeq](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/Android/ImSDK/com/tencent/imsdk/TIMMessage.html#getseq) | Obtains the sequence number of the message. |
 
 
+

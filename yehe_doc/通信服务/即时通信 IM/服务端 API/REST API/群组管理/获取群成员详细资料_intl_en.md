@@ -128,7 +128,7 @@ You can use the AppDefinedDataFilter_GroupMember field to specify the custom fie
 | MemberInfoFilter | Array | Optional | Information to be obtained. If this field is not specified, all group member information will be pulled. For details on group member information fields, see [Group Member Profiles](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E6.88.90.E5.91.98.E8.B5.84.E6.96.99). |
 | MemberRoleFilter | Array | Optional | Role of group members whose information will be pulled. If this field is not specified, the information of members in all roles will be pulled. The member role can be "Owner", “Admin", or "Member". |
 | AppDefinedDataFilter_GroupMember | Array | Optional | This field is omitted by default. It is the member custom field filter that specifies the member custom fields that need to be obtained. For details on custom fields specific to group members, see [Custom Fields](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5). |
-| Limit | Integer | Optional | Number of members for whom to obtain information at a time. The value cannot exceed 10,000. If this field is not specified, the information of all members in the group will be obtained. |
+| Limit | Integer | Optional | Number of members for whom to obtain information at a time. The value cannot exceed 6,000. If this field is not specified, the information of all members in the group will be obtained. |
 | Offset | Integer | Optional | Sequence number of the member starting from which the information is pulled. If this field is not specified, the information is pulled starting from the first member. |
 
 ### Sample response packet body

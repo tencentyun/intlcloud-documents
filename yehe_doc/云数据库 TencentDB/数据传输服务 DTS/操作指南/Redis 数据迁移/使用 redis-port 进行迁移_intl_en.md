@@ -3,13 +3,13 @@ Download [redis-port (Linux 64-bit)](https://main.qcloudimg.com/raw/47154504189a
 
 redis-port is a collection of open-source tools mainly used for database sync, data import, and data export between Redis nodes and supports cross-version Redis data migration. The toolkit contains the following tools:
 - redis-sync: it is used for data migration between Redis instances.
-- redis-restore: it supports importing Redis backup files (in RDB format) to specified Redis instances.
+- redis-restore: it supports importing Redis backup files (in RDB format) to specified Redis instance.
 - redis-dump: it supports backing up Redis data in RDB format.
 - redis-decode: it supports decoding Redis RDB backup files into readable files.
 
 ## Compatible Versions
-- Source instances on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 are supported.
-- Target instances on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 and in all editions of TencentDB are supported, including Redis Community Edition and CKV Edition.
+- Source instances on Redis 2.8, 3.0, 3.2, and 4.0 are supported.
+- Target instances on Redis 2.8, 3.0, 3.2, and 4.0 and in all editions of TencentDB are supported, including Redis Memory Edition and CKV Edition.
 
 
 ## Online Migration Through redis-sync
@@ -17,7 +17,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - redis-sync has two modules which are simulated as replication nodes to sync data from the source instance and translate the replicated data into write commands to update the target instance.
 - Data replication is done in two phases: full sync and incremental sync.
 
-**Parameter description:**
+**Parameter description**:
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
 - -m: source instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
 - -t: target instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
@@ -25,7 +25,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - --tmpfile-size=SIZW: maximum size of the temporary file.
 - --help: help command.
 
-**Sample:**
+**Sample**:
 ```
 ./redis-sync -m 127.0.0.1:6379 -t "xxx2018"@10.0.5.8:6379
 ```
@@ -51,18 +51,18 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - You can stop data sync and migration by pressing Ctrl + C or through other means.
 
 ## Importing Data Through redis-restore
-redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8, 3.0, 3.2, 4.0, and 5.0 as well as AOF files into specified Redis instances.
+redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8, 3.0, 3.2, and 4.0 as well as AOF files into the specified Redis instance.
 
-**Parameter description:**
+**Parameter description**:
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
 - -i: RDB file path.
 - -t: target instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
 - -a: AOF file path.
 - --db=DB: database ID of the target Redis instance for backup file import, which should be the same as that of the source instance.
-- --unixtime-in-milliseconds=EXPR: the key expiration time value is updated in the process of data import.
+- --unixtime-in-milliseconds=EXPR: the Key expiration time value is updated in the process of data import.
 - --help: help command.
 
-**Sample:**
+**Sample**:
 ```
 ./redis-restore dump.rdb -t 127.0.0.1:6379
 ```
@@ -70,16 +70,16 @@ redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8
 
 ## Backing up Data Through redis-dump
 redis-dump supports backing up Redis data into RDB files and incremental data into AOF files.
->TencentDB for Redis currently does not support backing up data through redis-dump. You can back up and download data in the TencentDB for Redis Console or through APIs. However, you can use redis-dump to back up your self-built Redis instances.
+>?TencentDB for Redis currently does not support backing up data through redis-dump. You can back up and download data in the TencentDB for Redis console or through APIs. However, you can use redis-dump to back up your self-built Redis instances.
 
-**Parameter description:**
+**Parameter description**:
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
 - -m: Redis instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
 - -o: path of the output RDB file.
-- -a: path of the output AOF file.
-- --help: help command.
+- -a: Path to the outputted AOF file.
+- --help: Help command.
 
-**Sample:**
+**Sample**:
 ```
 ./redis-dump  127.0.0.1:6379 -o dump.rdb
 ```

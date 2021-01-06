@@ -8,7 +8,7 @@ The following platforms can communicate with each other and provide services acr
 | iOS | Compatible with iOS 8.0 and later | Supported | Supported | Supported |
 | Mac | Compatible with OS X 10.10 and later | Supported | Supported | - |
 | Windows | C and C++ are included. Compatible with Windows 7, Windows 8 and 8.1, and Windows 10. Both 32-bit and 64-bit programs can be connected. | - | - | - |
-| Web | Supports IE 9+, Chrome 7+, FireFox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
+| Web | Supports Internet Explorer 9+, Chrome 7+, Firefox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
 | Mini Program | Supported | Supported | - | - |
 
 
@@ -17,9 +17,9 @@ The following platforms can communicate with each other and provide services acr
 
 | Feature Type | Description |
 | -------------- | -------------- |
-| Global access overview | IM provides reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside Mainland China, IM SDK connects to the nearest access nodes. |
-| China | South China, North China, East China, Hong Kong, Taiwan regions, etc. |
-| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa |
+| Global access overview | IM provides highly reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside the Chinese mainland, IM SDK connects to the nearest access nodes or cache nodes. |
+| China | South China, North China, East China, Hong Kong, Taiwan, etc. |
+| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa, etc. |
 
 
 ### Account Features
@@ -40,19 +40,19 @@ The following platforms can communicate with each other and provide services acr
 | Triple-device login | Single-device login across Android and iOS with one Windows device and one web device online simultaneously is allowed. |
 | Multi-device online | Multiple Windows, web, Android, and iOS devices can be online simultaneously. |
 
->?You can configure multi-device login by logging in to [IM Console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target application to open the **Feature Configuration** page.
+>? You can configure multi-device login by logging in to the [IM console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target application to open the **Feature Configuration** page.
 
 ### Message Types
 
-| Message Type | Description |
+| Feature Type | Description |
 | ------------ | ----------------- |
-| Text | The message content is in plain text. |
-| Image | The message content includes image URLs, dimensions, and sizes. |
+| Text | The message content is plain text. |
+| Image | The message content includes the URL, dimensions, and size of the image. |
 | Emoji | Emoji messages are customized by developers. |
-| Audio | The duration (in seconds) must be provided for audio data. |
+| Audio | Audio data must include the duration in seconds. |
 | Location | The message content includes the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
-| Short video | The message contains the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
+| Short video | The message content includes the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
 | Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
@@ -64,15 +64,15 @@ The following platforms can communicate with each other and provide services acr
 | -------- | -------- |
 | Download messages | The app admin can obtain all one-to-one or group messages for a specified hour of a specified day through this API. |
 | Offline messages | IM supports offline push when a user logs in, the app switches to work in the background, and other users send messages. |
-| Roaming messages | When an account is logged in on a new device, roaming messages of the account are synchronized to the new device. Roaming messages are stored for 7 days by default. You can pay to increase the storage period for roaming messages. |
+| Roaming messages | When a user logs in on a new device, the historical message storage recorded (on the cloud) by the server is synchronized to the new device. Roaming messages are stored for 7 days by default. You can pay to increase the roaming message storage period. |
 | Multi-device synchronization | Messages are synchronized and received across multiple devices. |
 | Historical messages | Both local and cloud historical messages are supported. |
-| Recall messages | Recall a message that has been delivered. Messages that were delivered more than 2 minutes ago cannot be recalled. Only one-to-one and group chat messages can be recalled. Messages sent in audio-video chat rooms (AVChatRooms) and broadcasting chat rooms (BChatRooms) cannot be recalled. |
+| Recall messages | Recall a message that has been delivered successfully. By default, messages that were delivered more than 2 minutes ago cannot be recalled. Only one-to-one and group chat messages can be recalled. Messages sent in audio-video chat rooms (AVChatRooms) cannot be recalled. |
 | Read receipts | Users can check if messages have been read in a one-to-one chat. |
 | Forward messages | Users can forward messages to other users or groups. |
 | @ feature | There is no essential difference between an in-group @ message and an ordinary message, although the user specified by @ will see a special UI effect. |
 | Typing status indicator | This feature can be implemented in online messaging scenarios. |
-| Offline push | APNs and push services on Xiaomi, Huawei, MEIZU, OPPO, and Vivo mobile phones are supported. |
+| Offline push | Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, Vivo push, and Google FCM push are supported. |
 | Delete messages | Use the remove method for messages to delete messages locally. |
 | Red packets | Red packet messages are similar to @ messages and can be implemented through TIMCustomElem. |
 
@@ -98,7 +98,7 @@ The following platforms can communicate with each other and provide services acr
 | Delete friends | Friends can be deleted after they are added to the contact list. |
 | Obtain all friends | This feature can obtain all friends. Only basic information of friends is pulled by default. |
 | Accept/Reject friend requests | Accept or reject a friend request after receiving a friend request system notification. |
-| Add to the blocklist | Block any user. If you block friends, you also unfriend them. |
+| Add to the blocklist | Blocklist any user. If you blocklist friends, you also unfriend them. |
 | Remove from the blocklist | Remove a user from the blocklist. |
 | Obtain the blocklist | Pull the blocklist of users. |
 | Remarks | Add remarks for a friend. |
@@ -117,31 +117,37 @@ The following platforms can communicate with each other and provide services acr
 
 
 ### Group Features
+Based on common use cases, IM has set the following default group types:
+- A work group for friends (Work) is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
+- A social networking group for strangers (Public) is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send an application, and the application needs to be approved by the group owner or an admin before the user can join the group.
+- A temporary meeting group (Meeting) allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
+- An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Live Video Broadcasting (LVB) to support on-screen comment chat scenarios.
 
-| Feature Type | Private Group<br>(Private) | Public Group<br>(Public) | Chat Room<br>(ChatRoom) | Audio-Video Chat Room<br>(AVChatRoom) | Broadcasting Chat Room<br>(BChatRoom) |
-| ---------- | --------------------- | --------------------- | --------------------- | -------------------------- | ----------------------------- |
-| Member limit | 200 | 2,000 | 6,000 | Unlimited | Unlimited |
-| Modify the group profile | Group member | Group admin<br>Group owner<br>App admin | Group admin<br>Group owner<br>App admin | Group owner<br>App admin | App admin |
-| Member list | Show all | Show all | Show all | Show 300 members | N/A |
-| Disband group | App admin | Group owner<br>App admin | Group owner<br>App admin | Group owner<br>App admin | App admin |
-| Apply to join | Not supported | Allowed | Allowed | Allowed | Allowed |
-| Membership application approval | Not supported | Required | Not required | Not required | Not required |
-| Invite to the group | Confirmation by the invitee is not required | Not supported | Not supported | Not supported | Not supported |
-| Group owner quits the group | Supported | Not supported | Not supported | Not supported | Not supported |
-| Set the admin | Not supported | Supported | Supported | Not supported | Not supported |
-| Remove a member | Group owner<br>App admin | Group admin<br>Group owner<br> App admin | Group admin<br>Group owner<br>App admin | Not supported | Not supported |
-| View messages from before joining the group | Not supported | Not supported | Supported | Not supported | Not supported |
-| Member changes | All members | All members | N/A | All members | N/A |
-| Activate a group | Activate through a message | Not Required | Not Required | Not Required | Not Required |
-| Mute a member | Not supported | Supported | Supported | Supported | Not supported |
-| Unread count | Supported | Supported | Not supported | Not supported | Not supported |
-| Import into the group | Supported | Supported | Supported | Not supported | Not supported |
+The following table compares the default features of each group type:
+
+| Feature Type | <div style="width:100px"> Work</div> | <div style="width:20%">Public</div> | <div style="width:20%">Meeting</div> | <div style="width:20%">AVChatRoom</div> | 
+| ---------- | --------------------- | --------------------- | --------------------- | -------------------------- | 
+| Maximum number of members | 6,000 | 6,000 | 6,000 | No upper limit |               
+| Restrictions on obtaining member profiles | All available | All available | All available | Only the profiles of the first 300 members are displayed |
+| Setting admins | Not supported | Supported | Supported | Not supported |   
+| Group profile modification permissions |<li>Any group member can modify it.<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner <li>Backend app admin | 
+| Group deletion permissions | Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin |
+| Group owner leaving the group | Supported | Not supported | Not supported | Not supported | 
+| Application to join the group | Not supported | Supported and approval by the group owner or group admin is required | Supported, but no approval is required | Supported, but no approval is required |
+| Group members can invite other users to join the group | Supported | Not supported | Not supported | Not supported | 
+| Removing members from the group | <li>Group owner<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | Not supported, but the mute feature can be used to achieve a similar effect | 
+| Muting permissions | Not supported | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Backend app admin |   
+| Viewing historical messages from before joining the group | Not supported | Not supported | Supported | Not supported |
+| Member change notifications (joining/leaving the group, etc.) | All members | All members | None | All members | 
+| Group activation by sending a message after group creation | Required | Not required | Not required | Not required | 
+| Unread message count | Supported | Supported | Not supported | Not supported | 
+| Importing groups (group members/profiles, etc.) | Supported | Supported | Supported | Not supported | 
 
 
 
 ### IM Console
 
-You can log in to Tencent Cloud [IM Console](https://console.cloud.tencent.com/im) to configure the app based on your needs.
+You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/im) to configure the app based on your needs.
 
 | Feature Type | Description |
 | -------------- | ------------------------ |
@@ -158,7 +164,7 @@ You can log in to Tencent Cloud [IM Console](https://console.cloud.tencent.com/i
 
 ### Statistics
 
-The [statistics and analytics](https://console.cloud.tencent.com/im) feature in IM Console allows you to view operational data in various dimensions.
+The [statistics and analytics](https://console.cloud.tencent.com/im) feature in the IM console allows you to view operational data in various dimensions.
 
 | Statistic Type | Description |
 | ---------------- | -------------------------------- |

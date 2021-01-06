@@ -159,3 +159,4 @@ ConversationLayout, ChatLayout, and other areas all have a title bar. The title 
 | [getMiddleTitle](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/Android/TUIKit/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.html#getmiddletitle) | Returns the text of the middle title. |
 | [getRightTitle](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/Android/TUIKit/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.html#getrighttitle) | Returns the text of the right title. |
 
+
