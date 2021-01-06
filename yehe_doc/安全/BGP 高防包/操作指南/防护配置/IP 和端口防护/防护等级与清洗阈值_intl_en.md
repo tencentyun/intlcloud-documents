@@ -47,7 +47,5 @@ You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.co
 ## Directions
 1. Log in to the [DDoS console](https://console.cloud.tencent.com/ddos/antiddos-native/package) and click **Anti-DDoS Pro (New)** -> **Configurations** on the left sidebar.
 2. Select an Anti-DDoS Pro ID from the left list, e.g., `bgp-000000iu`, and then open the **IP and Port Protection** tab.
-![](https://main.qcloudimg.com/raw/52d4157276c71dd4a0b42d5843ad91a6.png)
 3. Choose a protection level in the **DDoS Protection Level** section.
-![](https://main.qcloudimg.com/raw/60e3fd47625b150a5e3ba3ccdb4043db.png)
 
