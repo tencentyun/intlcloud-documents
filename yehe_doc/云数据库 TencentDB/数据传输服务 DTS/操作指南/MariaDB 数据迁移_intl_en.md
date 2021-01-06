@@ -9,27 +9,27 @@ Enter relevant information to set the task, source database, and target database
 
 #### Task setting
 Enter the name of the migration task. If you want the migration task to be executed at a later time, you can set scheduled execution.
-![](https://main.qcloudimg.com/raw/f5b1a534bd8253e35a0e0f5eec24777b.png)
+![](https://main.qcloudimg.com/raw/286fd5ccef05146bea9dd758d6634db5.png)
 
 #### Source database setting
 Enter the information of the source database and then click **Test Connectivity** to check whether your source database is connected.
-![](https://main.qcloudimg.com/raw/4a7070511fbde9cf4a5a207b6c1ee54e.png)
+![](https://main.qcloudimg.com/raw/dcf2c22d49e2c1e2a290f8bf79ed369f.png)
 
 #### Target database setting
 Enter the information of the target database and click **Save**.
-![](https://main.qcloudimg.com/raw/93270ca13f74cac2f86012fd9df46549.png)
+![](https://main.qcloudimg.com/raw/58807df689398099800be9b2970ed03b.png)
 
 ### 3. Selecting type and table
 Select the type and table list and click **Next step: verify task**.
-![](https://main.qcloudimg.com/raw/d9cda12bdba712013197a2434b7b0562.png)
+![](https://main.qcloudimg.com/raw/96ed794fa406ee0004ee3682ef3b0d5e.png)
 
 ### 4. Checking the task
 Check whether the source instance runs normally and whether the sets to be migrated to the target instance are in conflicts.
-![](https://main.qcloudimg.com/raw/ff67c3ca23243c5759ec78ab061f6411.png)
+![](https://main.qcloudimg.com/raw/204d55e7b3c700c4ed62419c879513c5.png)
 
 ### 5. Completing migration
 After the check is passed, return to the migration task list. After the incremental sync is 90% complete, click **Complete** on the right of the migration task.
-![](https://main.qcloudimg.com/raw/2770041ad6f24bfe70a8ae64ee1ca30e.png)
+![](https://main.qcloudimg.com/raw/120798d5f56bf2db4f68d6203939c718.png)
 The migration task is completed.
-![](https://main.qcloudimg.com/raw/32ba2bfc5a3006da69893f784b9ea2b7.png)
+![](https://main.qcloudimg.com/raw/030ccd93878ef42e924f6fe5cd2b510e.png)
 
