@@ -40,7 +40,7 @@ COS ARCHIVE is a highly reliable object storage service designed for cold data, 
 
 You can restore your objects in the following three modes:
 
-- Expedited: restores an object of up to 256 MB within 1-5 minutes.
+- Expedited: restores an object within 1-5 minutes.
 - Standard: restores an object within 3-5 hours.
 - Bulk: restores multiple objects within 5-12 hours.                      
 
@@ -73,7 +73,7 @@ Use cases that require long-term data retention, such as medical images, securit
 | ---------------- | ---------------------------------------- | ------------------ | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Durability       | 99.9999999<br>99%                        | 99.9999999<br>99%  | 99.9999999<br>99%            | 99.9999999<br>99%                                            | 99.9999999<br>99%                                            |
 | Availability       | 99.99%                                   | 99.95%             | 99.9%                        | 99.9%                                                        | 99.9%                                                        |
-| Response             | Milliseconds                                   | Milliseconds             | Milliseconds                       | Requires restoration in advance using one of these three restoration modes:<br><li>Expedited: restores an object of up to 256 MB within 1-5 minutes.<br><li>Standard: restores an object within 3-5 hours.<br><li>Bulk: restores multiple objects within 5-12 hours. | Requires restoration in advance using either of these restoration modes:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores multiple objects within 24-48 hours. |
+| Response             | Milliseconds                                   | Milliseconds             | Milliseconds                       | Requires restoration in advance using one of these three restoration modes:<br><li>Expedited: restores an object within 1-5 minutes.<br><li>Standard: restores an object within 3-5 hours.<br><li>Bulk: restores multiple objects within 5-12 hours. | Requires restoration in advance using either of these restoration modes:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores multiple objects within 24-48 hours. |
 | Minimum billable object size | 64 KB. Objects with sizes smaller than 64 KB are stored in the STANDARD tier | Calculated by the actual object size | 64 KB                         | 64 KB                                                         | 64 KB                                                         |
 | Minimum storage duration     | 30 days                                     | No limit             | 30 days                         | 90 days                                                         | 180 days                                                        |
 | Supported regions         | Only Beijing, Shanghai, Guangzhou, and Chongqing     | All regions           | All regions                     | Only public cloud regions                                           | Only Beijing, Shanghai, Guangzhou, and Chengdu                           |
