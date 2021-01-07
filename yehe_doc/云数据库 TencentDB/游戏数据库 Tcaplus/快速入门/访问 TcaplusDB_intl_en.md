@@ -15,4 +15,4 @@ You can access TcaplusDB data through RESTful API. For more information, please 
 
 - You can access TcaplusDB data through RESTful API for Go as instructed [here](https://intl.cloud.tencent.com/document/product/1016/37722).
 
-- You can access TcaplusDB data through RESTful API for Java as instructed [here](https://intl.cloud.tencent.com/document/product/1016/37722).
+- You can access TcaplusDB data through RESTful API for Java as instructed [here](https://intl.cloud.tencent.com/document/product/1016/37723).
