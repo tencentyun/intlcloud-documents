@@ -10,8 +10,8 @@ Before downloading the SDK, please read the [Release History](https://intl.cloud
 | Table Type | Version          | Update Date   | OS     | SDK Download                                                     |
 | ------ | ------------- | ---------- | ------------ | ------------------------------------------------------------ |
 | Protobuf table   | 3.36.0.192960 | April 21, 2020 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz) |
-| Protobuf table   | 3.50.1.200112 | September 7, 2020 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/release/3-46/TcaplusPbApi3.46.0.199033.x86_64_release_20201210.tar.gz) |
-| TDR table  | 3.50.1.200112 | September 7, 2020 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/release/3-46/TcaplusServiceApi3.46.0.199033.x86_64_release_20201210.tar.gz) |
+| Protobuf table   | 3.46.0.199033 | December 29, 2020 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/release/3-46/TcaplusPbApi3.46.0.199033.x86_64_release_20201210.tar.gz) |
+| TDR table  | 3.46.0.199033 | December 29, 2020 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/release/3-46/TcaplusServiceApi3.46.0.199033.x86_64_release_20201210.tar.gz) |
 
 ## SDK Download for Windows C++
 

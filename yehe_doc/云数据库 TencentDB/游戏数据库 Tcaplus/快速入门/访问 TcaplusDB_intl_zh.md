@@ -15,4 +15,4 @@
 
 - 可参考[GO 接口说明](https://intl.cloud.tencent.com/document/product/1016/37722)，使用GO语言通过RestFul接口访问TcaplusDB数据。
 
-- 可参考[JAVA 接口说明](https://intl.cloud.tencent.com/document/product/1016/37722)，使用JAVA语言通过RestFul接口访问TcaplusDB数据。
+- 可参考[JAVA 接口说明](https://intl.cloud.tencent.com/document/product/1016/37723)，使用JAVA语言通过RestFul接口访问TcaplusDB数据。
