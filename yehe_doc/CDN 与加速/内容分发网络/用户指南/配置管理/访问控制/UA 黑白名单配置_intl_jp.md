@@ -15,23 +15,23 @@ Tencent Cloud CDNは、User-Agentのブラックリスト・ホワイトリス�
 ### 設定についての説明
 
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、メニューバーで【ドメイン管理】を選択して、ドメイン名の右側にある【管理】をクリックすると、ドメイン名設定画面に入ります。第2欄の【アクセス制御】でUAブラックリスト・ホワイトリスト設定を確認できます。デフォルト設定は無効です。
-![](https://main.qcloudimg.com/raw/5105eca56650c784e3e5965172619322.png)
+![](https://main.qcloudimg.com/raw/07914bd30b3d422fb4bddf3a323d92f2.png)
 無効の状態で、【Add Rule】をクリックして、必要に応じてブラック（ホワイト）リストを1件ずつ追加できます。
-![](https://main.qcloudimg.com/raw/74bae0674238aa3f37bc9853c823e62f.png)
+![](https://main.qcloudimg.com/raw/66d3fc72f575efaa4ae42382d8fde179.png)
 
 >!
 >1. ワイルドカード`*`のみがサポートされており、現在、他の正規表現はサポートされていません。
 >2. `*`がない場合、他のすべての文字は完全一致となります。
  
 ルールが追加された後も、全体の設定は無効の状態となるため、ライブ ネットワーク上のサービスには影響しません。
-![](https://main.qcloudimg.com/raw/5434406cd8f3f33635e3f095883bcfba.png)
+![](https://main.qcloudimg.com/raw/679129885ec36329178e87af671d6743.png)
 【UA Blocklist/Allowlist】ボタンをクリックすると、設定済みのブラック（ホワイト）リストはライブネットワークに配信されます。
-![](https://main.qcloudimg.com/raw/0db1dcac71742fc97a4118c87620e11c.png)
+![](https://main.qcloudimg.com/raw/fd85de8e702b24e7d2eaaf8b34667c95.png)
 
 ## 設定例
 
 アクセラレーションドメイン名`cloud.tencent.com`のUAブラックリスト・ホワイトリストが以下のように設定されている場合、
-![](https://main.qcloudimg.com/raw/7ac57bc6f16087aad95c0844c6053f75.png)
+![](https://main.qcloudimg.com/raw/c7e06060bc627aab2e4939b53460951d.png)
 HTTP Request HeaderのUser-Agentが以下のような場合、
 
 ```
