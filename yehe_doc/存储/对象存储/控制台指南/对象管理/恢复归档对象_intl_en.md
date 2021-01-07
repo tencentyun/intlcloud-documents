@@ -13,7 +13,7 @@ You can restore an object from the ARCHIVE or DEEP ARCHIVE storage class through
 ![](https://main.qcloudimg.com/raw/2d34eaee99c4bcb469025f857ed983f1.png)
 4. In the **Restore Archived Objects** pop-up window, configure the restoration mode and the validity period in days of the copy. The related configuration items are detailed below.
    - **Restoration Mode**: expedited, standard, and bulk.
-     - Expedited: this is the fastest mode. Files below 256 MB can be restored in 1 to 5 minutes. When you need to access your archival data urgently, using this mode can greatly reduce the time required. **Please note that expedited mode is not available for DEEP ARCHIVE.**
+     - Expedited: this is the fastest mode. Usually, archived files can be restored within 1-5 minutes. When you need to access your archival data urgently, you can use this mode to greatly reduce the time consumed. **Please note that expedited mode is not available for DEEP ARCHIVE**.
      - Standard: files can be restored from ARCHIVE in 3 to 5 hours, and from DEEP ARCHIVE in 12 hours.
      - Bulk: this is the lowest-cost mode. If your need for the archival data is not urgent, this mode can help retrieve massive amounts of data from ARCHIVE generally in 5 to 12 hours, and from DEEP ARCHIVE in 48 hours, both with ultra-low cost.
    - **Validity**: set the number of days after which the copy would automatically expire and be deleted. The value range is 1 to 365 days. After the object is successfully restored, you can click **Restore** again to change the validity period of the copy in the pop-up window.
