@@ -3,7 +3,7 @@
 
 ## 前提条件
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)。
-- 已添加 [播放域名](https://intl.cloud.tencent.com/document/product/267/35970)。
+- 已添加 [播放域名](https://cloud.tencent.com/document/product/267/20381)。
 
 
 <h2 id="limit">使用限制</h2>
