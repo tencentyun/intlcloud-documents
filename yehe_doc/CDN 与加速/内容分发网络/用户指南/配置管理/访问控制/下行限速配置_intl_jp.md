@@ -18,17 +18,17 @@ Tencent Cloud CDNは、サーバー上の1つのURLに対する最大下りス�
 ### 設定についての説明
 
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、メニューバーで【ドメイン管理】を選択して、ドメイン名の右側にある【管理】をクリックすると、ドメイン名設定画面に入ります。第2欄の【アクセス制御】で下り速度制限の設定を確認できます。デフォルト設定は無効です。
-![](https://main.qcloudimg.com/raw/e4b76bce43043a249c033a31966110bb.png)
+![](https://main.qcloudimg.com/raw/c9ea85be753b60096b8088b048ac626a.png)
 【Add Speed Limiting Rule】をクリックして、ルールを設定するできます。
-![](https://main.qcloudimg.com/raw/4e11fc5ea959344ca47449deb9e8b954.png)
+![](https://main.qcloudimg.com/raw/02e033c829da553acc5eeb9bca864528.png)
 ルールが追加された後も、全体の設定は無効の状態となるため、ライブ ネットワーク上のサービスには影響しません。
-![](https://main.qcloudimg.com/raw/a4e075516230dd1f88db49a5c737de42.png)
+![](https://main.qcloudimg.com/raw/e0006ace8527cc13c381666b22f21790.png)
 【Downstream Speed Limit】ボタンを有効にして、設定された速度制限ルールをCDNネットワーク全体のノードに配信できます。
-![](https://main.qcloudimg.com/raw/90594a7d389f7a08c4f710db5aad809e.png)
+![](https://main.qcloudimg.com/raw/4b9685cb889210accb67d11f1b389ae8.png)
 
 ## 設定例
 
 アクセラレーションドメイン名`cloud.tencent.com`の下り速度制限が次のように設定されている場合、
-![](https://main.qcloudimg.com/raw/16a7145313302e83fb3e239b7977f8c6.png)
+![](https://main.qcloudimg.com/raw/7ee9a5167aa054c8e99c15267e38eba3.png)
 ユーザーが`http://cloud.tencent.com/test.mp4`のリソースにアクセスすると、サーバーは設定された下り速度200KB/sでコンテンツを返します。
 ユーザーが`http://cloud.tencent.com/test.flv`のリソースにアクセスすると、サーバーは設定された下り速度400KB/sでコンテンツを返します。
