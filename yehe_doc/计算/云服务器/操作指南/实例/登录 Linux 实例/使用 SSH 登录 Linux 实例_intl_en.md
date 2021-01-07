@@ -56,7 +56,7 @@ ssh -i <The absolute path of the private key downloaded to be associated with th
  - `username` refers to the default account name obtained as a prerequisite.
  - `hostname or IP address` refers to the public IP address or custom domain name of your Linux instance.
 
- For example, execute the `ssh -i "Mac/Downloads/shawn_qcloud_stable" ubuntu@192.168.11.123` command to remotely log in to the Linux CVM.
+ For example, execute the `ssh -i "Mac/Downloads/shawn_qcloud_stable.pem" ubuntu@192.168.11.123` command to remotely log in to the Linux CVM.
 
 ## Subsequent Operations
 
