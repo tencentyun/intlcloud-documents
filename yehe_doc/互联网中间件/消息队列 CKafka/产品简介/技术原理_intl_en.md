@@ -42,7 +42,7 @@ The multi-replica design can enhance the system availability and reliability.
 Replicas are evenly distributed across the entire cluster. The replica algorithm is as follows:
 1. All brokers (assuming n brokers in total) and the partitions to be assigned are sorted.
 2. The ith partition is assigned to the (i mod n)th broker.
-3. The jth replica of the ith partition is assigned to the ((i + j) mode n)th broker.
+3. The jth replica of the ith partition is assigned to the ((i + j) mod n)th broker.
 
 ## Leader Election Mechanism
 CKafka dynamically maintains a set of in-sync replicas (ISR) in ZooKeeper, and all replicas in ISR catch up to the leader. Only members of the ISR can be elected as leaders.
