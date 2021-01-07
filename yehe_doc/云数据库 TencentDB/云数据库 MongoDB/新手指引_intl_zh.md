@@ -24,7 +24,7 @@
 
 ## 4. 控制台界面
 以下为云数据库 MongoDB 控制台总览页面：
-![](https://main.qcloudimg.com/raw/4ab8886aceb721d3f97fedcad87fe92e.png)
+![](https://main.qcloudimg.com/raw/4710fe4f463931763ed85449dea07e0c.png)
 
 -----
 
