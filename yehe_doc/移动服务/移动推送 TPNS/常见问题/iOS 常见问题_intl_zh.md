@@ -1,3 +1,24 @@
+### TPNS 控制台上传 push 证书失败如何解决？
+
+需将推送证书 p12 文件转换成 pem 文件，步骤如下：
+
+1. 打开终端，进入到 p12 文件目录。
+2. 执行以下命令生成证书（apns-dev-cert 为示例推送证书名称，需要根据实际环境进行更改）。
+
+```
+openssl pkcs12 -clcerts -nokeys -out apns-dev-cert.pem -in apns-dev-cert.p12
+```
+
+3. 输入 p12 文件密码。
+4. 执行以下命令，将 pem 格式证书转成文本：
+
+```
+openssl x509 -in apns-dev-cert.pem -inform pem -noout -text
+```
+
+5. 查看证书环境及对应 Bundle id 看是否与应用匹配，如下图所示：
+![](https://main.qcloudimg.com/raw/ba0e35a8bbd0e77022f26ad1dcca83ca.png)
+
 ### 推送内容为空时，在 iOS 10系统版本及以下的设备无法弹出通知？
 在调用 Rest API 推送时 `content` 字段不能设置空，否则将导致在 **iOS 10系统及以下**的设备上无法弹出通知。
 
