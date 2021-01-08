@@ -1,5 +1,5 @@
 ## Operation Scenarios
-This document describes how to use an existing SDK to connect to a [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147) database in the SCF function code and perform operations such as insertion and query in the database. [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042/33311) databases can also be connected. You can perform relevant operations as needed.
+This document describes how to use an existing SDK to connect to a [TencentDB for MySQL](https://intl.cloud.tencent.com/document/product/236/5147) database in the SCF function code and perform operations such as insertion and query in the database. [TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/1042/33311) databases can also be connected. You can perform relevant operations as needed.
 
 
 
