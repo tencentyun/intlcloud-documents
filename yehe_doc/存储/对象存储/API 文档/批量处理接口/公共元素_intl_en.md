@@ -5,17 +5,17 @@ This document describes common elements used in batch operations.
 | Node Name | Parent Node | Description | Type | Required |
 | -------- | -------- | ------------------------------------------------------------ | --------------- | -------- |
 | Location | Manifest | Location of the object inventory | Location Object | Yes |
-| Spec  | Manifest | Format of the object inventory. If the format is a CSV file, this element will describe the fields contained in the inventory | Spec Object | Yes |
+| Spec  | Manifest | Format of the object inventory. If the format is CSV, this element will describe the fields contained in the inventory | Spec Object | Yes |
 
-## Location
+### Location
 
 | Node Name | Parent Node | Description | Type | Required |
-| --------------- | -------- | ------------------------------------------------ | ------ | -------- |
-| ETag   | Location | Specifies the ETag of the object inventory; length: 1–1,024 bytes | String | Yes |
-| ObjectArn | Location | Specifies the unique resource ID of the object inventory; length: 1–1,024 bytes | String | Yes |
-| ObjectVersionId | Location | Specifies the version ID of the object inventory; length: 1–1,024 bytes | String | No |
+| --------------- | -------- | -------------------------------------------------- | ------ | -------- |
+| ETag | Location | Specifies the ETag of the object inventory; length: 1-1,024 bytes | String | Yes |
+| ObjectArn | Location | Specifies the unique resource ID of the object inventory; length: 1-1,024 bytes | String | Yes |
+| ObjectVersionId | Location | Specifies the version ID of the object inventory; length: 1-1,024 bytes | String | No |
 
-## Spec
+### Spec
 
 | Node Name | Parent Node | Description | Type | Required |
 | ------ | ------ | ------------------------------------------------------------ | ---------------- | -------- |
@@ -24,32 +24,39 @@ This document describes common elements used in batch operations.
 
 ## Operation 
 
-> A single job can only contain one of the following operations.
+>!A single job can only contain one of the following operations.
 
 | Node Name | Parent Node | Description | Type | Required |
-| ------------------------ | --------- | -------------------------------------------------- | ------------------------ | -------- |
+| ------------------------ | --------- | ------------------------------------------------------ | ------------------------ | -------- |
 | COSPutObjectCopy | Operation | Specifies the parameters for the batch replication of objects in the inventory | COSPutObjectCopy Object | No |
-| COSInitiateRestoreObject | Operation | Specifies the parameters for the batch restoration of archived objects in the inventory | COSInitiateRestoreObject | No |
+| COSInitiateRestoreObject | Operation | Specifies the parameters for the batch restoration of ARCHIVED objects in the inventory | COSInitiateRestoreObject | No |
 
-## COSPutObjectCopy
+### COSPutObjectCopy
 
 | Node Name | Parent Node | Description | Type | Required |
 | ------------------------- | ---------------- | ------------------------------------------------------------ | -------------------------- | -------- |
+| AccessControlDirective | COSPutObjectCopy | Specifies the ACL replication mode. Valid values: `Copy`, `Replaced`, `Add`.<br/>Copy: inherits the ACL of the source object. <br/>Replaced: replaces the source ACL. <br/>Add: adds a new ACL based on the source ACL. | String | No |
 | AccessControlGrants | COSPutObjectCopy | Controls the access permissions of an object | AccessControlGrants Object | No |
 | CannedAccessControlList | COSPutObjectCopy | Defines the ACL attribute of an object. Valid values: `private`, `public-read` | String | No |
-| MetadataDirective  | COSPutObjectCopy | Specifies whether to copy the source file metadata. Enumerated values: `Copy`, `Replaced`. Default value: `Copy`. <br><li>If this parameter is specified as `Copy`, the source file metadata will be copied. <br><li>If it is specified as `Replaced`, the metadata will be modified according to the header information in the request | String  | No |
-| ModifiedSinceConstraint | COSPutObjectCopy | If the object is modified after the specified time, the operation will be performed, otherwise `412` will be returned | Timestamp | No |
-| UnModifiedSinceConstraint | COSPutObjectCopy |  If the object is not modified after the specified time, the operation will be performed; otherwise `412` will be returned | Timestamp | No |
-| NewObjectMetadata  | COSPutObjectCopy | Configures the metadata of an object | NewObjectMetadata Object | No |
-| StorageClass  | COSPutObjectCopy | Configures the storage class of an object. Enumerated values: `STANDARD`, `STANDARD_IA`. Default value: `STANDARD`. | String | No |
-| TargetResource  | COSPutObjectCopy | Configures the destination bucket for the replication. Please specify it with "qcs", e.g. `qcs::cos:ap-beijing::result-1250000000` | String | Yes |
+| PrefixReplace | COSPutObjectCopy | Specifies whether to replace the source object prefix. If set to `true`, the object prefix is replaced. It is used together with `<ResourcesPrefix>` and `<TargetKeyPrefix>`. Default value: `false` | boolean | No |
+| ResourcesPrefix | COSPutObjectCopy | Specifies the source object prefix to be replaced. This parameter takes effect only when `<PrefixReplace>` is set to `true`. To replace a directory, the directory should end with a slash (/). This parameter can be up to 1,024 bytes and can be left empty. | string | No |
+| TargetKeyPrefix  | COSPutObjectCopy | Specifies the target prefix that replaces the source object prefix. This parameter takes effect only when `<PrefixReplace>` is set to `true`. To replace a directory, the directory should end with a slash (/). This parameter can be up to 1,024 bytes and can be left empty. <br/>Example: Assume that the source object is picture.jpg. If you set `ResourcesPrefix` to `pic` and `TargetKeyPrefix` to `abc`, picture.jpg will be changed to abcture.jpg.<br/>Note:<br/>If `ResourcesPrefix` is empty and `TargetKeyPrefix` carries a value, a prefix will be added.<br/>If both `ResourcesPrefix` and `TargetKeyPrefix` carry a value, the prefix will be replaced.<br/>If `ResourcesPrefix` carries a value and `TargetKeyPrefix` is left empty, the prefix will be deleted.| String | No |
+| MetadataDirective | COSPutObjectCopy | Specifies whether to copy the metadata of the source file. Enumerated values: `Copy` (default), `Replaced`. <br><li>If set to `Copy`, the source file metadata will be copied. <br><li>If set to `Replaced`, the metadata will be modified according to the headers in the request. | String | No |
+| ModifiedSinceConstraint | COSPutObjectCopy | If the object is modified after the specified time, the operation will be performed; otherwise, `412` will be returned | Timestamp | No |
+| UnModifiedSinceConstraint | COSPutObjectCopy | If the object is not modified after the specified time, the operation will be performed; otherwise, `412` will be returned | Timestamp | No |
+| MetadataDirective | COSPutObjectCopy | Specifies whether to copy the metadata of the source object, or replace the metadata with that specified in `<NewObjectMetadata>`. Valid values: `Copy`, `Replaced`. `Add`. Copy: inherits the metadata of the source object. Replaced: replaces the source metadata. Add: adds new metadata based on the source metadata. | String | No |
+| NewObjectMetadata | COSPutObjectCopy | Configures the metadata of an object | NewObjectMetadata Object | No |
+| TaggingDirective | COSPutObjectCopy | Specifies whether to copy the tag of the source object, or replace the tag with that specified in `<NewObjectTagging>`. Valid values: `Copy`, `Replaced`, `Add`. Copy: inherits the tag of the source object. Replaced: replaces the source tag. Add: adds a tag based on the source tag. | String | No |
+| NewObjectTagging | COSPutObjectCopy | Configures the object tag. This parameter must be specified if `<TaggingDirective>` is set to `Replace` or `Add`. | NewObjectTagging | No |
+| StorageClass  | COSPutObjectCopy | Configures the storage class of an object. Enumerated values: `STANDARD` (default), `STANDARD_IA`. | String | No |
+| TargetResource  | COSPutObjectCopy | Configures the destination bucket for the replication. Please specify it with "qcs", e.g., `qcs::cos:ap-beijing::result-1250000000` | String | Yes |
 
 ### COSInitiateRestoreObject
 
 | Node Name | Parent Node | Description | Type | Required |
-| ---------------- | ------------------------ | ------------------------------------------------------- | -------------------------- | -------- |
-| ExpirationInDays | COSInitiateRestoreObject | Configures the number of days after which the copy will expire and be automatically deleted. This value is an integer between 1 and 365 | AccessControlGrants Object | Yes |
-| JobTier | COSInitiateRestoreObject | Specifies the restoration mode. Valid values: Bulk, Standard. | String | Yes |
+| ---------------- | ------------------------ | --------------------------------------------------------- | ------- | -------- |
+| ExpirationInDays | COSInitiateRestoreObject | Specifies the number of days after which the copy will expire and be deleted automatically. It is an integer ranging from 1 to 365. | Integer | Yes |
+| JobTier | COSInitiateRestoreObject | Specifies the restoration mode. Valid values: `Bulk`, `Standard`. | String | Yes |
 
 ## AccessControlGrants
 
@@ -57,30 +64,30 @@ This document describes common elements used in batch operations.
 | -------- | ------------------- | ------------------ | --------------- | -------- |
 | COSGrant | AccessControlGrants | Configures access control | COSGrant Object | No |
 
-## COSGrant
+### COSGrant
 
 | Node Name | Parent Node | Description | Type | Required |
 | ---------- | -------- | ---------------------------------------------------------- | -------------- | -------- |
-| Grantee | COSGrant | Specifies the user to which a permission is granted | Grantee Object | Yes |
-| Permission | COSGrant | Specifies the permission  granted to the authorized user. Enumerated values: `READ`, `WRITE`, `FULL_CONTROL` | String | Yes |
+| Grantee | COSGrant | Specifies the user to which the permission is granted | Grantee Object | Yes |
+| Permission | COSGrant | Specifies the permission to be granted. Enumerated values: `READ`, `WRITE`, `FULL_CONTROL` | String | Yes |
 
-## Grantee
+#### Grantee
 
 | Node Name | Parent Node | Description | Type | Required |
 | -------------- | ------- | ------------------------------------------------------------ | ------ | -------- |
 | DisplayName | Grantee | Username | String | No |
-| Identifier | Grantee | User ID in qcs format (UIN), e.g. `qcs::cam::uin/100000000001:uin/100000000001` | String | Yes |
-| TypeIdentifier | Grantee | Specifies the type of identifier. Currently, only user ID is supported. Enumerated value: `ID` | String | Yes |
+| Identifier | Grantee | User ID in qcs format (UIN), e.g., `qcs::cam::uin/100000000001:uin/100000000001` | String | Yes |
+| TypeIdentifier | Grantee | Specifies the identifier type. Currently, only user ID is supported. Enumerated value: `ID` | String | Yes |
 
 ## NewObjectMetadata
 
 | Node Name | Parent Node | Description | Type | Required |
-| ------------------ | ----------------- | --------------------------------------------------- | ---------------------- | -------- |
-| CacheControl | NewObjectMetadata | Cache directives as defined in RFC 2616, which will be stored in the object metadata | String | No |
-| ContentDisposition | NewObjectMetadata | File name as defined in RFC 2616, which will be stored in the object metadata | String | No |
-| ContentEncoding | NewObjectMetadata | Encoding format as defined in RFC 2616, which will be stored in the object metadata | String | No |
-| ContentType | NewObjectMetadata | Content type as defined in RFC 2616, which will be stored in the object metadata | String | No |
-| HttpExpiresDate | NewObjectMetadata | Cache expiration time as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ------------------ | ----------------- | ----------------------------------------------------- | ---------------------- | -------- |
+| CacheControl | NewObjectMetadata | Cache directives as defined in RFC 2616. It will be stored as object metadata. | String | No |
+| ContentDisposition | NewObjectMetadata | Filename as defined in RFC 2616, which will be stored in the object metadata | String | No |
+| ContentEncoding | NewObjectMetadata | Encoding format as defined in RFC 2616. It will be stored as object metadata. | String | No |
+| ContentType | NewObjectMetadata | Content type as defined in RFC 2616. It will be stored as object metadata. | String | No |
+| HttpExpiresDate | NewObjectMetadata | Cache expiration time as defined in RFC 2616. It will be stored as object metadata. | String | No |
 | SSEAlgorithm | NewObjectMetadata | Server-side encryption algorithm. Currently, only AES256 is supported | String | No |
 | UserMetadata | NewObjectMetadata | Includes user-defined object metadata | Array of Key and Value | No |
 
@@ -91,8 +98,8 @@ This document describes common elements used in batch operations.
 | Bucket | Report | Bucket to which a job report is delivered | String | Yes |
 | Enabled | Report | Specifies whether to output a job report | Boolean | Yes |
 | Format | Report | Job report format. Valid value: `Report_CSV_V1` | String | Yes  |
-| Prefix | Report | Job report prefix; length: 0–256 bytes | String | No |
-| ReportScope | Report | Determines whether the job report records information on all operations or only failed operations. Valid values: `AllTasks`, `FailedTasksOnly` | String | Yes |
+| Prefix | Report | Job report prefix; length: 0-256 bytes | String | No |
+| ReportScope | Report | Specifies whether the job report records all operations or only failed operations. Valid values: `AllTasks`, `FailedTasksOnly` | String | Yes |
 
 ## ProgressSummary
 

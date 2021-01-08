@@ -1,10 +1,10 @@
-## API Description
+## Overview
 
 This API (GET Bucket replication) is used to query the cross-bucket replication configuration of a bucket. When initiating this request, you need to get the request signature to show that the request has been authorized.
 
 ## Request
 
-#### Sample request 
+#### Sample request
 
 ```shell
 GET /?replication HTTP/1.1
@@ -48,12 +48,12 @@ The response body returns **application/xml** data. The following contains all t
 </ReplicationConfiguration>
 ```
 
-The nodes are described as follows:
+The detailed nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | 
 | ------------------------ | ----------------------------------------- | ------------------------------------------------------------ | --------- | 
 | ReplicationConfiguration | None | All replication configurations | Container | 
-| Role | ReplicationConfiguration | Request initiator identifier, formatted as <br>`qcs::cam::uin/&lt;OwnerUin>:uin/&lt;SubUin>` | String |  
+| Role | ReplicationConfiguration | Request initiator identifier, formatted as <br>`qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String |  
 | Rule | ReplicationConfiguration | Specific configuration. You can set a maximum of 1,000 rules, which should apply to the same destination bucket | Container | 
 | ID | ReplicationConfiguration.Rule | Name of a specific rule | String | 
 | Status | ReplicationConfiguration.Rule | `Rule` status identifier. Enumerated values: `Enabled`, `Disabled` | String | 

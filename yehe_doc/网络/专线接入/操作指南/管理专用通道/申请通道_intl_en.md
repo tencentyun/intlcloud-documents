@@ -1,16 +1,20 @@
-Dedicated tunnels are network link segmentation of a connection. You can create dedicated tunnels that connect to different direct connect gateways to enable communication between your on-premises IDC and multiple VPCs. After a dedicated tunnel is created, its event alarms will be automatically configured, helping you monitor and manage your dedicated tunnels. This document describes how to apply for a dedicated tunnel.
+Dedicated tunnels are network link segmentation of a connection. You can create dedicated tunnels that connect to different direct connect gateways to enable communication between your on-premises IDC and multiple VPCs. This document describes how to apply for a dedicated tunnel. After a dedicated tunnel is created, its event alarms will be automatically configured to facilitate your monitoring and OPS.
 <span id ="background"></span>
 
-> ?The shared connection feature of new dedicated tunnels has stopped accepting new applications at 00:00:00 on August 1, 2020. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after 00:00:00 on August 1, 2020.
+> ?The shared connection feature of new dedicated tunnels has stopped accepting new applications since August 1, 2020 at 00:00:00. If you are using a shared connection, it will not be affected by this change, but if you delete it, you will not be able to apply for new dedicated tunnels with shared connection after August 1, 2020 at 00:00:00.
+> 
 
 ## Prerequisites
-- You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+- You have applied for a connection as instructed in [Applying for a Connection](https://intl.cloud.tencent.com/document/product/216/19244).
 - You have created a direct connect gateway as instructed in [Creating Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/19256).
 
 ## Directions
 
+### Step 1: apply for a dedicated tunnel
+
 1. Log in to the [Direct Connect - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn) console.
-2. Click **+New** at the top of the **Dedicated Tunnels** page, complete the basic configurations such as name, connection type, access network, region and associated direct connect gateway, and click **Next**.
+2. Click **+New** at the top of the **Dedicated Tunnel** page, complete the basic configurations such as name, connection type, access network, region and associated direct connect gateway, and click **Next**.
+   ![](https://main.qcloudimg.com/raw/67c962ab4e77b701bff86039784bf447.png)
     <table>
     <tr>
     <th width="15%">Field</th>
@@ -29,8 +33,8 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
     <td>Select from CCN, VPC and BM Network.</td>
     </tr>
      <tr>
-    <td>Gateway region</td>
-    <td>Select the region of the VPC or BM network or the region where the CCN-based direct connect gateway resides.</td>
+    <td>Region</td>
+    <td>Select the region of the VPC or BM VPC or the region where the CCN-based direct connect gateway resides.</td>
     </tr>
      <tr>
     <td>Virtual Private Cloud</td>
@@ -42,6 +46,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
     </tr>
     </table>
 3. Configure the following parameters on the **Advanced Configuration** page.
+![](https://main.qcloudimg.com/raw/c9efd62743f5a8dc70b4e4ef70b663d3.png)
 <table>
 <tr>
  <th width="15%">Field</th>
@@ -57,7 +62,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 </tr>
 <tr>
 <td>Tencent Cloud Primary Edge IP</td>
-<td>Enter the connection primary IP address on the Tencent Cloud side.</td>
+<td>Enter the connection secondary IP address on the Tencent Cloud side.</td>
 </tr>
 <tr>
 <td>Tencent Cloud Backup Edge IP</td>
@@ -103,7 +108,8 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 > - `192.168.0.0/16` should be split into `192.168.0.0/17` + `192.168.128.0/17`.
 
 4. Configure IDC devices.
-   You can download the CPE configuration guide for your devices, which provides several common configuration methods.
+   You can download the CPE configuration guide for your devices, which provides several common configuration guidelines.
+   ![](https://main.qcloudimg.com/raw/f5480a8e21884a3bbf1cd38c109f23bc.png)
 <table>
 <tr>
 <th width="20%">Parameter</th>
@@ -112,15 +118,36 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 </tr>
 <tr>
 <td>CPE IP Range</td>
-<td>Enter the customer IP range if <b>Static</b> is selected for <b>Routing Mode</b>. This parameter cannot conflict with VPC IP range in a non-NAT mode.</td>
+<td>Enter the customer IP range if <b>Static</b> is selected for the <b>Routing Mode</b>. This parameter cannot conflict with VPC IP range in a non-NAT mode.</td>
 <td>You can update the IP range via <b>Change Tunnel</b> in the console.</td>
 </tr>
 </table>
 5. Click **Submit**.
 
+### Step 2: set the alarm recipient
+After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelRouteTableOverload`, and `DirectConnectTunnelBFDDown`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
+
+This default alarm policy is not provided with a recipient, so you can only view alarms in the console Message Center. To configure a recipient, perform the following steps.
+1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** in the left side bar.
+2. Select **Dedicated Line channel** for the **Product Type** in the top right of the **Alarm Policy** page.
+  ![](https://main.qcloudimg.com/raw/dd623aec4ea3048e34922cfbc75261c7.png)
+3. Perform the following operations as needed.
+   - Configure alarm recipient objects
+    1. Click the name of the target default policy in the alarm policy list.
+    2. Click **Edit** under the **Alarm Recipient Object** and select object from the list in the pop-up window. You can also click **Add Recipient Group** to configure new user groups.
+     ![](https://main.qcloudimg.com/raw/12444a2429ead98ac07897d7955c7426.png)
+   - Modify an alarm policy
+    1. Click the name of the target default policy in the alarm policy list.
+    2. Click **Edit** next to the **Hit Condition** and modify the trigger conditions in the pop-up window. For more information on the event alarm, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After completing the modification, click **Save**.
+   - Set a default policy
+     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under the **Policy Type** column. Then the selected alarm policy will automatically apply to dedicated tunnels being created afterwards.
+   ![](https://main.qcloudimg.com/raw/7230beab44341f97f172fbc9532095e3.png)
+  
 ## Connection Status
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** connection status.
-The possible connection statuses of a dedicated tunnel include the following:
+![](https://main.qcloudimg.com/raw/a184734e3f46469ac1e2dba8c6bdfe6b.png)
+The possible connection statuses of a dedicated channel include the following:
+![](https://main.qcloudimg.com/raw/407ce7d9d6113518793ea3cd76fee7cd.png)
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
@@ -131,19 +158,3 @@ The possible connection statuses of a dedicated tunnel include the following:
   The system pings to your IDC device successfully. However, this does not mean that your business is connected. You have to configure the [route table](https://console.cloud.tencent.com/vpc/route?rid=1) of the VPC or CCN instance to implement the connection.
 - **Deleting**
   If you delete your dedicated tunnel in the console, the connection status of the dedicated tunnel becomes **Deleting**. If this status lasts for a long time, there may be an exception. In this case, contact your architect or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
-
-## Default Alarm
-After a dedicated tunnel is created, Tencent Cloud automatically configures four event alarms such as `DirectConnectTunnelDown`, `DirectConnectTunnelBFDDown`, `DirectConnectTunnelRouteTableOverload`, and `DirectConnectTunnelBFDDown`, helping you monitor and manage your dedicated tunnels. For more information on the event alarms, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
-
-This default alarm policy is not provided with a recipient, so you can only view alarms in the console Message Center. To configure a recipient, perform the following steps.
-1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** in the left side bar.
-2. Select **Dedicated Line channel** for **Product Type** in the top right of the **Alarm Policy** page.
-3. Perform the following operations as needed.
-   - Configure alarm recipient objects
-    1. Click the name of the target default policy in the alarm policy list.
-    2. Click **Edit** under the **Alarm Recipient Object** and select object from the list in the pop-up window. You can also click **Add Recipient Group** to configure new user groups.
-   - Modify an alarm policy
-    1. Click the name of the target default policy in the alarm policy list.
-    2. Click **Edit** next to the **Hit Condition** and modify the trigger conditions in the pop-up window. For more information on the event alarm, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After completing the modification, click **Save**.
-   - Set a default policy
-     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under “Policy Type”. Then the selected alarm policy will automatically apply to dedicated tunnels being created afterwards.
