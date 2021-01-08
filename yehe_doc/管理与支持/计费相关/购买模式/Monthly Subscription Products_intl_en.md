@@ -1,11 +1,7 @@
 
-## Compute
-
-[Cloud Virtual Machine](https://intl.cloud.tencent.com/zh/document/product/213/30619) 
-
 ## Storage
 
-[Cloud Block Storage](https://intl.cloud.tencent.com/zh/document/product/362/2413) 
+[Cloud Block Storage](https://intl.cloud.tencent.com/document/product/362/2413) 
 
 ## Networking
 
@@ -15,7 +11,7 @@
 
 [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003/30053)  
 
-[EIP](https://intl.cloud.tencent.com/document/product/213/10578) 
+[EIP](https://intl.cloud.tencent.com/document/product/213/17156) 
 
 ## Database TencentDB
 
@@ -27,7 +23,7 @@
 
 [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240/8364)  
 
-[TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042/35777) 
+[TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/1042/35777) 
 
 [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/9894) 
 
