@@ -61,7 +61,7 @@ The direct connect gateway will be charged starting from December 1, 2020 at 00:
 <tr>
 <td>Inbound traffic</td>
 <td>Free of charge</td>
-<td></td>
+<td>-</td>
 </tr>
 <tr>
 <td>Outbound traffic</td>
