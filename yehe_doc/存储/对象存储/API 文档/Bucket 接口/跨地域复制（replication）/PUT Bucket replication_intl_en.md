@@ -5,7 +5,6 @@ This API (PUT Bucket replication) is used to add a cross-bucket replication rule
 > !
 >
 > - To use this API, ensure that versioning is enabled for the bucket. For the API documentation of versioning, please see [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889).
-> - Objects in MAZ buckets cannot be replicated to an OAZ bucket. For example, objects in MAZ_STANDARD cannot be replicated to STANDARD.
 
 ## Request
 
