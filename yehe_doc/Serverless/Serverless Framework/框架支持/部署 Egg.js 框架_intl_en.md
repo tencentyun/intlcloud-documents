@@ -1,10 +1,8 @@
 
-## Operation Scenarios
+## Overview
 Tencent Cloud [Egg.js](https://github.com/eggjs/egg) Serverless Component supports deploying RESTful API services.
 
 ## Prerequisites
-
->!You are recommended to use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
 
 #### Initialize Egg.js project
 ```shell
@@ -12,19 +10,6 @@ $ mkdir serverless-egg && cd serverless-egg
 $ npm init egg src --type=simple
 $ cd src && npm install
 ```
-
-#### Modify Egg.js configuration
-
-When a function is executed, only `/tmp` is readable/writable; therefore, you need to write the logs of Egg.js framework running attempts into this directory by modifying the configuration in `config/config.default.js` to the following:
-```js
-const config = (exports = {
-  rundir: '/tmp',
-  logger: {
-    dir: '/tmp'
-  }
-})
-```
-
 
 
 ## Directions
@@ -39,20 +24,15 @@ Create a `serverless.yml` file in the project root directory:
 ```shell
 $ touch serverless.yml
 ```
-Configure the `serverless.yml` file as follows:
+Configure the `serverless.yml` file as follows (for more information on the configuration of the .yml file, please see [Configuration Information](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md)):
 ```yml
-# serverless.yml
-
-org: orgDemo
-app: appDemo
-stage: dev
-component: egg@0.0.0-dev
+component: egg
 name: eggDemo
+app: appDemo
 
 inputs:
-  src: ./src
+  src: ./
   region: ap-guangzhou
-  functionName: eggDemo
   runtime: Nodejs10.15
   apigatewayConf:
     protocols:
@@ -61,9 +41,9 @@ inputs:
     environment: release
 ```
 
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md)
-
 ### 3. Deploy
+
+If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, you can directly log in or sign up by scanning the QR code on the command line with **WeChat**.
 
 Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
 >?`sls` is short for the `serverless` command.
@@ -120,7 +100,7 @@ TENCENT_SECRET_KEY=123
 
 1. **What should I do if the `app/public` deployment directory does not exist?**
 
-   Generally, when you initialize an Egg.js project, the `app/public` directory will be created automatically. If this directory is empty during packaging and compressing, it will not exist after the deployment; instead, it will automatically be created when the Egg.js project is started; however, SCF will not have the permission to manipulate it. Therefore, you are recommended to create an empty folder `.gitkeep` in the `app/public` directory to solve this problem.
+   Generally, when you initialize an Egg.js project, the `app/public` directory will be created automatically. If this directory is empty during packaging and compressing, it will not exist after the deployment; instead, it will automatically be created when the Egg.js project is started; however, SCF will not have the permission to manipulate it. Therefore, we recommend you create an empty folder `.gitkeep` in the `app/public` directory to solve this problem.
 
 2. **What should I do if a failure to find the dependent module is reported after deployment with Layer?**
 

@@ -1,16 +1,16 @@
 
 ## Overview
-The Tencent Cloud [Flask](https://github.com/pallets/flask) Serverless Component supports deploying RESTful API services but does not support Flask Command.
->!Any Python server framework that supports the Web Server Gateway Interface (WSGI), such as Falcon, can be deployed through this component.
+Tencent Cloud [Flask](https://github.com/pallets/flask) Serverless Component supports deploying RESTful API services but does not support Flask Command.
+>!Any Python server framework that supports Web Server Gateway Interface (WSGI) can be deployed through this component, such as Falcon.
 
 ## Prerequisites
 1. Before using this component, please make sure that you have installed the Python environment locally.
-2. Initialize a Flask project first and then add `Flask` and `werkzeug` to the dependent file `requirements.txt`, as shown below: 
+2. Initialize a Flask project first and then add `Flask` and `werkzeug` to the dependent file `requirements.txt` as follows: 
 ```txt
 Flask==1.0.2
 werkzeug==0.16.0
 ```
- Meanwhile, add the API service `app.py`. The following code is for reference only:
+Meanwhile, add the API service `app.py`. The following code is for reference only:
 ```python
 from flask import Flask, jsonify
 app = Flask(__name__)
@@ -30,28 +30,35 @@ def user(id):
 ```
 
 ## Directions
-### Installation
+
+>?The following steps are mainly for deployment on the command line. For deployment in the console, please see [Console Deployment Guide](https://intl.cloud.tencent.com/document/product/1040/39132).
+
+### 1. Install Serverless CLI
 Use npm to install [Serverless CLI](https://github.com/serverless/serverless) globally:
 
 ```shell
 npm install -g serverless
 ```
 
-### Configuration
-Create a `serverless.yml` file in the project root directory:
-```shell
+### 2. Initialize the Flask template project (optional)
+If you don't have a local Flask project, you can initialize a Flask project with the following commands (if you already have one, you can ignore this step):
+```
+serverless init flask-starter --name example
+cd example
+```
+
+### 3. Configure the .yml file
+Create a `serverless.yml` file in the project root directory and paste the following configuration template into it to implement basic project configuration.
+>?You can add more configuration items in `serverless.yml` based on your actual deployment needs. For more information on the configuration of the .yml file, please see [Flask Component Configuration](https://github.com/serverless-components/tencent-flask/blob/master/docs/configure.md).
+
+```sh
 touch serverless.yml
 ```
 
-Configure `serverless.yml` as follows:
-
 ```yml
-# serverless.yml
-
+#serverless.yml
 component: flask
 name: flashDemo
-org: orgDemo
-app: appDemo
 stage: dev
 
 inputs:
@@ -69,25 +76,17 @@ inputs:
     environment: release
 ```
 
-[Detailed Configurations >>]( https://github.com/serverless-components/tencent-flask/blob/master/docs/configure.md )
+### 4. Deploy the application
+Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
 
-### Deployment
-
-Run the following command to deploy granting permissions via code scanning:
-
-```console
-sls deploy
 ```
-
->?To grant persistent permissions, please see [Account Configuration](#account).
-
-### Removal
-
-You can run the following command to remove the deployed service:
-
-```console
-sls remove
+sls deploy --debug
 ```
+After the deployment is completed, access the application by accessing the output API Gateway link.
+
+### 5. Monitor the OPS
+After the deployment is completed, you can log in to the [Serverless Framework console](https://console.cloud.tencent.com/ssr) to view the basic information of the application and monitor logs.
+
 
 <span id="account"></span>
 ### Account configuration (optional)
