@@ -45,7 +45,7 @@ table th:nth-of-type(2) { width:50%; }
 | [云数据库 MariaDB](https://intl.cloud.tencent.com/document/product/1021/37635)               | mariadb                |
 | [云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/1021/37638)               | sqlserver                |
 | [云数据库 MongoDB](https://intl.cloud.tencent.com/document/product/1021/37636)               | mongodb                |
-| [分布式数据库 TDSQL](https://intl.cloud.tencent.com/document/product/1021/37633)               | dcdb                |
+| [TDSQL MySQL版](https://intl.cloud.tencent.com/document/product/1021/37633)               | dcdb                |
 | [云数据库 Redis](https://intl.cloud.tencent.com/document/product/1021/37637)               | redis                |
 | [游戏数据库](https://intl.cloud.tencent.com/document/product/1021/37639)               | tcaplusdb                |
 | [数据库智能管家](https://intl.cloud.tencent.com/document/product/1021/37632)               | dbbrain                |
