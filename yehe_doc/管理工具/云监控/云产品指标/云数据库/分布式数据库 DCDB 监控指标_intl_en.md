@@ -50,7 +50,7 @@ Namespace=QCE/DCDB
 
 ## Input Parameters
 
-To query the monitoring data of a TencentDB for TDSQL v3 instance, use the following input parameters:
+To query the monitoring data of a TDSQL for MySQL v3 instance, use the following input parameters:
 &Namespace=QCE/DCDB
 &Instances.N.Dimensions.0.Name=uuid
 &Instances.N.Dimensions.0.Value=<Specific instance uuid>
