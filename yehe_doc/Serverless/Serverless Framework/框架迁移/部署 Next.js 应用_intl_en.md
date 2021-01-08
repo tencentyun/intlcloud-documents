@@ -1,5 +1,5 @@
-## Operation Scenarios
-**Tencent Cloud [Next.js](https://github.com/zeit/next.js) component** uses [**Tencent Serverless Framework**](https://github.com/serverless/components/tree/cloud) to implement "zero" configuration, convenient development, and rapid deployment of your webpage application in the Next.js framework based on Tencent Cloud Serverless services (API Gateway, SCF, etc.). The Next.js component supports a rich set of configuration extensions and provides easy-to-use, practical, and cost-effective development/hosting capabilities for webpage application projects.
+## Overview
+Tencent Cloud [Next.js](https://github.com/zeit/next.js) component uses [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud) to implement "zero" configuration, convenient development, and rapid deployment of your webpage application in the Next.js framework based on Tencent Cloud Serverless services (API Gateway, SCF, etc.). The Next.js component supports a rich set of configuration extensions and provides easy-to-use, practical, and cost-effective development/hosting capabilities for webpage application projects.
 
 Next.js features:
 - **Pay-as-you-go billing**: fees are charged based on the request usage, and you don't need to pay anything if there is no request.
@@ -10,43 +10,56 @@ Next.js features:
 - **Convenient collaboration**: the status information and deployment logs in the cloud-based console make multi-person collaborative development easier.
 
 
-## Prerequisites
-- You have installed Node.js (for detailed directions, please see [Node.js Installation Guide](https://nodejs.org/zh-cn/download/)).
-- You have created and initialized a Next.js project locally.
-```bash
-$ mkdir serverless-next && cd serverless-next
-$ npm init next-app src
-```
+## Migration Prerequisites
 
->You are recommended to use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
+- [Serverless Framework 1.67.2 or above](https://intl.cloud.tencent.com/document/product/1040/37034) has been installed.
+- You have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
+
+>?If your account is a **Tencent Cloud sub-account**, please get the authorization from the root account first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
+
+## Architecture
+
+The Next.js component will use the following Serverless services in your Tencent Cloud account:
+
+- **API Gateway**: it will receive external requests and forward them to the SCF function.
+- **SCF**: it will carry the Next.js application.
+- **CAM**: this component will create a default CAM role for authorizing access to associated resources.
+- **COS**: to ensure the upload speed and quality, when the function is compressed and the code is uploaded, the code package will be stored in a specifically named COS bucket by default.
 
 ## Directions
-### 1. Install
-Use npm to install [Serverless CLI](https://github.com/serverless/serverless) globally:
-```bash
-$ npm install -g serverless
+
+>?The following steps are mainly for deployment on the command line. For deployment in the console, please see [Console Deployment Guide](https://intl.cloud.tencent.com/document/product/1040/39132).
+
+### 1. Initialize the Next.js template project (optional)
+If you don't have a local Next.js project, you can quickly create a Next.js project template with the following command (if you already have one, you can ignore this step):
+```
+serverless init nextjs-starter --name example
+cd example
 ```
 
-### 2. Configure
-Create a `serverless.yml` file in the project root directory (which is `serverless-next` in this example):
-```bash
-$ touch serverless.yml
+### 2. Modify the entry function code (optional)
+If the project uses a custom Node.js service, such as the Express or Koa framework, you need to modify the entry file `sls.js` (or `app.js`) and export the corresponding framework application (otherwise, you can skip this step). Click [here](#1) to view the modification template.
+
+
+### 3. Build the project
 ```
-Configure `serverless.yml` as follows:
+npm run build
+```
+
+### 4. Generate a .yml file and deploy
+
+After modifying the code, you can run the `sls deploy` command, and Serverless Framework will automatically generate a basic `serverless.yml` file and complete the deployment to quickly migrate the Next.js framework application.
+
+The generated default configuration file is as follows:
 ```yml
-# serverless.yml
-component: nextjs # Component name, which is required. `nextjs` is used in this example
-name: nextjsDemo # Instance name, which is required
-org: orgDemo # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
-app: appDemo # Next.js application name, which is optional
-stage: dev # Information for identifying environment, which is optional. The default value is `dev`
+component: nextjs
+name: nextjsDemo
+app: appDemo
 
 inputs:
-  src: 
-	src: ./src
-    exclude:
+  src: ./
+  exclude:
       - .env
-  functionName: nextjsDemo
   region: ap-guangzhou
   runtime: Nodejs10.15
   apigatewayConf:
@@ -55,45 +68,97 @@ inputs:
       - https
     environment: release
 ```
-
-View [more configurations and descriptions >>](https://github.com/serverless-components/tencent-nextjs/tree/master/docs/configure.md)
-
-### 3. Deploy
-#### 3.1. Construct static resources
-
-Enter the Next.js project directory and construct static resources:
-
-```bash
-$ cd src && npm run build
-```
-
-#### 3.2. Deploy into the cloud
-Go back to the project root directory where the `serverless.yml` file is and run the following command for deployment:
-```bash
-$ sls deploy
-```
-Authentication is required during deployment. If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, please log in or sign up first.
-
->If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
-
-### 4. Debug
-After the Next.js application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
-You can enable debugging by running the `serverless dev` command in the directory where the `serverless.yml` file is located.
-`serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
+After the deployment is completed, access the application by accessing the output API Gateway link.
 
 ### 5. View deployment status
 
 In the directory where the `serverless.yml` file is located, run the following command to check the deployment status:
+
 ```
 $ serverless info
 ```
 
-### 6. Remove
-In the directory where the `serverless.yml` file is located, run the following command to remove the deployed API gateway. After removal, this component will delete all related resources created during deployment in the cloud.
-```bash
-$ sls remove
+
+<span id="1"></span>
+## Modification Template for Project Migration
+- Express template
+
+```js
+const express = require('express')
+const next = require('next')
+
+// not report route for custom monitor
+const noReportRoutes = ['/_next', '/static', '/favicon.ico']
+
+async function createServer() {
+  const app = next({ dev: false })
+  const handle = app.getRequestHandler()
+
+  await app.prepare()
+
+  const server = express()
+  server.all('*', (req, res) => {
+    noReportRoutes.forEach((route) => {
+      if (req.path.indexOf(route) !== -1) {
+        req.__SLS_NO_REPORT__ = true
+      }
+    })
+    return handle(req, res)
+  })
+
+  // define binary type for response
+  // if includes, will return base64 encoded, very useful for images
+  server.binaryTypes = ['*/*']
+
+  return server
+}
+
+module.exports = createServer
 ```
-Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process (`sls` is an abbreviation for the `serverless` command).
+
+- Koa template
+```js
+const Koa = require('koa')
+const next = require('next')
+
+async function createServer() {
+  const app = next({ dev: false })
+  const handle = app.getRequestHandler()
+
+  const server = new Koa()
+  server.use((ctx) => {
+    ctx.status = 200
+    ctx.respond = false
+    ctx.req.ctx = ctx
+
+    return handle(ctx.req, ctx.res)
+  })
+
+  // define binary type for response
+  // if includes, will return base64 encoded, very useful for images
+  server.binaryTypes = ['*/*']
+
+  return server
+}
+
+module.exports = createServer
+```
+
+### Custom monitoring
+
+When you deploy the Next.js application, if you don't specify the `role` in `serverless.yml`, the system will try to bind `QCS_SCFExcuteRole` by default and enable custom monitoring to help you collect the statistics of application metrics. For projects with custom entry files, routes except those with `/_next` and `/static` will be reported by default.
+
+If you want to report the performance of custom routes, you can customize the `sls.js` entry file.
+For routes that do not need to be reported, set the `__SLS_NO_REPORT__` attribute value to `true` in the `req` object of the Express service; for example:
+```js
+server.get('/no-report', (req, res) => {
+  req.__SLS_NO_REPORT__ = true
+  return handle(req, res)
+})
+```
+After configuration, custom monitoring metrics will not be reported when users access the `GET /no-report` route.
+
+
 
 ## More Resources
 ### Account configuration
@@ -108,18 +173,10 @@ Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` f
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
 
-### Architecture
-The Next.js component will use the following Serverless services in your Tencent Cloud account:
-
-- **API Gateway**: it will receive external requests and forward them to the SCF function.
-- **SCF**: it will carry the Next.js application.
-- **CAM**: this component will create a default CAM role for authorizing access to associated resources.
-- **COS**: to ensure the upload speed and quality, when the function is compressed and the code is uploaded, the code package will be stored in a specifically named COS bucket by default.
-- **SSL Certificates Service**: if you configure the `domain` field in the YAML file, you will need to bind a custom domain name and enable HTTPS; therefore, you will also need to use the certificate management service and domain name service. Serverless Framework will automatically apply for and configure an SSL certificate based on the domain name with ICP filing (required for Mainland China service).
 
 ### More components
 You can view more component information in the repository of [Serverless Components](https://github.com/serverless/components).
@@ -127,3 +184,4 @@ You can view more component information in the repository of [Serverless Compone
 ### FAQs
 **Why is an entry file no longer needed?**
 In the previous version, to use this component, you need to add an `sls.js` file in the project root directory. In the current version, this is taken care of by the component, so you do not need to deal with it separately. For more information, please see the [GitHub documentation](https://github.com/serverless-components/tencent-nextjs/issues/1).
+

@@ -1,68 +1,55 @@
-## Operation Scenarios
+## Overview
 The Koa component can help you quickly and conveniently create, configure, and manage a [Koa framework](https://koajs.com/) in Tencent Cloud with the aid of the serverless-tencent basic components (such as API Gateway component and SCF component).
 
->You are recommended to use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
+>!We recommend you use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
+
+## Migration Prerequisites
+
+- [Serverless Framework 1.67.2 or above](https://intl.cloud.tencent.com/document/product/1040/36249) has been installed.
+- You have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
+
+>?If your account is a **Tencent Cloud sub-account**, please get the authorization from the root account first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
 
 ## Directions
-Through the SCF component, you can perform a complete set of operations on a Koa application, such as creation, configuration, deployment, and deletion. The supported commands are as follows:
+>?The following steps are mainly for deployment on the command line. For deployment in the console, please see [Console Deployment Guide](https://intl.cloud.tencent.com/document/product/1040/39132).
 
-### 1. Install
-
-Install Serverless through npm:
-```console
-$ npm install -g serverless
+### 1. Initialize the Koa template project (optional)
+If you don't have a local Koa project, you can quickly create a Koa project template with the following command (if you already have one, you can ignore this step):
+```
+serverless init koa-starter --name example
+cd example
 ```
 
-### 2. Create
+### 2. Modify the project code
+Open the entry file `sls.js` (or `app.js`) of the Koa project, comment out the local listening port, and export the default Koa application:
 
-1. Create the `serverless.yml` file locally:
-```console
-$ touch serverless.yml
-```
-2. Initialize a new npm package and install Koa:
-```
-npm init              # Keep pressing Enter after the creation
-npm i --save koa  # Install Koa
-```
-3. Create the `sls.js` file locally:
-```console
-$ touch sls.js
-```
-4. Create your Koa application in the `sls.js` file:
+```javascript
+// sls.js
 
-```js
-const koa = require('koa')
-const app = new koa()
+const koa = require('koa');
+const app = koa();
 
-app.use(async (ctx, next) => {
-  if (ctx.path !== '/') return next()
-  ctx.body = 'Hello from Koa'
-})
+// *****
 
-// set binary types
-// app.binaryTypes = [*/*];
+// Comment out the local listening port
+// app.listen(3000);
 
-// don't forget to export!
-module.exports = app
+// Export the Koa application
+module.exports = app;
 ```
 
-### 3. Configure
+### 3. Generate a .yml file and deploy
+After modifying the code, you can run the `sls deploy` command, and Serverless Framework will automatically generate a basic `serverless.yml` file and complete the deployment to quickly migrate the Koa framework application.
 
-Configure `serverless.yml` as follows:
+The generated default configuration file is as follows:
 ```yml
-# serverless.yml
-
-org: orgDemo # (optional) serverless dashboard org. default is the first org you created during signup.
-app: appDemo # (optional) serverless dashboard app. default is the same as the name property.
-stage: dev # (optional) serverless dashboard stage. default is dev.
-component: koa # (required) name of the component. In that case, it's koa.
-name: koaDemo # (required) name of your koa component instance.
+component: koa
+name: koaDemo
+app: appDemo
 
 inputs:
-  src:
-    src: ./ # (optional) path to the source folder. default is a hello world app.
-    exclude:
-      - .env
+  entryFile: sls.js # Use the actual entry file name
+  src: ./
   region: ap-guangzhou
   runtime: Nodejs10.15
   apigatewayConf:
@@ -71,49 +58,23 @@ inputs:
       - https
     environment: release
 ```
-[Detailed Configuration >>](https://github.com/serverless-components/tencent-koa/blob/master/docs/configure.md)
 
-### 4. Deploy
+After the deployment is completed, access the application by accessing the output API Gateway link.
 
-If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account:
+### 4. Modify the .yml file
 
-Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
->`sls` is short for the `serverless` command.
+You can add more configuration items in `serverless.yml` based on your actual deployment needs and run `sls deploy` for redeployment.
 
-```
-$ sls deploy
+For more information on the configuration of the .yml file, please see [Koa Component Configuration](https://github.com/serverless-components/tencent-koa/blob/master/docs/configure.md).
 
-  koa:
-    region:              ap-shanghai
-    functionName:        KoaComponent_7xRrrd
-    apiGatewayServiceId: service-n0vs2ohb
-    url:                 http://service-n0vs2ohb-1300415943.ap-shanghai.apigateway.myqcloud.com/release/
-
-  36s › koa › done
-
-```
-
-After completing the deployment, you can access the returned link in a browser to view the corresponding value returned by Koa.
-
-### 5. Remove
-
-Run the following command to remove the deployed application:
-```
-$ sls remove --debug
-
-  DEBUG ─ Flushing template state and removing all components.
-  DEBUG ─ Removed function KoaComponent_MHrAzr successful
-  DEBUG ─ Removing any previously deployed API. api-kf2hxrhc
-  DEBUG ─ Removing any previously deployed service.  service-n0vs2ohb
-
-  13s › koa › done
-```
+### 5. Monitor the OPS
+After the deployment is completed, you can log in to the [SSR console](https://console.cloud.tencent.com/ssr) to view the basic information of the application and monitor logs.
 
 ### Account configuration (optional)
 
 Currently, you can scan a QR code to log in to the CLI by default. If you want to configure persistent environment variables/key information, you can also create a local `.env` file:
 ```console
-$ touch .env # Tencent Cloud configuration information
+touch .env # Tencent Cloud configuration information
 ```
 
 Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` file and save it:
@@ -122,7 +83,7 @@ Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` f
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
 
