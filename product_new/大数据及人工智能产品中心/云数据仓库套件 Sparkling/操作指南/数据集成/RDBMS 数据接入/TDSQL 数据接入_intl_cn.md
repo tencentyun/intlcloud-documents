@@ -1,5 +1,5 @@
-本节为您介绍分布式数据库 TDSQL 数据接入方法。通过 RDBMS 数据接入功能可以实现将分布式数据库 TDSQL 中的数据以全量或增量的方式导入 Sparkling 中。用户可以通过时间戳增量追加方式实现增量同步，通过自定义调度周期实现定时数据接入功能。
-更多关于云数据库 TDSQL 的信息请参见 [分布式数据库 TDSQL 产品介绍](https://cloud.tencent.com/document/product/557)。
+本节为您介绍TDSQL MySQL版 数据接入方法。通过 RDBMS 数据接入功能可以实现将TDSQL MySQL版 中的数据以全量或增量的方式导入 Sparkling 中。用户可以通过时间戳增量追加方式实现增量同步，通过自定义调度周期实现定时数据接入功能。
+更多关于云数据库 TDSQL 的信息请参见 [TDSQL MySQL版 产品介绍](https://cloud.tencent.com/document/product/557)。
 
 ## 操作步骤
 登录 [Sparkling 控制台](https://sparkling.cloud.tencent.com)，在左侧导航单击【数据】进入数据接入页面，按以下操作步骤完成 RDBMS 数据接入：
