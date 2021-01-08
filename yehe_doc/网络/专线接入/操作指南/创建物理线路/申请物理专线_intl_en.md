@@ -67,18 +67,15 @@ After a connection is created, Tencent Cloud automatically configures the follow
 This default alarm policy is not provided with a recipient, so you can only view alarms in the console Message Center. To configure a recipient, perform the following steps.
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** in the left side bar.
 2. Select **Dedicated Line channel** for the **Product Type** in the top right of the **Alarm Policy** page.
- ![](https://main.qcloudimg.com/raw/dd623aec4ea3048e34922cfbc75261c7.png)
 3. Perform the following operations as needed.
  - Configure alarm recipient objects
     1. Click the name of the target default policy in the alarm policy list.
     2. Click **Edit** under the **Alarm Recipient Object** and select object from the list in the pop-up window. You can also click **Add Recipient Group** to configure new user groups.
-        ![](https://main.qcloudimg.com/raw/12444a2429ead98ac07897d7955c7426.png)
  - Modify an alarm policy
     1. Click the name of the target default policy in the alarm policy list.
     2. Click **Edit** next to **Hit Condition** and modify the trigger conditions in the pop-up window. For more information on the metric alarm, please see the “Metric Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After completing the modification, click **Save**.
  - Set a default policy
     If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under the **Policy Type** column. Then the selected alarm policy will automatically apply to connections being created afterwards.
-   ![](https://main.qcloudimg.com/raw/912bb01ae7fce69ea811229ede89d5b8.png)
 
 ## Subsequent Operations
 
