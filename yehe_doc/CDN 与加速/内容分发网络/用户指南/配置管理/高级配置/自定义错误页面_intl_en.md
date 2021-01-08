@@ -6,7 +6,7 @@ Currently supported status codes are as follows:
 - 4XX: 400, 403, 404, 405, 414, 416
 - 5XX: 500, 501, 502, 503, 504
 
-
+>! Some platforms are being upgraded, and the configuration is currently not supported.
 
 ## Configuration Guide
 

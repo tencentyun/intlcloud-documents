@@ -8,7 +8,7 @@ You can customize the access URL rewrite configuration to redirect 302 URLs to t
 
 ### Viewing configuration
 
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page, and switch to the **Cache Configuration** tab to find the **Access URL Rewrite Configuration** section.
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page, and open the **Cache Configuration** tab to find the **Access URL Rewrite Configuration** section.
 
 **Access URL Rewrite Configuration** is disabled by default.
 ![](https://main.qcloudimg.com/raw/01f93aaa70c523ae0bb1ab5debae8558.png)
@@ -22,9 +22,10 @@ You can click **Add Rewrite Rule** to add rules as needed.
 **Configuration limitations**
 + Each domain name can have up to 10 rewrite rules.
 + You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
-+ Current URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg).
++ Current URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
 + Target Host: it is the current domain name (starting with `http://`) by default. It can be modified to other domain names starting with `http://` or `https://`.
-+ Target Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg).
++ Target Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
++ Up to 5 `*` and 10 `$n` are supported.
 + The content can contain up to 1,024 characters and Chinese characters are not supported.
 
 

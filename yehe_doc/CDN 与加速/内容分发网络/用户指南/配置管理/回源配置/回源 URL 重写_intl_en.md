@@ -22,10 +22,11 @@ You can click **Add Rule** to add rewrite rules as needed.
 **Configuration limitations**
 
 - Each domain name can have up to 10 rewrite rules.
-- You can adjust the priority for multiple rules. Rules are ranked by their priorities from lowest the highest.
-- Current Origin URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg).
+- You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
+- Current Origin URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
 - Target Origin Domain: the current domain name is used by default (excluding `http://` and `https://`). You can modify it as needed.
-- Target Origin Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg).
+- Target Origin Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
+- Up to 5 `*` and 10 `$n` are supported.
 - The target origin domain can contain up to 250 characters. Other content can contain up to 1,024 characters. Chinese characters are not supported.
 
 
@@ -35,7 +36,7 @@ You can click **Add Rule** to add rewrite rules as needed.
 Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name `www.test.com` is as follows:
 ![](https://main.qcloudimg.com/raw/4797e184e62c1abd5ed3cf1d1091f3fb.png)
 
-Then 
+Then, 
 
-- The origin-pull request `www.test.com/test/` wil be changed to `www.test.com/newtest/`.
-- The origin-pull request `www.test.com/test/a.jpg` will be changed to `www.newtest.com/newtest/a.jpg`.
+- The origin-pull request `www.test.com/test/` will be changed to `www.test.com/newtest/`.
+- Pull the origin server to request `www.test.com/test/a.jpg`, `www.newtest.com/newtest/a.jpg` will be actually requested.
