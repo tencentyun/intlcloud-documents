@@ -5,7 +5,6 @@ PUT Bucket replication 用于向已启用版本控制的存储桶中配置存储
 > !
 >
 > - 使用该接口时，需确保存储桶已经开启版本控制，开启版本控制的 API 文档请参见 [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889)  接口文档。
-> - 开启了多 AZ 配置的存储桶，不支持将多 AZ 存储类型复制为单 AZ 存储类型，例如标准存储（多 AZ）类型不支持复制为标准存储类型。
 
 ## 请求
 
