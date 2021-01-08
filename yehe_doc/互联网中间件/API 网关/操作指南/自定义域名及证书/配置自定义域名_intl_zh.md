@@ -17,17 +17,18 @@
 5. 若需要解绑，需先删除服务内绑定的独立域名，再删除独立域名的 CNAME。
 
 ### 配置强制 HTTPS
+>?目前该功能正在小地域灰度，预计2021年1月7日全量。
+
 在自定义域名配置页面，当协议为 HTTPS&HTTPS、HTTPS 时，支持开启强制 HTTPS 功能。开启后，API 网关会将使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议。
-![](https://main.qcloudimg.com/raw/4c79eeee8bb533377f72657c3c8f3ce2.png)
 
 ### 配置域名路径映射
 1. 在自定义域名列表页，单击操作列的【编辑路径映射】。
-![](https://main.qcloudimg.com/raw/b2d30703c20b5c16132e1fda2f105ba1.png)
+![](https://main.qcloudimg.com/raw/3a32b52150e2c281baf921543c1f9eed.png)
 2. 选择路径映射类型：
  - **默认路径映射**：路径的 URL 为`自定义域名/环境名`，例如`www.XXXXX.com/release`指向本服务中的发布环境，`www.XXXXX.com/prepub`指向本服务中的预发布环境，`www.XXXXX.com/test`指向本服务中的测试环境。
- ![](https://main.qcloudimg.com/raw/993cdba7070375cc589b4ff7fe712c80.png)
+ ![](https://main.qcloudimg.com/raw/72d65ac0190da0757d05837e4223f515.png)
  - **自定义路径映射**：路径时的 URL 为`自定义域名/自定义路径`，这个 URL 则指向您所映射的环境。例如配置路径为`/mypath`，环境为发布环境，则发布环境的 URL 为`www.XXXXX.com/mypath`。当您想使用根路径时，可直接配置路径为`/`。
- ![](https://main.qcloudimg.com/raw/ead3cde5c9fa0126a4f5af3c65869484.png)
+ ![](https://main.qcloudimg.com/raw/72d65ac0190da0757d05837e4223f515.png)
  >!使用自定义路径映射时，原本默认路径映射不生效，即`自定义域名/环境名`均不生效。
 配置后自定义路径映射与默认路径映射还可以进行编辑。
 3. 单击【提交】，完成配置。

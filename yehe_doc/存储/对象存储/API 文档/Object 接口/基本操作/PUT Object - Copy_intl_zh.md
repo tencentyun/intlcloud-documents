@@ -8,7 +8,8 @@ PUT Object - Copy 接口请求创建一个已存在 COS 的对象的副本，即
 
 该 API 的请求者需要对被复制对象有读取权限，或者被复制对象向所有人开放了读取权限（公有读），且需要对目标存储桶有写入权限。
 
->!当 COS 收到复制请求或 COS 正在复制对象时可能会返回错误。如果在复制操作开始之前发生错误，则会收到标准的错误返回。如果在复制操作执行期间发生错误，则依然会返回 HTTP 200 OK，并将错误作为响应体返回。这意味着 HTTP 200 OK 响应既可以包含成功也可以包含错误，在使用此接口时应当进一步根据响应体的内容来判断复制请求的成功与失败并正确的处理结果。
+> ! 
+> - 当 COS 收到复制请求或 COS 正在复制对象时可能会返回错误。如果在复制操作开始之前发生错误，则会收到标准的错误返回。如果在复制操作执行期间发生错误，则依然会返回 HTTP 200 OK，并将错误作为响应体返回。这意味着 HTTP 200 OK 响应既可以包含成功也可以包含错误，在使用此接口时应当进一步根据响应体的内容来判断复制请求的成功与失败并正确的处理结果。
 
 #### 版本控制
 
@@ -28,7 +29,7 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> ? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -41,48 +42,49 @@ Authorization: Auth String
 | 名称                                  | 描述                                                         | 类型   | 是否必选 |
 | ------------------------------------- | ------------------------------------------------------------ | ------ | -------- |
 | x-cos-copy-source                     | 源对象的 URL，其中对象键需经过 URLEncode，可以通过 versionId 参数指定源对象的版本，例如：<br>`sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg`<br>或`sourcebucket-1250000001.cos.ap-shanghai.myqcloud.com/example-%E8%85%BE%E8%AE%AF%E4%BA%91.jpg?versionId=MTg0NDUxNzYzMDc0NDMzNDExOTc` | string | 是       |
-| x-cos-metadata-directive              | 是否复制源对象的元数据信息，枚举值：Copy，Replaced，默认为 Copy：<br><li>如果标记为 Copy，则复制源对象的元数据信息<li>如果标记为 Replaced，则按本次请求的请求头中的元数据信息作为目标对象的元数据信息<br>当目标对象和源对象为同一对象时，即用户试图修改元数据时，则标记必须为 Replaced | Enum   | 否       |
+| x-cos-metadata-directive              | 是否复制源对象的元数据信息，枚举值：Copy，Replaced，默认为 Copy。<br><li>如果标记为 Copy，则复制源对象的元数据信息<li>如果标记为 Replaced，则按本次请求的请求头中的元数据信息作为目标对象的元数据信息<br>当目标对象和源对象为同一对象时，即用户试图修改元数据时，则标记必须为 Replaced | Enum   | 否       |
 | x-cos-copy-source-If-Modified-Since   | 当对象在指定时间后被修改，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
 | x-cos-copy-source-If-Unmodified-Since | 当对象在指定时间后未被修改，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
 | x-cos-copy-source-If-Match            | 当对象的 ETag 与指定的值一致，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
 | x-cos-copy-source-If-None-Match       | 当对象的 ETag 与指定的值不一致，则执行复制操作，否则返回 HTTP 状态码为412（Precondition Failed） | string | 否       |
-| x-cos-storage-class                   | 目标对象的存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
-|  x-cos-tagging   |  对象的标签集合，最多可设置10个标签（例如，Key1=Value1&Key2=Value2）。 标签集合中的 Key 和 Value 必须先进行 URL 编码。| string| 否  |
+| x-cos-storage-class                   | 目标对象的存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
+| x-cos-tagging                         | 对象的标签集合，最多可设置10个标签（例如，Key1=Value1&Key2=Value2）。 标签集合中的 Key 和 Value 必须先进行 URL 编码 | string | 否       |
+|  x-cos-tagging-directive  |  是否复制源对象的标签信息，枚举值：Copy，Replaced，默认为 Copy。<br><li>如果标记为 Copy，则复制源对象的标签信息。<br><li>如果标记为 Replaced，则按本次请求的请求头中的标签信息作为目标对象的标签信息<br>当目标对象和源对象为同一对象时，即用户试图修改对象标签时，则标记必须为 Replaced  |  Enum   | 否     |
 
 **目标对象元数据相关头部**
 
 在复制对象时可以通过指定下列请求头部来设置目标对象的元数据信息，此时请求头部 x-cos-metadata-directive 需指定为 Replaced，否则目标对象将使用源对象的元数据信息且不能指定下列任何头部。
 
-| 名称                                                         | 描述                                                         | 类型   | 是否必选 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control                                                | RFC 2616 中定义的缓存指令，将作为目标对象元数据保存          | string | 否       |
-| Content-Disposition                                          | RFC 2616 中定义的文件名称，将作为目标对象元数据保存          | string | 否       |
-| Content-Encoding                                             | RFC 2616 中定义的编码格式，将作为目标对象元数据保存          | string | 否       |
-| Content-Type                                                 | RFC 2616 中定义的 HTTP 请求内容类型（MIME），此头部用于描述目标对象的内容类型，将作为目标对象元数据保存。<br>例如 `text/html` 或 `image/jpeg`。 | string | 是       |
-| Expires                                                      | RFC 2616 中定义的缓存失效时间，将作为目标对象元数据保存      | string | 否       |
-| x-cos-meta-\*                                                | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为目标对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string | 否       |
+| 名称                | 描述                                                         | 类型   | 是否必选 |
+| ------------------- | ------------------------------------------------------------ | ------ | -------- |
+| Cache-Control       | RFC 2616 中定义的缓存指令，将作为目标对象元数据保存          | string | 否       |
+| Content-Disposition | RFC 2616 中定义的文件名称，将作为目标对象元数据保存          | string | 否       |
+| Content-Encoding    | RFC 2616 中定义的编码格式，将作为目标对象元数据保存          | string | 否       |
+| Content-Type        | RFC 2616 中定义的 HTTP 请求内容类型（MIME），此头部用于描述目标对象的内容类型，将作为目标对象元数据保存。<br>例如 `text/html` 或 `image/jpeg`。 | string | 是       |
+| Expires             | RFC 2616 中定义的缓存失效时间，将作为目标对象元数据保存      | string | 否       |
+| x-cos-meta-\*       | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为目标对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string | 否       |
 
 **目标对象访问控制列表（ACL）相关头部**
 
 在复制对象时可以通过指定下列请求头部来设置目标对象的访问权限：
 
-| 名称                                                         | 描述                                                         | 类型   | 是否必选 |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl                                                    | 定义目标对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
-| x-cos-grant-read                                             | 赋予被授权者读取目标对象的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-read-acp                                         | 赋予被授权者读取目标对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-write-acp                                        | 赋予被授权者写入目标对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
-| x-cos-grant-full-control                                     | 赋予被授权者操作目标对象的所有权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| 名称                     | 描述                                                         | 类型   | 是否必选 |
+| ------------------------ | ------------------------------------------------------------ | ------ | -------- |
+| x-cos-acl                | 定义目标对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
+| x-cos-grant-read         | 赋予被授权者读取目标对象的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-read-acp     | 赋予被授权者读取目标对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-write-acp    | 赋予被授权者写入目标对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
+| x-cos-grant-full-control | 赋予被授权者操作目标对象的所有权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
 
 **源对象服务端加密（SSE）相关头部**
 
 如果源对象使用了服务端加密且加密方式为 SSE-C 时，则需要指定下列请求头部来解密源对象：
 
-| 名称                                                        | 描述                                                         | 类型   | 是否必选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          |
-| ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ----------------------------------- |
-| x-cos-copy-source-server-side-encryption-customer-algorithm | 服务端加密算法，目前仅支持 AES256                            | string | 源对象使用 SSE-C 时，此头部是必选项 |
-| x-cos-copy-source-server-side-encryption-customer-key       | 服务端加密密钥的 Base64 编码，例如<code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | 源对象使用 SSE-C 时，此头部是必选项 |
-| x-cos-copy-source-server-side-encryption-customer-key-MD5   | 服务端加密密钥的 MD5 哈希值，使用 Base64 编码，<br>例如`U5L61r7jcwdNvT7frmUG8g==` | string | 源对象使用 SSE-C 时，此头部是必选项 |
+| 名称                                                        | 描述                                                         | 类型   | 是否必选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
+| x-cos-copy-source-server-side-encryption-customer-algorithm | 服务端加密算法，目前仅支持 AES256                            | string | 源对象使用 SSE-C 时，此头部是必选项                          |
+| x-cos-copy-source-server-side-encryption-customer-key       | 服务端加密密钥的 Base64 编码，例如<code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | 源对象使用 SSE-C 时，此头部是必选项                          |
+| x-cos-copy-source-server-side-encryption-customer-key-MD5   | 服务端加密密钥的 MD5 哈希值，使用 Base64 编码，<br>例如`U5L61r7jcwdNvT7frmUG8g==` | string | 源对象使用 SSE-C 时，此头部是必选项                          |
 
 **目标对象服务端加密（SSE）相关头部**
 
@@ -117,10 +119,10 @@ Authorization: Auth String
 ```plaintext
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>string</ETag>
-	<CRC64>number</CRC64>
-	<LastModified>date</LastModified>
-	<VersionId>string</VersionId>
+			<ETag>string</ETag>
+			<CRC64>number</CRC64>
+			<LastModified>date</LastModified>
+			<VersionId>string</VersionId>
 </CopyObjectResult>
 ```
 
@@ -172,11 +174,13 @@ Date: Fri, 10 Apr 2020 18:20:30 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MGI4ZWVfNzljMDBiMDlfMWM3MjlfMWQ1****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:20:30Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:20:30Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -208,11 +212,13 @@ Date: Fri, 10 Apr 2020 18:20:41 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MGI4ZjlfYTZjMDBiMDlfN2Y1YV8xYjI4****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:20:41Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:20:41Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -244,11 +250,13 @@ Date: Fri, 10 Apr 2020 18:20:52 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MGI5MDRfNmRjMDJhMDlfZGNmYl8yMDVh****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:20:52Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:20:52Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -281,11 +289,13 @@ Date: Fri, 10 Apr 2020 18:21:02 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MGI5MGVfN2RiNDBiMDlfMTk1MjhfMWZm****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:21:55Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:21:55Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -316,11 +326,13 @@ Server: tencent-cos
 x-cos-request-id: NWU5MGI5MTlfYmIwMmEwOV9hMmUxXzFkMDQ2****
 x-cos-server-side-encryption: AES256
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:21:13Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:21:13Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -354,11 +366,13 @@ x-cos-request-id: NWU5MGI5MjNfMTliOTJhMDlfMjRiYThfMTdk****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"f69901ec9755a5defc29057e9ec69126"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:22:16Z</LastModified>
+			<ETag>"f69901ec9755a5defc29057e9ec69126"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:22:16Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -395,11 +409,13 @@ x-cos-request-id: NWU5MGI5MzhfZmFjODJhMDlfMTdlYzZfYmU1****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: hRasmdxgYDKV3nvbahU1MA==
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"bf314b89d34119395d5610982d6581b1"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:22:31Z</LastModified>
+			<ETag>"bf314b89d34119395d5610982d6581b1"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:22:31Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -432,11 +448,13 @@ Date: Fri, 10 Apr 2020 18:22:05 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MGI5NGRfOWFjOTJhMDlfMjg2NDdfMTA0****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-10T18:22:58Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-10T18:22:58Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -466,11 +484,13 @@ Server: tencent-cos
 x-cos-copy-source-version-id: MTg0NDUxNTc0NDYyMjQ2MzUzMjQ
 x-cos-request-id: NWU5MjAzYTdfMWZjMDJhMDlfNTE4N18zNGU2****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
-	<CRC64>16749565679157681890</CRC64>
-	<LastModified>2020-04-11T17:51:35Z</LastModified>
+			<ETag>"ee8de918d05640145b18f70f4c3aa602"</ETag>
+			<CRC64>16749565679157681890</CRC64>
+			<LastModified>2020-04-11T17:51:35Z</LastModified>
 </CopyObjectResult>
 ```
 
@@ -499,12 +519,14 @@ Date: Sat, 11 Apr 2020 17:51:56 GMT
 Server: tencent-cos
 x-cos-request-id: NWU5MjAzYmNfNjRiMDJhMDlfOTE3N18yYWI4****
 
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <CopyObjectResult>
-	<ETag>"22e024392de860289f0baa7d6cf8a549"</ETag>
-	<CRC64>11596229263574363878</CRC64>
-	<LastModified>2020-04-11T17:51:56Z</LastModified>
-	<VersionId>MTg0NDUxNTc0NDYxOTI4MzU0MDI</VersionId>
+			<ETag>"22e024392de860289f0baa7d6cf8a549"</ETag>
+			<CRC64>11596229263574363878</CRC64>
+			<LastModified>2020-04-11T17:51:56Z</LastModified>
+			<VersionId>MTg0NDUxNTc0NDYxOTI4MzU0MDI</VersionId>
 </CopyObjectResult>
 ```
 
