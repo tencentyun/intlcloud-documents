@@ -40,7 +40,7 @@ CVM 인스턴스와 MySQL 인스턴스가 동일한 VPC 네트워크를 사용�
 ### VPC 불일치
 기본적으로 CVM 인스턴스와 MySQL 인스턴스의 네트워크 유형이 모두 VPC 네트워크이고, 양자 모두 동일 VPC 네트워크에 있어야만 내부 네트워크로 통신할 수 있습니다. 만약 VPC가 다를 경우 다음의 솔루션으로 문제를 해결할 수 있습니다.
 - **솔루션1(추천)**: MySQL 인스턴스를 CVM 인스턴스가 위치한 VPC 네트워크로 마이그레이션합니다. 자세한 내용은 [네트워크 변경](https://intl.cloud.tencent.com/document/product/236/31915)을 참조 바랍니다.
-- **솔루션2**: 두 VPC 네트워크 사이에 [피어링 연결]https://intl.cloud.tencent.com/document/product/553)을 합니다.
+- **솔루션2**: 두 VPC 네트워크 사이에 [피어링 연결](https://intl.cloud.tencent.com/document/product/553)을 합니다.
 위의 솔루션을 사용하지 않는다면, 서로 다른 VPC 네트워크에 있는 CVM과 MySQL은 공용 네트워크를 통해서만 통신할 수 있습니다. 이런 방식은 성능, 보안성 및 안정성이 떨어집니다.
 
 <span id = "aqzpzyw"></span>
