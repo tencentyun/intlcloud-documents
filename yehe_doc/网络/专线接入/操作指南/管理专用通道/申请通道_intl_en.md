@@ -14,7 +14,6 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 
 1. Log in to the [Direct Connect - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn) console.
 2. Click **+New** at the top of the **Dedicated Tunnel** page, complete the basic configurations such as name, connection type, access network, region and associated direct connect gateway, and click **Next**.
-   ![](https://main.qcloudimg.com/raw/67c962ab4e77b701bff86039784bf447.png)
     <table>
     <tr>
     <th width="15%">Field</th>
@@ -46,7 +45,6 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
     </tr>
     </table>
 3. Configure the following parameters on the **Advanced Configuration** page.
-![](https://main.qcloudimg.com/raw/c9efd62743f5a8dc70b4e4ef70b663d3.png)
 <table>
 <tr>
  <th width="15%">Field</th>
@@ -94,8 +92,6 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 </tr>
 </table>
 
-
-
 > ?When configuring a IP range route, do not directly publish the following routes: `9.0.0.0/8`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16`. Instead, you need to first split them.
 >
 > - `9.0.0.0/8` should be split into `9.0.0.0/9` + `9.128.0.0/9`.
@@ -109,7 +105,6 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 
 4. Configure IDC devices.
    You can download the CPE configuration guide for your devices, which provides several common configuration guidelines.
-   ![](https://main.qcloudimg.com/raw/f5480a8e21884a3bbf1cd38c109f23bc.png)
 <table>
 <tr>
 <th width="20%">Parameter</th>
@@ -130,24 +125,19 @@ After a dedicated tunnel is created, Tencent Cloud automatically configures four
 This default alarm policy is not provided with a recipient, so you can only view alarms in the console Message Center. To configure a recipient, perform the following steps.
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** in the left side bar.
 2. Select **Dedicated Line channel** for the **Product Type** in the top right of the **Alarm Policy** page.
-  ![](https://main.qcloudimg.com/raw/dd623aec4ea3048e34922cfbc75261c7.png)
 3. Perform the following operations as needed.
    - Configure alarm recipient objects
     1. Click the name of the target default policy in the alarm policy list.
     2. Click **Edit** under the **Alarm Recipient Object** and select object from the list in the pop-up window. You can also click **Add Recipient Group** to configure new user groups.
-     ![](https://main.qcloudimg.com/raw/12444a2429ead98ac07897d7955c7426.png)
    - Modify an alarm policy
     1. Click the name of the target default policy in the alarm policy list.
     2. Click **Edit** next to the **Hit Condition** and modify the trigger conditions in the pop-up window. For more information on the event alarm, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After completing the modification, click **Save**.
    - Set a default policy
      If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under the **Policy Type** column. Then the selected alarm policy will automatically apply to dedicated tunnels being created afterwards.
-   ![](https://main.qcloudimg.com/raw/7230beab44341f97f172fbc9532095e3.png)
   
 ## Connection Status
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** connection status.
-![](https://main.qcloudimg.com/raw/a184734e3f46469ac1e2dba8c6bdfe6b.png)
 The possible connection statuses of a dedicated channel include the following:
-![](https://main.qcloudimg.com/raw/407ce7d9d6113518793ea3cd76fee7cd.png)
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
