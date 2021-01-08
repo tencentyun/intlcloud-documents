@@ -4,14 +4,14 @@ This document describes the pricing and discount policies of two TPNS billing mo
 ## Glossary
 - Daily connected devices: the number of unique online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the foreground or background).
 - Monthly peak of daily connected devices: the highest number of daily connected devices in a month.
-- Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by region. You can select an application service access point when creating an instance in the console.
+- Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by regions. You can select an application service access point when creating an instance on the console.
 
-## Monthly Subscription
+## Monthly subscription
 ### Notes
-- Monthly subscription bills in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required. 
+- Monthly subscription bills in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required.
 
-### Pricing
-Because service costs vary by service access point, the corresponding prices are also different.
+### Pricing description
+Because service costs vary by service access points, the corresponding prices are also different.
 
 | Service Access Point | Unit Price (USD/10,000 Daily Connected Devices/Month) |
 |---|---|
@@ -20,44 +20,48 @@ Because service costs vary by service access point, the corresponding prices are
 | Singapore | 56.316 |
 
 ### Discounts
-| Monthly Peak of Daily Connected Devices | Purchase Duration: 1–5 Months | Purchase Duration: 6–11 Months | Purchase Duration: 1 Year | Purchase Duration: 2 Years |
+| Monthly Peak of Daily Connected Devices | Purchase Duration: 1-5 Months | Purchase Duration: 6-11 Months | Purchase Duration: 1 Year | Purchase Duration: 2 Years |
 |---|---|---|---|---|
-| 10,000–499,999 | None | None | None | None | None |
-| 500,000–1,999,999 | 10% off | 20% off | 35% off | 40% off |
-| 2,000,000 and above | 30% off | 35% off | 40% off | 50% off |
+| 10,000-490,000 | None | None | None | None |
+| 500,000-1.99 million | 10% off | 20% off | 35% off | 40% off |
+| 2 million and above | 30% off | 35% off | 40% off | 50% off |
 
-### Billing examples
-**Billing example 1**
+### Billing Example
+**Billing example 1:**
 - The service access point is Singapore.
 - The monthly peak of daily connected devices for the application on Android is 600,000.
 - The purchase duration of the package is 12 months.
-The total package fees will be: monthly fees * duration * discount = (60 * 56.316) * 12 * 0.65 = 26355.7944 USD.
+The total package fees will be: Monthly fees x Duration x (1 - Discount) = (60 x 56.316) x 12 x 0.65 = 26355.7944 USD.
 
-**Billing example 2**
+**Billing example 2:**
 - The service access point is Guangzhou.
 - The monthly peak of daily connected devices for the application on iOS is 100,000.
 - The purchase duration of the package is 1 month.
-The total package fees will be: monthly fees * duration * discount = (10 * 42.237) * 1 * 1 = 422.37 USD.
+The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x 42.237) x 1 x 1 = 422.37 USD.
 
 ## Pay-as-You-Go
 
-### Pricing
+### Pricing description
 
 The following applies for daily pay-as-you-go billing mode:
- - Daily connected devices ≤ 1,000: no fees will be incurred for the day.
- - 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
- - Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
- - The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then the day will not be included in the continuous usage duration.
+- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
+- 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
+- Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
+- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then the day will not be included in the continuous usage duration.
 	
-Because service costs vary by service access point, the corresponding prices are also different. Specific prices are listed in the table below.
+Because service costs vary by service access points, the corresponding prices are also different. See below:
 
-#### 1,000 < daily connected devices ≤ 10,000: fixed pricing
+#### 1,000 <Daily connected devices ≤ 10,000: fixed price
 
 | Service Access Point | Unit Price (USD/Day) |
 |---|---|
 | Guangzhou | 1.6 |
 | Hong Kong (China) | 2.14 |
 | Singapore | 2.14 |
+
+>! 
+>- The threshold for elastic pricing lowered from 50,000 to 10,000 daily connected devices on January 4, 2021.
+>- If the number of daily connected devices is less than 50,000 and pay-as-you-go billing is adopted before January 04, 2021, elastic pricing will be automatically applied since January 4, 2021.
 
 #### Daily connected devices > 10,000: elastic pricing
 | Service Access Point | Unit Price (USD/Daily Connected Devices/Day) |
@@ -67,17 +71,17 @@ Because service costs vary by service access point, the corresponding prices are
 | Singapore | 0.000214 |
 
 ### Discounts
-| Continuous Usage Duration (Days) | Discount |
+| Continuous Usage Duration (Day) | Discount |
 |:---|:---|
-| 1–180 | None |
-| 181–360 | 20% off |
-| 361–720 | 35% off |
+| 1-180 | None |
+| 181-360 | 20% off |
+| 361-720 | 35% off |
 | > 720 | 40% off |
 
-### Billing examples
-- If the service access point is Singapore and the number of daily connected devices is less than or equal to 10,000, the daily fees will be fixed at 2.14 USD.
+### Billing Example
+- If the service access point is Singapore and the number of daily connected devices is less than or equal to 10,000, the daily fee will be fixed at 2.14 USD.
 - If the service access point is Singapore and the number of daily connected devices is 70,000, then:
-	- If the service has been used continuously for 90 days, there will be no discount, and the daily fees will be 70,000 * 0.000214 = 14.98 USD.
-	- If the service has been used continuously for 200 days, then a 20% discount will be applied, and the daily fees will be 70,000 * 0.000214 * 0.8 = 11.984 USD.
+	- If the service has been used continuously for 90 days, there will be no discount, and the daily fee will be 70,000 x 0.000214 = 14.98 USD.
+	- If the service has been used continuously for 200 days, then a 20% discount will be applied, and the daily fee will be 70,000 x 0.000214 x 0.8 = 11.984 USD.
 
 

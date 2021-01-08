@@ -24,7 +24,7 @@ CVM 인스턴스와 MySQL 인스턴스의 네트워크 유형이 다른 경우 C
 >- 마이그레이션 과정 중 인스턴스를 재시작해야 하므로 다른 작업은 진행하지 마시길 바랍니다.
 >- 마이그레이션 후 인스턴스의 실행 상태, 내부 네트워크 연결 및 원격 로그인이 정상적으로 작동하는지 확인합니다.
 >- 기본 네트워크를 VPC 네트워크로 변경한 후에는 다시 되돌릴 수 없으며, CVM을 VPC 네트워크로 변경한 후에는 다른 기본 네트워크의 클라우드 서비스와 통신할 수 없습니다.
-- **솔루션2**: [클래식 네트워크 사용하기] (https://intl.cloud.tencent.com/document/product/215/31807)
+- **솔루션2**: [클래식 네트워크 사용하기](https://intl.cloud.tencent.com/document/product/215/31807)
 
 - **솔루션3**: CVM 인스턴스에서 MySQL 인스턴스의 외부 네트워크 연결 주소를 사용하여 MySQL 인스턴스에 연결합니다. 이런 방식은 성능, 보안성, 안정성이 모두 좋지 않으므로, VPC 네트워크를 사용하시길 권장합니다.
 
@@ -40,7 +40,7 @@ CVM 인스턴스와 MySQL 인스턴스가 동일한 VPC 네트워크를 사용�
 ### VPC 불일치
 기본적으로 CVM 인스턴스와 MySQL 인스턴스의 네트워크 유형이 모두 VPC 네트워크이고, 양자 모두 동일 VPC 네트워크에 있어야만 내부 네트워크로 통신할 수 있습니다. 만약 VPC가 다를 경우 다음의 솔루션으로 문제를 해결할 수 있습니다.
 - **솔루션1(추천)**: MySQL 인스턴스를 CVM 인스턴스가 위치한 VPC 네트워크로 마이그레이션합니다. 자세한 내용은 [네트워크 변경](https://intl.cloud.tencent.com/document/product/236/31915)을 참조 바랍니다.
-- **솔루션2**: 두 VPC 네트워크 사이에 [피어링 연결]https://intl.cloud.tencent.com/document/product/553)을 합니다.
+- **솔루션2**: 두 VPC 네트워크 사이에 [피어링 연결](https://intl.cloud.tencent.com/document/product/553)을 합니다.
 위의 솔루션을 사용하지 않는다면, 서로 다른 VPC 네트워크에 있는 CVM과 MySQL은 공용 네트워크를 통해서만 통신할 수 있습니다. 이런 방식은 성능, 보안성 및 안정성이 떨어집니다.
 
 <span id = "aqzpzyw"></span>
@@ -86,7 +86,7 @@ TencentDB for MySQL 콘솔에서 데이터베이스 계정이 승인한 호스�
 >- 인스턴스 리스트의 '네트워크' 필드에 모두 동일한 'VPC'(동일한 리전 보장)가 표시되면, CVM 및 MySQL가 동일한 VPC임을 의미합니다.
 >
 - **CVM 네트워크 유형/VPC 조회**: [CVM 콘솔](https://console.cloud.tencent.com/cvm/instance)에 로그인하여, 인스턴스 리스트에서 '네트워크'를 조회합니다.
-![](https://main.qcloudimg.com/raw/db3d2544281da931e791d6c2a8f24619.png)
+![](https://main.qcloudimg.com/raw/ce2550045bc286172f841f4fcceb0cc4.png)
 - **MySQL 네트워크 유형/동일 VPC 조회**: [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인하여, 인스턴스 리스트에서 '네트워크'를 조회합니다.
-![](https://main.qcloudimg.com/raw/cd3c1363c5c2e34141317206665eb77b.png)
+![](https://main.qcloudimg.com/raw/2cc5396f1b3f8af2028d75ae642a5126.png)
 
