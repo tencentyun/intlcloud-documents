@@ -1,4 +1,4 @@
-TencentDB for TDSQL is highly compatible with MySQL protocols and syntax. However, due to architectural differences, TDSQL has certain restrictions on SQL. In order to better take advantage of the distributed architecture, we recommend that you follow the suggestions below.
+TDSQL for MySQL is highly compatible with MySQL protocols and syntax. However, due to architectural differences, TDSQL has certain restrictions on SQL. In order to better take advantage of the distributed architecture, we recommend that you follow the suggestions below.
 
 The TDSQL instance is capable of horizontal scaling, making it suitable for scenarios with massive amounts of data. Its features are described as follows:
 - Supports flexible read/write separation
