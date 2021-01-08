@@ -65,7 +65,7 @@ Definitions:
 | [TencentDB for MariaDB](https://intl.cloud.tencent.com/document/product/237)  | Resource level | &#10003;  | &#10003;   | &#10003;    |[CAM Guide](https://intl.cloud.tencent.com/document/product/237/35441) | 
 | [TencentDB for SQL Server](https://intl.cloud.tencent.com/document/product/238)  | Resource level | &#10003;  | -    | -     |[CAM Guide](https://intl.cloud.tencent.com/document/product/238/34583) | 
 | [TencentDB for PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  | Resource level | &#10003;  | &#10003;    | -     | - |
-| [TencentDB for TDSQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
+| [TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/1042)  | Resource level | &#10003;  | &#10003;    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1042/33343) | 
 | [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239)   | Resource level | &#10003; | -  | - |[CAM Guide](https://intl.cloud.tencent.com/document/product/239/32845) | 
 | [TencentDB for MongoDB](https://intl.cloud.tencent.com/document/product/240) | Resource level | &#10003; | &#10003;   |&#10003;|[CAM Guide](https://intl.cloud.tencent.com/document/product/240/32839) |   
 | [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  |  &#10003;    | &#10003;    | - |
