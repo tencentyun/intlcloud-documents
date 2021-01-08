@@ -1,4 +1,4 @@
-TencentDB for TDSQL parses SQL syntax, which restricts SQL execution. If you want to execute SQL statements supported by MySQL but not by TDSQL on a set, you can pass through the SQL statements.
+TDSQL for MySQL parses SQL syntax, which restricts SQL execution. If you want to execute SQL statements supported by MySQL but not by TDSQL on a set, you can pass through the SQL statements.
 >?When a SQL statement is passed through, the proxy will not parse it, so if it is a passthrough write operation to two sets, distributed transactions will not be used, which may cause inconsistency in extreme cases. Therefore, we recommend that you pass through only to one set during one write operation.
 >
 ```
