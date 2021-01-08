@@ -12,25 +12,24 @@ The following flowchart describes how to create a connection.
 >?Starting from February 1, 2021, all the new connections will be exempted from the initial installation fee.
 > 
 5. [Accepting a connection](#Specialacceptance): you need to check and test the links of the completed connection. Accept the connection that passes the test.
-<span id="preparatorywork" ></span>
+
 <span id="preparatorywork" ></span>
 ## Preparations
 Determine the access point before creating a connection.
 An access point is the location where you can access to Tencent Cloud connection’s network services. Nearby access is recommended. Generally, two or more access points are available in one Tencent Cloud region, implementing multi-connection disaster recovery. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to obtain the specific location of each access point. The following information helps you choose a proper access point:
 - **Region**: a region is the physical location of an IDC. In Tencent Cloud, regions are fully isolated between each other, ensuring cross-region stability and fault tolerance. We recommend that you choose the region closest to your end users to minimize access latency and improve access speed.
-- **Carrier**: the provider of connection resources
- 
-  
-
+- **Carrier**: the provider of connection resources.
 - **Port type**: ports in 1, 10, and 100 gigabit are available.
 >?To use a 100-gigabit port, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - **Port**: choose a fiber optic port or electronic port as needed.
   - Fiber optic port: a physical port used to connect fiber optic cables. Three port types are available: 1, 10, and 100 gigabit, which are subdivided into 10 km gigabit single-mode fiber optic port (SFP-GE-LX-Sm1310, 10 KM), 80 km gigabit single-mode fiber optic port (SFP-GE-LH80-SM1550, 80 KM), 10 km 10-gigabit single-mode fiber optic port (SFP-XG-LX-SM1310, 10 KM), 80 km 10-gigabit single-mode fiber optic port (SFP-XG-LH80-SM1550, 80 KM) and 10 km 100-gigabit single-mode fiber optic port (QSFP-100G-LR4-WDM1300, 10 KM).
   - Electronic port: general ports (such as RJ45) in server and network for twisted pairs (ordinary cables). Tencent Cloud provides gigabit electrical ports (10/100/1000BASE-T), which are suitable for low bandwidth use cases.
+
 <span id="Creatededicatedline" ></span>
 ## Creating a Connection
 - If your local IDC and Tencent Cloud access points are in different data centers, apply for a connection in the Tencent Cloud console. For detailed directions, please see [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244). 
 - If your local IDC resides in the same data center as a Tencent Cloud access point, you only need to apply for a connection in the Tencent Cloud console. For detailed directions, please see [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
+
 <span id="Railwayconstruction" ></span>
 ## Constructing a Connection
 - Local IDC and Tencent Cloud access point in different data centers
@@ -44,6 +43,7 @@ Both the carrier and Tencent Cloud are responsible for the connection constructi
    After you pay for the Tencent Cloud port in the console, Tencent Cloud will complete the access port configuration, and support the carrier for the connection to Tencent Cloud.
 - Local IDC and Tencent Cloud access point in the same data center
  You only need to contact the Direct Connect representative for resource allocation and connection construction. During the construction, fiber-to-the-building and in-house wiring rental fees may incur. For more information, consult your property operator or wiring provider.
+
 <span id="Specialacceptance" ></span>
 ## Checking and Accepting the Connection
 You need to complete creating a Direct Connect instance before accepting the connection. For more information, please see [Connection Overview](https://intl.cloud.tencent.com/document/product/216/38524). Then test the connection for its performance, latency and reliability.
