@@ -1,9 +1,8 @@
 ## 现象描述
 执行伸缩活动时，可能会有一些原因导致活动失败，需要及时关注并处理以确保伸缩活动正常进行。
-您可在 [伸缩组列表](https://console.cloud.tencent.com/autoscaling/group) 中查看伸缩组状态，若您的伸缩组状态出现<img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/df9771a6e2211e3f418ce257051313c3.png">提示，则此伸缩组中最新一次的伸缩活动是失败的。
+您可在 [伸缩组列表](https://console.cloud.tencent.com/autoscaling/group) 中查看伸缩组状态，若您的伸缩组状态出现<img style="margin:-3px 0;" src="https://main.qcloudimg.com/raw/df9771a6e2211e3f418ce257051313c3.png">提示，则此伸缩组中最新一次的伸缩活动是失败的。如下图所示：
 >?可将鼠标悬浮在提示图标上方查看具体异常原因。
 >
-
 
 ## 问题分析
 ### 查看原因说明
@@ -24,9 +23,9 @@
  - [云硬盘相关](#cbs)
  - [负载均衡相关](#load)
  - [其它](#other)
- 
 
- 
+
+
 
 
 ## 故障处理
