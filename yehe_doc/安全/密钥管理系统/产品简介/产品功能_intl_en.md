@@ -32,7 +32,7 @@ KMS is integrated with CloudAudit to record all API requests for detailed statis
 KMS is deployed in a distributed and clustered manner across multiple data centers with hot backup enabled, and its underlying HSM devices are deployed in two data centers with cold backup enabled, guaranteeing high availability around the clock.
 
 ### Seamless Integration
-Seamlessly integrated with Tencent Cloud services such as COS, TencentDB for TDSQL, and CBS, KMS enables you to encrypt data stored in such services with ease.
+Seamlessly integrated with Tencent Cloud services such as COS, TDSQL for MySQL, and CBS, KMS enables you to encrypt data stored in such services with ease.
 
 ### Centralized Key Management
 KMS can be called and integrated through APIs, SDKs, and Tencent Cloud products and services to achieve centralized management of keys from various applications, no matter whether they are in or off Tencent Cloud.
