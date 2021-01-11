@@ -5,7 +5,7 @@
 - 您已创建腾讯云 VPC，具体操作请参见[ 快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
 
 ## 操作步骤
-1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击【专线网关】。
+1. 登录 [专线网关控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fvpc%2Fdcgw%3Frid%3D1) 。
 2. 在“专线网关”页面上方选择地域和私有网络，然后单击【+新建】。
    ![](https://main.qcloudimg.com/raw/5f14dab7972ba2d2843006343b3e15bb.png)
 3. 在“创建专线网关”对话框中配置网关详情，完成后单击【确定】。
