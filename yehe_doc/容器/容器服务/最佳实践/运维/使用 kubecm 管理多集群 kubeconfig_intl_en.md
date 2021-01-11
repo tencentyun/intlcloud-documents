@@ -36,7 +36,7 @@ After creating a TKE or EKS cluster, you need to follow the instructions below t
 2. Click the ID/name of the cluster that needs to obtain the access credential to go to the management page.
 3. Click **Basic Information** on the left side.
 4. On the **Basic Information** page, enable **Internet Access** and **Private Network Access** in **Cluster APIServer Information** section.
-![](https://main.qcloudimg.com/raw/eaefe0e780bf0ef303619a6f054f583a.jpg)
+![](https://main.qcloudimg.com/raw/e03c7edb546614e72c0de61dec459098.png)
 5. Click **Download** on the right side of **Kubeconfig** to download Kubeconfig.
 
 
@@ -48,7 +48,7 @@ After creating a TKE or EKS cluster, you need to follow the instructions below t
 2. Click the ID/name of the cluster that needs to obtain the access credential to go to the management page.
 3. Click **Basic Information** on the left side.
 4. On the **Basic Information** page, enable **Internet Access** and **Private Network Access** in **Cluster APIServer Information** section.
-![](https://main.qcloudimg.com/raw/f8884ee3527e3eaf63ad3e114d8a431b.jpg)
+![](https://main.qcloudimg.com/raw/e3e4c60083734403e783b819d747d38c.png)
 5. Click **Download** on the right side of **Kubeconfig** to download Kubeconfig.
 
 
