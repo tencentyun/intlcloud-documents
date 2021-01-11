@@ -1,5 +1,5 @@
 ## 操作场景
-用户可通过分布式数据库 TDSQL 控制台下载云数据库的冷备数据、binlog。
+用户可通过TDSQL MySQL版 控制台下载云数据库的冷备数据、binlog。
 
 ## 操作步骤
 1. 登录 [TDSQL 控制台](https://console.cloud.tencent.com/dcdb)，单击实例名或“操作”列的【管理】，进入实例管理页面。
@@ -10,6 +10,6 @@
 >- 地址有效期为15分钟，过期后请刷新页面重新获取，VPC 网络地址请在 VPC 网络进行访问。
 >- 推荐您复制下载地址，并登录到云数据库所在 VPC 下的 CVM（Linux 系统） 中，运用 wget 命令进行下载。
 >
-![](https://main.qcloudimg.com/raw/f60b0938aa7bfea7597ff25ca01fcad3.png)
+![](https://main.qcloudimg.com/raw/3632fc363bae4e3add26f07f4680bcb4.png)
 
 
