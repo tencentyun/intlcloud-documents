@@ -1,4 +1,4 @@
-In TencentDB for TDSQL, data is split horizontally across nodes. To improve database performance, we recommend that you prioritize the optimization of table structures and SQL statements, and try not to manipulate data across nodes.
+In TDSQL for MySQL, data is split horizontally across nodes. To improve database performance, we recommend that you prioritize the optimization of table structures and SQL statements, and try not to manipulate data across nodes.
 
 ## Recommended SQL Statements
 ### For multiple sharded tables with a WHERE condition of the same shardkey
