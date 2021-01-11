@@ -1,5 +1,14 @@
-### Why XGForFreeVersion symbol not found in simulator for TPNS SDK 1.2.5.4 or earlier versions?
-The version 1.2.5.4 or earlier do not support simulator. You need to use real machine for debugging. To use a simulator, upgrade TPNS SDK to the latest version.
+### What should I do if an empty notification cannot pop up on devices on iOS 10 or below?
+The `content` field cannot be empty if the RESTful API is called for push; otherwise, the notification will not pop up on devices on **iOS 10 or below**.
+
+### Does TPNS support .p8 certificates?
+
+A .p8 certificate has security risks. Although it is valid longer than a .p12 certificate, it has a wider push permission and scope. If leaked, it may cause more severe consequences. TPNS recommends you use .p12 certificates to manage the push services of your applications separately.
+
+### What should I do if the simulator for TPNS SDK v1.2.5.4 or below prompts that the `XGForFreeVersion` symbol cannot be found?
+
+SDK v1.2.5.4 or below only supports debugging on real devices. If you need to use the simulator for debugging, please upgrade to the latest version.
+
 
 ### Why can't push messages be received?
 Message push is a task involving the collaboration of many associated modules. An exception in any step may result in failure in message delivery. Below lists the most common problems:
@@ -23,7 +32,7 @@ The TPNS server implements message delivery through the collaboration of multipl
 
 
 **Push certificate troubleshooting**
-When the TPNS server requests APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information on how to configure the message push certificate, please see [Guide for Getting Push Certificates on iOS](https://intl.cloud.tencent.com/document/product/1024/30728).
+When the TPNS server requests APNs to deliver the message, it needs to use two required parameters: the message push certificate and the device token. When pushing the message, please make sure that the message push certificate is valid. For more information on how to configure the message push certificate, please see [Acquisition of Push Certificate](https://intl.cloud.tencent.com/document/product/1024/30728).
 
 
 
@@ -63,12 +72,12 @@ Assign the value `1` to `content-available` and do not use `alert`, `badge`, or 
 
 
 
-### What should I do if `DeviceToken` is not returned occasionally or the `APNs request token failed` error is reported during registration in the iOS development environment?
+### What should I do if `DeviceToken` is not returned occasionally for registration or APNs' request for token fails in the development environment of iOS?
 This problem is caused by instability of APNs. You can fix it in the following ways:
 1. Insert a SIM card into the phone and use the 4G network.
 2. Uninstall and reinstall the application, restart the application, or shut down and restart the phone.
 3. Use a package for the production environment.
-4. Use another iPhone on iOS.
+4. Use another iPhone.
 
 
 ### How do I expand the testing scope on iOS if the number of testing devices is limited?
@@ -81,7 +90,7 @@ Release the preview version in TestFlight: upload the IPA package to [App Store 
 
 
 ### For iOS, how do I configure to change the badge number only without displaying the message?
-When creating a push, you can use the API to specify the notification panel message type, leave the title empty, and only set `badge_type`. For more information, please see the [API documentation](https://intl.cloud.tencent.com/document/product/1024/33764).
+When creating a push, you can use the API to specify the notification bar message type, leave the title empty, and only set `badge_type`. For more information, please see [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 Below is a sample:
 ```
 {
@@ -102,9 +111,9 @@ Below is a sample:
 ```
 
 
-### What should I do when the App prompts an error "Crash: you can't call -sendResponse: twice nor after encoding it"?
-This error occurs if your APP integrates TPNS iOS SDK (1.2.7.2 - 1.2.5.4), uses the **Recall** feature of TPNS, and implements the following system callback:
+### What should I do if my application reports the error `Crash: you can't call -sendResponse: twice nor after encoding it`?
+If your application integrates TPNS SDK for iOS (1.2.7.2–1.2.5.4), uses the **Recall** feature of TPNS, and implements the following system callback:
 ```
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo  fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 ```
-In this case, **override** the sent messages to process them.
+Then you may encounter this error. You can use the **Override** feature to process sent messages.

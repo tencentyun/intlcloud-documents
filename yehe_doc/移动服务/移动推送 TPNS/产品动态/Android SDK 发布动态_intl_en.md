@@ -137,7 +137,7 @@
 </tr>
     <tr>
         <td>The SDK v1.1.5.4 is released</td>
-        <td><li>Network connection is optimized</li> <li>Account types are added</li> <li>The keep-alive scheme is optimized</li> <li>Issues with security alarming are fixed</li> <li>TPNS is now compatible with XG Platform version upgrade</li><li>The feature to get QIMEI information is added</li></td>
+        <td><li>Network connection is optimized</li> <li>Account types are added</li> <li>Issues with security alarming are fixed</li> <li>TPNS is now compatible with XG Platform version upgrade</li><li>The feature to get QIMEI information is added</li></td>
         <td>March 6, 2020</td>
         <td>-</td>
     </tr>

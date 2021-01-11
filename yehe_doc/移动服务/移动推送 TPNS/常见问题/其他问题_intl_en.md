@@ -1,7 +1,10 @@
-### What are TPNS AccessID, AccessKey and SecretKey used for?
-- AccessID: a unique ID of TPNS, which is used to integrate SDK and generate authentication signature for Rest API calls.
-- AccessKey: a customer-provided key for TPNS, which is used to integrate SDK.
-- SecretKey: a server-side key for TPNS, which is used to generate authentication signature for Rest API calls.
+### How do I use the `AccessID`, `AccessKey`, and `SecretKey` of a TPNS application?
+- AccessID: unique identifier of the TPNS application. Use cases: 1. SDK integration; 2. Authentication signature generation during RESTful API call.
+- AccessKey: client authentication key of the TPNS application. Use cases: SDK integration.
+- SecretKey: server authentication key of the TPNS application. Use cases: authentication signature generation during RESTful API call.
+
+
+
 
 ### Why is my application rejected after the review when I publish it on Huawei AppGallery?
 Please download the official Huawei HMS SDK and copy all files and subdirectories in the `assets` directory to that in your application project. If the `assets` directory does not exist in the application project, create one.
@@ -51,16 +54,16 @@ There is no limit on the number of notification bar messages that a phone can re
 - ROMs running native Android v5.0 or above will process the small icon of an application and add a layer of color if `target sdk` is greater than or equal to 21, causing the icon to be gray.
 - If you want to display it as colored, you need to set the `target sdk` to below 21. If you don't want the `target sdk` to be below 21, you can rename a small transparent background .png image to `notification_icon.png` (the filename must be unique) and place it in `drawable`; in this way, the small icon will be displayed as gray (but shaped).
 We recommend you draw an icon based on the demo logo.
-
->?   1. The small icon must be a PNG image with the alpha transparency channel.
-       2. The background must be transparent.
-       3. The image must be in white. Do not upload an image in another color.
-       4. Do not leave too much padding around the icon.
-       5. We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+>? 
+>- The small icon must be a PNG image with the alpha transparency channel.
+>- The background must be transparent.
+>- The image must be in white. Do not upload an image in another color.
+>- Do not leave too much padding around the icon.
+>- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
 
 
 ### Can an application still receive push messages after it is closed or its process is ended?
-- TPNS mainly uses TPNS Service to push and receive messages. When the process is ended, TPNS Service will also be ended. Only after TPNS Service is pulled back or the application is restarted can messages be received and pushed. If another application connected to TPNS is opened on the phone, messages can be received and pushed by using TPNS Service of that application. However, TPNS Service channel sharing is also subject to the phone's ROM, and 100% success rate cannot be guaranteed.
+- The TPNS channel mainly uses TPNS Service to push and receive messages. When the process is ended, TPNS Service will also be ended. Only after TPNS Service is restarted can messages be received and pushed. If another application connected to TPNS is opened on the phone, messages can be received and pushed by using TPNS Service of that application. However, TPNS Service channel sharing is also subject to the phone's ROM, and 100% success rate cannot be guaranteed.
 - Vendor channels can receive push messages even after the application process is ended.
 
 
@@ -72,6 +75,10 @@ If the number of loaded methods in the project exceeds 65K, please create subpac
 ### Why can't callback information be received for device registration?
 - A vendor channel's callbacks are returned by the vendor server.
 - You can check whether broadcast is blocked by any security application.
+
+### Why can't I find the records of pushes created through API?
+Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Created via API** on the **Push Management** > **Task List** page to view the records of pushes created through API.
+![](https://main.qcloudimg.com/raw/0319075f0a90f18592e33b0da9698e9c.png)
 
 
 ### If an account changes its bound device, what will happen when a message is sent to this account?
@@ -87,16 +94,10 @@ Solution: in `androidManifest.xml`, add `android:exported="true"` to the `Activi
 The messages are in ascending order by message ID. The client will also receive messages in this rule; therefore, the order in which the messages are received is the same as that in which they are sent.
 
 ### If a past time is selected for a scheduled push, will the push be sent?
-If a past time is selected, the system will send the push immediately.
+Yes. If a past time is selected, the system will send the push immediately.
 
 
 ### Can the registration method be created in a thread?
 The registration method can be called anywhere, but `ApplicationContext` needs to be passed.
-
-
-
-
-
-
 
 
