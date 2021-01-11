@@ -8,6 +8,7 @@ The official plugin address includes installation method, demo (in the `example`
 
 | Project | Address |
 |---------|---------|
+| Unity | [Official address](https://git.code.tencent.com/tpns/TPNS-Unity-Plugin) | 
 | Flutter | [Official address](https://git.code.tencent.com/tpns/TPNS-Flutter-Plugin.git) |
 | React-Native | [Official address](https://git.code.tencent.com/tpns/TPNS-RN-Plugin.git) |
 | Demo for Swift | [Official address](https://git.code.tencent.com/tpns/TPNS-Demo-Swift.git) |
