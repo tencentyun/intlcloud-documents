@@ -44,10 +44,10 @@ The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x
 ### Pricing description
 
 The following applies for the daily pay-as-you-go billing mode:
-	- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
-	- 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
-	- Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
-	- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then that day will not be included in the continuous usage duration.
+- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
+- 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
+- Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
+- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then that day will not be included in the continuous usage duration.
 	
 Because service costs vary by service access points, the corresponding prices are also different. See below:
 
