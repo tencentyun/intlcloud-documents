@@ -12,7 +12,7 @@
 	- Linux
 	- 安装 MySQL 客户端
 	- 如果您迁移的数据量较小（< 10GB），也可以通过外网（互联网）直接导入，无需准备
-- 分布式数据库 TDSQL
+- TDSQL MySQL版
 	- 根据预期选择大小，并根据源库字符集，表名大小写，innodb_page_size 大小进行初始化
 	- 创建帐号，该帐号建议开启全局所有权限
 	- 必要时开启外网 IP
@@ -37,7 +37,7 @@ mysqldump -utest -ptest1234 -d -S /data/4003/prod/mysql.scok caccts t_acct_water
 //命令实例
 mysqldump -c -t -utest -ptest1234  -S /data/4003/prod/mysql.scok caccts t_acct_water_0 > data.sql
 ```
->导出数据必须通过 mysqldump 工具导出，并且加上 -c 参数，因为这样导出的数据行都带有列名字段，不带列名字段的 sql 会被 TDSQL for Percona、MariaDB 拒绝掉。-t 参数的意义是不导出表结构，只导出表数据。
+>!导出数据必须通过 mysqldump 工具导出，并且加上 -c 参数，因为这样导出的数据行都带有列名字段，不带列名字段的 sql 会被 TDSQL for Percona、MariaDB 拒绝掉。-t 参数的意义是不导出表结构，只导出表数据。
 
 ### 上传文件至云服务器某目录
 上传前，您需开启 CVM 外网访问地址，并参见 [Linux 系统通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133) 上传文件，您至少需要上传刚刚导出的：
@@ -56,14 +56,14 @@ PRIMARY KEY('列名称n')）
 ENGINE=INNODB DEFAULT CHARSET=xxxx 
 shardkey=keyname
 ```
->必须要设置主键，必须指定 shardkey，必须注意表名大小问题，建议删除多余注释，否则建表可能不成功。
+>!必须要设置主键，必须指定 shardkey，必须注意表名大小问题，建议删除多余注释，否则建表可能不成功。
 >
 ![](https://mc.qcloudimg.com/static/img/1cd921ececbacf81226a69a0eb5b919a/image.png)
 
 ## 步骤4：导入数据
 ### 连接 TDSQL for Percona、MariaDB 实例
 在 CVM 上使用`mysql -u username -p password -h IP -P port `登录 MySQL 服务器，然后使用`use dbname`进入数据库。
->您可能需要先创建库。
+>!您可能需要先创建库。
 
 ### 导入表结构
 使用刚刚上传的文件，用`source`命令导入数据。
@@ -71,7 +71,7 @@ shardkey=keyname
 2. 再导入数据：`source /文件路径/data.sql；`
 3. 校验导入情况：`select  count(*) from tablename;`
 
->需先导入建表语句，再导入数据。也可以通过 mysql 的 source 命令直接导入 sql。
+>!需先导入建表语句，再导入数据。也可以通过 mysql 的 source 命令直接导入 sql。
 
 ## 其他方案
 整体来说，只要能够在导入数据前，在目的表先创建对应的表结构（需指定 shardkey），就可以比较顺利的导入数据。
