@@ -1,5 +1,5 @@
 ## Overview
-You can download TencentDB cold backup data and binlogs in the TencentDB for TDSQL Console.
+You can download TencentDB cold backup data and binlogs in the TDSQL for MySQL Console.
 
 ## Directions
 1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb) and click the instance name or **Manage** in the "Operation" column to enter the instance management page.
