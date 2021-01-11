@@ -6,7 +6,7 @@ GROUP BY 语句用于结合聚合函数，根据一个或多个列（KEY）对�
 
 `GROUP BY`支持任意的表达式，可以使用列名、别名，也可以使用序号（从1开始）。
 `GROUP BY`支持单个列，也可以是多个列。
-`GROUP BY`常与 MIN，MAX，AVG，SUM 或 COUNT 等 [聚合函数](https://intl.cloud.tencent.com/document/product/614/38728) 结合使用。
+`GROUP BY`常与 MIN，MAX，AVG，SUM 或 COUNT 等聚合函数结合使用。
 
 ```plaintext
 * | SELECT 列名（KEY）, 聚合函数 GROUP BY [ 列名（KEY）| 别名 | 序号 ]
