@@ -30,8 +30,8 @@ The EKS log collection feature collects the log information and outputs it to th
 4. In **Containers in the pod** section, select **Advanced Settings**, and check **Activate** to enable log collection, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/b67fef995ba73d3feb702f60c7165744.png)
 5. Refer to the following information to configure the log consumer. You can choose CLS or Kafka as the log consumer, as shown in the figure below:
-  - We recommend that you choose [CLS](https://cloud.tencent.com/product/cls) as the consumer and select logsets and log topics. If there is no suitable logset, refer to [Configuring CLS as the log consumer](#output2).
-   - If you choose Kafka as the consumer, refer to [Configuring Kafka as the log consumer](#output2).
+  - We recommend that you choose [CLS](https://intl.cloud.tencent.com/product/cls) as the consumer and select logsets and log topics. If there is no suitable logset, refer to [Configuring CLS as the log consumer](#Configuring-CLS-as-the-log-consumer).
+   - If you choose Kafka as the consumer, refer to [Configuring Kafka as the log consumer](#Configuring-Kafka-as-the-log-consumer).
 ![](https://main.qcloudimg.com/raw/f8e0b71cd34092ba0436528976a3b9af.png)
 6. Select **Role** or **Key** to authorize.
 >! 
