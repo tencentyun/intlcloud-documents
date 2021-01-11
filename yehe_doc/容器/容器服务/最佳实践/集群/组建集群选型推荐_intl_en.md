@@ -142,15 +142,14 @@ When the service traffic increases, the I/O-intensive service needs more computi
 >?To use this feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
 
 - When creating a cluster, you can customize some startup parameters of master components in **Advanced Settings** under **Cluster Information**.
-![](https://main.qcloudimg.com/raw/b592834992edf5cc7ee2b66477f54c17.png)
+![](https://main.qcloudimg.com/raw/2470700f16e0c274828d775c57884b24.png)
 - In **Select Model** step, you can customize some startup parameters of kubelet in **Advanced Settings** under **Worker Configurations**.
-![](https://main.qcloudimg.com/raw/7748982d54e62f5b4d4557565dc73f00.png)
+![](https://main.qcloudimg.com/raw/caf2c8185044be4648cfe26d2ac9e362.png)
 
 
 ### Node launch configuration
 - When creating a cluster, in **Advanced Settings** under **CVM Configuration**, you can specify custom data to configure the node launch script. In the script, you can modify component startup parameters and kernel parameters, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/5621d3b825353fca496d7905b72e8185.png)
+![](https://main.qcloudimg.com/raw/a8a02291383025e3ec5ad54a6ddf69db.png)
 - When adding a node, in **Advanced Settings** under **CVM Configuration**, you can specify custom data to configure the node launch script. In the script, you can modify component startup parameters and kernel parameters, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/197acaee23b8747a5233e095faa45b50.png)
-
+![](https://main.qcloudimg.com/raw/18f8150375278f5ab5400330236be470.png)
 
