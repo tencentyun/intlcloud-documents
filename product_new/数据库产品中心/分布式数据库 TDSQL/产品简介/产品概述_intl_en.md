@@ -1,5 +1,5 @@
 ## Overview
-TencentDB for TDSQL is a distributed database service deployed in Tencent Cloud that supports automatic sharding (horizontal splitting) and the Shared Nothing architecture. With a distributed database, your business obtains a complete logical database table which is split and distributed evenly across multiple physical shard nodes on the backend. TDSQL deploys the master-slave architecture by default and provides a full set of solutions for disaster recovery, backup, restoration, monitoring, and migration, making it ideal for storing terabytes to petabytes of data.
+TDSQL for MySQL is a distributed database service deployed in Tencent Cloud that supports automatic sharding (horizontal splitting) and the Shared Nothing architecture. With a distributed database, your business obtains a complete logical database table which is split and distributed evenly across multiple physical shard nodes on the backend. TDSQL deploys the master-slave architecture by default and provides a full set of solutions for disaster recovery, backup, restoration, monitoring, and migration, making it ideal for storing terabytes to petabytes of data.
 
 ## Features
 #### OLTP
