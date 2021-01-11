@@ -1,4 +1,4 @@
-TencentDB for TDSQL supports full backups and incremental backups.
+TDSQL for MySQL supports full backups and incremental backups.
 
 ## Backup Type
 ### Full backup
@@ -13,5 +13,5 @@ Incremental backup is implemented based on binlogs, which are generated in real 
 3. Select **Backup and Restore** > **Backup and Log Settings** and click the icon as shown below to set the storage period.
  - Backup cycle: the backup task is performed every day by default.
  - Storage time: data and log backups can be retained for 1 to 7 days. Retention time is set to 7 days by default.
-![](https://main.qcloudimg.com/raw/9e20b7f8f7fe2553b86cf5a68bd6265d.png)
+![](https://main.qcloudimg.com/raw/d72b61166d73b64ccb50f108d92a8cda.png)
 
