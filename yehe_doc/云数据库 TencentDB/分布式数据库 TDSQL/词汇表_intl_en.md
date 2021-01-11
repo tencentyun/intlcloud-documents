@@ -28,9 +28,9 @@ A sharded table means that the original table with enormous amount of data needs
 
 TDSQL performs sharding by executing a modulo operation on the shardkey.
 <span id="tdsql1"></span>
-### TencentDB for TDSQL
+### TDSQL for MySQL
 
-TencentDB for TDSQL is a distributed database service deployed in Tencent Cloud that supports automatic sharding (horizontal sharding) and the Shared Nothing architecture. With a distributed database, your business obtains a complete logical database table which is split and distributed evenly across multiple physical shard nodes on the backend. TDSQL deploys the master-slave architecture by default and provides a full set of solutions for disaster recovery, backup, restoration, monitoring, and migration, making it ideal for storing terabytes to petabytes of data.
+TDSQL for MySQL is a distributed database service deployed in Tencent Cloud that supports automatic sharding (horizontal sharding) and the Shared Nothing architecture. With a distributed database, your business obtains a complete logical database table which is split and distributed evenly across multiple physical shard nodes on the backend. TDSQL deploys the master-slave architecture by default and provides a full set of solutions for disaster recovery, backup, restoration, monitoring, and migration, making it ideal for storing terabytes to petabytes of data.
 
 
 
@@ -99,4 +99,4 @@ Data Definition Language (DDL), with the main commands of CREATE, ALTER and DROP
 
 ### TDSQL
 
-See [TencentDB for TDSQL](#tdsql1).
+See [TDSQL for MySQL](#tdsql1).
