@@ -59,8 +59,8 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/237">TencentDB for MariaDB</a></td>
 <td>TencentDB for MariaDB instance</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1042">TencentDB for TDSQL</a></td>
-<td>TencentDB for TDSQL instance</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1042">TDSQL for MySQL</a></td>
+<td>TDSQL for MySQL instance</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">TencentDB for MongoDB</a></td>
 <td>TencentDB for MongoDB instance</td>
