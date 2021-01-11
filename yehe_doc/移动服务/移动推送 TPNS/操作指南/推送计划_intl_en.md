@@ -52,6 +52,23 @@ In the push plan details, select the overview page, and you can view the aggrega
 
 ### Using RESTful API (to create push plan or specify push plan for push)
 
+#### Creating push plan
+
+Create a push plan as instructed [here](https://intl.cloud.tencent.com/document/product/1024/39025). Then, you can specify it for message push.
+
+#### Sample creation
+
+```
+{
+			"planName":"VIP_Level 15",
+			"planDescribe":"VIP member benefits"
+}
+```
+
+
+
+#### Specifying push plan for push
+
 When calling the push API, you can set the `plan_id` to specify the ID of the push plan for the target recipients. For more information, please see [Optional Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764) in the RESTful API document.
 
 Below is a sample push:
@@ -80,5 +97,3 @@ Below is a sample push:
  }
 }
 ```
-
-​	

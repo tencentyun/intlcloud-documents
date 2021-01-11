@@ -1,16 +1,21 @@
 ## Problem Description
+
 If your application is connected to a vendor channel, but a log similar to the following one is found in the application operation logs: 
+
 ```
 [OtherPushClient] handleUpdateToken other push token is :  other push type: huawei
 ```
+
 Then it means that your application failed to register with the vendor channel. You can locate and troubleshoot the problem by getting the return code for vendor channel registration failure.
 
 ## Troubleshooting Directions
+
 ### Getting return code for vendor channel registration
 
 TPNS SDK for Android provides the following ways to get the return code for vendor channel registration:
 
 Filter application operation logs by the keyword `OtherPush` to find logs similar to the following ones and locate the return code for vendor channel registration:
+
 ```
 // Huawei channel
 // If filtering by the keyword `OtherPush` cannot find the return code, you can try the keyword `HMSSDK` and find the return code after `onResult` or `onConnect`
@@ -29,9 +34,10 @@ Filter application operation logs by the keyword `OtherPush` to find logs simila
 [OtherPushVivoImpl] vivoPush Register or UnRegister fail, code = 10003
 ```
 
-
 ### Troubleshooting by return code
+
 You can refer to the official push documentation of each vendor to get the specific descriptions of return codes and troubleshoot accordingly. The table below lists some common error codes:
+
 <table>
  <tbody><tr>
  <th>Vendor Channel</th>
@@ -41,26 +47,33 @@ You can refer to the official push documentation of each vendor to get the speci
  <th>Link</th>
  </tr>
  <tr>
- <td rowspan="4">Huawei</td>
+ <td rowspan="5">Huawei </td>
  <td>1001 </td>
  <td>Make sure that the "HMS" or "HMS-Core" application is installed in the phone, which is required for Huawei Push</td>
  <td>Go to Huawei AppGallery to download and install the "HMS-Core" application</td>
- <td rowspan="4"><a href="https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/push-faq-v4#h1-1577153305362-0" target="_blank">Huawei return codes</a> </td>
+ <td rowspan="5"><a href="https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/push-faq-v4#h1-1577153305362-0" target="_blank">Huawei return codes</a> </td>
  </tr>
  <tr>
  <td>6003 </td>
- <td>The application APK is not signed; however, it must be signed for Huawei Push</td>
- <td>Sign the APK file</td>
+ <td>The application APK is not signed or contains signing information that doesn't match that registered on the Huawei Developer platform; however, it must be correctly signed for Huawei Push</td>
+ <td>Sign the APK file or check whether the signing information is correct</td>
  </tr>
   <tr>
  <td>907135000 </td>
  <td>The `appId` is invalid</td>
- <td>Check whether the application package name and `appId` match each other on the Huawei Push platform</td>
+ <td><li>Check whether the value of the `appId` field in the Huawei Push configuration file `agconnect-services.json` matches the application package name
+      <li>Check whether the configuration file is in the root directory of the project's `app` module (at the same level as the `build.gradle` file of the application) </td>
  </tr>
   <tr>
  <td>907135702 </td>
  <td>The SHA256 value of the signature file is different from that configured on the Huawei Push platform</td>
  <td>Check whether the entered SHA256 value of the signature file is the same as the one configured on the Huawei Push platform (multiple ones can be added)</td>
+ </tr>
+ <tr>
+ <td>907135003 </td>
+ <td>The `apiclient` object is invalid</td>
+ <td> <li>Check whether the phone can access the internet normally or reconnect it to the network
+       <li>This problem is most probably caused by version incompatibility of the HMS-Core application on Huawei phones. You can try searching for HMS-Core or Huawei Mobile Service in Huawei AppGallery, check whether the latest version is installed, and if not, upgrade it</td>
  </tr>
  <tr>
  <td rowspan="3">Mi</td>
@@ -122,31 +135,29 @@ You can refer to the official push documentation of each vendor to get the speci
  </tr>
 <tr>
  </tbody></table>
- 
 
-   
+
+
+
 
 ### Troubleshooting other issues
+
 - **For Huawei Push, the push service needs to be enabled on the Huawei Push platform**
-If you cannot get the Huawei token on your Huawei device, and the return code for vendor push channel registration is 0, then please go to the [Huawei Push platform](https://developer.huawei.com/consumer/cn/), check whether the push service is enabled for the application on the **Development** > **Push Service** page and whether `Push Kit` and `App Messaging` are enabled on the **Development** > **Project Settings** > **API Management** page.
-The push service page is as follows:
-![](https://main.qcloudimg.com/raw/ab5255522ecb0030aea10d870553566a.png)
-The API management page is as follows:
-![](https://main.qcloudimg.com/raw/cc53290c7509e59e161227228e3b0317.png)
+  If you cannot get the Huawei token on your Huawei device, and the return code for vendor push channel registration is 0, then please go to the [Huawei Push platform](https://developer.huawei.com/consumer/cn/), check whether the push service is enabled for the application on the **Development** > **Push Service** page and whether `Push Kit` and `App Messaging` are enabled on the **Development** > **Project Settings** > **API Management** page.
 
 - **For Mi Push, the push service needs to be enabled on the Mi Push platform**
-If you cannot find the return code for Mi channel registration, please check whether the application's message push service is enabled on **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Platform**.
-
+  If you cannot find the return code for Mi channel registration, please check whether the application's message push service is enabled on **[Mi Open Platform](https://dev.mi.com/console/appservice/push.html)** > **Push Platform**.
+  
 - **For OPPO Push, the push feature needs to be enabled first before messages can be pushed**
-On the push service page on [OPPO Open Platform](https://open.oppomobile.com), you can view applications with the service enabled and those not enabled. Among those not enabled, click the one for which you want to apply for push permission to enter the push service page and apply for enablement accordingly.
-
+  On the push service page on [OPPO Open Platform](https://open.oppomobile.com), you can view applications with the service enabled and those not enabled. Among those not enabled, click the one for which you want to apply for push permission to enter the push service page and apply for enablement accordingly.
 - **For Vivo Push, the push feature needs to be enabled first before messages can be pushed**
-Go to **[Vivo Open Platform](https://dev.vivo.com.cn/home)** > **Push Platform** > **Message Push** > **All Applications**, click **Application Name** to select the target application among all the created applications, and click **Submit Application**.
+  Go to **[Vivo Open Platform](https://dev.vivo.com.cn/home)** > **Push Platform** > **Message Push** > **All Applications**, click **Application Name** to select the target application among all the created applications, and click **Submit Application**.
+  
 
->?For some vendors, the push service will take effect around 5 minutes after it is enabled. If registration still fails after the push service is enabled, please wait a while and try again.
+ > ?For some vendors, the push service will take effect around 5 minutes after it is enabled. If registration still fails after the push service is enabled, please wait a while and try again.
 
 - **The HMS version is too low**
-Search for the keyword "HMSSDK" in the logs, and if a log similar to the following one is found, that is, `connect versionCode` is lower than `connect minVersion`, then it means that the system application "HMS" or "HMS_Core" is too old. Please retry registering after upgrading the application.
+  Search for the keyword "HMSSDK" in the logs, and if a log similar to the following one is found, that is, `connect versionCode` is lower than `connect minVersion`, then it means that the system application "HMS" or "HMS_Core" is too old. Please retry registering after upgrading the application.
 ```plaintext
 I/HMSSDK_HuaweiApiClientImpl: ====== HMSSDK version: 20601301 ======
 I/HMSSDK_HuaweiApiClientImpl: Enter connect, Connection Status: 1
@@ -156,8 +167,6 @@ I/HMSSDK_HuaweiMobileServicesUtil: connect versionCode:20301306
 D/HMSAgent: connect end:-1001
 ```
 
-
 - **Some Vivo models do not support the push service**
-Vivo Push is supported only on certain newer models and corresponding OS versions. For more information, please see [here](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
-
+  Vivo Push is supported only on certain newer models and corresponding OS versions. For more information, please see [here](https://dev.vivo.com.cn/documentCenter/doc/156#w1-08608733).
 

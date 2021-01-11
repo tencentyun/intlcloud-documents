@@ -25,14 +25,14 @@ If the following log is printed in the console, the session keep-alive feature h
 - Data sync for newly created applications will take about one minute. During this period, the registration may return the error code 20. You can try again later.
 - **Incorrect parameter:** check whether the `Access ID` and `Access Key` are correctly configured. Common errors are that the `Secret key` is misused or the `Access Key` contains spaces.
 - **Registration error:** if the console returns an error code such as 10004, 10002, or 20, please see [SDK for Android Error Codes](https://intl.cloud.tencent.com/document/product/1024/30722).
-- **No callback after registration:** check the current network condition. You are recommended to use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
+- **No callback after registration:** check the current network condition. We recommend you use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
 - **Nubia phones:** models released in the second half of 2015 and 2016 cannot be registered, including Nubia Z11 series, Nubia Z11S series, and Nubia Z9S series.
 
 ### Why can't pushes be received after registration succeeded?
 
 Please perform automated troubleshooting with the troubleshooting tool as instructed [here](https://intl.cloud.tencent.com/document/product/1024/38389). General errors include the following:
 
-- Please check whether the current application package name is the same as that entered when TPNS is registered, and if not, you are recommended to enable multi-package name push.
+- Please check whether the current application package name is the same as that entered when TPNS is registered, and if not, we recommend you enable multi-package name push.
 - Check whether the network is exceptional on the phone and switch to 4G network for testing.
 - TPNS push includes **notification bar message** and **in-app message** (passthrough message). A notification bar message can be displayed on the notification bar, while an in-app message cannot.
 - Confirm that the phone is in normal mode. Some phones may have restrictions on network and activity of the backend TPNS process when in Low Power or Do Not Disturb mode.
@@ -169,7 +169,7 @@ Currently, IM uses the vendor jar packages provided by TPNS. Please replace the 
 | --------------- | ------| -------------------------------------------- |
 | Mi Push | MIUI | To use Mi Push, add the following dependency: `implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'`|
 | Huawei Push | EMUI | To use Huawei Push, add the following dependencies: <li>`implementation 'com.tencent.tpns:huawei:1.2.1.2-release'`  <li> `implementation 'com.huawei.hms:push:5.0.2.300'`|
-| Google FCM Push | Android 4.1 and above | The mobile device needs to have Google Play Services installed and use it outside Chinese mainland. Add the following dependency: `implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
+| Google FCM Push | Android 4.1 and above | The mobile device needs to have Google Play Services installed and use it outside the Chinese Mainland. Add the following dependency: `implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
 | Meizu Push | Flyme | To use Meizu Push, add the following dependency: `implementation 'com.tencent.tpns:meizu:1.2.1.2-release'` |
 | OPPO PUSH | ColorOS | Not all OPPO models and versions support OPPO PUSH. To use OPPO PUSH, add the following dependency: `implementation 'com.tencent.tpns:oppo:1.2.1.2-release'`|
 | Vivo Push | FuntouchOS | Not all Vivo models and versions support Vivo Push. To use Vivo Push, add the following dependency: `implementation 'com.tencent.tpns:vivo:1.2.1.2-release'`|
@@ -210,8 +210,13 @@ Add the following property to the `gradle.properties` file of the AndroidX proje
 ```
 android.useAndroidX=trueandroid.enableJetifier=true
 ```
-
 > ? 
->- `android.useAndroidX=true` indicates to enable `AndroidX` for the current project.
 >- `android.enableJetifier=true` indicates to migrate the dependency package to `AndroidX`. 
+>- `android.useAndroidX=true` indicates to enable `AndroidX` for the current project.
 
+### What should I do if a vendor channel's push SDK "transfers information over HTTP in plaintext"?
+
+After you integrate the push services of various vendor channels, some security detection tools may prompt that "the application transfers information over HTTP in plaintext". The specific HTTP addresses include:
+1. Mi Push SDK: `http://new.api.ad.xiaomi.com/logNotificationAdActions, http://resolver.msg.xiaomi.net/psc/?t=a`
+2. Meizu Push SDK: `http://norma-external-collect.meizu.com/android/exchange/getpublickey.do, http://norma-external-collect.meizu.com/push/android/external/add.do`
+All the above HTTP URLs are from the push SDKs of relevant vendors. The TPNS team is unable to clarify their purposes or control their behaviors but is actively contacting them and promoting the adoption of transfer over HTTPS. Currently, you should evaluate and choose whether to continue to use the above vendors' push services.

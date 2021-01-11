@@ -12,7 +12,7 @@ As TPNS always keeps up with the update progress of each vendor channel's push s
 ### Getting key
 
 1. Go to the [Huawei Developer platform](http://developer.huawei.com).
-2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to complete identity verification.)
+2. Sign up for a developer account and log in to the platform. For more information, please see [Account Registration and Verification](https://developer.huawei.com/consumer/cn/devservice/doc/20300). (If you are registering a new account, you need to complete identity verification; otherwise, you cannot use the platform.)
 3. Create an application on the Huawei Push platform. For more information, please see [Creating Application](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-create_app). (The application package name must be the same as that entered in the TPNS Console.)
 4. Get and copy the application's `AppID` and `AppSecret` and paste them into **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **Huawei Official Push Channel**.
 
@@ -31,6 +31,7 @@ Log in to the Huawei Developer platform, go to **My Projects** > select a projec
 ### Enabling push service
 
 Enable the push service in **Development** > **Push Service** on the Huawei Push platform. For more information, please see [Enabling Push Service](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service).
+
 
 
 ## SDK Integration (Two Methods)
@@ -82,7 +83,8 @@ dependencies {
 
 >?
 >- Huawei Push \[VERSION\] is the version number of the current latest SDK, which can be viewed in [SDK for Android Updates](https://intl.cloud.tencent.com/document/product/1024/36191).
->- Huawei Push v5 is officially supported staring TPNS SDK for Android v1.2.1.3. Please use TPNS dependency v1.2.1.3 or above for Huawei to avoid integration conflicts.
+>- Starting v1.2.1.3, TPNS SDK for Android officially supports Huawei Push v5. Please use TPNS Huawei dependency v1.2.1.3 or above to avoid integration conflicts.
+
 
 ### Using Android Studio for manual integration
 
@@ -186,12 +188,22 @@ You can set the application badge on Huawei devices after applying for the appli
 
 The Huawei Push service has strict requirements on the connection configuration. If you fail to register with the Huawei channel, you can use one of the following ways to get the Huawei Push registration error code:
 
+
 1. In debugging mode of the push service, filter logs by the keyword `OtherPush` or `HMSSDK` to view the return code logs.
 2. You can find the cause of the error and get the solution in [Common error codes](https://developer.huawei.com/consumer/cn/doc/development/HMS-2-References/hmssdk_huaweipush_api_reference_errorcode).
 
+
+
+#### Why are there no alerts for notifications delivered through the Huawei channel?
+
+
+Starting EMUI 10.0, Huawei Push intelligently categorizes notification messages into two levels: general and important. Versions below EMUI 10.0 don't categorize notifications but have only one level, so all notifications are displayed through the "default notification" channel, which is equivalent to the important level on EMUI 10.0. If a notification is categorized as "general", there will be no vibration, sound, or status bar icon alerts for it. Currently, the notification level can be set to "important" through the custom notification channel; however, according to the applicable Huawei Push rules, the final display effect will still be determined jointly by the set level and the level calculated by Huawei Push's intelligent categorization, and the lower level will prevail; for example, if the two levels are "important" and "general", "general" will prevail. For more information, please see [Vendor Message Categorization Feature Use Instructions](https://intl.cloud.tencent.com/document/product/1024/36250).
+
+
 #### Others
 
-When your application is released on Huawei AppGallery, it may fail the audit with the error message "Error:28: you need to package the certificate file into the APK when integrating with HMS. Please directly copy the assets directory to the application project's root directory" displayed. Please fix the problem as follows:   
+When your application is released on Huawei AppGallery, it may fail the audit with the error message "Error:28: you need to package the certificate file into the APK when integrating with HMS. Please directly copy the assets directory to the application project's root directory" displayed. Please fix the problem as follows:
 
 1. Download the official Huawei HMS SDK.
 2. Copy all files and subdirectories in the `assets` directory to that in your application project. If the `assets` directory does not exist in the application project, create one.
+

@@ -6,14 +6,15 @@ The SDK for Android is a set of APIs provided by TPNS Service for clients to imp
 
 ## SDK Integration (Two Methods)
 
-### AndroidStudio Gradle automatic integration
+### Using Android Studio Gradle for automatic integration
 
 #### Directions
 
 >!Before configuring the SDK, make sure you have configured the Android platform application.
 
-1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Product Management** -> **Configuration Management** on the left sidebar to get AccessID and AccessKey of the application.
+1. Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and get the application's `AccessID` and `AccessKey` in **Product Management** > **Configuration Management**.
 2. Get the latest version number on the [SDK download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
+
 3. In the application's `build.gradle` file, configure the following content:
 
 ```
@@ -44,28 +45,28 @@ android {
 dependencies {
     ......
     // Add the following dependencies:
-    implementation 'com.tencent.jg:jg:1.1'
-    implementation 'com.tencent.tpns:tpns:[VERSION]-release' //  TPNS [VERSION] is the current SDK version number. You can view the SDK version number on the "SDK for Android Updates" page.
-
+    implementation 'com.tencent.jg:jg:1.1'                  
+    implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
+		  // TPNS push [VERSION] is the latest SDK version number, i.e., the version number obtained in step 2 above
 }
 ```
 
 >!
->- If your application service access point is Guangzhou, the SDK implements this configuration by default.
->- If your application service access point is Shanghai, Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+ - If your application service access point is Guangzhou, the SDK implements this configuration by default.
+ - If your application service access point is Shanghai, Singapore, or Hong Kong (China), please follow the steps below to complete the configuration.
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
->```
+```
 <application>
 	// Other Android components
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
-			android:value="Domain name outside Mainland China" />
+			android:value="Other service access point domain names" />
 </application>
->```
-The domain names for other service access points are as follows:
->- Shanghai: `tpns.sh.tencent.com`
->- Singapore: `tpns.sgp.tencent.com`
->- Hong Kong (China): `tpns.hk.tencent.com`
+```
+Other service access point domain names are as follows:
+- Shanghai: `tpns.sh.tencent.com`
+- Singapore: `tpns.sgp.tencent.com`
+- Hong Kong (China): `tpns.hk.tencent.com`
 
 #### Notes
 
@@ -89,7 +90,7 @@ The domain names for other service access points are as follows:
 ```
 
 
-### Android Studio manual integration
+### Using Android Studio for manual integration
 
 #### Project configuration
 
@@ -98,7 +99,7 @@ Import the SDK into the project following the steps below:
 1. Create or open an Android project.
 2. Copy all the .jar files in the `libs` directory under the TPNS SDK directory to the project's `libs` (or `lib`) directory.
 3. .so files are necessary components of TPNS and support armeabi, armeabi-v7a, arm64-v8a, mips, mips64, x86, and x86_64 platforms. Add the appropriate platform currently supported by your .so files.
-4. Open Androidmanifest.xml and add the following configurations. (It is recommended to modify the configurations according to the Demo in the download package.) Replace `YOUR_ACCESS_ID` and `YOUR_ACCESS_KEY` with the corresponding `AccessId` and `AccessKey` of your application. Make sure the configurations are completed as required; otherwise, the service may not work properly.
+4. Open Androidmanifest.xml and add the following configurations. (We recommend you modify the configurations according to the Demo in the download package.) Replace `YOUR_ACCESS_ID` and `YOUR_ACCESS_KEY` with the corresponding `AccessId` and `AccessKey` of your application. Make sure the configurations are completed as required; otherwise, the service may not work properly.
 
 #### Permission configuration
 
@@ -141,7 +142,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 
 #### Configuring component and application information
 
->! For more information on TPNS SDK for Android v1.1.6.3 and below, please see the document of configuration component and application information for v1.1.6.3 and below.
+
 
 ```xml
 <application>
@@ -153,7 +154,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
             <intent-filter>
                 <data
                     android:scheme="tpns"
-                    android:host="Application package name"/>
+                    android:host="application package name"/>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -186,7 +187,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
         android:persistent="true"
         android:process=":xg_vip_service"></service>
 
-    <!-- **Required** Notification service, android:name should be changed to the current package name -->
+    <!-- **Required** Notification service. android:name should be changed to the package name.XGVIP_PUSH_ACTION -->
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
             <intent-filter>
@@ -195,12 +196,12 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
             </intent-filter>
         </service>
 
-    <!-- **Required** **Note** Modify authorities to package name.XGVIP_PUSH_AUTH -->
+    <!-- **Required** **Note:** modify authorities to package name.XGVIP_PUSH_AUTH -->
     <provider
         android:name="com.tencent.android.tpush.XGPushProvider"
         android:authorities="application package name.XGVIP_PUSH_AUTH" />
 
-    <!-- **Required** **Note** Modify authorities to package name.TPUSH_PROVIDER -->
+    <!-- **Required** **Note:** modify authorities to package name.TPUSH_PROVIDER -->
     <provider
         android:name="com.tencent.android.tpush.SettingsContentProvider"
         android:authorities="application package name.TPUSH_PROVIDER" />
@@ -230,7 +231,7 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 	<provider
             android:exported="false"
             android:name="com.tencent.tpns.baseapi.base.SettingsContentProvider"
-            android:authorities="${applicationId}.XG_SETTINGS_PROVIDER" />
+            android:authorities="application package name.XG_SETTINGS_PROVIDER" />
 
     <!-- MQTT END-->
 		
@@ -265,22 +266,21 @@ The permissions required by the TPNS SDK to operate normally. Sample code is as 
 ```
 
 >!
-> - If your application service access point is Guangzhou, the SDK implements this configuration by default.
-> - If your application service access point is Singapore or Hong Kong (China), please follow the steps below to complete the configuration.
+ - If your application service access point is Guangzhou, the SDK implements this configuration by default.
+ - If your application service access point is Shanghai, Singapore, or Hong Kong (China), please follow the steps below to complete the configuration.
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
->```
+```
 <application>
 	// Other Android components
 	<meta-data
 			android:name="XG_SERVER_SUFFIX"
-			android:value="Domain name for other service access points" />
+			android:value="Other service access point domain names" />
 </application>
->```
-The domain names for other service access points are as follows:
->- Shanghai: `tpns.sh.tencent.com`
->- Singapore: `tpns.sgp.tencent.com`
->- Hong Kong (China): `tpns.hk.tencent.com`
-
+```
+Other service access point domain names are as follows:
+- Shanghai: `tpns.sh.tencent.com`
+- Singapore: `tpns.sgp.tencent.com`
+- Hong Kong (China): `tpns.hk.tencent.com`
 
 
 ## Debugging and Device Registration
@@ -334,7 +334,7 @@ If you perform code obfuscation by using tools such as ProGuard in your project,
 -keep class com.tencent.bigdata.mqttchannel.** {*;}  // This configuration item is no required on v1.2.0.1 and above
 ```
 
->!If the TPNS SDK is included in the application's public SDK, then even if the public SDK has an obfuscation rule configured, you still need to configured an obfuscation rule for the master project application.
+>!If the TPNS SDK is included in the application's public SDK, then even if the public SDK has an obfuscation rule configured, you still need to configured an obfuscation rule for the main project application.
 
 ## Advanced Configuration (Optional)
 
@@ -379,7 +379,7 @@ To disable session keep-alive in TPNS, if you use the automatic gradle integrati
 
 ### Suggestions on getting TPNS token
 
-After you integrate the SDK, you are recommended to use gestures or other methods to display the TPNS token in the application's less commonly used UIs such as **About** or **Feedback**. Push through the console and RESTful API requires the TPNS token for token push. Subsequent troubleshooting will also require the TPNS token for problem locating.
+After you integrate the SDK, we recommend you use gestures or other methods to display the TPNS token in the application's less commonly used UIs such as **About** or **Feedback**. Push through the console and RESTful API requires the TPNS token for token push. Subsequent troubleshooting will also require the TPNS token for problem locating.
 Below is sample code:
 
 ```java
