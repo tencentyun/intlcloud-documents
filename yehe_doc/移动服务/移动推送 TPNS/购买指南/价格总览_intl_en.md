@@ -2,13 +2,13 @@ This document describes the pricing and discount policies of two TPNS billing mo
 >! The monthly subscription mode is currently in beta. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
 
 ## Glossary
-- Daily connected devices: the number of unique online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the foreground or background).
+- Daily connected devices: the number of unique online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
 - Monthly peak of daily connected devices: the highest number of daily connected devices in a month.
 - Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by regions. You can select an application service access point when creating an instance on the console.
 
 ## Monthly subscription
 ### Notes
-- Monthly subscription bills in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required.
+- Monthly subscription is billed in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required.
 
 ### Pricing description
 Because service costs vary by service access points, the corresponding prices are also different.
@@ -39,19 +39,19 @@ The total package fees will be: Monthly fees x Duration x (1 - Discount) = (60 x
 - The purchase duration of the package is 1 month.
 The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x 42.237) x 1 x 1 = 422.37 USD.
 
-## Pay-as-You-Go
+## Pay-as-you-go
 
 ### Pricing description
 
-The following applies for daily pay-as-you-go billing mode:
-- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
-- 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
-- Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
-- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then the day will not be included in the continuous usage duration.
+The following applies for the daily pay-as-you-go billing mode:
+	- Daily connected devices ≤ 1,000: no fees will be incurred for the day.
+	- 1000 < daily connected devices ≤ 10,000: fees will be incurred and settled at the fixed prices as listed below.
+	- Daily connected devices > 10,000: fees will be incurred and settled at the elastic prices as listed below.
+	- The continuous usage duration starts on the day when an application has pay-as-you-go billing enabled for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of daily connected devices for a day is less than or equal to 1,000 with no fees incurred, then that day will not be included in the continuous usage duration.
 	
 Because service costs vary by service access points, the corresponding prices are also different. See below:
 
-#### 1,000 <Daily connected devices ≤ 10,000: fixed price
+#### 1,000 < daily connected devices ≤ 10,000: fixed price
 
 | Service Access Point | Unit Price (USD/Day) |
 |---|---|
@@ -60,8 +60,8 @@ Because service costs vary by service access points, the corresponding prices ar
 | Singapore | 2.14 |
 
 >! 
->- The threshold for elastic pricing lowered from 50,000 to 10,000 daily connected devices on January 4, 2021.
->- If the number of daily connected devices is less than 50,000 and pay-as-you-go billing is adopted before January 04, 2021, elastic pricing will be automatically applied since January 4, 2021.
+>- The threshold for elastic pricing was lowered from 50,000 to 10,000 daily connected devices on January 4, 2021.
+>- If the number of daily connected devices was less than 50,000 and pay-as-you-go billing was adopted before January 4, 2021, elastic pricing will be automatically applied from January 4, 2021.
 
 #### Daily connected devices > 10,000: elastic pricing
 | Service Access Point | Unit Price (USD/Daily Connected Devices/Day) |
