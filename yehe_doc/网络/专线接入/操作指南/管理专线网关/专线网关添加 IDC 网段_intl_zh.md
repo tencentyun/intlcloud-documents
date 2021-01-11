@@ -9,7 +9,7 @@
 您已创建云联类型的专线网关，并关联云联网，详情请参见[ 创建专线网关](https://intl.cloud.tencent.com/document/product/216/19256)。
 
 ## 操作步骤
-1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击【专线网关】。
+1. 登录 [专线网关控制台](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fvpc%2Fdcgw%3Frid%3D1) 。
 2. 在“专线网关”页面上方选择地域和私有网络，然后在专线网关列表中单击目标实例 ID。
 3. 在专线网关详情页面单击【IDC 网段】。
 专线网关上的 IDC 网段是指专线网关发送至云联网的路由。云联网收到该路由后，将自动新增一条下一跳为此专线网关、目的端为 IDC 网段的路由。
