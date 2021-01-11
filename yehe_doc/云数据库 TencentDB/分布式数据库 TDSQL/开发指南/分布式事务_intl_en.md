@@ -1,4 +1,4 @@
-In TencentDB for TDSQL, a transaction usually involves data of multiple physical nodes. Such transactions are called distributed transactions.
+In TDSQL for MySQL, a transaction usually involves data of multiple physical nodes. Such transactions are called distributed transactions.
 TDSQL supports XA and non-XA distributed transaction protocols. By default, TDSQL (kernel version 5.7 or later) supports distributed transactions which are imperceptible to the client and as easy-to-use as non-distributed transactions.
 Distributed transactions in TDSQL adopt a two-phase commit protocol (2PC) to ensure the atomicity and consistency of transactions, and support such isolation levels as `Read committed`, `Repeatable read`, and `Serializable`.
 
