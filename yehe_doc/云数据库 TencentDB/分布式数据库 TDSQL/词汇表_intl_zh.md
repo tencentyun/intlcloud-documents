@@ -28,9 +28,9 @@
 
 TDSQL 通过采用分表键求模的方案进行分表。
 <span id="tdsql1"></span>
-### 分布式数据库 TDSQL
+### TDSQL MySQL版
 
-分布式数据库 TDSQL（TencentDB for TDSQL，TDSQL）是部署在腾讯云上的一种支持自动水平拆分、Shared Nothing 架构的分布式数据库。分布式数据库即业务获取的是完整的逻辑库表，而后端会将库表均匀的拆分到多个物理分片节点。TDSQL 默认部署主备架构，提供容灾、备份、恢复、监控、迁移等全套解决方案，适用于 TB 或 PB 级的海量数据库场景。
+TDSQL MySQL版（TDSQL for MySQL，TDSQL）是部署在腾讯云上的一种支持自动水平拆分、Shared Nothing 架构的分布式数据库。分布式数据库即业务获取的是完整的逻辑库表，而后端会将库表均匀的拆分到多个物理分片节点。TDSQL 默认部署主备架构，提供容灾、备份、恢复、监控、迁移等全套解决方案，适用于 TB 或 PB 级的海量数据库场景。
 
 
 
@@ -99,4 +99,4 @@ TDSQL 通过 Tproxy 实现自动分库分表逻辑，管理底层的多个物理
 
 ### TDSQL
 
-参见 [分布式数据库 TDSQL](#tdsql1)
+参见 [TDSQL MySQL版](#tdsql1)
