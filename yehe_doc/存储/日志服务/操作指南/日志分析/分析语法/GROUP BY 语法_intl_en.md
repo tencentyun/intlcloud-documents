@@ -6,7 +6,7 @@ The `GROUP BY` statement is used to combine aggregate functions to group results
 
 `GROUP BY` supports arbitrary expressions, so you can use columns, aliases, and serial numbers (starting from 1).
 `GROUP BY` supports one single column and multiple columns.
-`GROUP BY` is often used together with [aggregate functions](https://intl.cloud.tencent.com/document/product/614/38728) such as `MIN`, `MAX`, `AVG`, `SUM`, and `COUNT`.
+`GROUP BY` is often used together with aggregate functions such as `MIN`, `MAX`, `AVG`, `SUM`, and `COUNT`.
 
 ```plaintext
 * | SELECT column (key), aggregate function GROUP BY [ column (KEY) | alias | serial number ]
