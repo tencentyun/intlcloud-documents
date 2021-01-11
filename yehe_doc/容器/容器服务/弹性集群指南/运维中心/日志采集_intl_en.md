@@ -3,10 +3,10 @@ The EKS log collection feature can send the logs of services within a cluster to
 
 
 To use the EKS log collection feature, you need to manually enable it for each elastic cluster when creating a workload. You can enable the EKS log collection feature by performing the following operations:
-  - [Configuring log collection](#output)
-  - [Configuring the log consumer](#output2)
-  - [Configuring log collection via yaml](#yaml)
-  - [Updating log collection](#new)
+  - [Configuring log collection](#Configuring-log-collection)
+  - [Configuring the log consumer](#Configuring-the-log-consumer)
+  - [Configuring log collection via yaml](#Configuring-log-collection-via-yaml)
+  - [Updating log collection](#Updating-log-collection)
 
 ## Notes
 After the EKS log collection feature is enabled, the log collection agent will send the collected logs in JSON format to the consumer that you have specified based on your configuration of the collection path and log consumer. The details of the collection path and consumer are as follows:
@@ -28,20 +28,20 @@ The EKS log collection feature collects the log information and outputs it to th
 2. On the "Elastic Cluster" page, click the ID of the desired cluster for log collection to enter the cluster management page.
 3. Select a workload type in "Workload" on the left to go to the corresponding page, and then click **Create**.
 4. In **Containers in the pod** section, select **Advanced Settings**, and check **Activate** to enable log collection, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/0ef3ce835e4d30651a48f54df9b23acb.png)
+![](https://main.qcloudimg.com/raw/b67fef995ba73d3feb702f60c7165744.png)
 5. Refer to the following information to configure the log consumer. You can choose CLS or Kafka as the log consumer, as shown in the figure below:
   - We recommend that you choose [CLS](https://cloud.tencent.com/product/cls) as the consumer and select logsets and log topics. If there is no suitable logset, refer to [Configuring CLS as the log consumer](#output2).
    - If you choose Kafka as the consumer, refer to [Configuring Kafka as the log consumer](#output2).
-![](https://main.qcloudimg.com/raw/4a0e6bef8d5b0c800dfdb6de9104fe4c.png)
+![](https://main.qcloudimg.com/raw/f8e0b71cd34092ba0436528976a3b9af.png)
 6. Select **Role** or **Key** to authorize.
 >! 
 >- You can only select the same authorization method for the containers in the same pod. The last modification shall prevail. For example, if you select key authorization for the first container and role authorization for the second container, finally both containers will be role authorization.
 >- You can only select the same role to authorize for the containers in the same pod.
 
-<dx-tabs>
-::: Role authorization
+
+#### Role authorization
  - Select a role that can access CLS service, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/eb325a52c59486e1051a381ee8ae135d.png)
+![](https://main.qcloudimg.com/raw/4124c82b7844b024146713bd683cb39b.png)
  - If there is no suitable role, you can create a role as follows:
   1. Log in to the CAM console, and select **[Roles]**(https://console.cloud.tencent.com/cam/role) in the left sidebar.
   2. On the **Roles** page, click **Create Role**.
@@ -49,44 +49,43 @@ The EKS log collection feature collects the log information and outputs it to th
   4. On the **Enter role entity info** tab, select **Cloud Virtual Machine (cvm)** and click **Next**.
   5. On the **Configure role policy** tab, select **QcloudCLSAccessForApiGateWayRole** policy and click **Next**.
   6. On the **Review** tab, enter the role name to review the role information, and then click **Done**. For more information, see [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381).
-:::
-::: Key authorization
+
+#### Key authorization
 - Select the “SecretId” and “SecretKey” of your account API key as the variable values to create the cluster Secret.
-![](https://main.qcloudimg.com/raw/90103c9759c3e2df9bd6f66a507e60fb.png)
+![](https://main.qcloudimg.com/raw/168e174bee92932937b1a829e1280c94.png)
 - If there is no suitable Secret, you need to create a Secret. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676). You can view the SecretId and SecretKey in [API Keys](https://console.cloud.tencent.com/cam/capi).
 >! The user corresponding to the API key must have the permission to access the CLS. If there is no API key, you need to create a new one. For more information, see [Access Key](https://intl.cloud.tencent.com/document/product/598/34227).
-:::
-</dx-tabs>
+
+
 7. Configure the collection path, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/7b9799a0d2a6d1200318dfc35243ea52.png)
+![](https://main.qcloudimg.com/raw/f49ac2e3cefd7afd2ee21117dde5a575.png)
 Thus, you have completed the configuration of the log collection. You can set other configurations of the workload as needed.
 
 
 ### Configuring the log consumer
 The log collection feature supports setting user-built Kafka pods or log topics specified by CLS as the consumer of log content. The log collection agent will send the collected logs to the topic specified by Kafka or the log topic specified by CLS.
 
-<dx-tabs>
-::: Configuring Kafka as the log consumer
+
+#### Configuring Kafka as the log consumer
 If you select Kafka as the consumer of log collection, it is recommended you to use CKafka. The experience of its consumption and production modes are the same as the native version, and it supports alarm configurations.
 Specify the Broker address and Topic of Kafka in the container configuration, and ensure that all resources in the cluster can access the user-specified Kafka Topic, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/2a226f61d5db3a048f804e83d3f0debb.png)
+![](https://main.qcloudimg.com/raw/d3c93d5d69d935cd41cdf1230b1b767f.png)
 >! You need to select “delete” for `cleanup.policy` in Kafka Topic configuration. If you select “compact”, CLS will fail to report to Kafka, resulting in data loss, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/c3f3a6f892b9c07cb24f7e210db5f80e.png)
-:::
-::: Configuring CLS as the log consumer
+![](https://main.qcloudimg.com/raw/e62c7ca7180832bbe1d570d11038f872.png)
+
+#### Configuring CLS as the log consumer
 - CLS currently supports log collection reporting only for container clusters in the same region. For more information, see [Creating a logset and a log topic](https://intl.cloud.tencent.com/document/product/614/31592).
 - Enable the log topic's **Log Index**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/a8413fb410367e01acfa9ff62e7a291d.png)
-:::
-</dx-tabs>
+![](https://main.qcloudimg.com/raw/9d1b426d33f55c3d05d3d8571ce0b5ee.png)
+
 
 <span id="yaml"></span>
 ### Configuring log collection via yaml
 This document provides three collection methods for your choice: collecting logs to Kafka, collecting logs to CLS via a secret and collecting logs to CLS via a role.
 >! If both key and role authorization are configured in yaml, pod actually uses role authorization.
 
-<dx-tabs>
-::: Collecting logs to Kafka
+
+#### Collecting logs to Kafka
 Enable log collection by adding environmental variables.
 ```shell
 apiVersion: apps/v1beta2
@@ -157,14 +156,14 @@ labels:
 		<td>EKS_LOGS_KAFKA_BROKERS</td> <td>kafka brokers: ip1:port1, ip1:port2, and ip2:port2 formats, separated by “,”. Use this environmental variable for external application. EKS_LOGS_KAFKA_HOST will no longer be visible to external users.</td>
 	</tr>
 </table>
-:::
 
 
-::: Collecting logs to CLS via a secret
+
+#### Collecting logs to CLS via a secret
 
 <span id="z"></span>
 
-### Creating a secret
+<b>Creating a secret</b>
 
 >! The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
 
@@ -186,7 +185,7 @@ data:
    secretkey: 
 ```
 
-#### Creating a deployment
+<b>Creating a deployment</b>
 Enable log collection by adding environmental variables.
 ```shell
 apiVersion: apps/v1beta2
@@ -297,12 +296,12 @@ spec:
 </tr>
 </table>
 
-:::
 
 
 
-::: Collecting logs to CLS via a role
-#### Creating a role  
+
+#### Collecting logs to CLS via a role
+<b>Creating a role</b>  
 On the [CAM console](https://console.cloud.tencent.com/cam/role), create a role. While creating a role, you need to select **Tencent Cloud product services**, bind the role with a **CVM**, and select **QcloudCLSAccessForApiGateWayRole** policy. For more information, see [Creating Roles](https://intl.cloud.tencent.com/document/product/598/19381).
 In the pod template, add annotation, specify the role name, and obtain the permission policy of the role.
 
@@ -312,7 +311,7 @@ template:
      annotations:
        eks.tke.cloud.tencent.com/role-name: "eks-pushlog"
 ```
-#### Creating a deployment
+<b>Creating a deployment</b>
 ```shell
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -396,8 +395,7 @@ spec:
 	</tr>
 	</tr>
 </table>
-:::
-</dx-tabs>
+
 
 
 
@@ -406,19 +404,18 @@ You can update log collection via the console and yaml. Please refer to the foll
 
 
 
-<dx-tabs>
-::: Updating log collection via the console
+
+#### Updating log collection via the console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2), and click **Elastic Cluster** in the left sidebar.
 2. Select the ID of the desired cluster for log collection configuration to enter the cluster management page.
 3. Choose **Workload** on the left, find the row of the desired workload for which you want to update log collection, and click **Update Pod Configuration** > **Advanced Settings** on the right, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/a5f93ff2724f199619f998b1b2040be1.png)
+![](https://main.qcloudimg.com/raw/19b164f4d2e46918c2bd04770a425c0c.png)
 4. Click **Done**.
 
-:::
 
 
-::: Updating log collection via yaml
+
+#### Updating log collection via yaml
 Find the yaml corresponding to the workload for which you want to update log collection. Then modify the corresponding variable values based on the relevant variable name changes of the configuration. You can view the meanings of variable names in [Configuring log collection](#yaml).
-:::
-</dx-tabs>
+
 
