@@ -1,19 +1,20 @@
 ## Billing Mode
 
-For more information on SCF billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284), [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281), and [Notes on Arrears](https://intl.cloud.tencent.com/document/product/583/12283).
+You can estimate the usage and calculate the fees by using the [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For more information on SCF billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284), [Pricing](https://intl.cloud.tencent.com/document/product/583/12281), and [Notes on Arrears](https://intl.cloud.tencent.com/document/product/583/12283).
 
-SCF is pay-per-use service without upfront payment. Fees are calculated per hour in **USD**. An SCF bill consists of the following three parts (each part is billed according to its statistics and calculation method, and the fees are accurate to 2 decimal places in **USD**).
+SCF is pay-as-you-go hourly in **USD** based on the actual usage. An SCF bill consists of the following four parts (each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**).
 
 * Resource usage fees 
-* Invocation volume fees
+* Invocation fees
 * Public network outbound traffic fees
+* Idle provisioned concurrency fees
 
-For the unit prices of resource usage, invocation volume, and public network outbound traffic, please see [Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is in GB.
+For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is calculated in GB. For more information, please see the "Bill-by-traffic" section in [Network Traffic Billing](https://buy.cloud.tencent.com/price/idc).
 
 
 ## Billing Principles
 
-SCF fees will be incurred by actual loading and execution of function code. If the function code is not actually executed, no fees will be incurred. Below is an example:
+SCF fees will be incurred by actual loading and execution of function code. If the function code is not actually executed, no fees will be incurred unless provisioned concurrency is configured. Below is an example:
 
 <table>
 	<tr>
@@ -41,7 +42,7 @@ SCF fees will be incurred by actual loading and execution of function code. If t
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>A request error occurs due to concurrence overrun.</td>
+		<td>A request error occurs due to concurrency overrun.</td>
 		<td>Not executed</td>
 		<td>No</td>
 		<td>No</td>
@@ -52,22 +53,22 @@ SCF fees will be incurred by actual loading and execution of function code. If t
 
 **Resource usage fees = (resource usage - free tier) * resource usage unit price**
 
-### Resource usage in GB-s
+### Resource usage in GBs
 
-**Resource usage = memory configured for function * execution duration**
+**Resource usage = configured function memory size * execution duration**
 
-Resource usage is calculated by multiplying the memory configured for function by the billable function execution duration. Here, the configured memory is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GB-s**.
+Resource usage is calculated by multiplying the configured function memory size by the billable function execution duration. Here, the configured memory size is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GBs** (GB-second).
 
-For example, if a function with 256 MB memory configured is executed for 1760 ms, then the billable duration is 1760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GB-s.
+For example, if a function with 256 MB memory configured is executed for 1,760 ms, then the billable duration is 1,760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GBs.
 
 Resource usage will be calculated for each function execution and aggregated in each hour as the hourly resource usage.
->
->- Currently, SCF resource usage is calculated by multiplying the memory configured for function by the actually triggered execution duration of function. Compared with the billing method of 100-ms upward aggregation, this billing method calculates lower overall resource usage and incurs fewer fees. For more information, please see [Billing Sample](https://intl.cloud.tencent.com/document/product/583/12285).
+>!
+>- Currently, SCF resource usage is calculated by multiplying the configured function memory size by the actually triggered execution duration of function. Compared with the billing method of 100-ms upward aggregation, this billing method calculates lower overall resource usage and incurs fewer fees. For more information, please see [Billing Sample](https://intl.cloud.tencent.com/document/product/583/12285).
 >- Due to issues such as uncertainty of computing resources where SCF runs, specific actions in code, and relevant network communications, the execution duration of the same function code may vary slightly when the code is triggered at different times.
 
-## Invocation volume fees
+## Invocation Fees
 
-**Invocation volume fees = (number of function invocations - free tier) * invocation unit price**
+**Invocation fees = (number of function invocations - free tier) * invocation unit price**
 
 Each function triggering and execution will be calculated as an invocation and aggregated in each hour as the hourly invocation volume. Fees will be charged **per 10,000 invocations**.
 
@@ -79,8 +80,25 @@ Each function triggering and execution will be calculated as an invocation and a
 Outbound traffic will be generated when resources are accessed over the public network in a function, such as uploading a file to an external storage space:
 - When the code writes files to the storage space provided on the public network, outbound traffic will be generated by sending files; when the code reads data or files from the storage space provided on the public network, outbound traffic will be generated only by sending requests but not by reading or downloading files.
 - If a function is configured with a VPC and writes data to a database in the VPC in its code, no outbound traffic will be generated by data writes.
-- For a function that uses an API Gateway trigger, **no function outbound traffic will be generated** by the data returned after the function is executed; the traffic generated by the data returned by API Gateway to the client will be calculated as the outbound traffic of and billed by API Gateway.
+- For a function that uses an API Gateway trigger, **no function outbound traffic will be generated** by the data returned after the function is executed; the traffic generated by the data returned by API Gateway to the client will be calculated as the outbound traffic of and billed by API Gateway. For billing rules of API Gateway traffic, please see [Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/628/11771).
 
-## Fees of Other Products
+## Idle Provisioned Concurrency Fees
 
-If you use other products such as CMQ, CKafka, API Gateway, and COS when using SCF, fees will be calculated according to the billing rules of the actually used products.
+**Idle provisioned concurrency fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price**
+
+The provisioned concurrency feature only charges small idle fees for the instances **that have been configured and started but are not in use**, while no additional fees are charged for the instances that have been configured and are in use. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. Idle concurrency is calculated in **GBs** (GB-second).
+
+SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances, and the idle fees are calculated by multiplying the number of idle instances by the configured version memory size. The shaded part in the figure below indicates the idle provisioned concurrency.	
+
+Number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0)
+
+Idle instance fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price
+
+![](https://main.qcloudimg.com/raw/cedec5e820f1ada548156cd382660b65.png)
+
+For example, if a function version with 128 MB memory has a provisioned concurrency quota of 12,800 MB (10 instances), and it has 8 concurrent instances in 10 seconds, then the number of idle instances is max(10 - 8, 0) = 2, and the idle instance fees are 2 * 128 MB * 10s * 0.00000847 USD/GBs = 0.00002118 USD.
+
+
+## Fees of Other Services
+
+If you use other services such as CMQ, CKafka, API Gateway, and COS when using SCF, fees will be calculated according to the billing rules of the actually used services.
