@@ -67,8 +67,8 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/237">云数据库 MariaDB</a></td>
 <td>云数据库 MariaDB 实例</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1042">分布式数据库 TDSQL</a></td>
-<td>分布式数据库 TDSQL 实例</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1042">TDSQL MySQL版</a></td>
+<td>TDSQL MySQL版 实例</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 <td>MongoDB 实例</td>
@@ -169,7 +169,7 @@
 <td>应用</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1055"> 游戏服务器引擎</a></td>
-<td><li>生承包</li><li>别名</li><li>游戏服务器舰队</li><li>游戏服务器会话队列</li></td>
+<td><li>生成包</li><li>别名</li><li>游戏服务器舰队</li><li>游戏服务器会话队列</li></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1072"> 游戏玩家匹配</a></td>
 <td><li>匹配Code</li><li>规则Code</li></td>
