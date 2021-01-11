@@ -1,5 +1,5 @@
 ## Overview
-Starting from August 3, 2020, TencentDB for TDSQL will lock instances with disk utilization of 150% or more to prevent data loss. Locked disks cannot be written to. Please organize your instance’s storage space, and clean up or expand in advance the disks that run the risk of being overused.
+Starting from August 3, 2020, TDSQL for MySQL will lock instances with disk utilization of 150% or more to prevent data loss. Locked disks cannot be written to. Please organize your instance’s storage space, and clean up or expand in advance the disks that run the risk of being overused.
 
 #### Disk space usage
 - Data space: the space which your data takes up.
