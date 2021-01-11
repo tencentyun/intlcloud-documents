@@ -10,10 +10,10 @@ Kubernetes Events contains information about the operations of Kubernetes cluste
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Choose **Cluster OPS** > **Feature Management** in the left sidebar to go to the **Feature Management** page.
 3. At the top of the **Feature Management** page, select the region and select **Elastic Cluster** as **Cluster Type**. On the right side of the cluster for which you want to enable event storage, click **Set**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/7cf4d24bb5e0e10d8102495c778b3e33.png)
+![](https://main.qcloudimg.com/raw/0451b3804d21152c49f9f2ada9e31356.png)
 4. On the **Configure Features** page, click **Edit** for event storage.
 5. On the **Event Storage** editing page, select **Enable Event Storage** and configure logsets and log topics, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/24ec7b1276b7c5752db54c54eeeddb43.png)
+![](https://main.qcloudimg.com/raw/9033f279626e24fed6ad1b26ad17d6b4.png)
 6. Click **Confirm** to enable event storage.
 
 
@@ -21,7 +21,7 @@ Kubernetes Events contains information about the operations of Kubernetes cluste
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Choose **Cluster OPS** > **Feature Management** in the left sidebar to go to the **Feature Management** page.
 3. At the top of the **Feature Management** page, select the region and select **Elastic Cluster** as **Cluster Type**. On the right side of the cluster for which you want to enable event storage, click **Set**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/7cf4d24bb5e0e10d8102495c778b3e33.png)
+![](https://main.qcloudimg.com/raw/ee7c560a062c1849ee5cdec1800bed95.png)
 4. On the **Configure Features** page, click **Edit** for event storage.
 5. On the **Event Storage** editing page, reselect logsets and log topics. Then, click **OK** to update the logsets and log topics.
 
@@ -30,15 +30,15 @@ Kubernetes Events contains information about the operations of Kubernetes cluste
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Choose **Cluster OPS** > **Feature Management** in the left sidebar to go to the **Feature Management** page.
 3. At the top of the **Feature Management** page, select the region and select **Elastic Cluster** as **Cluster Type**. On the right side of the cluster for which you want to enable event storage, click **Set**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/7cf4d24bb5e0e10d8102495c778b3e33.png)
+![](https://main.qcloudimg.com/raw/be47de0f415cfd0c4a7301194178b99f.png)
 4. On the **Configure Features** page, click **Edit** for event storage.
 5. On the **Event Storage** editing page, deselect **Enable Event Storage**, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/1b71e6bdbc862a44a3c32430f2bc1af3.png)
+![](https://main.qcloudimg.com/raw/2502c09e93dc2d150c22eb1a696a7cdb.png)
 6. Click **Confirm** to disable event storage.
 
 ### Viewing event in the CLS console
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. Select **Log Search** on the left side bar to go to the **Search and Analysis** page, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/b876944806657fd1b1f2eb26e065b542.png)
+![](https://main.qcloudimg.com/raw/d22f7efddfc73c53e254f5dccd39ed1a.png)
 3. Select the logset and log topic configured in [Event Storage](#open), set the **Showed Field** as needed, and click **Search and Analysis**. For more information, see [Log Analysis](https://intl.cloud.tencent.com/document/product/614/37803).
 >! When you enable event storage, the index will be enabled for your Topic by default.
