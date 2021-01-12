@@ -1,6 +1,6 @@
 ### AIT
 
-参见 [音视频字幕平台](https://intl.cloud.tencent.com/document/product/1049/38807)
+参见 [音视频字幕平台](https://intl.cloud.tencent.com/document/product/1049/38807#1447)
 
 
 
