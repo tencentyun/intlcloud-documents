@@ -1,10 +1,10 @@
 The billable items of LVB include the basic, value-added, and extended service fees, as shown below:
 
-![](https://main.qcloudimg.com/raw/67a295effc191c4f710d9e2622fa1b01.png)
+![](https://main.qcloudimg.com/raw/40b382f7218804c557fdb9e3ce47294c.png)
 
 - [Basic service fees](#base): incurred by live streaming resource consumption when LVB is used. You can switch between the traffic and peak bandwidth billing modes.
 - [Value-added service fees](#appreciation): incurred when value-added features such as LVB transcoding, recording, screencapturing, and porn detection are used. Such features are disabled by default and only incur fees when used.
-- [Extended service fees](#extensions): incurred by use of value-added features provided jointly by LVB and other Tencent Cloud services. Each Tencent Cloud service will be charged according to its respective billing rules.
+- [Extended service fees](#extensions): incurred when value-added features provided jointly by LVB and other Tencent Cloud services are used. Each Tencent Cloud service will be charged according to its respective billing rules.
 
 <span id="base"></span>
 ## Basic Service Fees
@@ -29,50 +29,50 @@ The billable items of LVB include the basic, value-added, and extended service f
 <table>
 <tr><th colspan=2 width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
 <tr>
-<td  rowspan="3">LVB transcoding</td>
+<td rowspan=3>LVB transcoding</td>
 <td>Standard transcoding</td>
 <td><ul style="margin:0">
 <li/>Using LVB standard transcoding will incur fees.
-<li/>The standard transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/document/product/267/31064">watermarking</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">standard transcoding</a>, or <a href="https://intl.cloud.tencent.com/zh/document/product/267/37665">stream mix</a> is used during live streaming.
-<li/>The fees are billed by <b>transcoding duration</b> according to the billing tier of the output live stream image dimensions.
+<li/>The standard transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/document/product/267/31064">watermarking</a>, <a href="https://intl.cloud.tencent.com/document/product/267/31071">standard transcoding</a>, or <a href="https://intl.cloud.tencent.com/document/product/267/37665">stream mix</a> is used during live streaming.
+<li/>The fees are billed by <b>the transcoding duration</b> according to the billing tier of the output live stream image dimensions.
 </ul></td>
-</td>
+<td>
 	<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding">Daily pay-as-you-go</a></li></ul>
 </td>
 </tr><tr>
 <td>Top speed codec transcoding</td>
 <td><ul style="margin:0">
 <li/>Using LVB top speed codec transcoding will incur fees.
-<li/>The transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/zh/document/product/267/31071#C_topspeed">top speed codec transcoding</a> is used.
-<li/>The fees are billed by <b>transcoding duration</b> according to the billing tier of the output live stream image dimensions.
-</ul></td>
-<li><a href="https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81">Daily pay-as-you-go</a></td>
+<li/>The top speed codec transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/document/product/267/31071#C_topspeed">top speed codec transcoding</a> is used.
+<li/>The fees are billed by <b>the transcoding duration</b> according to the billing tier of the output live stream image dimensions.
+</ul><td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding">Daily pay-as-you-go</a></td>
 </tr><tr>
 <td>Audio transcoding</td>
-</td>
+<td>
 <li/>Using LVB audio transcoding will incur fees.
-<li/>The audio transcoding fees will be charged when <a href="https://intl.cloud.tencent.com/document/product/267/31064">audio transcoding</a>, audio stream mix, or audio/video stream separation is used.
-<li/>The fees are billed by <b>audio transcoding duration</b>.
-</td>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding">Daily pay-as-you-go</a></li></td>
+<li/>The audio transcoding fees will be charged when <a href="https://intl.cloud.tencent.com/document/product/267/31071#creating-pure-audio-transcoding-template">audio transcoding</a>, audio stream mix, or audio/video stream separation is used.
+<li/>The fees are billed by <b>the audio transcoding duration</b>.
+<td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#audio-transcoding">Daily pay-as-you-go</a></li></td>
 </tr><tr>
 	<td colspan=2>Global acceleration</td>
-	</td>
-		<li></li>Downstream traffic and bandwidth will be generated when LVB is connecting users and global acceleration origin servers.
+	<td>
+		<li>Downstream traffic and bandwidth will be generated when LVB is connecting users to global acceleration origin servers.</li>
 		<li>LVB offers two billing methods: bill-by-bandwidth and bill-by-traffic</b>.</li>
 	</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/2818#global-acceleration">Daily pay-as-you-go</a></td>
 </tr>
     <tr>
 	<td colspan=2>LVB recording</td>
-	</td>
+	<td>
 		<li>During LVB recording, a recording file is generated based on a recording template and is stored into VOD.</li>
 		<li>The services fees incurred by LVB recording are <b>billed by the peak number of concurrent LVB recording channels</b>.</li>
 	</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording">Monthly pay-as-you-go</a></td>
 </tr><tr>
 <td colspan=2>LVB screencapturing</td>
-</td>
+<td>
 	<li>During LVB screencapturing, screenshots of a live stream are captured at scheduled time points according to a template and are stored into COS.</li>
 	<li>The service fees incurred by screencapturing are <b>billed by the number of screenshots</b>. The first 1,000 screenshots in every month are free of charge.</li>
 </td>
