@@ -1,19 +1,18 @@
 Elastic Kubernetes Service (EKS) bills a pod by multiplying the [resource specification](https://intl.cloud.tencent.com/document/product/457/34057) of the pod by the **Unit price of the resource** and **Running time**. The following table shows the unit prices of the CPU and memory resources.
 
-| Billing Item | Original Price | Current Discount | Discount Price |
-|---------|---------|---------|---------|
-| CPU | 0.000004976 USD per core per second | 20% | 0.000003981 USD per core per second |
-| Memory | 0.000002073 USD per GiB per second | 20% | 0.000001658 USD per GiB per second |
+| Billing Item | Price (per second) |  Price (per hour) |
+|---------|---------|---------|
+| CPU | 0.000004976 USD per core per second |  0.0179 USD per core per hour |
+| Memory | 0.000002073 USD per GiB per second |  0.0075 USD per GiB per hour |
 
-> The above offer is valid until 00:00:00 on May 15, 2020. 
 
 #### Star Lake AMD
 Based on Tencent Cloud’s self-developed Star Lake servers, EKS provides reliable, secure, and stable high performance. For more information, see [CVM Standard SA2 Introduction](https://intl.cloud.tencent.com/document/product/213/11518#SA2).
 
-| Billing Item | Price per Second | Price per Hour |
+| Billing Item | Price (per second) | Price (per hour) |
 |---------|---------|---------|
-| CPU | 0.00000219 USD per core per second | 0.0079 USD per core per second |
-| Memory | 0.00000127 USD per GiB per second | 0.0046 USD per GiB per second |
+| CPU | 0.00000219 USD per core per second | 0.0079 USD per core per hour |
+| Memory | 0.00000127 USD per GiB per second | 0.0046 USD per GiB per hour |
 
 
 ## Running Time
