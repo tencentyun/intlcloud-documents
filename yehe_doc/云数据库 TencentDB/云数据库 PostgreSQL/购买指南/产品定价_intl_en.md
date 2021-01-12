@@ -25,8 +25,7 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 #### Memory price
 
 |   Tier   | Guangzhou, Shanghai, Beijing<br>Nanjing, Tianjin, Shenzhen, Chengdu<br>(USD/GB/hr)  | Hong Kong (China)<br>(USD/GB/hr)  | Silicon Valley, Virginia, Frankfurt<br>(USD/GB/hr)  |  Moscow, Seoul, Bangkok<br>(USD/GB/hr) | Singapore (USD/GB/hr) |
-
-| :------: |:---------------: | :--------------: | :--------------: |::---------------: |:---------------: |
+| ------ |--------------- | -------------- | -------------- |--------------- |--------------- |
 | Tier 1 |          0.052        |         0.069        |      0.055        | 0.056  | 0.07 |
 | Tier 2 |           0.039        |         0.052        |      0.041         | 0.042  | 0.053 |
 | Tier 3 |             0.026         |         0.034        |      0.028      | 0.028  | 0.035 |
