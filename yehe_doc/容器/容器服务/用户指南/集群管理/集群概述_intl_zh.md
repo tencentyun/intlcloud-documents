@@ -21,7 +21,7 @@ TKE 容器集群支持下述类型：
 
 腾讯云提供 Master、Etcd 全部托管的 Kubernetes 集群管理服务。
 该模式下 Kubernetes 集群的 Master 和 Etcd 会由腾讯云技术团队集中管理和维护。您只需要购置集群运行负载所需的工作节点即可，不需要关心集群的管理面。
-> 
+>!
 > - Master、Etcd 的托管当前免费，但是您依然要为集群的工作节点、持久化存储以及服务绑定的负载均衡等服务付费。
 > - 该模式下的 Master、Etcd 不属于用户资源，您无法修改 Master 和 Etcd 的部署规模和服务参数。如需修改 Master 和 Etcd 的部署规模和服务参数，请使用 [独立部署模式集群](#IndependentDeployment)。
 > - 该模式下，因为 Master 依然存在，即使您删除集群的全部工作节点，集群依然会不断尝试运行您未删除的工作负载和服务。在此过程中，可能会产生费用，如果您需要终止集群服务和费用，请直接删除该集群。
@@ -57,8 +57,8 @@ TKE 容器集群支持下述类型：
   - 请不要修改任何节点的 docker 版本。
   - 请不要修改任何节点操作系统的 kernel、nfs-utils 等相关组件。
 
-> 
-> - 核心组件：kube-APIserver，kube-scheduler，kube-controller-manager，tke-tools，systemd，cluster-contrainer-agent。
+>?
+> - 核心组件：kube-APIserver，kube-scheduler，kube-controller-manager，tke-tools，systemd，cluster-container-agent。
 > - 核心组件配置参数：kube-APIserver 参数，kube-scheduler 参数，kube-controller-manager 参数。
 > - 集群内部核心资源（包括但不限于）：hpa endpoint，master service account，kube-dns，auto-scaler，master cluster role，master cluster role binding。
 
