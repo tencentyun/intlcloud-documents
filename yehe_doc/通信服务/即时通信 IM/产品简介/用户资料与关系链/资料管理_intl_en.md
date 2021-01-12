@@ -30,7 +30,7 @@ A profile is a set of data that describes user properties. IM’s profile system
 			</tr>
 			<tr>
 				<td>Read permission</td>
-				</td>
+				<td>
 					Readable by app<br>
 					Readable by app admin<br>
 				</td>
@@ -38,7 +38,7 @@ A profile is a set of data that describes user properties. IM’s profile system
 			</tr>
 			<tr>
 				<td>Write permission</td>
-				</td>
+				<td>
 					Writable by app<br>
 					Writable by app admin<br>
 				</td>
@@ -46,6 +46,7 @@ A profile is a set of data that describes user properties. IM’s profile system
 			</tr>
 		</tbody>
 	</table>
+
 
 ## Standard Profile Fields
 
@@ -72,7 +73,7 @@ Currently, IM supports the following standard profile fields:
 				<td>string</td>
 				<td>Gender</td>
 				<td>Yes</td>
-				</td>
+				<td>
 					Gender_Type_Unknown: the gender is not set<br>
 					Gender_Type_Female: female<br>
 					Gender_Type_Male: male<br>
@@ -90,7 +91,7 @@ Currently, IM supports the following standard profile fields:
 				<td>string</td>
 				<td>Location</td>
 				<td>Yes</td>
-				</td>
+				<td>
 					The maximum length is 16 bytes. Recommended usage:<br>
 					The app locally defines a set of number-location mappings.<br>
 					The backend stores four uint32_t numbers.<br>
@@ -112,7 +113,7 @@ Currently, IM supports the following standard profile fields:
 				<td>string</td>
 				<td>Approval method for new friend requests</td>
 				<td>Yes</td>
-				</td>
+				<td>
 					AllowType_Type_NeedConfirm: manually accept new friend requests.<br>
 					AllowType_Type_AllowAny: automatically accept all new friend requests.<br>
 					AllowType_Type_DenyAny: reject all new friend requests.<br>
@@ -137,7 +138,7 @@ Currently, IM supports the following standard profile fields:
 				<td>uint32</td>
 				<td>Message settings</td>
 				<td>Yes</td>
-				</td>
+				<td>
 					Flag bit:<br>
 					Bit 0: set to 0 to receive messages, and set to 1 to block messages<br>
 				</td>
@@ -147,7 +148,7 @@ Currently, IM supports the following standard profile fields:
 				<td>string</td>
 				<td>Admin forbids tagging new friend requests</td>
 				<td>Yes</td>
-				</td>
+				<td>
 					AdminForbid_Type_None: the default value, and sending new friend requests is allowed.<br>
 					AdminForbid_Type_SendOut: sending new friend requests is forbidden.<br>
 				</td>
@@ -168,6 +169,7 @@ Currently, IM supports the following standard profile fields:
 			</tr>
 		</tbody>
 	</table>
+
 
 ## Custom Profile Fields
 Custom profile fields are the user data set by each app according to its own business needs. By using custom profile fields, an app can add additional data to user profiles and perform read and write operations through existing APIs.
