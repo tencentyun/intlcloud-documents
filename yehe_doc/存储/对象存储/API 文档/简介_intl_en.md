@@ -12,7 +12,21 @@ COS adopts a data transfer framework different from that of Tencent Cloud. There
 ## API Overview
 
 For more information about the APIs supported by COS, please see [Operation List](https://intl.cloud.tencent.com/document/product/436/10111).
-
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                You are advised to use API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetService&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## COS Glossary
 Terms and concepts you may see when using the APIs are described as follows:
@@ -47,4 +61,4 @@ To use the Tencent COS APIs, take the following steps:
 2. Create a bucket in the [COS console](https://console.cloud.tencent.com/cos5).
 3. In the CAM console, obtain `APPID` at [Manage API Key](https://console.cloud.tencent.com/capi). Then, create `SecretId` and `SecretKey`.
 4. Write a request signature algorithm program (or use any server SDK). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
-5. Compute the signature and call APIs to perform operations.
+5. Calculate the signature and call APIs to perform operations.
