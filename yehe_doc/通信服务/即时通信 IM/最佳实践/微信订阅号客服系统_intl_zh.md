@@ -8,9 +8,9 @@
 3. 客服人员回复“5月份会上新，敬请关注！”，消息经过腾讯云 IM 系统和微信传输推送给客户。
 
 客户侧效果图如下：
-![](https://main.qcloudimg.com/raw/155fe5984115665314d9305c53b0a619.jpg)
+![](https://main.qcloudimg.com/raw/4e6c7a4dc41c2691c40cdb448b69c78d.png)
 坐席客服侧效果图如下：
-![](https://main.qcloudimg.com/raw/f69848510053e9ee1ebf046854229fd6.png)
+![](https://main.qcloudimg.com/raw/f2798df649830b2deca22a7449c7eb97.png)
 场景流程图如下：
 ![](https://main.qcloudimg.com/raw/086439320c042ba4f03322b825ec38d1.jpg)
 
