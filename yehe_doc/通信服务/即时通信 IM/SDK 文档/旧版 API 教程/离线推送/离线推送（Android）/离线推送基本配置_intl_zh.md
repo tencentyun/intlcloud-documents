@@ -52,6 +52,7 @@
 
 >!
 > - 对于已经退出登录（主动登出或者被踢下线）的用户，不会收到任何消息通知。
+> - 目前，离线推送只提供 [普通聊天消息](https://intl.cloud.tencent.com/document/product/1047/36401) 进行消息提醒，暂不提供对 [系统消息](https://intl.cloud.tencent.com/document/product/1047/36401) 的消息提醒。
 
 ## IM SDK 离线推送基本配置
 ### 设置全局离线推送配置
