@@ -52,7 +52,7 @@ Here, “offline” means that the app is closed by the system or user without l
 
 >!
 > - Users who have logged out normally or have been forced offline will not receive any message notifications.
-> - Currently, offline push notifications are only supported for [ordinary chat messages](/doc/product/269/%E6%B6%88%E6%81%AF%E6%94%B6%E5%8F%91%EF%BC%88Android%20SDK%EF%BC%89#1-.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81), not for [system messages](/doc/product/269/消息收发(Android%20SDK)#.E7.B3.BB.E7.BB.9F.E6.B6.88.E6.81.AF).
+> - Currently, offline push notifications are only supported for [ordinary chat messages](https://intl.cloud.tencent.com/document/product/1047/36401), not for [system messages](https://intl.cloud.tencent.com/document/product/1047/36401).
 
 ## Basic Configuration of IM SDK Offline Push
 ### Setting global offline push configuration
