@@ -1,43 +1,45 @@
-## Overview
+# Overview
 
-COS statistics such as read and write requests and traffic are collected and displayed by [Cloud Monitor](https://intl.cloud.tencent.com/doc/product/248). You can view detailed monitoring data in the Cloud Monitor Console.
+COS data (such as traffic and the number of read/write requests) is collected and displayed according to [Basic Cloud Monitor](https://intl.cloud.tencent.com/document/product/248). Therefore, you can go to the COS or Cloud Monitor console to view COS monitoring data in detail.
 
->This document describes how to get statistics in the COS Console. For more information on how to use Cloud Monitor APIs to get more detailed data, see [Cloud Monitoring product documentation](https://intl.cloud.tencent.com/document/product/248).
+>?This document describes how to obtain statistics in the COS console. You can call Cloud Monitor APIs to obtain more detailed data. For more information, please see [Documentation of Cloud Monitor](https://intl.cloud.tencent.com/document/product/248).
 
 ## Basic Features
 
-Cloud Monitor provides the following entries for COS to implement monitoring and alarming.
+Cloud Monitor provides the following modules for COS to implement monitoring and alarming.
 
-| Module | Capabilities | Main Features |
+| Module | Capability | Main Feature |
 | ---------- | ---------------------------------------- | ------------------------------------------------------------ |
 | Monitoring overview | Displays the current status of the product | Provides general overview, alarm overview, and overall monitoring information |
-| Alarm management | Supports alarm management and configuration | Supports creating new COS alarming policies, custom messages, and trigger templates |
+| Alarm management | Supports alarm management and configuration | Supports creating new COS alarm policies, custom messages, and trigger templates |
 | Monitoring platform | Monitors traffic and displays data of user-defined monitoring metrics | Displays your overall bandwidth information and allows you to customize monitoring metrics and data to be reported |
-| Cloud product monitoring | Displays the COS bucket monitoring view | Allows you to query the current monitoring views and data such as read and write requests and traffic for each bucket |
+| Cloud product monitoring | Displays the COS bucket monitoring view | Allows you to query the current monitoring views and data such as read/write requests and traffic for each bucket |
 
 ## Use Cases
 
-- **Daily management**: you can log in to the Cloud Monitor Console to view the running status of COS in real time.
-- **Troubleshooting**: you will receive alarm notifications when a monitoring metric reaches the alarming threshold, allowing you to quickly get notifications for exceptions, check the causes, and fix them in a timely manner.
+- **Daily management**: You can log in to the Cloud Monitor console to view the running status of COS in real time.
+- **Troubleshooting**: You can receive alarm notifications when the data of a monitoring metric reaches the threshold. It allows you to quickly notify the exceptions, find out the causes, and fix the issues.
 
-## Viewing in the Console
+## Setting and Querying via Console
 
-You can log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/product/COS) to view the monitoring data for COS.
+You can create an alarm policy for COS in the [Cloud Monitor console](https://console.cloud.tencent.com/monitor). If the data of a monitoring metric reaches the specified threshold, you will receive an alarm notification. For detailed directions, please see [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
 
-## Calling APIs
+You can go to **Cloud Product Monitoring** > [Cloud Object Storage](https://console.cloud.tencent.com/monitor/product/COS) to view the COS monitoring data (including the monitoring data of all buckets, health status, number of alarm policies, and more). Alternatively, you can go to the COS console to view the data. For detailed directions, please see [Viewing Data Overview](https://intl.cloud.tencent.com/document/product/436/36542) and [Querying Monitoring Data](https://intl.cloud.tencent.com/document/product/436/31634).
 
-You can view the monitoring data for COS by calling the corresponding APIs. Below are the monitoring metrics for COS.
+## Querying Monitoring Data via APIs
 
-### Storage 
+You can call APIs to view the COS monitoring data. The following table describes the COS monitoring metrics:
+
+#### Storage metrics
 
 | Metric Name | Description | Unit |
 | ---------------------- | ----------------- | ---- |
-| std_storage | Standard storage - storage capacity | MB |
-| sia_storage | Standard_IA storage - storage capacity | MB |
+| std_storage | STANDARD storage - storage capacity | MB |
+| sia_storage | STANDARD_IA storage - storage capacity | MB |
 | nel_storage | Nearline Storage - storage capacity | MB |
-| arc_storage | Archive storage - storage capacity | MB |
+| arc_storage | ARCHIVE storage - storage capacity | MB |
 
-### Traffic
+#### Traffic metrics
 
 | Metric Name | Description | Unit |
 | ---------------------- | ------------ | ---- |
@@ -46,37 +48,38 @@ You can view the monitoring data for COS by calling the corresponding APIs. Belo
 | cdn_origin_traffic | CDN origin-pull traffic | B |
 | inbound_traffic | Upload traffic | B |
 
-### Data Retrieval
+#### Data retrieval metrics
 
 | Metric Name | Description | Unit |
 | ---------------------- | ------------ | ---- |
-| std_retrieval | Standard data retrieval | B |
-| sia_retrieval | Standard_IA data retrieval | B |
+| std_retrieval | STANDARD data retrieval | B |
+| sia_retrieval | STANDARD_IA data retrieval | B |
 | nel_retrieval | Nearline data retrieval | B |
 
-### Requests
+#### Request metrics
 
 | Metric Name | Description | Unit |
 | ---------------------- | -------------- | ---- |
-| std_read_requests | Standard storage read requests | / |
-| std_write_requests | Standard storage write requests | / |
-| ia_read_requests | Standard_IA storage read requests | / |
-| ia_write_requests | Standard_IA storage write requests | / |
-| nl_read_requests | Nearline storage read requests | / |
-| nl_write_requests | Nearline storage write requests | / |
+| std_read_requests | STANDARD storage read requests | times |
+| std_write_requests | STANDARD storage write requests | times |
+| ia_read_requests | STANDARD_IA storage read requests | times |
+| ia_write_requests | STANDARD_IA storage write requests | times |
+| nl_read_requests | Nearline storage read requests | times |
+| nl_write_requests | Nearline storage write requests | times |
 
-### Return Codes
+#### Return code metrics
 
 | Metric Name | Description | Unit |
 | ---------------------- | ---------- | ---- |
-| 2xx_response | 2xx status codes | / |
-| 3xx_response | 3xx status codes | / |
-| 4xx_response | 4xx status codes | / |
-| 5xx_response | 5xx status codes | / |
+| 2xx_response | 2xx status codes | times |
+| 3xx_response | 3xx status codes | times |
+| 4xx_response | 4xx status codes | times |
+| 5xx_response | 5xx status codes | times |
 
-## Monitoring Descriptions
+## Monitoring Description
 
-- **Monitoring interval**: Cloud Monitor supports multiple types of monitoring intervals, including monitoring data in real time, in the past 24 hours, in the past 7 days, and in user-specified period, with time granularity of 1 minute or 5 minutes.
-- **Data retention**: monitoring data with 1-minute, 5-minute, and 1-hour granularity will be retained for 31 days; monitoring data with 1-day granularity will be retained for half a year.
-- **Alarm display**: Cloud Monitor integrates the monitoring data of COS and displays the data entries in intuitive graphs, making it easier for you to stay informed of the overall status.
-- **Alarm setting**: you can set alarm-triggering thresholds for the metrics. Cloud Monitor will send notifications to specified recipients when the alarm is triggered. For more information, see [https://intl.cloud.tencent.com/doc/product/248/6126).
+- **Monitoring interval**: Cloud Monitor supports multiple monitoring intervals, including monitoring data in real time, in the past 24 hours, in the past 7 days, and in the user-specified period, with time granularity of 1 minute, 5 minutes, 1 hour, and 1 day.
+- **Data storage**: 1-minute monitoring data can be stored for 15 days, 5-minute monitoring data for 31 days, 1-hour data for 93 days, and 1-day monitoring data for 186 days.
+- **Alarm display**: Cloud Monitor integrates the monitoring data of COS and displays the data in graphs. Alarm notifications can be sent to you according to the predefined alarm metrics of your product. In this way, you can stay informed of the overall running status.
+- **Alarm settings**: You can set the threshold for the monitoring metrics. When the monitoring data meets the alarm condition that is set, Cloud Monitor will send the alarm notifications to the specified users. For more information, please see [Cloud Monitor Overview](https://intl.cloud.tencent.com/document/product/248/38910) and [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
+

@@ -39,13 +39,19 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
       <td>iOS 11 or above</td>
       <td><a href="https://apps.apple.com/cn/app/id1469323992">iOS</a></td>
    </tr>
+   <tr>
+      <td>Web Edition</td>
+      <td>Web</td>
+      <td>Browsers such as Chrome, FireFox, Safari, and IE10+</td>
+      <td><a href="https://cosbrowser.cloud.tencent.com/web">Web</a></td>
+   </tr>
 </table>
 
 ## COSBrowser for Desktop
 
 COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
 
->COSBrowser for desktop uses a system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
+> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
 >
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
@@ -79,7 +85,7 @@ COSBrowser for desktop has the following features:
 | [Setting the number of parts to be transferred](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of parts for multipart upload or download |
 | [Setting the number of retries upon transfer failure](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Sets the number of retries upon upload or download failure |
 | [Setting upload check](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Double-checks files uploaded to a bucket |
-| [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Calculates the MD5 checksums  of files uploaded to a bucket and adds them to custom headers |
+| [Setting MD5 checksum calculation during upload](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Calculates the MD5 checksums of files uploaded to a bucket and adds them to custom headers |
 | [Viewing a local log](https://intl.cloud.tencent.com/document/product/436/32565#sets) | Saves the record of operations on COSBrowser in the form of a local log |
 
 ## COSBrowser Mobile Version
@@ -102,17 +108,18 @@ COSBrowser for mobile devices has the following features:
 | [Searching files](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches files in a bucket through prefix search |
 | [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | Searches existing buckets |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | Views the basic information and domain name of your bucket |
-| [Creating a bucket](https://intl.cloud.tencent.com/document/product/436/32565) | Creates a new bucket |
+| [Creating a bucket](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | Creates a new bucket |
 | [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
-| [Viewing storage pack usage](https://intl.cloud.tencent.com/document/product/436/32566#package) | Views the usage of your current storage pack                          |
+| [Viewing storage pack](https://intl.cloud.tencent.com/document/product/436/32566#package)          | Views the usage of your current resource pack                          |
 
 ## Changelog
 
 - Desktop Version changelog: [changelog](https://github.com/tencentyun/cosbrowser/blob/master/changelog.md).
 - Mobile Version changelog: [changelog_mobile](https://github.com/tencentyun/cosbrowser/blob/master/changelog_mobile.md).
 
-## Feedback and Suggestions
+## Feedback and suggestions
 
 If you have any questions or suggestions during your use of COSBrowser, please feel free to give us your feedback:
 
 - Feedback on Desktop Version: [issues](https://github.com/tencentyun/cosbrowser/issues).
+- Feedback on Mobile Version: [issues_mobile](https://support.qq.com/embed/phone/67467).
