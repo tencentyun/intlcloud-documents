@@ -23,12 +23,12 @@
 >! 函数发布、更新失败不会影响已正常发布的函数版本的使用，调用函数时会正常调用更新之前的函数内容。
 
 函数创建及更新的状态扭转。如下图所示：
-![](https://main.qcloudimg.com/raw/7984764b424406ae65631494766eb8f6.png)
+![](https://main.qcloudimg.com/raw/a49f5ac2e5c0340c87e6cd3aaa17ffe7.png)
 
 
 
 函数发版的状态扭转。如下图所示：
-![](https://main.qcloudimg.com/raw/240f2ede623e38d21f125ce89aa35851.png)
+![](https://main.qcloudimg.com/raw/e4ee43d6c507a14b7bd5b2247af83bed.png)
 
 
 
