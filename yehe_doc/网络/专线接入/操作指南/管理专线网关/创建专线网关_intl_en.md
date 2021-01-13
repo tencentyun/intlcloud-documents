@@ -1,16 +1,15 @@
 This document describes how to create a direct connect gateway and provides information on the inbound route.
 
 ## Prerequisites
-
 - You have applied for a connection as instructed in [Applying for Connection](https://intl.cloud.tencent.com/document/product/216/19244).
 - You have built a VPC as instructed in [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
 ## Directions
-
 1. Log in to the [Direct Connect Gateway console](https://console.cloud.tencent.com/vpc/dcgw?rid=1).
 2. Select a region and VPC at the top of the **Direct Connect Gateway** page, and click **+New**.
-3. Complete the configurations in the pop-up window and click **OK**.	 
-
+   ![](https://main.qcloudimg.com/raw/5f14dab7972ba2d2843006343b3e15bb.png)
+3. Complete the configurations in the pop-up window and click **OK**.
+   ![](https://main.qcloudimg.com/raw/f854c75bcd8681a530766862e5711eb7.png)
 <table>
 <tr>
 <th width="15%">Field</th>
@@ -18,7 +17,7 @@ This document describes how to create a direct connect gateway and provides info
 </tr>
 <tr>
 <td>Name</td>
-<td>The name of your direct connect gateway</td>
+<td>The name of the direct connect gateway</td>
 </tr>
 <tr>
 <td>Associate Network</td>
@@ -39,15 +38,13 @@ This document describes how to create a direct connect gateway and provides info
 </table>
 
 ## Inbound Routes
-
-As shown in the Direct Connect network architecture, both the creation time of the direct connect gateway and dedicated tunnel mode will affect the destination IP range of the inbound route (from your IDC to a Tencent Cloud VPC). For more information, please see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
-
+As shown in the Direct Connect network architecture, both the creation time of the direct connect gateway and dedicated tunnel mode will affect the destination of the inbound route (from your IDC to a Tencent Cloud VPC). For more information, please see [Direct Connect Gateway Overview](https://intl.cloud.tencent.com/document/product/216/38746).
 <table>
  <thead>
   <td>Gateway Type</td>
   <td>Creation Time</td>
   <td>Dedicated Tunnel Mode</td>
-  <td>IDC Route to Tencent Cloud</td>
+  <th>IDC Routes to Tencent Cloud</th>
  </thead>
  <tbody>
  <tr>
@@ -72,7 +69,7 @@ As shown in the Direct Connect network architecture, both the creation time of t
   <td>The IDC automatically obtains the subnet CIDR block based on the BGP protocol.</td>
  </tr>
  <tr>
-  <td rowspan="2" >After 00:00:00 on September 15, 2020</td>
+  <td rowspan="2">After 00:00:00 on September 15, 2020</td>
   <td>Static</td>
   <td>The inbound routing policy is configured in the local router.</td>
  </tr>
@@ -81,4 +78,6 @@ As shown in the Direct Connect network architecture, both the creation time of t
   <td>The IDC automatically obtains the VPC CIDR block based on the BGP protocol.</td>
 </tbody></table>
 
+## Subsequent Operations
+If you create a CCN-based direct connect gateway, you need to add IDC IP ranges to the direct connect gateway for communication. For more information, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
 
