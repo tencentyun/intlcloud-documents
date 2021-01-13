@@ -2,7 +2,7 @@
 ### Add-on description
 
 DeScheduler is a plug-in provided by TKE based on the [DeScheduler](https://github.com/kubernetes-sigs/descheduler) Kubernetes native community in order to implement rescheduling based on actual node loads. After it is installed in a TKE cluster, this plug-in will work together with Kube-scheduler to monitor high-load nodes in the cluster in real time and drain low-priority pods. We recommend that you use it together with the TKE [Dynamic Scheduler add-on](https://intl.cloud.tencent.com/document/product/457/39119) to ensure cluster load balancing in multiple dimensions. 
-This plug-in relies on the Prometheus monitoring component and relevant rule configurations. We recommend that you read [Dependency Deployment](#DeScheduler) carefully before installing this plug-in to prevent plug-in operation failures.
+This plug-in relies on the Prometheus monitoring component and relevant rule configurations. We recommend that you read [Dependency Deployment](#Dependency-deployment) carefully before installing this plug-in to prevent plug-in operation failures.
 
 
 
@@ -53,7 +53,7 @@ Therefore, Tencent Cloud TKE launched DeScheduler, which performs rescheduling b
 ### Prometheus data query address
 
 
->! To ensure that the add-on can pull the required monitoring data and the scheduling policy can take effect, please configure the monitoring data collection rule in accordance with the directions of **[Dependency Deployment](#DeScheduler)** > **Prometheus File Configuration**.
+>! To ensure that the add-on can pull the required monitoring data and the scheduling policy can take effect, please configure the monitoring data collection rule in accordance with the directions of **[Dependency Deployment](#Dependency-deployment)** > **Prometheus File Configuration**.
 
 - If you use a self-built Prometheus instance, directly enter the data query URL (HTTPS/HTTPS).
 - If you use a managed Prometheus instance, select the managed instance ID, and the system will automatically resolve the ID into the corresponding data query URL.
@@ -70,7 +70,7 @@ If the average CPU utilization or average memory usage of a node over the past 5
 ### Dependency deployment
 
 The DeScheduler add-on relies on the actual load of nodes at the current moment and over a past period to make scheduling decisions. It requires monitoring components such as Prometheus to obtain actual node load information from the system. Before you use the DeScheduler add-on, we recommend that you adopt self-built Prometheus monitoring or TKE cloud native monitoring.
-#### Self-built \sPrometheus\s monitoring service
+#### Self-built Prometheus monitoring service
 ##### Deploying node-exporter and Prometheus
 
 We use node-exporter to monitor node metrics. You can deploy node-exporter and Prometheus based on your own requirements.
@@ -140,19 +140,19 @@ global:
    scrape_interval: 30s
    external_labels:
 rule_files:
-- /etc/prometheus/rules/*.yml # /etc/prometheus/rules/*.yml is the file that defines the rules.
+ - /etc/prometheus/rules/*.yml # /etc/prometheus/rules/*.yml is the file that defines the rules.
 ```
 2. Copy the rules configuration to a file (such as de-scheduler.yaml) and place the file in the `/etc/prometheus/rules/` directory of the above Prometheus container.
 3. Reload the Prometheus server to obtain the metrics needed by the Dynamic Scheduler from Prometheus.
 >? Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
 
-#### Cloud native monitoring \sPrometheus
+#### Cloud native monitoring Prometheus
 1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
 2. Create a cloud native monitoring Prometheus instance under the same VPC as the target cluster and associate it with the user cluster, as shown in the figure below:
    ![](https://main.qcloudimg.com/raw/44979847793b5c363e440b9d8d7e29f3.png)
 3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node, as shown in the figure below:
    ![](https://main.qcloudimg.com/raw/baef0cd5cd292e4496241a9c8a4463ec.png)
-4. Set the Prometheus aggregation rules. The rules are the same as the aggregation rules configured in the above [self-built Prometheus monitoring services](#rules). The rules take effect immediately after being saved, and the server need not be reloaded.
+4. Set the Prometheus aggregation rules. The rules are the same as the aggregation rules configured in the above [self-built Prometheus monitoring services](#Self-built-Prometheus-monitoring-service). The rules take effect immediately after being saved, and the server need not be reloaded.
 
 
 
@@ -163,7 +163,7 @@ rule_files:
 2. On the "Cluster Management" page, click the ID of the target cluster to go to the cluster details page.
 3. In the left sidebar, click **Add-on Management** to go to the "Add-on List" page.
 4. Click **Create** on the "Add-on List" page and select **Descheduler** on the "Create Add-on" page.
-5. Click **Parameter Configurations** and set the parameters according to [Add-on Parameter Description](#parameter).
+5. Click **Parameter Configurations** and set the parameters according to [Add-on Parameter Description](#Add-on-Parameter-Description).
 6. Click **Done**. After the add-on is installed successfully, DeScheduler can run normally, without the need for extra configuration.
 7. If you need to drain workloads (such as statefulset, deployment, and other objects), you can set Annotation as follows:
 ```plaintext
