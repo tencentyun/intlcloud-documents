@@ -204,7 +204,7 @@ pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete     
 
 
 
-
+<span id = "case3"></span>
 ### Case 3: create snapshots and use them to restore volumes
 
 
@@ -234,6 +234,7 @@ $ kubectl get volumesnapshotclass
 NAME            DRIVER                      DELETIONPOLICY   AGE
 cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
 ```
+<span id = "step"></span>
 3. This document uses the snapshot name `new-snapshot-demo` as an example in the following YAML to create a VolumeSnapshot. See the sample code below:
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
@@ -289,7 +290,7 @@ status:
 
 #### Restoring volumes from a snapshot (CBS)
 
-1. This document uses the VolumeSnapshot object, named `new-snapshot-demo` and created in the preceding [step](#in-the-following-YAML), as an example to show the process for restoring a volume from the snapshot. See the sample code below:
+1. This document uses the VolumeSnapshot object, named `new-snapshot-demo` and created in the preceding [step](#step), as an example to show the process for restoring a volume from the snapshot. See the sample code below:
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
