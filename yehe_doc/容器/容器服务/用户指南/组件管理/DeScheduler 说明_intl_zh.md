@@ -45,7 +45,7 @@ DeScheduler 通过重调度来解决集群现有节点上不合理的运行方�
 DeScheduler  基于 [社区版本 Descheduler](https://github.com/kubernetes-sigs/descheduler) 的重调度思想，定期扫描各个节点上的运行 Pod，发现不符合策略条件的进行驱逐以进行重调度。社区版本 DeScheduler  已提供部分策略，策略基于 APIServer 中的数据，例如 `LowNodeUtilization` 策略依赖的是 Pod 的 request 和 limit 数据，这类数据能够有效均衡集群资源分配、防止出现资源碎片。但社区策略缺少节点真实资源占用的支持，例如节点 A 和 B 分配出去的资源一致，由于 Pod 实际运行情况，CPU 消耗型和内存消耗型不同，峰谷期不同造成两个节点的负载差别巨大。
 
 因此，腾讯云 TKE 推出 DeScheduler，底层依赖对节点真实负载的监控进行重调度。通过 Prometheus 拿到集群 Node 的负载统计信息，根据用户设置的负载阈值，定期执行策略里面的检查规则，驱逐高负载节点上的 Pod。
-![](https://main.qcloudimg.com/raw/9e37814fd4f4831217b33b35ce72f03b.png)
+![](https://main.qcloudimg.com/raw/4f515486529dad48e8bbaa3a459e2fb8.png)
 
 
 ## 组件参数说明
@@ -149,9 +149,9 @@ rule_files:
 #### 云原生监控\sPrometheus
 1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
 2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。如下图所示：
-   ![](https://main.qcloudimg.com/raw/bafb027663fbb3f2a5063531743c2e97.jpg)
+   ![](https://main.qcloudimg.com/raw/44979847793b5c363e440b9d8d7e29f3.png)
 3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。如下图所示：
-   ![](https://main.qcloudimg.com/raw/e35d4af7eeba15f6d9da62ce79176904.png)
+   ![](https://main.qcloudimg.com/raw/baef0cd5cd292e4496241a9c8a4463ec.png)
 4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。规则保存后立即生效，无需重新加载 server。
 
 
