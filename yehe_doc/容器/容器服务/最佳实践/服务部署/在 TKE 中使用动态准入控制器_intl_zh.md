@@ -16,9 +16,10 @@ kube-apiserver -h | grep enable-admission-plugins
 ![image-20201117102438615](https://main.qcloudimg.com/raw/534694e9a6976d0ec18d2e1074932126.png)
 
 ### 签发证书
-为确保动态准入控制器调用可信任的 Webhook 服务端，须通过 HTTPS 调用 Webhook 服务（TLS 认证），则需为 Webhook 服务端颁发证书，并且在注册动态准入控制 Webhook 时为 `caBundle`  字段（ `ValidatingWebhookConfiguration` 和 `MutatingAdmissionWebhook` 资源清单中的 `caBundle` 字段）绑定受信任的颁发机构证书（CA）来核验 Webhook 服务端的证书是否可信任。本文介绍了 [制作自签证书](#MakeSignedCertificate) 及 [使用 K8S CSR API 签发证书](#K8SCertificate) 两种推荐的颁发证书方法。
+为确保动态准入控制器调用可信任的 Webhook 服务端，须通过 HTTPS 调用 Webhook 服务（TLS 认证），则需为 Webhook 服务端颁发证书，并且在注册动态准入控制 Webhook 时为 `caBundle`  字段（ `ValidatingWebhookConfiguration` 和 `MutatingAdmissionWebhook` 资源清单中的 `caBundle` 字段）绑定受信任的颁发机构证书（CA）来核验 Webhook 服务端的证书是否可信任。本文介绍了 [制作自签证书](#Method1) 及 [使用 K8S CSR API 签发证书](#Method2) 两种推荐的颁发证书方法。
 >!当 `ValidatingWebhookConfiguration` 和 `MutatingAdmissionWebhook` 使用 `clientConfig.service` 配置时（Webhook 服务在集群内），为服务器端颁发的证书域名必须为 `<svc_name>.<svc_namespace>.svc`。
 
+<span id = "Method1"></span>
 #### 方法1：制作自签证书 
 制作自签证书的方法不依赖于 K8S 集群，比较独立，类似于为网站制作自签证书。目前有很多工具可制作自签证书，本文以使用 Openssl 为例。具体步骤如下：
 1. 执行以下命令，生成密钥位数为2048的 `ca.key`。
@@ -74,6 +75,7 @@ openssl x509  -noout -text -in ./server.crt
 - `server.crt`：为颁发的服务端证书。
 - `server.key`：为颁发的服务端证书密钥。
 
+<span id = "Method2"></span>
 #### 方法2：使用 K8S CSR API 签发证书
 可使用 K8S 的证书颁发机构系统来下发证书，执行以下脚本可使用 K8S 集群根证书和根密钥签发一个可信任的证书用户。
 >!用户名需为 Webhook  服务在集群中的域名。
