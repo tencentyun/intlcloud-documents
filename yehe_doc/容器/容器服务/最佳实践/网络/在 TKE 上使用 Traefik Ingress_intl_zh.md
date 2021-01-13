@@ -36,8 +36,8 @@ providers:
     publishedService: 
       enabled: true # 让 Ingress 的外部 IP 地址状态显示为 Traefik 的 LB IP 地址
 additionalArguments: 
-- "--providers.kubernetesingress.ingressclass=traefik" # 指定 ingress class 名称 
-- "--log.level=DEBUG" 
+ - "--providers.kubernetesingress.ingressclass=traefik" # 指定 ingress class 名称 
+ - "--log.level=DEBUG" 
 service: 
   annotations: 
     service.cloud.tencent.com/direct-access: "true" # 网关类的应用建议使用 LB 直通 Pod (绕过 NodePort)。若使用 VPC-CNI 与 Global Router 两种网络模式混用，用此注解来显示声明 LB 直绑 Pod (绕过 NodePort); 若创建集群时就选的 VPC-CNI 网络模式，则不需要显示声明 (默认 LB 直通 Pod)。详情请参见官方文档 https://intl.cloud.tencent.com/document/product/457/38408
