@@ -8,7 +8,7 @@
 | 资源使用量 | 40万GBs  |
 | 调用次数    | 100万次   |
 
-详情请参阅 [免费额度说明](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12282)。
+详情请参阅 [免费额度说明](https://intl.cloud.tencent.com/document/product/583/12282)。
 
 ## 计费方式及计费项
 
@@ -21,7 +21,7 @@
 * **外网出流量费用**：在函数代码中访问外网时产生的出流量记录为外网出流量，单位为 GB。
 * **预置并发闲置费用**：由已启动的预置实例数，减去实际运行的并发数得到闲置实例数，闲置实例数乘以配置内存，再乘以闲置时长得出闲置资源量，单位为GBs。
 
-详情请参阅 [计费方式说明](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12284)。
+详情请参阅 [计费方式说明](https://intl.cloud.tencent.com/document/product/583/12284)。
 
 ## 产品定价
 
@@ -30,8 +30,9 @@
 * **资源使用费用**：0.0000167 美元/GBs
 * **调用次数费用**：0.002 美元/万次
 * **外网出流量费用**：各地域均有不同定价，中国大陆 0.12 美元/GB
+* **预置并发闲置费用**：0.00000847 美元/GBs
 
-详情请参阅 [产品定价说明](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281)。
+详情请参阅 [产品定价说明](https://intl.cloud.tencent.com/document/product/583/12281)。
 
 ## 支持地域
 下表为云函数目前所支持的地域信息：
@@ -94,7 +95,7 @@
 </tr>
 <tr>
 <td>产品定价</td>
-<td><a href="https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">查看文档</a></td>
 </tr>
 <tr>
 <td>欠费说明</td>
