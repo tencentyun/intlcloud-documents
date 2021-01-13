@@ -2,6 +2,5 @@ To view the bills and payment details of the Tencent Cloud LVB recording solutio
 
 **The fees the LVB recording solution consists of three parts: LVB fees, VOD fees, and LVB recording fees, which are billed independently. Therefore, you need to check the resource usage of each part separately.**
 
-- For more information on how to view LVB bills, please see [LVB - Bill Query](https://intl.cloud.tencent.com/document/product/267/36278).
-
+- For more information on how to view LVB bills, please see LVB - Bill Query
 
