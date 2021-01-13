@@ -41,7 +41,6 @@ default_bits = 2048
 prompt = no
 default_md = sha256
 distinguished_name = dn
-
 [ dn ]
 C = cn
 ST = shaanxi
@@ -49,7 +48,6 @@ L = xi'an
 O = default
 OU = websever
 CN = webserver.default.svc
-
 [ v3_ext ]
 authorityKeyIdentifier=keyid,issuer:always
 basicConstraints=CA:FALSE
