@@ -16,9 +16,10 @@ If the returned result includes `MutatingAdmissionWebhook` and `ValidatingAdmiss
 ![image-20201117102438615](https://main.qcloudimg.com/raw/534694e9a6976d0ec18d2e1074932126.png)
 
 ### Certificate issuance
-To ensure that the dynamic admission controller calls a trustworthy Webhook server, it needs to call the Webhook service (TLS certification) via HTTPS. Therefore, you need to issue a certificate to the Webhook server. During registration of the dynamic admission controller Webhook, you need to bind the `caBundle` field (`caBundle` field in the resource list of `ValidatingWebhookConfiguration` and `MutatingAdmissionWebhook`) with a trustworthy certificate authority (CA) to verify whether the Webhook server certificate is trustworthy. This document introduces two recommended methods for issuing certificates: [making a self-signed certificate](#MakeSignedCertificate) and [using the K8S CSR API to issue a certificate](#K8SCertificate).
+To ensure that the dynamic admission controller calls a trustworthy Webhook server, it needs to call the Webhook service (TLS certification) via HTTPS. Therefore, you need to issue a certificate to the Webhook server. During registration of the dynamic admission controller Webhook, you need to bind the `caBundle` field (`caBundle` field in the resource list of `ValidatingWebhookConfiguration` and `MutatingAdmissionWebhook`) with a trustworthy certificate authority (CA) to verify whether the Webhook server certificate is trustworthy. This document introduces two recommended methods for issuing certificates: [making a self-signed certificate](#Method1) and [using the K8S CSR API to issue a certificate](#Method2).
 >! When `ValidatingWebhookConfiguration` and `MutatingAdmissionWebhook` use the `clientConfig.service` configuration (and the Webhook service is in the cluster), the domain name of the certificate issued to the server must be `<svc_name>.<svc_namespace>.svc`.
 
+<span id="Method1"></span>
 #### Method 1: making a self-signed certificate 
 This method is not dependent on Kubernetes clusters and is relatively independent. It’s similar to the way in which websites make their own self-signed certificates. Currently, many tools can be used to make a self-signed certificate. This document uses OpenSSL as an example. The procedure is as follows:
 1. Run the following command to generate a `ca.key` with 2048 key digits.
@@ -74,6 +75,7 @@ The generated certificates and key files are described as follows:
 - `server.crt`: the issued server certificate
 - `server.key`: the issued server certificate key
 
+<span id = "Method2"></span>
 #### Method 2: using the K8S CSR API to issue a certificate
 You can also use the Kubernetes CA system to issue a certificate. You can execute the following script to use the Kubernetes cluster root certificate and root key to issue a trustworthy certificate user.
 >! The username must be the domain name of the Webhook service in the cluster.
