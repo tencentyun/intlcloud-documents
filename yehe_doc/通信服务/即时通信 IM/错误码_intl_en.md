@@ -128,6 +128,7 @@
 | -10112 | The SDKAppID has been disabled. |
 | -10113 | The request exceeds the frequency limit allowed for the user. The frequency limit is set for the number of requests per second based on a specific protocol. |
 | -10114 | Packet loss due to system overload. The connected server has too many requests to process and therefore refuses to provide services. |
+| -20009 | The frequency of terminals accessing APIs exceeds the limit. |
 
 ### Resource file error codes
 
@@ -157,7 +158,7 @@
 | 60009 | Incorrect request resource. Check the request URL. |
 | 60010 | Set the UserID field of the RESTful API request to the admin account of the app. |
 | 60011 | The SDKAppID request exceeds the frequency limit. Try again later. |
-| 60012 | SDKAppID is required when calling the REST API. Check the SDKAppID in the URL. |
+| 60012 | SDKAppID is required when calling the RESTful API. Check the SDKAppID in the URL. |
 | 60013 | An error occurs when parsing the JSON data in the HTTP response packet. |
 | 60014 | Account switching timed out. |
 | 60015 | The type of the UserID in the request packet is incorrect. Ensure that the UserID is in string format. |
@@ -190,6 +191,7 @@
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether required fields are specified and the values meet protocol requirements. |
 | 70403 | Request failed. You need app admin permission to perform this action. |
+| 70398  | The number of accounts exceeds the limit. To create more than 100 accounts, please upgrade your application to the Pro edition. |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is in the Pro Edition and therefore cannot be deleted. |
 
@@ -320,7 +322,7 @@
 | 10004 | Invalid parameter. Check whether the request is correct based on the error description. |
 | 10005 | The request packet carries too many accounts. |
 | 10006 | The operation exceeds the frequency limit. Try again later. |
-| 10007 | The user does not have sufficient operation permissions. For example, a common member in a public group attempts to remove a member from the group, but only the App admin has the permission to do so. |
+| 10007 | The user does not have the operation permission. (For example, a common member in a public group attempts to remove a member from the group, but only the app administrator has the permission to do so.) |
 | 10009 | The group owner is not allowed to leave the group. |
 | 10010 | The group doesn’t exist or has been deleted. |
 | 10011 | Failed to parse the JSON packet. Check whether the packet complies with JSON specifications. |
@@ -343,9 +345,9 @@
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
 | 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
-| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a postpaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a postpaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a postpaid package of “Increasing the limit of group members”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10036 | The number of audio-video chat rooms exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038 | The number of group members exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
 | 10041 | This SDKAppID has disabled group message recalls. |
 
 
