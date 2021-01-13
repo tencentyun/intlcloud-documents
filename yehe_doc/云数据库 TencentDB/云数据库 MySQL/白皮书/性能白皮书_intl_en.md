@@ -2,7 +2,7 @@
 Sysbench 0.5 is the tool used to test the database benchmark performance.
 
 Modifications to the tool:
-The OTLP script that comes with sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve four Select operations and one Update operation with the read/write ratio at 4:1.
+The OTLP script that comes with Sysbench was modified. Specifically, the read/write ratio was changed to 1:1 and controlled by the testing command parameters `oltp_point_selects` and `oltp_index_updates`. In this document, all test cases involve four SELECT operations and one UPDATE operation with the read/write ratio at 4:1.
 
 #### Tool installation
 Run the following code to install Sysbench 0.5:
@@ -80,10 +80,10 @@ Descriptions of stress testing parameters:
 - `--max-time=1800` indicates the execution time of this test.
 - `--max-requests=0` indicates that no limit is imposed on the total number of requests and the test is executed according to `max-time`.
 - `--percentile=99` indicates the sampling rate. Here, 99 means discarding 1% long requests of all the requests and taking the maximum value among the remaining 99% requests. The default value is 95%.
-- `--oltp-point-selects=4` indicates that the number of Select operations in the SQL testing command in the OLTP script is 4. The default value is 1.
+- `--oltp-point-selects=4` indicates that the number of SELECT operations in the SQL testing command in the OLTP script is 4. The default value is 1.
 
 ### 5. Scenario model
-All test cases in this document adopt the scenario script `our_oltp.lua` which is modified to run four Select operations and one Update operation (index column) with the read/write ratio at 4:1.
+All test cases in this document adopt the `lua` script of Sysbench which was modified to run four SELECT operations and one UPDATE operation (index column) with the read/write ratio at 4:1.
 For the maximum configuration, the parameter tuning model is added to the data scenario. For the test results, please see [Test Results](#document_test_result) below.
 
 <span id="cscs"></span>
