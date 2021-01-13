@@ -94,7 +94,7 @@ Number of idle instances = max(number of started provisioned instances - number 
 
 Idle instance fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price
 
-![](https://main.qcloudimg.com/raw/25e56a1a55760baa60d947ba4efaf752.png)
+![](https://main.qcloudimg.com/raw/cedec5e820f1ada548156cd382660b65.png)
 
 For example, if a function version with 128 MB memory has a provisioned concurrency quota of 12,800 MB (10 instances) and it has 8 concurrent instances in 10 seconds, then the number of idle instances is max(10 - 8, 0) = 2, and the idle instance fees are 2 * 128 MB * 10s * 0.00000847 USD/GBs = 0.00002118 USD.
 
