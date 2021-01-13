@@ -1,8 +1,8 @@
-SCF users are entitled to a certain free tier of resource usage and invocations each month as shown below. There is no free tier for public network outbound traffic.
+SCF users are entitled to a certain free tier of resource usage and invocations each month, as shown below. There is no free tier for public network outbound traffic.
 
 >?
 >- The free tier in each month cannot be accumulated and will be reset at the beginning of the next month.
->- Upon settlement, fees are deducted in the order of free tier > resource package > pay-as-you-go billing (voucher) > pay-as-you-go billing, that is, the free tier is used first, and fees for excessive usage are deducted from valid resource packages, and if there are no valid resource packages or they have been used up, fees are charged in the pay-as-you-go manner.
+>- Upon settlement, fees are deducted in the order of free tier > resource package > pay-as-you-go billing (voucher) > pay-as-you-go billing. That is, the free tier is used first, and fees for excessive usage are deducted from valid resource packages, and if there are no valid resource packages or they have been used up, fees are charged in a pay-as-you-go manner.
 >- The free tier of resource usage is not applicable to idle provisioned concurrency.
 
 | Billable Item | Monthly Free Tier |
