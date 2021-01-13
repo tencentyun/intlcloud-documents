@@ -30,6 +30,7 @@ The four billable items of SCF are priced as follows:
 * **Resource usage fees**: 0.0000167 USD/GBs
 * **Invocation fees**: 0.002 USD/10,000 invocations
 * **Public network outbound traffic fees**: 0.12 USD/GB for the Chinese mainland; variable by region
+* **Idle provisioned concurrency**: 0.00000847 USD/GBs
 
 For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
