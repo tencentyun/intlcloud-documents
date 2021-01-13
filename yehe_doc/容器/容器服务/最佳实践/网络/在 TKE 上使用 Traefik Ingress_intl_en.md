@@ -36,8 +36,8 @@ providers:
     publishedService: 
       enabled: true # Display the external IP address of Ingress as the LB IP address of Traefik.
 additionalArguments: 
-- "--providers.kubernetesingress.ingressclass=traefik" # Indicates the ingress class name. 
-- "--log.level=DEBUG" 
+ - "--providers.kubernetesingress.ingressclass=traefik" # Indicates the ingress class name. 
+ - "--log.level=DEBUG" 
 service: 
   annotations: 
     service.cloud.tencent.com/direct-access: "true" # For gateway applications, we recommend that you use direct connection between the LB and pods (bypassing NodePort). If you use the VPC-CNI and Global Router network modes at the same time, use this annotation to display the declaration of direct binding of the LB to pods (bypassing NodePort). If you selected the VPC-CNI network mode during cluster creation, the declaration need not be displayed (because, by default, the LB is directly connected to pods). For more information, see the official documentation at https://intl.cloud.tencent.com/document/product/457/38408.
