@@ -101,10 +101,10 @@ V1.1版本及以上。
 #### 部署步骤
 1. 将 COS Ranger Service 服务代码拷贝到集群的几台机器上，生产环境建议至少两台机器（一主一备）。因为涉及到敏感信息，建议是堡垒机或者权限严格管控的机器。
 2. 修改 cos-ranger.xml 文件中的相关配置，其中必须修改的配置项如下所示。配置项说明请参见文件中的注释说明。
- -  qcloud.object.storage.rpc.address
- -  qcloud.object.storage.status.port
- -  qcloud.object.storage.enable.cos.ranger
- -  qcloud.object.storage.zk.address
+ - qcloud.object.storage.rpc.address
+ - qcloud.object.storage.status.port
+ - qcloud.object.storage.enable.cos.ranger
+ - qcloud.object.storage.zk.address
  -  qcloud.object.storage.cos.secret.id
  -  qcloud.object.storage.cos.secret.key
 3. 修改 ranger-cos-security.xml 文件中的相关配置。其中必须修改的配置项有如下所示。配置项说明请参见文件中的注释说明。
@@ -155,7 +155,7 @@ V1.1版本及以上。
 					 <value>hadoop/_HOST@EMR-XXXX</value>
            </property>
 
-         <!--***可选配置****-->  
+        <!--***可选配置****-->  
          <!-- zk 上记录的 ranger server 的 ip 地址路径, 这里使用了默认值, 配置必须与 cos-ranger-service 的配置一致 -->
           <property>              
 					<name>qcloud.object.storage.zk.leader.ip.path</name> 
@@ -189,10 +189,10 @@ V5.9.0版本及以上。
 1. 使用 hadoop cmd 执行访问 COSN 的相关操作。查看当前用户执行的操作是否符合主账号的权限设置预期，示例如下所示：
 ```plaintext
 #将bucket，路径等替换为主账号的实际信息。
-hadoop fs -ls cosn://examplebucket-1250000000/doc
+hadoop fs -lscosn://examplebucket-1250000000/doc
 hadoop fs -put ./xxx.txt cosn://examplebucket-1250000000/doc/
 hadoop fs -get cosn://examplebucket-1250000000/doc/exampleobject.txt
-hadoop fs -rm cosn://examplebucket-1250000000/doc/exampleobject.txt
+hadoop fs -rmcosn://examplebucket-1250000000/doc/exampleobject.txt
 ```
 2. 使用 MR Job 进行验证，验证前需重启相关的服务，例如 Yarn、Hive 等。
 
