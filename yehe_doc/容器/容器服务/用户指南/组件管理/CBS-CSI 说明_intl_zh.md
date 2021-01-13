@@ -234,7 +234,7 @@ $ kubectl get volumesnapshotclass
 NAME            DRIVER                      DELETIONPOLICY   AGE
 cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
 ```
-<span id="yaml2"></span>
+<span id="step"></span>
 3. 本文以 `new-snapshot-demo` 快照名为例使用以下 YAML，创建 VolumeSnapshot。示例如下：
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
@@ -290,7 +290,7 @@ status:
 
 #### 从快照恢复卷（云硬盘）
 
-1. 本文以上述 [步骤](#yaml2) 中创建的 VolumeSnapshot 的对象名为 `new-snapshot-demo` 为例，使用以下 YAML 从快照恢复卷。示例如下：
+1. 本文以上述 [步骤](#step) 中创建的 VolumeSnapshot 的对象名为 `new-snapshot-demo` 为例，使用以下 YAML 从快照恢复卷。示例如下：
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
