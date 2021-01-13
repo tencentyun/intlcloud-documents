@@ -46,19 +46,20 @@ b. 自建的 hadoop 环境，可以通过在 ranger 目录下查找 hdfs 等已�
 2. 在 COS 目录下，放入 cos-chdfs-ranger-plugin-xxx.jar。（注意 jar 包至少有 r 权限）。
 3. 重启 Ranger 服务。
 4. 在 Ranger 上注册 COS Service。可参考如下命令：
-<dx-codeblock>
-::: plaintext
+```
 ##生成服务，需传入 Ranger 管理员账号密码，以及 Ranger 服务的地址。
-##对于腾讯云 EMR 集群，管理员用户是 root，密码是构建 emr 集群时设置的 root 密码，ranger 服务的 IP 换成 EMR 的 master 节点 IP。
+## 对于腾讯云 EMR 集群，管理员用户是 root，密码是构建 emr 集群时设置的 root 密码，ranger 服务的 IP 换成 EMR 的 master 节点 IP。
+
 adminUser=root
 adminPasswd=xxxxxx
 rangerServerAddr=10.0.0.1:6080
+
 curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
+
 ##如果要删除刚定义的服务，则传入刚刚创建服务时，返回的服务 ID
 serviceId=102
 curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H "Content-Type:application/json" http://${rangerServerAddr}/service/plugins/definitions/${serviceId}
-:::
-</dx-codeblock>
+```
 5. 创建服务成功后，可在 Ranger 控制台看到 COS 服务。如下所示：
 ![](https://main.qcloudimg.com/raw/d1a6e2722d11f7177636a5e2c54226e3.png)
 6. 在 COS 服务侧单击【+】，定义新服务实例，服务实例名可自定义，例如`cos`或者`cos_test`，服务的配置如下所示。
@@ -78,8 +79,9 @@ curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H 
     -  Delete：删除操作。 对应于对象存储里删除 Object。对于 Hadoop 的 Rename 操作，需要有对原路径的删除操作权限，对新路径的写入操作权限。
     -  List：遍历权限。对应于对象存储里面的 List Object。
 ![](https://main.qcloudimg.com/raw/00a619b4b963a9acf766411fad722fe4.png)
-:::
-::: 部署COS-Ranger-Service
+
+### 部署 COS-Ranger-Service
+
 COS-Ranger-Service 是整个权限体系的核心，负责集成 ranger 的客户端，接收 ranger client 的鉴权请求，token 生成续租请求和临时密钥生成请求。同时也是敏感信息（腾讯云密钥信息）所在的区域，通常部署在堡垒机器上，只允许集群管理员操作，查看配置等。
 
 COS-Ranger-Service 支持一主多备的 HA 部署，DelegationToken 状态持久化到 HDFS。通过 ZK 抢锁决定 Leader 身份。获取 Leader 身份的服务会把地址写入 ZK，以便 COS Ranger Client 进行路由寻址。
@@ -117,8 +119,8 @@ nohup ./start_rpc_server.sh &> nohup.txt &
 curl -v http://10.xx.xx.xxx:9998/status
 ```
 
-:::
-::: 部署COS-Ranger-Client
+### 部署 COS-Ranger-Client
+
 COS-Ranger-Client 由 hadoop cosn 插件动态加载，并代理访问 COS-Ranger-Service 的相关请求。例如获取临时密钥、获取 token、鉴权操作等。
 
 #### 代码地址
@@ -130,9 +132,7 @@ V1.1版本及以上。
 #### 部署方式
 1. 将 cos-ranger-client jar 包拷贝到与 COSN 同一目录下（请选择拷贝与自身 hadoop 大版本一致的  jar 包）。
 2. 在 core-site.xml 添加如下配置项：
-<dx-codeblock>
-::: xml
-```
+```xml
 <configuration>
            <!--*****必须配置********-->
            <!-- zk 的地址，客户端从 zk 上查询得知 ranger-service 的服务地址 -->
@@ -156,10 +156,11 @@ V1.1版本及以上。
           </property>
 </configuration>
 ```
-:::
-</dx-codeblock>
-:::
-::: 部署COSN
+
+
+
+### 部署 COSN 
+
 #### 版本
 V5.9.0版本及以上。
 
@@ -168,19 +169,12 @@ V5.9.0版本及以上。
 
 1. 使用 ranger 后，fs.cosn.userinfo.secretId 和 fs.cosn.userinfo.secretKey 密钥信息不需要配置。COSN 插件后续通过 COSRangerService 获取临时密钥。
 2. fs.cosn.credentials.provider 需设置为 org.apache.hadoop.fs.auth.RangerCredentialsProvider 才可通过 Ranger 进行认证鉴权。如下所示：
-<dx-codeblock>
-::: plaintext 
 ```
 <property>
          <name>fs.cosn.credentials.provider</name>
          <value>org.apache.hadoop.fs.auth.RangerCredentialsProvider</value>
 </property>
 ```
-:::
-</dx-codeblock>
-:::
-</dx-tabs>
-
 
 ## 验证
 
