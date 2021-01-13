@@ -26,6 +26,10 @@
 - 计算公式：
 	- 消耗流量 = 码率 / 8 × 所有人观看总时长。
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+		
+>>>>>>> Stashed changes
 =======
 		
 >>>>>>> Stashed changes
@@ -265,9 +269,13 @@
 
 >? 若您的直播业务量级较大，日结计费方式无法满足您的需求时，可联系我们的商务人员，通过商务谈判约定您的计费方式和价格。欢迎 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询更多详情。
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		
 		
 =======
+=======
+
+>>>>>>> Stashed changes
 
 
 >>>>>>> Stashed changes
@@ -295,6 +303,10 @@
 > - 当直播转码计费方式为日结时长后付费时，可使用标准转码资源包抵扣音频转码的费用。
 > - **音频转码功能将于2021年02月01日起开始新计费规则，2021年02月02日会按照此新计费规则出账。**
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -360,7 +372,10 @@
 >- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台， 开启录制功能后请确保云点播服务处于正常使用状态。云点播服务未开通或账号欠费导致云点播服务停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
 >- 录制路数峰值计算方式请参见 [直播录制路数峰值如何计算](https://intl.cloud.tencent.com/document/product/267/32479)。
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
 ## 直播截图
 云直播可对直播流进行截图处理，截图功能默认关闭，可通过控制台或云 API 开启。云直播截图存储于对象存储 COS 中，使用后将产生 COS 存储费用，详情请查看 [COS 产品计费定价](https://intl.cloud.tencent.com/document/product/436/6239) 。使用截图功能会产生费用，每月有1000张免费截图额度，超过1000张后将对超额部分收取费用，以当月累计截图数量为结算标准，具体价格如下：
