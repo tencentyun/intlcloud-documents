@@ -90,7 +90,7 @@ TKE supports online expansion of PVs as well as the corresponding CBS and file s
 
 - You have created a TKE cluster of v1.16 or a later version. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 - You have updated [CBS-CSI](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md) to the latest version.
-- You can [use snapshots to back up data](#backup) before expansion to avoid data loss if expansion fails. (optional)
+- You can [use snapshots to back up data](#Case-3:-create-snapshots-and-use-them-to-restore-volumes) before expansion to avoid data loss if expansion fails. (optional)
 
 
 
@@ -125,13 +125,12 @@ Two expansion methods are provided:
 
 
 
-### Online expansion with pods restart
+#### Online expansion with pods restart
 1. Run the following command to confirm the status of the PV and file system before expansion. Below is a sample, in which the size of the PV and that of the file system are both 30 GB:
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
 /dev/vdd        30832548 44992  30771172   1% /usr/share/nginx/html
-
 $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c 
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
@@ -143,15 +142,13 @@ $ kubectl label pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c failure-domain.beta.
 3. Run the following command to restart the pod. After the restart, because the label of the PV corresponding to the pod indicates an invalid zone, the pod will be in the Pending state. See the sample code below:
 ```
 $ kubectl delete pod ivantestweb-0
-
 $ kubectl get pod ivantestweb-0
 NAME            READY   STATUS    RESTARTS   AGE
 ivantestweb-0   0/1     Pending   0          25s
-
 $ kubectl describe pod ivantestweb-0
 Events:
   Type     Reason            Age                 From               Message
-----     ------            ----                ----               -------
+ ----     ------            ----                ----               -------
   Warning  FailedScheduling  40s (x3 over 2m3s)  default-scheduler  0/1 nodes are available: 1 node(s) had no available volume zone.
 ```
 4. Run the following command to change the capacity in the PVC object to 40 GB. See the sample below:
@@ -169,28 +166,24 @@ persistentvolume/pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c labeled
 $ kubectl get pod ivantestweb-0
 NAME            READY   STATUS    RESTARTS   AGE
 ivantestweb-0   1/1     Running   0          17m
-
 $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   40Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
-
 $ kubectl get pvc www1-ivantestweb-0
 NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 www1-ivantestweb-0   Bound    pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   40Gi       RWO            cbs-csi        20h
-
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
 /dev/vdd        41153760 49032  41088344   1% /usr/share/nginx/html
 ```
 
 
-### Online expansion without restarting pods
+#### Online expansion without restarting pods
 1. Run the following command to confirm the status of the PV and file system before expansion. Below is a sample, in which the size of the PV and that of the file system are both 20 GB:
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
 /dev/vdd        20511312 45036  20449892   1% /usr/share/nginx/html
-
 $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   20Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
@@ -257,7 +250,6 @@ spec:
 $ kubectl get volumesnapshot
 NAME                READYTOUSE   SOURCEPVC            SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS   SNAPSHOTCONTENT                                    CREATIONTIME   AGE
 new-snapshot-demo   true         www1-ivantestweb-0                           10Gi          cbs-snapclass   snapcontent-ea11a797-d438-4410-ae21-41d9147fe610   22m            22m
-
 $ kubectl get volumesnapshotcontent
 NAME                                               READYTOUSE   RESTORESIZE   DELETIONPOLICY   DRIVER                      VOLUMESNAPSHOTCLASS   VOLUMESNAPSHOT      AGE
 snapcontent-ea11a797-d438-4410-ae21-41d9147fe610   true         10737418240   Delete           com.tencent.cloud.csi.cbs   cbs-snapclass         new-snapshot-demo   22m
@@ -297,7 +289,7 @@ status:
 
 #### Restoring volumes from a snapshot (CBS)
 
-1. This document uses the VolumeSnapshot object, named `new-snapshot-demo` and created in the preceding [step](#volumeSnapshot), as an example to show the process for restoring a volume from the snapshot. See the sample code below:
+1. This document uses the VolumeSnapshot object, named `new-snapshot-demo` and created in the preceding [step](#in-the-following-YAML), as an example to show the process for restoring a volume from the snapshot. See the sample code below:
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -320,7 +312,6 @@ spec:
 $ kubectl get pvc restore-test
 NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
 restore-test   Bound    pvc-80b98084-29a3-4a38-a96c-2f284042cf4f   10Gi       RWO            cbs-csi        97s
-
 $ kubectl get pv pvc-80b98084-29a3-4a38-a96c-2f284042cf4f -oyaml
 apiVersion: v1
 kind: PersistentVolume
