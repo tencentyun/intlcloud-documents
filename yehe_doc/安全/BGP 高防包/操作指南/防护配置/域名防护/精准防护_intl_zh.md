@@ -1,10 +1,45 @@
+## 应用场景
+DDoS 高防支持对已接入防护的网站业务配置精准防护策略。开启精确访问控制后，您可以对常见的 HTTP 字段（例如 URI、UA、Cookie、Referer 及 Accept 等）做条件组合防护策略，筛选访问请求，并对命中条件的请求设置人机校验或丢弃的策略动作。精准防护支持业务场景定制化的防护策略，可用于精准定制针对性的 CC 防御。
 
+匹配条件定义了要识别的请求特征，具体指访问请求中 HTTP 字段的属性特征，精确防护规则支持匹配的 HTTP 字段如下表所示：
+<table>
+    <tr>
+        <th>匹配字段</th>
+        <th>字段描述</th>
+				<th>适用逻辑</th>
+    </tr>
+    <tr>
+        <td>URI</td>
+        <td>访问请求的 URI 地址</td>
+				<td>等于、包含、不包含</td>
+    </tr>
+    <tr>
+        <td>UA</td>
+        <td>发起访问请求的客户端浏览器标识等相关信息</td>
+				<td>等于、包含、不包含</td>
+    </tr>
+    <tr>
+        <td>Cookie</td>
+        <td>访问请求中的携带的 Cookie 信息</td>
+				<td>等于、包含、不包含</td>
+    </tr>
+    <tr>
+        <td>Referer</td>
+        <td>访问请求的来源网址，即该访问请求是从哪个页面跳转产生的</td>
+				<td>等于、包含、不包含</td>
+    </tr>
+    <tr>
+        <td>Accept</td>
+        <td>发起访问请求的客户端希望接受的数据类型</td>
+				<td>等于、包含、不包含</td>
+    </tr>
+</table>
 
 ## 前提条件
-您需要成功 [购买 DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029/36115) ，并设置防护对象。
+您需要成功 [购买 BGP 高防包](https://intl.cloud.tencent.com/document/product/1029/36115) ，并设置防护对象。
 
 ## 操作步骤
-1. 登录 [DDoS 高防包（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/package)，在左侧导航中，单击【防护配置】。
+1. 登录 [BGP 高防包（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/package)，在左侧导航中，单击【防护配置】。
 2. 在左边的列表选中高防包 ID，如"bgp-000000co"，在右边的顶部选中【域名防护】。
 ![](https://main.qcloudimg.com/raw/7c20e517d287e64f2b1edbc6a4c2648d.png)
 3. 在右侧卡片中单击“精准防护”卡片中的【设置】，进入精准防护规则列表。
