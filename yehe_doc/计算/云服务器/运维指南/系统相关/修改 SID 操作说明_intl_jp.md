@@ -16,28 +16,27 @@ Microsoft OSはセキュリティ識別子（SID）を使用してコンピュ�
 > - sysprep を使用してSIDを変更した後、IP構成情報などを含む多くのシステムパラメーターを手動でリセットする必要があります。
 > - sysprep を使用してSIDを変更した後、C:\Users\Administrator がリセットされ、システムディスクデータの一部が消去されるため、データをバックアップしてください。
 
-1.VNC経由でLinux CVMにログインします。[操作ガイドの確認](https://cloud.tencent.com/doc/product/213/2155)をご参照ください。
+1.VNC経由でLinux CVMにログインします。[操作ガイドの確認](https://intl.cloud.tencent.com/document/product/213/32496)をご参照ください。
 2. カレントのネットワーク設定を保存します。
 【スタート】>【実行】をクリックし、コマンド`cmd` を入力してコマンドラインインターフェースを開き、`ipconfig /all` コマンドを実行し、結果を記録またはスクリーンショットして保存します。
 3. sysprep ツールを開きます。
  `C:\windows\system32\sysprep` フォルダにある`sysprep.exe` プログラムを実行します 。
 【システムのクリーンアップ操作】で**システムにアクセスして新しい体験（OOBE）**を選択する同時に【一般化する】オプションをチェックして、【シャットダウンオプション】で **再起動**を選択します。
- ![](//mccdn.qcloud.com/static/img/1dfa18a861c0a70b880b5130ff40d572/image.png)
 4. **OK** をクリックして、システムが再起動します。起動が完了したら、ガイドに従って設定を完成します（言語の選択、パスワードのリセットなど）。
 5. SID を検証します。
 【スタート】>【実行】をクリックし、コマンド `cmd` を入力し、コマンドラインインターフェースを開き、 `whoami /user ` コマンドを実行し、SIDが変更されているかどうかを確認します。
- ![](//mccdn.qcloud.com/static/img/6c1c0784b3e51b5dca3a19f381ea2e02/image.png)
+ ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
 6. ステップ2で保存した設定情報を参照して、ENIの関連情報を設定します（IP アドレス、ゲートウェイアドレス、DNS など）。
 
 ### sidchg を使用してSIDを変更する
 1. [sidchg](http://www.stratesave.com/html/sidchg.html) ツールをダウンロードします。
 2. コマンドラインで sidchg64-2.0n.exe /R. を実行し、プロンプトに従って Trial key または license を入力して、Enterキーを押します。sidchg は複数の起動オプションを提供します。その中の /R は変更後の自動再起動を意味し、/S は変更後のシャットダウンを意味します。詳細については、[公式説明](http://www.stratesave.com/html/sidchg.html)をご参照ください。
 注：sidchg64-2.0n.exe は64ビットバージョンです。
- ![](https://main.qcloudimg.com/raw/18884c02b7775a138e5fc1d45eddf3a9.png)
+ ![](https://main.qcloudimg.com/raw/284926ae1eae88228fb009f247b82068.png)
 3. SIDを変更すると、データの損失やシステムの損傷を引き起こす可能性があり、続行するかどうかとプロンプトされた場合、Y を入力して、Enterキーを押して設定します。
- ![](https://main.qcloudimg.com/raw/2ddf9c5f9a66703ac1a20f3eaeb94ed6.png)
+ ![](https://main.qcloudimg.com/raw/43c19634475517b183402d15fa32e962.png)
 4. OKをクリックしてSIDをリセットします。
-![](https://main.qcloudimg.com/raw/406a1669402ecc33e85f7c42a51bc25d.png)
+![](https://main.qcloudimg.com/raw/b59ec21417cc0de1fd7d851fcd8a2a3b.png)
 5. SIDを検証します。システムが再起動した後、再度ログインします。
 【スタート】>【実行】をクリックし、コマンド `cmd` を入力してコマンドラインインターフェースを開き、 `whoami /user ` コマンドを実行し、SIDが変更されているかどうかを確認します。
- ![](//mccdn.qcloud.com/static/img/6c1c0784b3e51b5dca3a19f381ea2e02/image.png)
+ ![](https://main.qcloudimg.com/raw/34efb1f4128c753e6c0546f3e8d58678.png)
