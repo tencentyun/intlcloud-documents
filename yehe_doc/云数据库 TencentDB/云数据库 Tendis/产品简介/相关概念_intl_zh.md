@@ -4,9 +4,9 @@
 
 [**私有网络**](https://intl.cloud.tencent.com/document/product/215/535)：自定义的虚拟网络空间，与其他资源逻辑隔离。
 
-[**安全组**](https://cloud.tencent.com/document/product/1363/50948)：对 Tendis 实例进行安全的访问控制，指定进入实例的 IP、协议及端口规则。
+[**安全组**](https://intl.cloud.tencent.com/document/product/1083/39345)：对 Tendis 实例进行安全的访问控制，指定进入实例的 IP、协议及端口规则。
 
-[**地域和可用区**](https://cloud.tencent.com/document/product/1363/50799)：Tendis 实例和其他资源的物理位置。
+[**地域和可用区**](https://intl.cloud.tencent.com/document/product/1083/39291)：Tendis 实例和其他资源的物理位置。
 
 [**腾讯云控制台**](https://console.cloud.tencent.com/cdb)：基于 Web 的用户界面。
 

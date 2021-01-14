@@ -16,12 +16,13 @@ You have registered a Tencent Cloud account and completed identity verification.
  - **Compatible Version**: Hybrid Storage Edition is compatible with Redis v4.0.
  - **Architecture**: the cluster architecture is supported.
  - **Network**: select the network where the TencentDB for Tendis instance resides, which is "Default-VPC (default)" by default. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. Otherwise, the Tendis instance cannot connect to the CVM instance over the private network.
- - **Security Group**: for more information on security group creation and management, please see [TencentDB Security Group](https://cloud.tencent.com/document/product/1363/50948).
+ - **Security Group**: for more information on security group creation and management, please see [TencentDB Security Group](https://intl.cloud.tencent.com/document/product/1083/39345).
  - **Project**: select a project to which the TencentDB instance belongs. The default project is used.
  - **Quantity**: you can purchase up to 10 pay-as-you-go instances in each availability zone.
 2. You will be returned to the instance list after you purchase the instance. The instance will be in the "Delivering" status. You can use the instance after around 3-5 minutes when its status changes to "Running".
 
 
 ## Subsequent Operations
-- Use a CVM instance to directly access the private network address of the TencentDB instance. For more information, please see [Connecting to Tendis Instances](https://cloud.tencent.com/document/product/1363/50907).
-- Use a CVM instance with a public IP for port forwarding to access TencentDB for Tendis over a public network. For more information, please see [iptables Forwarding](https://cloud.tencent.com/document/product/1363/50908).
+- Use a CVM instance to directly access the private network address of the TencentDB instance. For more information, please see [Connecting to Tendis Instances](https://intl.cloud.tencent.com/document/product/1083/39268).
+- Use a CVM instance with a public IP for port forwarding to access TencentDB for Tendis over a public network. For more information, please see [iptables Forwarding](https://intl.cloud.tencent.com/document/product/1083/39269).
+

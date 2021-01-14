@@ -17,6 +17,6 @@ iptables -t nat -A PREROUTING -p tcp --dport 10001 -j DNAT --to-destination 10.0
 iptables -t nat -A POSTROUTING -d 10.0.0.5 -p tcp --dport 6379 -j MASQUERADE
 ```
 3. Configure the [security group](https://intl.cloud.tencent.com/document/product/213/34272) to open the public port of the CVM instance. We recommend that you configure a security group rule to allow only the source which needs to connect to the Tendis instance.
-4. To connect to the Tendis instance in the private network using a public network address (`26.xx.xx.2:10001` in the sample code), you can use the same command as the private network connection command. For more information, please see [Connecting to Tendis Instances](https://cloud.tencent.com/document/product/1363/50907).
+4. To connect to the Tendis instance in the private network using a public network address (`26.xx.xx.2:10001` in the sample code), you can use the same command as the private network connection command. For more information, please see [Connecting to Tendis Instances](https://intl.cloud.tencent.com/document/product/1083/39268).
 5. After connecting to the Tendis instance, run the `info` command. If database information is returned, the connection is successful.
 

@@ -4,9 +4,9 @@ TencentDB for Tendis generally involves the following concepts:
 
 [**VPC**](https://intl.cloud.tencent.com/document/product/215/535): a custom virtual network logically isolated from other resources.
 
-[**Security group**](https://cloud.tencent.com/document/product/1363/50948): security access control to TencentDB for Tendis instances by specifying IP, protocol, and port rules for instance access.
+[**Security group**](https://intl.cloud.tencent.com/document/product/1083/39345): security access control to TencentDB for Tendis instances by specifying IP, protocol, and port rules for instance access.
 
-[**Region and availability zone**](https://cloud.tencent.com/document/product/1363/50799): the physical location of a TencentDB for Tendis instance and other resources.
+[**Region and availability zone**](https://intl.cloud.tencent.com/document/product/1083/39291): the physical location of a TencentDB for Tendis instance and other resources.
 
 [**Tencent Cloud Console**](https://console.cloud.tencent.com/cdb): a web-based UI for managing resources.
 

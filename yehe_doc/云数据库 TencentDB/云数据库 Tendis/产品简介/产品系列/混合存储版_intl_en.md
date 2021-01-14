@@ -77,7 +77,7 @@ To ensure reading performance, Hybrid Storage Edition currently does not evict a
 
 
 ## Command Compatibility
-Hybrid Storage Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the Redis Memory Edition (standard architecture) lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://cloud.tencent.com/document/product/1363/50798).
+Hybrid Storage Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the Redis Memory Edition (standard architecture) lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/1083/39290).
 
  - **Unsupported commands**
 The system will return the following error:

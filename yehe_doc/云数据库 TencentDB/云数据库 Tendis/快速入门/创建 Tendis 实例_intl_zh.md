@@ -16,12 +16,12 @@
  - **兼容版本**：混合存储版兼容 Redis 4.0。
  - **架构版本**：支持集群架构。
  - **网络**：云数据库 Tendis 所属网络，建议您选择与云服务器同一个地域下的同一私有网络，否则无法通过内网连接云服务器和数据库，缺省设置为“Default-VPC（默认）”。
- - **安全组**：安全组创建与管理请参见 [云数据库安全组](https://cloud.tencent.com/document/product/1363/50948)。
+ - **安全组**：安全组创建与管理请参见 [云数据库安全组](https://intl.cloud.tencent.com/document/product/1083/39345)。
  - **指定项目**：选择数据库实例所属的项目，缺省设置为默认项目。
  - **购买数量**：每个用户在每个可用区可购买按量计费实例的总数量为10个。
 2. 支付完成后，返回实例列表，会看到实例显示“发货中”（大概需要3min - 5min，请耐心等待），待实例状态变为“运行中”，即可正常使用。
 
 
 ## 后续操作
-- 使用云服务器 CVM 直接访问云数据库的内网地址，请参见 [连接 Tendis 实例](https://cloud.tencent.com/document/product/1363/50907)。
-- 通过具备外网 IP 的云服务器 CVM 进行端口转发，来实现外网连接 Tendis 实例，请参见 [iptable 转发](https://cloud.tencent.com/document/product/1363/50908)。
+- 使用云服务器 CVM 直接访问云数据库的内网地址，请参见 [连接 Tendis 实例](https://intl.cloud.tencent.com/document/product/1083/39268)。
+- 通过具备外网 IP 的云服务器 CVM 进行端口转发，来实现外网连接 Tendis 实例，请参见 [iptable 转发](https://intl.cloud.tencent.com/document/product/1083/39269)。

@@ -4,7 +4,7 @@
 使用的云服务器 CVM 访问自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
 >?
 >- 对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见 [云联网](https://intl.cloud.tencent.com/document/product/1003/30049)。
->- 如需通过外网地址连接实例，可参见 [iptable 转发](https://cloud.tencent.com/document/product/1363/50908)。
+>- 如需通过外网地址连接实例，可参见 [iptable 转发](https://intl.cloud.tencent.com/document/product/1083/39269)。
 
 ### 步骤1：准备环境
 1. 登录到 Linux 云服务器，请参见 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
@@ -29,5 +29,5 @@ redis-cli -h IP地址 -p 端口 -a abcd1234
 通过腾讯云数据库管理工具 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，可便捷地访问实例、操作库表级、管理实例会话、实时监控、InnoDB 锁等待、SQL 窗口等。
 
 ## 多语言连接
-各语言连接示例，请参见 [多语言连接](https://cloud.tencent.com/document/product/1363/50928)。
+各语言连接示例，请参见 [多语言连接](https://intl.cloud.tencent.com/document/product/1083/39281)。
 

@@ -1,6 +1,6 @@
 ### Command Compatibility of Different Editions
 In the following table, ✓ indicates "supported", x indicates "unsupported", and - indicates that cross-slot access is not applicable to the command.
-For custom command descriptions, please see [Hybrid Storage Edition > Custom commands](https://cloud.tencent.com/document/product/1363/50832#.E5.91.BD.E4.BB.A4.E5.85.BC.E5.AE.B9.E6.80.A7.E8.AF.B4.E6.98.8E).
+For custom command descriptions, please see [Hybrid Storage Edition > Custom commands](https://intl.cloud.tencent.com/document/product/1083/39296).
 
 
 | Command Group          | Command                  | Storage Edition   | Hybrid Storage Edition |Cross-slot Support in Cluster Architecture |

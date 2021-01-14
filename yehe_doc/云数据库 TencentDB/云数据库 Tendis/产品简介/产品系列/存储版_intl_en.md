@@ -13,7 +13,7 @@ The Storage Edition is compatible with most Redis commands and data structures, 
 Based on cloud disks, the Storage Edition provides a large storage capacity of 50 GB to 1.6 TB.
 
 ## Use Limits
-TencentDB for Tendis Storage Edition is compatible with most Redis v4.0 commands. For more information, please see [Command Compatibility](https://cloud.tencent.com/document/product/1363/50798). The unsupported data-related commands are listed in the following table.
+TencentDB for Tendis Storage Edition is compatible with most Redis v4.0 commands. For more information, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/1083/39290). The unsupported data-related commands are listed in the following table.
 >?If you need to use these unsupported commands, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 - **Unsupported commands**

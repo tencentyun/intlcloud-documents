@@ -13,7 +13,7 @@
 依托于云硬盘提供的大容量存储空间，存储版提供50GB - 1.6TB的超大存储容量规格。
 
 ## 使用限制
-Tendis 存储版兼容大部分 Redis 4.0 命令，详情可参考 [命令兼容性](https://cloud.tencent.com/document/product/1363/50798)，部分不支持的数据相关命令如下：
+Tendis 存储版兼容大部分 Redis 4.0 命令，详情可参考 [命令兼容性](https://intl.cloud.tencent.com/document/product/1083/39290)，部分不支持的数据相关命令如下：
 >?如果下述命令影响到了业务使用，您可以通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 提出需求，我们将优先评估支持。
 
 - **不支持的命令**
