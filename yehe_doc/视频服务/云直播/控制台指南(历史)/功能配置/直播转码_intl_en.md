@@ -23,8 +23,8 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Standard Transcoding** as the transcoding type, and configure as follows.
-	- Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Standard Transcoding](#C_trans_normal).
-	- Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Standard Transcoding](#C_trans_high).
+  - Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Standard Transcoding](#C_trans_normal).
+  - Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Standard Transcoding](#C_trans_high).
 3. After completing the configuration, click **Save**.
 
 ![](https://main.qcloudimg.com/raw/cde1db91ea2796656a0297889e918daa.png)
@@ -51,8 +51,8 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 <td>Video Bitrate<br>(in Kbps)</td>
 <td>Yes</td>
 <td>Average output bitrate. Value range: 100–8000 Kbps.<ul style="margin:0">
-	<li>A value below 1,000 Kbps must be a multiple of 100.</li>
-	<li>A value above 1,000 Kbps must be a multiple of 500.</li></ul>
+  <li>A value below 1,000 Kbps must be a multiple of 100.</li>
+  <li>A value above 1,000 Kbps must be a multiple of 500.</li></ul>
 </td>
 </tr><tr>
 <td>Video resolution</td>
@@ -84,13 +84,13 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
    
 
-<span id="C_topspeed"></span>
+[](id:C_topspeed)
 
 ### Creating top speed codec transcoding template
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Top Speed Codec Transcoding** as the transcoding type, and configure as follows.
-	- Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Top Speed Codec Transcoding](#C_topspeed_normal).
-	- Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Top Speed Codec Transcoding](#C_topspeed_high).
+  - Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Top Speed Codec Transcoding](#C_topspeed_normal).
+  - Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Top Speed Codec Transcoding](#C_topspeed_high).
 3. Click **Save**.
 
 ![](https://main.qcloudimg.com/raw/68e80755dce7d3fa52210d7237f89418.png)
@@ -144,7 +144,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 <td>This is disabled by default and can be enabled manually.<br>After the parameter limit is enabled, the original parameter of the input live stream will be the output if the entered parameter is higher than the original parameter. This prevents image quality issues where a low resolution video stream is forced to play back in a higher resolution.</td>
 </tr></table>
 
-<span id="C_audio"></span>
+[](id:C_audio)
 ### Creating pure audio transcoding template
 
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
@@ -169,13 +169,13 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 </tr>
 </table>
 
-<span id="related"></span>
+[](id:related)
 ## Binding Domain Name
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Enter the domain name binding page in either of the following ways:
-	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
+  - **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
-	- **Bind a domain name after creating the transcoding template**: after the [template is created](#create), click **Bind Domain Name** in the pop-up.
+  - **Bind a domain name after creating the transcoding template**: after the [template is created](#create), click **Bind Domain Name** in the pop-up.
 	![](https://main.qcloudimg.com/raw/82060d2edf81b37a0706cc11833c9d9a.png)
 3. Select a **transcoding template** and a **playback domain name** in the domain name binding window and then click **OK**.
 ![](https://main.qcloudimg.com/raw/8d0f571fab2c3765e3cebe5f5a819720.png)
@@ -183,7 +183,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-<span id="untie"></span>
+[](id:untie)
 ## Unbinding
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select domain names bound to the transcoding template and click **Unbind**.
@@ -193,7 +193,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-<span id="modify"></span>
+[](id:modify)
 ## Modifying Template
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select the target transcoding template and click **Edit** on the right to modify the template information.
@@ -203,7 +203,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-<span id="delect"></span>
+[](id:delect)
 ## Deleting Template
 >!   If the template has been bound to a domain name, you need to [unbind](#untie) the template before deleting it. 
 
