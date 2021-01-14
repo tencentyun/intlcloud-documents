@@ -1,5 +1,5 @@
 This document mainly describes how to use screen sharing.
-> Screen sharing only supports using Chrome M72+.
+>!Screen sharing only supports using Chrome M72+.
 
 ## Creating and Publishing a Screen Sharing Stream
 
@@ -65,8 +65,11 @@ One {@link Client Client} can only push one channel of audio and one channel of 
 const shareId = 'share-userId';
 const shareClient = TRTC.createClient({ mode: 'rtc', sdkAppId, userId, shareId, userSig });
 
-//Specifying that this shareClient does not receive any remote streams by default (it is only responsible for sending the screen sharing stream)
-shareClient.setDefaultMuteRemoteStreams(true);
+//Specifying that this shareClient does not receive any remote streams (it is only responsible for sending the screen sharing stream)
+shareClient.on('stream-added', event => {
+  const remoteStream = event.stream;
+  shareClient.unsubscribe(remoteStream);
+});
 shareClient.join({ roomId }).then(() => {
   console.log('shareClient join success');
   //Creating a screen sharing stream
