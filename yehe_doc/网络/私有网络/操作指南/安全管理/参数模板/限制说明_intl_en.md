@@ -14,50 +14,50 @@
 <thead>
 <tr>
 <th>Instance</th>
-<th>Limit per Tenant</th>
+<th>Upper Limit</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>IP address objects (ipm)</td>
-<td>Max.: 1,000</td>
+<td>1,000 per tenant</td>
 </tr>
 <tr>
 <td>IP address group objects (ipmg)</td>
-<td>Max.: 1,000</td>
+<td>1,000 per tenant</td>
 </tr>
 <tr>
 <td>Protocol port objects (ppm)</td>
-<td>Max.: 1,000</td>
+<td>1,000 per tenant</td>
 </tr>
 <tr>
 <td>Protocol port group objects (ppmg)</td>
-<td>Max.: 1,000</td>
+<td>1,000 per tenant</td>
 </tr>
 <tr>
 <td>IP address members in an IP address object (ipm)</td>
-<td>Max.: 20</td>
+<td>20 per tenant</td>
 </tr>
 <tr>
 <td>IP address object members (ipm) in an IP address group object (ipmg)</td>
-<td>Max.: 20</td>
+<td>20 per tenant</td>
 </tr>
 <tr>
 <td>Protocol port members in a protocol port group object (ppm) </td>
-<td>Max.: 20</td>
+<td>20 per tenant</td>
 </tr>
 <tr>
 <td>Protocol port object members (ppm) in a protocol port group object (ppmg)</td>
-<td>Max.: 20</td>
+<td>20 per tenant</td>
 </tr>
 <tr>
 <td>IP address group objects (ipmg) that can reference the same IP address object (ipm)</td>
-<td>Max.: 50</td>
+<td>50 per tenant</td>
 </tr>
 <tr>
 <td>Protocol port group objects (ppmg) that can reference the same protocol port object (ppm)</td>
-<td>Max.: 50</td>
+<td>50 per tenant</td>
 </tr>
 </tbody></table>
 
->?If the parameter template is referenced to by a security group, the IP/port in the parameter template will be converted to a maximum of 2,000 security group rules.
+>?If the parameter template is referenced by a security group, the IPs and ports in the template will be converted multiple security group rules (up to 2000).
 
