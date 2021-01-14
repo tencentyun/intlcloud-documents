@@ -1,9 +1,7 @@
 If you are unable to watch a live broadcast and do not know what the problem is, follow the steps below to locate the problem, which usually takes less than a minute.
-![](https://main.qcloudimg.com/raw/a5236d378f73a7f08866f9531d501092.png)
 
 ### 1. Checking you playback URL
 First, check whether your playback URL is correct. Incorrect URLs are the most common cause of playback failure. Tencent Cloud's LVB service uses a push URL and a playback URL. Make sure that you are not **wrongly using the push URL as the playback URL**.
-![](https://main.qcloudimg.com/raw/d4886120f162625b9109417d24c21b5f.png)
 >? “domain” is the push/playback domain name; “AppName” and “StreamName” are custom values (default “AppName”: `live`). If push or playback authentication is not enabled, the URL ends before “?”. For example, if the push domain name is `www.push.com`, “AppName” `live`, “StreanName” `test01`, and push authentication is not enabled, the push URL will be `rtmp://www.push.com/live/test01`.
 >You can obtain playback URLs for LVB Lite through debugging. Search in code for **startPlay**, where LVB Lite calls the RTMP SDK, and set a debugging breakpoint. The value of `startPlay` is the playback URL.
 

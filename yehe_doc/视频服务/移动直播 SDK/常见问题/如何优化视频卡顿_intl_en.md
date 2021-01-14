@@ -1,4 +1,4 @@
-![](https://main.qcloudimg.com/raw/5a6c7985d98037d627789ab75ec257a7.png)
+
 There are three main reasons for playback lag.
 
 - **Reason 1: Low push frame rate
@@ -8,12 +8,12 @@ During a live broadcast, the host's mobile phone keeps generating audio and vide
 
   
   
+
 **Reason 3: poor downstream networking**
 Poor downstream networking means slow download speed or network instability on the part of viewers. Suppose the bitrate of a live broadcast stream is 2 Mbps. It means 2 Mb of data needs to be downloaded per second. Therefore, a viewer whose network bandwidth is low experiences lag when watching a live broadcast, but other viewers with sufficient bandwidth are not affected.
 
 ## Checking SDK Status Metrics
 Tencent Cloud’s MLVB SDK has a status feedback mechanism that reports status metrics of the SDK every 1-2 seconds. If you use the MLVB SDK to push streams, you can register TXLivePushListener to get the metrics. The metrics reported are as follows:
-![](https://main.qcloudimg.com/raw/75c18f2a2f822c5e19e52de9484663b0.png)
 
 |  Items                   |  Description                    |
 | :------------------------  |  :------------------------ |
@@ -52,8 +52,6 @@ Statistics show that upstream congestion at the host end is responsible for over
   
 - **1.2: `CACHE_SIZE` and `DROP_CNT`**
 When `BITRATE` >= `NET_SPEED`, the audio/video data produced by the encoder builds up on the host’s phone. `CACHE_SIZE` indicates the severity of the accumulation of data. Once it exceeds the warning threshold, the SDK will start dropping data, which increases `DROP_CNT`. The figures below are a typical example of upstream congestion. As you can see, `CACHE_SIZE` stays above the **warning threshold** (red line) throughout the course, which indicates that the upstream network fails to meet the demand for data transmission, leading to serious upstream congestion.
-![](https://main.qcloudimg.com/raw/c894db6a9745543a349683745c4ba491.png)
-![](https://main.qcloudimg.com/raw/dd0b0c36629b11db2c6c1cd497e01a9e.jpg)
 
  >? You can find the above figures in [**LVB console**](https://console.cloud.tencent.com/live/livestat) > **Statistics** > **Operation Analysis**.
 
@@ -92,8 +90,6 @@ We recommend the following encoding settings through the `setVideoQuality` API i
 
 
 ## Fixing Player-End Issues
-![](https://main.qcloudimg.com/raw/57d974de3d3069eb869a2c8d4fb219ad.png)
-
 ### 1. Lag and latency
 As you can see from the figure above, both downstream network fluctuations and insufficient downstream bandwidth can result in **unfed periods** (during which the app cannot get any audio/video data for playback) in the playback process. To avoid playback lag, the app needs to buffer video data enough to cover the unfed periods. However, buffering too much data causes a new problem: **high latency**, which is undesirable for scenarios that stress host-viewer interaction. The latency could **build up** over time if not fixed, meaning that it increases as the playback continues. The ability to fix latency is a key performance indicator for players. **Latency and playback smoothness are like the two ends of a scale**. To ensure low latency, you may have to compromise network stability, which causes notable playback lag, and to ensure smooth playback, you must deal with high latency. A typical example is the introduction of a 20-30 second delay in the playback of HLS (m3u8) URLs to ensure watching experience.
 

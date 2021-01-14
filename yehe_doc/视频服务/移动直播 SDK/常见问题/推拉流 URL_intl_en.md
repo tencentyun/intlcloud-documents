@@ -11,8 +11,7 @@
 	3. Enter a custom `AppName` value (`live` by default). This is used to differentiate the paths of different applications under the same domain name.
 	4. Enter a custom `StreamName` value.
 	5. Select an expiration time for the address.
-6. Click **Generate Address** to generate your push/playback address.
-![](https://main.qcloudimg.com/raw/b92179a1020d676d5e93e7ea4bfd6c37.png)
+3. Click **Generate Address** to generate your push/playback address.
  >? 
  >- `AppName` is a custom value and can contain only letters, numbers, and symbols.
  >- Here is another method to generate push addresses: in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, find the push domain name you want use to generate a push address, click **Manage**, select **Push Configuration**, enter the expiration time of the address and a custom `StreamName value`, and click **Generate Push Address**.
@@ -22,7 +21,6 @@ Go to the **LVB console** > [**Domain Management**](https://console.cloud.tencen
 
 ### How to automatically splice push URLs?
 If you run a large number of live streaming rooms, it is impossible to manually generate a push and playback URL for each host. In such cases, you can use the server to automatically **splice** the addresses. Any URL that meets Tencent Cloud standards can be used for push. A standard push URL consists of four parts, as shown below:
-![](https://main.qcloudimg.com/raw/095b7c120b62ac8a171603d4fff67cb2.png)
 - **Domain**
 Push domain name, which can be the default push domain name provided by Tencent Cloud LVB or a push domain name that you have added and created a CNAME record for.
 - **AppName**
