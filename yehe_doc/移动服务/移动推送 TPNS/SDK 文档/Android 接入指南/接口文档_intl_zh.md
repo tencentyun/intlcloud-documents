@@ -16,7 +16,7 @@
 
 ### 设备注册
 
-以下为账号设备注册相关接口方法，若需了解调用时机及调用原理，可查看 [设备注册流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
+以下为设备注册相关接口方法，若需了解调用时机及调用原理，可查看 [设备注册流程](https://intl.cloud.tencent.com/document/product/1024/32609)。
 
 #### 接口说明
 
@@ -26,7 +26,7 @@
 public static void registerPush(Context context)
 ```
 
-> ?这种注册方式，不支持推送账号。
+
 
 #### 参数说明
 
