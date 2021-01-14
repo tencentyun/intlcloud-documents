@@ -96,10 +96,10 @@ As you can see from the figure above, both downstream network fluctuations and i
 ### 2. How to fix the problem
 Through optimization across multiple versions of the MLVB SDK, we have developed an automatic adjustment technology, based on which we came up with three [latency control schemes](https://intl.cloud.tencent.com/document/product/1071/38160), allowing you to deliver superior playback experience even without much knowledge about bandwidth control or processing.
 
--**Auto mode**: use this mode if you are not sure about what scenarios you will deal with.
+- **Auto mode**: use this mode if you are not sure about what scenarios you will deal with.
 >?You can switch to this mode by setting `setAutoAdjustCache` to `true` in TXLivePlayConfig. In this mode, the player adjusts latency automatically based on network conditions to minimize the latency between hosts and viewers and consequently ensure host-viewer interaction quality while delivering decent playback experience. By default, the player adjusts latency in the range of 1-5 seconds. You can use `setMinCacheTime` and `setMaxCacheTime` to modify the default range.
 
--**Speedy mode**: suitable for **live show streaming** and other scenarios that require low latency.
+- **Speedy mode**: suitable for **live show streaming** and other scenarios that require low latency.
 >? You can switch to this mode by **setting both `SetMinCacheTime` and `setMaxCacheTime` to one second**. The auto and speedy mode differ only in terms of the `MaxCacheTime` value, which is generally lower in the speedy mode and higher in the auto mode. This flexibility is made possible by the automatic control technology of the SDK, which can automatically adjust latency without causing lag. `MaxCacheTime` is associated with the adjustment speed. The higher the `MaxCacheTime` value, the more conservative the adjustment is, and the less likely lag will occur.
 
 - **Smooth mode**: suitable for **live game streaming** and other high-bitrate and high-definition scenarios.
