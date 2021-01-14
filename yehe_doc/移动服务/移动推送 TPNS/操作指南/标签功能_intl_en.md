@@ -1,18 +1,21 @@
 
-Tag is used in targeted push where you can call the TPNS SDK or server API to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
+Tag is a feature used in targeted push where you can call the TPNS SDK or server API to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
 
-## Tag Push Use Cases
+## Tag Push Scenarios
 
-### User stickiness
-In app operation, it is important to often send subscribed messages to new users and improve their retention rate. To do this, you only need to use the **New Equipment** tag provided by TPNS to push messages to users signed up on a specified date.
-We also provide the **Offline Device** tag for message push to specified users who were inactive for N days to reduce customer attrition and improve user activity.
+### User engagement and reactivation
+Application operation often requires message reminders for new users, which is an important part of the new user experience design and improves the retention rate of new users. By selecting the "new devices" tag provided by TPNS during push, you can push messages to users registered on the specified date with speed and ease.
+In addition, we also provide a "inactive users" tag, with which you can specify users who have not been active for N days as the push target and push messages to them for user reactivation, thus increasing the number of active application users.
+
 
 ### Event subscription notification
+
 Your live streaming application will stream a football match at 18:00 on October 24, and the live stream will be available for reservation on October 20. You want to push a message about the upcoming start to users who subscribe to this program before the live stream starts.
 If a user subscribes to this program, the title `10241800 Football` can be used as a tag to bind to the user device token. When the live stream is about to start, you can select the `Football` tag to push a notification to inform the user of the match start. After the match ends, you can call the TPNS tag unbinding API to unbind the `10241800 Football` tag from the device token.
 
 ### Renewal notification
 You want to push a renewal notification in your application A to users whose membership will expire in three days. Assume that a device token is bound to tags `football` and `deadline:20200210`. If a user renews the membership for a month on February 9, 2020, you need to replace the tag `deadline:20200210` with `deadline:20200310`, i.e., the tag `deadline` can have only one value (the latest value). In this case, you can call the KV overwriting API to unbind the tag `deadline:20200210` and then bind the tag `deadline:20200310` without affecting other tags. When pushing a renewal notification (scheduled push is supported), set the tag to the current date plus three days; for example, if the current date is March 7, 2020, you can push the renewal notification to devices with the tag `deadline:20200310`.
+
 
 
 ## Tag Overview
@@ -30,8 +33,8 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
             <td>Custom tag</td>
             <td>Custom tag, such as meeting ID, class ID, user hobbies (like basketball and digital products), etc.</td>
 						<td>xg_user_define</td>
-<td><li>Up to 10,000 custom tags are allowed. If you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>
-<li>One device token can be bound to up to 100 custom tags. If you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> 
+						<td><li>Up to 10,000 custom tags are allowed (if you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>)
+<li>One device token can be bound to up to 100 custom tags (if you want to increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>)
 <li>One custom tag can be bound to an unlimited number of device tokens</td>
 <td> love_basketball, love_shopping, male, etc.</td>
         </tr>
@@ -48,7 +51,7 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
             <td>guangdong, hunan, shanghai, etc.</td>
         </tr>
         <tr><!--<td>3.1</td>-->
-            <td>Active status information</td>
+            <td>Active information</td>
 						<td>xg_auto_active</td>
 						 <td>20200521, 20200522, etc.</td>
         </tr>
@@ -80,27 +83,29 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 				  <td>Model</td>
 					<td>xg_auto_deviceversion</td>
 					<td>Samsung Note4, vivo Y75A, etc.</td>
-				</tr>
+				</tr>			
 						<tr><!--<td>61td>-->
-				  <td>Online duration</td>
-					<td>The API call is not supported</td>
-						<td>Devices online in the last N day(s). Valid values for N: an integer in [10,30] and in string format.</td>
-					<td>Devices online in the last "10" days</td>	
+				  <td>Continuously active</td>
+					<td>This does not support API call currently</td>
+						<td>Devices active in the last N days. Value range: [1,30]. Format: string</td>
+					<td>Devices active in the last "10" days</td>
+				</tr>		
 						<tr><!--<td>61td>-->
-				  <td>Offline duration</td>
-					<td>The API call is not supported</td>
-						<td>Devices offline in the last N day(s). Valid values for N: an integer in [10,30] and in string format.</td>
-					<td>Devices offline in the last "10" days</td>
+				  <td>Continuously inactive</td>
+					<td>This does not support API call currently</td>
+						<td>Devices inactive in the last N days. Value range: [1,30]. Format: string</td>
+					<td>Devices inactive in the last "10" days</td>
+				</tr>		
 						<tr><!--<td>61td>-->
 				  <td>Recently registered</td>
-					<td>The API call is not supported</td>
-						<td><li>Devices registered between [startDate, endDate] and in [YYYYmmdd,YYYYmmdd] format.
-<li>The `startDate` cannot be 30 days earlier than the `endDate `
-<li>The `endDate` cannot be the current day
-<li>The `startDate` cannot be 90 days earlier than the current day
-<li>The `startDate` and `endDate` can be the same day</td>
+					<td>This does not support API call currently</td>
+						<td><li>Devices recently registered. The tag value is [startDate, endDate] in the format of [YYYYmmdd,YYYYmmdd]
+<li>The range between `startDate` and `endDate` cannot exceed 30 days
+<li>`endDate` cannot be the current date
+<li>`startDate` cannot be more than 90 days ago
+<li>`startDate` and `endDate` can be the same</td>
 					<td>Devices registered between [20200901,20200910]</td>
-				</tr>							
+				</tr>		
 </table>
 
 >?When you push by tag through API, you need to use the `tag_type` built in TPNS to set the tag type.
@@ -114,8 +119,14 @@ Bind and unbind a custom tag:
 For more information on how to do so through API, please see [Binding Tag](https://intl.cloud.tencent.com/document/product/1024/33766)
 
 **Method 2. Set tags through device SDK**
-For more information on how to set tags through the SDK for iOS, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30727)
-For more information on how to set tags through the SDK for Android, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30715)
+For more information on how to set tags through the SDK for iOS, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30727).
+For more information on how to set tags through the SDK for Android, please see [Setting Custom Tag](https://intl.cloud.tencent.com/document/product/1024/30715).
+
+>?
+- One device can be bound to up to 100 tags (if you need more, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application).
+- One application can be bound to up to 10,000 tags (if you need more, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application).
+- One tag can contain up to 50 bytes.
+- Up to 500 tags can be unbound in one request.
 
 #### Custom tag use cases and keywords
 Tag push is suitable for scenarios where the number of devices bound to a tag is high (more than 10 generally) but the push frequency is low (below 10 pushes a day generally). For scenarios where the number of bound devices is small but the push frequency is high, you are recommended to use push by account, i.e., binding an account instead of a tag to multiple devices for push.
@@ -126,6 +137,7 @@ A colon ":" is the keyword for separating the `key` and `value` in a `key-value`
 #### Binding/Unbinding tag
 
 TPNS provides APIs for binding/unbinding a single tag to/from a single device, a single tag to/from multiple devices, multiple tags to/from a single device, and multiple tags to/from multiple devices.
+
 #### Single tag for single device
 **Recommended scenarios**
 1. The device SDK API is called; for example, to automatically get the user subscription channel in the application, bind the channel tag to the device token, and vice versa.         
@@ -170,9 +182,10 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
-
 ```
+
 **Unbinding tag**
+
 ```json
 {
     "operator_type": 4,
@@ -181,6 +194,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
     "token_list": ["token"]
 }
 ```
+
 **Use limits**
 - A tag can contain up to 50 bytes.
 - Up to 500 tags can be included in one call.
@@ -208,6 +222,7 @@ Only the RESTful API can be called; for example, to add the "football" tag to al
     "token_list": ["token1","token2"]
 }
 ```
+
 **Use limits**
 - A tag can contain up to 50 bytes.
 - Up to 500 device tokens can be included in one call.
@@ -225,6 +240,7 @@ Only the RESTful API can be called; for example, to add the "football" tag to al
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
+
 **Unbinding tag**
 ```json
 {
@@ -242,6 +258,7 @@ Only the RESTful API can be called; for example, to add the "football" tag to al
 #### Tag overwriting
 
 TPNS provides two tag overwriting methods, namely, general overwriting and overwriting by tag category (aka key-value (KV) overwriting), where a colon (":") is used to separate the `key` and `value` in a key-value pair.
+
 #### General overwriting
 **Recommended scenarios**
 1. The device SDK API is called. If all channel information subscribed by a device has expired, you need to unbind all the channel tags from the device. However, traversing all tags to unbind them one by one is very inconvenient. In this case, you can call this API to overwrite the tags in batches.
@@ -287,7 +304,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 
  TPNS provides two tag deletion methods, namely, deleting all tags of a device and deleting specific tags of an application.
 
-#### Deleting all tags of a single device
+#### Deleting all tags of single device
 **Recommended scenarios**
 1. The device SDK API is called.
 2. The RESTful API is called.
@@ -306,7 +323,7 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 - A tag can contain up to 50 bytes.
 - The API is called asynchronously. You are recommended to set the call interval to longer than 1 second.
 
-#### Deleting specific application tags
+#### Deleting specific tags of application
 **Recommended scenarios**
 1. Only the RESTful API can be called.
 **Description:** you can use this API to delete specific tags of an application, i.e., removing them from the tag list of the application after unbinding them from bound devices. It is generally used to delete obsolete tags; for example, to delete testing tags added during test after the application is officially released, you can call this API.
@@ -323,11 +340,11 @@ TPNS provides two tag overwriting methods, namely, general overwriting and overw
 
 
 ### Managing preset tag
-- Preset tags are tags maintained on the TPNS platform, i.e., tags automatically collected by the SDK when user devices are registered with or connected to the TPNS server. Currently, TPNS preset tags include application version, system version, district, active status, system language, SDK version, country/region, phone brand, and phone model.
+- Preset tags are tags maintained on the TPNS platform, i.e., tags automatically collected by the SDK when user devices are registered with or connected to the TPNS server. Currently, TPNS preset tags include application version, system version, district, active information, system language, SDK version, country/region, phone brand, and phone model.
 - All devices are bound to the latest preset tags, which will automatically replace the corresponding legacy ones. For example, if the current application version of a device is 1.0.1, when the application is upgraded to 1.0.2, the device will be automatically unbound from the v1.0.1 tag and then bound to the v1.0.2 tag.
 
 ### Querying tags bound to device
- You can query specific preset and custom tags by device token on the **Toolkit > Troubleshooter** page in the Tencent Cloud Console.
+ You can query specific preset and custom tags by device token on the **Toolkit > Troubleshoot Tools** page in the Tencent Cloud Console.
  See below:
  ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 
@@ -397,7 +414,7 @@ API example: push a message to male users in Guangdong or Jiangsu who were activ
     ],
     "message_type": "notify",
     "message": {
-    "title": "test title",
+    "title": "Test title",
     "content": "Test content",
     "android": {
 		"ring": 1,
