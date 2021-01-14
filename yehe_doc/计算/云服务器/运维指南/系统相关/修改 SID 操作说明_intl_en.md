@@ -27,8 +27,7 @@ ipconfig /all
 ```
 C:\Windows\System32\Sysprep\sysprep.exe
 ```
-5. In the “System Preparation Tool 3.14” window that pops up, make the following configuration, as shown below:
-![](https://main.qcloudimg.com/raw/d94e4a96b8ca82052d91e9bb9d8fecbf.png)
+5. In the “System Preparation Tool 3.14” window that pops up, make the following configuration.
  - Set **System Cleanup Action** to **Enter System Out-of-Box Experience (OOBE)** and check **General**.
  - Set **Shutdown Options** to **Reboot**.
 6. Click **OK**, and the system will restart automatically.
