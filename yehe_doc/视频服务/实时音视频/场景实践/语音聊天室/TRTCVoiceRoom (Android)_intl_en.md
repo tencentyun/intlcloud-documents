@@ -11,8 +11,8 @@
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as the low-latency voice chat component.
 - IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms. In addition, the attribute APIs of IM is used to store room information such as the seat list, and invitation signaling can be used to apply for mic-on/pick.
 
-
-<h2 id="TRTCVoiceRoom">TRTCVoiceRoom API Overview</h2>
+[](id:TRTCVoiceRoom)
+## TRTCVoiceRoom API Overview
 
 ### Basic SDK APIs
 
