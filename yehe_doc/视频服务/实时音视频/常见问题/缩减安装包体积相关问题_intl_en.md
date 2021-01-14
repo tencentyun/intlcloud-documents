@@ -1,8 +1,8 @@
 ### How much will the file increment be after the TRTC SDK is integrated?
 The file size increment varies by TRTC SDK version. For more information, please see [SDK Download](https://intl.cloud.tencent.com/document/product/647/34615).
 
+[](id:ios)
 ### How do I reduce the size of an installation package for iOS?
-
 - **Method 1. Only package the ARM64 architecture (recommended)**
  For iPhone models after 5s, you can just package x64 architecture by setting "Build Active Architecture Only" in "Build Settings" in Xcode to "Yes" and write only `arm64` into "Valid Architectures". The single-architecture IPA increment of the TRTC SDK will be 1.9 MB only.
 ![](https://main.qcloudimg.com/raw/4aea00771567fcff58697bf5433ba0dd.png)
@@ -11,6 +11,7 @@ The file size increment varies by TRTC SDK version. For more information, please
  ![](https://main.qcloudimg.com/raw/516c0065d97eee4569a1d4061ba019cb.png)
 From 2016 on, Apple started to support Bitcode compilation in the Xcode development environment. After Bitcode is enabled, the compiler will generate the application's intermediate code instead of the actual assembly code, and users will download and install the machine code generated for the specific mobile CPU architecture from App Store, which greatly reduces the installation package size.
 
+[](id:android)
 ### How do I reduce the size of an installation package for Android?
 
 - **Method 1. Only package certain .so files**
@@ -24,7 +25,7 @@ From 2016 on, Apple started to support Bitcode compilation in the Xcode developm
  >! If you want to offer your application on Google Play, please do not use this method, as it may cause a failure in offering the application.
  >
  The size of .so files takes the greatest proportion of the total size of the SDK for Android. If you want to reduce your installation package to below 1 MB, you can use the method of downloading .so files after installation:
- <span id="step1"></span>
+[](id:step1)
  1. In the folder on [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android), find and download the package named in the format of `LiteAVSDK_TRTC_x.x.xxx.zip`, decompress it, and find the .so files for the specified architecture.
  2. Upload the .so files downloaded in [step 1](#step1) to your server (or Tencent Cloud [COS](https://intl.cloud.tencent.com/product/cos)) and record the download address such as `http://xxx.com/so_files.zip`.
  3. Before an SDK feature such as video playback is started by the user, use a loading animation to prompt the user that the relevant feature module is being loaded.
