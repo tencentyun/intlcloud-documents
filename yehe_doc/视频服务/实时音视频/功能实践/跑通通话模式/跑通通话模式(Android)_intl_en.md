@@ -17,7 +17,7 @@ You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/And
 >?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
 
 ## Directions
-<span id="step1"> </span>
+[](id:step1)
 ### Step 1. Integrate the SDK
 You can integrate the **TRTC SDK** into your project in the following ways:
 #### Method 1. Automatically load the SDK (aar)
@@ -47,7 +47,7 @@ dependencies {
 You can directly download the [ZIP package](https://intl.cloud.tencent.com/document/product/647/34615) and integrate the SDK into your project as instructed in [Quick Integration (Android)](https://intl.cloud.tencent.com/document/product/647/35093).
 
 
-<span id="step2"> </span>
+[](id:step2)
 ### Step 2. Configure application permissions
 Add the permissions to request camera, mic, and network access in the `AndroidManifest.xml` file.
 ```
@@ -68,7 +68,7 @@ Add the permissions to request camera, mic, and network access in the `AndroidMa
 ```
 
 
-<span id="step3"> </span>
+[](id:step3)
 ### Step 3. Initialize an SDK instance and listen on the event callback
 
 1. Call the [sharedInstance()](https://cloud.tencent.com/document/product/647/32267) API to create a `TRTCCloud` instance.
@@ -92,7 +92,7 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 }
 ```
 
-<span id="step4"> </span>
+[](id:step4)
 ### Step 4. Assemble the room entry parameter `TRTCParams`
 When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) API, you need to enter a key parameter [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59), which includes the following required fields:
 
@@ -105,7 +105,7 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__andro
 
 >!In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
 
-<span id="step5"> </span>
+[](id:step5)
 ### Step 5. Create and enter a room
 1. Call [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) to enter the audio/video room specified by `roomId` in the `TRTCParams` parameter. If the room does not exist, the SDK will automatically create it with the `roomId` value as the room number.
 2. Please set the appropriate **`appScene`** parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
@@ -118,8 +118,8 @@ public void enterRoom() {
     TRTCCloudDef.TRTCParams trtcParams = new TRTCCloudDef.TRTCParams();
     trtcParams.sdkAppId = sdkappid;
     trtcParams.userId = userid;
-    trtcParams.roomId = usersig;
-    trtcParams.userSig = 908;
+    trtcParams.roomId = 908;
+    trtcParams.userSig = usersig;
     mTRTCCloud.enterRoom(trtcParams, TRTC_APP_SCENE_VIDEOCALL);
 }
 
@@ -137,7 +137,7 @@ public void onEnterRoom(long result) {
 >- If the room entry fails, the SDK will also call back the `onError` event and return the parameters `errCode` ([error code](https://intl.cloud.tencent.com/document/product/647/35130)), `errMsg` (error message), and `extraInfo` (reserved parameter).
 >- If you are already in a room, you must call `exitRoom()` to exit the current room first before entering the next room.
 
-<span id="step6"> </span>
+[](id:step6)
 ### Step 6. Subscribe to remote audio/video streams
 The SDK supports both automatic subscription and manual subscription.
 
@@ -174,7 +174,7 @@ You can specify the SDK to enter the manual subscription mode through the [setDe
 3. When another user in the room is upstreaming video data, you will receive the [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) event notification. At this time, you need to manually subscribe to the user's video data by calling [startRemoteView(userId, remoteView)](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c), and the SDK will decode and play back it after receiving it.
 
 
-<span id="step7"> </span>
+[](id:step7)
 ### Step 7. Publish the local audio/video stream
 1. Call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) to enable local mic capture and encode and send the captured audio.
 2. Call [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable local camera capture and encode and send the captured video.
@@ -189,7 +189,7 @@ mTRTCCloud.startLocalPreview(mIsFrontCamera, mLocalView);
 mTRTCCloud.startLocalAudio();
 ```
 
-<span id="step8"> </span>
+[](id:step8)
 ### Step 8. Exit the current room
 
 Call the [exitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) method to exit the room. The SDK needs to disable and release hardware devices such as the camera and mic during room exit. Therefore, room exit is not completed as soon as the method is called. Only after the [onExitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) callback is received can the room exit be considered completed.
