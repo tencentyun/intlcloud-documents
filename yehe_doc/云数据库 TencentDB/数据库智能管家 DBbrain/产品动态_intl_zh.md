@@ -1,3 +1,43 @@
+## 2020年12月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tr>
+<td>新增健康报告邮件推送功能</td>
+<td>健康报告邮件推送功能可助用户在无需登录控制台的情况下，即能便捷地了解到数据库实例的健康状况。用户也可以根据自己的需求个性化设置想要推送的健康报告及接收人员。 </td>
+<td>2020-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39371" target="_blank">健康报告邮件推送</a></td>
+</tr>
+</table>
+
+## 2020年11月
+<table>
+<tr>
+<th width=20%>动态名称</th>
+<th width=50%>动态描述</th>
+<th width=10%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+<tr>
+<td>新增合规审计功能</td>
+<td>合规审计功能助力用户通过等保合规测评，支持 AI 与自定义审计、高危 SQL 告警、生成等保合规数据安全分析报告。
+</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39365" target="_blank">合规审计</a></td>
+</tr>
+<tr>
+<td>新增安全治理功能</td>
+<td>安全治理功能基于 AI 与大数据分析，自动帮助用户发现异常行为并告警，提升数据安全治理能力。
+</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39369" target="_blank">安全治理</a></td>
+</tr>
+</table>
+
 ## 2020年10月
 <table>
 <tr>
@@ -19,8 +59,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/38559" target="_blank">功能列表</a></td>
 </tr>
 </tbody></table>
-
-
 
 ## 2020年07月
 <table>
@@ -60,6 +98,7 @@
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">空间分析</a></td>
 </tr>
+</tbody></table>
 
 
 
@@ -123,21 +162,7 @@
 </tbody></table>
 
 
-## 2020年03月
-<table>
-<tr>
-<th width=20%>动态名称</th>
-<th width=50%>动态描述</th>
-<th width=10%>发布时间</th>
-<th width=20%>相关文档</th>
-</tr>
-<tbody><tr>
-<td>支持 MySQL 只读实例和灾备实例</td>
-<td>DBbrain 支持 MySQL 只读实例和灾备实例，包括主从延迟的监控（时间/距离），主从延迟的诊断项和分析建议等。</td>
-<td>2020-03</td>
-<td>-</td>
-</tr>
-</tbody></table>
+
 
 ## 2020年02月
 <table>
@@ -216,8 +241,9 @@
 <td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36037" target="_blank">实时会话</a></td>
 </tr>
-</tr>
+<tr>
 </tbody></table>
+
 
 ## 2019年08月
 <table>
