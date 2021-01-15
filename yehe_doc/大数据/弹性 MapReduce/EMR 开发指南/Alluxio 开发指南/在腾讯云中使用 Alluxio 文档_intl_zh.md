@@ -32,7 +32,7 @@
 
 ### 授权
 若当前集群未开启对象存储，可在【[访问管理控制台-角色管理](https://console.cloud.tencent.com/cam/role/grant?roleName=EMR_QCSRole&policyName=QcloudAccessForEMRRoleInApplicationDataAccess&principal=eyJzZXJ2aWNlIjoiZW1yLmNsb3VkLnRlbmNlbnQuY29tIn0=&serviceType=EMR&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Femr%2Fstatic%2Fframework%2Femr-g9qk9p0g%3Ftype%3DinstanceDetail%26regionId%3D8)】中进行授权，授权后 EMR 中节点可以通过临时密钥访问 COS 中数据。
-![](https://main.qcloudimg.com/raw/9d5b33e9dcc36f53e30963d47d9f2095.png)
+![](https://main.qcloudimg.com/raw/ceac1937cfb48c6ad38c525651fade49.png)
 ![](https://main.qcloudimg.com/raw/7f1943ef4cfbb870e5ca3ec1f01ff19a.png)
 
 ### Mount
