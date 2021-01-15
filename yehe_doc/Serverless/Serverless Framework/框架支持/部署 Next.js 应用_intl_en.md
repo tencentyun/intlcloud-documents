@@ -86,16 +86,12 @@ $ serverless info
 ```js
 const express = require('express')
 const next = require('next')
-
 // not report route for custom monitor
 const noReportRoutes = ['/_next', '/static', '/favicon.ico']
-
 async function createServer() {
   const app = next({ dev: false })
   const handle = app.getRequestHandler()
-
   await app.prepare()
-
   const server = express()
   server.all('*', (req, res) => {
     noReportRoutes.forEach((route) => {
@@ -105,14 +101,11 @@ async function createServer() {
     })
     return handle(req, res)
   })
-
   // define binary type for response
   // if includes, will return base64 encoded, very useful for images
   server.binaryTypes = ['*/*']
-
   return server
 }
-
 module.exports = createServer
 ```
 
@@ -120,27 +113,21 @@ module.exports = createServer
 ```js
 const Koa = require('koa')
 const next = require('next')
-
 async function createServer() {
   const app = next({ dev: false })
   const handle = app.getRequestHandler()
-
   const server = new Koa()
   server.use((ctx) => {
     ctx.status = 200
     ctx.respond = false
     ctx.req.ctx = ctx
-
     return handle(ctx.req, ctx.res)
   })
-
   // define binary type for response
   // if includes, will return base64 encoded, very useful for images
   server.binaryTypes = ['*/*']
-
   return server
 }
-
 module.exports = createServer
 ```
 
