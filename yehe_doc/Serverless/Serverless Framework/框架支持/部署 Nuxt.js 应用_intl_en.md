@@ -1,4 +1,4 @@
-## Operation Scenarios
+## Overview
 
 **Tencent Cloud [Nuxt.js](https://github.com/nuxt/nuxt.js) component** uses [**Tencent Serverless Framework**](https://github.com/serverless/components/tree/cloud) to implement "zero" configuration, convenient development, and rapid deployment of your webpage application in the Nuxt.js framework based on Tencent Cloud Serverless services (API Gateway, SCF, etc.). The Nuxt.js component supports a rich set of configuration extensions and provides easy-to-use, practical, and cost-effective development/hosting capabilities for webpage application projects.
 
@@ -11,44 +11,55 @@ Features:
 - **Convenient collaboration**: the status information and deployment logs in the cloud-based console make multi-person collaborative development easier.
 
 
-## Prerequisites
+Through the [Serverless Framework Nuxt.js component](https://github.com/serverless-components/tencent-nuxtjs), you can quickly migrate traditional local Nuxt.js applications to the serverless function platform.
 
-#### Initialize Nuxt.js project
+## Migration Prerequisites
 
-Create a root directory and initialize a Nuxt.js project locally:
-```bash
-$ mkdir serverless-nuxtjs && cd serverless-nuxtjs
-$ npx create-nuxt-app src
-```
->!The Nuxt project in this tutorial is built with JavaScript and the npm installation package. Please select the appropriate options when initializing the project.
+- [Serverless Framework 1.67.2 or above](https://intl.cloud.tencent.com/document/product/1040/37034) has been installed.
+- You have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
 
->!You are recommended to use Node.js 10.0 or above; otherwise, Component v2 may report errors during deployment.
+>?If your account is a **Tencent Cloud sub-account**, please get the authorization from the root account first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
+
+## Architecture
+
+The Nuxt.js component will use the following Serverless services in your Tencent Cloud account:
+
+- **API Gateway**: it will receive external requests and forward them to the SCF function.
+- **SCF**: it will carry the Nuxt.js application.
+- **CAM**: this component will create a default CAM role for authorizing access to associated resources.
+- **COS**: to ensure the upload speed and quality, when the function is compressed and the code is uploaded, the code package will be stored in a specifically named COS bucket by default.
 
 ## Directions
-### 1. Install
-Use npm to install [Serverless CLI](https://github.com/serverless/serverless) globally:
-```bash
-$ npm install -g serverless
+>?The following steps are mainly for deployment on the command line. For deployment in the console, please see [Console Deployment Guide](https://intl.cloud.tencent.com/document/product/1040/39132).
+
+### 1. Initialize the Nuxt.js template project (optional)
+If you don't have a local Nuxt.js project, you can quickly create a Nuxt.js project template with the following command (if you already have one, you can ignore this step):
+```
+serverless init nuxtjs-starter --name example
+cd example
 ```
 
-### 2. Configure
-Create a `serverless.yml` file in the project root directory:
-```bash
-$ touch serverless.yml
+### 2. Modify the entry function code (optional)
+If the project uses a custom Node.js service, such as the Express or Koa framework, you need to modify the entry file `sls.js` (or `app.js`) and export the corresponding framework application (otherwise, you can skip this step). Click [here](#1) to view the modification template.
+
+### 3. Build the project
 ```
-Configure `serverless.yml` as follows:
+npm run build
+```
+
+### 4. Generate a .yml file and deploy
+
+After modifying the code, you can run the `sls deploy` command, and Serverless Framework will automatically generate a basic `serverless.yml` file and complete the deployment to quickly migrate the Nuxt.js framework application.
+
+The generated default configuration file is as follows:
 ```yml
-# serverless.yml
-component: nuxtjs # Component name, which is required. `nuxtjs` is used in this example
-name: nuxtjsDemo # Instance name, which is required
-org: orgDemo # Organization information, which is optional. The default value is the `APPID` of your Tencent Cloud account.
-app: appDemo # Nuxt.js application name, which is optional
-stage: dev # Information for identifying environment, which is optional. The default value is `dev`
+component: nuxtjs
+name: nuxtjsDemo
+app: appDemo
 
 inputs:
-  src:
-    src: ./src
-    exclude:
+  src: ./
+  exclude:
       - .env
   region: ap-guangzhou
   runtime: Nodejs10.15
@@ -59,49 +70,7 @@ inputs:
     environment: release
 ```
 
-View [more configurations and descriptions >>](https://github.com/serverless-components/tencent-nextjs/tree/master/docs/configure.md)
-
-### 3. Deploy
-#### 3.1. Construct static resources
-
-Enter the Nuxt.js project directory and construct static resources:
-```bash
-$ cd src && npm run build
-```
-
-#### 3.2. Deploy into the cloud
-
-Go back to the project root directory where the `serverless.yml` file is and run the following command for deployment:
-```bash
-# Enter the project directory `serverless-nuxtjs`
-$ sls deploy
-
-serverless ⚡ framework
-Action: "deploy" - Stage: "dev" - App: "appDemo" - Instance: "nuxtjsDemo"
-
-region: ap-guangzhou
-apigw:
-  serviceId:   service-4v2jx72g
-  subDomain:   service-4v2jx72g-1258834142.gz.apigw.tencentcs.com
-  environment: release
-  url:         https://xxxxxx.gz.apigw.tencentcs.com/release/
-scf:
-  functionName: nuxtjs_component_mm518kl
-  runtime:      Nodejs10.15
-  namespace:    default
-
-139s › nuxtjsDemo › Success
-```
-
-
->?If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
-
-
-### 4. Debug
-
-After the Nuxt.js application is deployed, the project can be further developed through the debugging feature to create an application for the production environment. After modifying and updating the code locally, you don't need to run the `serverless deploy` command every time for repeated deployment. Instead, you can run the `serverless dev` command to directly detect and automatically upload changes in the local code.
-You can enable debugging by running the `serverless dev` command in the directory where the `serverless.yml` file is located.
-`serverless dev` also supports real-time outputting of cloud logs. After each deployment, you can access the project to output invocation logs in real time on the command line, which makes it easy for you to view business conditions and troubleshoot issues.
+After the deployment is completed, access the application by accessing the output API Gateway link.
 
 ### 5. View deployment status
 
@@ -111,14 +80,85 @@ In the directory where the `serverless.yml` file is located, run the following c
 $ serverless info
 ```
 
-### 6. Remove
 
-In the directory where the `serverless.yml` file is located, run the following command to remove the deployed API gateway. After removal, this component will delete all related resources created during deployment in the cloud.
+<span id="1"></span>
+## Modification Template for Project Migration
 
-```bash
-$ sls remove
+- Express template
+
+```js
+const express = require('express')
+const { loadNuxt } = require('nuxt')
+
+async function createServer() {
+  // not report route for custom monitor
+  const noReportRoutes = ['/_nuxt', '/static', '/favicon.ico']
+
+  const server = express()
+  const nuxt = await loadNuxt('start')
+
+  server.all('*', (req, res, next) => {
+    noReportRoutes.forEach((route) => {
+      if (req.path.indexOf(route) === 0) {
+        req.__SLS_NO_REPORT__ = true
+      }
+    })
+    return nuxt.render(req, res, next)
+  })
+
+  // define binary type for response
+  // if includes, will return base64 encoded, very useful for images
+  server.binaryTypes = ['*/*']
+
+  return server
+}
+
+module.exports = createServer
 ```
-Similar to the deployment process, you can run the `sls remove --debug` command to view real-time log information during the removal process (`sls` is an abbreviation for the `serverless` command).
+
+- Koa template
+```js
+const Koa = require('koa')
+const { loadNuxt } = require('nuxt')
+
+async function createServer() {
+  const server = new Koa()
+  const nuxt = await loadNuxt('start')
+
+  server.use((ctx) => {
+    ctx.status = 200
+    ctx.respond = false
+    ctx.req.ctx = ctx
+
+    nuxt.render(ctx.req, ctx.res)
+  })
+
+  // define binary type for response
+  // if includes, will return base64 encoded, very useful for images
+  server.binaryTypes = ['*/*']
+
+  return server
+}
+
+module.exports = createServer
+```
+
+### Custom monitoring
+
+>?Currently, only Express service items can be customized.
+
+When you deploy the Nuxt.js application, if you don't specify the `role` in `serverless.yml`, the system will try to bind `QCS_SCFExcuteRole` by default and enable custom monitoring to help you collect the statistics of application metrics. For projects with custom entry files, routes except those with `/_nuxt`, `/static`, and `/favicon.ico` will be reported by default.
+
+If you want to report the performance of custom routes, you can customize the `sls.js` entry file. For routes that do not need to be reported, set the `__SLS_NO_REPORT__` attribute value to `true` in the `req` object of the Express service; for example:
+
+```js
+server.get('/no-report', (req, res, next) => {
+  req.__SLS_NO_REPORT__ = true
+  return nuxt.render(req, res, next)
+})
+```
+
+Then, custom monitoring metrics will not be reported when users access the `GET /no-report` route.
 
 ## More Resources
 ### Account configuration
@@ -138,7 +178,7 @@ Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` f
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->!When logging in with an IP outside Mainland China, you need to add `SERVERLESS_PLATFORM_VENDOR=tencent` in the `.env` file to make `sls` use the `tencent` component by default.
+>!When logging in with an IP outside the Chinese mainland, you need to add `SERVERLESS_PLATFORM_VENDOR=tencent` in the `.env` file to make `sls` use the `tencent` component by default.
 
 ### More components
 
