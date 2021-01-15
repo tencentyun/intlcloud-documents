@@ -37,7 +37,7 @@ The service supports the following platforms:
 [](id:step2)
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding block, and click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)** (or click **[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**) to download the SDK and demo source code.
- ![](https://main.qcloudimg.com/raw/0f35fe3bafe9fcdbd7cc73f991984d1a.png)
+
 2. After the download, return to the TRTC console and click **Downloaded and Next** to view your `SDKAppID` and secret key.
 
 [](id:step3)
@@ -48,7 +48,7 @@ The service supports the following platforms:
 3. Set parameters in the `GenerateTestUserSig.js` file:
   - SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.</li>
   - SECRETKEY: an empty string by default. Set it to the actual key.</li></ul> 
-<img src="https://main.qcloudimg.com/raw/0ae7a197ad22784384f1b6e111eabb22.png">
+
 4. Return to the TRTC console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console**.
 
@@ -64,13 +64,13 @@ npm install
 npm run serve
 ```
 2. Open Chrome and go to `http://localhost:8080/`. If the above steps are performed correctly, the page shown in the following figure is displayed:
-![](https://main.qcloudimg.com/raw/cd5b42448924101dd2f753fc45ce2fac.png)
+
 3. Enter your user ID and click **Log In**. Then, click **Video Call**.
-![](https://main.qcloudimg.com/raw/d760af14a509b7373b4d85c341729012.png)
+
 4. Enter the user ID of the callee and click **Call**.
-![](https://main.qcloudimg.com/raw/b0b98e7af68643630992aa2d5114f9cf.png)
+
 5. Start the video call.
-![](https://main.qcloudimg.com/raw/592189d0f18c91c51cdf7184853c6437.png)
+
 
 
 ## Building Your Own Video Call
@@ -80,8 +80,7 @@ npm run serve
 >- Since version 0.6.0, you need to manually install dependencies [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk), [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk), and [tsignaling](https://www.npmjs.com/package/tsignaling).
 >- To reduce the size of trtc-calling-js.js, and prevent version conflict between trtc-calling-js.js and the already in use trtc-js-sdk, tim-js-sdk or tsignaling, which may stop the latter three from being packaged into the former, you need to manually install the dependencies before use.
 
-<dx-codeblock>
-::: javascript javascript
+```javascript
   npm i trtc-js-sdk --save
   npm i tim-js-sdk --save
   npm i tsignaling --save
@@ -102,21 +101,18 @@ npm run serve
 
   // At last, manually import trtc-calling-js.js.
   <script src="./trtc-calling-js.js"></script>
-:::
-</dx-codeblock>
+```
 
 ### Step 2. Create a TRTCCalling object
 Create a TRTCCalling object and set the `SDKAppID` parameter to your `SDKAppID`.
-<dx-codeblock>
-::: javascript javascript
+```javascript
 import TRTCCalling from 'trtc-calling-js';
 
 let options = {
   SDKAppID: 0 // Replace 0 with your `SDKAppID` when connecting.
 };
 const trtcCalling = new TRTCCalling(options);
-:::
-</dx-codeblock>
+```
 
 ### Step 3. Log in
 Call the login function to log in, with `userID` set to your user ID and `userSig` set to your signature. For how to calculate userSig, see [FAQs > UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
