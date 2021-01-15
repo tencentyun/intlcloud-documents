@@ -1,0 +1,32 @@
+After an Internet tunnel is created, you can modify or delete it, edit tags, and perform other operations on the console.
+
+## Modifying a Tunnel
+### Tunnel 1.0
+Contact your Direct Connect representative to modify a 1.0 Internet tunnel.
+
+### Tunnel 2.0
+Perform the following operations to modify a 2.0 Internet tunnel.
+1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc) and click **Internet Tunnels** in the left sidebar.
+2. Locate the Internet tunnel to be modified and click **Modify Tunnel** under the **Operation** column.
+3. Select the **Cloudification Link** tab and configure as follows:
+ - Modify the tunnel configuration
+    1. Click **Edit** on the right of the **Tunnel Configuration**.
+      ![](https://main.qcloudimg.com/raw/192618aa67d85f6500ae86086fba9c1f.png)
+    2. Modify the Tencent Cloud primary IP, Tencent Cloud secondary IP, CPE IP, VLAN ID, or other parameters as needed, and click **Save**.
+     <img src="https://main.qcloudimg.com/raw/08acacb46b155e1723174deb7953eab5.png" width= 40% />
+ - Modify the routing mode
+    1. Click **Edit** on the right of the **Routing Mode**.
+    ![](https://main.qcloudimg.com/raw/2ff7c62bd1d68488014eeeed357b926d.png)
+    2. Configure the routing mode as instructed below and click **Save**.
+      - BGP asn: enter the ASN number of the local IDC. If it is left empty, the system will automatically obtain the ASN number.
+      - BGP key: enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It cannot contain special characters such as ?, &, space, ", \, and +.
+   <img src="https://main.qcloudimg.com/raw/7c3a00ce8572167d3541bd3df1a8a730.png" width= 40% />
+ - Enable or disable the health check
+     After the health check is enabled, the service will be quickly switched to the standby link in case of network exceptions.
+
+## Deleting an Internet Tunnel
+1. On the **Internet Tunnels** page, select the tunnel to be deleted and click **Delete** under the **Operation** column.
+>? A **Modifying** or **Configuring** tunnel cannot be deleted.
+> 
+![](https://main.qcloudimg.com/raw/740689f61578c83726fd5adb227062f8.png)
+2. Click **Delete** in the pop-up window to confirm the deletion. You can create a dedicated tunnel with the same VLAN ID only after the deletion operation is completed.
