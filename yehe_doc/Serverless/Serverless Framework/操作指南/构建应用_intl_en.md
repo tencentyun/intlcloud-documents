@@ -44,10 +44,8 @@ A sample `.yml` file for the COS component is provided below. For more informati
 ```yml
 app: appDemo
 stage: dev
-
 component: cos
 name: cosdemo
-
 inputs:
   bucket: my-bucket
   region: ap-guangzhou
@@ -57,7 +55,6 @@ inputs:
 ```yml
 app: appDemo
 stage: dev
-
 component: scf
 name: scfdemo
 inputs:
@@ -91,7 +88,6 @@ app: demo
 component: scf
 name: rest-api
 stage: dev
-
 inputs:
   name: ${org}-${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # `REGION=` information specified in the environment variable
