@@ -22,15 +22,15 @@ TencentDB for Tendis supports the [pay-as-you-go](https://intl.cloud.tencent.com
 <tbody>
 <tr>
 <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing</td>
-<td>0.2333</td>
-<td>0.1750</td>
-<td>0.1167</td>
+<td>0.029532</td>
+<td>0.022152</td>
+<td>0.014772</td>
 </tr>
 <tr>
 <td>Hong Kong (China), Taipei (China), Bangkok, Singapore, Mumbai, Tokyo, Seoul, Silicon Valley, Virginia, Toronto, Frankfurt, and Moscow</td>
-<td>0.3167</td>
-<td>0.2375</td>
-<td>0.1583</td>
+<td>0.040089</td>
+<td>0.030063</td>
+<td>0.020038</td>
 </tr>
 </tbody></table>
 
@@ -49,15 +49,15 @@ TencentDB for Tendis supports the [pay-as-you-go](https://intl.cloud.tencent.com
 <tbody>
 <tr>
 <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing</td>
-<td>4.5333</td>
-<td>3.4000</td>
-<td>2.2667</td>
+<td>0.573835</td>
+<td>0.430380</td>
+<td>0.286924</td>
 </tr>
 <tr>
 <td>Hong Kong (China), Taipei (China), Bangkok, Singapore, Mumbai, Tokyo, Seoul, Silicon Valley, Virginia, Toronto, Frankfurt, and Moscow</td>
-<td>6.6667</td>
-<td>5.0000</td>
-<td>3.3333</td>
+<td>0.843886</td>
+<td>0.632911</td>
+<td>0.421937</td>
 </tr>
 </tbody></table>
 
@@ -75,15 +75,15 @@ TencentDB for Tendis supports the [pay-as-you-go](https://intl.cloud.tencent.com
 </tr>
 <tbody><tr>
 <td>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, and Chongqing</td>
-<td>0.0061</td>
-<td>0.0046</td>
-<td>0.0031</td>
+<td>0.000772</td>
+<td>0.000582</td>
+<td>0.000392</td>
 </tr>
 <tr>
 <td>Hong Kong (China), Taipei (China), Bangkok, Singapore, Mumbai, Tokyo, Seoul, Silicon Valley, Virginia, Toronto, Frankfurt, and Moscow</td>
-<td>0.0073</td>
-<td>0.0055</td>
-<td>0.0037</td>
+<td>0.000924</td>
+<td>0.000696</td>
+<td>0.000468</td>
 </tr>
 </tbody></table>
 
