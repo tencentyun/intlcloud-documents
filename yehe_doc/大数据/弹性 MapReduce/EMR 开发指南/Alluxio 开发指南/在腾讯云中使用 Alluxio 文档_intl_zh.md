@@ -12,7 +12,7 @@
 
 ### 购买页创建集群
 您需要登录腾讯云 EMR [购买页](https://buy.cloud.tencent.com/emapreduce/)，在购买页选择支持的 Alluxio 发布版本，并且在可选组件列表中勾选 Alluxio 组件。
-![](https://docimg3.docs.qq.com/image/KvJkZd8RzqH64xhTFXVLjw?w=2362&h=1628)
+![](https://main.qcloudimg.com/raw/9b11e95949031de0fe04019b54e39af3.png)
 其他的选项可根据业务具体业务场景，进行个性化配置，创建过程中的具体选项可参考 [创建 EMR 集群](https://intl.cloud.tencent.com/document/product/1026/31099)。
 
 ### API 创建集群
@@ -20,9 +20,9 @@
 
 ## 基础配置
 创建一个带 Alluxio 组件的腾讯云 EMR 集群，默认会把 HDFS 挂载到 Alluxio 上，并使用内存作为单层 level0 存储。如果有需要更改更符合业务特性的多级存储，或者其他对应优化项，可以使用配置下发功能来完成相关配置。
-![](https://docimg9.docs.qq.com/image/I2BDurDEluNDL4GAIUyyuw?w=5066&h=1954)
+![](https://main.qcloudimg.com/raw/62695b564a061729a0e3617ff5d2dafc.png)
 在配置下发后，部分配置需要重启 Alluxio 服务才能生效。
-![](https://docimg4.docs.qq.com/image/Tm4c2SYbE-kOHcPY9vkjbQ?w=5110&h=1260)
+![](https://main.qcloudimg.com/raw/92f4f9a94f01950caba0511da7fafdfb.png)
 更多配置下发和重启策略细节，可参考 [配置下发](https://intl.cloud.tencent.com/document/product/1026/31109) 和 [重启组件](https://intl.cloud.tencent.com/document/product/1026/31110)。
 
 ### 基于 Alluxio 加速计算存储分离
@@ -32,8 +32,8 @@
 
 ### 授权
 若当前集群未开启对象存储，可在【[访问管理控制台-角色管理](https://console.cloud.tencent.com/cam/role/grant?roleName=EMR_QCSRole&policyName=QcloudAccessForEMRRoleInApplicationDataAccess&principal=eyJzZXJ2aWNlIjoiZW1yLmNsb3VkLnRlbmNlbnQuY29tIn0=&serviceType=EMR&s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Femr%2Fstatic%2Fframework%2Femr-g9qk9p0g%3Ftype%3DinstanceDetail%26regionId%3D8)】中进行授权，授权后 EMR 中节点可以通过临时密钥访问 COS 中数据。
-![](https://docimg5.docs.qq.com/image/crzYGW6y3eSB4U5pLt7_QA?w=5094&h=1258)
-![](https://docimg7.docs.qq.com/image/jiJ5dI52mcuEXPY0ViXv6Q?w=4422&h=874)
+![](https://main.qcloudimg.com/raw/9d5b33e9dcc36f53e30963d47d9f2095.png)
+![](https://main.qcloudimg.com/raw/7f1943ef4cfbb870e5ca3ec1f01ff19a.png)
 
 ### Mount
 登录到 EMR 任意一台机器，挂载 COS 到 Alluxio。
