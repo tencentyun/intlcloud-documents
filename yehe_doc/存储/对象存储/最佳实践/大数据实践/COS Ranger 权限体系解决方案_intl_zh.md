@@ -29,8 +29,8 @@ Hadoop 权限体系中, 认证由 Kerberos 提供，授权鉴权由 Ranger 负�
 
 ## 部署组件
 
-<dx-tabs>
-::: 部署COS-Ranger-Plugin
+### 部署COS-Ranger-Plugin
+
 COS-Ranger-Plugin 拓展了 Ranger Admin 控制台上的服务种类，用户可在 Ranger 控制台上，设置和 COS 相关的操作权限。
 
 
@@ -53,13 +53,12 @@ b. 自建的 hadoop 环境，可以通过在 ranger 目录下查找 hdfs 等已�
 adminUser=root
 adminPasswd=xxxxxx
 rangerServerAddr=10.0.0.1:6080
-
 curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
-
 ##如果要删除刚定义的服务，则传入刚刚创建服务时，返回的服务 ID
 serviceId=102
 curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H "Content-Type:application/json" http://${rangerServerAddr}/service/plugins/definitions/${serviceId}
 ```
+
 5. 创建服务成功后，可在 Ranger 控制台看到 COS 服务。如下所示：
 ![](https://main.qcloudimg.com/raw/d1a6e2722d11f7177636a5e2c54226e3.png)
 6. 在 COS 服务侧单击【+】，定义新服务实例，服务实例名可自定义，例如`cos`或者`cos_test`，服务的配置如下所示。
