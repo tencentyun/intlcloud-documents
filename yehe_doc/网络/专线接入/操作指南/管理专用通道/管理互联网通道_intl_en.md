@@ -12,7 +12,6 @@ Perform the following operations to modify a 2.0 Internet tunnel.
  - Modify the tunnel configuration
     1. Click **Edit** on the right of the **Tunnel Configuration**.
     2. Modify the Tencent Cloud primary IP, Tencent Cloud secondary IP, CPE IP, VLAN ID, or other parameters as needed, and click **Save**.
-     <img src="https://main.qcloudimg.com/raw/08acacb46b155e1723174deb7953eab5.png" width= 40% />
  - Modify the routing mode
     1. Click **Edit** on the right of the **Routing Mode**.
     2. Configure the routing mode as instructed below and click **Save**.
