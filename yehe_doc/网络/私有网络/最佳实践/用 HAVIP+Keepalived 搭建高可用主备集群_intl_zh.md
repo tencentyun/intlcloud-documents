@@ -37,7 +37,7 @@
 >+ 镜像版本：CentOS 7.6 64位
 >
 
-<span id="step1">
+<span id="step1"></span>
 ### 步骤1：申请 VIP
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/)。
 2. 在左侧导航栏中，选择【IP 与网卡】>【高可用虚拟 IP】。 
