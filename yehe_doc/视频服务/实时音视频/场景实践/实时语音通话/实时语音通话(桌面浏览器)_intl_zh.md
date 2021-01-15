@@ -35,7 +35,7 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 [](id:step2)
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)】），下载相关 SDK 及配套的 Demo 源码。
- ![](https://main.qcloudimg.com/raw/0f35fe3bafe9fcdbd7cc73f991984d1a.png)
+
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
 
@@ -47,7 +47,7 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
   - SDKAPPID：默认为0，请设置为实际的 SDKAppID。
   - SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
-<img src="https://main.qcloudimg.com/raw/0ae7a197ad22784384f1b6e111eabb22.png">
+
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -63,13 +63,13 @@ npm install
 npm run serve
 ```
 2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` ，如果一切正常，Demo 运行界面如图所示：
-![](https://main.qcloudimg.com/raw/03cc2aa792a0f885fe070eb86ada4ce4.png)
+
 3. 输入用户 userid，单击【登录】，并选择【语音通话】：
-![](https://main.qcloudimg.com/raw/c1243956fe79d1361f3f0329e85f41d9.png)
+
 4. 输入呼叫用户 userid，单击【呼叫】：
-![](https://main.qcloudimg.com/raw/cdb27d63a75c83e99452923d5da05999.png)
+
 5. 即可进行语音通话：
-![](https://main.qcloudimg.com/raw/37f1e43114ea2ab6dc4b419d60002d09.png)
+
 
 
 ## 搭建自己的语音通话
