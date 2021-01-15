@@ -1,6 +1,7 @@
 アプリケーション作成後、【機能設定】によって現在のアプリケーションの[Relayed Push](#bypass)、[クラウドレコーディング](#record)、[高度な権限制御](#purview)の機能を有効にできます。この画面の機能設定はいずれも変更完了の約5分後に有効化されます。
 
-[](id:bypass)
+
+<span id="bypass"></span>
 ## Relayed Push設定
 
 ### 注意事項
@@ -11,14 +12,14 @@
 - Relayed Pushを [クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426) に使用する時は、レコーディング、レコーディングファイル保存などの費用が発生します。詳細は、[クラウドレコーディングと再生>関連費用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8)の説明をご参照ください。
 -  [LVBコンソール](https://console.cloud.tencent.com/live/domainmanage) でRelayed Pushに使用されるプッシュドメイン名（`xxxx.livepush.myqcloud.com`）にレコーディング、トランスコーディング、スクリーンキャプチャ・ポルノ検出、ウォーターマークなどの課金機能のテンプレートをバインドする場合は、Relayed Push時に、テンプレートに対応する[付加価値サービス費用](https://intl.cloud.tencent.com/zh/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8.3Cspan-id.3D.22appreciation.22.3E.3C.2Fspan.3E) が発生します。
 
-[](id:open_bypass)
+<span id="open_bypass"></span>
 ### Relayed Push機能をオンにする
 1. TRTCコンソールに入り、【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】を選択します。
 2. 機能設定を変更したいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
 3. 【Relayed Push設定】の中で、【Relayed Pushを有効】の右側のボタンをクリックします。
 4. ポップアップした【Relayed Push機能をオンにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、アクティブ化について確認してから、【Relayed Push機能をオンにする】をクリックします。
 
-[](id:select)
+<span id="select"></span>
 ### Relayed Push方式の選択
 [Relayed Push機能をオン](#open_bypass)にした後、実際の業務の状況に応じてRelayed Pushの方式を選択することができます。
 
@@ -26,7 +27,7 @@
 - **Global Auto-relay**：「Global Auto-relay」を選択すると、すべてのTRTCのアップストリームのオーディオ／ビデオストリームはLVBシステムにAuto-relay Pushされます。
 
 
-[](id:close__bypass)
+<span id="close_bypass"></span>
 ### Relayed Push機能をオフにする
 Relayed Push機能を無効にしたい場合、具体的な操作手順は次のとおりです。
 1. 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】をクリックして、機能設定を変更したいアプリケーションを選択し、対象のアプリケーションがある行の【機能設定】をクリックします。
@@ -34,7 +35,7 @@ Relayed Push機能を無効にしたい場合、具体的な操作手順は次�
 3. ポップアップした【Relayed Push機能をオフにする】のポップアップボックスで、**リスク説明にしっかりと目を通し**、無効化について確認してから、【Relayed Push機能をオフにする】をクリックします。
 
 
-[](id:record)
+<span id="record"></span>
 ## クラウドレコーディングの設定
 
 ### 注意事項
@@ -46,11 +47,11 @@ Relayed Push機能を無効にしたい場合、具体的な操作手順は次�
 - クラウドレコーディングはRelayed Pushに依存します。先に[Relayed Push]を有効(#open_bypass)にしてください。
 
 
-[](id:open_record)
+<span id="open_record"></span>
 ### クラウドレコーディング機能を有効にする
 TRTCのクラウドレコーディングは、ルーム内の各ユーザーの音声・ビデオストリームをレコーディングして個別のファイルにすることができます。クラウドレコーディング機能を有効にしたい場合、詳しい操作ガイドは [クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426#open)をご参照ください。
 
-[](id:change_record)
+<span id="change_record"></span>
 ### クラウドレコーディング設定の変更
 >! クラウドレコーディングの設定を変更すると、オンラインの作業データに影響を与える可能性があります。リスクを確認してから、注意して続行してください。
 
@@ -59,7 +60,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 4.   実際の状況に応じて [設定情報](https://intl.cloud.tencent.com/document/product/647/35426#recordType)を変更し、【OK】をクリックして変更を保存します。
 
 
-[](id:close_record)
+<span id="close_record"></span>
 ### クラウドレコーディング機能をオフにする
 クラウドレコーディングをオフにすると、オンラインで手動レコーディングや自動レコーディングなどのクラウドレコーディングを実行できなくなります。閉じる前に、業務でクラウドレコーディングが不要であることを確認してください。
 
@@ -70,7 +71,7 @@ TRTCのクラウドレコーディングは、ルーム内の各ユーザーの�
 
 
 
-[](id:purview)
+<span id="purview"></span>
 ## 高度な権限制御
 特定のルームに、入室制限またはマイクアクセス制限を追加したい場合、つまり指定したユーザーのみ入室またはマイクアクセスを許可したい場合に、クライアントで権限を判断するとクラッキングされて攻撃されやすいことが懸念される場合は [高度な権限制御を有効にする](https://intl.cloud.tencent.com/document/product/647/35157)ことをご検討ください。
 
