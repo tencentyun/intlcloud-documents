@@ -44,10 +44,8 @@ COS 组件的 yml 文件示例如下，全量配置文件可参考 [COS 组件�
 ```yml
 app: appDemo
 stage: dev
-
 component: cos
 name: cosdemo
-
 inputs:
   bucket: my-bucket
   region: ap-guangzhou
@@ -57,7 +55,6 @@ inputs:
 ```yml
 app: appDemo
 stage: dev
-
 component: scf
 name: scfdemo
 inputs:
@@ -91,7 +88,6 @@ app: demo
 component: scf
 name: rest-api
 stage: dev
-
 inputs:
   name: ${org}-${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # 环境变量中指定的 REGION= 信息
