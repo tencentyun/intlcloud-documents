@@ -14,15 +14,15 @@ def method_name(event,context):
 
 函数入参，是指函数在被触发调用时所传递给函数的内容。通常情况下，函数入参包括 **event 入参**和 **context 入参**两部分，但根据开发语言和环境的不同，入参个数可能有所不同，详情请参见 [开发语言说明](https://intl.cloud.tencent.com/document/product/583/11061)。
 
-<dx-fold-block title="event 入参">
+#### event 入参
 #### 作用
  参数类型为 `dict`。将 event 入参传递给执行方法，实现代码与触发函数的事件（event）交互。例如，由于文件上传触发了函数运行，代码可从 event 参数中获取该文件所有信息，包括文件名、下载路径、文件类型、大小等。
 #### 使用说明
 针对不同的函数情况，event 参数的值有以下区别：
 - 云服务触发函数时，云服务会将事件以一种平台预定义的、不可更改的格式作为 event 参数传给 SCF 函数，您可以根据此格式编写代码并从 event 参数中获取信息。例如，COS 触发函数时会将 Bucket 及文件的具体信息以 <a href="https://intl.cloud.tencent.com/document/product/583/9707">JSON 格式</a> 传递给 event 参数。
 - 云函数被其他应用程序调用时，您可以在调用方和函数代码之间自定义一个 <code>dict</code> 类型的参数。调用方按照定义好的格式传入数据，函数代码按格式获取数据。<br>例如，定义一个 <code>dict</code> 类型的数据结构 <code>{"key":"XXX"}</code>，当调用方传入数据 <code>{"key":"abctest"}</code> 时，函数代码可以通过 <code>event[key]</code> 来获得值  <code>abctest</code>。
-</dx-fold-block>
-<dx-fold-block title="context 入参">
+
+#### context 入参
 #### 作用
 将 context 入参传递给执行方法，代码将通过 context 入参对象，了解到运行环境及当前请求的相关内容。
 #### 使用说明
@@ -42,11 +42,11 @@ def method_name(event,context):
 		tencentcloud_appid: '1253970226',
 		tencentcloud_uin: '3473058547' 
 }
-​```其中包括了当前调用的执行超时时间，内存限制，以及当次请求 ID。
-<dx-alert infotype="notice" title="注意">
-context 结构内容将会随着 SCF 平台的开发迭代而增加更多内容。
-</dx-alert>
-</dx-fold-block>
+```
+其中包括了当前调用的执行超时时间，内存限制，以及当次请求 ID。
+
+>! context 结构内容将会随着 SCF 平台的开发迭代而增加更多内容。
+
 
 <br>
 了解 event 入参和 context 入参的基本用法后，在编写函数代码时您还需注意以下几点：
@@ -127,8 +127,8 @@ SCF 平台会获取到云函数执行完成后的返回值，并根据下表中�
 >?您可以前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index) 按照以下步骤进行异常处理测试：
 >1. 新建函数并复制以下函数代码，不添加任何触发器。
 >2. 单击控制台【测试】，选择 “Hello World” 测试示例进行测试。
-<dx-tabs>
-::: 显式抛出异常
+
+#### 显式抛出异常
 - **示例**
 ```
 def always_failed_handler(event,context):
@@ -141,8 +141,8 @@ File "/var/user/index.py", line 2, in always_failed_handler
 raise Exception('I failed!')
 Exception: I failed!
 ```
-:::
-::: 继承Exception类
+
+#### 继承Exception类
 - **示例**
 ```
 class UserNameAlreadyExistsException(Exception): pass
@@ -153,8 +153,8 @@ def create_user(event):
 ```
 - **说明**
 您可以在代码中自行定义错误的处理方式，保障应用程序的健壮性和可扩展型。
-:::
-::: 使用Try语句捕获错误
+
+#### 使用Try语句捕获错误
 - **示例**
 ```
 def create_user(event):
@@ -165,8 +165,7 @@ def create_user(event):
 ```
 - **说明**
 您可以在代码中自行定义错误的处理方式，保障应用程序的健壮性和可扩展型。
-:::
-</dx-tabs>
+
 
 ### 返回错误信息
 当用户的代码逻辑中未进行异常处理及错误捕获时，SCF 平台会尽可能的捕获错误。例如，用户函数在运行过程中突然崩溃退出，当出现此类平台也无法捕获错误的情况时，系统将会返回一个通用的错误信息。
@@ -205,8 +204,8 @@ SCF 平台会将函数调用的所有记录及函数代码中的全部输出存�
 Log 语句为函数提供必要的执行过程中的信息，是开发者对代码进行排障的必要手段。SCF 平台会将用户在代码中使用 log 语句生成的日志全部写入日志系统中，如果您使用控制台调用函数，控制台将显示相同的日志。
 
 您可以通过 print 语句或 logging 模块中的 Logger 函数生成日志条目。 如下所示：
-<dx-tabs>
-::: 使用logging语句
+
+#### 使用logging语句
 下例代码使用 logging 模块将信息写入日志中：
 ```
 import logging
@@ -215,22 +214,21 @@ def my_logging_handler(event):
     logger.info('got event{}'.format(event))
     logger.error('something went wrong')
     return 'Hello World!'
-```您可以前往控制台日志模块或通过 <a href="https://intl.cloud.tencent.com/document/product/583/18583">获取函数运行日志</a> API 来查看代码中的日志信息。
-<dx-alert infotype="notice" title="注意">
-日志级别标识日志的类型，例如 <code>INFO</code>、<code>ERROR</code> 和 <code>DEBUG</code>。
-</dx-alert>
-:::
-::: 使用print语句
+```
+您可以前往控制台日志模块或通过 <a href="https://intl.cloud.tencent.com/document/product/583/18583">获取函数运行日志</a> API 来查看代码中的日志信息。
+
+>! 日志级别标识日志的类型，例如 <code>INFO</code>、<code>ERROR</code> 和 <code>DEBUG</code>。
+
+
+#### 使用print语句
 在代码中使用 print 语句：
 ```
 def print_handler(event):
     print('this will show up in logging')
     return 'Hello World!'
-```<dx-alert infotype="notice" title="注意">
-当使用控制台【测试】同步调用此函数时，控制台将显示 print 语句和 return 的值。
-</dx-alert>
-:::
-</dx-tabs>
+```
+
+>! 当使用控制台【测试】同步调用此函数时，控制台将显示 print 语句和 return 的值。
 
 ### 获取日志
 您可以通过以下途径获取函数运行日志：
@@ -278,5 +276,3 @@ def print_handler(event):
 		margin-bottom:0px !important;
 	}
 </style>
-
-```
