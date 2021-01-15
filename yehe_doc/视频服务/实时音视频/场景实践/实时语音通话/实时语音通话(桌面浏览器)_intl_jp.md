@@ -25,20 +25,20 @@
 
 ## テストDemo実行
 
-[](id:step1)
+<span id ="step1"></span>
 ### 手順1：アプリケーションの新規作成
 
 - [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985)および[実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了します。実名認証を行っていないユーザーは、中国大陸のリアルタイム音声通話のインスタンスを購入できません。
 2．Tencent Real-Time Communicationコンソールにログインし、【開発支援】>【[Demoのクイック実行](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 3．【今すぐ開始】をクリックし、例えば、`TestTRTC`などアプリケーション名を入力して、【アプリケーションの作成】をクリックします。
 
-[](id:step2)
+<span id ="step2"></span>
 ### 手順2：SDKおよびDemoのソースコードをダウンロード
 1. マウスを対応するカードに動かして、【[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)】をクリックしてGitHubに移動し（または【[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)】をクリック）、関連するSDKおよび付属のDemoのソースコードをダウンロードします。
 2. ダウンロード完了後、Tencent Real-Time Communicationコンソールに戻り、【ダウンロードしました。次のステップ】をクリックすれば、SDKAppIDおよびキー情報をクエリできます。
 
 
-[](id:step3)
+<span id ="step3"></span>
 ### 手順3：Demoプロジェクトファイルの設定
 
 1. [手順2](#step2)でダウンロードしたソースコードパッケージを解凍します。
@@ -50,11 +50,11 @@
 5.【ガイドを閉じてコンソールへ進む】をクリックします。
 
 >!
->-本書で言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになり、そのため**のこの手法はローカルDemo実行および機能デバッグにのみ適合します**。
+>- 本書で言及した新規UserSigの作成法は、クライアントコードでSECRETKEYを設定し、この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるようになり、そのため**のこの手法はローカルDemo実行および機能デバッグにのみ適合します**。
 >
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出しダイナミックUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
-[](id:step4)
+<span id ="step4"></span>
 ### 手順4：Demoの動作
 1. npmコマンドラインウィンドウに次のコマンドを入力します。
 ```
