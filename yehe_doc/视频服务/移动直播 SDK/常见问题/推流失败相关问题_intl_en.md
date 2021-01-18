@@ -14,7 +14,7 @@ Some clients may be too cautious when setting `txTime`. For example, they may se
 You are recommended to set `txTime` to a point 12 or 24 hours from the current time, longer than the duration of a typical LVB.
 
 ### 4. Is `txSecret` correct?
-To ensure security, Tencent Cloud requires hotlink protection for all push URLs and **rejects** expired URLs and those with miscalculated hotlink protection keys. When push is rejected, the LVB SDK throws a **PUSH_WARNING_SERVER_DISCONNECT** event, and the [LVB SDK demo](https://intl.cloud.tencent.com/document/product/1071/38147) acts as follows:
+To ensure security, Tencent Cloud requires hotlink protection for all push URLs and **rejects** expired URLs and those with miscalculated hotlink protection keys. When push is rejected, the LVB SDK throws a **PUSH_WARNING_SERVER_DISCONNECT** event, and the LVB SDK demo acts as follows:
 See [Best Practice > LVB Push](https://intl.cloud.tencent.com/document/product/267/31558) for how to get reliable push URLs.
 
 #### 5. Is the push URL occupied?
