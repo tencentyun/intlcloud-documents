@@ -61,7 +61,7 @@ Signaure=hmac-sha1(SecretKey , "sha1\n" + KeyTime + "\n" + sha1Hex(RtmpString) +
 - `\n`为换行符。如果其中有字符串为空，前后的换行符需要保留，例如`/examplebucket-1250000000/test-channel\n\n`。
 
 
-### 步骤3：生成 StringToSign[](id:step3)
+### 步骤3：生成 StringToSign
 
 根据 KeyTime 与 RtmpString 生成 StringToSign，格式为`sha1\nKeyTime\nsha1Hex(RtmpString)\n`。
 其中：
@@ -72,7 +72,7 @@ Signaure=hmac-sha1(SecretKey , "sha1\n" + KeyTime + "\n" + sha1Hex(RtmpString) +
 
 ### 步骤4：生成 Signature
 
-使用 [HMAC-SHA1](#step4) 以 SecretKey 为密钥，以 [StringToSign](#step3) 为消息，计算消息摘要，即为 Signature，例如：`01681b8c9d798a678e43b685a9f1bba0f6c0e012`。
+使用 [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) 以 SecretKey 为密钥，以 [StringToSign](#stringtosign) 为消息，计算消息摘要，即为 Signature，例如：`01681b8c9d798a678e43b685a9f1bba0f6c0e012`。
 
 ### 步骤5：生成完整的签名参数
 
@@ -101,7 +101,7 @@ StringToSign = sha1\nKeyTime\nSHA1(RtmpString)\n
 Signature = HMAC-SHA1(SignKey, StringToSign)
 ```
 
-### 消息摘要算法示例[](id:step4)
+### 消息摘要算法示例
 
 不同语言如何调用 HMAC-SHA1 可以参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 中的代码示例章节。
 
