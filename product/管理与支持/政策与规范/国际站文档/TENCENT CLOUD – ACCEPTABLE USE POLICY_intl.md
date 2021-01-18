@@ -8,27 +8,26 @@ Any terms used in this Policy will have the same meaning as the equivalent defin
 
 ## PROHIBITED ACTIVITIES
 
-You agree not to (and to not allow any person (including any End Users) to) engage in any of the following prohibited activities (or encourage any person to engage in such prohibited activities) on or in relation to Tencent Cloud. 
+You agree not to (and to not allow or cause any person (including any End Users) to) engage in any of the following prohibited activities (or encourage any person to engage in such prohibited activities) on or in relation to Tencent Cloud. 
 
 + **No breach of the Tencent Cloud Terms of Service.** You may not use Tencent Cloud in any manner or for any purpose which breaches the Tencent Cloud Terms of Service (including this Policy) or which breaches the terms of service of any other Tencent service or product.
 + **No illegal, harmful or offensive use or content.** You may not use Tencent Cloud to:
-   - violate any applicable laws or regulations; 
-   - engage in any illegal (or potentially illegal) activities;
+   - violate any applicable laws, regulations, governmental orders or decrees; 
+   - engage in, promote, or encourage any illegal (or potentially illegal) activities;
    - send any unsolicited, unauthorised spam, advertising or promotional messages; 
    - share or publish any other person’s personally identifiable information using Tencent Cloud without their express consent; 
    - create multiple accounts for disruptive or abusive purposes;
-   - create multiple accounts for disruptive or abusive purposes;
-   - submit, upload, store, transmit or display any content (whether displayed publicly or not) which in fact or in our reasonable opinion: 
-
-		- violates any applicable laws or regulations; 
+   - submit, upload, store, transmit, distribute, display or otherwise make available any content (whether displayed publicly or not) which in fact or in our reasonable opinion: 
+   
+	- violates any applicable laws or regulations; 
 		- infringes our rights or any third party’s rights – including any intellectual property rights, contractual rights, confidentiality rights or privacy rights; 
 		- creates a risk of loss or damage to any person or property; 
 		- is fraudulent, false, misleading or deceptive; 
-		- harms or exploits any person (whether adult or minor) in any way, including via bullying, harassment or threats of violence; 
-		- is hateful, harassing, abusive, racially or ethnically offensive, defamatory, humiliating to other people (publicly or otherwise), threatening, profane or otherwise objectionable; 
+		- harms or exploits, or may harm or exploit any person (whether adult or minor) in any way, including via bullying or harassment, or threats, support, or encouragement of violence; 
+		- is hateful, harassing, abusive, promoting bigotry, racially or ethnically offensive, defamatory, humiliating to other people (publicly or otherwise), threatening, profane or otherwise objectionable; 
 		- promotes or encourages self-harming; or
 		- is pornographic, sexually explicit, violent or otherwise of a mature nature; or 
-   - impersonate any person or misrepresent your affiliation with any person or entity in registering an account (including by creating a misrepresentative account name or accessing another user’s account) or in making any communications or sharing or publishing any content or information using Tencent Cloud. 
+	- impersonate any person or misrepresent your affiliation with any person or entity in registering or using an account (including by creating a misrepresentative account name or accessing another user’s account) or in making any communications or sharing or publishing any content or information using Tencent Cloud. 
 + **No security breach or network abuse.** You may not use Tencent Cloud to:
    - interfere with, or attempt to interfere with, any user’s or any other party’s access to Tencent Cloud;
    - disable, interfere with or circumvent any parts of Tencent Cloud;  
