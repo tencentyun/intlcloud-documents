@@ -55,7 +55,7 @@
 
 
 ## 相关文档
-- 若需在应用列表中搜索相关应用，具体操作请参见 [搜索应用](https://cloud.tencent.com/document/product/647/50493)。
+- 若需在应用列表中搜索相关应用，具体操作请参见 [搜索应用](https://intl.cloud.tencent.com/document/product/647/39078)。
 - 若需配置或查看应用的功能配置信息，具体操作请参见 [功能配置](https://intl.cloud.tencent.com/zh/document/product/647/39080)。
 - 若需快速跑应用通配套的 Demo 源码，具体操作请参见 [快速上手](https://intl.cloud.tencent.com/zh/document/product/647/39082)。
 
