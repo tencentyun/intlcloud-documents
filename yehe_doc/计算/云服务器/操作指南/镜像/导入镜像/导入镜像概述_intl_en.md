@@ -6,7 +6,7 @@ In addition to [creating custom images](https://intl.cloud.tencent.com/document/
 Prepare an image file that meets the import requirements.
 - **Requirements for Linux images:**
 <table>
-<tr><th>Image Attribute</th><th>Requirements</th></tr>
+<tr><th style="width:16%">Image Attribute</th><th>Requirements</th></tr>
 <tr><td>OS</td><td><ul><li>CentOS, Ubuntu, Debian, CoreOS, OpenSUSE, and SUSE</li><li>Both 32-bit and 64-bit OSs are supported.</li></ul></td></tr>
 <tr><td>Image format</td><td><ul><li>RAW, VHD, QCOW2, and VMDK</li><li>Run <code>qemu-img info imageName | grep 'file format'</code> to check the image format.</li></ul></td></tr>
 <tr><td>File system type</td><td>GPT partition is not supported.</td></tr>
@@ -14,16 +14,18 @@ Prepare an image file that meets the import requirements.
 <tr><td>Network</td><td><ul><li>By default, Tencent Cloud provides the <code>eth0</code> network interface for the instance.</li><li>You can use the metadata service to query the network configuration of the instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4934">Instance Metadata</a>.</li></ul></td></tr>
 <tr><td>Driver</td><td><ul><li>Virtio driver of the virtualization module KVM must be installed for an image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/9929">Checking Virtio Drivers in Linux</a>.</li><li>We recommend installing cloud-init for the image. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/12587">Installing Cloud-Init on Linux</a>. </li><li>If cloud-init cannot be installed, configure the instance by referring to <a href="https://intl.cloud.tencent.com/document/product/213/12849">Forcibly Import Image</a>.</li></ul></td></tr>
 <tr><td>Kernel</td><td>Native kernel is preferred for an image. Any modifications on the kernel may cause the import to fail.</td></tr>
+<tr><td>Region</td><td>Importing images from COS in another region is unavailable for the Shanghai Finance and Shenzhen Finance.</td></tr>
 </table>
 - **Requirements for Windows images:**
 <table>
-<tr><th>Image Attribute</th><th>Requirements</th></tr>
+<tr><th style="width:16%">Image Attribute</th><th>Requirements</th></tr>
 <tr><td>OS</td><td><ul><li>Windows Server 2008, Windows Server 2012, and Windows Server 2016 related versions</li><li>Both 32-bit and 64-bit OSs are supported.</li></ul></td></tr>
 <tr><td>Image format</td><td><ul><li>RAW, VHD, QCOW2, and VMDK</li><li>Run <code>qemu-img info imageName | grep 'file format'</code> to check the image format.</li></ul></td></tr>
 <tr><td>File system type</td><td><ul><li>Only NTFS with MBR partition is supported.</li><li>GPT partition is not supported.</li><li>Logical Volume Manager (LVM) is not supported.</li></ul></td></tr>
 <tr><td>Image size</td><td><ul><li>The actual image size cannot exceed 50 GB. Run <code>qemu-img info imageName | grep 'disk size'</code> to check the image size.</li><li>The image vsize cannot exceed 500 GB. Run <code>qemu-img info imageName | grep 'virtual size'</code> to check the image vsize.</li></ul><b>Note: </b>size of an image in QCOW2 format is used upon check during import.</td></tr>
 <tr><td>Network</td><td><ul><li>By default, Tencent Cloud provides <code>local area connection</code> network interface for the instance. </li><li>You can use the metadata service to query the network configuration of the instance. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/4934">Instance Metadata</a>.</li></ul></td></tr>
-<tr><td>Driver</td><td>Virtio driver of the virtualization module KVM must be installed for an image. By default, Virtio driver is not installed in Windows OS. You can install <a href="http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe">Windows Virtio Drivers</a> and then export the local image.</td></tr>
+<tr><td>Driver</td><td>Virtio driver of the virtualization module KVM must be installed for an image. The Windows system does not come with a Virtio driver by default, so please first install the Windows Virtio driver before exporting a local image. Choose the download address based on the network environment:<ul><li>Internet download address:<code>http://mirrors.tencent.com/install/windows/virtio_64_10003.msi</code></li><li>Private network download address:<code>http://mirrors.tencentyun.com/install/windows/virtio_64_10003.msi</code></li></ul></td></tr>
+<tr><td>Region</td><td>Importing images from COS in another region is unavailable for the Shanghai Finance and Shenzhen Finance.</td></tr>
 <tr><td>Others</td><td>Imported Windows images <b>do not support </b><a href="https://intl.cloud.tencent.com/document/product/213/2757">Windows system activation</a>.</td></tr>
 </table>
 
@@ -35,7 +37,7 @@ Prepare an image file that meets the import requirements.
  4. [Activate Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) and then [create bucket](/doc/product/436/6232). Upload the image file to the bucket and get the [image file URL](/doc/product/436/6260).
  5. Click **Next**.
  6. Complete the configurations and click **Import**.
- > Ensure the entered COS file URL is correct.
+ >! Ensure the entered COS file URL is correct.
  >
 You will be notified about the result of import via the console [Message Center](https://console.cloud.tencent.com/message).
 
@@ -46,7 +48,7 @@ If the importation failed, troubleshoot as follows:
 ### Notes
 
 Make sure you have subscribed to product service notifications via [Message Subscription](https://console.cloud.tencent.com/messageCenter/messageConfig). This ensures you can receive internal messages, SMS messages, and emails about the cause of failure.
-> If you do not subscribe to product service notifications, you will not receive the internal message about whether an import is successful.
+>! If you do not subscribe to product service notifications, you will not receive the internal message about whether an import is successful.
 
 ### Troubleshooting
 
@@ -55,16 +57,16 @@ For more information on error messages and descriptions, see [Error Codes](#erro
 #### InvalidUrl: invalid COS URL
 
 The InvalidUrl error indicates that an incorrect COS URL has been entered. The possible causes are:
- - The image URL you entered is not a [Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) image URL.
- - The access permission of the COS file is private read, but the signature has expired.
-> COS URL with the signature can only be accessed once.
+* The image URL you entered is not a [Cloud Object Storage](https://console.cloud.tencent.com/cos4/index) image URL.
+* The permission of the COS URL is not public read and private write.
+* The access permission of the COS file is private read, but the signature has expired.
+>! COS URL with the signature can only be accessed once.
 >
- - A COS URL of another region has been entered.
-> The image import service accesses the COS server in the local region through the private network.
+* A COS URL of another region was entered.
+>! The image import service accesses the COS server in the local region through the private network.
 >
- - The user's image file has been deleted.
- - A COS URL with the signature has been used.
-
+* The user's image file was deleted.
+* A COS URL with the signature has been used.
 If you receive the error message about an invalid COS URL, troubleshoot based on the reasons above.
 
 #### InvalidFormatSize: invalid format or size
