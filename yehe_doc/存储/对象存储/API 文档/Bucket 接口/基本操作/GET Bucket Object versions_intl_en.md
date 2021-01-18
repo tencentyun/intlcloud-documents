@@ -1,6 +1,6 @@
-## Description
+## API Description
 
-This API is used to retrieve versions of all objects in a bucket. You can also get versions of only part of objects by using parameters. Requests to this API require write permission on the bucket.
+This API is used to get all objects in a bucket and their historical version information. You can also filter certain objects and their version information by specifying relevant parameters. To call this API, you need to have permission to read the bucket.
 
 ## Request
 
@@ -17,18 +17,18 @@ Authorization: Auth String
 
 #### Request parameters
 
-| Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| prefix | Prefix to be matched for object keys; indicates the response only contains object keys with the specified prefix | string | No |
-| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the examples below | string | No |
-| encoding-type | Specifies the encoding type of the returned value. Valid value: `url`, which means that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded as `%E8%85%BE%E8%AE%AF%E4%BA%91` | string | No |
-| key-marker | Marks the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after this marker | string | No |
-| version-id-marker | Marks the starting version ID. Object version entries will be returned after this marker (excluded) | string | No |
-| max-keys | Maximum number of entries returned at a time. Default value: 1,000; maximum value: 1,000 | integer | No |
+| prefix | Matching prefix for object keys. The response will contain only object keys with the specified prefix. | string | No |
+| delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the samples below. | string | No |
+| encoding-type | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | string | No |
+| key-marker | Marker for the starting object key. Object version entries after this marker will be returned in UTF-8 lexicographical order. | string | No |
+| version-id-marker | Marker for the starting version ID. Object version entries after this marker will be returned. If `NextVersionIdMarker` is empty in the last `ListVersionsResult` response, leave this parameter empty. | string | No |
+| max-keys | The maximum number (up to 1,000) of keys returned in a response. Defaults to `1000`. <br>**Note**: This parameter limits the maximum number of keys (the sum of `CommonPrefixes`, `Version`, and `DeleteMarker’) COS can return in each `ListVersionsResult` response. If not all objects are listed in a single response, COS will return the `NextKeyMarker` and `NextVersionIdMarker` nodes, the values of which can be used to specify `key-marker` and `version-id-marker`, respectively, so that the remaining versions can be listed in your next request. | integer | No |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -38,158 +38,164 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-A successful query returns **application/xml** data which contains object versions in the bucket. For the response bodies of different scenarios, see the examples below.
-
-```shell
+A successful query returns **application/xml** data, which contains information about versions of objects in the bucket. For the response bodies of different scenarios, please see the sample below:
+```xml
 <ListVersionsResult>
-	<Name>string</Name>
-	<Prefix>string</Prefix>
-	<KeyMarker>string</KeyMarker>
-	<VersionIdMarker>string</VersionIdMarker>
-	<MaxKeys>integer</MaxKeys>
-	<IsTruncated>boolean</IsTruncated>
-	<Delimiter>string</Delimiter>
-	<CommonPrefixes>
+		<EncodingType>string</EncodingType>
+		<Name>string</Name>
 		<Prefix>string</Prefix>
-	</CommonPrefixes>
-	<CommonPrefixes>
-		<Prefix>string</Prefix>
-	</CommonPrefixes>
-	<Version>
-		<Key>string</Key>
-		<VersionId>string</VersionId>
-		<IsLatest>boolean</IsLatest>
-		<LastModified>date</LastModified>
-		<ETag>string</ETag>
-		<Size>integer</Size>
-		<StorageClass>Enum</StorageClass>
-		<Owner>
-			<ID>string</ID>
-			<DisplayName>string</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>string</Key>
-		<VersionId>string</VersionId>
-		<IsLatest>boolean</IsLatest>
-		<LastModified>date</LastModified>
-		<Owner>
-			<ID>string</ID>
-			<DisplayName>string</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<DeleteMarker>
-		<Key>string</Key>
-		<VersionId>string</VersionId>
-		<IsLatest>boolean</IsLatest>
-		<LastModified>date</LastModified>
-		<Owner>
-			<ID>string</ID>
-			<DisplayName>string</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>string</Key>
-		<VersionId>string</VersionId>
-		<IsLatest>boolean</IsLatest>
-		<LastModified>date</LastModified>
-		<ETag>string</ETag>
-		<Size>integer</Size>
-		<StorageClass>Enum</StorageClass>
-		<Owner>
-			<ID>string</ID>
-			<DisplayName>string</DisplayName>
-		</Owner>
-	</Version>
+		<KeyMarker>string</KeyMarker>
+		<VersionIdMarker>string</VersionIdMarker>
+		<MaxKeys>integer</MaxKeys>
+		<IsTruncated>boolean</IsTruncated>
+		<NextKeyMarker>string</NextKeyMarker>
+		<NextVersionIdMarker>string</NextVersionIdMarker>
+		<Delimiter>string</Delimiter>
+		<CommonPrefixes>
+			<Prefix>string</Prefix>
+		</CommonPrefixes>
+		<CommonPrefixes>
+			<Prefix>string</Prefix>
+		</CommonPrefixes>
+		<Version>
+			<Key>string</Key>
+			<VersionId>string</VersionId>
+			<IsLatest>boolean</IsLatest>
+			<LastModified>date</LastModified>
+			<ETag>string</ETag>
+			<Size>integer</Size>
+			<StorageClass>Enum</StorageClass>
+			<StorageTier>Enum</StorageTier>
+			<Owner>
+				<ID>string</ID>
+				<DisplayName>string</DisplayName>
+			</Owner>
+		</Version>
+		<DeleteMarker>
+			<Key>string</Key>
+			<VersionId>string</VersionId>
+			<IsLatest>boolean</IsLatest>
+			<LastModified>date</LastModified>
+			<Owner>
+				<ID>string</ID>
+				<DisplayName>string</DisplayName>
+			</Owner>
+		</DeleteMarker>
+		<Version>
+			<Key>string</Key>
+			<VersionId>string</VersionId>
+			<IsLatest>boolean</IsLatest>
+			<LastModified>date</LastModified>
+			<ETag>string</ETag>
+			<Size>integer</Size>
+			<StorageClass>Enum</StorageClass>
+			<StorageTier>Enum</StorageTier>
+			<Owner>
+				<ID>string</ID>
+				<DisplayName>string</DisplayName>
+			</Owner>
+		</Version>
+		<DeleteMarker>
+			<Key>string</Key>
+			<VersionId>string</VersionId>
+			<IsLatest>boolean</IsLatest>
+			<LastModified>date</LastModified>
+			<Owner>
+				<ID>string</ID>
+				<DisplayName>string</DisplayName>
+			</Owner>
+		</DeleteMarker>
 </ListVersionsResult>
 ```
 
-The detailed nodes are described as follows:
+
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| ListVersionsResult | None | Contains all the results for the GET Bucket Object versions request  | Container |
+| ListVersionsResult | None | Stores the result of `GET Bucket Object versions`. | Container |
 
-**Container node `ListVersionsResult`:**
+**Content of the Container node ListVersionsResult**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| Name | ListVersionsResult | Bucket name in the format of `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
-| EncodingType | ListVersionsResult | Encoding format, which corresponds to the `encoding-type` parameter in the request and will be returned only if the `encoding-type` parameter is specified in the request | string |
-| Prefix | ListVersionsResult | Prefix to be matched for object keys, which corresponds to the `prefix` parameter in the request | string |
-| KeyMarker | ListVersionsResult | Marker for the starting object key. Object version entries will be returned in UTF-8 lexicographical order starting from the first object version after this marker. This parameter corresponds to the `marker` parameter in the request | string |
-| VersionIdMarker | ListVersionsResult | Marker for the starting version ID. Object version entries will be returned starting from the first object version after this marker. This parameter corresponds to the `version-id-marker` parameter in the request | string |
-| MaxKeys | ListVersionsResult | Maximum number of entries returned in a single response, which corresponds to the `max-keys` parameter in the request | integer |
-| Delimiter | ListVersionsResult | Delimiter, which corresponds to the `delimiter` parameter in the request and will be returned only if the `delimiter` parameter is specified in the request | string |
-| IsTruncated | ListVersionsResult | Indicates whether the returned entry list is truncated. Boolean value: `true`, `false` | boolean |
-| NextKeyMarker | ListVersionsResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this parameter is the last object key in the current response and will be passed in as the `key-marker` parameter in the next request for subsequent entries | string |
-| NextVersionIdMarker | ListVersionsResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this parameter is the last object key in the current response and will be passed in as the `version-id-marker` parameter in the next request for subsequent entries | string |
-| CommonPrefixes | ListVersionsResult | The identical paths between `prefix` (or, if no `prefix` is specified, the beginning) and the first `delimiter` are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
-| Version | ListVersionsResult | An entry of object version | Container |
-| DeleteMarker | ListVersionsResult | An entry of object delete marker | Container |
+| EncodingType | ListVersionsResult | Encoding type, which corresponds to the `encoding-type` parameter in the request. This node will be returned only when the `encoding-type` parameter is specified in the request. | string |
+| Name | ListVersionsResult | Bucket name, formatted as `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
+| Prefix | ListVersionsResult | Matching prefix to filter object keys. This node corresponds to the `Prefix` parameter in the request. | string |
+| KeyMarker | ListVersionsResult | Marks the object key to start with. Object version entries after the marker will be returned in UTF-8 lexicographical order. This node corresponds to the `key-marker` parameter in the request. | string |
+| VersionIdMarker | ListVersionsResult | Marks the version ID to start with. Object version entries after the marker will be returned. This node corresponds to the `version-id-marker` parameter in the request. | string |
+| MaxKeys | ListVersionsResult | Maximum number of keys returned in a single response. This node corresponds to the `max-keys` parameter in the request. | integer |
+| IsTruncated | ListVersionsResult | Indicates whether the returned list is truncated. Valid values: `true`, `false` | boolean |
+| NextKeyMarker | ListVersionsResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this node is the last object key in the current response. If you need to request subsequent entries, the value can be passed in as the value of the `key-marker` parameter in the next request. | string |
+| NextVersionIdMarker | ListVersionsResult | This node will be returned only if the returned list is truncated (i.e., the value of  `IsTruncated` is `true`). The value of this node is the last version ID in the current response. If you need to request subsequent entries, the value can be passed in as the value of the `version-id-marker` parameter in the next request. If this node is left empty, `version-id-marker` in the next request should also be left empty. | string |
+| Delimiter | ListVersionsResult | Delimiter, which corresponds to the `delimiter` parameter in the request and will be returned only if the `delimiter` parameter is specified in the request. | string |
+| CommonPrefixes | ListVersionsResult | The identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request. | Container |
+| Version | ListVersionsResult | Object version entry | Container |
+| DeleteMarker | ListVersionsResult | Object delete marker entry | Container |
 
-**Container node `ListVersionsResult.CommonPrefixes`:**
+**Content of the Container node CommonPrefixes**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Prefix | ListVersionsResult.CommonPrefixes | A single common prefix | string |
 
-**Container node `ListVersionsResult.Version`:**
+**Content of the Container node Version**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Key | ListVersionsResult.Version | Object key | string |
-| VersionId | ListVersionsResult.Version | Object version ID | string |
-| IsLatest | ListVersionsResult.Version | Indicates whether the current version is the latest version of the object | boolean |
-| LastModified | ListVersionsResult.Version | The last modified time in ISO8601 format of the current version, e.g. 2019-05-24T10:56:40Z | date |
-| ETag | ListVersionsResult.Version | Entity tag of an object, which identifies the content of the object when it is created, and can be used to check whether the object content has changed during transit, e.g. `8e0b617ca298a564c3331da28dcb50df`. It does not necessarily return the MD5 value of the object, but varies depending on how the object is uploaded and encrypted | string |
-| Size | ListVersionsResult.Version | Object size in byte | integer |
-| StorageClass | ListVersionsResult.Version | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
-| Owner | ListVersionsResult.Version | Object owner | Container |
+| VersionId | ListVersionsResult.Version | Version ID of the object <br><li>If versioning is disabled, the value of this node is an empty string. <li>If versioning is enabled, the value of this node is `null` for an object uploaded before you enable versioning. <li>If versioning is suspended, the value of this node is `null` for an object uploaded after you suspend versioning. Note that each object can have only one object version whose ID is `null`. | string |
+| IsLatest | ListVersionsResult.Version | Indicates whether the current version is the latest one of the object. | boolean |
+| LastModified | ListVersionsResult.Version | Last modified time of the current version, in ISO 8601 format (for example, 2019-05-24T10:56:40Z) | date |
+| ETag | ListBucketResult.Contents | Entity tag of the object. It indicates the content of the object when it is created and can be used to verify whether the object content is changed. <br>Example: "8e0b617ca298a564c3331da28dcb50df"<br>The value of `ETag` is not necessarily the MD5 checksum of the object. The value will be different if the uploaded object is encrypted. | string |
+| Size | ListVersionsResult.Version | Object size, in bytes | integer |
+| StorageClass | ListVersionsResult.Version | Object storage class, such as `STANDARD_IA` or `ARCHIVE`. For enumerated values, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum |
+| StorageTier | ListVersionsResult.Version | Access tier (for INTELLIGENT TIERING) the object is currently stored in. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
+| Owner | ListVersionsResult.Version | Information of the object owner | Container |
 
-**Container node `ListVersionsResult.Version.Owner`:**
+**Content of the Container node Version.Owner**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| ID | ListVersionsResult.Version.Owner | APPID of the object owner | string |
+| ID | ListVersionsResult.Version.Owner | `APPID` of the object owner | string |
 | DisplayName | ListVersionsResult.Version.Owner | Name of the object owner | string |
 
-**Container node `ListVersionsResult.DeleteMarker`:**
+**Content of the Container node DeleteMarker**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Key | ListVersionsResult.DeleteMarker | Object key | string |
-| VersionId | ListVersionsResult.DeleteMarker | Version ID of the object’s delete marker | string |
-| IsLatest | ListVersionsResult.DeleteMarker | Indicates whether the deleted delete marker is the latest version of the object | boolean |
-| LastModified | ListVersionsResult.DeleteMarker | The time in ISO8601 format that the delete marker is deleted, e.g. 2019-05-24T10:56:40Z | date |
-| Owner | ListVersionsResult.DeleteMarker | Object owner | Container |
+| VersionId | ListVersionsResult.DeleteMarker | Version ID of the object delete marker | string |
+| IsLatest | ListVersionsResult.DeleteMarker | Indicates whether the current delete marker version is the latest one of the object. | boolean |
+| LastModified | ListVersionsResult.DeleteMarker | Last modified time of the current delete marker, in ISO 8601 format (for example, 2019-05-24T10:56:40Z) | date |
+| Owner | ListVersionsResult.DeleteMarker | Information of the object owner | Container |
 
-**Container node `ListVersionsResult.DeleteMarker.Owner`:**
+**Content of the Container node DeleteMarker.Owner**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| ID | ListVersionsResult.DeleteMarker.Owner | APPID of the object owner | string |
+| ID | ListVersionsResult.DeleteMarker.Owner | `APPID` of the object owner | string |
 | DisplayName | ListVersionsResult.DeleteMarker.Owner | Name of the object owner | string |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Sample
 
-#### Example 1. Versioning not enabled
+#### Sample 1. Versioning disabled
 
 #### Request
 
 ```shell
 GET /?versions HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Thu, 15 Aug 2019 12:03:09 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1565870589;1565877789&q-key-time=1565870589;1565877789&q-header-list=date;host&q-url-param-list=versions&q-signature=1d8fcb8522df7be9fa52d94cd79462f92eb3****
+Date: Thu, 10 Dec 2020 03:35:34 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607571334;1607578534&q-key-time=1607571334;1607578534&q-header-list=date;host&q-url-param-list=versions&q-signature=1c39a124c84ec844e56cb1031a511568c16f****
 Connection: close
 ```
 
@@ -198,70 +204,59 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 1262
+Content-Length: 903
 Connection: close
-Date: Thu, 15 Aug 2019 12:03:10 GMT
+Date: Thu, 10 Dec 2020 03:35:34 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1NTQ5ZmVfYjliYjBiMDlfMmFhNGZfY2Jm****
+x-cos-request-id: NWZkMTk3ODZfZDUyNzVkNjRfNDgxYl8xNjU5****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker/>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<Version>
-		<Key>example-object-1.jpg</Key>
-		<VersionId/>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:10.000Z</LastModified>
-		<ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-2.jpg</Key>
-		<VersionId/>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:09.000Z</LastModified>
-		<ETag>&quot;51370fc64b79d0d3c7c609635be1c41f&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-3.jpg</Key>
-		<VersionId/>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:08.000Z</LastModified>
-		<ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Version>
+		        <Key>example-object-1.jpg</Key>
+		        <VersionId/>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
+		        <ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId/>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
+		        <ETag>&quot;dcffaafe67632b2bd2dd0b9456eafca7&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
 </ListVersionsResult>
 ```
 
-#### Example 2. Versioning enabled
+#### Sample 2. Uploading an object and then enabling versioning, making its version ID `null` (a continuity of sample 1)
 
 #### Request
 
 ```shell
 GET /?versions HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Thu, 15 Aug 2019 12:03:41 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1565870621;1565877821&q-key-time=1565870621;1565877821&q-header-list=date;host&q-url-param-list=versions&q-signature=36400914186e87b3e88cc8049a79da5e3d79****
+Date: Thu, 10 Dec 2020 03:36:05 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607571365;1607578565&q-key-time=1607571365;1607578565&q-header-list=date;host&q-url-param-list=versions&q-signature=569318dd515c682db22c704d61314156e790****
 Connection: close
 ```
 
@@ -270,142 +265,303 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 3477
+Content-Length: 2018
 Connection: close
-Date: Thu, 15 Aug 2019 12:03:41 GMT
+Date: Thu, 10 Dec 2020 03:36:05 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1NTRhMWRfODhjMjJhMDlfMWNkOF8xZTRm****
+x-cos-request-id: NWZkMTk3YTVfYjFiODJhMDlfNTg0MDZfMTdj****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker/>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<Version>
-		<Key>example-object-1.jpg</Key>
-		<VersionId>null</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:10.000Z</LastModified>
-		<ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODg0NzI0Njc</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:41.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-2.jpg</Key>
-		<VersionId>null</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-15T12:03:09.000Z</LastModified>
-		<ETag>&quot;51370fc64b79d0d3c7c609635be1c41f&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-3.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODg0NzA1NzM</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:41.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-3.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODk5NTUxNzU</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-15T12:03:39.000Z</LastModified>
-		<ETag>&quot;e5c7403f4ac3ace73477eb8b1fd183f7&quot;</ETag>
-		<Size>30</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-3.jpg</Key>
-		<VersionId>null</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-15T12:03:08.000Z</LastModified>
-		<ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-4.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODg4OTI0MDc</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:41.000Z</LastModified>
-		<ETag>&quot;c5c4d52f90ec328890953bbe4ae08230&quot;</ETag>
-		<Size>30</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-4.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODkyMTg2NjI</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-15T12:03:40.000Z</LastModified>
-		<ETag>&quot;e9ec8bcb980d2e4d8526c346eb3b2585&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-5.jpg</Key>
-		<VersionId>MTg0NDUxNzgyMDMwODk4NTkzMzM</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-15T12:03:39.000Z</LastModified>
-		<ETag>&quot;201669a14bdf051d8a9d6f9828d3f4c4&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Version>
+		        <Key>example-object-1.jpg</Key>
+		        <VersionId>null</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
+		        <ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNjQ3NTcwMDk</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
+		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>null</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
+		        <ETag>&quot;dcffaafe67632b2bd2dd0b9456eafca7&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <DeleteMarker>
+		        <Key>example-object-3.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNTQ1ODM2NjE</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:54.000Z</LastModified>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </DeleteMarker>
+		    <Version>
+		        <Key>example-object-3.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNjQ3NjM2MDY</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
+		        <ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
 </ListVersionsResult>
 ```
 
-#### Example 3. Specifying the `delimiter` parameter (listing objects and subdirectories in the root directory)
+#### Sample 3. Suspending versioning and then uploading an object, making its version ID `null` (each object can have only one object version whose ID is `null`) (a continuity of sample 2)
+
+#### Request
+
+```shell
+GET /?versions HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Thu, 10 Dec 2020 03:36:25 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607571385;1607578585&q-key-time=1607571385;1607578585&q-header-list=date;host&q-url-param-list=versions&q-signature=a42ed543ef094e42c8159d8788c509933f20****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 2393
+Connection: close
+Date: Thu, 10 Dec 2020 03:36:25 GMT
+Server: tencent-cos
+x-cos-request-id: NWZkMTk3YjlfNDhhOTBiMDlfMTYzNTZfMTIw****
+
+
+
+<ListVersionsResult>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Version>
+		        <Key>example-object-1.jpg</Key>
+		        <VersionId>null</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
+		        <ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>null</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:36:15.000Z</LastModified>
+		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNjQ3NTcwMDk</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
+		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-3.jpg</Key>
+		        <VersionId>null</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T03:36:15.000Z</LastModified>
+		        <ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <DeleteMarker>
+		        <Key>example-object-3.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNTQ1ODM2NjE</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T03:35:54.000Z</LastModified>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </DeleteMarker>
+		    <Version>
+		        <Key>example-object-3.jpg</Key>
+		        <VersionId>MTg0NDUxMzY1MDIzNjQ3NjM2MDY</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
+		        <ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+</ListVersionsResult>
+```
+
+#### Sample 4. Specifying the `encoding-type` parameter (object keys are URL-encoded)
+
+#### Request
+
+```shell
+GET /?versions&encoding-type=url HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Thu, 10 Dec 2020 04:54:22 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607576062;1607583262&q-key-time=1607576062;1607583262&q-header-list=date;host&q-url-param-list=encoding-type;versions&q-signature=9dd5519032837d42fd3bf89fcdeed3889e7c****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 2167
+Connection: close
+Date: Thu, 10 Dec 2020 04:54:22 GMT
+Server: tencent-cos
+x-cos-request-id: NWZkMWE5ZmVfZTdjODJhMDlfMzgxZl8xMzQ1****
+
+
+
+<ListVersionsResult>
+		    <EncodingType>url</EncodingType>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Version>
+		        <Key>Tencent%20Cloud.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0OTc2NjcxNzE4NjA</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T04:54:02.000Z</LastModified>
+		        <ETag>&quot;ee8de918d05640145b18f70f4c3aa602&quot;</ETag>
+		        <Size>16</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <DeleteMarker>
+		        <Key>%E7%85%A7%E7%89%87/2020%E5%B9%B4/IMG0001.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0OTc2NTY5MDU3OTc</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T04:54:12.000Z</LastModified>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </DeleteMarker>
+		    <Version>
+		        <Key>%E7%85%A7%E7%89%87/2020%E5%B9%B4/IMG0001.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0OTc2NjcwNjMwMDQ</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T04:54:02.000Z</LastModified>
+		        <ETag>&quot;ee8de918d05640145b18f70f4c3aa602&quot;</ETag>
+		        <Size>16</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>%E8%85%BE%E8%AE%AF%E4%BA%91.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0OTc2NTY5MDA4NzU</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T04:54:12.000Z</LastModified>
+		        <ETag>&quot;8bb76a43f75d3b96442c470f8ec23b89&quot;</ETag>
+		        <Size>16</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>%E8%85%BE%E8%AE%AF%E4%BA%91.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0OTc2NjcxNzA2ODg</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T04:54:02.000Z</LastModified>
+		        <ETag>&quot;dcc880c5eba9e002bc4567c733b0e63e&quot;</ETag>
+		        <Size>13</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+</ListVersionsResult>
+```
+
+#### Sample 5. Specifying the `delimiter` parameter (listing object versions and subdirectories in the root directory)
 
 #### Request
 
 ```shell
 GET /?versions&delimiter=%2F HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 16 Aug 2019 10:45:53 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1565952353;1565959553&q-key-time=1565952353;1565959553&q-header-list=date;host&q-url-param-list=delimiter;versions&q-signature=c3130139bcac870247d1a070dbc8ee1c7ad5****
+Date: Thu, 10 Dec 2020 07:04:03 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607583843;1607591043&q-key-time=1607583843;1607591043&q-header-list=date;host&q-url-param-list=delimiter;versions&q-signature=9eaea1e6072c7175cb593e08b69223521217****
 Connection: close
 ```
 
@@ -414,110 +570,90 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 2529
+Content-Length: 1893
 Connection: close
-Date: Fri, 16 Aug 2019 10:45:53 GMT
+Date: Thu, 10 Dec 2020 07:04:03 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1Njg5NjFfNjFiMDJhMDlfMWE5ZV8yMDY4****
+x-cos-request-id: NWZkMWM4NjNfNzFjODJhMDlfMjlhZTRfMTg5****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker/>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<Delimiter>/</Delimiter>
-	<CommonPrefixes>
-		<Prefix>example-folder-1/</Prefix>
-	</CommonPrefixes>
-	<CommonPrefixes>
-		<Prefix>example-folder-2/</Prefix>
-	</CommonPrefixes>
-	<Version>
-		<Key>example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNTU3NTk1Mjg</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-16T10:45:53.000Z</LastModified>
-		<ETag>&quot;5d1143df07a17b23320d0da161e2819e&quot;</ETag>
-		<Size>30</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjE1OTcxMzM</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:47.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjYzNzU0MjE</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:43.000Z</LastModified>
-		<ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNTYzMDY3NzY</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-16T10:45:53.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjI5OTc5OTU</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:46.000Z</LastModified>
-		<ETag>&quot;574c289a7906c7d8fecef028216afeca&quot;</ETag>
-		<Size>30</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjgyODc1OTY</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:41.000Z</LastModified>
-		<ETag>&quot;51370fc64b79d0d3c7c609635be1c41f&quot;</ETag>
-		<Size>20</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Delimiter>/</Delimiter>
+		    <CommonPrefixes>
+		        <Prefix>example-folder-1/</Prefix>
+		    </CommonPrefixes>
+		    <CommonPrefixes>
+		        <Prefix>example-folder-2/</Prefix>
+		    </CommonPrefixes>
+		    <DeleteMarker>
+		        <Key>example-object-1.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0ODk4NzYzNTE4Nzk</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T07:03:53.000Z</LastModified>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </DeleteMarker>
+		    <Version>
+		        <Key>example-object-1.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0ODk4ODY2NTcxMzY</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T07:03:42.000Z</LastModified>
+		        <ETag>&quot;0f0cd12c48979d1bf3f95255a36cb861&quot;</ETag>
+		        <Size>20</Size>
+		        <StorageClass>STANDARD</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0ODk4NzYzODYyODA</VersionId>
+		        <IsLatest>true</IsLatest>
+		        <LastModified>2020-12-10T07:03:53.000Z</LastModified>
+		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>INTELLIGENT_TIERING</StorageClass>
+		        <StorageTier>FREQUENT</StorageTier>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
+		    <Version>
+		        <Key>example-object-2.jpg</Key>
+		        <VersionId>MTg0NDUxMzY0ODk4ODY2NTA0Mjk</VersionId>
+		        <IsLatest>false</IsLatest>
+		        <LastModified>2020-12-10T07:03:42.000Z</LastModified>
+		        <ETag>&quot;dcffaafe67632b2bd2dd0b9456eafca7&quot;</ETag>
+		        <Size>23</Size>
+		        <StorageClass>STANDARD_IA</StorageClass>
+		        <Owner>
+		        	<ID>1250000000</ID>
+		        	<DisplayName>1250000000</DisplayName>
+		        </Owner>
+		    </Version>
 </ListVersionsResult>
 ```
 
-#### Example 4. Specifying the `prefix` and `delimiter` parameters (listing objects and subdirectories in the specified subdirectory)
+#### Sample 6. Specifying the `prefix` and `delimiter` parameters (listing object versions and subdirectories in a specified subdirectory)
 
 #### Request
 
 ```shell
 GET /?versions&prefix=example-folder-1%2F&delimiter=%2F HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 16 Aug 2019 10:45:53 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1565952353;1565959553&q-key-time=1565952353;1565959553&q-header-list=date;host&q-url-param-list=delimiter;prefix;versions&q-signature=6d7b99a4b379b5fefb8b903ee491bae63590****
+Date: Thu, 10 Dec 2020 07:04:03 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607583843;1607591043&q-key-time=1607583843;1607591043&q-header-list=date;host&q-url-param-list=delimiter;prefix;versions&q-signature=c09ffca0377304f9a12cb2d8e223ede35569****
 Connection: close
 ```
 
@@ -526,110 +662,89 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 2682
+Content-Length: 1960
 Connection: close
-Date: Fri, 16 Aug 2019 10:45:53 GMT
+Date: Thu, 10 Dec 2020 07:04:03 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1Njg5NjFfMzdiMDJhMDlfODA1NV8yMDI2****
+x-cos-request-id: NWZkMWM4NjNfZWVjODJhMDlfNTNmN18xNWNj****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix>example-folder-1/</Prefix>
-	<KeyMarker/>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<Delimiter>/</Delimiter>
-	<CommonPrefixes>
-		<Prefix>example-folder-1/sub-folder-1/</Prefix>
-	</CommonPrefixes>
-	<CommonPrefixes>
-		<Prefix>example-folder-1/sub-folder-2/</Prefix>
-	</CommonPrefixes>
-	<Version>
-		<Key>example-folder-1/example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNTY0MzYyNzE</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-16T10:45:53.000Z</LastModified>
-		<ETag>&quot;1a54e134fda29e15d225cd226c4b49a3&quot;</ETag>
-		<Size>47</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-folder-1/example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjE2MTE1NTI</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:47.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-folder-1/example-object-1.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjcwNjI2MTU</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:42.000Z</LastModified>
-		<ETag>&quot;f173c1199e3d3b53dd91223cae16fb42&quot;</ETag>
-		<Size>37</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-folder-1/example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNTYyOTQ1MDY</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-16T10:45:53.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-folder-1/example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjI3NTcyNzU</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:46.000Z</LastModified>
-		<ETag>&quot;f43741c189c2142b257767bed5b4ce3a&quot;</ETag>
-		<Size>47</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-folder-1/example-object-2.jpg</Key>
-		<VersionId>MTg0NDUxNzgxMjEzNjgwNjgwNDk</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-16T10:45:41.000Z</LastModified>
-		<ETag>&quot;c9d28698978bb6fef6c1ed1c439a17d3&quot;</ETag>
-		<Size>37</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix>example-folder-1/</Prefix>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>1000</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Delimiter>/</Delimiter>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-1/sub-folder-1/</Prefix>
+		    </CommonPrefixes>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-1/sub-folder-2/</Prefix>
+		    </CommonPrefixes>
+		    <DeleteMarker>
+		    	<Key>example-folder-1/example-object-1.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY0ODk4NzYzNjE4NzA</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-10T07:03:53.000Z</LastModified>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </DeleteMarker>
+		    <Version>
+		    	<Key>example-folder-1/example-object-1.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY0ODk4ODY2NTAzOTY</VersionId>
+		    	<IsLatest>false</IsLatest>
+		    	<LastModified>2020-12-10T07:03:42.000Z</LastModified>
+		    	<ETag>&quot;f173c1199e3d3b53dd91223cae16fb42&quot;</ETag>
+		    	<Size>37</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <Version>
+		    	<Key>example-folder-1/example-object-2.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY0ODk4NzYzNzc2ODY</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-10T07:03:53.000Z</LastModified>
+		    	<ETag>&quot;f52cc0bc2042d201b852385927bcab95&quot;</ETag>
+		    	<Size>40</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <Version>
+		    	<Key>example-folder-1/example-object-2.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY0ODk4ODY2NjQ2NDc</VersionId>
+		    	<IsLatest>false</IsLatest>
+		    	<LastModified>2020-12-10T07:03:42.000Z</LastModified>
+		    	<ETag>&quot;7b3be6c39746a970d628e6ab9f250342&quot;</ETag>
+		    	<Size>40</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
 </ListVersionsResult>
 ```
 
-#### Example 5. Getting the first list of entries in case of pagination
+#### Sample 7. Obtaining the first page of keys when there are more than one page (this sample specifies `max-keys`. If not specified, the value `1000` is used by default. The sum of `Version` and `DeleteMarker` cannot exceed the value of `max-keys`)
 
 #### Request
 
 ```shell
-GET /?versions HTTP/1.1
+GET /?versions&max-keys=3 HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 23 Aug 2019 11:31:31 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1566559891;1566567091&q-key-time=1566559891;1566567091&q-header-list=date;host&q-url-param-list=versions&q-signature=2b146233465c2164c60e0e0b2385f5386a61****
+Date: Tue, 08 Dec 2020 12:46:40 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607431600;1607438800&q-key-time=1607431600;1607438800&q-header-list=date;host&q-url-param-list=max-keys;versions&q-signature=eddd43e98a9001e92f52896de6f8ce88bff5****
 Connection: close
 ```
 
@@ -638,105 +753,71 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 372125
+Content-Length: 1390
 Connection: close
-Date: Fri, 23 Aug 2019 11:31:32 GMT
+Date: Tue, 08 Dec 2020 12:46:40 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1ZmNlOTRfMTljMDJhMDlfNTg5OV8yZWYz****
+x-cos-request-id: NWZjZjc1YjBfYjBhODBiMDlfZDU5Yl9jYjBl****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker/>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>true</IsTruncated>
-	<NextKeyMarker>example-object-0135.jpg</NextKeyMarker>
-	<NextVersionIdMarker>MTg0NDUxNzc1MTM4MjM0ODYyNjQ</NextVersionIdMarker>
-	<Version>
-		<Key>example-object-0001.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4Mjg1NzI5Mjc</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-23T11:31:20.000Z</LastModified>
-		<ETag>&quot;3dd9c0ec8b6669abec786e52b64e0497&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-0002.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjY5NDY2MzQ</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-23T11:31:22.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-0002.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjgzMDg3OTE</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:21.000Z</LastModified>
-		<ETag>&quot;626f60ee8f3eb987342554379d63259f&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	...
-	<DeleteMarker>
-		<Key>example-object-0004.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjcwNjg2Mzc</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:22.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<DeleteMarker>
-		<Key>example-object-0135.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjA2NTk1MTc</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:28.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<Version>
-		<Key>example-object-0135.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjM0ODYyNjQ</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:26.000Z</LastModified>
-		<ETag>&quot;56d3a714c81ba76baa6a0004126a2718&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>3</MaxKeys>
+		    <IsTruncated>true</IsTruncated>
+		    <NextKeyMarker>example-object-2.jpg</NextKeyMarker>
+		    <NextVersionIdMarker>MTg0NDUxMzY2NDIxMjk3MzMwOTM</NextVersionIdMarker>
+		    <Version>
+		    	<Key>example-object-1.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxNTAwOTk4NzA</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-08T12:45:59.000Z</LastModified>
+		    	<ETag>&quot;15f0f671f04af108023b5603bea2bfda&quot;</ETag>
+		    	<Size>23</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <Version>
+		    	<Key>example-object-1.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxNjAyODcyNzk</VersionId>
+		    	<IsLatest>false</IsLatest>
+		    	<LastModified>2020-12-08T12:45:49.000Z</LastModified>
+		    	<ETag>&quot;601389434817e2781d8efb35c0e44717&quot;</ETag>
+		    	<Size>23</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <DeleteMarker>
+		    	<Key>example-object-2.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxMjk3MzMwOTM</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-08T12:46:19.000Z</LastModified>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </DeleteMarker>
 </ListVersionsResult>
 ```
 
-#### Example 6. Getting subsequent entry lists in case of pagination (by using the `key-marker` and `version-id-marker` request parameters)
+#### Sample 8: Obtaining the subsequent pages with `key-marker` and `version-id-marker` specified (a continuity of sample 7)
 
 #### Request
 
 ```shell
-GET /?versions&key-marker=example-object-0135.jpg&version-id-marker=MTg0NDUxNzc1MTM4MjM0ODYyNjQ HTTP/1.1
+GET /?versions&max-keys=3&key-marker=example-object-2.jpg&version-id-marker=MTg0NDUxMzY2NDIxMjk3MzMwOTM HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 23 Aug 2019 11:32:56 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1566559976;1566567176&q-key-time=1566559976;1566567176&q-header-list=date;host&q-url-param-list=key-marker;version-id-marker;versions&q-signature=5b0787a354752f3161c75d014b75d9f2bd68****
+Date: Tue, 08 Dec 2020 12:46:41 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607431601;1607438801&q-key-time=1607431601;1607438801&q-header-list=date;host&q-url-param-list=key-marker;max-keys;version-id-marker;versions&q-signature=ad52682a1febcc068b6420432017daee8145****
 Connection: close
 ```
 
@@ -745,104 +826,59 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 8358
+Content-Length: 1052
 Connection: close
-Date: Fri, 23 Aug 2019 11:32:56 GMT
+Date: Tue, 08 Dec 2020 12:46:41 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1ZmNlZThfNjFiMDJhMDlfYTgwOF8yZjIw****
+x-cos-request-id: NWZjZjc1YjFfNjljMDBiMDlfNjQwOV8xYjM2****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker>example-object-0135.jpg</KeyMarker>
-	<VersionIdMarker>MTg0NDUxNzc1MTM4MjM0ODYyNjQ</VersionIdMarker>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<Version>
-		<Key>example-object-0135.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjQ4MDkyNjk</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:24.000Z</LastModified>
-		<ETag>&quot;5dd4f1fb98a2a6d74c8482f2856ece6b&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-0135.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjYwOTQ5MTk</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:23.000Z</LastModified>
-		<ETag>&quot;91e59eed612971f0e00ac483bf5c7329&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	...
-	<DeleteMarker>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MTg1MjA4MDA</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-23T11:31:31.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<DeleteMarker>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjA2OTA5MDg</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:28.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<DeleteMarker>
-		<Key>example-object-0137.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjA2OTQ0MzA</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:28.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<Version>
-		<Key>example-object-0137.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4Mjc1MjQ3OTY</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:22.000Z</LastModified>
-		<ETag>&quot;9022b9bf1b1503902d46cbe976c94eea&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker>example-object-2.jpg</KeyMarker>
+		    <VersionIdMarker>MTg0NDUxMzY2NDIxMjk3MzMwOTM</VersionIdMarker>
+		    <MaxKeys>3</MaxKeys>
+		    <IsTruncated>false</IsTruncated>
+		    <Version>
+		    	<Key>example-object-2.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxMzk5MDk1NzU</VersionId>
+		    	<IsLatest>false</IsLatest>
+		    	<LastModified>2020-12-08T12:46:09.000Z</LastModified>
+		    	<ETag>&quot;51370fc64b79d0d3c7c609635be1c41f&quot;</ETag>
+		    	<Size>20</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <Version>
+		    	<Key>example-object-3.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxMTk1NTEyNDI</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-08T12:46:30.000Z</LastModified>
+		    	<ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
+		    	<Size>20</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
 </ListVersionsResult>
 ```
 
-#### Example 7. Specifying the starting object using `key-marker`
+#### Sample 9. Specifying the object to start with using the `key-marker` parameter but not the `version-id-marker` parameter (a continuity of sample 7)
 
 #### Request
 
 ```shell
-GET /?versions&key-marker=example-object-0135.jpg HTTP/1.1
+GET /?versions&max-keys=3&key-marker=example-object-2.jpg HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
-Date: Fri, 23 Aug 2019 11:32:56 GMT
-Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1566559976;1566567176&q-key-time=1566559976;1566567176&q-header-list=date;host&q-url-param-list=key-marker;versions&q-signature=8b601589aae7ffdb2211694dde4ad73c9634****
+Date: Tue, 08 Dec 2020 12:46:41 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607431601;1607438801&q-key-time=1607431601;1607438801&q-header-list=date;host&q-url-param-list=key-marker;max-keys;versions&q-signature=0ed7ce0e8402e35b0ffd2fac429a638a56ea****
 Connection: close
 ```
 
@@ -851,89 +887,144 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 7111
+Content-Length: 610
 Connection: close
-Date: Fri, 23 Aug 2019 11:32:56 GMT
+Date: Tue, 08 Dec 2020 12:46:42 GMT
 Server: tencent-cos
-x-cos-request-id: NWQ1ZmNlZThfNjFiMDJhMDlfYTgwY18yZjRi****
+x-cos-request-id: NWZjZjc1YjJfZGZjMTBiMDlfNzAyYl8xMzkx****
+
+
 
 <ListVersionsResult>
-	<Name>examplebucket-1250000000</Name>
-	<Prefix/>
-	<KeyMarker>example-object-0135.jpg</KeyMarker>
-	<VersionIdMarker/>
-	<MaxKeys>1000</MaxKeys>
-	<IsTruncated>false</IsTruncated>
-	<DeleteMarker>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MTg1MjA4MDA</VersionId>
-		<IsLatest>true</IsLatest>
-		<LastModified>2019-08-23T11:31:31.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	<Version>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MTg5NjQzNDQ</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:30.000Z</LastModified>
-		<ETag>&quot;20f730cd4cab72c0edcbf37c40f9dabe&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<Version>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MTk3MDAwMDY</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:29.000Z</LastModified>
-		<ETag>&quot;339baa9b8d4450e71fc268aaa5fa250e&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
-	<DeleteMarker>
-		<Key>example-object-0136.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjA2OTA5MDg</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:28.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<DeleteMarker>
-		<Key>example-object-0137.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4MjA2OTQ0MzA</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:28.000Z</LastModified>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</DeleteMarker>
-	...
-	<Version>
-		<Key>example-object-0137.jpg</Key>
-		<VersionId>MTg0NDUxNzc1MTM4Mjc1MjQ3OTY</VersionId>
-		<IsLatest>false</IsLatest>
-		<LastModified>2019-08-23T11:31:22.000Z</LastModified>
-		<ETag>&quot;9022b9bf1b1503902d46cbe976c94eea&quot;</ETag>
-		<Size>36</Size>
-		<StorageClass>STANDARD</StorageClass>
-		<Owner>
-			<ID>1250000000</ID>
-			<DisplayName>1250000000</DisplayName>
-		</Owner>
-	</Version>
+			<Name>examplebucket-1250000000</Name>
+			<Prefix/>
+			<KeyMarker>example-object-2.jpg</KeyMarker>
+			<VersionIdMarker/>
+			<MaxKeys>3</MaxKeys>
+			<IsTruncated>false</IsTruncated>
+			<Version>
+		    	<Key>example-object-3.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY2NDIxMTk1NTEyNDI</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-08T12:46:30.000Z</LastModified>
+		    	<ETag>&quot;b2f1d893c5fde000ee8ea6eca18ed81f&quot;</ETag>
+		    	<Size>20</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+		    		<ID>1250000000</ID>
+		    		<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+			</Version>
 </ListVersionsResult>
 ```
+
+#### Sample 10. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes`, `Version`, and `DeleteMarker` not exceeding the value of `max-keys`)
+
+#### Request
+
+```shell
+GET /?versions&delimiter=%2F&max-keys=3 HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 09 Dec 2020 13:40:24 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607521224;1607528424&q-key-time=1607521224;1607528424&q-header-list=date;host&q-url-param-list=delimiter;max-keys;versions&q-signature=fdd9031684c544bca32fae81da75b9216079****
+Connection: close
+
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 503
+Connection: close
+Date: Wed, 09 Dec 2020 13:40:24 GMT
+Server: tencent-cos
+x-cos-request-id: NWZkMGQzYzhfYmIwMmEwOV83OGU4XzZj****
+
+<ListVersionsResult>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker/>
+		    <VersionIdMarker/>
+		    <MaxKeys>3</MaxKeys>
+		    <IsTruncated>true</IsTruncated>
+		    <NextKeyMarker>example-folder-3/</NextKeyMarker>
+		    <NextVersionIdMarker/>
+		    <Delimiter>/</Delimiter>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-1/</Prefix>
+		    </CommonPrefixes>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-2/</Prefix>
+		    </CommonPrefixes>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-3/</Prefix>
+		    </CommonPrefixes>
+</ListVersionsResult>
+```
+
+#### Sample 11. Obtaining the subsequent pages with `delimiter` specified and `version-id-marker` left empty (as the value of `NextVersionIdMarker` is empty on the first page) (a continuity of sample 10)
+
+#### Request
+
+```shell
+GET /?versions&delimiter=%2F&max-keys=3&key-marker=example-folder-3%2F&version-id-marker= HTTP/1.1
+Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
+Date: Wed, 09 Dec 2020 14:02:32 GMT
+Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1607522552;1607529752&q-key-time=1607522552;1607529752&q-header-list=date;host&q-url-param-list=delimiter;key-marker;max-keys;version-id-marker;versions&q-signature=fd4b2ab426e4531be2e52c02d5bd0e747ee7****
+Connection: close
+```
+
+#### Response
+
+```shell
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 1115
+Connection: close
+Date: Wed, 09 Dec 2020 14:02:32 GMT
+Server: tencent-cos
+x-cos-request-id: NWZkMGQ4ZjhfZmVhODBiMDlfMTI3NzVfMTBj****
+
+
+
+<ListVersionsResult>
+		    <Name>examplebucket-1250000000</Name>
+		    <Prefix/>
+		    <KeyMarker>example-folder-3/</KeyMarker>
+		    <VersionIdMarker/>
+		    <MaxKeys>3</MaxKeys>
+		    <IsTruncated>true</IsTruncated>
+		    <NextKeyMarker>example-object.jpg</NextKeyMarker>
+		    <NextVersionIdMarker>MTg0NDUxMzY1NTExNzc4NTYzMTk</NextVersionIdMarker>
+		    <Delimiter>/</Delimiter>
+		    <CommonPrefixes>
+		    	<Prefix>example-folder-4/</Prefix>
+		    </CommonPrefixes>
+		    <Version>
+		    	<Key>example-object.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY1NTExNjc2OTk4MjE</VersionId>
+		    	<IsLatest>true</IsLatest>
+		    	<LastModified>2020-12-09T14:02:21.000Z</LastModified>
+		    	<ETag>&quot;3979f6bb23f827d258be64cc0d8df5fb&quot;</ETag>
+		    	<Size>21</Size>
+		    	<StorageClass>STANDARD</StorageClass>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </Version>
+		    <DeleteMarker>
+		    	<Key>example-object.jpg</Key>
+		    	<VersionId>MTg0NDUxMzY1NTExNzc4NTYzMTk</VersionId>
+		    	<IsLatest>false</IsLatest>
+		    	<LastModified>2020-12-09T14:02:11.000Z</LastModified>
+		    	<Owner>
+					<ID>1250000000</ID>
+					<DisplayName>1250000000</DisplayName>
+		    	</Owner>
+		    </DeleteMarker>
+</ListVersionsResult>
+```
+

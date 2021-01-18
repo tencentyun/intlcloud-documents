@@ -30,7 +30,7 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/214/1257" target="_blank">DeleteLoadBalancers</a></td>
 <td>DeleteLoadBalancers</td>
-<td>Deletes a CLB instance.</td>
+<td>Deletes one or more CLB instance.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/8801" target="_blank">GetMonitorData</a></td>
@@ -40,12 +40,12 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/6045" target="_blank">ReplaceCert</a></td>
 <td>ReplaceCert</td>
-<td>Changes the certificate of CLB instances.</td>
+<td>Changes the certificate of a CLB instance.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/6046" target="_blank">GetCertListWithLoadBalancer</a></td>
 <td>GetCertListWithLoadBalancer</td>
-<td>Queries CLB instances associated with the certificate.</td>
+<td>Queries CLB instances associated with the specified certificate.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/37069" target="_blank">CloneLB</a></td>
@@ -85,7 +85,7 @@
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/214/1255" target="_blank">CreateLoadBalancerListeners</a></td>
 <td>CreateLoadBalancerListeners</td>
-<td>Creates a CLB listener for the specified CLB instance. A CLB listener provides request forwarding protocols, ports, and health check policies.</td>
+<td>Creates one or more CLB listeners for the specified CLB instance. A CLB listener provides request forwarding protocols, ports, and health check policies.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/214/1260" target="_blank">DescribeLoadBalancerListeners</a></td>
@@ -121,7 +121,7 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/214/1259" target="_blank">DescribeLoadBalancerBackends</a></td>
 <td>DescribeLoadBalancerBackends</td>
-<td>Obtains the list of CVMs bound to the CLB instance identified by <em>LoadBalanceId</em>.</td>
+<td>Obtains the list of CVMs bound to the CLB instance with the specified <em>LoadBalanceId</em>.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/214/1264" target="_blank">ModifyLoadBalancerBackends</a></td>
@@ -187,12 +187,12 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/9000" target="_blank">CreateForwardLBSeventhLayerListeners</a></td>
 <td>CreateForwardLBSeventhLayerListeners</td>
-<td>Creates a Layer-7 listener.</td>
+<td>Creates one or more Layer-7 listeners.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/9001" target="_blank">CreateForwardLBFourthLayerListeners</a></td>
 <td>CreateForwardLBFourthLayerListeners</td>
-<td>Creates a Layer-4 listener.</td>
+<td>Creates one or more Layer-4 listener.</td>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/8998" target="_blank">ModifyForwardLBFourthListener</a></td>
@@ -313,7 +313,7 @@
 <tbody><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/8995" target="_blank">DescribeForwardLBHealthStatus</a></td>
 <td>DescribeForwardLBHealthStatus</td>
-<td>Describes the health check of a CLB instance.</td>
+<td>Queries the health check of a CLB instance.</td>
 </tr>
 </tbody></table>
 

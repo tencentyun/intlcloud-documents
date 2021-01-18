@@ -1,4 +1,4 @@
-## Overview
+## API Description
 
 The `GET Bucket` API is equivalent to the `List Objects` API and can be used to list some or all objects in a bucket. To call this API, you need to have permission to read the bucket.
 
@@ -17,9 +17,9 @@ Authorization: Auth String
 
 >? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
-#### Request parameter
+#### Request parameters
 
-| Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
 | prefix | Matching prefix for object keys. The response will contain only object keys with the specified prefix. | string | No |
 | delimiter | A character delimiter used to group object keys. Keys that contain identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a `Prefix` node under `CommonPrefixes`. The grouped object keys will no longer appear in the subsequent object list. For specific scenarios and usage, see the samples below. | string | No |
@@ -41,13 +41,13 @@ This API does not have a request body.
 
 In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-| Name | Description | Type |
+| Parameter | Description | Type |
 | --- | --- | --- |
 | x-cos-bucket-region | Bucket region, such as `ap-beijing`, `ap-hongkong`, and `eu-frankfurt`. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224) | Enum |
 
 #### Response body
 
-A successful query returns **application/xml** data which contains information about objects in the bucket. For the response bodies of different scenarios, see the sample below.
+A successful query returns **application/xml** data, which contains information about objects in the bucket. For the response bodies of different scenarios, see the sample below.
 
 ```xml
 <?xml version='1.0' encoding='utf-8' ?>
@@ -104,13 +104,13 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Name | ListBucketResult | Bucket name, formatted as `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
-| EncodingType | ListBucketResult | Encoding type, which corresponds to the `encoding-type` parameter in the request. It will be returned only when the `encoding-type` parameter is specified in the request. | string |
-| Prefix | ListBucketResult | Matching prefix for object keys, which corresponds to the `prefix` parameter in the request | string |
-| Marker | ListBucketResult | Marks the object key to start with. Object keys after the marker will be returned in UTF-8 lexicographical order. This parameter corresponds to the `marker` parameter in the request. | string |
-| MaxKeys | ListBucketResult | Maximum number of keys returned in a single response. It corresponds to the `max-keys` parameter in the request. | integer |
+| EncodingType | ListBucketResult | Encoding type, which corresponds to the `encoding-type` parameter in the request. This node will be returned only when the `encoding-type` parameter is specified in the request. | string |
+| Prefix | ListBucketResult | Matching prefix to filter object keys. This node corresponds to the `Prefix` parameter in the request. | string |
+| Marker | ListBucketResult | Marks the object key to start with. Object keys after the marker will be returned in UTF-8 lexicographical order. This node corresponds to the `marker` parameter in the request. | string |
+| MaxKeys | ListBucketResult | Maximum number of keys returned in a single response. This node corresponds to the `max-keys` parameter in the request. | integer |
 | Delimiter | ListBucketResult | Delimiter, which corresponds to the `delimiter` parameter in the request and will be returned only if the `delimiter` parameter is specified in the request. | string |
 | IsTruncated | ListBucketResult | Indicates whether the returned list is truncated. Valid values: `true`, `false` | boolean |
-| NextMarker | ListBucketResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this parameter is the last object key in the current response. If you need to request subsequent entries, the value can be passed in as the argument of `marker` in the next request. | string |
+| NextMarker | ListBucketResult | This node will be returned only if the returned list is truncated (i.e., the value of `IsTruncated` is `true`). The value of this node is the last object key in the current response. If you need to request subsequent entries, the value can be passed in as the value of the `marker` parameter in the next request. | string |
 | CommonPrefixes | ListBucketResult | The identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
 | Contents | ListBucketResult | Object entries | Container |
 
@@ -125,12 +125,12 @@ The nodes are described as follows:
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Key | ListBucketResult.Contents | Object key | string |
-| LastModified | ListBucketResult.Contents | Time the object was last modified in ISO 8601 format (for example, `2019-05-24T10:56:40Z`) | date |
-| ETag | ListBucketResult.Contents | Entity Tag of an object, which is an information tag that identifies the content of the object when it is created. It can be used to check whether the content of the object has changed. For example, the header "8e0b617ca298a564c3331da28dcb50df" does not necessarily return the MD5 value of the object, but varies depending on how the object is uploaded and encrypted | string |
+| LastModified | ListBucketResult.Contents | Time the object was last modified, in ISO 8601 format (for example, `2019-05-24T10:56:40Z`) | date |
+| ETag | ListBucketResult.Contents | Entity tag of the object. It indicates the content of the object when it is created and can be used to verify whether the object content is changed. Example: "8e0b617ca298a564c3331da28dcb50df"<br>The value of `ETag` is not necessarily the MD5 checksum of the object. The value will be different if the uploaded object is encrypted. | string |
 | Size | ListBucketResult.Contents | Object size, in bytes | integer |
 | Owner | ListBucketResult.Contents | Information of the object owner | Container |
-| StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` and `ARCHIVE`. For enumerated values, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
-| StorageTier | ListBucketResult.Contents | Access tier (for INTELLIGENT TIERING) the objects is currently stored. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
+| StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` or `ARCHIVE`. For enumerated values, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
+| StorageTier | ListBucketResult.Contents | Access tier (for INTELLIGENT TIERING) the object is currently stored in. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
 
 **Content of the Container node `Contents.Owner`:**
 
@@ -533,7 +533,7 @@ x-cos-request-id: NWZjZjZiZjdfMjRhZjJhMDlfMjc2NV8xYmE2****
 </ListBucketResult>
 ```
 
-#### Sample 7: Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes` and `Contents` smaller than the value of `max-keys`)
+#### Sample 7. Obtaining the first page of keys when there are more than one page (with `delimiter` specified and the sum of `CommonPrefixes` and `Contents` not exceeding the value of `max-keys`)
 
 #### Request
 
@@ -578,7 +578,7 @@ x-cos-request-id: NWZkMDQyZmVfYTJjMjJhMDlfYmQwOF8xYjkw****
 </ListBucketResult>
 ```
 
-#### Sample 8: Obtaining the subsequent pages with `delimiter` specified (a continuity of sample 7)
+#### Sample 8. Obtaining subsequent pages with `delimiter` specified (a continuity of sample 7)
 
 #### Request
 
