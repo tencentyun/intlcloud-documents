@@ -28,7 +28,7 @@ The daemon caches metadata for input files, as well as the data. The metadata an
 ```
 The IP in the `value` is the master node IP for a non-high-availability cluster. For a high-availability cluster, run the following command to view the ZooKeeper component IP:
 ```
-cat /usr/local/service/hadoop/etc/hadoop/core-site.xml |grep 2181
+cat /usr/local/service/hadoop/etc/hadoop/hdfs-site.xml |grep 2181
 ```
 - Modify `hive-site.xml` (delivered in the console).
 ```
@@ -76,7 +76,6 @@ cat /usr/local/service/hadoop/etc/hadoop/core-site.xml |grep 2181
 >!Here, you need to enter the actual ZooKeeper address and port in the `hive.zookeeper.quorum` configuration item.
 >
  - Restart all Hive services.
- - Start LLAP.
  - Generate the LLAP start file and command.
 ```
 hive --service llap --name llap_service --instances 2 --size 2g --loglevel INFO --cache 1g --executors 2 --iothreads 5 --slider-am-container-mb 1024 --args " -XX:+UseG1GC -XX:+ResizeTLAB -XX:+UseNUMA -XX:-ResizePLAB" 
