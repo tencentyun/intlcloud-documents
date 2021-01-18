@@ -1,6 +1,6 @@
 If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**.
 
-[](id:add)
+<span id="add"></span>
 ## Adding Images
 1. Log in to the **TRTC console**, click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and find the application you want to mange.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
@@ -30,14 +30,14 @@ If you want to set an image as the background displayed during on-cloud stream m
 </tr></table>
 4. Click **Save** and the image is successfully added.
 
-[](id:preview)
+<span id="preview"></span>
 ## Preview
 1. After [adding images][#add], select an image in the list and click **Preview**.
 2. In the window that pops up, view the effect with the image set as the background.
 
 
 
-[](id:change)
+<span id="change"></span>
 ## Modifying Images
 1. In **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select the image you want to manage.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
@@ -45,7 +45,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 4. In the edit page, modify the [configuration](#inform), and click **Save**.
 
 
-[](id:delete)
+<span id="delete"></span>
 ## Deleting Images
 1. In **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select the image you want to manage.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
