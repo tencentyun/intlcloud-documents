@@ -2,7 +2,6 @@
 
 This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED object so that you can read it. The restored readable object is a temporary copy, for which you can set "Keep Readable" and the time at which to delete it at a later point. You can use the "Days" parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information about ARCHIVE, please see [Storage Class Overview- ARCHIVE](https://intl.cloud.tencent.com/document/product/436/30925).
 
->?The QPS of the POST Object restore API is limited to 100.
 
 #### Versioning
 
@@ -66,7 +65,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>The following three restoration modes are available for archived objects:<br><li>Expedited: restores an object no more than 256 MB within 1-5 minutes. <br> <li>Standard: restores an object within 3-5 hours. <br><li>Bulk: restores an object within 5-12 hours.<br>The following two modes are available for deep archived objects:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores an object within 24-48 hours. | Enum | Yes |
+| Tier | RestoreRequest.CASJobParameters | Specifies the restoration mode.<br>The following three restoration modes are available for archived objects:<br><li>Expedited: restores an object within 1-5 minutes. <br> <li>Standard: restores an object within 3-5 hours. <br><li>Bulk: restores an object within 5-12 hours.<br>The following two modes are available for deep archived objects:<br><li>Standard: restores an object within 12-24 hours.<br><li>Bulk: restores an object within 24-48 hours. | Enum | Yes |
 
 
 ## Response
