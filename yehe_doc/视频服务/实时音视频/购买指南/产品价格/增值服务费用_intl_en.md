@@ -12,9 +12,7 @@ To facilitate you to integrate both TRTC and IM into the same product, when you 
 | :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Instant messaging | [IM](https://intl.cloud.tencent.com/document/product/1047) | The Trial Edition for TRTC of IM is free of charge forever. You can purchase different IM editions based on your actual needs.  |
 
-> Note:
->
-> If TRTC and IM applications have the same `SDKAppID`, they can share account and authentication data of each other.
+>?If TRTC and IM applications have the same `SDKAppID`, they can share account and authentication data of each other.
 
 ## Relayed Live Streaming Fees
 
@@ -34,9 +32,7 @@ The on-cloud recording feature is disabled by default. For feature overview and 
 | Video file storage | VOD | It is billed by the **storage capacity used by recording files stored in the VOD platform**.  |
 | Playback or download of recorded video files | VOD| It is billed by the **downstream accelerated traffic**.  |
 
-> Note:
->
-> If recording fees are charged for on-cloud recording, no traffic or bandwidth fees will be charged again.
+>?If recording fees are charged for on-cloud recording, no traffic or bandwidth fees will be charged again.
 
 ## On-Cloud MixTranscoding Fees
 
