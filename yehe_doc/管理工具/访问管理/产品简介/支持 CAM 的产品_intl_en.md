@@ -7,7 +7,7 @@ Definitions:
 - Service: name of a CAM-enabled Tencent Cloud service. For more information on a specific service, click the link to the reference document. 
 - Authorization granularity: the finest authorization granularity currently supported by the service.
 
->Three authorization granularity levels are supported: service level, operation level and resource level. 
+>?Three authorization granularity levels are supported: service level, operation level and resource level. 
 >
 > - Service level: it defines whether a user has the permission to access the service as a whole. A user can have either full access or no access to the service.
 > - Operation level: it defines whether a user has the permission to call a specific API of the service. For example, granting an account read-only access to the CVM service is an authorization at the operation level. 
@@ -27,7 +27,7 @@ Definitions:
 | [Auto Scaling (AS)](https://intl.cloud.tencent.com/document/product/377) | Resource level | &#10003;      | &#10003;  | &#10003;    | -    | 
 | [BatchCompute](https://intl.cloud.tencent.com/document/product/599)  | Resource level | &#10003;         |  &#10003;  | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/599/33471)   |  
 | [Tencent Container Registry (TCR)](https://intl.cloud.tencent.com/document/product/1051)  | Resource level | &#10003;         |  -  | &#10003;     | -  | 
-><sup>1</sup> In CVM, [GPU Cloud Computing (GCC)](https://intl.cloud.tencent.com/document/product/560) and [CVM Dedicated Host (CDH)](https://intl.cloud.tencent.com/document/product/416) support CAM.
+>?<sup>1</sup> In CVM, [GPU Cloud Computing (GCC)](https://intl.cloud.tencent.com/document/product/560) and [CVM Dedicated Host (CDH)](https://intl.cloud.tencent.com/document/product/416) support CAM.
 
 ## Storage 
 
@@ -45,8 +45,8 @@ Definitions:
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- |
 | [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214)   | Resource level | &#10003;      | &#10003;    |    &#10003;  | [CAM Guide](https://intl.cloud.tencent.com/document/product/214/9777) | 
 | [Virtual Private Cloud (VPC)](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | Resource level | &#10003;        | &#10003;     | - |  - | 
-| [Direct Connect (DC)](https://intl.cloud.tencent.com/document/product/216) | Operation level   | &#10003;       | -       | -  |  - | 
-><sup>1</sup> In VPC, [Elastic Network Interface (ENI)](https://intl.cloud.tencent.com/document/product/576), [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015), [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Flow Logs (FL)](https://intl.cloud.tencent.com/document/product/682), [Anycast Internet Acceleration (AIA)](https://intl.cloud.tencent.com/document/product/644), [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003), and [Bandwidth Package (BWP)](https://intl.cloud.tencent.com/document/product/684) support CAM.
+| [Direct Connect (DC)](https://intl.cloud.tencent.com/document/product/216) | Resource level   | &#10003;       | -       | -  |  - | 
+>?<sup>1</sup> In VPC, [Elastic Network Interface (ENI)](https://intl.cloud.tencent.com/document/product/576), [NAT Gateway](https://intl.cloud.tencent.com/document/product/1015), [Peering Connection](https://intl.cloud.tencent.com/document/product/553), [VPN Connections](https://intl.cloud.tencent.com/document/product/1037), [Flow Logs (FL)](https://intl.cloud.tencent.com/document/product/682), [Anycast Internet Acceleration (AIA)](https://intl.cloud.tencent.com/document/product/644), [Cloud Connect Network (CCN)](https://intl.cloud.tencent.com/document/product/1003), and [Bandwidth Package (BWP)](https://intl.cloud.tencent.com/document/product/684) support CAM.
 
 ## CDN and Acceleration 
 
@@ -106,7 +106,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
 | [Aegis Anti-DDoS](https://intl.cloud.tencent.com/document/product/685)    | -      | -   | -   |  &#10003;    |- |
-><sup>1</sup> In Anti-DDoS, [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029) and [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297) support CAM.
+>?<sup>1</sup> In Anti-DDoS, [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029) and [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297) support CAM.
 
 ## Data Security
 
