@@ -7,7 +7,7 @@
 - 服务：支持 CAM 的云服务的名称，单击链接至对应产品服务文档，方便您快速获取相关信息。	
 - 授权粒度：当前服务提供的最小授权粒度。
 
-> 其中授权粒度按照粒度粗细分为服务级、操作级和资源级三个级别。	
+>? 其中授权粒度按照粒度粗细分为服务级、操作级和资源级三个级别。	
 >
 > - 服务级：定义对服务的整体是否拥有访问权限，分为允许对服务拥有全部操作权限或者拒绝对服务拥有全部操作权限。
 > - 操作级：定义对服务的特定接口（API）是否拥有访问权限，例如：授权某账号对云服务器服务进行只读操作。	
@@ -27,7 +27,7 @@
 | [弹性伸缩](https://intl.cloud.tencent.com/document/product/377) | 资源级   | &#10003;      | &#10003;  | &#10003;    |	-    |	
 | [批量计算](https://intl.cloud.tencent.com/document/product/599)  | 资源级 | &#10003;         |  &#10003;  | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/599/33471)   |		
 | [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051)  | 资源级 | &#10003;         |  -  | &#10003;     | -  |	
-><sup>1</sup> 云服务器中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
+>?<sup>1</sup> 云服务器中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
 
 ## 存储	
 
@@ -47,8 +47,8 @@
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |	 ---- |
 | [负载均衡](https://intl.cloud.tencent.com/document/product/214)   | 资源级  | &#10003;      | &#10003;    |    &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [私有网络 VPC ](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | 资源级 | &#10003;        | &#10003;     | - |	 - |	
-| [专线接入](https://intl.cloud.tencent.com/document/product/216) | 操作级   | &#10003;       | -       | -  |	 - |	
-><sup>1</sup> 私有网络中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用 CAM。
+| [专线接入](https://intl.cloud.tencent.com/document/product/216) | 资源级   | &#10003;       | -       | -  |	 - |	
+>?<sup>1</sup> 私有网络中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用 CAM。
 
 ## CDN 与加速	
 
@@ -109,7 +109,7 @@
  | 服务                                                          | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
 | [宙斯盾安全防护](https://intl.cloud.tencent.com/document/product/685)    | -      | -   | -   |  &#10003;    |- |
-><sup>1</sup> DDoS 防护（大禹）中  [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029)、[BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297)均已支持使用 CAM。
+>?<sup>1</sup> DDoS 防护（大禹）中  [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029)、[BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297)均已支持使用 CAM。
 
 ## 数据安全
 
