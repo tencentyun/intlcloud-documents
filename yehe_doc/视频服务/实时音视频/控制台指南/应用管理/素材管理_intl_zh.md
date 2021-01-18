@@ -1,11 +1,10 @@
 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材。
 
-[](id:add)
+<span id="add"></span> 
 ## 添加图片素材
 1. 进入实时音视频控制台，在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要管理的应用。
 2. 单击应用操作栏的【应用信息】进入应用详情页，选择【素材管理】页签。
 3. 单击【+】新增图片素材，进行如下配置：
-![](https://main.qcloudimg.com/raw/9534d8f779fef707a97de1384af71a41.png)
 <table id="inform">
 <tr><th width="17%">配置项</th><th  width="31%">配置方法</th><th>说明</th></tr>
 <tr>
@@ -26,36 +25,32 @@
 <td>仅支持填写 1 - 100 的数字，填写完成后预览框会有相应的变化</td>
 </tr><tr>
 <td>显示位置 Y 轴方向</td>
-<td>调整素材图片 X 轴方向的位置</td>
+<td>调整素材图片 Y 轴方向的位置</td>
 <td>仅支持填写 1 - 100 的数字，填写完成后预览框会有相应的变化</td>
 </tr></table>
 4. 单击【保存】，即可成功创建图片素材。
 
-[](id:preview)
+<span id="preview"></span>
 ## 预览图片效果
 1. 成功 [添加图片素材](#add) 后，您可在列表中选择您要查看的图片素材，单击下方的【预览】。
-![](https://main.qcloudimg.com/raw/32782b288a5aae052e146248283a1bbe.png)
 2. 在预览弹框中，即可查看图片嵌入播放页后的预览效果。
-![](https://main.qcloudimg.com/raw/108ef481cf4d876e56effc83d8e552fd.png)
 
 
 
-[](id:change)
+<span id="change"></span>
 ## 修改图片素材
 1. 在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要管理的应用。
 2. 单击应用操作栏的【应用查看】进入应用详情页，选择【素材管理】页签。
 2. 在左侧的列表中选择您需要修改的图片素材，并单击【编辑】。
-![](https://main.qcloudimg.com/raw/02571d080432999261b3c643efc7aeb0.png)
 3. 进入图片修改页，对 [图片信息](#inform) 进行修改，并单击【保存】即可。
 
 
-[](id:delete)
+<span id="delete"></span>
 ## 删除图片素材
 1. 在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要管理的应用。
 2. 单击应用操作栏的【应用查看】进入应用详情页，选择【素材管理】页签。
 3. 在左侧的列表中选择您需要删除的图片素材，并单击删除按钮![](https://main.qcloudimg.com/raw/12a12e329a1828de1c9a104b0accd539.png)。
 4. 在图片删除弹框中，确认是否要删除该图片素材。
-![](https://main.qcloudimg.com/raw/d4d2100c34a8720de9ad5fc85afbde2b.png)
 5. 单击【确定】即可成功删除。
 
 
