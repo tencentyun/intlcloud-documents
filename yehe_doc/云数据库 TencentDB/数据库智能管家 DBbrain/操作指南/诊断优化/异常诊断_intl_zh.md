@@ -1,15 +1,15 @@
 异常诊断功能为用户的数据库实例提供实时的性能监控、健康巡检、故障诊断和优化，让用户既可以直观地感知数据库实例实时的运行状况，也可以定位实时出现的性能异常，并根据优化建议进行系统优化。异常诊断提供实时和历史两种查看方式。
 本文将介绍如何使用该功能诊断和优化数据库实时/历史异常。
 
->?异常诊断目前支持云数据库 MySQL（不含基础版）、云数据库 CynosDB（CynosDB for MySQL）。
-
+>?异常诊断目前支持云数据库 MySQL（不含基础版）、云原生数据库 TDSQL-C（TDSQL-C for MySQL）。
+>
 
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【异常诊断】页。
-![](https://main.qcloudimg.com/raw/af4aaa608c9ce9b73b28ab8a58039b89.png)
+
 
 ## 实时/历史监控
 在异常诊断页主要展示 CPU 利用率、内存使用率、磁盘使用率、输入/输出流量、健康得分信息，其中，磁盘使用率详情可单击右上角的【详情】查看。数据库健康得分结合 AI，更贴合用户数据库真实运行状况。
-![](https://main.qcloudimg.com/raw/6c27fac042bb5e756a3085bae5bc6f26.png)
+
 
 ## 实时/历史诊断
 - “实时/历史诊断”栏：展示实例实时的 Running Threads 数、CPU 使用率以及诊断事件。
@@ -18,7 +18,7 @@
 #### 查看诊断详情
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【异常诊断】页。
 2. 在实时/历史诊断视图中，鼠标选择对应时间段，可拉伸该时间段的诊断视图，查看更细粒度的视图详情。单击【查看详情】或“诊断提示”栏的记录项可进入诊断详情页。
-![](https://main.qcloudimg.com/raw/ecc570e4635bcc0873cff4125d3b69ad.png)
+
 3. 在视图单击诊断事件，会显示该事件的详情。
  - 事件概要：包括诊断项、起止时间、风险等级、持续时长、概要等信息。
  - 现场描述：异常事件（或健康巡检事件）的外在表现现象的快照和性能趋势。
@@ -27,7 +27,7 @@
 ![](https://main.qcloudimg.com/raw/a4ea4112eb5d5899b5d65089f51848da.png)
 在【优化建议】页，单击【优化对比】，在弹窗中可以查看 SQL 执行计划、索引建议、表结构以及 SQL 优化前后代价对比。
 SQL 代价通过分析 SQL 相关库表的统计信息、OPTIMIZER_SWITCH 配置、及索引字段区分度进行估算，对优化后的 SQL 语句代价进行整体估计，使用可视化图表直观呈现 SQL 优化后降低的效果，您也可通过优化前后的执行计划比对进一步验证优化的效果。
-![](https://main.qcloudimg.com/raw/8d2e54e638f190e459bc908f3a4fdfbc.png)
+
 
 #### 忽略/取消忽略告警
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【异常诊断】页。
@@ -35,10 +35,10 @@ SQL 代价通过分析 SQL 相关库表的统计信息、OPTIMIZER_SWITCH 配置
  - 单击【忽略】，从忽略后，该实例由相同根因产生的诊断项告警也将被忽略。对于已被忽略的异常告警信息，将会被置灰色。
  >?该功能仅针对诊断项为非“健康巡检”的异常告警。
  - 单击【取消忽略】，从取消忽略后，该实例由相同根因产生的异常告警也将被取消忽略。默认不显示已忽略的诊断项。
-![](https://main.qcloudimg.com/raw/4e6cb45571d6f9d42c9ee4f34cede969.png)
+
 
 
 ## 实时/历史 SQL
 - “实时/历史SQL”展示实例的请求数汇总和分布，包括总请求数、查询（Select）、替换（Replace）、插入（Insert）、删除（Delete）、更新（Update）的趋势信息。
 - “实时/历史慢SQL”展示慢 SQL（slow log）和 CPU 使用率的趋势，单击右上角的【查看详情】可跳转至【慢 SQL 分析】页面，查看分析详情。
-![](https://main.qcloudimg.com/raw/53abc88bc45f754bb5c89c2c4dc0a992.png)
+
