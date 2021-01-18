@@ -6,24 +6,26 @@
 事前にインポート要件を満たすイメージファイルを準備する必要があります。
 - **Linuxイメージの要件：**
 <table>
-<tr><th>イメージ属性</th><th>条件</th></tr>
+<tr><th style="width:16%">イメージ属性</th><th>条件</th></tr>
 <tr><td>OS</td><td><ul><li> CentOS、Ubuntu、Debian、CoreOS、openSUSE、SUSE リリースバージョンに基づくイメージ。</li><li>32ビットと64ビットの両方のOSがサポートされています。</li></ul></td></tr>
 <tr><td>イメージ形式</td><td><ul><li> RAW、VHD、QCOW2、VMDK 形式をサポートします。</li><li><code>qemu-img info imageName | grep 'file format'を利用して</code>イメージ形式を確認します。</li></ul></td></tr>
 <tr><td>ファイルシステムの種類</td><td>GPTパーティションはサポートされていません。</td></tr>
-<tr><td>イメージのサイズ</td><td><ul><li>イメージの実際のサイズはは50 GBを超えることはできません。<code>qemu-img info imageName | grep 'disk size'</code>を利用して、イメージの実際のサイズを確認します。</li><li>イメージのvsizeは500 GBを超えることはできません。<code>qemu-img info imageName | grep 'virtual size'</code>を利用して、 イメージのvsizeを確認します。</li></ul><b>注記：</b>イメージをインポートする時のサイズはQCOW2フォーマットに変換したイメージ情報に準じます。</td></tr>
+<tr><td>イメージのサイズ</td><td><ul><li>イメージの実際のサイズは50 GBを超えることはできません。<code>qemu-img info imageName | grep 'disk size'</code>を利用して、イメージの実際のサイズを確認します。</li><li>イメージのvsizeは500 GBを超えることはできません。<code>qemu-img info imageName | grep 'virtual size'</code>を利用して、 イメージのvsizeを確認します。</li></ul><b>注記：</b>イメージをインポートする時のサイズはQCOW2フォーマットに変換したイメージ情報に準じます。</td></tr>
 <tr><td>ネットワーク</td><td><ul><li>デフォルトでは、Tencent Cloudはインスタンスに<code>eth0</code> ネットワークインターフェースを提供します。</li><li>ユーザーがインスタンスのメタデータサービスを使用して、インスタンスのネットワーク設定を確認できます。詳細については、 <a href="https://cloud.tencent.com/document/product/213/4934"> インスタンスメタデータ</a>をご参照ください。</a></li></ul></td></tr>
 <tr><td>ドライバー</td><td><ul><li>イメージに仮想化プラットフォームKVMのVirtio ドライバーをインストールする必要があります。詳細について、<a href="https://intl.cloud.tencent.com/document/product/213/9929">LinuxでのVirtioドライバーの確認</a>をご参照ください。</li><li>イメージにcloudinitをインストールすることをお勧めします。詳細について <a href="https://intl.cloud.tencent.com/document/product/213/12587"> Linuxへのcloud-initのインストール </a>をご参照ください。</li><li>他の原因で、イメージにcloudinitをインストールできない場合は、<a href="https://intl.cloud.tencent.com/document/product/213/12849">イメージの強制インポート</a> を参照して、自分でインスタンスを設定してください。</li></ul></td></tr>
 <tr><td>カーネルの制限</td><td>イメージにはネイティブカーネルが推奨されます。カーネルを変更すると、イメージをCVMにインポートできなくなる場合があります。</td></tr>
+<tr><td>リージョン制限</td><td>現在、上海ファイナンスと深センファイナンスは、他のリージョンのCOSサービスからのイメージのインポートをサポートしていません。</td></tr>
 </table>
 - **Windowsイメージの要件：**
-<table>
-<tr><th>イメージ属性</th><th>条件</th></tr>
+</table>
+<tr><th style="width: 25%;">メトリック</th><th>説明</th></tr>
 <tr><td>OS</td><td><ul><li>Windows Server 2008 関連バージョン、Windows Server 2012 関連バージョン、Windows Server 2016 関連バージョン</li><li>32ビットと64ビットの両方のOSがサポートされています。</li></ul></td></tr>
 <tr><td>イメージ形式</td><td><ul><li> RAW、VHD、QCOW2、VMDK のイメージ形式をサポートします。</li><li><code>qemu-img info imageName | grep 'file format'</code>を利用して、イメージの形式を確認します。</li></ul></td></tr>
 <tr><td>ファイルシステムの種類</td><td><ul><li> MBRパーティションを使用するNTFSファイルシステムのみサポートします。</li><li>GPT パーティションをサポートしません。</li><li>論理ボリュームマネージャ（LVM）をサポートしません。</li></ul></td></tr>
 <tr><td>イメージのサイズ</td><td><ul><li>イメージの実際のサイズは50 GBを超えることはできません。<code>qemu-img info imageName | grep 'disk size'</code>を利用して、イメージの実際のサイズを確認します。</li><li>イメージのvsizeは500 GBを超えることはできません。<code>qemu-img info imageName | grep 'virtual size'</code>を利用して、イメージのvsizeを確認します。</li></ul><b>注記：</b>イメージをインポートする時のサイズはQCOW2フォーマットに変換したイメージ情報に準じます。</td></tr>
 <tr><td>ネットワーク</td><td><ul><li>Tencent Cloudはデフォルトでインスタンスに<code>ローカルエリア接続</code>ネットワークインターフェースを提供します。</li><li>ユーザーがインスタンスのメタデータサービスを使用して、インスタンスのネットワーク設定を確認できます。詳細については、 <a href="https://cloud.tencent.com/document/product/213/4934"> インスタンスメタデータ</a>をご参照ください。</li></ul></td></tr>
-<tr><td>ドライバー</td><td>イメージに仮想化プラットフォームKVMのVirtioドライバーをインストールする必要があります。WindowsシステムはデフォルトでVirtioドライバーがインストールされていないため、ユーザーが <a href="http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe">Windows用のVirtioドライバー </a>をインストールしてから、ローカルイメージをエクスポートできます。</td></tr>
+<tr><td>ドライバー</td><td>イメージに仮想化プラットフォームKVMのVirtio ドライバーをインストールする必要があります。 WindowsシステムにはデフォルトでVirtioドライバーが付属していないため、ローカルイメージをエクスポートする前に、まずWindows Virtioドライバーをインストールしてください。 ネットワーク環境に基づいてダウンロードアドレスを選択します。<ul><li>インターネットダウンロードアドレス：<code>http://mirrors.tencent.com/install/windows/virtio_64_10003.msi</code></li><li>プライベートネットワークダウンロードアドレス：：<code>http://mirrors.tencentyun.com/install/windows/virtio_64_10003.msi</code></li></ul></td></tr>
+<tr><td>リージョン制限</td><td>現在、上海ファイナンスと深センファイナンスは、他のリージョンのCOSサービスからのイメージのインポートをサポートしていません。</td></tr>
 <tr><td>その他</td><td>インポートされたWindowsシステムイメージは<a href="https://intl.cloud.tencent.com/document/product/213/2757"> Windowsアクティベーション </a>サービス<b>を提供しません。</b></td></tr>
 </table>
 
@@ -35,7 +37,7 @@
  4. 操作画面の指示に従って、まず [ COSを有効にする](https://console.cloud.tencent.com/cos4/index)、 [バケットを作成](/doc/product/436/6232)して 、イメージファイルをバケットにアップロードしてから、 [イメージファイルのURLを取得](/doc/product/436/6260)します。
  5.【次へ】をクリックします。
  6. 実際の状況に応じて、表に記入し、【インポート開始】をクリックします。
- > 入力したCOSファイルのURLが正しいことを確認してください。
+ >! 入力したCOSファイルのURLが正しいことを確認してください。
  >
 インポートの結果は、 [ サイト内メール](https://console.cloud.tencent.com/message)の形で通知されます。
 
@@ -46,7 +48,7 @@
 ### 注意事項
 
 このドキュメントによって、失敗の原因をトラブルシューティングする前に、 [ サイト内メールの管理画面](https://console.cloud.tencent.com/messageCenter/messageConfig) のmessage subscriptionページで製品サービスに関連する通知をサブスクライブしていることを確保します。これにより、失敗の原因を含むサイト内メッセージ、SMS、および電子メールを確実に受信することができます。
-> メッセージセンターで製品サービス通知をサブスクライブしない場合、インポートが成功したかどうかに関するサイト内メッセージを受信できません。
+>! メッセージセンターで製品サービス通知をサブスクライブしない場合、インポートが成功したかどうかに関するサイト内メッセージを受信できません。
 
 ### トラブルシューティング
 
@@ -56,21 +58,18 @@
 
 InvalidUrl エラーが発生し、エラーメッセージ：イメージをインポートするページに間違ったCOSリンクが記入されています、次の原因が考えられます。
 * 入力したイメージリンクは[Tencent Cloud COS](https://console.cloud.tencent.com/cos4/index) のイメージリンクではありません。
+* COS URLには、パブリック読み取りおよびプライベート書き込み権限がありません。
 * COS ファイルのアクセス権限はプライベート読み取りであり、署名の有効期限が切れています。
-> 署名付きのCOSファイルは1回しかアクセスできません。
+>! 署名付きのCOSファイルは1回しかアクセスできません。
 >
 * 他のリージョンのCOSリンクが記入されました。
-> イメージインポートサービスはプライベートネットワークを介してローカルリージョンのCOSサーバーにアクセスします。　
+>! イメージインポートサービスはプライベートネットワークを介してローカルリージョンのCOSサーバーにアクセスします。　
 >
 * ユーザーのイメージファイルが削除されました。
-
 * 署名されたリンクが使用されました。
+COSリンク無効のエラーを受け取った後、上記の原因によってトラブルシューティングします。
 
-COS URLが無効であることを示すエラーメッセージが表示された場合、上記の原因に基づいて問題のトラブルシューティングを行います。
-
-  
-
-#### InvalidFormatSize：無効な形式またはサイズ
+#### InvalidFormatSize：形式またはサイズが条件に該当しない
 
 InvalidFormatSize エラーが発生し、エラーメッセージ：インポートするイメージの形式またはサイズは、Tencent Cloudのイメージインポート機能の要件を満たしていない、要件は以下の通りです。
 * イメージをインポートする場合、`qcow2`、`vhd`、`vmdk`、`raw` の4つの形式のイメージファイルをサポートします。
@@ -112,7 +111,7 @@ InternalErrorが発生し、エラーメッセージ：イメージインポー�
 
 <a id="errorcode"></a>
 ## エラーコード
-
+ 
 |エラーコード|エラーの原因|推奨される解決策|
 |-----|-----|-----|
 |InvalidUrl|無効なCOSリンク| COS リンクはインポートされたイメージリンクと同じかどうかを確認します。 |
