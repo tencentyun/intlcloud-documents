@@ -1,6 +1,6 @@
 The billable items of LVB include the basic, value-added, and extended service fees, as shown below:
 
-![](https://main.qcloudimg.com/raw/40b382f7218804c557fdb9e3ce47294c.png)
+![](https://main.qcloudimg.com/raw/03c4d0aefb9ea69aba8d5d3df27a09e9.png)
 
 - [Basic service fees](#base): incurred by live streaming resource consumption when LVB is used. You can switch between the traffic and peak bandwidth billing modes.
 - [Value-added service fees](#appreciation): incurred when value-added features such as LVB transcoding, recording, screencapturing, and porn detection are used. Such features are disabled by default and only incur fees when used.
