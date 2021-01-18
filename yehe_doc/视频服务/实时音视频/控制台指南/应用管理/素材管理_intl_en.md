@@ -32,7 +32,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 
 <span id="preview"></span>
 ## Preview
-1. After [adding images][#add], select an image in the list and click **Preview**.
+1. After [adding images](#add), select an image in the list and click **Preview**.
 2. In the window that pops up, view the effect with the image set as the background.
 
 
