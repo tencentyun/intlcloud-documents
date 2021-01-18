@@ -5,7 +5,6 @@ If you want to set an image as the background displayed during on-cloud stream m
 1. Log in to the **TRTC console**, click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and find the application you want to mange.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
 3. Click **+** and set the following parameters.
-![](https://main.qcloudimg.com/raw/9534d8f779fef707a97de1384af71a41.png)
 <table id="inform">
 <tr><th width="17%">Item</th><th  width="31%">Configuration</th><th>Note</th></tr>
 <tr>
@@ -34,9 +33,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 [](id:preview)
 ## Preview
 1. After [adding images][#add], select an image in the list and click **Preview**.
-![](https://main.qcloudimg.com/raw/32782b288a5aae052e146248283a1bbe.png)
 2. In the window that pops up, view the effect with the image set as the background.
-![](https://main.qcloudimg.com/raw/108ef481cf4d876e56effc83d8e552fd.png)
 
 
 
@@ -45,7 +42,6 @@ If you want to set an image as the background displayed during on-cloud stream m
 1. In **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select the image you want to manage.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
 3. Find the image you want to modify in the list on the left, and click **Edit**.
-![](https://main.qcloudimg.com/raw/02571d080432999261b3c643efc7aeb0.png)
 4. In the edit page, modify the [configuration](#inform), and click **Save**.
 
 
@@ -55,7 +51,6 @@ If you want to set an image as the background displayed during on-cloud stream m
 2. Click **Application Info** to go to the details page, and select **Material Management**.
 3. In the list on the left, find the image you want to delete, and click the delete button![](https://main.qcloudimg.com/raw/12a12e329a1828de1c9a104b0accd539.png).
 4. A dialog box pops up asking you to confirm the deletion.
-![](https://main.qcloudimg.com/raw/d4d2100c34a8720de9ad5fc85afbde2b.png)
 5. Click **Confirm** to delete the image.
 
 
