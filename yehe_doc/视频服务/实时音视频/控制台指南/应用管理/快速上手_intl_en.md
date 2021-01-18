@@ -4,11 +4,8 @@ After creating an application, you can follow the steps in **Quick Start** to ru
 1. Log in to the **TRTC console**, click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and find the application you want to mange.
 2. Click **Application Info** to go to the details page, and select **Quick Start**.
 3. Download the SDK and demo source code that fit your need.
-![](https://main.qcloudimg.com/raw/0eec4404ce2559ea4d427772b674319e.png)
 4. Click **Copy Secret Key** to copy the UserSig of the application.
-![](https://main.qcloudimg.com/raw/f6120ade568e401c2f9cf9062a4ee87c.png)
 5. Decompress the downloaded source package, find and open the specified file, and paste the SDKAppID and key to the specified locations.
-![](https://main.qcloudimg.com/raw/533cee7f57aa98042bde46e9e2371744.png)
 
    
 ## Documentation
