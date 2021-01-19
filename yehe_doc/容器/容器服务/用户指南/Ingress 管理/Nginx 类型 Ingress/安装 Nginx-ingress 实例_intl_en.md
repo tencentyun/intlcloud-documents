@@ -5,7 +5,9 @@
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
 3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
+![](https://main.qcloudimg.com/raw/04312e2e5736ed4be538911502c63a3b.png)
 4. On the "Add-on List" page, click **Create**. On the displayed "Create Add-on" page, select **NginxIngress**.
+![](https://main.qcloudimg.com/raw/ececc5fbac93e9b7073ca01a5b20171f.png)
 5. Click **Done** to install the add-on.
 
 
@@ -30,9 +32,10 @@ The installation directions are as follows:
 3. In the details page of the created Nginx Ingress addon, click **Add Nginx Ingress Instance** (a cluster can have multiple Nginx instances at the same time).
 
 4. In the pop-up window, select **Specify a Node Pool as DaemonSet to Deploy** for **Deploy Modes** and set other parameters as needed.
+![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
  - **Node Pool**: select a node pool.
  - **Nginx Configuration**: the configuration of **Request** must be less than the model configuration of the node pool (the node itself has resource reservation). **Limit** can be left empty.
-4. Click **OK**.
+5. Click **OK**.
 
 
 <span id="Deployment+HPA"></span>
