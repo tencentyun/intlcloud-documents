@@ -22,7 +22,7 @@ If there's no problem with the video stream, the next step is checking whether t
 	- **Tencent Cloud web browser:** Tencent Cloud’s web browser supports playback URLs that use different protocols and can select the best playback strategy based on the platform used (PC/Android/iOS). Additionally, its selective retry logic offers a solution to the lazy start issue.
 
 -  **RTMP SDK**
-If playback is possible with the [RTMP SDK demo](https://intl.cloud.tencent.com/document/product/1071/38147), we recommend that you check the integration logic. For details, see the RTMP SDK playback documents [iOS](https://intl.cloud.tencent.com/document/product/1071/38159) and [Android](https://intl.cloud.tencent.com/document/product/1071/38160).
+If playback is possible with the RTMP SDK demo, we recommend that you check the integration logic. For details, see the RTMP SDK playback documents [iOS](https://intl.cloud.tencent.com/document/product/1071/38159) and [Android](https://intl.cloud.tencent.com/document/product/1071/38160).
 
 ### 4. Checking firewall restrictions
 Firewall restrictions are a common cause of playback failure. Many companies’ office networks set restrictions against video playback by having the firewall check whether a HTTP request is for streaming media. If you can watch an LVB using 4G, but not using your company’s office Wi-Fi, it indicates that the cause of the problem is firewall restrictions. Contact your company’s IT department and see if they can lift the restrictions for you IP address.
