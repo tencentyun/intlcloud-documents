@@ -1,11 +1,11 @@
-### Expanding the capacity of cloud system disks
-If the cloud disk is a system disk, you can expand it using the following two methods.
-- [Expanding cloud disks via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747)
+### Expanding cloud system disks
+If the cloud disk works as a system disk, you can expand it using the following two methods.
+- [Expanding via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747)
 - [Reinstalling system](https://intl.cloud.tencent.com/document/product/362/5747)
 
 
 
-### Expanding the capacity of cloud data disks
+### Expanding cloud data disks
 
 If the cloud disk is a data disk, you can expand it using the following three methods.
 - [Expanding cloud disks via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747)
@@ -29,23 +29,23 @@ Once the data disk capacity is expanded, you must perform the following operatio
 		 <th>Subsequent Operations</th>  
      </tr>
 	 <tr>
-         <td   rowspan="2" nowrap="nowrap">No file system is created.</td>
-         <td>Disk capacity is less than 2 TB.</td>
-		 <td><a href="https://intl.cloud.tencent.com/document/product/362/31597">Initializing cloud disks (smaller than 2 TB)</a></td>
+         <td   rowspan="2" nowrap="nowrap">File system not created</td>
+         <td>Disk capacity < 2 TB/td>
+		 <td><a href="https://intl.cloud.tencent.com/document/product/362/31597">Initializing cloud disks (< 2 TB)</a></td>
      </tr> 
 	 <tr>
-         <td nowrap="nowrap">Disk capacity is greater than or equal to 2 TB.</td>
-         <td><a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (larger than or equal to 2 TB)</a></td>
+         <td nowrap="nowrap">Disk capacity ≥ 2 TB</td>
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/31598">Initializing cloud disks (≥ 2 TB)</a></td>
      </tr>
 	 <tr>
-         <td   rowspan="2">File system has already been created.</td>
-         <td>Disk capacity is less than 2 TB.</td>
-    		 <td><ul><li>The expanded cloud disk is on a Windows CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31601">extending partitions and file systems (Windows)</a></li>
-			 <li>The expanded cloud disk is on a Linux CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31602">extending partitions and file systems (Linux)</a></li></ul>
+         <td   rowspan="2">File system created</td>
+         <td>Disk capacity < 2 TB/td>
+    		 <td><ul><li>Cloud disks mounted to a Windows CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31601">extending partitions and file systems (Windows)</a></li>
+			 <li>Cloud disks mounted to a Linux CVM:<a href="https://intl.cloud.tencent.com/document/product/362/31602">extending partitions and file systems (Linux)</a></li></ul>
 				 </td>
      </tr>
 	 <tr>
-         <td>Disk capacity is greater than or equal to 2 TB.</td>
+         <td>Disk capacity ≥ 2 TB</td>
          <td>
 				 <ul><li>GPT partition format:<a href="https://intl.cloud.tencent.com/document/product/362/31601">extending partitions and file systems (Windows)</a> or <a href="https://intl.cloud.tencent.com/document/product/362/31602">extending partitions and file systems (Linux)</a></li>
 				 <li>MBR partition format: Not supported.</li>MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data.</ul>
