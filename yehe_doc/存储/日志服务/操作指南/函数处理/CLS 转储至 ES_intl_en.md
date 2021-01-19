@@ -11,7 +11,6 @@ This document describes how to use SCF to dump CLS logs to ES. CLS is mainly use
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Logset** on the left sidebar.
 2. On the logset management page, select the region of the logset at the top.
 3. Click **Create Logset** and enter relevant information in the **Create Logset** pop-up window:
-![](https://main.qcloudimg.com/raw/4e44c9e0612d0a66e4e9e58bb6f063cb.jpg)
 4. Click **OK**.
 
 <span id="step02"></span>
@@ -23,10 +22,8 @@ This document describes how to use SCF to dump CLS logs to ES. CLS is mainly use
 3. Click **Add Log Topic** and enter the following relevant information in the **Add Log Topic** window:
    - Log Topic Name: enter `nginx` for example.
    - Topic Partitions: for more information on topic partition, please see [Topic Partition](https://intl.cloud.tencent.com/document/product/614/33779). One partition is created by default.
-![](https://main.qcloudimg.com/raw/d37c9e20232451be3053c8e280776c9c.jpg)
 4. Click **OK**.
 5. The log topic is successfully added, and you will be redirected to the log topic management page.
-   ![](https://main.qcloudimg.com/raw/08e9dc61f1cc8bfcb1923345c86bef45.jpg)
 
 
 <span id="step03"></span>
@@ -40,11 +37,9 @@ This document describes how to use SCF to dump CLS logs to ES. CLS is mainly use
 	- **Creation method**: select **Function Template**.
 	- **Fuzzy search**: enter **CLSToElasticsearch** and search.
 3. Click **Learn More** in the template to view relevant information in the **Template Details** pop-up window, which can be downloaded.
-![](https://main.qcloudimg.com/raw/dd8e76ba274ee692d67541c8f66ae9fa.png)
 4. After configuring the basic information, click **Next** to enter the function configuration page.
 5. Keep the default function configuration and click **Complete** to complete the function creation.
 > ! You should select the same VPC and subnet of CLS for the created function on the **Function Configuration** page as shown below:
->  ![](https://main.qcloudimg.com/raw/a329381190dcf6ad0883f5f8a51a9567.png)
 
 <span id="step04"></span>
 
@@ -53,7 +48,6 @@ This document describes how to use SCF to dump CLS logs to ES. CLS is mainly use
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Logset** on the left sidebar.
 2. Find the created logset and click **View** in the **Operation** column on the right to enter the logset details page.
 3. On the log topic details page, select **Function Processing** and click **Create**. Add the created function in the **Function Processing** pop-up window as shown below:
-![](https://main.qcloudimg.com/raw/ee3aa3a2ca88355e80a415a402c2994f.jpg)
 The main parameter information is as follows. Keep the remaining configuration items as default:
 	- **Namespace**: select the function namespace.
 	- **Function name**: select the function created in the [Creating SCF function](#step03) step.
@@ -68,6 +62,5 @@ The main parameter information is as follows. Keep the remaining configuration i
 1. Download the log file in the [test sample](https://main.qcloudimg.com/raw/6e0d4837eefd0ce77dac8a3973acdf39.zip), extract `demo-scf1.txt`, and import it to the source CLS service.
 2. Switch to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=8&ns=default) to view the execution result.
    Select the **Log Query** tab on the function details page to view the printed log information as shown below:
-   ![](https://main.qcloudimg.com/raw/b4d8dd0a4a236ab4cb35f2e7d3160649.png)
 3. Log in to the [ES console](https://console.cloud.tencent.com/es) to view the data dumping and processing result.
 > ?You can write specific data processing methods as needed.
