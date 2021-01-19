@@ -24,7 +24,7 @@ You can enable the static IP address using either of the following methods:
 2. On the "Cluster Management" page, click **Create** above the cluster list.
 3. On **Create Cluster** page, select **VPC-CNI** for **Container Network Add-on**.
 4. Check **Enable Support** for **Static Pod IP**.
-
+![](https://main.qcloudimg.com/raw/809762d13751e713340f0fa6a2143252.png)
 
 ### GlobalRouter VPC-CNI Mode with static IP address
 #### Enabling VPC-CNI for the existing clusters
@@ -37,6 +37,7 @@ You can enable the static IP address using either of the following methods:
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, enable **VPC-CNI mode**.
 5. Select the subnet and set the **IP Reclaiming Policy** in the pop-up window.
+![](https://main.qcloudimg.com/raw/d101153a5fdd8c3289606e6945f0eba9.png)
 
 >! 
 >- In static-IP scenarios, after enabling VPC-CNI, you need to set the IP reclaiming policy, which specifies how long after pods are terminated their IP addresses are returned.
@@ -60,7 +61,9 @@ You can create the static IP address using either of the following methods:
  2. Select a cluster ID that needs to use the static IP address and go to its management page.
  3. Choose **Workload** > **StatefulSet** to go to the cluster management page of **StatefulSet**.
   4. Click **Create** to view **Number of Pods**.
+![](https://main.qcloudimg.com/raw/0ce9969c685d732aed4103f91e8ffe41.png)
   5. Click **Advanced Settings** and set StatefulSet parameters as needed. 
+![](https://main.qcloudimg.com/raw/ce1bb9d7f0df7b07db6a7d66da115eb8.png)
    - Network mode: select **Use VPC-CNI mode**.
       - IP address range: currently, only the **Random** value is supported.
       - Static pod IP: select **Enable**.
