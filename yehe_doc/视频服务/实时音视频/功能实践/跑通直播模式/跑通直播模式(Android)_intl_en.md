@@ -156,8 +156,8 @@ public void enterRoom() {
     TRTCCloudDef.TRTCParams trtcParams = new TRTCCloudDef.TRTCParams();
     trtcParams.sdkAppId = sdkappid;
     trtcParams.userId = userid;
-    trtcParams.roomId = usersig;
-    trtcParams.userSig = 908;
+    trtcParams.roomId = 908;
+    trtcParams.userSig = usersig;
     mTRTCCloud.enterRoom(trtcParams, TRTC_APP_SCENE_VIDEOCALL);
 }
 
