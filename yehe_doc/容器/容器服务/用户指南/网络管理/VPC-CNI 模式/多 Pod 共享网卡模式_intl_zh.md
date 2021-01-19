@@ -31,6 +31,7 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中【集群】。
 2. 在“集群管理”页面，单击集群列表上方的【新建】。
 3. 在“创建集群”页面，在容器网络插件中选择 “VPC-CNI”。
+![](https://main.qcloudimg.com/raw/26af6272145e26b2b3f8c92d79318635.png)
 
 >? 默认情况下，VPC-CNI 模式**不支持固定 Pod IP 能力**，且该能力仅支持在 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637) 时设置。如需为集群开启支持固定 Pod IP，请参见 [固定 IP 模式使用说明](https://intl.cloud.tencent.com/document/product/457/38975)。
 
@@ -44,6 +45,7 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 3. 在集群详情页面，选择左侧【基本信息】。
 4. 在集群“基本信息”页面的集群信息模块，在 VPC-CNI 字段中单击开启。
 5. 在弹出窗口中选择子网，并确认 IP 回收策略。
+![](https://main.qcloudimg.com/raw/3246c6d4a6217f176e7da51d986bc628.png)
 >! 
 >- 针对固定 IP 场景，启用 VPC-CNI 后需要设置 IP 回收策略，即设置 Pod 销毁后需要退还 IP 的时长。
 >- 非固定 IP 的 Pod 销毁后可立即释放 IP，不受此设置的影响。
