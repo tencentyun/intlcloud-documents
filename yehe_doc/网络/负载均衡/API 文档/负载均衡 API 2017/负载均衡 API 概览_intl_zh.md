@@ -254,7 +254,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8987" target="_blank">查询负载均衡云服务器列表</a></td>
+<td>查询负载均衡云服务器列表</a></td>
 <td>DescribeForwardLBBackends</td>
 <td>查询负载均后端绑定的云服务器列表。</td>
 </tr>
