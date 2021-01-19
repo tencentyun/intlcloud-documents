@@ -21,7 +21,9 @@ You have enabled log collection in **[Feature Management](https://console.cloud.
 1. Install [Nginx-ingress Addon](https://intl.cloud.tencent.com/document/product/457/38981#Nginx-ingress) for the target cluster.
 2. In **Add-On Management** page, select an installed addon to go to its details page.
 3. In **Log/Monitoring** page, click **Reset** on the right side of **Log Configuration**.
+![](https://main.qcloudimg.com/raw/830bd637a0ee296071fca62cf808a6d9.png)
 4. Select or create a logset in the pop-up window.
+![](https://main.qcloudimg.com/raw/8981c5e3146a6e01378b9e6b0cca9c6d.png)
 5. Click **Enable**.
 >! For information on CLS billing rules and billing standards, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
 
