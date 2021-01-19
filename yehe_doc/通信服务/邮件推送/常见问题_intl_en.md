@@ -44,7 +44,7 @@ For any special requirements, Tencent Cloud needs to do some specific initializa
 
 ### How should I configure the domain DNS?
 - If you are using Tencent Cloud’s DNS service, log in to the [Tencent Cloud console](https://console.cloud.tencent.com/cns) to configure.
-- If you are using DNS service from another domain service provider, you can transfer your domain to Tencent Cloud for DNS resolution. For more information, see [Domain Transfer to Tencent Cloud](https://intl.cloud.tencent.com/document/product/242/3645).
+- If you are using DNS service from another domain service provider, you can transfer your domain to Tencent Cloud for DNS resolution. 
 - In other cases, please configure it at your domain service provider.
 
 ### Does the email service have any requirements on DNS resolution?
