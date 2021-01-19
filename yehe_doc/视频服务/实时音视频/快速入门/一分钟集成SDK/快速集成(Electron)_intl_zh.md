@@ -1,6 +1,6 @@
 本文主要介绍如何快速地将腾讯云 TRTC Electron SDK 集成到您的项目中。
 
-## 持的平台
+## 支持的平台
 -  Windows(PC)
 -  Mac
 
