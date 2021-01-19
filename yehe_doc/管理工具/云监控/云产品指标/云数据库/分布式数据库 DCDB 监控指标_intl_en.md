@@ -37,20 +37,20 @@ Namespace=QCE/DCDB
 | InnodbRowsRead | Read InnoDB rows | Times/sec | uuid and shardId |
 | InnodbRowsUpdated | Updated InnoDB rows | Times/sec | uuid and shardId |
 
-> The statistical granularity (`period`) for all metrics of distributed databases is either 60 or 300 seconds and varies by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
+>? The statistical granularity (`period`) for all metrics of distributed databases is either 60 or 300 seconds and varies by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
 
 ## Overview of the Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | ------------------------------ | -------- | ------------------------------------------------------------ | ----------------------------------------- |
 | Instances.N.Dimensions.0.Name | uuid | Dimension name of the database instance uuid | Enter a string-type dimension name, such as uuid |
-| Instances.N.Dimensions.0.Value | uuid | A specific instance uuid | Enter a specific instance uuid, such as dcdbt-0gfryg60 |
+| Instances.N.Dimensions.0.Value | uuid | A specific instance uuid | Enter a specific instance uuid, such as tdsqlshard-12345678 |
 | Instances.N.Dimensions.1.Name | shardId | Dimension name of the instance shard ID. To query shard monitoring data, pass in this parameter. If this parameter is not passed in, the overall instance monitoring data will be queried instead | Enter a string-type dimension name, such as shardId |
 | Instances.N.Dimensions.1.Value | shardId | A specific instance shard ID | Enter a specific instance shard ID, such as shard-0mzlzl89 |
 
 ## Input Parameters
 
-To query the monitoring data of a TDSQL for MySQL v3 instance, use the following input parameters:
+**To query the monitoring data of a TDSQL for MySQL v3 instance, use the following input parameters:**
 &Namespace=QCE/DCDB
 &Instances.N.Dimensions.0.Name=uuid
 &Instances.N.Dimensions.0.Value=<Specific instance uuid>
