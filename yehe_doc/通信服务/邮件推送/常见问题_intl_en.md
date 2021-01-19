@@ -48,5 +48,4 @@ For any special requirements, Tencent Cloud needs to do some specific initializa
 - In other cases, please configure it at your domain service provider.
 
 ### Does the email service have any requirements on DNS resolution?
-The email sender domain must be a fourth-level domain, such as `mail._domainkey.domain.com`. The corresponding Tencent Cloud DNS plan should be [Individual Professional](https://buy.cloud.tencent.com/cns). Please make sure that you have the permissions to add and configure fourth-level subdomains.
-
+The email sender domain must be a fourth-level domain, such as `mail._domainkey.domain.com`. 
