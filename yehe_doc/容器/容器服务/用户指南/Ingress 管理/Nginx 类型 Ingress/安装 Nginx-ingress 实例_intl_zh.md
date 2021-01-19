@@ -5,7 +5,9 @@
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，选择左侧导航栏中的【集群】。
 2. 在“集群管理”页面单击目标集群 ID，进入集群详情页。
 3. 选择左侧菜单栏中的【组件管理】，进入 “组件列表” 页面。
+![](https://main.qcloudimg.com/raw/04312e2e5736ed4be538911502c63a3b.png)
 4. 在“组件列表”页面中选择【新建】，并在“新建组件”页面中勾选 NginxIngress。
+![](https://main.qcloudimg.com/raw/ececc5fbac93e9b7073ca01a5b20171f.png)
 5. 单击【完成】即可安装组件。
 
 
@@ -29,11 +31,11 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
 1. 准备用于部署 Nginx-ingress 的节点池，同时设置污点 taint（防止其他 Pod 调度到该节点池）。部署节点池详情可参见 [节点池相关说明](https://intl.cloud.tencent.com/document/product/457/35900)。
 2. 在集群中 [安装 NginxIngress 组件](#Nginx-ingress)。
 3. 在新建的 Nginx Ingress 组件详情页，单击【新增Nginx Ingress实例】（一个集群内可以同时存在多个 Nginx）。
-
 4. 在弹出的窗口中，选择部署选项中的【指定DaementSet节点池部署】，并按需设置其他参数。
+![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
  - 节点池：配置节点池。
  - Nginx 配置：Requst 需设置比节点池的机型配置小（节点本身有资源预留）。Limit 可不设置。
-4. 单击【确定】即可完成安装。
+5. 单击【确定】即可完成安装。
 
 
 <span id="Deployment+HPA"></span>
