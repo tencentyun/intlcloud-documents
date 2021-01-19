@@ -149,6 +149,8 @@ When an encrypted video is played back, the key obtained by the M3U8 file from t
 
 ### 4. Overall business flowchart of the upgraded encryption scheme
 
+![](https://main.qcloudimg.com/raw/872e8921a291877be233da67f25138bb.png)
+
 
 ## Sample
 The following is an example of playing back the encrypted output of a video.

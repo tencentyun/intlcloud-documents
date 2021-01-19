@@ -149,6 +149,8 @@ HLS 普通加密的原理是，在 m3u8 文件的 EXT-X-KEY 标签中的 URI 中
 
 ### 4 加密升级方案整体业务流程图：
 
+![](https://main.qcloudimg.com/raw/872e8921a291877be233da67f25138bb.png)
+
 
 ## 示例
 下面以播放一个视频的加密输出为例。
