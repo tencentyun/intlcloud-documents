@@ -254,7 +254,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8987" target="_blank">DescribeForwardLBBackends</a></td>
+<td>DescribeForwardLBBackends</a></td>
 <td>DescribeForwardLBBackends</td>
 <td>Obtains the list of CVMs bound to a CLB instance.</td>
 </tr>
