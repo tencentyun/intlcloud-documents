@@ -130,7 +130,7 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 | Console Operation                                         | Guide                                                   |
 | :--------------------------------------------------------- | :----------------------------------------------------------- |
 | Generating UserSig online or verifying existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/zh/document/product/647/39074)                |
-| Enabling relayed push, on-cloud recording or advanced permission control for an application        | [Function Configuration](https://intl.cloud.tencent.com/zh/document/product/647/39080) |
+| Enabling relayed push, on-cloud recording or advanced permission control for an application        | Function Configuration |
 | Adding a custom image to be set as the background displayed during on-cloud stream mixing            | [Material Management](https://intl.cloud.tencent.com/zh/document/product/647/39081) |
 
 
