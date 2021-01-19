@@ -17,10 +17,9 @@
 - Method 1. Select an SCF project template for creation as instructed in [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040/36249).
 - Method 2. Directly run the `sls init` command for creation. You can quickly create an SCF function in Node.js as follows:
 ```
-sls init scf-demo
+sls init scf-nodejs
 ```
->?`scf-demo` in the command can be replaced with a template for another programming language. Currently, the SCF component supports the following components: `go1-helloworld`, `nodejs1015-helloworld`, `php72-helloworld`, and `python36-helloworld`.
-
+>?The `helloworld` templates currently supported by the SCF component are `scf-golang`, `scf-php`, and `scf-python`. You only need to replace `scf-nodejs` in the command with the template name listed above to quickly initialize a template in the corresponding language.
 
 #### Deployment
 Run the following command, and a QR code will pop up. Directly scan the code to authorize for deployment:
@@ -85,7 +84,7 @@ Information in the `serverless.yml` file:
 #### Parameter information
 Parameters in `inputs` are component configuration parameters. The parameters of a simplest SCF component are as detailed below:
 
-| Parameter | Description | 
+| Parameter | Description |
 |---------|---------|
 | name | Function name. As it is also the resource ID, to ensure the uniqueness of the resource, we recommend you use the `${name}-${stage}-${app}` variable as the name. |
 | src | Code path. |
@@ -117,4 +116,49 @@ You can run `sls dev` in the directory of the `serverless.yml` file to output cl
 Deployment of a component instance in Serverless Framework is actually deployment of a single-component instance application.
 
 During the development of an application project, there may be multiple component instances under the same application. For detailed directions on how to manage component instances for application project development, please see [Application Management](https://intl.cloud.tencent.com/document/product/1040/38288).
+
+
+
+### Component commands
+
+The SCF component provides component-level commands. A function successfully deployed by running the `sls deploy` command can be manipulated with the following commands.
+
+>?The command must be executed in the same directory as `serverless.yml`.
+
+#### Publishing function version
+Publish the `$LATEST` version of the `my-function` function as a fixed version:
+```
+sls publish-ver --inputs  function=my-function
+```
+
+#### Creating alias
+Create the `routing-alias` alias for the `my-function` function, with the routing rule of 50% traffic for version 1 and 50% traffic for version 2:
+```
+sls create-alias --inputs name=routing-alias  function=my-function  version=1  
+config='{"weights":{"2":0.5}}'
+```
+
+#### Updating alias
+Update the flow rule of the `routing-alias` alias of the `my-function` function to 10% for version 1 and 90% for version 2:
+```
+sls update-alias --inputs name=routing-alias  function=my-function  version=1 config='{"weights":{"2":0.9}}'
+```
+
+#### Listing alias
+List the `routing-alias` alias of the `my-function` function:
+```
+sls list-alias --inputs function=my-function
+```
+
+#### Deleting alias
+Delete the `routing-alias` alias of the `my-function` function:
+```
+sls delete-alias --inputs name=routing-alias  function=my-function
+```
+
+#### Triggering function
+Invoke the `functionName` function and pass the JSON parameter `{"weights":{"2":0.1}}`:
+```
+sls invoke  --inputs function=functionName  clientContext='{"weights":{"2":0.1}}'
+```
 
