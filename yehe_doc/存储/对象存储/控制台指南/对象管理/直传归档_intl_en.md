@@ -1,31 +1,36 @@
-Currently, there are two archive storage modes: Cloud Archive Storage (CAS) and archive storage in Cloud Object Storage (COS) through lifecycle transition. We will unify those two modes in the future by removing the former and retaining the latter. In addition, we have implemented direct upload archiving in COS, i.e., directly uploading objects to COS in the archive storage class.
+## Overview
+COS supports direct upload to COS ARCHIVE storage via the console, APIs, SDKs, or COSCMD. You can also leverage the lifecycle feature of COS to transition uploaded objects to ARCHIVE or DEEP ARCHIVE.
 
-You can use the console, API, SDK, or COSCMD tool for direct upload archiving in COS.
 
-- Upload via the console
-After selecting the object to be uploaded through **Upload a File** in the [COS Console](https://console.cloud.tencent.com/cos5), select the storage class as **Archive Storage** in the "Set Object Properties" tab.
+## Supported Methods
+
+- Uploading via the console
+ In the [COS console](https://console.cloud.tencent.com/cos5), click **Upload Files** and then select the object to upload. In the **Set Properties** step, set **Storage Class** to **ARCHIVE** or **DEEP ARCHIVE**. For more information, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
 ![](https://main.qcloudimg.com/raw/8f3b05d1407a9017c54c86c9cec693c7.png)
- 
-- Upload via API
-Direct upload archiving can be implemented by setting x-cos-storage-class to ARCHIVE in the PUT Object, POST Object, or Initiate Multipart Upload APIs.
->The Append Object API does not support direct upload archiving.
 
-- Upload via SDK
-Currently, all SDKs of COS support direct upload archiving by setting the StorageClass parameter to ARCHIVE during file upload.
+- Uploading via APIs
+You can set `x-cos-storage-class` to `ARCHIVE` or `DEEP_ARCHIVE` in the `PUT Object`, `POST Object`, or `Initiate Multipart Upload` API to implement direct upload to COS ARCHIVE storage.
+>!The `Append Object` API does not support direct upload to COS ARCHIVE storage.
 
-- Upload via COSCMD
-The COSCMD tool supports direct upload archiving by adding the header field x-cos-storage-class and setting it to ARCHIVE during file upload.
+- Uploading via SDKs
+Currently, all COS SDKs support direct upload to COS ARCHIVE storage. You can set `StorageClass` to `ARCHIVE` or `DEEP_ARCHIVE` during the upload.
 
-#### Archive Storage Restoration and Download
-Downloading the archive storage is different from the standard and standard infrequent access storage. You need to restore it first before you can download it. The restoration can be performed in the following three ways:
-- Expedited mode: Files below 256 MB can be read in 1 to 5 minutes.
-- Standard mode: Restoration can be completed generally in 3 to 5 hours.
-- Batch mode: Data can be retrieved generally in 5 to 12 hours with the lowest cost.
+- Uploading via COSCMD
+You can add the header field `x-cos-storage-class` and set it to `ARCHIVE` or `DEEP_ARCHIVE` during the upload.
 
-In addition, the console, API, SDK, and COSCMD tool all support archive storage restoration and download.
+#### Restoring and downloading archived data
+Unlike STANDARD/STANDARD_IA, objects in ARCHIVED or DEEP ARCHIVED can only be downloaded after being restored. The following 3 restoration modes are provided:
+- Expedited mode: restores an object within 1-5 minutes (fastest).
+- Standard mode: restores an object within 3-5 hours.
+- Bulk mode: restores multiple objects within 5-12 hours (lowest cost)
 
-#### Current Constraints for Direct Upload Archiving
-- If you want to download an archive storage object, you need to restore it first.
-- If you want to replicate an archive storage object, you need to restore it first.
-- Archive storage objects cannot be replicated across regions.
-- Archive storage objects cannot be converted to standard or standard infrequent access storage.
+>?Objects in DEEP ARCHIVE cannot be restored using the expedited mode. The object can be restored within 12-24 hours using standard mode, and 24-48 hours using bulk mode.
+
+Note that the console, APIs, SDKs, and COSCMD all support the restoration and download for archived objects.
+
+#### Restrictions
+- Objects in ARCHIVE or DEEP ARCHIVE need to be restored before being downloaded.
+- To copy an object in ARCHIVE or DEEP ARCHIVE, you need to restore it first.
+- Objects in ARCHIVE and DEEP ARCHIVE do not support cross-bucket replication.
+- Objects in ARCHIVE and DEEP ARCHIVE cannot be changed to a storage class that is more frequently accessed, such as STANDARD and STANDARD_IA.
+
