@@ -4,8 +4,6 @@
 
 整体数据处理流程如下：
 
-![](https://main.qcloudimg.com/raw/d00cc3cd47209169d809298f220caff5.svg)
-
 
 通过 CLS 函数触发器将日志源信息提交到 SCF，再通过 serverless 无服务架构的函数计算提供数据加工、分析，事件触发，弹性伸缩，无需运维，按需付费。
 
