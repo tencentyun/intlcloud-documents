@@ -37,20 +37,20 @@ Namespace=QCE/DCDB
 | InnodbRowsRead               | innodb 执行 READ 行数 | 次/秒 | uuid、shardId |
 | InnodbRowsUpdated            | innodb 执行 UPDATE 行数 | 次/秒 | uuid、shardId |
 
-> 分布式数据库所有指标的统计粒度可取值 60s 、300s 。 每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
+>? 分布式数据库所有指标的统计粒度可取值 60s 、300s 。 每个指标的统计粒度（Period）可取值不一定相同，可通过 [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) 接口获取每个指标支持的统计粒度。
 
 ##  各维度对应参数总览
 
 | 参数名称                       | 维度名称 | 维度解释                                                     | 格式                                      |
 | ------------------------------ | -------- | ------------------------------------------------------------ | ----------------------------------------- |
 | Instances.N.Dimensions.0.Name  | uuid     | 数据库实例的维度名称                                         | 输入 String 类型维度名称：uuId             |
-| Instances.N.Dimensions.0.Value | uuid     | 实例具体的 uuid                                              | 输入实例具体 uuid，例如：dcdbt-0gfryg60    |
+| Instances.N.Dimensions.0.Value | uuid     | 实例具体的 uuid                                              | 输入实例具体 uuid，例如：tdsqlshard-12345678    |
 | Instances.N.Dimensions.1.Name  | shardId  | 实例分片 ID 的维度名称，在需要查询分片的监控数据时传递，不传则查询汇总的实例监控数据 | 输入String 类型维度名称：shardId          |
 | Instances.N.Dimensions.1.Value | shardId  | 实例具体的 shardId                                           | 输入实例具体分片 ID，例如：shard-0mzlzl89 |
 
 ## 入参说明
 
-查询分布式数据库 DCDB V3 监控数据，入参取值如下：
+**查询分布式数据库 DCDB V3 监控数据，入参取值如下：**
 &Namespace=QCE/DCDB
 &Instances.N.Dimensions.0.Name=uuid
 &Instances.N.Dimensions.0.Value=实例具体的 uuid
