@@ -4,7 +4,7 @@
 SCF users are entitled to a certain free tier of resource usage and invocations each month, as shown below. There is no free tier for public network outbound traffic.
 
 | Billable Item | Monthly Free Tier |
-| ---- | ------ |
+| ------------| -------------- |
 | Resource usage | 400,000 GBs |
 | Invocations | 1 million |
 
@@ -16,10 +16,10 @@ SCF is pay-as-you-go **hourly** in **USD**.
 
 SCF is billed according to the following four parts. Each part is billed according to its statistics and calculation method, and the fees in **USD** are accurate to two decimal places:
 
-* **Resource usage fees**: resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
-* **Invocation fees**: each function triggering and execution is calculated as an invocation.
-* **Public network outbound fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
-* **Idle provisioned concurrency fees**: the number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of launched provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
+**Resource usage fees**: resource usage is calculated in GBs by multiplying the configured function memory size by the function execution duration.
+**Invocation fees**: each function triggering and execution is calculated as an invocation.
+**Public network outbound fees**: the outbound traffic consumed when the function code accesses the public network is counted as the public network outbound traffic in GB.
+**Idle provisioned concurrency fees**: the number of idle instances is calculated by subtracting the number of actually running concurrent instances from the number of launched provisioned instances, and the idle resource usage is calculated in GBs by multiplying the number of idle instances by the configured memory size.
 
 For more information, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284).
 
@@ -27,10 +27,10 @@ For more information, please see [Billing Mode](https://intl.cloud.tencent.com/d
 
 The four billable items of SCF are priced as follows:
 
-* **Resource usage fees**: 0.0000167 USD/GBs
-* **Invocation fees**: 0.002 USD/10,000 invocations
-* **Public network outbound traffic fees**: 0.12 USD/GB for the Chinese mainland; variable by region
-* **Idle provisioned concurrency**: 0.00000847 USD/GBs
+**Resource usage fees**: 0.0000167 USD/GBs
+**Invocation fees**: 0.002 USD/10,000 invocations
+**Public network outbound traffic fees**: 0.12 USD/GB for the Chinese mainland; variable by region
+**Idle provisioned concurrency**: 0.00000847 USD/GBs
 
 For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
