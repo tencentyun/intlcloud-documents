@@ -31,7 +31,7 @@ sysctl -w net.ipv4.conf.eth0.rp_filter=0
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the "Cluster Management" page, click **Create** above the cluster list.
 3. On **Create Cluster** page, select **VPC-CNI** for **Container Network Add-on**.
-
+![](https://main.qcloudimg.com/raw/26af6272145e26b2b3f8c92d79318635.png)
 
 >? By default, the VPC-CNI mode **does not enable the static IP address**. You can enable the static IP address only when [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637). If you need to enable the static Pod IP address for the cluster, see [Static IP Address Usage](https://intl.cloud.tencent.com/document/product/457/38975).
 
@@ -45,6 +45,7 @@ When creating a cluster, select the Global Router network plug-in. On the basic 
 3. On the cluster details page, click **Basic Information** on the left.
 4. In the **Node and Network Information** section, enable **VPC-CNI mode**.
 5. Select the subnet and set the **IP Reclaiming Policy** in the pop-up window.
+![](https://main.qcloudimg.com/raw/3246c6d4a6217f176e7da51d986bc628.png)
 >! 
 >- In static-IP scenarios, after enabling VPC-CNI, you need to set the IP reclaiming policy to specify how long the IP addresses are returned after pods are terminated.
 >- Pods with non-static IP addresses are not affected by these settings because their IP addresses are immediately released upon pod termination.
