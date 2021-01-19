@@ -4,26 +4,25 @@
 ## 配置指南
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到 IP 访问限频配置，默认情况下配置为关闭状态，阈值为空：
-![](https://main.qcloudimg.com/raw/63943c7a5afa7e9c498eebe0f1b20208.png)
+![](https://main.qcloudimg.com/raw/647b73c63e867b31dfc1116fec3225b0.png)
 
-### 修改配置
-#### 1. 修改配置
+### 开启配置
 单击开关，填充频次控制阈值并单击【确认】，即可启用 IP 访问限频控制：
-![](https://main.qcloudimg.com/raw/1f3c1893aed28e3845a1adaea9abf1d9.png)
+![](https://main.qcloudimg.com/raw/31592b3562913dd366d8c3fc88c8a6d4.png)
 **配置说明**
 
 + 配置开启后，超出 QPS  限制的请求会直接返回514，设置较低频次限制可能会影响您的正常高频用户的使用，请根据业务情况、使用场景合理设置阈值。
 + 限频仅针对与单 IP 单节点访问次数进行约束，若恶意用户海量 IP 针对性的进行全网节点攻击，则通过此功能无法进行有效控制。
 
-#### 2. 关闭配置
+### 关闭配置
 您可以通过配置开关进行一键关闭，开关为关闭状态时，即便下方存在已有配置，仍不会现网生效，下次单击开启时，会发布至全网生效：
-![](https://main.qcloudimg.com/raw/1f3c1893aed28e3845a1adaea9abf1d9.png)
+![](https://main.qcloudimg.com/raw/66d7637604b7527fd0150d0cef15d051.png)
 
->若您的加速域名服务区域为全球加速，设置的 IP 访问限频会全球生效，不支持境内、境外差异化配置
+>!若您的加速域名服务区域为全球加速，设置的 IP 访问限频会全球生效，不支持境内、境外差异化配置
 
 ## 配置示例
 若加速域名`www.test.com`的 IP 访问限频配置如下：
-![](https://main.qcloudimg.com/raw/0d78c86a122b3b58c35ca2ba8b3316b6.png)
+![](https://main.qcloudimg.com/raw/30d356e02a66a4d70f321715cf4ae659.png)
 则实际访问情况如下：
 
 1. 客户端 IP 为`1.1.1.1`的用户，在一秒内请求了10次资源`http://www.test.com/1.jpg`，均访问至 CDN 加速节点 A 中的一台 server，此时在该 server 上产生10条访问日志，其中有9条因超出 QPS 限制，状态码为514。
