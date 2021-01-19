@@ -31,7 +31,7 @@ The cluster network and the container network are the basic attributes of a clus
 
 <span id="annotation"></span>
 ### Notes on the Container Network
-
+![](https://main.qcloudimg.com/raw/49b8400f7b3428ce0ff5846315c69b89.png)
 - **Container CIDR**: this indicates the IP address range where intra-cluster resources such as services and pods are located.
 - **Maximum pod quantity per node**: it determines the size of CIDR block assigned to each node.
 >? A TKE cluster creates 2 kube-dns Pods and 1 l7-lb-controller Pod by default.
