@@ -1,3 +1,43 @@
+## December 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+<tr>
+<td>Sending health report via email is supported</td>
+<td>Users can easily know the health status of the database instance through the health reports email without logging in to the console. Users can also customize the health reports and recipients to send as needed.</td>
+<td>2020-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39371" target="_blank">Sending Health Report Email</a></td>
+</tr>
+</table>
+
+## November 2020
+<table>
+<tr>
+<th width=20%>Update</th>
+<th width=50%>Description</th>
+<th width=10%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+<tr>
+<td>The compliance audit feature is supported</td>
+<td>Compliance audit helps you pass the Cybersecurity Classified Protection Compliance (CCPC) test. It supports AI and custom audit, high-risk SQL alarms, and generating CCPC data security analysis reports.
+</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39365" target="_blank">Compliance Audit</a></td>
+</tr>
+<tr>
+<td>The security governance feature is supported</td>
+<td>Based on AI and big data analysis, the security governance feature can automatically detect abnormal behaviors and send alarms to you, improving the capability of data security governance.
+</td>
+<td>2020-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/39369" target="_blank">Security Governance</a></td>
+</tr>
+</table>
+
 ## October 2020
 <table>
 <tr>
@@ -7,8 +47,8 @@
 <th width=20%>Documentation</th>
 </tr>
 <tbody><tr>
-<td>More regions are supported</td>
-<td>DBbrain can connect to TencentDB for MySQL instances in the following regions: Taipei (China), Mumbai, Singapore, Bangkok, Frankfurt, Moscow, Toronto, Seoul, Tokyo.</td>
+<td>Connection to TencentDB for MySQL instances in new regions is supported</td>
+<td>DBbrain can connect to TencentDB for MySQL instances in the following regions: Taipei (China), Mumbai, Singapore, Bangkok, Frankfurt, Moscow, Toronto, Seoul, and Tokyo.</td>
 <td>2020-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/38560" target="_blank">Region List</a></td>
 </tr>
@@ -19,8 +59,6 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/38559" target="_blank">Feature List</a></td>
 </tr>
 </tbody></table>
-
-
 
 ## July 2020
 <table>
@@ -60,6 +98,7 @@
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">Space Analysis</a></td>
 </tr>
+</tbody></table>
 
 
 
@@ -123,21 +162,7 @@
 </tbody></table>
 
 
-## March 2020
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tbody><tr>
-<td>Supported MySQL read-only and disaster recovery instances</td>
-<td>DBbrain now supports MySQL read-only instances and disaster recovery instances to provide source-replica delay monitoring (time/distance), source-replica delay diagnosis items, advice, etc.</td>
-<td>2020-03</td>
-<td>-</td>
-</tr>
-</tbody></table>
+
 
 ## February 2020
 <table>
@@ -216,8 +241,9 @@
 <td>2019-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36037" target="_blank">Real-Time Session</a></td>
 </tr>
-</tr>
+<tr>
 </tbody></table>
+
 
 ## August 2019
 <table>
@@ -235,19 +261,19 @@
 </tr>
 <tr>
 <td>Supported exception diagnosis</td>
-<td>Exception diagnosis provides real-time and historical views. The exception diagnosis feature provides you with real-time performance monitoring, health checks, and failure diagnosis and optimization, so that you can intuitively know the real-time operation status of database instances, locate newly appeared performance exceptions in real time, and optimize the system based on the optimization suggestions. </td>
+<td>Exception diagnosis provides real-time and historical views. The exception diagnosis feature provides you with real-time performance monitoring, health checks, and failure diagnosis and optimization, so that you can intuitively know the real-time operation status of database instances, locate newly appeared performance exceptions in real time, and optimize the system based on the optimization suggestions.</td>
 <td>2019-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36036" target="_blank">Exception Diagnosis</a></td>
 </tr>
 <tr>
 <td>Supported slow SQL analysis</td>
-<td>The slow SQL analysis feature calculates, samples, and aggregates records and execution information (source information, number of executions, execution duration, etc.) of slow SQL statements on the instance. <br>Slow SQL analysis analyzes the performance of slow SQL statements based on the execution plan, comprehensive resource consumption, sizes of scan and result sets, and index usage rationality of the aggregated SQL statements and provides optimization suggestions.</td>
+<td>The slow SQL analysis feature calculates, samples, and aggregates records and execution information (source information, number of executions, execution duration, etc.) of slow SQL statements on the instance.<br>Slow SQL analysis analyzes the performance of slow SQL statements based on the execution plan, comprehensive resource consumption, sizes of scan and result sets, and index usage rationality of the aggregated SQL statements and provides optimization suggestions.</td>
 <td>2019-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36038" target="_blank">Slow SQL Analysis</a></td>
 </tr>
 <tr>
 <td>Supported disk space analysis</td>
-<td>Using the capacity analysis feature of DBbrain, you can view the instance capacity utilization, including the sizes of data and log capacities, the daily increase in capacity utilization, the estimated number of available days, and the capacity used by tablespaces under the instance.</td>
+<td>Using the space analysis, you can view the instance capacity utilization, including the sizes of data and log capacities, the daily increase in capacity utilization, the estimated number of available days, and the capacity used by tablespaces under the instance.</td>
 <td>2019-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">Space Analysis</a></td>
 </tr>
