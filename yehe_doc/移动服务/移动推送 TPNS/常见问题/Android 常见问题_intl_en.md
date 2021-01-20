@@ -167,12 +167,12 @@ Currently, IM uses the vendor jar packages provided by TPNS. Please replace the 
 
 | Push Channel | System Requirements | Condition Description |
 | --------------- | ------| -------------------------------------------- |
-| Mi Push | MIUI | To use Mi Push, add the following dependency: `implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'`|
-| Huawei Push | EMUI | To use Huawei Push, add the following dependencies: <li>`implementation 'com.tencent.tpns:huawei:1.2.1.2-release'`  <li> `implementation 'com.huawei.hms:push:5.0.2.300'`|
+| Mi Push | MIUI | To use Mi Push, add the following dependency: `implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
+| Huawei Push | EMUI | To use Huawei Push, add the following dependencies: <li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`  <li> `implementation 'com.huawei.hms:push:5.0.2.300'`|
 | Google FCM Push | Android 4.1 and above | The mobile device needs to have Google Play Services installed and use it outside the Chinese Mainland. Add the following dependency: `implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
-| Meizu Push | Flyme | To use Meizu Push, add the following dependency: `implementation 'com.tencent.tpns:meizu:1.2.1.2-release'` |
-| OPPO PUSH | ColorOS | Not all OPPO models and versions support OPPO PUSH. To use OPPO PUSH, add the following dependency: `implementation 'com.tencent.tpns:oppo:1.2.1.2-release'`|
-| Vivo Push | FuntouchOS | Not all Vivo models and versions support Vivo Push. To use Vivo Push, add the following dependency: `implementation 'com.tencent.tpns:vivo:1.2.1.2-release'`|
+| Meizu Push | Flyme | To use Meizu Push, add the following dependency: `implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
+| OPPO PUSH | ColorOS | Not all OPPO models and versions support OPPO PUSH. To use OPPO PUSH, add the following dependency: `implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
+| Vivo Push | FuntouchOS | Not all Vivo models and versions support Vivo Push. To use Vivo Push, add the following dependency: `implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
 
 
 
@@ -211,8 +211,9 @@ Add the following property to the `gradle.properties` file of the AndroidX proje
 android.useAndroidX=trueandroid.enableJetifier=true
 ```
 > ? 
->- `android.enableJetifier=true` indicates to migrate the dependency package to `AndroidX`. 
 >- `android.useAndroidX=true` indicates to enable `AndroidX` for the current project.
+>- `android.enableJetifier=true` indicates to migrate the dependency package to `AndroidX`. 
+
 
 ### What should I do if a vendor channel's push SDK "transfers information over HTTP in plaintext"?
 
