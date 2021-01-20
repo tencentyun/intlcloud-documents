@@ -1,21 +1,26 @@
 
 
-The `LIMIT` clause is used to limit the amount of data returned by the `SELECT` statement.
+The `AS` clause is used to specify an alias for a column (KEY).
 
-## LIMIT Syntax Format
+## AS Syntax Format
 
-Read the first `count` rows:
-
-```sql
-LIMIT count
+```plaintext
+* | SELECT column name (KEY) AS  alias
 ```
->!`LIMIT` doesn't support the `[offset] rows` syntax.
 
+## AS Syntax Sample
 
-## LIMIT Syntax Sample
-
-Sort the request status code logs in descending order and only get the first 10 rows:
-
-```sql
-SELECT status, COUNT(status) as ct ORDER BY status DESC LIMIT 10
+#### Creating Chinese alias
+```plaintext
+* | SELECT remote_addr AS "客户端IP", request_time AS "请求时间(单位：秒)" 
 ```
+>! If an alias contains Chinese or other special characters, they should be enclosed in double quotation marks.
+
+
+#### Counting access requests
+```plaintext
+* | SELECT COUNT(*) AS PV
+```
+
+
+
