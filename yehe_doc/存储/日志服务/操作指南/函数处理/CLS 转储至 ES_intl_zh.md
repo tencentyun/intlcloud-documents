@@ -1,6 +1,6 @@
 ## 操作场景
 
-本文为您介绍如何通过云函数 SCF 将 CLS 日志转储至 Elasticsearch Service（ES）。其中，CLS 主要用于日志采集，SCF 主要提供数据加工的节点计算能力。数据处理流程图请参见 [函数处理概述](https://intl.cloud.tencent.com/document/product/614/38883)。
+本文为您介绍如何通过云函数 SCF 将 CLS 日志转储至 Elasticsearch Service（ES）。其中，CLS 主要用于日志采集，SCF 主要提供数据加工的节点计算能力。
 
 ## 操作步骤
 
