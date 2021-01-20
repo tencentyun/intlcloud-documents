@@ -24,19 +24,19 @@
     </tr>
     	 <tr>
         <td>低频存储限制</td>
-    			<td>计费限制：<br>存储时间不足30天，按30天计算。<br>存储单元不足64KB，按64KB计算。<br>低频存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br><li>存储时间不足30天，按30天计算。<br><li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>低频存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
     </tr>
     	 <tr>
         <td>智能分层存储限制</td>
-    			<td>计费限制：<br>存储时间不足30天，按30天计算。<br>存储单元不足64KB，按64KB计算。<br>智能分层存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br><li>存储时间不足30天，按30天计算。<br><li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>智能分层存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
     </tr>
     	 <tr>
         <td>归档存储限制</td>
-    			<td>计费限制：<br>存储时间不足90天，按90天计算。<br>存储单元不足64KB，按64KB计算。<br>归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br><li>存储时间不足90天，按90天计算。<br><li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
     </tr>
     	 <tr>
         <td>深度归档存储限制</td>
-    			<td>计费限制：<br>存储时间不足180天，按180天计算。<br>存储单元不足64KB，按64KB计算。<br>归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
+    			<td>计费限制：<br><li>存储时间不足180天，按180天计算。<br><li>存储单元不足64KB，按64KB计算；大于或等于64KB，按实际大小计算。<br>深度归档存储具体定价，请参见 <a href="https://buy.cloud.tencent.com/price/cos">产品定价</a>。</td>
     </tr>
      <tr>
         <td rowspan="4">存储桶</td>
@@ -74,7 +74,7 @@
     		</tr>
 				<tr>
     			<td>对象标签</td>
-    			<td>同一个对象最多添加10个对象标签，并且标签不可重复。</td>	
+    			<td>同一个对象最多添加10个对象标签，并且标签不可重复。</td>
     		</tr>
     		 <tr>
     			<td >访问策略</td>

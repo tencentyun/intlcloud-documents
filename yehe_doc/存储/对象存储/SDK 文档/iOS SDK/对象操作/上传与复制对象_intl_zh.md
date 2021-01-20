@@ -44,13 +44,10 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
 */
 NSURL* url = [NSURL fileURLWithPath:@"文件的URL"];
-
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 put.object = @"exampleobject";
-
 // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
 put.body =  url;
 // 监听上传进度
@@ -61,20 +58,17 @@ put.body =  url;
     // totalBytesSent              本次上传的总字节数
     // totalBytesExpectedToSend    本地上传的目标字节数
 }];
-
 // 监听上传结果
 [put setFinishBlock:^(id outputObject, NSError *error) {
     // 可以从 outputObject 中获取 response 中 etag 或者自定义头部等信息
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
-
 [put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
                                         multipleUploadInitResult,
                                         QCloudCOSXMLUploadObjectResumeData resumeData) {
     // 在初始化分块上传完成以后会回调该 block，在这里可以获取 resumeData，uploadid
     NSString* uploadId = multipleUploadInitResult.uploadId;
 }];
-
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
 
@@ -444,9 +438,7 @@ copyRequest.cancel();
 
 PUT Object 接口可以上传一个对象至指定存储桶中，该操作需要请求者对存储桶有 WRITE 权限。最大支持上传不超过5GB的对象，5GB以上对象请使用 [分块上传](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 或 [高级接口](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 上传。
 
-> !
-> 1. Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
-> 2. 每个主账号（即同一个 APPID），存储桶的 ACL 规则数量最多为1000条，对象 ACL 规则数量不限制。如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承存储桶权限。
+> ! Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
 
 #### 示例代码
 **Objective-C**
@@ -514,31 +506,24 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 [//]: # (.cssg-snippet-copy-object)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
-
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
 // 假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced
 request.metadataDirective = @"Copy";
-
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 request.accessControlList = @"default";
-
 // 源对象所在的路径
 request.objectCopySource =
 @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
 // 指定源文件的 versionID，只有开启或开启后暂停的存储桶，才会响应此参数
 request.versionID = @"objectVersion1";
-
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
     // result 返回具体信息
@@ -554,30 +539,23 @@ request.versionID = @"objectVersion1";
 [//]: # (.cssg-snippet-copy-object)
 ```swift
 let putObjectCopy = QCloudPutObjectCopyRequest.init();
-
 // 存储桶名称，格式为 BucketName-APPID
 putObjectCopy.bucket = "examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 putObjectCopy.object = "exampleobject";
-
 // 源对象所在的路径
 putObjectCopy.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
 // 假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced
 putObjectCopy.metadataDirective = "Copy";
-
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 putObjectCopy.accessControlList = "default";
-
 // 指定源文件的 versionID，只有开启或开启后暂停的存储桶，才会响应此参数
 putObjectCopy.versionID = "versionID";
-
 putObjectCopy.setFinish { (result, error) in
     if let result = result {
         let eTag = result.eTag
@@ -596,33 +574,26 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
-
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
 // 假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced
 request.metadataDirective = @"Replaced";
-
 // 修改元数据
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
-
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-storage-class"];
-
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 // 修改acl
 request.accessControlList = @"private";
-
 // 源对象所在的路径
 request.objectCopySource =
     @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
@@ -645,38 +616,30 @@ request.versionID = @"objectVersion1";
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
-
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = "examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = "exampleobject";
-
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
 // 假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced
 request.metadataDirective = "Replaced";
-
 // 修改元数据
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*");
-
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 // 修改存储类型
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
-
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 // 修改acl
 request.accessControlList = "源文件acl";
 // 源对象所在的路径
 request.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
 // 指定源文件的 versionID，只有开启或开启后暂停的存储桶，才会响应此参数
 request.versionID = "versionID";
-
 request.setFinish { (result, error) in
     if let result = result {
         let eTag = result.eTag
@@ -696,24 +659,19 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 [//]: # (.cssg-snippet-modify-object-metadata)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
-
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
 // 假如标记为 Replaced，按 Header 信息修改元数据。当目标路径和原路径一致，即用户试图修改元数据时，必须为 Replaced
 request.metadataDirective = @"Replaced";
-
 // 自定义对象header
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
-
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 request.accessControlList = @"default";
 // 源对象所在的路径
@@ -753,7 +711,7 @@ request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*")
 
 // 定义 Object 的 ACL 属性，有效值：private，public-read，default。
 // 默认值：default（继承 Bucket 权限）。
-// 注意：当前访问策略条目限制为1000条，如果您无需进行 Object ACL 控制，请填 default
+// 注意：如果您无需进行 Object ACL 控制，请填 default
 // 或者此项不进行设置，默认继承 Bucket 权限。
 request.accessControlList = "default";
 
@@ -788,7 +746,7 @@ request.bucket = @"examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 [request.customHeaders setValue:@"ARCHIVE" forKey:@"x-cos-storage-class"];
 
@@ -821,7 +779,7 @@ request.bucket = "examplebucket-1250000000";
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = "exampleobject";
 
-// 对象存储类型，枚举值请参见 存储类型 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
+// 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
 // STANDARD_IA，ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 // 源对象所在的路径
@@ -876,20 +834,16 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 [//]: # (.cssg-snippet-list-multi-upload)
 ```objective-c
 QCloudListBucketMultipartUploadsRequest* uploads = [QCloudListBucketMultipartUploadsRequest new];
-
 // 存储桶名称，格式为 BucketName-APPID
 uploads.bucket = @"examplebucket-1250000000";
-
 // 设置最大返回的 multipart 数量，合法取值从 1 到 1000
 uploads.maxUploads = 100;
-
 [uploads setFinishBlock:^(QCloudListMultipartUploadsResult* result,
                           NSError *error) {
     // 可以从 result 中返回分块信息
     // 进行中的分块上传对象
     NSArray<QCloudListMultipartUploadContent*> *uploads = result.uploads;
 }];
-
 [[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
 ```
 
@@ -932,30 +886,21 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 [//]: # (.cssg-snippet-init-multi-upload)
 ```objective-c
 QCloudInitiateMultipartUploadRequest* initRequest = [QCloudInitiateMultipartUploadRequest new];
-
 // 存储桶名称，格式为 BucketName-APPID
 initRequest.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 initRequest.object = @"exampleobject";
-
 // 将作为对象的元数据返回
 initRequest.cacheControl = @"cacheControl";
-
 initRequest.contentDisposition = @"contentDisposition";
-
 // 定义 Object 的 ACL 属性。有效值：private，public-read-write，public-read；默认值：private
 initRequest.accessControlList = @"public";
-
 // 赋予被授权者读的权限。
 initRequest.grantRead = @"grantRead";
-
 // 赋予被授权者写的权限
 initRequest.grantWrite = @"grantWrite";
-
 // 赋予被授权者读写权限。 grantFullControl == grantWrite + grantRead
 initRequest.grantFullControl = @"grantFullControl";
-
 [initRequest setFinishBlock:^(QCloudInitiateMultipartUploadResult* outputObject,
                               NSError *error) {
     // 获取分块上传的 uploadId，后续的上传都需要这个 ID，请保存以备后续使用
@@ -1003,22 +948,16 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 [//]: # (.cssg-snippet-upload-part)
 ```objective-c
 QCloudUploadPartRequest* request = [QCloudUploadPartRequest new];
-
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 request.object = @"exampleobject";
-
 // 块编号
 request.partNumber = 1;
-
 // 标识本次分块上传的 ID；使用 Initiate Multipart Upload 接口初始化分块上传时会得到一个 uploadId
 request.uploadId = uploadId;
-
 // 上传的数据：支持 NSData*，NSURL(本地 URL) 和 QCloudFileOffsetBody * 三种类型
 request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
-
 [request setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
@@ -1245,23 +1184,19 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 
 #### 示例代码
 **Objective-C**
+
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 completeRequst.object = @"exampleobject";
-
 // 存储桶名称，格式为 BucketName-APPID
 completeRequst.bucket = @"examplebucket-1250000000";
-
 // 本次要查询的分块上传的 uploadId，可从初始化分块上传的请求结果 QCloudInitiateMultipartUploadResult 中得到
 completeRequst.uploadId = uploadId;
-
 // 已上传分块的信息
 QCloudCompleteMultipartUploadInfo *partInfo = [QCloudCompleteMultipartUploadInfo new];
 NSMutableArray * parts = [self.parts mutableCopy];
-
 // 对已上传的块进行排序
 [parts sortUsingComparator:^NSComparisonResult(QCloudMultipartInfo*  _Nonnull obj1,
                                                QCloudMultipartInfo*  _Nonnull obj2) {
@@ -1288,6 +1223,7 @@ completeRequst.parts = partInfo;
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
+
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```swift
 let  complete = QCloudCompleteMultipartUploadRequest.init();
@@ -1343,22 +1279,17 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```objective-c
 QCloudAbortMultipfartUploadRequest *abortRequest = [QCloudAbortMultipfartUploadRequest new];
-
 // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
 abortRequest.object = @"exampleobject";
-
 // 存储桶名称，格式为 BucketName-APPID
 abortRequest.bucket = @"examplebucket-1250000000";
-
 // 本次要终止的分块上传的 uploadId
 // 可从初始化分块上传的请求结果 QCloudInitiateMultipartUploadResult 中得到
 abortRequest.uploadId = @"exampleUploadId";
-
 [abortRequest setFinishBlock:^(id outputObject, NSError *error) {
     // 可以从 outputObject 中获取 response 中 etag 或者自定义头部等信息
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
-
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
@@ -1391,4 +1322,3 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift) 查看。
-

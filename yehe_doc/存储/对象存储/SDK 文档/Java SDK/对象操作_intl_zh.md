@@ -99,7 +99,7 @@ Request 成员说明 ：
 
 | Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
+| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String  |
 | prefix       | 构造函数或 set 方法 | 限制返回的结果对象，以 prefix 为前缀。默认不进行限制，即 Bucket 下所有的成员。<br>默认值为空： "" | String  |
 | marker       | 构造函数或 set 方法 | 标记 list 的起点位置，第一次可设置为空，后续请求需设置为上一次 listObjects 返回值中的 nextMarker | String  |
 | delimiter    | 构造函数或 set 方法 | 分隔符，限制返回的是以 prefix 开头，并以 delimiter 第一次出现的结束的路径 | String  |
@@ -119,7 +119,6 @@ Request 成员说明 ：
 
 - 上传过程中默认会对文件长度与 MD5 进行校验（关闭 MD5 校验参见示例代码）。
 - 若 COS 上已存在同样 Key 的对象，上传时则会进行覆盖。
-- 当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，上传时请不要设置，默认继承 Bucket 权限。
 - 上传之后，您可以用同样的 key，调用 GetObject 接口将文件下载到本地，也可以生成 [预签名链接](https://intl.cloud.tencent.com/document/product/436/31536)（下载请指定 method 为 GET，具体接口说明见下文），发送到其他端来进行下载。
 
 #### 方法原型
@@ -160,7 +159,7 @@ etag = putObjectResult.getETag();
 // 关闭输入流...
 
 // 方法3 提供更多细粒度的控制, 常用的设置如下
-// 1 storage-class 存储类型, 枚举值：Standard，Standard_IA，Archive。默认值：Standard
+// 1 storage-class 存储类型, 枚举值：Standard，Standard_IA，Archive。默认值：Standard。更多存储类型请参见 https://intl.cloud.tencent.com/zh/document/product/436/30925
 // 2 content-type, 对于本地文件上传，默认根据本地文件的后缀进行映射，例如 jpg 文件映射 为image/jpeg
 //   对于流式上传 默认是 application/octet-stream
 // 3 上传的同时指定权限(也可通过调用 API set object acl 来设置)
@@ -197,7 +196,7 @@ Request 成员说明：
 
 | Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 描述                                                         | 类型   | 必填 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
-| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         | 是|
+| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String         | 是|
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         | 是|
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |否|
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    | 否|
@@ -261,7 +260,7 @@ ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
 
 | 参数名称   | 描述                                                         | 类型   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key        | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### 返回结果说明
@@ -336,7 +335,7 @@ Request 成员说明：
 
 | Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | range  | set 方法             | 下载的 range 范围                                            | Long[] |
 | trafficLimit | set 方法    | 用于对下载对象进行流量控制，单位：bit/s，默认不进行流量控制  | Int |
@@ -357,7 +356,7 @@ COSObject 类用于返回结果信息，其主要成员说明如下：
 
 | 成员名称        | 描述                                                | 类型                |
 | --------------- | --------------------------------------------------- | ------------------- |
-| bucketName   |  Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName   |  Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key          | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | metadata | 对象的元数据  | ObjectMetadata |
 | objectContent | 包含 COS 对象内容的数据流  | COSObjectInputStream |
@@ -413,12 +412,12 @@ Request 成员说明：
 | 参数名称              | 描述                                                         | 类型   |
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion    | 源 Bucket region。默认值：与当前 clientConfig 的 region 一致，表示同地域拷贝 | String |
-| sourceBucketName      | 源存储桶名称，命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| sourceBucketName      | 源存储桶名称，命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | sourceKey             | 源对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | sourceVersionId       | 源文件 version id（适用于开启了版本控制的源 Bucket）。默认值：源文件当前最新版本 | String |
 | destinationBucketName | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，name 由字母数字和中划线构成 | String |
 | destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard | String |
+| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
 
 #### 返回结果说明
 
@@ -454,7 +453,7 @@ cosClient.deleteObject(bucketName, key);
 
 | 参数名称   | 描述                                                         | 类型   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key        | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### 返回结果说明
@@ -519,7 +518,7 @@ Request 成员说明：
 
 | 参数名称   | 描述                                                         | 类型               |
 | ---------- | ------------------------------------------------------------ | ------------------ |
-| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String             |
+| bucketName | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String             |
 | quiet      | 指明删除的返回结果方式，可选值为 true，false，默认为 false。设置为 true 只返回失败的错误信息，设置为 false 时返回成功和失败的所有信息 | boolean            |
 | keys       | 对象路径列表，对象的版本号为可选                             | `List<DeleteObjectsRequest.KeyVersion>` |
 
@@ -576,7 +575,7 @@ Request 成员说明：
 
 | 参数名称         | 描述                                                         | 类型             |
 | ---------------- | ------------------------------------------------------------ | ---------------- |
-| bucketName       | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String           |
+| bucketName       | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String           |
 | key              | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String           |
 | expirationInDays | 恢复出的临时文件的过期天数                      | int              |
 | casJobParameters | 描述恢复类型的配置信息，可调用 setTier 函数设置为 Tier.Standard、Tier.Expedited、Tier.Bulk 三种恢复类型之一，若恢复深度归档存储类型，则仅支持 Tier.Standard 和 Tier.Bulk | CASJobParameters |
@@ -635,7 +634,7 @@ Request 成员说明：
 
 | 参数名称       | 描述                                                         | 类型   |
 | -------------- | ------------------------------------------------------------ | ------ |
-| bucketName     | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName     | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | keyMarker      | 列出条目从该 Key 值开始                                      | String |
 | delimiter      | 定界符为一个符号，如果有 Prefix，则将 Prefix 到 delimiter 之间的相同路径归为一类，定义为 Common Prefix，然后列出所有 Common Prefix。如果没有 Prefix，则从路径起点开始 | String |
 | prefix         | 限定返回的 Object key 必须以 Prefix 作为前缀。注意使用 prefix 查询时，返回的 key 中仍会包含 Prefix | String |
@@ -686,7 +685,7 @@ Request 成员说明：
 
 | 参数名称   | 设置方法            | 描述                                                         | 类型   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key        | 构造函数或 set 方法 | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### 返回结果说明
@@ -742,7 +741,7 @@ Request 成员说明：
 
 | 参数名称    | 设置方法 | 描述                                                         | 类型        |
 | ----------- | -------- | ------------------------------------------------------------ | ----------- |
-| bucketName  | set 方法  | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String      |
+| bucketName  | set 方法  | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String      |
 | key         | set 方法  | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String      |
 | uploadId    | set 方法  | 标识指定分块上传的 uploadId                                  | String      |
 | partNumber  | set 方法  | 标识指定分块的编号，必须 >= 1                                | int         |
@@ -821,7 +820,7 @@ Request 成员说明：
 
 | 参数名称              | 设置方法 | 描述                                                         | 类型   |
 | --------------------- | -------- | ------------------------------------------------------------ | ------ |
-| destinationBucketName | set 方法 | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| destinationBucketName | set 方法 | 目标存储桶名称，Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | destinationKey        | set 方法 | 目标对象名称，存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | uploadId              | set 方法 | 标识指定分块上传的 uploadId                                  | String |
 | partNumber            | set 方法 | 标识指定分块的编号，必须 >= 1                                | int    |
@@ -874,7 +873,7 @@ do {
 
 | 参数名称         | 设置方法            | 描述                                                         | 类型   |
 | ---------------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName       | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName       | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key              | 构造函数或 set 方法 | 对象的名称                                                   | String |
 | uploadId         | 构造函数或 set 方法 | 本次要查询的分块上传的 uploadId                               | String |
 | maxParts         | set 方法            | 单次返回最大的条目数量，默认1000                             | String |
@@ -915,7 +914,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 | 参数名称   | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String            |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String            |
 | key        | 构造函数或 set 方法 | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String            |
 | uploadId   | 构造函数或 set 方法 | 标识指定分块上传的 uploadId                                  | String            |
 | partETags  | 构造函数或 set 方法 | 标识分块块的编号和上传返回的 eTag                            | ` List<PartETag>` |
@@ -954,7 +953,7 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 
 | 参数名称   | 设置方法            | 描述                                                         | 类型   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key        | 构造函数或 set 方法 | 存储于 COS 上 Object 的 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | uploadId   | 构造函数或 set 方法 | 标识指定分块上传的 uploadId                                  | String |
 
@@ -1048,7 +1047,7 @@ Request 成员说明：
 
 | Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         |
+| bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String         |
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         |
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
@@ -1070,7 +1069,7 @@ Request 成员说明：
 
 | 成员名称   | 描述                                                         | 类型   |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key        | 对象键（Key）是对象在存储桶中的唯一标识。<br/>例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | requestId  | 请求 Id                                                       | String |
 | dateStr    | 当前服务端时间                                               | String |
@@ -1122,7 +1121,7 @@ Request 成员说明：
 
 | Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312?lang=en&pg=#bucket-naming-conventions) | String |
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | range    | set 方法            | 下载的 range 范围                       | Long[] |
 | trafficLimit | set 方法    | 用于对下载对象进行流量控制，单位：bit/s，默认不进行流量控制  | int |
@@ -1199,7 +1198,7 @@ Request 成员说明：
 | sourceVersionId       | 源文件 version id（适用于开启了版本控制的源 Bucket）。默认值：源文件当前最新版本 | String |
 | destinationBucketName | 目标存储桶名称，存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式 | String |
 | destinationKey        | 目的对象键，对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String |
-| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard | String |
+| storageClass          | 拷贝的目的文件的存储类型。枚举值：Standard，Standard_IA。默认值：Standard。更多存储类型请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
 
 #### 返回值
 

@@ -26,19 +26,19 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 
 ## 步骤3：创建存储桶
 
-1. 单击左上角的【添加桶】。
+1. 登录成功后，在工具界面中单击左上方的【添加桶】。
 2. 在弹出的窗口中，输入存储桶信息。
- - 名称：存储桶名称，此处我们输入 examplebucket。
- - 所属地域：存储桶存放地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
- - 访问权限：存储桶访问权限，此处我们选择“私有读写”。
+ - 名称：自定义存储桶名称，此处我们输入 examplebucket。
+ - 所属地域：指存储桶的所属地域，选择与您最近的一个地区，例如我在 “深圳”，地域可以选择 “广州”。
+ - 访问权限：指存储桶的访问权限，此处我们选择“私有读写”。
 ![](https://main.qcloudimg.com/raw/d5c11a8be17d9a3462c0ca73ee189c73.png)
 3. 单击【确定】，即可创建存储桶。
 
 
 ## 步骤4：上传对象
 
-1. 单击步骤4创建的存储桶名称，进入存储桶管理页。
-2. 选择【上传】>【选择文件】，选择需要上传至存储桶的文件，例如 exampleobjext.txt。
+1. 单击步骤3刚创建的存储桶，进入存储桶管理页。
+2. 选择【上传】>【选择文件】，选择需要上传至存储桶的本地文件，例如 exampleobjext.txt。
 3. 单击【上传】，即可将 exampleobjext.txt 上传至存储桶。
 
 
@@ -59,8 +59,6 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 2. COSBrowser 工具将弹出高级下载窗口，根据实际需求选择“重命名”、“覆盖” 或 “跳过”。
 ![](https://main.qcloudimg.com/raw/6e533ea1b75df3de7dba029a6976f844.png)
 3. 单击【立即下载】， COSBrowser 工具将按照您的选择下载文件。
-
-
 
 
 ## 步骤6：分享对象
@@ -101,5 +99,3 @@ Windows 版 COSBrowser 的系统要求：Windows 7 32/64位以上、Windows Serv
 
 - [COSBrowser 简介](https://intl.cloud.tencent.com/document/product/436/11366)
 - [移动端使用说明](https://intl.cloud.tencent.com/document/product/436/32566)
-
-
