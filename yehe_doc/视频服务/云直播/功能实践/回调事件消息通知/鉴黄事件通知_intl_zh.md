@@ -3,17 +3,17 @@
 本文主要讲解触发鉴黄回调事件后，腾讯云直播发送给用户的回调消息通知字段。
 
 ## 注意事项
-- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://cloud.tencent.com/document/product/267/32744)。
+- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。
 - 直播鉴黄默认只会将可疑结果进行回调，正常结果不会回调。
 - 建议使用图片的 [type](#type) 对黄图进行评判，由于检测系统判定无法做到100%准确率，会有少量图片会识别成疑似色情或识别结果不对，可根据实际应用场景判断是否需要进行人工二次确认。
 
 ## 截图事件参数说明
-
 ### 事件类型参数
 
 | 事件类型 | 字段取值说明           |
 | :------- | :------------- |
 | 直播鉴黄 | event_type = 317 |
+
 
 ### 回调公共参数
 
@@ -32,6 +32,9 @@
 >? <span id="key"></span>key 为【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
+
+
+
 ### 回调消息参数
 
 | **参数**       | **是否必填** | **数据类型** | **描述**                                                     |
@@ -40,7 +43,7 @@
 | streamId       | 选填         | String       | 流名称                                                       |
 | channelId      | 选填         | string       | 频道 ID                                                      |
 | img            | 必填         | string       | 预警图片链接                                                 |
-| <span id="type"></span> type          | 必填         | Array        | 图片类型， 0 ：正常图片， 1 ：色情图片， 2 ：性感图片， 3 ：涉政图片， 4 ：违法图片， 5 ：涉恐图片 ，6 - 9 ：其他其它图片 |
+| <span id="type"></span> type          | 必填         | Array        | 图片类型， 0 ：正常图片， 1 - 5：不合宜图片 ，6 - 9 ：其他其它图片 |
 | confidence     | 必填         | Number       | 涉黄置信度，范围 0-100；normalScore， hotScore， pornScore 的综合评分 |
 | normalScore    | 必填         | Number       | 图片为正常图片的评分                                         |
 | hotScore       | 必填         | Number       | 图片为性感图片的评分                                         |
@@ -49,37 +52,13 @@
 | ocrMsg         | 选填         | string       | 图片的 OCR 识别信息（如果存在）                              |
 | screenshotTime | 必填         | Number       | 截图时间                                                     |
 | sendTime       | 必填         | Number       | 请求发送时间，UNIX 时间戳                                    |
-| abductionRisk  | 选填         | Array        | 一个包含 [AbductionRisk](#abductionrisk) 结构的数组                            |
-| faceDetails    | 选填         | Array        | 一个包含人脸属性 [faceDetail](#facedetail) 的结构的数组                     |
 | [gameDetails](#gamedetails)    | 选填         | Object       | 游戏详情信息                                                 |
-| polityScore    | 选填         | Number       | 图片为涉政图片的评分                                         |
-| illegalScore   | 选填         | Number       | 图片为违法图片的评分                                         |
-| terrorScore    | 选填         | Number       | 图片为涉恐图片的评分                                         |
 | similarScore   | 选填         | Number       | 图片相识度评分                                               |
 | stream_param   | 选填         | String       | 推流参数                                                     |
 | app            | 选填         | String       | 推流域名                                                     |
 | appid          | 选填         | Number       | 业务 ID                                                      |
 | appname        | 选填         | String       | 推流 path 路径                                               |
 
-#### AbductionRisk
-
-| **参数** | **是否必填** | **数据类型** | **描述**                                                     |
-| :------- | :----------- | :----------- | :----------------------------------------------------------- |
-| level    | 必填         | Number       | 风险等级范围0 - 4，数字越大风险越高，3和4表示恶意，建议进行处理 |
-| type     | 必填         | Number       | 风险类型，20002：色情                                        |
-
-#### faceDetail
-
-| **参数名称** | **是否必填** | **类型** | **描述**                                  |
-| :----------- | :----------- | :------- | :---------------------------------------- |
-| gender       | 选填         | Number   | 性别 [0(female) - 100(male)]              |
-| age          | 选填         | Number   | 年龄                                      |
-| expression   | 选填         | Number   | 微笑 [0(normal) - 50(smile) - 100(laugh)] |
-| beauty       | 选填         | Number   | 魅力 [0 - 100]                            |
-| x            | 选填         | Number   | 人脸框左上角 x                            |
-| y            | 选填         | Number   | 人脸框左上角 y                            |
-| width        | 选填         | Number   | 人脸框宽度                                |
-| height       | 选填         | Number   | 人脸框高度                                |
 
 #### gameDetails
 
@@ -102,7 +81,7 @@ HTTP Body：
 ```
 {
     "event_type":317,
-	
+    
     "ocrMsg":"",
 
     "type":[2],
@@ -121,19 +100,9 @@ HTTP Body：
 
     "img":"http://test-10000.cos.ap-shanghai.myqcloud.com/2019-12-05/teststream-screenshot-10-32-54-960x540.jpg",
 
-    "abductionRisk":[ ],
-
-    "faceDetails":[ ],
-
     "sendTime":1575513176,
 
-    "illegalScore":0,
-
-    "polityScore":0,
-
     "similarScore":0,
-
-    "terrorScore":0,
 
     "tid":20001,
 
@@ -150,7 +119,6 @@ HTTP Body：
     "appid":10000
 }  
 ```
-
 
 
 

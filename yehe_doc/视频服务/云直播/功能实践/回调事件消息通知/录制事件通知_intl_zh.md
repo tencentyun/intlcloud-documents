@@ -1,19 +1,22 @@
-在开通了直播录制功能后，您可在直播录制回调模板中配置注册的回调域名，则云直播后台会将录制结果回调给您。
+直播录制是根据推流域名已绑定好的录制模板实时录制直播流画面，并生成对应的录制文件存储到云点播中。而录制回调则用于推送录制文件信息，主要包括录制的开始时间、结束时间、生成的录制文件 ID、录制文件大小和文件下载地址。您需在回调模板中配置录制回调消息接收服务器地址，并将该模板与推流域名进行关联。当直播流触发录制事件后，腾讯云直播后台会将录制文件信息回调到您设置的接收服务器中。
 
-# 注意事项
+本文主要讲解触发录制回调事件后，腾讯云直播发送给用户的回调消息通知字段。
 
-- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/zh/document/product/267/38080)。
-- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，并可提前选购点播相关资源包，避免点播业务欠费停用。
+## 注意事项
+
+- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。
+- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，避免点播业务欠费停用。
+- 当通过 API [创建录制任务](https://intl.cloud.tencent.com/document/product/267/37309) 时，录制回调不会返回用户推流 URL 所带 [stream_param](#message) 参数，其它录制方式会返回。
 
 
 ## 录制事件参数说明
-
 ### 事件类型参数
 
 | 事件类型 | 字段取值说明           |
 | :------- | :------------- |
 | 直播录制 | event_type = 100 |
 
+<span id="public"></span> 
 ### 回调公共参数
 <table>
 <tr><th>字段名称</th><th>类型</th><th>说明</th></tr>
@@ -31,6 +34,7 @@
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
+<span id="message"></span> 
 ### 回调消息参数
 
 | 字段名称     | 类型   | 说明                                                 |
@@ -38,7 +42,8 @@
 | appid        | int    | 用户 [APPID](https://console.cloud.tencent.com/developer)                                           |
 | stream_id    | string | 直播流名称                                           |
 | channel_id   | string | 同直播流名称                                         |
-| file_id      | string | 点播 file ID，在 [云点播平台](https://intl.cloud.tencent.com/zh/document/product/266/33895) 可以唯一定位一个点播视频文件 || file_format  | string | flv，hls，mp4，aac                                   |
+| file_id      | string | 点播 file ID，在 [云点播平台](https://intl.cloud.tencent.com/document/product/266/33895) 可以唯一定位一个点播视频文件 |
+| file_format  | string | flv，hls，mp4，aac                                   |
 | start_time   | int64  | 录制文件起始时间戳                                   |
 | end_time     | int64  | 录制文件结束时间戳                                   |
 | duration     | int64  | 录制文件时长，单位秒                                 |
@@ -46,6 +51,8 @@
 | stream_param | string | 用户推流 URL 所带参数                                |
 | video_url    | string | 录制文件文件下载 URL                                 |
 
+
+<span id="example"></span> 
 ### 回调消息示例
 
 ```
@@ -79,7 +86,6 @@
 "t":1545030873
 }
 ```
-
 
 
 
