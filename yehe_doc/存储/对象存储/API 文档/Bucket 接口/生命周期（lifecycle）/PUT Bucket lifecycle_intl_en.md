@@ -1,18 +1,19 @@
-## Feature Description
+## Overview
 
 COS allows you to manage the lifecycle of objects in buckets through the lifecycle configuration, which contains one or more rule sets that will be applied to a set of objects. Each rule defines a COS operation.
 There are two types of operations:
 
-- **Transition**: defines when an object is transitioned to another storage class. For example, you can choose to transition an object to the `STANDARD_IA` storage class 30 days after its creation, which is suitable for objects that are not accessed frequently. You can also choose to transition the data to the `ARCHIVE` storage class, which is available for regions within Mainland China, to lower your costs. For specific parameters, please see `Transition` in the sample request description.
+- **Transition**: defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, please see `Transition` in the sample request description.
 - **Expiration**: specifies when an object shall expire. COS will automatically delete expired objects.
 
-#### Detail analysis
+#### Notes
 
 This API is used to create a new lifecycle configuration for a bucket. If a lifecycle configuration has already been set for the bucket, the new configuration created with this API will overwrite the existing one.
 
-> !`Days` and `Date` parameters cannot be used in the same lifecycle rule. Please pass them in as two separate rules. For more information, please see [Use Case](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B) below.
+> !
+> - `Days` and `Date` cannot be both specified in the same lifecycle rule. Please pass them to two separate rules. For details, please see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
 
-## Request
+#### Request
 
 #### Sample request
 
@@ -25,16 +26,16 @@ Authorization: Auth String
 Content-MD5: MD5
 ```
 
-> Authorization: Auth String (for more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778)).
+> ?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
-#### Request header
+#### Request headers
 
 This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
 
-The specific nodes of the request body for this API request are as follows:
+Nodes of the request body for this API are as follows:
 
 ```shell
 <LifecycleConfiguration>
@@ -89,37 +90,37 @@ The specific nodes of the request body for this API request are as follows:
 </LifecycleConfiguration>
 ```
 
-The content is described in detail below:
+The nodes are described as follows:
 
-| Node Name (Keyword) | Parent Node | Description  | Type | Required |
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | -------- |
-| LifecycleConfiguration         | None                                                           | Lifecycle configuration                                                 | Container | Yes       |
-| Rule                           | LifecycleConfiguration                                       | Rule description                                                     | Container | Yes       |
-| ID                             | LifecycleConfiguration.Rule                                  | Uniquely identifies a rule. Length limit: 255 characters                    | String    | No       |
-| Filter                         | LifecycleConfiguration.Rule                                  | Describes the set of objects subject to the rule                        | Container | Yes       |
-| And                        |   LifecycleConfiguration.Rule<br>.Filter             | A subset in the object filter, which is required only when you need to specify multiple filter rules, <br>such as both `Prefix` and `Tag` or multiple `Tag` values for filtering |Container| No   |
-| Prefix                         | LifecycleConfiguration.Rule<br>.Filter.And                           | Specifies the prefix to which the rule applies. Objects that match the prefix are subject to this rule. <br>There can be at most one prefix | String    | No       |
-|  Tag   |    LifecycleConfiguration.Rule<br>.Filter.And   |         Tag set. Up to 10 tags are supported    |   Container  |  No |
-|  Key  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  |    Tag key, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes <br>with a maximum length of 128 bytes     |     String	|   No    |
-|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag  |   Tag value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes <br>with a maximum length of 256 bytes	    |   String	 |  No
-| Status                         | LifecycleConfiguration.Rule                                  | Indicates whether the rule is enabled. Enumerated values: Enabled, Disabled                  | String    | Yes       |
-| Expiration                     | LifecycleConfiguration.Rule                                  | Rule expiration attribute                                                 | Container | No       |
-| Transition                     | LifecycleConfiguration.Rule                                  | Rule transition attribute, which specifies when an object should be transitioned to `Standard_IA` or `ARCHIVE` storage class          | Container | No       |
-| Days                           | LifecycleConfiguration.Rule<br>.Transition or Expiration      | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to a rule should be performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. Maximum value: 3,650 days | Integer   | No       |
-| Date                           | LifecycleConfiguration.Rule<br>.Transition or Expiration      | Specifies when the operation corresponding to a rule will be performed. Supported formats are `2007-12-01T12:00:00.000Z`<br>and `2007-12-01T00:00:00+08:00` | String    | No       |
-| ExpiredObjectDeleteMarker      | LifecycleConfiguration.Rule<br>.Expiration                       | Specifies whether to delete the delete marker of an expired object. Enumerated values: true, false                     | String    | No       |
-| AbortIncompleteMultipartUpload | LifecycleConfiguration.Rule                                  | Sets the maximum amount of time allowed for a multipart upload to keep running                           | Container | No       |
-| DaysAfterInitiation            | LifecycleConfiguration.Rule<br>.AbortIncompleteMultipartUpload | Specifies the number of days in which a multipart upload must be completed once started                       | Integer   | Yes       |
-| NoncurrentVersionExpiration    | LifecycleConfiguration.Rule                                  | Specifies when a non-current object should expire                                   | Container | No       |
-| NoncurrentVersionTransition    | LifecycleConfiguration.Rule                                  | Specifies when a non-current object should be transitioned to `STANDARD_IA` or `ARCHIVE` storage class          | Container | No       |
-| NoncurrentDays                 | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes non-current and the date when the operation corresponding to a rule should be performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. Maximum value: 3,650 days | Integer   | No       |
-| StorageClass                   | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the transitioned storage class of an object. Enumerated values: STANDARD_IA, <br>ARCHIVE | String    | Yes       |
+| LifecycleConfiguration | None | Lifecycle configuration | Container | Yes |
+| Rule | LifecycleConfiguration | Rule description | Container | Yes |
+| ID | LifecycleConfiguration.Rule | A unique identifier for the rule. It can be up to 255 characters. | String | No |
+| Filter | LifecycleConfiguration.Rule | Identifies objects that a lifecycle rule applies to. | Container | Yes |
+| And | LifecycleConfiguration.Rule<br>.Filter | A subset of the object filter. This element is only required when there are more than one filter criteria (for example, filtering with `Prefix` and `Tag` at the same time, or with more than one `Tag`). | Container | No |
+| Prefix | LifecycleConfiguration.Rule<br>.Filter.And | Matching prefix for the rule. It specifies objects that the lifecycle rule applies to. There can be one `Prefix` at most. | String | No |
+| Tag | LifecycleConfiguration.Rule<br>.Filter.And | A set of tags. Up to 10 tags are supported. | Container | No |
+| Key | LifecycleConfiguration.Rule<br>.Filter.And.Tag | Key of the tag. It can be up to 128 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
+|  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
+| Status | LifecycleConfiguration.Rule | Indicates whether the rule is enabled. Enumerated values: `Enabled`, `Disabled` | String | Yes |
+| Expiration | LifecycleConfiguration.Rule | Expiration attributes of the rule | Container | No |
+| Transition | LifecycleConfiguration.Rule | Specifies when to transition the object to another storage class and the storage class to transition to. | Container | No |
+| Days | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to the rule is performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
+| Date | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies when the operation corresponding to the rule is performed. Supported formats are `2007-12-01T12:00:00.000Z` <br>and `2007-12-01T00:00:00+08:00`. | String | No |
+| ExpiredObjectDeleteMarker | LifecycleConfiguration.Rule<br>.Expiration | Indicates whether the delete marker of an expired object will be removed. Enumerated values: `true`, `false` | String | No |
+| AbortIncompleteMultipartUpload | LifecycleConfiguration.Rule | Specifies the time to abort the multipart upload. | Container | No |
+| DaysAfterInitiation | LifecycleConfiguration.Rule<br>.AbortIncompleteMultipartUpload | Specifies the number of days within which the multipart upload must be completed after it starts. | Integer | Yes |
+| NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
+| NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition noncurrent objects to another storage class and the storage class to transition to. | Container | No |
+| NoncurrentDays | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed.<br><li>If it is a `Transition` operation, this value should be a non-negative integer.<br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
+| StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. | String | Yes |
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -127,9 +128,9 @@ The response body is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Case
+## Sample
 
 #### Request
 
