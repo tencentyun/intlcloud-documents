@@ -1,19 +1,19 @@
-LVB porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address receiving porn detection callback messages in the callback template and associate the template with the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud LVB backend will call back the pornographic image information to the configured receiving server.
+LVB porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud LVB backend will call back the pornographic image information to the configured receiving server.
 
 This document describes the fields in callback message notifications sent by Tencent Cloud LVB after a porn detection callback event is triggered.
 
 ## Notes
-- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud LVB before reading this document. For more information, please see [How to Receive Event Notification](https://cloud.tencent.com/document/product/267/32744).
+- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud LVB before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
 - By default, only questionable results will be called back for LVB porn detection.
-- We recommend you use the `[type](#type)` of an image to judge whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
+- We recommend you use the `[type](#type)` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
 
-## Screencapturing Event Parameter Description
-
+## Screencapture Event Parameter Description
 ### Event type parameters
 
 | Event Type | Field Value Description           |
 | :------- | :------------- |
 | LVB porn detection | event_type = 317 |
+
 
 ### Common callback parameters
 
@@ -32,15 +32,18 @@ This document describes the fields in callback message notifications sent by Ten
 >? `<span id="key"></span>key` is the callback key in **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
+
+
+
 ### Callback message parameters
 
-| **Parameter**       | **Required** | **Data Type** | **Description**                                                     |
+| **Parameter** | **Required** | **Data Type** | **Description**                                                     |
 | :------------- | :----------- | :----------- | :----------------------------------------------------------- |
 | tid            | No         | Number       | Alert policy ID. Video content alert: 20001                             |
 | streamId       | No         | String       | Stream name                                                       |
 | channelId      | No         | string       | Channel ID                                                      |
 | img            | Yes         | string       | Link to alerted image                                                 |
-| <span id="type"></span> type           | Yes         | Array        | Image type, 0: normal, 1: pornographic, 2: sexy, 3: politically sensitive, 4: illegal, 5: terrorism, 6–9: others |
+| <span id="type"></span> type | Yes | Array | Image type. 0: normal, 1–5: non-compliant, 6–9: others |
 | confidence     | Yes         | Number       | Confidence level of the detected pornographic image ranges from 0 to 100, which is an overall score factoring in `normalScore`, `hotScore`, and `pornScore` |
 | normalScore    | Yes         | Number       | Score for normal image                                         |
 | hotScore    | Yes         | Number       | Score for sexy image                                         |
@@ -50,11 +53,7 @@ This document describes the fields in callback message notifications sent by Ten
 | screenshotTime | Yes         | Number       | Screenshot time                                                     |
 | sendTime       | Yes         | Number       | Request sent time (UNIX timestamp)                                    |
 | abductionRisk  | No         | Array        | An array containing the [AbductionRisk](#abductionrisk) structure                            |
-| faceDetails    | No         | Array        | An array containing the face attribute ([faceDetail](#facedetail)) structure                     |
 | [gameDetails](#gamedetails)    | No         | Object       | Game details                                                 |
-| polityScore    | No         | Number       | Score for image involving politically sensitive information                                         |
-| illegalScore   | No         | Number       | Score for image involving illegal information                                         |
-| terrorScore    | No         | Number       | Score for image involving terrorism information                                         |
 | similarScore   | No         | Number       | Score for image similarity                                               |
 | stream_param   | No         | String       | Push parameter                                                     |
 | app            | No         | String       | Push domain name                                                     |
@@ -70,7 +69,7 @@ This document describes the fields in callback message notifications sent by Ten
 
 #### faceDetail
 
-| **Parameter Name* | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required ** | **Type** | **Description** |
 | :----------- | :----------- | :------- | :---------------------------------------- |
 | gender       | No         | Number   | Gender [0 (female)–100 (male)]              |
 | age          | No         | Number   | Age                                      |
@@ -83,14 +82,14 @@ This document describes the fields in callback message notifications sent by Ten
 
 #### gameDetails
 
-| **Parameter Name* | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required ** | **Type** | **Description** |
 | :------------ | :----------- | :------- | :----------- |
 | battlegrounds | No         | Object   | PUBG information |
 | [gameList](#gamelist)      | No         | Array    | Game list     |
 
 #### gameList
 
-| **Parameter Name* | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required ** | **Type** | **Description** |
 | :----------- | :----------- | :------- | :------- |
 | name         | No         | String   | Game name |
 | confidence   | No         | Number   | Probability     |
@@ -98,58 +97,52 @@ This document describes the fields in callback message notifications sent by Ten
 ### Sample callback message
 
 HTTP Body:
-
-```
+<dx-codeblock>
+::: HTTPbody  json
 {
     "event_type":317,
-	
+    
     "ocrMsg":"",
-
+    
     "type":[2],
-
+    
     "confidence":0,
-
+    
     "normalScore":2,
-
+    
     "hotScore":97,
-
+    
     "pornScore":0,
-
+    
     "screenshotTime":1575513174,
-
+    
     "level":0,
-
+    
     "img":"http://test-10000.cos.ap-shanghai.myqcloud.com/2019-12-05/teststream-screenshot-10-32-54-960x540.jpg",
-
+    
     "abductionRisk":[ ],
-
-    "faceDetails":[ ],
-
+    
     "sendTime":1575513176,
-
-    "illegalScore":0,
-
-    "polityScore":0,
-
+    
     "similarScore":0,
-
-    "terrorScore":0,
-
+    
     "tid":20001,
-
+    
     "streamId":"teststream",
-
+    
     "channelId":"teststream",
-
+    
     "stream_param":"txSecret=40f38f69f574fd51126c421a3d96c374&txTime=5DEBEC80",
-
+    
     "app":"testlive.myqcloud.com",
-
+    
     "appname":"live",
-
+    
     "appid":10000
 }  
-```
+:::
+</dx-codeblock>
+
 
 
 
