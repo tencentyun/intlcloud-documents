@@ -25,10 +25,10 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
  - **Notes**: a short description of the security group for easier management.
 
 
- <span id="Step2"></span>
+
 ### Step 2. Add a security group rule
 1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click **Modify Rules** in the **Operation** column on the row of the security group for which to configure a rule.
-2. <span id="step02">Select **Security Group Rule** > **Inbound rule**, click **Add a Rule**.</span>
+2. Select **Security Group Rule** > **Inbound rule**, click **Add a Rule**.
 3. In the pop-up dialog box, set the rule.
  - **Type**: **Custom** is selected by default. You can also choose another system rule template. SQL Server(1433) is recommended.
  - **Source** or **Target**: traffic source (inbound rules) or target (outbound rules). You need to specify one of the following options:
@@ -47,7 +47,7 @@ A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is
     - **Allow**: traffic to this port is allowed.
     - **Refuse**: data packets will be discarded without any response.
  - **Notes**: a short description of the rule for easier management.
-4. <span id="step04">Click **Complete**.</span>
+4. Click **Complete**.
 
 #### Use cases
 **Scenario:** you have created a TencentDB for SQL Server instance and want to access it from a CVM instance.
