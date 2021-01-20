@@ -4,12 +4,12 @@ EMR comes with two component editions. One is the Standard edition, which is bas
 
 
 EMR version numbers are in the format of `EMR va.b.c` as detailed below:
--The meanings of `a` for different clusters are as follows:
- -For Hadoop clusters, `a` indicates the Hadoop versions supported by the current version. When `a` is `1` or `2`, Hadoop v2.X is supported; when `a` is `3`, Hadoop v3.X is supported.
- -For Druid clusters, `a` indicates the Druid versions supported by the current version. When `a` is `1`, Druid v0.17.X is supported.
- -For ClickHouse clusters, `a` indicates the ClickHouse versions supported by the current version. When `a` is `1`, ClickHouse v19.X and v20.X are supported.
+-	The meanings of `a` for different clusters are as follows:
+ -	For Hadoop clusters, `a` indicates the Hadoop versions supported by the current version. When `a` is `1` or `2`, Hadoop v2.X is supported; when `a` is `3`, Hadoop v3.X is supported.
+ -	For Druid clusters, `a` indicates the Druid versions supported by the current version. When `a` is `1`, Druid v0.17.X is supported.
+ -	For ClickHouse clusters, `a` indicates the ClickHouse versions supported by the current version. When `a` is `1`, ClickHouse v19.X and v20.X are supported.
 -	`b` indicates that the version has new components or supports component version upgrade.
--`c` indicates feature optimization.
+-	`c` indicates feature optimization.
 
 
 >!
