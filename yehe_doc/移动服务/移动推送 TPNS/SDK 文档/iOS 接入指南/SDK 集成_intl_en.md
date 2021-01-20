@@ -58,24 +58,25 @@ pod install // Install the SDK
 ![](https://main.qcloudimg.com/raw/b0b74cec883f69fb0287fedc7bad4140.png)
 If `checkTargetOtherLinkFlagForObjc` reports an error, it means that `-ObjC` has not been added to `Other link flags` in `build setting`.
 
->! If your application service access point is Guangzhou, the SDK implements this configuration by default.
-If your application service access point is Shanghai, Singapore, or Hong Kong (China), please follow the steps below to complete the configuration.
->1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
->2. Call the `domain name` configuration API in the header file before calling the `startXGWithAccessID:accessKey:delegate:` method:
+>! If your application service access point is Guangzhou, the SDK implements this configuration by default. The domain name for Guangzhou is `tpns.tencent.com`.
 
-To integrate with the Shanghai service access point, set the domain name to ```tpns.sh.tencent.com```.
+If your application service access point is Shanghai, Singapore, or Hong Kong (China), please follow the steps below to complete the configuration.
+1. Decompress the SDK file package and add the `XGPushPrivate.h` file in the SDK directory to the project.
+2. Call the `domain name` configuration API in the header file before calling the `startXGWithAccessID:accessKey:delegate:` method:
+
+To integrate with the Shanghai service access point, set the domain name to `tpns.sh.tencent.com`.
 **Sample**
 ``` object-c
 /// @note   TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sh.tencent.com"];
 ```
-To integrate with the Singapore service access point, set the domain name to ```tpns.sgp.tencent.com```.
+To integrate with the Singapore service access point, set the domain name to `tpns.sgp.tencent.com`.
 **Sample**
 ``` object-c
 /// @note   TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sgp.tencent.com"];
 ```
-To integrate with the Hong Kong (China) service access point, set the domain name to ```tpns.hk.tencent.com```.
+To integrate with the Hong Kong (China) service access point, set the domain name to `tpns.hk.tencent.com`.
 **Sample**
 ``` object-c
 /// @note   TPNS SDK1.2.7.1+
@@ -118,7 +119,7 @@ return YES;
 }
 ```
 
-## Notification Service Extension Plugin Integration
+## Notification Service Extension Integration
 The SDK provides the Service Extension API, which can be called by the client to use the following extensions:
 - Collect precise statistics of message arrivals through the APNs channel.
 - Receive images and audiovisual rich media messages through the APNs channel.
@@ -204,8 +205,8 @@ Unified message click callback. This callback method is the notification message
 >- Unified message callback of TPNS. `xgPushDidReceiveRemoteNotification` will process message receipt and automatically call the `application:didReceiveRemoteNotification:fetchCompletionHandler` method subsequently, which, however, may also be hooked by other SDKs.
 >- If you have integrated only the TPNS platform, we recommend you not implement the system notification callback method; instead, please process in the TPNS notification callback.
 >- If you have integrated multiple push platforms and need to process the services of other platforms in the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, please see the following guidelines to avoid repeated service processing:
-> - You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message, and if so, process it in the `xgPushDidReceiveRemoteNotification` method; otherwise, process it in the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
-> - If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
+>  - You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message, and if so, process it in the `xgPushDidReceiveRemoteNotification` method; otherwise, process it in the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
+>  - If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
 
 
 
@@ -236,7 +237,7 @@ If the application push service is migrated from the [XG platform](https://xg.qq
 
 <span id="QHToken"></span>
 ### Suggestions on getting TPNS token
-After you integrate the SDK, you are recommended to use gestures or other methods to display the TPNS token in the application's less commonly used UIs such as **About** or **Feedback**. Push through the console and RESTful API requires the TPNS token for token push. Subsequent troubleshooting will also require the TPNS token for problem locating.
+After you integrate the SDK, we recommend you use gestures or other methods to display the TPNS token in the application's less commonly used UIs such as **About** or **Feedback**. Push through the console and RESTful API requires the TPNS token for token push. Subsequent troubleshooting will also require the TPNS token for problem locating.
 
 #### Sample code
 ```objective-c
