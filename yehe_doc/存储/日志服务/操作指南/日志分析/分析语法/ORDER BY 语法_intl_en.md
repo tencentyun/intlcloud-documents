@@ -1,26 +1,19 @@
 
 
-The `AS` clause is used to specify an alias for a column (KEY).
+The `ORDER BY` statement is used to sort results according to the specified `KEY`.
+The `ORDER BY` statement sorts records in ascending order by default.
+If you want to sort records in descending order, you can use the `DESC` keyword.
 
-## AS Syntax Format
+## ORDER BY Syntax Format
 
 ```plaintext
-* | SELECT column name (KEY) AS  alias
+ORDER BY column (KEY) [ DESC | ASC ]
 ```
 
-## AS Syntax Sample
+## ORDER BY Syntax Sample
 
-#### Creating Chinese alias
+Count different access status codes and sort them in descending order:
+
 ```plaintext
-* | SELECT remote_addr AS "客户端IP", request_time AS "请求时间(单位：秒)" 
+* | SELECT status, COUNT(status) AS c GROUP BY status ORDER BY c DESC
 ```
->! If an alias contains Chinese or other special characters, they should be enclosed in double quotation marks.
-
-
-#### Counting access requests
-```plaintext
-* | SELECT COUNT(*) AS PV
-```
-
-
-
