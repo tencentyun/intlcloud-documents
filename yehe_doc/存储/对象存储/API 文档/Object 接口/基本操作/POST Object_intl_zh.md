@@ -53,7 +53,7 @@ Content-Length: Content Length
 
 | 名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 描述                                                         | 类型   | 是否必选 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| acl                                                          | 定义对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**当前访问策略条目限制为1000条，如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
+| acl                                                          | 定义对象的访问控制列表（ACL）属性。枚举值请参见 [ACL 概述](https://intl.cloud.tencent.com/document/product/436/30583) 文档中对象的预设 ACL 部分，例如 default，private，public-read 等，默认为 default<br>**注意：**如果您不需要进行对象 ACL 控制，请设置为 default 或者此项不进行设置，默认继承存储桶权限 | Enum   | 否       |
 | x-cos-grant-read                                             | 赋予被授权者读取对象的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
 | x-cos-grant-read-acp                                         | 赋予被授权者读取对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
 | x-cos-grant-write-acp                                        | 赋予被授权者写入对象的访问控制列表（ACL）的权限，格式为 id="[OwnerUin]"，例如 id="100000000001"，可使用半角逗号（,）分隔多组被授权者，例如`id="100000000001",id="100000000002"` | string | 否       |
@@ -140,7 +140,7 @@ c. 拼接签名有效时间，格式为`StartTimestamp;EndTimestamp`，即为 Ke
 | q-sign-time                                                  | 上文所生成的 KeyTime                                         | 完全                                               | 是       |
 
 > ! 
->
+
 > - “策略”（Policy）中限定的除 bucket 以外的字段，都必须出现在表单字段中。例如限定了`{ "acl": "default" }`，那么表单中必须出现 acl 且值为 default。
 > - 基于安全考虑，强烈建议您对所有可以限定的表单字段进行限定。
 
