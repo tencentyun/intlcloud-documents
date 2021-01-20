@@ -1,26 +1,43 @@
 
 
-The `AS` clause is used to specify an alias for a column (KEY).
+The `SELECT` statement is used to select data from a table.
 
-## AS Syntax Format
+## SELECT Syntax Format
 
 ```plaintext
-* | SELECT column name (KEY) AS  alias
+* | SELECT column (KEY)
 ```
 
-## AS Syntax Sample
+And
 
-#### Creating Chinese alias
 ```plaintext
-* | SELECT remote_addr AS "客户端IP", request_time AS "请求时间(单位：秒)" 
+* | SELECT *
 ```
->! If an alias contains Chinese or other special characters, they should be enclosed in double quotation marks.
 
+>? SQL statements are case insensitive, so `SELECT` is equivalent to `select`.
 
-#### Counting access requests
+## SELECT Syntax Sample
+
+Select values whose columns (KEY) are `remote_addr` and `method` from the log data. The columns should be separated by comma:
+
 ```plaintext
-* | SELECT COUNT(*) AS PV
+* | SELECT remote_addr, method 
 ```
 
+Select all columns (KEY) from the log data:
 
+```plaintext
+* | SELECT *
+```
 
+`SELECT` can also be followed by arithmetic expressions; for example, you can query the download speed of log data:
+
+Download speed (`speed`) = total number of bytes sent (`body_bytes_sent`) / request time (`request_time`)
+
+```plaintext
+* | SELECT body_bytes_sent / request_time AS speed
+```
+
+>! When logs are searched, a search statement is used; when logs are analyzed, an analysis statement is used. The backend distinguishes between them by whether the input query statement starts with the `SELECT` keyword:
+>- If a query statement starts with `SELECT`, such as `SELECT method, request_size GROUP BY method`, then it is considered an SQL analysis statement.
+>- If a query statement does not start with `SELECT`, such as `method:GET`, then it is considered a search statement.
