@@ -8,7 +8,7 @@
 
 ### 설정 조회
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인하여 메뉴에서 [Domain Management]를 선택하고 도메인 오른쪽의 [Manage]를 클릭하면 도메인 설정 페이지로 이동할 수 있습니다. 그중 세 번째 탭인 [Cache Configuration]에서 상태 코드 캐시 설정을 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/1d22bab8bb81fea2bc82a3f71380d69f.png)
+![](https://main.qcloudimg.com/raw/4584bfd2e219918025199968bfaa9d81.png)
 
 ### 설정 수정
 현재 캐시 만료 설정을 지원하는 비정상 상태 코드는 다음과 같습니다.
@@ -16,7 +16,7 @@
 + 404
 
 캐싱 기간을 0으로 수정하거나, 캐시 설정 항목을 삭제하면 만료 시간 설정이 취소되며, 직접 원본 서버로부터 가져옵니다.
-![](https://main.qcloudimg.com/raw/480230505fa21b91722eef33b61a33be.png)
+![](https://main.qcloudimg.com/raw/6bb67eb1ad2be9744d8af289ad289111.jpg)
 
 >사용자의 가속 도메인 서비스 지역이 글로벌 가속이면 설정한 상태 코드의 캐시 만료 시간이 글로벌 범위에 적용되며 중국 내, 중국 외를 다르게 설정할 수 없습니다.
 
