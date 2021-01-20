@@ -53,7 +53,7 @@ You can configure access permissions for the object by specifying the following 
 
 | Name | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, please see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note:** currently, there can be up to 1,000 entries in one ACL. If you don't need access control for the object, set the field to `default` or simply leave it empty, and the object will inherit the permissions of the bucket | Enum | No |
+| x-cos-acl | Defines the access control list (ACL) attribute of the object. For enumerated values such as `default`, `private`, and `public-read`, please see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: default <br>**Note:** If you don't need access control for the object, set the field to `default` or simply leave it empty, and the object will inherit the permissions of the bucket | Enum | No |
 | x-cos-grant-read | Grants a user read permission for an object in the format of `id="[OwnerUin]"`, such as `id="100000000001"`. You can use commas (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 | x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format of `id="[OwnerUin]"`, such as `id="100000000001"`. You can use commas (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 | x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format of `id="[OwnerUin]"`, such as `id="100000000001"`. You can use commas (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
@@ -140,7 +140,7 @@ The form fields that can be specified are as follows:
 | q-sign-time                                                  | `KeyTime` generated above                                        | Exact                                               | Yes       |
 
 > ! 
->
+
 > - Fields other than the buckets defined in the policy must appear in the form fields. For example, if you specify `{ "acl": "default" }`, `acl` must be present in the form with the value `default`.
 >- For security reasons, we strongly recommend you specify all the form fields that can be specified.
 
