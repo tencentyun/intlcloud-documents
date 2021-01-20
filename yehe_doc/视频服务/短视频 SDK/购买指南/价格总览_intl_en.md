@@ -1,106 +1,96 @@
-## Purchase Guide
+## Purchase Instructions
 
-Before using the UGSV SDK, you need to first activate the VOD service and get a **UGSV SDK license** (one-year license) by purchasing a VOD acceleration resource package:
+Please contact Tencent Cloud’s sales team for purchasing inquiries.
 
-| VOD Traffic Resource Package Specification | Description |
-| ------------------ | ---------------------------- |
-| 10 TB | With complimentary UGSV Lite Edition SDK license |
-| 50 TB | With complimentary UGSV Basic Edition SDK license |
-| 200 TB | With complimentary UGSV Basic Edition SDK license |
+## Video on Demand
 
-> ?  
-> - Currently, only the Lite Edition and Basic Edition SDKs can be purchased online.
-> - If you need to purchase the Enterprise Edition SDK, please contact your Tencent Cloud rep.
-
-## VOD Service
-
-We recommend you use the UGSV SDK together with Tencent Cloud VOD. This combination is more cost-effective and delivers a better compatibility and user experience. For more information on the billing of VOD, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/266/2838).
+We recommended that you use UGSV together with Tencent Cloud’s VOD service for improved cost efficiency, better compatibility and an enhanced user experience. For information on VOD billing, please see [Billing Overview](https://cloud.tencent.com/document/product/266/2838).
 
 
-<span id ="lic"></span>
-## SDK Features and Corresponding License Editions
 
-To use the UGSV SDK, you need a corresponding license. Each SDK edition only requires one license. For more information, please see [License Application](https://intl.cloud.tencent.com/document/product/1069/38041). The details are shown in the table below:
+## SDK License Editions and Supported Features<span id ="lic"></span>
+
+You need different licenses to use different editions of UGSV SDKs. You can contact Tencent Cloud’s sales team to apply for a license. The chart below lists the features of different SDK editions and the corresponding licenses required.
 
 <table>
    <tr>
-      <th width="85px" style="text-align:center">Feature Module</td>
+      <th width="85px" style="text-align:center">Category</td>
       <th width="85px" style="text-align:center">Feature</td>
       <th width="0px" >Description</td>
       <th width="70px" style="text-align:center">Lite Edition License</td>
       <th width="70px" style="text-align:center">Basic Edition License</td>
       <th width="70px" style="text-align:center">Enterprise Edition License</td>
-      <th width="92px" style="text-align:center">Enterprise Pro Edition License</td>
+      <th width="92px" style="text-align:center">Enterprise Pro License</td>
    </tr>
    <tr>
       <td>UI</td>
       <td>Custom UI</td>
-	    <td>The UI can be customized. The UGSV application provides a complete set of source code for UI interaction, which can be reused or customized</td>
+      <td>Customizing UI. We provide a complete set of UI interaction source code for UGSV apps, which can be reused and customized.</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td rowspan='18'>Capturing and shoot</td>
+      <td rowspan='18'>Capturing and shooting</td>
       <td>Aspect ratio</td>
-      <td>Video shoot supports multiple aspect ratios, including 16:9, 4:3, and 1:1</td>
+      <td>Shooting videos in the aspect ratio of 16:9, 4:3, or 1:1.</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
       <td>Definition</td>
-      <td>SD, HD, and FHD are supported for shoot, and the bitrate, frame rate, and GOP can be customized</td>
+      <td>Shooting standard-, high-, and ultra-high-definition videos with custom bitrate, frame rate and GOP.</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Shoot control</td>
-      <td>The front/rear cameras can be switched and the flash can be controlled during shoot</td>
+      <td>Shooting control</td>
+      <td>Switching between front and rear cameras and adjusting lighting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-	 <tr>
-	    <td>Duration configuration</td>
-      <td>The minimum and maximum shoot durations can be customized</td>
+   <tr>
+      <td>Duration setting</td>
+      <td>Setting a custom maximum and minimum shooting duration</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-	 <tr>
-      <td>Watermarking</td>
-      <td>Watermarks can be added during shoot</td>
+   <tr>
+      <td>Watermark</td>
+      <td>Adding watermarks to videos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
       <td>Focal length</td>
-      <td>The focal length can be adjusted during shoot</td>
-      <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
-	    <td style="text-align:center">&#10003;</td>
-      <td style="text-align:center">&#10003;</td>
-   </tr>
-   <tr>
-      <td>Focus mode</td>
-      <td>Manual focus and autofocus are supported</td>
+      <td>Adjusting the focal length during shooting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Multi-segment shoot</td>
-      <td>You can pause shoot to segment the video and delete existing segments</td>
+      <td>Focus modes</td>
+      <td>Manual and automatic focusing</td>
+      <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
+      <td style="text-align:center">&#10003;</td>
+   </tr>
+   <tr>
+      <td>Multi-segment shooting</td>
+      <td>Pausing to segment a video and deleting segments</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -108,15 +98,15 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Capturing</td>
-      <td>Photos can be captured</td>
+      <td>Taking photos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Adjustable-speed shoot</td>
-      <td>Slow and fast shoot modes are supported</td>
+      <td>Fast/slow motion shooting</td>
+      <td>Shooting slow- or fast-motion videos </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -124,7 +114,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Background music</td>
-      <td>A local .mp3 file can be selected as the background music before shoot</td>
+      <td>Choosing a local MP3 file as the background music before shooting</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -132,7 +122,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Voice changing and reverb</td>
-      <td>The voice to be recorded can be changed to another type (such as the voice of a little girl or middle-aged man) and mixed with reverb effects (such as karaoke room and hall) before shoot</td>
+      <td>Select a voice (e.g., girl or middle-aged man) or reverb effect (e.g., KTV, hall) before shooting </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -140,14 +130,14 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Filters</td>
-      <td>Filters can be switched by swipe and previewed in real time. The filter and filter level can be customized</td>
+      <td>Sliding to preview videos with filters applied, customizing filters, and setting filter intensity</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr><tr>
       <td>Basic beauty filters</td>
-      <td>The skin smoothing, skin brightening, and rosy skin filters can be configured for shoot, and their effect levels can be adjusted</td>
+      <td>Applying beauty filters including skin smoothing, skin lightening and rosy complexion, and adjusting filter intensity for shooting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -155,7 +145,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Advanced beauty filters</td>
-      <td>The eye enlarging, face slimming, chin slimming, chin adjustment, face shortening, and nose narrowing filters can be set for shoot, and their effect levels can be adjusted</td>
+      <td>Applying filters such as big eyes, face slimming, chin slimming, chin adjustment, short face, and small nose, and adjusting filter intensity for shooting</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
@@ -163,7 +153,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Animated stickers</td>
-      <td>Faces can be detected, and effects such as face reshaping, stickers, and pendants can be added</td>
+      <td>Locating facial features and applying effects such as reshaping and covering with stickers or widgets </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
@@ -171,7 +161,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>AI-based keying</td>
-      <td>A person's contour can be recognized, and the background can be removed and replaced with another element, such as animated background or PowerPoint slide</td>
+      <td>Recognizing the background and replacing it with a different video</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
@@ -179,15 +169,15 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Green screen keying</td>
-      <td>Elements in green (such as pure green background) in the video image can be removed and replaced with another element such as animated background or PowerPoint slide</td>
+      <td>Removing the green parts of a video (for example, a green background) and replacing them with other elements</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr><tr>
-      <td rowspan='12'>Special effects and editing</td>
-      <td>Quick import</td>
-      <td>Videos can be quickly imported on Android</td>
+      <td rowspan='12'>Special effect editing</td>
+      <td>Quick video uploading</td>
+      <td>Quickly uploading videos on Android devices</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -195,15 +185,15 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Video clipping</td>
-      <td>Videos can be precisely clipped according to the specified time range</td>
+      <td>Cutting a video section according to a specified start and end time</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Bitrate configuration</td>
-      <td>The bitrate can be specified for video generation</td>
+      <td>Bitrate setting</td>
+      <td>Generating a video with a specified bitrate</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -211,7 +201,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Cover generation</td>
-      <td>The frame image at the specified time point can be obtained</td>
+      <td>Getting the video image of a specified time point</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -219,7 +209,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Preview by frame</td>
-      <td>When the base cursor is slid along the timeline, the frame image where the cursor stays will be displayed in the preview window</td>
+      <td>Moving the cursor to preview the image of the frame indicated by the cursor</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -227,15 +217,15 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Filters</td>
-      <td>Filters can be added for videos, and the filter level can be adjusted</td>
+      <td>Applying filters to a video and adjusting filter intensity</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Time-base special effects</td>
-      <td>Time-based special effects such as reverse, loop, and slow motion can be added for videos</td>
+      <td>Speed modifying filters</td>
+      <td>Applying to a video speed modifying filters including rewind, loop, and slow motion</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -243,7 +233,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Special effect filters</td>
-      <td>Special effects such as soul out, dynamic light-wave, cracked screen, and darkness and phantom can be added for videos</td>
+      <td>Adding special effects such as “soul out”, “rock light”, “screen split” and “phantom” to a video</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -251,7 +241,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Background music</td>
-      <td>An embedded audio file or local .mp3 file in the phone can be used as the background music. The background music can be clipped, and the volume level can be adjusted</td>
+      <td>Selecting an audio clip provided by Tencent Cloud or adding your own MP3 file to be used as the background music, whose audio can be clipped and adjusted in volume</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -259,7 +249,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Animated or static stickers</td>
-      <td>Animated or static stickers can be added. Their positions in the video image and the start and end points in time for display are customizable</td>
+      <td>Adding an animated or static sticker to a specified location of a video for a specified time range</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -267,7 +257,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Subtitles</td>
-      <td>Subtitles can be added, and the style of the subtitles frame background (such as bubble) can be selected. Their positions in the video image and the start and end points in time for display are customizable</td>
+      <td>Adding subtitles to be shown in a specified time range, with different background templates to choose from</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -275,7 +265,7 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td>Image transition</td>
-      <td>Multiple images can be imported, and transition effects such as rotation, fade-in, and fade-out can be selected for video generation</td>
+      <td>Uploading multiple images to generate a video, and selecting transition effects such as rotate, fade-in and fade-out</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -283,32 +273,32 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    </tr>
    <tr>
       <td rowspan='2'>Video splicing</td>
-      <td>Multi-video splicing</td>
-      <td>Multiple videos can be spliced into one video</td>
+      <td>Splicing videos</td>
+      <td>Splicing together multiple videos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Co-shoot</td>
-      <td>A video can be shot when another video is played back to generate a dual-image video</td>
+      <td>Co-shooting</td>
+      <td>Shooting while playing back an existing video to generate a dual-image video</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr> <tr>
-      <td rowspan='1'>Video upload</td>
-      <td>Upload to VOD</td>
-      <td>VOD supports features such as media asset management and content audit</td>
+      <td rowspan='1'>Video uploading</td>
+      <td>Uploading to Tencent Cloud VOD</td>
+      <td>Tencent Cloud VOD offers features such as media management and content moderation</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr><tr>
-      <td rowspan='1'>VOD playback</td>
+      <td rowspan='1'>Video on demand</td>
       <td>Superplayer</td>
-      <td>A one-stop solution implemented based on the VOD player is provided, which has features such as video information pull, portrait/landscape mode switch, definition selection, on-screen commenting, and LVB time shifting and is completely open-source</td>
+      <td>A VOD player-based, open-source solution that integrates features including video data pulling, landscape/portrait mode switch, definition selection, on-screen comments and time shifting during live streaming</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -317,46 +307,37 @@ To use the UGSV SDK, you need a corresponding license. Each SDK edition only req
    <tr>
       <td rowspan='2'>SDK download</td>
       <td>Android</td>
-	  <td>UGSV SDK (LiteAVSDK) + basic feature demo source code</td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_basic") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/LiteAVSDK_UGC_Android_5.4.6097.zip">Download the Basic Edition SDK</a> </td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/LiteAVSDK_Enterprise_Android_5.4.6097.zip">Download the Enterprise Edition SDK</a> </td>
+    <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_basic") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/LiteAVSDK_UGC_Android_5.4.6097.zip">Basic SDK download</a> </td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/LiteAVSDK_Enterprise_Android_5.4.6097.zip">Enterprise SDK download</a> </td>
    </tr>
    <tr>
       <td>iOS</td>
-      <td>UGSV SDK (LiteAVSDK) + basic feature demo source code</td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_basic") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_UGC_iOS_5.4.6097.zip">Download the Basic Edition SDK</a> </td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_Enterprise_iOS_5.4.6097.zip">Download the Enterprise Edition SDK</a> </td>
+      <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_basic") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_UGC_iOS_5.4.6097.zip">Basic SDK download</a> </td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/5.4/TXLiteAVSDK_Enterprise_iOS_5.4.6097.zip">Enterprise SDK download</a> </td>
    </tr><tr>
       <td rowspan='2'>License</td>
       <td>License application</td>
-      <td>An SDK edition can be used only with its corresponding license</td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Lite Edition license</a></td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Basic Edition license</a></td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise Edition license</a></td>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise Pro Edition license</a></td>
+      <td>Different SDK editions require different licenses</td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Lite edition license</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Basic edition license</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise edition license</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise Pro edition license</a></td>
    </tr>
 </table>
 
-<span id="p1"></span>
-## Beauty Filter and Animated Effect Materials<span id="p1"></span>
+## Beauty Filter and Animated Sticker Materials<span id="p1"></span>
 
-The Enterprise Edition SDK has advanced features such as beauty filter, AI animated effect, and green screen keying. If you need to use makeup effects, gestures, and additional animated stickers, please purchase additional materials:
+The enterprise edition of the SDK offers features including advanced beauty filters, AI animated stickers, and green screen keying. If you want to use additional beauty filters, gestures or animated stickers, please contact sales to purchase them.
 
-| Material Type | Description |
-| -------- | -------------------------------------------- |
-| Animated sticker| Faces can be detected, and effects such as stickers and pendants can be added |
-| AI-based keying | A person's contour can be recognized, and the background can be removed and replaced with another element |
-| Makeup effect | Trendy makeup effects can be quickly added for natural beautification |
-| Gesture effect | Faces and gestures can be recognized to trigger specified animated effects for interaction |
+#### Billing
 
-#### Billing description
-
-- Beauty filter and animated effect materials need to be used in conjunction with a UGSV Enterprise Pro Edition license. **UGSV Lite, Basic, and Enterprise Edition licenses do not support material purchase.**
-- One UGSV Enterprise Edition license comes with 10 complimentary designated animated stickers. One UGSV Enterprise Pro Edition license comes with 20 complimentary animated stickers or AI-based keying materials (valid for one year). If needed, please [contact sales](https://intl.cloud.tencent.com/zh/contact-sales) for application. Makeup and gesture effects need to be purchased separately.
-- **Materials are valid for one year after purchase. After you renew a license, you can continue to use the complimentary materials. If you need additional materials, you should purchase another license.**
-- For more information on how to use materials, please see [Eye Enlarging, Face Slimming, and Pendants (iOS)](https://intl.cloud.tencent.com/document/product/1069/38030) and [Eye Enlarging, Face Slimming, and Pendants (Android)](https://intl.cloud.tencent.com/document/product/1069/38031).
-- **The purchased materials can only be used under the license used to purchase them. Any form of material exchange is prohibited, including but not limited to gifting, resale, and renting. Tencent Cloud reserves all legal rights to hold violators accountable.**
-- **For purchase, please contact sales.**
+- To use additional beauty filters and animated stickers, you must have an Enterprise Pro license. **You cannot purchase materials if you hold a Lite, Basic, or Enterprise license**.
+- You get 10 specified animated stickers for free for purchasing an Enterprise license of the UGSV SDK, and 20 animated stickers or AI keying materials (1-year validity) for purchasing an Enterprise Pro license. Please contact Tencent Cloud’s sales team to purchase a license. Beauty filter and gesture materials must be purchased separately.
+- **The validity period of the materials is 1 year. After renewing your license for a new year, you can continue to use the complimentary materials, but to access additional materials, you must purchase them again**.
+- For more information on using the materials, see [Eye Enlarging, Face Slimming, and Pendants (iOS)](https://intl.cloud.tencent.com/document/product/1069/38030) and [Eye Enlarging, Face Slimming, and Pendants (Android)](https://intl.cloud.tencent.com/document/product/1069/38031).
+- **Purchased materials can only be used with the same license you use for the purchase and cannot be exchanged for other materials. Practices including (but not limited to) giving away, reselling, and leasing materials are forbidden. Tencent Cloud reserves the right to bring forth legal action as necessary**.
 
 <script>
     var _mtac = {"senseHash":0};
