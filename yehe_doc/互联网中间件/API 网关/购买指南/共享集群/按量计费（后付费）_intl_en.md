@@ -56,7 +56,7 @@ Traffic direction
 - Billable item: traffic (public network outbound traffic)
 - Billing mode: pay-as-you-go 
 - Billing cycle: hourly
-- Bill generation time: a bill is generally generated in one hour after the current billing cycle ends.
+- Bill generation time: a bill is generally generated in one hour after the current billing cycle ends
 - Deduction method: after a bill is generated, the fees will be automatically deducted from your account balance for settlement
 - Billing currency: USD
 
