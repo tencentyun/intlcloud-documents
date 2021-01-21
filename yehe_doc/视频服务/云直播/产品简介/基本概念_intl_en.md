@@ -28,7 +28,8 @@ A CNAME domain name is a domain name suffixed with `.liveplay.myqcloud.com` that
 ### StreamName
 `StreamName` is the ID of a stream, which is usually used to uniquely identify the stream together with a domain name.
 
-### AppName[](id:appname)
+[](id:appname)
+### AppName
 `AppName` is an LVB application name used to identify the storage path of a live streaming media file. It is `live` by default and customizable.
 
 [](id:trans)
