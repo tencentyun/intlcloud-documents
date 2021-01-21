@@ -4,14 +4,14 @@ Tencent Cloud CLB comes with various protocols such as TCP, UDP, TCP SSL, HTTP, 
 1. You have created two CVM instances (this document takes `rs-1` and `rs-2` as two sample instances). For information on how to create CVM instances, please see [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855).
 2. You have deployed real servers on the two CVM instances. This document takes HTTP forwarding as an example. Nginx servers have been deployed on CVM instance `rs-1` and `rs-2`, and the two instances return two HTML static pages saying "Hello nginx! This is rs-1!" and "Hello nginx! This is rs-2!". For more information, please see [Deploying Nginx on CentOS](https://intl.cloud.tencent.com/document/product/214/32390).
 >!
-> - You must purchase public network bandwidth for CVM instances in bill-by-CVM accounts. This is because the current bandwidth attributes are on CVM instances instead of CLB instances. If you are unsure of your account type, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
+> - This document describes the operation steps in bill-by-IP accounts. You must purchase public network bandwidth for CVM instances if you are using a bill-by-CVM account. This is because the current bandwidth attributes are on CVM instances instead of CLB instances. If you are unsure of your account type, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 > - In this example, different services deployed on real servers will return different values. In practice, the services deployed on real servers are identical to provide a consistent experience for all users.
 
 ## Step 1: Purchasing a CLB Instance
 After a successful purchase, the system will automatically assign a VIP to the CLB instance. The VIP will be used as the IP address to provide services to clients.
-1. Log in to your Tencent Cloud account and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
-2. First, select the same region as your CVM instance. Next, select **Cloud Load Balancer** as the instance type, **Public Network** as the network type, and any VPC as the network. For more parameter details, please see [CLB Attributes Selection](https://intl.cloud.tencent.com/document/product/214/13629).
->?If you want to select China Mobile, China Unicom, or China Telecom as the ISP, please select **Pay per usage** as the billing mode.
+1. Log in to the Tencent Cloud console and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
+2. First, select the same region as your CVM instance. Next, select **Cloud Load Balancer** as the instance type, **Public Network** as the network type. For more attribute details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
+>?Currently, the static single-line IP is supported only in Hangzhou, Jinan, Fuzhou, Wuhan, Changsha, and Shijiazhuang. For its support in other districts, please see the console. The feature is currently in beta, if you want to try it out, please submit an application. Once you are accepted, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page.
 >
 ![](https://main.qcloudimg.com/raw/235e67c8fbe5878a15163e13d0c2a9b6.png)
 3. Click **Buy Now** to make a payment.
@@ -19,14 +19,14 @@ After a successful purchase, the system will automatically assign a VIP to the C
 ![](https://main.qcloudimg.com/raw/2c2afd943a9f6a6d03f55c00e62da8b5.png)
 
 ## Step 2: Configuring a CLB Listener
-The CLB listener is used for forwarding through a specified protocol and port. This document demonstrates how to configure a CLB instance to forward client HTTP requests as an example.
+The CLB listener is used for forwarding through a specified protocol and port. This document demonstrates how to configure a CLB instance to forward client HTTP requests.
 ### Configure the HTTP listening protocol and port
 When a client initiates a request, the CLB instance will receive the request according to the listening frontend protocol and port, and forward the request to the real server.
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the **Instance Management** page, click **Configure Listener** under the Operation column of the target CLB instance.
 3. Select the **Listener Management** tab, click the **Create** button in the **HTTP/HTTPS Listener** section.
 ![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
-4. In the **Configure Listener** window, please configure the following items and click **Submit**.
+4. In the **Create Listener** window, please configure the following items and click **Submit**.
   - Listener name.
   - Listen protocol port (e.g., `HTTP:80`).
 
@@ -35,16 +35,16 @@ If a client initiates a request, the CLB instance will forward the request accor
 1. In the **Listener Management** tab, click the **+** icon on the right of the new listener.
 ![](https://main.qcloudimg.com/raw/ad3ad578fa4de43d271420bb62bb2efa.png)
 2. In the **Create Forwarding Rules** window, configure the domain name, URL, balance method, and then click **Next**.
-  - Domain name: the domain name of your real server (i.e., `www.example.com`).
-  - Default domain name: if a client request does not match any listener domain names, the CLB instance will forward the domain name to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
-  - URL: the access path to your real server (i.e., `/image/`).
-  - Select **Weighted Round Robin** as the balance method. For more information, please see [Load Balance Methods](https://cloud.tencent.com/document/product/214/6153).
+  - Domain name: the domain name of your real server (e.g., `www.example.com`).
+  - Default domain name: if a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
+  - URL: the access path to your real server (e.g., `/image/`).
+  - Select **Weighted Round Robin** as the balance method and then click **Next**. For more information, please see [Load Balancing Methods](https://intl.cloud.tencent.com/document/product/214/6153).
 ![](https://main.qcloudimg.com/raw/263b2486f8a5734ea8aa643ea3b34387.png)
 3. Enable health check. Use the default values for both check domain and path fields, and click **Next**.
 ![](https://main.qcloudimg.com/raw/9d8c9bbe1191340e452e9feeafb20e73.png)
 4. Disable session persistence and click **Submit**.
 
-For more information on CLB listeners, please see [CLB Listeners Overview](https://intl.cloud.tencent.com/document/product/214/6151).
+For more information on CLB listeners, please see [CLB Listeners - Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
 >- Forwarding rules: each listener can be configured with multiple domain names, and each domain name can be configured with multiple URLs. You can select a listener or domain name, and then click the **+** icon to create new rules.
 - Session persistence: if session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balance method is used, requests from the same client will always be assigned to the same real server.
@@ -59,22 +59,20 @@ If a client initiates a request, the CLB instance will forward the request to th
 ![](https://main.qcloudimg.com/raw/8ef5732d0748b73dd1d71b3ab0aed1d4.png)
 >!One forwarding rule (listening protocol, port, domain name, and URL) can be bound with multiple ports of the same CVM instance. If a user deploys the same service on the port `80` and `81` of `rs-1`, both ports can be bound with the sample forwarding rule and both will receive requests forwarded by the CLB instance.
 
-## Step 3. Configuring a Security Group
-After creating a CLB instance, you can configure a CLB security group to isolate public network traffic. For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+## Step 3: Configuring a Security Group
+After creating a CLB instance, you can configure a CLB security group to isolate public network traffic. For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
 
 After configuring a security group, you can enable or disable the **Allow Traffic by Default** feature:
 ### Method 1: Enable the Allow Traffic by Default feature
->?This feature is currently in beta, if you want to try it out, please submit an application.
-
-For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ### Method 2: Allow specific client IPs on the CVM security group
-For more information, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
+For more information, please see [CLB Security Group Configuration](https://intl.cloud.tencent.com/document/product/214/14733).
 
 ## Step 4: Verifying the CLB Service
 After configuring a CLB instance, you can verify whether it is effective by accessing different real servers via different **domain names and URLs** under the same CLB instance, or verifying the **Content-based Routing** feature.
-### Method 1: Configure `hosts` and map domain name to the CLB instance
-1. In a Windows device, modify the `hosts` file at the directory `C:\Windows\System32\drivers\etc`, and map the domain name to the CLB instance’s VIP.
+### Method 1: Configure `hosts` and map the domain name to the CLB instance
+1. In a Windows device, modify the `hosts` file at the directory `C:\Windows\System32\drivers\etc`, and map the domain name to the CLB instance's VIP.
 ![](https://main.qcloudimg.com/raw/b12ee22250cb7c24d5e12ecb803e6355.png)
 2. To verify whether the `hosts` is successfully configured, you can run a `ping` command in the `cmd.exe` to test whether the domain name is successfully bound with the VIP. If there are data packs, they are successfully bound.
 ![](https://main.qcloudimg.com/raw/b11b20840cba86bedbaffaa424b4e021.png)
@@ -84,6 +82,17 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 ![](https://main.qcloudimg.com/raw/ab7db7b5c3952739919ae6e271bb1348.png)
 >!The `/` in the `image/` cannot be omitted. `/` indicates that `image` is a default directory instead of a file name.
 
+### Method 2: Map the domain name to the CLB instance through DNSPod
+1. Go to the Tencent Cloud Domain Service page for domain name query and registration. `example.com` is used as the sample domain name here.
+2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **Domain Name Resolution List** on the left sidebar, and click **Resolve** on the right of a domain name.
+3. Open the **Record Management** tab, click **Add Records** to add an A record for the domain name with the following parameters:
+  - Record Type: A
+  - Host: The prefix of the domain name. Here takes resolving all prefixes as an example: `*.example.com`.
+  - Split Zone: Default
+  - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
+  - TTL: Leave it as the default value **600** s.
+4. Click **Save**.
+5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
 
 ## Configuring Redirection (optional)
 CLB supports automatic redirection and manual redirection. For more information, please see [Configuring Layer-7 Redirection](https://intl.cloud.tencent.com/document/product/214/8839).
@@ -93,4 +102,4 @@ CLB supports automatic redirection and manual redirection. For more information,
 
 ## References
 - [Deploying Java Web on CentOS](https://intl.cloud.tencent.com/document/product/214/32391) 
-- [Installing and Configuring PHP](https://intl.cloud.tencent.com/document/product/213/10182)
+- [Step 2: Install and Configure PHP](https://intl.cloud.tencent.com/document/product/213/10182)
