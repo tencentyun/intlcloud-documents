@@ -1,12 +1,15 @@
 ### How do I view the storage space usage of a TencentDB for MySQL instance?
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), select **Performance Optimization** on the left sidebar, select the target database at the top, and select **Space Analysis**. 
 On the space analysis page, you can view the comparison between daily increases in the last week, remaining space, estimated available days, and disk capacity usage trends in the last week. In addition, you can view the capacity utilization and fragmentation details of each database table in your instance.
+![](https://main.qcloudimg.com/raw/612e0641f7c2c09c6d5f820d56d8f1e4.png)
 
 ### How do I analyze the full SQL execution track of a TencentDB for MySQL instance?
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), select **Performance Optimization** on the left sidebar, select the target database at the top, and select **Audit Log Analysis**.
 1. Click **Create Analysis Task** in the top-right corner of the view, select a time period, and click **Confirm**.
 2. Click **View SQL Analysis** in the task list to access the SQL analysis page.
+![](https://main.qcloudimg.com/raw/fbf88dd9624dd0378e13902f3f8b7157.png)
 3. On the SQL analysis page, you can display the view by "SQL Type", "Host", "User", or "SQL Code". You can specify a time period to expand the view and view data at specific time points.
+![](https://main.qcloudimg.com/raw/e20326e6719f18a5dac27bec64fa1182.png)
 4. Click the SQL template on the target row, and the SQL statement details will be displayed on the right.
  - On the analysis page, you can view and copy specific SQL statements and optimize them based on the provided optimization advice or description.
  - On the statistics page, you can view the statistical analysis and execution duration track of the specified types of SQL statements by "Host", "User", and "SQL Code".
@@ -14,16 +17,20 @@ Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), sele
 ### How do I conduct performance optimization by myself when a TencentDB for MySQL instance is faulty or has an exception?
 1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), select **Performance Optimization** on the left sidebar, select the target database at the top, and select **Exception Diagnosis**.
 2. The "Diagnosis Prompt" column displays the diagnosis event history, including the health level, start time, diagnosis item, and duration. DBbrain performs health checks on the instance regularly.
+![](https://main.qcloudimg.com/raw/fe0dd650bb834eb093e7964917da758e.png)
 3. You can click **View Details** or a diagnosis item in the "Diagnosis Prompt" to access the diagnosis details page. Click a diagnosis event in the view, and its details will be displayed below, including the event overview, symptom description, intelligent analysis, and expert advice. Based on the expert advice, you can perform optimization to solve the database exception and improve the instance performance.
+ ![](https://main.qcloudimg.com/raw/576a445b12b249f278d50cbe89ab238e.png)
 
 ### How can I receive the TencentDB for MySQL health report regularly?
 Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), select **Performance Optimization** on the left sidebar, select the target database at the top, and select **Health Report**. You can view health score trends and the problem overview for the specified time period. 
 - Select the report time range and click **Create Health Report**. After the task is completed, you can view or download the health report for the specified time period.  
 - Click **Regular Generation Settings** to configure the frequency for automatically generating health reports. 
+ ![](https://main.qcloudimg.com/raw/0cf1ac4dd76a106cde20f854086c38f7.png)
 
 ### How do I view and optimize MySQL slow logs?
 1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain), select **Performance Optimization** on the left sidebar, select the target database at the top, and select **Slow SQL Analysis**. The "SQL Statistics" section displays the number of slow queries and the CPU utilization of the instance.
 2. You can click or drag slow queries in "SQL Statistics", and the aggregated SQL template and execution information will be displayed below. Each column of data can be sorted in ascending or descending order. The consumed time distribution section on the right displays the distribution of the overall SQL statement execution duration for the selected time period.
+ ![](https://main.qcloudimg.com/raw/c937f9639acc557e9cb58eb885f36805.png)
 3. Click an aggregated SQL template and the SQL optimization advice and statistics will be displayed on the right. You can rewrite the SQL statement or add appropriate indexes based on the optimization advice to improve the SQL statement execution efficiency and database performance.
 
 
