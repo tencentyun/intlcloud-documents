@@ -56,8 +56,8 @@ If you want to set an image as the background displayed during on-cloud stream m
 
 ## Documentation
 - To search an application in the application list, see [Searching Application](https://intl.cloud.tencent.com/document/product/647/39078).
-- To configure the functions of an application or view configuration information, see [Function Configuration](https://intl.cloud.tencent.com/zh/document/product/647/39080).
-- To get the demo source code for a quick start, see [Quick Start][https://intl.cloud.tencent.com/zh/document/product/647/39082].
+- To configure the functions of an application or view configuration information, see Function Configuration.
+- To get the demo source code for a quick start, see [Quick Start](https://intl.cloud.tencent.com/zh/document/product/647/39082).
 
 
 
