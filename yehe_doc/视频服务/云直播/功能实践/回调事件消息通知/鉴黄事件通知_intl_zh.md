@@ -96,9 +96,7 @@
 
 ### 回调消息示例
 
-HTTP Body：
-<dx-codeblock>
-::: HTTPbody  json
+```
 {
     "event_type":317,
     
@@ -140,8 +138,7 @@ HTTP Body：
     
     "appid":10000
 }  
-:::
-</dx-codeblock>
+```
 
 
 
