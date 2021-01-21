@@ -28,7 +28,8 @@ CNAME 域名是在腾讯云直播控制台接入加速域名后，系统给对�
 ### StreamName
 StreamName 是一路流的标识符，通常与某个域名一起唯一标识一路流。
 
-### AppName[](id:appname)
+[](id:appname)
+### AppName
 直播的应用名称，用于区分直播流媒体文件存放路径，默认为 live，可自定义。
 
 [](id:trans)
