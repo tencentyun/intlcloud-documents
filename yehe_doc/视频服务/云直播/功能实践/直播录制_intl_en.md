@@ -93,7 +93,9 @@ For more information on how to create a recording task through the API, please s
 ### Recording sample
 - In the simple case, you just need to specify parameters: `StreamName`, `DomainName`, `AppName`, and `EndTime`.
 The following sample code creates a video recording task in .flv format for 8 AM to 10 AM, August 10, 2020 with 30-minute segments that will be retained permanently.
+
 **Sample input:**
+
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
