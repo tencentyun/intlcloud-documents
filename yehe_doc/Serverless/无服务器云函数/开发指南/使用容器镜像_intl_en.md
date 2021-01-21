@@ -145,7 +145,7 @@ docker tag d64a665357b6 scf:python3
 
 1. Run the following command to start the container and mount the local project directory to a directory in the container (if the directory does not exist, it will be created automatically):
 ```bash
-docker run -v /path/to/your_project:/tmp/your_project scf:python3
+docker run -it -v /path/to/your_project:/tmp/your_project scf:node12 /bin/bash
 ```
 2. Run the `docker exec` command to enter the container for development as shown below:
 ```bash
