@@ -96,9 +96,7 @@ This document describes the fields in callback message notifications sent by Ten
 
 ### Sample callback message
 
-HTTP Body:
-<dx-codeblock>
-::: HTTPbody  json
+```
 {
     "event_type":317,
     
@@ -140,8 +138,7 @@ HTTP Body:
     
     "appid":10000
 }  
-:::
-</dx-codeblock>
+```
 
 
 
