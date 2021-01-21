@@ -6,8 +6,8 @@ The game process communicates with GSE through gRPC. For gRPC protocol files, pl
 The service APIs defined by `GseGrpcSdkService.proto` should be called by the game server, and the corresponding APIs should be called in the game process at the right timing. GSE APIs listen on the gRPC port 5758. You can generate protocol files in different programming languages as needed.
 
 >?
-- The [Chinese edition](http://doc.oschina.net/grpc) and [English edition](https://www.grpc.io/) of the GProxy user guide are for your reference.
-- The sample codes are in the Go programming language, and the protocol package is named as `grpcsdk`. For the common function `getContext`, constant `LOCAL_ADDRESS`, and message structure `GseResponse`, please see [Others](#others).
+>- The [Chinese edition](http://doc.oschina.net/grpc) and [English edition](https://www.grpc.io/) of the GProxy user guide are for your reference.
+>- The sample codes are in the Go programming language, and the protocol package is named as `grpcsdk`. For the common function `getContext`, constant `LOCAL_ADDRESS`, and message structure `GseResponse`, please see [Others](#others).
 
 
 
