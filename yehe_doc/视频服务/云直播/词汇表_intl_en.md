@@ -18,7 +18,7 @@ A signature in LVB is used to encrypt the content sent using your own private ke
 
 ### SLA
 
-Please see [Service Level Agreement](https://intl.cloud.tencent.com/document/product/267/32941#953)
+Please see [Service Level Agreement](https://intl.cloud.tencent.com/zh/document/product/267/17023)
 
 ### StreamName
 
