@@ -18,9 +18,9 @@ iOS 端实现推送消息的服务涉及到三个角色：终端应用（Client 
 
 - 支持 iOS 8.0+。
 - 针对 iOS 10.0+ 以上版本。
- - 需要额外引入 UserNotification.framework。
- - 建议使用 Xcode 8.0 +。
- - 如果使用 Xcode7 及其以下的版本，需要自行配置 iOS SDK 来支持 UserNotification 框架的编译。
+  - 需要额外引入 UserNotification.framework。
+  - 建议使用 Xcode 8.0 +。
+  - 如果使用 Xcode7 及其以下的版本，需要自行配置 iOS SDK 来支持 UserNotification 框架的编译。
 
 
 
@@ -42,28 +42,28 @@ iOS SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供给开
 ### 设备注册流程
 
 下图为设备注册相关流程，具体接口方法请查看 [启动腾讯移动推送服务](https://intl.cloud.tencent.com/document/product/1024/30727)。
-![](https://main.qcloudimg.com/raw/1501e44167cf30ac84594d9b1bf869b0/register.png)
+![](https://main.qcloudimg.com/raw/dbfa16df52e31f095e0dd9161656f5b7.png)
 
 
 
 ### 设备反注册流程
 
 下图为设备反注册相关流程，具体接口方法请查看 [终止腾讯移动推送服务](https://intl.cloud.tencent.com/document/product/1024/30727)。
-![](https://main.qcloudimg.com/raw/cd084cd9080b082142a26b22dfe12799/unregister2.png) 
+![](https://main.qcloudimg.com/raw/e099201705deb2642dfc9252356bc3c7.png)
 
 
 ### 账号相关流程
 
 下图为账号相关流程，具体接口方法请查看 [账号管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
-![](https://main.qcloudimg.com/raw/09bbd91938c952d059709fdecd95f847/account.png)
+![](https://main.qcloudimg.com/raw/7e50fb47d21c45eb96459a0e317991e5.png)
 
 
 ### 标签相关流程
 
 下图为标签相关流程，具体接口方法请查看 [标签管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
-![](https://main.qcloudimg.com/raw/c757e0102e834dbbe85ac68c7442e850/tag.png)
+![](https://main.qcloudimg.com/raw/f00a948750d2f3ac85648e78f480673a.png)
 
 ### 用户属性相关流程
 
 下图为用户属性相关流程，具体接口方法请查看 [用户属性管理](https://intl.cloud.tencent.com/document/product/1024/30727)。
-![](https://main.qcloudimg.com/raw/06dc6605dcc75b046f649240b91a9fc4/attribute.png)
+![](https://main.qcloudimg.com/raw/8941cba3ed40b4ff02d957e6c2332d64.png)
