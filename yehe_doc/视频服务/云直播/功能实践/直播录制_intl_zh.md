@@ -135,7 +135,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 ```
 
 	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
-	
+
 **输入示例：**
 
 ```
