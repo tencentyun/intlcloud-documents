@@ -1,6 +1,6 @@
 <span id="push"></span>
 ### プッシュ
- -**プッシュ**：キャスターは、ローカルのビデオソースとオーディオソースをTencent Video CVMにプッシュします。一部のシナリオでは「RTMP公開」とも呼ばれます。 
+ **プッシュ**：キャスターは、ローカルのビデオソースとオーディオソースをTencent Video CVMにプッシュします。一部のシナリオでは「RTMP公開」とも呼ばれます。 
 <span id="play"></span>
 ### プル
  プル（LVB再生）のビデオソースはリアルタイムで生成されます。誰かがライブブロードキャストをプッシュする場合にのみ表示されます。キャスターによりライブブロードキャストを終了すると、ライブブロードキャストのURLは無効になります。リアルタイムのブロードキャストであるため、ライブブロードキャストビデオを再生するときに、プレーヤーにプログレスバーが表示されません。 
@@ -46,7 +46,7 @@ H.265標準は、既存のビデオコーディング標準H.264を中心に展�
 
  <span id="record"></span>
  ### ライブブロードキャストレコーディング
-プッシュ中に、LVBの元のストリームをオーディオ・ビデオ変換パッケージング（オーディオ・ビデオデータや対応するタイムスタンプなどの情報を変更しない）することによって生成されたビデオファイルをVODプラットフォームに保存できます。この機能を使用するには、事前に[Cloud on Demand Service]（https：//intl.cloud.tencent.com/product/vod）をアクティブ化する必要があります。
+プッシュ中に、LVBの元のストリームをオーディオ・ビデオ変換パッケージング（オーディオ・ビデオデータや対応するタイムスタンプなどの情報を変更しない）することによって生成されたビデオファイルをVODプラットフォームに保存できます。この機能を使用するには、事前に[Cloud on Demand Service](https：//intl.cloud.tencent.com/product/vod)をアクティブ化する必要があります。
 
  <span id="watermark"></span>
 ### ウォーターマーク
@@ -54,10 +54,10 @@ LVBプッシュ中にビデオの著作権が侵害されないように、ト�
 
  <span id="screenshot"></span>
 ### スクリーンキャプチャ
-プッシュされたライブストリーム内のビデオのスクリーンショットを一定の間隔でキャプチャし、生成された画像ファイルをCOSに保存します。スクリーンキャプチャ機能をアクティブにするには、最初にLVBにCOSバケットへの書き込み権限を付与する必要があります。詳細については、[Granting LVB Access to COS Bucket for Screenshot Storage]（https：//intl.cloud.tencent.com/document/product/267/33384）をご参照ください。 
+プッシュされたライブストリーム内のビデオのスクリーンショットを一定の間隔でキャプチャし、生成された画像ファイルをCOSに保存します。スクリーンキャプチャ機能をアクティブにするには、最初にLVBにCOSバケットへの書き込み権限を付与する必要があります。詳細については、[Granting LVB Access to COS Bucket for Screenshot Storage](https：//intl.cloud.tencent.com/document/product/267/33384)をご参照ください。 
 
  <span id="yellow_confidence"></span>
 ### ポルノ検出
-スクリーンキャプチャ機能に基づいて、システムは、プッシュドメイン名に関連付けられたスクリーンキャプチャポルノ検出テンプレートを利用して、キャスターがLVBプッシュで非準拠のライブコンテンツを配信しているかどうかを識別できます。関連ドキュメントについては、[Screencapturing and Porn Detection Configuration]（https：//intl.cloud.tencent.com/document/product/267/31072）をご参照ください。
+スクリーンキャプチャ機能に基づいて、システムは、プッシュドメイン名に関連付けられたスクリーンキャプチャポルノ検出テンプレートを利用して、キャスターがLVBプッシュで非準拠のライブコンテンツを配信しているかどうかを識別できます。関連ドキュメントについては、[Screencapturing and Porn Detection Configuration](https：//intl.cloud.tencent.com/document/product/267/31072)をご参照ください。
 
  
