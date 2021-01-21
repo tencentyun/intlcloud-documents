@@ -151,7 +151,7 @@ GSE Local 日志消息将显示游戏服务器调用了 ProcessEnding。
 - [CreateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37139)
 - [DescribeGameServerSessions](https://intl.cloud.tencent.com/document/product/1055/37136)
 - [JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132)
-- [JoinGameServerSessionBatch](https://cloud.tencent.com/document/api/1165/42061)
+- [JoinGameServerSessionBatch](https://intl.cloud.tencent.com/document/product/1055/39130)
 - [DescribePlayerSessions](https://intl.cloud.tencent.com/document/product/1055/37135)
 
 在 Local 命令提示符窗口中，只有对 CreateGameServerSession 的调用才会产生日志消息。日志消息显示 GSE Local 提示您的游戏服务器何时启动游戏会话（onStartGameServerSession 回调），并在您的游戏服务器调用它时，获取成功的 ActivateGameServerSession。其他 API 调用可以通过以上 curl 查看状态。
