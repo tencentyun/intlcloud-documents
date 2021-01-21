@@ -25,15 +25,15 @@ You can clone a TencentDB for MySQL instance, and restore the clone to any point
 ## Directions
 1. Log in to the [MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to access the instance management page.
 2. Select **Backup and Restore** > **Data Backup List**, click **Clone** on the upper left corner, or locate the desired backup and click **Clone** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/741f61688499e094102071f59cac95ea.png)
+![](https://main.qcloudimg.com/raw/b53e3c4f249a5f22638c32f4c92c7f75.png)
 3. On the displayed purchase page, specify the restoration mode and other configurations, and click **Buy Now**.
  - **By time point**: you can restore the clone to a point in time within the log backup retention period you set.
  - **By backup set**: you can restore the clone from the backup set of a specific physical backup within the data backup retention period you set.
  >?You can log in to the [console](https://console.cloud.tencent.com/cdb), select **Database Backup** on the left sidebar, and view backup retention period on the **Backup List** tab.
  >
-![](https://main.qcloudimg.com/raw/c68773f99e87494e304410b24e345ca5.png)
+![](https://main.qcloudimg.com/raw/f2fcdd5471326b60f6ee7ea8872f00bc.png)
 4. After purchase, you can view the clone details on the **Backup and Restore** > **Cloned Instance List** tab.
-![](https://main.qcloudimg.com/raw/c394f91800f4cfa23fb047666129ffd6.png)
+![](https://main.qcloudimg.com/raw/3b6a2781adafd4cbde550ea00f3898a8.png)
 5. After the clone process is completed, you can view the clone in the instance list.
 
 ## Documentation
