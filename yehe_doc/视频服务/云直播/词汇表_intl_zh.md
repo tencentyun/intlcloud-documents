@@ -18,7 +18,7 @@
 
 ### SLA
 
-参见 [服务级别协议](https://intl.cloud.tencent.com/document/product/267/32941#953)
+参见 [服务级别协议](https://intl.cloud.tencent.com/zh/document/product/267/17023)
 
 ### StreamName
 
