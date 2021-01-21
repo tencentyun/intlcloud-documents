@@ -16,9 +16,9 @@ You can configure user information in two ways: client and CKafka instance.
 
 #### Client configuration
 1. On the user management page of the CKafka instance, click **Create** to create a user.
-![](https://main.qcloudimg.com/raw/43fc21203648cbb27b91ba1d37b218f2.png)
+![](https://main.qcloudimg.com/raw/b71f3d8399e2169cff962b3bfaeff85e.png)
 2. Enter the username and password and click **Submit**.
-![](https://main.qcloudimg.com/raw/8c8e2e57d320ba2b25e0aecf0dbb3b28.png)
+![](https://main.qcloudimg.com/raw/d50580170b01896f2070eaf58e64fe9d.png)
 
 #### CKafka instance configuration
 1. In the configuration file (see the [sample configuration file](#Sample configuration file) below), add the following configuration:
@@ -52,7 +52,7 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 1. On the ACL policy management page, select the topic resource for which to configure a policy and click **Edit ACL Policy** in the **Operation** column.
 2. In the ACL policy creation pop-up window, select/enter the target users and IPs. If you don't select any, the policy will take effect for all users/hosts by default.
     Sample ACL policy: allow/deny user to read/write topic resource through IP.
-![](https://main.qcloudimg.com/raw/09d00ca8725b9f8ad080a05f5f3b8f7f.png)
+    ![](https://main.qcloudimg.com/raw/442c5f5bc928701cd1684a116d44bded.png)
 
 >?
 - Enabling routing only affects the authentication method during access, while the configured ACL policy takes effect globally.
