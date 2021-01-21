@@ -5,19 +5,19 @@
 
 ## 新建库表
 1. 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在上方导航栏选择【新建】>【新建库】>【新增数据库】或【新建】>【新建表】。
-![](https://main.qcloudimg.com/raw/655d55fd3304455269a547f90c96c91e.png)
+![](https://main.qcloudimg.com/raw/899520a477489601623a73558b9d5718.png)
 2. 在弹出的对话框，用户可以对新建的库表进行配置，配置完成后单击【提交】。
 >?字符集、排序规则介绍可参见 [MySQL 官方文档](https://dev.mysql.com/doc/)。
 >
  - 新建库对话框：
-![](https://main.qcloudimg.com/raw/258605b4ac20f2136672bab0381e0f3f.png)
+![](https://main.qcloudimg.com/raw/3d894dd9ca840274ce66321a84089d00.png)
  - 新建表对话框：
-![](https://main.qcloudimg.com/raw/d2aec4106f019ff9d088be7c27737330.png)
+![](https://main.qcloudimg.com/raw/4423064c24df9f0b083fec5281b428c7.png)
 
 ## 实例会话管理
 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏单击【实例会话】进入实例会话管理页，用户可查看当前数据库中所有实例的会话详细信息，以及按照会话概览、用户、访问来源和数据库四个不同维度的信息展示。
 DMC 提供 kill 会话的功能，方便用户对会话进行管理。
-![](https://main.qcloudimg.com/raw/dd87caaefb78386484ebb58bfdbdc6e4.png)
+![](https://main.qcloudimg.com/raw/0c16ea83442b6c61f2d237f95b60e768.png)
 
 ## 数据库实时监控
 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏单击【实时监控】进入数据库实时监控页，数据库实时监控功能每4秒刷新一次，提供如下监控信息：
@@ -32,12 +32,6 @@ MySQL Status Information|  InnoDB Row Operation |   Threads   |Network
 [sel] 表示 select 语句每秒执行次数 | -|- | - |
 [hit%] 表示缓存命中率，主要指 innodb_buffer_pool 的命中率 | - | - |- |
 
-## InnoDB 锁等待管理
->?云数据库 MySQL 8.0 不支持 InnoDB 锁等待管理功能。
->
-登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏单击【InnoDB锁等待】，进入 InnoDB 锁等待管理页，用户可以直观地查看持有锁及等待锁详情，并可以进行删除会话操作。如下图：
-![](https://main.qcloudimg.com/raw/ea4ebed0ba1a6e8b804af1554c09d3e6.png)
-![](https://main.qcloudimg.com/raw/746daa00522aa773c96c1248570a4537.png)
 
 ## 内嵌 phpMyAdmin
 >?云数据库 MySQL 8.0 不支持 phpMyAdmin 功能。
