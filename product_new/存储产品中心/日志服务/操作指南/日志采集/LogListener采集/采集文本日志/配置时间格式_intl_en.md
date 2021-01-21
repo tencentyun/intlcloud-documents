@@ -5,7 +5,7 @@ CLS requires a time attribute for each log so that the system can manage the dat
 - Default method: use LogListener collection time as the time attribute.
 - Custom method: use a time field in the log content as the time attribute. In this method, you need to configure a time resolution format.
 
->The time precision of LogListener collection is the “second”. Therefore, the time resolution format only needs to be accurate to seconds.
+>!The time precision of LogListener collection is the “second”. Therefore, the time resolution format only needs to be accurate to seconds.
 
 
 
