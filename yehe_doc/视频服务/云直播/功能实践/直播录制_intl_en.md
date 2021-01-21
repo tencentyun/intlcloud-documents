@@ -107,7 +107,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 - The recording format, recording type, and storage parameters can also be specified.
 The following sample code creates a recording task in .mp4 format for 8 AM to 10 AM, August 10, 2020 with 1-hour segments that will be retained permanently.
 	1. Call [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) to create a recording template.
-**Sample input:**
+**<b>Sample input：</b>
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -117,7 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<Common request parameters>
 ```
-**Sample output:**
+**<b>Sample output：</b>
 ```
 {
   "Response": {
@@ -127,6 +127,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 }
 ```
 	2. Call [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309) to create a recording task.
+
 **Sample input:**
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
