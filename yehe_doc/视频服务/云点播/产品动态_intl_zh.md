@@ -1,6 +1,5 @@
 ## 2020年08月
 
-
 <table>
 <thead>
 <tr>
@@ -18,8 +17,9 @@
 </tr>
 </tbody></table>
 
-## 2020年06月
 
+
+## 2020年06月
 
 <table>
 <thead>
@@ -45,13 +45,35 @@
 <td>
 <ul style="margin:0;">
 <li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">超级播放器配置</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E8.B6.85.E7.BA.A7.E6.92.AD.E6.94.BE.E5.99.A8.E9.A2.84.E8.A7.88">超级播放器预览</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">超级播放器预览</a>
 </td>
 </tr>
 </tbody></table>
 
-## 2019年10月
 
+
+## 2020年03月
+
+<table >
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th>  
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布视频制作专项版本</td>
+<td >上线视频剪辑制作，为您提供音视频剪辑、拼接、转场及导出功能。</td>
+ <td>2020-03-02</td> 
+<td><a href="https://cloud.tencent.com/document/product/266/42923">视频制作</a></td>
+</tr>
+</tbody></table>
+
+
+
+## 2019年10月
 
 <table>
 <thead>
@@ -70,7 +92,7 @@
 <li >修复未备案域名无法删除。
 <li >修复存储地域名称展示。
  <td>2019-10-23</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/14059#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E6.A8.A1.E6.9D.BF">模板设置</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">模板设置</a></td>
 </tr>
 <tr>
 <td>发布 V1.6 版本</td>
@@ -87,6 +109,7 @@
 </tbody></table>
 
 
+
 ## 2019年09月
 
 <table>
@@ -99,14 +122,16 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>发布视频审核专项版本</td>
-<td><ul style="margin:0;"><li >视频审核支持在控制台通过自定义模板使用。
-<li >支持对涉黄、暴恐、涉政的内容审核。
-<li >通过视频审核墙可以查阅内容审核出现违规的时间点和违规信息。
+<td>发布视频智能识别专项版本</td>
+<td><ul style="margin:0;"><li >视频智能识别支持在控制台通过自定义模板使用。
+<li >支持对涉黄的内容智能识别。
+<li >通过视频智能识别墙可以查阅内容智能识别出现违规的时间点和违规信息。
 </td>
  <td>2019-09-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33897">视频审核</a></td>
+<td><a href="https://cloud.tencent.com/document/product/266/36702">视频智能识别</a></td>
 </tbody></table>
+
+
 
 ## 2019年08月
 
@@ -127,6 +152,7 @@
 <td>—</td>
 </tr>
 </tbody></table>
+
 
 
 ## 2019年06月
@@ -150,7 +176,9 @@
 </tbody></table>
 
 
+
 ## 2019年05月
+
 <table>
 <thead>
 <tr>
@@ -164,7 +192,7 @@
 <td>发布 V1.3 版本</td>
 <td>云点播重构 Web 播放器、短视频 License。</td>
  <td>2019-05-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33900">Web 播放器管理</a></td>
+<td><a href="https://cloud.tencent.com/document/product/266/14056">Web 播放器管理</a></td>
 </tr>
 
 </tbody></table>
@@ -191,7 +219,9 @@
 </tbody></table>
 
 
+
 ## 2019年02月
+
 <table>
 <thead>
 <tr>
@@ -210,6 +240,7 @@
 </td>
 </tr>
 </tbody></table>
+
 
 
 ## 2018年11月
@@ -231,7 +262,10 @@
 </tr>
 </tbody></table>
 
+
+
 ## 2017年08月
+
 <table>
 <thead>
 <tr>
@@ -258,7 +292,9 @@
 </tbody></table>
 
 
+
 ## 2017年04月
+
 <table>
 <thead>
 <tr>
@@ -276,7 +312,9 @@
 </tbody></table>
 
 
+
 ## 2017年03月
+
 <table>
 <thead>
 <tr>

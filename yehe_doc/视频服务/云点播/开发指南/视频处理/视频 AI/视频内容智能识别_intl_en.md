@@ -1,93 +1,173 @@
-Video content recognition is an offline task that intelligently recognizes video content with the aid of AI. It recognizes faces, text, opening and closing credits, and speech in the video, helping you accurately and efficiently manage your videos. Specifically, it includes the following features:
+Video content recognition is an offline task that intelligently recognizes video content with the aid of AI. The task execution results include intelligent recognition score, intelligent recognition suggestion, and suspected video segments. According to the "intelligent recognition suggestion", you can decide whether to allow a video to be published, effectively avoiding potential legal risks and brand image damage caused by non-compliant videos.
 
-| Feature Name | Description | Use Case |
-| -- | -- | -- |
-| Face recognition | Recognizes faces in video image | <li>Marks where celebrities appear in video image </li><li>Checks for sensitive figures in video image </li> |
-| Full speech recognition | Recognizes all phrases in speech | <li>Generates subtitles for speech content </li><li>Performs data analysis on video speech content </li> |
-| Full text recognition | Recognizes all text in video image | Performs data analysis on text in video image |
-| Speech keyword recognition | Recognizes keywords in speech | <li>Checks for sensitive words in speech </li><li> Retrieves specific keywords in speech </li> |
-| Text keyword recognition | Recognizes keywords in video image | <li>Checks for sensitive words in video image</li><li> Retrieves specific keywords in video image </li> |
-| Opening and closing credits recognition | Recognizes opening and closing credits in video | <li>Marks the positions of opening credits, closing credits, and feature in the progress bar </li><li>Removes opening and closing credits of videos in batches</li> |
+VOD can intelligently recognize video image, speech recognized by ASR, and text recognized by OCR. The intelligent recognition operations include recognition of porn, terrorism, and politically sensitive information.
 
-Some content recognition features depend on a material library. There are two types of libraries: public library and custom library.
+<table>
+    <tr>
+        <th style="width:20%">
+            Object
+        </th>
+        <th style="width:10%">
+            Operation
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    <tr>
+        <td rowspan=4>
+            Video image (figures and objects)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Porn information recognition
+        </td>
+        <td>
+				    Performs porn information recognition on video image, including:
+				    <li>vulgar: vulgarity</li>
+				    <li>intimacy: intimacy</li>
+				    <li>sexy: sexiness</li>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Terrorism information recognition
+        </td>
+        <td>
+				    Performs terrorism information recognition on video image, including:
+				    <li>militant: militants</li>
+				    <li>guns: weapons and guns</li>
+				    <li>bloody: bloody scenes</li>
+				    <li>police: police force</li>
+				    <li>crowd: crowd</li>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Politically sensitive information recognition
+        </td>
+        <td>
+            Performs politically sensitive information recognition on video image, including:
+				    <li>violation_photo: violating photo</li>
+				    <li>politician: politically sensitive figure</li>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan=2>
+            ASR phrase (phrase in speech)
+        </td>
+        <td>
+				    Porn information recognition
+        <td>
+            Performs porn information recognition on phrases in speech to identify suspect keywords
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Politically sensitive information recognition
+        </td>
+        <td>
+            Performs politically sensitive information recognition on phrases in speech to identify suspect keywords
+        </td>
+    </tr>
+    <tr>
+        <td rowspan=2>
+            OCR text (text in video image)
+        </td>
+        <td>
+				    Porn information recognition
+        </td>
+        <td>
+            Performs porn information recognition on text in video image to identify suspect keywords
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Politically sensitive information recognition
+        </td>
+        <td>
+            Performs politically sensitive information recognition on text in video image to identify suspect keywords
+        </td>
+    </tr>
+</table>
 
-* Public library: VOD's preset material library.
-* Custom library: a material library created and managed by user.
 
-| Recognition Type | Public Library | Custom Library |
-| -- | -- | -- |
-| Face recognition | Supported. Figures in the library mainly include entertainment celebrities, sports celebrities, and politically sensitive figures | Supported. Call a [server API](https://intl.cloud.tencent.com/document/product/266/37584) to manage the custom face library |
-| Speech recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
-| Text recognition | Not supported yet | Supported. Call a server API to manage the keyword library |
+| Field | Type | Meaning |
+| ---------- | ------ | ------------------------------------------------------------ |
+| confidence | Float | Intelligent recognition score (0–100). The higher the score, the greater the suspicion |
+| suggestion | String | There are three types of intelligent recognition suggestions: `pass`, `review`, and `block`: <ul><li>pass: the degree of suspicion is not high, and approval is recommended. </li><li>review: the degree of suspicion is high, and human review is recommended </li><li>block: the degree of suspicion is very high, and blocking is recommended </li></ul> |
+| segments | Array | Suspected video segments, helping locate specific segments in the video that are suspected of violations |
 
-## <span id = "sh"></span>Video Content Recognition Template
+## <span id = "sh"></span>Intelligent Video Content Recognition Template
 
-Video content recognition integrates a number of recognition features that require fine-grained control through parameters as shown below:
+The intelligent recognition operations in an intelligent recognition task are subject to intelligent video recognition parameters, which can be presented in the form of VOD intelligent video recognition template as shown below. Such a template specifies what operations will be performed in an intelligent recognition task:
+- Performs porn information recognition on video image
+- Performs terrorism information recognition on video image
+- Performs politically sensitive information recognition on video image
+- Performs porn information recognition on phrases in speech based on ASR
+- Performs politically sensitive information recognition on phrases in speech based on ASR
+- Performs porn information recognition on text in video image based on OCR
+- Performs politically sensitive information recognition on text in video image based on OCR
 
-* Recognition type enabled: which features in content recognition are enabled.
-* Material library used: whether a public or custom library is used for face.
-* Filter score specified: at what confidence score a face recognition result will be returned.
-* Filter tag specified: within what range a face tag result will be returned.
-
-For common combinations of operations, VOD provides a [preset video content recognition template](https://intl.cloud.tencent.com/document/product/266/33932#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E8.AF.86.E5.88.AB.E6.A8.A1.E6.9D.BF). In addition, you can also create and manage custom video recognition templates by calling a server API.
+For common combinations of operations, VOD provides a [preset video content recognition template](https://intl.cloud.tencent.com/document/product/266/33932). In addition, you can also create and manage custom video content recognition templates by calling a [server API](https://intl.cloud.tencent.com/document/product/266/37568).
 
 ## Task Initiation
 
-There are three ways to initiate a video content recognition task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Task Initiation](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask) for video processing.
+There are three ways to initiate an intelligent video recognition task, namely, directly initiating through server API, directly initiating through the console, and specifying a task upon upload. For more information, please see [Video Processing Task System](https://intl.cloud.tencent.com/document/product/266/33931) for video processing.
 
-Below are instructions for initiating video content recognition tasks in these ways:
+Below are instructions for initiating intelligent video recognition tasks in these ways:
 
-* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
-* Call the server API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) to initiate a task: specify the [video content recognition template](#sh) ID in the `AiRecognitionTask` parameter in the request.
-* Initiate a task on a video through the console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33890) in the console.
-* Specify a task upon upload from server: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
-* Specify a task upon upload from client: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), and specify it as the `procedure` in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922#.E7.AD.BE.E5.90.8D.E5.8F.82.E6.95.B0).
-* Upload through console: call a [server API](https://intl.cloud.tencent.com/document/product/266/34167) to create a task flow, configure a video content recognition task in it (by specifying `MediaProcessTask.AiRecognitionTask`), upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
+* Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [intelligent video recognition template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+* Call the server API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) to initiate a task: specify the [intelligent video recognition template](#sh) ID in the `AiContentReviewTask` parameter in the request.
+* Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33892).
+* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/zh/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922).
+* Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
 
-## Getting Result
+## Result Getting
 
-After initiating a video content recognition task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the content recognition task is initiated (the fields with null value are omitted):
-
+After initiating an intelligent video recognition task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback mode after the intelligent video recognition task is initiated (the fields with null value are omitted):
 ```json
 {
     "EventType":"ProcedureStateChanged",
     "ProcedureStateChangeEvent":{
-        "TaskId":"1400155958-Procedure-2e1af2456351812be963e309cc133403t0",
+        "TaskId":"1256768367-Procedure-2e1af2456351812be963e309cc133403t0",
         "Status":"FINISH",
-        "FileId":"5285890784363430543",
-        "FileName":"Collection",
-        "FileUrl":"http://1400155958.vod2.myqcloud.com/xxx/xxx/aHjWUx5Xo1EA.mp4",
+        "FileId":"5285890784246869930",
+        "FileName":"Animal World",
+        "FileUrl":"http://1256768367.vod2.myqcloud.com/xxx/xxx/AtUCmy6gmIYA.mp4",
         "MetaData":{
-            "AudioDuration":243,
+            "AudioDuration":60,
             "AudioStreamSet":[
                 {
-                    "Bitrate":125599,
+                    "Bitrate":383854,
                     "Codec":"aac",
                     "SamplingRate":48000
                 }
             ],
-            "Bitrate":1459299,
+            "Bitrate":1021028,
             "Container":"mov,mp4,m4a,3gp,3g2,mj2",
-            "Duration":243,
-            "Height":1080,
+            "Duration":60,
+            "Height":480,
             "Rotate":0,
-            "Size":44583593,
-            "VideoDuration":243,
+            "Size":7700180,
+            "VideoDuration":60,
             "VideoStreamSet":[
                 {
-                    "Bitrate":1333700,
+                    "Bitrate":637174,
                     "Codec":"h264",
-                    "Fps":29,
-                    "Height":1080,
-                    "Width":1920
+                    "Fps":23,
+                    "Height":480,
+                    "Width":640
                 }
             ],
-            "Width":1920
+            "Width":640
         },
-        "AiRecognitionResultSet":[
+        "AiContentReviewResultSet":[
             {
-                "Type":"FaceRecognition",
-                "FaceRecognitionTask":{
+                "Type":"Porn",
+                "PornTask":{
                     "Status":"SUCCESS",
                     "ErrCode":0,
                     "Message":"",
@@ -95,54 +175,73 @@ After initiating a video content recognition task, you can wait for [result noti
                         "Definition":10
                     },
                     "Output":{
-                        "ResultSet":[
+                        "Confidence":98,
+                        "Suggestion":"block",
+                        "Label":"sexy",
+                        "SegmentSet":[
                             {
-                                "Id":183213,
-                                "Type":"Default",
-                                "Name":"John Smith",
-                                "SegmentSet":[
-                                    {
-                                        "StartTimeOffset":10,
-                                        "EndTimeOffset":12,
-                                        "Confidence":97,
-                                        "AreaCoordSet":[
-                                            830,
-                                            783,
-                                            1030,
-                                            599
-                                        ]
-                                    },
-                                    {
-                                        "StartTimeOffset":12,
-                                        "EndTimeOffset":14,
-                                        "Confidence":97,
-                                        "AreaCoordSet":[
-                                            844,
-                                            791,
-                                            1040,
-                                            614
-                                        ]
-                                    }
-                                ]
+                                "StartTimeOffset":9.5,
+                                "EndTimeOffset":14,
+                                "Confidence":98,
+                                "Suggestion":"block",
+                                "Label":"sexy",
+                                "Url":"http://xxx.vod2.myqcluod.com/xxx/xxx/xx1.jpg",
+                                "PicUrlExpireTimeStamp":1530005146
                             },
                             {
-                                "Id":236099,
-                                "Type":"Default",
-                                "Name":"Jane Smith",
-                                "SegmentSet":[
-                                    {
-                                        "StartTimeOffset":120,
-                                        "EndTimeOffset":122,
-                                        "Confidence":96,
-                                        "AreaCoordSet":[
-                                            579,
-                                            903,
-                                            812,
-                                            730
-                                        ]
-                                    }
-                                ]
+                                "StartTimeOffset":16.5,
+                                "EndTimeOffset":18,
+                                "Confidence":80,
+                                "Suggestion":"review",
+                                "Label":"sexy",
+                                "Url":"http://xxx.vod2.myqcluod.com/xxx/xxx/xx2.jpg",
+                                "PicUrlExpireTimeStamp":1530005146
+                            },
+                            {
+                                "StartTimeOffset":41,
+                                "EndTimeOffset":49,
+                                "Confidence":97,
+                                "Suggestion":"block",
+                                "Label":"sexy",
+                                "Url":"http://xxx.vod2.myqcluod.com/xxx/xxx/xx3.jpg",
+                                "PicUrlExpireTimeStamp":1530005146
                             }
+                        ]
+                    }
+                }
+            },
+            {
+                "Type":"Terrorism",
+                "TerrorismTask":{
+                    "Status":"SUCCESS",
+                    "ErrCode":0,
+                    "Message":"",
+                    "Input":{
+                        "Definition":10
+                    },
+                    "Output":{
+                        "Confidence":0,
+                        "Suggestion":"pass",
+                        "SegmentSet":[
+
+                        ]
+                    }
+                }
+            },
+            {
+                "Type":"Political",
+                "PoliticalTask":{
+                    "Status":"SUCCESS",
+                    "ErrCode":0,
+                    "Message":"",
+                    "Input":{
+                        "Definition":10
+                    },
+                    "Output":{
+                        "Confidence":0,
+                        "Suggestion":"pass",
+                        "SegmentSet":[
+
                         ]
                     }
                 }
@@ -152,9 +251,12 @@ After initiating a video content recognition task, you can wait for [result noti
         "TasksNotifyMode":""
     }
 }
-
 ```
 
-In the callback result, `ProcedureStateChangeEvent.AiRecognitionResultSet` contains the recognition result in `Type` of `FaceRecognition`, which represents face recognition.
+In the callback result, `ProcedureStateChangeEvent.AiContentReviewResultSet` contains three types of intelligent recognition results in `Type` of `Porn`, `Terrorism`, and `Political`, which represent the detection of porn, terrorism, and politically sensitive information in video image, respectively.
 
-The result in `Type` of `FaceRecognition` shows that `Output.ResultSet` contains two recognized figures `John Smith` and `Jane Smith`. `SegmentSet` indicates the time period (determined by `StartTimeOffset` and `EndTimeOffset`) during which a face appears in the video and the coordinates (determined by `AreaCoordSet`) in the video image.
+* The result in `Type` of `Porn` shows that `Output.Suggestion` is `block`, that is, the possibility of porn information presence is high and blocking is recommended, the confidence of porn information is 98, and the reason is `sexy` (sexiness).
+* The result `Output.SegmentSet` in `Type` of `Porn` lists three video segments suspected of containing porn information. The start time and end time of each segment are marked by `StartTimeOffset` and `EndTimeOffset`.
+* The result in `Type` of `Terrorism` and `Political` shows that the video is not suspected of containing terrorism and politically sensitive information.
+
+

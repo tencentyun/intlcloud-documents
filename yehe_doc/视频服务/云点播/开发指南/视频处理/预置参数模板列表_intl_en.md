@@ -6,8 +6,8 @@ Preset parameter templates for video conversion:
 - Preset transcoding templates
 - Preset remuxing templates
 - Preset animated image generating templates
-- Preset time point screencapturing templates
-- Preset sampled screencapturing templates
+- Preset time point screencapture templates
+- Preset sampled screencapture templates
 - Preset image sprite generating templates
 - Preset adaptive bitrate streaming templates
 
@@ -17,7 +17,7 @@ Preset parameter templates for video conversion:
 
 <table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Specification</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
 <tr><th colspan="1">Resolution</th><th colspan="1">Bitrate</th><th colspan="1">FPS</th><th colspan="1">Codec</th><th colspan="1">Bitrate</th><th colspan="1">SampleRate</th><th colspan="1">SoundSystem</th><th colspan="1">Codec</th></tr>
-<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 kbps</td ><td colspan="1" rowspan="12">44100Hz</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
+<tr><td colspan="1" rowspan="2">LD</td><td colspan="1">100010</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 360</td><td colspan="1" rowspan="2">400 Kbps</td><td colspan="1" rowspan="12">25</td><td colspan="1" rowspan="12">H.264</td><td colspan="1" rowspan="4">64 Kbps</td ><td colspan="1" rowspan="12">44,100 Hz</td><td colspan="1" rowspan="12">Stereo</td><td colspan="1" rowspan="12">AAC</td></tr>
 <tr><td colspan="1">100210</td><td colspan="1">HLS</td></tr>
 <tr><td colspan="1" rowspan="2">SD</td><td colspan="1">100020</td><td colspan="1">MP4</td><td colspan="1" rowspan="2">Proportionally scaled * 540</td><td colspan="1" rowspan="2">1,000 Kbps</td></tr>
 <tr><td colspan="1">100220</td><td colspan="1">HLS</td></tr>
@@ -134,7 +134,7 @@ Preset parameter templates for video conversion:
 
 <table class="table auto-table"><tbody><tr><th colspan="1" rowspan="2">Specification</th><th colspan="1" rowspan="2">Template ID</th><th colspan="1" rowspan="2">Format</th><th colspan="4">Video Parameters</th><th colspan="4">Audio Parameters</th></tr>
 <tr><th colspan="1">Resolution</th><th colspan="1">Maximum Bitrate</th><th colspan="1">FPS</th><th colspan="1">Codec</th><th colspan="1">Bitrate</th><th colspan="1">SampleRate</th><th colspan="1">SoundSystem</th><th colspan="1">Codec</th></tr>
-<tr><td colspan="1">Same as source</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">Unlimited</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">44100Hz</td><td colspan="1" rowspan="5">Stereo</td><td colspan="1" rowspan="5">AAC</td></tr></tr>
+<tr><td colspan="1">Same as source</td><td colspan="1" rowspan="">100800</td><td colspan="1" rowspan="5">MP4</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">Unlimited</td><td colspan="1" rowspan="5">25</td><td colspan="1" rowspan="5">H.264</td><td colspan="1">Same as source</td><td colspan="1" rowspan="5">44,100 Hz</td><td colspan="1" rowspan="5">Stereo</td><td colspan="1" rowspan="5">AAC</td></tr></tr>
 <tr><td colspan="1">LD</td><td colspan="1">100810</td><td colspan="1">Proportionally scaled * 360</td><td colspan="1" rowspan="2">64 Kbps</td></tr>
 <tr><td colspan="1">SD</td><td colspan="1">100820</td><td colspan="1">Proportionally scaled * 540</td></tr>
 <tr><td colspan="1">HD</td><td colspan="1">100830</td><td colspan="1" rowspan="">Proportionally scaled * 720</td><td colspan="1" rowspan="2">128 Kbps</td></tr>
@@ -157,25 +157,25 @@ Preset parameter templates for video conversion:
 | 20001   | WEBP               | Same as source                 | 2           |
 
 <span id="screenshot01"></span>
-### Preset time point screencapturing templates
+### Preset time point screencapture templates
 
 | Template ID | Format | Width | Height | FillType |
 | ------- | ------------------ | ------------- | -------------- | -------------------- |
 | 10      | JPG                | Same as source          | Same as source           | Stretch   |
 
 <span id="screenshot02"></span>
-### Preset sampled screencapturing templates
+### Preset sampled screencapture templates
 
 | Template ID | Format | Width | Height | SampleType | Interval | FillType |
 | ------- | ------------------ | ------------- | -------------- | ---------------------- | -------------------- | -------------------- |
-| 10      | JPG                | Same as source | Same as source     | By percent  | 10%   | Stretch     |
+| 10      | JPG    | Same as source   | Same as source     | By percent  | 10%   | Stretch     |
 
 <span id="screenshot03"></span>
 ### Preset image sprite generating templates
 
 | Template ID | Format | Width | Height | Rows | Columns | SampleType | Interval |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
-| 10      | JPG                | 142               | 80                 | 10               | 10                  | By time                | 10s                  |
+| 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
 
 ### Preset adaptive bitrate streaming templates
 #### Template information
@@ -186,20 +186,20 @@ Preset parameter templates for video conversion:
   <th>PackageType</td>
   <th>EncryptionType</td>
   <th>SubstreamInfo</td>
-  <th >Disable Higher Resolution Filter</td>
+  <th >DisableHigherResolution</td>
  </tr>
  <tr>
   <td>10</td>
   <td>HLS</td>
-  <td>Not encrypted</td>
-  <td >Contain a substreams of 6 specifications ranging from "SD" to "4K"</td>
+  <td >Not encrypted</td>
+  <td >Contains substreams of 6 specifications from "SD" to "4K"</td>
   <td>Yes</td>
  </tr>
  <tr>
   <td>12</td>
   <td>HLS</td>
   <td>SimpleAES</td>
-  <td >Contain substreams of 6 specifications from "SD" to "4K"</td>
+  <td >Contains substreams of 6 specifications from "SD" to "4K"</td>
   <td>Yes</td>
  </tr>
 </table>
@@ -215,8 +215,8 @@ Preset parameter templates for video conversion:
  <tr>
   <th>Resolution</th>
   <th>Bitrate</th>
-  <th>FPS</th>
-  <th>Codec</th>
+  <th >FPS</th>
+  <th >Codec</th>
   <th>Bitrate</th>
   <th>SampleRate</th>
   <th>SoundSystem</th>
@@ -256,7 +256,7 @@ Preset parameter templates for video conversion:
   <td>AAC</td>
  </tr>
  <tr>
-  <td >FHD</td>
+  <td>FHD</td>
   <td>Proportionally scaled * 1080</td>
   <td>1,024 Kbps</td>
   <td>24</td>
@@ -295,11 +295,11 @@ Preset parameter templates for video conversion:
 
 Preset parameter templates for video AI are divided into the following types:
 
-* Preset video content audit templates
+* Preset intelligent video content recognition templates
 * Preset video content analysis templates
 * Preset video content recognition templates
 
-### Preset video content audit templates
+### Preset intelligent video content recognition templates
 
 <span id="verify"></span>
 <table>
@@ -319,25 +319,25 @@ Preset parameter templates for video AI are divided into the following types:
     </tr>
  <tr>
         <th>
-            Porn detection
+            Porn information (Porn)
         </th>
         <th>
-            Terrorist content detection
+            Terrorism information (Terrorism)
         </th>
         <th>
-            Political content detection
+            Politically sensitive information (Political)
         </th>
         <th>
-            Porn detection
+            Porn information (Asr.Porn)
         </th>
         <th>
-            Political content detection
+            Politically sensitive information (Asr.Political)
         </th>
         <th>
-            Porn detection
+            Porn information (Ocr.Porn)
         </th>
         <th>
-            Political content detection
+            Politically sensitive information (Ocr.Political)
         </th>
     </tr>
     <tr>
@@ -403,7 +403,7 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Preset video content recognition templates
 
-| Template ID | Face Recognition | Full Text Recognition | Text Keyword Recognition | Full Speech Recognition | Speech Keyword Recognition | 
+| Template ID | Face Recognition (Face) | Full Text Recognition (OcrFullText) | Text Keyword Recognition (OcrWords) | Full Speech Recognition (AsrFullText) | Speech Keyword Recognition (AsrWords) | 
 | -- | -- | -- | -- | -- | -- |
 | 10 | Yes (default figure library is used) | No | No | No | No |
 
@@ -428,7 +428,7 @@ Preset parameter templates for video AI are divided into the following types:
             Format
         </th>
         <th colspan=4>    
-            Video parameters
+            Video Parameters
         </th>
         <th colspan=1>    
             Audio Parameters
@@ -744,7 +744,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            1280 * Proportionally scaled
+            1280 * proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -790,7 +790,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            1280 * Proportionally scaled
+            1280 * proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -836,7 +836,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            1280 * Proportionally scaled
+            1280 * proportionally scaled
         </td>
         <td>
             1,024 Kbps
@@ -885,7 +885,7 @@ Preset parameter templates for video AI are divided into the following types:
             MP4
         </td>
         <td>
-            1920 * Proportionally scaled
+            1920 * proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -931,7 +931,7 @@ Preset parameter templates for video AI are divided into the following types:
             HLS
         </td>
         <td>
-            1920 * Proportionally scaled
+            1920 * proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -977,7 +977,7 @@ Preset parameter templates for video AI are divided into the following types:
             FLV
         </td>
         <td>
-            1920 * Proportionally scaled
+            1920 * proportionally scaled
         </td>
         <td>
             2,500 Kbps
@@ -1304,7 +1304,7 @@ Parameters that are not listed in the above table are the same, as shown below:
 <table>
     <tr>
         <th style="width:18%">
-            Classification               
+            Category               
         </th>
         <th style="width:22%">
             Parameter
@@ -1329,7 +1329,7 @@ Parameters that are not listed in the above table are the same, as shown below:
     </tr>
     <tr>
         <td>
-            Group of Pictures (GOP) length
+            Group of pictures (GOP) length
         </td>
         <td>
             240 frames
@@ -1337,7 +1337,7 @@ Parameters that are not listed in the above table are the same, as shown below:
     </tr>
     <tr>
         <td>
-            Color Space
+            Color space
         </td>
         <td>
             YUV420p
@@ -1353,10 +1353,10 @@ Parameters that are not listed in the above table are the same, as shown below:
     </tr>
     <tr>
         <td rowspan=3>
-            Audio Parameters
+            Audio parameters
         </td>
         <td>
-            Sampling Rate
+            SampleRate
         </td>
         <td>
             44,100 Hz
@@ -1372,11 +1372,10 @@ Parameters that are not listed in the above table are the same, as shown below:
     </tr>
     <tr>
         <td>
-            Sound System
+            SoundSystem
         </td>
         <td>
             Stereo
         </td>
     </tr>
 </table>
-
