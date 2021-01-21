@@ -10,7 +10,7 @@
 ### 架构和流程
 
 系统主要涉及四个组成部分：浏览器、API 网关、云函数和云点播，其中 API 网关和云函数即是本 Demo 的部署对象，如下图所示：
-<img src="https://main.qcloudimg.com/raw/3a7b8d6f3560cc5b4f79d33f58d06c71.png" width="500">
+<img src="https://main.qcloudimg.com/raw/a5243b83531f4a2d98a63970d1f7a1b3.png" width="500">
 
 主要业务流程为：
 
@@ -58,7 +58,6 @@ Web 上传 Demo 部署在 SCF 上，并由 API 网关提供服务入口。为了
 Web 上传 Demo 服务的部署和运行过程需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）和 APPID。
 - 如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
 - 在控制台 [账号信息](https://console.cloud.tencent.com/developer) 页面可以查看 APPID，如下图所示：
-![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
 
 ### 步骤4：部署业务后台和 Web 页面
 
@@ -95,17 +94,13 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 ### 步骤5：体验 Web 上传 Demo
 
 1. 在浏览器打开 [步骤4](#p4) 中复制的地址，即可开始体验 Web 上传 Demo。页面如下图所示：
-<img src="https://main.qcloudimg.com/raw/fc377fc1c852cb1145686feeb40d7f9c.png" width="750">
 2. 在该页面进行视频上传操作：
 	1. 选择一个本地视频文件（推荐选择 MP4 文件）。
 	2. 选择一张本地封面图片（可选，使用 JPG 或者 PNG 格式）。
 	3. 填写视频名称（可选）。
 	4. 单击【开始上传】即可上传视频。
-<img src="https://main.qcloudimg.com/raw/57969d70fbe061d6135cbe38e3b9aeb9.png" width="700">
 3. 上传完成后，页面下方会展示视频和封面的点播媒体 ID（即 fileId）和 URL 等信息。如下图所示：
-<img src="https://main.qcloudimg.com/raw/502e1cd4eeeeca33d63680d40e4d614e.png" width="750"></span>
 您可以在 [云点播控制台](https://console.cloud.tencent.com/vod/media) 上查看刚上传的视频。如下图所示：
-<img src="https://main.qcloudimg.com/raw/819f7638028b6e51e36646da0f396b6c.png" width="750">
 
 >?您可根据页面提示，对上传页面的其它功能进行体验。
 
@@ -123,14 +118,12 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 #### 上传页面<span id="p6"></span>
 
 您可以访问 [SCF 服务列表](https://console.cloud.tencent.com/scf/list) 来查看上传页面服务的详细信息：
-<img src="https://main.qcloudimg.com/raw/8480a9211c7d7cecebd105bb211858db.png" width="750">
 
 >?
 >- Demo 使用的两个 SCF 部署在广州地域，命名空间为 vod_demo。
 >- 控制台上需要选择对应地域和命名空间才能看到部署好的云函数。
 
 单击函数名，在左侧选择【触发管理】，右侧【访问路径】即是上传页面的 URL。单击【API服务名】即可跳转到对应的 API 网关页面。如下图所示：
-<img src="https://main.qcloudimg.com/raw/eaf30a8f73e3f9d4247690ee1830b24c.png" width="750">
 测试该服务的方法为：在浏览器上直接访问页面 URL，正常情况下能看到上传页面。
 
 #### 上传签名派发
@@ -138,7 +131,6 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 您可以访问 [SCF 服务列表](https://console.cloud.tencent.com/scf/list) 来查看上传签名派发服务的详细信息（查看方法同 [上传页面](#p6)）。
 
 单击函数名，在左侧选择【触发管理】，右侧【访问路径】即是该服务的 URL。单击【API服务名】即可跳转到对应的 API 网关页面。如下图所示：
-<img src="https://main.qcloudimg.com/raw/2507cd4953a24bbf670af4e3659eeed5.png" width="750">
 测试该服务的方法为：选择手动发送 HTTP 请求的方式，在一台有外网的 Linux 或者 Mac 上执行以下命令（请根据实际情况修改服务 URL）：
 ```
 curl -d '' https://service-xxxxxxxx-125xxxxxxx.gz.apigw.tencentcs.com/release/ugc_upload_sign
