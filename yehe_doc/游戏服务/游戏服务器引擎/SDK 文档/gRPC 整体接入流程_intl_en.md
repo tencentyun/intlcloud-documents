@@ -14,9 +14,9 @@
 6. Connect the client to the gRPC server of GSE.
 
 >?
-- For the specific call logic for C++, please see [gRPC C++ Tutorial](https://intl.cloud.tencent.com/document/product/1055/37408).
-- For the specific call logic for C#, please see [gRPC C# Tutorial](https://intl.cloud.tencent.com/document/product/1055/37409).
-- For the specific call logic for Go, please see [gRPC Go Tutorial](https://intl.cloud.tencent.com/document/product/1055/37410).
-- For the specific call logic for Java, please see [gRPC Java Tutorial](https://intl.cloud.tencent.com/document/product/1055/37411).
-- For the specific call logic for Lua, please see [gRPC Lua Tutorial](https://intl.cloud.tencent.com/document/product/1055/37412).
-- For the specific call logic for Node.js, please see [gRPC Node.js Tutorial](https://intl.cloud.tencent.com/document/product/1055/37413).
+>- For the specific call logic for C++, please see [gRPC C++ Tutorial](https://intl.cloud.tencent.com/document/product/1055/37408).
+>- For the specific call logic for C#, please see [gRPC C# Tutorial](https://intl.cloud.tencent.com/document/product/1055/37409).
+>- For the specific call logic for Go, please see [gRPC Go Tutorial](https://intl.cloud.tencent.com/document/product/1055/37410).
+>- For the specific call logic for Java, please see [gRPC Java Tutorial](https://intl.cloud.tencent.com/document/product/1055/37411).
+>- For the specific call logic for Lua, please see [gRPC Lua Tutorial](https://intl.cloud.tencent.com/document/product/1055/37412).
+>- For the specific call logic for Node.js, please see [gRPC Node.js Tutorial](https://intl.cloud.tencent.com/document/product/1055/37413).
