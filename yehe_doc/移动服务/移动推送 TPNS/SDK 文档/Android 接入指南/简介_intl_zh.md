@@ -40,29 +40,29 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 ### 设备注册流程
 
 下图为设备注册相关流程，具体接口方法请查看 [启动与注册](https://intl.cloud.tencent.com/document/product/1024/30715)。
-![](https://main.qcloudimg.com/raw/02bc388cbd8cc2f9eef1d8cf5de9e4db/register_android.png)
+![](https://main.qcloudimg.com/raw/e795ce8ea14a01e064ba69a98cf43c5a.png)
 
 
 
 ### 设备反注册流程
 
 下图为设备反注册相关流程，具体接口方法请查看 [反注册](https://intl.cloud.tencent.com/document/product/1024/30715)。
-![](https://main.qcloudimg.com/raw/1eba29aa7de5bafa8281419ea770a334/unregister_android2.png)
+![](https://main.qcloudimg.com/raw/55ffc2d38b879f247ec7980d4ee44ef1.png)
 
 
 ### 账号相关流程
 
 下图为账号相关流程，具体接口方法请查看 [账号管理](https://intl.cloud.tencent.com/document/product/1024/30715)。
-![](https://main.qcloudimg.com/raw/1bc26865f1e65f79fc5b95b6d9bd9314/account3.png)
+![](https://main.qcloudimg.com/raw/3034b127932ecaa57ac1bb3adb91a9ec.png)
 
 
 
 ### 标签相关流程
 
 下图为标签相关流程，具体接口方法请查看 [标签管理](https://intl.cloud.tencent.com/document/product/1024/30715)。
-![](https://main.qcloudimg.com/raw/c757e0102e834dbbe85ac68c7442e850/tag.png)
+![](https://main.qcloudimg.com/raw/1dfe940d69878cc1c22a1466b8954d23.png)
 
 ### 用户属性相关流程
 
 下图为用户属性相关流程，具体接口方法请查看 [用户属性管理](https://intl.cloud.tencent.com/document/product/1024/30715)。
-![](https://main.qcloudimg.com/raw/06dc6605dcc75b046f649240b91a9fc4/attribute.png)
+![](https://main.qcloudimg.com/raw/8941cba3ed40b4ff02d957e6c2332d64.png)
