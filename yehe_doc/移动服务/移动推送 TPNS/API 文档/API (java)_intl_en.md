@@ -7,9 +7,9 @@ Import Maven dependencies:
 
 ```
 <dependency>
-            <groupId>com.github.xingePush</groupId>
-            <artifactId>xinge</artifactId>
-            <version>1.2.4</version>
+				<groupId>com.github.xingePush</groupId>
+				<artifactId>xinge</artifactId>
+				<version>1.2.4</version>
 </dependency>
 ```
 
@@ -19,7 +19,7 @@ This class provides APIs for interaction with the TPNS server, which is construc
 
 | Parameter Name | Type | Required | Default Value | Description |
 | --- | --- | --- | --- | --- |
-| appId | Integer | Yes | Empty | Push target `AccessID`, which can be obtained in the [Product Management](https://console.cloud.tencent.com/tpns) page in the console |
+| appId | String | Yes | Empty | Push target `AccessID`, which can be obtained in the [Product Management](https://console.cloud.tencent.com/tpns) page in the console |
 | secretKey | String | Yes | Empty | Push key |
 | proxy | Proxy | No | Proxy.NO\_PROXY | This parameter can be set if a proxy needs to be configured |
 | connectTimeOut | Integer | No | 10s | Connection timeout period |
