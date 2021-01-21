@@ -4,7 +4,7 @@ This document describes how to create an asset package, which will be uploaded t
 
 ## Prerequisites
 
-You have completed the [GSE Application Form](https://cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
+You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
 
 ## Directions
 
