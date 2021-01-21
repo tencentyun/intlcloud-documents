@@ -4,7 +4,7 @@ You can create a recording template in the following two methods:
 - Create a recording template with APIs. For specific parameters and samples, please see [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845).
 
 ## Notes
-- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to account arrears. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
+- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance so as to avoid service suspension due to account arrears. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
 - After enabling the recording feature, please make sure that your VOD service is in normal status; if it has not been activated or has been suspended due to account arrears, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 - During the live streaming, you can get a recording file in about 5 minutes after the recording process ends. For example, if you start recording a live stream at 12:00, you can get the corresponding clip for 12:00 to 12:30 at around 12:35.
 - Subject to the audio and video file formats (FLV/MP4/HLS), the video encoding format of H.264 and audio encoding format of AAC are supported.
