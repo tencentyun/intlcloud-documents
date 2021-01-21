@@ -151,7 +151,7 @@ All game session and player session APIs used in [game server tests](#test) and 
 - [CreateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37139)
 - [DescribeGameServerSessions](https://intl.cloud.tencent.com/document/product/1055/37136)
 - [JoinGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37132)
-- [JoinGameServerSessionBatch](https://cloud.tencent.com/document/api/1165/42061)
+- [JoinGameServerSessionBatch](https://intl.cloud.tencent.com/document/product/1055/39130)
 - [DescribePlayerSessions](https://intl.cloud.tencent.com/document/product/1055/37135)
 
 The GSE Local Command Prompt only displays the logs of the `CreateGameServerSession` API calls. As shown in the log message, GSE Local prompts the time when your game server launches a game session (using the `onStartGameServerSession` callback). After your game server uses the callback, GSE Local will obtain the ActivateGameServerSession response. You can `use` curl to view the calling of other APIs.
