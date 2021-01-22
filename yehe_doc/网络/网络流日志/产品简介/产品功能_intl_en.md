@@ -34,7 +34,7 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
 | start | Start time of the capture window in Unix seconds. |
 | end | End time of the capture window in Unix seconds. |
 |action | Traffic-related action. Valid values: <br/>ACCEPT: the traffic allowed by the security group or network ACL. <br/>REJECT: the traffic rejected by the security group or network ACL. |
-| log-status | Logging status of the flow log. <br/>OK: Data is logging normally to the specified destination. <br/>NODATA: There was no network traffic passing through the ENI in the capture window. <br/>SKIPDATA: Some flow log records were skipped in the capture window. This may be caused by an internal capacity constraint or an internal error. |
+| log-status | Logging status of the flow log.<br/>OK: data is logging normally to the specified destination.<br/>NODATA: there was no network flow passing through the ENI in the capture window.<br/>SKIPDATA: some flow log records were skipped in the capture window. This may be caused by an internal capacity constraint or an internal error. |
 
 
 ### Samples
@@ -63,8 +63,8 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
   ```
 
 - Flow log record of security group and network ACL rules:
-
-  Since security group is stateful, it allows response to the accepted traffic; as network ACL is stateless, therefore, the response to the accepted traffic should follow the network ACL rules.
+ - The security group is stateful; therefore, it allows response to the accepted traffic.
+ - The network ACL is stateless; therefore, the response to the accepted traffic should follow the network ACL rules.
 
   For example, if you ping your instance (private IP of the network interface: 172.31.16.139) from your home computer (IP: 203.0.113.12), and the security group's inbound rule allows the ICMP traffic while its outbound rule does not, your instance will respond to the ping request as the security group is stateful.
   If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping request will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:

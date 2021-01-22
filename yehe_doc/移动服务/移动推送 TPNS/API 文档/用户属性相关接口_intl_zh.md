@@ -17,15 +17,16 @@
 | 参数名称 | 是否必填 | 类型    | 描述                                                         |
 | -------- | -------- | ------- | ------------------------------------------------------------ |
 | cmd      | 是       | Integer | 操作类型：<li>1：新增属性<li>2：更新属性<li>3：删除属性<li>4：删除所有属性<li>5：查询属性 |
-| accessId | 是       | Integer | 应用 ID，可以在 [产品管理](https://console.cloud.tencent.com/tpns) 页面获取。 |
-| token    | 是       | String  | TPNS 为设备分配的唯一 ID。<li> [获取 Token交互建议（Android）](https://intl.cloud.tencent.com/document/product/1024/30713)<li> [获取 Token 交互建议（iOS）](https://intl.cloud.tencent.com/document/product/1024/30726) |
-| attributeInfo   | 当 cmd=1，2，3时必填   | Map |属性详情： <li> value 为 attributeMap，类型为 Map。<li>  key 为属性和属性值。 **注意：**需要已经在【[控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【用户属性管理】中创建属性，否则会被过滤掉，并返回 invalidAttribute。
+| accessId | 是       | Integer | 应用 ID，可以在 [产品管理](https://console.cloud.tencent.com/tpns) 页面获取 |
+| token    | 是       | String  | TPNS 为设备分配的唯一 ID<li> [获取 Token交互建议（Android）](https://intl.cloud.tencent.com/document/product/1024/30713)<li> [获取 Token 交互建议（iOS）](https://intl.cloud.tencent.com/document/product/1024/30726) |
+| attributeInfo   | 当 cmd=1，2，3时必填   | attributeMap |属性详情，参考下方描述
+|attributeMap|当 cmd=1，2，3时必填|Map|属性详情： <li> key 为 属性名，长度限制为50字节<br>**注意：**需要已经在【[控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【用户属性管理】中创建属性，否则会被过滤掉，并返回 invalidAttribute。<li>  value 为属性值，长度限制为50字节 |
 
 <span id="attributeInfo"></span>
 
 ### 返回参数
 
-| 参数名称         | 是否必定返回  | 类型    | 描述                                                         |
+| 参数名称         | 是否必定返回   | 类型    | 描述                                                         |
 | ---------------- | ---------- | ------- | ------------------------------------------------------------ |
 | retCode          | 是         | Integer | 错误码，详细参照 [错误码对照表](https://intl.cloud.tencent.com/document/product/1024/33763) 。 |
 | errMsg           | 是         | String  | 请求出错时的错误信息。                                       |
@@ -38,12 +39,11 @@
 
 #### 请求示例
 为单个 token 增加3个属性。
-
 ```
 {
     "cmd": 1,
-    "accessId": 1500004469,
-    "token": "04cac74a714f61bf089987a986363d88****",
+    "accessId": 1500004469, 
+    "token": "04cac74a714f61bf089987a986363d88****",   
     "attributeInfo": {
          "attributeMap": {
             "age": "100",
@@ -63,7 +63,7 @@
     "retCode": 0,
     "errMsg": "success",
     "invalidAttribute": [
-       "high"   // 控制台上没有对应的 key 值
+        "high"   // 控制台上没有对应的 key 值
     ]
 }
 ```
@@ -172,3 +172,4 @@
     }
 }
 ```
+
