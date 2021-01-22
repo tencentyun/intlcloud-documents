@@ -78,7 +78,7 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Nanjing Zone 3<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
-			<td rowspan="5">North China (Beijing) <br>ap-beijing</td>
+			<td rowspan="7">North China (Beijing) <br>ap-beijing</td>
 			<td>Beijing Zone 1<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -92,6 +92,12 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 	</tr>
 	<tr>
 			<td>Beijing Zone 5<br>ap-beijing-5</td>		
+	</tr>
+		<tr>
+			<td>Beijing Zone 6<br>ap-beijing-6</td>
+	</tr>
+		<tr>
+			<td>Beijing Zone 7<br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
