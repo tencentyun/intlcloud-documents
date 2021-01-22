@@ -33,8 +33,8 @@
 ## 快速部署 Web 上传 Demo
 
 Web 上传 Demo 部署在 SCF 上，并由 API 网关提供服务入口。为了方便开发者搭建服务，我们提供了快捷部署脚本，使用方法如下。
-
-### 步骤1：准备腾讯云 CVM<span id="p1"></span>
+<span id="p1"></span>
+### 步骤1：准备腾讯云 CVM
 
 部署脚本需要运行在一台腾讯云 CVM 上，要求如下：
 
@@ -52,8 +52,8 @@ Web 上传 Demo 部署在 SCF 上，并由 API 网关提供服务入口。为了
 ### 步骤2：开通云点播
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-
-### 步骤3：获取 API 密钥和 APPID<span id="p3"></span>
+<span id="p3"></span>
+### 步骤3：获取 API 密钥和 APPID
 
 Web 上传 Demo 服务的部署和运行过程需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）和 APPID。
 - 如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
@@ -114,8 +114,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 | ------------ | --------------- | --------- | --------- |
 | 上传页面     | web_upload_html | HTTP GET  | HTML 页面 |
 | 上传签名派发 | ugc_upload_sign | HTTP POST | 上传签名  |
-
-#### 上传页面<span id="p6"></span>
+<span id="p6"></span>
+#### 上传页面
 
 您可以访问 [SCF 服务列表](https://console.cloud.tencent.com/scf/list) 来查看上传页面服务的详细信息：
 
