@@ -5,7 +5,7 @@
  - Connection name: it can contain up to 30 characters.
  - Acceleration region: the region where the client is located or the one closest to the client.
  - Origin region: the region where the destination server is located or the one closest to the destination server.
- - Bandwidth cap: maximum bandwidth for connection acceleration, which is 1000 MB (some connections have a maximum of 100 MB).
+ - Bandwidth cap: maximum bandwidth for connection acceleration, which is 1000 Mbps (some connections have a maximum of 100 Mbps).
  - Maximum concurrent connections: maximum number of concurrent connections supported by a connection, which is 1 million (some connections have a maximum of 20,000).
 ![](https://main.qcloudimg.com/raw/d30c08d1cf9dedb12ed805bf731e073f.png)
 3. Click **OK**.
