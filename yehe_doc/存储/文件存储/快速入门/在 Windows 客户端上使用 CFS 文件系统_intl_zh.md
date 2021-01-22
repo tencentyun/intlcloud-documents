@@ -93,7 +93,6 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
   a. 打开 "映射网络驱动器"
   登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
   ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
-  ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
   b. 输入访问路径
   在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 NFS 文件系统中看到的挂载目录）。
   ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
