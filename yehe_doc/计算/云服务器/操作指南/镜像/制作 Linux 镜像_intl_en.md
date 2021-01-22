@@ -1,39 +1,39 @@
 ## Overview
 
-This document describes how to create a Linux image.
+This document describes how to create a system disk image of your local Linux server or Linux server deployed on other cloud platforms. 
 
 ## Directions
 
 ### Preparations
 
-Before creating and exporting a system disk image, complete the following checks.
+Before preparing and exporting a system disk image, complete the following checks.
 >? If you need to prepare and export a data disk image, skip this operation.
 >
 
-#### Checking the partitioning and start mode of the operating system
+#### Checking the partitioning and start mode of the OS
 1. Run the following command to check whether the OS partition is a GPT partition.
 ```
 sudo parted -l /dev/sda | grep 'Partition Table'
 ```
- - If the returned result is msdos, the partition is an MBR partition. In this case, go to the next step.
- - If the returned result is gpt, the partition is a GPT partition. Currently, service migration does not support GPT partitions. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-2. Run the following command to check whether the OS start mode is EFI.
+ - If the returned result is `msdos`, the MBR partition is used. In this case, proceed to the next step.
+ - If the returned result is `gpt`, the GPT partition is used, which is currently unavailable for the service migration. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+2. Run the following command to check whether the OS starts in EFI mode.
 ```
 sudo ls /sys/firmware/efi
 ```
  - If the EFI file exists, the operating system starts in EFI mode. In this case, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
- - If the EFI file does not exist, proceed with the next step.
+ - If no file exists, proceed to the next step.
 
 #### Checking system-critical files
-The system-critical files to be checked include but are not limited to:
->? Follow the standards of relevant distributions to ensure that the paths and permissions of the system-critical files are correct and the files can be read and written normally.
+Check system-critical files including but not limited to the following:
+>? Follow the distribution standards to ensure that the paths and permissions of the system-critical files are correct and the files can be read and written normally.
 >
- - /etc/grub2.cfg: in the kernel parameter, uuid is recommended for mounting root. Other methods (such as root=/dev/sda) may cause a failure in starting the system.
- - /etc/fstab: do not mount other disks. After the migration, the system may not be started due to disk missing.
- - /etc/shadow: it has appropriate permissions and can be read and written.
+ - /etc/grub2.cfg: it’s recommended to use `uuid` in the `kernel` parameter for mounting root. Other methods (such as `root=/dev/sda`) may cause a system startup failure.
+ - /etc/fstab: no other disks are mounted. Otherwise, these disks may be lost and cause the system startup failure after migration.
+ - /etc/shadow: granted with the read-write permissions.
 
-#### Unmounting the software
-Unmount the drivers and software (including VMWare tools, Xen tools, Virtualbox GuestAdditions and other software that comes with underlying drivers) that cause conflicts.
+#### Uninstalling software
+Uninstall the conflicting drivers and software programs (including VMware tools, Xen tools, Virtualbox GuestAdditions, and other software that comes with underlying drivers).
 
 #### Checking the virtio driver
 For more information, see [Checking Virtio Drivers in Linux](https://intl.cloud.tencent.com/document/product/213/9929).
@@ -42,10 +42,10 @@ For more information, see [Checking Virtio Drivers in Linux](https://intl.cloud.
 For more information, see [Installing Cloud-Init on Linux](https://intl.cloud.tencent.com/document/product/213/12587).
 
 #### Checking other hardware configurations
-After the migration to the cloud, changes in the hardware include but are not limited to:
+After the migration to the cloud, hardware changes include but are not limited to:
  - The graphics card changes to Cirrus VGA.
  - The disk changes to Virtio Disk. The device name is vda or vdb.
- - ENI changes to Virtio Nic. By default, only eth0 is available.
+ - The ENI changes to Virtio Nic. By default, only eth0 is available.
 
 ### Querying partitions and their sizes
 Run the following command to query the current OS partition format and determine the partitions to be copied and their sizes.
@@ -87,30 +87,30 @@ configfs on /sys/kernel/config type configfs (rw,relatime)
 tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=817176k,mode=700,uid=1000,gid=100)
 gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=100)
 ```
-From the result, you can see the root partition resides in `/dev/sda1`, no independent partitions reside in `/boot` or `/home`, sda1 contains the boot partition, and mbr is missing. Therefore, we only need to copy the entire sda.
->! The exported image should contain at least the root partition and mbr. If the exported image lacks mbr, it cannot be started.
-> In the current operating system, if `/boot` and `/home` are independent partitions, the exported image also needs to include both independent partitions.
+According to the result, the root partition resides in `/dev/sda1`. No independent partitions reside in `/boot` or `/home`. `sda1` contains the boot partition, and `mbr` is missing. Therefore, we only need to copy the entire `sda`.
+>! The exported image should contain at least the root partition and mbr. If mbr is missing, the operating system cannot be started.
+> If `/boot` and `/home` are independent partitions in the current operating system, the exported image should also contain them.
 > 
 
 ### Exporting an image
-You can use either of the following method to export an image.
-- [Use tools](#Useplatform)
-- [Run commands](#ExportImageForUsingCommand)
+Choose the appropriate image export method as needed.
+- [Using a platform tool to export an image](#Useplatform)
+- [Using commands to export an image](#ExportImageForUsingCommand)
 
 <span id="Useplatform"></span>
-#### Exporting an image by using a platform tool
-For more information on how to use image export tools including VMWare vCenter Convert, Citrix XenConvert and other virtualization platforms, see the documentation for the respective platform.
->? Tencent Cloud Service Migration supports images in qcow2, vhd, raw, and vmdk formats.
+#### Using a platform tool to export an image
+For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
+>? Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.
 >
 
 <span id="ExportImageForUsingCommand"></span>
-#### Exporting an image by running commands
->! Manual export with commands poses a high risk (For example, the file system's metadata may be corrupted when I/O is busy). We recommend that you [check the image](#CheckMirror) to make sure that the image is intact and correct after it is exported.
+#### Using commands to export an image
+>! This method poses higher risks. For example, the file system's metadata may be corrupted when I/O is busy. We recommended that you [check the image](#CheckMirror) to make sure that the image is intact and correct after it is exported.
 >
 
 You can use either the [qemu-img](#qemuimg) or [dd](#dd) command to export an image.
 - **Use the `qemu-img` command**<span id="qemuimg"></span>
- 1. Run the following command to install the package. This document uses Debian as an example. Replace the command parameters as needed. The package name might be different for distributions, such as `qemu-img` for CentOS.
+ 1. Run the following command to install the required package. This document uses Debian as an example. The package name may vary by distributions, such as `qemu-img` for CentOS.
 ```
 apt-get install qemu-utils
 ```
@@ -119,7 +119,7 @@ apt-get install qemu-utils
 sudo qemu-img convert -f raw -O qcow2 /dev/sda /mnt/sdb/test.qcow2
 ```
 In this command, `/mnt/sdb` indicates the mounted new disk or another network storage.
-To convert it to other formats, change the value of the `-O` parameter to one of the following:
+To convert its format, modify the value of the `-O` parameter to one of the following:
 <span id="-OParameterValue"></span>
 <table>
 	<tr><th>Parameter Value</th><th>Description</th></tr>
@@ -129,11 +129,11 @@ To convert it to other formats, change the value of the `-O` parameter to one of
 	<tr><td>raw</td><td>No format</td></tr>
 </table>
 - **Use the `dd` command**<span id="dd"></span>
-For example, run the following command to export the image in raw format.
+For example, run the following command to export an image in raw format.
 ```
 sudo dd if=/dev/sda of=/mnt/sdb/test.imag bs=1K count=$count
 ```
-The `count` parameter specifies the number of partitions to be copied, which can be queried by running the `fdisk` command. To copy all partitions, ignore the `count` parameter.
+The `count` parameter specifies the number of partitions to be copied, which can be queried by running the `fdisk` command. To copy all partitions, ignore `count`.
 For example, run the following command to view the number of partitions of `/dev/sda`.
 ```
 fdisk -lu /dev/sda
@@ -153,44 +153,44 @@ Disk identifier: 0x0008f290
 /dev/sda3        46123008    88066047    20971520   83  Linux
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
 ```
-From the returned result of the `fdisk` command, you can see that sda1 ends at 41945087 \* 512 bytes, so set `count` to 20481 MB.
->? The image exported by using the `dd` command is in raw format. We recommend that you [convert the format to qcow2, vhd, or other image formats](#ImageFormatConversion).
+According to the returned result of the `fdisk` command, the sda1 ends at 41945087 \* 512 bytes, so set `count` to 20481 MB.
+>? The image exported by using the `dd` command is in raw format. We recommend that you [convert it to qcow2, vhd, or other image formats](#ImageFormatConversion).
 >
 
 <span id="ImageFormatConversion"></span>
 ### Converting the image format
->? Currently, Tencent Cloud Service Migration supports images in qcow2, vpc, vmdk, and raw formats. We recommend using the compressed image format to reduce transmission and migration time.
+>? Currently, Tencent Cloud’s service migration supports images in qcow2, vpc, vmdk, and raw formats. We recommend using the compressed image format to shorten the transmission and migration time.
 > 
-Convert the image format by using the `qemu-img` command
-For example, run the following command to convert the image from the raw format to the qcow2 format.
+Convert the image format using the `qemu-img` command.
+For example, run the following command to convert the image in raw format to the qcow2 format.
 ```
 sudo qemu-img convert -f raw -O qcow2 test.img test.qcow2
 ```
-- `-f` indicates the source image format.
-- `-O` indicates the target image format. For the supported formats, see [`-O` Parameter Values](#-OParameterValue).
+- `-f` is the source image file format.
+- `-O` indicates the destination image format. For the supported formats, see [`-O` Parameter Values](#-OParameterValue).
 
 <span id="CheckMirror"></span>
 ### Checking the image
->? The image file system that you create may be corrupted if you create the image without stopping the service or due to other reasons. Therefore, we recommend that you check the image after creating it.
+>? The image file system that you prepare may be corrupted because you prepared the image without stopping the service or due to other reasons. Therefore, we recommend that you check the image after preparing it.
 >
-If the image format is supported by the current platform, you can directly open the image to check the file system. For example, the Windows platform supports VHD images, the Linux platform allows you to use qemu-nbd to open QCOW2 images, and the Xen platform allows you to directly open VHD files. This document uses the Linux platform as an example:
-1. Run the following commands sequentially to check whether the nbd module exists.
+If the image format is supported by the current platform, you can directly open and check the image file system. For example, the Windows platform supports VHD images, the Linux platform allows you to use `qemu-nbd` to open QCOW2 images, and the Xen platform allows you to directly open VHD files. This document uses the Linux platform as an example:
+1. Run the following commands in sequence to check whether the nbd component exists.
 ```
 modprobe nbd
 ```
 ```
 lsmod | grep nbd
 ```
-If the following is returned, the nbd module exists. If nothing is returned, check whether the kernel compilation option `CONFIG_BLK_DEV_NBD` is enabled. If not, enable it or change the system before compiling the kernel again.
+If a result similar to the following is returned, the nbd component exists. If nothing is returned, check whether the kernel compilation option `CONFIG_BLK_DEV_NBD` is enabled. If not, enable it or change the system before compiling the kernel again.
 ![](https://main.qcloudimg.com/raw/190bd78d60c7340fb95210f60e126105.png)
-2. Run the following commands sequentially to check the image.
+2. Run the following commands in sequence to check the image.
 ```
 qemu-nbd -c /dev/nbd0 xxxx.qcow2
 ```
 ```
 mount /dev/nbd0p1 /mnt
 ```
-After you run the `qemu-nbd` command, `/dev/nbd0` maps to `xxx.qcow2`, and `/dev/nbd0p1` indicates the first partition of the virtual disk. If nbd0p1 does not exist or mount fails, the image is likely to encounter an error.
-In addition, you can start the CVM to check whether the image file works before uploading the image.
+After you run the `qemu-nbd` command, `/dev/nbd0` maps to `xxx.qcow2`, and `/dev/nbd0p1` indicates the first partition of the virtual disk. If nbd0p1 does not exist or mount fails, the image may be incorrect.
+You can also start the CVM to check whether the image file works before uploading the image.
 
 
