@@ -115,6 +115,7 @@ Both the **upload page** and **upload signature distribution** functions use API
 | ------------ | --------------- | --------- | --------- |
 | Upload page     | web_upload_html | HTTP GET  | HTML page |
 | Upload signature distribution | ugc_upload_sign | HTTP POST | Upload signature |
+
 <span id="p6"></span>
 #### Upload page
 
