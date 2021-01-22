@@ -114,6 +114,7 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 | ------------ | --------------- | --------- | --------- |
 | 上传页面     | web_upload_html | HTTP GET  | HTML 页面 |
 | 上传签名派发 | ugc_upload_sign | HTTP POST | 上传签名  |
+
 <span id="p6"></span>
 #### 上传页面
 
