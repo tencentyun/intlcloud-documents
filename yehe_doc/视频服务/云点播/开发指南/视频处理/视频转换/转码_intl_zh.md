@@ -7,12 +7,12 @@
 
 视频转码后，根据 [结果获取](#jghq) 可以获得转码后视频播放的 URL。您可以使用自有播放器或第三方播放器，播放转码后的视频。
 
->转码功能主要适用于**短视频**的场景。对于**长视频**（视频网站、在线教育等），使用 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 将为您和您的用户带来更好的体验。
+>!转码功能主要适用于**短视频**的场景。对于**长视频**（视频网站、在线教育等），使用 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 将为您和您的用户带来更好的体验。
 
-## <span id = "zm" ></span>转码模板
+## [](id:zm)转码模板
 
 转码的目标规格包含了编码格式、分辨率和码率等参数。云点播使用转码模板表示转码参数集合，通过转码模板，可以指定以下转码相关参数。
-
+>?更多音视频转码格式，请参见 [转码支持格式](https://intl.cloud.tencent.com/document/product/266/7898)。
 <table>
     <tr>
         <th style="width:18%">
@@ -172,11 +172,11 @@
 
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`MediaProcessTask.TranscodeTaskSet`参数指定 [转码模板](#zm) 的模板 ID。
 * 通过控制台对视频发起任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
-* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120) 中的`procedure`参数指定为该任务流。
 * 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
 * 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890) 并指定视频上传后执行该任务流。
 
-## 结果获取<span id="jghq"></span>
+## 结果获取[](id:jghq)
 
 发起转码任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931) 两种方式获取转码的执行结果。下面是发起转码任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 

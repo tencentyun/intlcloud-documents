@@ -1,4 +1,60 @@
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V2.6 版本</td>
+<td>点播控制台的境外区计费和数据统计正式发布。</td>
+ <td>2020-11</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/30421">用量统计</a>
+</td>
+</tr>
+</tbody></table>
+
+
+## 2020年10月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V2.5 版本</td>
+<td>点播控制台增加新手指引。</td> 
+ <td>2020-10</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/8757">快速入门</a></td>
+</tr>
+<tr>
+<td>发布 V2.4 版本</td>
+<td>支持拉取点播图片制作视频封面。</td>
+ <td>2020-09</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/33896">视频管理</a>
+</td>
+</tr>
+<tr>
+<td>发布 V2.3 版本</td>
+<td>点播媒资管理新版上线。</td>
+ <td>2020-09</td> 
+<td>
+<a href="https://cloud.tencent.com/document/product/266/45507">视频管理</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2020年08月
+
 
 <table>
 <thead>
@@ -11,15 +67,15 @@
 </thead>
 <tbody><tr>
 <td>发布 V2.2 版本</td>
-<td>图片媒资可直接用于设置视频封面</td> 
+<td>图片媒资可直接用于设置视频封面。</td> 
  <td>2020-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E5.9F.BA.E6.9C.AC.E4.BF.A1.E6.81.AF.E7.BC.96.E8.BE.91">视频管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">视频管理</a>
+</td>
 </tr>
 </tbody></table>
 
-
-
 ## 2020年06月
+
 
 <table>
 <thead>
@@ -32,7 +88,7 @@
 </thead>
 <tbody><tr>
 <td>发布 V2.0 版本</td>
-<td>控制台上线图片管理功能</td> 
+<td>控制台上线图片管理功能。</td> 
  <td>2020-06</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/37900">图片管理</a></td>
 </tr>
@@ -49,6 +105,7 @@
 </td>
 </tr>
 </tbody></table>
+
 
 
 
@@ -72,8 +129,8 @@
 </tbody></table>
 
 
-
 ## 2019年10月
+
 
 <table>
 <thead>
@@ -109,7 +166,6 @@
 </tbody></table>
 
 
-
 ## 2019年09月
 
 <table>
@@ -128,10 +184,8 @@
 <li >通过视频智能识别墙可以查阅内容智能识别出现违规的时间点和违规信息。
 </td>
  <td>2019-09-15</td> 
-<td><a href="https://cloud.tencent.com/document/product/266/36702">视频智能识别</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33897">视频智能识别</a></td>
 </tbody></table>
-
-
 
 ## 2019年08月
 
@@ -152,7 +206,6 @@
 <td>—</td>
 </tr>
 </tbody></table>
-
 
 
 ## 2019年06月
@@ -176,9 +229,7 @@
 </tbody></table>
 
 
-
 ## 2019年05月
-
 <table>
 <thead>
 <tr>
@@ -219,9 +270,7 @@
 </tbody></table>
 
 
-
 ## 2019年02月
-
 <table>
 <thead>
 <tr>
@@ -240,7 +289,6 @@
 </td>
 </tr>
 </tbody></table>
-
 
 
 ## 2018年11月
@@ -262,10 +310,7 @@
 </tr>
 </tbody></table>
 
-
-
 ## 2017年08月
-
 <table>
 <thead>
 <tr>
@@ -292,9 +337,7 @@
 </tbody></table>
 
 
-
 ## 2017年04月
-
 <table>
 <thead>
 <tr>
@@ -312,9 +355,7 @@
 </tbody></table>
 
 
-
 ## 2017年03月
-
 <table>
 <thead>
 <tr>
