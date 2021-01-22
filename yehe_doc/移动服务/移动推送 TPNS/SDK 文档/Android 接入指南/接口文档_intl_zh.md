@@ -27,7 +27,6 @@ public static void registerPush(Context context)
 ```
 
 
-
 #### 参数说明
 
 context：当前应用上下文对象，不能为 null。
@@ -508,7 +507,7 @@ void clearAndAppendAccount(Context context, final String account, int accountTyp
 > - 因“追加账号绑定接口（appendAccount）”使用率非常低，且容易被开发者误解，因此计划10月26日开始，追加账号接口停止使用。如您此前有使用该接口，该接口功能会变更为“覆盖账号（clearAndAppendAccount）”功能。
 > - 每个账号最多支持绑定100个 token。
 > - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考枚举类 XGPushManager.AccountType。（目前仅支持设置账号类型为默认，其他账号类型预计2021年02月支持）
-> - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764)文档中 account_push_type 参数设置。
+> - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 > - SDK 1.2.2.0 版本废弃 bindAccount 接口，推荐使用 clearAndAppendAccount 接口。
 
 
@@ -892,12 +891,18 @@ XGPushManager.clearTags(getApplicationContext(), "clearTags:" + System.currentTi
 public static void upsertAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
 ```
 
+
 #### 参数说明
 
 - context：Context 对象。
 - operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
 - attributes：属性集合，每个属性通过 key-value 标识。
 - callback：添加属性操作的回调。
+
+> !	
+> 1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
+> 2. 属性个数限制50个。
+> 3. 属性 key，value 长度都限制50个字符以内。
 
 #### 示例代码
 ```java
@@ -939,6 +944,12 @@ public static void delAttributes(Context context, String operateName, Set<String
 - operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作。
 - attributes：属性集合，每个属性通过 key-value 标识。
 - callback：删除属性操作的回调。
+
+
+> !	
+> 1. 属性使用键值对传输，都只接受 string 字符串类型，非空串。
+> 2. 属性个数限制50个。
+> 3. 属性 key，value 长度都限制50个字符以内。
 
 #### 示例代码
 ```java
@@ -1136,7 +1147,7 @@ XGPushConfig.getToken(context);
 public static String getOtherPushToken(Context context) 
 ```
 
-> ?需要注册成功之后才能调用，不然返回为 NULL。
+>?需要注册成功之后才能调用，不然返回为 NULL。
 
 #### 参数说明
 
