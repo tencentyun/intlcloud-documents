@@ -9,7 +9,8 @@ Video content analysis includes the following features:
 | Intelligent cover generating | Captures one or more screenshots of a video as the recommended cover. |
 | Intelligent frame-specific tagging | Gives suggestions on frame-specific tags that can be added to a video. There are currently over 1,000 tags, such as: <br/>contemporary dance, water sports, steak, baby, kitten, annual plant, destroyer, comics, lawn, wedding dress, function room, and passport. |
 
-## <span id = "sh"></span>Video Content Analysis Template
+<span id = "sh"></span>
+## Video Content Analysis Template
 
 The analysis operations in a video content analysis task are subject to analysis parameters, which can be presented in the form of VOD video content analysis template as shown below:
 
