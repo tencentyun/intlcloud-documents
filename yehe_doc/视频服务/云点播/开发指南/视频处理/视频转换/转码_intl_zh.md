@@ -9,7 +9,7 @@
 
 >!转码功能主要适用于**短视频**的场景。对于**长视频**（视频网站、在线教育等），使用 [转自适应码流](https://intl.cloud.tencent.com/document/product/266/33942) 将为您和您的用户带来更好的体验。
 
-## [](id:zm)转码模板
+## 转码模板
 
 转码的目标规格包含了编码格式、分辨率和码率等参数。云点播使用转码模板表示转码参数集合，通过转码模板，可以指定以下转码相关参数。
 >?更多音视频转码格式，请参见 [转码支持格式](https://intl.cloud.tencent.com/document/product/266/7898)。
@@ -176,7 +176,7 @@
 * 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
 * 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中设置目标转码规格；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890) 并指定视频上传后执行该任务流。
 
-## 结果获取[](id:jghq)
+## 结果获取
 
 发起转码任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931) 两种方式获取转码的执行结果。下面是发起转码任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 
