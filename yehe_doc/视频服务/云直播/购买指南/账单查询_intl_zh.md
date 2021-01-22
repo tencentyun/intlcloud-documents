@@ -8,7 +8,7 @@
 1. 单击【资源ID账单】进入标签页。
 2. 单击【全部产品】筛选框，选择【云直播CSS】，即可查看云直播的资源 ID 账单。
 
-![](https://main.qcloudimg.com/raw/aa460b5a1b0886de3edfc003621cb225.png)
+![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
 #### 账单字段
 
@@ -56,7 +56,7 @@
 1. 单击【明细账单】进入标签页。
 2. 单击【全部产品】筛选框，选择【云直播CSS】，即可查看云直播的账单明细。
 
-![](https://main.qcloudimg.com/raw/2a00cc132e9e3296dcd9966fe884618f.png)
+![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
 #### 账单字段
 

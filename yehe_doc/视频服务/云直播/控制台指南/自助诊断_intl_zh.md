@@ -13,7 +13,7 @@
 2. 选择需诊断的地址类型，可选择**推流地址**或**播放地址**。
 3. 填写完整的 URL 地址，单击【执行诊断】，即可生成诊断结果。
 
-![](https://main.qcloudimg.com/raw/1c25e0015fad4b23173560991fcd5caa.png)
+![](https://main.qcloudimg.com/raw/90fc6fce80283550af50214782c25b3c.png)
 
 ## 诊断结果
 
