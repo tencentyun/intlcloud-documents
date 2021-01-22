@@ -4,7 +4,7 @@
 - When you no longer need to use pay-as-you-go instances, **terminate them as soon as possible** to avoid continued fee deductions.
 - After an instance is terminated or repossessed, its data is cleared and cannot be recovered.
 - Since your actual resource consumption changes constantly, some slight discrepancies may exist for your stated balance.
-- When an instance in arrears is automatically repossessed, due to the restrictions of the COS billing policy, the associated backend bucket cannot be automatically deleted. Please go to the [COS console](https://console.cloud.tencent.com/cos) to manage the COS bucket and avoid continued fee deductions.
+- When an instance in arrears is automatically repossessed, due to the restrictions of the COS billing policy, the associated backend bucket cannot be automatically deleted. Please go to the [COS console](https://console.cloud.tencent.com/cos) console to manually manage the COS bucket and avoid continued fee deductions.
 
 ### Alerts
 
