@@ -39,8 +39,6 @@ MySQL Status Information|  InnoDB Row Operation |   Threads   |Network
 登录 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，在导航栏单击【前往PMA】，进入腾讯 DMC 内置的 phpMyAdmin 进行相关数据库操作，phpMyAdmin 支持大多数 MySQL 功能，包括：
 - 浏览和删除数据库、表、视图、字段以及索引。
 - 创建、复制、删除、重命名以及更改数据库、表、字段、索引。
- - 创建数据库和表详细操作。
- - 删除数据库和表详细操作。
 - 维护服务器、数据库和表以及有关的服务器配置。
 - 执行、编辑 SQL 语句。
 - 管理存储过程和触发器。
