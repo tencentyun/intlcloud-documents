@@ -62,7 +62,7 @@ INFO: Closed connection [connectionId{localValue:2, serverValue:67621}] to 10.66
 ```
 
 ### Configuration sample for Spring Data MongoDB
-This sample demonstrates how to configure the [authentication database admin](https://intl.cloud.tencent.com/document/product/240/7092#.E8.AE.A4.E8.AF.81.E6.95.B0.E6.8D.AE.E5.BA.93), which depends on the versions of Spring and Spring Data MongoDB you use.
+This sample demonstrates how to configure the [authentication database admin](https://intl.cloud.tencent.com/document/product/240/7092), which depends on the versions of Spring and Spring Data MongoDB you use.
 ```
 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
     <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
