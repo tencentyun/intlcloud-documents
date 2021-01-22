@@ -56,7 +56,7 @@ An image sprite generating template is used to take screenshots and combine them
 | SampleType | Sampling type of subimages. Currently, only sampling by time is supported. |
 | Interval   | Time interval for capturing a screenshot as a subimage.     |
 
->
+>!
 >- The value of `Width` * `Columns` should be between 128 and 4,096 px (i.e., the range of the image sprite width).
 >- The value of `Height` * `Rows` should be between 128 and 4,096 px (i.e., the range of the image sprite height).
 
