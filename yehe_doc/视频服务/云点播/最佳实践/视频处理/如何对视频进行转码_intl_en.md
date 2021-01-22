@@ -120,5 +120,5 @@ VOD provides multiple video upload methods such as upload through console, uploa
 
 ## Automatic Transcoding After Video Upload (Through Event Notification)
 
-After video upload or a transcoding task is completed, the VOD backend will initiate an [event notification](https://intl.cloud.tencent.com/document/product/266/33948) request. You can use the event notification mechanism to initiate transcoding for the newly uploaded video and automatically get the transcoding result through an event notification (the method of manually viewing the transcoding result in the console is as described above).For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/266/37542) under Best Practices.
+After video upload or a transcoding task is completed, the VOD backend will initiate an [event notification](https://intl.cloud.tencent.com/document/product/266/33948) request. You can use the event notification mechanism to initiate transcoding for the newly uploaded video and automatically get the transcoding result through an event notification (the method of manually viewing the transcoding result in the console is as described above). For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/266/37542) under Best Practices.
 
