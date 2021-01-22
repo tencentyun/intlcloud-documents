@@ -10,7 +10,7 @@ For detailed directions, please see [Creating File Systems and Mount Targets](ht
 
 
 ## Step 2. Connect to an Instance
-This section describes how to log in to a Linux-based CVM instance. The login method varies with the scenarios. Logging in to the instance through the console is described herein. For alternative login methods, please see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436).
+This section describes how to log in to a Linux-based CVM instance. The login method varies depending on the scenarios. Logging in to the instance through the console is described herein. For alternative login methods, please see [Logging in to Linux Instance Using Standard Login Method](/doc/product/213/5436).
 
 #### Prerequisites
 You have logged in to the CVM instance with an admin account.
@@ -200,6 +200,6 @@ umount /local/test
 
 >!Resources cannot be recovered from a deleted file system. Therefore, you are advised to back up all resources before deleting the file system.
 
-You can terminate a file system in the console. Specifically, go to the [CFS console](https://console.cloud.tencent.com/cfs), locate the file system to be terminated, and click **Delete** > **Confirm**.
+You can terminate a file system in the console. Specifically, go to the [CFS console](https://console.cloud.tencent.com/cfs/fs), locate the file system to be terminated, and click **Delete** > **Confirm**.
 
 

@@ -93,7 +93,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
   a. 打开 "映射网络驱动器"
   登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
   ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
-  
+  ![](https://main.qcloudimg.com/raw/b0396ce0f8f108f3e89a2f2bfb3d7f71.png)
   b. 输入访问路径
   在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 NFS 文件系统中看到的挂载目录）。
   ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
@@ -110,10 +110,10 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default
 （1）找到如下注册表路径 【HKEY_LOCAL_MACHINE】 > 【SOFTWARE】 > 【Microsoft】 > 【ClientForNFS】 > 【CurrentVersion】 > 【User】 > 【Default】 > 【Mount】。
 （2）在右侧内容区右键新建【DWORD (64-位)值】，名称为”Locking”，值为”0” 。
 
+
 d. 验证读写
   确认后，页面直接进入到已经挂载的文件系统中。可以右键新建一个文件来验证读写的正确性。
-	<img src="https://main.qcloudimg.com/raw/598f69f5f327c1acc663b4a3eed5ba03.png" width="80%">
-
+	<img src="https://main.qcloudimg.com/raw/208537681d0ab96cd801e22332a419a9.jpeg" width="80%">
 - 通过 CMD 命令行挂载
   在 Windows 的命令行工具中输入如下命令，挂载文件系统。其中，系统缺省子目录为 FSID。
 ```bash
@@ -134,7 +134,6 @@ mount 10.10.0.12:/z3r6k95r X:
 1. 打开 "映射网络驱动器"
    登录到需要挂载文件系统的 Windows 上，在 "开始" 菜单中找到 "计算机"，单击鼠标右键出现菜单，单击菜单中的 "映射网络驱动器"。 
    ![](https://main.qcloudimg.com/raw/759b315c65db82db3feacd811aa93bdd.png)
-   
 2. 输入访问路径
    在弹出的设置窗口中设置 "驱动器" 盘符名称及文件夹（即在 CIFS/SMB 文件系统中看到的挂载目录）。
    ![](https://main.qcloudimg.com/raw/1527f4e7e72b465abc374c2ccb954830.png)
@@ -179,6 +178,6 @@ umount X：
 
 >!文件系统删除后，资源不可恢复，建议您删除文件系统之前，先备份资源。
 
-您可以从腾讯云控制台终止文件系统。进入腾讯云 [文件存储控制台](https://console.cloud.tencent.com/cfs)，选中需要终止的文件系统，单击【删除】并【确认】，即可删除文件系统。
+您可以从腾讯云控制台终止文件系统。进入腾讯云 [文件存储控制台](https://console.cloud.tencent.com/cfs/fs)，选中需要终止的文件系统，单击【删除】并【确认】，即可删除文件系统。
 
 
