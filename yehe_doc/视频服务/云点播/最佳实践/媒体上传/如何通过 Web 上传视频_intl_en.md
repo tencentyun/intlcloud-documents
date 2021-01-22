@@ -33,8 +33,8 @@ The VOD web upload demo (including the webpage code and service backend code) pr
 ## Quick Deployment of Web Upload Demo
 
 The web upload demo is deployed on SCF with a service entry provided by API Gateway. To make it easier for you to build services, we provide a quick deployment script as detailed below.
-
-### Step 1. Prepare a CVM instance<span id="p1"></span>
+<span id="p1"></span>
+### Step 1. Prepare a CVM instance
 
 The deployment script needs to be executed on a CVM instance meeting the following requirements:
 
@@ -52,8 +52,8 @@ For detailed directions on how to purchase a CVM instance and reinstall the syst
 ### Step 2. Activate VOD
 
 Please activate the VOD service as instructed in [Getting Started - Step 1](https://intl.cloud.tencent.com/document/product/266/8757).
-
-### Step 3. Get the API key and APPID<span id="p3"></span>
+<span id="p3"></span>
+### Step 3. Get the API key and APPID
 
 Your API key (i.e., `SecretId` and `SecretKey`) and `APPID` are required for deploying and running the web upload demo service.
 - If you have not created an API key yet, please generate one as instructed in [Root Account Access Key](https://intl.cloud.tencent.com/document/product/598/34228). If you have already created a key, please get it as instructed in the same document.
@@ -115,8 +115,8 @@ Both the **upload page** and **upload signature distribution** functions use API
 | ------------ | --------------- | --------- | --------- |
 | Upload page     | web_upload_html | HTTP GET  | HTML page |
 | Upload signature distribution | ugc_upload_sign | HTTP POST | Upload signature |
-
-#### Upload page<span id="p6"></span>
+<span id="p6"></span>
+#### Upload page
 
 You can access the [SCF service list](https://console.cloud.tencent.com/scf/list) to view the details of the upload page service:
 
