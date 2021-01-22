@@ -2,7 +2,8 @@
 其中账单详情包括 [资源 ID 账单](#resources_id) 和 [明细账单](#detail)：
 - 资源 ID 账单：根据资源 ID 聚合明细展示账单。
 - 明细账单：没做聚合，每笔费用均为一条明细记录。
-<span id="resources_id"></span>
+
+[](id:resources_id)
 ## 资源 ID 账单
 1. 单击【资源ID账单】进入标签页。
 2. 单击【全部产品】筛选框，选择【云直播CSS】，即可查看云直播的资源 ID 账单。
@@ -48,11 +49,14 @@
 </tr>
 </tbody></table>
 
-> 其余各字段均为腾讯云官网分配字段，详细请参见 [新版账单使用指南](https://intl.cloud.tencent.com/document/product/555/7432)。
-<span id="detail"></span>
+>? 其余各字段均为腾讯云官网分配字段，详细请参见 [新版账单使用指南](https://intl.cloud.tencent.com/document/product/555/7432)。
+
+[](id:detail)
 ## 明细账单
 1. 单击【明细账单】进入标签页。
 2. 单击【全部产品】筛选框，选择【云直播CSS】，即可查看云直播的账单明细。
+
+![](https://main.qcloudimg.com/raw/2a00cc132e9e3296dcd9966fe884618f.png)
 
 #### 账单字段
 
@@ -66,5 +70,5 @@
 | 使用时长   | 本月您使用各组件的总时长                                     |
 | 总费用     | 总费用 = 组件原价 × 折扣率，其中： 组件原价 = 组件刊例价 × 使用时长 |
 
->其余各字段均为腾讯云官网分配字段，详细请参见 [新版账单使用指南](https://intl.cloud.tencent.com/document/product/555/7432)。
+>?其余各字段均为腾讯云官网分配字段，详细请参见 [新版账单使用指南](https://intl.cloud.tencent.com/document/product/555/7432)。
 
