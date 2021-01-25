@@ -65,8 +65,8 @@ Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNj
 
 ## Signature Code Samples in Various Languages
 
-<dx-codeblock>
-::: Python2 python
+#### Python2
+``` 
 #!/usr/bin/env python
 import hmac
 import base64
@@ -76,8 +76,10 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
-:::
-::: Python3 python
+``` 
+
+#### Python3
+``` 
 import hmac
 import base64
 from hashlib import sha256
@@ -87,8 +89,10 @@ key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
                         digestmod=sha256).hexdigest()
 print(base64.b64encode(bytes(hashcode, "utf-8")))
-:::
-::: Java java
+``` 
+
+#### Java
+``` 
 package com.tencent.xg;
 
 import java.io.UnsupportedEncodingException;
@@ -119,8 +123,10 @@ public class SignTest {
         }
     }
 }
-:::
-::: Golang go
+``` 
+
+#### Golang go
+``` 
 import (
    "crypto/hmac"
    "crypto/sha256"
@@ -139,8 +145,10 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
-:::
-::: C# c#
+``` 
+
+#### C#
+``` 
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -195,8 +203,9 @@ namespace tpns_server_sdk_cs
         }
     }
 }
-:::
-::: PHP php
+``` 
+
+#### PHP
 ```
 <?php
 $accessId = "1500001048";
@@ -212,6 +221,4 @@ $sign = base64_encode($hashRes);
 echo $sign . "\n";
 ?>
 ```
-:::
-</dx-codeblock>
 
