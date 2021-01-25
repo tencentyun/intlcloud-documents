@@ -1,7 +1,7 @@
-<span id="UserSig"></span>
+[](id:UserSig)
 ### What is UserSig?
 
-`UserSig` is a security signature designed by Tencent Cloud for the purpose of preventing attackers from misappropriating your Tencent Cloud permissions.
+UserSig is a security signature designed by Tencent Cloud for the purpose of preventing attackers from accessing your Tencent Cloud account.
 Currently, Tencent Cloud services including TRTC, IM, and MLVB all use this security mechanism. Whenever you want to use these services, you must provide three key pieces of information, i.e. `SDKAppID`, `UserID`, and `UserSig` in the initialization or login function of the corresponding SDK.
 `SDKAppID` is used to identify your application, and `UserID` your user. `UserSig` is a security signature calculated based on the two parameters using the **HMAC SHA256** encryption algorithm. Attackers cannot use your Tencent Cloud traffic without authorization as long as they cannot forge a `UserSig`.
 See the figure below for how `UserSig` is calculated. Basically, it involves hashing crucial information such as `SDKAppID`, `UserID`, and `ExpireTime`.
@@ -11,13 +11,13 @@ See the figure below for how `UserSig` is calculated. Basically, it involves has
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
 ```
-<span id="Key"></span>
+[](id:Key)
 ### How do I get a key?
 
 1. Log in to the **TRTC console** and click **[Application Management](https://console.cloud.tencent.com/trtc/app)**.
 2. Find your `SDKAppID`, click **Application Info**, and select the *Quick Start* tab.
-3. View the secret key used to calculate `UserSig` in the **Step 2: obtain the secret key to issue UserSig** block.
-4. Click **Copy Secret Key** to copy the key to the clipboard.
+3. View the secret key used to calculate `UserSig` in **Step 2: obtain the secret key to issue UserSig**.
+3. Click **Copy Secret Key** to copy the key to the clipboard.
  ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
 
 ### Only public and private key information can be obtained when I try to view the secret key. How do I get the secret key?
@@ -29,23 +29,24 @@ Upgrade/Switch:
  3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Upgrade:
   - Switch to the old algorithm ECDSA-SHA256:
-   ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
+      ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
   - Switch to the new algorithm HMAC-SHA256.
-   ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
+      ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
 
-<span id="Client"></span>
-### How do I calculate `UserSig` on the client?
+[](id:Client)
+### How do I calculate UserSig on the client?
 
-We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sample code. Set the three member variables of `SDKAPPID`, `EXPIRETIME`, and `SECRETKEY`, and you will be able to call the `genTestUserSig()` function to obtain the `UserSig` and quickly run the features of the SDK.
+We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sample code. Set the three member variables of `SDKAPPID`, `EXPIRETIME`, and `SECRETKEY`, and you will be able to call the `genTestUserSig()` function to obtain the `UserSig` and get started quickly with the SDK.
 
 |   Applicable Platform   |                                                                       File Source Code Link                                                                       |                                         File Relative Path                                         |
 | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-|     iOS      |                 [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h)                  |                 iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h                  |
-|     macOS      |                    [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h)                    |                    Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h                    |
-|   Android    | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
+| iOS | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h) | iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h |
+| macOS | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h) | Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h |
+| Android | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
 | Windows (C++) |                           [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)                           |                           Windows/DuilibDemo/GenerateTestUserSig.h                           |
 | Windows (C#)  |                          [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)                           |                          Windows/CSharpDemo/GenerateTestUserSig.cs                           |
-|  Desktop browsers  |                      [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js)                      |                      Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js                      |
+|  Desktop browsers  |                      [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js) | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
+| Flutter | [GitHub](https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart) | /lib/debug/GenerateTestUserSig.dart |
 
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
@@ -53,8 +54,8 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 >
 > The correct method is to deploy the `UserSig` calculation code on your project server so that your app can request from your server a `UserSig` that is calculated whenever one is needed.
 
-<span id="Server"></span>
-### How do I calculate `UserSig` on the server?
+[](id:Server)
+### How do I calculate UserSig on the server?
 
 Using the server to calculate `UserSig` offers the utmost protection against key leakage, for it is more difficult to hack a server than it is to reverse engineer an application. See below for the specific method.
 
@@ -79,8 +80,8 @@ To simplify your implementation process, we provide `UserSig` calculation source
 |  Python  | HMAC-SHA256 |               [gen_sig](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py)               | [GitHub](https://github.com/tencentyun/tls-sig-api-v2-python) |
 |    C#    | HMAC-SHA256 |        [GenSig](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs)         |   [GitHub](https://github.com/tencentyun/tls-sig-api-v2-cs)   |
 
-<span id="Old"></span>
-### How do I calculate `UserSig` with the old algorithm?
+[](id:Old)
+### How do I calculate UserSig with the old algorithm?
 
 To simplify the signature calculation process and facilitate your use of Tencent Cloud services, on July 19, 2019, TRTC switched from ECDSA-SHA256 to the new signature algorithm HMAC-SHA256. This means that all `SDKAppID` created on and after July 19, 2019 will use the new HMAC-SHA256 algorithm.
 

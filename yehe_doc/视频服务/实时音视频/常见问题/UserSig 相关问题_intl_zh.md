@@ -1,4 +1,4 @@
-<span id="UserSig"></span>
+[](id:UserSig)
 ### 什么是 UserSig？
 
 UserSig 是腾讯云设计的一种安全保护签名，目的是为了阻止恶意攻击者盗用您的云服务使用权。
@@ -11,13 +11,13 @@ UserSig 的计算原理如下图所示，其本质就是对 SDKAppID、UserID、
 usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire + 
                                  base64(userid + sdkappid + currtime + expire)))
 ```
-<span id="Key"></span>
+[](id:Key)
 ### 如何获取密钥？
 
 1. 登录【实时音视频控制台】>【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
 2. 单击您需查看的 SDKAppID 对应的【应用信息】，单击进入【快速上手】页签。
-3. 查看【第二步 获取签发UserSig的密钥】标签，即可获取用于计算 UserSig 的加密密钥。
-4. 单击【复制密钥】，可将密钥拷贝到剪贴板中。
+2. 查看【第二步 获取签发UserSig的密钥】标签，即可获取用于计算 UserSig 的加密密钥。
+3. 单击【复制密钥】，可将密钥拷贝到剪贴板中。
  ![](https://main.qcloudimg.com/raw/b8575d1c97952ad8b1b28df16d69a8cb.png)
 
 ### 查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
@@ -29,23 +29,24 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
   - 升级：
   - 切换回老版本算法 ECDSA-SHA256：
-   ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
+      ![](https://main.qcloudimg.com/raw/73ff89d39c00a0925621928de4aa03bf.png)
   - 切换为新版本算法 HMAC-SHA256：
-   ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
+      ![](https://main.qcloudimg.com/raw/98261eaa1fc6d9e4a6796f277a9dcb09.png)
 
-<span id="Client"></span>
+[](id:Client)
 ### 客户端如何计算 UserSig？
 
 我们在 TRTC SDK 的示例代码中提供了一个叫做 `GenerateTestUserSig` 的开源模块，您只需要将其中的 SDKAPPID、EXPIRETIME 和 SECRETKEY 三个成员变量修改成您自己的配置，就可以调用 `genTestUserSig()` 函数获取计算好的 UserSig，从而快速跑通 SDK 的相关功能：
 
 |   适用平台   |                                                                       文件源码链接                                                                       |                                         文件相对路径                                         |
 | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
-|     iOS      |                 [Github](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h)                  |                 iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h                  |
-|     Mac      |                    [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h)                    |                    Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h                    |
-|   Android    | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
-| Windows(C++) |                           [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)                           |                           Windows/DuilibDemo/GenerateTestUserSig.h                           |
-| Windows(C#)  |                          [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)                           |                          Windows/CSharpDemo/GenerateTestUserSig.cs                           |
-|  桌面浏览器  |                      [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js)                      |                      Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js                      |
+| iOS | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h) | iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h |
+| Mac | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h) | Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h |
+| Android | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
+| Windows(C++) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h) |                           Windows/DuilibDemo/GenerateTestUserSig.h |
+| Windows(C#)  | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs) |                          Windows/CSharpDemo/GenerateTestUserSig.cs |
+|  桌面浏览器  | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js) | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
+| Flutter | [Github](https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart) | /lib/debug/GenerateTestUserSig.dart |
 
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
@@ -53,7 +54,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 >
 >正确的做法是将 UserSig 的计算代码放在您的业务服务器上，然后由您的 App 在需要的时候向您的服务器获取实时算出的 UserSig。
 
-<span id="Server"></span>
+[](id:Server)
 ### 服务端如何计算 UserSig？
 
 采用服务端计算 UserSig 的方案，可以最大限度地保障计算 UserSig 用的密钥不被泄露，因为攻破一台服务器的难度要高于逆向一款 App。具体的做法如下：
@@ -79,7 +80,7 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 |  Python  | HMAC-SHA256 |               [gen_sig](https://github.com/tencentyun/tls-sig-api-v2-python/blob/master/TLSSigAPIv2.py)               | [Github](https://github.com/tencentyun/tls-sig-api-v2-python) |
 |    C#    | HMAC-SHA256 |        [GenSig](https://github.com/tencentyun/tls-sig-api-v2-cs/blob/master/tls-sig-api-v2-cs/TLSSigAPIv2.cs)         |   [Github](https://github.com/tencentyun/tls-sig-api-v2-cs)   |
 
-<span id="Old"></span>
+[](id:Old)
 ### 老版本算法如何计算 UserSig？
 
 为了简化签名计算难度，方便客户更快速地使用腾讯云服务，实时音视频自2019.07.19开始启用新的签名算法，从之前的 ECDSA-SHA256 升级为 HMAC-SHA256，也就是从2019.07.19之后创建的 SDKAppID 均会采用新的 HMAC-SHA256 算法。
