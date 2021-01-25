@@ -24,8 +24,6 @@ We provide an open-source module called `GenerateTestUserSig` in the MLVB SDK sa
 | Objective-C | iOS  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/iOS/Demo/TXLiteAVDemo/Debug/GenerateTestUserSig.h)|
 | Java | Android  | [GitHub](https://github.com/tencentyun/MLVBSDK/blob/master/Android/Demo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) |
 
-![](https://main.qcloudimg.com/raw/9f2bd1709904f3fd8601f6077d7b7a28.png)
-
 
 >! This method is only applicable for debugging. It’s **not recommended** for official launch because `SECRETKEY` of the client code (especially on the web) may be easily decompiled and reversed. If your key is leaked, attackers can steal your Tencent Cloud traffic.
 >
@@ -44,7 +42,7 @@ Using the server to calculate `UserSig` offers the utmost protection against key
 6. Tencent Cloud verifies the validity of the `UserSig`.
 7. If the `UserSig` is valid, real time audio/video services will be provided to the TRTC SDK.
 
-![](https://main.qcloudimg.com/raw/b719c46de62ee634a85ab97281c294c6.png)
+![](https://main.qcloudimg.com/raw/01da88752009b94b4914e3df8b1ea642.png)
 
 To simplify your implementation process, we provide `UserSig` calculation source code in multiple languages.
 
