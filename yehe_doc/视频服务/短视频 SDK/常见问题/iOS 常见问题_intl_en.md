@@ -1,5 +1,5 @@
 
-<span id="que1"></span>
+[](id:que1)
 ### What should I know about licenses? 
 
 The UGSV SDK is available in the Basic Edition and Enterprise Edition. Starting from v4.5, a license is required. The Basic Edition requires only the UGSV license (`TXUgcSDK.licence`), while the Enterprise Edition also requires the Pitu license (`YTFaceSDK.licence`). You can place the licenses into the project directory and rename them accordingly.
@@ -8,21 +8,21 @@ Starting from v4.9, the license usage was changed. You can select whether to pac
 >!SDK v4.5–4.7 does not support automatic license renewal, which is supported for v4.9 and later. SDK 4.9 is compatible with the licenses on earlier versions (you cannot pass in `null` for `url` and `key`. If needed, you can pass in a random string for them). However, the licenses on later versions cannot be used on SDK versions earlier than 4.9.
 
 
-<span id="que2"></span>
+[](id:que2)
 ### What should I know about TXUGCPublish.h?
 
 Starting from v4.5, `TXUGCPublish` classes were moved to the demo layer from the SDK. If you need to use such classes, you can directly drag the `VideoUpload` directory into your project.
 
 
 
-<span id="que3"></span>
+[](id:que3)
 ### What should I do if an error was reported when I directly ran the demo in Xcode?
 
 You need to select the corresponding target, as shown below:
 ![](https://main.qcloudimg.com/raw/4c429ae5017c7990e7bf332a4b8de0ab.png)
 
 
-<span id="que4"></span>
+[](id:que4)
 ### What should I do if a short video shoot error was reported when I connected to Xcode for debugging?
 
 The short video shoot error `Main Thread Checker: UI API called on a background thread` may be reported when Xcode is connected to for debugging.
@@ -33,7 +33,7 @@ Solution: select `Product` > `Scheme` > `Edit Scheme` > `Run` > `Diagnostics` an
 >?This issue has been fixed on v4.9.
 
 
-<span id="que5"></span>
+[](id:que5)
 ### What should I do if I could not find the header file when using the SDK?
 
 - Add the header file search path in `Build Settings` > `Search Paths` > `Header Search Paths`.
@@ -44,14 +44,14 @@ You can choose one of the above methods as needed.
 
 
 
-<span id="que6"></span>
+[](id:que6)
 ### What should I do if the category methods failed to be found or the project crashed during project execution?
 
 The SDK uses some category methods. To load them, you need to add `-ObjC` in `Build Settings` > `Linking` > `Other Linker Flags` in the project.
 
 
 
-<span id="que7"></span>
+[](id:que7)
 ### What should I do if the background music set for short video shooting did not work?
 
 1. Check whether the file exists in the background music path passed in and whether the file can be played back normally.
@@ -61,19 +61,19 @@ The SDK uses some category methods. To load them, you need to add `-ObjC` in `Bu
 For example, APIs such as `setVideoResolution:`, `setVideoBitrate:`, and `setAspectRatio:` for short video shoot can take effect only if they are set before `startRecord`.
 
 
-<span id="que8"></span>
+[](id:que8)
 ### Can the background music set for shooting be looped?
 
 Currently, loop playback is not supported.
 
 
-<span id="que9"></span>
+[](id:que9)
 ### Why wasn't the completion callback returned at the time specified by `endTime` when I set the background music for shooting?
 
 If the `endTime` is smaller than the total music file duration, in SDK 4.6 or earlier, the completion callback will be triggered only after the playback of the background music is completed. In SDK 4.7 or later, the completion callback will be triggered at the time specified by `endTime`.
 
 
-<span id="que10"></span>
+[](id:que10)
 ### Why does it take a long time to enable the camera for the first time for shooting?
 
 Because cold startup is used, it will take a relatively long time to enable the camera on an iPhone for the first time, even if you enable the camera through a system API.
@@ -81,13 +81,13 @@ Because cold startup is used, it will take a relatively long time to enable the 
 This is because it is not suitable to enable the camera in a child thread. Tests show that it will take more time if the camera is enabled in a child thread. Moreover, if the camera is consecutively enabled and disabled in the main thread, the response delay of the child thread will also increase, degrading the user experience.
 
 
-<span id="que11"></span>
+[](id:que11)
 ### How do I implement shooting resumption?
 
 When the first shooting is completed, do not call `stopRecord` and `stopCameraPreview` (otherwise, the shooting will stop, and you will only be able to start a new shooting). You can call `pauseRecord`, use `TXUGCPartsManager.getVideoPathList` to get the shot video segments, and use `TXVideoJoiner.joinVideo` to compose the final video (on versions earlier than 4.5). You can also directly call `TXUGCPartsManager.joinAllParts` to compose the final video more quickly (on v4.5 or later). In this way, when you resume shooting, all the shot video segments will exist, and you can continue shooting.
 
 
-<span id="que12"></span>
+[](id:que12)
 ### What should I do if the completion callback could not be received when short video shooting was completed?
 
 - Check whether `stopRecord` is called. Only after `stopRecord` is called can the completion callback be returned.
@@ -95,21 +95,21 @@ When the first shooting is completed, do not call `stopRecord` and `stopCameraPr
 
 
 
-<span id="que13"></span>
+[](id:que13)
 ### The audio could not be recorded during shooting when I used another player to play back a video and then returned to the shooting process. What should I do?
 
 The `AudioSession` on iOS is shared by all audio/video applications. If you use another player for playback, the `AudioSession` will be occupied. If `AudioSession` is not released at all or not promptly released when the playback ends, the `AudioSession` of the shooting module will become invalid. The SDK provides two APIs: `-(void) pauseAudioSession` and `-(void) resumeAudioSession`. You can call `pauseAudioSession` first before you use another player for preview and then call `resumeAudioSession` before you continue the shooting.
 
 
 
-<span id="que14"></span>
+[](id:que14)
 ### What should I do if the shot video is blurry?
 
 The shot video will be blurry if the bitrate and resolution do not match. You can increase the bitrate accordingly and enable the B-frame feature to improve the image quality.
 
 
 
-<span id="que15"></span>
+[](id:que15)
 ### What should I do if the video failed to be generated after I switched the application to the background and then to the foreground during video editing?
 
 Hardware encoding (featuring higher encoding efficiency and image quality) is used by default for video generation. However, the hardware encoder will stop running if the application is switched to the background, resulting in video generation failure. The SDK provides two APIs: `pauseGenerate` and `resumeGenerate`. When the application is switched to the background, you can call `pauseGenerate` to pause video generation. When the application returns to the foreground, you can call `resumeGenerate` to resume video generation.
@@ -118,7 +118,7 @@ Hardware encoding (featuring higher encoding efficiency and image quality) is us
 
 
 
-<span id="que16"></span>
+[](id:que16)
 ### What should I do if file upload failed?
 
 The file upload status codes are as detailed below:
@@ -130,7 +130,7 @@ The file upload status codes are as detailed below:
 
 
 
-<span id="que17"></span>
+[](id:que17)
 ### Does short video shooting support photo capturing?
 
 The UGSV SDK supports photo capturing. You can simply call the `snapshot` API of the `TXUGCRecord` class to get an image after the preview starts.
