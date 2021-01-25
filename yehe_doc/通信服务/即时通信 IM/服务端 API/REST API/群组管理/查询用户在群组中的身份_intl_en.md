@@ -106,7 +106,7 @@ The list below contains error codes specific to this API:
 
 ## API Debugging Tool
 
-Use the [online debugging tool for RESTful APIs](https://avc.cloud.tencent.com/im/APITester/APITester.html#group_open_http_svc/get_role_in_group) to debug this API.
+Use the [online debugging tool for RESTful APIs](https://tcc.tencentcs.com/im-api-tool/index.html#v4/group_open_http_svc/get_role_in_group) to debug this API.
 
 ## Reference
 Obtaining the groups a user has joined ([v4/group_open_http_svc/get_joined_group_list](https://intl.cloud.tencent.com/document/product/1047/34925))
