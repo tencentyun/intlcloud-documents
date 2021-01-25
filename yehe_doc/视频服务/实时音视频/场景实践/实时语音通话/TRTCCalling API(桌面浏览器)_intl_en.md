@@ -50,14 +50,14 @@ This component bases its management on the dispatching of events. The applicatio
 First, create an application in the [TRTC console](https://console.cloud.tencent.com/trtc/app) and get the SDKAppID.
 Then, obtain an instance of the TRTCCalling component using `new TRTCCalling()`.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 let options = {
   SDKAppID: 0 // Replace 0 with the SDKAppID of your IM app when connecting.
 };
 let trtcCalling = new TRTCCalling(options);
-:::
-</dx-codeblock>
+```
+
 
 ### Event subscribing/Subscription cancelling APIs 
 
@@ -66,28 +66,28 @@ let trtcCalling = new TRTCCalling(options);
 #### on(eventName, callback, context)
 This API is used to listen for events dispatched by the component. For details about the events, see the [event list](#event).
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 let handleInvite = function ({inviteID, sponsor, inviteData}) {
     console.log(`inviteID: ${inviteID}, sponsor: ${sponsor}, inviteData: ${JSON.stringify(inviteData)}`);
 };
 trtcCalling.on('onInvited', handleInvite, this);
-:::
-</dx-codeblock>
+```
+
 
 
 
 #### off(eventName, callback, context)
 This API is used to stop listening for events.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 let handleInvite = function ({inviteID, sponsor, inviteData}) {
     console.log(`inviteID: ${inviteID}, sponsor: ${sponsor}, inviteData: ${JSON.stringify(inviteData)}`);
 };
 trtcCalling.off('onInvited', handleInvite, this);
-:::
-</dx-codeblock>
+```
+
 
 ### Basic SDK APIs
 
@@ -96,11 +96,11 @@ trtcCalling.off('onInvited', handleInvite, this);
 #### login({userID, userSig})
 This API is used to log in.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.login({userID, userSig})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -113,11 +113,11 @@ The parameters are as detailed below:
 
 #### logout()
  This API is used to log out.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.logout()
-:::
-</dx-codeblock>
+```
+
 
 ### Call operation APIs
 
@@ -127,11 +127,11 @@ trtcCalling.logout()
 
 This API is used to make one-to-one calls. Type is the type of a call. 1: audio call; 2: video call.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.call({userID, type, timeout})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -146,11 +146,11 @@ The parameters are as detailed below:
 #### groupCall({userIDList, type, groupID})
 The `groupID` parameter is the group ID in the IM SDK. If this parameter is set, the call invitation will be broadcast by the group messaging system, which is a simple and reliable way of sending call invitations. If this parameter is left empty, the TRTCCalling component will send an invitation to every invitee.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.groupCall({userIDList, type, groupID})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -165,15 +165,15 @@ The parameters are as detailed below:
 This API is used to accept an incoming invitation.
 >? If an invitation has yet to be processed, the component will return a message saying that the line is busy to other invitations sent to the same user.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 import TRTCCalling from 'trtc-calling-js';
 trtcCalling.on(TrtcCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
   // ...
   trtcCalling.accept({inviteID, roomID, callType})
 })
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -187,15 +187,15 @@ The parameters are as detailed below:
 #### reject({inviteID, isBusy, callType})
 This API is used to reject an incoming invitation.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 import TRTCCalling from 'trtc-calling-js';
 trtcCalling.on(TrtcCalling.EVENT.INVITED, ({inviteID, sponsor, inviteData}) => {
   // ...
   trtcCalling.reject({inviteID, isBusy, callType})
 })
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -211,11 +211,11 @@ The parameters are as detailed below:
 1. If you are in a call, you can use this API to end the current call.
 2. If your call is not answered yet, you can use this API to cancel the call.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.hangup()
-:::
-</dx-codeblock>
+```
+
 
 
 ### Video control APIs
@@ -223,11 +223,11 @@ trtcCalling.hangup()
 
 #### startRemoteView({userID, videoViewDomID})
 This API is used to render the camera data of a remote user to a specified DOM ID node.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.startRemoteView({userID, videoViewDomID})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -239,11 +239,11 @@ The parameters are as detailed below:
 
 #### stopRemoteView({userID, videoViewDomID})
 This API is used to delete the DOM node to which the camera data of a remote user is rendered.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.stopRemoteView({userID, videoViewDomID})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -255,11 +255,11 @@ The parameters are as detailed below:
 
 #### startLocalView({userID, videoViewDomID})
 This API is used to render the camera data of the local user to a specified DOM ID node.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.startLocalView({userID, videoViewDomID})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -271,11 +271,11 @@ The parameters are as detailed below:
 
 #### stopLocalView({userID, videoViewDomID})
 This API is used to delete the DOM node to which the camera data of the local user is rendered.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.stopLocalView({userID, videoViewDomID})
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -287,29 +287,29 @@ The parameters are as detailed below:
 
 #### openCamera()
 This API is used enable the local camera.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.openCamera()
-:::
-</dx-codeblock>
+```
+
 
 
 #### closeCamera()
 This API is used to disable the camera.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.closeCamera()
-:::
-</dx-codeblock>
+```
+
 
 
 ####  setMicMute(isMute) 
 This API is used to enable/disable the mic.
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 trtcCalling.setMicMute(true) // Enables the mic.
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -321,16 +321,16 @@ The parameters are as detailed below:
 ## TRTCCalling Events
 You can use the code below to capture different events from the TRTCCalling component.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 import TRTCCalling from 'trtc-calling-js';
 // etc
 function handleInviteeReject({userID}) {
 
 }
 trtcCalling.on(TrtcCalling.EVENT.REJECT, handleInviteeReject)
-:::
-</dx-codeblock>
+```
+
 
 ### Inviter events
 |                     Code                      |   Event Receiver   |           Description            |
@@ -353,13 +353,13 @@ trtcCalling.on(TrtcCalling.EVENT.REJECT, handleInviteeReject)
 #### USER_ENTER
 A user entered the room.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleUserEnter({userID}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -370,13 +370,13 @@ The parameters are as detailed below:
 #### USER_LEAVE
 A user exited the room.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleUserLeave({userID}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 The parameters are as detailed below:
 
 | Parameter | Type | Description |
@@ -386,35 +386,35 @@ The parameters are as detailed below:
 #### CALL_END
 The call ended.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleCallEnd() {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 #### KICKED_OUT
 A user was kicked out for repeated login.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleKickedOut() {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 #### USER_VIDEO_AVAILABLE
 A remote user enabled/disabled the camera.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleUserVideoChange({userID, isVideoAvailable}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -426,13 +426,13 @@ The parameters are as detailed below:
 #### USER_AUDIO_AVAILABLE
 A remote user enabled/disabled the mic.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleUserAudioChange({userID, isAudioAvailable}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -446,13 +446,13 @@ The parameters are as detailed below:
 #### REJECT
 The user rejected the call.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleInviteeReject({userID}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -463,13 +463,13 @@ The parameters are as detailed below:
 #### NO_RESP
 The invitee did not answer.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleNoResponse({userID}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -480,13 +480,13 @@ The parameters are as detailed below:
 #### LINE_BUSY
 The invitee is in a call. The line is busy.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleInviteeLineBusy({userID}) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -499,15 +499,15 @@ The parameters are as detailed below:
 #### INVITED
 You have received an invitation.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleNewInvitationReceived({
     sponsor, userIDList, isFromGroup, inviteData, inviteID
 }) {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 The parameters are as detailed below:
 
@@ -522,38 +522,38 @@ The parameters are as detailed below:
 #### CALLING_CANCEL
 The call is cancelled.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleInviterCancel() {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 #### CALLING_TIMEOUT
 The timeout threshold is reached.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 function handleCallTimeout() {
 
 }
-:::
-</dx-codeblock>
+```
+
 
 ## TRTCCalling Error Codes
 
 You can handle the errors thrown by the TRTCCalling component by listening for the “error” field in events. Below is an example code.
 
-<dx-codeblock>
-::: javascript javascript
+
+```plaintext
 import TRTCCalling from 'trtc-calling-js';
 let onError = function(error) {
   console.log(error);
 };
 trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
-:::
-</dx-codeblock>
+```
+
 
 ## FAQs
 #### Why can’t I get through to the invitee? Why am I kicked offline?
