@@ -91,6 +91,7 @@ hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
 print(base64.b64encode(bytes(hashcode, "utf-8")))
 
 #### Java
+``` 
 package com.tencent.xg;
 
 import java.io.UnsupportedEncodingException;
