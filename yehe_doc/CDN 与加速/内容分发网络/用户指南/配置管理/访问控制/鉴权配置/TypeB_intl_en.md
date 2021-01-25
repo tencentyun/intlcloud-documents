@@ -15,13 +15,13 @@
 
 ### Parameter description
 TypeB requires the following configurations:
-![](https://main.qcloudimg.com/raw/1eb82fe4dde871bc193b185cab9fd338.png)
+![](https://main.qcloudimg.com/raw/d0cd00305ed4911a500995628bd45cfd.png)
 **Custom Authentication Key**: it can contain 6 to 40 digits, uppercase and lowercase letters. It should be kept private and disclosed to only the client and server.
 **Custom Validity Period**: the `timestamp` value in the request path plus the configured validity period is compared with the current time to determine whether the request has expired; if so, a 403 error will be directly returned.
 
 ### Object
 After configuring the key, parameter name, and validity period, you can specify the authentication object as needed. The following three authentication modes are supported:
-![](https://main.qcloudimg.com/raw/ba9a56364a6384fff0f659b1cad7effe.png)
+![](https://main.qcloudimg.com/raw/13ccf23f34aaa9963e2ca36ea48b36f0.png)
 - All files under a specified domain name need to be authenticated.
 - All files except those of a specified type need to be authenticated.
 - Only files of a specified type need to be authenticated.
