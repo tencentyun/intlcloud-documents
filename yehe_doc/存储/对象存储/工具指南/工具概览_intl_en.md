@@ -7,15 +7,15 @@ width: 200px;
 }
 </style>
 
-| Tool | Features |
-|---------|---------|
-| [COS Browser](https://intl.cloud.tencent.com/document/product/436/11366) | This tool makes it easy for users to perform data upload/download, access link generation, and other operations through a visual interface. |
-| [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976) | This tool allows users to perform operations such as batch upload/download/deletion of objects by using simple command line instructions. |
-| [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) | This tool is used to migrate data from multiple data sources (such as an on-premises server, and other cloud storage services) to COS. |
-| [FTP Server](https://intl.cloud.tencent.com/document/product/436/7214) | This tool is used to upload/download files to/from COS by using a FTP client. |
-| [COSFS](https://intl.cloud.tencent.com/document/product/436/6883) | In Linux, this tool is used to mount buckets to a local file system and to perform operations on objects in COS via the local file system. |
-| [Hadoop tool](https://intl.cloud.tencent.com/document/product/436/6884) | This tool allows users to process objects in COS using a Hadoop-based tool, such as MapReduce and Hive. |
-|[Hadoop-cos-DistChecker](https://intl.cloud.tencent.com/document/product/436/34687)     |  This tool is used to check the integrity of the migrated directory once you migrate data from HDFS to COS using the `hadoop distcp` command. |
-| [HDFS TO COS tool](https://intl.cloud.tencent.com/document/product/436/7212) | This tool is used to copy the data on HDFS to COS. |
-|Online Tools| These are Web-based tools provided by COS, including the COS signing tool and [COS request tool](https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetService&SignVersion=). |
-
+| Tool  | Description  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [COSBrowser](https://intl.cloud.tencent.com/document/product/436/11366) | Provides a visualized UI for users to easily upload/download data, generate access URL, and perform other operations. |
+| [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976)  | Enables users to perform operations (such as upload, download, and delete) in batches with simple commands. |
+| [COS Migration](https://intl.cloud.tencent.com/document/product/436/15392) | Migrates data from multiple data sources (such as data stored on on-premises servers and other cloud storage services) to COS. |
+| [FTP Server](https://intl.cloud.tencent.com/document/product/436/7214)                     | Uploads data to and downloads data from COS with the FTP client. |
+| [COSFS](https://intl.cloud.tencent.com/document/product/436/6883)                          | Mounts a bucket to the local file system for Linux OS scenarios. In this way, you can operate COS objects through the local file system. |
+| [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884)                         | Integrates COS support for big data processing frameworks, such as Hadoop, Spark, and Tez, to read COS data easily. |
+| [COSDistCp](https://intl.cloud.tencent.com/document/product/436/38863) | Implements data copy between HDFS and COS. It is a distributed copy tool based on the MapReduce framework. |
+| [Hadoop-cos-DistChecker](https://intl.cloud.tencent.com/document/product/436/34687) | Verifies the directory integrity after you use the `hadoop distcp` command to migrate data from HDFS to COS. |
+| [HDFS TO COS](https://intl.cloud.tencent.com/document/product/436/7212)                    | Copies data from HDFS to COS. |
+| Online auxiliary tools | Web-based COS tools, including [COS signing tool](https://cos5.cloud.tencent.com/static/cos-sign/) and [COS request tool](https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetService&SignVersion=). |

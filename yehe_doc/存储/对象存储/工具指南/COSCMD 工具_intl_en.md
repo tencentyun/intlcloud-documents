@@ -1,52 +1,57 @@
-## Feature Description
+## Overview
 
-COSCMD enables you to perform batch object operations such as upload/download/delete by using simple command lines.
+COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
+
 
 ## Operating Environment
 
 #### System environment
 
-Windows, Linux, and macOS.
+Windows, Linux, and macOS
 
 > ?
-> - Please make sure that local characters are in UTF-8 format; otherwise, exceptions will occur when operating on Chinese files.
-> - Please also make sure that local time is in sync with UTC, as COSCMD will malfunction when there is a large deviation between the two.
+> - Local characters should use UTF-8 encoding. Otherwise, exceptions will occur when you operate on Chinese files.
+> - Ensure that the local time is in sync with UTC. If there is a large deviation between the two, COSCMD might not function properly.
 
 #### Software requirements
 
-- Python 2.7/3.5/3.6.
-- Latest version of pip.
+- Python 2.7/3.5/3.6/3.9
+- Latest version of pip
+>?You are advised to install the latest version of Python (3.9.0) that is integrated with pip.
 
 #### Installation and configuration
 
-- For more information on the installation and configuration of the environment, please see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
-- For more information on the installation and configuration of pip, please see [Installation](https://pip.pypa.io/en/stable/installing/).
+- For more information about the installation and configuration of the environment, please see [Python](https://intl.cloud.tencent.com/document/product/436/10866).
+- For more information about the installation and configuration of pip, please see [Installation](https://pip.pypa.io/en/stable/installing/).
+
 
 ## Download and Installation
 
-#### Installing pip
+You can install COSCMD in the following three ways:
 
-Run the `pip` command to install:
+#### 1.1 Installing with pip 
+
+Run the `pip` command to install COSCMD:
 
 ```plaintext
 pip install coscmd
 ```
 
- After installation is complete, you can view the version information by running the `-v` or `--version` command.
+ After the installation is complete, you can run the `-v` or `--version` command to view the version information.
 
-#### Updating pip
+#### 1.2 Upgrading with pip
 
-Run the `pip` command to update:
+After the installation is complete, you can run the following command to upgrade COSCMD:
 
 ```plaintext
 pip install coscmd -U
 ```
 
-> ! If the pip version number is greater than or equal to 10.0.0, a failure may occur when upgrading or installing dependent libraries. We recommend using pip v9.x (pip install pip==9.0.0).
+> ! If the pip version number is greater than or equal to 10.0.0, a failure may occur when you are upgrading or installing dependent libraries. You are advised to use pip v9.x (pip install pip==9.0.0). If you have installed the latest Python version, pip has been integrated and does not need to be installed again.
 
-#### Installation through source code (not recommended)
+#### 2. Installing with the source code (not recommended)
 
-Click [here](https://github.com/tencentyun/coscmd.git) to download the source code.
+You can click [here](https://github.com/tencentyun/coscmd.git) to download the source code.
 
 ```plaintext
 git clone https://github.com/tencentyun/coscmd.git
@@ -54,34 +59,34 @@ cd coscmd
 python setup.py install
 ```
 
-> !For Python v2.6, we recommend using this method as it is easy for a failure to occur when installing pip dependent libraries.
+> !If your Python version is 2.6, installing the dependent libraries with pip may fail. Therefore, this installation method is recommended. 
 
-#### Offline installation
+#### 3. Installing from offline
 
-> ! Please make sure that the same version of Python is installed on the two devices; otherwise, the installation will fail.
+> ! Ensure that the two devices are installed with the same version of Python. Otherwise, the installation might fail.
 
 ```sh
-# Run the following commands on a device that is connected to the internet
+# Run the following commands on a device that is connected to the Internet
 mkdir coscmd-packages
 pip download coscmd -d coscmd-packages
 tar -czvf coscmd-packages.tar.gz coscmd-packages
 
-# Copy the installation package to a device that is not connected to the internet and run the following commands
+# Copy the installation package to a device that is not connected to the Internet and run the following commands
 tar -xzvf coscmd-packages.tar.gz
 pip install coscmd --no-index -f coscmd-packages
 ```
 
-## Directions
+## Parameter Configuration
 
-### Viewing help information
+### Viewing the help option
 
-You can view the tool's help information with the `-h` or `--help` command.
+You can run the `-h` or `--help` command to view the information and usage of COSCMD.
 
 ```plaintext
-coscmd -h  // View information on the current version
+coscmd -h  // View information about the current version
 ```
 
-The help information is as shown below:
+The help information is as follows:
 
 ```plaintext
 usage: coscmd [-h] [-d] [-b BUCKET] [-r REGION] [-c CONFIG_PATH] [-l LOG_PATH]
@@ -96,7 +101,7 @@ information. Try 'coscmd sub-command -h' to learn the usage of all commands, for
 
 positional arguments:
   {info,restore,createbucket,signurl,listparts,mget,list,upload,deletebucket,abort,getbucketversioning,putbucketacl,getobjectacl,download,putobjectacl,copy,config,putbucketversioning,getbucketacl,delete}
-    config              Config your information at first
+    config              Config your information first
     upload              Upload file or directory to COS
     download            Download file from COS to local
     delete              Delete file or files on COS
@@ -106,7 +111,6 @@ positional arguments:
     list                List files on COS
     listparts           List upload parts
     info                Get the information of file on COS
-    mget                Download file from COS to local
     restore             Restore
     signurl             Get download url
     createbucket        Create bucket
@@ -135,15 +139,17 @@ optional arguments:
   -v, --version         show program's version number and exit
 ```
 
-In addition, you can also enter `-h` after each command (with no parameter appended) to see how to use the command. For example:
+In addition, you can enter `-h` after each command (with no parameter appended) to see how to use the command. For example:
 
 ```plaintext
 coscmd upload -h  // View how to use the upload command
 ```
 
-### Configuring parameters
+### Basic configuration items
 
-You need to configure certain parameters before using COSCMD. Run the following command to begin configuration:
+Certain parameters need to be configured before you use COSCMD. You can run the following commands for the configuration:
+
+> ?In the following commands, fields enclosed in "[]" are optional, and those in "<>" are required.
 
 ```plaintext
 coscmd config [OPTION]...<FILE>...
@@ -159,211 +165,294 @@ coscmd config [OPTION]...<FILE>...
               [--anonymous]   
 ```
 
-Generally, you only need to perform simple configurations, as shown in the sample below.
+The following table describes these parameters:
+
+| Option | Parameter Description | Valid Value | Required |
+| ---------------- | ------------------------------------------------------------ | ------ | -------- |
+| -a | Key ID, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) | String | Yes |
+| -s | Key, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) | String | Yes |
+| -t | Temporary key token, which needs to be specified in the `x-cos-security-token` header when a temporary key is used. | String | No |
+| -b | Name of the specified bucket, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). If this is your first time using COSCMD, you need to create a bucket in the COS console to configure COSCMD. | String | Yes |
+| -r | Region of the bucket. For more information, please see [Regions and Access Endpoints](https://cloud.tencent.com/doc/product/436/6224). | String | Yes |
+| -e   | ENDPOINT of the request. Once configured, the `REGION` parameter will be invalidated. If you use the default endpoint, this parameter is formatted as `cos.<region>.myqcloud.com`; if you use a global acceleration endpoint, the format is `cos.accelerate.myqcloud.com`. | String | No  |
+| -m | Maximum number of threads in a multi-thread operation (default: 5; value range: 1-30) | Number | No |
+| -p | Size of the multipart upload part, in MB (default: 1; value range: 1-1000) | Number | No |
+| --do-not-use-ssl | Uses the HTTP protocol instead of HTTPS | String | No |
+| --anonymous | Anonymous operation (without carrying a signature) | String | No |
+
+### Quick configuration
+
+If you only need to perform basic operations, you can refer to the following operation example for a quick configuration.
+
+>?Before the configuration, you need to go to the COS console to create a bucket (e.g., `configure_bucket-1250000000`) for parameter configuration and create a key.
 
 ```shell
-coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b examplebucket-1250000000 -r ap-beijing
+coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b configure_bucket-1250000000 -r ap-chengdu
 ```
 
-> ?Here, fields enclosed in "[]" are optional, while those in "<>" are required.
 
-The parameters are as detailed below:
+### Modifying the configuration file
 
-| Option | Parameter Description | Required | Valid Value |
-| :--------------- | :----------------------------------------------------------- | -------- | ------ |
-| -a | Key ID, which can be obtained on the [API Key Management Page](https://console.cloud.tencent.com/cam/capi) on the console | Yes | String |
-| -s | Key, which can be obtained on the [API Key Management Page](https://console.cloud.tencent.com/cam/capi) on the console | Yes | String |
-| -t | Temporary key token, which should be specified in the `x-cos-security-token` header if a temporary key is used | No | String |
-| -b | Name of the specified bucket in the format: `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | Yes | String |
-| -r | Bucket region. For more information, please see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | Yes | String |
-| -e               | `ENDPOINT` of the request. Once configured, the `REGION` parameter will be invalidated. The format of this parameter is `cos.<region>.myqcloud.com` for default endpoint domain names and `cos.accelerate.myqcloud.com` for global acceleration endpoint domain names | No | String |
-| -m | Maximum number of threads in a multi-thread operation (default value: 5; value range: 1–30) | No | Number |
-| -p | Part size in MB in a multipart operation (default value: 1 MB; value range: 1–1000) | No | Number |
-| --do-not-use-ssl | Specifies to use HTTP instead of HTTPS protocol | No | String |
-| --anonymous | Anonymous operation (i.e. one that does not carry a signature) | No | String |
+In the Windows OS, you can directly edit the `.cos.conf` file, which is hidden in **My Documents**. This file does not exist at first and is generated by the `coscmd config` command. You can also create it manually.
 
-> ?
-> 1. You can directly edit the `~/.cos.conf` file (which is a hidden file in **My Documents** on Windows). This file does not exist at first and is generated by the `coscmd config` command. You can also create it manually.
-The file content of the configured `.cos.conf` file is as shown below:
+The file content of the configured `.cos.conf` file is as follows:
 ```plaintext
- [common]
-secret_id = AChT4ThiXAbpBDEFGhT4ThiXAbp****
-secret_key = WE54wreefvds3462refgwewe****
-bucket = examplebucket-1250000000
-region = ap-beijing
+[common]
+secret_id = AKIDA6wUmImTMzvXZNbGLCgtusZ2E8mG****
+secret_key = TghWBCyf5LIyTcXCoBdw1oRpytWk****
+bucket = configure_bucket-1250000000
+region = ap-chengdu
 max_thread = 5
 part_size = 1
+retry = 5
+timeout = 60
 schema = https
+verify = md5
+anonymous = False
 ```
-> 2. You can add `schema` in the configuration file to select `http/https`. The default value is `https`.
-> 3. You can use anonymous mode (i.e., the signature is kept empty) by selecting `True/False` for the `anonymous` item.
 
+>?
+>- `schema` can be set to `http` or `https` (default).
+>- `anonymous` can be set to `True` or `False`. If set to `True`, the anonymous mode is used (the signature is empty).
+>- For more information about the parameter description, please run the `coscmd config -h` command.
 
+## Common Bucket Commands
 
-### Using commands to specify a bucket and region
+### Specifying a bucket and its region
 
-- Specify a bucket with `-b <BucketName-APPID>`.
-- The bucket name entered here must be in the format of `BucketName-APPID`.
-- Specify a region with `-r <region>`.
+If you do not specify the bucket and region in the commands, the commands take effect for the bucket that is used to configure COSCMD. To perform operations on another bucket, you need to specify the bucket and the region where the bucket resides.
+
+>?
+>- Use the `-b <BucketName-APPID>` parameter to specify the bucket name, which must be formatted as `BucketName-APPID`.
+>- Use the `-r <region>` parameter to specify the region where the bucket resides.
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd -b <BucketName-APPID> -r <region> <action> ...
-# Sample - Create a bucket
+#Example: Create a bucket named `examplebucket` that resides in the Beijing region.
 coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
-# Sample - Upload a file
-coscmd -b examplebucket-1250000000 -r ap-beijing upload exampleobject exampleobject
+#Example: Upload a file (picture.jpg) from D drive to the `examplebucket` bucket.
+coscmd -b examplebucket-1250000000 -r ap-beijing upload D:/picture.jpg /
 ```
 
-### Creating bucket
+### Creating a bucket
 
-- We recommend using this command in conjunction with `-b <BucketName-APPID>` and `-r <region>`.
+>?Please specify `-b <BucketName-APPID>` and`-r <region>` when you run the `coscmd createbucket` command; otherwise, an error may be reported. This is because if the bucket and region are not specified, this command takes effect for the bucket that is used to configure COSCMD.
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd -b <BucketName-APPID> createbucket
-# Sample
-coscmd createbucket
+#Example: Create a bucket named `examplebucket` that resides in the Beiijng region.
 coscmd -b examplebucket-1250000000 -r ap-beijing createbucket
 ```
 
 ### Deleting a bucket
 
-- We recommend using this command in conjunction with `-b <BucketName-APPID>` and `-r <region>`.
+>?`coscmd deletebucket` takes effect only for the bucket that is used to configure COSCMD. To delete another bucket, run the command with the `-b <BucketName-APPID>`and `-r <region>` parameters specified.
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd -b <BucketName-APPID> deletebucket
-# Sample
-coscmd deletebucket
+#Example
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```
 
-- Using the `-f` parameter will forcibly delete the bucket, including all files, noncurrent folders (if versioning is enabled), and incomplete multipart uploads.
+>!The `-f` parameter will forcibly delete the bucket, including all files, noncurrent folders (if versioning is enabled), and incomplete multipart uploads.
+
+
+## Common Object Commands
 
 ### Uploading a file or folder
 
 - The command for uploading a file is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd upload <localpath> <cospath>
-# Sample
-# Upload the local `/data/exampleobject` file to the `data/exampleobject` path in COS
-coscmd upload /data/exampleobject data/exampleobject 
-coscmd upload /data/exampleobject data/
-# Upload the file by specifying the header
-# Specify the object type to upload an archived file
-coscmd upload /data/exampleobject data/exampleobject -H "{'x-cos-storage-class':'Archive'}"
-# Configure metadata
-coscmd upload /data/exampleobject data/exampleobject -H "{'x-cos-meta-example':'example'}"
+#Example
+#Upload picture.jpg in D drive to the "doc" directory of COS.
+coscmd upload D:/picture.jpg doc/
+#Upload picture.jpg in the "doc" folder in D drive to the "doc" directory of COS.
+coscmd upload D:/doc/picture.jpg doc/
+#Upload the file by specifying the header.
+#Upload a file to the ARCHIVE storage class to the "doc" directory of COS.
+coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
+#Configure the meta attribute.
+coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
 ```
 
 - The command for uploading a folder is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd upload -r <localpath> <cospath>
-# Sample
-coscmd upload -r /data/examplefolder data/examplefolder
-# The storage path in COS is `examplefolder2/examplefolder`
-coscmd upload -r /data/examplefolder examplefolder2/
-# Upload to the bucket root directory
-coscmd upload -r /data/examplefolder/ /
-# Upload files synchronously while skipping those with the same MD5 value
-coscmd upload -rs /data/examplefolder data/examplefolder
-# Upload files synchronously while deleting those that have been deleted locally
-coscmd upload -rs --delete /data/examplefolder data/examplefolder
-# Ignore .txt and .doc files
-coscmd upload -rs /data/examplefolder data/examplefolder --ignore *.txt,*.doc
+#Example: Upload the "doc" folder in D drive to the root directory of COS.
+coscmd upload -r D:/doc /
+#Upload the folder to the "doc" directory of COS.
+coscmd upload -r D:/doc doc
+#Upload the folder synchronously while skipping those with the same MD5 value.
+coscmd upload -rs D:/doc doc
+#Upload the folder synchronously and delete files that are deleted in the "doc" folder in D drive.
+coscmd upload -rs --delete D:/doc /
+#Ignore uploading files whose extension is .txt or .doc in the "doc" folder in D drive.
+coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 ```
 
- Replace parameters enclosed in "<>" with the path of the local file to be uploaded (localpath) as well as the COS storage path (cospath).
+
 
 > !
-> - When uploading a file, you need to enter the COS path plus the name of the file and/or folder (please see the samples for details).
-> - COSCMD supports checkpoint restart to resume the upload of large files. When the multipart upload of a large file fails, only the parts that failed to upload will be uploaded when the operation is resumed instead of starting over from scratch (please ensure that the file content of the re-uploaded directory is the same as that of the uploaded directory).
+> - Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
+> - When uploading a file, you need to fill in the COS path plus the name of the file and/or folder (see the examples for details).
+> - COSCMD supports checkpoint restart to resume the upload of large files. When the multipart upload of a large file fails, only the failed parts will be uploaded when the operation is resumed instead of starting over from scratch (please ensure that the directory and content of the re-uploaded file are consistent with the uploaded directory).
 > - COSCMD performs MD5 verification on each part during multipart upload.
-> - The `x-cos-meta-md5` header is included by default when COSCMD uploads a file, and its value is the same as the file's MD5 value.
-> - Use the `-s` parameter to upload files synchronously while skipping those with the same MD5 value (please note that the source files in COS must have been uploaded by using COSCMD v1.8.3.2 or above; the `x-cos-meta-md5` header is included by default).
-> - When setting the HTTP header using the `-H` parameter, please make sure that it is in JSON format, such as `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
-> - You can ignore certain types of files by using the `--ignore` parameter when uploading folders. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified file extension, `,` must be added at the end, or `""` must be added to enclose the file extension.
+> - The `x-cos-meta-md5` header is included by default when COSCMD uploads a file, and its value is the same as the file’s MD5 value.
+> - Use the `-s` parameter to upload files synchronously while skipping those with the same MD5 value (please note that the source files in COS must have been uploaded using COSCMD v1.8.3.2 or above; the `x-cos-meta-md5` header is included by default).
+> - When you set the HTTP header with the `-H` parameter, please use the JSON format (for example, `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+> - When uploading folders, you can ignore certain types of files by using the `--ignore` parameter. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
 > - Currently, a single file of up to 40 TB can be uploaded.
+
+
+### Querying a file list
+
+The query command is as follows:
+
+```plaintext
+#Command syntax
+coscmd list <cospath>
+#Example
+coscmd list doc/
+#Recursively query the file list, number of files, and the file sizes of a bucket.
+coscmd list -ar
+#Recursively query the list of all files prefixed with "examplefolder".
+coscmd list examplefolder/ -ar
+#Query the historical versions of all files in a bucket.
+coscmd list -v
+```
+
+>?
+>- Replace "cospath" enclosed in "<>" with the COS path of the file list to query. If `<cospath>` is empty, the root directory of the current bucket is queried.
+>- Use `-a` to query all files.
+>- Use `-r` to query files recursively. The number and total size of the files are listed at the end of the returned result.
+>- Use `-n num` to set the maximum number of files to query.
+
+
+### Viewing the file information
+
+The command is as follows:
+
+```plaintext
+#Command syntax
+coscmd info <cospath> 
+
+#Example
+coscmd info doc/picture.jpg
+```
+
+>?Replace "cospath" enclosed in "<>" with the COS path of the file to query.
+
 
 ### Downloading a file or folder
 
 - The command for downloading a file is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd download <cospath> <localpath>
-# Sample
-coscmd download data/exampleobject /data/exampleobject
-coscmd download data/exampleobject /data/
+#Example
+coscmd download doc/ D:/
+coscmd download doc/folder/ D:/
+#Download picture.jpg with a specified version ID to D drive.
+coscmd download picture.jpg --versionId MTg0NDUxMzc2OTM4NTExNTg7Tjg D:/
 ```
 
 - The command for downloading a folder is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd download -r <cospath> <localpath>
-# Sample
-coscmd download -r data/examplefolder/ /data/examplefolder
-coscmd download -r data/examplefolder/ /data/
-# Download all the files in the current bucket root directory and overwrite local files
-coscmd download -rf / /data/examplefolder
-# Download all the files in the current bucket root directory synchronously while skipping those with the same MD5 value
-coscmd download -rs / /data/examplefolder
-# Download all the files in the current bucket root directory synchronously while deleting existing local files that have been deleted in the cloud
-coscmd download -rs --delete / /data/examplefolder
-# Ignore .txt and .doc files
-coscmd download -rs / /data/examplefolder --ignore *.txt,*.doc
+#Example
+coscmd download -r doc D:/
+coscmd download -r doc D:/folder/
+#Download files in the root directory while ignoring those in the "doc" directory that is under the root directory.
+coscmd download -r / D:/ --ignore doc/*
+#Download all files in the root directory of the current bucket and overwrite local files.
+coscmd download -rf / D:/examplefolder/
+#Synchronously download all files in the root directory of the current bucket while skipping those with the same MD5 value.
+coscmd download -rs / D:/examplefolder
+#Synchronously download all files in the root directory of the current bucket and delete local files that have been deleted in cloud.
+coscmd download -rs --delete / D:/examplefolder
+#Ignore files with the .txt or .doc extension.
+coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
 
-Replace parameters enclosed in "<>" with the COS path (cospath) of the file to be downloaded as well as the local storage path (localpath).
 
 > !
+> - Replace "cospath" and "localpath" enclosed in "<>" with the COS path of the file to download and the local storage path, respectively.
 > - Since the old `mget` API is no longer in use, please use the `download` API for multipart downloads.
 > - If a file with the same name exists locally, the download will fail. In this case, you need to use the `-f` parameter to overwrite the local file.
-> - Use the `-s` or `--sync` parameter to skip identical files that already exist locally when downloading a folder (provided that the downloaded files were uploaded through the COSCMD upload API and the `x- cos-meta-md5` header was included).
-> - You can ignore certain types of files by using the `--ignore` parameter when downloading folders. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified file extension, `,` must be added at the end, or `""` must be added to enclose the file extension.
+> - Use the `-s` or `--sync` parameter to skip identical files that already exist locally when downloading a folder (provided that the downloaded files were uploaded via the COSCMD `upload` API and the `x- cos-meta-md5` header was included).
+> - When downloading folders, you can ignore certain types of files by using the `--ignore` parameter. Multiple shell wildcard rules (separated by commas `,`) are supported. To ignore a specified extension, `,` must be added at the end, or `""` must be used to enclose the extension.
+
+
+### Getting signed download URLs
+
+The command is as follows:
+
+```plaintext
+#Command syntax
+coscmd signurl <cospath>
+
+#Example
+coscmd signurl doc/picture.jpg
+coscmd signurl doc/picture.jpg -t 100
+```
+
+>?
+>- Replace "cospath" enclosed in "<>" with the COS path of the file for which you need to get the download URL.
+>- Use `-t time` to set the effective period (in seconds) of the query signature.
+
 
 ### Deleting a file or folder
 
 - The command for deleting a file is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd delete <cospath>
-# Sample
-coscmd delete data/exampleobject
-
+#Example
+coscmd delete doc/exampleobject.txt
+#Delete a file with a specified version ID.
+coscmd delete doc/exampleobject.txt --versionId MTg0NDUxMzc4ODA3NTgyMTErEWN
 ```
 
 - The command for deleting a folder is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd delete -r <cospath>
-# Sample
-coscmd delete -r /data/examplefolder/
-coscmd delete -r /
+#Example
+coscmd delete -r doc
+coscmd delete -r folder/doc
+#Delete all files with version IDs in the "doc" directory.
+coscmd delete -r doc/ --versions
 ```
 
- Replace parameters enclosed in "<>" with the COS path (cospath) of the file to be deleted. You will be prompted to confirm this operation.
+>?
+>- Replace "cospath" enclosed in "<>" with the COS path of the file to delete. You will be prompted to confirm this operation.
+>- You need to enter `y` to confirm a batch delete operation. You can skip this step if the `-f` parameter is used.
+>- Note that the delete folder command will delete the current folder as well as the files in it. To delete a versioning-enabled file, you need to specify a version ID.
 
-> !You need to enter `y` to confirm a batch deletion operation. This step can be skipped if the `-f` parameter is used.
 
 ### Viewing incomplete multipart uploads
 
 - The command is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd listparts <cospath>
-# Sample
-coscmd listparts examplefolder/
+#Example
+coscmd listparts doc/
 ```
 
 ### Clearing incomplete multipart uploads
@@ -371,9 +460,9 @@ coscmd listparts examplefolder/
 - The command is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd abort
-# Sample
+#Example
 coscmd abort
 ```
 
@@ -382,181 +471,143 @@ coscmd abort
 - The command for copying a file is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd copy <sourcepath> <cospath> 
-# Sample
-# Copy the object `data/exampleobject` in the bucket `examplebucket2-1250000000` to `data/examplefolder/exampleobject` in the bucket `examplebucket1-1250000000`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject
-# Change the storage class of the file to `STANDARD_IA`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'STANDARD_IA'}"
-# Change the storage class of the file to `ARCHIVE`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'Archive'}"
+#Example
+#Intra-bucket replication: Copy picture.jpg in the `examplebucket-1250000000` bucket to the "doc" folder.
+coscmd -b examplebucket-1250000000 -r ap-chengdu copy examplebucket-1250000000.ap-chengdu.myqcloud.com/picture.jpg doc/
+#Cross-bucket replication: Copy doc/picture.jpg in the `examplebucket2-1250000000` bucket to doc/examplefolder/ in the `examplebucket1-1250000000` bucket.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/
+#Change the storage class of the file to STANDARD_IA.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
+#Change the storage class of the file to ARCHIVE and rename it "photo.jpg".
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/photo.jpg -H "{'x-cos-storage-class':'Archive'}"
 ```
 
 - The command for copying a folder is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd copy -r <sourcepath> <cospath>
-# Sample
-# Copy the directory `examplefolder` in the bucket `examplebucket2-1250000000` to the directory `examplefolder` in the bucket `examplebucket1-1250000000`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder/ examplefolder
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder/ examplefolder/
-
+#Example
+#Copy the "examplefolder" directory in the `examplebucket2-1250000000` bucket to the "doc" directory in the `examplebucket1-1250000000` bucket.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder doc/
 ```
 
-Replace parameters enclosed in "<>" with the path of the COS source file (sourcepath) to be copied as well as the path of the COS destination file (cospath) to be copied to.
+
 
 > ?
-> - The `sourcepath` is in the format of `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
-> - Use the `-d` parameter to set the `x-cos-metadata-directive` header (valid values: Copy, Replaced; default value: Copy).
-> - When setting the HTTP header by using the `-H` parameter, please make sure that it is in JSON format, such as `coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more headers, please see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
+> - Replace "sourcepath" and "cospath" enclosed in "<>" with the path of the COS file to copy and the COS destination path, respectively.
+> - The source path is formatted as `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
+> - Use the `-d` parameter to set the `x-cos-metadata-directive` header. Valid values are `Copy` (default) and `Replaced`.
+> - When setting the HTTP header with the `-H` parameter, please use the JSON format (for example, `coscmd copy -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
 
 ### Moving a file or folder
 
 - The command for moving a file is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd move <sourcepath> <cospath> 
-# Sample
-# Move the object `data/exampleobject` in the bucket `examplebucket2-1250000000` to `data/examplefolder/exampleobject` in the bucket `examplebucket1-1250000000`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject
-# Change the storage class of the file to `STANDARD_IA`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'STANDARD_IA'}"
-# Change the storage class of the file to `ARCHIVE`
+#Example
+#Intra-bucket movement: Move picture.jpg in the `examplebucket-1250000000` bucket to the "doc" directory.
+coscmd -b examplebucket-1250000000 -r ap-chengdu move examplebucket-1250000000.ap-chengdu.myqcloud.com/picture.jpg doc/
+#Cross-bucket movement: Move picture.jpg in the `examplebucket2-1250000000` bucket to doc/folder/ in the `examplebucket1-1250000000` bucket.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/
+#Change the storage class of the file to STANDARD_IA.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
+#Change the storage class of the file to ARCHIVE.
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'Archive'}"
 ```
 
 - The command for moving a folder is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd move -r <sourcepath> <cospath>
-# Sample
-# Move the directory `examplefolder` in the bucket `examplebucket2-1250000000` to the directory `examplefolder` in the bucket `examplebucket1-1250000000`
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder/ examplefolder
-coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder/ examplefolder/
-
+#Example
+#Move the "examplefolder" directory in the `examplebucket2-1250000000` bucket to the "doc" directory in the `examplebucket1-1250000000` bucket.
+coscmd -b examplebucket1-1250000000 -r ap-guangzhou move -r examplebucket2-1250000000.cos.ap-guangzhou.myqcloud.com/examplefolder doc/
 ```
 
-Replace parameters enclosed in "<>" with the path of the COS source file (sourcepath) to be moved as well as the path of the COS destination file (cospath) to be moved to.
+
 
 > ?
-> - The `sourcepath` is in the format of `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
-> - Use the `-d` parameter to set the `x-cos-metadata-directive` header (valid values: copy, Replaced; default value: copy).
-> - When setting the HTTP header by using the `-H` parameter, please make sure that it is in JSON format, such as `coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more headers, please see [PUT Object - copy](https://intl.cloud.tencent.com/document/product/436/10881).
+> - Replace "sourcepath" and "cospath" enclosed in "<>" with the path of the COS file to move and the COS destination path, respectively.
+> - The source path is formatted as `<BucketName-APPID>.cos.<region>.myqcloud.com/<cospath>`.
+> - Use the `-d` parameter to set the `x-cos-metadata-directive` header. Valid values are `Copy` (default) and `Replaced`.
+> - When setting the HTTP header with the `-H` parameter, please use the JSON format (for example, `coscmd move -H -d Replaced "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. For more information about the headers, please see [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881).
 
-
-### Querying a file list
-
-The query command is as follows:
-
-```plaintext
-# Command format
-coscmd list <cospath>
-
-# Sample
-# Recursively query the list of all files in the bucket
-coscmd list -ar
-# Recursively query the list of all files prefixed with `examplefolder`
-coscmd list examplefolder/  -ar
-```
-
-Replace parameters enclosed in "<>" with the COS path (cospath) of the file list to be queried.
-
-- Use `-a` to query all files.
-- Use `-r` to query files recursively. The number and total size of the files will be listed at the end of the returned result.
-- Use `-n num` to set the maximum number of files to be queried.
-
->?If `<cospath>` is empty, the current bucket root directory will be queried by default.
-
-### Displaying file information
+### Setting object access permission
 
 The command is as follows:
-
 ```plaintext
-# Command format
-coscmd info <cospath> 
-
-# Sample
-coscmd info exampleobject
+#Command syntax
+coscmd putobjectacl --grant-<permissions> <UIN> <cospath>
+#Grant account `100000000001` the read permission on picture.jpg.
+coscmd putobjectacl --grant-read 100000000001 picture.jpg
+#Query the file access permission.
+coscmd getobjectacl picture.jpg
 ```
-
-Replace parameters enclosed in "<>" with the COS path (cospath) of the file to be displayed.
-
-### Getting signed download URL
-
-The command is as follows:
-
-```plaintext
-# Command format
-coscmd signurl <cospath>
-
-# Sample
-coscmd signurl exampleobject
-coscmd signurl exampleobject -t 100
-```
-
-Replace parameters enclosed in "<>" with the COS path (cospath) of the file for which you need to get the download URL.
-Use `-t time` to configure the validity period in seconds of the query signature.
 
 ### Enabling/Suspending versioning
 
 The command is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd putbucketversioning <status>
-
-# Enable versioning
+#Enable versioning.
 coscmd putbucketversioning Enabled
-
-# Suspend versioning
+#Suspend versioning.
 coscmd putbucketversioning Suspended
+#Query versioning.
+coscmd getbucketversioning
 ```
 
-Replace parameters enclosed in "<>" with the desired versioning status.
+Replace "status" enclosed in "<>" with the desired versioning status.
 
-> !Once versioning is enabled for a bucket, this operation cannot be reversed (i.e., versioning cannot be disabled). However, you can suspend versioning for the bucket so that subsequent object uploads will not generate multiple versions.
+> !
+>- Replace "status" enclosed in "<>" with the desired versioning status.
+>- Once versioning is enabled for the bucket, it cannot return to the prior status (initial status). However, you can suspend versioning for the bucket so that subsequent uploads of objects will not generate multiple versions.
 
-### Restoring an archived file
+### Restoring an ARCHIVED file
 
-- The command for restoring a file is as follows:
+- The command is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd restore <cospath>
-# Sample
-coscmd restore -d 3 -t Expedited exampleobject
+#Example
+coscmd restore -d 3 -t Expedited picture.jpg
 ```
 
-- The command for restoring archived files in batches is as follows:
+- The command for restoring ARCHIVED files in batches is as follows:
 
 ```plaintext
-# Command format
+#Command syntax
 coscmd restore -r <cospath>
-# Sample
+#Example
 coscmd restore -r -d 3 -t Expedited examplefolder/
 ```
 
- Replace parameters enclosed in "<>" with the COS path (cospath) of the file list to be queried.
-
-- Use `-d day` to configure the validity period of the temporary copy. Default value: 7.
-- Use `-t tier` to specify the restoration type. Enumerated values: Expedited, Standard, Bulk. Default value: Standard.
+>?
+>- Replace "cospath" enclosed in "<>" with the COS path of the file list to query.
+>- Use `-d day` to set the effective period of the temporary copy. Default value: `7`.
+>- Use `-t tier` to specify the restoration type. Enumerated values: `Expedited`, `Standard` (default), and `Bulk`.
 
 ### Running commands in debugging mode
 
-If `-d` or `-debug` is added before a command, detailed operation information will be displayed when the command is executed as shown in the example below:
+If `-d` or `-debug` is added before a command, detailed operation information will be displayed when executing the command, as shown in the example below:
 
 ```plaintext
-# Display upload details by using a command in the following format:
+#Display upload details using a command in the following syntax:
 coscmd -d upload <localpath> <cospath>
 
-# Sample
-coscmd -d upload exampleobject exampleobject
+#Example
+coscmd -d upload D:/picture.jpg /
 ```
 
-## FAQs
+## FAQ
 
-If you have any questions about COSCMD, please see [COSCMD FAQs](https://intl.cloud.tencent.com/document/product/436/30586).
+If you have any questions about COSCMD, please see [COSCMD Tool](https://intl.cloud.tencent.com/document/product/436/30586).

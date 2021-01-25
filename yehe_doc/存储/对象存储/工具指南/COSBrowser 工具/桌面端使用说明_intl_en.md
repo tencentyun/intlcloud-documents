@@ -1,4 +1,4 @@
-## Download and installation
+## Download and Installation
 
 #### Download
 
@@ -7,7 +7,6 @@
 | Windows | Windows 7 32/64-bit or above, Windows Server 2008 R2 64-bit or above | [Windows](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe) |
 | macOS | macOS 10.13 or above | [macOS](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.dmg) |
 | Linux | Includes GUI and supports the [AppImage](https://appimage.org/) format | [Linux](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip) |
-| Web edition | Browsers such as Chrome, FireFox, Safari, and IE10+ | [Web](https://cosbrowser.cloud.tencent.com/web) |
 
 #### Installation
 
@@ -22,7 +21,7 @@ You can log in to COSBrowser Desktop Edition with your Tencent Cloud API key, wh
 <img src="https://main.qcloudimg.com/raw/5fcb01823ae8220e035e86bfd12f047c.png" width="90%">
 
 
-## Basic features
+## Basic Features
 
 <span id="createordelete"></span>
 
@@ -38,7 +37,6 @@ You can log in to COSBrowser Desktop Edition with your Tencent Cloud API key, wh
 #### 2. Viewing bucket details
 
 You can view bucket details by clicking **Details** on the right of the bucket list. Details include bucket name, region, access permissions, and versioning status.
-
 
 <span id="count"></span>
 
@@ -75,7 +73,7 @@ If you log in with a sub-account that does not have permission to access the buc
 (1) Add an access path directly on the login page and select the corresponding bucket region. Once you log in, you can manage your resources.
 <img src="https://main.qcloudimg.com/raw/5d80a51cd9b9a9c4d14fec9d4275a41d.png" width="90%">
 (2) Log in with your sub-account, click **Add Path** in the upper-left corner of the bucket list page, and enter a specified path to enter the bucket and manage its resources.
-<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="60%">
+<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="90%">
 
 <span id="upload"></span>
 
@@ -84,7 +82,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Upload Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -113,7 +111,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Download Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -148,7 +146,7 @@ The file synchronization feature allows you to upload specified files in your lo
 (1) Click **Sync** in the upper right of the UI.
 (2) Specify a local folder and bucket directory in the dialog box.
 (3) Click **Start Sync** to enable file synchronization.
-(4) View synchronization history logs in the **Sync Logs** tab.
+(4) View synchronization history logs in **Sync Logs** tab.
 <img src="https://main.qcloudimg.com/raw/283c7f9ee254b08561084ece22e2ada2.png" width="90%" />
 
 > !
@@ -252,7 +250,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 <table>
    <tr>
       <th nowrap="nowrap">System Feature</th>
-      <th>Notes</th>
+      <th>Description</th>
       <th>Directions</th>
    </tr>
    <tr>
