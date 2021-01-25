@@ -89,6 +89,7 @@ key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
                         digestmod=sha256).hexdigest()
 print(base64.b64encode(bytes(hashcode, "utf-8")))
+``` 
 
 #### Java
 ``` 
