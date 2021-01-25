@@ -84,7 +84,7 @@
         </tr>
         <tr>
             <td>Group custom field</td>
-            <td>Groups support up to 20 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores.</li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for groups is 512 bytes.</li></ul></td>
+            <td>Groups support up to 10 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores.</li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for groups is 512 bytes.</li></ul></td>
         </tr>
         <tr>
             <td>Group member custom field</td>
