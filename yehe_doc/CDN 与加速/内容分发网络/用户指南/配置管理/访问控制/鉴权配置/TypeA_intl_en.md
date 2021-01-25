@@ -16,14 +16,14 @@
 ## Configuration Guide
 ### Parameter Description
 TypeA requires the following configurations:
-![](https://main.qcloudimg.com/raw/446781f6e47823eae931f8d8a3a5545e.png)
+![](https://main.qcloudimg.com/raw/b7da5881cba4ad972aa11f43bc2bc2ca.png)
 **Custom authentication key**: it contains 6 to 40 digits and uppercase and lowercase letters. The key should be kept private and known only to the client and server.
 **Custom authentication parameter name**: the `sign` in the example can be replaced with a parameter name containing 1 to 100 uppercase and lowercase letters, digits, and underscores. After CDN receives the request, it will read the value of the specified signature parameter and calculate the MD5 value. If the result matches the `md5hash` value passed in, the signature will be successfully verified. If not, a 403 error will be directly returned.
 **Custom validity period**: the `timestamp` value in the request, plus the configured validity period, is compared with the current time to determine whether the request has expired. If yes, a 403 error will be directly returned. The validity period is in seconds.
 
 ### Object
 After configuring the key, parameter name, and validity period, you can specify the authentication object as needed. The following three authentication modes are supported:
-![](https://main.qcloudimg.com/raw/656f4ff6cef0e6b2a3022348a8293d4e.png)
+![](https://main.qcloudimg.com/raw/148f6319984b1f3d99ccb186666cb425.png)
 
 + All files under a specified domain name need to be authenticated.
 + All files except those in a specified type need to be authenticated.
