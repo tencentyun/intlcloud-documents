@@ -1,16 +1,50 @@
+## Introduction
+Anti-DDoS Advanced supports precise protection for the connected web businesses. With the precise protection, you can configure protection policies combining multiple conditions of common HTTP fields, such as URI, UA, Cookie, Referer, and Accept to screen access requests. For the requests matched the conditions, you can configure CAPTCHA to verify the requesters or a policy to automatically lose the packets. Precise protection is available for policy customization in various use cases to precisely defend against CC attacks.
 
+The match conditions define the request characteristics to be checked, i.e., the attribute characteristics of the HTTP field in a request. Precise protection supports checking the HTTP fields below:
+<table>
+    <tr>
+        <th>Match Field</th>
+        <th>Field Description</th>
+				<th>Logic</th>
+    </tr>
+    <tr>
+        <td>URI</td>
+        <td>The URI of an access request.</td>
+				<td>Equals to, includes, or does not include.</td>
+    </tr>
+    <tr>
+        <td>UA</td>
+        <td>The identifier and other information of the client browser that initiates an access request.</td>
+				<td>Equals to, includes, or does not include.</td>
+    </tr>
+    <tr>
+        <td>Cookie</td>
+        <td>The cookie information in an access request.</td>
+				<td>Equals to, includes, or does not include.</td>
+    </tr>
+    <tr>
+        <td>Referer</td>
+        <td>The source website of an access request, from which the access request is redirected.</td>
+				<td>Equals to, includes, or does not include.</td>
+    </tr>
+    <tr>
+        <td>Accept</td>
+        <td>The data type to be received by the client that initiates the access request.</td>
+				<td>Equals to, includes, or does not include.</td>
+    </tr>
+</table>
 
 ## Prerequisites
-You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/15483) and set the protected object first.
+Purchase an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to be protected.
 
 ## Directions
-1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and select **Protection Configuration** on the left sidebar.
-2. Select a domain name under the ID of an Anti-DDoS Advanced instance in the list on the left; for example, select "212.64.xx.xx bgpip-000002je" > "http:80" > "www.xxx.com".
-
+1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Anti-DDoS Advanced (New)** -> **Configurations** on the left sidebar.
+2. Select a domain name under the target instance ID, e.g., `212.64.xx.xx bgpip-000002je` -> `http:80` -> `www.xxx.com`.
 ![](https://main.qcloudimg.com/raw/560df07c97e00d499d0363fa9ae58977.png)
-3. Click **Set** in the "Targeted Protection" block on the right to enter the targeted protection rule list.
+3. Click **Set** in the **Precise Protection** section to view the rule list.
 ![](https://main.qcloudimg.com/raw/f2177416c56413c6b4bec977468e8255.png)
-4. Click **Create** to create a targeted protection rule and fill in relevant fields.
+4. Click **Create** and then fill in the rule fields to create a precise protection rule.
 ![](https://main.qcloudimg.com/raw/0b4604f0d97e6059c6d35c3181beee60.png)
-5. After the creation is completed, a targeted protection rule will be added to the targeted protection list. You can modify the rule by clicking **Configure** in the "Operation" column on the right.
+5. Now the new rule is added to the rule list, you can click **Configuration** on the right of the rule to modify it.
 ![](https://main.qcloudimg.com/raw/13ed1705034538fc6fc1b1090a65bc8e.png)
