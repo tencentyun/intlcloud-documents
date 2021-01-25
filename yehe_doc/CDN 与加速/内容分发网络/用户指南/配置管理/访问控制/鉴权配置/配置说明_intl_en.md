@@ -7,7 +7,7 @@ Generally, contents delivered over CDN are public resources by default, which ca
 ## Configuration Guide
 ### Viewing configuration
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of the domain name to access its configuration page. Under the **Security Configuration** tab, find the authentication configuration, which is disabled by default:
-![](https://main.qcloudimg.com/raw/77831beaa25a77dd26b60e1f401c8dd3.png)
+![](https://main.qcloudimg.com/raw/1efe407c5a9f2fc8f8837d5b1cdbb3d7.png)
 
 ### Modifying configuration
 #### 1. Modify the configuration
@@ -16,17 +16,17 @@ CDN provides four authentication signature calculation models of your choice. Yo
 
 #### 2. Disable the configuration
 You can toggle the authentication configuration switch to disable this feature. When the switch is off, any existing configuration will not take effect in the production environment. If you toggle the switch on, a message will be displayed asking for your confirmation before the configuration takes effect across the entire network.
-![](https://main.qcloudimg.com/raw/5bb10025c5887793807e6b41dbea48a6.png)
+![](https://main.qcloudimg.com/raw/f892392e86acae153ef7821944888155.png)
 
 #### 3. Add a region-specific configuration
 If your acceleration domain name is configured for global acceleration and you want acceleration in and outside mainland China to have different authentication configurations, you can click **Add Special Configuration** under the configuration.
-![](https://main.qcloudimg.com/raw/391372dbf734e813c45640dace716793.png)
+![](https://main.qcloudimg.com/raw/8e6e0e08ef230322f4366a4fa92288e0.png)
 
 > !Currently, an added region-specific configuration item cannot be deleted but can only be disabled.
 
 ## Configuration Sample
 Suppose the domain name `cloud.tencent.com` is configured for global acceleration and the authentication configuration is as follows:
-![](https://main.qcloudimg.com/raw/6f432b21603b61e4a1d9c17048a675bf.png)
+![](https://main.qcloudimg.com/raw/1d82f89f383aa35f5d7ae679f19669fb.png)
 The actual effect will be as follows:
 
 1. A user in mainland China can access the resource `http://cloud.tencent.com/1.jpg` by directly initiating a request.
