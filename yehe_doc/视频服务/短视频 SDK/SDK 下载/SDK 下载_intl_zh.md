@@ -115,7 +115,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td>滤镜</td>
       <td>支持实时预览滑动切换滤镜的效果，支持自定义滤镜及设置滤镜程度。</td>
@@ -124,7 +124,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td>基础美颜</td>
       <td>拍摄设置人脸的磨皮、美白、红润，并调节强度。</td>
@@ -165,7 +165,7 @@
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-  
+
    <tr>
       <td rowspan='12'>特效编辑</td>
       <td>快速导入</td>
@@ -280,7 +280,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td rowspan='1'>视频上传</td>
       <td>上传到云点播</td>
@@ -290,7 +290,7 @@
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td rowspan='1'>点播播放</td>
       <td>超级播放器</td>
@@ -313,20 +313,19 @@
      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">基础版 SDK DOWNLOAD</a> </td>
       <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">企业版 SDK DOWNLOAD</a> </td>
    </tr>
-   
+
    <tr>
       <td rowspan='2'>License</td>
       <td>License 申请</td>
       <td>不同版本 SDK 需要搭配不同版本的 License 才能使用。</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">精简版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">基础版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">企业版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">企业版 Pro License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">精简版 License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">基础版 License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">企业版 License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">企业版 Pro License</a></td>
    </tr>
 </table>
 
-**如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)**。
-**若您需要购买SDK的使用权限，请联系您的商务**
+>? **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)。**
 
 ## 全功能小视频 App（Demo）源代码
 
@@ -371,6 +370,7 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
+
 
 
 

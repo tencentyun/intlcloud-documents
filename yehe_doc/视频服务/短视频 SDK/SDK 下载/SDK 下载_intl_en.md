@@ -1,27 +1,27 @@
-## Download Addresses of Different UGSV SDK Editions              
+## Different Editions of the UGSV SDK              
 <table>     
    <tr>
-      <th width="85px" style="text-align:center">Feature Module</td>
+      <th width="85px" style="text-align:center">Category</td>
       <th width="85px" style="text-align:center">Feature</td>
-      <th width="0px"  style="text-align:center">Overview</td>
+      <th width="0px"  style="text-align:center">Description</td>
       <th width="92px" style="text-align:center">Lite Edition License</td>
       <th width="92px" style="text-align:center">Basic Edition License</td>
       <th width="92px" style="text-align:center">Enterprise Edition License</td>
-      <th width="92px" style="text-align:center">Enterprise Pro Edition License</td>
+      <th width="92px" style="text-align:center">Enterprise Pro License</td>
    </tr>
    <tr>
       <td>UI</td>
       <td>Custom UI</td>
-	    <td>The UI can be customized. The UGSV application provides a complete set of source code for UI interaction, which can be reused or customized.</td>
+	    <td>Customizing UI. We provide a complete set of UI interaction source code for UGSV apps, which can be reused and customized.</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td rowspan='18'>Capturing and shoot</td>
+      <td rowspan='18'>Capturing and shooting</td>
       <td>Aspect ratio</td>
-      <td>Video shoot supports multiple aspect ratios, including 16:9, 4:3, and 1:1.</td>
+      <td>Shooting videos in the aspect ratio of 16:9, 4:3, or 1:1</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
@@ -29,31 +29,31 @@
    </tr>
    <tr>
       <td>Definition</td>
-      <td>SD, HD, and FHD are supported for shoot, and the bitrate, frame rate, and GOP can be customized.</td>
+      <td>Shooting standard-, high-, and ultra-high-definition videos with custom bitrate, frame rate and GOP.</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Shoot control</td>
-      <td>The front/rear cameras can be switched and the flash can be controlled during shoot.</td>
+      <td>Shooting control</td>
+      <td>Switching between front and rear cameras and adjusting lighting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
 	 <tr>
-	    <td>Duration configuration</td>
-      <td>The minimum and maximum shoot durations can be customized.</td>
+	    <td>Duration setting</td>
+      <td>Setting a custom maximum and minimum shooting duration</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
 	 <tr>
-      <td>Watermarking</td>
-      <td>Watermarks can be added during shoot.</td>
+      <td>Watermark</td>
+      <td>Adding watermarks to videos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
@@ -61,23 +61,23 @@
    </tr>
    <tr>
       <td>Focal length</td>
-      <td>The focal length can be adjusted during shoot.</td>
+      <td>Adjusting the focal length during shooting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
 	    <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Focus mode</td>
-      <td>Manual focus and autofocus are supported.</td>
+      <td>Focus modes</td>
+      <td>Manual and automatic focusing</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Multi-segment shoot</td>
-      <td>You can pause shoot to segment the video and delete existing segments.</td>
+      <td>Multi-segment shooting</td>
+      <td>Pausing to segment a video and deleting segments</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -85,15 +85,15 @@
    </tr>
    <tr>
       <td>Capturing</td>
-      <td>Photos can be captured.</td>
+      <td>Taking photos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Adjustable-speed shoot</td>
-      <td>Slow and fast shoot modes are supported.</td>
+      <td>Fast/slow motion shooting</td>
+      <td>Shooting slow- or fast-motion videos </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -101,7 +101,7 @@
    </tr>
    <tr>
       <td>Background music</td>
-      <td>A local .mp3 file can be selected as the background music before shoot.</td>
+      <td>Choosing a local MP3 file as the background music before shooting</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -109,25 +109,25 @@
    </tr>
    <tr>
       <td>Voice changing and reverb</td>
-      <td>The voice to be recorded can be changed to another type (such as the voice of a little girl or middle-aged man) and mixed with reverb effects (such as karaoke room and hall) before shoot.</td>
+      <td>Selecting a voice (e.g., girl or middle-aged man) or reverb effect (e.g., KTV, hall) before shooting </td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td>Filters</td>
-      <td>Filters can be switched by swipe and previewed in real time. The filter and filter level can be customized.</td>
+      <td>Swiping to preview video with filters applied, customizing filters, and setting filter intensity</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
       <td>Basic beauty filters</td>
-      <td>The skin smoothing, skin brightening, and rosy skin filters can be configured for shoot, and their effect levels can be adjusted.</td>
+      <td>Applying beauty filters including skin smoothing, skin lightening and rosy complexion, and adjusting filter intensity for shooting</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -135,7 +135,7 @@
    </tr>
    <tr>
       <td>Advanced beauty filters</td>
-      <td>The eye enlarging, face slimming, chin slimming, chin adjustment, face shortening, and nose narrowing filters can be set for shoot, and their effect levels can be adjusted.</td>
+      <td>Applying filters including big eyes, face slimming, chin slimming, chin adjustment, short face, and small nose, and adjusting filter intensity for shooting</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
@@ -143,7 +143,7 @@
    </tr>
    <tr>
       <td>Animated stickers</td>
-      <td>Faces can be detected, and effects such as face reshaping, stickers, and pendants can be added.</td>
+      <td>Locating facial features and adding effects such as reshaping and covering with stickers or widgets</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
@@ -151,7 +151,7 @@
    </tr>
    <tr>
       <td>AI-based keying</td>
-      <td>A person's contour can be recognized, and the background can be removed and replaced with another element, such as animated background or PowerPoint slide.</td>
+      <td>Detecting the contours of people and replacing the background, for example, with an animated background or PowerPoint.<td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
@@ -159,17 +159,17 @@
    </tr>
    <tr>
       <td>Green screen keying</td>
-      <td>Elements in green (such as pure green background) in the video image can be removed and replaced with another element such as animated background or PowerPoint slide.</td>
+      <td>Removing the green parts of a video (for example, a green background) and replacing them with other elements such as an animated background or PowerPoint</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-  
+
    <tr>
-      <td rowspan='12'>Special effects and editing</td>
-      <td>Quick import</td>
-      <td>Videos can be quickly imported on Android.</td>
+      <td rowspan='12'>Special effect editing</td>
+      <td>Quick importing</td>
+      <td>Quickly importing videos on Android devices</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -177,23 +177,23 @@
    </tr>
    <tr>
       <td>Video clipping</td>
-      <td>Videos can be precisely clipped according to the specified time range.</td>
+      <td>Cutting a video section with specified start and end time</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Bitrate configuration</td>
-      <td>The bitrate can be specified for video generation.</td>
+      <td>Bitrate setting</td>
+      <td>Generating a video with a specified bitrate</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Cover generation</td>
-      <td>The frame image at the specified time point can be obtained.</td>
+      <td>Cover generating</td>
+      <td>Getting the video image of a specified time point</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -201,7 +201,7 @@
    </tr>
    <tr>
       <td>Preview by frame</td>
-      <td>When the base cursor is slid along the timeline, the frame image where the cursor stays will be displayed in the preview window.</td>
+      <td>Moving the cursor to preview the image of the frame indicated by the cursor</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -209,15 +209,15 @@
    </tr>
    <tr>
       <td>Filters</td>
-      <td>Filters can be added for videos, and the filter level can be adjusted.</td>
+      <td>Applying filters to a video and adjusting filter intensity</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Time-base special effects</td>
-      <td>Time-based special effects such as reverse, loop, and slow motion can be added for videos.</td>
+      <td>Speed modifying filters</td>
+      <td>Applying to a video speed modifying filters including rewind, loop, and slow motion</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -225,7 +225,7 @@
    </tr>
    <tr>
       <td>Special effect filters</td>
-      <td>Special effects such as soul out, dynamic light-wave, cracked screen, and darkness and phantom can be added for videos.</td>
+      <td>Adding special effects such as “soul out”, “rock light”, “screen split” and “phantom” to a video</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -233,7 +233,7 @@
    </tr>
    <tr>
       <td>Background music</td>
-      <td>An embedded audio file or local .mp3 file in the phone can be used as the background music. The background music can be clipped, and the volume level can be adjusted.</td>
+      <td>Selecting an audio clip provided by Tencent Cloud or adding your own MP3 file to be used as the background music, which can be clipped and the volume of which can be adjusted</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -241,7 +241,7 @@
    </tr>
    <tr>
       <td>Animated or static stickers</td>
-      <td>Animated or static stickers can be added. Their positions in the video image and the start and end points in time for display are customizable.</td>
+      <td>Adding an animated or static sticker to a specified location of a video for a specified time range</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -249,7 +249,7 @@
    </tr>
    <tr>
       <td>Subtitles</td>
-      <td>Subtitles can be added, and the style of the subtitles frame background (such as bubble) can be selected. Their positions in the video image and the start and end points in time for display are customizable.</td>
+      <td>Adding subtitles to be shown in a specified time range, with different background templates to choose from</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -257,7 +257,7 @@
    </tr>
    <tr>
       <td>Image transition</td>
-      <td>Multiple images can be imported, and transition effects such as rotation, fade-in, and fade-out can be selected for video generation.</td>
+      <td>Uploading multiple images to generate a video, and selecting image transition effects such as rotate, fade-in and fade-out</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -265,36 +265,36 @@
    </tr>
    <tr>
       <td rowspan='2'>Video splicing</td>
-      <td>Multi-video splicing</td>
-      <td>Multiple videos can be spliced into one video.</td>
+      <td>Splicing videos</td>
+      <td>Splicing together multiple videos</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td>Co-shoot</td>
-      <td>A video can be shot when another video is played back to generate a dual-image video.</td>
+      <td>Co-shooting</td>
+      <td>Shooting while playing back an existing video to generate a dual-image video</td>
       <td style="text-align:center">×</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
-      <td rowspan='1'>Video upload</td>
-      <td>Upload to VOD</td>
-      <td>VOD supports features such as media asset management and content audit.</td>
+      <td rowspan='1'>Video uploading</td>
+      <td>Uploading to Tencent Cloud VOD</td>
+      <td>Tencent Cloud VOD offers features such as media management and content moderation</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
-   
+
    <tr>
-      <td rowspan='1'>VOD playback</td>
+      <td rowspan='1'>Video on demand</td>
       <td>Superplayer</td>
-      <td>A one-stop solution implemented based on the VOD player is provided, which has features such as video information pull, portrait/landscape mode switch, definition selection, on-screen commenting, and LVB time shifting and is completely open-source.</td>
+      <td>A VOD player-based, open-source solution that integrates features including video data pulling, landscape/portrait mode switch, definition selection, on-screen comments and time shifting during live streaming</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
       <td style="text-align:center">&#10003;</td>
@@ -303,31 +303,31 @@
    <tr>
       <td rowspan='2' id = "sdk">SDK download</td>
       <td>Android</td>
-	  <td>UGSV SDK (LiteAVSDK) + basic feature demo source code</td>
-          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_Android_latest.zip">Download the Basic Edition SDK</a> </td>
-	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">Download the Enterprise Edition SDK</a> </td>
+	  <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
+          <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_Android_latest.zip">Basic SDK download</a> </td>
+	  <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">Enterprise SDK download</a> </td>
    </tr>
    <tr>
       <td>iOS</td>
-      <td>UGSV SDK (LiteAVSDK) + basic feature demo source code</td>
-     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">Download the Basic Edition SDK</a> </td>
-      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">Download the Enterprise Edition SDK</a> </td>
+      <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
+     <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">Basic SDK download</a> </td>
+      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">Enterprise SDK download</a> </td>
    </tr>
+
    <tr>
-      <td>License</td>
+      <td rowspan='2'>License</td>
       <td>License application</td>
-      <td>An SDK edition can be used only with its corresponding license.</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Lite Edition license</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E8.B4.AD.E4.B9.B0.E6.AD.A3.E5.BC.8F.E7.89.88-license">Basic Edition license</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise Edition license</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041#.E5.85.B3.E4.BA.8E.E4.BC.81.E4.B8.9A.E7.89.88.E6.9C.AC-license">Enterprise Pro Edition license</a></td>
+      <td>Different SDK editions require different licenses.</td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Lite Edition License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Basic Edition License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Enterprise Edition License</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Enterprise Pro License</a></td>
    </tr>
 </table>
 
-**If you have any questions about the features supported by the SDK, please see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044).**
-**If you need to purchase SDK licenses, please contact your Tencent Cloud rep.**
+>? **If you have questions about the features of the SDK, see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044)。**
 
-## Source Code of Full-Featured UGSV Application Demos
+## (Demo) Source Code for All-Feature UGSV Apps
 
 <table width="850px">
   <tr>
@@ -338,13 +338,13 @@
   </tr>
   <tr>
     <td>Source code for iOS</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="http://download-1252463788.file.myqcloud.com/xiaoshipin/TXXiaoShiPinDemo_ios.zip">Download</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_ios_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/TXXiaoShiPinDemo_ios.zip">Download</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
   <tr>
     <td>Source code for Android</td>
-    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="http://download-1252463788.file.myqcloud.com/xiaoshipin/XiaoShiPin_Professional_Android.zip">Download</a></td>
+    <td><a onclick=MtaH5.clickStat("ugc_sdk_download_android_xsp_src_code") href="https://download-1252463788.file.myqcloud.com/xiaoshipin/XiaoShiPin_Professional_Android.zip">Download</a></td>
     <td><a href="https://github.com/tencentyun/UGSVSDK">GitHub</a></td>
     <td><a href="https://gitee.com/cloudtencent/UGSVSDK">Gitee</a></td>
   </tr>
@@ -370,6 +370,7 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
+
 
 
 

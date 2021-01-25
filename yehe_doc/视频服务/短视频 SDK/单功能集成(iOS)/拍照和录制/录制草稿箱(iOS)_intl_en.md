@@ -1,37 +1,41 @@
-You can implement the drafts logic as follows:
-#### First Shooting
-1. Start shooting.
-2. Pause/End the first shooting. 
-3. Cache the video segment locally (in drafts).
+How the shooting drafts feature works
+#### Starting a shooting
+1. Start shooting a video.
+- Pause/End the shooting. 
+- Cache the video segment locally (draft box).
 
-#### Second Shooting
+#### Resuming the shooting
 1. Preload the locally cached video segment.
-2. Resume shooting.
-3. End shooting.
+- Continue with the shooting.
+- End the shooting.
 
-```objc
-// Get the first video shooting object
+<dx-codeblock>
+::: objc objc
+//Get the object of the previous shooting
 record = [TXUGCRecord shareInstance];
 
-// Start shooting
+//Start shooting a video.
 [record startRecord];
 
-// Pause shooting and cache the video segment
+//Pause the shooting and cache the video segment
 [record pauseRecord:^{
 NSArray *videoPathList = record.partsManager.getVideoPathList;
-// Write `videoPathList` locally
+//Set `videoPathList` to a local path.
 }];
 
-// Get the second video shooting object
-record2 = [TXUGCRecord shareInstance];
+//Get the object of the resumed shooting.
+record2 = [TXUGCRecord shareInstance]；
 
-// Preload the locally cached segment
+//Preload the locally cached video segment.
 [record2.partsManager insertPart:videoPath atIndex:0];
 
-// Start shooting
+//Start the shooting
 [record2 startRecord];
 
-// End shooting, and the SDK will compose the cached video segment with the currently shot one
+//End the shooting. The SDK will splice together the two video segments.
 [record2 stopRecord];
-```
-#### For the specific implementation method, please see the `TCVideoRecordViewController` class in the [UGSV application demo source code](https://intl.cloud.tencent.com/document/product/1069/37914).
+:::
+</dx-codeblock>
+
+
+>! For detailed instructions, see the `UGCKitRecordViewController` class in [(Demo) Source Code for All-Feature UGSV Apps](https://intl.cloud.tencent.com/document/product/1069/37914).

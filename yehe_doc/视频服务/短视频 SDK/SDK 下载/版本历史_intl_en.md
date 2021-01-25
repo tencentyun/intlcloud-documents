@@ -1,261 +1,269 @@
-### v8.1 Released on December 3, 2020
-- Android: improved the image quality and clarity of short videos.
-- Android: changed the parameter type of beauty filter APIs from `int` to `float`.
-- Android: fixed the issue where the returned value was exceptional after short video shoot was paused.
+### Version 8.2 Released on December 24, 2020
+- Android: fixed the bug of the green screen feature no longer functioning after camera switch.
+- Android: fixed the occasional instability of UGSV.
+- iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
+- iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
+- iOS: fixed the occasional instability of the superplayer.
+
+### Version 8.1 Released on December 3, 2020
+- Android: improved the image quality and clarity of UGSV.
+- Android: changed the type of beauty filter APIs from `int` to `float`.
+- Android: fixed the problem of a value indicating failure being returned after shooting pauses.
 - Android: fixed some crash and compatibility issues.
 
-### v8.0 Released on November 16, 2020
-- iOS: fixed the issue where the application occasionally froze after multiple stickers were added.
-- iOS: fixed the occasional crash caused by bubble subtitle editing.
-- Android: made cover upload compatible with device models on Android 9.0 and above.
-- Android: fixed the issue where the video was out of sync when three-screen trio was switched to the background and then back to the foreground.
-- Android: fixed the occasional issue of `UGCKit` with black screen on the compressed video preview page.
-- Android: fixed the issue of `UGCKit` where the volume set during video editing didn't take effect.
-- Android: fixed the occasional issue of `UGCKit` where the undo button was not displayed on the action page.
+### Version 8.0 Released on November 16, 2020
+- iOS: fixed the problem of apps occasionally freezing after multiple stickers are added.
+- iOS: fixed the problem of apps quitting unexpectedly during bubble subtitle editing.
+- Android: supported the uploading of thumbnails on Android 9.0 and above.
+- Android: fixed the problem of out-of-sync videos in triple split screens after users switch apps to the background and then back to the foreground.
+- Android: fixed the UGCKit problem of occasional black screens when users preview compressed videos.
+- Android: fixed the problem of failure to set volume with UGCKit in video editing.
+- Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
 
-### v7.9 Released on October 23, 2020
-- iOS: fixed the issue where audio was missing at the end of edited short videos.
-- iOS: fixed the issue where the added background music was not reset when a short video was shot again.
-- Android: fixed several crashes of the UGSV SDK and enhanced the stability.
-- Android: fixed the crash of the shooting feature on Android 5.0 and below.
-- iOS and Android: optimized the delay control algorithm of the LVB player to avoid frequent acceleration and deceleration.
+### Version 7.9 Released on October 23, 2020
+- iOS: fixed the problem of audio missing towards the end of edited UGSV.
+- iOS: fixed the problem of background music used for one shooting being applied to all shootings afterwards.
+- Android: fixed multiple crash issues of the UGSV SDK and improved its stability.
+- Android: fixed the crash when users shoot videos on Android whose version is below 5.0.
+- iOS & Android: optimized the delay control algorithm of the live streaming player to avoid frequent acceleration and deceleration.
 
-### v7.8 Released on September 27, 2020
-- iOS: fixed the compatibility issue of superplayer on iOS 14.
-- Android: updated `VideoUploadSDK` in UGCKit.
-- Android: fixed the crash of advanced beauty filters on Android 4.4.
-- Android: fixed the occasional issue where the audio and video were out of sync during shoot in the UGSV SDK.
-- Android: fixed the issue with error log printing when the UGSV SDK was uninitialized.
-- Android: fixed the issue with slow callback when shoot was ended in the UGSV SDK.
-- Android: fixed multiple crashes reported in the UGSV SDK.
+### Version 7.8 Released on September 27, 2020
+- iOS: fixed the superplayer’s compatibility issue with iOS 14.
+- Android: upgraded the video upload SDK in UGCKit.
+- Android: fixed the problem of system crash when advanced beauty filters are used on Android 4.4.
+- Android: fixed the problem of occasional lip-sync errors during shooting.
+- Android: fixed the problem of the error log being printed during deinitialization of the UGSV SDK.
+- Android: fixed the problem of slow callback of end to a shooting.
+- Android: fixed multiple crash issues of the UGSV SDK reported recently.</td>
 
-### v7.7 Released on September 8, 2020
-- Android: optimized basic image polishing and beauty filters and added the brightening and natural filters.
-- iOS: fixed the compatibility issue of UGSV on iOS 14.
+### Version 7.7 Released on September 8, 2020
+- Android: optimized the basic beauty filters, and added the “skin lightening” and “natural” filters.
+- iOS: fixed the compatibility issue with iOS 14.
 
-### v7.6 Released on August 24, 2020
-- iOS and Android: optimized AI beauty filters and profile face makeup effects, fixed the issue with covered lip gloss, and improved the face detection and tracking accuracy.
-- iOS and Android: internationalized the SDK event and error callback messages.
-- Android: moved the callback of custom short video preprocessing before sticker addition.
-- Android: fixed the occasional crash caused by the release of bitmap in short videos.
-- Android: fixed the issue where chorus in short videos kept loading on certain device models.
+### Version 7.6 Released on August 24, 2020
+- iOS & Android: optimized AI-based beauty filters: fixed wrong lipstick application, enhanced the accuracy of facial feature location, and improved the make-up effect for face profiles.
+- iOS & Android: internationalized the SDK event and error callback messages.
+- Android: moved the callback of custom pre-processing of UGSV before the adding of stickers.
+- Android: fixed the occasional crash caused by the release of bitmap memory.
+- Android: fixed the problem of the karaoke page stuck on loading on some devices.
 
-### v7.5 Released on July 31, 2020
-iOS: fixed the issue where post-roll watermarks flickered during short video playback.
+### Version 7.5 Released on July 31, 2020
+iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 
-### v7.4 Released on July 3, 2020
-- iOS and Android: fixed the issue where composing videos without audio track failed.
-- Android: optimized the output effect of short video editing and fixed the issue where the image clarity was insufficient on certain device models.
+### Version 7.4 Released on July 3, 2020
+- iOS & Android: fixed the problem of failure to splice videos with no audio tracks.
+- Android: optimized the quality of edited UGSV and fixed the lack of image clarity on some devices.
 
-### v7.2 Released on April 17, 2020
-- iOS and Android: optimized visual effect APIs such as filter and green screen keying and aggregated them into the `TXBeautyManager` class for a unified call method.
+### Version 7.2 Released on April 17, 2020
+- iOS & Android: optimized visual effect APIs such as filters and green screen keying, and integrated them into the `TXCBeautyManager` class to facilitate calling.
 
-### v7.1 Released on March 30, 2020
-- Android: supported the HE-AAC audio format for short video editing, which is more compatible with third-party video editors.
-- Android: fixed occasional issues of `UGCKit` where the cropping page was displayed exceptionally and shoot failed. 
+### Version 7.1 Released on March 30, 2020
+- Android: supported audio files in the HE-AAC format in video editing, providing better compatibility with third-party videos.
+- Android: fixed UGCKit problems including occasional abnormal display of the video clipping page and occasional errors during shooting. 
 
-### v7.0 Released on March 9, 2020
-- Android: fixed the occasional crash of animated face effects.
-- Android: fixed the occasional crash caused by stopping shoot while frequently switching cameras.
-- iOS and Android: fixed several bugs.
+### Version 7.0 Released on March 9, 2020
+- Android: fixed occasional crash when beauty filters or animated effects are used.
+- Android: fixed the occasional crash when users end a shooting after frequent camera switch.
+- iOS & Android: fixed a number of bugs.
 
-### v6.9 Released on January 15, 2020
-- iOS and Android: componentized the UI of `UGC TUIKit` and supported custom themes for easier integration and modification.
-- iOS and Android: supported three-screen trio and volume adjustment.
-- Android: supported Android 10.
-- Android: supported hardware encoding to expedite short video preprocessing.
-- iOS: optimized the chorus module and fixed issues such as out-of-sync audio/video.
+### Version 6.9 Released on January 15, 2020
+- iOS & Android: introduced UGC TUIKit to enable modular UI design and theme customization, facilitating integration and modification.
+- iOS & Android: supported shooting of triple split screen videos and volume adjustment.
+- Android: made the SDK supported on Android 10.
+- Android: started using hardware encoders for UGC to speed up pre-processing.
+- iOS: optimized the karaoke module and fixed problems including lip-sync errors.
 
-### v6.8 Released on November 15, 2019
-- iOS and Android: supported shoot in 4:3 aspect ratio.
-- iOS and Android: added various image polishing features such as skin brightening, eye enlarging, teeth whitening, wrinkle removal, makeup, and gesture recognition.
-- Android: improved the generation speed and efficiency during short video editing.
-- Android: fixed the issue where the bottom-right border of the focus frame was thicker than the top-left border.
-- Android: fixed the issue in the Enterprise Edition where eye enlarging, face slimming, and animated effects didn't work on certain device models.
-- iOS: fixed the occasional issue with black screen during short video preview.
+### Version 6.8 Released on November 15, 2019
+- iOS & Android: supported shooting videos in the aspect ratio of 4:3.
+- iOS & Android: incorporated new image retouching features into the Enterprise Edition, including skin airbrushing, eye lightening, teeth whitening, wrinkle removing, make-up application, and gesture recognition.
+- Android: sped up the generation of UGSV, including post-editing generation.
+- Android: fixed the problem of the bottom-right lines of the focus frame being thicker than the top-left lines.
+- Android: fixed the problem of the big eye and face slimming filters and animated effects in the Enterprise Edition SDK not working on some devices.
+- iOS: fixed the problem of occasional black screens when users preview UGSV.
 
-### v6.7 Released on September 29, 2019
-- iOS and Android: supported shoot in 16:9 aspect ratio.
-- iOS and Android: fixed the reported occasional crashes.
-- Android: fixed the occasional noise during short video composition.
-- iOS: fixed the compatibility issue with Arabic.
-- iOS: fixed the occasional issue where saving edited videos in high quality failed.
+### Version 6.7 Released on September 29, 2019
+- iOS & Android: supported shooting videos in the aspect ratio of 16:9.
+- iOS & Android: fixed the occasional crash issues reported.
+- Android: fixed the occasional noise in videos after composition.
+- iOS: supported Arabic.
+- iOS: fixed the problem of users occasionally failing to save high-quality videos during editing.
 
-### v6.6 Patch Released on September 10, 2019
-- iOS and Android: fixed several bugs.
-- Android: fixed the issues with memory usage and library conflict in the Enterprise Edition.
-- iOS: added compatibility support for iOS 13.
+### Version 6.6 Patch Released on September 10, 2019
+- iOS & Android: fixed a number of bugs.
+- Android: fixed the memory usage and library conflict problems of the Enterprise Edition SDK.
+- iOS: made the SDK supported on iOS 13.
 
-### v6.6.7458 Released on August 6, 2019
-- Android: supported 64-bit in the Enterprise Edition and dynamic download from the image polishing material library.
-- Android: fixed the crash of the short video editing page.
-- iOS: fixed the occasional issue where the returned value was incorrect during thumbnail acquisition by time point in `TXVideoEditer`.
-- iOS: fixed the issue where the set animated effects didn't work after being switched to the background.
+### Version 6.6.7458 Released on August 6, 2019
+- Android: made the Enterprise Edition SDK supported on 64- bit operating systems and supported dynamic downloading from the library of image retouching materials.
+- Android: fixed the crash of the UGSV editing page.
+- iOS: fixed the problem of TXVideoEditer returning incorrect data when trying to get the thumbnail of a time point.
+- iOS: fixed the problem of animated effects not working after users switch apps to the background.
 
-### v6.5.7272 Released on June 12, 2019
-- iOS and Android: supported image upload.
-- Android: fixed issues such as occasional OpenGL exceptions during short video generation.
-- Android: fixed the issue where the rotation direction wouldn't refresh after pause during video editing.
+### Version 6.5.7272 Released on June 12, 2019
+- iOS & Android: supported uploading images.
+- Android: fixed the problem of occasional openGL errors during the generation of UGSV.
+- Android: fixed the problem of image updating failure when users pause and rotate a video during editing.
 
-### v6.4.7328 Released on May 15, 2019
-Fixed recently reported bugs to further improve the stability.  
+### Version 6.4.7328 Released on May 15, 2019
+Fixed a number of bugs reported recently and enhanced the stability of the SDK.  
 
-### v5.4 Released on January 4, 2019
-- iOS and Android: improved the success rate of short video upload.
-- iOS: fixed some crashes caused by the image transition composition feature.
+### Version 5.4 Released on January 4, 2019
+-iOS & Android: improved the success rate of UGSV uploading.
+- iOS: fixed some crash issues during the use of the image transition and composition feature.
 
-### v5.3 Released on October 25, 2018
-- iOS and Android: supported fade-in/fade-out in background music editing.
-- iOS and Android: supported video shoot in 1080p.
-- iOS and Android: supported splicing videos without audio.
-- Android: fixed the issue where the shoot progress callback was not timely.
-- Android: fixed the issue where the orientation of some video thumbnails was incorrect.
-- Android: fixed the issue with lags during preprocessing.
-- iOS: supported setting whether to loop the background music in video shoot.
-- iOS: optimized short video upload.
-- iOS: added the feature of generating GIFs of original videos in the demo.
+### Version 5.3 Released on October 25, 2018
+- iOS & Android: supported fade-in and fade-out for background music.
+- iOS & Android: supported shooting 1080p videos.
+- iOS & Android: supported splicing videos without audio.
+- Android: fixed the delay in the callback of the shooting progress.
+- Android: fixed the problem of wrong rotation degrees for some video thumbnails.
+- Android: fixed the lag in pre-processing.
+- iOS: allowed users to choose whether to loop background music.
+- iOS: optimized the uploading of UGSV.
+- iOS: added the feature of generating GIFs of original videos to the demo.
 
-### v5.2 Released on September 14, 2018
-- iOS and Android: supported editing larger 4K videos and specifying the resolution for thumbnail extraction.
-- iOS and Android: added the draft box feature demo. For more information, please see the UGSV app.
-- iOS and Android: supported dynamic screen rotation in video editing.
-- Android: added the quick thumbnail acquisition API in video editing.
-- Android: fixed the issue where the angle setting of dynamic stickers didn't work.
-- Android: fixed the occasional issue with out-of-sync audio/video during video composition and improved the image quality of the output videos.
-- iOS: fixed the thread safety issue caused by quick and frequent background music switching.
-- iOS: fixed the issue where the background music volume was inconsistent between video shoot and preview.
-- iOS: fixed the issue where the post-roll watermark PTS was exceptional when special effects were repeatedly added in video editing.
+### Version 5.2 Released on September 14, 2018
+- iOS & Android: supported editing long 4K videos and getting thumbnails in specified resolution.
+- iOS & Android: added an example on how to use the shooting draft feature. For details, see the document about UGSV apps.
+- iOS & Android: supported dynamically rotating video images during editing.
+- Android: added a quick thumbnail getting API for video editing.
+- Android: fixed the problem of rotation degree settings not working for animated effects.
+- Android: fixed occasional lip-sync errors of videos composed from multiple clips and improved the image quality of the composed videos.
+- iOS: fixed the thread safety issue caused by frequent switching of background music.
+- iOS: fixed the problem of inconsistent background music volume for shooting and preview.
+- iOS: fixed the problem of watermark PTS exception towards the end of videos after users add the same special effects multiple times during video editing.
 
-### v5.1 Released on August 18, 2018
-- iOS and Android: added multiple UGSV editions of Lite, Basic, Enterprise, and Enterprise Pro to meet the needs of different customers. Different editions require application for corresponding licenses.
-- iOS and Android: optimized beauty filters and redesigned and added multiple filter effects.
-- iOS and Android: added the gesture effects for shoot and editing filters.
-- iOS and Android: optimized the duet chorus feature.
-- iOS and Android: added the features of hold-and-press to shoot, click to shoot, and click to capture in the UGSV app, added the countdown feature in chorus, and added the reverb and voice changing effect selectors on the shoot page.
-- iOS and Android: internationalized the UGSV app to support Chinese and English.
-- iOS and Android: redesigned the demo's main UI for better ease of use.
-- Android: added the quick import capability which is suitable for fast import of large videos.
-- Android: added the filter level setting API in video editing.
-- iOS: supported two-pass encoding in video editing to generate higher image quality.
-- iOS: fixed the issue where the CPU utilization was high when editing was started after shoot exited exceptionally.
-- iOS: fixed the issue with blurred screen during short video shoot on iOS 12.
+### Version 5.1 Released on August 18, 2018
+- iOS & Android: launched multiple editions of the UGSV SDK (Lite, Basic, Enterprise, Enterprise Pro) to cater to the varying needs of clients. Different editions require different licenses.
+- iOS & Android: optimized and redesigned beauty filters and added a number of filters.
+- iOS & Android: allowed users to swipe to apply different filters during shooting and editing.
+- iOS & Android: optimized the duet karaoke feature.
+- iOS & Android: added gestures including “press and hold to shoot”, “click to shoot”, and “click to capture” to UGSV apps, added the countdown feature to the karaoke mode, and allowed reverb adding and voice changing during shooting.
+- iOS & Android: made UGSV apps available in both Chinese and English.
+- iOS & Android: redesigned the main UI of the demo for enhanced clarity and usability.
+- Android: allowed quick importing of long videos.
+- Android: added a filter intensity setting API for video editing.
+- iOS: supported two-pass encoding in video editing to generate videos of higher quality.
+- iOS: fixed the problem of high CPU usage when users open the editing page again after apps quit unexpectedly during shooting.
+- iOS: fixed the problem of blurry screens during shooting on iOS 12.
 
-### v5.0 Released on July 18, 2018
-- iOS and Android: supported duet chorus for left-right video composition.
-- iOS and Android: supported dual-channel for edited videos.
-- iOS and Android: supported setting audio sample rate and rendering mode for shoot.
-- Android: optimized the image quality of shot and edited videos to make the output files smaller.
-- Android: improved the video preprocessing and generation speed in short video editing.
-- Android: fixed the issue with black screen caused by portrait/landscape mode switching during shoot.
-- Android: fixed the issue where an error would be reported when shoot start or end was quickly clicked.
-- iOS: improved the loading speed of edited videos.
-- iOS: fixed the occasional issue whether the video image of edited videos was split.
-- iOS: fixed the occasional issue whether black frames were displayed at the end of edited videos.
-- iOS: fixed the issue where audio playback would end prematurely when the edited preview video was set to slow playback.
-- iOS: adapted the iOS demo to iPhone X.
-- iOS: fixed memory leaks to improve the stability and added module definitions to better support Swift integration.
+### Version 5.0 Released on July 18, 2018
+- iOS & Android: supported duet karaoke in dual (left/right) split screens.
+- iOS & Android: supported generating videos with two audio tracks in video editing.
+- iOS & Android: allowed setting of the audio sampling rate and rendering mode for shooting.
+- Android: optimized the image quality of videos generated after shooting and editing and reduced the size of the files generated.
+- Android: sped up video pre-processing and generation.
+- Android: fixed the problem of black screens during shooting after landscape/portrait mode switch.
+-Android: fixed the problem of error reporting when users click to start and end shootings at short intervals.
+- iOS: reduced the loading time for video editing.
+- iOS: fixed the problem of occasional ripped images in edited videos.
+-iOS: fixed the problem of occasional black frames towards the end of an edited video.
+-iOS: fixed the problem of audio ending prematurely if users set the playback mode to slow motion when previewing edited videos.
+- iOS: made the demo compatible with iPhone X.
+- iOS: fixed memory leaks, enhanced stability, and added module definitions to better support Swift integration.
 
-### v4.9 Released on June 14, 2018
-- iOS and Android: optimized the UGSV license integration method and supported auto-renewal.
-- Android: added the capability to convert images to videos, supported multiple transition animations for image switching, such as sliding up/down/left/right, zooming in, zooming out, rotating-zooming, and fade-in/fade-out.
-- Android: optimized the generation speed of edited short videos and fixed issues such as memory leaks.
-- iOS: improved the loading speed of local background music and thumbnails in short videos and the acquisition speed of `videoInfo`.
-- iOS: optimized the image quality of edited short videos.
-- iOS: fixed occasional issues with lags and black frames in short video shoot, post-roll watermark flickering, and memory leaks.
+### Version 4.9 Released on June 14, 2018
+- Android & iOS: optimized the license integration method and supported auto-renewal.
+- Android: incorporated the image-to-video conversion capability and allowed the selection of image transition effects such as pan, zoom, zoom rotation, and fade.
+- Android: sped up the generation of UGSV after editing and fixed memory leaks.
+- iOS: sped up the loading of local background music and thumbnails, as well as the acquisition of video information.
+- iOS: optimized the image quality of post-editing UGSV.
+- iOS: fixed problems including occasional lag and black frames during shooting, occasional flashing of watermarks towards the end of videos, memory leaks, etc.
 
-### v4.7 Released on May 25, 2018
-- iOS and Android: added new filter effects in short videos, such as blinds, phantom, lightning, mirror, and illusion.
-- Android: added texture support for custom data.
-- Android: optimized the memory usage of short video editing and composition and reduced the peak memory usage during editing and generation.
-- iOS: added the capability to convert images to videos, supported multiple transition animations for image switching, such as sliding up/down/left/right, zooming in, zooming out, rotating-zooming, and fade-in/fade-out.
-- iOS: fixed the issue where the short video background music needed to be completely played back before it could be called back.
+### Version 4.7 Released on May 25, 2018
+- iOS & Android: added filters for UGSV, including blinds, phantom, lightning, mirror, illusion, etc.
+- Android: supported texture for custom data.
+- Android: reduced peak memory usage during UGSV editing and generation.
+- iOS: added the image-to-video conversion capability and allowed the selection of image transition effects such as pan, zoom, zoom rotation, and fade.
+- iOS: fixed the problem of callbacks possible only after background music ends.
 
-### v4.6 Released on May 4, 2018
-- iOS and Android: added the reverb effects such as hall and husky and voice changing effects such as little girl and middle-aged man in short video shoot.
-- iOS and Android: added the external segment storage directory setting API in short video shoot.
-- iOS and Android: supported adding pure video streams as background music in short video editing.
-- iOS and Android: added the split-screen composition API in short video composition.
-- iOS and Android: removed the upper limit of bitrate in short video shoot.
-- Android: optimized small file upload to increase the success rate.
-- Android: fixed the crash caused by incorrect animated effect paths.
-- iOS: supported Bitcode in short videos.
+### Version 4.6 Released on May 4, 2018
+- iOS & Android: added reverb effects such as hall and deep vocal, and voice changing effects such as girl and middle-aged man for UGSV shooting.
+- iOS & Android: added an external API for setting the directory to save video segments.
+-iOS & Android: supported adding background music to videos without audio in UGSV editing.
+- iOS & Android: added a split screen API for UGSV composition.
+- iOS & Android: lifted the upper limit on bitrate during UGSV shooting.
+- Android: optimized the uploading of small files and increased the success rate.
+- Android: fixed the crash caused by incorrect path for animated effects.
+- iOS: supported Bitcode.
 
-### v4.5 Released on April 13, 2018
-- iOS and Android: added demo code for file upload and integrated the VOD service to provide an all-in-one solution from shoot, special effect production, upload, and transcoding to porn detection, distribution, and playback.
-- iOS and Android: supported the GIF format for cover upload and added the segment composition feature.
-- iOS and Android: added two special effects, supported removing background music from animated effects, and supported quickly canceling all filter effects.
-- Android: optimized the short video production process and fixed issues with inability to play back uploaded large files, occasional black frames during thumbnail acquisition, and occasional out-of-sync audio/video.
-- Android: supported customizing the bitrate when editing short videos.
-- Android: supported editing video files without audio track.
+### Version 4.5 Released on April 13, 2018
+- iOS & Android: added the demo code of the uploading feature and integrated the SDK with the VOD service so that it provides a comprehensive solution that covers video shooting, special effect adding, uploading, transcoding, porn detection, distribution and playback.
+-iOS & Android: supported uploading GIFs to be used as thumbnails and added the video segment splicing feature.
+- iOS & Android: added two actions for special effects: removing the background music of animated effects and removing all filters with one click.
+- Android: optimized the UGSV production process and fixed problems including playback failure after uploading of large files, occasional black frames in acquired thumbnails, lip-sync errors in some videos, etc.
+- Android: allowed users to set the bitrate when editing UGSV.
+- Android: allowed the editing of videos without audio.</td>
 
-### v4.2
-iOS and Android: improved the performance of the Enterprise Edition SDK, supported image polishing and animated effects, greatly increased the frame rate on iOS, and reduced the GPU usage on Android.
+### Version 4.2
+iOS & Android: improved the performance of the Enterprise SDK: enabled image retouching and animated effects, significantly improved video frame rates on iOS, and reduced GPU usage.
 
-### v4.1
-- iOS and Android: added the resolution and bitrate switching APIs in short video shoot.
-- iOS and Android: added the capturing API in short video shoot.
-- iOS and Android: supported setting the start time and loop of background music in short video editing.
+### Version 4.1
+- iOS & Android: added a bitrate and resolution switching API in UGSV shooting.
+- iOS & Android: added a photo taking API in UGSV shooting.
+- iOS & Android: allowed users to specify the playback start time and whether to loop playback during UGSV editing.
 
-### v3.9
-- iOS and Android: greatly upgraded the animated stickers and added the HDR and HD sticker effects to make stickers more appealing.
-- iOS and Android: added the AI-based keying capability.
-- iOS and Android: added three time-based special effects of slow motion, loop, and reverse.
-- iOS and Android: added a variety of filter effects for better choice.
-- iOS and Android: added a variety of dynamic and static stickers and supported customizing more stickers.
-- iOS and Android: supported adding bubble subtitles to videos.
-- iOS and Android: supported muted shoot for convenient post-production.
-- iOS and Android: supported switching portrait/landscape mode during shoot.
-- iOS and Android: fixed several bugs.
-- Android: integrated a new COS architecture with `UGCPublish` to optimize the short video upload flow.
+### Version 3.9
+- iOS & Android: added HDR and high-resolution animated stickers.
+- iOS & Android: added the AI-based background keying feature.
+- iOS & Android: added three speed modifying effects: slow motion, loop, and rewind.
+- iOS & Android: added multiple filters, providing users with more options.
+- iOS & Android: added multiple animated and static stickers and supported customizing stickers.
+- iOS & Android: allowed users to add bubble subtitles to videos.
+- iOS & Android: supported shooting videos without audio to make post-shooting editing easier.
+- iOS & Android: allowed users to switch between the landscape and portrait modes during shooting.
+- iOS & Android: fixed a number of bugs.
+- Android: optimized the UGSV uploading process by integrating COS into UGCPublish.
 
-### v3.4
-- iOS and Android: added the existing segment deleting, multi-aspect ratio switching, and focus adjustment features in short video shoot.
-- iOS and Android: added the post-roll watermark feature in short video editing.
+### Version 3.4
+- iOS & Android: added actions such as deleting existing video segments, changing aspect ratio, and adjusting focal length in UGSV shooting.
+- iOS & Android: supported adding watermarks at the end of videos.
 - iOS: fixed the compatibility issue with iOS 11.
 
-### v3.3
-- iOS and Android: fixed some bugs reported by users in the last week.
-- Android: fixed the issues with green screen during shoot and black screen during playback on certain device models.
+### Version 3.3
+- iOS & Android: fixed some of the bugs reported by clients last week.
+- Android: fixed the problem of green screens during shooting and black screens during playback on some Android devices.
 
-### v3.1
-- iOS and Android: added the chin slimming and nose narrowing features in the Enterprise Edition.
-- iOS and Android: optimized the beauty filter algorithm and added the rosy skin filter and multiple beauty filter styles.
-- Android: added three beauty filter styles of smooth, natural, and misty.
-- Android: added the speed adjustment, background music adding, and subtitling features in short video editing.
-- iOS: added the smooth and natural beauty filter styles.
+### Version 3.1
+- iOS &Android: added features such as face slimming, nose slimming and chin slimming to the Enterprise Edition.
+- iOS & Android: optimized the beauty filter algorithm and added multiple filters including rosy complexion.
+- Android: added three filters: smooth, natural, and hazy.
+- Android: allowed speed modifying, background music adding and subtitle adding in UGSV editing.
+- iOS: added two beauty filers: smooth and natural.
 
-### v3.0
-- iOS and Android: reconstructed the beauty filter module to improve the beauty filter effect while reducing GPU utilization.
-- iOS and Android: added the `pauseRecord` and `resumeRecord` APIs to `TXUGCRecord` to support multi-segment shoot.
-- iOS: added APIs for quick cropping and editing.
+### Version 3.0
+- iOS & Android: restructured the beauty filter module, enhanced the effects of beauty filters, and reduced GPU usage.
+- iOS & Android: added the `pauseRecord` and `resumeRecord` APIs to `TXUGCRecord` to enable multi-segment shooting.
+- iOS: added fast clipping and editing APIs.
 
-### v2.0.5
-- Android: added the watermark feature in short video editing.
-- Android: added the multi-segment short video shoot feature.
-- iOS and Android: fixed several bugs.
+### Version 2.0.5
+- Android: allowed adding watermarks in UGSV editing.
+- Android: allowed multi-segment shooting.
+- iOS & Android: fixed a number of bugs.
 
-### v2.0.4
-- iOS and Android: added the callback preprocessing API for beauty filters during short video shoot.
-- iOS and Android: added the checkpoint restart capability in short video upload.
-- Android: optimized the short video cropping and splicing features and added the filter editing feature.
-- iOS: added various features in short video editing, such as filter, watermark, background music, subtitling, and speed adjustment.
+### Version 2.0.4
+- iOS & Android: added a pre-processing callback API for beauty filters in UGSV shooting.
+- iOS & Android: added the breakpoint resume feature for UGSV uploading.
+- Android: optimized the video clipping and splicing features and added the filter editing feature.
+- iOS: allowed filter applying, watermarking, background music adding, subtitle adding, and speed modifying in UGSV editing.
 
-### v2.0.3
-- iOS and Android: optimized the demo directory and code structure to reduce integration costs and added easy-to-use demos for short video shoot, cropping, and splicing.
-- Android: added the short video cropping and splicing features.
-- iOS: fixed the issue with overexposure on iOS to make exposure more natural.
+### Version 2.0.3
+- iOS & Android: optimized the directory and code structure for the demos to reduce the integration cost, and added simple and easy-to-use demos for UGSV shooting, clipping, and splicing.
+- Android: added the UGSV cropping and splicing features.
+- iOS: fixed the overexposure issue on iOS, enabling more natural exposure.
 
-### v2.0.2
-- iOS and Android: optimized the short video upload protocol.
-- Android: added the eye enlarging and face slimming features in the Pro Edition.
-- Android: optimized the hardware encoding effect to improve the encoding quality.
-- iOS: added the short video cropping and splicing features.
+### Version 2.0.2
+- iOS & Android: optimized the UGC uploading protocol.
+- Android: added the big eye and face slimming filters to the VIP edition.
+- Android: optimized hardware encoding and increased encoding quality.
+- iOS: added the UGSV cropping and splicing features.
 - iOS: supported Bitcode in the Lite Edition.
 
-### v2.0.1
-- iOS and Android: added the feature of adding background music to short videos.
-- Android: added the green screen keying feature in the Pro Edition.
+### Version 2.0.1
+- iOS & Android: allowed adding background music to UGSV.
+- Android: added the green screen feature to the VIP edition.
 
-### v2.0.0
-iOS and Android: added the short video capturing and release features.
+### Version 2.0.0
+- iOS & Android: allowed the capturing and publishing of UGSV.
+
 
