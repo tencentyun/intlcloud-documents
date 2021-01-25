@@ -17,7 +17,6 @@ The domain name binding feature allows you to bind your own domain name to a ser
 5. To unbind a domain name, delete it from the service and then delete its CNAME record.
 
 ### Configuring forced HTTPS
->?This feature is now in beta in certain regions and is expected to be generally available till January 7, 2021.
 
 On the custom domain name configuration page, if the protocol is HTTPS&HTTPS or HTTPS, the forced HTTPS feature can be enabled. After it is enabled, API Gateway will redirect requests using the custom domain name over the HTTP protocol to the HTTPS protocol.
 
