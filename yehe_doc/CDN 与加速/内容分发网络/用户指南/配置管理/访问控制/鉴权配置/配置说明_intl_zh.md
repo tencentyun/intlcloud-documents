@@ -7,7 +7,7 @@
 ## 配置指南
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，【访问控制】中可看到鉴权配置，默认情况下，鉴权配置为关闭状态：
-![](https://main.qcloudimg.com/raw/77831beaa25a77dd26b60e1f401c8dd3.png)
+![](https://main.qcloudimg.com/raw/1efe407c5a9f2fc8f8837d5b1cdbb3d7.png)
 
 ### 修改配置
 #### 1. 修改配置
@@ -16,17 +16,17 @@ CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方�
 
 #### 2. 关闭配置
 您可以通过鉴权配置开关，一键关闭配置，开关为关闭状态时，即便下方存在已有配置，仍不会现网生效，下次单击开启时，会先行进行配置的二次确认，不会立即发布至全网生效：
-![](https://main.qcloudimg.com/raw/5bb10025c5887793807e6b41dbea48a6.png)
+![](https://main.qcloudimg.com/raw/f892392e86acae153ef7821944888155.png)
 
 #### 3. 区域特殊配置
 若您的加速域名服务区域为全球加速，想针对境内、境外加速区域进行不同的鉴权配置，可单击配置下方的【添加特殊配置】进行设置：
-![](https://main.qcloudimg.com/raw/391372dbf734e813c45640dace716793.png)
+![](https://main.qcloudimg.com/raw/8e6e0e08ef230322f4366a4fa92288e0.png)
 
 > !区域特殊配置添加后，暂时无法直接删除，您可以通过关闭配置来禁用。
 
 ## 配置示例
 若域名`cloud.tencent.com`为全球加速域名，鉴权配置如下：
-![](https://main.qcloudimg.com/raw/6f432b21603b61e4a1d9c17048a675bf.png)
+![](https://main.qcloudimg.com/raw/1d82f89f383aa35f5d7ae679f19669fb.png)
 则实际生效场景如下：
 
 1. 中国境内用户实际访问资源`http://cloud.tencent.com/1.jpg`时，可直接发起请求。
@@ -37,7 +37,7 @@ CDN 提供了四种鉴权签名计算方式供您选择，也可以通过上方�
 
 各鉴权计算方式如下，以 Python Demo 为例：
 
-```
+```Python
 import requests
 import json
 import sys
