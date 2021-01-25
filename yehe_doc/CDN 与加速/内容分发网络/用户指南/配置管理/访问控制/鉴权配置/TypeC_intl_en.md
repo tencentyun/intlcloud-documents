@@ -14,13 +14,13 @@
 ## Configuration Guide
 ### Parameter description
 TypeC requires the following configurations:
-![](https://main.qcloudimg.com/raw/e456535db2cf8ef6983abc854480b71d.png)
+![](https://main.qcloudimg.com/raw/d7b8d589f8690f1e4c33985d6bcd3f09.png)
 **Custom Authentication Key**: it can contain 6 to 40 digits, uppercase and lowercase letters. It should be kept private and disclosed to only the client and server.
 **Custom Validity Period**: the `timestamp` value in the request path plus the configured validity period is compared with the current time to determine whether the request has expired; if so, a 403 error will be directly returned.
 
 ### Object
 After configuring the key, parameter name, and validity period, you can specify the authentication object as needed. The following three authentication modes are supported:
-![](https://main.qcloudimg.com/raw/df138e80a34d1c6cb98c9caadaef3cf5.png)
+![](https://main.qcloudimg.com/raw/34d27c8908808cacddfde94c8a3f1d81.png)
 + All files under a specified domain name need to be authenticated.
 + All files except those of a specified type need to be authenticated.
 + Only files of a specified type need to be authenticated.
