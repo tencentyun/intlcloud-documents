@@ -66,18 +66,18 @@ public void getThumbnail(int count, int width, int height, boolean fast, TXThumb
 ```
 
 The `@param fast` parameter can be set to either of the following two modes:
->- Quick output: the thumbnails can be quickly output but do not precisely match the video points in time. You can use this mode by setting the parameter to `true`.
->- Precise output: the output thumbnails precisely match the video points in time, but the process is slower for videos with high resolution. You can use this mode by setting the parameter to `false`.
+- Quick output: the thumbnails can be quickly output but do not precisely match the video points in time. You can use this mode by setting the parameter to `true`.
+- Precise output: the output thumbnails precisely match the video points in time, but the process is slower for videos with high resolution. You can use this mode by setting the parameter to `false`.
 
 Below is a complete sample:
 ```
 mTXVideoEditer.getThumbnail(TCVideoEditerWrapper.mThumbnailCount, 100, 100, false, mThumbnailListener);
 
 private TXVideoEditer.TXThumbnailListener mThumbnailListener = new TXVideoEditer.TXThumbnailListener() {
- 	@Override
+    @Override
         public void onThumbnail(int index, long timeMs, final Bitmap bitmap) {
-        	Log.i(TAG, "onThumbnail: index = " + index + ",timeMs:" + timeMs);
-		// Place the thumbnails onto the image control
+            Log.i(TAG, "onThumbnail: index = " + index + ",timeMs:" + timeMs);
+        //Place the thumbnails onto the image control
         }
     };
 ```
@@ -112,7 +112,8 @@ txVideoEditer.getThumbnailList(list, 200, 200);
 ### 1. Quick import
 Quick video import allows you to directly preview video editing effects and supports features such as video clipping, time-based special effect (slow motion), special effect filters, filter styles, music mix, animated stickers, static stickers, and bubble subtitles, but does not support certain time-based special effects (loop and reverse).
 
-### <span id ="p1"></span> 2. Full-featured import
+[](id:p1)
+### 2. Full-featured import
 Full-featured import supports all features, including the loop and reverse time-based special effects, but it requires video preprocessing.
 After full-featured import, each point in time in a video can be precisely sought, and the corresponding image will be displayed. The video thumbnail at any selected precise point in time can be generated during preprocessing.
 
@@ -267,6 +268,7 @@ Set the start and end time for video clipping.
   * @param endTime   End time for video clipping in milliseconds
   */
 public void setCutFromTime(long startTime, long endTime)
+
 
 // ...
 // Generate the final video file
