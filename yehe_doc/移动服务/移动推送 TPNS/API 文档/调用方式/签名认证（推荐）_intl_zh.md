@@ -66,6 +66,7 @@ Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNj
 ##  各语言签名代码示例
 
 #### Python2
+``` 
 #!/usr/bin/env python
 import hmac
 import base64
@@ -75,8 +76,10 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
+``` 
 
 #### Python3
+``` 
 import hmac
 import base64
 from hashlib import sha256
@@ -118,8 +121,10 @@ public class SignTest {
         }
     }
 }
+``` 
 
 #### Golang go
+``` 
 import (
    "crypto/hmac"
    "crypto/sha256"
@@ -138,8 +143,10 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
+``` 
 
 #### C#
+``` 
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -194,6 +201,7 @@ namespace tpns_server_sdk_cs
         }
     }
 }
+``` 
 
 #### PHP
 ```
