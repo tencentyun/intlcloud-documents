@@ -1,4 +1,4 @@
-## 短视频 SDK 各版本下载              
+## 短视频 SDK 各版本下载               
 <table>     
    <tr>
       <th width="85px" style="text-align:center">功能模块</td>
@@ -325,7 +325,8 @@
    </tr>
 </table>
 
->? **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)。**
+>? **如果您对 SDK 支持的功能还有疑问，请参见 [功能答疑](https://intl.cloud.tencent.com/document/product/1069/38044)**。
+**若您需要购买SDK的使用权限，请 [联系商务](https://intl.cloud.tencent.com/contact-sales)**
 
 ## 全功能小视频 App（Demo）源代码
 
@@ -370,10 +371,3 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
-
-
-
-
-
-
