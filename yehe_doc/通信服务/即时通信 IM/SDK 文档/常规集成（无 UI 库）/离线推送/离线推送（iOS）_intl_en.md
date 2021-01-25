@@ -27,7 +27,7 @@ For details on how to apply for an APNs certificate, see [Applying for an Apple 
 2. Click the target application card to go to the basic configuration page of the app.
 3. Click **Add Certificate** to the right of **iOS Platform Push Settings**.
 4. Select the certificate type, upload an iOS certificate (p.12), set the certificate password, and click **OK**.
- >
+ >!
  >- We recommend that the name of the certificate to be uploaded is completely in English letters (and must not contain special characters such as brackets).
  >- You need to set a password for the uploaded certificate. Without a password, push messages cannot be received.
  >- Certificates to be published in App Store need to be set to the Release environment. Otherwise, push notifications cannot be received.
@@ -85,7 +85,7 @@ confg.token = deviceToken;
 }];
 ```
 
-> The businessID must be consistent with the certificate ID assigned by the console.
+>! The businessID must be consistent with the certificate ID assigned by the console.
 
 ## Push Format 
 
