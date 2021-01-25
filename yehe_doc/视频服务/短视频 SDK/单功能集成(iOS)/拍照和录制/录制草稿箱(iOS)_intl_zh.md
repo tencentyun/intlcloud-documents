@@ -9,8 +9,7 @@
 - 继续录制。
 - 结束录制。
 
-<dx-codeblock>
-::: objc objc
+```plaintext
 //获取第一次视频录制对象
 record = [TXUGCRecord shareInstance]；
 
@@ -34,8 +33,7 @@ record2 = [TXUGCRecord shareInstance]；
 
 //结束录制,SDK会合成缓存视频片段和当前录制视频片段
 [record2 stopRecord];
-:::
-</dx-codeblock>
+```
 
 
 >! 具体实现方法请参考 [小视频源码](https://intl.cloud.tencent.com/document/product/1069/37914) 中的 UGCKitRecordViewController 类。
