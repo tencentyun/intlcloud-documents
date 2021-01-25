@@ -2,15 +2,15 @@
 ## Overview
 This document describes the signature authentication methods of TPNS.
 
-The HMAC-SHA256 algorithm is used to produce signing information according to `SecretKey`. The authentication is performed by verifying the signature, which ensures higher security and is recommended.
+The HMAC-SHA256 algorithm is used to generate signing information according to `SecretKey`. The authentication is performed by verifying the signature, which ensures higher security and is recommended.
 
 
 #### Parameter description
 
 | Parameter | Description |
 | --- | --- |
-| AccessId | Application ID assigned by the TPNS backend, which can be obtained in **Configuration Management** > **Basic Configuration** in the **[TPNS console](https://console.cloud.tencent.com/tpns) |
-| SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in **Configuration Management** > **Basic Configuration** in the **[TPNS console](https://console.cloud.tencent.com/tpns) |
+| AccessId | Application ID assigned by the TPNS backend, which can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
+| SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
 | Sign | API signature method |
 | timeStamp |      Request timestamp |
 
@@ -24,7 +24,7 @@ The HMAC-SHA256 algorithm is used to produce signing information according to `S
 
 ## HTTP Protocol Assembly Method
 
-In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and the signature's `Sign` information. The specific parameters are as follows:
+In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and signature's `Sign` information. The specific parameters are as follows:
 
 | Parameter Key in Header | Description | Required |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ In addition to the general header protocol, the HTTP protocol header also needs 
 | TimeStamp | Request timestamp | Yes |
 
 The specific HTTP request packet is as follows:
-``` xml
+```xml
 POST /v3/push/app HTTP/1.1
 Host: api.tpns.tencent.com
 Content-Type: application/json
@@ -60,8 +60,13 @@ Get Sign=Base64(hashcode)
 Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA=="
 ```
 
-### Sample signature for Python
-```python
+
+
+
+## Signature Code Samples in Various Languages
+
+<dx-codeblock>
+::: Python2 python
 #!/usr/bin/env python
 import hmac
 import base64
@@ -71,10 +76,19 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
-```
+:::
+::: Python3 python
+import hmac
+import base64
+from hashlib import sha256
 
-### Sample signature for Java
-```java
+s = '15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }'
+key = '1452fcebae9f3115ba794fb0fff2fd73'
+hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
+                        digestmod=sha256).hexdigest()
+print(base64.b64encode(bytes(hashcode, "utf-8")))
+:::
+::: Java java
 package com.tencent.xg;
 
 import java.io.UnsupportedEncodingException;
@@ -87,7 +101,7 @@ import org.apache.commons.codec.binary.Hex;
 
 public class SignTest {
     public static void main(String[] args) {
-        try{
+        try {
             String stringToSign = "15653147891500001048{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
             String appSecret = "1452fcebae9f3115ba794fb0fff2fd73";
 
@@ -105,11 +119,9 @@ public class SignTest {
         }
     }
 }
-```
-
-### Sample signature for Go
-``` go
-import(
+:::
+::: Golang go
+import (
    "crypto/hmac"
    "crypto/sha256"
    "encoding/base64"
@@ -127,10 +139,8 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
-```
-
-### Sample signature for C#
-```c#
+:::
+::: C# c#
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -185,4 +195,23 @@ namespace tpns_server_sdk_cs
         }
     }
 }
+:::
+::: PHP php
 ```
+<?php
+$accessId = "1500001048";
+$secretKey = "1452fcebae9f3115ba794fb0fff2fd73";
+$timeStamp = "1565314789";
+$requestBody = "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
+$hashData = "{$timeStamp}{$accessId}{$requestBody}";
+echo "reqBody: " . $hashData . "\n";
+//Get the SHA256 and hex results
+$hashRes = hash_hmac("sha256", $hashData, $secretKey, false);
+//Conduct Base64 encoding
+$sign = base64_encode($hashRes);
+echo $sign . "\n";
+?>
+```
+:::
+</dx-codeblock>
+
