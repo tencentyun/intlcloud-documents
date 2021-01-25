@@ -153,7 +153,7 @@ In most cases, users need to be notified of new messages. Therefore, register th
 @end
 ```
 
-Callback message content is passed through `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and the corresponding conversations, such as text, audio data, and images. The following example sets a message callback notification and prints new messages directly. For more information, see [Parsing messages](https://intl.cloud.tencent.com/document/product/1047/34321).
+Callback message content is passed through `TIMMessage`. With `TIMMessage`, you can get detailed information about messages and the corresponding conversations, such as text, audio data, and images. The following example sets a message callback notification and prints new messages directly. For more information, see [Parsing messages](https://intl.cloud.tencent.com/document/product/1047/36400).
 
 **Example:**
 
