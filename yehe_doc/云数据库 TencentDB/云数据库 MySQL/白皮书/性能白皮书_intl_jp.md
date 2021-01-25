@@ -4,7 +4,7 @@ sysbench 0.5は、データベースのベンチマーク性能をテストす�
 ツールの変更手順：
 sysbenchに付属のotlpスクリプトが変更されました。読み取り／書き込み比率が1：1に変更され、テストコマンドパラメーターoltp_point_selectsおよびoltp_index_updatesによって制御されます。このドキュメントのテストケースでは、4つのselectポイントと1つのupdateポイントが読み取り／書き込み比率4：1で含まれています。
 
-####ツールのインストール
+#### ツールのインストール
 このドキュメントのテストではSysbenchバージョン0.5を使用します。インストール方法は次のとおりです。
 ```
 git clone https://github.com/akopytov/sysbench.git
