@@ -325,7 +325,8 @@
    </tr>
 </table>
 
->? **If you have questions about the features of the SDK, see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044)。**
+>? **If you have questions about the features of the SDK, see [Feature FAQs](https://intl.cloud.tencent.com/document/product/1069/38044).**
+**If you need to purchase SDK licenses, please [contact sales](https://intl.cloud.tencent.com/contact-sales).**
 
 ## (Demo) Source Code for All-Feature UGSV Apps
 
@@ -370,10 +371,4 @@
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
-
-
-
-
-
 
