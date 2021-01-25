@@ -153,7 +153,7 @@ TIMManager * manager = [TIMManager sharedInstance];
 @end
 ```
 
-回调消息内容通过参数 `TIMMessage` 传递，通过 `TIMMessage` 可以获取消息和相关会话的详细信息，如消息文本，语音数据，图片等。以下示例中设置消息回调通知，并且在有新消息时直接打印消息。详细可参阅 [消息解析](https://intl.cloud.tencent.com/document/product/1047/34321) 部分。
+回调消息内容通过参数 `TIMMessage` 传递，通过 `TIMMessage` 可以获取消息和相关会话的详细信息，如消息文本，语音数据，图片等。以下示例中设置消息回调通知，并且在有新消息时直接打印消息。详细可参阅 [消息解析](https://intl.cloud.tencent.com/document/product/1047/36400) 部分。
 
 **示例：**
 
