@@ -9,8 +9,7 @@ How the shooting drafts feature works
 - Continue with the shooting.
 - End the shooting.
 
-<dx-codeblock>
-::: objc objc
+```plaintext
 //Get the object of the previous shooting
 record = [TXUGCRecord shareInstance];
 
@@ -34,8 +33,7 @@ record2 = [TXUGCRecord shareInstance]；
 
 //End the shooting. The SDK will splice together the two video segments.
 [record2 stopRecord];
-:::
-</dx-codeblock>
+```
 
 
 >! For detailed instructions, see the `UGCKitRecordViewController` class in [(Demo) Source Code for All-Feature UGSV Apps](https://intl.cloud.tencent.com/document/product/1069/37914).
