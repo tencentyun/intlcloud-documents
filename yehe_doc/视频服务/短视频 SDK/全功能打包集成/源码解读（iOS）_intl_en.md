@@ -1,20 +1,23 @@
+[](id:structure)
 ## 1. Project Structure
 ![](https://main.qcloudimg.com/raw/6dece0a7e9535e3fdb138975ff69452c.png)
 A UGSV application mainly integrates `UGCKit` as the core feature library, which is used for playback and shoot. For the integration method, please see [UGCKit](https://github.com/tencentyun/UGSVSDK/tree/master/iOS).
 The UGSV application implements the beauty filter feature mainly by integrating `BeautySettingkit`. For the integration method, please see [Advanced Features and Special Effects](https://intl.cloud.tencent.com/document/product/1069/38028) (TikTok-like special effects, animated effects, and face changing). The relevant code is in the `BeautySettingKit` directory.
 
+[](id:function)
 ## 2. Module Overview
 UGSV features are divided into seven modules, including:
 - Account, list management, release, and profile modules, which are in the UGSV application's directory.
 - Playback, shoot, and editing modules, which are managed by `UGCKit`.
 
+[](id:accounts)
 ### Account module
 - The account module is used to process user login/signup and login caching logic.
 - If you have your own account system, you can directly replace this module with your system.
 - The UI logic of the account module includes `XiaoShiPin/AppViewControllers/Account` and `XiaoShiPin/AppViewControllers/AccountInfo`. The former is related to the login UI module, and the latter the profile processing UI module used after login.
 - The business logic of the account module can be viewed in `XiaoShiPin/Model`.
 
-
+[](id:board)
 ### Homepage and list management
 #### Module overview
 - The homepage module is mainly used to switch between three level-1 features: VOD list, shoot, and profile.
@@ -30,7 +33,7 @@ UGSV features are divided into seven modules, including:
 	- TCVideoListCell: VOD list's cell class, which is mainly used to display the covers, titles, and nicknames.
 	- TCLiveListViewController: VOD list's `TableViewController`, which is used to display the VOD list. If it is clicked, the playback page will be displayed.
 
-
+[](id:play)
 ### Playback module
 #### Module overview
 The playback module mainly provides features such as short video preload, playback, caching, and sharing.
@@ -38,7 +41,7 @@ The playback module mainly provides features such as short video preload, playba
 #### Relevant code
 The `/XiaoShiPin/AppViewControllers/VideoPlayer` directory mainly contains the business logic and UIs for playback.
 
-
+[](id:record)
 ### Shoot module
 #### Module overview
 The shoot module mainly provides features such as multi-segment short video shoot, multi-segment deletion, multi-resolution shoot, and adjustable-speed shoot.
@@ -46,6 +49,7 @@ The shoot module mainly provides features such as multi-segment short video shoo
 #### Relevant code
 The `UGCKit/Source/Record` directory contains all the shoot-related logic.
 
+[](id:edit)
 ### Editing module
 #### Module overview
 The editing module mainly provides features such as short video clipping, background music, filters, special effects, animated stickers, and static stickers.
@@ -53,6 +57,7 @@ The editing module mainly provides features such as short video clipping, backgr
 #### Relevant code
 The `UGCKit/Source/Edit` directory contains all the editing-related logic.
 
+[](id:pod)
 ### Release module
 #### Module overview
 The release module mainly provides features such as short video release.
@@ -60,6 +65,7 @@ The release module mainly provides features such as short video release.
 #### Relevant code
 The `XiaoShiPin/AppViewController/Publish` directory contains all the release-related logic.
 
+[](id:file)
 ### Profile module
 #### Module overview
 - The profile module is mainly used to display, store, and modify the user profile and sync such operations to the server.
