@@ -19,9 +19,9 @@ AppleのReplaykitソリューションをベースとして、システム全体
 
 iOS画面共有に推奨されるエンコードパラメータは次のとおりです。
 
-| パラメータ項目 | パラメータ名 | 通常の推奨値 | テキスト教育シナリオ | 
+| パラメータ項目 | パラメータ名 | 通常の推奨値 | テキスト教育シナリオ |
 |---------|---------|---------|-----|
-| 解像度 | videoResolution | 1280 × 720 | 1920 × 1080 | 
+| 解像度 | videoResolution | 1280 × 720 | 1920 × 1080 |
 | フレームレート | videoFps | 10 FPS | 8 FPS |
 | 最高ビットレート | videoBitrate| 1600 kbps | 2000 kbps |
 | 解像度アダプティブ | enableAdjustRes | NO | NO |
@@ -34,13 +34,13 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 ## アプリケーション間共有
 
 ### サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)の** Screen **ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
+[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)の** Screen**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
 
 ```
 ├─ TRTCSimpleDemo              // TRTC 簡易化Demo
 |  ├─ Screen                   // アプリケーション間画面共有機能のデモンストレーション
 |  |  ├─ RTC                   // 通話モードで実行されているTRTCのサンプルコードのデモンストレーションを行います。このモードにロールの概念はありません。
-|  |  |  ├─ TXReplayKit_Screen // スクリーンキャプチャプロセスのBroadcast Upload Extensionコードについては、手順2をご参照ください
+|  |  |  ├─ TXReplayKit_Screen // スクリーンキャプチャのプロセス Broadcast Upload Extension コードの詳細はステップ2をご参照ください。
 |  |  |  |  ├─ SampleHandler.swift // システムからのスクリーンキャプチャデータを受信するために用いられます
 |  |  |  |  ├─ Info.plist                          
 |  |  |  |  ├─ TXReplayKit_Screen.entitlements //プロセス間通信の設定に使用されるAppGroup情報
@@ -120,7 +120,7 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 }
 
 #pragma mark - TXReplayKitExtDelegate
-- (void)boradcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
+- (void)broadcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
 {
     NSString *tip = @"";
     switch (reason) {
@@ -167,9 +167,9 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 以下の手順に従って、メインアプリ側の受信ロジックと結合します。すなわち、ユーザーが画面共有をトリガーする前に、メインアプリを「待機」状態にして、Broadcast Upload Extensionプロセスからスクリーンキャプチャデータをいつでも受信できるようにします。
 1.TRTCCloudがカメラのキャプチャをオフにしていることを確認します。オフになっていない場合は、[stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3)を呼び出して、カメラのキャプチャをオフにしてください。
 2.[startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)メソッドを呼び出し、[手順1](#createGroup)で設定したAppGroupを渡して、SDKを「待機」状態にします。
-3.ユーザーが画面共有をトリガーするまで待機します。[手順4](#launch)における「トリガーボタン」が実装されていない場合、ユーザーがiOSシステムのコントロールセンターにおいて、スクリーンキャプチャボタンを長押しして画面共有をトリガーする必要があります。
+3.ユーザーが画面共有をトリガーするまで待機します。[手順4](#launch)における「トリガーボタン」が実装されていない場合、ユーザーがiOSシステムのコントロールセンターにおいて、スクリーンキャプチャボタンを長押しして画面共有をトリガーする必要があります。この操作手順は下図のようになります。
 4.[stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb)インターフェースを呼び出すことにより、いつでも画面共有を停止できます。
- 
+
 ```
 // 画面共有を開始するには、APPGROUPを上記の手順で作成したApp Group Identifierに置き換える必要があります。
 - (void)startScreenCapture {
@@ -199,7 +199,6 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 
 1.[Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)において`TRTCBroadcastExtensionLauncher`というクラスを見つけて、お客様のプロジェクトに追加します。
 2.インターフェースにボタンを設置し、ボタンの応答関数において`TRTCBroadcastExtensionLauncher`の`launch`関数を呼び出すと、画面共有機能を呼び出すことができます。
-
 ```
 // カスタムボタンによる応答メソッド
 - (IBAction)onScreenButtonTapped:(id)sender {
@@ -219,7 +218,6 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 - **鑑賞 Android / iOS 画面の共有**
   ユーザーが Android / iOS を介して画面共有を実行する場合は、メインストリームを介して共有を実行することができます。ルームにいるその他ユーザーは TRTCCloudDelegate 中の [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) イベントを介してこの通知を受け取ります。
   画面共有を見たいユーザーは [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) インターフェースを介してリモートユーザーのメインストリーム画面のレンダリングを起動することができます。
-
 
 
 

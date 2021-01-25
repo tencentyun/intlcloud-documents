@@ -31,12 +31,12 @@ VideoCallモードではビデオ通話を対象に最適化を行っていま�
 TRTCのログは、デフォルトで、圧縮と暗号化を行うことになっています。拡張子は「.xlog」です。ログの暗号化の有無は、setLogCompressEnabledで制御でき、生成したファイル名の中に C(compressed)が含まれていれば、暗号化と圧縮が行われています。R(raw)が含まれていれば、平文です。
 
 - iOS&Mac：`sandboxのDocuments/log`
-- Android
+- Android：
  - 6.7とそれ以前のバージョン：`/sdcard/log/tencent/liteav`
  - 6.8以後のバージョン：`/sdcard/Android/data/パッケージ名/files/log/tencent/liteav/`
 - Windows：`%appdata%/tencent/liteav/log`
 - Web：ブラウザのコンソールを開くか、またはvConsoleを使ってSDKを記録し情報を印刷します。
-- ミニプログラム：&lt;live-pusher&gt; と &lt;live-player&gt; タグのdebug 属性を有効化し、vConsoleを使って情報を記録し印刷します。
+- ミニプログラム：<live-pusher> と <live-player> タグのdebug 属性を有効化し、vConsoleを使って情報を記録し印刷します。
 
 >? .xlogファイルを見るには復号化ツールのダウンロードが必要です。python 2.7の環境で、xlogファイルと同じディレクトリ下に置き、直接`python decode_mars_log_file.py`を使用して実行すれば、復号化できます。
 ログ復号化ツールダウンロードURL：`dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py`。
@@ -44,8 +44,8 @@ TRTCのログは、デフォルトで、圧縮と暗号化を行うことにな�
  
 <span id="que6"></span>
 ### 10006 errorが発生したときの対処方法は？
- "「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」"が発生した場合、Tencent Real-Time Communicationアプリケーションのサーバー状態が使用可能かどうかご確認ください。
- [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/rav)にログインし、新規作成したアプリケーションをクリックし、【アカウント情報】をクリックすると、アカウント情報画面でサービス状態を確認することができます。
+"「Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it」"が発生した場合、Tencent Real-Time Communicationアプリケーションのサーバー状態が使用可能かどうかご確認ください。
+[Tencent Real-Time Communicationコンソール]>【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】にログインして、作成したアプリケーションを選択し、【アプリケーション情報】をクリックすれば、アプリケーション情報パネルでサービス状態を確認できます。
 ![](https://main.qcloudimg.com/raw/57e63830a368520c5e81e8e4b43d09b7.png)
 
 <span id="que7"></span>
@@ -88,7 +88,8 @@ setSystemVolumeType インターフェースで通話時に使用するシステ
 
 <span id="que15"></span>
 ###  TRTCの通常のアップストリームにはデータがあるのに、Relayed Pushでは失敗して画面が見られなくなるのはなぜですか？	
- [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc) で、Auto-Relayed Pushがオンになっているかご確認ください。
+ 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】>【機能設定】の中でAuto-relay Live Streamingがオンになっているか確認してください。
+
 
 <span id="que16"></span>
 ###  バイパスレコーディングの各種シーンで生成されたレコーディングファイルはどの形式になりますか？	
@@ -134,12 +135,12 @@ TRTC は同時に2つの同じ userIdで入室できません。そうしない�
 <span id="que25"></span>
 ###  TRTCではTencent Cloudコンソールの自動レコーディングスタートのみサポートしているのですか？どうすれば手動でレコーディングをスタートできますか？
 TRTCで手動レコーディングをサポートしています。具体的な操作方法は以下のとおりです。
-1.  [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc) にログインし、【Auto-Relayed Push】をオンにします。【クラウドレコーディング起動】はオンにしません。
+1. 【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】>【機能設定】に入り、【Auto-Relayed Push】をオンにして、【クラウドレコーディングの起動】をオフにします。
 2. ユーザーがルームに参加すると、フォトストリーム IDの生成ルールにもとづき、useridに対応するstreamidが算出されます。
 3. LVBの [レコーディングタスク作成 API](https://intl.cloud.tencent.com/document/product/267/30847)を使用して、streamidに対するレコーディングタスクを起動します。
- - DomainNameは `[bizid].livepush.myqcloud.com`です。
- - AppNameは`trtc_[sdkappid]`です。
- - StreamNameは`streamid`です。
+ - DomainName ： `[bizid].livepush.myqcloud.com`。
+ - AppName ： `trtc_[sdkappid]`。
+ - StreamName ： `streamid`。
 4. レコーディングタスクが完了すると、LVBがファイルをVODに書き込み、 [レコーディングコールバックイベント通知](https://intl.cloud.tencent.com/document/product/267/31566)で通知します。
 
 <span id="que26"></span>
@@ -152,7 +153,7 @@ TRTCのコンソールの【[使用量の統計](https://console.cloud.tencent.c
 
 <span id="que28"></span>
 ### TRTCのユーザーリストのメンテナンスやライブルームの視聴者数の統計を行うには、どうすればいいですか？	
-開発者がプロジェクトの工程の中で [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)を統合している場合は、直接 IMのグループ人数統計インターフェースで統計を行うことが可能です。ただし、この方式で統計した人数は完全には正確ではありません。開発者のオンラインの人数に対する要求が高くない場合ば、上記の方式をそのまま利用することができます。
+開発者がプロジェクトの工程の中で [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047)を統合している場合は、直接 IMのグループ人数統計インターフェースで統計を行うことが可能です。ただし、この方式で統計した人数は完全には正確ではありません。開発者のオンラインの人数に対する要求が高くない場合は、上記の方式をそのまま利用することができます。
 開発者がオンラインの人数を非常に正確に統計しなければならない場合は、ご自分で統計ロジックを実現させることをお勧めします。
 1. 視聴者数の追加(Client -> Server) 新しい視聴者が参加した時は、あるルームの視聴者数を + 1する必要があることを意味します。よって、ルーム参加時間に、Appの視聴側からServer側に向けて累加リクエストを1回送信させます。
 2. 視聴者数の減少(Client -> Server) 視聴者がルームを退出した時は、あるルームの視聴者数を - 1する必要があることを意味します。よって、ルーム退出時間に、Appの視聴端末からServer側に向けて累減リクエストを1回送信させます。
@@ -184,7 +185,7 @@ onNetworkQuality()を使用して現在のネットワークのアップスト�
 
 <span id="que33"></span>
 ###  TRTCでクラウドレコーディングをオンにしているのにレコーディングファイルが生成されない場合、どのように調査すればいいですか？
-1.   [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc) で【Auto-Relayed Push】と【クラウドレコーディングの起動】がオンになっていることを確認してください。。
+1.   [Tencent Real-Time Communicationコンソール](https://console.cloud.tencent.com/trtc) で【Auto-Relayed Push】と【クラウドレコーディングの起動】がオンになっていることを確認してください。
 2. TRTCのルーム内のユーザーの音声・ビデオデータのアップストリームが正常に行われてから、レコーディングが開始されます。
 3. CDN プルが正常に行われてから、レコーディングファイルが生成されます。
 4. 開始した当初は音声だけで、途中でビデオに切り替えた場合、レコーディングテンプレートの違いにもとづき、ビデオの時間帯のレコーディングファイルのみが生成されるか、または音声の時間帯だけのレコーディングファイルのみが生成されます。
