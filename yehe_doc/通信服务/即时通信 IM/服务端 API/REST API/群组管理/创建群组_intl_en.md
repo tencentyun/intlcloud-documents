@@ -25,9 +25,11 @@ These are the built-in group types in IM. For detailed information, see [Group S
 >- A user account can only join a limited number of groups. Therefore, when that limit is exceeded, joining or creating groups will fail. For more information, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
 
 ### Sample request URL
-```
+
+```https
 https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
 ### Request parameters
 
 The list below contains only the parameters commonly used when calling this API and their descriptions. For more parameters, see [RESTful API Introduction](https://intl.cloud.tencent.com/document/product/1047/34620).
