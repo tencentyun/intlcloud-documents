@@ -9,7 +9,7 @@
 **요청 예시**
 `http://cloud.tencent.com/8fe9b5597c809d7ace147468c7c7eadb/5e577978/test/test.jpg`
 
->요청 경로가 `http://cloud.tencent.com/test.jpg`이면 MD5 계산 시의 경로는 `/test.jpg`입니다.
+> !요청 경로가 `http://cloud.tencent.com/test.jpg`이면 MD5 계산 시의 경로는 `/test.jpg`입니다.
 
 ## 설정 가이드
 ### 매개변수 설명
