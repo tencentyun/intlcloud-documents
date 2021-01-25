@@ -12,5 +12,5 @@
 ALTER TABLE t1 ADD COLUMN c1 int、algorithm=instant;
 ```
 >?
->- innodb_alter_table_default_algorithm パラメータは、デフォルトの ALTER TABLE アルゴリズムの指定に用います。 INSTANT を設定するときは、 ALTER TABLE は algorithm=instant 構文の記述を必要としません。現在お客様サイドではこのパラメータのデフォルト値を変更することはできません。変更が必要な場合は、[チケットを提出] (https://console.cloud.tencent.com/workorder/category)して行う必要があります。
+>- innodb_alter_table_default_algorithm パラメータは、デフォルトの ALTER TABLE アルゴリズムの指定に用います。 INSTANT を設定するときは、 ALTER TABLE は algorithm=instant 構文の記述を必要としません。現在お客様サイドではこのパラメータのデフォルト値を変更することはできません。変更が必要な場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)して行う必要があります。
 >- innodb_alter_table_default_algorithm パラメータには INPLACEまたはINSTANTを設定でき、値を省略すると INPLACEになります。
