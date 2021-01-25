@@ -8,7 +8,7 @@
 - It takes time to push messages to all users. The required time depends on the number of accounts. Typically, it is within 1 minute.
 
 ## API Call Description
-**Only users with Flagship Edition accounts can apply for this feature. You can [submit a ticket](https://intl.cloud.tencent.com/document/product/1047/37275) to apply for this feature. If we determine that this feature suits your needs, we will approve your application.**
+**Only users with Flagship Edition accounts can apply for this feature. You can submit a ticket to apply for this feature. If we determine that this feature suits your needs, we will approve your application.**
 
 ### Sample request URL
 ```
