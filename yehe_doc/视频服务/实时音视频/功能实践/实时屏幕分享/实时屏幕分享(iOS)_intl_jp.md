@@ -34,7 +34,7 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 ## アプリケーション間共有
 
 ### サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)の** Screen**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
+[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)の**Screen**ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
 
 ```
 ├─ TRTCSimpleDemo              // TRTC 簡易化Demo
@@ -211,7 +211,7 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 > **ただし、このソリューションはAppleで公式に推奨されているものではなく、システムが新たにアップデートされた場合、無効になる可能性があります。従って、[手順4](#launch)はオプションのソリューションにすぎず、お客様の自己責任でこのソリューションをご利用ください。**
 
 ## 画面共有を見る
-- ** Mac / Windows 画面共有を見る**
+- **Mac / Windows 画面共有を見る**
   ルームにいる Mac / Windows ユーザーが画面共有を起動し、サブストリームを介して共有を実行します。ルームにいるその他ユーザーはTRTCCloudDelegate 中の [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) イベントを介してこの通知を受け取ります。
   画面共有を見たいユーザーは[startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) インターフェースを介してリモートユーザーのサブストリーム画面のレンダリングを起動することができます。
 
