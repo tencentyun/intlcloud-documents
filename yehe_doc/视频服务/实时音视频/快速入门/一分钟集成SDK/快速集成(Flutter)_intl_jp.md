@@ -10,31 +10,31 @@
   - プロジェクトが有効な開発者による署名を設定済みであることを確認してください。
 
 ## SDKの統合
+
 Flutter SDKは[pubライブラリ](https://pub.dev/packages/tencent_trtc_cloud)に公開されています。`pubspec.yaml` を設定することで、更新を自動的にダウンロードできます。
+
 1. プロジェクトの`pubspec.yaml` に次の依存関係を記述します。
 ```
 dependencies:
   tencent_trtc_cloud: 最新バージョン番号
 ```
+
 2. **カメラ**と**マイク**の許可が有効になると、音声通話機能が起動します。
 
 #### iOS
-
- - 1.`Info.plist`にカメラとマイクの許可申請を追加する必要があります。
-
+1.`Info.plist`にカメラとマイクの許可申請を追加する必要があります。
 ```
 <key>NSCameraUsageDescription</key>
 <string>通常のビデオ通話が行えるようにカメラを許可します</string>
 <key>NSMicrophoneUsageDescription</key>
 <string>通常の音声通話が行えるようにマイクを許可します</string>
 ```
-
- - 2.フィールド`io.flutter.embedded_views_preview`を追加し、値をYESに設定します。
+2.フィールド`io.flutter.embedded_views_preview`を追加し、値をYESに設定します。
 
 #### Android
- - 1. `/android/app/src/main/AndroidManifest.xml`ファイルを開きます。
- - 2. `xmlns:tools="http://schemas.android.com/tools"` をmanifestの中に追加します。
- - 3. `tools:replace="android:label"をapplicationの中に追加します。
+1. `/android/app/src/main/AndroidManifest.xml`ファイルを開きます。
+2. `xmlns:tools="http://schemas.android.com/tools"` をmanifestの中に追加します。
+3. `tools:replace="android:label"をapplicationの中に追加します。
 >? この手順を実行しないと、[Android Manifest merge failed コンパイルの失敗](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6)という問題が発生します。
 ![アイコン](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
 
