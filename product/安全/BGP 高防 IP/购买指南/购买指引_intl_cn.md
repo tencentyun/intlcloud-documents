@@ -22,5 +22,5 @@
 
 ## 更多信息
 
-- [BGP 高防 IP 详细计费说明](https://cloud.tencent.com/document/product/1014/31100)
-- [计费相关常见问题](https://cloud.tencent.com/document/product/1014/31140)
+- [BGP 高防 IP 详细计费说明](https://intl.cloud.tencent.com/document/product/297/17435)
+- [计费相关常见问题](https://intl.cloud.tencent.com/document/product/297/16604)
