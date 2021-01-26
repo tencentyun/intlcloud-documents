@@ -16,14 +16,11 @@
 
 1.	创建非对称加密密钥
 请求：
-<dx-codeblock>
-:::  shell
+```
 tccli kms CreateKey --Alias test --KeyUsage ASYMMETRIC_DECRYPT_RSA_2048
-:::
-</dx-codeblock>
+```
 返回结果：
-<dx-codeblock>
-:::  shell
+```
 {
 	"Response": {
 		"KeyId": "22d79428-61d9-11ea-a3c8-525400******",
@@ -35,18 +32,14 @@ tccli kms CreateKey --Alias test --KeyUsage ASYMMETRIC_DECRYPT_RSA_2048
 		"RequestId": "0e3c62db-a408-406a-af27-dd5ced******"
 	}
 }
-:::
-</dx-codeblock>
+```
 2.	下载公钥
    请求：
-<dx-codeblock>
-:::  shell
+```
 tccli kms GetPublicKey  --KeyId 22d79428-61d9-11ea-a3c8-525400******
-:::
-</dx-codeblock>
+```
 返回结果：
-<dx-codeblock>
-:::  shell
+```
 {
     "Response": {
         "RequestId": "408fa858-cd6d-4011-b8a0-653805******",
@@ -55,51 +48,37 @@ tccli kms GetPublicKey  --KeyId 22d79428-61d9-11ea-a3c8-525400******
         "PublicKeyPem": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzQk7x7ladgVFEEGYDbeU\nc5aO9TfiDplIO4WovBOVpIFoDS31n46YiCGiqj67qmYslZ2KMGCd3Nt+a+jdzwFi\nTx3O87wdKWcF2vHL9Ja+95VuCmKYeK1uhPyqqj4t9Ch/cyvxb0xaLBzztTQ9dXCx\nDhwj08b24T+/FYB9a4icuqQypCvjY1X9j8ivAsPEdHZoc9Di7JXBTZdVeZC1igCV\ngl6mwzdHTJCRydE2976zyjC7l6QsRT6pRsMF3696N07WnaKgGv3K/Zr/6RbxebLq\ntmNypNERIR7jTCt9L+fgYOX7anmuF5v7z0GfFsen9Tqb1LsZuQR0************\n1QIDAQAB\n-----END PUBLIC KEY-----\n"
     }
 }
-:::
-</dx-codeblock>
+```
 3.	使用公钥加密
    1. 将公钥 PublicKey 存入文件 public_key.base64，并进行 base64 解码。
       存入文件：
-<dx-codeblock>
-:::  
+```
 echo "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzQk7x7ladgVFEEGYDbeUc5aO9TfiDplIO4WovBOVpIFoDS31n46YiCGiqj67qmYslZ2KMGCd3Nt+a+jdzwFiTx3O87wdKWcF2vHL9Ja+95VuCmKYeK1uhPyqqj4t9Ch/cyvxb0xaLBzztTQ9dXCxDhwj08b24T+/FYB9a4icuqQypCvjY1X9j8ivAsPEdHZoc9Di7JXBTZdVeZC1igCVgl6mwzdHTJCRydE2976zyjC7l6QsRT6pRsMF3696N07WnaKgGv3K/Zr/6RbxebLqtmNypNERIR7jTCt9L+fgYOX7anmuF5v7z0GfFsen9Tqb1LsZuQR0vgqCauOj************" > public_key.base64
-:::
-</dx-codeblock>
+```
 base64 解码获取公钥实际内容：
-<dx-codeblock>
-:::  shell
+```
 openssl enc -d -base64 -A -in public_key.base64 -out public_key.bin
-:::
-</dx-codeblock>
+```
 	2. 创建测试明文文件：
-<dx-codeblock>
-:::  shell
+```
 	echo "test" > test_rsa.txt
-:::
-</dx-codeblock>
+```
 	3. 使用 OPENSSL 进行公钥加密 test_rsa.txt 文件内容。
-<dx-codeblock>
-:::  shell
+```
 	openssl pkeyutl -in test_rsa.txt -out encrypted.bin -inkey public_key.bin -keyform DER -pubin -encrypt -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
-:::
-</dx-codeblock>
+```
 	4. 将公钥加密后的数据进行 base64 编码，方便传输。
-<dx-codeblock>
-:::  shell
+```
 	openssl enc -e -base64 -A -in encrypted.bin -out encrypted.base64
-:::
-</dx-codeblock>
+```
 4.	通过 KMS 使用私钥解密
    将上述 encrypted.base64 base64 编码之后的密文作为 AsymmetricRsaDecrypt 的 Ciphertext 参数，进行私钥的解密。
    请求：
-<dx-codeblock>
-:::  shell
+```
 tccli kms AsymmetricRsaDecrypt --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Algorithm RSAES_OAEP_SHA_256 --Ciphertext "DEb/JBmuhVkYS34r0pR7Gv1WTc4khkxqf7S1WIr7/GXsAs/tfP/v/2+1SwsIG7BqW7kUZqr38/FGkaIEqYeewot37t3+Jx0t5w7/yXkUnyUfyfPpXlHXf94g3wFOjijEWWsjWWzaXTkTr8uWOfRBenq+bcaY783FIy03XjJW/Y0wKWjD3tULvKndCJO/3bkb65kn1Fbsfm20xrUUwqV/p2DVLXBdG1ymr0DjsbG7R0tb3ytc2LmH33YPAQE32eP27ciKzSml+w2tdUM3dw3nEZcTGMs1wFDGk0O1WB052jZ7TitUD9zCftFv2dKlZD3LRx1+vHqpNVgPhLmL******=="
-:::
-</dx-codeblock>
+```
 返回结果：
-<dx-codeblock>
-:::  shell
+```
 {
     "Response": {
         "RequestId": "6758cbf5-5e21-4c37-a2cf-8d47f5******",
@@ -107,8 +86,7 @@ tccli kms AsymmetricRsaDecrypt --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Al
         "Plaintext": "dGVzdAo="
     }
 }
-:::
-</dx-codeblock>
+```
 
 >?使用 SM2 非对称密钥加解密流程类似，私钥解密接口详情请参见 [非对称密钥Sm2解密](https://intl.cloud.tencent.com/document/product/1030/35180)。
 
