@@ -29,20 +29,19 @@ vivo 手机使用深度定制 Android 系统，对于第三方 App 自启动权�
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
  >?如果您原来已有证书只需变更信息，可以单击对应证书区域的【编辑】进行修改更新。
->
- ![](https://main.qcloudimg.com/raw/dff82b17de7577edf2a89bfda2eeed29.png)
- 
+ >
+ ![](https://main.qcloudimg.com/raw/91a37ef3b610e49b2b80cb3683170d8b.png)
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
  - **推送平台**：选择 **vivo**
  - **AppKey**：填写 vivo 推送服务应用的 **APP key**
  - **AppID**：填写 vivo 推送服务应用的 **APP ID**
  - **AppSecret**：填写 vivo 推送服务应用的 **APP secret**
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
-   当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
-   ![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
-    
+    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
+ ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
 4. 单击【确认】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
+ ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
 
 [](id:Step3)
 ### 步骤3：集成推送 SDK
@@ -199,6 +198,7 @@ if (IMFunc.isBrandVivo()) {
 以下为 Demo 中的示例代码：
 
 - 定义证书 ID 常量：
+
 ```java
 /**
  * 我们先定义一些常量信息在 Constants.java
@@ -213,6 +213,7 @@ public static final String VIVO_PUSH_APPKEY = "12345abcde"; // 见清单文件
 ```
 
 - 上报推送的证书 ID 及 regId：
+
 ```java
 /**
  * 在 ThirdPushTokenMgr.java 中对推送的证书 ID 及设备信息进行上报操作
@@ -277,6 +278,7 @@ public class ThirdPushTokenMgr {
         });
     }
 }
+
 ```
 
 ### 步骤5：离线推送
@@ -295,16 +297,16 @@ public class ThirdPushTokenMgr {
 
 ### 打开应用
 默认为点击通知栏消息打开应用。
-![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
+![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
 
 ### 打开网页
 您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/ae0c342056121f11dc78791cf49f9e69.png)
+![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
 
 ### 打开应用内指定界面
 
 1. 在 manifest 中配置需要打开的 Activity 的`intent-filter`，示例代码如下：
-	```
+```
 	<activity
 		android:name="com.tencent.qcloud.tim.demo.chat.ChatActivity"
 		android:launchMode="singleTask"
@@ -318,24 +320,23 @@ public class ThirdPushTokenMgr {
 				android:path="/detail"
 				android:scheme="pushscheme" />
 		</intent-filter>
-		   
+
 	</activity>
-	```
+```
 
 2. 获取 intent URL，方式如下：
-    ```
+```
     Intent intent = new Intent(this, ChatActivity.class);
     intent.setData(Uri.parse("pushscheme://com.tencent.qcloud.tim/detail"));
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     String intentUri = intent.toUri(Intent.URI_INTENT_SCHEME);
     Log.i(TAG, "intentUri = " + intentUri);
-      
-    // 打印结果
-    intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
-    ```
+ // 打印结果
+intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
+```
 
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
-    ![](https://main.qcloudimg.com/raw/ffc5c2d46d678a33c4ebb1f4f51d3b33.png)
+    ![](https://main.qcloudimg.com/raw/4dcbd70d1ed28881e76e252c49e3675b.png)
 
 [](id:section4)
 ## 透传自定义内容
