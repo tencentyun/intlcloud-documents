@@ -19,6 +19,7 @@
 ### 配置强制 HTTPS
 
 在自定义域名配置页面，当协议为 HTTPS&HTTPS、HTTPS 时，支持开启强制 HTTPS 功能。开启后，API 网关会将使用该自定义域名的 HTTP 协议的请求重定向至 HTTPS 协议。
+![](https://main.qcloudimg.com/raw/afa6246bc12dcc9fd81487f84429a299.png)
 
 ### 配置域名路径映射
 1. 在自定义域名列表页，单击操作列的【编辑路径映射】。
