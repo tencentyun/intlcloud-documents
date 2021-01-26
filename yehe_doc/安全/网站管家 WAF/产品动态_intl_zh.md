@@ -22,14 +22,14 @@
 <table>
 <tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
 <tr><td>规则引擎优化</td><td>引入全新旁路规则检测引擎，Web 入侵检测能力全面提升，全区域开放。</td><td>2020-06-17</td><td>-</td></tr>
-<tr><td>SCDN 产品方案发布</td><td>联合 CDN 发布 SCDN 产品方案，部分 CDN 节点具备 WAF 安全能力。</td><td>2020-06-04</td><td><a href="https://cloud.tencent.com/document/product/1226" >安全加速</a></td></tr>
+<tr><td>SCDN 产品方案发布</td><td>联合 CDN 发布 SCDN 产品方案，部分 CDN 节点具备 WAF 安全能力。</td><td>2020-06-04</td><td>-</a></td></tr>
 </table>
 
 ## 2020-05
 <table>
 <tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
 <tr><td>云监控功能上线</td><td>WAF 接入云监控，可通过云监控配置支持 QPS、Web 攻击、CC 攻击和 WAF 状态码告警（4xx、5xx）。</td><td>2020-05-17</td><td>-</td></tr>
-<tr><td>API3.0 发布</td><td>发布 API3.0，WAF 所有功能均可通过 API 进行操作和使用，如有需要，请 <a href="https://cloud.tencent.com/act/event/connect-service" >联系我们</a> 进行支持。</td><td>2020-05-11</td><td>-</td></tr>
+<tr><td>API3.0 发布</td><td>发布 API3.0，WAF 所有功能均可通过 API 进行操作和使用，如有需要，请 <a href="https://intl.cloud.tencent.com/support" >联系我们</a> 进行支持。</td><td>2020-05-11</td><td>-</td></tr>
 </table>
 
 ## 2020-04
@@ -63,7 +63,7 @@
 <table>
 <tr><th width=20%>动态名称</th><th width=48%>动态描述</th><th width=12%>发布时间</th><th width=20%>相关文档</th></tr>
 <tr><td>支持新购 QPS 包和日志服务包</td><td>用户可以根据需要购买安全日志服务包和 QPS 扩展包，满足业务扩容需求。</td><td>2019-09-18</td><td><a href="https://cloud.tencent.com/document/product/627/11730" >购买指南</a></td></tr>
-<tr><td>支持非标端口</td><td>新增企业版和旗舰版非标端口，旗舰版支持非标端口定制。</td><td>2019-09-18</td><td><a href="https://cloud.tencent.com/document/product/627/42914" >端口支持相关</a></td></tr>
+<tr><td>支持非标端口</td><td>新增企业版和旗舰版非标端口，旗舰版支持非标端口定制。</td><td>2019-09-18</td><td>-</td></tr>
 </table>
 
 ## 2019-08
@@ -72,7 +72,7 @@
 <tr><td>日志服务</td><td>WAF 支持记录和存储网站访问日志6个月，最近30天访问日志查询和下载，满足等保合规要求。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/35648" >访问日志</a></td></tr>
 <tr><td>智能CC防护</td><td>结合网站历史数据，用户异常访问行为和源站负载情况生成自动防御策略，防护 CC 攻击。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/11709" >CC 防护设置2.0</a></td></tr>
 <tr><td>地域封禁增强</td><td>WAF 支持对境外219个国家和地区选择进行地域封禁。</td><td>2019-08-09</td><td><a href="https://intl.cloud.tencent.com/document/product/627/14704" >地域封禁</a></td></tr>
-<tr><td>新增自定义拦截页面定制</td><td>用户可以自定义 WAF 拦截返回页面，如有需要，请 <a href="https://cloud.tencent.com/act/event/connect-service" >联系我们</a> 进行支持。</td><td>2019-08-09</td><td>-</td></tr>
+<tr><td>新增自定义拦截页面定制</td><td>用户可以自定义 WAF 拦截返回页面，如有需要，请 <a href="https://intl.cloud.tencent.com/support" >联系我们</a> 进行支持。</td><td>2019-08-09</td><td>-</td></tr>
 
 </table>
 
