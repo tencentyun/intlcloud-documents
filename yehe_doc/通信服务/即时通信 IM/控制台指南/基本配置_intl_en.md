@@ -18,7 +18,7 @@ In the **Basic Info** area, you can:
 3. Click **Save**.
 
 ### Disabling and deleting an app
->You can create up to 100 IM apps under a Tencent Cloud account. If you have reached that limit, [disable and delete] an unwanted app before creating a new one.
+>?You can create up to 100 IM apps under a Tencent Cloud account. If you have reached that limit, [disable and delete] an unwanted app before creating a new one.
 >**Only apps in **Disabled** status can be deleted. Once an app is deleted, all the data and services associated with the SDKAppID are removed and cannot be recovered, so proceed with caution.**
 
 
@@ -76,7 +76,7 @@ Account administrators can call RESTful APIs, disband groups, and perform operat
 2. In the dialog box that pops up, modify the parameters as needed and click **Confirm** to save the configuration.
 
 ### Deleting an offline push certificate
-> Once the certificate is deleted, push messages are no longer delivered. Deleted certificates cannot be restored. Proceed with caution.
+>! Once the certificate is deleted, push messages are no longer delivered. Deleted certificates cannot be restored. Proceed with caution.
 
 1. Click **Delete** in the certificate area.
 2. In the confirmation box that pops up, click **Confirm**.
