@@ -27,7 +27,8 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
 1. Log in to the [IM Console](https://console.qcloud.com/avc) and click the desired app. The app configuration page appears.
 2. Click **Add a certificate** under **Android push configuration**.
  >? If you already have a certificate and only want to change its information, you can click **Edit** in **Android push configuration** to modify and update the certificate.
- >
+
+![](https://main.qcloudimg.com/raw/47b994748b2f02b8f4590a5be026066b.png)
 3. Use the information you obtained in [Step 1](#Step1_3) to configure the following parameters:
  - **Push platform**: select **Huawei**.
  - **Package name**: the name of the Huawei Push service app.
@@ -36,8 +37,11 @@ Huawei EMUI is a highly customized Android system with strict backend policies. 
  - **Badge Parameter**: enter the complete class name of `Activity` for the app entry as the application badge on Huawei Desktop. For more information, see [Interface Description for Badging on Huawei Desktop](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-badging-0000001050042083)
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open App**, **Open URL**, and **Open specific App interface**. For more information, refer to [Configuring the Notification Bar Message Click Event](#click).
     **Open App** or **Open specific App interface** allows [custom content pass through](#section4).
+   ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
+
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
 5. Record the Certificate ID once it is generated.
+   ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
 
 <span id="Step3"></span>
 ### Step 3: Integrate push SDK
@@ -351,9 +355,11 @@ You can select one of the following events: **Open App**, **Open URL**, or **Ope
 
 ### Open App
 This is the default event, which opens the App once the notification bar message is clicked.
+![](https://main.qcloudimg.com/raw/509833b23994fd5cedc4cb3e9fed5883.png)
 
  ### Open URL
 You need to select **Open URL** in [Step 2: Add a certificate](#Step2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
+![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
 
 ### Open specific App interface
 1. In manifest, configure the `intent-filter` of the Activity to be opened. The sample code is as follows:
@@ -390,6 +396,7 @@ You need to select **Open URL** in [Step 2: Add a certificate](#Step2) and enter
     ```
 
 3. Select **Open specific App interface** in [Step 2: Add a certificate](#Step2) and enter the result above.
+![](https://main.qcloudimg.com/raw/57f4dd4bb2d3919d505107307acf200e.png)
 
 <span id="section4"></span>
 ## Custom Content Pass Through
