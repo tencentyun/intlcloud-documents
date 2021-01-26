@@ -177,7 +177,7 @@ VYapc9EYdoZLzGx0CglRW4N6kuhzZWNyZXRJZD1BS0lEZk5xMzl6dG5tYW1tVzBMOXFvZERia25hUjdZ
 <td>UGC_UPLOAD_SIGN_SERVER</td>
 <td>上传签名派发服务的 URL</td>
 <td>String</td>
-<td>上传签名派发服务部署完成后，由 SCF 命令行工具 <a href="https://cloud.tencent.com/document/product/583/33445" target="_blank">scf</a> 输出</td>
+<td>上传签名派发服务部署完成后，由 SCF 命令行工具 <a href="https://intl.cloud.tencent.com/document/product/583/36267" target="_blank">scf</a> 输出</td>
 </tr>
 </tbody></table>
 5. 将修改后的上传页面内容返回。返回的数据格式及含义请参见 [云函数集成响应](https://intl.cloud.tencent.com/document/product/583/12513)。
