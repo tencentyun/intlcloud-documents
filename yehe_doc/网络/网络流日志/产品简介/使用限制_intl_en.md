@@ -8,6 +8,7 @@
 Assume you create a flow log for the ENI on a CVM:
  - When the CVM accesses the public network through a cloud load balancer, the “1” traffic will be collected for the outbound direction and the “2” traffic will be collected for the inbound direction.
  - When the CVM accesses the public network through a NAT Gateway, the “3” traffic will be collected for the outbound direction and the “4” traffic will be collected for the inbound direction.
+![](https://main.qcloudimg.com/raw/77e0e2b4602605c96f31238473e8cecc.png)
 
 ## Supported List
 FL supports collecting ENI traffic on the following CVM instances in regions listed below.
