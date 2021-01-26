@@ -1,3 +1,4 @@
+
 ## Background
 
 Hadoop Ranger is a permission solution for big data scenarios. A user adopting the compute/storage separation mode can host data in Tencent COS. However, COS uses the CAM permission system, meaning that the user roles and permission policies could be different from those of Hadoop Ranger. Therefore, we introduce a solution to integrate COS with Ranger herein.
@@ -13,15 +14,12 @@ Hadoop Ranger is a permission solution for big data scenarios. A user adopting t
 
 ![](https://main.qcloudimg.com/raw/221e3a3e8fd6d31590fc8ca2562d7489.png)
 
-
 In the Hadoop permission system, the authentication is offered by Kerberos and authorized by Ranger. On the basis of this, the following components are introduced to support the COS Ranger permission solution:
 
-
+ 
 1. COS-Ranger-Plugin: a service define plugin used on the Ranger server. It provides the COS service description, including permission types and definitions of required parameters (such as bucket and region), on the Ranger side. Once the plugin is deployed, users can set permission policies on the Ranger control panel.
 2. COSRangerService: integrates the Ranger client to periodically sync permission policies from the Ranger server, and verifies permissions locally when an authentication request is received. It also offers generation/lease renewal APIs relevant to DelegationToken of Hadoop. All APIs are defined through Hadoop IPC.
 3. COSRangerClient: COSN dynamically loads it and forwards the permission verification requests to COSRangerService.
-
-
 
 ## Environment Deployment
 
@@ -31,19 +29,15 @@ In the Hadoop permission system, the authentication is offered by Kerberos and a
 
 ## Component Deployment
 
-
 ### Deploying COS-Ranger-Plugin
 
 COS-Ranger-Plugin extends the service types of the Ranger Admin console. Users can configure the COS-related permissions in the Ranger console.
 
+
 #### Source code download
-
 You can go to [Github](https://github.com/tencentyun/cos-ranger-service) > ranger-plugin to obtain the source code.
-
 #### Version
-
-v1.0 or above
-
+v1.1 or above
 #### Deployment directions
 1. Create a COS directory in the service definition directory in Ranger. Note that you should at least have execute and read permissions on the directory.
 a. In the Tencent Cloud EMR environment, the path is `ranger/ews/webapp/WEB-INF/classes/ranger-plugins`.
@@ -55,20 +49,17 @@ b. In the self-built Hadoop environment, you can search the path of the Ranger-i
 ```
 ## Create the service. The Ranger admin account and password, as well as the Ranger service address should be specified.
 ## For the Tencent Cloud EMR cluster, the root account is the admin, and the password is the root account’s password that is set when the EMR cluster is created. You need to replace the Ranger service address with the master node IP of the EMR.
-
 adminUser=root
 adminPasswd=xxxxxx
 rangerServerAddr=10.0.0.1:6080
-
 curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
-
 ## To delete a defined service, for example, the service created above, pass the service ID that is returned when you created the service.
 serviceId=102
 curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H "Content-Type:application/json" http://${rangerServerAddr}/service/plugins/definitions/${serviceId}
 ```
 5. When the service is created successfully, you can view the COS service in the Ranger console, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/d1a6e2722d11f7177636a5e2c54226e3.png)
-6. Click the + icon on the right of the COS service to define the service instance. On the **Edit Service** page, set the **Service Name** to `cos`, as shown in the following figure:
+6. Click the + icon on the right of the COS service to define the service instance. On the **Edit Service** page, customize the **Service Name**, for example, `cos` or `cos_test`, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/2be86fb2b8232b16679b29e908f82d3a.png)
 Where, `policy.grantrevoke.auth.users` needs to be set to the name of the user that is used to launch the COSRangerService service (i.e., the user that is allowed to pull permission policies). You are advised to set it to `hadoop`, which can be used as the username to launch COSRangerService in subsequent operations.
 7. Click the created COS service instance to add a policy, as shown in the following figure:
@@ -96,29 +87,34 @@ COSRangerService supports the one-master, multiple-slave HA deployment. `Delegat
 You can go to [Github](https://github.com/tencentyun/cos-ranger-service) > cos-ranger-server to obtain the source code.
 
 #### Version
-v1.0 or above
+v1.1 or above
 
 #### Deployment directions
 1. Copy the code of COSRangerService to several nodes of the cluster. In the production environment, the code should be copied to at least two nodes (one master node, and one slave node). As sensitive information is involved, you are advised to use jump servers or nodes with tight permission control.
 2. Modify the configuration in the `cos-ranger.xml` file. The following is the required modifications. For more information about the configuration items, please see the comments in the file.
- - qcloud.object.storage.rpc.address
- - qcloud.object.storage.enable.cos.ranger
- - qcloud.object.storage.zk.address
+ -  qcloud.object.storage.rpc.address
+ -  qcloud.object.storage.status.port
+ -  qcloud.object.storage.enable.cos.ranger
+ -  qcloud.object.storage.zk.address
  -  qcloud.object.storage.cos.secret.id
  -  qcloud.object.storage.cos.secret.key
 3. Modify the configuration in the `ranger-cos-security.xml` file. The following is the required modifications. For more information about the configuration items, please see the comments in the file.
  -  ranger.plugin.cos.policy.cache.dir
  -  ranger.plugin.cos.policy.rest.url
+ -  ranger.plugin.cos.service.name
 4. In the `start_rpc_server.sh` file, modify the configuration of `hadoop_conf_path` and `java.library.path`, which corresponds to the directory of the Hadoop configuration files (for example, `core-site.xml` and `hdfs-site.xml`) and hadoop native libraries, respectively.
-
 5. Run the following command to launch the service:
 ```
 chmod +x start_rpc_server.sh
 nohup ./start_rpc_server.sh &> nohup.txt &
 ```
 6. If the launch failed, check whether an error message is contained in the error log.
-
- 
+7. COSRangerService supports displaying the HTTP port status (port name: `qcloud.object.storage.status.port`. Default value: `9998`). You can run the following command to obtain the status information, such as whether the leader is contained, and the authentication statistics:
+```
+# Replace `10.xx.xx.xxx` with the IP address of the device deployed with the ranger service.
+# Replace `9998` in the command with the value of `qcloud.object.storage.status.port`.in the configuration file.
+curl -v http://10.xx.xx.xxx:9998/status
+```
 
 ### Deploying COSRangerClient
 
@@ -128,9 +124,9 @@ COSRangerClient is dynamically loaded by the Hadoop COSN plugin. It is a proxy t
 You can go to [Github](https://github.com/tencentyun/cos-ranger-service) > cos-ranger-client to obtain the source code.
 
 #### Version
-v1.0 or above
+v1.1 or above
 
-#### Deployment directions
+####  Deployment directions
 1. Copy the cos-ranger-client JAR package to the same directory of COSN. The JAR package version should be consistent with the major version of your Hadoop.
 2. Add the following configuration in `core-site.xml`:
 ```xml
@@ -149,7 +145,7 @@ v1.0 or above
 					 <value>hadoop/_HOST@EMR-XXXX</value>
            </property>
 
-        <!--***Optional Configuration****-->  
+         <!--***Optional Configuration****-->  
          <!-- IP address path of the Ranger server recorded in ZooKeeper. The default value is used herein. The value must the same as that configured in COSRangerService. -->
           <property>              
 					<name>qcloud.object.storage.zk.leader.ip.path</name> 
@@ -163,7 +159,6 @@ v1.0 or above
 ### Deploying COSN 
 
 #### Version
-
 v5.9.0 or above
 
 ####  Deployment directions
@@ -180,13 +175,13 @@ For detailed directions on the deployment of COSN, please see [Hadoop](https://i
 
 ## Verification
 
-1. Use Hadoop commands to perform operations related to COSN access, as shown below:
+1. Use Hadoop commands to perform operations related to COSN access, i.e., check whether the current operations comply with the permissions set by the root account.
 ```plaintext
-# Replace the bucket, path, and other configurations as needed.
-hadoop fs -lscosn://examplebucket-1250000000/doc
+# Replace the bucket, path, and other information with that of the root account.
+hadoop fs -ls cosn://examplebucket-1250000000/doc
 hadoop fs -put ./xxx.txt cosn://examplebucket-1250000000/doc/
 hadoop fs -get cosn://examplebucket-1250000000/doc/exampleobject.txt
-hadoop fs -rmcosn://examplebucket-1250000000/doc/exampleobject.txt
+hadoop fs -rm cosn://examplebucket-1250000000/doc/exampleobject.txt
 ```
 2. Use MR Job for verification. Before the verification, related services, such as Yarn and Hive, should be restarted first.
 
@@ -195,12 +190,9 @@ hadoop fs -rmcosn://examplebucket-1250000000/doc/exampleobject.txt
 
 #### Does Kerberos must be installed?
 Kerberos meets the authentication needs. If the cluster and users are trusted, and the purpose of the authentication is only to avoid misoperations caused by unauthorized users, you can skip installing Kerberos and only use Ranger for authentication. As a matter of fact, Kerberos also compromises performance. Therefore, you can balance your needs for security and performance. If authentication is needed, you can enable Kerberos, and then configure COSRangerService and COSRangerClient.
-
 #### What would happen if I enable Ranger, but haven’t set any policy or no policy is matched?
 If no policy is matched, the operation will be denied by default.
-
 #### Can a sub-account configure the key on the COSRangerService side?
 Yes. A sub-account with relevant permissions on the operated bucket can generate a temp key for the COSN plugin and operate relevant operations. Normally, you can grant all permissions of the bucket to the configured key.
-
 #### How can I update the temp key? Do I need to obtain it from COSRangerService every time before I access COS?
 The temp key is cached on the COSN side. It will be periodically updated asynchronously.

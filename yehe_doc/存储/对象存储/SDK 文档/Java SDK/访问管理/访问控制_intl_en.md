@@ -1,37 +1,37 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to bucket and object access control lists (ACL).
+This document provides an overview of APIs and SDK code samples related to the access control lists (ACLs) for buckets and objects.
 
 **Bucket ACL**
 
 | API | Operation | Description |
-| ------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets the ACL for a specified bucket |
-| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Gets the ACL of a specified bucket |
+| :----------------------------------------------------------- | :------------- | :----------------------------- |
+| [PUT Bucket acl](https://intl.cloud.tencent.com/document/product/436/7737) | Setting a bucket ACL | Sets an ACL for a bucket |
+| [GET Bucket acl](https://intl.cloud.tencent.com/document/product/436/7733) | Querying a bucket ACL | Queries the ACL of a bucket |
 
 **Object ACL**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for a specified object in a bucket |
+| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object |
 
 ## Bucket ACL
-### Setting bucket ACL
+### Setting a bucket ACL
 
 #### Feature description
 
-This API (PUT Bucket acl) is used to set the access control list (ACL) for a specified bucket. This operation will overwrite existing permission configurations. ACL includes a predefined permission policy (CannedAccessControlList) or a custom permission control (AccessControlList). When two types of permissions are configured at the same time, predefined policies are ignored and custom policies will be used.
+This API (PUT Bucket acl) is used to set an ACL for a bucket. This operation will overwrite existing permission configurations. ACL includes predefined permission policies (CannedAccessControlList) or custom permission policies (AccessControlList). If both types of policies are set, predefined policies are ignored and custom policies will be used.
 
 #### Method prototype
 
 ```java
-// Method 1 (Set custom policy)
+// Method 1 (Set custom policy.)
 public void setBucketAcl(String bucketName, AccessControlList acl)
   throws CosClientException, CosServiceException;
-// Method 2 (Set predefined policy)
+// Method 2 (Set predefined policy.)
 public void setBucketAcl(String bucketName, CannedAccessControlList acl) throws CosClientException, CosServiceException;
-// Method 3 (Encapsulation of the two methods above, including setting of these two policies. If both of them are set, the custom policy prevails.)
+// Method 3 (Encapsulate the two methods above, allowing you to set both policies. In this case, the custom policy prevails.)
 public void setBucketAcl(SetBucketAclRequest setBucketAclRequest) 
   throws CosClientException, CosServiceException;
 ```
@@ -40,65 +40,65 @@ public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
 
 [//]: # (.cssg-snippet-put-bucket-acl)
 ```java
-// Enter the bucket name in the format of BucketName-APPID
+The bucket name entered must be in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
-// Set a custom ACL
+// Set custom ACL.
 AccessControlList acl = new AccessControlList();
 Owner owner = new Owner();
 owner.setId("qcs::cam::uin/100000000001:uin/100000000001");
 acl.setOwner(owner);
-String id = "qcs::cam::uin/2779643970:uin/2779643970";
-UinGrantee uinGrantee = new UinGrantee("qcs::cam::uin/2779643970:uin/2779643970");
+String id = "qcs::cam::uin/100000000001:uin/100000000001";
+UinGrantee uinGrantee = new UinGrantee("qcs::cam::uin/100000000001:uin/100000000001");
 uinGrantee.setIdentifier(id);
 acl.grantPermission(uinGrantee, Permission.FullControl);
 cosClient.setBucketAcl(bucketName, acl);
 
-// Set a predefined ACL
-// Set private read and write (New buckets are configured with private read and write by default)
+// Set predefined ACL.
+// Set private read and write (New buckets are configured with private read and write by default).
 cosClient.setBucketAcl(bucketName, CannedAccessControlList.Private);
-// Set public read and private write
+// Set public read and private write.
 cosClient.setBucketAcl(bucketName, CannedAccessControlList.PublicRead);
-// Set public read/write
+// Set public read and write.
 cosClient.setBucketAcl(bucketName, CannedAccessControlList.PublicReadWrite);
 ```
 
 
 #### Parameter description
 
-Parameters in the third method include that in method 1 and 2. Method 3 is used as an example.
+Parameters in method 3 include those in methods 1 and 2. Therefore, method 3 is used as an example.
 
 | Parameter | Description | Type |
 | ------------------- | -------------- | ------------------- |
 | setBucketAclRequest | Class for requesting permission configuration | SetBucketAclRequest |
 
-Request member description:
+Request members:
 
 | Request Member | Set Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
-| bucketName  | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 | acl | Constructor or set method | Custom ACL policy | AccessControlList |
 | cannedAcl | Constructor or set method | Predefined ACL policy, such as public read, public read and write, private read | CannedAccessControlList |
 
 | Member Name | Description | Type |
 | -------------- | ------------------------------- | -------- |
-| List&lt;Grant> | Contains information on all granted permissions | Array |
+| List&lt;Grant> | Contains information about all granted permissions. | Array |
 | owner | Owner of the object | Owner class |
 
 Grant class members:
 
 | Member Name | Description | Type |
 | ---------- | ------------------------------------------ | ---------- |
-| grantee | Grantee identity information | Grantee |
-| permission | Authorized permission information (such as readable, writable, readable & writable) | Permission |
+| grantee | Grantee information | Grantee |
+| permission | Permission granted (such as read, write, or read/write) | Permission |
 
 Owner class members:
 
 | Member Name | Description | Type |
 | ----------- | ------------------------------ | ------ |
-| id | Identifies the owner | String |
-| displayname | Owner's name (same as id) | String |
+| id | Identity information of the owner | String |
+| displayname | Name of the owner (same as `id`) | String |
 
-CannedAccessControlList represents a preset policy for everyone. It is an enumeration type with the following enumerated values.
+`CannedAccessControlList` indicates the preset policy for everyone. It is of the enumeration type with the following enumerated values:
 
 | Enumerated Value | Description |
 | --------------- | ------------------------------------------------ |
@@ -108,15 +108,15 @@ CannedAccessControlList represents a preset policy for everyone. It is an enumer
 
 #### Response description
 
-- Success: no value is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: No value is returned.
+-Failure: An error occurs (such as authentication failure), throwing the `CosClientException` or `CosServiceException` exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-### Querying bucket ACL
+### Querying a bucket ACL
 
 #### Feature description
 
-This API is used to query the access control list of the specified bucket.
+This API is used to query the ACL of a bucket.
 
 #### Method prototype
 
@@ -129,7 +129,7 @@ public AccessControlList getBucketAcl(String bucketName)
 
 [//]: # (.cssg-snippet-get-bucket-acl)
 ```java
-// Enter the bucket name in the format of BucketName-APPID
+The bucket name entered must be in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 AccessControlList accessControlList = cosClient.getBucketAcl(bucketName);
 // Change the ACL policy type to predefined ACL. Valid values: Private, PublicRead, PublicReadWrite
@@ -139,35 +139,33 @@ CannedAccessControlList cannedAccessControlList = accessControlList.getCannedAcc
 
 #### Parameter description
 
-| Parameter | Description | Type |
+| Parameter  | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). | String |
 
 #### Response description
 
-- Success: the ACL of a bucket is returned. 
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Successful: The ACL of a bucket is returned. 
+- Failure: An error (such as authentication failure) occurs, throwing the `CosClientException` or `CosServiceException` exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-## Object ACL
+## Object ACLs
 
 
 ### Setting object ACL
 
 #### Feature description
 
-This API is used to set an ACL for a specified object in a bucket.
-
-> !You can configure up to 1,000 bucket ACLs. Do not set object ACL control unless absolutely necessary. The object inherits bucket permissions by default.
+This API is used to set an ACL for an object in a bucket.
 
 There are two types of ACL policies: predefined ACLs (CannedAccessControlList) and custom ACLs (AccessControlList). If both of them are set, the custom ACL prevails over the predefined ACL.
 
 #### Method prototype
 
 ```java
-// Method 1 (custom policy)
+// Method 1 (Set custom policy.)
 public void setObjectAcl(String bucketName, String key, AccessControlList acl)
        throws CosClientException, CosServiceException
-// Method 2 (predefined policy)
+// Method 2 (Set predefined policy.)
 public void setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
        throws CosClientException, CosServiceException
 // Method 3 (Encapsulate the two methods above, allowing you to set both policies. In this case, the custom policy prevails.)
@@ -179,57 +177,57 @@ public void setObjectAcl(SetObjectAclRequest setObjectAclRequest)
 
 [//]: # (.cssg-snippet-put-object-acl)
 ```java
-// The grantee information must be formatted. The format for root account and sub-account differs as follows:
-// In this example, both root_uin and sub_uin below are valid QQ numbers
-// The root account "qcs::cam::uin/<root_uin>:uin/<root_uin>" indicates that permission is granted to the root account "root_uin" itself
-// For example, "qcs::cam::uin/2779643970:uin/2779643970"
+// The grantee information must be formatted. The format for the root account and sub-account differs as follows:
+// In this example, both root_uin and sub_uin below are valid QQ numbers.
+// The root account "qcs::cam::uin/<root_uin>:uin/<root_uin>" indicates that permission is granted to the root account "root_uin" itself.
+// Example: qcs::cam::uin/100000000001:uin/100000000001
 // The sub-account "qcs::cam::uin/<root_uin>:uin/<sub_uin>" indicates that permission is granted by the root account "root_uin" to the sub account "sub_uin"
-// For example, qcs::cam::uin/2779643970:uin/73001122 
-// Bucket name in the format of BucketName-APPID
+// Example: qcs::cam::uin/100000000001:uin/100000000011 
+// Bucket name in the format: BucketName-APPID
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
-// Set a custom ACL
+// Set custom ACL.
 AccessControlList acl = new AccessControlList();
 Owner owner = new Owner();
-// Set the owner, which can only be a root account
+// Set the owner, which can only be a root account.
 owner.setId("qcs::cam::uin/100000000001:uin/100000000001");
 acl.setOwner(owner);
 
-// Grant root account 73410000 read and write permissions
-UinGrantee uinGrantee1 = new UinGrantee("qcs::cam::uin/2779643970:uin/2779643970");
+// Grant the root account 100000000001 the read and write permissions.
+UinGrantee uinGrantee1 = new UinGrantee("qcs::cam::uin/100000000001:uin/100000000001");
 acl.grantPermission(uinGrantee1, Permission.FullControl);
 cosClient.setObjectAcl(bucketName, key, acl);
 
-// Set a predefined ACL
-// Set private read and write (The object inherits bucket permissions by default)
+// Set predefined ACL.
+// Set private read and write (The object inherits bucket permissions by default).
 cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.Private);
-// Set public read and private write
+// Set public read and private write.
 cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicRead);
-// Set public read/write
+// Set public read and write.
 cosClient.setObjectAcl(bucketName, key, CannedAccessControlList.PublicReadWrite);
 ```
 
 
 #### Parameter description
 
-- Parameters for **Method 3** are described below because they encapsulate the parameters used in methods 1 and 2.
+- Parameters in **method 3** include those in methods 1 and 2. Therefore, method 3 is used as an example.
 
 | Parameter | Description | Type |
 | ------------------- | ------ | ------------------- |
 | SetObjectAclRequest | Request class | setObjectAclRequest |
 
-Request member description:
+Request members:
 
-| Request Member | Set Method | Description | Type |
+| Request Member | Set Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ----------------------- |
-| bucketName  | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String |
-| key | Constructor or set method | Object key (Key), which is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For ,more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). | String |
+| key | Constructor or set method | Unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | acl | Constructor or set method | Custom ACL policy | AccessControlList |
 | cannedAcl | Constructor or set method | Predefined ACL policy, such as public read, public read and write, private read | CannedAccessControlList |
 
 | Member Name | Description | Type |
 | -------------- | ------------------------------- | -------- |
-| List&lt;Grant> | Contains information on all granted permissions | Array |
+| List&lt;Grant> | Contains information about all granted permissions. | Array |
 | owner | Owner of the object | Owner class |
 
 Grant class members:
@@ -237,16 +235,16 @@ Grant class members:
 | Member Name | Description | Type |
 | ---------- | -------------------------------------------- | ---------- |
 | grantee | Grantee information | Grantee |
-| permission | Granted permission (such as read, write, read/write) | Permission |
+| permission | Permission granted (such as read, write, or read/write) | Permission |
 
 Owner class members:
 
 | Member Name | Description | Type |
 | ----------- | ------------------------------ | ------ |
-| id | Identifies the owner | String |
-| displayname | Owner's name (same as id) | String |
+| id | Identity information of the owner | String |
+| displayname | Name of the owner (same as `id`) | String |
 
-CannedAccessControlList represents a preset policy for everyone. It is an enumeration type with the following enumerated values.
+`CannedAccessControlList` indicates a preset policy for everyone. It is of the enumeration type with the following enumerated values:
 
 | Enumerated Value | Description |
 | --------------- | ------------------------------------------------ |
@@ -256,10 +254,10 @@ CannedAccessControlList represents a preset policy for everyone. It is an enumer
 
 #### Response description
 
-- Success: no value is returned.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: No value is returned.
+- Failure: An error (such as authentication failure) occurs, throwing the `CosClientException` or `CosServiceException` exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-### Querying object ACL
+### Querying an object ACL
 
 #### Feature description
 
@@ -276,7 +274,7 @@ public AccessControlList getObjectAcl(String bucketName, String key)
 
 [//]: # (.cssg-snippet-get-object-acl)
 ```java
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format: BucketName-APPID
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 AccessControlList accessControlList = cosClient.getObjectAcl(bucketName, key);
@@ -287,12 +285,12 @@ CannedAccessControlList cannedAccessControlList = accessControlList.getCannedAcc
 
 #### Parameter description
 
-| Parameter | Description | Type |
+| Parameter  | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83) | String |
-| key | Object key (Key), which is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312#.E5.AD.98.E5.82.A8.E6.A1.B6.E5.91.BD.E5.90.8D.E8.A7.84.E8.8C.83). | String |
+| key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 
 #### Response description
 
 - Success: returns the ACL of the object.
-- Failure: an error (such as authentication failure) occurs, with a `CosClientException` or `CosServiceException` exception thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: An error (such as authentication failure) occurs, throwing the `CosClientException` or `CosServiceException` exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
