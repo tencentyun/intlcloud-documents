@@ -178,7 +178,7 @@ You can also use third-party tools such as Postman to send HTTP requests. Please
 <td>UGC_UPLOAD_SIGN_SERVER</td>
 <td>Upload signature distribution service URL</td>
 <td>String</td>
-<td>Output by <a href="https://cloud.tencent.com/document/product/583/33445" target="_blank">SCF CLI</a> after the deployment of the upload signature distribution service is completed.</td>
+<td>Output by <a href="https://intl.cloud.tencent.com/document/product/583/36267" target="_blank">SCF CLI</a> after the deployment of the upload signature distribution service is completed.</td>
 </tr>
 </tbody></table>
 5. Return the modified content of the upload page. For the formats and descriptions of the returned data, please see [Overview of API Gateway Trigger](https://intl.cloud.tencent.com/document/product/583/12513).
