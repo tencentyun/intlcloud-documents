@@ -2,7 +2,7 @@
 
 ### Sending common messages
 
-**Obtain a conversation: **conversations are classified into conversations with an individual user and conversations with a group. To send or receive messages in a conversation, you first need to obtain the conversation by specifying the conversation type (C2C conversation or group conversation) and the peer's identifier (the peer's account or group ID). To obtain a conversation, call `getConversation` of `TIMManager`.
+<b>Obtain a conversation</b>: conversations are classified into conversations with an individual user and conversations with a group. To send or receive messages in a conversation, you first need to obtain the conversation by specifying the conversation type (C2C conversation or group conversation) and the peer's identifier (the peer's account or group ID). To obtain a conversation, call `getConversation` of `TIMManager`.
 
 **Prototype:**
 
@@ -32,7 +32,7 @@ conversation = TIMManager.getInstance().getConversation(
         groupId);                       // Group ID
 ```
 
-**Send messages: **after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
+<b>Send messages: </b>after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
 
 ![](https://main.qcloudimg.com/raw/5b109b81e56ac31a6c73ca6053a342ff.png)
 
@@ -99,7 +99,7 @@ An image message is defined by `TIMImageElem`, which is a subclass of `TIMElem`.
 
 >! `path` does not support file paths starting with `file://`. Therefore, the `file://` prefix must be removed.
 
-** The `TIMImageElem` member methods are as follows:**
+<b>The `TIMImageElem` member methods are as follows:</b>
 
 ```
 /**
@@ -308,7 +308,7 @@ An audio message is defined by `TIMSoundElem`, where `data` stores audio data. F
 > - Audio and file `Elem` objects are not always received in the order that they are added. We recommend that you determine and display `Elem` objects one by one. Moreover, audio and file `Elem` objects may not be sorted in the order that they are sent. 
 > - `path` does not support file paths starting with `file://`. The `file://` prefix must be removed.
 
-** The `TIMSoundElem` member methods are as follows:**
+<b>The `TIMSoundElem` member methods are as follows:</b>
 
 ```
 /**
@@ -399,7 +399,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {// Callback fo
 
 A location message is defined by `TIMLocationElem`, where `desc` stores the location description information, and `longitude` and `latitude` represent the location longitude and latitude, respectively.
 
-** The `TIMLocationElem` member methods are as follows:**
+<b>The `TIMLocationElem` member methods are as follows:</b>
 
 ```
 /**
@@ -481,7 +481,7 @@ A file message is defined by `TIMFileElem`. You can also view additional informa
 > - `path` does not support file paths starting with `file://`. The `file://` prefix must be removed.
 > - The maximum file size is 28 MB.
 
-** The `TIMFileElem` member methods are as follows:**
+<b>The `TIMFileElem` member methods are as follows:</b>
 
 ```
 /**
@@ -570,7 +570,7 @@ conversation.sendMessage(msg, new TIMValueCallBack<TIMMessage>() {// Callback fo
 
 Developers can customize the message format and content when built-in message types cannot meet their special needs. The IM SDK only passes through custom messages. If iOS APNs push notifications are required, a push text description to be displayed needs to be provided. A custom message is defined by `TIMCustomElem`, where 'data' stores the binary data of the message, its format is defined by developers, and `desc` stores the description text. A message can contain multiple custom `Elem` objects, which can be mixed with other `Elem` objects. In offline push scenarios, the `desc` of each `Elem` are stacked and delivered.
 
-** The `TIMCustomElem` member methods are as follows:**
+<b>The `TIMCustomElem` member methods are as follows:</b>
 
 ```
 /**
@@ -966,7 +966,7 @@ public void setCustomInt(int value)
 
 After receiving a message, use `getElem` to obtain all `Elem` nodes from `TIMMessage`. Nodes of the `TIMFileElem` type are file message nodes.
 
-** The `TIMFileElem` member methods are as follows:**
+<b>The `TIMFileElem` member methods are as follows:</b>
 
 ```
 // Download and save a file to the specified path.
@@ -1001,7 +1001,7 @@ public void getToFile(@NonNull final String path, @NonNull TIMCallBack callback)
 ### Receiving short video messages
 After receiving a message, use `getElem` to obtain all `Elem` nodes from `TIMMessage`. Nodes of the `TIMVideoElem` type are short video message nodes. Use the `TIMVideo` and `TIMSnapshot` objects to obtain the video and snapshot content. After receiving `TIMVideoElem`, download the video file and snapshot file through the APIs defined in the `video` and `snapshot` properties. To cache or store the data, use `uuid` as the `key` to store the files externally. The IM SDK does not store resource files.
 
-** The `TIMVideo` member methods are as follows:**
+<b>The `TIMVideo` member methods are as follows:</b>
 
 ```
 
@@ -1052,7 +1052,7 @@ long getDuaration();
 String getType(); 
 ```
 
-** The `TIMSnapshot` member methods are as follows:**
+<b>The `TIMSnapshot` member methods are as follows:</b>
 ```
 /**
  * Obtain the snapshot.
@@ -1365,8 +1365,7 @@ By default, after the user logs in to the IM SDK, the IM SDK enables recent cont
 
 The IM SDK stores messages locally. To obtain these messages, use `getLocalMessage` of `TIMConversation`. This is an asynchronous method, and a callback needs to be set to obtain message data. **For a C2C conversation, offline messages will be obtained automatically after login. For a group conversation, when recent contacts roaming is enabled, only the last message is obtained after login, and roaming messages can be obtained using `getMessage`.**
 
- > **Note:**
- > For resource messages such as image and audio messages, the message body only contains descriptive information, and additional APIs are required to download data. For more information, see Parsing Messages. The actual data downloaded is not cached, and must be cached by the caller.
+ >! For resource messages such as image and audio messages, the message body only contains descriptive information, and additional APIs are required to download data. For more information, see Parsing Messages. The actual data downloaded is not cached, and must be cached by the caller.
 
 
 **Prototype:**
