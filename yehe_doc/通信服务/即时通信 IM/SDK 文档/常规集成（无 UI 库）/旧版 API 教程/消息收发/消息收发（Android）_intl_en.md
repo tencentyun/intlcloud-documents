@@ -32,7 +32,7 @@ conversation = TIMManager.getInstance().getConversation(
         groupId);                       // Group ID
 ```
 
-**Send messages: **after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301#2.1-imsdk.E5.AF.B9.E8.B1.A1.E7.AE.80.E4.BB.8B). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
+**Send messages: **after `TIMConversation` is obtained using `TIMManager`, you can send messages and obtain cached messages for the conversation. For more information about the interpretation of messages in the IM SDK, see [Introduction to IM SDK Objects](https://intl.cloud.tencent.com/document/product/1047/34301). In the IM SDK, a message is a `TIMMessage` object. A `TIMMessage` can contain multiple `TIMElem`, and each `TIMElem` can be a text or an image. That is, a message can contain multiple texts and images.
 
 ![](https://main.qcloudimg.com/raw/5b109b81e56ac31a6c73ca6053a342ff.png)
 
