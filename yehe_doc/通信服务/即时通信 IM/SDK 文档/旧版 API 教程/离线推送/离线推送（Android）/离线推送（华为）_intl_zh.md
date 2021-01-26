@@ -27,7 +27,8 @@
 1. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面。
 2. 单击【Android平台推送设置】区域的【添加证书】。
  >?如果您原来已有证书只需变更信息，可以单击【Android平台推送设置】区域的【编辑】进行修改更新。
- >
+
+![](https://main.qcloudimg.com/raw/47b994748b2f02b8f4590a5be026066b.png)
 3. 根据 [步骤1](#Step1_3) 中获取的信息设置以下参数：
  - **推送平台**：选择**华为**
  - **应用包名称**：填写华为推送服务应用的**包名**
@@ -36,11 +37,11 @@
  - **角标参数**：填写应用入口完整 `Activity` 类名，用作华为桌面应用角标显示，请参考 [华为桌面角标开发指导书](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-badging-0000001050042083)
  - **点击通知后**：选择点击通知栏消息后的响应操作，支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#section4)。
-   ![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
+   ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
     
 4. 单击【保存】保存信息，证书信息保存后10分钟内生效。
 5. 待推送证书信息生成后，记录证书的**`ID`**。
-
+   ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
 <span id="Step3"></span>
 ### 步骤3：集成推送 SDK
 
@@ -353,11 +354,11 @@ public class ThirdPushTokenMgr {
 
 ### 打开应用
 默认为点击通知栏消息打开应用。
-![](https://main.qcloudimg.com/raw/0a53194ae0752382a8f1b9104242a572.png)
+![](https://main.qcloudimg.com/raw/509833b23994fd5cedc4cb3e9fed5883.png)
 
  ### 打开网页
 您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/446026072740e500751ddbdad1e1dc3d.png)
+![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
 
 ### 打开应用内指定界面
 1. 在 manifest 中配置需要打开的 Activity 的`intent-filter`，示例代码如下：
@@ -394,7 +395,7 @@ public class ThirdPushTokenMgr {
     ```
 
 3. 在 [添加证书](#Step2) 时选择【打开应用内指定界面】并输入上述打印结果。
-![](https://main.qcloudimg.com/raw/708d57faeac0585b3dc402c1ea7129fc.png)
+![](https://main.qcloudimg.com/raw/57f4dd4bb2d3919d505107307acf200e.png)
 
 <span id="section4"></span>
 ## 透传自定义内容
