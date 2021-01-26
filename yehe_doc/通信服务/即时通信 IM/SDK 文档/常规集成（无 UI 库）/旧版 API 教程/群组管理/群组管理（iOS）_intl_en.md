@@ -1423,7 +1423,7 @@ You can pull group pending requests through `getPendencyFromServer`. Group pendi
 
 The **approver** has the permission to pull the information.
 
->
+>?
 >- If user A applies to join group A, the group admin can obtain information related to this pending request. As user A does not have approval permission, user A does not need to pull information related to this pending request.
 >- If admin A invites user A to join group A, user A can obtain the information related to this pending request because this pending request needs to be approved by user A.
 
