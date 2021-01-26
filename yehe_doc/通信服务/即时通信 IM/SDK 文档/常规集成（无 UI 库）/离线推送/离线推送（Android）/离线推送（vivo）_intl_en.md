@@ -22,7 +22,7 @@ vivo mobile phones use a highly customized Android system, with very strict mana
 2. Log in to the console of the vivo open platform, choose **Message Push** -> **Create** -> **Test Push**, and create a vivo push service app.
  Once the app is created, you can view detailed app information under **App details**.
 [](id:Step1_3)
-3. Record the following: **`APP ID`, **`APP key`**, and **`APP secret`**.
+3. Record the following: **`APP ID`**, **`APP key`**, and **`APP secret`**.
 
 [](id:Step2)
 ### Step 2: Generate a Certificate ID
@@ -30,7 +30,7 @@ vivo mobile phones use a highly customized Android system, with very strict mana
 2. Click **Add a certificate** under **Android push configuration**.
  >? If you already have a certificate and only want to change its information, you can click **Edit** in the corresponding certificate area to modify and update the certificate.
 
- ![](https://main.qcloudimg.com/raw/dff82b17de7577edf2a89bfda2eeed29.png)
+ ![](https://main.qcloudimg.com/raw/91a37ef3b610e49b2b80cb3683170d8b.png)
 3. Use the information you obtained in [Step 1](#Step1_3) to configure the following parameters:
  - **Push platform**: select **vivo**.
  - **AppKey**: enter the **AppKey** you got from vivo Push.
@@ -38,9 +38,10 @@ vivo mobile phones use a highly customized Android system, with very strict mana
  - **AppSecret**: enter the **APP secret** you got from vivo Push.
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#click).
     **Open app** or **Open specific app interface** allows [custom content pass through](#section4).
- ![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
+ ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
 4. Click **OK** to save the information. Certificate information takes effect 10 minutes after you save it.
 5. Record the Certificate ID once it is generated.
+ ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
 
 [](id:Step3)
 ### Step 3: Integrate push SDK
@@ -293,11 +294,11 @@ You can select one of the following events: **Open app**, **Open URL**, or **Ope
 
 ### Open app
 This is the default event, which opens the app once the notification bar message is clicked.
-![](https://main.qcloudimg.com/raw/432773c85afd40ecdee6b65763242161.png)
+![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
 
 ### Open URL
 You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/ae0c342056121f11dc78791cf49f9e69.png)
+![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
 
 ### Open specific app interface
 
@@ -333,7 +334,7 @@ You need to select **Open URL** in [Step 2](#Step2) and enter a URL that starts 
     ```
 
 3. Select **Open specific app interface** in [Step 2](#Step2) and enter the result above.
-    ![](https://main.qcloudimg.com/raw/ffc5c2d46d678a33c4ebb1f4f51d3b33.png)
+    ![](https://main.qcloudimg.com/raw/4dcbd70d1ed28881e76e252c49e3675b.png)
 
 [](id:section4)
 ## Custom Content Pass Through
