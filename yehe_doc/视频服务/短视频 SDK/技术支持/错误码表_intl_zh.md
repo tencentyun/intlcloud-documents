@@ -1,4 +1,3 @@
-
 ## 短视频录制
 
 | code | TXRecordCommon 中对应常量                    | 含义说明                   |
@@ -45,6 +44,8 @@
 | 1015 | ERR_UGC_FILE_NAME              | 视频上传文件名太长或含有特殊字符           |
 | 1016 | ERR_UGC_INVALID_COVER_PATH     | 视频文件封面路径不对，文件不存在           |
 
+>? 1003、1004 错误码，请结合返回的 errMsg 错误信息进行排查，COS 相关异常信息请参见 [COS 异常处理](https://intl.cloud.tencent.com/document/product/436/31517)。
+
 ### 服务器错误码  
 
 如果您无法从 SDK 错误码中诊断出视频发布的结果，可以查询以下服务器返回的错误码，这些错误码可以在 Log 信息中找到。
@@ -66,4 +67,5 @@
 | -20014 | bucket_authority 为空                                        |
 | -21001 | Out Of Memory                                                |
 | -22000 | IO 异常                                                      |
-| -25000  |  其他错误，如需处理请联系腾讯商务人员或者 [提交工单](https://console.cloud.tencent.com/workorder/category) | 
+| -25000 | 其他错误，如需处理请联系腾讯商务人员或者 [提交工单](https://console.cloud.tencent.com/workorder/category)，联系电话：4009100100 |
+
