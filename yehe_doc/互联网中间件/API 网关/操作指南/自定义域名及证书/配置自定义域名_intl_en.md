@@ -19,6 +19,7 @@ The domain name binding feature allows you to bind your own domain name to a ser
 ### Configuring forced HTTPS
 
 On the custom domain name configuration page, if the protocol is HTTPS&HTTPS or HTTPS, the forced HTTPS feature can be enabled. After it is enabled, API Gateway will redirect requests using the custom domain name over the HTTP protocol to the HTTPS protocol.
+![](https://main.qcloudimg.com/raw/afa6246bc12dcc9fd81487f84429a299.png)
 
 ### Configuring domain name path mapping
 1. On the custom domain name list page, click **Edit Path Mapping** in the "Operation" column.
