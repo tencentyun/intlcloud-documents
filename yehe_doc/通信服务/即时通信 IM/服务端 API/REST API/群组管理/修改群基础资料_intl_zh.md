@@ -114,6 +114,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/modify_group_base_info?sdkappi
 | MaxMemberNum | Integer | 选填 |最大群成员数量<li>私有群、公开群和聊天室：该字段阈值请参考 [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529#.E7.BE.A4.E7.BB.84.E9.99.90.E5.88.B6.E5.B7.AE.E5.BC.82) 和 [计费概述](https://intl.cloud.tencent.com/document/product/1047/34349) 中的群成员人数上限相关说明</li><li>音视频聊天室和在线成员广播大群：该字段为无效字段，无需填写</li> |
 | ApplyJoinOption | String | 选填 |申请加群处理方式。包含 FreeAccess（自由加入），NeedPermission（需要验证），DisableApply（禁止加群） |
 | AppDefinedData | Array | 选填 |默认情况是没有的。开通群组维度的自定义字段详情请参见 [自定义字段](https://intl.cloud.tencent.com/document/product/1047/33529#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.AD.97.E6.AE.B5) |
+|ShutUpAllMember  |String |选填|群内群成员禁言，只有群管理员和群主以及系统管理员可以发言|
 
 ### 应答包体示例
 
@@ -143,7 +144,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/modify_group_base_info?sdkappi
 | 10002  | 服务器内部错误，请重试                                       |
 | 10003  | 请求命令字非法                                               |
 | 10004  | 参数非法，请根据错误描述检查请求是否正确                     |
-| 10026  | 该 SDKAppID 请求的命令字已被禁用，请[提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=40&source=0&data_title=%E4%BA%91%E9%80%9A%E4%BF%A1%20%20IM&step=1) |
+| 10026  | 该 SDKAppID 请求的命令字已被禁用，请联系客服 |
 | 10007  | 操作权限不足，请确认操作者是否是 App 管理员或者是否有权限修改请求中的字段  |
 | 10010  | 群组不存在，或者曾经存在过，但是目前已经被解散               |
 | 10015  | 群组 ID 非法，请检查群组 ID 是否填写正确                     |

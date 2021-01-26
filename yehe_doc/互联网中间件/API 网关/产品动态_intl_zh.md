@@ -1,3 +1,21 @@
+## 2021年01月
+<table><tr>
+<th width="20%">动态名称</th>
+<th width="45%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr><tr>
+<td>Base64 编码</td>
+<td>后端对接云函数 SCF 时，支持开启 Base64 编码功能，API 网关会把请求内容进行 Base64 编码后转发给云函数，以解决二进制文件上传问题。</td>
+<td>2021-01-21</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/39489">Base64 编码</a></td>
+</tr><tr>
+<td>优化监控</td>
+<td>新增服务数据统计功能，支持查看账号下所有服务一天内的数据统计，帮助用户快速定位问题。</td>
+<td>2021-01-21</td>
+<td>-</td>
+</tr></table>
+
 ## 2020年12月
 <table><tr>
 <th width="20%">动态名称</th>
@@ -31,7 +49,7 @@
 <td>支持响应压缩</td>
 <td>支持基于 gzip 算法的响应压缩功能，可有效降低数据传输量、减少响应时间、节省服务端网络带宽、提升客户端性能。</td>
 <td>2020-11-17</td>
-<td><a href="https://cloud.tencent.com/document/product/628/49945">响应压缩</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/38851">响应压缩</a></td>
 </tr></table>
 
 ## 2020年10月
@@ -49,7 +67,7 @@
 <td>优化监控</td>
 <td>新增 API 数据统计功能，支持查看服务下所有 API 一天内的数据统计，帮助用户快速定位问题。</td>
 <td>2020-10-26</td>
-<td><a href="https://cloud.tencent.com/document/product/628/49555">查看 API 数据统计</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/628/38833">查看 API 数据统计</a></td>
 </tr></table>
 
 ## 2020年09月
@@ -80,7 +98,7 @@
 <td>接入标签</td>
 <td>API 网关服务粒度接入标签，支持通过标签管理云资源。</td>
 <td>2020-08-05</td>
-<td><a href="https://cloud.tencent.com/document/product/651">标签</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/651">标签</a></td>
 </tr><tr>
 <td>体验优化</td>
 <td>API 网关新控制台概览页上线，新增快速入口、异常告警、配额限制、最新公告等多个特色模块。</td>
