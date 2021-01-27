@@ -1,7 +1,5 @@
 <span id="Nginx-ingress"></span>
 ## Installing NginxIngress Addon
->! To use NginxIngress addon, [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
-
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2) and click **Cluster** in the left sidebar.
 2. On the “**Cluster Management** page, click the ID of the target cluster to go to the cluster details page.
 3. In the left sidebar, click **Add-on Management** to go to the **Add-on List** page.
