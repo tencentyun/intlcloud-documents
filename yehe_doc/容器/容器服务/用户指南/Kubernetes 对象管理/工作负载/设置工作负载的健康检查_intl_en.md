@@ -53,5 +53,5 @@ sh
 - **Interval**: unit: second. It specifies the frequency of health checks. For example, if the interval is set to 10, then health checks are run once every 10 seconds.
 - **Response timeout**: unit: second. It specifies the timeout period for health check. It indicates the TCP connection timeout period, the HTTP request response timeout period, and the execute command timeout period for TCP port probe, HTTP request probe, and execute command check, respectively.
 - **Healthy Threshold**: unit: time. It specifies the times of consecutive health check successes before the container is determined to be healthy. For example, if the healthy threshold is set to 3, the container will be considered healthy only if the probe succeeds three times consecutively.
-> For liveness checks, the healthy threshold can only be 1. Other values are invalid.
+>! For liveness checks, the healthy threshold can only be 1. Other values are invalid.
 - **Unhealthy Threshold**: unit: time. It specifies the times of consecutive health check failures before the container is determined to be unhealthy. For example, if the unhealthy threshold is set to 3, the container will be considered unhealthy only if the probe fails three times consecutively.
