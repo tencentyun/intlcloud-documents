@@ -1,11 +1,11 @@
-## Sample of PHP Signature
+## Sample Signature in PHP
 ```php
 <?php
 // Determine the TencentCloud API key of the application
 $secret_id = "XXXXXXXXXXXXXXXXXX";
 $secret_key = "AAAAAAAAAAAAAAAAAAA";
 
-// Determine the current time and expiration time for the signature
+// Determine the current time and expiration time of the signature
 $current = time();
 $expired = $current + 86400;  // Signature validity period: 1 day
 
@@ -25,13 +25,14 @@ echo "\n";
 ?>
 ```
 
-## Sample of Java Signature
+## Sample Signature in Java
 ```java
 import java.util.Random;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import sun.misc.BASE64Encoder;
 
+// Signature tool class
 class Signature {
     private String secretId;
     private String secretKey;
@@ -39,7 +40,7 @@ class Signature {
     private int random;
     private int signValidDuration;
 
-    private static final String HMAC_ALGORITHM = "HmacSHA1";
+    private static final String HMAC_ALGORITHM = "HmacSHA1"; // Signature algorithm
     private static final String CONTENT_CHARSET = "UTF-8";
 
     public static byte[] byteMerger(byte[] byte1, byte[] byte2) {
@@ -49,10 +50,12 @@ class Signature {
         return byte3;
     }
 
+    // Get the signature
     public String getUploadSignature() throws Exception {
         String strSign = "";
         String contextStr = "";
 
+        // Generate the original parameter string
         long endTime = (currentTime + signValidDuration);
         contextStr += "secretId=" + java.net.URLEncoder.encode(secretId, "utf8");
         contextStr += "&currentTimeStamp=" + currentTime;
@@ -103,11 +106,12 @@ class Signature {
 public class Test {
     public static void main(String[] args) {
         Signature sign = new Signature();
+        // Set the TencentCloud API key of the application
         sign.setSecretId("Secret ID of your API key");
         sign.setSecretKey("Secret key of your API key");
         sign.setCurrentTime(System.currentTimeMillis() / 1000);
         sign.setRandom(new Random().nextInt(java.lang.Integer.MAX_VALUE));
-        sign.setSignValidDuration(3600 * 24 * 2);
+        sign.setSignValidDuration(3600 * 24 * 2); // Signature validity period: 2 days
 
         try {
             String signature = sign.getUploadSignature();
@@ -130,7 +134,7 @@ private String base64Encode(byte[] buffer) {
 }
 ```
 
-## Sample of Node.js Signature
+## Sample Signature in Node.js
 ```javascript
 var querystring = require("querystring");
 var crypto = require('crypto');
@@ -139,7 +143,7 @@ var crypto = require('crypto');
 var secret_id = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 var secret_key = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
 
-// Determine the current time and expiration time for the signature
+// Determine the current time and expiration time of the signature
 var current = parseInt((new Date()).getTime() / 1000)
 var expired = current + 86400;  // Signature validity period: 1 day
 
@@ -163,7 +167,7 @@ var signature = Buffer.concat([hmac_buffer, orignal_buffer]).toString("base64");
 console.log(signature);
 ```
 
-## Sample of C# Signature
+## Sample Signature in C#
 ```csharp
 using System;
 using System.Security.Cryptography;
@@ -222,7 +226,7 @@ class Program
 
 ```
 
-## Sample of Python Signature
+## Sample Signature in Python
 ```Python
 #!/usr/local/bin/python3
 #coding=utf-8
@@ -256,7 +260,7 @@ print("Signature before BASE64: ", Signature)
 print("Signature after BASE64: ", str(Signature2))
 ```
 
-## Sample of Go Signature
+## Sample Signature in Go
 ```go
 package main
 

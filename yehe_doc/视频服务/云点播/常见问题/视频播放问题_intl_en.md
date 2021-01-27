@@ -38,13 +38,13 @@ To play back videos in HLS or FLV format by using HTML5 in modern PC browsers, [
 Generally, the above two policies are configured automatically by Tencent Cloud. If you have any problems, please [contact us](https://intl.cloud.tencent.com/document/product/266/19905).
 
 ### How do I solve the problem where the player prompts that the video is not transcoded?
-Please transcode the video. For detailed directions, please see [Processing Video](https://intl.cloud.tencent.com/document/product/266/33892). Please make sure that the video codec is H.264 and container format is MP4 or HLS.
+Please transcode the video. For detailed directions, please see [Processing Videos](https://intl.cloud.tencent.com/document/product/266/33892). Please make sure that the video codec is H.264 and container format is MP4 or HLS.
 
 ### Can I add different watermarks for different viewers?
 VOD only allows specifying image or text watermarks during transcoding and does not support dynamic watermarking for different viewers.
 
 ### Does VOD offer video editing features such as dubbing, mixing, brightness adjustment, rotation, or picture-in-picture?
-Yes. For more information, please see [media production](https://intl.cloud.tencent.com/document/product/266/33936) in the video processing features of VOD.
+Yes. For more information, please see [video compositing](https://intl.cloud.tencent.com/document/product/266/33936) in the video processing features of VOD.
 
 ### How do I solve the problems such as blurred screen, blank screen, lagging, and playback failures after transcoding?
 You need to first find out whether there is any problem with the source video. If the problem is caused by transcoding, please [contact us](https://intl.cloud.tencent.com/document/product/266/19905).
@@ -52,14 +52,17 @@ You need to first find out whether there is any problem with the source video. I
 ### Are there any prompts if playback is not supported by a browser?
 Generally, web playback depends on the decoder of the browser or the Flash decoder. If playback is not supported, error code `3` or `4` will be returned.
 
-### What should I do if videos in RTMP or FLV format cannot be played back or videos cannot be played in IE?
-Flash is required for playing back RTMP and FLV videos as well as any videos in IE. Please install and enable it.
+### What should I do if videos in RTMP or FLV format cannot be played back or videos cannot be played in Internet Explorer?
+Flash is required for playing back RTMP and FLV videos as well as any videos in Internet Explorer. Please install and enable it.
 
 ### What should I do if videos in HLS or FLV format cannot be played back by using HTML5 when Flash is not supported by a PC browser?
 If Flash is not supported, the player will use MSE to play back videos in HLS or FLV format; if MSE is not supported either, you will have to change or upgrade the browser. Currently, browsers that support MSE include Microsoft Edge, Chrome, Mozilla Firefox, and Safari 11+.
 
 ### What should I do if a browser does not support decoding H.264 videos or playing back videos in MP4 or HLS format?
 Generally, there is no corresponding video decoder in the browser kernel of some PC software programs or applications in integrated or lite editions. Please upgrade the browser kernel in them or integrate with Flash and allow it to be called.
+
+### How do I prevent my videos from being downloaded and played back by others?
+To play back a video online is to download it first and then play it back, so it is impossible to prevent a video from being downloaded by others. If you want your videos not to be played back after being downloaded by others, please see [video encryption](https://intl.cloud.tencent.com/zh/document/product/266/33968) in VOD.
 
 ### How do I solve the problem where an HLS-encrypted video cannot be played back?
 The playback process of an HLS-encrypted video is different from that of ordinary videos. Generally, you need to get the right key. The steps to fix this problem are as follows:
@@ -117,3 +120,14 @@ The ad placement feature is not available yet. You can use the rolling feature o
 
 ### Does a video in VOD have to be transcoded before playback?
 Transcoding is not mandatory in VOD; **however, playback of files not transcoded may fail on third-party platforms; therefore, transcoding is recommended**.
+
+### Two videos have the same resolution and bitrate, but the spliced video has a lower bitrate. How can I retain the original bitrate?
+
+You can configure the target bitrate to be the same as the original bitrate. The encoder will also assign a bitrate accordingly. There may be cases **where the actual transcoded bitrate doesn't need to be very high**, and the bitrate will be thus decreased. If the decrease is significant, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+
+### Can an encrypted video be cached for offline playback?
+
+No. The video can be played back and cached only after being decrypted.
+
+
+

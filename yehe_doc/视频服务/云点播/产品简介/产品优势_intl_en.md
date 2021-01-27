@@ -21,10 +21,13 @@
 + VOD has a built-in default domain name. If you do not have a domain name, the preset domain name can be used to deliver resources based on the nearby region. This allows you to quickly get the video resources for playback, effectively solving the delay problem. In addition, custom domain names can be configured.
 
 ### Video AI Capabilities
-+ VOD has various intelligent features such as face, speech, and text recognition, which can effectively perform automated operations like video clipping, splicing, and screencapturing, as well as AI-based detection of pornographic, terrorism, and politically sensitive information in videos, so as to reduce the manual workload.
-+ VOD features audit in console, which makes it easy for you to customize video audits in the VOD Console.
++ VOD has various intelligent features such as face, speech, and text recognition, which can effectively perform automated operations like video editing, splicing, and screencapturing, as well as AI-based detection of pornographic, terrorism, and politically sensitive information in videos, so as to reduce the manual workload.
++ VOD features audit in console, which makes it easy for you to customize video audits in the VOD console.
 
-### Transcoding to Adaptive Bitrate Streaming
+### Video Ecosystem
++ VOD is connected to the resources in Tencent Video's V+ channel, providing you with a diversity of video publishing platforms and monetization methods.
+
+### Adaptive Bitrate Streaming
 + VOD can determine the change in network connection speed to select the most suitable bitstream for playback, ensuring the smoothness of video playback and improving the user experience.
 + VOD can select the most appropriate bitstream according to the network environment to make full use of the network bandwidth.
 
