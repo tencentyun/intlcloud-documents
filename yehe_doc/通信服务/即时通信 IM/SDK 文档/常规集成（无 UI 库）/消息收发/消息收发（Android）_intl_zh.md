@@ -131,8 +131,6 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 
 
 
-
-
 ### 发送群 @ 消息
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)，昵称用来在文本框显示。
 2. 发送方调用 [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) 的 [createTextAtMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) 创建一条 @ 文本消息，拿到消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)。
@@ -453,6 +451,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
+![](https://main.qcloudimg.com/raw/30cafa8466a76f1d020ddbab19e9fd35.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？
@@ -463,9 +462,20 @@ SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如
 ### 2. App 卸载重装后已读回执为什么失效了？
 在单聊场景下，接收方如果调用 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) 设置消息已读，发送方收到的已读回执里面包含了对方已读的时间戳 `timestamp`，SDK 内部会根据 `timestamp` 判断消息对方是否已读， `timestamp` 目前只在本地保存，程序卸载重装后会丢失。
 
-### 3. 有多个 Elem 的消息应该如何解析？
-出于降低消息复杂度的考虑，SDK API2.0 接口不再支持创建包含多个 Elem 的 Message 对象。如果您收到了来自老版本的包含多个 Elem 的 Message 对象，可以按照以下步骤解析：
-1. 正常解析出第一个 `Elem` 对象。
+### 3. 如何发送多个 Elem 的消息？
+如果您的消息需要多个 `elem`，可以在创建 `Message` 对象后，通过 `Message` 对象的 `Elem` 成员调用 [appendElem](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMElem.html#a5f5d86bb659d7a3775829eaa2e102866) 方法添加下一个 `elem` 成员。
+以文本消息 + 自定义消息为例：
+
+```
+V2TIMMessage message = V2TIMManager.getMessageManager().createTextMessage("test");
+V2TIMCustomElem customElem = new V2TIMCustomElem();
+customElem.setData("自定义消息".getBytes());
+message.getTextElem().appendElem(customElem);
+
+```
+
+### 4. 如何解析多个 Elem 的消息？
+1. 通过 `Message` 对象正常解析出第一个 `Elem` 对象。
 2. 通过第一个 `Elem` 对象的 [getNextElem](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMElem.html#aa903ed29cfa12e1ea88873eb1af39d68) 方法获取下一个 `Elem` 对象。如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `null`。
 
 ```
@@ -493,6 +503,6 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 }
 ```
 
-<span id ="msgAnalyze"></span>
-### 4. 各种不同类型的消息应该如何解析？
+[](id:msgAnalyze)
+### 5. 各种不同类型的消息应该如何解析？
 解析消息相对复杂，我们提供了各种类型消息解析的 [示例代码](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/sampleCode/message.java)，您可以直接把相关代码拷贝到您的工程，然后根据实际需求进行二次开发。

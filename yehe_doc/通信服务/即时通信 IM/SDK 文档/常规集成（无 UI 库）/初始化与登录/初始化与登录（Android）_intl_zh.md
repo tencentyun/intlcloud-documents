@@ -27,23 +27,23 @@ V2TIMManager.getInstance().initSDK(context, sdkAppID, sdkConfig, <span class="hl
 
 初始化接口 initSDK(SDKAppID, SDKConfig, listener) 包含三个必填的参数，分别是 SDKAppID、SDKConfig 和事件监听器。
 
-<span id="SDKAppID"></span>
+[](id:SDKAppID)
 ### SDKAppID
 SDKAppID 即应用 ID，它是腾讯云 IM 服务用于区分客户帐号的唯一标识。每一个独立的 App 都建议申请一个新的 SDKAppID，不同 SDKAppID 之间的消息天然隔离，不能互通。
 您可以在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 查看所有的 SDKAppID，单击【添加新应用】即可创建新的 SDKAppID。
-![](https://main.qcloudimg.com/raw/3487090d0ccaeaf21254acbab1ac858c.png)
+![](https://main.qcloudimg.com/raw/06d521fdb60cd86e40a82080ff90be3f.png)
 
-<span id="SDKConfig"></span>
+[](id:SDKConfig)
 ### SDKConfig
 参数 `V2TIMSDKConfig` 用于对 SDK 进行初始化配置，常用于设置日志级别，即 [setLogLevel](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSDKConfig.html#a033c4e90397236427f3dd65038df8033) 接口，日志级别如下表所示：
 
 | 日志级别 | LOG 输出量 |
 |---------|---------|
-| V2TIM_LOG_NONE | 不输出任何 log | 
-| V2TIM_LOG_DEBUG | 输出 DEBUG，INFO，WARNING，ERROR 级别的 log | 
-| V2TIM_LOG_INFO | 输出 INFO，WARNING，ERROR 级别的 log | 
-| V2TIM_LOG_WARN | 输出 WARNING，ERROR 级别的 log | 
-| V2TIM_LOG_ERROR | 输出 ERROR 级别的 log | 
+| V2TIM_LOG_NONE | 不输出任何 log |
+| V2TIM_LOG_DEBUG | 输出 DEBUG，INFO，WARNING，ERROR 级别的 log |
+| V2TIM_LOG_INFO | 输出 INFO，WARNING，ERROR 级别的 log |
+| V2TIM_LOG_WARN | 输出 WARNING，ERROR 级别的 log |
+| V2TIM_LOG_ERROR | 输出 ERROR 级别的 log |
 
 - IM SDK 的日志在4.8.50版本之前默认存储于 `/sdcard/tencenet/imsdklogs/应用包名` 目录下，4.8.50及之后的版本存储于 `/sdcard/Android/data/包名/files/log/tencent/imsdk` 目录下。
 - 从 V4.7.1 开始，IM SDK 的日志开始采用微信团队的 xlog 模块进行输出，xlog 日志默认是压缩的，需要使用 Python 脚本进行解压。
@@ -65,7 +65,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 | onUserSigExpired | 登录票据已经过期 | 请使用新签发的 UserSig 进行登录。  |
 | onSelfInfoUpdated | 当前用户的资料发生了更新 | 可以在 UI 上更新自己的头像和昵称。 |
 
->若收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请更新后重新登录。如果继续使用过期的 UserSig，会导致 SDK 登录死循环。
+>!若收到 `onUserSigExpired` 回调，说明您登录用的 UserSig 票据已经过期，请更新后重新登录。如果继续使用过期的 UserSig，会导致 SDK 登录死循环。
 
 ## 登录
 
@@ -73,7 +73,7 @@ python decode_mars_nocrypt_log_file.py imsdk_yyyyMMdd.xlog
 
 - UserID： 建议只包含大小写英文字母（a-z、A-Z）、数字（0-9）、下划线（_）和连词符（-），长度最大不超过32字节。
 - UserSig：IM SDK 登录票据，由您的业务服务器进行计算以保证安全，计算方法请参考 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)。
-
+>!调用 IM SDK Login 成功登录后，将会开始计算 DAU，请根据业务场景合理使用 IM SDK Login 操作，避免出现 DAU 过高的情况。
 ### 登录时机
 以下场景需调用登录：
 - App 启动后首次使用 IM SDK 的能力时。

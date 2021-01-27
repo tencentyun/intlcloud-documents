@@ -122,6 +122,9 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 
 >? 目前仅支持文本 @ 消息。
 
+
+
+
 ### 发送群 @ 消息
 
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)，昵称用来在文本框显示。
@@ -259,7 +262,6 @@ onlineUserOnly:NO offlinePushInfo:info progress:^(uint32_t progress) {
 
 某些场景下，您可能希望发出去的消息只被在线用户接收，即当接收者不在线时就不会感知到该消息。您只需在 
 [sendMessage](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#a6ea32e6c119c1d771ee1123c5fb2dbae) 时，将参数 `onlineUserOnly` 设置为 `YES` ，此时发送出去的消息与普通消息相比，会有如下差异点：
-
 - 不支持离线存储，即如果接收方不在线就无法收到。
 - 不支持多端漫游，即如果接收方在一台终端设备上一旦接收过该消息，无论是否已读，都不会在另一台终端上再次收到。
 - 不支持本地存储，即本地的云端的历史消息中均无法找回。
@@ -391,6 +393,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
+![](https://main.qcloudimg.com/raw/30cafa8466a76f1d020ddbab19e9fd35.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？
@@ -400,10 +403,19 @@ SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如
 ### 2. App 卸载重装后已读回执为什么失效了？
 在单聊场景下，接收方如果调用 [markC2CMessageAsRead](http://doc.qcloudtrtc.com/im/categoryV2TIMManager_07Message_08.html#acb3a67bd2fa131b50c611a48fa78f34d) 设置消息已读，发送方收到的已读回执里面包含了对方已读的时间戳 `timestamp`，SDK 内部会根据 `timestamp` 判断消息对方是否已读， `timestamp` 目前只在本地保存，程序卸载重装后会丢失。
 
-### 3. 有多个 Elem 的消息应该如何解析？
-出于降低消息复杂度的考虑，SDK API 2.0 接口不再支持创建包含多个 Elem 的 Message 对象。如果您收到了来自老版本的包含多个 Elem 的 Message 对象，可以按照以下步骤解析：
-1. 正常解析出第一个 `Elem` 对象。
-2. 通过第一个 `Elem` 对象的 [nextElem](http://doc.qcloudtrtc.com/im/interfaceV2TIMElem.html) 方法获取下一个 `Elem` 对象。如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `nil`。
+### 3. 如何发送多个 Elem 的消息？
+如果您的消息需要多个 `elem`，可以在创建 `Message` 对象后，通过 `Message` 对象的 `Elem` 成员调用 [appendElem](http://doc.qcloudtrtc.com/im/interfaceV2TIMElem.html#a632f3740c4c42014dc38a4c074a700c9) 方法添加下一个 `elem` 成员。
+以文本消息 + 自定义消息为例：
+
+```
+V2TIMMessage *msg = [[V2TIMManager sharedInstance] createTextMessage:@"text"];
+V2TIMCustomElem *customElem = [[V2TIMCustomElem alloc] init];
+customElem.data = [@"自定义消息" dataUsingEncoding:NSUTF8StringEncoding];
+[msg.textElem appendElem:customElem];
+```
+### 4. 如何解析多个 Elem 的消息？
+1. 通过 `Message` 对象正常解析出第一个 `Elem` 对象。
+2. 通过第一个 `Elem` 对象的 [nextElem](http://doc.qcloudtrtc.com/im/interfaceV2TIMElem.html) 方法获取下一个 `Elem` 对象，如果下一个 `Elem` 对象存在，会返回 `Elem` 对象实例，如果不存在，会返回 `nil`。
 
 ```
 - (void)onRecvNewMessage:(V2TIMMessage *)msg {
@@ -429,7 +441,7 @@ SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如
 }
 ```
 
-<span id ="msgAnalyze"></span>
-### 4. 各种不同类型的消息应该如何解析？
+[](id:msgAnalyze)
+### 5. 各种不同类型的消息应该如何解析？
 解析消息相对复杂，我们提供了各种类型消息解析的 [示例代码](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKitDemo/TUIKitDemo/SampleCode/message.m)，您可以直接把相关代码拷贝到您的工程，然后根据实际需求进行二次开发。
 
