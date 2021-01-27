@@ -21,7 +21,8 @@ timestamp|int|事件产生的时间戳
 reason|string|邮件递送失败的原因
 bounceType|string|如果收件人邮件服务商拒信，拒信类型，取值：soft &brvbar; hard，仅在`event="bounce"`的时候生效
 
-## 事件类型[](id:Event_Type)
+[](id:Event_Type)
+## 事件类型
 Value|Description
 --|--
 processed|递送中，此状态为中间状态，不一定会回调
