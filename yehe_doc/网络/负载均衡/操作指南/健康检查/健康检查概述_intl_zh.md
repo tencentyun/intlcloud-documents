@@ -17,7 +17,7 @@
 
 ## TCP 健康检查
 针对四层 TCP 监听器，您可以配置 TCP 健康检查，通过 SYN 包即发起 TCP 三次握手来获取后端 CVM 的状态信息。您还可以通过自定义协议的请求内容和返回结果来获取后端 CVM 的状态信息。
-![](https://main.qcloudimg.com/raw/cf6f20300968e1a38c576177d0bbb9ae.png)
+![](https://main.qcloudimg.com/raw/5f30ebbb5e061affeff6eb031facaf28.png)
 TCP 健康检查机制如下：
 1. 负载均衡向后端 CVM（内网IP 地址+健康检查端口）发送 SYN 连接请求报文。
 2. 后端 CVM 收到 SYN 请求报文后，若相应端口处于正常监听状态，则会返回 SYN+ACK 响应报文。
@@ -26,7 +26,7 @@ TCP 健康检查机制如下：
 
 ## UDP 健康检查
 针对四层 UDP 监听器，您可以配置 UDP 健康检查，通过`Ping`命令和向健康检查端口发送 UDP 探测报文来获取健康状态。您还可以通过自定义协议的请求内容和返回结果来获取后端 CVM 的状态信息。
-![](https://main.qcloudimg.com/raw/f1337ea9d93269444851722287fada55.png)
+![](https://main.qcloudimg.com/raw/97127e438782907e02e183e9258e652c.png)
 UDP 健康检查机制如下：
 1. 负载均衡向后端 CVM 的内网 IP 地址发起`Ping`命令；
 2. 负载均衡向后端 CVM（内网 IP 地址+健康检查端口）发送 UDP 探测报文；
@@ -38,9 +38,10 @@ UDP 健康检查机制如下：
 2. 如果后端 CVM 是 Linux 服务器，在大并发场景下，由于 Linux 有防 ICMP 攻击保护机制，会限制服务器发送 ICMP 的速度。此时，即使后端服务已经出现异常，但由于无法向 CLB 返回`port XX unreachable`，CLB 由于没收到 ICMP 应答进而判定健康检查成功，最终导致后端服务的真实状态与健康检查不一致。
 解决方案：在配置 UDP 健康检查时，配置自定义输入和输出，向后端服务器发送您指定的字符串，且 CLB 收到您指定的应答后才判断健康检查成功。此方案依赖后端服务器，后端服务器需处理健康检查输入并返回指定输出。
 
-## <span id="http"></span>HTTP 健康检查
+<span id="http"></span>
+## HTTP 健康检查
 针对四层 TCP 监听器和七层 HTTP/HTTPS 监听器，您可以配置 HTTP 健康检查，通过发送 HTTP 请求来获取后端 CVM 的状态信息。
-![](https://main.qcloudimg.com/raw/05b201f2ae815fbe4ba215add02593c0.png)
+![](https://main.qcloudimg.com/raw/94d491d305eca2c6b891912fc1a62ffe.png)
 HTTP 健康检查机制如下：
 1. 负载均衡根据健康检查配置，向后端 CVM（内网IP 地址+健康检查端口+检查路径）发送 HTTP 请求（可选择设置检查域名）。
 2. 后端 CVM 收到请求后返回相应的 HTTP 状态码。
@@ -85,15 +86,15 @@ HTTPS 健康检查与 <a href="#http">HTTP 健康检查</a> 基本类似，不�
 >
 - 健康检查失败时间窗 = 检查间隔 ×（不健康阈值 - 1）
 下图以健康检查响应超时时间为2s，检查间隔为5s，不健康阈值为3次为例，健康检查失败时间窗 = 5 x（3-1）= 10s。
-![](https://main.qcloudimg.com/raw/7fc4163c89513d99c3d45e2af2dba2c9.png)
+![](https://main.qcloudimg.com/raw/63ee9657f3bb44c31c8e271484a67729.png)
 - 健康检查成功时间窗 = 检查间隔 ×（健康阈值 - 1）
 下图以健康检查成功响应时间为1s，检查间隔为5s，健康阈值为3次为例，健康检查成功时间窗 = 5 x（3-1）= 10s。
-![](https://main.qcloudimg.com/raw/62453871d0485d82cccf6f9dbbee00ed.png)
+![](https://main.qcloudimg.com/raw/9f147597b7eb8879c4460ec6eadea3cb.png)
 
 **七层健康检查时间窗**的计算方法如下：
 - 健康检查失败时间窗 = 响应超时时间 × 不健康阈值 + 检查间隔 ×（不健康阈值 - 1）
 下图以健康检查响应超时时间为2s，检查间隔为5s，不健康阈值为3次为例，健康检查失败时间窗 = 2 x 3 + 5 x（3-1）= 16s。
-![](https://main.qcloudimg.com/raw/44261e232878486de7e7d84c6e9c4768.png)
+![](https://main.qcloudimg.com/raw/8ddafd2348fd071942752dc24f5c5c2c.png)
 - 健康检查成功时间窗 = 健康检查成功响应时间 × 健康阈值 + 检查间隔 ×（健康阈值 - 1）
 下图以健康检查成功响应时间为1s，检查间隔为5s，健康阈值为3次为例，健康检查成功时间窗 = 1 x 3 + 5 x（3-1）= 13s。
-![](https://main.qcloudimg.com/raw/394261592166455a2cee02dcba41dbb3.png)
+![](https://main.qcloudimg.com/raw/a6afea17bf2767081c2fcd66913233d0.png)
