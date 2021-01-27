@@ -5,8 +5,8 @@ This document describes how to use image processing in the COS Console with the 
 - **Adding parameters to an image URL**: you can process an image by adding parameters to its object URL.
 - **Using an image style**: you can save different processing results as image styles, which can be used to standardize your image processing. Such a style is an assembled template designed to process parameters in real time when an image is downloaded.
 
->
-> - This image processing feature is only supported for Public Cloud regions in China.
+>!
+> - This image processing feature is only supported for Public Cloud regions.
 > - Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## Adding URL Parameters
@@ -15,12 +15,12 @@ This document describes how to use image processing in the COS Console with the 
 2. Locate the bucket that stores the image, and click the bucket name to enter the bucket details page.
 3. Find the image file, and click **Details** under the **Actions** column.
 4. Copy the **Object Address** and paste it into the address bar of your browser.
->To process an image object, you need the write permission for it. For object permissions setting, see [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327).
+>!To process an image object, you need the write permission for it. For object permissions setting, see [Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327).
 5. In your address bar, add parameters behind the object URL using the format below. For more image processing parameters and instructions, see the Cloud Infinite API documentation [Basic Image Processing](https://intl.cloud.tencent.com/document/product/1045/33713).
 ```sh
 Object URL?API name/operation name/processing parameters
 ```
->If the image is private read, you need to add image processing parameters to a signed URL.
+>!If the image is private read, you need to add image processing parameters to a signed URL.
 
 **Example: scaling an image to 50% of its original size**
 Suppose that the original image is public read and private write in COS, with an object URL `https://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/sample.jpeg`:
@@ -46,7 +46,7 @@ An image style is a template that combines real-time processing parameters for i
    **Separator**: a symbol that separates the file name and processing style, including “-”, “_”, “/”, and “!”. Select “!” here and save.
 4. Click **Add Style** to configure the following:
 	- **Style Name**: enter a custom style name, such as “yunstyle”.
-> 
+> ! 
 > - Note that style names are case-sensitive and cannot be modified once saved.
 > - For the purpose of clarity, the separator you have enabled cannot be used in the style name.
 	- **Edit Mode**: select Basic.
@@ -57,7 +57,7 @@ An image style is a template that combines real-time processing parameters for i
   - Output Format: image output format. Use the default original format here.
 5. Once completed, you can click the **Preview** button on the right.
 6. Click **Save**, and you will see that an image named “yunstyle” has been added.
->
+> ?
 > - Up to 100 styles can be set for a single bucket.
 > - A new style takes effect in 30 minutes on average.
 > - Changing a separator requires clearing your cache, with the change taking effect across the entire network in at least 24 hours.
