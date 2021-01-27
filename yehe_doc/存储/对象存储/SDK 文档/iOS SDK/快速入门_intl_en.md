@@ -31,7 +31,7 @@ In order to continuously track and optimize the SDK quality and deliver a better
 If you want to disable this feature, add the following content to the `Podfile` file in your project
 
 ```shell
-pod 'QCloudCOSXML/WithoutMTA'
+pod 'QCloudCOSXML/Slim'
 ```
 
 #### Lite SDK
