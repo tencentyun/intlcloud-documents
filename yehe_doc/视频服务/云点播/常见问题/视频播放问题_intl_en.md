@@ -52,8 +52,8 @@ You need to first find out whether there is any problem with the source video. I
 ### Are there any prompts if playback is not supported by a browser?
 Generally, web playback depends on the decoder of the browser or the Flash decoder. If playback is not supported, error code `3` or `4` will be returned.
 
-### What should I do if videos in RTMP or FLV format cannot be played back or videos cannot be played in Internet Explorer?
-Flash is required for playing back RTMP and FLV videos as well as any videos in Internet Explorer. Please install and enable it.
+### What should I do if videos in RTMP or FLV format cannot be played back or videos cannot be played in IE?
+Flash is required for playing back RTMP and FLV videos as well as any videos in IE. Please install and enable it.
 
 ### What should I do if videos in HLS or FLV format cannot be played back by using HTML5 when Flash is not supported by a PC browser?
 If Flash is not supported, the player will use MSE to play back videos in HLS or FLV format; if MSE is not supported either, you will have to change or upgrade the browser. Currently, browsers that support MSE include Microsoft Edge, Chrome, Mozilla Firefox, and Safari 11+.
@@ -62,7 +62,7 @@ If Flash is not supported, the player will use MSE to play back videos in HLS or
 Generally, there is no corresponding video decoder in the browser kernel of some PC software programs or applications in integrated or lite editions. Please upgrade the browser kernel in them or integrate with Flash and allow it to be called.
 
 ### How do I prevent my videos from being downloaded and played back by others?
-To play back a video online is to download it first and then play it back, so it is impossible to prevent a video from being downloaded by others. If you want your videos not to be played back after being downloaded by others, please see [video encryption](https://intl.cloud.tencent.com/zh/document/product/266/33968) in VOD.
+To play back a video online is to download it first and then play it back, so it is impossible to prevent a video from being downloaded by others. If you want your videos not to be played back after being downloaded by others, please see [video encryption](https://intl.cloud.tencent.com/document/product/266/33968) in VOD.
 
 ### How do I solve the problem where an HLS-encrypted video cannot be played back?
 The playback process of an HLS-encrypted video is different from that of ordinary videos. Generally, you need to get the right key. The steps to fix this problem are as follows:
@@ -128,6 +128,5 @@ You can configure the target bitrate to be the same as the original bitrate. The
 ### Can an encrypted video be cached for offline playback?
 
 No. The video can be played back and cached only after being decrypted.
-
 
 

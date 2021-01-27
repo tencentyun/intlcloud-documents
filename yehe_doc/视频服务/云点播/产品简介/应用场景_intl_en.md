@@ -9,5 +9,9 @@ VOD offers a wide range of features such as on-demand storage management, hotlin
 
 ## Radio and TV Industry and OTT
 
-VOD comes with features such as storage management, transcoding processing, video CDN, and content audit for detection of porn, politically sensitive, and terrorism information, making it fit for scenarios where 4K transcoding, HDR, H.265, super resolution, content migration, and content audit are required.
+VOD comes with features such as storage management, transcoding processing, video CDN, and intelligent video content recognition, making it fit for scenarios where 4K transcoding, HDR, H.265, super resolution, content migration, and intelligent recognition are required.
+
+## UGSV Application
+
+VOD features storage, intelligent recognition, transcoding, adaptive bitrate streaming, watermarking, cover generating, encryption, and distribution of videos, making it apt for UGSV scenarios where videos captured by clients are uploaded after operations such as clipping, audio mixing, special effect processing, subtitling, and sticker adding are performed. For more information, please see [UGSV SDK](https://intl.cloud.tencent.com/zh/product/ugsv).
 
