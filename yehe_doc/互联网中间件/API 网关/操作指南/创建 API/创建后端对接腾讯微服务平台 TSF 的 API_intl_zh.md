@@ -31,9 +31,8 @@
    在调用时需要传入 X-NameSpace-Code 和 X-MicroService-Name 两个必选参数，这两个参数控制 API 网关的请求发往哪个微服务，可放置在 Header、Path、Query 中，若放在 Path 中，则与通用 API 类似，需要在路径中配置路径参数，例如 `/{X-NameSpace-Code}/{X-MicroService-Name}`，若变量 X-NameSpace-Code=crgt，X-MicroService-Name=coupon-activity，则访问的 URL 为`https://访问域名/crgt/coupon-activity/`。除了这两个固定参数。其他参数配置均与通用 API 一致。
 
 	- X-NameSpace-Code 路径参数是后端配置中所选择的命名空间在 [腾讯微服务平台](https://console.cloud.tencent.com/tsf/namespace) 命名空间中配置的 code 值。
-  ![](https://main.qcloudimg.com/raw/bb9874eb47ad90d767ade31afc73ee58.png)
 	- X-MicroService-Name 路径参数是后端配置中所选择的集群在 [腾讯微服务平台](https://console.cloud.tencent.com/tsf/service) 服务治理中配置的微服务名称。
-  ![](https://main.qcloudimg.com/raw/395cc8be96f21032f0c7f675a0b69ca7.png)
+
 
 7. 单击【下一步】，进行后端配置。
 
@@ -42,7 +41,6 @@
 1. 选择所对接微服务的集群名称和命名空间。
 2. 选择微服务。API 发布者可在一个 API 中对接多个微服务。
    请确保添加的服务可以被 API 网关访问，包括 cvm 部署的微服务，容器部署的微服务（公网访问和 NodePort 访问）。
-   ![](https://main.qcloudimg.com/raw/958344a6d8148ce39c9dd0d84843faf4.png)
 
 	> ?目前 API 网关只支持将请求转发到 TSF 同一种部署类型（虚拟机或容器）的服务实例上。如果一个服务下既有虚拟机部署、又有容器部署的微服务实例，则不支持将 API 网关作为请求入口。
 
