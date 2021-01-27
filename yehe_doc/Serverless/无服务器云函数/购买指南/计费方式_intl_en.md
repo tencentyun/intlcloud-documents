@@ -1,15 +1,15 @@
 ## Billing Mode
 
-You can estimate your SCF usage and calculate the corresponding fees by using the [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For more information on SCF billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284), [Pricing](https://intl.cloud.tencent.com/document/product/583/12281) and [Notes on Arrears](https://intl.cloud.tencent.com/document/product/583/12283).
+You can estimate your SCF usage and calculate the corresponding fees by using the [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For more information on SCF billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284), [Pricing](https://intl.cloud.tencent.com/document/product/583/12281), and [Notes on Arrears](https://intl.cloud.tencent.com/document/product/583/12283).
 
 SCF is pay-as-you-go hourly in **USD** based on your actual usage. An SCF bill consists of the following four parts (each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**).
 
-* Resource usage fees 
-* Invocation fees
-* Public network outbound traffic fees
-* Idle provisioned concurrency fees
+- Resource usage fees 
+- Invocation fees
+- Public network outbound traffic fees
+- Idle provisioned concurrency fees
 
-For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is calculated in GB. For more information, please see the "Bill-by-traffic" section in [Network Traffic Billing](https://intl.cloud.tencent.com/document/product/213/10578#bill-by-traffic).
+For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is calculated in GB. For more information, please see the "Bill-by-traffic" section in [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578#bill-by-traffic).
 
 
 ## Billing Principles
@@ -59,7 +59,7 @@ SCF fees will be incurred by the actual loading and execution of the function co
 
 Resource usage is calculated by multiplying the configured function memory size by the billable function execution duration. Here, the configured memory size is in GB, and the billable duration is converted from milliseconds to seconds. Therefore, the resource usage is in **GBs** (GB-second).
 
-For example, if a function with 256 MB memory configured is executed for 1,760 ms, then the billable duration is 1,760 ms, and the resource usage of this function execution will be (256/1024) * (1760/1000) = 0.44 GBs.
+For example, if a function with 256 MB memory configured is executed for 1,760 ms, then the billable duration is 1,760 ms, and the resource usage of this function execution will be (256 / 1024) * (1760 / 1000) = 0.44 GBs.
 
 Resource usage will be calculated for each function execution and aggregated in each hour as the hourly resource usage.
 >!
@@ -86,17 +86,25 @@ Outbound traffic will be generated when resources are accessed over the public n
 
 **Idle provisioned concurrency fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price**
 
-The provisioned concurrency feature only charges small idle fees for the instances **that have been configured and started but are not in use**, while no additional fees are charged for the instances that have been configured and are in use. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred. Idle concurrency is calculated in **GBs** (GB-second).
+- **Number of idle instances**: SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances. The calculation formula is as follows: number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0).
+- **Configured memory size**: the memory size configured for the provisioned concurrency of the function.
+- **Idle duration**: the idle duration of the provisioned concurrency.
+- **Idle provisioned concurrency price**: please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281).
 
-SCF counts the maximum concurrency of a version at a 10-second granularity. The number of idle instances is calculated by subtracting the maximum concurrency from the number of currently started provisioned instances, and the idle fees are calculated by multiplying the number of idle instances by the configured version memory size and by the idle duration. The shaded part in the figure below indicates the idle provisioned concurrency.	
+>?Idle provisioned concurrency is calculated in GBs (GB-second).
 
-Number of idle instances = max(number of started provisioned instances - number of concurrent instances, 0)
+The provisioned concurrency feature only charges small idle fees for the instances that have been configured and started but are not in use, **while no additional fees are charged for the instances that have been configured and are in use**. In other words, only when the number of provisioned instances is greater than the number of concurrent instances for the current version will idle fees be incurred.
 
-Idle instance fees = number of idle instances * configured memory size * idle duration * idle provisioned concurrency unit price
-
+The idle provisioned concurrency fees are calculated by multiplying the number of idle instances by the configured memory size. The shaded part in the figure below indicates the idle provisioned concurrency.
 ![](https://main.qcloudimg.com/raw/cedec5e820f1ada548156cd382660b65.png)
 
-For example, if a function version with 128 MB memory has a provisioned concurrency quota of 12,800 MB (10 instances) and it has 8 concurrent instances in 10 seconds, then the number of idle instances is max(10 - 8, 0) = 2, and the idle instance fees are 2 * 128 MB * 10s * 0.00000847 USD/GBs = 0.00002118 USD.
+For example, if a function version with 128 MB memory has a provisioned concurrency quota of 12,800 MB (10 instances), and it has 8 concurrent instances in 10 seconds, then:
+- Number of idle instances = max(10 - 8, 0) = 2
+- Configured memory size = 128MB
+- Idle duration = 10s
+- Idle provisioned concurrency price = 0.00000847 USD/GBs
+
+**Idle provisioned concurrency fees** = 2 * 128 MB * 10s * 0.00000847 USD/GBs = 0.00002118 USD
 
 
 ## Fees of Other Services

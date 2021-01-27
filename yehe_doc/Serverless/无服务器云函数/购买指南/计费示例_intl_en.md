@@ -55,7 +55,7 @@ In this case, the total fees are the invocation fees of 1.36 USD.
 
 ### External file upload
 
-Suppose a function with 256 MB memory is invoked 50 times per minute through the TencentCloud API. It generates a 1 KB file each time and uploads the file to an external site, and its execution time per generated and uploaded file is 780 ms.
+Suppose a function with 256 MB memory is invoked 50 times per minute through the TencentCloud API. It generates a 1 KB file each time and uploads the file to an external site, and its execution duration per generated and uploaded file is 780 ms.
 
 **Suppose the resource usage and number of invocations per day are as follows:**
 - Resource usage per day: (256 / 1024) * (780 / 1000) * 50 * 60 * 24 = 14,040 GBs
@@ -71,22 +71,24 @@ In this case, the total fees are the resource usage fees of 0.35 USD + invocatio
 
 ### Idle provisioned concurrency fees
 
-The idle provisioned concurrency fees are independent of the other three billable items and charged only if provisioned concurrency is configured. You can add such fees directly to the fees in the other examples. This section describes how such fees are calculated with an example where the concurrency fluctuates sharply and the provisioned concurrency quota is adjusted.
+The idle provisioned concurrency fees are independent of the other three billable items. After provisioned concurrency is configured, small idle fees will be charged only for the instances that have been configured and started but are not in use. This section describes how such fees are calculated with an example where the concurrency fluctuates sharply and the provisioned concurrency quota is adjusted.
 
-Suppose there is no change in the number of concurrent instances per minute, a certain function version with 256 MB memory is configured with 100 provisioned instances at 18:01, and the number of provisioned instances is increased to 120 at 18:07 due to business surges and then is lowered to 80 at 18:10:
+**Example**: suppose function D is configured with 256 MB memory, there is no change in the number of concurrent instances per minute, the function is configured with 100 provisioned instances at 18:01, and the number of provisioned instances is increased to 120 at 18:07 due to business surge and then is lowered to 80 at 18:10. **Taking the minute of 18:01 as an example**, this minute has 100 provisioned instances, and the number of actually running concurrent instances is 30, then:
 
-Then, taking the minute of 18:01 as an example, this minute has 100 provisioned instances, and the number of actually running concurrent instances is 30, so the number of idle instances is 100 - 30 = 70, the amount of idle resources for these 70 instances at this minute is 70 * 256 MB * 60s = 70 * 256/1024 GB * 60s = 1,050 GBs, and the idle fees incurred are 1050 * 0.00000847 USD/GBs = 0.009 USD.
+- **Number of idle instances** = 100 - 30 = 70
+- **Idle resources** = number of idle instances * configured memory size * idle duration = 70 * 256 MB * 60s = 70 * (256 / 1024) GB * 60s = 1,050 GBs
+- Incurred **idle provisioned concurrency fees** = idle resources * idle provisioned concurrency price = 1050 GBs * 0.00000847 USD/GBs = 0.009 USD
+
+In the same calculation method as shown in the above example, the detailed billing for the 10 minutes of function A can be calculated, and the accumulated idle fees for the 10 minutes are 0.009 USD as shown below:
 
 The billing details for these ten minutes are as follows:
 
-|                | 18:01 | 18:02 | 18:03 | 18:04 | 18:05 | 18:06 | 18:07 | 18:08 | 18:09 | 18:10 |       |
+|                | 18:01 | 18:02 | 18:03 | 18:04 | 18:05 | 18:06 | 18:07 | 18:08 | 18:09 | 18:10 |   Total    |
 | -------------- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| Configured provisioned concurrency | 100   | 100   | 100   | 100   | 100   | 100   | 120   | 120   | 120   | 80    |       |
-| Number of concurrent instances for this version   | 30    | 66    | 88    | 100   | 120   | 150   | 180   | 160   | 100   | 30    |       |
-| Number of idle instances     | 70    | 34    | 12    | 0     | 0     | 0     | 0     | 0     | 20    | 50    |       |
+| Configured provisioned concurrency | 100   | 100   | 100   | 100   | 100   | 100   | 120   | 120   | 120   | 80    |    -  |
+| Number of concurrent instances for this version   | 30    | 66    | 88    | 100   | 120   | 150   | 180   | 160   | 100   | 30    |   -   |
+| Number of idle instances     | 70    | 34    | 12    | 0     | 0     | 0     | 0     | 0     | 20    | 50    |   -   |
 | Idle instance fees       | 0.009 | 0.004 | 0.002 | 0.000 | 0.000 | 0.000 | 0.000 | 0.000 | 0.003 | 0.006 | 0.024 |
-
-In this case, the accumulated idle instance fees for the ten minutes are 0.024 USD.
 
 
 

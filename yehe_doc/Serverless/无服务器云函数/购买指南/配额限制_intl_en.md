@@ -8,8 +8,8 @@ The quota limits for each user account are as follows:
 | Item | Default Quota Limit |
 | ----------------------------------------------- | ------------ |
 | Maximum number of functions per namespace per region | 50 |
-| Total function concurrency quota per region                        | 128,000 MB          |
-| Maximum number of triggers per function | 10 |
+| Maximum number of concurrent executions per function | 128,000 MB |
+| Total function concurrency quota per region                        | 10          |
 | Maximum number of same-type triggers per function | 10 |
 | Maximum code size (including bound layers) per function (version) | 500 MB       |
 | Total function code size per region                      | 100 GB       |
@@ -24,7 +24,7 @@ The limits for the function runtime environment are as follows:
 | Item | Quota Limit |
 | -------------------------------- | --------------------------------------------------- |
 | Allocated memory | Minimum: 64 MB, maximum: 3,072 MB, in increments of 128 MB starting from 128 MB |
-| Temporary cache space; i.e., size of the `/tmp` directory | 512 MB |
+| Temporary cache space, i.e., size of the `/tmp` directory | 512 MB |
 | Timeout period | Minimum: 1 second, maximum: 900 seconds |
 | Number of file descriptors | 1,024 |
 | Total processes and threads | 1,024 |
