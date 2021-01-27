@@ -9,7 +9,7 @@ You can view the following table or use the [DescribeRegions](https://intl.cloud
 ### Characteristics
 
 - The networks in different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
-- Tencent Cloud services in different regions can communicate with each other through [public IP addresses](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://cloud.tencent.com/document/product/877), which is faster and more stable.
+- Tencent Cloud services in different regions can communicate with each other through [public IP addresses](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003), which is faster and more stable.
 - [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) is enabled, cross-region binding of CLB and CVM instances is supported.
 
 ## Availability Zone
@@ -76,7 +76,7 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Nanjing Zone 3<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
-			<td rowspan="5">North China (Beijing) <br>ap-beijing</td>
+			<td rowspan="7">North China (Beijing) <br>ap-beijing</td>
 			<td>Beijing Zone 1<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -90,6 +90,12 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 	</tr>
 	<tr>
 			<td>Beijing Zone 5 <br>ap-beijing-5</td>
+	</tr>
+	<tr>
+			<td>Beijing Zone 6 <br>ap-beijing-6</td>
+	</tr>
+	<tr>
+			<td>Beijing Zone 7 <br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
