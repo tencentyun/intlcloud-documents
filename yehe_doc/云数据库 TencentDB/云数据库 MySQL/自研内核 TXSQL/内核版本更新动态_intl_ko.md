@@ -5,36 +5,40 @@
 #### 새로운 특성:
 - 비동기화 시 대용량 테이블 삭제 지원: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 방지할 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 통해 신청해야 합니다.
 - 유휴 작업을 자동으로 kill하도록 지원하여 리소스 충돌을 감소시킵니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-- Transparent Data Encryption(TDE)를 지원합니다.
+- 투명한 데이터 암호화 기능 지원.
 
 
 #### Bug 수정:
-- relay_log_pos & master_log_pos 위치 불일치로 인한 교체 실패 문제 수정.
+- relay_log_pos & master_log_pos 시점 불일치로 인한 교체 실패 문제 수정.
 - 비동기화 디스크 저장으로 인한 데이터 파일 오류 문제 수정.
 - fsync에서 EIO 리턴 시 반복적으로 무한 루프에 빠지려 하는 문제 수정.
 - 전체 텍스트 인덱스에서 구문 검색(phrase search) 시 다중 바이트 문자 세트에 있었던 crash 문제 수정.
 
 ## MySQL 5.7
+### 20200701
+#### Bug 수정:
+- INNOBASE_SHARE index mapping 오류 문제 수정.
+
 ### 20200630
 #### 새로운 특성:
-- SELECT FOR UPDATE/SHARE 명령의  NOWAIT 및 SKIP LOCKED 옵션 사용을 지원합니다.
-- 대용량 트랜잭션 최적화 기능을 지원하므로, 마스터-슬레이브 간 딜레이, 백업 실패 등의 문제를 완화할 수 있습니다.
-- 감사 성능 최적화: 비동기화 감사 기능을 지원합니다.
+- SELECT FOR UPDATE/SHARE 명령에서 NOWAIT와 SKIP LOCKED 항목 지원.
+- 대규모 트랜잭션 최적화 기능을 지원해 대규모 트랜잭션으로 인한 마스터-슬레이브 딜레이, 백업 실패 등의 문제 개선 가능.
+- 감사 기능 최적화: 비동기화 감사 기능 지원.
 
-#### 운영사 bug 수정:
-- digest_add_token 함수 내의 오버플로우 문제 수정.
-- insert blob로 인한 인스턴스 크래쉬 문제 수정.
-- hash scan이 event에서 같은 행을 업데이트했을 때 기록을 찾을 수 없어 마스터-슬레이브 간 연결이 끊어지는 문제 수정.
-- performance_schema 쿼리 시 hang되는 문제 수정.
+#### Bug 수정:
+- digest_add_token 함수 오버플로우 문제 수정.
+- insert blob로 인한 인스턴스 crash 문제 수정.
+- hash scan이 event에서 동일행 업데이트로 인해 기록을 찾을 수 없을 때 나타나는 마스터-슬레이브 중단 문제 수정.
+- performance_schema조회 시 hang이 걸리는 문제 수정.
 
 ### 20200331
-#### 새로운 특성:
+#### 새로운 특징:
 - 새롭게 추가된 공식 MySQL 5.7.22 버전의 JSON 시리즈 함수.
 - 전자상거래의 타임세일 시나리오를 기반으로 한 [잇슈 업데이트](https://intl.cloud.tencent.com/document/product/1035/36037) 기능 지원.
 - [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037) 지원.
 - 데이터 암호화 기능으로 KMS 사용자 지정 키 암호화 지원.
 
-#### Bug 수정:
+#### 공식 bug 수정:
 - 전체 텍스트 인덱스에서 구문 검색(phrase search) 시 다중 바이트 문자 세트에 있었던 crash 문제 수정.
 - 동시 실행이 많을 때 CATS(Contention-Aware Transaction Scheduling) 락(Lock) 스케쥴링 모듈에 있었던 crash 문제 수정.
 
@@ -82,7 +86,7 @@
 - binlog 캐시 파일 용량 부족에 따른 복제 중단 문제 수정
 - fsync에서 EIO 리턴 시 반복적으로 무한 루프에 빠지려 하는 문제 수정.
 - GTID 홀(Hole)로 인한 복제 중단 및 복구 불가 문제 수정.
-   
+  
 
 ### 20180918
 #### 새로운 특성:
@@ -90,11 +94,11 @@
 - Memory 엔진을 InnoDB 엔진으로 자동 교체: 전역 변수cdb_convert_memory_to_innodb가 ON이라면, 테이블 생성/수정 시 테이블 엔진을 Memory에서 InnoDB로 교체합니다.
 - 색인 숨기기 기능 지원.
 - Jemalloc 메모리 관리 지원. jlibc 메모리 관리 모듈을 교체하여 메모리 사용량이 감소하고, 메모리 할당 효율은 증가합니다.
-   
+  
 #### 성능 최적화:
 - binlog 교체 최적화로, rotate HOLDLOCK 시간을 감소하여 시스템 성능 향상.
 - crash 복구 속도 향상.
-    
+  
 #### Bug 수정:
 - 마스터/슬레이브 스위치로 인한 event 무효화 문제 수정.
 - REPLAY LOG RECORD로 인한 Crash 문제 수정.
@@ -105,16 +109,16 @@
 #### 새로운 특성:
 - SQL 감사 기능 지원.
 - 테이블 레벨별 동시 복제 지원. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
+  
 #### 성능 최적화:
 - 슬레이브 인스턴스의 락을 최적화하여, 해당 인스턴스의 동기화 성능 향상.   
 - select ... limit의 푸시다운 최적화.
-   
+  
 #### Bug 수정:
 - relay_log_pos & master_log_pos 시점 불일치로 인한 교체 실패 문제 수정.
 - Crash on UPDATE ON DUPLICATE KEY로 인한 crash 문제 수정.
 - JSON 칼럼 가져오기에 따른 'Invalid escape character in string.' 오류 수정.
-   
+  
 ### 20171130
 #### 새로운 특성:
 - information_schema.metadata_locks 뷰 지원. 현재 인스턴스의 MDL 권한 및 대기 상태를 조회할 수 있습니다.
@@ -127,9 +131,26 @@
 
    
 ## MySQL 5.6
+### 20200915
+#### 새로운 특성:
+- [SQL 제한](https://intl.cloud.tencent.com/document/product/1035/36037) 기능 지원.
+
+#### 성능 최적화:   
+- buffer pool 초기화로 최적화에 가속.
+
+#### Bug 수정:
+- 마스터/슬레이브 rename table에 모두 hang이 걸리는 문제 수정. 
+- event_scheduler를 disable로 설정하고 cdb_skip_event_scheduler를 on에서 off로 변환할 때 crash가 생기는 문제 수정. 
+- tencentroot 최대 링크 수가 srv_max_n_threads에 반영되지 않았을 때 sync_wait_array 관련 어서션 실패 문제 수정. 
+- 기타 클라우드 서비스의 MySQL 5.6과 Tencent의 MySQL 5.6의 시스템 베이스 일부 테이블의 구조가 달라 마스터-슬레이브를 동시 복사할 때 crash가 생기는 문제 수정. 
+- INSERT ON DUPLICATE KEY UPDATE THE WRONG ROW 문제 수정. 
+- index_mapping 오류 문제 수정. 
+- mtr 오류 bug 문제 수정. 
+- hash scan이 event에서 동일행 업데이트로 인해 기록을 찾을 수 없을 때 나타나는 마스터-슬레이브 중단 문제 수정. 
+
 ### 20190930
 #### 새로운 특성:
-- 사용자가 show full processlist를 통해 '사용자의 스레드 메모리 사용 정보'를 조회하도록 지원. 
+- 사용자가 show full processlist를 통해 '사용자 스레드 메모리 사용 정보'를 조회하도록 지원.  
 
 #### Bug 수정:
 - 백업 데이터베이스 replication filter로 인한 gtid hole 문제 수정.
@@ -145,17 +166,17 @@
 - RC 모드에서 오손 데이터를 읽는 문제 수정.
 - 임시 테이블 삭제로 인한 슬레이브에서 다시보기 실패 문제 수정.
 - 동시 실행이 많을 때의 데드 락 문제 수정.
-   
+  
 
 ### 20190203
 #### 새로운 특성:
 - 비동기화 시 대용량 테이블 삭제: 비동기화로 느리게 파일을 정리하면 대용량 테이블 삭제로 인한 비즈니스 성능 지터 현상을 막을 수 있습니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category) 통해 신청해야 합니다.
 - super 권한이 없는 사용자가 다른 사용자의 세션을 kill 할 수 있는 기능 지원. cdb_kill_user_extra 매개변수를 통해 설정하며, 기본값은 root@%입니다.
 - GTID를 실행할 때 트랜잭션에서 임시 테이블과 CTS 구문을 생성, 삭제할 수 있도록 지원. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
+  
 #### 성능 최적화:   
 - 파티션 테이블의 복제 다시보기를 최적화하여 다시보기 속도 향상.
-   
+  
 #### Bug 수정:
 - 임시 용량 부족으로 인한 마스터/슬레이브 불일치 문제 수정.
 - 핫스팟 기록 업데이트 오류 문제 수정.
@@ -165,7 +186,7 @@
 #### 새로운 특성:
 - MEMORY 엔진을 InnoDB 엔진으로 자동 교체: 전역 변수cdb_convert_memory_to_innodb가 ON이라면, 테이블 생성/수정 시 테이블 엔진을 MEMORY에서 InnoDB로 교체합니다.
 - 유휴 트랜잭션을 자동으로 kill하도록 지원하여 리소스 충돌을 감소시킵니다. 해당 기능을 활성화하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 신청해야 합니다.
-   
+  
 #### Bug 수정:
 - REPLAY LOG RECORD로 인한 crash 문제 수정.
 - decima 정확성 문제로 인한 마스터/슬레이브 시간 데이터 불일치 문제 수정.
@@ -178,10 +199,10 @@
 
 #### 성능 최적화:
 - drop table로 인한 성능 지터.
-   
+  
 #### Bug 수정:
 - 비밀번호 문자열 인증으로 인한 데이터베이스 crash 문제 수정.
-   
+  
 ### 20180122
 #### 새로운 특성:
 - SQL 감사 기능 지원.
@@ -196,7 +217,7 @@
 - 비동기화 모드에서 binlog 속도 제한 무효화 문제 수정.
 - buffer_pool 상태 오류 문제 수정.
 - SEQUENCE와 내장 기본 키가 충돌하는 문제 수정.
-   
+  
 ### 20170228
 #### Bug 수정:
 - drop table 중의 문자 인코딩 bug 수정.
