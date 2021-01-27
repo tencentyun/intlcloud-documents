@@ -61,7 +61,7 @@ The cluster health check feature is a service provided by Tencent Kubernetes Eng
 <tr>
 <td rowspan=14>Running status</td>
 <td>Parameter configuration of kube-apiserver</td>
-<td>Check the following parameters based on the master node configuration:<ul><li>max-requests-inflight: maximum number of change requests running in a given period</li><li>max-mutating-requests-inflight: maximum number of non-change requests running in a given period</li></ul></td>
+<td>Check the following parameters based on the master node configuration:<ul><li>max-requests-inflight: maximum number of non-change requests running in a given period</li><li>max-mutating-requests-inflight: maximum number of change requests running in a given period</li></ul></td>
 <td>Yes</td>
 </tr>
 <tr>
