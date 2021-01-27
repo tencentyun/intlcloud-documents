@@ -47,7 +47,7 @@ spec:
         enable: true # Indicates whether to enable session persistence. Required. Boolean.
         sessionExpireTime: 100 # Session persistence duration. Optional. Default value: 30. Value range: 30-3600. Unit: second.
       healthCheck: # Configuration related to health check. Optional.
-        enable: true # Indicates whether to enable session persistence. Required. Boolean.
+        enable: true # Indicates whether to enable health check. Required. Boolean.
         intervalTime: 10 # Health check probe interval. Optional. Default value: 5. Value range: 5-300. Unit: second.
         healthNum: 2 # Healthy threshold, indicating the number of consecutive healthy health check results that it takes to indicate normal forwarding. Optional. Default value: 3. Value range: 2-10. Unit: times.
         unHealthNum: 3 # Unhealthy threshold, indicating the number of consecutive unhealthy health check results that it takes to indicate a forwarding exception. Optional. Default value: 3. Value range: 2-10. Unit: times.
