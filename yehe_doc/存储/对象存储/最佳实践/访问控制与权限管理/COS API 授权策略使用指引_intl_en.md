@@ -833,7 +833,7 @@ The following policy grants read-only permission for all resources:
       "action": [
         "name/cos:HeadObject",
         "name/cos:GetObject",
-        "name/cos:ListObject",
+        "name/cos:GetBucket",
         "name/cos:OptionsObject"
       ],
       "effect": "allow",
