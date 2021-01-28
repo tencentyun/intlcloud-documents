@@ -1,6 +1,6 @@
 ## TRTCCallingの概要
 
-[TRTCCalling](https://www.npmjs.com/package/trtc-calling-js)コンポーネントは、Tencent CloudのTencent Real-Time Communication（ TRTC）とInstant Messaging （IM）サービスの組み合わせにより構成されており、1対1および複数人でのビデオ/音声通話をサポートしています。具体的な実装プロセスについては、 [リアルタイムビデオ通話（デスクトップブラウザ）]](https://intl.cloud.tencent.com/document/product/647/38927)をご参照ください。
+[TRTCCalling](https://www.npmjs.com/package/trtc-calling-js)コンポーネントは、Tencent CloudのTencent Real-Time Communication（ TRTC）とInstant Messaging （IM）サービスの組み合わせにより構成されており、1対1および複数人でのビデオ/音声通話をサポートしています。具体的な実装プロセスについては、 [リアルタイムビデオ通話（デスクトップブラウザ）](https://intl.cloud.tencent.com/document/product/647/38927)をご参照ください。
 
 - TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/zh/document/product/647)を低レイテンシーのオーディオビデオ通話コンポーネントとして使用しています。
 - IM SDK： [IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047)をシグナリング情報の送信と処理に利用します。
