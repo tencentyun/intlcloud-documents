@@ -17,7 +17,7 @@ Add IP addresses with the same requirements or frequent editing needs to the IP 
 2. Click **Security** > **Parameter Template** in the left sidebar to go to the management page.
 3. On the **IP Address** tab page, click **+Create**.
 4. In the pop-up box, enter the name and IP address, and click **Submit**.
-To add multiple IP addresses, separate them with line breaks. The following IP address formats are supported:
+Only IPv4 addresses in the following formats are supported:
  - A single IP address, for example, `10.0.0.1`;
  - An IP range, for example, `10.0.1.0/24`; 
  - Consecutive IP addresses, for example, `10.0.0.1` - `10.0.0.100`.
