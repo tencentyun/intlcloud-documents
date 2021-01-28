@@ -11,6 +11,6 @@ Instance restart is a common maintenance method for TencentDB for MariaDB. It is
 
 
 ## Directions
-1. Log in to the [MariaDB Console](https://console.cloud.tencent.com/tdsql), select one or more instances from the instance list and click **Restart** at the top.
-
+1. Log in to the [MariaDB Console](https://console.cloud.tencent.com/mariadb), select one or more instances from the instance list and click **Restart** at the top.
+![](https://main.qcloudimg.com/raw/de0270d73f444f43b1ebf89a9042427f.png)
 2. In the pop-up dialog box, check that all information is correct, and click **Confirm** to restart a single instance or multiple instances in batches.
