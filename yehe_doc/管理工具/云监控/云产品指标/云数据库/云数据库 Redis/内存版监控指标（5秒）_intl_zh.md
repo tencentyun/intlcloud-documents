@@ -24,9 +24,9 @@ Namespace=QCE/REDIS_MEM
 | OutFlowLimit     | 出流量触发限流的次数                                         | 次    | instanceid |
 | LatencyMax       | proxy 到 redis  server 的执行时延最大值                      | ms    | instanceid |
 | LatencyAvg       | proxy 到 redis  server 的执行时延平均值                      | ms    | instanceid |
-| LatencyRead      | proxy 到 redis server 的读命令平均执行时延，读命令分类，请查看 [文档](https://intl.cloud.tencent.com/zh/document/product/239/38743#.E5.91.BD.E4.BB.A4.E5.88.86.E7.B1.BB) 监控说明 | ms    | instanceid |
-| LatencyWrite     | proxy 到 redis  server 的写命令平均执行时延，读命令分类，请查看 [文档](https://intl.cloud.tencent.com/zh/document/product/239/38743#.E5.91.BD.E4.BB.A4.E5.88.86.E7.B1.BB) 监控说明 | ms    | instanceid |
-| LatencyOther     | proxy 到 redis  server 的读写命令之外的命令平均执行时延，其他命令分类，请查看 [文档](https://intl.cloud.tencent.com/zh/document/product/239/38743#.E5.91.BD.E4.BB.A4.E5.88.86.E7.B1.BB) 监控说明 | ms    | instanceid |
+| LatencyRead      | proxy 到 redis server 的读命令平均执行时延               | ms    | instanceid |
+| LatencyWrite     | proxy 到 redis  server 的写命令平均执行时延              | ms    | instanceid |
+| LatencyOther     | proxy 到 redis  server 的读写命令之外的命令平均执行时延   | ms    | instanceid |
 | Commands         | QPS，命令执行次数                                            | 次/秒 | instanceid |
 | CmdRead          | 读命令执行次数                                               | 次/秒 | instanceid |
 | CmdWrite         | 写命令执行次数                                               | 次/秒 | instanceid |
