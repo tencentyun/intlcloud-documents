@@ -41,7 +41,7 @@
 请至 [云数据库 MariaDB 购买页](https://console.cloud.tencent.com/mariadb/buy) 单击购买。
 - 主、从可用区相同时，即单可用区部署。
 - 主、从可用区不同时，即同城双中心部署。
-![](https://main.qcloudimg.com/raw/99ed1d3ddfe058379e03b5e45d58e80f.png)
+![](https://main.qcloudimg.com/raw/410caff31809e43100ae570ad1ffc3c7.png)
 
 >!
 >
@@ -57,7 +57,7 @@
 
 ### 主从切换
 如果您要将主节点从某一可用区切换到另一可用区，您可以直接单击主从切换即可。主从切换是高危操作，需求验证登录帐号的 IP 地址；切换过程可能导致数据库连接闪断（≤1s），请保证业务有数据库重连机制；频繁切换将可能业务系统异常甚至数据异常。
-![](https://main.qcloudimg.com/raw/5a644ca69286d9b5494c8a1d082d1a20.png)
+![](https://main.qcloudimg.com/raw/7e342068ca132fef5bf287ebf46b92f3.png)
 
 ## 技术原理简介
 基于 MariaDB 高可用的主从架构和 VPC 可用区虚拟 IP 漂移特性的有机整合，实现了双中心同时读写，架构特点如下：
