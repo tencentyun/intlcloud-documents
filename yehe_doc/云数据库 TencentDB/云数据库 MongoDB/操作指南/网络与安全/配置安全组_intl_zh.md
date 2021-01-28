@@ -56,7 +56,7 @@
 
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在实例列表的“操作”列，选择【更多】>【安全组】。
 2. 选择需要绑定的安全组，单击【确认】，即可完成安全组绑定云数据库 MongoDB 的操作。 
-![](https://main.qcloudimg.com/raw/7b30b4e7b465b8b2bec1a326cbcc2cf3.png)
+![](https://main.qcloudimg.com/raw/f965dd65f63493fd89ff43b7b1625f3c.png)
 
 ## 导入安全组规则
 1. 在 [安全组页](https://console.cloud.tencent.com/cvm/securitygroup)，选择需要的安全组，单击安全组 ID/名称。
