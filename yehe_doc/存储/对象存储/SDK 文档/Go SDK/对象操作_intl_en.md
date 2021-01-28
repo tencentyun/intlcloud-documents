@@ -321,7 +321,7 @@ type ObjectGetOptions struct {
 | Parameter Name | Description | Type | Required |
 | -------------------------- | ------------------------------------------------------------ | ------ | ---- |
 | key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| localfile | Sets the Content-Type in the response header | string | Yes |
+| localfile | Name of the local file | string | Yes |
 | ResponseContentType | Sets the Content-Type in the response header | string | No |
 | ResponseContentLanguage | Sets the Content-Language in the response header | string | No |
 | ResponseExpires | Sets the Content-Expires in the response header | string | No |
