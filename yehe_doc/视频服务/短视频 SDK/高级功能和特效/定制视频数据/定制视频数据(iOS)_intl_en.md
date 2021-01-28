@@ -1,6 +1,5 @@
 Callback of Pre-processing for Shooting 
-<dx-codeblock>
-::: objc objc
+```
 /**
  * Call back in the OpenGL thread, where captured images can be processed.
  * @param texture    Texture ID
@@ -22,13 +21,11 @@ Callback of Pre-processing for Shooting
  * Call back in the OpenGL thread, where the OpenGL resources created can be released.
  */
 - (void)onTextureDestoryed;
-:::
-</dx-codeblock>
+```
 
 
 ## Callback of Pre-processing for Video Editing
-<dx-codeblock>
-::: objc objc
+```
 /** 
  Call back in the OpenGL thread, where captured images can be processed.
  @param textureId  Texture ID
@@ -45,5 +42,4 @@ Callback of Pre-processing for Shooting
  * Call back in the OpenGL thread, where the OpenGL resources created can be released.
  */
 - (void)onTextureDestoryed;
-:::
-</dx-codeblock>
+```
