@@ -96,8 +96,7 @@ You need to download the AI keying resources and enable it using the same API as
 ### APIs for advanced beauty filters (eye enlarging, face slimming, etc)
 
 You can set different beauty filter parameters by obtaining the `TXBeautyManager` object via `getBeautyManager` of `TXUGCRecord`.
-<dx-codeblock>
-::: objective-c objective-c
+```
 /**
  * Select the algorithm used for the skin smoothing filter
  *
@@ -256,8 +255,7 @@ You can set different beauty filter parameters by obtaining the `TXBeautyManager
  * @param level Intensity of the face shape enhancing filter. Value range: 0-9. 0 indicates that the filter is disabled. The larger the value, the higher the intensity.
  */
 - (void)setFaceBeautyLevel:(float)level
-:::
-</dx-codeblock>
+```
 
 ### Green Screen
 
