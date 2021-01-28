@@ -1,10 +1,3 @@
-### Version 8.2 Released on December 24, 2020
-- Android: fixed the bug of the green screen feature no longer functioning after camera switch.
-- Android: fixed the occasional instability of UGSV.
-- iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
-- iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
-- iOS: fixed the occasional instability of the superplayer.
-
 ### Version 8.1 Released on December 3, 2020
 - Android: improved the image quality and clarity of UGSV.
 - Android: changed the type of beauty filter APIs from `int` to `float`.

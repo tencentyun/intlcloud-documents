@@ -1,183 +1,187 @@
 
 
-## Feature Description
+## Overview
 
-Special effects such as eye enlarging, face slimming, animated stickers, and green screen keying are privileged features developed based on the face recognition technology of YouTu Lab and makeup effect technology of Pitu. By collaborating with YouTu and Pitu teams, the UGSV team deeply integrated such special effects into the video image processing process of the UGSV SDK to deliver better video special effects.
+To ensure better effects for user videos, Tencent Cloud UGSV worked with YouTu and Pitu to integrate special effects including eye enlarging, face slimming, animated stickers, and green screen into the image processing logic of the RTMP SDK. These are additional features developed for the Enterprise Edition SDK based on the face recognition technology of YouTu Lab and retouching technology of Pitu.
 
-## Connection Process
+## Accessing the features
 
-Contact your sales rep to apply for an enterprise license.
+To apply for an Enterprise Edition license, please contact Tencent Cloud sales.
 
-## Download
+## Downloading the SDK
 
-Download the Enterprise Edition SDK package at the bottom of the SDK Download page. The package is encrypted, and you can get the decryption password and License file from your Tencent Cloud rep. After the package is successfully decompressed, a `.aar` file and a `.zip` file will be extracted in the SDK directory, which can be used in two integration methods, respectively.
+You can download a compressed package of the Enterprise Edition SDK at [SDK Download](https://intl.cloud.tencent.com/document/product/1069/37914). The package is encrypted. Contact Tencent Cloud sales for a license file and the password. Decompress the package and you will find `aar` and `zip` in the folder, which are for two different integration methods.
 
-## Project Settings
+## Configuring the Project
 
-For more information, please see [Project Configuration](https://intl.cloud.tencent.com/document/product/1069/38018). 
+For detailed instructions, see [SDK Integration (with Android Studio)](https://intl.cloud.tencent.com/document/product/1069/38018). 
 
-### Adding SDK
+#### Integrating the SDK
 
-#### Integrating by using .aar file
+#### Integrating via aar
 
-Directly replace the non-Enterprise Edition .aar file in the project and modify the corresponding name in `build.gradle` in the `app` directory.
+Replace the existing aar file in your project with the one in the Enterprise Edition SDK, and modify the name in `build.gradle` in the folder of the app.
 
-#### Integrating by using .jar package
+#### Integrating using jar files
 
-1. You need to decompress the .zip file and copy the .so files in `libs` to your JNI load path. The following are the .so files related to animated effects:
+1. Decompress `zip`, and copy the so files in `libs` to your loading path for JNI. The so files associated with animated effects are listed below.
 
 | so                        |                      |                           |
 | ------------------------- | -------------------- | ------------------------- |
 | libYTCommon.so            | libnnpack.so         | libpitu_device.so         |
 | libpitu_tools.so          | libWXVoice.so        | libgameplay.so            |
 | libCameraFaceJNI.so       | libYTFaceTrackPro.so | libimage_filter_gpu.so    |
-| libimage_filter_common.so | libpitu_voice.so     | libvoicechanger_shared.so | 
+| libimage_filter_common.so | libpitu_voice.so     | libvoicechanger_shared.so |
 | libParticleSystem.so      | libYTHandDetector.so | libGestureDetectJni.so    |
 | libsegmentern.so          |||
 
-2. Copy all resources in the `assets` folder after decompression to the `assets` directory in the project, including the files in the `assets` root directory and the `camera` folder.
+2. Copy all the resources in the `assets` folder, including the files in the root folder and the `camera` folder, to your project's `assets` folder.
 
-### Importing license file
+### Importing the license file
 
-The features of Enterprise Edition can take effect only after the license is successfully verified. You can apply for a debugging license with 30-day validity free of charge to your Tencent Cloud rep.
-After getting the license, you need to name it **`YTFaceSDK.licence`** and place it in the `assets` directory.
+You can enable the features in the Enterprise Edition SDK only after license verification. You can apply for a 30-day free license for debugging from Tencent Cloud sales.
+Once you have a license, name it **YTFaceSDK.licence** and place it in the `assets` folder of your project.
 >!
->- Each license has been bound to a specific `package name`. If you modify the application's `package name`, the verification will fail.
->- The filename of `YTFaceSDK.licence` is fixed and should not be modified. The file must be placed in the `assets` directory.
->- You do not need to apply for two licenses for iOS and Android respectively. A license can authorize both an iOS `bundleid` and an Android `packageName`.
+>- Each license is bound with a package name. Modifying the package name of your app will result in verification failure.
+>- You cannot rename the license and must place it in the `assets` folder.
+>- You do not need to apply for separate licenses for iOS and Android. A license can authorize a bundleid for iOS and Android at the same time.
 
 
-**From v4.9 on, the SDK supports two-in-one license. In this way, `YTFaceSDK.licence` is no longer needed; instead, you can get the corresponding `key` and `url` of the license from your Tencent Cloud rep and set the license information in the same way as for Basic Edition.**
+** Since version 4.9, the SDK has used two-in-one licenses, and `YTFaceSDK.licence` is no longer needed. Just configure the license and corresponding key and URL you obtain from sales in the same way as you configure a license for the Basic Edition.**
 
-## Feature Call
+## Enabling the Features
 
-### 1. Animated effect feature
+### 1. Animated effects
 
-#### Sample code
+#### Example
 
-An animated effect template is a directory that contains many resource files. As animated effects have different complexity, the number of directories and file size vary by effect.
-The sample code in the demo downloads the animated effect resources from the backend and extracts them all onto the SD card. You can find the download addresses of the animated effect resources in the following format in the demo code:
+
+
+Each animated effect template is represented by a directory that contains multiple resource files, whose number and size vary with the complexity of the animated effect.
+In the sample code of the demo, animated effect resources are downloaded and then decompressed to the `sdcard` folder. You can find the download links of animated effect resources in the demo code, as shown below.
 
 ```
-http://dldir1.qq.com/hudongzhibo/AISpecial/Android/156/(animated effect name).zip
+http://dldir1.qq.com/hudongzhibo/AISpecial/Android/156/(name of animated effect).zip
 ```
 
->?We recommend you place the animated effect resources on your own server, so as to avoid any impacts caused by change of the demo.
+>?You are strongly recommended to store animated effect resources on your own servers so that they won’t be affected by changes to the demo.
 
-After the decompression, you can call the following API to enable the animated effect:
+After decompressing the downloaded files, you can enable the animated effects via the following API.
 ```
 /**
- * setMotionTmpl   Set the location of the animated sticker file
+ * setMotionTmpl Set the path for animated effect images.
  * @param tmplPath
  */
 public void setMotionTmpl(String tmplPath);
 ```
 
-### 2. AI-based keying
+### 2. AI keying
 
-#### Sample code
+#### Example
 
-You need to download the AI-based keying resources. The API is the same as that for the animated effect.
+
+
+You need to download the AI keying resources and enable it using the same API as that for animated effects.
 
 ```
 /**
- * setMotionTmpl   Set the location of the animated sticker file
+ * setMotionTmpl Set the path for animated effect pictures.
  * @param tmplPath
  */
 public void setMotionTmpl(String tmplPath);
 ```
 
-### 3. Advanced beauty filter APIs (eye enlarging, face slimming, etc.)
+### 3. APIs for advanced beauty filters (eye enlarging, face slimming, etc)
 
 ```
-// Eye enlarging effect level. Value range: 0–9
+// Enlarge the eyes. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setEyeScaleLevel(eyeLevel);
-// Face slimming effect level. Value range: 0–9
+// Slim the face. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setFaceSlimLevel(faceSlimLevel);
-// Chin slimming effect level. Value range: 0–9
+// Give the face a V-shaped jawline. Value range: 0-9.
  mTXCameraRecord.getBeautyManager().setFaceVLevel(faceVLevel);
-// Chin lengthening/shortening effect level. Value range: 0–9
+// Expand or shrink the jaw. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setChinLevel(chinSlimLevel);
-// Face shortening effect level. Value range: 0–9
+// Shorten the face. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setFaceShortLevel(faceShortLevel);
-// Nose slimming effect level. Value range: 0–9
+// Narrow the nose. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setNoseSlimLevel(noseScaleLevel);
-// Eye brightening effect level. Value range: 0–9
+// Lighten the eyes. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setEyeLightenLevel(eyeLightenLevel);
-// Teeth whitening effect level. Value range: 0–9
+// Whiten the teeth. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setToothWhitenLevel(toothWhitenLevel);
-// Wrinkle removal effect level. Value range: 0–9
+// Remove wrinkles. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setWrinkleRemoveLevel(wrinkleRemoveLevel);
-// Eye bag removal effect level. Value range: 0–9
+// Remove eye bags. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setPounchRemoveLevel(pounchRemoveLevel);
-// Smile line removal effect level. Value range: 0–9
+// Remove nasolabial folds. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setSmileLinesRemoveLevel(smileLinesRemoveLevel);
-// Hairline adjustment effect level. Value range: 0–9
+// Adjust the hairline. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setForeheadLevel(foreheadLevel);
-// Eye distance adjustment effect level. Value range: 0–9
+// Adjust the distance between the eyes. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setEyeDistanceLevel(eyeDistanceLevel);
-// Eye corner adjustment effect level. Value range: 0–9
+// Adjust the eye corners. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setEyeAngleLevel(eyeAngleLevel);
-// Mouth shape adjustment effect level. Value range: 0–9
+// Reshape the lips. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setMouthShapeLevel(mouthShapeLevel);
-// Nose wing adjustment effect level. Value range: 0–9
+// Reshape the nose. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setNoseWingLevel(noseWingLevel);
-// Nose position adjustment effect level. Value range: 0–9
+// Adjust the position of the nose. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setNosePositionLevel(nosePositionLevel);
-// Lip thickness adjustment effect level. Value range: 0–9
+// Adjust the thickness of the lips. Value range: 0-9/
 mTXCameraRecord.getBeautyManager().setLipsThicknessLevel(lipsThicknessLevel);
-// Face shape adjustment effect level. Value range: 0–9
+// Reshape the face. Value range: 0-9.
 mTXCameraRecord.getBeautyManager().setFaceBeautyLevel(faceBeautyLevel);
 ```
 
-### 4. Green screen keying
+### 4. Green screen
 
-To use green screen keying, you need to prepare a .mp4 file for playback first and then call the following API to enable green screen keying:
+Make sure you have an MP4 file for playback before using the green screen feature. Call the API below to enable the green screen feature.
 
 ```
 /**
- * Set the green screen keying file. It can be in formats supported by Android, such as .jpg and .png for images and .mp4 and .3gp for videos
- * The API version needs to be 18
- * @param path: green screen keying file location, which can be set in two ways:
- *             1. Place the resource file in the `assets` directory and directly set `path` to the filename
- *             2. Set `path` to the absolute path of the file
+ * Configure the green screen file, which should be in formats supported by Android, including images in JPG or PNG and videos in MP4 or 3GP.
+ * API (level 18)
+ @param path: the path of the green screen file, which can be set via two methods.
+ *             1. Place the resource file in the `assets` folder, and set the path parameter to the name of the file.
+ *             2. Set the path parameter to the absolute path of the file.
  */
 @TargetApi(18)
 public void setGreenScreenFile(String path);
 ```
 
 ## Troubleshooting              
-### 1. Is the license being used normally?
-After the license is successfully set (you need to wait for a period of time, subject to the network conditions), the SDK will download the license file to the phone. You can use the `getLicenceInfo()` method of `TXUGCBase` to view the license information, including the license effective time and expiration time and bound application package name.
+### 1. Is my license working?
+After license configuration, the SDK will download the license file to the phone. This may take a while. The exact time needed depends on network conditions. You can view your license information, including when it takes effect and expires, as well as the app package name bound, via `getLicenceInfo()` of `TXUGCBase`.
 
 ```java
 public void onCreate() {
       super.onCreate();
-      String licenceURL = ""; // Obtained `licenceURL`
-      String licenceKey = ""; // Obtained `licenceKey`
-      TXUGCBase.getInstance().setLicence(this, licenceURL, licenceKey);// Set the license
+      String licenceURL = ""; // The license URL obtained
+      String licenceKey = ""; // The license key obtained
+      TXUGCBase.getInstance().setLicence(this, licenceURL, licenceKey);// Configure the license.
       
-      // Print the license information
+      // Print license information.
       Handler handler = new Handler(Looper.getMainLooper());
       handler.postDelayed(new Runnable() {
           @Override
           public void run() {
               Log.i(TAG, "onCreate: " + TXUGCBase.getInstance().getLicenceInfo(MApplication.this));
           }
-      }, 5 * 1000);// Print the license information after 5 seconds
+      }, 5 * 1000);// Print license information in 5 seconds.
   }
 
 ```
 
-If you need further assistance, please save the printed license information and contact our [technical support](https://intl.cloud.tencent.com/support).
+If you need help, please save the printed license information and contact [Technical Support](https://intl.cloud.tencent.com/support).
 
-### 2. How do I fix an integration exception?
+### 2. What should I do if the following error occurs when I try to integrate the SDK?
 ```
 java.lang.UnsatisfiedLinkError: No implementation found for void com.tencent.ttpic.util.youtu.YTFaceDetectorBase.nativeSetRefine(boolean) (tried Java_com_tencent_ttpic_util_youtu_YTFaceDetectorBase_nativeSetRefine and Java_com_tencent_ttpic_util_youtu_YTFaceDetectorBase_nativeSetRefine__Z)
         at com.tencent.ttpic.util.youtu.YTFaceDetectorBase.nativeSetRefine(Native Method)
 ```
 
-Please check whether the project's `build.gradle` has hierarchical module structure; for example, the `app` module imports the `ugckit` module, which imports the Tencent Cloud SDK. In this case, you need to add the following configuration to the `app` module and `ugckit` module:
+Please check if the module structure in `build.gradle` of your project has multiple layers. For example, if the app module references the ugckit module, and the ugckit module references the Tencent Cloud SDK, you need to add the following configuration to the app and ugckit modules.
 
 ```
 packagingOptions {
@@ -189,28 +193,28 @@ packagingOptions {
 }
 ```
 
-After adding the configuration, please clean the project and built it again.
+After the configuration, clean your project and build it again.
 
-### 3. What should I do if features such as beauty filters (eye enlarging, face slimming, etc.) and animated effects do not take effect?
-- Check the validity period of the UGSV license: `TXUGCBase.getInstance().getLicenceInfo(mContext)`.
-- Check the validity period of the YouTu Lab license (obtained from your Tencent Cloud rep during purchase).
-- Check whether the editions of the downloaded SDK and purchased SDK are the same.
+### 3. What should I do if beauty filters (e.g. eye enlarging and face slimming) and animated effects do no work?
+- Check the validity of your UGSV license via `TXUGCBase.getInstance().getLicenceInfo(mContext)`.
+- Check the validity of your YouTu license (obtained from Tencent Cloud sales when you purchase the SDK license).
+- Check if the edition of the SDK you downloaded is the same as the edition of the license you purchased.
 
-Only the Enterprise Edition of UGSV supports AI-based special effects (such as eye enlarging, face slimming, chin slimming, and nose reshaping filters, animated stickers, and green screen keying).
+Only the Enterprise Edition SDK supports the use of AI special effects (eye enlarging, V-shaped jawline, nose augmentation, animated stickers, and green screen keying).
 
-If a called API does not take effect, please check whether the log `support EnterPrise above!!!` exists in Logcat, and if so, the downloaded SDK edition does not match the edition of the currently used license.
->!Please use the latest API `TXUGCRecord getBeautyManager()` for beauty filter effects.
+If you fail to call the APIs, check for `support EnterPrise above!!!` in the log via Logcat. The message indicates mismatch between the edition of the SDK you are using and the license you purchased.
+>! Please use the newest API `TXUGCRecord getBeautyManager()` to enable beauty filters and animated effects.
 
-The [query tool](https://mc.qcloudimg.com/static/archive/9c0f8c02466d08e5ac14c396fad21005/PituDateSearch.zip) is an Xcode project used to query the license validity period and is currently supported for macOS only. More query methods will be provided in the future.
+The [Query Tool](https://mc.qcloudimg.com/static/archive/9c0f8c02466d08e5ac14c396fad21005/PituDateSearch.zip) can be used to query license validity. It is an Xcode project and is only supported on macOS currently. Other query methods will be made available soon.
 
-### 4. What should I pay attention to when dynamically loading .jar and .so files?
+### 4. What should I pay attention to when I integrate the SDK by dynamically loading the jar and so files?
 
-- Check the number of dynamically distributed .so packages to confirm whether all required packages are in place. You can use `TXLiveBase.setLibraryPath(soPath);` to set the .so package address.
->!The files must be either dynamically distributed or locally integrated as a whole. You cannot store some of them locally and dynamically distribute other ones.
-- Resources extracted from .jar and .so files can be categorized into `assets-static` and `assets-dynamic` resources. `assets-static` resources can only be stored locally and cannot be dynamically distributed, while `asset-dynamic` resources need to be dynamically distributed and stored in the same directory as the .so files.
-- In the SDK 6.8 or above, please do not manually load .so packages in the system method, as the SDK will arrange their load sequence internally.
+- Check if you have distributed all the so files. Set the path of the so files via `TXLiveBase.setLibraryPath(soPath);`.
+>! You can not dynamically distribute some of the so files and store the others locally. Either locally store or dynamically distribute them all.
+- In the jar + so loading method, the decompressed resources fall under two categories: `assets-static` and `assets-dynamic`. `assets-static` resources must be stored locally, and `asset-dynamic` resources must be dynamically distributed to the same directory of the so files.
+- If you use SDK 6.8 or above, please do not manually load the so files via the system. The SDK will make sure that the so files are loaded in the correct order.
 
-If the following exception occurs, please troubleshoot as detailed above:
+Check the above if you run into one of the following errors.
 
 ```
 YTFaceDetectorBase: (GLThread 5316)

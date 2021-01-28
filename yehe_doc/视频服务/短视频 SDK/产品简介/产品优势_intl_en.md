@@ -1,22 +1,22 @@
 
-### Comprehensive Features
-The SDK provides powerful and cutting-edge UGSV features such as video capturing, clipping, splicing, special effects, beauty filters, filters, green screen keying, animated pendants, and video release and playback.
+### Diverse Features
+UGSV is a full-featured service that provides app developers with a variety of industry-leading mobile video capabilities, including video capturing, clipping, splicing, special effects, beauty filters, green screen keying, animated widgets, publishing and playback.
 
 
 ### VOD Integration
-Tencent Cloud VOD provides a one-stop on-cloud integration service for UGSV covering video upload, storage, fast transcoding, porn detection, and distribution, so that end users' videos can be watched and shared most promptly.
+UGSV integrates Tencent Cloud VOD service to provide a one-stop cloud-based solution for video uploading, storage, quick transcoding, porn detection and video distribution. It helps ensure that user videos are viewed and shared in a timely fashion.
 
 ![](https://main.qcloudimg.com/raw/434ca35776504501bd19261dc5718ed7.png)
 
-### Content Monitoring
-Based on the porn detection feature of Tencent Cloud VOD, porn detection can be automatically initiated for uploaded videos with the result returned. The porn score can be immediately calculated after a video is uploaded for the business team to process.
+### Content Detection
+UGSV comes built in with VOD’s porn detection. Once a video is uploaded, porn detection starts automatically and a score indicating the amount of pornographic content is quickly computed.
 
-### AI Capabilities
-Based on the on-cloud AI engine and technologies such as face recognition and motion capture, features such as green screen keying and face pendants can be implemented; by leveraging technologies like AI-based analysis and recognition, intelligent tagging and intelligent cover generation can be implemented, which further achieves content categorization and personalized recommendation.
+### AI Support
+Powered by cloud-based AI engines, UGSV enables content classification and personalized recommendation and supports intelligent tagging, intelligent video cover generation, green screen keying, face widgets and more.
 
-### Powerful On-cloud Support
-With the on-cloud capabilities of Tencent Cloud VOD, end users' videos can be quickly uploaded to and stored in the cloud, where VOD can seamlessly implement fast transcoding, porn detection, and video distribution for immediate sharing and watch of the videos.
+### Powerful Cloud Capabilities
+UGSV leverages Tencent Cloud VOD’s cloud capabilities and quick transcoding, porn detection and video distribution services to help ensure that user videos are uploaded and stored to the cloud quickly and viewed and shared in a timely fashion.
 
-### Rich Extensions
-After the SDK is integrated, end users can use their camera for shooting or capturing videos from live streams for video file generation. In addition, it allows end users to clip and splice videos and add filters, face pendants, green screen keying effects, and other special effects to the videos directly on their phones, diversifying your application with various short video creation features.
+### Seamless Integration
+Once integrated, the SDK can capture videos not only via the camera, but also from live streams. It also supports editing and splicing video, adding filters and face widgets, as well as green scree keying directly on the phone, offering your app users a diverse array of options to create and edit their content.
 
