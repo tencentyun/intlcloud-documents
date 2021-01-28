@@ -96,8 +96,7 @@
 ### 高级美颜接口（大眼、瘦脸等）
 
 您可以通过 TXUGCRecord 的 getBeautyManager 方法获取 TXBeautyManager 对象来进行设置各项美颜参数，其方法如下。
-<dx-codeblock>
-::: objective-c objective-c
+```
 /**
  * 设置美颜（磨皮）算法
  *
@@ -256,8 +255,7 @@
  * @param   level 美型级别，取值范围0 - 9；0表示关闭，1 - 9值越大，效果越明显。
  */
 - (void)setFaceBeautyLevel:(float)level;
-:::
-</dx-codeblock>
+```
 
 ### 绿幕功能
 
