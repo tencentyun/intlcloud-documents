@@ -1,17 +1,18 @@
 TRTCコンソールでは、オンラインでの署名（UserSig）生成をサポートしていますが、このUserSigは開発段階のクイックテストにのみ使用されます。正式なサービス開始前に、UserSig計算ロジックを[バックエンドサーバーに移行](https://intl.cloud.tencent.com/document/product/647/35166)し、暗号化キーの漏洩によるトラフィックの盗用を回避してください。
 
+<span id="generate"></span>
 
-[](id:generate)
 ## 署名（UserSig）生成ツール
 開発者とTencent Cloudサービスとは、署名（UserSig）検証を通じて信頼関係が確立されます。
 
 1. TRTCコンソールに入り、左側のバーの【開発支援ツール】>【[UserSigの生成&検証](https://console.cloud.tencent.com/trtc/usersigtool)】を選択して、【署名(UserSig)生成ツール】コンポーネントを確認してください。
 2. ドロップダウンリストをクリックして作成済のアプリケーション（SDKAppID）を選択します。完了すると対応するキー（Key）が自動生成されます。
 3. ユーザー名（UserID）を入力します。
-4. 【署名（UserSig）生成】をクリックして、対応する署名（UserSig）を生成します。
+3. 【署名（UserSig）生成】をクリックして、対応する署名（UserSig）を生成します。
 
 
-[](id:check)
+<span id="check"></span>
+
 ## 署名（UserSig）検証ツール
 このツールを使用して署名（UserSig）の有効性を確認します。
 
@@ -24,8 +25,8 @@ TRTCコンソールでは、オンラインでの署名（UserSig）生成をサ
 >? 【署名(UserSig)生成ツール】コンポーネントの中で生成したUserSigである場合、【署名（UserSig）のコピー】をクリックしてコピーすることを推奨します。
 >
 5. 検証の完了後、下側の検証結果を確認できます。
-	- 検証成功のサンプル
-	- 検証失敗のサンプル
+	- 検証成功のサンプル：
+	- 検証失敗のサンプル：
 
 
 ## 関連資料
