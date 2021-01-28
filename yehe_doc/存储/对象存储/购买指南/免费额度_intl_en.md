@@ -5,12 +5,15 @@ Tencent Cloud COS offers a limited Free Tier to all new customers, that is, all 
 | -------- | ----------------- | ------ |
 | All new customers | 50 GB of STANDARD storage usage | 6 months |
 
+>?The storage capacity is calculated in binary, for example, 1 TB = 1024 GB.
 
 ## Free Tier
 
 The Free Tier is only applicable to **Public Cloud regions**. For more information, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
 
 The table below shows COS [billable items](https://intl.cloud.tencent.com/document/product/436/33776) and whether the Free Tier is available to them.
+
+> !
 >
 >- The free tier is not applicable to any STANDARD_IA or ARCHIVE billable items including storage usage, requests, and traffic, and any other STANDARD billable items than **STANDARD storage usage**.
 >- If your service is interrupted due to violations or arrears, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
@@ -94,7 +97,7 @@ In April 2019, John didn't perform any other operations, and the 60 GB of data w
 - At the beginning of May 2019, the standard storage capacity was billed. The monthly storage capacity was 60 GB, which exceeded the free tier, **so fees for the excessive 10 GB of standard storage capacity were charged**.
 
 
->The above example applies to scenarios where a new user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
+> ?The above example applies to scenarios where a new user has activated the COS service for the first time, and is eligible for the free tier. For billing after the free tier term ends, see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
 ## Troubleshooting
 
 Should you have any questions about the free tier or your bills, see [Billing](https://intl.cloud.tencent.com/document/product/436/10373).
