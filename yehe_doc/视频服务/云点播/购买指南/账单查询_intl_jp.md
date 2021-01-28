@@ -49,7 +49,6 @@ Tencent Video on Demand（VOD）によって生成された請求書と控除明
 - 割引率 = 1
 
 以上より、総料金 = 0.0305米ドル × 1 = 0.0305（米ドル）
-![](https://main.qcloudimg.com/raw/f0fbe9a7ec674d351a3b88293edf9f60.png)
 
 <span id="p2"></span>
 ### VOD後払いトラフィック
