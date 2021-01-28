@@ -65,7 +65,7 @@
 | ------------------------------------------------------------ | ------ | --------| --------- | ---- |	---- |
 | [云数据库 MySQL](https://intl.cloud.tencent.com/document/product/236)  | 资源级 | &#10003; | &#10003;  |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/236/14469) |		
 | [云数据库 MariaDB](https://intl.cloud.tencent.com/document/product/237)  |资源级 | &#10003;  | &#10003;    | &#10003;    |[访问管理指南](https://intl.cloud.tencent.com/document/product/237/35441) |	
-| [ 云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/238)  |资源级 | &#10003;  | -    | -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/238/34583) |	
+| [ 云数据库 SQL Server](https://intl.cloud.tencent.com/document/product/238)  |资源级 | &#10003;  | &#10003;    | -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/238/34583) |	
 | [云数据库 PostgreSQL](https://intl.cloud.tencent.com/document/product/409)  |资源级 | &#10003;  | &#10003;   | -     | - |
 | [TDSQL MySQL版](https://intl.cloud.tencent.com/document/product/1042)  |资源级 | &#10003;  |  &#10003;    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1042/33343) |	
 | [云数据库 Redis](https://intl.cloud.tencent.com/document/product/239)   | 资源级| &#10003; | -  | - |[访问管理指南](https://intl.cloud.tencent.com/document/product/239/32845) |	
@@ -136,7 +136,7 @@
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	---- |	
 | [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 资源级| &#10003; | &#10003;  |  - |	-|	
 | [云直播](https://intl.cloud.tencent.com/document/product/267)   | 资源级| &#10003; | &#10003;  |  &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |	
-| [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | -    |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
+| [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | &#10003;   |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)    | 服务级   | &#10003;  | -    |   &#10003;   |	-  |		
 | [媒体直播](https://intl.cloud.tencent.com/document/product/1048)    | 操作级   | &#10003;  | -    |   -   |	-  |	
 | [媒体包装](https://intl.cloud.tencent.com/document/product/1063)    | 操作级   | &#10003;  | -    |   -   |	-  |	
