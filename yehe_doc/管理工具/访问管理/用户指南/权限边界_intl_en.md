@@ -10,7 +10,7 @@ Suppose a company's Tencent Cloud resource admin needs to set permissions for OP
 ● The company stipulates that all operations on CVM and COS under the root account by sub-accounts must be performed in the IP range of the company (10.217.182.3/24 or 111.21.33.72/24).
 ## Directions
 ### Setting permissions for sub-account test1
-1. Log in to the admin account and enter the user list page.
+1. Log in to the admin account and enter the [user list page](https://console.cloud.tencent.com/cam).
 2. On the user list page, find the sub-account `test1` and click the user's nickname to enter the user details page.
 3. In the policy section, click **Associate Policy** and check the `QcloudCOSFullAccess` policy to set all COS permissions for the sub-account `test1`.
 4. In the permissions boundary section, click **Set Boundary** to enter the permissions boundary setting page.
