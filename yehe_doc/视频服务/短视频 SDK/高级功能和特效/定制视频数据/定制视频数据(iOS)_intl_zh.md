@@ -1,6 +1,5 @@
 ## 录制预处理回调 
-<dx-codeblock>
-::: objc objc
+```
 /**
  * 在 OpenGL 线程中回调，在这里可以进行采集图像的二次处理
  * @param texture    纹理 ID
@@ -22,13 +21,11 @@
  * 在 OpenGL 线程中回调，可以在这里释放创建的 OpenGL 资源
  */
 - (void)onTextureDestoryed;
-:::
-</dx-codeblock>
+```
 
 
 ## 编辑预处理回调
-<dx-codeblock>
-::: objc objc
+```
 /** 
  在 OpenGL 线程中回调，在这里可以进行采集图像的二次处理
  @param texture    纹理 ID
@@ -45,5 +42,4 @@
  * 在 OpenGL 线程中回调，可以在这里释放创建的 OpenGL 资源
  */
 - (void)onTextureDestoryed;
-:::
-</dx-codeblock>
+```
