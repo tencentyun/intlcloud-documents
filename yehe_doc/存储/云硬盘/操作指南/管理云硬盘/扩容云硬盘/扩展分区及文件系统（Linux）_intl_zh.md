@@ -14,7 +14,7 @@
 
 ## 操作步骤
 ### 确认扩展方式
-<span id="fdisk"></span>
+<span id="fdisk"></span> 
 1. 以 root 用户执行以下命令，查询云硬盘使用的分区形式。
 ```plaintext
 fdisk -l
@@ -25,7 +25,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/ce19715fc8494a9735b714d86f0cccfa.png)
  - 若结果如下图所示（根据操作系统不同略有不同），则说明使用 MBR 分区形式。
  >! MBR 分区形式支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过 2TB 时，建议您重新创建并挂载一块数据盘，使用 GPT 分区方式后将数据拷贝至新盘上。对于 Linux 操作系统而言，当磁盘分区形式选用 GPT 时，fdisk 分区工具将无法使用，需要采用 parted 工具。
-
+ >
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. 根据 [步骤1](#fdisk) 查询到的云硬盘分区形式，选择对应的操作指引。
 <table>
@@ -59,7 +59,7 @@ fdisk -l
      </tr> 
 </table>
 
-<span id="ExpandTheFileSystem"></span>
+<span id="ExpandTheFileSystem"></span> 
 ### 扩容文件系统
 
 1. 根据文件系统的类型，执行不同的命令进行扩容。
@@ -78,7 +78,8 @@ resize2fs /dev/vdb
 df -h
 ```
 
-<span id="AddToTheExistingGPTPart"></span>
+<span id="AddToTheExistingGPTPart"></span> 
+
 ### 将扩容部分的容量划分至原有分区（GPT）
 1. 以 root 用户执行以下命令，确认云硬盘的容量变化。
  ```plaintext
@@ -89,9 +90,9 @@ parted <磁盘路径> print
 	parted /dev/vdb print
 	```
 	若在过程中提示如下图所示信息，请输入`Fix`。
-	![](//mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
+	![](https://main.qcloudimg.com/raw/5f15f47bd5ef00b1387a1a93936298ea.png)
 	如下图所示，扩容后的云硬盘大小为107GB，已有分区的大小为10.7GB。
-	![](//mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+	![](https://main.qcloudimg.com/raw/e8a7487b284622ae617dc17bcadcd68e.png)
 2. 执行以下命令，确认该云硬盘是否还有分区已挂载。
 ```plaintext
 mount | grep '<磁盘路径>' 
@@ -101,7 +102,8 @@ mount | grep '<磁盘路径>'
 mount | grep '/dev/vdb'
 ```
  如下图所示，云硬盘上有一个分区（vdb1）挂载在`/data`上。
-![](//mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+![](https://mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+
 3. 执行以下命令，解挂数据盘。
 ```plaintext
 umount <挂载点>
@@ -116,7 +118,8 @@ mount | grep '/dev/vdb'
 ```
  云硬盘上所有的分区文件系统均已解挂。如下图所示：
 ![](https://main.qcloudimg.com/raw/9242efdec1aab382ae74f975ca68d68a.png)
-4. <span id="step4"></span>执行以下命令，进入 parted 分区工具。
+
+4. <span id="step4"></span> 执行以下命令，进入 parted 分区工具。
 ```plaintext
 parted '<磁盘路径>'
 ```
@@ -134,7 +137,8 @@ unit s
 print
 ```
  本文中 Start 值为 `2048s`。如下图所示：
-![](//mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
+![](https://mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
+
 7. 执行以下命令，删除原有分区。
 ```plaintext
 rm <分区 Number>
@@ -144,7 +148,8 @@ rm <分区 Number>
  rm 1
 ```
  回显信息如下图所示。
-![](//mccdn.qcloud.com/static/img/3384eeada87ce75695e0e55125109eff/image.png)
+![](https://mccdn.qcloud.com/static/img/3384eeada87ce75695e0e55125109eff/image.png)
+
 8. 执行以下命令，新建一个主分区。
 ```plaintext
 mkpart primary <原分区起始扇区> 100%
@@ -155,13 +160,15 @@ mkpart primary <原分区起始扇区> 100%
 mkpart primary 2048s 100%
 ```
  如果出现如下图所示的状态，请输入`Ignore`。
-![](//mccdn.qcloud.com/static/img/c45966e20dc856817c65fd6b81155e4a/image.png)
+![](https://mccdn.qcloud.com/static/img/c45966e20dc856817c65fd6b81155e4a/image.png)
+
 9. 执行以下命令，查看新分区是否已创建成功。
 ```plaintext
 print
 ```
  返回结果如下图所示，即表示新分区已创建成功。
-![](//mccdn.qcloud.com/static/img/cb1af5adaf6c89d066077c43fd428a38/image.png)
+![](https://mccdn.qcloud.com/static/img/cb1af5adaf6c89d066077c43fd428a38/image.png)
+
 10. 执行以下命令，退出 parted 工具。
 ```plaintext
 quit
@@ -175,19 +182,19 @@ e2fsck -f <分区路径>
 e2fsck -f /dev/vdb1
 ```
  返回如下图所示结果。
-![](//mccdn.qcloud.com/static/img/307f7a0c98eea05ca1d4560fe4e96f57/image.png)
+![](https://mccdn.qcloud.com/static/img/307f7a0c98eea05ca1d4560fe4e96f57/image.png)
 请对应您实际使用的文件系统，进行扩容操作：
 	- **EXT 文件系统**：
 		1. 执行以下命令，对新分区上 EXT 文件系统进行扩容操作。
 	```plaintext
 	resize2fs <分区路径>
 	```
-		 本文以分区路径是`/dev/vdb1`为例，则执行：
-		```plaintext
-		resize2fs /dev/vdb1
-		```
-		扩容成功则如下图所示：
-		![](//mccdn.qcloud.com/static/img/57d66da9b5020324703498dbef0b12f9/image.png)
+	​	 本文以分区路径是`/dev/vdb1`为例，则执行：
+	​	```plaintext
+	​	resize2fs /dev/vdb1
+	​	```
+	​	扩容成功则如下图所示：
+	​	![](https://mccdn.qcloud.com/static/img/57d66da9b5020324703498dbef0b12f9/image.png)
 		2. 执行以下命令，手动挂载新分区。
 		```plaintext
 		mount <分区路径> <挂载点>
@@ -196,6 +203,7 @@ e2fsck -f /dev/vdb1
 		```plaintext
 		mount /dev/vdb1 /data
 		```
+
  - **XFS 文件系统**：
 	  1.  执行以下命令，手动挂载分区。
 	```plaintext
@@ -218,9 +226,9 @@ e2fsck -f /dev/vdb1
 df -h
 ```
  返回如下图信息说明挂载成功，即可以查看到数据盘。
-![](//mccdn.qcloud.com/static/img/a2bd04c79e8383745689e19033a0daaa/image.png)
+![](https://mccdn.qcloud.com/static/img/a2bd04c79e8383745689e19033a0daaa/image.png)
 
-<span id="CreateANewGPTPart"></span>
+<span id="CreateANewGPTPart"></span> 
 ### 将扩容部分的容量格式化成独立的新分区（GPT）
 
 1. 以 root 用户执行以下命令， 确认云硬盘的容量变化。
@@ -232,9 +240,10 @@ parted <磁盘路径> print
 parted /dev/vdb print
 ```
  若在过程中提示如下图所示信息，请输入 `Fix`。
-![](//mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
+![](https://mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
 如下图所示，扩容后的云硬盘大小为107GB，已有分区的大小为10.7GB。
-![](//mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+![](https://mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+
 2. 执行以下命令，确认该云硬盘是否还有分区已挂载。
 ```plaintext
 mount | grep '<磁盘路径>' 
@@ -244,7 +253,8 @@ mount | grep '<磁盘路径>'
 mount | grep '/dev/vdb'
 ```
  如下图所示，云硬盘上有一个分区（vdb1）挂载在`/data`上。
-![](//mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+![](https://mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+
 3. 执行以下命令，解挂数据盘。
 ```plaintext
 umount <挂载点>
@@ -259,7 +269,8 @@ mount | grep '/dev/vdb'
 ```
  云硬盘上所有的分区文件系统均已解挂。如下图所示：
 ![](https://main.qcloudimg.com/raw/d1a9a33f0d4e3725aed677f2403c91ae.png)
-<span id="Step4"></span>
+<span id="Step4"></span> 
+
 4. 执行以下命令，进入 parted 分区工具。
 ```plaintext
 parted '<磁盘路径>'
@@ -272,7 +283,7 @@ parted '/dev/vdb'
 ```plaintext
 print
 ```
- ![](//mccdn.qcloud.com/static/img/788ce125bba952f204ed6ee36dfb644d/image.png)
+ ![](https://mccdn.qcloud.com/static/img/788ce125bba952f204ed6ee36dfb644d/image.png)
 6. 执行以下命令，新建一个主分区。此分区将从已有分区的末尾开始，覆盖硬盘所有的新增空间。
 ```plaintext
 mkpart primary start end
@@ -285,7 +296,7 @@ mkpart primary 10.7GB 100%
 ```plaintext
 print
 ```
- ![](//mccdn.qcloud.com/static/img/fc54fd4c05102ee91c648526d77d1b42/image.png)
+ ![](https://mccdn.qcloud.com/static/img/fc54fd4c05102ee91c648526d77d1b42/image.png)
 8.  执行以下命令，退出 parted 工具。
 ```plaintext
 quit
@@ -300,7 +311,7 @@ mkfs.<fstype> <分区路径>
 mkfs.ext3 /dev/vdb2
 ```
 
-<span id="AddToTheExistingMBRPart"></span>
+<span id="AddToTheExistingMBRPart"></span> 
 ### 将扩容部分的容量划分至原有分区（MBR）
 fdisk/e2fsck/resize2fs 自动扩容工具适用于 Linux 操作系统，用于将新扩容的云硬盘空间添加到已有的文件系统中，扩容能够成功必须满足以下四个条件：
 - 文件系统是 EXT2/EXT3/EXT4/XFS。
@@ -317,7 +328,7 @@ umount <挂载点>
 ```plaintext
 umount /data
 ```
- ![](//mccdn.qcloud.com/static/img/c0acc05057941681627a5fd34979d194/image.jpg)
+ ![](https://mccdn.qcloud.com/static/img/c0acc05057941681627a5fd34979d194/image.jpg)
 2. 执行以下命令，下载工具。
     中国大陆地区推荐使用：
 ```plaintext
@@ -335,7 +346,7 @@ python /tmp/devresize.py <硬盘路径>
 ```plaintext
 python /tmp/devresize.py /dev/vdb
 ```
- ![](//mccdn.qcloud.com/static/img/c7617b90578192d64d19f02325f00ffb/image.jpg)
+ ![](https://mccdn.qcloud.com/static/img/c7617b90578192d64d19f02325f00ffb/image.jpg)
  - 若输出 “The filesystem on /dev/vdb1 is now XXXXX blocks long.” 则表示扩容成功，请执行 [步骤4](#step4MBR)。
  - 若输出的是 “[ERROR] - e2fsck failed!!”，请执行以下步骤：
    a. 执行以下命令，修复文件系统所在分区。
@@ -350,7 +361,7 @@ python /tmp/devresize.py /dev/vdb
 	```plaintext
 	python /tmp/devresize.py /dev/vdb
 	```
-<span id="step4MBR"></span>
+<span id="step4MBR"></span> 
 4. 执行以下命令，手动挂载扩容后的分区。
 ```plaintext
 mount <分区路径> <挂载点>
@@ -369,24 +380,25 @@ mount /dev/vdb /data
 df -h
 ```
  若返回类似如下图所示的信息，说明挂载成功，即可以查看到数据盘：
-![](//mccdn.qcloud.com/static/img/2367f3e70cd0c3c1bef665cc47c1c3bc/image.jpg)
+![](https://mccdn.qcloud.com/static/img/2367f3e70cd0c3c1bef665cc47c1c3bc/image.jpg)
+
 6. 执行以下命令，查看扩容后原分区的数据信息，确认新增加的存储空间是否扩容到文件系统中。
 ```plaintext
 ll /data
 ```
 
-<span id="CreateANewMBRPart"></span>
+<span id="CreateANewMBRPart"></span> 
 ### 将扩容部分的容量格式化成独立的新分区（MBR）
 1. 以 root 用户执行以下命令，查看已挂载的数据盘分区信息。
 ```plaintext
 df -h
 ```
- ![](//mccdn.qcloud.com/static/img/0a450dfaa9cfc7b2c7fdc04861f0e754/image.png)
+ ![](https://mccdn.qcloud.com/static/img/0a450dfaa9cfc7b2c7fdc04861f0e754/image.png)
 2. 执行以下命令，查看数据盘扩容后未分区的信息。
 ```plaintext
 fdisk -l
 ```
- ![](//mccdn.qcloud.com/static/img/594671a1215dee3036b7940892438f62/image.png)
+ ![](https://mccdn.qcloud.com/static/img/594671a1215dee3036b7940892438f62/image.png)
 3. 执行以下命令，解挂所有已挂载的分区。
 ```plaintext
 umount <挂载点>
@@ -400,7 +412,7 @@ umount /data
 mount | grep '<磁盘路径>'
 ```
  如返回结果为空，则云硬盘上所有的分区文件系统均已解挂。
-4. <span id="Step4MBR"></span>执行以下命令，新建一个新分区。
+4. <span id="Step4MBR"></span> 执行以下命令，新建一个新分区。
 ```plaintext
 fdisk <硬盘路径>
 ```
@@ -409,24 +421,27 @@ fdisk <硬盘路径>
 fdisk /dev/xvdc
 ```
  按照界面的提示，依次输入“p”（查看现有分区信息）、“n”（新建分区）、“p”（新建主分区）、“2”（新建第2个主分区），两次回车（使用默认配置），输入 “w”（保存分区表），开始分区。如下图所示：
-![](//mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
+![](https://mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
+
 >? 本文以创建一个分区为例，您也可以根据实际需求创建多个分区。
 5. 执行以下命令，查看新分区。
 ```plaintext
 fdisk -l
 ```
  如下图所示，表示新的分区 xvdc2 已经创建完成。
-![](//mccdn.qcloud.com/static/img/e04e924d62317bc2c605c8abaac394f5/image.png)
+![](https://mccdn.qcloud.com/static/img/e04e924d62317bc2c605c8abaac394f5/image.png)
+
 6. 执行以下命令，格式化新分区并创建文件系统。
 ```plaintext
 mkfs.<fstype> <分区路径> 
 ```
  您可以自行选择文件系统的格式，例如 EXT2、EXT3 等。
 本文以文件系统是 EXT3 为例，则执行：
+
 ```plaintext
 mkfs.ext3 /dev/xvdc2
 ```
- ![](//mccdn.qcloud.com/static/img/074e23eaa580495f96fb532b688d2d68/image.png)
+ ![](https://mccdn.qcloud.com/static/img/074e23eaa580495f96fb532b688d2d68/image.png)
 7. 执行以下命令，创建新的挂载点。
 ```plaintext
 mkdir <新挂载点>
@@ -448,18 +463,19 @@ mount /dev/xvdc2 /data1
 df -h
 ```
  返回如下图所示信息则说明挂载成功，即可以查看到数据盘。
- ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
+ ![](https://mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
+
 >?若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
-10. <span id="AddNewPartINFOstep10"></span>执行以下命令，添加信息。
+10. <span id="AddNewPartINFOstep10"></span> 执行以下命令，添加信息。
 ```plaintext
 echo '/dev/xvdc2 /data1 ext3 defaults 0 0' >> /etc/fstab
 ```
-11. <span id="AddNewPartINFOstep11"></span>执行以下命令，查看信息。
+11. <span id="AddNewPartINFOstep11"></span> 执行以下命令，查看信息。
 ```plaintext
 cat /etc/fstab
 ```
  若返回如下图所示信息，则表示添加分区信息成功。
-![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
+![](https://mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## 相关操作
 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)
