@@ -1,9 +1,12 @@
-在开通了直播功能后，您可在推流回调模板中配置注册的回调域名，则云直播后台会将推流结果回调给您。
-阅读本文之前，希望您已经了解腾讯云直播是如何接收消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。 
+推断流回调用于推送直播流状态信息，包括直播推流成功和直播推流中断。您需在回调模板中配置推流回调和断流回调消息接收服务器地址，并将该模板与推流域名进行关联。在生成对应的推流地址并开始推送直播流后，腾讯云直播后台会将推流结果回调到您设置的接收服务器中。
+
+本文主要讲解触发推断流回调事件后，腾讯云直播发送给用户的回调消息通知字段。
+
+## 注意事项
+阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。 
 
 
 ## 推断流事件参数说明
-
 ### 事件类型参数
 
 | 事件类型 | 字段取值说明 |
@@ -24,7 +27,7 @@
 <td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
 </tr></table>
 
->? <span id="key"></span>key 为【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
+>? <span id="key"></span> key 为【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### 回调消息参数
@@ -49,14 +52,15 @@
 
 | errcode | 错误描述                   | 错误原因                               |
 | :----- | :------------------------- | :------------------------------------- |
-| 1      | recv rtmp deleteStream     | 主播端主动断流                         |
-| 2      | recv rtmp closeStream      | 主播端主动断流                         |
+| 1      | recv rtmp deleteStream     | 主播端主动断流（删除流时）                         |
+| 2      | recv rtmp closeStream      | 主播端主动断流（禁用流时）                         |
 | 3      | recv() return 0            | 主播端主动断开 TCP 连接                |
 | 4      | recv() return error        | 主播端 TCP 连接异常                    |
 | 7      | rtmp message large than 1M | 收到流数据异常                         |
 | 其他   | 直播服务内部异常           | 如需处理请联系腾讯商务人员或者提交工单 |
 
 ### 回调消息示例
+
 ```
 {
 "app":"test.domain.com",
