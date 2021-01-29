@@ -4,7 +4,7 @@
 ### TKE 配额限制
 
 每个用户可购买的 TKE 配额默认如下，如果您需要更多的配额项数量，可通过 [配额申请工单](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=350&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1CCS) 提出配额申请。
->2019年10月21日起，用户集群支持的最大节点配额若小于5000，已调整为5000。
+>!2019年10月21日起，用户集群支持的最大节点配额若小于5000，已调整为5000。
 >
 
 
@@ -30,7 +30,7 @@
 	<td>10</td>
 	</tr>
 	<tr>
-	<td>单地域下镜像</td>
+	<td>单地域下镜像仓库</td>
 	<td>500</td>
 	</tr>
 	<tr>
@@ -43,30 +43,26 @@
 
 ### CVM 配额限制
 
-腾讯云容器服务所产生的云服务器需遵守云服务器的购买限制，详情请参见[云服务器购买约束](https://intl.cloud.tencent.com/document/product/213/2664)。每个用户可购买的 CVM 配额默认如下，如果您需要更多的配额项数量，可通过 [配额申请工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM&level3_id=156&radio_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0%E9%85%8D%E9%A2%9D%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=1&scene_code=12701&step=2) 提出配额申请。
+腾讯云容器服务所产生的云服务器需遵守云服务器的购买限制，详情请参见 [云服务器购买约束](https://intl.cloud.tencent.com/document/product/213/2664)。每个用户可购买的 CVM 配额默认如下，如果您需要更多的配额项数量，可通过 [配额申请工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=7&source=0&data_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%20CVM&level3_id=156&radio_title=%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%B4%AD%E4%B9%B0%E9%85%8D%E9%A2%9D%E6%8F%90%E5%8D%87%E7%94%B3%E8%AF%B7&queue=1&scene_code=12701&step=2) 提出配额申请。
 
-<table >
-<thead>
-<tr>
-<th width="20%">配额项</th>
-<th width="20%">默认值</th>
-<th width="20%">是否可提配额</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单可用区下按量计费服务器
-</td>
-<td >30台或60台不等
-<td>是</tr>
-</thead>
-</tbody></table>
-
+<table>
+	<tr>
+	<th>配额项</th>
+	<th>默认值</th>
+	<th>可查看入口</th>
+	<th>是否可提配额</th>
+    </tr>
+	<td>单可用区下按量计费服务器</td>
+	<td>30台或60台不等</td>
+	<td><a href="https://console.cloud.tencent.com/cvm/overview">CVM 概览页-各地域资源</a></td>
+	<td>是</td>
+</table>
 
 
 
 
 ### 集群配置限制
->集群配置限制集群规模， 暂不支持修改。
+>?集群配置限制集群规模， 暂不支持修改。
 >
 
 | 配置项 | 地址范围 | 影响范围 | 可查看入口 | 是否可变更 |
@@ -77,4 +73,52 @@
 <style>
 	.params{margin-bottom:0px !important;}
 </style>
+
+
+### 资源限制说明
+
+
+
+
+自2021年1月13日起，腾讯云容器服务 TKE 系统会向节点数（nodeNum）不超过5个（0 < nodeNum ≤ 5）、大于5个且小于20个（5 < nodeNum < 20）的集群上的命名空间自动应用一组资源配额。您将无法移除这些配额，此资源配额将保护集群控制平面，避免因部署到集群的应用中存在潜在 Bug 而导致其不稳定。
+
+如需检查此配额，您可执行以下命令：
+```
+kubectl get resourcequota tke-default-quota -o yaml
+```
+
+如需查看给定命名空间的 `tke-default-quota` 对象，请添加 `--namespace` 选项以指定命名空间。
+
+具体的配额限制如下：
+                                  
+
+<table>
+<thead>
+<tr>
+<th align="left">集群规模</th>
+<th align="left">配额限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0 &lt; nodeNum &le; 5</td>
+<td align="left">总数限制 Pod：4000，configMap：3000，CustomResourceDefinition(CRD)：4000 </td>
+</tr>
+<tr>
+<td>5 &lt; nodeNum &lt; 20</td>
+<td>总数限制 Pod：8000，configMap：6000，CustomResourceDefinition(CRD)：8000</td>
+</tr>
+<tr>
+<td> 20 &le; nodeNum </td>
+<td>无限制</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+如有特殊场景需要调整配额，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
+
 
