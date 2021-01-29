@@ -76,7 +76,7 @@ The custom parameter can be in Go's own basic data structures (such as `string` 
 
 The JSON structure corresponding to the custom data structure usually corresponds to the input parameters when the function is executed. When the function is invoked, the JSON data structure of the input parameters will be converted to a custom data structure variable and passed to the entry function.
 
-> The event structures of input parameters passed in by certain triggers have been defined and can be used directly. You can get and use the Go libraries through the [Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events) by importing "github.com/tencentyun/scf-go-lib/events"` into the code. If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-go-lib/issues/new) or [ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>! The event structures of input parameters passed in by certain triggers have been defined and can be used directly. You can get and use the Go libraries through the [Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events) by importing "github.com/tencentyun/scf-go-lib/events"` into the code. If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-go-lib/issues/new) or [ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 <span id="ReturnValue"></span>
 #### Returned values
