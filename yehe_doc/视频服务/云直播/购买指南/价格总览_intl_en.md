@@ -1,3 +1,5 @@
+>? You can [contact us](https://intl.cloud.tencent.com/contact-sales) to receive an estimate of your LVB costs.
+
 The billable items of LVB include the basic, value-added, and extended service fees, as shown below:
 
 ![](https://main.qcloudimg.com/raw/03c4d0aefb9ea69aba8d5d3df27a09e9.png)
@@ -6,24 +8,24 @@ The billable items of LVB include the basic, value-added, and extended service f
 - [Value-added service fees](#appreciation): incurred when value-added features such as LVB transcoding, recording, screencapturing, and porn detection are used. Such features are disabled by default and only incur fees when used.
 - [Extended service fees](#extensions): incurred when value-added features provided jointly by LVB and other Tencent Cloud services are used. Each Tencent Cloud service will be charged according to its respective billing rules.
 
-<span id="base"></span>
+[](id:base)
 ## Basic Service Fees
 <table>
 <tr><th width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
 <tr>
 <td>LVB traffic (default)</td>
 <td>If the billing mode is <b>daily bill-by-traffic</b>, the LVB fees will be <strong>billed by the consumed traffic</strong>.</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/267/2818#traffic-and-bandwidth">Daily pay-as-you-go</a></li></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#bill-by-traffic">Daily pay-as-you-go</a></td>
 </tr><tr>
-<td>LVB bandwidth peak</td>
+<td>LVB peak bandwidth</td>
 <td>If the billing mode is <b>daily bill-by-bandwidth</b>, the LVB fees will be <b>billed by the peak bandwidth</b>.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#traffic-and-bandwidth">Daily pay-as-you-go</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#bill-by-bandwidth">Daily pay-as-you-go</a></td>
 </tr></table>
 
->? You can change your billing mode as instructed in [Changing Billing Methods](https://cloud.tencent.com/document/product/267/32712).  
+>? You can change your billing mode as instructed in [Changing Billing Methods](https://intl.cloud.tencent.com/document/product/267/30411).  
 
 
-<span id="appreciation"></span>
+[](id:appreciation)
 ## Value-Added Service Fees
 
 <table>
@@ -37,72 +39,62 @@ The billable items of LVB include the basic, value-added, and extended service f
 <li/>The fees are billed by <b>the transcoding duration</b> according to the billing tier of the output live stream image dimensions.
 </ul></td>
 <td>
-	<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding">Daily pay-as-you-go</a></li></ul>
+  <li><a href="https://intl.cloud.tencent.com/document/product/267/2818#standard-transcoding">Daily pay-as-you-go</a></li></ul>
 </td>
 </tr><tr>
 <td>Top speed codec transcoding</td>
 <td><ul style="margin:0">
 <li/>Using LVB top speed codec transcoding will incur fees.
-<li/>The top speed codec transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/document/product/267/31071#C_topspeed">top speed codec transcoding</a> is used.
+<li/>The top speed codec transcoding fees will be incurred when <a href="https://intl.cloud.tencent.com/document/product/267/31071">top speed codec transcoding</a> is used.
 <li/>The fees are billed by <b>the transcoding duration</b> according to the billing tier of the output live stream image dimensions.
 </ul><td>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding">Daily pay-as-you-go</a></td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#top-speed-codec-transcoding">Daily pay-as-you-go</a></li></td>
 </tr><tr>
 <td>Audio transcoding</td>
 <td>
 <li/>Using LVB audio transcoding will incur fees.
-<li/>The audio transcoding fees will be charged when <a href="https://intl.cloud.tencent.com/document/product/267/31071#creating-pure-audio-transcoding-template">audio transcoding</a>, audio stream mix, or audio/video stream separation is used.
+<li/>The audio transcoding fees will be charged when <a href="https://intl.cloud.tencent.com/document/product/267/31071">audio transcoding</a>, audio stream mix, or audio/video stream separation is used.
 <li/>The fees are billed by <b>the audio transcoding duration</b>.
 <td>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/2818#audio-transcoding">Daily pay-as-you-go</a></li></td>
 </tr><tr>
-	<td colspan=2>Global acceleration</td>
-	<td>
-		<li>Downstream traffic and bandwidth will be generated when LVB is connecting users to global acceleration origin servers.</li>
-		<li>LVB offers two billing methods: bill-by-bandwidth and bill-by-traffic</b>.</li>
-	</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#global-acceleration">Daily pay-as-you-go</a></td>
-</tr>
-    <tr>
-	<td colspan=2>LVB recording</td>
-	<td>
-		<li>During LVB recording, a recording file is generated based on a recording template and is stored into VOD.</li>
-		<li>The services fees incurred by LVB recording are <b>billed by the peak number of concurrent LVB recording channels</b>.</li>
-	</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording">Monthly pay-as-you-go</a></td>
+  <td colspan=2>LVB recording</td>
+  <td>
+    <li>During LVB recording, a recording file is generated based on a recording template and is stored into VOD.</li>
+    <li>The services fees incurred by LVB recording are <b>billed by the peak number of concurrent LVB recording channels</b>.</li>
+  </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording">Monthly postpaid</a></td>
 </tr><tr>
 <td colspan=2>LVB screencapturing</td>
 <td>
-	<li>During LVB screencapturing, screenshots of a live stream are captured at scheduled time points according to a template and are stored into COS.</li>
-	<li>The service fees incurred by screencapturing are <b>billed by the number of screenshots</b>. The first 1,000 screenshots in every month are free of charge.</li>
+  <li>During LVB screencapturing, screenshots of a live stream are captured at scheduled time points according to a template and stored into COS.</li>
+  <li>The service fees incurred by screencapturing are <b>billed by the number of screenshots</b>. The first 1,000 screenshots in every month are free of charge.</li>
 </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-screencapturing">Monthly pay-as-you-go</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#lvb-screencapturing">Monthly postpaid</a></td>
 </tr><tr>
-	<td colspan=2>Screencapturing and porn detection</td>
-	<td>The screencapturing and porn detection features will incur fees respectively.
-		<li>The service fees incurred by porn detection are <b>billed by the number of pornographic screenshots detected</b>. The first 1,000 screenshots in every month are free of charge.</li>
-		<li>The service fees incurred by screencapturing are <b>billed by the number of screenshots</b>. The first 1,000 screenshots in every month are free of charge.</li>
+  <td colspan=2>Screencapturing and porn detection</td>
+  <td>The screencapturing and porn detection features will incur fees separately.
+    <li>The service fees incurred by porn detection are <b>billed by the number of pornographic screenshots detected</b>. The first 1,000 screenshots in every month are free of charge.</li>
+    <li>The service fees incurred by screencapturing are <b>billed by the number of screenshots</b>. The first 1,000 screenshots in every month are free of charge.</li>
 </td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#intelligent-porn-detection">Monthly pay-as-you-go</a></td>
-</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/2818#intelligent-porn-detection">Monthly postpaid</a></td>
 </tr><tr>
 </tr>
 </table>
  
 
 
-<span id="extensions"></span>
+[](id:extensions)
 ## Extended Service Fees
 
 <table>
 <tr><th width="20%">Billable Item</th><th width="60%">Description</th><th>Payment Mode</th></tr>
 <tr>
 <td>Recording storage</td>
-<td>Recording files generated by LVB recording need to be stored into VOD, and the incurred service fees are <b>billed by the actual storage duration and data volume</b>. You need to pay for the additional VOD storage fees.</td>
+<td>Recording files generated by LVB recording need to be stored into VOD, and the incurred service fees are <b>billed by the actual storage duration and data volume</b>. You also need to pay for the VOD storage fees.</td>
 <td><a href="https://intl.cloud.tencent.com/contact-sales">Contact sales</a></td>
 </tr><tr>
 <td>Screenshot storage</td>
-<td>Screenshot files generated by LVB screencapturing and porn detection need to be stored into COS, and the incurred service fees are <strong>billed by the actual storage duration and data volume</strong>. You need to pay for the additional COS storage fees.</td>
+<td>Screenshot files generated by LVB screencapturing and porn detection need to be stored into COS, and the incurred service fees are <strong>billed by the actual storage duration and data volume</strong>. You also need to pay for the COS storage fees.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/32534">COS pay-as-you-go</a></td>
 </tr></table>
-
