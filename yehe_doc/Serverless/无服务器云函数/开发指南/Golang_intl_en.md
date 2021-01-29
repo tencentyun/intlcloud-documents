@@ -58,7 +58,8 @@ You can use the `Start` function in the package in the `main` function through `
 
 An entry function is the function started by `cloudfunction.Start`, which usually handles the actual business. The input parameters and returned values of the entry function need to be written according to certain specifications.
 
-#### Input parameters<span id="Participation"></span>
+<span id="Participation"></span>
+#### Input parameters
 
 The entry function can have 0–2 input parameters, such as:
 
@@ -77,8 +78,8 @@ The JSON structure corresponding to the custom data structure usually correspond
 
 > The event structures of input parameters passed in by certain triggers have been defined and can be used directly. You can get and use the Go libraries through the [Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events) by importing "github.com/tencentyun/scf-go-lib/events"` into the code. If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-go-lib/issues/new) or [ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-
-#### Returned values<span id="ReturnValue"></span>
+<span id="ReturnValue"></span>
+#### Returned values
 
 The entry function can have 0–2 returned values, such as:
 
@@ -142,4 +143,5 @@ You can click the test button in the top-right corner on the console to open the
 
 ## Related Documents
 For more information on how to use relevant features, please see the following documents:
-- [Role and Authorization](<https://intl.cloud.tencent.com/document/product/583/31444>)
+- [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176)
+- [Network Configuration Management](https://intl.cloud.tencent.com/document/product/583/38377)
