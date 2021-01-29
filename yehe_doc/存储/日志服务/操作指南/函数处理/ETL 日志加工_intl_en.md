@@ -3,6 +3,8 @@
 This document describes how to use [SCF](https://intl.cloud.tencent.com/document/product/583) to process CLS logs. CLS is mainly used for log collection, and SCF mainly provides node computing capabilities for data processing.
 The data flow is as follows:
 
+![](https://main.qcloudimg.com/raw/3ad4864b402c547f8d7ba76746a1380f.png)
+
 ## Directions
 
 <span id="step01"></span>
