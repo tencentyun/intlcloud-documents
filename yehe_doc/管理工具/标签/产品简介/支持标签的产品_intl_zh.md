@@ -103,10 +103,13 @@
 ## 视频服务
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267">云直播 LVB </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">云直播</a></td>
 <td><li>域名</li><li>导播台</li></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">实时音视频 TRTC </a></td>
+<td><a href="https://cloud.tencent.com/document/product/267">云点播 </a></td>
+<td>子应用</td>
+</tr><tr>
+<td><a href="https://cloud.tencent.com/document/product/647">实时音视频 </a></td>
 <td>实时音视频应用</td>
 </tr></table>
 
