@@ -7,8 +7,9 @@ In use cases such as video and social networking, users upload high numbers of i
 SCF, FFmpeg, and COS can be used in combination as shown below to transcode audio and video files:
 ![](https://main.qcloudimg.com/raw/f78b7553884ea86ceef81ef21cd70d3e.png)
 In SCF, you can write custom business logic in different programming languages (Python, Node, PHP, Java, and Go). Taking transcoding as an example, the steps are as follows:
+
 1. Create a function and deploy the FFmpeg resource package and transcoding logic in it.
-2. Configure the COS bucket trigger to process the source video in real time.
+2. Configure a COS bucket trigger to process the source video in real time and generate logs, monitoring data, and alarms in a relayed manner.
 3. Return the transcoded video to COS and trigger automatic prefetch.
 
 
@@ -36,7 +37,7 @@ Compared with TKE, the combination of SCF and FFmpeg has the following advantage
 <td><ul class="params">
 <li>Different FFmpeg versions can be compiled into different executable files, deployed to "layers" of SCF functions, and decoupled from the business logic.</li>
 <li>Different functions can be written and bound to different FFmpeg versions at the "layers" to provide different transcoding features.</li>
-<li>A scheduling function can be written to shard videos and schedule different transcoding services.</li>
+<li>A scheduling function can be written to segment videos and schedule different transcoding services.</li>
 </ul></td>
 <td>The implementation methods do not differ greatly.</td>
 </tr>
@@ -97,26 +98,24 @@ Through comparison with TKE in multiple dimensions above, the following conclusi
 
 ## Prerequisites<span id="Precondition"></span>
 This document uses the Guangzhou region as an example:
-- Go to the [COS Console](https://console.cloud.tencent.com/cos5/bucket), create a bucket, and set the access permission of the bucket to **public read/private write**.
-- (Optional) If the video file is above 500 MB in size, you need to go to the CFS Console to activate the CFS service so as to expand the local storage space of SCF. For more information, please see [Mounting CFS File System](https://intl.cloud.tencent.com/document/product/583/37497).
-- Go to the CAM Console, create an execution role for SCF, and grant the role COS and CFS read/write permissions to authorize SCF to access the corresponding services.
+- Go to the [COS console](https://console.cloud.tencent.com/cos5/bucket), create a bucket, and set the access permission of the bucket to **public read/private write**.
+- (Optional) If the video file is above 500 MB in size, you need to go to the CFS console to activate the CFS service so as to expand the local storage space of SCF. For more information, please see [Mounting CFS File System](https://intl.cloud.tencent.com/document/product/583/37497).
+- Go to the CAM console, create an execution role for SCF, and grant the role COS and CFS read/write permissions to authorize SCF to access the corresponding services. For more information, please see [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176).
 
 
 ## Directions
 ### Creating function
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and click **Functions** on the left sidebar.
-2. Select the region where to create a function at the top of the "Functions" page and click **Create** to enter the function creation process.
-3. Create a function as follows in "Basic Info" on the "Create Function" page and click **Next**.
-
- - **Function Name**: enter a custom function name. This document uses `Transcode` as an example.
- - **Runtime Environment**: select "Pyhton 3.6".
- - **Create Method**: select **Function Template**.
- - **Fuzzy Search**: enter "Transcoding" and search.
- Click **Learn More** in the template to view relevant information in the "Template Details" pop-up window, which can be downloaded.
-4. On the "Function configuration" page, keep the default configuration and click **Complete**.
-5. Enter the "Function configuration" page of the created function, click **Edit** in the top-right corner, and complete the function configuration as follows:
- - **Environment Variable**: add the following environment variables and configure them.
-
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and click **Function Service** on the left sidebar.
+2. Select the region where to create a function at the top of the **Function Service** page and click **Create** to enter the function creation process.
+3. Select a function template as follows on the **Create Function** page as shown below:
+![](https://main.qcloudimg.com/raw/362904e7e8f06b386774aa83020a9a44.png)
+ - **Creation method**: select **Template**.
+ - **Fuzzy search**: enter **VideoTranscode** and search. This document uses the Python 3.6 runtime environment as an example.
+ Click **Learn More** in the template to view relevant information in the **Template Details** pop-up window, which can be downloaded.
+4. Click **Next**. The function name is automatically generated by default and can be modified as needed. Follow the prompts to configure the environment variables and execution role as shown below:
+![](https://main.qcloudimg.com/raw/d868aa48a842794c3490db8e0b4f6369.png)
+ - **Environment Variable**: enter as shown below:
+![](https://main.qcloudimg.com/raw/d3073bbe145a6b19f145ed5ed4fd75da.png)
 <table>
 <tr>
 <th>key</th><th>value</th>
@@ -131,29 +130,24 @@ This document uses the Guangzhou region as an example:
 <td>target_path</td><td>The specified directory of the bucket to which the output video will be uploaded after being transcoded.</td>
 </tr>
 </table>
- - **Execution Role**: check "Enable" and select the execution role created in [Prerequisites](#Precondition). `SCF_QcsRole` is selected here as an example.
+ - **Execution Role**: check **Enable**, select **Configure and use SCF template role**, and the system will automatically create and select an SCF template execution role associated with full access permissions of COS and CFS. You can also check **Use the existing role** and select the existing role created in [Prerequisites](#Precondition) in the drop-down list. This document takes **Configure and use SCF template role** as an example.
  During execution, the function will use the execution role to get a temporary key to read and write resources in the COS bucket.
-![](https://main.qcloudimg.com/raw/e65bc83ac430ac4d6858170b30c39960.png)
-6. Click **Save**.
-7. Select **Trigger Management** on the sidebar of the function and click **Create a Trigger**.
-8. In the "Create a Trigger" pop-up window, create a COS bucket trigger.
-.
+5. In the **Trigger Configurations** section, configure the COS trigger as shown below:
+![](https://main.qcloudimg.com/raw/d655b8da82572422b4a4c4eef59ded21.png)
 The main parameter information is as follows. Keep the remaining options as default:
- - **Trigger Method**: select "COS trigger".
- - **COS Bucket**: select a bucket. <b>If you want to store the source video and the output video in the same bucket, you need to configure the trigger with a prefix filtering rule `\`, such as `demo\`.</b>
-9. Click **Submit**.
-
+ - **Trigger Method**: select **COS trigger**.
+ - **COS Bucket**: select a bucket. <b>If you want to store the source video and the output video in the same bucket, you need to configure the trigger with a prefix filtering rule `/`, such as `demo/`.</b>
+6. Click **Complete**.
 
 
 ### (Optional) Configuring CFS mounting
 >? If you have activated the CFS service, please enable both the VPC and file system mounting capabilities in the function by following the steps below.
 >
-1. On the "Function configuration" page of the function, click **Edit** in the top-right corner and configure the function.
-
- - **VPC**: check "Enable" and select a VPC and subnet.
- - **File System**: check "Enable" and select the file system created in [Prerequisites](#Precondition).
-2. Click the **Function code** tab to enter the function code editing page and modify the file upload path.
-
+1. On the **Function configuration** page of the function, click **Edit** in the top-right corner and configure the function.
+ - **VPC**: check **Enable** and select a VPC and subnet.
+ - **File System**: check **Enable** and select the file system created in [Prerequisites](#Precondition).
+2. Click the **Function code** tab to enter the function code editing page and modify the file upload path as shown below:
+![](https://main.qcloudimg.com/raw/6a07faf2807ce47bb7d435fb1dc8a922.png)
 Comment on line 76 of the code and add the following code to line 77.
 ```
 upload_path = '/mnt/new-'+ key.split('/')[-1]
@@ -161,15 +155,14 @@ upload_path = '/mnt/new-'+ key.split('/')[-1]
 
 
 ## Testing Features
-Log in to the [COS Console](https://console.cloud.tencent.com/cos5/bucket), enter the corresponding bucket directory, upload a video file, and check whether a compressed video file is generated in the corresponding transcoding directory.
+Log in to the [COS console](https://console.cloud.tencent.com/cos5/bucket), enter the corresponding bucket directory, upload a video file, and check whether a compressed video file is generated in the corresponding transcoding directory as shown below:
 >? The time it takes to compress a video varies by video size. If a video is large, it will take longer to compress the video and display the output video.
 >
 
 
 
-
 ## Scalability
-You can add automated CDN purge/prefetch capabilities to the demo in this document. For example, when the output video is returned to the COS bucket, a new function can be triggered to execute the CDN purge/prefetch features.
+You can add automated CDN purge/prefetch capabilities to the demo in this document. For example, when the output video is returned to the COS bucket, a new function can be triggered to execute the CDN purge/prefetch features. For more information, please see [CDN Cache Purging](https://intl.cloud.tencent.com/document/product/436/37273).
 
-You can also leverage the high concurrence of SCF to implement fast transcoding or sharding. For example, function A can schedule tasks while function B can perform actual transcoding/sharding tasks. With the aid of the CFS mounting capabilities, you can also implement cross-function file sharing with ease.
+You can also leverage the high concurrence of SCF to implement fast transcoding or segmenting. For example, function A can schedule tasks while function B can perform actual transcoding/segmenting tasks. With the aid of the CFS mounting capabilities, you can also implement cross-function file sharing with ease.
 
