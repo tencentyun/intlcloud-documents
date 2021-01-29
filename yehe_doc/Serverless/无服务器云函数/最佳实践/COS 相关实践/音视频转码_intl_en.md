@@ -95,8 +95,8 @@ Through comparison with TKE in multiple dimensions above, the following conclusi
 
 
 
-
-## Prerequisites<span id="Precondition"></span>
+<span id="Precondition"></span>
+## Prerequisites
 This document uses the Guangzhou region as an example:
 - Go to the [COS console](https://console.cloud.tencent.com/cos5/bucket), create a bucket, and set the access permission of the bucket to **public read/private write**.
 - (Optional) If the video file is above 500 MB in size, you need to go to the CFS console to activate the CFS service so as to expand the local storage space of SCF. For more information, please see [Mounting CFS File System](https://intl.cloud.tencent.com/document/product/583/37497).
