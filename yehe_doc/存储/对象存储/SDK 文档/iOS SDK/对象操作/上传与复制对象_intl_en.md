@@ -7,77 +7,74 @@ This document provides an overview of APIs and SDK sample codes related to uploa
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
-| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using HTML form | Uploads an object using HTML form |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to bucket |
+| [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | Uploading an object using an HTML form | Uploads an object using an HTML form |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object (modifying object attributes) | Copies a file to a destination path |
 
-**Multipart operations**
+**Multipart upload operations**
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts |  Queries the uploaded parts of a specific multipart upload |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information about an ongoing multipart upload |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading parts | Uploads an object in multiple parts |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as part |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts |  Queries the uploaded parts of a specific multipart upload operation |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts |
 
 ## SDK API Reference
 
-For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
+For parameters and method description of all APIs in the SDK, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Advanced APIs (recommended)
+## Advanced APIs (Recommended)
 
 ### Uploading an object
 
-The advanced upload API encapsulates both PUT Object (simple upload) and multipart upload APIs, and can automatically select the upload method based on file size. It also supports checkpoint restart for resuming a suspended multipart upload.
+The advanced APIs encapsulate the simple upload and multipart upload APIs and can intelligently select the upload method based on file size. They also support checkpoint restart for resuming interrupted operations.
 
-#### Sample 1. Uploading a local file
+#### Sample code 1: Uploading a local file
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-// Local file path
+/** Path of the local file. Ensure that the URL starts with "file://" in the following format:
+1. [NSURL URLWithString:@"file:////var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
+*/
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 put.object = @"exampleobject";
-
-// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
 put.body =  url;
 // Monitor the upload progress
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
-    //      bytesSent                   Number of new bytes
+    //      bytesSent                   Number of new bytes sent
     // totalBytesSent              Total number of bytes sent in the upload
     // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 }];
-
-// Monitor the upload result
+// Monitor the upload result.
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject returns information such as the Etag or custom headers in the response
+    // outputObject contains information such as the ETag or custom headers in the response.
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
-
 [put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
                                         multipleUploadInitResult,
                                         QCloudCOSXMLUploadObjectResumeData resumeData) {
-    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId
+    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId.
     NSString* uploadId = multipleUploadInitResult.uploadId;
 }];
-
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 **Swift**
 
@@ -88,33 +85,33 @@ let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObj
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 put.object = "exampleobject";
 
-// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 
 // Monitor the upload result
 put.setFinish { (result, error) in
-    // Get the upload result
+    // Get the upload result.
     if let result = result {
-        // Etag of the file
+        // ETag of the file
         let eTag = result.eTag
     } else {
         print(error!);
     }
 }
 
-// Monitor the upload progress
+// Monitor the upload progress.
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
-    //      bytesSent                   Number of new bytes sent
+    // bytesSent                   Number of new bytes sent
     // totalBytesSent              Total number of bytes sent in the upload
     // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 };
-// Set the upload parameters
+// Set the upload parameters.
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
-    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId
+    // This block will be called back after the Initiate Multipart Upload operation is complete so you can get resumeData and the uploadId.
     if let multipleUploadInitResult = multipleUploadInitResult {
         let uploadId = multipleUploadInitResult.uploadId
     }
@@ -125,9 +122,9 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-#### Sample 2. Uploading binary data
+#### Sample code 2: Uploading binary data
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-upload-bytes)
@@ -137,22 +134,22 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 put.object = @"exampleobject";
 
-// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
 put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 
-// Monitor the upload progress
+// Monitor the upload progress.
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
-    //      bytesSent                   Number of new bytes
+    //      bytesSent                   Number of new bytes sent
     // totalBytesSent              Total number of bytes sent in the upload
     // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 }];
 
-// Monitor the upload result
+// Monitor the upload result.
 [put setFinishBlock:^(id outputObject, NSError *error) {
     // `outputObject` contains all the HTTP response headers
     NSDictionary* info = (NSDictionary *) outputObject;
@@ -162,7 +159,7 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 **Swift**
 
@@ -173,29 +170,29 @@ let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObj
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 put.object = "exampleobject";
 
 // Content of the object to be uploaded
 let dataBody:NSData = "wrwrwrwrwrw".data(using: .utf8)! as NSData;
 put.body = dataBody;
 
-// Monitor the upload result
+// Monitor the upload result.
 put.setFinish { (result, error) in
-    // Get the upload result
+    // Get the upload result.
     if let result = result {
-        // Etag of the file
+        // ETag of the file
         let eTag = result.eTag
     } else {
         print(error!);
     }
 }
 
-// Monitor the upload progress
+// Monitor the upload progress.
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
     
-    //      bytesSent                   Number of new bytes sent
+    // bytesSent                   Number of new bytes sent
     // totalBytesSent              Total number of bytes sent in the upload
     // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
 };
@@ -205,9 +202,9 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-#### Sample 5. Suspending, resuming and canceling an upload
+#### Sample code 3. Suspending, resuming, and canceling an upload
 **Objective-C**
 
 To suspend an upload, use the code below:
@@ -218,7 +215,7 @@ NSError *error;
 NSData *resmeData = [put cancelByProductingResumeData:&error];
 ```
 
-To resume a suspended download, run the code below:
+To resume a suspended download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```objective-c
@@ -226,11 +223,11 @@ QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectReques
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];
 ```
 
-To cancel an upload, run this code:
+To cancel an upload, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-cancel)
 ```objective-c
-// Abort the upload
+// Abort the upload.
 [put abort:^(id outputObject, NSError *error) {
     
 }];
@@ -249,7 +246,7 @@ var error : NSError?;
 var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
 ```
 
-To resume a suspended download, run the code below:
+To resume a suspended download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```swift
@@ -257,11 +254,11 @@ var resumeRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: upl
 QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeRequest);
 ```
 
-To cancel an upload, run this code:
+To cancel an upload, use the code below:
 
 [//]: # (.cssg-snippet-transfer-upload-cancel)
 ```swift
-// Abort the upload
+// Abort the upload.
 put.abort { (outputObject, error) in
     
 }
@@ -270,7 +267,7 @@ put.abort { (outputObject, error) in
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift).
 
-#### 
+#### Sample code 4. Uploading multiple objects
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-batch-upload-objects)
@@ -281,22 +278,22 @@ for (int i = 0; i<20; i++) {
     // Bucket name in the format: `BucketName-APPID`
     put.bucket = @"examplebucket-1250000000";
     
-    // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+    // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
     put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
     
-    // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+    // Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
     put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
     
-    // Monitor the upload progress
+    // Monitor the upload progress.
     [put setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
-        //      bytesSent                   Number of new bytes
+        //      bytesSent                   Number of new bytes sent
         // totalBytesSent              Total number of bytes sent in the upload
         // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
     }];
     
-    // Monitor the upload result
+    // Monitor the upload result.
     [put setFinishBlock:^(id outputObject, NSError *error) {
         // `outputObject` contains all the HTTP response headers
         NSDictionary* info = (NSDictionary *) outputObject;
@@ -315,29 +312,29 @@ for i in 1...10 {
     // Bucket name in the format: `BucketName-APPID`
     put.bucket = "examplebucket-1250000000";
     
-    // Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+    // Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
     put.object = "exampleobject-".appendingFormat("%d", i);
     
     // Content of the object to be uploaded
     let dataBody:NSData = "wrwrwrwrwrw".data(using: .utf8)! as NSData;
     put.body = dataBody;
     
-    // Monitor the upload result
+    // Monitor the upload result.
     put.setFinish { (result, error) in
-        // Get the upload result
+        // Get the upload result.
         if let result = result {
-            // Etag of the file
+            // ETag of the file
             let eTag = result.eTag
         } else {
             print(error!);
         }
     }
 
-    // Monitor the upload progress
+    // Monitor the upload progress.
     put.sendProcessBlock = { (bytesSent, totalBytesSent,
         totalBytesExpectedToSend) in
         
-        //      bytesSent                   Number of new bytes sent
+        // bytesSent                   Number of new bytes sent
         // totalBytesSent              Total number of bytes sent in the upload
         // totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
     };
@@ -348,7 +345,7 @@ for i in 1...10 {
 
 ### Copying an object
 
-The advanced replication API encapsulates PUT Object - Copy, and the APIs for multipart replication to allow asynchronous requests for suspending, resuming and canceling a replication request.
+The advanced APIs encapsulate async requests for the simple copy and multipart copy APIs and support pausing, resuming, and canceling copy requests.
 
 #### Sample code
 **Objective-C**
@@ -360,29 +357,29 @@ QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] 
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
 
-// Bucket of the source file, which should be public-read, or your account should have access to
+// Source bucket containing the file; the current account needs to have access permission for the bucket, or the bucket should have public-read permission enabled.
 request.sourceBucket = @"sourcebucket-1250000000";
 
-// Source file name
+// Name of the source file
 request.sourceObject = @"sourceObject";
 
-// Source file APPID
+// APPID of the source file
 request.sourceAPPID = @"1250000000";
 
-// Source file’s region
+// Source region
 request.sourceRegion= @"COS_REGION";
 
 [request setFinishBlock:^(QCloudCopyObjectResult* result, NSError* error) {
-    // outputObject returns information such as the Etag or custom headers in the response 
+    // outputObject contains information such as the ETag or custom headers in the response.
 }];
 
 // Note that for cross-region replication, the region used for `transferManager` must be the region of the destination bucket
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] CopyObject:request];
 
-// Cancel copy
+// Cancel the copy.
 // To cancel the copy operation, call `cancel`
 [request cancel];
 ```
@@ -398,25 +395,25 @@ let copyRequest =  QCloudCOSXMLCopyObjectRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 copyRequest.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 copyRequest.object = "exampleobject";
 
-// Bucket of the source file, which should be public-read, or your account should have access to
+// Source bucket containing the file; the current account needs to have access permission for the bucket, or the bucket should have public-read permission enabled.
 // Bucket name in the format: `BucketName-APPID`
 copyRequest.sourceBucket = "sourcebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 copyRequest.sourceObject = "sourceObject";
 
-// Source file APPID
+// APPID of the source file
 copyRequest.sourceAPPID = "1250000000";
 
-// Source file’s region
+// Source region
 copyRequest.sourceRegion = "COS_REGION";
 
 copyRequest.setFinish { (copyResult, error) in
     if let copyResult = copyResult {
-        // Etag of the file
+        // ETag of the file
         let eTag = copyResult.eTag
     } else {
         print(error!);
@@ -426,8 +423,8 @@ copyRequest.setFinish { (copyResult, error) in
 // Note that for cross-region replication, the region used for `transferManager` must be the region of the destination bucket
 QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyRequest);
 
-// Cancel copy
-// To cancel the copy operation, call `cancel`
+// Cancel the copy.
+// To cancel the copy operation, call `cancel`.
 copyRequest.cancel();
 ```
 
@@ -437,13 +434,11 @@ copyRequest.cancel();
 
 ### Uploading an object using simple upload
 
-#### API description 
+#### API description
 
-This API is used to upload an object to a specified bucket. This operation requires the requester to have WRITE permission for the bucket and can upload a file of up to 5 GB in size. To upload larger objects, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [the advanced upload API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
+This API (PUT Object) is used to upload an object smaller than 5 GB to a specified bucket. To call this API, you need to have permission to write the bucket. If the object size is larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) for the upload.
 
-> !
-> 1. The Key (file name) cannot end with `/`; otherwise, it will be identified as a folder.
-> 2. Each root account (APPID) can have up to 1,000 bucket ACLs and an unlimited number of object ACLs. If you do not need ACL control over an object, please leave it to the default option of inheriting bucket permissions.
+> ! The Key (filename) cannot end with `/`; otherwise, it will be identified as a folder.
 
 #### Sample code
 **Objective-C**
@@ -455,10 +450,10 @@ QCloudPutObjectRequest* put = [QCloudPutObjectRequest new];
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 put.object = @"exampleobject";
 
-// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+// Content of the object. You can pass variables of the NSData* or NSURL* type.
 put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
 [put setFinishBlock:^(id outputObject, NSError *error) {
@@ -471,7 +466,7 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 **Swift**
 
@@ -481,15 +476,15 @@ let putObject = QCloudPutObjectRequest<AnyObject>.init();
 
 // Bucket name in the format: `BucketName-APPID`
 putObject.bucket = "examplebucket-1250000000";
-// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
+// Content of the object to be uploaded. You can pass variables of the `NSData*` or `NSURL*` type.
 let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
 putObject.body =  dataBody!;
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 putObject.object = "exampleobject";
 putObject.finishBlock = {(result,error) in
     if let result = result {
-        // “result” contains response headers
+        // "result" contains response headers.
     } else {
         print(error!);
     }
@@ -499,46 +494,39 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 >?
 >- For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift).
->- You can generate a download URL for the uploaded file using the same key. For detailed directions, see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
+>- You can generate a download URL for the uploaded file using the same key. For detailed directions, please see [Generating a Pre-Signed Link](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
 ### Copying an object (modifying object attributes)
 
-This API is used to copy a file to a destination path.
+This API (PUT Object-Copy) is used to copy an object to a destination path.
 
-#### Sample 1. Copying an object while retaining its attributes
+#### Sample code 1: Copying an object with its attributes preserved
 **Objective-C**
 
 [//]: # (.cssg-snippet-copy-object)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
-
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
-// If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
+// If set to `Copy`, the user-defined metadata in the header will be ignored and the metadata will be copied directly.
 // If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), it must be specified as `Replaced`
 request.metadataDirective = @"Copy";
-
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 request.accessControlList = @"default";
-
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
 @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
-// Specify the `versionID` of the source file. This parameter is only relevant for buckets where versioning is enabled or suspended
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
 request.versionID = @"objectVersion1";
-
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    //“result” contains the request result
+    // "result" contains the request result.
  
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
@@ -551,30 +539,23 @@ request.versionID = @"objectVersion1";
 [//]: # (.cssg-snippet-copy-object)
 ```swift
 let putObjectCopy = QCloudPutObjectCopyRequest.init();
-
 // Bucket name in the format: `BucketName-APPID`
 putObjectCopy.bucket = "examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 putObjectCopy.object = "exampleobject";
-
-//The path to the source object
+// Path of the source object
 putObjectCopy.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
-// If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
-// If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), it must be specified as `Replaced`
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
+// If set to `Copy`, the user-defined metadata in the header will be ignored and the metadata will be copied directly.
+// If set to `Replaced`, the metadata will be modified based on the header. If the destination path is the same as the source path (i.e., you want to modify the metadata), it must be set to `Replaced`.
 putObjectCopy.metadataDirective = "Copy";
-
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 putObjectCopy.accessControlList = "default";
-
-// Specify the `versionID` of the source file. This parameter is only relevant for buckets where versioning is enabled or suspended
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
 putObjectCopy.versionID = "versionID";
-
 putObjectCopy.setFinish { (result, error) in
     if let result = result {
         let eTag = result.eTag
@@ -587,49 +568,42 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift).
 
-#### Sample 2. Copying an object while replacing its attributes
+#### Sample code 2: Copying an object while replacing its attributes
 **Objective-C**
 
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
-
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
-// If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
-// If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), it must be specified as `Replaced`
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
+// If set to `Copy`, the user-defined metadata in the header will be ignored and the metadata will be copied directly.
+// If set to `Replaced`, the metadata will be modified based on the header. If the destination path is the same as the source path (i.e., you want to modify the metadata), it must be set to `Replaced`.
 request.metadataDirective = @"Replaced";
-
 // Modify the metadata
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
-
-// Object storage class. For enumerate values, such as
-// `STANDARD_IA`, and `ARCHIVE`, please see the Storage Class documentation. This header will be returned only if the storage class of the object is not `STANDARD`
+// Object storage class. For the enumerated values, please see Storage Class Overview.
+// `STANDARD_IA` and `ARCHIVE`. For the enumerated values, please see the Storage Class documentation. This header will be returned only if the storage class of the file is not `STANDARD`.
 // Modify the storage class
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-storage-class"];
-
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 // Modify the ACL
 request.accessControlList = @"private";
-
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
     @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 
-// Specify the `versionID` of the source file. This parameter is only relevant for buckets where versioning is enabled or suspended
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
 request.versionID = @"objectVersion1";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    //“result” contains the request result
+    // "result" contains the request result.
     
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
@@ -642,38 +616,30 @@ request.versionID = @"objectVersion1";
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
-
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = "examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = "exampleobject";
-
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
-// If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
-// If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), it must be specified as `Replaced`
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
+// If set to `Copy`, the user-defined metadata in the header will be ignored and the metadata will be copied directly.
+// If set to `Replaced`, the metadata will be modified based on the header. If the destination path is the same as the source path (i.e., you want to modify the metadata), it must be set to `Replaced`.
 request.metadataDirective = "Replaced";
-
-// Modify the metadata
+// Modify the metadata.
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*");
-
-// Object storage class. For enumerate values, such as
-// `STANDARD_IA`, and `ARCHIVE`, please see the Storage Class documentation. This header will be returned only if the storage class of the object is not `STANDARD`
-// Modify the storage class
+// Object storage class. For the enumerated values, please see Storage Class Overview.
+// `STANDARD_IA` and `ARCHIVE`. For the enumerated values, please see the Storage Class documentation. This header will be returned only if the storage class of the file is not `STANDARD`.
+// Modify the storage class.
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
-
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
-// Modify the ACL
+// Modify the ACL.
 request.accessControlList = "Source file ACL";
-//The path to the source object
+// Path of the source object
 request.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-
-// Specify the `versionID` of the source file. This parameter is only relevant for buckets where versioning is enabled or suspended
+// Specify the `versionID` of the source file. This parameter is only returned for buckets whose versioning is enabled or suspended.
 request.versionID = "versionID";
-
 request.setFinish { (result, error) in
     if let result = result {
         let eTag = result.eTag
@@ -687,39 +653,34 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift).
 
-#### Sample 3. Modifying object metadata
+#### Sample code 3: Modifying object metadata
 **Objective-C**
 
 [//]: # (.cssg-snippet-modify-object-metadata)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
-
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
-// If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
-// If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path (i.e., when you want to modify the metadata), it must be specified as `Replaced`
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
+// If set to `Copy`, the user-defined metadata in the header will be ignored and the metadata will be copied directly.
+// If set to `Replaced`, the metadata will be modified based on the header. If the destination path is the same as the source path (i.e., you want to modify the metadata), it must be set to `Replaced`.
 request.metadataDirective = @"Replaced";
-
-// Custom headers
+// Custom object header
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
-
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 request.accessControlList = @"default";
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
     @"examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    //“result” contains the request result
+    // "result" contains the request result.
     
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
@@ -736,31 +697,31 @@ let request : QCloudPutObjectCopyRequest = QCloudPutObjectCopyRequest();
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = "exampleobject";
 
-// Indicate whether to copy metadata. Enumerated values: Copy (default), Replaced
+// Indicates whether to copy metadata. Enumerated values: Copy, Replaced. Default value: Copy
 // If this field is specified as `Copy`, the user-defined metadata in the header will be ignored and the object will be copied directly
 // If it is specified as `Replaced`, the metadata will be modified based on the header information. If the destination path is the same as the source path
-// (i.e., when you want to modify the metadata), it must be specified as `Replaced`
+// (i.e., you want to modify the metadata), it must be set to `Replaced`.
 request.metadataDirective = "Replaced";
 
-// Custom headers
+// Custom object header
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*")
 
 // Define the ACL attribute of the object. Valid values: private, public-read, default.
 // Default value: default (i.e., the object will inherit the bucket's permissions).
-// Note: currently, you can configure up to 1,000 bucket ACLs. If you do not need ACL control over an object, specify `default` for this parameter,
+// Note: If you do not need ACL for the object, please use default.
 // or simply leave it blank, and the object will inherit the permissions of the bucket by default.
 request.accessControlList = "default";
 
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 request.setFinish { (result, error) in
     if let result = result {
-        // Generate Etag for the destination object
+        // ETag of the destination object
         let eTag = result.eTag
     } else {
         print(error!);
@@ -772,7 +733,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift).
 
-#### Sample 4. Modifying the storage class of an object
+#### Sample code 4: Modifying the storage class of an object
 **Objective-C**
 
 [//]: # (.cssg-snippet-modify-object-storage-class)
@@ -782,23 +743,23 @@ QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
 
-// Object storage class. For enumerate values, such as
-// `STANDARD_IA`, and `ARCHIVE`, please see the Storage Class documentation. This header will be returned only if the storage class of the object is not `STANDARD`
+// Object storage class. For the enumerated values, please see Storage Class Overview.
+// `STANDARD_IA` and `ARCHIVE`. For the enumerated values, please see the Storage Class documentation. This header will be returned only if the storage class of the file is not `STANDARD`.
 [request.customHeaders setValue:@"ARCHIVE" forKey:@"x-cos-storage-class"];
 
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
     @"examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
-// Specify the `versionID` of the source file. This parameter is only relevant for buckets where versioning is enabled or suspended
+// Specify the `versionID` of the source file. This parameter is only returned for buckets where versioning is enabled or suspended
 request.versionID = @"";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    //“result” contains the request result
+    // "result" contains the request result.
    
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
@@ -815,19 +776,19 @@ let request : QCloudPutObjectCopyRequest = QCloudPutObjectCopyRequest();
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = "exampleobject";
 
-// Object storage class. For enumerate values, such as
-// `STANDARD_IA`, and `ARCHIVE`, please see the Storage Class documentation. This header will be returned only if the storage class of the object is not `STANDARD`
+// Object storage class. For the enumerated values, please see Storage Class Overview.
+// `STANDARD_IA` and `ARCHIVE`. For the enumerated values, please see the Storage Class documentation. This header will be returned only if the storage class of the file is not `STANDARD`.
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
-//The path to the source object
+// Path of the source object
 request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 request.setFinish { (result, error) in
     if let result = result {
-        // Generate Etag for the destination object
+        // ETag of the destination object
         let eTag = result.eTag
     } else {
         print(error!);
@@ -841,31 +802,31 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 ## Multipart Operations
 
-The multipart operation process is outlined below.
+The multipart upload process is outlined below.
 
-#### How to perform a multipart upload/replication
+#### Multipart upload/copy process
 
 1. Initialize the multipart upload with `Initiate Multipart Upload` and get the `UploadId`.
 2. Use the `UploadId` to upload parts with `Upload Part` or copy parts with `Upload Part Copy`
 3. Complete the multipart upload with `Complete Multipart Upload`.
 
-#### How to resume a multipart upload/replication
+#### How to resume a multipart upload/copy operation
 
-1. If you did not record the `UploadId` of a multipart upload, you can query the multipart upload with `List Multipart Uploads` to get it.
+1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Use the `UploadId` to list the uploaded parts with `List Parts`.
 3. Use the `UploadId` to upload the remaining parts with `Upload Part` or copy the remaining parts with `Upload Part Copy`.
 4. Complete the multipart upload with `Complete Multipart Upload`.
 
-#### How to abort a multipart upload/replication
+#### Multipart upload/copy termination process
 
-1. If you did not record the `UploadId` of a multipart upload, you can query the multipart upload with `List Multipart Uploads` to get it.
+1. If you did not record the `UploadId` of the multipart upload, you can query the multipart upload job with `List Multipart Uploads` to get the `UploadId` of the corresponding file.
 2. Abort the multipart upload and delete the uploaded parts with `Abort Multipart Upload`.
 
 ### Querying multipart uploads
 
-#### API description 
+#### API description
 
-This API is used to query in-progress multipart uploads in a specified bucket.
+This API (List Multipart Uploads) is used to query the ongoing multipart uploads in a bucket.
 
 #### Sample code
 **Objective-C**
@@ -873,20 +834,16 @@ This API is used to query in-progress multipart uploads in a specified bucket.
 [//]: # (.cssg-snippet-list-multi-upload)
 ```objective-c
 QCloudListBucketMultipartUploadsRequest* uploads = [QCloudListBucketMultipartUploadsRequest new];
-
 // Bucket name in the format: `BucketName-APPID`
 uploads.bucket = @"examplebucket-1250000000";
-
-// Set the maximum number of multipart uploads to return. Value range: 1-1000
+// Set the maximum number of multiparts to be returned. Valid value: 1–1000
 uploads.maxUploads = 100;
-
 [uploads setFinishBlock:^(QCloudListMultipartUploadsResult* result,
                           NSError *error) {
-    // “result” returns the information on in-progress multipart uploads
-    // Object for which the in-progress multipart upload is performed
+    // Get the information on in-progress multipart uploads from `result`
+    // Object in the ongoing multipart upload
     NSArray<QCloudListMultipartUploadContent*> *uploads = result.uploads;
 }];
-
 [[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
 ```
 
@@ -906,7 +863,7 @@ listParts.maxUploads = 100;
 
 listParts.setFinish { (result, error) in
     if let result = result {
-        // List all incomplete multipart uploads
+        // List all unfinished multipart uploads.
         let uploads = result.uploads;
     } else {
         print(error!);
@@ -919,9 +876,9 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 
 ### Initializing a multipart upload
 
-#### API description 
+#### API description
 
-This API is used to initialize a multipart upload, and gets its uploadId.
+This API (Initiate Multipart Upload) is used to initialize a multipart upload operation and get its `UploadID`.
 
 #### Sample code
 **Objective-C**
@@ -929,33 +886,24 @@ This API is used to initialize a multipart upload, and gets its uploadId.
 [//]: # (.cssg-snippet-init-multi-upload)
 ```objective-c
 QCloudInitiateMultipartUploadRequest* initRequest = [QCloudInitiateMultipartUploadRequest new];
-
 // Bucket name in the format: `BucketName-APPID`
 initRequest.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 initRequest.object = @"exampleobject";
-
 // This will be returned as object metadata
 initRequest.cacheControl = @"cacheControl";
-
 initRequest.contentDisposition = @"contentDisposition";
-
 // Define the ACL attribute of the object. Valid values: private (default), public-read-write, public-read
 initRequest.accessControlList = @"public";
-
-// Grant read permission
+// Grant read permission.
 initRequest.grantRead = @"grantRead";
-
-// Grant write permission
+// Grant write permission.
 initRequest.grantWrite = @"grantWrite";
-
 // Grant read and write permission; grantFullControl = grantWrite + grantRead
 initRequest.grantFullControl = @"grantFullControl";
-
 [initRequest setFinishBlock:^(QCloudInitiateMultipartUploadResult* outputObject,
                               NSError *error) {
-    // Get `uploadId` of the multipart upload for use in subsequent part uploads
+    // Get the `uploadId` of the multipart upload. This ID is required for subsequent uploads. Please save it for future use.
     self->uploadId = outputObject.uploadId;
     
 }];
@@ -974,12 +922,12 @@ let initRequest = QCloudInitiateMultipartUploadRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 initRequest.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 initRequest.object = "exampleobject";
 
 initRequest.setFinish { (result, error) in
     if let result = result {
-        // Get `uploadId` of the multipart upload for use in subsequent part uploads
+        // Get the `uploadId` of the multipart upload. This ID is required for subsequent uploads. Please save it for future use.
         self.uploadId = result.uploadId;
     } else {
         print(error!);
@@ -990,9 +938,9 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift).
 
-### Upload a part
+### Uploading a part
 
-This API is used to upload parts in a multipart upload.
+This API (Upload Part) is used to upload parts in a multipart upload.
 
 #### Sample code
 **Objective-C**
@@ -1000,22 +948,16 @@ This API is used to upload parts in a multipart upload.
 [//]: # (.cssg-snippet-upload-part)
 ```objective-c
 QCloudUploadPartRequest* request = [QCloudUploadPartRequest new];
-
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
-
 // Part number
 request.partNumber = 1;
-
-// uploadId that identifies the multipart upload. It was returned by calling the “Initiate Multipart Upload” API
+// The ID of the multipart upload. When you use the `Initiate Multipart Upload` API to initialize a multipart upload, you will get an `uploadId`
 request.uploadId = uploadId;
-
-// Data to upload must follow one of the three formats: NSData*, NSURL (local URL) and QCloudFileOffsetBody*
+// Uploaded data. NSData *, NSURL (local URL), and QCloudFileOffsetBody * are supported.
 request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
-
 [request setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
@@ -1026,10 +968,10 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 }];
 [request setFinishBlock:^(QCloudUploadPartResult* outputObject, NSError *error) {
     QCloudMultipartInfo *part = [QCloudMultipartInfo new];
-    // Get Etag of the uploaded part
+    // Get the ETag of the uploaded part.
     part.eTag = outputObject.eTag;
     part.partNumber = @"1";
-    // Save it for use in completing the upload
+    // Save it for future use after the upload is complete
     self.parts = @[part];
 
 }];
@@ -1048,7 +990,7 @@ let uploadPart = QCloudUploadPartRequest<AnyObject>.init();
 // Bucket name in the format: `BucketName-APPID`
 uploadPart.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 uploadPart.object = "exampleobject";
 uploadPart.partNumber = 1;
 
@@ -1065,10 +1007,10 @@ uploadPart.body = dataBody!;
 uploadPart.setFinish { (result, error) in
     if let result = result {
         let mutipartInfo = QCloudMultipartInfo.init();
-        // Get Etag of the part
+        // Get the ETag of the part.
         mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
-        // Save it for use in completing the upload
+        // Save it for completing the upload.
         self.parts = [mutipartInfo];
     } else {
         print(error!);
@@ -1089,9 +1031,9 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 
 ### Copying a part
 
-#### API description 
+#### API description
 
-This API is used to copy an object as a part.
+This API (Upload Part-Copy) is used to copy an object as a part.
 
 #### Sample code
 **Objective-C**
@@ -1103,13 +1045,13 @@ QCloudUploadPartCopyRequest* request = [[QCloudUploadPartCopyRequest alloc] init
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
 
-// URL of the source file. An object version can be specified by using the `versionid` subresource
+// URL path of the source file. A previous version can be specified by using the `versionid` subresource.
 request.source = @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 
-// uploadId that the Initiate Multipart Upload request returned to uniquely identify the upload
+// The Initiate Multipart Upload request returns an upload ID used to uniquely identify the upload.
 request.uploadID = uploadId;
 
 // Number that identifies the part
@@ -1118,10 +1060,10 @@ request.partNumber = 1;
 [request setFinishBlock:^(QCloudCopyObjectResult* result, NSError* error) {
     QCloudMultipartInfo *part = [QCloudMultipartInfo new];
     
-    // Get Etag of the copied part
+    // Get the ETag of the copied part.
     part.eTag = result.eTag;
     part.partNumber = @"1";
-    // Save it for use in completing the upload
+    // Save it for future use after the upload is complete
     self.parts=@[part];
     
 }];
@@ -1140,12 +1082,12 @@ let req = QCloudUploadPartCopyRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 req.object = "exampleobject";
 
-// URL of the source file. An object version can be specified by using the `versionid` subresource
+// URL path of the source file. A previous version can be specified by using the `versionid` subresource.
 req.source = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-// uploadId that the Initiate Multipart Upload request returned to uniquely identify the upload
+// The Initiate Multipart Upload request returns an upload ID used to uniquely identify the upload.
 if let uploadId = self.uploadId {
     req.uploadID = uploadId;
 }
@@ -1155,10 +1097,10 @@ req.partNumber = 1;
 req.setFinish { (result, error) in
     if let result = result {
         let mutipartInfo = QCloudMultipartInfo.init();
-        // Get Etag of the copied part
+        // Get the ETag of the copied part.
         mutipartInfo.eTag = result.eTag;
         mutipartInfo.partNumber = "1";
-        // Save it for use in completing the upload
+        // Save it for completing the upload.
         self.parts = [mutipartInfo];
     } else {
         print(error!);
@@ -1171,9 +1113,9 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 
 ### Querying uploaded parts
 
-#### API description 
+#### API description
 
-This API is used to query the uploaded parts of a specific multipart upload.
+This API (List Parts) is used to query the uploaded parts of a multipart upload.
 
 #### Sample code
 **Objective-C**
@@ -1182,19 +1124,19 @@ This API is used to query the uploaded parts of a specific multipart upload.
 ```objective-c
 QCloudListMultipartRequest* request = [QCloudListMultipartRequest new];
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 request.object = @"exampleobject";
 
 // Bucket name in the format: BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
 
-// uploadId that the Initiate Multipart Upload request returned to uniquely identify the upload
+// The Initiate Multipart Upload request returns an upload ID used to uniquely identify the upload.
 request.uploadId = uploadId;
 
 [request setFinishBlock:^(QCloudListPartsResult * _Nonnull result,
                           NSError * _Nonnull error) {
     
-    // “result” returns information on uploaded parts
+    // Get the information on uploaded parts from `result`
     // Information on each part
     NSArray<QCloudMultipartUploadPart*> *parts = result.parts;
 }];
@@ -1210,13 +1152,13 @@ request.uploadId = uploadId;
 ```swift
 let req = QCloudListMultipartRequest.init();
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 req.object = "exampleobject";
 
 // Bucket name in the format: `BucketName-APPID`
 req.bucket = "examplebucket-1250000000";
 
-// uploadId that the Initiate Multipart Upload request returned to uniquely identify the upload
+// The Initiate Multipart Upload request returns an upload ID used to uniquely identify the upload.
 if let uploadId = self.uploadId {
     req.uploadId = uploadId;
 }
@@ -1236,30 +1178,26 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 
 ### Completing a multipart upload
 
-#### API description 
+#### API description
 
-This API is used to complete the multipart upload of an entire file.
+This API (Complete Multipart Upload) is used to complete the multipart upload of an entire file.
 
 #### Sample code
 **Objective-C**
+
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 completeRequst.object = @"exampleobject";
-
 // Bucket name in the format: `BucketName-APPID`
 completeRequst.bucket = @"examplebucket-1250000000";
-
-// `uploadId` of the multipart upload, which can be obtained from `QCloudInitiateMultipartUploadResult`, the result of the Initiate Multipart Upload request
+// `uploadId` of the multipart upload to be queried. This ID can be obtained from `QCloudInitiateMultipartUploadResult`, i.e. the result of the multipart upload initialization request
 completeRequst.uploadId = uploadId;
-
 // Information on the uploaded parts
 QCloudCompleteMultipartUploadInfo *partInfo = [QCloudCompleteMultipartUploadInfo new];
 NSMutableArray * parts = [self.parts mutableCopy];
-
-// Sort the uploaded parts
+// Sort the uploaded parts.
 [parts sortUsingComparator:^NSComparisonResult(QCloudMultipartInfo*  _Nonnull obj1,
                                                QCloudMultipartInfo*  _Nonnull obj2) {
     int a = obj1.partNumber.intValue;
@@ -1276,7 +1214,7 @@ completeRequst.parts = partInfo;
 
 [completeRequst setFinishBlock:^(QCloudUploadObjectResult * _Nonnull result,
                                  NSError * _Nonnull error) {
-    // “result” returns the upload result
+    // Get the upload result from "result".
 }];
 
 [[QCloudCOSXMLService defaultCOSXML] CompleteMultipartUpload:completeRequst];
@@ -1285,6 +1223,7 @@ completeRequst.parts = partInfo;
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m).
 
 **Swift**
+
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```swift
 let  complete = QCloudCompleteMultipartUploadRequest.init();
@@ -1292,11 +1231,11 @@ let  complete = QCloudCompleteMultipartUploadRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 complete.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 complete.object = "exampleobject";
 
-// `uploadId` of the multipart upload, which can be obtained from
-// `QCloudInitiateMultipartUploadResult`, the result of the Initiate Multipart Upload request
+// `uploadId` of the multipart upload to be queried. This ID can be obtained from
+// `QCloudInitiateMultipartUploadResult`, i.e., the result of the multipart upload initialization request
 complete.uploadId = "exampleUploadId";
 if let uploadId = self.uploadId {
     complete.uploadId = uploadId;
@@ -1315,7 +1254,7 @@ if self.parts != nil {
 complete.parts = completeInfo;
 complete.setFinish { (result, error) in
     if let result = result {
-        // Etag of the file
+        // ETag of the file
         let eTag = result.eTag
         // Unsigned file URL
         let location = result.location
@@ -1330,9 +1269,9 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 
 ### Aborting a multipart upload
 
-#### API description 
+#### API description
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Sample code
 **Objective-C**
@@ -1340,22 +1279,17 @@ This API is used to abort a multipart upload and delete the uploaded parts.
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```objective-c
 QCloudAbortMultipfartUploadRequest *abortRequest = [QCloudAbortMultipfartUploadRequest new];
-
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 abortRequest.object = @"exampleobject";
-
 // Bucket name in the format: `BucketName-APPID`
 abortRequest.bucket = @"examplebucket-1250000000";
-
 // `uploadId` of the multipart upload to be aborted.
-// This ID can be obtained from `QCloudInitiateMultipartUploadResult`, i.e. the result of the Initiate Multipart Upload request
+// This ID can be obtained from `QCloudInitiateMultipartUploadResult`, i.e. the result of the multipart upload initialization request
 abortRequest.uploadId = @"exampleUploadId";
-
 [abortRequest setFinishBlock:^(id outputObject, NSError *error) {
     // outputObject returns information such as the Etag or custom headers in the response 
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
-
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
@@ -1370,16 +1304,16 @@ let abort = QCloudAbortMultipfartUploadRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 abort.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
 abort.object = "exampleobject";
 
 // `uploadId` of the multipart upload to be queried. This ID can be obtained from
-// `QCloudInitiateMultipartUploadResult`, i.e. the result of the Initiate Multipart Upload request
+// `QCloudInitiateMultipartUploadResult`, i.e., the result of the multipart upload initialization request
 abort.uploadId = self.uploadId!;
 
 abort.finishBlock = {(result,error)in
     if let result = result {
-        // “result” obtains headers returned by the browser
+        // You can get the header information returned by the server from `result`
     } else {
         print(error!)
     }
@@ -1388,4 +1322,3 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
 >?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift).
-

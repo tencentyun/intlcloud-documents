@@ -20,28 +20,28 @@
     	 <tr>
         <td rowspan="5">Storage Class</td>
     			<td>STANDARD limits</td>
-    			<td>Billing limits:<br>There is no limit imposed on storage duration or storage size.<br>For more information on COS STANDARD billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br>There is no limit on storage duration or object size.<br>For more information about the billing of STANDARD, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
     	 <tr>
         <td>STANDARD_IA limits</td>
-    			<td>Billing limits:<br>An object stored less than 30 days is billed as 30 days.<br>An object less than 64 KB is billed as 64 KB.<br>For more information on COS STANDARD_IA billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br><li>An object stored less than 30 days is billed as 30 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it is billed based on its actual size.<br>For more information about the billing of STANDARD_IA, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Billing</a>.</td>
     </tr>
     	 <tr>
         <td>INTELLIGENT TIERING limits</td>
-    			<td>Billing limits:<br><br>A storage duration less than 30 days will be calculated as 30 days.<br>A single stored file less than 64 KB will be calculated as 64 KB.<br>For more information on COS INTELLIGENT TIERING billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br><li>An object stored less than 30 days is billed as 30 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of INTELLIGENT TIERING, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
     	 <tr>
         <td>ARCHIVE limits</td>
-    			<td>Billing limits:<br>An object stored less than 90 days is billed as 90 days.<br>An object less than 64 KB is billed as 64 KB.<br>For more information on COS ARCHIVE billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br><li>An object stored less than 90 days is billed as 90 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
     	 <tr>
         <td>DEEP ARCHIVE limits</td>
-    			<td>Billing limits:<br>An object stored less than 180 days is billed as 180 days.<br>An object less than 64 KB is billed as 64 KB.<br>For more information on COS ARCHIVE billing, please see <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.</td>
+    			<td>Billing limits:<br><li>An object stored less than 180 days is billed as 180 days.<br><li>An object smaller than 64 KB is billed as 64 KB. If the object size is greater than or equal to 64 KB, it will be billed based on its actual size.<br>For more information about the billing of DEEP ARCHIVE, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
      <tr>
         <td rowspan="4">Bucket</td>
     			<td>Limits</td>
-    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name can only be lowercase letters [a-z], numbers [0-9], hyphens (-) or a combination thereof, and is up to 50 characters.</td>
+    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name can only contain lowercase letters [a-z], numbers [0-9], hyphens (-), or a combination thereof, and can be up to 50 characters.</td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
@@ -66,7 +66,7 @@
     		</tr>
     		<tr>
     			<td >Replication</td>
-    			<td >1. You can perform intra-region or cross-region object replication with a Tencent Cloud account.<br>2. The intra-region object replication is free of charge while the cross-region object replication incurs traffic fees. For more information, please see traffic fees in <a href="https://intl.cloud.tencent.com/pricing/cos">Product Pricing</a>.<br>3. Replication API requirements:<br>&nbsp;&nbsp;(a) Simple replication: replicates a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Copy</a>.<br>&nbsp;&nbsp;(b) Multipart replication must be used for an object larger than 5 GB and up to 48.82 TB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Copy</a>.<br>4. Currently, objects cannot be replicated from STANDARD, STANDARD_IA or INTELLIGENT TIERING to INTELLIGENT TIERING.</td>
+    			<td >1. You can perform intra-region or cross-region object replication with a Tencent Cloud account.<br>2. The intra-region object replication is free of charge while the cross-region object replication incurs traffic fees. For more information, please see traffic fees in <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.<br>3. Replication API requirements:<br>&nbsp;&nbsp;(a) Simple replication: replicates a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Copy</a>.<br>&nbsp;&nbsp;(b) Multipart replication must be used for an object larger than 5 GB and up to 48.82 TB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Copy</a>.<br>4. Currently, objects cannot be replicated from STANDARD, STANDARD_IA or INTELLIGENT TIERING to INTELLIGENT TIERING.</td>
     		</tr>
     		<tr>
     			<td>Deleting multiple objects</td>
@@ -74,7 +74,7 @@
     		</tr>
 				<tr>
     			<td>Object tagging</td>
-    			<td>Each object can have up to 10 different tags.</td>	
+    			<td>Each object can have up to 10 different tags.</td>
     		</tr>
     		 <tr>
     			<td >Access policy</td>

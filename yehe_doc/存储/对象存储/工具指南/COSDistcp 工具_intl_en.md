@@ -1,6 +1,6 @@
 ## Overview
 
-COSDistCp is a MapReduce-based distributed copy tool. It enables users to copy data between HDFS and COS and introduces the file filtering, compression, and aggregation capabilities. Besides, based on the COS features, COSDistCp supports CRC-based incremental copy and real-time data verification.
+COSDistCp is a MapReduce-based distributed copy tool for data copy between HDFS and COS. It allows users to filter/compress/aggregate files, limit read bandwidth, and preserve file attributes. Besides, based on the COS features, COSDistCp supports real-time data verification and incremental copy based on the length and CRC checksum.
 
 ## Operating Environment
 
@@ -16,31 +16,32 @@ Hadoop 2.6.0 or above; Hadoop-COS 5.8.7 or above.
 
 #### Obtaining the COSDistCp JAR package
 
-Download link: [cos-distcp-1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.0.jar)
+Download link: [cos-distcp-1.2.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.2.jar)
+>?You can verify whether the downloaded JAR package is complete according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.2-md5.txt) of the package.
 
 #### Notes
 
-In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884#.E4.B8.8B.E8.BD.BD.E4.B8.8E.E5.AE.89.E8.A3.85) and then run the COSDistCp tool.
+In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884?!preview=&!editLang=zh&from_cn_redirect=1&lang=en&pg=#download-and-installation) and then run the COSDistCp tool.
 
 
 ## How It Works
 
-COSDistCp uses the MapReduce framework. Mappers group files, while multi-thread reducers perform data copy, compression, and verification. If data copy or verification fails, the job may fail to be executed. When data copy fails, you can use the `--diffMode` parameter to compare the CRC checksum for incremental copy.
+COSDistCp uses the MapReduce framework. Mappers group files, while multi-thread reducers perform file copy, compression, verification, and attribute preservation. If data copy or verification fails, the job may fail to be executed. If new files are added to your source file system or the file content changes, you can use the `--skipMode` or `--diffMode` parameter to compare the length or CRC checksum of the files to implement incremental copy.
 
 
 ## Parameters
 
-You can run the `hadoop jar cos-distcp-1.0.jar --help` command to view the COSDistCp-supported parameters. The following table describes the COSDistCp parameters:
+You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is the version number) command to view the COSDistCp-supported parameters. The following table describes the COSDistCp parameters:
 
 
 | Attribute Key | Description | Default Value | Required |
-| :--------------------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------: | :----: |
+| :------------------------------: | :----------------------------------------------------------- | :----: | :----: |
 |  --help | Outputs parameters supported by COSDistCp. <br>Example: --help | None | No |
 | --src=LOCATION | Location of the data to copy. This can be either an HDFS or COS location. <br>Example: --src=hdfs://user/logs/ | None | Yes |
 |         --dest=LOCATION          | Destination for the data. This can be either an HDFS or COS location. <br>Example: --dest=cosn://examplebucket-1250000000/user/logs |   None  | Yes |
 |       --srcPattern=PATTERN       | A regular expression that filters files in the source location. <br>Example: `--srcPattern='.*.log'`<br>**Note: Enclose your parameter in single quotation marks (') in case asterisks (*) are parsed by the shell.** | None | No |
 |       --reducerNumber=VALUE       | The number of reducer processes. <br>Example: --reducerNumber=10 | 10 |   No   |
-|       --workerNumber=VALUE       | The number of copying threads of each reducer. COSDistCp will create a copying thread pool for each reducer based on the set value. <br>Example: --workerNumber=10 | 10 | No |
+|       --workerNumber=VALUE       | The number of copying threads of each reducer. COSDistCp will create a copying thread pool for each reducer based on the set value. <br>Example: workerNumber=4 | 4 | No |
 |      --filesPerMapper=VALUE      | The number of files input to each mapper. <br>Example: --filesPerMapper=10000 |  500000   |  No  |
 |         --groupBy=PATTERN   | A regular expression to concatenate files that match the expression. <br>Example: --groupBy='.\*group-input/(\d+)-(\d+).*'   |  None  |   No   |
 | --targetSize=VALUE | The size (in MB) of the files to create. This parameter is used together with `--groupBy`. <br>Example: --targetSize=10  | None |  No  |
@@ -54,11 +55,12 @@ You can run the `hadoop jar cos-distcp-1.0.jar --help` command to view the COSDi
 |        --copyFromManifest        | Copies files specified in `--previousManifest` to the destination file system. This is used together with `previousManifest=LOCATION`. <br>Example: --copyFromManifest |  false  |  No |
 | --storageClass=VALUE | The storage class to use. Valid values are `STANDARD`, `STANDARD_IA`, `ARCHIVE`, `DEEP_ARCHIVE`, and `INTELLIGENT_TIERING`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).  | None   |   No   |
 |        --srcPrefixesFile=LOCATION        | A local file that contains a list of source directories, one directory per line. <br/>Example: --srcPrefixesFile=file:///data/migrate-folders.txt |  None    |   No  |
-| --enableCrcCheck | When the copy operation is completed, verifies whether the CRC checksum of the source and destination files are the same. Note: If your files are not copied to COS, this parameter takes effect only when the source and destination file systems support the same CRC algorithm. <br/>Example: --enableCrcCheck |       false   |   No  |
-| --skipCopySameCrcFile   | Skips files that have the same CRC checksum and file size as the source files to implement incremental copy. <br>Note: This parameter takes effect only when the source and destination file systems support the same CRC algorithm. <br>Example: --skipCopySameCrcFile | None | No |
-|   --diffMode=MODE    | Specifies the rule for obtaining the list of different files. Valid values are `length` and `length-checksum` (`length` + CRC checksum). <br/>Example: --diffMode=length-checksum | None   | No  |
+| --skipMode=MODE  | Verifies whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum). <br/>Example: --skipMode=length | None | No |
+| --checkMode=MODE | Verifies whether the source and destination files are the same when the copy is completed. If they are different, the copy will be stopped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum).<br/>Example: --checkMode=length-checksum |  None  | No |
+|   --diffMode=MODE    | Specifies the rule for obtaining the list of different files. Valid values are `length`, `checksum`, and `length-checksum` (`length` + CRC checksum). <br/>Example: --diffMode=length-checksum | None   | No  |
 |  --diffOutput=LOCATION  | Specifies the output directory for the list of different files. This directory must be empty.<br/>Example: --diffOutput=/diff-output  |  None |  No  |
 | --cosChecksumType=TYPE     | Specifies the CRC algorithm used by the Hadoop-COS plugin. Valid values are `CRC32C` and `CRC64`. <br/>Example: --cosChecksumType=CRC32C | CRC32C | No |
+| --preserveStatus=VALUE | Specifies whether to copy the `user`, `group`, `permission`, `xattr`, and `timestamps` metadata of the source file to the destination file. Valid values are ugpxt (initials of `user`, `group`, `permission`, `xattr`, and `timestamps`, respectively). <br/>Example: --preserveStatus=ugpt | None | No |
 
 
 ## Examples
@@ -68,15 +70,16 @@ You can run the `hadoop jar cos-distcp-1.0.jar --help` command to view the COSDi
 Run the following command with `--help` to view the parameters supported by COSDistCp:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --help
+hadoop jar cos-distcp-${version}.jar --help
 ```
+In the command above, `${version}` is the version ID of the COSDistCp. For example, the name of the COSDistCp JAR package (version 1.0) is `cos-distcp-1.0.jar`.
 
 ### Specifying the source and destination locations for the files to copy
 
 Run the following command with the `--src` and `--dest` parameters:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse
 ```
 
 ### Filtering source files with a regular expression
@@ -84,7 +87,7 @@ hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest cosn://examplebucket-
 Run the following command with the `--srcPattern` parameter. In this example, only files whose extension is ".log" in the `/data/warehouse/logs` directory are copied.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar  --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*/logs/.*\.log'
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse --srcPattern='.*/logs/.*\.log'
 ```
 
 ### Specifying the number of reducers and the number of threads for each reducer process
@@ -94,7 +97,7 @@ Run the following command with the `--reducerNumber` and `--workersNumber` param
 - Use `--workerNumber` to specify the number of threads for each reducer process.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --reducerNumber=10 --workerNumber=10
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse/ --dest cosn://examplebucket-1250000000/data/warehouse --reducerNumber=10 --workerNumber=5
 ```
 
 ### Deleting the source files
@@ -102,7 +105,7 @@ hadoop jar cos-distcp-1.0.jar --src /data/warehouse/ --dest cosn://examplebucket
 Run the command with the `--deleteOnSuccess` parameter. The following example deletes the corresponding source files in the `/data/warehouse` directory immediately after they are copied from HDFS to COS:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --deleteOnSuccess
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --deleteOnSuccess
 ```
 
 >!If `--deleteOnSuccess` is specified, each source file is deleted immediately after the file is copied, but not after all source files are copied.
@@ -112,7 +115,7 @@ hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest cosn://examplebucket-
 Run the command with the `--bandWidth` parameter (in MB). The following command example restricts the read bandwidth of each copied file to 10 MB/s:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --bandWidth=10
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --bandWidth=10
 ```
 
 ### Specifying the checksum type of Hadoop-COS
@@ -120,32 +123,33 @@ hadoop jar cos-distcp-1.0.jar  --src /data/warehouse --dest cosn://examplebucket
 Run the following command with the `--cosChecksumType` parameter. Valid values are `CRC32C` (default) and `CRC64`.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --cosChecksumType=CRC32C
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --cosChecksumType=CRC32C
 ```
 
-### Skipping files with the same CRC checksum
+### Skipping files with the same length
 
-Run the following command with the `--skipCopySameCrcFile` parameter. This parameter takes effect only when the source and destination file systems use the same CRC algorithm; otherwise, the corresponding files will still be copied. If your source is HDFS, you can identify whether the HDFS source supports the COMPOSITE-CRC32C algorithm as follows:
+Run the following command with the `--skipMode` parameter. The following command example skips files with the same length:
+```plaintext
+hadoop jar cos-distcp-${version}.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse  --skipMode=length
+```
+
+`--skipMode` is used to verify whether the source and destination files are the same before the copy. If they are the same, the file will be skipped. Valid values are `none` (no verification), `length`, `checksum`, and `length-checksum` (length + CRC checksum).
+
+If the checksum algorithms of the source and destination file systems are different, the source file will be read for calculating a new checksum. If your source is HDFS, you can identify whether the HDFS source supports the COMPOSITE-CRC32C algorithm as follows:
 
 ```plaintext
 hadoop fs  -Ddfs.checksum.combine.mode=COMPOSITE_CRC -checksum /data/test.txt
 /data/test.txt  COMPOSITE-CRC32C        6a732798
 ```
 
-If your HDFS source supports the COMPOSITE-CRC32C algorithm, you can use the `--skipCopySameCrcFile` parameter to skip COS files that have the same CRC32C checksum as follows:
-
-```plaintext
-hadoop jar cos-distcp-1.0.jar  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse  --skipCopySameCrcFile
-```
-
 ### Verifying whether the source and destination files have the same CRC checksum
 
-Run the command with the `--enableCrcCheck` parameter. When the copy operation is completed, you can verify whether the source and destination files have the same CRC checksum.
+Run the following command with the `--checkMode` parameter. The following command example verifies whether the checksums of the source and destination files are the same when the copy is completed:
 
-When you are copying files from a non-COS file system to COS, if the CRC algorithms of the source and Hadoop-COS are different, the CRC checksum will be calculated in real time during the copy operation. When the copy operation is completed, the CRC checksum of the source files will be obtained and compared with the calculated CRC checksum. This parameter takes effect only when the source and destination file systems use the same CRC algorithm; otherwise, the verification fails. The following is a command example:
+When you are copying files from a non-COS file system to COS, if the CRC algorithms of the source and Hadoop-COS are different, the CRC checksum will be calculated during the copy operation. When the copy operation is completed, the CRC checksum of the destination file will be obtained and compared with the calculated CRC checksum of the source file.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar   --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --enableCrcCheck
+hadoop jar cos-distcp-${version}.jar   --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse --checkMode=checksum
 ```
 
 ### Specifying the output compression codec
@@ -153,7 +157,7 @@ hadoop jar cos-distcp-1.0.jar   --src /data/warehouse --dest cosn://examplebucke
 Run the command with the `--outputCodec` parameter, which allows you to compress HDFS data to COS in real time to reduce storage costs. Valid values are `keep`, `none`, `gzip`, `lzop`, and `snappy`. If set to `none`, the files will be copied uncompressed. If set to `keep`, the files will be copied with no change in their compression. The following is an example:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse/logs-gzip --outputCodec=gzip
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse/logs-gzip --outputCodec=gzip
 ```
 
 >!If not set to `keep`, the files will be decompressed and converted to the target compression format. Due to the difference in compression parameters, the content of the destination files might be different from that of the source files, but the files will be the same after decompression.
@@ -171,7 +175,7 @@ cat srcPrefixes.txt
 Then, you can use `--srcPrefixesFile` to specify this file. The command is as follows:
 
 ```plaintext
-hadoop jar  cos-distcp-1.0.jar --src /data/warehouse  --srcPrefixesFile file:///usr/local/service/hadoop/srcPrefixes.txt --dest  cosn://examplebucket-1250000000/data/warehouse/ --reducerNumber=20
+hadoop jar  cos-distcp-${version}.jar --src /data/warehouse  --srcPrefixesFile file:///usr/local/service/hadoop/srcPrefixes.txt --dest  cosn://examplebucket-1250000000/data/warehouse/ --reducerNumber=20
 ```
 
 ### Generating the target manifest and specifying the previous manifest
@@ -182,7 +186,7 @@ Run the command with the `--outputManifest` and `--previousManifest` parameters.
 - `--previousManifest` specifies the destination files that are copied during the previous copy operation (`--outputManifest`). COSDistCp will skip files of the same size.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest  cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest.gz --previousManifest= cosn://examplebucket-1250000000/data/warehouse/manifest-2020-01-10.gz
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest  cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest.gz --previousManifest= cosn://examplebucket-1250000000/data/warehouse/manifest-2020-01-10.gz
 ```
 
 >!The command above performs incremental copy only. Only files with size changes can be copied. If the file content is changed, you can refer to the example of `--diffMode` and determine the changed manifest files based on the CRC checksum.
@@ -198,7 +202,7 @@ Run the command with the `--diffMode` and `--diffOutput` parameters:
 The following example sets `mapred.max.split.size` to 100 KB based on whether the file size and CRC checksum of the source and destination files are the same.
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar -Dmapred.max.split.size=102400  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --diffMode=length-checksum --diffOutput=/tmp/diff-output
+hadoop jar cos-distcp-${version}.jar -Dmapred.max.split.size=102400  --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --diffMode=length-checksum --diffOutput=/tmp/diff-output
 ```
 
 >!If the destination file system is COS, and the CRC algorithms of the source and destination file systems are different, COSDistCp will pull the source files and calculate the new CRC checksum for CRC checksum comparison.
@@ -219,7 +223,7 @@ gzip diff-manifest
 Run the following command to implement incremental copy based on the list of different files:
 
 ```plaintext
-hadoop  jar cos-distcp-1.0.jar --reducerNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/diff-manifest.gz –copyFromManifest
+hadoop  jar cos-distcp-${version}.jar --reducerNumber=20 --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --previousManifest=file:///usr/local/service/hadoop/diff-manifest.gz –copyFromManifest
 ```
 
 ### Specifying the storage class for COS objects
@@ -227,5 +231,12 @@ hadoop  jar cos-distcp-1.0.jar --reducerNumber=20 --src /data/warehouse --dest c
 Run the following command with the `--storageClass` parameter:
 
 ```plaintext
-hadoop jar cos-distcp-1.0.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest-2020-01-10.gz --storageClass=STANDARD_IA
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --outputManifest=manifest-2020-01-10.gz --storageClass=STANDARD_IA
+```
+
+### Copying metadata of the source file
+
+Run the following command with the `--preserveStatus` parameter. The following command example copies the `user`, `group`, `permission`, and `timestamps` (modification time and access time) metadata of the source file/directory to the destination file/directory:
+```plaintext
+hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --preserveStatus=ugpt
 ```

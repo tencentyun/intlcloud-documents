@@ -1,25 +1,25 @@
-### Introduction
-COS allows you to configure access permissions for objects, which have a higher priority than that for buckets.
+## Overview
+COS allows you to set object access permissions, which have a higher priority than that for buckets.
 
->
->- The access permission for an object is valid only when the user accesses said object via the default domain name. When access is made via a CDN acceleration endpoint domain name or custom domain name, the bucket access permission takes priority.
->- There are limits on the number of access policy rules that can exist at a given time. For details, see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
+>?
+>- Object access permissions take effect only when the access is made via the default endpoint. For any access made via a CDN acceleration endpoint or a custom endpoint, bucket access permissions will take effect.
+>- There are limits on the number of ACL rules. For more information, please see [Specifications and Limits](https://intl.cloud.tencent.com/document/product/436/14518).
 
-### Directions
-
-
+## Directions
 
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket list page.
+
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Find the bucket where the target object is located and click the bucket name to enter the bucket details page.
 ![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
-3. In the [File List], find the object for which to configure access permission, and click [Details] on the right to enter the file details page (If it is a folder, click [Permissions] on the right).
+3. Choose the **File List** tab, find the object for which you want to configure the access permission, and click **Details** on the right to enter the file details page (If it is a folder, click **Permissions** on the right).
 ![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
-4. Scroll down to the [Object ACL] section near the top of the page and configure access permissions as needed (such as granting object permission to a sub-account, sub-account ID can be found on the [Cloud Access Management](https://console.cloud.tencent.com/cam) console). COS supports two types of object permissions:
- - **Public Permissions**: Inherited permissions, private read/write, and public read/private write. For more information on public permissions, see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324).
- - **User Permissions**: The root account has all object permissions (full access) by default. In addition, COS allows you to grant sub-accounts read/write permission for data and/or permission information and even allows **full access** permission to be granted to sub-accounts.
+4. In the **Object ACL** area, configure ACL as needed (for example, grant a sub-account the object permissions). Sub-account ID can be found in the [CAM console](https://console.cloud.tencent.com/cam). COS supports two types of permissions for objects:
+ -**Public Permissions**: includes **Inherit**, **Private Read/Write**, and **Public Read/Private Write**. For more information about public permissions, please see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324).
+ -**User ACL**: The root account has all object permissions (full control) by default. You can also add sub-accounts and grant them permissions including read/write, read/write ACL, and even **full control**.
 ![](https://main.qcloudimg.com/raw/c9565ab1d2378ce672a301843bf3b072.png)
-5. Click [Save] to configure the object access permissions.
-6. If you need to configure or modify access permissions for multiple objects by performing a batch operation, you can check multiple objects from the file list and select [Modify Access Permissions] under [More Actions].
-
+5. Click **Save**.
+6. If you need to configure or modify access permissions for multiple objects at a time, you can select the objects on the **File List** page and then click **More Actions** > **Modify Access Permission**.
+![](https://main.qcloudimg.com/raw/a00d8522c2698c39aa4687463bcb05e4.png)
 
