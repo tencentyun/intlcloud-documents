@@ -1,7 +1,7 @@
 When you call the trigger API [CreateTrigger](https://intl.cloud.tencent.com/document/product/583/18589), the corresponding `TriggerDesc` parameter will be the trigger description, which can be used as instructed in this document.
 
 ## Timer Trigger
-Directly use a cron expression by referring to [Cron Expression](<https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F>).
+Directly use a cron expression by referring to [Cron Expression](https://intl.cloud.tencent.com/document/product/583/9708#cron-.E8.A1.A8.E8.BE.BE.E5.BC.8F).
 
 ### Sample TriggerDesc
 Triggered once every 5 minutes:
@@ -102,7 +102,8 @@ TriggerName: "ckafka-8tfxzia3-test"
 | event  | String                  | Yes   | [COS event type](https://intl.cloud.tencent.com/document/product/583/9707)      |
 | filter | [CosFilter](#CosFilter) | Yes   | COS filename filter |
 
-### CosFilter<span id="CosFilter"></span>
+<span id="CosFilter"></span>
+### CosFilter
 
 | Name | Type | Required | Description |
 | ------ | ------ | ---- | --------------------------------- |
