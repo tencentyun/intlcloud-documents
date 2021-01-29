@@ -1,9 +1,8 @@
-A high availability virtual IP (HAVIP) is a private IP address assigned by VPC CIDR blocks. It is usually used together with high-availability softwares, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
+A high availability virtual IP (HAVIP) is a private IP address assigned by VPC CIDR blocks. It is usually used together with high-availability software, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
 >?
->- HAVIP is currently in beta. If you are a new user outside Shanghai and Guangzhou regions and want to try it out, please [submit an application to be added to the beta list](https://intl.cloud.tencent.com/apply/p/azh0w1qoavk).
->- Switching between primary/secondary servers in Shanghai and Guangzhou regions may take up to 1-2 minutes. Therefore, HAVIP is currently unavailable to new users in these two regions. We recommend using Tencent Cloud [CLB](https://intl.cloud.tencent.com/document/product/214) and other services to meet your requirements.
+>- HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
 >- To guarantee the CVM high availability in a primary/secondary cluster, we recommend assigning CVMs to different hosts using [placement group](https://intl.cloud.tencent.com/document/product/213/15486). For more information about the placement group, see [Placement Group](https://intl.cloud.tencent.com/document/product/213/15486).
-
+>
 
 ## Features
 1. You can apply for multiple HAVIP addresses in the console for each VPC.
@@ -19,7 +18,7 @@ Typically, a high availability primary/secondary cluster consists of two servers
 The following figure shows the HAVIP architecture.
 ![](https://main.qcloudimg.com/raw/e8d0e60cbd3221089256087c5686588f.png)
 According to the example figure, CVM1 and CVM2 can be built into a high availability primary/secondary cluster with the following steps:
-1. Install Keepalived on both CVM1 and CVM2, configure HAVIP as VRRP VIP, and set the priorities of the primary and secondary servers. Larger values represents higher priorities.
+1. Install Keepalived on both CVM1 and CVM2, configure HAVIP as VRRP VIP, and set the priorities of the primary and secondary servers. Larger values represent higher priorities.
 2. Keepalived uses the VRRP protocol to compare the initial priorities of CVM1 and CVM2 and determines CVM1 as the primary server due to its higher priority.
 3. The primary server sends out ARP messages, announces the VIP (a HAVIP), and updates VIP to mac mappings. In this case, the CVM1 is the primary server and provides services by using the private IP (HAVIP) for communication. You can see the HAVIP is bound to the primary server CVM1 on the HAVIP console.   
 4. (Optional) Bind an EIP to the HAVIP in the console to implement communication over the public network.
