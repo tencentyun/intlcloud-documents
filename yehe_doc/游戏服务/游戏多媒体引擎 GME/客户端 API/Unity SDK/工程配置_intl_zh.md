@@ -35,8 +35,6 @@
 #### MacOS平台下使用操作
 如果是在 MacOS 10.15.x 版本使用 Unity 集成 GME SDK，执行运行操作时会有报错，显示文件已损坏，目前分析原因是 com.apple.quarantine 属性导致的，那么最直接的方法就是删除 com.apple.quarantine 属性。
 
-<img src="https://main.qcloudimg.com/raw/29aa9b69f32c13ffe3c6db4559c9ff17.png"  width="30%" /></img>
-
 1. 通过终端执行 cd 命令快速定位到工程中的文件夹下：Unity_OpenSDK_Audio/Assets/Plugins/。
 2. 执行命令
 ```
