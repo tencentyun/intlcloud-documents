@@ -84,27 +84,23 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 目前不支持。
 
 [](id:que16)
-### 实时音视频开通旁路直播，域名是否需要进行备案使用？
-如需开通旁路直播中国大陆服务，依据中国国家相关部门要求，播放域名需要备案才能使用，更多详情请参见 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)。
-
-[](id:que17)
 ### 实时音视频延时大约多少？
 全球端到端平均延时小于300ms。
 
-[](id:que18)
+[](id:que17)
 ### 实时音视频是否支持主动呼叫功能？
 需要结合信令通道解决，例如使用 [即时通信 IM](https://intl.cloud.tencent.com/zh/product/im) 服务的自定义消息实现呼叫，可以参考 [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 源码中的场景化 Demo 示例。
 
-[](id:que19)
+[](id:que18)
 ### 实时音视频双人视频通话是否支持蓝牙耳机？
 支持。
 
 
-[](id:que20)
+[](id:que19)
 ### 实时音视频是否支持在国外使用？
 支持。
 
-[](id:que21)
+[](id:que20)
 ### 实时音视频接入 PC 端是否支持屏幕分享功能？
 支持，您可以参考如下文档：
 - [屏幕分享（Windows）](https://intl.cloud.tencent.com/document/product/647/37335)
@@ -113,73 +109,73 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/35136)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
-[](id:que23)
+[](id:que21)
 ### 是否支持将本地视频文件分享到实时音视频中？
 
 支持，可以通过 [自定义采集](https://intl.cloud.tencent.com/document/product/647/35158) 功能来实现。
 
-[](id:que24)
+[](id:que22)
 ### 实时音视频能否把直播视频录制后存储在手机本地？
 不支持直接存储在手机本地，录制后视频文件默认存储在云点播平台，您可以自行下载并保存到手机中，更多详情请参见 [云端录制和回放](https://intl.cloud.tencent.com/document/product/647/35426)。
 
 
-[](id:que25)
+[](id:que23)
 ### 实时音视频是否支持单纯的实时音频？
 支持纯音频。
 
 
-[](id:que26)
+[](id:que24)
 ### 一个房间里可以同时有多路屏幕分享吗？
 目前一个房间只能有一路辅流的屏幕分享。
 
-[](id:que27)
+[](id:que25)
 ### 指定窗口分享（SourceTypeWindow），当窗口大小变化时，视频流的分辨率会不会也跟着变化？
 默认情况下，SDK 内部会自动根据分享的窗口大小进行编码参数的调整。
 如需固定分辨率，需调用 setSubStreamEncoderParam 接口设置屏幕分享的编码参数，或在调用 startScreenCapture 时指定对应的编码参数。
 
 
-[](id:que28)
+[](id:que26)
 ### TRTC 是否支持1080P？
 支持，您可以通过 SDK 的视频编码参数 setVideoEncoderParam 对分辨率进行设置。
 
-[](id:que29)
+[](id:que27)
 ### TRTC 是否可以自定义采集数据？
 部分平台支持，详细信息请参见 [自定义采集和渲染](https://intl.cloud.tencent.com/document/product/647/35158)。
 
-[](id:que30)
+[](id:que28)
 ### TRTC 可以跟互动直播 SDK 通信吗？
 不可以。
 
-[](id:que31)
+[](id:que29)
 ### TRTC 是否可以与移动直播通信？ 
 TRTC 与移动直播后台方案架构不同，所以不支持直接相互通信，仅可从 TRTC 后台旁路推流到 CDN。
 
 
 
-[](id:que32)
+[](id:que30)
 ### TRTC 进房模式 AppScene 有什么区别？
 TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 直播模式。
 - 通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多30人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
 - 直播模式下的 TRTC，支持单个房间最多10万人同时在线，具备小于300ms的连麦延迟和小于1000ms的观看延迟，以及平滑上下麦切换技术。适用低延时互动直播、十万人互动课堂、视频相亲、在线教育、远程培训、超大型会议等应用场景。
 
 
-[](id:que33)
+[](id:que31)
 ### TRTC 是否支持音视频通话免提模式？
 支持，免提模式通过设置音频路由实现，Native SDK 通过 setAudioRoute 接口切换。
 
-[](id:que34)
+[](id:que32)
 ### TRTC 是否支持音量大小提示？
 支持，通过 enableAudioVolumeEvaluation 接口启用。
 
-[](id:que35)
+[](id:que33)
 ###  TRTC 是否支持设置镜像画面？ 
 支持，通过 setLocalViewMirror 接口设置本地摄像头预览画面的镜像模式，或通过 setVideoEncoderMirror 接口设置编码器输出的画面镜像模式。
 
-[](id:que36)
+[](id:que34)
 ### TRTC 是否支持录制通话过程中的音频到本地文件？ 
 支持，通过 startAudioRecording 接口可以将通话过程中的所有音频（包括本地音频，远端音频，BGM 等）录制到一个文件里，目前支持的音频格式有 PCM, WAV, AAC。
 
-[](id:que37)
+[](id:que35)
 ### TRTC 是否支持音视频互通过程中的视频录制成文件？
 支持自有服务端录制（即录音/录像），如需使用请 [提工单](https://console.cloud.tencent.com/workorder/category) 联系我们获取 SDK 及相关指引。
 您也可以使用 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426) 录制视频。
