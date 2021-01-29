@@ -6,49 +6,50 @@ Tencent Cloud SCF can be connected to various Tencent Cloud services to build a 
 <th>Solution</th>
 </tr>
 <tr>
-<td rowspan=2>API Gateway</td>
+<td rowspan=1>API Gateway</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/13197">RESTful API</a></td>
 </tr>
 <tr>
-<td>SSR</td>
-</tr>
-<tr>
 <td rowspan=2>Serverless Framework</td>
-<td>Web framework</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/36748">Deploying static website</a></td>
 </tr>
 <tr>
-<td>Static website hosting</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1040/36751">Connecting to Serverless DB</a></td>
 </tr>
 <tr>
-<td rowspan=3>COS</td>
+<td rowspan=2>COS</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/35663">File decompression</a></td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/30611">Automatic CDN cache purge</a></td>
-</tr>
-<tr>
-<td>COS and CDN Combo Handler</td>
-</tr>
-<tr>
-<td>CMQ</td>
-<td>CMQ topic event consumption</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/37273">CDN cache purging</a></td>
 </tr>
 <tr>
 <td>CDN</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/228/6316">Dump of historical domain name access logs to COS</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/228/6316">Dumping historical domain name access logs to COS</a></td>
 </tr>
 <tr>
-<td rowspan=2>Elasticsearch Service</td>
-<td>Quick construction of search service</td>
+<td rowspan=1>ES</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/845/32613">Automatically deleting expired data with Curator</a></td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/845/32613">Automatic deletion of expired data with Curator</a></td>
-</tr>
-<td>TencentDB</td>
-<td>Database backup</td>
+<td>SMS</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">	Sending SMS verification code</a></td>
 </tr>
 <tr>
-<td>Short Message Service</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">	How to Send SMS Verification Codes </a></td>
+<td rowspan=2>VOD</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/37542">	Receiving event notification</a></td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/37544">Using key hotlink protection</a></td>
+</tr>
+<tr>
+<td>CLS</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/614/38883">Log ETL</a></td>
+</tr>
+<tr>
+<td>MPS</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39339">Video task callback</a></td>
 </tr>
 </table>
+
+
