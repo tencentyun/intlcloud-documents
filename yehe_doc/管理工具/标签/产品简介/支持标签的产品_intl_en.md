@@ -103,11 +103,14 @@
 ## Video Services
 <table>
 <tr><th width="50%">Service</th><th width="50%">Resource</th></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267">Live Video Broadcasting (LVB) </a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">Live Video Broadcasting</a></td>
 <td><li>Domain name</li><li>Live director</li></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/647">Tencent Real-Time Communication (TRTC)</a></td>
-<td>TRTC application</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266">Video on Demand </a></td>
+<td>subAppId</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/647">Tencent Real-Time Communication </a></td>
+<td>TRTC Apps</td>
 </tr></table>
 
 
