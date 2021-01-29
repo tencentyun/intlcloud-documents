@@ -95,8 +95,8 @@
 
 
 
-
-## 前提条件<span id="Precondition"></span>
+<span id="Precondition"></span>
+## 前提条件
 本文以广州地域为例：
 - 前往 [对象存储控制台](https://console.cloud.tencent.com/cos5/bucket) 创建 COS Bucket，且 Bucket 权限设置为**公有读私有写**。
 - （可选）当视频文件大于500M时，需前往文件存储控制台开通 CFS 服务，用于扩展云函数的本地存储空间。详情请参见 [挂载 CFS 文件系统](https://intl.cloud.tencent.com/document/product/583/37497)。
