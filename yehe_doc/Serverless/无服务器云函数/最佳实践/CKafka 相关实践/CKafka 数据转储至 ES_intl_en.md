@@ -6,22 +6,22 @@ With the prosperity of the Kafka community, more and more users have started to 
 - It encapsulates all cluster details, eliminating the need for OPS on your side.
 - Its message engine is optimized to deliver a performance 50% higher than that of open-source Kafka.
 
-SCF has been deeply integrated with CKafka, and a lot of practical features have been launched. With the help of SCF and Ckafka trigger, it is easy to dump CKafka messages to COS, ES, and TencentDB. This document describes how to use SCF in place of Logstash to dump CKafka messages to ES as shown below:
+SCF has been deeply integrated with CKafka, and a lot of practical features have been launched. With the help of SCF and CKafka trigger, it is easy to dump CKafka messages to COS, ES, and TencentDB. This document describes how to use SCF in place of Logstash to dump CKafka messages to ES as shown below:
  ![](https://main.qcloudimg.com/raw/742d23c1f95b9f3fbf50a099d0ce5ff5.png)
 
  
 
 ## How It Works
-SCF can consume messages in CKafka in real time in various scenarios such as data storage, log cleansing, and real-time consumption, and the data dump feature has been integrated in the CKafka Console and can be enabled quickly, making it easier to use as shown below:
+SCF can consume messages in CKafka in real time in various scenarios such as data storage, log cleansing, and real-time consumption, and the data dump feature has been integrated in the CKafka console and can be enabled quickly, making it easier to use as shown below:
 ![](https://main.qcloudimg.com/raw/994185353e9235c0f75e2dadf0feba41.png)
 
 ## Scheme Advantages
 
 Compared to a CVM-based self-created CKafka consumer, SCF has the following advantages:
-- You can enable the CKafka trigger quickly in the SCF Console to automatically create a consumer, and SCF will maintain the high availability of components.
+- You can enable the CKafka trigger quickly in the SCF console to automatically create a consumer, and SCF will maintain the high availability of components.
 - The CKafka trigger itself supports many practical configurations, such as the offset position, 1–10,000 messages to be aggregated, and 1–10,000 retry attempts.
 - Business logic developed based on SCF naturally supports auto scaling, eliminating the need to build and maintain server clusters.
- 
+
 Compared to CVM-based self-created Logstash service, SCF has the following advantages:
 - SCF comes with a consumer component that allows for aggregation.
 - The scalable function template of SCF provides message aggregation and partial cleansing capabilities.
@@ -33,23 +33,22 @@ Compared to CVM-based self-created Logstash service, SCF has the following advan
 This document uses the **Guangzhou** region as an example:
 - You need to activate Elasticsearch Service.
 - You need to activate the CKafka service.
- 
+
 
 ## Directions
-### Creating function
-1. Log in to the [SCF Console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and click **Functions** on the left sidebar.
-2. Select the region where to create a function at the top of the "Functions" page and click **Create** to enter the function creation process.
-3. Create a function as follows in "Basic Info" on the "Create Function" page and click **Next**.
+### Creating function and CKafka trigger
 
-	- **Function Name**: enter a custom function name. This document uses `ckafka_to_es_demo`.
-	- **Runtime Environment**: select "Pyhton 3.6".
-	- **Create Method**: select **Function Template**.
-	- **Fuzzy Search**: enter "CKafka" and search.
-Click **Learn More** in the template to view relevant information in the "Template Details" pop-up window, which can be downloaded.
-4. On the "Function configuration" page, keep the default configuration and click **Complete**.
-5. Enter the "Function configuration" page of the created function, click **Edit** in the top-right corner, and complete the function configuration as follows:
- - **Environment Variable**: add the following environment variables and configure them.
-
+1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default) and click **Function Service** on the left sidebar.
+2. Select the region where to create a function at the top of the **Function Service** page and click **Create** to enter the function creation process.
+3. Select a function template as follows on the **Create Function** page and click **Next** as shown below:
+![](https://main.qcloudimg.com/raw/7366c21dc035812c40afcb861472ae57.png)
+  - **Creation method**: select **Template**.
+  - **Fuzzy search**: enter **CkafkaToElasticsearch** and search. This document uses the Python 3.6 runtime environment as an example. 
+    Click **Learn More** in the template to view relevant information in the **Template Details** pop-up window, which can be downloaded.
+4. In the **Basic Configurations** section, the function name has been automatically generated and can be modified as needed. Follow the prompts to configure environment variables, execution role, and VPC as shown below:
+![](https://main.qcloudimg.com/raw/06422b76337b0c8f3f5c6941a425570e.png)
+  - **Environment Variable**: add the following environment variables and configure them as shown below:
+![](https://main.qcloudimg.com/raw/9ef490836df44ec54aa5ea2ba3bdbc47.png)
 <table>
 <tr>
 <th>key</th><th>value</th><th>Required</th>
@@ -73,38 +72,32 @@ Click **Learn More** in the template to view relevant information in the "Templa
 <td>ES_Index_TimeFormat</td><td>Index by day or hour. If this parameter is left empty, the index will be by day. For example, you can enter `hour`.</td><td>No</td>
 </tr>
 </table>
- - **VPC**: check "Enable" and select the VPC of ES.
+ - **Execution Role**: check **Enable**, select **Configure and use SCF template role**, and the system will automatically create and select an SCF template execution role associated with full access permissions of ES and CKafka. You can also check **Use the existing role** and select an existing role that has the above permissions in the drop-down list. This document takes **Configure and use SCF template role** as an example.
+  - **VPC**: check **Enable** and select the VPC of ES.
+5. In the **Trigger Configurations** section, select **Custom** and enter relevant 
 
-6. Click **Save**.
+  information according to the displayed parameters as shown below:
 
+![](https://main.qcloudimg.com/raw/92eca3882647a8c58e6b8711256ce081.png)
 
-
-### Creating CKafka trigger
-1. Select **Trigger Management** on the sidebar of the "Function configuration" page and click **Create a Trigger**.
-2. In the "Create a Trigger" pop-up window, configure the trigger.
-
-The main parameter information is as follows. Keep the remaining parameters as default:
- - **Trigger Method**: select "CKafka trigger".
- - **Ckafka Instance and Topic**: select the corresponding topic as needed.
- - **Start Point**: select "Earliest".
-3. Click **Submit**.
-
-
-
+​    The main parameter information is as follows. Keep the remaining parameters as default:
+ - **Trigger Method**: select **CKafka trigger**.
+ - **CKafka Instance and Topic**: select the corresponding topic as needed.
+ - **Start Point**: select **Earliest**.
+6. Click **Complete**.
 
 
 ### Viewing ES and function execution logs
 >!If you have not ingested actual data into CKafka, you can use the [client tool](https://intl.cloud.tencent.com/document/product/597/32544) to simulate message production.
 >
 - Select **Log Query** on the sidebar of the function to view the function execution log.
-
 - View Kibana. For more information, please see [Accessing Clusters from Kibana](https://intl.cloud.tencent.com/document/product/845/19541).
-
-
-
+![](https://main.qcloudimg.com/raw/974199a28188cb11a43b5e89e5f660b5.png)
 
 
 
 ## Scalability
-If you want to implement advanced log cleansing logic, you can modify the logic in the code location as shown below:
-![](https://main.qcloudimg.com/raw/8e71698dd087bed4b888773ce0db3175.png)
+If you want to implement advanced log cleansing logic, you can modify the logic in the code location.
+
+![](https://main.qcloudimg.com/raw/71b85519bb7334b4791f8e887906bacb.png)
+
