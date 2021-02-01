@@ -1,10 +1,11 @@
-## Introduction
+## Overview
 The slow SQL analysis feature calculates, samples, and aggregates records and execution information (source information, number of executions, execution duration, result set, scan set, etc.) of slow SQL statements on the instance. Slow SQL analysis analyzes the performance of slow SQL statements based on the execution plan, comprehensive resource consumption, sizes of scan and result sets, and index usage rationality of the aggregated SQL statements and provides optimization suggestions.
->?Currently, slow SQL analysis is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
+>?Currently, slow SQL analysis is supported only for TencentDB for MySQL (excluding the Basic Edition).
+
 
 ## Directions
-1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/slow-sql) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Slow SQL Analysis ** tab.
->?The **SQL Statistics** section displays the number of slow queries and CPU utilization of the instance. You can adjust the time range to view slow SQL statements in any time period. If the instance has slow SQL statements, the quantity and occurrence points in time will be displayed in the view.
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/slow-sql) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Slow SQL Analysis** tab.
+>?The **SQL Statistics** section displays the number of slow queries and CPU utilization of the instance. You can adjust the time range to view slow SQL statements. If the instance has slow SQL statements, the quantity and occurrence points in time will be displayed in the view.
 2. You can click to select a single time period or drag to select multiple time periods for slow logs in the **SQL Statistics** bar chart, and the aggregated SQL template and execution information (including the number of executions, total execution duration, scanned rows, and returned rows) will be displayed below. Each column of data can be sorted in ascending or descending order. The duration distribution section on the right displays the distribution intervals of the overall SQL statement execution duration in the selected time period.
 ![](https://main.qcloudimg.com/raw/0659dcb5dfb47bf00c4df2646946f0ce.png)
 3. Click an aggregated SQL template, and specific SQL analysis and statistics will be displayed on the right.

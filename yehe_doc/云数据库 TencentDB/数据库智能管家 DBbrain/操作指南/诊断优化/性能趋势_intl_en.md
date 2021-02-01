@@ -1,15 +1,15 @@
 The performance trends feature of DBbrain not only supports the selection of multiple performance metrics such as key metrics, all metrics, and custom metrics, but also supports multiple ways to view performance trends, such as fine-grained view of one single performance metric trend, link comparison view of multiple performance metric trends, and time comparison view of multiple performance metric trends.
 
->?Currently, the performance trends feature is supported for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for CynosDB (compatible with MySQL).
-
+>?Currently, the performance trends feature is supported for TencentDB for MySQL (excluding the Basic Edition).
+>
 ![](https://main.qcloudimg.com/raw/21d421be543c040140dd7a6a86226ef0.png)
 
 
 ## Viewing Performance Trend Metrics
 The performance trends feature supports selection of multiple performance metrics, including 4 categories (Resource Monitoring, MySQL Server, InnoDB Engine, and MySQL Replication) and 15 subcategories. You can select different metrics based on different OPS needs to view the performance trends of the selected instance against the selected metrics.
 
-1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization**on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
-2. On the performance trends page, click the "Select performance metrics" drop-down list.
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
+2. On the performance trends page, click the **Select performance metrics** drop-down list.
 3. On the performance metrics selection page, check performance metrics or select **Key Metrics**, **Select all** or **Deselect all** in the top-right corner, and click **OK**.
 >?Click **Apply to all instances** to apply the selected metrics to all database instances.
 >
@@ -154,15 +154,15 @@ The performance trends feature currently supports the following performance metr
 
 
 ## Enabling Chart Interaction
-1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization**on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
-2. On the performance trends page, toggle on the "Chart Interaction" switch in the top-right corner to view the link comparison of multiple performance metric trends.
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
+2. On the performance trends page, toggle on the **Chart Interaction** switch in the top-right corner to view the link comparison of multiple performance metric trends.
 ![](https://main.qcloudimg.com/raw/8f0143e681567f928b115fae7ddf23ca.png)
 Drag on the view for fine-grained display of one single performance metric trend.
 ![](https://main.qcloudimg.com/raw/54b877aeee9d5ae2495b4496489caa2d.png)
 
 ## Switching Between Real-Time/Historical Views
 
-1. Log in to the [DBbrain Console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization**on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
+1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
 2. Click **Real-Time** or **Historical** to view the corresponding real-time or historical performance trends.
  - The real-time performance trends view allows you to view the performance trends of the instance over the last 3 minutes and is automatically refreshed by default. Click **Disable refresh** to stop refreshing the trends in real time.
 ![](https://main.qcloudimg.com/raw/81e13852a0356469df194eb685f2a12a.png)
@@ -170,4 +170,3 @@ Drag on the view for fine-grained display of one single performance metric trend
 ![](https://main.qcloudimg.com/raw/8883b09c4f7b2b28b60299ba61c6b5d7.png)
 Click **Add Time Comparison** and select the desired time period for comparison to view the time comparison of multiple performance metric trends.
 ![](https://main.qcloudimg.com/raw/696f8ccd768423e1aefaed587e8da3c2.png)
-
