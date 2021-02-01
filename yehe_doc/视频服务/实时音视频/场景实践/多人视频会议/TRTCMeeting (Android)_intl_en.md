@@ -198,8 +198,8 @@ The parameters are as detailed below:
 This API is used to log in.
 ```java
 public abstract void login(int sdkAppId,
- String userId, String userSig,
- TRTCMeetingCallback.ActionCallback callback);
+	 String userId, String userSig,
+	 TRTCMeetingCallback.ActionCallback callback);
 ```
 
 The parameters are as detailed below:
@@ -818,12 +818,10 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 |-----|-----|-----|
 | localQuality | TRTCCloudDef.TRTCQuality | Upstream network quality. |
-| remoteQuality | List<TRTCCloudDef.TRTCQuality> | Downstream network quality. |
+| remoteQuality | List&lt;TRTCCloudDef.TRTCQuality&gt; | Downstream network quality. |
 
 >? For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b).
 
-
-   
 
 ### onUserVolumeUpdate
 
