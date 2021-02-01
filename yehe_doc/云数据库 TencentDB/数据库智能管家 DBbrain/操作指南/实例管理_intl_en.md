@@ -11,7 +11,7 @@ The instance management list shows the basic information of database instances a
 - **Health Score**: this column displays the instance health score (the higher the score, the healthier the instance) rated during periodic health checks. You can sort data by health score.
 - **Exception Alarm**: this column displays the number of exceptions of an instance detected by "24/7 Exception Diagnosis". You can click the number in the column to view more details and sort data by the number.
 - **Group**: in this column, click the **Edit** icon to select the default group or create a group for an instance. You can also select one or more instances in the list and click **Manage Group** at the top to switch them to another group or add them to a new group.
->?TDSQL-C for MySQL 暂不支持分组功能。
+
 - **Operation**: in this column, click **Performance Optimization** and enter the **Performance Optimization** page to view instance performance status.
 ![](https://main.qcloudimg.com/raw/3d4dcfd44e68c6b4a8223eedac65aa66.png)
 
