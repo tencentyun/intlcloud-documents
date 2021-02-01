@@ -63,6 +63,5 @@ DNSプロバイダがXinnetの場合は、下記の手順でCNAMEレコードを
 DNSプロバイダによって、CNAMEのアクティブ化にかかる時間が異なりますが、一般的には30分以内に完了します。nslookupまたはdig方式でCNAMEのアクティブ化状態を確認できます。
 
 - `nslookup -qt=cname <アクセラレーションドメイン名>`
-  ![img](https://main.qcloudimg.com/raw/ed15d49b7d2fee9cf8830d4bf9ca51a2.png)
 - `dig <アクセラレーションドメイン名>`
   ![img](https://main.qcloudimg.com/raw/2ba5ec76f1671c3b8ee345cef896de10.png)
