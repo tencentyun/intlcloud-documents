@@ -1,3 +1,27 @@
+## January 2021
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+ <tr>
+ <td>Released SDK v1.3.0.0</td>
+ <td> <li> Fixes crashes in multi-thread and low-memory scenarios.
+<li>Reduces unnecessary MQTT network timeout detection.
+<li>Supports a higher performance report mode for arrival.
+<li>Reduces the size of the in-app message plugin package.
+<li>Encrypts the request that obtains the TPNS token.
+<li>Adds parameter checking logic and error callback for account/tag/user attributes.
+<li>Deletes account type enumeration and makes it customizable.</td>
+ <td>2021-01-25 </td>
+ <td> <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download </a> </li> </td>
+ </tr>
+ </table>
+
+
 ## November 2020
 
 <table>
@@ -5,25 +29,25 @@
  <th width=20%>Update</th>
  <th width=44%>Description</th>
  <th width=16%>Release Date</th>
- <th width=20%>Document</th>
+ <th width=20%>Documentation</th>
  </tr>
  <tr>
- <td>The SDK v1.2.9.0 is released</td>
- <td> <li>Fixed the issue where image download might fail in rich media notifications
- <li>Fixed the issue where the TPNS channel might be online when the application was running in the background
- <li>Fixed the issue where the TPNS token might be duplicate on versions below 1.2.5.2
- <li>Fixed the issue where it might fail to establish a persistent connection
- <li>Fixed the issue where the naming of "in-app message" conflicted with certain SDKs
- <li>Optimized the performance of local cache
- <li>Optimized the timing of reporting application notification status
- <li>Optimized the persistent connection handling mechanism on weak networks
- <li>Optimized account APIs
- <li>Optimized the code samples of TPNS demo
- <li>Added the local notification feature
- <li>Added the support for IPv6
- <li>Removed the code compatible with the free edition</td>
- <td>November 25, 2020</td>
- <td> <a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download </a> </li> </td>
+ <td>Released SDK v1.2.9.0</td>
+ <td> <li>Fixes the image download issue for rich media push.
+ <li>Fixes the TPNS channel online issue when the app runs in the background.
+ <li>Fixes TPNS token repeated issue that might occur in v1.2.5.2 or earlier.
+ <li>Fixes persistent connection establishment issues.
+ <li>Fixes conflicting names between "in-app message" and some SDKs.
+ <li>Optimizes local cache performance.
+ <li>Optimizes the report time of the app notification switch status.
+ <li>Optimizes the persistent connection processing mechanism in weak network scenarios.
+ <li>Optimizes account APIs.
+ <li>Optimizes TPNS demo code.
+ <li>Adds the local notification feature.
+ <li>Supports IPv6.
+ <li>Deletes the compatible code of the free version. </td>
+ <td>2020-11-25 </td>
+ <td> - </td>
  </tr>
  </table>
 
@@ -35,12 +59,12 @@
  <th width=20%>Update</th>
  <th width=44%>Description</th>
  <th width=16%>Release Date</th>
- <th width=20%>Document</th>
+ <th width=20%>Documentation</th>
  </tr>
  <tr>
- <td>The SDK v1.2.8.1 is released</td>
- <td>Known issues are fixed</td>
- <td>October 29, 2020</td>
+ <td>Released SDK v1.2.8.1</td>
+ <td>Fixes known issues. </td>
+ <td>2020-10-29 </td>
  <td>- </td>
  </tr>
  </table>
@@ -54,12 +78,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.8.0 is released</td>
-				<td><li><b>User attribute</b> APIs are added for personalized push</li><li>The <b>in-app message</b> feature and several in-app message templates are added</li><li>Known issues are fixed</li></td>
-        <td>September 27, 2020</td>
+        <td>Released SDK v1.2.8.0</td>
+				<td><li>Adds <b>user attribute</b> APIs for personalized push.</li><li>Adds the <b>in-app message</b> feature and several in-app message templates.</li><li>Fixes known issues.</li></td>
+        <td>2020-09-27</td>
         <td>-</li></td>
     </tr>        
 </table>
@@ -72,12 +96,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.7.2 is released</td>
-        <td><li> The custom event reporting feature is added</li><li>The success rate of "arrival" statistics reporting is improved</li><li>Known issues are fixed</li></td>
-        <td>July 23, 2020</td>
+        <td>Released SDK v1.2.7.2</td>
+        <td><li>Adds the custom event report feature.</li><li>Improves the success rate of report on the number of arrivals.</li><li>Fixes known issues.</li></td>
+        <td>2020-07-23</td>
         <td>-</a></li></td>
     </tr>        
 </table>
@@ -91,13 +115,13 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.6.1 is released</td>
-        <td><li> The stability is improved, and known issues are fixed</li><li>The access is optimized, and a registration callback method is added</li><li>The TPNS channel is added for message delivery</li><li>Data statistics are optimized</li></td>
-        <td>May 6, 2020</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30726">Registering Callback Method</a></li></td>
+        <td>Released SDK v1.2.6.1</td>
+        <td><li>Improves stability and fixes known issues.</li><li>Optimizes integration and adds registration callback method.</li><li>Adds TPNS channel and supports message delivery via the TPNS channel.</li><li>Optimizes data statistics.</li></td>
+        <td>2020-05-06</td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/30726">Registration Callback Method</a></li></td>
     </tr>        
 </table>
 
@@ -109,12 +133,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.5.4 is released</td>
-        <td>The stability is improved, and known issues are fixed</li></td>
-        <td>April 22, 2020</td>
+        <td>Released SDK v1.2.5.4</td>
+        <td>Improves stability and fixes known issues.</li></td>
+        <td>2020-04-22</td>
         <td>-</td>
     </tr>
 </table>
@@ -127,18 +151,18 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.5.3 is released</td>
-        <td><li>Tokens of a free XG cluster can now be unregistered to avoid repeated pushes</li><li>Repeated messages can now be replaced in the notification extension</li></td>
-        <td>March 19, 2020</td>
+        <td>Released SDK v1.2.5.3</td>
+        <td><li>Supports unregistering free SG clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
+        <td>2020-03-19</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/30727">Unregistering XG Platform Service</a></td>
     </tr>
     <tr>
-        <td>The SDK v1.2.5.2 is released</td>
-        <td><li>Precise push is improved, and enumeration of accounts is added</li><li>The stability is improved, and log IO exceptions and iOS 10 message receipt callback exceptions are fixed</li></td>
-        <td>March 6, 2020</td>
+        <td>Released SDK v1.2.5.2</td>
+        <td><li>Improves push precision and adds account type enumeration.</li><li>Improves stability, optimizes log I/O, and fixes message receiving callback issue for iOS10.</li></td>
+        <td>2020-03-06</td>
         <td>-</td>
     </tr>
 </table>
@@ -151,12 +175,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.5.1 is released</td>
-        <td><li>The access is simplified, and the reporting API is deleted (reporting will be automatically processed by the SDK)</li><li>The stability is improved, and the crash caused by the cache module is fixed</li></td>
-        <td>February 20, 2020</td>
+        <td>Released SDK v1.2.5.1</td>
+        <td><li>Simplifies the integration. Deletes report APIs and uses SDK auto-processing.</li><li>Improves stability and fixes crashes caused by the caching module.</li></td>
+        <td>2020-02-20</td>
         <td>-</td>
     </tr>
 </table>
@@ -169,12 +193,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.4.9 is released</td>
-        <td><li>The stability is improved, and crashes caused by message statistics collection and a memory leak issue are fixed</li> <li>The compatibility of the SDK is improved</li></td>
-        <td>January 6, 2020</td>
+        <td>Released SDK v1.2.4.9</td>
+        <td><li>Improves stability. Fixes crashes triggered by message statistics and a memory leak issue.</li> <li>Improves SDK compatibility.</li></td>
+        <td>2020-01-06</td>
         <td>-</td>
     </tr>
 </table>
@@ -187,30 +211,30 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.4.8 is released</td>
-        <td>The stability is improved, and crashes caused by message statistics collection are fixed</li></td>
-        <td>December 24, 2019</td>
+        <td>Released SDK v1.2.4.8</td>
+        <td>Improves stability and fixes crashes triggered by message statistics.</li></td>
+        <td>2019-12-24</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.7 is released</td>
-        <td> The stability is improved, and crashes caused by message statistics collection and logging are fixed</li></td>
-        <td>December 19, 2019</td>
+        <td>Released SDK v1.2.4.7</td>
+        <td> Improves stability and fixes crashes triggered by message statistics and log record.</li></td>
+        <td>2019-12-19</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.6 is released</td>
-        <td><li>The registration process in the SDK is optimized to improve the registration success rate</li><li>Rich media push is optimized to support resources with no file extensions</li><li>Known issues are fixed</li></td>
-        <td>December 16, 2019</td>
+        <td>Released SDK v1.2.4.6</td>
+        <td><li>Optimizes the SDK registration process and improves the registration success rate.</li><li>Optimizes rich media push. Supports non-suffixed resources.</li><li>Fixes known issues.</li></td>
+        <td>2019-12-16</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.5 is released</td>
-        <td><li>Crash monitoring is added in the SDK</li> <li>Arrival statistics are optimized</li><li>The statistics of cumulative devices are optimized</li><li>The I/O performance of the SDK is improved</li><li>The stability of the SDK is improved</li></td>
-        <td>December 12, 2019</td>
+        <td>Released SDK v1.2.4.5</td>
+        <td><li>Adds crash monitoring.</li> <li>Optimizes arrival data statistics.</li><li>Optimizes the statistics of accumulated number of devices.</li><li>Optimizes SDK I/O performance.</li><li>Optimizes SDK stability.</li></td>
+        <td>2019-12-12</td>
         <td>-</td>
     </tr>
 </table>
@@ -223,36 +247,36 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.4.4 is released</td>
-        <td> The registration process in the SDK is optimized to improve message delivery</li></td>
-        <td>November 28, 2019</td>
+        <td>Released SDK v1.2.4.4</td>
+        <td>Optimizes SDK registration process. Improves message delivery.</li></td>
+        <td>2019-11-28</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.3 is released</td>
-        <td> The compatibility of the SDK is improved</li></td>
-        <td>November 26, 2019</td>
+        <td>Released SDK v1.2.4.3</td>
+        <td>Optimizes SDK compatibility.</li></td>
+        <td>2019-11-26</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.2 is released</td>
-        <td> The issue with getting the TPNS token in the SDK is fixed</li></td>
-        <td>November 22, 2019</td>
+        <td>Released SDK v1.2.4.2</td>
+        <td>Fixes the TPNS token obtaining issue via the SDK.</li></td>
+        <td>2019-11-22</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.1 is released</td>
-        <td><li>The log upload API is added</li><li>The stability of the SDK is improved</li><li>The compatibility of the SDK is improved</li></td>
-        <td>November 13, 2019</td>
+        <td>Released SDK v1.2.4.1</td>
+        <td><li>Adds log upload APIs.</li><li>Optimizes SDK stability.</li><li>Optimizes SDK compatibility.</li></td>
+        <td>2019-11-13</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.4.0 is released</td>
-        <td><li>The issue with binding callback to a single account is fixed</li><li>The compatibility of the SDK is improved</li><li>Device push environments can now be differentiated between to optimize the statistics</li><li>The cache logic for changing application information is optimized</li><li>The registration success rate in the SDK is improved</li></td>
-        <td>November 12, 2019</td>
+        <td>Released SDK v1.2.4.0</td>
+        <td><li>Fixes the single-account binding callback issue.</li><li> Improves the compatibility between SDK and third parties.</li><li> Separates device push environments to optimize statistics.</li><li>Optimizes the caching logic for replacing app information.</li><li>Improves the SDK registration success rate.</li></td>
+        <td>2019-11-12</td>
         <td>-</td>
     </tr>
 </table>
@@ -265,12 +289,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.3.0 is released</td>
-        <td>An issue that occurred when the token changed is fixed</li></td>
-        <td>October 21, 2019</td>
+        <td>Released SDK v1.2.3.0</td>
+        <td>Fixes the issue that occurs when the device token changes.</li></td>
+        <td>2019-10-21</td>
         <td>-</td>
     </tr>
 </table>
@@ -283,12 +307,12 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.2.1 is released</td>
-        <td>The issue with network connection that occurred when an API was called before the SDK was completely started is fixed</li></td>
-        <td>September 29, 2019</td>
+        <td>Released SDK v1.2.2.1</td>
+        <td>Fixes the network connection issue that occurs when an API is called during the SDK launch.</li></td>
+        <td>2019-09-29</td>
         <td>-</td>
     </tr>
 </table>
@@ -301,24 +325,24 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.2.0 is released</td>
-        <td><li>The issue where registration couldn't be completed on iOS 13 is fixed</li><li>The issue with network connection during application status switch is fixed</li></td>
-        <td>August 28, 2019</td>
+        <td>Released SDK v1.2.2.0</td>
+        <td><li>Fixes the registration issue for iOS13.</li><li>Fixes the network connection issue that occurs when the app status changes.</li></td>
+        <td>2019-08-28</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.1.2 is released</td>
-        <td><li>The issue with click statistics is fixed</li><li>The issue with the tag binding API that occurred when the network connection status changed is fixed</li></td>
-        <td>August 19, 2019</td>
+        <td>Released SDK v1.2.1.2</td>
+        <td><li>Fixes the statistic clicking issue.</li><li>Fixes the tag binding API issue that occurs when the network condition changes.</li></td>
+        <td>2019-08-19</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.2.1.0 is released</td>
-        <td><li>The API used to query the token generated by TPNS is added</li><li>The failure to bind a single account is fixed</li></td>
-        <td>August 8, 2019</td>
+        <td>Released SDK v1.2.1.0</td>
+        <td><li>Adds APIs to query the TPNS-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
+        <td>2019-08-08</td>
         <td>-</td>
     </tr>
 </table>
@@ -331,36 +355,36 @@
     <th width=20%>Update</th>
     <th width=44%>Description</th>
     <th width=16%>Release Date</th>
-    <th width=20%>Document</th>
+    <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.2.0.0 is released</td>
-        <td><li>A separate data reporting SDK is added</li><li>The device registration service is optimized</li><li>The `DeviceToken` parsing logic is updated</li></td>
-        <td>July 30, 2019</td>
+        <td>Released SDK v1.2.0.0</td>
+        <td><li>Adds the independent statistic report SDK.</li><li>Optimizes the client register service.</li><li>Updates the parsing logic of `DeviceToken`.</li></td>
+        <td>2019-07-30</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.1.0.1 is released</td>
-        <td><li>The username/password authentication logic is fixed</li><li>The defect with dynamic loading of the SDK is fixed</li></td>
-        <td>July 25, 2019</td>
+        <td>Released SDK v1.1.0.1</td>
+        <td><li>Fixes the verification logic of username and password.</li><li>Fixes the SDK dynamic loading issue.</li></td>
+        <td>2019-07-25</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.1.0.0 is released</td>
-        <td><li>The PushKit plugin is added</li><li>The SDK startup time is shortened</li></td>
-        <td>July 18, 2019</td>
+        <td>Released SDK v1.1.0.0</td>
+        <td><li>Adds the PushKit plugin.</li><li>Optimizes the SDK launch time.</li></td>
+        <td>2019-07-18</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.1.0 is released</td>
-        <td><li>Push for persistent connection is added</li><li>The PushKit plugin is now supported, which is limited to registration, unregistration, and reporting</li></td>
-        <td>July 11, 2019</td>
+        <td>Released SDK v1.0.1.0</td>
+        <td><li>Adds persistent connection push.</li><li>Improves the support for the PushKit plugin. Currently, registration, unregistration, and report are supported.</li></td>
+        <td>2019-07-11</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.0.0 is released</td>
-        <td>This is the initial version</li></td>
-        <td>July 5, 2019</td>
+        <td>Released SDK v1.0.0.0</td>
+        <td>Initial version</li></td>
+        <td>2019-07-05</td>
         <td>-</td>
     </tr>
 </table>
