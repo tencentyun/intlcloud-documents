@@ -61,10 +61,8 @@ That means on January 2, the amount deducted from your payment account would be 
 
 ## References
 
-- [LVB Pricing](https://intl.cloud.tencent.com/zh/document/product/267/2819)
-- [Billing Details](https://intl.cloud.tencent.com/zh/document/product/267/2818)
-- [Purchase Process](https://intl.cloud.tencent.com/zh/document/product/267/30410)
-- [Billing Method Change](https://intl.cloud.tencent.com/zh/document/product/267/30411)
-- Viewing Bills
-- [Notes for Arrears Processing](https://intl.cloud.tencent.com/zh/document/product/267/30412)
-- [Billing FAQs](https://intl.cloud.tencent.com/zh/document/product/267/38284)
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
+- [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
+- [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614)
+- [On-Cloud Recording Billing Overview](https://intl.cloud.tencent.com/document/product/647/38385)
+- [Notes for Arrears Processing](https://intl.cloud.tencent.com/document/product/647/34611)
