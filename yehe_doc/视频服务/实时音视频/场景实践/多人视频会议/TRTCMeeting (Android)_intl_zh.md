@@ -198,8 +198,8 @@ public abstract void setDelegateHandler(Handler handler);
 登录。
 ```java
 public abstract void login(int sdkAppId,
- String userId, String userSig,
- TRTCMeetingCallback.ActionCallback callback);
+	 String userId, String userSig,
+	 TRTCMeetingCallback.ActionCallback callback);
 ```
 
 参数如下表所示：
@@ -818,12 +818,10 @@ void onRoomDestroy(String roomId);
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | localQuality | TRTCCloudDef.TRTCQuality | 上行网络质量。 |
-| remoteQuality | List<TRTCCloudDef.TRTCQuality> | 下行网络质量。 |
+| remoteQuality | List&lt;TRTCCloudDef.TRTCQuality&gt; | 下行网络质量。 |
 
 >? 详情请参见 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b)
 
-
-   
 
 ### onUserVolumeUpdate
 
