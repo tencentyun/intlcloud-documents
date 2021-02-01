@@ -38,8 +38,9 @@ TRTC 的日志默认压缩加密，后缀为 .xlog。日志是否加密是可以
 - Web：打开浏览器控制台，或使用 vConsole 记录 SDK 打印信息
 - 小程序：启用 &lt;live-pusher&gt; 和 &lt;live-player&gt; 标签的 debug 属性，使用 vConsole 记录打印信息
 
->?查看 .xlog 文件需要下载解密工具，在python 2.7环境中放到 xlog 文件同目录下直接使用 `python decode_mars_log_file.py` 运行即可。
-日志解密工具下载地址：`dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py`。
+>?
+>- 查看 .xlog 文件需要下载解密工具，在python 2.7环境中放到 xlog 文件同目录下直接使用 `python decode_mars_log_file.py` 运行即可。
+>- 日志解密工具下载地址：`dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py`。
  
  
 <span id="que6"></span>
