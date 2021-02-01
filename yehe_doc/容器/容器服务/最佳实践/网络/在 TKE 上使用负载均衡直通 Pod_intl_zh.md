@@ -138,4 +138,4 @@ CLB 直接绑定 Pod 时检查 Pod 是否 Ready，需查看 Pod 是否 Running�
 ## 参考资料
 
 * [TKE 基于弹性网卡直连 Pod 的网络负载均衡](https://mp.weixin.qq.com/s/fJtlm5Qjm2BfzekC4RegCQ)
-* [集群开启 VPC-CNI 模式网络](https://intl.cloud.tencent.com/document/product/457/35250)
+* [集群开启 VPC-CNI 模式网络](https://intl.cloud.tencent.com/document/product/457/38971)
