@@ -138,4 +138,4 @@ To use YAML to create an Ingress, you need to add the annotation `ingress.cloud.
 ## References
 
 * [TKE in Direct Connection to the CLB of Pods Based on ENI](https://mp.weixin.qq.com/s/fJtlm5Qjm2BfzekC4RegCQ)
-* [Enabling VPC-CNI for a Cluster](https://intl.cloud.tencent.com/document/product/457/35250)
+* [Enabling VPC-CNI for a Cluster](https://intl.cloud.tencent.com/document/product/457/38971)
