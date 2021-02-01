@@ -4,7 +4,7 @@ The function processing service allows you to quickly complete complex log proce
 
 The overall data processing flow is as follows:
 
-![](https://main.qcloudimg.com/raw/fca34c1b86e91e42bdaaee83764ed181.svg)
+![](https://main.qcloudimg.com/raw/b1502b1adad1baf4ecc8a2a599d746df.svg)
 
 The source log data can be submitted to SCF through a CLS function trigger, and then data processing and analysis, event triggering, and auto scaling can be implemented through function computing of Serverless Framework. The entire workflow requires no OPS and is pay-as-you-go.
 
