@@ -25,7 +25,7 @@ For more information, see the **Binding/Unbinding a key to or from a CVM** secti
 
 ### How do I modify the SSH key name/description?
 
-For more information, see the **Binding/Unbinding a key to or from a CVM** section in [Managing SSH keys](https://intl.cloud.tencent.com/document/product/213/16691).
+For more information, see the **Modifying the SSH key name and description** section in [Managing SSH keys](https://intl.cloud.tencent.com/document/product/213/16691).
 
 ### How do I delete an SSH key?
 
