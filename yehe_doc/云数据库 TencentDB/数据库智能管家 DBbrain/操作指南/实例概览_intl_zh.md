@@ -22,4 +22,3 @@ DBbrain 定期为所有实例进行健康巡检打分，通过该页面可以查
 ## 监控情况排行
 资源监控排行中展示所选监控指标的消耗情况 TOP 排行，单击对应实例可查看异常诊断详情。
 - MySQL 数据库指标包括：CPU、内存、磁盘利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
-- TDSQL-C 数据库指标包括：CPU、内存、存储利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
