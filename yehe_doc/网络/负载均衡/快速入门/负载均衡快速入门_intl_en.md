@@ -86,8 +86,8 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 1. Go to the Tencent Cloud Domain Service page for domain name query and registration. `example.com` is used as the sample domain name here.
 2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **Domain Name Resolution List** on the left sidebar, and click **Resolve** on the right of a domain name.
 3. Open the **Record Management** tab, click **Add Records** to add an A record for the domain name with the following parameters:
-  - Record Type: A
   - Host: The prefix of the domain name. Here takes resolving all prefixes as an example: `*.example.com`.
+  - Record Type: A
   - Split Zone: Default
   - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
   - TTL: Leave it as the default value **600** s.
