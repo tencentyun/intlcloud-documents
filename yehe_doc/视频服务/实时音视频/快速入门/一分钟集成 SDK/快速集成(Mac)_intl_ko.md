@@ -1,4 +1,4 @@
-본 문서에서는 Tencent Cloud TRTC SDK(mac)를 귀하의 프로젝트에 빠르게 통합할 수 있는 방법에 대해 소개합니다. 다음 절차에 따라 설정하면 SDK 통합 작업을 완료할 수 있습니다.
+본 문서에서는 Tencent Cloud TRTC SDK(mac)를 프로젝트에 빠르게 통합할 수 있는 방법에 대해 소개합니다. 다음 절차에 따라 설정하면 SDK 통합 작업을 완료할 수 있습니다.
 
 
 ## 개발 환경 요구사항
@@ -46,7 +46,7 @@ pod init
 ```
 
 #### 4. SDK 설치 및 업데이트
-터미널 창에 다음 명령어를 입력하여 TRTC SDK를 실행합니다.
+터미널 창에 다음 명령어를 입력하여 TRTC SDK를 설치합니다.
 ```
 pod install
 ```
@@ -55,12 +55,12 @@ pod install
 pod update
 ```
 
-pod 명령어 실행이 완료되면 SDK .xcworkspace 접미사가 통합된 프로그램 파일이 생성되며, 이를 더블클릭해 실행하면 됩니다.
+pod 명령어 실행이 완료되면 SDK의 확장자 .xcworkspace가 통합된 프로그램 파일이 생성되며, 이를 더블 클릭해 실행하면 됩니다.
 
 ### 수동 통합
 1. [TRTC-SDK ](https://github.com/tencentyun/TRTCSDK/tree/master/Mac) Mac 버전을 다운로드합니다.
 
-2. Xcode 프로그래밍 프로젝트를 열어 1단계에서 다운로드한 framework를 귀하의 프로그래밍에 가져옵니다.
+2. Xcode 프로그래밍 프로젝트를 열어 1단계에서 다운로드한 framework를 귀하의 프로그램에 가져옵니다.
 
 3. 실행해야 할 target을 선택하고 Build Phases를 선택합니다.
 ![](https://main.qcloudimg.com/raw/b5097f8ac4cbaa5044d92b2a96ea2b9e.jpg)
@@ -68,16 +68,16 @@ pod 명령어 실행이 완료되면 SDK .xcworkspace 접미사가 통합된 프
 4. **Link Binary with Libraries**를 클릭해 펼치고 하단에 있는 +를 클릭해 종속 라이브러리를 추가합니다.
 ![](https://main.qcloudimg.com/raw/17046154417930f9d31b6452782df55d.jpg)
 
-5. 다운로드한 SDK Framework와 이에 필요한 종속 라이브러리: `AudioUnit.framework`, `libc++.tbd`, `Accelerate.framework`를 순차적으로 추가합니다.  
+5. 다운로드한 SDK Framework와 이에 필요한 종속 라이브러리 `AudioUnit.framework`, `libc++.tbd`, `Accelerate.framework`를 순서대로 추가합니다.  
     
 추가하면 다음 이미지와 같아집니다.
 ![](https://main.qcloudimg.com/raw/7bddb832347a971f3e69238480fa3e8d.jpg)
 
-## 카메라와 마이크 사용 권한 허용
+## 카메라 및 마이크 사용 권한 허용
 SDK의 멀티미디어 기능을 사용하려면 마이크와 카메라의 사용 권한 허용이 필요합니다. 앱의 Info.plist에 마이크와 카메라의 사용 권한 대화 상자가 시스템에 팝업될 때 표시되는 안내 정보인 다음 두 항목을 추가합니다.
 - **Privacy - Microphone Usage Description**, 마이크 사용 목적 안내사항 입력
 - **Privacy - Camera Usage Description**, 카메라 사용 목적 안내사항 입력
-다음 이미지 참고:
+다음 이미지를 참고하십시오.
 ![](https://main.qcloudimg.com/raw/ce02c335f1a6413fb37adb0ed20a9603.png)
 
 App에서 **App Sandbox** 또는 **Hardened Runtime**을 활성화한 경우 `Network`, `Camera`, `Audio Input` 항목을 선택해야 합니다.
