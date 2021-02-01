@@ -5,19 +5,19 @@
 
 ## データベース/テーブルの作成
 1. [DMCコンソール](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)にログインし、上部のナビゲーションバーで【Create】>【Create Database 】>【Add Database】または【Create】>【Create Table】を選択します。
-![](https://main.qcloudimg.com/raw/655d55fd3304455269a547f90c96c91e.png)
+![](https://main.qcloudimg.com/raw/899520a477489601623a73558b9d5718.png)
 2. 表示されるダイアログボックスで、新しいデータベース/テーブルを設定し、【Submit】をクリックします。
 >?文字セット、照合順序の詳細については、[MySQLの公式ドキュメント](https://dev.mysql.com/doc/)をご参照ください。
 >
  - データベースの作成
-![](https://main.qcloudimg.com/raw/258605b4ac20f2136672bab0381e0f3f.png)
+![](https://main.qcloudimg.com/raw/3d894dd9ca840274ce66321a84089d00.png)
  - テーブルの作成
-![](https://main.qcloudimg.com/raw/d2aec4106f019ff9d088be7c27737330.png)
+![](https://main.qcloudimg.com/raw/4423064c24df9f0b083fec5281b428c7.png)
 
 ## インスタンスセッション管理
 [DMC コンソール](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)にログインし、上部のナビゲーションバーで【instance session】を選択して、インスタンスセッション管理ページに入ります。ユーザーは、現在のデータベース内のすべてのインスタンスのセッションの詳細を表示し、セッションの概要、ユーザー、アクセスソース、およびデータベースの4つの異なるディメンションから情報を表示できます。
 DMCを使用すると、セッションを強制終了して、セッション管理を容易にすることができます。
-![](https://main.qcloudimg.com/raw/dd87caaefb78386484ebb58bfdbdc6e4.png)
+![](https://main.qcloudimg.com/raw/0c16ea83442b6c61f2d237f95b60e768.png)
 
 ## データベースのリアルタイム監視
 [DMC コンソール](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)にログインし、上部のナビゲーションバーで【Instance Monitoring】を選択して、インスタンスの監視ページに入ります。データベースのリアルタイム監視機能は4秒ごとにデータを更新し、次の監視データを提供します。
@@ -32,12 +32,7 @@ MySQL ステータス情報|  InnoDB行操作 |   スレッド   |ネットワ�
 [sel] は1秒あたりに実行されたselectステートメントの数を示します | -|- | - |
 [hit%] はキャッシュヒット率を示します。主にinnodb_buffer_poolのヒット率を指します | - | - |- |
 
-## InnoDBロック待機管理
->?TencentDB for MySQL v8.0は InnoDB ロック待機管理機能をサポートしていません。
->
-[DMC コンソール](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)にログインし、上部のナビゲーションバーで【InnoDB lock wait】を選択して、InnoDBロック待機の管理ページに入ります。ユーザーは、ロックの保持とロックの待機の詳細を表示したり、セッションを削除したりできます。次の図に示すように：
-![](https://main.qcloudimg.com/raw/ea4ebed0ba1a6e8b804af1554c09d3e6.png)
-![](https://main.qcloudimg.com/raw/746daa00522aa773c96c1248570a4537.png)
+
 
 ## 組み込みツールphpMyAdmin
 >?TencentDB for MySQL v8.0はphpMyAdmin機能をサポートしていません。
