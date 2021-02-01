@@ -32,10 +32,10 @@
 
 - 単独のホストのレコードラインを「デフォルト」タイプに設定し、すべてのサーバーのアクセラレーションサービスを有効にできます。
 	 例えば、全てのユーザーを1.comに方向付けする必要がある場合に、回線タイプをデフォルト、レコード値を‵1.com‵とする1個のCANMEレコードを追加することで実現できます。
-![img](https://main.qcloudimg.com/raw/be770e0f8b91c33ae7c41f1e50e633af.png)
+![img](https://main.qcloudimg.com/raw/0c146a23008acc3c0e4884aa1c4d3a3c.png)
 -回路を分けてアクセラレーションサービスを有効にもできます。
 例えば、チャイナユニコムユーザーを`2.com`に方向付けし、チャイナモバイルユーザーを `1.com`に方向付けする必要がある場合。回線タイプをチャイナモバイル、レコード値を`1.com` とするものと、回線タイプをチャイナユニコム、レコード値を `2.com` とするものの2本のCNAME レコードを追加することで実現できます。設定の詳細説明は[回線解析説明](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/)をご参照ください。
-![](https://main.qcloudimg.com/raw/a10e6be051e2b90a323cb8e07081fb63.png)
+![](https://main.qcloudimg.com/raw/ecf4d1ad94eaf897473647459b923209.png)
 
 <span ID ="m2"></span>
 ### Alibaba Cloud設定方法
