@@ -12,7 +12,7 @@ Hadoop Ranger is a permission solution for big data scenarios. A user adopting t
 
 ## Solution Architecture
 
-![](https://main.qcloudimg.com/raw/221e3a3e8fd6d31590fc8ca2562d7489.png)
+![](https://main.qcloudimg.com/raw/47bcff91b29614141b9c88efd39e50c1.png)
 
 In the Hadoop permission system, the authentication is offered by Kerberos and authorized by Ranger. On the basis of this, the following components are introduced to support the COS Ranger permission solution:
 
