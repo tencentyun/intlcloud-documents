@@ -36,8 +36,9 @@ TRTC logs are compressed and encrypted by default in the `.xlog` extension. You 
 - Web: open the browser console or use vConsole to log the printed SDK information
 - Mini Program: enable the `debug` attribute of the &lt;live-pusher&gt; and &lt;live-player&gt; tags and use vConsole to log the printed information
 
->?You need to download the decryption tool to view a .xlog file. Place the tool in the same directory of the .xlog file in Python 2.7 and directly run `python decode_mars_log_file.py` to launch the tool.
-Download address of log decryption tool: `dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py`.
+>?
+>- You need to download the decryption tool to view a .xlog file. Place the tool in the same directory of the .xlog file in Python 2.7 and directly run `python decode_mars_log_file.py` to launch the tool.
+>- Download address of log decryption tool: `dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py`.
  
  <span id="que6"></span>
 ### What should I do if a 10006 error occurs?
