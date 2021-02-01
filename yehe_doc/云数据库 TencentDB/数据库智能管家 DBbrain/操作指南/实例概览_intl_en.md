@@ -22,4 +22,3 @@ DBbrain periodically performs health checks on all instances and scores them acc
 ## Monitoring Status Rankings
 The resource consumption rankings of selected monitoring metrics are displayed. You can click an instance to view details about its exception diagnosis.
 - MySQL metrics: CPU, memory, disk utilization, TPS, QPS, number of slow queries, connected threads, and running threads.
-- TDSQL-C 数据库指标包括：CPU、内存、存储利用率、TPS、QPS、慢查询数、Connected Threads、Running Threads。
