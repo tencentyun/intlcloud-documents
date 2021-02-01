@@ -25,7 +25,7 @@ SSH 密钥是一种远程登录 Linux 服务器的方式，其原理是利用密
 
 ### 如何修改 SSH 密钥名称/描述？
 
-具体操作，请参考 [修改 SSH 密钥名称/描述](https://intl.cloud.tencent.com/document/product/213/16691)。
+具体操作，请参考 [密钥绑定实例](https://intl.cloud.tencent.com/document/product/213/16691) 及 [密钥解绑实例](https://intl.cloud.tencent.com/document/product/213/16691)。
 
 ### 如何删除 SSH 密钥？
 
