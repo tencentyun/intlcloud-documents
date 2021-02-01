@@ -12,7 +12,7 @@ Hadoop Ranger 权限体系是大数据场景下的权限解决方案。用户使
 
 ## 解决方案架构
 
-![](https://main.qcloudimg.com/raw/221e3a3e8fd6d31590fc8ca2562d7489.png)
+![](https://main.qcloudimg.com/raw/47bcff91b29614141b9c88efd39e50c1.png)
 
 Hadoop 权限体系中, 认证由 Kerberos 提供，授权鉴权由 Ranger 负责。在此基础上，我们提供以下组件，来支持 COS 的 Ranger 权限方案。
 
