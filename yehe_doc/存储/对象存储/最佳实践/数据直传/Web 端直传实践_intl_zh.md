@@ -8,7 +8,7 @@
 ## 前提条件
 
 1. 登录  [COS 控制台](https://console.cloud.tencent.com/cos5) 并创建存储桶，得到 Bucket（存储桶名称） 和 Region（地域名称），详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 文档。
-2. 进入存储桶详情页，单击【基础配置】页签。下拉页面找到【跨域访问CORS设置】配置项，单击【添加规则】，配置示例如下图，详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
+2. 进入存储桶详情页，单击【安全管理】页签。下拉页面找到【跨域访问CORS设置】配置项，单击【添加规则】，配置示例如下图，详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
 ![](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/capi)， 获取您的项目 SecretId 和 SecretKey。
 
