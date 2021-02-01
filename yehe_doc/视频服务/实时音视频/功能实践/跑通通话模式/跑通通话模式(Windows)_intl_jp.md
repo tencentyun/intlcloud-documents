@@ -1,5 +1,5 @@
 ## ドキュメントガイド
-ここでは主に、 TRTC SDK をベースとして簡単なビデオ通話機能を実現する方法についてご紹介します。本稿では最もよく用いられるインターフェースのみをリストアップしています。インターフェース関数に関する詳しい情報をご希望の場合、 [APIドキュメント](https://intl.cloud.tencent.com/document/product/647/35119)をご参照ください。
+このドキュメントでは、主にTRTC SDKをベースに簡単なビデオ通話機能を実現する方法を紹介します。ここでは最もよく使われるインターフェースを幾つかリストアップしただけですので、より多くのインターフェース関数を理解したい場合は、[API ドキュメント](https://intl.cloud.tencent.com/document/product/647/35119)をご参照ください。
 
 
 ## サンプルコード
@@ -12,19 +12,19 @@
 
 ## ビデオ通話
 ### 1. SDKの初期化
-TRTC SDK を使用する第1ステップとして、始めに`getTRTCShareInstance` エクスポートインターフェースによって、 `TRTCCloud` のシングルインスタンスオブジェクトの `ITRTCCloud*`ポインタを取得し、 SDK イベントをモニターするコールバックを登録します。
+TRTC SDKを使用する第1ステップは、`getTRTCShareInstance`エクスポートインターフェースによって、 `TRTCCloud`シングルインスタンスのオブジェクトポインタ `ITRTCCloud*`を取得し、SDKのイベントをモニタリングするコールバックを登録することです。
 
-- `ITRTCCloudCallback`イベントのコールバックインターフェースクラスを継承して、ローカルユーザーの入室/退室イベント、リモートユーザーの入室/退室イベント、エラーイベント、警告イベントなど、重要なイベントのコールバックインターフェースを書き換えます。
-- `addCallback`インターフェースをコールして、SDKイベントを登録、監視します。
+- `ITRTCCloudCallback`のイベントコールバックインターフェースクラスを継承し、キーとなるイベントのコールバックインターフェースをリライトします。これには、ローカルユーザーの入室/退室イベント、リモートユーザーの参加/退出イベント、エラーイベント、アラームイベントなどが含まれます。
+- `addCallback` インターフェースを呼び出し、SDKのイベントのモニタリングを登録します。
 
->!`addCallback`がN回登録されている場合、SDKは同じイベントに対してコールバックをN回トリガーするので、`addCallbackを1回だけ呼び出すことをお勧めします。
+>`addCallback`をN回登録すると、同一イベントで、SDKがN回のコールバックをトリガーしますので、`addCallback`の呼び出しは1回のみとすることをお勧めします。
 
 C++ 版：
 
 ```c++
 // TRTCMainViewController.h
 
-// ITRTCCloudCallbackイベントコールバックインターフェースクラスを継承します
+// ITRTCCloudCallbackのイベントコールバックインターフェースクラスを継承します
 class TRTCMainViewController : public ITRTCCloudCallback
 {
 public:
@@ -36,9 +36,9 @@ public:
     virtual void onEnterRoom(int result);
     virtual void onExitRoom(int reason);
     virtual void onRemoteUserEnterRoom(const char* userId);
-    virtual void onRemoteUserLeaveRoom(const char* userId,int reason);
-    virtual void onUserVideoAvailable(const char* userId, boo1 available);
-    virtual void onUserAudioAvailable(const char* userId, boo1 available);
+    virtual void onRemoteUserLeaveRoom(const char* userId, int reason);
+    virtual void onUserVideoAvailable(const char* userId, bool available);
+    virtual void onUserAudioAvailable(const char* userId, bool available);
 ...
 private:
 	ITRTCCloud * m_pTRTCSDK = NULL；
@@ -49,28 +49,28 @@ private:
 
 TRTCMainViewController::TRTCMainViewController()
 {
-    //  TRTCCloud インスタンスを作成
+    // TRTCCloud インスタンスの作成
     m_pTRTCSDK = getTRTCShareInstance();
     
-    // SDKコールバックイベントを登録
+    // SDK イベントコールバックの登録
     m_pTRTCSDK->addCallback(this);
 }
 
 TRTCMainViewController::~TRTCMainViewController()
 {
-    // SDKイベントの監視をキャンセル
+    // SDK イベントのモニタリング のキャンセル
     if(m_pTRTCSDK) {
         m_pTRTCSDK->removeCallback(this);
     }
     
-    //  TRTCCloud インスタンスをリリース
+    // TRTCCloud インスタンスのリリース
 	  if(m_pTRTCSDK != NULL) {
        destroyTRTCShareInstance();
         m_pTRTCSDK = null;
     }
 }
 
-// エラー通知は監視されるべきもので、エラー通知はSDKの実行を継続できないことを意味します
+// エラー通知はモニタリングする必要があります。エラー通知は、SDKの実行を継続できないことを意味します
 virtual void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, void* arg)
 {
     if (errCode == ERR_ROOM_ENTER_FAIL) {
@@ -85,7 +85,7 @@ C# 版：
 ```c#
 // TRTCMainForm.cs
 
-// ITRTCCloudCallbackイベントコールバックインターフェースクラスを継承します
+// ITRTCCloudCallback イベントコールバックインターフェースクラスを継承します
 public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 {
 	...
@@ -96,9 +96,9 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
     {
     	InitializeComponent();
     	this.Disposed += new EventHandler(OnDisposed);
-    	//  TRTCCloud インスタンスを作成
-    	mTRTCCloud = lTRTCCloud.getTRTCShareInstance();
-    	// SDKコールバックイベントを登録
+    	// TRTCCloud インスタンスの作成
+    	mTRTCCloud = ITRTCCloud.getTRTCShareInstance();
+    	// SDK イベントコールバックの登録
     	mTRTCCloud.addCallback(this);
     	...
     }
@@ -107,16 +107,16 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
     {
     	if (mTRTCCloud != null)
     	{
-    		// SDKイベントの監視をキャンセル
+    		// SDKイベントモニタリングのキャンセル
     		mTRTCCloud.removeCallback(this);
-    		//  TRTCCloud インスタンスをリリース
+    		// TRTCCloud インスタンスのリリース
     		ITRTCCloud.destroyTRTCShareInstance();
     		mTRTCCloud = null;
     	}
     	...
     }
     ...
-    // エラー通知は監視されるべきもので、エラー通知はSDKの実行を継続できないことを意味します
+    //  エラー通知はモニタリングする必要があります。エラー通知は、SDKの実行を継続できないことを意味します
     public void onError(TXLiteAVError errCode, string errMsg, IntPtr arg)
     {
          if (errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL) {
@@ -128,30 +128,30 @@ public partial class TRTCMainForm : Form, ITRTCCloudCallback, ITRTCLogCallback
 }
 ```
 
-### 2.  TRTCParamsの組み立て
+### 2. TRTCParamsの組み立て
 
-TRTCParamsは、SDKの最も重要なパラメータであり、sdkAppId、userId、userSig及びroomIdという4つの必須フィールドが含まれます。
+TRTCParams は SDK で最も重要なパラメータであり、SDKAppID、userId、userSig 、roomIdの4つの記入必須のフィールドがあります。
 
 - **SDKAppID**
-  Tencent CloudのTencent Real-Time Communication[コンソール](https://console.cloud.tencent.com/rav)にアクセスします。まだアプリケーションをお持ちでない場合、作成してください。SDKAppIDが表示されます。
+  Tencent Cloud TRTC [コンソール](https://console.cloud.tencent.com/rav)に入ります。アプリケーションがない場合は、作成してください。作成するとSDKAppIDが確認できます。
   
 - **userId**
-  自由に指定できます。文字列型なので、直接お客様の既存のアカウントシステムとの一致を維持することができます。ただし、**同じオーディオ・ビデオルームには、同じ名前のuserIdが2つないようにご注意ください**。
+  自由に指定することができ、文字列タイプのため、お客様の既存のアカウント体系と同じのものにすることが可能です。但し、**同じ音声/ビデオルームには2つの同名の userIdが存在できません**ので、ご注意ください。
 
 - **userSig**
-  userSigはuserIdをもとに算出することができます。計算方法は、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
+  SDKAppIDとuserIdを基に、userSigを計算できます。計算方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
 
 - **roomId**
-  ルーム番号は数値型で、自由に指定できます。ただし、**同じアプリケーション内の2つのオーディオ・ビデオルームに、同じroomIdを割り当てることはできませんので、ご注意ください**。
+  ルームナンバーは数字タイプとなり、自由に指定できます。但し、**同じアプリケーション内の2つの音声/ビデオルームに、同じroomIdをアサインすることはできません**ので、ご注意ください。
 
 ### 3. ルームへの入室（または作成）
- `enterRoom` をコールして、 TRTCParams パラメータの roomId で指定されたオーディオ・ビデオルームに参加できます。そのルームが存在しない場合は、SDK は roomId をルームナンバーとする新しいルームを自動的に作成します。
+`enterRoom` を呼び出し、 TRTCParams パラメータの中の roomIdが指定する音声/ビデオルームに参加できます。該当するルームが存在しない場合、SDK は roomId をルームナンバーとする新しいルームを自動作成します。
 
-**appScene** パラメータは、SDK のユースケースを指定します。このドキュメントでは、 `TRTCAppSceneVideoCall`（ビデオ通話）を使用して、そのユースケースにおいて、 SDK 内部コーデック及びネットワークコンポーネントが、ビデオの流暢さをより重視して、通話遅延とラグ率を低下させます。
+**appScene** パラメータは、SDK のユースケースを指定します。ここでは、`TRTCAppSceneVideoCall`（ビデオ通話）を使用しますが、このシナリオにおいては、SDK 内部のコーディックおよびネットワークコンポーネントは、映像のスムーズさをより重視し、通話のディレーとラグ率を低減させるものとなっています。
 				
-- 入室に成功した場合、SDK は `onEnterRoom` インターフェースをコールバックします。パラメータ： `result`が0より大きいときは入室成功で、数値はルーム入室にかかった時間を示します。単位はミリ秒（ms）です。 `result`が0より小さいときは、入室失敗で、数値は入室失敗のエラーコードを示します。
-- 入室に失敗した場合、SDK は同時に `onError` インターフェースをコールバックします。パラメータは、`errCode`（エラーコードは `ERR_ROOM_ENTER_FAIL`、エラーコードは `TXLiteAVCode.h`を参照できます）、`errMsg`（エラー原因）、`extraInfo`（保留パラメータ）です。
-- 既にルームにいる場合は、 `exitRoom` の方法をコールして現在のルームを退出すると、次のルームに入ることができるようになります。 
+- 入室に成功すると、SDKが`onEnterRoom` インターフェースのコールバックを行います。パラメータ：`result`が0を上回る時は、入室に成功し、数値は入室に要した時間を表しています（単位はミリ秒（ms））。`result`が0を下回る時は、入室に失敗し、数値は入室失敗のエラーコードを表しています。
+- 入室に失敗した場合、SDK は同時に `onError` インターフェースをコールバックします。パラメータは、`errCode`（エラーコード：`ERR_ROOM_ENTER_FAIL`、エラーコードは `TXLiteAVCode.h`を参照のこと）、`errMsg`（エラー原因）、`extraInfo`（保留パラメータ）です。
+- 既にルーム内にいる場合、次のルームに入るには、`exitRoom`のメソッドを呼び出して現在のルームから退出する必要があります。 
 
 C++ 版：
 
@@ -160,13 +160,13 @@ C++ 版：
 
 void TRTCMainViewController::enterRoom()
 {
-    // TRTCParams 参照用ヘッダーファイルの定義 TRTCCloudDef.h
+    // TRTCParamsの定義はヘッダーファイル TRTCCloudDef.hを参照
     TRTCParams params;
     params.sdkAppId = sdkappid;
     params.userId   = userid;
     params.userSig  = usersig;
     params.roomId   = 908; // 入室したいルームを入力します
-    if(m_pTRTCSDK) 
+    if(m_pTRTCSDK)
     {
     	m_pTRTCSDK->enterRoom(params, TRTCAppSceneVideoCall);
     }
@@ -176,10 +176,10 @@ void TRTCMainViewController::enterRoom()
     
 void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, void* arg)
 {
-    if (errCode == ERR_ROOM_ENTER_FAIL) 
+    if(errCode == ERR_ROOM_ENTER_FAIL)
     {
         LOGE(L"onError errorCode[%d], errorInfo[%s]", errCode, UTF82Wide(errMsg).c_str());
-        // userSigが合法であるか、ネットワークが正常かなどをチェックします
+        // userSigが合法か、ネットワークが正常かなどをチェックします
     }
 }
 
@@ -188,13 +188,13 @@ void TRTCMainViewController::onError(TXLiteAVError errCode, const char* errMsg, 
 void TRTCMainViewController::onEnterRoom(int result)
 {
     LOGI(L"onEnterRoom result[%d]", result);
-    if (result >= 0) 
+    if(result >= 0)
 	{
-		//入室に成功
+		//入室に成功  
 	}
 	else
 	{
-		//入室に失敗。エラーコード = result；
+		//入室に失敗、エラーコード = result；
 	}
 }
 ```
@@ -204,15 +204,15 @@ C# 版：
 ```c#
 // TRTCMainForm.cs
 
-public void EnterRoom() 
+public void EnterRoom()
 {
-    // TRTCParams 参照用ヘッダーファイルの定義 TRTCCloudDef.h
+    // TRTCParamsの定義はヘッダーファイル TRTCCloudDef.hを参照
     TRTCParams @params = new TRTCParams();
     @params.sdkAppId = sdkappid;
     @params.userId   = userid;
     @params.userSig  = usersig;
     @params.roomId   = 908; // 入室したいルームを入力します
-    if (mTRTCCloud != null)
+    if(mTRTCCloud != null)
     {
     	mTRTCCloud.enterRoom(@params, TRTCAppSceneVideoCall);
     }
@@ -222,40 +222,40 @@ public void EnterRoom()
     
 public void onError(TXLiteAVError errCode, string errMsg, IntPtr arg)
 {
-    if (errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL) 
+    if(errCode == TXLiteAVError.ERR_ROOM_ENTER_FAIL)
     {
         Log.E(String.Format("errCode : {0}, errMsg : {1}, arg = {2}", errCode, errMsg, arg));
-        // userSigが合法であるか、ネットワークが正常かなどをチェックします
+        // userSigが合法か、ネットワークが正常かなどをチェックします
     }
 }
 
 ...
 
-public void onEnterRoom(int result) 
+public void onEnterRoom(int result)
 {
-    if (result >= 0) 
+    if(result >= 0)
 	{
-		//入室に成功
+		//入室に成功 
 	}
 	else
 	{
-		//入室に失敗。エラーコード = result；
+		//入室に失敗、エラーコード = result；
 	}
 }
 ```
 
-ユースケースに基づき適切な　scene　パラメータを設定してください。誤った選択をすると、ラグ率または画面の解像度が想定のレベルに到達しなくなります。
+>ユースケースに応じて適切な scene パラメータを選択してください。使用を間違えるとラグ率または画面の鮮明度が所定のレベルに達しなくなります。
 
-### 4. リモートオーディオストリームの視聴
-TRTC SDK は、デフォルトではリモートのオーディオストリームを受信します。このために追加でコードを作成する必要はありません。特定の userid のオーディオストリームを聴きたくない場合は、 `muteRemoteAudio` を使用してミュートにすることができます。
+### 4. リモート音声ストリームの聴取
+TRTC SDKは、デフォルトの状態でリモートの音声ストリームを受信するようになっています。このため追加コードを作成する必要はありません。特定の useridの音声ストリームを受信したくない場合は、 `muteRemoteAudio`を使用し、ミュートにすることができます。
 
-### 5. リモートビデオストリーミングの視聴
+### 5. リモートビデオストリームの視聴
 
-TRTC SDK は、デフォルトではリモートのビデオストリーミングをプルすることはありません。ルーム内でユーザーのアップストリーミングビデオデータがある場合、ルーム内のその他のユーザーは ITRTCCloudCallback の `onUserVideoAvailable` コールバックによって、そのユーザーの userid。 を取得でき、 `startRemoteView` メソッドをコールしてそのユーザーのビデオ画面を表示することができます。
+TRTC SDKは、デフォルトの状態ではリモートのビデオストリームをプルしません。ルーム内のユーザーに上りビデオデータがあるときに、ルーム内の他のユーザーは、ITRTCCloudCallbackの中の`onUserVideoAvailable` のコールバックによって当該ユーザーのuseridを取得できます。その後、`startRemoteView`のメソッドを呼び出せば当該ユーザーのビデオ画面を表示できます。
 
-`setRemoteViewFillMode`を介して、ビデオ表示モードを` Fill`または`Fit`モードに指定することができます。この2種類のモードでは、ビデオサイズは同じ比率のまま拡大・縮小され、次のような違いがあります。
-- `Fill`モードでは、ウィンドウを確実に塗りつぶすことが優先されます。拡大・縮小されたビデオサイズと表示ウィンドウのサイズが一致しない場合、余分なビデオ部分は削除されます。
-- `Fit`モードでは、すべてのビデオコンテンツを確実に表示することが優先されます。拡大・縮小されたビデオサイズと表示ウィンドウのサイズが一致しない場合、塗りつぶされていないウィンドウ領域は黒で塗りつぶされます。
+`setRemoteViewFillMode`によって、ビデオ表示モードを `Fill` または `Fit` モードに指定することができます。この2種類のモードはビデオサイズはいずれも同じ比率で拡大縮小します。違いは以下のとおりです。
+- `Fill`モード：ビューウィンドウが全てコンテンツで埋まることを優先的に保証します。拡大縮小後のビデオサイズがビューウィンドウのサイズと一致しない場合、はみ出たビデオの部分はカットされます。
+- `Fit`モード：ビデオのコンテンツが全て表示されることを優先的に保証します。拡大縮小後のビデオサイズがビューウィンドウのサイズと一致しない場合、欠けているウィンドウエリアは黒色で補填されます。
 
 C++ 版：
 
@@ -269,8 +269,8 @@ void TRTCMainViewController::onUserVideoAvailable(const char* userId, bool avail
         
         // リモートユーザーのビデオのレンダリングモードを設定します。
         m_pTRTCSDK->setRemoteViewFillMode(TRTCVideoFillMode_Fill);
-        // SDKインターフェースを呼び出して、リモートユーザーストリームを再生します。
-        m_pTRTCSDK->startRemoteView(userId， hwnd);
+        // SDK インターフェースを呼び出し、リモートユーザーのストリーミングを再生します。
+        m_pTRTCSDK->startRemoteView(userId、 hwnd);
     }else{
         m_pTRTCSDK->stopRemoteView(userId);
     }    
@@ -283,14 +283,14 @@ C# 版：
 // TRTCMainForm.cs
 public void onUserVideoAvailable(string userId, bool available)
 {
-    if (available) 
+    if (available)
 	{
-		// ウィンドウのハンドルを取得します。
+		// ウィンドウのハンドルを取得します
 		IntPtr ptr = GetHandleAndSetUserId(pos, userId, false);
 		SetVisableInfoView(pos, false);
 		// リモートユーザーのビデオのレンダリングモードを設定します。
 		mTRTCCloud.setRemoteViewFillMode(userId, TRTCVideoFillMode.TRTCVideoFillMode_Fit);
-		// SDKインターフェースを呼び出して、リモートユーザーストリームを再生します。
+		// SDK インターフェースを呼び出し、リモートユーザーのストリーミングを再生します。
 		mTRTCCloud.startRemoteView(userId, ptr);
 	}
 	else
@@ -301,19 +301,19 @@ public void onUserVideoAvailable(string userId, bool available)
 }
 ```
 
-### 6. ローカル音声集音スイッチ
+### 6. ローカル声音の集音のオン/オフ
 
-TRTC SDK は、デフォルトではローカルのマイクによる集音を有効にしません。`startLocalAudio` は、ローカルの集音を有効にして、音声ビデオデータを放送します。`stopLocalAudio` はそれを停止します。
->? `startLocalPreview` の後に引き続き `startLocalAudio`をコールすることができます。
+TRTC SDK は、デフォルトではローカルのマイクによる集音がオンになっていません。`startLocalAudio`で、ローカルの集音をオンにして音声ビデオデータを放送することができ、`stopLocalAudio` でこれをオフにします。
+> `startLocalPreview`の後に引き続き`startLocalAudio`を呼び出すことができます。
 
-### 7. ローカルビデオ収録スイッチ
+### 7. ローカルビデオの撮影のオン/オフ
 
-TRTC SDKは、デフォルトではローカルのカメラキャプチャがオンになりません。`startLocalPreview`でローカルカメラを起動してプレビュー画面を表示することができ、`stopLocalPreview`はその機能をオフにします。
+TRTC SDK は、デフォルトではローカルのWebカメラの撮影が有効になっていません。`startLocalPreview` でローカルのWebカメラをオンにしてプレビュー画面を表示でき、`stopLocalPreview`でこれをオフにします。
 
--  `startLocalPreview`をコールして、ローカルビデオのレンダリングウィンドウを指定します。**SDK はウィンドウのサイズを動的に検出し、 `rendHwnd` で表示されるウィンドウ全体をレンダリングします**。
--  `setLocalViewFillMode` インターフェースをコールして、ローカルのビデオレンダリングモードを `Fill` または `Fit`に設定します。2種類のモードでは、ビデオサイズはみな同じ比率で拡大縮小します。違いは次のとおりです。
-  - `Fill`モードでは、ウィンドウを確実に塗りつぶすことが優先されます。拡大・縮小されたビデオサイズとウィンドウのサイズが一致しない場合、余分な部分は削除されます。
-  - `Fit`モードでは、すべてのビデオコンテンツを確実に表示することが優先されます。拡大・縮小されたビデオサイズと表示ウィンドウのサイズが一致しない場合、塗りつぶされていないウィンドウ領域は黒で塗りつぶされます。
+- `startLocalPreview`を呼び出して、ローカルビデオのレンダリングウィンドウを指定します。**SDKがウィンドウのサイズをダイナミックに検出して、`rendHwnd` が表示する全てのウィンドウでレンダリングを行います**。
+-  `setLocalViewFillMode`インターフェースを呼び出し、ローカルのビデオレンダリングモードを `Fill` または `Fit`に設定します。2種類のモードは、ビデオサイズはいずれも同じ比率で拡大縮小します。違いは次のとおりです。 
+  - `Fill`  モード：ウィンドウ全てにコンテンツを表示することを優先的に保証します。拡大縮小後のビデオサイズがビューウィンドウのサイズと一致しない場合、はみ出た部分はカットされます。
+  - `Fit` モード：ビデオのコンテンツが全て表示されることを優先的に保証します。拡大縮小後のビデオサイズがウィンドウのサイズと一致しない場合、欠けているウィンドウエリアは黒色で補填されます。
 
 C++ 版：
 
@@ -328,9 +328,9 @@ void TRTCMainViewController::onEnterRoom(uint64_t elapsed)
     CWnd *pLocalVideoView = GetDlgItem(IDC_LOCAL_VIDEO_VIEW);
     HWND hwnd = pLocalVideoView->GetSafeHwnd();
     
-    if(m_pTRTCSDK) 
+    if(m_pTRTCSDK)
     {
-        // SDKインターフェースをコールして、レンダリングモードとレンダリングウィンドウを設定します。
+        // SDKインターフェースを呼び出し、レンダリングモードおよびレンダリングウィンドウを設定します。
         m_pTRTCSDK->setLocalViewFillMode(TRTCVideoFillMode_Fit);
         m_pTRTCSDK->startLocalPreview(hwnd);
     }
@@ -341,17 +341,17 @@ void TRTCMainViewController::onEnterRoom(uint64_t elapsed)
 
 C# 版：
 
-```c#
+``` c#
 // TRTCMainForm.cs
 
-public void onEnterRoom(int result) 
+public void onEnterRoom(int result)
 {
 	...
 	// レンダリングウィンドウのハンドルを取得します。
 	IntPtr ptr = GetHandle();
     if (mTRTCCloud != null)
     {
-        // SDKインターフェースをコールして、レンダリングモードとレンダリングウィンドウを設定します。
+        // SDKインターフェースを呼び出し、レンダリングモードおよびレンダリングウィンドウを設定します。
         mTRTCCloud.setLocalViewFillMode(TRTCVideoFillMode_Fit);
         mTRTCCloud.startLocalPreview(ptr);
     }
@@ -359,26 +359,26 @@ public void onEnterRoom(int result)
 }
 ```
 
-### 8. 音声ビデオデータストリーミングのブロック
+### 8. 音声/ビデオデータストリームの遮断
 
-- **ローカルビデオデータのブロック**
-  ユーザーが通話の途中に個人的な目的からローカルのビデオデータのブロックを希望し、ルーム内のその他のユーザーに対し一時的に当該ユーザーの画面を閲覧できなくさせる場合は、 `muteLocalVideo`をコールすることができます。
+- **ローカルビデオデータの遮断**
+  ユーザーが通話の途中に、プライバシーを守る目的で、ローカルのビデオデータを隠したい場合は、`muteLocalVideo`を呼び出して、一時的に、ルーム内の他のユーザーが当該ユーザーの画面を視聴できなくすることができます。
   
-- **ローカル音声データのブロック**
-  ユーザーが通話の途中に個人的な目的からローカルの音声データのブロックを希望し、ルーム内のその他のユーザーに対し一時的に当該ユーザーの音声をミュートさせる場合は、 `muteLocalAudio`をコールすることができます。
+- **ローカル音声データの遮断**
+  ユーザーが通話の途中に、プライバシーを守る目的で、ローカルの音声データを遮断したい場合は、 `muteLocalAudio`を呼び出して、一時的に、ルーム内の他のユーザーに当該ユーザーの音声を聞こえなくすることができます。
   
-- **リモートビデオデータのブロック**
-   `stopRemoteView` によって、特定の userid のビデオデータをブロックすることができます。
-   `stopAllRemoteView` によって、すべてのリモートユーザーのビデオデータをブロックすることができます。
+- **リモートビデオデータの遮断**
+  `stopRemoteView`によって特定の userid のビデオデータを遮断することができます。
+   `stopAllRemoteView`によって全てのリモートユーザーのビデオデータを遮断することができます。
   
-- **リモート音声データのブロック**
-   `muteRemoteAudio` によって、特定の userid の音声データをブロックすることができます。
-   `muteAllRemoteAudio` によって、すべてのリモートユーザーの音声データをブロックすることができます。
+- **リモート音声データの遮断**
+  `muteRemoteAudio` によって特定のuseridの音声データを遮断することができます。
+  `muteAllRemoteAudio`によって全てのリモートユーザーの音声データを遮断することができます。
 
-### 9.ルームからの退出
+### 9. ルームからの退出
 
- `exitRoom` のメソッドをコールして退室します。現在まだ通話中かどうかに関わらず、このメソッドをコールすると、ビデオ通話に関するすべてのリソースをリリースします。
->? `exitRoom` をコール後、SDK は複雑な退室のハンドシェイクフローに入ります。SDK が `onExitRoom` メソッドをコールバックするとき、リソースのリリースが実際に完了したものとみなします。
+ `exitRoom` メソッドを呼び出してルームを退出します。通話中かどうかにかかわらず、このメソッドを呼び出せば、ビデオ通話に関する全てのリソースがリリースされます。
+>`exitRoom`を呼び出した後、SDK は複雑な退室のハンドシェイクのプロセスに進みます。SDKが`onExitRoom`メソッドをコールバックした時に、リソースのリリースが完全に完了します。
 
 C++ 版：
 
@@ -387,7 +387,7 @@ C++ 版：
 
 void TRTCMainViewController::exitRoom()
 {
-    if(m_pTRTCSDK) 
+    if(m_pTRTCSDK)
     {
     	m_pTRTCSDK->exitRoom();
     }
@@ -395,7 +395,7 @@ void TRTCMainViewController::exitRoom()
 ....
 void TRTCMainViewController::onExitRoom(int reason)
 {
-	// 退室に成功しました。reasonパラメータは保留され、まだ使用されていません。
+	// 退出に成功、reason パラメータは保留され、現在使用されていません。
 
     ...
 }
@@ -408,15 +408,15 @@ C# 版：
 
 public void OnExit()
 {
-    if (mTRTCCloud != null)
+    if(mTRTCCloud != null)
     {
     	mTRTCCloud.exitRoom();
     }
 }
 ...
-public void onExitRoom(int reason) 
+public void onExitRoom(int reason)
 {
-    // 退室に成功しました
+    // 退出に成功
     ...
 }
 ```

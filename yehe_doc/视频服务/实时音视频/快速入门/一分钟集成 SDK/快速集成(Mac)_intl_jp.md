@@ -1,30 +1,30 @@
-このドキュメントでは、次の手順で、Tencent Cloud TRTC SDK for macOSをプロジェクトにすばやく統合する方法について説明します。
+このドキュメントでは、主に、Tencent Cloud TRTC SDK(Mac)を迅速にプロジェクトに統合する方法を紹介します。以下のステップにしたがって設定するだけで、SDK統合のタスクが完了します。
 
 
 ## 開発環境要件
 - Xcode 9.0+。
-- OS X10.10+ の Mac の実機。
-- プロジェクトには有効な開発者署名があります。
+- OS X10.10+ のMac 実機。
+- プロジェクトに有効な開発者の署名が設定してあること。
 
 ## TRTC SDKの統合
-CocoaPods自動ロード方法を選択、使用するか、またはまず手動でSDKをダウンロードしてから現在のプロジェクトにインポートします。
+CocoaPodsを使用して自動でローディングするか、または手動で、先ず SDKをダウンロードして、それを現在のプログラムのプロジェクトにインポートする方式を選択できます。
 
 ### CocoaPods
-#### 1.  CocoaPodsのインストール
-ターミナルウィンドウで以下のコマンド（事前にmacOSにRuby環境をインストールする必要があります）を入力します。
+#### 1. CocoaPodsのインストール
+端末のウィンドウに次のコマンドを入力します（事前にMac にRuby環境をインストールしておく必要があります ）。
 ```
 sudo gem install cocoapods
 ```
 
-#### 2. Podfileファイルの新規作成
-項目のあるパスに入り、以下のコマンドを入力すると、Podfileファイルがプロジェクトパスに表示されます。
+#### 2. Podfile ファイルの作成
+プロジェクトが存在するパスに入り、次のコマンドラインを入力するとプロジェクトパスの下にPodfile ファイルが現れます。
 ```
 pod init
 ```
 
-#### 3. Podfileファイルの編集
-Podfileファイルの編集には、以下の2種類の設定方法があります。
-- 方法一：Tencent Cloud　LiteAV SDK の podパスを使用します。
+#### 3. Podfile ファイルの編集
+Podfile ファイルを編集します。次の2種類の設定方法があります。
+- 方式1：Tencent Cloud LiteAV SDK のpodパスを使用します。
 
 ```
 	platform :osx, '10.10'
@@ -34,7 +34,7 @@ Podfileファイルの編集には、以下の2種類の設定方法がありま
 	end
 ```
 
-- 方法二：CocoaPod公式ソースを使用し、バージョン番号の選択をサポートします。
+- 方式2：CocoaPodの公式ソースを使用します。バージョンナンバーの選択をサポートしています。
 
 ```
 	platform :osx, '10.10'
@@ -45,55 +45,55 @@ Podfileファイルの編集には、以下の2種類の設定方法がありま
 	end
 ```
 
-#### 4. SDKのインストールと更新
-ターミナルウィンドウで以下のコマンドを入力しTRTC SDKをインストールします：
+#### 4. SDKのインストールおよび更新
+端末のウィンドウに次のコマンドを入力して、TRTC SDKのインストールを実行します。
 ```
 pod install
 ```
-または以下のコマンドを実行してローカルライブラリバージョンを更新します。
+または次のコマンドを使用してローカルライブラリのバージョンを更新します。
 ```
 pod update
 ```
 
-podコマンドが実行されると、SDKに統合された.xcworkspaceサフィックスが付いたプロジェクトファイルが生成され、ダブルクリックして開くことができます。
+pod コマンドの実行が完了すると、SDKが統合された.xcworkspace という拡張子のプログラムファイルが生成されますので、これをダブルクリックして開きます。
 
-### 手動統合
-1.  [TRTC-SDK ](https://github.com/tencentyun/TRTCSDK/tree/master/Mac) のmacOSバージョンをダウンロードします。
+### 手動による統合
+1. [TRTC-SDK ](https://github.com/tencentyun/TRTCSDK/tree/master/Mac) のMac版をダウンロードします 。
 
-2. Xcode プロジェクトを開き、第一手順でダウンロードした framework をプロジェクトにインポートします。
+2. お客様のXcodeのプロジェクトを開き、第1ステップでダウンロードした framework をプログラムにインポートします。
 
-3. 実行するターゲットを選択し、 Build Phases 項目を選択します。
+3. 動作させたいtargetを選択し、Build Phasesの項目を選択します。
 ![](https://main.qcloudimg.com/raw/b5097f8ac4cbaa5044d92b2a96ea2b9e.jpg)
 
-4.  **Link Binary with Libraries** 項目をクリックして展開し、下辺の + のアイコンをクリックして依存ライブラリを追加します。
+4. **Link Binary with Libraries** の項目をクリックして展開し、1番下の「+」記号のアイコンをクリックして依存ライブラリを追加します。
 ![](https://main.qcloudimg.com/raw/17046154417930f9d31b6452782df55d.jpg)
 
-5. ダウンロードした SDK Framework および必要な依存ライブラリを順次追加します：`AudioUnit.framework`、`libc++.tbd` および `Accelerate.framework`。  
+5. 順番に、ダウンロードした SDK Frameworkおよびそれに必要な依存ライブラリ：`AudioUnit.framework`、`libc++.tbd` 、`Accelerate.framework`を追加します。  
     
-追加後は、下図に示すとおりです。
+追加した後は次の図のようになります。
 ![](https://main.qcloudimg.com/raw/7bddb832347a971f3e69238480fa3e8d.jpg)
 
-## カメラおよびマイクの使用権限の付与
-SDKのオーディオ/ビデオ機能を使用して、マイクおよびカメラの使用権限を付与する必要があります。AppのInfo.plistで以下の2項を追加して、システム権限付与ダイアログをポップアップするときのマイクおよびカメラのプロンプトメッセージにそれぞれ対応します。
-- **Privacy - Microphone Usage Description**、かつマイクの使用目的のプロンプトメッセージを記入します。
-- **Privacy - Camera Usage Description**、かつカメラの使用目的のプロンプトメッセージを記入します。
-下図に示すとおり：
+## カメラとマイクの使用権限の許可
+SDK の音声ビデオ機能を使用するには、マイクとカメラの使用権限を許可する必要がありますので、AppのInfo.plistの中に次の2項目を追加します。それぞれマイクとカメラに対応し、システムが使用許可のダイヤログボックスをポップアップするときに表示される情報となります。
+- **Privacy - Microphone Usage Description**、さらにマイク使用目的のプロンプトを記入します。
+- **Privacy - Camera Usage Description**、さらにカメラ使用目的のプロンプトを記入します。
+下図に示すように：
 ![](https://main.qcloudimg.com/raw/ce02c335f1a6413fb37adb0ed20a9603.png)
 
- App が **App Sandbox** または **Hardened Runtime**を起動した場合は、 `Network`、`Camera` および `Audio Input`のこれらいくつかのオプションにチェックを入れる必要があります。
-- App Sandbox 設定は下図に示すとおり。
+Appで **App Sandbox**または**Hardened Runtime**を有効にしている場合は、 `Network`、`Camera`、`Audio Input`の選択項目にチェックを入れる必要があります。
+- App Sandbox の設定は次の図のとおりです。
 ![](https://main.qcloudimg.com/raw/b77d2ab814e6e14e8bed17efdcbee1a6.png)
-- Hardened Runtime 設定は下図に示すとおり。
+- Hardened Runtime の設定は次の図のとおりです。
 ![](https://main.qcloudimg.com/raw/2b569e1c95bb4c97b7045112d6e3ce9c.png)
 
-## TRTC SDKのインポート
-プロジェクトコードでSDKを使用する方法は2つあります。
-- 方法一：SDK APIを使用する必要があるプロジェクトのファイルにインポートモジュールを追加します。
+## TRTC SDKの引用
+プロジェクトのコードの中で SDKを使用する方式は2種類あります。
+- 方式1： プロジェクトのSDK APIを使用したいファイルの中に、コンポーネントを追加して引用します。
 ```
 @import TXLiteAVSDK_TRTC_Mac;
 ```
 
-- 方法二：SDK APIを使用する必要があるプロジェクトのファイルに特定のヘッダーファイルをインポートします。
+- 方式2：プロジェクトのSDK APIを使用したいファイルの中に、具体的なヘッダーファイルをインポートします。
 ```
 #import TXLiteAVSDK_TRTC_Mac/TRTCCloud.h
 ```

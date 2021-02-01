@@ -1,32 +1,32 @@
-このドキュメントでは、次の手順でTencent Cloud TRTC SDK for Androidをプロジェクトにすばやく統合する方法について説明します。
+このドキュメントでは、主にTencent Cloud TRTC SDK(Android)をプロジェクトに迅速に統合する方法を紹介します。以下のステップにしたがって設定すれば、SDK統合のタスクを完了できます。
 
-## 開発環境の要件
+## 開発環境要件
 - Android Studio 3.5+。
-- Android 4.1（SDK API 16）以上のシステム。
+- Android 4.1（SDK API 16）およびそれ以上のシステム。
 
 ## SDKの統合（aar）
 
-Gradle自動ロード方法を選択、使用するか、または手動でaarをダウンロードしてから現在のプロジェクトにインポートします。
+Gradleを使って自動でローディングするか、または手動でaarをダウンロードし、それをプロジェクトにインポートする方式を選択できます。
 
-### 方法１：自動ロード（aar）
-TRTC SDK は、jcenterリポジトリにリリースされ、更新を自動的にダウンロードするようにGradleを設定できます。
-Android Studioを使用して SDK を統合する必要のあるプロジェクト（ここでは [TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo)を例にしています）を開いて、その後簡単な三つの手順によって app/build.gradleファイルを変更してSDKの統合を完了します。
+### 方法1：自動ローディング（aar）
+TRTC SDK はjCenterでライブラリを公開していますので、Gradleを設定すれば、自動でダウンロードされ、更新されます。
+Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) ）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
 ![](https://main.qcloudimg.com/raw/fd01c252724cbf31ec7356286a931661.png)
 
-1. TRTCSDKの依存関係をdependencies に追加します。
- - 3.xバージョンの com.android.tools.build:gradle ツールを使用する場合は、以下のコマンドを実行してください：
+1. dependenciesの中にTRTCSDKの依存を追加します。
+ - 3.xバージョンの com.android.tools.build:gradle のツールを使用している場合は、次のコマンドを実行してください。
 ```
 dependencies {
          implementation 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
 ```
- - 2.xバージョンの com.android.tools.build:gradle ツールを使用する場合は、以下のコマンドを実行してください：
+ - 2.xバージョンの com.android.tools.build:gradle のツールを使用している場合は、次のコマンドを実行してください。
 ```
 dependencies {
          compile 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
 }
 ```
-2.  defaultConfig で Appを使用するCPU アーキテクチャを指定します。
+2. defaultConfigの中で、Appが使用するCPUアーキテクチャを指定します。
 ```
 defaultConfig {
        ndk {
@@ -34,21 +34,21 @@ defaultConfig {
        }
 }
 ```
->現在 TRTC SDK は armeabi 、 armeabi-v7a および arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
 >
-3．【Sync Now】をクリックし、SDKを自動的にダウンロードしてプロジェクトに統合します。
+3.【Sync Now】をクリックして、 SDKを自動ダウンロードし、プログラムに統合します。
 
 
-### 方法二：手動によるダウンロード（aar）
-JCenterに接続できない場合は、SDKを手動でダウンロードして、プロジェクトに統合することもできます。
+### 方法2：手動ダウンロード（aar）
+お客様のネットワークとjCenterの接続に問題がある場合は、SDKを手動でダウンロードし、プログラムに統合することができます。
 
-1. 最新バージョンの [TRTC SDK](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)をダウンロードします。
-2. ダウンロードした aar ファイルをプロジェクトの **app/libs** ディレクトリにコピーします。
-3. プロジェクトルートディレクトリの build.gradleにおいて、 **flatDir**を追加し、ローカルリポジトリパスを指定します。
+1. 最新バージョンの[TRTC SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)をダウンロードします。
+2. ダウンロードした aar ファイルをプログラムの**app/libs** ディレクトリの下にコピーします。
+3. プログラムのルートディレクトリの下の build.gradle の中に、**flatDir**を追加し、ローカルライブラリのパスを指定します。
 ![](https://main.qcloudimg.com/raw/bc3215028103fe980aedcbf011b97b02.png)
-4．aarライブラリをインポートするコードをapp / build.gradleに追加します。
+4. app/build.gradleの中に、aar パッケージのコードを追加して引用します。
 ![](https://main.qcloudimg.com/raw/449a4a2d8d7cb2503da9fb480beb9c32.png)
-5．app/build.gradleのdefaultConfig では、 Appを使用するCPUアーキテクチャを指定します。 
+5.app/build.gradleのdefaultConfigの中で、Appが使用するCPUアーキテクチャを指定します。
 ```
 defaultConfig {
        ndk {
@@ -56,21 +56,21 @@ defaultConfig {
        }
 }
 ```
->現在 TRTC SDK は armeabi 、 armeabi-v7a および arm64-v8aをサポートしています。
+>現在TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
 >
-6. 【Sync Now】をクリックし、TRTC SDK の統合作業を完了します。
+6. 【Sync Now】をクリックして、TRTC SDK統合のタスクは完了です。
 
 
-## SDK (jar) を統合
-aarライブラリを統合したくない場合は、jarなどのライブラリをインポートしてTRTC SDKを統合することを選択できます。
+## SDKの統合（jar）
+aarライブラリを統合したくない場合は、jarおよび soライブラリをインポートする方式で TRTC SDKを統合することが可能です。
 
-1. 最新バージョンのjar 圧縮パッケージを[ダウンロード](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)し、ファイルパスは`SDK/LiteAVSDK_TRTC_xxx.zip` になります（xxxはTRTC SDKのバージョン番号を示します）。
-2．解凍後、jarファイルなどのフォルダを含むlibsディレクトリを取得できます。
-3. 解凍によって得られた jar ファイルおよび armeabi， armeabi-v7a， arm64-v8a フォルダを app/libs ディレクトリにコピーします。
+1. 最新バージョンのjar 圧縮パッケージを[ダウンロード](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip) します。ファイルパスは`SDK/LiteAVSDK_TRTC_xxx.zip` （このうち xxx は TRTC SDKのバージョンナンバー）です。
+2. 解凍するとlibsディレクトリが取得できます。中には主に jar ファイルと so ファイルフォルダが含まれています。
+3. 解凍したjar ファイルおよび armeabi、 armeabi-v7a、 arm64-v8a ファイルフォルダを app/libs ディレクトリの下にコピーします。
 ![](https://main.qcloudimg.com/raw/5bf82ca89b3a14cca470fcedc048d7fa.png)
-4. jarライブラリをインポートするコードをapp/build.gradle に追加します。
+4. app/build.gradleの中に、jar ライブラリのコードを追加して引用します。
 ![](https://main.qcloudimg.com/raw/6ffbb4b79c06555376b137c849b43bb7.png)	
-5．soライブラリをインポートするコードをapp/build.gradle に追加します。
+5. app/build.gradleの中に、soライブラリのコードを追加して引用します。
 ```
 sourceSets {
        main {
@@ -79,7 +79,7 @@ sourceSets {
 }
 ```
 ![](https://main.qcloudimg.com/raw/299eeb5b3e8961e816f3ce17b97b4339.png)
-6.  app/build.gradle の defaultConfig で、 App で使用する CPU アーキテクチャを指定します。 
+6. app/build.gradleの defaultConfigの中で、Appが使用するCPUアーキテクチャを指定します。 
 ```
 defaultConfig {
        ndk {
@@ -87,38 +87,38 @@ defaultConfig {
        }
 }
 ```
->?現在の TRTC SDK では armeabi、armeabi-v7a および arm64-v8aをサポートしています。
+>?現在 TRTC SDKは、armeabi、armeabi-v7a、arm64-v8aをサポートしています。
 >
-7．【Sync Now】をクリックし、TRTC SDKの統合作業を完了します。
+7. 【Sync Now】をクリックして、TRTC SDK統合のタスクは完了です。
 
 
-## App権限の設定
- AndroidManifest.xml に Appの権限を設定するには、TRTC SDK は以下の権限が必要です：
+## App 権限の設定
+AndroidManifest.xml の中で Appの権限を設定します。TRTC SDKには次の権限が必要となります。
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/ >
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/ >
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.BLUETOOTH" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
->!  `android:hardwareAccelerated="false"`を設定しないでください。ハードウェアアクセラレーションを停止すると、先方のビデオストリームがレンダリングできなくなります。
+>!  `android:hardwareAccelerated="false"`は設定しないでください。ハードウェアアクセラレーションを無効にすると、相手側のビデオストリームがレンダリングできなくなります。
 
-## 難読化ルールの設定
- proguard-rules.pro ファイルでは、 TRTC SDK 関連を非難読化リストに追加します。
+## 混同ルールの設定
+proguard-rules.pro ファイルで、 TRTC SDK関連のクラスを非混同リストに追加します。
 
 ```
 -keep class com.tencent.** { *;}
 ```
-## アプリケーションパッケージパラメータの設定
-次のコードをapp/build.gradleに追加します。
+## Appパッケージングのパラメータの設定
+app/build.gradleの下に、次の情報を追加します。
 
 ```
 packagingOptions {

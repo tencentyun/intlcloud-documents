@@ -1,47 +1,47 @@
-このドキュメントでは、次の手順でTencent Cloud TRTC SDK for iOSをプロジェクトにすばやく統合する方法について説明します。
+このドキュメントでは、主にTencent Cloud TRTC SDK（iOS）を迅速にプロジェクトに統合する方法を紹介します。以下のステップにしたがって設定するだけで、SDK統合のタスクが完了します。
 
 ## 開発環境要件
 - Xcode 9.0+。
-- iOS 9.0 以上のiPhoneまたはiPad。
-- プロジェクトには有効な開発者署名があります。
+- iOS 9.0 以上のiPhone または iPad 実機。
+- プロジェクトに有効な開発者の署名が設定してあること。
 
 ## TRTC SDKの統合
-CocoaPodsの自動ロード方法を選択、使用するか、またはまずSDKをダウンロードしてから現在のプロジェクトにインポートします。
+CocoaPodsを使用して自動でローディングする方式か、または先に SDKをダウンロードして、それを現在のプログラムのプロジェクトにインポートする方式を選択できます。
 
 ### CocoaPods
-#### 1.  CocoaPodsのインストール
-ターミナルウィンドウで以下のコマンド（事前にmacOSにRuby環境をインストールする必要があります）を入力します。
+#### 1. CocoaPodsのインストール
+端末のウィンドウに次のコマンドを入力します（事前に MacにRuby環境をインストールしている必要があります）。
 ```
 sudo gem install cocoapods
 ```
 
-#### 2. Podfileファイルの新規作成
-プロジェクトのあるパスに移動し、次のコマンドを入力すると、Podfileファイルがプロジェクトパスに表示されます。
+#### 2. Podfile ファイルの作成
+プロジェクトが存在するパスに入り、以下のコマンドラインを入力すると、プロジェクトのパスの下に Podfile ファイルが現れます。
 ```
 pod init
 ```
 
-#### 3. Podfileファイルの編集
-Podfileファイルを編集し、ニーズに応じて適切なSDKバージョンを選択します。
-- [簡易版](https://intl.cloud.tencent.com/document/product/647/34615)：インストールパケットの容量は最小ですが、 TRTCおよびCDN 再生（TXLivePlayer）機能のみサポートしています。
+#### 3. Podfile ファイルの編集
+Podfile ファイルを編集し、必要に応じて適切な SDKのバージョンを選択します。
+- [簡易版](https://intl.cloud.tencent.com/document/product/647/34615)：インストールパッケージの容量増加は最小ですが、TRTCとCDN再生（TXLivePlayer）機能のみのサポートとなります。
 ```
-  platform :ios, '8.0'
+ platform :ios, '8.0'
   
   target 'App' do
   pod 'TXLiteAVSDK_TRTC', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
   end
 ```
 
-- [プロフェッショナルバージョン](https://intl.cloud.tencent.com/document/product/647/34615)： TRTCのほか、 RTMP プッシュ（TXLivePusher）、CDN 再生（TXLivePlayer）、VOD再生（TXVodPlayer）およびショート動画（UGSV）などの多機能があります。
+- [プロフェッショナル版](https://intl.cloud.tencent.com/document/product/647/34615)：TRTCの外に、RTMP プッシュ（TXLivePusher）、CDN 再生（TXLivePlayer）、オン・デマンド再生（TXVodPlayer）、User Generated Short Video（UGSV）などの多数の機能が含まれています。
 ```
-  platform :ios, '8.0'
+ platform :ios, '8.0'
   
   target 'App' do
   pod 'TXLiteAVSDK_Professional', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
   end
 ```
 
-CocoaPod公式ソースも使用できますが、ダウンロード速度は遅くなることがあります。
+CocoaPod の公式ソースを使用することもできますが、ダウンロードスピードは遅くなります。
 ```
    platform :ios, '8.0'
    source 'https://github.com/CocoaPods/Specs.git'
@@ -51,50 +51,65 @@ CocoaPod公式ソースも使用できますが、ダウンロード速度は遅
    end
 ```
 
-#### 4. SDKの更新及びインストール
-ターミナルウィンドウで以下のコマンドを入力し、ローカルライブラリファイルを更新し、TRTC SDKをインストールします。
+#### 4. SDKの更新およびインストール
+端末のウィンドウに以下のコマンドを入力してローカルライブラリのファイルを更新し、TRTC SDKをインストールします。
 ```
 pod install
 ```
-または以下のコマンドを使用しローカルライブラリバージョンを更新します。
+または次のコマンドを使用してローカルライブラリのバージョンを更新します。
 ```
 pod update
 ```
 
-podコマンドが実行されると、SDKに統合された.xcworkspaceサフィックスが付いたプロジェクトファイルが作成され、ダブルクリックして開くことができます。
->? 必要な依存ライブラリ**Accelerate.framework**を手動で追加する必要があります。
+pod コマンドの実行が完了すると、SDKを統合した.xcworkspace という拡張子のプログラムファイルが生成されますので、これをダブルクリックして開きます。
+>? 必要なシステムの依存ライブラリ **Accelerate.framework**を手動で追加する必要があります。
 
-### 手動統合
-1.  [TRTC - SDK ](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/SDK) をダウンロードして解凍します。
-2. Xcode プロジェクトを開き、実行するターゲットを選択して、**Build Phases** 項目を選択します。
+### 手動による統合
+1.  [TRTC - SDK ](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/SDK)をダウンロードし 、ダウンロードが完了したら解凍を行います。
+2. お客様のXcodeのプロジェクトを開き、動作させたいtargetを選択して、**Build Phases**の項目を選択します。
  ![](https://main.qcloudimg.com/raw/85509cc24bd958e7b9978e11937597c5.png)
-3.  **Link Binary with Libraries** 項目をクリックして展開し、下辺の“+”のアイコンをクリックして依存ライブラリを追加します。
+3. **Link Binary with Libraries**の項目をクリックして展開し、一番下の「+」記号のアイコンをクリックして依存ライブラリを追加します。
  ![](https://main.qcloudimg.com/raw/54be71cc14ec79ce642216612544a8a4.png)
-4. ダウンロードしたTRTC SDTRTC SDK Frameworkおよび必要とする依存ライブラリ**libc++** 、**Accelerate.framework**を順次追加します。
+4. 順番に、ダウンロードした TRTC SDK Frameworkおよびそれに必要な依存ライブラリ **libc++** 、**Accelerate.framework** 、**libresolv.tbd**、**AVFoundation.framework**を追加します。
  ![](https://main.qcloudimg.com/raw/2fa94b7f81c7e9c4ac09733782e79c10.png)
 
 
-## カメラおよびマイクの使用権限の付与
-SDKのオーディオ/ビデオ機能を使用して、マイクおよびカメラの使用権限を付与する必要があります。AppのInfo.plistで以下の2項を追加して、システム権限付与ダイアログをポップアップするときのマイクおよびカメラのメッセージ情報にそれぞれ対応します。
-- **Privacy - Microphone Usage Description**、かつマイクの使用目的のプロンプトメッセージを記入します。
-- **Privacy - Camera Usage Description**，かつカメラの使用目的のプロンプトメッセージを記入します。
+## カメラとマイクの使用権限の許可
+SDK の音声ビデオ機能を使用するには、マイクとカメラの使用権限を許可する必要がありますので、AppのInfo.plistの中に次の2項目を追加します。それぞれマイクとカメラに対応し、システムが使用許可のダイヤログボックスをポップアップするときに表示される情報となります。
+- **Privacy - Microphone Usage Description**、さらにマイク使用目的のプロンプトを追加します。
+- **Privacy - Camera Usage Description**、さらにカメラ使用目的のプロンプトを追加します。
 
 ![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
 
 
-##  TRTC SDKのインポート
-プロジェクトコードでSDKを使用する方法は2つあります。
-- 方法一：SDK APIを使用する必要があるプロジェクトのファイルにインポートモジュールを追加します。
+## TRTC SDKの引用
+TRTC SDK では2種類の呼び出し方式をサポートしていますので、いずれかをお選びください
+### 方式1： Objective-Cまたは SwiftインターフェースによるTRTC SDKの引用
+Objective-CまたはSwiftコードの中でSDKを使用する方式は2種類あります。
+- **コンポーネントの引用**：プロジェクトのSDK APIを使用したいファイルの中に、コンポーネントを追加して引用します。
 ```
 @import TXLiteAVSDK_TRTC;
 ```
-
-- 方法二：SDK APIを使用する必要があるプロジェクトのファイルに特定のヘッダーファイルをインポートします。
+- **ヘッダーファイルの引用**：プロジェクトのSDK APIを使用したいファイルの中に、具体的なヘッダーファイルをインポートします。
 ```
 #import TXLiteAVSDK_TRTC/TRTCCloud.h
 ```
 
+
+[](id:using_cpp)
+### 方式2： C++インターフェースによるTRTC SDKの引用
+1. **ヘッダーファイルの引用**： C++ インターフェースを使用してiOSアプリケーションを開発したい場合は、`TXLiteAVSDK_TRTC.framework/Headers/cpp_interface` ディレクトリの下のヘッダーファイルを引用してください。
+```
+#include TXLiteAVSDK_TRTC/cpp_interface/ITRTCCloud.h
+```
+2. **ネームスペースの利用**：C++ の全てのプラットフォームのインターフェースのメソッド、タイプなどはいずれも trtc ネームスペースの中に定義されています。コードをより簡潔にするため、trtc ネームスペースを直接使用することをお勧めします
+```
+using namespace trtc;
+```
+
+>?  C++ インターフェースの使用方法については、 [全プラットフォーム（C++）APIの概要](https://intl.cloud.tencent.com/document/product/647/35131)をご参照ください。
+
 ## よくあるご質問
-### 1. TRTC SDK はバックグラウンドでの実行をサポートしていますか？
-サポートしています。以前の関連機能を実行するためにバックグラウンドに入る必要がある場合は、現在のプロジェクトを選択できます。 **Capabilities** の**Background Modes** を**ON**に設定して、 **Audio，AirPlay and Picture in Picture** にチェックを入れます。下図に示すとおりです。　
+### 1. TRTC SDK はバックグラウンドでの動作をサポートしていますか？
+サポートしています。バックグラウンドに入っても、依然として関連機能が動作するようにしたい場合は、現在のプログラムのプロジェクトを選択し、**Capabilities** の下の**Background Modes**の設定を **ON**にして、**Audio、AirPlay and Picture in Picture**にチェックを入れます。次の図のとおりです。
 ![](https://main.qcloudimg.com/raw/d960dfec88388936abce2d4cb77ac766.jpg)
