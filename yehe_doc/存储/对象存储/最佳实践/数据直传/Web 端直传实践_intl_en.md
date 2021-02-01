@@ -1,39 +1,40 @@
-## Introduction
-This document describes how to directly upload files to a COS bucket from the web with simple codes and without using SDK.
-> This document is based on XML APIs.
+## Overview
+This document describes how to use simple code to upload files to a COS bucket directly from the web without using an SDK.
 
-## Procedure
-<span id="Preparations"></span>
-### 1.Preparations
-(1) Go to the [COS Console](https://console.cloud.tencent.com/cos5) to create a bucket and obtain Bucket (bucket name) and Region (region name).
-(2) Go to the [Key Management Console](https://console.cloud.tencent.com/cam/capi) to obtain your project's SecretId and SecretKey.
-(3) In the COS Console, go to the created bucket and click **Basic Configuration** to configure the CORS rules, as shown below:
-![cors](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
+>! This document is based on the XML [APIs](https://intl.cloud.tencent.com/document/product/436/7751).
 
-### 2. Set up temporary key service
-For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
-For other languages, see [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk) or [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+<span id="1"></span>
 
-> For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
+## Prerequisites
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and create a bucket to obtain the `Bucket` (bucket name) and `Region` (region name). For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
+2. Go to the bucket detail page, choose the **Security Management** tab, and select **CORS (Cross-Origin Resource Sharing)** from the drop-down list. Then, click **Add a Rule**. A configuration example is shown in the following figure. For more information, please see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
+![](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
+3. Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi) and obtain the `SecretId` and `SecretKey` of your project.
 
 
-### 3. Compute signatures
-For security purposes, we recommend you to use temporary keys to calculate a signature. To create and use temporary keys, you need to set up the temporary key service on your server. For more information, see [PHP Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Example](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
-If you want to use other languages or use APIs directly, follow the procedures below:
-(1) When signatures are needed by the frontend, obtain the temporary keys from the server and input required parameters "method" and "pathname";
-(2) The server first obtains the temporary keys tmpSecretId, tmpSecretKey, and sessionToken from the STS service using the fixed keys SecretId and SecretKey. For more information, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk);
-(3) The signatures are computed at the frontend with tmpSecretId, tmpSecretKey, and parameters "method" and "pathname". The following example already includes the steps on how to compute the signatures at frontend. The signatures can also be computed at backend if necessary.
-(4) The server returns the computed signatures "authorization" and "sessionToken" to the frontend, which puts the two values in the fields "Authorization" and "x-cos-security-token" in the header to send an upload request to COS API.
 
->For higher security, when deploying the temporary key service, add an additional layer of website authentication on the server side.
+## Directions
 
-### 4. Upload at frontend
+
+>!In official deployment, add a layer of permission check of your website.
+
+### Getting temporary key and calculating signature
+For security reasons, the signature uses a temporary key. For building a temporary key service on the server, please see [PHP Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) and [Nodejs Sample](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js).
+To use other languages or implement it on your own, please take the following steps:
+1. Obtain a temporary key from the server. The server first uses the `SecretId` and `SecretKey` of a fixed key to obtain the `tmpSecretId`, `tmpSecretKey`, and `sessionToken` of the temporary key from the STS service. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
+2. The frontend calculates the signature based on the `tmpSecretId`, `tmpSecretKey`, `method`, and `pathname`. You can use [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js) to calculate the signature as described in this document. If required by the actual business, the signature can also be calculated at the backend.
+3. If you use the `PutObject` API for the upload, you can specify the calculated signature and `sessionToken` in the `authorization` and `x-cos-security-token` fields, respectively, in the request header.
+3. If you use the `PostObject` API for the upload, you can specify the calculated signature and `sessionToken` in the `Signature` and `x-cos-security-token` fields, respectively, in the request form.
+
+
+### Frontend upload
 #### Solution A: Upload with AJAX
-Your browser needs to support basic HTML5 features before you can perform an upload operation with AJAX. Implement this solution by referring to [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) and following the steps below:
-(1) Complete the relevant configurations of bucket as described in [Step 1. Preparations](https://intl.cloud.tencent.com/document/product/436/9067).
-(2) Create a `test.html` file, modify Bucket and Region in the code below, and then copy to the `test.html` file.
-(3) Deploy the signature service at backend and modify the signature service address in `test.html`.
-(4) Place `test.html` on the Web server, then access the page via your browser to test the file upload.
+To upload with AJAX, your browser needs to support the basic features of HTML5. You can implement this solution by referring to [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) and taking the steps below:
+1. Obtain the bucket information by taking the steps in [Prerequisites](#1).
+2. Create a `test.html` file. Then, modify the values `Bucket` and `Region` in the following code and copy the code to the `test.html` file.
+3. Deploy the signature service at the backend and modify the signature service address in `test.html`.
+(4) Place `test.html` on the Web server. Then, browser the page to test the file upload feature.
 
 ```html
 <!doctype html>
@@ -63,13 +64,13 @@ Your browser needs to support basic HTML5 features before you can perform an upl
 <script src="https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js"></script>
 <script>
     (function () {
-        // Request required parameters
-        var Bucket = 'test-1250000000';
+        // Parameters used for the request
+        var Bucket = 'examplebucket-1250000000';
         var Region = 'ap-guangzhou';
         var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
-        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';
+        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';  // The prefix is used to concatenate the request URL. Use the default bucket endpoint.
 
-        // URL encoding is required for characters
+        // URL-encode more characters.
         var camSafeUrlEncode = function (str) {
             return encodeURIComponent(str)
                 .replace(/!/g, '%21')
@@ -79,7 +80,7 @@ Your browser needs to support basic HTML5 features before you can perform an upl
                 .replace(/\*/g, '%2A');
         };
 
-        // Compute the signatures
+        // Calculate the signature.
         var getAuthorization = function (options, callback) {
             // var url = 'http://127.0.0.1:3000/sts-auth' +
             var url = '../server/sts.php';
@@ -102,18 +103,18 @@ Your browser needs to support basic HTML5 features before you can perform an upl
                     });
                 } else {
                     console.error(xhr.responseText);
-                    callback('Error while obtaining the signatures');
+                    callback('Signature obtaining error');
                 }
             };
             xhr.onerror = function (e) {
-                 callback('Error while obtaining the signatures');
+                callback('Signature obtaining error');
             };
             xhr.send();
         };
 
-        // Upload files
+        // Upload a file.
         var uploadFile = function (file, callback) {
-            var Key = 'dir/' + file.name; // Specify the directory and file names for upload.
+            var Key = 'dir/' + file.name; // File directory and filename
             getAuthorization({Method: 'PUT', Pathname: '/' + Key}, function (err, info) {
 
                 if (err) {
@@ -123,7 +124,7 @@ Your browser needs to support basic HTML5 features before you can perform an upl
 
                 var auth = info.Authorization;
                 var XCosSecurityToken = info.XCosSecurityToken;
-                var url = prefix + camSafeUrlEncode(Key).replace(/%2F/, '/');
+                var url = prefix + camSafeUrlEncode(Key).replace(/%2F/g, '/');
                 var xhr = new XMLHttpRequest();
                 xhr.open('PUT', url, true);
                 xhr.setRequestHeader('Authorization', auth);
@@ -132,7 +133,7 @@ Your browser needs to support basic HTML5 features before you can perform an upl
                     console.log('Upload progress ' + (Math.round(e.loaded / e.total * 10000) / 100) + '%');
                 };
                 xhr.onload = function () {
-                    if (xhr.status === 200 || xhr.status === 206) {
+                    if (/^2\d\d$/.test('' + xhr.status)) {
                         var ETag = xhr.getResponseHeader('etag');
                         callback(null, {url: url, ETag: ETag});
                     } else {
@@ -140,22 +141,22 @@ Your browser needs to support basic HTML5 features before you can perform an upl
                     }
                 };
                 xhr.onerror = function () {
-                    callback('File ' + Key + ' Upload failed. Check whether CORS cross-origin rule has been set.');
+                    callback('File ' + Key + ' Upload failed. Check whether the CORS rule has been set');
                 };
                 xhr.send(file);
             });
         };
 
-        // Listen on form submission
+        // Listen on form submission.
         document.getElementById('submitBtn').onclick = function (e) {
             var file = document.getElementById('fileSelector').files[0];
             if (!file) {
-                document.getElementById('msg').innerText = 'No file selected for upload';
+                document.getElementById('msg').innerText = 'File to upload not selected';
                 return;
             }
             file && uploadFile(file, function (err, data) {
                 console.log(err || data);
-                document.getElementById('msg').innerText = err ? err : ('Upload successful. ETag=' + data.ETag);
+                document.getElementById('msg').innerText = err ? err : ('Upload successful, ETag=' + data.ETag);
             });
         };
     })();
@@ -165,29 +166,29 @@ Your browser needs to support basic HTML5 features before you can perform an upl
 </html>
 ```
 
-The result is as shown below:
-![Ajax 上传](https://main.qcloudimg.com/raw/970bc04c0a1e0b3c5be077f360000424.png)
+The result is as follows:
+![Upload with Ajax](https://main.qcloudimg.com/raw/970bc04c0a1e0b3c5be077f360000424.png)
 
-#### Solution B: Upload with Form
-Lower version of browser (e.g. IE8) supports uploading files with Form. Implement this solution by referring to [XML APIs: PostObject API](https://intl.cloud.tencent.com/document/product/436/7751) and following the steps below:
-(1) Complete the relevant configurations of bucket as described in [Step 1. Preparations](https://intl.cloud.tencent.com/document/product/436/9067).
-(2) Create a `test.html` file, modify Bucket and Region in the code below, and then copy to the `test.html` file.
-(3) Deploy the signature service at backend and modify the signature service address in `test.html`.
-(4) In the directory where `test.html` resides, create an empty `empty.html` to be redirected back when upload is successful.
-(5) Place `test.html` and `empty.html` on the Web server, then access the page via your browser to test the file upload.
+#### Solution B: Upload with a form
+HTML form supports uploading with a lower browser version (e.g., IE8). The current solution uses the [Post Object](https://intl.cloud.tencent.com/document/product/436/14690) API. The directions are described as follows:
+1. Obtain the bucket information by taking the steps in [Prerequisites](#1).
+2. Create a `test.html` file. Then, modify the values `Bucket` and `Region` in the following code and copy the code to the `test.html` file.
+3. Deploy the signature service at the backend and modify the signature service address in `test.html`.
+4. In the directory where `test.html` is stored, create an empty `empty.html` file to be redirected back when the upload is successful.
+5. Place `test.html` and `empty.html` on the Web server. Then, browse the page to test the file upload feature.
 
 ```html
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form-data upload</title>
+    <title>Simple Upload with a Form</title>
     <style>h1, h2 {font-weight: normal;}#msg {margin-top:10px;}</style>
 </head>
 <body>
 
-<h1>Form-data upload (IE8-compatible)</h1>
-<div>The minimum version supporting upload is IE6 (onprogress is not supported).</div>
+<h1>Simple Upload with a Form (IE8-Compatible)</h1>
+<div>The browser should at least be IE6 and onprogress is not supported.</div>
 
 <form id="form" target="submitTarget" action="" method="post" enctype="multipart/form-data" accept="*/*">
     <input id="name" name="name" type="hidden" value="">
@@ -197,6 +198,8 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
     <input id="Signature" name="Signature" type="hidden" value="">
     <input name="Content-Type" type="hidden" value="">
     <input id="x-cos-security-token" name="x-cos-security-token" type="hidden" value="">
+
+    <!-- Put the file field at the end of the form (in case the file content is too long) to avoid affecting the signature field and authentication. -->
     <input id="fileSelector" name="file" type="file">
     <input id="submitBtn" type="button" value="Submit">
 </form>
@@ -208,15 +211,15 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
 <script>
     (function () {
 
-        // Request required parameters
-        var Bucket = 'test-1250000000';
+        // Parameters used for the request
+        var Bucket = 'examplebucket-1250000000';
         var Region = 'ap-guangzhou';
         var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
-        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';
+        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';  // The prefix is used to concatenate the request URL. Use the default bucket endpoint.
         var form = document.getElementById('form');
         form.action = prefix;
 
-        // URL encoding is required for characters
+        // URL-encode more characters.
         var camSafeUrlEncode = function (str) {
             return encodeURIComponent(str)
                 .replace(/!/g, '%21')
@@ -226,7 +229,7 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
                 .replace(/\*/g, '%2A');
         };
 
-        // Compute the signatures
+        // Calculate the signature.
         var getAuthorization = function (options, callback) {
             // var url = 'http://127.0.0.1:3000/sts' +
             var url = '../server/sts.php';
@@ -234,7 +237,7 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
             xhr.open('GET', url, true);
             xhr.onreadystatechange = function (e) {
                 if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
+                    if (/^2\d\d$/.test('' + xhr.status)) {
                         var credentials;
                         try {
                             credentials = (new Function('return ' + xhr.responseText))().credentials;
@@ -251,29 +254,29 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
                             });
                         } else {
                             console.error(xhr.responseText);
-                            callback('Error while obtaining the signatures');
+                            callback('Signature obtaining error');
                         }
                     } else {
-                        callback('Error while obtaining the signatures');
+                        callback('Signature obtaining error');
                     }
                 }
             };
             xhr.send();
         };
 
-        // Listen on whether upload is completed.
+        // Listen on whether the upload is completed.
         var Key;
         var submitTarget = document.getElementById('submitTarget');
         var showMessage = function (err, data) {
             console.log(err || data);
-            document.getElementById('msg').innerText = err ? err : ('Upload successful. ETag=' + data.ETag);
+            document.getElementById('msg').innerText = err ? err : ('Upload successful, ETag=' + data.ETag);
         };
         submitTarget.onload = function () {
             var search;
             try {
                 search = submitTarget.contentWindow.location.search.substr(1);
             } catch (e) {
-                showMessage('File ' + Key + '  upload failed.');
+                showMessage('File ' + Key + ' Upload failed');
             }
             if (search) {
                 var items = search.split('&');
@@ -287,16 +290,16 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
             }
         };
 
-        // Initiate an upload
+        // Initiate an upload.
         document.getElementById('submitBtn').onclick = function (e) {
             var filePath = document.getElementById('fileSelector').value;
             if (!filePath) {
-                document.getElementById('msg').innerText = 'No file selected for upload';
+                document.getElementById('msg').innerText = 'File to upload not selected';
                 return;
             }
-            Key = 'dir/' + filePath.match(/[\\\/]?([^\\\/]+)$/)[1]; // Specify the directory and file names for upload.
+            Key = 'dir/' + filePath.match(/[\\\/]?([^\\\/]+)$/)[1]; // File directory and filename
             getAuthorization({Method: 'POST', Pathname: '/'}, function (err, AuthData) {
-                // Place an empty "empty.html" in the current directory to be redirected back when the upload is completed with the API.
+                // Place an empty "empty.html" file in the current directory to be redirected back when the upload is completed with the API.
                 document.getElementById('success_action_redirect').value = location.href.substr(0, location.href.lastIndexOf('/') + 1) + 'empty.html';
                 document.getElementById('key').value = Key;
                 document.getElementById('Signature').value = AuthData.Authorization;
@@ -306,13 +309,13 @@ Lower version of browser (e.g. IE8) supports uploading files with Form. Implemen
         };
     })();
 </script>
-
 </body>
 </html>
 ```
-The result is as shown below:
-![Form 表单上传](https://main.qcloudimg.com/raw/90a3460c58ed7e056f08624ce329c1a4.png)
-## Related Documents
-If you need to call more APIs, see the following JavaScript SDK documents:
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459)
 
+The result is shown as follows:
+![Upload with a form](https://main.qcloudimg.com/raw/90a3460c58ed7e056f08624ce329c1a4.png)
+
+## Documentation
+If you need to call more APIs, please see the following JavaScript SDK document:
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459)

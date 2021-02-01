@@ -1,4 +1,4 @@
-## Download and Installation
+## Download and installation
 
 #### Download
 
@@ -7,10 +7,13 @@
 | Windows | Windows 7 32/64-bit or above, Windows Server 2008 R2 64-bit or above | [Windows](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-setup-latest.exe) |
 | macOS | macOS 10.13 or above | [macOS](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest.dmg) |
 | Linux | Includes GUI and supports the [AppImage](https://appimage.org/) format | [Linux](https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip) |
+| Website version | Browsers such as Chrome, FireFox, Safari, and IE10+ | [Web](https://cosbrowser.cloud.tencent.com/web) |
 
 #### Installation
 
 The COSBrowser installation package is an executable file. You can double-click the downloaded file and then install as prompted.
+
+> !To launch the client running CentOS, you need to run `./cosbrowser.AppImage --no-sandbox` in the terminal.
 
 ## Login
 
@@ -37,6 +40,7 @@ You can log in to COSBrowser Desktop Edition with your Tencent Cloud API key, wh
 #### 2. Viewing bucket details
 
 You can view bucket details by clicking **Details** on the right of the bucket list. Details include bucket name, region, access permissions, and versioning status.
+
 
 <span id="count"></span>
 
@@ -73,7 +77,7 @@ If you log in with a sub-account that does not have permission to access the buc
 (1) Add an access path directly on the login page and select the corresponding bucket region. Once you log in, you can manage your resources.
 <img src="https://main.qcloudimg.com/raw/5d80a51cd9b9a9c4d14fec9d4275a41d.png" width="90%">
 (2) Log in with your sub-account, click **Add Path** in the upper-left corner of the bucket list page, and enter a specified path to enter the bucket and manage its resources.
-<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="90%">
+<img src="https://main.qcloudimg.com/raw/3e66b023a607ea11ae224d2ec3eb3d4c.png" width="60%">
 
 <span id="upload"></span>
 
@@ -82,7 +86,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Upload Feature</th>
-      <th>Description</th>
+      <th>Notes</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -111,7 +115,7 @@ If you log in with a sub-account that does not have permission to access the buc
 <table>
    <tr>
       <th>Download Feature</th>
-      <th>Description</th>
+      <th>Notes</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -250,7 +254,7 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
 <table>
    <tr>
       <th nowrap="nowrap">System Feature</th>
-      <th>Description</th>
+      <th>Notes</th>
       <th>Directions</th>
    </tr>
    <tr>
@@ -289,4 +293,6 @@ To quickly locate a bucket, enter the bucket name in the search box above the bu
       <td nowrap="nowrap">1. Select **Settings** > **About**.<br>2. Click **Local Log** and the system will open the directory where the local log is stored.</td>
    </tr>
 </table>
+
+
 

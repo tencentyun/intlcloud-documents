@@ -5,7 +5,7 @@ This document provides an overview of APIs and SDK code samples related to versi
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ------------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning for a bucket |
-| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning configuration of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/zh/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
 ## Setting Versioning
 
@@ -44,10 +44,10 @@ if (result.IsSucc()) {
 | Parameter | Description | Type | Required |
 | ---- | ------------------------------|------------------------| ------|
 | req  | Request of the `PutBucketVersioning` operation | PutBucketVersioningReq | Yes |
-| resp | Response of the `PutBucketVersioning` operation | PutBucketVersioningResp | Yes |
+| resp | Response of the `PutBucketVersioning` operation  | PutBucketVersioningResp| Yes |
 
 
-`PutBucketVersioningReq` provides the following method to enable or suspend versioning:
+`PutBucketVersioningReq` provides the following method to enable/suspend versioning:
 
 ```cpp
 void SetStatus(bool is_enable);
@@ -58,7 +58,7 @@ void SetStatus(bool is_enable);
 
 #### Feature description
 
-This API (GET Bucket versioning) is used to query the versioning configuration of a bucket.
+This API is used to query the versioning configuration of a bucket.
 
 #### Method prototype
 ```cpp
@@ -77,7 +77,7 @@ qcloud_cos::GetBucketVersioningResp resp;
 qcloud_cos::CosResult result = cos.GetBucketVersioning(req, &resp);
 
 if (result.IsSucc()) {
-    // Request successful. The versioning status can be obtained using the `resp` method.
+    // Request successful. You can obtain the versioning status via the resp method.
 } else {
     // Request failed. You can call the CosResult member functions to output the error information, such as requestID.
 } 
@@ -88,10 +88,10 @@ if (result.IsSucc()) {
 | Parameter | Description | Type | Required |
 | ---- | ------------------------------|------------------------| ------|
 | req  | Request of the `GetBucketVersioning` operation | GetBucketVersioningReq | Yes |
-| resp | Response of the `GetBucketVersioning` operation | GetBucketVersioningResp| Yes |
+| resp | Response of the `GetBucketVersioning` operation | GetBucketVersioningResp | Yes |
 
 
-`GetBucketVersioningResp` provides the following method to obtain the versioning status:
+`GetBucketVersioningResp` provides the following method to obtain the status of versioning:
 
 ```cpp
 int GetStatus() const;

@@ -26,6 +26,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    <tr>
       <td>Linux</td>
       <td>Includes GUI which supports <a href="https://appimage.org">AppImage</a> format</td>
+          Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
@@ -51,7 +52,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
 
 COSBrowser for desktop focuses on resource management and uploading and downloading data in batches.
 
-> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the internet.
+> !COSBrowser Desktop Version uses the system-configured proxy to connect to the internet. Please make sure that your proxy is set up properly or disable the proxy configuration if it fails to connect to the Internet.
 >
 > - For queries on Windows, go to "Internet Options".
 > - For queries on macOS, go to "Network Preferences".
@@ -94,15 +95,15 @@ COSBrowser for mobile devices focuses on viewing and monitoring of resources and
 
 COSBrowser for mobile devices has the following features:
 
-| Operation Name | Description |
+| Operation | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Login with WeChat](https://intl.cloud.tencent.com/document/product/436/32566#dulu) | Logs in with WeChat |
 | [Data overview](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | Views recent data usage |
 | [File batch operations](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
 | [Sharing and uploading](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | Shares and uploads files from third-party apps to a bucket |
-| [Renaming files](https://intl.cloud.tencent.com/document/product/436/32566#rename) | Renames files in a bucket |
-| [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) |  Creates a folder in a bucket |
-| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of the files in a bucket |
+| [Renaming file](https://intl.cloud.tencent.com/document/product/436/32566#rename) |  Renames files in your bucket |
+| [Creating folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) | Creates folders in your bucket |
+| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of files in your bucket |
 | [Previewing files](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | Previews media files (images, video, and audio) in a bucket |
 | [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
 | [Searching files](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches files in a bucket through prefix search |
