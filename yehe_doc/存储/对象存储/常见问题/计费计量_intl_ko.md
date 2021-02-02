@@ -37,7 +37,7 @@ CDN 가속을 활성화한 후에도 COS 원본 서버 도메인(`<BucketName-AP
 
 ### COS의 CDN Origin-pull 트래픽은 어떻게 과금되나요?
 
-CDN Origin-pull 트래픽은 COS 데이터를 Tencent Cloud CDN 엣지 노드로 전송하며 발생하는 트래픽입니다. 사용자가 CDN 가속을 활성화하면 ** Tencent Cloud CDN 가속 도메인**을 통해 클라이언트에서 COS 데이터를 열람하거나 다운로드합니다. 이 때 발생한 트래픽에 대해 CDN Origin-pull 비용을 과금합니다. COS의 CDN Origin-pull 트래픽 비용에 대한 세부 정보는 [과금 개요](https://intl.cloud.tencent.com/document/product/436/16871) 및 [제품 가격](https://intl.cloud.tencent.com/document/product/436/6239)을 참고하십시오.
+CDN Origin-pull 트래픽은 COS 데이터를 Tencent Cloud CDN 엣지 노드로 전송하며 발생하는 트래픽입니다. 사용자가 CDN 가속을 활성화하면 **Tencent Cloud CDN 가속 도메인**을 통해 클라이언트에서 COS 데이터를 열람하거나 다운로드합니다. 이 때 발생한 트래픽에 대해 CDN Origin-pull 비용을 과금합니다. COS의 CDN Origin-pull 트래픽 비용에 대한 세부 정보는 [과금 개요](https://intl.cloud.tencent.com/document/product/436/16871) 및 [제품 가격](https://intl.cloud.tencent.com/document/product/436/6239)을 참고하십시오.
 
 
 ### COS와 CVM 간에 데이터를 전송했을 경우 요청 수량과 트래픽은 어떻게 과금되나요?
