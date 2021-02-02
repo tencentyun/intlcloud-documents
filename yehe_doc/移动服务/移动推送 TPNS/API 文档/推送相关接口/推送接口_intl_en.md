@@ -143,7 +143,7 @@ Push API supports a variety of push targets. For example, you can push to all de
   }
 ```
 
-<span id="message body type"></span>
+<span id="message type"></span>
 
 ### message_type: message type
 
