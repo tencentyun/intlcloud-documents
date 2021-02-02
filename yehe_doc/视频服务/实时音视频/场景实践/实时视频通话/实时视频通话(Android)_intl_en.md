@@ -80,10 +80,10 @@ The audio/video call component `TRTCCalling` depends on the TRTC SDK and IM SDK.
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
 ```
 dependencies {
-	complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+  complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
     complie 'com.tencent.imsdk:imsdk:latest.release'
 
-	// As Gson parsing is used, Google's Gson needs to be depended on
+  // As Gson parsing is used, Google's Gson needs to be depended on
     complie 'com.google.code.gson:gson:latest.release'
 }
 ```
