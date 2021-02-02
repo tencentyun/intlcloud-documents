@@ -7,7 +7,7 @@ This document describes how to bind/unbind a push domain name to/from a callback
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
 - When an LVB event is triggered after the callback feature is enabled, you can receive the event information through the [event message notification](https://intl.cloud.tencent.com/document/product/267/31566).
-- The callback templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you bound a template to a specified stream through the callback APIs and want to unbind it, you need to call the [DeleteLiveCallbackTemplate](https://intl.cloud.tencent.com/zh/document/product/267/30813) API.
+- The callback templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you bound a template to a specified stream through the callback APIs and want to unbind it, you need to call the [DeleteLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30813) API.
 - One domain name can be bound to only one callback template. After binding, all streams under it will be called back according to this template.
 
 ## Prerequisites
