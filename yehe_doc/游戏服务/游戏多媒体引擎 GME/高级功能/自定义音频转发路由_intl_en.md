@@ -45,9 +45,9 @@ Set audio receiving rules. There will be different receiving effects for the dif
 | AUDIO_ROUTE_RECV_WHITE_LIST    | The local will only receive the audio of people in the allowlist. The allowlist is provided by the parameter OpenIDForSend. |
 
 >?
-- If the passed type is AUDIO_ROUTE_NOT_RECV_FROM_ANYONE or AUDIO_ROUTE_RECV_FROM_ALL, the parameter OpenIDForSend does not take effect.
-- If the passed type is AUDIO_ROUTE_RECV_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
-- If the passed type is AUDIO_ROUTE_RECV_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
+>- If the passed type is AUDIO_ROUTE_NOT_RECV_FROM_ANYONE or AUDIO_ROUTE_RECV_FROM_ALL, the parameter OpenIDForSend does not take effect.
+>- If the passed type is AUDIO_ROUTE_RECV_BLACK_LIST, the parameter OpenIDForSend will be the blocklist. Up to 10 people are supported.
+>- If the passed type is AUDIO_ROUTE_RECV_WHITE_LIST, the parameter OpenIDForSend will be the allowlist. Up to 10 people are supported.
 >
 
 ### Response
