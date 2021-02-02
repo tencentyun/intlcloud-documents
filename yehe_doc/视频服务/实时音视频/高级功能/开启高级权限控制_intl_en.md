@@ -84,17 +84,38 @@ There are often co-anchoring scenarios during live streaming where viewers can t
 
 To solve this issue, you can extend the validity period, for example changing "5 minutes" to "6 hours", or reapply for a `PrivateMapKey` from your server and update it to SDK by calling the SDK’s experimental API `updatePrivateMapKey` before viewers switch their identities to anchors through `switchRole`. Sample code is as follows:
 
+#### Android
 ```java
 JSONObject jsonObject = new JSONObject();
-try{
+try {
     jsonObject.put("api", "updatePrivateMapKey");
     JSONObject params = new JSONObject();
-    params.put("privateMapKey", "xxxxx"); // Fill in a new privateMapKey
+    params.put("privateMapKey", "xxxxx"); // 填写新的 privateMapKey
     jsonObject.put("params", params);
     mTRTCCloud.callExperimentalAPI(jsonObject.toString());
 } catch (JSONException e) {
     e.printStackTrace();
 }
+```
+
+#### iOS OC
+```
+NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+[params setObject:@"xxxxx" forKey:@"privateMapKey"]; // 填写新的 privateMapKey
+NSDictionary *dic = @{@"api": @"updatePrivateMapKey", @"params": params};
+NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:NULL];
+NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+[WXTRTCCloud sharedInstance] callExperimentalAPI:jsonStr];
+```
+#### C++
+```
+std::string api = "{\"api\":\"updatePrivateMapKey\",\"params\":{\"privateMapKey\":"xxxxx"}}";
+TRTCCloudCore::GetInstance()->getTRTCCloud()->callExperimentalAPI(api.c_str());
+```
+#### C#
+```
+std::string api = "{\"api\":\"updatePrivateMapKey\",\"params\":{\"privateMapKey\":"xxxxx"}}";       
+mTRTCCloud.callExperimentalAPI(api);
 ```
 
 ## FAQs
