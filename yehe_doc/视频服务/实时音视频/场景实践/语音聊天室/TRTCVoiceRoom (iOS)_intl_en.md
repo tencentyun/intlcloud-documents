@@ -231,7 +231,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | -------- | -------------- | ------------------------------------------------------------ |
-| sdkAppId | int | You can view the `SDKAppID` in the TRTC Console > **[Application Management](https://console.cloud.tencent.com/trtc/app)** > "Application Info". |
+| sdkAppId | int | You can view the `SDKAppID` in the TRTC Console > 【[Application Management](https://console.cloud.tencent.com/trtc/app)】 > "Application Info". |
 | userId | String | ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (\_). |
 | userSig | String | Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 | callback | ActionCallback | Callback for login. The `code` will be 0 if the operation succeeds. |
