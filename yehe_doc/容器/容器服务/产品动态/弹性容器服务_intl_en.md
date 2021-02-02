@@ -1,9 +1,21 @@
-## October 2020
+## December 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The feature of event storage was added.</td><td>This feature helps users observe resource change and locate the problem in time.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">Event Storage</a></td>
+    <td>Supports spot instance</td><td>The spot instance costs are 20% of the original cost, which is expected to reduce business costs by 65%.</td><td>2020-12-25</td><td>-</td>
+</tr>
+<tr>
+    <td>Event dashboard was launched.</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
+</tr>
+</table>
+
+## November 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>The event storage feature was added.</td><td>Users can observe resource change and locate the problem in time.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30686">Event Storage</a></td>
 </tr>
 </table>
 
@@ -64,6 +76,6 @@
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
 <td>Elastic Kubernetes Service (EKS) beta is launched. </td><td>EKS <b>allows users to deploy workloads without having to purchase nodes</b>. <b>It is fully compatible with native Kubernetes</b> and supports resource purchase and management in the native mode. Resources are billed based on the amount of resources used by the containers.</td> <td>2019-12-27</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">EKS</a></td>
 </tr>
 </table>

@@ -1,9 +1,18 @@
+## 2020年12月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+  <td>边缘容器 SuperEdge 项目开源</td><td>SuperEdge 是基于原生 Kubernetes 的边缘容器管理系统，腾讯云已将开源边缘容器产品 TKE Edge 中边缘相关的源代码，贡献至 SuperEdge 开源项目中。</td><td>2020-12-19</td><td><a href="https://github.com/superedge/superedge">SuperEdge GitHub </a></td>
+</tr>  
+</table>
+
 ## 2020年11月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup 功能概述</a></li><li><a href="https://cloud.tencent.com/document/product/457/50417">通过 yaml 使用 ServiceGroup 功能</a></li><li>通过控制台使用 ServiceGroup 功能</li></td>
+    <td>ServiceGroup 功能产品化</td><td>用户可通过控制台使用 ServiceGroup 功能，功能入口与集群“节点管理”入口平级。</td><td>2020-11-27</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup 功能概述</a></td>
 </tr>
 <tr>
     <td>节点安装脚本新增支持 check、clear 两个功能参数</td><td><li>check 参数，方便用户使用脚本手动检查节点环境中不满足安装要求的地方。</li><li>clear 参数，方便一键清理节点中的脏数据、关闭防火墙等。</li></td><td>2020-11-13</td><td>-</td>

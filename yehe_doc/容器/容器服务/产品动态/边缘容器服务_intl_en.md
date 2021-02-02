@@ -1,9 +1,18 @@
+## December 2020
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+  <td>TKE Edge opens source for SuperEdge.</td><td>SuperEdge is an edge container management system based on the native Kubernetes. Tencent Cloud has provided the edge-related source code in the TKE Edge for the SuperEdge open source project.</td><td>2020-12-19</td><td><a href="https://github.com/superedge/superedge">SuperEdge GitHub </a></td>
+</tr>  
+</table>
+
 ## November 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>ServiceGroup feature was productized.</td><td>Users can log in to the console to use ServiceGroup feature. The entrances of this feature and “Node Management” are in the same level.</td><td>2020-11-27</td><td><li><a href="https://intl.cloud.tencent.com/document/product/457/37772">ServiceGroup Overview</a></li><li><a href="https://cloud.tencent.com/document/product/457/50417">Using ServiceGroup via YAML File</a></li><li>Using ServiceGroup via Console</li></td>
+    <td>ServiceGroup feature was launched.</td><td>You can find ServiceGroup in the cluster details page.</td><td>2020-11-27</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37772">ECK Overview</a></td>
 </tr>
 <tr>
     <td>The node installation script supports “check” and “clear” parameters.</td><td><li>The “check” parameter is convenient for users to use scripts to manually check where the installation requirements are not met in the node environment.</li><li>The “clear” parameter is convenient for one-click cleaning of dirty data in the node, turning off the firewall, etc.</li></td><td>2020-11-13</td><td>-</td>

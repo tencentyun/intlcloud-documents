@@ -8,15 +8,17 @@
 - [使用节点池](#nodepool)
 - [使用启动脚本](#shell)
 
-<span id="Kubernetes"></span>
+<span id ="Kubernetes"></span>
+
 ## Kubernetes 版本
 Kubernetes 版本迭代较快，新版本通常包含许多 bug 修复和新功能，而旧版本会逐渐淘汰。建议您在创建集群时，选择当前 TKE 支持的最新版本。后续可通过升级已有 Master 和节点版本，更换迭代产生的新版本。
 
-<span id="network"></span>
+<span id ="network"></span>
+
 ## 容器网络插件：GlobalRouter 及 VPC-CNI
 
 ### 网络模式架构
-TKE 支持以下两种网络模式架构，如需了解更多信息，请参见 [如何选择容器服务网络模式](https://intl.cloud.tencent.com/document/product/457/38966)。
+TKE 支持以下两种网络模式架构，如需了解更多信息，请参见 [如何选择容器服务网络模式](https://intl.cloud.tencent.com/document/product/457/35248)。
 - **GlobalRouter 模式架构**：
 	- 基于 CNI 和网桥实现的容器网络能力，容器路由直接通过私有网络 VPC 底层实现。
 	- 容器与节点在同一网络平面，但网段不与私有网络网段重叠，容器网段地址充裕。
@@ -40,22 +42,26 @@ TKE 支持以下三种网络模式使用方式：
 - 若完全了解并接受 VPC-CNI 的使用限制，且集群内所有 Pod 都需用 VPC-CNI 模式，则可在创建集群时选择 VPC-CNI 模式。
 
 <span id="runtime"></span>
+
+
 ## 运行时组件： Docker 及 Containerd（beta）
 
 ### 运行时架构
 TKE 支持以下两种运行时架构，如需了解更多信息，请参见 [如何选择 Containerd 和 Docker](https://intl.cloud.tencent.com/document/product/457/31088)。
 - **Docker 作为运行时架构**：
-![](https://main.qcloudimg.com/raw/3bfe6956a3c4c1f28db41cf4cb14b3ec.png)
-	- 调用链如下：
-	 1. Kubelet 内置的 dockershim 模块帮助 docker 适配了 CRI 接口。
-	 2. Kubelet 通过 socket 文件自行调用 dockershim.
-	 3. Dockershim 调用 dockerd 接口（Docker HTTP API）。
-	 4. Dockerd 调用 docker-containerd（gRPC）来实现容器的创建与销毁等。
-	- 调用链过长原因分析：
-Kubernetes 起初仅支持 Docker，后来引入了 CRI，并将运行时抽象化以支持多种运行时。Docker 与 Kubernetes 存在竞争关系，未在 dockerd 中实现 CRI 接口，故 Kubernetes 需自行在 dockerd 中实现 CRI。Docker 本身内部组件模块化及 CRI 适配。
+  ![](https://main.qcloudimg.com/raw/3bfe6956a3c4c1f28db41cf4cb14b3ec.png)
+
+  - 调用链如下：
+   1. Kubelet 内置的 dockershim 模块帮助 docker 适配了 CRI 接口。
+   2. Kubelet 通过 socket 文件自行调用 dockershim.
+   3. Dockershim 调用 dockerd 接口（Docker HTTP API）。
+   4. Dockerd 调用 docker-containerd（gRPC）来实现容器的创建与销毁等。
+  - 调用链过长原因分析：
+  Kubernetes 起初仅支持 Docker，后来引入了 CRI，并将运行时抽象化以支持多种运行时。Docker 与 Kubernetes 存在竞争关系，未在 dockerd 中实现 CRI 接口，故 Kubernetes 需自行在 dockerd 中实现 CRI。Docker 本身内部组件模块化及 CRI 适配。
 
 - **Containerd（beta）  作为运行时架构**：
 ![](https://main.qcloudimg.com/raw/3b868d11263d6120512bec5b1cc52a20.png)
+	
 	- Containerd 1.1 之后支持了 CRI Plugin，即 containerd 自身即可适配 CRI 接口。
 	- 相比 Docker 方案，调用链少了 dockershim 和 dockerd。
 
@@ -72,7 +78,9 @@ Kubernetes 起初仅支持 Docker，后来引入了 CRI，并将运行时抽象�
 
 若非以上场景，建议选择 containerd。
 
-<span id="service"></span>
+<span id="service)"></span>
+
+
 ## Service 转发模式：iptables 及 ipvs
 Service 转发原理图如下所示：
 ![](https://main.qcloudimg.com/raw/c05b7266ff029047e11e23d1cf14504e.png)
@@ -86,7 +94,8 @@ Service 转发原理图如下所示：
 ### 选型建议
 对稳定性要求极高且 Service 数量小于2000时，建议选择 iptables，其余场景建议首选 ipvs。
 
-<span id="cluster"></span>
+<span id ="cluster"></span>
+
 ## 集群类型：托管集群及独立集群
 TKE 支持以下两种集群类型：
 - **托管集群**：
@@ -103,21 +112,25 @@ TKE 支持以下两种集群类型：
 建议通常情况下选择托管集群，如需完全掌握 Master，例如对 Master 进行个性化定制实现高级功能，则可选择使用独立集群。
 
 <span id="os"></span>
-## 节点操作系统
-TKE 支持 Ubuntu 和 CentOS 两类发行版操作系统，`TKE-Optimized` 版本的操作系统使用了 TKE 定制优化版的内核，其余的操作系统使用了 Linux 社区官方开源内核。如下图所示：
-![](https://main.qcloudimg.com/raw/dc05c4ee90c738553f466e1ad4cf6a98.png)
 
-### TKE-Optimized 优势
-- 基于内核社区长期支持的 4.14.105 版本定制。
-- 针对容器和云场景进行了优化。
-- 计算、存储和网络子系统均经过性能优化。
-- 对内核缺陷修复支持较好。
-- 完全开源，详情请参见 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)。
+
+## 节点操作系统
+
+TKE 支持 Tencent Linux、Ubuntu 和 CentOS 三类发行版操作系统，其中 Tencent Linux 版本的操作系统使用了腾讯云团队维护定制内核 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel)，其余的操作系统使用了 Linux 社区官方开源内核。如下图所示： 
+![](https://main.qcloudimg.com/raw/732966719f531c12d517366c2eed7071.png)
+
+
+
+>? 在 Tencent Linux 公共镜像上线之前，为了提升镜像稳定性，并提供更多特性，容器服务 TKE 团队制作并维护 TKE-Optimized 系列镜像。目前控制台已不支持新建集群选择 TKE-Optimized 镜像，更多相关详情请参见 [TKE-Optimized 系列镜像说明](https://intl.cloud.tencent.com/document/product/457/34715)。
+
+
 
 ### 选型建议
-建议选择 `TKE-Optimized` 版本的操作系统，稳定性和技术支持较好。如需更高版本内核的操作系统，则可选非 `TKE-Optimized` 版本的操作系统。
 
-<span id="nodepool"></span>
+建议选择 Tecent Linux 版本的操作系统，该版本操作系统是包含 [TencentOS-kernel](https://github.com/Tencent/TencentOS-kernel) 内核的腾讯云公共镜像，容器服务 TKE 目前已经支持该镜像并作为缺省选项。
+
+<span id="nodepool)"></span>
+
 ## 使用节点池
 节点池目前为内测发布功能，使用需通过申请。主要用于批量管理节点：
 - 节点 Label 与 Taint。
@@ -137,10 +150,12 @@ TKE 支持 Ubuntu 和 CentOS 两类发行版操作系统，`TKE-Optimized` 版�
 当业务量快速上升时，该 IO 密集型业务也需要更多的计算资源。在业务高峰时段，HPA 功能自动为该业务扩容了 Pod，而节点计算资源不够用，此时节点池的自动伸缩功能自动扩容了节点，守住了流量高峰。
 
 <span id="shell"></span>
+
+
 ## 使用启动脚本
 ### 组件自定义参数
 >?如需使用该功能，请通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
-
+>
 - 在创建集群时，可在配置“集群信息”的“高级设置”中，自定义 Master 组件部分启动参数。如下图所示：
 ![](https://main.qcloudimg.com/raw/2470700f16e0c274828d775c57884b24.png)
 - 在“选择机型”时，可在 “Worker 配置”的“高级设置”中，自定义 kubelet 部分启动参数。如下图所示：
