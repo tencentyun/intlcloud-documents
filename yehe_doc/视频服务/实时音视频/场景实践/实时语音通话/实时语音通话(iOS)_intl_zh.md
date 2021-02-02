@@ -46,8 +46,8 @@
 1. 解压 [步骤2](#ui.step2) 中下载的源码包。
 2. 找到并打开 `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` 文件。
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
-	- SDKAPPID：默认为0，请设置为实际的 SDKAppID。
-	- SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
+  - SDKAPPID：默认为0，请设置为实际的 SDKAppID。
+  - SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
 ![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
@@ -220,7 +220,7 @@ NSArray *callList = @[];
 IM SDK 支持离线推送，您需要进行相应的设置才能达到可用标准。
 
 1. 申请 Apple 推送证书，具体操作请参见 [Apple 推送证书申请](https://intl.cloud.tencent.com/document/product/1047/34346)。
-2. 在后台及客户端配置离线推送。
+2. 在后台及客户端配置离线推送，具体操作请参见 [离线推送（iOS）](https://intl.cloud.tencent.com/document/product/1047/34347)。
 3. 修改 login 函数中的 `param.busiId` 为对应证书 ID。
 
 <span id="api"> </span>
