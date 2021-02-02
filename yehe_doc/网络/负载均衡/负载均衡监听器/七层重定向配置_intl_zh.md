@@ -1,5 +1,5 @@
 负载均衡支持七层重定向，该功能支持用户在七层 HTTP/HTTPS 监听器上配置重定向。
->
+>?
 >- 会话保持：如果客户端访问了`example.com/bbs/test/123.html` ，且后端 CVM 开启了会话保持。当启用重定向后，将流量导到`example.com/bbs/test/456.html`时，原会话保持机制将失效。
 - TCP / UDP 重定向：暂不支持 IP + Port 级别的重定向，后续版本将提供。
 ## 重定向概述
@@ -58,3 +58,4 @@
 ![](https://main.qcloudimg.com/raw/5f59b88ecc291d912b7faf2cf1d3770e.png)
 6. 完成重定向配置后的结果如下图所示，可以看到`HTTP:443`监听器中，`https://www.example.com/forsale`已重定向至`https://www.new.com/index`。
 ![](https://main.qcloudimg.com/raw/34364863bd44202df54e89ec3cb923f9.png)
+
