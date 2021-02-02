@@ -1,95 +1,115 @@
-
 ## Namespace
 
 Namespace=QCE/COS
 
 ## Monitoring Metrics
 
->? Because Cloud Object Storage (COS) uses a generic region, no matter where a bucket is located, select "Guangzhou" as the `Region` when pulling COS monitoring metric data.
-- When pulling data using the [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics), select "ap-guangzhou" for the `Region` field.
-- When pulling data using an SDK, enter "ap-guangzhou" for the `Region` field.
+> ?Because COS uses a generic region, no matter where a bucket is located, please always select "Guangzhou" as `Region` when pulling COS monitoring metric data.
+>- Please always select "North China (Guangzhou)" for the `Region` field when pulling data by using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics).
+>- Please always enter "ap-guangzhou" in the `Region` field when pulling data by using an SDK.
 
-### Request metrics
+### Requests
 
-| Parameter | Metric Name | Description | Unit | Dimension |
-| ----------------------| ---------------------- | -------------- | ---- | ----------------------|
-| StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
-| StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
-| IaReadRequests | STANDARD_IA read requests | Number of STANDARD_IA read requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
-| IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
-| NlReadRequests | Nearline Storage read requests | Number of Nearline Storage read requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
-| NlWriteRequests | Nearline Storage write requests | Number of Nearline Storage write requests, which is calculated based on the number of sent requests | N/A | appid and bucket |
+| Parameter | Metric | Description | Unit | Dimension |
+| ---------------- | -------------- | ------------------------------------------------------------ | ---- | ------------- |
+| StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| IaReadRequests | STANDARD_IA read requests | Number of STANDARD_IA read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| NlReadRequests | Nearline Storage read requests | Number of Nearline Storage read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| NlWriteRequests | Nearline Storage write requests | Number of Nearline Storage write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| TotalRequests | Total requests | Total number of requests in all storage classes | - | appid, bucket |
+| GetRequests | Total GET requests | Total number of GET requests in all storage classes | - | appid, bucket |
+| PutRequests | Total PUT requests | Total number of PUT requests in all storage classes | - | appid, bucket |
 
-### Storage metrics
+### Storage
 
-| Metric | Description | Unit | Dimension |
-| ---------------------- | ----------------- | ---- | ---------------------- |
-| StdStorage | STANDARD - storage space | MB | appid and bucket |
-| SiaStorage | STANDARD_IA - storage space | MB | appid and bucket |
-| NelStorage | Nearline storage - storage space | MB | appid and bucket |
-| ArcStorage | ARCHIVE - storage space | MB | appid and bucket |
-| MazStdStorage | MAZ_STANDARD - storage space | MB | appid and bucket |
-| StdObjectNumber | STANDARD - number of objects | N/A | appid and bucket |
-| MazStdObjectNumber | MAZ_STANDARD - number of objects | N/A | appid and bucket |
-| IaObjectNumber | STANDARD_IA - number of objects | N/A | appid and bucket |
-| NlObjectNumber | Nearline Storage - number of objects | N/A | appid and bucket |
-| MazIaReadRequests | MAZ_STANDARD_IA - number of read requests | N/A | appid and bucket |
-| MazIaWriteRequests | MAZ_STANDARD_IA - number of write requests | N/A | appid and bucket |
-| MazIaStorage | MAZ_STANDARD_IA - storage space | MB | appid and bucket |
-| MazIaObjectNumber | MAZ_STANDARD_IA - number of objects | N/A | appid and bucket |
-| StdMultipartNumber | STANDARD - incomplete multipart uploads | N/A | appid and bucket |
-| MazStdMultipartNumber | MAZ_STANDARD - incomplete multipart uploads | N/A | appid and bucket |
-| IaMultipartNumber | STANDARD_IA - incomplete multipart uploads | N/A | appid and bucket |
-| MazIaMultipartNumber | MAZ_STANDARD_IA - incomplete multipart uploads | N/A | appid and bucket |
-| ArcMultipartNumber | ARCHIVE - incomplete multipart uploads | N/A | appid and bucket |
-| MazArcMultipartNumber | MAZ_ARCHIVE - incomplete multipart uploads | N/A | appid and bucket |
-| NlMultipartNumber | Nearline Storage - incomplete multipart uploads | N/A | appid and bucket |
-| ItFrequentMultipartNumber | Intelligent Laying of Files with High-Frequency Access - incomplete multipart uploads | N/A | appid and bucket |
-| MazItFrequentMultipartNumber | MAZ_Intelligent Laying of Files with High-Frequency Access - incomplete multipart uploads | N/A | appid and bucket |
+| Parameter | Metric | Unit | Dimension |
+| ---------------------------- | ---------------------------- | ---- | ------------- |
+| StdStorage | STANDARD - storage space | MB | appid, bucket |
+| SiaStorage | STANDARD_IA - storage space | MB | appid, bucket |
+| NelStorage | Nearline Storage - storage space | MB | appid, bucket |
+| ArcStorage | ARCHIVE - storage space | MB | appid, bucket |
+| MazStdStorage | MAZ_STANDARD - storage space | MB | appid, bucket |
+| StdObjectNumber | STANDARD - number of objects | - | appid, bucket |
+| MazStdObjectNumber | MAZ_STANDARD - number of objects | - | appid, bucket |
+| IaObjectNumber | STANDARD_IA - number of objects | - | appid, bucket |
+| NlObjectNumber | Nearline Storage - number of objects | - | appid, bucket |
+| MazIaReadRequests  | MAZ_STANDARD_IA - number of read requests | - | appid, bucket|
+| MazIaWriteRequests | MAZ_STANDARD_IA - number of write requests | - | appid, bucket |
+| MazIaStorage                 | MAZ_STANDARD_IA - storage capacity      | MB   | appid, bucket |
+| MazIaObjectNumber            | MAZ_STANDARD_IA - number of objects      | -   | appid, bucket |
+| StdMultipartNumber           | STANDARD - incomplete multipart uploads           | -   | appid, bucket |
+| MazStdMultipartNumber        | MAZ_STANDARD - incomplete multipart uploads     | -   | appid, bucket |
+| IaMultipartNumber            | STANDARD_IA - incomplete multipart uploads           | -   | appid, bucket |
+| MazIaMultipartNumber         | MAZ_STANDARD_IA - incomplete multipart uploads     | -   | appid, bucket |
+| ArcMultipartNumber           | ARCHIVE - incomplete multipart uploads           | -   | appid, bucket |
+| MazArcMultipartNumber        | MAZ_ARCHIVE - incomplete multipart uploads    | -   | appid, bucket |
+| NlMultipartNumber            | Nearline Storage - incomplete multipart uploads           | -   | appid, bucket |
+| ItFrequentMultipartNumber    | INTELLIGENT_TIERING - incomplete multipart uploads       | -   | appid, bucket |
+| MazItFrequentMultipartNumber | MAZ_INTELLIGENT_TIERING - incomplete multipart uploads  | -   | appid, bucket |
 
+### Traffic
 
-### Traffic metrics
+| Parameter | Metric | Description | Unit | Dimension |
+| ----------------------------- | -------------------- | -------------------------------------------------------- | ---- | ------------- |
+| InternetTrafficDown           | Public network downstream traffic         | Traffic generated by data transfer from COS to client over the internet              | B    | appid, bucket |
+| InternetTrafficUp             | Public network upstream traffic         | Traffic generated by data transfer from client to COS over the internet              | B    | appid, bucket |
+| InternalTrafficDown           | Private network downstream traffic         | Traffic generated by data transfer from COS to client over the Tencent Cloud private network          | B    | appid, bucket |
+| InternalTrafficUp             | Private network upstream traffic         | Traffic generated by data transfer from client to COS over the Tencent Cloud private network          | B    | appid, bucket |
+| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to Tencent Cloud CDN edge server | B | appid, bucket |
+| InboundTraffic | Total upload traffic over public and private networks | Traffic generated by data upload to COS over the public and private networks | B | appid, bucket |
+| CrossRegionReplicationTraffic | Cross-region replication traffic       | Traffic generated by replication of data in a bucket in one region to another bucket in another region | B    | appid, bucket |
 
-| Parameter | Metric Name | Description | Unit | Dimension |
-| ----------------------| ---------------------- | ------------- | ---- | ----------------------|
-| InternetTraffic | Public network downstream traffic | Traffic generated by data transfer between the client and COS over a public network | Byte | appid and bucket |
-| InternalTraffic | Private network downstream traffic | Traffic generated by data transfer between the client and COS over a Tencent Cloud private network | Byte | appid and bucket |
-| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to the Tencent Cloud CDN edge server | Byte | appid and bucket |
-| InboundTraffic | Total upload traffic over the public and private networks | Traffic generated by data upload to COS over the public and private networks | Byte | appid and bucket |
+### Return codes
 
-### Return code metrics
+| Parameter | Metric | Description | Unit | Dimension |
+| --------------- | ------------- | ----------------------------- | ---- | ------------- |
+| 2xxResponse | 2xx status code | Number of 2xx errors in the current bucket | - | appid, bucket |
+| 3xxResponse | 3xx status code | Number of 3xx errors in the current bucket | - | appid, bucket |
+| 4xxResponse | 4xx status code | Number of 4xx errors in the current bucket | - | appid, bucket |
+| 5xxResponse | 5xx status code | Number of 5xx errors in the current bucket | - | appid, bucket |
+| 2xxResponseRate | Proportion of 2xx status code | Proportion of 2xx errors in the current bucket | % | appid, bucket |
+| 3xxResponseRate | Proportion of 3xx status code | Proportion of 3xx errors in the current bucket | % | appid, bucket |
+| 4xxResponseRate | Proportion of 4xx status code | Proportion of 4xx errors in the current bucket | % | appid, bucket |
+| 5xxResponseRate | Proportion of 5xx status code | Proportion of 5xx errors in the current bucket | % | appid, bucket |
+| 400Response | 400 status code | Number of 400 errors in the current bucket | - | appid, bucket |
+| 403Response | 403 status code | Number of 403 errors in the current bucket | - | appid, bucket |
+| 404Response | 404 status code | Number of 404 errors in the current bucket | - | appid, bucket |
+| 400ResponseRate | Proportion of 400 status code | Proportion of 400 errors in the current bucket | % | appid, bucket |
+| 403ResponseRate | Proportion of 403 status code | Proportion of 403 errors in the current bucket | % | appid, bucket |
+| 404ResponseRate | Proportion of 404 status code | Proportion of 404 errors in the current bucket | % | appid, bucket |
+| 500ResponseRate | Proportion of 500 status code | Proportion of 500 errors in the current bucket | % | appid, bucket |
+| 501ResponseRate | Proportion of 501 status code | Proportion of 501 errors in the current bucket | % | appid, bucket |
+| 502ResponseRate | Proportion of 502 status code | Proportion of 502 errors in the current bucket | % | appid, bucket |
+| 503ResponseRate | Proportion of 503 status code | Proportion of 503 errors in the current bucket | % | appid, bucket |
 
-| Parameter | Metric Name | Description | Unit | Dimension |
-| ---------------------- | ----------- | --------|---- | ---------------------- |
-| 2xxResponse | 2xx status code | Number of 2xx errors in the current bucket | N/A | appid and bucket |
-| 3xxResponse | 3xx status code | Number of 3xx errors in the current bucket | N/A  | appid and bucket |
-| 4xxResponse | 4xx status code | Number of 4xx errors in the current bucket | N/A  | appid and bucket |
-| 5xxResponse | 5xx status code | Number of 5xx errors in the current bucket | N/A  | appid and bucket |
->?
-> 1. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
-> 2. The statistical granularity (`period`) may vary by metric. You can call the [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API to obtain the `period` supported by each metric.
+> ?
+> 1. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+> 2. The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
 ### Data retrieval metrics
 
-| Parameter | Metric Name | Description | Unit | Dimension |
-| ----------------------| ---------------------- | ------------ | ---- | ----------------------|
-| StdRetrieval | Standard data retrieval | Traffic generated due to the retrieval of standard data | Byte | appid and bucket |
-| IaRetrieval | Low-frequency data retrieval | Traffic generated due to the retrieval of low-frequency data | Byte | appid and bucket |
-| NlRetrieval | Nearline data retrieval | Traffic generated due to the retrieval of nearline data | Byte | appid and bucket |
+| Parameter | Metric | Description | Unit | Dimension |
+| ------------ | ------------ | ---------------------- | ---- | ------------- |
+| StdRetrieval | STANDARD data retrieval | Traffic generated by the retrieval of STANDARD data | B | appid, bucket |
+| IaRetrieval | STANDARD_IA data retrieval | Traffic generated by the retrieval of STANDARD_IA data | B | appid, bucket |
+| NlRetrieval | Nearline data retrieval | Traffic generated by the retrieval of Nearline data | B | appid, bucket |
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
-| ------------------------------- | -------- | ---------------------- | --------------------------------------------------- |
-| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name, such as appid |
-| &Instances.N.Dimensions.0.Value | appid | Specific APPID of the root account | Enter a specific root account APPID, such as 1250000000 |
-| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket |
-| &Instances.N.Dimensions.1.Value | bucket | Specific bucket name | Enter a specific bucket name, such as examplebucket-1250000000 |
+| Parameter | Dimension | Dimension Description | Format |
+| ------------------------------- | -------- | ----------------------- | -------------------------------------------------- |
+| &Instances.N.Dimensions.0.Name  | appid    | Root account APPID dimension name | Enter a String-type dimension name: appid                     |
+| &Instances.N.Dimensions.0.Value | appid    | Specific root account APPID      | Enter a root account APPID, such as `1250000000`                 |
+| &Instances.N.Dimensions.1.Name  | bucket   | Bucket dimension name          | Enter a String-type dimension name: bucket                    |
+| &Instances.N.Dimensions.1.Value | bucket   | Specific bucket name          | Enter a specific bucket name, such as `examplebucket-1250000000` |
 
-## Input Parameters
-To query COS monitoring data, the values of the input parameters are as follows:
+## Input Parameter Description
+
+**To query the monitoring data of COS, use the following input parameters:**
 &Namespace=QCE/COS
 &Instances.N.Dimensions.0.Name=appid
-&Instances.N.Dimensions.0.Value=`APPID` of the root account
+&Instances.N.Dimensions.0.Value=root account APPID
 &Instances.N.Dimensions.1.Name=bucket
-&Instances.N.Dimensions.1.Value=<Bucket name> 
+&Instances.N.Dimensions.1.Value=bucket name 
