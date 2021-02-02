@@ -32,8 +32,8 @@
 
 ## 操作步骤
 
-
-### 方式1：作用于单个命名空间的权限绑定[](id:way1)
+[](id:way1)
+### 方式1：作用于单个命名空间的权限绑定
 
 此方式主要用于为某一个用户绑定某一个命名空间下的相关权限，适用于需要细化权限的场景。例如，开发、测试、运维人员只能在各自的命名空间下对资源操作。以下将为您介绍如何在 TKE 中实现作用于单个命名空间的权限绑定。
 
@@ -65,7 +65,7 @@ metadata:
     namespace: sa-test # 指定 Namespace
     name: sa-role-test
 rules: # 设置权限规则
-- apiGroups: ["", "extensions", "apps"]
+ - apiGroups: ["", "extensions", "apps"]
   resources: ["deployments", "replicasets", "pods"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ```
@@ -77,7 +77,7 @@ metadata:
     name: sa-rb-test
     namespace: sa-test 
 subjects: 
-- kind: ServiceAccount
+ - kind: ServiceAccount
   name: sa-acc
   namespace: sa-test # ServiceAccount 所在 Namespace 
   apiGroup: ""  # 默认 apiGroup 组为 rbac.authorization.k8s.io
@@ -91,8 +91,8 @@ roleRef:
 
 
 
-
-### 方式2：多个命名空间复用集群权限对象绑定[](id:way2)
+[](id:way2)
+### 方式2：多个命名空间复用集群权限对象绑定
 
 此方式主要用于为用户授予多个命名空间下相同的权限，适用于使用一个权限模版为多个命名空间绑定授权的场景，例如需要为 DevOps 人员在多个命名空间绑定相同资源操作的权限。以下将为您介绍如何在 TKE 中使用多个命名空间复用集群权限绑定授权。
 
@@ -134,7 +134,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata: 
     name: test-clusterrole
 rules: 
-- apiGroups: [""]
+ - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list", "create"]
 ```
@@ -146,7 +146,7 @@ metadata:
     name: clusterrole-rb-test
     namespace: default 
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # User 所在 Namespace 
   apiGroup: ""  # 默认 apiGroup 组为 rbac.authorization.k8s.io
@@ -165,7 +165,7 @@ metadata:
     name: clusterrole-rb-test
     namespace: default2 
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # User 所在 Namespace 
   apiGroup: ""  # 默认 apiGroup 组为 rbac.authorization.k8s.io
@@ -178,8 +178,8 @@ roleRef:
 ![image-20201020114512915](https://main.qcloudimg.com/raw/b948a35d0e49f1f99084b2cf8e6b7eb9.png)
 
 
-
-### 方式3：整个集群权限的绑定[](id:way3)
+[](id:way3)
+### 方式3：整个集群权限的绑定
 
 此方式主要用于为某个用户绑定所有命名空间下的权限（集群范围），适用于集群范围内授权的场景。例如，日志收集权限、管理人员权限等，以下将为您介绍在如何在 TKE 中使用多个命名空间复用集群权限绑定授权。
 
@@ -190,7 +190,7 @@ kind: ClusterRoleBinding
 metadata: 
     name: clusterrole-crb-test
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # User 所在 Namespace 
   apiGroup: ""  # 默认 apiGroup 组为 rbac.authorization.k8s.io
