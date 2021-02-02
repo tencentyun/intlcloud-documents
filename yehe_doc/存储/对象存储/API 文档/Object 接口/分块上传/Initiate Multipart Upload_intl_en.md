@@ -70,11 +70,11 @@ If you uploaded the object using SSE encryption, this API will return SSE header
 
 A successful request returns **application/xml** data, including the initialization of multipart upload.
 
-```xml
+```
 <InitiateMultipartUploadResult>
-	<Bucket>string</Bucket>
-	<Key>string</Key>
-	<UploadId>string</UploadId>
+       <Bucket>string</Bucket>
+       <Key>string</Key>
+       <UploadId>string</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
