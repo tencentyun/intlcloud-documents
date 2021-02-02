@@ -40,7 +40,7 @@ This module provides users with professional data analysis services. You can que
 <table>
 <tr><th width="17%">Feature</th><th>Description</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31076">Billing Usage Statistics</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31076">Billing Usage Statistics</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>You can query billable items information such as traffic/bandwidth, screencapturing, porn detection, transcoding, recording, push to third-party platforms. </li><li>You can also query and analyze LVB operation data.</li></ul></td>
 </tr><tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">Stream Data Query</a></td>
@@ -54,10 +54,10 @@ LVB Toolkit provides ancillary features.
 <table>
 <tr><th width="17%">Feature</th><th>Description</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31084">Address Generator</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31084">Address Generator</a></td>
 <td>You can fill in address information to quickly generate push/playback addresses.</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web Push</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web Push</a></td>
 <td>You can quickly generate push addresses and test live streaming broadcasts online.</td>
 </tr><tr>
 <td><a href="https://console.cloud.tencent.com/live/tools/selfcheck">Self-Diagnosis</a></td>
