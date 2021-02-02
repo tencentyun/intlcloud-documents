@@ -109,7 +109,7 @@ This document provides a list of features in LVB. For more information on their 
 ### LVB SDK
 <table>
 <tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/zh/document/product/1071" target="_blank">MLVB SDK</a></td><td>An integrated live streaming SDK that provides various features such as LVB push, basic beauty filters, filters, LVB playback, and LVB time shifting.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/1071" target="_blank">MLVB SDK</a></td><td>An integrated live streaming SDK that provides various features such as LVB push, basic beauty filters, filters, LVB playback, and LVB time shifting.</td></tr>
 <tr><td>Beauty filter SDK</a></td><td>Jointly created by Tencent Cloud, Pitu, and YouTu Lab, this is an advanced video processing solution that has a wide variety of real-time special effects for live video capture such as filters, beauty filters, stickers, and gesture recognition to meet the diversified video capture needs in multiple scenarios.</td></tr>
 <tr><td>Interactive live streaming (solution)</a></td><td>Interactive live mic connect solution based on the MLVB SDK.</td></tr>
 </table>
