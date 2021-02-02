@@ -90,7 +90,7 @@ JSONObject jsonObject = new JSONObject();
 try {
     jsonObject.put("api", "updatePrivateMapKey");
     JSONObject params = new JSONObject();
-    params.put("privateMapKey", "xxxxx"); // 填写新的 privateMapKey
+    params.put("privateMapKey", "xxxxx"); // Fill in a new privateMapKey
     jsonObject.put("params", params);
     mTRTCCloud.callExperimentalAPI(jsonObject.toString());
 } catch (JSONException e) {
@@ -101,7 +101,7 @@ try {
 #### iOS OC
 ```
 NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-[params setObject:@"xxxxx" forKey:@"privateMapKey"]; // 填写新的 privateMapKey
+[params setObject:@"xxxxx" forKey:@"privateMapKey"]; // Fill in a new privateMapKey
 NSDictionary *dic = @{@"api": @"updatePrivateMapKey", @"params": params};
 NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:NULL];
 NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
