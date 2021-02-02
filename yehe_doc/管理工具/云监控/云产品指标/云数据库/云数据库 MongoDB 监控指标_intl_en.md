@@ -112,9 +112,9 @@ Namespace=QCE/CMONGO
 
 > ?Valid values of `Instances.N.Dimensions.0.Value` for TencentDB:
 > TencentDB for MongoDB is a cluster service. You can query monitoring data in three dimensions: "cluster", "replica set", and "node" as detailed below:
-> -"Cluster" dimension: it represents a certain TencentDB for MongoDB instance you purchased. In this dimension, you can query the number of read and write requests, capacity utilization, and timed-out requests of the entire instance.
-> -"Replica set" dimension: you can query the internal capacity utilization and primary-secondary lag of a certain replica set in the cluster. A replica set instance itself contains only one replica set, while each shard of a shard instance is a replica.
-> -"Node" dimension: you can query the CPU, memory, and other information of any node in the cluster.
+>- "Cluster" dimension: it represents a certain TencentDB for MongoDB instance you purchased. In this dimension, you can query the number of read and write requests, capacity utilization, and timed-out requests of the entire instance.
+>- "Replica set" dimension: you can query the internal capacity utilization and primary-secondary lag of a certain replica set in the cluster. A replica set instance itself contains only one replica set, while each shard of a shard instance is a replica.
+>- "Node" dimension: you can query the CPU, memory, and other information of any node in the cluster.
 
 ### dimensions.0.value value reference table
 
