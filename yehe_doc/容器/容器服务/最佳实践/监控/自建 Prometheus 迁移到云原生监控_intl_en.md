@@ -249,7 +249,7 @@ Cloud native monitoring provides Prometheus API. If you need to use self-built G
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Click **Cloud Native Monitoring** in the left sidebar to go to the **Cloud Native Monitoring** page.
 3. Click the instance ID/name to go to its details page to obtain the Prometheus API address.
-![](https://main.qcloudimg.com/raw/9bffcd1eff9b749f33d746e04adfb176.jpg)
+![](https://main.qcloudimg.com/raw/c8e1d55ca0bc4af0fcf5354196a03330.png)
  >?Ensure that the self-built Grafana and cloud native monitoring are in the same VPC or their networks have connected.
 4. Add the Prometheus API address in Grafana as the Prometheus data source, as shown below:
 ![](https://main.qcloudimg.com/raw/b6a14e36f3325034e2b84c63f605eaec.png)
