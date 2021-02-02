@@ -32,8 +32,8 @@ As shown in the figure above, Kubernetes RBAC authorization mainly provides the 
 
 ## Directions
 
-
-### Permission binding for a single namespace[](id:way1)
+[](id:way1)
+### Permission binding for a single namespace
 
 This method is mainly used to bind related permissions of a certain namespace for a certain user, and is suitable for scenarios that require refined permissions. For example, developers, testers, and OPS personnel can only operate on resources in their respective namespaces. The following directions describe how to implement permission binding for a single namespace in TKE.
 
@@ -65,7 +65,7 @@ metadata:
     namespace: sa-test # Specify the Namespace
     name: sa-role-test
 rules: # Set the permission rule
-- apiGroups: ["", "extensions", "apps"]
+ - apiGroups: ["", "extensions", "apps"]
   resources: ["deployments", "replicasets", "pods"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ```
@@ -77,7 +77,7 @@ metadata:
     name: sa-rb-test
     namespace: sa-test 
 subjects: 
-- kind: ServiceAccount
+ - kind: ServiceAccount
   name: sa-acc
   namespace: sa-test # The Namespace where ServiceAccount locates 
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
@@ -91,8 +91,8 @@ roleRef:
 
 
 
-
-### Permission binding for multiple namespaces by reusing the cluster permission object[](id:way2)
+[](id:way2)
+### Permission binding for multiple namespaces by reusing the cluster permission object
 
 This method is mainly used to grant users the same permissions in multiple namespaces. It is suitable for scenarios where a permission template is used to bind authorizations for multiple namespaces. For example, developers need to bind the same resource operations permission in multiple namespaces. The following directions describe how to implement permission binding for multiple namespaces by reusing cluster permission object in TKE.
 
@@ -134,7 +134,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 metadata: 
     name: test-clusterrole
 rules: 
-- apiGroups: [""]
+ - apiGroups: [""]
   resources: ["pods"]
   verbs: ["get", "watch", "list", "create"]
 ```
@@ -146,7 +146,7 @@ metadata:
     name: clusterrole-rb-test
     namespace: default 
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # The Namespace where User locates 
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
@@ -165,7 +165,7 @@ metadata:
     name: clusterrole-rb-test
     namespace: default2 
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # The Namespace where User locates 
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
@@ -178,8 +178,8 @@ roleRef:
 ![image-20201020114512915](https://main.qcloudimg.com/raw/b948a35d0e49f1f99084b2cf8e6b7eb9.png)
 
 
-
-### Permission binding for the entire cluster[](id:way3)
+[](id:way3)
+### Permission binding for the entire cluster
 
 This method is mainly used to bind permissions of all namespaces (cluster-scoped) for a user, and is suitable for cluster-scoped authorization scenarios, such as log collection permission, admin permission. The following directions describe how to use multiple namespaces in TKE to reuse cluster permission for authorization binding.
 
@@ -190,7 +190,7 @@ kind: ClusterRoleBinding
 metadata: 
     name: clusterrole-crb-test
 subjects: 
-- kind: User
+ - kind: User
   name: role_user
   namespace: default # The Namespace where User locates 
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
