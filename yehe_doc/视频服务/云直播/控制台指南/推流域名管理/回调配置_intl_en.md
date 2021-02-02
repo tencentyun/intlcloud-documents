@@ -13,15 +13,15 @@ This document describes how to bind/unbind a push domain name to/from a callback
 ## Prerequisites
 - You have logged in to the [LVB console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - You have created a [callback template](https://intl.cloud.tencent.com/document/product/267/31074).
-
-## Binding Callback Template<span id="related"></span>
+<span id="related"></span>
+## Binding Callback Template
 1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
 2. 	Select **Template Configuration** and click **Edit** in the **Callback Configuration** tab.
 ![](https://main.qcloudimg.com/raw/d3e31f428ab1463335e234007c663311.png)
 3. 	Select a callback template and click **Save**.
 ![](https://main.qcloudimg.com/raw/27f9da682e20283e25cc2478e1a53a0b.png)
-
-## Unbinding Callback Template<span id="untie"></span>
+<span id="untie"></span>
+## Unbinding Callback Template
 
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **push domain name** to be configured or **Manage** to enter the domain name details page.
 2. Select **Template Configuration** and click **Edit** in the **Callback Configuration** tab.
