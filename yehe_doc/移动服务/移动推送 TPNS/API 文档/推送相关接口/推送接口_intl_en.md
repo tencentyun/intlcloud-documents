@@ -143,7 +143,7 @@ Push API supports a variety of push targets. For example, you can push to all de
   }
 ```
 
-<span id="message type"></span>
+<span id="message-body-type"></span>
 
 ### message_type: message type
 
@@ -154,6 +154,7 @@ The message types may vary slightly depending on the platform. For more informat
 | notify   | Notification bar message        | Android and iOS                          | Messages are displayed in the notification bar.      <br>**Note:** this field is mutually exclusive with [content-available: 1](#aps2). Do not use them at the same time.                                         |
 | message | In-app message or silent message | Android (in-app message)<br>iOS (silent message) | Messages are not displayed in the notification bar.<br>**Note:** due to vendor restrictions, Android in-app messages can be delivered only through the TPNS channel, but not vendor channels. |
 
+<span id= "message_type"></span>
 ### message: message body
 
 The message body is the message delivered to the client.
@@ -396,10 +397,10 @@ Similar to in-app message on Android, silent message is unique to the iOS platfo
 
 The specific fields are as follows:
 
-| Field Name | Type | Default Value | Required | Description |
+| Field Name | Type | Parent Item | Default Value | Required | Description |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | ios            | Object | message | Empty     | Yes       | iOS message structure.                                               |
-| aps    | JSON       | ios  | Empty    | Yes    | APNs-specific field, where the most important key-value pair is as follows:<li>content-available: identifies the message type (which must be 1), in integer format.<li>The value cannot contain the `alert`, `sound`, or `badge_type` fields. For more information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). <br>**Note:** `content-available: 1` is mutually exclusive with [message_type:"notify"](#message body type). Do not use them at the same time. |
+| aps    | JSON       | ios  | Empty    | Yes    | APNs-specific field, where the most important key-value pair is as follows:<li>content-available: identifies the message type (which must be 1), in integer format.<li>The value cannot contain the `alert`, `sound`, or `badge_type` fields. For more information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). <br>**Note:** `content-available: 1` is mutually exclusive with [message_type:"notify"](#message-body-type). Do not use them at the same time. |
 | custom_content | String | ios     | Empty    | No    | This must be serialized to a JSON string.                                |
 | xg             | String | ios     | Empty     | No       | Reserved key, which should not be used.                                     |
 
