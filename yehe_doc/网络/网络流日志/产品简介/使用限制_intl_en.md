@@ -15,7 +15,7 @@ FL supports collecting ENI traffic on the following CVM instances in regions lis
 <table>
 <tr>
 <th width="5%">Region</th>
-<td>Guangzhou, Shanghai, Beijing, Hong Kong (China), Chengdu and Western US</td>
+<td>Guangzhou, Shanghai, Beijing, Chengdu and Western US</td>
 <tr>
 <tr>
 <th width="5%">Model</th>
