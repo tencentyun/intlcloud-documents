@@ -12,8 +12,8 @@ Prerequisites:
 >! There are many methods to manage the K8s cluster resources. This document describes how to manage K8s cluster resources through the Tencent Cloud console and kubectl command line tool.
 
 
-
-### Which Ingress can EKS create CLB instance for?[](id:Ingress)
+[](id:Ingress)
+### Which Ingress can EKS create CLB instance for?
 EKS will create CLB instances for Ingress that meets the following conditions:
 
 <table>
@@ -51,7 +51,8 @@ To view the CLB instance created by EKS for Ingress:
 4. You can find the CLB instance ID and its VIP in the **Ingress** page, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/df7c11ad5612690543b6b54a151a3c68.png)
 
-### Which Service can EKS create CLB instance for?[](id:Service)
+[](id:Service)
+### Which Service can EKS create CLB instance for?
 EKS will create CLB instances for Service that meets the following conditions:
 
 
