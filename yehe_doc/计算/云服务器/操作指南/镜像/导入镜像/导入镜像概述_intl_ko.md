@@ -6,24 +6,26 @@
 가져오기 조건에 부합하는 미러 이미지 파일을 미리 준비해야 합니다.
 - **Linux 시스템 유형의 미러 이미지 제한**
 <table>
-<tr><th>미러 이미지 속성</th><th>조건</th></tr>
+<tr><th style="width:16%">이미지 속성</th><th>조건</th></tr>
 <tr><td>운영 체제</td><td><ul><li>CentOS, Ubuntu, Debian, CoreOS, openSUSE, SUSE 버전을 기반으로 한 미러 이미지</li><li>32비트와 64비트 지원</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식 지원</li><li>사용<code>qemu-img info imageName | grep 'file format'</code>미러 이미지 형식 조회</li></ul></td></tr>
-<tr><td>파일 시스템 유형</td><td>는 GPT 파티션을 지원하지 않습니다</td></tr>
+<tr><td>파일 시스템 유형은 </td><td>GPT 파티션을 지원하지 않습니다.</td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G미만인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>사용해 실제 크기 조회</li><li>미러 이미지 vsize 500G미만인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code> 사용해 미러 이미지 vsize 조회</li></ul><b>주의 사항: </b>미러 이미지 가져오기 시 QCOW2 형식으로 전환한 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
-<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본으로 인스턴스를 제공합니다. <code>eth0</code>네트워크 인터페이스</li><li>Tencent Cloud는 잠시 IPV6를 지원하지 않습니다. </li><li>사용자는 인스턴스 내의 metadata 서비스 쿼리를 통해 인스턴스의 네트워크를 구성할 수 있습니다. 자세한 내용은 <a href="https://cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터</a>를 참조하십시오.</li></ul></td></tr>
-<tr><td>드라이버</td><td><ul><li>미러 이미지는 반드시 버츄얼화 플랫폼 KVM의 Virtio 드라이버를 설치해야 합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 미러 이미지 가져오기로 Virtio 드라이버 검사</a>를 참조하십시오.</li><li>미러 이미지가 cloudinit 설치를 권장합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/12587">Linux 미러 이미지 가져오기로 cloudinit 설치</a>를 참조하십시오.</li><li>다른 원인으로 cloudinit가 설치되지 않을 경우 <a href="https://cloud.tencent.com/document/product/213/12849">미러 이미지 강제 가져오기</a>를 참고하여 자체 인스턴스 구성을 진행하십시오.</li></ul></td></tr>
+<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본으로 인스턴스에 <code>eth0</code> 네트워크 인터페이스를 제공합니다</li><li>사용자는 인스턴스 내의 metadata 서비스를 통해 인스턴스의 네트워크 구성을 조회할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터</a>를 참조하십시오.</li></ul></td></tr>
+<tr><td>드라이버</td><td><ul><li>이미지는 반드시 버츄얼화 플랫폼 KVM의 Virtio 드라이버를 설치해야 합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/9929">Linux 이미지 가져오기로 Virtio 드라이버 검사</a>를 참조하십시오.</li><li>이미지가 cloudinit 설치를 권장합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/12587">Linux 이미지 가져오기로 cloudinit 설치</a>를 참조하십시오.</li><li>다른 원인으로 cloudinit가 설치되지 않을 경우 <a href="https://cloud.tencent.com/document/product/213/12849">이미지 강제 가져오기</a>를 참고하여 자체 인스턴스 구성을 진행하십시오.</li></ul></td></tr>
 <tr><td>커널 제한</td><td>미러 이미지는 네이티브 커널일 때 가장 좋으며, 수정 시 CVM로 가져오기가 되지 않을 수 있습니다.</td></tr>
+<tr><td>리전 제한</td><td>현재 상하이 금융 리전과 선전 금융 리전은 다른 리전의 COS서비스에서 이미지를 가져오는 것을 지원하지 않습니다.</td></tr>
 </table>
 - **Windows 시스템 유형의 미러 이미지 제한**
 <table>
-<tr><th>미러 이미지 속성</th><th>조건</th></tr>
+<tr><th style="width:16%">이미지 속성</th><th>조건</th></tr>
 <tr><td>운영 체제</td><td><ul><li>Windows Server 2008 관련 버전, Windows Server 2012 관련 버전, Windows Server 2016 관련 버전</li><li>32비트와 64비트 지원</li></ul></td></tr>
 <tr><td>미러 이미지 형식</td><td><ul><li>RAW, VHD, QCOW2, VMDK 미러 이미지 형식 지원</li><li>사용<code>qemu-img info imageName | grep 'file format'</code>미러 이미지 형식 조회</li></ul></td></tr>
 <tr><td>파일 시스템 유형</td><td><ul><li>MBR 파티션을 사용한 NTFS 파일 시스템만 지원합니다.</li><li>GPT 파티션 지원하지 않습니다.</li><li>논리 볼륨 관리(LVM)는 지원하지 않습니다. </li></ul></td></tr>
 <tr><td>미러 이미지 크기</td><td><ul><li>미러 이미지 실제 크기가 50G미만인 경우 <code>qemu-img info imageName &#124; grep 'disk size'</code>사용해 실제 크기 조회</li><li>미러 이미지 vsize 500G미만인 경우 <code>qemu-img info imageName &#124; grep 'virtual size'</code> 사용해 미러 이미지 vsize 조회</li></ul><b>주의 사항: </b>미러 이미지 가져오기 시 qcow2 형식으로 전환한 후 미러 이미지 정보를 기준으로 심사합니다.</td></tr>
-<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본으로 인스턴스를 제공합니다. <code>로컬 연결</code>네트워크 인터페이스</li><li>Tencent Cloud는 잠시 IPV6를 지원하지 않습니다.</li><li>사용자는 인스턴스 내의 metadata 서비스 쿼리 인스턴스를 통해 네트워크를 구성할 수 있습니다. 자세한 내용은 <a href="https://cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터 </a>를 참조하십시오.</li></ul></td></tr>
-<tr><td>드라이버</td><td>미러 이미지는 반드시 버츄얼화 플랫폼 KVM의 Virtio 드라이버를 설치해야 합니다. Windows 시스템은 Virtio 드라이버가 기본적으로 설치되지 않습니다. 사용자는 <a href="http://windowsvirtio-10016717.file.myqcloud.com/InstallQCloud.exe">Windows Virtio 드라이버</a>를 설치한 뒤 로컬 미러 이미지를 내보내기할 수 있습니다.</td></tr>
+<tr><td>네트워크</td><td><ul><li>Tencent Cloud는 기본으로 인스턴스를 제공합니다. <code>로컬 연결</code>네트워크 인터페이스</li><li>사용자는 인스턴스 내의 metadata 서비스를 통해 인스턴스의 네트워크 구성을 조회할 수 있습니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/213/4934">인스턴스 메타데이터</a>를 참조하십시오.</li></ul></td></tr>
+<tr><td>드라이버</td><td>이미지에 버츄얼화 플랫폼 KVM의 Virtio 드라이버를 설치해야 합니다. Windows 시스템에 기본으로 Virtio 드라이버가 포함되어 있지 않기 때문에 로컬 이미지를 내보내기 전에 먼저 Windows Virtio 드라이버를 설치하시기 바랍니다. Windows Virtio 드라이버의 다운로드 주소는 다음과 같습니다. 네트워크 환경에 따라 다운로드 주소를 선택하세요. <ul><li>공용 네트워크 다운로드 주소:<code>http://mirrors.tencent.com/install/windows/virtio_64_10003.msi</code></li><li>내부 네트워크 다운로드 주소：<code>http://mirrors.tencentyun.com/install/windows/virtio_64_10003.msi</code></li></ul></td></tr>
+<tr><td>리전 제한</td><td>현재 상하이 금융 리전과 선전 금융 리전은 다른 리전의 COS서비스에서 이미지를 가져오는 것을 지원하지 않습니다.</td></tr>
 <tr><td>기타</td><td>가져오기 한 Windows 시스템 미러 이미지<b>제공하지 않습니다. </b> <a href="https://intl.cloud.tencent.com/document/product/213/2757">Windows 활성화</a>서비스</td></tr>
 </table>
 
@@ -56,6 +58,7 @@
 
 오류 보고 InvalidUrl의 오류 알림: 미러 이미지 가져오기 페이지에 잘못된 COS 링크를 입력했습니다. 예상되는 원인은 아래와 같습니다.
 * [Tencent Cloud COS](https://console.cloud.tencent.com/cos4/index)의 미러 이미지 링크가 아닌 것을 입력했습니다.
+* COS의 객체 주소에는 공개 읽기 및 개인 쓰기 권한이 없습니다.
 * COS 파일의 액세스 권한이 사유 읽기이지만, 서명이 유효하지 않습니다.
 > 서명이 포함된 COS 파일 링크만 액세스될 수 있습니다.
 >
@@ -63,12 +66,8 @@
 > 미러 이미지 가져오기는 내부 네트워크를 통해 로컬 리전의 COS 서버로 액세스됩니다.
 >
 * 사용자의 미러 이미지 파일이 삭제되었습니다.
-
-* 서명이 들어간 링크를 사용하였습니다.
-
+* 서명된 링크가 사용되었습니다.
 COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따라 문제를 조사할 수 있습니다.
-
-  
 
 #### InvalidFormatSize: 형식 또는 크기가 조건에 부합하지 않습니다.
 
@@ -112,7 +111,7 @@ COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따
 
 <a id="errorcode"></a>
 ## 에러코드
-
+ 
 |에러코드|오류 원인|권장 처리 방식|
 |-----|-----|-----|
 |InvalidUrl|COS 무효 링크|COS 링크와 가져온 미러 이미지 링크가 같은지 검사하십시오.|
