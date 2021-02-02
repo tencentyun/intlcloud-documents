@@ -12,8 +12,8 @@
 >!您可通过多种方式操作 K8s 集群中的资源，本文档向您介绍如何通过腾讯云控制台进行操作，及如何通过 kubectl 命令行工具进行操作。
 
 
-
-### EKS 会为哪些 Ingress 创建 CLB 实例？[](id:Ingress)
+[](id:Ingress)
+### EKS 会为哪些 Ingress 创建 CLB 实例？
 EKS 会为满足如下条件的 Ingress 创建 CLB 实例：
 
 <table>
@@ -51,7 +51,8 @@ kubernetes.io/ingress.qcloud-loadbalance-id: CLB 实例 ID
 4. 在 “Ingress” 页面，查看 CLB 实例 ID 及其 VIP。如下图所示：
 ![](https://main.qcloudimg.com/raw/df7c11ad5612690543b6b54a151a3c68.png)
 
-### EKS 会为哪些 Service 创建 CLB 实例？[](id:Service)
+[](id:Service)
+### EKS 会为哪些 Service 创建 CLB 实例？
 EKS 会为满足如下条件的 Service 创建 CLB 实例：
 
 
@@ -120,7 +121,7 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 - 对于 Service，通过“服务访问方式”控制，其中“VPC内网访问”对应内网 CLB 实例：
 ![](https://main.qcloudimg.com/raw/cdd3ff57d349ed587a86c645233e807f.png)
 
-#### 通过\skubectl\s命令行工具操作
+#### 通过kubectl命令行工具操作
 - 默认创建的 CLB 实例是“公网”类型。
 - 如需创建“内网”类型的 CLB 实例，则需为 Service 或 Ingress 加上相应的 annotation：
 
@@ -141,7 +142,7 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 您可以通过容器服务控制台或通过 kubectl 命令行工具指定使用已有 CLB 实例：
 ####  通过容器服务控制台操作
 在创建 Service 或 Ingress 时，可以选择“使用已有” CLB 实例。对于 Service，还可以在 Service 创建之后，通过“更新访问方式”切换成“使用已有” CLB 实例。
-#### 通过\skubectl\s命令行工具操作
+#### 通过kubectl命令行工具操作
 在创建 Service/Ingress 或变更 Service 时，为 Service 或 Ingress 加上相应的 annotation 即可：
 
 | 资源类型 | 需要在 annotations 中添加的键值对 |
@@ -214,7 +215,7 @@ Service CIDR 子网 ID 在创建集群时指定，为 `subnet-********` 字符�
 交互流程会强制要求指定一个安全组，EKS 将使用该安全组控制 Pods 的网络访问策略。用户选择的安全组会被存储在工作负载的 `spec.template.metadata.annotations`，最终添加到 Pods 的 annotations 中。示例如下：
 ![](https://main.qcloudimg.com/raw/6cda3f21be34e514927c10b840b0acaa.png)
 
-#### 使用\skubectl\s命令创建工作负载
+#### 使用kubectl命令创建工作负载
 若您通过 kubectl 命令创建工作负载，且没有（通过 annotations）为 Pods 指定安全组，则 EKS 会使用账号下的同地域的默认项目的 default 安全组。查看步骤如下：
  1. 登录私有网络控制台，选择左侧导航栏中的【[安全组](https://console.cloud.tencent.com/vpc/securitygroup?rid=5&rid=5)】。
  2. 在“安全组”页面上方，选择同地域的默认项目。
