@@ -1,5 +1,5 @@
 CLB supports layer-7 redirection, so that you can configure redirection on layer-7 HTTP/HTTPS listeners.
->
+>?
 >- Session persistence: if the client accesses `example.com/bbs/test/123.html` and session persistence has been enabled on the backend CVM, after redirection is enabled to forward traffic to `example.com/bbs/test/456.html`, the original session persistence mechanism will not take effect.
 - TCP/UDP redirection: redirection at IP + port level is not supported currently but will be available in subsequent versions.
 ## Redirection Overview
@@ -58,3 +58,4 @@ For example, your business uses a `forsale` page for a promotion campaign and ne
 ![](https://main.qcloudimg.com/raw/5f59b88ecc291d912b7faf2cf1d3770e.png)
 6. The result of the redirection configuration is as shown below. As you can see, in the `HTTPS:443` listener, `https://www.example.com/forsale` has been redirected to `https://www.new.com/index`.
 ![](https://main.qcloudimg.com/raw/34364863bd44202df54e89ec3cb923f9.png)
+
