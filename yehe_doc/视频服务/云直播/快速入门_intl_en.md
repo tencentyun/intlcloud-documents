@@ -57,7 +57,7 @@ You can enter the generated push address into the corresponding push software ac
 - For push on web, we recommend you go to **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**, select the push domain name, enter the custom `StreamName`, select the address expiration time, open the camera, and click **Start Push**.
 - For push on mobile devices, download and install "Tencent Video Cloud Demo", open it, select **MLVB** > **Camera Push**, enter the push address into the address box manually or by scanning the QR code, and tap **Start** in the bottom-left corner to start push.
 
->? Customized apps can integrate with the [MLVB SDK](https://intl.cloud.tencent.com/zh/document/product/1071) provided by Tencent Cloud to implement the push function.
+>? Customized apps can integrate with the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071) provided by Tencent Cloud to implement the push function.
 
 <span id="step4"></span>
 ## Step 4. Get a playback address
