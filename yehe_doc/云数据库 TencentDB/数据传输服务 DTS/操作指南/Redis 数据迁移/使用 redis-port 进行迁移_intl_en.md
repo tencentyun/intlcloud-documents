@@ -1,5 +1,5 @@
 ## Overview
-Download [redis-port (Linux 64-bit)](https://main.qcloudimg.com/raw/47154504189a8941250f57b60f1e2fcb/redis-port.tgz).
+Download [redis-port (Linux 64-bit)](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/redis-port.tgz).
 
 redis-port is a collection of open-source tools mainly used for database sync, data import, and data export between Redis nodes and supports cross-version Redis data migration. The toolkit contains the following tools:
 - redis-sync: it is used for data migration between Redis instances.
