@@ -34,8 +34,8 @@ netstat -antup | grep ftp
 ![](https://main.qcloudimg.com/raw/2a7abf80253a8469c9340878d89b452a.png)
 이때 vsftpd가 익명 액세스 모드를 기본값으로 설정하므로 사용자 이름, 비밀번호 없이도 바로 FTP 서버에 로그인할 수 있습니다. 이 방식으로 FTP 서버에 로그인한 사용자는 파일 수정 및 업로드 권한이 없습니다.
 
-
-### 3단계: vsftpd 설정<span id="user"></span>
+<span id="user"></span>
+### 3단계: vsftpd 설정
 1. 다음 명령어를 실행하여 FTP 서비스 사용을 위해 사용자 ID를 생성합니다. 본 문서는 ftpuser를 예로 듭니다.
 ```
 useradd ftpuser
@@ -57,7 +57,8 @@ chown -R ftpuser:ftpuser /var/ftp/test
 ```
 vim /etc/vsftpd/vsftpd.conf
 ```
-6. **i**를 눌러 편집 모드로 전환하고 필요에 따라 FTP 모드를 선택한 후 구성 파일 `vsftpd.conf`를 수정합니다.<span id="config"></span>
+<span id="config"></span>
+6. **i**를 눌러 편집 모드로 전환하고 필요에 따라 FTP 모드를 선택한 후 구성 파일 `vsftpd.conf`를 수정합니다.
 >! FTP는 능동 모드와 수동 모드를 통해 클라이언트 컴퓨터와 연결하고 데이터를 전송할 수 있습니다. 대다수 클라이언트 컴퓨터의 방화벽 설정과 리얼 IP를 획득할 수 없는 등의 이유로 **수동 모드**를 선택하여 FTP 서비스를 구축할 것을 권장합니다. 아래의 수정 예시는 수동 모드 설정이므로, 능동 모드를 선택해야 한다면 [FTP 능동 모드 설정](#port)으로 이동하십시오.
 >
  1. 다음의 설정 매개변수를 수정하여 익명 사용자와 로컬 사용자의 로그인 권한을 설정하고, 예외 사용자 리스트 파일을 지정하는 경로를 설정한 후 IPv4 sockets 리슨을 시작합니다.
@@ -83,7 +84,8 @@ pasv_min_port=40000
 pasv_max_port=45000
 ```
 7. **Esc**를 누르고 **:wq**를 입력하여 저장한 후 종료합니다.
-8. 다음 명령어를 실행하여 chroot_list 파일을 생성 및 편집합니다.<span id="create"></span>
+<span id="create"></span>
+8. 다음 명령어를 실행하여 chroot_list 파일을 생성 및 편집합니다.
 ```
 vim /etc/vsftpd/chroot_list
 ```
@@ -116,7 +118,8 @@ ftp://CVM 공인 IP:21
 
 
 ## 부록
-### FTP 능동 모드 설정<span id="port"></span>
+<span id="port"></span>
+### FTP 능동 모드 설정
 능동 모드에서 수정해야 하는 설정은 다음과 같으며, 나머지 구성은 기본 설정을 유지합니다.
 ```
 anonymous_enable=NO      #익명 사용자의 로그인 차단
