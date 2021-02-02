@@ -91,10 +91,10 @@
 1. 在 dependencies 中添加 TRTCSDK 和 IMSDK 的依赖。
 ```
 dependencies {
-	complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+  complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
     complie 'com.tencent.imsdk:imsdk:latest.release'
 
-	// 由于我们使用到了 gson 解析，所以还需要依赖 google 的 Gson
+  // 由于我们使用到了 gson 解析，所以还需要依赖 google 的 Gson
     complie 'com.google.code.gson:gson:latest.release'
 }
 ```
