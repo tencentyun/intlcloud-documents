@@ -34,8 +34,8 @@ To quickly implement the audio call feature, you can directly modify the demo pr
 1. Decompress the source package downloaded in [step 2](#ui.step2).
 2. Find and open the `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` file.
 3. Set the relevant parameters in the `GenerateTestUserSig.h` file:
-	- SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
-	- SECRETKEY: it is an empty string by default. Please replace it with your real key information.
+  - SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
+  - SECRETKEY: it is an empty string by default. Please replace it with your real key information.
 ![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
 4. Return to the TRTC console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
@@ -208,7 +208,7 @@ NSArray *callList = @[];
 The IM SDK supports offline push, but you need to complete the corresponding settings to meet its availability standard.
 
 1. Apply for an Apple push certificate. For detailed directions, please see [Obtaining Apple Push Notification Service Certificates](https://intl.cloud.tencent.com/document/product/1047/34346).
-2. Configure offline push on the backend and on the client.
+2. Configure offline push on the backend and on the client. For detailed directions, please see [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/34347).
 3. Set `param.busiId` in the `login` function to the corresponding certificate ID.
 
 <span id="api"> </span>
