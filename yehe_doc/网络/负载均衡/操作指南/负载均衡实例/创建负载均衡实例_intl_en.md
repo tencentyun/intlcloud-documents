@@ -10,7 +10,7 @@ For the purchase method for bill-by-CVM accounts, please see [Purchase Methods](
 >?Currently, the static single-line IP is supported only in Hangzhou, Jinan, Fuzhou, Wuhan, Changsha, and Shijiazhuang. For its support in other districts, please see the console. The feature is currently in beta, if you want to try it out, please submit an application. Once you are accepted, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page.
 >
 ![](https://main.qcloudimg.com/raw/907a33302d20a9b399067bee190a1d78.png)
-4. After confirming the order, make the payment using account balance, online banking, WeChat Pay, or QQ Wallet, etc.
+4. Confirm and pay for the selected CLB instance.
 5. CLB service will be activated once the payment completes. You can now configure and use the CLB instance.
 
 ### Creating a CLB instance via API
