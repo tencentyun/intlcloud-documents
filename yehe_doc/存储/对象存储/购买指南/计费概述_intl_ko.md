@@ -119,5 +119,5 @@ COS 각 과금 항목의 과금 주기 및 과금 순서는 다음과 같습니�
 
 1. COS 과금의 자세한 계산법 및 시나리오별 자세한 과금 사항은 [과금 사례](https://intl.cloud.tencent.com/document/product/436/6241)를 참조하십시오.
 2. COS 관련 연체로 인한 서비스 중단 정책: 데이터 보관 및 폐기 기간, 과금 관련 설명은 COS [연체 설명](https://intl.cloud.tencent.com/document/product/436/10044)을 참조하십시오.
-3. 종량제를 이용하는 사용자는 직접 사용량을 계산할 수 있습니다. COS [가격 계산기(https://buy.cloud.tencent.com/price/cos/calculator)로 자세한 과금 내역을 계산해 보십시오.
+3. 종량제를 이용하는 사용자는 직접 사용량을 계산할 수 있습니다. COS [가격 계산기](https://buy.cloud.tencent.com/price/cos/calculator)로 자세한 과금 내역을 계산해 보십시오.
 4. COS와 관련한 문의사항은 [FAQ](https://intl.cloud.tencent.com/document/product/436/32532)를 참조하십시오.
