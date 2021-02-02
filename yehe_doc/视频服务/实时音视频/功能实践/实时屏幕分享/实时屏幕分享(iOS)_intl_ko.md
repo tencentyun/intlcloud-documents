@@ -169,10 +169,9 @@ Tencent Cloud 계정을 사용하여 [**https://developer.apple.com/**](https://
 2. [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)을 호출하고 [1단계](#createGroup)에서 설정한 AppGroup을 전송하여 SDK를 “대기” 상태로 만듭니다.
 3. 사용자의 화면 공유 트리거를 대기합니다. [4단계]((#launch) “트리거 버튼”을 구현하지 않는 경우 사용자가 iOS 시스템 제어 센터에서 녹화 버튼을 길게 눌러 트리거해야 화면을 공유할 수 있으며, 해당 작업 절차는 다음 이미지와 같습니다.
 4. [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 인터페이스를 호출하여 언제든지 화면 공유를 중단할 수 있습니다.
-
 ```
 // 화면 공유를 시작하려면 APPGROUP을 위에서 생성한 App Group Identifier로 변경해야 합니다.
-- (void)startScreenCapture {
+ - (void)startScreenCapture {
     TRTCVideoEncParam *videoEncConfig = [[TRTCVideoEncParam alloc] init];
     videoEncConfig.videoResolution = TRTCVideoResolution_1280_720;
     videoEncConfig.videoFps = 10;
@@ -181,14 +180,12 @@ Tencent Cloud 계정을 사용하여 [**https://developer.apple.com/**](https://
     [[TRTCCloud sharedInstance] startScreenCaptureByReplaykit:videoEncConfig
                                                      appGroup:APPGROUP];
 }
-
-// 화면 공유 종료
-- (void)stopScreenCapture {
+ // 화면 공유 종료
+ - (void)stopScreenCapture {
     [[TRTCCloud sharedInstance] stopScreenCapture];
 }
-
 // 화면 공유 실행 이벤트 통지는 TRTCCloudDelegate를 통해 수신할 수 있습니다.
-- (void)onScreenCaptureStarted {
+ - (void)onScreenCaptureStarted {
     [self showTip:@"화면 공유 시작"];
 }
 ```
@@ -196,12 +193,11 @@ Tencent Cloud 계정을 사용하여 [**https://developer.apple.com/**](https://
 <span id="launch"> </span>
 #### 4단계: 화면 공유 트리거 버튼 추가(선택 사항)
 [3단계](#receive)까지는 화면 공유 시 사용자가 제어 센터에서 녹화 버튼을 길게 눌러야만 수동으로 실행되는 방법입니다. 이제 VooV Meeting과 유사하게 버튼 클릭으로 트리거할 수 있는 방법을 소개하겠습니다.
-
 1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)에서 `TRTCBroadcastExtensionLauncher` 유형을 찾아 프로그램에 추가합니다.
 2. 프로그램 인터페이스에 버튼을 만들고, 해당 버튼의 상응하는 함수에 `TRTCBroadcastExtensionLauncher`의 `launch` 함수를 호출하면 화면 공유 기능이 요청됩니다.
 ```
-// 사용자 정의 버튼 응답 방법
-- (IBAction)onScreenButtonTapped:(id)sender {
+ // 사용자 정의 버튼 응답 방법
+ - (IBAction)onScreenButtonTapped:(id)sender {
     [TRTCBroadcastExtensionLauncher launch];
 }
 ```
