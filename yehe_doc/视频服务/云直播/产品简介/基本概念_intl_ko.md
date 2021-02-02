@@ -27,7 +27,8 @@ CNAME 도메인은 Tencent LVB 콘솔에서 가속 도메인에 액세스한 뒤
 ### StreamName
 StreamName은 스트림의 식별자이며, 일반적으로 도메인 이름과 함께 스트림을 식별하는 역할을 합니다.
 
-### AppName[](id:appname)
+[](id:appname)
+### AppName
 라이브 방송 애플리케이션 이름으로, 라이브 방송 스트림 미디어 파일의 저장 경로를 구분하는 데 사용합니다. 기본값은 live이고, 사용자 정의 가능합니다.
 
 [](id:trans)
