@@ -9,8 +9,8 @@ You can view the network monitoring data of a connection or dedicated tunnel via
  3. The **Monitoring** page displays **Network Outbound Bandwidth**, **Network Inbound Bandwidth**, **Packet Loss**, and **Packet Error**. Select **Last 24 hours**, **Last 7 days** or a custom time period to display the monitoring data accordingly.
       - **Network Outbound Bandwidth**: average outbound traffic of the connection per second.
       - **Network Inbound Bandwidth**: average inbound traffic of the connection per second.
-      - **Packet Loss**: number of packets discarded on the port per second.
-      - **Packet Error**: number of packet errors on the port per second.
+      - **Packet Loss**: number of packets discarded on the port per minute.
+      - **Packet Error**: number of packet errors on the port per minute.
  ![](https://main.qcloudimg.com/raw/066f02cc1c94d73a6cdbd7970ec5123d.png)
 3. Perform the following steps to view the network monitoring data of a dedicated tunnel.
  1. Click **Dedicated Tunnels** on the left sidebar.
