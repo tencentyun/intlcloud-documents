@@ -1,7 +1,7 @@
 ## Use Cases
 
 TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as [live streaming mode](https://intl.cloud.tencent.com/document/product/647/36070).
-In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video interview, video customer service, and online werewolf.
+In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 30 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video interview, video customer service, and online werewolf.
 
 ## How It Works
 
@@ -12,7 +12,7 @@ The TRTC service consists of two types of server nodes: access servers and proxy
 -   **Proxy server**
     With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
-In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
+In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
@@ -27,18 +27,16 @@ You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Ele
 
 You are recommended to read [Run SimpleDemo (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) first and then follow the instructions to run the official SimpleDemo.
 
-If the SimpleDemo can run properly, it means that you have mastered the method of installing Electron in your project.
-
-If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to the Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
+- If the SimpleDemo can run properly, it means that you have mastered the method of installing Electron in your project.
+- If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to the Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
 
 <span id="step2"></span>
 ### Step 2. Integrate trtc-electron-sdk into your project
 
 If [step 1](#step1) is executed normally and the result is as expected, it means that you have mastered the method of installing the Electron environment.
 
-You can conduct secondary development on the official demo, and the initial stage of your project will go smoothly.
-
-You can also run the following command to install `trtc-electron-sdk` into your existing project:
+- You can conduct secondary development on the official demo, and the initial stage of your project will go smoothly.
+- You can also run the following command to install `trtc-electron-sdk` into your existing project:
 
 ```bash
 npm install trtc-electron-sdk --save
@@ -47,14 +45,14 @@ npm install trtc-electron-sdk --save
 <span id="step3"></span>
 ### Step 3. Initialize an SDK instance and listen on the event callback
 
-Create a `trtc-electron-sdk` instance:
+1. Create a `trtc-electron-sdk` instance:
 
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 ```
 
-Listen on the `onError` event:
+2. Listen on the `onError` event:
 
 ```javascript
 // Error notifications should be listened on, captured, and sent to the user
@@ -95,12 +93,9 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ### Step 5. Create and enter a room
 
 1. Call [enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) to enter the audio/video room specified by `roomId` in the `TRTCParams` parameter. If the room does not exist, the SDK will automatically create it with the `roomId` value as the room number.
-
 2. Please set the appropriate `appScene` parameter according to the actual application scenario. An incorrect selection may lead to higher lagging rate or lower video definition than expected.
-
    - For video calls, please set `TRTCAppScene.TRTCAppSceneVideoCall`.
    - For audio calls, please set `TRTCAppScene.TRTCAppSceneAudioCall`.
-
    For more information on `TRTCAppScene`, please see [TRTCAppScene ](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/global.html#TRTCAppScene).
 
 3. After successful room entry, the SDK will call back the [onEnterRoom(result)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onEnterRoom) event. If `result` is greater than 0, the room entry succeeds, and the specific value indicates the time in milliseconds (ms) used for entering the room; if `result` is less than 0, the room entry fails, and the specific value indicates the error code of the failure.
@@ -141,15 +136,11 @@ The SDK supports two subscription modes: automatic subscription and manual subsc
 After room entry, the SDK will automatically receive audio streams from other users in the room to achieve the best "instant broadcasting" effect:
 
 1. When another user in the room is upstreaming audio data, you will receive the [onUserAudioAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) event notification, and the SDK will automatically play back the audio of the remote user.
-
 2. You can block the audio data of a specified `userId` through [muteRemoteAudio(userId,  true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteRemoteAudio) or all remote users through [muteAllRemoteAudio(true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteAllRemoteAudio). After that, the SDK will no longer pull the audio data of the corresponding remote users.
-
 3. When another user in the room is upstreaming video data, you will receive the [onUserVideoAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) event notification; however, since the SDK has not received instructions on how to display the video data at this time, video data will not be processed automatically. You need to associate the video data of the remote user with the display `view` by calling the [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) method.
-
 4. You can specify the display mode of the local video image through [setLocalViewFillMode()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setLocalViewFillMode):
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill` indicates the fill mode where the image may be scaled up proportionally or cropped, but no black bars will exist.
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit` indicates the fit mode where the image may be scaled down proportionally to fit the screen, but black bars may exist.
-  
 5. You can block the video data of a specified `userId` through [stopRemoteView(userId)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#stopRemoteView) or all remote users through [stopAllRemoteView()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#stopAllRemoteView). After that, the SDK will no longer pull the video data of the corresponding remote users.
 
 ```html
