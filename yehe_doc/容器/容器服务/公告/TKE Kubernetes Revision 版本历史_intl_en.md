@@ -5,35 +5,69 @@
 </thead>
 <tbody>
 <tr>
+    <td>2020-12-28</td>	
+    <td>v1.18.4-tke.6</td>	
+    <td><ul class="params">
+		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
+	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        </ul></td>
+</tr>
+<tr>
+    <td>2020-12-21</td>	
+    <td>v1.18.4-tke.5</td>	
+    <td><ul class="params">
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94712">pr94712</a>, which fixed CVE-2020-8564 - fixed the issue when the file format was incorrect and logLevel >= 4, Docker configuration leaked (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95316">pr95316</a>, which fixed CVE-2020-8565 - fixed the issue where incomplete fix for CVE-2019-11250 resulting in log token leak (logLevel >= 9) (kube-apiserver, kubectl).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95245">pr95245</a>, which fixed CVE-2020-8566 - fixed the issue where Ceph RBD adminSecrets was exposed in the log when loglevel >= 4 (kube-controller-manager).</li>
+		<li>Fixed the issue where restarting kubelet caused Pod readiness check failed (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/90825">pr90825</a>, which fixed the issue where the pop operation of the fifo queue in client-go might be stuck due to race condition, which caused the pod to remain in the pending state (kubelet).</li>
+		<li>The scheduler supports virtual nodes (kube-scheduler).</li>
+		<li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
+		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
+		<li>Added the CBS to OpenAPI (kube-apiserver).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91126">pr91126</a>, which fixed the issue where the scheduler cache was inconsistent when Pod had the same name but different UID (kube-scheduler).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93387">pr93387</a>, which fixed the issue where the daemonset pod could not be scheduled to nodes due to the disorder of node cache information in the scheduler (kube-scheduler).</li>
+                <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89465">pr89465</a>, which fixed the issue where the HPA based on Pod metrics incorrectly calculated the number of instances during rolling updates (kube-controller-manager).</li>
+	        </ul></td>
+</tr>
+<tr>
+    <td>2020-10-13</td>	
+    <td>v1.18.4-tke.3</td>	
+    <td><ul class="params">
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89629">pr89629</a>, which fixed the issue where the container that mounted the subpath would fail to restart after the configmap is changed (kubelet).</li>
+	        <li>QcloudCbs supports BulkVolumeVerification (kube-controller-manager).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94430">pr94430</a>, which fixed the issue where the client-go reflector could not detect the "Too large resource version" error (kubelet).</li></ul></td>
+</tr>
+<tr>
     <td>2020-08-12</td>	
     <td>v1.18.4-tke.2</td>	
     <td><ul class="params">
-		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr93403</a>, which removed the printed error information of pod condition irrelevant to the kubelet during kubelet update (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr93403</a>, which removed the printed error information of pod condition irrelevant to the kubelet during kubelet update (kubelet).</li></ul></td>
 </tr>
 <tr>
     <td>2020-08-04</td>	
     <td>v1.18.4-tke.1</td>	
     <td><ul class="params"><li>revert <a href="https://github.com/kubernetes/kubernetes/pull/63066">pr63066 </a>Fixed the LB health check and IPVS issues (kube-proxy).</li>
-    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr72914</a>, which fixed the issue where mounting might fail if you deleted a pod, created a new one, and scheduled it to the same node (kube-controller-manager).</li>
+    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr72914</a>, which fixed the issue where mounting might fail if you deleted a pod, created a new one, and scheduled it to the same node (kube-controller-manager）。</li>
     <li>Fixed the issue where creating containers in CentOS resulted in cgroup leakage (kubelet).</li>
     <li>Fixed the issue where upgrading lxcfs in Ubuntu 16 caused pods to exit (kubelet).</li>
-    <li>Added cache and timeout to metadata. cloud-provider now supports using node names as hostnames (kubelet).</li>
-    <li>Added local cache (kubelet) to metadata.</li>
-    <li>Merged CBS and relevant fix code (kubelet).</li>
+    <li>metadata added cache and timeout. cloud-provider now supports using node names as hostnames (kubelet).</li>
+    <li>metadata added local cache (kubelet).</li>
+    <li>Incorporated CBS and relevant fixing code (kubelet).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/90260">pr90260</a>, which fixed the issue of missing monitoring records for containerd cluster networks (kubelet).</li>
     <li>TKE can perceive the maximum number of qcloudcbs that can be mounted to a single node. In 1.12 and later versions, the value is maxAttachCount-2. In version 1.10, the value is 18 by default (kube-scheduler).</li>
     <li>Fixed the issue where CBS intree continued to unmount a non-existent disk, causing a large number of invalid requests (kubelet).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/2359">pr2359</a>, which fixed the issue with missing monitoring records when the system was unable to obtain docker root (kubelet).</li>
     <li>kube-scheduler now supports dynamic logging level configuration (kube-scheduler).</li>
-    <li>Produced a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevented some users from accessing CBS properly (kubelet).</li>
-    <li>TKE can perceive the maximum number of qcloudcbs that can be mounted to a single node. The kubelet side will not patch nodes (kubelet).</li>
+    <li>Produced a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly (kubelet).</li>
+    <li>TKE can perceive the maximum number of qcloudcbs that can be mounted to a single node. The kubelet side will not patch node (kubelet).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89296">pr89296</a>, so that the log will not record whether the iptables random-fully parameter is enabled (kube-proxy).</li>
-    <li>Fixed the AWS issue <a href="https://github.com/kubernetes/kubernetes/pull/92162">pr92162</a>(kubelet).</li>
-    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which fixed the issue of large numbers of TLS handshake error logs generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li>
+    <li>Fixed the aws issue <a href="https://github.com/kubernetes/kubernetes/pull/92162">pr92162</a>(kubelet).</li>
+    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which prevents the issue of large numbers of TLS handshake error logs generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92537">92537</a>, which fixed the issue where client-go reflector could not recover from the error "Too large resource version" (kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, and kube-proxy).</li>
     <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92969">pr92969</a>, which fixed the issue where CVE-2020-8559 privilege escalation from an invaded node resulted in invasion into other nodes (kube-apiserver).</li>
-    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92921">pr92921</a>, which fixed the DOS attack issue where CVE-2020-8557 exhausted the disk space by writing into “/etc/hosts” (kubelet).</li>
+    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92921">pr92921</a>, which fixed the DOS attack issue where CVE-2020-8557 exhausted the disk space by writing into “/etc/hosts” (kubelet).</li></ul></td>
 </tr>
 </tbody></table>
 
@@ -46,14 +80,53 @@
 </thead>
 <tbody>
 <tr>
+    <td>2020-12-28</td>	
+    <td>v1.16.3-tke.14</td>	
+    <td><ul class="params">
+		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
+	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        </ul></td>
+</tr>		
+<tr>
+    <td>2020-12-21</td>	
+    <td>v1.16.3-tke.13</td>	
+    <td><ul class="params">
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94712">pr94712</a>, which fixed CVE-2020-8564 - fixed the issue when the file format was incorrect and logLevel >= 4, Docker configuration leaked (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95316">pr95316</a>, which fixed CVE-2020-8565 - fixed the issue where incomplete fix for CVE-2019-11250 resulting in log token leak (logLevel >= 9) (kube-apiserver, kubectl).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95245">pr95245</a>, which fixed CVE-2020-8566 - fixed the issue where Ceph RBD adminSecrets was exposed in the log when loglevel >= 4 (kube-controller-manager).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86191">pr86191</a>, which fixed the issue where Pod might be in the wrong state when the node was restarted (kubelet).</li>
+                <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86140">pr86140</a>, which fixed the issue where the Controller Manager did not handle the timeout error correctly, so that the expanded pod could not be created (kube-controller-manager).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/90825">pr90825</a>, which fixed the issue where the pop operation of the fifo queue in client-go might be stuck due to race condition, which caused the pod to remain in the pending state (kubelet).</li>
+	        <li>The scheduler supports virtual nodes (kube-scheduler).</li>
+		<li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
+		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
+		<li>Added the CBS to OpenAPI (kube-apiserver).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/81344">pr81344</a>, which fixed the issue where the CPU Manager did not support SourcesReady (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91126">pr91126</a>, which fixed the issue where the scheduler cache was inconsistent when Pod had the same name but different UID (kube-scheduler).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89224">pr89224</a>, which fixed the issue where kube-scheduler restarted abnormally because NodeInfo did not check (kube-scheduler).</li>
+                <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89465">pr89465</a>, which fixed the issue where the HPA based on Pod metrics incorrectly calculated the number of instances during rolling updates (kube-controller-manager).</li>
+                </ul></td>
+</tr>	    
+<tr>
+    <td>2020-10-13</td>	
+    <td>v1.16.3-tke.11</td>	
+    <td><ul class="params">
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92971">pr92971</a>, which fixed the issue where CVE-2020-8559 privilege escalation from an invaded node resulted in invasion into other nodes (kube-apiserver).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92924">pr92924</a>, which fixed the DOS attack issue where CVE-2020-8557 exhausted the disk space by writing into /etc/hosts (kubelet).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr93403</a>, which removed the printed error information of pod condition irrelevant to the kubelet during kubelet update (kubelet).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89629">pr89629</a>, which fixed the issue where the container that mounted the subpath would fail to restart after the configmap is changed (kubelet).</li>
+	    <li>QcloudCbs supports BulkVolumeVerification (kube-controller-manager).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/84998">pr84998</a>, which resolved the issue where the corresponding node lease object might be rebuilt after the node was deleted and caused junk data (kubelet).</li></ul></td>
+</tr>
+<tr>
     <td>2020-07-28</td>	
     <td>v1.16.3-tke.10</td>	
-    <td><ul class="params"><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which fixed the issue where large numbers of TLS handshake error logs are generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li></ul></td>
+    <td><ul class="params"><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which prevents the issue of large numbers of TLS handshake error logs generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li></ul></td>
 </tr>
 <tr>
     <td>2020-06-17</td>	
     <td>v1.16.3-tke.9</td>	
-    <td>Temporarily fixed the AWS issue<a href="https://github.com/kubernetes/kubernetes/issues/92162">pr92162</a>. AWS Credential Provider is no longer registered to prevent this issue from causing slow node launches.</td>
+    <td>Temporarily fixes the AWS issue<a href="https://github.com/kubernetes/kubernetes/issues/92162">pr92162</a>. AWS Credential Provider is no longer registered to prevent this issue from causing slow node launches.</td>
 </tr>
 <tr>
     <td>2020-06-11</td>	
@@ -97,12 +170,45 @@
 </tr>
 </tbody></table>
 
-## TKE Kubernetes 1.14.3 revisions
+## TKE Kubernetes 1.14.3 Revisions
 <table>
 <thead>
-<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody>
+<tr>
+    <td>2020-12-28</td>	
+    <td>v1.14.3-tke.19</td>	
+    <td><ul class="params">
+		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
+	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        </ul></td>
+</tr>	
+<tr>
+    <td>2020-12-21</td>	
+    <td>v1.14.3-tke.18</td>	
+    <td><ul class="params">
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94712">pr94712</a>, which fixed CVE-2020-8564 - fixed the issue when the file format was incorrect and logLevel >= 4, Docker configuration leaked (kubelet).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95316">pr95316</a>, which fixed CVE-2020-8565 - fixed the issue where incomplete fix for CVE-2019-11250 resulting in log token leak (logLevel >= 9) (kube-apiserver, kubectl).</li>
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95245">pr95245</a>, which fixed CVE-2020-8566 - fixed the issue where Ceph RBD adminSecrets was exposed in the log when loglevel >= 4 (kube-controller-manager).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86140">pr86140</a>, which fixed the issue where the Controller Manager did not handle the timeout error correctly, so that the expanded pod could not be created (kube-controller-manager).</li>
+	        <li>The scheduler supports virtual nodes (kube-scheduler).</li>
+	        <li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
+		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/79338">pr79338</a>, when both SupportPodPidsLimit and SupportNodePidsLimit are not enabled, the pids cgroup subsystem will not be enabled (kubelet).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89224">pr89224</a>, which fixed the issue where kube-scheduler restarted abnormally because NodeInfo did not check (kube-scheduler).</li>
+                <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89465">pr89465</a>, which fixed the issue where the HPA based on Pod metrics incorrectly calculated the number of instances during rolling updates (kube-controller-manager).</li></ul></td>
+</tr>	    
+<tr>
+    <td>2020-10-13</td>
+    <td>v1.14.3-tke.17</td>
+    <td><ul class="params">
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/74781">pr74781</a>, which changed the default update strategy of ConfigMap and Secret from Cache to Watch (kubelet).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr93403</a>, which removed the printed error information of pod condition irrelevant to the kubelet during kubelet update (kubelet).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89629">pr89629</a>, which fixed the issue where the container that mounted the subpath would fail to restart after the configmap is changed (kubelet).</li>
+	    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/8094">pr80942</a>, which fixed the issue where rules were not deleted after the service was deleted in ipvs mode (kube-proxy).</li>
+            <li>QcloudCbs supports BulkVolumeVerification (kube-controller-manager).</li></ul></td>
+</tr>
 <tr>
     <td>2020-08-04</td>
     <td>v1.14.3-tke.16</td>
@@ -111,7 +217,7 @@
 <tr>
     <td>2020-07-28</td>	
     <td>v1.14.3-tke.15</td>	
-    <td><ul class="params"><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/76518">pr76518</a> and <a href="https://github.com/kubernetes/kubernetes/pull/82514">pr82514</a>, which limited the return size of http and exec probe to prevent occupation of large amounts of node memory (kubelet).</li><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which fixed the issue where large numbers of TLS handshake error logs were generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/77475">pr77475</a>, which fixed the issue of Cronjob scheduling failures when the number of jobs exceeded 500 (kube-controller-manager).</li></ul></td>
+    <td><ul class="params"><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/76518">pr76518</a> and <a href="https://github.com/kubernetes/kubernetes/pull/82514">pr82514</a>, which limits the return size of http and exec probe to prevent occupation of large amounts of node memory (kubelet).</li><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which prevents the issue of large numbers of TLS handshake error logs generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/77475">pr77475</a>, which fixed the issue of Cronjob scheduling failure when the number of jobs exceeded 500 (kube-controller-manager).</li></ul></td>
 </tr>
 <tr>
     <td>2020-06-10</td>	
@@ -146,7 +252,7 @@
 <tr>
 	<td>2019-12-23</td>
 	<td>v1.14.3-tke.8</td>
-	<td>Reverted <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixed the issue where the enabled CPU Manager disabled `cpu quota` if `QoS` of a pod was set to `Guaranteed`.</td>
+	<td>Reverts <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where upon being opened, the CPU Manager disables the CPU quota if the QoS setting of a pod is Guaranteed.</td>
 </tr>
 <tr>
 	<td>2019-12-17</td>
@@ -180,27 +286,49 @@
 </tr>
 </tbody></table>
 
-## TKE Kubernetes 1.12.4 revisions
+## TKE Kubernetes 1.12.4 Revisions
 
 <table>
 <thead>
-<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody>
 <tr>
+    <td>2020-12-28</td>	
+    <td>v1.12.4-tke.27</td>	
+    <td><ul class="params">
+		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
+	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        </ul></td>
+</tr>	
+<tr>
+    <td>2020-12-15</td>	
+    <td>v1.12.4-tke.26</td>	
+    <td>QcloudCbs supports BulkVolumeVerification (kube-controller-manager).</td>
+</tr>
+<tr>
+    <td>2020-11-17</td>	
+    <td>v1.12.4-tke.25</td>	
+    <td>Merged <a href="https://github.com/kubernetes/kubernetes/pull/79495">pr79495</a>, which fixed the issue where the webhook call failed when there were multiple versions of CRD (kube-apiserver).</td>
+</tr>
+<tr>
+    <td>2020-10-13</td>
+    <td>v1.12.4-tke.24</td>
+    <td>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr93403</a>, which removed the printed error information of pod condition irrelevant to the kubelet during kubelet update (kubelet).</td>
+<tr>
     <td>2020-08-04</td>
     <td>v1.12.4-tke.23</td>
-    <td>Merged <a href="https://github.com/kubernetes/kubernetes/pull/78883">pr78883</a>, which fixed the bug where the default value for pod.spec.container.SecurityContext.ProcMount was added by default.</td>
+    <td>Merged <a href="https://github.com/kubernetes/kubernetes/pull/78881">pr78881</a>, which fixed the bug where the default value for pod.spec.container.SecurityContext.ProcMount was added by default.</td>
 </tr>
 <tr>
     <td>2020-07-28</td>	
     <td>v1.12.4-tke.22</td>	
-    <td><ul class="params"><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which fixed the issue where large numbers of TLS handshake error logs were generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li></ul></td>
+    <td><ul class="params"><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91277">pr91277</a>, which prevents the issue of large numbers of TLS handshake error logs generated by kube-apiserver as a result of CLB health checks (kube-apiserver).</li><li>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/91500">pr91500</a>, which fixed the issue of missing environmental variables of KUBERNETES_SERVICE_HOST (kubelet).</li></ul></td>
 </tr>
 <tr>
     <td>2020-06-10</td>	
     <td>v1.12.4-tke.21</td>	
-    <td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/73915"> pr73915</a>, which prevents the watcher from receiving events before the watch is started.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91252">pr91252</a>, which ignores Pod Condition updates generated by other components to avoid unnecessary scheduling.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/89794">pr89794</a>, which clears kube-controller-manager error logs to avoid CVE-2020-8555 Half-Blind SSRF attacks.</li></ul></td>
+    <td><ul class="params"><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/73915"> pr73915</a>, which prevents the watcher from receiving events before the watch is started.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/91252">pr91252</a>, which ignores Pod Condition updates generated by other components to avoid unnecessary scheduling.</li><li>Merges <a href="https://github.com/kubernetes/kubernetes/pull/89794">pr73915</a>, which clears kube-controller-manager error logs to avoid CVE-2020-8555 Half-Blind SSRF attacks.</li></ul></td>
 </tr>
 <tr>
     <td>2020-06-04</td>
@@ -224,7 +352,7 @@
 <tr>
 	<td>2020-01-13</td>
 	<td>v1.12.4-tke.16</td>
-	<td><ul class="params"><li>Merges<a href="https://github.com/google/cadvisor/pull/2359" target="_blank"> pr2359</a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583</a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when pods are scheduled.</li></ul></td>
+	<td><ul class="params"><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/2359" target="_blank"> pr2359 </a>, which fixes the issue of missing monitoring records when docker root fails to be obtained.</li> <li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86583" target="_blank"> pr86583 </a>, which increases the logging level to prevent excessive logs from being generated when iptables does not support random-fully.</li><li>kube-scheduler supports dynamic logging level configuration.</li><li>Produces a workaround for the missing CBS device path (/dev/disk/by-id/virtio-xxx/...) issue that prevents some users from accessing CBS properly.</li><li>Merges<a href="https://github.com/kubernetes/kubernetes/pull/86230" target="_blank"> pr86230</a>, which skips assumed pod updates when pods are scheduled.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-12-23</td>
@@ -284,7 +412,7 @@
 <tr>
 	<td>2019-06-25</td>
 	<td>v1.12.4-tke.4</td>
-	<td>Fixed the compatibility issue between the TLinux kernel and IPVS.</td>
+	<td>Fixes the compatibility issue between the TLinux kernel and IPVS.</td>
 </tr>
 <tr>
 	<td>2019-06-17</td>
@@ -302,7 +430,7 @@
 
 <table>
 <thead>
-<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody>
 <tr>
@@ -337,7 +465,7 @@
 <tr>
 	<td>2019-12-23</td>
 	<td>v1.10.5-tke.13</td>
-	<td>Reverted <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixed the issue where the enabled CPU Manager disabled `cpu quota` if `QoS` of a pod was set to `Guaranteed`.</td>
+	<td>Reverted <a href="https://github.com/kubernetes/kubernetes/pull/79036" target="_blank">pr79036</a>, which fixes an issue where cpumanager disables cpu quota when it opens if the QoS setting of a pod is Guaranteed.</td>
 </tr>
 <tr>
 	<td>2019-12-13</td>
@@ -367,17 +495,17 @@
 <tr>
 	<td>2019-07-17</td>
 	<td>v1.10.5-tke.7</td>
-	<td>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/75037" target="_blank">pr75037</a>, which resolved the security risks of the cp command in kubectl.</td>
+	<td>Merges <a href="https://github.com/kubernetes/kubernetes/pull/75037" target="_blank">pr75037</a>, which fixes a security issue affecting the cp command in kubectl.</td>
 </tr>
 <tr>
 	<td>2019-06-25</td>
 	<td>v1.10.5-tke.6</td>
-	<td>Fixed the compatibility issue between the TLinux kernel and IPVS.</td>
+	<td>Fixed a Linux kernel and IPVS load balancing issue.</td>
 </tr>
 <tr>
 	<td>2019-06-17</td>
 	<td>v1.10.5-tke.5</td>
-	<td>Incorporated <a href="https://github.com/kubernetes/kubernetes/pull/71114" target="_blank">pr71114</a>, which fixed the IPVS throughput issue.</td>
+	<td>Merges <a href="https://github.com/kubernetes/kubernetes/pull/71114" target="_blank">pr71114</a>, which fixes an issue with IPVS throughput.</td>
 </tr>
 <tr>
 	<td>2019-03-19</td>
@@ -392,7 +520,7 @@
 <tr>
 	<td>2018-09-28</td>
 	<td>v1.10.5-tke.2</td>
-	<td>Moved the CLB creation logic from controller-manager to an independent service controller.</td>
+	<td>Moves the CLB creation logic from controller-manager to an independent service controller.</td>
 </tr>
 <tr>
 	<td>2018-09-27</td>
@@ -406,11 +534,11 @@
 </tr>
 </tbody></table>                                                
 
-## TKE Kubernetes 1.8.13 revisions
+## TKE Kubernetes 1.8.13 Revisions
 
 <table>
 <thead>
-<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody><tr>
 	<td>2020-01-13</td>
@@ -420,7 +548,7 @@
 <tr>
 	<td>2019-12-13</td>
 	<td>v1.8.13-tke.6</td>
-	<td><ul class="params"><li>kubelet does not delete nodes when checking externalID.</li> <li>Added metadata cache and timeout.</li><li>Fixed the issue where upgrading lxcfs in Ubuntu 16 caused pods to exit.</li><li>Avoided the readiness state of “pod not ready” when kubelet was restarted.</li></ul></td>
+	<td><ul class="params"> <li>kubelet does not delete nodes when checking externalID.</li> <li>Adds metadata cache and timeout.</li><li>Fixes an issue where upgrading lxcfs in Ubuntu 16 causes pods to exit.</li><li>Adds the ability to reboot kubelet to avoid pod not ready.</li></ul></td>
 </tr>
 <tr>
 	<td>2019-11-18</td>
@@ -430,7 +558,7 @@
 <tr>
 	<td>2018-09-28</td>
 	<td>v1.8.13-tke.2</td>
-	<td>Moved the CLB creation logic from controller-manager to an independent service controller.</td>
+	<td>Moved load balancing logic from controller-manager to independent service controllers.</td>
 </tr>
 <tr>
 	<td>2018-09-27</td>
@@ -440,16 +568,16 @@
 <tr>
 	<td>2018-09-21</td>
 	<td>v1.8.13-qcloud-rev1</td>
-	<td>If a kubelet status update times out, controller-manager probes the kubelet port.</td>
+	<td>If a kubelet state update times out, controller-manager probes kubelet port.</td>
 </tr>
 </tbody></table>
 
 
-## TKE Kubernetes 1.7.8 revisions
+## TKE Kubernetes 1.7.8 Revisions
 
 <table>
 <thead>
-<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
+<tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody>
 <tr>
@@ -465,7 +593,7 @@
 <tr>
 	<td>2018-09-27</td>
 	<td>v1.7.8-tke.1</td>
-	<td>Moved the CLB creation logic from controller-manager to an independent service controller.</td>
+	<td>Moves load balancing logic from controller-manager to an independent service controllers.</td>
 </tr>
 	<tr>
 	<td>2018-09-21</td>
