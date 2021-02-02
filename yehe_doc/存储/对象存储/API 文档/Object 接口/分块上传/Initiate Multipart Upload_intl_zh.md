@@ -71,11 +71,11 @@ Authorization: Auth String
 
 请求成功，返回 **application/xml** 数据，包含分块上传初始化信息。
 
-```xml
+```
 <InitiateMultipartUploadResult>
-	<Bucket>string</Bucket>
-	<Key>string</Key>
-	<UploadId>string</UploadId>
+       <Bucket>string</Bucket>
+       <Key>string</Key>
+       <UploadId>string</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
