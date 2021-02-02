@@ -26,10 +26,10 @@ Scenario-specific services are supporting services on LVB. In this module, you c
 <table>
 <tr><th width="17%">Feature</th><th>Description</th></tr>
 <tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31073">Feature Configuration</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31073">Feature Configuration</a></td>
 <td>You can configure templates for recording, transcoding, screencapturing, porn detection, watermark and other features for live streaming. We further streamlined the process by enabling you to directly bind the domain name to the templates on the same configuration page.</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31074">Event Center</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/31074">Event Center</a></td>
 <td><ul style= "margin: 0"><li>You can configure paths for receiving trigger event callbacks</li><li>You can quickly view records of LVB stream push and interruption, as well as stream interruption causes.</li></ul></td>
 </tr></tr>
 </table>
