@@ -1,7 +1,7 @@
 ## 适用场景
 
 TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 [直播模式](https://intl.cloud.tencent.com/document/product/647/36070)。
-通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多50人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
+通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多30人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
 
 ## 原理解析
 
@@ -12,7 +12,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 -   **代理机**
     该类节点都采用普通的线路和性能一般的机器，善于处理高并发的拉流观看需求，单位时长计费较低。
 
-在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为50路），因此适合在线会议等场景，但单个房间的人数限制为300人。
+在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为30路），因此适合在线会议等场景，但单个房间的人数限制为300人。
 
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
@@ -27,18 +27,16 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 建议您先阅读文档 [跑通 SimpleDemo(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)，并按照文档的指引，跑通我们为您提供的官方 SimpleDemo。
 
-如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
-
-反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
+- 如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
+- 反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
 
 <span id="step2"></span>
 ### 步骤2：为您的项目集成 trtc-electron-sdk
 
 如果 [步骤1](#step1) 正常执行并且效果符合预期，说明您已经掌握了 Electron 环境的安装方法。
 
-您可以在我们的官方 Demo 的基础上进行二次开发，项目的起步阶段会比较顺利。
-
-您也可以执行以下指令，把 `trtc-electron-sdk` 安装到您现有的项目中：
+- 您可以在我们的官方 Demo 的基础上进行二次开发，项目的起步阶段会比较顺利。
+- 您也可以执行以下指令，把 `trtc-electron-sdk` 安装到您现有的项目中：
 
 ```bash
 npm install trtc-electron-sdk --save
@@ -47,14 +45,14 @@ npm install trtc-electron-sdk --save
 <span id="step3"></span>
 ### 步骤3：初始化 SDK 实例并监听事件回调
 
-创建 `trtc-electron-sdk` 实例：
+1. 创建 `trtc-electron-sdk` 实例：
 
 ```javascript
 import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 ```
 
-监听 `onError` 事件：
+2. 监听 `onError` 事件：
 
 ```javascript
 // 错误通知是要监听的，需要捕获并通知用户
@@ -95,13 +93,10 @@ param.userSig = 'eJyrVareCeYrSy1SslI...';
 ### 步骤5：创建并进入房间
 
 1. 调用  [enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom)  即可加入 `TRTCParams` 参数中 `roomId` 代指的音视频房间。如果该房间不存在，SDK 会自动创建一个以字段 `roomId` 的值为房间号的新房间。
-
 2. 请根据应用场景设置合适的  `appScene`  参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
-
    - 视频通话，请设置为 `TRTCAppScene.TRTCAppSceneVideoCall`。
    - 语音通话，请设置为 `TRTCAppScene.TRTCAppSceneAudioCall`。
-
-   关于 `TRTCAppScene` 的详细介绍，请点击查看：[TRTCAppScene ](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/global.html#TRTCAppScene)。
+   关于 `TRTCAppScene` 的详细介绍，请参见：[TRTCAppScene ](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/global.html#TRTCAppScene)。
 
 3. 进房成功后，SDK 会回调 [onEnterRoom(result)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onEnterRoom) 事件。其中，参数 `result` 大于0时表示进房成功，具体数值为加入房间所消耗的时间，单位为毫秒（ms）；当 `result` 小于0时表示进房失败，具体数值为进房失败的错误码。
 
@@ -141,15 +136,11 @@ SDK 支持自动订阅和手动订阅两种模式，自动订阅追求秒开速�
 进入某个房间之后，SDK 会自动接收房间中其他用户的音频流，从而达到最佳的“秒开”效果：
 
 1.  当房间中有其他用户在上行音频数据时，您会收到 [onUserAudioAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) 事件通知，SDK 会自动播放这些远端用户的声音。
-
 2.  您可以通过 [muteRemoteAudio(userId,  true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteRemoteAudio) 屏蔽某一个 userId 的音频数据，也可以通过 [muteAllRemoteAudio(true)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#muteAllRemoteAudio) 屏蔽所有远端用户的音频数据，屏蔽后 SDK 不再继续拉取对应远端用户的音频数据。
-
 3.  当房间中有其他用户在上行视频数据时，您会收到 [onUserVideoAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) 事件通知，但此时 SDK 未收到该如何展示视频数据的指令，因此不会自动处理视频数据。您需要通过调用 [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 方法将远端用户的视频数据和显示 `view` 关联起来。
-
 4.  您可以通过  [setLocalViewFillMode()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setLocalViewFillMode)  指定视频画面的显示模式：
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill` 模式：表示填充，画面可能会等比放大和裁剪，但不会有黑边。
     -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit` 模式：表示适应，画面可能会等比缩小以完全显示其内容，可能会有黑边。
-  
 5.  您可以通过 [stopRemoteView(userId)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#stopRemoteView) 可以屏蔽某一个 userId 的视频数据，也可以通过 [stopAllRemoteView()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#stopAllRemoteView) 屏蔽所有远端用户的视频数据，屏蔽后 SDK 不再继续拉取对应远端用户的视频数据。
 
 ```html
