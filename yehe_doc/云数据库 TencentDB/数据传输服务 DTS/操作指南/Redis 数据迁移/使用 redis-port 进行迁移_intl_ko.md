@@ -1,5 +1,5 @@
 ## 툴 소개
-[redis-port 다운로드(Linux 64비트)](https://main.qcloudimg.com/raw/47154504189a8941250f57b60f1e2fcb/redis-port.tgz)
+[redis-port 다운로드(Linux 64비트)](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/redis-port.tgz)
 
 redis-port는 오픈 소스 그룹으로 Redis 노드 간의 데이터베이스 동기화, 데이터 가져오기, 데이터 내보내기에 사용하며 Redis의 버전 간의 데이터 마이그레이션을 지원합니다. 다음과 같은 툴을 제공합니다.
 - redis-sync: Redis 인스턴스 간의 데이터 마이그레이션을 지원합니다.
