@@ -642,10 +642,10 @@ This API is used to set the coordinates and size of a specified video image.
 |:-----------|:-------|:-------|:------------------------------------------------------------------|
 | userID     | String | -      | User ID, which is required. |
 | streamType | String | -      | Remote user stream type, which is required when the remote user is set. Valid values: <li>main: primary stream.</li><li>aux: substream (screen sharing).</li> |
-| xAxis      | Number | -      | View horizontal coordinate, which is optional. |
-| yAxis      | Number | -      | View vertical coordinate, which is optional. |
-| width      | Number | -      | View width, which is optional. |
-| height     | Number | -      | View height, which is optional. |
+| xAxis      | String | -      | View horizontal coordinate, which is optional. |
+| yAxis      | String | -      | View vertical coordinate, which is optional. |
+| width      | String | -      | View width, which is optional. |
+| height     | String | -      | View height, which is optional. |
 
 **Returned value:**
 
