@@ -14,7 +14,7 @@
 
 ### COS에서 CDN HTTPS 원본 가져오기 COS를 지원합니까?
 
-지원합니다. 자세한 방법은 [원본 가져오기 설정]](https://intl.cloud.tencent.com/document/product/436/31508) 문서를 참조하십시오.
+지원합니다. 자세한 방법은 [원본 가져오기 설정](https://intl.cloud.tencent.com/document/product/436/31508) 문서를 참조하십시오.
 
 ### 사용자 정의 도메인에 HTTPS 액세스를 어떻게 설정합니까?
 
