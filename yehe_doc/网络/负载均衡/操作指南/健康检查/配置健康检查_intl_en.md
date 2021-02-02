@@ -1,6 +1,7 @@
 When configuring listeners, you can enable health check to obtain the availability information of real servers. For more information on health check, please see [Health Check Overview](https://intl.cloud.tencent.com/document/product/214/6097).
 
-## <span id="postreq"></span>Prerequisites
+<span id="postreq"></span>
+## Prerequisites
 1. Create a CLB instance. For more information, please see [Creating CLB Instances](https://intl.cloud.tencent.com/document/product/214/6149).
 2. Create a CLB listener.
  - To create a TCP listener, please see more information in [Configuring a TCP Listener](https://intl.cloud.tencent.com/document/product/214/32517).
@@ -18,7 +19,6 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
-![](https://main.qcloudimg.com/raw/ea415282664e7f14cd3c4baaf669d670.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -40,7 +40,6 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://main.qcloudimg.com/raw/8df342cbd82880ad6de951eea804f59f.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -97,7 +96,6 @@ Layer-4 TCP listeners support three types of health checks, namely the layer-4 T
 ### Configuring custom protocol health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://main.qcloudimg.com/raw/52c28479255cb9f6946349f118e96080.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -136,7 +134,6 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring UDP health check - port check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **Port** as the protocol.
-![](https://main.qcloudimg.com/raw/e723aed7190380df8dd1ca3b205d2213.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -172,7 +169,6 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring UDP health check - Ping command
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **PING** as the protocol.
-![](https://main.qcloudimg.com/raw/b6ed500346ba66e6e68551367ce3a7db.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -194,7 +190,6 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring TCP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **TCP** as the protocol.
-![](https://main.qcloudimg.com/raw/37afaef3dc821c9cdcc4236b8873fd03.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -216,7 +211,6 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
 2. In the step of **Health Check**, select **HTTP** as the protocol.
-![](https://main.qcloudimg.com/raw/58576f0354daa04b4f7d56d80fff11bd.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -267,11 +261,10 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 </tr>
 </table>
 
-
-## <span id="http"></span>HTTP Listener
+<span id="http"></span>
+## HTTP Listener
 ### Configuring HTTP health check
 1. Configure a listener to the step of **Health Check** as instructed in [Prerequisites](#postreq).
-![](https://main.qcloudimg.com/raw/e369e6c7ef7fb02eaa6292a4d141ec66.png)
 <table>
 <tr>
 <th>Parameter</th><th>Description</th>
@@ -327,8 +320,8 @@ UDP listeners support UDP health checks, which can be conducted by checking port
 >
 For the health check configuration of HTTPS listeners, please see <a href="#http">HTTP Listener</a>.
 
-
-## <span id="advance"></span> Advanced Options
+<span id="advance"></span>
+## Advanced Options
 | Health Check Configuration    | Description                    | Default Value                              |
 | ------- | ------------------------ | ---------------------------------------- |
 | Response timeout | <li>Maximum response timeout for a health check.</li><li>If a real server fails to respond within the timeout, it is considered as abnormal.</li><li>Value range: 2-60 seconds.</li> | 2 seconds |
