@@ -1,26 +1,32 @@
-## CoreOS
-2020년 5월 26일 이후 커뮤니티 공식 홈페이지에서 CoreOS Container Linux의 업데이트를 지원하지 않는다고 CoreO 커뮤니티를 통해 발표했습니다. 이에 관련해 Tencent Cloud에서는 다음과 같이 설명했습니다.
--2020년 10월 30일 이후부터 Tencent Cloud에서 제공하는 CoreOS Container Linux를 통해 CVM을 생성할 수 없습니다.
--2020년 5월 26일 이후부터 Tencent Cloud에서는 CoreOS Container Linux의 기술 지원이 제공되지 않습니다. 하지만, CoreOS Container Linux를 통해 이미 설치한 기존의 CVM 인스턴스는 영향을 받지 않고 계속 사용할 수 있습니다. 또한, 해당 운영 체제의 라이프사이클이 끝났고 운영사에서 더는 안전 업데이트 패치를 제공하지 않으므로 Tencent Cloud에서는 해당 이미지 사용 중단을 권장합니다.
-- Fedora CoreOS 커뮤니티에서는 Fedora CoreOS 운영 체제를 CoreOS Container Linux로 교체할 것을 권장하며 Tencent Cloud에서는 2020년 9월에 Fedora CoreOS 공용 이미지를 런칭 예정입니다.
+>!
+>- 리전별로 이미지 업데이트 시간이 다를 수 있습니다. 본 문서가 제공하는 이미지 업데이트 시간은 전체 리전의 이미지 업데이트 시간입니다.
+>- Tencent Cloud가 제공하는 공용 이미지의 점검 주기는 운영사가 배포한 점검 주기와 일치하도록 유지하고 있습니다. 운영사가 배포한 점검 시간 정보는 [운영사 점검 시간](#OfficialMaintenanceTime)을 참조하십시오.
+>
 
 
-
-
-### CentOS
-
+## CentOS
 <table>
-<tr><th style="width: 14%;">이미지 버전</th><th style="width: 42%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 30%;">업데이트 내용</th></tr>
-	<tr><td>CentOS 8.0</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-25szkc8t</a><br>커널 버전: 4.18.0-80.11.2.el8_0.x86_64</td><td>2020-08-01</td><td>신규 이미지 런칭.</td></tr>
+<tr><th style="width: 14%;">이미지 버전</th><th style="width: 44%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 28%;">업데이트 내용</th></tr>
+	<tr><td>CentOS 8.0</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-25szkc8t">img-25szkc8t</a><br>현재 커널 버전: 4.18.0-80.11.2.el8_0.x86_64</td><td>2020-08-01</td><td>신규 이미지 런칭.</td></tr>
+	<tr>
+	<td>CentOS 7.8</td>
+	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-3la7wgnt">img-3la7wgnt</a><br>현재 커널 버전: 3.10.0-1127.13.1.el7.x86_64</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
+	</tr>
 	<tr>
 	<td>CentOS 7.7</td>
-	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-1u6l2i9l">img-1u6l2i9l</a><br>커널 버전: 3.10.0-1062.18.1.el7.x86_64</td>
+	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-1u6l2i9l">img-1u6l2i9l</a><br>현재 커널 버전: 3.10.0-1062.18.1.el7.x86_64</td>
 	<td>2020-04-15</td>
 	<td>최신 시스템 패치 업데이트.</td>
 	</tr>
 	<tr>
-	<td rowspan=3>CentOS 7.6</td>
-	<td rowspan=3> 이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-9qabwvbn">img-9qabwvbn</a><br>커널 버전: 3.10.0-1062.18.1.el7.x86_64</td>
+	<td rowspan=4>CentOS 7.6</td>
+	<td rowspan=4>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-9qabwvbn">img-9qabwvbn</a><br>현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
+	</tr>
+	<tr>
 	<td>2020-06-30</td>
 	<td>최신 시스템 패치 업데이트.</td>
 	</tr>
@@ -33,51 +39,91 @@
 	<td><ul  class="params"><li>신규 이미지 런칭. </li><li>베어 메탈 지원.</li><li>IPv6 지원.</li></ul></td>
 	</tr>
 	<tr>
-	<td rowspan=2>CentOS 7.5</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-oikl1tzv">img-oikl1tzv</a><br>커널 버전: 3.10.0-957.27.2.el7.x86_64</td>
-	<td>2020-02-10</td>
-	<td>최신 시스템 패치 업데이트.</td>
+	<td rowspan=3>CentOS 7.5</td>
+	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-oikl1tzv">img-oikl1tzv</a><br>현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
+		<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
   </tr>
-	</tr>
+<tr><td>2020-02-10</td>
+	<td>최신 시스템 패치 업데이트.</td>
+</tr>
 	<tr><td>2019-05-31</td><td><ul class="params"><li>최신 시스템 패치 업데이트.</li><li>IPv6 지원.</li></ul>
 </td>
 </tr>
 <tr>
-	<td rowspan=2>CentOS 7.4</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-8toqc6s3">img-8toqc6s3</a><br>커널 버전: 3.10.0-693.el7.x86_64</td>
-	<td>2020-03-01</td>
-	<td>최신 시스템 패치 업데이트.</td>
+	<td rowspan=3>CentOS 7.4</td>
+	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-8toqc6s3">img-8toqc6s3</a><br>현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
 	</tr>
+	<tr>	<td>2020-03-01</td>
+	<td>최신 시스템 패치 업데이트.</td></tr>
 	<tr><td>2019-03-11</td><td>OpenSSH 버전 업데이트.</td></tr>
 	<tr>
-	<td rowspan=2>CentOS 7.3</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-dkwyg6sr">img-dkwyg6sr</a><br>커널 버전: 3.10.0-514.21.1.el7.x86_64</td>
-	<td>2020-03-15</td>
-	<td>최신 시스템 패치 업데이트.</td>
+	<td rowspan=3>CentOS 7.3</td>
+	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-dkwyg6sr">img-dkwyg6sr</a><br>현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
 	</tr>
+	<tr><td>2020-03-15</td>
+	<td>최신 시스템 패치 업데이트.</td></tr>
 	<tr><td>2019-03-26</td><td>OpenSSH 버전 업데이트.</td></tr>
  <tr>
-	<td rowspan=2>CentOS 7.2</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-31tjrtph">img-31tjrtph</a><br>커널 버전: 3.10.0-514.26.2.el7.x86_64</td>
-	<td>2020-03-15</td>
-	<td>최신 시스템 패치 업데이트.</td>
+	<td rowspan=3>CentOS 7.2</td>
+	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-31tjrtph">img-31tjrtph</a><br>현재 커널 버전: 3.10.0-1127.19.1.el7.x86_64</td>
+	<td>2020-11-24</td>
+	<td><ul  class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
 	</tr>
+	<tr>	<td>2020-03-15</td>
+	<td>최신 시스템 패치 업데이트.</td></tr>
 	<tr><td>2019-03-26</td><td>OpenSSH 버전 업데이트.</td></tr>
 	<tr>
 	<td rowspan=2>CentOS 6.9</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-i5u2lkoz">img-i5u2lkoz</a><br>커널 버전: 2.6.32-754.30.2.el6.x86_64</td>
+	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-i5u2lkoz">img-i5u2lkoz</a><br>현재 커널 버전: 2.6.32-754.30.2.el6.x86_64</td>
 	<td>2020-03-04</td>
 	<td>최신 시스템 패치 업데이트.</td>
 	</tr>
 	<tr><td>2019-03-26</td><td>OpenSSH 버전 업데이트.</td></tr>
-	<tr><td>CentOS 6.8</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-6ns5om13">img-6ns5om13</a><br>커널 버전: 2.6.32-642.6.2.el6.x86_64</td><td>2019-03-26</td><td>OpenSSH 버전 업데이트.</td></tr>
+	<tr><td>CentOS 6.8</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-6ns5om13">img-6ns5om13</a><br>현재 커널 버전: 2.6.32-642.6.2.el6.x86_64</td><td>2019-03-26</td><td>OpenSSH 버전 업데이트.</td></tr>
+	</table>
+
+
+## Ubuntu
+<table>
+<tr><th style="width: 16%;">이미지 버전</th><th style="width: 38%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 32%;">업데이트 내용</th></tr>
+ <tr>
+	<td rowspan=2>Ubuntu 20.04</td>
+	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-22trbn9x&searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-22trbn9x</a><br>현재 커널 버전: 5.4.0-42-generic</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
+	</tr>
+	<tr><td>2020-08-27</td><td>신규 이미지 런칭.</ul>
+</td></tr>
+<tr>
+	<td rowspan=4>Ubuntu 18.04</td>
+	<td rowspan=4>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pi0ii46r&searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-pi0ii46r</a><br>현재 커널 버전: 4.15.0-118-generic</td>
+	<td>2020-11-24</td>
+	<td><ul class="params"><li>커널 버전 업데이트.</li><li>보안 패치 업데이트.</li></ul></td>
+	</tr>
+	<tr><td>2020-03-25</td>
+	<td><ul class="params"><li>최신 시스템 패치 업데이트.</li><li>베어 메탈 지원.</li></ul></td></tr>
+	<tr><td>2019-06-20</td><td><ul  class="params"><li>시스템 패치 업데이트.</li><li> CVE-2019-11477 취약점 수정.</li></ul>
+</td></tr>
+	<tr><td>2019-05-15</td><td><ul  class="params"><li>최신 시스템 패치 업데이트.</li><li>베어 메탈 지원.</li></ul>
+</td></tr>
+	<tr>
+	<td>Ubuntu 16.04</td>
+	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail?rid=1&id=img-pyqx34y1&searchParams=rid%3D1%26tab%3DPUBLIC_IMAGE%26imageType%3DPUBLIC_IMAGE%26page%3D2">img-pyqx34y1</a><br>현재 커널 버전: 4.15.0-88-generic</td>
+	<td>2020-03-25</td>
+	<td>최신 시스템 패치 업데이트.</td>
+	</tr>
 	</table>
 
 
 ## Debian
 <table>
 <tr><th style="width: 16%;">이미지 버전</th><th style="width: 38%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 32%;">업데이트 내용</th></tr>
-	<tr><td>Debian 10.2</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a><br>커널 버전: 4.19.0-6-amd64</td><td>2020-06-30</td><td>신규 이미지 런칭.</td></tr>
+	<tr><td>Debian 10.2</td><td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-h1yvvfw1">img-h1yvvfw1</a><br>현재 커널 버전: 4.19.0-6-amd64</td><td>2020-06-30</td><td>신규 이미지 런칭.</td></tr>
 </table>
 
 
@@ -86,13 +132,13 @@
 <tr><th style="width: 14%;">이미지 버전</th><th style="width: 42%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 30%;">업데이트 내용</th></tr>
   <tr>
 	<td>OpenSUSE Leap 15.1 </td>
-	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a><br>커널 버전: 4.12.14-lp151.28.36-default</td>
+	<td>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-4orfgj3l">img-4orfgj3l</a><br>현재 커널 버전: 4.12.14-lp151.28.36-default</td>
 	<td>2020-07-15 </td>
 	<td>신규 이미지 런칭.</td>
 	</tr>
 	<tr>
 	<td rowspan=2>OpenSUSE 42.3</td>
-	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a><br>커널 버전: 4.4.76-1-default</td>
+	<td rowspan=2>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/1/PUBLIC_IMAGE/img-0ytr67o7">img-0ytr67o7</a><br>현재 커널 버전: 4.4.76-1-default</td>
 	<td>2020-06-04</td>
 	<td>최신 시스템 패치 업데이트.</td>
 	</tr>
@@ -101,28 +147,6 @@
 	<td>OpenSSH 버전 업데이트.</td>
 	</tr>
 </table>
-
-## Ubuntu
-<table>
-<tr><th style="width: 16%;">이미지 버전</th><th style="width: 38%;">이미지 정보</th><th style="width: 14%;">업데이트 시간</th><th style="width: 32%;">업데이트 내용</th></tr>
-	<tr>
-	<td rowspan=3>Ubuntu 18.04</td>
-	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-pi0ii46r">img-pi0ii46r</a><br>커널 버전: 4.15.0-88-generic</td>
-	<td>2020-03-25</td>
-	<td><ul class="params"><li>최신 시스템 패치 업데이트.</li><li>베어 메탈 지원.</li></ul></td>
-	</tr>
-	<tr><td>2019-06-20</td><td><ul  class="params"><li>시스템 패치 업데이트.</li><li> CVE-2019-11477 취약점 수정.</li></ul>
-</td></tr>
-	<tr><td>2019-05-15</td><td><ul  class="params"><li>최신 시스템 패치 업데이트.</li><li>베어 메탈 지원.</li></ul>
-</td></tr>
-	<tr>
-	<td>Ubuntu 16.04</td>
-	<td rowspan=3>이미지 ID: <a href="https://console.cloud.tencent.com/cvm/image/detail/4/PUBLIC_IMAGE/img-pyqx34y1">img-pyqx34y1</a><br>커널 버전: 4.15.0-88-generic</td>
-	<td>2020-03-25</td>
-	<td>최신 시스템 패치 업데이트.</td>
-	</tr>
-	</table>
-
 
 ## Windows
 <table>
@@ -176,8 +200,133 @@
 </table>
 
 
+## [부록: 운영사 점검 시간](id: OfficialMaintenanceTime)
+
+
+### CentOS
+CentOS의 운영사가 공시한 지원 종료(EOL) 일자 정보는 다음 표와 같습니다. 자세한 정보는 [CentOS 제품 사양](https://wiki.centos.org/zh/About/Product#fnref-f049f6268e56bd37228bb469075b54ae8645fa40)을 참조하십시오.
+<table>
+<tr>
+<th>시스템 버전</th>
+<th>무결성 업데이트</th>
+<th>점검성 업데이트</th>
+</tr>
+<tr>
+<td>CentOS 6</td>
+<td>2017년 제2분기</td>
+<td>2020년 11월 30일</td>
+</tr>
+<tr>
+<td>CentOS 7</td>
+<td>2020년 제4분기</td>
+<td>2024년 06월 30일</td>
+</tr>
+<tr>
+<td>CentOS 8</td>
+<td>2021년 12월</td>
+<td>2021년 12월 31일</td>
+</tr>
+</table>
+
+### Ubuntu
+Ubuntu의 운영사가 공시한 장기 지원 일정 정보는 다음 표와 같습니다. 자세한 정보는 [Long term support and interim releases](https://ubuntu.com/about/release-cycle)을 참조하십시오.
+<table>
+<tbody><tr>
+<th style="
+    width: 23%;
+">시스템 버전</th>
+<th>하드웨어 점검 업데이트</th>
+<th>점검 업데이트</th>
+<th>임시 배포 표준 지원</th>
+<th>보안 점검 확장</th>
+</tr>
+<tr>
+<td>Ubuntu 14.04 LTS</td>
+<td>2014년 초반 ~ 2016년 중반</td>
+<td>2016년 중반 ~ 2018년 중반</td>
+<td>-</td>
+<td>2018년 중반 ~ 2022년 초반</td>
+</tr>
+<tr>
+<td>Ubuntu 16.04 LTS</td>
+<td>2016년 초반 ~ 2018년 중반</td>
+<td>2018년 중반 ~ 2021년 초반</td>
+<td>-</td>
+<td>2021년 초반 ~ 2024년 초반</td>
+</tr>
+<tr>
+<td>Ubuntu 18.04 LTS</td>
+<td>2018년 초반 ~ 2021년 중반</td>
+<td>2018년 초반 ~ 2023년 후반</td>
+<td>-</td>
+<td>2023년 후반 ~ 2028년 초반</td>
+</tr>
+<tr>
+<td>Ubuntu 20.04 LTS (v5.4)</td>
+<td>2020년 초반 ~ 2022년 중반</td>
+<td>2022년 중반 ~ 2024년 후반</td>
+<td>-</td>
+<td>2024년 후반 ~ 2030년 초반</td>
+</tr>
+<tr>
+<td>Ubuntu 20.10 <br>(v5.8)</td>
+<td>-</td>
+<td>-</td>
+<td>2020년 중반 ~ 2021년 중반</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 21.04</td>
+<td>-</td>
+<td>-</td>
+<td>2021년</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 21.10</td>
+<td>-</td>
+<td>-</td>
+<td>2021년 후반 ~ 2022년 초반</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Ubuntu 22.04 LTS</td>
+<td>2022년 초반 ~ 2024년 후반</td>
+<td>2024년 후반 ~ 2026년 후반</td>
+<td>-</td>
+<td>2026년 후반 ~ 2032년 초반</td>
+</tr>
+</tbody></table>
+
+### Debian
+Debian의 운영사가 공시한 지원 정보는 다음 표와 같습니다. 자세한 정보는 [Debian Long Term Support](https://wiki.debian.org/LTS)를 참조하십시오.
+<table>
+<tr>
+<th>시스템 버전</th>
+<th>일정 정보</th>
+</tr>
+<tr>
+<td>Debian 6</td>
+<td>2016년 02월 29일까지</td>
+</tr>
+<tr>
+<td>Debian 7 </td>
+<td>2016년 04월 26일 ~ 2018년 05월 31일</td>
+</tr>
+<tr>
+<td>Debian 8</td>
+<td>2018년 06월 17일 ~ 2020년 06월 30일</td>
+</tr>
+<tr>
+<td>Debian 9</td>
+<td>2020년 07월 06일 ~ 2022년 06월 30일</td>
+</tr>
+<tr>
+<td>Debian 10</td>
+<td>2022년 07월 ~ 2024년 06월</td>
+</tr>
+</table>
+
 <style>
 	.params{margin-bottom:0px !important;}
 </style>
-
-
