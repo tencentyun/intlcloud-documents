@@ -415,7 +415,7 @@
 <td>Supports layer-7 HTTP and HTTPS protocols</td>
 <td>Layer-7 HTTP and HTTPS protocols are application layer protocols. Layer-7 listeners support session persistence based on cookies and health check based on HTTP return codes.</td>
 <td>April 2016</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/6151">CLB Listeners - Overview</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/6151#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8D.8F.E8.AE.AE.E7.B1.BB.E5.9E.8B">CLB Listeners - Overview</a></td>
 </tr>
 </tbody></table>
 
