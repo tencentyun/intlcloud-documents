@@ -45,9 +45,9 @@ public abstract int SetServerAudioRouteSendOperateType(ITMG_SERVER_AUDIO_ROUTE_S
 | AUDIO_ROUTE_RECV_WHITE_LIST      | 本端只接收白名单的人的音频声音，白名单由参数 OpenIDForSend 提供 |
 
 >?
-- 如果类型传入 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 以及 AUDIO_ROUTE_RECV_FROM_ALL OpenIDForSend 不生效。
-- 如果类型传入 AUDIO_ROUTE_RECV_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
-- 如果类型传入 AUDIO_ROUTE_RECV_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_NOT_RECV_FROM_ANYONE 以及 AUDIO_ROUTE_RECV_FROM_ALL OpenIDForSend 不生效。
+>- 如果类型传入 AUDIO_ROUTE_RECV_BLACK_LIST ，此时参数 OpenIDForSend 为黑名单列表，最多支持 10 个。
+>- 如果类型传入 AUDIO_ROUTE_RECV_WHITE_LIST ，此时参数 OpenIDForSend 为白名单列表，最多支持 10 个。
 >
 
 ### 返回值
