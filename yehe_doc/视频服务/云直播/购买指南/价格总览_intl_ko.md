@@ -33,7 +33,7 @@ LVB 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서
 <td>표준 트랜스 코딩</td>
 <td><ul style="margin:0">
 <li/>라이브 방송 표준 트랜스 코딩 기능을 사용하는 경우 과금됩니다.
-<li/><a href="https://intl.cloud.tencent.com/document/product/267/31064">라이브 방송 워터마크</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">표준 트랜스 코딩</a>, <a href="https://intl.cloud.tencent.com/zh/document/product/267/37665">라이브 방송 혼합 스트리밍</a> 등의 기능을 사용하는 경우 표준 트랜스 코딩 비용이 발생합니다.
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/31064">라이브 방송 워터마크</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">표준 트랜스 코딩</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">라이브 방송 혼합 스트리밍</a> 등의 기능을 사용하는 경우 표준 트랜스 코딩 비용이 발생합니다.
 <li/>발생 비용은 <b>트랜스 코딩 시간에 따라 과금</b>되며, 출력하는 라이브 방송 스트리밍 화면 사이즈의 범위 구간 가격을 과금 단가로 합니다.
 </ul></td>
 <td>
@@ -43,10 +43,10 @@ LVB 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서
 <td>고속 HD 트랜스 코딩</td>
 <td><ul style="margin:0">
 <li/>라이브 방송 고속 HD 트랜스 코딩 기능을 사용하는 경우 과금됩니다.
-<li/><a href="https://intl.cloud.tencent.com/zh/document/product/267/31071#C_topspeed">고속 HD 트랜스 코딩</a> 기능 사용 시 비용이 발생합니다.
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/31071#C_topspeed">고속 HD 트랜스 코딩</a> 기능 사용 시 비용이 발생합니다.
 <li/>발생 비용은 <b>트랜스 코딩 시간에 따라 과금</b>되며, 출력하는 라이브 방송 스트리밍 화면 사이즈의 범위 구간 가격을 과금 단가로 합니다.
 </ul><td>
-<li><a href="https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81">후불 - 일 결산</a></li></td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/2818#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E8.BD.AC.E7.A0.81">후불 - 일 결산</a></li></td>
 </tr><tr>
 <td>오디오 트랜스 코딩</td>
 <td>
