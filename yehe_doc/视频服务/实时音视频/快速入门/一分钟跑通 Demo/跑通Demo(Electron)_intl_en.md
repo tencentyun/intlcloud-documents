@@ -25,16 +25,11 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 
 ### Step 3. Configure demo project files
 1. Decompress the source package downloaded in [step 2](#step2) and find the `TRTCSDK/Electron/TRTCSimpleDemo/` directory, which is the <span id="projectFolder" name="projectFolder">"**project directory**"</span> mentioned below.
-
 2. Find the `debug/gen-test-user-sig.js` file in the project directory and open it.
-
 3. Set the relevant parameters in the `gen-test-user-sig.js` file:
-
-	-   SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
--   SECRETKEY: it is an empty string by default. Please replace it with your real key information.
-    
+  -   SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
+  -   SECRETKEY: it is an empty string by default. Please replace it with your real key information.
 4. Return to the TRTC Console and click **Pasted and Next**.
-
 5. Click **Close Guide and Enter Console** to manage the application.
 
 **File and directory description:**
@@ -57,8 +52,8 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 | | |---show-screen-capture.vue
 | |---common                              Utility functions, public libraries, etc.
 | | |---live-room-service.js
-| | |---log.js														Log tool
-| | |---mtah5.js													
+| | |---log.js                            Log tool
+| | |---mtah5.js                          
 | | |---routes.js
 | | |---rand.js
 | |---pages                               Page directory
@@ -81,15 +76,11 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 ### Step 4. Compile and run
 
 #### Windows
-
 1. Install the latest version of Node.js. We recommend you choose a 64-bit `.msi` file. [Node.js download address](https://nodejs.org/en/download/)
-
 2. Press the `win + r` and enter `cmd` to open the command line window as administrator, locate the [project directory](#projectFolder), and run the following command.
-	
-```shell
+ ```shell
 $ npm install
 ```
-	
 ![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
 
 
@@ -103,31 +94,23 @@ $ npm install
 #### macOS
 
 1. Open the Terminal or command line window and run the following command to install Homebrew. Skip this step if you have already installed it.
-
-    ```shell
-    $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ```
-
+```shell
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 2. Run the following command to install Node.js.
-
-    ```shell
-    $ brew install node
-    ```
-
+```shell
+$ brew install node
+```
 3. If installing Node.js with the default address of Homebrew is slow, you can consider using a mirror address.
-
-    ```shell
-    $ cd `brew --repo`
-    $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
-    $ brew update
-    ```
-
+ ```shell
+$ cd `brew --repo`
+$ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+$ brew update
+```
 4. Run the `cd` command to go to the project directory and run the following command.
-
-    ```shell
-    $ npm install 
-    ```
-    
+```shell
+$ npm install 
+```
     ![](https://main.qcloudimg.com/raw/3f8e92e9c59ff1bdb9fd0b2a0f34852a.png)
     
 5. After the npm dependent libraries are all installed, run the following command in the command line window to run the demo.
@@ -153,7 +136,6 @@ $ npm install
 Starting from TRTC SDK 6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166).
 
 **Upgrade operation:**
-
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
 3. Select the **Quick Start** tab and click **Upgrade** in **Step 2: obtain the secret key to issue UserSig**.
