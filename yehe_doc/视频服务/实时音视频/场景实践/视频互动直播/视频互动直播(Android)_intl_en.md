@@ -7,15 +7,14 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 <span id="DemoUI"> </span>
 ## Reusing Demo UI
 
-
-
-
 <span id="ui.step1"></span>
 ### Step 1. Create an application
 1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Click **Start Now**, enter the application name such as `TestLiveRoom`, and click **Create Application**.
 
 >This feature uses two basic PaaS services, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
+
+
 
 <span id="ui.step2"></span>
 ### Step 2. Download the SDK and demo source code
@@ -34,8 +33,7 @@ To quickly access the ILVB feature, you can directly modify the demo provided by
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console** to manage the application.
 
->!
->The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
+>!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
 >The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-Side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166).
 
 <span id="ui.step4"></span>
@@ -298,7 +296,7 @@ mLiveRoom.requestJoinAnchor(mSelfUserId + "requested to co-anchor with you",
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRequestJoinAnchor(final TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, 
-		    String reason, final int timeout) {
+        String reason, final int timeout) {
         // 3. The anchor agrees to the co-anchoring request
         mLiveRoom.responseJoinAnchor(userInfo.userId, true, "agreed to co-anchor");
     }
@@ -383,7 +381,7 @@ mLiveRoom.sendRoomTextMsg("Hello Word!", null);
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String roomId, 
-		    String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
+        String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         Log.d(TAG, "A message from" + userInfo.userName + "is received:" + message);
     }
 });
@@ -399,7 +397,7 @@ mLiveRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String roomId, String cmd, 
-		    String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
+        String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // An on-screen comment is received
             Log.d(TAG, "An on-screen comment from" + userInfo.userName + "is received:" + message);
