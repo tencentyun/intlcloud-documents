@@ -3,8 +3,8 @@ A superplayer signature is used by the application playback service to authorize
 
 >! In the following cases, the application client needs a superplayer signature to play back the video:
 * [Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33986) is enabled for the domain name.
-* Another superplayer configuration rather than `default` is used.
-* An encrypted video is to be played back.
+* Another [superplayer](https://intl.cloud.tencent.com/document/product/266/38296) configuration rather than `default` is used.
+* An [encrypted](https://intl.cloud.tencent.com/document/product/266/38294) video is to be played back.
 
 The superplayer signature parameters and generation rule are as detailed below:
 
