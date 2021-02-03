@@ -14,9 +14,9 @@ Splice the plaintext signature string `original` based on the format requirement
 secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&random=[random]
 ```
 >!
-	- `[secretId]`, `[currentTimeStamp]`, `[expireTime]`, and `[random]` in the above `original` should be replaced with actual parameter values.
-	- `original` must contain four required parameters (`secretId`, `currentTimeStamp`, `expireTime`, and `random`) and may contain any number of optional parameters. For more information, please see [Signature Parameters](#p2).
-	- The parameter values must be URL-encoded; otherwise, `QueryString` parsing may fail.
+>- `[secretId]`, `[currentTimeStamp]`, `[expireTime]`, and `[random]` in the above `original` should be replaced with actual parameter values.
+>- `original` must contain four required parameters (`secretId`, `currentTimeStamp`, `expireTime`, and `random`) and may contain any number of optional parameters. For more information, please see [Signature Parameters](#p2).
+>- The parameter values must be URL-encoded; otherwise, `QueryString` parsing may fail.
 3. **Convert the plaintext string into a signature** (with code in Java as an example)
 	1. Use the `SecretKey` to encrypt the plaintext string `original` with the [HMAC-SHA1](https://www.ietf.org/rfc/rfc2104.txt) algorithm to get `signatureTmp`:
 	```java
