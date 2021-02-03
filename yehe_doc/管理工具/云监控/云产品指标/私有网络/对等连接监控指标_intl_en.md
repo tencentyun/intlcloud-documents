@@ -4,26 +4,28 @@ Namespace=QCE/PCX
 
 ## Monitoring Metrics
 
-| Metric Name | Description | Unit | Dimension |
-| ------------ | ---------- | ----- | ------------------- |
-| Inpkg | Inbound packets | Packets/second | peeringConnectionId |
-| Inbandwidth | Inbound bandwidth | Mbps | peeringConnectionId |
-| Outpkg | Outbound packets | Packets/second | peeringConnectionId |
-| Outbandwidth | Outbound bandwidth | Mbps | peeringConnectionId |
-| Pkgdrop | Packet loss rate | % | peeringConnectionId |
+| Parameter | Metric | Description | Unit | Dimension |
+| ------------ | ------------ | ---------------------------------------- | ----- | ------------------- |
+| InBandwidth  | Network inbound bandwidth   | Inbound bandwidth of peering connection                           | bps   | peeringConnectionId |
+| OutBandwidth | Network outbound bandwidth   | Outbound bandwidth of peering connection                           | bps   | peeringConnectionId |
+| InPkg        | Inbound packets       | Number of inbound packets of peering connection per second                       | Packets/sec | peeringConnectionId |
+| OutPkg       | Outbound packets       | Number of outbound packets of peering connection per second                       | Packets/sec | peeringConnectionId |
+| PkgDrop      | Packet loss rate       | Ratio of packets dropped by peering connection due to bandwidth limit to the total packets | %     | peeringConnectionId |
+| OutbandRate  | Outbound bandwidth utilization | Outbound bandwidth utilization of peering connection                     | %     | peeringConnectionId |
+| InbandRate   | Inbound bandwidth utilization | Inbound bandwidth utilization of peering connection                     | %     | peeringConnectionId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the period supported by each metric.
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Dimension Description | Format |
 | ------------------------------ | ------------------- | ------------------------------- | -------------------------------------------------- |
-| Instances.N.Dimensions.0.Name | peeringConnectionId | Dimension name of the peering connection ID | Enter a string-type peeringConnectionId dimension name |
-| Instances.N.Dimensions.0.Value | peeringConnectionId | A specific peering connection ID | Enter a specific peering connection ID, such as pcx-086ypwc8 |
+| Instances.N.Dimensions.0.Name  | peeringConnectionId | Peering connection ID dimension name | Enter a String-type dimension name: peeringConnectionId       |
+| Instances.N.Dimensions.0.Value | peeringConnectionId | Specific peering connection ID       | Enter a specific peering connection ID, such as `pcx-086ypwc8` |
 
-## Input Parameters
+## Input Parameter Description
 
-To query the monitoring data of a peering connection in a VPC instance, use the following input parameters:
+**To query the monitoring data of a peering connection in a VPC, set the following input parameters:**
 &Namespace=QCE/PCX
 &Instances.N.Dimensions.0.Name=peeringConnectionId
-&Instances.N.Dimensions.0.Value=<Peering connection ID>
+&Instances.N.Dimensions.0.Value=peering connection ID

@@ -4,25 +4,25 @@ Namespace=QCE/BWP
 
 ## Monitoring Metrics
 
-| Metric Name | Description | Unit | Dimension |
-| ------------ | ----- | ---- | ---------------------- |
-| OutTraffic | Public network outbound bandwidth | Mbps | bandwidthPackageId |
-| InTraffic | Public network inbound bandwidth | Mbps | bandwidthPackageId |
-| Outpkg | Outbound packets | Packets/sec | bandwidthPackageId |
-| Inpkg | Inbound packets | Packets/sec | bandwidthPackageId |
+| Parameter | Metric | Description | Unit | Dimension |
+| ---------- | ---------- | ---------------- | ----- | ------------------ |
+| InPkg      | Inbound packets     | Inbound packets of bandwidth package | Packets/sec | bandwidthPackageId |
+| InTraffic  | Inbound bandwidth     | Inbound bandwidth of bandwidth package | Mbps  | bandwidthPackageId |
+| OutPkg     | Outbound packets     |  Outbound packets of bandwidth package | Packets/sec | bandwidthPackageId |
+| OutTraffic | Outbound bandwidth     | Outbound bandwidth of bandwidth package | Mbps  | bandwidthPackageId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the period supported by each metric.
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Dimension Description | Format |
 | ------------------------------ | ------------------ | ------------------- | ------------------------------------------- |
-| Instances.N.Dimensions.0.Name | bandwidthPackageId | Dimension name of the bandwidth package ID | Enter a string-type bandwidthPackageId dimension name |
-| Instances.N.Dimensions.0.Value | bandwidthPackageId | A specific bandwidth package ID | Enter a specific bandwidth package ID, such as pdcg-4d545d |
+| Instances.N.Dimensions.0.Name  | bandwidthPackageId | Bandwidth package ID dimension name | Enter a String-type dimension name: bandwidthPackageId |
+| Instances.N.Dimensions.0.Value | bandwidthPackageId | Specific bandwidth package ID     | Enter a specific bandwidth package ID, such as `pdcg-4d545d`        |
 
-## Input Parameters
+## Input Parameter Description
 
-To query the monitoring data of a bandwidth package in a VPC instance, use the following input parameters:
+**To query the monitoring data of a bandwidth package in a VPC, set the following input parameters:**
 &Namespace=QCE/BWP
 &Instances.N.Dimensions.0.Name=bandwidthPackageId
-&Instances.N.Dimensions.0.Value=<Unique bandwidth package ID>
+&Instances.N.Dimensions.0.Value=unique bandwidth package ID
