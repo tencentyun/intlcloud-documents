@@ -12,7 +12,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>ServiceGroup feature was launched.</td><td>You can find ServiceGroup in the cluster details page.</td><td>2020-11-27</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37772">ECK Overview</a></td>
+    <td>ServiceGroup feature was launched.</td><td>You can find ServiceGroup in the cluster details page.</td><td>2020-11-27</td><td>ECK Overview</td>
 </tr>
 <tr>
     <td>The node installation script supports “check” and “clear” parameters.</td><td><li>The “check” parameter is convenient for users to use scripts to manually check where the installation requirements are not met in the node environment.</li><li>The “clear” parameter is convenient for one-click cleaning of dirty data in the node, turning off the firewall, etc.</li></td><td>2020-11-13</td><td>-</td>
