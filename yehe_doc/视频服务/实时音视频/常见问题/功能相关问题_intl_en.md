@@ -4,14 +4,14 @@ A `RoomID` (room ID) uniquely identifies a room and can range from 1 to 42949672
 
 [](id:que2)
 ### What is a UserID in TRTC? What is its value range? 
-A `UserID` (user ID) uniquely identifies a user in a TRTC application. It can contain letters (case insensitive), digits, and underscores, preferably not longer than 32 bytes.
+A `UserID` (user ID) uniquely identifies a user in a TRTC application. It can contain letters (case sensitive), digits, and underscores, preferably not longer than 32 bytes.
 
 
 [](id:que3)
 ### How long is the lifecycle of a TRTC room?
 - The first user who enters a room is the owner of the room, but cannot close the room.
 - A room is closed immediately by TRTC after all users exit the room.
-- A user will be cleared from a room 30 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 30 seconds.
+- A user will be cleared from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds.
 - If a user attempts to enter a room that does not exist, TRTC will create a room with the ID entered.
 
 [](id:que4)
@@ -91,7 +91,7 @@ The average end-to-end delay of TRTC around the globe is less than 300 ms.
 
 [](id:que18)
 ### Does TRTC support active calling?
-Signaling channels are used to enable active calling. For example, you can use the custom message feature of [IM](https://intl.cloud.tencent.com/zh/product/im) to enable active calling. For more information, please see the scenario-specific demos in the [SDK](https://intl.cloud.tencent.com/document/product/647/34615) source code.
+Signaling channels are used to enable active calling. For example, you can use the custom message feature of [IM](https://intl.cloud.tencent.com/product/im) to enable active calling. For more information, please see the scenario-specific demos in the [SDK](https://intl.cloud.tencent.com/document/product/647/34615) source code.
 
 [](id:que19)
 ### Can users use Bluetooth earphones when having one-to-one video calls in TRTC?
@@ -199,7 +199,7 @@ TRTC does not use separate channels for audio and video. You can make an audio-o
 ### Can I kick a user out, forbid a user to speak, or mute a user in a TRTC room?  
 Yes, you can.
 - To enable the features through simple signaling operations, use `sendCustomCmdMsg`, the custom signaling API of TRTC, to define your own control signaling, and users who receive the signaling will perform the actions expected. For example, to kick out a user, just define a kick-out signaling, and the user receiving it will exit the room.
-- If you want to implement a more comprehensive operation logic, we recommend that you use [Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047) to map the TRTC room to an IM group and enable the features via the sending/receiving of custom messages in the group.
+- If you want to implement a more comprehensive operation logic, we recommend that you use [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047) to map the TRTC room to an IM group and enable the features via the sending/receiving of custom messages in the group.
 
 [](id:que42)
 ### Can TRTC pull and play back RTMP/FLV streams?  
