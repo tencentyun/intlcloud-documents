@@ -6,15 +6,14 @@
 <span id="DemoUI"> </span>
 ## 复用 Demo 的 UI 界面
 
-
-
-
 <span id="ui.step1"></span>
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 单击【立即开始】，输入应用名称，例如 `TestLiveRoom` ，单击【创建应用】。
 
 >?本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+
+
 
 <span id="ui.step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
@@ -33,8 +32,7 @@
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
->!
->本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
+>!本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
 >正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 <span id="ui.step4"></span>
@@ -297,7 +295,7 @@ mLiveRoom.requestJoinAnchor(mSelfUserId + "请求和您连麦",
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRequestJoinAnchor(final TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, 
-		    String reason, final int timeout) {
+        String reason, final int timeout) {
         // 3.同意对方的连麦请求
         mLiveRoom.responseJoinAnchor(userInfo.userId, true, "同意连麦");
     }
@@ -382,7 +380,7 @@ mLiveRoom.sendRoomTextMsg("Hello Word!", null);
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomTextMsg(String roomId, 
-		    String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
+        String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         Log.d(TAG, "收到来自" + userInfo.userName + "的消息:" + message);
     }
 });
@@ -398,7 +396,7 @@ mLiveRoom.sendRoomCustomMsg("CMD_LIKE", "", null);
 mLiveRoom.setDelegate(new TRTCLiveRoomDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String roomId, String cmd, 
-		    String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
+        String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // 收到弹幕消息
             Log.d(TAG, "收到来自" + userInfo.userName + "的弹幕消息:" + message);
