@@ -7,7 +7,7 @@ Harbor is an open source enterprise-class Docker Registry project of VMware. On 
 To synchronize data in the self-built Harbor to a TCR instance, you need to confirm and complete the following preparations first:
 - The Harbor service has been set up and only Harbor V1.8.0 and later versions are supported.
 - The self-built Harbor can access TCR through a private line, public network, or VPC.
-- You have [created an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486) in the region of the cloud container cluster or in an adjacent region.
+- You have [Purchasing Instances](https://intl.cloud.tencent.com/document/product/1051/39088) in the region of the cloud container cluster or in an adjacent region.
 - If you are using a sub-account, you must have granted the sub-account the permission to push TCR and Helm Chart to corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248). We recommend that you grant the full TCR access permissions to the sub-account used for synchronization configuration.
 
 ## Directions
