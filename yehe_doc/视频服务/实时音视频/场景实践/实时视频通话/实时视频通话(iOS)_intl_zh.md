@@ -31,8 +31,8 @@
 1. 解压 [步骤2](#ui.step2) 中下载的源码包。
 2. 找到并打开 `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` 文件。
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
-	- SDKAPPID：默认为0，请设置为实际的 SDKAppID。
-	- SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
+  - SDKAPPID：默认为0，请设置为实际的 SDKAppID。
+  - SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
 ![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
@@ -173,12 +173,12 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 // 2.观看对方的画面
 // 由于 A 打开了摄像头，B 接受通话后会收到 onUserVideoAvailable(A, true) 回调
 - (void)onUserVideoAvailable:(NSString *)uid available:(BOOL)available {
-	if (available) {
-		UIView* renderView =[[UIView alloc] init];
-		[[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // 就可以看到对方的画面了
-	} else {
-		[[TRTCCalling shareInstance] stopRemoteView:uid]; // 停止渲染画面
-	}
+  if (available) {
+    UIView* renderView =[[UIView alloc] init];
+    [[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // 就可以看到对方的画面了
+  } else {
+    [[TRTCCalling shareInstance] stopRemoteView:uid]; // 停止渲染画面
+  }
 }
 
 // 3.调用组件的其他功能函数发起通话或挂断等
