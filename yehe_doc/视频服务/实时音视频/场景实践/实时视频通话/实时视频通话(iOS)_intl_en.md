@@ -31,8 +31,8 @@ To quickly implement the video call feature, you can directly modify the demo pr
 1. Decompress the source package downloaded in [step 2](#ui.step2).
 2. Find and open the `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` file.
 3. Set the parameters in the `GenerateTestUserSig.h` file:
-	- SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.
-	- SECRETKEY: it is an empty string by default. Please replace it with the real key information.
+  - SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.
+  - SECRETKEY: it is an empty string by default. Please replace it with the real key information.
 ![](https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png)
 4. Return to the TRTC Console and click **Pasted and Next**.
 5. Click **Close Guide and Log in to the Console to Manage the Application**.
@@ -173,12 +173,12 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 // 2. View each other's image
 // As user A enables the camera, user B will receive the `onUserVideoAvailable(A, true)` callback after answering the call
 - (void)onUserVideoAvailable:(NSString *)uid available:(BOOL)available {
-	if (available) {
-		UIView* renderView =[[UIView alloc] init];
-		[[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // They can see each other's image
-	} else {
-		[[TRTCCalling shareInstance] stopRemoteView:uid]; // Stops rendering the image
-	}
+  if (available) {
+    UIView* renderView =[[UIView alloc] init];
+    [[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // 就可以看到对方的画面了
+  } else {
+    [[TRTCCalling shareInstance] stopRemoteView:uid]; // 停止渲染画面
+  }
 }
 
 // 3. Call the component’s other functions to initiate or hang up a call or to use other features
