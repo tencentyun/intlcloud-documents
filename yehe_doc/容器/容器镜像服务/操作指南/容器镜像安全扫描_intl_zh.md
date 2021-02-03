@@ -6,7 +6,7 @@
 ## 前提条件
 
 在使用镜像安全扫描功能前，您需要完成以下准备工作：
-- 已成功 [创建企业版实例](https://intl.cloud.tencent.com/document/product/1051/35486)。
+- 已成功 [购买企业版实例](https://intl.cloud.tencent.com/document/product/1051/39088)。
 - 如果使用子账号进行操作，请参考 [企业版授权方案示例](https://intl.cloud.tencent.com/document/product/1051/37248) 提前为子账号授予对应实例的操作权限。
 
 ## 操作步骤
