@@ -11,8 +11,8 @@
 This document describes how to [automatically update a monitored object in the dashboard](#step1), [automatically update an alarm object](#step2), and [block a frequently triggered alarm object](#step3) by taking the "TKE monitoring - pod" dimension as an example.
 
 
-
-### Automatically updating monitored object in dashboard[](id:step1)
+<span id ="step1"></span>
+### Automatically updating monitored object in dashboard
 
 1. Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor).
 2. Select **Dashboard** > **Dashboard List** > **Create Dashboard** > **Create Chart**.
@@ -26,8 +26,8 @@ This document describes how to [automatically update a monitored object in the d
     ![](https://main.qcloudimg.com/raw/c45372837b44f2c8f05b7e3cda64bc2d.png)
 4. After completing the configuration, click **Save** in the top-right corner of the page to save the chart.
 
-
-### Automatically updating alarm object[](id:step2)
+<span id ="step2"></span>
+### Automatically updating alarm object
 
 1. Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor).
 2. Select **Alarm Configuration** > **Alarm Policy** > **Create** to enter the alarm policy creation page.
@@ -38,7 +38,8 @@ This document describes how to [automatically update a monitored object in the d
  ![](https://main.qcloudimg.com/raw/d1fa4734d7a250fef6e7b5c95665640a.png)
 >?For more information on how to configure an alarm, please see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
-### Blocking frequently triggered alarm object[](id:step3)
+<span id ="step3"></span>
+### Blocking frequently triggered alarm object
 
 When a pod frequently triggers an alarm, you can block some or all alarm objects under the node as instructed below.
 
