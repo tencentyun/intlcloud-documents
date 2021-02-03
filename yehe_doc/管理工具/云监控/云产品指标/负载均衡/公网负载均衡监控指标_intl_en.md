@@ -2,84 +2,106 @@
 
 Namespace=QCE/LB_PUBLIC
 
+>?This namespace includes monitoring data in the CLB instance and real server dimensions.
 
 ## Monitoring Metrics
 
-| Parameter | Metric Name | Unit |
-| ---------------- | ----- |---- |
-| Connum | Connections | Count |
-| NewConn | New connections | Connections/sec |
-| Intraffic | Public inbound bandwidth | Mbps |
-| Outtraffic | Public outbound bandwidth | Mbps |
-| Inpkg | Inbound packets | Packets/sec |
-| Outpkg | Outbound packets | Packets/sec |
+| Parameter | Metric | Unit | Statistical Period |
+| ------------- | ------------------ | ------- | ------------ |
+| AccOuttraffic | Public network outbound traffic | MB | 10, 60, 300, 3600 |
+| ClbHttp3xx | 3xx status code returned by CLB | Codes/min | 60, 300, 3600 |
+| ClbHttp404 | 404 status code returned by CLB | Codes/min | 60, 300, 3600 |
+| ClbHttp4xx | 4xx status code returned by CLB | Codes/min | 60, 300, 3600 |
+| ClbHttp502 | 502 status code returned by CLB | Codes/min | 60, 300, 3600 |
+| ClbHttp5xx | 5xx status code returned by CLB | Codes/min | 60, 300, 3600 |
+| ConNum     | Current connections | -    | 60, 300, 3600 |
+| Http2xx | 2xx status code | Codes/min | 60, 300, 3600 |
+| Http3xx | 3xx status code | Codes/min | 60, 300, 3600 |
+| Http404 | 404 status code | Codes/min | 60, 300, 3600 |
+| Http4xx | 4xx status code | Codes/min | 60, 300, 3600 |
+| Http502 | 502 status code | Codes/min | 60, 300, 3600 |
+| Http5xx | 5xx status code | Codes/min | 60, 300, 3600 |
+| InactiveConn | Inactive connections | - | 60, 300, 3600 |
+| InPkg | Public network inbound packets | Packets/sec | 10, 60, 300, 3600 |
+| InTraffic | Public network inbound bandwidth | Mbps | 10, 60, 300, 3600 |
+| NewConn    | New connections | Connections/sec | 60, 300, 3600 |
+| OutPkg        | Public network outbound packets         | Packets/sec   | 10, 60, 300, 3600  |
+| OutTraffic    | Public network outbound bandwidth         | Mbps    | 10, 60, 300, 3600  |
+| ReqAvg        | Average request time       | ms    | 60, 300, 3600      |
+| ReqMax        | Maximum request time       | ms    | 60, 300, 3600      |
+| RspAvg        | Average response time       | ms    | 60, 300, 3600      |
+| RspMax        | Maximum response time       | ms    | 60, 300, 3600      |
+| RspTimeout    | Timed-out responses       | Responses/min | 60, 300, 3600      |
+| SuccReq       | Successful requests   | Requests/min | 60, 300, 3600      |
+| TotalReq      | Requests         | Requests/sec      | 60, 300, 3600      |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
 
 
-## Overview of the Parameters in Each Dimension
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
+
+## Overview of Parameters in Each Dimension
 
 | Parameter Name | Dimension Name | Dimension Description | Format |
-| ------------------ | ---------------- | ------------- | ----------------------------- |
-| Instances.N.Dimensions.0.name | vip | Dimension name of the CLB VIP | Enter a string-type dimension name, such as vip |
-| Instances.N.Dimensions.0.value | vip | A specific CLB VIP | Enter a specific IP address, such as 111.111.111.11 |
-| Instances.N.Dimensions.1.name | loadBalancerPort | Dimension name of the CLB instance port | Enter a string-type dimension name, such as loadBalancerPort |
-| Instances.N.Dimensions.1.value | loadBalancerPort | A specific CLB port | Enter a specific port number, such as 80 |
-| Instances.N.Dimensions.2.name | protocol | Dimension name of the protocol | Enter a string-type dimension name, such as protocol |
-| Instances.N.Dimensions.2.value | protocol | A specific protocol | Enter a specific protocol name, such as http |
-| Instances.N.Dimensions.3.name | vpcId | Dimension name of the VPC ID | Enter a string-type dimension name, such as vpcId |
-| Instances.N.Dimensions.3.value | vpcId | A specific VPC ID (of the CLB instance) | Enter a specific VPC ID, such as 1111. We recommend that you enter a numeric vpcId. For information on obtaining the numeric vpcId, see [DescribeLoadBalancerListByCertId](https://intl.cloud.tencent.com/document/product/214/33800) |
-| Instances.N.Dimensions.4.name | lanIp | Dimension name of the lanIp | Enter a string-type dimension name, such as lanIp |
-| Instances.N.Dimensions.4.value | lanIp | A specific IP address of the real server bound to the CLB instance | Enter a specific IP address, such as 111.222.111.22 |
-| Instances.N.Dimensions.5.name | port | Dimension name of the port number | Enter a string-type dimension name, such as port |
-| Instances.N.Dimensions.5.value | port | A specific port number of the real server bound to the CLB instance | Enter a specific port number, such as 80 |
+| ------------------------------ | ---------------- | ----------------------------- | ------------------------------------------------------------ |
+| Instances.N.Dimensions.0.name  | vip      | CLB VIP dimension name | Enter a String-type dimension name: vip |
+| Instances.N.Dimensions.0.value | vip      | Specific CLB VIP        | Enter a specific IP address, such as 111.111.111.11    |
+| Instances.N.Dimensions.1.name  | loadBalancerPort | CLB listener port dimension name | Enter a String-type dimension name: loadBalancerPort |
+| Instances.N.Dimensions.1.value | loadBalancerPort | Specific CLB listener port     | Enter a specific port number, such as 80                   |
+| Instances.N.Dimensions.2.name  | protocol | Listener protocol dimension name            | Enter a String-type dimension name: protocol         |
+| Instances.N.Dimensions.2.value | protocol | Specific listener protocol                | Enter a specific protocol name, such as http            |
+| Instances.N.Dimensions.3.name  | vpcId    | VPC ID dimension name       | Enter a String-type dimension name: vpcId                              |
+| Instances.N.Dimensions.3.value | vpcId    | Specific CLB VPC ID | Enter a specific VPC ID, such as `vpc-1ywqac83` |
+| Instances.N.Dimensions.4.name  | lanIp            | Real server IP address dimension name             | Enter a String-type dimension name: lanIp                                |
+| Instances.N.Dimensions.4.value | lanIp            | Specific real server IP address  | Enter a specific IP address, such as `111.222.111.22`                        |
+| Instances.N.Dimensions.5.name  | port             | Real server port dimension name             | Enter a String-type dimension name: port                                 |
+| Instances.N.Dimensions.5.value | port             | Specific real server port number | Enter a specific port number, such as `80`                                     |
 
-## Input Parameters
+## Input Parameter Description
 
-Public network CLB instances support the combinations of the following four dimensions for querying monitoring data. The values for the four types of input parameters are as follows:
+Monitoring data of public network CLB can be queried based on the following four combinations of dimensions. The values for input parameters are as follows:
 
-#### 1. Values of the input parameters at the public network CLB instance dimension
-
-&Namespace: QCE/LB_PUBLIC
-&Instances.N.Dimensions.0.Name=vip
-&Instances.N.Dimensions.0.Value=<IP address>
-
-#### 2. Values of the input parameters at the public network CLB instance port dimension
+#### 1. Values of input parameters in public network CLB instance dimension
 
 &Namespace: QCE/LB_PUBLIC
 &Instances.N.Dimensions.0.Name=vip
-&Instances.N.Dimensions.0.Value=<IP address>
+&Instances.N.Dimensions.0.Value=IP address
+
+#### 2. Values of input parameters in public network CLB listener dimension
+
+&Namespace: QCE/LB_PUBLIC
+&Instances.N.Dimensions.0.Name=vip
+&Instances.N.Dimensions.0.Value=IP address
 &Instances.N.Dimensions.1.Name=loadBalancerPort
-&Instances.N.Dimensions.1.Value=<Port number>
+&Instances.N.Dimensions.1.Value=Port number
 &Instances.N.Dimensions.2.Name=protocol
-&Instances.N.Dimensions.2.Value=<Protocol type>
+&Instances.N.Dimensions.2.Value=Protocol type
 
-#### 3 Values of the input parameters at the public network CLB real server dimension
+#### 3. Values of input parameters in public network CLB real server dimension
 
 &Namespace: QCE/LB_PUBLIC
 &Instances.N.Dimensions.0.Name=vip
-&Instances.N.Dimensions.0.Value=<IP address>
+&Instances.N.Dimensions.0.Value=IP address
 &Instances.N.Dimensions.1.Name=loadBalancerPort
-&Instances.N.Dimensions.1.Value=<Port number>
+&Instances.N.Dimensions.1.Value=Port number
 &Instances.N.Dimensions.2.Name=protocol
-&Instances.N.Dimensions.2.Value=<Protocol type>
+&Instances.N.Dimensions.2.Value=Protocol type
 &Instances.N.Dimensions.3.Name=vpcId
-&Instances.N.Dimensions.3.Value=<VPC ID of the CLB instance>
+&Instances.N.Dimensions.3.Value=VPC ID of real server
 &Instances.N.Dimensions.4.Name=lanIp
-&Instances.N.Dimensions.4.Value=<IP address of the real server bound to the CLB instance>
+&Instances.N.Dimensions.4.Value=Real server IP of CLB instance
 
-#### 4. Values of the input parameters at the public network CLB real server port dimension
+#### 4. Values of input parameters in public network CLB real server port dimension
 
 &Namespace: QCE/LB_PUBLIC
 &Instances.N.Dimensions.0.Name=vip
-&Instances.N.Dimensions.0.Value=<IP address>
+&Instances.N.Dimensions.0.Value=IP address
 &Instances.N.Dimensions.1.Name=loadBalancerPort
-&Instances.N.Dimensions.1.Value=<Port number>
+&Instances.N.Dimensions.1.Value=Port number
 &Instances.N.Dimensions.2.Name=protocol
-&Instances.N.Dimensions.2.Value=<Protocol type>
+&Instances.N.Dimensions.2.Value=Protocol type
 &Instances.N.Dimensions.3.Name=vpcId
-&Instances.N.Dimensions.3.Value=<VPC ID of the CLB instance>
+&Instances.N.Dimensions.3.Value=VPC ID of CLB instance
 &Instances.N.Dimensions.4.Name=lanIp
-&Instances.N.Dimensions.4.Value=<IP address of the real server bound to the CLB instance>
+&Instances.N.Dimensions.4.Value=real server IP of CLB instance
 &Instances.N.Dimensions.5.Name=port
-&Instances.N.Dimensions.5.Value=<Port number of the real server bound to the CLB instance>
+&Instances.N.Dimensions.5.Value=Real server port number of CLB instance

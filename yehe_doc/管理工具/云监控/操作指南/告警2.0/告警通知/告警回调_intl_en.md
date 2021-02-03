@@ -1,4 +1,4 @@
-Your self-built system can directly receive Cloud Monitor alarm notifications through API callback. API callback can push alarm notifications to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm notifications you receive from API callback.
+Your WeCom group or self-built system can directly receive Cloud Monitor alarm notifications through API callback. API callback can push alarm notifications to URLs that are accessible over the public network through HTTP POST requests. You can take further actions based on the alarm notifications you receive from API callback.
 
 > ? 
 > - After you save the callback URL, the system will automatically verify your URL once. The timeout threshold for this verification is 5 seconds. When an alarm policy created by the user is triggered or the alarm is resolved, the alarm messages will be pushed through the API callbacks. An alarm message can be pushed up to three times, and the timeout threshold for each request is 5 seconds.
@@ -7,12 +7,12 @@ Your self-built system can directly receive Cloud Monitor alarm notifications th
 
 ## Directions
 
-1. Enter the [Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page in the Cloud Monitor Console.
+1. Enter the [Notification Template](https://console.cloud.tencent.com/monitor/alarm2/notice) page in the Cloud Monitor console.
 2. Click **Create** to create a notification template.
 3. After configuring the basic information on the notification template creation page, enter an alarm callback URL accessible over the public network in the API callback module.
 4. Enter the [Alarm Policy List](https://console.cloud.tencent.com/monitor/alarm2/policy), click the name of the policy that needs to bind alarm callbacks to enter the alarm policy management page, and click the notification template.
 5. If the HTTP response returns code 200, the verification is successful. After the callback URL is successfully verified, Cloud Monitor will push the alarm messages through the HTTP POST requests to the URL of your system. You can further process the pushed alarm information by referring to [Alarm Callback Parameters](#.E5.91.8A.E8.AD.A6.E5.9B.9E.E8.B0.83.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E).
-![](https://main.qcloudimg.com/raw/88ae443dd1118dd2939dda42928a8fcf.png)
+   ![](https://main.qcloudimg.com/raw/88ae443dd1118dd2939dda42928a8fcf.png)
 
 ## Alarm Callback Parameters
 
@@ -59,9 +59,9 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 }
 ```
 
->? 
->
->- To get the namespace and metric names of a specific service, please see [Tencent Cloud Service Metrics](https://intl.cloud.tencent.com/document/product/248/6843).
+> ? 
+> - To get the namespace and metric names of a specific service, please see [Tencent Cloud Service Metrics](https://intl.cloud.tencent.com/document/product/248/6843).
+> - To get the policy type names of a specific service, please see [Tencent Cloud Service Policy Type](https://intl.cloud.tencent.com/document/product/248/39351).
 
 #### Sample metric alarm dimensions
 
@@ -287,6 +287,20 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
     "objName": "xxx"       // Instance information returned in the alarm SMS message
 }
 ```
+
+**CDN**
+
+```
+"dimensions":{
+    "appid":"xxx",
+    "domain":"xxx",
+    "objId":"xxx",
+    "objName":"xxx",
+    "projectid":"xxx"
+}
+```
+
+
 
 ### Event alarm
 
