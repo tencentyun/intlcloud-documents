@@ -117,7 +117,7 @@
     <td>创建集群支持设置节点配置置放群组</td>	<td>该功能使得节点在启动时就具备容灾性和高可用性。</td><td>2020-07-15</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/30637">创建集群</a></td>
 </tr>
 <tr>
-    <td>云原生监控内测版本上线</td>	<td>支持一键部署高可用监控架构，快速关联 TKE 集群和 EKS 集群。</td><td>2020-07-15</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/38823">云原生监控</a></td>
+    <td>云原生监控内测版本上线</td>	<td>支持一键部署高可用监控架构，快速关联 TKE 集群和 EKS 集群。</td><td>2020-07-15</td>	<td>云原生监控</td>
 </tr>
 <tr>
     <td>云原生监控采集配置和告警配置产品化</td>	<td><ul class="params"><li>支持 service monitor，pod monitor 和 raw job 三种配置方式。</li><li>支持告警历史回溯。</li></ul></td><td>2020-07-15</td>	<td>-</td>
@@ -196,7 +196,7 @@
 	<td>容器服务支持 GlobalRouter 和 VPC-CNI 双网络模式</td>
 	<td>腾讯云容器服务（TKE） 针对不同应用场景提供 GlobalRouter 和 VPC-CNI 两种网络模式，可以根据业务需要自行选择。</td>
 	<td>2020-03-30</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/35248">如何选择容器服务网络模式</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/38966">如何选择容器服务网络模式</a></td>
 </tr>
 <tr>
 	<td>容器服务下线涉及 TencentHub 相关功能</td>	<td>Tencent Hub 预计本月内下线，容器服务已正式下线涉及 TencentHub 相关功能，并不再支持相关 API 接口。</td>
@@ -431,12 +431,12 @@
 <td>容器服务支持 VPC-CNI 网络模式内测上线</td>
     <td>容器服务提供 VPC-CNI 扩展网络模式，<b>能够为集群内的 Pod 分配 VPC 内的 IP 地址</b>。VPC-CNI 模式下集群可创建支持固定 IP 类型的 StatefulSet ，其 Pod IP 不会因重启和迁移发生变化。</td>
 <td>2019-06-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/35250">集群开启 VPC-CNI 模式网络</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/38971">集群开启 VPC-CNI 模式网络</a></td>
 <tr>
 <td>StatefulSet 支持固定 IP 内测上线</td>
     <td> StatefulSet 固定 IP 能力有助于<b> 解决因 Pod 重启或迁移导致 IP 地址发生变化的问题</b>，用户可通过创建固定 IP 类型 StatefulSet，实现来源 IP 授权、基于 IP 做流程审核、基于 Pod IP 做日志查询等业务需求，保证业务持续稳定运行。</td>
 <td>2019-06-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/35249">固定 Pod IP 类型 StatefulSet 管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/38974">固定 Pod IP 类型 StatefulSet 管理</a></td>
 </tr>
 <tr>
 <td>容器服务默认采用新版控制台</td>
@@ -484,7 +484,7 @@
 <td>容器服务的容器网络支持注册到云联网</td>
     <td>容器服务支持<b>将已有集群注册到云联网，云联网可将容器网络归纳至管理范围中</b>。当容器网络完成注册后，您可以在云联网侧启用或关闭容器网络的网段路由，实现容器集群与云联网内的资源互通。</td>
 <td>2019-05-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/34021">注册容器集群到云联网</a></td>
+<td>注册容器集群到云联网</td>
 </tr>
 <tr>
 <td>容器服务支持 GPU 虚拟化能力</td>
@@ -678,7 +678,7 @@
 	<td>容器服务新版控制台内测上线</td>
         <td>容器服务新版控制台进行了一系列功能模块的调整，<b>为您提供一个原生、更易用的平台</b>。<b>新旧控制台功能兼容</b>，控制台切换使用不会对您的业务产生影响，您可使用新版控制台继续操作原有集群。</td>
 	<td>2018-10-31</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30633">新版控制台说明</a></td>
+        <td>新版控制台说明</td>
 	</tr>
 	<tr>
 	<td>Service 指定负载均衡只绑定部分节点</td>
@@ -1191,7 +1191,7 @@
 		<td>镜像管理</td>
 		<td>Docker 官方镜像、我的镜像、上传下载私有镜像、Docker 官方镜像加速功能。</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9103">镜像仓库</a></td>
+        <td> - </td>
 	</tr>
 	<tr>
 		<td>集群监控及容器监控</td>
