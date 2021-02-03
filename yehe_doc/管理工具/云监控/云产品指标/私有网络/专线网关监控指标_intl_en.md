@@ -6,25 +6,28 @@ Namespace=QCE/DCG
 
 ## Monitoring Metrics
 
-| Metric Name | Description | Unit | Dimension |
-| ------------ | ---------- | ----- | ---------------------- |
-| Outbandwidth | Public network outbound bandwidth | Mbps | directConnectGatewayId |
-| Inbandwidth | Public network inbound bandwidth | Mbps | directConnectGatewayId |
-| Outpkg | Outbound packets | Packets/sec | directConnectGatewayId |
-| Inpkg | Inbound packets | Packets/sec | directConnectGatewayId |
+| Parameter | Metric | Description | Unit | Dimension |
+| ------------ | ---------- | ------------------ | ----- | ---------------------- |
+| InBandwidth | Network inbound bandwidth | Network inbound bandwidth of Direct Connect | Mbps | directConnectGatewayId |
+| InPkg | Inbound packets | Inbound packets of Direct Connect | Packets/sec | directConnectGatewayId |
+| OutBandwidth | Network outbound bandwidth | Network outbound bandwidth of Direct Connect | Mbps | directConnectGatewayId |
+| OutPkg | Outbound packets | Outbound packets of Direct Connect | Packets/sec | directConnectGatewayId |
+| Rxbytes | Inbound traffic | Inbound traffic of Direct Connect | GB | directConnectGatewayId |
+| Txbytes | Outbound traffic | Outbound traffic of Direct Connect | GB | directConnectGatewayId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the period supported by each metric.
 
-## Overview of the Parameters in Each Dimension
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+## Overview of Parameters in Each Dimension
+
+| Parameter | Dimension | Dimension Description          | Format |
 | ------------------ | ---------------- | ------------- | ----------------------------- |
-| Instances.N.Dimensions.0.Name | directConnectGatewayId | Dimension name of the direct connect gateway ID | Enter a string-type directConnectGatewayId dimension name |
-| Instances.N.Dimensions.0.Value | directConnectGatewayId | A specific ID of the direct connect gateway | Enter a specific direct connect gateway ID, such as dcg-4d545d |
+| Instances.N.Dimensions.0.Name | directConnectGatewayId | Direct Connect gateway ID dimension name | Enter a String-type dimension name: directConnectGatewayId |
+| Instances.N.Dimensions.0.Value | directConnectGatewayId | Specific Direct Connect gateway ID | Enter a specific Direct Connect gateway ID: dcg-4d545d |
 
-## Input Parameters
+## Input Parameter Description
 
-To query the monitoring data of a direct connect gateway in a VPC instance, use the following input parameters:
+**To query the monitoring data of a Direct Connect gateway in a VPC, set the following input parameters:**
 &Namespace=QCE/DCG
 &Instances.N.Dimensions.0.Name=directConnectGatewayId
-&Instances.N.Dimensions.0.Value=<Direct connect gateway ID>
+&Instances.N.Dimensions.0.Value=Direct Connect gateway ID
