@@ -38,7 +38,7 @@ The VOD subapplication system has the following limits:
 - The name and description of the primary application cannot be modified.
 - Subapplications cannot be deleted.
 - Up to 50 subapplications can be created under one VOD account.
-- No separate billing logic (such as billing mode, separate bill generation, and purchase of exclusive resources) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and intelligent video recognition duration) is aggregated for fee calculation and unified billing.
+- No separate billing logic (such as billing mode and separate bill generation) can be set for subapplications. All subapplications under a VOD account belong to the same account, and all VOD usage data (including but not limited to VOD billable items such as storage, traffic, transcoding duration, and intelligent video recognition duration) is aggregated for fee calculation and unified billing.
 
 ## <span id="p3"></span>Console Use Instructions
 
@@ -67,10 +67,10 @@ Under the subapplication role, usage of the VOD console is basically the same as
 After enabling the subapplication feature, you must specify the subapplication whose resources you want to access when using VOD server APIs.
 
 ### <span id = "p2"></span>Specifying subapplication in server API
-VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/zh/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 ### Specifying subapplication in server API 2017
-Server API 2017 also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](https://intl.cloud.tencent.com/zh/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+Server API 2017 also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](https://intl.cloud.tencent.com/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 >?
 >- Server API 2017 documentation does not disclose the `SubAppId` parameter, which will not affect the use of it though.
