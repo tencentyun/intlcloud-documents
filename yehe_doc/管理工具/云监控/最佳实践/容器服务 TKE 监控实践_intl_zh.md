@@ -11,8 +11,8 @@
 下列以“容器监控-pod”维度为例，介绍如何实现 [自动更新 Dashboard 监控对象](#step1)、[自动更新告警监控对象](#step2) 和 [屏蔽频繁告警监控对象](#step3)。
 
 
-
-### 自动更新 Dashboard 监控对象[](id:step1)
+<span id ="step1"></span>
+### 自动更新 Dashboard 监控对象
 
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2. 选择【Dashboard】>【Dashboard 列表】>【新建 Dashboard】>【新建图表】。
@@ -26,8 +26,8 @@
     ![](https://main.qcloudimg.com/raw/c45372837b44f2c8f05b7e3cda64bc2d.png)
 4. 配置完后在页面右上方单击【保存】，即可保存图表。
 
-
-###  自动更新告警监控对象[](id:step2)
+<span id ="step2"></span>
+###  自动更新告警监控对象
 
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2. 选择【告警配置】>【告警策略】>【新建】，进入新建告警策略页。
@@ -38,7 +38,8 @@
  ![](https://main.qcloudimg.com/raw/d1fa4734d7a250fef6e7b5c95665640a.png)
 >?如需了解更多告警配置请参见 [新建告警策略](https://intl.cloud.tencent.com/document/product/248/38916)。
 
-### 屏蔽频繁告警监控对象[](id:step3)
+<span id ="step3"></span>
+### 屏蔽频繁告警监控对象
 
 当 Pod 频繁触发告警，您可以参考以下说明屏蔽 Node下部分或所有 Pods 监控告警对象。
 
