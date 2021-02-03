@@ -14,9 +14,9 @@
 secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&random=[random]
 ```
 >!
-	- 上述 original 中的`[secretId]`、`[currentTimeStamp]`、`[expireTime]`及`[random]`需您自行替换成具体的参数值。
-	- original 至少包含`secretId`、`currentTimeStamp`、`expireTime`及`random`四个必选参数，可包含任意多个选填参数，详细请参见 [签名参数](#p2)。
-	- 参数值必须经过 UrlEncode，否则可能导致 QueryString 解析失败。
+>- 上述 original 中的`[secretId]`、`[currentTimeStamp]`、`[expireTime]`及`[random]`需您自行替换成具体的参数值。
+>- original 至少包含`secretId`、`currentTimeStamp`、`expireTime`及`random`四个必选参数，可包含任意多个选填参数，详细请参见 [签名参数](#p2)。
+>- 参数值必须经过 UrlEncode，否则可能导致 QueryString 解析失败。
 3. **将明文串转为最终签名**（以部分 Java 代码为例）
 	1. 用已获取的 SecretKey 对明文串 original 进行 [HMAC-SHA1](https://www.ietf.org/rfc/rfc2104.txt) 加密，得到 signatureTmp：
 	```java
