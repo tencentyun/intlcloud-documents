@@ -32,10 +32,10 @@
     <td>The beta productized Nginx-Ingress was launched.</td><td>TKE is fully compatible with and expands the native Nginx-ingress to help users quickly deploy and build production-level traffic access gateways, providing comprehensive Nginx-ingress full lifecycle management, automatic cloud native monitoring, CLS, and supporting OPS capabilities.</td><td>2020-11-26</td><td>-</td>
 </tr>
 <tr>
-    <td>Event dashboard was launched.</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
+    <td>Event dashboard was launched.</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td>Event Dashboard</td>
 </tr>
 <tr>
-    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">Auditing Dashboard</a></td>
+    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td>Auditing Dashboard</td>
 </tr>
 <tr>
     <td>Operating system can be modified at the node pool level and cluster level.</td><td>Users can create node pools of different operating systems as needed to facilitate the standardized management of nodes.</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">Creating a Node Pool</a></td>
@@ -51,13 +51,13 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>TPS supports using edge cluster as monitoring object to access the monitoring instance.</td><td>TPS supports the monitoring of edge clusters and the management of multiple clusters across VPCs.</td><td>2020-10-30</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">PROM Instance Management</a></td>
+    <td>TPS supports using edge cluster as monitoring object to access the monitoring instance.</td><td>TPS supports the monitoring of edge clusters and the management of multiple clusters across VPCs.</td><td>2020-10-30</td><td>PROM Instance Management</td>
 </tr>
 <tr>
-    <td>TPS alarm policy supports webhook configuration.</td><td>The alarm policy supports webhook configuration, which enables users to troubleshoot abnormal services in time and improve service stability.</td><td>2020-10-30</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">Alarm Configurations</a></td>
+    <td>TPS alarm policy supports webhook configuration.</td><td>The alarm policy supports webhook configuration, which enables users to troubleshoot abnormal services in time and improve service stability.</td><td>2020-10-30</td><td>Alarm Configurations</td>
 </tr>
 <tr>
-    <td>TKE node pool adds the capability of viewing scaling log.</td><td>This feature helps users to more easily observe the change of node number in the node pool as well as the trigger cause and result of scaling, improving the node pool observability.</td><td>2020-10-13</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38828">Viewing Node Pool Scaling Logs</a></td>
+    <td>TKE node pool adds the capability of viewing scaling log.</td><td>This feature helps users to more easily observe the change of node number in the node pool as well as the trigger cause and result of scaling, improving the node pool observability.</td><td>2020-10-13</td><td>Viewing Node Pool Scaling Logs</td>
 </tr>
 </table>
 
@@ -89,7 +89,7 @@
     <td>The monitoring capability of the cloud native monitoring service was optimized.</td><td><ul class="params"><li>The cluster monitoring collection items are preset, and a diverse Grafana dashboard is available.</li><li>The Targets list page is added to allow users to view the real-time status of monitoring tasks.</li></ul></td><td>2020-08-31</td><td>-</td>
 </tr>
 <tr>
-    <td>The alarm module of the cloud native monitoring service was upgraded.</td><td><ul class="params"><li>It can be associated with a local Alertmanager add-on.</li><li>It supports managing PROM instance rules with CRD.</li></ul></td><td>2020-08-31</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">Alarm Configurations</a></td>
+    <td>The alarm module of the cloud native monitoring service was upgraded.</td><td><ul class="params"><li>It can be associated with a local Alertmanager add-on.</li><li>It supports managing PROM instance rules with CRD.</li></ul></td><td>2020-08-31</td><td>Alarm Configurations</td>
 </tr>
 <tr>
     <td>The NodeProblemDetectorPlus add-on was launched.</td><td>It supports configuring node self-healing policy on the basis of existing detection feature.</td><td>2020-08-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38784">Node-Problem-Detector-Plus Description</a></td>
@@ -117,7 +117,7 @@
     <td>Cluster creation supports setting node configuration placement groups.</td><td>This feature enables disaster recovery and high availability for nodes when they are launched.</td><td>2020-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30637">Creating a Cluster</a></td>
 </tr>
 <tr>
-    <td>The beta cloud native monitoring was launched.</td><td>It supports one-click deployment of the high-availability monitoring architecture and quick association with TKE clusters and EKS clusters.</td><td>2020-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38823">Cloud Native Monitoring</a></td>
+    <td>The beta cloud native monitoring was launched.</td><td>It supports one-click deployment of the high-availability monitoring architecture and quick association with TKE clusters and EKS clusters.</td><td>2020-07-15</td><td>Cloud Native Monitoring</td>
 </tr>
 <tr>
     <td>The collection configuration and alarm configuration of cloud native monitoring are implemented through products.</td><td><ul class="params"><li>Three configuration modes are supported: service monitor, pod monitor, and raw job.</li><li>Alarm history rewinding is supported.</li></ul></td><td>2020-07-15</td><td>-</td>
@@ -196,7 +196,7 @@
 	<td>TKE now supports both GlobalRouter and VPC-CNI network modes.</td>
 	<td>TKE now supports GlobalRouter and VPC-CNI network modes for your business needs. Choose the one that fits your needs.</td>
 	<td>2020-03-30</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/35248">How to Choose a TKE Network Mode</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/38966">How to Choose a TKE Network Mode</a></td>
 </tr>
 <tr>
 	<td>TKE has stopped providing features related to TencentHub.</td><td>We plan to discontinue support for TencentHub this month, so TKE has officially stopped providing features related to TencentHub and no longer supports related APIs.</td>
@@ -436,7 +436,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 <td>The beta StatefulSet with fixed IP addresses is launched.</td>
     <td> The StatefulSet with fixed IP addresses help <b>resolve issues related to IP address changes caused by Pod restart or migration</b>. Users can create the StatefulSet with fixed IP addresses for source IP address authorization, IP-based process review, log query based on Pod IP addresses, and other business needs to ensure the continuous and stable running of businesses.</td>
 <td>2019-06-29</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/35249">Managing StatefulSets with Static Pod IP Addresses</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/457/38974">Managing StatefulSets with Static Pod IP Addresses</a></td>
 </tr>
 <tr>
 <td>TKE uses the new console version by default.</td>
@@ -484,7 +484,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 <td>Supports registering the TKE network to CCN.</td>
     <td>TKE allows users to <b>register existing clusters to CCN, which can manage the container’s network</b>. After the container’s network is registered, you can enable or disable its IP range routing on the CCN side to achieve interconnection between the container’s cluster and the resources in CCN.</td>
 <td>2019-05-17</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/457/34021">Register Container Clusters to CCN</a></td>
+<td>Register Container Clusters to CCN</td>
 </tr>
 <tr>
 <td>TKE supports GPU virtualization.</td>
@@ -678,7 +678,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 	<td>The beta TKE console is launched.</td>
         <td>The new TKE console adjusts a series of feature modules to<b> provide you with a native and easy-to-use platform</b>. <b>The new and old consoles are fully compatible in terms of features</b>. Switching consoles will not affect your business. You can use the new console to continue to operate existing clusters.</td>
 	<td>2018-10-31</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/30633">Notes on the New Console</a></td>
+        <td>Notes on the New Console</td>
 	</tr>
 	<tr>
 	<td>Service CLB can be bound to specified nodes.</td>
@@ -1035,7 +1035,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE supports CI source code building.</td>
         <td>Continuous container integration <b>enables the automatic and manual building of container images on the Tencent TKE Platform.</b></td>
 		<td>2017-07-18</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38869">Image Registry Overview</a></td>
+		<td>Image Registry Overview</td>
 	</tr>
 	<tr>
 		<td>Image Registry adds TencentHub images.</td>
@@ -1191,7 +1191,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>Image management.</td>
 		<td>Image management supports official Docker images, My Images, uploading and downloading private images, and official Docker image acceleration.</td>
         <td>2016-12-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/9103">Image Registry Overview</a></td>
+        <td> - </td>
 	</tr>
 	<tr>
 		<td>Cluster monitoring and container monitoring.</td>
