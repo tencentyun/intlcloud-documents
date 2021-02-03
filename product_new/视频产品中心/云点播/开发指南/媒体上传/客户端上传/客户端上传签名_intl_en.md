@@ -13,7 +13,7 @@ Splice the plaintext signature string `original` based on the format requirement
 ```
 secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&random=[random]
 ```
->
+>!
 	- `[secretId]`, `[currentTimeStamp]`, `[expireTime]`, and `[random]` in the above `original` should be replaced with actual parameter values.
 	- `original` must contain four required parameters (`secretId`, `currentTimeStamp`, `expireTime`, and `random`) and may contain any number of optional parameters. For more information, please see [Signature Parameters](#p2).
 	- The parameter values must be URL-encoded; otherwise, `QueryString` parsing may fail.
@@ -25,12 +25,12 @@ secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&
    mac.init(secretKey);
 	 byte[] signatureTmp = mac.doFinal(original.getBytes("UTF-8"));
 	```
-	> **`signatureTmp` is a byte array encoded with UTF-8 and encrypted with HMAC-SHA1.**
+	>? **`signatureTmp` is a byte array encoded with UTF-8 and encrypted with HMAC-SHA1.**
 	2. Encode the plaintext string `original` into a byte array with UTF-8, merge the array with `signatureTmp`, and then [Base64-encode](https://tools.ietf.org/html/rfc4648) the combination to get the signature:
 ```java
 String signature = base64Encode(byteMerger(signatureTmp, original.getBytes("utf8")));
 ```
-> **`byteMerger` and `base64Encode` are methods of array merging and Base64-encoding, respectively. For more information, please see [Sample Code of Signature in Java](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B).**
+>? **`byteMerger` and `base64Encode` are methods of array merging and Base64-encoding, respectively. For more information, please see [Sample Code of Signature in Java](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B).**
 
 ## Example of Signature Generation
 VOD also provides **sample code for signature generation** and a signature generator for your reference and verification:
