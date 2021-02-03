@@ -37,7 +37,7 @@ Namespace=QCE/LB_PUBLIC
 
 
 
-> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
+>?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
 ## Overview of Parameters in Each Dimension
 
