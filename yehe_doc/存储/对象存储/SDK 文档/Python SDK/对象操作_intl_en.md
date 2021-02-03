@@ -1713,7 +1713,7 @@ response = client.copy(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
- |  CopyStatus  | Copy status. Valid values: 'Copy', 'Replaced' | String | 否 ｜
+ |  CopyStatus  | Copy status. Valid values: 'Copy', 'Replaced' | String | No ｜
  | PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
  |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
 
