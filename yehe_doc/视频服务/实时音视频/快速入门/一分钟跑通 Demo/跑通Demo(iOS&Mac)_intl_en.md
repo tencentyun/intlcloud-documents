@@ -36,7 +36,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
   </tr>
 <tr>
     <td>macOS</td>
-    <td>Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+    <td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
   </tr></table>
 3. Set parameters in the `GenerateTestUserSig.h` file.
   <ul><li>SDKAPPID: 0 by default. Set it to the actual SDKAppID.</li>
