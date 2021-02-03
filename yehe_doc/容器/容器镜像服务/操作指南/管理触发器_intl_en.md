@@ -8,7 +8,7 @@ The trigger feature allows users to create custom trigger rules and view trigger
 ## Prerequisites
 
 Before creating and managing a trigger in a TCR Enterprise Edition instance, complete the following tasks:
-- [Create an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- [Purchasing Instances](https://intl.cloud.tencent.com/document/product/1051/39088).
 - If you are using a sub-account, you must have granted the sub-account operation permissions for the corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
 
 ## Directions
@@ -29,9 +29,7 @@ On the "Trigger" page, you can view the list of trigger rules for the current in
 > - `**`: matches any field that contains '/'.
 > - `?`: matches any non-'/' character.
 > - `{option 1, option 2,...}`: indicates the simultaneously matching of multiple options.
-
-
-     - **Tag**: the tag for which the trigger takes effect. It supports regular matching, and the matching rules are the same as those for **Repository Name**. If you want the trigger to take effect for all tags, you need not specify this parameter.
+    - **Tag**: the tag for which the trigger takes effect. It supports regular matching, and the matching rules are the same as those for **Repository Name**. If you want the trigger to take effect for all tags, you need not specify this parameter.
  - **URL**: the target URL for request initiation after the trigger is triggered. The trigger will send a POST request to the URL, and the request body contains the trigger action, triggering rule, and other information.
  - **Header**: the Header information in Key:Value format to be carried in a POST request initiated by the trigger, such as `Authentication: xxxxxxx`.
 3. Click **OK** to create the trigger rule.
