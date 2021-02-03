@@ -13,7 +13,7 @@
 ```
 secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&random=[random]
 ```
->
+>!
 	- 上述 original 中的`[secretId]`、`[currentTimeStamp]`、`[expireTime]`及`[random]`需您自行替换成具体的参数值。
 	- original 至少包含`secretId`、`currentTimeStamp`、`expireTime`及`random`四个必选参数，可包含任意多个选填参数，详细请参见 [签名参数](#p2)。
 	- 参数值必须经过 UrlEncode，否则可能导致 QueryString 解析失败。
@@ -25,12 +25,12 @@ secretId=[secretId]&currentTimeStamp=[currentTimeStamp]&expireTime=[expireTime]&
    mac.init(secretKey);
 	 byte[] signatureTmp = mac.doFinal(original.getBytes("UTF-8"));
 	```
-	>**signatureTmp 是使用 UTF-8 编码、通过 HMAC-SHA1 加密出来的字节数组**。
+	>?**signatureTmp 是使用 UTF-8 编码、通过 HMAC-SHA1 加密出来的字节数组**。
 	2. 将明文串 original 使用 UTF-8 编码成字节数组，然后把 signatureTmp 与该数组进行合并，最后把合并后的结果进行 [Base64](https://tools.ietf.org/html/rfc4648) 编码，得到最终签名 signature：
 ```java
 String signature = base64Encode(byteMerger(signatureTmp, original.getBytes("utf8")));
 ```
->**byteMerger 和 base64Encode 分别是数组合并和 Base64 编码的方法，详细请参见 [Java 签名示例代码](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)**。
+>?**byteMerger 和 base64Encode 分别是数组合并和 Base64 编码的方法，详细请参见 [Java 签名示例代码](https://intl.cloud.tencent.com/document/product/266/33923#java-.E7.AD.BE.E5.90.8D.E7.A4.BA.E4.BE.8B)**。
 
 ## 签名生成示例
 云点播还提供了**签名生成示例代码**和签名工具，便于您参考和验证：
