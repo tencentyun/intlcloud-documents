@@ -283,7 +283,6 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 <span id="model.step7"> </span>
 ### 步骤7：麦位管理
-
 主播端：
 1. `pickSeat`传入对应的麦位和观众 userId, 可以抱人上麦，房间内所有成员会收到`onSeatListChange`和`onAnchorEnterSeat`的事件通知。
 2. `kickSeat`传入对应麦位后，可以踢人下麦，房间内所有成员会收到`onSeatListChange`和`onAnchorLeaveSeat`的事件通知。
@@ -298,7 +297,8 @@ public void onAnchorEnterSeat(TRTCVoiceRoomDef.UserInfo userInfo) {
 
 ![](https://main.qcloudimg.com/raw/8d385dd387b6255b8512dbff5829e88a.png)
 
-麦位操作后的事件通知顺序如下：callback > onSeatListChange > onAnchorEnterSeat 等独立事件
+麦位操作后的事件通知顺序如下：
+callback > onSeatListChange > onAnchorEnterSeat 等独立事件
 
 ```java
 // case1: 主播抱人上1号麦位
@@ -346,7 +346,8 @@ public void onAnchorEnterSeat(int index, TRTCVoiceRoomDef.UserInfo user) {
 ### 步骤8：邀请信令的使用
 在 [麦位管理](#model.step7) 中，观众上下麦、主播抱人上麦都不需要经过对方的同意就可以直接操作。
 如果您的 App 需要对方同意才能进行下一步操作的业务流程，那么邀请信令可以提供相应支持。
-如果您的观众上麦需要申请：
+
+观众主动申请上麦：
 1. 观众端调用`sendInvitation`传入主播的 userId 和业务的自定义命令字等，此时函数会返回一个 inviteId，记录该 inviteId。
 2. 主播端收到`onReceiveNewInvitation`的事件通知，此时 UI 可以弹窗并询问主播是否同意。
 3. 主播选择同意后，调用`acceptInvitation`并传入 inviteId。
@@ -378,7 +379,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 }
 ```
 
-如果您的主播需要发送邀请才能抱观众上麦：
+主播邀请观众上麦
 1. 主播端调用`sendInvitation`传入观众的 userId 和业务的自定义命令字等，此时函数会返回一个 inviteId，记录该 inviteId。
 2. 观众端收到`onReceiveNewInvitation`的事件通知，此时 UI 可以弹窗并询问观众是否同意上麦。
 3. 观众选择同意后，调用`acceptInvitation`并传入 inviteId。

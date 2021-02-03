@@ -1,7 +1,6 @@
 腾讯云 TRTC 在 iOS 平台下支持两种不同的屏幕分享方案：
 - **应用内分享**
 即只能分享当前 App 的画面，该特性需要 iOS 13 及以上版本的操作系统才能支持。由于无法分享当前 App 之外的屏幕内容，因此适用于对隐私保护要求高的场景。
-
 - **跨应用分享**
 基于苹果的 Replaykit 方案，能够分享整个系统的屏幕内容，但需要当前 App 额外提供一个 Extension 扩展组件，因此对接步骤也相对应用内分享要多一点。
 
@@ -9,9 +8,9 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows |Electron| 微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron| Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
 ## 应用内分享
 
@@ -19,9 +18,9 @@
 
 我们推荐的用于 iOS 屏幕分享的编码参数是：
 
-| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 | 
+| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 |
 |---------|---------|---------|-----|
-| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 | 
+| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 |
 | 帧率 | videoFps | 10 FPS | 8 FPS |
 | 最高码率 | videoBitrate| 1600 kbps | 2000 kbps |
 | 分辨率自适应 | enableAdjustRes | NO | NO |
@@ -166,10 +165,10 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 #### 步骤3：对接主 App 端的接收逻辑
 按照如下步骤，对接主 App 端的接收逻辑。也就是在用户触发屏幕分享之前，要让主 App 处于“等待”状态，以便随时接收来自 Broadcast Upload Extension 进程的录屏数据。
 1. 确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) 关闭摄像头采集。
-2. 调用 [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) 方法，并传入[步骤1](#createGroup)中设置的 AppGroup，让 SDK 进入“等待”状态。
-3. 等待用户触发屏幕分享。如果不实现[步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发，这一操作步骤如下图所示：
+2. 调用 [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) 方法，并传入 [步骤1](#createGroup) 中设置的 AppGroup，让 SDK 进入“等待”状态。
+3. 等待用户触发屏幕分享。如果不实现 [步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发，这一操作步骤如下图所示：
 4. 通过调用 [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 接口可以随时中止屏幕分享。
- 
+
 ```
 // 开始屏幕分享，需要将 APPGROUP 替换为上述步骤中创建的 App Group Identifier。
 - (void)startScreenCapture {
@@ -177,7 +176,7 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
     videoEncConfig.videoResolution = TRTCVideoResolution_1280_720;
     videoEncConfig.videoFps = 10;
     videoEncConfig.videoBitrate = 2000;
-		//需要将 APPGROUP 替换为上述步骤中创建的 App Group Identifier:
+    //需要将 APPGROUP 替换为上述步骤中创建的 App Group Identifier:
     [[TRTCCloud sharedInstance] startScreenCaptureByReplaykit:videoEncConfig
                                                      appGroup:APPGROUP];
 }
@@ -206,9 +205,10 @@ iOS 系统上的跨应用屏幕分享，需要增加 Extension 录屏进程以�
 }
 ```
 
->!苹果在 iOS 12.0 中增加了 `RPSystemBroadcastPickerView` 可以从应用中弹出启动器供用户确认启动屏幕分享，到目前为止, `RPSystemBroadcastPickerView` 尚不支持自定义界面，也没有官方的唤起方法。
->TRTCBroadcastExtensionLauncher 的原理就是遍历 `RPSystemBroadcastPickerView` 的子 View 寻找 UIButton 并触发了其点击事件。
-> **但该方案不被苹果官方推荐，并可能在新一轮的系统更新中失效，因此 [步骤4](#launch) 只是一个可选方案，您需要自行承担风险来选用此方案。**
+>!
+>- 苹果在 iOS 12.0 中增加了 `RPSystemBroadcastPickerView` 可以从应用中弹出启动器供用户确认启动屏幕分享，到目前为止, `RPSystemBroadcastPickerView` 尚不支持自定义界面，也没有官方的唤起方法。
+>- TRTCBroadcastExtensionLauncher 的原理就是遍历 `RPSystemBroadcastPickerView` 的子 View 寻找 UIButton 并触发了其点击事件。
+> - **但该方案不被苹果官方推荐，并可能在新一轮的系统更新中失效，因此 [步骤4](#launch) 只是一个可选方案，您需要自行承担风险来选用此方案。**
 
 ## 观看屏幕分享
 - **观看 Mac / Windows 屏幕分享**

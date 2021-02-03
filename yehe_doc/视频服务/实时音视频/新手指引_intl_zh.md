@@ -1,3 +1,4 @@
+本文将为刚入门实时音视频的用户提供一条学习路径。
 ## 快速了解实时音视频
 
 - [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)
@@ -14,16 +15,16 @@
 <tr>
 <td rowspan="4">基础服务</td>
 <td>语音互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">语音互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音互动直播计费说明</a></td>
 </tr><tr>
 <td>视频互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">视频互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频互动直播计费说明</a></td>
 </tr><tr>
 <td>语音通话</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">语音通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音通话计费说明</a></td>
 </tr><tr>
 <td>视频通话</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">视频通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频通话计费说明</a></td>
 </tr><tr>
 <td rowspan="2">增值服务</td>
 <td>云端录制</td>
@@ -37,34 +38,35 @@
 
 
 ## 开发支持
-
+<span id="demo"></span> 
 ### Demo 体验
 
 实时音视频提供了 **iOS**、**Android**、**Mac OS**、**Windows**、**桌面浏览器**端的体验 Demo，具体详情请参见  [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
 
+<span id="sdk"></span> 
 ### SDK 下载
 
-实时音视频提供了3个 SDK 版本，分别是**精简版**、**专业版**和**企业版**，如下所示：
+TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使用了相同的基础模块，如果您的项目中同时集成了两款以上的 LiteAV 体系的 SDK，就会出现符号冲突（symbol duplicate）的问题。因此我们为您提供集成了不同产品能力的**精简版（TRTC）**、**专业版（Professional）**和**企业版（Enterprise）**，您可以根据实际业务需要选择不同的版本。
 
 | 版本类型                                                     | 说明                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [精简版（TRTC）](https://intl.cloud.tencent.com/document/product/647/34615) | 仅包含 TRTC 和直播播放（TXLivePlayer）两项功能，对 App 的安装包体积增量最小，适合仅使用 TRTC 相关功能的客户 |
-| [专业版（Professional）](https://intl.cloud.tencent.com/document/product/647/34615) | 包含 TRTC 在内的多个音视频相关的核心功能，包括 [移动直播（MLVB）](https://intl.cloud.tencent.com/zh/product/mlvb) 和 [短视频（UGSV）](https://intl.cloud.tencent.com/zh/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼 |
+| [专业版（Professional）](https://intl.cloud.tencent.com/document/product/647/34615) | 包含 TRTC 在内的多个音视频相关的核心功能，包括 [移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 和 [短视频（UGSV）](https://intl.cloud.tencent.com/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼 |
 | [企业版（Enterprise）](https://intl.cloud.tencent.com/document/product/647/34615) | 除包含专业版的所有功能以外，还集成了 AI 美颜特效组件（增值服务），支持大眼、瘦脸、美容和动效贴纸、挂件等 AI 美颜特效能力 |
 
 > ? 各版本的差异对照，请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/647/34615)。
 
 
-
+<span id="api"></span> 
 ### API 集成
 
-- **客户端 API：**支持通过调用 SDK 接口实现功能集成，可支持平台包括 [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[桌面浏览器](https://intl.cloud.tencent.com/document/product/647/35143)、 [Electron](https://intl.cloud.tencent.com/document/product/647/35141)和 [Flutter](https://intl.cloud.tencent.com/zh/document/product/647/39169)。
-- **服务端 API：**支持通过调用 API 3.0 接口实现  [通话质量监控](https://intl.cloud.tencent.com/zh/document/product/647/36754)、[混流转码](https://intl.cloud.tencent.com/document/product/647/37760)、[房间管理](https://intl.cloud.tencent.com/document/product/647/34268) 功能集成。
+- **客户端 API：**支持通过调用 SDK 接口实现功能集成，可支持平台包括 [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[桌面浏览器](https://intl.cloud.tencent.com/document/product/647/35143)、 [Electron](https://intl.cloud.tencent.com/document/product/647/35141)和 [Flutter](https://intl.cloud.tencent.com//document/product/647/39169)。
+- **服务端 API：**支持通过调用 API 3.0 接口实现  [通话质量监控](https://intl.cloud.tencent.com/document/product/647/36754)、[混流转码](https://intl.cloud.tencent.com/document/product/647/37760)、[房间管理](https://intl.cloud.tencent.com/document/product/647/34268) 功能集成。
 
 
 
 ## 新手入门
-
+<span id="demo_guide"></span> 
 ### 一分钟跑通 Demo
 
 实时音视频控制台提供了不同平台的 Demo 源码，具体跑通方法请参见：
@@ -76,8 +78,9 @@
 | Windows    | [跑通 Demo（Windows）](https://intl.cloud.tencent.com/document/product/647/35085) |
 | 桌面浏览器 | [跑通 Demo（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35607) |
 | Electron   | [跑通 Demo（Electron）](https://intl.cloud.tencent.com/document/product/647/35089) |
-| Flutter | [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/zh/document/product/647/39243) |
+| Flutter | [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/document/product/647/39243) |
 
+<span id="sdk_guide"></span> 
 ### 一分钟集成 SDK
 
 SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的项目中：
@@ -90,8 +93,9 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 | Windows    | [快速集成（Windows）](https://intl.cloud.tencent.com/document/product/647/35095) |
 | 桌面浏览器 | [快速集成（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35096) |
 | Electron   | [快速集成（Electron）](https://intl.cloud.tencent.com/document/product/647/35097) |
-| Flutter | [快速集成（Flutter）](https://intl.cloud.tencent.com/zh/document/product/647/35098) |
+| Flutter | [快速集成（Flutter）](https://intl.cloud.tencent.com/document/product/647/35098) |
 
+<span id="web_guide"></span> 
 ### 一分钟跑通 Web 直播互动组件
 
 实时音视频提供了完整的 Web 直播互动组件体验 Demo，具体集成方法请参见 [一分钟跑通 Web 直播互动组件](https://intl.cloud.tencent.com/document/product/647/38172)。
@@ -128,9 +132,17 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 <td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">语音聊天室</a></td>
 </tr></table>
 
+<span id="console"></span> 
+## 控制台实践
+| 如果您想通过控制台                                         | 您可以阅读                                                   |
+| :--------------------------------------------------------- | :----------------------------------------------------------- |
+| 在线生成签名 UserSig，或检验已有 UserSig 是否有效         | [UserSig 生成与校验](https://intl.cloud.tencent.com/document/product/647/39074)                |
+| 为某个应用开启旁路推流、云端录制或高级权限控制功能         | [功能配置](https://intl.cloud.tencent.com/document/product/647/39080) |
+| 为云端混流转码时所需的自定义背景图片添加图片素材           | [素材管理](https://intl.cloud.tencent.com/document/product/647/39081) |
 
 
 
+<span id="faq"></span> 
 ## 新手常见问题
 
 -  [客户端 Native SDK 需要配置哪些端口或域名为白名单？](https://intl.cloud.tencent.com/document/product/647/35164)

@@ -20,7 +20,7 @@ TRTC 虽然支持 WebRTC 协议接入，但主要用于 Chrome 桌面版浏览�
 TRTC 最擅长的领域就是音视频互动连麦，如果一个房间里同时有多个主播，而 CDN 观看端只希望拉取一路音视频画面，就需要使用 [云端混流服务](https://intl.cloud.tencent.com/document/product/647/34618) 将多路画面合并成一路，其原理如下图所示：
 ![](https://main.qcloudimg.com/raw/77eeed776e61c3a6bd0e1669e5747727.jpg)
 
-> **为什么不直接播放多路 CDN 画面？**
+>? **为什么不直接播放多路 CDN 画面？**
 >播放多路 CDN 画面很难解决多路画面的延迟对齐问题，同时拉取多路画面所消耗的下载流量也比单独画面要多，所以业内普遍采用云端混流方案。
 
 ## 前提条件
@@ -35,6 +35,7 @@ TRTC 最擅长的领域就是音视频互动连麦，如果一个房间里同时
 2. 在左侧导航栏选择【应用管理】，单击目标应用所在行的【功能配置】。
 3. 在【旁路推流配置】中，单击【启用旁路推流】右侧的![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png)，在弹出的【开启旁路推流功能】对话框中，单击【开启旁路推流功能】即可开通。
 
+
 <span id="step2"></span>
 ### 步骤2：配置播放域名并完成 CNAME
 1. 登录 [云直播控制台](https://console.cloud.tencent.com/live/)。
@@ -42,7 +43,7 @@ TRTC 最擅长的领域就是音视频互动连麦，如果一个房间里同时
 3. 单击【添加域名】，输入您已经备案过的播放域名，选择域名类型为【播放域名】，选择加速区域（默认为【中国大陆】），单击【确定】即可。
 4. 域名添加成功后，系统会为您自动分配一个 CNAME 域名（以`.liveplay.myqcloud.com`为后缀）。CNAME 域名不能直接访问，您需要在域名服务提供商处完成 CNAME 配置，配置生效后，即可享受云直播服务。具体操作请参见 [CNAME 配置](https://intl.cloud.tencent.com/document/product/267/31057)。
 
-> **不需要添加推流域名**，在 [步骤1](#step1) 中开启旁路直播功能后，腾讯云会默认在您的云直播控制台中增加一个格式为  `xxxxx.livepush.myqcloud.com` 的推流域名，该域名为腾讯云直播服务和 TRTC 服务之间约定的一个默认推流域名，暂时不支持修改。
+>! **不需要添加推流域名**，在 [步骤1](#step1) 中开启旁路直播功能后，腾讯云会默认在您的云直播控制台中增加一个格式为  `xxxxx.livepush.myqcloud.com` 的推流域名，该域名为腾讯云直播服务和 TRTC 服务之间约定的一个默认推流域名，暂时不支持修改。
 
 <span id="step3"></span>
 ### 步骤3：关联 TRTC 的音视频流到直播 streamId
@@ -108,7 +109,7 @@ userSig 的计算方法请参见 [如何计算 UserSig](https://intl.cloud.tence
 
 画面布局的详细配置方法请参考 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618)，整个流程所涉及的各模块关系可以参考 [原理解析](#mixCDN)。
 
-> `setMixTranscodingConfig` 并不是在终端进行混流，而是将混流配置发送到云端，并在云端服务器进行混流和转码。由于混流和转码都需要对原来的音视频数据进行解码和二次编码，所以需要更长的处理时间。因此，混合画面的实际观看时延要比独立画面的多出1s - 2s。
+>! `setMixTranscodingConfig` 并不是在终端进行混流，而是将混流配置发送到云端，并在云端服务器进行混流和转码。由于混流和转码都需要对原来的音视频数据进行解码和二次编码，所以需要更长的处理时间。因此，混合画面的实际观看时延要比独立画面的多出1s - 2s。
 
 <span id="step5"></span>
 ### 步骤5：获取播放地址并对接播放
@@ -128,12 +129,11 @@ http://播放域名/live/[streamId].flv
 我们推荐以 `http` 为前缀且以 `.flv` 为后缀的 **http - flv** 地址，该地址的播放具有时延低、秒开效果好且稳定可靠的特点。
 播放器选择方面推荐参考如下表格中的指引的方案：
 
-| 所属平台  | API 概览 | 支持的格式|
-|:-------:|:-------:|-------|
-| iOS App|   TXLivePlayer(iOS) | 推荐 FLV |
-| Android App | TXLivePlayer(Android) | 推荐 FLV |
-| Web浏览器 |  - |  桌面端 Chrome 浏览器支持 FLV <br> Mac 端 Safari和移动端手机浏览器仅支持 HLS |
-|微信小程序|   [&lt;live-player&gt; 标签](https://developers.weixin.qq.com/miniprogram/en/dev/component/live-player.html)| 推荐 FLV |
+| 所属平台 | 对接文档 | API 概览 | 支持的格式|
+|:-------:|:-------:|:-------:|-------|
+| iOS App| [接入指引](https://intl.cloud.tencent.com/document/product/1071/38159) | TXLivePlayer(iOS)  | 推荐 FLV |
+| Android App | [接入指引](https://intl.cloud.tencent.com/document/product/1071/38160) | TXLivePlayer(Android) | 推荐 FLV |
+| Web 浏览器 | 接入指引 | - |  桌面端 Chrome 浏览器支持 FLV <br> Mac 端 Safari和移动端手机浏览器仅支持 HLS |
 
 
 <span id="step6"></span>
@@ -147,16 +147,13 @@ http://播放域名/live/[streamId].flv
 | 独立画面 | 极速模式（推荐） | **2s - 3s** | 下图中左侧对比图（橙色）|
 | 混合画面 | 极速模式（推荐） | **4s - 5s** | 下图中右侧对比图（蓝色）|
 
-下图中的实测效果，采用了同样的一组手机，左侧 iPhone 6s 使用了 TRTC SDK 进行直播，右侧的小米6 使用 TXLivePlayer 播放器播放 FLV 协议的直播流。
-
-
 如果您在实测中延时比上表中的更大，可以按照如下指引优化延时：
 
 - **使用 TRTC SDK 自带的 TXLivePlayer**
 普通的 ijkplayer 或者 ffmpeg 基于 ffmpeg 的内核包装出的播放器，缺乏延时调控的能力，如果使用该类播放器播放上述直播流地址，时延一般不可控。TXLivePlayer 有一个自研的播放引擎，具备延时调控的能力。
 
 - **设置 TXLivePlayer 的播放模式为极速模式**
-可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 iOS 为例。
+可以通过设置 TXLivePlayerConfig 的三个参数来实现极速模式，以 [iOS](https://intl.cloud.tencent.com/document/product/1071/38159#Delay) 为例。
 以 iOS 端的 Objective-C 代码为例：
 ```
  // 设置 TXLivePlayer 的播放模式为极速模式
@@ -168,20 +165,22 @@ http://播放域名/live/[streamId].flv
     // 启动直播播放
 ```
 
-<span id="expense"></span>
+<span id="expense"></span>
 ## 相关费用
 
 实现 CDN 直播观看的费用包括**观看费用**和**转码费用**，观看费用为基础费用，转码费用仅在启用 [多路画面混合](#mixCDN) 时才会收取。
 
->本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云直播 > 标准直播](https://intl.cloud.tencent.com/document/product/267/2819) 的计费说明为准。
+>!本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云直播 > 标准直播](https://intl.cloud.tencent.com/document/product/267/2819) 的计费说明为准。
 
 ### 观看费用：通过直播 CDN 观看时产生的费用
 
-通过直播 CDN 观看时，**云直播**将向您收取因观看产生的下行流量/带宽费用，可以根据实际需要选择适合自己的计费方式，默认采用流量计费。
+通过直播 CDN 观看时，**云直播**将向您收取因观看产生的下行流量/带宽费用，可以根据实际需要选择适合自己的计费方式，默认采用流量计费，详情请参见 [云直播 > 标准直播 > 流量带宽](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#traffic-and-bandwidth) 计费说明。
 
 
 ### 转码费用：启用多路画面混合时收取
-如果您启用了 [多路画面混合](#mixCDN) ，混流需要进行解码和编码，因此会产生额外的混流转码费用。混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高。
+如果您启用了 [多路画面混合](#mixCDN) ，混流需要进行解码和编码，因此会产生额外的混流转码费用。混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高，详情请参见 [云直播 > 直播转码](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding) 计费说明。
+
+>例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了1个小时，连麦期间开启了 [多路画面混合](#mixCDN) ，那么产生的转码费用为`0.0057美元/分钟 × 60分钟 = 0.342美元`。
 
 ## 常见问题
 **为什么房间里只有一个人时画面又卡又模糊?**
