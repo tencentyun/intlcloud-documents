@@ -175,9 +175,9 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 - (void)onUserVideoAvailable:(NSString *)uid available:(BOOL)available {
   if (available) {
     UIView* renderView =[[UIView alloc] init];
-    [[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // 就可以看到对方的画面了
+    [[TRTCCalling shareInstance] startRemoteView:uid view:renderView]; // They can see each other's image
   } else {
-    [[TRTCCalling shareInstance] stopRemoteView:uid]; // 停止渲染画面
+    [[TRTCCalling shareInstance] stopRemoteView:uid]; // Stops rendering the image
   }
 }
 
