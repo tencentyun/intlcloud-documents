@@ -148,6 +148,7 @@ Example:
 /usr/pgsql-10/bin/pg_dump -h 192.168.0.16 -U testroot -f backup.sql -c -C postgres
 ```
  - 不指定文件格式时，默认导出的文件为文本文件，文件形式如下：
+
 ```
 -- PostgreSQL database dump
 --
@@ -164,12 +165,13 @@ SET client_min_messages = warning;
 SET row_security = off;
 ```
  - 若数据较大，可通过 -Fc 指定为二进制文件。
+
 2. 在云服务器上恢复数据。
  - 文本文件，可直接通过执行 sql 语句恢复，示例如下：
+
 ```
 psql -U postgres <./backup.sql
 ```
+
 >?因为有 pg_stat_error 等插件，可能会导致报错，但不影响数据导入。
  - 二进制文件，需要用 pg_restore 还原。
-
-```
