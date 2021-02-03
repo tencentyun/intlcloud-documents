@@ -51,13 +51,13 @@
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
 <tr>
-    <td>云原生监控 TPS 支持边缘集群作为监控对象接入监控实例</td><td>云原生监控 TPS 支持监控边缘集群，提供跨 VPC 的多集群管理功能。</td><td>2020-10-30</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">监控实例管理</a></td>
+    <td>云原生监控 TPS 支持边缘集群作为监控对象接入监控实例</td><td>云原生监控 TPS 支持监控边缘集群，提供跨 VPC 的多集群管理功能。</td><td>2020-10-30</td><td>监控实例管理</td>
 </tr>
 <tr>
-    <td>云原生监控 TPS 告警策略支持配置 webhook</td><td>告警策略支持配置 webhook 功能，可以更好地帮助用户及时发现并解决服务异常，更有利于服务稳定运行。</td><td>2020-10-30</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">告警配置</a></td>
+    <td>云原生监控 TPS 告警策略支持配置 webhook</td><td>告警策略支持配置 webhook 功能，可以更好地帮助用户及时发现并解决服务异常，更有利于服务稳定运行。</td><td>2020-10-30</td><td>告警配置</td>
 </tr>
 <tr>
-    <td>TKE 节点池新增查看伸缩记录能力</td><td>该功能可帮助用户更易观察节点池节点数量变化情况以及扩缩容活动触发原因及结果，增强节点池可观测性。</td><td>2020-10-13</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38828">查看节点池伸缩记录</a></td>
+    <td>TKE 节点池新增查看伸缩记录能力</td><td>该功能可帮助用户更易观察节点池节点数量变化情况以及扩缩容活动触发原因及结果，增强节点池可观测性。</td><td>2020-10-13</td><td>查看节点池伸缩记录</td>
 </tr>
 </table>
 
@@ -89,7 +89,7 @@
     <td>云原生监控服务优化监控能力</td><td><ul class="params"><li>预置集群监控采集项，同步配备丰富的 Grafana 大盘。</li><li>新增 Targets 列表页，实时观测监控任务状态。</li></ul></td><td>2020-08-31</td><td>-</td>
 </tr>
 <tr>
-    <td>云原生监控服务告警模块升级</td><td><ul class="params"><li>可关联本地 Alertmanager 组件。</li><li>支持 CRD 管理 Prometheus rules。</li></ul></td><td>2020-08-31</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38824">告警配置</a></td>
+    <td>云原生监控服务告警模块升级</td><td><ul class="params"><li>可关联本地 Alertmanager 组件。</li><li>支持 CRD 管理 Prometheus rules。</li></ul></td><td>2020-08-31</td><td>告警配置</td>
 </tr>
 <tr>
     <td>TKE 发布 NodeProblemDetectorPlus 扩展组件</td><td>支持在原有的检测基础上，进行节点配置自愈策略。</td><td>2020-08-25</td>	<td><a href="https://intl.cloud.tencent.com/document/product/457/38784">Node-Problem-Detector-Plus 说明</a></td>
