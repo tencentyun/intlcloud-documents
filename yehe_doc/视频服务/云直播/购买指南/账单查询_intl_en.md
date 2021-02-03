@@ -2,12 +2,12 @@ To view your LVB bills and payment details, go to the **Billing Center** > **Bil
 The Bill Details page includes the **Bill by Instance** and **Bill Details** tabs:
 - Bill by Instance: displays aggregated bills by instance.
 - Bill Details: displays one record per bill without performing aggregation.
-
-## Bill by Instance<span id="resources_id"></span>
+<span id="resources_id"></span>
+## Bill by Instance
 1. Click the **Bill by Instance** tab.
 2. Click **All products** and then select **LVB** to view the LVB bills.
 
-![](https://main.qcloudimg.com/raw/aa460b5a1b0886de3edfc003621cb225.png)
+![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
 #### Bill fields
 
@@ -49,12 +49,12 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 </tbody></table>
 
 >? Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
-
-## Bill Details<span id="detail"></span>
+<span id="detail"></span>
+## Bill Details
 1. Click the **Bill Details** tab.
 2. Click **All products** and then select **LVB** to view the details of the LVB bills.
 
-![](https://main.qcloudimg.com/raw/2a00cc132e9e3296dcd9966fe884618f.png)
+![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
 #### Bill fields
 
