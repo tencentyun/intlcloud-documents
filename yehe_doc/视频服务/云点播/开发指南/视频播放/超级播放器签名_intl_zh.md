@@ -3,8 +3,8 @@
 
 >! 当有如下情况之一时，App 终端需要超级播放器签名才能播放：
 * 域名开启了  [KEY 防盗链](https://intl.cloud.tencent.com/document/product/266/33986)。
-* 使用了 default 以外的超级播放器配置。
-* 播放加密的视频内容。
+* 使用了 default 以外的 [超级播放器配置](https://intl.cloud.tencent.com/document/product/266/38296)。
+* 播放 [加密](https://intl.cloud.tencent.com/document/product/266/38294) 的视频内容。
 
 下面，将介绍超级播放器签名的参数组成和生成规则。
 
