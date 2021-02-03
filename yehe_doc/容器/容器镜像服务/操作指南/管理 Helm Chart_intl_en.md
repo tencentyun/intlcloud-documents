@@ -6,7 +6,7 @@ Currently, only TCR Enterprise Edition instances support Helm chart hosting and 
 
 ## Prerequisites
 Before uploading and managing Helm charts in a TCR Enterprise Edition instance, complete the following tasks:
-- [Create an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- [Purchasing Instances](https://intl.cloud.tencent.com/document/product/1051/39088).
 - If you are using a sub-account, you must grant the sub-account required permissions for the instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
 
 ## Directions
