@@ -2,19 +2,16 @@ The TRTC console allows you to configure and manage your TRTC services via **Usa
 
 ## Overview
 In the navigation pane on the left, click **[Overview](https://console.cloud.tencent.com/trtc)** to view your usage of the month and bandwidth trends in the last 30 days. You can also view related documents and go to **Demo Quick Run**, **Management Applications** and **Monitoring Dashboard** via the shortcut buttons.
-![](https://main.qcloudimg.com/raw/a934844335e5d6edddc7d55a128469d9.png)
 
 
 ## Usage Statistics
 ### Cumulative duration of the month
 This section shows your cumulative usage of TRTC services of the month, including the duration of **Audio** and **SD**, **HD**, and **FHD** video.
-![](https://main.qcloudimg.com/raw/7f5cf4df97ada1923636c4b70e686cd4.png)
 To view more usage details, click **View More** in the top right to go to the **[Usage Statistics(https://console.cloud.tencent.com/trtc/statistics)]** page. For more information, see [Usage Statistics](https://intl.cloud.tencent.com/zh/document/product/647/39066).
 
 
 ### Usage trends in the last 30 days
 This section shows your usage (measured in minutes) of TRTC services in the last 30 days. You can mouse over the graph to view the usage of a specific day.
-![](https://main.qcloudimg.com/raw/a52e20a1bf042e71dd2003eeac53a768.png)
 
 
  
@@ -31,7 +28,7 @@ This section shows your usage (measured in minutes) of TRTC services in the last
 <table>
 <tr><th width="45%">Sidebar</th><th width="20%">Section</th><th>Description</th>
 </tr><tr>
-<td rowspan="4"><img src="https://main.qcloudimg.com/raw/e3f00683f546e2379dc91a0526eb8e9d.png"/></td>
+<td rowspan="4"><img src="https://main.qcloudimg.com/raw/6cad107e0eff24261b62b13077ef3ea1.png"/></td>
 <td>**Documents**</td>
 <td>You can learn about different features of TRTC by reading the documents in this section.</td>
 </tr><tr>
