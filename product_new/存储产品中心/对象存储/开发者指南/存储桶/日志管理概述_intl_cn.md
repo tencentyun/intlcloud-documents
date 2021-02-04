@@ -29,7 +29,7 @@
 | 16       | resErrorCode    | 错误码                | NoSuchKey                               |
 | 17       | resErrorMsg     | 错误信息             | The specified key does not exist.                                      |
 | 18       | resBytesSent    | 返回字节数（Bytes）   | 197                                                                           |
-| 19       | resTotalTime    | 请求总耗时（毫秒，等于响应末字节的时间-请求首字节的时间） | 4295                                                                          |
+| 19       | resTotalTime    | 请求总耗时（毫秒，等于响应末字节的时间-请求首字节的时间） | 4295        |
 | 20       | logSourceType   | 日志源类型          | USER（用户访问请求），CDN（CDN 回源请求）                                                           |
 | 21       | storageClass    | 存储类型             | STANDARD，STANDARD_IA，ARCHIVE                                              |
 | 22       | accountId    | 存储桶所有者ID             | 100000000001                                              |
@@ -38,8 +38,8 @@
 | 25       | requestId    | 请求 ID             | NWQ1ZjY4MTBfMjZiMjU4NjRfOWI1N180NDBiYTY=      |
 | 26       | objectSize    | 对象大小（Bytes）             | 808，如果您使用分块上传，objectSize 字段只会在完成上传的时候显示，各个分块上传期间该字段显示`-` |
 | 27       | versionId    | 对象版本 ID             | 随机字符串                                              |
-| 28       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE                                              |
-| 29       | referer    | 源站地址             | `*.example.com`或者111.111.111.1       |
+| 28       | targetStorageClass    | 目标存储类型，发起复制操作的请求会记录该字段             | STANDARD，STANDARD_IA，ARCHIVE        |
+| 29       | referer    | 请求的 HTTP referer             | `*.example.com`或者111.111.111.1       |
 | 30       | requestUri    | 请求 URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
