@@ -45,7 +45,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -67,7 +67,7 @@ try:
     print(response.MediaUrl)
     print(response.CoverUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -86,7 +86,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -105,7 +105,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -124,7 +124,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -143,7 +143,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -161,7 +161,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -181,7 +181,7 @@ try:
     print(response.FileId)
     print(response.MediaUrl)
 except Exception as err:
-    // Handle business exception
+    # Handle business exception
     print(err)
 ```
 
@@ -202,7 +202,7 @@ Upload request class `VodUploadRequest`:
 | MediaName | Name of the media file after being uploaded. If this parameter is left empty, the filename in `MediaFilePath` will be used by default. | String | No |
 | CoverFilePath | Path of the cover file to be uploaded, which must be a local path and does not support URLs. | String | No |
 | CoverType | Type of the cover file to be uploaded. For the valid values, please see [Overview](https://intl.cloud.tencent.com/document/product/266/9760) of media upload. If the `CoverFilePath` path contains a file extension, this parameter can be left empty. | String | No |
-| Procedure | Name of the task flow to be automatically executed after upload is completed. This parameter is specified when the task flow is created through the [API](https://intl.cloud.tencent.com/zh/document/product/266/33897) or [console](https://console.cloud.tencent.com/vod/video-process/taskflow). For more information, please see [Task Flow](https://intl.cloud.tencent.com/document/product/266/33931). | String | No |
+| Procedure | Name of the task flow to be automatically executed after upload is completed. This parameter is specified when the task flow is created through the [API](https://intl.cloud.tencent.com/document/product/266/33897) or [console](https://console.cloud.tencent.com/vod/video-process/taskflow). For more information, please see [Task Flow](https://intl.cloud.tencent.com/document/product/266/33931). | String | No |
 | ExpireTime | Expiration time of media file in ISO 8601 format. For more information, please see [the notes on ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). | String | No |
 | ClassId | Category ID, which is used to categorize the media for management. A category can be created, and its ID can be obtained by using the [CreateClass](https://intl.cloud.tencent.com/document/product/266/35325) API. | Integer | No |
 | SourceContext | Source context of up to 250 characters, which is used to pass through the user request information and will be returned by the upload callback API. | String | No |
