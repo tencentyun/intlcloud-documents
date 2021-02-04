@@ -9,7 +9,7 @@ This document describes how to upload a video file on your local server to VOD.
 The code provided in this document is open-source and free of charge, but it may incur the following fees during use:
 
 - Fees for purchasing a Tencent Cloud CVM instance to run the upload script. For more information, please see [Instance Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180).
-- VOD storage space will be taken up by uploaded videos via pulling. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
+- VOD storage space will be taken up by uploaded videos. For more information, please see [Video Storage Pricing](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E).
 
 ## Uploading Video in CVM to VOD
 <span id="p1"></span>
@@ -81,7 +81,7 @@ This command will upload the `tencent_cloud.mp4` video to VOD and upload the `te
 <span id="p6"></span>
 ### Step 6. View the result
 
-On the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console, you can see the uploaded video file and cover.
+On the [Video Management](https://console.cloud.tencent.com/vod/media) page in the console, you can see the uploaded video file and cover：
 
 ## Code Interpretation
 
@@ -117,7 +117,7 @@ On the [Video Management](https://console.cloud.tencent.com/vod/media) page in t
 </tr>
 </tbody></table>
 
-	>?This demo supports only the `procedure` and `subappid` upload parameters. For the complete features, please see [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917).
+	>?This demo supports only the `procedure` and `subappid` upload parameters. For the complete features, please see [SDK for Python](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0).
 3. Get the local path of the video file to be uploaded and the path of the cover image (if any) from the command line parameters and call `upload_media()` to initiate upload:
 ```
        if len(sys.argv) < 2:
@@ -128,7 +128,7 @@ On the [Video Management](https://console.cloud.tencent.com/vod/media) page in t
    
        # Initiate upload
        rsp = upload_media(configuration, video_path, cover_path)
-```
+   ```
 4. In `upload_media()`, use the method provided by the SDK for Python to construct an upload instance `client`, set upload parameters in `req`, and initiate upload:
    ```
            client = VodUploadClient(conf["secret_id"], conf["secret_key"])
@@ -154,5 +154,6 @@ The VOD SDK for upload from server supports other features such as setting the v
 - [C#](https://intl.cloud.tencent.com/document/product/266/33915)
 - [PHP](https://intl.cloud.tencent.com/document/product/266/33916)
 - [Python](https://intl.cloud.tencent.com/document/product/266/33917)
+- [Node.js](https://intl.cloud.tencent.com/document/product/266/33918)
 - [Go](https://intl.cloud.tencent.com/document/product/266/33919)
 
