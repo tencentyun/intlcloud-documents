@@ -39,7 +39,7 @@ The log is generated every 5 minutes, one record is a row, each record contains 
 | 26 | objectSize | Object size in bytes | 808, if you use Multipart Upload, the objectSize field will only be displayed when the upload is completed. This field displays `-` during each Multipart Upload. |
 | 27 | versionId | Object version ID | Random string |
 | 28 | targetStorageClass | Destination storage class, recorded for replication requests | STANDARD, STANDARD_IA, ARCHIVE |
-| 29 | referer | Origin server address | `*.example.com` or 111.111.111.1 |
+| 29 | referer | HTTP referer of the request | `*.example.com` or 111.111.111.1 |
 | 30 | requestUri    | Request URI             | "GET /fdgfdgsf%20/%E6%B5%AE%E7%82%B9%E6%95%B0 HTTP/1.1"       |
 
 >!
