@@ -1,8 +1,8 @@
-伪直播移依托直播录制的能力，将直播录制文件增加“限制观看时间”和“同步观看进度”两种主要能力，使之达成直播效果，有效的降低直播的风险与成本。
+伪直播依托于点播的播放控制能力，将点播文件增加“限制观看时间”和“同步观看进度”两种访问控制的功能，使点播文件达成类直播效果，用户可以首先生成点播文件，在指定的直播时间使用点播文件进行类直播分发，有效的降低直播的风险与成本。
 
 ## 功能特性
 - **开发成本低**：如果选择将点播视频转为标准的直播进行分发，那么用户需要将视频经由 OBS 软件推流到直播平台，并对接整套直播系统，开发成本高。相比之下，伪直播都在云点播内部实现，用户只需要启用转码和防盗链功能即可。
-- **使用成本低**：如果使用标准直播，按照文化部的要求所有直播内容都需要进行录制，并保留至少60天以备审查。伪直播本质上是点播，因此不需要录制。
+- **违规风险低**：使用伪直播能力，用户可以提前对自己的点播文件进行审核和编辑，有效规避直播过程中可能涉及的违规风险，规避不合规内容，提升直播质量。
 - **创建简单灵活**：
 	- 没有直播房间的概念，任何视频都可以随时生成伪直播。
 	- 没有并发数限制，可以指定好开播时间并预先分发观看链接。
@@ -27,32 +27,29 @@
 
 
 ## 前提条件
-- [注册](https://intl.cloud.tencent.com/register) 并 [登录](https://intl.cloud.tencent.com/login) 腾讯云账号，并且完成账号实名认证，未进行实名认证的用户无法购买中国大陆的伪直播实例。
+- [注册](https://intl.cloud.tencent.com/register) 并 [登录](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fcloud.tencent.com) 腾讯云账号，并且完成账号实名认证，未进行实名认证的用户无法购买中国大陆的伪直播实例。
 - 已开通腾讯云直播和云点播服务。若未开通，请前往开通 [云直播服务](https://console.cloud.tencent.com/live/livestat) 和 [云点播服务](https://console.cloud.tencent.com/vod/overview)。
-- 进行直播录制，详情请参见 [直播录制](https://intl.cloud.tencent.com/document/product/266/39427)。
+- 进行直播录制，详情请参见 [直播录制转点播](https://intl.cloud.tencent.com/zh/document/product/266/39562)。
 
 ## 实践步骤
 ### 步骤1：上传视频到云点播
 在 [云点播控制台](https://console.cloud.tencent.com/vod/media) （非管理员）左侧导航栏，选择【媒资管理】>【视频管理】，单击【上传视频】。
-![](https://main.qcloudimg.com/raw/5e3fc022bd8518b80d5b1aee147f5c9c.png)
-您也可根据业务情况选择合适的方法将视频文件上传到云点播，更多上传方式可参见 [媒体上传综述](https://intl.cloud.tencent.com/document/product/266/9760) 和 [直播录制](https://intl.cloud.tencent.com/document/product/266/39427)。
+您也可根据业务情况选择合适的方法将视频文件上传到云点播，更多上传方式可参见 [媒体上传综述](https://intl.cloud.tencent.com/document/product/266/9760) 和 [直播录制转点播](https://intl.cloud.tencent.com/zh/document/product/266/39562)。
+<span id="HLS"></span>
 
-### 步骤2：将视频转码为 HLS[](id:HLS)
+### 步骤2：将视频转码为 HLS
 1. 使用伪直播必须基于 HLS 格式，您可以按照 [转码任务发起](https://intl.cloud.tencent.com/document/product/266/33938) 的说明将已上传的视频转码为 HLS（具体的 [转码模版](https://intl.cloud.tencent.com/document/product/266/14059) 请根据业务进行选择）。
 2. 转码完成后，在控制台 [媒资管理](https://intl.cloud.tencent.com/document/product/266/33895) 中查看 HLS 的 URL，或者通过接收 [事件通知](https://intl.cloud.tencent.com/document/product/266/33938) 的方式获取 HLS 的 URL。
-![](https://main.qcloudimg.com/raw/aa48a734eed94051506c3fe73090724d.png)
 
 ### 步骤3：开启 Key 防盗链
 1. 使用伪直播必须开启防盗链，请登录 [云点播控制台](https://console.cloud.tencent.com/vod)，选择左侧导航栏的【分发播放设置】>【域名管理】，单击目标域名所在行的【设置】，进入域名相关设置页面。
-![](https://main.qcloudimg.com/raw/e6041565fd4942e8588c5578c90403ed.png)
 2. 单击【编辑】去开启 Referer 防盗链。
-![](https://main.qcloudimg.com/raw/83165cd0ed9676a22c1fcdcde2a9fa2a.png)
 2. 开启 Referer 防盗链、Key 防盗链。
-![](https://main.qcloudimg.com/raw/245dd0ba5f5475e5d375fed5f2014c09.png)
 更多选项说明，请参见 [设置防盗链](https://intl.cloud.tencent.com/document/product/266/14060)。完成设置后，请保存防盗链 KEY 的内容用于以下的防盗链签名计算。
 
 ### 步骤4：计算防盗链签名
-#### 签名计算公式[](id:function)
+<span id="functio"></span>
+#### 签名计算公式
 ```plaintext
 sign = md5(KEY + Dir + t + plive + exper + rlimit + us)
 ```
