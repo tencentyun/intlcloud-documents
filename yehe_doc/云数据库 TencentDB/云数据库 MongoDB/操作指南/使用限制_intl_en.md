@@ -1,15 +1,16 @@
 ## Engine
-Currently, Rocks and WiredTiger engines are supported.
+Currently, WiredTiger and Rocks are supported. The latter is supported only in TencentDB for MongoDB v3.2.
 
-## Replica Set and Sharded Cluster
-There are two options available when you create a TencentDB for MongoDB instance:
+## Architecture
+There are the following options when you create a TencentDB for MongoDB instance:
 
-| Node Configuration | Description |
+| Node Configuration |                          Description                          |
 | ------ | ---------------------------------------------------- |
-| Replica set | 1 primary node and 2 secondary nodes |
-| Sharded cluster | A single instance has at least 2 shards, each of which has at least 3 nodes and is scalable (currently, the shard node specifications are scalable, but the numbers of shards and nodes are not) |
+|  Single node  | An instance has a single node and its specification is currently not customizable. |
+| Replica set | An instance has 1 primary node and 2 secondary nodes.|
+| Sharded cluster |    An instance has at least 2 shards, and each shard has at least 3 nodes. You can expand the specifications of shard nodes, but cannot add shards or nodes.   |
 
-## Limits on Number of Connections
+## Limit on Number of Connections
 For a replica set, the maximum number of connections is subject to the memory size of a single node as shown below:
 
 | Memory Specification | Maximum Number of Connections |
@@ -29,15 +30,15 @@ For a replica set, the maximum number of connections is subject to the memory si
 >?
 >- The above numbers of connections have taken effect since August 10, 2020.
 >- For a sharded cluster, the maximum number of connections is the `number of shards * specification of single shard` or `18,000`, whichever is smaller.
->For example, if a sharded cluster instance has 3 shards, each with 64 GB memory, then as 16000 * 3 = 48000 > 18000, the maximum number of connections for this cluster will be 18,000.
+>For example, if a sharded cluster instance has 3 shards, each with 64 GB memory, then as 16,000 * 3 = 48,000 > 18,000, the maximum number of connections for this cluster will be 18,000.
 
-## Connection Username
-TencentDB for MongoDB comes with a default user: "mongouser". It supports the SCRAM-SHA-1 authentication mechanism, and its role is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). You can use it to read and write any database, but you are not permitted to perform high-risk operations.
+## User Name for Instance Connection
+TencentDB for MongoDB comes with a default user: "mongouser". It supports the SCRAM-SHA-1 authentication mechanism, and its role is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). You can use it to read and write any database, but are not permitted to perform high-risk operations.
 
-TencentDB for MongoDB v3.2 supports another default user: "rwuser". It uses the MONGODB-CR authentication mechanism which, however, is no longer supported by MongoDB. We recommend you use the "mongouser" to connect to your instance.
+TencentDB for MongoDB v3.2 supports another default user: "rwuser". It uses the MONGODB-CR authentication mechanism which, however, has been no longer supported by MongoDB. We recommend using the "mongouser" to connect to your instance.
 
-You can also manage your account and permissions as needed in the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb).
+You can also manage your account and permissions as needed in the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb).
 
 
-## Avoiding Filling up Disk
-If the disk utilization of an instance has reached 100%, you cannot write to it. Please adjust the instance specification in time as needed. For more information, please see [Adjusting Instance Specification](https://intl.cloud.tencent.com/document/product/240/31192). If this happens, please [contact us](https://intl.cloud.tencent.com/support) for assistance.
+## Avoiding Filling Up Disk
+When the disk usage of an instance has reached 100%, you cannot write to it. If this happens, please [contact us](https://intl.cloud.tencent.com/support) for assistance. We recommend adjusting the instance specifications in time as needed. For more information, please see [Adjusting Instance Specification](https://intl.cloud.tencent.com/document/product/240/31192).
