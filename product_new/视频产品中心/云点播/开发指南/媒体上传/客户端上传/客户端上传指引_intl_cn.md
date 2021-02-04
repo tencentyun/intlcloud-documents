@@ -51,10 +51,10 @@
 - <span id = "p4"></span>**单次有效签名**
 在视频上传过程中，App 后台派发的签名默认在有效期内是可以多次使用的。如果 App 对视频上传安全性要求很高，可以指定签名单次有效。
 单次有效签名的使用方式：在 App 后台派发签名时，指定参数`oneTimeValid`为1即可，详细请参见 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922)。
->单次有效签名有且只能被使用一次，该签名方式虽然更加安全，但是需要 App 做额外的异常处理，例如，上传出错时，不能简单地重复使用 SDK 上传视频，还需要重新申请上传签名。
+>?单次有效签名有且只能被使用一次，该签名方式虽然更加安全，但是需要 App 做额外的异常处理，例如，上传出错时，不能简单地重复使用 SDK 上传视频，还需要重新申请上传签名。
 - **断点续传**
 在视频上传过程中，如果上传意外终止，用户再次上传该文件，则可以从中断处继续上传。
->断点续传的有效时间为1天，即同一个视频上传被中断，那么1天内再次上传可以直接从断点处上传，超过1天则默认会重新上传完整视频。
+>?断点续传的有效时间为1天，即同一个视频上传被中断，那么1天内再次上传可以直接从断点处上传，超过1天则默认会重新上传完整视频。
 >
 App 开启断点续传功能的方式如下：
 	- [Android 上传 SDK](https://intl.cloud.tencent.com/document/product/266/33925)，上传时设置`enableResume`字段为 True 即可。
@@ -77,7 +77,7 @@ App 开启断点续传功能的方式如下：
 视频上传完成之后，云点播会给 App 后台发起 [事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950)，App 后台可通过该事件感知到视频上传行为。如果要接收事件通知，则 App 需要到 [控制台 - 回调设置](https://console.cloud.tencent.com/vod/callback) 开启事件通知。[事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950) 主要包含如下信息：
 - 新视频文件的 FileId 和 URL。
 - 云点播支持在视频上传时指定透传字段，事件完成将透传字段通知到 App 后台。在事件通知中有如下字段：
-	- `SourceType`：该字段被腾讯云固定成 `ServerUpload`，表示上传来源为服务端上传。
+	- `SourceType`：该字段被腾讯云固定成`ServerUpload`，表示上传来源为服务端上传。
 	- `SourceContext`：用户自定义透传字段，App 后台在派发签名时指定的透传内容，对应签名中的`sourceContext`参数。
 - 云点播支持在视频上传完成时自动发起视频处理，如果上传时指定了 [视频处理任务流](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81)，则在事件通知内容中也会携带任务 ID，即事件通知中的`data.procedureTaskId`字段。
 
