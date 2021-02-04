@@ -6,7 +6,7 @@
 
 [GSE申請書](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6)に記入し、使用資格を取得していること。
 
-##　操作手順
+## 操作手順
 
 1.  [GSEコンソール](https://console.cloud.tencent.com/gse/asset)にログインし、左側メニューの【サーバーフリート】をクリックして、サーバーフリートの画面に入ります。
 2. 左上のサービスエリアを選択し、【新規作成】をクリックします。
