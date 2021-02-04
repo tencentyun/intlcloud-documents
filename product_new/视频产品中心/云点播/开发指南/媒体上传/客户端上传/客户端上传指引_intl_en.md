@@ -51,10 +51,10 @@ VOD allows you to upload a video with its cover by entering the path to the cove
 - <span id = "p4"></span>**One-time signature**
 During video upload, the signature distributed by the application backend can be used multiple times within its validity period. If the application has high requirements for video upload security, you can use the one-time signature feature.
 How to use one-time signature: you just need to set `oneTimeValid` to 1 when the application backend distributes the signature. For more information, please see [Signature for Upload from Client](https://intl.cloud.tencent.com/document/product/266/33922).
->The one-time signature can be used only once. Though this approach is more secure, the application has to perform extra processing. For example, when upload fails, you cannot simply use the SDK to upload the video again; instead, you need to apply for a new upload signature.
+>?The one-time signature can be used only once. Though this approach is more secure, the application has to perform extra processing. For example, when upload fails, you cannot simply use the SDK to upload the video again; instead, you need to apply for a new upload signature.
 - **Resumable upload**
 During the video upload process, when the upload is terminated unexpectedly, you can upload the file again from where it left off.
->The effective time for resumption is 1 day, i.e., if the upload of a video is interrupted and then resumed within 1 day, it can be directly resumed; otherwise, the full video will be uploaded again by default.
+>?The effective time for resumption is 1 day, i.e., if the upload of a video is interrupted and then resumed within 1 day, it can be directly resumed; otherwise, the full video will be uploaded again by default.
 >
 You can enable the resumable upload feature for the application as shown below:
 	- For the [upload SDK for Android](https://intl.cloud.tencent.com/document/product/266/33925), set `enableResume` to `True` during upload.
