@@ -6,7 +6,7 @@ LogListener 仅支持64位 Linux 操作系统环境（暂不支持 Windows），
 
 | 操作系统类别&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 确定可安装环境                                               |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CentOS（64位）                                               | CentOS_6.8_64位、CentOS_6.9_64位、CentOS_7.2_64位、CentOS_7.3_64位、CentOS_7.4_64位、CentOS_7.5_64位、CentOS_7.6_64位、CentOS_8.0_64位   |
+| CentOS（64位）                                               | CentOS_6.8_64位、CentOS_6.9_64位、CentOS_7.2_64位、CentOS_7.3_64位、CentOS_7.4_64位、CentOS_7.5_64位、CentOS_7.6_64位、CentOS_8.0_64位 |
 | Ubuntu（64位）                                               | Ubuntu Server_14.04.1_LTS_64位、Ubuntu Server_16.04.1_LTS_64位、Ubuntu Server_18.04.1_LTS_64位 |
 | Debian（64位）                                               | Debian_8.2_64位、Debian_9.0_64位                             |
 | openSUSE（64位）                                             | openSUSE_42.3_64位                                           |
@@ -16,11 +16,11 @@ LogListener 仅支持64位 Linux 操作系统环境（暂不支持 Windows），
 
 ### 1. 下载安装 LogListener
 
-LogListener 最新版本下载地址： [下载 LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.4.5.tar.gz)
+LogListener 最新版本下载地址： [下载 LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz)
 
 以安装路径`/usr/local/`为例： 下载 LogListener 安装包并解压，解压路径为`/usr/local/` ，解压完成后进入 LogListener 目录`loglistener/tools`，执行安装命令 。该操作命令如下：
-```shell
-wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.4.5.tar.gz && tar -zxvf loglistener-linux-x64-2.4.5.tar.gz -C /usr/local && cd /usr/local/loglistener-2.4.5/tools && ./loglistener.sh install
+```plaintext
+wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz && tar -zxvf loglistener-linux-x64-2.5.0.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.0/tools && ./loglistener.sh install
 ```
 
 ### 2. 初始化 LogListener
@@ -56,9 +56,9 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 
 ![](https://main.qcloudimg.com/raw/653ebe0400dca5b21b3e25d01f93cb5b.png)
 > ?
- - 建议使用协作者密钥，需要主账号授权协作者于日志服务的读写权限。
- - region 为您所使用的日志服务区域，而非您的业务机器所处的区域。
- - 云服务器与日志集同地域的情况下，建议使用内网方式访问服务域名。云服务器与日志集在不同地域的情况下，建议使用外网方式访问服务域名。
+> - 建议使用协作者密钥，需要主账号授权协作者于日志服务的读写权限。
+> - region 为您所使用的日志服务区域，而非您的业务机器所处的区域。
+> - 云服务器与日志集同地域的情况下，建议使用内网方式访问服务域名。云服务器与日志集在不同地域的情况下，建议使用外网方式访问服务域名。
 
 ### 3. 启动 LogListener
 
@@ -134,6 +134,8 @@ cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
 ```shell
 cp -r /tmp/loglistener-backup/data loglistener-2.2.8/
 ```
+
+
 
 6. 使用启动命令启动运行新版本 LogListener。
 
