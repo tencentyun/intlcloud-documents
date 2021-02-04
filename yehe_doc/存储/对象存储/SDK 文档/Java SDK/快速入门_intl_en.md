@@ -3,7 +3,7 @@
 #### Relevant resources
 - Download the COS XML Java SDK source code [here](https://github.com/tencentyun/cos-java-sdk-v5).
 - Download the XML SDK for Java [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip).
-- Download the demo [here](<https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo>).
+- Download the demo [here](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo).
 - Find the complete sample code [here](https://github.com/tencentyun/cos-snippets/tree/master/Java).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md).
 
@@ -30,7 +30,7 @@ You can install the Java SDK using Maven or source code:
 <dependency>
     <groupId>com.qcloud</groupId>
     <artifactId>cos_api</artifactId>
-    <version>5.6.24</version>
+    <version>5.6.35</version>
 </dependency>
 ```
 
@@ -141,7 +141,7 @@ Upload a local file or input stream with a known length to COS. It is most suita
 
 - If most of your local files are over 20 MB, we recommend you upload them with the advanced upload API.
 - If an object with the same key already exists in COS, it will be overwritten during the upload.
-- To create a directory object, please see [How to Create a Directory in the SDK](https://cloud.tencent.com/document/product/436/30746#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F).
+- To create a directory object, please see [How to Create a Directory in the SDK](https://intl.cloud.tencent.com/document/product/436/38956?lang=en&pg=#how-do-i-create-a-directory-in-the-sdk.3F).
 - An object key (Key) is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is `images/picture.jpg`. For more information, please see [Object Key](https://cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE).
 
 
