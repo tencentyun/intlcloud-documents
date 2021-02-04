@@ -17,7 +17,7 @@ Kubernetes versions are iterated quickly. New versions usually include many bug 
 ## Container Network Plugins: GlobalRouter and VPC-CNI
 
 ### Network modes
-TKE supports the following two network modes. For more information, see [How to Choose TKE Network Mode](https://intl.cloud.tencent.com/document/product/457/35248).
+TKE supports the following two network modes. For more information, see [How to Choose TKE Network Mode](https://intl.cloud.tencent.com/document/product/457/38966).
 - **GlobalRouter mode**:
 	- In this mode, container network capabilities are implemented based on container networking interfaces (CNIs) and network bridges, whereas container routing is implemented based on the underlying VPC layer.
 	- Containers are located on the same network plane as nodes. IP ranges of containers cover abundant IP addresses and do not overlap those of VPC instances.
