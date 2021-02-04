@@ -9,11 +9,11 @@
 本文提供的代码是免费开源的，但在使用的过程中可能会产生以下费用：
 
 - 购买腾讯云云服务器（CVM）用于执行上传脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
-- 消耗 VOD 存储用于存储拉取上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
+- 消耗 VOD 存储用于存储上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
 
 ## 将 CVM 上的视频上传到 VOD
-
-### 步骤1：准备腾讯云 CVM<span id="p1"></span>
+<span id="p1"></span>
+### 步骤1：准备腾讯云 CVM
 
 上传脚本需要运行在一台腾讯云 CVM 上，要求如下：
 
@@ -25,16 +25,16 @@
 购买 CVM 的方法请参见 [操作指南 - 创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。重装系统的方法请参见 [操作指南 - 重装系统](https://intl.cloud.tencent.com/document/product/213/4933)。
 
 >!如果您没有符合上述条件的腾讯云 CVM，也可以在其它带外网的 Linux（如 CentOS、Debian 等）或 Mac 机器上执行脚本，但需根据操作系统的区别修改脚本中的个别命令，具体修改方式请开发者自行搜索。
-
-### 步骤2：开通云点播<span id="p2"></span>
+<span id="p2"></span>
+### 步骤2：开通云点播
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-
-### 步骤3：获取 API 密钥<span id="p3"></span>
+<span id="p3"></span>
+### 步骤3：获取 API 密钥
 
 上传视频需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）。如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
-
-### 步骤4：下载代码并安装 SDK<span id="p4"></span>
+<span id="p4"></span>
+### 步骤4：下载代码并安装 SDK
 
 登录 [步骤1](#p1) 中准备好的 CVM（登录方法详见 [操作指南 - 登录 Linux](https://intl.cloud.tencent.com/document/product/213/5436)），在远程终端输入以下命令并运行：
 
@@ -54,8 +54,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 [2020-06-23 19:56:36]开始配置 SDK 参数。
 [2020-06-23 19:56:36]SDK 参数配置完成。
 ```
-
-### 步骤5：上传视频<span id="p5"></span>
+<span id="p5"></span>
+### 步骤5：上传视频
 
 发起上传之前，开发者需要在 CVM 上准备好视频文件和封面图片（可选）。如果开发者不方便上传视频到 CVM，可以在远程终端执行以下命令，将测试视频和测试封面下载到 CVM 上：
 
@@ -78,10 +78,10 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/server_upload/; python3 server_upl
 ```
 
 >?如果开发者使用自己的视频进行测试，建议使用较小的视频文件（例如几个MB），避免因 CVM 带宽不足而需要耗费很长的上传时间。
+<span id="p6"></span>
+### 步骤6：查看结果
 
-### 步骤6：查看结果<span id="p6"></span>
-
-在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面上可以看到刚上传的视频文件和封面。
+在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面上可以看到刚上传的视频文件和封面：
 
 ## 代码解读
 
@@ -117,7 +117,7 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/server_upload/; python3 server_upl
 </tr>
 </tbody></table>
 
-	>?本 Demo 仅支持`procedure`和`subappid`两个上传参数，完整功能请参考 [Python 上传 SDK 接口描述](https://intl.cloud.tencent.com/document/product/266/33917)。
+	>?本 Demo 仅支持`procedure`和`subappid`两个上传参数，完整功能请参考 [Python 上传 SDK 接口描述](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8E.A5.E5.8F.A3.E6.8F.8F.E8.BF.B0)。
 3. 从命令行参数中获取待上传视频文件的本地路径，以及封面图片路径（如果有封面），然后调用`upload_media()`发起上传：
 ```
        if len(sys.argv) < 2:
@@ -128,7 +128,7 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/server_upload/; python3 server_upl
    
        # 发起上传
        rsp = upload_media(configuration, video_path, cover_path)
-```
+   ```
 4. 在`upload_media()`中，使用 Python SDK 提供的方法构造一个上传实例`client`，然后在`req`中设置上传参数，最后发起上传：
    ```
            client = VodUploadClient(conf["secret_id"], conf["secret_key"])
@@ -154,5 +154,6 @@ VOD 服务端上传 SDK 还支持其它特性，如设置视频名称、分类�
 - [C#](https://intl.cloud.tencent.com/document/product/266/33915)
 - [PHP](https://intl.cloud.tencent.com/document/product/266/33916)
 - [Python](https://intl.cloud.tencent.com/document/product/266/33917)
+- [Node.js](https://intl.cloud.tencent.com/document/product/266/33918)
 - [Golang](https://intl.cloud.tencent.com/document/product/266/33919)
 
