@@ -1,12 +1,12 @@
 CLB supports three IP versions: IPv4, IPv6, and IPv6 NAT64. IPv6 CLB supports the TCP, UDP, TCP SSL, HTTP, and HTTPS protocols and provides flexible forwarding capabilities based on domain names and URL paths. This document guides you through how to get started with IPv6 CLB.
+>?IPv6 CLB is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application.
 
 ## Prerequisites
 1. CLB only forwards traffic but cannot process requests; therefore, you need to create a CVM instance that processes user requests first and complete IPv6 configuration for it. 
 2. This document takes HTTP forwarding as an example. The corresponding web server (such as Apache, Nginx, or IIS) must be deployed on the CVM instance, and the port used by the server needs to listen on IPv6.
 
 ## Instructions
-- IPv6 CLB is currently in beta test. If you want to use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for application.
-- Currently, IPv6 CLB instances can be created in the Beijing, Shanghai, Guangzhou, Nanjing, Chengdu, Singapore, and Virginia regions.
+- Currently, IPv6 CLB instances can be created in the Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Hong Kong (China), Singapore, and Virginia regions.
 - IPv6 CLB does not support classic CLB.
 - IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
 - Currently, IPv6 CLB balances the load completely over the public network. Clients in the same VPC cannot access IPv6 CLB over the private network.
@@ -35,7 +35,7 @@ vim  /etc/nginx/nginx.conf
 1. Log in to the Tencent Cloud's official website and enter the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. Select options for the following parameters correctly:
  - Billing Mode: only pay-as-you-go billing is supported.
- - Region: Beijing, Shanghai, Guangzhou, Chengdu, Singapore.
+ - Region: select a region.
  - IP Version: IPv6.
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
