@@ -6,7 +6,7 @@
 
 [GSE申請書](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6)を記入して利用資格を取得し、サーバーフリートを作成済みであること。
 
-##　操作手順
+## 操作手順
 
 1. [GSEコンソール](https://console.cloud.tencent.com/gse/asset)にログインし、サーバーフリートを作成します。詳細については、[サーバーフリートの作成](https://intl.cloud.tencent.com/document/product/1055/36675)をご参照ください。
 2. 作成できたサーバーフリートの【ID】をクリックして、サーバーフリートの詳細情報に入り、【イベント】タブをクリックして、イベント画面に入ります。
