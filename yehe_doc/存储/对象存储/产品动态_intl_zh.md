@@ -1,3 +1,58 @@
+## 2021年01月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>图片处理功能已全部支持公有云地域</td>
+<td>图片处理功能新增支持海外公有云地域，目前图片处理功能已全部支持 COS 所有公有云地域。</td>
+<td> 2021-01-20</td>
+<td><ul  style="margin: 0;">
+<li><a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/436/6224">地域和访问域名</a></li>
+</ul>
+</tr>
+</tbody></table>
+
+## 2020年12月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>上线回源容灾功能功能</td>
+<td>用户配置 COS 回源源站时，支持配置备份源站。针对回源失败的场景，能够保证当回源地址失效时，迅速切换至备用回源地址，保障业务连续不中断。</td>
+<td> 2020-12-28</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
+</tr>
+<tr>
+<td>上线同步回源功能</td>
+<td>开启同步回源后，COS 将从源站直接拉取数据并实时返回给请求端，不再返回重定向的3XX 状态码。</td>
+<td> 2020-12-17</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/31508">设置回源</a>
+</tr>
+<tr>
+<td>COS 批量处理功能优化升级</td>
+<td>1. 批量复制时支持自定义复制、添加、修改对象标签及元数据。<br>2. 优化后端处理逻辑，按文件量级动态分配处理资源，处理效率提升50%。</td>
+<td> 2020-12-09</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">批量处理概述</a>
+</tr>
+</tbody></table>
+
 ## 2020年11月
 
 <table>
