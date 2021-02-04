@@ -71,7 +71,7 @@ When the client app is killed by the system or user without IM logout, the IM se
 <span id="xiaomiStep1_1"></span>
 
 1. Access the [Mi open platform website](https://dev.mi.com/console/) to register an account and pass the developer verification. Log in to the console of the Mi open platform, choose **App Service** > **Push Service**, and create a MiPush service app. Take note of the **`Primary package name`**, **`AppID`**, and **`AppSecret`** information.
-   ![](https://main.qcloudimg.com/raw/7a291196c6f4800d5d1c9b9e23aed617.jpg)
+   
    <span id="xiaomiStep1_2"></span>
 2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#Step1_1) to configure the following parameters:
 
@@ -80,10 +80,10 @@ When the client app is killed by the system or user without IM logout, the IM se
  - **AppID**: enter the **AppID** you got from MiPush.
  - **AppSecret**: enter the **AppSecret** you got from MiPush.
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, see [Configuring Click Event](#xiaomi_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through(#xiaomi_custom).
-    ![](https://main.qcloudimg.com/raw/b9acf23fb00144aa86be20dba7627699.png)
+   **Open app** or **Open specific app interface** allows [custom content pass through](#xiaomi_custom).
+    ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
    Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/2a28ec48998579c84a3f3786c9a4b667.png)
+    ![](https://main.qcloudimg.com/raw/b85cbad82be257ea06334bc0dadab8a8.png)
 
 ### Integrating the push SDK
 1. Add the Mi dependency: implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'.
@@ -101,12 +101,12 @@ You can select one of the following events: **Open app**, **Open URL**, or **Ope
 #### Open app
 
 If you choose **Open app**, the `onNotificationMessageClicked` method of Mi will be called back, and the app itself can process app opening in this method.
-![](https://main.qcloudimg.com/raw/fa0fbe98e40da37808a1d646b313783c.png)
+![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
 
 #### Open URL
 
 You need to select **Open URL** in [Step 2: add a certificate](#xiaomiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/3c8f71b696f39117105d0e67813aaa0f.png)
 
 #### Open specific app interface
 
@@ -142,7 +142,7 @@ You need to select **Open URL** in [Step 2: add a certificate](#xiaomiStep1_2) a
    ```
 
 3. Select **Open specific app interface** in [Step 2: add a certificate](#xiaomiStep1_2) and enter the result above.
-   ![](https://main.qcloudimg.com/raw/26a2bb370cfb5525f3eb1ddeef47c490.png)
+   ![](https://main.qcloudimg.com/raw/94c3abe8ab0cb8c72ee79687d0ffe8d3.png)
 
 <span id="xiaomi_custom"></span>
 
@@ -203,7 +203,7 @@ Set the custom content for the notification bar message before sending the messa
 <span id="huaweiStep1_1"></span>
 
 1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, and **`APP SECRET`**.
-   ![](https://main.qcloudimg.com/raw/50d36c2cfb7a32acefd8ace44e1ef71f.png)
+   
    <span id="huaweiStep1_2"></span>
 2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
 
@@ -213,10 +213,10 @@ Set the custom content for the notification bar message before sending the messa
  - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
  - **Badge Parameter**: enter the full `Activity` class name of the app entry, which will be used as the Huawei desktop app badge for display. See [Huawei Desktop Badge Development Guide](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802).
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#huawei_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through(#huawei_custom).
-    ![](https://main.qcloudimg.com/raw/852b40d2a8a5aacd4327f94130976563.png)
+   **Open app** or **Open specific app interface** allows [custom content pass through](#huawei_custom).
+    ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
    Click **Save** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-   ![](https://main.qcloudimg.com/raw/4f4b2a5c01c524d13434f0b5ca4c4b2c.png)
+   ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
 
 ### Integrating the push SDK
 1. Add the Huawei dependencies: implementation 'com.tencent.tpns:huawei:1.2.1.2-release' and implementation 'com.huawei.hms:push:5.0.2.300'.
@@ -238,7 +238,7 @@ This is the default event, which opens the app once the notification bar message
 #### Open URL
 
 You need to select **Open URL** in [Step 2: add a certificate](#huaweiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
 
 #### Open specific app interface
 
@@ -358,10 +358,10 @@ String value = bundle.getString("ext");
  - **MasterSecret**: enter the **MasterSecret** you got from OPPO PUSH.
  - **ChannelID**: enter the **ChannelID** generated in Step 2.
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#oppo_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through(#oppo_custom).
-    ![](https://main.qcloudimg.com/raw/8b94fde206c9fa8cd0dee774e12df0ac.png)
+   **Open app** or **Open specific app interface** allows [custom content pass through](#oppo_custom).
+    ![](https://main.qcloudimg.com/raw/b4f1c81290a40c972d95cc2e63ffbbed.png)
    Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/23dc3500472be773bf5499299e511444.png)
+    ![](https://main.qcloudimg.com/raw/9d514aedd6233e5f619278073232974e.png)
 
 ### Integrating the push SDK
 1. Add the OPPO dependency: implementation 'com.tencent.tpns:oppo:1.2.1.2-release'.
@@ -384,7 +384,7 @@ This is the default event, which opens the app once the notification bar message
 #### Open URL
 
 You need to select **Open URL** in [Step 2](#oppoStep1_3) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/6dd91b1d6ca02f658f340463a55726bd.png)
 
 #### Open specific app interface
 
@@ -470,10 +470,10 @@ Bundle bundle = intent.getExtras();
  - **AppID**: enter the **AppID** you got from vivo Push.
  - **AppSecret**: enter the **APP secret** you got from vivo Push.
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#vivo_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through(#vivo_custom).
-    ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+   **Open app** or **Open specific app interface** allows [custom content pass through](#vivo_custom).
+    ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
    Click **OK** to save the information. Take note of the **ID** of the certificate. Certificate information takes effect 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
+    ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
 
 ### Integrating the push SDK
 1. Add vivo dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
@@ -495,7 +495,7 @@ This is the default event, which opens the app once the notification bar message
 #### Open URL
 
 You need to select **Open URL** in [Step 2: add a certificate](#vivoStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
 
 #### Open specific app interface
 
@@ -581,7 +581,7 @@ String extContent = paramMap.get("ext");
 <span id="meizuStep1_1"></span>
 
 1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass the developer verification. Log in to the Meizu console, choose **Development Service** > **Flyme Push** and create a Meizu push service app. Take note of the **`app package name`**, **`App ID`**, and **`App Secret`**.
-   ![](https://main.qcloudimg.com/raw/e0674cc1bca92fd549c03a3523b2144c.png)
+   
    <span id="meizuStep1_2"></span>
 2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#meizuStep1_1) to configure the following parameters:
 
@@ -590,10 +590,10 @@ String extContent = paramMap.get("ext");
  - **AppID**: enter the **App ID** of the Meizu push service app.
  - **AppSecret**: enter the **App Secret** of the Meizu push service app.
  - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#meizu_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through(#meizu_custom).
-    ![](https://main.qcloudimg.com/raw/7151cfff6d8e82a41bfb9b718a49bf2f.png)
+   **Open app** or **Open specific app interface** allows [custom content pass through](#meizu_custom).
+    ![](https://main.qcloudimg.com/raw/7c2ff0ba523f6878cb40cd96c5992af8.png)
    Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
-    ![](https://main.qcloudimg.com/raw/b8701c4c69847ae711055df0727f01ab.png)
+    ![](https://main.qcloudimg.com/raw/37c945dea796be72a035afb9386ace39.png)
 
 ### Integrating the push SDK
 
@@ -616,12 +616,12 @@ This is the default event, which opens the App once the notification bar message
 #### Open URL
 
 You need to select **Open URL** in [Step 2: add a certificate](#meizuStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/823386b86c7994e5ebea8d48e8baead6.png)
 
 #### Open specific app interface
 
 When [adding a certificate](#meizuStep1_2), you need to choose **Open specific app interface** and enter the complete class name of the Activity to be opened, for example, `com.tencent.qcloud.tim.demo.chat.ChatActivity`.
-![](https://main.qcloudimg.com/raw/64d67e324cc53b0ff0631586d9ec1ef5.png)
+![](https://main.qcloudimg.com/raw/9d4bb882e67f7f27263455311669c43c.png)
 
 <span id="meizu_custom"></span>
 
@@ -682,9 +682,9 @@ String extContent = bundle.getString("ext");
 2. Log in to the [Firebase console](https://console.firebase.google.com) and click your app card to go to the app configuration page. Click <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;"> on the right side of **Project Overview**, choose **Project Settings** > **Service Account**, and click **Generate New Private Key** to generate a new private key file.
 <span id="fcmStep1_3"></span>
 3. Log in to the Tencent Cloud [IM console](https://console.qcloud.com/avc) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Upload the private key file obtained in [Step 2](#fcmStep1_2).
- ![](https://main.qcloudimg.com/raw/b18e2414561c6733b24c56cd1e866f21.png)
+ ![](https://main.qcloudimg.com/raw/eb7a864e1cc927e3359b9365634093ac.png)
 4. Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
- ![](https://main.qcloudimg.com/raw/2199bbf955cf52f09b78af6a97ab8122.png)
+ ![](https://main.qcloudimg.com/raw/4eaad62f4db9756e510c0ea5f010574d.png)
 
 ### Integrating the push SDK
 

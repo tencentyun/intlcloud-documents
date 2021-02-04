@@ -71,7 +71,7 @@
 <span id="xiaomiStep1_1"></span>
 
 1. 打开 [小米开放平台官网](https://dev.mi.com/console/) 进行注册并通过开发者认证。登录小米开放平台的管理控制台，选择【应用服务】>【PUSH服务】，创建小米推送服务应用，记录**`主包名`**、**`AppID`**、**`AppSecret`**信息。
-   ![](https://main.qcloudimg.com/raw/7a291196c6f4800d5d1c9b9e23aed617.jpg)
+   
    <span id="xiaomiStep1_2"></span>
 2. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面，单击【Android平台推送设置】区域的【添加证书】。根据 [步骤1](#Step1_1) 中获取的信息设置以下参数：
 
@@ -81,9 +81,9 @@
  - **AppSecret**：填写小米推送服务应用的 **AppSecret**
  - **点击通知后**：选择点击通知栏消息后的响应操作， 支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#xiaomi_click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#xiaomi_custom)。
-    ![](https://main.qcloudimg.com/raw/b9acf23fb00144aa86be20dba7627699.png)
+    ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
    单击【确认】保存信息，记录证书的**`ID`**。证书信息保存后10分钟内生效。
-    ![](https://main.qcloudimg.com/raw/2a28ec48998579c84a3f3786c9a4b667.png)
+    ![](https://main.qcloudimg.com/raw/b85cbad82be257ea06334bc0dadab8a8.png)
 
 ### 集成推送 SDK
 1. 请添加小米依赖：implementation 'com.tencent.tpns:xiaomi:1.2.1.2-release'。
@@ -101,12 +101,12 @@
 #### 打开应用
 
 设置为点击通知栏消息打开应用时，会回调小米的 onNotificationMessageClicked 方法，App 可以在此方法中自行处理打开应用。
-![](https://main.qcloudimg.com/raw/fa0fbe98e40da37808a1d646b313783c.png)
+ ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
 
 #### 打开网页
 
 您需要在 [添加证书](#xiaomiStep1_2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/3c8f71b696f39117105d0e67813aaa0f.png)
 
 #### 打开应用内指定界面
 
@@ -142,7 +142,7 @@
    ```
 
 3. 在 [添加证书](#xiaomiStep1_2) 时选择【打开应用内指定界面】并输入上述打印结果。
-   ![](https://main.qcloudimg.com/raw/26a2bb370cfb5525f3eb1ddeef47c490.png)
+   ![](https://main.qcloudimg.com/raw/94c3abe8ab0cb8c72ee79687d0ffe8d3.png)
 
 <span id="xiaomi_custom"></span>
 
@@ -203,7 +203,7 @@
 <span id="huaweiStep1_1"></span>
 
 1. 打开 [华为开发者联盟官网](https://developer.huawei.com/consumer/cn/) 进行注册并通过开发者认证。进入管理中心，选择【应用服务】>【开发服务】>【PUSH】，创建华为推送服务应用。记录**`包名`**、**`APP ID`**、**`APP SECRET`**信息。
-   ![](https://main.qcloudimg.com/raw/50d36c2cfb7a32acefd8ace44e1ef71f.png)
+   
    <span id="huaweiStep1_2"></span>
 2. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面，单击【Android平台推送设置】区域的【添加证书】。根据 [步骤1](#huaweiStep1_1) 中获取的信息设置以下参数：
 
@@ -214,9 +214,9 @@
  - **角标参数**：填写应用入口完整 `Activity` 类名，用作华为桌面应用角标显示，请参考 [华为桌面角标开发指导书](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802)
  - **点击通知后**：选择点击通知栏消息后的响应操作， 支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#huawei_click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#huawei_custom)。
-    ![](https://main.qcloudimg.com/raw/852b40d2a8a5aacd4327f94130976563.png)
+    ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
    单击【保存】保存信息，记录证书的**`ID`**。证书信息保存后10分钟内生效。
-   ![](https://main.qcloudimg.com/raw/4f4b2a5c01c524d13434f0b5ca4c4b2c.png)
+   ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
 
 ### 集成推送 SDK
 1. 请添加华为依赖：implementation 'com.tencent.tpns:huawei:1.2.1.2-release' 和 implementation 'com.huawei.hms:push:5.0.2.300'。
@@ -238,7 +238,7 @@
 #### 打开网页
 
 您需要在 [添加证书](#huaweiStep1_2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
 
 #### 打开应用内指定界面
 
@@ -359,9 +359,9 @@ String value = bundle.getString("ext");
  - **ChannelID**：填写您在 App 中创建的 **ChannelID**
  - **点击通知后**：选择点击通知栏消息后的响应操作， 支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#oppo_click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#oppo_custom)。
-    ![](https://main.qcloudimg.com/raw/8b94fde206c9fa8cd0dee774e12df0ac.png)
+    ![](https://main.qcloudimg.com/raw/b4f1c81290a40c972d95cc2e63ffbbed.png)
    单击【确认】保存信息，记录证书的**`ID`**。证书信息保存后10分钟内生效。
-    ![](https://main.qcloudimg.com/raw/23dc3500472be773bf5499299e511444.png)
+    ![](https://main.qcloudimg.com/raw/9d514aedd6233e5f619278073232974e.png)
 
 ### 集成推送 SDK
 1. 请添加 OPPO 依赖：implementation 'com.tencent.tpns:oppo:1.2.1.2-release' 。
@@ -384,7 +384,7 @@ String value = bundle.getString("ext");
 #### 打开网页
 
 您需要在 [添加证书](#oppoStep1_3) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/6dd91b1d6ca02f658f340463a55726bd.png)
 
 #### 打开应用内指定界面
 
@@ -471,9 +471,9 @@ Bundle bundle = intent.getExtras();
  - **AppSecret**：填写 vivo 推送服务应用的 **APP secret**
  - **点击通知后**：选择点击通知栏消息后的响应操作， 支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#vivo_click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#vivo_custom)。
-    ![](https://main.qcloudimg.com/raw/ac890d834dd7f069f936094180634cd7.png)
+    ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
    单击【确认】保存信息，记录证书的**ID**。证书信息保存后10分钟内生效。
-    ![](https://main.qcloudimg.com/raw/3442e00debac668c42fa4be89903ac90.png)
+    ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
 
 ### 集成推送 SDK
 1. 请添加 vivo 依赖：implementation 'com.tencent.tpns:vivo:1.2.1.2-release' 。
@@ -495,7 +495,7 @@ Bundle bundle = intent.getExtras();
 #### 打开网页
 
 您需要在 [添加证书](#vivoStep1_2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
 
 #### 打开应用内指定界面
 
@@ -581,7 +581,7 @@ String extContent = paramMap.get("ext");
 <span id="meizuStep1_1"></span>
 
 1. 打开 [魅族开放平台官网](http://open.flyme.cn) 进行注册并通过开发者认证。登录其控制台，选择【开发服务】>【Flyme推送】，创建魅族推送服务应用。记录**`应用包名`**、**`App ID`**、**`App Secret`**信息。
-   ![](https://main.qcloudimg.com/raw/e0674cc1bca92fd549c03a3523b2144c.png)
+   
    <span id="meizuStep1_2"></span>
 2. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面，单击【Android平台推送设置】区域的【添加证书】。根据 [步骤1](#meizuStep1_1) 中获取的信息设置以下参数：
 
@@ -591,9 +591,9 @@ String extContent = paramMap.get("ext");
  - **AppSecret**：填写魅族推送服务应用的 **App Secret**
  - **点击通知后**：选择点击通知栏消息后的响应操作， 支持**打开应用**、**打开网页**和**打开应用内指定界面**，更多详情请参见 [配置点击通知栏消息事件](#meizu_click)
    当设置为【打开应用】或【打开应用内指定界面】操作时，支持 [透传自定义内容](#meizu_custom)。
-    ![](https://main.qcloudimg.com/raw/7151cfff6d8e82a41bfb9b718a49bf2f.png)
+    ![](https://main.qcloudimg.com/raw/7c2ff0ba523f6878cb40cd96c5992af8.png)
    单击【确认】保存信息，记录证书的**`ID`**。证书信息保存后10分钟内生效。
-    ![](https://main.qcloudimg.com/raw/b8701c4c69847ae711055df0727f01ab.png)
+    ![](https://main.qcloudimg.com/raw/37c945dea796be72a035afb9386ace39.png)
 
 ### 集成推送 SDK
 
@@ -616,12 +616,12 @@ String extContent = paramMap.get("ext");
 #### 打开网页
 
 您需要在 [添加证书](#meizuStep1_2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
-![](https://main.qcloudimg.com/raw/bb336d3e2bd799b4dfe443833782e322.png)
+![](https://main.qcloudimg.com/raw/823386b86c7994e5ebea8d48e8baead6.png)
 
 #### 打开应用内指定界面
 
 您需要在 [添加证书](#meizuStep1_2) 时选择【打开应用内指定界面】并输入需要打开的 Activity 的完整类名，例如 `com.tencent.qcloud.tim.demo.chat.ChatActivity`。
-![](https://main.qcloudimg.com/raw/64d67e324cc53b0ff0631586d9ec1ef5.png)
+![](https://main.qcloudimg.com/raw/9d4bb882e67f7f27263455311669c43c.png)
 
 <span id="meizu_custom"></span>
 
@@ -682,9 +682,9 @@ String extContent = bundle.getString("ext");
 2. 登录 [Firebase 控制台](https://console.firebase.google.com)，单击您的应用卡片，进入应用配置页面。单击 Project Overview 右侧的 <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;">，选择【项目设置】>【服务帐号】，单击【生成新的私钥】下载私钥文件。
 <span id="fcmStep1_3"></span>
 3. 登录腾讯云 [即时通信 IM 控制台](https://console.qcloud.com/avc)，单击目标应用卡片，进入应用的基础配置页面，单击【Android平台推送设置】区域的【添加证书】。上传 [步骤2](#fcmStep1_2) 中获取的私钥文件。
- ![](https://main.qcloudimg.com/raw/b18e2414561c6733b24c56cd1e866f21.png)
+ ![](https://main.qcloudimg.com/raw/eb7a864e1cc927e3359b9365634093ac.png)
 4. 单击【确认】保存信息，记录证书的**`ID`**。证书信息保存后10分钟内生效。
- ![](https://main.qcloudimg.com/raw/2199bbf955cf52f09b78af6a97ab8122.png)
+ ![](https://main.qcloudimg.com/raw/4eaad62f4db9756e510c0ea5f010574d.png)
 
 ### 集成推送 SDK
 
