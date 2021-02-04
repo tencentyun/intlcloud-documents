@@ -9,12 +9,12 @@ TDSQL for MySQL features linearly horizontal scalability that can increase the p
 ## IoT Data (Storage and Access of Petabytes of Data)
 In typical IoT scenarios such as industrial monitoring and remote control, smart city, smart home, and IoV, a large number of sensing and monitoring devices, high sample rate, and massive storage capacity are required. Generally, petabytes to exabytes of data may be generated for storage per year. Traditional x86 server architecture and open-source database solutions cannot store or use such a huge amount of data at all.
 
-TDSQL for MySQL features horizontal capacity expansion and compression capabilities empowered by storage engines such as TokuDB, helping you store massive amounts of data at lower costs than shared storage solutions.
+TDSQL for MySQL features horizontal capacity expansion, helping you store massive amounts of data at lower costs than shared storage solutions.
   
 ## File Index (Instant Access to Trillions of Data Rows)
-Generally, a cloud service platform contains hundreds of millions to trillions of rows of image, document, and video data. It usually needs to store the indexes of such files and perform real-time CRUD operations at the index level.
+Generally, a cloud service platform contains hundreds of millions to trillions of rows of image, document, and video data. It usually needs to store the indexes of such files to databases and perform real-time CRUD operations at the index level.
 
-As the service platform sustains access requests from other customers, extremely high service quality and performance are required. Traditional databases cannot support such access and use. TDSQL for MySQL boasts ultra-high performance, scalability, and strong sync capabilities, effectively ensuring the service quality and data consistency on the platform.
+As the service platform sustains access requests from customers, extremely high service quality and performance are required. Traditional databases cannot support such access and use. TDSQL for MySQL boasts ultra-high performance, scalability, and strong sync capabilities, effectively ensuring the service quality and data consistency on the platform.
   
 ## Cost-effective Commercial Database Solution
 In order to support massive data storage and high-concurrence database access, government agencies, large enterprises, and banks are extremely dependent on minicomputers and high-end storage. Internet companies can achieve the same or even higher capabilities of commercial databases with low-cost x86 servers and open-source software.
