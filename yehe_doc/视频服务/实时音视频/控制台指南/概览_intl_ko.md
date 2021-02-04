@@ -26,7 +26,7 @@ TRTC 콘솔에서는 사용량 통계, 모니터링 대시보드, 개발 보조,
 <table>
 <tr><th width="45%">비고</th><th width="20%">툴 항목</th><th>설명</th>
 </tr><tr>
-<td rowspan="4"><img src="https://main.qcloudimg.com/raw/e3f00683f546e2379dc91a0526eb8e9d.png"/></td>
+<td rowspan="4"><img src="https://main.qcloudimg.com/raw/6cad107e0eff24261b62b13077ef3ea1.png"/></td>
 <td>[자주 찾는 문서]</td>
 <td>TRTC 관련 기능에 대한 자세한 내용은 자주 찾는 문서에서 알아볼 수 있습니다.</td>
 </tr><tr>
