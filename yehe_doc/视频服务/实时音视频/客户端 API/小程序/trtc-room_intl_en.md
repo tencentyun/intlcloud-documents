@@ -1026,4 +1026,3 @@ trtcRoomContext.on(EVENT.ERROR,(event)=>{
   console.log(event.data.code)
 })
 ```
-For more information on the error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/647/35151).
