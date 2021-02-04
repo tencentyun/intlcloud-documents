@@ -10,34 +10,50 @@
 
 ### CocoaPods integration (recommended)
 
-TUIKit supports CocoaPods integration and manual integration. We recommend CocoaPods integration because it enables upgrades to the latest version at any time.
+TUIKit supports CocoaPods integration and manual integration. We recommend that you use CocoaPods integration to ensure that you can update to the latest version at any time.
 
-1. Add the following content in Podfile.
+<ol><li>Add the following content in the Podfile.
+
+```ruby
+
+// TUIKit uses a third-party static library. This setting needs to be blocked.
+#use_frameworks!
+
+// TXIMSDK_TUIKit_live_iOS uses the *.xcassets resource file. You need to add this statement to prevent it from conflicting with other resource files in the project.
+install! 'cocoapods', :disable_input_output_paths => true  
+
+// Integrate the chat, relationship chain, and group features, using the TXLiteAVSDK_TRTC library as the default dependency.
+ pod 'TXIMSDK_TUIKit_iOS'  
+	 
+// Integrate the chat, relationship chain, and group features, using the TXLiteAVSDK_Professional TRTC library as the default dependency.
+// pod 'TXIMSDK_TUIKit_iOS_Professional' 
+
+// Integrate group livestreaming and livestreaming plazas, using the TXLiteAVSDK_TRTC library as the default dependency.
+pod 'TXIMSDK_TUIKit_live_iOS'	
+
+// Integrate group livestreaming and livestreaming plazas, using the TXLiteAVSDK_Professional TRTC library as the default dependency.
+// pod 'TXIMSDK_TUIKit_live_iOS_Professional' 
+
 ```
-#use_frameworks!   // This configuration needs to be shielded because TUIKit uses third-party static libraries.
-install! 'cocoapods', :disable_input_output_paths => true  // This statement is needed to avoid conflict because TXIMSDK_TUIKit_live_iOS uses a `*.xcassets` resource fie. 
 
- pod 'TXIMSDK_TUIKit_iOS'                 // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
-// pod 'TXIMSDK_TUIKit_iOS_Professional' // Integrate the chat, relationship chain and group features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
-pod 'TXIMSDK_TUIKit_live_iOS'		 // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_TRTC by default
-// pod 'TXIMSDK_TUIKit_live_iOS_Professional' // Integrate group livestreaming and live room list features, which depends on the audio and video library of TXLiteAVSDK_Professional by default
-```
-The Tencent Cloud [audio and video library](https://intl.cloud.tencent.com/document/product/647/34615) cannot be integrated at the same time due to symbol conflicts. If you use a non-[TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version of an audio and video library, we recommend that you remove it first and then integrate the `TXIMSDK_TUIKit_iOS_Professional` version into the pod. This version of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) audio and video library includes all basic audio and video capabilities.
+Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
 
-2. Run the following command to install TUIKit.
+<li> Run the following command to install the TUIKit.<br>
+
 ```bash
 pod install
 ```
- If installation of the latest SDK version fails, run the following command to update the local CocoaPods repository list:
+ If the latest SDK version cannot be installed, run the following command to update the local CocoaPods repository list.<br>
+ 
 ```bash
  pod repo update
 ```
-
+</ol></li>
 
 ### Manual integration (not recommended)
 
-1. In Framework Search Path, add the file path of ImSDK, and manually add the TUIKit and ImSDK directories to your project.
-2. Manually add the third-party libraries used by TUIKit to your project:
+1. Add the ImSDK file path to Framework Search Path and manually add the TUIKit and ImSDK directories to your project.
+2. Manually add the third-party library used by TUIKit to your project:
  - [MMLayout - Tag : 0.2.0](https://github.com/annidy/MMLayout)
  - [SDWebImage - Tag : 5.9.0](https://github.com/SDWebImage/SDWebImage/tree/5.9.0)
  - [ReactiveObjC - Tag  : 3.1.1](https://github.com/ReactiveCocoa/ReactiveObjC.git)
@@ -46,16 +62,30 @@ pod install
 
 ## Importing TUIKit
 
-<ol><li>Import TUIKit to the AppDelegate.m file and initialize it.
+<ol><li>Introduce TUIKit in the AppDelegate.m file and initialize it.
 
 ```objectivec
 #import "TUIKit.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[[TUIKit sharedInstance] setupWithAppId:sdkAppid]; // SDKAppID can be obtained in the IM Console.
+	[[TUIKit sharedInstance] setupWithAppId:sdkAppid]; // SDKAppID can be obtained from the IM console.
 }
 ```
 </li>
-<li>Save and compile it.<br>
-  If the compilation is successful, the integration is completed. If the compilation fails, check the failure cause or re-perform the integration according to the instructions in this document.
+<li>Compile and save the file.<br>
+  If compilation is successful, integration has been completed. If compilation fails, check the cause of the error or perform integration again based on this document.
 </li></ol>
+
+## FAQ
+
+### 1 ** target has transitive dependencies that include statically linked binaries
+
+If this error occurs during the pod process, this is because `TUIKit` is using a third-party static library. You need to comment out `use_frameworks!` in the podfile.
+
+If you need to use `use_frameworks!`, use `cocoapods 1.9.0` or a later version for `pod install` and modify it as follows:
+
+```
+use_frameworks! :linkage => :static
+```
+
+If you use `swift`, change the reference of the header file to the reference format of @import module name.

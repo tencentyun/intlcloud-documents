@@ -1,113 +1,136 @@
-### 2.8.2 @2020.11.4
-
+### 2.9.0 @2020.12.15
 **Added**
 
-The WeChat, QQ, Baidu, Toutiao and Alipay mini programs are now supported. However, images, videos, files and other messages requiring being uploaded to COS cannot be sent via Baidu, Toutiao and Alipay mini programs.
+- The [createTextAtMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createTextMessage) API allows users to specify @ a specific member or @ all members during a group chat.
+- [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) added the `namecard` attribute to display group members’ group name cards (i.e., their nicknames in a group).
+
+
+### 2.8.5 @2020.11.23
+**Changed**
+
+The [logout](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logout) API can be called when the SDK is not ready.
+
+**Fixed**
+
+- Errors occurred in SDK operations when read receipts and read notifications existed at the same time.
+- Attempts to anonymously re-join an audio-video group after logout failed.
+- The group list was cleared abnormally.
+
+### 2.8.4 @2020.11.4
+**Added**
+
+- The WeChat, QQ, Baidu, Toutiao, and Alipay Mini Program platforms are supported (currently on the Baidu, Toutiao, and Alipay Mini Program platforms, image, video, or file messages, or other messages that need to be uploaded to COS, cannot be sent).
+- The third-party frameworks of MPX and uni-app are supported.
 
 ### 2.8.1 @2020.10.29
 
 **Added**
 
-The BMP images can be sent.
+Images in BMP format can be sent.
 
 **Changed**
 
-The `unreadCount` and `lastMessage` in [Conversation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html) are not updated when an online message is sent or received.
+`unreadCount` and `lastMessage` of the [conversation object](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Conversation.html) are not updated when the sender sends an online message and the recipient receives the online message.
 
 **Fixed**
 
-Fixed the SDK not ready issue if an exception occurs when the recent contacts list is synchronized.
+The SDK could not enter the ready state due to problems synchronizing the list of recent contacts.
+
+
 ### 2.8.0 @2020.10.20
 
 **Added**
 
-- [getGroupOnlineMemberCount](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupOnlineMemberCount) supports obtaining the number of online users in a live stream group.
-- The image messages will be compressed. You can display the original image or thumbnail as needed. For more information, see [ImagePayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.ImagePayload).
+- [getGroupOnlineMemberCount](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupOnlineMemberCount) was added to query of the number of online users in an audio-video group.
+- Image compression was integrated in the sending of image messages. The access side can choose to display the original image or thumbnail image based on business requirements. For more information, see [ImagePayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.ImagePayload).
 
 **Fixed**
 
-Fixed the compatibility of Taro 3.x with WebIM.
+Compatibility issues when Taro 3.x integrates WebIM
 
 **Changed**
 
-SDK volumes are reduced: [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) reduced by 8.5% and [tim-wx-sdk](https://www.npmjs.com/package/tim-wx-sdk) by 15%.
+Reduced the SDK size. The size of [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) was reduced by 8.5%, and that of [tim-wx-sdk](https://www.npmjs.com/package/tim-wx-sdk) was reduced by 15%.
+
 
 ### 2.7.8 @2020.9.24
 
 **Added**
 
-The [TIM.create](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html#.create) API added the `oversea` parameter. When this parameter is set to `true`, SDK will use a domain name outside China to avoid interference.
+The [TIM.create](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html#.create) API added the `oversea` parameter. When this parameter is set to `true`, the SDK uses a domain name outside the Chinese mainland to avoid interference.
 
 **Fixed**
 
-- Fixed the `undefined` response issue when a SDK in `not ready` status calls an API.
-- Fixed the statistics issue.
+- The return value for calling relevant APIs was `undefined` when the SDK was in the `not ready` state.
+- Issues related to statistics
+
 
 ### 2.7.7 @2020.8.12
 
 **Added**
 
-The [TIM.EVENT.SDK_RELOAD](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_RELOAD) event.
+Added the [TIM.EVENT.SDK_RELOAD](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_RELOAD) event.
 
 **Fixed**
 
-- Messages occasionally failed to be pulled when mini program is reconnected after a long period of disconnection, or switches to the frontend after running in the background for a long time.
-- The image message `imageFormat` has an inconsistent type and value with the actual image format.
-- The Work and Public groups have messy nicknames.
+- Audio-video groups occasionally failed to pull messages in cases where the network was reconnected after a long disconnection or the Mini Program switched to the foreground after running in the background for a long time.
+- The type and value of imageFormat of an image message were inconsistent with those of the actual image.
+- The nicknames displayed in work groups and public groups were incorrect.
+
 
 ### 2.7.6 @2020.7.9
 
 **Fixed**
 
-Messages occasionally failed to be pulled when live-streaming groups (AVChatRoom) were used for an extended period.
+Messages occasionally failed to be pulled if an audio-video group (AVChatRoom) was used for a long time.
 
 ### 2.7.5 @2020.7.2
 
 **Fixed**
 
-After users used the RESTful API to successfully [create a work group](https://intl.cloud.tencent.com/document/product/1047/34895) and specify group members, group members failed to send messages.
+After the RESTful API for [creating a work group](https://intl.cloud.tencent.com/document/product/1047/34895) was called to create a work group successfully and the group members were specified, messages from group members would fail to be sent.
 
 
 ### 2.7.2 @2020.6.30
 
 **Fixed**
 
-- Occasionally, in the case of [joinGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#joinGroup), the SDK indicated that the user was “already in the group” when in fact the user was not in the group. As a result, the user could not receive or send messages.
-- The count of sent messages in a temporary meeting group was incorrect.
+- Occasionally, when [joinGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#joinGroup) was called, the SDK prompted "Already in the group" but in fact the user was not in the group. Consequently, the user could not send or receive messages.
+- The count of messages sent in a temporary meeting group was incorrect.
 
 ### 2.7.0 @2020.6.8
 
 **Added**
 
-C2C message read receipts (indicating that the recipient has read your message) are supported. For more information, see [TIM.EVENT.MESSAGE_READ_BY_PEER](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_READ_BY_PEER). For a read [message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html), `isPeerRead` is set to `true`.
+Provided support for C2C message read receipts (indicating whether the peer has read your messages). For more information, see the event [TIM.EVENT.MESSAGE_READ_BY_PEER](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_READ_BY_PEER). In a [message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) that has already been read by the peer, the value of `isPeerRead` is `true`.
 
 **Fixed**
 
-- After a user joined a chat room (ChatRoom), the latest message was not displayed in a new conversation.
-- After login, a user who had not joined an audio-video chat room (AVChatRoom) could still send messages to the room.
+- After a user joined a chat room (ChatRoom), the newly created conversation did not display the last message.
+- After login, a user who had not joined an audio-video group (AVChatRoom) could still send a message to the audio-video group (AVChatRoom).
 
 
 ### 2.6.6 @2020.5.27
 
 **Fixed**
 
-- In an audio-video chat room (AVChatRoom), messages sent were occasionally repeatedly displayed.
-- [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) reported an error in the event of null messages.
-- Error 70001 occasionally occurred upon [joinGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#joinGroup) after [logout](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logout) and [login](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#login) were successively called.
+- In audio-video groups (AVChatRoom), messages were occasionally repeatedly displayed on the screen.
+- An error was reported when [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) received an empty message.
+- If [login](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#login) was called again after [logout](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logout), error 70001 occasionally occurred when [joinGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#joinGroup) was called.
 
 ### 2.6.4 @2020.5.8
 
 **Added**
 
-The API [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) added a sending option to support the sending of online messages (without offline storage and roaming; not available to AVChatRoom and BChatRoom) and the configuration of [offline push](https://intl.cloud.tencent.com/document/product/1047/33525).
+The [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage) API added the sending option to support the sending of online messages (no offline or roaming messages; cannot be used for AVChatRoom or BChatRoom) and the configuration of [offline push](https://intl.cloud.tencent.com/document/product/1047/33525).
 
 ### 2.6.3 @2020.4.26
 
 **Fixed**
 
-- Message content was lost because the input `payload.data payload.extension` type of [createCustomMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createCustomMessage) was incorrect.
+- Message content was lost because the input `payload.data payload.extension` type of [createCustomMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createCustomMessage) is incorrect.
 - Multiple messages contained in a response to a single request were disordered.
-- The unread count could not be cleared occasionally after the read count was reported because the number of unread C2C conversations overflowed.
+- The unread count could not be cleared occasionally after the read count is reported because the number of unread C2C conversions overflows.
 - [TIM.EVENT.ERROR](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.ERROR) `event.data.code` and `event.data.undefined` were undefined occasionally.
 
 ### 2.6.2 @2020.4.16
@@ -132,7 +155,7 @@ Files could not be uploaded occasionally when the uploaded COS signature was inv
 
 **Added**
 - The web client can create and send video messages [createVideoMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createVideoMessage) of up to 100 MB in size.
-- The `nick` and `avatar` properties are added in [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) to display the nickname and profile photo address of the message sender in an audio-video chat room. The nickname and profile photo address need to be set in advance by calling [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile).
+- The `nick` and `avatar` properties are added in [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) to display the nickname and profile photo address of the message sender in an audio-video group. The nickname and profile photo address need to be set in advance by calling [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile).
 - When an account logs in on multiple instances, namely, multiple webpages or web browsers, the C2C message cancellation notification can be synchronized between these webpages or web browsers.
 - After [updateGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateGroupProfile) is called to successfully modify custom group fields, group members can receive group prompts and obtain related content [Message.payload.newGroupProfile.groupCustomField](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload).
 
@@ -163,7 +186,7 @@ When [login](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#logi
 
 **Fixed**
 
-The priority of messages received at the receiver side of an audio-video chat room was different from that set on the sender side.
+The priority of messages received at the receiver side of an audio-video group is different from that set on the sender side.
 
 ### 2.5.0 @2020.2.28
 **Added**
@@ -174,7 +197,7 @@ The priority of messages received at the receiver side of an audio-video chat ro
 [Error codes](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html) are reduced and optimized.
 
 **Fixed**
-- After an audio-video chat room was created in the [console](https://console.cloud.tencent.com/im) and a group owner was specified, messages sent by other group members would be repeated on the group owner side after the group owner joined the group.
+- After an audio-video group was created in the [console](https://console.cloud.tencent.com/im) and a group owner was specified, messages sent by other group members will be repeated on the group owner side after the group owner joins the group.
 - When groups were created and terminated in the [console](https://console.cloud.tencent.com/im) or using a RESTful API frequently, the SDK did not deliver the [TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.GROUP_SYSTEM_NOTICE_RECEIVED) event.
 - [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) failed to get the group message list occasionally.
 
@@ -191,9 +214,9 @@ The priority of messages received at the receiver side of an audio-video chat ro
 - Anonymous users or visitors can only join [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) groups.
 
 **Fixed**
-- Some online messages failed to be pulled occasionally.
-- After a system notification from an audio-video chat room was received, the [TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED) event was not delivered.
-- In some scenarios, the group message recall result was inaccurate.
+- Some online messages cannot be pulled occasionally.
+- After a system notification from an audio-video group is received, the [TIM.EVENT.MESSAGE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.MESSAGE_RECEIVED) event is not delivered.
+- In some scenarios, the group message recall result is inaccurate.
 - Other known issues
 
 ### 2.4.0 @2020.1.3
@@ -212,8 +235,8 @@ The priority of messages received at the receiver side of an audio-video chat ro
 - Listening events could not be canceled by calling the [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) API.
 - The value and type of the `isRead` property in [Message](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html) were incorrect.
 - The error code and error message were incorrect when the video file in a sent video message exceeded the maximum size.
-- The content of updated custom fields was sometimes incorrect.
-- The [JOIN_STATUS_ALREADY_IN_GROUP](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.JOIN_STATUS_ALREADY_IN_GROUP) event occurred occasionally when a user logged in and joined an audio-video chat room.
+- The content of updated custom fields were incorrect occasionally.
+- The [JOIN_STATUS_ALREADY_IN_GROUP](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.JOIN_STATUS_ALREADY_IN_GROUP) event occurred occasionally when a user logged in and joined an audio-video group.
 - core-js caused potential performance issues.
 
 
@@ -237,10 +260,10 @@ Messages were lost in combined messages obtained using [getMessageList](https://
 - The SDK provides Chinese error information when [IM server-side error codes](https://intl.cloud.tencent.com/document/product/1047/34348) are received.
 
 **Fixed**
-- Messages were lost occasionally when the WeChat Mini Program went to the foreground after staying in the background for a long time.
+- Messages were lost occasionally when the WeChat Mini Program went to foreground after staying in background for a long time.
 - [TIM.EVENT.CONVERSATION_LIST_UPDATED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.CONVERSATION_LIST_UPDATED) was triggered several times when a message was sent.
-- The SDK reported errors when files such as images were uploaded if [registerPlugin](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#registerPlugin) was not called or incorrect parameters were entered.
-- Long polling did not stop after a [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) group was disbanded.
+- The SDK reported errors when files, such as images were uploaded if [registerPlugin](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#registerPlugin) was not called or incorrect parameters were entered.
+- Long polling did not stop after a [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) group was deleted.
 - When "multi-instance" or "multi-client" login was enabled, other instances or clients failed to receive messages after a web instance was logged out.
 - The SDK reported errors occasionally due to the structure of session lists that were pulled.
 
@@ -249,8 +272,8 @@ Messages were lost in combined messages obtained using [getMessageList](https://
 The logic for getting group roaming messages is optimized.
 
 **Fixed**
-- The SDK reported the [2901 error code](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html) after the group owner of an audio-video chat room modified the group profile.
-- After the group admin processed applications for joining a group, processed applications could still be received after refresh.
+- The SDK reported the [2901 error code](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html) after the group owner of an audio-video group modified the group profile.
+- After the group admin processed applications for joining a group, processed applications can be received after refresh.
 
 ### 2.2.0 @2019.11.21
 **Added**
@@ -263,7 +286,7 @@ The logic for getting group roaming messages is optimized.
 Up to 100 groups can be written to local storage. The SDK does not write the full group list when there are more than 100 groups.
 
 **Fixed**
-- Long polling of [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) groups continued after logout.
+- Long polling of [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) groups continues after logout.
 - The group contact cards in message instances of [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) groups did not have values.
 - Errors were reported when Internet Explorer 10 was used.
 - Users could not join groups anonymously.
@@ -276,7 +299,7 @@ Up to 100 groups can be written to local storage. The SDK does not write the ful
 **Fixed**
 - Code running failed after SDK integration when Angular zone.js modified prototype chains.
 - After a group owner created and joined a [TIM.TYPES.GRP_AVCHATROOM](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-TYPES.html#.GRP_AVCHATROOM) group, the group owner could not receive messages.
-- Initialization failed when a group list was large.
+- Initialization failed when a group list is large.
 
 ### 2.1.3 @2019.10.31
 
@@ -295,8 +318,8 @@ Combined messages (multiple message elements in one message) sent by RESTful API
  [getGroupList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupList) supports pulling group profile information, including the group owner ID and group member count.
 
 **Fixed**
-- SDK code errors were reported when a RESTful API was used to send custom group notifications in an audio–video chat room.
-- The SDK did not send a request to pull historical messages when a user re-joined a quit group and called the getMessageList API.
+- SDK code errors were reported when a RESTful API is used to send custom group notifications in an audio–video chat room.
+- The SDK did not send a request to pull historical messages when a user re-joined a left group and called the getMessageList API.
 - SDK code errors were reported when upload failed.
 
 ### 2.1.1 @2019.10.18
@@ -304,7 +327,7 @@ Combined messages (multiple message elements in one message) sent by RESTful API
 WeChat Mini Programs support [sending audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage). Audio messages can be synced across platforms. Update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **Fixed**
-[getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) could still pull historical messages in a quit group after rejoining.
+[getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) could still pull historical messages in a left group after rejoining.
 
 ### 2.1.0 @2019.10.16
 
@@ -319,7 +342,7 @@ WeChat Mini Programs support [sending audio messages](https://imsdk-1252463788.f
 **Fixed**
 - [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) could not pull messages in deleted group chats.
 - Group system notifications did not contain group names.
-- When a conversation was created after receiving a new message, the conversation did not have the profile of the message sender.
+- When a conversation is created after receiving a new message, the conversion did not have profile of the message sender.
 
 ### 2.0.11 @2019.10.12
 
