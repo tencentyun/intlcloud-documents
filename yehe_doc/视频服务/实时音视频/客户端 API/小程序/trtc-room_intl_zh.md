@@ -1036,4 +1036,3 @@ trtcRoomContext.on(EVENT.ERROR,(event)=>{
   console.log(event.data.code)
 })
 ```
-错误码详细信息请参见 [错误码](https://intl.cloud.tencent.com/document/product/647/35151)。
