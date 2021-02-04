@@ -26,7 +26,7 @@ TRTCコンソールでは、使用統計、監視ダッシュボード、開発�
 <table>
 <tr><th width="45%">補助バー</th><th width="20%">ツール項目</th><th>説明</th>
 </tr><tr>
-<td rowspan="4"><img src="https://main.qcloudimg.com/raw/e3f00683f546e2379dc91a0526eb8e9d.png"/></td>
+<td rowspan="4"><img src="https://main.qcloudimg.com/raw/6cad107e0eff24261b62b13077ef3ea1.png"/></td>
 <td>【一般的なドキュメント】</td>
 <td>TRTC関連の機能がよくわからないときは、一般的なドキュメントの中からも回答を見つけることができます。</td>
 </tr><tr>
