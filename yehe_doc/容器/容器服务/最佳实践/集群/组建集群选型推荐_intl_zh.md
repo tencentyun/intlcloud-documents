@@ -18,7 +18,7 @@ Kubernetes 版本迭代较快，新版本通常包含许多 bug 修复和新功�
 ## 容器网络插件：GlobalRouter 及 VPC-CNI
 
 ### 网络模式架构
-TKE 支持以下两种网络模式架构，如需了解更多信息，请参见 [如何选择容器服务网络模式](https://intl.cloud.tencent.com/document/product/457/35248)。
+TKE 支持以下两种网络模式架构，如需了解更多信息，请参见 [如何选择容器服务网络模式](https://intl.cloud.tencent.com/document/product/457/38966)。
 - **GlobalRouter 模式架构**：
 	- 基于 CNI 和网桥实现的容器网络能力，容器路由直接通过私有网络 VPC 底层实现。
 	- 容器与节点在同一网络平面，但网段不与私有网络网段重叠，容器网段地址充裕。
