@@ -365,7 +365,9 @@ This API is used to copy a file to the destination path.
 
 ```cpp
 cos_status_t *cos_copy_object(const cos_request_options_t *options,
-                              const cos_string_t *copy_source, 
+                              const cos_string_t *src_bucket,
+                              const cos_string_t *src_object,
+                              const cos_string_t *src_endpoint,
                               const cos_string_t *dest_bucket, 
                               const cos_string_t *dest_object,
                               cos_table_t *headers,
@@ -379,7 +381,9 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 | ----------------- | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct  |
 | copy_source | Source file path | String |
-| dest_bucket | Name of the destination bucket name in the format: `BucketName-APPID` | String |
+| src_bucket | Source bucket | String |
+| src_object | Name of the source object | String |
+| src_endpoint | Endpoint of the source object | String |
 | dest_object | Name of the destination object | String |
 | headers | Headers attached to the COS request | Struct |
 | copy_object_param | Parameters of the `Put Object Copy` operation | Struct |
@@ -405,6 +409,9 @@ cos_status_t *s = NULL;
 cos_request_options_t *options = NULL;
 cos_string_t bucket;
 cos_string_t object;
+cos_string_t src_bucket;
+cos_string_t src_object;
+cos_string_t src_endpoint;
 cos_table_t *resp_headers = NULL;
 
 // Create a memory pool
@@ -423,11 +430,12 @@ cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 // Set object replication
 cos_str_set(&object, TEST_OBJECT_NAME);
-cos_string_t copy_source;
-cos_str_set(&copy_source, TEST_COPY_SRC);
+cos_str_set(&src_bucket, TEST_BUCKET_NAME);
+cos_str_set(&src_endpoint, "ap-guangzhou.myqcloud.com");
+cos_str_set(&src_object, "test.txt");
 cos_copy_object_params_t *params = NULL;
 params = cos_create_copy_object_params(p);
-s = cos_copy_object(options, &copy_source, &bucket, &object, NULL, params, &resp_headers);
+s = cos_copy_object(options, &src_bucket, &src_object, &src_endpoint, &bucket, &object, NULL, params, &resp_headers);
 if (cos_status_is_ok(s)) {
     printf("put object copy succeeded\n");
 } else {
@@ -630,7 +638,6 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
 | params | Parameters for the `List Multipart Uploads` operation | Struct |
 | encoding_type | Specifies the encoding type of the returned value | String |
 | prefix | Prefix to be matched, which is used to specify the prefix address of the files to be returned | String |
-| next_marker | Marks the starting point of the next entry if the returned entry is truncated | String |
 | delimiter | The delimiter is a symbol.<br><li>If a particular prefix is specified, identical paths between the prefix and the delimiter will be grouped together and defined as a common prefix, and then all common prefixes will be listed.<br><li>If no prefix is specified, the list will start from the beginning of the path. | String |
 | max_ret | The maximum number of returned entries per request; the default value is 1000 | String  |
 | key_marker | Used together with `upload-id-marker`.<br><li>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed;<br><li>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed. | String |
@@ -1694,7 +1701,7 @@ cos_str_set(&object, TEST_MULTIPART_OBJECT);
 cos_str_set(&filename, TEST_MULTIPART_FILE);
 
 // Set the upload control parameters
-clt_params = cos_create_resumable_clt_params_content(p, 0, 1, COS_FALSE, NULL);
+clt_params = cos_create_resumable_clt_params_content(p, 0, 1, COS_TRUE, NULL);
 // upload
 s = cos_resumable_upload_file(options, &bucket, &object, &filename, headers, NULL,
 						clt_params, NULL, &resp_headers, NULL);
