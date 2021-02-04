@@ -37,17 +37,11 @@ The web player code corresponds to the code that can be edited on the web, inclu
 As the custom player has been deleted, video files will be automatically associated with the current default player configuration, but the code that has already been released can continue to be used. If you need to make changes, please define the player and release the code again.
 
 
-### Why isn't a published video played back automatically?
-
-If no custom configuration is made, the default configuration will be used when a video is uploaded and published, that is, the autoplay feature is disabled. You can modify this setting by checking "Autoplay" when publishing videos.
-
-
 ### Why is an output video not as clear as the source video?
 
 The definition of a video during playback depends on the following two aspects:
 - The definition provided by the VOD server after the video is transcoded and published.
 - The network environment where the user watches the video. Decrease in definition during video playback may be caused by two factors: one is that a low-definition instead of high-definition video is stored in VOD; the other is that the player may be adapted to a low definition for playback due to poor network connection.
-
 
 
 ### What is blocklist/allowlist?
