@@ -16,11 +16,11 @@ LogListener supports only Linux 64-bit operating systems but not Windows for the
 
 ### 1. Download and install LogListener
 
-Download the latest version of LogListener [here](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.4.5.tar.gz).
+Download the latest version of LogListener [here](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz).
 
 Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then, go to the LogListener directory `loglistener/tools` and run the following installation command:
-```shell
-wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.4.5.tar.gz && tar -zxvf loglistener-linux-x64-2.4.5.tar.gz -C /usr/local && cd /usr/local/loglistener-2.4.5/tools && ./loglistener.sh install
+```plaintext
+wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz && tar -zxvf loglistener-linux-x64-2.5.0.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.0/tools && ./loglistener.sh install
 ```
 
 ### 2. Initialize LogListener
@@ -56,9 +56,9 @@ If you need to access the service at a public domain name, run the following com
 
 ![](https://main.qcloudimg.com/raw/653ebe0400dca5b21b3e25d01f93cb5b.png)
 > ?
- - We recommend you use a collaborator key, and the root account should grant the read/write permissions of CLS to the collaborator.
- - `region` indicates the region of your CLS service instead of the region where your business server resides.
- - If your CVM instance and logset are in the same region, we recommend you access the service domain name over the private network; otherwise, use the public network.
+> - We recommend you use a collaborator key, and the root account should grant the read/write permissions of CLS to the collaborator.
+> - `region` indicates the region of your CLS service instead of the region where your business server resides.
+> - If your CVM instance and logset are in the same region, we recommend you access the service domain name over the private network; otherwise, use the public network.
 
 ### 3. Start LogListener
 
@@ -134,6 +134,8 @@ cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
 ```shell
 cp -r /tmp/loglistener-backup/data loglistener-2.2.8/
 ```
+
+
 
 6. Run the start command to start the new version of LogListener.
 
