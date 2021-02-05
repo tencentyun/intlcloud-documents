@@ -5,8 +5,8 @@ Video editing includes features such as video clipping, time-based special effec
 
 | Class Name | Feature  |
 | ------------- | --------- |
-| `TXVideoInfoReader.h`| Gets media information |
-| `TXVideoEditer.h` | Edits video |
+| TXVideoInfoReader.h| Gets media information |
+| TXVideoEditer.h | Edits video |
 
 ## Use Instructions
 The following is the basic usage process of video editing:
