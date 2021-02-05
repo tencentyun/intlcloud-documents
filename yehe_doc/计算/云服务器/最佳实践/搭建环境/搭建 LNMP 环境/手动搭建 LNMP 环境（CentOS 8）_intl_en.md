@@ -54,10 +54,10 @@ vim default.conf
 6. Press **i** to switch to the edit mode to modify the `default.conf` file.
   1. Add “index.php” to `index` under `location`, as shown below:
 ![](https://main.qcloudimg.com/raw/32df0b8ba82278cd96cf86152738677e.png)
-  2. Delete the prefixed `#` of `location ~ \.php$` and modify the following configuration items:
+  2. Delete the prefixed `#` of `location ~  \\.php$` and modify the following configuration items:
     - Change `root` to your website root directory. This document uses `/usr/share/nginx/html;` as an example.
     - Change `fastcgi_pass` to `unix:/run/php-fpm/www.sock;`. This configuration should be the same as `listen` in the `/etc/php-fpm.d/www.conf` file, because Nginx is associated with PHP-FPM through UNIX sockets.
-    - Replace `$document_root$fastcgi_script_name;` after `fastcgi_param  SCRIPT_FILENAME` with `$document_root$fastcgi_script_name;`.
+    - Replace `/scripts$fastcgi_script_name;` after `fastcgi_param  SCRIPT_FILENAME` with `$document_root$fastcgi_script_name;`.
     The result should be as follows:
 ![](https://main.qcloudimg.com/raw/2e4bff09d70399881bfbf995390a58d3.png) 
 7. Press **Esc** and enter **:wq** to save and close the file.
