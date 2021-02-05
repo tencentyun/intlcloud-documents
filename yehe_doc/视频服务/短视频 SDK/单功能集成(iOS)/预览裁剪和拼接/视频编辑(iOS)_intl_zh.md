@@ -5,8 +5,8 @@
 
 | 类名           | 功能  |
 | ------------- | --------- |
-| `TXVideoInfoReader.h`| 媒体信息获取 |
-| `TXVideoEditer.h` | 视频编辑 |
+| TXVideoInfoReader.h| 媒体信息获取 |
+| TXVideoEditer.h | 视频编辑 |
 
 ## 使用说明
 视频编辑的基本使用流程如下：
