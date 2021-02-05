@@ -84,8 +84,6 @@ model.videoId.pSign = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6MTQwMDMy
 [[SuperPlayerWindow sharedInstance] show]; // 悬浮显示
 ```
 
-<img src="https://main.qcloudimg.com/raw/e2ee64230af1b9c3a79cad935afa8b6a.jpeg" width="350">
-
 ### 退出播放
 
 当不需要播放器时，调用`resetPlayer`清理播放器内部状态，释放内存。
