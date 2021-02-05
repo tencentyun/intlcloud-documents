@@ -45,16 +45,13 @@ upstream_response_time: 0.354
 1. 选择您需要新增日志主题的日志集，单击该日志集ID/日志集名称，进入日志集信息页面。
 2. 单击【新增日志主题】。
 3. 在弹出的对话框中，将“日志主题名称”填写为“test-whole”，单击【确定】，即可新增日志主题。如下图所示：
-<img src="https://main.qcloudimg.com/raw/08145cf60294d658c5ee6c4f12913a8a.png" style="width: 60%"/>
 
 ### 机器组管理
 
 1. 日志主题创建成功后，进入该日志主题管理页面。
 2. 选择【采集配置】页签，单击您需要采集的日志数据源格式。如下图所示：
-<img src="https://main.qcloudimg.com/raw/2087ed61862dda08451f8a374acd77f4.png"/>
 3. 在“机器组管理”页面，勾选需要与当前日志主题进行绑定的机器组，单击【下一步】。
 即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84)。
-<img src="https://main.qcloudimg.com/raw/23da84d071d4cc21deeac91629998a5a.png"/>
 
 ### 采集配置
 
@@ -62,7 +59,6 @@ upstream_response_time: 0.354
 
 在“采集配置”页面，根据日志采集路径格式，填写“采集路径”。如下图所示：
 **日志采集路径格式**：`[目录前缀表达式]/**/[文件名表达式] `。
-<img src="https://main.qcloudimg.com/raw/d18fdc6631d5c76fa86593b2c3d673f9.png" alt="屏幕快照 2021-01-21 下午12.45.01" style="zoom:50%;" />
 填写日志采集路径后，LogListener 会按照**[目录前缀表达式]**匹配所有符合规则的公共前缀路径，并监听这些目录（包含子层目录）下所有符合**[文件名表达式]**规则的日志文件。其参数详细说明如下：
 
 | 字段     | 说明                                                         |
@@ -92,22 +88,16 @@ upstream_response_time: 0.354
 #### 配置单行-完全正则模式
 
 1. 在“采集配置”页面，将“提取模式”设置为【单行-完全正则】，并在“日志样例”文本框中，输入日志样例，如下图所示：
-<img src="https://main.qcloudimg.com/raw/24ad68a28dcc27b85c4f100532a2bbc5.png"/>
 2. 根据如下规则，定义正则表达式。
 系统有**手动模式**和**自动模式**两种方式定义正则表达式。您可手动输入表达式提取 key-value 进行验证，也可单击【正则表达式自动生成】切换为自动模式。系统会根据您选择的模式以及定义好的正则表达式，提取 key-value 进行正则表达式的验证。
  - **手动模式**：
- ![](https://main.qcloudimg.com/raw/af46e687f14930654210e3a5a9bd876f.png)
-    1. 在“正则表达式”的文本框中，输入正则表达式。
+ 1. 在“正则表达式”的文本框中，输入正则表达式。
     2. 单击【验证】，系统将判断日志样例与正则表达式是否匹配。
  - **自动模式** （单击【正则表达式自动生成】进行切换）：
     1. <span id="stap_a"></span>在弹出的“正则表达式自动生成”模态视图中，根据实际的检索分析需求，选中需要提取 key-value 的日志内容，并在弹出的文本框中，输入键(key)名，单击【确认提取】。如下图所示：
-	![](https://main.qcloudimg.com/raw/601f34827a4ebd93da594295befd5203.png)
-   系统将自动对该部分内容提取一个正则表达式，【自动提取结果】会出现在 key-value 表格中。如下图所示：
-  ![](https://main.qcloudimg.com/raw/14847d959b7b34387be8b8e6dec70e47.png)
+	系统将自动对该部分内容提取一个正则表达式，【自动提取结果】会出现在 key-value 表格中。如下图所示：
     2. 重复 [步骤 a](#stap_a)，直到提取完所有的 key-value 对。 如下图所示：
-	 ![](https://main.qcloudimg.com/raw/dd1518136681e1f8753de4cca2bc4ecc.png")
-    3. 单击【确定】，系统将根据提取好的 key-value 对自动生成完整的正则表达式。 如下图所示：
-	![](https://main.qcloudimg.com/raw/31bad6a4d37129679258b300c413a8e7.png)
+   3. 单击【确定】，系统将根据提取好的 key-value 对自动生成完整的正则表达式。 如下图所示：
 
  >? 无论选择自动模式还是手动模式，正则提取模式均在完成定义并验证通过后，将提取结果展示在“抽取结果”中。您只需定义每一组 key-value 对的 key 名称，即可将该名称用于日志检索分析。 
 >
@@ -116,17 +106,14 @@ upstream_response_time: 0.354
 
 1. 当您的日志数据复杂时，可以将“手动验证”设置为 <img src="https://main.qcloudimg.com/raw/d7ba8412e263386b627369741b457f2e.png" />，即可开启手动验证。
 2. 输入多个日志样例，单击【验证】。系统将验证样例正则表达式的通过率。
-<img src="https://main.qcloudimg.com/raw/3d6315e4afa3f99b3b7c5fdd9b2f440f.png" alt="屏幕快照 2021-01-21 下午4.04.34" style="zoom:50%;" />
 
 #### 配置采集时间
 
 - 日志时间单位为：毫秒。
 - 日志的时间属性有如下方式：
  - 采集时间：默认作为日志的时间属性。
- ![](https://main.qcloudimg.com/raw/ad5c7be2ea33f1273cee3f42b1c22974.png)
  - 原始时间戳：将“使用采集时间”设置为 <img src="https://main.qcloudimg.com/raw/b4558d9e42043de2669e1b071103836b.png" />，并填写原始时间戳的时间键以及对应的时间解析格式。
  时间解析格式请参见 [配置时间格式](https://cloud.tencent.com/document/product/614/38614)。
- ![](https://main.qcloudimg.com/raw/bccc00097bcdb00f3d951ade9c121e13.png)
 - 采集时间：日志的时间属性由日志服务 CLS 采集该条日志的时间决定。
 - 原始时间戳：日志的时间属性由原始日志中时间戳决定。
 
@@ -159,7 +146,6 @@ upstream_response_time: 0.354
  - 全文分词符：默认为“@&()='",;:<>[]{}/ \n\t\r”，确认是否需要修改。
  - 键值索引：默认开启，您可根据 key 名按需进行字段类型、分词符以及是否开启统计分析的配置。若您不需要开启键值索引，可将 <img src="https://main.qcloudimg.com/raw/d7ba8412e263386b627369741b457f2e.png" /> 设置为 <img src="https://main.qcloudimg.com/raw/bd22396a4acfbf6d96def87060207a46.png" />。
 5. 单击【提交】，完成采集配置。如下图所示：
-![屏幕快照 2021-01-21 下午4.27.24](https://main.qcloudimg.com/raw/73b15c4ef3fbd49ff7c015e72c3cb541.png)
 
 ## 相关操作
 
@@ -170,6 +156,5 @@ upstream_response_time: 0.354
 3. 根据实际需求，选择地域、日志集与日志主题，单击【检索分析】，即可开始按照设定的查询条件检索日志。
 >! 检索必须开启索引配置，否则无法检索。
 >
-![屏幕快照 2021-01-21 下午5.40.59](https://main.qcloudimg.com/raw/aa7ca102db15eeafe757295a3ca02190.png)
 
 
