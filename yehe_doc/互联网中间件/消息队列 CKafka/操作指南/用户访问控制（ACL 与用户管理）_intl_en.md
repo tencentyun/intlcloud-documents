@@ -1,17 +1,17 @@
 ## Overview
 This document describes how to configure SASL authentication and ACL rules in the CKafka console to enhance access control in public/private network transfers and permission control in production and consumption of resources such as topic.
 >?
-- Kafka offers various security authentication mechanisms, which mainly fall into the SSL and SASL2 categories. Among them, SASL/PLAIN is an authentication method based on account and password and more commonly used. CKafka supports SASL_PLAINTEXT authentication.
-- An access control list (ACL) helps you define a set of permission rules to allow/deny users to read/write topic resources through IPs.
+>- Kafka offers various security authentication mechanisms, which mainly fall into the SSL and SASL2 categories. Among them, SASL/PLAIN is an authentication method based on account and password and more commonly used. CKafka supports SASL_PLAINTEXT authentication.
+>- An access control list (ACL) helps you define a set of permission rules to allow/deny users to read/write topic resources through IPs.
 
 
 ## Directions
 
-### Creating instance
+### Step 1. Create an instance
 Click **Create** on the instance list page to create and purchase an instance. For more information, please see [Creating Instance](https://intl.cloud.tencent.com/document/product/597/32543).
 
 
-### Configuring user information
+### Step 2. Configure user information
 You can configure user information in two ways: client and CKafka instance.
 
 #### Client configuration
@@ -33,8 +33,9 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 Among them, the username and password in the `sasl.jaas.config` part are described as follows: 
  - username: **it contains the instance ID and username concatenated with a `#`**. The instance ID is the ID of the CKafka instance that the client needs to connect to (which can be viewed in the Tencent Cloud console), and the username can be configured in the **ACL policy management module in the console**.
  - password: it is the password corresponding to the username.
- 
-**Sample configuration file**<span id="Sample configuration file"></span>
+
+<span id="example"></span>
+**Sample configuration file**
 - The name of the producer configuration file is `producer.properties`, and `SASL_PLAINTEXT` is configured as follows:
 ```
 sasl.mechanism=PLAIN
@@ -48,7 +49,7 @@ security.protocol=SASL_PLAINTEXT
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="INSTANCE-2#admin" password="admin";
 ```
 
-### Configuring ACL policy
+### Step 3. Configure an ACL policy
 1. On the ACL policy management page, select the topic resource for which to configure a policy and click **Edit ACL Policy** in the **Operation** column.
 2. In the ACL policy creation pop-up window, select/enter the target users and IPs. If you don't select any, the policy will take effect for all users/hosts by default.
     Sample ACL policy: allow/deny user to read/write topic resource through IP.
@@ -58,14 +59,14 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 - Enabling routing only affects the authentication method during access, while the configured ACL policy takes effect globally.
 - If you use the PLAINTEXT method to access Kafka while enabling public network access routing, the ACL previously set for the topics will still take effect. If you want PLAINTEXT access to be unaffected, please add the read/write permissions of all users for the topics that PLAINTEXT needs to access.
 
-### Testing connectivity
+### Step 4. Test connectivity
 #### Kafka's tool script
 
-Write the configuration required by SASL_PLAINTEXT into `producer.properties` (please see the [sample configuration file](#Sample configuration file) for configuration content), and run the following command to produce messages:
+Write the configuration required by SASL_PLAINTEXT into `producer.properties` (please see the [sample configuration file](#example) for configuration content), and run the following command to produce messages:
 ```bash
 /yourkafka/bin/kafka-console-producer.sh --broker-list yourservers --topic yourtopic --producer.config producer.properties
 ```
-Write the configuration required by SASL_PLAINTEXT into `consumer.properties` (please see the [sample configuration file](#Sample configuration file) for configuration content), and run the following command to consume messages:
+Write the configuration required by SASL_PLAINTEXT into `consumer.properties` (please see the [sample configuration file](#example) for configuration content), and run the following command to consume messages:
 ```bash
 /yourkafka/bin/kafka-console-consumer.sh --bootstrap-server yourservers --from-beginning --new-consumer --topic yourtopic --consumer.config consumer.properties
 ```
