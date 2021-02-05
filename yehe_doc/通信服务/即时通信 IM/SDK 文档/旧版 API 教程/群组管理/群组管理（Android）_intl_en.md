@@ -1442,8 +1442,7 @@ When a user is invited to join a group or is removed from a group, a tip message
 
 >! The group event messages of chat rooms (ChatRoom) and audio-video groups (AVChatRoom) are not delivered by new message notifications. Therefore, you must register group event listeners to listen to different group events.
 
-The figure below shows an event message for group name modification:
-![](https://main.qcloudimg.com/raw/78865ba68ed75700137e5afbd2ac3e43.jpg)
+
 
 
 **`TIMGroupTipsElem` provides the following methods:**
@@ -1590,7 +1589,7 @@ ModifyOwner
 **Trigger:** when a group member’s group member profile changes, including the role and whether the member is muted, the system sends a notification. You can update relevant displayed fields or choose to display the message to users.
 
 >!
->- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname, is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](/doc/product/269/9232#.E6.B6.88.E6.81.AF.E5.8F.91.E9.80.81.E8.80.85.E5.8F.8A.E5.85.B6.E7.9B.B8.E5.85.B3.E8.B5.84.E6.96.99).
+>- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname, is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](https://intl.cloud.tencent.com/document/product/1047/36401).
 >- If the user’s profile is stored locally, determine whether the locally stored profile changes based on the message body information. If yes, update the profile after receiving a message from the user.
 
 **`TIMGroupTipsElem` methods and return description: **
