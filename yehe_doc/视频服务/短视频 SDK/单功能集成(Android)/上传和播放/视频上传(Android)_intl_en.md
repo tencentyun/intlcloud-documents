@@ -17,15 +17,15 @@ Short video release: upload a .mp4 file to Tencent Video Cloud and get the onlin
 ## Connection Directions
 
 Integrate the short video upload feature as instructed in [Upload SDK for Android](https://intl.cloud.tencent.com/document/product/266/33925).
-
-#### 1. Select a video
+<span id="step1"></span>
+### 1. Select a video
 Uploaded a shot, edited, or spliced video or select a local video for upload.
-
-#### 2. Compress the video
+<span id="step2"></span>
+### 2. Compress the video
  - Video compression can reduce the short video file size but will also reduce the video definition. You can determine whether to compress videos as needed.
  - Use the `TXVideoEditer.generateVideo(int videoCompressed, String videoOutputPath)` API to compress the video. Four resolutions are supported for compression currently, and compression with customizable bitrate will be supported in the future.
-
-#### 3. Publish the video
+<span id="step3"></span>
+### 3. Publish the video
 Publish the generated .mp4 file to Tencent Cloud. The application needs to get the upload signature with a short validity period for file upload as instructed in [Signature Distribution](https://intl.cloud.tencent.com/document/product/1069/38015). `TXUGCPublish` (in `TXUGCPublish.java`) is used to publish .mp4 files to VOD so as to meet various video watch needs such as nearby scheduling, instant live streaming and playback, dynamic acceleration, and global connection.
 ```java
 mVideoPublish = new TXUGCPublish(TCVideoPublisherActivity.this.getApplicationContext());
@@ -47,37 +47,28 @@ void onPublishProgress(long uploadBytes, long totalBytes);
 ```java
 void onPublishComplete(TXPublishResult result);
 ```
-The fields in the `TXPublishResult` parameter and their descriptions are as detailed below:
-<table border=0 cellpadding="0" cellspacing="0">
-<thead>
-<tr>
-<th>Field</th>
-<th align="center">Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>errCode</td>
-<td >Error code.</td>
-</tr>
- <tr>
-<td>descMsg</td>
-<td >Error message.</td>
-</tr>
- <tr>
-<td>videoURL</td>
-<td >VOD address of short video.</td>
-</tr>
- <tr>
-<td>coverURL</td>
-<td >Cloud storage address of video cover.</td>
-</tr>
- <tr>
-<td>videoId</td>
-<td >Cloud storage ID of video file, through which you can call VOD's <a href = "https://intl.cloud.tencent.com/document/product/266/7788">server APIs</a>.</td>
-</tr>
-</tbody></table> 
+ The fields in the `TXPublishResult` parameter and their descriptions are as detailed below:
+ <table border=0 cellpadding="0" cellspacing="0">
+ <thead><tr><th>Field</th><th align="center">Description</th></tr></thead>
+ <tbody><tr>
+ <td>errCode</td>
+ <td >Error code.</td>
+	</tr> <tr>
+ <td>descMsg</td>
+ <td >Error message.</td>
+	</tr> <tr>
+ <td>videoURL</td>
+ <td >VOD address of short video.</td>
+	</tr> <tr>
+ <td>coverURL</td>
+ <td >Cloud storage address of video cover.</td>
+	</tr> <tr>
+ <td>videoId</td>
+ <td >Cloud storage ID of video file, through which you can call VOD's <a href = "https://intl.cloud.tencent.com/document/product/266/7788">server APIs</a>.</td>
+ </tr>
+ </tbody></table> 
 - You can check the short video release result against the [error code table](https://intl.cloud.tencent.com/document/product/1069/38042).
+<span id="step4"></span>
+### 4. Play back the video
 
-#### 4. Play back the video
-
-After the video is successfully uploaded in step 3, the video `fileId`, playback URL, and cover URL will be returned. You can directly pass in the `fileId` or playback URL to the [VOD player](https://intl.cloud.tencent.com/document/product/1069/38027) for video playback.
+After the video is successfully uploaded in [step 3](#step3), the video `fileId`, playback URL, and cover URL will be returned. You can directly pass in the `fileId` or playback URL to the [VOD player](https://intl.cloud.tencent.com/document/product/1069/38027) for video playback.
