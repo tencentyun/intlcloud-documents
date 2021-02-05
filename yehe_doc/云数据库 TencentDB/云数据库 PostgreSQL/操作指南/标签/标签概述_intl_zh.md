@@ -25,4 +25,4 @@
 ### 使用标签
 创建与删除标签方法请参见 [标签快速入门](https://intl.cloud.tencent.com/document/product/651/32582)。
 
-编辑游戏数据库 TcaplusDB 标签方法请参见 [编辑标签](https://intl.cloud.tencent.com/document/product/409/38840)。
+编辑云数据库 PostgreSQL 标签方法请参见 [编辑标签](https://intl.cloud.tencent.com/document/product/409/38840)。
