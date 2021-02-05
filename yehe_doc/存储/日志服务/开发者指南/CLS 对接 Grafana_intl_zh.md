@@ -54,8 +54,8 @@ allow_loading_unsigned_plugins = tencent-cls-grafana-datasource
 ```
    service grafana-server restart
 ```
-
-### 配置日志数据源<span id="ConfigLogDataSource"></span>
+<span id="ConfigLogDataSource"></span>
+### 配置日志数据源
 1. 在浏览器中访问以下地址，登录 Grafana。
 >? Grafana 的默认端口为3000端口。
 >
@@ -95,9 +95,11 @@ http://Grafana IP 地址:3000
 您可以根据如下信息进行配置：
 
 - 输入的 Query 语句如下所示：
+
 ```
 * | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as time, count(*) as pv,count( distinct remote_addr) as uv group by time order by time limit 1000
 ```
+
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：**pv，uv**。
 - Bucket：无聚合列，**不填写**。
@@ -109,9 +111,11 @@ http://Grafana IP 地址:3000
 您可以根据如下信息进行配置：
 
 - 输入的 Query 语句如下所示：
+
 ```
 * | select count(*) as count, status group by status
 ```
+
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：**count**。
 - Bucket：**status**。
@@ -123,9 +127,11 @@ http://Grafana IP 地址:3000
 您可以根据如下信息进行配置：
 
 - 输入的 Query 语句如下所示：
+
 ```
 * | select http_referer,avg(request_time) as lagency group by http_referer order by lagency desc limit 10
 ```
+
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：lagency。
 - Bucket：http_referer。
@@ -136,9 +142,11 @@ http://Grafana IP 地址:3000
 表格（Table）展示访问量前10的用户。如下图所示：
 您可以根据如下信息进行配置：
 - 输入的 Query 语句如下所示：
+
 ```
 * | select remote_addr,count(*) as count group by remote_addr order by count desc limit 10
 ```
+
 - Format：Table
 
 
