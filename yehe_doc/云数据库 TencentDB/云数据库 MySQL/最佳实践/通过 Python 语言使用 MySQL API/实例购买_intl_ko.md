@@ -1,12 +1,12 @@
 
 | API        | 설명   |
 | --------   | -----  |
-|CreateDBInstance|CDB 인스턴스 생성|
-|CreateDBInstanceHour|CDB 인스턴스 생성(종량제)|
-|DescribeDBInstances|인스턴스 리스트 조회|
-|DescribeDBPrice|데이터베이스 가격 조회|
-|DescribeDBZoneConfig|CDB 판매 규격 획득|
-|InitDBInstances|신규 인스턴스 초기화|
+|CreateDBInstance	|CDB 인스턴스 생성|
+|CreateDBInstanceHour	|CDB 인스턴스 생성(종량제)|
+|DescribeDBInstances	|인스턴스 리스트 조회|
+|DescribeDBPrice	|데이터베이스 가격 조회|
+|DescribeDBZoneConfig	|CDB 판매 규격 획득|
+|InitDBInstances	|신규 인스턴스 초기화|
 
 ### CreateDBInstance CDB 인스턴스 생성
 
@@ -14,7 +14,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 import logging
 import traceback
 from tencentcloud.common import credential
@@ -22,13 +22,13 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 
-'''마스터 인스턴스 구매'''
+'''마스터 인스턴스 구매''’
 def CreateDBInstancedemomaster():
     try:
-        # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+        # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
         cred = credential.Credential("secretId", "secretKey")
 
-        #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+        #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
         client = cdb_client.CdbClient(cred, "ap-beijing")
 
         #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -55,19 +55,19 @@ def CreateDBInstancedemomaster():
 
 
     except TencentCloudSDKException as err:
-        msg = traceback.format_exc() # 방법1  
+        msg = traceback.format_exc() # 방식1  
         print (msg) 
 
 
 
 
-'''읽기 전용 인스턴스 구매'''
+'''읽기 전용 인스턴스 구매''’
 def CreateDBInstancedemoro():
     try:
-        # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+        # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
         cred = credential.Credential("secretId", "secretId")
 
-        #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+        #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
         client = cdb_client.CdbClient(cred, "ap-beijing")
 
         #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -100,17 +100,17 @@ def CreateDBInstancedemoro():
 
 
     except TencentCloudSDKException as err:
-        msg = traceback.format_exc() # 방법1  
+        msg = traceback.format_exc() # 방식1  
         print (msg) 
 
 
-'''재해 복구 인스턴스 구매'''
+'''재해 복구 인스턴스 구매''’
 def CreateDBInstancedemodr():
     try:
-        # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+        # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
         cred = credential.Credential("secretId", "secretKey")
 
-        #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+        #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
         client = cdb_client.CdbClient(cred, "ap-shanghai")
 
         #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -157,7 +157,7 @@ def CreateDBInstancedemodr():
 
 
     except TencentCloudSDKException as err:
-        msg = traceback.format_exc() # 방법1  
+        msg = traceback.format_exc() # 방식1  
         print (msg) 
 
 #CreateDBInstancedemodr()
@@ -169,11 +169,11 @@ def CreateDBInstancedemodr():
 
 ### CreateDBInstanceHour CDB 인스턴스 생성(종량제)
 ```python
-'''시간당 과금의 경우 예치금 동결이 필요하며 계정에 금액이 예치되어 있어야 함. 계정 잔액이 0인 경우 구매 불가'''
+'''시간당 과금의 경우 동결 예치금이 필요하며 계정에 금액이 예치되어 있어야 함. 계정 잔액이 0인 경우 구매 불가''’
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 import logging
 import traceback
 from tencentcloud.common import credential
@@ -181,10 +181,10 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
-    # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+    # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
     cred = credential.Credential("secretId", "secretKey")
 
-    #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+    #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
     client = cdb_client.CdbClient(cred, "ap-beijing")
 
     #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -211,16 +211,16 @@ try:
     # json 포맷의 문자열 출력
     print(resp.to_json_string())
 except TencentCloudSDKException as err:
-    msg = traceback.format_exc() # 방법1  
+    msg = traceback.format_exc() # 방식1  
     print (msg) 
 ```
 
-### DescribeDBInstances 인스턴스 리스트 조회
+### DescribeDBInstances	인스턴스 리스트 조회
 ```python
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 import logging
 import traceback
 from tencentcloud.common import credential
@@ -228,10 +228,10 @@ from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentClo
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
-    # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+    # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
     cred = credential.Credential("secretId", "secretKey")
 
-    #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+    #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
     client = cdb_client.CdbClient(cred, "ap-shanghai")
 
     #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -247,28 +247,28 @@ try:
     # json 포맷의 문자열 출력
     print(resp.to_json_string())
 except TencentCloudSDKException as err:
-        msg = traceback.format_exc() # 방법1  
+        msg = traceback.format_exc() # 방식1  
         print (msg) 
 ```
 
 
 
-### DescribeDBPrice 데이터베이스 가격 조회
+### DescribeDBPrice	데이터베이스 가격 조회
 
 ```python
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
-    # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+    # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
     cred = credential.Credential("secretId", "secretKey")
 
-    #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+    #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
     client = cdb_client.CdbClient(cred, "ap-guangzhou")
 
     #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -297,17 +297,17 @@ except TencentCloudSDKException as err:
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
-    # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+    # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
     cred = credential.Credential("secretId", "secretKey")
 
-    #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+    #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
     client = cdb_client.CdbClient(cred, "ap-shanghai")
 
     #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
@@ -331,17 +331,17 @@ except TencentCloudSDKException as err:
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# 클라우드 API 모듈 불러오기
+# 클라우드 API 게이트 모듈 불러오기
 
 from tencentcloud.common import credential
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
 from tencentcloud.cdb.v20170320 import cdb_client, models
 
 try:
-    # 1개의 인증 객체를 인스턴스화, 파라미터 삽입 시 Tencent Cloud 계정 secretId，secretKey에 전송 필요
+    # 1개의 인증 객체를 인스턴스화, 매개변수 입력 시 Tencent Cloud 계정 secretId, secretKey에 전송 필요
     cred = credential.Credential("secretId", "secretKey")
 
-    #인스턴트화 시 제품(예: cdb)의 client 객체 요청 필요
+    #인스턴스화 시 제품(예: cdb)의 client 객체 요청 필요
     client = cdb_client.CdbClient(cred, "ap-shanghai")
 
     #요청 객체 인스턴스화:req = models.ModifyInstanceParamRequest()
