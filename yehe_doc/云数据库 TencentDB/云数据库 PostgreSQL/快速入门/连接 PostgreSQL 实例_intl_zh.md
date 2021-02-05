@@ -23,7 +23,8 @@
 4. 登录数据库后，在左侧导航选择【Databases】>【postgres】，可看到连接好的服务器（数据库实例）。
 ![](https://main.qcloudimg.com/raw/ede1361fb76d38deaf9cf22d3a43e8f3.png)
 
-#### [附录：开启外网访问地址](id:kqww)
+
+#### 附录：开启外网访问地址
 1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，在实例列表，单击实例名或“操作”列的【管理】，进入实例详情页面。
 2. 在实例详情页的“基本信息”里找到“外网地址”，单击【开通】。
 ![](https://main.qcloudimg.com/raw/9ca9cd47bbf25fbbf8af012cafcdcfdf.png)
