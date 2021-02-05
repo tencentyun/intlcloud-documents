@@ -10,12 +10,12 @@
 
 ## 操作步骤
 
-<span id="AutomaticDivision"></span>
 
+<span id="AutomaticDivision"></span>
 ### 自动分裂
 
 >? 开启自动分裂功能后，如果主题分区持续触达了写请求或者写流量的阈值，日志服务会根据实际写入情况，自动分裂至合理的分区数（最大分裂数量为50个）。
-> 如果日志主题的分区数已达到所设置的最大值，日志服务将不再触发自动分裂，所超限的部分将被拒绝，并返回 [请求超限错误码](https://cloud.tencent.com/document/product/614/12402)。
+> 如果日志主题的分区数已达到所设置的最大值，日志服务将不再触发自动分裂，所超限的部分将被拒绝，并返回 [请求超限错误码](https://intl.cloud.tencent.com/document/product/614/12402)。
 
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls/overview)。
