@@ -1,9 +1,9 @@
 ## Reusing Existing UI
 The video splicer has complicated interaction logic, which means that the UI is also complicated; therefore, we recommend you reuse the UI source code in the SDK. The `VideoJoiner` directory contains the UI source code of the short video splicer. 
 
-- VideoJoinerController: it is used to implement the video splicing list as shown above, which supports drag-up/drag-down for order adjustment.
-- VideoJoinerCell: it is used to splice all video segments in the list.
-- VideoEditPrevController: it is used to preview the spliced video.
+- **VideoJoinerController**: it is used to implement the video splicing list as shown above, which supports drag-up/drag-down for order adjustment.
+- **VideoJoinerCell**: it is used to splice all video segments in the list.
+- **VideoEditPrevController**: it is used to preview the spliced video.
 
 ## Implementing UI on Your Own
 If you do not want to reuse the UI code in the SDK, you can implement the UI on your own as follows:
