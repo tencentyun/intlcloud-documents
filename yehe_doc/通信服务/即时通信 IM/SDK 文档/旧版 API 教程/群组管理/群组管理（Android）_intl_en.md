@@ -1496,7 +1496,7 @@ SetAdmin
 
 **Trigger:** when a user joins a group (through application or invitation), the system sends a notification in the group. Developers can choose the display mode and can update the group member list. The message type is `TIMGroupTipsType.Join`.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
@@ -1509,7 +1509,7 @@ getUserList | List of users to join the group
 
 **Trigger:** when a user chooses to leave a group, the system sends a notification in the group. You can choose to update the group member list. The message type is `TIMGroupTipsType.Quit`.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
@@ -1521,7 +1521,7 @@ getGroupName | Group name
 
 **Trigger:** when a user is removed from a group, the system sends a notification. You can update the group member list. The message type is `TIMGroupTipsType.Kick`.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
@@ -1534,7 +1534,7 @@ getUserList | List of users removed from the group
 
 **Trigger:** when a user is set or canceled as an admin, the system sends a notification in the group. If the UI shows whether a user is an admin, you can update the admin flag. The message types are `TIMGroupTipsType.SetAdmin` and `TIMGroupTipsType.CancelAdmin`.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
@@ -1547,7 +1547,7 @@ getUserList | List of users who are set or canceled as admins
 
 **Trigger:** when the group profile changes, for example, when the group name or introduction changes, the system sends a notification. You can update relevant display fields or choose to display the message to users.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
@@ -1592,7 +1592,7 @@ ModifyOwner
 >- **The profile mentioned here includes only information related to the group, such as muting duration and member role change. Information related to the user, such as the user’s nickname, is not included**. For groups that have too many members, we recommend that you display the information in the message body instead of updating it in real time. For more information, see [Message sender and related profile](https://intl.cloud.tencent.com/document/product/1047/36401).
 >- If the user’s profile is stored locally, determine whether the locally stored profile changes based on the message body information. If yes, update the profile after receiving a message from the user.
 
-**`TIMGroupTipsElem` methods and return description: **
+<b>`TIMGroupTipsElem` methods and return description: <b/>
 
 Method | Return Description
 ---|---
