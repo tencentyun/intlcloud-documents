@@ -1,6 +1,6 @@
 After creating an application, you can enable [relayed push](#bypass), [on-cloud recording](#record) and [advanced permission control] for it in **Function Configuration**. The configuration takes effect in about 5 minutes.
 
-[](id:bypass)
+<span id="bypass"></span>
 ## Relayed Push
 
 ### Notes
@@ -11,10 +11,10 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 - If you use relayed push for [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426), you will be charged for recording streams and storing the recording files. For details, see [On-Cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8).
 - If you bind templates of paid features such as recording, transcoding, screencapturing & porn detection, and watermarking to the domain name (`xxxx.livepush.myqcloud.com`) used by relayed push in the [LVB console](https://console.cloud.tencent.com/live/domainmanage), you will be charged [value-added fees](https://intl.cloud.tencent.com/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8).
 
-[](id:open_bypass)
+<span id="open_bypass"></span>
 After creating an application, you can enable [relayed push](#bypass), [on-cloud recording](#record) and [advanced permission control] for it in **Function Configuration**. The configuration takes effect in about 5 minutes.
 
-[](id:bypass)
+<span id="bypass"></span>
 ## Relayed Push
 
 ### Notes
@@ -25,14 +25,14 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 - If you use relayed push for [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426), you will be charged for recording streams and storing the recording files. For details, see [On-Cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8).
 - If you bind templates of paid features such as recording, transcoding, screencapturing & porn detection, and watermarking to the domain name (`xxxx.livepush.myqcloud.com`) used by relayed push in the [LVB console](https://console.cloud.tencent.com/live/domainmanage), you will be charged [value-added fees](https://intl.cloud.tencent.com/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8).
 
-[](id:open_bypass)
+<span id="open_bypass"></span>
 ### Enabling relayed push
 1. Log in to the TRTC console and click **[Application Management](https://console.cloud.tencent.com/trtc/app)**.
 2. Select the application whose configuration you want to modify, and click **Function Configuration**.
 3. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
 4. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to enable the feature, click **Enable Relayed Push**.
 
-[](id:select)
+<span id="select"></span>
 ### Choosing relayed push mode
 After [enabling relayed push](#open_bypass), you can choose the push mode that fits your needs.
 
@@ -40,7 +40,7 @@ After [enabling relayed push](#open_bypass), you can choose the push mode that f
 - **Global auto-relayed push**: after this mode is selected, all upstream audio/video streams of TRTC are automatically pushed to the LVB system.
 
 
-[](id:close__bypass)
+<span id="close__bypass"></span>
 ### Disabling relayed push
 To disable relayed push, follow these steps:
 1. Click **[Application Management](https://console.cloud.tencent.com/trtc/app), select the application whose configuration you want to modify, and click **Function Configuration**.
@@ -48,7 +48,7 @@ To disable relayed push, follow these steps:
 3. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to disable the feature, click **Disable Relayed Push**.
 
 
-[](id:record)
+<span id="record"></span>
 ## On-Cloud Recording
 
 ### Notes
@@ -60,11 +60,11 @@ To disable relayed push, follow these steps:
 - On-cloud recording relies on [relayed push](#open_bypass), which you need to enable first.
 
 
-[](id:open_record)
+<span id="open_record"></span>
 ### Enabling on-cloud recording
 The on-cloud recording feature of TRTC allows you to record the audio/video streams of each user into a separate file. To enable the feature, follow the steps in [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426#open).
 
-[](id:change_record)
+<span id="change_record"></span>
 ### Modifying on-cloud recording configuration
 >! Modifying on-cloud recording configuration may affect your active business. Make sure you understand the risks before modification.
 
@@ -73,7 +73,7 @@ The on-cloud recording feature of TRTC allows you to record the audio/video stre
 3. Modify the [configuration](https://intl.cloud.tencent.com/document/product/647/35426#recordType) as needed, and click **Confirm** to save the modification.
 
 
-[](id:close_record)
+<span id="close_record"></span>
 ### Disabling on-cloud recording
 After you disable on-cloud recording, your active businesses will be unable to record streams in the cloud, whether manually or automatically. Please make sure that your businesses no longer need the feature before disabling.
 
@@ -83,7 +83,7 @@ After you disable on-cloud recording, your active businesses will be unable to r
 
 
 
-[](id:purview)
+<span id="purview"></span>
 ## Advanced Permission Control
 You may consider [enabling advanced permission control](https://intl.cloud.tencent.com/document/product/647/35157) if you want to practice room access and mic-on controls (i.e., allowing only specific users to enter a room and use their mics), but are worried that giving permissions on the client end makes your account vulnerable to attacks and cracking.
 
@@ -112,7 +112,7 @@ After you enable advanced permission control for an `SDKAppID`, all users using 
 
 After creating an application, you can enable [relayed push](#bypass), [on-cloud recording](#record) and [advanced permission control] for it in **Function Configuration**. The configuration takes effect in about 5 minutes.
 
-[](id:bypass)
+<span id="bypass"></span>
 ## Relayed Push
 
 ### Notes
@@ -123,14 +123,14 @@ After creating an application, you can enable [relayed push](#bypass), [on-cloud
 - If you use relayed push for [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426), you will be charged for recording streams and storing the recording files. For details, see [On-Cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8).
 - If you bind templates of paid features such as recording, transcoding, screencapturing & porn detection, and watermarking to the domain name (`xxxx.livepush.myqcloud.com`) used by relayed push in the [LVB console](https://console.cloud.tencent.com/live/domainmanage), you will be charged [value-added fees](https://intl.cloud.tencent.com/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8).
 
-[](id:open_bypass)
+<span id="open_bypass"></span>
 ### Enabling relayed push
 1. Log in to the TRTC console and click **[Application Management](https://console.cloud.tencent.com/trtc/app)**.
 2. Select the application whose configuration you want to modify, and click **Function Configuration**.
 3. In **Relayed Push Configuration**, click the button next to **Enable Relayed Push**.
 4. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to enable the feature, click **Enable Relayed Push**.
 
-[](id:select)
+<span id="select"></span>
 ### Choosing relayed push mode
 After [enabling relayed push](#open_bypass), you can choose the push mode that fits your needs.
 
@@ -138,7 +138,7 @@ After [enabling relayed push](#open_bypass), you can choose the push mode that f
 - **Global auto-relayed push**: after this mode is selected, all upstream audio/video streams of TRTC are automatically pushed to the LVB system.
 
 
-[](id:close__bypass)
+<span id="close__bypass"></span>
 ### Disabling relayed push
 To disable relayed push, follow these steps:
 1. Click **[Application Management](https://console.cloud.tencent.com/trtc/app), select the application whose configuration you want to modify, and click **Function Configuration**.
@@ -146,7 +146,7 @@ To disable relayed push, follow these steps:
 3. In the dialog box that pops up, **read the risk statement carefully**; if you are sure you want to disable the feature, click **Disable Relayed Push**.
 
 
-[](id:record)
+<span id="record"></span>
 ## On-Cloud Recording
 
 ### Notes
@@ -158,11 +158,11 @@ To disable relayed push, follow these steps:
 - On-cloud recording relies on [relayed push](#open_bypass), which you need to enable first.
 
 
-[](id:open_record)
+<span id="open_record"></span>
 ### Enabling on-cloud recording
 The on-cloud recording feature of TRTC allows you to record the audio/video streams of each user into a separate file. To enable the feature, follow the steps in [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426#open).
 
-[](id:change_record)
+<span id="open_record"></span>
 ### Modifying on-cloud recording configuration
 >! Modifying on-cloud recording configuration may affect your active business. Make sure you understand the risks before modification.
 
@@ -171,7 +171,7 @@ The on-cloud recording feature of TRTC allows you to record the audio/video stre
 3. Modify the [configuration](https://intl.cloud.tencent.com/document/product/647/35426#recordType) as needed, and click **Confirm** to save the modification.
 
 
-[](id:close_record)
+<span id="close_record"></span>
 ### Disabling on-cloud recording
 After you disable on-cloud recording, your active businesses will be unable to record streams in the cloud, whether manually or automatically. Please make sure that your businesses no longer need the feature before disabling.
 
@@ -181,7 +181,7 @@ After you disable on-cloud recording, your active businesses will be unable to r
 
 
 
-[](id:purview)
+<span id="purview"></span>
 ## Advanced Permission Control
 You may consider [enabling advanced permission control](https://intl.cloud.tencent.com/document/product/647/35157) if you want to practice room access and mic-on controls (i.e., allowing only specific users to enter a room and use their mics), but are worried that giving permissions on the client end makes your account vulnerable to attacks and cracking.
 
