@@ -119,7 +119,7 @@ TXVideoInfoReader 的 getSampleImages 可以获取按指定数量，时间间隔
 ```
 /** 获取视频的采样图列表
  * @param count        获取的采样图数量（均匀采样）
- * @param maxSize      缩略图的最大大小，生成的缩略图大小不会超出这个宽高
+ * @param maxSize      缩略图的最大尺寸，生成的缩略图大小不会超出这个宽高
  * @param videoAsset   视频文件属性
  * @param sampleProcess 采样进度
  */
