@@ -40,7 +40,7 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 </tr>
 <tr>
 <td>Discount rate</td>
-<td>The user’s discount rate this month:<ul style="margin:0;"><li>Users on the daily billing cycle do not receive discounts. Their discount rate is 0.</li></ul></td>
+<td>The user’s discount rate this month:Users on the daily billing cycle do not receive discounts. Their discount rate is 1.</td>
 </tr>
 <tr>
 <td>Total cost</td>
