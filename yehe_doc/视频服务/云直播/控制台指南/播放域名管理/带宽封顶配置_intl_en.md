@@ -36,6 +36,6 @@ Tencent Cloud provides the bandwidth cap feature for playback domain name, which
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain name** to be configured or **Manage** on the right to enter the domain details page.
 2. Select **Advanced Configuration** > **Bandwidth Cap Configuration**.
 3. Click **Edit** in the top-right corner to enter the bandwidth cap configuration page.
-![](https://main.qcloudimg.com/raw/ffd0943d41682035b908771996b05949.png)
+![](https://main.qcloudimg.com/raw/4dad76e233af788367fd5753a97a01bf.png)
 4. Toggle **Bandwidth Cap** off ![](https://main.qcloudimg.com/raw/a02cf62f7cf3e9c072047690a6818ac2.png).
 5. Click **Save**.
