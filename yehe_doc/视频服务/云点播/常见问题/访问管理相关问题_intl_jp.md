@@ -1,38 +1,41 @@
-### ファイルをアップロードするにはどんな権限が必要ですか。
+### ファイルのアップロードに必要な操作権限は？
 
-VODでは、以下の方法でファイルをアップロードできます。[Upload from Server](https://intl.cloud.tencent.com/document/product/266/33912)、[Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921) 、[PullUpload](https://intl.cloud.tencent.com/document/product/266/34118) 。アップロードに必要な権限は次のとおりです。
+VODのアップロード方式には、[サーバーからのアップロード](https://intl.cloud.tencent.com/document/product/266/33912)、[クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33921)、[プルアップロード](https://intl.cloud.tencent.com/document/product/266/34118)、[ライブストリーミングレコーディング](https://intl.cloud.tencent.com/document/product/267/31563)などの方式があります。それぞれに関係する権限は次のとおりです。
 
-
-| アップロード方法   |リソースアクセス権限     | 操作権限                                                     | 備考               |
+| アップロード方式   | リソース権限     | 操作権限                                                     | 備考               |
 | ---------- | ------------ | ------------------------------------------------------------ | ------------------ |
-| Upload from server | Specified subapplication | [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
-| Upload from client | Specified subapplication | [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[CommitUpload](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
-| Pull from URL   | Specified subapplication | [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118)                      | -                  |
-| LVB recording   | All subapplications   | -                                                            | LVBレコーディング機能を有効にする必要があります |
+| サーバーからのアップロード | 指定するサブアプリケーション | [アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[アップロードの確認](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
+| クライアントからのアップロード | 指定するサブアプリケーション | [アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120)<br/>[アップロードの確認](https://intl.cloud.tencent.com/document/product/266/34119) | -                  |
+| プルアップロード   | 指定するサブアプリケーション | [プルアップロード](https://intl.cloud.tencent.com/document/product/266/34118)                      | -                  |
+| ライブストリーミングレコーディング   | すべてのサブアプリケーション   | -                                                            | ライブストリーミングレコーディング機能をアクティブ化する必要があります |
 
->VODコンソールでのビデオの [Local upload](https://intl.cloud.tencent.com/document/product/266/33890#.E6.9C.AC.E5.9C.B0.E4.B8.8A.E4.BC.A0.E6.AD.A5.E9.AA.A4)は、 クライアントからのアップロードとなります。
+>?VODコンソールで [ローカルからのアップロード](https://intl.cloud.tencent.com/document/product/266/33890)を行う場合、ビデオはクライアントからのアップロードに属します。
 
-### サーバーからのアップロードで「権限なし」というエラーが返されますが、他の方法で正常にアップロードできるのはなぜですか。
+### サーバーからアップロードすると権限がないと返ってきましたが、他のアップロード方式では成功しました。何が原因ですか？
 
-サーバーSDKのバージョンが古すぎる可能性があります。最新版の[SDK](https://intl.cloud.tencent.com/document/product/266/33912#1.-.E5.8F.91.E8.B5.B7.E4.B8.8A.E4.BC.A0)にアップグレードしてください。
+サーバーSDKのバージョンが古過ぎることが原因の可能性があります。最新版の [SDK](https://intl.cloud.tencent.com/document/product/266/33912#1.-.E5.8F.91.E8.B5.B7.E4.B8.8A.E4.BC.A0)に更新してください。
 
-### ビデオを視聴するにはどんな権限が必要ですか。
+### ビデオ視聴に必要な権限は何ですか？
 
-ビデオを視聴するには、基本的にVOD CDNにリクエストを送信することになり、操作者は、TencentCloudアカウントではなく通常の視聴者としてアクセスするため、操作者に権限を付与する必要はありません（[Key hotlink protection](https://intl.cloud.tencent.com/document/product/266/33984) または[Video encryption](https://intl.cloud.tencent.com/document/product/266/33968)が有効になっている場合は、ビデオを視聴する前に、対象ドキュメントに記載されている要件を満たす必要がありますが、これらはアクセス管理と関係がありません）。
+ビデオの視聴は実質的にはVODのCDNに向けてリクエストが発信されますが、操作者の身分が一般の視聴者であり、かつTencent Cloudアカウントでない場合は、操作者に権限を与える必要は何もありません（ [ホットリンク防止](https://intl.cloud.tencent.com/document/product/266/33984) または [ビデオの暗号化](https://intl.cloud.tencent.com/document/product/266/33968)を有効にしている場合は、関連ドキュメントの中に記載する条件を満たしたときのみ視聴できます。ただしこれらはアクセス管理とは無関係です）。
 
-### 特定のファイルに対する権限を付与できますか。
+### 単独のファイルに対してのみ権限を与えることはできますか？
 
-できません。VODアクセス管理のリソース粒度はサブアプリケーションです。
+サポートしていません。VODアクセス管理のリソースの粒度はサブアプリケーションとなっています。
 
-### 権限設定が競合している場合はどうなりますか。
+### 相反する権限設定が出現したときの対処方法は？
 
-競合した場合、以下の利用が考えられます。
+権限設定が相反する可能性があるのは次のようなシナリオです。
 
-- 1つのカスタムポリシーには、説明が競合する複数のステートメントが含まれています（たとえば、1つのステートメントはリソースへのアクセスを許可しますが、別のステートメントでは同一リソースへのアクセスを拒否します）。
-- 1つのサブユーザーは、説明が競合する複数のポリシーにバインドされています。
+- カスタマイズしたポリシーの中に複数のステートメントが存在し、これらのステートメントの間に相反する記述がある場合（例：１つのステートメントが、あるリソースのアクセスを許可し、別のステートメントが同じリソースのアクセスを拒否している）。
+- 1人のサブユーザーに複数のポリシーを同時にバインディングし、これらのポリシーの間に相反する記述が存在する場合。
 
-VODの権限管理はCAMに基づいているため、権限はCAMのポリシー[Evaluation Logic](https://intl.cloud.tencent.com/document/product/598/10605)に従って決定されます。
+VODの権限管理はCAMに基づき、権限の判定はCAMのポリシー [評価ロジック](https://intl.cloud.tencent.com/document/product/598/10605)に準拠しています。
 
-### VODはクロスアカウントのリソースアクセスをサポートしていますか。
+### VODは、クロスアカウントによるリソースアクセスを行うことができますか？
 
-クロスアカウントのリソースアクセスとは、ルートアカウントAがルートアカウントB（またはそのサブアカウント）にVOD権限のすべてまたは一部を付与することを示します。つまり、付与者と被付与者はそれぞれ独立したTencent Cloudアカウントとなります。VODは、クロスアカウントのリソースアクセスを**サポートしていません**。つまり、1つのTencent Cloudアカウントは、自身のサブアカウントにのみVODアクセス権限を付与できます。
+クロスアカウントのリソースアクセスとは、ルートアカウントA が自分の全部または一部のVOD権限をルートアカウントB（またはそのサブアカウント）に与えることを指し、権限付与者と被権限付与者は2つの独立したTencent Cloudアカウントに属します。このため、VODではクロスアカウントによるリソースアクセスを**サポートしていません**。各Tencent CloudアカウントがVODの権限を付与できるのは自分のサブアカウントのみです。
+
+
+
+
