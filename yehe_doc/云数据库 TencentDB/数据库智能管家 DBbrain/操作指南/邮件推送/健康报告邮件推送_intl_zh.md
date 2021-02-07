@@ -15,7 +15,7 @@ DBbrain 支持健康报告邮件推送功能，用户在无需登录控制台的
 >- 健康报告单次最多可以选择发送给30个联系人。
 >- 健康报告邮件推送会通过所选的邮件地址进行推送，如遇到邮箱拦截，请提前增加邮箱白名单策略：dbbrain@qcloudmail.com。
 >
-![](https://main.qcloudimg.com/raw/b37660fc512d364960b1562c7c9e2e40.png)
+![](https://main.qcloudimg.com/raw/4601c5cbfb9311c1b79111625bc6f50d.png)
 
 <span id = "jhrwjkbgyjts"></span>
 ## 计划任务健康报告邮件推送
@@ -26,7 +26,7 @@ DBbrain 支持健康报告邮件推送功能，用户在无需登录控制台的
 >- 定期生成设置，最多可以选择发送给30个联系人。
 >- 健康报告邮件推送会通过所选的邮件地址进行推送，如遇到邮箱拦截，请提前增加邮箱白名单策略：dbbrain@qcloudmail.com。
 > 
-![](https://main.qcloudimg.com/raw/56bdd933369e136bd1ebff2848089e76.png)
+![](https://main.qcloudimg.com/raw/9032d14dbba9dcc3b0574a949b7b0b4d.png)
 
 
 <span id = "sjkxjjkbgyjts"></span>
@@ -38,18 +38,18 @@ DBbrain 支持健康报告邮件推送功能，用户在无需登录控制台的
 >- “最后编辑”列展示模板的最后编辑人信息，将会根据最后编辑人所拥有的实例权限，发送实例生成的健康报告。
 >- 健康报告邮件推送会通过所选的邮件地址进行推送，如遇到邮箱拦截，请提前增加邮箱白名单策略：dbbrain@qcloudmail.com。
 >
-![](https://main.qcloudimg.com/raw/371157844bc7cc2d2fe43897f3fe9c75.png)
+![](https://main.qcloudimg.com/raw/c275b9e78033384e0517fd754de356ae.png)
 
 ### 新建模板
 1. 在 [数据库巡检邮件设置弹窗](#sjkxjjkbgyjts) 中，单击【新建模板】。
-![](https://main.qcloudimg.com/raw/93d07b5e14b3913678d681d3fa9655e3.png)
+![](https://main.qcloudimg.com/raw/a7b84c6078a6433464292b48e16f96f3.png)
 2. 在弹出的对话框，填写模板名称、地域、健康等级，选择联系人或联系组后，单击【确定】，即完成模板的创建。
 >?
 >- 选择地域和健康等级后，会根据所选地域和健康等级发送生成的健康报告。
 >- 数据库巡检健康报告发送的前提为该地域的实例已开启数据库巡检。
 >- 健康报告邮件推送会通过所选的邮件地址进行推送，如遇到邮箱拦截，请提前增加邮箱白名单策略：dbbrain@qcloudmail.com。
 >
-![](https://main.qcloudimg.com/raw/95c9877ce54b9f188358258ab1cda81b.png)
+![](https://main.qcloudimg.com/raw/db7fc13da3a7a62d7dc9243887f64cc6.png)
 
 <span id = "lsjkbgyjts"></span>
 ## 历史健康报告邮件推送
@@ -59,27 +59,25 @@ DBbrain 支持健康报告邮件推送功能，用户在无需登录控制台的
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/patrol)，在左侧导航选择【数据库巡检】。
 2. 在数据库巡检列表，单击巡检记录“操作”列的【邮件】，或选择多条数据库巡检记录，单击【批量发送】。
 3. 在弹出的对话框，选择联系人或联系组后，单击【确定】，会将所生成的健康报告发送至联系人或联系组的邮箱。
-![](https://main.qcloudimg.com/raw/5bba5e80fc67f47dfbbd9ada0dcdd94e.png)
+![](https://main.qcloudimg.com/raw/08e881175d5761e3725d7b98699cd417.png)
 
 <span id = "jkbgymts"></span>
 ### 健康报告页面推送
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/performance/health)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【健康报告】页。
 2. 在健康报告列表，单击报告记录“操作”列的【邮件】，或选择多条健康报告记录，单击【批量发送】。
 3. 在弹出的对话框，选择联系人或联系组后，单击【确定】，会将所选健康报告发送至指定的联系人或联系组的邮箱。
-![](https://main.qcloudimg.com/raw/d103097ceac62710cef5aea327048bb1.png)
+![](https://main.qcloudimg.com/raw/a9662c02d4c3d512e0e0f19ffb796e86.png)
 
 ## 邮件推送记录
 1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain/analysis)，单击右上方的【邮件记录】，可查看历史发送过的健康报告邮件记录。
-![](https://main.qcloudimg.com/raw/02c484ece54dea336625b42c9112c271.png)
+![](https://main.qcloudimg.com/raw/28caa77cb59c70eb24a0855a4575aff0.png)
 2. 在邮件记录中，可查看邮件接收人、实例基本信息以及邮件的发送状态。
  - 邮件接收人信息包括：接收人、邮箱、发送时间，当接收人为联系组时，单击“人数”，可查看该组中联系人的详情。
  - 实例基本信息包括：实例ID/名称、报告起止时间。
  - 邮件状态包括：全部成功、部分失败、全部失败三种，当状态为部分失败及全部失败时，请检查填写的邮箱是否正确。
-![](https://main.qcloudimg.com/raw/4d54eadb6eddb6bea3abaebdda8510d0.png)
+![](https://main.qcloudimg.com/raw/a685e57f510575395ad63bff7e75aad2.png)
 
 ## 邮件推送正文
 报告邮件推送成功后，用户邮箱中将会收到如下邮件，信息包括实例 ID、实例名称、健康等级、类型、起止时间、操作等，单击“操作”的【查看】，可以通过邮箱直接下载该实例的健康报告 PDF 文件。
 >!健康报告的有效期为3天，请及时下载。
 >
-![](https://main.qcloudimg.com/raw/efed614e697f0de638a287242cce2a95.png)
-
