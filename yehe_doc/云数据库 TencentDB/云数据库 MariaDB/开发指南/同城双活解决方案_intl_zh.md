@@ -63,7 +63,7 @@
 基于 MariaDB 高可用的主从架构和 VPC 可用区虚拟 IP 漂移特性的有机整合，实现了双中心同时读写，架构特点如下：
 - MariaDB 每一个 DB 节点前端，混合部署 Proxy 模块；Proxy 模块负责将数据请求路由到对应的 DB 节点。
 - 在 Proxy 模块前部署跨地域 VPC 网关，并支持虚拟 IP 漂移功能。
-![](https://main.qcloudimg.com/raw/a714b045d40ad44223f03e5d5fede0fd.png)
+![](https://main.qcloudimg.com/raw/f9bffbf32d311e6a0fe2a1046732b589.png)
 
 如上图，以写入数据为例，假设业务服务器部署在 A 可用区，PC 网关转发数据请求到 A 可用区的 Proxy 网关，再由 Proxy 做透明转发到 Master 节点。而假设业务服务器部署在 B 可用区，VPC 网关转发数据请求到 B 可用区的 Proxy 网关，再由 Proxy 做透明转发（通过腾讯云 BGP 专网）到 Master 节点。
 无论是读请求还是写请求，整个过程对业务透明。如果是数据库异常，数据库集群则按如下原则处理：
