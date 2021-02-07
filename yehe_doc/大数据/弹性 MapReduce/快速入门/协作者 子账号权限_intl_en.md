@@ -1,10 +1,8 @@
+You can grant permissions to each collaborator/sub-account in the console. For the authorization method, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
-You can grant permissions to each collaborator/sub-account in the console. For the authorization method, please see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
+EMR currently provides two permission policies. You can search for them by the keyword “EMR” in **Policies** in the [CAM console](https://console.cloud.tencent.com/cam/overview).
 
-EMR currently provides two permission roles, which you can search for by the EMR keyword in **Policy** in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
-
-| Role | Permission | 
+| Policy | Permission |
 |---------|---------|
-| QcloudEMRReadOnlyAccess (read-only access)	| Call the API for getting component configuration information<br>Call the API for getting monitoring information<br>Call the API for getting node information<br>Get the cluster list |
-| QcloudEMRFullAccess (full access) | Inherit OPS access <br>Scale out <br>Scale in <br>Create clusters <br>Terminate clusters <br>Change passwords |
-
+| QcloudEMRReadOnlyAccess (read-only access) | Calls the API for getting component configuration information.<br>Calls the API for getting monitoring information.<br>Calls the API for getting node information.<br>Gets cluster list. |
+| QcloudEMRFullAccess (full access) | Scales out.<br>Scales in.<br>Creates clusters.<br>Terminates clusters.<br>Changes password. |
