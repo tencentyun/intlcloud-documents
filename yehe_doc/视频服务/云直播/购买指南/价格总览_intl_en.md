@@ -1,4 +1,4 @@
->? You can [LVB Price Calculator](https://buy.cloud.tencent.com/pricing/css/calculator) to receive an estimate of your LVB costs.
+>? You can [CSS Price Calculator](https://buy.cloud.tencent.com/pricing/css/calculator) to receive an estimate of your LVB costs.
 
 The billable items of LVB include the basic, value-added, and extended service fees, as shown below:
 
