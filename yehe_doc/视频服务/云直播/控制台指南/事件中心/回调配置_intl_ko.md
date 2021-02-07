@@ -1,4 +1,4 @@
-본 문서에서는 [LVB 콘솔](https://console.cloud.tencent.com/live)을 통해 콜백 설정을 생성하는 방법을 소개합니다. 생성 완료 후 해당 푸시 스트리밍 도메인에서의 [콜백 설정](https://intl.cloud.tencent.com/document/product/267/31065)을 연결해야 하며, 연결하고 약 5~10분 후 적용됩니다. API를 통해서도 라이브 방송 채널에 콜백 템플릿을 생성할 수 있으며, 자세한 내용은 [콜백 템플릿 생성](https://cloud.tencent.com/document/api/267/32637)을 참조하십시오.
+본 문서에서는 [LVB 콘솔](https://console.cloud.tencent.com/live)을 통해 콜백 설정을 생성하는 방법을 소개합니다. 생성 완료 후 해당 푸시 스트리밍 도메인에서의 [콜백 설정](https://intl.cloud.tencent.com/document/product/267/31065)을 연결해야 하며, 연결하고 약 5~10분 후 적용됩니다. API를 통해서도 라이브 방송 채널에 콜백 템플릿을 생성할 수 있으며, 자세한 내용은 [콜백 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/30815)을 참조하십시오.
 
 
 ## 콜백 템플릿 생성
