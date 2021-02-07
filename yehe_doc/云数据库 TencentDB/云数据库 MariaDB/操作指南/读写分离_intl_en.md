@@ -13,9 +13,9 @@ The replica naturally has data delay. In global automatic read/write separation,
 
 ## Read/Write Separation Based on Read-only Accounts
 A read-only account has only the read permission and reads data from the replica server (or read-only replicas) in a database cluster by default. In the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), you can set a read-only account and a read policy on the **Account Management** tab of the instance management page.
-![](https://main.qcloudimg.com/raw/15b490b02787a9f77fbbd512e8a1c3a6.png)
+![](https://main.qcloudimg.com/raw/bff3aa5969b56bb46f039febf7791966.png)
 In read-only account settings, you can set **Read-only Request Allocation Policy** to define the read policy when a replica failure (or long delay) occurs. The **Read-only Replica Delay Parameter** defines the data sync delay time and is used together with **Read-only Request Allocation Policy**.
-![](https://main.qcloudimg.com/raw/0c3479bf91b95b470037569fe95a8d13.png)
+![](https://main.qcloudimg.com/raw/37cdbb6297b162cebb226b4ebce27820.png)
 For example, if you design a transaction system, the following configuration items are recommended:
 - Core transaction module: set a regular account which has read/write permission.
 - Balance inquiry module: set a read-only account that reads from the replica by default, configure the request allocation policy so that the primary will be read from upon replica failure, and set the delay parameter to below 10 seconds in order to ensure primary/replica performance and data consistency of user inquiries.
