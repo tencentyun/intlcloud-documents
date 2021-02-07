@@ -1,6 +1,6 @@
 The full instance monitoring page gives you an overview of the database monitoring metrics of all instances. Data of single monitoring metrics of all instances is displayed in a horizontal view. You can view and compare monitoring data of all instances on the same page, making it easier to detect database exceptions and view their details.
 
->?Currently, full instance monitoring is supported only for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for TDSQL-C (compatible with MySQL).
+>?Currently, full instance monitoring is supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 ![](https://main.qcloudimg.com/raw/2fe1bf9fbcc3b7dc54b1fc0f9d1688f2.png)
 
@@ -10,7 +10,7 @@ The full instance monitoring page gives you an overview of the database monitori
 
 ## Switching Monitoring Metrics
 1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis), select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
-2. You can filter and select a metric in the drop-down list at the top. All monitoring metrics of MySQL and TDSQL-C are supported. The information of the selected monitoring metric is displayed and sorted by metric value on this tab.
+2. You can filter and select a metric in the drop-down list at the top. All monitoring metrics of MySQL are supported. The information of the selected monitoring metric is displayed and sorted by metric value on this tab.
 ![](https://main.qcloudimg.com/raw/198839b8d65d56d142e2f475e9f68f35.png)
 
 ## Viewing Real-Time/Historical Monitoring
@@ -19,7 +19,7 @@ The full instance monitoring page gives you an overview of the database monitori
 
 ## Searching Instances
 1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis), select **Monitoring & Alarm** > **Intelligent Monitoring** on the left sidebar. On the displayed page, select a database type at the top and select the **Full Instance Monitoring** tab.
-2. On this tab, you can search instances. If you select MySQL, fuzzy search by instance ID/name or private IP is supported; if you select TDSQL-C, fuzzy search by cluster ID/name, instance ID/name, or access point address is supported.
+2. On this tab, you can search instances. If you select MySQL, fuzzy search by instance ID/name or private IP is supported.
 >?Click the "i" icon on the right in the search box to view the help document for instance search.
 >
 ![](https://main.qcloudimg.com/raw/98723a56342305f64f51f1db0fd11385.png)
