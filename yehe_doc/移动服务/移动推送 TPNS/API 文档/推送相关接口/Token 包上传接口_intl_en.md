@@ -13,13 +13,13 @@ The API service address corresponds to the service access point one by one; ther
 
 ## Request Parameters 
 
-| Parameter Name | Type | Required | Description |
+| Parameter | Type | Required | Description |
 | ------ | --------- | -------- | ------------------------------------------------------------ |
-| file   | form-data | Yes       | <li>`Token` package format and size: `.zip` file within 100 MB<li>The zipped package can contain a single `.txt` or `.csv` file but not folders<li>`.txt` file requirements: (1) encoded in UTF-8; (2) one `Token` (36 bits) per row<li>`.csv` file requirements: (1) one column only; (2) one `Token` (36 bits) per row |
+| file   | form-data | Yes       | <li>Token package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB<li>The `.zip` package can contain a single `.txt` or `.csv` file but not folders.<li>`.txt` file requirements: (1) encoded in UTF-8; (2) one token (36 characters) per row<li>`.csv` file requirements: (1) one column only; (2) one token (36 characters) per row |
 
 ## Response Parameters
 
-| Parameter Name | Type | Required | Description |
+| Parameter | Type | Required | Description |
 | -------- | ------- | -------- | ------------------------------------------------------------ |
 | retCode  | Integer | Yes       | Error code                                                       |
 | errMsg   | String   | Yes   | Error message when an error occurs in the request   |
@@ -58,5 +58,5 @@ response = requests.request("POST", url, data=upload_data, headers=headers, file
 print(response.text.encode('utf-8'))
 ```
 
-> !For application authorization information, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
+>!For application authorization information, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
 

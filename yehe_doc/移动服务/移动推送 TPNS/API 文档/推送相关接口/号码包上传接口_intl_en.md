@@ -1,51 +1,54 @@
 ## API Description
 
-**Request method**: POST
+**Request method**: POST.
 
 ```plaintext
-request address/v3/push/package/upload
+Service address/v3/push/package/upload
 ```
-The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+The API service address corresponds to the service access point one by one; therefore, please select the service address corresponding to your application [service access point](https://intl.cloud.tencent.com/document/product/1024/38517).
 
-**Feature**: this API is used to batch upload account package files.
+**Feature**: you can upload an account package file for a batch of accounts, and messages will be pushed by the accounts in it. Account package push APIs mainly include the account package upload API and account package push API.
 
 >!
-- The account package is in `.zip` format and less than 100 MB in size.
-- The account package contains only one `.txt` or `.csv` file. Nested folders are not allowed.
-- The `.txt` file is encoded using UTF-8. Each row contains only one account, and the account length is limited to [2, 100].
-- The `.csv` file can contain only one column. Each row contains only one account, and the account length is limited to [2, 100].
+>- Account package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB.
+>- The `.zip` package can contain a single `.txt` or `.csv` file but not folders.
+>- `.txt` file requirements: (1) encoded in UTF-8; (2) one account (2–100 characters) per row.
+>- `.csv` file requirements: (1) one column only; (2) one account (2–100 characters) per row.
 
-## Parameters
 
-#### Request parameters  
 
-| Parameter | Type | Required | Description |
-| --- | --- | --- | --- |
-| file  | form-data | Yes | <li>The uploaded account package must be in `.zip` format and less than 100 MB in size.<li>The account package contains only one `.txt` or `.csv` file. Nested folders are not allowed.<li>The `.txt` file is encoded using UTF-8. Each row contains only one account, and the account length is limited to [2, 100].<li> The `.csv` file can contain only one column. Each row contains only one account, and the account length is limited to [2, 100].
-
-#### Response parameters
+## Request Parameters  
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| retCode | Integer | Yes | Error code. |
-| errMsg | String | Yes | Error message when an error occurs in the request. |
-| uploadId | Integer | Yes | When a file is uploaded, the uploadId is provided as a positive integer, which represents the ID of the uploaded file. It is provided to the account package API for subsequent pushes. |
+| file   | form-data | Yes | <li>Account package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB<li>The `.zip` package can contain a single `.txt` or `.csv` file but not folders.<li>`.txt` file requirements: (1) encoded in UTF-8; (2) one account (2–100 characters) per row<li>`.csv` file requirements: (1) one column only; (2) one account (2–100 characters) per row |
 
 
-## Sample
+
+## Response Parameters
+
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| retCode  | Integer | Yes       | Error code                                                       |
+| errMsg   | String   | Yes   | Error message when an error occurs in the request   |
+| uploadId | Integer | Yes | When a file is uploaded, the `uploadId` is returned as a positive integer, which represents the ID of the uploaded file. It is provided to the account package API for pushes |
 
 
-Curl sample
-```xml
+## Sample Request
+
+
+#### Curl sample
+
+``` xml
 curl -X POST 
 https://api.tpns.tencent.com/v3/push/package/upload 
    
--H 'Authorization: Basic application authorization information' 
+-H 'Authorization: basic application authorization information' 
 -F 'file=@C:\Absolute path of the uploaded file'
 ```
 
-Python sample
-```python
+#### Python sample
+``` python
 import requests
 
 url = "https://api.tpns.tencent.com/v3/push/package/upload"
@@ -61,4 +64,4 @@ response = requests.request("POST", url, data=upload_data, headers=headers, file
 print(response.text.encode('utf-8'))
 ```
 
->! For more information on the application authorization, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
+>!For application authorization information, please see [Basic Auth Authentication](https://intl.cloud.tencent.com/document/product/1024/34672).
