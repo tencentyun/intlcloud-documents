@@ -1,5 +1,5 @@
 DBbrain allows you to customize the monitoring dashboard and link, compare, and view the monitoring data of multiple instances and metrics.
->?Currently, the monitoring dashboard is supported only for TencentDB for MySQL (excluding the Basic Edition) and TencentDB for TDSQL-C (compatible with MySQL).
+>?Currently, the monitoring dashboard is supported only for TencentDB for MySQL (excluding the Basic Edition).
 
 ![](https://main.qcloudimg.com/raw/99e78958c112d300aa91b28c2b1d2d40.png)
 
@@ -104,46 +104,4 @@ In DBbrain, the custom monitoring dashboard for TencentDB for MySQL currently su
 | master_slave_sync_distance | Delayed data between the source and replica |
 | seconds_behind_master | Source-replica delay time |
 
-### DBbrain (TDSQL-C (compatible with MySQL))
-In DBbrain, the custom monitoring dashboard for TDSQL-C (compatible with MySQL) currently supports the following monitoring metrics.
 
-| Monitoring Metric | Description |
-| --------------------------------- | --------------------------- |
-| cpu_use_rate | CPU utilization |
-| memory_use_rate | Memory utilization |
-| memory_use | Used memory |
-| volume_rate | Storage utilization |
-| real_capacity | Used storage capacity |
-| qcache_hits| The number of cache hits |
-| qcache_hit_rate | Cache hit rate |
-| capacity | Total storage capacity |
-| bytes_sent | Outbound traffic |
-| bytes_received | Inbound traffic |
-| queries | QPS |
-| com_commit | TPS |
-| max_connections | The maximum number of connections |
-| threads_connected | Connected threads |
-| slow_queries | The number of slow queries |
-| select_scan | The number of full-table scans |
-| select_count | The number of queries |
-| com_update | The number of updates |
-| com_delete | The number of deletions |
-| com_insert | The number of insertions |
-| com_replace | The number of overwrites |
-| created_tmp_tables | The number of temp tables |
-| innodb_cache_hit_rate | InnoDB cache hit rate |
-| innodb_cache_use_rate | InnoDB cache utilization |
-| threads_created | The number of created threads |
-| threads_running | Running threads |
-| handler_rollback | The number of transactions rolled back per second |
-| innodb_buffer_pool_read_requests | The number of InnoDB logical reads |
-| handler_commit | The number of transactions committed per second |
-| innodb_buffer_pool_write_requests | InnoDB logical writes |
-| innodb_rows_deleted | The number of rows deleted from InnoDB tables |
-| innodb_rows_updated | The number of rows updated in InnoDB tables |
-| innodb_rows_inserted | The number of rows inserted into InnoDB tables |
-| innodb_rows_read | The number of rows read from InnoDB tables |
-| log_capacity | Log space |
-| replicate_lag | Redo log replication delay between the source and replica |
-| replicate_lsn_lag | Redo log LSN difference between the source and replica |
-| replicate_status | Replication status of the replica |
