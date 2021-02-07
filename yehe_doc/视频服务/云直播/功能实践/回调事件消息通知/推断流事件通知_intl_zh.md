@@ -27,7 +27,7 @@
 <td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
 </tr></table>
 
->? <span id="key"></span> key 为【功能模板】>[【回调配置】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
+>? <span id="key"></span>key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### 回调消息参数
@@ -49,15 +49,7 @@
 | errmsg        | string | 推断流错误描述                                               |
 
 ### 推断流错误码
-
-| errcode | 错误描述                   | 错误原因                               |
-| :----- | :------------------------- | :------------------------------------- |
-| 1      | recv rtmp deleteStream     | 主播端主动断流（删除流时）                         |
-| 2      | recv rtmp closeStream      | 主播端主动断流（禁用流时）                         |
-| 3      | recv() return 0            | 主播端主动断开 TCP 连接                |
-| 4      | recv() return error        | 主播端 TCP 连接异常                    |
-| 7      | rtmp message large than 1M | 收到流数据异常                         |
-| 其他   | 直播服务内部异常           | 如需处理请联系腾讯商务人员或者提交工单 |
+推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083)。
 
 ### 回调消息示例
 
