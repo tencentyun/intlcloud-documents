@@ -61,7 +61,7 @@ LVB supports RTMP push. You can use the address generator to generate a push add
 ![](https://main.qcloudimg.com/raw/10afad65da657a02a6f175e7d2afdc7c.png)
 
 ### Playback address description
-If you select a transcoding template, the generated playback address will be the live streaming address after transcoding. RTMP, FLV and HLS live streaming addresses are supported. The address generator can generate an address prefixed with `rtmp://` or `http://`.
+If you select a transcoding template, the generated playback address will be the live streaming address after transcoding. RTMP, FLV, HLS and UDP live streaming addresses are supported. The address generator can generate an address prefixed with `rtmp://`, `http://` or `webrtc://`.
 
 ![](https://main.qcloudimg.com/raw/a5b5ab5183a44e78ac7eabc757c8d16e.png)
 
