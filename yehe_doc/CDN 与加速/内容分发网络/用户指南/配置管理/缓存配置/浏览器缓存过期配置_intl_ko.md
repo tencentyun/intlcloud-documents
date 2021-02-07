@@ -9,11 +9,11 @@
 ### 설정 조회
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 후, 왼쪽 메뉴바에서 [Domain Management]를 선택한 뒤 도메인 작업 열의 [Manage]를 클릭하여 도메인 설정 페이지로 들어갑니다. Tab을 [Cache Configuration]으로 전환하면 [Browser Cache Validity Configuration]을 찾을 수 있습니다.
-
-도메인을 추가한 후 플랫폼 기본 정책은 원본 서버를 준수합니다. 따라서 기본적으로 “모든 파일 - 원본 서버 준수” 규칙이 존재하며, 삭제할 수 없습니다.
 ![](https://main.qcloudimg.com/raw/d74acc06100e385c87176d62459f12a6.png)
 
-> ?인벤토리 도메인은 규칙 없이 비워둘 수 있습니다. 처음으로 규칙을 추가한 후에는 자동으로 “모든 파일 - 원본 서버 준수” 규칙이 추가됩니다.
+
+
+
 
 ### 규칙 추가
 
