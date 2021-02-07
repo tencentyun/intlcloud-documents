@@ -14,29 +14,6 @@
 </tr>
 </table>
 
-## November 2020
-<table>
-<tr>
-<th width=20%>Update</th>
-<th width=50%>Description</th>
-<th width=10%>Release Date</th>
-<th width=20%>Documentation</th>
-</tr>
-<tr>
-<td>The compliance audit feature is supported</td>
-<td>Compliance audit helps you pass the Cybersecurity Classified Protection Compliance (CCPC) test. It supports AI and custom audit, high-risk SQL alarms, and generating CCPC data security analysis reports.
-</td>
-<td>2020-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/39365" target="_blank">Compliance Audit</a></td>
-</tr>
-<tr>
-<td>The security governance feature is supported</td>
-<td>Based on AI and big data analysis, the security governance feature can automatically detect abnormal behaviors and send alarms to you, improving the capability of data security governance.
-</td>
-<td>2020-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/39369" target="_blank">Security Governance</a></td>
-</tr>
-</table>
 
 ## October 2020
 <table>
