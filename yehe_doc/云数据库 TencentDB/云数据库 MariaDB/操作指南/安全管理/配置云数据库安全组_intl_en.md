@@ -3,7 +3,7 @@ Instances in VPC with the same network security isolation demands in one region 
 >!TencentDB security group currently only supports network access control for VPCs but not the classic network or the public network.
 
 ## TencentDB Security Group Management
-1. Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/tdsql), click an instance name in the instance list to enter the instance management page.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance name in the instance list, and enter the instance management page.
 2. Select **Data Security** > **Security Group** to manage TencentDB security groups.
 >!
 > 1. TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the TencentDB security group management page.
@@ -34,7 +34,7 @@ You can set security group priority in the TencentDB console, and the smaller th
 In addition, if the last policy in multiple security groups associated with an instance is **ALL Traffic Denied**, then the last policy **ALL Traffic Denied** of all security groups except the one with the lowest priority will not take effect.
 
 ## Security Group Restrictions
-- Security groups apply to TencentDB instances in VPC [Network Environment](/doc/product/213/5227).
+- Security groups are applicable to TencentDB instances in [VPC](https://intl.cloud.tencent.com/document/product/213/5227).
 - Each user can configure a maximum of 50 security groups for each project in a region.
 - A maximum of 100 inbound or outbound rules can be configured for a security group. As TencentDB does not have active outbound traffic, outbound rules are not applicable to TencentDB.
 - A TencentDB instance can be associated with multiple security groups, and a security group can be associated with multiple TencentDB instances. No limit is imposed on the number.

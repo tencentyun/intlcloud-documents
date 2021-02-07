@@ -1,17 +1,22 @@
-When the access address of a database instance needs to be modified, you can adjust the network using the private network translation feature.
 
->Modifying the private address of an instance is highly risky. Please only do so with caution during off-peak hours. After modification, unless occupied by another service, the original address will remain valid for another 24 hours. Please switch your business configuration as soon as possible.
+This document describes how to modify the private IP used by your business to access the TencentDB instances and how to change the network type.
 
-## Modifying Private Network Address
-In a VPC, the private network address of a TencentDB instance can be modified. You can do so by clicking the icon shown in the figure below in the **Private IP** section on the **Instance Details** page, provided that there is an available IP in the current subnet.
-![](https://main.qcloudimg.com/raw/88dc6b07ed3dab5668254b45f0c59034.png)
+>!Modifying the private IP of an instance is highly risky. Please do so only during off-peak hours. After modification, unless assigned to another service, the original IP will remain valid for another 24 hours. We recommend modifying your business configuration as soon as possible.
 
-## Switching from Basic Network to VPC
-An instance can be switched from basic network to VPC. To do so, click **Switch to VPC** in the **Network** section on the **Instance Details** page, provided that there is an available IP in the target VPC subnet.
-![](https://main.qcloudimg.com/raw/8e83acbd94234d324338d5c2097b6a19.png)
->Because the product supports an intra-city active-active architecture, you are recommended to choose a VPC subnet in the same region as your business server or master node.
+## Modifying the Private IP
+You can modify the private IP of a TencentDB instance in VPC.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name in the instance list, and enter the instance details page.
+2. In the **Basic Info** section, click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> next to **Private IP** to modify it. You can do so only when the current subnet has available IPs.
+![](https://main.qcloudimg.com/raw/5a433d6cb4da6d698127e833a0030682.png)
 
-## Switching Between VPC Subnets
-The VPC subnet of an instance can be changed. To do so, click **Change Subnet** in the **Network** section on the **Instance Details** page, provided that there is an available IP in the target VPC subnet.
-![](https://main.qcloudimg.com/raw/8135b388cef6280d7f72dc74de51101b.png)
+## Switching from Classic Network to VPC
+You can switch an instance from classic network to VPC.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name in the instance list, and enter the instance details page.
+2. In the **Basic Info** section, click **Switch to VPC** next to **Network**. You can do so only when the target VPC subnet has available IPs.
+>!Because the product supports an intra-city active-active architecture, you are recommended to choose a VPC subnet in the same region as your business server or primary node.
+
+## Switching between VPC Subnets
+You can switch an instance between VPC subnets.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name in the instance list, and enter the instance details page.
+2. In the **Basic Info** section, click **Change Subnet** next to **Network**. You can do so only when the target VPC subnet has available IPs.
 
