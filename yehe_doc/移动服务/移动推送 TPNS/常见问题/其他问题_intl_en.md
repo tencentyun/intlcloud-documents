@@ -15,14 +15,14 @@ TPNS does not support Nubia phones released after 2015, as the new version of Nu
 
 
 ### Why can't pushes be received in an iOS build production environment?
-1. The production environment must meet the following testing conditions: the application is the ad-hoc/App Store build (with the release certificate "Production"), and the release certificate is uploaded and successfully verified.
+1. Check whether the production environment meets the following testing conditions: the application is the ad-hoc/App Store build (with the release certificate "Production"), and the release certificate is uploaded and successfully verified.
 2. Check whether the `bundle id` configured in the Xcode project matches the configured `Provision Profile` file and whether the `Provision Profile` file corresponding to the application has been configured with the message push capability.
 3. Check whether the environment specified by the `aps-environment` field in the `embedded.mobileprovision` file is correct.
 
 
 
 ### Why can't pushes be received in the production environment?
-The production environment must meet the following testing conditions: the application is a build packaged with the ad-hoc certificate or the release certificate ("Production") and uploaded to App Store.
+Check whether the production environment meets the following testing conditions: the application is a build packaged with the ad-hoc certificate or the release certificate ("Production") and uploaded to App Store.
 
 ### Why is the iOS token invalid?
 - The system was logged out or the application was uninstalled.
@@ -32,7 +32,7 @@ The production environment must meet the following testing conditions: the appli
 - Other system-defined events. (After calling the `unregisterNotification` API, register the notification again and clear device data and settings.)
 
 ### Why can only one push message be displayed on a device that has integrated the Mi channel?
-According to the documentation at Mi official website, the notification bar only displays one push message by default. If you want multiple messages to be displayed in the notification bar, you need to set a unique `notify_id` for different messages (a new notification bar message with the same `notify_id` will override the previous one). The parameter at TPNS official website is `n_id`.
+According to the documentation at Xiaomi official website, the notification bar only displays one push message by default. If you want multiple messages to be displayed in the notification bar, you need to set a unique `notify_id` for different messages (a new notification bar message with the same `notify_id` will override the previous one). The parameter at TPNS official website is `n_id`.
 
 
 ### Is there a limit on the number of messages displayed in the notification bar?
@@ -51,24 +51,44 @@ There is no limit on the number of notification bar messages that a phone can re
 
 
 ### How do I adapt to small icons?
-- ROMs running native Android v5.0 or above will process the small icon of an application and add a layer of color if `target sdk` is greater than or equal to 21, causing the icon to be gray.
-- If you want to display it as colored, you need to set the `target sdk` to below 21. If you don't want the `target sdk` to be below 21, you can rename a small transparent background .png image to `notification_icon.png` (the filename must be unique) and place it in `drawable`; in this way, the small icon will be displayed as gray (but shaped).
-We recommend you draw an icon based on the demo logo.
->? 
->- The small icon must be a PNG image with the alpha transparency channel.
->- The background must be transparent.
->- The image must be in white. Do not upload an image in another color.
->- Do not leave too much padding around the icon.
->- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+
+- ROMs running native Android 5.0 or above will process the small icon of an application and add a layer of color if `target sdk` is greater than or equal to 21, causing the icon to be gray.
+- If you want to display it as colored, you can set `target sdk` to below 21. If you don't want `target sdk` to be below 21, you can rename a small transparent background .png image to `notification_icon.png` (the filename must be unique) and place it in the `drawable` directory; in this way, the small icon will be displayed as gray (but shaped).
+- Starting from TPNS SDK for Android v1.2.2.0, the `notification_icon.png` small icon resource will only take effect directly on Google Pixel phones by default. To achieve such small icon effect for custom notifications on other phones, you need to specify the resource filename (without the extension) as the `message.android.small_icon` field in the push API. In addition, the custom notification small icon supports solid colors by specifying a decimal value of an RGB color as the `message.android.icon_color` field in the push API.
+
+Below is an example of push API fields, where `icon_color: 123456` indicates the RGB color 01e240:
+```
+{
+    "message": {
+        "android": {
+            "small_icon": "notification_icon",
+            "icon_color": 123456
+        }
+    }
+}
+```
+
+The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
+
+<img src="https://main.qcloudimg.com/raw/d9f92fb413aa98a01af64b2c17680bef.jpg" width="60%"></img>
+
+
+>?
+- The small icon must be a PNG image with an alpha channel.
+- The background must be transparent.
+- Do not leave too much padding around the icon.
+- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+
+
 
 
 ### Can an application still receive push messages after it is closed or its process is ended?
-- The TPNS channel mainly uses TPNS Service to push and receive messages. When the process is ended, TPNS Service will also be ended. Only after TPNS Service is restarted can messages be received and pushed. If another application connected to TPNS is opened on the phone, messages can be received and pushed by using TPNS Service of that application. However, TPNS Service channel sharing is also subject to the phone's ROM, and 100% success rate cannot be guaranteed.
+- The TPNS channel mainly uses TPNS Service to push and receive messages. When the process is ended, TPNS Service will also be ended. Messages be received and pushed only after TPNS Service is restarted. If another application connected to TPNS is opened on the phone, messages can be received and pushed by using TPNS Service of that application. However, TPNS Service channel sharing is also subject to the phone's ROM, and 100% success rate cannot be guaranteed.
 - Vendor channels can receive push messages even after the application process is ended.
 
 
 ### What should I do if Android v4.4.4 reports a compiling error?
-If the number of loaded methods in the project exceeds 65K, please create subpackages for the project.
+If the number of loaded methods in the project exceeds 65,000, please create subpackages for the project.
 
 
 
@@ -77,7 +97,7 @@ If the number of loaded methods in the project exceeds 65K, please create subpac
 - You can check whether broadcast is blocked by any security application.
 
 ### Why can't I find the records of pushes created through API?
-Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and select **Created via API** on the **Push Management** > **Task List** page to view the records of pushes created through API.
+Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and select **Created via API** on the **Push Management** > **Task List** page to view the records of pushes created through API.
 ![](https://main.qcloudimg.com/raw/0319075f0a90f18592e33b0da9698e9c.png)
 
 
