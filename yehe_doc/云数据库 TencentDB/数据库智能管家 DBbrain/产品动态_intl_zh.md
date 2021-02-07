@@ -14,29 +14,6 @@
 </tr>
 </table>
 
-## 2020年11月
-<table>
-<tr>
-<th width=20%>动态名称</th>
-<th width=50%>动态描述</th>
-<th width=10%>发布时间</th>
-<th width=20%>相关文档</th>
-</tr>
-<tr>
-<td>新增合规审计功能</td>
-<td>合规审计功能助力用户通过等保合规测评，支持 AI 与自定义审计、高危 SQL 告警、生成等保合规数据安全分析报告。
-</td>
-<td>2020-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/39365" target="_blank">合规审计</a></td>
-</tr>
-<tr>
-<td>新增安全治理功能</td>
-<td>安全治理功能基于 AI 与大数据分析，自动帮助用户发现异常行为并告警，提升数据安全治理能力。
-</td>
-<td>2020-11</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/39369" target="_blank">安全治理</a></td>
-</tr>
-</table>
 
 ## 2020年10月
 <table>
