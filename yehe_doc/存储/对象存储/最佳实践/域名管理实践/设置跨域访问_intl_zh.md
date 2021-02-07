@@ -94,15 +94,18 @@ curl http://corstest-125xxxxxxx.cos.ap-beijing.myqcloud.com/test.txt
 
 1. 登录 [COS 控制台](https://console.cloud.tencent.com/cos5) ，单击【存储桶列表】，进入相关的存储桶，单击【安全管理】页签，下拉页面即可找到“跨域访问 CORS 设置”。
 2. 单击【添加规则】，添加第一条规则，使用最宽松的配置如下：
+![](https://main.qcloudimg.com/raw/e042f4e6b6513aa1309929c384c8b5d1.png)
 >! CORS 设置是由一条一条规则组成的，会从第一条开始逐条匹配，以最早匹配上的规则为准。
 
 #### 验证结果
 配置完成后，重新尝试访问 test.txt 文本文件。结果如下，可以正常访问请求。
+![](https://main.qcloudimg.com/raw/a887521f8561ea2a83a5416f11c00fb1.png)
 
 ### 故障排除及建议
 若想要排除跨域带来的访问问题，可以将 CORS 设置为以上最宽松的配置，该配置允许所有的跨域请求。该配置下依然出错，则表明错误出现在其他部分而不是 CORS。
 
 除了最宽松的配置之外，您还可以配置更精细的控制机制来实现针对性的控制。例如，对于本示例可以使用如下最小的配置匹配成功：
+![](https://main.qcloudimg.com/raw/6256632c56b643e3aadcc1fe94bb9eaa.png)
 因此对于大部分场景来说，推荐您根据自己的使用场景来使用最小的配置以保证安全性。
 
 
