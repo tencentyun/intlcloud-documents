@@ -37,7 +37,6 @@ SDK 支持 iOS 8.0 以上系统。
 
 ### 步骤3：SDK License 设置与基本信息获取
 通过 [License 申请](https://intl.cloud.tencent.com/document/product/1069/38041) 的指引申请 License 后，从 [控制台](https://console.cloud.tencent.com/vod/license) 复制 key 和 url，见下图。
-![](https://main.qcloudimg.com/raw/a4c1de10918d04b0b425febe9d0a009b.png)
 在您的应用中使用短视频功能之前，建议在`- [AppDelegate application:didFinishLaunchingWithOptions:]`中进行如下设置：
 
 ```objc
@@ -51,6 +50,10 @@ SDK 支持 iOS 8.0 以上系统。
 }
 @end
 ```
+
+>?
+- 对于使用4.7版本 License 的用户，如果您升级了 SDK 到4.9版本，您可以登录控制台，单击下图的【切换到新版License】生成对应的 key 和 url，切换后的 License 必须使用4.9及更高的版本，切换后按照上述操作集成即可。
+- 企业版请参考 [动效变脸](https://intl.cloud.tencent.com/document/product/1069/38030)。
 
 ### 步骤4：Log 配置
 在  TXLiveBase 中可以设置 log 是否在控制台打印以及 log 的级别，相关接口如下：
@@ -167,7 +170,7 @@ UGCKitRecordViewController *recordViewController = [[UGCKitRecordViewController 
    UGCKitMediaPickerViewController *mediaPickerViewController = [[UGCKitMediaPickerViewController alloc] initWithConfig:config theme:nil];
    // 展示媒体选择器
    [self presentViewController:mediaPickerViewController animated:YES completion:nil];
-   ```
+```
    选择的结果将通过 completion block 回调，示例如下：
    ```
    mediaPickerViewController.completion = ^(UGCKitResult *result) {
@@ -184,7 +187,7 @@ UGCKitRecordViewController *recordViewController = [[UGCKitRecordViewController 
           }
      }
    }
-```
+   ```
 4. **裁剪**
 `UGCKitCutViewController`提供视频的裁剪功能，与编辑接口相同，在实例化时传入媒体对象，在 completion 中处理剪辑结果即可。示例如下：
 ```
@@ -199,7 +202,7 @@ UGCKitRecordViewController *recordViewController = [[UGCKitRecordViewController 
    }
    [self.navigationController pushViewController: cutViewController]
 ```
-   
+
 
 ## 详细介绍
 以下为 SDK 各模块的详细说明：
