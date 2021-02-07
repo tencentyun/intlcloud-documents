@@ -62,7 +62,7 @@
 ![](https://main.qcloudimg.com/raw/10afad65da657a02a6f175e7d2afdc7c.png)
 
 ### 播放地址说明
-若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV和HLS 协议。可通过地址生成器生成前缀为 `rtmp://`和`http://`的播放地址。
+若使用转码模板，生成的播放地址为转码后的直播播放地址。其中播放支持 RTMP、FLV、HLS 和 UDP 协议。可通过地址生成器生成前缀为 `rtmp://`、`http://`和`webrtc://`的播放地址。
 
 ![](https://main.qcloudimg.com/raw/a5b5ab5183a44e78ac7eabc757c8d16e.png)
 
