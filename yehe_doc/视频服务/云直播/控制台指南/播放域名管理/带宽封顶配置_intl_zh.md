@@ -26,7 +26,7 @@
 	3. 选择阈值单位为 Mbps、Gbps 或 Tbps。
 6. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/4dad76e233af788367fd5753a97a01bf.png)
+![](https://main.qcloudimg.com/raw/c2d7d5c342e3e7dc81575a6baa906fc3.png)
 >! 
 >- 各个单位之间进制为1000，例如：1Tbps=1000Gbps，1Gbps=1000Mbps。
 >- 切换区域配置会导致带宽封顶配置失效，需要重新设置带宽封顶配置。
