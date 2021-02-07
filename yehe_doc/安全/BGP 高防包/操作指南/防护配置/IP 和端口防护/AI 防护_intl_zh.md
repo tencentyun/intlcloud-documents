@@ -6,8 +6,8 @@ DDoS 高防支持智能 AI 防护功能。开启 AI 防护后，DDoS 高防将�
 
 ## 操作步骤
 1. 登录 [BGP 高防包（新版）管理控制台](https://console.cloud.tencent.com/ddos/antiddos-native/package)，在左侧导航中，单击【防护配置】。
-2. 在左边的列表选中高防包 ID，如"bgp-000000iu"，在右边的顶部选中【IP 端口防护】，并在“AI 防护”卡片中，单击【设置】，进入 AI 防护列表。
-![](https://main.qcloudimg.com/raw/46fef7210e12440794aaad8764318654.png)
+2. 在左边的列表选中高防包 ID，如"bgp-000000ij"，在右边的顶部选中【IP 端口防护】，并在“AI 防护”卡片中，单击【设置】，进入 AI 防护列表。
+![](https://main.qcloudimg.com/raw/6d820b131b435a50e4eb0b6ec74bdf08.png)
 3. 在“AI 防护”页面，单击【新建】，创建 AI 防护规则。
 ![](https://main.qcloudimg.com/raw/84785dc3477e1f88b9eec01daaa0346f.png)
 4. 在“配置 AI 防护”弹窗中，单击开关按钮开启 AI 防护，单击【确定】。
