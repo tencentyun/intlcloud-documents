@@ -1,27 +1,28 @@
 ## Namespace
-Namespace= QCE/DCX
+
+Namespace=QCE/DCX
 
 ## Monitoring Metrics
 
-| Parameter | Metric Name | Description | Unit | Dimension |
+| Parameter | Metric | Description | Unit | Dimension |
 | ----- | ---------- | ---- | ------------ | ------------ |
-|InBandwidth | Network inbound bandwidth | Bandwidth rate from the access point AR toward the VPC instance, which indicates the inbound bandwidth data collected every one minute or five minutes | Mbps | directConnectConnId |
-| OutBandwidth | Newtork outbound bandwidth | Bandwidth rate from the VPC toward the access point AR, which indicates the outbound bandwidth data collected every one minute or five minutes | Mbps | directConnectConnId |
-| OutPkg | Outbound packets | Outbound packets for the current dedicated tunnel | Count | directConnectConnId |
-| InPkg | Inbound packets | Inbound packets for the current dedicated tunnel | % | directConnectConnId |
+| InBandwidth | Network inbound bandwidth   | Inbound bandwidth from the access point AR to the VPC, which is collected once every one or five minutes       | Mbps |directConnectConnId |
+|OutBandwidth | Network outbound bandwidth | Outbound bandwidth from the VPC to the access point AR, which is collected once every one or five minutes       | Mbps   | directConnectConnId |
+|InPkg| Inbound packets | Number of inbound packets of the current dedicated tunnel      | Packets/sec |directConnectConnId |
+|OutPkg| Outbound packets |   Number of outbound packets of the current dedicated tunnel   | Packets/sec |directConnectConnId |
 
->? The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
+>?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Dimension Description | Format |
 |---------|---------|---------|---------|
-| Instances.N.Dimensions.0.Name | directConnectConnId | Dimension name of the dedicated tunnel ID | Enter a string-type dimension name, such as directConnectConnId |
-| Instances.N.Dimensions.0.Value | directConnectConnId | A specific dedicated tunnel ID | Enter a specific dedicated tunnel ID, such as dc-e1h9wqp8 |
+| Instances.N.Dimensions.0.Name	| directConnectConnId	| Dedicated tunnel ID dimension name	| Enter a String-type dimension name: directConnectConnId |
+| Instances.N.Dimensions.0.Value| directConnectConnId |Specific dedicated tunnel ID |Enter a specific dedicated tunnel ID, such as `dc-e1h9wqp8` |
 
-## Input Parameters
+## Input Parameter Description
 
-**To query the monitoring data of a dedicated tunnel, use the following input parameters:**
-&Namespace= QCE/DCX
+**To query the monitoring data of a dedicated tunnel, set the following input parameters:**
+&Namespace=QCE/DCX
 &Instances.N.Dimensions.0.Name=directConnectConnId
-&Instances.N.Dimensions.0.Value=<Dedicated tunnel ID> 
+&Instances.N.Dimensions.0.Value=Dedicated tunnel ID 
