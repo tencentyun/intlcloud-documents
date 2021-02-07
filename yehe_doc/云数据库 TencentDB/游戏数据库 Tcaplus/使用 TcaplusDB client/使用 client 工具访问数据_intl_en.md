@@ -1,18 +1,19 @@
-This document describes how to use the client tool `tcaplus_client` to access data.
+This document describes how to use the client tool tcaplus_client to access data.
 
 All DML statements must use the `WHERE` clause which should contain at least a primary key field. If there are multiple primary keys, separate them with `and`.
 
 ## Accessing TcaplusDB through Client Tool
-`tcaplus_client` is a client tool used to access TcaplusDB tables and can be obtained at the download address in the table below.
+tcaplus_client is a client tool used to access TcaplusDB tables and can be obtained at the download address in the table below.
 
-The release package of TcaplusServiceAPI for Linux x86_64 contains the `tcaplus_client` tool for Linux 64-bit.
+The release package of TcaplusServiceAPI for Linux x86_64 contains the tcaplus_client tool for Linux 64-bit.
 
-| Version | Release Date | OS | Package Download Address |
+| Version          | Release Date   | OS     | Package Download Address                                                     |
 | ------------- | ---------- | ------------ | ------------------------------------------------------------ |
-| 3.36.0.192960 | 2020/04/21 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz) |
+| 3.46.0.199033 | 2020/12/28 | Linux x86_64 | [Download](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/release/3-46/TcaplusPbApi3.46.0.199033.x86_64_release_20201210.tar.gz) |
 
-
->?The relevant operations need to be performed on the CVM instance in the same VPC and subnet under your Tencent Cloud account as your TcaplusDB instance.
+>?
+>- The following operations need to be performed on the CVM instance in the same VPC and subnet under your Tencent Cloud account as your TcaplusDB cluster.
+>- You can download TcaplusServiceAPI v3.36.0.192960 [here](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/3.36.0.192960/TcaplusPbApi3.36.0.192960.x86_64_release_20200115.tar.gz).
 
 ### Installing client
 After downloading the TcaplusServiceAPI installation package, you can [use the upload tool](https://intl.cloud.tencent.com/document/product/213/34821) to upload it onto the CVM instance in the same VPC and subnet as the TcaplusDB cluster.
@@ -35,7 +36,7 @@ chmod +x tcaplus_client
 --------------------------------------------------------------------------------
  invalid parameters, please start the client as following:
     ./tcaplus_client -a app_id -z zone_id -s signature -d dir_server_url [-t table_name] [-l log_file.xml] [-T tdr_file.tdr] [-e execute_command]
-    the params in [] are optional, and their order is not important.
+    the params in [] are optional, and theire order is not important.
     -a(--ap_id)    App ID
     -z(--zone_id)    ZONE ID
 	-s(--signature)    PASSWORD
@@ -66,7 +67,7 @@ Run the corresponding command to connect to TcaplusDB. The access point informat
 tcaplus>
 ```
 
-Enter "help" after the prompt, and you can see detailed help information. Use `> help commands` to view the specific usage method.
+Enter `help` after the prompt, and you can see detailed help information. Enter `> help` to view how to use related commands.
 ```
 tcaplus>help
 --------------------------------------------------------------------------------
@@ -88,23 +89,21 @@ tcaplus>help
 ```
 
 ### Parameter description
-
-| Parameter | Description | Required |
-| ---- | -------------------------------------------- | -------- |
-| -a   | Business ID                                       | Yes       |
-| -z   | Game region ID                                     | Yes       |
-| -s   | Business password                                     | Yes       |
-| -d   | The IP and port of the directory server                       | Yes       |
-| -t   | Table name                                       | No       |
-| -l   | The output setting of log file. The file name must be "client_log.xml". | No       |
+| Parameter | Description                                          | Required |
+| ---- | --------------------------------------------- | -------- |
+| -a   | Access ID                                       | Yes       |
+| -z   | Table group ID                                     | Yes       |
+| -s   | Cluster password                                      | Yes       |
+| -d   | Cluster IP and port                            | Yes       |
+| -t   | Table name                                        | No       |
+| -l   | The output setting of log files. The file name must be "client_log.xml". | No       |
 | -T   | TDR file path                                  | No       |
-| -e   | The SQL statements to execute                            | No       |
-| -v   | Query the version.                                     | No       |
-| <    | Redirect SQL statements to client to execute.                    | No       |
-
+| -e   | The SQL statements to execute                           | No       |
+| -v   | The version to query                                      | No       |
+| <    | Redirect SQL statements to client to execute.                 | No       |
 
 ### Connecting to TcaplusDB (using TDR)
-If you need to use `using tdr`, you must add the TDR file path to the client launch parameters. You can use [TDR tool](#tdrgj) to convert multiple XML metadatabases into binary format. If there are dependencies between multiple XML files, the dependent XML file must be placed in front of the parameter list.
+To connect to TcaplusDB via TDR, you must use the client launch parameters to specify the TDR file path. You can use the [TDR tool](#tdrgj) to convert multiple XML metadatabases into binary format. If there are dependencies between multiple XML files, the dependent XML file must be placed in front of the parameter list.
 
 Sample:
 ```
@@ -126,8 +125,9 @@ tcaplus > exit
 ```
 
 <span id = "tdrgj"></span>
+
 #### TDR tool
-You need to use the TDR tool to generate a TDR file, which is mainly generated by the data definition file (TDR structure in XML format). [Download the tool](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/tdr).
+You need to use the TDR tool to generate a TDR file, which is mainly generated by the data definition file (TDR structure in XML format). Download the tool [here](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/tdr).
 
 Sample:
 ```
@@ -136,31 +136,31 @@ tdr -B -o ov_res.tdr ov_res.xml
 tdr -C -o ov_res.c --old_xml_tagset  ov_res.xml
         # Convert metadatabases in old XML format (using the old tag set) to .c files.
 tdr -H -O "include" --add_custom_prefix="m_" --no_type_prefix
-        # Convert XML metadatabases to .h files, which are saved in "include" directory.
+        # Convert XML metadatabases to .h files which are saved in the "include" directory.
         # Add the prefix "m_" to the member name of struct/union, but not add a type prefix.
 tdr -G -m Pkg -x ATTR -o Pkg.xml net_protocol.xml
         # Generate a configuration file in XML format through package (a data structure package customized by user).
 tdr -T -u prefixfile
-        # Export the prefix table of the data member used when generating the .h file to the file prefixfile.
+        # Export the prefix table of the data member used when generating the .h file to the file "prefixfile".
 tdr -A --indent-size=8 net_protocol.xml
-        # Generate ActionScript3 class files according to the protocol described in net_protocol.xml. The generated class files are all indented with 8 spaces.
+        # Generate ActionScript3 class files according to the protocol described in "net_protocol.xml". The generated class files are all indented with 8 spaces.
 tdr -P --indent-size=8 net_protocol.xml
-        # Generate C++ class files according to the protocol described in net_protocol.xml. The generated class files are all indented with 8 spaces.
+        # Generate C++ class files according to the protocol described in "net_protocol.xml". The generated class files are all indented with 8 spaces.
 tdr -S --indent-size=8 net_protocol.xml
-        # Generate C# class files according to the protocol described in net_protocol.xml. The generated class files are all indented with 8 spaces.
+        # Generate C# class files according to the protocol described in "net_protocol.xml". The generated class files are all indented with 8 spaces.
 tdr -E 0x83010404
-        #Query the error information of error code 0x83010404.
+        # Query the error information of error code 0x83010404.
 ```
 
 #### tdr2xml tool
-The tdr2xml tool can decompile the binary metadata file to an XML metadata file. [Download the tool](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/tdr2xml).
+The tdr2xml tool can decompile the binary metadata file to an XML metadata file. Download the tool [here](https://tcaplusdb-sdk-1301716906.cos.ap-shanghai.myqcloud.com/tdr2xml).
 
 Syntax:
 ```
 tdr2xml   [-o --out_file=FILE] [-h --help] [-v --version] DRFILE
 The description of each parameter is as follows:
 -o, --out_file=FILE: specify the name of the output file. Default value: a.xml.
--h, --help: output the "help".
+-h, --help: output help.
 -v, --version: output the version information.
 ```
 
@@ -168,4 +168,4 @@ Sample:
 ```
 tdr2xml –o net_cs.xml  net_cs.tdr
 ```
-Convert the metadata description file in binary custom format saved in the net_cs.tdr file into a description file in XML format.
+Convert the metadata description file in binary custom format saved in the "net_cs.tdr" file into a description file in XML format.
