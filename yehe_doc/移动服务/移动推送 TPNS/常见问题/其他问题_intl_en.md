@@ -68,9 +68,6 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 }
 ```
 
-The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
-
-<img src="https://main.qcloudimg.com/raw/d9f92fb413aa98a01af64b2c17680bef.jpg" width="60%"></img>
 
 
 >?
