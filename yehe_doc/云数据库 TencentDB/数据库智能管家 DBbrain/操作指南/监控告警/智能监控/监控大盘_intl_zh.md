@@ -1,5 +1,5 @@
 DBbrain 支持自定义监控大盘，满足用户多实例、多指标监控视图的关联对比查看。
->?监控大盘目前支持云数据库 MySQL（不含基础版）、云原生数据库 TDSQL-C（TDSQL-C for MySQL）。
+>?监控大盘目前支持云数据库 MySQL（不含基础版）。
 
 ![](https://main.qcloudimg.com/raw/99e78958c112d300aa91b28c2b1d2d40.png)
 
@@ -104,46 +104,3 @@ DBbrain （MySQL）自定义监控大盘目前支持如下监控指标：
 | master_slave_sync_distance       | 主从延迟距离              |
 | seconds_behind_master            | 主从延迟时间              |
 
-### DBbrain （TDSQL-C for MySQL）
-DBbrain （TDSQL-C for MySQL）自定义监控大盘目前支持如下监控指标。
-
-| 监控指标                          | 指标含义                    |
-| --------------------------------- | --------------------------- |
-| cpu_use_rate                      | CPU                         |
-| memory_use_rate                   | 内存                        |
-| memory_use                        | 内存占用                    |
-| volume_rate                       | 存储利用率                  |
-| real_capacity                     | 存储使用空间                |
-| qcache_hits                       | 缓存命中数                  |
-| qcache_hit_rate                   | 缓存命中率                  |
-| capacity                          | 存储占用空间                |
-| bytes_sent                        | 输出流量                    |
-| bytes_received                    | 输入流量                    |
-| queries                           | QPS                         |
-| com_commit                        | TPS                         |
-| max_connections                   | 最大连接数                  |
-| threads_connected                 | Connected Threads           |
-| slow_queries                      | 慢查询数                    |
-| select_scan                       | 全表扫描数                  |
-| select_count                      | 查询数                      |
-| com_update                        | 更新数                      |
-| com_delete                        | 删除数                      |
-| com_insert                        | 插入数                      |
-| com_replace                       | 覆盖数                      |
-| created_tmp_tables                | 临时表数量                  |
-| innodb_cache_hit_rate             | InnoDB 缓存命中率           |
-| innodb_cache_use_rate             | InnoDB 缓存使用率           |
-| threads_created                   | 已创建的线程数              |
-| threads_running                   | Running Threads             |
-| handler_rollback                  | 每秒事务回滚的次数          |
-| innodb_buffer_pool_read_requests  | InnoDB 逻辑读               |
-| handler_commit                    | 每秒事务提交的次数          |
-| innodb_buffer_pool_write_requests | InnoDB 逻辑写               |
-| innodb_rows_deleted               | InnoDB 行删除量             |
-| innodb_rows_updated               | InnoDB 行更新量             |
-| innodb_rows_inserted              | InnoDB 行插入量             |
-| innodb_rows_read                  | InnoDB 行读取量             |
-| log_capacity                      | 日志空间                    |
-| replicate_lag                     | 备实例 Redo 复制延迟          |
-| replicate_lsn_lag                 | 备实例 Redo 复制落后的 lsn 距离 |
-| replicate_status                  | 备实例的复制状态            |
