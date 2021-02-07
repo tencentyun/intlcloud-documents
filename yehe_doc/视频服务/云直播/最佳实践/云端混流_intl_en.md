@@ -1,7 +1,7 @@
 LVB provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
 
 ## Notes
-- Standard transcoding fees will be incurred for the stream mix feature.
+- Standard transcoding fees will be incurred for the stream mix feature. For details, see [pricing for LVB transcoding](https://intl.cloud.tencent.com/document/product/267/39604#n_trans).
 - To use the mixing and cropping feature, the value of cropping parameter cannot exceed the value of input stream parameter.
 
 
@@ -41,6 +41,7 @@ Common templates include 10, 30, 40, 310, 390, 410, 510, and 610. When using the
 
 </tr>
 </tbody></table>	
+
 
 
 
@@ -163,7 +164,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 
 ## Canceling a Stream Mix
 ### Parameter description
-For more information, please see [CancelCommonMixStream](https://cloud.tencent.com/document/product/267/43405).
+For more information, please see [CancelCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35998).
 
 ### Examples
 Cancel a stream mix based on SessionId.
@@ -186,9 +187,8 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 >- The stream mix you apply for cannot be cancelled within 5 seconds.
 >- After the cancellation, you can apply for a stream mix with the same SessionId at least 30 seconds later.
 
-
 ## Error Codes
-For on-cloud stream mix API 3.0, most common error codes have been transformed into the style of [API 3.0 error code](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81). However, some error codes remain unchanged, which will be provided in the format of `err_code [ $code ],msg [ $message ]` in `Message` and prompted as an `InvalidParameter` error. The causes of specific codes are as detailed below:
+For on-cloud stream mix API 3.0, most common error codes have been transformed into the style of [API 3.0 error code](https://intl.cloud.tencent.com/document/product/267/35997). However, some error codes remain unchanged, which will be provided in the format of `err_code [ $code ],msg [ $message ]` in `Message` and prompted as an `InvalidParameter` error. The causes of specific codes are as detailed below:
 
 <table>
 <thead><tr><th>Error Code</th><th>Reason</th><th>Troubleshooting</th></tr></thead>
@@ -305,6 +305,7 @@ For on-cloud stream mix API 3.0, most common error codes have been transformed i
 </tbody></table>
 
 ## FAQs
+- [What should I do if error code -505 is returned for stream mix after push?](https://intl.cloud.tencent.com/document/product/267/38255#what-should-i-do-if-error-code--505-is-returned-for-stream-mix-after-push.3F)
 - [Why does the stream mix after push return the error code 505?](https://intl.cloud.tencent.com/document/product/267/38255)
 - [What happens if the applied stream mix is not canceled?](https://intl.cloud.tencent.com/document/product/267/38255)
 - [Why does the assistant host image of the stream mix sometimes appear at the unexpected position?](https://intl.cloud.tencent.com/document/product/267/38255)
