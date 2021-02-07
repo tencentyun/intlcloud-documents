@@ -25,8 +25,8 @@ DBbrain supports killing sessions in the console for ease of management. In the 
 >
 DBbrain supports the SQL throttling feature to ensure service availability. You can create SQL throttling tasks to control the database requests and SQL concurrency by setting the SQL type, maximum concurrency, throttling duration, and SQL keywords. Multiple tasks do not conflict with each other.
 >?
->-To create a SQL throttling task, you need to log in to the database account first.
->-If SQL throttling prevents a SQL statement from being executed, the error message `SQL rejected by CDB_SQL_FILTER` will be displayed.
+>- To create a SQL throttling task, you need to log in to the database account first.
+>- If SQL throttling prevents a SQL statement from being executed, the error message `SQL rejected by CDB_SQL_FILTER` will be displayed.
 >
 - SQL types: SELECT, UPDATE, DELETE, INSERT, or REPLACE.
 - Maximum concurrency: the maximum number of concurrent SQL executions. If the number of concurrent SQL executions containing keywords reaches the maximum concurrency value, the SQL throttling policy will be triggered. If this value is set to 0, all matched SQL executions will be restricted.
