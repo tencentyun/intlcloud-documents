@@ -1,6 +1,34 @@
+## January 2021
+<table>
+<tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr><tr>
+<td>Version 8.3</td>
+<td ><ul style="margin:0;">
+  <li/>Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
+	<li/> Android: fixed multiple crash issues.
+	<li/>iOS: fixed the problem of the SDK crashing when playing back videos in slow motion.
+	<li/>iOS: fixed the problem of black screens during image transition in some operations.
+	<li/>iOS: fixed some crash issues caused by incompatibility.
+</td>
+ <td>2021-01-15</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr></table>
+
 ## December 2020
 <table>
-<tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th></tr><tr>
+<tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr><tr>
+<td>Version 8.2</td>
+<td ><ul style="margin:0;">
+   <li/> Android: fixed the bug of the green screen feature no longer functioning after camera switch.
+	 <li/> Android: fixed the occasional instability of UGSV.
+	 <li/> iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
+	 <li/> iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
+	 <li/> iOS: fixed the occasional instability of the superplayer.
+</td>
+ <td>2020-12-24</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr><tr>
 <td>Version 8.1</td>
 <td ><ul style="margin:0;">
   <li/>Android: improved the image quality and clarity of UGSV.
@@ -8,7 +36,7 @@
   <li/>Android: fixed the problem of a value indicating failure being returned after shooting pauses.
   <li/>Android: fixed some crash and compatibility issues. 
 </td>
- <td>2020-12-03</td> 
+ <td>December 3, 2020</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr></table>
 
@@ -27,7 +55,7 @@
   <li/>Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
 </td>
  <td>2020-11-13</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr></table>
 
 ## October 2020
@@ -42,7 +70,7 @@
   <li>iOS & Android: optimized the delay control algorithm of the live streaming player to avoid frequent acceleration and deceleration.
 </td>
  <td>2020-10-23</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -54,7 +82,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Document</th>
 </tr><tr>
 <td> Version 7.8</td>
@@ -67,7 +95,7 @@
   <li>Android: fixed the problem of slow callback of end to a shooting.
   <li>Android: fixed multiple crash issues of the UGSV SDK reported recently.</td>
 <td>2020-09-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr><tr>
 <td>Version 7.7 </td>
 <td ><ul style="margin:0;">
@@ -75,7 +103,7 @@
 <li>iOS: fixed the compatibility issue with iOS 14.
 </td>
  <td>2020-09-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr></table>
 
 
@@ -85,7 +113,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -97,7 +125,7 @@
 <li>Android: moved the callback of custom pre-processing of UGSV before the adding of stickers.
 </td>
  <td>2020-08-24</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -109,7 +137,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -119,7 +147,7 @@
 iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 </td>
  <td>2020-07-31</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr><tr>
 <td>Version 7.4</td>
 <td ><ul style="margin:0;">
@@ -127,7 +155,7 @@ iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 <li>Android: optimized the quality of edited UGSV, and fixed the lack of image clarity on some devices.
 </td></ul>
  <td>2020-07-03</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -138,7 +166,7 @@ iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -160,7 +188,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -172,7 +200,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 <li > Android: fixed UGCKit problems including occasional abnormal display of the video clipping page and occasional errors during shooting. 
 </td>
  <td>2020-03-30</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 <tr>
 <td>Version 7.0 </td>
@@ -182,7 +210,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 iOS & Android: fixed a number of bugs.
 </td>
  <td>2020-03-09</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -194,7 +222,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -208,7 +236,7 @@ iOS & Android: fixed a number of bugs.
 <li >iOS: optimized the karaoke module, and fixed problems including lip-sync errors.
 </td>
  <td>2020-01-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -220,7 +248,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -235,7 +263,7 @@ iOS & Android: fixed a number of bugs.
 <li > iOS: fixed the problem of occasional black screens when users preview UGSV.
 </td>
  <td>2019-11-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -250,7 +278,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -265,7 +293,7 @@ iOS & Android: fixed a number of bugs.
 <li > iOS: fixed the problem of users occasionally failing to save high-quality videos during editing.
 </td>
  <td>2019-09-29</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 <tr>
 <td>Version 6.6 Patch</td>
@@ -275,7 +303,7 @@ iOS & Android: fixed a number of bugs.
 <li > iOS: made the SDK supported on iOS 13.
 </td>
  <td>2019-09-10</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -287,7 +315,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -300,7 +328,7 @@ iOS & Android: fixed a number of bugs.
 <li > iOS: fixed the problem of animated effects not working after users switch apps to the background.
 </td>
  <td>2019-08-06</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -311,7 +339,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -323,7 +351,7 @@ iOS & Android: fixed a number of bugs.
 <li > Android: fixed the problem of image updating failure when users pause and rotate a video during editing.
 </td>
  <td>2019-06-12</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -334,7 +362,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -344,7 +372,7 @@ iOS & Android: fixed a number of bugs.
 Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 </td>
  <td>2019-05-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -356,7 +384,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -367,7 +395,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li >iOS: fixed some crash issues during the use of the image transition and composition feature.
 </td>
  <td>2019-01-04</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -380,7 +408,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -398,7 +426,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li >  iOS: added the feature of generating GIFs of original videos to the demos.
 </td>
  <td>2018-10-25</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -410,7 +438,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -440,7 +468,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -461,7 +489,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > iOS: fixed the problem of blurry screens during shooting on iOS 12.
 </td>
  <td>2018-08-18</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -473,7 +501,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -495,7 +523,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > iOS: fixed memory leaks, enhanced stability, and added module definitions to better support Swift integration.
 </td>
  <td>2018-07-18</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -507,7 +535,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -522,7 +550,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > iOS: fixed problems including occasional lag and black frames during shooting, occasional flashing of watermarks towards the end of videos, memory leaks, etc.
 </td>
  <td>2018-06-14</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -534,7 +562,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -549,7 +577,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > iOS: fixed the problem of callbacks possible only after background music ends.
 </td>
  <td>2018-05-25</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 <tr>
 <td> Version 4.6 </td>
@@ -562,7 +590,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > Android: fixed the crash caused by incorrect path for animated effects.
 <li > iOS: supported Bitcode.</td>
  <td>2018-05-04</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -573,7 +601,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -586,7 +614,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <li > Android: allowed users to set the bitrate when editing UGSV.
 <li >Android: allowed the editing of videos without audio.</td>
  <td>2018-04-13</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK Download</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr>
 </tbody></table>
 
@@ -599,7 +627,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -610,6 +638,11 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <td>-</td>
 </tr>
 </tbody></table>
+
+
+
+
+
 
 
 

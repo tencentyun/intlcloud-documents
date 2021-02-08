@@ -1,3 +1,17 @@
+### Version 8.3 Released on January 15, 2021
+- Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
+- Android: fixed multiple crash issues.
+- iOS: fixed the problem of the SDK crashing when playing back videos in slow motion.
+- iOS: fixed the problem of black screens during image transition in some operations.
+- iOS: fixed some crash issues caused by incompatibility.
+
+### Version 8.2 Released on December 24, 2020
+- Android: fixed the bug of the green screen feature no longer functioning after camera switch.
+- Android: fixed the occasional instability of UGSV.
+- iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
+- iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
+- iOS: fixed the occasional instability of the superplayer.
+
 ### Version 8.1 Released on December 3, 2020
 - Android: improved the image quality and clarity of UGSV.
 - Android: changed the type of beauty filter APIs from `int` to `float`.

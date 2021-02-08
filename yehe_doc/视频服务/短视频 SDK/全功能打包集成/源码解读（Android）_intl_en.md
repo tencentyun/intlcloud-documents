@@ -1,169 +1,174 @@
+[](id:structure)
 ## Project Structure
 
-Download the UGSV application code, open the project in Android Studio, and you will see the following directory structure:
+Download the source code for UGSV apps and open the project with Android Studio. You will see a directory structure as shown below.
 ![](https://main.qcloudimg.com/raw/7e871288732522edc565944b3324a694.png)
 
 | File/Directory | Description |
 | ------------ | ------------------------------------------------------------ |
-| common       | Common components, including various tool classes and custom pages (beauty filters and player controls)       |
-| login        | Account module, including login and signup pages |
-| mainui       | UGSV application homepage, including the main activity and video list |
-| play         | VOD playback module |
-| userinfo     | Profile module |
-| videochoose | Short video file selection module |
-| videoeditor  | Short video editing module |
-| videojoiner  | Short video composition module |
-| videopublish | Short video release module |
-| videorecord  | Short video shoot module |
-| jniLibs      | Tencent SDKs and libraries depended by the UGSV application, which are mainly BuglySDK, libraries used for file upload, and LiteAVSDK |
+| common | Common components, including tools and custom UIs (beauty filter and player controls) |
+| login | Account module, including login and registration |
+| mainui | Main UI of UGSV apps, including main activities and the video list |
+| play | Playback module |
+| userinfo | User information module |
+| videochoose | Video file selection module |
+| videoeditor | Video editing module |
+| videojoiner | Video splicing module |
+| videopublish | Video publishing module |
+| videorecord | Video shooting module |
+| jniLibs | Tencent’s SDKs underlying UGSV apps, mainly BuglySDK, the file uploading library, and LiteAVSDK |
 
-## Animated Sticker
+[](id:effect)
+## Animated Stickers
 
-The Basic Edition UGSV SDK rather than the Enterprise Edition is used in the UGSV application source code, which does not contain advanced features such as animated sticker. If you need such features, please download the Enterprise Edition [here](https://intl.cloud.tencent.com/document/product/1069/37914).
+The source code for UGSV apps uses the Basic Edition SDK by default, which does not offer animated stickers. To use animated stickers, please download the Enterprise Edition [here](https://intl.cloud.tencent.com/document/product/1069/37914).
 
-## Module Overview
+[](id:function)
+## Module Introduction
 
-The UGSV application's features can be divided into the account, homepage, playback, and short video (editing, composition, shoot, and release) modules, and so is the code. These modules and their implementations are detailed below:
+UGSV apps’ functional modules include account, main UI, playback, and UGSV (editing, splicing, shooting, and publishing), each of which comes with its own code. Below is an introduction of these modules plus their implementation methods.
 
-### Account module
+[](id:account)
+### Account
 
-#### Module overview
+#### Description
 
-- The account module is used to process user login/signup and login caching logic.
-- If you have your own account system, you can directly replace this module with your system.
-- The account module can call `register` of `TCUserMgr` to register the username and password on the business backend of the UGSV application, call the `login` method of `TCUserMgr` to log in and cache the login information in local `Sharepreference`, and log out and clear the local cache.
+- The account module handles the logics of user login/registration and login data caching.
+- You can replace this module with your own account system if you already have one.
+- The account module registers user names and passwords with the backend of UGSV apps by calling `register` of `TCUserMgr`, handles logins by calling `login` of `TCUserMgr`, caches login data locally in Sharepreference, and clears the cached data after logout.
 
-#### Relevant code
+#### Code
 
-| Class | Description |
+| Class                                                         | Description                                    |
 | ----------------------- | ------------------------------------------------------------ |
-| TCApplication.java      | SDK initialization class |
-| TCLoginActivity.java    | User login page |
-| TCRegisterActivity.java | User signup page |
-| TCUserMgr | User login and signup management class |
-| OnProcessFragment       | Fragment displaying the progress bar                                         |
-| TCUserInfoFragment.java     | User profile display page  |
-| TCAboutActivity             | "About" page of UGSV application |
+| TCApplication.java | SDK initialization class |
+| TCLoginActivity.java | User login UI |
+| TCRegisterActivity.java | User registration UI |
+| TCUserMgr | User login/registration management class |
+| OnProcessFragment | Fragment showing progress bar |
+| TCUserInfoFragment.java | User information UI |
+| TCAboutActivity | "About" page of UGSV apps |
 
-### Homepage and list management
+[](id:board)
+### Main UI and list management
 
-#### Module overview
+#### Description
 
-- The homepage module is mainly used to switch between three level-1 features: short video list, short video shoot/editing, and profile.
-- After successful login, the list page will be displayed by default. If you click "+", a dialog box will pop up for you to select whether to shoot a short video or edit a local one. If you click "Profile", you will be redirected to the profile page.
-- List management includes list pull and display.
+- The main UI offers access to three primary features of the app: video list, video shooting/editing, and personal information.
+- By default, users log in to the video list page. When they click **+**, a dialog box pops up asking them to select whether to shoot new videos or edit local videos. They can also click the user information button to go to the user information page.
+- The list management module pulls and displays the video list.
 
-#### Relevant code
+#### Code
 
-| Class | Description |
+| Class                                                         | Description                                    |
 | -------------------------- | -------------------------------------------------------- |
-| TCSplashActivity.java      | Splash screen                                                 |
-| TCMainActivity.java        | Homepage, which is used to display the short video list, short video shoot/editing information, and user information pages  |
-| TCLiveListMgr.java         | List management class, which provides the APIs for getting the local memory list and updating the list from the server |
-| TCLiveListFragment.java    | List display page, which is used to display the short video data |
-| TCLiveListAdapter.java     | Short video list adaptation layer |
-| TCUGCVideoListAdapter.java | Short video list adaptation layer |
-| TCVideoInfo            | Video data |
+| TCSplashActivity.java | Splash screen |
+| TCMainActivity.java | Main UI, which includes the video list, video recording/editing and user information pages |
+| TCLiveListMgr.java | List management class, which provides APIs to get local videos and update the video list from the server |
+| TCLiveListFragment.java | List page, which displays video information |
+| TCLiveListAdapter.java | Video list adapter |
+| TCUGCVideoListAdapter.java | Video list adapter |
+| TCVideoInfo | Video data |
 
-### Short video shoot module
+[](id:record)
+### Video shooting
 
-#### Module overview
+#### Description
 
-The UGSV application provides the feature of shooting one-minute [short videos](https://intl.cloud.tencent.com/document/product/1069/37911), but the SDK itself does not display the shoot duration.
+With UGSV apps, users can shoot [UGSV](https://intl.cloud.tencent.com/document/product/1069/37911) not longer than 1 minute, but the SDK does not show video length.
 
-#### Relevant code
+#### Code
 
-| Class | Description |
+| Class                                                         | Description                                    |
 | -------------------------- | -------------------- |
-| TCVideoRecordActivity.java | Short video shoot page |
-| RecordProgressView         | View for short video shoot by pressing and holding the button |
-| ComposeRecordBtn           | Multi-segment short video shoot progress bar |
+| TCVideoRecordActivity.java | Video shooting page |
+| RecordProgressView | View displayed when users press and hold to shoot videos |
+| ComposeRecordBtn | Progress bar for multi-segment shooting |
 
+[](id:file)
+### File Selection
 
-### File selection module
+#### Description
 
-#### Module overview
+This module lists all the MP4 files stored locally on phones for users to choose from.
 
-It provides the local file selection feature and lists all .mp4 video files in the phone.
+#### Code
 
-#### Relevant code
-
-| Class | Description |
+| Class                                                         | Description                                    |
 | ----------------------------- | ---------------------------------------------------- |
-| TCVideoChooseActivity.java    | Local .mp4 file selection page |
-| TCVideoEditerListAdapter.java | Local .mp4 file list adapter |
-| TCVideoEditerMgr.java         | .mp4 video file management class, which provides an API to get the .mp4 files stored in the phone |
-| TCVideoFileInfo.java          | Local video data |
+| TCVideoChooseActivity.java | Local MP4 file selecting page |
+| TCVideoEditerListAdapter.java | Local MP4 file list adapter |
+| TCVideoEditerMgr.java | MP4 file management class, which provides an API to get the MP4 files stored on phones |
+| TCVideoFileInfo.java | Local video data |
 
-### Editing module
+[](id:edit)
+### Video editing
 
-#### Module overview
+#### Description
 
-[Video editing](https://intl.cloud.tencent.com/document/product/1069/38024) includes features such as video clipping, slow motion, filters, music mix, stickers, and subtitling.
+The [video editing](https://intl.cloud.tencent.com/document/product/1069/38024) module offers features including video clipping, slow motion, filters, music mixing, stickers and subtitling.
 
-#### Relevant code
+#### Code
 
-- `videoeditor/` directory
+- **videoeditor/ directory: **
+<table>
+<thead><tr><th>Class</th><th>Description</th></tr></thead>
+<tbody><tr>
+<td>TCVideoPreprocessActivity.java</td>
+<td>Video pre-processing page, which is displayed when users start editing a video after shooting</td>
+</tr><tr>
+<td>TCVideoCutterActivity.java</td>
+<td>Video clipping page</td>
+</tr><tr>
+<td>TCVideoEditerActivity.java</td>
+<td>The editing page displayed after video clipping, with options including music, filters, speed adjustment, tone, stickers and subtitles at the bottom</td>
+</tr><tr>
+<td>TCVideoEffectActivity.java</td>
+<td>The special effect adding page, which shows when users click the button at the bottom</td>
+</tr><tr>
+<td>BaseEditFragment.java</td>
+<td>Parent class of the special effect fragment, which controls the playback of special effects on multiple pages</td>
+</tr><tr>
+<td>TCVideoJoinerActivity.java</td>
+<td>If users select multiple files to edit, the SDK will splice the videos.</td>
+</tr>
+</tbody></table>
+- **videoeditor/cutter/directory**: video clipping
+- **videoeditor/time/ directory**: speed adjustment, including slow motion, loop and rewind.
+- **videoeditor/bgm/ directory**: background music
+- **videoeditor/paster/ directory**: stickers, including animated and static stickers
+- **videoeditor/motion/ directory**: four animated filters. You cannot add your own filters. To use more filters, please contact us by submitting a ticket.
+- **videoditor/bubble/ directory**: bubble subtitles
+- **videoeditor/utils/ directory**: video editing tools
+- **videoeditor/common/directory**: common video editing components
+- **videojoiner/directory**: video splicing
 
-| Class | Description |
-| ------------------------------ | ------------------------------------------------------------ |
-| TCVideoPreprocessActivity.java | Preprocessing class page for shot videos entering the editing process                         |
-| TCVideoCutterActivity.java     | Short video clipping page                                               |
-| TCVideoEditerActivity.java     | Page for short video editing after clipping, which provides features such as music, filters, speed adjustment, tone adjustment, stickers, and subtitles at the bottom |
-| TCVideoEffectActivity.java     | Page for adding special effects to short video, which can be displayed with a click of the button at the bottom                         |
-| BaseEditFragment.java          | Parent class of the special effect fragment, which is used to control the playback status of multiple special effects           |
-| TCVideoJoinerActivity.java     | Page where multiple video files are composed into one file after they are selected for editing   |
 
-- `videoeditor/cutter/` directory
-  Contents related to video clipping.
+[](id:pod)
+### Video publishing
 
-- `videoeditor/time/` directory
-  Contents related to time-based special effects, such as slow motion, loop, and video reverse.
+#### Description
 
-- `videoeditor/bgm/` directory
-  Contents related to background music.
+This module allows users to publish videos to Tencent Cloud’s video distribution platform (VOD system).
 
-- `videoeditor/paster/` directory
-  Contents related to static and animated stickers.
+#### Code
 
-- `videoeditor/motion/` directory
-  Contents related to animated filters. Four animated filters are included **(currently, custom extensions are not supported; if you need more filters, please submit a ticket for assistance)**.
-
-- `videoditor/bubble/` directory
-  Contents related to bubble subtitles.
-
-- `videoeditor/utils/` directory
-  Contents related to short video editing tools.
-
-- `videoeditor/common/` directory
-  Common short video editing components.
-
-- `videojoiner/` directory
-  Contents related to short video composition.
-
-### Short video release module
-
-#### Module overview
-
-This module is used to publish the shooting file to Tencent Cloud VOD.
-
-#### Relevant code
-
-| Class | Description |
+| Class                                                         | Description                                    |
 | ----------------------------- | -------------- |
-| TCVideoPublisherActivity.java | Short video release page |
+| TCVideoPublisherActivity.java | Video publishing page |
 
-### Short video playback
+[](id:play)
+### Playback
 
-#### Module overview
+#### Description
 
- This module is used to play back the videos that have been published in the VOD system. You can swipe up/down on the short video list page to quickly switch to the previous/next video.
+ This module allows users to swipe up and down to play videos that have been published to the VOD system.
 
-#### Relevant code
+#### Code
 
-| Class | Description |
+| Class                                                         | Description                                    |
 | ------------------------- | -------------- |
-| TCVodPlayerActivity.java | Short video playback page |
+| TCVodPlayerActivity.java | UGSV playback page |
 
 
 
