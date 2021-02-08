@@ -21,7 +21,6 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
 2. 在“实例管理”页面，选择所在地域，找到目标公网负载均衡实例，并在右侧“操作”栏下选择【更多】>【调整带宽】。
 3. 在弹出的“调整带宽”对话框中，设置目标带宽上限值，并单击【提交】。
-![](https://main.qcloudimg.com/raw/302ba3e08ab0c4e8c1d4957f8a11e449.png)
 
 ## 调整计费模式
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
@@ -36,19 +35,14 @@
 调整操作如下：
 
 #### “包年包月-按网络带宽”转为“按量计费”
-![](https://main.qcloudimg.com/raw/34f20cc3b5a05ae9ea606a2fa591168c.png)
 
 #### “按量计费-按网络带宽”加入“共享带宽包”
-![](https://main.qcloudimg.com/raw/73bb5cee88f25420441bd9f553f361b2.png)
 
 #### “按量计费-按网络流量”转为“包年包月”
-![](https://main.qcloudimg.com/raw/55e3a05cb99385953e59e5d34d6bd093.png)
 
 #### “按量计费-按网络流量”加入“共享带宽包”
-![](https://main.qcloudimg.com/raw/9f75badd9030dc76687471b87b6e0cf8.png)
 
 #### “按量计费-共享带宽包”退出“共享带宽包”
-![](https://main.qcloudimg.com/raw/8278c7156f3006901fed781d7d57bc29.png)
 
 3. 在弹出的对话框中，单击【提交】。
 
