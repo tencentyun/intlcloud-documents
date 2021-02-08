@@ -27,7 +27,7 @@ Third-party callbacks are based on HTTP and HTTPS protocols. The app backend mus
 | CallbackCommand | Callback command |
 | contenttype | An optional parameter, whose value is generally a JSON string |
 | ClientIP | IP address of the client |
-| OptPlatform | Client platform. Depending on the platform type, possible values are as follows: <br />RESTAPI (requests are sent through RESTful APIs), Web (requests are sent by using Web SDKs), and<br/>Android, iOS, Windows, Mac, and Unknown (requests are sent by using an unknown device.) |
+| OptPlatform | Client platform. Depending on the platform type, possible values are as follows: <br />RESTAPI (requests are sent through RESTful APIs), Web (requests are sent by using Web SDKs), and<br/>Android, iOS, Windows, Mac, IPad, and Unknown (requests are sent by using an unknown device.) |
 
 The specific callback content is included in the HTTP request packet. For details, see the following callback examples.
 
