@@ -53,10 +53,11 @@ You can enable precise protection to configure protection policies combining mul
 <td>CAPTCHA and discard<ul><li>Discard: discards packets without verifying the requester.</li><li>CAPTCHA: verifies the requester through algorithms.</li></ul></td>
 </tr>
 </tbody></table>
+
 6. **Set the CC frequency limit**:
 Anti-DDoS Advanced supports configuring CC frequency policy for connected web businesses to restrict the access frequency of source IPs. You can customize a frequency policy to apply CAPTCHA and discard on source IPs if any IP accesses a certain page too frequently in a short time.
-	① On the [**Configurations**](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) page, click **Set** in the **CC Frequency Limit** section to view the frequency limit rule list.
-② Click **Create**, fill in the rule fields, and click **OK** to create a new rule. For detailed configurations, please see [CC Frequency Limit](https://intl.cloud.tencent.com/document/product/297/37219).
+	1. On the [**Configurations**](https://console.cloud.tencent.com/ddos/antiddos-advanced/config/port) page, click **Set** in the **CC Frequency Limit** section to view the frequency limit rule list.
+	2. Click **Create**, fill in the rule fields, and click **OK** to create a new rule. For detailed configurations, please see [CC Frequency Limit](https://intl.cloud.tencent.com/document/product/297/37219).
 >!
 >- When configuring a CC frequency limit policy targeting the URI field, you need to configure a frequency limit on the directory `/` first and the match mode must be "equals to". Then you can configure the URI access frequency limit on other directories.
 >- If a source IP accesses the `/` directory of the domain name for more than the set number of times in the set period, the set action (**CAPTCHA** or **Discard**) will be triggered.
