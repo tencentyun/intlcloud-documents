@@ -37,6 +37,7 @@ SDK 支持 iOS 8.0 以上系统。
 
 ### 步骤3：SDK License 设置与基本信息获取
 通过 [License 申请](https://intl.cloud.tencent.com/document/product/1069/38041) 的指引申请 License 后，从 [控制台](https://console.cloud.tencent.com/vod/license) 复制 key 和 url，见下图。
+![](https://main.qcloudimg.com/raw/7bbf7fb9e3d13944bc3b6823fd786269.png)
 在您的应用中使用短视频功能之前，建议在`- [AppDelegate application:didFinishLaunchingWithOptions:]`中进行如下设置：
 
 ```objc
@@ -52,8 +53,9 @@ SDK 支持 iOS 8.0 以上系统。
 ```
 
 >?
-- 对于使用4.7版本 License 的用户，如果您升级了 SDK 到4.9版本，您可以登录控制台，单击下图的【切换到新版License】生成对应的 key 和 url，切换后的 License 必须使用4.9及更高的版本，切换后按照上述操作集成即可。
-- 企业版请参考 [动效变脸](https://intl.cloud.tencent.com/document/product/1069/38030)。
+>- 对于使用4.7版本 License 的用户，如果您升级了 SDK 到4.9版本，您可以登录控制台，单击下图的【切换到新版License】生成对应的 key 和 url，切换后的 License 必须使用4.9及更高的版本，切换后按照上述操作集成即可。
+>![](https://main.qcloudimg.com/raw/7bbf7fb9e3d13944bc3b6823fd786269.png)
+>- 企业版请参考 [动效变脸](https://intl.cloud.tencent.com/document/product/1069/38030)。
 
 ### 步骤4：Log 配置
 在  TXLiveBase 中可以设置 log 是否在控制台打印以及 log 的级别，相关接口如下：
