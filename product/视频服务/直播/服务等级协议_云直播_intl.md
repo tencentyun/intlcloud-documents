@@ -59,7 +59,7 @@ In respect of this Service, if the Service Availability fails to meet the aforem
 
 4.3 any hacker attack on a client's website.
 
-4.4  any impact on the availability of the Service due to impromptu increase of traffic of a client (impromptu increase by 200% of daily peak of which the bandwidth is greater than 500Gbps) unless notified by the client to Tencent Cloud in writing three business days in advance.
+4.4 any impact on the availability of the Service due to impromptu increase of traffic of a client (impromptu increase by 200% of daily peak of which the bandwidth is greater than 200Gbps) unless the client has provided a three-business day prior written notice to Tencent Cloud and subscribed a LVB escort service.
 
 4.5  any system maintenance with prior notice by Tencent Cloud to a client, including system cutover, maintenance, upgrade and failure simulation test.
 
