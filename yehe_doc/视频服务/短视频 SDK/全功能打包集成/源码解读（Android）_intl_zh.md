@@ -21,7 +21,7 @@
 [](id:effect)
 ## 动效表情
 
-小视频源代码中默认使用的是普通版短视频 SDK，而非商用版本，所以动效贴纸等功能并不包含。如果您需要此功能，请在 [DOWNLOAD](https://intl.cloud.tencent.com/document/product/1069/37914) 中获取商用版本。
+小视频源代码中默认使用的是基础版短视频 SDK，而非企业版本，所以动效贴纸等功能并不包含。如果您需要此功能，请在 [DOWNLOAD](https://intl.cloud.tencent.com/document/product/1069/37914) 中获取商用版本。
 
 [](id:function)
 ## 模块介绍
