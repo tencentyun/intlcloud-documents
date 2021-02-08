@@ -3,22 +3,22 @@
 **创建转码模板有以下两种方式：**
 
 - 通过云直播控制台创建转码模板，具体操作步骤请参见 [创建标准转码模板](#C_trans)、[创建极速高清转码模板](#C_topspeed)、[创建纯音频转码模板](#C_audio)。
-- API 对直播频道创建转码模板，具体参数及示例说明请参见 [创建转码模板](https://cloud.tencent.com/document/api/267/32646)。
+- API 对直播频道创建转码模板，具体参数及示例说明请参见 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/30790)。
 
 
 ## 注意事项
 - 云直播支持标准转码、极速高清转码和纯音频转码，使用前请了解相关计费说明：
-   - 标准转码：[标准转码资源包](https://cloud.tencent.com/document/product/267/34174#standard_pag)、[标准转码后付费](https://cloud.tencent.com/document/product/267/39889#n_trans)。
-   - 极速高清转码：[极速高清转码资源包](https://cloud.tencent.com/document/product/267/34174#topspeed_pag)、[极速高清转码后付费](https://cloud.tencent.com/document/product/267/39889#s_trans)。
+   - 标准转码：[标准转码后付费](https://intl.cloud.tencent.com/document/product/267/39604#n_trans)。
+   - 极速高清转码：[极速高清转码后付费](https://intl.cloud.tencent.com/document/product/267/39604#s_trans)。
 - **极速高清转码**相比**标准转码**画质更优、码率更低。通过智能场景识别、动态编码技术，CTU/行/帧三级码率精准控制模型，实现以更低的码率（平均节省30%+）提供更高清的流媒体服务。广泛运用于游戏直播、秀场直播、事件活动直播等场景。
 - 模板创建成功后，可与播放域名进行关联。关联成功后约5分钟 - 10分钟生效。
 - 绑定转码模板后，可在对应的直播流 StreamName 后加上 `_转码模板名称` 来生成转码流地址。若同时设置了宽高或长短边，推流原始分辨率尽可能接近设置值的比例，以避免画面拉伸变形。
 - 绑定转码模板后，会在对应的模板下显示绑定规则，若您是通过 API 创建的更细维度规则，也可以在此进行查看和 [解绑](#untie)。
 - 单个播放域名可关联**多个转码模板**，单个转码模板可关联**多个播放域名**。
 
-[](id:create)
+span id="create"></span>
 ## 创建转码模板
-[](id:C_trans)
+span id="C_trans"></span>
 ### 创建标准转码模板
 
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
@@ -84,7 +84,7 @@
 
    
 
-[](id:C_topspeed)
+span id="C_topspeed"></span>
 
 ### 创建极速高清转码模板
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
@@ -144,7 +144,7 @@
 <td>默认关闭，可手动开启。<br>开启参数限制后，当输入的直播流原始参数小于设置的输出参数时，将按照原始参数输出直播流，可以防止低质量直播流被强行拉高参数值，影响实际画面。</td>
 </tr></table>
 
-[](id:C_audio)
+span id="C_audio"></span>
 ### 创建纯音频转码模板
 
 1. 登录云直播控制台，【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
@@ -169,7 +169,7 @@
 </tr>
 </table>
 
-[](id:related)
+span id="related"></span>
 ## 关联域名
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 通过以下方式进入域名绑定窗口：
@@ -183,7 +183,7 @@
 
 
 
-[](id:untie)
+span id="untie"></span>
 ## 解除绑定
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择已关联域名的转码模板，单击【解绑】。
@@ -193,7 +193,7 @@
 
 
 
-[](id:modify)
+span id="modify"></span>
 ## 修改模板
 1. 登录云直播控制台，进入【功能配置】>[【直播转码】](https://console.cloud.tencent.com/live/config/transcode)。
 2. 选择您已创建成功的转码模板，并单击右侧的【编辑】，进入修改模板信息。
@@ -203,7 +203,7 @@
 
 
 
-[](id:delect)
+span id="delect"></span>
 ## 删除模板
 >!   若模板已被关联，需要先 [解除绑定](#untie)，才可以进行删除操作。 
 
@@ -217,6 +217,6 @@
 
 
 ## 相关操作
-域名维度**绑定**和**解绑**转码模板的具体操作及相关说明，请参见 [转码配置](https://cloud.tencent.com/document/product/267/32834)。
+域名维度**绑定**和**解绑**转码模板的具体操作及相关说明，请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
 
 
