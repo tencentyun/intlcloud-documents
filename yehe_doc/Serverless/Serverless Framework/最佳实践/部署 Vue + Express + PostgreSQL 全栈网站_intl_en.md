@@ -51,7 +51,6 @@ serverless init fullstack
 # .env
 TENCENT_SECRET_ID=xxx  // `SecretId` of your account
 TENCENT_SECRET_KEY=xxx // `SecretKey` of your account
-
 # Region and AZ configuration
 REGION=ap-guangzhou // Resource deployment region, which refers to the region where the function and static webpage are deployed
 ZONE=ap-guangzhou-2 // Resource deployment AZ, which refers to the AZ where the database is deployed
@@ -71,9 +70,7 @@ npm run bootstrap
 1. Deploy by running `sls deploy --all`. The returned information is as follows:
 ```
 $ sls deploy --all
-
 serverless ⚡ framework
-
 serverlessVpc:
   region:     ap-guangzhou
   zone:       ap-guangzhou-2
@@ -81,7 +78,6 @@ serverlessVpc:
   vpcName:    serverless
   subnetId:   subnet-xxx
   subnetName: serverless
-
 fullstackDB:
   region:         ap-guangzhou
   zone:           ap-guangzhou-2
@@ -97,7 +93,6 @@ fullstackDB:
     user:             tencentdb_100000
     password:         xxxxxxxx
     dbname:           tencentdb_100000
-
 fullstack-api:
   region: ap-guangzhou
   apigw:
@@ -109,10 +104,8 @@ fullstack-api:
     functionName: fullstack-api
     runtime:      Nodejs10.15
     namespace:    default
-
 fullstack-frontend:
   website: https://fullstack-serverless-db-123456789.cos-website.ap-guangzhou.myqcloud.com
-
 50s › tencent-fullstack › Success 
 ```
 
@@ -124,37 +117,25 @@ fullstack-frontend:
 $ npm run info
 > tencent-fullstack@1.1.0 info /root/tencent-fullstack
 > npm run info:vpc && npm run info:db && npm run info:api && npm run info:frontend
-
 > tencent-fullstack@1.1.0 info:vpc /Users/yugasun/Desktop/Develop/@yugasun/tencent-fullstack
 > sls info --target=./vpc
-
-
 serverless ⚡ framework
-
 Status:       active
 Last Action:  deploy (5 minutes ago)
 Deployments:  1
-
 region:     ap-guangzhou
 zone:       ap-guangzhou-2
 vpcId:      vpc-xxx
 vpcName:    serverless
 subnetId:   subnet-xxx
 subnetName: serverless
-
 serverlessVpc › Info successfully loaded
-
-
 > tencent-fullstack@1.1.0 info:db /root/tencent-fullstack
 > sls info --target=./db
-
-
 serverless ⚡ framework
-
 Status:       active
 Last Action:  deploy (3 minutes ago)
 Deployments:  18
-
 region:         ap-guangzhou
 zone:           ap-guangzhou-2
 vpcConfig:
@@ -169,20 +150,13 @@ private:
   user:             tencentdb_1000000
   password:         xxxxxxxxx
   dbname:           tencentdb_1000000
-
 fullstackDB › Info successfully loaded
-
-
 > tencent-fullstack@1.1.0 info:api /root/tencent-fullstack
 > sls info --target=./api
-
-
 serverless ⚡ framework
-
 Status:       active
 Last Action:  deploy (2 minutes ago)
 Deployments:  10
-
 region: ap-guangzhou
 apigw:
   serviceId:   service-1000000
@@ -193,22 +167,14 @@ scf:
   functionName: fullstack-api
   runtime:      Nodejs10.15
   namespace:    default
-
 fullstack-api › Info successfully loaded
-
-
 > tencent-fullstack@1.1.0 info:frontend /root/tencent-fullstack
 > sls info --target=./frontend
-
-
 serverless ⚡ framework
-
 Status:       active
 Last Action:  deploy (2 minutes ago)
 Deployments:  9
-
 website: https://fullstack-serverless-db-123456789.cos-website.ap-guangzhou.myqcloud.com
-
 fullstack-frontend › Info successfully loaded
 ```
 
@@ -216,8 +182,6 @@ fullstack-frontend › Info successfully loaded
 3. You can run `sls remove --all` to remove the project. The returned information is as follows:
 ```bash
 $  sls remove --all
-
 serverless ⚡ framework
-
 38s › tencent-fullstack › Success
 ```
