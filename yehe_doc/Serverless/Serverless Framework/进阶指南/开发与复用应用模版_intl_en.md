@@ -12,8 +12,8 @@ SDK: 2.3.2
 Components: 3.4.3
 ```
 
-
-## Component Configuration Documentation[](id:doc)
+<span id ="doc"></span>
+## Component Configuration Documentation
 
 - [Basic Component List](https://intl.cloud.tencent.com/document/product/1040/39135)
 - [Framework Component List](https://intl.cloud.tencent.com/document/product/1040/39375)
@@ -50,7 +50,6 @@ org: app-demo
 stage: dev
 component: egg 
 name:  app-demo-egg # Name of the created instance, which is required
-
 inputs:
   src:   
     src: ./    # Project path for upload
@@ -87,7 +86,6 @@ org: app-demo
 stage: dev
 component: layer 
 name:  app-demo-layer # Name of the created instance, which is required
-
 inputs:
   region: ap-guangzhou
   src: 
@@ -151,9 +149,7 @@ At this point, the serverless application has been built, and the project direct
 In the project root directory, run `sls deploy` to complete layer creation and use the output of the Layer component as the input of the Egg component to cloudify the Egg framework.
 ```
 $ sls deploy
-
 serverless ⚡framework
-
 app-demo-layer: 
   region:        ap-guangzhou
   name:          layer_component_xxx
@@ -164,7 +160,6 @@ app-demo-layer:
     - Nodejs10.15
   version:       3
   vendorMessage: null
-
 app-demo-egg: 
   region:        ap-guangzhou
   scf: 
@@ -179,7 +174,6 @@ app-demo-egg:
     environment: release
     url:         https://service-xxx.gz.apigw.tencentcs.com/release/
   vendorMessage: null
-
 76s › app-demo › "deploy" ran for 2 apps successfully.
 ```
 
@@ -235,10 +229,8 @@ src: # Describe the files in the project to be published as a template
 After the `serverless.template.yml` file is configured, you can use the `sls publish` command to publish the project to the Registry as a template.
 ```
 $ sls publish
-
 serverless ⚡registry
 Publishing "app-demo@0.0.0"...
-
 Serverless › Successfully published app-demo
 ```
 
@@ -251,8 +243,8 @@ $ cd example
 $ npm install
 ```
 
-
-## Variable Import Description[](id:quote)
+<span id="quote"></span>
+## Variable Import Description
 `serverless.yml` supports multiple ways to import variables:
 
 - **Import top-level parameters**
@@ -274,7 +266,6 @@ app: demo
 component: scf
 name: rest-api
 stage: dev
-
 inputs:
   name: ${org}-${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # `REGION=` information specified in the environment variable
