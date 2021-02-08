@@ -76,7 +76,7 @@
 2. 选择已关联域名的录制模板，选择需要解绑的域名，单击右侧的【解绑】。
    ![](https://main.qcloudimg.com/raw/f7071a4b4f9297124b460ffebcba64d3.png)
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
-    ![](https://main.qcloudimg.com/raw/bd2121950853e84e0a6c89b0450ed5f7.png)
+    ![](https://main.qcloudimg.com/raw/a666387f882584860eaf2c229c2b4769.png)
 
 >? 
 >- 录制模板解除绑定后，不影响正在直播中的流。
@@ -96,7 +96,7 @@
 1. 进入【功能配置】>【直播录制】。
 2. 选择您已创建成功的录制模板，单击上方的![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)删除按钮。
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
-![](https://main.qcloudimg.com/raw/e25f0566348f69e8c6afb64439c5e40f.png)
+![](https://main.qcloudimg.com/raw/c7c3e300488ba332b84bfd61da0fb999.png)
 
 >! 
 >- 若模板已被关联，需要先 [解除绑定](#unite)，才可以进行删除操作。
