@@ -17,6 +17,9 @@ Tencent Cloud CBS comes with three disk types: Premium Cloud Storage, SSD and En
 - Elastic cloud disks can only be mounted to CVMs within the same availability zone.
 - Up to 20 elastic cloud disks can be mounted to a single CVM as data disks. You can directly mount elastic cloud disks to a CVM you are purchasing or [do so later](https://intl.cloud.tencent.com/document/product/362/32401).
 - You can purchase up to 50 elastic cloud disks at one time on the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
+
+
+
 ### What are the differences between different types of cloud disks?
 CBS comes with three types:
 - Premium Cloud Storage: suitable for most I/O applications including Web/APP services, logical processing, as well as small and medium-sized sites.
@@ -31,7 +34,7 @@ Cloud disks offer high reliability, elasticity and performance. They are easy to
 ### Can elastic cloud disks be used as system disks?
 No. System disks cannot be unmounted or mounted.
 
-<span id="Q1"></span>
+[](id:Q1)
 ### Can cloud disks be used as data disks?
 Yes. All types of local disks and cloud disks can be used as data disks.
 

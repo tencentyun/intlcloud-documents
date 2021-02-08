@@ -5,16 +5,16 @@ After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/3
 
 
 ## Prerequisites
->!Extending the file system may affect existing data. We strongly recommend that you manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
-To protect your existing data, you can choose to use the `umount` command to unmount existing partitions and use the `fsck` command to check file systems during the expansion.
+>!Extending the file system may affect the existing data. We strongly recommend you to manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
+To protect your existing data, you can choose to use the `umount` command to unmount existing partitions and use the `fsck` command to check file systems during the operation.
 
-- You have [expanded the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/5747).
+- You have [expanded the cloud disk capacity](https://cloud.tencent.com/document/product/362/5747).
 - You have [mounted the cloud disk](https://intl.cloud.tencent.com/document/product/362/32401) to a Linux CVM and created a file system.
-- You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to extend partitions and file systems.
+- You have [logged in to](https://intl.cloud.tencent.com/document/product/213/5436) the Linux CVM on which you want to extend partitions and the file system.
 
 ## Directions
-### Determining the extension method
-<span id="fdisk"></span>
+### Confirming the expansion method
+<span id="fdisk"></span> 
 1. Run the following command as the root user to view the partition format of the cloud disk.
 ```plaintext
 fdisk -l
@@ -25,7 +25,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/ce19715fc8494a9735b714d86f0cccfa.png)
  - If the result is as shown in the following figure (which may vary according to the operating system), the MBR partition format is used.
  >! MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data. When the GPT partition is used on a Linux CVM, you have to use the parted partition tool, because fdisk will become unavailable.
-
+ >
 ![](https://main.qcloudimg.com/raw/0e336cd3354c098cf5e70d0672e6f625.png)
 2. Follow [Step 1](#fdisk) to view the cloud disk partition format, and select the corresponding operations guide.
 <table>
@@ -59,7 +59,7 @@ fdisk -l
      </tr> 
 </table>
 
-<span id="ExpandTheFileSystem"></span>
+<span id="ExpandTheFileSystem"></span> 
 ### Extending the file system
 
 1. Run the following command based on the operating system to extend the file system.
@@ -78,7 +78,8 @@ resize2fs /dev/vdb
 df -h
 ```
 
-<span id="AddToTheExistingGPTPart"></span>
+<span id="AddToTheExistingGPTPart"></span> 
+
 ### Assigning the expanded capacity to an existing partition (GPT)
 1. Run the following command as the root user to confirm changes in cloud disk capacity.
  ```plaintext
@@ -89,9 +90,9 @@ parted <Disk path> print
 	parted /dev/vdb print
 	```
 	If a message as shown in the following figure appears in the process, enter `Fix`.
-	![](//mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
+	![](https://main.qcloudimg.com/raw/5f15f47bd5ef00b1387a1a93936298ea.png)
 	As shown in the following figure, the cloud disk space is 107 GB after expansion and the existing partition capacity is 10.7 GB.
-	![](//mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+	![](https://main.qcloudimg.com/raw/e8a7487b284622ae617dc17bcadcd68e.png)
 2. Run the following command to check whether the cloud disk has partitions mounted:
 ```plaintext
 mount | grep '<Disk path>' 
@@ -101,7 +102,8 @@ mount | grep '<Disk path>'
 mount | grep '/dev/vdb'
 ```
  As shown in the following figure, the cloud disk has one partition (vdb1) mounted to `/data`.
-![](//mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+![](https://mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+
 3. Run the following command to unmount the data disk:
 ```plaintext
 umount <Mount point>
@@ -110,12 +112,13 @@ umount <Mount point>
 ```plaintext
 umount /data
 ```
- >? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the unmounting operation is successful.
+ >? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#step4) again. You can run the following command again to confirm that the unmounting is successful:
 ```plaintext
 mount | grep '/dev/vdb'
 ```
  The file systems are unmounted from all partitions on the cloud disk, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/9242efdec1aab382ae74f975ca68d68a.png)
+
 4. <span id="step4"></span>Run the following command to access the parted tool.
 ```plaintext
 parted '<Disk path>'
@@ -129,22 +132,24 @@ parted '/dev/vdb'
 unit s
 ```
 6. Run the following command to view partitions and record their `Start` values:
->! After a partition is deleted and a new one is created, the `Start` value must remain unchanged. Otherwise, it may cause data loss.
+>! After a partition is deleted and a new one is created, the `Start` value must remain unchanged. Otherwise, data may be lost.
 ```plaintext
 print
 ```
  This document uses the `Start` value 2048s as an example.
-![](//mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
+![](https://mccdn.qcloud.com/static/img/67ba54c1d9d63c307d4b8a157b70c722/image.png)
+
 7. Run the following command to delete the existing partition.
 ```plaintext
-rm <Partition number>
+rm <Partition Number>
 ```
  For example, run the following command to delete the partition “1” from the cloud disk.
 ```plaintext
  rm 1
 ```
  The following figure shows the command output.
-![](//mccdn.qcloud.com/static/img/3384eeada87ce75695e0e55125109eff/image.png)
+![](https://mccdn.qcloud.com/static/img/3384eeada87ce75695e0e55125109eff/image.png)
+
 8. Run the following command to create a new primary partition:
 ```plaintext
 mkpart primary <Start sector of the original partition> 100%
@@ -155,13 +160,15 @@ Assume that the primary partition starts from sector 2048 (it must be the same a
 mkpart primary 2048s 100%
 ```
  If a status as shown in the following figure appears, enter `Ignore`.
-![](//mccdn.qcloud.com/static/img/c45966e20dc856817c65fd6b81155e4a/image.png)
+![](https://mccdn.qcloud.com/static/img/c45966e20dc856817c65fd6b81155e4a/image.png)
+
 9. Run the following command to check whether the new partition has been created successfully:
 ```plaintext
 print
 ```
  If the result as shown in the following figure is returned, the new partition has been created successfully.
-![](//mccdn.qcloud.com/static/img/cb1af5adaf6c89d066077c43fd428a38/image.png)
+![](https://mccdn.qcloud.com/static/img/cb1af5adaf6c89d066077c43fd428a38/image.png)
+
 10. Run the following command to exit the parted tool:
 ```plaintext
 quit
@@ -170,24 +177,24 @@ quit
 ```plaintext
 e2fsck -f <Partition path>
 ```
- Taking the newly created partition “1” (its partition path is `/dev/vdb1`) as an example, run the following command:
+ Taking the new partition “1” (its partition path is `/dev/vdb1`) as an example, run the following command:
 ```plaintext
 e2fsck -f /dev/vdb1
 ```
  The following figure shows the command output.
-![](//mccdn.qcloud.com/static/img/307f7a0c98eea05ca1d4560fe4e96f57/image.png)
+![](https://mccdn.qcloud.com/static/img/307f7a0c98eea05ca1d4560fe4e96f57/image.png)
 Extend your file system as follows:
 	- For an **EXT file system**:
 		1. Run the following command to extend the EXT file system in the new partition:
 	```plaintext
 	resize2fs <Partition path>
 	```
-		 Taking the partition path `/dev/vdb1` as an example, run the following command:
-		```plaintext
-		resize2fs /dev/vdb1
-		```
-		If the result as shown in the following figure is returned, the expansion is successful.
-		![](//mccdn.qcloud.com/static/img/57d66da9b5020324703498dbef0b12f9/image.png)
+	Taking the partition path `/dev/vdb1` as an example, run the following command:
+	​```plaintext
+	resize2fs /dev/vdb1
+	​	```
+	If the result as shown in the following figure is returned, the expansion is successful.
+	![](//mccdn.qcloud.com/static/img/57d66da9b5020324703498dbef0b12f9/image.png)
 		2. Run the following command to manually mount the new partition:
 		```plaintext
 		mount <Partition path> <Mount point>
@@ -196,6 +203,7 @@ Extend your file system as follows:
 		```plaintext
 		mount /dev/vdb1 /data
 		```
+
  - For an **XFS file system**
 	  1. Run the following command to manually mount the partition:
 	```plaintext
@@ -218,9 +226,9 @@ Extend your file system as follows:
 df -h
 ```
  If the result as shown in the following figure is returned, the mounting is successful, and you can see the data disk.
-![](//mccdn.qcloud.com/static/img/a2bd04c79e8383745689e19033a0daaa/image.png)
+![](https://mccdn.qcloud.com/static/img/a2bd04c79e8383745689e19033a0daaa/image.png)
 
-<span id="CreateANewGPTPart"></span>
+<span id="CreateANewGPTPart"></span> 
 ### Formatting the expanded capacity into an independent new partition (GPT)
 
 1. Run the following command as the root user to confirm changes in cloud disk capacity:
@@ -232,9 +240,10 @@ parted <Disk path> print
 parted /dev/vdb print
 ```
  If a message as shown in the following figure appears in the process, enter `Fix`.
-![](//mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
+![](https://mccdn.qcloud.com/static/img/cf51cda9a12085f76949ab0d5dd0fbfc/image.png)
 As shown in the following figure, the cloud disk space is 107 GB after expansion and the existing partition capacity is 10.7 GB.
-![](//mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+![](https://mccdn.qcloud.com/static/img/01a0a7a8fdfe6f05f2739f0326a74ef9/image.png)
+
 2. Run the following command to check whether the cloud disk has partitions mounted:
 ```plaintext
 mount | grep '<Disk path>' 
@@ -244,7 +253,8 @@ mount | grep '<Disk path>'
 mount | grep '/dev/vdb'
 ```
  As shown in the following figure, the cloud disk has one partition (vdb1) mounted to `/data`.
-![](//mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+![](https://mccdn.qcloud.com/static/img/edc5bbd6834e1dd929ce0eb00acd53ca/image.png)
+
 3. Run the following command to unmount the data disk:
 ```plaintext
 umount <Mount point>
@@ -253,13 +263,14 @@ umount <Mount point>
 ```plaintext
 umount /data
 ```
- >? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#Step4) again. You can run the following command again to confirm that the unmounting operation is successful:
+ >? Unmount the file systems from all partitions on the cloud disk, and perform the operations in [Step 4](#Step4) again. You can run the following command again to confirm that the unmounting operation is successful.
 ```plaintext
 mount | grep '/dev/vdb'
 ```
  The file systems are unmounted from all partitions on the cloud disk, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/d1a9a33f0d4e3725aed677f2403c91ae.png)
-<span id="Step4"></span>
+<span id="Step4"></span> 
+
 4. Run the following command to access the parted partition tool:
 ```plaintext
 parted '<Disk path>'
@@ -272,8 +283,8 @@ parted '/dev/vdb'
 ```plaintext
 print
 ```
- ![](//mccdn.qcloud.com/static/img/788ce125bba952f204ed6ee36dfb644d/image.png)
-6. Run the following command to create a new primary partition. This partition starts at the end of existing partitions, and covers all the new space on the disk.
+ ![](https://mccdn.qcloud.com/static/img/788ce125bba952f204ed6ee36dfb644d/image.png)
+6. Run the following command to create a primary partition. This partition starts at the end of existing partitions, and covers all the new space on the disk.
 ```plaintext
 mkpart primary start end
 ```
@@ -285,7 +296,7 @@ mkpart primary 10.7GB 100%
 ```plaintext
 print
 ```
- ![](//mccdn.qcloud.com/static/img/fc54fd4c05102ee91c648526d77d1b42/image.png)
+ ![](https://mccdn.qcloud.com/static/img/fc54fd4c05102ee91c648526d77d1b42/image.png)
 8. Run the following command to exit the parted tool:
 ```plaintext
 quit
@@ -294,19 +305,19 @@ quit
 ```plaintext
 mkfs.<fstype> <Partition path> 
 ```
- You can select a file system in EXT2 or EXT3 format as needed.
+ You can select a file system format such as EXT2 or EXT3.
 If you use an EXT3 file system, run the following command: 
 ```plaintext
 mkfs.ext3 /dev/vdb2
 ```
 
-<span id="AddToTheExistingMBRPart"></span>
+<span id="AddToTheExistingMBRPart"></span> 
 ### Assigning the expanded capacity to an existing partition (MBR)
 You can use automatic expansion tools including fdisk, e2fsck and resize2fs to add the expanded cloud disk capacity to the existing file system on a Linux CVM. To ensure a successful expansion, the following four requirements must be met:
 - The file system is EXT2, EXT3, EXT4, or XFS.
 - The current file system does not have any error.
 - The disk size after expansion does not exceed 2 TB.
-- These tools are compatible with Python version 2, but not Python version 3.
+- These tools are only compatible with Python version 2, but not Python version 3.
 
 
 1. Run the following command as the root user to unmount the partition:
@@ -317,7 +328,7 @@ umount <Mount point>
 ```plaintext
 umount /data
 ```
- ![](//mccdn.qcloud.com/static/img/c0acc05057941681627a5fd34979d194/image.jpg)
+ ![](https://mccdn.qcloud.com/static/img/c0acc05057941681627a5fd34979d194/image.jpg)
 2. Run the following command to download an expansion tool.
     This tool is recommended in the Chinese mainland:
 ```plaintext
@@ -331,18 +342,18 @@ wget -O /tmp/devresize.py https://raw.githubusercontent.com/tencentyun/tencentcl
 ```plaintext
 python /tmp/devresize.py <Disk path>
 ```
- Taking the disk path `/dev/vdb` and the file system vdb1 as an example, run the following command:
+ Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
 ```plaintext
 python /tmp/devresize.py /dev/vdb
 ```
- ![](//mccdn.qcloud.com/static/img/c7617b90578192d64d19f02325f00ffb/image.jpg)
+ ![](https://mccdn.qcloud.com/static/img/c7617b90578192d64d19f02325f00ffb/image.jpg)
  - If "The filesystem on /dev/vdb1 is now XXXXX blocks long." is output, the expansion is successful. Then, perform [Step 4](#step4MBR).
  - If the output is "[ERROR] - e2fsck failed!!", perform the following steps:
    a. Run the following command to fix the partition where the file system resides.
 	```plaintext
 	fsck -a <Partition path>
 	```
-	Taking the disk path `/dev/vdb` and the file system vdb1 as an example, run the following command:
+	Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
 	```plaintext
 	fsck -a /dev/vdb1
 	```
@@ -350,7 +361,7 @@ python /tmp/devresize.py /dev/vdb
 	```plaintext
 	python /tmp/devresize.py /dev/vdb
 	```
-<span id="step4MBR"></span>
+<span id="step4MBR"></span> 
 4. Run the following command to manually mount the extended partition:
 ```plaintext
 mount <Partition path> <Mount point>
@@ -368,25 +379,26 @@ mount /dev/vdb /data
 ```plaintext
 df -h
 ```
- If the result similar to what is shown below is returned, the mount is successful, and you can see the data disk.
-![](//mccdn.qcloud.com/static/img/2367f3e70cd0c3c1bef665cc47c1c3bc/image.jpg)
+ If the result similar to the following figure is returned, the mount is successful, and you can see the data disk.
+![](https://mccdn.qcloud.com/static/img/2367f3e70cd0c3c1bef665cc47c1c3bc/image.jpg)
+
 6. Run the following command to view the original partition data after expansion and check whether the file system is added with expanded storage space.
 ```plaintext
 ll /data
 ```
 
-<span id="CreateANewMBRPart"></span>
+<span id="CreateANewMBRPart"></span> 
 ### Formatting the expanded capacity into an independent new partition (MBR)
-1. Run the following command as the root user to view the partitions of the mounted data disk:
+1. Run the following command as a root user to view the partition information of the mounted data disk:
 ```plaintext
 df -h
 ```
- ![](//mccdn.qcloud.com/static/img/0a450dfaa9cfc7b2c7fdc04861f0e754/image.png)
-2. Run the following command to view the data disk that has no partition after expansion:
+ ![](https://mccdn.qcloud.com/static/img/0a450dfaa9cfc7b2c7fdc04861f0e754/image.png)
+2. Run the following command to view the information of the data disk without partitions after expansion:
 ```plaintext
 fdisk -l
 ```
- ![](//mccdn.qcloud.com/static/img/594671a1215dee3036b7940892438f62/image.png)
+ ![](https://mccdn.qcloud.com/static/img/594671a1215dee3036b7940892438f62/image.png)
 3. Run the following command to unmount all mounted partitions:
 ```plaintext
 umount <Mount point>
@@ -409,27 +421,30 @@ fdisk <Disk path>
 fdisk /dev/xvdc
 ```
  When prompted, sequentially enter `p` (to check existing partitions), `n` (to create a partition), `p` (to create a primary partition), `2` (to create the second primary partition), press `Enter` twice (to use the default configuration), enter `w` (to save the partition table), and start the partition, as shown in the following figure:
-![](//mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
+![](https://mccdn.qcloud.com/static/img/8c35d6f4dfb367e74edc27ce6822c317/image.png)
+
 >? This document takes creating one partition as an example. You can also create multiple partitions as needed.
 5. Run the following command to view the new partition:
 ```plaintext
 fdisk -l
 ```
  The following figure shows that the new partition xvdc2 has been created.
-![](//mccdn.qcloud.com/static/img/e04e924d62317bc2c605c8abaac394f5/image.png)
+![](https://mccdn.qcloud.com/static/img/e04e924d62317bc2c605c8abaac394f5/image.png)
+
 6. Run the following command to format the new partition and create a file system:
 ```plaintext
 mkfs.<fstype> <Partition path> 
 ```
- You can select a file system in EXT2 or EXT3 format as needed.
+ You can select a file system format such as EXT2 or EXT3.
 If you use an EXT3 file system, run the following command:
+
 ```plaintext
 mkfs.ext3 /dev/xvdc2
 ```
- ![](//mccdn.qcloud.com/static/img/074e23eaa580495f96fb532b688d2d68/image.png)
+ ![](https://mccdn.qcloud.com/static/img/074e23eaa580495f96fb532b688d2d68/image.png)
 7. Run the following command to create a mount point:
 ```plaintext
-mkdir <New mount point>
+mkdir <New mounting point>
 ```
  Taking the new mount point `/data1` as an example, run the following command:
 ```plaintext
@@ -448,23 +463,24 @@ mount /dev/xvdc2 /data1
 df -h
 ```
  If the result as shown in the following figure is returned, the mounting is successful, and you can see the data disk.
- ![](//mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
->?To allow the CVM to automatically mount a data disk at restart or startup, perform [Step 10](#AddNewPartINFOstep10) and [Step 11](#AddNewPartINFOstep11) to add the new partition to `/etc/fstab`.
-10. <span id="AddNewPartINFOstep10"></span>Run the following command to add the partition.
+ ![](https://mccdn.qcloud.com/static/img/7b749a4bb6e7c8267c9354e1590c35d4/image.png)
+
+>? To allow the CVM to automatically mount a data disk upon restart or start, perform [Step 10](#AddNewPartINFOstep10) and [Step 11](#AddNewPartINFOstep11) to add the new partition to `/etc/fstab`.
+10. <span id="AddNewPartINFOstep10"></span>Run the following command to add the partition:
 ```plaintext
 echo '/dev/xvdc2 /data1 ext3 defaults 0 0' >> /etc/fstab
 ```
-11. <span id="AddNewPartINFOstep11"></span>Run the following command to view the partition.
+11. <span id="AddNewPartINFOstep11"></span>Run the following command to view the partition:
 ```plaintext
 cat /etc/fstab
 ```
  If the result as shown in the following figure is returned, the partition has been successfully added.
-![](//mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
+![](https://mccdn.qcloud.com/static/img/f0b5c14bf08fd3629ddf6d9b1ae01ffc/image.png)
 
 ## Relevant Operations
 [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601)
 
 ## FAQs
-If you encounter a problem when using a cloud disk, refer to the following documents for troubleshooting as needed:
+If you encounter a problem when using Tencent Cloud CBS, refer to the following documents for troubleshooting as needed:
 - [Usage FAQs](https://intl.cloud.tencent.com/document/product/362/32409)
 - [Features FAQs](https://intl.cloud.tencent.com/document/product/362/32408)
