@@ -6,16 +6,17 @@
 ## 前提条件
 
 在购买 TCR 企业版实例前，您需要完成以下准备工作：
-- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的容器镜像服务实例。
+- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的容器镜像服务实例
 - 已开通容器镜像服务所依赖的云产品 [对象存储](https://console.cloud.tencent.com/cos5)。
 - 如果需要通过私有网络访问实例，则请开通 [私有网络](https://console.cloud.tencent.com/vpc)。
 - 已在控制台开通服务，并授权您的对象存储、私有网络等资源部分操作权限。
 
 ## 操作步骤
-1. 登录 [腾讯云官网](https://cloud.tencent.com/)，选择【产品】>【基础】>【容器】>【[容器镜像服务](https://intl.cloud.tencent.com/product/tcr)】，单击【立即选购】，进入容器镜像服务控制台。
+1. 登录 [腾讯云官网](https://cloud.tencent.com/)，选择【产品】>【基础】>【容器】>【[容器镜像服务](https://cloud.tencent.com/product/tcr)】，单击【立即选购】，进入容器镜像服务控制台。
 2. 选择左侧导航栏中的【实例列表】，进入“实例列表”页面并单击【新建】。
 3. 在“容器镜像服务购买页”中，参考以下信息购买实例。如下图所示：
-![](https://main.qcloudimg.com/raw/442816fbcd5e1fa41ec10f95fb866756.png)
+![](https://main.qcloudimg.com/raw/08381f45c1058bce009f1359eed985ab.png)
+ - **计费类型**：容器镜像服务 TCR 提供的计费方式：按量计费。详情请参见容器镜像服务 [计费概述](https://intl.cloud.tencent.com/document/product/1051/35483)。
  - **实例名**：输入自定义实例名称。该名称全局唯一，请避免与自己或他人现有实例名称重复。该名称将直接用于该实例 Registry 服务的访问域名，**购买后不可修改**，请谨慎选择。建议组合使用公司、实例所在地域或项目的缩写。
  - **实例地域**：选择您希望部署该实例的地域。**实例购买后地域将无法更改**，请根据容器集群资源所在地进行选择。
  - **实例规格**：选择您希望购买的实例规格。不同实例规格具有不同的实例性能及配额，请参考页面内规格对比进行选择。
@@ -29,9 +30,9 @@
 ![](https://main.qcloudimg.com/raw/8ed87bf4a369c5c184ea2a5bc0073d9f.png)
 
 >?若实例购买花费时间过长，或显示状态为异常，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
-
+>
 
 ## 注意事项
-当前本服务暂仅支持使用按量计费模式购买企业版实例，实例创建后将按小时产生费用，具体费用金额为购买页展示的费用。您可前往 [计费中心](https://console.cloud.tencent.com/expense) 查询本服务产生的费用。如对扣费产生疑问，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
+如选择使用按量计费模式购买企业版实例，实例创建后将按小时产生费用，具体费用金额为购买页展示的费用。您可前往 [计费中心](https://console.cloud.tencent.com/expense) 查询本服务产生的费用。如对扣费产生疑问，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 
 

@@ -1,5 +1,5 @@
 
-## Operation Scenario
+## Overview
 
 This document introduces how to purchase a Tencent Container Registry (TCR) Enterprise Edition instance on the TCR purchase page.
 
@@ -7,17 +7,18 @@ This document introduces how to purchase a Tencent Container Registry (TCR) Ente
 
 Before purchasing a TCR Enterprise Edition instance, complete the following tasks:
 - [Sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). Users who have not completed identity verification cannot purchase TCR instances in China.
-- Activate the TCR-dependent Tencent Cloud service [Cloud Object Storage (COS)](https://console.cloud.tencent.com/cos5).
+- Activate the TCR-dependent cloud product, [Cloud Object Storage (COS)](https://console.cloud.tencent.com/cos5).
 - If you need to access the instance through a Virtual Private Network (VPC), activate the [VPC](https://console.cloud.tencent.com/vpc) service.
 - Activate the TCR service on the console and grant certain operation permissions to your COS and VPC resources.
 
 ## Directions
-1. Log in to the [official Tencent Cloud website](https://cloud.tencent.com/), choose **Products** > **Basic** > **Container** > **[TCR](https://intl.cloud.tencent.com/product/tcr)**, and click **Buy Now** to go to the TCR console.
+1. Log in to the [official website of Tencent Cloud](https://cloud.tencent.com/), choose **Products** > **Basic** > **Container** > **[TCR](https://cloud.tencent.com/product/tcr)**, and click **Buy Now** to go to the TCR Console.
 2. Select **Instance List** in the left sidebar to go to the "Instance List" page, and click **Create**.
 3. On the "TCR Purchase" page, purchase an instance. You can use the following information for reference:
-![](https://main.qcloudimg.com/raw/442816fbcd5e1fa41ec10f95fb866756.png)
+![](https://main.qcloudimg.com/raw/08381f45c1058bce009f1359eed985ab.png)
+ - **Billing Mode**：TCR supports the pay-as-you-go billing mode. For more information, see [Billing Overview](https://intl.cloud.tencent.com/document/product/1051/35483).
  - **Instance Name**: enter a custom instance name. The name must be globally unique and cannot be the same as that of an existing instance belonging to you or another user. This name will be used to access the domain name of this TCR instance. **The name cannot be modified after purchase.** We recommend that you use an abbreviation that combines the company name and instance region or project as the instance name.
- - **Instance Region**: select the region where you want to deploy the instance. **The region cannot be changed after the instance is purchased**. Select the region based on the location of the container cluster resources.
+ - **Instance Region**: select the region where you want to deploy the instance. **The region cannot be changed after the instance is purchased.** Select the region based on the location of the container cluster resources.
  - **Instance Specification**: select the specifications of the instance you want to purchase. Different instance specifications have different instance performance and quotas. Refer to the specification comparison on the page to make your choices.
  - **Instance Domain Name**: the instance domain name that is automatically generated. Its prefix is the same as the instance name. **The instance domain name cannot be modified after the instance is purchased.** This domain name is used when you run the `docker login` command to log in to the instance.
  - **Backend Storage**: when an instance is purchased, a Tencent Cloud COS bucket will be automatically purchased and associated under the current account. Images and other data in the instance will be stored in the bucket, and storage and traffic costs will be generated. For more information, see the [COS Billing Guide](https://intl.cloud.tencent.com/document/product/436/16871). After instance purchase, you can go to the COS console to view the bucket. Please avoid mistakenly deleting the bucket because data such as images hosted in the instance cannot be recovered after the bucket is deleted.
@@ -28,10 +29,10 @@ Before purchasing a TCR Enterprise Edition instance, complete the following task
 6. You can view the instance purchase progress on the "Instance List" page. If the instance status changes to "Running" as shown in the figure below, the instance was successfully purchased and is running properly.
 ![](https://main.qcloudimg.com/raw/8ed87bf4a369c5c184ea2a5bc0073d9f.png)
 
->? If it takes too long to purchase an instance or the displayed status is abnormal, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>?If it takes too long to purchase an instance or the displayed status is abnormal, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 
 ## Notes:
-Currently, this service allows users to purchase Enterprise Edition instances only in pay-as-you-go mode. After an instance is created, fees will be generated on an hourly basis, and the specific fees will be displayed on the purchase page. You can go to the [Billing Center](https://console.cloud.tencent.com/expense) to view the fees generated by this service. If you have any doubt about the fees, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you purchase Enterprise Edition instances in pay-as-you-go mode, fees will be generated on an hourly basis after an instance is created, and the specific fees will be displayed on the purchase page. You can go to the [Billing Center](https://console.cloud.tencent.com/expense) to view the fees generated by this service. If you have any doubt about the fees, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 
