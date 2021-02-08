@@ -3,10 +3,10 @@
 <tr><th width="20%">动态名称</th><th width="50%">动态描述</th> <th width="15%">发布时间</th> <th width="15%">相关文档</th></tr><tr>
 <td>Version 8.1</td>
 <td ><ul style="margin:0;">
-  <li/>Android：改善短视频的画质和清晰度。
-  <li/>Android：修改美颜相关接口的参数类型从 int 到 float。
-  <li/>Android：修复短视频暂停录制后返回值异常的问题。
-  <li/>Android：修复部分 Crash 问题及兼容性问题。 
+  <li>Android：改善短视频的画质和清晰度。
+  <li>Android：修改美颜相关接口的参数类型从 int 到 float。
+  <li>Android：修复短视频暂停录制后返回值异常的问题。
+  <li>Android：修复部分 Crash 问题及兼容性问题。 
 </td>
  <td>2020-12-03</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK 下载</a></td>
@@ -18,13 +18,13 @@
 <tr><th width="20%">动态名称</th><th width="50%">动态描述</th> <th width="15%">发布时间</th> <th width="15%">相关文档</th></tr><tr>
 <td>Version 8.0</td>
 <td ><ul style="margin:0;">
-  <li/>iOS：修复添加多个贴纸后偶现应用卡死的问题。
-  <li/>iOS：修复气泡字幕编辑偶现闪退的问题。
-  <li/>Android：上传封面兼容 9.0 以上机型。
-  <li/>Android：修复三屏合拍切后台返回出现合拍视频不同步的问题。
-  <li/>Android：UGCKit 修复视频压缩预览页面偶现黑屏的问题。
-  <li/>Android：UGCKit 修复视频编辑音量设置不生效的问题。
-  <li/>Android：UGCKit 修复动作界面撤销按钮偶现不显示的问题。
+  <li>iOS：修复添加多个贴纸后偶现应用卡死的问题。
+  <li>iOS：修复气泡字幕编辑偶现闪退的问题。
+  <li>Android：上传封面兼容 9.0 以上机型。
+  <li>Android：修复三屏合拍切后台返回出现合拍视频不同步的问题。
+  <li>Android：UGCKit 修复视频压缩预览页面偶现黑屏的问题。
+  <li>Android：UGCKit 修复视频编辑音量设置不生效的问题。
+  <li>Android：UGCKit 修复动作界面撤销按钮偶现不显示的问题。
 </td>
  <td>2020-11-13</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK 下载</a></td>
