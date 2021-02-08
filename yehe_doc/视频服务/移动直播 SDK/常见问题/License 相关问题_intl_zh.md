@@ -7,7 +7,7 @@
 [](id:que2)
 ### 移动直播 License 有单独购买入口吗？
 不支持单独购买。
-- 移动直播企业版 SDK License：需 [联系腾讯云商务](https://intl.cloud.tencent.com/contact-sales) 申请。
+- 移动直播基础版和企业版 SDK License：需 [联系腾讯云商务](https://intl.cloud.tencent.com/contact-sales) 申请。
 
 [](id:que3)
 ### 移动直播基础版 License 和移动直播企业版 License 有什么区别？
