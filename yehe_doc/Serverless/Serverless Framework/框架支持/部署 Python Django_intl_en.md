@@ -1,3 +1,4 @@
+
 ## Overview
 **Tencent Cloud Django component** uses [Tencent Serverless Framework](https://github.com/serverless/components/tree/cloud). Based on serverless services (such as COS) in the cloud, it can implement "zero" configuration, convenient development, and rapid deployment of your Django webpage applications.
 
@@ -17,27 +18,21 @@ Install the latest version of Serverless CLI through npm:
 $ npm install -g serverless
 ```
 
-### 2. Initialize the Django template project (optional)
-If you don't have a local Django project, you can initialize a Django project with the following commands (if you already have one, you can ignore this step):
-```
-serverless init django-starter --name example
-cd example
-```
-
-### 3. Install project dependencies
-If you want to create a project by yourself, please install the dependencies required by Python in the project directory. For example, Django is needed in this example, and you can run `pip` to install it:
+### 2. Install project dependencies
+Create a project by yourself and install the dependencies required by Python in the project directory. For example, Django is needed in this example, and you can run `pip` to install it:
 ```
 pip install Django -t ./
 ```
 
-### 4. Configure the .yml file
+### 3. Configure the .yml file
 Create a `serverless.yml` file in the project root directory:
 ```sh
 touch serverless.yml
 ```
 Paste the following configuration template into the file to implement basic project configuration.
 >?You can add more configuration items in `serverless.yml` based on your actual deployment needs. For more information on the configuration of the .yml file, please see [Django Component Configuration](https://github.com/serverless-components/tencent-django/blob/master/docs/configure.md).
-```yml
+
+```
 #serverless.yml
 component: django
 name: djangoDemo
@@ -59,7 +54,9 @@ inputs:
 ```
 
 
-### 5. Deploy the application
+
+
+### 4. Deploy the application
 Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
 
 ```
