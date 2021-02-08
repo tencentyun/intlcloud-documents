@@ -1,6 +1,6 @@
 ## Billing Mode
 
-The new Anti-DDoS Pro service guarantees an all-out protection capability of 30 Gbps or above. The all-out protection aims to spare no effort to successfully defend against each DDoS attack, integrating the cleansing capability of the local cleansing center (the maximum protection bandwidth is 100 Gbps for Guangzhou and Beijing and 300 Gbps for Shanghai, which is dynamically adjusted based on the actual network status). In addition, the all-out protection will be enhanced along with the advance of Tencent Cloud network capabilities, and for which no extra upgrade costs are required.
+The new Anti-DDoS Pro service guarantees an all-out protection capability of 30 Gbps or above. The all-out protection aims to spare no effort to successfully defend against each DDoS attack, integrating the cleansing capability of the local cleansing center (the maximum protection bandwidth is 100 Gbps for Guangzhou and Beijing and 600 Gbps for Shanghai, which is dynamically adjusted based on the actual network status). In addition, the all-out protection will be enhanced along with the advance of Tencent Cloud network capabilities, and for which no extra upgrade costs are required.
 
 >! Tencent Cloud reserves the right to restrict the traffic if the DDoS attacks on your business affect the infrastructure in the Tencent Cloud Anti-DDoS cleansing center. If the traffic of your Anti-DDoS Pro instance is restricted, your business may suffer the problems such as limited or blocked business access traffic.
 
