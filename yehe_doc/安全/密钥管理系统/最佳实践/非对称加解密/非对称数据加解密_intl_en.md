@@ -50,7 +50,7 @@ Returned result:
 }
 ```
 3. 	Use the public key for encryption
-   ① Store the public key `PublicKey` in the file `public_key.base64` and Base64-decode it.
+   1. Store the public key `PublicKey` in the file `public_key.base64` and Base64-decode it.
       Store it in the file:
 ```
 echo "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzQk7x7ladgVFEEGYDbeUc5aO9TfiDplIO4WovBOVpIFoDS31n46YiCGiqj67qmYslZ2KMGCd3Nt+a+jdzwFiTx3O87wdKWcF2vHL9Ja+95VuCmKYeK1uhPyqqj4t9Ch/cyvxb0xaLBzztTQ9dXCxDhwj08b24T+/FYB9a4icuqQypCvjY1X9j8ivAsPEdHZoc9Di7JXBTZdVeZC1igCVgl6mwzdHTJCRydE2976zyjC7l6QsRT6pRsMF3696N07WnaKgGv3K/Zr/6RbxebLqtmNypNERIR7jTCt9L+fgYOX7anmuF5v7z0GfFsen9Tqb1LsZuQR0vgqCauOj************" > public_key.base64
@@ -59,19 +59,19 @@ Base64-decode the public key to get its content:
 ```
 openssl enc -d -base64 -A -in public_key.base64 -out public_key.bin
 ```
-	② Create a testing plaintext file:
+	2. Create a testing plaintext file:
 ```
 	echo "test" > test_rsa.txt
 ```
-	③ Use OpenSSL to encrypt the file `test_rsa.txt` with the public key.
+	3. Use OpenSSL to encrypt the file `test_rsa.txt` with the public key.
 ```
 	openssl pkeyutl -in test_rsa.txt -out encrypted.bin -inkey public_key.bin -keyform DER -pubin -encrypt -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256
 ```
-	④ Base64-encode the data encrypted with the public key for transmission.
+	4. Base64-encode the data encrypted with the public key for transmission.
 ```
 	openssl enc -e -base64 -A -in encrypted.bin -out encrypted.base64
 ```
-⑤ Use the private key on KMS for decryption.
+4. 	Use the private key on KMS for decryption.
    Use the above-mentioned Base64-encoded ciphertext `encrypted.base64` as the `Ciphertext` parameter for `AsymmetricRsaDecrypt` to decrypt the ciphertext with the private key.
    Request:
 ```
