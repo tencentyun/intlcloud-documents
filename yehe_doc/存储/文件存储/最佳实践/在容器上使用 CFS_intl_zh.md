@@ -1,6 +1,6 @@
 ## 操作场景
 
-[腾讯云容器服务](https://intl.cloud.tencent.com/zh/product/tke) （Tencent Kubernetes Engine，TKE）是高度可扩展的高性能容器管理服务，提供多种应用发布方式和持续交付能力并支持微服务架构，解决用户开发、测试及运维过程的环境问题、帮助用户降低成本，提高效率。
+[腾讯云容器服务](https://intl.cloud.tencent.com/product/tke) （Tencent Kubernetes Engine，TKE）是高度可扩展的高性能容器管理服务，提供多种应用发布方式和持续交付能力并支持微服务架构，解决用户开发、测试及运维过程的环境问题、帮助用户降低成本，提高效率。
 
 使用容器的业务，例如业务应用部署、DevOps、机器学习、弹性伸缩等场景下，通常有大量配置文件、模型文件、日志数据、文档附件等需要多个容器共享访问。特别是机器学习、智能推荐、日志数据处理场景下，除了基础的数据共享，更要求共享存储可以提供高并发访问、高吞吐、高 IOPS、低延时的服务。CFS 文件存储只需在容器上简单配置及挂载，就可提供上述共享存储特性，特别适合搭配容器业务使用。本文将介绍如何在 TKE 上使用 CFS 文件存储。
 
@@ -31,11 +31,6 @@ sudo apt-get install nfs-common
 
 #### 步骤2：创建 PV
 执行以下命令创建一个类型为 CFS 的 PesistentVolume。
-
->?
->1. nfs.server：为上面已经获取到的 CFS 文件系统的挂载点 IP，本例子中假设文件系统 IP 为10.0.1.41。
->2. nfs.path：为 CFS 文件系统的根目录或者子目录，本案例以根目录为例。
-
 ```plaintext
 apiVersion: v1
 kind: PersistentVolume
@@ -55,6 +50,11 @@ spec:
     path: /
     server: 10.0.1.41
 ```
+>?
+> - nfs.server：为上面已经获取到的 CFS 文件系统的挂载点 IP，本例子中假设文件系统 IP 为10.0.1.41。
+> - nfs.path：为 CFS 文件系统的根目录或者子目录，本案例以根目录为例。
+>
+
 
 #### 步骤3：创建 PVC
 接下来，创建 PersistentVolumeClaim ，来请求绑定已经创建好的 PersistentVolume。
@@ -95,3 +95,4 @@ spec:
         claimName: cfsclaim
 ```
 完成上述步骤后，您就可以在新建的 Pod 中使用该文件系统了。
+
