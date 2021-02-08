@@ -8,7 +8,8 @@ If the Tencent Real-Time Communication (TRTC) service is not activated, enable g
 1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page of the application.
 2. Click **Activate** under **Activate Tencent Real-Time Communication (TRTC)**.
 3. Click **Confirm** in the dialog box that appears.
-A TRTC application with the same SDKAppID as the IM application is created in the [TRTC console](https://console.cloud.tencent.com/trtc/app). You can use the same account and authentication information for IM and TRTC.
+
+>?A TRTC application with the same SDKAppID as the IM application is created in the [TRTC console](https://console.cloud.tencent.com/trtc/app). You can use the same account and authentication information for IM and TRTC.
 
 <span id="step2"></span>
 ## Step 2: Initialize TUIKit 
