@@ -5,8 +5,8 @@ With a [CTCC/CUCC/CMCC Anti-DDoS Advanced instance](https://buy.cloud.tencent.co
 ## Prerequisites
 - Before enabling smart scheduling, please connect your business to your Anti-DDoS instance.
 >?
-- If you need to add the IP of your protected Tencent Cloud product to an Anti-DDoS Pro instance, please see [Getting Started](https://intl.cloud.tencent.com/document/product/1029/36116).
-- If you need to connect your layer-4 or layer-7 business to an Anti-DDoS Advanced instance, please see Anti-DDoS Advanced documents [Port Connection](https://intl.cloud.tencent.com/document/product/297/37221) or [Domain Name Connection](https://intl.cloud.tencent.com/document/product/297/37222).
+>- If you need to add the IP of your protected Tencent Cloud product to an Anti-DDoS Pro instance, please see [Getting Started](https://intl.cloud.tencent.com/document/product/1029/36116).
+>- If you need to connect your layer-4 or layer-7 business to an Anti-DDoS Advanced instance, please see Anti-DDoS Advanced documents [Port Connection](https://intl.cloud.tencent.com/document/product/297/37221) or [Domain Name Connection](https://intl.cloud.tencent.com/document/product/297/37222).
 
 
 - To modify the DNS resolution, you need to purchase a domain name resolution product.
