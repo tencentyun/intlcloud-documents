@@ -8,7 +8,7 @@ The Base64 encoding feature provides the following two trigger modes to facilita
 
 ## Interaction Process
 
-![](https://main.qcloudimg.com/raw/9fbb169958e4ea1087d13cdb2b2d2721.svg)
+![](https://main.qcloudimg.com/raw/74fc6a41ec95b542d095c6f43cd8c2f3.svg)
 
 ## Directions
 
