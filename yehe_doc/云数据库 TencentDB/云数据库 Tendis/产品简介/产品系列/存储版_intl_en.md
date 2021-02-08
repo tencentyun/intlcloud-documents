@@ -1,5 +1,5 @@
 TencentDB for Tendis Storage Edition (standard architecture) is based on Tendis, a KV (key-value) storage engine developed by Tencent. This Edition stores data on disks and supports multiple replicas to ensure service availability and data reliability, applicable to storing massive KV data.
->?The Storage Edition is under development and will be available in mid-January, 2021.
+
 
 ## Features
 #### Low cost
