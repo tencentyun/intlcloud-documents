@@ -12,7 +12,7 @@ Before purchasing a TCR Enterprise Edition instance, complete the following task
 - Activate the TCR service on the console and grant certain operation permissions to your COS and VPC resources.
 
 ## Directions
-1. Log in to the [official website of Tencent Cloud](https://cloud.tencent.com/), choose **Products** > **Basic** > **Container** > **[TCR](https://cloud.tencent.com/product/tcr)**, and click **Buy Now** to go to the TCR Console.
+1. Log in to the [official website of Tencent Cloud](https://intl.cloud.tencent.com/), choose **Products** > **Basic** > **Container** > **[TCR](https://intl.cloud.tencent.com/product/tcr)**, and click **Buy Now** to go to the TCR Console.
 2. Select **Instance List** in the left sidebar to go to the "Instance List" page, and click **Create**.
 3. On the "TCR Purchase" page, purchase an instance. You can use the following information for reference:
 ![](https://main.qcloudimg.com/raw/08381f45c1058bce009f1359eed985ab.png)
