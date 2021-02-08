@@ -12,8 +12,8 @@ SDK: 2.3.2
 Components: 3.4.3
 ```
 
-
-## 组件全量配置文档[](id:doc)
+<span id="doc"></span>
+## 组件全量配置文档
 
 - [基础组件列表](https://intl.cloud.tencent.com/document/product/1040/39135)
 - [框架组件列表](https://intl.cloud.tencent.com/document/product/1040/39375)
@@ -50,7 +50,6 @@ org: app-demo
 stage: dev
 component: egg 
 name:  app-demo-egg # (必填) 创建的实例名称
-
 inputs:
   src:   
     src: ./    # 需要上传的项目路径
@@ -87,7 +86,6 @@ org: app-demo
 stage: dev
 component: layer 
 name:  app-demo-layer # (必填) 创建的实例名称
-
 inputs:
   region: ap-guangzhou
   src: 
@@ -151,9 +149,7 @@ inputs:
 在项目根目录下，执行 `sls deploy`，即可完成 Layer 创建，并将 Layer 组件的输出作为 Egg 组件的输入，完成 Egg 框架上云。
 ```
 $ sls deploy
-
 serverless ⚡framework
-
 app-demo-layer: 
   region:        ap-guangzhou
   name:          layer_component_xxx
@@ -164,7 +160,6 @@ app-demo-layer:
     - Nodejs10.15
   version:       3
   vendorMessage: null
-
 app-demo-egg: 
   region:        ap-guangzhou
   scf: 
@@ -179,7 +174,6 @@ app-demo-egg:
     environment: release
     url:         https://service-xxx.gz.apigw.tencentcs.com/release/
   vendorMessage: null
-
 76s › app-demo › "deploy" ran for 2 apps successfully.
 ```
 
@@ -235,10 +229,8 @@ src: # 描述项目中的哪些文件需要作为模板发布
 `serverless.template.yml` 文件配置完成后，便可以使用发布命令 `sls publish` 将此项目作为模板发布到应用中心。
 ```
 $ sls publish
-
 serverless ⚡registry
 Publishing "app-demo@0.0.0"...
-
 Serverless › Successfully published app-demo
 ```
 
@@ -251,8 +243,8 @@ $ cd example
 $ npm install
 ```
 
-
-## 变量引用说明[](id:quote)
+<span id="quote"></span>
+## 变量引用说明
 `serverless.yml` 支持多种方式引用变量：
 
 - **顶级参数引用**
@@ -274,7 +266,6 @@ app: demo
 component: scf
 name: rest-api
 stage: dev
-
 inputs:
   name: ${org}-${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # 环境变量中指定的 REGION= 信息
