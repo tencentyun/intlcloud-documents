@@ -49,7 +49,7 @@
 | errmsg        | string | 推断流错误描述                                               |
 
 ### 推断流错误码
-推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083)。
+推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083#directions)。
 
 ### 回调消息示例
 
