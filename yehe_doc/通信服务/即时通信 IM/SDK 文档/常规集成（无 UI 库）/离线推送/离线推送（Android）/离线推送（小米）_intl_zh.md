@@ -323,7 +323,7 @@ public class ThirdPushTokenMgr {
 ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
 
  ### 打开网页
-您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://cloud.tencent.com/document/product/269`。
+您需要在 [添加证书](#Step2) 时选择【打开网页】并输入以`http://`或`https://`开头的网址，例如`https://intl.cloud.tencent.com/document/product/269`。
 ![](https://main.qcloudimg.com/raw/3c8f71b696f39117105d0e67813aaa0f.png)
 
 ### 打开应用内指定界面
