@@ -109,12 +109,12 @@
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>当用户代码起容器超时情况下，会有该返回信息。</td>
-<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/act/event/Online_service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
-<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://cloud.tencent.com/act/event/Online_service">智能客服</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
+<td>内部错误，请稍后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
 </tr>
 </tbody>
 </table>
