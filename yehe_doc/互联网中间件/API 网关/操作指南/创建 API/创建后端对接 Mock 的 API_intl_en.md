@@ -37,7 +37,7 @@ The frontend configuration of an API refers to the relevant configurations provi
 #### Configuring frontend parameters
 
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
-![](https://main.qcloudimg.com/raw/a02b6d507c93458f90a7d52d00b180e4.png)
+![](https://main.qcloudimg.com/raw/ff19cf6d5e757d455a92e1ee0ab9ea43.png)
 
 > ?
 > - If the request protocol is HTTPS, a request must carry SNI. To ensure request security, API Gateway will deny requests without SNI.
@@ -46,4 +46,4 @@ The frontend configuration of an API refers to the relevant configurations provi
 ### Step 3. Configure Mock in the backend
 
 Mock returns a response that has a fixed configuration to an API request. It is typically used for development testing. API configuration and response can be completed in advance before the backend service is completed. To connect with Mock, you only need to configure your returned data and click **Complete**.
-![](https://main.qcloudimg.com/raw/4e1f9bfb605e9051ad08e8f331cbd90d.png)
+![](https://main.qcloudimg.com/raw/c4aedc20312dbf18ca939559ff03b4f0.png)
