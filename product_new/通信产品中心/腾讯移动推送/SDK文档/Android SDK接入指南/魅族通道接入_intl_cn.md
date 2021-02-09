@@ -68,8 +68,7 @@ implementation 'com.tencent.tpns:meizu:[VERSION]-release'//meizu 推送 [VERSION
 </receiver>
 ```
 
-
-5.  Flyme 6.0 及以下版本的魅族手机，使用手动集成方式，需要在 drawable 不同分辨率的文件夹下对应放置一张名称必须为 stat_sys_third_app_notify 的图片，详情请参考 [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload) 中的 flyme-notification-res 文件夹。
+5.  Flyme 6.0 及以下版本的魅族手机，使用手动集成方式，需要在 drawable 不同分辨率的文件夹下对应放置一张名称必须为 stat_sys_third_app_notify 的图片，详情请参考 [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload) 中魅族厂商依赖目录的 flyme-notification-res 文件夹。
 
 ### 开启魅族推送
 在启动移动推送 TPNS ，调用 `XGPushManager.registerPush` 之前，配置如下代码：
@@ -89,19 +88,19 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : V5R5b7c02****
 I/TPush: [PushServiceBroadcastHandler] >> bind OtherPushToken success ack with [accId = 150000****  , rsp = 0]  token = 0398291156ce7d2f****66bd0952c87c372f otherPushType = meizu otherPushToken = V5R5b7c02********47744c6b635e464b527e487802
 ```
 
-如需通过点击回调获取参数或者跳转自定义页面，您可使用 Intent 来实现。更多详情请参见 [Android 常见问题](https://intl.cloud.tencent.com/document/product/1024/32624#.E5.A6.82.E4.BD.95.E8.AE.BE.E7.BD.AE.E6.B6.88.E6.81.AF.E7.82.B9.E5.87.BB.E4.BA.8B.E4.BB.B6.EF.BC.9F)。
+如需通过点击回调获取参数或者跳转自定义页面，您可使用 Intent 来实现。更多详情请参见 [Android 常见问题](https://intl.cloud.tencent.com/document/product/1024/32624)。
 
 ### 代码混淆
 ```xml
 -dontwarn com.meizu.cloud.pushsdk.**
 -keep class com.meizu.cloud.pushsdk.**{*;}
 ```
-
 >?若出现 App Debug 版本注册魅族 token 正常，但在 Release 版本中无法获取，请检查是否添加以上代码混淆规则。
->- 如果您正在使用 Android Studio 3.4 或以上版本出现上述问题，是因为 Android Studio 默认开启 R8 混淆所导致。
+- 如果您正在使用 Android Studio 3.4 或以上版本出现上述问题，是因为 Android Studio 默认开启 R8 混淆所导致。
 解决方法：请在 gradle.properties 中添加 android.enableR8 = false
->- 混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
+- 混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
+
 
 ### 魅族通道抵达回执配置
-魅族通道抵达回执需要开发者自行配置，您可参照 [魅族厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246#.E9.AD.85.E6.97.8F.E5.8E.82.E5.95.86.E9.80.9A.E9.81.93.E5.9B.9E.E6.89.A7.E9.85.8D.E7.BD.AE.E6.8C.87.E5.BC.95) 进行配置，完成后，可在推送记录中查看魅族推送通道的抵达数据。
-
+魅族通道抵达回执需要开发者自行配置，您可参照 [魅族厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置，完成后，可在推送记录中查看魅族推送通道的抵达数据。
+![](https://main.qcloudimg.com/raw/2f978f623566b9f6b664dea3dca30923.png)
