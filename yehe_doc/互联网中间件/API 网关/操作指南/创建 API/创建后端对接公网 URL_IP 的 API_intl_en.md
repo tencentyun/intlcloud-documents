@@ -33,7 +33,7 @@ The frontend configuration of an API refers to the relevant configurations provi
 #### Configuring frontend parameters
 
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
-![](https://main.qcloudimg.com/raw/abb4ed14930c0adc8badeaa90c085c54.png)
+![](https://main.qcloudimg.com/raw/566e83ea5557af13526016ab1d56179c.png)
 
 > ?
 > - If the request protocol is HTTPS, a request must carry SNI. To ensure request security, API Gateway will deny requests without SNI.
@@ -53,7 +53,7 @@ Configuration instructions:
 5. Set the backend timeout (up to 30 seconds). When API Gateway calls the backend service, but the response is not returned within the specified timeout, API Gateway will terminate the call and return the corresponding error message.
 6. Set the backend parameters that map the frontend.
 7. Click **Next** and configure the response result.
-   ![](https://main.qcloudimg.com/raw/7dd18b9dd1bdd2c12b49da56086855de.png)
+   ![](https://main.qcloudimg.com/raw/7985a677e80f14e1d6327504b1df05df.png)
 
 ### Step 4. Configure the response
 
