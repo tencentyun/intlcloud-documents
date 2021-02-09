@@ -15,7 +15,6 @@
 2. 在“共享带宽包”页面左上角，选择所在地域。
 2. 在共享带宽包实例列表中，单击目标实例 ID。
 3. 在实例详情页查看当前计费带宽值（即削峰后的月峰值）。
- ![](https://main.qcloudimg.com/raw/3e0cd0fea46067aece65ed3e9f8a6cb6.png)
 
 ##  相关文档
 [计费模式](https://intl.cloud.tencent.com/document/product/684/15255)
