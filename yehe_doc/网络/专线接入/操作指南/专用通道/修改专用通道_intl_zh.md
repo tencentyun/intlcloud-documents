@@ -8,11 +8,11 @@
 ## 变更通道
 1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在左侧导航栏单击【专用通道】。
 2. 在“专用通道”页面，在需要变更参数的通道右侧“操作”列选择【更多】>【通道变更】。
-![](https://main.qcloudimg.com/raw/3719a18adc9f02ebd04f5cd0c2fdb334.png)
+
 3. 按您的专用通道类型，选择对应的方式修改专用通道信息，专用通道类型请在该通道“基本信息”页面查看。
  - **专用通道1.0**
 在“通道变更”对话框中编辑以下信息，并单击【确定】。
-![](https://main.qcloudimg.com/raw/b181ef8f7b7c50eaa466182dcb7fa23b.png)
+
 <table>
 <tr>
 <th width="20%">字段</th>
@@ -47,7 +47,7 @@
 在“高级通道”页签中，按需修改以下信息：
     - 修改通道配置
 在“通道配置”右侧单击【编辑】，然后在展开的编辑页面修改腾讯云边界 IP、用户边界 IP 和 VLAN ID 等信息，并单击【保存】。
-![](https://main.qcloudimg.com/raw/9d37e29001a48787fecf9e17221cbf3d.png)
+
 <table>
 <tr>
 <th width="20%">字段</th>
@@ -69,9 +69,9 @@
     - 编辑路由模式
       1. 在“路由模式”右侧单击【编辑】，并在展开区域内修改路由信息。
              - 静态路由模式：修改用户 IDC 网段信息。为确保网络的精细化调度能力，IDC 网段信息请遵循[ 大网段使用限制](#dwdxz)。
- ![](https://main.qcloudimg.com/raw/f8eea7913f3b8de5f3e0de15eaf33cbc.png)
+
              - BGP 路由模式：修改 BGP asn 和 BGP 密钥。
- ![](https://main.qcloudimg.com/raw/b2b7a9faa69315a8f2c46534d7cd8bf2.png)
+
  <table>
 		<tr>
 		<th width="20%">字段</th>
@@ -87,7 +87,7 @@
 		</tr>
 		</table>
       2. 选择是否开启健康检查。若开启健康检查，还需配置健康检查间隔和健康检查次数。
-    <img src="https://main.qcloudimg.com/raw/1a835c68b4404c2b350e9399ff58665a.png"></img>
+
     		<table>
     		<tr>
     		<th width="20%">字段</th>
@@ -113,9 +113,9 @@
  1. 在专用通道列表中目标通道右侧“带宽”列单击<img src="https://main.qcloudimg.com/raw/134ed671d2fa3ec1b82525985c0a6633.svg" style="zoom:6%;" />。
 > ? 仅连接状态为“已连接”的专用通道可以修改带宽。
 > 
-![](https://main.qcloudimg.com/raw/85e2384c415324f3bafd97178696d67f.png)
+
  2. 在展开的编辑框中修改通道带宽值，并单击【确定】。
-![](https://main.qcloudimg.com/raw/9a0c42e3f0b59665aa36dee39d74112d.png)
+
 > ? 专用通道最大带宽不可超过关联的物理专线带宽，若物理专线带宽仍不能满足您的业务需求，请提[ 工单申请 ](https://console.cloud.tencent.com/workorder/category)扩容。
 
 <span id ="dwdxz"></span>
