@@ -1,3 +1,4 @@
+
 | Error Code | Description | Solution |
 |---------|--------|----------|
 |-254 | Failed to query the target instance information | Please make sure that the target instance is normal and is not performing any other tasks during migration. |
@@ -23,11 +24,12 @@
 |-420 | The source TokuDB is compressed | `row_format` of quicklz/lzma/snappy/uncompressed is not supported for Toku. |
 |-421 | The source TokuDB has a cluster index | There is a table whose `column_key` is 'CLU'. |
 |-292 | The RO status of the target instance is exceptional | To initiate a migration task, the target instance's RW and RO status must be normal. |
-|-405 | There is a table whose `row_format` is fixed in the source instance | It is recommended to change the source instance tables to InnoDB tables (not in row_format). |
-|-417 | The master-slave relationship between the source instance and target instance is exceptional | Please check whether the network connection to the source instance is normal and whether doublewrite is caused by user writes to the target instance during migration. |
+|-405 | There is a table whose `row_format` is fixed in the source instance | It is recommended to change the source instance tables to InnoDB tables (not in row_format). After the change of the format, the database table will be rebuilt. |
+|-417 | The primary-secondary relationship between the source instance and target instance is exceptional. | Please check whether the network connection to the source instance is normal and whether doublewrite is caused by user writes to the target instance during migration. |
 |-253 | A user request for canceling the task is received | After a user request for canceling the migration task is received, the task will be canceled and then rolled back. |
 |-407 | Incorrect input parameters | The input parameters are incorrect. Please check whether the parameters are in valid format, such as table name. |
 |-411 | Failed to check the account permission in the source instance | Please provide details on the eligible source instance account permission and make sure that the user account has the required permission based on the task configuration. <br>For example, session needs to be in binlog format for full detection, which requires the super permission. Solution: 1. The super permission is not required for sampling detection; 2. Grant the super permission to the account. |
 |6001000 | The backup system is exceptional | Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
-|-41 | Data sync failed due to a master-slave exception | Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
+|-41 | Data sync failed due to a primary-secondary exception | Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
 |996 | Internal error. The migration mode and comparison mode have different configurations on the backend. An error will occur if the configuration file cannot be found | Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |
+
