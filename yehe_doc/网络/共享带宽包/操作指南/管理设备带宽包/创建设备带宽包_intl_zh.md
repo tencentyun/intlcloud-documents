@@ -12,7 +12,7 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，单击左侧导航栏的【共享带宽包】。
 2. 在“共享带宽包”页面，选择所在地域，单击左上角的【+新建】。
 3. 在“新建共享带宽包”对话框中，输入名称、选择计费模式，单击【创建】。
-![](https://main.qcloudimg.com/raw/e66c64800e048d9d42238d79fb24199f.png)
+
 4. （可选）创建完成后，为避免产生高额费用，建议您为共享带宽包内的资源设置带宽上限。可参考如下操作：
  - 为云服务器设置带宽上限参见 [CVM 调整带宽](https://intl.cloud.tencent.com/document/product/213/15517)。
  - 为负载均衡设置带宽上限参见 [CLB 调整带宽](https://intl.cloud.tencent.com/document/product/214/39528)。
