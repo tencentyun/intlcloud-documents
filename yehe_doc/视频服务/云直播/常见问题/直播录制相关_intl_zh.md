@@ -1,5 +1,4 @@
 [](id:que1)
-
 ###  直播录制的原理是什么？
 ![img](https://main.qcloudimg.com/raw/9c9d31c6ffec97d2b8b4042b7a673cbc.jpg)
 
@@ -20,9 +19,9 @@
 [](id:que4)
 ### 直播录制后，如何获取录制文件？
 录制文件生成后自动存储到云点播系统，需要客户开通点播服务才能存储成功。可通过以下方式获取录制文件：
-- [云点播控制台](https://intl.cloud.tencent.com/document/product/267/31563)
-- [录制事件通知](https://intl.cloud.tencent.com/document/product/267/31563)
-- [点播 API 查询](https://intl.cloud.tencent.com/document/product/267/31563)
+- [云点播控制台](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
+- [录制事件通知](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
+- [点播 API 查询](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
 
 [](id:que5)
 ### 直播视频能迁移吗？
@@ -63,7 +62,7 @@
 1. 检查控制台录制配置信息，确认录制文件类型是否选择只选择一个格式。
    - 若控制台为**新版控制台**，前往[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击推流域名右侧的【管理】，进入查看【模板配置】中的【录制配置】，查看关联模板“录制格式”信息。
    - 若控制台为**旧版控制台**，前往 [【直播码接入】](https://console.cloud.tencent.com/live/livecodemanage)>【接入配置】 检查直播录制配置信息。  
-2. [创建录制任务](https://intl.cloud.tencent.com/document/product/267/30847) 和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。请检查是否已在控制台开启录制任务同时，调用 API 3.0的  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847) 接口或 API 2.0的 Live_Tape_Start 接口发起了录制任务。
+2. [创建录制任务](https://intl.cloud.tencent.com/document/product/267/30847) 和 [创建录制模板](https://intl.cloud.tencent.com/document/product/267/34223) 为两种录制发起方式，实际使用中按需选择其中一种即可。若同一直播流，配置录制模板的同时创建了录制任务，会导致重复录制。请检查是否已在控制台开启录制任务同时，调用 API 3.0的  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847) 接口或 API 2.0的 [Live_Tape_Start](https://intl.cloud.tencent.com/document/product/267/9567) 接口发起了录制任务。
 
 > ! 
 > - 若您的直播录制是在旧版控制台开启的，新版控制台中如需关闭，可通过 [提工单](https://console.cloud.tencent.com/workorder/category) 找相关人员协助解决。 
