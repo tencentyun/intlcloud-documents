@@ -8,7 +8,7 @@ This document describes how to create an IP bandwidth package under your bill-by
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Bandwidth Package** on the left sidebar.
 2. Select a region, and click **+New** in the upper-left corner.
 3. In the pop-up dialog box, enter the bandwidth package name, select a billing mode, and then click **Create**.
-![](https://main.qcloudimg.com/raw/053ea0d43d3578054d234a138fd8c926.png)
+
 
 ## Subsequent Operations
 [Adding Resources](https://intl.cloud.tencent.com/document/product/684/34599)
