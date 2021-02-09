@@ -3,7 +3,7 @@
 ## Overdue
 - The current day's LVB pay-as-you-go daily billing items will be generated next day morning. Bills for pay-as-you-go monthly billing items will be generated on the first day of the next month. For billing details, see [Viewing Bills](https://intl.cloud.tencent.com/document/product/267/36278).
 - Tencent Cloud will send you a notification if your account becomes overdue. If you top up your account within 24 hours after receiving the notification, the LVB service will not be suspended. Otherwise, the service will be suspended.
-- When your account becomes overdue, LVB and Live Director will not terminate ongoing live streaming and live director PGM outputs immediately; such services will continue to operate and incur costs. To suspend Live Director, please disable LVB or PGM manually.
+- When your account becomes overdue, LVB will not terminate ongoing live streaming immediately; such services will continue to operate and incur costs. To suspend Live Director, please disable LVB manually.
 
 
 
