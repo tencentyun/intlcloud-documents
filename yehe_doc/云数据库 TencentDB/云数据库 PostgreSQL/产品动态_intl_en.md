@@ -46,7 +46,7 @@
 <td>You can now add and edit a tag for a TencentDB for PostgreSQL instance. You can also authenticate resources according to their tags.</td>
 <td>2020-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/409/38839" target="_blank">Tag > Overview</a></td></tr>
-<tr>
+</tbody></table>
 
 
 ## July 2020
