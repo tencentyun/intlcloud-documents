@@ -25,15 +25,14 @@ You have [created a service](https://intl.cloud.tencent.com/document/product/628
 4. Select the authentication type: no authentication or key pair.
 5. Select whether to support CORS.
 6. Enter the parameter configuration.
-   ![](https://main.qcloudimg.com/raw/1fd104a40dfc5e2059e6e0e5d4256429.png)
+   ![](https://main.qcloudimg.com/raw/3ae7a13c209b91c240b8e468732b5702.png)
    **Input parameters** include parameters from the header, query, and path locations, where a path parameter corresponds to a dynamic parameter defined in the URL path.
    For any parameter, the parameter name, parameter type, and parameter data type must be specified. Whether a parameter is required and its default value, sample data, and description can be specified optionally. Using these configuration items, API Gateway helps you with the documentation and preliminary verification of input parameters.
    Two required parameters `X-NameSpace-Code` and `X-MicroService-Name` need to be passed in for the call. They control which microservice the API Gateway request will be sent to and can be placed in header, path, or query. If the parameters are placed in path, just like for general APIs, you need to configure the path parameter in the path, such as `/{X-NameSpace-Code}/{X-MicroService-Name}`. If the variable `X-NameSpace-Code` is `crgt` and `X-MicroService-Name` is `coupon-activity`, then the access URL will be `https://access domain name/crgt/coupon-activity/`. Except these 2 fixed parameters, other parameters can be configured in the same way as the general APIs are.
 
 	- In the namespace of [Tencent Service Framework](https://console.cloud.tencent.com/tsf/namespace), the `X-NameSpace-Code` path parameter is the code value of the namespace selected for the backend configuration.
-  ![](https://main.qcloudimg.com/raw/bb9874eb47ad90d767ade31afc73ee58.png)
+
 	- In the service management of [Tencent Service Framework](https://console.cloud.tencent.com/tsf/service), the `X-MicroService-Name` path parameter is the microservice name of the cluster selected for the backend configuration.
-  ![](https://main.qcloudimg.com/raw/395cc8be96f21032f0c7f675a0b69ca7.png)
 
 7. Click **Next** and configure the backend.
 
@@ -42,7 +41,7 @@ You have [created a service](https://intl.cloud.tencent.com/document/product/628
 1. Select the cluster and namespace of the microservices to be interconnected with.
 2. Select the microservices. The API publisher can integrate multiple microservices in 1 API.
    Please make sure that the added microservices, including those deployed on CVMs and containers, can be accessed by API Gateway (over the public network and NodePort).
-   ![](https://main.qcloudimg.com/raw/958344a6d8148ce39c9dd0d84843faf4.png)
+   ![](https://main.qcloudimg.com/raw/d9197a8a06ac8156f09e4dfb6aa1fe12.png)
 
 	> ?Currently, API Gateway only supports forwarding requests to service instances of the same deployment type (virtual machine or container) in TSF. If there are microservice instances deployed on both virtual machines and containers under a service, API Gateway cannot be used as the request entry.
 
