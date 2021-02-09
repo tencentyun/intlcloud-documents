@@ -15,7 +15,6 @@ The actual BWP charges depend on the monthly peak. You can check the billable mo
 2. At the top left of the **Bandwidth Package** page, choose the region you want to check the bandwidth.
 3. Click the ID/Name of the target instance in the list.
 4. View the current billable bandwidth (after peak clipping) on the instance details page.
- ![](https://main.qcloudimg.com/raw/3e0cd0fea46067aece65ed3e9f8a6cb6.png)
 
 ## Documentation
 - [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255)
