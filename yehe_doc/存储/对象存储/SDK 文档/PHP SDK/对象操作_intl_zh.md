@@ -1033,7 +1033,6 @@ Guzzle\Service\Resource\Model Object
 | Initiated    | String | 分块初始化时间                     | Upload  |
 
 
-
 ### 初始化分块上传
 
 #### 功能说明
@@ -1106,7 +1105,6 @@ Guzzle\Service\Resource\Model Object
 | Bucket   | String | 存储桶名称，格式：BucketName-APPID | 无     |
 | Key      | String | 对象键                             | 无     |
 | UploadId | String | 对象分块上传的 ID                   | 无     |
-
 
 
 
