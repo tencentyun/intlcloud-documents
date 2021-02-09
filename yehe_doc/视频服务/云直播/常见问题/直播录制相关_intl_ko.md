@@ -19,9 +19,9 @@
 <span id="que4"></span>
 ### 라이브 방송 녹화 후, 녹화 파일은 어떻게 받을 수 있나요?
 녹화 파일 생성 후 자동으로 VOD 시스템에 저장되며 클라이언트가 VOD 서비스를 활성화해야만 저장됩니다. 다음과 같이 녹화 파일을 받을 수 있습니다.
-- [VOD 콘솔](https://intl.cloud.tencent.com/document/product/267/31563)
-- [녹화 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/31563)
-- [VOD API 조회](https://intl.cloud.tencent.com/document/product/267/31563)
+- [VOD 콘솔](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
+- [녹화 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
+- [VOD API 조회](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
 
 <span id="que5"></span>
 ### 라이브 방송 비디오를 마이그레이션할 수 있나요?
@@ -53,7 +53,7 @@
 1. 콘솔의 녹화 설정 정보를 조회하여 녹화 파일 유형이 1개 포맷만 선택되어 있는지 확인합니다.
    -콘솔이 **신규 버전 콘솔**인 경우, [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 방문하여 푸시 스트리밍 도메인 오른쪽의 [Manage]를 클릭하고 [Configure Template]의 [Recording Configuration]에서 템플릿 관련 "녹화 포맷" 정보를 확인하십시오.
   
-2. [녹화 작업 생성](https://intl.cloud.tencent.com/document/product/267/30847)과 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)은 2가지의 녹화 요청 방식입니다. 실제 사용 시 필요에 따라 1가지만 선택하면 됩니다. 동일한 라이브 방송 스트리밍에서 녹화 템플릿을 설정한 동시에 녹화 작업을 생성한 경우 중복 녹화될 수 있습니다. 콘솔에서 녹화 작업을 시작하고 동시에 API 3.0의 [CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/30847) 인터페이스 또는 API 2.0의 Live_Tape_Start 인터페이스를 호출하여 녹화 작업을 활성화했는지 확인하십시오.
+2. [녹화 작업 생성](https://intl.cloud.tencent.com/document/product/267/30847)과 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)은 2가지의 녹화 요청 방식입니다. 실제 사용 시 필요에 따라 1가지만 선택하면 됩니다. 동일한 라이브 방송 스트리밍에서 녹화 템플릿을 설정한 동시에 녹화 작업을 생성한 경우 중복 녹화될 수 있습니다. 콘솔에서 녹화 작업을 시작하고 동시에 API 3.0의 [CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/30847) 인터페이스 또는 API 2.0의 [Live_Tape_Start](https://intl.cloud.tencent.com/document/product/267/9567)  인터페이스를 호출하여 녹화 작업을 활성화했는지 확인하십시오.
 
 >!위의 방법으로 문제를 해결할 수 없을 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 해결하십시오. 전문가가 상담해 드립니다.
 
