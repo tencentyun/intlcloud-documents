@@ -62,14 +62,14 @@ This document describes the fields in callback message notifications sent by Ten
 
 #### AbductionRisk
 
-| **Parameter** | **Required ** | **Data Type** | **Description** |
+| **Parameter** | **Required** | **Data Type** | **Description** |
 | :------- | :----------- | :----------- | :----------------------------------------------------------- |
 | level    | Yes         | Number       | Risk level ranges from 0 to 4. The larger the number, the greater the risk. 3 and 4 indicate maliciousness and we recommend you deal with such images |
 | type     | Yes         | Number       | Risk type. 20002: porn                                        |
 
 #### faceDetail
 
-| **Parameter** | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required** | **Type** | **Description** |
 | :----------- | :----------- | :------- | :---------------------------------------- |
 | gender       | No         | Number   | Gender [0 (female)–100 (male)]              |
 | age          | No         | Number   | Age                                      |
@@ -82,14 +82,14 @@ This document describes the fields in callback message notifications sent by Ten
 
 #### gameDetails
 
-| **Parameter** | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required** | **Type** | **Description** |
 | :------------ | :----------- | :------- | :----------- |
 | battlegrounds | No         | Object   | PUBG information |
 | [gameList](#gamelist)      | No         | Array    | Game list     |
 
 #### gameList
 
-| **Parameter** | **Required ** | **Type** | **Description** |
+| **Parameter** | **Required** | **Type** | **Description** |
 | :----------- | :----------- | :------- | :------- |
 | name         | No         | String   | Game name |
 | confidence   | No         | Number   | Probability     |
