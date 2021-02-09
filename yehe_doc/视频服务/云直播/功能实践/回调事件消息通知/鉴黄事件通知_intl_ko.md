@@ -29,7 +29,7 @@
 <td>이벤트 공지 보안 서명 sign = MD5(key + t)<br>설명: Tencent Cloud는 암호화 <a href="#key">key</a>와 t의 문자열을 조합하여 MD5 계산으로 sign 값을 얻고 이를 공지 정보에 포함합니다. 백그라운드 서버가 공지 정보를 수신하면 똑같은 알고리즘으로 sign의 정확도 여부를 확인하고 그 정보가 실제로 Tencent Cloud 백그라운드에서 온 것인지 확인할 수 있습니다.</td>
 </tr></table>
 
->? <span id="key"></span>key는 [기능 템플릿]>[콜백 설정](https://console.cloud.tencent.com/live/config/callback)의 콜백 키이며 주로 인증하는 데 쓰입니다. 데이터 정보 보안을 위해 작성을 권장합니다.
+>? <span id="key"></span>key는 [이벤트 센터]>[LVB 콜백](https://console.cloud.tencent.com/live/config/callback)의 콜백 키이며 주로 인증하는 데 쓰입니다. 데이터 정보 보안을 위해 작성을 권장합니다.
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### 콜백 메시지 매개변수
