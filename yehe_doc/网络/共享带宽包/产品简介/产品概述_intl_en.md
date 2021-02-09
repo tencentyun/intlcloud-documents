@@ -1,8 +1,10 @@
-## What is Tencent Cloud Bandwidth Package?
 Tencent Cloud Bandwidth Package (BWP) is a multi-IP aggregated billing method that significantly reduces Internet access costs. When public network instances have traffic peaks at different times, you can use BWP for the aggregated bandwidth billing to greatly save your public network fees.
 BWP supports [monthly top 5 billing](https://intl.cloud.tencent.com/document/product/684/15255) and [monthly 95th percentile billing](https://intl.cloud.tencent.com/document/product/684/15255) for different use cases.
+>?BWP is currently in beta. To try it out, please submit an application to be added to the beta list.
+>
 
 ## Product Types
+BWP consists of IP bandwidth package and device bandwidth package according to the billing object.
 - **IP bandwidth package**: applies to accounts whose public network fess are billed on public IP or CLB, which mean that the public network capability (bandwidth cap) and billing method (bill-by-traffic or bill-by-bandwidth) are specified upon creation of the IP or CLB instance.
 - **Device bandwidth package**: applies to accounts whose public network fees are billed on CVMs, which mean that the public network capability (bandwidth cap) and billing method (bill-by-traffic or bill-by-bandwidth) are specified upon creation of the CVM instance. The public IP address and CLB acts only as public network egress.
 
@@ -15,7 +17,7 @@ Tencent Cloud offers different bandwidth packages for different accounts:
 <td rowspan="2">Bill-by-CVM account</td><td>Device bandwidth package</td>
 </tr>
 <tr>
-<td>IP bandwidth package (only available to elastic IPv6 public IP addresses, IPv6 CLB instances and static single-line EIPs)</td>
+<td>IP bandwidth package (only available to elastic IPv6 addresses, IPv6 CLB instances and static single-line EIPs)</td>
 </tr>
 <tr>
 <td>Bill-by-IP account</td><td>IP bandwidth package</td>
@@ -27,9 +29,5 @@ To learn about your account type and available bandwidth package type, see [Chec
 >
 
 ## Supported Resources 
-
-### Device bandwidth package
-Device bandwidth packages support CVMs and CLBs.
-
-### IP bandwidth packages
-IP bandwidth packages support public IPs, EIPs (bound with CVM or NAT Gateway), elastic IPv6 public IP addresses, and CLBs.
+- Device bandwidth packages support CVMs and CLBs.
+- IP bandwidth packages support public IPs, EIPs (bound with CVM or NAT Gateway), elastic IPv6 addresses, and CLBs.
