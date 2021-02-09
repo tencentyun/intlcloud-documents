@@ -389,8 +389,8 @@ LVB는 라이브 스트림에 음란물 감지 기능을 제공하며, 음란물
 |＞1000|0.2294 USD|1000건 미만 1000건으로 계산 |
 
 >? 
-- 중국 대륙이 아닌 지역에서 COS 캡처 저장이나 음란물 감지 기능을 켜면 별도의 [COS](https://intl.cloud.tencent.com/document/product/436/6222) 외부 네트워크 다운스트림 트래픽 비용이 발생할 수 있습니다. 자세한 COS 과금 항목별 요금은 [제품 가격](https://buy.cloud.tencent.com/price/cos/overview)을 참조하세요.
-- 현재 LVB 화면 캡처 스토리지의 지원 지역은 [서비스 지역1](https://intl.cloud.tencent.com/document/product/267/38285#que1)를 참조하세요.
+>- 중국 대륙이 아닌 지역에서 COS 캡처 저장이나 음란물 감지 기능을 켜면 별도의 [COS](https://intl.cloud.tencent.com/document/product/436/6222) 외부 네트워크 다운스트림 트래픽 비용이 발생할 수 있습니다. 자세한 COS 과금 항목별 요금은 [제품 가격](https://buy.cloud.tencent.com/price/cos/overview)을 참조하세요.
+>- 현재 LVB 화면 캡처 스토리지의 지원 지역은 [서비스 지역1](https://intl.cloud.tencent.com/document/product/267/38285#que1)를 참조하세요.
 
 **결제 설명:**
 
