@@ -1,7 +1,7 @@
 若系统自动分配的公网地址不能满足业务需求时，您可以在控制台申请互联网通道公网 IP。本文将介绍如何在控制台申请及管理公网 IP。
 
 ## 公网 IP 生命周期
-![](https://main.qcloudimg.com/raw/83a3225ce3057cca1a518ee69d2598d0.svg)
+
 1. [申请公网 IP](#creat)：在控制台申请公网 IP 后，系统将自动分配 IP 地址，公网 IP 状态流转为 “使用中”。
 2. 状态为“使用中”的公网 IP 可以进行网段拆分和停用操作。
    - [网段拆分](#wdcf)：适用于需要细化网段的场景。操作后，公网 IP 状态仍为“使用中”。
@@ -20,7 +20,7 @@
 1. 在左侧导航栏选择【互联网通道】>【通联网通道公网 IP】。
 2. 在“互联网通道公网 IP”页面上方选择地域，然后单击【申请】。
 3. 在“申请 IP 地址”对话框中配置以下信息。
-   ![](https://main.qcloudimg.com/raw/431f5731d2917645d61879c15769a60b.png)
+
 <table>
 <tr>
 <th width="10%">字段</th>
@@ -51,11 +51,10 @@
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏选择【互联网通道】> 【互联网通道公网 IP】。
 2. 在“互联网专用通道公网 IP”页面上方选择地域。
 3. 在互联网通道公网 IP 列表中，单击目标公网 IP 右侧操作列单击【网段拆分】。
-    ![](https://main.qcloudimg.com/raw/5ae41523d350a805f5449aef8795fe88.png)
+
 4. 在网段拆分页面选择拆分数量，并勾选【确定网段拆分后网段无法合并】，单击【拆分】。
     >!请确保发布网段已变更为拆分后 CIDR，否则可能会导致网络中断，请谨慎操作。
     >
-    ![](https://main.qcloudimg.com/raw/e5f514582a9d0b39f637ff063fc72848.png)
 
 <span id ="tygw"></span>
 ## 停用公网 IP
@@ -63,9 +62,8 @@
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏选择【互联网通道】> 【互联网通道公网 IP】。
 2. 在“互联网专用通道公网 IP”页面上方选择地域。
 1. 在互联网通道公网 IP 列表中，单击目标公网 IP 右侧操作列单击【停用】。
-    ![](https://main.qcloudimg.com/raw/710daa5ff277c5e120ede28d8faee883.png)
+
 2. 在“停用 IP 地址”对话框，单击勾选【确定停用以上 IP 地址】，然后单击【停用】，即可停用该网段中的4个 IP 地址。
-    ![](https://main.qcloudimg.com/raw/1c4bd7161b91481720a7c4c41adfbf58.png)
 		
 
 <span id ="qygw"></span>
@@ -74,9 +72,8 @@
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏选择【互联网通道】> 【互联网通道公网 IP】。
 2. 在“互联网专用通道公网 IP”页面上方选择地域。
 3. 在互联网通道公网 IP 列表中，单击目标公网 IP 右侧操作列单击【启用】。
-    ![](https://main.qcloudimg.com/raw/67aa1d150c47937f8d4a179367e609a1.png)
+
 4. 在“启用 IP 地址”对话框，单击勾选【确定启用以上 IP 地址】，然后单击【启用】，即可启用该网段中的4个 IP 地址。
-    ![](https://main.qcloudimg.com/raw/88ed2195abbab20210d1e93339dfa3b4.png)
 
 <span id ="thgw"></span>
 ## 退还公网 IP
@@ -84,9 +81,8 @@
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏选择【互联网通道】> 【互联网通道公网 IP】。
 2. 在“互联网专用通道公网 IP”页面上方选择地域。
 1. 在互联网通道公网 IP 列表中，单击目标公网 IP 右侧操作列单击【退还】。
-   ![](https://main.qcloudimg.com/raw/88be31ec0f2ad1f9a2315a3876c18243.png)
+
 2. 在“退还 IP 地址”对话框，单击勾选【确定退还以上 IP 地址】，然后单击【退还】，即可退还该网段中的4个 IP 地址。
- ![](https://main.qcloudimg.com/raw/d374bb5520636b6d55d4561db0c4f064.png)
 
 <span id ="refound"></span>
 ## 找回公网 IP
@@ -94,6 +90,6 @@
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/dc)，并在左侧导航栏选择【互联网通道】> 【互联网通道公网 IP】。
 2. 在“互联网专用通道公网 IP”页面上方选择地域。
 1. 在互联网通道公网 IP 列表中，单击目标公网 IP 右侧操作列单击【找回】。
-    ![](https://main.qcloudimg.com/raw/a4d3ece14b57cb9b92ff03997e6133eb.png)
+
 2. 在“找回 IP 地址”对话框，单击勾选【确定找回以上 IP 地址】，然后单击【找回】。
-    ![](https://main.qcloudimg.com/raw/42f73c2e94469ac1b0f99e05157f782e.png)
+
