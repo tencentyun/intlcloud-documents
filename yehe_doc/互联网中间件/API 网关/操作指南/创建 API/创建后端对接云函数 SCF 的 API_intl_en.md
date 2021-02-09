@@ -33,7 +33,7 @@ The frontend configuration of an API refers to the relevant configurations provi
 #### Configuring frontend parameters
 
 **Input parameters**: the input parameters include parameters from the header, query, and path, where a path parameter corresponds to a dynamic parameter defined in the URL path. For any parameter, the parameter name, parameter type, and parameter data type must be specified, and whether it is required, its default value, sample data, and description can be specified optionally. With these configuration items, API Gateway helps you with documentation and preliminary verification of input parameters.
-![](https://main.qcloudimg.com/raw/0d06c20c35e518d687e5dc46f9db8a43.png)
+![](https://main.qcloudimg.com/raw/9788b49935d2bba47a72e491af1a2a5b.png)
 
 > ?
 > - If the request protocol is HTTPS, a request must carry SNI. To ensure request security, API Gateway will deny requests without SNI.
@@ -44,7 +44,7 @@ The frontend configuration of an API refers to the relevant configurations provi
 The backend configuration of an API refers to the configuration that actually provides the service. API Gateway converts a frontend request based on the backend configuration and forwards the call to the actual service.
 If your business is implemented in SCF and you want to open up your service capabilities through API Gateway, you can select SCF as the backend connection type.
 
-![](https://main.qcloudimg.com/raw/1db8feaa662dfdc88211bd01bb5f7ba7.png)
+![](https://main.qcloudimg.com/raw/347da1dcf7fc39be1c56e4a56c65f45c.png)
 
 When connecting to SCF in the backend, you need to enter the following parameters:
 
