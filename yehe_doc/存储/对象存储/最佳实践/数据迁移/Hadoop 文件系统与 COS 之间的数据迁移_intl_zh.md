@@ -13,6 +13,13 @@ hadoop fs -ls cosn://examplebucket-1250000000/
 如果能够正确地列出 COS Bucket 中的文件列表，则表示 Hadoop-COS 安装和配置正确，可以进行以下实践步骤。
 2. COS 的访问账户必须要具备读写 COS 存储桶中目标路径的权限。
 
+>!
+>- 您可以按需授予子账号读写 COS 存储桶内资源的权限，建议按照 [最小权限原则](https://intl.cloud.tencent.com/document/product/436/32972) 和 [子用户授权指南](https://intl.cloud.tencent.com/document/product/598/32650) 进行授权，以下几种是常见预设策略：
+>  - [DataFullControl](https://console.cloud.tencent.com/cam/policy/detail/5294998&QcloudCOSDataFullControl&2)：数据全读写权限，包含读、写、列出文件列表以及删除操作，建议谨慎授予。
+>  - [QcloudCOSDataReadOnly](https://console.cloud.tencent.com/cam/policy/detail/5295051&QcloudCOSDataReadOnly&2)：数据只读权限。
+>  - [QcloudCOSDataWriteOnly](https://console.cloud.tencent.com/cam/policy/detail/5295044&QcloudCOSDataWriteOnly&2)：数据只写权限。
+>- 如果需要使用自定义监控能力，需要授权云监控指标上报和读取接口操作权限，请谨慎授予 [QcloudMonitorFullAccess](https://console.cloud.tencent.com/cam/policy/detail/276210&QcloudMonitorFullAccess&2) 。
+
 ## 实践步骤
 
 ### 将 HDFS 中的数据复制到 COS 的存储桶中
@@ -44,7 +51,7 @@ hadoop distcp cosn://hdfs-test-1250000000/test hdfs://10.0.0.3:9000/
 
 ### 指定配置 Distcp 命令行参数进行 HDFS 和 COS 之间的数据迁移
 
->该命令行配置支持双向操作，可支持 HDFS 数据迁移到 COS，也可以将 COS 数据迁移到 HDFS。
+>?该命令行配置支持双向操作，可支持 HDFS 数据迁移到 COS，也可以将 COS 数据迁移到 HDFS。
 
 用户可直接配置以下命令：
 ```plaintext
@@ -59,7 +66,7 @@ hadoop distcp -Dfs.cosn.impl=org.apache.hadoop.fs.CosFileSystem -Dfs.cosn.bucket
 - Dfs.cosn.userinfo.secretKey：填写存储桶拥有者账号下的 secretKey，可前往 [云 API 密钥](https://console.cloud.tencent.com/capi) 中获取。
 - libjars：指定 Hadoop-COS jar 包位置。Hadoop-COS jar 包可前往 [Github 仓库](https://github.com/tencentyun/hadoop-cos) 中的 dep 目录下进行下载。
 
->其他参数请参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884) 文档。
+>?其他参数请参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884) 文档。
 
 
 ## Hadoop distcp 的扩展参数
