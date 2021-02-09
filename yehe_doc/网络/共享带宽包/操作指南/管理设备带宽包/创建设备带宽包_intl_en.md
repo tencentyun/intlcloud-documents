@@ -12,7 +12,7 @@ This document describes how to create a device bandwidth package under your bill
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Bandwidth Package** on the left sidebar.
 2. Select a region, and click **+New** in the upper-left corner.
 3. In the pop-up window, enter the bandwidth package name, select a billing mode, and then click **Create**.
-![](https://main.qcloudimg.com/raw/e66c64800e048d9d42238d79fb24199f.png)
+
 4. (Optional) After the bandwidth package is created, we recommend that you set a bandwidth cap for the following resources:
  - Set a bandwidth cap for CVM instances as instructed in [Adjusting Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517).
  - Set a bandwidth cap for CLB instances as instructed in [Adjusting Public Network Configuration](https://intl.cloud.tencent.com/document/product/214/39528).
