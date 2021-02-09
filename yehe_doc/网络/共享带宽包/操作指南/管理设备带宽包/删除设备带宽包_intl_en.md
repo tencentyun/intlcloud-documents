@@ -7,6 +7,6 @@ After the device bandwidth package is deleted, all CVMs in this region will swit
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **Bandwidth Package** on the left sidebar.
 3. Select the region, locate the bandwidth package you want to delete, and click **Delete** under its **Operation** column.
-![](https://main.qcloudimg.com/raw/d066d0473afd8f3d2a158081abc07bb7.png)
+
 4. Click **Confirm** in the pop-up dialog box to confirm the deletion.
-![](https://main.qcloudimg.com/raw/6fbe7d7384f2e4ac099a74d729a6341c.png)
+
