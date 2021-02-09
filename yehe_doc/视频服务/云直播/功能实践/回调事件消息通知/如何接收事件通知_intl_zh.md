@@ -9,7 +9,9 @@
 **流程说明：**
 1. 主播在控制台或直接调用云 API 配置事件消息通知 URL 以及录制、截图等相关功能。
 2. 主播进行直播推断流。
-3. 当直播服务内部有事件发生时，消息将会经由事件消息通知服务统一回调给观众。
+3. 当直播服务内部有事件发生时，消息将会经由事件消息通知服务统一回调给客户后台。
+
+
 <span id="protocol"></span>
 ## 事件消息通知协议
 
@@ -33,9 +35,9 @@
 
 <span id="c_callback"></span>
 ### 云直播控制台
-1. 进入云直播控制台的【功能模板】>【[回调配置](https://console.cloud.tencent.com/live/config/callback)】，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074)。
-![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
-2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的推流域名，单击【管理】>【模板配置】，将此域名与转码模板进行关联。具体操作请参见 [回调配置](https://cloud.tencent.com/document/product/267/35254)。
+1. 进入云直播控制台的【事件中心】>【[直播回调](https://console.cloud.tencent.com/live/config/callback)】，创建回调模板，具体操作可参见 [创建回调模板](https://intl.cloud.tencent.com/document/product/267/31074)。
+2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的推流域名，单击【管理】>【模板配置】，将此域名与回调模板进行关联。具体操作请参见 [回调配置](https://intl.cloud.tencent.com/document/product/267/31065)。
+
 <span id="api_callback"></span>
 ### 服务端 API
 1. 调用 [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) 创建回调模板接口，设置您需要的回调参数信息。
@@ -43,11 +45,11 @@
 
 ## 回调信息参数说明
 回调模板关联域名成功后。当直播过程中触发模板事件，腾讯云将主动发送含回调信息的 JSON 包到客户服务器，回调信息具体参数说明如下：
-- [推流事件消息通知](https://intl.cloud.tencent.com/zh/document/product/267/38081)
-- [断流事件消息通知](https://intl.cloud.tencent.com/zh/document/product/267/38081)
-- [录制事件消息通知](https://intl.cloud.tencent.com/zh/document/product/267/38082)
-- [截图事件消息通知](https://intl.cloud.tencent.com/zh/document/product/267/38083)
-- [鉴黄事件消息通知](https://intl.cloud.tencent.com/zh/document/product/267/38084)
+- [推流事件消息通知](https://intl.cloud.tencent.com/document/product/267/38081)
+- [断流事件消息通知](https://intl.cloud.tencent.com/document/product/267/38081)
+- [录制事件消息通知](https://intl.cloud.tencent.com/document/product/267/38082)
+- [截图事件消息通知](https://intl.cloud.tencent.com/document/product/267/38083)
+- [鉴黄事件消息通知](https://intl.cloud.tencent.com/document/product/267/38084)
 
 
 

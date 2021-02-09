@@ -107,43 +107,43 @@
     <tr>
         <td>音频编码方式</td>
         <td>支持以下编码规格：<ul style="margin:0px">
-						<li>AAC-LC</li>
-						<li>AAC-HE</li>
-						<li>AAC-HEV2</li>
-			</ul></td>
+                        <li>AAC-LC</li>
+                        <li>AAC-HE</li>
+                        <li>AAC-HEV2</li>
+            </ul></td>
     </tr>
     <tr>
         <td>音频采样率</td>
         <td>支持以下常用采样率，常用的采样率为48000和44100。
-				<ul style="margin:0px">
-					<li>96000</li>
-					<li>64000</li>
-					<li>48000</li>
-					<li>44100</li>
-					<li>32000</li>
-					<li>24000</li>
-					<li>16000</li>
-					<li>12000</li>
-					<li>8000</li>
-				</ul>
-				</td>
+                <ul style="margin:0px">
+                    <li>96000</li>
+                    <li>64000</li>
+                    <li>48000</li>
+                    <li>44100</li>
+                    <li>32000</li>
+                    <li>24000</li>
+                    <li>16000</li>
+                    <li>12000</li>
+                    <li>8000</li>
+                </ul>
+                </td>
     </tr>
     <tr>
         <td>音频编码码率</td>
         <td>音频支持码率范围：20kbps - 192kbps，常用音频码率如下：
-				<ul style="margin:0px">
-					<li>48kbps</li>
-					<li>64kbps</li>
-					<li>128kbps</li>
-					</ul></td>
+                <ul style="margin:0px">
+                    <li>48kbps</li>
+                    <li>64kbps</li>
+                    <li>128kbps</li>
+                    </ul></td>
     </tr>
     <tr>
         <td>音频声道数</td>
         <td>音频支持以下声道数：
-				<ul style="margin:0px">
-					<li>单声道</li>
-					<li>双声道</li>
-					</ul></td>
+                <ul style="margin:0px">
+                    <li>单声道</li>
+                    <li>双声道</li>
+                    </ul></td>
 </tr></table>
 
 
@@ -169,10 +169,10 @@
 
 随着当今各视频平台用户对视频源清晰度观看体验要求越来越高，当前直播行业1080P、码率3Mbps - 10Mbps已逐渐成为主流配置，所以带宽成本已经占据了视频平台成本比例中很大的一部分。而降低视频码率能够十分有效的减少带宽成本。
 **示例：**
-一场标准直播码率为3Mbps，直播时间4小时，观看人数200人，编码方式使用 H.264，分辨率1080P，不使用极速高清转码时，带宽峰值为600Mbps，产生的带宽成本为600 x 0.2118 = 127.08美元。
+一场标准直播码率为3Mbps，直播时间4小时，观看人数200人，编码方式使用 H.264，分辨率1080P，不使用极速高清转码时，使用 [直播价格计算器](https://buy.cloud.tencent.com/price/lvb/calculator) 计算产生的带宽成本为127.08。
 
 - 使用极速高清转码降低码率之后，产生的带宽成本大约为：127.08 ×（100% - 30%）= 88.956美元。
-- 使用极速高清转码产生的费用：0.2511 × 240 = 60.264元（刊例价格，不计算任何折扣）。
+- 使用极速高清转码产生的费用：0.0443 × 240 = 10.632美元（刊例价格，不计算任何折扣）。
 - 成本总计：88.956 + 10.632 = 99.588美元。
 
 因此极速高清转码在为用户提供更优质的观看体验的同时，十分有效的降低了平台的带宽成本。
@@ -215,11 +215,11 @@ Height_pixel = 192 * 240 / 320 = 144
 添加水印可以通过两种方式来实现，一种是通过 [云直播控制台](#W_control) 来实现，另一种是通过 [服务端 API](#W_api) 来实现。根据您的业务需求选择对应的使用方式。
 
 <span id="W_control"></span>
-
 #### 直播控制台
-1. 进入【功能模板】>【[水印配置](https://console.cloud.tencent.com/live/config/watermark)】添加水印配置模板，设置水印相关参数，并生成一个对应的水印模板 ID。具体操作请参见 [水印模板配置](https://intl.cloud.tencent.com/document/product/267/31073)。
+1. 进入【功能配置】>【[直播水印](https://console.cloud.tencent.com/live/config/watermark)】添加水印配置模板，设置水印相关参数，并生成一个对应的水印模板 ID。具体操作请参见 [直播水印](https://intl.cloud.tencent.com/document/product/267/31073)。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)对您需操作的推流域名，单击【管理】>【模板配置】，将此域名与水印模板进行关联。具体操作请参见 [水印配置](https://intl.cloud.tencent.com/document/product/267/31064)。
-<span id="W_api"></span>
+
+<span id="W_api></span>
 #### API 调用
 1 调用  [AddLiveWatermark](https://intl.cloud.tencent.com/document/product/267/30826) 添加水印接口，设置水印的名称和参数信息。
 2 调用 [CreateLiveWatermarkRule](https://intl.cloud.tencent.com/document/product/267/30825) 创建水印规则，设置参数推流域名 DomainName 和 WatermarkId（第1步返回），AppName 与推流和播放地址中的 AppName 保持一致，默认为 `live`。
@@ -233,19 +233,18 @@ Height_pixel = 192 * 240 / 320 = 144
 ### 使用方法概述
 
 设置转码参数可以通过两种方式来实现，一种是通过 [云直播控制台](#T_control) 来实现，另一种是通过 [服务端 API](#T_api) 来实现。不管使用哪一种方式，主要涉及水印模板、转码模板、转码规则的相关操作。
-<span id="T_control"></span>
+
+[](id:T_control)
 #### 直播控制台
-1. 进入【功能模板】>【[转码配置](https://console.cloud.tencent.com/live/config/transcode)】添加转码配置模板，支持添加 [普通转码](https://intl.cloud.tencent.com/document/product/267/31073)、[极速高清转码](https://intl.cloud.tencent.com/document/product/267/31073) 模板。
+1. 进入【功能配置】>【[直播转码](https://console.cloud.tencent.com/live/config/transcode)】添加转码配置模板，支持添加 [标准转码](https://intl.cloud.tencent.com/document/product/267/31071)、[极速高清转码](https://intl.cloud.tencent.com/document/product/267/31071) 和  [纯音频转码](https://intl.cloud.tencent.com/document/product/267/31071) 模板。
 2. 根据您的需求创建对应的转码类型，设置转码相关参数。也可以使用我们系统默认的参数，并生成一个对应的转码模板 ID。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)找到您需操作的拉流域名，单击【管理】>【模板配置】，将此域名与转码模板进行关联。具体操作请参见 [转码配置](https://intl.cloud.tencent.com/document/product/267/31062)。
 
-<span id="T_api"></span>
+<span id="T_api></span>
 #### API 调用
 
 1. 调用 [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790) 创建转码模板接口，设置您需要的转码类型参数信息。
-
 2. 调用 [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) 创建转码规则，设置参数拉流域名 DomainName 和 TemplateId（第1步返回）。在 AppName 及 StreamName 填写空字符串，表示通配此域名下所有拉流的转码。您还可以将转码模板与不同流名称进行关联，以此实现部分直播流开启转码的效果。
-
 3. 每一个转码模板都有对应一个**唯一**的**转码模板名称**，转码模板名称作为播放转码流的唯一标识，把转码模板名称添加到播放拉流地址中流 ID 名称的后面，就可以拉取到对应各种转码模板的转码流。
 
 >! 转码规则的操作，主要用来控制某个域名或者某条流启用某个转码模板，只有创建了转码规则，对应的播放域名拉取相应的转码模板才能生效。若没有创建转码规则，直接使用转码模板名称拼接的拉流地址是无效的。
@@ -266,9 +265,9 @@ Height_pixel = 192 * 240 / 320 = 144
 >! 播放带水印的流，需要对应的推流域名绑定创建的水印模板。
 
 ###  使用接口
-1. **通过控制台管理转码模板**：
+- **通过控制台管理转码模板**：
    控制台支持查询、添加、修改和删除转码模板。
-2. **通过服务端 API 管理转码模板**：
+- **通过服务端 API 管理转码模板**：
 <table>
 <tr><th>功能模块</th><th>API 接口</th>
 </tr><tr>
@@ -290,13 +289,13 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">删除转码规则</a></td>
 </tr><tr>
 <td rowspan=4>直播水印</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">创建水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30154">创建水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">修改水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30150">修改水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">删除水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30153">删除水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">查询水印模板详情列表</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30152">查询水印模板详情列表</a></td>
 </tr></table>
 
 

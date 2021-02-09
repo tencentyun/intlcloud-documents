@@ -45,7 +45,7 @@
 您在开通点播服务后，如果需要对特定推流域名下直播流进行录制，有两种实现方法：
 
 ### 直播控制台
-1. 进入【功能模板】>[【录制配置】](https://console.cloud.tencent.com/live/config/record)添加录制配置模板。
+1. 进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)添加录制配置模板。
 2. 在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)添加推流域名，单击【管理】，将此域名与录制模板进行关联。具体操作请参见 [录制配置](https://intl.cloud.tencent.com/document/product/267/34224)。
 
 ### API 调用
@@ -76,7 +76,7 @@
    &Description=test
    &<公共请求参数>
 ```
-2. 在控制台，或者通过 API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) 设置 DomainName 和 StreamName 参数，将上述录制模板与指定推流域名、流名称进行关联。
+2. 通过 [云直播控制台](https://intl.cloud.tencent.com/document/product/267/34223#conect) 或云 API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846) 设置 DomainName 和 StreamName 参数，将上述录制模板与指定推流域名、流名称进行关联。
 
 > ! 上述方案仅针对个别推流不需要录制的情况。如果您需要操作直播流数较多，我们还是建议您使用另外一个推流域名进行独立管理，主要考虑到：
 > - 无论录制模板还是录制规则，最大数目都存在限制（50个）。
@@ -93,9 +93,7 @@
 ### 录制示例
 - 最简单的情况，只需填写指定的 StreamName、DomainName、AppName 和 EndTime 参数。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 FLV，视频录制，分片间隔30分钟，永久存储。
-
 **输入示例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -106,11 +104,10 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &TemplateId=0
 &<公共请求参数>
 ```
-
 - 您还可以指定具体录制格式、录制类型以及存储参数等。
 例如：创建了2020年08月10日早上08点到10点的录制任务，格式为 MP4，分片间隔1小时，永久存储。
 	1. 调用 [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) ，先创建录制模板。
-<b>输入示例：</b>
+**输入示例：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -120,7 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<公共请求参数>
 ```
-<b>输出示例：</b>
+**输出示例：**
 ```
 {
   "Response": {
@@ -129,10 +126,8 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
   }
 }
 ```
-	2.调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
-
+	2. 调用 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)，创建录制任务。
 **输入示例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
@@ -192,11 +187,11 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 为了针对推流端网络抖动等原因出现的闪断推流导致的生成多个录制文件不便于一场直播的回放观看问题，录制服务提供了以自动拼接录制的方式将短时间中断的多次推流录制成一个文件的能力。
 
-其原理是针对 HLS 录制格式使用 HLS 的 **#EXT-X-DISCONTINUITY** 标签来分割多次推流的音视频数据，此标签的作用是：标识前后的音视频数据的时间戳、视频编码、音频编码采样等信息可能不同，需要播放器刷新解码器以实现无缝的正常播放，因此使用此功能时，需要播放器支持 **#EXT-X-DISCONTINUITY** 标签，iOS 自带播放器（或者 Safari 直接播放）、Android 的 ExoPlayer、Web 端的 hls.js 播放器都支持此标签，VLC 等播放器不支持此标签。
+其原理是针对 HLS 录制格式使用 HLS 的 **`#EXT-X-DISCONTINUITY`** 标签来分割多次推流的音视频数据，此标签的作用是：标识前后的音视频数据的时间戳、视频编码、音频编码采样等信息可能不同，需要播放器刷新解码器以实现无缝的正常播放，因此使用此功能时，需要播放器支持 **#`EXT-X-DISCONTINUITY`** 标签，iOS 自带播放器（或者 Safari 直接播放）、Android 的 ExoPlayer、Web 端的 hls.js 播放器都支持此标签，VLC 等播放器不支持此标签。
 
 使用此功能后，设置好推流中断自动拼接时间（最长可设置30分钟，即最长支持将中断30分钟的推流拼接成一个文件），在最后一次正常推流结束后，会自动拼接断流时间内的内容并生成 HLS 录制文件。
 
-自动拼接录制目前支持 HLS 格式，您可以在 [录制配置](https://intl.cloud.tencent.com/document/product/267/34223) 中设置续录超时时长。
+自动拼接录制目前支持 HLS 格式，您可以在 [直播录制](https://intl.cloud.tencent.com/document/product/267/34223) 中设置续录超时时长。
 
 > !
 > - 自动拼接不支持无音频数据的直播流。
@@ -214,14 +209,14 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 ### 录制事件通知
 
-通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调事件消息通知](https://intl.cloud.tencent.com/document/product/267/38079) 进行业务处理。
+通过控制台或者 API 调用设置录制回调地址，录制文件生成后会以消息方式通知到该回调地址。在收到消息后可根据录制 [回调事件消息通知](https://intl.cloud.tencent.com/document/product/267/38080) 进行业务处理。
 
 事件通知机制高效可靠且实时性好，我们推荐您使用回调方式获取录制文件。
 
-### 点播 API 查询
+### 云点播 API 查询
 
 具体使用请参见云点播 API  [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179) 接口筛选查询录制文件。
->! 当通过云直播 API [创建录制任务](https://intl.cloud.tencent.com/zh/document/product/267/37309) 时，录制回调不会返回用户推流 URL 所带 [stream_param](#message) 参数，其它录制方式会返回。
+>! 当通过云直播 API [创建录制任务](https://intl.cloud.tencent.com/document/product/267/37309) 时，录制回调不会返回用户推流 URL 所带 [stream_param](#message) 参数，其它录制方式会返回。
 
 
 ## 更新配置注意事项

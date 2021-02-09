@@ -5,6 +5,7 @@
 - 指定转码模板后，后台将生成对应码率的不同播放地址，方便用户选择调用。推流原始分辨率尽可能接近原比率以避免画面拉伸变形。
 - 第一次访问新的码率地址时，首位触发链接的访问用户会感到加载时间稍长，属正常现象。
 - 一个域名可关联多个转码模板，关联后，播放码率将会按照设置的对应转码模板进行转码。
+- 转码模板设置数量上限为**50个**。
 
 
 
@@ -12,7 +13,7 @@
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live)，并成功添加 [播放域名](https://intl.cloud.tencent.com/document/product/267/35970)。
 - 已 [创建转码模板](https://intl.cloud.tencent.com/document/product/267/31071)。
 
-
+<span id="conect"></span>
 ## 关联转码模板
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**播放域名**或右侧的【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【转码配置】标签右上角的【编辑】。
@@ -21,6 +22,7 @@
 
 ![](https://main.qcloudimg.com/raw/8ab50571f4260ba070cf3270f8487e30.png)
 
+<span id="descript"></span>
 ## 转码播放地址说明
 配置转码模板后，播放 URL 需增加转码模板名称，拼接方式为：**播放地址_转码模板名称**。若未拼接转码模板名称，则播放的为原始直播流内容。更多播放地址相关内容，请参见  [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
 

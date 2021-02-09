@@ -9,25 +9,31 @@
 - [增值服务费用](#appreciation)：使用直播转码、录制、截图、鉴黄等增值功能，此类功能默认关闭，使用才收费。
 - [拓展服务费用](#extensions)：结合腾讯云其他产品一起提供的增值功能，由其他云产品根据各自的计费规则分别收取相关费用。
 
-[](id:base)
+<span id="base"></span>
 
 ## 基础服务费用
 <table>
 <tr><th width="20%">计费项</th><th width="60%">计费说明</th><th>付费方式</th></tr>
 <tr>
-<td>云直播流量（默认）</td>
-<td>当计费方式为<b>日结流量计费</b>时，云直播产生的费用<strong>按流量消耗计费</strong>。</td>
+<td>云直播流量<br>（默认）</td>
+<td>
+<li/>云直播观看产生的下行流量消耗，按日结后付费计费。
+<li/>中国内地（大陆）、中国港澳台及海外加速计费标准各异。
+</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#bill-by-traffic">后付费-日结</a></td>
 </tr><tr>
 <td>云直播带宽峰值</td>
-<td>当计费方式为<b>日结带宽计费</b>时，云直播产生的费用<b>按带宽峰值计费</b>。</td>
+<td>
+<li/>云直播观看产生的下行带宽峰值，按日结后付费计费。
+<li/>中国内地（大陆）、中国港澳台及海外加速计费标准各异。
+</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#bill-by-bandwidth">后付费-日结</a></td>
 </tr></table>
 
 >! 若您需要重新选择计费方式，请参见 [计费变更](https://intl.cloud.tencent.com/document/product/267/30411)。  
 
 
-[](id:appreciation)
+<span id="appreciation"></span>
 
 ## 增值服务费用
 
@@ -37,9 +43,9 @@
 <td rowspan=3>直播转码</td>
 <td>标准转码</td>
 <td><ul style="margin:0">
-<li/>使用直播标准转码功能时计费。
-<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31064">直播水印</a>、<a href="https://intl.cloud.tencent.com/document/product/267/31071#C_trans">标准转码</a>、<a href="https://intl.cloud.tencent.com/document/product/267/37665">直播混流</a> 等功能时，均会产生标准转码费用。
-<li/>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
+<li>使用直播标准转码功能时计费。
+<li>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31064">直播水印</a>、<a href="https://intl.cloud.tencent.com/document/product/267/31071#C_trans">标准转码</a>、<a href="https://intl.cloud.tencent.com/document/product/267/37665">直播混流</a> 等功能时，均会产生标准转码费用。
+<li>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul></td>
 <td>
   <li><a href="https://intl.cloud.tencent.com/document/product/267/39604#n_trans">后付费-日结</a></li></ul>
@@ -47,9 +53,9 @@
 </tr><tr>
 <td>极速高清转码</td>
 <td><ul style="margin:0">
-<li/>使用直播极速高清转码功能时计费。
-<li/>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071#creating-top-speed-codec-transcoding-template">极速高清转码</a> 功能时，将产生极速高清转码费用。
-<li/>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
+<li>使用直播极速高清转码功能时计费。
+<li>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071#creating-top-speed-codec-transcoding-template">极速高清转码</a> 功能时，将产生极速高清转码费用。
+<li>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul><td>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/39604#s_trans">后付费-日结</a></li></td>
 </tr><tr>
@@ -87,7 +93,7 @@
  
 
 
-[](id:extensions)
+<span id="extensions"></span>
 
 ## 拓展服务费用
 
