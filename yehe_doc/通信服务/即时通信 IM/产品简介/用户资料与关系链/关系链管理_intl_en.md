@@ -9,6 +9,7 @@ Instant Messaging (IM) can host user relationship chains and offers a complete s
 
 A relationship chain is a set of data used to describe the relationships between one user and other users. The relationship chains supported by IM include friend lists and blocklists.
 
+<span id='relationship'></span>
 ## Relationship Chain Fields
 The IM relationship chain system supports standard and custom relationship chain fields. Relationship chain fields have the following features:
 
@@ -48,7 +49,7 @@ The naming requirements for custom friend fields are as follows:
 
 When applying for custom friend fields, you need to submit the following information for each custom friend field:
 - The name of the custom friend field (Key).
-- The type of the custom friend field (Value): for more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/33521">Relationship Chain Fields</a>.
+- The type of the custom friend field (Value): for more information, see [Relationship Chain Fields](#relationship).
 
 
 
