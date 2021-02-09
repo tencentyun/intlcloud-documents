@@ -8,7 +8,7 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，单击左侧导航栏的【共享带宽包】。
 2. 在“共享带宽包”页面，选择所在地域，单击左上角的【新建】。
 3. 在“新建共享带宽包”对话框中，输入名称、选择计费模式，单击【确定】。
-![](https://main.qcloudimg.com/raw/053ea0d43d3578054d234a138fd8c926.png)
+
 
 ## 后续操作
 [添加资源](https://intl.cloud.tencent.com/document/product/684/34599)
