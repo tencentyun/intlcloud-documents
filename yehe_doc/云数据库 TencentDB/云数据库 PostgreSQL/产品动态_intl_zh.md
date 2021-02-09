@@ -46,8 +46,8 @@
 <td>云数据库 PostgreSQL 支持针对实例编辑标签，并且支持针对标签进行资源鉴权。</td>
 <td>2020-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/409/38839" target="_blank">标签概述</a></td></tr>
-<tr>
-
+</tr>
+</tbody></table>
 
 ## 2020年07月
 <table>
