@@ -12,7 +12,7 @@ The TRTC service consists of two types of server nodes: access servers and proxy
 -   **Proxy server**
     With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
 
-In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 50 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
+In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 
 ![](https://main.qcloudimg.com/raw/afd9cefdfe72a2914fd55f8586f2c7e0.jpg)
 
