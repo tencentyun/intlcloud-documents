@@ -6,7 +6,7 @@ Tencent Real-Time Communication (TRTC) features two major solutions: low-latency
 
 ### Voice chat room
 
-TRTC allows up to 50 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms, and supports multiple audio effects such as voice changing, ambient sound effects, and reverb, enriching and diversifying the voice chat experience. It can be integrated with Tencent Cloud IM to support various message interaction methods such as public chat, private chat, group chat, liking, and gifting, delivering an excellent interactive chat experience. In addition, it provides a scenario-based voice chat room component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Voice Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
+TRTC allows up to 30 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms, and supports multiple audio effects such as voice changing, ambient sound effects, and reverb, enriching and diversifying the voice chat experience. It can be integrated with Tencent Cloud IM to support various message interaction methods such as public chat, private chat, group chat, liking, and gifting, delivering an excellent interactive chat experience. In addition, it provides a scenario-based voice chat room component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Voice Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
 
 
 
@@ -64,7 +64,7 @@ TRTC supports low-latency live streaming under high concurrence, which minimizes
 
 ### Multi-person audio call
 
-TRTC allows 300 users to call at the same time and up to 50 of them to mic on at the same time. With a sample rate of 48 kHz, a bitrate of 128 Kbps, and integration with Tencent Cloud's outstanding 3A processing technologies, it can deliver a smooth and high-quality audio call experience. In addition, it provides a scenario-based multi-person audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
+TRTC allows 300 users to call at the same time and up to 30 of them to mic on at the same time. With a sample rate of 48 kHz, a bitrate of 128 Kbps, and integration with Tencent Cloud's outstanding 3A processing technologies, it can deliver a smooth and high-quality audio call experience. In addition, it provides a scenario-based multi-person audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
 
 
 
@@ -91,7 +91,7 @@ TRTC supports cross-platform compatibility, enabling users to flexibly join meet
 
 ### Multi-person video call
 
-TRTC supports multi-person video call and provides HD image quality of 720p and 1080p, with one single room able to sustain up to 300 concurrent online users and allow 50 users to enable video at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for a lot of use cases. In addition, it provides a scenario-based multi-person video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
+TRTC supports multi-person video call and provides HD image quality of 720p and 1080p, with one single room able to sustain up to 300 concurrent online users and allow 30 users to enable video at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for a lot of use cases. In addition, it provides a scenario-based multi-person video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
 
 
 
