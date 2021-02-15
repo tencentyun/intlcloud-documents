@@ -2,8 +2,7 @@ The event callback service can notify your server of TRTC events in the form of 
 
 <span id="deploy"></span>
 ## Configuration Information
-You can configure callback information in the TRTC console. After completing the configuration, you can receive event callback notifications. <!--For detailed directions, please see [Callback Configuration](https://cloud.tencent.com/document/product/647/52428).-->
-
+You can configure callback information in the TRTC console. After completing the configuration, you can receive event callback notifications. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559).
 
 >!You need to prepare the following information in advance:
 >- **Required**: HTTP/HTTPS server address for receiving callback notifications.
