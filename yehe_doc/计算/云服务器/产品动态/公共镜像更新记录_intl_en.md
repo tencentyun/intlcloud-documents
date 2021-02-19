@@ -1,7 +1,6 @@
 >!
 >- The image update time may vary with regions. The update date provided here is the time when images in all regions are updated.
->- Tencent Cloud public images will follow the official maintenance periods, as detailed in [Appendix: Official Maintenance Time](#Appendix:-Official-Maintenance-Time).
->
+>- Tencent Cloud public images will follow the official maintenance periods, as detailed in [Appendix: Official Maintenance Time](#MaintenanceTime).
 
 
 ## CentOS
@@ -199,6 +198,7 @@
 	</tr>
 </table>
 
+<span id ="MaintenanceTime"></span>
 
 ## Appendix: Official Maintenance Time
 
