@@ -1,4 +1,4 @@
-This document uses MIT's Kerberos as the KDC service and assumes that KDC has been properly installed and started. To use Kerberos, create a realm, add the principals of the relevant roles (including server and client), and generate a keytab file.
+This document uses MIT's Kerberos as the KDC service and assumes that KDC has been properly installed and started. To use Kerberos, create a realm, add the principals of relevant roles (including server and client), and generate a keytab file.
 
 ## Creating a Database
 Run the `kdb5_util` command to create a database for storing information about the principals.
@@ -13,28 +13,22 @@ Re-enter KDC database master key to verify: <Type it again>
 ```
 
 ## Adding a Principal
-Add a principal by using kadmin.local.
 ```
-kadmin.local
-kadmin.local:  add_principlal -k /etc/krb5.keytab test-server/host@EXAMPLE.COM
-Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type arcfour-hmac added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type des3-cbc-sha1 added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-server/host@EXAMPLE.COM with kvno 2, encryption type des-cbc-crc added to keytab WRFILE:/etc/krb5.keytab.
+ kadmin.local
+ kadmin.local: add_principal -pw testpassword test/host@EXAMPLE.COM
+
+ WARNING: no policy specified fortest/host@EXAMPLE.COM; defaulting to no policy
+ Principal "test/host@EXAMPLE.COM" created.
 ```
 
-## Creating a keytab File
+## Generating a Keytab File
 ```
-kadmin.local
-kadmin.local:  add_principlal -k /etc/krb5.keytab test-client/host@EXAMPLE.COM
-Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type aes256-cts-hmac-sha1-96 added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type arcfour-hmac added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type des3-cbc-sha1 added to keytab WRFILE:/etc/krb5.keytab.
-Entry for principal test-client/host@EXAMPLE.COM with kvno 2, encryption type des-cbc-crc added to keytab WRFILE:/etc/krb5.keytab.
-kadmin.local:  q
-```
+ kadmin.local
+ kadmin.local: ktadd -k /var/krb5kdc/test.keytab test/host@EXAMPLE.COM
 
-Here, we created two users: test-server/host@EXAMPLE.COM  and test-client/host@EXAMPLE.COM. Put their keys into the  /etc/krb5.keytab  file.
+ Entry for principal test/host@EXAMPLE.COM with kvno 2, encryption type des3-cbc-sha1 added to keytab WRFILE:/var/krb5kdc/test.keytab.
+```
+ Here, we created a user `test/host@EXAMPLE.COM` and put the key of this user into the file `/var/krb5kdc/test.keytab`.
 
 ## Starting KDC
 ```
@@ -42,11 +36,11 @@ Here, we created two users: test-server/host@EXAMPLE.COM  and test-client/host@E
  * Starting Kerberos KDC krb5kdc       
 ```
 
-## Verifying kinit
+## Performing kinit Authentication
 ```
 kinit -k -t /etc/krb5.keytab test-client/host@EXAMPLE.COM
 ```
-kinit corresponds to the step of obtaining a TGT from KDC. It sends a request to the KDC server specified in `/etc/krb5.conf`. If the TGT is successfully granted, you can see it by using klist.
+kinit is used to obtain a TGT from KDC. It sends a request to the KDC server specified in `/etc/krb5.conf`. If the TGT is successfully obtained, you can see it by using klist.
 ```
 klist
 Ticket cache: FILE:/tmp/krb5cc_1000
@@ -58,5 +52,5 @@ renew until 2019-01-16T00:00:25
 ```
 
 ## Using in a Project
-After using kinit to verify the success, you can copy the keytab file to the server and client you need to use and configure the corresponding principals to use them.
+After the kinit authentication succeeds, you can copy the keytab file to the server and client you need to use and configure the corresponding principals to use them.
 
