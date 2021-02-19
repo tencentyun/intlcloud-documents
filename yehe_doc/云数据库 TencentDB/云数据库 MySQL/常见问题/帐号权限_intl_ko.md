@@ -15,9 +15,9 @@
 ![](https://main.qcloudimg.com/raw/b33188cf3aba103b415c0ecc38fb0168.png)
 
 ### sql_mode와 같은 데이터베이스 매개변수를 수정할 권한이 없는 이유는 무엇인가요?
-사용자의 서브 계정에 인스턴스 매개변수를 수정할 권한이 없는 것일 수 있습니다. 루트 계정으로 작업하거나 [CAM 액세스 관리](https://intl.cloud.tencent.com/document/product/236/14469)로 이동하여  서브 계정에 관련 작업 권한을 부여해야 합니다.
+사용자의 서브 계정에 인스턴스 매개변수를 수정할 권한이 없는 것일 수 있습니다. 루트 계정으로 작업하거나 [CAM 액세스 관리](https://intl.cloud.tencent.com/document/product/236/14469)로 이동하여 서브 계정에 관련 작업 권한을 부여해야 합니다.
 
 ### 서브 계정에서 MySQL 권한을 수정하도록 설정하는 방법은 무엇인가요?
-사용자에게 CDB 인스턴스를 생성하고 관리할 수 있는 권한을 주고자 한다면, 해당 사용자의 이름을 QcloudCDBFullAccess 정책으로 설정할 수 있습니다. 자세한 내용은 [CBD의 풀 읽기/쓰기 정책](https://intl.cloud.tencent.com/document/product/236/14468)을 참조 바랍니다.
+사용자에게 CDB 인스턴스를 생성하고 관리할 수 있는 권한을 주고자 한다면, 해당 사용자의 이름을 QcloudCDBFullAccess 정책으로 설정할 수 있습니다. 자세한 내용은 [CBD의 전체 읽기/쓰기 정책](https://intl.cloud.tencent.com/document/product/236/14468)을 참조하십시오.
 
 
