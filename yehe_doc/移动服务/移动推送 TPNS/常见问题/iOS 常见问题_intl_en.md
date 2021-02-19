@@ -1,3 +1,24 @@
+### What should I do if push certificate upload failed in the TPNS console?
+
+Convert the .p12 file of the push certificate into a .pem file and troubleshoot as follows:
+
+1. Open the terminal and go to the .p12 file directory.
+2. Run the following command to generate a certificate (`apns-dev-cert` is the name of the sample push certificate, which should be replaced with the name of your certificate).
+
+```
+openssl pkcs12 -clcerts -nokeys -out apns-dev-cert.pem -in apns-dev-cert.p12
+```
+
+3. Enter the password of the .p12 file.
+4. Run the following command to convert the .pem certificate into text:
+
+```
+openssl x509 -in apns-dev-cert.pem -inform pem -noout -text
+```
+
+5. Check whether the certificate environment and corresponding bundle ID match the application as shown below:
+![](https://main.qcloudimg.com/raw/ba0e35a8bbd0e77022f26ad1dcca83ca.png)
+
 ### What should I do if an empty notification cannot pop up on devices on iOS 10 or below?
 The `content` field cannot be empty if the RESTful API is called for push; otherwise, the notification will not pop up on devices on **iOS 10 or below**.
 
@@ -17,7 +38,7 @@ Message push is a task involving the collaboration of many associated modules. A
 - Check notification settings on the device
 Please select **Notifications** > **application name** and check whether your application has the permission to push messages.
 - Check network settings on the device
-A device network problem may cause the client to fail to get the token used to receive messages when signing up with APNs, which results in the inability to use the TPNS service to push message to the specified device.
+A device network problem may cause the client to fail to get the token used to receive messages when signing up with APNs, which results in the inability to use the TPNS service to push messages to the specified device.
 
 Even if the client has correctly gotten the token and registered it with the TPNS backend, after a message is successfully delivered by the TPNS server, the client will not receive the message if the device is not connected to the internet. If the device goes online later, it may receive the message (APNs will retain the message for a while and then deliver it again).
 
@@ -38,7 +59,7 @@ When the TPNS server requests APNs to deliver the message, it needs to use two r
 
 
 
-### Why account/tag binding or unbinding does not work?
+### Why doesn’t account/tag binding or unbinding work?
 When the SDK APIs are used to bind or unbind an account or tag, the TPNS server needs about 10 seconds for data sync.
 
 
@@ -57,7 +78,7 @@ First, on the device development side, place the audio file in the `bundle` dire
 
 
 ### Does iOS support offline retention of push messages? 
-No. After the TPNS sever delivers a message to APNs, if APNs finds that the device is not online, it will retain the message for a while; however, details of the specific duration of retention by APNs are not provided by Apple.
+No. After the TPNS server delivers a message to APNs, if APNs finds that the device is not online, it will retain the message for a while; however, details of the specific duration of retention by APNs are not provided by Apple.
 
 
 
@@ -83,7 +104,7 @@ This problem is caused by instability of APNs. You can fix it in the following w
 ### How do I expand the testing scope on iOS if the number of testing devices is limited?
 1. Enterprise signature certificate
 Apply for enterprise signature and push certificates and release your application as follows:
-Use the enterprise signature certificate to build and release your app. Testers can download and install the application through the dedicated enterprise channel.
+Use the enterprise signature certificate to build and release your application. Testers can download and install the application through the dedicated enterprise channel.
 2. App Store signature certificate
 Use the current push certificate released on App Store as follows:
 Release the preview version in TestFlight: upload the IPA package to [App Store Connect](https://appstoreconnect.apple.com), use TestFlight to create a beta version, and set the list of testers (Apple IDs) for the specified version in TestFlight. Testers can download and install your application through the official TestFlight application on App Store.
