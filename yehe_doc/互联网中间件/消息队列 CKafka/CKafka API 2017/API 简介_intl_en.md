@@ -14,7 +14,7 @@ You need to fully understand the [CKafka overview](https://intl.cloud.tencent.co
 The following describes the common terms used in the documentation.
 
 | Term | Full Name | Description |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | Instance | Server instance | A CKafka server, which is a logical concept and consists of many physical machines that provide services. |
 | [Region](https://intl.cloud.tencent.com/document/product/213/6091) | Region | A region where resources are located. Each region contains one or more availability zones. |
 | [AZ](https://intl.cloud.tencent.com/document/product/213/6091) | Availability zone | A physical IDC of Tencent Cloud with independent power supply and network resources within a [region](https://intl.cloud.tencent.com/document/product/213/6091). Availability zones are designed to ensure business stability because failures within an availability zone are isolated without affecting other availability zones within the same region. |
