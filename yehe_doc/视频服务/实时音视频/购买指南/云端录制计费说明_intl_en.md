@@ -1,30 +1,30 @@
 
 >!
->- On-cloud recording fees will be charged according to the billing rules described in this document for Tencent Cloud accounts that created apps on the TRTC console on or after July 1, 2020. 
->- For Tencent Cloud accounts that created apps on the TRTC console before July 1, 2020, on-cloud recording fees will be charged according to billing rules described in [Billing Details > LVB Recording](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6).
->- This document only describes billing rules for TRTC on-cloud recording. VOD will charge **storage fees** and **viewing fees** of the recording output files saved on VOD platform based on your usage. For more information, please see [On-cloud Recording > Pricing](https://intl.cloud.tencent.com/document/product/647/35426).
->- If you used LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional fees for [LVB Transcoding > Standard transcoding](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) will be incurred.
+- For Tencent Cloud accounts that created their first TRTC applications on or after July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in this document.
+- For Tencent Cloud accounts that created TRTC applications before July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in [Billing Details > LVB Recording](https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording).
+- This document only describes the billing rules for TRTC on-cloud recording. Recording files are saved on the VOD platform by default, which will charge **storage fees** and **viewing fees** based on your usage. For more information, please see [On-cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426#applicable-fees).
+- If you use the LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional transcoding fees will be incurred. For details, see [Billing Details > Standard transcoding](https://intl.cloud.tencent.com/document/product/267/2818#standard-transcoding).
 
 <span id="Billing_items"></span>
 ## Usage Calculation Method
 
-Tencent Cloud will charge the total **recording duration** of the output files of all on-cloud recordings under one Tencent Cloud account. There are two types of recording duration: **video duration** and **audio duration**, depending on your recording outputs.
+Tencent Cloud calculates an account’s on-cloud recording usage by adding up the **duration** of all recording files under the account. There are two types of recording durations: **video duration** and **audio duration**.
 
->!  The duration will be calculated in seconds and daily cumulative seconds will be converted to minutes for billing. Duration less than one minute will be calculated as one minute.
+>!  Duration is calculated in seconds and daily cumulative seconds are converted to minutes for billing. A duration of less than one minute is calculated as one minute.
 
 
 ### Video duration
-A video duration refers to the duration containing video images in a recording output file. Videos will be categorized based on resolutions and will be billed accordingly. The categorization rules are as follows:
- 
+A video duration refers to the duration containing videos in a recording output file. Video durations are categorized by the following resolutions and billed accordingly.
+
 |Video Type|Resolution|
 |-------|--------|
-|SD| ≤ 640 × 480 (inclusive)|
-|HD|640 × 480 - 1280 × 720 (inclusive)|
+|SD| ≤ 640 × 480|
+|HD|640 × 480 - 1280 × 720|
 |FHD| > 1280 × 720|
 
 
-- If both video and audio output files are generated for one recording task, you will only pay for the video duration.
-- Resolutions of different durations in one output file may differ as the input resolutions may be modified during the recording. TRTC will record durations for billing in segments and refresh the resolution data every five seconds.
+- If a duration contains both video and audio, it will be charged as a video duration.
+- The resolutions of different durations in an output file may vary with the input resolutions. TRTC refreshes the resolution every five seconds and records the durations of different resolutions separately.
 
 
 ### Audio duration
@@ -33,7 +33,7 @@ An audio duration refers to the duration containing only audio in a recording ou
 <span id="Fixed_price"></span>
 ## Service Pricing
 
-Fees for TRTC on-clouding recording are listed as follows:
+Prices for TRTC on-cloud recording are listed below:
 
 |Billable Item|Unit Price (USD/thousand minutes)|
 |---|---|
@@ -44,30 +44,39 @@ Fees for TRTC on-clouding recording are listed as follows:
 
 <span id="Billing_method"></span>
 ## Billing Mode
-Only **pay-as-you-go daily billing** is supported. Fees for the day will be deducted at 10 AM the next day.
+Only **pay-as-you-go daily billing** is supported. Fees incurred on a day are deducted at 10 AM the next day.
 
->!On-cloud recording only works when **LVB** feature is activated. Therefore, if the LVB service is suspended due to arrears, the on-cloud recording task will fail.
+>!On-cloud recording works only when **LVB** and **VOD** are activated. Therefore, if your LVB or VOD service is suspended due to overdue payments, your on-cloud recording task will fail.
 
 <span id="Billing_examples"></span>
 ## Billing Examples
 >!
->- The below examples uses list prices.
->- By default, each user’s audio and video streams in one TRTC room will be recorded as separate files. If you want to record videos of multiple users in one room in one file, you can merge multiple video images into one using [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618).
+>- The examples below use list prices. However, if you have signed a contract with Tencent Cloud sales, the prices specified in the contract will be applied instead.
+>- By default, the audio and video streams of each user in a TRTC room are recorded as a separate file. You can also use the [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) feature to record the videos of multiple users in one file, for which you will be charged additional fees. For details, see [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929).
 
-Suppose user A, B and C made a call in a TRTC room for 10 minutes and the entire call was recorded with push types and resolutions as follows:
+Suppose user A, B and C make a TRTC call for 10 minutes and the entire call is recorded. Below are the types and resolutions of the streams pushed.
 
-|User|Upstream Push Type|Resolution|Billable Item|
+|User|Stream Type|Resolution|Billable Item|
 |---|---|---|---|
 |A|Audio-only|None|Audio|
 |B|Video+audio|640 × 360|SD|
 |C|Video-only|1280 × 720|HD|
 
-### Billing example (without On-Cloud MixTranscoding usage)
-Since on-Cloud MixTranscoding was not used, Tencent Cloud generated three separate recording output files for A, B, and C. The total recording fee for this call includes:
->A's recording fee + B's recording fee + C's recording fee = unit price of audio duration x A's audio duration + unit price of SD video duration × B's SD video duration + unit price of HD video duration × C's HD video duration = 0.499 USD/thousand minutes x 10 minutes/1,000 + 0.99 USD/thousand minutes × 10 minutes/1,000 + 1.99 USD/thousand minutes × 10 minutes/1,000 = 0.03479 USD.
+### Recording without stream mixing
+If On-Cloud MixTranscoding is disabled, Tencent Cloud will generate three separate recording output files for A, B, and C, and the total recording fee for this call will be:
+>A's recording fee + B's recording fee + C's recording fee = unit price of audio duration × A's audio duration + unit price of SD video duration × B's SD video duration + unit price of HD video duration × C's HD video duration = 0.499 USD/thousand minutes x 10 minutes/1,000 + 0.99 USD/thousand minutes × 10 minutes/1,000 + 1.99 USD/thousand minutes × 10 minutes/1,000 = 0.03479 USD.
 
-### Billing example (with On-Cloud MixTranscoding usage)
+### Recording after stream mixing
 
-When On-Cloud MixTranscoding is used, streams of A, B, and C will be mixed and recorded in one file, and the output video resolution will be 1280 × 720. The recording fee for this call will be:
+If On-Cloud MixTranscoding is enabled, the streams of A, B, and C will be mixed and recorded in one file, and the output video resolution will be 1280 × 720. The recording fee for this call will be:
 > Unit price of HD video duration × HD video duration = 1.99 USD/thousand minutes × 10 minutes/1,000 = 0.0199 USD.
 
+An additional fee will be charged for the use of On-Cloud MixTranscoding. For details, see [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929).
+
+## Related Documentation
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
+- [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
+- [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614)
+- [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
+- [Purchase Guide](https://intl.cloud.tencent.com/document/product/647/35440)
+- [FAQs](https://intl.cloud.tencent.com/document/product/647/18889)
