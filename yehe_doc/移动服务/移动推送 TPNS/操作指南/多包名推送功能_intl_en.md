@@ -8,26 +8,26 @@ For operational promotions, a game vendor needs to publish an event announcement
 ### Configuring in console
 1. Log in to the TPNS Console and enter the [Product Management](https://console.cloud.tencent.com/tpns) page.
 2. Select the application for which to configure multi-package name and click **Configuration Management**.
-![](https://main.qcloudimg.com/raw/64be8e2971294212edc685cd3882efd2.png)
+![](https://main.qcloudimg.com/raw/15f0ab0240137a1c7b02c6a73d1ef937.png)
 3. If the application does not have a main package name, you need to enter one and then click **Add Package Name** to enter a package name.
-![](https://main.qcloudimg.com/raw/15ed74939f633d3963f8066d88f1a526.png)
+![](https://main.qcloudimg.com/raw/687bc1a152d79e7347196c85c9d66c81.png)
 4. If the application already has a main package name, click **Edit** to enter package name management, and click **Add** to enter a package name.
-![](https://main.qcloudimg.com/raw/8a5a61e28fff77c22ca5a78f94a36c49.png)
+![](https://main.qcloudimg.com/raw/2949e98fcc0e9fd25490695a89ae770b.png)
 >!Up to 50 package names can be configured.
 
 ### Configuring vendor channel for multi-package name
 If your application has multiple package names, when you need to deliver messages to package names through vendor channels, you need to apply for a vendor key for each package name and configure it in the **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration**.
 Taking Huawei as an example, if the application has multiple package names configured, multiple key configurations will appear after the Huawei channel is enabled, and you need to complete the configuration for each package name; otherwise, messages to devices under a package name with incomplete configuration will be sent through the TPNS channel after multi-package name push is enabled.
-![](https://main.qcloudimg.com/raw/c14d605898c4a01999375eb361443b6a.png)
+![](https://main.qcloudimg.com/raw/5c454ec4e1c017ee2da11c6f8d1cb673.png)
 
 ### Integrating SDK
 After configuring a package name, get the `AccessID` and `AccessKey`, and configure as instructed in [Android SDK Integration Guide](https://intl.cloud.tencent.com/document/product/1024/30713) or the **Quick Integration** process in the console.
-![](https://main.qcloudimg.com/raw/db37a69fe69c0b17f3c3a0557b9c05f6.png)
+![](https://main.qcloudimg.com/raw/86ced6140edd7012c8d1c7683f6e215a.png)
 
 ## Getting Started
 ### Console
 After the above configuration is completed and confirmed, you can enable the multi-package name push feature in **Message Push** > **Create Push** > **Advanced Settings** in the **[TPNS Console](https://console.cloud.tencent.com/tpns)**.
-![](https://main.qcloudimg.com/raw/d30ba73e456879c57aee344619975712.png)
+![](https://main.qcloudimg.com/raw/cc1f1ec0ca401904438ac3a964cdefb1.png)
 After enabling multi-package name push, a push will be delivered to devices that match the push target under all package names.
 >?The multi-package name push feature is available only to Android. If the vendor channel corresponding to the package name is not configured, the message of the registered device under the package name is delivered through the TPNS channel.
 
