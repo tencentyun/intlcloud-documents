@@ -1,4 +1,4 @@
-## 短视频 SDK 各版本下载               
+## 短视频 SDK 各版本下载                
 <table>     
    <tr>
       <th width="85px" style="text-align:center">功能模块</td>
@@ -312,16 +312,6 @@
       <td>短视频 SDK（LiteAVSDK）+ 基础功能 Demo 源代码。</td>
      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">基础版 SDK DOWNLOAD</a> </td>
       <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">企业版 SDK DOWNLOAD</a> </td>
-   </tr>
-
-   <tr>
-      <td rowspan='2'>License</td>
-      <td>License 申请</td>
-      <td>不同版本 SDK 需要搭配不同版本的 License 才能使用。</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">精简版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">基础版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">企业版 License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">企业版 Pro License</a></td>
    </tr>
 </table>
 
