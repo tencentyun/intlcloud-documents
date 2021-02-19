@@ -1,4 +1,4 @@
-This document summarizes the message structures of all trigger events that are connected to SCF. For more information on trigger configuration and restrictions, please see [Trigger Management](https://intl.cloud.tencent.com/zh/document/product/583/31440).
+This document summarizes the message structures of all trigger events that are connected to SCF. For more information on trigger configuration and restrictions, please see [Trigger Management](https://intl.cloud.tencent.com/document/product/583/9705).
 >!The event structure of the input parameter passed in by a trigger has been partially defined and can be used directly. You can get and use the Java library through the [Java Cloud Event Definition](https://github.com/tencentyun/scf-java-libs) or the Go library through the [Go Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events).
 >
 
@@ -133,7 +133,7 @@ When a specified CKafka topic receives a message, the backend consumption module
 }
 ```
 
-## Event Structure for CMQ Topic Trigger
+## Event Message Structure for CMQ Topic Trigger
 
 When a specified CMQ topic receives a message, event data will be sent to the bound function in JSON format as shown below.
 ```
@@ -438,4 +438,35 @@ When a specified MPS trigger receives a message, the event structures and fields
         ]
     }
 }
+```
+
+## Event Message Structure for CLB Trigger
+
+When a CLB Gateway trigger receives a request, event data will be sent to the bound function in JSON format as shown below.
+```
+{  
+  "headers": { 
+    "Content-type": "application/json",  
+    "Host": "test.clb-scf.com",  
+    "User-Agent": "Chrome",  
+
+    "X-Stgw-Time": "1591692977.774",  
+    "X-Client-Proto": "http",  
+    "X-Forwarded-Proto": "http",  
+    "X-Client-Proto-Ver": "HTTP/1.1",  
+    "X-Real-IP": "9.43.175.219",
+    "X-Forwarded-For": "9.43.175.xx"  
+ 
+    "X-Vip": "121.23.21.xx",  
+    "X-Vport": "xx",  
+    "X-Uri": "/scf_location",  
+    "X-Method": "POST"    
+    "X-Real-Port": "44347",  
+  },  
+  "payload": {  
+    "key1": "123",  
+    "key2": "abc"  
+  },
+  "isBase64Encoded": "false"
+}  
 ```

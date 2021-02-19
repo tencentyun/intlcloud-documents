@@ -1,4 +1,4 @@
-本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/zh/document/product/583/31440)。
+本文档主要汇总所有对接云函数 SCF 的触发器事件的消息结构，触发器配置详情及限制请参考具体的 [触发器管理文档](https://intl.cloud.tencent.com/document/product/583/9705)。
 >!触发器传递的入参事件结构已有部分定义，可直接使用。您可以通过 [java cloud event 定义](https://github.com/tencentyun/scf-java-libs) 获取 Java 的库并使用，通过 [go cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events ) 获取 Golang 的库并使用。
 >
 
@@ -438,4 +438,35 @@
         ]
     }
 }
+```
+
+## CLB 触发器的事件消息结构
+
+在 CLB 触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的 SCF 函数。
+```
+{  
+  "headers": { 
+    "Content-type": "application/json",  
+    "Host": "test.clb-scf.com",  
+    "User-Agent": "Chrome",  
+
+    "X-Stgw-Time": "1591692977.774",  
+    "X-Client-Proto": "http",  
+    "X-Forwarded-Proto": "http",  
+    "X-Client-Proto-Ver": "HTTP/1.1",  
+    "X-Real-IP": "9.43.175.219",
+    "X-Forwarded-For": "9.43.175.xx"  
+ 
+    "X-Vip": "121.23.21.xx",  
+    "X-Vport": "xx",  
+    "X-Uri": "/scf_location",  
+    "X-Method": "POST"    
+    "X-Real-Port": "44347",  
+  },  
+  "payload": {  
+    "key1": "123",  
+    "key2": "abc"  
+  },
+  “isBase64Encoded”: “false”
+}  
 ```
