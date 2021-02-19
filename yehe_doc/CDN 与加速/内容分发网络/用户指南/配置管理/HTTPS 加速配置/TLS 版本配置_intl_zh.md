@@ -17,13 +17,13 @@
 
 默认情况下，TLS 1.0/1.1/1.2为开启状态，TLS 1.3为关闭状态：
 
-![](https://main.qcloudimg.com/raw/62bfd147322215f5bcb5ce745505415b.png)
+![](https://main.qcloudimg.com/raw/7445026074dc473c366db6e65b807a17.png)
 
 
 ### 修改配置
 
 您可按需关闭/开启指定TLS版本，单击【修改配置】：
-![](https://main.qcloudimg.com/raw/82b93c2c47ded2029793b4931a098b29.png)
+![](https://main.qcloudimg.com/raw/0cd09ce66a94d6886d68c60f22844310.png)
 
 
 **配置约束**
