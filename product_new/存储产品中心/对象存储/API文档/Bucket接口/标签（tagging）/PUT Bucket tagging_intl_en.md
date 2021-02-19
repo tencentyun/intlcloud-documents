@@ -53,7 +53,7 @@ The data are described in details below:
 | ------------------ | ------------------ | ------------------------------------------------------------ | ---------- | ---- |
 | Tagging | None | Tag set | Container | Yes |
 | TagSet | Tagging | Tag set | Container | Yes |
-| Tag | Tagging.TagSet | Tag set, which can contain up to 10 tags | Containers | Yes |
+| Tag | Tagging.TagSet | Tag set, which can contain up to 50 tags | Containers | Yes |
 | Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 characters. A tag key can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
 | Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 characters. A tag value can contain English letters, digits, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
 
