@@ -48,14 +48,14 @@ npm install tencentcloud-serverless-nodejs
 ### 云端函数互调
 #### 示例
 >!
-> - 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。
+> - 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/api/583/17238)。
 > - 如果不指定地域，默认为同地域下函数互调。
 > - 命名空间不指定，默认为 default。
 > - 需要打开调用方函数外网访问权限。
 > - 如果没有手动传入 secretId 和 secretKey 等参数，函数需绑定有 SCF Invoke 权限（或者包含 SCF Invoke，例如 SCF FullAccess）的角色，可参考 [创建函数运行角色](https://intl.cloud.tencent.com/document/product/583/38176)。
 
 
-1. <span id="Step1"></span>创建一个地域为【北京】，名称为 “FuncInvoked”，并用于**被调用**的 Node.js 云函数。该云函数内容如下：
+1. [](id:Step1)创建一个地域为【北京】，名称为 “FuncInvoked”，并用于**被调用**的 Node.js 云函数。该云函数内容如下：
 ```js
 'use strict';
 exports.main_handler = async (event, context, callback) => {
@@ -66,31 +66,32 @@ exports.main_handler = async (event, context, callback) => {
 };
 ```
 2. 在 `testNodejsSDK` 目录下新建文件 `index.js`，并输入如下示例代码，创建**发起调用**的 Node.js 云函数。
-```js
+``` js
 const { SDK, LogType }  = require('tencentcloud-serverless-nodejs')
 exports.main_handler = async (event, context) => {
   context.callbackWaitsForEmptyEventLoop = false
-  const sdk = new SDK({
-    region:'ap-beijing'
-  }) //如果在云函数中运行并且绑定了有SCF调用资格的运行角色，会默认取环境变量中的鉴权信息
-  const res = await sdk.invoke({
-    functionName: 'FuncInvoked',
+    const sdk = new SDK({
+   region:'ap-beijing'
+     }) //如果在云函数中运行并且绑定了有SCF调用资格的运行角色，会默认取环境变量中的鉴权信息
+    const res = await sdk.invoke({
+   functionName: 'FuncInvoked',
     logType: LogType.Tail,
     data: {
       name: 'test',
       role: 'test_role'
     }
-  })
-  console.log(res)
-  // return res
-}
+     })
+    console.log(res)
+    // return res
+  }
 ```
-其中主要参数获取途径如下：
-	- **region**：**被调用**云函数所在地域，本文以 [步骤1](#Step1) 中的北京地域为例。
-	- **functionName**：**被调用**云函数名称，本文以 [步骤1](#Step1) 中已创建的 `FuncInvoked` 函数为例。
-	- **qualifier**：**被调用**云函数版本，如未指定则默认使用 `$LATEST`。详情请参见 [查看版本](https://intl.cloud.tencent.com/document/product/583/31455)。
-	- **namespace**：**被调用**云函数所在命名空间， 如未指定则默认 `default`。
-	- **data**：传递给**被调用**云函数的数据，被调用的云函数可以从 event 入参中读取此数据。
+
+ 其中主要参数获取途径如下：
+ - **region**：**被调用**云函数所在地域，本文以 [步骤1](#Step1) 中的北京地域为例。
+ - **functionName**：**被调用**云函数名称，本文以 [步骤1](#Step1) 中已创建的 `FuncInvoked` 函数为例。
+ - **qualifier**：**被调用**云函数版本，如未指定则默认使用 `$LATEST`。详情请参见 [查看版本](https://intl.cloud.tencent.com/document/product/583/31455)。
+ - **namespace**：**被调用**云函数所在命名空间， 如未指定则默认 `default`。
+ - **data**：传递给**被调用**云函数的数据，被调用的云函数可以从 event 入参中读取此数据。
 3. 创建一个地域为【成都】，名称为 “NodejsInvokeTest”，并用于**调用**的 Node.js 云函数。该云函数主要设置信息如下：
  - 执行方法：选择【index.main_handler】。
  - 代码提交方式：选择【本地上传 zip 包】。
@@ -118,30 +119,31 @@ exports.main_handler = async (event, context, callback) => {
       return event
 };
 ```
-
 2. 在 `testNodejsSDK` 目录下新建文件 `index.js`，作为**发起调用**的 Node.js 云函数，并输入如下示例代码：
 ```js
 const { SDK, LogType }  = require('tencentcloud-serverless-nodejs')
 exports.main_handler = async (event, context) => {
-  context.callbackWaitsForEmptyEventLoop = false
-  const sdk = new SDK({
+ context.callbackWaitsForEmptyEventLoop = false
+    const sdk = new SDK({
     region:'ap-beijing',
     secretId: 'AKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxj',
     secretKey: 'WtxxxxxxxxxxxxxxxxxxxxxxxxxxxxqL'
-  }) //如果在云函数中运行并且绑定了有SCF调用资格的运行角色，会默认取环境变量中的鉴权信息
-  const res = await sdk.invoke({
+    }) //如果在云函数中运行并且绑定了有SCF调用资格的运行角色，会默认取环境变量中的鉴权信息
+    const res = await sdk.invoke({
     functionName: 'FuncInvoked',
     logType: LogType.Tail,
     data: {
       name: 'test',
       role: 'test_role'
     }
-  })
-  console.log(res)
-  // return res
-}
+    })
+    console.log(res)
+    // return res
+   }
 ```
->!secretId 及 secretKey：指云 API 的密钥 ID 和密钥 Key。您可以通过登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，选择【访问密钥】>【API 密钥管理】，获取相关密钥或创建相关密钥。
+
+
+>! secretId 及 secretKey：指云 API 的密钥 ID 和密钥 Key。您可以通过登录 [访问管理控制台](https://console.cloud.tencent.com/cam/overview)，选择【访问密钥】>【API 密钥管理】，获取相关密钥或创建相关密钥。
 
 3. 进入 index.js 所在文件目录，执行以下命令，查看结果。
  - Linux 及 Mac 操作系统，执行以下命令：
@@ -152,7 +154,6 @@ export NODE_ENV=development && node index.js
 ```shell
 set NODE_ENV=development && node index.js
 ```
-
  输出结果如下：
 ```shell
 prepare to invoke a function!
@@ -161,12 +162,17 @@ Already invoked a function!
 ```
 
 
+
+
+
+
+
 ## 接口列表
 ### API Reference
 - [Init](#Init)
 - [Invoke](#Invoke)
 
-<span id="Init"></span>
+[](id:Init)
 #### Init
 在使用 SDK 前，建议执行 `npm init` 命令进行初始化 SDK。
 >?
@@ -184,7 +190,7 @@ Already invoked a function!
 | token |    否    | `String` | 默认会取 process.env.TENCENTCLOUD_SESSIONTOKEN |
 
 
-<span id="Invoke"></span>
+[](id:Invoke)
 #### Invoke
 调用函数，目前支持同步调用。
 

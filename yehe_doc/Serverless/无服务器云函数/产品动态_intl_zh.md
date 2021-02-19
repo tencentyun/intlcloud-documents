@@ -1,3 +1,130 @@
+## 2021年01月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCF 异步调用重试能力</td>
+<td><ul>
+<li>
+SCF 支持修改异步调用的重试与最长保留配置，通过相关配置用户可以控制函数资源的重试能力。</li>
+<li>更新函数超限重试策略，无需关心超限导致的数据重试失败，函数默认会对超限错误进行特殊重试。</li>
+<ul></td>
+<td>2021-01-18</td>
+<td>
+<li>死信队列</li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/34383">错误类型与重试策略</a></li>
+<li>并发超限</li>
+</ul></td>
+</tr>
+</tbody></table>
+
+## 2020年12月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云函数创建流程全面升级</td>
+<td><ul><li>简化函数创建流程，快速完成函数创建。</li>
+<li>模版创建函数支持配置化。</li>
+<li>函数创建流程支持触发器配置。</li>
+<li>和 Serverless Framework 打通，支持在云函数控制台创建应用。</li>
+<li>和 CODING 打通，支持通过 CI 部署函数和应用。</li></ul></td>
+<td>2020-12-30</td>
+<td>-</td>
+</tr>
+<tr>
+<td>云函数支持异步执行功能正式发布</td>
+<td>云函数提供函数异步执行模式，可提升函数执行超时时间上限和解决现有运行机制的问题。</td>
+<td>2020-12-29</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39466">异步执行</a>
+</td>
+</tr>
+<tr>
+<td>云函数 Serverless Web IDE 正式发布</td>
+<td>云函数 SCF 和 CODING 深度合作推出 Serverless Web IDE，提供更接近本地 IDE 的开发体验。支持：
+<ul><li>完整的函数开发、部署、测试能力。</li>
+<li>终端能力，预置了常用的 pip、npm 等开发工具和云函数 SCF 已经支持的编程语言开发环境。</li>
+<li>完整的 IDE 所含的基础能力，包括智能提示、代码自动补全等。</li>
+<li>用户自定义 IDE 配置，在不同函数的在线开发中提供一致的 IDE 使用体验。</li></ul></td>
+<td>2020-12-29</td>
+<td>Serverless Web IDE
+</td>
+</tr>
+<tr>
+<td>云函数支持 MPS 触发器正式发布</td>
+<td>通过云函数 SCF + MPS 结合的方式，可帮助用户快速完成对视频处理 MPS 产生的回调事件进行处理及操作。</td>
+<td>2020-12-11</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39339">MPS 函数处理概述</a>
+</td>
+</tr>
+<tr>
+<td>云函数 API 网关触发器支持与 API 网关数据同步</td>
+<td>在 API 网关侧增删改 Serverless API 和在 SCF 侧增删改 API 网关触发器完全同步，在一侧进行修改，另一侧同时进行改变。</td>
+<td>2020-12-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/12513">API 网关触发器概述</a>
+</td>
+</tr>
+</tbody></table>
+
+
+
+
+
+
+## 2020年11月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云函数在线调试功能正式发布</td>
+<td>使用云函数在线调试功能，在控制台即可完成断点调试、使用 console、查看运行时内存和 CPU 的情况，方便用户通过控制台快速定位问题。</td>
+<td>2020-11-27</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39008">调试云函数</a>
+</td>
+</tr>
+<tr>
+<td>云函数支持 CLS 触发器正式发布</td>
+<td>使用云函数 SCF 来处理 CLS 日志服务中采集到的日志，通过将采集到的日志作为参数传递来调用 SCF 云函数，函数代码可以对其进行数据加工处理、分析或将其转储到其他云产品。</td>
+<td>2020-11-17</td>
+<td><ul>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/38845">CLS 触发器</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/38847">CLS 函数处理概述</a></li>
+</ul></td>
+</tr>
+<tr>
+<td>云函数支持 Ckafka 消息转储至 Elasticsearch 正式发布</td>
+<td>消息队列 Ckafka 合作能力拓展，支持用户转储消息的能力，用户可以使用云函数将 Ckafka 消息转储至 ES 进行消费和管理，便于海量数据存储搜索、实时日志分析等。</td>
+<td>2020-11-17</td>
+<td>消息转储至 Elasticsearch
+</td>
+</tr>
+</tbody></table>
+
+
+
 ## 2020年08月
 <table>
 <thead>
@@ -53,7 +180,6 @@
 <table>
 <thead>
 <tr>
-
 <th width="20%">动态名称</th>
 <th width="40%">动态描述</th>
 <th width="20%">发布时间</th>
@@ -61,7 +187,6 @@
 </tr>
 </thead>
 <tbody>
-
 <tr>
 <td>云函数 SCF VS Code 插件正式发布</td>
 <td>云函数 VS Code 插件升级 2.0 版本：
@@ -73,7 +198,6 @@
 <td>-
 </td>
 </tr>
-
 <tr>
 <td>云函数新增 Node.js 12.16 运行环境</td>
 <td>云函数新增 Node.js 12.16 运行环境，用户可以在创建函数时，选择使用 Node.js 12.16 Runtime。Node.js 版本的升级带来了新的特性以及性能方面的提升，最重要的是启动速度的提升。</td>
@@ -103,7 +227,6 @@
 <td>-
 </td>
 </tr>
-
 <tr>
 <td>云函数 Node.js 运行时在线安装依赖功能正式发布</td>
 <td>如果在函数配置中启用了“在线安装依赖”，在每次上传代码后，云函数后台将检查代码包根目录的 package.json 文件，并根据 package.json 中的依赖，尝试使用 npm 工具安装依赖包。目前支持在线对 node.js 运行时安装依赖，每次更新代码后，云函数后台会自动安装依赖。</td>
@@ -134,7 +257,6 @@
 <td>-
 </td>
 </tr>
-
 <tr>
 <td>云函数 SCF 支持灰度发布功能上线</td>
 <td>云函数通过支持别名、版本，及别名在版本间进行路由配置，实现流量在多个版本间的灰度切换。<ul><li> 别名支持配置两个版本及在两个版本间切换流量的规则。</li> <li> 流量路由规则支持按权重和按请求特征。</li> <li> 支持触发器配置到别名上。</li> <li> 支持按别名或按版本过滤查看日志、监控。</ul></td>
@@ -165,7 +287,6 @@
 </tr>
 </thead>
 <tbody>
-
 <tr>
 <td>COS 支持基于云函数 SCF 的文件解压缩功能正式发布</td>
 <td>文件解压缩功能是腾讯云对象存储 COS 基于云函数 SCF 为用户提供的数据处理解决方案。添加文件解压缩功能后，当压缩文件上传到 COS 时，将自动触发 COS 为您预配置的云函数，自动将文件解压到指定的存储桶和目录中。</td>
