@@ -1,8 +1,8 @@
 ## Overview
 
-[Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/zh/product/tke) is a container management service with high scalability and performance. It provides a variety of application release methods and continuous delivery capabilities and supports microservice architectures. It can solve environment-related issues in the process of development, testing, and OPS and help you reduce costs and improve efficiency.
+[Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/product/tke) is a container management service with high scalability and performance. It provides a variety of application release methods and continuous delivery capabilities and supports microservice architectures. It can solve environment-related issues in the process of development, testing, and OPS and help you reduce costs and improve efficiency.
 
-Businesses using containers usually involve shared access by multiple containers to a high number of configuration files, model files, log data, and attachments in such scenarios as business application deployment, DevOps, machine learning, and auto scaling. Especially, in scenarios like machine learning, intelligent recommendation, and log data processing, in addition to basic data sharing, shared storage is also required to provide services that feature high throughput, high IOPS, and low latency and can sustain high concurrent requests. CFS can provide such services after simple configuration and mount to containers, making it particularly suitable for use in conjunction with TKE. This document describes how to use CFS on TKE.
+Businesses using containers usually involve shared access by multiple containers to a high number of configuration files, model files, log data, and attachments in such scenarios as business application deployment, DevOps, machine learning, and auto-scaling. Especially, in scenarios like machine learning, intelligent recommendation, and log data processing, in addition to basic data sharing, shared storage is also required to provide services that feature high throughput, high IOPS, and low latency and can sustain high concurrent requests. CFS can provide such services after simple configuration and mount to containers, making it particularly suitable for use in conjunction with TKE. This document describes how to use CFS on TKE.
 
 ## Prerequisites
 You have already created a TKE cluster. If you haven't done so, please create one first as instructed in [Deploying TKE](https://intl.cloud.tencent.com/document/product/457/11741).
@@ -31,11 +31,6 @@ sudo apt-get install nfs-common
 
 #### Step 2. Create a PV
 Run the following command to create a PesistentVolume (PV) of CFS type.
-
->?
->1. nfs.server: mount point IP of the CFS file system obtained above. The file system IP is 10.0.1.41 in this example.
->2. nfs.path: root directory or subdirectory of the CFS file system. The root directory is used in this example.
-
 ```plaintext
 apiVersion: v1
 kind: PersistentVolume
@@ -55,6 +50,11 @@ spec:
     path: /
     server: 10.0.1.41
 ```
+>?
+> - nfs.server: mount point IP of the CFS file system obtained above. The file system IP is 10.0.1.41 in this example.
+> - nfs.path: root directory or subdirectory of the CFS file system. The root directory is used in this example.
+>
+
 
 #### Step 3. Create a PVC
 Then, create a PersistentVolumeClaim (PVC) and bind it to the PV.
@@ -95,3 +95,4 @@ spec:
         claimName: cfsclaim
 ```
 After the above steps are completed, you can use the file system in the newly created pod.
+
