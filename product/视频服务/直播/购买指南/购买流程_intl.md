@@ -9,10 +9,10 @@ You may register your email address as your Tencent Cloud account.
 ## Identity Verification
 
 If you have already completed identity verification, skip this step.
-Otherwise, please follow [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629) to verify your identity..
+Otherwise, please follow [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629) to verify your identity.
 After your personal or organizational identity is verified, you can activate the LVB service.
 
 ## Activate LVB
 
 Go to the [LVB console](https://console.cloud.tencent.com/live) page, select [I agree to the Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248) and click **Activate** to activate the LVB service for use.
-![](https://main.qcloudimg.com/raw/56f8acef2910628c328f04881e7550b8.png)
+![](https://main.qcloudimg.com/raw/eae08b6f0b3d3824aed2c05e63cd18ae.png)
