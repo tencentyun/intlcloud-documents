@@ -1,4 +1,4 @@
-## Different Editions of the UGSV SDK              
+## Different Editions of the UGSV SDK                
 <table>     
    <tr>
       <th width="85px" style="text-align:center">Category</td>
@@ -312,16 +312,6 @@
       <td>UGSV SDK（LiteAVSDK）+ demo source code for basic features</td>
      <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_ugc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_UGC_iOS_latest.zip">Basic SDK download</a> </td>
       <td colspan="2" style="text-align:center"> <a onclick=MtaH5.clickStat("ugc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">Enterprise SDK download</a> </td>
-   </tr>
-
-   <tr>
-      <td rowspan='2'>License</td>
-      <td>License application</td>
-      <td>Different SDK editions require different licenses.</td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Lite Edition License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Basic Edition License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Enterprise Edition License</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/38041">Enterprise Pro License</a></td>
    </tr>
 </table>
 
