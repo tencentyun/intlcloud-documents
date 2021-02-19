@@ -15,7 +15,7 @@
 <td>Read-only replicas are now supported</td>
 <td>TencentDB for PostgreSQL allows you to create one or more read-only replicas, which is suitable for read/write separation and one-primary-multiple-secondary application scenarios and capable of greatly enhancing the read load capacity of your database.</td>
 <td>2020-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/409/39545" target="_blank">Creating Read-only Replicas</a></td></tr>
+<td>-</td></tr>
 </tbody></table>
 
 ## September 2020
