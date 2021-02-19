@@ -3,44 +3,47 @@
 **Request method**: POST.
 
 ```plaintext
-service address/v3/device/set_custom_attribute
+Service URL/v3/device/set_custom_attribute
 ```
 
-The API service address corresponds to the service access point one by one; therefore, please select the service address corresponding to your application [service access point](https://intl.cloud.tencent.com/document/product/1024/38517).
+API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**API feature**: this API is used to configured personalized attributes at the token level, including CRUD operations.
+**Feature**: this API is used to manage personalized attributes at the token level, including creation, deletion, update, and query operations.
 
 ## Parameter Description
 
 ### Request parameters
 
-| Parameter Name | Required | Type | Description |
+| Parameter | Required | Type | Description |
 | -------- | -------- | ------- | ------------------------------------------------------------ |
-| cmd      | Yes       | Integer | Operation type: <li>1: adds attribute.<li>2: updates attribute description.<li>3: deletes attribute.<li>4: deletes all attributes.<li>5: queries attribute. |
-| accessId | Yes       | Integer | Application ID, which can be obtained in the [Product Management](https://console.cloud.tencent.com/tpns) page in the console. |
-| token    | Yes       | String  | Device ID of 36 bits.<li> [Suggestions on getting TPNS token (Android)](https://intl.cloud.tencent.com/document/product/1024/30713)<li> [Suggestions on getting TPNS token (iOS)](https://intl.cloud.tencent.com/document/product/1024/30726) |
-| attributeInfo   | Yes if `cmd` is 1, 2, or 3   | Map | Attribute details:<li> `value` is `attributeMap` in `Map` type.<li>  `key` is attribute and attribute value. **Note:** you should have created an attribute in **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Toolbox** > **User Attribute Management**; otherwise, this parameter will be filtered out, and `invalidAttribute` will be returned.
+| cmd      | Yes       | Integer | Operation type: <li>1: adding an attribute.<li>2: updating an attribute.<li>3: deleting an attribute.<li>4: deleting all attributes.<li>5: querying attributes. |
+| accessId | Yes       | Integer | Application ID, which can be obtained on the [Product Management](https://console.cloud.tencent.com/tpns) page in the console. |
+| token    | Yes       | String  | Unique ID assigned to each device by TPNS.<li> [Suggestions on getting TPNS token (Android)](https://intl.cloud.tencent.com/document/product/1024/30713#suggestions-on-getting-tpns-token)<li> [Suggestions on getting TPNS token (iOS)](https://intl.cloud.tencent.com/document/product/1024/30726#suggestions-on-getting-tpns-token) |
+| attributeInfo   | Yes (when `cmd` is `1`, `2`, or `3`)   | Map | Attribute details. See the description of the `attributeMap` parameter below. |
+| attributeMap | Yes (when `cmd` is `1`, `2`, or `3`) | Map | Attribute details: <li> `key` indicates the attribute name and can contain up to 50 bytes. <br>**Note:** you should have created an attribute in the [TPNS console](https://console.cloud.tencent.com/tpns) > **Toolbox** > **User Attribute Management**; otherwise, this parameter will be filtered out, and `invalidAttribute` will be returned. <li> `value` indicates the attribute value and can contain up to 50 bytes. |
 
 <span id="attributeInfo"></span>
 
 ### Response parameters
 
-| Parameter Name | Required | Type | Description |
+| Parameter | Returned | Type | Description  |
 | ---------------- | ---------- | ------- | ------------------------------------------------------------ |
 | retCode          | Yes         | Integer | Error code. For more information, please see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763). |
 | errMsg           | Yes         | String  | Error message when an error occurs in the request.                                       |
-| attributeInfo    | cmd = 5    | Map     | Attribute details.                                                   |
-| invalidAttribute | When the attribute is invalid | Array   | Details of invalid attribute.                                               |
+| attributeInfo    | Yes (when `cmd` is `5`)    | Map     | Attribute details.                                                   |
+| invalidAttribute | Yes (when the attribute is invalid) | Array   | Details of the invalid attribute.                                               |
 
 ## Samples
 
-### Sample request for adding attribute
+### Adding an attribute
 
+#### Sample request
+Add three attributes to a token.
 ```
 {
     "cmd": 1,
-    "accessId": 1500004469,
-    "token": "04cac74a714f61bf089987a986363d88****",
+    "accessId": 1500004469, 
+    "token": "04cac74a714f61bf089987a986363d88****",   
     "attributeInfo": {
          "attributeMap": {
             "age": "100",
@@ -53,14 +56,120 @@ The API service address corresponds to the service access point one by one; ther
 
 ```
 
-### Sample response for adding attribute
+#### Sample response
 
 ```
 {
     "retCode": 0,
     "errMsg": "success",
     "invalidAttribute": [
-        "high"
+        "high"   // The corresponding key value does not exist in the console
     ]
 }
 ```
+### Updating an attribute
+
+#### Sample request
+Update the value of the `name` attribute to `workman`.
+```
+{
+    "cmd": 2,    
+    "accessId": 1500004469,
+    "token": "04cac74a714f61bf089987a986363d88****",
+    "attributeInfo": {
+         "attributeMap": {
+            "name": "workman"   
+        }
+    }
+}
+
+
+
+```
+#### Sample response
+
+```
+{
+    "retCode": 0,
+    "errMsg": "success"
+}
+```
+
+### Deleting an attribute
+
+#### Sample request
+
+Delete the `workman` value of the `name` attribute.
+```
+{
+    "cmd": 3,    
+    "accessId": 1500004469,
+    "token": "04cac74a714f61bf089987a986363d88****",
+    "attributeInfo": {
+         "attributeMap": {
+            "name": "workman"  
+        }
+    }
+}
+
+
+
+```
+
+#### Sample response
+
+```
+{
+    "retCode": 0,
+    "errMsg": "success"
+}
+```
+### Deleting all attributes
+
+#### Sample request
+
+Delete all attributes of a token.
+```
+{
+    "cmd": 4,    
+    "accessId": 1500004469,
+    "token": "04cac74a714f61bf089987a986363d88****"  
+
+}
+```
+
+#### Sample response
+
+```
+{
+    "retCode": 0,
+    "errMsg": "success"
+}
+```
+
+### Querying attributes
+#### Sample request
+Query the attribute details of a token.
+```
+{
+    "cmd": 5,    
+    "accessId": 1500004469,
+    "token": "04cac74a714f61bf089987a986363d88****"
+
+}
+```
+
+#### Sample response
+
+```
+{
+    "retCode": 0,
+    "errMsg": "success",
+    "attributeInfo": {
+        "attributeMap": {
+            "nickname": "workman"
+        }
+    }
+}
+```
+
