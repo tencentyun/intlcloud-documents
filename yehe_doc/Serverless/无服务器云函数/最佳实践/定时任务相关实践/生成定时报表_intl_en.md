@@ -21,7 +21,8 @@ Click **Learn More** in the template to view relevant information in the **Templ
 
 
 ## Relevant Operations 
-### Modifying function template[](id:puppeteer)
+<span id="puppeteer"></span>
+### Modifying function template
 
 The current template function only supports pulling MTA site reports. For more information, please see [here](https://mta.qq.com/docs/h5_api.html).
 Add the following code to modify the MTA parameters:
