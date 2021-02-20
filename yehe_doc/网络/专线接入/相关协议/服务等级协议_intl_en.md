@@ -80,18 +80,18 @@ In respect of the Service, if the Service Availability is lower than the above S
 
 **If the Service Unavailability is due to the following reasons, the time when the Service is un-available shall not be calculated into Service Unavailability Minutes and Tencent Cloud shall not undertake any liabilities with respect thereof, including compensation liabilities:**
 
-(1)	any system maintenance of Tencent Cloud for which a prior notice has been given to client, including any system cutting over, maintenance, upgrade and simulated failure drill;
-(2)	any failure or configuration adjustment of network or equipment that are not owned by Tencent Cloud;
-(3)	any circumstance where the client’s application or data information suffers a hacker attack;
-(4)	any improper configuration of the client’s network device or route;
-(5)	any loss or disclosure of data, password and security code because the client fails to proper-ly keep or fails to take proper confidentiality measures with respect to the same;
-(6)	any upgrade of the operating system independently carried out by the client;
-(7)	any activities of the client’s application or installation operation;
-(8)	any negligence of the client or act authorized by client;
-(9)	any force majeure or accidents.
-(10)	any circumstance where the client fails to configure the system according to the Standard Architecture for Tencent Cloud Direct Connect provided by Tencent Cloud.
-(11)	any circumstance where the Service is unavailable or falls short of the Standards due to rea-sons that are not attributable to Tencent Cloud; or
-(12)	other circumstances where Tencent Cloud may be exempted from liabilities as set forth in the relevant laws and regulations, the relevant agreements, or the relevant rules and instruc-tions separately issued by Tencent Cloud.
+- any system maintenance of Tencent Cloud for which a prior notice has been given to client, including any system cutting over, maintenance, upgrade and simulated failure drill;
+- any failure or configuration adjustment of network or equipment that are not owned by Tencent Cloud;
+- any circumstance where the client’s application or data information suffers a hacker attack;
+- any improper configuration of the client’s network device or route;
+- any loss or disclosure of data, password and security code because the client fails to proper-ly keep or fails to take proper confidentiality measures with respect to the same;
+- any upgrade of the operating system independently carried out by the client;
+- any activities of the client’s application or installation operation;
+- any negligence of the client or act authorized by client;
+- any force majeure or accidents.
+- any circumstance where the client fails to configure the system according to the Standard Architecture for Tencent Cloud Direct Connect provided by Tencent Cloud.
+- any circumstance where the Service is unavailable or falls short of the Standards due to rea-sons that are not attributable to Tencent Cloud; or
+- other circumstances where Tencent Cloud may be exempted from liabilities as set forth in the relevant laws and regulations, the relevant agreements, or the relevant rules and instruc-tions separately issued by Tencent Cloud.
 
 ## 5. Miscellaneous
 
