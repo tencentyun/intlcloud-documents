@@ -1,13 +1,16 @@
-Apache Zeppelin is an interactive development system that enables big data visualization and analytics. Specifically, it can undertake various tasks such as data ingestion, discovery, analytics, visualization, and collaboration. It provides a rich set of graph visualization libraries such as SparkSQL on the frontend and supports big data systems like HBase and Flink in the form of plugin extension on the backend. In addition, it allows you to perform data preprocessing, algorithm development and debugging, and algorithm job scheduling for machine learning.
+Apache Zeppelin is an interactive development system that enables big data visualization and analytics. It can undertake tasks such as data ingestion, discovery, analytics, visualization, and collaboration. It provides a rich set of visual graph libraries such as SparkSQL on the frontend and supports big data systems like HBase and Flink in the form of plugin extension on the backend. In addition, it allows you to perform data preprocessing, algorithm development and debugging, and algorithm job scheduling for machine learning.
 
-### Performing `wordcount` with Spark
+For EMR versions later than 3.1.0, the default login permission is set, and both the username and password are admin. To change the password, you can modify the `users` and `roles` options in the configuration file `/usr/local/service/zeppelin-0.8.2/conf/shiro.ini`. For more configuration instructions, see [here](http://shiro.apache.org/configuration.html#Configuration-INISections).
+
+
+### Performing wordcount using Spark
 1. Click **Create new note** on the left and create a notebook on the pop-up page.
  ![](https://main.qcloudimg.com/raw/c31d7b714f22b1170d9c6799572227a3.png)
-2. Configure Spark for integration with an EMR cluster (Spark on YARN), modify parameters as needed, and save the configuration.
- ![](https://main.qcloudimg.com/raw/f4702cf3dea049e4bff2685aed9800f3.png)
-3. Enter your own notebook.
- ![](https://main.qcloudimg.com/raw/9920f5e879b66075f95311aa691db952.png)
-4. Write a `wordcount` program and run the following command:
+2. Configure Spark for integration with an EMR cluster (Spark on YARN). Modify and save configuration.
+![](https://main.qcloudimg.com/raw/3794475f902450a00a86e2bb00dd3c42.png)
+3. Go to your own notebook.
+ ![](https://main.qcloudimg.com/raw/d56fe984a78c0f8f59498d2c24ee5b73.png)
+4. Write a wordcount program and run the following commands:
 ```
 val data = sc.textFile("cosn://huanan/zeppelin-spark-randomint-test")
 case class WordCount(word: String, count: Integer)
