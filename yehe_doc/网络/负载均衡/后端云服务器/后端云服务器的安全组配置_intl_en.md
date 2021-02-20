@@ -16,54 +16,56 @@ The following samples show you how to configure CVM security groups when accessi
 - **Application scenario 1:**
 If a public network CLB instance is configured with a TCP:80 listener, the real server port is 8080, and you want only certain Client IPs (ClientA IP and ClientB IP) to access the CLB instance, then configure the security group inbound rules of the real server as follows:
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 - **Application scenario 2:**
 If a public network CLB instance is configured with a HTTP:80 listener, the real server port is 8080, and you want all Client IPs to access the CLB instance, then configure the security group inbound rules of the real server as follows:
 ```
-0.0.0.0/0 + 8080 allow
+ 0.0.0.0/0 + 8080 allow
 ```
 - **Application scenario 3:**
 For a private network CLB (formerly "private network Application CLB") instance, if the network type is VPC, the CVM security group needs to open the CLB VIP IP to the internet for health check, this CLB instance is configured with a TCP:80 listener, the real server port is 8080, and you want certain Client IPs (ClientA IP and ClientB IP) to access the CLB VIP and want the Client IPs to access only real servers bound to the CLB instance, then:
 a. Configure the inbound rules for the real server security group as follows:
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 b. Configure the outbound rules for the client server security group as follows:
 ```
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 - **Application scenario 4:**
 For a private network Classic CLB instance (i.e., a VPC CLB instance purchased after December 5, 2016), if the CVM security group only needs to open the Client IP to the internet (there is no need to open the CLB VIP, and the health check IP is opened by default), this CLB instance is configured with a TCP:80 listener, the real server port is 8080, and you want certain Client IPs (ClientA IP and ClientB IP) to access the CLB VIP and want the Client IPs to access only real servers bound to the CLB instance, then:
 a. Configure the inbound rules for the real server security group as follows:
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 b. Configure the outbound rules for the client server security group as follows:
 ```
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 - **Application scenario 5: blacklist**
 If you need to configure a blacklist for some client IPs to deny their access requests, you can configure the security group associated with Tencent Cloud services. The security group rules need to be configured as follows:
  - Add the client IP and port to be rejected into the security group and select the option in the "Policy" column to reject access from this IP.
  - Add another security group rule after completing the above configuration to allow access requests to the port from all IPs by default.
 After the configuration is completed, the security group rules are as follows:
+
 ```
-clientA IP + port drop
-clientB IP + port drop
-0.0.0.0/0  + port accept
+ clientA IP + port drop
+ clientB IP + port drop
+ 0.0.0.0/0  + port accept
 ```
->
+
+>?
 >- The above configuration steps should be performed **in a correct order**; otherwise, the blacklist configuration cannot take effect.
 >- Security groups are stateful; therefore, the above configurations are used for **inbound rules**, while outbound rules do not require special configuration.
 
