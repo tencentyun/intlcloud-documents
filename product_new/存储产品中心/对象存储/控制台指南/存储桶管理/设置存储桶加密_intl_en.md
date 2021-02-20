@@ -2,14 +2,15 @@
 
 You can set server-side encryption for a bucket in the COS Console, so that new objects uploaded to the bucket can be encrypted by default. For more information on bucket encryption, please see [Bucket Encryption Overview](https://intl.cloud.tencent.com/document/product/436/33457).
 
->Currently, the supported bucket encryption method is SSE-COS encryption (i.e., server-side encryption using COS-managed encryption keys). For more information on server-side encryption, please see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
+>?Currently, the supported bucket encryption method is SSE-COS encryption (i.e., server-side encryption using COS-managed encryption keys). For more information on server-side encryption, please see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
 
 
 ## Directions
+
 #### Setting encryption when creating a bucket
 
 You can configure bucket encryption when [creating a bucket](https://intl.cloud.tencent.com/document/product/436/13309), as shown below:
-![](https://main.qcloudimg.com/raw/cc4f781f6ffa98b3786e52cf84d5c8d4.png)
+![](https://main.qcloudimg.com/raw/3529ae1c392f524209cf899931aa1fef.png)
 
 
 
