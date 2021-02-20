@@ -60,7 +60,6 @@ VPC 中至少包含一个子网，只有在子网中才可以添加云服务资�
 2. 在“私有网络”页面顶部，选择 VPC 所属地域。
 3. 在 VPC 列表中，待删除辅助 CIDR 的 VPC 右侧**操作**列选择【更多】>【编辑 IPv4 CIDR】。
 4. 在弹出的编辑对话框中，单击辅助 CIDR 后的【删除】。
-<img src="https://main.qcloudimg.com/raw/10602971a87c4babc86e2bb400cbc1b7.png" width="50%" />
 5. 单击【确定】完成删除操作。
 
 <span id ="3"></span>
