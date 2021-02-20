@@ -16,54 +16,60 @@
 - **应用场景 1：**
 公网负载均衡，监听器配置为 TCP:80 监听器，后端服务端口为8080，希望只允许 Client IP（ClientA IP 和 ClientB IP）访问负载均衡，则后端服务器安全组入站规则配置如下：
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 - **应用场景 2：**
 公网负载均衡，监听器配置为 HTTP:80 监听器，后端服务端口为8080，希望开放所有 Client IP 的正常访问，则后端服务器安全组入站规则配置如下：
 ```
-0.0.0.0/0 + 8080 allow
+ 0.0.0.0/0 + 8080 allow
 ```
 - **应用场景 3：**
 内网负载均衡（原“应用型内网负载均衡”），网络类型为 VPC 网络，在 CVM 的安全组上需放通 CLB 的 VIP 来做健康检查。为该 CLB 配置 TCP:80 监听器，后端服务端口为8080，希望只允许 Client IP（ClientA IP 和ClientB IP）访问负载均衡的 VIP，并且希望限制 Client IP 只能访问该 CLB 下绑定的后端主机。
 a. 后端服务器安全组入站规则配置如下：
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 b. 用作 Client 的服务器安全组出站规则配置如下：
 ```
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
 - **应用场景 4：**
 传统型内网负载均衡（16年12月5日之后的新购的 VPC 网络 CLB），CVM 安全组仅需放通 Client IP（无需放通 CLB 的 VIP，默认放通健康检查 IP）。为该 CLB 配置 TCP:80 监听器，后端服务端口为8080，希望只允许 Client IP（ClientA IP 和ClientB IP）访问负载均衡的 VIP，并且希望限制 Client IP 只能访问该 CLB 下绑定的后端主机。
 a. 后端服务器安全组入站规则配置如下：
+
 ```
-ClientA IP + 8080 allow
-ClientB IP + 8080 allow
-0.0.0.0/0  + 8080 drop
+ ClientA IP + 8080 allow
+ ClientB IP + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
+
 b. 用作 Client 的服务器安全组出站规则配置如下：
+
 ```
-CLB VIP    + 8080 allow
-0.0.0.0/0  + 8080 drop
+ CLB VIP    + 8080 allow
+ 0.0.0.0/0  + 8080 drop
 ```
+
 - **应用场景 5：黑名单**
 如用户需要给某些 Client IP 设置黑名单，拒绝其访问，可以通过配置云服务关联的安全组实现。安全组的规则需要按照如下步骤进行配置：
  - 将需要拒绝访问的 Client IP + 端口添加至安全组中，并在策略栏中选取拒绝该 IP 的访问。
  - 设置完毕后，再添加一条安全组规则，默认开放该端口全部 IP 的访问。
 配置完成后，安全组规则如下：
+
 ```
-clientA IP + port drop
-clientB IP + port drop
-0.0.0.0/0  + port accept
+ clientA IP + port drop
+ clientB IP + port drop
+ 0.0.0.0/0  + port accept
 ```
->
+
+>?
 >- 上述配置步骤有**顺序要求**，顺序相反会导致黑名单配置失效。
 >- 安全组是有状态的，因此上述配置均为**入站规则**的配置，出站规则无需特殊配置。
 
