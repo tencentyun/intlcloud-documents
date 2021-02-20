@@ -18,6 +18,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter the application name such as `testtrtc`, and click **OK**.
+
 <span id="step2"></span>
 ### Step 2. Get SDKAppID and key
 
@@ -44,8 +45,8 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 >- A locally calculated `UserSig` should be only used for local development and debugging. Please do not publish it directly online. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
-
-### Step 4. Run the demo<span id="step4"></span>
+<span id="step4"></span>
+### Step 4. Run the demo
 
 Open the `index.html` file in the `dist` directory of the demo with Chrome to run the demo.
 
