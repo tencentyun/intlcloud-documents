@@ -12,7 +12,7 @@ Refers to a solution provided by Tencent Cloud to connect your enterprise data c
 Refers to the technical requirements of the standard access architecture of Direct Connect prod-ucts provided by Tencent Cloud, i.e., in order to use the Tencent Cloud Direct Connect, the user needs to use at least two dedicated physical connections through physically separated paths that connect to Tencent Cloud’s access points at different geographical locations.
 
 #### 1.3 Single Direct Connect Instance
-Refers to an instance of the Direct Connect through one single physical connection. A Single Con-nection Direct Connect Instance may contain multiple Dedicated Tunnels and Direct Connect Gateways. Service Availability Rate shall be calculated separately for each Single Direct Connect Instance.
+Refers to an instance of the Direct Connect through one single physical connection. A Single Direct Connect Instance may contain multiple Dedicated Tunnels and Direct Connect Gateways. Service Availability Rate shall be calculated separately for each Single Direct Connect Instance.
 
 #### 1.4 Service Unavailability
 
