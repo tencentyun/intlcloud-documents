@@ -52,7 +52,7 @@ For information about parameter configuration, see [Kafka output plugin](https:/
 ### Preparations
 - Java version: Java 8
 - Logstash version: 5.5.2 (August 17, 2017)
-- A Ckafka instance and a topic
+- A CKafka instance and a topic
 
 #### Creating a CKafka topic
 1. After an instance is created, you can view its information in the [CKafka console](https://console.cloud.tencent.com/ckafka).
