@@ -72,13 +72,13 @@ In respect of the Service, if the Service Availability is lower than the above S
 </tbody></table>	
 
 #### 3.2 Time Limit for Compensation Application
-(1) If the Service Availability in a Service Month fails to meet the Service Availability standard, you may  **apply for compensation only through the support ticket system under your relevant account ** after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month,  **both parties agree that the back-end record of Tencent Cloud shall prevail. **
+(1) If the Service Availability in a Service Month fails to meet the Service Availability standard, you may **apply for compensation only through the support ticket system under your relevant account** after the fifth (5th) business day of the month immediately following such Service Month. Tencent Cloud will verify and ascertain your application upon receipt of such application. If there is any dispute over the calculation of the Service Availability for a Service Month, **both parties agree that the back-end record of Tencent Cloud shall prevail.**
 
-(2)  **You shall apply for compensation no later than the sixtieth (60th) calendar day following the end of the applicable Service Month in which the Service Availability fails to meet the abovementioned standard. ** If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
+(2) **You shall apply for compensation no later than the sixtieth (60th) calendar day following the end of the applicable Service Month in which the Service Availability fails to meet the abovementioned standard.** If you fail to make any application within such period, or make the application after such period, or make the application by any means other than that agreed herein, it shall be deemed that you have voluntarily waived your right to apply for such compensation and any other rights you may have against Tencent Cloud, in which case Tencent Cloud has the right to reject your application for compensation and not to make any compensation to you.
 
 ## 4. Release of Liability
 
- **If the Service Unavailability is due to the following reasons, the time when the Service is un-available shall not be calculated into Service Unavailability Minutes and Tencent Cloud shall not undertake any liabilities with respect thereof, including compensation liabilities: **
+**If the Service Unavailability is due to the following reasons, the time when the Service is un-available shall not be calculated into Service Unavailability Minutes and Tencent Cloud shall not undertake any liabilities with respect thereof, including compensation liabilities:**
 
 (1)	any system maintenance of Tencent Cloud for which a prior notice has been given to client, including any system cutting over, maintenance, upgrade and simulated failure drill;
 (2)	any failure or configuration adjustment of network or equipment that are not owned by Tencent Cloud;
@@ -95,7 +95,7 @@ In respect of the Service, if the Service Availability is lower than the above S
 
 ## 5. Miscellaneous
 
-5.1 **The Parties hereby acknowledge that if you suffer any losses in the process of use of the Service due to the breach of contract by Tencent Cloud, Tencent Cloud's total liabilities for compensation with respect to your loss shall not exceed the aggregate amount of the Service Fee you have paid for the corresponding Service. **
+5.1**The Parties hereby acknowledge that if you suffer any losses in the process of use of the Service due to the breach of contract by Tencent Cloud, Tencent Cloud's total liabilities for compensation with respect to your loss shall not exceed the aggregate amount of the Service Fee you have paid for the corresponding Service.**
 
 5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agree-ment terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
 
