@@ -61,8 +61,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 </tbody></table>
 
-
-### Access-Control-Allow-Origin match mode introduction[](id:acao)
+[](id:acao)
+### Access-Control-Allow-Origin match mode introduction
 
 | **Match Mode**   | **Origin Value**                                                     | **Description**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
