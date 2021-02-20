@@ -1,5 +1,5 @@
 
-**In order to use the Tencent Cloud Direct Access Service (hereinafter referred to as the “Service”), you shall read and comply with this Tencent Cloud Direct Access Service Level Agreement (this “Agreement”, or this “SLA”) and the  [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indi-cators of the Service Availability or the Service Success Rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your ma-terial rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
+**In order to use the Tencent Cloud Direct Connect Service (hereinafter referred to as the “Service”), you shall read and comply with this Tencent Cloud Direct Connect Service Level Agreement (this “Agreement”, or this “SLA”) and the  [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indi-cators of the Service Availability or the Service Success Rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your ma-terial rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely un-derstood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
@@ -9,10 +9,10 @@
 Refers to a solution provided by Tencent Cloud to connect your enterprise data center with Ten-cent Cloud, through which you may establish a private connection service that is completely iso-lated from the public network. The specific content of the services shall be subject to the Service you purchase, and the contents actually provided by Tencent Cloud.
 
 #### 1.2 Standard Architecture of the Tencent Cloud Direct Connect
-Refers to the technical requirements of the standard access architecture of Direct Access prod-ucts provided by Tencent Cloud, i.e., in order to use the Tencent Cloud Direct Connect, the user needs to use at least two dedicated physical connections through physically separated paths that connect to Tencent Cloud’s access points at different geographical locations.
+Refers to the technical requirements of the standard access architecture of Direct Connect prod-ucts provided by Tencent Cloud, i.e., in order to use the Tencent Cloud Direct Connect, the user needs to use at least two dedicated physical connections through physically separated paths that connect to Tencent Cloud’s access points at different geographical locations.
 
-#### 1.3 Single Connection Direct Access Instance
-Refers to an instance of the Direct Access through one single physical connection. A Single Con-nection Direct Access Instance may contain multiple Dedicated Tunnels and Direct Connect Gateways. Service Availability Rate shall be calculated separately for each Single Connection Direct Access Instance.
+#### 1.3 Single Direct Connect Instance
+Refers to an instance of the Direct Connect through one single physical connection. A Single Con-nection Direct Connect Instance may contain multiple Dedicated Tunnels and Direct Connect Gateways. Service Availability Rate shall be calculated separately for each Single Direct Connect Instance.
 
 #### 1.4 Service Unavailability
 
@@ -20,21 +20,21 @@ Refers to an instance of the Direct Access through one single physical connectio
 The Packet Loss Rate shall be calculated by sending packets under the ICMP protocol between the connecting IP addresses on Tencent Cloud’s end and the user’s end, and assuming that 60 PING packets are sent in each 60-second period.
 
 #### 1.4.2 Service Unavailability Minutes
-The Service is deemed to be unavailable in a Unit Time (each minute is a Unit Time) if, due to reasons attributable to Tencent Cloud, all of your attempts to communicate through a Single Connection Direct Access Instance failed in such Unit Time, i.e., the Packet Loss Rate of the Single Connection Direct Access Instance is 100% according to the monitoring data of the Ten-cent Cloud). An instance of Service Unavailability will be counted towards the Service Unavail-ability Minutes only if it lasts for 1 minute or longer; any instance of Service Unavailability short-er than 1 minute will not be counted towards the Service Unavailability Minutes.
+The Service is deemed to be unavailable in a Unit Time (each minute is a Unit Time) if, due to reasons attributable to Tencent Cloud, all of your attempts to communicate through a Single Direct Connect Instance failed in such Unit Time, i.e., the Packet Loss Rate of the Single Direct Connect Instance is 100% according to the monitoring data of the Ten-cent Cloud). An instance of Service Unavailability will be counted towards the Service Unavail-ability Minutes only if it lasts for 1 minute or longer; any instance of Service Unavailability short-er than 1 minute will not be counted towards the Service Unavailability Minutes.
 
 #### 1.5 Service Unavailability Time
-The Service Unavailability Time within a Service Month is the total of all Service Unavailability Minutes of a Direct Access Instance in that Service Month.
+The Service Unavailability Time within a Service Month is the total of all Service Unavailability Minutes of a Direct Connect Instance in that Service Month.
 
 #### 1.6 Service Month
 Service Month refers to each calendar month covered by service period of the Service you pur-chase. For example, if you purchase the Service for a period of three months with the Service commencement date on March 17, the Service period shall include four Service Months, i.e., the first Service Month is from March 17 to March 31, the second Service Month is from April 1 to April 30, the third Service Month is from May 1 to May 31, and the fourth Service Month is from June 1 to June 16.
 
 #### 1.7 Monthly Service Fee
-The total Service Fee for a Single Connection Direct Access Instance in one Service Month shall exclude the portion of Service that you have purchased but not yet use. The Monthly Service Fee shall exclude the amount that is deductible under any vouchers and coupons and the amount oth-erwise reduced or exempted.
+The total Service Fee for a Single Direct Connect Instance in one Service Month shall exclude the portion of Service that you have purchased but not yet use. The Monthly Service Fee shall exclude the amount that is deductible under any vouchers and coupons and the amount oth-erwise reduced or exempted.
 
 ## 2. Service Availability/ Service Success Rate
 
 #### 2.1 Calculation of Service Availability/Service Success Rate
-The Service Availability of the Direct Connection Service is calculated separately for each Single Connection Direct Access Instance with the following formula:
+The Service Availability of the Direct Connection Service is calculated separately for each Single Direct Connect Instance with the following formula:
 
 Service Availability = {(Total number of minutes in a Service Month – Service Unavailability Minutes in the Service Month)/Total number of minutes of the Service Month} × 100%.
 For example: There are 30 days in the Service Month of April 2019, therefore, the total number of minutes in that Service Month is 30 days × 24 hours × 60 minutes = 43200 minutes; assuming the total Service Unavailability Minutes in that month is 15 minutes,  the Service Availability Rate = (((43200 - 15) / 43200) × 100% ≈ 99.97%.
