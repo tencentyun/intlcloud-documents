@@ -13,8 +13,8 @@ This document describes how to quickly run the demo of Tencent Cloud TWebLive (i
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-
-### Step 1. Create an application<span id="step1"></span>
+<span id="step1"></span>
+### Step 1. Create an application
 
 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
 2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter the application name such as `testtrtc`, and click **OK**.
