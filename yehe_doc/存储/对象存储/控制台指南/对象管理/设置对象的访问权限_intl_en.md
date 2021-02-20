@@ -7,16 +7,12 @@ COS allows you to set object access permissions, which have a higher priority th
 
 ## Directions
 
-
-
-
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Find the bucket where the target object is located and click the bucket name to enter the bucket details page.
-![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
 3. Choose the **File List** tab, find the object for which you want to configure the access permission, and click **Details** on the right to enter the file details page (If it is a folder, click **Permissions** on the right).
-![](https://main.qcloudimg.com/raw/6065855393a30c809d60b4d0027628a6.png)
+![](https://main.qcloudimg.com/raw/f2f66b873867b3645fa69ec4f9ffe646.png)
 4. In the **Object ACL** area, configure ACL as needed (for example, grant a sub-account the object permissions). Sub-account ID can be found in the [CAM console](https://console.cloud.tencent.com/cam). COS supports two types of permissions for objects:
- -**Public Permissions**: includes **Inherit**, **Private Read/Write**, and **Public Read/Private Write**. For more information about public permissions, please see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324).
+ -**Public Permissions**: includes **Inherit**, **Private Read/Write**, and **Public Read/Private Write**. For more information about public permissions, please see [Access Permission Types](https://intl.cloud.tencent.com/document/product/436/13324#access-permission-types).
  -**User ACL**: The root account has all object permissions (full control) by default. You can also add sub-accounts and grant them permissions including read/write, read/write ACL, and even **full control**.
 ![](https://main.qcloudimg.com/raw/c9565ab1d2378ce672a301843bf3b072.png)
 5. Click **Save**.
