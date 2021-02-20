@@ -1,12 +1,12 @@
 本文主要介绍如何快速地将腾讯云 TRTC Electron SDK 集成到您的项目中。
 
 ## 支持的平台
--  Windows(PC)
+-  Windows（PC）
 -  Mac
 
 ## 集成 TRTC Electron SDK
 
-#### 步骤1：安装 Node.js
+### 步骤1：安装 Node.js
 **Windows 平台安装指引：**
 1. 根据 Windows 操作系统选择下载最新版本的 [Node.js](https://nodejs.org/en/download/)  安装包 `Windows Installer (.msi) 64-bit`。
 2. 打开应用程序列表中的 Node.js command prompt，启动命令行窗口，用于输入后续步骤中的各项命令。
@@ -28,39 +28,38 @@ $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/br
 $ brew update
 ```
 
-#### 步骤2：安装 Electron
+### 步骤2：安装 Electron
 在命令行窗口中执行如下命令，安装 Electron，建议版本号 >= 4.0.0。
 ```shell
 $ npm install electron@latest --save-dev
 ```
 
-#### 步骤3：安装 Electron 版的 TRTC SDK
+### 步骤3：安装 Electron 版的 TRTC SDK
 1. 在您的 Electron 项目中使用 npm 命令安装 SDK 包：
 ```shell
 $ npm install trtc-electron-sdk@latest --save
 ```
 
->?TRTC Electron SDK 最新版可在 [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk) 中查看。
+	>?TRTC Electron SDK 最新版可在 [trtc-electron-sdk](https://www.npmjs.com/package/trtc-electron-sdk) 中查看。
 2. 在项目脚本里引入模块并使用：
 ```javascript
-const TRTCCloud = require('trtc-electron-sdk');
+const TRTCCloud = require('trtc-electron-sdk').default;
+// import TRTCCloud from 'trtc-electron-sdk';
 this.rtcCloud = new TRTCCloud();
 // 获取 SDK 版本号
 this.rtcCloud.getSDKVersion();
 ```
-	从v7.0.149起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 TypeScript 的开发者：
+	从v7.9.348起，TRTC Electron SDK 增加了 trtc.d.ts 文件，方便使用 TypeScript 的开发者：
 ```
-// 开启了 ES Module 融合模式 (esModuleInterop=true)
-import * as trtc_namespace from 'trtc-electron-sdk';
-const TRTCCloud = require('trtc-electron-sdk');
-const rtcCloud: trtc_namespace.TRTCCloud = new TRTCCloud();
+import TRTCCloud from 'trtc-electron-sdk';
+const rtcCloud: TRTCCloud = new TRTCCloud();
 // 获取 SDK 版本号
 rtcCloud.getSDKVersion();
 ```
 
 ## 打包可执行程序
 
-#### 步骤1：安装打包工具
+### 步骤1：安装打包工具
 1. 推荐使用打包工具 `electron-builder` 进行打包，您可以执行如下命令安装 `electron-builder`：
 ```bash
 $ npm install electron-builder@latest --save-dev
@@ -70,7 +69,7 @@ $ npm install electron-builder@latest --save-dev
 $ npm install native-ext-loader@latest --save-dev
 ```
 
-####  步骤2：修改 webpack.config.js 配置
+###  步骤2：修改 webpack.config.js 配置
 `webpack.config.js` 包含了项目构建的配置信息，`webpack.config.js` 文件的位置如下：
 - 通常情况下，`webpack.config.js` 位于项目的根目录。
 - 使用 `create-react-app` 创建项目的情况下，此配置文件为 `node_modules/react-scripts/config/webpack.config.js`。
@@ -93,8 +92,7 @@ const targetPlatform = (function(){
 		return target;
 })();
 ```
-
->!os.platform() 返回的结果中，"darwin" 表示 Mac 平台。"win32" 表示 Windows 平台，不论 64 位还是 32 位。
+	>! `os.platform()` 返回的结果中，"darwin" 表示 Mac 平台。"win32" 表示 Windows 平台，不论 64 位还是 32 位。
 2. 然后在 `rules` 选项中添加以下配置，`targetPlatform` 变量可以使 `rewritePath` 可以根据不同的目标平台切换不同的配置：
 ```js
 rules: [
@@ -113,7 +111,7 @@ rules: [
 
 还需要在 `package.json` 中的构建脚本中添加 `--target_platform` 参数，将在下一步进行。
 
-####  步骤3：修改 package.json 配置
+###  步骤3：修改 package.json 配置
 `package.json` 位于项目的根目录，其中包含了项目打包所必须的信息。但默认情况下，`package.json`  中的路径是需要修改才能顺利实现打包的，我们可以按如下步骤修改此文件： 
 
 1. 修改 `main` 配置。
@@ -179,18 +177,18 @@ rules: [
 ```
 
 >? 
->-   `main` ：Electron 的入口文件，一般情况下可以自由配置。但如果项目使用 `create-react-app` 脚手架创建，则入口文件必须配置为 `public/electron.js` 。
->-   `build.win.extraFiles` ：打包 Windows 程序时，`electron-builder` 会把 `from` 所指目录下的所有文件复制到 bin/win-unpacked/resources（全小写）。
->-   `build.mac.extraFiles` ：打包 Mac 程序时，`electron-builder` 会把 `from` 指向的 `trtc_electron_sdk.node` 文件复制到 bin/mac/your-app-name.app/Contents/Resources（首字母大写）。
->-   `build.directories.output` ：打包文件的输出路径。例如这个配置会输出到 `bin` 目录下，可根据实际需要修改。
->-   `build.scripts.build:mac` ：以 Mac 平台为目标构建脚本。
->-   `build.scripts.build:win` ：以 Windows 平台为目标构建脚本。
->-   `build.scripts.compile:mac` ：编译为 Mac 下的 .dmg 安装文件。
->-   `build.scripts.compile:win64` ：编译为 Windows 下的 .exe 安装文件。
->-   `build.scripts.pack:mac` ：先调用 build:mac 构建代码，再调用 compile:mac 打包成 .dmg 安装文件。
->-   `build.scripts.pack:win64` ：先调用 build:win 构建代码，再调用 pack:win64 打包成 .exe 安装文件。
+> -   `main` ：Electron 的入口文件，一般情况下可以自由配置。但如果项目使用 `create-react-app` 脚手架创建，则入口文件必须配置为 `public/electron.js` 。
+> -   `build.win.extraFiles` ：打包 Windows 程序时，`electron-builder` 会把 `from` 所指目录下的所有文件复制到 bin/win-unpacked/resources（全小写）。
+> -   `build.mac.extraFiles` ：打包 Mac 程序时，`electron-builder` 会把 `from` 指向的 `trtc_electron_sdk.node` 文件复制到 bin/mac/your-app-name.app/Contents/Resources（首字母大写）。
+> -   `build.directories.output` ：打包文件的输出路径。例如这个配置会输出到 `bin` 目录下，可根据实际需要修改。
+> -   `build.scripts.build:mac` ：以 Mac 平台为目标构建脚本。
+> -   `build.scripts.build:win` ：以 Windows 平台为目标构建脚本。
+> -   `build.scripts.compile:mac` ：编译为 Mac 下的 .dmg 安装文件。
+> -   `build.scripts.compile:win64` ：编译为 Windows 下的 .exe 安装文件。
+> -   `build.scripts.pack:mac` ：先调用 build:mac 构建代码，再调用 compile:mac 打包成 .dmg 安装文件。
+> -   `build.scripts.pack:win64` ：先调用 build:win 构建代码，再调用 compile:win64 打包成 .exe 安装文件。
 
-####  步骤4：执行打包命令
+###  步骤4：执行打包命令
 - 打包 Mac.dmg 安装文件：
 ```bash
 $ cd [项目目录]
@@ -203,6 +201,7 @@ $ cd [项目目录]
 $ npm run pack:win64
 ```
 	成功执行后，打包工具会生成 `bin/your-app-name Setup 0.1.0.exe` 安装文件，请选择此文件发布。
+
 
 >!TRTC Electron SDK 暂不支持跨平台打包（例如在 Mac 下打包 Windows 的 .exe 文件，或在 Windows 平台下打包 Mac 的 .dmg 文件）。目前我们正在研究跨平台打包方案，敬请期待。
 
