@@ -1,4 +1,4 @@
-## Overview
+## Feature
 
 COSCMD enables you to use simple command lines to batch-operate objects, such as upload, download, and delete.
 
@@ -47,7 +47,7 @@ After the installation is complete, you can run the following command to upgrade
 pip install coscmd -U
 ```
 
-> ! If the pip version number is greater than or equal to 10.0.0, a failure may occur when you are upgrading or installing dependent libraries. You are advised to use pip v9.x (pip install pip==9.0.0). If you have installed the latest Python version, pip has been integrated and does not need to be installed again.
+> ! If the pip version number is greater than or equal to 10.0.0, a failure may occur when you are upgrading or installing dependent libraries. You are advised to use pip v9.x (pip install pip==9.0.0). If you have installed the latest Python version (for example, 3.9.0), pip has been integrated and does not need to be installed again.
 
 #### 2. Installing with the source code (not recommended)
 
@@ -173,7 +173,7 @@ The following table describes these parameters:
 | -s | Key, which can be obtained at [Manage API Key](https://console.cloud.tencent.com/cam/capi) | String | Yes |
 | -t | Temporary key token, which needs to be specified in the `x-cos-security-token` header when a temporary key is used. | String | No |
 | -b | Name of the specified bucket, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). If this is your first time using COSCMD, you need to create a bucket in the COS console to configure COSCMD. | String | Yes |
-| -r | Region of the bucket. For more information, please see [Regions and Access Endpoints](https://cloud.tencent.com/doc/product/436/6224). | String | Yes |
+| -r | Region of the bucket. For more information, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | -e   | ENDPOINT of the request. Once configured, the `REGION` parameter will be invalidated. If you use the default endpoint, this parameter is formatted as `cos.<region>.myqcloud.com`; if you use a global acceleration endpoint, the format is `cos.accelerate.myqcloud.com`. | String | No  |
 | -m | Maximum number of threads in a multi-thread operation (default: 5; value range: 1-30) | Number | No |
 | -p | Size of the multipart upload part, in MB (default: 1; value range: 1-1000) | Number | No |
@@ -184,10 +184,10 @@ The following table describes these parameters:
 
 If you only need to perform basic operations, you can refer to the following operation example for a quick configuration.
 
->?Before the configuration, you need to go to the COS console to create a bucket (e.g., `configure_bucket-1250000000`) for parameter configuration and create a key.
+>?Before the configuration, you need to go to the COS console to create a bucket (e.g., `configure-bucket-1250000000`) for parameter configuration and create a key.
 
 ```shell
-coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b configure_bucket-1250000000 -r ap-chengdu
+coscmd config -a AChT4ThiXAbpBDEFGhT4ThiXAbp**** -s WE54wreefvds3462refgwewe**** -b configure-bucket-1250000000 -r ap-chengdu
 ```
 
 
@@ -200,7 +200,7 @@ The file content of the configured `.cos.conf` file is as follows:
 [common]
 secret_id = AKIDA6wUmImTMzvXZNbGLCgtusZ2E8mG****
 secret_key = TghWBCyf5LIyTcXCoBdw1oRpytWk****
-bucket = configure_bucket-1250000000
+bucket = configure-bucket-1250000000
 region = ap-chengdu
 max_thread = 5
 part_size = 1
@@ -237,7 +237,7 @@ coscmd -b examplebucket-1250000000 -r ap-beijing upload D:/picture.jpg /
 
 ### Creating a bucket
 
->?Please specify `-b <BucketName-APPID>` and`-r <region>` when you run the `coscmd createbucket` command; otherwise, an error may be reported. This is because if the bucket and region are not specified, this command takes effect for the bucket that is used to configure COSCMD.
+>?Please specify `-b <BucketName-APPID>` and `-r <region>` when you run the `coscmd createbucket` command; otherwise, an error may be reported. This is because if the bucket and region are not specified, this command takes effect for the bucket that is used to configure COSCMD.
 
 ```plaintext
 #Command syntax
@@ -303,7 +303,7 @@ coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 
 > !
 > - Replace "localpath" and "cospath" enclosed in "<>" with the path of the local file to upload and the COS storage path, respectively.
-> - When uploading a file, you need to fill in the COS path plus the name of the file and/or folder (see the examples for details).
+> - If the file to upload is larger than 10 MB, COSCMD will upload with multipart upload. The command is `coscmd upload <localpath> <cospath>` (same as simple upload).
 > - COSCMD supports checkpoint restart to resume the upload of large files. When the multipart upload of a large file fails, only the failed parts will be uploaded when the operation is resumed instead of starting over from scratch (please ensure that the directory and content of the re-uploaded file are consistent with the uploaded directory).
 > - COSCMD performs MD5 verification on each part during multipart upload.
 > - The `x-cos-meta-md5` header is included by default when COSCMD uploads a file, and its value is the same as the file’s MD5 value.
@@ -565,8 +565,6 @@ coscmd putbucketversioning Suspended
 coscmd getbucketversioning
 ```
 
-Replace "status" enclosed in "<>" with the desired versioning status.
-
 > !
 >- Replace "status" enclosed in "<>" with the desired versioning status.
 >- Once versioning is enabled for the bucket, it cannot return to the prior status (initial status). However, you can suspend versioning for the bucket so that subsequent uploads of objects will not generate multiple versions.
@@ -593,8 +591,8 @@ coscmd restore -r -d 3 -t Expedited examplefolder/
 
 >?
 >- Replace "cospath" enclosed in "<>" with the COS path of the file list to query.
->- Use `-d day` to set the effective period of the temporary copy. Default value: `7`.
->- Use `-t tier` to specify the restoration type. Enumerated values: `Expedited`, `Standard` (default), and `Bulk`.
+>- Use `-d <day>` to set the effective period of the temporary copy. Default value: `7`.
+>- Use `-t <tier>` to specify the restoration mode. Enumerated values: `Expedited`, `Standard` (default), and `Bulk`.
 
 ### Running commands in debugging mode
 

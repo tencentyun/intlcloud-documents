@@ -1,0 +1,40 @@
+## Overview
+
+File decompression is a data processing solution provided by Tencent Cloud COS based on [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583). When you upload a compressed file to a bucket with a decompression rule configured, the SCF preset by COS will be triggered automatically to decompress the file into the specified bucket and directory. The decompression flow is shown as follows:
+
+![Decompression Flow](https://main.qcloudimg.com/raw/4899b5c92bb085a0f18a522dfae344ae.jpg)
+
+
+## Notes:
+
+Currently, COS can decompress ZIP files only. Each file contained in the ZIP file must not be larger than 5 GB. If a single file in the ZIP file is larger than 5 GB, the decompression will fail.
+- If you have added a file decompression rule to your bucket in the COS console, a file decompression function will appear in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default). **DO NOT** delete this function. Otherwise, your rule may not take effect.
+- Regions where SCF is available support ZIP file decompression, including Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong, Singapore, Mumbai, Toronto, and Silicon Valley, and more. For more supported regions, please see [SCF Documentation](https://intl.cloud.tencent.com/document/product/583).
+- The directory or file name in your compressed file must be UTF-8 or GB 2312 encoded. Otherwise, the directory or file name might be garbled, or the decompression might be interrupted. If an error is reported, you can click **View Log** on the right of the function to redirect to the SCF console for viewing the log details.
+- The decompression service is not supported for archived files. To decompress an archived package, please restore it first. For detailed directions, please see [Restoring Archived Objects](https://intl.cloud.tencent.com/document/product/436/30961).
+- The maximum processing time for decompressing a single compressed file is 900 seconds, beyond which the decompression task fails. Limits of the COS file decompression feature are subjected to SCF. For more limits, please see [SCF Limits](https://intl.cloud.tencent.com/document/product/583/11637).
+- The decompression feature depends on the SCF service, which provides users with a [free tier](https://intl.cloud.tencent.com/document/product/583/12282). You will be billed for the part exceeding the free tier according to [SCF Product Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Note that the larger your compressed file, the more resources will be used; the more often you decompress your packages, the more calling times will be incurred.
+
+## Directions
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. Click **Bucket List** in the left sidebar. Then, click the bucket to which you want to add a file decompression rule.
+3. Click **Function Service** > **ZIP File Decompression Function**.
+>! If you haven’t activated SCF, please go to the [SCF console](https://console.cloud.tencent.com/scf) to activate it and authorize the service as instructed.
+4. Click **Add Function** and perform configuration in the pop-up window, as shown below:
+![](https://main.qcloudimg.com/raw/33a0d8b1ded5fbc19342bf63f9df4827.png)
+   - **Function Name**: uniquely identifies a function and cannot be modified after creation. You can view the function in the [SCF console](https://console.cloud.tencent.com/scf/list?rid=1&ns=default).
+   - **Event Type**: an operation that triggers SCF. Take upload as an example. You can initiate an upload by calling the `PUT Object” or `POST Object` API. If you choose **Create using PUT method** as the event type, decompression will only be triggered by a package uploaded via the `PUT Object` API.
+ >!If you intend to upload files to the bucket using multiple ways, such as simple upload, multipart upload, and cross-bucket replication, you are advised to choose **File upload** as the event type.
+ - **Trigger Condition**: the upload path that will trigger SCF. If you select **Specified prefix**, SCF will be triggered only when the package is uploaded to a path with the specified prefix. If you choose **The whole bucket**, SCF will be triggered as long as a compressed file is uploaded to any location of the bucket.
+  >!If the destination file prefix you configured overlaps with the trigger condition, it may cause a cyclic trigger, so please try to avoid it. For example, if the destination prefix is `prefix`, and the trigger condition is` pre`, a cyclic decompression is triggered when you upload a `pref` package.
+ - **Decompression Format**: the decompression formats you are allowed to use. Currently, only ZIP files are supported.
+ - **Destination Bucket**: the bucket where the decompressed files are stored.
+ - **Destination File Prefix**: the specified path where the decompressed files are stored. If not specified, defaults to the root directory of the bucket.
+ - **SCF Authorization**: Required. To decompress a compressed file, SCF should be authorized to read the package from your bucket and upload the decompressed files to the specified location.
+5. Click **Confirm**.
+![](https://main.qcloudimg.com/raw/cb968ff99051f2eb1e515dd74000c1ee.png)
+You can perform the following operations on the created function:
+ - Click **View Logs** to view the historical running status of the decompression. If an error is reported, you can click **View Logs** to quickly redirect to the SCF console for viewing the error log details.
+ - Click **Edit** to modify the file decompression rule.
+ - Click **Delete** to delete the unwanted file decompression rule.
