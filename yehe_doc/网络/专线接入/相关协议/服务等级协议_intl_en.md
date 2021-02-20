@@ -95,7 +95,7 @@ In respect of the Service, if the Service Availability is lower than the above S
 
 ## 5. Miscellaneous
 
-5.1**The Parties hereby acknowledge that if you suffer any losses in the process of use of the Service due to the breach of contract by Tencent Cloud, Tencent Cloud's total liabilities for compensation with respect to your loss shall not exceed the aggregate amount of the Service Fee you have paid for the corresponding Service.**
+5.1 **The Parties hereby acknowledge that if you suffer any losses in the process of use of the Service due to the breach of contract by Tencent Cloud, Tencent Cloud's total liabilities for compensation with respect to your loss shall not exceed the aggregate amount of the Service Fee you have paid for the corresponding Service.**
 
 5.2 Tencent Cloud has the right to amend the terms of this Agreement as appropriate or necessary in light of changes in due course. You may review the most updated version of relevant Agree-ment terms on the official website of Tencent Cloud. If you disagree with such revisions made by Tencent Cloud to this Agreement, you have the right to cease using the Service; by continuing to use the Service, you shall be deemed to have accepted the Agreement as amended.
 
