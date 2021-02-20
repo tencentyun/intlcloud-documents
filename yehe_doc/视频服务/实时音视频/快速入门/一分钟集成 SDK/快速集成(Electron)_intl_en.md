@@ -1,12 +1,12 @@
 This document describes how to quickly integrate Tencent Cloud TRTC SDK for Electron into your project.
 
 ## Supported Platforms
--  Windows (PC)
+-  Windows（PC）
 -  macOS
 
 ## Integrating TRTC SDK for Electron
 
-#### Step 1. Install `Node.js`.
+### Step 1. Install `Node.js`.
 **Installing on Windows:**
 1. Download the latest version of [Node.js](https://nodejs.org/en/download/) installer `Windows Installer (.msi) 64-bit`.
 2. Open `Node.js command prompt` in the application list.
@@ -28,39 +28,38 @@ $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/br
 $ brew update
 ```
 
-#### Step 2. Install Electron.
+### Step 2. Install Electron.
 Run the following command in the command prompt to install Electron. Version 4.0.0 or above is recommended.
 ```shell
 $ npm install electron@latest --save-dev
 ```
 
-#### Step 3. Install TRTC SDK for Electron.
+### Step 3. Install TRTC SDK for Electron.
 1. Use the following nmp command in your Electron project to install the SDK.
 ```shell
 $ npm install trtc-electron-sdk@latest --save
 ```
 
->?You can view the information of the latest version of TRTC SDK for Electron [here](https://www.npmjs.com/package/trtc-electron-sdk).
+	>?You can view the information of the latest version of TRTC SDK for Electron [here](https://www.npmjs.com/package/trtc-electron-sdk).
 2. Import the module into the project script and use the module.
 ```javascript
-const TRTCCloud = require('trtc-electron-sdk');
+const TRTCCloud = require('trtc-electron-sdk').default;
+// import TRTCCloud from 'trtc-electron-sdk';
 this.rtcCloud = new TRTCCloud();
 // Get the SDK version number
 this.rtcCloud.getSDKVersion();
 ```
-	Since version 7.0.149, TRTC SDK for Electron has integrated `trtc.d.ts` for developers using TypeScript.
+	Since version v7.9.348, TRTC SDK for Electron has integrated `trtc.d.ts` for developers using TypeScript.
 ```
-// Enable the ES Module interoperability mode (esModuleInterop=true).
-import * as trtc_namespace from 'trtc-electron-sdk';
-const TRTCCloud = require('trtc-electron-sdk');
-const rtcCloud: trtc_namespace.TRTCCloud = new TRTCCloud();
+import TRTCCloud from 'trtc-electron-sdk';
+const rtcCloud: TRTCCloud = new TRTCCloud();
 // Get the SDK version number.
 rtcCloud.getSDKVersion();
 ```
 
 ## Packaging the Executable Program
 
-#### Step 1. Install a packaging tool.
+### Step 1. Install a packaging tool.
 1. We recommend that you use the packaging tool `electron-builder. You can run the following command to install it.
 ```bash
 $ npm install electron-builder@latest --save-dev
@@ -70,7 +69,7 @@ $ npm install electron-builder@latest --save-dev
 $ npm install native-ext-loader@latest --save-dev
 ```
 
-#### Step 2. Modify `webpack.config.js`.
+### Step 2. Modify `webpack.config.js`.
 The `webpack.config.js` file contains the configuration information for project building. You can locate it in the following ways.
 - Normally, `webpack.config.js` is in the root directory of the project.
 - If you create your project with `create-react-app`, the configuration file will be `node_modules/react-scripts/config/webpack.config.js`.
@@ -93,8 +92,7 @@ const targetPlatform = (function(){
 		return target;
 })();
 ```
-
->?In the result returned by `os.platform()`, "darwin" means macOS, and "win32" means Windows (64-bit or 32-bit).
+	>! In the result returned by `os.platform()`, "darwin" means macOS, and "win32" means Windows (64-bit or 32-bit).
 2. Add the following configuration to the `rules` option. The `targetPlatform` variable allows `rewritePath` to switch configurations according to the target platform.
 ```js
 rules: [
@@ -113,7 +111,7 @@ rules: [
 
 You need to add the `--target_platform` parameter to the build script of `package.json` too. See step 3 for details.
 
-#### Step 3. Modify `package.json`.
+### Step 3. Modify `package.json`.
 The `package.json` file is in the root directory of the project and contains information needed for packaging. Normally, to successfully package your project, you need to modify the path in `package.json` as follows. 
 
 1. Modify `main`.
@@ -190,7 +188,7 @@ The `package.json` file is in the root directory of the project and contains inf
 > -   `build.scripts.pack:mac`: calls `build:mac` first to build scripts and then `compile:mac` to package the project into a .dmg file.
 > -   `build.scripts.pack:win64`: calls `build:win` first to build scripts and then `compile:win64` to package the project into an .exe file.
 
-#### Step 4. Run the packaging command.
+### Step 4. Run the packaging command.
 - Packaging the project into a .dmg file for macOS:
 ```bash
 $ cd [Project directory]
@@ -203,6 +201,7 @@ $ cd [Project directory]
 $ npm run pack:win64
 ```
 	The packaging tool will generate an installation file named `bin/your-app-name Setup 0.1.0.exe`. Publish this file.
+
 
 >!Currently, TRTC SDK for Electron does not support cross-platform packaging. This means you cannot package your project into an .exe file on macOS or a .dmg file on Windows, but we are working on this and may make it possible in the future.
 
