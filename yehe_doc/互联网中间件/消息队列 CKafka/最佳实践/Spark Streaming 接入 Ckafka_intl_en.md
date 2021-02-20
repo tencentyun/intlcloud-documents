@@ -21,13 +21,13 @@ When Spark Streaming is used as data input for Kafka, the following stable and e
 
 Currently, the following versions of CKafka are supported: 0.9.0.x, 0.10.0.x, 0.10.1.x, and 0.10.2.x. The Kafka dependency of version 0.10.2.1 is used in this practice scenario.
 
-In addition, Spark Streaming in EMR also supports direct connection to CKafka. For more information, please see [Spark Streaming Connection to Ckafka](https://intl.cloud.tencent.com/document/product/1026/31134).
+In addition, Spark Streaming in EMR also supports direct connection to CKafka. For more information, please see [Spark Streaming Connection to CKafka](https://intl.cloud.tencent.com/document/product/1026/31134).
 
 ## Spark Streaming Connection to CKafka
 
-### Applying for a Ckafka instance
+### Applying for a CKafka instance
 Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
->Confirm whether the selected network type matches the currently used network.
+>?Confirm whether the selected network type matches the currently used network.
 
 ### Creating a topic
 Create a topic under the instance as instructed in [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
