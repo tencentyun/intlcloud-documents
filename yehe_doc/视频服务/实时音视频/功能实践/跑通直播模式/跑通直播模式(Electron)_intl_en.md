@@ -252,7 +252,7 @@ In TRTC, anchors from two rooms can use the "cross-room call" feature to compete
 2. After co-anchoring is enabled successfully, anchor A will receive the [`onConnectOtherRoom(userId, errCode, errMsg)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onConnectOtherRoom) callback, and all users in both rooms will receive the [`onUserVideoAvailable()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) and [`onUserAudioAvailable()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) callbacks.
     For example, after anchor A in room "001" uses `connectOtherRoom()` to call anchor B in room “002” successfully all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A, true)` and `onUserAudioAvailable(A, true)` callbacks of anchor A.
 3. Users in both rooms can call [`startRemoteView(userId, view)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the video image of the anchor in the other room. Audio will be played automatically.
-
+![](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
 ```
 // Sample code: cross-room co-anchoring
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
