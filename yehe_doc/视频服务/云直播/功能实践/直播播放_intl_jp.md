@@ -1,7 +1,7 @@
 ## 準備作業
 1.  [Tencent LVBサービス](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)をアクティブにし、 [実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了します。実名認証を実施していないユーザーは中国国内のLVBインスタンスを購入できません。
 2. [LVBコンソール](https://console.cloud.tencent.com/live/livestat)に アクセスし、プッシュアドレスを取得して、LVBプッシュを実現します。具体的な操作については、 [LVBプッシュ](https://intl.cloud.tencent.com/document/product/267/31558)をご参照ください 。
-3. 【Domain Management】(https://console.cloud.tencent.com/live/domainmanage)を選択して、【ドメイン名の追加】クリックし、ICP登録済みのドメイン名を入力して、タイプは【再生ドメイン名】を選択し、【保存】をクリックしてください。
+3. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)を選択して、【ドメイン名の追加】クリックし、ICP登録済みのドメイン名を入力して、タイプは【再生ドメイン名】を選択し、【保存】をクリックしてください。
 >!
 >- 再生ドメイン名がない場合は、他のドメイン名サービスプロバイダからドメイン名を購入することができます。
 >-  ドメイン名を購入済みで、かつドメイン名のICP登録を実施していない場合は、Tencent Cloudのドメイン名ICP登録に移動し、ICP登録を行ってください。また他のドメイン名サービスプロバイダでICP登録を行うこともできます。
