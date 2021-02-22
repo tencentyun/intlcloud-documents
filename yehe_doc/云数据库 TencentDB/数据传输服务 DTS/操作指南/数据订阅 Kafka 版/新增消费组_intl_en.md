@@ -2,7 +2,7 @@ Data subscription Kafka Edition allows users to create multiple consumer groups 
 
 ## Prerequisites
 - You have created the [Data Subscription Kafka Edition](https://intl.cloud.tencent.com/document/product/571/39531).
->?In the data subscription list, the subscription with the "Kafka Edition" tag is the data subscription in Kafka edition, as shown below:
+>?In the data subscription list, the subscription with the "Kafka Edition" tag is the data subscription in Kafka edition.
 
 ## Notes
 - The data subscription task must be in the running status.
