@@ -6,7 +6,7 @@ All users can purchase CVMs on [Tencent Cloud Console](http://manage.qcloud.com/
 Below describes how to purchase these two types of CVMs from the console.
 
 > 
->- For specific configurations, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
+>- For detailed prices, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
 >- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
 
 ### Pay-as-you-go
@@ -19,7 +19,7 @@ Below describes how to purchase these two types of CVMs from the console.
 
 >
 >- After activating the pay-as-you-go CVM, make sure that your account has sufficient balance. Overdue CVMs may be repossessed by Tencent Cloud.
-> For more information, see [Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
+>- For more information, see [Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
 >- For detailed prices, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
 >- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
 
