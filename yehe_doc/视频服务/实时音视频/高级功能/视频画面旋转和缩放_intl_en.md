@@ -1,28 +1,31 @@
 ## Overview
 
-Different from the portrait mode of mobile live streaming, TRTC needs to consider both landscape and portrait modes; therefore, there will be a lot of landscape/portrait mode processing logic to deal with. This document describes:
-- How to implement portrait mode; for example, WeChat video call is a typical example of portrait mode.
-- How to implement landscape mode; for example, multi-person video conferencing applications (e.g., XYLink) often adopt landscape mode.
-- How to customize the rotation direction and fill mode of local and remote video images.
+Mobile live streaming uses mainly the portrait mode, but TRTC supports both the landscape and portrait modes and therefore needs to implement different page orientation logics. This document describes:
+- How to implement the portrait mode, for example, for video calls like those on WeChat;
+- How to implement the landscape mode, for example, for video conferencing services such as Zoom;
+- How to customize settings for the rotation degree and fill mode of the local image and remote images.
 
 ![](https://main.qcloudimg.com/raw/1b4452db22edfe88646cd35888794d44.jpg)
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  ×  |  × |
+|   iOS    | Android  | macOS  | Windows  | Electron |  Chrome |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
 
 ## Portrait Mode
-If you want to achieve a user experience similar to WeChat video call, you need to do two things:
+To deliver experience similar to that of WeChat video calls, you need to do two things.
 
-**1. Configure the UI of the application to be in portrait mode**
-For iOS, set directly in Xcode's **General** > **Deployment Info** > **Device Orientation**:
+<span id="step1"></span>
+### 1. Set the page orientation of your app to the portrait mode.
+### iOS
+Set the page orientation in Xcode > **General** > **Deployment Info** > **Device Orientation**.
 ![](https://main.qcloudimg.com/raw/f7d62ed0954fd44f80d3983a0e6fb52d.png)
 
-You can also achieve this by implementing the `supportedInterfaceOrientationsForWindow` method in `Appdelegate`:
-``` ObjectiveC
+Alternatively, use the `supportedInterfaceOrientationsForWindow` method in `Appdelegate`.
+
+```
 - (UIInterfaceOrientationMask)application:(UIApplication *)application 
     supportedInterfaceOrientationsForWindow:(UIWindow *)window 
 {
@@ -31,54 +34,64 @@ You can also achieve this by implementing the `supportedInterfaceOrientationsFor
 
 }
 ```
+>? This [CSDN article](https://blog.csdn.net/DreamcoffeeZS/article/details/79037207) offers a detailed guide on page orientation and adaptation on iOS for developers.
 
-On the Android platform, you can configure the UI to be in portrait mode by specifying the `screenOrientation` attribute of the activity as `portrait`:
-```xml
+#### Android
+Set the `screenOrientation` attribute of the activity element to `portrait`:
+```
 <activity android:name=".trtc.TRTCMainActivity"  android:launchMode="singleTask" android:windowSoftInputMode="adjustPan"
           android:screenOrientation="portrait" />
 ```
 
-**2. Configure the SDK to use portrait resolution**
-When using the `setVideoEncoderParam` API of TRTCCloud to set video encoding parameters, simply specify `resMode` as `TRTCVideoResolutionModePortrait`.
-
-Taking iOS as an example, the sample code is as follows:
-``` ObjectiveC
+<span id="step2"></span>
+### 2. Set the resolution mode of the SDK to portrait.
+When you use the `setVideoEncoderParam` API of `TRTCCloud` to set video encoding parameters, set `resMode` to `TRTCVideoResolutionModePortrait`.
+<span id="example_code"></span>
+Below is the sample code.
+#### iOS
+```
 TRTCVideoEncParam* encParam = [TRTCVideoEncParam new];
 encParam.videoResolution = TRTCVideoResolution_640_360;
 encParam.videoBitrate = 600;
 encParam.videoFps = 15;
-encParam.resMode = TRTCVideoResolutionModePortrait; // Set the resolution mode to portrait mode
+encParam.resMode = TRTCVideoResolutionModePortrait; // Set the resolution mode to portrait.
 
 [trtc setVideoEncoderParam: encParam];
 ```
+#### Android
+```
+TRTCCloudDef.TRTCVideoEncParam encParam = new TRTCCloudDef.TRTCVideoEncParam();
+encParam.videoResolution = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_640_360;
+encParam.videoBitrate = 600;
+encParam.videoFps = 15;
+encParam.videoResolutionMode = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_MODE_PORTRAIT; //Set the resolution mode to portrait.
+trtc.setVideoEncoderParam(encParams);
+```
 
 ## Landscape Mode
+The steps to implement the landscape mode for your app are similar to the steps of implementing the portrait mode, except that different values are used for the parameters in step 1 and step 2.
+In particular, regarding the value of `resMode` in `TRTCVideoEncParam` in [step 2](#step2),
+- on iOS, set it to `TRTCVideoResolutionModeLandscape`.
+- on Android, set it to `TRTC_VIDEO_RESOLUTION_MODE_LANDSCAPE`.
 
-If you want the application to be in landscape mode, then you need to do something similar to setting portrait mode and just modify the parameters in the first and second steps accordingly.
-Specifically, in the second step, you need to specify `resMode` in `TRTCVideoEncParam` as `TRTCVideoResolutionModeLandscape` (for Android: `TRTC_VIDEO_RESOLUTION_MODE_LANDSCAPE`).
+## Custom Settings
 
-## Custom Controls
+The TRTC SDK provides a wide range of API functions for the setting of the rotation degree and fill mode of the local image and remote images.
 
-The TRTC SDK provides a lot of API functions to control the rotation direction and fill mode of local and remote video images:
-
-| API Function | Purpose | Remarks |  
+| API Function | Setting | Note |
 |---------|---------| ----- |
-| setLocalViewRotation | Clockwise rotation angle of local preview image | Valid values: 90 degrees, 180 degrees, 270 degrees | 
-| setLocalViewFillMode | Fill mode of local preview image | Valid values: crop, fill with black bars |
-| setRemoteViewRotation | Clockwise rotation angle of remote video image | Valid values: 90 degrees, 180 degrees, 270 degrees |
-| setRemoteViewFillMode | Fill mode of remote video image | Valid values: crop, fill with black bars |
-| setVideoEncoderRotation | Clockwise rotation angle of the video image output by the encoder | Currently, only 90, 180, and 270-degree rotations are supported |
+| setLocalViewRotation | The clockwise rotation degree of the local image preview | Valid values: 90 degrees, 180 degrees, 270 degrees |
+| setLocalViewFillMode | The fill mode of the local image preview | Depending on the setting, the image may be cropped or may have black bars. |
+| setRemoteViewRotation | The clockwise rotation degree of remote video images | Valid values: 90 degrees, 180 degrees, 270 degrees |
+| setRemoteViewFillMode | The fill mode of remote video images | Depending on the setting, the image may be cropped or may have black bars. |
+| setVideoEncoderRotation | The clockwise rotation degree of encoded images | Valid values: 90 degrees, 180 degrees, 270 degrees |
 
 ![](https://main.qcloudimg.com/raw/f965d6d603f95862d73525469637b437.jpg)
 
 
 ## GSensorMode
-Considering that screen rotation involves various adaptation factors of recording and CDN relayed live streaming, the TRTC SDK only provides a simple adaption feature based on gravity sensing, which can be enabled through the `setGSensorMode` API of TRTCCloud.
+Given that page orientation involves adaptation during video recording and CDN relayed live streaming, the TRTC SDK provides a simple gravity-sensing adaptation feature, which you can enable using the `setGSensorMode` API of `TRTCCloud`.
 
-This feature currently only supports 180-degree upside-down adaptive rotation, that is, when the user's phone is turned upside down by 180 degrees, the screen orientation presented to the viewer will still remain the same (90-degree or 270-degree adaptive rotation is not supported yet). This adaptation is implemented based on the direction adjustment of the encoder, so the recorded video as well as the video image displayed in WeChat Mini Program and HTML5 webpage can also maintain the original orientation.
+Currently, the feature supports only 180-degree adaptive rotation. This means that when a user's phone is turned 180 degrees, the orientation of the user’s image seen by remote users remains the same, but this does not work when the phone is turned 90 degrees or 270 degrees. Since the feature is achieved through encoder-based rotation adjustment, adaptive rotation is also possible for recorded videos and videos played via HTML5 players.
 
->Another implementation scheme of gravity sensing-based adaption is to carry the gravity direction of the current video in each video frame, and then adaptively adjust the rendering direction on the remote viewer's device. However, this scheme requires the introduction of additional transcoding resources in order to achieve the orientation of the recorded video as expected; therefore, it is not recommended.
-
-
-
-
+> ! Another way to achieve adaptive rotation is embedding the gravity direction of a video in the information of each video frame, and adjusting the rotation degree of the video at the viewer end. This scheme requires the introduction of additional transcoding resources to adjust the orientation of recorded videos as expected and is therefore not recommended.

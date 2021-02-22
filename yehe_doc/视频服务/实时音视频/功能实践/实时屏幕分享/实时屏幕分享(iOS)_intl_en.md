@@ -1,95 +1,94 @@
-TRTC supports two different screen sharing schemes on iOS:
-- **In-application sharing**
-It refers to sharing the image of the current application, which is supported on iOS 13 and above. As the screen content outside the current application cannot be shared, it is suitable for scenarios with high requirements for privacy protection.
+TRTC supports two screen sharing schemes on iOS:
+- **In-app sharing**
+With in-app sharing, sharing is limited to the screens of the current app. It is supported on iOS 13 and above. As screens outside the current app cannot be shared, the scheme is suitable for scenarios with high requirements for privacy protection.
+- **Cross-app sharing**
+Based on Apple's ReplayKit scheme, cross-app sharing allows the sharing of screens across the system, but the steps to required to implement the scheme are more complicated than those for in-app sharing because the app must provide an additional extension.
 
-- **Cross-application sharing**
-Based on Apple's ReplayKit scheme, this feature can share the screen content of the entire system. However, the current application needs to provide an additional `Extension` component; therefore, the connection process is more complicated than that of in-application sharing.
-
->! It should be noted that the mobile edition of TRTC SDK does not support "substream sharing" like the desktop edition, as both iOS and Android limit the camera permission for applications on the background, which makes substream sharing meaningless.
+>! Please note that the mobile editions of the TRTC SDK do not support "substream sharing" as the desktop editions do, for both iOS and Android ban the use of the camera by apps running in the background. It’s therefore of little point for the mobile editions to support the feature.
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | macOS | Windows |Electron| Chrome |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
-## In-application Sharing
+## In-app Sharing
 
-You can implement the in-application sharing scheme simply by calling the [startScreenCaptureInApp](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) API provided by the TRTC SDK and passing in the encoding parameter `TRTCVideoEncParam`. If the parameter is set to `nil`, the SDK will use the values set before the screen sharing.
+You can implement the in-app sharing scheme simply by calling the [`startScreenCaptureInApp`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) API provided by the TRTC SDK and passing in the encoding parameter `TRTCVideoEncParam`. If the parameter is set to `nil`, the SDK will use the encoding parameters set before screen sharing.
 
-We recommend the following encoding parameters for screen sharing on iOS:
+We recommend the following encoding parameter settings for screen sharing on iOS:
 
-| Parameter Item | Parameter Name | Common Recommended Value | Recommended Value for Text-based Teaching | 
+| Item | Parameter Name | Recommended Value for Regular Scenarios | Recommended Value for Text-based Teaching |
 |---------|---------|---------|-----|
-| Resolution | videoResolution | 1280x720 | 1920x1080 | 
+| Resolution | videoResolution | 1280 × 720 | 1920 × 1080 |
 | Frame rate | videoFps | 10 FPS | 8 FPS |
 | Highest bitrate | videoBitrate| 1,600 Kbps | 2,000 Kbps |
 | Resolution adaption | enableAdjustRes | No | No |
 
-- As the content in screen sharing generally does not change drastically, it is not economical to set a high FPS, and 10 FPS is recommended.
-- If the screen sharing content contains many words, you can increase the resolution and bitrate accordingly.
-- The highest bitrate (`videoBitrate`) refers to the highest output bitrate when the image content changes dramatically. If the screen content does not change a lot, the actual encoding bitrate will be lower.
+- As shared screens generally do not change drastically, it is not economical to use a high FPS. We recommend setting it to 10 FPS.
+- If the screen you share contains a large amount of text, you can increase the resolution and bitrate accordingly.
+- The highest bitrate (`videoBitrate`) refers to the highest output bitrate when a shared screen changes dramatically. If the shared content does not change a lot, the actual encoding bitrate will be lower.
 
 
-## Cross-application Sharing
+## Cross-app Sharing
 
 ### Sample code
-The sample code for cross-application sharing is placed in the **Screen** directory at [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/), which contains the following files:
+You can find the sample code for cross-app sharing in the **Screen** directory of [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/), which contains the following files:
 
 ```
-├─ TRTCSimpleDemo              // Lite TRTC demo
-|  ├─ Screen                   // Cross-application screen sharing demo
-|  |  ├─ RTC                   // Demo of TRTC running in call mode. In this mode, there is no concept of role
-|  |  |  ├─ TXReplayKit_Screen // Code of screen sharing process `Broadcast Upload Extension`. For more information, please see step 2.
-|  |  |  |  ├─ SampleHandler.swift // Code for receiving screen sharing data from system
+├─ TRTCSimpleDemo              // A simple TRTC demo
+|  ├─ Screen                   // Cross-app screen sharing demo
+|  |  ├─ RTC                   // Demo for running TRTC in the call modes, to which the concept of roles does not apply
+|  |  |  ├─ TXReplayKit_Screen // Code for the screen recording process Broadcast Upload Extension. For details, see step 2.
+|  |  |  |  ├─ SampleHandler.swift // For receiving screen recording data from the system
 |  |  |  |  ├─ Info.plist                          
-|  |  |  |  ├─ TXReplayKit_Screen.entitlements // Code for setting `AppGroup` information for communication between processes
+|  |  |  |  ├─ TXReplayKit_Screen.entitlements // For setting an AppGroup to enable communication between processes
 |  |  |  
 |  |  ├─ ScreenEntranceViewController.swift    // Feature entry UI
-|  |  ├─ ScreenViewController.swift            // Screen sharing status UI
-|  |  ├─ TRTCBroadcastExtensionLauncher.swift  // Auxiliary code for waking up system screen sharing
+|  |  ├─ ScreenViewController.swift            // Screen recording status UI
+|  |  ├─ TRTCBroadcastExtensionLauncher.swift  // Auxiliary code for starting screen recording
 ```
 
-You can run the demos as instructed in [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/README.md).
+You can run the demo as instructed in [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/README.md).
 
 
-### Connection directions
+### Directions
 
-For cross-application screen sharing on iOS, you need to add the `Extension` screen sharing process to work with the primary application process for push. The `Extension` screen sharing process is created by the system when screen sharing needs to be started and is used to receive the captured screen image; therefore, you need to perform the following steps:
+To enable cross-app screen sharing on iOS, you need to add the screen recording process Broadcast Upload Extension, which works with the host app to push streams. A Broadcast Upload Extension is created by the system when screen sharing is needed and is responsible for receiving the screen images captured by the system. For this, you need to do the following:
 
-1. Create an application group (`App Group`) and configure it in Xcode (optionally). This step is used to enable communication between the `Extension` screen sharing process and the primary application process.
-2. Create a target of `Broadcast Upload Extension` in your project and integrate the `TXLiteAVSDK_ReplayKitExt.framework` tailored for the extension module in the SDK package into the target.
-3. Connect to the receipt logic of the primary application so as to make it wait to receive the screen sharing data from `Broadcast Upload Extension`.
-4. Use a helper class (`RPSystemBroadcastPickerView`) implemented in advance in the demo to implement the feature of waking up screen sharing by simply clicking a button like in VooV Meeting for iOS.
+1. Create an application group (App Group) and configure it in Xcode (optional) to enable communication between the Broadcast Upload Extension and host app.
+2. Create a target of Broadcast Upload Extension in your project and integrate into it `TXLiteAVSDK_ReplayKitExt.framework` from the SDK package, which is tailored for the extension module.
+3. Make the host app stand by to receive screen recording data from the Broadcast Upload Extension.
+4. Use a helper class (`RPSystemBroadcastPickerView`) already implemented in the demo to make it possible to start screen sharing by clicking a button (optional), as in the iOS edition of VooV Meeting.
 
->! If you skip step 1, that is, if you do not configure an `App Group` (by passing in `nil` to the API), screen sharing can still run, but the stability will be compromised. Therefore, although there are many steps, please configure a correct `App Group` to ensure screen sharing stability.
+>! If you skip step 1, that is, if you do not configure an App Group (by passing in `nil` to the API), you can still enable screen sharing, but its stability will be compromised. Therefore, the steps may be complicated, but to ensure the stability of screen sharing, we suggest that you configure an App Group as described in this document.
 
 <span id="createGroup"> </span>
-#### Step 1. Create an App Group
-Log in to [develop.apple.com](https://develop.apple.com) with your account and perform the following operations (**please download the corresponding provisioning profile again after completing the steps**):
+#### Step 1. Create an App Group.
+Log in to [**https://developer.apple.com/**](https://develop.apple.com) and do the following (**please download the corresponding provisioning profile again afterwards**.)
 
 1. Click **Certificates, IDs & Profiles**.
 2. Click "+" on the right.
 3. Select **App Groups** and click **Continue**.
-4. Enter the "Description" and "Identifier" in the pop-up form. You need to pass in the corresponding `AppGroup` parameter in the API to "Identifier". After completing these settings, click **Continue**.
+4. In the form that pops up, fill in the **Description** and **Identifier** boxes. For "Identifier", you need to pass in the `AppGroup` parameter in the API. After this, click **Continue**.
  ![](https://main.qcloudimg.com/raw/43dd60f5053b21c167ee3a8dbe7d16f9/Create_AppGroup.jpg)
-5. Return to the "Identifier" page, select **App IDs** on the top-left sidebar and click your `App ID` (you need to configure the `AppID` fields for both the primary application and `Extension` in the similar way).
+5. Return to the "Identifiers" page, select **App IDs**, and click your `App ID` (you need to configure the host app and the AppID of the extension in the same way).
 6. Select **App Groups** and click **Edit**.
-7. In the pop-up form, select the `App Group` that you created earlier, click **Continue** to return to the editing page, and click **Save** to save the settings.
+7. In the form that pops up, select the App Group you created, click **Continue** to return to the edit page, and click **Save** to save the settings.
  ![](https://main.qcloudimg.com/raw/962c1b705433aa62c9617f90d28238c5/Apply_AppGroup.jpg)
-8. Download the provisioning profile again and configure it into Xcode.
+8. Download the provisioning profile again and import it to Xcode.
 
 <span id="createExtension"> </span>
-#### Step 2. Create the Broadcast Upload Extension
-1. In Xcode menu, click **File** > **New** > **Target...** > **Broadcast Upload Extension**.
-2. In the pop-up dialog box, enter the relevant information. You **don't need to** check **Include UI Extension**. Click **Finish** to complete the creation.
-3. Drag `TXLiteAVSDK_ReplayKitExt.framework` in the downloaded SDK package into the project and check the newly created target.
-4. Select the new target, click **+ Capability**, and double-click **App Groups** as shown below:
+#### Step 2. Create a Broadcast Upload Extension.
+1. In the Xcode menu, click **File** > **New** > **Target...** > **Broadcast Upload Extension**.
+2. In the dialog box that pops up, enter the information required. You **don't need to** check **Include UI Extension**. Click **Finish** to complete the creation.
+3. Drag `TXLiteAVSDK_ReplayKitExt.framework` in the SDK package into the project and select the target created.
+4. Click **+ Capability**, and double-click **App Groups**, as shown below:
  ![AddCapability](https://main.qcloudimg.com/raw/a2b38f1581a495f2a966f6eaf464e057.png)
- After these steps are completed, a file named `target name.entitlements` will be generated in the file list as shown below. Select it and click "+" to enter the just created `App Group`.
+ A file named `target name.entitlements` will appear in the file list as shown below. Select it, click "+", and enter the `App Group` created earlier.
  ![AddGroup](https://main.qcloudimg.com/raw/b4904a8b425cf55e58497b35c0700966.png)
-5. Select the target of the primary application **and configure it in the same way as above.**
-6. In the new target, Xcode will automatically create a `SampleHandler.m` file. Replace the file content with the following code and **replace the `APPGROUP` in the code with the just created `App Group Identifier`**.
+5. Select the target of the host app **and configure it in the same way as described above.**
+6. In the new target, Xcode will automatically create a `SampleHandler.m` file. Replace the file content with the following code. You need to **change `APPGROUP` in the code to the App Group Identifier created earlier**.
 
 ```objc
 #import "SampleHandler.h"
@@ -101,7 +100,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 @end
 
 @implementation SampleHandler
-// Note: replace the `APPGROUP` with the just created `App Group Identifier`.
+// Note: replace `APPGROUP` with the App Group Identifier created earlier.
 - (void)broadcastStartedWithSetupInfo:(NSDictionary<NSString *,NSObject *> *)setupInfo {
     [[TXReplayKitExt sharedInstance] setupWithAppGroup:APPGROUP delegate:self];
 }
@@ -120,7 +119,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 }
 
 #pragma mark - TXReplayKitExtDelegate
-- (void)boradcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
+- (void)broadcastFinished:(TXReplayKitExt *)broadcast reason:(TXReplayKitExtReason)reason
 {
     NSString *tip = @"";
     switch (reason) {
@@ -128,7 +127,7 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
             tip = @"Screen sharing ended";
             break;
         case TXReplayKitExtReasonDisconnected:
-            tip = @"Application disconnected";
+            tip = @"App disconnected";
             break;
         case TXReplayKitExtReasonVersionMismatch:
             tip = @"Integration error (the SDK version number does not match)";
@@ -163,63 +162,62 @@ Log in to [develop.apple.com](https://develop.apple.com) with your account and p
 ```
 
 <span id="receive"> </span>
-#### Step 3. Connect to the receipt logic of the primary application
-Connect to the receipt logic of the primary application in the following steps, so that the primary application can stay in `waiting` status before screen sharing starts in order to receive the screen sharing data from the `Broadcast Upload Extension` process at any time.
-1. Make sure that camera capture has been disabled in `TRTCCloud`; and if not, call [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) to disable it.
-2. Call the [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) method and pass in the `AppGroup` set in [step 1](#createGroup) to make the SDK enter the `waiting` status.
-3. Wait for the user to trigger screen sharing. If the "triggering button" in [step 4](#launch) is not implemented, the user needs to trigger screen sharing by pressing and holding the screen recording button in Control Center of iOS.
-4. You can call the [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) API to stop screen sharing at any time.
- 
+#### Step 3. Make the host app stand by to receive data.
+Before screen sharing starts, the host app must be put on standby to receive screen recording data from the Broadcast Upload Extension. To do this, follow these steps:
+1. Make sure that camera capture is disabled in `TRTCCloud`; if not, call [`stopLocalPreview`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3) to disable it.
+2. Call the [`startScreenCaptureByReplaykit:appGroup:`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) method and pass in the `AppGroup` set in [step 1](#createGroup) to put the SDK on standby.
+3. The SDK will then wait for a user to trigger screen sharing. If a "triggering button" is not added as described in [step 4](#launch), users need to press and hold the screen recording button in the iOS Control Center to start screen sharing.
+4. You can call the [`stopScreenCapture`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) API to stop screen sharing at any time.
+
 ```
-// Start screen sharing. You need to replace the `APPGROUP` with the just created `App Group Identifier`.
+// Start screen sharing. You need to replace `APPGROUP` with the App Group Identifier created earlier.
 - (void)startScreenCapture {
     TRTCVideoEncParam *videoEncConfig = [[TRTCVideoEncParam alloc] init];
     videoEncConfig.videoResolution = TRTCVideoResolution_1280_720;
     videoEncConfig.videoFps = 10;
     videoEncConfig.videoBitrate = 2000;
-		// You need to replace the `APPGROUP` with the just created `App Group Identifier`:
+    // You need to replace `APPGROUP` with the App Group Identifier created earlier.
     [[TRTCCloud sharedInstance] startScreenCaptureByReplaykit:videoEncConfig
                                                      appGroup:APPGROUP];
 }
 
-// Stop screen sharing
+// Stop screen sharing.
 - (void)stopScreenCapture {
     [[TRTCCloud sharedInstance] stopScreenCapture];
 }
 
 // Event notification for screen sharing start, which can be received through `TRTCCloudDelegate`
-- (void)onScreenCaptureStarted {
+- (void)onScreenCaptureStarted
     [self showTip:@"Screen sharing started"];
 }
 ```
 
 <span id="launch"> </span>
 #### Step 4. Add a screen sharing triggering button (optional)
-Till [step 3](#receive), the user needs to start screen sharing manually by pressing and holding the screen recording button in Control Center. You can implement the feature of triggering screen sharing simply by clicking a button like in VooV Meeting in the following steps:
+In [step 3](#receive), users need to start screen sharing manually by pressing and holding the screen recording button in the Control Center. To make it possible to start screen sharing by clicking a button in your app as in VooV Meeting, follow these steps:
 
 1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen) and add it to your project.
-2. Place a button on your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to wake up screen sharing.
-
+2. Add a button to your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to trigger screen sharing.
 ```
-// Custom button response method
+// Customize a response for button clicking
 - (IBAction)onScreenButtonTapped:(id)sender {
     [TRTCBroadcastExtensionLauncher launch];
 }
 ```
 
->!Apple added `RPSystemBroadcastPickerView` to iOS 12.0, which can pop up a launcher in applications for user to confirm whether to start screen sharing. Currently, `RPSystemBroadcastPickerView` does not support custom UI or provide an official wakeup method.
->`TRTCBroadcastExtensionLauncher` works by traversing subviews of `RPSystemBroadcastPickerView` to find the `UIButton` and trigger its click event.
-> **However, this scheme is not officially recommended by Apple and may become invalid in the next system update. Therefore, [step 4](#launch) is only an alternative scheme, and all risks arising from using it shall be borne by you.**
+>!
+>- Apple added `RPSystemBroadcastPickerView` to iOS 12.0, which can show a picker view in apps for users to select whether to start screen sharing. Currently, `RPSystemBroadcastPickerView` does not support custom UI. Nor does Apple provide an official triggering method.
+>- `TRTCBroadcastExtensionLauncher` works by going through the subviews of `RPSystemBroadcastPickerView`, finding the UI button, and triggering its click event.
+>- **Please note that this scheme is not recommended by Apple and may become invalid in its next update. We have therefore made [step 4](#launch) optional. You need to bear the risks arising from implementing the scheme yourself.**
 
-## Viewing Shared Screen
-- **View macOS/Windows screen sharing**
-  When a macOS/Windows user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will get a notification through the [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) event in `TRTCCloudDelegate`.
-  Users who want to view the shared screen can start rendering the substream image of the remote user through the [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) API.
+## Viewing Shared Screens
+- **Viewing screens shared by macOS/Windows users**
+  When a macOS/Windows user in a room starts screen sharing, the screen will be shared through a substream, and other users in the room will be notified through [`onUserSubStreamAvailable`](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the substream image of the remote user through the [`startRemoteSubStreamView`](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) API.
 
-- **View Android/iOS screen sharing**
-  When an Android/iOS user starts screen sharing, the screen will shared through the primary stream, and other users in the room will get a notification through the [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) event in `TRTCCloudDelegate`.
-  Users who want to view the shared screen can start rendering the primary stream image of the remote user through the [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) API.
-
+- **Viewing screens shared by Android/iOS users**
+  When an Android/iOS user starts screen sharing, the screen will be shared through the primary stream, and other users in the room will be notified through [`onUserVideoAvailable`](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) in `TRTCCloudDelegate`.
+  Users who want to view the shared screen can start rendering the primary stream of the remote user through the [`startRemoteView`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) API.
 
 
 

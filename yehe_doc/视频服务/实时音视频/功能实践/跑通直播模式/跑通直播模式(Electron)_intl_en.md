@@ -1,51 +1,49 @@
 ## Use Cases
 
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as [call mode](https://intl.cloud.tencent.com/document/product/647/36069), while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
-TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for such application scenarios as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
+TRTC supports four room entry modes, among which video call (`VideoCall`) and audio call (`VoiceCall`) are the [call modes](https://intl.cloud.tencent.com/document/product/647/36069), and interactive video live streaming (`Live`) and interactive audio live streaming (`VoiceChatRoom`) are the live streaming modes.
+The live streaming modes allow a maximum of 100,000 concurrent users in each room with smooth mic connection/disconnection. Co-anchoring latency is kept below 300 ms and watch latency below 1,000 ms. The live streaming modes are suitable for use cases such as low-latency interactive live streaming, interactive classrooms for up to 100,000 participants, video dating, online education, remote training, and mega conferences.
 
 ## How It Works
 
-The TRTC service consists of two types of server nodes: access servers and proxy servers:
+TRTC services use two types of server nodes: access servers and proxy servers.
 
--   **Access server**
-    Backed by the highest-quality lines and high-performance servers, this type of nodes is ideal for processing end-to-end low-latency co-anchoring calls, but the fees per unit time are relatively high.
--   **Proxy server**
-    With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
+- **Access server**
+    This type of nodes use high-quality lines and high-performance servers and are good at processing end-to-end low-latency co-anchoring calls, but the unit cost is relatively high.
+- **Proxy server**
+    This type of servers use mediocre lines and average-performance servers and are good at processing high-concurrency stream pulling and playback. The unit cost is relatively low.
 
-In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
+In the call modes, all users in a TRTC room are assigned to access servers and are in the role of an anchor. This means the users can speak to each other at any point in the call (up to 30 users can send upstream data at the same time). The modes are suitable for use cases such as online conferencing, but the number of users in each room is capped at 300.
 
-![](https://main.qcloudimg.com/raw/afd9cefdfe72a2914fd55f8586f2c7e0.jpg)
+![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
 
-You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron) to get the sample code related to this document.
+You can obtain the sample code used in this document at [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron).
 
 ## Directions
 
-<span id="step1"> </span>
-### Step 1. Try to run the official SimpleDemo
+<span id="step1"></span>
 
-You are recommended to read [Run SimpleDemo (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) first and then follow the instructions to run the official SimpleDemo.
+### Step 1. Run the official SimpleDemo.
 
-If the SimpleDemo can run properly, it means that you have mastered the method of installing Electron in your project.
+We recommend that you read [Demo Quick Start > Electron](https://intl.cloud.tencent.com/document/product/647/35089) first and follow the instructions to run the official SimpleDemo.
+If you run SimpleDemo successfully, it means that you have mastered the method of installing Electron in your project.
+If not, there may be a problem in the download or installation process. Try troubleshooting the problem by following the instructions in Electron's [installation document](https://www.electronjs.org/docs/tutorial/installation).
 
-If the SimpleDemo cannot run, the problem is likely to be related to Electron download and installation. In this case, you can refer to Electron's official [installation guide](https://www.electronjs.org/docs/tutorial/installation) for assistance.
+<span id="step2"></span>
 
-<span id="step2"> </span>
-### Step 2. Integrate trtc-electron-sdk into your project
+### Step 2. Integrate `trtc-electron-sdk` into your project.
 
-If [step 1](#step1) is executed normally and the result is as expected, it means that you have mastered the method of installing the Electron environment.
+If you can [run SimpleDemo](#step1) successfully, it means that you have mastered the method of preparing the Electron environment.
 
-You can conduct secondary development on the official demo, and the initial stage of your project will go smoothly.
-
-You can also run the following command to install `trtc-electron-sdk` into your existing project:
-
+- You can develop your project based on the demo we provide to get started quickly.
+- You can also run the following command to install `trtc-electron-sdk` in your project.
 ```bash
 npm install trtc-electron-sdk --save
 ```
 
-<span id="step3"> </span>
-### Step 3. Initialize an SDK instance and listen on the event callback
+<span id="step3"></span>
+### Step 3. Initialize an SDK instance and configure event callbacks.
 
 Create a `trtc-electron-sdk` instance:
 
@@ -54,32 +52,32 @@ import TRTCCloud from 'trtc-electron-sdk';
 let trtcCloud = new TRTCCloud();
 ```
 
-Listen on the `onError` event:
+Subscribe to the `onError` event:
 
 ```javascript
-// Error notifications should be listened on, captured, and sent to the user
+// Error events must be listened for and captured, and error messages should be sent to users.
 let onError = function(err) {
   console.error(err);
 }
 trtcCloud.on('onError',onError);
 ```
 
-<span id="step4"> </span>
-### Step 4. Assemble the room entry parameter `TRTCParams`
+<span id="step4"></span>
+### Step 4. Set the room entry parameter `TRTCParams`.
 
-When calling the [enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) API, you need to enter a key parameter [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html), which includes the following required fields:
+When calling the [enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) API, you need to set a key parameter [`TRTCParams`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html), which includes the following required fields:
 
-| Parameter | Type | Description | Example |
+| Parameter     | Type   | Description                                                         | Example                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
-| sdkAppId | Numeric | Application ID, which can be found in **Application Management** > **Application Info** in the [console](https://console.cloud.tencent.com/trtc/app). | 1400000123             |
-| userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001|
-| userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166) . | eJyrVareCeYrSy1SslI... |
-| roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
+| sdkAppId | Numeric | Application ID, which can be found in **Application Management** > **Application Info** in the [console](https://console.cloud.tencent.com/trtc/app) | 1400000123             |
+| userId | String | Only letters (a-z and A-Z), digits (0-9), underscores, and hyphens are allowed. | test_user_001 |
+| userSig | String | `userSig` is calculated based on `userId`. For the calculation method, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
+| roomId | Numeric | By default, TRTC does not support `roomId` in strings as it will slow down the room entry process. If you need to use string-type `roomId`, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). | 29834  |
 
-```javascript
-import {
-  TRTCParams,
-  TRTCRoleType 
+```
+import(
+  ## TRTCParams
+  ## TRTCRoleType 
 } from "trtc-electron-sdk/liteav/trtc_define";
 
 let param = new TRTCParams();
@@ -87,27 +85,29 @@ param.sdkAppId = 1400000123;
 param.roomId = 29834;
 param.userId = 'test_user_001';
 param.userSig = 'eJyrVareCeYrSy1SslI...';
-param.role = TRTCRoleType.TRTCRoleAnchor; // Set the role to "anchor"
+param.role = TRTCRoleType.TRTCRoleAnchor; // Set the role to "anchor".
 ```
 
-> In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>! In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
 
-### Step 5. The anchor enables camera preview and mic capture
+<span id="step5"></span>
 
-1. The anchor can call [startLocalPreview()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalPreview) to enable the preview of local camera, and the SDK will request the system camera access.
-2. The anchor can call `setLocalViewFillMode()` to set the display mode of the local video image:
-    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill` indicates the fill mode where the image may be scaled up proportionally or cropped, but no black bars will exist.
-    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit` indicates the fit mode where the image may be scaled down proportionally to fit the screen, but black bars may exist.
-3. The anchor can call [setVideoEncoderParam()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setVideoEncoderParam) to set the encoding parameter of the local video, which determines the [image quality](https://intl.cloud.tencent.com/document/product/647/35153) of the video watched by other users in the room.
-4. The anchor can call [startLocalAudio()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalAudio) to enable the mic, and the SDK will request the system mic access.
+### Step 5. Enables camera preview and mic capture as an anchor.
+1.  Call [`startLocalPreview()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalPreview) as an anchor to enable local camera preview. The SDK will ask for camera access from the system.
+2. Call `setLocalViewFillMode()` as an anchor to set the display mode of the local video image.
+    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fill` is the fill mode. The image may be scaled up proportionally or cropped, but there are no black bars.
+    -   `TRTCVideoFillMode.TRTCVideoFillMode_Fit` is the fit mode. The image may be scaled down proportionally to fit the screen, but there may be black bars.
+3. Call [`setVideoEncoderParam()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setVideoEncoderParam) as an anchor to set the encoding parameters of the local video, which determine the [quality of the anchor’s video image](https://intl.cloud.tencent.com/document/product/647/35153) seen by other users in the room.
+4.  Call [`startLocalAudio()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalAudio) as an anchor to enable the mic. The SDK will ask for mic access from the system.
 
-```javascript
+
+```
 // Sample code: send local audio/video streams
 trtcCloud.startLocalPreview(view);
 trtcCloud.startLocalAudio();
 trtcCloud.setLocalViewFillMode(TRTCVideoFillMode.TRTCVideoFillMode_Fill);
 
-// Set local video encoding parameter
+// Set local video encoding parameters
 let encParam = new TRTCVideoEncParam();
 encParam.videoResolution = TRTCVideoResolution.TRTCVideoResolution_640_360;
 encParam.resMode = TRTCVideoResolutionMode.TRTCVideoResolutionModeLandscape;
@@ -117,37 +117,36 @@ encParam.enableAdjustRes = true;
 trtcCloud.setVideoEncoderParam(encParam);
 ```
 
-### Step 6. The anchor sets beauty filters
+<span id="step6"></span>
 
-1. The anchor can call [setBeautyStyle(style, beauty, white, ruddiness)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setBeautyStyle) to enable beauty filters.
+### Step 6. Sets beauty filters as an anchor.
+
+1. Call [`setBeautyStyle(style, beauty, white, ruddiness)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#setBeautyStyle) as an anchor to enable beauty filters.
 2. Parameter description:
-    -   style: beauty filter style: smooth or natural. The smooth style has more obvious skin smoothing effect and is suitable for entertaining scenarios.
-        -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: smooth, which is suitable for shows since it has more obvious effect.
-        -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: natural style, which retains more facial details and seems more natural subjectively.
-    -   beauty: effect level of the beauty filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect.
-    -   white: effect level of the brightening filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect.
-    -   ruddiness: effect level of the rosy skin filter. Value range: 0–9; 0 indicates that the filter is disabled, and the greater the value, the more obvious the effect. This parameter does not take effect on Windows currently.
+    -   `style`: beauty filter style, which may be smooth or natural. The smooth style features more obvious skin smoothing effect and is suitable for entertainment scenarios.
+        -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: smooth, which features more obvious skin smoothing effect and is suitable for shows
+        -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: natural, which retains more facial details and is more natural
+    -   beauty: intensity of the skin smoothing filter; valid value range: 0-9; 0 indicates that the filter is disabled. The larger the value, the higher the intensity.
+    -   white: intensity of the skin brightening filter; valid value range: 0-9; 0 indicates that the filter is disabled. The larger the value, the higher the intensity.
+    -   ruddiness: intensity of the rosy complexion filter; valid value range: 0-9; 0 indicates that the filter is disabled. The larger the value, the higher the intensity. This parameter is not enabled for Windows for the time being.
 
 ```javascript
-// Enable beauty filters 
+// Enable beauty filters. 
 trtcCloud.setBeautyStyle(TRTCBeautyStyle.TRTCBeautyStyleNature, 5, 5, 5);
 ```
 
 
+<span id="step7"></span>
+### Step 7. Create a room and start pushing streams as an anchor.
 
-### Step 7. The anchor creates a room and starts push
+1. If `role` in [`TRTCParams`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) is set to **`TRTCRoleType.TRTCRoleAnchor`**, the current user role is an anchor.
+2. Call `enterRoom( )` as an anchor to create an audio/video room whose ID is the value of `roomId` in `TRTCParams` and set the `appScene` parameter:
+    -   `TRTCAppScene.TRTCAppSceneLIVE`: interactive video live streaming, with smooth mic connection/disconnection and anchor latency below 300 ms. Up to 100,000 users can play the video of the anchor at the same time with playback latency as low as 1,000 ms. The example in this document uses this mode.
+    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: interactive audio live streaming, with smooth mic connection/disconnection and anchor latency below 300 ms. Up to 100,000 users can play the video of the anchor at the same time with playback latency as low as 1,000 ms. 
+    -   For more information about `TRTCAppScene`, see [TRTCAppScene ](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/global.html#TRTCAppScene).
+3. After an anchor creates a room successfully, the SDK will start encoding and uploading the video and audio data of the anchor and call back the [`onEnterRoom(result)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onEnterRoom) event. If `result` is greater than 0, the room entry is successful, and the value indicates the time (in milliseconds) the room entry takes; if `result` is less than 0, the room entry fails, and the value is the error code of the failure.
 
-1. The anchor sets the `role` field in [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) to **`TRTCRoleType.TRTCRoleAnchor`**, which indicates that the current user role is anchor.
-2. The anchor can call `enterRoom( )` to create an audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the `appScene` parameter:
-
-    -   `TRTCAppScene.TRTCAppSceneLIVE`: interactive video live streaming. Mic can be turned on/off smoothly without waiting for switchover, and the anchor latency is as low as less than 300 ms. Live streaming to hundreds of thousands of concurrent viewers is supported with the playback latency down to 1,000 ms. This document uses this mode as an example.
-    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: interactive audio live streaming. Mic can be turned on/off smoothly without waiting for switchover, and the anchor latency is as low as less than 300 ms. Live streaming to hundreds of thousands of concurrent viewers is supported with the playback latency down to 1,000 ms.
-    
-    For more information on `TRTCAppScene`, please see [TRTCAppScene ](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/global.html#TRTCAppScene).
-3. After a room is successfully created, the anchor starts encoding and transferring audio/video data. At the same time, the SDK will call back the [onEnterRoom(result)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onEnterRoom) event. If `result` is greater than 0, the room entry succeeds, and the specific value indicates the time in milliseconds (ms) used for entering the room; if `result` is less than 0, the room entry fails, and the specific value indicates the error code of the failure.
-
-
-```javascript
+```
 let onEnterRoom = function (result) {
   if (result > 0) {
     console.log(`onEnterRoom, room entry succeeded and took ${result} seconds`);
@@ -167,29 +166,23 @@ param.role = TRTCRoleType.TRTCRoleAnchor;
 trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
 ```
 
+<span id="step8"></span>
+### Step 8. Enter a room as a viewer to watch live streams.
 
+1. If `role` in [`TRTCParams`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) is set to **`TRTCRoleType.TRTCRoleAudience`**, the current user role is a viewer.
+2. Call `enterRoom()` as a viewer to enter an audio/video room whose ID is the value of `roomId` in `TRTCParams` and set the `appScene` parameter:
+    -   `TRTCAppScene.TRTCAppSceneLIVE`: interactive video live streaming
+    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: interactive audio live streaming
+3. Watch the anchor's video:
+    - If a viewer knows the `userId` of the anchor of a room, after entering the room, the viewer can call [`startRemoteView(userId, view)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the anchor's video image.
+    - Viewers receive the [`onUserVideoAvailable()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) callback after room entry. A viewer not knowing the `userId` of the anchor can obtain the information from the callback and then call [`startRemoteView(userId, view)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the anchor's video image.
 
-### Step 8. The viewer enters the room to watch the live stream
-
-1. The viewer sets the field `role` in [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) to **`TRTCRoleType.TRTCRoleAudience`**, which indicates that the current user role is viewer.
-
-1. The viewer can call `enterRoom()` to enter the audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the `appScene` parameter:
-
-    -   `TRTCAppScene.TRTCAppSceneLIVE`: interactive video live streaming.
-    -   `TRTCAppScene.TRTCAppSceneVoiceChatRoom`: interactive audio live streaming.
-
-2. View the anchor's video image:
-
-    - If the viewer knows the anchor's `userId` in advance, the viewer can use it to call [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) after successfully entering the room so as to display the anchor's video image.
-    - If the viewer does not know the anchor's `userId`, the viewer will receive the [onUserVideoAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) event notification after successfully entering the room. The viewer can use the anchor's `userId` obtained from the callback to call [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) so as to display the anchor's video image.
-
-
-```html
+```
 <div id="video-container"></div>
 <script>
   const videoContainer = document.querySelector('#video-container');
   const roomId = 29834;
-  // Room entry callback, which will be triggered upon successful room entry
+  // Room entry callback, which is triggered upon successful room entry
   let onEnterRoom = function(result) {
     if (result > 0) {
       console.log(`onEnterRoom, room entry succeeded and took ${result} seconds`);
@@ -197,7 +190,7 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
       console.warn(`onEnterRoom: failed to enter the room ${result}`);
     }
   };
-  // This callback will be triggered when the anchor enables/disables camera push
+  // This callback is triggered when the anchor enables/disables stream pushing by the camera.
   let onUserVideoAvailable = function(userId, available) {
     if (available === 1) {
         let id = `${userId}-${roomId}-${TRTCVideoStreamType.TRTCVideoStreamTypeBig}`;
@@ -226,51 +219,47 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
   param.roomId = roomId;
   param.userId = 'test_user_001';
   param.userSig = 'eJyrVareCeYrSy1SslI...';
-  param.role = TRTCRoleType.TRTCRoleAudience; // Set the role to "viewer"
+  param.role = TRTCRoleType.TRTCRoleAudience; // Set the role to "viewer".
   trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
 </script>
 ```
 
-### Step 9. The viewer co-anchors with the anchor
+<span id="step9"></span>
+### Step 9. Co-anchor.
 
-1. The viewer can call [switchRole(TRTCRoleType.TRTCRoleAnchor)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#switchRole) to switch the role to anchor (`TRTCRoleType.TRTCRoleAnchor`).
-2. The viewer can call [startLocalPreview()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalPreview) to enable the local image.
-3. The viewer can call [startLocalAudio()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalAudio) to enable mic capture:
+1. Call [`switchRole(TRTCRoleType.TRTCRoleAnchor)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#switchRole) to switch from a viewer to an anchor (`TRTCRoleType.TRTCRoleAnchor`).
+2.  Call [`startLocalPreview()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalPreview) to enable local camera preview.
+3.  Call [`startLocalAudio()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startLocalAudio) to enable audio capture by the mic.
 
-
-```javascript
-// Sample code: the viewer mics on
+```
 trtcCloud.switchRole(TRTCRoleType.TRTCRoleAnchor);
 trtcCloud.startLocalAudio();
 trtcCloud.startLocalPreview(frontCamera, view);
 
-// Sample code: the viewer mics off
+// Sample code: the viewer disables the mic.
 trtcCloud.switchRole(TRTCRoleType.TRTCRoleAudience);
 trtcCloud.stopLocalAudio();
-trtcCloud.stopLocalPreview();
+trtcCloud.stopLocalPreview()
 ```
 
 
+<span id="step10"></span>
+### Step 10. Co-anchor across rooms.
 
-### Step 10. Anchors compete across rooms (cross-room co-anchoring)
+In TRTC, anchors from two rooms can use the "cross-room call" feature to compete with each other without exiting their current rooms.
 
-In TRTC, two anchors in different rooms can use the "cross-room call" feature to engage in "cross-room co-anchoring" without the need to exit their current rooms.
+1. Anchor A calls the [`connectOtherRoom()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#connectOtherRoom) API. The API uses parameters in JSON strings, so anchor A needs to pass the `roomId` and `userId` of anchor B in the format of `{"roomId": 978,"userId": "userB"}` to the API function.
+2. After co-anchoring is enabled successfully, anchor A will receive the [`onConnectOtherRoom(userId, errCode, errMsg)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onConnectOtherRoom) callback, and all users in both rooms will receive the [`onUserVideoAvailable()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) and [`onUserAudioAvailable()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) callbacks.
+    For example, after anchor A in room "001" uses `connectOtherRoom()` to call anchor B in room “002” successfully all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A, true)` and `onUserAudioAvailable(A, true)` callbacks of anchor A.
+3. Users in both rooms can call [`startRemoteView(userId, view)`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the video image of the anchor in the other room. Audio will be played automatically.
 
-1. Anchor A calls the [connectOtherRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#connectOtherRoom) API. Currently, the API parameters are in JSON format, and `roomId` and `userId` of anchor B need to be spliced into a parameter in the format of `{"roomId": 978,"userId": "userB"}` and then passed in to the API function.
-2. After the cross-room call is successfully made, anchor A will receive the [onConnectOtherRoom(userId, errCode, errMsg)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onConnectOtherRoom) event callback. At the same time, all users in both rooms will receive the [onUserVideoAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserVideoAvailable) and [onUserAudioAvailable()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onUserAudioAvailable) event callbacks.
-    For example, when anchor A in room "001" uses `connectOtherRoom()` to successfully call anchor B in room "002", all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A,  true)` and `onUserAudioAvailable(A, true)` callbacks of anchor A.
-3. Users in both rooms can call [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) to display the video image of the anchor in the other room, and audio will be automatically played back.
-
-![](https://main.qcloudimg.com/raw/292309441c681909c6a98a715f29fe77.jpg)
-
-```javascript
+```
 // Sample code: cross-room co-anchoring
-
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
   if(errCode === 0) {
     console.log(`Successfully connected to the room of anchor ${userId}`);
   } else {
-    console.warn(`Failed to connect to another anchor's room: ${errMsg}`);
+    console.warn(`Failed to connect to the anchor's room: ${errMsg}`);
   }
 };
 
@@ -279,18 +268,18 @@ trtcCloud.connectOtherRoom(paramJson);
 trtcCloud.on('onConnectOtherRoom', onConnectOtherRoom); 
 ```
 
-### Step 11. Exit the current room  
+<span id="step11"></span>
+### Step 11. Exit the room.  
 
-Call the [exitRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#exitRoom) method to exit the room. The SDK needs to disable and release hardware devices such as the camera and mic during room exit. Therefore, room exit is not completed as soon as the method is called. Only after the [onExitRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onExitRoom) callback is received can the room exit be considered completed.
+Call the [`exitRoom()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#exitRoom) method to exit the room. The SDK needs to disable and release hardware such as the camera and mic during room exit, so the process may take a while. Room exit is completed only after the [`onExitRoom()`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCallback.html#event:onExitRoom) callback is received.
 
-```javascript
-// Please wait for the `onExitRoom` event callback after calling the room exit method
+```
+// Please wait for the `onExitRoom` callback after calling the room exit method.
 let onExitRoom = function (reason) {
   console.log(`onExitRoom, reason: ${reason}`);
 };
 trtcCloud.exitRoom();
 trtcCloud.on('onExitRoom', onExitRoom);
-
 ```
 
-> If multiple audio/video SDKs are integrated into your Electron program, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
+>! If your Electron application integrates multiple audio/video SDKs, please wait till you receive the `onExitRoom` callback to start other SDKs; otherwise the “device busy” error may occur.
