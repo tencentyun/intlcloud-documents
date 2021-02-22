@@ -18,7 +18,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |   &#10003;  |
 
-桌面浏览器端设定画面质量的详细操作，请参见 [设定指引](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html)。
+桌面浏览器端设定画面质量的详细操作，请参见 [设定指引](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html)。
 
 ## TRTCAppScene
 
@@ -47,7 +47,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 - **(TRTCVideoResolution) videoResolution**
 编码分辨率，例如 640 x 360 是指编码出的画面的宽（像素） x 高（像素），我们在 TRTCVideoResolution 枚举定义里只定义了宽 >= 高的横屏（Landscape）分辨率，如果想要使用竖屏分辨率，需要将 resMode 设置为 Portrait。
- >由于很多硬件编解码器只支持能被 16 整除的像素宽度，所以 SDK 实际编码出的分辨率并不一定完全按照参数自定，而是会自动进行 16 整除修正。例如 640  x 360 的分辨率，在 SDK 内部有可能会适配为 640 x 368。
+ >!由于很多硬件编解码器只支持能被 16 整除的像素宽度，所以 SDK 实际编码出的分辨率并不一定完全按照参数自定，而是会自动进行 16 整除修正。例如 640  x 360 的分辨率，在 SDK 内部有可能会适配为 640 x 368。
 
 - **(TRTCVideoResolutionMode) resMode**
 指横屏或竖屏分辨率，由于 TRTCVideoResolution 中只定义了横屏分辨率，如果您希望使用 360 x 640 这样的竖屏分辨率，就需要指定 resMode 为 TRTCVideoResolutionModePortrait。一般 PC 和 Mac 采用横屏（Landscape）分辨率，手机采用竖屏（Portrait）分辨率。
@@ -103,13 +103,13 @@ controlMode 参数选择 **TRTCQosControlModeServer** 即可，TRTCQosControlMod
 
 ## 常见的误区
 **1. 分辨率越高越好？**
-较高的分辨率也需要较高的码率来支撑，如果分辨率选择 1280 x 720，但码率却指定为 200kbps，画面就会有大量的马赛克。推荐参考 [分辨率码率参照表](https://intl.cloud.tencent.com/document/product/647/35153) 进行设置。
+较高的分辨率也需要较高的码率来支撑，如果分辨率选择 1280 x 720，但码率却指定为 200kbps，画面就会有大量的马赛克。推荐参考 [分辨率码率参照表](https://intl.cloud.tencent.com/document/product/647/35153?lang=en&pg=#resolution-bitrate-reference-table) 进行设置。
 
 **2. 帧率越高越好？**
 由于摄像头采集的画面是曝光阶段中所有现实物体的完整映射，所以并不是帧率越高，感官就越流畅，这一点跟游戏里的FPS是不一样的。恰恰相反，帧率过高，会拉低每帧画面的画质，也会减少摄像机的曝光时间，效果可能会更差。
 
 **3. 码率越高越好？**
-较高的码率也需要较高的分辨率来匹配，对于 320 x 240 这样分辨率，1000kbps 的码率就很浪费了，推荐参考 [分辨率码率参照表](https://intl.cloud.tencent.com/document/product/647/35153) 进行设置。
+较高的码率也需要较高的分辨率来匹配，对于 320 x 240 这样分辨率，1000kbps 的码率就很浪费了，推荐参考 [分辨率码率参照表](https://intl.cloud.tencent.com/document/product/647/35153?lang=en&pg=#detailed-description-of-fields) 进行设置。
 
 **4. 用 Wi-Fi 的时候就可以设置很高的分辨率和码率**
 并不是说 Wi-Fi 的网速是恒定不变的，如果离无线路由器较远， 或者路由器信道被占用，可能网速还不如 4G。
