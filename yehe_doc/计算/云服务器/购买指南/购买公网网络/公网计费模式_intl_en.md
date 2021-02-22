@@ -4,7 +4,7 @@
 Tencent Cloud provides high-quality multi-line BGP networks to ensure an optimal network experience.
 Tencent Cloud currently provides two billing plans: bill-by-traffic and bill-by-bandwidth.
 >! 
-> - Currently, the public network is billed based on outbound bandwidth/traffic. The outbound bandwidth refers to the bandwidth from the CVM to the public network. For example, the user uses the client to download CVM instance resources.
+> - Currently, the public network is billed based on outbound bandwidth/traffic. The outbound bandwidth refers to the bandwidth from the CVM to the public network. For example, the user uses the terminal software to download CVM instance resources.
 > - To avoid unexpected costs due to traffic surges, you can set a bandwidth cap. Any traffic over the cap will be dropped and will not incur any costs.
 > 
 
@@ -58,8 +58,8 @@ The following tables compare the payment methods, billing cycles, and use cases 
             <th>Bill-by-bandwidth</th>
        </tr>
        <tr>          
-            <td>The peak bandwidth is only regarded as the <strong>maximum peak bandwidth</strong>, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td> 
-            <td>The peak bandwidth is regarded as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth will be guaranteed and will not be limited.</td>
+            <td>The peak bandwidth is only regarded as the <strong>maximum peak bandwidth</strong>, and not as the fixed bandwidth. In case of resource contention, the peak bandwidth may be limited.</td> 
+            <td>The peak bandwidth is regarded as the fixed bandwidth. In case of resource contention, the peak bandwidth will be guaranteed and will not be limited.</td>
             </tr> 
 </tbody></table>
 
