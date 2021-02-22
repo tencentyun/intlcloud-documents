@@ -7,11 +7,9 @@
 
 The SDK offers a substitute for Flash streaming and significantly simplifies the process of implementing web-based stream pushing, low-latency web streaming, CDN streaming, and real-time chatting (or on-screen comments). The example below helps guide you through the implementation process.
 
-<dx-tabs>
-::: Push
+### Push
 To use the push feature, you need to create a pusher object. A simple push feature takes only three steps to implement:
-<dx-codeblock>
-::: html html
+```
 <div id="pusherView" style="width:100%; height:auto;"></div>
 <script>
 // 1. Create a pusher object.
@@ -31,15 +29,11 @@ pusher.setRenderView({
 .catch(error => {
   console.error('pusher | setRenderView | failed', error);
 });
-</script>
-:::
-</dx-codeblock>
-:::
-::: Pull
+```
+### Pull
 To use the pull feature, you need to create a player object. A simple pull feature takes only three steps to implement:
 
-<dx-codeblock>
-::: html html
+```
 <div id="playerView" style="width:100%; height:auto;"></div>
 <script>
 // 1. Create a player object.
@@ -60,15 +54,11 @@ player.startPlay(url).then(() => {
 }).catch((error) => {
   console.error('player | startPlay | failed', error);
 });
-</script>
-:::
-</dx-codeblock>
-:::
-::: Interaction
+```
+### Interaction
 To allow the anchor and viewers to chat or interact with each other, you need to create an IM object. A simple message sending/receiving feature takes only three steps to implement:
 
-<dx-codeblock>
-::: javascript javascript
+```
 // 1. Create an IM object and subscribe to events.
 let im = TWebLive.createIM({
   SDKAppID: 0 // Replace 0 with the `SDKAppID` of your IM app when connecting.
@@ -111,10 +101,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 }).catch((imError) => {
   console.warn('im | enterRoom | failed', imError); // Message about the room entry failure
 });
-:::
-</dx-codeblock>
-:::
-</dx-tabs>
+```
 
 >? To help you further reduce development and labor costs, in addition to the TWebLive SDK, we have published a [demo](https://github.com/tencentyun/TWebLive) applicable for both PCs and mobile browsers on GitHub. You can fork and clone the demo project to your local environment and run it after minor modifications, or integrate the demo into your own project for official launch.
 
@@ -128,22 +115,21 @@ im.enterRoom('your roomID').then((imResponse) => {
 
 [](id:step1)
 ### Step 1. Create an application.
-<dx-tabs>
-::: TRTC
+#### TRTC
+```
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
 2. Go to [**Application Management**](https://console.cloud.tencent.com/trtc/app), click **Create Application**, enter an application name, and click **Confirm**.
 >? After you create a TRTC application, the [IM console](https://console.cloud.tencent.com/im) will create an IM application with the same `SDKAppID`
-:::
-::: IM
+```
+#### IM
+```
 1. Log in to the [IM Console](https://console.cloud.tencent.com/im).
 2. Click **Create Application**, enter your application name in the dialog box that pos up, and click **Confirm**.
-:::
-</dx-tabs>
+```
 
 [](id:step2)
 ### Step 2. Obtain your `SDKAppID` and secret key.
-<dx-tabs>
-::: TRTC
+#### TRTC
 1. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, find your application, and click **Application Info** on the right to go to the details page.
 2. In the **Application Info** section, click the copy button, and note your `SDKAppID`.
 ![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
@@ -153,8 +139,8 @@ im.enterRoom('your roomID').then((imResponse) => {
 >? Follow these steps to enable CDN live streaming:
 >1. In **Application Management** > **Function Configuration**, [enable relayed push](https://intl.cloud.tencent.com/zh/document/product/647/39080#open_bypass), after which each channel in a TRTC room will have its own playback address.
 2. In the [LVB console](https://console.cloud.tencent.com/live/), configure the playback domain name and CNAME record. For detailed instructions, see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
->:::
-::: IM
+#### IM
+```
 After creating an application, you can view its status, edition, `SDKAppID`, creation time, and expiration time on the overview page of the console.
 1. Find and click the application you created to go the details page.
 2. In the **Basic Information** section:
@@ -162,8 +148,7 @@ After creating an application, you can view its status, edition, `SDKAppID`, cre
 	- Click **Display Key** and **Copy**, and note the key.
 >! Key is sensitive information. Keep it confidential and do not share it with others.
 3. In the **Activate TRTC** section, click **Activate** and **Confirm** in the dialog box that pops up to active TRTC.
-:::
-</dx-tabs>
+```
 
 >!
 >- Local calculation of `UserSig` is for development and local debugging only and not for official launch. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
@@ -180,30 +165,26 @@ After creating an application, you can view its status, edition, `SDKAppID`, cre
  <li/>PLAYDOMAIN: set the playback domain name for CDN live streaming. You don’t need to set this parameter if you don’t need the service.
  </ul>
 3. Integrate the demo source code.
-<dx-tabs>
-::: Installing via npm
+###  Installing via npm
 1. Install the latest `tim-js-sdk`, `trtc-js-sdk`, and `tweblive` via npm.
-```javascript
+```
 npm install tim-js-sdk --save
 npm install trtc-js-sdk --save
 npm install tweblive --save
 ```
 >? If your project already has `tim-js-sdk` or `trtc-js-sdk`, upgrade it to the latest version.
 2. Import `tweblive` to your project.
-```javascript
+```
 import TWebLive from 'tweblive'
 Vue.prototype.TWebLive = TWebLive
 ```
-:::
-::: Installing via script tags
+### Installing via script tags
 If you want to install the demo source code by referring to external files in the script tag, copy `tim-js.js`, `trtc.js`, and `tweblive.js` to your project and import them in the order below.
 ```javascript
 <script src="trtc.js"></script>
 <script src="./tim-js.js"></script>
 <script src="./tweblive.js"></script>
 ```
-:::
-</dx-tabs>
 
 
 [](id:step4)
@@ -241,25 +222,19 @@ Web-based stream pushing and low-latency streaming use the WebRTC technology. Pr
 |   Android   |   WeChat embedded browser (TBS core)   |         -          |     Supported     |     Supported     |
 |   Android   |  WeChat embedded browser (XWEB core)   |         -          |     Supported     |    Not supported    |
 
->- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
+>! Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
 
 
 ## FAQs
-<dx-accordion>
-::: 1.\sOnly public and private key can be obtained when I try to view the secret key. How do I get the secret key?
+1.Only public and private key can be obtained when I try to view the secret key. How do I get the secret key?
 TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HMAC-SHA256. If your application was created before August 2019, you need to upgrade the signature algorithm to get a new secret key.
-:::
-::: 2.\sWhat should I do if the client error "RtcError:\sno\svalid\sice\scandidate\sfound" occurs?
+2.What should I do if the client error "RtcError:\sno\svalid\sice\scandidate\sfound" occurs?
 It indicates that TRTC SDK for desktop browsers failed with regard to hole punching via Session Traversal Utilities for NAT (STUN). Please check your firewall policy against the environment requirements.
-:::
-::: 3.\sWhat should I do if the client error "tcError:\sICE/DTLS\sTransport\sconnection\sfailed" or "RtcError:\sDTLS\sTransport\sconnection\stimeout" occurs?
+3.What should I do if the client error "tcError:\sICE/DTLS\sTransport\sconnection\sfailed" or "RtcError:\sDTLS\sTransport\sconnection\stimeout" occurs?
 This error indicates that TRTC SDK for desktop browsers failed to establish a media transport connection. Please check your firewall configuration against the environment requirements.
-:::
-::: 4.\sWhat should I do if a `10006\serror\s` error occurs?
+4.What should I do if a `10006\serror\s` error occurs?
 If the `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"` error occurs, log in to the [TRTC console](https://console.cloud.tencent.com/rav), find the application you created, click **Application Info**, and check in the **Application Info** tab if your TRTC service is available.
 ![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
-:::
-</dx-accordion>
 
 
 
