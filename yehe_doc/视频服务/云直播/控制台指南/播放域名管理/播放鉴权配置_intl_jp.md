@@ -10,7 +10,7 @@ URL認証の原理は、LVBの顧客が認証設定により暗号化 URLを生�
 -  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 - **再生ドメイン名**を追加済みであること。
 
-##　操作手順
+## 操作手順
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)を選択し、認証設定を行いたい**再生ドメイン名**または【管理】をクリックして、ドメイン名管理に入ります。
 2. 【アクセス制御】>【認証設定】で、【編集】をクリックして認証設定画面に入ります。
 3. 認証設定画面で以下の設定を行います。
