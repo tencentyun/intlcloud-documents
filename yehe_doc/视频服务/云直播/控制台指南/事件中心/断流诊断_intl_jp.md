@@ -7,7 +7,7 @@
 -  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 - 現在Tencent Cloudアカウントにおいて、ライブストリーミングのプッシュに中断が発生していること。
 
-##　操作手順
+## 操作手順
 
 ライブストリーミングのプッシュ中断後、左側メニューバーから【イベントセンター】>【[ストリーム切断記録](https://console.cloud.tencent.com/live/tools/streamevent)】を選択し、ストリーム切断診断に入ります。
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
