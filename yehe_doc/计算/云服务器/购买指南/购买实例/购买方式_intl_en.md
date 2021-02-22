@@ -18,9 +18,9 @@ Below describes how to purchase these two types of CVMs from the console.
 5. The CVM is enabled immediately after the payment is completed. The IP address will be displayed in 10 minutes, and you can log in to the CVM to manage it.
 
 >
->- After activating the pay-as-you-go CVM, make sure that your account has sufficient balance. CVMs in arrears may be repossessed.
-> For more information, see [Arrears Reminder](https://intl.cloud.tencent.com/document/product/213/2181).
->- For specific configurations, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
+>- After activating the pay-as-you-go CVM, make sure that your account has sufficient balance. Overdue CVMs may be repossessed by Tencent Cloud.
+> For more information, see [Overdue](https://intl.cloud.tencent.com/document/product/213/2181).
+>- For detailed prices, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176), [Price Overview of CBS](https://intl.cloud.tencent.com/document/product/213/2255) and [Public Network Billing](https://intl.cloud.tencent.com/document/product/213/10578) to purchase CVMs based on your actual needs.
 >- For more purchase instructions and notes, see [Notes for Purchasing from Console](https://intl.cloud.tencent.com/document/product/213/6998).
 
 ## Purchasing via API
