@@ -4,7 +4,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 - The following rules apply to instances created after 00:00, February 24, 2020:
 <table>
 <tr><th rowspan="2">Network Billing Mode</th><th colspan="2">Instance</th><th rowspan="2">Bandwidth Cap Range (Mbps)</th></tr>
-<tr><th>Instance Billing Mode</th><th>Instance Configuration</th></tr>
+<tr><th>Instance Billing Mode</th><th>Instance Type</th></tr>
 <tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>ALL</td><td>0 - 100</td></tr>
 <tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 1000</td></tr>
@@ -12,7 +12,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 - The following rules apply to instances created before 00:00, February 24, 2020:
 <table>
 <tr><th rowspan="2">Network Billing Mode</th><th colspan="2">Instance</th><th rowspan="2">Bandwidth Cap Range (Mbps)</th></tr>
-<tr><th style="width: 18.5607%;">Instance Billing Mode</th><th style="width: 24.5814%;">Instance Configuration</th></tr>
+<tr><th style="width: 18.5607%;">Instance Billing Mode</th><th style="width: 24.5814%;">Instance Type</th></tr>
 <tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>All</td><td>0 - 100</td></tr>
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>All</td><td>0 - 100</td></tr>
 <tr><td>Bandwidth package</td><td colspan="2">All</td><td>0 - 1000</td></tr>
@@ -22,7 +22,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 ## Inbound Bandwidth Cap (Upstream Bandwidth)
 
 The inbound bandwidth of the public network refers to the bandwidth that flows into CVM instances.
-- If the bandwidth you purchased is greater than 10 Mbps, Tencent Cloud will assign a public network inbound bandwidth equals to the purchased bandwidth.
+- If the bandwidth you purchased is over 10 Mbps, Tencent Cloud will assign a public network inbound bandwidth equals to the purchased bandwidth.
 - If the bandwidth you purchased is less than 10 Mbps, Tencent Cloud will assign 10-Mbps public network inbound bandwidth.
 
 ## Bandwidth Peaks
@@ -30,7 +30,7 @@ The bandwidth peak is applicable to both bill-by-traffic and bill-by-bandwidth, 
 
 | Bill-by-traffic| Bill-by-bandwidth (including hourly bill-by-bandwidth and monthly-subscribed bandwidth) |
 |---------|---------|
-| The bandwidth peak is only a bandwidth cap, instead of a commitment indicator. It may be limited when there is a scramble for bandwidth resources. | The bandwidth peak is a commitment indicator. It will not be limited when there is a scramble for bandwidth resources. |
+| The bandwidth peak is not guaranteed. The bandwidth may not be able to reach this value in case of a resource contention. | The bandwidth peak is always guaranteed, even in case of a resource contention. |
 
 ## Increasing the Bandwidth Cap
 
