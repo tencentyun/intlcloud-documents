@@ -1,80 +1,85 @@
 ## Basic Features
 
 <table>
-<tr><th>Feature</th><th width="50%">Description</th><th width="35%">Common Use Cases</th>
+<tr><th>Feature</th><th width="50%">Description</th><th width="35%">Common Use Cases</th><th>Billing</th>
 </tr>
 <tr>
 <td>Video call</td>
 <td><ul style="margin:0">
-<li>One-to-one or one-to-many video calls, which support 720p and 1080p definitions.
-<li>A single room can sustain up to 300 concurrent online users, and up to 30 of them can simultaneously enable their cameras.</li>
+<li>One-to-one or group video calls, which support 720p and 1080p definitions.
+<li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their cameras.</li>
 </ul></td>
-<td>One-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video chat, video customer service, video interview, audiovisual recording, online insurance claim settlement, and video Werewolf.</td>
+<td>One-to-one video calls, video conferences with up to 300 attendees, online medical consultation, video chat, video customer service, video interviews, audiovisual recording, online insurance claim settlement, and video Werewolf</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of video call</a></td>
 </tr>
 <tr>
 <td>Audio call</td>
 <td><ul style="margin:0">
-<li>One-to-one or one-to-many audio calls, which support the 48 kHz sample rate and dual-channel.</li>
-<li>A single room can sustain up to 300 concurrent online users, and up to 30 of them can simultaneously enable their mics.</li>
+<li>One-to-one or group audio calls, which support the 48 kHz sample rate and dual channels.</li>
+<li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their mics.</li>
 </ul></td>
-<td>One-to-one audio call, multi-person audio call, voice chat, audio conferencing, audio customer service, and audio Werewolf.</td>
+<td>One-to-one or group audio calls, voice chat, audio conferences, audio customer service, and audio Werewolf</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of audio call</a></td>
 </tr><tr>
 <td>Interactive video live streaming</td>
 <td><ul style="margin:0">
-<li>Video co-anchoring between anchors and viewers is supported.</li>
-<li>Cross-room anchor competition is supported.</li>
-<li>The mic can be turned on/off smoothly without waiting for switchover, and the anchor latency is as low as less than 300 ms.</li>
-<li>A single room can sustain an unlimited number of users for co-anchoring, and up to 30 of them can simultaneously co-anchor.</li>
-<li>Live streaming to up to 100,000 concurrent viewers is supported and the playback latency can be reduced down to 1,000 ms in the low-latency live streaming mode.</li>
-<li>There can be an unlimited number of viewers in the CDN relayed live streaming mode.</li>
+<li>Video co-anchoring between anchors and viewers</li>
+<li>Cross-room anchor competition</li>
+<li>Smooth mic connection/disconnection with no waiting periods; anchor latency below 300 ms</li>
+<li>No upper limit on the number of concurrent users in a room; up to 30 users can enable their mics.</li>
+<li>Live streaming to up to 100,000 concurrent viewers and playback latency as low as 1,000 ms in the low-latency live streaming mode</li>
+<li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
-<td>Low-latency live video broadcasting, interactive classroom for up to 100,000 participants, live video competition, video dating room, remote training, large-scale conferencing, etc.</td>
+<td>Low-latency video live streaming, interactive classrooms with up to 100,000 participants, live video competitions, video dating, remote training, large-scale conferences, etc.</td>
+<td><a href="https://cloud.tencent.com/document/product/647/44247">Billing of interactive video live streaming</a></td>
 </tr><tr>
 <td>Interactive audio live streaming</td>
 <td><ul style="margin:0">
-<li>Audio co-anchoring between anchors and viewers is supported.</li>
-<li>Cross-room anchor competition is supported.</li>
-<li>The mic can be turned on/off smoothly without waiting for switchover, and the anchor latency is as low as less than 300 ms.</li>
-<li>A single room can sustain an unlimited number of users for co-anchoring, and up to 30 of them can simultaneously co-anchor.</li>
-<li>Live streaming to up to 100,000 concurrent viewers is supported and the playback latency can be reduced down to 1,000 ms in the low-latency live streaming mode.</li>
-<li>There can be an unlimited number of viewers in the CDN relayed live streaming mode.</li>
+<li>Audio co-anchoring between anchors and viewers</li>
+<li>Cross-room anchor competition</li>
+<li>Smooth mic connection/disconnection with no waiting periods; anchor latency below 300 ms</li>
+<li>No upper limit on the number of concurrent users in a room; up to 30 users can enable their mics.</li>
+<li>Live streaming to up to 100,000 concurrent viewers and playback latency as low as 1,000 ms in the low-latency live streaming mode</li>
+<li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
-<td>Low-latency live audio broadcasting, live audio co-anchoring, live audio anchor competition, voice chat room, voice dating room, karaoke room, FM radio, etc.</td>
+<td>Low-latency audio live streaming, live audio co-anchoring, live audio competitions, voice chat rooms, audio dating, karaoke rooms, FM radio, etc.</td>
+<td><a href="https://cloud.tencent.com/document/product/647/44248">Billing of interactive audio live streaming</a></td>
 </tr></table>
 
->? 20 users can simultaneously enable their cameras or mics on the web.
 
 ## Advanced Features
 
-| Feature | Description | Common Use Cases |
-| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Co-anchoring | Co-anchoring is supported. Viewers can mic on/off smoothly as needed without waiting for switchover. | Interactive live streaming, online classroom, chat room, etc. |
-| Cross-room competition | It is also called "cross-room anchor competition", where viewers can watch multiple anchors compete across rooms. | Show live streaming, co-anchoring competition, cross-room teaching, etc. |
-| Screen sharing | A local desktop, window, or desktop area can be displayed to others. For example, slides presented in Microsoft PowerPoint can be shared to others. | Online classroom, slide sharing, remote assistance, etc. |
-| On-cloud recording | On-cloud (audio/video) recording features based on [LVB](https://intl.cloud.tencent.com/document/product/267) are provided through relayed push during the entire live streaming process. Recording files can be stored in the [VOD](https://intl.cloud.tencent.com/document/product/266) platform to ensure recording reliability and real-time performance. | Audiovisual recording, archiving, compliance, etc. |
-| Local server recording | (Audio/video) recording on a local server is supported. To try this feature out, please [contact us](https://intl.cloud.tencent.com/support) to get the SDKs and the relevant guide. | Audiovisual recording, archiving, compliance, etc. |
-| High audio quality |<li>High audio quality at a 48 kHz sample rate is supported.</li><li>Stereo audio with authentic left/right sound channels is supported, which is comparable to the sound effect of CDs.</li>| Audio call, video call, interactive live streaming, voice chat room, high-quality FM radio, music class, karaoke room, online classroom, etc. |
-| High image quality | 720p and 1080p HD videos are supported. | Video call, interactive live streaming, online classroom, etc. |
-| 3A processing | The industry-leading TRAE audio engine is used for 3A processing, namely, acoustic echo cancellation (AEC), active noise suppression (ANS), and automatic gain control (AGC), in order to render better sound quality in scenarios such as double-talk and noise reduction. | All audio scenarios. |
-| Basic beauty filters | Basic beauty filters are supported, such as skin brightening, skin smoothing, and rosy skin filters. | Video call, interactive live streaming, online classroom, etc. |
-| Background music | Local music files in formats such as MP3, AAC, and WAV can be used as background music for human voice. | Audio call, video call, interactive live streaming, online classroom, voice chat room, karaoke room, FM radio, etc. |
-| Sound effect | Sound effects such as handclaps, cheers, whistles, and boos can be added during a call. | Audio call, video call, interactive live streaming, voice chat room, karaoke room, FM radio, etc. |
-| Harmony and accompaniment | Music played back locally such as songs in QQ Music can be shared to other users. | Interactive live streaming, online classroom, voice chat room, FM radio, etc. |
-| Voice changing | Voice changing effects such as little girl, middle-aged man, and heavy metal are provided. | Audio call, video call, interactive live streaming, voice chat room, karaoke room, FM radio, etc. |
-| Reverb | Reverb effects such as karaoke room, small room, concert hall, and bathroom are provided. | Audio call, video call, interactive live streaming, voice chat room, karaoke room, FM radio, etc. |
-| Callback for volume level | The volume level can be called back for display as a waveform or prompt. | Audio call, video call, voice chat room, FM radio, karaoke room, human voice detection, etc. |
-| In-ear monitoring | The recorded local sound can be played back in the local earphone, so that users can hear their own voice to correct a slip of the tongue or identify the pitch. | Interactive live streaming, show live streaming, karaoke room, etc. |
-| Custom audio data | Audio can be collected for callback, so that raw audio data can be processed for custom operations such as connecting to non-standard devices and processing audio files. | Non-standard device connection, custom audio effect, speech processing, speech recognition, etc. |
-| Custom video data | Custom video sources and renderers are supported. Non-camera video sources such as video files, external devices, and third-party custom data sources can be used. | Custom beauty filter, custom data source, multi-device management, video recognition, image processing, etc. |
-| SEI information | Custom information such as lyrics and questions can be embedded as SEI frames into video streams to sync such information to other users. | Karaoke room, Q&A live streaming, interactive live streaming, etc. |
+| Feature           | Description                                                     | Common Use Cases                                                 | Billing                                                     |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Co-anchoring |Viewer-anchor interaction via co-anchoring; smooth mic connection/disconnection with no waiting periods| Interactive live streaming, online classrooms, chat rooms, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this service.|
+| Cross-room competition |Anchors from different rooms compete with each other while viewers watch.| Live show streaming, anchor competition, cross-room teaching, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this service. |
+|Screen sharing|Sharing the desktop, a window (e.g., a PowerPoint playback window), or a desktop section of the local user to others| Online classrooms, slide sharing, remote assistance, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this service. |
+| On-cloud recording       | TRTC leverages the capabilities of [VOD](https://intl.cloud.tencent.com/zh/document/product/267) and the relayed push technology to offer on-cloud (audio/video) recording throughout a call. Recording files are saved reliably and in real time in [VOD](https://intl.cloud.tencent.com/zh/document/product/266).  | Audiovisual recording, archiving, compliance, etc.                                         | On-cloud recording is a value-added service, for which you will be charged an additional [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/38385) fee. |
+| Local server recording| (Audio/video) recording on a local server. To try this feature out, [contact us](https://intl.cloud.tencent.com/support) for the SDK and instructions.| Audiovisual recording, archiving, compliance, etc.| You will be charged [basic service fees](https://intl.cloud.tencent.com/document/product/647/34610) for using this feature. |
+| High audio quality |<li>High audio quality at 48 kHz sample rate</li><li>Stereo with left and right audio channels, comparable in audio quality to CDs</li>| Audio calls, video calls, interactive live streaming, voice chat rooms, high-quality FM radio, music classes, karaoke rooms, online classrooms, etc. | Free |
+| High image quality | 720p and 1080p HD videos | Video calls, interactive live streaming, online classrooms, etc. | Free |
+| 3A processing | TRTC uses the industry-leading Tencent Real-time Audio Engine (TRAE) for acoustic echo cancellation (AEC), active noise suppression (ANS), and automatic gain control (AGC) to deliver better audio quality when multiple people speak at the same time or in the presence of background noises. | All audio scenarios | Free |
+| Basic beauty filters | Basic beauty filters such as skin brightening, skin smoothing, and rosy complexion. | Video calls, interactive live streaming, online classrooms, etc. | Free |
+| Background music | Using local music files in the formats of MP3, AAC, WAV, and others as background music | Audio calls, video calls, interactive live streaming, online classrooms, voice chat rooms, karaoke rooms, FM radio, etc. | Free |
+| Audio effects | Adding audio effects such as applauding, cheering, whistling, and booing during a call | Audio calls, video calls, interactive live streaming, voice chat rooms, karaoke rooms, FM radio, etc. | Free |
+| Local background audio| Sending audio played locally, for example, the music played by QQ Music on the local user’s computer, to others | Interactive live streaming, online classrooms, voice chat rooms, FM radio, etc. | Free |
+| Voice changing | Voice effects such as little girl, middle-aged man, and heavy metal | Audio calls, video calls, interactive live streaming, voice chat rooms, karaoke rooms, FM radio, etc. | Free |
+| Reverb | Reverb effects such as karaoke room, small room, concert hall, and bathroom | Audio calls, video calls, interactive live streaming, voice chat rooms, karaoke rooms, FM radio, etc. | Free |
+| Volume callback | Showing volume in waveform animations or via prompts | Audio calls, video calls, voice chat rooms, FM radio, karaoke rooms, voice activity detection, etc. | Free |
+| In-ear monitoring | Recording local audio and playing it back in the local user’s audio, usually for detection of speech errors or pitch control during singing | Interactive live streaming, show live streaming, karaoke rooms, etc. | Free |
+| Custom audio data | Customizing the callback of audio data, processing raw data, and using non-standard external devices or audio files, etc. | Non-standard device connection, custom audio effect, speech processing, speech recognition, etc. | Free |
+| Custom video data | Custom video sources and renderers. Non-camera video sources such as video files, external devices, and third-party custom data sources can be used. | Custom beauty filters, custom data sources, multi-device management, video recognition, image processing, etc. | Free |
+| SEI information | Embedding custom information such as lyrics and questions as SEI frames into video streams | Karaoke rooms, live quizzes, interactive live streaming, etc. | Free |
 
 
 ## Extended Features
 
->?Extended features are value-added features provided by TRTC in collaboration with other Tencent Cloud services and charged by the corresponding Tencent Cloud services according to their respective billing rules.
+>?Extended features are value-added services provided by TRTC in collaboration with other Tencent Cloud products and are charged according to the billing standards of the corresponding products.
 
 
-| Feature | Description | Common Use Cases | Billing Description |
+| Feature | Description | Common Use Cases | Billing |
 | ------------ | ------------------------------------------------------------ | -------------------------------------------------- | ------------------------------------------------------------ |
-| CDN live watching | It is also known as "CDN relayed live streaming". UDP audio and video streams in TRTC are converted to RTMP streams by the relayed transcoding clusters in Tencent Cloud, and then are pushed to the standard LVB system and distributed through CDN to viewers. | Interactive live streaming, live sharing, large-scale conferencing, watch by remote viewers in live streaming, etc. | It is a value-added service and charged by [LVB](https://intl.cloud.tencent.com/document/product/267). For more information, please see “Applicable Fees” in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242). |
-| IM | <li>Users can chat, review, send on-screen comments, give gifts, give likes, and perform other operations in one-to-one chat rooms, group chat rooms, and chat rooms with unlimited numbers of users offered by IM.</li><li>IM can be used for signaling interaction to make calls and collect statistics on the number of users in a room, and perform other operations.</li> | Online customer service, interactive live streaming, interactive classroom, remote training, etc. | It is a value-added service and charged by [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047). For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).|
+| CDN relayed live streaming| TRTC uses relaying and transcoding clusters to convert its UDP audio/video streams into RTMP streams in the cloud, which are then pushed to the standard live streaming system and distributed through CDNs to viewers. | Interactive live streaming, live sharing, large-scale conferences, live stream watching by remote viewers, etc. | Relayed live streaming is a value-added service and is charged by **[LVB](https://intl.cloud.tencent.com/document/product/267)**. For more information, please see [CDN Relayed Live Streaming > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35242). |
+| Instant messaging | <li>TRTC leverages the capabilities of IM, including one-to-one chat, group chat, and chat rooms with no upper limit on user number, to enable features such as chatting, commenting, and sending on-screen comments, gifts, and likes.</li><li>IM can also be used for signaling-based interaction, call making, and user number counting.</li> | Online customer service, interactive live streaming, interactive classrooms, remote training, etc. | Instant messaging is a value-added service and is charged by **[IM](https://intl.cloud.tencent.com/document/product/1047)**. For more information, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).|
+|Speech content moderation|Detecting pornographic, politically sensitive content, etc. for content-related risk management |Business security protection, compliance, etc.|Speech content moderation is a value-added service and is charged by **Business Security Protection (BSP)**. To try it out, [contact us](https://intl.cloud.tencent.com/contact-sales) to activate the service.|
+| Video content moderation| Detecting pornographic, politically sensitive content, etc. for content-related risk management| Business security protection, compliance, etc.| Video content moderation is a value-added service and is charged by [LVB](https://intl.cloud.tencent.com/document/product/267). For more information, please see [Intelligent Porn Detection](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.99.BA.E8.83.BD.E9.89.B4.E9.BB.84). |

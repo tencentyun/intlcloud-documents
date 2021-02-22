@@ -1,313 +1,313 @@
-[](id:que1)
+
 ### What is a `RoomID` in TRTC? What is its value range?
-A `RoomID` (room ID) uniquely identifies a room and can range from 1 to 4294967295. You are responsible for maintaining and assigning the Room IDs of your applications.
-
-[](id:que2)
-### What is a UserID in TRTC? What is its value range? 
-A `UserID` (user ID) uniquely identifies a user in a TRTC application. It can contain letters (case sensitive), digits, and underscores, preferably not longer than 32 bytes.
+A `RoomID` (room ID) is used to uniquely identify a room. It can range from 1 to 4294967295 and is maintained and assigned on your own.
 
 
-[](id:que3)
+### What is the room entry UserID in TRTC? What is its value range? 
+A `UserID` (user ID) is used to uniquely identify a user in a TRTC application. Its recommended length is below 32 bytes. It can be a combination of letters, digits, and underscores but cannot only contain digits. It is case insensitive.
+
+
+
 ### How long is the lifecycle of a TRTC room?
-- The first user who enters a room is the owner of the room, but cannot close the room.
-- A room is closed immediately by TRTC after all users exit the room.
-- A user will be cleared from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds.
-- If a user attempts to enter a room that does not exist, TRTC will create a room with the ID entered.
-
-[](id:que4)
-### Can I unsubscribe users from audio/video streams? 
-To enable instant streaming, TRTC subscribes users to audio/video streams by default upon their entry. You can call the `setDefaultStreamRecvMode` API to switch to the manual subscription mode.
-
-[](id:que5)
-### Can I specify a stream ID for relayed push in TRTC?  
-Yes. You can specify a `streamId` via `TRTCParams` of `enterRoom` or call the `startPublishing` API to pass in the `streamId`.
-
-[](id:que6)
-### What roles are supported during live streaming in TRTC? How do they differ from each other?
-Live streaming scenarios (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`) support two roles: `TRTCRoleAnchor` (anchor) and `TRTCRoleAudience` (viewer). An anchor can both send and receive audio/video data, but a viewer can only receive and play back others' data. You can call `switchRole()` to switch roles.
-
-[](id:que7)
-### What is a role in TRTC? 
-The concept of roles (anchors and viewers) is applicable only in live streaming scenarios. The anchor role (`TRTCRoleAnchor`), which can be assigned to 30 users at the same time, can both send and receive audio/video, and the viewer role (`TRTCRoleAudience`), which can be assigned to 100,000 users at the same time, can only receive audio/video.
+- The first user who enters a room will be the room owner, but this user cannot dismiss the room actively.
+- After all users actively exit the current room, it will be immediately dismissed on the backend.
+>- If a single user disconnects due to an exception, the server will clear this user from the room after 30 seconds. If all users are disconnected due to an exception, the server will automatically close the room after 30 seconds.
+- When a user attempts to enter a room that does not exist, the backend will create the room first.
 
 
-[](id:que8)
-### What application scenarios can a TRTC room use?  
+### Does TRTC support manually configuring the subscription to audio/video streams? 
+To implement the "instant streaming" effect, the stream will be automatically subscribed to during room entry by default. You can call the `setDefaultStreamRecvMode` API to switch to the manual subscription mode.
+
+
+### Can I set a custom ID for a relayed stream in TRTC?  
+Yes. You can specify the `streamId` in the `TRTCParams` parameter of `enterRoom` or call the `startPublishing` API to pass in the `streamId` parameter.
+
+
+### Which roles are supported by TRTC live streaming? What are the differences between them?
+In live streaming scenarios (`TRTCAppSceneLIVE` and `TRTCAppSceneVoiceChatRoom`), two roles are supported: `TRTCRoleAnchor` (anchor) and `TRTCRoleAudience` (viewer). The difference is that an anchor can upstream and downstream audio/video data at the same time, while a viewer can only downstream and play back others' data. You can call `switchRole()` to switch between roles.
+
+
+### What is the "role" concept in TRTC? 
+Anchors and viewers can be set only in live streaming scenarios. The anchor role `TRTCRoleAnchor` has audio/video upstreaming/downstreaming permissions, and there can be up to 30 concurrent anchors. The viewer role `TRTCRoleAudience` has only the audio/video downstreaming permissions, and there can be up to 100,000 concurrent viewers.
+
+
+
+### What application scenarios are supported by TRTC rooms?  
 The following application scenarios are supported:
-- TRTCAppSceneVideoCall: video call scenarios such as one-to-one video calls, video conferences with up to 300 participants, online medical consultation, video chat, and video interviews.
-- TRTCAppSceneLIVE: interactive video live streaming scenarios such as low-latency video live streaming, interactive classroom for up to 100,000 participants, live video competition, video dating, remote training, and mega conferences.
-- TRTCAppSceneAudioCall: audio call scenarios such as one-to-one audio calls, audio conferences with up to 300 participants, voice chat, and online Werewolf playing.
-- TRTCAppSceneVoiceChatRoom: interactive audio live streaming scenarios such as low-latency audio live streaming, live audio co-anchoring, voice chat rooms, karaoke, and FM broadcasting.
+- TRTCAppSceneVideoCall: video call scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video chat, and video interview.
+- TRTCAppSceneLIVE: interactive video live streaming scenarios such as low-latency video live streaming, interactive classroom for up to 100,000 participants, live video competition, video dating room, remote training, and mega-scale conferencing.
+- TRTCAppSceneAudioCall: audio call scenarios such as one-to-one audio call, audio conferencing with up to 300 participants, voice chat, and online Werewolf.
+- TRTCAppSceneVoiceChatRoom: interactive audio live streaming scenarios such as low-latency live audio streaming, live audio co-anchoring, voice chat room, karaoke room, and FM radio.
 
 
-[](id:que9)
+
 ### What platforms does TRTC support?
-TRTC supports platforms including iOS, Android, Windows (C++), Windows (C#), macOS, desktop browsers, and Electron. For more information, please see [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35078).
-
-[](id:que10)
-### What are the differences among TRTC Lite, Professional, and Enterprise? 
-See [Differences Between Editions](https://intl.cloud.tencent.com/document/product/647/34615).
+Supported platforms include iOS, Android, Windows (C++), Windows (C#), macOS, desktop browser, Electron, and Linux. For more information, please see “Supported Platforms” in [Overview](https://intl.cloud.tencent.com/document/product/647/35078).
 
 
-[](id:que11)
-### Does TRTC support co-anchoring during live streaming?
-Yes. For detailed instructions, see:
+### What are the differences between the TRTC Lite (TRTC), Professional, and Enterprise Editions? 
+Yes. For more information, please see [Configuring Permission for Entering Room](https://intl.cloud.tencent.com/document/product/647/35157).
+
+
+
+### Does TRTC support live streaming co-anchoring?
+Yes. For detailed directions, please see:
 - [Live Streaming Mode (iOS and macOS)](https://intl.cloud.tencent.com/document/product/647/35107)
 - [Live Streaming Mode (Android)](https://intl.cloud.tencent.com/document/product/647/35108)
 - [Live Streaming (Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
 - [Live Streaming (Web)](https://intl.cloud.tencent.com/document/product/647/35110)
 
 
-[](id:que12)
-### How many rooms can there be in TRTC at the same time?
-There can be up to 4,294,967,294 concurrent rooms in TRTC. No limits are set to the number of non-concurrent rooms.
 
-[](id:que13)
+### How many rooms can be created in TRTC at the same time?
+There can be up to 4,294,967,294 concurrent rooms, and there is no limit on the cumulative number of rooms.
+
+
 ### How do I create a room?
-A room is automatically created by TRTC when a user enters a room. Therefore, you do not need to manually create a room. Just call the client API for room entry.
+A room will be automatically created on the Tencent Cloud backend when a user enters the room on the client, so you can "enter a room" simply by calling the relevant client API, and do not need to manually create a room:
 - [iOS and macOS > enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
 - [Android > enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
 - [Windows (C++) > enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac73c4ad51eda05cd2bcec820c847e84f)
 - [Windows (C#) > enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b)
-- [Electron > enterRoom](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?_ga=1.212321108.1562552652.1542703643#enterRoom)
+| [enterRoom](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) | Enters room. |
 - [Desktop Browser > join](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html?_ga=1.256770123.1562552652.1542703643#join)
 
-[](id:que14)
-### What is the upper limit to the bandwidth used for the video service of TRTC?
-There isn’t an upper limit.
+
+### What is the maximum bandwidth supported by the video server of TRTC?
+No.
 
 
-[](id:que15)
-### Can TRTC be deployed on-premises?
-No, it cannot.
 
-[](id:que16)
- 
- 
+### Does TRTC support deployment in a private cloud?
+No.
 
-[](id:que17)
+
+### To enable relayed live streaming in TRTC, do I need to get an ICP filing for my domain name?
+To enable relayed live streaming, according to the requirements of applicable Chinese authorities, the playback domain name in Mainland China needs an ICP filing before it can be used. For more information, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
+
+
 ### How long is the average delay in TRTC?
-The average end-to-end delay of TRTC around the globe is less than 300 ms.
-
-[](id:que18)
-### Does TRTC support active calling?
-Signaling channels are used to enable active calling. For example, you can use the custom message feature of [IM](https://intl.cloud.tencent.com/product/im) to enable active calling. For more information, please see the scenario-specific demos in the [SDK](https://intl.cloud.tencent.com/document/product/647/34615) source code.
-
-[](id:que19)
-### Can users use Bluetooth earphones when having one-to-one video calls in TRTC?
-Yes, they can.
+The average end-to-end delay around the globe is less than 300 ms.
 
 
-[](id:que20)
+### Does TRTC support active calls?
+This feature can be implemented together with the signaling channel. For example, you can use the custom message feature of [IM](https://intl.cloud.tencent.com/zh/product/im) to make calls. For more information, please see the scenario-specific demos in the [SDK](https://intl.cloud.tencent.com/document/product/647/34615) source code.
+
+
+### Does TRTC support Bluetooth earphones during one-to-one video calls?
+Supported
+
+
+
 ### Can TRTC be used outside the Chinese mainland?
-Yes, it can.
+Supported
 
-[](id:que21)
+
 ### Does TRTC support screen sharing on PCs?
-Yes. For details, see the following documents:
-- [Real-Time Screen Sharing (Windows)](https://intl.cloud.tencent.com/document/product/647/37335)
-- [Real-Time Screen Sharing (macOS)](https://intl.cloud.tencent.com/document/product/647/37336)
-- [Real-Time Screen Sharing (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35163)
+Yes. For more information, please see the following documents:
+- [Screen Sharing (Windows)](https://intl.cloud.tencent.com/document/product/647/37335)
+- [Screen Sharing (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35163)
+- [Screen Sharing (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35163)
 
-For information on the screen sharing APIs, see [Client APIs > All Platforms (C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Client APIs > Windows (C#)](https://intl.cloud.tencent.com/document/product/647/35136), or [Client APIs > Electron](https://intl.cloud.tencent.com/document/product/647/35141).
+For more information on screen sharing APIs, please see [APIs for Windows (C++)](https://intl.cloud.tencent.com/document/product/647/35131) or [APIs for Windows (C#)](https://intl.cloud.tencent.com/document/product/647/35136). In addition, you can also use [APIs for Electron](https://intl.cloud.tencent.com/document/product/647/35141).
 
-[](id:que23)
+
 ### Can I share local video files in TRTC?
 
-Yes. You can enable this using the [Custom Capturing and Rendering](https://intl.cloud.tencent.com/document/product/647/35158) feature.
-
-[](id:que24)
-### Can I record live streaming videos and store the recording files locally on my phone in TRTC?
-Recording files cannot be stored locally on phones. They are stored in VOD by default. You can download and save them to your phone. For more information, please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+Yes. This can be implemented through the [custom collection](https://intl.cloud.tencent.com/document/product/647/35158) feature.
 
 
-[](id:que25)
-### Does TRTC support audio-only streams?
-Yes, it does.
-
-
-[](id:que26)
-### Can there be more than one screen sharing image in the same room?
-Currently, only one screen sharing substream is allowed in a room.
-
-[](id:que27)
-### When a specified window is shared (`SourceTypeWindow`), if the window size changes, will the resolution of the video stream change accordingly?
-By default, the TRTC SDK automatically adjusts encoding parameters based on the size of the shared window.
-If you want to fix the resolution, call the `setSubStreamEncoderParam` API to set the encoding parameters for screen sharing or set the encoding parameters when calling `startScreenCapture`.
-
-
-[](id:que28)
-### Does TRTC support 1080p videos?
-Yes. You can set the resolution through `setVideoEncoderParam` of the SDK.
-
-[](id:que29)
-### Can I customize data capturing in TRTC?
-You can on some platforms. For details, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
-
-[](id:que30)
-### Is communication between TRTC and TWebLive possible?
-No, it's not.
-
-[](id:que31)
-### Is communication between TRTC and MLVB possible? 
-TRTC and MLVB have different backend architectures and therefore cannot communicate with each other. Relayed push from TRTC to CDNs is possible though.
+### Can TRTC record live streaming videos and store the recording files locally on phones?
+Recording files cannot be stored locally on phones. Video recording files will be stored on the VOD platform by default. You can download and save them to your phone. For more information, please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
 
 
 
-[](id:que32)
-### What are the differences among the room entry modes or `AppScene` of TRTC?
-TRTC has four room entry modes. Video call (`VideoCall`) and audio call (·VoiceCall`) are the call modes, and interactive video live streaming (`Live`) and interactive audio live streaming (`VoiceChatRoom`) are the live streaming modes.
-- The call modes allow a maximum of 300 users in each TRTC room, and up to 30 of them can speak at the same time. The call modes are suitable for scenarios such as one-to-one video calls, video conferences with up to 300 participants, online medical consultation, video interviews, video customer service, and online Werewolf playing.
-- The live streaming modes allow a maximum of 100,000 concurrent users in each room, with smooth mic connection/disconnection. Co-anchoring latency is kept below 300 ms and watch latency below 1,000. The live streaming modes are suitable for scenarios such as low-latency interactive live streaming, interactive classrooms for up to 100,000 participants, video dating, online education, remote training, and mega conferences.
+### Does TRTC support pure real-time audio?
+Yes.
 
 
-[](id:que33)
-### Can I use the hands-free mode during video calls in TRTC?
-Yes. You can enable the hands-free mode by setting audio routing. In native SDKs, use the `setAudioRoute ` API to switch the routing.
 
-[](id:que34)
-### Does TRTC support volume reminders?
-Yes. You can call the `enableAudioVolumeEvaluation` API to enable volume reminders.
+** Can there be more than one channel of screen sharing in the same room at the same time?**
+Currently, there can only be one secondary channel of screen sharing in a room.
 
-[](id:que35)
-### Does TRTC support mirror images? 
+
+**When window sharing (SourceTypeWindow) is specified, will the resolution of the video stream change when the window size changes?**
+By default, the SDK will automatically adjust the encoding parameters according to the shared window size.
+If you want a fixed resolution, you need to call the `setSubStreamEncoderParam` API to set the encoding parameter for screen sharing or specify the corresponding encoding parameter when calling the `startScreenCapture` API.
+
+
+
+### Does TRTC support 1080p?
+Yes. You can set the resolution through the video encoding parameter `setVideoEncoderParam` of the SDK.
+
+
+### Does TRTC support custom data capturing?
+This feature is supported on certain platforms. For more information, please see [Custom Capture and Rendering](https://intl.cloud.tencent.com/document/product/647/35158).
+
+
+### Can TRTC communicate with the ILVB SDK?
+No.
+
+
+### Can TRTC communicate with MLVB? 
+TRTC and MLVB have different backend architectures and therefore cannot directly communicate with each other. The TRTC backend can relay pushes only to CDN.
+
+
+
+
+### What are the differences between the TRTC room entry modes indicated by `AppScene`?
+TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call modes, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming modes.
+- In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 50 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video interview, video customer service, and online Werewolf.
+- TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for application scenarios such as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
+
+
+
+### Does TRTC support the hands-free mode during audio/video calls?
+Yes. You can implement the hands-free mode by setting audio routing. In the native SDK, switch the routing in the `setAudioRoute` API.
+
+
+### Does TRTC support volume level reminders?
+Yes. You can call the `enableAudioVolumeEvaluation` API to enable volume level reminders.
+
+
+### Can I set image mirroring in TRTC? 
 Yes. You can call the `setLocalViewMirror` API to set the mirroring mode for the preview image of the local camera or call the `setVideoEncoderMirror` API to set the mirroring mode for the output image of the encoder.
 
-[](id:que36)
-### Can I record the audio of a TRTC call and save the recording file locally? 
-Yes. You can call `startAudioRecording` to record all the audio of a call, including that of the local user, remote users and the background music, into a single file in the format of PCM, WAV, or AAC.
 
-[](id:que37)
-### Can I record the video of a TRTC call into a file?
-TRTC supports audio/video recording on a local server. To use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for the SDK and instructions.
+### Can I record call audio in TRTC to a local file? 
+Yes. You can call `startAudioRecording` API to record all audios (such as local audio, remote audio, and background music) in the current call to a file. Currently, the PCM, WAV, and AAC audio formats are supported.
+
+
+### Can I record the video in audio/video communication in TRTC to a file?
+(Audio/video) recording on a local server is supported. To try this feature out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to get the SDKs and relevant guides.
 You can also use the [on-cloud recording and playback](https://intl.cloud.tencent.com/document/product/647/35426) feature to record videos.
 
-[](id:que38)
-### Does TRTC support floating windows (like those in WeChat) or switching between big and small images?
-These features are part of UI design, for which the TRTC SDK sets no restrictions. The official demo provides sample code for image overlay and the grid layout and supports floating windows, switching between big and small images, and dragging images. For more information, please see the [official demo](https://github.com/tencentyun/TRTCSDK).
 
-[](id:que39)
-### How do I make an audio-only call in TRTC?
-TRTC does not use separate channels for audio and video. You can make an audio-only call by calling only `startLocalAudio` but not `startLocalPreview.
+### Does TRTC support features such as floating window like that in WeChat video call and big/small image switch?
+These features belong to the UI layout logic, and the SDK does not restrict the display and processing of UI. The official demo provides sample code for image cascading and 9-grid layout modes and supports floating window, big/small image switch, and image drag. For more information, please see the [official demo](https://github.com/tencentyun/TRTCSDK).
 
-[](id:que40)
-### How do I enable relayed push and recording for an audio-only call in TRTC?
-- For SDK versions below 6.9, you need to construct `json{\"Str_uc_params\":{\"pure_audio_push_mod\":1}}` and pass it in `TRTCParams.businessInfo` during room entry. `1` means relayed push, and `2` means relayed push and recording.
-- For TRTC SDK 6.9 or above, just set the scenario parameter to `TRTCAppSceneAudioCall` or `TRTCAppSceneVoiceChatRoom` during room entry.
 
-[](id:que41)
-### Can I kick a user out, forbid a user to speak, or mute a user in a TRTC room?  
-Yes, you can.
-- To enable the features through simple signaling operations, use `sendCustomCmdMsg`, the custom signaling API of TRTC, to define your own control signaling, and users who receive the signaling will perform the actions expected. For example, to kick out a user, just define a kick-out signaling, and the user receiving it will exit the room.
-- If you want to implement a more comprehensive operation logic, we recommend that you use [Instant Messaging](https://intl.cloud.tencent.com/document/product/1047) to map the TRTC room to an IM group and enable the features via the sending/receiving of custom messages in the group.
+### How does TRTC implement pure audio calls?
+TRTC does not distinguish between audio and video channels. If only `startLocalAudio` is called and `startLocalPreview` is not, the call will be in the pure audio mode.
 
-[](id:que42)
-### Can TRTC pull and play back RTMP/FLV streams?  
-Yes. The TRTC SDK has integrated TXLivePlayer. If you need more player features, consider using the all-featured LiteAVSDK_Professional Edition.
 
-[](id:que43)
+### How are relayed push and recording implemented during audio calls in TRTC?
+- Versions below TRTC SDK 6.9: construct `json{\"Str_uc_params\":{\"pure_audio_push_mod\":1}}` during room entry and pass it into `TRTCParams.businessInfo`. `1` indicates relayed push, and `2` indicates relayed push and recording.
+- TRTC SDK 6.9 or above: select `TRTCAppSceneAudioCall` or `TRTCAppSceneVoiceChatRoom` as the scenario parameter during room entry.
+
+
+### Can I kick out a user, forbid a user to speak, or mute a user in a TRTC room?  
+Supported
+- To perform a simple signaling operation, you can use the custom signaling API `sendCustomCmdMsg` of TRTC to define the corresponding control signaling, and the user in the call will perform the corresponding operation after receiving the control signaling. For example, to kick out a user is to define a kick-out signaling, and the user receiving it will exit the room automatically.
+- If you want to implement a more comprehensive operation logic, we recommend you use [Instant Messaging](https://intl.cloud.tencent.com/zh/document/product/1047) to map the TRTC room to an IM group and receive/send custom messages in the group, so as to perform the corresponding operation.
+
+
+### Does TRTC support the playback of pulled RTMP/FLV streams?  
+Yes. Currently, TXLivePlayer has been embedded in the TRTC SDK. If you need more player features, you can directly use the LiteAVSDK_Professional Edition, which provides all player features.
+
+
 ### How many people can be in the same call in TRTC?
-- In the call modes, a single room can accommodate up to 300 concurrent users, and up to 30 of them can enable their cameras or mics.
-- In the live streaming modes, a single room can accommodate up to 100,000 concurrent viewers, and up to 30 of them can be assigned the anchor role and enable their cameras or mics.
+- In call mode, a single room can sustain up to 300 concurrent online users, and up to 30 of them can simultaneously enable their cameras or mics.
+- In live streaming mode, a single room can sustain up to 100,000 concurrent online viewers, and up to 30 of them can simultaneously enable their cameras or mics as anchors.
 
 
-[](id:que44)
-### How do I start a live streaming session in TRTC?
-TRTC offers a dedicated low-latency interactive live streaming solution that allows up to 100,000 participants with co-anchoring latency kept as low as 200 ms and watch latency below 1 s. It adapts excellently to poor network conditions and is optimized for the complicated mobile network environments.
-For detailed directions, please see [Live Streaming Mode](https://intl.cloud.tencent.com/document/product/647/35107).
 
-[](id:que45)
-### Can I use the custom message sending API of TRTC to implement features such as chat rooms and on-screen comments?
-No. Custom message sending is intended for simple and low-frequency signaling scenarios. For details, please see [Sending Custom Messages > Use Limits](https://intl.cloud.tencent.com/document/product/647/35159).
+### How does TRTC implement live streaming applications?
+Specially for live streaming scenarios, TRTC provides the low-latency interactive live streaming solution. It can sustain up to 100,000 concurrent users and ensure a latency between co-anchoring anchors of as short as 200 milliseconds and a latency between anchor and viewer of less than 1 second. In addition, it delivers a high performance even in weak network environments to adapt to the complex network environments of mobile devices.
+For detailed directions, please see [Live Streaming Mode (iOS and macOS)](https://intl.cloud.tencent.com/document/product/647/35107).
 
-[](id:que46)
-### Can I loop background music in TRTC? Can I adjust the playback progress of background music?  
-Yes. You can call the playback API again in the completion callback to loop background music and call `setBGMPosition()` to set the playback progress.
 
-[](id:que47)
-### Can I listen for entry/exit of users through callbacks in TRTC? Can I use `onUserEnter` or `onUserExit`?
-Yes. You can use `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` to listen for the entry/exit of users, but callbacks are triggered only for users who can send data.
->?`onUserEnter` and `onUserExit` have been replaced with `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` in TRTC SDK 6.8 and later versions.
+### Can I use the custom message sending API of TRTC to implement features such as chat room and on-screen commenting?
+No. Custom message sending in TRTC is only applicable to simple and low-frequency signaling transfer scenarios. For specific limits, please see “Use Limits” in [Sending Custom Messages](https://intl.cloud.tencent.com/document/product/647/35159).
 
-[](id:que48)
-### How do I listen for network disconnection and reconnection in TRTC?
-You can listen for the events through the following callbacks:
-- onConnectionLost: the SDK is disconnected to the server.
+
+### Does the TRTC SDK support the looped playback of the background music? Can I adjust the playback progress of the background music?  
+Yes. You can call the playback API again in the completion callback to implement looped playback and call `setBGMPosition()` to set the playback progress.
+
+
+### Does TRTC provide listening callbacks for the room entry/exit of members? Are `onUserEnter` and `onUserExit` available?
+Yes. TRTC uses `onRemoteUserEnterRoom`/`onRemoteUserLeaveRoom` to listen on the room entry/exit of members (they will be triggered only for users with audio/video upstreaming permissions).
+>?`onUserEnter` and `onUserExit` have been disused on v6.8 and replaced with `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom`, respectively.
+
+
+### How does TRTC monitor network disconnection and reconnection?
+It can listen on such events through the following listening callbacks:
+- onConnectionLost: the connection between the SDK and the server is closed.
 - onTryToReconnect: the SDK tries to reconnect to the server.
-- onConnectionRecovery: the SDK is reconnected to the server.
+- onConnectionRecovery: the connection between the SDK and the server is restored.
 
-[](id:que49)
-### Is there a callback for first frame rendering? Can I listen for the start of image rendering or audio playback?
-Yes. You can use `onFirstVideoFrame` and `onFirstAudioFrame` to listen for the events.
 
-[](id:que50)
-### Can I the take a screenshot of a video in TRTC?
-Currently, you can call `snapshotVideo()` on iOS and Android to take screenshots of local and remote videos.
+### Does TRTC provide a callback for first frame rendering? Can the start of image rendering and the start of audio playback be listened on?
+Yes. `onFirstVideoFrame` and `onFirstAudioFrame` are used to listen on such events.
 
-[](id:que51)
-### Why do I fail to connect peripheral devices such as Bluetooth earphones to TRTC?
-Currently, TRTC supports mainstream Bluetooth earphones and peripherals, but there are still devices that it doesn’t support. We recommend that you use the official demo, WeChat, and QQ audio/video call to test the compatibility.
 
-[](id:que52)
+### Does TRTC support the screenshotting of video images?
+Currently, you can call `snapshotVideo()` on iOS or Android to screenshot the local and remote video images.
+
+
+### An exception occurred in TRTC when a peripheral device such as the Bluetooth earphone was connected. What should I do?
+Currently, TRTC is compatible with mainstream Bluetooth earphones and other peripheral devices. However, it is still incompatible with certain devices. We recommend you use the official demo, WeChat, and QQ audio/video call to test the compatibility.
+
+
 ### How do I get information such as the upstream/downstream bitrate, resolution, packet loss rate, and audio sample rate of a TRTC audio/video call?
-You can call the `onStatistics()` API of the SDK to get the statistics.
+You can call the `onStatistics()` API of the SDK to get these statistics.
 
-[](id:que53)
-### Does TRTC’s background music API `playBGM()` support online music?
-No. Currently, it supports only local music. You can download an online music file and then call `playBGM()` to play it back.
 
-[](id:que54)
-### Can I set the local capturing volume or the playback volume of each remote user in TRTC?
-Yes. You can call the `setAudioCaptureVolume()` API to set the capturing volume and the `setRemoteAudioVolume()` API to set the playback volume of a remote user.
+### Does the background music API `playBGM()` of TRTC support online music?
+No. Currently, only local music is supported. You can download the music file and then call the `playBGM()` API for playback.
 
-[](id:que55)
+
+### Does TRTC support setting the local capturing volume level? Can I set the playback volume level of each remote user?
+Yes. You can call the `setAudioCaptureVolume()` API to set the SDK capturing volume level and the `setRemoteAudioVolume()` API to set the playback volume level of a remote user.
+
+
 ### What are the differences between `stopLocalPreview` and `muteLocalVideo`?
-- `stopLocalPreview` is used to stop local video capturing. If you call this API, both you and other users will not be able to see your image.
-- `muteLocalVideo` is used to stop the sending of local video images. If you call this API, other users will not see your image, but you can still preview your own image.
+- `stopLocalPreview` is used to stop local video capturing. After this API is called, both the local and remote video images will turn black.
+- `muteLocalVideo` is used to set whether to send the local video image to the backend. After this API is called, the image viewed by other users will turn black, but the caller can still view the local preview image.
 
-[](id:que56)
+
 ### What are the differences between `stopLocalAudio` and `muteLocalAudio`? 
-- `stopLocalAudio` is used to disable the capturing and sending of local audio.
-- With `muteLocalAudio`, TRTC does not stop the sending of audio/video data, but continues to send muted data packets at extremely low bitrate.
+- `stopLocalAudio` is used to disable local audio capturing and upstreaming.
+- `muteLocalAudio` does not stop sending audio/video data. Instead, it continues to send mute packets with extremely low bitrate.
 
-[](id:que57)
-### What resolutions does the TRTC SDK support?
-We recommend that you set the resolution as instructed in [Setting Image Quality](https://intl.cloud.tencent.com/document/product/647/35153) for better image quality.
 
-[](id:que58)
+### Which resolutions are supported by the TRTC SDK?
+We recommend you configure the resolution as instructed in [Setting Image Quality](https://intl.cloud.tencent.com/document/product/647/35153) to achieve a more appropriate image quality.
+
+
 ### How do I set the upstream video bitrate, resolution, and frame rate in the TRTC SDK? 
-You can call the `setVideoEncoderParam()` API in `TRTCCloud` and set `videoResolution` (resolution), `videoFps` (frame rate), and `videoBitrate` (bitrate) in `TRTCVideoEncParam`.
-
-[](id:que59)
-### How do I set the rotation degree of an image in the TRTC SDK?  
-Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
-
-[](id:que60)
-### How do I make a video call in the landscape mode? 
-Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
-
-[](id:que61)
-### How do I match the rotation degrees of the local and remote images in TRTC if they are different?  
-Please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
+You can call the `setVideoEncoderParam()` API in `TRTCCloud` to set the `videoResolution` (resolution), `videoFps` (frame rate), and `videoBitrate` (bitrate) in the `TRTCVideoEncParam` parameter.
 
 
-[](id:que62)
-### What image quality-related settings (bitrate, resolution, and frame rate) does TRTC recommend?
-Please see [Setting Image Quality > Recommended Configuration](https://intl.cloud.tencent.com/document/product/647/35153#.E6.8E.A8.E8.8D.90.E7.9A.84.E9.85.8D.E7.BD.AE).
+### How do I use the SDK to control the image angle and direction?  
+For more information, please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
 
-[](id:que63)
-### Can I test my network speed in TRTC? How?  
-Yes, you can. For details, please see [Testing Network Speed Before Chat](https://intl.cloud.tencent.com/document/product/647/35157).
 
-[](id:que64)
-### Can I control access to a TRTC room to allow only authorized users to enter the room? 
-Yes. For details, please see [Enabling Advanced Permission Control](https://intl.cloud.tencent.com/document/product/647/35157).
+### How do I make a video call in landscape mode? 
+For more information, please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
 
-[](id:que65)
-### Can I pull and play back streams through CDNs? 
-Yes, you can. For details, please see [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242).
 
-[](id:que66)
-### What formats does TRTC support for custom rendering? 
-- iOS: I420, NV12, and BGRA
-- Android: I420 and Texture2D
+### How do I adjust the directions of local and remote images in TRTC if they are different?  
+For more information, please see [Video Image Rotation and Zooming](https://intl.cloud.tencent.com/document/product/647/35154).
+
+
+
+### Are there any recommended parameter settings for TRTC image quality (bitrate, resolution, and frame rate)?
+For more information, please see “Recommended Configuration” in [Setting Image Quality](https://intl.cloud.tencent.com/document/product/647/35153#.E6.8E.A8.E8.8D.90.E7.9A.84.E9.85.8D.E7.BD.AE).
+
+
+### Does TRTC support network speed tests? How do I use this feature?  
+Yes. For more information, please see [Configuring Permission for Entering Room](https://intl.cloud.tencent.com/document/product/647/35157).
+
+
+### Does TRTC support room entry authentication in scenarios such as allowing entry for only authorized members? 
+Yes. For more information, please see [Configuring Permission for Entering Room](https://intl.cloud.tencent.com/document/product/647/35157).
+
+
+### Can TRTC audio/video streams be pulled through CDN for playback? 
+Yes. For more information, please see [Configuring Permission for Entering Room](https://intl.cloud.tencent.com/document/product/647/35157).
+
+
+### What formats are supported by TRTC custom rendering? 
+- For iOS, I420, NV12, and BGRA are supported.
+- For Android, I420 and Texture2D are supported.
