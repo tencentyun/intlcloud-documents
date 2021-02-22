@@ -299,7 +299,7 @@ Integrate the VOD player designed for your platform. For detailed instructions, 
 - [Android](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 - [Web](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! We recommend the [Professional Edition TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615), which integrates features including [superplayer (Player+)](https://cloud.tencent.com/product/player) and [Mobile Live Video Broadcasting (MLVB)](https://intl.cloud.tencent.com/zh/product/mlvb). This integrated edition adds less to the size of the app package than two independent SDKs do because many underlying modules are shared among the services. It is also free of the duplicate symbol issue.
+>! We recommend the [Professional Edition TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615), which integrates features including [Mobile Live Video Broadcasting (MLVB)](https://intl.cloud.tencent.com/zh/product/mlvb). This integrated edition adds less to the size of the app package than two independent SDKs do because many underlying modules are shared among the services. It is also free of the duplicate symbol issue.
 
 
 ## Billing
