@@ -21,7 +21,6 @@ You can adjust the bandwidth or the billing mode of public network CLB instances
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the **Instance Management** page, select a region, and click **More** -> **Adjust Bandwidth** on the right of a public network CLB instance.
 3. In the dialog box, set the bandwidth cap and click **Submit**.
-![](https://main.qcloudimg.com/raw/302ba3e08ab0c4e8c1d4957f8a11e449.png)
 
 ## Changing Billing Mode
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
