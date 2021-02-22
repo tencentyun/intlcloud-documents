@@ -31,7 +31,7 @@ The RESTful API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/p
 #### 1. Configuring the video image layout mode
 
 Through the [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) parameter in `StartMCUMixTranscode`, you can set the following layout modes:
-![](https://main.qcloudimg.com/raw/f2e3eae87fcc9ae61ca11e196d02f04c.png)
+![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 
 **Float layout template (LayoutParams.Template = 0)**
 
