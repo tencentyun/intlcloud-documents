@@ -18,7 +18,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |   &#10003;  |
 
-For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html).
+For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
 
 ## TRTCAppScene
 
@@ -47,7 +47,7 @@ This corresponds to the scenario where most of the time there is only one person
 
 - **(TRTCVideoResolution) videoResolution**
 Encoded resolution; for example, 640x360 refers to the width (pixels) x height (pixels) of the encoded video image. In the `TRTCVideoResolution` enum definition, only landscape resolution (i.e., width >= height) is defined. If you want to use portrait resolution, you need to set `resMode` to `Portrait`.
- >As many hardware codecs only support pixel widths that are divisible by 16, the actual resolution encoded by the SDK is not necessarily exactly the same as configured by the parameter; instead, it will be automatically corrected based on the divisor of 16; for example, the resolution 640x360 may be adapted to 640x368 inside the SDK.
+ >!As many hardware codecs only support pixel widths that are divisible by 16, the actual resolution encoded by the SDK is not necessarily exactly the same as configured by the parameter; instead, it will be automatically corrected based on the divisor of 16; for example, the resolution 640x360 may be adapted to 640x368 inside the SDK.
 
 - **(TRTCVideoResolutionMode) resMode**
 This determines the landscape or portrait resolution. Because only landscape resolution is defined in `TRTCVideoResolution`, if you want to use portrait resolution such as 360x640, you need to specify `resMode` as `TRTCVideoResolutionModePortrait`. Generally, landscape resolution is used on PCs and Macs, while portrait resolution is used on mobile devices.
@@ -103,13 +103,13 @@ For the `controlMode` parameter, select **TRTCQosControlModeServer**. `TRTCQosCo
 
 ## Common Misunderstandings
 **1. The higher the resolution, the better?**
-Higher resolutions require higher bitrates for support. If the resolution is 1280x720, but the bitrate is specified as 200 Kbps, the video image will have a lot of blurs. We recommend that you set it as described in the [Resolution-bitrate reference table](https://intl.cloud.tencent.com/document/product/647/35153).
+Higher resolutions require higher bitrates for support. If the resolution is 1280x720, but the bitrate is specified as 200 Kbps, the video image will have a lot of blurs. We recommend that you set it as described in the [Resolution-bitrate reference table](https://intl.cloud.tencent.com/document/product/647/35153?lang=en&pg=#resolution-bitrate-reference-table).
 
 **2. The higher the frame rate, the better?**
 Because the image captured by the camera is a complete mapping to all real objects in the exposure phase, it is not that the higher the frame rate, the smoother the video, which is different from the concept of FPS in games. On the contrary, if the frame rate is too high, the quality of each video frame will be lowered, and the exposure time of the camera will be reduced, worsening the image effect.
 
 **3. The higher the bitrate, the better?**
-Higher bitrates also require higher resolutions for a match. For a resolution of 320x240, a 1,000 Kbps bitrate would be wasteful. We recommend that you set it as described in the [Resolution-bitrate reference table](https://intl.cloud.tencent.com/document/product/647/35153).
+Higher bitrates also require higher resolutions for a match. For a resolution of 320x240, a 1,000 Kbps bitrate would be wasteful. We recommend that you set it as described in the [Resolution-bitrate reference table](https://intl.cloud.tencent.com/document/product/647/35153?lang=en&pg=#detailed-description-of-fields).
 
 **4. High resolution and bitrate can be set when connected to a Wi-Fi network?**
 It is not that the Wi-Fi network speed is constant. If the device is far from the wireless router or the router channel is occupied, the Wi-Fi network may not be as fast as 4G.
