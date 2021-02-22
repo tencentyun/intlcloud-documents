@@ -5,10 +5,10 @@ You can store all your static resources such as static scripts, audio/video file
 When COS serves as an origin server of CDN, billing consists of two parts: CDN billing (for acceleration) and COS billing (for origin-pulling).
 
 ### CDN Billing
-When CDN obtains resources from a nearby CDN node and delivers them to clients, the traffic consumed will be charged by CDN. For more information, please see [CDN Billing](https://intl.cloud.tencent.com/document/product/228/2949).
+When CDN obtains resources from a nearby CDN node and delivers them to clients, the traffic consumed will be charged by CDN billing. For more information, please see [CDN Billing](https://intl.cloud.tencent.com/document/product/228/2949).
 
 ### COS Billing
-When CDN pulls resources from a COS origin server, the traffic consumed will be charged by COS. For more information, please see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
+When CDN pulls resources from a COS origin server, the traffic consumed will be charged by COS billing. For more information, please see [COS Billing](https://intl.cloud.tencent.com/document/product/436/16871).
 ![](https://main.qcloudimg.com/raw/64557185ea11d642a939f2c0cb650e50.png)
 
 
