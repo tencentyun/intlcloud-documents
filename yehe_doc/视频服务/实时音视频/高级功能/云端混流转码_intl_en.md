@@ -322,7 +322,7 @@ In ScreenSharing mode, the SDK will first build a canvas based on the target res
  >?If both the `videoWidth` and `videoHeight` parameters are specified as 0, the SDK will automatically calculate a suitable resolution based on the aspect ratio of the user's current screen.
 
 5. After the above steps are performed, the relayed audio stream of the current user will be automatically mixed with audios of other users in the room, and then you can configure a playback domain name for relayed live streaming as described in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) or record the mixed audio stream as described in [On-cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
-
+![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
 
 >! 
 >
