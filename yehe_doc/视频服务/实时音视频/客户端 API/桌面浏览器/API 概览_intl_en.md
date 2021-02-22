@@ -118,16 +118,16 @@ The tutorials below offer detailed instructions on how to use different APIs.
 
 | Feature                       | Sample Code   |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| Basic audio/video call  | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html)               |
-| Interactive live streaming | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-02-live-video.html)                           |
-| Switching cameras/mics | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-03-advanced-switch-camera-mic.html)      |
-| Setting local video attributes  | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-advanced-set-video-profile.html)      |
-| Dynamically enabling/disabling local audio/video | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-05-advanced-dynamic-add-video.html) |
-| Sharing screen | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-06-advanced-screencast.html)   |
-| Detecting audio level | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-07-advanced-detect-volume.html) |
-| Custom capture and playback rendering | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-08-advanced-customized-capture-rendering.html) |
-| Limiting number of upstream users in room | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-09-advanced-uplink-limits.html) |
-| Background music and audio effect solutions | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-12-advanced-audio-mixer.html)                  |
+| Basic audio/video call  | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-11-basic-video-call.html)                |
+| Interactive live streaming | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-12-basic-live-video.html)                          |
+| Switching cameras/mics | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-13-basic-switch-camera-mic.html)      |
+| Setting local video attributes  | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html)      |
+| Dynamically enabling/disabling local audio/video | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-15-basic-dynamic-add-video.html)  |
+| Sharing screen | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-16-basic-screencast.html)   |
+| Detecting audio level | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-17-basic-detect-volume.html) |
+| Custom capture and playback rendering | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-20-advanced-customized-capture-rendering.html) |
+| Limiting number of upstream users in room | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-04-info-uplink-limits.html)  |
+| Background music and audio effect solutions | [Tutorial](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-22-advanced-audio-mixer.html)                   |
 
 
 ## TRTC
