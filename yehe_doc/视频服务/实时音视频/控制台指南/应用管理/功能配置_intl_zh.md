@@ -7,9 +7,9 @@
 
 - 基于 UDP 传输协议的 TRTC 服务，通过协议转换将音视频流对接到 [云直播](https://intl.cloud.tencent.com/document/product/267) 系统，这个过程称之为“旁路推流”。
 - 旁路推流功能默认关闭，开启旁路推流功能需先开通云直播服务。
-- 将旁路推流用于 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 说明。
+- 将旁路推流用于 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#bill-by-traffic.2Fbandwidth) 说明。
 - 将旁路推流用于 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 时，将会产生录制、录制文件存储等费用，详见 [云端录制与回放>相关费用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8) 说明。
-- 若您在 [云直播控制台](https://console.cloud.tencent.com/live/domainmanage) 给旁路推流使用的推流域名（`xxxx.livepush.myqcloud.com`）绑定了录制、转码、截图鉴黄、水印等收费功能的模板，则旁路推流时会产生模板对应的 [增值费用](https://intl.cloud.tencent.com/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8) 。
+- 若您在 [云直播控制台](https://console.cloud.tencent.com/live/domainmanage) 给旁路推流使用的推流域名（`xxxx.livepush.myqcloud.com`）绑定了录制、转码、截图鉴黄、水印等收费功能的模板，则旁路推流时会产生模板对应的 [增值费用](https://intl.cloud.tencent.com/document/product/267/2819) 。
 
 <span id="open_bypass"></span>
 ### 开启旁路推流功能
@@ -39,7 +39,7 @@
 
 ### 注意事项
 - 实时音视频服务通过旁路推流使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供全程的云端录制功能，并将录制下来的文件存储到 [云点播](https://intl.cloud.tencent.com/document/product/266) 平台。
-- 录制功能使用的是云直播服务的能力，将产生云直播的直播录制费用，以当月直播录制并发峰值路数为结算标准，详细计费规则请参见 [云直播 > 直播录制价格说明](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) 。
+- 录制功能使用的是云直播服务的能力，将产生云直播的直播录制费用，以当月直播录制并发峰值路数为结算标准，详细计费规则请参见 [云直播 > 直播录制价格说明](https://intl.cloud.tencent.com/document/product/267/39605) 。
 - 录制后的文件存储在云点播平台，将产生云点播的存储费用，按录制文件存储在云点播平台的存储容量计费，详细计费规则请参见 [云点播 > 视频存储（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666) 。
 - 如需播放或下载录制的视频文件，将会产生云点播服务的流量（视频加速）费用，按下行加速流量计费，详细计费规则请参见 [云点播 > 视频加速（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666) 。
 - 云端录制功能默认关闭，启用云端录制功能需要先开通云直播和云点播服务。
@@ -83,11 +83,13 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 2. 在【功能配置】>【高级权限控制】中，单击右侧的【启用高级权限控制】右侧按钮。
 
 ### 关闭高级权限控制
-1. 单击【应用管理】，选择需要开启高级权限控制的应用，单击目标应用所在行的【功能配置】。
+1. 单击【应用管理】，选择需要关闭高级权限控制的应用，单击目标应用所在行的【功能配置】。
 2. 在【功能配置】>【高级权限控制】中，单击右侧的【关闭高级权限控制】右侧按钮。
 
 ## 相关文档
+- 若需创建新的应用，具体操作请参见 [创建应用](https://intl.cloud.tencent.com/document/product/647/39077)。
 - 若需在应用列表中搜索相关应用，具体操作请参见 [搜索应用](https://intl.cloud.tencent.com/document/product/647/39078)。
+- 若需查看应用的基本信息，具体操作请参见 [应用信息](https://intl.cloud.tencent.com/document/product/647/39079)。
 - 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材，具体操作请参见 [素材管理](https://intl.cloud.tencent.com/document/product/647/39081)。
 - 若需快速跑应用通配套的 Demo 源码，具体操作请参见 [快速上手](https://intl.cloud.tencent.com/document/product/647/39082)。
 
@@ -104,9 +106,9 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 
 - 基于 UDP 传输协议的 TRTC 服务，通过协议转换将音视频流对接到 [云直播](https://intl.cloud.tencent.com/document/product/267) 系统，这个过程称之为“旁路推流”。
 - 旁路推流功能默认关闭，开启旁路推流功能需先开通云直播服务。
-- 将旁路推流用于 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 说明。
+- 将旁路推流用于 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 时，云直播将会按直播观看产生的下行流量/带宽收取相关费用，详见 [云直播>流量带宽计费](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#bill-by-traffic.2Fbandwidth) 说明。
 - 将旁路推流用于 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 时，将会产生录制、录制文件存储等费用，详见 [云端录制与回放>相关费用](https://intl.cloud.tencent.com/document/product/647/35426#.E7.9B.B8.E5.85.B3.E8.B4.B9.E7.94.A8) 说明。
-- 若您在 [云直播控制台](https://console.cloud.tencent.com/live/domainmanage) 给旁路推流使用的推流域名（`xxxx.livepush.myqcloud.com`）绑定了录制、转码、截图鉴黄、水印等收费功能的模板，则旁路推流时会产生模板对应的 [增值费用](https://intl.cloud.tencent.com/document/product/267/2819#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B4.B9.E7.94.A8) 。
+- 若您在 [云直播控制台](https://console.cloud.tencent.com/live/domainmanage) 给旁路推流使用的推流域名（`xxxx.livepush.myqcloud.com`）绑定了录制、转码、截图鉴黄、水印等收费功能的模板，则旁路推流时会产生模板对应的 [增值费用](https://intl.cloud.tencent.com/document/product/267/2819) 。
 
 <span id="open_bypass"></span>
 ### 开启旁路推流功能
@@ -136,9 +138,9 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 
 ### 注意事项
 - 实时音视频服务通过旁路推流使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供全程的云端录制功能，并将录制下来的文件存储到 [云点播](https://intl.cloud.tencent.com/document/product/266) 平台。
-- 录制功能使用的是云直播服务的能力，将产生云直播的直播录制费用，以当月直播录制并发峰值路数为结算标准，详细计费规则请参见 [云直播 > 直播录制价格说明](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) 。
-- 录制后的文件存储在云点播平台，将产生云点播的存储费用，按录制文件存储在云点播平台的存储容量计费，详细计费规则请参见 [云点播 > 视频存储（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666)。
-- 如需播放或下载录制的视频文件，将会产生云点播服务的流量（视频加速）费用，按下行加速流量计费，详细计费规则请参见 [云点播 > 视频加速（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666) 。
+- 录制功能使用的是云直播服务的能力，将产生云直播的直播录制费用，以当月直播录制并发峰值路数为结算标准，详细计费规则请参见 [云直播 > 直播录制价格说明](https://intl.cloud.tencent.com/document/product/267/39605) 。
+- 录制后的文件存储在云点播平台，将产生云点播的存储费用，按录制文件存储在云点播平台的存储容量计费，详细计费规则请参见 [云点播 > 视频存储（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666) 。
+- 如需播放或下载录制的视频文件，将会产生云点播服务的流量（视频加速）费用，按下行加速流量计费，详细计费规则请参见 [云点播 > 视频加速（日结）价格说明](https://intl.cloud.tencent.com/document/product/266/14666)  。
 - 云端录制功能默认关闭，启用云端录制功能需要先开通云直播和云点播服务。
 - 云端录制依赖旁路推流，请先启用 [旁路推流](#open_bypass)。
 
@@ -147,7 +149,7 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 ### 启用云端录制功能
 TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录制成一个独立的文件，若您需开启云端录制功能，详细操作指引请参见 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426#open)。
 
-<span id="open_record"></span>
+<span id="change_record"></span>
 ### 修改云端录制配置
 >! 修改云端录制配置可能会影响您线上正在运行的业务数据，请确认风险后谨慎操作。
 
@@ -180,10 +182,16 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 2. 在【功能配置】>【高级权限控制】中，单击右侧的【启用高级权限控制】右侧按钮。
 
 ### 关闭高级权限控制
-1. 单击【应用管理】，选择需要开启高级权限控制的应用，单击目标应用所在行的【功能配置】。
+1. 单击【应用管理】，选择需要关闭高级权限控制的应用，单击目标应用所在行的【功能配置】。
 2. 在【功能配置】>【高级权限控制】中，单击右侧的【关闭高级权限控制】右侧按钮。
 
 ## 相关文档
+- 若需创建新的应用，具体操作请参见 [创建应用](https://intl.cloud.tencent.com/document/product/647/39077)。
 - 若需在应用列表中搜索相关应用，具体操作请参见 [搜索应用](https://intl.cloud.tencent.com/document/product/647/39078)。
+- 若需查看应用的基本信息，具体操作请参见 [应用信息](https://intl.cloud.tencent.com/document/product/647/39079)。
 - 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材，具体操作请参见 [素材管理](https://intl.cloud.tencent.com/document/product/647/39081)。
 - 若需快速跑应用通配套的 Demo 源码，具体操作请参见 [快速上手](https://intl.cloud.tencent.com/document/product/647/39082)。
+
+
+
+

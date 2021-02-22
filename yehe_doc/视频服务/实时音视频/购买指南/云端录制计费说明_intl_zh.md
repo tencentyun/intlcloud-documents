@@ -1,11 +1,11 @@
 
 >!
->- 自2020年7月1日起首次在 TRTC 控制台创建应用的腾讯云账号，使用云端录制功能后产生的录制费用以本文档的计费规则为准。
->- 在2020年7月1日之前已经在 TRTC 控制台创建过应用的腾讯云账号，无论是在2020年7月1日之前还是之后创建的应用，使用云端录制功能后产生的录制费用均默认继续延用 [云直播 > 直播录制](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6) 的计费规则。
->- 本文档仅针对 TRTC 云端录制的录制费用作出相关说明。云端录制完成后输出的录制文件默认保存在云点播平台，云点播将根据您的使用情况收取**存储费用**和**观看费用**，详情请参见 [云端录制 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35426?lang=en&pg=#applicable-fees)。
->- 如果在云端录制之前使用了云直播的云端混流功能，还会产生额外的 [直播转码 > 标准转码](https://intl.cloud.tencent.com/document/product/267/2818#.E7.9B.B4.E6.92.AD.E8.BD.AC.E7.A0.81) 费用。
+- 自2020年7月1日起首次在 TRTC 控制台创建应用的腾讯云账号，使用云端录制功能后产生的录制费用以本文档的计费规则为准。
+- 在2020年7月1日之前已经在 TRTC 控制台创建过应用的腾讯云账号，无论是在2020年7月1日之前还是之后创建的应用，使用云端录制功能后产生的录制费用均默认继续延用 [云直播 > 直播录制](https://intl.cloud.tencent.com/document/product/267/39605) 的计费规则。
+- 本文档仅针对 TRTC 云端录制的录制费用作出相关说明。云端录制完成后输出的录制文件默认保存在云点播平台，云点播将根据您的使用情况收取**存储费用**和**观看费用**，详情请参见 [云端录制 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35426)。
+- 如果您在云端录制之前使用了 [云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 功能，还会产生额外的旁路转码费用，详情请参见 [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)。
 
-<span id="Billing_items"></span>
+[](id:Billing_items)
 ## 用量统计方式
 
 实时音视频 TRTC 按同一腾讯云账号下所有应用使用云端录制后输出结果中的**录制时长**来统计云端录制服务的用量。录制时长根据云端录制结果的不同，分为**视频时长**和**语音时长**。
@@ -30,7 +30,7 @@
 ### 语音时长
 语音时长是指录制结果中只有纯音频的时间。
 
-<span id="Fixed_price"></span>
+[](id:Fixed_price)
 ## 服务定价
 
 TRTC 云端录制服务的刊例价如下表所示：
@@ -42,13 +42,13 @@ TRTC 云端录制服务的刊例价如下表所示：
 |高清 HD|1.99|
 |全高清 FHD|7.499|
 
-<span id="Billing_method"></span>
+[](id:Billing_method)
 ## 计费方式
 即支付方式。TRTC 云端录制服务仅支持**日结后付费**的方式，按日计费，每天上午10点扣除前一天产生的费用。
 
 >!云端录制依赖**云直播**和**云点播**，如果腾讯云账户因为云直播或云点播欠费，将导致云端录制失败。
 
-<span id="Billing_examples"></span>
+[](id:Billing_examples)
 ## 计费示例
 >!
 >- 本文计费示例采用刊例价计算，如果您与腾讯云的商务经理签订了合同，以合同约定的价格为准。
@@ -77,4 +77,6 @@ TRTC 云端录制服务的刊例价如下表所示：
 - [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)
 - [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34613)
 - [增值服务费用](https://intl.cloud.tencent.com/document/product/647/34614)
+- [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)
 - [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)
+- [欠费停服说明](https://intl.cloud.tencent.com/document/product/647/34611)

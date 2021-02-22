@@ -1,8 +1,9 @@
 本文主要介绍如何快速运行腾讯云 TRTC Demo（iOS&Mac）。
 
 ## 环境要求
-- Xcode 11.0及以上版本
-- 请确保您的项目已设置有效的开发者签名
+- Xcode 11.0及以上版本。
+- 请确保您的项目已设置有效的开发者签名。
+- Qt Creator 4.13.3（Mac）及以上版本。
 
 ## 前提条件
 您已 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的实时音视频 TRTC 服务。
@@ -16,10 +17,13 @@
 <span id="step2"></span>
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 鼠标移动至对应卡片，下载相关 SDK 及配套的 Demo 源码。
- - **iOS：**单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】）
-  ![](https://main.qcloudimg.com/raw/d7b68212e6e63e81c1e0a19e1236a4b3/%E8%B7%91%E9%80%9ADemo(iOS&Mac)1-%E8%BF%94%E8%BF%98.png)
- - **Mac：**单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】）
-  ![](https://main.qcloudimg.com/raw/9f1ca4547228695031845d049dd7755d/%E8%B7%91%E9%80%9ADemo(iOS&Mac)2-%E8%BF%94%E8%BF%98.png)
+#### iOS平台
+单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】）
+![](https://main.qcloudimg.com/raw/d7b68212e6e63e81c1e0a19e1236a4b3/%E8%B7%91%E9%80%9ADemo(iOS&Mac)1-%E8%BF%94%E8%BF%98.png)
+#### Mac平台
+单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】）
+    ![](https://main.qcloudimg.com/raw/9f1ca4547228695031845d049dd7755d/%E8%B7%91%E9%80%9ADemo(iOS&Mac)2-%E8%BF%94%E8%BF%98.png)
+
 2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
 
 <span id="step3"></span>
@@ -41,7 +45,7 @@
 3. 设置`GenerateTestUserSig.h`文件中的相关参数：
   <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
   <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/516ba1e9c8f47317061b29d0cb889454/%E8%B7%91%E9%80%9ADemo(iOS&Mac)3-%E8%BF%94%E8%BF%98.jpg">
+    <img src="https://main.qcloudimg.com/raw/15d986c5f4bc340e555630a070b90d63.png">
 4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
 5. 单击【关闭指引，进入控制台管理应用】。
 
@@ -52,7 +56,7 @@
 1. 在终端窗口进入源码的 TRTCScenesDemo > Podfile 文件所在目录。
 2. 执行`pod install`命令安装 TRTC SDK，或者执行`pod update`命令，更新本地库版本。
 3. 使用 XCode（11.0及以上的版本）打开源码目录下的 TXLiteAVDemo.xcworkspace 工程，编译并运行 Demo 工程即可。
-
+>? 如果您是使用 Qt Creator（4.13.3及以上版本），则直接打开源码目录下的 `QTDemo.pro` 工程，编译并运行 Demo 工程即可。
 ## 常见问题
 
 ### 1. 查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
@@ -64,9 +68,9 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
   - 升级：
   - 切换回老版本算法 ECDSA-SHA256：
-   ![](https://main.qcloudimg.com/raw/bc5cc756b93bd3e688f9f31a9c1efdfe/%E8%B7%91%E9%80%9ADemo(iOS&Mac)5-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/bc5cc756b93bd3e688f9f31a9c1efdfe/%E8%B7%91%E9%80%9ADemo(iOS&Mac)5-%E8%BF%94%E8%BF%98.png)
   - 切换为新版本算法 HMAC-SHA256：
-   ![](https://main.qcloudimg.com/raw/2f55ac47bbff3257bfadc7e670e0ff1c/%E8%B7%91%E9%80%9ADemo(iOS&Mac)6-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/2f55ac47bbff3257bfadc7e670e0ff1c/%E8%B7%91%E9%80%9ADemo(iOS&Mac)6-%E8%BF%94%E8%BF%98.png)
 
 ### 2. 两台手机同时运行 Demo，为什么看不到彼此的画面？
 请确保两台手机在运行 Demo 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个终端同时使用。

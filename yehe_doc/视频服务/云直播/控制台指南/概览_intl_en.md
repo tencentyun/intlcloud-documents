@@ -1,4 +1,4 @@
-The LVB Console provides configurations for you to quickly utilize basic features such as LVB domain name management, LVB stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
+The LVB Console provides configurations for you to quickly implement basic features such as LVB domain name management, LVB stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
 
 ## Prerequisites
 
@@ -7,7 +7,7 @@ The LVB Console provides configurations for you to quickly utilize basic feature
 
 ## Overview
 
-Click **Overview** on the left sidebar, and you can view various data, from yesterday’s traffic fees, real-time live streaming data, the number of concurrent connections, to recent trends in billable bandwidth and traffic. You can also switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
+Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of concurrent connections, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
 ![](https://main.qcloudimg.com/raw/02951b6f19b8f52eb8f0faec08e179d0.jpg)
 
 ### Billing overview
@@ -20,14 +20,14 @@ Click **Overview** on the left sidebar, and you can view various data, from yest
 </tr>
 </tbody></table>
 
-**Switching the billing mode**
-If the current billing mode is daily billing, you can click **Switch** in the **Yesterday's Traffic Usage** to switch the billing mode. Click **Confirm** in the pop-up window to complete the switch. For more information on billing mode switch, please see [Billing Mode Change](https://intl.cloud.tencent.com/document/product/267/30411).
+**Switch the billing mode**
+If the current billing mode is daily billing, you can click **Switch** in the **Yesterday's Traffic Usage** statistical item to view the billing mode switch reminder. Click **OK** to switch the billing mode. For more information on billing mode switch, please see [Billing Mode Change](https://intl.cloud.tencent.com/document/product/267/30411).
 
 For more information, see [LVB Pricing](https://intl.cloud.tencent.com/document/product/267/2819).
 
 ### Today's data
 
-This displays the downstream peak bandwidth, downstream traffic usage, and the number of concurrent connections in LVB of the day.
+It displays the downstream peak bandwidth, downstream traffic usage, and number of concurrent connections in LVB for today.
 
 <table>
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
@@ -41,29 +41,30 @@ This displays the downstream peak bandwidth, downstream traffic usage, and the n
 </tr>
 <tr>
 <td>Concurrent connections</td>
-<td>If the playback protocol is RTMP or FLV, the number of concurrent connections is the number of online viewers. If the playback protocol is HLS, the number of concurrent connections does not reflect the number of online viewers.</td>
+<td>If the playback protocol is RTMP or FLV, the number of concurrent connections is the number of online viewers. If the playback protocol is HLS, the number of concurrent connections dose not mean the number of online viewers.</td>
 </tr>
 </tbody></table>
 
 
 ### Usage trend
 
-This displays the LVB usage trends for today, yesterday, last 7 days, and last 30 days, including the "bandwidth trend" and "traffic trend".
+It mainly displays the LVB usage trends for today, yesterday, last 7 days, and last 30 days, including the "bandwidth trend" and "traffic trend".
 
 <table>
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
 <tbody><tr>
 <td>Bandwidth trend</td>
-<td>It displays the total downstream peak bandwidth consumed by the acceleration service under all playback domain names in the queried period.</td>
+<td>It displays the total downstream peak bandwidth consumed by the acceleration service under all playback domain names in the queried time period.</td>
 </tr>
 <tr>
 <td>Traffic trend</td>
-<td>It displays the total downstream traffic consumed by the acceleration service under all playback domain names in the queried period.</td>
+<td>It displays the total downstream traffic consumed by the acceleration service under all playback domain names in the queried time period.</td>
 </tr>
 </tbody></table>
 
 
-#### Changing time granularity
 
-The LVB Console allows you to change the time granularity when viewing the trends in billable bandwidth or traffic by clicking the dropdown menu next to **Interval** and selecting the desired option.
+#### Change time granularity
+
+The LVB Console allows you to change the time granularity used when viewing the trends in billable bandwidth or traffic by clicking **Time Granularity** and selecting the desired option on the right.
 ![](https://main.qcloudimg.com/raw/fa036b2c6d3a01bad8a207cfe4198ed1.jpg)
