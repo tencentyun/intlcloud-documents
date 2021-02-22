@@ -7,6 +7,7 @@ Tencent Real-Time Communication (TRTC) leverages Tencent's 21 years of experienc
 
 ## TRTC and Other Tencent Cloud Products
 TRTC offers cross-platform solutions for audio/video calls and low-latency interactive live streaming. Through the SDKs TRTC provides for desktop browsers, Android, iOS, Electron, Windows, macOS, and other platforms, you can quickly integrate TRTC services into your projects and connect to the TRTC backend. You can also use TRTC in combination with Tencent Cloud’s other products, such as Instant Messaging (IM), Live Video Broadcasting (LVB), and Video on Demand (VOD) to explore more use cases. See the figure below for how TRTC can be used together with other products.
+![](https://main.qcloudimg.com/raw/1ab8f485bded50c17a1e5e37671acfdd.svg)
 
 ## Supported Platforms
 TRTC *supports a wide range of platforms**. Below is a list of the supported platforms and the development environments required.
