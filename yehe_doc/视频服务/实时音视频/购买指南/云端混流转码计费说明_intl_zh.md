@@ -1,7 +1,7 @@
 >!
 >- 2020年11月01日起首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的账号，**2020年11月01日**开始计费。
 >- 2020年11月01日**之前**首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的账号，延期至**2020年12月08日**开始计费。
->- 本文档仅针对使用 [TRTC 提供的 MCU 集群进行云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 产生的旁路转码费用作出相关说明。若您将 TRTC 的音视频流旁路推流到云直播后，再使用 [云直播提供的云端混流功能](https://intl.cloud.tencent.com/document/product/267/37665)，云直播将向您收取 [直播转码](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E5.9B.BD.E9.99.85.2F.E6.B8.AF.E6.BE.B3.E5.8F.B0.E5.B8.A6.E5.AE.BD.E8.AE.A1.E8.B4.B9) 费用。
+>- 本文档仅针对使用 [TRTC 提供的 MCU 集群进行云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 产生的旁路转码费用作出相关说明。若您将 TRTC 的音视频流旁路推流到云直播后，再使用 [云直播提供的云端混流功能](https://intl.cloud.tencent.com/document/product/267/37665)，云直播将向您收取 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604) 费用。
 >- 若您将转码后输出的音视频流转推到云直播系统中，让观众 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，云直播将向您收取 [流量/带宽](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 费用。
 
 
