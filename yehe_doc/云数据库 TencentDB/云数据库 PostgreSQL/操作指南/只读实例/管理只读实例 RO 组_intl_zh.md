@@ -7,7 +7,7 @@
 ## [创建只读实例 RO 组](id:cjzdslrz)
 1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 在实例详情页，单击“实例架构图”中的【添加只读实例】，或在只读实例页，单击【新建】，进入购买页。
-![](https://main.qcloudimg.com/raw/80577ea0f4f50a3a824c3ce123d9ea63.png)
+![](https://main.qcloudimg.com/raw/bcc375d86e0cbccea0c51fc473dab6da.png)
 3. 在购买页，选择只读实例的相应配置，确认无误后，单击【立即购买】。
  - **指定 RO 组**：选择【新建RO组】，若一次购买多个实例，将都分配至这个 RO 组。RO 组仅支持系统自动分配读权重，RO 组中的所有只读实例流量分配将根据读权重值来自动分配。
  - **设置RO组名称**：RO 组名称不要求唯一。支持长度小于60的中文、英文、数字、`-`、`_`、`.` 。
@@ -15,7 +15,7 @@
     不管实例是否启用延时超限剔除功能，只读实例故障都会被剔除，待实例修复也会重新加入到 RO 组。
  - **延迟大小**：为只读实例设置延迟的日志大小阈值，超过阈值的只读实例会被剔除 RO 组。
  - **最少保留实例数**：组内需要保证的实例下限数，若现有只读实例数小于等于此下限且延迟时间超过阈值，现有只读实例均不被剔除。
-![](https://main.qcloudimg.com/raw/c5a095e2a0fe8a69c38deb2bb1d40bce.png)
+![](https://main.qcloudimg.com/raw/bf44729ad18ba556ec19ebf652bd668b.png)
 5. 返回实例列表，创建的实例状态为“发货中”，待状态切换成“运行中”，则表示只读实例创建成功。
 
 ## 配置只读实例 RO 组
@@ -24,7 +24,7 @@
 >
 1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例名，进入实例管理页面。
 2. 在实例管理页面，选择【只读实例】页，在 RO 组列单击【配置】，进入 RO 组配置页。
-![](https://main.qcloudimg.com/raw/ab3d308a685aa6d47bccc235a0a98355.png)
+![](https://main.qcloudimg.com/raw/3d3181b7bc09b6bc484e78a4e4011f0c.png)
 3. 在 RO 组配置页，配置 RO 组信息，单击【提交】。
  - **读权重分配**：只读实例 RO 组中的所有只读实例流量分配将根据读权重值来自动分配，可实现负载均衡能力，避免因管理多个只读实例地址而增加 IP 地址的管理难度。RO 组仅支持系统自动分配权重。关于不同规格的只读实例的读权重值列表如下：
 <table>
@@ -46,10 +46,10 @@
  - **重新负载均衡**：
     - 关闭重新负载均衡时，修改权重时仅对新增负载生效，不改变原长连接所访问的只读实例，不会引起数据库闪断。
     - 开启重新负载均衡时，数据库会有秒级闪断来断开所有连接，新增连接将按照设置的权重均衡负载。
-![](https://main.qcloudimg.com/raw/d8a6ba5c9cdccd9c80c22e54c612a4a7.png)
+![](https://main.qcloudimg.com/raw/45b4aacc78429c2cb47bf3a9c226cd22.png)
 
 ## 删除只读实例 RO 组
 RO 组随着组内最后一个只读实例被销毁后，即可删除。
 1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例名，进入实例管理页面。
 2. 在实例管理页面，选择【只读实例】页，可查看所有 RO 组列表，当 RO 组中无任何 RO 实例后即可删除。
-![](https://main.qcloudimg.com/raw/80ae414b53bf26624764216f8ccf1265.png)
+![](https://main.qcloudimg.com/raw/f90e124d71f1ff3324d3dce408a68d46.png)
