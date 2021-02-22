@@ -11,21 +11,21 @@ Click **Domain Management** on the left sidebar and click **Create a Distributio
 
 The distribution creation page consists of three parts:
 
-- Domain configuration
-- Origin configuration
-- Service configuration
+- Domain configurations
+- Origin configurations
+- Service configurations
 
 Based on your selected domain name and origin server configurations, CDN will recommend cache configurations, which can be submitted without modification.
 
 ### Part 1: Domain configuration
-Enter your business domain name in the domain field and select the project, region, and service type:
+Enter your business domain name in the domain field and select the project, region, service type and Internet Protocol:
 <img src="https://main.qcloudimg.com/raw/4f2de8b5158a317b1913bd5f920dbf3b.png" style="height:280px"/>
 
 **Configuration description:**
 
 | Configuration | Description                                                     |
 | -------- | ------------------------------------------------------------ |
-| Domain | 1. The domain name can contain up to 50 characters. <br/>2. The domain name should have obtained an ICP filing from the MIIT. <br/>3. Subdomain names in the format of `a.test.com` or `a.b.test.com` and wildcard domain names in the format of `*.test.com` or `*.a.test.com` are supported. <br/>4. If the domain name is a wildcard domain or has been connected to by another user, you need to complete [ownership verification](#m1) to connect or retrieve it. <br/><br/><strong>Note: </strong><br/>1. After a wildcard domain name is configured, its subdomain names and second-level wildcard domain names cannot be connected to in another account. <br/>2. Domain names in the formats of `*.test.com` and `*.a.test.com` cannot be configured at the same time. |
+| Domain | 1. The domain name can contain up to 50 characters. <br/>2. The domain name should have obtained an ICP filing from the Ministry of Industry and Information Technology (MIIT) of the Chinese government. <br/>3. Subdomain names in the format of `a.test.com` or `a.b.test.com` and wildcard domain names in the format of `*.test.com` or `*.a.test.com` are supported. <br/>4. If the domain name is a wildcard domain or has been connected to by another user, you need to complete [ownership verification](#m1) to connect or retrieve it. <br/><br/><strong>Note: </strong><br/>1. After a wildcard domain name is configured, its subdomain names and second-level wildcard domain names cannot be connected to in another account. <br/>2. Domain names in the formats of `*.test.com` and `*.a.test.com` cannot be configured at the same time. |
 | Project | Project is a set of resources shared by all Tencent Cloud products. You can manage it on the [Project Management](https://console.cloud.tencent.com/project) page. |
 | Region | the Chinese mainland: access requests of global users will be scheduled to cache nodes in the Chinese mainland for acceleration. <br/>Outside the Chinese mainland: access requests of global users will be scheduled to cache nodes outside the Chinese mainland for acceleration. <br/>Global: access requests of global users will be scheduled to the nearest optimal node for acceleration. <br/><br/><strong>Note: </strong><br/>Acceleration services in and outside the Chinese mainland are billed separately. For more information on billing policies, please see [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949). |
 | Service type | CDN optimizes acceleration performance based on service type. <br/>For the best acceleration result, we recommend selecting the service type similar to that of your actual business. <br/><br/>Static acceleration: suitable for small-scale resource acceleration scenarios such as ecommerce, websites, and game images.<br/>Download acceleration: suitable for download scenarios such as game installation, source audio/video file download, and mobile phone firmware distribution. <br/>Streaming VOD acceleration: suitable for scenarios such as online education and VOD. |
