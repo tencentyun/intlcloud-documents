@@ -19,7 +19,7 @@
 ## 方案一：服务端 REST API 混流方案
 ### 启动混流
 由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API 您需关注如下细节：
-
+![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 [](id:restapi_step1)
 #### 1. 设置画面排版模式
 通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
@@ -452,7 +452,7 @@ trtc.setMixTranscodingConfig(config);
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Template_ScreenSharing** ，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数，以及 `videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate` 等关乎视频输出质量的参数。
 >?若将 `videoWidth` 和 `videoHeight` 参数均指定为0，SDK 会自动根据用户当前屏幕的宽高比计算出一个合适的分辨率。
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
-
+![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
 >! 
 >- 屏幕分享模式仅支持 Windows 和 Mac 平台。
 >- 屏幕分享模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
