@@ -1,4 +1,4 @@
-This document describes the scenario where the user enters a live room as viewer and then starts co-anchoring. The process of entering the room as anchor for live streaming is the same as the process of video call. For more information, please see [TRTC Video Call](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-01-basic-video-call.html).
+This document describes the scenario where the user enters a live room as viewer and then starts co-anchoring. The process of entering the room as anchor for live streaming is the same as the process of video call. For more information, please see [TRTC Video Call](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-11-basic-video-call.html).
 
 ## Step 1. Create a Client object
 
