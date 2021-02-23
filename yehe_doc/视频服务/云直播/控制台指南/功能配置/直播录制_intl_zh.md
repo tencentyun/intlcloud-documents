@@ -4,7 +4,7 @@
 - 通过 API 创建录制模板，具体参数及示例说明请参见  [创建录制模板](https://intl.cloud.tencent.com/document/product/267/30845)。
 
 ## 注意事项
-- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，避免点播业务欠费停用，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
+- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，详细请参见 [点播快速入门](https://intl.cloud.tencent.com/document/product/266/8757)。
 - 开启录制功能后请确保云点播服务处于正常使用状态。云点播服务未开通或账号欠费导致云点播服务停服等情况将影响直播无法进行录制，期间不会产生录制文件和录制费用。
 - 直播过程中预计在录制结束5分钟左右可获取对应文件。例如，某直播从12:00开始录制，12:30结束录制，则12:35左右可获取12:00 - 12:30的对应片段，以此类推。
 - 受限于音视频文件格式（FLV/MP4/HLS）对编码类型的支持，视频编码类型支持H.264，音频编码类型支持 AAC。
