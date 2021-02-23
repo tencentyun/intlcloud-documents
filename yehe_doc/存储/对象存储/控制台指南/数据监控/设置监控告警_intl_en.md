@@ -9,7 +9,7 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Overview** in the left sidebar. Alternatively, you can click the name of the bucket in **Bucket List**, click the **Overview** tab, and click **Configure Alarm Policy** in the **Alarm Configuration** area.
 
 2. Click **Create** and configure the alarm policy. The configurations are described as follows:
-![](https://main.qcloudimg.com/raw/6f0634875354dc41ea5f541d2b9f8c4f.png)
+![](https://main.qcloudimg.com/raw/b8340b9590b8204ab082f28c096417e2.png)
 
 <table>
   <tr>
