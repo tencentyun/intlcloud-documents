@@ -73,7 +73,7 @@ qcs:project_id:service_type:region:account:resource
 以下の表ではCDBが使用できるリソースと対応するリソースの記述方法を説明します。そのうち、$がプレフィックスの単語はいずれも別称であり、regionは地域、accountはアカウントIDを指します。
 
 | リソース | 認証ポリシーにおけるリソースの記述方法 |
-|:-------|:-------|
-|インスタンス|  ```qcs::cdb:$region:$account:instanceId/$instanceId```|
-|VPC|  ```qcs::vpc:$region:$account:vpc/$vpcId```|
-|セキュリティグループ|  ```qcs::cvm:$region:$account:sg/$sgId```|
+|-------|-------|
+|インスタンス|  `qcs::cdb:$region:$account:instanceId/$instanceId`|
+|VPC|  `qcs::vpc:$region:$account:vpc/$vpcId`|
+|セキュリティグループ|  `qcs::cvm:$region:$account:sg/$sgId`|
