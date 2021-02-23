@@ -73,7 +73,7 @@ To specify multiple resources in a single command, separate them with commas. Be
 The table below describes the resources that can be used by TencentDB and the corresponding resource description methods, where words prefixed with $ are placeholders, `region` refers to a region, and `account` refers to an account ID.
 
 | Resource | Resource Description Method in Authorization Policy |
-|:-------|:-------|
-| Instance |  ```qcs::cdb:$region:$account:instanceId/$instanceId```|
-|VPC|  ```qcs::vpc:$region:$account:vpc/$vpcId```|
-| Security group |  ```qcs::cvm:$region:$account:sg/$sgId```|
+|-------|-------|
+| Instance |  `qcs::cdb:$region:$account:instanceId/$instanceId`|
+|VPC|  `qcs::vpc:$region:$account:vpc/$vpcId`|
+| Security group |  `qcs::cvm:$region:$account:sg/$sgId`|
