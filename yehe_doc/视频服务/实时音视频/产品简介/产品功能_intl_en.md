@@ -31,7 +31,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency video live streaming, interactive classrooms with up to 100,000 participants, live video competitions, video dating, remote training, large-scale conferences, etc.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">Billing of interactive video live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive video live streaming</a></td>
 </tr><tr>
 <td>Interactive audio live streaming</td>
 <td><ul style="margin:0">
@@ -43,7 +43,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency audio live streaming, live audio co-anchoring, live audio competitions, voice chat rooms, audio dating, karaoke rooms, FM radio, etc.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">Billing of interactive audio live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive audio live streaming</a></td>
 </tr></table>
 
 
