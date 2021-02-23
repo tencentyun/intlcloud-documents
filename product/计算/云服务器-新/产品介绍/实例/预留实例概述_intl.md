@@ -27,7 +27,7 @@ Currently, RIs are only offered to beta users. To use it, [submit an application
 
 #### Concept comparison
 
-| Item   | RI      | Pay-as-you-go instance         |
+| Item   | Reserved instance      | Pay-as-you-go instance         |
 | -------- | ---------- | ---------- |
 | Concept     | A discount for pay-as-you-go instances.       | An instance purchased using the [pay-as-you-go](https://intl.cloud.tencent.com/document/product/213/2179) billing option, i.e., a running virtual machine. |
 | Usage | RIs cannot be used separately; instead, it can only be used with matched pay-as-you-go instances to offset part of the pay-as-you-go bill. | CVMs can be managed and configured independently as a simple web server or as part of a powerful cloud solution together with other Tencent Cloud products. |
