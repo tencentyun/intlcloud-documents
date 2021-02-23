@@ -84,7 +84,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
    
 
-[](id:C_topspeed)
+<span id="C_topspeed"></span>
 
 ### Creating top speed codec transcoding template
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
@@ -144,7 +144,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 <td>This is disabled by default and can be enabled manually.<br>After the parameter limit is enabled, the original parameter of the input live stream will be the output if the entered parameter is higher than the original parameter. This prevents image quality issues where a low resolution video stream is forced to play back in a higher resolution.</td>
 </tr></table>
 
-[](id:C_audio)
+<span id="C_audio"></span>
 ### Creating pure audio transcoding template
 
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
@@ -169,7 +169,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 </tr>
 </table>
 
-[](id:related)
+<span id="related"></span>
 ## Binding Domain Name
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Enter the domain name binding page in either of the following ways:
@@ -183,7 +183,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-[](id:untie)
+<span id="untie"></span>
 ## Unbinding
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select domain names bound to the transcoding template and click **Unbind**.
@@ -193,7 +193,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-[](id:modify)
+<span id="modify"></span>
 ## Modifying Template
 1. Log in to the LVB console and select **Feature Configuration** > **[LVB Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select the target transcoding template and click **Edit** on the right to modify the template information.
@@ -203,7 +203,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 
 
 
-[](id:delect)
+<span id="delect"></span>
 ## Deleting Template
 >!   If the template has been bound to a domain name, you need to [unbind](#untie) the template before deleting it. 
 
