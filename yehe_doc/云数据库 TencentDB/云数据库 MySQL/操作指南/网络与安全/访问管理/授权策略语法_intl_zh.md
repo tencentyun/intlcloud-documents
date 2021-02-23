@@ -74,7 +74,7 @@ qcs:project_id:service_type:region:account:resource
 下表描述了云数据库能够使用的资源和对应的资源描述方法。其中，$ 为前缀的单词均为代称，region 指地域，account 指账户 ID。
 
 | 资源 | 授权策略中的资源描述方法 |
-|:-------|:-------|
-|实例|  ```qcs::cdb:$region:$account:instanceId/$instanceId```|
-|VPC|  ```qcs::vpc:$region:$account:vpc/$vpcId```|
-|安全组|  ```qcs::cvm:$region:$account:sg/$sgId```|
+|-------|-------|
+|实例|  `qcs::cdb:$region:$account:instanceId/$instanceId`|
+|VPC|  `qcs::vpc:$region:$account:vpc/$vpcId`|
+|安全组|  `qcs::cvm:$region:$account:sg/$sgId`|
