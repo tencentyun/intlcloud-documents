@@ -26,7 +26,7 @@ TencentDB for MySQL의 주요 특징은 다음과 같습니다.
 
 [Tencent Cloud 콘솔](https://console.cloud.tencent.com/cdb): Web 기반 UI입니다.
 
-### 관련 서비스
+## 관련 서비스
 요금 관련 툴로 실제 비용을 자세하고 정확하게 산출합니다. [전체 요금 확인](https://intl.cloud.tencent.com/document/product/236/18335)과 [가격 계산기](https://buy.cloud.tencent.com/calculator/cdb)를 참조하십시오.
 
 TencentDB for MySQL 인스턴스를 통해 클라우드의 데이터 서비스를 구축합니다. [구매 프로세스](https://intl.cloud.tencent.com/document/product/236/5160)와 [시작하기](https://intl.cloud.tencent.com/document/product/236/3128)를 참조하십시오.
