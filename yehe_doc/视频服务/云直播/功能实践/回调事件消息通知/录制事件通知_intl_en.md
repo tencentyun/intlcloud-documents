@@ -43,7 +43,7 @@ After LVB recording is enabled, you can configure the registered callback domain
 | end_time     | int64  | End timestamp of recording file                                 |
 | duration     | int64  | Duration of recording file in seconds                                 |
 | file_size    | uint64 | Recording file size in bytes                               |
-| stream_param | string | User push URL parameters                                |
+| stream_param | string | User push URL parameters (custom)                               |
 | video_url    | string | Recording file download URL                                 |
 
 ### Sample callback message
