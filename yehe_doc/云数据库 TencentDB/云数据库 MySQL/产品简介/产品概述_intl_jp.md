@@ -1,4 +1,4 @@
-### 概要
+## 概要
 クラウドデータベースMySQL (TencentDB for MySQL)はTencent CloudがオープンソースデータベースMySQLに基づいて専門的に構築した高性能分散式データストレージサービスです。ユーザーはクラウドでより手軽に関連データベースの設定、操作、拡張ができるようになります。
 クラウドデータベースMySQLの主な特徴は次のとおりです：
 - クラウドストレージサービスは、Tencent Cloudプラットフォームが提供するインターネットアプリケーション向けのデータストレージサービスです。
@@ -7,7 +7,7 @@
 - バックアップ、拡張、マイグレーションなどの機能を統合するとともに、次世代のデータベースツールDMCを提供し、ユーザーはデータベース管理を容易に行えます。
 
 
-### 関連コンセプト
+## 関連コンセプト
 [インスタンス](https://intl.cloud.tencent.com/document/product/236/17136)：Tencent Cloud上のMySQLデータベースリソース。
 
 [インスタンスタイプ](https://intl.cloud.tencent.com/document/product/236/7268)：MySQLインスタンスではノード数、読み込み/書き込み機能、リージョンのデプロイは異なった設定になっています。
@@ -26,7 +26,7 @@
 
 [Tencent Cloudコンソール](https://console.cloud.tencent.com/cdb)：Webベースのユーザー画面。
 
-### 関連サービス
+## 関連サービス
 課金関連ツールを利用して実際の出費を詳細かつ正確に計算します。 [費用総覧](https://intl.cloud.tencent.com/document/product/236/18335) および [価格計算機](https://buy.cloud.tencent.com/calculator/cdb)をご参照ください。
 
 クラウドデータベースMySQLインスタンスの購入によってクラウド上のデータサービスを構築します。 [購入フロー](https://intl.cloud.tencent.com/document/product/236/5160) および  [クイックスタート](https://intl.cloud.tencent.com/document/product/236/3128)をご参照ください。
