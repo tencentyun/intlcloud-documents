@@ -9,8 +9,7 @@ This document describes how to adjust the VNC display resolution of a CVM.
 
 ### Modifying the VNC resolution of a Windows CVM instance
 
-> The steps below describe how to modify the VNC resolution of a Windows instance on the Windows Server 2012 operating system.
->
+>? The steps below describe how to modify the VNC resolution of a Windows instance on the Windows Server 2012 operating system.
 
 1. [Log in to a Windows instance via VNC](https://intl.cloud.tencent.com/document/product/213/32496).
 2. Right-click on the desktop and select **Screen resolution**, as shown below:
@@ -69,7 +68,7 @@ reboot
 
 ## Appendix
 
-The table below compares the resolution and VGA parameters:
+The table below compares the Linux instance's resolution and VGA parameters:
 <table>
 	<tr><th>Resolution</th><td>640 * 480</td><td>800 * 600</td><td>1024 * 768</td></tr>
 	<tr><th>VGA</th><td>786</td><td>789</td><td>792</td></tr>
