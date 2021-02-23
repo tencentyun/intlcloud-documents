@@ -2,7 +2,7 @@
 
 The billable items of LVB include the basic, value-added, and extended service fees, as shown below:
 
-![](https://main.qcloudimg.com/raw/03c4d0aefb9ea69aba8d5d3df27a09e9.png)
+![](https://main.qcloudimg.com/raw/fdf794a99893c09a002b3bea848b3238.png)
 
 
 - [Basic service fees](#base): incurred by live streaming resource consumption when LVB is used. You can switch between the traffic and peak bandwidth billing modes.
