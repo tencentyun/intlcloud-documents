@@ -51,7 +51,10 @@ Cross-region access is unavailable for instances in VPCs by default, as VPCs in 
 
 
 ### Why can't I grant a user the "file" permission?
-Currently, the "shutdown" and "file" permissions are unavailable to root users. Therefore a root user cannot create users with all permissions. Please refer to the following commands when authorizing users: ``` grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';```.
+Currently, the "shutdown" and "file" permissions are unavailable to root users. Therefore a root user cannot create users with all permissions. Please refer to the following commands when authorizing users: 
+```
+grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';
+```
 
 <span id = "genghuandiyu"></span>
 ### How do I change the TencentDB for MySQL region?
