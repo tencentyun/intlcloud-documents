@@ -2,9 +2,9 @@
 
 ## 步骤1：自定义权限策略
 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，单击【新建自定义策略】，在弹出的【选择创建策略方式】页面中选择【按策略语法创建】。
-![](https://main.qcloudimg.com/raw/e28ac2aa141749fc130c3a68d9816ec6.png)![](https://main.qcloudimg.com/raw/764fe9cafee4eaf6258e428a263583f7.png)
+![](https://main.qcloudimg.com/raw/32521aa3647055cf2118e225a5edf56c.png)![](https://main.qcloudimg.com/raw/52d362b87d23e9c66acb18a1dfe53898.png)
 在“按策略语法创建”页面，选择【选择模板类型】为【空白模板】。
-![](https://main.qcloudimg.com/raw/60a293ebe5e294c962f7a35c9e0d4a47.png)
+![](https://main.qcloudimg.com/raw/8db8e6ca59519ea7aeea451974d494b5.png)
 设置语法策略如下：
 ```
 {
@@ -22,12 +22,12 @@
 
 ## 步骤2：创建自定义角色
 在 [访问管理控制台](https://console.cloud.tencent.com/cam/role)，单击【新建角色】，在弹出的【选择角色载体】页面中选择【腾讯云产品服务】，进入“新建自定义角色”页面，选择【支持角色的服务】为“弹性 MapReduce (emr)”。
- ![](https://main.qcloudimg.com/raw/8a2c3390113db3906cb6e51b6ea116c8.png)
+ ![](https://main.qcloudimg.com/raw/912520936e5ab438a0a29465df509c9a.png)
 绑定步骤1中生成的策略，此处为 TestPolicy，客户可根据想要授权的策略自定绑定。
-![](https://main.qcloudimg.com/raw/92ffed8ad20b938512155579b3f8abb7.png)
+![](https://main.qcloudimg.com/raw/e86f82c78c25462946822b3595e8fef9.png)
 生成名为 EMRCosRole 的自定义角色，客户可自定义该名称。
-![](https://main.qcloudimg.com/raw/3ae7ea94340788ec573bbe6b11dcf6e0.png)
+![](https://main.qcloudimg.com/raw/14ed1ae36b382cb48b3f54a1bea9d8fa.png)
 
 ## 步骤3：绑定角色到 EMR 集群
 在 [EMR 控制台](https://console.cloud.tencent.com/emr) 中选中对应的集群，进入实例详情，在【基本信息】>【实例信息】>【基础配置】>【自定义服务角色】中，单击【设置】。设置“自定义服务角色为”步骤2中生成的自定义角色，此处为 EMRCosRole，用户可自定义该名称。
-![](https://main.qcloudimg.com/raw/0ec34117f97626b675713ea4b1b1593f.png)
+![](https://main.qcloudimg.com/raw/af3721b9b7e6b4027c3df166ad16ec58.png)
