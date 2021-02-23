@@ -1,4 +1,4 @@
-### Overview
+## Overview
 TencentDB for MySQL is a high-performance distributed data storage service developed by Tencent Cloud based on the open-source MySQL database. It enables you to set up, manipulate, and scale relational databases in the cloud more easily.
 TencentDB for MySQL has the following features:
 - It provides cloud-based data storage service for internet applications.
@@ -7,7 +7,7 @@ TencentDB for MySQL has the following features:
 - It integrates various database features such as backup, scaling, and migration. In addition, it is equipped with the new-generation database tool DMC for even more convenient management of databases.
 
 
-### Related Concepts
+## Related Concepts
 [Instance](https://intl.cloud.tencent.com/document/product/236/17136): a TencentDB for MySQL resource in Tencent Cloud.
 
 [Instance type](https://intl.cloud.tencent.com/document/product/236/7268): a combination of node count, read/write capability, and deployment region for a TencentDB for MySQL instance.
@@ -26,7 +26,7 @@ TencentDB for MySQL has the following features:
 
 [Tencent Cloud Console](https://console.cloud.tencent.com/cdb): web-based UIs.
 
-### Related Services
+## Related Services
 For more information on how to calculate actual expenses precisely with relevant billing tools, please see [Fees Overview](https://intl.cloud.tencent.com/document/product/236/18335) and [Price Calculator](https://buy.cloud.tencent.com/calculator/cdb).
 
 For more information on how to set up in-cloud data services by purchasing TencentDB for MySQL instances, please see [Purchase Process](https://intl.cloud.tencent.com/document/product/236/5160) and [Getting Started](https://intl.cloud.tencent.com/document/product/236/3128).
