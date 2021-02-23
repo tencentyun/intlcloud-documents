@@ -25,7 +25,7 @@ CVM 과 데이터베이스의 계정이 동일해야 하며, 동일한 [VPC](htt
 
 
 ### CVM과 TencentDB for MySQL을 내부 네트워크로 연결할 수 없는 경우 어떻게 해야 하나요?
-우선 [원클릭 연결 진단 툴](https://intl.cloud.tencent.com/document/product/236/31927)을 사용하여 문제를 진단하고, 결과 보고에 따라 [연결 불가 관련 시나리오]에서 적합한 솔루션을 찾아보시길 권장합니다.
+우선 [원클릭 연결 진단 툴](https://intl.cloud.tencent.com/document/product/236/31927)을 사용하여 문제를 진단하고, 결과 보고에 따라 [연결 불가 관련 시나리오](https://intl.cloud.tencent.com/document/product/236/37864)에서 적합한 솔루션을 찾아보시길 권장합니다.
 
 ### CVM과 TencentDB for MySQL이 다른 리전(예: CVM은 광저우, MySQL은 상하이)에 있을 때 내부 네트워크로 액세스할 수 있나요?
 내부 네트워크로 직접 액세스할 수 없습니다. 솔루션과 관련한 내용은 [리전 불일치](https://intl.cloud.tencent.com/document/product/236/37864#dybt)를 참조하십시오.
