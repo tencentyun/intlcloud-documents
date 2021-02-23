@@ -26,7 +26,7 @@ Tencent Cloud provides the bandwidth cap feature for playback domain name, which
 	3. Select a bandwidth unit (Mbps, Gbps, or Tbps).
 6. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/c2d7d5c342e3e7dc81575a6baa906fc3.png)
+![](https://main.qcloudimg.com/raw/88017c4326a9392dba00163476887a97.png)
 >! 
 >- The conversion scale for bandwidth is 1,000; for example, 1 Tbps = 1,000 Gbps, and 1 Gbps = 1,000 Mbps.
 >- Switching the region will invalidate the bandwidth cap configuration, so you will need to configure it again.
