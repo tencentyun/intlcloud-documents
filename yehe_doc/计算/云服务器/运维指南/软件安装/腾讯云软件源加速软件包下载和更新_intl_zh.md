@@ -1,13 +1,12 @@
 ## 操作场景
 
 为解决软件依赖安装时官方源访问速度慢的问题，腾讯云为一些软件搭建了缓存服务。您可以通过使用腾讯云软件源站来提升依赖包的安装速度。为了方便用户自由搭建服务架构，目前腾讯云软件源站支持公网访问和内网访问。
-- 公网访问地址：`http://mirrors.cloud.tencent.com/`
+- 公网访问地址：`http://mirrors.cloud.tencent.com/` 或 `http://mirrors.tencent.com`
 - 内网访问地址：`http://mirrors.tencentyun.com/`
 
-> 
+>? 
 > - 本文档以腾讯云软件源站的公网访问地址为例，介绍如何在云服务器中使用腾讯云软件源站中的软件源。如果您需要通过内网的方式访问腾讯云软件源站，请将公网访问地址**替换为内网访问地址**。
 > - 本文档涉及的腾讯云软件源地址仅供参考，请从**腾讯云软件源站**获取最新地址。
->
 
 ## 注意事项
 
@@ -20,8 +19,8 @@
 ## 操作步骤
 
 ### 使用腾讯云镜像源加速 pip
-> 使用前，请确认您的云服务器已安装 Python。
->
+>! 使用前，请确认您的云服务器已安装 Python。
+
 #### 临时使用软件源路径
 执行以下命令，使用腾讯云 PyPI 软件源安装 pip。
 ```
@@ -48,8 +47,9 @@ trusted-host = mirrors.cloud.tencent.com
 ```
 
 ### 使用腾讯云镜像源加速 Maven
-> 使用前，请确认您的云服务器已安装 JDK 和 Maven。
->
+>! 使用前，请确认您的云服务器已安装 JDK 和 Maven。
+
+
 1. 打开 Maven 的 `settings.xml` 配置文件。
 2. 找到`<mirrors>...</mirrors>` 代码块，并将以下内容配置至`<mirrors>...</mirrors>` 代码块中。
 ```
@@ -62,8 +62,8 @@ trusted-host = mirrors.cloud.tencent.com
 ```
 
 ### 使用腾讯云镜像源加速 NPM
-> 使用前，请确认您的云服务器已安装 Node.js 和 NPM。
->
+>! 使用前，请确认您的云服务器已安装 Node.js 和 NPM。
+
 执行以下命令，使用腾讯云 NPM 软件源安装 NPM。
 ```
 npm config set registry http://mirrors.cloud.tencent.com/npm/
@@ -77,9 +77,9 @@ npm config set registry http://mirrors.cloud.tencent.com/npm/
 
 #### 在云服务器上使用腾讯云 Docker 软件源
 
-> 使用前，请确认您的云服务器已安装 Docker。
+>! 使用前，请确认您的云服务器已安装 Docker。
 > Docker 1.3.2版本以上才支持 Docker Hub Mirror 机制，如果您还没有安装 1.3.2版本以上的 Docker 或者 Docker 版本过低，请先执行安装或升级操作。
-> 
+
 根据云服务器的操作系统类型，选择不同的操作步骤。
 - 适用于 Ubuntu 14.04、Debian、CentOS 6 、Fedora、openSUSE 等操作系统，其他版本的操作系统的详细操作步骤略有区别：
  1. 执行以下命令，打开 `/etc/default/docker` 配置文件。
@@ -111,7 +111,7 @@ sudo su echo "EXTRA_ARGS=\"–registry-mirror=https://mirror.ccs.tencentyun.com\
  2. 重启 Boot2Docker。
 
 ### 使用腾讯云镜像加速 MariaDB
-> 以下操作步骤以 CentOS 7为例，不同操作系统的详细操作步骤略有区别。
+>? 以下操作步骤以 CentOS 7为例，不同操作系统的详细操作步骤略有区别。
 >
 1. 执行以下命令，在 `/etc/yum.repos.d/` 下创建 `MariaDB.repo` 文件。
 ```
@@ -136,7 +136,7 @@ yum install MariaDB-client MariaDB-server
 ```
 
 ### 使用腾讯云镜像加速 MongoDB
-> 以下操作步骤以安装 MongoDB 4.0 版本为例，如需安装其他版本，请更改 mirror 路径中的版本号。
+>? 以下操作步骤以安装 MongoDB 4.0 版本为例，如需安装其他版本，请更改 mirror 路径中的版本号。
 >
 #### CentOS 和 Redhat 系统的云服务器使用腾讯云 MongoDB 软件源
 
@@ -204,8 +204,8 @@ sudo apt-get install -y mongodb-org
 ```
 
 ### 使用腾讯云镜像源加速 Rubygems
-> 使用前，请确认您的云服务器已安装 Ruby。
->
+>! 使用前，请确认您的云服务器已安装 Ruby。
+
 执行以下命令，修改 RubyGems 源地址。
 ```
 gem source -r https://rubygems.org/
