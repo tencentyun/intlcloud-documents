@@ -10,7 +10,7 @@
 1. MySQLコマンドラインツールmysqldumpを使用して、インポートするSQLファイルを次のように生成します。
 >!
 >- mysqldumpを使用してエクスポートされたデータファイルは、購入したMySQLバージョンのSQL仕様と互換性がある必要があります。MySQLにログインして、`select version()を使用して対応するMySQLのバージョン情報を取得できます。生成されたSQLファイル名には、英語/数字/下線を使用できますが、「test」文字は使用できません。
->- 移行元と移行先のデータベースのバージョン、文字セット、およびmysqldumpツールのバージョンが一致しているようにしてください。文字セットはパラメータ```--default-character-set```で指定できます。
+>- 移行元と移行先のデータベースのバージョン、文字セット、およびmysqldumpツールのバージョンが一致しているようにしてください。文字セットはパラメータ`--default-character-set`で指定できます。
 >
 ```
 shell > mysqldump [options] db_name [tbl_name ...] > bak_pathname
