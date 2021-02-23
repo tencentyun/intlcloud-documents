@@ -1,4 +1,4 @@
-### 简介
+## 简介
 云数据库 MySQL（TencentDB for MySQL）是腾讯云基于开源数据库 MySQL 专业打造的高性能分布式数据存储服务，让用户能够在云中更轻松地设置、操作和扩展关系数据库。
 云数据库 MySQL 主要特点如下：
 - 云存储服务，是腾讯云平台提供的面向互联网应用的数据存储服务。
@@ -7,7 +7,7 @@
 - 整合了备份、扩容、迁移等功能，同时提供新一代数据库工具 DMC ，用户可以方便地进行数据库的管理。
 
 
-### 相关概念
+## 相关概念
 [实例](https://intl.cloud.tencent.com/document/product/236/17136)：腾讯云上的 MySQL 数据库资源。
 
 [实例类型](https://intl.cloud.tencent.com/document/product/236/7268)：MySQL 实例在节点数量、读写能力与地域部署上不同的搭配。
@@ -26,7 +26,7 @@
 
 [腾讯云控制台](https://console.cloud.tencent.com/cdb)：基于 Web 的用户界面。
 
-### 相关服务
+## 相关服务
 使用计费相关工具来详细并精准计算出实际花费，请参考 [费用总览](https://intl.cloud.tencent.com/document/product/236/18335) 和 [价格计算器](https://buy.cloud.tencent.com/calculator/cdb)。
 
 通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买流程](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](https://intl.cloud.tencent.com/document/product/236/3128)。
