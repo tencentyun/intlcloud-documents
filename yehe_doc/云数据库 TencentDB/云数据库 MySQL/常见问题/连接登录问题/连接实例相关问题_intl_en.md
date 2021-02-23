@@ -23,7 +23,7 @@ The two instances must be under the same account and in the same [VPC](https://i
  - You can log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb) and view the network information of an instance in the instance list or on the instance details page.
 
 ### What should I do if I can't use a CVM instance to connect to the private network address of a TencentDB for MySQL instance?
-We recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Common Problems] according to the check report.
+We recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Common Problems](https://intl.cloud.tencent.com/document/product/236/37864) according to the check report.
 
 ### My CVM and TencentDB for MySQL instances are in different regions (such as Guangzhou and Shanghai, respectively). Can I use the private network for connection?
 No. For more information about the solution, please see [Troubleshooting Connection Errors > Different regions](https://intl.cloud.tencent.com/document/product/236/37864#dybt).
