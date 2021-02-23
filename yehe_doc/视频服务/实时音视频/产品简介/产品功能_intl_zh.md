@@ -10,7 +10,7 @@
 <li>单个房间最多支持300人同时在线，最多支持30人同时开启摄像头。</li>
 </ul></td>
 <td>1对1视频通话、300人视频会议、在线问诊、视频聊天、视频客服、视频面审、视频双录、在线理赔、视频狼人杀等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44246">视频通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频通话计费说明</a></td>
 </tr>
 <tr>
 <td>语音通话</td>
@@ -19,7 +19,7 @@
 <li>单个房间最多支持300人同时在线，最多支持30人同时开启麦克风。</li>
 </ul></td>
 <td>1对1语音通话、多人语音通话、语音聊天、语音会议、语音客服、狼人杀等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">语音通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音通话计费说明</a></td>
 </tr><tr>
 <td>视频互动直播</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>视频低延时直播、十万人互动课堂、视频直播 PK、视频相亲房、互动课堂、远程培训、大型会议等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">视频互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频互动直播计费说明</a></td>
 </tr><tr>
 <td>语音互动直播</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>语音低延时直播、语音直播 PK、语聊房、语音相亲房、K 歌房、FM 电台等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">语音互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音互动直播计费说明</a></td>
 </tr></table>
 
 
@@ -77,4 +77,4 @@
 | CDN 直播观看 | 又称 “CDN 旁路直播”。TRTC 在云端使用旁路转码集群，将 TRTC 所使用的 UDP 协议转换为标准的直播 RTMP 协议，把 TRTC 的音视频数据推送到标准的云直播系统中，再经由 CDN 进行分发，从而实现 CDN 直播观看。 | 互动直播、直播分享、大型会议、直播远端观众观看等。 | 旁路直播属于增值服务，由 [云直播](https://intl.cloud.tencent.com/document/product/267) 收取相关费用，详情请参见 [CDN 直播观看 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35242)。 |
 | 即时通信 IM  | <li>可以通过 IM 的单聊、群聊及无人数上限的聊天室，实现聊天消息、评论、弹幕、送礼、点赞等功能。</li><li>可以通过 IM 进行信令交互，实现通话呼叫、房间用户数统计等功能。</li> | 在线客服、互动直播、互动课堂、远程培训等。         | 即时通信 IM 属于增值服务，由 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 收取相关费用，详情请参见 [即时通信 IM 相关费用](https://intl.cloud.tencent.com/document/product/1047/34350)。 |
 | 语音内容审核 | 语音鉴黄、涉政等内容安全检测，可用于业务内容安全检查。       | 业务安全检查，合规等。                             | 语音内容审核属于增值服务，由**天御内容安全**收取相关费用，如需使用请 [联系我们](https://intl.cloud.tencent.com/support) 申请开通。 |
-| 视频内容审核 | 视频鉴黄、涉政等内容安全检测，可用于业务内容安全检查。       | 业务安全检查，合规等。                             | 视频内容审核属于增值服务，由 [云直播](https://intl.cloud.tencent.com/document/product/267) 收取相关费用，详情请参见 [智能鉴黄相关费用](https://intl.cloud.tencent.com/document/product/267/3960)。 |
+| 视频内容审核 | 视频鉴黄、涉政等内容安全检测，可用于业务内容安全检查。       | 业务安全检查，合规等。                             | 视频内容审核属于增值服务，由 [云直播](https://intl.cloud.tencent.com/document/product/267) 收取相关费用，详情请参见 [智能鉴黄相关费用](https://intl.cloud.tencent.com/document/product/267/39607)。 |
