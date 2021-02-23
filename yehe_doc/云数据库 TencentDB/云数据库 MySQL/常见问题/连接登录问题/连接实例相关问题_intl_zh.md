@@ -25,7 +25,7 @@
 
 
 ### 我的云服务器 CVM 和云数据库 MySQL，无法内网连接，怎么办？
-首先建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 进行排查，根据检查报告提示，在 [无法连接常见场景]查找相应解决方案。
+首先建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 进行排查，根据检查报告提示，在 [无法连接常见场景](https://intl.cloud.tencent.com/document/product/236/37864)查找相应解决方案。
 
 ### 我的云服务器 CVM 和云数据库 MySQL 在不同地域下（如 CVM 在广州，MySQL 在上海），可以直接内网访问吗？
 不可以直接内网访问，解决方案请参见 [地域不同](https://intl.cloud.tencent.com/document/product/236/37864#dybt)。
