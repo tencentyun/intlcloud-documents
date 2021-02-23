@@ -1,22 +1,23 @@
 ## Overview
 
-A bucket tag is a key-value pair (key = value) consisting of the tag's key, value, and =, such as group = IT. It can be used as an identifier for easier bucket grouping and management. Tags for the specified bucket can be set, queried, and deleted in the console.
+A bucket tag is a key-value pair (key = value), where the tag key and tag value are connected by an equal sign (=), for example, group = IT. It can be used to identify a bucket, helping you achieve group management of buckets. You can set, query, and delete the tag for a specified bucket via the console.
 
 
-## Steps
+>!
+>- Each bucket can have up to 50 different bucket tags.
+>- `qcs:` and `project` are reserved fields. Therefore, do not use them in tag keys or tag values. For more limits, please see [Bucket Tag Overview](https://intl.cloud.tencent.com/document/product/436/31509).
 
+## Adding a Tag When Creating a Bucket
 
->- Each bucket can have up to 50 bucket tags, whose keys cannot be the same.
->- Tag keys and values cannot contain reserved words such as `qcs:` and `project`. For more information about restrictions, see [Bucket Tag Overview](https://intl.cloud.tencent.com/document/product/436/31509).
+You can add a bucket tag when [creating buckets](https://intl.cloud.tencent.com/document/product/436/13309), as shown in the following figure:
+![](https://main.qcloudimg.com/raw/3529ae1c392f524209cf899931aa1fef.png)
 
-### Adding a Tag When Creating a Bucket
+## Adding a Tag to an Existing Bucket
 
-You can add a bucket tag when [creating a bucket](https://intl.cloud.tencent.com/document/product/436/13309), as shown in the figure below:
-![](https://main.qcloudimg.com/raw/54e8243d1ca6ca919c48d3088b452a7c.png)
+If you didn’t add a tag when creating a bucket, you can perform the following steps to add a tag for your bucket:
 
-### Adding a Tag to an Existing Bucket
+1. On the [Bucket List](https://console.cloud.tencent.com/cos5/bucket) page, click the name of the desired bucket to enter the bucket configuration page.
+2. Click **Basic Configurations** > **Tagging**. Then, click **Add Tags**.
+   ![](https://main.qcloudimg.com/raw/300e5b4439c701a5e11ab75e2d85e1bb.png)
+3. Enter the tag key and tag value. Then, click **Save**.
 
-If you do not add a tag when creating a bucket, you can follow the steps below to add one subsequently.
-1. On the [Bucket List](https://console.cloud.tencent.com/cos5/bucket) page, click the name of the bucket to which to add a tag to enter the bucket configuration page.
-2. Click **Basic Configuration**, scroll down to find the **Tag Management** configuration item, and add the bucket tag. See the figure below:
-![](https://main.qcloudimg.com/raw/5940ce69cbadf6e26f1de32b6d8c8b4a.png)

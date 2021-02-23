@@ -1,13 +1,13 @@
 ## Overview
-Versioning enables you to store multiple versions of an object in a COS bucket, and also retrieve, delete, or restore a specific version of an object. This helps to recover data lost due to accidental deletion or application failures. This document describes how to enable versioning for a bucket in the console. For more information on versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+Versioning enables you to store multiple versions of an object in a COS bucket, and extract, delete, or restore a specific version of an object. With versioning, you can recover data that is lost due to accidental deletion or application failures. This document describes how to enable versioning for a bucket via the console. For more information about versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 
->- Once versioning is enabled for the bucket, it cannot be disabled. However, you can suspend versioning to stop object versioning.
->- After versionning is enabled, newly uploaded objects will generate multiple versions and take up storage space, so these versions of the object will also charge for storage.
+>!
+>- Once versioning is enabled for a bucket, it cannot return to the prior status (initial status). However, you can suspend versioning for the bucket. In this way, subsequent uploads of objects whose name already exists in the bucket will not generate multiple versions.
+>- Once versioning is enabled, multiple versions will be generated for any uploaded object whose name already exists in the bucket. Each of these versions occupies your storage capacity and is billed for storage equally.
 
 ## Directions
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
 2. Click the bucket to be configured to enter the bucket details page.
-3. Under **Fault and disaster tolerance management** > **Versioning**, click **Edit**, toggle **Status** on, and click **Save**. In the pop-up window, click **OK** to enable versioning. To disable it as needed, simply set **Status** to off.
-![](https://main.qcloudimg.com/raw/63dc4bd4b571c2a2a79407d4ed4cdc1f.png)
-4. Once versioning is enabled, you can click **Display** at the top of **File List** window to display all object versions. If you upload objects that already exist, they will all be displayed as different versions with specific datetime under the same name. If you delete an object in **Hide** mode, you can still find it in addition to a new delete marker in **Display** mode. In this way, COS allows you to delete or retrieve different versions of an object.
-![](https://main.qcloudimg.com/raw/1d63352df91ebf844c60bbe085724ae6.png)
+3. Click **Fault Tolerance and Disaster Recovery** > **Versioning** on the left. Then, click **Edit**, enable **Status**, and click **Save**. If you no longer need to use versioning, you can disable **Status** similarly.
+4. If you upload an object whose name already exists to a versioning-enabled bucket, you can click **List Historical Versions** on the **File List** page to view all historical versions uploaded at different time points. Besides, the deletion record of a deleted object can be queried. Object versions before the deletion will be retained, allowing you to delete/restore objects according to the version.
+![](https://main.qcloudimg.com/raw/115cf04687fb375105eddbb9bd883809.png)
