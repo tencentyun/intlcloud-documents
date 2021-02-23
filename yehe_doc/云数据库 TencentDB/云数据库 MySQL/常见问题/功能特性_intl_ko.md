@@ -51,7 +51,10 @@ MySQL 5.5 버전을 사용할 수 있습니다. 해당 버전은 MyISAM 엔진�
 
 
 ### MySQL 라이선스 사용자는 file 권한이 없나요?
-현재 shutdown과 file 권한은 root 사용자에게 허용되어 있지 않습니다. 따라서 root는 모든 권한을 가진 사용자를 생성할 수 없습니다. 권한 부여 시 다음 명령어를 참조하십시오. ``` grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';```
+현재 shutdown과 file 권한은 root 사용자에게 허용되어 있지 않습니다. 따라서 root는 모든 권한을 가진 사용자를 생성할 수 없습니다. 권한 부여 시 다음 명령어를 참조하십시오. 
+``` 
+grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';
+```
 
 <span id = "genghuandiyu"></span>
 ### TencentDB for MySQL 리전은 어떻게 변경하나요?
