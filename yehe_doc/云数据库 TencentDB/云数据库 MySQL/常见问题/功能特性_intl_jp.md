@@ -51,7 +51,10 @@ MyISAMエンジンをサポートするMySQL 5.5バージョンを使用でき�
 
 
 ### MySQL認証ユーザーはfile権限を持っていませんか。
-現在、shutdownとfile権限はrootユーザーに与えられていないため、rootはすべての権限を持つ新しいユーザーを作成することはできません。権限を付与するには、次のコマンドをご参照ください。``` grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';```。
+現在、shutdownとfile権限はrootユーザーに与えられていないため、rootはすべての権限を持つ新しいユーザーを作成することはできません。権限を付与するには、次のコマンドをご参照ください。
+``` 
+grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';
+```
 
 <span id = "genghuandiyu"></span>
 ### TencentDB for MySQLのリージョンを切り替えるにはどうすればよいですか。
