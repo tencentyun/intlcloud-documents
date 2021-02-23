@@ -26,10 +26,10 @@
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th></tr>
 <tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31073">功能配置</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31073">功能配置</a></td>
 <td>提供了直播中所需的录制、转码、截图鉴黄、水印等功能的配置模板服务，为降低页面跳转复杂度，特在此新增了模板绑定域名的流程。</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31074">事件中心</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/31074">事件中心</a></td>
 <td><ul style= "margin: 0"><li>针对各触发事件设置接收相关回调信息的路径。</li><li>可以快速查看直播推流断流的记录与断流原因。</li></ul></td>
 </tr></tr>
 </table>
@@ -40,7 +40,7 @@
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31076">数据统计</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31076">数据统计</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>可查询计费项包括流量/带宽、截图鉴黄、转码、录制、转推所产生的相关数据。</li><li>对直播运营数据进行分析查询。</li></ul></td>
 </tr><tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">流数据查询</a></td>
@@ -54,13 +54,13 @@
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31084">地址生成器</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31084">地址生成器</a></td>
 <td>支持通过填写地址拼接信息，辅助用户快速生成推流/播放地址。</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web 推流</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web 推流</a></td>
 <td>可实现快速生成推流地址，在线推流测试直播功能。</td>
 </tr><tr>
-<td><a href="https://console.cloud.tencent.com/live/tools/selfcheck">自助诊断</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/39467">自助诊断</a></td>
 <td>快速诊断常见直播推流/播放问题，目前此功能处于开放内测阶段，诊断结果仅供参考。</td>
 </tr></tr>
 </table>
