@@ -51,7 +51,10 @@ CPU 利用率、内存利用率、磁盘空间利用率。您可以根据实际�
 
 
 ### MySQL 授权用户没有 file 权限吗？
-目前 shutdown 和 file 权限没有开放给 root 用户，因此 root 不能新建拥有所有权限的用户。授权时，请参考以下命令： ``` grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';```。
+目前 shutdown 和 file 权限没有开放给 root 用户，因此 root 不能新建拥有所有权限的用户。授权时，请参考以下命令：
+``` 
+grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' identified by 'mypasswd';
+```
 
 <span id = "genghuandiyu"></span>
 ### 如何更换云数据库 MySQL 的地域？
