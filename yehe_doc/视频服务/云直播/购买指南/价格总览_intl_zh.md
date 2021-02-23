@@ -2,7 +2,7 @@
 
 云直播计费项包含基础服务费用、增值服务费用及拓展服务费用。费用组成如下图：
 
-![](https://main.qcloudimg.com/raw/03c4d0aefb9ea69aba8d5d3df27a09e9.png)
+![](https://main.qcloudimg.com/raw/fdf794a99893c09a002b3bea848b3238.png)
 
 
 - [基础服务费用](#base)：使用云直播后产生的直播消耗费用，支持流量或峰值带宽两种计费方式切换。
