@@ -27,7 +27,7 @@ After activating the GME service, you can find the AppID and permission key in t
 - The AppID and permission key are required in the Demo as parameters.
 - During the usage of SDK, the initialization API “Init” needs to use AppID as a parameter. The authentication APIs “QAVAuthBuffer.GenAuthBuffer” (voice chat) and “ApplyPTTAuthbuffer” (speech-to-text) all require permission key as parameters.
 
-![](https://main.qcloudimg.com/raw/a51de920cec5e748e3fb9b6b42a02a7c.png)
+![](https://main.qcloudimg.com/raw/a63f14a7092169c8c9b54cfd21ce4c12.png)
 #### 4.3 Downloading SDK
 
 You can download the GME SDKs for different platforms. For details, see [SDK Download Guide](https://intl.cloud.tencent.com/document/product/607/18521). **Currently, GME supports Windows, Mac, Android, and iOS, and GSE supports UnrealEngine4, Unity3D, and Cocos2DX**.
