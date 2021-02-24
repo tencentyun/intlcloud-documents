@@ -8,7 +8,7 @@ The LVB Console provides configurations for you to quickly implement basic featu
 ## Overview
 
 Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of concurrent connections, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
-![](https://main.qcloudimg.com/raw/02951b6f19b8f52eb8f0faec08e179d0.jpg)
+![](https://main.qcloudimg.com/raw/e898cd3b3df8bc651d5c3a0d21cef738.png)
 
 ### Billing overview
 
@@ -67,4 +67,4 @@ It mainly displays the LVB usage trends for today, yesterday, last 7 days, and l
 #### Change time granularity
 
 The LVB Console allows you to change the time granularity used when viewing the trends in billable bandwidth or traffic by clicking **Time Granularity** and selecting the desired option on the right.
-![](https://main.qcloudimg.com/raw/fa036b2c6d3a01bad8a207cfe4198ed1.jpg)
+![](https://main.qcloudimg.com/raw/8582c16fca9bd3e4c2f0fcd78625cbb5.png)
