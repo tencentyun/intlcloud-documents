@@ -2,33 +2,33 @@
 Namespace=QCE/TCAPLUS
 
 ## Monitoring Metrics
-| Parameter | Metric Name | Description | Unit | Dimension |
+| Parameter | Metric | Description | Unit | Dimension |
 | ------------- | ----- | ---- | ---- | ---- |
-| Avgerror | Average error rate | Average error proportion of table operations | % | TableInstanceId and ClusterId |
-| WriteLatency | Average write latency | Error proportion of common table operations | ms | TableInstanceId and ClusterId |
-| Comerror | Common error rate | Actually read capacity units for tables | % | TableInstanceId and ClusterId |
-| ReadLatency | Average read latency | Average data read latency | ms | TableInstanceId and ClusterId |
-| Volume | Storage volume | System error proportion | KB | TableInstanceId and ClusterId |
-| Syserror | System error rate | Storage capacity occupied by tables | % | TableInstanceId and ClusterId |
-| Writecu | Actual write capacity units | Average write data latency | Units/sec | TableInstanceId and ClusterId |
-| Readcu | Actual read capacity units | Actual write capacity units for tables | Units/sec | TableInstanceId and ClusterId |
+| Avgerror | Average error rate | Average error proportion of table operations | % | TableInstanceId, ClusterId |
+| Writelatency | Average write latency | Average data write latency | Microsecond | TableInstanceId, ClusterId |
+| Comerror | Common error rate | Error proportion of common table operations | % | TableInstanceId, ClusterId |
+| Readlatency | Average read latency | Average data read latency | Microsecond | TableInstanceId, ClusterId |
+| Volume | Storage volume | Storage volume used by tables | KB | TableInstanceId, ClusterId |
+| Syserror | System error rate | System error proportion | % | TableInstanceId, ClusterId |
+| Writecu | Actual write capacity units | Actual write capacity units for tables | Units/sec | TableInstanceId, ClusterId |
+| Readcu | Actual read capacity units | Actual read capacity units for tables | Units/sec | TableInstanceId, ClusterId |
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
-## Overview of the Parameters in Each Dimension
+## Overview of Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+| Parameter | Dimension | Dimension Description | Format |
 | ------------------ | ---------------- | ------------- | ----------------------------- |
-| Instances.N.Dimensions.0.Name | TableInstanceId | Dimension name of the database instance ID | Enter a string-type dimension name, such as TableInstanceId |
-| Instances.N.Dimensions.0.Value | TableInstanceId | A specific database instance ID | Enter a specific database instance ID, such as tcaplus-123abc456 |
-| Instances.N.Dimensions.1.Name | ClusterId | Dimension name of the cluster ID | Enter a string-type dimension name, such as clusterId |
-| Instances.N.Dimensions.1.Value | ClusterId | A specific cluster ID | Enter a specific cluster ID, such as clus-12345 |
+| Instances.N.Dimensions.0.Name | TableInstanceId | Database instance ID dimension name | Enter a string-type dimension name: TableInstanceId |
+| Instances.N.Dimensions.0.Value | TableInstanceId | Specific database instance ID | Enter a specific database instance ID, such as `tcaplus-123abc456` |
+| Instances.N.Dimensions.1.Name | ClusterId | Cluster ID dimension name | Enter a string-type dimension name: clusterId |
+| Instances.N.Dimensions.1.Value | ClusterId | Specific cluster ID | Enter a specific cluster ID, such as `clus-12345` |
 
-## Input Parameters
+## Input Parameter Description
 
-To query the monitoring data of TcaplusDB, use the following input parameters:
+**To query the monitoring data of TcaplusDB, set the following input parameters:**
 &Namespace=QCE/TCAPLUS
 &Instances.N.Dimensions.0.Name=TableInstanceId
-&Instances.N.Dimensions.0.Value=<Specific database ID>
+&Instances.N.Dimensions.0.Value=Specific database ID
 &Instances.N.Dimensions.1.Name=ClusterId
-&Instances.N.Dimensions.1.Value=<Specific cluster ID>
+&Instances.N.Dimensions.1.Value=Specific cluster ID
