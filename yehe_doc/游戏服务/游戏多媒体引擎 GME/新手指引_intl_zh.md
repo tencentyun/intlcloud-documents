@@ -27,7 +27,7 @@
 - 在使用 Demo 时，需要 AppID 以及权限密钥作为参数填入 Demo 中。
 - 在使用 SDK 时，初始化接口 Init 需要使用 AppID 作为参数，在鉴权接口 QAVAuthBuffer.GenAuthBuffer（实时语音服务）、ApplyPTTAuthbuffer（语音转文字服务） 均需要权限密钥作为参数。
 
-![](https://main.qcloudimg.com/raw/a51de920cec5e748e3fb9b6b42a02a7c.png)
+![](https://main.qcloudimg.com/raw/a63f14a7092169c8c9b54cfd21ce4c12.png)
 #### 4.3 下载 SDK
 
 可以通过 [下载指引](https://intl.cloud.tencent.com/document/product/607/18521) 下载所需平台的 SDK 文件。**目前游戏多媒体引擎支持 Windows、Mac、Android 以及 iOS 平台，游戏引擎支持 UnrealEngine4、Unity3D 以及 Cocos2DX**。
