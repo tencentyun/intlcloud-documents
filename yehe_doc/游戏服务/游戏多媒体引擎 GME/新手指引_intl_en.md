@@ -117,7 +117,7 @@ For the background data of voice chat, voice message and voice analysis, see [Op
 
 ## 7. FAQs
 #### Consultation
-- [What is the traffic consumption when using the voice chat of GME?](https://intl.cloud.tencent.com/document/product/607/39519)
+[What is the traffic consumption when using the voice chat of GME?](https://intl.cloud.tencent.com/document/product/607/39519)
 [What features does GME have?](https://intl.cloud.tencent.com/document/product/607/39520)
 
 
