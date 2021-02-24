@@ -2,9 +2,10 @@ We recommend that you take the time to understand the differences between the di
 
 ### Step 1. Go to the SSL certificate purchase page
 1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl).
-2. Click **Purchase Certificate** to view the detailed certificate configuration and pricing information, as shown in the following image:
+2. On the **Certificate Management** page, click **Purchase Certificate** to go to the SSL certificate purchase page.
+3. Read the information on the SSL certificate purchase page, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/6e6fe4d37a533f2b81f1f70abf76ef8f.png)
->?You can set **Projects** and **Tags** to facilitate resource management for your Tencent Cloud account. For more information on adding a tag, please see [Managing Tags](https://intl.cloud.tencent.com/document/product/651/32583).
+
 
 ### Step 2. Select the certificate type and brand
 1. Select a certificate type that best fits your industry and actual needs. For more information about certificate types, please see [Selecting Certificate Types](https://intl.cloud.tencent.com/document/product/1007/37811).
