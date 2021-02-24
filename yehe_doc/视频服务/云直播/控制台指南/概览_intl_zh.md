@@ -8,7 +8,7 @@
 ## 概览
 
 单击左侧导航栏【概览】，可以查看昨日流量计费、直播的实时数据、并发连接数以及近几天的计费宽带和计费流量的趋势等相关数据，也可按需切换计费模式或更改时间粒度。若有指引需要，可单击右上角的【新手接入指引】，查看云直播入门步骤指引。
-![](https://main.qcloudimg.com/raw/02951b6f19b8f52eb8f0faec08e179d0.jpg)
+![](https://main.qcloudimg.com/raw/e898cd3b3df8bc651d5c3a0d21cef738.png)
 
 ### 计费情况
 
@@ -66,4 +66,4 @@
 #### 更改时间粒度
 
 云直播控制台支持在查看计费带宽/计费流量趋势时更改时间粒度，单击【时间粒度】，单击右侧是粒度时间类型即可。
-![](https://main.qcloudimg.com/raw/fa036b2c6d3a01bad8a207cfe4198ed1.jpg)
+![](https://main.qcloudimg.com/raw/8582c16fca9bd3e4c2f0fcd78625cbb5.png)
