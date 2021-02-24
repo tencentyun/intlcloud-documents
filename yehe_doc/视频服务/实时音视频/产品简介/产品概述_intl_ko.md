@@ -1,29 +1,24 @@
 
-Tencent Real-Time Communication(TRTC)은 Tencent가 지난 21년 간 네트워크와 멀티미디어 기술 분야에서 이룩한 성과가 적용된 솔루션으로 다중 사용자 멀티미디어 통화와 저 딜레이의 ILVB(Interactive Live Video Broadcasting)에 적합합니다. Tencent Cloud 서비스를 통해 신속성, 저비용, 저 딜레이, 고품질을 특징으로 한 멀티미디어 인터랙션 솔루션을 제공합니다.
-- 다중 사용자 멀티미디어 솔루션
- Tencent Cloud의 전용 네트워크가 연결되는 전세계 어디서나 휴대폰, 데스크톱 플랫폼의 클라이언트 SDK, Cloud API로 인터랙티브하게 사용할 수 있습니다. 또 단말기 사용자는 WeChat, QQ, WeCom과 같은 미니프로그램을 통해 TRTC 서비스를 사용할 수 있으며, 웹페이지에서도 간편하게 사용 가능합니다.
-- 저 딜레이 ILVB 솔루션
- 업계 선두의 네트워크 및 멀티미디어 기술과 Tencent Cloud의 우수한 노드 리소스를 접목해 랙 발생률이 낮고, 딜레이 시간 1초 이내의 TRTC 사용 환경을 제공하며, 라이브 방송의 CDN 2.0시대를 구현합니다.
-
+Tencent Real-Time Communication(TRTC)은 Tencent가 지난 21년 간 네트워크와 멀티미디어 기술 분야에서 이룩한 성과가 적용된 솔루션으로, 다중 사용자 멀티미디어 통화와 저딜레이의 대화형 라이브 방송에 적합합니다. Tencent Cloud 서비스를 통해 신속성, 저비용, 저딜레이, 고품질을 특징으로 한 멀티미디어 인터랙션 솔루션을 제공합니다.
+- 다중 사용자 멀티미디어 통화 솔루션
+ Tencent Cloud의 전용 네트워크가 연결되는 전세계 어디서나 휴대폰, 데스크톱 플랫폼의 클라이언트 SDK, Cloud API로 인터랙티브하게 사용할 수 있습니다. 또한 단말기 사용자는 WeChat, QQ에서 TRTC 서비스를 사용할 수 있으며, 웹 페이지에서도 간편하게 사용 가능합니다.
+- 저딜레이 ILVB 솔루션
+ 업계 선두의 네트워크 및 멀티미디어 기술과 Tencent Cloud의 우수한 노드 리소스를 접목해 랙 발생률이 낮고, 딜레이 시간 1초 이내의 TRTC 사용 환경을 제공하며, 라이브 방송의 CDN 2.0 시대를 구현합니다.
 
 ## 제품 구성
-TRTC는 다양한 플랫폼을 대상으로 다중 사용자 멀티미디어 통화 및 저 딜레이의 ILVB를 지원하는 솔루션으로서 미니프로그램, 데스크톱 브라우저, Android, iOS, Electron, Windows, macOS, Linux 등 플랫폼에 SDK를 제공합니다. 이로써 신속한 통합이 가능하며, TRTC의 클라우드 서비스 백그라운드와 연결할 수 있습니다. Tencent Cloud의 다양한 제품과 상호 연동이 가능해 TRTC를 IM, LVB CSS, VOD 등 클라우드 서비스와 연계 사용함으로써 보다 다양한 작업이 가능합니다. 제품 구성은 아래 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/9ab5063e6f7c50d03ebbd2244220c9f9.png)
+TRTC는 다양한 플랫폼을 대상으로 다중 사용자 멀티미디어 통화 및 저딜레이의 ILVB를 지원하는 솔루션으로서 데스크톱 브라우저, Android, iOS, Electron, Windows, macOS 등 플랫폼에 SDK를 제공합니다. 이로써 신속한 통합이 가능하며, TRTC의 클라우드 서비스 백그라운드와 연결할 수 있습니다. Tencent Cloud의 다양한 제품과 상호 연동이 가능해 TRTC를 IM, CSS, VOD 등 클라우드 서비스와 연계 사용함으로써 보다 다양한 작업이 가능합니다. 제품 구성은 아래 이미지와 같습니다.
+![](https://main.qcloudimg.com/raw/1ab8f485bded50c17a1e5e37671acfdd.svg)
 
 ## 플랫폼 지원
 TRTC는 **업계 모든 플랫폼의 상호 연동을 구현하는 솔루션**입니다. 플랫폼 지원 사항 및 개발 환경에 관한 자세한 사항은 아래 표를 참조하십시오.
 
-| 플랫폼       | 개발 환경 조건                                                 | 
+| 플랫폼       | 개발 환경 조건                                                 |
 | :--------- | :----------------------------------------------------------- |
 | iOS        |<li>iOS 9.0 이상 버전 iPhone 또는 iPad 지원</li><li>Xcode 9.0+</li><li>유효한 개발자 서명이 설정되어 있음</li> |
-| Android    | <li>Android Studio 3.5+</li><li>Android 4.1(SDK API Level 16)이상 환경에서 사용 권장</li> |
+| Android    | <li>Android Studio 3.5+</li><li>Android 4.1(SDK API Level 16) 이상 시스템 사용 권장</li> |
 | Windows    | <li>Windows 7 이상 버전 지원</li><li>Visual Studio 2010 이상 버전 지원, Visual Studio 2015 사용 권장</li><li>.Net Framework 4.0 이상 버전</li> |
 | Mac OS     | <li>Xcode 9.0+</li><li>OS X10.10+ Mac</li><li>유효한 개발자 서명이 설정되어 있음</li> |
-| 데스크톱 브라우저 | 데스크톱 Chrome 52+ 사용 권장  |
+| 데스크톱 브라우저 | 데스크톱 버전 Chrome 56 이상 사용 권장, 자세한 개발 환경 요구사항은 [빠른 통합(데스크톱 브라우저)](https://intl.cloud.tencent.com/document/product/647/35096) 참조 |
 | Electron   | <li>Windows 7 이상 버전, Mac OS 10.10 이상 버전 지원</li><li>Electron 4.0.0 이상 버전 지원, 최신 Electron SDK 사용 권장</li> |
-| WeChat 미니프로그램 | <li>WeChat App iOS 최저 사양: 7.0.9</li><li>WeChat App Android 최저 사양: 7.0.8</li><li>미니프로그램 최저 사양: 2.10.0</li><li>미니프로그램 개발자 툴은 네이티브 컴포넌트(&lt;live-pusher&gt;, &lt;live-player&gt; 태그)를 지원하지 않으니 기기에서 실행하십시오.</li> |
-| Linux      | <li>CentOS 7.6 서버에서 사용하시길 권장합니다. 임베디드 또는 데스크톱 Linux 릴리스 버전에서는 지원되지 않습니다.</li><li>Linux SDK는 서버 플랫폼의 배포만 지원합니다.</li> |
+|Flutter|iOS: <li>iOS 9.0 이상 버전의 iPhone 또는 iPad 지원</li><li>Xcode 9.0+</li><li>유효한 개발자 서명이 설정되어 있음</li>Android: <li>Android Studio 3.5+</li><li>Android 4.1(SDK API Level 16) 이상 시스템 사용 권장</li>|
 
->
-- Linux 플랫폼 SDK 및 관련 Demo 소스 코드를 다운로드하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 진행하시고, 기타 플랫폼의 SDK 및 관련 Demo 소스 코드를 다운로드하려면 [SDK 다운로드](https://intl.cloud.tencent.com/document/product/647/34615)를 참조하십시오.
--Linux 플랫폼 Demo를 체험하려면 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 진행하시고, 기타 플랫폼 Demo를 체험하려면 [Demo 체험하기](https://intl.cloud.tencent.com/document/product/647/35076)를 참조하십시오.
