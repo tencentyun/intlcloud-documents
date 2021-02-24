@@ -58,8 +58,8 @@ TRTC는 다음과 같이 **라이트 버전**, **프로 버전**, **엔터프라
 
 ### API 통합
 
-- **클라이언트 API: **SDK 인터페이스 호출을 통해 기능 통합을 지원하며, 지원 가능한 플랫폼으로는 [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [Mac](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647/35136), [데스크톱 브라우저](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), [Flutter](https://intl.cloud.tencent.com/zh/document/product/647/39169)가 있습니다.
-- **서버 API: **API 3.0 인터페이스 호출을 통해 [통화 품질 모니터링](https://intl.cloud.tencent.com/zh/document/product/647/36754), [혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/37760), [방 관리](https://intl.cloud.tencent.com/document/product/647/34268) 기능을 통합할 수 있습니다.
+- **클라이언트 API:**SDK 인터페이스 호출을 통해 기능 통합을 지원하며, 지원 가능한 플랫폼으로는 [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [Mac](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647/35136), [데스크톱 브라우저](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), [Flutter](https://intl.cloud.tencent.com/zh/document/product/647/39169)가 있습니다.
+- **서버 API:**API 3.0 인터페이스 호출을 통해 [통화 품질 모니터링](https://intl.cloud.tencent.com/zh/document/product/647/36754), [혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/37760), [방 관리](https://intl.cloud.tencent.com/document/product/647/34268) 기능을 통합할 수 있습니다.
 
 
 
