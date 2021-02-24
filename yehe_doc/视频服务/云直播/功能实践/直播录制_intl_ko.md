@@ -93,7 +93,7 @@ VOD 서비스를 개통하고 난 이후에 특정 푸시 스트림 도메인에
 ### 녹화 예시
 - 가장 간단한 상황입니다. 지정된 StreamName, DomainName, AppName, EndTime 매개변수만 입력하면 됩니다.
 예: 2020년 08월 10일 오전 8시부터 10시까지 진행되는 녹화 작업, 형식은 FLV, 영상 녹화, 분할 간격 30분, 영구 저장
-**입력 예시: **
+<b>입력 예시:</b>
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -107,7 +107,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 - 녹화 형식, 녹화 유형, 저장 매개변수 등을 구체적으로 지정할 수 있습니다.
 예: 2020년 08월 10일 오전 8시부터 10시까지 진행되는 녹화 작업, 형식은 MP4, 분할 간격 1시간, 영구 저장
 	1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)을 호출하여 먼저 녹화 템플릿을 생성합니다.
-**입력 예시: **
+<b>입력 예시:</b>
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -117,7 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<공통 요청 매개변수>
 ```
-**출력 예시: **
+<b>출력 예시:</b>
 ```
 {
   "Response": {
@@ -127,7 +127,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 }
 ```
 	2. [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)를 호출하여 먼저 녹화 템플릿을 생성합니다.
-**입력 예시: **
+<b>입력 예시:</b>
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
