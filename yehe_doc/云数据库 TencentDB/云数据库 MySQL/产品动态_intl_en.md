@@ -71,7 +71,7 @@
 <td>Transparent Data Encryption (TDE) is supported</td>
 <td>TencentDB for MySQL supports the transparent data encryption (TDE) feature. Transparent encryption means that the data encryption and decryption are imperceptible to users. TDE supports real-time I/O encryption and decryption of data files. It encrypts data before the data is written to disk, and decrypts data when the data is read into memory from disk, which meets the compliance requirements of static data encryption.</td>
 <td>2020-07</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">Enabling Transparent Data Encryption</a></td>
 </tr>
 </tbody></table>
 
@@ -271,11 +271,6 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Database audit is supported</td>
-<td>Database audit can record the actions of TencentDB in real time. It carries out fine-grained audit on database operations, records and alerts such risky database behaviors as SQL injection and abnormal operation.</td>
-<td>2018-06</td>
-<td>-</td>
-<tr>
 <td>Basic Edition instances are now purchasable</td>
 <td>TencentDB for MySQL Basic Edition adopts a single-node deployment method with computation-storage separation. If a computing node fails, the system can switch to a healthy one for quick recovery. Premium cloud disks are used as the underlying storage media of the Basic Edition, which feature high quality, cost-effectiveness, stability, and performance, making them suitable for 90% of I/O scenarios.</td>
 <td>2018-06</td>
@@ -365,12 +360,6 @@
 <td>DTS is now compatible with more types of network environments.</td>
 <td>2017-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">Online Import of MySQL Data</a></td>
-</tr>
-<tr>
-<td>Data Management Console (DMC) is available</td>
-<td>DMC supports real-time monitoring and management of instance sessions.</td>
-<td>2017-08</td>
-<td>-</td>
 </tr>
 </tbody></table>
 
