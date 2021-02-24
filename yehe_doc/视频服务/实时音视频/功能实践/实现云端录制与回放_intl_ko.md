@@ -303,7 +303,7 @@ HLS는 최대 5분의 중단 시간 지속 녹화를 지원하여 "라이브 방
 - [Android 플랫폼](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 - [Web 브라우저](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! [프로 버전](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK 사용을 권장합니다. 프로 버전은 [Player+](https://cloud.tencent.com/product/player), [MLVB](https://intl.cloud.tencent.com/zh/product/mlvb) 등의 기능이 통합되어 있어 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, 부호 충돌(symbol duplicate) 문제를 방지할 수 있습니다.
+>! [프로 버전](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK 사용을 권장합니다. 프로 버전은 [MLVB](https://intl.cloud.tencent.com/zh/product/mlvb) 등의 기능이 통합되어 있어 하위 레이어 모듈을 효율적으로 재사용해 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작고, 부호 충돌(symbol duplicate) 문제를 방지할 수 있습니다.
 
 
 ## 관련 비용
