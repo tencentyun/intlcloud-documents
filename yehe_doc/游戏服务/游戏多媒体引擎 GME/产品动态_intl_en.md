@@ -1,3 +1,27 @@
+## January 2021
+<table >
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+ <th width=15%>Release Date</th>  
+<th width="15%">Related Documents</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SDK v2.8 is released</td>
+<td ><ul style="margin:0;"><li >The custom audio forwarding routing feature is available. Combined with range voice, it can realize the enhanced battle royale voice.</li>
+<li>Add the API SetSpeakerVolumeByOpenID, which is used to set the speaking volume of a member in the room heard by the local.</li>
+<li >Add the API to set the using region, which is suitable for the release outside the Chinese mainland (in beta). To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
+<li >Performance optimization. Improve SDK stability.</li>
+<li >Improve the voice quality outside the Chinese mainland.</li>
+</ul ></td>
+<td>2021-01-20</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/607/39525">Custom Audio Forwarding Routing</tr>
+</tbody></table>
+
+
+
 ## October 2020
 
 <table >
@@ -5,12 +29,12 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>SDK v2.7.1 is released</td>
+<td>SDK 2.7.1 is released</td>
 <td ><ul style="margin:0;"><li >The room management feature is now available in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
 <li>The voice changing feature is now available for voice messages.</li>
 <li >The pitch of the accompaniment can be adjusted.</li>
@@ -28,7 +52,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -49,7 +73,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -73,7 +97,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -94,7 +118,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -116,7 +140,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -142,7 +166,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -192,7 +216,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -218,7 +242,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -245,7 +269,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>
@@ -272,7 +296,7 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
- <th width=10%>Release Date</th>  
+ <th width=15%>Release Date</th>  
 <th width="15%">Related Documents</th>
 </tr>
 </thead>

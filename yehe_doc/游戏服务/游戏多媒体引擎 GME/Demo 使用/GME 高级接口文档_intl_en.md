@@ -2,7 +2,7 @@
 
 ## iOS Audio API
 
-The `SetAdvanceParams` API is used to enable/disable the following audio options before a user enters a room. 
+The SetAdvanceParams API is used to enable/disable the following audio options before a user enters a room. 
 ```
 [[ITMGContext GetInstance] SetAdvanceParams:keyString value:_value]
 ```
@@ -10,45 +10,57 @@ The `SetAdvanceParams` API is used to enable/disable the following audio options
 | Parameter | Description |
 | --------- | -------------------------------- |
 | keyString | Different keys represent different options      |
-| value     |<li> 0: disable<li>1: enable|
+| value |<li> 0: disable<li>1: enable |
 
-### Key 
+#### Key 
 The key can be replaced by one of the following parameters to represent different audio options:
 - **OptionMixWithOthers**
-to mix audio. Once enabled, GME can run background music and voice chat at the same time.
+to mix audio. Once enabled, GME can run the background music and voice chat at the same time.
 
 - **OptionDuckOthers**
 to duck background music. If both this option and `OptionMixWithOthers` are enabled, the speaker will be enabled to broadcast audio while the background music volume is ducked.
 
 - **ReleaseAudioFoucus**
 to release audio focus.
- - If enabled, audio focus is released when you exit a room, so that other audio apps can continue running, e.g. QQ Music.
+ - If enabled, audio focus will be released when you exit a room so that other audio apps such as QQ Music can continue running.
  - If disabled, other audio apps cannot continue running when you exit a room.
- 
- ## Setting Maximum Number of Mixing Channels
 
-The `SetRecvMixStreamCount` API is used to set the maximum number of mixing channels before entering a chat room. This API is available for all platforms. Here, we take PC as an example:
+## Setting the Maximum Number of the Mix Audio Channels
+
+The SetRecvMixStreamCount API is used to set the maximum number of the mix audio channels before a user enters a room. Take the SetRecvMixStreamCount API on PCs as an example.
 ```
 virtual int SetRecvMixStreamCount(int nCount) = 0;
 ```
-**Parameters** 
+**Parameters description** 
 
 | Parameter | Description |
 | --------- | -------------------------------- |
-| nCount | Specifies the number of mixing channels. The maximum is 20 |
+| nCount | The number of mix audio channels, up to 20 channels |
 
 
-## Setting Room Audio Type
+## Setting the Audio Type of the Room
 
-The `SetForceUseMediaVol` API is used to enable/disable media volume for a chat room in Fluency (room type 1) or Standard (room type 2) mode.
+If SetForceUseMediaVol is used before a user enters the room, the room with smooth sound quality or standard sound quality can use the media volume.
 
 ```
 [[ITMGContext GetInstance] SetAdvanceParams:SetForceUseMediaVol value:1]
 ```
 
-#### Values
-Different values are used for different features, and described as follows:
--**1**: sets the microphone for room type 1 from call volume (default) to media volume.
--**2**: sets the microphone for room type 2 from call volume (default) to media volume.
--**3**: sets the microphone back to call volume for both room types 1 and 2.
+#### Value
+Different values represent different options:
+- **1**: room 1 can use the media volume after the mic is enabled. (call volume is used before)
+- **2**: room 2 can use the media volume after the mic is enabled. (call volume is used before)
+- **3**: room 1 and room 2 still use the call volume after the mic enabled.
 
+
+## Obtaining the Speaking Volume of a Member in the Room
+After the TrackingVolume API is called, it will monitor the `TIMGContext.ITMG_MAIN_EVENT_TYPE.ITMG_MAIN_EVENT_TYPE_USER_VOLUMES` event where the key-value pair is uin-volume. Through this API, the corresponding energy histogram can be generated based on the volume of a uin speaking in the room.
+If you no longer need to obtain the speaking volume of the member in the room, please call the StopTrackingVolume API.
+```
+//TMGAudioCtrl
+public int TrackingVolume(float fTrackingTimeS)
+public int StopTrackingVolume();
+```
+| Parameter | Type | Description |
+|----|---|----|
+| fTrackingTimeS | float | The number of seconds of the monitoring. 0.5f is recommended. |
