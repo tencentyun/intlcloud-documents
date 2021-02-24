@@ -12,7 +12,6 @@ SDK 需要使用 [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangz
 1. 打开您当前项目根目录下的 `Podfile` 文件，添加下面的内容：
 ```
 platform :osx, '10.10'	
-
 target 'Your Target' do
     pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
 end
@@ -88,9 +87,10 @@ TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 > 2. 重启系统的音频服务。 
 
 #### 重启系统的音频服务 bash
+```
  sudo cp -R TXLiteAVSDK_TRTC_Mac.framework/PlugIns/TRTCAudioPlugin.driver /Library/Audio/Plug-Ins/HAL  
  sudo kill -9 `ps ax|grep 'coreaudio[a-z]' |awk '{print $1}'`
-
+```
 <span id="note"></span>
 
 ## 注意事项
