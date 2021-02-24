@@ -39,7 +39,7 @@ agent.sinks.hive_sink.serializer.fieldnames =id,msg
 # The following code is used to configure the channel
 agent.channels.mem_channel.type = memory
 agent.channels.mem_channel.capacity = 100000
-agent.channels.mem_channel.transactionCapacity = 10000
+agent.channels.mem_channel.transactionCapacity = 100000
 ```
 You can confirm Hive Metastore in the following way:
 ```
