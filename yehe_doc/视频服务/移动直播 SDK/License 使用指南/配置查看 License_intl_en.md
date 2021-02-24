@@ -1,5 +1,4 @@
-
-<span id="config"></span>
+[](id:config)
 ## Configuring a License
 Before calling the SDK APIs, you need to configure the license by following steps below 
 - **iOS**
