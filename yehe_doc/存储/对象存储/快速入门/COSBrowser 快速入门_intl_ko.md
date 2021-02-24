@@ -26,10 +26,10 @@ Windows 환경의 COSBrowser 시스템 사양: Windows 7 32/64비트 이상, Win
 
 ## 3단계: 버킷 생성하기
 
-1. 왼쪽 상단에 있는 [버킷 추가]를 클릭합니다.
+1. 로그인 성공 후 툴 인터페이스에서 왼쪽 위의 [버킷 추가]를 클릭합니다.
 2. 팝업창에 버킷 정보를 입력합니다.
- - 이름: 버킷 이름, examplebucket을 입력합니다.
- - 리전: 버킷 저장 리전, 본인과 가장 근접한 지역을 선택합니다. 예를 들어 ‘선전’에 있는 경우, 리전을 ‘광저우’로 선택합니다.
+ - 이름: 사용자 정의 버킷 이름, examplebucket을 입력합니다.
+ - 리전: 버킷 소속 리전, 본인과 가장 근접한 지역을 선택합니다. 예를 들어 ‘선전’에 있는 경우, 리전을 ‘광저우’로 선택합니다.
  - 액세스 권한: 버킷 액세스 권한, ‘개인 읽기 및 쓰기’를 선택합니다.
 ![](https://main.qcloudimg.com/raw/d5c11a8be17d9a3462c0ca73ee189c73.png)
 3. [확인]을 클릭하면 버킷이 생성됩니다.
@@ -37,8 +37,8 @@ Windows 환경의 COSBrowser 시스템 사양: Windows 7 32/64비트 이상, Win
 
 ## 4단계: 객체 업로드하기
 
-1. 4단계에서 생성한 버킷명을 클릭하여 버킷 관리 페이지로 이동합니다.
-2. [업로드]>[파일 선택]을 선택하여 exampleobjext.txt와 같이 버킷에 업로드할 파일을 선택합니다.
+1. 3단계에서 생성한 버킷을 클릭하여 버킷 관리 페이지로 이동합니다.
+2. [업로드]>[파일 선택]을 선택하여 exampleobjext.txt와 같이 버킷에 업로드할 로컬 파일을 선택합니다.
 3. [업로드]를 클릭하면 exampleobjext.txt를 버킷에 업로드할 수 있습니다.
 
 
@@ -59,8 +59,6 @@ Windows 환경의 COSBrowser 시스템 사양: Windows 7 32/64비트 이상, Win
 2. COSBrowser 툴의 고급 다운로드 팝업창에서 필요에 따라 ‘이름 변경’, ‘덮어쓰기’ 또는 ‘건너뛰기’를 선택합니다.
 ![](https://main.qcloudimg.com/raw/6e533ea1b75df3de7dba029a6976f844.png)
 3. [다운로드]를 클릭하면 선택한 파일이 다운로드됩니다.
-
-
 
 
 ## 6단계: 객체 공유하기
@@ -88,18 +86,16 @@ COS에 저장된 모든 파일은 관련 링크를 통해 액세스할 수 있�
 
 ## 추가 기능
 
-COSBrowser는 앞서 소개한 기능 이외에도 버킷 액세스 권한 수정, 파일 미리 보기 등 더욱 다양한 기능을 제공합니다. 자세한 사항은 [데스크톱 기능 목록](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8) 문서에서 확인하십시오.
+COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리보기 등 많은 기능을 보유하고 있습니다. 자세한 사항은 [데스크톱 기능 리스트](https://intl.cloud.tencent.com/document/product/436/11366#.E6.A1.8C.E9.9D.A2.E7.AB.AF.E5.8A.9F.E8.83.BD.E5.88.97.E8.A1.A8) 문서를 참조하십시오.
 
 
 ## 문제 해결
 
-사용시 문제가 발생할 경우, [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 문의하시기 바랍니다.
+사용 시 문제가 발생할 경우, [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 문의하시기 바랍니다.
 
 ## 관련 문서
 
-모바일(iOS, Android) 환경에서 COSBrowser를 사용하려면 다음 문서를 참조하십시오.
+모바일 (iOS, Android)의 COSBrowser, 다음 문서를 참조하십시오.
 
 - [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)
-- [모바일 환경 사용법](https://intl.cloud.tencent.com/document/product/436/32566)
-
-
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)
