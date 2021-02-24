@@ -127,7 +127,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>DBbrain 지원</td><td>DBbrain 지원</td>
+<td>DBbrain 지원</td>
 <td>DBbrain은 스마트 진단 및 데이터베이스 최적화 제품으로써 근본적인 예방이 가능하도록 지원합니다. 사용자에게 실시간 데이터베이스 보호를 제공하고 효율적으로 장애의 원인을 찾아 솔루션을 제공합니다.</td>
 <td>2020-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36027" target="_blank">DBbrain</a></td>
