@@ -210,15 +210,15 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。而 WebRTC 技术是�
 
 TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256。在此之前已创建的应用，需要先升级签名算法才能获取新的加密密钥。
 
-**2.出现客户端错误：“RtcError:\sno\svalid\sice\scandidate\sfound”该如何处理？**
+**2.出现客户端错误：“RtcError:no valid ice candidate found”该如何处理？**
 
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请根据环境要求检查防火墙配置。
 
-**3.出现客户端错误：“RtcError:\sICE/DTLS\sTransport\sconnection\sfailed”或“RtcError:\sDTLS\sTransport\sconnection\stimeout”该如何处理？**
+**3.出现客户端错误：“RtcError: ICE/DTLS Transport connection failed”或 “RtcError: DTLS Transport connection timeout”该如何处理？**
 
 出现该错误说明 TRTC 桌面浏览器 SDK 在 STUN 打洞失败，请根据环境要求检查防火墙配置。
 
-**4.出现10006\serror\s该如何处理？**
+**4.出现10006 error该如何处理？**
 
 如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。
 ![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
