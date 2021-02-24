@@ -71,7 +71,7 @@
 <td>支持透明数据加密 TDE</td>
 <td>云数据库 MySQL 提供透明数据加密（Transparent Data Encryption，TDE）功能，透明加密指数据的加解密操作对用户透明，支持对数据文件进行实时 I/O 加密和解密，在数据写入磁盘前进行加密，从磁盘读入内存时进行解密，可满足静态数据加密的合规性要求。</td>
 <td>2020-07</td>
-<td>-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">开启透明数据加密</a></td>
 </tr>
 </tbody></table>
 
@@ -271,11 +271,6 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>支持数据库审计</td>
-<td>数据库审计能够实时记录腾讯云数据库动作，对数据库操作进行细粒度的审计，对数据库遭受到的风险行为进行告警，针对数据库 SQL 注入、异常操作等数据库风险行为进行记录与告警。</td>
-<td>2018-06</td>
-<td>-</td>
-<tr>
 <td>支持购买基础版实例</td>
 <td>基础版采用单个节点部署，计算与存储分离，若计算节点故障，能够通过更换节点达到快速恢复的效果，MySQL 基础版底层存储介质使用高性能云盘，适用于90%的 I/O 场景，质优价廉，性能稳定突出。</td>
 <td>2018-06</td>
@@ -365,12 +360,6 @@
 <td>DTS 数据迁移兼容多种网络环境。</td>
 <td>2017-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">MySQL 数据在线导入</a></td>
-</tr>
-<tr>
-<td>数据管理 DMC 发布</td>
-<td>DMC 支持实时监控、实例会话管理。</td>
-<td>2017-08</td>
-<td>-</td>
 </tr>
 </tbody></table>
 
