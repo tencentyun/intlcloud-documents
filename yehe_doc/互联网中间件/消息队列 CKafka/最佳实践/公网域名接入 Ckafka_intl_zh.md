@@ -1,6 +1,7 @@
 ## 操作场景
 如果您需要通过公网访问消息队列 CKafka 服务，可以通过控制台增加公网路由，并通过配置 SASL 鉴权和 ACL 规则实现公网访问 CKafka Topic 的生产和消费消息。
 
+
 ## 前提条件
 已 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543)。
 
@@ -45,6 +46,8 @@
 ![](https://main.qcloudimg.com/raw/647380c3617e473644eac5bae337f9b7.jpg)
 5. 单击【提交】，该策略将显示在目标  Topic  的策略列表中。
 ![](https://main.qcloudimg.com/raw/b1b68e42f2adafb428a593fa52d17658.jpg)
+
+>?CKafka 相关 SASL 和 ACL，用户管理访问控制详情见 [用户访问控制（ACL 与用户管理）](https://intl.cloud.tencent.com/document/product/597/39084) 文档。
 
 ### 公网生产和消费
 控制台操作完成后，即可使用用户名和密码在公网访问实例资源。
@@ -104,13 +107,18 @@ Properties props = new Properties();
 ```
 
 >?除了使用 properties 添加 sasl.jaas.config 配置的方式，您也可以通过 System.setProperty 或 -D 的方式传入。
-> - System.setProperty("java.security.auth.login.config", "/etc/ckafka_client_jaas.conf");
+>- System.setProperty("java.security.auth.login.config", "/etc/ckafka_client_jaas.conf");
+>- `ckafka_client_jaas.conf` 文件的内容如下：
 >
 >- ```java
-> KafkaClient {
-> org.apache.kafka.common.security.plain.PlainLoginModule required
-> username="yourinstance#yourusername"
-> password="yourpassword";
-> }; 
-> ```
+>  KafkaClient {
+>  org.apache.kafka.common.security.plain.PlainLoginModule required
+>  username="yourinstance#yourusername"
+>  password="yourpassword";
+>  }; 
+>  ```
+>```
+>
+>```
+
 

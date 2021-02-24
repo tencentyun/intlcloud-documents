@@ -1,18 +1,17 @@
-Before purchasing a certificate, it is important to understand the differences between certificate types and domain name types and choose the appropriate certificate based on your actual needs. The following introduces the procedure for purchasing a certificate.
+We recommend that you take the time to understand the differences between the different certificate types and domain name types so that you can purchase the appropriate certificate for your actual needs. The following details the process of purchasing a certificate.
 
->? The SSL certificate purchase page is not available to all users currently. If you want to purchase a SSL certificate, please [contact sales](https://intl.cloud.tencent.com/contact-sales) and we will come back to you soon.
-
-### Step 1: go to the SSL certificate purchase page
-1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl). On the **Certificate Management** page, click **Purchase Certificate** to go to the SSL certificate purchase page.
-2. Read the information on the SSL certificate purchase page.
+### Step 1. Go to the SSL certificate purchase page
+1. Log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl).
+2. Click **Purchase Certificate** to view the detailed certificate configuration and pricing information, as shown in the following image:
 ![](https://main.qcloudimg.com/raw/6e6fe4d37a533f2b81f1f70abf76ef8f.png)
+>?You can set **Projects** and **Tags** to facilitate resource management for your Tencent Cloud account. For more information on adding a tag, please see [Managing Tags](https://intl.cloud.tencent.com/document/product/651/32583).
+
+### Step 2. Select the certificate type and brand
+1. Select a certificate type that best fits your industry and actual needs. For more information about certificate types, please see [Selecting Certificate Types](https://intl.cloud.tencent.com/document/product/1007/37811).
+2. Select a certificate brand. For more information, please see [Certificate Brands](https://intl.cloud.tencent.com/document/product/1007/37810).
 
 
-### Step 2: select the certificate type and brand
-1. Select a certificate type that best fits with your industry and actual needs. For more information on certificate types, see [Certificate Type Selection Cases](https://intl.cloud.tencent.com/document/product/1007/37811).
-2. Select a certificate brand. For more information about certificate brands, see [Certificate Brands](https://intl.cloud.tencent.com/document/product/1007/37810).
-
-### Step 3: select the domain name type and the number of domain names supported
+### Step 3. Select the domain name type and the number of domain names supported
 <table>
 <tr>
 <th>Domain Name Type</th>
@@ -27,7 +26,7 @@ Before purchasing a certificate, it is important to understand the differences b
 <tr>
 <td>Multi-domain name</td>
 <td>A single certificate can be bound to multiple domain names, subject to the maximum number of supported domain names displayed in the console.</td>
-<td><li>The prices of SecureSite multi-domain name certificates are calculated based on the number of domain names.</li><li>For GeoTrust, TrustAsia, GlobalSign, Wotrus, and DNSPod multi-domain name certificates, there are additional charges for domain names that exceed the default maximum number of domain names supported.</li></td>
+<td><li>The prices of SecureSite multi-domain name certificates are calculated based on the number of domain names.</li><li>For the GeoTrust, TrustAsia, GlobalSign, Wotrus, and DNSPod multi-domain name certificates, there are additional charges for the domain names that exceed the default maximum number of domain names supported.</li></td>
 </tr>
 <tr>
 <td>Wildcard domain name</td>
@@ -37,26 +36,33 @@ Before purchasing a certificate, it is important to understand the differences b
 <tr>
 <td>Multi-wildcard domain name</td>
 <td>Multiple wildcard domain names can be bound.</td>
-<td>For example, `\*.tencent.com`, `\*.ssl.tencent.com`, and `\*.another.com` are counted as 3 wildcard domain names in total, including all the sub-domain names at the same level, subject to the maximum number of supported domain names displayed in the console.</td>
+<td>For example, `\*.tencent.com`, `\*.ssl.tencent.com`, and `\*.another.com` are counted as a total of 3 wildcard domain names, including all the sub-domain names at the same level, subject to the maximum number of supported domain names displayed in the console.</td>
 </tr>
 </table>
 
-### Step 4: select the certificate validity period
-Due to the changes in Apple and Google root store policies, as of September 1, 2020, newly issued SSL/TLS certificates with a validity period greater than 13 months (397 days) will be prohibited and will not be trusted. Starting from September 1, 2020, global CAs will no longer issue 2-year SSL certificates, and **only 1-year SSL certificates can be purchased by default.** For more information, see [Notice on Stopping the Issuance of 2-Year SSL Certificates by CAs Starting from September 1, 2020](https://intl.cloud.tencent.com/document/product/1007/38090).
+### Step 4. Select the certificate validity period
+Due to changes in Apple and Google root store policies, as of September 1, 2020, newly issued SSL/TLS certificates with a validity period greater than 13 months (397 days) will be prohibited and will not be trusted. Starting from September 1, 2020, global CAs will no longer issue 2-year SSL certificates, and **only 1-year SSL certificates will be available for purchase by default.** For more information, see the [Notice on Stopping the Issuance of 2-Year SSL Certificates by CAs Starting from September 1, 2020](https://intl.cloud.tencent.com/document/product/1007/38090).
 
-### Step 5: pay for the order
-After selecting the brand, model, supported domain name, and certificate validity period, you can submit the order and complete the payment process.
+### Step 5. Pay for your order
+After selecting the brand, model, supported domain name, and certificate validity period, you can submit your order and complete the payment process.
+>?If you need an invoice, please see [Self-Service Invoice Feature](https://intl.cloud.tencent.com/document/product/555/31993).
 
 
-### Step 6: submit the application
-- **DNSPod OV and EV SSL certificates:**
-After purchasing the certificate, submit materials for review on the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) to apply for the certificate and verify the domain name ownership. The application will be reviewed manually. The certificate will be issued after the certificate application is approved and the domain name ownership is successfully verified.
-- **Wotrus OV and EV SSL certificates:**
-After purchasing the certificate, submit materials for review on the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) to apply for the certificate and verify the domain name ownership. The application will be reviewed manually. The certificate will be issued after the certificate application is approved and the domain name ownership is successfully verified.
-- **Other OV and EV SSL certificates:**
-After purchasing the certificate, submit materials for review on the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) to apply for the certificate. The certificate will be issued upon approval by the CA. For more information, see [Required Submission Materials for Other OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
-- **DV SSL certificates:**
-After purchasing the certificate, submit materials for review on the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) to apply for the certificate and verify the domain name ownership. After the application is submitted, the domain name ownership will be verified. The certificate will be issued upon approval by the CA.
-- **Free DV SSL certificates:**
-After purchasing the certificate, apply for the domain name ownership verification. The certificate will be issued upon approval by the CA.
+### Step 6. Submit an application
+#### DNSPod (SM2) OV and EV SSL certificates:
+1. After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information, upload the confirmation letter, and complete the domain ownership verification.
+2. After your application is submitted, it will be reviewed. After the review is successfully completed, the certificate will be issued.
 
+#### Wotrus OV and EV SSL certificates
+1. After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information to pre-apply for the certificate. After your pre-application is successfully reviewed, the domain ownership will need to be verified.
+2. After the domain ownership is verified, it will be reviewed. After the review is successfully completed, the certificate will be issued.
+
+#### Other OV and EV SSL certificates
+1. After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information and upload the confirmation letter to apply for the certificate.
+2. After your application is submitted, it will be reviewed. After the review is successfully completed, the certificate will be issued. For more information, please see [The Process of Submitting Materials for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
+
+#### DV SSL certificates
+After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information and complete the domain ownership verification, after which the CA will issue the certificate.
+
+#### Free DV SSL certificates
+After applying for the certificate, complete the domain ownership verification. The CA will then issue the certificate.
