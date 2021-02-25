@@ -7,10 +7,10 @@ Download the [phpredis](https://github.com/phpredis/phpredis) client.
 ```
 <?php
   /**For the following parameters, enter your Redis instance's private IP, port number, instance ID and password*/
-  $host = "192.168.0.2";
+  $host = "192.xx.xx.2";
   $port = 6379;
   $instanceid = "c532952f-55dc-4c22-a941-63057e560788";
-  $pwd = "1234567q";
+  $pwd = "123tj6na";
 
   $redis = new Redis();
   // Connect to Redis
