@@ -8,7 +8,7 @@ This document describes several common use cases of security groups. If the foll
 
 ### Scenario 1: Remotely connecting to a Linux CVM through SSH
 **Case**: you have created a Linux CVM and want to remotely connect to it through SSH.
-**Solution**: when [adding a security group rule](https://intl.cloud.tencent.com/document/product/213/34272), set **Type** to **Linux login** and open TCP port 22 to the Internet to enable Linux login through SSH.
+**Solution**: when [adding a security group rule](https://intl.cloud.tencent.com/document/product/213/34272), set **Type** to **Login Linux CVMs(22)** and open TCP port 22 to the Internet to enable Linux login through SSH.
 You can open all IP addresses or a specified IP address (or IP range) to the Internet as required. This allows you to configure the source IP addresses of the CVMs that can be remotely connected to through SSH.
 <table>
 <tr><th>Direction</th><th>Type</th><th>Source</th><th>Protocol Port</th><th>Policy</th></tr>
@@ -17,7 +17,7 @@ You can open all IP addresses or a specified IP address (or IP range) to the Int
 
 ### Scenario 2: Remotely connecting to a Windows CVM through RDP
 **Case**: you have created a Windows CVM and want to remotely connect to it by using Remote Desktop (RDP).
-**Solution**: when [adding a security group rule](https://intl.cloud.tencent.com/document/product/213/34272), set **Type** to **Windows Login** and open TCP port 3389 to the Internet to enable remote login to Windows.
+**Solution**: when [adding a security group rule](https://intl.cloud.tencent.com/document/product/213/34272), set **Type** to **Login Windows CVMs(3389)** and open TCP port 3389 to the Internet to enable remote login to Windows.
 You can open all IP addresses or a specified IP address (or IP range) to the Internet as required. This enables you to configure the source IP addresses of the CVMs that can be remotely connected to through RDP.
 <table>
 <tr><th>Direction</th><th>Type</th><th>Source</th><th>Protocol Port</th><th>Policy</th></tr>
