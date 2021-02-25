@@ -83,5 +83,5 @@
 1. 以 [主账号](https://intl.cloud.tencent.com/document/product/598/32633) 的身份访问 CAM 控制台的[【用户列表】](https://console.cloud.tencent.com/cam)，单击想要解除授权的子账号。
    ![](https://main.qcloudimg.com/raw/86a75ce62dde0ba4c061975181186974.png)
 2. 在“用户详情”页面权限栏找到预设策略`QcloudVODFullAccess`，单击右侧的【解除】。按页面提示完成解除授权流程即可。
-   <img src="https://main.qcloudimg.com/raw/4d221c52efe40913031355c877f28a47.png" width="704">
+   ![](https://main.qcloudimg.com/raw/4d221c52efe40913031355c877f28a47.png)
 
