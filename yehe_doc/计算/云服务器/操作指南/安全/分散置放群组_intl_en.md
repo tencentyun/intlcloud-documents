@@ -13,7 +13,7 @@ This document describes how to manage spread placement groups.For more informati
 1. Go to the [CVM purchase page](https://buy.cloud.tencent.com/?tab=custom&step=1&devPayMode=hourly&regionId=33&instanceType=SA2.SMALL1&bandwidthType=TRAFFIC_POSTPAID_BY_HOUR).
 2. Complete the purchase as prompted on the page.
 During the purchase process, be sure to perform the following operations:
- - When setting the CVM, click **Advanced Configuration**, select **Add Instance to Spread Placement Group**, and select an existing placement group.
+ - When setting the CVM, click **Advanced Configuration**, select **Add Instance to Placement Group**, and select an existing placement group.
  If no existing placement groups meet your requirement, [create one](https://console.cloud.tencent.com/cvm/ps?regionId=1) in the console.
  - When confirming the configuration information, enter the total number of instances to be added to the placement group, which must be less than the quantity limit set for the placement group.
 
