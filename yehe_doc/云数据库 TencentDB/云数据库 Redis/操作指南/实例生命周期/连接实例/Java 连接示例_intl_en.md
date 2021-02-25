@@ -11,10 +11,10 @@ public class HelloRedis {
   public static void main(String[] args) {
         try:
             /**Enter your Redis instance private IP, port number, instance ID, and password in the following parameters*/
-            String host = "192.168.0.195";
+            String host = "192.xx.xx.195";
             int port = 6379;
            String instanceid = "crs-09xxxqv";
-            String password = "1234567q";
+            String password = "123ad6aq";
             // Connect to Redis
             Jedis jedis = new Jedis(host, port);
             // Authenticate
