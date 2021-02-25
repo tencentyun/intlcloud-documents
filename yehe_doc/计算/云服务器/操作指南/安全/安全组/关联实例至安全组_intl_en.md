@@ -11,8 +11,8 @@ You should already have an CVM instance created before starting.
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. In the left sidebar, select **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**. The Security Group page then appears.
 3. Select the desired region and find the security group.
-4. Under **Operations**, click **Manage Instances** that corresponds to the desired security group. The **Bind with Instance** page then appears.
-5. Click **Add Instances**. The **Add Instances** page then appears.
+4. Under **Operation**, click **Manage Instances** that corresponds to the desired security group. The **Bind with Instance** page then appears.
+5. Click **Add Instance**. The **Add Instance** page then appears.
 6. Select desired instances and click **OK** to add.
 
 ## See Also
