@@ -9,6 +9,7 @@
 - SNAT 规则中使用的子网不存在时，联动删除该 SNAT 规则。
 - SNAT 规则中使用的云服务器不存在时，联动从 SNAT 规则中删除该云服务器；若为 SNAT 规则中最后一台云服务器，则联动删除 SNAT 规则。
 - NAT 网关支持的资源限制如下表所示，您还可以查看 [VPC 其它产品的使用限制](https://intl.cloud.tencent.com/zh/document/product/215/38959)。
+
 <table>
 <tbody>
 <tr>
@@ -35,5 +36,4 @@
 <td >每个 NAT 网关的SNAT规则条目数</td>
 <td >200条</td>
 </tr>
-<tr>
 </tbody></table>
