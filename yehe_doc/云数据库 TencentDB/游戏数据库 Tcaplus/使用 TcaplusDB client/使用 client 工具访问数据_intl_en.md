@@ -20,7 +20,7 @@ After downloading the TcaplusServiceAPI installation package, you can [use the u
 
 1. After the upload, run the following command to decompress the installation package:
 ```
-tar -xf TcaplusServiceApi3.32.0.191008.x86_64_release_20190409.tar.gz -C tcaplus
+tar -xf TcaplusPbApi3.46.0.199033.x86_64_release_20201210.tar.gz -C tcaplus
 ```
 2. After the decompression, enter the `bin` directory in `tcaplus` and grant the tool executable permission:
 ```
@@ -32,20 +32,31 @@ chmod +x tcaplus_client
 
 
 ```
-# ./tcaplus_client
+## ./tcaplus_client
 --------------------------------------------------------------------------------
- invalid parameters, please start the client as following:
+  invalid parameters, please start the client as following:
+
     ./tcaplus_client -a app_id -z zone_id -s signature -d dir_server_url [-t table_name] [-l log_file.xml] [-T tdr_file.tdr] [-e execute_command]
-    the params in [] are optional, and theire order is not important.
-    -a(--ap_id)    App ID
+
+    the params in [] are optional, and their order is not important.
+
+    -a(--ap_id)    APP ID
+
     -z(--zone_id)    ZONE ID
-	-s(--signature)    PASSWORD
+
+    -s(--signature)    PASSWORD
+
     -d(--dir)    dir server addr
+
     -t(--table)    table to add
+
     -l(--log)    log file name that must be client_log.xml, and log class name be client
+
     -T(--tdr)    tdr filename 
-    -e(--execute)    content following should be with qoutes.
-    e.g. ./tcaplus_client -a 2 -z 3 -s "test@Password1" -d 172.xx.xx.181:9999 -T table_test.tdr 
+
+    -e(--execute)    SQL command need to execute, the content should be in quotes.
+
+    e.g. ./tcaplus_client -a 2 -z 3 -s "FE6533875C8385C3" -d 172.25.40.181:9999 -T table_test.tdr -e "select a, b from table where key = 1;" 
 --------------------------------------------------------------------------------
 ```
 
