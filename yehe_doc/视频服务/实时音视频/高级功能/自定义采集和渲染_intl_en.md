@@ -68,7 +68,7 @@ The buffer scheme involves feeding byte[] arrays to the TRTC SDK. Two YUV format
 | timestamp| long | Capturing time of video frames | If the value is 0, the SDK will set the field automatically, but please make sure that `sendCustomVideoData` is called at largely **regular** intervals. |
 | rotation | int| Leave it empty. | <li/>It is left empty by default. <li/>If you want to rotate the video, set it to 0, 90, 180, or 270. The SDK will rotate the video clockwise by the number of degrees set. For example, if 90 is passed in, an image in the portrait mode will switch to the landscape mode after rotation. |
 
-**2. Texture scheme: integration via this scheme requires knowledge of OpenGL. It delivers superior performance, especially when video resolution is high.
+**2. Texture scheme**: integration via this scheme requires knowledge of OpenGL. It delivers superior performance, especially when video resolution is high.
 
 The texture scheme involves passing OpenGL textures to the TRTC SDK. For this scheme to work, you need to set up an OpenGL environment in advance. As a result, integration via this scheme is quite demanding on developers. If you have no knowledge of OpenGL, we recommend that you use the sample code we provide, which is in the `customCapture` folder of the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo/customcapture/src/main/java/com/tencent/custom/customcapture). The folder contains the following items:
 
