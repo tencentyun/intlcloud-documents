@@ -26,10 +26,9 @@ CA 根证书机构
 
 ### 如何查看 SSL 证书链？
 1. 打开 Chrome 浏览器访问安装部署 SSL 证书成功的网站。此处以 Chrome 浏览器为例。
-2. 在浏览器地址栏单击![](https://main.qcloudimg.com/raw/f338bd1d67db54ba1928bc4fd37e3e13.png)小锁图标，并在弹出的信息卡片中，单击【证书】。如下图所示：
-![](https://main.qcloudimg.com/raw/cc32ffca699af20dda94cd81cb4ea86b.png)
-3. 在弹出的 “证书” 信息窗口中，单击【证书路径】，即可查看 SSL 证书链。如下图所示：
-![](https://main.qcloudimg.com/raw/1ee2b85767678fb184ead9aeb3b3726d.png)
+2. 在浏览器地址栏单击![](https://main.qcloudimg.com/raw/f338bd1d67db54ba1928bc4fd37e3e13.png)小锁图标，并在弹出的信息卡片中，单击【证书】。
+
+3. 在弹出的 “证书” 信息窗口中，单击【证书路径】，即可查看 SSL 证书链。
 
 
 
