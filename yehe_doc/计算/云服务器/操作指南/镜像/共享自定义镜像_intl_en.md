@@ -10,7 +10,7 @@
  - Images shared to other users do not occupy your own image quota.
  - Images shared to other users can be deleted, but you must cancel image sharing first. For more information, see [Cancel Image Sharing](/doc/product/213/7148). The obtained shared images can not be deleted.
  - Images can be shared to the same region with other accounts. To share the image to a different region, you need to copy it to the other region before sharing.
- - The obtained shared images cannot be shared with other users.
+ - The shared images that you obtain from others cannot be shared to the third users.
 
 ## Directions
 
