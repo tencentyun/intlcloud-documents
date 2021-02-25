@@ -132,7 +132,6 @@
 - Mac：新增系统音量变化回调，详见 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)。
 - Windows：新增支持跨屏指定区域进行屏幕分享。
 - Windows：新增窗口分享支持过滤指定窗口进行抗遮挡，详见 [TRTCCloud.addExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) 和 [TRTCCloud.removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)。
-- Windows：新增系统音量变化回调，详见 [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)。
 
 **优化**
 - iOS：支持 VODPlayer 和 trtc 一起使用，并且支持回声消除。
@@ -185,7 +184,7 @@
 - iOS：修复播放音效在低端 iPhone 或 iPad 上可能会失败的 BUG。
 - iOS：修复 iPad Pro 屏幕分享出的画面出现变形拉伸的问题。
 - iOS：修复 App 内屏幕贡献在用户拒绝权限之后，还会持续弹出几次屏幕录制权限申请提示的问题。
-- Windows：解决笔记本或者台式机在长时间休眠后，退房 [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) 事件通知不会回调的问题。
+- Windows：解决笔记本或者台式机在长时间休眠后，退房 onExitRoom 事件通知不会回调的问题。
 - Windows：修复在 Music 音质模式下，开启系统混音 [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) 后会导致漏回声的问题。
 - Windows：修复在快速调用 enterRoom 和 exitRoom 进退房的情况下，偶现的播放端无声的 BUG。
 - Windows：修复 SDK 对 Visual Stuido 2010 项目的编译兼容性问题。
