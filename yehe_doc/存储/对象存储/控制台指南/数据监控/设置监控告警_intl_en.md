@@ -2,15 +2,14 @@
 
 You can leverage the alarm policy feature of Cloud Monitor to set threshold-reaching alarms for COS monitoring metrics. An alarm policy must include the policy name, policy type, trigger condition, alarm object, and alarm notification template. You can create an alarm policy for COS as instructed below.
 
->?Tencent Cloud’s Cloud Monitor enables users to monitor cloud resources in real time and provides alarm services. Users can set alarm policies for COS monitoring metrics to query the alarm history and receive alarm notifications.
+>?Tencent Cloud’s Cloud Monitor enables users to monitor cloud resources in real time and provides alarm services. Users can set alarm policies for COS monitoring metrics to query the alarm history and receive alarm notifications. For more information, please see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
 ## Directions
 
-1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Overview** in the left sidebar. Alternatively, you can click the name of the bucket in **Bucket List**, click the **Overview** tab, and click **Configure Alarm Policy** in the **Alarm Configuration** area.
-
-2. Click **Create** and configure the alarm policy. The configurations are described as follows:
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5). On the **Overview** page, click **Configure Alarm Policy** in the **Alarm Configuration** area.
+>?**Alarm Configuration** can also be found on the **Overview** page of each bucket.
+2. Click **Create** on the page that is displayed and configure an alarm policy. The configuration items are as follows:
 ![](https://main.qcloudimg.com/raw/b8340b9590b8204ab082f28c096417e2.png)
-
 <table>
   <tr>
     <th>Configuration Type</th>
@@ -64,12 +63,12 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
   </tr>
   <tr>
     <td>Trigger condition (choosing <b>Select template</b>)</td>
-    <td>Select a configured template in the drop-down list. For more information about the configurations, please see <a href="https://intl.cloud.tencent.com/document/product/248/32817">Configuring trigger condition templates</a>. If the newly created template is not displayed, click the Refresh icon on the right.</td>
+    <td>Select a configured template in the drop-down list. For more information about the configurations, please see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring trigger condition templates</a>. If the newly created template is not displayed, click the Refresh icon on the right.</td>
   </tr>
    <tr>
         <td >Configure alarm notification</td>
         <td>Notification template</td>
-        <td>You can select a preset notification template or customize one. Up to 3 notification templates can be bound to each alarm policy.</td>
+        <td>You can select a preset notification template or customize one. Up to 3 notification templates can be bound to each alarm policy. For more information, please see <a href="https://cloud.tencent.com/document/product/248/48955">Notification Template</a>.</td>
     </tr>
 		<tr>
       <td>Advanced configuration</td>
