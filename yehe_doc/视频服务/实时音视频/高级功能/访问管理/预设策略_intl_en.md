@@ -12,7 +12,7 @@ TRTC offers the following preset policies currently.
 ## Examples of Using Preset Policies
 
 
-### Creating a sub-account with the read-and-write permission[](id:new)
+### Creating a sub-account with the read-and-write permission
 
 1. Go to the [User List](https://console.cloud.tencent.com/cam) page of the CAM console using a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
 2. On the "Create User" page, click **Custom Create** to go to the "Create Sub-user" page.
@@ -62,13 +62,13 @@ TRTC offers the following preset policies currently.
 </table>
 4. Provide the login link and security credentials to the party you want to authorize access, who will be able to use the sub-account to perform all kinds of TRTC operations, including visiting the TRTC console, calling TRTC server APIs, etc.
 
-### Granting read-and-write permission to existing sub-account[](id:FullRW)
+### Granting read-and-write permission to existing sub-account
 
 1. Go to the **[User List](https://console.cloud.tencent.com/cam)** of the CAM console using a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the target sub-account.
 2. On the **User Details** page, click **Add Policy** under the **Permissions** tab. If the sub-account already has permissions, click **Associate Policy**.
 3. Click **Select policies from the policy list**, search for and check the preset policy `QcloudTRTCFullAccess`, and complete the authorization as prompted.
 
-### Revoke the read-and-write permission of a sub-account[](id:remove)
+### Revoke the read-and-write permission of a sub-account
 
 
 1. Go to the **[User List](https://console.cloud.tencent.com/cam)** of the CAM console using a Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click the target sub-account.
