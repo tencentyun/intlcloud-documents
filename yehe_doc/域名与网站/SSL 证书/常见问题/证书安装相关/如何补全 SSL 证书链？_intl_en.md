@@ -27,9 +27,9 @@ Intermediate CA certificate
 ### How can I view the SSL certificate chain?
 1. Open a browser to access the website that has successfully installed and deployed the SSL certificate. Chrome is used as an example herein.
 2. Click ![](https://main.qcloudimg.com/raw/f338bd1d67db54ba1928bc4fd37e3e13.png) in the browser address box, and click **Certificate** on the page that is displayed, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/cc32ffca699af20dda94cd81cb4ea86b.png)
+
 3. On the **Certificate** page, click **Certificate Path** to view the SSL certificate chain, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/1ee2b85767678fb184ead9aeb3b3726d.png)
+
 
 
 
