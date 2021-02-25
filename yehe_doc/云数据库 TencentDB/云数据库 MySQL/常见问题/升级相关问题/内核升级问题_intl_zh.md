@@ -14,7 +14,7 @@
 
 
 ### 如何查看内核小版本？
-1. 登录 [云服务器](https://intl.cloud.tencent.com/document/product/236/3130)，执行如下命令登录到 MySQL 实例，详细介绍可参见 [从 Linux 云服务器连接 MySQL](https://intl.cloud.tencent.com/document/product/236/37788)。
+1. 登录 [云服务器](https://intl.cloud.tencent.com/zh/document/product/213/10517)，执行如下命令登录到 MySQL 实例，详细介绍可参见 [从 Linux 云服务器连接 MySQL](https://intl.cloud.tencent.com/document/product/236/37788)。
  内网访问时：
 ```
 mysql -h hostname -u username -p
