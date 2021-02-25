@@ -8,7 +8,7 @@ VPN 网关是 VPN 连接服务的功能实例，因此在使用 VPN 连接实现
 2. 在左侧目录中单击【VPN 连接】>【VPN 网关】，进入管理页。
 3. 在VPN 网关管理页面，单击【+新建】。
 4. 在弹出的【新建VPN网关】对话框中，配置如下网关参数。
-<img src="https://main.qcloudimg.com/raw/52f055358ccea8f1679ddb49a49b2d40.png" width="50%" />
+
 <table>
 <tr>
 <th>参数名称</th>
@@ -44,4 +44,4 @@ VPN 网关是 VPN 连接服务的功能实例，因此在使用 VPN 连接实现
 </tr>
 </table>
 5. 完成网关参数设置后，单击【创建】启动 VPN 网关的创建，此时【状态】为【创建中】，等待约1～2分钟，创建成功的 VPN 网关状态为【运行中】，系统为 VPN 网关分配一个公网 IP。
-<img src="https://main.qcloudimg.com/raw/880187e214d253d4fac8fd135b838ebf.png">
+
