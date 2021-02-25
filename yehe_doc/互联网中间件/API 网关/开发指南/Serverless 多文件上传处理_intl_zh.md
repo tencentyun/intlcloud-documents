@@ -21,7 +21,8 @@
 "use strict";
 const stream = require("stream");
 const Busboy = require("busboy");
-/** 处理用户上传 （POST） */
+ 
+ /** 处理用户上传 （POST） */
 const handlePost = (event) => {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({ headers: event.headers });
@@ -51,7 +52,8 @@ const handlePost = (event) => {
         body: html,
       });
     });
-    /**
+     
+ /**
      * busboy 需要 stream pipe 的方式来进行处理，
      * 我们将 body 解码为 buffer后，
      * 转换为 stream，最终 pipe 给 busbody
@@ -62,7 +64,8 @@ const handlePost = (event) => {
     bufferStream.pipe(busboy);
   });
 };
-/** 返回静态文件 */
+
+ /** 返回静态文件 */
 const handleGet = (event) => {
   const html = `<html><head></head><body>
     <form method="POST" enctype="multipart/form-data">
@@ -80,7 +83,8 @@ const handleGet = (event) => {
     body: html,
   };
 };
-/** 云函数入口函数 */
+
+ /** 云函数入口函数 */
 exports.main_handler = async (event, context) => {
   const method = event.httpMethod;
   /** 当请求为 POST 请求时，我们处理用户的 multipart/form-data，并生成展示上传结果的页面 */
