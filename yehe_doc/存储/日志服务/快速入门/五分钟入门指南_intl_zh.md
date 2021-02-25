@@ -21,9 +21,9 @@
 #### 2.1 判断网络是否可达
 
 安装 LogListener 要求日志源机器的网络与日志服务的可用地域网络互通（腾讯云服务器 CVM 默认内网访问日志服务）。
-您可以执行以下命令检查网络连通性：
+您可以执行以下命令检查网络连通性，其中`<region>` 为日志服务所在地域简称，具体地域信息请参阅 [可用地域](https://intl.cloud.tencent.com/document/product/614/18940) 文档。
 ```shell
-telnet .cls.tencentyun.com 80
+telnet <region 简称>.cls.tencentyun.com 80
 ```
 
 #### 2.2 查看（或创建）密钥对
@@ -112,7 +112,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 #### 6.2 检索日志
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls) 后，在左侧导航栏单击【日志检索】，进入到日志检索页。
-选择检索的时间范围和日志主题，然后在输入框填写检索语法（语法支持关键词检索、模糊检索、范围检索等方式，详情参考 [语法规则](https://intl.cloud.tencent.com/document/product/614/39594)，最后单击【搜索】，即可检索日志。
+选择检索的时间范围和日志主题，然后在输入框填写检索语法（语法支持关键词检索、模糊检索、范围检索等方式，详情参考 [语法规则](https://intl.cloud.tencent.com/document/product/614/39594)），最后单击【搜索】，即可检索日志。
 
 - 示例一：查询失败的日志
   检索语句：`status:fail`
