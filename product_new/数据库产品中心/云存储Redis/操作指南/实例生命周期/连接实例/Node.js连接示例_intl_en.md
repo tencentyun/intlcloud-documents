@@ -8,10 +8,10 @@ Run the following command to install node-redis:
 var redis = require("redis");
 
 /**For the following parameters, enter your Redis instance's private IP, port number, instance ID and password*/
-var host = "192.168.0.2",
+var host = "192.xx.xx.195",
 port = "6379",
 instanceid = "c532952f-55dc-4c22-a941-63057e560788",
-pwd = "1234567q";
+pwd = "123ad6aq";
 // Connect to Redis
 var client  = redis.createClient(port, host, {detect_buffers: true});
 // Redis connection error
