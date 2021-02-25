@@ -70,7 +70,7 @@ redis-restore supports importing Redis backup files (in RDB format) on Redis 2.8
 
 ## Backing up Data Through redis-dump
 redis-dump supports backing up Redis data into RDB files and incremental data into AOF files.
->TencentDB for Redis currently does not support backing up data through redis-dump. You can back up and download data in the TencentDB for Redis Console or through APIs. However, you can use redis-dump to back up your self-built Redis instances.
+>?TencentDB for Redis currently does not support backing up data through redis-dump. You can back up and download data in the TencentDB for Redis Console or through APIs. However, you can use redis-dump to back up your self-built Redis instances.
 
 **Parameter description:**
 - -n: number of concurrent write tasks. You are recommended to leave it empty or set it to CPU core quantity * 2.
