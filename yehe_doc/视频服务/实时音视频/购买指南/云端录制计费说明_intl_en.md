@@ -1,11 +1,11 @@
 
 >!
->- For Tencent Cloud accounts that created their first TRTC applications on or after July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in this document.
->- For Tencent Cloud accounts that created TRTC applications before July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in [Billing Details > LVB Recording](https://intl.cloud.tencent.com/document/product/267/2818#lvb-recording).
->- This document only describes the billing rules for TRTC on-cloud recording. Recording files are saved on the VOD platform by default, which will charge **storage fees** and **viewing fees** based on your usage. For more information, please see [On-cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426#applicable-fees).
->- If you use the LVB On-Cloud MixTranscoding feature before enabling on-cloud recording, additional transcoding fees will be incurred. For details, see [Billing Details > Standard transcoding](https://intl.cloud.tencent.com/document/product/267/2818#standard-transcoding).
+- For Tencent Cloud accounts that created their first TRTC applications on or after July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in this document.
+- For Tencent Cloud accounts that created TRTC applications before July 1, 2020, on-cloud recording fees will be charged according to the billing rules described in [CSS > CSS Recording](https://intl.cloud.tencent.com/document/product/267/39605).
+>- This document only describes the billing rules for TRTC on-cloud recording. Recording files are saved on the VOD platform by default, which will charge **storage fees** and **viewing fees** based on your usage. For more information, please see [On-cloud Recording and Playback > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35426).
+>- If you use the [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) feature before enabling on-cloud recording, additional transcoding fees will be incurred. For details, see [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929).
 
-<span id="Billing_items"></span>
+[](id:Billing_items)
 ## Usage Calculation Method
 
 Tencent Cloud calculates an account’s on-cloud recording usage by adding up the **duration** of all recording files under the account. There are two types of recording durations: **video duration** and **audio duration**.
@@ -30,7 +30,7 @@ A video duration refers to the duration containing videos in a recording output 
 ### Audio duration
 An audio duration refers to the duration containing only audio in a recording output file.
 
-<span id="Fixed_price"></span>
+[](id:Fixed_price)
 ## Service Pricing
 
 Prices for TRTC on-cloud recording are listed below:
@@ -42,13 +42,13 @@ Prices for TRTC on-cloud recording are listed below:
 |HD|1.99|
 |FHD|7.499|
 
-<span id="Billing_method"></span>
+[](id:Billing_method)
 ## Billing Mode
 Only **pay-as-you-go daily billing** is supported. Fees incurred on a day are deducted at 10 AM the next day.
 
->!On-cloud recording works only when **LVB** and **VOD** are activated. Therefore, if your LVB or VOD service is suspended due to overdue payments, your on-cloud recording task will fail.
+>!On-cloud recording works only when **CSS** and **VOD** are activated. Therefore, if your CSS or VOD service is suspended due to overdue payments, your on-cloud recording task will fail.
 
-<span id="Billing_examples"></span>
+[](id:Billing_examples)
 ## Billing Examples
 >!
 >- The examples below use list prices. However, if you have signed a contract with Tencent Cloud sales, the prices specified in the contract will be applied instead.
@@ -73,8 +73,10 @@ If On-Cloud MixTranscoding is enabled, the streams of A, B, and C will be mixed 
 
 An additional fee will be charged for the use of On-Cloud MixTranscoding. For details, see [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929).
 
-## Related Documentation
+## Documentation
 - [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
 - [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
 - [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614)
+- [On-Cloud Recording Billing](https://intl.cloud.tencent.com/document/product/647/38385)
 - [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
+- [Notes for Arrears Processing](https://intl.cloud.tencent.com/document/product/647/34611)
