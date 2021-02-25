@@ -1,20 +1,17 @@
 ## 작업 시나리오
 >?스토리지 용량을 절약하기 위해 TencentDB for MySQL의 물리 백업과 로직 백업 파일은 먼저 qpress 압축을 거친 다음 xbstream(Percona의 패킹/언패킹 툴)으로 압축 및 패킹(Packing)합니다.
->
-오픈 소스 소프트웨어 Percona Xtrabackup은 데이터베이스의 백업 복구 시에 사용됩니다. 본 문서는 XtraBackup 툴로 MySQL 로직 백업 파일을 다른 호스트에 있는 자체 구축 데이터베이스에 복구하는 방법에 관해 소개합니다.
-- XtraBackup은 Linux 플랫폼에서만 지원되며, Windows 플랫폼은 지원하지 않습니다.
-- Windows 플랫폼의 데이터 복구는 [TCCLI로 데이터 마이그레이션](https://intl.cloud.tencent.com/document/product/236/8464)을 참조 바랍니다.
 
-## 전제 조건
-- XtraBackup 툴을 다운로드 및 설치합니다.
-  다운로드 주소는 [Percona XtraBackup 공식 홈페이지](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)를 이용 바라며, Percona XtraBackup 2.4.6 및 그 이상의 버전을 선택하시기 바랍니다. 설치에 대한 자세한 내용은 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)를 참조 바랍니다.
-- 지원하는 인스턴스 버전: MySQL 고가용성 버전과 파이낸스 버전.
+TencentDB for MySQL은 [로직 백업](https://intl.cloud.tencent.com/document/product/236/37796) 방식을 지원합니다. 사용자는 콘솔 수동 백업을 통해 로직 백업 파일을 생성하고, 전체 인스턴스/샤딩의 로직 백업 파일을 다운로드하여 가져올 수 있습니다. 본 문서는 로직 백업 파일로 수동 복구하는 방법을 소개합니다.
+
+- 본문에서 소개하는 복구 방식은 Linux 플랫폼에서만 지원되며, 현재 Windows 플랫폼은 지원하지 않습니다.
+- Windows 플랫폼의 데이터 복구는 [TCCLI로 데이터 마이그레이션](https://intl.cloud.tencent.com/document/product/236/8464)을 참조 바랍니다.
+- 지원하는 인스턴스 버전: MySQL 고가용성 버전과 파이낸스 버전
 
 ## 작업 순서
 ### 1단계: 백업 파일 다운로드
-1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤, Instance List에서 인스턴스 명칭 혹은 'Operation' 열의 [Manage]를 클릭하여 인스턴스 관리 페이지에 접속합니다.
-2. 인스턴스 관리 웹페이지에서 [Backup and Restore]>[Data Backup List] 페이지를 선택하고, 다운로드하려는 백업을 선택하여 'Operation' 열의 [Download]를 클릭합니다.
-3. 팝업된 대화 상자에서 권장한 대로 다운로드 주소를 복제하고, [CDB가 속한 VPC의 CVM(Linux 시스템)에 로그인](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)하여 wget 명령어로 내부 네트워크 고속 다운로드를 사용하면 더욱더 효율적입니다.
+1. [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 뒤, 인스턴스 리스트에서 인스턴스 명칭 혹은 '작업' 열의 [관리]를 클릭하여 인스턴스 관리 페이지에 접속합니다.
+2. 인스턴스 관리 페이지에서 [백업 복구]>[데이터 백업 리스트] 페이지를 선택하고, 다운로드하려는 백업을 선택하여 '작업' 열의 [다운로드]를 클릭합니다.
+3. 팝업 대화 상자에서 권장한 대로 다운로드 주소를 복사하고, [CDB가 속한 VPC의 CVM(Linux 시스템)](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)에 로그인하여 wget 명령어로 내부 네트워크 고속 다운로드를 사용하면 보다 효율적입니다.
 >?
 >- 또한 [로컬 다운로드]를 선택하여 직접 다운로드할 수 있지만, 다소 긴 시간이 소요될 수 있습니다.
 >- wget 명령어 형식: wget -c '백업 파일 다운로드 주소' -O 사용자 정의 파일 이름.xb
@@ -26,6 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### 2단계: 백업 파일 언패킹
 xbstream을 사용해 백업 파일을 언패킹합니다.
+>? xbstream 툴 다운로드 주소는 [Percona XtraBackup 공식 홈페이지](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)를 이용 바라며, Percona XtraBackup 2.4.6 및 그 이상의 버전을 선택하시기 바랍니다. 설치에 대한 자세한 내용은 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)를 참조 바랍니다.
 ```
 xbstream -x < test0.xb
 ```
