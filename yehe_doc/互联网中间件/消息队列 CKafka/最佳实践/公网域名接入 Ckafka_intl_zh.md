@@ -110,15 +110,11 @@ Properties props = new Properties();
 >- System.setProperty("java.security.auth.login.config", "/etc/ckafka_client_jaas.conf");
 >- `ckafka_client_jaas.conf` 文件的内容如下：
 >
->- ```java
->  KafkaClient {
->  org.apache.kafka.common.security.plain.PlainLoginModule required
->  username="yourinstance#yourusername"
->  password="yourpassword";
->  }; 
->  ```
->```
->
->```
+```java
+KafkaClient {
+	org.apache.kafka.common.security.plain.PlainLoginModule required
+	username="yourinstance#yourusername"
+	password="yourpassword";
+}; 
 
 
