@@ -70,6 +70,7 @@ redis-restore 工具支持将 Redis 的备份文件（RDB）导入到指定 Redi
 
 ## 使用 redis-dump 备份数据
 redis-dump 支持将 Redis 的数据备份成 RDB 文件，同时还支持备份 AOF 增量数据。
+>?
 >腾讯云数据库 Redis 暂时不支持使用 redis-dump 工具进行备份，您可以使用 Redis 数据库控制台或者 API 进行数据备份和下载；以及使用 redis-dump 工具来备份您自建的 Redis 实例。
 
 **参数说明**：
