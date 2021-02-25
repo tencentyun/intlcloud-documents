@@ -1,3 +1,9 @@
+### Version 8.4 Released on February 7, 2021
+- iOS & Android: fixed the verification safety issue.
+- Android: supported preview with multiple audio tracks.
+- iOS: optimized pre-processing performance and enhanced stability.
+- iOS: fixed the problem with the callback of facial feature coordinates for beauty filter application.
+
 ### Version 8.3 Released on January 15, 2021
 - Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
 - Android: fixed multiple crash issues.
@@ -222,7 +228,7 @@ iOS & Android: improved the performance of the Enterprise SDK: enabled image ret
 - iOS & Android: fixed a number of bugs.
 - Android: optimized the UGSV uploading process by integrating COS into UGCPublish.
 
-### Version 3.4
+### v3.4
 - iOS & Android: added actions such as deleting existing video segments, changing aspect ratio, and adjusting focal length in UGSV shooting.
 - iOS & Android: supported adding watermarks at the end of videos.
 - iOS: fixed the compatibility issue with iOS 11.

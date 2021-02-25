@@ -1,14 +1,29 @@
+## February 2021
+<table>
+<tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr><tr>
+<td>Version 8.4</td>
+<td ><ul style="margin:0;">
+  <li/>iOS & Android: fixed the verification safety issue.
+  <li/>Android: supported preview with multiple audio tracks.
+  <li/>iOS: optimized pre-processing performance and enhanced stability.
+  <li/>iOS: fixed the problem with the callback of facial feature coordinates for beauty filter application.
+</td>
+ <td>2021-02-07</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
+</tr></table>
+
 ## January 2021
 <table>
 <tr><th width="20%">Update</th><th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr><tr>
 <td>Version 8.3</td>
 <td ><ul style="margin:0;">
-  <li>Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
-  <li>Android: fixed multiple crash issues.
-  <li>iOS: fixed the problem of the SDK crashing when playing back videos in slow motion.
-  <li>iOS: fixed the problem of black screens during image transition in some operations.
-  <li>iOS: fixed some crash issues caused by incompatibility.
+  <li/>Android: fixed the problem of failure to splice together video segments if users delete segments during shooting.
+	<li/> Android: fixed multiple crash issues.
+	<li/>iOS: fixed the problem of the SDK crashing when playing back videos in slow motion.
+	<li/>iOS: fixed the problem of black screens during image transition in some operations.
+	<li/>iOS: fixed some crash issues caused by incompatibility.
 </td>
  <td>2021-01-15</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
@@ -20,23 +35,23 @@
 </tr><tr>
 <td>Version 8.2</td>
 <td ><ul style="margin:0;">
-  <li>Android: fixed the bug of the green screen feature no longer functioning after camera switch.
-  <li>Android: fixed the occasional instability of UGSV.
-  <li>iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
-  <li>iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
-  <li>iOS: fixed the occasional instability of the superplayer.
+   <li/> Android: fixed the bug of the green screen feature no longer functioning after camera switch.
+	 <li/> Android: fixed the occasional instability of UGSV.
+	 <li/> iOS: fixed the bug of occasional incorrect aspect ratio after users rotate or flip a video.
+	 <li/> iOS: fixed the bug of video composition failure after the landscape mode is enabled during shooting.
+	 <li/> iOS: fixed the occasional instability of the superplayer.
 </td>
  <td>2020-12-24</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr><tr>
 <td>Version 8.1</td>
 <td ><ul style="margin:0;">
-  <li>Android: improved the image quality and clarity of UGSV.
-  <li>Android: changed the type of beauty filter APIs from `int` to `float`.
-  <li>Android: fixed the problem of a value indicating failure being returned after shooting pauses.
-  <li>Android: fixed some crash and compatibility issues. 
+  <li/>Android: improved the image quality and clarity of UGSV.
+  <li/>Android: changed the type of beauty filter APIs from `int` to `float`.
+  <li/>Android: fixed the problem of a value indicating failure being returned after shooting pauses.
+  <li/>Android: fixed some crash and compatibility issues. 
 </td>
- <td>December 3, 2020</td> 
+ <td>2020-12-03</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
 </tr></table>
 
@@ -46,13 +61,13 @@
 <tr><th width="20%">Update</th><th width="50%">Description</th> <th width="15%">Release Date</th> <th width="15%">Document</th></tr><tr>
 <td>Version 8.0</td>
 <td ><ul style="margin:0;">
-  <li>iOS: fixed the problem of apps occasionally freezing after multiple stickers are added.
-  <li>iOS: fixed the problem of apps quitting unexpectedly during bubble subtitle editing.
-  <li>Android: supported the uploading of thumbnails on Android 9.0 and above.
-  <li>Android: fixed the problem of out-of-sync videos in triple split screens after users switch apps to the background and then back to the foreground.
-  <li>Android: fixed the UGCKit problem of occasional black screens when users preview compressed videos.
-  <li>Android: fixed the problem of failure to set volume with UGCKit in video editing.
-  <li>Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
+  <li/>iOS: fixed the problem of apps occasionally freezing after multiple stickers are added.
+  <li/>iOS: fixed the problem of apps quitting unexpectedly during bubble subtitle editing.
+  <li/>Android: supported the uploading of thumbnails on Android 9.0 and above.
+  <li/>Android: fixed the problem of out-of-sync videos in triple split screens after users switch apps to the background and then back to the foreground.
+  <li/>Android: fixed the UGCKit problem of occasional black screens when users preview compressed videos.
+  <li/>Android: fixed the problem of failure to set volume with UGCKit in video editing.
+  <li/>Android: fixed the UGCKit problem of the Undo button occasionally not showing on the actions UI.
 </td>
  <td>2020-11-13</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/1069/37914">SDK download</a></td>
@@ -114,7 +129,7 @@
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -138,7 +153,7 @@
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -167,7 +182,7 @@ iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -189,7 +204,7 @@ iOS & Android: optimized visual effect APIs such as filters and green screen key
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -223,7 +238,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -249,7 +264,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -279,7 +294,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -298,7 +313,7 @@ iOS & Android: fixed a number of bugs.
 <tr>
 <td>Version 6.6 Patch</td>
 <td ><ul style="margin:0;">
-iOS & Android: fixed a number of bugs.
+<li > iOS & Android: fixed a number of bugs.
 <li > Android: fixed the memory usage and library conflict problems of the Enterprise Edition SDK.
 <li > iOS: made the SDK supported on iOS 13.
 </td>
@@ -316,7 +331,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -340,7 +355,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -363,7 +378,7 @@ iOS & Android: fixed a number of bugs.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -385,7 +400,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -409,7 +424,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -439,7 +454,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -469,7 +484,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -502,7 +517,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -536,7 +551,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -563,7 +578,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -602,7 +617,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -628,7 +643,7 @@ Fixed a number of bugs reported recently, and enhanced the stability of the SDK.
 <th width="20%">Update</th>
 <th width="50%">Description</th>
  <th width=15%>Release Date</th>  
-<th width="15%">Related Documents</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
