@@ -15,7 +15,7 @@ This document describes how to apply for the SDKs of voice services for Tencent 
    - Project: **DEFAULT PROJECT** is selected by default. You can also select the created projects. For how to create a project, see [Project Management](https://intl.cloud.tencent.com/document/product/378/34726).
    - Tag: click **Add** to add tags. For how to create a tag, see [Tag Management](#test).
 4. Enable or disable the **Real-time Voice Service**.
- **Real-time Voice Service** is billed by voice duration. You can enable it as needed and purchase in the [Purchase Page](https://buy.cloud.tencent.com/gamegme).
+ **Real-time Voice Service** is billed by voice duration. You can enable it as needed and purchase in the [Purchase Page](https://intl.cloud.tencent.com/document/product/607/36276).
 ![](https://main.qcloudimg.com/raw/6360fc755f9b7f3893064b719a71da31.png)
 5. Enable or disable the **Speech-to-Text Service**.
 You can enable the **Speech-to-Text Service** as needed and select the supported language mode. The two modes have different prices. For details, see [Billing Rules](https://intl.cloud.tencent.com/document/product/607/36276).
