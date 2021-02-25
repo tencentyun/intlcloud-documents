@@ -15,7 +15,7 @@
    - 所属项目：默认为腾讯云的“默认项目”，同时您也可以创建项目进行选择，详情可参见 [新建项目](https://intl.cloud.tencent.com/document/product/378/34726)。
    - 标签：单击“+添加”可进行添加标签，标签新增详情可参见 [标签管理](#test)。
 4. 开启或关闭**实时语音服务**。
- **实时语音服务**按语音时长计费，您可根据需求进行开启，并到 [购买页](https://buy.cloud.tencent.com/gamegme) 进行购买。
+ **实时语音服务**按语音时长计费，您可根据需求进行开启，并到 [购买页](https://intl.cloud.tencent.com/zh/document/product/607/36276) 进行购买。
 ![](https://main.qcloudimg.com/raw/6360fc755f9b7f3893064b719a71da31.png)
 5. 开启或关闭**语音消息及转文本服务**。
 您可根据需求进行开启并选择对应转文本支持语言的模式，不同模式单价不同，详情可参见 [计费规则](https://intl.cloud.tencent.com/document/product/607/36276)。
