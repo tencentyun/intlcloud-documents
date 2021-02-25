@@ -9,7 +9,7 @@ Tencent Cloud recycle bin provides a CVM instance repossession mechanism as foll
  - **Retention period**: instance terminated by the user will be retained in the recycle bin for 2 hours.
  - **Expiry processing**: if instances are not renewed before the retention period ends, the system will release instance resources and automatically [terminate instances](https://intl.cloud.tencent.com/document/product/213/4930), which cannot be recovered. Elastic IPs bound to these instances are also released.
  - **Mounting relationship**: after the instance enters the recycle bin, its mounting relationship with Cloud Load Balancer, Cloud Block Storage, and Classiclink will **not be automatically terminated**.
- - **Operation restriction**: instances in the recycle bin can only be [restored after renewal](https://intl.cloud.tencent.com/document/product/213/6143) or [terminated](https://intl.cloud.tencent.com/document/product/213/4930).
+ - **Operation restriction**: instances in the recycle bin can only be [restored after renewal](https://intl.cloud.tencent.com/document/product/213/6143) or [terminated](https://intl.cloud.tencent.com/document/product/213/4930). Some instance types support [creating custom images](https://intl.cloud.tencent.com/document/product/213/4942)
  
 >! 
 > - You cannot restore pay-as-you-go instances from the recycle bin if your account is in arrears. Please renew the payment first.
