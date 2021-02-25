@@ -27,7 +27,7 @@
 
 ## 4. 控制台界面
 以下为云数据库 MySQL 控制台总览页面：
-![](https://main.qcloudimg.com/raw/b001b2fe3f6829d892c64a279cf40d5b.png)
+![](https://main.qcloudimg.com/raw/9a626ab563ce6f947e0b94cf0f660cd2.png)
 
 -----
 
@@ -41,6 +41,7 @@
 - [管理灾备实例](https://intl.cloud.tencent.com/document/product/236/7272)
 - [销毁实例](https://intl.cloud.tencent.com/document/product/236/31895)
 - [创建帐号](https://intl.cloud.tencent.com/document/product/236/31900)
+- [数据库管理（DMC）](https://intl.cloud.tencent.com/document/product/236/39221)
 - [设置实例参数](https://intl.cloud.tencent.com/document/product/236/35793)
 - [使用参数模版](https://intl.cloud.tencent.com/document/product/236/31906) 
 - [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)
@@ -56,7 +57,7 @@
 ## 6. 新手常见问题
 - [创建云数据库 MySQL 需要多长时间？](https://intl.cloud.tencent.com/document/product/236/11274)
 - [如何连接云数据库 MySQL 实例？](https://intl.cloud.tencent.com/document/product/236/37783)
-- [如何查看内外网地址？](https://intl.cloud.tencent.com/document/product/236/37783#.E5.A6.82.E4.BD.95.E6.9F.A5.E7.9C.8B.E5.86.85.E5.A4.96.E7.BD.91.E5.9C.B0.E5.9D.80.EF.BC.9F)
+- [如何查看内外网地址？](https://intl.cloud.tencent.com/document/product/236/37783)
 - [使用云数据库 MySQL 的注意事项？](https://intl.cloud.tencent.com/document/product/236/11268)
 - [帐号误删与忘记密码怎么办？](https://intl.cloud.tencent.com/document/product/236/11274)
 - [数据库买错了，如何退货？](https://intl.cloud.tencent.com/document/product/236/11274)
@@ -66,5 +67,6 @@
 
 ## 7. 反馈与建议
 使用云数据库 MySQL 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
-- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
+- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+

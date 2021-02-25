@@ -12,8 +12,9 @@
 >- 实例升级至最新内核小版本后无法降级。
 >- 数据库版本升级、配置调整等操作，会引起 MySQL 实例秒级别的连接闪断，请确保业务具备重连机制。
 
+
 ### 如何查看内核小版本？
-1. 登录 [云服务器](https://intl.cloud.tencent.com/document/product/213/10517)，执行如下命令登录到 MySQL 实例，详细介绍可参见 [从 Linux 云服务器访问 MySQL](https://intl.cloud.tencent.com/document/product/236/3130)。
+1. 登录 [云服务器](https://cloud.tencent.com/document/product/213/2936)，执行如下命令登录到 MySQL 实例，详细介绍可参见 [从 Linux 云服务器连接 MySQL](https://intl.cloud.tencent.com/document/product/236/37788)。
  内网访问时：
 ```
 mysql -h hostname -u username -p

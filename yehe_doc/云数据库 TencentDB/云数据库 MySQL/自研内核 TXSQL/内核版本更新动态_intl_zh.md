@@ -7,7 +7,6 @@
 - 支持自动 kill 空闲任务，减少资源冲突，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
 - 支持透明数据加密功能。
 
-
 #### 官方 bug 修复：
 - 修复由于 relay_log_pos & master_log_pos 位点不一致导致切换失败的问题。
 - 修复异步落盘所引起的数据文件出错的问题。
@@ -15,6 +14,28 @@
 - 修复全文索引中，词组查找（phrase search）在多字节字符集下存在的崩溃问题。
 
 ## MySQL 5.7
+### 20200930
+#### 性能优化：
+- 备份锁优化 
+FLUSH TABLES WITH READ LOCK 的上锁备份方式导致整个数据库不可提供服务，该版本中提供了轻量级的数据备份加锁方式。
+- 大表 drop table 优化 
+快速清理自适应哈希的优化（innodb_fast_ahi_cleanup_for_drop_table 控制），可以大幅度缩短 drop 大表时，清理自适应哈希索引的耗时。
+
+#### 官方 bug 修复：
+- 修复 MySQL 官方 truncate table 时，ibuf 访问导致 crash 的问题。
+- 修复有快速加列后的冷备无法拉起的问题。
+- 修复频繁释放 innodb 内存表对象，导致性能下降的问题。
+- 修复 left join 语句下 const 提前计算，导致的查询正确性问题。
+- 修复 sql 限流和 query rewrite 插件因为 Rule 类名冲突，导致 core 的问题。
+- 修复多个 session 下 insert on duplicate key update 语句的并发更新问题。
+- 修复针对 auto_increment_increment 并发插入，导致 duplicate key error 失败的问题。
+- 修复 innodb 内存对象淘汰触发宕机的问题。
+- 修复热点更新功能的并发安全问题。
+- 修复升级 jemalloc 版本至5.2.1，开启线程池触发 coredump 的问题。
+- 修复 fwrite 无错误处理，导致审计日志不完整的问题。
+- 修复 mysqld_safe以root 用户启动时，不打印日志的问题。
+- 修复 alter table exchange partition 导致 ddl log 文件增长的问题。
+
 ### 20200701
 #### 官方 bug 修复：
 - 修复 INNOBASE_SHARE index mapping 错误问题。
@@ -86,7 +107,7 @@
 - 修复 binlog 缓存文件空间不足时造成复制中断的问题。
 - 修复 fsync 返回 EIO，反复尝试陷入死循环的问题。
 - 修复 GTID 空洞造成复制中断且不能恢复的问题。
-  
+   
 
 ### 20180918
 #### 新特性：
@@ -94,11 +115,11 @@
 - Memory 引擎自动转换为 InnoDB 引擎：如果全局变量 cdb_convert_memory_to_innodb 为 ON，则创建/修改表时会将表引擎从 Memory 转换为 InnoDB。
 - 支持隐藏索引功能。
 - 支持 Jemalloc 内存管理，替换 jlibc 内存管理模块，降低内存占用，提高内存分配效率。
-  
+   
 #### 性能优化：
 - binlog 切换优化，减少 rotate 持有锁时间，进而提升系统性能。
 - 提升 Crash Recovery 时的恢复速度。
-  
+    
 #### 官方 bug 修复：
 - 修复由于主备切换而引起 event 失效的问题。
 - 修复 REPLAY LOG RECORD 所引起的 Crash 问题。
@@ -109,16 +130,16 @@
 #### 新特性：
 - 支持 SQL 审计功能。
 - 支持表级别的并行复制，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-  
+   
 #### 性能优化：
 - slave 实例的锁优化，提高 slave 实例同步性能。   
 - select ... limit 的下推优化。
-  
+   
 #### 官方 bug 修复：
 - 修复由于 relay_log_pos & master_log_pos 位点不一致导致切换失败的问题。
 - 修复 Crash on UPDATE ON DUPLICATE KEY 产生的 Crash 问题。
 - 修复由于 JSON 列导入时引起的 “Invalid escape character in string.” 错误。
-  
+   
 ### 20171130
 #### 新特性：
 - 支持 information_schema.metadata_locks 视图，查询当前实例中的 MDL 授予和等待状态。
@@ -166,17 +187,17 @@
 - 修复 RC 模式下读到脏数据的问题。
 - 修复删除临时表会导致备机回放失败的问题。
 - 修复高并发下死锁的问题。
-  
+   
 
 ### 20190203
 #### 新特性：
 - 异步删除大表：异步、缓慢地清理文件，进而避免因删除大表导致业务性能出现抖动情况，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
 - 支持非 super 权限用户 kill 其他用户会话的功能，通过 cdb_kill_user_extra 参数进行设置，默认值为 root@%。
 - GTID 开启时，支持事务中创建和删除临时表和 CTS 语法，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-  
+   
 #### 性能优化：   
 - 分区表的复制回放优化，进而提升分区表的回放速度。
-  
+   
 #### 官方 bug 修复：
 - 修复临时空间不足所导致主备不一致的问题。
 - 修复热点记录更新挂起的问题。
@@ -186,7 +207,7 @@
 #### 新特性：
 - MEMORY  引擎自动转换为 InnoDB 引擎：如果全局变量 cdb_convert_memory_to_innodb 为 ON，则创建、修改表时会将表引擎从 MEMORY 转换为 InnoDB。
 - 自动 kill 空闲事务，减少资源冲突，该功能需 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开通。
-  
+   
 #### 官方 bug 修复：
 - 修复 REPLAY LOG RECORD 所导致 crash 的问题。
 - 修复 decimal 精度问题所导致主备时间数据不一致的问题。
@@ -199,10 +220,10 @@
 
 #### 性能优化：
 - drop table 带来的性能抖动。
-  
+   
 #### 官方 bug 修复：
 - 修复认证密码串导致数据库 crash 的问题。
-  
+   
 ### 20180122
 #### 新特性：
 - 支持 SQL 审计功能。
@@ -217,7 +238,7 @@
 - 修复异步模式下 binlog 限速失效的问题。
 - 修复 buffer_pool 状态异常的问题。
 - 修复 SEQUENCE 与隐含主键冲突的问题。
-  
+   
 ### 20170228
 #### 官方 bug 修复：
 - 修复 drop table 中的字符编码 bug。
