@@ -127,7 +127,7 @@ For example, a Linux source server has two data disks. The mount point for disk 
 <blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note: </p><p>Except for the above parameters, other configuration items in the client.json file usually do not need to be specified.</p>
 </blockquote>
 - <span id="_linuxTxtState">Description of the rsync\_excludes\_linux.txt file:</span>
-This file is used to exclude files on the Linux source server or configuration files under specified directories that do not need to be migrated. By default, the rsync\_excludes\_linux.txt file already excludes the following directories and files. **Do not delete or modify the configurations.**
+This file is used to exclude files on the Linux source server or configuration files under specified directories that do not need to be migrated. By default, the rsync\_excludes\_linux.txt file already excludes the following directories and files. **Do not delete or modify the EXISTING configurations.**
 ```sh
 /dev/*
 /sys/*
