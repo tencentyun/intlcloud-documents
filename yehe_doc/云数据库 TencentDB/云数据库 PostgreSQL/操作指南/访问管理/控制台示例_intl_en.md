@@ -1,8 +1,30 @@
 ## Overview
-You can grant a user permissions to view and use specific resources in the [TencentDB for PostgreSQL Console](https://console.cloud.tencent.com/postgres) by using Cloud Access Management (CAM) policies. This document provides examples to describe how to create and use such policies to grant these permissions.
+You can grant a user permissions to view and use specific resources in the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres) by using Cloud Access Management (CAM) policies. This document provides examples to describe how to create and use such policies to grant these permissions.
 
 
 ## Directions
+>!
+>- To grant a user only the permissions of specific APIs, at least the permissions of the following APIs must be granted, or else the console fails to display correctly.
+The sample code of `action` is as follows:
+```
+"action":  [
+"postgres:"DescribeProductConfig",
+"postgres:"InquiryPriceCreateDBInstances",
+"postgres:"DescribeRegions",
+"postgres:"DescribeZones"
+]
+```
+>- To grant a user the permissions to monitor and view instances, the API permissions related to monitoring needs to be granted. The sample code of `action` is as follows:
+```
+{"effect": "allow",
+"action":  [
+"monitor:Get*",
+"monitor:Describe*"
+],
+"resource": "*"
+}
+```
+
 ### Full read/write permission policy for PostgreSQL
 To grant a user permissions to create and manage PostgreSQL instances, you can associate the `QcloudPostgreSQLFullAccess` policy with the user.
 This policy grants the user permissions to operate all PostgreSQL resources. You can find more details below:
@@ -80,5 +102,4 @@ To deny a user permissions to operate specific PostgreSQL instances, you can ass
 If preset policies do not meet your requirements, you can create custom policies as needed.
 For detailed instructions, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
 For more PostgreSQL-related policy syntax, see [Access Policy Syntax](https://intl.cloud.tencent.com/document/product/409/38835).
-
 

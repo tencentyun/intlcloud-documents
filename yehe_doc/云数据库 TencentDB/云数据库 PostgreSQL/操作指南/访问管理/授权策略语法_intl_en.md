@@ -44,7 +44,7 @@ To specify all PostgreSQL operations, use the wildcard (*) as shown below:
 <span id = "zylj"></span> 
 ### PostgreSQL Resource Paths
 Each CAM policy statement for PostgreSQL is resource-specific.
-The general format of resource paths is as follows:
+The general form of a resource path is as follows:
 ```
 qcs:project_id:service_type:region:account:resource
 ```
