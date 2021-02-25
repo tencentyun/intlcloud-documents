@@ -1,7 +1,7 @@
  The common errors of TPNS RESTful APIs mainly include the following:
 
 | Error Code | Description | Feedback API |
-| -------- | ---------------- | ---------------- | ----------- |
+| -------- | ---------------- | ---------------- | 
 | 1008001 | Parameter parsing error | General API |
 | 1008002 | Parameter missing | General API |
 | 1008003 | Authentication failed | General API |
