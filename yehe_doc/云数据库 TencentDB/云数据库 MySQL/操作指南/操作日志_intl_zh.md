@@ -14,30 +14,17 @@
 
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
-2. 选择【操作日志】页面，可选择查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。
+2. 在实例管理页面，选择【操作日志】页，可选择查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。
 <table>
-<thead>
-<tr>
-<th>功能项</th>
-<th>说明</th>
-</tr>
-</thead>
+<thead><tr><th>功能项</th><th>说明</th></tr></thead>
 <tbody><tr>
-<td>慢日志明细</td>
-<td>记录1个月内数据库中执行时间超过10s的 SQL 语句</td>
-</tr>
+<td>慢日志明细</td><td>记录1个月内数据库中执行时间超过10s的 SQL 语句</td></tr>
 <tr>
-<td>慢日志下载</td>
-<td>提供慢日志的下载</td>
-</tr>
+<td>慢日志下载</td><td>提供慢日志的下载</td></tr>
 <tr>
-<td>错误日志明细</td>
-<td>记录数据库运行出错的日志</td>
-</tr>
+<td>错误日志明细</td><td>记录数据库运行出错的日志</td></tr>
 <tr>
-<td>回档日志</td>
-<td>记录回档任务的运行状态和进展</td>
-</tr>
+<td>回档日志</td><td>记录回档任务的运行状态和进展</td></tr>
 </tbody></table>
 <img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
 
