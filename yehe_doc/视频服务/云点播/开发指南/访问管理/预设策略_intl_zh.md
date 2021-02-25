@@ -1,3 +1,5 @@
+>!本文档主要介绍**云点播**访问管理功能的相关内容，其他产品访问管理相关内容请参见 [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)。
+
 访问管理实质上是将子账号与策略进行绑定，或者说将策略授予子账号。开发者可以在控制台上直接使用预设策略来实现一些简单的授权操作，复杂的授权操作请参见 [自定义策略](https://intl.cloud.tencent.com/document/product/266/33972)。
 
 云点播目前提供了以下预设策略：
@@ -16,7 +18,7 @@
    ![](https://main.qcloudimg.com/raw/e700947b468ef25d4bf70ad1fecc6348.png)
 2. 在“新建用户”页面单击子用户类型下的【自定义创建】，进入“新建子用户”页面。
    ![](https://main.qcloudimg.com/raw/b8351b38a1df79df1836cb62268ecc74.png)
-3. 填写用户信息。
+3. 单击【下一步】，填写用户信息。
    - 填写用户名，勾选【编程访问】和【腾讯云控制台访问】，其余选项按需配置。
    - 单击【下一步】，按照页面的提示完成身份验证。
      ![](https://main.qcloudimg.com/raw/19b98c0b2dde4824d5eeaa52304ea3df.png)
@@ -66,7 +68,7 @@
 </table>
 
 将上述登录链接和安全凭证提供给云点播使用方，后者即可使用该子用户对云点播做所有操作（包括访问云点播控制台、请求云点播服务端 API 等）。
->创建子用户的通用流程请参见 CAM 的 [创建子用户](https://intl.cloud.tencent.com/document/product/598/13674) 文档。
+>?创建子用户的通用流程请参见 CAM 的 [创建子用户](https://intl.cloud.tencent.com/document/product/598/13674) 文档。
 
 ### <span id="p2"></span>将云点播完整权限授予已存在的子用户
 
@@ -82,3 +84,4 @@
    ![](https://main.qcloudimg.com/raw/86a75ce62dde0ba4c061975181186974.png)
 2. 在“用户详情”页面权限栏找到预设策略`QcloudVODFullAccess`，单击右侧的【解除】。按页面提示完成解除授权流程即可。
    <img src="https://main.qcloudimg.com/raw/4d221c52efe40913031355c877f28a47.png" width="704">
+

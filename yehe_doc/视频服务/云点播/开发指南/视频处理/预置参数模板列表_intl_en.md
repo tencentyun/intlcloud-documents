@@ -154,7 +154,7 @@ Preset parameter templates for video conversion:
 | Template ID | Format | Resolution | FPS |
 | ------- | ------------------ | -------------------- | ----------- |
 | 20000   | GIF                | Same as source                 | 2           |
-| 20001   | WEBP               | Same as source                 | 2           |
+| 20001   | WebP               | Same as source                 | 2           |
 
 <span id="screenshot01"></span>
 ### Preset time point screencapture templates
@@ -175,7 +175,7 @@ Preset parameter templates for video conversion:
 
 | Template ID | Format | Width | Height | Rows | Columns | SampleType | Interval |
 | ------- | ------------------ | ----------------- | ------------------ | ---------------- | ------------------- | ---------------------- | -------------------- |
-| 10      | JPG   | 142    | 80      | 10       | 10    | By time   | 10s  |
+| 10      | JPG                | 142               | 80              | 10               | 10                  | By interval             | 10s                 |
 
 ### Preset adaptive bitrate streaming templates
 #### Template information
@@ -396,7 +396,7 @@ Preset parameter templates for video AI are divided into the following types:
 
 ### Preset video content analysis templates
 
-| Template ID | Smart Classification | Smart Tag | Smart Cover | Smart Frame Tag |
+| Template ID | Intelligent Classification | Intelligent Tag | Intelligent Cover | Intelligent Frame Tag |
 | -- | -- | -- | -- | -- |
 | 10 | Yes | Yes | Yes | No |
 | 20 | Yes | Yes | Yes | Yes |

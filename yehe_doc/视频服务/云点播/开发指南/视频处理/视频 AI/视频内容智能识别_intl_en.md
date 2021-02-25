@@ -1,4 +1,4 @@
-Video content recognition is an offline task that intelligently recognizes video content with the aid of AI. The task execution results include intelligent recognition score, intelligent recognition suggestion, and suspected video segments. According to the "intelligent recognition suggestion", you can decide whether to allow a video to be published, effectively avoiding potential legal risks and brand image damage caused by non-compliant videos.
+Intelligent video content recognition is an offline task that intelligently recognizes video content with the aid of AI. The task execution results include intelligent recognition score, intelligent recognition suggestion, and suspected video segments. According to the "intelligent recognition suggestion", you can decide whether to allow a video to be published, effectively avoiding potential legal risks and brand image damage caused by non-compliant videos.
 
 VOD can intelligently recognize video image, speech recognized by ASR, and text recognized by OCR. The intelligent recognition operations include recognition of porn, terrorism, and politically sensitive information.
 
@@ -21,10 +21,10 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
     </tr>
     <tr>
         <td>
-            Porn information recognition
+            Porn information
         </td>
         <td>
-				    Performs porn information recognition on video image, including:
+				    Performs porn information detection on video image, including:
 				    <li>vulgar: vulgarity</li>
 				    <li>intimacy: intimacy</li>
 				    <li>sexy: sexiness</li>
@@ -32,25 +32,25 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
     </tr>
     <tr>
         <td>
-            Terrorism information recognition
+            Terrorism information
         </td>
         <td>
-				    Performs terrorism information recognition on video image, including:
+				    Performs terrorism information detection on video image, including:
 				    <li>militant: militants</li>
 				    <li>guns: weapons and guns</li>
 				    <li>bloody: bloody scenes</li>
 				    <li>police: police force</li>
-				    <li>crowd: crowd</li>
+				    <li>crowd: crowd gathering</li>
         </td>
     </tr>
     <tr>
         <td>
-            Politically sensitive information recognition
+            Politically sensitive information
         </td>
         <td>
-            Performs politically sensitive information recognition on video image, including:
-				    <li>violation_photo: violating photo</li>
-				    <li>politician: politically sensitive figure</li>
+            Performs politically sensitive information detection on video image, including:
+				    <li>violation_photo: violation icon</li>
+				    <li>politician: political figure</li>
         </td>
     </tr>
     <tr>
@@ -58,17 +58,17 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
             ASR phrase (phrase in speech)
         </td>
         <td>
-				    Porn information recognition
+				    Porn information
         <td>
-            Performs porn information recognition on phrases in speech to identify suspect keywords
+            Performs porn information detection on phrases in speech to identify suspect keywords
         </td>
     </tr>
     <tr>
         <td>
-            Politically sensitive information recognition
+            Politically sensitive information
         </td>
         <td>
-            Performs politically sensitive information recognition on phrases in speech to identify suspect keywords
+            Performs politically sensitive information detection on phrases in speech to identify suspect keywords
         </td>
     </tr>
     <tr>
@@ -76,18 +76,18 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
             OCR text (text in video image)
         </td>
         <td>
-				    Porn information recognition
+				    Porn information
         </td>
         <td>
-            Performs porn information recognition on text in video image to identify suspect keywords
+            Performs porn information detection on text in video image to identify suspect keywords
         </td>
     </tr>
     <tr>
         <td>
-            Politically sensitive information recognition
+            Politically sensitive information
         </td>
         <td>
-            Performs politically sensitive information recognition on text in video image to identify suspect keywords
+            Performs politically sensitive information detection on text in video image to identify suspect keywords
         </td>
     </tr>
 </table>
@@ -99,18 +99,18 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
 | suggestion | String | There are three types of intelligent recognition suggestions: `pass`, `review`, and `block`: <ul><li>pass: the degree of suspicion is not high, and approval is recommended. </li><li>review: the degree of suspicion is high, and human review is recommended </li><li>block: the degree of suspicion is very high, and blocking is recommended </li></ul> |
 | segments | Array | Suspected video segments, helping locate specific segments in the video that are suspected of violations |
 
-## <span id = "sh"></span>Intelligent Video Content Recognition Template
+## <span id = "sh"></span>Intelligent Video Recognition Template
 
 The intelligent recognition operations in an intelligent recognition task are subject to intelligent video recognition parameters, which can be presented in the form of VOD intelligent video recognition template as shown below. Such a template specifies what operations will be performed in an intelligent recognition task:
-- Performs porn information recognition on video image
-- Performs terrorism information recognition on video image
-- Performs politically sensitive information recognition on video image
-- Performs porn information recognition on phrases in speech based on ASR
-- Performs politically sensitive information recognition on phrases in speech based on ASR
-- Performs porn information recognition on text in video image based on OCR
-- Performs politically sensitive information recognition on text in video image based on OCR
+- Performs porn information detection on video image
+- Performs terrorism information detection on video image
+- Performs politically sensitive information detection on video image
+- Performs porn information detection on phrases in speech based on ASR
+- Performs politically sensitive information detection on phrases in speech based on ASR
+- Performs porn information detection on text in video image based on OCR
+- Performs politically sensitive information detection on text in video image based on OCR
 
-For common combinations of operations, VOD provides a [preset video content recognition template](https://intl.cloud.tencent.com/document/product/266/33932). In addition, you can also create and manage custom video content recognition templates by calling a [server API](https://intl.cloud.tencent.com/document/product/266/37568).
+For common combinations of operations, VOD provides a [preset intelligent video recognition template](https://intl.cloud.tencent.com/document/product/266/33932). In addition, you can also create and manage custom intelligent video recognition templates by calling a [server API](https://intl.cloud.tencent.com/document/product/266/37568).
 
 ## Task Initiation
 
@@ -121,7 +121,7 @@ Below are instructions for initiating intelligent video recognition tasks in the
 * Call the server API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) to initiate a task: specify the [intelligent video recognition template](#sh) ID in the `AiContentReviewTask` parameter in the request.
 * Call the server API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) to initiate a task: specify the [intelligent video recognition template](#sh) ID in the `AiContentReviewTask` parameter in the request.
 * Initiate a task on a video through the console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and use it to [initiate video processing](https://intl.cloud.tencent.com/document/product/266/33892).
-* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/zh/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) request.
+* Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and specify it as the `procedure` in the [ApplyUpload](https://intl.cloud.tencent.com/zh/document/product/266/34120) request.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, enable intelligent video recognition in it, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
 

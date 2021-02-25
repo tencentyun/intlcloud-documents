@@ -121,7 +121,7 @@
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`AiContentReviewTask`参数指定 [视频内容智能识别模板](#sh) 的模板 ID。
 * 调用服务端 API [ProcessMediaByUrl](https://intl.cloud.tencent.com/document/product/266/34123) 发起任务：在请求中的`AiContentReviewTask`参数指定 [视频内容智能识别模板](#sh) 的模板 ID。
 * 通过控制台对视频发起任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中开启视频内容智能识别；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
-* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中开启视频内容智能识别； [申请上传](https://intl.cloud.tencent.com/zh/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
+* 服务端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中开启视频内容智能识别； [申请上传](https://intl.cloud.tencent.com/zh/document/product/266/34120) 中的`procedure`参数指定为该任务流。
 * 客户端上传时指定任务：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中开启视频内容智能识别；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
 * 控制台上传：在控制台 [添加任务流](https://intl.cloud.tencent.com/document/product/266/14058)，任务流中开启视频内容智能识别；通过控制台上传视频，选择 [上传的同时对视频进行处理操作](https://intl.cloud.tencent.com/document/product/266/33890) 并指定视频上传后执行该任务流。
 
