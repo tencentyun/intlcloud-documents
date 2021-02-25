@@ -11,7 +11,7 @@ Download and install [redis-py](https://github.com/andymccurdy/redis-py?spm=5176
 import redis 
 
 #Replace with the connected instance's host and port here 
-host = '192.168.0.195' 
+host = '192.xx.xx.195' 
 port = 6379 
 
 #Replace with the instance ID and instance password here 
