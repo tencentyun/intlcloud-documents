@@ -11,11 +11,11 @@ SDK 需要使用 [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangz
 #### 使用CocoaPods集成  
 1. 打开您当前项目根目录下的 `Podfile` 文件，添加下面的内容：
 ```
-platform :osx, '10.10'	
+ platform :osx, '10.10'	
 
-target 'Your Target' do
+ target 'Your Target' do
     pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
-end
+ end
 ```
 2. 执行 `pod install` 命令安装 **TRTCPrivilegedTask** 库。
 
