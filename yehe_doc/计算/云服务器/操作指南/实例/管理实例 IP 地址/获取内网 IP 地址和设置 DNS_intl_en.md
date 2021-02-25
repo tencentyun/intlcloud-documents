@@ -3,7 +3,7 @@ This document describes how to obtain the private IP address of the instance and
 ## Obtaining the private IP address of an instance
 ### Obtaining the private IP address on the console
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
-2. On the instance management page, select the instance and move the mouse to the **Primary IP** column to view its private IP, and click <img src = "https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style = "margin: 0;"> </ img> to copy the private IP, as shown below:
+2. On the instance management page, select the instance and move the mouse to the **Primary IP** column to view its private IP, and click <img src = "https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style = "margin: 0;"> to copy the private IP, as shown below:
 ![](https://main.qcloudimg.com/raw/f4849355a4890861e2d07b35de1099a4.png)
 
 ### Obtaining the private IP address using API
@@ -30,12 +30,12 @@ When a network resolution error occurs, you can manually configure the private n
 ### For Linux operating system
 
 1. Log into the Linux CVM.
-2. Execute the following command to open the `/etc/grub.conf` file.
+2. Execute the following command to open the `/etc/resolv.conf` file.
 ```
 vi /etc/resolv.conf
 ```
 3. Press **i** to switch to the edit mode, and modify the DNS IP according to the corresponding region in the [Private Network DNS](https://intl.cloud.tencent.com/document/product/213/5225) list.
-For example, change the private network DNS IP to an private network DNS server in the Beijing region.
+For example, to change the private network DNS IP to an private network DNS server in the Beijing region.
 ```
 nameserver 10.53.216.182
 nameserver 10.53.216.198
