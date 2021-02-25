@@ -99,8 +99,8 @@ VOD can intelligently recognize video image, speech recognized by ASR, and text 
 | suggestion | String | There are three types of intelligent recognition suggestions: `pass`, `review`, and `block`: <ul><li>pass: the degree of suspicion is not high, and approval is recommended. </li><li>review: the degree of suspicion is high, and human review is recommended </li><li>block: the degree of suspicion is very high, and blocking is recommended </li></ul> |
 | segments | Array | Suspected video segments, helping locate specific segments in the video that are suspected of violations |
 
-## <span id = "sh"></span>Intelligent Video Recognition Template
-
+<span id = "sh"></span>
+## Intelligent Video Recognition Template
 The intelligent recognition operations in an intelligent recognition task are subject to intelligent video recognition parameters, which can be presented in the form of VOD intelligent video recognition template as shown below. Such a template specifies what operations will be performed in an intelligent recognition task:
 - Performs porn information detection on video image
 - Performs terrorism information detection on video image
