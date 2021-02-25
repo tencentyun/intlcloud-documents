@@ -165,7 +165,7 @@ You can then grant the policy to other sub-accounts as described in [Granting re
 ### Using server APIs provided by CAM
 
 Managing access in the console can meet the business needs of most developers, but to automate and systematize your access management, you need to use server APIs.
-Permission policy-related server APIs belong to CAM. For details, see [CAM documentation](https://cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
+Permission policy-related server APIs belong to CAM. For details, see [CAM documentation](https://intl.cloud.tencent.com/document/product/598). Only a few main APIs are listed below:
 
 - [CreatePolicy](https://intl.cloud.tencent.com/document/product/598/32248)
 - [DeletePolicy](https://intl.cloud.tencent.com/document/product/598/32247)
