@@ -1,4 +1,4 @@
-***运行前必备**：
+**运行前必备**：
 下载客户端 [phpredis](https://github.com/phpredis/phpredis)。
 
 **示例代码**：
@@ -6,10 +6,10 @@
 ```
 <?php
   /**以下参数分别填写您的 Redis 实例内网 IP、端口号、实例 ID 和密码*/
-  $host = "192.168.0.2";
+  $host = "192.xx.xx.2";
   $port = 6379;
   $instanceid = "c532952f-55dc-4c22-a941-63057e560788";
-  $pwd = "1234567q";
+  $pwd = "123tj6na";
 
   $redis = new Redis();
   //连接 Redis
