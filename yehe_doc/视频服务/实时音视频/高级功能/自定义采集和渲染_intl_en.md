@@ -1,48 +1,45 @@
 ## Overview
 - **Custom video capturing**
-If you develop (or purchase a third-party) beauty filter and special effects processing module, you need to capture and process the camera image by yourself. You can disable the TRTC SDK's own camera image capturing and processing logic through the `enableCustomVideoCapture` API of `TRTCCloud`, and then use the `sendCustomVideoData` API to populate the TRTC SDK with your own video data.
-
+If you develop your own beauty filter and special effect processing modules or purchase from third parties, you need to capture and process camera data by yourself. You can call the `enableCustomVideoCapture` API of `TRTCCloud` to disable the TRTC SDK's camera data capturing and processing logic, and use the `sendCustomVideoData` API to feed your own video data to the TRTC SDK.
 - **Custom video rendering**
-The TRTC SDK uses OpenGL to render video image. If you are using it in game development or need to embed it in your own UI engine, you must render video image by yourself.
-
+The TRTC SDK uses OpenGL to render video images. If you use the SDK for game development or want to integrate it into your own UI engine, you must render video images by yourself.
 - **Custom audio capturing**
-If you are using the TRTC SDK on a special hardware device, when you need to use an external sound capturing device to capture sound data, you can disable the TRTC SDK's default sound capturing process through the `enableCustomAudioCapture` API of `TRTCCloud`, and then use the `sendCustomAudioData` API to populate the TRTC SDK with your own audio data.
->!After custom audio capturing is enabled, the acoustic echo cancellation (AEC) feature may fail.
-
+If you use the TRTC SDK on a special device, to capture your own audio data via an external device, you can call the `enableCustomAudioCapture` API of `TRTCCloud` to disable the TRTC SDK’s default audio capturing process, and use the `sendCustomAudioData` API to feed your own audio data to the TRTC SDK.
+>!Enabling custom audio capturing may cause the acoustic echo cancellation (AEC) feature to fail.
 - **Getting raw audio data**
-The sound module is highly complex, and the SDK needs to strictly control the capturing and playback logic of the sound device. In some scenarios, when you need to get the audio data of a remote user or that captured by a local mic, you can implement it through the corresponding callback API provided by the TRTC SDK.
+The audio module is highly complex, and the TRTC SDK needs to strictly control the capturing and playback logic of audio devices. In some cases, you can use the callback APIs of the SDK to get the audio data of a remote user or that captured by the local mic.
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | WeChat Mini Program | Chrome Browser |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|   &#10003;  |  &#10003;    | &#10003;   |  &#10003;  |   ×  |  ×   |
+| iOS | Android | macOS | Windows | Chrome |
+|:-------:|:-------:|:-------:|:-------:|:-------:|
+|   &#10003;  |  &#10003;    | &#10003;   |  &#10003;  |  ×   |
 
 ## Custom Video Capturing
 
-You can disable the TRTC SDK's own camera image capturing and processing logic through the `enableCustomVideoCapture` API of `TRTCCloud`, and then use the `sendCustomVideoData` API to populate the TRTC SDK with your own video data.
+You can call the `enableCustomVideoCapture` API of `TRTCCloud` to disable the TRTC SDK's camera data capturing and processing logic, and use the `sendCustomVideoData` API to feed your own video data to the TRTC SDK.
 
-There is a parameter named `TRTCVideoFrame` in the `sendCustomVideoData` API. It represents a frame of video image. In order to avoid performance loss, there are different format requirements for the video data input to the TRTC SDK on different platforms as shown below:
+The `sendCustomVideoData` API includes a parameter named `TRTCVideoFrame`, which represents a video frame. To avoid performance loss, the TRTC SDK has requirements on the format of video data it receives, which vary with the platform used.
 
 ### iOS
 
-The TRTC SDK supports both `NV12` and `i420` YUV data formats for iOS. On iOS, the relatively high-performance image transfer method is `CVPixelBufferRef`; therefore, the following parameter formats are recommended:
+On iOS, the TRTC SDK supports data in two YUV formats: NV12 and i420. Image transferring via `CVPixelBufferRef` delivers higher performance on iOS. Given this, we recommend the following settings.
 
-| Parameter Name | Parameter Type | Recommended Value | Remarks |
+| Parameter Name  | Parameter Type |  Recommended Value | Note |
 |:-------:|:-------:|:-------:| :-------: |
-| pixelFormat| TRTCVideoPixelFormat | TRTCVideoPixelFormat_NV12 | The video natively captured by the camera on iOS is in NV12 format. |
-| bufferType | TRTCVideoBufferType| PixelBuffer | This is the video frame format natively supported by iOS and has the best performance. |
-| pixelBuffer| CVPixelBufferRef | Required if `TRTCVideoBufferType` is `PixelBuffer`. | The data captured by the camera on iPhone is `PixelBuffer` in NV12 format. |
-| data| NSData\* | Required if `TRTCVideoBufferType` is `NSData`. | Its performance is not as good as `PixelBuffer`. |
-| timestamp| uint64_t | 0 | 0 can be entered here, and the SDK will automatically set the `timestamp` field. However, please "evenly" set the calling interval of `sendCustomVideoData`. |
-| width    | uint64_t| Video image width | Please strictly enter the pixel width of the video image passed in. |
-| height   | uint32_t| Video image height | Please strictly enter the pixel height of the video image passed in. |
-| rotation | TRTCVideoRotation| Empty | This field is used for custom rendering and does not need to be set here. |
+| pixelFormat| TRTCVideoPixelFormat | TRTCVideoPixelFormat_NV12 | NV12 is the original format of the video data captured by an iOS device. |
+| bufferType | TRTCVideoBufferType| PixelBuffer | This is the video frame format supported by iOS, and it delivers the best performance. |
+| pixelBuffer| CVPixelBufferRef | Required if `TRTCVideoBufferType` is `PixelBuffer`. | The data captured by iPhone’s camera is NV12 formatted PixelBuffer. |
+| data| NSData\* | Required if `TRTCVideoBufferType` is `NSData`. | NSData is no match for PixelBuffer in terms of performance. |
+| timestamp| uint64_t | 0 | If it is 0, the SDK will set the `timestamp` field automatically, but please make sure that `sendCustomVideoData` is called at largely **regular** intervals. |
+| width    | uint64_t| Video image width | Keep it strictly in line with the pixel width of the video passed in. |
+| height   | uint32_t| Video image height | Keep it strictly in line with the pixel height of the video passed in. |
+| rotation | TRTCVideoRotation|Leave it empty |  <li/>It is left empty by default. <li/>If you want to rotate the video, set it to `TRTCVideoRotation_0`, `TRTCVideoRotation_90`, `TRTCVideoRotation_180`, or `TRTCVideoRotation_270`. The SDK will rotate the video clockwise by the number of degrees set. For example, if `TRTCVideoRotation_90` is passed in, an image in the portrait mode will switch to the landscape mode after rotation. |
 
-**Sample code**: there is a file named `TestSendCustomVideoData.m` in the [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/CustomCapture/testCustomVideo) folder, which shows how to read out a `PixelBuffer` in NV12 format from a local video file and process it with the SDK.
+**Sample code**: the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/CustomCapture/testCustomVideo) folder includes a file named `TestSendCustomVideoData.m`, which shows how to extract NV12 formatted PixelBuffer from a local video file and process the data using the SDK.
 
 ```objectiveC
-// Assemble a `TRTCVideoFrame` and send it to the `trtcCloud` object
+// Assemble `TRTCVideoFrame` and send it to a trtcCloud object.
 TRTCVideoFrame* videoFrame = [TRTCVideoFrame new];
 videoFrame.bufferType = TRTCVideoBufferType_PixelBuffer;
 videoFrame.pixelFormat = TRTCVideoPixelFormat_NV12;
@@ -53,50 +50,50 @@ videoFrame.pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
 
 ### Android
 
-There are two schemes for Android:
+There are two custom video capturing schemes for Android.
 
-**1. `buffer` scheme**: its connection is easy but its performance is poor, so it is not suitable for scenarios with high resolution.
+**1. Buffer scheme**: integration using this scheme is relatively easy, but it delivers mediocre performance and is therefore not recommended for scenarios with high requirements on resolution.
 
-The `buffer` scheme requires that an array in `byte[]` format be inserted directly into the TRTC SDK. It supports two YUV formats, namely, i420 and NV21.
+The buffer scheme involves feeding byte[] arrays to the TRTC SDK. Two YUV formats are supported: i420 and NV21.
 
-| Parameter Name | Parameter Type | Recommended Value | Remarks |
+| Parameter Name  | Parameter Type |  Recommended Value | Note |
 |:-------:|:-------:|:-------:| :-------: |
 | pixelFormat| int | TRTC_VIDEO_PIXEL_FORMAT_I420 or <br> TRTC_VIDEO_PIXEL_FORMAT_NV21  | i420 and NV21 are two different YUV data formats. |
-| bufferType | int | TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY | It indicates to transfer YUV data in the `data` method. |
-| texture  | TRTCTexture | Empty for the `buffer` scheme | If i420 or NV21 format is selected, leave this parameter empty. |
-| data| byte[] | Data buffer in YUV format | Memory in Java type is packed, which is suitable for use at the Java layer. |
-| buffer| ByteBuffer | Empty for the `buffer` scheme | Memory in C/C++ type is packed, which is suitable for use at the JNI layer. |
-| width    | uint64_t| Video image width | Please strictly enter the pixel width of the video image passed in. |
-| height   | uint32_t| Video image height | Please strictly enter the pixel height of the video image passed in. |
-| timestamp| long | Capturing time of video frame | 0 can be entered here, and the SDK will automatically set the `timestamp` field. However, please "evenly" set the calling interval of `sendCustomVideoData`. |
-| rotation | int| Empty | This field is not required if `sendCustomVideoData` is selected. |
+| bufferType | int | TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY | Specify the data type in which YUV data is transferred. |
+| texture  | TRTCTexture | Leave it empty if the buffer scheme is used. | If the i420 or NV21 format is used, leave this parameter empty. |
+| data| byte[] | YUV formatted data buffers | Memory in Java type is packed, which is suitable for use at the Java layer. |
+| buffer| ByteBuffer | Leave it empty if the buffer scheme is used. | Memory in C/C++ type is packed, which is suitable for use at the JNI layer. |
+| width    | uint64_t| Video image width | Keep it strictly in line with the pixel width of the video passed in. |
+| height   | uint32_t| Video image height | Keep it strictly in line with the pixel height of the video passed in. |
+| timestamp| long | Capturing time of video frames | If the value is 0, the SDK will set the field automatically, but please make sure that `sendCustomVideoData` is called at largely **regular** intervals. |
+| rotation | int| Leave it empty. | <li/>It is left empty by default. <li/>If you want to rotate the video, set it to 0, 90, 180, or 270. The SDK will rotate the video clockwise by the number of degrees set. For example, if 90 is passed in, an image in the portrait mode will switch to the landscape mode after rotation. |
 
-**2. `texture` scheme: its connection requires certain knowledge of OpenGL, but its performance is good, especially when the video resolution is high.
+**2. Texture scheme: integration via this scheme requires knowledge of OpenGL. It delivers superior performance, especially when video resolution is high.
 
-The `texture` scheme needs to pass OpenGL textures to the TRTC SDK. In order to ensure the normal operation of this scheme, you need to set up the OpenGL environment in advance. As a result, the connection of this scheme is very difficult. If you have no knowledge of OpenGL, you are recommended to use the provided sample code directly, which is located in the `customCapture` folder of the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo/customcapture/src/main/java/com/tencent/custom/customcapture), including:
+The texture scheme involves passing OpenGL textures to the TRTC SDK. For this scheme to work, you need to set up an OpenGL environment in advance. As a result, integration via this scheme is quite demanding on developers. If you have no knowledge of OpenGL, we recommend that you use the sample code we provide, which is in the `customCapture` folder of the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo/customcapture/src/main/java/com/tencent/custom/customcapture). The folder contains the following items:
 
 | File Name | Source Code Logic |
 |---------|---------|
-|TestSendCustomData.java   | Demonstrates how to feed video textures to the SDK via the `sendCustomVideoData` function of `TRTCCloud`. |
-|TestRenderVideoFrame.java  | Demonstrates how to ignore the original rendering logic of `TRTCCloud` and render the video image with OpenGL. |
-|VideoFrameReader.java    |  Reads the video image frame by frame from a local video file. |
-| decoder folder | Decoder module |
-| opengl folder   |     Encapsulates the basic functions of OpenGL to make it easier to use. |
-| render folder    |    Encapsulates the basic functions of Egl to make it easier to use. |
+|TestSendCustomVideoData.java| Demonstrates how to feed video textures to the SDK via the `sendCustomVideoData` function of `TRTCCloud` |
+|TestRenderVideoFrame.java| Demonstrates how to ignore the rendering logic of `TRTCCloud` and render video images with OpenGL |
+|VideoFrameReader.java    |    Demonstrates how to extract video data frame by frame from a local video file|
+| `decoder` folder | Decoding module |
+| `opengl` folder   |     Basic functions of OpenGL, which facilitate the use of the code|
+| render folder    |    Basic functions of EGL, which facilitate the use of the code|
 
->! For resolutions above 640x360, the `texture` scheme is recommended so as to avoid excessive CPU utilization.
+>! To avoid excessively high CPU usage, you are advised to use the texture scheme for resolutions higher than 640 x 360.
 
 
-**Sample code**: the code in `TestSendCustomVideoData.java` is quite complicated:
-1. The code first starts a GLThread thread, which is in waiting status most of the time until its associated `SurfaceTexture` is drawn.
-2. The code next uses a module named `MovieVideoFrameReader` to read the video image frame by frame from the local video file and draw the frames on the `SurfaceTexture` created in the previous step.
-3. Each time a frame is drawn, the GLThread thread created in the first step will be waken up once, so there will be the `onTextureProcess` callback below. In this callback function, the obtained textures are passed to the SDK through the `sendCustomVideoData` function:
+**Sample code**: the code in `TestSendCustomVideoData.java` is complicated.
+1. The code first starts a GLThread thread, which is in the waiting state until content is drawn on the `SurfaceTexture` with which it is associated.
+2. The code then uses a module named `MovieVideoFrameReader` to extract video images frame by frame from a local video file and draws the frames on the `SurfaceTexture` created.
+3. Each time a frame is drawn, the GLThread thread created in step 1 wakes up, hence the `onTextureProcess` callback below. Pass the textures obtained from the callback to the SDK through `sendCustomVideoData`.
 
 ```java
 public int onTextureProcess(int textureId, EGLContext eglContext) {
         if (!mIsSending) return textureId;
 
-        // Populate video frames to the SDK through texture
+        // Feed video frames as textures to the SDK.
         TRTCCloudDef.TRTCVideoFrame videoFrame = new TRTCCloudDef.TRTCVideoFrame();
         videoFrame.texture = new TRTCCloudDef.TRTCTexture();
         videoFrame.texture.textureId = textureId;
@@ -113,24 +110,27 @@ public int onTextureProcess(int textureId, EGLContext eglContext) {
 
 ## Custom Video Rendering
 
-The TRTC SDK uses OpenGL to render video image. If you are using it in game development or need to embed it in your own UI engine, you must render video image by yourself.
+The TRTC SDK uses OpenGL to render video images. If you use the SDK for game development or want to integrate it into your own UI engine, you must render video images by yourself.
 
 ### iOS (including iMac)
 
-Custom rendering callbacks for local and remote video images can be set through `setLocalVideoRenderDelegate` and `setRemoteVideoRenderDelegate` of `TRTCCloud`. The relevant parameters are as follows:
+You can call `setLocalVideoRenderDelegate` and `setRemoteVideoRenderDelegate` of `TRTCCloud` to configure custom rendering callbacks for local and remote video images. Below are the relevant parameters.
 
-| Parameter Name | Parameter Type | Recommended Value | Remarks |
+| Parameter Name  | Parameter Type |  Recommended Value | Note |
 |:-------:|:-------:|:-------:| :-------: |
 | pixelFormat| TRTCVideoPixelFormat | TRTCVideoPixelFormat_NV12 |  - |
-| bufferType | TRTCVideoBufferType| TRTCVideoBufferType_PixelBuffer | This is the video frame format natively supported by iOS and has the best performance. |
+| bufferType | TRTCVideoBufferType| TRTCVideoBufferType_PixelBuffer | This is the video frame format supported by iOS, and it delivers the best performance. |
 
-**Sample code**: if `TRTCVideoPixelFormat_NV12` is selected for `pixelFormat` and `TRTCVideoBufferType_PixelBuffer` is selected for `bufferType`, then you can easily convert a frame of `PixelBuffer` in NV12 format into a frame of video image. There is a file named `TestRenderVideoFrame.m` in the demo folder, which shows how to use this method with the following sample code.
+[](id:example_ios)
+#### Sample code
+If you set `pixelFormat` to `TRTCVideoPixelFormat_NV12` and `bufferType` to `TRTCVideoBufferType_PixelBuffer`, it would be easy to convert a frame of NV12 formatted PixelBuffer into a video image. The specific method is demonstrated by the code in `TestRenderVideoFrame.m`, which you can find in the demo folder.
+
 ```objectiveC
 - (void)onRenderVideoFrame:(TRTCVideoFrame *)frame 
                                 userId:(NSString *)userId 
 						        streamType:(TRTCVideoStreamType)streamType
 {
-    // If `userId` is `nil`, the image is local image; otherwise, it is remote image
+    // If `userId` is `nil`, the image rendered is the local image; otherwise it is a remote image.
     CFRetain(frame.pixelBuffer);
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -150,46 +150,68 @@ Custom rendering callbacks for local and remote video images can be set through 
 ```
 
 ### Android
-Custom rendering callbacks for local and remote video images can be set through `setLocalVideoRenderListener` and `setRemoteVideoRenderListener` of `TRTCCloud`. The relevant parameters are as follows:
+You can call `setLocalVideoRenderListener` and `setRemoteVideoRenderListener` of `TRTCCloud` to set custom rendering callbacks for local and remote video images. Below are the relevant parameters.
 
-| Parameter Name | Parameter Type | Recommended Value | Remarks |
+| Parameter Name  | Parameter Type |  Recommended Value | Note |
 |:-------:|:-------:|:-------:| :-------: |
-| pixelFormat| TRTCVideoPixelFormat | TRTC_VIDEO_PIXEL_FORMAT_NV21 | Custom rendering does not support the `texture` scheme currently. |
-| bufferType | TRTCVideoBufferType| TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY or <br> TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER  |  `BYTE_BUFFER` is suitable for the JNI layer, while `BYTE_ARRAY` can be used in direct operations at the Java layer. |
+| pixelFormat| TRTCVideoPixelFormat | TRTC_VIDEO_PIXEL_FORMAT_NV21 | Custom rendering does not support the texture scheme for the time being. |
+| bufferType | TRTCVideoBufferType| TRTC_VIDEO_BUFFER_TYPE_BYTE_ARRAY or <br> TRTC_VIDEO_BUFFER_TYPE_BYTE_BUFFER  |  `BYTE_BUFFER` is suitable for the JNI layer, and `BYTE_ARRAY` can be used for operations at the Java layer. |
 
+[](id:example_android)
+#### Sample code
+```
+    public void onRenderVideoFrame(String userId, int streamType, final TRTCCloudDef.TRTCVideoFrame frame) {
+        if (!userId.equals(mUserId) || mSteamType != streamType) {
+            // If the `id` or `streamtype` of the rendering callback does not match,
+            return;
+        }
+        if (frame.texture != null) {
+            // Wait for the texture drawing of `frame.texture` to finish.
+            GLES20.glFinish();
+        }
+        Size mSurfaceSize; // Set the height and width of the surface.
+        GpuImageI420Filter mYUVFilter;
+        GLES20.glViewport(0, 0, mSurfaceSize.width, mSurfaceSize.height);
+        GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, 0);
+        GLES20.glClearColor(0, 0, 0, 1.0f);
+        GLES20.glClear(GLES20.GL_DEPTH_BUFFER_BIT | GLES20.GL_COLOR_BUFFER_BIT);
+        if (frame.data != null) {
+            mYUVFilter.loadYuvDataToTexture(frame.data, frame.width, frame.height);
+        } else {
+            mYUVFilter.loadYuvDataToTexture(frame.buffer, frame.width, frame.height);
+        }         
+        mYUVFilter.onDraw(NO_TEXTURE, mGLCubeBuffer, mGLTextureBuffer);
+        
+    }
+```
 
-## Custom Audio Capturing
+### Custom Audio Capturing
 
-You can disable the TRTC SDK's default sound capturing process through the `enableCustomAudioCapture` API of `TRTCCloud`, and then use the `sendCustomAudioData` API to populate the TRTC SDK with your own audio data.
+You can call the `enableCustomAudioCapture` API of `TRTCCloud` to disable the TRTC SDK's default audio data capturing process, and use the `sendCustomAudioData` API to feed your own audio data to the TRTC SDK.
 
-There is a parameter named `TRTCAudioFrame` in the `sendCustomAudioData` API, which represents a frame of audio data lasting for 20 ms:
-- The data sent to the SDK through `sendCustomAudioData` must be uncompressed raw audio data in PCM format but not in AAC or other compressed formats.
-- `sampleRate` and `channels` represent the sample rate and number of sound channels of the audio respectively, which should strictly match the PCM data passed in.
-- The recommended duration of each frame of audio data is 20 ms. For a simple calculation, if the `sampleRate` is 48,000 and `channels` is 1 (mono), then the length of the `buffer` passed in each time `sendCustomAudioData` is called should be 48000 * 0.02s * 1 * 16 bits = 15360 bits = 1920 bytes.
-- `timestamp` can be 0. In this case, the SDK will automatically populate the audio timestamp. Therefore, in order to ensure the stability of the audio timestamp, please call `sendCustomAudioData` **evenly** (i.e., once every 20 ms); otherwise, the sound will be intermittent.
+The `sendCustomAudioData` API includes a parameter named `TRTCAudioFrame`, which represents a 20 ms audio frame.
+- The data sent to the SDK through `sendCustomAudioData` must be uncompressed raw audio data in the PCM format. ACC or other compressed formats are not supported.
+- `sampleRate` and `channels` represent the audio sample rate and audio channel number respectively, which should be kept strictly in line with the PCM data passed in.
+- The recommended duration of each audio frame is 20 ms. Suppose `sampleRate` is 48,000, and `channels` is 1 (mono). The byte length of the buffer passed in each time `sendCustomAudioData` is called would be 48,000 x 0.02s x 1 x 16 bits=15,360 bits=1,920 bytes.
+- If `timestamp` is set to 0, the SDK will set the field automatically. Therefore, to ensure the stability of the audio timestamp, please make sure that `sendCustomAudioData` is called at largely **regular** intervals, preferably every 20 ms; otherwise the audio may be choppy.
 
->! Using `sendCustomAudioData` may cause acoustic echo cancellation (AEC) to fail.
+>!Using `sendCustomAudioData` may AEC to fail.
 
 ## Getting Raw Audio Data
 
-The sound module is highly complex, and the SDK needs to strictly control the capturing and playback logic of the sound device. In some scenarios, when you need to get the audio data of a remote user or that captured by a local mic, you can integrate the three callback functions into the SDK through the APIs of `TRTCCloud` for different platforms.
->? The APIs of `TRTCCloud` for different platforms are as follows:
->iOS: `setAudioFrameDelegate`; Android: `setAudioFrameListener`; Windows: `setAudioFrameCallback`.
+The audio module is highly complex, and the TRTC SDK needs to strictly control the capturing and playback logic of audio devices. In some cases, to get the audio data of a remote user or that captured by the local mic, you can use the APIs `TRTCCloud` offers for different platforms to integrate the following callback functions into the SDK.
 
-- **onCapturedAudioFrame**
-Get the raw audio data captured by the local mic. In non-custom capturing mode, the SDK will be responsible for mic sound capturing, but you may also need to get the raw audio data captured by the SDK, which can be done through this callback function.
+>? The `TRTCCloud` API used for different platforms are:
+>- iOS：setAudioFrameDelegate
+>- Android：setAudioFrameListener
+>- Windows：setAudioFrameCallback
 
-- **onPlayAudioFrame**
-This function will call back the sound data of each remote user, which is the data before mixing. You can use this callback if you want to perform speech recognition on a certain channel of audio.
-
-- **onMixedPlayAudioFrame**
-After all audio data is mixed, it will be called back by this function before being sent to the speaker for playback.
+| Callback Function | Description |
+|---------|---------|
+| onCapturedAudioFrame | Get the raw audio data captured by the local mic. In the non-custom capturing mode, the SDK is responsible for capturing audio, but you may want to get the raw audio data, which can be achieved using this callback function. |
+| onPlayAudioFrame | This function calls back the audio data of each remote user, which is the data before audio mixing. You can use this callback if you want to perform speech recognition on a specific channel of audio. |
+| onMixedPlayAudioFrame | This function calls back mixed audio data before it is fed into the speaker for playback. |
 
 >!
->1. Do not perform any time-consuming operation in this callback function. We recommend you directly copy the data to another thread for processing; otherwise, intermittent sound or acoustic echo cancellation (AEC) failure may occur.
->2. The data called back by the above callback functions can only be read and copied but not modified; otherwise, various uncertain consequences may occur.
-
-
-
-
-
+>- Do not perform time-consuming operations with any of the above callback function. We recommend that you copy the data to another thread for processing to avoid AEC failure and choppy audio.
+>- The data called back by the above callback functions can only be read and copied. Modifications to the data may lead to unexpected outcomes.
