@@ -19,7 +19,7 @@ On-Cloud MixTranscoding involves three processes: decoding, mixing, and encoding
 ## Method 1: Using server-side RESTful APIs
 ### Enabling On-Cloud MixTranscoding
 Call the RESTful API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) from your server to enable On-Cloud MixTranscoding. Finish the following configurations during the process.
-
+![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 [](id:restapi_step1)
 #### 1. Set the image layout mode.
 Use [`LayoutParams`](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) in `StartMCUMixTranscode` to select one of the following layout templates.
@@ -452,8 +452,7 @@ In the screen sharing mode, the SDK prepares a canvas in the specified resolutio
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding. You need to set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Template_ScreenSharing**, and specify audio quality-related parameters such as `audioSampleRate`, `audioBitrate`, and `audioChannels`, as well as video quality-related parameters such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
 >? If both `videoWidth` and `videoHeight` are set to `0`, the SDK will work out an appropriate resolution based on the aspect ratio of the user's screen.
 5. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
-
-![](https://main.qcloudimg.com/raw/3e53f7303f3665087e9950c1d04f7ed6.gif)
+![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
 >! 
 >- The screen sharing mode is supported on Windows and macOS only.
 >- In the screen sharing mode, you only need to call the `setMixTranscodingConfig()` API once after entering a room and enabling local audio publishing.
