@@ -12,6 +12,7 @@ SDK 需要使用 [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangz
 1. 打开您当前项目根目录下的 `Podfile` 文件，添加下面的内容：
 ```
 platform :osx, '10.10'	
+
 target 'Your Target' do
     pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
 end
