@@ -3,7 +3,7 @@
 
 | API | Description |
 |-----|-----|
-| [addCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a6a8317825ffe59ddcf1159a778dd7577) | Sets callback API [ITRTCCloudCallback](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#classtrtc_1_1ITRTCCloudCallback). |
+| [addCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a6a8317825ffe59ddcf1159a778dd7577) | Sets callback API. |
 | [removeCallback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ad088226e8af2d6764851efe7bd94652d) | Removes event callback. |
 
 
@@ -38,7 +38,7 @@
 | API | Description |
 |-----|-----|
 | [startLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a64a9d40eba291e0447b63542a6a66f3c) | Enables the preview image of local video. |
-| [startLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aaf4651f9913924560859f4541211f2df) | Enables the preview image of local video (for iOS and Android). If this function is called before `enterRoom`, the SDK will only enable the camera and wait until `enterRoom` is called before starting push. If it is called after `enterRoom`, the SDK will enable the camera and automatically start pushing the video stream. When the first camera frame is rendered, you will receive the `onFirstVideoFrame(null)` callback in [ITRTCCloudCallback](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#classtrtc_1_1ITRTCCloudCallback). |
+| [startLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aaf4651f9913924560859f4541211f2df) | Enables the preview image of local video (for iOS and Android). If this function is called before `enterRoom`, the SDK will only enable the camera and wait until `enterRoom` is called before starting push. If it is called after `enterRoom`, the SDK will enable the camera and automatically start pushing the video stream. When the first camera frame is rendered, you will receive the `onFirstVideoFrame(null)` callback in ITRTCCloudCallback. |
 | [updateLocalView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a6db572d1e387b21328c6c78de561838c) | Updates the preview window of local video. |
 | [stopLocalPreview](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#af7003d2c12f5f783115ada43a715abe7) | Stops local video capturing and preview. |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a6070313a28d3302c94ad807c636eb60f) | Pauses/Resumes pushing local video data. |
