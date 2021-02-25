@@ -6,10 +6,10 @@ Resource-level permission can be used to specify which resources a user can mani
 
 The table below lists the Redis API operations which currently support resource-level permission control as well as the resources supported by each operation. When specifying a resource path, you can use the "*" wildcard in the path.
 
->Any TencentDB API operation not listed in the table does not support resource-level permission. For such an operation, you can still authorize a user to perform it, but you must specify `*` as the resource element in the policy statement.
+>?Any TencentDB API operation not listed in the table does not support resource-level permission. For such an operation, you can still authorize a user to perform it, but you must specify `*` as the resource element in the policy statement.
 
 <span id="xiangguan"></span>
-#### Redis Instance
+### Instance
 
 | API Operation | Resource Path |
 | ---------------------------------------- | ------------------------------------------------------------ |
