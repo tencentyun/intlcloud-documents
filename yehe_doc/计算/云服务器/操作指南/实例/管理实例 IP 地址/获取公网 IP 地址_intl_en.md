@@ -8,8 +8,8 @@ This document describes how to obtain the public IP address through console, API
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
 2. On the instance management page, move the mouse to the primary IP column, and <img src = "https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style = "margin: 0;"> </ img> appears, as shown below:
 ![](https://main.qcloudimg.com/raw/952664b0a70077ba49a031b98a57c782.png)
-3. Click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"></img> to copy the IP address.	
->! The public IP address is mapped to the private IP address through NAT. If you view the network interface attributes from within the instance (such as by using commands such as `ifconfig (Linux)` or `ipconfig (Windows)`), the public IP address is not displayed. To obtain the public IP from within the instance, please see [Obtaining a Public IP Address of the Instance Using Instance Metadata](#jump).
+3. Click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" style="margin: 0;"> to copy the IP address.	
+>! The public IP address is mapped to the private IP address through NAT. If you view the network interface attributes from within the instance (for example by using commands such as `ifconfig (Linux)` or `ipconfig (Windows)`), the public IP address is not displayed. To obtain the public IP from within the instance, please see [Obtaining a Public IP Address of the Instance Using Instance Metadata](#jump).
 >
 
 ### Obtaining the public IP address using API
