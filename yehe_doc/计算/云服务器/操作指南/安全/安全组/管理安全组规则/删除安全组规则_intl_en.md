@@ -10,8 +10,8 @@ For information on how to create a security group and add security group rules t
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. In the left sidebar, click **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)**. The "Security Group" page then appears.
 3. On the security group management page, select **Region** and locate the security group whose rules you want to delete.
-4. In the action column, click **Modify Rules** to go to the security group rule page.
-5. Select inbound or outbound rules by clicking **Inbound rules** or **Outbound rules**.
+4. In the action column, click **Modify Rule** to go to the security group rule page.
+5. Select inbound or outbound rules by clicking **Inbound Rules** or **Outbound Rules**.
 6. Locate the security group rule to delete and click **Delete** in the action column.
 7. In the window that appears, click **OK**.
 
