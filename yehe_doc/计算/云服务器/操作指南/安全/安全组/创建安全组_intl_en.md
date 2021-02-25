@@ -15,7 +15,7 @@ If the default security group does not meet your needs, you can create your own 
 <table>
 	<tr><th>Template</th><th>Description</th><th>Notes</th></tr>
 	<tr><td>Open all ports</td><td>All ports are open. May present security issues.</td><td>-</td></tr>
-	<tr><td>Open port 22，80，443，3389 and ICMP protocol</td><td>Port 22, 80, 443 and 3389, and the ICMP protocol are open. All ports are open internally.</td><td>Suitable for instances with web services.</td></tr>
+	<tr><td>Open TCP port 22，80，443，3389 and ICMP</td><td>TCP port 22, 80, 443 and 3389, and the ICMP are open. All ports are open internally.</td><td>Suitable for instances with web services.</td></tr>
 	<tr><td>Custom</td><td>Creates a blank security group in which rules are added afterwards. For details on how to add rules, refer to <a href="https://intl.cloud.tencent.com/document/product/213/34272">this article</a>.</td><td>-</rd></tr>
 </table>
  - **Name**: name of the security group.
