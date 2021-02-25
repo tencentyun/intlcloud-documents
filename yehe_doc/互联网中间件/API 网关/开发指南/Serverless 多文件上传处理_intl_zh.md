@@ -21,7 +21,6 @@
 "use strict";
 const stream = require("stream");
 const Busboy = require("busboy");
-
 /** 处理用户上传 （POST） */
 const handlePost = (event) => {
   return new Promise((resolve, reject) => {
@@ -52,7 +51,6 @@ const handlePost = (event) => {
         body: html,
       });
     });
-
     /**
      * busboy 需要 stream pipe 的方式来进行处理，
      * 我们将 body 解码为 buffer后，
@@ -64,7 +62,6 @@ const handlePost = (event) => {
     bufferStream.pipe(busboy);
   });
 };
-
 /** 返回静态文件 */
 const handleGet = (event) => {
   const html = `<html><head></head><body>
@@ -83,7 +80,6 @@ const handleGet = (event) => {
     body: html,
   };
 };
-
 /** 云函数入口函数 */
 exports.main_handler = async (event, context) => {
   const method = event.httpMethod;
