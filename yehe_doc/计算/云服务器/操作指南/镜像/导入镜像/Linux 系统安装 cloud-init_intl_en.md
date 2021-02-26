@@ -2,6 +2,7 @@
 
 Cloud-init allows you to customize configurations during the first initialization of an instance. If the imported image does not have the cloud-init service installed, instances booted through the image cannot be initialized properly. As a result, the image will fail to be imported. This document describes how to install the cloud-init service.
 You can use either of the following methods to install cloud-init:
+
 - [Manually downloading the cloud-init source package](#ManualDown) 
 - [Using the cloud-init package from the software source](#SoftSources)
 
@@ -9,12 +10,12 @@ You can use either of the following methods to install cloud-init:
 Before importing a Linux image, ensure that you have properly installed the cloud-init service in the image.
 
 ## Prerequisites
-A server with the cloud-init service installed can correctly access the public network.
+The server with the cloud-init service installed can access the public network.
 
 ## Directions
 
-<span id="ManualDown"></span>
-### Manually downloading the cloud-init source package
+
+### Manually downloading the cloud-init source package [](id:ManualDown)
 
 #### Downloading the cloud-init source package
 >?  
@@ -42,13 +43,13 @@ cd cloud-init-17.1
 ```
 yum install python-pip -y
 ```
- - For Ubuntu, execute the following command:
+ - For Ubuntu, run the following command:
 ```
 apt-get install python-pip -y
 ```
 During installation, if an error such as “failed to install” or “installation package not found” occurs, see [resolving Python-pip installation failure](#updateSoftware) to troubleshoot it.
 4. Run the following command to install dependencies:
->!  Python 2.6 is not supported when cloud-init uses requests 2.20.0. or later. If the Python interpreter installed in the image environment is Python version 2.6 or earlier, run the `pip install 'requests<2.20.0'` command to install requests 2.20.0 or later before installing the cloud-init dependencies.
+>!  Python 2.6 is not supported when cloud-init uses requests 2.20.0 or later. If the Python interpreter installed in the image environment is Python version 2.6 or earlier, run the `pip install 'requests<2.20.0'` command to install requests 2.20.0 or later before installing the cloud-init dependencies.
 >
 ```
 pip install -r requirements.txt
@@ -87,8 +88,10 @@ Run the following command to add a syslog user:
 useradd syslog
 ```
 
-#### Setting the cloud-init service to automatically start upon system startup
-- **If your operating system uses systemd to manage auto-start services, run the following commands.**
+#### Setting the cloud-init service to autostart
+- **If your operating system uses the systemd auto-start service management method, run the following commands.**
+>? To check whether the operating system uses systemd, run the `strings /sbin/init | grep "/lib/system"` command, and you will receive a return message.
+>
  1. **Run the following command in Ubuntu or Debian:**
 ```
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
@@ -157,7 +160,9 @@ StandardOutput=journal+console
 [Install]
 WantedBy=cloud-init.target
 ```
-- **If your operating system uses sysvinit to manage auto-start services, run the following commands:**
+- **If your operating system uses the sysvinit auto-start service management method, run the following commands:**
+>? To check whether the operating system uses sysvinit, run the `strings /sbin/init | grep "sysvinit"` command, and you will receive a return message.
+>
 ```
 chkconfig --add cloud-init-local
 chkconfig --add cloud-init
@@ -189,7 +194,7 @@ apt-get/yum install cloud-init
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 ## Relevant Operations
->! Do not restart the server after performing the operations. Otherwise, you will need to perform them again.
+>! Do not restart the server after performing the following operations. Otherwise, you will need to perform them again.
 >
 1. Run the following commands to check whether the cloud-init configuration is successful.
 ```
@@ -207,17 +212,17 @@ rm -rf /etc/network/interfaces.d/50-cloud-init.cfg
 source /etc/network/interfaces.d/*
 ```
 
-## Appendix
+## Notes
 
 <span id="greeninitCloudInit"></span>
-### Manually downloading the green cloud-init package
-If the cloud-init service fails to be installed by [manually downloading the cloud-init source package](#ManualDown), complete the following steps to install cloud-init:
-1. [Click here](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) to obtain the green cloud-init package.
-2. Run the following command to decompress the green cloud-init package:
+### Downloading the portable edition of cloud-init package
+If you fail to install cloud-init as instructed in [Manually downloading the cloud-init source package](#ManualDown), try the following steps:
+1. [Click here](https://image-tools-1251783334.cos.ap-guangzhou.myqcloud.com/greeninit-x64-beta.tgz) to obtain the portable edition of cloud-init package.
+2. Run the following command to decompress the portable package:
 ```
 tar xvf greeninit-x64-beta.tgz 
 ```
-3. Run the following command to enter the decompressed green cloud-init package directory; that is, the greeninit directory:
+3. Run the following command to enter the decompressed the package directory; that is, the `greeninit` directory:
 ```
 cd greeninit
 ```
@@ -227,7 +232,9 @@ sh install.sh
 ```
 
 <span id="updateSoftware"></span>
+
 ### Resolving Python-pip installation failure
+
 During installation, if an error such as “failed to install” or “installation package not found” occurs, troubleshoot it based on the operating system as follows:
 - For CentOS 6/7:
   1. Run the following command to configure the EPEL storage repository.

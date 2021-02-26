@@ -2,6 +2,7 @@
 
 Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果导入的镜像没有安装 cloud-init 服务，基于该镜像启动的实例将无法被正常初始化，导致该镜像导入失败。本文档指导您安装 cloud-init 服务。
 安装 cloud-init 推荐以下两种方式：
+
 - 通过 [手工下载 cloud-init 源码包方式](#ManualDown) 
 - 通过 [使用软件源上的 cloud-init 包方式](#SoftSources)
 
@@ -13,8 +14,8 @@ Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果
 
 ## 操作步骤
 
-<span id="ManualDown"></span>
-### 手工下载 cloud-init 源码包方式
+
+### 手工下载 cloud-init 源码包方式[](id:ManualDown)
 
 #### 下载 cloud-init 源码包
 >?  
@@ -89,6 +90,8 @@ useradd syslog
 
 #### 设置 cloud-init 服务开机自启动
 - **若操作系统是 systemd 自启动管理服务，则执行以下命令进行设置。**
+>?您可执行 `strings /sbin/init | grep "/lib/system"` 命令，若有返回信息，则操作系统是 systemd 自启动管理服务。
+>
  1. **针对 Ubuntu 或 Debian 操作系统，需执行以下命令。**
 ```
  ln -s /usr/local/bin/cloud-init /usr/bin/cloud-init 
@@ -158,6 +161,8 @@ StandardOutput=journal+console
 WantedBy=cloud-init.target
 ```
 - **若操作系统是 sysvinit 自启动管理服务，则执行以下命令进行设置。**
+>?您可执行 `strings /sbin/init | grep "sysvinit"` 命令，若有返回信息，则操作系统是 sysvinit 自启动管理服务。
+>
 ```
 chkconfig --add cloud-init-local
 chkconfig --add cloud-init
@@ -227,7 +232,9 @@ sh install.sh
 ```
 
 <span id="updateSoftware"></span>
+
 ### 解决无法安装 Python-pip 问题
+
 若在安装 Python-pip 出现无此安装包或无法安装的错误，可对应实际使用的操作系统，参考以下步骤进行解决：
 - CentOS 6/7系列：
   1. 执行以下命令，设置 EPEL 存储库。
