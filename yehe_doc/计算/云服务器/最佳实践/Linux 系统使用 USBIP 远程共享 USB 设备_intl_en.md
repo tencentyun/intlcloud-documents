@@ -71,27 +71,27 @@ modprobe usbip-host
 ```
 4. Run the following command to query available USB devices of the CVM:
 ```
-usbip list --remote 127.0.0.1
+ usbip list --remote 127.0.0.1
 ```
 For example, if the Feitian USB key information is located, the following result is returned:
 ```
-Exportable USB devices
-======================
--127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
+ Exportable USB devices
+ ======================
+ -127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
 ```
 5. Run the following command to bind the USB device to the CVM:
 ```
-usbip attach --remote=127.0.0.1 --busid=1-1.3
+ usbip attach --remote=127.0.0.1 --busid=1-1.3
 ```
 6. Run the following command to query the USB device list:
 ```
-lsusb
+ lsusb
 ```
 If information similar to the following is returned, the USB device has been shared.
 ```
-Bus 002 Device 002:ID096e:031b Feitian Technologies, Inc.
-Bus 002 Device 001:ID1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 001:ID1d6b:0001 Linux Foundation 1.1 root hub
+ Bus 002 Device 002:ID096e:031b Feitian Technologies, Inc.
+ Bus 002 Device 001:ID1d6b:0002 Linux Foundation 2.0 root hub
+ Bus 001 Device 001:ID1d6b:0001 Linux Foundation 1.1 root hub
 ```
 
 
