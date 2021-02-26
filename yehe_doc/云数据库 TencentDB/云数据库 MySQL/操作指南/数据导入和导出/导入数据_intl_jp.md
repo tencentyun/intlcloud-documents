@@ -1,1 +1,1 @@
-[データ伝送サービスDTS](https://intl.cloud.tencent.com/document/product/571)のデータマイグレーション機能を使用して、データをTencentDB for MySQLにインポートできます。 詳細については、 <a href="https://cloud.tencent.com/document/product/571/8710" target="_blank">データマイグレーション</a>をご参照ください。　　
+[データ伝送サービスDTS](https://intl.cloud.tencent.com/document/product/571)のデータマイグレーション機能を使用して、データをTencentDB for MySQLにインポートできます。 詳細については、 <a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">データマイグレーション</a>をご参照ください。　　
