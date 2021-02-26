@@ -15,4 +15,3 @@ Follow the steps below if you want to integrate only some UGSV features into you
   + [Integration via Android Studio](https://intl.cloud.tencent.com/document/product/1069/38018)
 
 
-
