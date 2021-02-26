@@ -7,7 +7,7 @@ Tag retention rules support two types of retention policies: retaining the lates
 ## Prerequisites
 
 Before creating and managing an image repository for a TCR Enterprise Edition instance, complete the following tasks:
-- [Create an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- [Purchasing Instances](https://intl.cloud.tencent.com/document/product/1051/39088).
 - If you are using a sub-account, you must have granted the sub-account operation permissions for the corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
 
 ## Directions
