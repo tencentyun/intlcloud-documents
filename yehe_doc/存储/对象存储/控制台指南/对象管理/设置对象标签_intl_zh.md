@@ -2,7 +2,7 @@
 
 对象标签功能的实现是通过为对象添加一个键值对形式的标识，协助用户分组管理存储桶中的对象。对象标签由标签的键（`tagKey`）和标签的值（`tagValue`）与`=`相连组成，例如`group = IT`。用户可以对指定的对象进行标签的设定、查询、删除操作。
 
-> 对象标签功能为计费项，详细的定价请参见 [产品定价](https://intl.cloud.tencent.com/document/product/436/6239) 文档。
+>! 对象标签功能为计费项，详细的定价请参见 [产品定价](https://intl.cloud.tencent.com/pricing/cos) 文档。
 
 使用对象标签时需注意以下限制：
 
@@ -27,5 +27,11 @@
 
 1. 参见 [查看对象信息](https://intl.cloud.tencent.com/document/product/436/13326) 进入需要添加标签的对象详情页面。
 2. 在对象的详情页面中的【对象标签管理】配置项中，单击【添加标签】，为对象添加标签。
-   ![为已有的对象添加标签](https://main.qcloudimg.com/raw/d4bda3a72248e8ad7c33178e8047075b.png)
+   ![](https://main.qcloudimg.com/raw/d4bda3a72248e8ad7c33178e8047075b.png)
 3. 如果您需要修改或删除标签，可在【对象标签管理】配置项中，单击标签右侧的【编辑】或【删除】即可。
+
+## 如何使用对象标签
+
+当设置了对象标签后，您可以快速对具有相同对象标签的对象设置生命周期规则，详情请参见 [设置生命周期](https://intl.cloud.tencent.com/document/product/436/14605)。
+
+
