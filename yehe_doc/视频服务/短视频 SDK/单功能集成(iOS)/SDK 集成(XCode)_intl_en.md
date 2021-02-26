@@ -37,6 +37,7 @@ The app needs access to the photo album, which can be configured in `Info.plist`
 
 ### Step 3. Set SDK licenses and get basic information.
 Follow the steps in [License Application](https://intl.cloud.tencent.com/document/product/1069/38041) to apply for a license, and copy the key and license URL in the [console](https://console.cloud.tencent.com/vod/license).
+![](https://main.qcloudimg.com/raw/7bbf7fb9e3d13944bc3b6823fd786269.png)
 Before using UGSV features in your app, we recommend that you add the following code to `- [AppDelegate application:didFinishLaunchingWithOptions:]`.
 
 ```objc
@@ -57,12 +58,12 @@ Before using UGSV features in your app, we recommend that you add the following 
 
 ### Step 4. Configure logs.
 You can enable/disable console log printing and set the log level in `TXLiveBase`. Below are the APIs used.
-- **`setConsoleEnabled`**
+- **setConsoleEnabled**
 Sets whether to print the SDK output in the Xcode console.
-**`setLogLevel`**
+- **setLogLevel**
 Sets whether to allow the SDK to print local logs. By default, the SDK writes logs to the **Documents/logs** folder of the current app.
 We recommend that you enable local log printing. You may need to provide log files if you run into a problem and need technical support.
-**Viewing log files**
+- **Viewing log files**
 To reduce the storage space taken up by log files, the UGSV SDK encrypts local log files and limits their number. You need to use the log [decompression tool](http://dldir1.qq.com/hudongzhibo/log_tool/decode_mars_log_file.py) to view the content of log files.
 ```objc
   [TXLiveBase setConsoleEnabled:YES];
@@ -99,7 +100,7 @@ Click your project’s target, select **Build Phase**, click **+** in **Dependen
   2. Go to the directory of the SDK in Finder, drag the SDK to **Link Binary With Libraries**, or find the directory of the SDK in Xcode and click **Add files** to add the SDK, as shown below.
 ![](https://main.qcloudimg.com/raw/8432ca1427b51e65ff40e10bb460bbf9.png)
   3. Drag `FilterResource.bundle` in `TXLiteAVDemo/App/Resource` to the project and check **App Target**.
-4. **Import resources.*
+4. **Import resources.**
 	1. Click your project’s target, select **Build Phase**, and expand `Copy Bundle Resources`.
 	2. Expand `UGCKit.xcodeproj` and `Products` in the directory on the left, drag `UGCKitResources.bundle` to `Copy Bundle Resources`, and expand `TCBeautyPannel.xcodeproj` and `Products`.
 	3. Drag `TCBeautyPanelResources.bundle` to `Copy Bundle Resources`.
