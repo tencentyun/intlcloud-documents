@@ -179,7 +179,7 @@ Generally, EKS will output the related “Warning” events. In the following ex
 Please follow the steps below to analyze:
 
 #### Viewing the CLB instance type
- 1. In **Ingress** page, click the CLB instance ID to go to the CLB basic information page.
+ 1. On the **Service** or **Ingress** page, click the CLB instance ID to go to the CLB basic information page.
 ![](https://main.qcloudimg.com/raw/8d8d309a9906d6685cf292899d5501b1.png)   
  2. You can view the **Instance Type** of the above CLB instance in the CLB basic information page.      
 
