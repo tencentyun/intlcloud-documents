@@ -5,8 +5,8 @@ After your domain name is connected to CDN, the system will automatically assign
 
 This document provides CNAME configuration directions on Tencent Cloud:
 
-- [Settings on Tencent Cloud](https://intl.cloud.tencent.com/document/product/228/3121#.E8.85.BE.E8.AE.AF.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
-- [Settings on Alibaba Cloud](https://intl.cloud.tencent.com/document/product/228/3121#.E9.98.BF.E9.87.8C.E4.BA.91.E8.AE.BE.E7.BD.AE.E6.96.B9.E6.B3.95)
+- [Settings on Tencent Cloud](#m1)
+- [Settings on Alibaba Cloud](#m2)
 
 <span ID ="m1"></span>
 
@@ -19,7 +19,7 @@ This document provides CNAME configuration directions on Tencent Cloud:
 ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 	- **Host**: Enter the sub-domain name. For example, if you want to add the resolution for `www.dnspod.com`, you only need to enter `www` as the host record. If you want to add the resolution for `dnspod.com`, select `@`. Please note that a CNAME record with `@` will affect the proper resolution of the MX record.
 	- **Type**: Select **CNAME**.
-	- **Split Zone**: Select **Default**. DNSPod offers various split zone options for you to specify records for specific users. For more information, please see [Split Zone Description](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/).
+	- **Split Zone**: Select **Default**. DNSPod offers various split zone options for you to specify records for specific users. 
 	- **Value**: Enter the domain name pointed to by the CNAME. Only a domain name can be entered. After the record is generated, a `.` will be automatically added after the domain name, which is normal.
 	- **Weight**: Different record values in the same split zone of a host record can be set with different weights, so that resolution will be returned according to their weight ratios. Please enter an integer between 0 and 100.
 	- **MX**: Do not enter content.
@@ -31,7 +31,7 @@ This document provides CNAME configuration directions on Tencent Cloud:
 	 For example, if you want to point all users to `1.com`, you can configure a CNAME record with **Default** as the split zone and `1.com` as the value.
 ![img](https://main.qcloudimg.com/raw/0c146a23008acc3c0e4884aa1c4d3a3c.png)
 - You can also enable acceleration service for a specified split zone.
-For example, if you want to point CUCC users to `2.com` and CMCC users to  `1.com`, you can configure two CNAME records: one with **CMCC** as the split zone and `1.com` as the value, another one with **CUCC** as the split zone and `2.com` as the value. For more information, please see [Split Zone Description](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/).
+For example, if you want to point CUCC users to `2.com` and CMCC users to  `1.com`, you can configure two CNAME records: one with **CMCC** as the split zone and `1.com` as the value, another one with **CUCC** as the split zone and `2.com` as the value. 
 ![](https://main.qcloudimg.com/raw/ecf4d1ad94eaf897473647459b923209.png)
 
 <span ID ="m2"></span>
@@ -43,7 +43,7 @@ If your DNS service provider is Alibaba Cloud, you can add a CNAME record as fol
 2. Click the domain name to be resolved to enter the resolution record page.
 3. Click **Add Record**.
 4. To set a CNAME resolution record, select CNAME as the record type. Enter the host record as needed (e.g., `www`), which is the domain name prefix. Enter the domain name pointed to by the current domain name as the record value. Retain the default settings for **ISP Line** and **TTL**.
-   ![img](https://main.qcloudimg.com/raw/6b8bb9ce4f998b8d17ca27fd10512dc6.png)
+   ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 5. Finally, click **Confirm**.
 
 
