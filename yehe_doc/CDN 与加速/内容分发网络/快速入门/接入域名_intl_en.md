@@ -7,7 +7,7 @@ After activating CDN, you can log in to the [CDN console](https://console.cloud.
 
 ## Creating a Distribution
 Click **Domain Management** on the left sidebar and click **Create a Distribution**.
-![](https://main.qcloudimg.com/raw/02784c06077ee97314ec146aa3369fb1.png)
+![](https://main.qcloudimg.com/raw/d84c556d8f1d7634b4570ce3570cbbd8.png)
 
 The distribution creation page consists of three parts:
 
@@ -19,7 +19,7 @@ Based on your selected domain name and origin server configurations, CDN will re
 
 ### Part 1: Domain configuration
 Enter your business domain name in the domain field and select the project, region, service type and Internet Protocol:
-<img src="https://main.qcloudimg.com/raw/4f2de8b5158a317b1913bd5f920dbf3b.png" style="height:280px"/>
+<img src="https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png" style="height:280px"/>
 
 **Configuration description:**
 
@@ -35,7 +35,7 @@ Enter your business domain name in the domain field and select the project, regi
 ### Part 2: Origin configuration
 
 Configure business origin server information. If a CDN node has no resource cache, the node will pull the resource from the origin server and cache it.
-![](https://main.qcloudimg.com/raw/4a051cfc61dbd0e64b5ccfb8b386829d.png)
+![](https://main.qcloudimg.com/raw/26f3614d1ee8096b9e2b6d12322b6214.png)
 
 **Configuration description:**
 
