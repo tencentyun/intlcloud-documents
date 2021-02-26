@@ -14,8 +14,8 @@ Cloud-init 主要提供实例首次初始化时自定义配置的能力。如果
 
 ## 操作步骤
 
-
-### 手工下载 cloud-init 源码包方式[](id:ManualDown)
+<span id="ManualDown"></span>
+### 手工下载 cloud-init 源码包方式
 
 #### 下载 cloud-init 源码包
 >?  
