@@ -47,9 +47,10 @@
 | push_duration | string | 断流事件通知推流时长，单位毫秒                               |
 | errcode       | int    | 推断流错误码                                                 |
 | errmsg        | string | 推断流错误描述                                               |
+| set_id          | int  | 是否为国内外推流   |
 
 ### 推断流错误码
-推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083#directions)。
+推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083)。
 
 ### 回调消息示例
 
@@ -70,6 +71,8 @@
 "event_time":1545115790,
 
 "event_type":1,
+
+"set_id":2,
 
 "node":"100.121.160.92",
 

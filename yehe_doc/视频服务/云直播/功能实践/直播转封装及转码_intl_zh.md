@@ -39,7 +39,7 @@
 - 将视频流转换为编码压缩率更优的视频编码格式，例如某一条原始编码格式为 H264 的视频流，在观看的人数比较大的情况下，可以尝试将原始 H264 的视频流转换为压缩率更高的 H265 视频流，从而能够达到节省带宽，节约成本的效果。
 - 将原始视频流转化为不同的编码格式，以适应特殊终端的播放需求，例如有些特殊场景下解码 H264 视频由于性能问题无法达到实时播放的体验，需要将原始 H264 流转换为 Mpeg 编码格式的视频，从而达到终端实时解码播放的体验。
 
-<span id="parameter"></span>
+<span id="arameter"></span>
 
  ### 视频转码参数
 
@@ -153,9 +153,9 @@
 
 | 清晰度 | 模板名称 | 视频分辨率        | 视频码率 | 视频帧率 | 视频编码格式 |
 | ------ | -------- | ----------------- | -------- | -------- | ------------ |
-| 流畅   | 550      | 按比例缩放 * 540  | 500kpbs  | 23       | H264         |
-| 标清   | 900      | 按比例缩放 * 720  | 1000kpbs | 25       | H264         |
-| 高清   | 2000     | 按比例缩放 * 1080 | 2000kpbs | 25       | H264         |
+| 流畅   | 550      | 按比例缩放 * 540  | 500kbps  | 23       | H264         |
+| 标清   | 900      | 按比例缩放 * 720  | 1000kbps | 25       | H264         |
+| 高清   | 2000     | 按比例缩放 * 1080 | 2000kbps | 25       | H264         |
 
 ## 极速高清转码功能
 
@@ -169,7 +169,7 @@
 
 随着当今各视频平台用户对视频源清晰度观看体验要求越来越高，当前直播行业1080P、码率3Mbps - 10Mbps已逐渐成为主流配置，所以带宽成本已经占据了视频平台成本比例中很大的一部分。而降低视频码率能够十分有效的减少带宽成本。
 **示例：**
-一场标准直播码率为3Mbps，直播时间4小时，观看人数200人，编码方式使用 H.264，分辨率1080P，不使用极速高清转码时，使用 [直播价格计算器](https://buy.cloud.tencent.com/price/lvb/calculator) 计算产生的带宽成本为127.08。
+一场标准直播码率为3Mbps，直播时间4小时，观看人数200人，编码方式使用 H.264，分辨率1080P，不使用极速高清转码时，使用 [直播价格计算器](https://buy.cloud.tencent.com/price/lvb/calculator) 计算产生的带宽成本为127.08美元。
 
 - 使用极速高清转码降低码率之后，产生的带宽成本大约为：127.08 ×（100% - 30%）= 88.956美元。
 - 使用极速高清转码产生的费用：0.0443 × 240 = 10.632美元（刊例价格，不计算任何折扣）。
@@ -289,13 +289,13 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">删除转码规则</a></td>
 </tr><tr>
 <td rowspan=4>直播水印</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">创建水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30154">创建水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">修改水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30150">修改水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">删除水印模板</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30153">删除水印模板</a></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">查询水印模板详情列表</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30152">查询水印列表</a></td>
 </tr></table>
 
 
