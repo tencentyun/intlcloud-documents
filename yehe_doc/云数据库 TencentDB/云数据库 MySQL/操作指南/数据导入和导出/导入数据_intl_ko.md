@@ -1,1 +1,1 @@
-TencentDB for MySQL은 [데이터 전송 서비스 DTS](https://cloud.tencent.com/document/product/571)의 데이터 마이그레이션 기능을 통해 데이터 가져오기를 진행할 수 있습니다. <a href="https://cloud.tencent.com/document/product/571/8710" target="_blank">데이터 마이그레이션</a>을 참조 바랍니다.
+TencentDB for MySQL은 [데이터 전송 서비스 DTS](https://intl.cloud.tencent.com/ko/document/product/571)의 데이터 마이그레이션 기능을 통해 데이터 가져오기를 진행할 수 있습니다. <a href="https://intl.cloud.tencent.com/document/product/571/34103" target="_blank">데이터 마이그레이션</a>을 참조 바랍니다.
