@@ -9,7 +9,7 @@ The image repository is the minimum unit for permission management in TCR. The i
 ## Prerequisites
 
 Before creating and managing an image repository for a TCR Enterprise Edition instance, you must complete the following preparations:
-- You have [created a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- You have [purchased a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/39088).
 - If you are using a sub-account, ensure that you have granted the sub-account operation permissions for the corresponding instance in advance. For more information on how to grant the permissions, see [Examples of TCR Enterprise Edition Authorization Schemes](https://intl.cloud.tencent.com/document/product/1051/37248).
 
 ## Directions
@@ -23,7 +23,7 @@ On the "Image Repository" page, you can view the image repository list of the cu
  - **Associated Instance**: indicates the currently selected instance, to which the created image repository belongs.
  - **Namespace**: indicates the namespace to which the image repository belongs. If the list is empty, first [create a namespace](https://intl.cloud.tencent.com/document/product/1051/35487) in the instance.
  - **Name**: indicates the name of the image repository. Its value must be 2 to 200 characters in length and can only contain lowercase letters, numbers, and separators including periods (`.`), underscores (`_`), hyphens (`-`), and slashes (`/`). This parameter cannot start or end with a separator or contain several consecutive separators. In addition, this name can be a cascaded path, such as `team-01/front/nginx`. You can set the name based on your business requirements.
- - **Image source**: supports "Local image push" and "Platform image building". For more information on how to build images on the platform, see [Configuring Image Building](https://intl.cloud.tencent.com/document/product/1051/37252).
+ - **Image source**: supports "Local image push" and "Platform image building". 
  - **Summary**: indicates the brief description of the image repository. Its value is a string of up to 100 characters. You can edit the summary again after the image repository is created.
  - **Description**: indicates the detailed description of the image repository. This parameter supports the Markdown syntax. Its value is a string of up to 1,000 characters. You can modify the description after the image repository is created.
 3. Click **OK** to create the image repository.
@@ -58,7 +58,7 @@ You can click **Layer Information** for a target image repository to view the la
  >! When a specified image tag is deleted, other image tags with the same image ID as the deleted image tag may also be deleted. If this is the case, these image tags will become unavailable.
 
 ### Building images
-You can use source code hosted in GitHub, GitLab.com, Gitee.com, and CODING to perform compilation and building. For more information, see [Configuring Image Building](https://intl.cloud.tencent.com/document/product/1051/37252).
+You can use source code hosted in GitHub, GitLab.com, Gitee.com, and CODING to perform compilation and building. 
 
 ### Editing the repository information
 On the details page of the image repository, you can click the **Repository Information** tab to view and edit the basic information about the image repository, as shown in the following figure:
