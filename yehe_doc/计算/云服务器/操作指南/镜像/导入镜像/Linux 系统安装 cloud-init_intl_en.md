@@ -15,7 +15,8 @@ The server with the cloud-init service installed can access the public network.
 ## Directions
 
 
-### Manually downloading the cloud-init source package [](id:ManualDown)
+<span id="ManualDown"></span>
+### Manually downloading the cloud-init source package 
 
 #### Downloading the cloud-init source package
 >?  
