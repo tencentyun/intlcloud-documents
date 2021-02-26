@@ -3,7 +3,7 @@
 This document describes how to terminate and return Enterprise Edition instances in Tencent Container Registry (TCR).
 
 ## Prerequisites
-You have [created an Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/39088), and the current account has permission to delete that instance.
+You have [purchased a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/39088), and the current account has permission to delete that instance.
 
 
 ## Directions
