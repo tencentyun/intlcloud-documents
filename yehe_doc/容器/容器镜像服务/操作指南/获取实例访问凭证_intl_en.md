@@ -13,7 +13,7 @@ TCR Enterprise Edition instances support both a long-term access credential and 
 ## Prerequisites
 
 Before obtaining an access credential for a TCR Enterprise Edition instance, you must complete the following preparations.
-- You have [created a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- You have [purchased a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/39088).
 - To obtain the access credential through an API, you need to obtain the [API key](https://console.cloud.tencent.com/cam/capi) for calling API 3.0.
 
 ## Directions
