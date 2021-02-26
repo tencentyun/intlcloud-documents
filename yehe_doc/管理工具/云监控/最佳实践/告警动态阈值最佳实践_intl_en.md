@@ -55,7 +55,7 @@ For percentage metrics, the value range is fixed, typically 0–100%. Users will
 **Scenario 1:** if you definitely know when a serious problem might occur with regard to a metric, such as CPU utilization, where alarms are configured to be triggered typically when the threshold of 90% is reached, you can consider using a static threshold.
 
 **Scenario 2:** if you feel that an alarm threshold of 90% for a percentage metric cannot help you detect some problems in advance, you can consider using a dynamic threshold as shown below, where alarms will be triggered when the metric value surges, thus allowing you to solve problems as soon as they arise.
-![](https://main.qcloudimg.com/raw/7c6d6f10a89081d34f11e43daae61b5c.jpg)
+![](https://main.qcloudimg.com/raw/a798eddcb65b3318dc5202f9199e5d7f.png)
 
 **Scenario 3:** if you feel that alarms are helpful only if they are triggered when the threshold of 60% is reached in case of metric value surge, you can consider using a dynamic threshold in combination with a static threshold. 
 #### Network traffic metrics
@@ -68,14 +68,14 @@ The values of such metrics fluctuate greatly in an uncertain range over time. It
 The values of such metrics typically fluctuate slightly in an uncertain range. It is suitable to use dynamic thresholds for such metrics.
 
 As there are a lot of glitches in delay metrics, we recommend you use a medium sensitivity and a longer duration to filter out glitches and improve the alarm quality.
-![](https://main.qcloudimg.com/raw/acd6208a0d56304d3cec1956d01ddb33.jpg)
+![](https://main.qcloudimg.com/raw/a149848c2ff0890ea735b296fa00e8f3.png)
 
 #### Other metrics
 
 #### Exception statistics
 At the early stage of your business, if it is difficult for you to configure a reasonable threshold, and you need to manually adjust it every day based on the changes, then you can use a dynamic threshold.
 Dynamic thresholds can adaptively track the trends of the metrics, thus making it easier for you to determine reasonable thresholds.
-![](https://main.qcloudimg.com/raw/b6fcd79524f6c1d01fab5d511449570b.png)
+![](https://main.qcloudimg.com/raw/6fc91ed31d0cb44d4cea35b5d6ae9b8f.png)
 As long as you select a "greater or less than" threshold, the system will adaptively identify sudden increases and decreases and send alarm notifications.
 
 #### Statistics metrics
@@ -84,5 +84,5 @@ It can be found through observation that most metric values are around 350. An e
  After a period of operation, the metric value may increase to 550, which is just in alignment with the current business conditions.
  - If you use static thresholds, you will keep receiving alarm notifications and need to reconfigure thresholds that are suitable at the current stage.
  - If you use a dynamic threshold, only when the metric value suddenly increases from 350 to 550, alarm notifications will be sent until the metric value stabilizes at 550 when the algorithm intelligently identifies the current value as a normal value. 
-![](https://main.qcloudimg.com/raw/c8bddfb61dfc1d23207f425f7cfc604d.png)
+![](https://main.qcloudimg.com/raw/485752872554c86f14cc9d79edd98b44.png)
 >?For more information on how to configure dynamic thresholds, please see [How to Use Dynamic Thresholds](https://intl.cloud.tencent.com/document/product/248/39022).
