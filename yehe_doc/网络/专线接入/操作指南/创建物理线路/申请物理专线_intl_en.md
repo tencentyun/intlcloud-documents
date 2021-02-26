@@ -18,12 +18,12 @@ table th:first-of-type {
 | Access Location | The access point for your Tencent Cloud connection. Nearby access is recommended. | Generally, two or more access points are available in one Tencent Cloud region, implementing two-connection disaster recovery. |
 | Cloud port type | The port used to connect your connection with the Tencent Cloud access device | Select the port type based on your bandwidth. You can consult with your connection provider or Tencent Cloud's architect or after-sales manager. |
 | Your Premise | Enter your detailed address. | The floor of the IDC should be provided in the detailed address. |
-| Bandwidth | Valid range: 2 - 100,000 Mbps | - |
+| Bandwidth Cap | <ul><li>Set a bandwidth cap within 1-1000 Mbps for a gigabit port. </li><li>Set a bandwidth cap within 1-10000 Mbps for a 10-gigabit port. </li></ul>   | - |
 | Carrier Circuit ID | The unique circuit ID of this connection provided by the carrier | - |
 | Redundant Connection | A second connection for the primary/secondary configuration, instead of having both connections connecting to the same device. This way avoids single points of failure. | The primary/secondary configuration is to avoid two connections connecting to the same access point. To configure primary and secondary dedicated tunnels, you need to apply for them on the Dedicated Tunnels console.|
 | Applicant Name | The name of the contact person for Direct Connect. | - |
-| Applicant Mobile | The mobile number of the contact person for Direct Connect | - |
-| Applicant Email | The email address of the contact person for Direct Connect | - |
+| Applicant Mobile | The mobile number of the contact person for Direct Connect. | - |
+| Applicant Email | The email address of the contact person for Direct Connect. | - |
 
 
 ## Reviewing Resources and Designing Solutions
