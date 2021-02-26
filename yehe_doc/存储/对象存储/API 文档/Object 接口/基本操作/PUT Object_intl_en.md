@@ -107,8 +107,7 @@ This API returns common error responses and error codes. For more information, p
 
 #### Request
 
-<dx-codeblock>
-:::  plaintext
+```plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:05 GMT
@@ -119,8 +118,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q
 Connection: close
 
 [Object Content]
-:::
-</dx-codeblock>
+```
 
 #### Response
 
