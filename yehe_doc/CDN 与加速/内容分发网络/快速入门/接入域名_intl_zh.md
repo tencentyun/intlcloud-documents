@@ -7,7 +7,7 @@ table th:nth-of-type(2){ width:82%; }
 
 ## 添加域名
 进入域名管理页面，单击【添加域名】。
-![](https://main.qcloudimg.com/raw/02784c06077ee97314ec146aa3369fb1.png)
+![](https://main.qcloudimg.com/raw/d84c556d8f1d7634b4570ce3570cbbd8.png)
 
 添加域名页面由三部分组成：
 
@@ -19,7 +19,7 @@ table th:nth-of-type(2){ width:82%; }
 
 ### 第一部分：域名属性配置
 在域名配置模块填充您业务自身的服务域名，为其选择项目、加速区域及业务类型等：
-<img src="https://main.qcloudimg.com/raw/4f2de8b5158a317b1913bd5f920dbf3b.png" style="height:280px"/>
+<img src="https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png" style="height:280px"/>
 
 **配置项详解：**
 
@@ -35,7 +35,7 @@ table th:nth-of-type(2){ width:82%; }
 ### 第二部分：源站配置
 
 配置业务源站相关信息，CDN 节点在缓存无资源时，会回源站拉取并缓存：
-![](https://main.qcloudimg.com/raw/4a051cfc61dbd0e64b5ccfb8b386829d.png)
+![](https://main.qcloudimg.com/raw/26f3614d1ee8096b9e2b6d12322b6214.png)
 
 **配置项详解：**
 
