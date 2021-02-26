@@ -16,7 +16,7 @@ When the protocol and port are specified, the configuration will be accurately f
   * `spec.loadBalancer.l4Listeners.port`: listening port
 
 ## Associated Actions Between Service and TkeServiceConfig
-1. During the creation of a Loadbalancer-type Service, if you set **service.cloud.tencent.com/tke-service-config-auto:&lt;true&gt;**, &lt;ServiceName&gt;-auto-service-config will be automatically created. Alternatively, you can specify your own created TkeServiceConfig through **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**. These two annotations cannot be used at the same time. 
+1. During the creation of a Loadbalancer-type Service, if you set the annotation **service.cloud.tencent.com/tke-service-config-auto: "true"**, &lt;ServiceName&gt;-auto-service-config will be automatically created. Alternatively, you can specify your own created TkeServiceConfig through **service.cloud.tencent.com/tke-service-config:&lt;config-name&gt;**. These two annotations cannot be used at the same time. 
 2. The synchronization actions of an automatically created TkeServiceConfig are as follows:
   - When a Layer-4 listener is added during Service resource update, if there is no corresponding TkeServiceConfig configuration segment for the listener or forwarding rule, Service-Controller will automatically add the corresponding TkeServiceConfig configuration segment.
   - When a Layer-4 listener is deleted, Service-Controller will automatically delete the corresponding TkeServiceConfig segment.
