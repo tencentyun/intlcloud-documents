@@ -71,27 +71,27 @@ modprobe usbip-host
 ```
 4. 执行以下命令，查询云服务器可用的 USB 设备。
 ```
-usbip list --remote 127.0.0.1
+ usbip list --remote 127.0.0.1
 ```
 例如，找到 Feitian 的优 Key 的信息，返回如下结果：
 ```
-Exportable USB devices
-======================
--127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
+ Exportable USB devices
+ ======================
+ -127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
 ```
 5. 执行以下命令，将 USB 设备绑定至服务器中。
 ```
-usbip attach --remote=127.0.0.1 --busid=1-1.3
+ usbip attach --remote=127.0.0.1 --busid=1-1.3
 ```
 6. 执行以下命令，查看当前 USB 设备列表。
 ```
-lsusb
+ lsusb
 ```
 返回类似如下信息，即表示共享成功。
 ```
-Bus 002 Device 002:ID096e:031b Feitian Technologies, Inc.
-Bus 002 Device 001:ID1d6b:0002 Linux Foundation 2.0 root hub
-Bus 001 Device 001:ID1d6b:0001 Linux Foundation 1.1 root hub
+ Bus 002 Device 002:ID096e:031b Feitian Technologies, Inc.
+ Bus 002 Device 001:ID1d6b:0002 Linux Foundation 2.0 root hub
+ Bus 001 Device 001:ID1d6b:0001 Linux Foundation 1.1 root hub
 ```
 
 
