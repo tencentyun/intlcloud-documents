@@ -37,7 +37,7 @@ After successful execution, the output sample is as follows:
 Where, `DBInstanceId` refers to the instance ID.
 
 ### Step 2. Connect to the instance
-1. Use the [DescribeServerlessDBInstances](https://intl.cloud.tencent.com/document/product/409/3887) API to query the information of the PostgreSQL for Serverless instance you just created, including instance IP, port, username, and initial password.
+1. Use the [DescribeServerlessDBInstances](https://intl.cloud.tencent.com/document/product/409/38878) API to query the information of the PostgreSQL for Serverless instance you just created, including instance IP, port, username, and initial password.
 ```
 {
   "Response": {
