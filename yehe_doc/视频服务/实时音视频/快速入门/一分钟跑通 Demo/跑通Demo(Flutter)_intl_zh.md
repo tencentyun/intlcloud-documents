@@ -34,7 +34,6 @@
 3. 设置 `GenerateTestUserSig.java` 文件中的相关参数：
 <ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
 	<li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
-	<img src="https://main.qcloudimg.com/raw/adccd2161bbc3b710b6a3621be2b9381.png"/>
 4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
 5. 编译完成后，单击【回到控制台概览】即可。
 
@@ -45,10 +44,12 @@
 ### 步骤4：编译运行
 1. 执行 `flutter pub get`。
 2. 编译运行调试：
+
 ####  Android端
 1. 执行 `flutter run`。
 2. 使用 Android Studio（3.5及以上的版本）打开源码工程。
 3. 单击【运行】即可。
+
 #### iOS端
 1. 使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios工程`。
 2. 编译并运行 Demo 工程即可。
