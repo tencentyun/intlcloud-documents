@@ -12,4 +12,6 @@
 ## 操作步骤
 1. 登录 [专线接入控制台](https://console.cloud.tencent.com/dc/dc) ，并在左侧导航栏单击【专线网关】。
 2. 在“专线网关”页面上方选择地域和私有网络，然后在专线网关列表中单击目标实例 ID。
+ ![](https://main.qcloudimg.com/raw/b0eec7cf2c745e961d89836a75a81bb3.png)
 3. 在专线网关详情页面单击【路由表】页签，查看专线网关 IDC 方向和云联网方向的路由表，若需下载路由表信息，请单击<img src="https://main.qcloudimg.com/raw/5be52268cd6656b7fccb91180c187035.svg" style="zoom:10%;" />。
+ ![](https://main.qcloudimg.com/raw/407a1ead3919862370eb6f98640b0c6c.png)
