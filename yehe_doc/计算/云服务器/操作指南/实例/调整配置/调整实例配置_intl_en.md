@@ -14,7 +14,7 @@ You can adjust the configuration of an instance when it is in shutdown or runnin
 
 ### Configuration adjustment limits
 
-Only instance **whose system and data disks are both CBS cloud disks** supports configuration adjustment.
+Only instances **whose system and data disks are both CBS cloud disks** support configuration adjustment.
 - Configuration upgrade:
 No limits on the number of configuration upgrades. The upgrade takes effect immediately.
 - Configuration downgrade:
