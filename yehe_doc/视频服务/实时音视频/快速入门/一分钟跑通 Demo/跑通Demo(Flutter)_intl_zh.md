@@ -15,26 +15,28 @@
 
 ## 操作步骤
 
-<span id="step1"></span> 
+[](id:step1)
+
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
-2. 单击【立即开始】，输入应用名称，例如 `TestTRTC`，单击【创建应用】。
+2. 输入应用名称，例如 TestTRTC，单击【创建】。
 
-<span id="step2"></span> 
+[](id:step2)
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 单击【[Github](https://github.com/c1avie/trtc_demo)】跳转至 Github，下载相关 SDK 及配套的 Demo 源码。
-2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
+1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
+2. 下载完成后，单击【已下载，下一步】。
 
 
-<span id="step3"></span> 
+[](id:step3)
 ### 步骤3：配置 Demo 工程文件
-1. 解压 [步骤2](#step2) 中下载的源码包。
+1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
 2. 找到并打开 `/lib/debug/GenerateTestUserSig.dart` 文件。
 3. 设置 `GenerateTestUserSig.java` 文件中的相关参数：
-  -  SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
-	 SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。
-  -  返回实时音视频控制台，单击【粘贴完成，下一步】。
-  -  单击【关闭指引，进入控制台管理应用】。
+<ul><li/>SDKAPPID：默认为 PLACEHOLDER ，请设置为实际的 SDKAppID。
+	<li/>SECRETKEY：默认为 PLACEHOLDER ，请设置为实际的密钥信息。</ul>
+	<img src="https://main.qcloudimg.com/raw/adccd2161bbc3b710b6a3621be2b9381.png"/>
+4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
+5. 编译完成后，单击【回到控制台概览】即可。
 
 >!
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
@@ -43,12 +45,10 @@
 ### 步骤4：编译运行
 1. 执行 `flutter pub get`。
 2. 编译运行调试：
-
-#### Android端
+####  Android端
 1. 执行 `flutter run`。
 2. 使用 Android Studio（3.5及以上的版本）打开源码工程。
 3. 单击【运行】即可。
-
 #### iOS端
 1. 使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios工程`。
 2. 编译并运行 Demo 工程即可。
@@ -57,17 +57,17 @@
 
 ## 常见问题
 
-- [两台手机同时运行 Demo，为什么看不到彼此的画面？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que1)
-- [防火墙有什么限制？](hhttps://intl.cloud.tencent.com/zh/document/product/647/39242#que2)
-- [iOS 打包运行 Crash？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que3)
-- [iOS 无法显示视频（Android 正常）？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que4)
-- [更新 SDK 版本后，iOS CocoaPods 运行报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que5)
-- [Android Manifest merge failed 编译失败？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6)
-- [因为没有签名，真机调试报错?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que7)
-- [对插件内的 swift 文件做了增删后，build 时查找不到对应文件？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que8)
-- [Run 报错“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que9)
-- [Pod install 报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que10)
-- [Run 的时候 iOS 版本依赖报错？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que11)
+- [两台手机同时运行 Demo，为什么看不到彼此的画面？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [防火墙有什么限制？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [iOS 打包运行 Crash？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [iOS 无法显示视频（Android 正常）？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [更新 SDK 版本后，iOS CocoaPods 运行报错？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [Android Manifest merge failed 编译失败？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [因为没有签名，真机调试报错?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [对插件内的 swift 文件做了增删后，build 时查找不到对应文件？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [Run 报错“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [Pod install 报错？](https://intl.cloud.tencent.com/document/product/647/392420)
+- [Run 的时候 iOS 版本依赖报错？](https://intl.cloud.tencent.com/document/product/647/392421)
 
 
 
