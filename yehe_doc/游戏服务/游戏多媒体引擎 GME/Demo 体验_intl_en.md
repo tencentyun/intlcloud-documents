@@ -90,7 +90,7 @@ For initialization, you need to enter the `AppID` and access key obtained from t
 >- The `userId` used in two windows should be different.
 >
 <img src="https://main.qcloudimg.com/raw/f27ce333719f70f03447dcd97c5c9f3a.png"  width="80%"><br>
-Finally, click **Initialize (初始化)** -> **Voice Chat (实时语音)**.
+Finally, click **Initialize ** -> **Voice Chat **.
 
 ### 4. Enter a voice chat room
 
@@ -101,10 +101,10 @@ Please enter a room ID and then click **JoinRoom**. If you have opened the demo 
 ### 5. Game interface introduction
 
 Please see the interface details below:
-- Exit (退出按钮): clicking it to back to the voice room selection page.
-- Microphone on/off (打开/关闭麦克风): the microphone is disabled by default. You need to enable it for communication.
-- Help (使用帮助): clicking it to see the user guide.
-- Accompaniment on (打开伴奏): clicking it to play back the accompaniment.
+- Exit : clicking it to back to the voice room selection page.
+- Microphone on/off : the microphone is disabled by default. You need to enable it for communication.
+- Help : clicking it to see the user guide.
+- Accompaniment on : clicking it to play back the accompaniment.
 - Logs at the bottom-right corner: displays the information of the users entering and exiting the room.
 - Local connection buttons at the top-left corner: they need to be configured before a game can be started.
 <img src="https://main.qcloudimg.com/raw/ae3f7726b2669c57466194a6e3e1e567.png"  width="80%"/></img>
