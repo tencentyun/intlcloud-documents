@@ -10,12 +10,12 @@
 
 -   您可根据预算和资源情况组合选择预留实例的类型（机型配置）、付款类型、地域、有效期以及购买数量；
 
--   当前支持通过云API和控制台购买预留实例，购买预留实例及操作步骤，请参阅CVM产品说明；
+-   当前支持通过云API和控制台购买预留实例，购买预留实例及操作步骤，请参阅[CVM产品说明](https://intl.cloud.tencent.com/document/product/213)；
 
 -   预留实例不支持退款。
 
 **支持预留实例的机型及价格：**
-预留实例支持的机型配置、匹配规则及定价说明，请参阅CVM产品说明。
+预留实例支持的机型配置、匹配规则及定价说明，请参阅[CVM产品说明](https://intl.cloud.tencent.com/document/product/213)。
 预留实例计费支持可购买的可用区以及实例规格可在 [定价中心](https://intl.cloud.tencent.com/pricing/cvm) 或使用API [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) 中查看 。 
 [预留实例计费匹配规则](https://intl.cloud.tencent.com/document/product/213/37265)及更多说明，请参阅[预留实例计费概述](https://intl.cloud.tencent.com/document/product/213/30571)。
 CVM 支持预留实例计费。要了解价格信息，请参考[预留实例价格总览](https://intl.cloud.tencent.com/document/product/213/30619)。 
