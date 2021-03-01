@@ -37,7 +37,7 @@
 其中返回的 DBInstanceId 指实例 ID。
 
 ### 步骤二：连接实例
-1. 通过 [DescribeServerlessDBInstances](https://intl.cloud.tencent.com/document/product/409/3887) 接口查看所有创建的 PostgreSQL for Serverless 实例信息。获取实例的 IP 地址、端口、数据库用户和初始密码。
+1. 通过 [DescribeServerlessDBInstances](https://intl.cloud.tencent.com/zh/document/product/409/38878) 接口查看所有创建的 PostgreSQL for Serverless 实例信息。获取实例的 IP 地址、端口、数据库用户和初始密码。
 ```
 {
   "Response": {
