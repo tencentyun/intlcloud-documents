@@ -9,7 +9,7 @@ If you no longer need an instance, you can terminate it. The terminated instance
 
 You can use the following methods to terminate and release pay-as-you-go instances:
  - **Manual termination:** if your account is in good standing, you can manually terminate a pay-as-you-go instance. A pay-as-you-go instance is released after it remains in the recycle bin for over 2 hours.
- - **Scheduled termination:** you can schedule a time (to the second) to automatically terminate a pay-as-you-go instance. You can select a future time to terminate resources. A instance terminated using scheduled termination bypasses the recycle bin and is released immediately. You can [cancel a scheduled termination](https://intl.cloud.tencent.com/document/product/213/4930) at any time before the scheduled time.
+ - **Scheduled termination:** you can schedule a time (to the second) to automatically terminate a pay-as-you-go instance. You can select a future time to terminate resources. An instance terminated using scheduled termination bypasses the recycle bin and is released immediately. You can [cancel a scheduled termination](https://intl.cloud.tencent.com/document/product/213/4930) at any time before the scheduled time.
  - **Automatic termination upon expiration or when account is overdue**: A pay-as-you-go instance with its balance below 0 will be automatically released after 2 hours and 15days. For the first 2 hours, billing continues and you can still use the instance. For the next 15 days, however, the instance will be shut down, and billing will stop. Pay-as-you-go instances in arrears cannot be moved to the recycle bin. Instead, you need to check the instance in the CVM instance list. You can continue to use the instance if you [renew it](https://intl.cloud.tencent.com/document/product/213/6143) within the specified time.
  
 |  | Manual termination (not overdue) | Scheduled termination (not overdue) | Automatic termination upon expiration or when account is overdue |
@@ -20,8 +20,8 @@ You can use the following methods to terminate and release pay-as-you-go instanc
  
 ## Impact
 What happen to the data, EIPs and charges of an instance once it is terminated:
-- **Billing**: once an instance is terminated or released, no more charge will incurred.
-- **Instance data:** local disks and non-elastic cloud disks mounted to the instance are all released, and the data on these disks are lost. Back up the data in advance. Elastic cloud disks follow their own lifecycle.
+- **Billing**: once an instance is terminated or released, no more charge will be incurred.
+- **Instance data:** local disks and non-elastic cloud disks mounted to the instance are all released, and the data on these disks is lost. Back up the data in advance. Elastic cloud disks follow their own lifecycle.
 - **EIP:** EIPs (including IP addresses on secondary ENIs) of a terminated instance are retained, and idle IP addresses may incur charges. If you don’t need them anymore, release them as soon as possible.
 
 
