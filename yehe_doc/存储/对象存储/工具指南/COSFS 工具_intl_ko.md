@@ -135,7 +135,7 @@ chmod 640 /etc/passwd-cosfs
 >- &lt;SecretId&gt;와 &lt;SecretKey&gt;는 액세스 관리 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 획득할 수 있습니다.
 >이 외에도, 키를 $HOME/.passwd-cosfs에 넣거나 -opasswd_file=[path]를 통해 키 파일 경로를 지정하는 경우 키 파일 권한을 600으로 설정해야 합니다.
 
-**예시: **
+**예시:**
 
 ```shell
 echo examplebucket-1250000000:AKIDHTVVaVR6e3:PdkhT9e2rZCfy6 > /etc/passwd-cosfs
@@ -154,7 +154,7 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info -oal
 - -odbglevel은 로그 레벨을 지정합니다.
 - -oallow_other는 마운트하지 않은 사용자가 마운트 폴더에 액세스하는 것을 허용함을 의미입니다.
 
-**예시: **
+**예시:**
 
 ```shell
 mkdir -p /mnt/cosfs
