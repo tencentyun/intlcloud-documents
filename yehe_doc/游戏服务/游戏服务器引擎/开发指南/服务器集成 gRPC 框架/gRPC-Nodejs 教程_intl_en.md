@@ -278,8 +278,6 @@ cnpm install --save @grpc/grpc-js
 	cd dynamic_code
 	node game_server.js  
 	```
- ```
+
   - Package the executable file `game_server.js` as an [asset package](https://intl.cloud.tencent.com/document/product/1055/36674) and configure the launch path as `node` and the launch parameter as `game_server.js`.
   - [Create a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675) and deploy the asset package on it. After that, you can perform various operations such as [scaling](https://intl.cloud.tencent.com/document/product/1055/37445).
-
- ```
