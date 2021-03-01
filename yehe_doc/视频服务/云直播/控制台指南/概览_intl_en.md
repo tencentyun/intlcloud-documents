@@ -1,13 +1,13 @@
-The LVB Console provides configurations for you to quickly implement basic features such as LVB domain name management, LVB stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
+The LVB console provides configurations for you to quickly implement basic features such as LVB domain name management, LVB stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
 
 ## Prerequisites
 
 - You have activated the LVB service. 
-- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live/livestat).
+- You have logged in to the [LVB console](https://console.cloud.tencent.com/live/livestat).
 
 ## Overview
 
-Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of concurrent connections, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **User Access Guide** in the top-right corner to view the directions for getting started with LVB.
+Click **Overview** on the left sidebar, and you can view the relevant data such as yesterday's traffic fees, real-time data of live streaming, number of concurrent connections, and the trends in billable bandwidth and traffic in the last few days, switch the billing mode, or change the time granularity. You can click **Beginner's Guide** in the top-right corner to view the directions for getting started with LVB.
 ![](https://main.qcloudimg.com/raw/e898cd3b3df8bc651d5c3a0d21cef738.png)
 
 ### Billing overview
@@ -21,7 +21,7 @@ Click **Overview** on the left sidebar, and you can view the relevant data such 
 </tbody></table>
 
 **Switch the billing mode**
-If the current billing mode is daily billing, you can click **Switch** in the **Yesterday's Traffic Usage** statistical item to view the billing mode switch reminder. Click **OK** to switch the billing mode. For more information on billing mode switch, please see [Billing Mode Change](https://intl.cloud.tencent.com/document/product/267/30411).
+If the current billing mode is daily billing, you can click **Switch** in the **Yesterday's Traffic Usage** statistical item to view the billing mode switch reminder. Click **OK** to switch the billing mode. For more information on billing mode switch, please see [Changing Billing Mode](https://intl.cloud.tencent.com/document/product/267/30411).
 
 For more information, see [LVB Pricing](https://intl.cloud.tencent.com/document/product/267/2819).
 
@@ -66,5 +66,5 @@ It mainly displays the LVB usage trends for today, yesterday, last 7 days, and l
 
 #### Change time granularity
 
-The LVB Console allows you to change the time granularity used when viewing the trends in billable bandwidth or traffic by clicking **Time Granularity** and selecting the desired option on the right.
+The LVB console allows you to change the time granularity used when viewing the trends in billable bandwidth or traffic by clicking **Time Granularity** and selecting the desired option on the right.
 ![](https://main.qcloudimg.com/raw/8582c16fca9bd3e4c2f0fcd78625cbb5.png)
