@@ -26,4 +26,4 @@ Network:
 
 ### Quantity
 
-The number of CVMs you purchase also affect the price you pay. More CVMs means a higher price.
+The number of CVMs you purchase also affects the price you pay. More CVMs means a higher price.
