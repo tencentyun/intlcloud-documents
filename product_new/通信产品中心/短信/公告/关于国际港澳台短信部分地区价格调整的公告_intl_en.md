@@ -1,4 +1,4 @@
-As carriers in Indonesia, Egypt, Russia, Nigeria and Vietnam have adjusted their fees，Tencent Cloud Global SMS has changed the prices in these five countries accordingly from **April 15, 2020 onwards**. We will continue to provide you with stable, high-quality text messaging services worldwide. The new prices are as follows:
+As carriers in 19 countries including India, Yemen, and etc, have adjusted their fees，Tencent Cloud Global SMS has changed the prices in these nineteen countries accordingly from March **15, 2021 onwards**. We will continue to provide you with stable, high-quality text messaging services worldwide. The new prices are as follows:
 
 | Country/Region | Code | Country/Region Code | Unit Price (USD) |
 | -------------- | ---- | ------------------- | ---------------- |
