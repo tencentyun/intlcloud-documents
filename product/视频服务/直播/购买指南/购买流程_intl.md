@@ -1,9 +1,9 @@
-Live Video Broadcasting (LVB) is a pay-as-you-go service, and ready to use in a few steps, simply register a Tencent Cloud account and you can sign up for LVB service.
+Live Video Broadcasting (LVB) is a pay-as-you-go service, and ready to use in a few steps. Simply register a Tencent Cloud account and you can activate LVB service.
  
 ## Create a Tencent Cloud account
 
 If you already have a Tencent Cloud account, skip this step.
-If you do not have one,  please follow [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) to create your Tencent Cloud account.
+If you do not have one, please follow [Sign up for Tencent Cloud](https://intl.cloud.tencent.com/document/product/378/17985) to create your Tencent Cloud account.
 You may register your email address as your Tencent Cloud account.
 
 ## Identity Verification
