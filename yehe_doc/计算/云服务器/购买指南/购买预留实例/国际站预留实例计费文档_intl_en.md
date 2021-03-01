@@ -10,12 +10,12 @@ CVM
 
 - RIs let you choose the type of CVM that best fits your needs and budget. You can choose the type (model and configuration), payment method, region, term, and quantity of your RI.
 
-- Currently, you can purchase RIs via TencentCloud API or console. For more information, see the CVM documentation.
+- Currently, you can purchase RIs via TencentCloud API or console. For more information, see the [CVM documentation](https://intl.cloud.tencent.com/document/product/213).
 
 - RIs are non-refundable.
 
 **RI-supported Instance Types and Prices**
-For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the CVM documentation.
+For more information about the configurations, matching rules and pricing of the RI-supported instance types, see the [CVM documentation](https://intl.cloud.tencent.com/document/product/213).
 For more information about the RI-supported availability zones and instance types, see [CVM Pricing](https://intl.cloud.tencent.com/pricing/cvm) or the [DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575) API. 
 For more information, please see the [RI matching rules](https://intl.cloud.tencent.com/document/product/213/37265) and [Reserved Instance Overview](https://intl.cloud.tencent.com/document/product/213/30571).
 CVM supports RI. For more information about the price, see [CVM Reserved Instance Price Overview (Linux)](https://intl.cloud.tencent.com/document/product/213/30619). 
