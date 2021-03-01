@@ -278,8 +278,7 @@ cnpm install --save @grpc/grpc-js
 	cd dynamic_code
 	node game_server.js  
 	```
- ```
+
   - 実行可能ファイルgame_server.jsをパッケージングして [アセット](https://intl.cloud.tencent.com/document/product/1055/36674)を作成します。起動パスの設定はnode、起動パラメータの設定はgame_server.jsです。
   - その後、[サーバーフリートの作成](https://intl.cloud.tencent.com/document/product/1055/36675)でサーバーフリートを作成し、アセットをサーバーフリートにデプロイします。この後引き続き、[スケーリング](https://intl.cloud.tencent.com/document/product/1055/37445) などの一連の操作を行うことができます。
 
- ```
