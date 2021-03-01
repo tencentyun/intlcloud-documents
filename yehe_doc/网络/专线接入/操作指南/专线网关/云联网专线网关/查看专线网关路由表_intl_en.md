@@ -12,6 +12,6 @@ If you use a CCN-based direct connect gateway in the Direct Connect network arch
 ## Directions
 1. Log in to the [Direct Connect Gateway console](https://console.cloud.tencent.com/vpc/dcgw?rid=1).
 2. Select a region and VPC at the top of the **Direct Connect Gateway** page. Click the **ID/Name** of the target direct connect gateway to enter its details page.
-   ![](https://main.qcloudimg.com/raw/d4ee4863ce89963496d990418a0329da.png)
+   ![](https://main.qcloudimg.com/raw/b0eec7cf2c745e961d89836a75a81bb3.png)
 3. Select the **Route Table** tab and view the IDC routes and CCN routes to the direct connect gateway. Click <img src="https://main.qcloudimg.com/raw/5be52268cd6656b7fccb91180c187035.svg" style="zoom:10%;" /> to download the route table information.
-   ![](https://main.qcloudimg.com/raw/cf56dce36f844abf26482fdc8df34bc9.png)
+   ![](https://main.qcloudimg.com/raw/407a1ead3919862370eb6f98640b0c6c.png)
