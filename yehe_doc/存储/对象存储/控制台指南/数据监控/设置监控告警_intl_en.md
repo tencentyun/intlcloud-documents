@@ -68,7 +68,7 @@ You can leverage the alarm policy feature of Cloud Monitor to set threshold-reac
    <tr>
         <td >Configure alarm notification</td>
         <td>Notification template</td>
-        <td>You can select a preset notification template or customize one. Up to 3 notification templates can be bound to each alarm policy. For more information, please see <a href="https://cloud.tencent.com/document/product/248/48955">Notification Template</a>.</td>
+        <td>You can select a preset notification template or customize one. Up to 3 notification templates can be bound to each alarm policy. </td>
     </tr>
 		<tr>
       <td>Advanced configuration</td>
