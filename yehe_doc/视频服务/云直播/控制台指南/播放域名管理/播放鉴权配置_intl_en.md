@@ -11,7 +11,7 @@ To enable URL authentication, you need an encrypted URL generated through authen
 - You have added a **playback domain name**.
 
 ## Directions
-1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain** to be configured with authentication or **Manage** to enter the domain management page.
+1. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click the **playback domain name** to be configured with authentication or **Manage** to enter the domain management page.
 2. In **Access Control** > **Authentication Configuration**, click **Edit** to enter the authentication configuration page.
 3. Make the following settings on the authentication configuration page:
 	1. Click to enable playback authentication.
@@ -34,7 +34,7 @@ If the original playback URL is:
 http://www.test.com/live/test01.flv
 ```
 
-When configuring authentication for this domain name, use the following parameters:
+When configuring authentication for this domain name, set the following parameters:
 ```
 Primary Key: ngoeiq03
 Secondary Key: none
