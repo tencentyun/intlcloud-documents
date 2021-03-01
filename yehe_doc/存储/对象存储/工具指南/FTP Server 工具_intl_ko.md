@@ -11,8 +11,8 @@ COS FTP Server는 FTP 프로토콜을 통해 파일 업로드, 다운로드, 삭
 >멀티 bucket 바인딩: 각 FTP Server 작업 경로(home_dir)별로 실현합니다. 따라서 서로 다른 bucket과 사용자 정보를 지정하는 경우 반드시 home_dir이 달라야 합니다.
 
 **삭제 작업 제한**: 새로운 FTP Server에서 각 ftp 사용자에게 delete_enable 옵션을 설정하여 해당 FTP 사용자에게 파일을 삭제할 수 있는 권한 허용 여부를 표시할 수 있습니다.
-**지원하는 FTP 명령어: **put, mput, get, rename, delete, mkdir, ls, cd, bye, quite, size
-**지원하지 않는 FTP 명령어: **append, mget(네이티브 mget 명령어는 지원하지 않습니다. 단, 일부 Windows 클라이언트에서는 일괄 다운로드를 할 수 있습니다. 예: FileZilla 클라이언트)
+**지원하는 FTP 명령어:**put, mput, get, rename, delete, mkdir, ls, cd, bye, quite, size
+**지원하지 않는 FTP 명령어:**append, mget(네이티브 mget 명령어는 지원하지 않습니다. 단, 일부 Windows 클라이언트에서는 일괄 다운로드를 할 수 있습니다. 예: FileZilla 클라이언트)
 
 >FTP Server 툴은 현재 중단된 시점부터 이어서 전송하는 기능을 지원하지 않습니다.
 
