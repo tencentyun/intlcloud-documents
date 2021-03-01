@@ -7,7 +7,7 @@
 - 匿名请求：请求未携带 Authorization 或相关参数，又或者相关字符无法识别出用户身份特征，此时请求就会被视为匿名请求而进行鉴权。
 - 签名请求：签名的请求需要在 HTTP 头部或者请求包中包含 Authorization 字段，该字段的内容是结合腾讯云的安全凭证 SecretID、SecretKey 和请求的一些特征值，通过加密算法生成。
 
-如果您使用 COS SDK 访问，只需配置好您的安全凭证即可发起请求。使用 REST API 访问，则需要参见 [请求签名](https://intl.cloud.tencent.com/document/api/436/7778) 文档自行计算请求签名 <!--或通过 [COS 签名工具]() 直接生成-->。
+如果您使用 COS SDK 访问，只需配置好您的安全凭证即可发起请求。使用 REST API 访问，则需要参见 [请求签名](https://intl.cloud.tencent.com/document/api/436/7778) 文档自行计算请求签名 。
 
 ## 获取安全凭证
 
