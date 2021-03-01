@@ -10,10 +10,10 @@ Tencent Cloud provides various configurations of CPU, MEM, storage, and networki
 An image is a pre-configured template containing an operating system and applications that CVM instances run on. Tencent Cloud CVM provides pre-configured images for Windows, Linux, etc.
 
 ### Cloud Block Storage
-Cloud Block Storage (CBS) is a highly available, highly reliable, low-cost, and customizable block storage device. It can be used as an standalone and expandable disk for CVM, providing efficient and reliable [storage](https://intl.cloud.tencent.com/document/product/213/4952) devices.
+Cloud Block Storage (CBS) is a highly available, highly reliable, low-cost, and customizable block storage device. It can be used as a standalone and expandable disk for CVM, providing efficient and reliable [storage](https://intl.cloud.tencent.com/document/product/213/4952) devices.
 
 ### VPC
-A VPC is a logically isolated virtual network space in Tencent Cloud
+A VPC is a logically isolated virtual network space in Tencent Cloud.
 
 ### IP Addresses
 Tencent Cloud provides [private IP address](https://intl.cloud.tencent.com/document/product/213/5225) and [public IP address](https://intl.cloud.tencent.com/document/product/213/5224). Private IP address is for the interconnection of CVM instances within the same LAN, while public IP address is for public-facing services.
@@ -34,8 +34,8 @@ The password is a unique login credential for the CVM instance. To ensure instan
 
 ### Regions and Availability Zones
 Physical locations where CVM instances and other resources reside and are launched.
-- A region refers to a geographical location where data centers hosted by Tencent Cloud are distributed. Each region has multiple availability zones.
-- An availability zone is a Tencent Cloud IDC with independent power supply and network in the above region. It can ensure business stability, as failures in one AZ are isolated without affecting other AZs in the same region.
+- A region refers to a geographical location where data centers hosted by Tencent Cloud are located. Each region has multiple availability zones.
+- An availability zone is a Tencent Cloud IDC with an independent power supply and network in the above region. It can ensure business stability, as failures in one AZ are isolated without affecting other AZs in the same region.
 
 
 
