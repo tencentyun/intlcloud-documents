@@ -1,6 +1,6 @@
 ## CVM Pricing(Windows)
 
-The following is the pricing for different types of CVM instances in different regions. Please note that these rates are **for reference purposes only**, and rates of your final order shall prevail. For more information, see [CVM Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518).
+The following are the rates for different types of CVM instances in different regions. Please note that these rates are only for reference purposes, and your final order rates shall prevail. For more information, see [CVM Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518).
 
 ### Guangzhou
 
