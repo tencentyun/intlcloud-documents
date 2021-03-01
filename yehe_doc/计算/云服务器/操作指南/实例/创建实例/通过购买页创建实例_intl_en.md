@@ -14,7 +14,7 @@ Before creating a CVM instance, you need to complete the following steps:
 
 ## Directions
 
-1. Log in to [Tencent Cloud](https://intl.cloud.tencent.com/). Choose **Products** -> **Compute** -> **[Cloud Virtual Machine](https://intl.cloud.tencent.com/product/cvm)**. Click **Get Started** to access the CVM purchase page.
+1. Log in to [Tencent Cloud](https://intl.cloud.tencent.com/). Choose **Products** -> **Compute** -> **[Cloud Virtual Machine](https://intl.cloud.tencent.com/product/cvm)**. Click **Create** to access the CVM purchase page.
  - **[Custom Configuration](https://buy.cloud.tencent.com/cvm?tab=custom):** This mode is suitable for specific use cases. It allows users to purchase a CVM instance that meets their specific requirements.
 2. Configure the following information as prompted by the page:
 <table>
