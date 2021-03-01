@@ -278,8 +278,7 @@ cnpm install --save @grpc/grpc-js
 	cd dynamic_code
 	node game_server.js  
 	```
- ```
+
   - 将可执行文件 game_server.js 打包为 [生成包](https://intl.cloud.tencent.com/document/product/1055/36674)，启动路径配置 node，启动参数配置 game_server.js。
   - 然后 [创建服务器舰队](https://intl.cloud.tencent.com/document/product/1055/36675)，将生成包部署在服务器舰队上，后续可进行 [扩缩容](https://intl.cloud.tencent.com/document/product/1055/37445) 等一系列操作。
 
- ```
