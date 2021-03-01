@@ -19,6 +19,7 @@
 
 ### HBase - HMaster
 
+
 | Metric Name | Unit | Description |
 | ------------------------------ | -------- | -------------- |
 | YGC                                | -       | GC count            |
@@ -95,7 +96,7 @@
 | ThreadsTerminated              | -       | Number of JVM threads     |
 | averageRegionSize                 | Byte | Average region size |
 | regionCount                       | -       | Number of regions       |
-| percentFilesLocalSecondaryRegions | %        | Region replicate localization |
+| percentFilesLocalSecondaryRegions | %        | Region replica localization |
 | authenticationFailures            | -       | Number of RPC authentications       |
 | authenticationSuccesses            | -       | Number of RPC authentications       |
 | numOpenConnections                | -       | Number of RPC connections         |
@@ -140,8 +141,8 @@
 | staticBloomSize                   | Bytes     | Index size           |
 | staticIndexSize                   | Bytes     | Index size           |
 | storeFileIndexSize                | Bytes     | Index size           |
-| receivedBytes                     | bytes/s  | Read/write traffic           |
-| sentBytes                         | bytes/s  | Read/write traffic           |
+| receivedBytes                     | Bytes/s  | Read/write traffic           |
+| sentBytes                         | Bytes/s  | Read/write traffic           |
 | Total                             | Requests/s     | Number of read/write requests         |
 | Read | Requests/s     | Number of read/write requests         |
 | Write                                   | Requests/s     | Number of read/write requests         |
@@ -149,3 +150,9 @@
 | mutationsWithoutWALCount          | -       | Number of mutations       |
 | mutationsWithoutWALSize           | Bytes     | Mutation size      |
 | regionServerStartTime             | s        | Process start time   |
+| 99th_percentile   | ms   | 99% request processing latency   |
+| 99.9th_percentile | ms   | 99.9% request processing latency |
+| 99th_percentile   | ms   | 99% request queueing latency   |
+| 99.9th_percentile | ms   | 99.9% request queueing latency |
+
+

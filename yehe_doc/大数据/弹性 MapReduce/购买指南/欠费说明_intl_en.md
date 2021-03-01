@@ -1,14 +1,32 @@
-## Pay-as-You-Go
-### Arrears reminder
-- For pay-as-you-go EMR clusters, when your account balance is in negative, we will notify your Tencent Cloud account creator, global resource collaborators, and financial collaborators through email and SMS.
+## Pay-As-You-Go
 
-### Arrears processing
-When your account balance falls below zero, the pay-as-you-go EMR cluster can be used and fees will be deducted for 24 more hours. After 24 hours, the cluster will be isolated and moved to the recycle bin and become unavailable, and we will also stop billing you for service.
+### Overdue payment reminder
 
-### Repossession mechanism
-- If you top up your account within 24 hours to a positive balance, the billing will continue, and the cluster will be automatically recovered.
-- If your account balance remains negative for 24 hours, the cluster cannot be recovered.
-- If your account balance remains negative for 7 days, your pay-as-you-go cluster will be terminated, **and all data in it will be cleared and cannot be recovered**.
+| Reminder Type | Description |
+| ------------ | ------------------------------------------------------------ |
+| **Overdue payment reminder** | Pay-as-you-go clusters are billed on the hour. When your account balance becomes negative, your Tencent Cloud account creator, global resource collaborators, and financial collaborators will be notified through email and SMS. |
+| **Overdue payment alert** | This feature is disabled by default. |
+
+### Overdue payment policy
+When your account balance becomes negative, the pay-as-you-go cluster can be used and fees will be deducted for 2 more hours. After 2 hours, the cluster will be moved to the recycle bin and become unavailable, and we will also stop billing you for service.
+
+<table>
+<tr>
+<th>Time After Service Suspension</th>
+<th>Description</th>
+</tr>
+<tr>
+<td rowspan="2">≤ 15 days</td>
+<td>If your account is topped up to a positive balance, the billing will continue, and the cluster will be automatically recovered.</td>
+</tr>
+<tr>
+<td>If your account balance remains negative, the cluster cannot be recovered.</td>
+</tr>
+<tr>
+<td >> 15 days</td>
+<td>If your account is not topped up to a positive balance, your pay-as-you-go cluster resources will be repossessed and released. All data will be erased and cannot be recovered. When your cluster resources are repossessed, your Tencent Cloud account creator and all collaborators will be notified through email and SMS.</td>
+</tr>
+</table>
 
 >!
 >- When you no longer need to use pay-as-you-go clusters, please terminate them as soon as possible to avoid further fee deductions.

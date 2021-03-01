@@ -43,6 +43,10 @@
 | Uptime                             | s        | Process run time      |
 | DaemonThreadCount                  | -       | Number of Daemon threads        |
 | ThreadCount                        | -       | Total number of threads        |
+| Open   | ms   | Average session open time |
+| Active | ms   | Average session active time |
+| Open   | -   | Number of open sessions     |
+| Active | -   | Number of active sessions     |
 
 ### Hive - HiveWebHcat
 

@@ -25,59 +25,64 @@
 | AvailableMB                  | MB       | Memory size         |
 | PendingMB                    | MB       | Memory size         |
 | ReservedMB                   | MB       | Memory size         |
-| AllocatedContainers            | -       | Total number of containers         |
-| PendingContainers            | -       | Total number of containers         |
-| ReservedContainers           | -       | Total number of containers         |
+| AllocatedContainers            | -       | Number of containers         |
+| PendingContainers            | -       | Number of containers         |
+| ReservedContainers           | -       | Number of containers         |
 | AggregateContainersAllocated | -       | Number of allocated containers |
 | AggregateContainersReleased | -       | Number of released containers |
 | ActiveUsers                  | -       | Number of users           |
+| AMLaunchDelayNumOps    | -   | Number of launched AMs           |
+| AMLaunchDelayAvgTime   | ms   | Average time for RM to launch AM   |
+| AMRegisterDelayNumOps  | -   | Total number of registered AMs         |
+| AMRegisterDelayAvgTime | ms   | Average time for AM to register with RM |
+
 
 ### YARN - ResourceManager
 
 | Metric Name | Unit | Description |
 | :------------------------- | :------- | ------------------ |
-| RpcAuthenticationFailures  | -       | Number of RPC authentication authorizations     |
-| RpcAuthenticationSuccesses | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationFailures   | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationSuccesses  | -       | Number of RPC authentication authorizations     |
-| ReceivedBytes              | Bytes/s  | Volume of sent data received by RPC |
-| SentBytes                  | Bytes/s  | Volume of sent data received by RPC |
+| RpcAuthenticationFailures  | -       | Number of RPC authentications     |
+| RpcAuthenticationSuccesses | -       | Number of RPC authentications     |
+| RpcAuthorizationFailures   | -       | Number of RPC authentications     |
+| RpcAuthorizationSuccesses  | -       | Number of RPC authentications     |
+| ReceivedBytes              | Bytes/s  | Volume of data received by RPC |
+| SentBytes                  | Bytes/s  | Volume of data sent by RPC |
 | NumOpenConnections         | -       | Number of RPC connections         |
 | RpcProcessingTimeNumOps    | -       | Number of RPC requests       |
 | RpcQueueTimeNumOps         | -       | Number of RPC requests       |
 | CallQueueLength            | -       | RPC queue length       |
 | RpcProcessingTimeAvgTime   | s        | Average RPC processing time   |
 | RpcQueueTimeAvgTime        | s        | Average RPC processing time   |
-| RpcAuthenticationFailures  | -       | Number of RPC authentication authorizations     |
-| RpcAuthenticationSuccesses | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationFailures   | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationSuccesses  | -       | Number of RPC authentication authorizations     |
-| ReceivedBytes              | Bytes/s  | Volume of sent data received by RPC |
-| SentBytes                  | Bytes/s  | Volume of sent data received by RPC |
+| RpcAuthenticationFailures  | -       | Number of RPC authentications     |
+| RpcAuthenticationSuccesses | -       | Number of RPC authentications     |
+| RpcAuthorizationFailures   | -       | Number of RPC authentications     |
+| RpcAuthorizationSuccesses  | -       | Number of RPC authentications     |
+| ReceivedBytes              | Bytes/s  | Volume of data received by RPC |
+| SentBytes                  | Bytes/s  | Volume of data sent by RPC |
 | NumOpenConnections         | -       | Number of RPC connections         |
 | RpcProcessingTimeNumOps    | -       | Number of RPC requests       |
 | RpcQueueTimeNumOps         | -       | Number of RPC requests       |
 | CallQueueLength            | -       | RPC queue length       |
 | RpcProcessingTimeAvgTime   | s        | Average RPC processing time   |
 | RpcQueueTimeAvgTime        | s        | Average RPC processing time   |
-| RpcAuthenticationFailures  | -       | Number of RPC authentication authorizations     |
-| RpcAuthenticationSuccesses | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationFailures   | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationSuccesses  | -       | Number of RPC authentication authorizations     |
-| ReceivedBytes              | Bytes/s  | Volume of sent data received by RPC |
-| SentBytes                  | Bytes/s  | Volume of sent data received by RPC |
+| RpcAuthenticationFailures  | -       | Number of RPC authentications     |
+| RpcAuthenticationSuccesses | -       | Number of RPC authentications     |
+| RpcAuthorizationFailures   | -       | Number of RPC authentications     |
+| RpcAuthorizationSuccesses  | -       | Number of RPC authentications     |
+| ReceivedBytes              | Bytes/s  | Volume of data received by RPC |
+| SentBytes                  | Bytes/s  | Volume of data sent by RPC |
 | NumOpenConnections         | -       | Number of RPC connections         |
 | RpcProcessingTimeNumOps    | -       | Number of RPC requests       |
 | RpcQueueTimeNumOps         | -       | Number of RPC requests       |
 | CallQueueLength            | -       | RPC queue length       |
 | RpcProcessingTimeAvgTime   | s        | Average RPC processing time   |
 | RpcQueueTimeAvgTime        | s        | Average RPC processing time   |
-| RpcAuthenticationFailures  | -       | Number of RPC authentication authorizations     |
-| RpcAuthenticationSuccesses | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationFailures   | -       | Number of RPC authentication authorizations     |
-| RpcAuthorizationSuccesses  | -       | Number of RPC authentication authorizations     |
-| ReceivedBytes              | Bytes/s  | Volume of sent data received by RPC |
-| SentBytes                  | Bytes/s  | Volume of sent data received by RPC |
+| RpcAuthenticationFailures  | -       | Number of RPC authentications     |
+| RpcAuthenticationSuccesses | -       | Number of RPC authentications     |
+| RpcAuthorizationFailures   | -       | Number of RPC authentications     |
+| RpcAuthorizationSuccesses  | -       | Number of RPC authentications     |
+| ReceivedBytes              | Bytes/s  | Volume of data received by RPC |
+| SentBytes                  | Bytes/s  | Volume of data sent by RPC |
 | NumOpenConnections         | -       | Number of RPC connections         |
 | RpcProcessingTimeNumOps    | -       | Number of RPC requests       |
 | RpcQueueTimeNumOps         | -       | Number of RPC requests       |
@@ -114,8 +119,8 @@
 | MemMaxM                            | MB       | JVM memory           |
 | ProcessCpuLoad                 | %        | CPU utilization       |
 | ProcessCpuTime                     | ms       | Cumulative CPU usage time   |
-| MaxFileDescriptorCount             | -       | Number of file descriptor      |
-| OpenFileDescriptorCount            | -       | Number of file descriptor      |
+| MaxFileDescriptorCount             | -       | Number of file descriptors      |
+| OpenFileDescriptorCount            | -       | Number of file descriptors      |
 | Uptime                             | s        | Process run time      |
 | DaemonThreadCount                  | -       | Number of worker threads        |
 | ThreadCount                        | -       | Number of worker threads        |
@@ -154,8 +159,8 @@ ThreadsNew                         | -       | Number of JVM threads       |
 | M                                  | %        | Memory area proportion      |
 | ProcessCpuLoad                     | %        | CPU utilization         |
 | ProcessCpuTime                     | ms       | Cumulative CPU usage time   |
-| MaxFileDescriptorCount             | -       | Number of file descriptor      |
-| OpenFileDescriptorCount            | -       | Number of file descriptor      |
+| MaxFileDescriptorCount             | -       | Number of file descriptors      |
+| OpenFileDescriptorCount            | -       | Number of file descriptors      |
 | Uptime                             | s        | Process run time      |
 | DaemonThreadCount                  | -       | Number of worker threads        |
 | ThreadCount                        | -       | Number of worker threads        |
@@ -212,4 +217,8 @@ ThreadsNew                         | -       | Number of JVM threads       |
 | Uptime                         | s        | Thread run time     |
 | DaemonThreadCount              | -       | Number of worker threads       |
 | ThreadCount              | -       | Number of worker threads       |
+
+
+
+
 
