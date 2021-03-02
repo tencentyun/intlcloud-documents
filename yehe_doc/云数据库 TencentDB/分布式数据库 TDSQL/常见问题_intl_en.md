@@ -1,12 +1,12 @@
 ### How do I select the instance specification?
-- For functional testing in TDSQL with no special performance requirements: 2 shards with 2 GB of memory and 25 GB of disk capacity each.
+- For functional testing in TDSQL for MySQL with no special performance requirements: 2 shards with 2 GB of memory and 25 GB of disk capacity each.
 - In initial stage of business when the total size of data is small but grows fast: 2 shards with 16 GB of memory and 200 GB of disk capacity each.
 - In stable development stage when sharding is based on actual business conditions: 4 shards, and the specification for each one should be current business peak * growth rate / 4.
-For more information on instance specification, please see [TDSQL Instance and Shard Configuration](https://intl.cloud.tencent.com/document/product/1042/33354).
+For more information on instance specification, please see [TDSQL for MySQL Instance and Shard Configuration](https://intl.cloud.tencent.com/document/product/1042/33354).
 
-### Is TDSQL syntax compatible with MySQL? Are there any limitations?
-For the current version of TDSQL, you cannot configure user permissions on the command line. Instead, you need to log in to [console](https://console.cloud.tencent.com/dcdb) to do so.
-The current version of TDSQL does not support features such as custom function, view, trigger, foreign key, and subquery.
+### Is TDSQL for MySQL syntax compatible with MySQL? Are there any limitations?
+For the current version of TDSQL for MySQL, you cannot configure user permissions on the command line. Instead, you need to log in to [console](https://console.cloud.tencent.com/dcdb) to do so.
+The current version of TDSQL for MySQL does not support features such as custom function, view, trigger, foreign key, and subquery.
 For more information on the compatibility with MySQL syntax, please see [Use Limits](https://intl.cloud.tencent.com/document/product/1042/33356).
 
 ### What does the shardkey do?
@@ -14,7 +14,7 @@ When you use a sharded table, you are recommended to perform the SELECT operatio
 When you use a sharded table, the shardkey must be included in an INSERT/REPLACE or DELETE/UPDATE operation; otherwise, the operations will be rejected. An INSERT/REPLACE operation requires the shardkey to be specified, indicating the location of the physical shard where the data is to be inserted. A DELETE/UPDATE operation requires the shardkey to be specified as a means of validation to avoid accidental deletion.
 
 ### How do I select the shardkey?
-The shardkey is a data table field used to generate the splitting rules during horizontal splitting (sharding), which should be specified when the table is created. For TDSQL, you are recommended to find the entity of the data in the data table on the business logic, determine that the majority or core part of database operations are performed around the data of the entity, and then use the field corresponding to the entity as the shardkey for sharding (this scheme is called Group-Shard) as shown below:
+The shardkey is a data table field used to generate the splitting rules during horizontal splitting (sharding), which should be specified when the table is created. For TDSQL for MySQL, you are recommended to find the entity of the data in the data table on the business logic, determine that the majority or core part of database operations are performed around the data of the entity, and then use the field corresponding to the entity as the shardkey for sharding (this scheme is called Group-Shard) as shown below:
 ![](https://main.qcloudimg.com/raw/f0a5b31d7c69eb34b84dbc9d57b5201a.png)
 Group-Shard ensures that some correlated data entries and complex business logic computation in different sharded tables can be aggregated into one physical shard. For example, if both the order table and user table of an ecommerce platform are sharded by `UserID`, then the platform can quickly calculate how many orders a user has recently placed through join queries (with no cross-node joins or distributed transactions caused).
 
