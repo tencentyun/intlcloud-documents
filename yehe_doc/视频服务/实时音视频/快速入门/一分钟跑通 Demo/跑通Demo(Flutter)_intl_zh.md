@@ -67,6 +67,8 @@
 - [因为没有签名，真机调试报错?](https://intl.cloud.tencent.com/document/product/647/39242)
 - [对插件内的 swift 文件做了增删后，build 时查找不到对应文件？](https://intl.cloud.tencent.com/document/product/647/39242)
 - [Run 报错“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”？](https://intl.cloud.tencent.com/document/product/647/39242)
-
+(https://intl.cloud.tencent.com/document/product/647/39242)
+- [Pod install 报错？](https://intl.cloud.tencent.com/document/product/647/39242)
+- [Run 的时候 iOS 版本依赖报错？](https://intl.cloud.tencent.com/document/product/647/39242)
 
 
