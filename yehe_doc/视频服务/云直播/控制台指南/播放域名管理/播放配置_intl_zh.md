@@ -11,11 +11,11 @@
 	1. 选择过期时间，例如：`2019-02-28 23:59:59`。
 	2. 填写自定义的流名称 StreamName，例如：`liveteststream`。播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
 	3. 单击【生成播放地址】即可。
-![](https://main.qcloudimg.com/raw/6a7d902ebbdd54f6c674a44c55946257.png)
+![](https://main.qcloudimg.com/raw/eb03329524d2ccfc2470e27c1b2b8eef.png)
 3. 若您的播放域名未开启播放鉴权，您还可以在【播放配置】>【播放地址】标签下，查看该播放域名下 RTMP、FLV、HLS 这三种播放地址。替换播放地址中的 StreamName（流名称）关联推流地址，关联后即可通过播放地址查看直播画面。
-![](https://main.qcloudimg.com/raw/6f55f9db9f6c2f076ede514a0e0f079f.png)
+![](https://main.qcloudimg.com/raw/0e4a9abcf0406a971bdd51954c2b8067.png)
 
->更多直播播放相关信息，请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
+>? 更多直播播放相关信息，请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
 
 
 
@@ -33,7 +33,7 @@ M3U8格式：http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+h
 - **txSecret**：开启播放鉴权后生成的鉴权串。
 - **txTime**：播放地址设置的时间戳，用以控制台播放地址的有效时间。
 
->
+>!
 >- 若您开启了域名鉴权，实际过期时间等于 txTime + 鉴权有效时间。
 >- 控制台为了方便使用，设置的时间即为实际过期时间。若您开启了域名鉴权，计算播放地址时会按照公式倒推出 txTime。
 
