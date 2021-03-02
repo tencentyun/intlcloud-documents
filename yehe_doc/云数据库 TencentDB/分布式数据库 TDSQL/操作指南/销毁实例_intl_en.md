@@ -10,7 +10,7 @@ After an instance is returned, once its status changes to "isolated", no fees re
 >
 
 ### Directions
-1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), select an instance and click **More** > **Terminate/Return** above the instance list.
+1. Log in to the [TDSQL for MySQL Console](https://console.cloud.tencent.com/dcdb), select an instance and click **More** > **Terminate/Return** above the instance list.
 2. In the pop-up dialog box, indicate your consent and click **OK**
 ![](https://main.qcloudimg.com/raw/16f8187856e09385505c70bde7fb3912.png)
 3. Return to the instance list. The status of the instance has changed to **isolated**, and you can choose to **restore/start up** the instance.
