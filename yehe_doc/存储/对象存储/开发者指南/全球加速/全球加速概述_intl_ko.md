@@ -23,8 +23,8 @@ COS 콘솔에서 버킷에 필요한 글로벌 가속 기능을 실행할 수 �
 
 글로벌 가속 기능을 실행한 뒤 두 가지 도메인으로 COS 내 파일에 액세스할 수 있습니다.
 
-- **버킷 기본 도메인: **형식은 `<BucketName-APPID>.cos.<Region>.myqcloud.com`이며, 자세한 내용은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
-- **글로벌 가속 도메인: **형식은 `<BucketName-APPID>.cos.accelerate.myqcloud.com`입니다.
+- **버킷 기본 도메인:**형식은 `<BucketName-APPID>.cos.<Region>.myqcloud.com`이며, 자세한 내용은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
+- **글로벌 가속 도메인:**형식은 `<BucketName-APPID>.cos.accelerate.myqcloud.com`입니다.
 
 예를 들어, 광저우 리전의 버킷 `examplebucket-125000000`에 글로벌 가속 기능을 활성화한 경우, 베이징에서 해당 버킷으로 파일 `exampleObject.txt`를 업로드할 때 선택할 수 있는 두 가지 업로드 방식이 있습니다.
 
