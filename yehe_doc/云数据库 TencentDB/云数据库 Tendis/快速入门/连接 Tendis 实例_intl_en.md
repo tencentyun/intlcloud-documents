@@ -1,6 +1,6 @@
 You can connect to a TencentDB for Tendis instance using a private network address, the data management console (DMC), and programing languages.
-
-## [Connecting Using a Private Network Address](id:tgnedzlj) 
+<span id="tgnedzlj"></span>
+## Connecting Using a Private Network Address
 A CVM instance can be used to access the private network address that is automatically assigned to a TencentDB instance. This connection method relies on the high-speed private network of Tencent Cloud and features low delay. Both instances should be under the same account and reside in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region or reside in the classic network.
 >?
 >- CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003/30049).
