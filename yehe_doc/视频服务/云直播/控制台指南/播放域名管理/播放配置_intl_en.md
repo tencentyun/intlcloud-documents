@@ -15,7 +15,7 @@ After push is successful for a domain name, you can log in to the LVB Console, e
 3. If playback authentication is not enabled for your playback domain name, you can view three types of playback addresses under the domain name in **Playback Configuration** > **Playback Address**, i.e., RTMP, FLV, and HLS. Replace the `StreamName` to associate with a push address, and then you can play back the live stream at the playback address.
 ![](https://main.qcloudimg.com/raw/8d8a9ee63dc12045da418c1539051eb6.png)
 
->For more information on LVB playback, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
+>? For more information on LVB playback, please see [LVB Playback](https://intl.cloud.tencent.com/document/product/267/31559).
 
 
 
@@ -27,13 +27,13 @@ RTMP format: rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(ti
 FLV format: http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 M3U8 format: http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-- **domain**: your playback domain name which has obtained an ICP filing for service in Mainland China.
+- **domain**: playback domain name.
 - **AppName**: LVB application name, which is `live` by default and customizable.
 - **StreamName**: user-defined stream name which is used to identify a live stream.
 - **txSecret**: authentication string generated after playback authentication is enabled.
 - **txTime**: timestamp set for a playback address which represents the expiration time of the address in the console.
 
->
+>!
 >- If you have enabled domain name authentication, the actual expiration time will be `txTime` + authentication expiration time.
 >- For your convenience, the time set in the console is the actual expiration time. If you have enabled domain name authentication, `txTime` will be calculated according to the formula when the playback address is generated.
 
