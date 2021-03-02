@@ -112,7 +112,7 @@ LVB transcoding (including video transcoding and audio transcoding) refers to th
 </tr><tr>
 <td>Recommended Parameter</td>
 <td>No</td>
-<td>Three types of templates are supported: <b>LD, SD, and HD</b>. After you select a template, the system will automatically enter the recommended video bitrate and video height. You can also modify them manually.</td>
+<td>Three types of templates are supported: <b>Smooth, SD, and HD</b>. After you select a template, the system will automatically enter the recommended video bitrate and video height. You can also modify them manually.</td>
 </tr><tr>
 <td>Video Bitrate<br>(in Kbps)</td>
 <td>Yes</td>
