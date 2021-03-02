@@ -26,7 +26,7 @@ redis-cli -h IP address -p port -a abcd1234
 ```
 
 ## Connecting Using DMC
-You can use Tencent Cloud’s [data management console (DMC)](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login) to access TencentDB for Tendis instances, manipulate databases and tables, manage instance sessions, monitor instances in real time, view InnoDB lock waits, and use the SQL window.
+You can use Tencent Cloud’s [data management console (DMC)](https://dms.cloud.tencent.com/#/login) to access TencentDB for Tendis instances, manipulate databases and tables, manage instance sessions, monitor instances in real time, view InnoDB lock waits, and use the SQL window.
 
 ## Connecting Using Programing Languages
 For connection samples, please see [Instance Connection Using Programing Languages](https://intl.cloud.tencent.com/document/product/1083/39281).
