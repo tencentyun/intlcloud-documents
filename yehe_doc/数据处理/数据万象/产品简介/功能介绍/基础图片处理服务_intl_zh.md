@@ -1,0 +1,26 @@
+
+数据万象可为用户提供多种基础图片处理功能，满足您各类图片场景的需求，目前支持的基础图片处理功能请见 [功能概览](https://intl.cloud.tencent.com/document/product/1045/33424) 。
+
+>?
+>- 您可使用 API 接口实现下载时处理，同时数据万象提供 [管道操作符](https://intl.cloud.tencent.com/document/product/1045/33727) 服务实现对图片按顺序进行多种处理。
+>- 基础图片处理目前提供10TB/月的免费额度，超出部分则按照正常收费，详情请查看 [计费与定价](https://intl.cloud.tencent.com/document/product/1045/33431) 文档。
+
+
+
+
+
+## 使用方法
+
+#### 使用数据万象控制台
+
+您可以使用数据万象控制台进行图片处理设置，详情请参见 [基础处理](https://intl.cloud.tencent.com/document/product/1045/33443)。
+
+#### 使用 REST API
+
+您可以通过数据万象提供的 API 进行图片处理设置，详情请参见 [基础图片处理](https://intl.cloud.tencent.com/zh/document/product/1045/33694) API 文档。
+
+## 限制说明
+
+- 支持格式：目前支持处理 JPG、BMP、GIF、PNG、WEBP 格式，并且支持 HEIF 格式的解码和处理。
+- 体积限制：处理图片原图大小不超过20MB、宽高不超过30000像素且总像素不超过1亿像素，处理结果图宽高设置不超过9999像素；针对动图，原图宽 x 高 x 帧数不超过1亿像素。
+- 动图帧数限制：GIF 帧数限制为300帧。
