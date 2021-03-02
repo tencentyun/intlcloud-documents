@@ -1,7 +1,7 @@
 ## Feature Description
 An SQL statement query that takes more time than the specified value is referred to as a "slow query", and the corresponding statement is called a "slow query statement". The process where a database administrator (DBA) analyzes slow query statements and finds out the reasons why slow queries occur is known as "slow query analysis".
 
-Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb), click an instance name in the instance list to enter the management page, and select the **Performance Optimization** > **Slow Query Analysis** tab where you can perform slow query analysis.
+Log in to the [TDSQL for MySQL Console](https://console.cloud.tencent.com/dcdb), click an instance name in the instance list to enter the management page, and select the **Performance Optimization** > **Slow Query Analysis** tab where you can perform slow query analysis.
 ![](https://main.qcloudimg.com/raw/ea4506813533ff1905223dfd58b4bff3.png)
 >!Currently, slow query analysis can only be performed and viewed in each shard separately.
 
