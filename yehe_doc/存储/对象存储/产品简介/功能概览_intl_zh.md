@@ -104,16 +104,20 @@ COS 主要提供以下功能：
       <td>用户可以指定存储桶内的对象列表执行指定的操作。具体操作是通过清单功能生成一份对象清单作为指定的对象列表，或者将需要处理的对象依照清单文件的格式记录在一份 CSV 格式的文件中，COS 批量处理功能将根据这份对象清单文件进行批量处理，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/32958">批量处理概述</a></td>
    </tr>
    <tr>
-      <td rowspan=2>数据监控</td>
+      <td rowspan=3>数据监控</td>
       <td>监控与告警</td>
       <td>对象存储 COS 的读写请求量、流量等数据是基于 <a href="https://intl.cloud.tencent.com/doc/product/248">云监控</a> 来进行统计和展示的。用户可以在云监控的 <a href="https://console.cloud.tencent.com/monitor/product/COS">控制台</a> 查看到 COS 的读写请求量、流量等详细的监控数据，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/31649">监控与告警</a></td>
    </tr>
    <tr>
       <td>查看数据概览</td>
-      <td>对象存储 COS 提供存储数据的监控能力，您可通过监控数据窗口按照不同时间段查询不同存储类型数据的数据量及趋势，详情请参见 查询数据监控和  <a href="https://intl.cloud.tencent.com/document/product/436/36542">   查看数据概览</a></td>
+      <td>对象存储 COS 提供存储数据的监控能力，您可通过监控数据窗口按照不同时间段查询不同存储类型数据的数据量及趋势，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/36542">查看数据概览</a> 和 <a href="https://intl.cloud.tencent.com/document/product/436/31634">查询数据监控</a></td>
    </tr>
    <tr>
-      <td rowspan=3>数据处理</td>
+      <td>设置监控告警</td>
+      <td>您可以通过云监控的告警策略来设置 COS 监控指标的阈值告警，告警策略包括名称、策略类型和告警触发条件、告警对象、告警通知模板五个必要组成部分，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/39104">设置监控告警</a></td>
+   </tr>
+   <tr>
+      <td rowspan=4>数据处理</td>
       <td nowrap="nowrap">图片处理</td>
       <td>腾讯云对象存储 COS 集成了数据万象（Cloud Infinite，CI）专业的一体化媒体解决方案，涵盖图片处理、审核、识别等功能。您可以通过 COS 的上传和处理接口来进行媒体数据的处理操作，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a></td>
    </tr>
@@ -134,5 +138,10 @@ COS 主要提供以下功能：
       <td>API/SDK</td>
       <td nowrap="nowrap">多种 API 和 SDK</td>
       <td><li>API：COS 提供丰富的 API 接口，包括功能接口的使用方法和参数，提供请求示例、响应示例以及错误码介绍，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/10111">操作列表</a><br><li>COS 提供多种开发语言：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 概览</a></td>
+   </tr>
+   <tr>
+      <td>支持协议</td>
+      <td nowrap="nowrap">多种传输协议</td>
+      <td>COS 支持多种传输协议，包括 HTTP1.0、HTTP1.1、HTTP2.0和 QUIC 协议，同时支持 TLS1.0、TLS1.1、TLS1.2加密协议。其中 HTTP2.0 和 QUIC 协议正在内测阶段，如需使用请通过 <a href="https://cloud.tencent.com/online-service">在线支持</a> 或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 联系我们，我们将为您开通白名单。</td>
    </tr>
 </table>
