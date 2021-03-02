@@ -118,7 +118,6 @@ DATE_ADD( date_part, quantity, timestamp )
 DATE_ADD(year, 5, `2010-01-01T`)                -- 2015-01-01
 DATE_ADD(month, 1, `2010T`)                     -- 2010-02T 
 DATE_ADD(month, 13, `2010T`)                    -- 2011-02T
-DATE_ADD(day, -1, `2017-01-10T`)                -- 2017-01-09 
 DATE_ADD(hour, 1, `2017T`)                      -- 2017-01-01T01:00-00:00
 DATE_ADD(hour, 1, `2017-01-02T03:04Z`)          -- 2017-01-02T04:04Z
 DATE_ADD(minute, 1, `2017-01-02T03:04:05.006Z`) -- 2017-01-02T03:05:05.006Z
@@ -196,7 +195,7 @@ TO_STRING ( timestamp time_format_pattern )
 | y             | 4位数年份                                                    | 1998                            |
 | yyyy           | 固定4位数年份，不足的以0填充                                 | 0199                            |
 | M              | 月份                                                         | 1                              |
-| MM             | 固定4位数月份，不足的以0填充                                 | 01                              |
+| MM             | 固定2位数月份，不足的以0填充                                 | 01                              |
 | MMM            | 月份的英文缩写                                               | Jan                             |
 | MMMM           | 月份的英文全称                                               | January                         |
 | MMMMM          | 月份的首字母缩写                                             | J（不适用于 to_timestamp 函数） |
