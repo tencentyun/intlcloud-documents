@@ -65,6 +65,6 @@ COS 批量处理功能可以实现对存储桶中的对象执行大规模批量�
 5. 单击【下一步】，进入信息核对页，请核对您所填写的批量处理任务配置，如需修改，请单击对应的【修改】或【上一步】，最后确认无误后单击【创建】即可。
 ![](https://main.qcloudimg.com/raw/2f84d4dafa2586e6ca9aacae5d5b7d47.png)
 6. 批量任务创建完成后，在任务列表中找到刚才已创建的任务，并单击【确认】即可。如需取消任务，可单击右侧的【取消任务】。
-![](https://main.qcloudimg.com/raw/631dd229bc14d2b7e60c398efb108da1.png)
+![](https://main.qcloudimg.com/raw/94aed43dc8ca6c02d3149fe12ee3883d.png)
 
 
