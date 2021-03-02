@@ -124,13 +124,12 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 ## Concepts
-#### Execution method<div id="handler"></div>
+#### Execution method
 The execution method specifies the starting file and function while invoking the cloud function as shown below:
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 - For Go programming, use the **FileName** format, such as `main`.
 - For Python, Node.js, or PHP programming, use the **FileName.FunctionName** format, such as `index.main_handler`.
-	
-	- Please note that **FileName does not include the file name extension, and FunctionName is the name of the entry function.** Ensure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`. For more information, please see "Execution Method" in [Basic Concepts](https://intl.cloud.tencent.com/document/product/583/9210). 
+    - Please note that **FileName does not include the file name extension, and FunctionName is the name of the entry function.** Ensure that the file name extension matches the programming language. For example, for Python programming, the file name extension is `.py`, and for Node.js programming, the file name extension is `.js`. For more information, please see "Execution Method" in [Basic Concepts](https://intl.cloud.tencent.com/document/product/583/9210). 
 - For Java programming, use the **package.class::method** format, such as `example.Hello::mainHandler`.
 - For the Custom Runtime environment, a non-fixed format can be used based on the custom programming language implementation.
 
