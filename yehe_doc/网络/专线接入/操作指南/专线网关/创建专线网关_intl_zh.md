@@ -7,8 +7,10 @@
 ## 操作步骤
 1. 登录 [专线网关控制台](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fvpc%2Fdcgw%3Frid%3D1) 。
 2. 在“专线网关”页面上方选择地域和私有网络，然后单击【+新建】。
+ ![](https://main.qcloudimg.com/raw/89ddf380778948849f709ba4518198db.png)
 3. 在“创建专线网关”对话框中配置网关详情，完成后单击【确定】。
-
+ ![](https://main.qcloudimg.com/raw/d74dd96faabff1924720444e732330a9.png)
+ 
 <table>
 <tr>
 <th width="15%">字段</th>
