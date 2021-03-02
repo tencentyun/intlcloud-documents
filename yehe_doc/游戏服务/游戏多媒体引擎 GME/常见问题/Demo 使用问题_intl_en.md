@@ -24,7 +24,7 @@ For any room access parameter errors, please check whether the `AppID` of the SD
 
 ### How do I use a downloaded demo?
 
-- See [Using Demo](https://intl.cloud.tencent.com/document/product/607/39154).
+- See [Using Demo](https://intl.cloud.tencent.com/document/product/607/36419).
 - For Unity users, see [Using Unity Demo](https://intl.cloud.tencent.com/document/product/607/38535).
 
 ### Why is there always no sound in the demo exported from Unity?
