@@ -33,13 +33,14 @@
 
 ### COS 콘솔 사용
 
-COS 콘솔을 사용해 버킷 태그를 설정해야 할 경우 [버킷 태그 설정](https://cloud.tencent.com/document/product/436/34830) 콘솔 가이드 문서를 참조하십시오.
+COS 콘솔을 사용해 버킷 태그를 설정해야 할 경우 [버킷 태그 설정](https://intl.cloud.tencent.com/document/product/436/30928) 콘솔 가이드 문서를 참조하십시오.
 
 ### REST API 사용
 
 다음 API를 통해 버킷 태그를 관리할 수 있습니다.
 
-- [PUT Bucket tagging](https://cloud.tencent.com/document/product/436/34838)
-- [GET Bucket tagging](https://cloud.tencent.com/document/product/436/34837)
-- [DELETE Bucket tagging](https://cloud.tencent.com/document/product/436/34836)
+- [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281)
+- [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277)
+- [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286)
+
 
