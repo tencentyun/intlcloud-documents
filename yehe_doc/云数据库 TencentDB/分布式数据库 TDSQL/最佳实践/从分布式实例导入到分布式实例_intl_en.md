@@ -11,11 +11,11 @@ mysqldump --compact --single-transaction -d -uxxx -pxxx  -hxxx.xxx.xxx.xxx -Pxxx
 
 ## 3. Export data
 Export data by using mysqldump:
-Set the `net_write_timeout` parameter in the parameter settings in the [TDSQL Console](https://console.cloud.tencent.com/dcdb): set global net_write_timeout=28800
+Set the `net_write_timeout` parameter in the parameter settings in the [TDSQL for MySQL Console](https://console.cloud.tencent.com/dcdb): set global net_write_timeout=28800
 ```
 mysqldump --compact --single-transaction --no-create-info -c -uxxx  -pxxx -hxxx.xxx.xxx.xxx -Pxxxx db_name table_name  > data.sql
 ```
->?The `db_name` and `table_name` parameters should be selected as needed. If the exported data is to be imported into another set of TDSQL environment, the `-c` option must be added, and there should be a space between `-c` and `db_name`.
+>?The `db_name` and `table_name` parameters should be selected as needed. If the exported data is to be imported into another set of TDSQL for MySQL environment, the `-c` option must be added, and there should be a space between `-c` and `db_name`.
 >
 ![](https://main.qcloudimg.com/raw/567f47f17939e809a7e0aa2f06627353.png)
 
