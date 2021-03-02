@@ -14,7 +14,7 @@ The private address of a TencentDB instance can be changed. You can do so in the
 
 ## Switching Between VPC Subnets
 The VPC subnet of an instance can be changed. To do so, click **Change Subnet** in the **Network** section on the instance details page, provided that there is an available IP in the target VPC subnet.
->Because the product supports an intra-city active-active architecture, you are recommended to choose a VPC subnet in the same region as your business server or master node.
+>?Because the product supports an intra-city active-active architecture, you are recommended to choose a VPC subnet in the same region as your business server or master node.
 >
 ![](https://main.qcloudimg.com/raw/b2f24c54b12ebdd958d0da3cdf993b5b.png)
 
