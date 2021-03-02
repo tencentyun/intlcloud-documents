@@ -24,6 +24,7 @@
 ④ 联系接入点运营商检测接入点光交箱到 ODF 之间的链路是否可通信。
 ⑤ 联系接入点运营商检测 ODF 间的链路是否可通信。
 ⑥ 联系接入点运营商检测 ODF 到接入点接入设备的链路是否可通信。
+![](https://main.qcloudimg.com/raw/023f9cc7595c3b77f0d5b87710e7de0c.png)
 
 <span id="2"></span>
 ## 排查数据链路层故障
@@ -67,11 +68,11 @@
 
 #### 2.检测是否正确配置路由表
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“基本信息”页签中单击私有网络 ID。
-
+   ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. 在私有网络“基本信息”页签中单击【路由表】。
-
+![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. 在路由表“基本信息”页面查看路由表中是否正确配置目的端为 IDC 网段、下一跳为专线网关的路由策略，且状态为“启用”。
-
+ ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
 4. 若未配置目的端为 IDC 网段、下一跳为专线网关的路由策略，请重新配置。具体操作请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。
 
 - BGP 专用通道
@@ -80,14 +81,14 @@
 #### 1.检查\sBGP\s路由配置是否正确
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“高级配置”页签中查看 BGP 配置是否正确。
 2. 若未正确配置，请重新配置。具体操作请参见[ 申请专用通道](https://intl.cloud.tencent.com/document/product/216/19250)。
-
+   
 #### 2.检测是否正确配置路由表
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/dc/conn)，在专用通道列表中单击目标专用通道 ID，在“基本信息”页签中单击私有网络 ID。
-
+![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. 在私有网络“基本信息”页签中单击【路由表】。
-
+![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. 在路由表“基本信息”页面查看路由表中是否正确配置目的端为 IDC 网段、下一跳为专线网关的路由策略，且状态为“启用”。
-
+ ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
 4. 若未配置目的端为 IDC 网段、下一跳为专线网关的路由策略，请重新配置。具体操作请参见[ 配置路由表](https://intl.cloud.tencent.com/document/product/216/19259)。
 
 
@@ -102,7 +103,7 @@
 #### 2.检测是否为专线网关添加\sIDC\s网段
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/vpc/dcgw?rid=8)，在专线网关列表中单击目标专线网关 ID。
 2. 在专线网关详情页面单击 【IDC 网段】页签，查看路由列表中是否正确配置 IDC 网段。
-
+![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
 3. 若未配置 IDC 网段，请重新配置。具体操作请参见[ 专线网关添加 IDC 网段](https://intl.cloud.tencent.com/document/product/216/39083)。
 
 - BGP 专用通道
@@ -115,5 +116,5 @@
 #### 2.检测是否为专线网关添加\sIDC\s网段
 1. 登录[ 专线接入控制台](https://console.cloud.tencent.com/vpc/dcgw?rid=8)，在专线网关列表中单击目标专线网关 ID。网段
 2. 在专线网关详情页面单击 【IDC 网段】页签，查看路由列表中查看是否正确配置 IDC 网段。
-
+![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
 3. 若未配置 IDC 网段，请重新配置。具体操作请参见[ 专线网关添加 IDC 网段](https://intl.cloud.tencent.com/document/product/216/39083)。
