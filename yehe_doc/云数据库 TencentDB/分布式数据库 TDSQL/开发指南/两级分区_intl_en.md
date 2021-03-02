@@ -1,6 +1,6 @@
-TDSQL only uses the HASH method to shard data, which is not convenient for deleting legacy data of specific conditions, such as transactional data. In order to solve this problem, subpartitioning can be used.
+TDSQL for MySQL only uses the HASH method to shard data, which is not convenient for deleting legacy data of specific conditions, such as transactional data. In order to solve this problem, subpartitioning can be used.
 
-TDSQL supports RANGE and LIST subpartitioning, where the table creating syntax is similar to the partitioning syntax in MySQL.
+TDSQL for MySQL supports RANGE and LIST subpartitioning, where the table creating syntax is similar to the partitioning syntax in MySQL.
 
 ## Data Types Supported by RANGE
 - DATE, DATETIME, TIMESTAMP: the `year`, `month`, and `day` functions are supported. If the function is left empty, the `day` function is used.
