@@ -16,13 +16,13 @@ The reasons are as follows:
 ### Connection interruption
 **A connection to one access point**
 Your IDC connects to one Tencent Cloud access point using a connection, and then accesses Tencent Cloud VPCs. The disconnection will directly cause business interruption.
-![](https://main.qcloudimg.com/raw/26a47463122eb596235751e989a82a58.png)
+![](https://main.qcloudimg.com/raw/59177b6fa264d350d948562a90d39309.png)
 **Solution**
 Report the failure to the carrier and provide the connection ID. This mode is incapable of disaster recovery. We recommend that you plan connections to improve the stability and high availability of the Direct Connect network architecture. For more information, see [Network Planning](https://intl.cloud.tencent.com/document/product/216/38527).
 
 **Two connections to one access point
 Your IDC connects to one Tencent Cloud access point using two connections, and then accesses Tencent Cloud VPCs. When one connection interrupts, disaster recovery starts.
-![](https://main.qcloudimg.com/raw/c688bda58dab1127c488221271f04b5d.png)
+![](https://main.qcloudimg.com/raw/424b684e55ad9f2eb059143f4682bea7.png)
 **Solution**
 1. Check for business damage on your business monitoring system.
 2. Collect the access latency and route change caused by traffic switch after disaster recovery, and judge whether the secondary connection works.
@@ -32,7 +32,7 @@ Your IDC connects to one Tencent Cloud access point using two connections, and t
 ### Bandwidth exhaustion
 **A connection to one access point**
 Your IDC connects to one Tencent Cloud access point using a connection, and then accesses Tencent Cloud VPCs. When the dedicated tunnel bandwidth is used up, packet will be lost, resulting in data loss.
-![](https://main.qcloudimg.com/raw/6eb75317f07907a1d65c0c801cf5d9aa.png)
+![](https://main.qcloudimg.com/raw/a4bd7f183a041965747422863e9eeb2e.png)
 **Solution**
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/dc) console and go to the **Dedicated Tunnels** page. Locate the dedicated tunnel and adjust its bandwidth on the **Change Tunnel** page as instructed in [Changing Tunnel](https://intl.cloud.tencent.com/document/product/216/19251).
 2. If the connection bandwidth cap is reached, first perform the disaster recovery switchover for your business and contact the Direct Connect representative for expansion.
@@ -42,10 +42,10 @@ Your IDC connects to one Tencent Cloud access point using a connection, and then
 Your IDC connects to two intra-region Tencent Cloud access points using one connection respectively, and then accesses Tencent Cloud VPCs.
 - Primary/secondary mode
 When the primary connection bandwidth is used up, packet will be lost, resulting in data loss. Change to the load-balancing mode to share traffic and resume service data.
-![](https://main.qcloudimg.com/raw/848690217bd9f8611be541738d426e30.png)
+![](https://main.qcloudimg.com/raw/cc8afa125dc11d04fa52513e34520069.png)
 - Load-balancing mode
 When both connections are full-loaded, packet will be lost, resulting in data loss.
-  ![](https://main.qcloudimg.com/raw/9a3c27c6a0b48a3ac879ed1acbdc30e0.png)
+  ![](https://main.qcloudimg.com/raw/51eca2bb50730177abda0f509323f56c.png)
 **Solution**
  1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/dc) console and go to the **Dedicated Tunnels** page. Locate the dedicated tunnel and adjust its bandwidth on the **Change Tunnel** page as instructed in [Changing Tunnel](https://intl.cloud.tencent.com/document/product/216/19251).
  2. If your connection bandwidth cap is reached:
@@ -56,7 +56,7 @@ When both connections are full-loaded, packet will be lost, resulting in data lo
 <span id="3"></span>
 ### Security policy misconfiguration
 Your IDC connects to two intra-region Tencent Cloud access points using one connection respectively, and then accesses Tencent Cloud VPCs. If your IDC accesses Tencent Cloud VPC via the primary connection and is accessed by Tencent Cloud VPC via the secondary connection, different routes will cause inaccessibility.
-![](https://main.qcloudimg.com/raw/d2f6f71aa033f829d311189b2b1990ce.png)
+![](https://main.qcloudimg.com/raw/8f0e2af4639de6d2db4d1ecfeffd4586.png)
 **Solution**
 1. Check whether different security devices (such as firewall) are configured on the primary and secondary connections. If so, ensure that their security policies are the same and allow incoming and outgoing messages to pass.
 2. Configure an IDC IP (an idle IP or test IP as confirmed by the owner) on IDC access devices, and use this IP to access the in-cloud business IP to test communication.
@@ -66,7 +66,7 @@ Your IDC connects to two intra-region Tencent Cloud access points using one conn
 ### Static route failures
 Your IDC connects to two intra-region Tencent Cloud access points using one connection respectively, and then accesses Tencent Cloud VPCs.
 If the primary connection cascades a layer-3 device, the IDC server port exception or abnormal link from the layer-3 device to IDC is imperceptible to the access point A, and no alarm will be triggered. In this case, the dedicated tunnel still sends static route to the direct connect gateway and forward traffic to the faulty connection, causing service suspension.
-![](https://main.qcloudimg.com/raw/ad901d025847723c6d28a605eb9fea92.png)
+![](https://main.qcloudimg.com/raw/50f64c39bd2646138024a88faa99db26.png)
 **Solution**
 We recommend that configure BFD on access devices at IDC and access point for the static route to periodically send a detection packet. If there is no reply within a specified period, the opposite end is determined to be faulty and the associated route will become invalid without forwarding to the direct connect gateway.
 
