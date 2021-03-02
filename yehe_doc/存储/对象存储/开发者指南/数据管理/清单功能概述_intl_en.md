@@ -7,7 +7,7 @@ You can use the inventory feature for various purposes, including but not limite
 - Review and report replication and encryption states of an object.
 - Streamline and speed up service workflows and big data jobs.
 
-> You can configure multiple inventory tasks for one bucket. COS doesn’t directly read the content of an object, but only scan the attribute information such as metadata of the object.
+> !You can configure multiple inventory tasks for one bucket. COS doesn’t directly read the content of an object, but only scan the attribute information such as metadata of the object.
 
 ## Inventory Parameters
 
@@ -64,7 +64,7 @@ You need to inform COS of an export frequency of the inventory report, a bucket 
 - Select an encryption mode: No encryption or SSE-COS. If SSE-COS is selected, COS encrypts the generated inventory report.
 - Configure an export location: You need to specify the bucket to store the inventory report.
 
->The destination bucket must be in the same region as the source bucket. They can be the same bucket.
+> !The destination bucket must be in the same region as the source bucket. They can be the same bucket.
 
 
 ## Directions
@@ -146,4 +146,4 @@ The following shows an example of the manifest content in the manifest.json file
 
 All of your objects might not appear in each inventory list. The inventory list provides eventual consistency for PUTs of both new objects and overwrites, and DELETEs. Therefore, the inventory report possibly does not include the latest added or deleted object. For example, if the user uploads or deletes an object when COS is executing an inventory task configured by the user, the results of the upload or deletion operations may not be reflected in the inventory report.
 
-To validate the status of the object before COS performs an operation, you can search for the metadata of the object by using the HEAD Object API, or check the attributes of the object in COS Console.
+To validate the status of the object before COS performs an operation, you can search for the metadata of the object by using the [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) API, or check the attributes of the object in COS Console.
