@@ -24,7 +24,7 @@ Assume that a Direct Connect service connects IDC to the access point’s data c
 (4) Contact the access point’s carrier to check that the optic splice box can communicate with ODF.
 (5) Contact the access point’s carrier to check that ODFs can communicate.
 (6) Contact the access point’s carrier to check that ODF can communicate with access devices at the access point.
-![](https://main.qcloudimg.com/raw/95c325912d32dd94d3e0cf46b713ce9f.png)
+![](https://main.qcloudimg.com/raw/023f9cc7595c3b77f0d5b87710e7de0c.png)
 
 <span id="2"></span>
 ## Troubleshooting Data Link Layer Failures
@@ -68,11 +68,11 @@ Check that IDC IP range is correctly configured on the dedicated tunnel and prop
 
 #### 2. Check the route table
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Info** tab and click the VPC ID to view VPC details.
-   ![](https://main.qcloudimg.com/raw/3980a49d7b1bf2ef27103136db0ad8fc.png)
+   ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. Click the **Route Table**.
-	 ![](https://main.qcloudimg.com/raw/ee4efa76d45324afa617866eac0a04e2.png)
+	 ![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. Select the **Basic Information** tab and check if a routing policy with the CPE IP range as destination and the direct connect gateway as next hop type is enabled.
-	 ![](https://main.qcloudimg.com/raw/6b3689fc7b9ad75262e5b453d7701fb1.png)
+	 ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
 4. Reconfigure the routing policy if the previous configuration is incorrect. For detailed directions, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
 
 - BGP dedicated tunnel
@@ -84,11 +84,11 @@ Check that IDC IP range is correctly configured on the dedicated tunnel and prop
 
 #### 2. Check the route table
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Info** tab and click the VPC ID to view VPC details.
-   ![](https://main.qcloudimg.com/raw/3980a49d7b1bf2ef27103136db0ad8fc.png)
+   ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. Click the **Route Table**.
-	 ![](https://main.qcloudimg.com/raw/ee4efa76d45324afa617866eac0a04e2.png)
+	![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. Select the **Basic Information** tab and check if a routing policy with the CPE IP range as destination and the direct connect gateway as next hop type is enabled.
-	 ![](https://main.qcloudimg.com/raw/6b3689fc7b9ad75262e5b453d7701fb1.png)
+	 ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
 4. Reconfigure the routing policy if the previous configuration is incorrect. For detailed directions, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
 
 
@@ -103,7 +103,7 @@ Check that IDC IP range is correctly configured on the dedicated tunnel and prop
 #### 2. Check the IDC IP range on the direct connect gateway
 1. Log in to the [Direct Connect Gateway](https://console.cloud.tencent.com/vpc/dcgw?rid=8) console and click the **ID/Name** of the target direct connect gateway to enter its details.
 2. Select the **IDC IP Range** tab, and check the configurations.
-	![](https://main.qcloudimg.com/raw/ffcf040f54457685153039a00c72dd1c.png)
+	![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
 3. Reconfigure an IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
 
 - BGP dedicated tunnel
@@ -116,5 +116,5 @@ Check that the dedicated tunnel BGP is correctly configured and IDC IP range is 
 #### 2. Check the IDC IP range on the direct connect gateway
 1. Log in to the [Direct Connect Gateway](https://console.cloud.tencent.com/vpc/dcgw?rid=8) console and click the **ID/Name** of the target direct connect gateway to enter its details.
 2. Select the **IDC IP Range** tab, and check the configurations.
-	![](https://main.qcloudimg.com/raw/ffcf040f54457685153039a00c72dd1c.png)
+	![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
 3. Reconfigure an IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
