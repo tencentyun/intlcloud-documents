@@ -1,13 +1,13 @@
 ## 기본 개념
 
-Tencent Cloud 객체 스토리지 COS는 HTTP/HTTPS 프로토콜 액세스를 사용한 Web 스토리지 서비스로서, REST API나 [COS SDK](https://cloud.tencent.com/document/product/436/6474)를 사용하여 COS에 액세스할 수 있습니다.
+Tencent Cloud 객체 스토리지 COS는 HTTP/HTTPS 프로토콜 액세스를 사용한 Web 스토리지 서비스로서, REST API나 [COS SDK](https://intl.cloud.tencent.com/document/product/436/6474)를 사용하여 COS에 액세스할 수 있습니다.
 
 COS 액세스 요청 실행 시, COS 인증을 거쳐야만 리소스 작업이 가능합니다. 따라서 신분 식별 가능 여부에 근거하여, COS 액세스 요청은 익명 요청과 서명 요청의 2가지 유형으로 나뉩니다.
 
 - 익명 요청: Authorization 또는 관련 매개변수를 가지고 있지 않거나, 관련 문자가 사용자의 신분 특징을 식별할 수 없는 경우, 익명 요청으로 간주되어 인증을 진행합니다.
 - 서명 요청: 서명된 요청은 HTTP 헤더 또는 요청 패킷에 Authorization 필드가 포함돼야 합니다. 해당 필드의 콘텐츠는 Tencent Cloud의 보안 자격 증명 SecretID, SecretKey 및 요청된 일부 특징 값을 결합한 것이며, 암호화 알고리즘으로 생성됩니다.
 
-COS SDK 액세스를 사용하면, 보안 자격 증명의 설정만으로 요청을 실행할 수 있습니다. REST API 호출을 사용하면 [서명 요청](https://cloud.tencent.com/document/api/436/7778) 문서를 참조하여 서명 요청을 자동 계산하거나, [COS 서명 툴](https://cloud.tencent.com/document/product/436/30442)을 통해 직접 생성할 수 있습니다.
+COS SDK로 액세스할 경우 보안 자격 증명만 설정하면 요청할 수 있습니다. REST API를 사용한 액세스는 [서명 요청](https://intl.cloud.tencent.com/document/api/436/7778) 문서를 참조하여 자체적으로 서명 요청을 계산해야 합니다.
 
 ## 보안 자격 증명 얻기
 
@@ -15,7 +15,7 @@ CAM(Cloud Access Management)은 객체 스토리지 COS에 대해 계정 및 보
 
 ### 루트 계정의 보안 자격 증명
 
-루트 계정 로그인 후, CAM의 [Tencent Cloud API 키(https://console.cloud.tencent.com/cam/capi) 페이지를 통해 루트 계정 보안 자격 증명 SecretID와 SecretKey를 관리하고 얻을 수 있습니다. 다음은 한 그룹 키의 예시입니다.
+루트 계정 로그인 후, CAM의 [Tencent Cloud API 키](https://console.cloud.tencent.com/cam/capi) 페이지를 통해 루트 계정 보안 자격 증명 SecretID와 SecretKey를 관리하고 얻을 수 있습니다. 다음은 한 그룹 키의 예시입니다.
 
 > 36개 문자의 액세스 키 ID(SecretID): AKIDHZRLB9Ibhdp7Y7gyQq6BOk1997BGmUXg
 > 32개 문자의 액세스 키 Key(SecretKey): LYaWIuQmCSZ5ZMniUM6hiaLxHnW6XxRK
@@ -53,7 +53,7 @@ Tencent Cloud 객체 스토리지 COS는 임시 키 생성에 쓰이는 간단�
 
 ### REST API
 
-[리전 및 액세스 도메인](https://cloud.tencent.com/document/product/436/6224) 문서에 REST API 호출 실행에 사용하는 리전 리스트가 나열되어 있습니다.
+[리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224) 문서에 REST API 호출 실행에 사용하는 리전 리스트가 나열되어 있습니다.
 
 COS는 가상 호스팅형 도메인을 사용하여 버킷에 액세스하는 것을 권장합니다. HTTP 요청 실행 시, `Host` 헤더를 통해 액세스해야 하는 버킷을 직접 가져오는데, `<BucketName-APPID>.cos.<Region>.myqcloud.com`을 예로 들 수 있습니다. 가상 호스팅형 도메인은 가상 서버의 [루트 목록] 같은 기능을 구현했으며, favicon.ico, robots.txt, crossdomain.xml과 같은 파일을 호스팅하는 데 사용할 수 있습니다. 이와 같은 파일은 여러 응용 프로그램이 호스팅 웹 사이트를 식별할 때 가상 서버의 [루트 목록] 위치에서 기본적으로 인덱스 가능한 콘텐츠입니다.
 
