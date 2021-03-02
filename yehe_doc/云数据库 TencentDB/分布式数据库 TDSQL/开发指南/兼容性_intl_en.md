@@ -1,5 +1,5 @@
 ## Language Structures
-TDSQL supports all literal values used by MySQL, including:
+TDSQL for MySQL supports all literal values used by MySQL, including:
 ```
 String Literals
 Numeric Literals
@@ -507,7 +507,7 @@ Bit Functions and Operators
 | BIT_COUNT() | Return the number of bits that are set |
 | &           | Bitwise AND                            |
 | ~           | Bitwise inversion                      |
-| &#124;      | Bitwise OR                             |
+| \|      | Bitwise OR                             |
 | ^           | Bitwise XOR                            |
 | <<          | Left shift                             |
 | >>          | Right shift                            |
