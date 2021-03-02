@@ -27,7 +27,7 @@ RTMP格式：rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(ti
 FLV格式：http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 M3U8格式：http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-- **domain**：自有已备案播放域名。
+- **domain**：播放域名。
 - **AppName**：应用名称，默认 live，若需自定义需 [提交工单](https://console.cloud.tencent.com/workorder/category) 配置。
 - **StreamName**：流名称，用户自定义，用以标识直播流。
 - **txSecret**：开启播放鉴权后生成的鉴权串。
