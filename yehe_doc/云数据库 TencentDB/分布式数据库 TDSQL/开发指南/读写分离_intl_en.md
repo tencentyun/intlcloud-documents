@@ -1,4 +1,4 @@
-TDSQL instances support read-write separation in the following modes:
+TDSQL for MySQL instances support read-write separation in the following modes:
 - Global read-write separation: the proxy enables the syntax parsing configuration to filter out SELECT read requests and send them directly to the secondary server by default.
 
 - A comment flag such as `/*slave*/` can be added to send specified SQL statements to the secondary server.
