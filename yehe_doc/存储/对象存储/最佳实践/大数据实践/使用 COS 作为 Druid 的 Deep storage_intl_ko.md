@@ -37,8 +37,8 @@ druid.storage.storageDirectory=cosn://bucket-appid/<druid-path>
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
--->
-<!-- Put site-specific property overrides in this file. -->
+ -->
+ <!-- Put site-specific property overrides in this file. -->
 <configuration>
     <property>
         <name>fs.cosn.userinfo.secretId</name>
