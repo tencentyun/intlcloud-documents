@@ -109,12 +109,12 @@ If an error code is returned after the function is executed, you can find the ca
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>The user code container times out.</td>
-<td>The user code container times out (15s). Please check the code and try again. If the problem persists, please contact the <a href="https://cloud.tencent.com/act/event/Online_service">intelligent customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>The user code container times out (15s). Please check the code and try again. If the problem persists, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
 <td>An internal error occurs.</td>
-<td>An internal error occurs. Please try again later. If the problem persists, please contact the <a href="https://cloud.tencent.com/act/event/Online_service">intelligent customer service</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+<td>An internal error occurs. Please try again later. If the problem persists, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
 </tr>
 </tbody>
 </table>
