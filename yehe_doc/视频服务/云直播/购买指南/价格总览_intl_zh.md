@@ -36,11 +36,11 @@
 </tr><tr>
 <td>快直播流量<br>（默认）</td>
 <td>快直播观看产生的中国内地（大陆）下行流量消耗，按日结后付费计费。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/39136#flow">后付费-日结</a></td>
+<td>后付费-日结</a></td>
 </tr><tr>
 <td>快直播宽带峰值</td>
 <td>快直播观看产生的中国内地（大陆）下行带宽峰值，按日结后付费计费。</td>
-<td><a href="https://cloud.tencent.com/document/product/267/39136#bandwidth">后付费-日结</a></td>
+<td>后付费-日结</a></td>
 </tr></table>
 
 >! 
@@ -115,7 +115,7 @@
 <tr>
 <td>录制存储</td>
 <td>直播录制文件需存储到云点播，产生的服务费用<b>按数据的实际存储时间和存储量计费</b>，需额外支付点播存储费用。</td>
-<td><a href="https://cloud.tencent.com/document/product/266/14667#storage_page">云点播-按量计费</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14666">云点播-按量计费</a></td>
 </tr><tr>
 <td>截图存储</td>
 <td>直播截图和鉴黄生成的截图文件需存储到 COS，产生的服务费用<strong>按数据的实际存储时间和存储量计费</strong>，需额外支付 COS 存储费用。</td>
