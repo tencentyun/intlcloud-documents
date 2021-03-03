@@ -1,27 +1,27 @@
 ## Feature Overview
-After a domain name is connected to CDN, a user's resource request will be scheduled to a CDN node for response. If the node has the resource cached, it will directly return the resource content; otherwise, it will pass through the request to the origin server to pull the requested resource.
+After a domain name is connected to CDN, all requests will be scheduled to a CDN node. If the requested resource is cached on the node, the resource will be returned directly; otherwise, the request will be passed to the origin server to pull the requested resource.
 
-As CDN nodes respond to most user requests, to help you analyze user access, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
+As CDN nodes respond to most requests, to help you analyze user access, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
 
-> Currently, only node access logs are provided.
+>? Currently, origin-pull logs are not provided, only node access logs are provided.
 
-## Use Cases
+## Overview
 ### Access behavior analysis
 You can download access logs and analyze popular resources and active users.
 
 ### Service quality monitoring
 By downloading access logs, you can stay on top of the service status of all CDN nodes and calculate the average response time, average download speed, and other metrics.
 
-## Directions
+## Operation Guide
 ### How to use
-Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
 ![](https://mc.qcloudimg.com/static/img/043e70b6829ce67d6af125b51736b249/1.png)
 
->
->- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
->- Overseas access logs and Mainland China access logs of the same domain name are packaged separately. Log packages are named in the format of "time-domain name-acceleration region".
->- The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
->- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed here for permanent storage.
+>!
+- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
+- A domain name's access logs of regions in and outside the Chinese mainland are packaged separately. Log packages are named in the format of "time-domain name-acceleration region".
+- The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
+- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/document/product/228/36014) for permanent storage.
 
 ### Fields
 The fields (from left to right) in the logs are listed as below:
@@ -54,17 +54,17 @@ The fields (from left to right) in the logs are listed as below:
 </tbody>
 <tbody><tr>
 <td>5</td>
-<td>Number of bytes accessed this time, including the size of the file itself and the size of the request header</td>
+<td>Number of bytes accessed this time, including the size of the file itself and the size of the request header.</td>
 </tr>
 </tbody>
 <tbody><tr>
 <td>6</td>
-<td>Province numbers for Mainland China logs; region numbers for overseas logs (see the mapping table below)</td>
+<td>Province numbers for Chinese mainland logs; region numbers for logs outside the Chinese mainland (see the mapping table below).</td>
 </tr>
 </tbody>
 <tbody><tr>
 <td>7</td>
-<td>ISP numbers for Mainland China logs; `-1` will be used for overseas logs (see the mapping table below)</td>
+<td>ISP numbers for Chinese mainland logs; `-1` will be used for logs outside the Chinese mainland (see the mapping table below).</td>
 </tr>
 </tbody>
 <tbody><tr>
@@ -79,7 +79,7 @@ The fields (from left to right) in the logs are listed as below:
 </tbody>
 <tbody><tr>
 <td>10</td>
-<td>Response time (in milliseconds), which refers to the time it takes for a node to return all packets to the client after receiving a request</td>
+<td>Response time (in milliseconds), which refers to the time it takes for a node to return all packets to the client after receiving a request.</td>
 </tr>
 </tbody>
 </tbody>
@@ -109,13 +109,13 @@ The fields (from left to right) in the logs are listed as below:
 </tbody>
 <tbody><tr>
 <td>15</td>
-<td>Cache hit/miss. A hit in a CDN edge server or parent node will be marked at hit</td>
+<td>Cache hit/miss. A hit in a CDN edge server or parent node will be marked as hit.</td>
 </tr>
 </tbody></table>
 
 ### Region/ISP mappings
 
-#### Mainland China provinces
+#### Chinese mainland provinces
 <table style="width:660px;">
 <thead>
 <tr>
@@ -217,7 +217,7 @@ The fields (from left to right) in the logs are listed as below:
 </tr>
 <tr>
 <td>-1</td>
-<td>Outside Mainland China</td>
+<td>Outside the Chinese mainland</td>
 <td></td>
 <td></td>
 <td></td>
@@ -226,7 +226,7 @@ The fields (from left to right) in the logs are listed as below:
 </tbody></table>
 
 
-#### Mainland China ISPs
+#### Chinese mainland ISPs
 <table style="width:660px;">
 <thead>
 <tr>
@@ -258,7 +258,7 @@ The fields (from left to right) in the logs are listed as below:
 </tbody>
 <tbody><tr>
 <td>-1</td>
-<td>ISPs outside Mainland China</td>
+<td>ISPs outside the Chinese mainland</td>
 <td>0</td>
 <td>Other ISPs</td>
 <td></td>
@@ -268,7 +268,7 @@ The fields (from left to right) in the logs are listed as below:
 </table>
 
 
-#### Regions outside Mainland China
+#### Regions outside the Chinese mainland
 <table style="width:710px">
 <thead>
 <tr>
@@ -562,7 +562,7 @@ The fields (from left to right) in the logs are listed as below:
 </tr>
 <tr>
 <td>669</td>
-<td>US</td>
+<td>United States</td>
 <td>1200</td>
 <td>Hong Kong (China)</td>
 <td>2768</td>
@@ -638,7 +638,7 @@ The fields (from left to right) in the logs are listed as below:
 <td>1501</td>
 <td>Bahrain</td>
 <td>4460</td>
-<td>Mainland China</td>
+<td>Chinese mainland - North China</td>
 </tr>
 <tr>
 <td>726</td>
@@ -694,12 +694,12 @@ The fields (from left to right) in the logs are listed as below:
 <td>1611</td>
 <td>Madagascar</td>
 <td>-2</td>
-<td>Outside Mainland China - other</td>
+<td>Outside the Chinese mainland - other</td>
 </tr>
 </tbody></table>
 
 
-#### ISPs outside Mainland China
+#### ISPs outside the Chinese mainland
 <table style="width:220px;">
 <thead>
 <tr>
@@ -709,22 +709,22 @@ The fields (from left to right) in the logs are listed as below:
 </thead>
 <tbody><tr>
 <td>-1</td>
-<td>ISPs outside Mainland China</td>
+<td>ISPs outside the Chinese mainland</td>
 </tr>
 </tbody>
 </table>
 
-### Precautions
+### Notes
 The traffic/bandwidth data calculated based on the number of bytes recorded in the fifth field of an access log is different from the billable CDN traffic/bandwidth data for the following reason:
-- Only application-layer data can be recorded in access logs. The traffic generated during actual data transfer over the network is around `5–15%` more than application-layer traffic, including the following two parts:
-	- Consumption by TCP/IP headers: in TCP/IP-based HTTP requests, each packet has a maximum size of 1,500 bytes. This includes TCP and IP headers which accounts for 40 bytes and generate traffic during transfer but cannot be counted by the application layer. The overhead of this part is around 3%.
-	- TCP retransmission: during normal data transfer over the network, around 3–10% packets are lost on the internet, and the server will re-transmit the lost parts. This traffic cannot be counted by the application layer, which accounts for 3–7% of the total traffic.
-- As an industry standard, the billable traffic is the sum of the application-layer traffic and the overheads as described above. Tencent Cloud CDN takes 10% as the overheads proportion, so the monitored traffic is around 110% of the logged traffic.
+- Only application-layer data can be recorded in access logs. The traffic generated during actual data transfer over the network is around 5 to 15% more than application-layer traffic, including the following two parts:
+	- Consumption by TCP/IP headers: in TCP/IP-based HTTP requests, each packet has a maximum size of 1,500 bytes. This includes TCP and IP headers which account for 40 bytes and generate traffic during transfer but cannot be counted by the application layer. The overhead of this part is around 3%.
+	- TCP retransmission: during normal data transfer over the network, around 3% to 10% of packets are lost on the internet and retransmitted by the server. This type of traffic cannot be counted by the application layer, which accounts for 3% to 7% of the total traffic.
+- As an industry standard, the billable traffic is the sum of the application-layer traffic and the overheads described above. Tencent Cloud CDN takes 10% as the overheads proportion, so the monitored traffic is around 110% of the logged traffic.
 
 ## Use Cases
 
-### Sample Mainland China access log
+### Sample Chinese mainland access log
 ![](https://mc.qcloudimg.com/static/img/a3ef1ea051dc277872ec10a7135872df/logs.png)
 
-### Sample overseas access log
+### Sample access log outside the Chinese mainland
 ![](https://main.qcloudimg.com/raw/b0612a5204abdbdc6a4364ad02972900.png)
