@@ -80,7 +80,7 @@ COSCredentials cred = new BasicCOSCredentials("1250000000", "AKIDasdfmRxHPa9oLhJ
 ```
 
 #### COSCMD TCCLI를 이용한 액세스 예시
-以 COSCMD `config` 명령 라인 예시이며, 다음과 같이 매개변수를 입력해야 합니다.
+COSCMD `config` 명령 라인 예시이며, 다음과 같이 매개변수를 입력해야 합니다.
 ```sh
 coscmd config -u <루트 계정 APPID> -a <서브 계정 SecretId> -s <서브 계정 SecretKey> -b <루트 계정 bucketname> -r <루트 계정 bucket의 소속 리전>
 ```
