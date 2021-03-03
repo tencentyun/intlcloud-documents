@@ -6,8 +6,7 @@ yarn logs -applicationId application_1507732460084_0057
 ```
 
 >?
->- This command can only be executed by a Hadoop user.
->- If it is a task of another user, you can add the `-appOwner username` parameter.
+>- This command can only be executed by a Hadoop user.If it is a task of another user, you can add the `-appOwner username` parameter.
 
 To view the cause of a task exception, run the following command:
 ```
