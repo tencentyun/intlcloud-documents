@@ -79,7 +79,7 @@ Widevine key:
 
 ## Step 5. Run playback test.
 
-After configuring a playback address as instructed in the MediaLive user guide (for example, you can [ingest live streams to the MediaPackage channel](https://intl.cloud.tencent.com/document/product/1048/38362), and [get the playback address via the MediaPackage endpoint](https://intl.cloud.tencent.com/document/product/1063/37496?lang=en&pg=#3.-endpoint)), you can use the [DRMtoday playback page](https://players.castlabs.com/presto/6.1.2/#/player/config) to run a playback test.
+After configuring a playback address as instructed in the MediaLive user guide (for example, you can [ingest live streams to the MediaPackage channel](https://intl.cloud.tencent.com/document/product/1048/38362), and [get the playback address via the MediaPackage endpoint](https://intl.cloud.tencent.com/document/product/1063/37496?lang=en&pg=#3.-endpoint), you can use the [DRMtoday playback page](https://players.castlabs.com/presto/6.1.2/#/player/config) to run a playback test.
 ![](https://main.qcloudimg.com/raw/5b8b559d838497dd5b75cf9c7cedf363.png)
 ![](https://main.qcloudimg.com/raw/77249ddf9131bc9578bdb28fc3c37fb4.png)
 Parameters:
