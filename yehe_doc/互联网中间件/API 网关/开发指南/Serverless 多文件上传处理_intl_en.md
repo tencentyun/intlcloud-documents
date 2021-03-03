@@ -22,7 +22,7 @@ Parameters involved in the creation process are as follows:
 const stream = require("stream");
 const Busboy = require("busboy");
 
-/** Process user upload (POST) */
+ /** Process user upload (POST) */
 const handlePost = (event) => {
   return new Promise((resolve, reject) => {
     const busboy = new Busboy({ headers: event.headers });
@@ -65,7 +65,7 @@ const handlePost = (event) => {
   });
 };
 
-/** Return the static file */
+ /** Return the static file */
 const handleGet = (event) => {
   const html = `<html><head></head><body>
     <form method="POST" enctype="multipart/form-data">
@@ -84,7 +84,7 @@ const handleGet = (event) => {
   };
 };
 
-/** Entry function for SCF */
+ /** Entry function for SCF */
 exports.main_handler = async (event, context) => {
   const method = event.httpMethod;
   /** For POST requests, process the user’s multipart/form-data and generate the page that displays the upload effect */
