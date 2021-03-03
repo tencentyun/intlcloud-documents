@@ -180,14 +180,14 @@
     <th width="100px" style="text-align:center">기능 항목</th>
     <th width="100px" style="text-align:center">라이브 방송 라이트 버전<br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center">UGSV 버전<br>LiteAV_UGC</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC</a><br>LiteAV_TRTC</th>
     <th width="100px" style="text-align:center">플레이어 버전<br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">프로 버전</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">엔터프라이즈 버전</a><br>Enterprise</th>
   </tr>
   <tr>
     <td rowspan='2' style="text-align:center">라이브 방송 푸시 스트리밍</td>
-    <td style="text-align:center">摄카메라 푸시 스트리밍</td>
+    <td style="text-align:center">카메라 푸시 스트리밍</td>
     <td style="text-align:center">&#10003;</td>
     <td style="text-align:center">-</td>
     <td style="text-align:center">-</td>
