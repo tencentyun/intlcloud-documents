@@ -1,14 +1,15 @@
 ## 소개
 본 문서에서는 SDK에 종속되지 않고 간단한 코드를 사용하여 웹 페이지(Web)에서 직접 파일을 COS의 버킷에 전송하는 방법을 소개합니다.
 
-> 본 문서의 내용은 XML 버전의 API를 기반으로 합니다.
+>! 본 문서의 내용은 XML 버전의 [API](https://intl.cloud.tencent.com/document/product/436/7751)를 기반으로 합니다.
 
+<span id="1"></span>
 
 ## 전제 조건
-<span id="사전 준비"></span>
+
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인하고 버킷을 생성하여 Bucket(버킷 이름)과 Region(리전 이름)을 획득합니다. 자세한 내용은 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309) 문서를 참조하십시오.
 2. 버킷 상세 페이지로 이동하여 [기본 정보] 탭을 클릭합니다. 페이지를 아래로 내려 [크로스 도메인 액세스 CORS 설정]의 설정 페이지를 찾아 [규칙 추가]를 클릭한 후, 다음 이미지와 같이 설정합니다. 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/13318) 문서를 참조하십시오.
-![cors](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
+![](https://main.qcloudimg.com/raw/eb73177a2302ad976be301254bcd9630.png)
 3. [CAM 콘솔](https://console.cloud.tencent.com/cam/capi)에 로그인한 뒤 프로젝트의 SecretId와 SecretKey를 획득합니다.
 
 
@@ -20,7 +21,7 @@
 
 ### 임시 키 획득 및 서명 계산
 보안을 위해 서명에 임시 키를 사용합니다. 서버에 임시 키 서비스 구축에 대한 자세한 내용은 [PHP 예시](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.php) 및 [Nodejs 예시](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/sts.js)를 참조하십시오.
-다른 언어가 있거나 직접 구현할 경우, 다음 방법을 확인하십시오.
+다른 언어를 사용하거나 직접 실행하는 경우 다음 절차를 참고할 수 있습니다.
 1. 서버에서 임시 키를 획득합니다. 서버는 먼저 고정 키의 SecretId와 SecretKey를 사용해 STS 서비스에서 tmpSecretId, tmpSecretKey, sessionToken과 같은 임시 키를 획득합니다. 자세한 방법은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 또는 [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk) 문서를 참조하십시오.
 2. 프런트 엔드에서 tmpSecretId, tmpSecretKey, method, pathname을 통해 서명을 계산합니다. [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js) 구문을 참고 및 사용해 서명을 계산하며, 비즈니스에 필요한 경우 백그라운드에서 서명을 계산할 수도 있습니다.
 3. PutObject 인터페이스를 사용해 파일을 업로드하는 경우, 요청 전송 시 계산된 서명과 sessionToken을 각각 header의 authorization과 x-cos-security-token 필드에 넣습니다.
@@ -30,7 +31,7 @@ PostObject 인터페이스를 사용해 파일을 업로드하는 경우, 요청
 ### 프런트 엔드 업로드
 #### 방법 A: AJAX를 사용하여 업로드
 AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지원해야 합니다. 해당 방법은 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749)를 사용하며, 작업 방법은 다음과 같습니다.
-1. [전제 조건](#사전 준비)의 순서에 따라 버킷 관련 설정을 준비합니다.
+1. [전제 조건](#1) 순서에 따라 버킷에 관련 정보를 설정합니다.
 2. `test.html` 파일을 생성하고, 아래 코드에서 Bucket과 Region 정보를 수정하여 `test.html` 파일에 복사합니다.
 3. 백그라운드의 서명 서비스를 배포하고, `test.html`의 서명 서비스 주소를 수정합니다.
 4. `test.html`을 Web 서버에 올리고, 브라우저로 페이지에 접속해 파일 업로드 기능을 테스트합니다.
@@ -64,10 +65,10 @@ AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지�
 <script>
     (function () {
         // 요청 시 사용한 매개변수
-        var Bucket = 'test-1250000000';
+        var Bucket = 'examplebucket-1250000000';
         var Region = 'ap-guangzhou';
         var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
-        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';
+        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';  // prefix는 요청 url의 접두사 병합에 사용하며, 도메인은 버킷의 기본 도메인을 사용
 
         // 더 많은 문자열 코드의 url encode 형식
         var camSafeUrlEncode = function (str) {
@@ -169,8 +170,8 @@ AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지�
 ![Ajax 업로드](https://main.qcloudimg.com/raw/970bc04c0a1e0b3c5be077f360000424.png)
 
 #### 방법 B: 폼(Form)을 사용하여 업로드
-낮은 버전의 브라우저(예: IE8)에서도 Form 업로드를 실행할 수 있습니다. 본 솔루션은 [Post Object](https://cloud.tencent.com/document/product/436/14690) 인터페이스를 사용합니다. 다음은 작업 가이드입니다.
-1. [전제 조건](#사전 준비)의 순서에 따라 버킷을 준비합니다.
+폼(Form) 업로드는 낮은 버전의 브라우저에서의 업로드(예: IE8)를 지원하며, 해당 방법은 [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) 인터페이스를 사용해야 합니다. 작업 방법은 다음과 같습니다.
+1. [전제 조건](#1) 순서에 따라 버킷을 준비합니다.
 2. `test.html` 파일을 생성하고, 아래 코드에서 Bucket과 Region 정보를 수정하여 `test.html` 파일에 복사합니다.
 3. 백그라운드의 서명 서비스를 배포하고, `test.html`의 서명 서비스 주소를 수정합니다.
 4. `test.html`과 동일한 디렉터리에 비어 있는 `empty.html`을 생성하여 업로드 성공 시 리디렉션하는 데 사용합니다.
@@ -197,6 +198,8 @@ AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지�
     <input id="Signature" name="Signature" type="hidden" value="">
     <input name="Content-Type" type="hidden" value="">
     <input id="x-cos-security-token" name="x-cos-security-token" type="hidden" value="">
+
+    <!-- 파일 콘텐츠가 너무 길어 서명 판단 및 인증에 영향이 미치지 않도록 file 필드는 폼의 가장 마지막에 배치 -->
     <input id="fileSelector" name="file" type="file">
     <input id="submitBtn" type="button" value="제출">
 </form>
@@ -209,10 +212,10 @@ AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지�
     (function () {
 
         // 요청 시 사용한 매개변수
-        var Bucket = 'test-1250000000';
+        var Bucket = 'examplebucket-1250000000';
         var Region = 'ap-guangzhou';
         var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
-        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';
+        var prefix = protocol + '//' + Bucket + '.cos.' + Region + '.myqcloud.com/';  // prefix는 요청 url의 접두사 병합에 사용하며, 도메인은 버킷의 기본 도메인을 사용
         var form = document.getElementById('form');
         form.action = prefix;
 
@@ -306,14 +309,13 @@ AJAX 업로드 시에는 브라우저에서 기본적으로 HTML5 특성을 지�
         };
     })();
 </script>
-
 </body>
 </html>
 ```
+
 실행 결과는 다음 이미지와 같습니다.
 ![폼(Form) 업로드](https://main.qcloudimg.com/raw/90a3460c58ed7e056f08624ce329c1a4.png)
+
 ## 관련 문서
 더 다양한 인터페이스 호출이 필요한 경우 다음 JavaScript SDK 문서를 참조하십시오.
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459)
-
-  
