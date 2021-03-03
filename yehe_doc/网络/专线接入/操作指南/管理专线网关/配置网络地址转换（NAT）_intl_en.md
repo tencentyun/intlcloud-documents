@@ -24,13 +24,13 @@ You can configure IP translation and IP port translation for Direct Connect gate
 >
 >- If the Direct Connect gateway is also configured with peer IP translation, the **destination IP address** for the ACL rule for local IP translation should be the **mapped IP address for peer IP translation**, instead of the source IP address.
 >- For an ACL rule of local IP translation, you can configure the protocol (TCP or UDP), source port, destination IP address, and destination port. If the port and IP address are left empty, they default to ALL. If ALL is selected for the protocol, then All is also selected for the port and IP address by default.
->
+>?
  1. On the IP mapping page, click **Edit ACL rule** for the IP mapping.
   2. At the bottom of the list of existing ACL rules, click **New line** to add an ACL rule, and then click **Save**.
  3. (Optional) You can modify or delete an existing ACL rule in the editing mode. After making the change, click **Save**.
   4. (Optional) You can click <img src="https://main.qcloudimg.com/raw/b2347f733a56962b935f57d086824290.png" style="margin:-3px 0px;width:15px"> to show all the rules of the IP mapping on the IP mapping page, and then click **Modify** or **Delete** for the rule to be modified or deleted. When making the change, confirm the operation as prompted.
- 5. (Optional) To modify the local IP mapping, click **Modify IP mapping** for the IP mapping on the IP mapping page. Modify the source IP address, mapped IP address, and notes of the local IP mapping as needed, and click **OK** to apply the changes.
-6. (Optional) To delete the local IP mapping, click **Delete** for the IP mapping on the IP mapping page, and then confirm the operation as prompted. Deleting an IP mapping also deletes its associated ACL rules.
+8. (Optional) To modify the local IP mapping, click **Modify IP mapping** for the IP mapping on the IP mapping page. Modify the source IP address, mapped IP address, and notes of the local IP mapping as needed, and click **OK** to apply the changes.
+9. (Optional) To delete the local IP mapping, click **Delete** for the IP mapping on the IP mapping page, and then confirm the operation as prompted. Deleting an IP mapping also deletes its associated ACL rules.
 
 ### Configuring peer IP translation
 #### Rules and limitations
@@ -52,7 +52,7 @@ You can configure IP translation and IP port translation for Direct Connect gate
 
 ## Configuring IP Port Translation
 ### Configuring local source IP port translation
->If local IP translation conflicts with local IP port translation, local IP translation prevails.
+>?If local IP translation conflicts with local IP port translation, local IP translation prevails.
 >
 #### Rules and limitations
  - The mapped IP pool must not fall within the CIDR block of the VPC instance in which the Direct Connect gateway resides.
@@ -70,7 +70,7 @@ You can configure IP translation and IP port translation for Direct Connect gate
 5. In the upper-left corner of the mapped IP pool page, click **Add** to add a mapped IP pool.
 6. In the window that appears, enter the mapped IP pool (IP addresses or an IP range in the format of "A - B") and notes. Then, click **OK**. 
 7. By default, the ACL rule of a new mapped IP pool denies all inbound and outbound traffic. To implement network translation, you must edit the ACL rule.
-> 
+>?
 >- If the Direct Connect gateway is also configured with peer IP translation, the **destination IP address** for the ACL rule for local source IP port translation should be the **mapped IP address of peer IP translation**, instead of the source IP address.
 >- For an ACL rule of local source IP port translation, you can configure the protocol (TCP or UDP), source IP address, source port, destination IP address, and destination port.
 >
@@ -78,8 +78,8 @@ You can configure IP translation and IP port translation for Direct Connect gate
   2. At the bottom of the list of existing ACL rules, click **New Line** to add an ACL rule, and then click **Save**.
  3. (Optional) You can modify or delete an existing ACL rule in the editing mode. After making the change, click **Save**.
   4. (Optional) You can click <img src="https://main.qcloudimg.com/raw/b2347f733a56962b935f57d086824290.png" style="margin:-3px 0px;width:15px"> to show all the rules of the mapped IP pool on the mapped IP pool page, and then click **Modify** or **Delete** for the rule to be modified or deleted. When making the change, confirm the operation as prompted.
- 5. (Optional) To modify the mapped IP pool, click **Modify Mapped IP Pool** for the mapped IP pool on the mapped IP pool page. Then, you can modify the IP address and notes of the mapped IP pool as needed.
-6. (Optional) To delete the mapped IP pool, click **Delete** for the mapped IP pool on the mapped IP pool page, and confirm the operation as prompted. Deleting a mapped IP pool also deletes its associated ACL rules.
+8. (Optional) To modify the mapped IP pool, click **Modify Mapped IP Pool** for the mapped IP pool on the mapped IP pool page. Then, you can modify the IP address and notes of the mapped IP pool as needed.
+9. (Optional) To delete the mapped IP pool, click **Delete** for the mapped IP pool on the mapped IP pool page, and confirm the operation as prompted. Deleting a mapped IP pool also deletes its associated ACL rules.
 
 
 
