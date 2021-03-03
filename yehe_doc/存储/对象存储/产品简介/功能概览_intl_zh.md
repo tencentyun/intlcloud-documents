@@ -117,7 +117,7 @@ COS 主要提供以下功能：
       <td>您可以通过云监控的告警策略来设置 COS 监控指标的阈值告警，告警策略包括名称、策略类型和告警触发条件、告警对象、告警通知模板五个必要组成部分，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/39104">设置监控告警</a></td>
    </tr>
    <tr>
-      <td rowspan=4>数据处理</td>
+      <td rowspan=3>数据处理</td>
       <td nowrap="nowrap">图片处理</td>
       <td>腾讯云对象存储 COS 集成了数据万象（Cloud Infinite，CI）专业的一体化媒体解决方案，涵盖图片处理、审核、识别等功能。您可以通过 COS 的上传和处理接口来进行媒体数据的处理操作，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/35280">图片处理概述</a></td>
    </tr>
@@ -137,7 +137,7 @@ COS 主要提供以下功能：
    <tr>
       <td>API/SDK</td>
       <td nowrap="nowrap">多种 API 和 SDK</td>
-      <td><li>API：COS 提供丰富的 API 接口，包括功能接口的使用方法和参数，提供请求示例、响应示例以及错误码介绍，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/10111">操作列表</a><br><li>COS 提供多种开发语言：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 概览</a></td>
+      <td>API：COS 提供丰富的 API 接口，包括功能接口的使用方法和参数，提供请求示例、响应示例以及错误码介绍，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/10111">操作列表</a><br><li>COS 提供多种开发语言：Android、C、C++、.NET、Go、iOS、Java、JavaScript、Node.js、PHP、Python、小程序 SDK，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK 概览</a></td>
    </tr>
    <tr>
       <td>支持协议</td>
