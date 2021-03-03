@@ -52,7 +52,7 @@ catch (Exception e)
 }
 ```
 
->The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
+>?The upload method automatically selects simple upload or multipart upload based on the file size, eliminating your need to take care of every step in multipart upload.
 
 ## Advanced Features
 ### Uploading a cover
@@ -165,7 +165,7 @@ Upload request class `VodUploadRequest`
 | CoverType | Type of the cover file to be uploaded. For the valid values, please see [Video Upload Overview](https://intl.cloud.tencent.com/document/product/266/9760#.E5.B0.81.E9.9D.A2.E7.B1.BB.E5.9E.8B). If the `CoverFilePath` path contains a file extension, this parameter can be left empty. | String | No |
 | Procedure | Name of the task flow to be automatically executed after upload is completed. This parameter is specified when the task flow is created through the [API](https://intl.cloud.tencent.com/document/product/266/34167) or [console](https://console.cloud.tencent.com/vod/video-process/taskflow). For more information, please see [Task Flow Overview](https://intl.cloud.tencent.com/document/product/266/33931#.E4.BB.BB.E5.8A.A1.E6.B5.81). | String | No |
 | ExpireTime | Expiration time of the media file in ISO 8601 format. For more information, please see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). | String | No |
-| ClassId | Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by using the category creating API. | Integer | No |
+| ClassId | Category ID, which is used to categorize the media for management. A category can be created and its ID can be obtained by [CreateClass](https://intl.cloud.tencent.com/document/product/266/35325). | Integer | No |
 | SourceContext | Source context of up to 250 characters, which is used to pass through the user request information and will be returned by the upload callback API. | String | No |
 | SubAppId | ID of a [subapplication](https://intl.cloud.tencent.com/document/product/266/33987) in VOD. If you need to access a resource in a subapplication, enter the subapp ID in this field; otherwise, leave it empty. | Integer | No |
 | StorageRegion | Storage region, which specifies the region where to store the file. This field should be filled in with a [region abbreviation](https://intl.cloud.tencent.com/document/product/266/33910). | String | No |
