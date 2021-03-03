@@ -14,6 +14,6 @@ You can set the callback mode based on your actual needs. After video processing
  - Callback Mode: select normal callback or reliable callback.
  - Callback URL: this parameter is visible only if the callback mode is set to **Normal Callback**. Please set the address at which the application backend receives callbacks based on your actual needs.
  - Callback Event: select the events for which you want to receive callbacks, including completion of video upload, task flow status change, transcoding, image sprite generating, splicing, deletion, editing, time point screencapturing, and clipping.
- >
+ >?
  >- Among them, task flow status change, video editing completion, and video clipping completion are default callback events.
  >- You can click <img src="https://main.qcloudimg.com/raw/a710a753ba2162f8913e180be4c93269.png"/> to the right of the desired callback event to view the corresponding documentation.
