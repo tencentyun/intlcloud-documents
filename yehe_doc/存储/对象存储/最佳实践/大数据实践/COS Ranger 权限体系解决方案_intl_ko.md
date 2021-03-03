@@ -56,15 +56,15 @@ b. 자체구축된 hadoop 환경은 ranger 디렉터리에서 hdfs 등의 조회
 ## 서비스를 생성하려면 Ranger 관리자 계정 비밀번호 및 Ranger 서비스 주소를 입력해야 합니다.
 ## Tencent Cloud EMR 클러스터의 경우, 관리자 사용자는 root이고, 비밀번호는 emr 클러스터를 구축할 때 설정한 root 비밀번호이며, ranger 서비스의 IP는 EMR의 master 노드 IP로 바뀝니다.
 
-adminUser=root
-adminPasswd=xxxxxx
-rangerServerAddr=10.0.0.1:6080
+ adminUser=root
+ adminPasswd=xxxxxx
+ rangerServerAddr=10.0.0.1:6080
 
-curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
+ curl -v -u${adminUser}:${adminPasswd} -X POST -H "Accept:application/json" -H "Content-Type:application/json" -d @./cos-ranger.json http://${rangerServerAddr}/service/plugins/definitions
 
-## 방금 정의된 서비스를 삭제하려면 서비스를 생성할 때 반환했던 서비스 ID를 입력합니다.
-serviceId=102
-curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H "Content-Type:application/json" http://${rangerServerAddr}/service/plugins/definitions/${serviceId}
+ ## 방금 정의된 서비스를 삭제하려면 서비스를 생성할 때 반환했던 서비스 ID를 입력합니다.
+ serviceId=102
+ curl -v -u${adminUser}:${adminPasswd} -X DELETE -H "Accept:application/json" -H "Content-Type:application/json" http://${rangerServerAddr}/service/plugins/definitions/${serviceId}
 ```
 5. 서비스가 생성되면 Ranger 콘솔에서 COS 서비스를 다음과 같이 볼 수 있습니다.
 ![](https://main.qcloudimg.com/raw/d1a6e2722d11f7177636a5e2c54226e3.png)
