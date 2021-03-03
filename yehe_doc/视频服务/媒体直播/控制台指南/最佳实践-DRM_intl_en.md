@@ -1,4 +1,4 @@
-﻿## Step 1. Apply for an account.
+## Step 1. Apply for an account.
 
 1. Sign up for a DRMtoday account.
    1. Sign up for a DRMtoday account on the [DRMtoday product page](https://castlabs.com/drmtoday/).
