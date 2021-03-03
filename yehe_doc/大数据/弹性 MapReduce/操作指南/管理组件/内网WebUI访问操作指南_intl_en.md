@@ -40,4 +40,4 @@ You can use the `ping` or `ssh` command to check whether the EIP has taken effec
 6. Access the native WebUIs of components.
 EMR v1.3.1, v2.0.1, v2.1.0, and v3.00 support Apache Knox, and access requests to native component WebUIs over the public network will pass through Knox by default. For specific UI links to each component and Knox usage, please see [Knox Development Guide](https://intl.cloud.tencent.com/document/product/1026/31167).
 
->After an EIP is bound, the access addresses of native component WebUIs in the EMR Console will stay unchanged. If you need to change the addresses in the console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
+>?After an EIP is bound, the access addresses of native component WebUIs in the EMR Console will stay unchanged. If you need to change the addresses in the console, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
