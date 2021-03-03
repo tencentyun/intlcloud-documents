@@ -58,7 +58,7 @@
 
 ## 步骤4：在MediaLive上配置DRM密钥
 
-参考MediaLive[用户使用手册](https://intl.cloud.tencent.com/zh/document/product/1048/38374#5.-drm-.E8.AE.BE.E7.BD.AE)配置MediaLiveDRM密钥，其中：
+参考MediaLive[用户使用手册](https://intl.cloud.tencent.com/zh/document/product/1048/38374?lang=zh&pg=#5.-drm-.E8.AE.BE.E7.BD.AE)配置MediaLiveDRM密钥，其中：
 
 - **DRM**：开启
 - **Scheme**：Custom DRM Keys
