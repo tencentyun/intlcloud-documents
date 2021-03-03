@@ -85,7 +85,7 @@ TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 - The purpose of [integrating the TRTCPrivilegedTask library](#step1) and [disabling App Sandbox](#step2) is for the SDK to get root access so as to install the virtual sound card plugin; otherwise it cannot automatically install the plugin. However, if a virtual sound card is already installed in the system, you can use the system audio recording feature without integrating the TRTCPrivilegedTask library or disabling App Sandbox.
 > ? You can also manually install a virtual sound card to enable the feature.
 > 1. Copy `TRTCAudioPlugin.driver` in the `PlugIns` directory of `TXLiteAVSDK_TRTC_Mac.framework` to the system directory `/Library/Audio/Plug-Ins/HAL`.
-2. Restart the system audio service. 
+> 2. Restart the system audio service. 
 
 #### Bash script for restarting the system audio service
 ```
