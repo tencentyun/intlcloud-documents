@@ -13,10 +13,10 @@ New Anti-DDoS Pro service combines the number of protected IPs and protection ch
 | Number of protection chances | Monthly subscription | Pay-as-you-go| We recommend setting the number which is slightly higher than the average number of historical attacks. If the protection chances are used up, the basic protection will be taken instead.</br>If you need more protection chances, extra fees will be charged. The number can only be increased but not decreased.  |
 
 >?
-- To use an Anti-DDoS Pro instance, please select the same instance region as your other Tencent Cloud resources such as CVM or CLB instances, and bind it to your business IP first.
-- Definition of one all-out protection: if the detected bandwidth of the attack traffic to the protected IP is equal to or more than 10 Gbps and there is no attack traffic after 30 minutes, it is considered that the attack stops and one protection chance will be deducted. If the attack lasts for more than 30 minutes, one protection chance will be deducted after the attack ends.
+>- To use an Anti-DDoS Pro instance, please select the same instance region as your other Tencent Cloud resources such as CVM or CLB instances, and bind it to your business IP first.
+>- Definition of one all-out protection: if the detected bandwidth of the attack traffic to the protected IP is equal to or more than 10 Gbps and there is no attack traffic after 30 minutes, it is considered that the attack stops and one protection chance will be deducted. If the attack lasts for more than 30 minutes, one protection chance will be deducted after the attack ends.
 For example, if a user purchases an Anti-DDoS Pro instance for 1 IP, with a 3-month validity period, and 10 protection chances, then the IP will have free all-out protection for 10 times in 3 months. If the user renews the instance every 3 months, the IP will have free all-out protection for 10 times every 3 months.
-- If the all-out protection chances are used up or the Anti-DDoS Pro instance is not renewed upon expiration, the IP will be protected with the Tencent Cloud free basic protection.
+>- If the all-out protection chances are used up or the Anti-DDoS Pro instance is not renewed upon expiration, the IP will be protected with the Tencent Cloud free basic protection.
 
 
 ## Pricing
