@@ -11,10 +11,11 @@ The TRTC SDK uses the [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-g
 #### Integration via CocoaPods  
 1. Open the `Podfile` file in the root directory of your project and add the following content:
 ```
-platform :osx, '10.10'	
-target 'Your Target' do
+ platform :osx, '10.10'	
+
+ target 'Your Target' do
     pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
-end
+ end
 ```
 2. Run the `pod install` command to install the **TRTCPrivilegedTask** library.
 
