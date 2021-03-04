@@ -51,7 +51,7 @@ WordPress 功能强大、扩展性强，这主要得益于其插件众多，易�
 2. 配置完成后，单击【保存】即可。
 3. 上传一个新文件进行测试，查看附件详情，查看附件图片的 URL，确认附件图片的 URL 指向腾讯云 COS。
 
->如果以上测试成功，那么接下来需要同步旧资源到 COS 存储桶中（可使用 [COSCMD 工具](https://intl.cloud.tencent.com/document/product/436/10976) 或者 [COS Migration 工具](https://intl.cloud.tencent.com/document/product/436/15392)），**否则后台无法正常预览旧资源**。同步完成以后，可以开启回源设置，可参考下文的 [设置回源](#1)。
+>? 如果以上测试成功，那么接下来需要同步旧资源到 COS 存储桶中（可使用 [COSCMD 工具](https://intl.cloud.tencent.com/document/product/436/10976) 或者 [COS Migration 工具](https://intl.cloud.tencent.com/document/product/436/15392)），**否则后台无法正常预览旧资源**。同步完成以后，可以开启回源设置，可参考下文的 [设置回源](#1)。
 
 ## 扩展
 
@@ -65,7 +65,7 @@ WordPress 功能强大、扩展性强，这主要得益于其插件众多，易�
 在文章中引用对应的资源链接，控制台会提示跨域的错误`No 'Access-Control-Allow-Origin' header is present on the requested resource`。原因是没有添加 header。您需要在跨域访问 CORS 设置中添加 HTTP Header 配置。下面提供两种途径进行配置：
  - 在 COS 控制台上配置
 ![](https://main.qcloudimg.com/raw/71dcabb63c9d0d4120eb33bfd7df92f1.png)
->关于跨域配置操作步骤，请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
+>? 关于跨域配置操作步骤，请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
  - 在 CDN 控制台上配置
     - 如允许所有域名，则配置如下：
 ```plaintext
