@@ -9,7 +9,7 @@ On the left sidebar, select **Web Application Firewall** -> **AI Engine** to ent
 3. **Process a false positive in the AI engine**
 Click the **AI False Positive Processing** tab to view the added false positive records. You can also manually add a false positive to the list. In the status column, click **Learn**. Then, the AI engine will update the model and optimize the algorithm based on the false positive information.
 >! When the AI engine learns the payload of a submitted false positive, it will take some time to change the state from unlearned to learned.
-
+>
 After the AI engine learns the payload of the submitted false positive, you can check whether this parameter will trigger false positives again on the **Online AI Verification** page.
 
 4. **Add a false negative**
@@ -18,7 +18,7 @@ When the payload of an attack is missed by the AI engine (false negative), you c
 5. **Process the false negative in the AI engine**
  Click the **AI False Negative Processing** tab to view the added false negative records. You can also manually add a false negative to the list. In the status column, click **Learn**. The AI engine will then update the model and optimize the algorithm based on the false negative information.
 >! When the AI engine learns the payload of a submitted false negative, it will take some time to change the state from unlearned to learned.
-
+>
 After the AI engine learns the payload of the submitted false negative, you can check whether this parameter will trigger false negatives again on the **Online AI Verification** page.
 
 ## Notes
