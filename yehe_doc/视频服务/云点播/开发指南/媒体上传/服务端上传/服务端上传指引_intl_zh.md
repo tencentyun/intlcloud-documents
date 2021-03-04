@@ -5,7 +5,8 @@
 
 #### 1. 开通服务
 
-开通云点播服务，
+开通云点播服务，详细请参见 [购买指引](https://intl.cloud.tencent.com/document/product/266/39506)。
+
 #### 2. 获取云 API 密钥
 
 获取调用服务端 API 所需的安全凭证，即 SecretId 和 SecretKey，具体步骤如下：
@@ -23,6 +24,7 @@
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914)
 - [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/266/33918)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919)
 - [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915)
 
@@ -43,6 +45,7 @@
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
+	- [Node.js SDKSDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 	- [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E4.BB.BB.E5.8A.A1.E6.B5.81)
 - **上传时指定存储地域**
@@ -50,6 +53,7 @@
 	- [PHP SDK](https://intl.cloud.tencent.com/document/product/266/33916#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Java SDK](https://intl.cloud.tencent.com/document/product/266/33914#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Python SDK](https://intl.cloud.tencent.com/document/product/266/33917#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
+	- [Node.js SDKSDK](https://intl.cloud.tencent.com/document/product/266/33918#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [Go SDK](https://intl.cloud.tencent.com/document/product/266/33919#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	- [C# SDK](https://intl.cloud.tencent.com/document/product/266/33915#.E6.8C.87.E5.AE.9A.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F)
 	
@@ -65,5 +69,6 @@
 更多信息请参见：
 - [任务管理与事件通知](https://intl.cloud.tencent.com/document/product/266/33931)
 - [事件通知 - 视频上传完成](https://intl.cloud.tencent.com/document/product/266/33950)
+
 
 
