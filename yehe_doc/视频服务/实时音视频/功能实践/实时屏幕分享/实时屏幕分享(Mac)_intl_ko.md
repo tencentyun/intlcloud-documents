@@ -89,7 +89,7 @@ TRTC SDK는 3가지 공유 모드를 지원합니다. [selectScreenCaptureTarget
 | 표준 화질(SD) | 960 × 720 | 10 | 400 kbps |
 
 ## 화면 공유 보기
--** Mac/Window 화면 공유 보기**
+- **Mac/Window 화면 공유 보기**
   방 안에 있는 Mac/Windows 사용자가 화면 공유 기능을 실행하면 서브스트림을 통해 화면이 공유됩니다. 방 안의 다른 사용자들은 TRTCCloudDelegate의 [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ac45fb0751f7dbd2466a35c8828c9911b) 이벤트를 통해 해당 통지를 수신합니다.
   공유 화면을 보고 싶은 사용자는 [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a68d048ccd0d018995e33e9e714e14474) 인터페이스를 통해 사용자의 서브스트림 화면의 원격 렌더링을 활성화할 수 있습니다.
 
