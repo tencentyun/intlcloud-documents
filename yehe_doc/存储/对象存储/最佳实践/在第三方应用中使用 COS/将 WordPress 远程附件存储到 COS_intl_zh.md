@@ -20,9 +20,9 @@ WordPress 功能强大、扩展性强，这主要得益于其插件众多，易�
  - 您也可以在安装服务器系统时在镜像市场选择预装 WordPress 博客平台的 CVM 镜像。
 2. 创建一个**公有读私有写**的存储桶，存储桶的地域建议与运行 WordPress 博客平台的 CVM 的地域相同，创建详情请参见 [创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309) 文档。
 3. 在【存储桶列表】中找到刚才创建的存储桶，并单击其存储桶名称，进入存储桶页面。
-![](https://main.qcloudimg.com/raw/13d88e1cf3ad72e6f198a328d21cef13.png)
-4. 单击左侧的【基础配置】，查看访问域名并记录。
-![](https://main.qcloudimg.com/raw/a8eb4239f4ad0e0b24881e3d710318a3.png)
+![](https://main.qcloudimg.com/raw/66a106d2fd78632b65914f2fb6c096dc.png)
+4. 在左侧导航栏中，单击【概览】，查看访问域名并记录。
+![](https://main.qcloudimg.com/raw/27f7b74f7456a86862261ec1469d3e88.png)
 
 ## 安装并配置插件
 
