@@ -121,7 +121,7 @@ The subapplication feature itself is free of charge; however, resources consumed
 As described in [Limits](#p4) above, VOD only generates one aggregated bill for the entire account. If you have multiple businesses that require cost allocation, you can define and calculate the allocated costs based on the subapplication-level statistics provided by VOD.
 
 #### What will happen to a subapplication if my VOD service is suspended?
-If your VOD service is suspended due to arrears, all subapplications under your account will be disabled.
+If your VOD service is suspended due to overdue payment, all subapplications under your account will be disabled.
 
 #### Can I migrate videos from one subapplication to another?
 Resources of different subapplications are isolated, so resources of one subapplication cannot be migrated to another.
