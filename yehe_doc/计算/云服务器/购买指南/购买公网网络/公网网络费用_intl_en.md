@@ -41,7 +41,9 @@ For the monthly bandwidth subscription plan, you pay for a fixed bandwidth in ad
 <td colspan="2">3.57</td>
 </tr>
 </tbody></table>
+
 **Billing example**
+
 Suppose you purchase an EIP in Guangzhou region and choose monthly bandwidth subscription billing mode. If you purchase a fixed bandwidth of 15 Mbps for 2 months, the fees will be: (2.86 USD/Mbps/month) × 2 Mbps + 3.57 USD/Mbps/month × 3 Mbps + 12.86 USD/Mbps/month × 10 Mbps) × 2 months = 290.06 USD.
 
 ## Bill-by-traffic
@@ -80,6 +82,7 @@ Fees are pay-as-you-go on an hourly billing cycle based on the public network tr
 <td>0.1</td>
 </tr>
 </tbody></table>
+
 
 
 **Billing example**
