@@ -3,5 +3,5 @@ You can delete flow logs by the following steps:
 1. Log in to the [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and click **Diagnostic Tools** > **Flow Logs** on the left sidebar.
 2. Select flow logs and click **Delete**.
 
->When a flow log is deleted, its logset and log topic are not deleted synchronously.
+>?When a flow log is deleted, its logset and log topic are not deleted synchronously.
 

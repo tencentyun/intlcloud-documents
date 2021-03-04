@@ -1,5 +1,7 @@
 
+
 ## 简介
+
 
 对象存储控制台是 COS 为用户提供的最简单且易于上手的操作方式。用户无需编写代码或运行程序，可直接通过 COS 控制台使用 COS 服务。
 
@@ -7,7 +9,7 @@
 
 初次使用对象存储 COS，建议您先了解以下基本概念：
 
-- [存储桶（bucket）](https://intl.cloud.tencent.com/document/product/436/13312)：是对象的载体，可理解为存放对象的“容器”。
+- [存储桶（bucket）](https://intl.cloud.tencent.com/document/product/436/13312)：是对象的载体，可理解为存放对象的“容器”。一个存储桶可容纳无数个对象。
 - [对象（Object）](https://intl.cloud.tencent.com/document/product/436/13324)：是对象存储的基本单元，可理解为任何格式类型的数据，例如图片、文档和音视频文件等。
 - [地域（Region）](https://intl.cloud.tencent.com/document/product/436/6224)：是腾讯云托管机房的分布地区，对象存储 COS 的数据存放在这些地域的存储桶中。
 
@@ -16,7 +18,7 @@
 ## 步骤1：注册腾讯云账号
 在使用腾讯云 COS 服务前，您需要先注册一个腾讯云账号。请单击下方按钮开始注册。（如果您已注册，请跳过该步骤。）
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">开始注册</a></div>
 
 ## 步骤2：完成实名认证
 账号注册完成后，使用该账号登录 [腾讯云控制台](https://console.cloud.tencent.com/)，开始实名认证。详细操作指引请参见 [实名认证介绍](https://intl.cloud.tencent.com/document/product/378/3629)。（如果您已完成，请跳过该步骤，未进行实名认证的用户无法购买中国境内的对象存储实例。）
@@ -74,7 +76,7 @@
 <td align="left" width="70%">本工具支持用户通过可视化界面，方便地进行数据的上传、下载、生成访问链接等操作。</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD 工具</a></td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD 工具</a></td>
 <td align="left" width="70%">本工具支持用户使用简单的命令行指令实现对对象的批量上传、下载、删除等操作。</td>
 </tr>
 <tr>
@@ -91,4 +93,4 @@
 
 ## 遇到问题？
 
-非常抱歉您在使用时遇到问题，您可以通过 [提交工单](https://console.cloud.tencent.com/workorder/category) 的方式联系我们。
+非常抱歉您在使用时遇到问题，您可以通过  [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。

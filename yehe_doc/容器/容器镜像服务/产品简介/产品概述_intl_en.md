@@ -1,4 +1,4 @@
-## Product Introduction
+## Overview
 Tencent Container Registry (TCR) is a container image cloud hosting service provided by Tencent Cloud. It has the following features:
 
 **Security management**: TCR stores and distributes Docker images and Helm charts and supports image security scanning. It also provides enterprise users with fine-grained access permission management and network access control.
@@ -9,10 +9,10 @@ With the TCR service, you can enjoy secure and efficient image hosting and distr
 
 
 ## Product Type
-Both the TCR enterprise and Personal Editions are available.
+Both the TCR enterprise and personal editions are available.
 
-#### Enterprise Edition
-The TCR Enterprise Edition provides an enterprise-class, exclusive, and secure image hosting service. It is suitable for enterprise container users who have strict data security and compliance requirements, whose businesses are distributed in multiple regions, and whose cluster scales are huge. TCR supports the preceding features and is constantly updated. The TCR Enterprise Edition is currently in the beta phase and available for free. Enterprise-class container users are welcome to apply for it.  
+#### Enterprise edition
+TCR Enterprise Edition provides an enterprise-class, exclusive, and secure image hosting service. It is suitable for enterprise container users who have strict data security and compliance requirements, with businesses distributed across multiple regions and very large cluster scales. TCR supports the preceding features and is constantly updated. TCR Enterprise Edition currently supports pay-as-you-go billing. To purchase this product, go to [Tencent Container Registry](https://buy.cloud.tencent.com/tcr).
 
-#### Personal Edition
-The TCR Personal Edition provides a basic on-cloud image hosting and distribution service. It is suitable for the R&D and testing processes of personal container users or enterprise users who do not have a large production scale, have a small cluster scale, and have less strict data security requirements. The TCR Personal Edition is a shared service in the cloud. That is, all TCR Personal Edition users share the service backend and data storage, and quotas are imposed on image hosting, upload, and download. The TCR Personal Edition is free of charge. You can visit [Tencent Kubernetes Engine - Tencent Container Registry](https://console.cloud.tencent.com/tke2/registry) to get started.
+#### Personal edition
+TCR Personal Edition provides basic on-cloud image hosting and distribution services. It is applicable to R&D process testing of individual container users or enterprise users who do not have a large production scale, have a small cluster scale, and have less strict data security requirements. TCR Personal Edition is a shared service in the cloud. That is, all TCR Personal Edition users share the service backend and data storage, and quotas are imposed on image hosting, uploading, and downloading. TCR Personal Edition is free of charge. You can visit [Tencent Kubernetes Engine -> Tencent Container Registry](https://console.cloud.tencent.com/tke2/registry) and start using it.

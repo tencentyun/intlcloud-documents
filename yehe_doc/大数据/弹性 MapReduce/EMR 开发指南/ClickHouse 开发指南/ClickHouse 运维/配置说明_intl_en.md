@@ -29,7 +29,7 @@ Restart the `clickhouse-server` and `clickhouse-client` and run `SELECT * FROM s
 
 ClickHouse configurations can be "replaced". You can use the **incl** attribute to replace configurations in `config.xml` with those in the specified file, so that the primary configuration file will not become too redundant or hard to maintain. In the default `config.xml` configuration file, you can see that the three tags `<remote_servers>`, `<macros>`, and `<zookeeper>` all have the **incl** attribute. Therefore, you can load the corresponding `<clickhouse_remote_servers>`, `<macros>`, and `<zookeeper-servers>` configuration items in the `metrika.xml` file into the `config.xml` file. The path of the file for replacement is `/etc/metrika.xml` by default and can be modified through the `<include_from>` configuration item.
 
->If the configuration items to be replaced in the `incl` attribute do not exist, the event will be recorded in a log. If you do not want to log such events, you can use the `optional="true"` attribute.
+>!If the configuration items to be replaced in the `incl` attribute do not exist, the event will be recorded in a log. If you do not want to log such events, you can use the `optional="true"` attribute.
 
 ## users.xml
 

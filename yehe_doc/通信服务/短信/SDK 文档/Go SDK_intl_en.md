@@ -14,7 +14,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 - You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- You have obtained the call address (endpoint). The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The call address of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
 - For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
@@ -55,7 +55,8 @@ func main() {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+     */
 	credential := common.NewCredential(
 		// os.Getenv("TENCENTCLOUD_SECRET_ID"),
 		// os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -96,7 +97,8 @@ func main() {
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
 	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 */
 
 	/* Template name */
 	request.TemplateName = common.StringPtr("Tencent Cloud")
@@ -148,7 +150,8 @@ func main() {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+     */
 	credential := common.NewCredential(
 		// os.Getenv("TENCENTCLOUD_SECRET_ID"),
 		// os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -184,12 +187,13 @@ func main() {
 	 * You are recommended to use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
 	request := sms.NewSendSmsRequest()
 
-		/* Settings of a basic parameter:
+	/* Settings of a basic parameter:
 	 * The SDK uses the pointer style to specify parameters, so even for basic parameters, you need to use pointers to assign values to them
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
 	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 */
 
 	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")
@@ -247,7 +251,8 @@ func main() {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+     */
 	credential := common.NewCredential(
 		// os.Getenv("TENCENTCLOUD_SECRET_ID"),
 		// os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -289,7 +294,8 @@ func main() {
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
 	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 */
 
 	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")
@@ -332,7 +338,8 @@ func main() {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+     */
 	credential := common.NewCredential(
 		// os.Getenv("TENCENTCLOUD_SECRET_ID"),
 		// os.Getenv("TENCENTCLOUD_SECRET_KEY"),
@@ -374,7 +381,8 @@ func main() {
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
 	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 */
 
 	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")

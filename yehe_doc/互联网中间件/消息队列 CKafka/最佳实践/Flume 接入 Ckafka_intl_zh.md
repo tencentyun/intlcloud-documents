@@ -71,7 +71,7 @@ a1.sinks.k1.kafka.producer.acks = 1
 
 ## Flume 接入 CKafka
 ### 准备工作
-- 在 CKafka 控制台中，[创建一个实例](https://intl.cloud.tencent.com/document/product/597/32543)。
+- 在 CKafka 控制台中，[创建一个实例](https://intl.cloud.tencent.com/document/product/597/39718)。
 - 下载 [Apache Flume](http://flume.apache.org/download.html) ，本教程使用的是 Flume 1.7.0。 
 
 ### CKafka 相关配置

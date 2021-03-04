@@ -15,7 +15,7 @@
 - You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- You have obtained the call address (endpoint). The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The call address of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
 - For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
@@ -64,7 +64,8 @@ namespace TencentCloudExamples
                  * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
                  * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
                  * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+                 */
                 Credential cred = new Credential {
                     SecretId = "xxx",
                     SecretKey = "xxx"
@@ -112,7 +113,8 @@ namespace TencentCloudExamples
 	             * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	             * Help link:
 	             * SMS Console: https://console.cloud.tencent.com/sms/smslist
-	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	             */
                 
 			        	/* Template name */
                 req.TemplateName = "Tencent Cloud";
@@ -167,7 +169,8 @@ namespace TencentCloudExamples
                  * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
                  * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
                  * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+                 */
                 Credential cred = new Credential {
                     SecretId = "xxx",
                     SecretKey = "xxx"
@@ -215,7 +218,8 @@ namespace TencentCloudExamples
 	             * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	             * Help link:
 	             * SMS Console: https://console.cloud.tencent.com/sms/smslist
-	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	             */
                 
                 req.SmsSdkAppid = "1400787878";
                 /* The content of SMS signature should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS Console] */
@@ -276,7 +280,8 @@ namespace TencentCloudExamples
                  * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
                  * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
                  * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+                 */
                 Credential cred = new Credential {
                     SecretId = "xxx",
                     SecretKey = "xxx"
@@ -324,7 +329,8 @@ namespace TencentCloudExamples
 	             * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	             * Help link:
 	             * SMS Console: https://console.cloud.tencent.com/sms/smslist
-	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	             */
                 
 				// Set the maximum number of pulled entries. Maximum value: 100
                 req.Limit = 100;
@@ -369,7 +375,8 @@ namespace TencentCloudExamples
                  * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
                  * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
                  * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+                 * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+                 */
                 Credential cred = new Credential {
                     SecretId = "xxx",
                     SecretKey = "xxx"
@@ -417,7 +424,8 @@ namespace TencentCloudExamples
 	             * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	             * Help link:
 	             * SMS Console: https://console.cloud.tencent.com/sms/smslist
-	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+	             * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	             */
                 
 				/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
 				req.SmsSdkAppid = "1400009099";

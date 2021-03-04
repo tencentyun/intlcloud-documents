@@ -60,7 +60,7 @@ A VPC has at least one subnet, and Tencent Cloud service resources can only be a
 2. Select the region of the VPC at the top of the **VPC** page.
 3. In the VPC list, locate the VPC to delete and select **More** > **Edit IPv4 CIDR Block** under its **Operation** column.
 4. In the pop-up dialog box, click **Delete** next to the secondary CIDR block.
-<img src="https://main.qcloudimg.com/raw/10602971a87c4babc86e2bb400cbc1b7.png" width="50%" />
+<img src="https://main.qcloudimg.com/raw/07867a0b1fbca9ad4350ca82d2c54200.png" width="50%" />
 5. Click **OK**.
 
 <span id ="3"></span>

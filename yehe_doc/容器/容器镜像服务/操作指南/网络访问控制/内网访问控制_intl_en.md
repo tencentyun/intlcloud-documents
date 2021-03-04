@@ -1,46 +1,61 @@
 ## Overview
-Tencent Container Registry (TCR) Enterprise Edition supports private-network access control. A Virtual Private Cloud (VPC) access link can be used to restrict instance access by clients in the VPC. In actual production scenarios involving container computing, pulling container images through the VPC can effectively improve the pulling speed and reduce public-network bandwidth costs. TCR allows users to connect their VPCs to a TCR Enterprise Edition instance to implement private-network access and access control.
-This document describes how to configure private-network access control for a TCR Enterprise Edition instance.
+Tencent Container Registry (TCR) Enterprise Edition supports private network access control. A private network access link can be used to restrict instance access by clients in a Virtual Private Cloud (VPC). In actual production scenarios involving container computing, pulling container images through a VPC can effectively improve the pulling speed and reduce public network bandwidth costs. TCR allows users to connect their VPCs to a TCR enterprise edition instance to implement private network access and access control.
+
+This document describes how to configure private network access control for a TCR enterprise edition instance. After completing the following configuration, you can use a CVM in a specified VPC to pull images from a TCR instance through the private network, or pull container images in TKE and other container clusters through the cluster private network. For more information, see [TKE Clusters Use the TCR Plug-In to Enable Secret-Free Pulling of Container Images Through the Private Network](https://intl.cloud.tencent.com/document/product/1051/38386).
 
 ## Prerequisites
 
-Before configuring private-network access control for a TCR Enterprise Edition instance, complete the following tasks:
-- [Purchasing Instances](https://intl.cloud.tencent.com/document/product/1051/39088).
-- If you are using a sub-account, you must grant the sub-account required permissions for the instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
-- Activate the [VPC](https://console.cloud.tencent.com/vpc) service and create a VPC and subnet in the region where the TCR Enterprise Edition instance is deployed.
+Before configuring private network access control for a TCR enterprise edition instance, complete the following tasks:
+- [Create an enterprise edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
+- If you are using a sub-account, you must have granted the sub-account operation permissions for the corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
+- Activate the [VPC](https://console.cloud.tencent.com/vpc) service and create a VPC and subnet in the region where the TCR enterprise edition instance is deployed.
 
 ## Directions
 ### Creating an access link
-1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and choose **Access Control** > **Private Network** in the left sidebar.
-2. On the "Private Network" page, click **Create**.
-3. In the "Create Private Network Access Link" window that appears, configure the VPC and subnet information, as shown in the figure below.
-![](https://main.qcloudimg.com/raw/b05dbba1213da652a4dcc2039b2ee38c.png)
-  - **Instance**: target instance, for which the private network access is enabled. You can change the instance by going to the **Instance** drop-down list at the top of the **Private network** page.
+1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and choose **Network ACL** > **Private network** in the left sidebar.
+2. On the "Private network" page, click **Create**.
+3. In the "Create a private network access linkage" window that appears, configure the VPC and subnet information, as shown in the figure below.
+![](https://main.qcloudimg.com/raw/abd0607d3866119e3b9dd78e2bcbebf7.png)
+ - **Associated Instance**: the target instance, for which the private network access policy is configured. To change the instance, select another instance name from the "Instance Name" drop-down list at the top of the "Private network" page.
+ - **Region**: the region where the VPC to access resides, which is the same as the region where the current instance is deployed by default. If the multi-region replication feature is enabled for the current instance and replicas are configured for the instance in multiple regions, you can select the region where a replica is deployed to access the VPC of the replica.
  - **Virtual Private Cloud**:
-    1. Connected VPC. Select the VPC that you want to connect. The drop-down list displays all available VPCs in the region of the current instance.
-    2. Any subnet in the VPC. Select a subnet in the VPC that has usable private IP addresses. Creating a VPC access link occupies a private IP address and uses this IP address as the destination address for private-network resolution of the instance domain name. The subnet will be used only for the allocation of private network access addresses. After the link is created, CVMs in any subnet in the VPC can access the TCR Enterprise Edition instance through the link.
-4. Click **OK** to start creating the VPC access link.
-If "Access Linkage Status" becomes **Normal linkage** and "Private network parse IP" is not empty, the private network access link was successfully created.
+    - The connected VPC. Select the VPC that you want to connect with. The drop-down list displays all available VPCs in the region of the current instance.
+    - Any subnet in the VPC. Select a subnet with usable private IP addresses in the VPC. Creating a private network access link occupies a private IP address in the subnet. The IP address is also used as the destination IP address for private network resolution of the instance domain name. The subnet is only used to assign private network access addresses. After the link is created, CVMs in subnets of the VPC can access the TCR enterprise edition instance through the link.
+4. Click **OK** to start creating the private network access link.
+If "Access Linkage Status" changes to **Normal linkage** and "Private network parse IP" is not empty, the private network access link was successfully created.
 ![](https://main.qcloudimg.com/raw/4937a7031e5ab8c9e748a13206221153.png)
 
-### Configuring private-network resolution
-After the private-network access link is established, CVMs in the associated VPC can access the instance through the private network by accessing the private-network resolution IP address. By default, the default domain name of the instance (for example, tcr-demo.tencentcloudcr.com) and private network domain name (for example, tcr-demo-vpc.tencentcloudcr.com) will not be automatically resolved to the private-network resolution IP address in the VPC. You can implement private-network domain name resolution by [using the TCR plug-in for automatic configuration](#TCR) or [using the VPC resolution VPCDNS for automatic configuration](#VPCDNS).
-<span id="TCR"></span>
-#### Using the TCR plug-in for automatic configuration (recommended)
-If you are using TKE, refer to [Using a Container Image in a TCR Enterprise Edition Instance to Create a Workload](https://intl.cloud.tencent.com/document/product/457/36838) to install the TCR plug-in in the TKE cluster. This plug-in can automatically configure private-network resolution for the associated TCR instance for nodes in the cluster. This enables secret-free pulling of images in the instance through the private network, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/85b74261a8b539f627b96139f5571611.png)
+### Managing private network resolution
+After the private network access link is established, CVMs in the associated VPC access the instance through the private network by accessing the private network resolution IP address. By default, the default domain name of the instance (for example, tcr-demo.tencentcloudcr.com) and private network domain name (for example, tcr-demo-vpc.tencentcloudcr.com) will not be automatically resolved to the private network resolution IP address in the VPC. You can implement private network domain name resolution by [using the VPCDNS for automatic configuration](#VPCDNS) or [using the TCR plug-in for automatic configuration](#TCR).
+
+
+
+>! To use the TCR service in Chinese regions (excluding financial regions), we recommend you use the VPCDNS to manage the private network resolution of instance domain names. If the VPCDNS feature is not available in your region, use the TCR plug-in (recommended for TKE users) or manually configure the CVM host (temporary configuration).
+
+
 <span id="VPCDNS"></span>
 
-#### Using VPC resolution VPCDNS for automatic configuration (beta)
->? Tencent Cloud DNS resolution DNSPod provides the VPC resolution feature, which supports resolution within a specified VPC. This feature is now available for trial use in the Beijing, Shanghai, Guangzhou, and Silicon Valley regions.
 
-You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for trial use of this feature and provide the list of VPCs for which you want to enable this feature. After this service is activated, you can configure automatic resolution in the associated VPC of an instance after creating a private-network access link. In addition, you can select the default domain name or private domain name to use, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/cf1498ae284fe0c2c26684b479fbca81.png)
+#### Using VPCDNS for automatic configuration (default methhod)
+Tencent Cloud DNS resolution feature DNSPod provides a [VPC resolution](https://console.cloud.tencent.com/cns/private) feature to create private zones for VPC dedicated domain name resolution. This feature is now available in the Beijing, Shanghai, Guangzhou, Chongqing, Chengdu, and Hong Kong regions.
+1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and choose **Network ACL** > **Private network** in the left sidebar.
+2. On the "Private network" page, click **Manage Auto-parsing** next to the created private network access link.
+3. In the "Manage Auto-parsing" window that appears, configure domain name resolution for the link, as shown in the figure below.
+![](https://main.qcloudimg.com/raw/16eec3cf0331453eee3fb9f0eb21f8ab.png)
+ - **Default Domain Name**: the default domain name allocated to a created instance. If the public network access entry is enabled, the domain name will be resolved to a public IP address in the public network. You can continue to use the default domain name in the private network and enable automatic resolution of the default domain name. After it is enabled, the domain name will be automatically resolved to a private IP address in the private network.
+ - **VPC Domain Name**: the dedicated domain name for VPCs. You can use this dedicated domain name in VPCs to distinguish it from the default domain name used in public networks. By default, the image repository provides the access address of the default domain name and related operation instructions. If you use a VPC dedicated domain name, modify the access address configuration of the image repository.
+4. Click **Close**.
 
-#### Manually configuring the CVM host 
-This solution is applicable to CVMs or nodes in self-built Kubernetes clusters in VPCs that need to access an Enterprise Edition instance temporarily.
+<span id="TCR"></span>
+
+#### Using the TCR plug-in for automatic configuration (recommended for TKE users)
+
+If you are using TKE, refer to [TCR](https://intl.cloud.tencent.com/document/product/457/38710) to install the TCR plug-in in the TKE cluster and select "Enable Private Network Parsing" in the "TCR Component Parameter Setting" window. For nodes in the cluster, this plug-in can automatically configure private network resolution for the associated TCR instance. This enables secret-free pulling of images in the instance through the private network.
+
+#### Manually configuring the CVM host (temporary configuration)
+This solution is applicable to CVMs or nodes located in self-built Kubernetes clusters in VPCs that require temporary access to TCR enterprise edition instances.
 Here, a Linux CVM is used as an example. Log in to the CVM and run the following command:
 ```
-echo '172.21.17.69 demo.tencentcloudcr.com' >> /etc/hosts
+echo '172.16.1.95 techo-demo.tencentcloudcr.com' >> /etc/hosts
 ```
-Replace `172.21.17.69` and `demo.tencentcloudcr.com` with your actual private-network resolution IP address and TCR instance domain name.
+Replace `172.21.17.69` and `demo.tencentcloudcr.com` with the private network resolution IP address and TCR instance domain name that you use.

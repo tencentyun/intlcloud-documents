@@ -70,14 +70,14 @@ java -version
       bash kafka-console-consumer.sh --bootstrap-server XXXX:port --topic test --consumer.config ../config/consumer.properties
       ```
       >?将 XXXX:port 替换成公网访问的域名与端口。
-      >![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+      >![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
 
    2. 另外开一个终端窗口启动生产者。
       ``` bash
       bash kafka-console-producer.sh --broker-list XXXX:port --topic test --producer.config ../config/producer.properties
       ```
       >?将 XXXX:port 替换成公网访问的域名与端口。
-      >![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+      >![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
 
       输入消息内容之后按回车，即可看到消费端也几乎同时收到消息。
 

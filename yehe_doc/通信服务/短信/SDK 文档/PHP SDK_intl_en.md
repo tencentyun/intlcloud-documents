@@ -1,6 +1,6 @@
 
 SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
->
+>!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
@@ -15,7 +15,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 - You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- You have obtained the call address (endpoint). The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The call address of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
 - For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
@@ -36,7 +36,7 @@ curl -sS https://getcomposer.org/installer | php
 composer require tencentcloud/tencentcloud-sdk-php
 ```
 3. Add the following reference code in the code.
->This example is for reference only. Composer will generate a `vendor` directory in the project root directory, whose actual absolute path is `/path/to/`. If the operation is executed in the project root directory, you can omit the absolute path.
+>!This example is for reference only. Composer will generate a `vendor` directory in the project root directory, whose actual absolute path is `/path/to/`. If the operation is executed in the project root directory, you can omit the absolute path.
 >
 ```
 require '/path/to/vendor/autoload.php';
@@ -69,7 +69,8 @@ try {
 	 * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
 	 * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
 	 * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-	 * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+	 * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+	 */
     
 		$cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -96,7 +97,8 @@ try {
      * Settings of a basic parameter:
 	   * Help link:
 	   * SMS Console: https://console.cloud.tencent.com/smsv2
-  	   * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+  	   * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+  	   */
 	
 	/* Template name */
 	$req->TemplateName = "Tencent Cloud";
@@ -145,7 +147,8 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -228,7 +231,8 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -298,7 +302,8 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));

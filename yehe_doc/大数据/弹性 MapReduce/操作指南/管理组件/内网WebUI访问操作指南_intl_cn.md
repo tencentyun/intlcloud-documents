@@ -1,4 +1,4 @@
-EMR 集群创建时，如果没有勾选“开启集群 Master 节点公网”，将不能通过组件管理页面的原生 WebUI 访问地址进入相关组件的 WebUI 界面。本文主要介绍了没有开启 Master 节点公网的集群如何查看组件原生 WebUI。
+EMR 集群创建时，如果没有勾选“开启集群 Master 节点公网”，将不能通过组件管理页面的原生 WebUI 访问地址进入相关组件的 WebUI 界面。本文主要介绍没有开启 Master 节点公网的集群如何查看组件原生 WebUI。
 ## 内网访问
 
 在内网环境中通过浏览器访问组件 WebUI。各组件原生 WebUI 链接如下表所示：
@@ -39,4 +39,4 @@ EMR 集群创建时，如果没有勾选“开启集群 Master 节点公网”�
 6. 访问组件原生 WebUI。
 EMR-V1.3.1、EMR-V2.0.1、EMR-V2.1.0、EMR-V3.00 已支持 Apache Knox，默认在公网访问组件原生 WebUI 经过 Knox，各组件详细 UI 链接和 Knox 使用，请参考 [Knox 开发指南](https://intl.cloud.tencent.com/document/product/1026/31167)。
 
->绑定 EIP 后 EMR 控制台原生 WebUI 访问地址不会相应变更，若需要变更控制台组件访问地址，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
+>?绑定 EIP 后 EMR 控制台原生 WebUI 访问地址不会相应变更，若需要变更控制台组件访问地址，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。

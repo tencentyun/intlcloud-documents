@@ -1,4 +1,21 @@
 >? 本文为容器镜像服务 TCR 企业版产品动态，容器服务 TKE 产品动态请参见 [产品动态](https://intl.cloud.tencent.com/document/product/457/37358)。
+
+## 2021年01月
+<table>
+	<tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
+	<tr><td>支持单实例全球多地域复制</td><td>高级版实例支持在多个地域创建复制实例，访问域名及访问凭证统一，底层镜像数据实时高速同步。单次上传，即可在多个地域就近内网高速下载。</td><td>配置实例复制</td></tr>
+	<tr><td>兼容支持云原生应用制品及多架构镜像</td><td>企业版实例支持兼容云原生应用制品（OCI），镜像仓库可直接托管 Helm Chart、CNAB 等云原生应用制品。支持托管多架构容器镜像，如 amd64、arm 等，满足物联网及边缘计算使用场景。</td><td>-</td></tr>
+	<tr><td>支持按需加载容器镜像</td><td>高级版实例支持开启按需加载容器镜像特性，集群批量拉取容器镜像时可按需加载，提高容器启动速度。</td><td>-</td></tr>
+	<tr><td>内网访问功能优化</td><td>国内实例新建内网访问链路时，支持同时使用 VPCDNS 配置实例访问域名的内网解析，无需使用自建 DNS 或配置 Host。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35492">内网访问控制</a></td></tr>
+</table>
+## 2020年12月
+
+<table>
+<tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
+<tr><td>企业版服务正式启动商业化收费</td><td>企业版实例由公测正式转入收费服务，提供SLA 保障，支持后付费购买使用。</td><td><a href="https://intl.cloud.tencent.com/document/product/1051/35483">计费概述</a></td></tr>
+<tr><td>全量开放弗吉尼亚、法兰克福地域</td><td>全量开放弗吉尼亚、法兰克福地域，费用详情可参见计费概述。</td><td><ahref="https://intl.cloud.tencent.com/document/product/1051/35483">计费概述</a></td></tr>
+</table>
+
 ## 2020年10月
 
 <table>

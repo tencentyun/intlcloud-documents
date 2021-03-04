@@ -231,7 +231,7 @@ For more information, please see [INSERT](https://clickhouse.tech/docs/en/query_
 
 ## Data Deletion
 ClickHouse uses the `DROP` or `TRUNCATE` statement to delete data.
->`DROP` deletes metadata and data, while `TRUNCATE` deletes only data.
+>?`DROP` deletes metadata and data, while `TRUNCATE` deletes only data.
 
 ```
 DROP DATABASE [IF EXISTS] db [ON CLUSTER cluster]

@@ -38,12 +38,12 @@
       示例：
       	curl -v 'https://auth.staging.drmtoday.com/cas/v1/tickets' -H 'Content-Type: application/x-www-form-urlencoded' -XPOST -d 'username=${username}&password=${password}'
       参数：
-      - **ousername、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?%20dummy#adding-accounts)。
+      - **username、password**：可以使用DRMtoday的账号密码，也可以使用DRMtoday创建的API账号及其密码，[DRMtoday 创建API账号文档](https://fe.staging.drmtoday.com/frontend/documentation/integration/dashboard.html?%20dummy#adding-accounts)。
    2. CAS Ticket Retrieval：向CAS Login请求后返回的header中的Location地址发送HTTP POST请求。
       示例：
       	curl -v 'https://auth.staging.drmtoday.com/cas/v1/tickets/xxx' -H 'Content-Type: application/x-www-formurlencoded'-XPOST -d 'service=https://fe.staging.drmtoday.com/frontend/api/keys/v2/ingest/${merchantApiName}'
       参数：
-      - **oservice**：Dashboard-API页面中Ingest key对应的Endpoint，如下图：
+      - **service**：Dashboard-API页面中Ingest key对应的Endpoint，如下图：
         ![](https://main.qcloudimg.com/raw/299f6fdcdfd5016a48c4b41f530e277a.png)
 
 2. 设置密钥
@@ -58,7 +58,7 @@
 
 ## 步骤4：在MediaLive上配置DRM密钥
 
-参考MediaLive[用户使用手册](https://intl.cloud.tencent.com/document/product/1048/38374?lang=en&pg=#5.-configure-drm.)配置MediaLiveDRM密钥，其中：
+参考MediaLive[用户使用手册](https://intl.cloud.tencent.com/zh/document/product/1048/38374?lang=zh&pg=#5.-drm-.E8.AE.BE.E7.BD.AE)配置MediaLiveDRM密钥，其中：
 
 - **DRM**：开启
 - **Scheme**：Custom DRM Keys
@@ -79,7 +79,7 @@ Widevine密钥：
 
 ## 步骤5：播放测试
 
-根据MediaLive使用手册配置好播放地址后（如可[将直播流输出到MediaPackage的Channel中](https://intl.cloud.tencent.com/document/product/1048/38362)，通过MediaPackage的[Endpoint节点获取播放地址](https://intl.cloud.tencent.com/document/product/1063/37496?lang=en&pg=#3.-endpoint），可使用[DRMtoday播放页面](https://players.castlabs.com/presto/6.1.2/#/player/config)测试：
+根据MediaLive使用手册配置好播放地址后（例如可以[将直播流输出到MediaPackage的Channel中](https://intl.cloud.tencent.com/document/product/1048/38362)，通过MediaPackage的[Endpoint节点获取播放地址](https://intl.cloud.tencent.com/zh/document/product/1063/37496#.E4.B8.89.E3.80.81-endpoint)，可使用[DRMtoday播放页面](https://players.castlabs.com/presto/6.1.2/#/player/config)测试：
 ![](https://main.qcloudimg.com/raw/5b8b559d838497dd5b75cf9c7cedf363.png)
 ![](https://main.qcloudimg.com/raw/77249ddf9131bc9578bdb28fc3c37fb4.png)
 参数：

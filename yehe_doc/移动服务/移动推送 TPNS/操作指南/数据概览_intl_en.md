@@ -1,48 +1,48 @@
-The data statistics feature of TPNS can help product OPS personnel quickly view whether the push (operation) goal is achieved in order to fully understand the overall user conversion in push scenarios.
-## Feature Description
-Log in to the [TPNS Console](https://console.cloud.tencent.com/tpns) and click **Data Overview** on the left sidebar.
+To help operations personnel determine whether the push (operation) goals are achieved, TPNS introduces the data overview feature that allows them to fully view the overall user conversion results brought by the pushes.
+## Features
+Log in to the [TPNS console](https://console.cloud.tencent.com/tpns). In the left sidebar, click **Data Overview** > **Push Statistics**.
 The metrics on this page are described as follows:
-**1. Yesterday's usage data: you can view app usage statistics on yesterday.**
+1. **Used Yesterday**: app usage yesterday
 ![](https://main.qcloudimg.com/raw/dd17dad647411bcbcacce185a27378af.png)
-- Messages Pushed Yesterday: the total number of messages pushed by all push tasks (subject to the actual sent amount and not affected by the creation date of push tasks).
-- Push Tasks Yesterday: the total number of push tasks yesterday.
-- Number of devices reached yesterday: unique visit number of devices reached yesterday (subject to the actual sent amount, and is not affected by the creation date of push tasks).
-- Connected Devices Yesterday: the number of unique devices of which SDK connected to TPNS server yesterday (SDK will be connected to TPNS server when app frontend or backend process is online).
+- Messages Pushed Yesterday: the number of messages (PV) pushed by all push tasks yesterday (the pushed amount of inter-day tasks is included in that of the actual sent day)
+- Push Tasks Yesterday: the total number of push tasks yesterday
+- Number of Devices Reached Yesterday: the number of unique devices that the push tasks reached to yesterday (the pushed amount of inter-day tasks is included in that of the actual sent day)
+- Connected Devices Yesterday: the number of unique online devices connected to the SDK yesterday (the SDK will connect to the TPNS server when the application is running in the frontend or backend)
 
-**2. App status monitoring: you can monitor the app's effective devices, notification bar enablement information, and uninstallation information.**
+2. **Application Status Monitoring**: monitors the application’s available devices, notification bar enablement, and uninstallation.
 ![](https://main.qcloudimg.com/raw/1b138213a593d9892c571b6e2e7deba1.png)
-- Available Devices: the number of devices on which the app is not uninstalled within 90 days as of 23:59 yesterday (the uninstalled indicates that vendor/TPNS SDK returns unavailable for that device).
-- Uninstalled/Unavailable Devices: the number of offline devices over 90 days or devices that vendor/TPNS SDK returned unavailable.
-- Opt-In Devices: the number of devices on which the notification bar is enabled.
-- Opt-Out Devices: the number of devices on which the notification bar is disabled.
-- Opt-In Rate: the current number of devices with notification bar enabled/the current number of available devices.
-- Compare with App Industry: the opt-in rate of the current app industry (you can enter the product management page to view or modify the app industry).
-![](https://main.qcloudimg.com/raw/0f8a15da5768d61c0c71dc9a9da160c6.png)
-- Compare with Mobile Industry: the opt-in rate of notification bar in the whole mobile app market.
+- Available Devices: the number of devices on which the app is not uninstalled within 90 days as of 24:00 yesterday (uninstalled devices include those returned unavailable by vendor/TPNS SDK)
+- Uninstalled/Unavailable Devices: the number of devices offline over 90 consecutive days or devices returned unavailable by vendor/TPNS SDK
+- Opt-In Devices: the number of devices on which the notification bar is enabled
+- Opt-Out Devices: the number of devices on which the notification bar is disabled
+- Opt-In Rate: Opt-In devices/Available devices
+- Compare with "Tool" the Mobile Industry: the average opt-in rate of the current app industry (you can enter the product management page to view or modify the app industry)
+  ![](https://main.qcloudimg.com/raw/0f8a15da5768d61c0c71dc9a9da160c6.png)
+- Compare with Mobile Industry: the average opt-in rate of the whole mobile app industry
 
-**3. App usage trend: trend in app push usage is displayed to help you analyze the push effect.**
-Android:
+3. **App Usage Trend**: app push usage over time, helping you analyze the push effect
+**Android**:
 ![](https://main.qcloudimg.com/raw/804ffa41de4d4ea18ffb35309e8af34b.png)
-- Attempted: number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.
-- Messages Sent (PV): the total number of messages pushed everyday
-- Reached (PV): unique devices that received push messages
-- Clicked: the number of devices on which the notification bar message was clicked. This feature requires Android SDK 1.2.0.1 or later. This deduplicated number is obtained from TPNS acquisition and vendor's data receipt.
-- Cleared: the number of times the notification was dismissed
-- Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
-- Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
-- Opt-in devices: the number of devices on which the notification bar is enabled.
-- Uninstalled/unavailable devices: the total number of devices offline over 90 consecutive days and the devices that vendor/TPNS SDK returned unavailable.
+- Attempted: the number of available and opt-in devices connected to the Internet within 90 days that meet the target push conditions
+- Sent to: the total number of messages (PV) pushed every day
+- Messages Reached (PV): the number of devices (PV) that received the push messages
+- Messages Clicked: the number of times the notification bar message was clicked. This feature requires Android SDK 1.2.0.1 or later. This deduplicated number is obtained from TPNS acquisition and vendor's data receipt.
+- Messages Cleared: the number of times the notification bar message was dismissed
+- Message Click Rate: Messages clicked/Messages reached (PV)
+- Daily Connected Devices: the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
+- Opt-In Devices: the number of devices on which the notification bar is enabled
+- Uninstalled/Unavailable devices: the total number of devices offline over 90 consecutive days or devices returned unavailable by vendor/TPNS SDK.
 - New Devices: the number of unique devices that got newly registered Token on the day
 
-iOS:
+**iOS**:
 ![](https://main.qcloudimg.com/raw/250a12d9381b0f502c7fbee3999661fe.png)
-- Attempted: available devices in the push target devices
-- Messages Sent (PV): the total number of messages pushed everyday
-- Reached (PV): unique devices that received push messages
-- Clicked: the number of times the notification was clicked
-- Message click rate: the number of devices on which the notification bar message was clicked/messages reached (PV).
-- Daily Connected Devices: the number of daily unique devices of which the SDK connected to Internet (SDK connects to TPNS server when frontend is online or backend process is online)
-- Opt-In Devices: the number of devices on which the notification bar is enabled (the notification bar status will be checked every 10 seconds. The change will be reported when the application frontend is online).
-- Uninstalled/unavailable devices: the total number of devices offline over 90 consecutive days and the devices that vendor/TPNS SDK returned unavailable.
+- Attempted: the number of available devices that meet the target push conditions
+- Sent to: the total number of messages (PV) pushed every day
+- Messages Reached (PV): the number of devices (PV) that received the push messages
+- Messages Clicked: the number of times the notification bar message was clicked
+- Message Click Rate: Messages clicked/Messages reached (PV)
+- Daily Connected Devices: the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
+- Opt-In Devices: the number of devices on which the notification bar is enabled (the notification bar status will be checked every 10 seconds. The change will be reported when the application is online in the frontend).
+- Uninstalled/Unavailable devices: the total number of devices offline over 90 consecutive days or devices returned unavailable by vendor/TPNS SDK.
 - New Devices: the number of unique devices that got newly registered Token on the day
 

@@ -1,6 +1,6 @@
 
 SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/34689)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
->
+>!
 >- 发送短信相关接口
 >一次群发请求最多支持200个号码。
 >- 签名、正文模板相关接口
@@ -10,12 +10,12 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 ## 前提条件
 
 - 已开通短信服务，具体操作请参见 [国内短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
-- 如需发送国内短信，需要先 购买国内短信套餐包。
+- 如需发送国内短信，需要先购买国内短信套餐包。
 - 已准备依赖环境：PHP 5.6.33 及以上版本。
 - 已在访问管理控制台 >【[API密钥管理](https://console.cloud.tencent.com/cam/capi)】页面获取 SecretID 和 SecretKey。
  - SecretID 用于标识 API 调用者的身份。
  - SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥，**SecretKey 需妥善保管，避免泄露**。
-- 已获取调用地址（endpoint），短信的调用地址为`sms.tencentcloudapi.com`。
+- 短信的调用地址为`sms.tencentcloudapi.com`。
 
 ## 相关资料
 - 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689)。
@@ -36,7 +36,7 @@ curl -sS https://getcomposer.org/installer | php
 composer require tencentcloud/tencentcloud-sdk-php
 ```
 3. 在代码中添加以下引用代码。
->本文仅为示例，composer 会在项目根目录下生成 vendor 目录，`/path/to/`为项目根目录的实际绝对路径，如果是在项目根目录执行，可以省略绝对路径。
+>!本文仅为示例，composer 会在项目根目录下生成 vendor 目录，`/path/to/`为项目根目录的实际绝对路径，如果是在项目根目录执行，可以省略绝对路径。
 >
 ```
 require '/path/to/vendor/autoload.php';
@@ -69,7 +69,8 @@ try {
 	 * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
 	 * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
 	 * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-	 * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+	 * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+	 */
     
 		$cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -96,7 +97,8 @@ try {
      * 基本类型的设置:
 	   * 帮助链接：
 	   * 短信控制台：https://console.cloud.tencent.com/smsv2
-  	   * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 */
+  	   * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+  	   */
 	
 	/* 模板名称 */
 	$req->TemplateName = "腾讯云";
@@ -145,7 +147,8 @@ try {
      * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
      * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
      * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -228,7 +231,8 @@ try {
      * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
      * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
      * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));
@@ -298,7 +302,8 @@ try {
      * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
      * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
      * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+     * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+     */
 
     $cred = new Credential("xxx", "xxx");
     //$cred = new Credential(getenv("TENCENTCLOUD_SECRET_ID"), getenv("TENCENTCLOUD_SECRET_KEY"));

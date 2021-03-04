@@ -1,3 +1,5 @@
+>!本文档主要介绍**云点播**访问管理功能的相关内容，其他产品访问管理相关内容请参见 [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)。
+
 云点播已接入腾讯云 [访问管理](https://intl.cloud.tencent.com/document/product/598) （Cloud Access Management，CAM），开发者可以根据自身需要为子账号分配合适的云点播访问权限。在开通云点播服务后，云点播访问管理功能即可直接使用。
 阅读本文前，开发者需要对腾讯云访问管理和云点播子应用体系有所了解。本文涉及的概念主要有：
 
@@ -22,15 +24,14 @@
 
 ## 支持资源级授权的 API
 
-云点播访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588)，除了有特殊限制的 API，其余 API 均支持资源级授权。具体情况请参考下文。
+云点播访问管理支持 [资源级授权](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/10588)，除了有特殊限制的 API，其余 API 均支持资源级授权。具体情况请参考下文。
 
 ### 不支持资源级授权的 API 列表
 
 | 接口名称                                        | 接口功能       | 说明                                                         |
 | :---------------------------------------------- | -------------- | ------------------------------------------------------------ |
 | [DescribeSubAppIds](https://intl.cloud.tencent.com/document/product/266/34177)    | 查询子应用列表 | 所有子用户都有权限调用该接口，不需要授权。请求该接口时也不需要指定具体的子应用。 |
-| [ModifySubAppIdStatus](https://intl.cloud.tencent.com/document/product/266/34173) | 修改子应用状态 | 该接口可停用指定的子应用，属于高危操作，因此仅具备云点播完整权限（即 [预设策略](https://intl.cloud.tencent.com/document/product/266/33971#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.88.97.E8.A1.A8)`QcloudVODFullAccess`）的子用户才允许访问。如果一个子用户拥有某个子应用的写权限，但没有`QcloudVODFullAccess`权限，也无权调用该接口。 |
-
+| [ModifySubAppIdStatus](https://intl.cloud.tencent.com/document/product/266/34173) | 修改子应用状态 | 该接口可停用指定的子应用，属于高危操作，因此仅具备云点播完整权限（即 [预设策略](https://intl.cloud.tencent.com/document/product/266/33971)`QcloudVODFullAccess`）的子用户才允许访问。如果一个子用户拥有某个子应用的写权限，但没有`QcloudVODFullAccess`权限，也无权调用该接口。 |
 
 ### 支持资源级授权的 API 列表
 

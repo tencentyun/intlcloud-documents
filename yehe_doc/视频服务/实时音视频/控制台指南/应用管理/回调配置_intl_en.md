@@ -1,4 +1,4 @@
-The event callback feature sends TRTC event notification via HTTP/HTTPS requests to your server. Currently, callbacks are available for room events (`Room Event`) and media events (`Media Event`). Follow the directions below to configure callbacks in the TRTC console.
+The event callback feature can send notifications about TRTC events in the form of HTTP/HTTPS requests to your server. Currently, you can register callbacks for room events (`Room Event`) and media events (`Media Event`). Follow the directions below to configure callbacks in the TRTC console.
 
 <span id="step0"></span>
 ## Prerequisites
@@ -20,5 +20,5 @@ The event callback feature sends TRTC event notification via HTTP/HTTPS requests
 2. Enter a callback address (required).
 	- Room event callback: supports sending notifications about creating/closing a room, entering/exiting a room, etc.
 	- Media event callback: supports sending notifications about starting or stopping video/audio/substream data push, etc.
->? Protocols for callback URLs: HTTP and HTTPS; up to 2,083 characters
+>? Protocols for callback URLs: http and https; up to 2,083 characters
 3. Click **Confirm** to complete the configuration.
