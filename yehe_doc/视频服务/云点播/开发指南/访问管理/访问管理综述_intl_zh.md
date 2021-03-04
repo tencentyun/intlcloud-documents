@@ -1,9 +1,9 @@
->!本文档主要介绍**云点播**访问管理功能的相关内容，其他产品访问管理相关内容请参见 [支持 CAM 的产品](https://intl.cloud.tencent.comhttps://cloud.tencent.com/document/product/598/10588)。
+>!本文档主要介绍**云点播**访问管理功能的相关内容，其他产品访问管理相关内容请参见 [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588)。
 
 云点播已接入腾讯云 [访问管理](https://intl.cloud.tencent.com/document/product/598) （Cloud Access Management，CAM），开发者可以根据自身需要为子账号分配合适的云点播访问权限。在开通云点播服务后，云点播访问管理功能即可直接使用。
 阅读本文前，开发者需要对腾讯云访问管理和云点播子应用体系有所了解。本文涉及的概念主要有：
 
-- 访问管理相关：[用户类型](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/32633)、[API 密钥](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/32675)、[策略](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/10601) 、[策略语法](https://cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/10603)
+- 访问管理相关：[用户类型](https://intl.cloud.tencent.com/document/product/598/32633)、[API 密钥](https://intl.cloud.tencent.com/document/product/598/32675)、[策略](https://intl.cloud.tencent.com/document/product/598/10601) 、[策略语法](https://intl.cloud.tencent.com/document/product/598/10603)
 - 云点播相关：[子应用](https://intl.cloud.tencent.com/document/product/266/33987)
 
 ## 应用场景
