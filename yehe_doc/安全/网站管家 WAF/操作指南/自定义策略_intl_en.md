@@ -1,6 +1,6 @@
 ## Overview
 Custom rules allow for controlling the access from public network users by combining and matching HTTP message sections such as request path, GET parameters, POST parameters, Referer, and User-Agent. This feature enables Tencent Cloud users to respond flexibly with a combination of rules to easily block various attacks from the Internet.
->
+>!
 >- Each custom rule can set up to 5 conditions for section control.
 >- Conditions in each custom rule are evaluated using a logical AND, that is, the rule does not take effect unless all the conditions are matched.
 >- For each custom rule to be matched, you can configure two consequential actions: block and allow.
@@ -12,7 +12,7 @@ To ban specific IP addresses from access to a designated site, the webmaster can
  ![](https://main.qcloudimg.com/raw/28061aeb403c4a3a816ec05eae98a6a0.png)
 2. Enter the name of the rule (e.g. “001”), select an option (such as “source IP”) for **Field**, select “matched” for **Condition**, and enter the source IP (e.g. `192.168.1.1`) banned from access for **Content**. Then select an action (e.g. “block”), and click **Confirm** to save the rule.
  ![](https://main.qcloudimg.com/raw/631c07e4f425fa7309aa7de35f07c52c.png)
->WAF custom rules allow you to use masks to control access requests from source IPs within a range. We can enter a specific IP address range (e.g. `10.10.10.10/24`) in **Content**.
+>?WAF custom rules allow you to use masks to control access requests from source IPs within a range. We can enter a specific IP address range (e.g. `10.10.10.10/24`) in **Content**.
 3. Now, the rule will take effect immediately, and block all HTTP access requests from specific source IPs.
 ![](https://main.qcloudimg.com/raw/866f2674fe97dae364bca13742d0a00c.png)
 
@@ -23,5 +23,4 @@ If the webmaster does not want a public network user to access specified Web res
 ### Case 3: Banning an external site from hot-linking certain resources 
 To block hotlink attacks by external sites, such as `www.test.com`, the webmaster can use custom rules to capture and block the Referer in a hotlink request. The configuration is as follows: select "Referer" for **Field**, select "includes" for **Condition**, enter “`www.test.com`” in **Content**, select "Block" for **Action**, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/8c0a309be63f91061751beaf4ff48389.png)
-
 <a href="https://intl.cloud.tencent.com/document/product/627/11710" target="_blank">Previous: Tamper Protection</a>
