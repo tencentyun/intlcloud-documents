@@ -48,5 +48,3 @@ The HTTPS configuration will take effect in about 2 hours. Please visit the doma
 ### Step 3. Modify the configuration
 The HTTPS feature can be enabled and disabled. Once it is disabled, LVB will no longer provide HTTPS service for the domain name. If the certificate has expired, it should be replaced with a new valid one.
 
-
- >? For more information on certificate, please see [SSL Certificate Service - Operation Guide](https://intl.cloud.tencent.com/document/product/1007/30168).
