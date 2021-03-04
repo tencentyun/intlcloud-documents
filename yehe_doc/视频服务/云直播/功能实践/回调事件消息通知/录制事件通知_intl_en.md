@@ -3,7 +3,7 @@ After LVB recording is enabled, you can configure the registered callback domain
 # Notes
 
 - You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud LVB before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/zh/document/product/267/38080).
-- The recorded video files are stored in the [VOD Console](https://console.cloud.tencent.com/vod/overview) by default. We recommend you activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to account arrears.
+- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. We recommend you activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to overdue payment.
 
 
 ## Recording Event Parameter Description
