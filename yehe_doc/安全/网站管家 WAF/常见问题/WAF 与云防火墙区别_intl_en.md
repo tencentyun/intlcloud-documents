@@ -35,7 +35,7 @@ Their differences are as follows:
 <th>Core Strength</th>
 <td>The wide scenarios ranging the application needs of users both within and outside Tencent Cloud.</td>
 <td>It is a Tencent Cloud native service, which can be connected across regions, eliminating the need to adjust the existing network architecture. Web business forwarding and security protection are separated, therefore WAF service can be easily disconnected during service breakdown to achieve stable and reliable web security protection. It can only be used for businesses within Tencent Cloud.</td>
-<td>The Tencent Cloud native firewall can be quickly enabled not affecting the existing businesses. It integrates security capabilities such as IIPS, threat intelligence, and vulnerability scanning, etc., which is ideal for cybersecurity classified protection and intensifying protection. It can only be used for businesses within Tencent Cloud.</td>
+<td>The Tencent Cloud native firewall can be quickly enabled not affecting the existing businesses. It integrates security capabilities such as IPS, threat intelligence, and vulnerability scanning, etc., which is ideal for cybersecurity classified protection and intensifying protection. It can only be used for businesses within Tencent Cloud.</td>
 </tr>
 <tr>
 <th>Service Selection</th>
