@@ -11,7 +11,6 @@ CC 防护可以对网站特定的 URL 进行访问保护，CC 防护支持紧急
 1.  登录 [Web 应用防火墙控制台](https://console.cloud.tencent.com/guanjia/waf/overview)，在左侧导航栏，选择【Web 应用防火墙】>【防护设置】，进入防护设置页面。
 2.  在域名列表中，找到需要防护的域名，单击【防护配置】，进入配置页面。
 2. 单击【CC 防护设置2.0】，进行紧急模式 CC 防护配置。
-![](https://main.qcloudimg.com/raw/f0da1e170b1376e6213d10d988a49a2b.png)
 **配置项说明：**
 **状态开关：** 当开启紧急模式 CC 防护时，若网站遭大流量 CC 攻击会自动触发防护（网站 QPS 不低于1000QPS），无需人工参与。若无明确的防护路径，建议启用紧急模式 CC 防护，可能会存在一定误报。可以在控制台进入 [IP管理-IP封堵状态](https://console.cloud.tencent.com/guanjia/ip/record)，查看拦截 IP 信息，并及时处理。
 >? 如果知晓明确的防护路径，建议使用自定义 CC 规则进行防护。
