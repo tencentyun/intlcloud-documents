@@ -1,59 +1,76 @@
-<span id="que1"></span>
-### How does LVB recording work?
+<span id="que1"></span> 
+### 라이브 방송 녹화는 어떤 원리인가요?
 ![img](https://main.qcloudimg.com/raw/9c9d31c6ffec97d2b8b4042b7a673cbc.jpg)
 
-When you enable the recording for an LVB stream, the audio/video data is relayed to the recording system. Every frame pushed from the host’s mobile phone is written into the recording file by the recording system.
+라이브 방송 스트리밍에 일단 녹화를 시작하면 멀티미디어 데이터가 릴레이 녹화 시스템으로 넘어갑니다. 호스트의 모바일에서 푸시되는 모든 데이터는 녹화 시스템에 의해 녹화 파일에 추가 기록됩니다.
 
-If an LVB push is interrupted, the access layer will immediately notify the recording server to record the file being written, store it into the VOD system and generate an index. Then, you can find the new recording file in the VOD system. If you have configured recording event notification on a server, the recording system will send the **index ID** and **online playback URL** to the server.
+라이브 방송 스트리밍이 중단되면 액세스 레이어가 녹화 서버에 즉각 알려 현재 기록하고 있는 파일을 드롭하고, 이를 VOD 시스템으로 전환 및 저장 후 색인을 생성하도록 합니다. 그러면 VOD 시스템에서 새로 생성된 녹화 파일을 확인할 수 있습니다. 또한 녹화 이벤트 알림을 설정한 경우, 녹화 시스템이 해당 파일의 **색인 ID**와 **온라인 재생 주소** 등의 정보를 이전에 설정한 서버로 통보합니다.
 
-However, an error will occur in the processes of transferring and processing a large file on the cloud. To ensure success, the maximum recording length of a file is 120 minutes, and you can specify a shorter segment using the `RecordInterval` parameter.
+그러나 파일이 너무 큰 경우 클라우드 단의 전송 및 처리 과정에서 쉽게 에러가 발생할 수 있습니다. 따라서 성공률 확보를 위해 녹화 파일 1개 길이는 최장 120분으로 제한하며, RecordInterval 매개변수를 통해 더 짧은 멀티 파트를 지정할 수 있습니다.
 
-<span id="que2"></span>
-### Why is LVB recording not available? 
-LVB recording and playback is built on Tencent Cloud's **VOD** service. To use this feature, you need to [activate VOD](https://console.cloud.tencent.com/vod) in the Tencent Cloud console.
+<span id="que2"></span> 
+### 라이브 방송은 왜 비디오 녹화를 할 수 없나요? 
+라이브 방송 녹화 다시 보기 기능은 Tencent Cloud의 **VOD 서비스**에 의존합니다. 녹화 기능을 사용하고 싶은 경우, 먼저 Tencent Cloud의 관리 콘솔에서 [VOD 서비스 활성화](https://console.cloud.tencent.com/vod)를 진행하십시오. 더 많은 라이브 방송 녹화 다시 보기 관련 조작 안내.
 
-<span id="que3"></span>
-### How soon will the recording file be ready after the live streaming is over? 
-You may get the recording file in about 5 minutes after the live streaming is over. An event callback will be triggered when the recording ends, which provides accurate recording completion time. For more information, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31074).
+<span id="que2"></span> 
 
-<span id="que4"></span>
-### After LVB recording is completed, how do I get the recording files?
-The generated recording files are automatically stored in the VOD system. After you have activated VOD, you can get the recording files in the following ways:
-- [VOD Console](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
-- [Recording event notification](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
-- [VOD APIs](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
+### 라이브 방송 종료 후 얼마 후에 녹화 파일을 볼 수 있나요? 
+라이브 방송 종료 후 약 5분 후 녹화 파일이 생성되며, 녹화 완료 후 이벤트가 콜백됩니다. 상세 내용은 전달받은 콜백 시간을 기준으로 하며, 더 자세한 사항은 [콜백 설정](https://intl.cloud.tencent.com/document/product/267/31074)을 참조하십시오.
 
-<span id="que5"></span>
-### Can I migrate an LVB video?
-You can use the download address of the video to migrate it. 
+<span id="que4"></span> 
+### 라이브 방송 녹화 후, 녹화 파일은 어떻게 받을 수 있나요?
+녹화 파일은 생성 후 자동으로 VOD 시스템에 저장되며, 클라이언트가 VOD 서비스를 활성화해야만 저장됩니다. 다음과 같이 녹화 파일을 받을 수 있습니다.
+- [VOD 콘솔](https://intl.cloud.tencent.com/document/product/267/31563)
+- [녹화 이벤트 알림](https://intl.cloud.tencent.com/document/product/267/31563)
+- [VOD API 조회](https://intl.cloud.tencent.com/document/product/267/31563)
 
-<span id="que6"></span>
-### How do I set the video storage period?
-LVB currently has no limit on the video storage period. You can manage video files through the console and RSETful APIs. 
+<span id="que5"></span> 
+### 라이브 방송 비디오를 마이그레이션할 수 있나요?
+현재는 비디오 다운로드 주소를 획득한 후 자체적으로 마이그레이션할 수 있습니다. 
 
-<span id="que7"></span>
-### How many recording files are generated in an LVB recording process?
-- **Recording a file in MP4, FLV or AAC format**: the maximum recording length of a single file ranges from 5 to 20 minutes. You can specify a shorter segment using the `RecordIntervall` parameter of the [CreateLiveRecordTemplate API](https://intl.cloud.tencent.com/document/product/267/30845).
-	- If the duration of a live stream is so short that the push ends before recording is enabled, no recording file will be generated.
-	- If the duration of a live stream is not long (shorter than `RecordInterval`), and the push is not interrupted during the live stream, only one recording file is generated.
-	- If the duration of a live stream is very long (longer than `RecordInterval`), the video will be segmented based on the length of time specified by `RecordInterval`, to avoid the time uncertainty of the flow of the file with a longer duration in a distributed system.
-	- If the push is interrupted during a live stream (SDK will re-push later), a new segment will be generated every time the interruption occurs.
+<span id="que6"></span> 
+### 비디오 저장 시간은 어떻게 설정하나요?
+현재 LVB 비디오 저장은 시간 제한이 없습니다. 콘솔과 RSET API 인터페이스를 통해 비디오 파일을 관리할 수 있습니다. 
 
-- **Recording a file in HLS format**: there is no upper limit. If a file exceeds the recording resumption timeout period, a new file will be created to continue recording. You can set the recording resumption timeout period to 0-1800 seconds.
+<span id="que7"></span> 
 
-<span id="que9"></span>
-### How do I splice segments?
-You can splice segments by using the TencentCloud APIs. 
+### 라이브 방송 1회 녹화 시 몇 개의 녹화 파일이 생성되나요?
 
-<span id="que10"></span>
-### How do I troubleshoot when only one recording template is set but two recording streams exist? 
-In general, this might be because there are two recording tasks under the current push domain name. We recommend troubleshooting in the following ways:
+- **MP4, FLV 또는 AAC 포맷 녹화**: 파일 1개 시간은 5분~120분으로 제한됩니다. [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/30845) 인터페이스의 RecordInterval 매개변수를 통해 더 짧은 멀티 파트를 지정할 수 있습니다.
+    - 라이브 방송이 매우 짧아 녹화 템플릿이 활성화되지 않고 푸시 스트림이 종료된 경우 시스템은 녹화 파일을 생성하지 않습니다.
+    - 라이브 방송 시간이 많이 길지 않고(RecordInterval 시간보다 짧은 경우) 중도에 푸시 스트림 중단 이벤트가 발생하지 않은 경우 통상적으로 1개의 파일이 생성됩니다.
+    - 라이브 방송 시간이 RecordInterval 시간 보다 길어지는 경우 RecordInterval 지정 시간에 따라 파일을 분할합니다. 이 작업은 너무 긴 파일이 분산형 시스템에서 트랜스 되는 시간에 대한 불확실성을 피하기 위함입니다.
+    - 라이브 방송 과정에서 푸시 스트림을 중단(이후 SDK가 다시 푸시 스트림 시도)하는 경우, 모든 중단 지점에서 1개의 새로운 분할 파일이 생성됩니다.
 
-1. Check the recording configuration in the console. Make sure that only one format is selected as the recording file type.
-   - If you use the new console, go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Manage** on the right of the desired push domain name, select **Template Configuration**, and view the "Recording Format" of the associated template in the **Recording Configuration** tab.
-2. You can use one of the following methods to record: [create a recording task](https://intl.cloud.tencent.com/document/product/267/30847) or [create a recording template](https://intl.cloud.tencent.com/document/product/267/34223). If you create both recording templates and recording tasks for the same live stream, it will be recorded repeatedly. Check whether a recording task has been enabled in the console and another recording task has been enabled by [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847) (API v3.0) or [Live_Tape_Start](https://intl.cloud.tencent.com/document/product/267/9567) (API v2.0) at the same time.
+- **녹화 HLS 포맷**: 단일 파일의 최장 길이는 제한이 없습니다. 연장 녹화 시간 초과 시 새 파일이 생성돼 녹화가 계속됩니다. 연장 녹화 초과 시간은 0s~1800s로 설정할 수 있습니다.
 
-> ! If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+<span id="que8"></span> 
+### 어느 파일이 1회 라이브 방송에 포함되는지 어떻게 알 수 있나요?
+
+정확히 말하자면 PAAS의 Tencent Cloud에서 라이브 방송이 어떻게 정의되는지 모르겠습니다. 만약 라이브 방송이 20분 동안 지속되었는데 중간에 한 번은 네트워크 전환으로 스트리밍이 중단되고 한 번은 수동으로 정지 및 재시작했다면 이는 1회의 라이브 방송으로 간주하나요, 3회로 간주하나요?
+
+일반 모바일 라이브 방송 시나리오에 대해 우리는 아래와 같이 인터페이스 사이의 시간을 1회 라이브 방송으로 정의합니다.
+
+따라서 App 클라이언트 단에서 보내는 시간 정보가 중요합니다. 만약 이 시간에 녹화한 파일이 1회 라이브 방송에 들어가도록 정의하고 싶다면 라이브 방송 코드와 시간 정보를 이용해 받은 녹화 알림을 검색하면 됩니다(각 녹화 알림 이벤트마다**스트리밍 ID**, **시작 시간** 및 **종료 시간**등 정보를 가집니다).
+
+<span id="que9"></span> 
+
+### 조각 파일 스플라이싱은 어떻게 하나요?
+현재 Tencent Cloud는 클라우드 단의 API 인터페이스를 사용해 비디오 조각 파일 스플라이싱을 지원합니다. 
+
+<span id="que10"></span> 
+
+### 녹화 템플릿을 1개만 설정했는데 라이브 방송이 2개 채널로 녹화되었습니다. 어떻게 진단해야 하나요? 
+대부분의 경우 현재 푸시 스트림 도메인 아래 2개의 녹화 작업이 동시에 발생했을 수 있습니다. 다음 내용에 따라 순서대로 진단해 보십시오.
+
+1. 콘솔의 녹화 설정 정보를 조회하여 녹화 파일 유형이 1개 포맷만 선택되어 있는지 확인합니다.
+   -콘솔이 **신규 버전 콘솔**인 경우, [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 방문하여 푸시 스트림 도메인 우측의 [관리]를 클릭하고 [템플릿 설정]의 [녹화 설정]에서 관련 템플릿의 '녹화 포맷' 정보를 확인하십시오.
+   -콘솔이 **구 버전 콘솔**인 경우, [라이브 방송 코드 액세스](https://console.cloud.tencent.com/live/livecodemanage)>[액세스 설정]에서 라이브 방송 녹화 설정 정보를 확인하십시오.  
+2. [녹화 작업 생성](https://intl.cloud.tencent.com/document/product/267/37309)과 [녹화 템플릿 생성](https://intl.cloud.tencent.com/zh/document/product/267/34223#.E5.88.9B.E5.BB.BA.E5.BD.95.E5.88.B6.E6.A8.A1.E6.9D.BF)은 2가지의 녹화 개시 방식입니다. 실제 사용 시 필요에 따라 1가지만 선택하면 됩니다. 동일한 라이브 방송 스트리밍에서 녹화 템플릿을 설정한 동시에 녹화 작업을 생성한 경우 중복 녹화될 수 있습니다. 콘솔에서 녹화 작업을 활성화하는 동시에 API 3.0의 [CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/37309) 인터페이스를 호출하여 녹화 작업을 개시했는지 확인하십시오.
+
+> ! 
+> - 만약 라이브 방송 녹화가 구 버전의 콘솔에서 활성화되었고 신규 버전 콘솔은 비활성화 해야 한다면 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 관련 직원을 찾아 해결할 수 있습니다. 
+> - 위의 방법으로 문제를 해결할 수 없을 경우 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 해결하십시오. 전문가가 상담해 드립니다.
 
 
 
