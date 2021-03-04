@@ -1,4 +1,3 @@
-
 SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
 >- SMS sending APIs
@@ -16,7 +15,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 - You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- You have obtained the call address (endpoint). The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The call address of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
 - For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
@@ -82,7 +81,8 @@ public class AddSmsTemplate
              * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
              * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
              * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-             * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+             * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // Instantiate an HTTP option (optional; skip if there are no special requirements)
@@ -125,23 +125,23 @@ public class AddSmsTemplate
 
             /* Template name */
             String templatename = "Tencent Cloud";
-            req.templateName(templatename);
+            req.setTemplateName(templatename);
 
             /* Template content */
             String templatecontent	 = "Your login verification code is {1}. Please enter it within {2} minutes. If the login was not initiated by you, please ignore this message.";
-            req.templateContent	(templatecontent);
+            req.setTemplateContent(templatecontent);
 
             /* SMS type. 0: general SMS; 1: marketing SMS */
-            Long smstype = 0;
-            req.smsType(smstype);
+            long smstype = 0;
+            req.setSmsType(smstype);
 
             /* Whether it is Global SMS. 0: Mainland China SMS; 1: Global SMS */
-            Long international = 0;
-            req.international(session);
+            long international = 0;
+            req.setInternational(international);
 
             /* Template remarks, such as reason for application and use case */
             String remark = "xxx";
-            req.remark(remark);
+            req.setRemark(remark);
 
             /* Initialize the request by calling the `AddSmsTemplate` method on the client object. Note: the request method name corresponds to the request object
              * The returned `res` is an instance of the `AddSmsTemplateResponse` class which corresponds to the request object */
@@ -193,7 +193,8 @@ public class SendSms
              * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
              * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
              * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-             * Query the CAM key: https://console.cloud.tencent.com/cam/capi*/
+             * Query the CAM key: https://console.cloud.tencent.com/cam/capi
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // Instantiate an HTTP option (optional; skip if there are no special requirements)
@@ -316,7 +317,8 @@ public class PullSmsSendStatus {
              * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
              * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
              * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-             * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+             * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // Instantiate an HTTP option (optional; skip if there are no special requirements)
@@ -383,7 +385,7 @@ public class PullSmsSendStatus {
 <span id="Collecting SMS message sending data"></span>
 ### Collecting SMS message sending data
 
-```
+```java
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 
@@ -410,7 +412,8 @@ public class SendStatusStatistics {
              * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
              * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
              * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-             * Query the CAM key: https://console.cloud.tencent.com/cam/capi */
+             * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // Instantiate an HTTP option (optional; skip if there are no special requirements)
@@ -464,11 +467,11 @@ public class SendStatusStatistics {
             Long offset = 0L;
             req.setOffset(offset);
             /* Start time of pull in the format of `yyyymmddhh` accurate to the hour */
-            String startdatetime = "2019071100";
+            long startdatetime = 2019071100;
             req.setStartDateTime(startdatetime);
             /* End time of pull in the format of `yyyymmddhh` accurate to the hour
              * Note: `EndDataTime` must be later than `StartDateTime` */
-            String enddatatime = "2019071123"
+            long enddatatime = 2019071123;
             req.setEndDataTime(enddatatime);
 
             /* Initialize the request by calling the `SendStatusStatistics` method on the client object. Note: the request method name corresponds to the request object
@@ -476,7 +479,7 @@ public class SendStatusStatistics {
             SendStatusStatisticsResponse res = client.SendStatusStatisticsStatus(req);
 
             // A string return packet in JSON format is output
-            System.out.println(SendStatusStatisticsStatusResponse.toJsonString(res));
+            System.out.println(SendStatusStatisticsResponse.toJsonString(res));
 
         } catch (TencentCloudSDKException e) {
             e.printStackTrace();
