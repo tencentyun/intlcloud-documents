@@ -44,7 +44,7 @@ Tencent Cloud CDN은 HTTPS 가속 서비스를 지원합니다. 사용자는 인
 #### 1. 인증서 선택
 인증서가 있는 경우, PEM 형식의 인증서와 프라이빗 키를 바로 대응하는 위치에 붙여넣으면 됩니다:
 + Tencent Cloud CDN은 현재 ECC 인증서 배포를 지원합니다.
-+ 인증서는 PEM 형식이어야 하며 이 형식이 아닌 인증서는 [PEM 형식 변환](https://cloud.tencent.com/document/product/228/41686#.E6.A0.BC.E5.BC.8F.E8.BD.AC.E6.8D.A2)을 참조 바랍니다.
++ 인증서는 PEM 형식이어야 하며 이 형식이 아닌 인증서는 [PEM 형식 변환](https://intl.cloud.tencent.com/document/product/228/35212)을 참조 바랍니다.
 + Tencent Cloud 호스팅 인증서를 선택하여 바로 원클릭 배포를 진행할 수 있습니다.
 
 ![](https://main.qcloudimg.com/raw/35bf20677f1f640c81d289d20f056ce4.png)
