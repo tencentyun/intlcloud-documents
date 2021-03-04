@@ -44,7 +44,7 @@ LVBレコーディングは、ファイルをVODプラットフォームにス�
 レコーディングパラメータをテンプレート形式で管理し、各種業務シナリオのレコーディング設定テンプレートを作成できます。また設定テンプレートを使用して各種プッシュドメイン名、ストリーム名との関連付けを行い、レコーディング設定を柔軟に管理します。
 オンデマンドサービスをアクティブ化した後、特定のプッシュドメイン名のライブストリーミングストリームのレコーディングが必要となった場合は、2つの実現方法があります。
 
-### ライブストリーミングコンソール
+### LVBコンソール
 1. 【機能テンプレート】>[【レコーディング設定】](https://console.cloud.tencent.com/live/config/record)に移動し、レコーディング設定テンプレートを追加します。
 2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)でプッシュドメイン名を追加して、【管理】をクリックし、このドメイン名とレコーディングテンプレートを関連付けます。具体的な操作については、 [レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34224)をご参照ください。
 
@@ -60,8 +60,8 @@ LVBレコーディングは、ファイルをVODプラットフォームにス�
 | ---------- | ---------- | ------ |
 | &#10003;   | &#10003;   | 0      |
 | 空         | &#10003;   | 1      |
-| &#10003;   | 空        | 2      |
-| 空        | そら         | 3      |
+| &#10003;   | 空         | 2      |
+| 空         | 空         | 3      |
 
 そのうち：【空】はワイルドカード、【✓】は正確な関連付け、【0】は最も高い優先度です。優先度の高いテンプレートに関連付けられると、関連付けを停止し、この優先度のテンプレートに戻ります。
 
@@ -106,10 +106,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 ```
 - さらに具体的なレコーディング形式、レコーディングタイプ、ストレージパラメータなどを指定できます。
 例：2020年08月10日午前08時から10時までのレコーディングタスクを作成、MP4形式、セグメント1時間、永久保存。
-   1.  [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) を呼び出し、まずレコーディングテンプレートを作成します。
-
+	1.  [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) を呼び出し、まずレコーディングテンプレートを作成します。
 **入力例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -119,9 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<パブリックリクエストパラメータ>
 ```
-
 **出力例：**
-
 ```
 {
   "Response": {
@@ -130,11 +126,8 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
   }
 }
 ```
-
-   2.  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)を呼び出し、レコーディングタスクを作成します。
-
+	2.  [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)を呼び出し、レコーディングタスクを作成します。
 **入力例：**
-
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
@@ -187,7 +180,7 @@ LVBクラウドミクスストリーミングサービスを使用するシナ�
 
 ミクスストリーミング画面のみをレコーディングしたい場合は、API [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)を介して実現できます。OutputStreamType `1` のミクスストリーミングタイプについては、上述のAPIを呼び出し、StreamTypeパラメータを`1`に設定する必要があることに注意してください。
 
->! ミクスストリーミングのレコーディングは、レコーディングファイルエラーが発生し、通常の視聴と再生に影響を与えるため、中国大陸とグローバル/中国香港・マカオ・台湾のライブミクスストリーミングをサポートしていません。
+>! ミクスストリーミングのレコーディングは、レコーディングファイルエラーが発生し、通常の視聴と再生に影響を与えるため、中国内地（大陸）とグローバル/中国香港・マカオ・台湾のライブミクスストリーミングをサポートしていません。
 
 
 ##自動スプライスレコーディング（マルチストリームレコーディング）
@@ -223,7 +216,7 @@ LVBクラウドミクスストリーミングサービスを使用するシナ�
 ### VOD APIクエリー
 
 具体的な使用法については、VOD API[SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)インターフェースを参照して、レコーディングファイルをフィルタリングおよびクエリーしてください。
-
+>! LVB APIを介して [レコーディングタスク作成](https://intl.cloud.tencent.com/zh/document/product/267/37309)を実行する時は、レコーディングのコールバックはユーザーのプッシュURLに含まれる [stream_param](#message) パラメータをリターンしません。その他のレコーディング方式ではリターンされます。
 
 
 ## 設定更新に関する注意事項
