@@ -347,7 +347,7 @@ LVB recording fees for April = 5.2941 (USD/Channel/Month) × 0.2 × 12 Channels 
 
 >!
 >- The billing rule for the percentage of valid days will take effect on **November 1, 2020**, and bills will be generated according to this rule starting on **December 1, 2020**.
->- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. After enabling the recording feature, please make sure that your VOD service is in a normal status. If it is not activated or is suspended due to overdue payment in your account, then the LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
+>- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. After enabling the recording feature, please make sure that your VOD service is in a normal status. If it is not activated or is suspended due to overdue payment, then the LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 >- For more information on how to calculate the peak number of recording channels, please see [LVB Billing](https://intl.cloud.tencent.com/document/product/267/32479).
 
 <span id="shot"></span> 
