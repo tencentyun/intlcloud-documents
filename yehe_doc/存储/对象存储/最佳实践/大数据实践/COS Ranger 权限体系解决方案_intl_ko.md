@@ -12,7 +12,7 @@ Hadoop Ranger 권한 시스템은 빅 데이터 시나리오에서의 권한 솔
 
 ## 솔루션 아키텍처
 
-![](https://main.qcloudimg.com/raw/221e3a3e8fd6d31590fc8ca2562d7489.png)
+![](https://main.qcloudimg.com/raw/47bcff91b29614141b9c88efd39e50c1.png)
 
 Hadoop 권한 시스템에서 인증은 Kerberos에서, 권한 인증은 Ranger에서 담당합니다. 여기에 다음과 같은 모듈을 제공해 COS의 Ranger 권한 솔루션을 지원합니다.
 
