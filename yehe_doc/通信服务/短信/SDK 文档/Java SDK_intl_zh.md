@@ -1,4 +1,3 @@
-
 SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/34689)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
 >!
 >- 发送短信相关接口
@@ -11,12 +10,12 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 ## 前提条件
 
 - 已开通短信服务，具体操作请参见 [国内短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
-- 如需发送国内短信，需要先 购买国内短信套餐包。
+- 如需发送国内短信，需要先购买国内短信套餐包。
 - 已准备依赖环境：JDK 7 及以上版本。
 - 已在访问管理控制台 >【[API密钥管理](https://console.cloud.tencent.com/cam/capi)】页面获取 SecretID 和 SecretKey。
  - SecretID 用于标识 API 调用者的身份。
  - SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥，**SecretKey 需妥善保管，避免泄露**。
-- 已获取调用地址（endpoint），短信的调用地址为`sms.tencentcloudapi.com`。
+- 短信的调用地址为`sms.tencentcloudapi.com`。
 
 ## 相关资料
 - 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689)。
@@ -30,7 +29,7 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 1. 访问 [Maven 官网](https://maven.apache.org/) 下载对应系统 Maven 安装包进行安装。
 2. 添加 Maven 依赖项，只需在 Maven pom.xml 添加以下依赖项即可：
  >!版本号仅为示例，请在 [Maven 仓库](https://search.maven.org/search?q=tencentcloud-sdk-java) 获取最新的版本号并替换。
- >
+ 
 <pre><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.tencentcloudapi<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>tencentcloud-sdk-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
@@ -82,7 +81,8 @@ public class AddSmsTemplate
              * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
              * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
              * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi*/
+             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // 实例化一个 http 选项，可选，无特殊需求时可以跳过
@@ -125,23 +125,23 @@ public class AddSmsTemplate
 
             /* 模板名称*/
             String templatename = "腾讯云";
-            req.templateName(templatename);
+            req.setTemplateName(templatename);
 
             /* 模板内容 */
             String templatecontent	 = "{1}为您的登录验证码，请于{2}分钟内填写，如非本人操作，请忽略本短信。";
-            req.templateContent	(templatecontent);
+            req.setTemplateContent(templatecontent);
 
             /* 短信类型：0表示普通短信, 1表示营销短信 */
-            Long smstype = 0;
-            req.smsType(smstype);
+            long smstype = 0;
+            req.setSmsType(smstype);
 
             /* 是否国际/港澳台短信：0：表示国内短信，1：表示国际/港澳台短信。 */
-            Long international = 0;
-            req.international(session);
+            long international = 0;
+            req.setInternational(international);
 
             /* 模板备注：例如申请原因，使用场景等 */
             String remark = "xxx";
-            req.remark(remark);
+            req.setRemark(remark);
 
             /* 通过 client 对象调用 AddSmsTemplate 方法发起请求。注意请求方法名与请求对象是对应的
              * 返回的 res 是一个 AddSmsTemplateResponse 类的实例，与请求对象对应 */
@@ -193,7 +193,8 @@ public class SendSms
              * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
              * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
              * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi*/
+             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // 实例化一个 http 选项，可选，无特殊需求时可以跳过
@@ -316,7 +317,8 @@ public class PullSmsSendStatus {
              * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
              * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
              * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // 实例化一个 http 选项，可选，无特殊需求时可以跳过。
@@ -383,7 +385,7 @@ public class PullSmsSendStatus {
 <span id="统计短信发送数据"></span>
 ### 统计短信发送数据
 
-```
+```java
 import com.tencentcloudapi.common.Credential;
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;
 
@@ -410,7 +412,8 @@ public class SendStatusStatistics {
              * 实例化一个认证对象，入参需要传入腾讯云账户密钥对 secretId 和 secretKey
              * 本示例采用从环境变量读取的方式，需要预先在环境变量中设置这两个值
              * 您也可以直接在代码中写入密钥对，但需谨防泄露，不要将代码复制、上传或者分享给他人
-             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi */
+             * CAM 密钥查询：https://console.cloud.tencent.com/cam/capi 
+             */
             Credential cred = new Credential("secretId", "secretKey");
 
             // 实例化一个 http 选项，可选，无特殊需求时可以跳过
@@ -464,11 +467,11 @@ public class SendStatusStatistics {
             Long offset = 0L;
             req.setOffset(offset);
             /* 开始时间，yyyymmddhh 需要拉取的起始时间，精确到小时 */
-            String startdatetime = "2019071100";
+            long startdatetime = 2019071100;
             req.setStartDateTime(startdatetime);
             /* 结束时间，yyyymmddhh 需要拉取的截止时间，精确到小时
              * 注：EndDataTime 必须大于 StartDateTime */
-            String enddatatime = "2019071123"
+            long enddatatime = 2019071123;
             req.setEndDataTime(enddatatime);
 
             /* 通过 client 对象调用 SendStatusStatistics 方法发起请求。注意请求方法名与请求对象是对应的
@@ -476,7 +479,7 @@ public class SendStatusStatistics {
             SendStatusStatisticsResponse res = client.SendStatusStatisticsStatus(req);
 
             // 输出 JSON 格式的字符串回包
-            System.out.println(SendStatusStatisticsStatusResponse.toJsonString(res));
+            System.out.println(SendStatusStatisticsResponse.toJsonString(res));
 
         } catch (TencentCloudSDKException e) {
             e.printStackTrace();
