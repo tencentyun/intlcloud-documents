@@ -1,6 +1,6 @@
 
 
-You can purchase Tencent Cloud services only if your account has sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to your account being in arrears, use "online payment" or "bank transfer" to top-up your account in a timely manner.
+You can purchase Tencent Cloud services only if your account has sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to overdue payment, use "online payment" or "bank transfer" to pay the past due charges in a timely manner.
 
 To ensure data security, only creators and collaborators authorized with financial permissions can enter the "Payment" page.
 
