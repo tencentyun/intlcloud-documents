@@ -11,4 +11,4 @@ An elastic cluster has been created and is in the Running state. For more inform
  - To manage a namespace, see [Namespace](https://intl.cloud.tencent.com/document/product/457/30660).
  - To manage Horizontal Pod Autoscaler (HPA), see [HPA](https://intl.cloud.tencent.com/document/product/457/32424) and [HPA Metrics](https://intl.cloud.tencent.com/document/product/457/34046).
  - To manage configuration resources, see [ConfigMap Management](https://intl.cloud.tencent.com/document/product/457/30675) and [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
- - To manage storage resources, see [Volume Management](https://intl.cloud.tencent.com/document/product/457/30678), [PV and PVC Management](https://intl.cloud.tencent.com/document/product/457/30679), and [StorageClass Management](https://intl.cloud.tencent.com/document/product/457/30680).
+ - To manage storage resources, see [Storage Management Overview](https://intl.cloud.tencent.com/document/product/457/37769).
