@@ -131,7 +131,7 @@ async function createServer() {
 module.exports = createServer
 ```
 
-### Custom monitoring
+## Custom monitoring
 
 When you deploy the Next.js application, if you don't specify the `role` in `serverless.yml`, the system will try to bind `QCS_SCFExcuteRole` by default and enable custom monitoring to help you collect the statistics of application metrics. For projects with custom entry files, routes except those with `/_next` and `/static` will be reported by default.
 
