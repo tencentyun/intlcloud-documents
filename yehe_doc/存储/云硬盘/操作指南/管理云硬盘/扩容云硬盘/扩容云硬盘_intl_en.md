@@ -32,15 +32,15 @@ If the cloud disk works as a system disk, you can expand it using the following 
 2. Select the system disk to be expanded in the pop-up window, and click **Next**.
 3. Select a new capacity (it must be greater than or equal to the current capacity) and click **Next**.
 4. Read the notes, select **Agree to a forced shutdown** and click **Adjust Now**, as shown below:
->! After the expansion is completed on the console, check the cloudinit configuration for [Linux instances](#confirmLinuxConfig) or [Windows instances](#confirmwindowsConfig) depending on the operating system. Then extend partitions and file systems as needed.
->
+5. After the expansion is completed on the console, check the cloudinit configuration for [Linux instances](#confirmLinuxConfig) or [Windows instances](#confirmwindowsConfig) depending on the operating system. Then extend partitions and file systems as needed.
+
 
 ### Expanding system disks by reinstalling the system
 You can also expand the system disk by [reinstalling the system](https://intl.cloud.tencent.com/document/product/213/4933).
 
 
 ## Relevant Operations
-[](id:confirmLinuxConfig)
+<span id="confirmLinuxConfig"></span>
 ### Checking the cloudinit configuration for Linux instances
 After the system disk is expanded, [log in to the Linux instance](https://intl.cloud.tencent.com/document/product/213/5436) and check whether the `/etc/cloud/cloud.cfg` file contains the `growpart` and `resizefs` configuration items.
  - If yes, ignore other operations.
@@ -48,7 +48,7 @@ After the system disk is expanded, [log in to the Linux instance](https://intl.c
     - **growpart**: expands the partition to the disk size.
     - **resizefs**: expands or adjusts the partition file systems to the partition size.
  - If no, assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Linux)](https://intl.cloud.tencent.com/document/product/362/31602).
-[](id:confirmwindowsConfig)
+<span id="confirmwindowsConfig"></span>
 ### Checking the cloudinit configuration for Windows instances
 After the system disk is expanded, [log in to the Windows instance](https://intl.cloud.tencent.com/zh/document/product/213/5435) and check whether the `ExtendVolumesPlugin` configuration item under `plugin` exists in `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - If yes, ignore other operations.
