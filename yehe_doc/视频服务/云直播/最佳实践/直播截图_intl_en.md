@@ -1,22 +1,22 @@
 
 
 
-The LVB screencapturing feature takes screenshots of a real-time live stream at regular intervals and generates images. You can get the screenshot information through the callback notification. These screenshots have various uses, such as porn detection and thumbnails.
+The CSS screencapturing feature takes screenshots of a real-time live stream at regular intervals and generates images. You can get the screenshot information through the callback notification. These screenshots have various uses, such as porn detection and thumbnails.
 
-## LVB Screencapturing Process
+## CSS Screencapturing Process
 ![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
 
 Overall process:
-1. Configure the LVB screencapturing feature in the console or through TencentCloud API.
-- Start an LVB push. 
+1. Configure the CSS screencapturing feature in the console or through TencentCloud API.
+- Start an CSS push. 
 - The screencapturing service generates screenshot data according to the configuration and stores it in COS.
 - Information about the generated screenshot is returned in a callback.
 
-## LVB Screencapturing Configuration
+## CSS Screencapturing Configuration
 
 ### Screencapturing configuration method
-- [LVB API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- **LVB Console** > **Feature Template** > **[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)**
+- [CSS API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
+- **CSS Console** > **Feature Template** > **[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)**
 
 ### Screencapturing interval configuration
 
@@ -47,10 +47,10 @@ The automatic swap of configured width and height is suitable for the following 
 
 - If W is set to be smaller than H, both W and H are greater than 0, and X is set to be greater than Y during the push, then the configured width is smaller than the height, but the push width is greater than the height.
 
-In this case, if a screenshot is directly taken, it will be distorted. In order to avoid the distortion, the backend of the LVB screencapturing service will automatically swap the values of W and H to ensure that the configured aspect ratio is consistent with that of the live stream.
+In this case, if a screenshot is directly taken, it will be distorted. In order to avoid the distortion, the backend of the CSS screencapturing service will automatically swap the values of W and H to ensure that the configured aspect ratio is consistent with that of the live stream.
 
 
-## Event Message Notification for LVB Screencapturing
+## Event Message Notification for CSS Screencapturing
 
 For event message notification configuration, please see [Event Message Notification](https://intl.cloud.tencent.com/document/product/267/31566). The screencapturing callback notification is sent to the pre-configured receiving server through the HTTP POST protocol in JSON format.
 
