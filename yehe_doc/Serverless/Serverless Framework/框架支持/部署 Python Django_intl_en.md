@@ -36,7 +36,6 @@ Paste the following configuration template into the file to implement basic proj
 #serverless.yml
 component: django
 name: djangoDemo
-org: orgDemo
 app: appDemo
 stage: dev
 
