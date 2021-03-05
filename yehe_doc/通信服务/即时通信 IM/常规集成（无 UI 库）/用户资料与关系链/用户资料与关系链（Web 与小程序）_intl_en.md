@@ -1,7 +1,9 @@
-## User Profiles
+## User Profile
 
-### Obtaining my personal profile
-This API is used for obtaining personal profiles. For more details, see [Profile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Profile.html).
+### Obtaining your personal profile
+This API is used to obtain your personal profile. For more information on the properties, see [Profile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Profile.html).
+
+> Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 
 **API name**
 
@@ -9,29 +11,32 @@ This API is used for obtaining personal profiles. For more details, see [Profile
 tim.getMyProfile()
 ```
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). Personal profiles can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain your personal profile from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
 let promise = tim.getMyProfile();
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Personal profile - Profile instance
+  console.log(imResponse.data); // Personal profile from the profile instance
 }).catch(function(imError) {
-  console.warn('getMyProfile error:', imError); // Information about failures to obtain the personal profile
+  console.warn('getMyProfile error:', imError); // Information on the failure in obtaining the personal profile.
 });
 ```
 
 
 
 ### Obtaining other users’ profiles
-This API obtains the standard profile and [custom profile](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) at the same time.
+This API is used to obtain standard profile fields and [Custom Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520).
 
-> If you have not configured custom profile fields or have configured custom profile fields but have not set their values, this API does not return custom profile information.
+>
+>- Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
+>- If you have not configured any custom profile fields or you have configured custom profile fields but have not set the values, this API will not return custom profile information.
+>- You may pull profiles of up to 100 users to avoid failure caused by a large amount of data returned. If the length of an array passed in is greater than 100, only the first 100 users will be queried and the rest are discarded.
 
 **API name**
 
@@ -39,36 +44,38 @@ This API obtains the standard profile and [custom profile](https://cloud.tencent
 tim.getUserProfile(options)
 ```
 
-**Request parameters**
+**Request Parameters**
 
-The `options` parameter is of the `Object` type. The attribute values that it contains are shown in the following table:
+The `options` parameter is of the `Object` type. It contains the following property values:
 
 | Name | Type | Description |
 | :----------- | :-------------- | :------------------------- |
-| `userIDList` | `Array<String>` | User account list of the array type |
+| `userIDList` | `Array<String>` | UserIDs. The value is of array type. |
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). The user profile array can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain other users’ profiles from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
 let promise = tim.getUserProfile({
-  userIDList: ['user1', 'user2'] // Note: even if you want to fetch one user’s profile, the list format still must be an array, for example, userIDList: ['user1'].
+  userIDList: ['user1', 'user2'] // Note: even if you retrieve only one user’s profile, the value must be of the array type, for example, userIDList: ['user1'].
 });
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Array that stores user profiles - [Profile]
+  console.log(imResponse.data); // The array that stores other users’ profiles - [Profile]
 }).catch(function(imError) {
-  console.warn('getUserProfile error:', imError); // Information about failure to obtain other users’ profiles
+  console.warn('getUserProfile error:', imError); // Information on the failure in obtaining other users’ profiles.
 });
 ```
 
 
 
-### Updating personal profiles
+### Updating your personal profile
+
+> Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 
 **API name**
 
@@ -76,56 +83,56 @@ promise.then(function(imResponse) {
 tim.updateMyProfile(options)
 ```
 
-**Request parameters**
+**Request Parameters**
 
-The `options` parameter is of the `Object` type. The attribute values that it contains are shown in the following table:
+The `options` parameter is of the `Object` type. It contains the following property values:
 
 | Name | Type | Description |
 | :---------------- | :------- | :----------------------------------------------------------- |
-| `nick` | `String` | Nickname |
-| `avatar` | `String` | Profile photo address |
-| `gender` | `String` | Gender <li>TIM.TYPES.GENDER_UNKNOWN: no gender <li>TIM.TYPES.GENDER_FEMALE: female </li><li>TIM.TYPES.GENDER_MALE: male</li> |
-| `selfSignature` | `String` | Personal signature |
-| `allowType` | `String` | Indicates whether the user requires approval for friend requests.<li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY: the user allows others to directly add him/her as a friend. </li><li>TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM: approval is required. </li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY: friend requests are rejected.</li> |
-| `birthday` | `Number` | Birthday, whose recommended format is similar to: 20000101 |
-| `location` | `String` | Location. Recommended usage: the app locally defines a set of mappings between numbers and location names, and the backend actually stores four numbers of the uint32_t type. <li>The first uint32_t number indicates the country.</li><li>The second uint32_t number indicates the province or state.</li><li>The third uint32_t number indicates the city.</li><li>The fourth uint32_t number indicates the county. |
-| `language` | `Number` | Language |
-| `messageSettings` | `Number` | Message setting. 0: receive messages. 1: do not receive messages. |
-| `adminForbidType` | `String` | Indicates whether the admin forbids friend requests. <li>TIM.TYPES.FORBID_TYPE_NONE: friend requests are allowed. This is the default value.</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT: the user is forbidden to initiate friend requests.</li> |
-| `level` | `Number` | Level. We recommend that you use tiered levels to store the level information of multiple roles. |
-| `role` | `Number` | Role. We recommend that you use tiered roles to store the information of multiple roles. |
-| `profileCustomField` | `Array<Object>` | A collection of [custom profile](https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) key-value pairs. You can use it based on your business needs. |
+| `nick` | `String` | Nickname. |
+| `avatar` | `String` | URL of the avatar . |
+| `gender` | `String` | Gender. Valid values:<li>TIM.TYPES.GENDER_UNKNOWN: unspecified<li>TIM.TYPES.GENDER_FEMALE: female</li><li>TIM.TYPES.GENDER_MALE: male</li> |
+| `selfSignature` | `String` | Personal signature. |
+| `allowType` | `String` | Specifies whether a friending request sent to the user must be verified.<li>TIM.TYPES.ALLOW_TYPE_ALLOW_ANY: the friending request is automatically accepted without verification. </li><li> TIM.TYPES.ALLOW_TYPE_NEED_CONFIRM: the friending request must be verified. </li><li>TIM.TYPES.ALLOW_TYPE_DENY_ANY: the friending request is rejected. </li> |
+| `birthday` | `Number` | Birthday. It is recommended that the value is in the format of yyyymmdd, for example, 20000101. |
+| `location` | `String` | Location. It is recommended that the app locally define a set of mappings between digits and location names, and the backend actually save four digits of the uint32_t type. <li>The first uint32_t indicates the country.</li><li>The second uint32_t indicates the province.</li><li>The third uint32_t indicates the city.</li><li>The fourth uint32_t indicates the county. |
+| `language` | `Number` | Language. |
+| `messageSettings` | `Number` | Message settings of the user. 0: receive messages. 1: do not receive messages. |
+| `adminForbidType` | `String` | Specifies whether the admin forbids the user from friending other users. <li>TIM.TYPES.FORBID_TYPE_NONE: the friend can friend other users. This is the default value.</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT: the admin forbids the user from sending a friend request. </li> |
+| `level` | `Number` | Level. It is recommended that you divide the values into categories to save level information of multiple roles. |
+| `role` | `Number` | Role. It is recommended that you divide the values into categories to save information of multiple roles. |
+| `profileCustomField` | `Array<Object>` | [Custom profile fields](https://intl.cloud.tencent.com/document/product/1047/33520). The value is a set of key-value pair. You can use this field based on your business needs. |
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). Users’ new profiles can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain other users’ new profiles from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
-// Modify my personal standard profile
+// Modify your personal standard profile.
 let promise = tim.updateMyProfile({
-  nick: 'My nickname',
+  nick: 'My profile',
   avatar: 'http(s)://url/to/image.jpg',
   gender: TIM.TYPES.GENDER_MALE,
   selfSignature: 'My personal signature',
   allowType: TIM.TYPES.ALLOW_TYPE_ALLOW_ANY
 });
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Updated the profile successfully
+  console.log(imResponse.data); // The profile is updated.
 }).catch(function(imError) {
-  console.warn('updateMyProfile error:', imError); // Information about failures to update the profile
+  console.warn('updateMyProfile error:', imError); // Information on the failure in updating the personal profile.
 });
 ```
 
 ```js
-// Modify my personal custom profile
-// Custom profile fields need to be configured in the console in advance. For details, visit: https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5.
+// Modify my personal custom profile.
+// Custom profile fields must be configured on the IM console in advance. For more information, see https://intl.cloud.tencent.com/document/product/1047/33520.
 let promise = tim.updateMyProfile({
-  // You must have already applied for the custom profile field Tag_Profile_Custom_Test1 in the IM console by navigating to **App Configuration** > **Feature Configuration**.
-  // Note: even if there is only one custom data field, the format of profileCustomField still must be an array.
+  // Ensure that you have applied for the custom profile field Tag_Profile_Custom_Test1 in the IM console by clicking the desired app card and choosing **Feature Configuration** > **User Custom Field**.
+  // Note: even if only this one custom data field exists, the format of profileCustomField must be of array type.
   profileCustomField: [
     {
       key: 'Tag_Profile_Custom_Test1',
@@ -134,17 +141,17 @@ let promise = tim.updateMyProfile({
   ]
 });
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Updated the profile successfully
+  console.log(imResponse.data); // The profile is updated.
 }).catch(function(imError) {
-  console.warn('updateMyProfile error:', imError); // Information about failures to update the profile
+  console.warn('updateMyProfile error:', imError); // Information on the failure in updating the personal profile.
 });
 ```
 
 ```js
-// Modify my personal standard profile and custom profile
+// Modify my personal standard profile and custom profile.
 let promise = tim.updateMyProfile({
-  nick: 'My nickname',
-  // You must have already applied for the custom profile fields Tag_Profile_Custom_Test1 and Tag_Profile_Custom_Test2 in the IM console by navigating to **App Configuration** > **Feature Configuration**.
+  nick: 'My profile',
+  // Ensure that you have applied for the custom profile fields Tag_Profile_Custom_Test1 and Tag_Profile_Custom_Test2 in the IM console by clicking the desired app card and choosing **Feature Configuration** > **User Custom Field**.
   profileCustomField: [
     {
       key: 'Tag_Profile_Custom_Test1',
@@ -157,13 +164,13 @@ let promise = tim.updateMyProfile({
   ]
 });
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Updated the profile successfully
+  console.log(imResponse.data); // The profile is updated.
 }).catch(function(imError) {
-  console.warn('updateMyProfile error:', imError); // Information about failures to update the profile
+  console.warn('updateMyProfile error:', imError); // Information on the failure in updating the personal profile.
 });
 ```
 
-## Blacklist
+## Blacklists
 
 ### Obtaining my blacklist
 
@@ -173,36 +180,37 @@ promise.then(function(imResponse) {
 tim.getBlacklist()
 ```
 
-**Request parameters**
+**Request Parameters**
 
-The `options` parameter is of the `Object` type. The attribute values that it contains are as follows:
+The `options` parameter is of the `Object` type. It contains the following property values:
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). The blacklist can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
 let promise = tim.getBlacklist();
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // My blacklist, which is an array of users’ userIDs - [userID]
+  console.log(imResponse.data); // My blacklist. The value is an array that contains userIDs - [userID].
 }).catch(function(imError) {
-  console.warn('getBlacklist error:', imError); // Information about failures to obtain the blacklist
+  console.warn('getBlacklist error:', imError); // Information on the failure in obtaining the blacklist.
 });
 ```
 
 
 
-### Adding users to the blacklist
+### Adding a user to the blacklist
 
-This API is used for adding users to the blacklist. By adding users to the blacklist, you can block all messages sent by these users. Therefore, this API can block the messages of specified users.
+This API is used to add a user to the blacklist. By adding a user to the blacklist, you can block all the messages sent by the user. Therefore, this API can be used to block the messages of a specified user.
 
-- If user A and user B are friends, the two-way friend relationship is terminated when either user A or B is added to the blacklist of the other.
-- If a blacklist relationship exists between user A and user B, conversations cannot be initiated between them.
-- If a blacklist relationship exists between user A and user B, neither user can initiate a friend request to the other.
+- If user A and user B are friends, the two-way friend relationship is terminated when either A or B is blacklisted by the other user.
+- If user A and user B are in a blacklist relationship, neither user A nor user B can send a friend request to the other user.
+- If both user A and user B have blacklisted each other, user A and user B cannot set up a chat session.
+- If user A has blacklisted user A but user B has not blacklisted user A, user A can send a message to user B, but user B cannot send a message to user A.
 
 **API name**
 
@@ -210,36 +218,36 @@ This API is used for adding users to the blacklist. By adding users to the black
 tim.addToBlacklist(options)
 ```
 
-**Request parameters**
+**Request Parameters**
 
-The `options` parameter is of the `Object` type. The attribute values that it contains are as follows:
+The `options` parameter is of the `Object` type. It contains the following property values:
 
 | Name | Type | Description |
 | :----------- | :-------------- | :----------------------------------------------------------- |
-| `userIDList` | `Array<String>` | List of userIDs to be added to the blacklist. The number of userIDs in a single request cannot exceed 1,000. |
+| `userIDList` | `Array<String>` | All the userIDs to be added to the blacklist. The number of userIDs in a single request cannot exceed 1,000. |
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). The blacklist can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
-let promise = tim.addToBlacklist({userIDList: ['user1', 'user2']}); // Note: even if you add one account to the blacklist, the format of the user list still must be an array, for example: userIDList: ['user1'].
+let promise = tim.addToBlacklist({userIDList: ['user1', 'user2']}); // Note: even if you add only one userID to the blacklist, the value must be of array type, for example, userIDList: ['user1'].
 promise.then(function(imResponse) {
-  console.log(imResponse.data); // Information about accounts successfully added to the blacklist, which is an array of users’ userIDs - [userID]
+  console.log(imResponse.data); // Information on the userIDs that are added to the blacklist. The value must be an array that contains userIDs - [userID].
 }).catch(function(imError) {
-  console.warn('addToBlacklist error:', imError); // Information about failures to add users to the blacklist
+  console.warn('addToBlacklist error:', imError); // Information on the failure in adding userIDs to the blacklist.
 });
 ```
 
 
 
-### Removing users from the blacklist
+### Removing a user from the blacklist
 
-This API is used for removing users from the blacklist. After removing a user from the blacklist, you can receive all messages sent by the user.
+This API is used to delete a user from the blacklist. After deleting the user from the blacklist, you can receive all the messages sent by the user.
 
 **API name**
 
@@ -247,27 +255,27 @@ This API is used for removing users from the blacklist. After removing a user fr
 tim.removeFromBlacklist(options)
 ```
 
-**Request parameters**
+**Request Parameters**
 
-The `options` parameter is of the `Object` type. The attribute values that it contains are shown in the following table:
+The `options` parameter is of the `Object` type. It contains the following property values:
 
 | Name | Type | Description |
 | :----------- | :-------------- | :----------------------------------------------------------- |
-| `userIDList` | `Array<String>` | List of userIDs to be removed from the blacklist. The number of userIDs in a single request cannot exceed 1,000. |
+| `userIDList` | `Array<String>` | All the userIDs to be deleted from the blacklist. The number of userIDs in a single request cannot exceed 1000. |
 
-**Returned value**
+**Returned values**
 
-This API returns `Promise` objects:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). The list of accounts successfully removed from the blacklist can be obtained from `IMResponse.data`.
+This API returns a `Promise` object. The callback functions are as follows:
+- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the userIDs that are deleted from the blacklist from `IMResponse.data`.
 - The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
 
-**Example**
+**Sample**
 
 ```js
-let promise = tim.removeFromBlacklist({userIDList: ['user1', 'user2']}); // Note: even if you remove one account from the blacklist, the format of the user list still must be an array, for example: userIDList: ['user1'].
+let promise = tim.removeFromBlacklist({userIDList: ['user1', 'user2']}); // Note: even if you delete only one userID from the blacklist, the value must be of array type, for example, userIDList: ['user1'].
 result.then(function(imResponse) {
-  console.log(imResponse.data); // List of accounts successfully removed from the blacklist, which is an array of users’ userIDs - [userID]
+  console.log(imResponse.data); // All userIDs that are deleted from the blacklist. The value is an array that contains the userIDs - [userID].
 }).catch(function(imError) {
-  console.warn('removeFromBlacklist error:', imError); // Information about failures to remove users from the blacklist
+  console.warn('removeFromBlacklist error:', imError); // Information on the failure in deleting users from the blacklist.
 });
 ```
