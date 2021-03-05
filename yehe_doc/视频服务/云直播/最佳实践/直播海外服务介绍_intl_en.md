@@ -1,12 +1,12 @@
 With the growing maturity of audio-visual technologies, the live broadcasting industry is seeing explosive growth around the globe. Chinese internet companies are leveraging on the prior globalization experience of service sector companies and entering the global market en masse. Leading platforms are internationalizing their products to increase competitiveness, while smaller platforms are seeking out new avenues after finding it hard to survive in the aggressive domestic arena. Meanwhile, the battle overseas is no less intense. The 3 giants, YouTube, Periscope and Facebook, may have conquered more than their fair share of the market, but they did leave a significant portion untapped for small and medium platforms. Tencent Cloud continues to strengthen global live broadcasting resource reserves and optimize live broadcast acceleration performance with the goal of helping live broadcasting platforms win international markets.
 ![](https://main.qcloudimg.com/raw/220512d9f3ec1cdaa7b2f04c7b1e6150.png) 
 
-In addition to push and playback, a complete live broadcasting service should also include authentication, transcoding, screencapturing, recording, callback, porn detection, DRM, and other features. The figure below shows the basic feature modules of Tencent Cloud's Global LVB solution.  
+In addition to push and playback, a complete live broadcasting service should also include authentication, transcoding, screencapturing, recording, callback, porn detection, DRM, and other features. The figure below shows the basic feature modules of Tencent Cloud's Global CSS solution.  
 
 ![](https://main.qcloudimg.com/raw/057d12ecc304f5e64918536ff2871035.png)
 
 
-The basic features of global live broadcasting are generally the same as those of domestic live broadcasting. However, there are more challenges overseas mainly due to the wider geographical area, more complicated network environments, and lower cross-border network quality. In order to reduce the latency and lag and improve service stability and reliability, Tencent Cloud has optimized LVB’s **architecture, network, security, and resources** for global live broadcasting scenarios.
+The basic features of global live broadcasting are generally the same as those of domestic live broadcasting. However, there are more challenges overseas mainly due to the wider geographical area, more complicated network environments, and lower cross-border network quality. In order to reduce the latency and lag and improve service stability and reliability, Tencent Cloud has optimized CSS’s **architecture, network, security, and resources** for global live broadcasting scenarios.
 
 <span id="deploy"></span>
 ### Deployment of Multiple Central Nodes
@@ -40,11 +40,11 @@ In addition to technical architectures and solutions, resource reserves are also
 
 <span id="open"></span>
 ### How to Activate
-The Global LVB service can be directly activated in the [LVB Console](https://console.cloud.tencent.com/live)
-- If you don't have a Tencent Cloud account yet, you need to sign up first as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) and then [apply for activation of the LVB service](https://intl.cloud.tencent.com/document/product/267/30410).
-- If you already have a Tencent Cloud account and have activated LVB, you can proceed directly to the next step.
+The Global CSS service can be directly activated in the [CSS Console](https://console.cloud.tencent.com/live)
+- If you don't have a Tencent Cloud account yet, you need to sign up first as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) and then [apply for activation of the CSS service](https://intl.cloud.tencent.com/document/product/267/30410).
+- If you already have a Tencent Cloud account and have activated CSS, you can proceed directly to the next step.
 
-Go to the LVB Console, select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar, and click **Add Domain**.
+Go to the CSS Console, select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar, and click **Add Domain**.
 ![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
 
 In the pop-up window, select the type as **Playback Domain**, select the corresponding **Acceleration Region**, and enter the **Domain Name** that needs to be accelerated.
