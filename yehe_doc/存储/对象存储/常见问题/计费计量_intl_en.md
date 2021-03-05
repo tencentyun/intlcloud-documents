@@ -67,4 +67,4 @@ You can view your COS bills through the Billing Center in the console. For more 
 
 ### If my account has overdue payment and COS service is suspended, can I still access and download files via the COS console?
 
-If so, you cannot read or write any data to COS. All you can do using the console is top up your account. For more information, see [Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
+If so, you cannot read or write any data to COS. All you can do using the console is pay the past due charges. For more information, see [Overdue Payment](https://intl.cloud.tencent.com/document/product/436/10044).
