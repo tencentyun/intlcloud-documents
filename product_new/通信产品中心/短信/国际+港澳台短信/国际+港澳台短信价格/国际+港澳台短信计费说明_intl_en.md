@@ -40,6 +40,6 @@ Global SMS is daily pay-as-you-go by message length on a per message basis. **Ge
 ## Billing Details
 Before the 3rd day of each month, Tencent Cloud will provide you with a detailed global SMS bill for last month. You can click **Details** for the SMS service in Tencent Cloud Console > **Billing Center** > **[Transactions](https://console.cloud.tencent.com/expense/transactions)** to view the billing details. You can also export reports for financial reporting and bookkeeping.
 
-## Arrears
-Global SMS is daily pay-as-you-go. The payment for a day is deducted at 8:00 am the next day. If payment fails due to insufficient balance, you will receive an arrears notification via SMS. If you fail to top up your account within 12 hours, the service will be suspended.
-The service will resume when you have sufficient balance in your Tencent Cloud account. You shall be responsible for any consequences caused by service suspension due to arrears.
+## Payment Overdue
+Global SMS is daily pay-as-you-go. The payment for a day is deducted at 8:00 am the next day. If payment fails due to insufficient balance, you will receive a payment overdue notification via SMS. If you fail to pay the past due charges within 12 hours, the service will be suspended.
+The service will resume when you have sufficient balance in your Tencent Cloud account. You shall be responsible for any consequences caused by service suspension due to overdue payment.
