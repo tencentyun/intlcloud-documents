@@ -2,8 +2,8 @@ The recording feature is disabled for LVB push by default. This document describ
 
 [](id:limit)
 ## Use Limits
-- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to account arrears. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
-- After enabling the recording feature, please make sure that your VOD service is in normal status; if it has not been activated or has been suspended due to account arrears, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
+- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to overdue payment. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
+- After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 -  The template configuration will take effect in about 5–10 minutes. 
 -  After the template is bound successfully, the recording feature will be enabled for push addresses under the specified push domain name.
 - One domain name can be bound to only one recording template. After binding, all streams under it will be recorded according to this template.
