@@ -2,7 +2,7 @@ You can set referer blocklist/allowlist and rules to block/allow playback reques
 
 ## How to Configure
 
-Referer URL supports HTTP protocol. LVB uses the referer field in an HTTP request to identify the source and verify the request, and then determine whether to accept or reject the request.
+Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP request to identify the source and verify the request, and then determine whether to accept or reject the request.
 
 ## Notes
 - Referer information is included in HTTP requests. After you enable referer configuration, live streams cannot be played back using RTMP, and the configuration is invalid for LEB streams as they do not verify referer configuration. If you are to configure the referer information, the FLV or HLS protocol is recommended for playback.
@@ -10,7 +10,7 @@ Referer URL supports HTTP protocol. LVB uses the referer field in an HTTP reques
 
 ## Prerequisites
 
-- You have activated LVB service and logged in to the [LVB console](https://console.cloud.tencent.com/live/livestat).
+- You have activated CSS service and logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat).
 - You have added a [playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 
