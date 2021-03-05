@@ -1,4 +1,4 @@
-LVB playback is output to the original bitrate by default. If you want to limit or set the playback bitrate, you can bind the playback domain name to a transcoding template. This document describes how to bind/unbind a playback domain name to/from a transcoding template.
+CSS playback is output to the original bitrate by default. If you want to limit or set the playback bitrate, you can bind the playback domain name to a transcoding template. This document describes how to bind/unbind a playback domain name to/from a transcoding template.
 
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
@@ -9,7 +9,7 @@ LVB playback is output to the original bitrate by default. If you want to limit 
 
 
 ## Prerequisites
-- You have logged in to the [LVB console](https://console.cloud.tencent.com/live) and added a [playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - You have created a [transcoding template](https://intl.cloud.tencent.com/document/product/267/31071).
 
 
