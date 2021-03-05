@@ -1,9 +1,9 @@
-LVB supports screencapture and porn detection. After you configure a screencapture and porn detection template in the console and bind it to a push domain name, LVB takes screenshots of the live stream and stores them or porn detection data into Cloud Object Storage (COS). If the push domain name has been bound to a callback template, Tencent Cloud will send a request to your server when a callback event is triggered during live streaming, and your server is responsible for the response. After authentication, a JSON packet containing the porn detection callback information can be obtained.
+CSS supports screencapture and porn detection. After you configure a screencapture and porn detection template in the console and bind it to a push domain name, CSS takes screenshots of the live stream and stores them or porn detection data into Cloud Object Storage (COS). If the push domain name has been bound to a callback template, Tencent Cloud will send a request to your server when a callback event is triggered during live streaming, and your server is responsible for the response. After authentication, a JSON packet containing the porn detection callback information can be obtained.
 This document describes how to create, modify, bind, unbind, and delete a screencapture and porn detection template in the console.
 
 You can create a screencapture and porn detection template in the following ways:
 
-- Create a template in the LVB console. For more information, please see [Creating Screencapture and Porn Detection Template](#Screenshot).
+- Create a template in the CSS console. For more information, please see [Creating Screencapture and Porn Detection Template](#Screenshot).
 - Create a template with APIs. For specific parameters and samples, please see [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834).
 
 
@@ -13,7 +13,7 @@ You can create a screencapture and porn detection template in the following ways
 - The screencapture feature can be enabled alone, but the porn detection feature can be enabled only after the screencapture feature is enabled.
 - Fees will be charged for screencapture and porn detection features. The former charges 0.0176 USD per thousand screenshots; the latter charges 0.2294 USD per thousand screenshots.
 - The generated screenshots are stored in your COS bucket and will incur COS storage fee. For more information, please see [COS Pricing](https://intl.cloud.tencent.com/document/product/436/6239).
-- To enable the screencapture feature, you must first grant LVB the permission to write to your COS bucket. For more information, please see [How to Authorize LVB to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
+- To enable the screencapture feature, you must first grant CSS the permission to write to your COS bucket. For more information, please see [How to Authorize CSS to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
 - After a template is created, you can bind it to a push domain name. For more information, please see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063). The binding will take effect in about 5–10 minutes. 
 - The screencapture and porn detection templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you bound a template to a specified stream through the screencapture and porn detection APIs and want to unbind it, you need to call the [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833) API.
 - Binding, unbinding, and modifying a template affect only new live streams after the update but not ongoing ones. To make the new rule take effect for ongoing live streams, you need to interrupt them and push them again.
@@ -22,15 +22,15 @@ You can create a screencapture and porn detection template in the following ways
 
 ## Prerequisites
 
-- You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
-- You have created a COS bucket and authorized LVB to store screenshots in the COS bucket. For more information, please see [How to Authorize LVB to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
+- You have activated the CSS service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have created a COS bucket and authorized CSS to store screenshots in the COS bucket. For more information, please see [How to Authorize CSS to Store Screenshots in a COS Bucket](https://intl.cloud.tencent.com/document/product/267/33384).
 
 
 
 <span id="Screenshot"></span>
 ## Creating Screencapture and Porn Detection Template
 
-1. Log in to the LVB console and select **Feature Template** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
+1. Log in to the CSS console and select **Feature Template** > **[CSS Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh)**.
 2. Click **+**, enter the configuration information, and click **Save**.
 ![](https://main.qcloudimg.com/raw/e17b92da94af4b583dab0273adb89447.jpg)
 <table>
@@ -86,7 +86,7 @@ You can create a screencapture and porn detection template in the following ways
 <span id="conect"></span>
 ## Binding Domain Name
 
-1. Log in to the LVB console and select **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Log in to the CSS console and select **Feature Configuration** > **[CSS Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
 2. Enter the domain name binding page in either of the following ways:
 	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	- **Bind a domain name after creating a screencapture and porn detection template:** after successfully [creating a screencapture and porn detection template](#Screenshot), click **Bind Domain Name** in the pop-up.
@@ -97,7 +97,7 @@ You can create a screencapture and porn detection template in the following ways
 <span id="unite"></span>
 ## Unbinding
 
-1. Log in to the LVB console and select **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Log in to the CSS console and select **Feature Configuration** > **[CSS Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
 2. Select domain names bound to the screencapture and porn detection template and click **Unbind**.
 3. Confirm whether to unbind the domain name and click **OK** to unbind it.
 
@@ -105,7 +105,7 @@ You can create a screencapture and porn detection template in the following ways
 <span id="change"></span>
 ## Modifying Template
 
-1. Go to **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Go to **Feature Configuration** > **[CSS Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
 2. Select the target screencapture and porn detection template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
@@ -117,7 +117,7 @@ You can create a screencapture and porn detection template in the following ways
 
 If a template has been bound to a domain name, you need to unbind the template before deleting it. For detailed directions, please see [Unbinding Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063#.E8.A7.A3.E7.BB.91.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E6.A8.A1.E6.9D.BF).
 
-1. Go to **Feature Configuration** > **[LVB Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
+1. Go to **Feature Configuration** > **[CSS Screencapturing & Porn Detection](https://console.cloud.tencent.com/live/config/jtjh).
 2. Find the target screencapture and porn detection template that you have created and click the deletion icon at the top.
 3. In the pop-up dialog box, click **OK** to confirm the deletion.
 
