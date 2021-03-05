@@ -2,7 +2,7 @@
 If your playback domain name is to be used for content delivery, acceleration, and playback in different regions, you need to switch its acceleration region by selecting a region in the region configuration.
 
 ## Prerequisites
-- You have logged in to the [LVB console](https://console.cloud.tencent.com/live).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - You have added a **playback domain name**.
 >?When adding a domain name or selecting a playback domain name, select the acceleration region for live content delivery (such as "Chinese Mainland") and click **OK**.
 >![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
