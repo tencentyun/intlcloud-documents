@@ -1,7 +1,7 @@
 ### Prerequisites
-- You have signed up for a Tencent Cloud account and activated the [LVB service](https://intl.cloud.tencent.com/product/LVB).
+- You have signed up for a Tencent Cloud account and activated the [CSS service](https://intl.cloud.tencent.com/product/CSS).
 - You have your own domain name.
-- You have added push/playback domain names in the **LVB Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and successfully configured the CNAME record. For detailed directions, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have added push/playback domain names in the **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and successfully configured the CNAME record. For detailed directions, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
 
 <span id="push"></span>
 ### Splicing Push URLs
@@ -9,9 +9,9 @@ During actual service use, if there are many live rooms, you will not be able to
 ![](https://main.qcloudimg.com/raw/679602c838e8dfd3b61acefebb221d13.jpg)
 
 - **Domain**
-Push domain name, which can be the default push domain name provided by Tencent Cloud LVB or your own push domain name with a successfully configured CNAME record.
+Push domain name, which can be the default push domain name provided by Tencent Cloud CSS or your own push domain name with a successfully configured CNAME record.
 - **AppName**
-LVB application name, which is `live` by default and customizable.
+CSS application name, which is `live` by default and customizable.
 - **StreamName (stream ID)**
 Custom stream name and unique ID of a live stream. We recommend you use a random numerical or alphanumerical string.
 - **Authentication key (optional)**
@@ -54,7 +54,7 @@ http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txT
 - **Domain**	
 	Playback domain name, which should be your own domain name with a successfully configured CNAME record.
 - **AppName**	
-  LVB application name used to identify the storage path of a live streaming media file. The LVB application name is `live` by default and customizable.
+  CSS application name used to identify the storage path of a live streaming media file. The CSS application name is `live` by default and customizable.
 - **StreamName (stream name)<span id="streamname"></span>**	
   Custom stream name and unique ID of a live stream. We recommend you use a random numerical or alphanumerical string.
 - **Authentication parameters (optional)**	
@@ -66,5 +66,5 @@ If playback authentication is enabled, the URL used for playback should contain 
 
 <span id="push_code"></span>
 ### Viewing Sample Push Codes
-Go to the **LVB Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, and click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address. For detailed directions, please see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+Go to the **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, and click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address. For detailed directions, please see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
 
