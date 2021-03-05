@@ -18,7 +18,7 @@ Suppose a sum of cost is newly incurred before the due date (10th of each month)
    For account B, the credit limit is 30 USD, the bill amount for August is 25 USD and its due date is September 10th. At 9:00 on September 5, the available credit is 0 USD and the outstanding amount is 30 USD. Suppose a Tencent Cloud service that costs 10 USD is purchased at this time point. Automatic repayment of 40 USD will be made as the available credit is less than 0 USD (credit control) and the deduction amount equals to the outstanding amount plus the newly incurred cost. As the outstanding amount has already been paid on September 5, no automatic repayment will be made on September 10.
 
 - **Self-service repayment via credit card or bank transfer**
-If your account is in arrears, you can make a payment on the Billing Center manually to avoid service suspension:
+If your account has overdue payment, you can make a payment on the Billing Center manually to avoid service suspension:
 
   A. Log in to Tencent Cloud Billing Center, click **Pay Now** on the **Account Info** page to pay off the outstanding amount if there is enough surplus amount in your account. You cannot make a payment this way if the outstanding amount is not less than 0 USD.
 
