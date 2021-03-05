@@ -2,7 +2,7 @@
 CSS provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but we do not recommend using it as the push domain name for your real business. This domain name cannot be deleted.
 
 ## Prerequisites
-1. You have activated the [CSS service](https://intl.cloud.tencent.com/zh/product/CSS).
+1. You have activated the [CSS service](https://intl.cloud.tencent.com/product/css).
 2. You have added a [domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 
