@@ -8,7 +8,7 @@
 **接口名**
 
 ```js
-tim.getMyProfile()
+tim.getMyProfile();
 ```
 
 **返回值**
@@ -31,16 +31,17 @@ promise.then(function(imResponse) {
 
 
 ### 获取其他用户资料
-此接口会同时获取标配资料和 [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5)。
+此接口会同时获取标配资料和 [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520)。
 
 >
-> v2.3.2版本开始支持自定义资料字段，使用前需要将 SDK 升级至v2.3.2或以上。
-> 如果您没有配置自定义资料字段，或者配置了自定义资料字段但未设置 value，此接口将不会返回自定义资料的内容。
+>- v2.3.2版本开始支持自定义资料字段，使用前需要将 SDK 升级至v2.3.2或以上。
+>- 如果您没有配置自定义资料字段，或者配置了自定义资料字段但未设置 value，此接口将不会返回自定义资料的内容。
+>- 每次拉取的用户数不超过100，避免因回包数据量太大导致回包失败。如果传入的数组长度大于100，则只取前100个用户进行查询，其余丢弃。
 
 **接口名**
 
 ```js
-tim.getUserProfile(options)
+tim.getUserProfile(options);
 ```
 
 **请求参数**
@@ -79,7 +80,7 @@ promise.then(function(imResponse) {
 **接口名**
 
 ```js
-tim.updateMyProfile(options)
+tim.updateMyProfile(options);
 ```
 
 **请求参数**
@@ -100,7 +101,7 @@ tim.updateMyProfile(options)
 | `adminForbidType` | `String` | 管理员禁止加好友标识：<li>TIM.TYPES.FORBID_TYPE_NONE 表示允许加好友，默认值</li><li>TIM.TYPES.FORBID_TYPE_SEND_OUT 表示禁止该用户发起加好友请求</li> |
 | `level`           | `Number` | 等级，建议拆分以保存多种角色的等级信息                        |
 | `role`            | `Number` | 角色，建议拆分以保存多种角色信息                              |
-| `profileCustomField` | `Array<Object>` | [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5) 键值对集合，可根据业务侧需要使用|
+| `profileCustomField` | `Array<Object>` | [自定义资料](https://intl.cloud.tencent.com/document/product/1047/33520) 键值对集合，可根据业务侧需要使用|
 
 **返回值**
 
@@ -128,7 +129,7 @@ promise.then(function(imResponse) {
 
 ```js
 // 修改个人自定义资料
-// 自定义资料字段需要预先在控制台配置，详细请参考：https://cloud.tencent.com/document/product/269/1500#.E8.87.AA.E5.AE.9A.E4.B9.89.E8.B5.84.E6.96.99.E5.AD.97.E6.AE.B5
+// 自定义资料字段需要预先在控制台配置，详细请参考：https://intl.cloud.tencent.com/document/product/1047/33520
 let promise = tim.updateMyProfile({
   // 这里要求您已在即时通信 IM 控制台>【应用配置】>【功能配置】 申请了自定义资料字段 Tag_Profile_Custom_Test1
   // 注意：即使只有一个自定义资料字段，profileCustomField 也需要用数组类型
@@ -176,7 +177,7 @@ promise.then(function(imResponse) {
 **接口名**
 
 ```js
-tim.getBlacklist()
+tim.getBlacklist();
 ```
 
 **请求参数**
@@ -207,13 +208,14 @@ promise.then(function(imResponse) {
 添加用户到黑名单列表。将用户加入黑名单后可以屏蔽来自 TA 的所有消息，因此该接口可以实现“屏蔽该用户消息”的功能。
 
 - 如果用户 A 与用户 B 之间存在好友关系，拉黑时会解除双向好友关系。
-- 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起会话。
 - 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起加好友请求。
+- 如果用户 A 的黑名单中有用户 B 且用户 B 的黑名单中有用户 A，二者之间无法发起会话。
+- 如果用户 A 的黑名单中有用户 B 但用户 B 的黑名单中没有用户 A，那么用户 A 可以给用户 B 发消息，用户 B 不能给用户 A 发消息。
 
 **接口名**
 
 ```js
-tim.addToBlacklist(options)
+tim.addToBlacklist(options);
 ```
 
 **请求参数**
@@ -250,7 +252,7 @@ promise.then(function(imResponse) {
 **接口名**
 
 ```js
-tim.removeFromBlacklist(options)
+tim.removeFromBlacklist(options);
 ```
 
 **请求参数**
