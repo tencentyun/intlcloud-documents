@@ -16,7 +16,7 @@
 **接口**
 
 ```javascript
-tim.setMessageRead(options)；
+tim.setMessageRead(options);
 ```
 
 **参数**
