@@ -1,4 +1,4 @@
-The watermark feature is disabled by default for LVB push. This document describes how to bind/unbind a push domain name to/from a watermark template to enable/disable the watermark feature.
+The watermark feature is disabled by default for CSS push. This document describes how to bind/unbind a push domain name to/from a watermark template to enable/disable the watermark feature.
  
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
@@ -6,7 +6,7 @@ The watermark feature is disabled by default for LVB push. This document describ
 - One domain name can be bound to only one watermark template. After binding, all streams under it will be watermarked according to this template.
 
 ## Prerequisites
-- You have logged in to the [LVB console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - You have created a [watermark template](https://intl.cloud.tencent.com/document/product/267/31073).
 
 
