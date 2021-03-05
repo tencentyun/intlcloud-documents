@@ -1,8 +1,8 @@
-If you're unable to watch the LVB and have no idea what goes wrong with it, you can identify the cause of the problem in a short time by following the steps below:
+If you're unable to watch the CSS and have no idea what goes wrong with it, you can identify the cause of the problem in a short time by following the steps below:
 ![](https://main.qcloudimg.com/raw/54668f50b8e89909e6fc1600485723cc.png)
 
 ## Step 1. Check the playback URL
-First of all, check whether the playback URL is correct. An incorrect URL is the most likely cause of most problems. Tencent Cloud's CSS URLs include push URL and playback URL. You need to first verify whether **the push URL is accidentally used as the playback URL**.
+First of all, check whether the playback URL is correct. An incorrect URL is the most likely cause of most problems. Tencent Cloud's CSS URLs include push URL and playback URL. You need to first verify whether **the push URL is accidentally used CSSas the playback URL**.
 ![diff](https://main.qcloudimg.com/raw/44951fab55d1a8228bbc332d2713d9cf.png)
 >**Playback URL for Mini CSS:**
 >The playback URL for Mini CSS can be obtained through debugging. You can search for the keyword **startPlay** in the global search, then set a debugging breakpoint, where the RTMP SDK is called by Mini CSS. The parameter startPlay is the playback URL.
