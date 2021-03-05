@@ -1,30 +1,30 @@
 
-To enable LVB porn detection, you need to enable LVB screencapturing first either in the [LVB Console](https://intl.cloud.tencent.com/zh/document/product/267/31072) or through API. This document describes how to implement LVB porn detection through API.
+To enable CSS porn detection, you need to enable CSS screencapturing first either in the [CSS Console](https://intl.cloud.tencent.com/zh/document/product/267/31072) or through API. This document describes how to implement CSS porn detection through API.
 
-## Enabling LVB Porn Detection
-As the LVB porn detection feature is based on the LVB screencapturing feature, you have to enable LVB screencapturing first before you can enable LVB porn detection. The steps are as follows:
+## Enabling CSS Porn Detection
+As the CSS porn detection feature is based on the CSS screencapturing feature, you have to enable CSS screencapturing first before you can enable CSS porn detection. The steps are as follows:
 
-### 1. Create a porn detection-enabled LVB screencapturing template
-Call [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834) and set `PornFlag` to 1 to create a porn detection-enabled LVB screencapturing template.
+### 1. Create a porn detection-enabled CSS screencapturing template
+Call [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834) and set `PornFlag` to 1 to create a porn detection-enabled CSS screencapturing template.
 
-### 2. Create a porn detection-enabled LVB screencapturing rule
-Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835) to create a porn detection-enabled LVB screencapturing rule and associate the LVB screencapturing template ID created in step 1 to the `AppID`, `DomainName`, `AppName`, and `StreamName` of the live stream that needs to undergo porn detection.
+### 2. Create a porn detection-enabled CSS screencapturing rule
+Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835) to create a porn detection-enabled CSS screencapturing rule and associate the CSS screencapturing template ID created in step 1 to the `AppID`, `DomainName`, `AppName`, and `StreamName` of the live stream that needs to undergo porn detection.
 
 ### 3. Start a live stream and start porn detection
-After a porn detection-enabled LVB screencapturing rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
+After a porn detection-enabled CSS screencapturing rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
 
-## Getting LVB Porn Detection Result
-After LVB porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the LVB backend call back the porn detection result.
+## Getting CSS Porn Detection Result
+After CSS porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the CSS backend call back the porn detection result.
 >! By default, only suspicious results will be called back.
 
-### 1. Create an LVB porn detection callback template
-Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an LVB porn detection callback template.
-### 2. Create an LVB porn detection callback rule
+### 1. Create an CSS porn detection callback template
+Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an CSS porn detection callback template.
+### 2. Create an CSS porn detection callback rule
 
-Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled LVB screencapturing rule and associate the LVB screencapturing template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live stream that needs to undergo porn detection.
+Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled CSS screencapturing rule and associate the CSS screencapturing template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live stream that needs to undergo porn detection.
 
 ### 3. Get the porn detection result
-The LVB backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live stream is pornographic by the `type` field alone.
+The CSS backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live stream is pornographic by the `type` field alone.
 >!We recommend you use the `type` of an image to judge whether it is pornographic. As the detection system cannot achieve 100% accuracy, there may be false positives or false negatives, and human confirmation is recommended.  
 
 #### Complete protocol
@@ -142,14 +142,14 @@ HTTP Body:
 }  
 ```
 
-## Disabling LVB Porn Detection
+## Disabling CSS Porn Detection
 
-LVB porn detection can be disabled by deleting the screencapturing rule or modifying the screencapturing template. Both deletion and modification are effective only for new live streams. If you want to disable LVB porn detection for a live stream that has already started, you have to stop and restart the stream.
+CSS porn detection can be disabled by deleting the screencapturing rule or modifying the screencapturing template. Both deletion and modification are effective only for new live streams. If you want to disable CSS porn detection for a live stream that has already started, you have to stop and restart the stream.
 
 ### 1. Delete the porn detection-enabled screencapturing rule
 
-Call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833) to delete the corresponding LVB screencapturing rule under `DomainName`, `AppName`, and `StreamName` by template ID.
+Call [DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833) to delete the corresponding CSS screencapturing rule under `DomainName`, `AppName`, and `StreamName` by template ID.
 
 ### 2. Delete or modify the porn detection-enabled screencapturing template
 
-Call [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828) to set the porn detection flag of the LVB screencapturing template to 0.
+Call [ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828) to set the porn detection flag of the CSS screencapturing template to 0.
