@@ -1,4 +1,4 @@
-Live Video Broadcasting (LVB) is a pay-as-you-go service, and ready to use in a few steps. Simply register a Tencent Cloud account and you can activate LVB service.
+Cloud Streaming Services (CSS) is a pay-as-you-go service, and ready to use in a few steps. Simply register a Tencent Cloud account and you can activate CSS service.
  
 ## Create a Tencent Cloud Account
 
@@ -10,9 +10,9 @@ You may register your email address as your Tencent Cloud account.
 
 If you have already completed identity verification, skip this step.
 Otherwise, please follow [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629) to verify your identity.
-After your personal or organizational identity is verified, you can activate the LVB service.
+After your personal or organizational identity is verified, you can activate the CSS service.
 
-## Activate LVB
+## Activate CSS
 
-Go to the [LVB console](https://console.cloud.tencent.com/live) page, select [I agree to the Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248) and click **Activate** to activate the LVB service for use.
+Go to the [CSS console](https://console.cloud.tencent.com/live) page, select [I agree to the Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248) and click **Activate** to activate the CSS service for use.
 ![](https://main.qcloudimg.com/raw/eae08b6f0b3d3824aed2c05e63cd18ae.png)
