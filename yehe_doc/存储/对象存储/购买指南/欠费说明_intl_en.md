@@ -1,4 +1,4 @@
-If your account falls into arrears, a notification will be sent to you. Once receiving it, please go to the [Billing Center](https://console.cloud.tencent.com/account/recharge) on the console and top up your account in time to prevent your business from being affected. This document will provide detailed information on arrears.
+If your account has overdue payment, a notification will be sent to you. Once receiving it, please go to the [Billing Center](https://console.cloud.tencent.com/account/recharge) in the console and pay the past due charges in time to prevent your business from being affected. This document will provide detailed information on overdue payment.
 
 ## Causes
 
