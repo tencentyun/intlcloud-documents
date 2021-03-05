@@ -2,7 +2,7 @@
 Security hotlink protection refers to the `txSecret` field in the push and playback URLs, which is used to prevent attackers from forging your backend for push URL generation or stealing your playback address for illegal profit.
 
 ## How It Works
-In order to prevent an attacker from forging your server to generate push and playback URLs, you can configure the hotlink protection encryption key in the LVB Console as shown below (do not disclose this key), so that the attacker cannot easily fake valid push and playback URLs, as shown in the figure below.
+In order to prevent an attacker from forging your server to generate push and playback URLs, you can configure the hotlink protection encryption key in the CSS Console as shown below (do not disclose this key), so that the attacker cannot easily fake valid push and playback URLs, as shown in the figure below.
 
 ![](https://main.qcloudimg.com/raw/ea3a932bd9e4e35fc95560cfbc4b3241.jpg)
 
@@ -10,7 +10,7 @@ In order to prevent an attacker from forging your server to generate push and pl
 ### Step 1. Authentication key
 First, you need to configure an encryption key in the console, which is used to generate the hotlink protection signature on your server. Since Tencent Cloud holds the same key as you do, it can decrypt and confirm the signature you generate.
 
- An encryption key can be either a push hotlink protection key or a playback hotlink protection key. The former is used to generate a push hotlink protection URL, while the latter a playback hotlink protection URL. Go to **LVB Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click a domain name or **Manage**, and select **Push Configuration** to configure a push hotlink protection key, as shown in the figure below.
+ An encryption key can be either a push hotlink protection key or a playback hotlink protection key. The former is used to generate a push hotlink protection URL, while the latter a playback hotlink protection URL. Go to **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click a domain name or **Manage**, and select **Push Configuration** to configure a push hotlink protection key, as shown in the figure below.
 
 ![](https://main.qcloudimg.com/raw/0833ac9f646507a3bf1f288709dddd20.png)
 
@@ -45,4 +45,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## Sample Push Code
-Go to **LVB Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address.
+Go to **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address.
