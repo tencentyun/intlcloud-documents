@@ -156,7 +156,7 @@ If you want to count the number of online viewers very accurately, we recommend 
 ### An error -100013 was reported during room entry, and the error message was `ERR_SERVER_INFO_SERVICE_SUSPENDED`. What should I do?	
 This error indicates that the service is unavailable. Please check the following:
 - Whether the remained validity period in minutes in the package is greater than 0.
-- Whether your Tencent Cloud account is in arrears.
+- Whether your Tencent Cloud account has overdue payment.
 
 <span id="que30"></span>
 ### How do I monitor the network status and implement the signal strength display feature in TRTC?	
