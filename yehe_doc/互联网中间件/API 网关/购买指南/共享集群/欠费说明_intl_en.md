@@ -8,7 +8,7 @@ The billable items and corresponding billing cycles for API Gateway are as liste
 | Traffic |       -     |
 
 ## Viewing Billing Details
-1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/).
+1. Log in to the [Tencent Cloud console](https://console.cloud.tencent.com/).
 2. Click **Billing Center** in the top-right corner to enter the Billing Center overview page.
 3. On the left sidebar, click **Bills** > **Bill Details** to enter the bill details page.
 4. Click **Bill Details** at the top of the page and select API Gateway to view the detailed bill for the API Gateway product.
