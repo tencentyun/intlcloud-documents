@@ -1,6 +1,6 @@
 If an event configured in the template triggers the callback during live streaming, Tencent Cloud will send a request to your server which is responsible for the response. After authentication, a JSON packet of the callback can be obtained.
 
-Currently, the following LVB events can trigger a notification: stream push, stream interruption, recording, screencapturing, and porn detection.
+Currently, the following CSS events can trigger a notification: stream push, stream interruption, recording, screencapturing, and porn detection.
 
 ## Overall Process
 
@@ -9,7 +9,7 @@ Currently, the following LVB events can trigger a notification: stream push, str
 **Process description:**
 1. The host configures event message notification URLs and related features such as recording and screencapturing in the console or by calling TencentCloud APIs.
 2. The host pushes a stream or interrupts the push.
-3. When an event occurs in the LVB service, a message will be sent to viewers through the event message notification service.
+3. When an event occurs in the CSS service, a message will be sent to viewers through the event message notification service.
 <span id="protocol"></span>
 ## Event Message Notification Protocol
 
@@ -26,14 +26,14 @@ There is a retry mechanism for event notification service. Such retries will be 
 
 <span id="configuration"></span>
 ## Callback Event Configuration
-Callback configuration can mainly be implemented in two ways: in the [LVB Console](#c_callback) and through [server API](#api_callback).
->?You can configure different callback URLs for LVB stream push, stream interruption, recording, screencapturing, and porn detection events.
+Callback configuration can mainly be implemented in two ways: in the [CSS Console](#c_callback) and through [server API](#api_callback).
+>?You can configure different callback URLs for CSS stream push, stream interruption, recording, screencapturing, and porn detection events.
 
 
 
 <span id="c_callback"></span>
-### LVB Console
-1. Go to **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** in the LVB Console to create a callback template. For detailed directions, please see [Creating Callback Template](https://intl.cloud.tencent.com/document/product/267/31074).
+### CSS Console
+1. Go to **Feature Template** > **[Callback Configuration](https://console.cloud.tencent.com/live/config/callback)** in the CSS Console to create a callback template. For detailed directions, please see [Creating Callback Template](https://intl.cloud.tencent.com/document/product/267/31074).
 ![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, find the target push domain name, and click **Manage** > **Template Configuration** to associate it with the callback template. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31065).
 <span id="api_callback"></span>
