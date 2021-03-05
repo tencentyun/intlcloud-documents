@@ -17,7 +17,7 @@ You have activated the CSS service and added a [push domain name](https://intl.c
 <span id="Watermark"></span>
 ## Creating Watermark Template
 
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Watermark](https://console.cloud.tencent.com/live/config/watermark).
+1. Log in to the CSS console and select **Feature Configuration** > [**CSS Watermark**](https://console.cloud.tencent.com/live/config/watermark).
 2. Click **+** to create a watermark template.
 3. Enter a watermark name, which can contain up to 30 letters, digits, underscores (_), and hyphens (-).
 4. Click **Select image** to upload an image as the watermark.
@@ -31,7 +31,7 @@ You have activated the CSS service and added a [push domain name](https://intl.c
 <span id="conect"></span>
 ## Binding Domain Name
 
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Watermark](https://console.cloud.tencent.com/live/config/watermark).
+1. Log in to the CSS console and select **Feature Configuration** > *[CSS Watermark](https://console.cloud.tencent.com/live/config/watermark).
 2. Enter the domain name binding page in either of the following ways:
 	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	- **Bind a domain name after creating the watermark template**: after the [watermark template is created](#Watermark), click **Bind Domain Name** in the pop-up.
@@ -40,7 +40,7 @@ You have activated the CSS service and added a [push domain name](https://intl.c
 
 <span id="untie"></span>
 ## Unbinding
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Watermark](https://console.cloud.tencent.com/live/config/watermark).
+1. Log in to the CSS console and select **Feature Configuration** > [**CSS Watermark**](https://console.cloud.tencent.com/live/config/watermark).
 2. Select domain names bound to the watermark template and click **Unbind**.
 3. Confirm whether to unbind the domain name and click **OK** to unbind it.
 
