@@ -9,7 +9,7 @@ Billing standard for different types of pay-as-you-go cloud disks varies by regi
 ### How will users be notified when pay-as-you-go CBS data disks expire?
 The system estimates the number of days it takes your account balance to become negative based on the current balance and your usage in the past 24 hours. If it is less than 5 days, the system will send a balance alert to your Tencent Cloud account creator and all collaborators who have subscribed to messages via email, SMS, the Message Center, etc.
 
-### How will users be notified when pay-as-you-go CBS data disks are in arrears?
+### How will users be notified when pay-as-you-go CBS data disks have payment overdue?
 Pay-as-you-go resources are billed on the hour. When your account becomes negative, the system will send a balance alert to your Tencent Cloud account creator and all collaborators who have subscribed to messages via email, SMS, the Message Center, etc.
 
 ### What is the repossession mechanism for pay-as-you-go CBS data disks?
