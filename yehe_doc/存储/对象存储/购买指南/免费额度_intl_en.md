@@ -16,7 +16,7 @@ The table below shows COS [billable items](https://intl.cloud.tencent.com/docume
 > !
 >
 >- The free tier is not applicable to any STANDARD_IA or ARCHIVE billable items including storage usage, requests, and traffic, and any other STANDARD billable items than **STANDARD storage usage**.
->- If your service is interrupted due to violations or arrears, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
+>- If your service is suspended due to violations or overdue payment, you will not be eligible for the Free Tier perk. Free Tier will be unavailable until the service is restarted.
 
 <table>
    <tr>
