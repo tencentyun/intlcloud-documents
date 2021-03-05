@@ -65,4 +65,4 @@ That means on January 2, the amount deducted from your payment account would be 
 - [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
 - [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614)
 - [On-Cloud Recording Billing Overview](https://intl.cloud.tencent.com/document/product/647/38385)
-- [Notes for Arrears Processing](https://intl.cloud.tencent.com/document/product/647/34611)
+- [Notes for Overdue Payment Processing](https://intl.cloud.tencent.com/document/product/647/34611)
