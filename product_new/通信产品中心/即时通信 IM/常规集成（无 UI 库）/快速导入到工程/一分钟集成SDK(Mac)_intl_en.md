@@ -47,7 +47,7 @@ pod update
 After the pod command is executed, a project file integrated with the SDK and suffixed .xcworkspace will be generated. Double-click the file to open it.
 
 ### Manual integration
-#### 1. Obtain the SDK download URL from [Github](https://github.com/tencentyun/TIMSDK):
+<b>1. Obtain the SDK download URL from [Github](https://github.com/tencentyun/TIMSDK):</b>
 
 
 - ImSDKForMac.framework is the core dynamic library file of the IM SDK.
