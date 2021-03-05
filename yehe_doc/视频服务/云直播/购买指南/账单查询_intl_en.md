@@ -69,5 +69,3 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 | Total cost    | Total cost = Component’s original price x (1 - Discount rate). Component’s original price = Component’s published unit price x Usage duration |
 
 >?Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
-
-CSS
