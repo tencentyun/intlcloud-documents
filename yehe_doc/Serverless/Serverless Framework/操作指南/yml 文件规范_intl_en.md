@@ -6,7 +6,6 @@ The first-level field in a basic `serverless.yml` file is configured as follows:
 
 ```yml
 # Organization information (optional)
-org: '' # Organization name. If it is left empty, your `APPID` will be used by default
 app: '' # Application name. If it is left empty, the instance name of the current component will be used by default
 stage: '' # Environment name. The default value is `dev`. We recommend you use the `${env.STAGE}` variable to define the environment name
 
