@@ -31,7 +31,6 @@ Paste the following configuration template into the file to implement basic proj
 
 component: laravel
 name: laravelDemo
-org: orgDemo
 app: appDemo
 stage: dev
 
