@@ -16,4 +16,4 @@ Transcoding will not be charged on an aggregate basis if the same live stream wi
 LVB transcoding includes LVB real-time transcoding, cloud stream mixing, and watermarking. If you use the other two features, transcoding fees will also incur.
 
 ### How can I know whether my account has overdue payment?
-You can log in to the [LVB console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below 0, your account has overdue payment. To continue using LVB and other services, you need to top up your account in time.
+You can log in to the [LVB console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below 0, your account has overdue payment. To continue using LVB and other services, you need to pay the overdue balance in time.
