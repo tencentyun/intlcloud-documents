@@ -1,14 +1,14 @@
 ## Operation Scenarios
 
-Push interruption diagnosis helps you quickly check the record of LVB push interruptions and their reasons.
+Push interruption diagnosis helps you quickly check the record of CSS push interruptions and their reasons.
 
 ## Prerequisites
-- You have logged in to the [LVB Console](https://console.cloud.tencent.com/live).
+- You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
 - There is an interruption in live push under the current Tencent Cloud account.
 
 ## Directions
 
-After the LVB push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
+After the CSS push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
 Here:
@@ -46,7 +46,7 @@ Here:
  </tr>
  <tr>
 <td colspan='2'>5</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td colspan='2'>6</td>
@@ -62,7 +62,7 @@ Here:
  </tr>
  <tr>
 <td colspan='2'>9</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td colspan='2'>10</td>
@@ -70,7 +70,7 @@ Here:
  </tr>
  <tr>
 <td colspan='2'>11</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td colspan='2'>12</td>
@@ -90,7 +90,7 @@ Here:
  </tr>
  <tr>
 <td colspan='2'>16</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td colspan='2'>17</td>
@@ -99,23 +99,23 @@ Here:
  <tr>
 <td rowspan='27'>18</td>
 <td>100</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td>101</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td>102</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td>103</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td>104</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td>200</td>
@@ -123,15 +123,15 @@ Here:
  </tr>
  <tr>
 <td>201</td>
-<td>Your LVB service has been disabled.</td>
+<td>Your CSS service has been disabled.</td>
  </tr>
  <tr>
 <td>202</td>
-<td>You LVB service has been temporarily disabled due to arrears of your account. Please top up promptly.</td>
+<td>You CSS service has been temporarily disabled due to arrears of your account. Please top up promptly.</td>
  </tr>
  <tr>
 <td>203</td>
-<td>Your LVB service has been forcibly disabled.</td>
+<td>Your CSS service has been forcibly disabled.</td>
  </tr>
  <tr>
 <td>300</td>
@@ -236,7 +236,7 @@ Here:
  </tr>
  <tr>
 <td colspan='2'>24</td>
-<td>Internal error in the LVB system.</td>
+<td>Internal error in the CSS system.</td>
  </tr>
  <tr>
 <td colspan='2'>25</td>
@@ -284,4 +284,4 @@ Here:
  </tr>
 </table>
 
-LVB also provides an API for queries. For more information, see [DescribeLiveStreamEventList](https://cloud.tencent.com/document/product/267/33186) API overview.
+CSS also provides an API for queries. For more information, see [DescribeLiveStreamEventList](https://cloud.tencent.com/document/product/267/33186) API overview.
