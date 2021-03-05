@@ -101,7 +101,7 @@ where `ReqMsgNumber` messages with a Seq number less than or equal to `ReqMsgSeq
                     "MsgType": "TIMFaceElem"
                 }
             ],
-            "MsgPriority": High,
+            "MsgPriority": 1,
             "MsgRandom": 51083293,
             "MsgSeq": 7803321,
             "MsgTimeStamp": 1458721802
@@ -125,7 +125,7 @@ where `ReqMsgNumber` messages with a Seq number less than or equal to `ReqMsgSeq
                     "MsgType": "TIMTextElem"
                 }
             ],
-            "MsgPriority": High,
+            "MsgPriority": 1,
             "MsgRandom": 235168582,
             "MsgSeq": 7803320,
             "MsgTimeStamp": 1458721797
