@@ -93,8 +93,8 @@
 
 <span id="delete"></span>
 ## 删除模板
-1. 进入【功能配置】>【直播录制】。
-2. 选择您已创建成功的录制模板，单击上方的![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png)删除按钮。
+1. 登录云直播控制台，进入【功能配置】>[【直播录制】](https://console.cloud.tencent.com/live/config/record)。
+2. 选择您已创建成功的录制模板，单击右上方【删除】。
 3. 确认是否删除当前录制模板，单击【确定】即可成功删除。
 ![](https://main.qcloudimg.com/raw/c7c3e300488ba332b84bfd61da0fb999.png)
 
@@ -109,7 +109,6 @@
 
 ## 相关问题
 <span id="que1"></span>
-
 #### 直播录制后生成的视频名称是按什么规则生成？
 控制台创建的录制模板，回调后生成的录制文件按照默认拼接方式命名，格式为：
 `{StreamID}*{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}*{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond} `
