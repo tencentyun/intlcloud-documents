@@ -26,19 +26,20 @@ TIM_DECL int TIMMsgSendNewMsg(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
->
-- This API is used to send a new one-to-one or group chat message.
- - When this API is used to send a one-to-one chat message, `conv_id` is set to UserID of the peer party and `conv_type` is set to `kTIMConv_C2C`.
- - When this API is used to send a group chat message, `conv_id` is set to the group ID and `conv_type` is set to `kTIMConv_Group`.
-- When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
- - Text message element. For more information, see [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Emoji message element. For more information, see [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Location message element. For more information, see [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Image message element. For more information, see [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Sound message element. For more information, see [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Custom message element. For more information, see [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - File message element. For more information, see [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551).
- - Video message element. For more information, see [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+>?
+>- This API is used to send a new one-to-one or group chat message.
+ >    - When this API is used to send a one-to-one chat message, `conv_id` is set to UserID of the peer party and `conv_type` is set to `kTIMConv_C2C`.
+ >    - When this API is used to send a group chat message, `conv_id` is set to the group ID and `conv_type` is set to `kTIMConv_Group`.
+>- When a message is sent, `kTIMElem_GroupTips` and `kTIMElem_GroupReport` cannot be sent. They are delivered by the backend to update or notify the group information. The following elements in the message can be sent:
+ >     - Text message element. For more information, see [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     -  Emoji message element. For more information, see [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     - Location message element. For more information, see [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     -  Image message element. For more information, see [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     -  Sound message element. For more information, see [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     -  Custom message element. For more information, see [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     - File message element. For more information, see [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+ >     - Video message element. For more information, see [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551).
+
 
 
 **Example**
@@ -102,7 +103,7 @@ TIM_DECL int TIMMsgReportReaded(const char* conv_id, enum TIMConvType conv_type,
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> `json_msg_param` can be set to the `NULL` string pointer or the null string "". At this time, the timestamp of the latest message (if any) in the conversation or the current time is used as the read timestamp for reporting. If a message needs to be specified, the timestamp of this specified message is used as the read timestamp for reporting. We recommend that the message JSON content in the message array obtained from the received new message or the message JSON content located by the message locator be used to avoid repeated construction of the message JSON content.
+>? `json_msg_param` can be set to the `NULL` string pointer or the null string "". At this time, the timestamp of the latest message (if any) in the conversation or the current time is used as the read timestamp for reporting. If a message needs to be specified, the timestamp of this specified message is used as the read timestamp for reporting. We recommend that the message JSON content in the message array obtained from the received new message or the message JSON content located by the message locator be used to avoid repeated construction of the message JSON content.
 
 
 ## TIMMsgRevoke
@@ -131,7 +132,7 @@ TIM_DECL int TIMMsgRevoke(const char* conv_id, enum TIMConvType conv_type, const
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to revoke a message. The stored message JSON content or the message JSON content located by the message locator is used to avoid repeated construction of the message JSON content.
+>?This API is used to revoke a message. The stored message JSON content or the message JSON content located by the message locator is used to avoid repeated construction of the message JSON content.
 
 
 **Example**
@@ -187,9 +188,9 @@ TIM_DECL int TIMMsgFindByMsgLocatorList(const char* conv_id, enum TIMConvType co
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
->
-- This API is used to accurately locate a message of the specified conversation by using the message locator. It is often used to search for a specified message upon message revocation.
-- One message locator corresponds to one message.
+>?
+>- This API is used to accurately locate a message of the specified conversation by using the message locator. It is often used to search for a specified message upon message revocation.
+>- One message locator corresponds to one message.
 
 
 **Example**
@@ -247,7 +248,7 @@ TIM_DECL int TIMMsgImportMsgList(const char* conv_id, enum TIMConvType conv_type
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to import messages in batches. You can construct messages for importing. Alternatively, you can store the JSON string of the message array to be imported and call this API to import the JSON string, avoiding repeated construction of the message array.
+>?This API is used to import messages in batches. You can construct messages for importing. Alternatively, you can store the JSON string of the message array to be imported and call this API to import the JSON string, avoiding repeated construction of the message array.
 
 
 **Example**
@@ -313,7 +314,7 @@ TIM_DECL int TIMMsgSaveMsg(const char* conv_id, enum TIMConvType conv_type, cons
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to store a message. Generally, you can construct a message JSON string and save it to a specified conversation.
+>?This API is used to store a message. Generally, you can construct a message JSON string and save it to a specified conversation.
 
 
 ## TIMMsgGetMsgList
@@ -342,7 +343,7 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> The `kTIMMsgGetMsgListParamLastMsg` parameter specifies a session from which the local message list is obtained. The `kTIMMsgGetMsgListParamCount` parameter specifies the number of messages to be obtained. If you do not specify `kTIMMsgGetMsgListParamLastMsg`, the latest message `LastMsg` of the session will be used.  If you set `kTIMMsgGetMsgListParamIsRamble` to `true`, the roaming message in the cloud will be obtained when the local messages are not enough. If you set `kTIMMsgGetMsgListParamIsForward` to `true`, messages latter than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.  If you set it to ` false`, messages earlier than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.
+>? The `kTIMMsgGetMsgListParamLastMsg` parameter specifies a session from which the local message list is obtained. The `kTIMMsgGetMsgListParamCount` parameter specifies the number of messages to be obtained. If you do not specify `kTIMMsgGetMsgListParamLastMsg`, the latest message `LastMsg` of the session will be used.  If you set `kTIMMsgGetMsgListParamIsRamble` to `true`, the roaming message in the cloud will be obtained when the local messages are not enough. If you set `kTIMMsgGetMsgListParamIsForward` to `true`, messages latter than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.  If you set it to ` false`, messages earlier than the value of `kTIMMsgGetMsgListParamLastMsg` will be obtained.
 
 
 **Example: obtaining `Windows-02` message list** of the C2C session
@@ -394,10 +395,10 @@ TIM_DECL int TIMMsgDelete(const char* conv_id, enum TIMConvType conv_type, const
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
->
-- If `kTIMMsgDeleteParamMsg` is specified, the specified local message is deleted from the conversation.
-- If `kTIMMsgDeleteParamMsg` is not specified and `kTIMMsgDeleteParamIsRamble` is set to false, all local messages of the conversation are deleted. If `kTIMMsgDeleteParamIsRamble` is set to true, all roaming messages of the conversation are deleted. Currently, the deletion of roaming messages is not supported.
-- Generally, the stored message JSON string or the JSON string located by the message locator is used. You do not need to construct the message JSON string when deleting messages.
+>?
+>- If `kTIMMsgDeleteParamMsg` is specified, the specified local message is deleted from the conversation.
+>- If `kTIMMsgDeleteParamMsg` is not specified and `kTIMMsgDeleteParamIsRamble` is set to false, all local messages of the conversation are deleted. If `kTIMMsgDeleteParamIsRamble` is set to true, all roaming messages of the conversation are deleted. Currently, the deletion of roaming messages is not supported.
+>- Generally, the stored message JSON string or the JSON string located by the message locator is used. You do not need to construct the message JSON string when deleting messages.
 
 
 **Example**
@@ -444,7 +445,7 @@ TIM_DECL int TIMMsgDownloadElemToPath(const char* json_download_elem_param, cons
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to download the image, file, audio, and video elements in messages. The download parameters, including kTIMMsgDownloadElemParamFlag, kTIMMsgDownloadElemParamId, kTIMMsgDownloadElemParamBusinessId, and kTIMMsgDownloadElemParamUrl, can be found in the corresponding elements. `kTIMMsgDownloadElemParamType` indicates the download file type. For more information, see [TIMDownloadType](https://intl.cloud.tencent.com/document/product/1047/34551).
+>? This API is used to download the image, file, audio, and video elements in messages. The download parameters, including kTIMMsgDownloadElemParamFlag, kTIMMsgDownloadElemParamId, kTIMMsgDownloadElemParamBusinessId, and kTIMMsgDownloadElemParamUrl, can be found in the corresponding elements. `kTIMMsgDownloadElemParamType` indicates the download file type. For more information, see [TIMDownloadType](https://intl.cloud.tencent.com/document/product/1047/34551).
 
 
 **Example**
@@ -487,7 +488,7 @@ TIM_DECL int TIMMsgBatchSend(const char* json_batch_send_param, TIMCommCallback 
 |-----|-----|
 | int | If TIM_SUCC is returned, the API was successfully called. (The callback cb is called only when the API returns TIM_SUCC.) If other values are returned, the API failed to be called. For more information about the definition of each return value, see [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551). |
 
-> This API is used to send messages in batch. The callback cb returns whether each UserID is sent successfully.
+>? This API is used to send messages in batch. The callback cb returns whether each UserID is sent successfully.
 
 
 **Example**
