@@ -73,7 +73,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 ```
 ImSDKForMac.framework
 ```
-> 需要在【Build Setting】-【Other Linker Flags】添加 `-ObjC`。
+>! 需要在【Build Setting】-【Other Linker Flags】添加 `-ObjC`。
 
 ## 引用 IM SDK
 项目代码中使用 SDK 有两种方式：
@@ -86,3 +86,4 @@ ImSDKForMac.framework
 ```
 #import <ImSDKForMac/ImSDK.h>
 ```
+
