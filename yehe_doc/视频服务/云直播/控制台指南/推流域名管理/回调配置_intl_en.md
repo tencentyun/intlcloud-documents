@@ -1,4 +1,4 @@
-The callback feature is disabled by default for LVB push. After a push domain name is bound to a callback configuration, the callback feature will be enabled for all push addresses under this domain name. If a callback event is triggered by the configured template during live streaming, Tencent Cloud will send a request to your server which is responsible for the response. After authentication, a JSON packet containing the porn detection callback information can be obtained.
+The callback feature is disabled by default for CSS push. After a push domain name is bound to a callback configuration, the callback feature will be enabled for all push addresses under this domain name. If a callback event is triggered by the configured template during live streaming, Tencent Cloud will send a request to your server which is responsible for the response. After authentication, a JSON packet containing the porn detection callback information can be obtained.
 This document describes how to bind/unbind a push domain name to/from a callback template to enable/disable the callback feature.
 
 
@@ -6,12 +6,12 @@ This document describes how to bind/unbind a push domain name to/from a callback
  
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
-- When an LVB event is triggered after the callback feature is enabled, you can receive the event information through the [event message notification](https://intl.cloud.tencent.com/document/product/267/31566).
+- When an CSS event is triggered after the callback feature is enabled, you can receive the event information through the [event message notification](https://intl.cloud.tencent.com/document/product/267/31566).
 - The callback templates are managed at the domain name level in the console, and rules created by APIs cannot be canceled for the time being. If you bound a template to a specified stream through the callback APIs and want to unbind it, you need to call the [DeleteLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30813) API.
 - One domain name can be bound to only one callback template. After binding, all streams under it will be called back according to this template.
 
 ## Prerequisites
-- You have logged in to the [LVB console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - You have created a [callback template](https://intl.cloud.tencent.com/document/product/267/31074).
 <span id="related"></span>
 ## Binding Callback Template
