@@ -1,4 +1,4 @@
-Based on the LVB recording capability, the time shifting feature stores the TS (Transport Stream) segment addresses and TS files separately into the VOD system. A client can replay video content before the current time point by passing in a time parameter in the URL with the time-shift playback domain name.
+Based on the CSS recording capability, the time shifting feature stores the TS (Transport Stream) segment addresses and TS files separately into the VOD system. A client can replay video content before the current time point by passing in a time parameter in the URL with the time-shift playback domain name.
 
 ## How It Works
 
@@ -12,7 +12,7 @@ Fees for VOD traffic and storage will be incurred when you enable the time shift
 ### Prerequisites
 
 -  You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verified your identity. 
--  You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
+-  You have activated the CSS service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
 
 <span id="step1"></span>
 
@@ -31,7 +31,7 @@ To add the Tencent Cloud VOD domain name for time-shift playback, perform the fo
 <span id="step3"></span>
 ### Step 3: associate recording template
 
-1. Log in to the LVB Console and go to **Function Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the CSS Console and go to **Function Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **+** to create a recording template. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
    > ! 
    >- Choose **HLS** for the file type.
@@ -41,7 +41,7 @@ To add the Tencent Cloud VOD domain name for time-shift playback, perform the fo
 <span id="step4"></span>
 ### Step 4: activate the time shifting feature
 
-Go to the [ticket system](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1) to submit a ticket. Select “LVB” and request to activate time shift feature and provide the following parameters:
+Go to the [ticket system](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1) to submit a ticket. Select “CSS” and request to activate time shift feature and provide the following parameters:
 
 - **VOD domain name for **time-shift playback** added in [Step 2](#step2).
 - Recording template ID added in [Step 3](#step3). 
