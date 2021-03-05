@@ -9,8 +9,8 @@ The billable items of LVB include basic and value-added billable items.
 - Value-added service fees: fees of transcoding, recording, screencapturing, and porn detection. These four features are disabled by default. If they are enabled and used, fees will be incurred. For more information on prices, please see [Billing Details](https://intl.cloud.tencent.com/document/product/267/2818#lvb-transcoding).
 
 <span id="live_que2"></span>
-### How can I know whether my account is in arrears?
-You can log in to the [LVB Console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below $0, your account is in arrears. To continue using LVB and other services, you need to top up your account in time.
+### How can I know whether my account has overdue payment?
+You can log in to the [LVB console](https://console.cloud.tencent.com/live) and click **Fees** at the top right to enter the fees overview page. If your available balance is below $0, your account has overdue payment. To continue using LVB and other services, you need to pay the overdue balance in time.
 
 <span id="live_que3"></span>
 ### Is upstream push charged?
