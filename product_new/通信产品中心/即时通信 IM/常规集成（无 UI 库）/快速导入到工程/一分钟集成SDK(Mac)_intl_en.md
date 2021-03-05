@@ -74,7 +74,7 @@ After the pod command is executed, a project file integrated with the SDK and su
 ```
 ImSDKForMac.framework
 ```
->You need to add `-ObjC` in **Build Setting** > **Other Linker Flags**.
+>!You need to add `-ObjC` in **Build Setting** > **Other Linker Flags**.
 
 ## Referencing the IM SDK
 Use the SDK in project code in two ways:
