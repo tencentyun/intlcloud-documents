@@ -3,7 +3,7 @@
 ### Obtaining your personal profile
 This API is used to obtain your personal profile. For more information on the properties, see [Profile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Profile.html).
 
-> Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
+>! Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 
 **API name**
 
@@ -33,7 +33,7 @@ promise.then(function(imResponse) {
 ### Obtaining other users’ profiles
 This API is used to obtain standard profile fields and [Custom Profile Fields](https://intl.cloud.tencent.com/document/product/1047/33520).
 
->
+>!
 >- Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 >- If you have not configured any custom profile fields or you have configured custom profile fields but have not set the values, this API will not return custom profile information.
 >- You may pull profiles of up to 100 users to avoid failure caused by a large amount of data returned. If the length of an array passed in is greater than 100, only the first 100 users will be queried and the rest are discarded.
@@ -75,7 +75,7 @@ promise.then(function(imResponse) {
 
 ### Updating your personal profile
 
-> Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
+>! Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 
 **API name**
 
