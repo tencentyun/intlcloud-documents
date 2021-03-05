@@ -1,5 +1,5 @@
-After an LVB feature is enabled, you can configure the registered callback domain name in the push callback template to have the LVB backend call back the push result.
-You need to understand how to receive messages on Tencent Cloud LVB before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080). 
+After an CSS feature is enabled, you can configure the registered callback domain name in the push callback template to have the CSS backend call back the push result.
+You need to understand how to receive messages on Tencent Cloud CSS before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080). 
 
 
 ## Stream Push/Interruption Event Parameter Description
@@ -8,8 +8,8 @@ You need to understand how to receive messages on Tencent Cloud LVB before readi
 
 | Event Type | Field Value Description |
 |---------|---------|
-| LVB push | event_type = 1 |
-| LVB stream interruption | event_type = 0 |
+| CSS push | event_type = 1 |
+| CSS stream interruption | event_type = 0 |
 
 ### Common callback parameters
 <table>
@@ -24,7 +24,7 @@ You need to understand how to receive messages on Tencent Cloud LVB before readi
 <td>Security signature of event notification (sign = MD5(key + t)). <br>Note: Tencent Cloud splices the encryption `<a href="#key">key</a>` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
 </tr></table>
 
->? `<span id="key"></span>key` is the callback key in **Event Center** > **[LVB Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
+>? `<span id="key"></span>key` is the callback key in **Event Center** > **[CSS Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### Callback message parameters
@@ -34,11 +34,11 @@ You need to understand how to receive messages on Tencent Cloud LVB before readi
 | appid         | int    | User [APPID](https://console.cloud.tencent.com/developer)                                                   |
 | app           | string | Push domain name                                                     |
 | appname       | string | Push path                                                     |
-| stream_id     | string | LVB stream name                                                   |
-| channel_id    | string | The value is the same as LVB stream name                                                 |
+| stream_id     | string | CSS stream name                                                   |
+| channel_id    | string | The value is the same as CSS stream name                                                 |
 | event_time    | int64  | Unix timestamp of event message generation                                   |
 | sequence      | string | Message serial number, which is used to identify a push event. A push event generates push and interruption messages with the same serial number |
-| node          | string | LVB access point IP                                              |
+| node          | string | CSS access point IP                                              |
 | user_ip       | string | User push IP                                                  |
 | stream_param  | string | User push URL parameters                                        |
 | push_duration | string | Push duration of stream interruption event notification in milliseconds                               |
@@ -54,7 +54,7 @@ You need to understand how to receive messages on Tencent Cloud LVB before readi
 | 3      | recv() return 0            | The host disconnects the TCP connection                         |
 | 4      | recv() return error        | A TCP connection exception occurs for the host                    |
 | 7      | rtmp message large than 1M | An exception occurs in the received streaming data                         |
-| Others   | LVB service internal exception           | If you need help, contact your Tencent Cloud sales rep or submit a ticket |
+| Others   | CSS service internal exception           | If you need help, contact your Tencent Cloud sales rep or submit a ticket |
 
 ### Sample callback message
 ```
