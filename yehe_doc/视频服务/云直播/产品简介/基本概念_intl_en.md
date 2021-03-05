@@ -8,7 +8,7 @@
 [](id:play)
 
 ### Pull
-It refers to CSS playback where the source video and audio are pulled from the Tencent video cloud servers and played back at the specified address after CSS push is implemented. The video source is generated in real time. It is only meaningful if someone pushes a live stream. Once the host stops streaming, the CSS URL will become invalid, and since the livCSSe streams are played back in real time, no progress bar will be displayed on the player during the playback. 
+It refers to CSS playback where the source video and audio are pulled from the Tencent video cloud servers and played back at the specified address after CSS push is implemented. The video source is generated in real time. It is only meaningful if someone pushes a live stream. Once the host stops streaming, the CSS URL will become invalid, and since the live streams are played back in real time, no progress bar will be displayed on the player during the playback. 
 
 
 [](id:push_domain)
