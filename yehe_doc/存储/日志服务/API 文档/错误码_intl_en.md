@@ -43,7 +43,7 @@ This document describes the error code and corresponding error message returned 
 | 403                       | TopicExceed          | The number of log topics exceeds the upper limit. Up to 10 log topics are supported                               |
 | 403                       | ShipperExceed        | The number of shipping rules exceeds the upper limit. Up to 10 shipping rules are supported                               |
 | 403 | TaskReadOnly | Only failed shipping tasks can be restarted. Tasks in other statuses cannot be modified |
-| 403                       | AccountArrears          | The account is in arrears             |
+| 403                       | AccountArrears          | The account has overdue payment             |
 | 403                       | ServiceNotActivated          | The CLS service is not activated             |
 | 404                       | CursorNotExist       | There are no downloadable logs in the specified location                                 |
 | 404                       | TaskNotExist         | The specified shipping task does not exist                                         |
