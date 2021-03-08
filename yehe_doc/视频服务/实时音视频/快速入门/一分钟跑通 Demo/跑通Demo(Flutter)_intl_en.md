@@ -44,10 +44,12 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ### Step 4. Compile and run the project.
 1. Run `flutter pub get`.
 2. Compile, run, and debug the project.
+
 #### Android
 1. Run `flutter run`.
 2. Open the demo project with Android Studio (3.5 or above).
 3. Run the project.
+
 #### iOS
 1. Open `\ios project` in the source code directory with Xcode (11.0 or above).
 2. Compile and run the demo project.
