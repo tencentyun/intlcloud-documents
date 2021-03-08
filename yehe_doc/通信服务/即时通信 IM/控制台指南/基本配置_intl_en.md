@@ -30,7 +30,7 @@ In the **Basic Info** area, you can:
  In the **Basic Info** area, click **Delete** next to **Status**. In the pop-up dialog box, click **OK**.
 
 **Pro Edition/Flagship Edition**
-- Apps that have been in arrears for seven days will be automatically **Disabled**. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
+- Apps that have overdue payments for seven days will be automatically **Disabled**. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
 - Apps become **Expired** after the refund and **Disabled** after seven days. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
 
 **TRTC Trial**
