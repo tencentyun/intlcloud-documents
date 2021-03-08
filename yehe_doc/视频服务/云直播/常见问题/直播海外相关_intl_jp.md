@@ -1,8 +1,8 @@
-### 中国本土以外でLVBプッシュアクセラレーションを設定するにはどうすればよいですか。
-LVBコンソールの[Domain Management]（https://console.cloud.tencent.com/live/domainmanage）で、デフォルトのプッシュドメイン名は、中国本土以外でのプッシュアクセラレーションで事前設定されています。独自のプッシュドメイン名を使用する場合は、プッシュドメイン名を追加してから、指示に従ってCNAME関連の操作を完了すると、中国本土以外のアクセラレーション設定が完了します。
+### 中国本土以外でCSSプッシュアクセラレーションを設定するにはどうすればよいですか。
+CSSコンソールの[Domain Management](https://console.cloud.tencent.com/live/domainmanage)で、デフォルトのプッシュドメイン名は、中国本土以外でのプッシュアクセラレーションで事前設定されています。独自のプッシュドメイン名を使用する場合は、プッシュドメイン名を追加してから、指示に従ってCNAME関連の操作を完了すると、中国本土以外のアクセラレーション設定が完了します。
 		
 ### 中国本土以外で再生ドメイン名をアクセラレーションするにはどうすればよいですか。
-LVBコンソールの[Domain Management]（https://console.cloud.tencent.com/live/domainmanage）で、再生用ドメイン名を追加します。2つのタイプを選択できます。**グローバルアクセラレーション**。ドメイン名が中国本土でICP申告済である必要があります。そうしないと、設定が失敗します。**中国香港、中国マカオ、中国台湾、および中国本土以外地域のアクセラレーション**。指示に従って設定を完了するだけで済みますが、このタイプのアクセラレーションは中国本土では再生できません。
+CSSコンソールの[Domain Management](https://console.cloud.tencent.com/live/domainmanage)で、再生用ドメイン名を追加します。2つのタイプを選択できます。**グローバルアクセラレーション**。ドメイン名が中国本土でICP申告済である必要があります。そうしないと、設定が失敗します。**中国香港、中国マカオ、中国台湾、および中国本土以外地域のアクセラレーション**。指示に従って設定を完了するだけで済みますが、このタイプのアクセラレーションは中国本土では再生できません。
 	 
 ### GCDがドメイン名に設定されているかどうかを確認するにはどうすればよいですか。
 中国本土以外のサーバーを使用してpingを実行し、ストリーミングをプッシュしてドメイン名を再生します。サーバーIPが最も近いノードIPである場合、GCDが構成されています。または、[https://tools.ipip.net/dns.phpツール](https://tools.ipip.net/dns.php)を使用して、ドメイン名をテストし、解決済みIPアドレスがアクセラレーションリージョンに対応しているかどうかを確認することもできます。
@@ -14,14 +14,14 @@ LVBコンソールの[Domain Management]（https://console.cloud.tencent.com/liv
 2. **取得したHTTPのステータスコードは200ですか。**
 	200でない場合、失敗の理由はいくつか考えられます。一般に、エラーコード403は認証の失敗を示します、リンク不正アクセス防止の計算形式が規則に準拠しているかどうかを確認する必要があります。エラーコードが404の場合、再生されたストリームがプラットフォーム上にないことを示します、プッシュが正常かどうかを確認する必要があります。その他のエラーコードについては、[Submit Ticket](https://console.cloud.tencent.com/workorder/category)でトラブルシューティングを依頼できます。
 	 
-### 中国本土以外のLVBプッシュはどのプロトコルをサポートしていますか。
-現在、中国本土以外のLVBプッシュはRTMPプロトコルのみがサポートされています。
+### 中国本土以外のCSSプッシュはどのプロトコルをサポートしていますか。
+現在、中国本土以外のCSSプッシュはRTMPプロトコルのみがサポートされています。
 	 
-### 中国本土以外のLVB再生はHTTPSをサポートしていますか。
-はい。ドメイン名管理で、HTTPSストリームプルを設定する必要があるドメイン名にHTTPS証明書を追加するだけで、操作手順について、[Domain Management](https://console.cloud.tencent.com/live/domainmanage) > 対応するDomain Name > Manage > Advanced Configuration > HTTPS　Configuration。
+### 中国本土以外のCSS再生はHTTPSをサポートしていますか。
+はい。ドメイン名管理で、HTTPSストリームプルを設定する必要があるドメイン名にHTTPS証明書を追加するだけで、操作手順について、[Domain Management](https://console.cloud.tencent.com/live/domainmanage)> 対応するDomain Name > Manage > Advanced Configuration > HTTPS　Configuration。
 	 
 ### ライブブロードキャストの中国本土以外の再生アクセラレーションリージョンを変更できますか。
 はい。コンソールのドメイン名管理で変更できます。通常は15分ほどで反映されます。
 	 
 ### 中国本土以外のプッシュアクセラレーションは、HTTPDNSスケジューリングをサポートしていますか。
-はい。現在、[Submit ticket]（https://console.cloud.tencent.com/workorder/category）して。バックグラウンドで設定する必要があります。
+はい。現在、[Submit ticket](https://console.cloud.tencent.com/workorder/category)して。バックグラウンドで設定する必要があります。
