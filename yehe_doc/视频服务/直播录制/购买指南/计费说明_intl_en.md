@@ -31,5 +31,5 @@ Suppose you use the LVB recording service for 18 days between June 1 and July 1,
 
 > !
 >- The billing rule for the percentage of valid days will take effect on **November 1, 2020**, and bills will be generated on **December 1, 2020** according to this rule.
->- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. After enabling the recording feature, please make sure that your VOD service is in normal status; if it has not been activated or has been suspended due to account arrears, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
+>- The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 
