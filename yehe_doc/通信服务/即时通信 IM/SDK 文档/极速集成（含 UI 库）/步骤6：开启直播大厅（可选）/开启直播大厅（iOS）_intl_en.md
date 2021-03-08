@@ -46,7 +46,7 @@ TUILiveRoomAnchorViewController *anchorVC =
 /// Receive the callback for successful anchor creation/exit.
 anchorVC.delegate =  self ; 
 [anchorVC eanblePK: NO];
-/// push/present displays `viewController` on the anchor page.
+/// `push/present` displays `viewController` on the anchor page.
 [self.navigationController pushViewController:anchorVC animated: YES];
 ```
 
@@ -66,7 +66,7 @@ TUILiveRoomAudienceViewController *audienceVC =
 						 anchorId:nil
 						   useCdn:NO
 						   cdnUrl:@""];
-/// push/present displays `viewController` on the viewer page based on project requirements.
+/// `push/present` displays `viewController` on the viewer page based on project requirements.
 [self.navigationController pushViewController:anchorVC animated: YES];
 ```
 
@@ -76,7 +76,7 @@ TUILiveRoomAudienceViewController *audienceVC =
 After you create an anchor and a viewer, a live room list is required to associate them.
 - After the anchor creates a room, record the room ID to the backend.
 - After the anchor terminates the room, the backend also terminates the room ID.
-- The viewer gets the room ID list from the backend and clicks it to enter the corresponding room.
+- The viewer gets the room ID list from the backend and clicks a room ID to enter the corresponding room.
 
 Room lists can vary, and we do not provide an example of how to build a room list at the backend. You can see [`TUILiveRoomManager`](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKitDemo/TUIKitDemo/Scenes/Data/TUILiveRoomManager.m) in the demo to implement the logic by which the client reports the room list.
 
@@ -117,10 +117,10 @@ When `TUILiveRoomAudienceViewController` is created at the viewer end, TRTC is u
 
 TRTC uses UDP to transmit audio and video data, and LVB CDN uses RTMP, HLS, FLV, or other protocols to transmit data. TRTC provides a shorter delay and smoother microphone on/off experience than LVB CDN. However, TRTC is more expensive than LVB CDN.
 
-If you do not have high delay requirements, use CDN to view livestreams to reduce costs.
+If you do not have high delay requirements, use CDN to view live streams to reduce costs.
 
 #### Prerequisites
-  You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live). You need to configure a playback domain for live stream playback according to the requirements of applicable authorities. For detailed directions, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
+  You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live). You need to configure a playback domain for live playback according to the requirements of applicable authorities. For detailed directions, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 #### Enabling relayed push
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
@@ -128,7 +128,7 @@ If you do not have high delay requirements, use CDN to view livestreams to reduc
 3. In **Relayed Push Configuration**, click ![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png) next to **Enable Relayed Push**, and click **Enable Relayed Push** in the dialog box that pops up.
 
 #### Configuring a playback domain
-  1. Log in to the [LVB console](https://console.cloud.tencent.com/live/).
+  1. Log in to the [CSS console](https://console.cloud.tencent.com/live/).
   2. Click **Add Domain**, enter a playback domain for which you have already obtained the ICP filing, select **Playback Domain** as its type, select an acceleration region (which is **Chinese mainland** by default), and click **Confirm**.
 
 #### Entering the playback URL when a viewer enters the room
@@ -200,7 +200,7 @@ anchorVC.delegate = self;
 
 ```objectivec
 - (void)getPKRoomIDList:(TUILiveOnRoomListCallback)callback {
-	/// If the rooms you created require the PK feature, return the anchor's room ID array that supports PK through callback in this callback.
+	/// If the rooms you create require the PK feature, return the anchor's room ID array that supports PK through callback in this callback.
    	callback(@[@"12345", @"123456"]);
 }
 ```

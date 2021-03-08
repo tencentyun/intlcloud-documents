@@ -11,11 +11,11 @@ After importing TUIKit into your project, you can quickly enable the live stream
 <span id="step1"></span>
 ## Step 1. Activate the TRTC Service
 
-1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
+1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page of the application.
 2. Click **Activate** under **Activate Tencent Real-Time Communication (TRTC)**.
 3. Click **Confirm** in the pop-up dialog box.
 
->?A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
+>?A TRTC application with the same SDKAppID as the IM application will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
    	
 <span id="step2"></span>
 ## Step 2. Configure Project Files
@@ -43,7 +43,7 @@ TUIKit.login(userID, userSig, new IUIKitCallBack() {
 
     @Override
     public void onSuccess(Object data) {
-        //Login succeeds.
+        // Login succeeds.
     }
 });
 ```
@@ -112,7 +112,7 @@ If you do not have high delay requirements, use CDN to view live streams to redu
 
 #### Prerequisites
 
-You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live). You need to configure a playback domain name for live playback according to the requirements of applicable authorities. For detailed directions, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
+You have activated Tencent Cloud [CSS](https://console.cloud.tencent.com/live). You need to configure a playback domain for live playback according to the requirements of applicable authorities. For detailed directions, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 #### Enabling relayed push
 
@@ -138,7 +138,7 @@ roomAudienceLayout.initWithRoomId(getSupportFragmentManager(), 12345, "12565", t
 
 ## FAQs
 
-How can I customize gifts?
+### How can I customize gifts?
 
 The TUIKit_live SDK allows users to customize gifts. To modify the gift content or source, modify the server request address or logic in the `DefaultGiftAdapterImp.java` file of TUIKit_live. Ensure that the returned data has the same format as the existing data.
 
@@ -180,7 +180,7 @@ layoutTuiLiverRomAnchor.setLiveRoomAnchorLayoutDelegate(this);
 2. Set PK list data in the `getRoomPKList` callback of `UILiveRoomAnchorLayout` at the anchor end.
 ```java
 public void getRoomPKList(final TUILiveRoomAnchorLayout.OnRoomListCallback callback) {
-    // If the rooms you create require the PK feature, return the anchor's room ID array that supports PK through callback in this callback.
+    /// If the rooms you create require the PK feature, return the anchor's room ID array that supports PK through callback in this callback.
     RoomManager.getInstance().getRoomList(RoomManager.TYPE_LIVE_ROOM, new RoomManager.GetRoomListCallback() {
         @Override
         public void onSuccess(List<String> roomIdList) {
