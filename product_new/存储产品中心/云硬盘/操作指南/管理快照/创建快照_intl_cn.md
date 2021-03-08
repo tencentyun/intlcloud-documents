@@ -22,8 +22,8 @@
 ![](https://main.qcloudimg.com/raw/e1b0ac245e325281a0693f7ae43946ff.png)
 
 
-
-## 操作步骤<span id="CreateSnapshot"></span>
+<span id="CreateSnapshot"></span>
+## 操作步骤
 ### 使用控制台创建快照
 1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs)。
 2. 单击目标云硬盘所在行右侧的【创建快照】。
