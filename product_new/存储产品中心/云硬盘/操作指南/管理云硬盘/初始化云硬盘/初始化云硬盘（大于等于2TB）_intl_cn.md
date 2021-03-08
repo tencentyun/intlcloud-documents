@@ -1,5 +1,5 @@
 ## 操作场景
-本文以云硬盘容量大于等于2TB为例，提供云硬盘的初始化操作指导。关于云磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://cloud.tencent.com/document/product/362/33065)。
+本文以云硬盘容量大于等于2TB为例，提供云硬盘的初始化操作指导。关于云磁盘初始化场景的更多介绍，请参考 [初始化场景介绍](https://intl.cloud.tencent.com/document/product/362/31596)。
 MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分区时，请采用 GPT 分区形式。对于 Linux 操作系统而言，当磁盘分区形式选用 GPT 时，fdisk 分区工具将无法使用，需要采用 parted 工具。
 
 ## 前提条件
@@ -57,7 +57,7 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 <span id="CreateFileSystemOnBareDevice"></span>
 #### 在裸设备上构建文件系统
 
-1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)。
+1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 fdisk -l
@@ -156,7 +156,7 @@ mount -a
 
 >本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc`设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在`/data/newpart2`下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
-1. [登录 Linux 云服务器](https://cloud.tencent.com/document/product/213/5436)
+1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)
 2. 以 root 用户执行以下命令，查看磁盘名称。
  ```
 lsblk
@@ -298,4 +298,4 @@ UUID=fc3f42cc-2093-49c7-b4fd-c616ba6165f4 /data/newpart2   ext4 defaults     0  
 如果运行通过则说明文件写入成功，新建的文件系统会在操作系统启动时自动挂载。
 
 ## 相关操作
- [初始化云硬盘（小于2TB）](https://cloud.tencent.com/document/product/362/6734)
+ [初始化云硬盘（小于2TB）](https://intl.cloud.tencent.com/document/product/362/31597)
