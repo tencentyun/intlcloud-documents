@@ -378,8 +378,8 @@ LVBは、ライブストリーミングでポルノ検出を行うことがで�
 |＞1000|0.2294 米ドル|1,000件未満の場合は1,000件としてカウント|
 
 >? 
-- 中国大陸以外の地域のCOSに保存したスクリーンキャプチャの場合、ポルノ検出機能をオンにすると、追加で[COS](https://intl.cloud.tencent.com/document/product/436/6222)の外部ネットワークのダウンストリームトラフィック料金が発生します。それぞれのCOSの課金の詳細については、 [製品価格](https://buy.cloud.tencent.com/price/cos/overview)をご参照ください。
-- 現在、LVBスクリーンキャプチャはリージョンをサポートしています。[サービスリージョン関連事項](https://intl.cloud.tencent.com/document/product/267/38285#que1)をご参照ください。
+>- 中国大陸以外の地域のCOSに保存したスクリーンキャプチャの場合、ポルノ検出機能をオンにすると、追加で[COS](https://intl.cloud.tencent.com/document/product/436/6222)の外部ネットワークのダウンストリームトラフィック料金が発生します。それぞれのCOSの課金の詳細については、 [製品価格](https://buy.cloud.tencent.com/price/cos/overview)をご参照ください。
+>- 現在、LVBスクリーンキャプチャはリージョンをサポートしています。[サービスリージョン関連事項](https://intl.cloud.tencent.com/document/product/267/38285#que1)をご参照ください。
 
 
 **課金説明：**
