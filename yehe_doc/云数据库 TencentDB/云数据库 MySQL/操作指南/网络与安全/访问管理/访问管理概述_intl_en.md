@@ -1,27 +1,28 @@
+## Known Issues
+If you have multiple users managing different Tencent Cloud services such as CVM, VPC, and TencentDB, and they all share your Tencent Cloud account access key, you may face the following problems:
+- The risk of your key being compromised is high since multiple users are sharing it.
+- Your users might introduce security risks from misoperations due to the lack of user access control.
 
-If you use multiple Tencent Cloud services such as TencentDB, CVM, and VPC which are managed by different users who share your Tencent Cloud account key, the following problems may exist:
-- Your password is shared by multiple users, leading to high risk of compromise.
-- You cannot limit the access permission of other users, which is easy to pose a security risk due to faulty operations.
+## Solutions
+You can avoid the problems above by allowing different users to manage different services through sub-accounts. By default, a sub-account does not have permissions to use Tencent Cloud services or resources. Therefore, you need to create a policy to grant different permissions to the sub-accounts.
 
-This is exactly why CAM has been developed. For a detailed description of CAM, see [CAM Overview](http://intl.cloud.tencent.com/document/product/598/10583).
+[Cloud Access Management (CAM)](https://intl.cloud.tencent.com/document/product/598/10583) is a web-based Tencent Cloud service that helps you securely manage and control access to your Tencent Cloud resources. Using CAM, you can create, manage, and terminate users and user groups. You can manage identities and policies to allow specific users to access your Tencent Cloud resources.
 
-After connecting to CAM, you can allow different users to manage different services through sub-accounts so as to avoid the above problems. By default, a sub-account doesn't have permission to use a TencentDB instance or related resources. Therefore, you need to create a policy to grant the required permission to the sub-account.
+When using CAM, you can associate a policy with a user or user group to allow or forbid them to use specified resources to complete specified tasks. For more information on CAM policies, please see [Syntax Logic](https://intl.cloud.tencent.com/document/product/598/10603).
 
-A policy is a syntax rule used to define and describe one or more privileges. It can authorize or deny the use of the designated resources by a user or user group. For more information on CAM policy, see [Policy Syntax](http://intl.cloud.tencent.com/document/product/598/10603). For more information on how to use a CAM policy, see [Policy](http://intl.cloud.tencent.com/document/product/598/10601).
+You can skip this section if you do not need to manage permissions to TencentDB resources for sub-accounts. This will not affect your understanding and use of the other sections of the document.
 
-If you do not need to manage the access permission to TencentDB resources for sub-accounts, you can skip this chapter. This will not affect your understanding and usage of other parts in the documentation.
+### Getting started
+A CAM policy is used to allow or deny one or more TencentDB operations. When configuring a policy, you must specify the target resources of the operations, which can be all resources or specified resources. A policy can also include conditions where the resources can be used.
 
-## Getting Started
-A CAM policy must authorize or deny the use of one or more TencentDB operations. At the same time, it must specify the resources that can be used for the operations (which can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
+>?
+>- We recommend you manage TencentDB resources and authorize TencentDB operations through CAM policies. Although the user experience does not change for existing users who are granted permissions by project, we do not recommend you continue to manage resources and authorize operations in a project-based manner.
+>- Conditions cannot be set in TencentDB for the time being.
 
-
->- You are recommended to manage TencentDB resources and authorize TencentDB operations through CAM policies. Although the experience stays the same for existing users who are granted permission by project, it is not recommended to continue managing resources and authorizing operations in a project-based manner.
->- Effectiveness conditions cannot be set in TencentDB for the time being.
-
-| Task | Link |
-|:---------|:---------|
-| Learn more about the basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/236/14466?lang=cn/#celueyufa)|
-| Define operations in a policy | [TencentDB Operations](https://intl.cloud.tencent.com/document/product/236/14466?lang=cn/#caozuo) |
-| Defines resources in a policy | [TencentDB Resource Path](https://intl.cloud.tencent.com/document/product/236/14466?lang=cn/#ziyuanlujing)|
-| Resource-level permission supported by TencentDB | [Resource-level Permission Supported by TencentDB](https://intl.cloud.tencent.com/document/product/236/14467?lang=cn)|
-| Console sample | [Console Sample](https://intl.cloud.tencent.com/document/product/236/14468?lang=cn)|
+| Task | Link | 
+|---------|---------|
+| Learn more about the basic policy structure | [Policy Syntax](https://intl.cloud.tencent.com/document/product/236/14466) |
+| Define operations in a policy | [TencentDB Operations](https://intl.cloud.tencent.com/document/product/236/14466) | 
+| Defines resources in a policy | [TencentDB Resource Path](https://intl.cloud.tencent.com/document/product/236/14466)|
+| Resource-level permission supported by TencentDB | [Authorizable Resource Types](https://intl.cloud.tencent.com/document/product/236/14467)|
+| Console sample | [Console Sample](https://intl.cloud.tencent.com/document/product/236/14468) |
