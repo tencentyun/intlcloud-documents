@@ -1,5 +1,5 @@
 ## 操作场景
-本文档将以初始化新挂载至云服务器的空云硬盘，创建文件系统并向其中写入一个名为 `qcloud.txt` 的文件为例，帮助您了解如何简单地使用云硬盘。关于初始化云硬盘的更多信息请参考 [初始化场景介绍](https://cloud.tencent.com/document/product/362/33065)。
+本文档将以初始化新挂载至云服务器的空云硬盘，创建文件系统并向其中写入一个名为 `qcloud.txt` 的文件为例，帮助您了解如何简单地使用云硬盘。关于初始化云硬盘的更多信息请参考 [初始化场景介绍](https://intl.cloud.tencent.com/document/product/362/31596)。
 
 ## 前提条件
 已成功 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)，即云硬盘状态为【已挂载】。
@@ -10,11 +10,11 @@
 
 
 ## 注意事项
-您可先了解 [云硬盘使用注意事项](https://cloud.tencent.com/document/product/362/17819#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) 后再对云硬盘进行相关操作，以免损坏重要数据。
+您可先了解 [云硬盘使用注意事项](https://intl.cloud.tencent.com/zh/document/product/362/32409#.E4.BA.91.E7.A1.AC.E7.9B.98.E4.BD.BF.E7.94.A8.E4.B8.8A.E6.9C.89.E4.BB.80.E4.B9.88.E6.B3.A8.E6.84.8F.E4.BA.8B.E9.A1.B9.EF.BC.9F) 后再对云硬盘进行相关操作，以免损坏重要数据。
 
 
 ## 格式化、创建文件系统并写入文件（Windows）
-1. 以管理员身份 [登录 Windows 实例](https://cloud.tencent.com/document/product/213/5435)。
+1. 以管理员身份 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435)。
 2. 选择【服务器管理】>【存储】>【磁盘管理】，进入磁盘管理界面。
 3. （可选）右键单击目标空磁盘，选择【联机】。
 当磁盘状态变为【没有初始化】时，表示联机完成。
@@ -34,9 +34,9 @@
 ## 格式化、创建文件系统并写入文件（Linux）
 >
 >- 本文以使用 EXT4 文件系统为例。
->- Linux 云服务器重启或开机后，不会自动挂载数据盘，详情请参见 [格式化并挂载数据盘](https://cloud.tencent.com/document/product/213/17487)。
+>- Linux 云服务器重启或开机后，不会自动挂载数据盘，详情请参见 [格式化并挂载数据盘](https://intl.cloud.tencent.com/document/product/213/17487)。
 
-1. 以 root 用户 [登录 Linux 实例](https://cloud.tencent.com/document/product/213/5436)。
+1. 以 root 用户 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 执行以下命令，查看连接到实例的磁盘名称。
  ```
 fdisk -l
