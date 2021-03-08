@@ -1,16 +1,16 @@
 <span id="que1"></span>
-### LVBレコーディングの仕組みはどのようになっていますか。
+### CSSレコーディングの仕組みはどのようになっていますか。
 ![img](https://main.qcloudimg.com/raw/9c9d31c6ffec97d2b8b4042b7a673cbc.jpg)
 
-LVBストリームのレコーディングを有効にすると、オーディオ・ビデオデータはレコーディングシステムにバイパスされます。キャスターの携帯電話からプッシュされたすべてのフレームは、レコーディングシステムによってレコーディングファイルに書き込まれます。
+CSSストリームのレコーディングを有効にすると、オーディオ・ビデオデータはレコーディングシステムにバイパスされます。キャスターの携帯電話からプッシュされたすべてのフレームは、レコーディングシステムによってレコーディングファイルに書き込まれます。
 
-LVBストリームが中断されると、アクセス層はすぐにレコーディングサーバーに通知して、書き込まれているファイルをランディングし、VODシステムに保存して、インデックスを生成するように指示します。これにより、VODシステムで新しく生成されたレコーディングファイルが表示されます。また、レコーディングイベント通知が設定されている場合、レコーディングシステムはファイルの**インデックスID** と **オンライン再生アドレス**をすでに設定されたサーバーに通知します。
+CSSストリームが中断されると、アクセス層はすぐにレコーディングサーバーに通知して、書き込まれているファイルをランディングし、VODシステムに保存して、インデックスを生成するように指示します。これにより、VODシステムで新しく生成されたレコーディングファイルが表示されます。また、レコーディングイベント通知が設定されている場合、レコーディングシステムはファイルの**インデックスID** と **オンライン再生アドレス**をすでに設定されたサーバーに通知します。
 
 ただし、ファイルが大きすぎる場合は、クラウドでの転送と処理中にエラーが発生する可能性があります。成功率を確保するには、1つのレコーディングファイルは最長で120分を超えないようにします。RecordIntervalパラメータを使用してより短いパートを指定できます。
 
 <span id="que2"></span>
 ### ライブブロードキャストをビデオにレコーディングができないのはなぜですか。 
-LVBレコーディングプレイバック機能は、Tencent Cloudの**VODサービス**に依存しています。レコーディング機能を使用するには、まずTencent Cloudの管理コンソールで[activate VOD](https://console.cloud.tencent.com/vod)する必要があります。
+CSSレコーディングプレイバック機能は、Tencent Cloudの**VODサービス**に依存しています。レコーディング機能を使用するには、まずTencent Cloudの管理コンソールで[activate VOD](https://console.cloud.tencent.com/vod)する必要があります。
 
 <span id="que3"></span>
 ### ライブブロードキャスト終了後、レコーディングファイルを取得できるまでどれくらい時間がかかりますか。 
@@ -19,8 +19,8 @@ LVBレコーディングプレイバック機能は、Tencent Cloudの**VODサ�
 <span id="que4"></span>
 ### ライブブロードキャストレコーディング終了後に、レコーディングファイルを取得するにはどうすればよいですか。
 レコーディングファイルが生成された後、VODシステムに自動的に保存されます。保存するには、VODサービスをアクティブにする必要があります。レコーディングファイルは、次の方法で取得できます。
-- [LVB Console]（https://intl.cloud.tencent.com/document/product/267/31563）
-- [LVB Recording](https://intl.cloud.tencent.com/document/product/267/31563)
+- [CSS Console](https://intl.cloud.tencent.com/document/product/267/31563)
+- [CSS Recording](https://intl.cloud.tencent.com/document/product/267/31563)
 - [VOD API query](https://intl.cloud.tencent.com/document/product/267/31563)
 
 <span id="que5"></span>
@@ -29,12 +29,12 @@ LVBレコーディングプレイバック機能は、Tencent Cloudの**VODサ�
 
 <span id="que6"></span>
 ### ビデオの保存期間を設定するにはどうすればよいですか。
-現在LVBのビデオストレージには時間制限がなく、コンソールとRSETのAPIインターフェースを介してビデオファイルを管理することができます。 
+現在CSSのビデオストレージには時間制限がなく、コンソールとRSETのAPIインターフェースを介してビデオファイルを管理することができます。 
 
 <span id="que7"></span>
 ### 1回のライブブロードキャストレコーディング中でレコーディングファイルが何個生成されますか。
 
-- **MP4、FLV、またはAAC形式でレコーディング**：1ファイルの長さは5分～120分に制限されています。[CreateLiveRecordTemplate]（https://intl.cloud.tencent.com/document/product/267/30845）インターフェースのRecordIntervalパラメータを使用して、より短いパートを指定できます。
+- **MP4、FLV、またはAAC形式でレコーディング**：1ファイルの長さは5分～120分に制限されています。[CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)インターフェースのRecordIntervalパラメータを使用して、より短いパートを指定できます。
 	- 1回のライブブロードキャストが非常に短く、レコーディングモジュールが起動される前に、プッシュが終了した場合、レコーディングファイルは生成できません。
 	- 1回のライブブロードキャスト継続時間がそれほど長くなく（RecordIntervalよりも短く）、プッシュの中断がない場合、通常はファイルが1つのみです。
 	- 1回のライブブロードキャスト継続時間が非常に長い（RecordIntervalより長い）場合、RecordIntervalで指定された時間の長さに従ってパート化されます。パート化の理由は、分散式システムでの長すぎるファイルの転送時間の不確実性を回避するためです。
@@ -51,11 +51,11 @@ LVBレコーディングプレイバック機能は、Tencent Cloudの**VODサ�
 一般的に、現在のプッシュドメイン名で2つのレコーディングタスクが同時に実行されている可能性があります。次のように順番にトラブルシューティングすることをお勧めします。
 
 1. コンソールのレコーディング設定情報を確認し、レコーディングファイルのタイプが1つの形式のみが選択されているかどうかを確認します。
-   - コンソールが**新しいバージョンのコンソール**の場合は、[【Domain Management】]（https://console.cloud.tencent.com/live/domainmanage）に移動し、プッシュドメイン名の右側にある【Management】をクリックして。【Configure Template 】の【Transcoding configuration】を表示して、関連付けられているテンプレートの「Configure format」の情報を確認します。
+   - コンソールが**新しいバージョンのコンソール**の場合は、[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に移動し、プッシュドメイン名の右側にある【Management】をクリックして。【Configure Template 】の【Transcoding configuration】を表示して、関連付けられているテンプレートの「Configure format」の情報を確認します。
   
-2. 必要に応じて、 [CreateLiveRecord]（https://intl.cloud.tencent.com/document/product/267/30847）および[LVB Recording]（https://intl.cloud.tencent.com/document/product/267/34223）のいずれかからレコーディングを開始できます。同じライブブロードキャストストリームの場合、レコーディングテンプレートの設定と同時にレコーディングタスクが作成されると、レコーディングが繰り返されてしまいます。コンソールでレコーディングタスクが開始される同時に、API 3.0の[CreateLiveRecord]（https://intl.cloud.tencent.com/document/product/267/30847）APIまたはAPI2.0のLive_Tape_Start APが呼び出されてレコーディングが開始されているかどうかを確認してください。
+2. 必要に応じて、 [CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/30847)および[CSS Recording](https://intl.cloud.tencent.com/document/product/267/34223)のいずれかからレコーディングを開始できます。同じライブブロードキャストストリームの場合、レコーディングテンプレートの設定と同時にレコーディングタスクが作成されると、レコーディングが繰り返されてしまいます。コンソールでレコーディングタスクが開始される同時に、API 3.0の[CreateLiveRecord](https://intl.cloud.tencent.com/document/product/267/30847)APIまたはAPI2.0のLive_Tape_Start APが呼び出されてレコーディングが開始されているかどうかを確認してください。
 
->！上記の方法で問題が解決しない場合は、[Submit Ticket]（https://console.cloud.tencent.com/workorder/category）で解決してください。専任の担当者が対応します。
+>！上記の方法で問題が解決しない場合は、[Submit Ticket](https://console.cloud.tencent.com/workorder/category)で解決してください。専任の担当者が対応します。
 
 
 
