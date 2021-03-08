@@ -19,7 +19,6 @@
 
 component: website
 name: myWebsite
-org: test
 app: websiteApp
 stage: dev
 
