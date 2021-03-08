@@ -307,7 +307,7 @@ HLSは最長5分間のブレークポイントの継続レコーディングを�
 - [Androidプラットフォーム](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
 - [Webブラウザ](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! [プロフェッショナル版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDKの使用を推奨します。プロフェッショナル版には [Super Player（Player+）](https://cloud.tencent.com/product/player)、[Mobile Live Video Broadcasting（MLVB）](https://intl.cloud.tencent.com/zh/product/mlvb) などの機能が統合され、基盤モジュールを高度に再利用することにより、プロフェッショナル版の容量増加は同時に2つの独立したSDKを合併させたよりも小さくなっています。さらにシンボル重複（symbol duplicate）の問題も回避できます。
+>! [プロフェッショナル版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDKの使用を推奨します。プロフェッショナル版には [Mobile Live Video Broadcasting（MLVB）](https://intl.cloud.tencent.com/zh/product/mlvb) などの機能が統合され、基盤モジュールを高度に再利用することにより、プロフェッショナル版の容量増加は同時に2つの独立したSDKを合併させたよりも小さくなっています。さらにシンボル重複（symbol duplicate）の問題も回避できます。
 
 
 ## 関連料金
