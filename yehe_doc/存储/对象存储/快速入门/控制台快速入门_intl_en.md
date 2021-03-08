@@ -16,7 +16,7 @@ This document describes how to get started and store your data in the cloud usin
 ## Step 1. Sign up for a Tencent Cloud Account
 You must register a Tencent Cloud account before using the COS service. To do so, click the button below. Skip this step if you already have an account.
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
 
 ## Step 2. Verify your Identity
 Once registered, use your registered account to log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you are already done so, please skip this step.
