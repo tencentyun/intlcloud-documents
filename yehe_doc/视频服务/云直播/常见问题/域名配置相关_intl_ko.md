@@ -1,8 +1,8 @@
 <span id="que1"></span>
 
-### 어떻게 LVB에 도메인을 추가하나요?
+### 어떻게 CSS에 도메인을 추가하나요?
 
-1. Tencent Cloud [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인하여 [도메인 관리] 페이지에 접속합니다.
+1. Tencent Cloud [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인하여 [도메인 관리] 페이지에 접속합니다.
 2. 자체 푸시 스트림 도메인 또는 재생 도메인을 추가합니다. 구체적인 사항은 [도메인 관리](https://intl.cloud.tencent.com/document/product/267/35970)를 참조하십시오.
 3. 도메인 추가 후 CNAME 설정을 완료합니다. 구체적인 사항은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/267/31057)을 참조하십시오.
 4. 설정 성공 후 자체 도메인을 사용하여 푸시 스트림 및 재생을 진행할 수 있습니다.
@@ -18,11 +18,11 @@
 
 <span id="que3"></span>
 ### 자체 도메인에 액세스하지 않으면 어떻게 되나요?
-2018년 10월 17일 이후에 LVB 서비스를 개통한 경우, 자체 도메인을 추가해야 재생이 가능하며 추가하지 않을 경우 라이브 방송 콘텐츠를 재생할 수 없습니다.
+2018년 10월 17일 이후에 CSS 서비스를 개통한 경우, 자체 도메인을 추가해야 재생이 가능하며 추가하지 않을 경우 라이브 방송 콘텐츠를 재생할 수 없습니다.
 
-위의 날짜 이전에 LVB 서비스를 개통한 경우, 기본 도메인이 제공됩니다. Tencent Cloud는 2018년 12월 31일부터 점진적으로 기본 도메인 사용을 중단하고 있으니 신속히 자체 도메인으로 교체하실 것을 권장합니다.
+위의 날짜 이전에 CSS 서비스를 개통한 경우, 기본 도메인이 제공됩니다. Tencent Cloud는 2018년 12월 31일부터 점진적으로 기본 도메인 사용을 중단하고 있으니 신속히 자체 도메인으로 교체하실 것을 권장합니다.
 
->! 기본 도메인은 LVB에서 할당한 시스템 도메인입니다. 포맷은 `bizid.livepush.myqcloud.com` 과 `bizid.liveplay.myqcloud.com`입니다.
+>! 기본 도메인은 CSS에서 할당한 시스템 도메인입니다. 포맷은 `bizid.livepush.myqcloud.com` 과 `bizid.liveplay.myqcloud.com`입니다.
 
 <span id="que4"></span>
 ### 기본 도메인으로 특수 설정을 진행한 경우, 자체 도메인을 기존의 기본 도메인에 리졸브할 수 있나요?
