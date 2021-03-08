@@ -20,7 +20,7 @@ When an image fails to be downloaded, X-ErrNo contained in the header of the res
 | -124 | A download offset error has occurred. The setting of Range (checkpoint restart offset) for the HTTP request may be incorrect. | Check the checkpoint restart offset setting. |
 | -154 | Download is prohibited for this URL by the original image protection mechanism. | Use the style to access the image. |
 | -156 | Forcible execution of the 302 process. | N/A |
-| -162 | The business configuration is in arrears, and image downloading is prohibited. | Top up your account promptly. |
+| -162 | There is overdue payment, and image downloading is prohibited. | Make payment promptly. |
 | -163 | The business configuration does not exist. | Check relevant configuration items. |
 | -164 | The request frequency is too high. | Reduce the request frequency, or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us. |              -
 | -165 | Aggressive download requests are restricted. | N/A |
