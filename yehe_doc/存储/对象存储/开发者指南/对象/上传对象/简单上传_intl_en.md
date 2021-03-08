@@ -1,28 +1,40 @@
+Simple upload refers to uploading objects using the `PUT Object` API. It is suitable for uploading an object smaller than 5 GB in a single request.
+
+To upload an object larger than 5 GB, you can use:
+
+- The COS console: You can upload an object up to 512 GB. For more information, please see [Uploading Objects](https://intl.cloud.tencent.com/document/product/436/13321).
+- Multipart upload with APIs or SDKs: You can upload an object up to 48.82 TB (i.e., 50,000 GB). For more information, please see [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112)
+- COSCMD: You can upload an object up to 40 TB. For more information, please see [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
+
+>?
+>When initiating a request, if you want to specify a directory or path, you can use `/`. For example, if you need to upload `picture.png` to the `doc` directory, set the object key to `doc/picture.png`.
+
 ## Use Cases
 
-This operation is suitable for uploading an object smaller than 5 GB in a single request. For objects larger than 5 GB, you must use the [multipart upload](https://intl.cloud.tencent.com/document/product/436/14112) method.
+Simple upload is suitable for uploading an object smaller than 5 GB.
 
-If your object is large (for example, 100 MB), it is recommended that you use multipart upload in a high-bandwidth or weak network environment.
+In a high bandwidth or weak network environment, if your object is relatively large, for example, over 100 MB, you are advised to use [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112), even if the object is smaller than 5 GB. This is because multipart upload supports uploading multiple parts concurrently, which gives full play to resources in high bandwidth environments. On the other hand, in weak network environments, the uploaded parts will not be affected by the failed ones. Therefore, failed parts can be re-uploaded with a simple retry, improving the overall upload success rate. For more information about uploading objects with a client in a weak network environment, please see [Multipart Upload Resumption in a Weak Network Environment](https://intl.cloud.tencent.com/document/product/436/30932).
+
 
 ## Directions
 
-### Via the COS Console
-You can upload an object in the COS Console. For more information, see [Uploading an Object](https://intl.cloud.tencent.com/document/product/436/13321) in Console Guide.
+### Using RESTful APIs
 
-### Via REST API
+You can use RESTful APIs directly to initiate a simple upload request. For more information, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
 
-You can use the REST API directly to initiate a simple object upload request. For more information, see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+### Using SDKs
+You can directly call the simple upload method in the SDK. For more information, please see the SDK documentation for the corresponding programming language below:
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38062)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
 
-### Via the SDK
-You can directly call the simple object upload method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/12296)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A12)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1)
+
+
