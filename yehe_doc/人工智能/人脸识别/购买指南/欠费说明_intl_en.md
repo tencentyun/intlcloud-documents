@@ -1,3 +1,3 @@
-# Arrears
+# Overdue Payment
 
-Face Recognition bills for the current month will be pushed and automatically settled on the 1st day of the next month. The service will stop when the account balance is in arrears, and resume after the balance is topped up.  
+Face Recognition bills for the current month will be pushed and automatically settled on the 1st day of the next month. The service will stop when there is overdue payment, and resume after the payment is made.  
