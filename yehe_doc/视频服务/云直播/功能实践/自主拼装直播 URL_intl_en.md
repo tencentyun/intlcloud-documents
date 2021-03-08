@@ -1,5 +1,5 @@
 ### Prerequisites
-- You have signed up for a Tencent Cloud account and activated the [CSS service](https://intl.cloud.tencent.com/product/CSS).
+- You have signed up for a Tencent Cloud account and activated the [CSS service](https://intl.cloud.tencent.com/product/css).
 - You have your own domain name.
 - You have added push/playback domain names in the **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and successfully configured the CNAME record. For detailed directions, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
 
