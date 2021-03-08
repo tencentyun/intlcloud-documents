@@ -199,8 +199,8 @@ iOS 시스템에서 애플리케이션 간 화면 공유의 경우, 메인 App �
 1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가합니다.
 2. 프로그램 인터페이스에 버튼을 만들고, 해당 버튼의 상응하는 함수에 `TRTCBroadcastExtensionLauncher`의 `launch` 함수를 호출하면 화면 공유 기능이 요청됩니다.
 ```
-// 사용자 정의 버튼 응답 방법
-- (IBAction)onScreenButtonTapped:(id)sender {
+ // 사용자 정의 버튼 응답 방법
+ - (IBAction)onScreenButtonTapped:(id)sender {
     [TRTCBroadcastExtensionLauncher launch];
 }
 ```
