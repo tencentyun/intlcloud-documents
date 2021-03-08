@@ -1,4 +1,171 @@
-## Latest Lite Edition 5.1.121 @2020.12.18
+## Latest Lite Edition 5.1.137 @2021.01.29
+
+### SDK
+
+**Common changes**
+- Fixed the issue where there was no callback for the login API occasionally when a user logged in to the same account repeatedly on multiple iOS devices or Android devices.
+
+**Android platform**
+- Fixed crashes that occurred occasionally when a low-end Android device tried to obtain the log path.
+
+
+## Latest Standard Edition 5.1.21 @2021.01.15
+
+### SDK
+
+**Android platform**
+
+- Fixed the issue where custom messages with the extended field `extension` failed to be sent on the Android platform.
+
+### TUIKit and demo
+**iOS/Android**
+
+- Improved internationalization support by eliminating the issue where there were Chinese characters in the English version.
+
+
+## 5.1.136 @2021.01.27 - Lite Edition
+
+### SDK
+
+**Common changes**
+- V2 APIs added an API for log callbacks.
+- Fixed the issue where the UserID of the @ target user in the group @ message was empty.
+- Fixed the issue where audio-video group messages occasionally could not be received.
+- Fixed the occasional issue of incorrect login status in the case of frequent network reconnection.
+- Fixed the issue where users occasionally failed to log in again after going offline and being kicked off.
+- Fixed occasional crashes in DNS resolution.
+
+
+## 5.1.132 @2021.01.22 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Added support for overload protection in the network module.
+- Fixed the issue where some sessions occasionally were lost when the standard edition was upgraded to the lite edition.
+- Fixed the issue where the `onUserSigExpired` callback could not be received after the login information expired.
+- Fixed the issue where a member received the `onMemberKicked` callback after being kicked out of a group and joining the group again.
+
+
+## 5.1.131 @2021.01.19 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Added the API for forwarding a single message.
+- Optimized the logic of receiving audio-video group messages. When an audio-video group receives a message, the sender’s nickname and profile photo are no longer queried.
+- Fixed the issue where there was no conversation update notification when the last message in a conversation was deleted.
+- Fixed the issue where the unread messages count in C2C conversations occasionally was cleared when the C2C messages were synchronized after login.
+- Fixed the issue where the last message in a conversation was not updated when the conversation list was synchronized after a user went offline and then online.
+
+**Android platform**
+- Fixed the issue where the settings of the custom message field `description` and personal profile fields `level` and `role` did not take effect.
+- Fixed occasional crashes in deinitialization.
+
+
+## 5.1.129 @2021.01.13 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Fixed the issue where a conversation update callback was triggered when a user tried to get the conversation list and there was no conversation update.
+- Fixed the issue where the last message in a conversation was not cleared when a user tried to delete all the messages in the conversation.
+
+**iOS platform**
+- Fixed the issue where the returned information was not `nil` when a non-signaling message was passed in using the `getSignallingInfo` method.
+
+**Android platform**
+- Fixed occasional crashes caused by JNI local reference table exceeding the limit.
+
+
+## 5.1.20 @2021.01.08 - Standard Edition
+
+### SDK
+
+**Common changes**
+
+- V2 custom messages added the `desc` and `ext` fields.
+- V2 user profile APIs added the `role` and `level` fields.
+- Optimized V2 APIs. Whether your login is successful or not, you can get the data of the local conversation list and local historical messages.
+- V2 added the `getHistoryMessageList` API to support getting cloud or local messages and getting messages sent before or after a specific time.
+- Optimized the issue in getting the profile photos of C2C messages.
+- Optimized the security and renewal of rich media message file upload.
+- Fixed the issue where the local paths of sent rich media messages were empty.
+- Fixed the issue where when a local message was inserted into a group, the previous message was displayed as the `lastMessage` of the conversation after you logged out and logged back in.
+- Fixed the Elem out-of-order issue.
+- Fixed the issue where the @ prompt still existed in the message list after the group @ message was recalled.
+- Fixed the issue where system messages were pulled when you pulled the offline historical group messages after going online.
+- Fixed the issue where two offline push notifications were received when only one signaling invitation for a voice call was sent.
+- Fixed the issue where the settings of local "custom message data" became invalid when there were too many messages.
+- Fixed the issue where the unread number did not decrease after an unread group message was recalled.
+- Fixed other stability issues.
+
+**iOS and Mac platforms**
+
+- Fixed receiver crashes that occurred when `array json` was passed for custom messages.
+- Fixed crashes after calling `deleteConversation` and passing the wrong conversation ID.
+- Fixed the issue where the last draft in the draft box could not be deleted.
+
+### TUIKit and demo
+
+- Fixed the issue where the information of the conversation pinned to the top was not deleted after you deleted the friend or left the group on the iOS platform.
+- Fixed the issue where after a user was set as the administrator, the console still showed that the user did not have the administrator permissions on the iOS platform.
+- Fixed crashes that occurred when the thumbnail was empty on the iOS platform.
+- Fixes the issue where there was an exception in the height of a recalled long-text message on the iOS platform.
+- Fixed the issue where group muting tips were not displayed on the iOS platform.
+- Optimized the time display of the conversation UI on the iOS platform.
+- Fixed crashes that occurred when a user clicked **Back** after the creation of a live room entered the countdown process on the Android platform.
+- Fixed the issue where the call interface did not disappear when a member refused to answer the call in a group chat on the Android platform.
+- Fixed the issue where the small window was not closed when a viewer in the live room was kicked offline in the small window mode on the Android platform.
+- Fixed occasional crashes that occurred when someone joined a group on Android devices.
+
+
+## 5.1.125 @2021.01.08 - Lite Edition
+
+### SDK
+
+**Common changes**
+- V2 APIs added the `random` field for message objects.
+- V2 APIs added the `description` and `extension` fields for custom messages.
+- V2 APIs added the `role` and `level` fields for user profile objects.
+- Fixed the database compatibility issue in the upgrade from versions below 4.8.1 to the lite edition.
+- Fixed the issue where users occasionally received the callbacks of messages sent by themselves.
+- Fixed the issue where there was no callback when you tried to get the list of groups that you joined when you hadn’t joined any group.
+- Fixed the issue where there was no conversation update callback when setting group message receiving options.
+- Fixed the issue where occasionally there was no end callback for conversion synchronization.
+- Fixed occasional crashes in conversion synchronization.
+
+
+## 5.1.123 @2020.12.31 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Fixed the issue where the Android edition could not receive custom group system messages sent via the RESTful API.
+- Optimized the method of generating the value of the `random` field for a message.
+- Optimized log printing to facilitate troubleshooting.
+- Fixed occasional crashes in the network module.
+
+## 5.1.122 @2020.12.25 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Fixed the issue where there might be no callback when setting conversation drafts.
+- Fixed the issue where the message sender information was not completed when searching for messages via `findMessage`.
+- Fixed the issue where it might fail to search for messages via `findMessage` after inserting local messages.
+- Fixed the issue where conversation objects were not updated when setting group message receiving options.
+- Fixed the issue where conversation change notifications were not sent when personal or group nicknames or profile photos were changed.
+- Fixed the issue where the last message in a conversation was not updated when inserting local messages.
+- Enabled on-cloud control over personal profile update cycle.
+
+**iOS platform**
+- Fixed occasional crashes caused by improper dictionary or array operations.
+
+**Android platform**
+- Fixed occasional crashes when deleting messages.
+
+## 5.1.121 @2020.12.18 - Lite Edition
 
 ### SDK
 
@@ -13,22 +180,7 @@
 - Fixed the issue where, when a JSON array was passed in for custom message fields on iOS, the signaling module on the receiving end crashed during parsing.
 
 **Android platform**
-- Fixed occasional crashes that occurred during the setting of conversation drafts on Android.
-
-## Latest Standard Edition 5.1.10 @2020.12.04
-
-### SDK
-
-**Common changes**
-
-- V2 APIs added support for custom group fields and multi-element messages.
-- V2 APIs added an API for the local insertion of C2C messages.
-- Mitigated the issue of message loss for ordinary groups and audio-video groups.
-- Fixed the issue where messages that failed to be sent could not be deleted.
-- Fixed the C2C conversation issue where, if the first message was sent online, the read receipt was not received.
-- Fixed the issue where, after a recalled message was returned through the API for pulling historical messages, the message status was incorrect.
-- Fixed the failure to return information of all friend lists when ‘null’ was entered as the friend list name for the API for obtaining friend list information on iOS.
-- Fixed known stability issues.
+- Fixed occasional crashes when setting conversation drafts.
 
 ## 5.1.118 @2020.12.11 - Lite Edition
 
@@ -48,6 +200,21 @@
 **Android platform**
 - Fixed the issue where adding a friend to a blocklist occasionally led to crashes.
 - Fixed the issue where no message ID was returned when a message was sent.
+
+## 5.1.10 @2020.12.04 - Standard Edition
+
+### SDK
+
+**Common changes**
+
+- V2 APIs added support for custom group fields and multi-element messages.
+- V2 APIs added an API for the local insertion of C2C messages.
+- Mitigated the issue of message loss for ordinary groups and audio-video groups.
+- Fixed the issue where messages that failed to be sent could not be deleted.
+- Fixed the C2C conversation issue where, if the first message was sent online, the read receipt was not received.
+- Fixed the issue where, after a recalled message was returned through the API for pulling historical messages, the message status was incorrect.
+- Fixed the failure to return information of all friend lists when ‘null’ was entered as the friend list name for the API for obtaining friend list information on iOS.
+- Fixed known stability issues.
 
 ## 5.1.115 @2020.12.04 - Lite Edition
 
@@ -122,11 +289,11 @@
 **iOS/Android**
 - Group members can input `@All`.
 - TUIKit components added international support.
-- Users can now select videos when sending an image message through the Android edition.
+- Added support for selecting videos when sending image messages through the Android edition.
 - Optimized the timeout logic for voice and video call requests.
-- Android offline push was updated to be dependent on the TPNS package.
-- Group livestreaming added an opening animation.
-- Group livestreaming added support for a small livestreaming window.
+- Updated Android offline push to be dependent on the TPNS package.
+- Group live streaming added an opening animation.
+- Group live streaming added support for a small livestreaming window.
 
 ## 5.0.108 @2020.11.02 - Lite Edition
 
@@ -174,10 +341,10 @@
 - When deleting a conversation, the deleteConversation API also deletes local and roaming messages.
 - API2.0 added APIs for setting and obtaining custom fields for user profiles, friend profiles, and group member profiles.
 - Optimized image upload compatibility issues.
-- Fixed the issue where, after the group message receiving option was modified and then immediately obtained, the option remained unchanged.
-- Fixed the issue where, after a local C2C conversation was deleted, C2C system notifications updated the conversation but the message elem was empty.
+- Fixed the issue where after the group message receiving option was modified and then immediately obtained, the option remained unchanged.
+- Fixed the issue where after a local C2C conversation was deleted, C2C system notifications updated the conversation but the message `elem` was empty.
 - Fixed the issue where image upload failed when the userID contained Chinese characters.
-- Fixed the issue where, after an account with special characters successfully set the user nickname and entered the group to send a message, the nickname was still blank in the new message callback received by other group members.
+- Fixed the issue where after an account with special characters successfully set the user nickname and entered the group to send a message, the nickname was still blank in the new message callback received by other group members.
 - Fixed known crashes.
 
 **iOS platform**
@@ -190,7 +357,7 @@
 
 - Optimized the processing for signaling sending timeout failure.
 - Fixed the issue of invalid custom data for the signaling cancellation API.
-- Fixed the issue where attempts to delete all attributes failed when null was passed in for the keys of the group attribute deletion API.
+- Fixed the issue where attempts to delete all attributes failed when `null` was passed in for the `keys` of the group attribute deletion API.
 - Fixed the issue where signaling group calls could still be accepted or rejected after being accepted or rejected.
 - Fixed the multi-element resolution issue for API 2.0.
 
@@ -199,7 +366,7 @@
 - Fixed the known issue of memory leak.
 - Optimized log upload.
 - Fixed the issue where a user who simultaneously logged in to the same account from multiple PCs of the same model was not forced offline.
-- Fixed the issue where messages were received in incorrect sequence on a PC.
+- Fixed the issue where received messages were out of order on a PC.
 
 ### TUIKit and demo
 
@@ -226,7 +393,7 @@
 **Common changes**
 
 - Released the Android & iOS Lite-Edition SDK.
-- The Lite Edition removed the friend list and conversation list capabilities found in the Standard Edition and optimized some business logic to improve execution efficiency and reduce the increase in installation package size.
+- Compared with the standard edition SDK, the lite edition SDK removed the friend and conversation capabilities and optimized some service logic to ensure higher execution efficiency and a smaller installation package size.
 
 ## 4.9.1 @2020.07.24 - Standard Edition
 
@@ -518,15 +685,15 @@ Fixed a data error.
 
 **iOS platform**
 
-- Supported sending and receiving voice messages to and from web applications.
+- Added support for sending and receiving voice messages to and from web applications.
 - Fixed the issue where TUIKit resource files could not be found when swift loading.
 - Fixed the issue where a friend' alias could not be seen on the chat interface after it was modified.
 - Fixed the issue where the conversation list did not refresh promptly after a conversation was pinned to the top.
 
 **Android platform**
 
-- Supported sending and receiving voice messages to and from web applications.
-- Supported setting the input box style.
+- Added support for sending and receiving voice messages to and from web applications.
+- Added support for setting the input box style.
 - Displayed a red dot on unread voice messages.
 - Fixed the issue where video messages could not be played on x86 devices.
 - Fixed conflicts between FileProvider and the integration side.
@@ -592,7 +759,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 
 **Common changes**
 
-- Improved the speed of sending file messages from users outside Chinese mainland.
+- Improved the speed of sending file messages for users outside Chinese mainland.
 - Fixed the issue where the message status fetched by `getLastMessage` was incorrect after a message was recalled. Fixed the issue where the callback is called multiple times after message listening was recalled.
 - Fixed the issue where the backend failed to obtain the muting time after a member is muted, left the group, and joined the group again.
 - Fixed the issue where the msg time was ineffective at savemsg after the msg time was proactively modified.
@@ -602,21 +769,21 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 
 **Android platform**
 
-- Supported FCM push notifications on Android devices in the backend.
+- Added support for FCM push notifications on Android devices in the backend.
 - Fixed the issue where an error was reported when null was passed for getting a specified friend list.
 - Fixed checkEquals crashes in specified scenarios.
 
 **Windows platform**
 
 - Added the `unique_id` field to `MessageLocator`.
-- Supported 64-bit Windows.
+- Added support for 64-bit Windows.
 - Added user profile APIs and relationship chain APIs to the cross-platform library.
 
 ### TUIKit and demo
 
 **iOS platform**
 
-- Supported sending custom messages.
+- Added support for sending custom messages.
 - Added C2C read receipts.
 - Added a red dot to unplayed audio messages.
 
@@ -628,8 +795,8 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the incorrect or incomplete bubble display issue.
 - Fixed the issue where conversation lists failed to display profile photos.
 - Fixed the issue where the title bar color could not be changed by ConversationLayout.
-- Supported 64-bit ijkplayer.
-- Supported multi-element messages.
+- Added support for 64-bit ijkplayer.
+- Added support for multi-element messages.
 
 ## 4.4.900 @2019.08.07
 
@@ -752,7 +919,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Optimized the one-to-one chat unread count.
 - TUIKit
   - Short video messages in chats can be played in landscape or portrait orientation.
-  - Supported Javadoc documentation.
+  - Added support for Javadoc documentation.
   - Fixed the issue where downloading a video that was being sent failed.
   - Fixed the issue where the `onSuccess` callback of the `GroupChatManagerKit.getInstance().sendMessage` method could be triggered twice.
   - Fixed the issue with short audio messages on the chat interface. Audio messages should be at least 1 second long. For messages shorter than 1 second, "Message too short" is displayed.
@@ -800,7 +967,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where the sending status of image/voice/file messages was exceptional after network reconnection.
 - Fixed the issue where login accounts that contained special characters could not send audio and images.
 - Fixed the issue where the V4 version could not get the width and height of thumbnails sent by the V2 version.
-- Fixed the issue where recent conversations failed to be pulled after saveMessage was created for a conversation.
+- Fixed the issue where recent conversations failed to be pulled after `saveMessage` was created for a conversation.
 - Fixed the issue where `getMessage` failed to get the `MemberChangeList` content of group tips.
 - Fixed the issue when `getLoginStatus` failed to get the login status.
 - Fixed the issue where applicants became group members after their requests to join the group were rejected.
@@ -848,7 +1015,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where multiple IM instances could run on one cross-platform library device with the same account and would be kicked off.
 - Added the JSON key for getting the unique ID of messages to cross-platform library messages.
 - Fixed the issue where a log file existed under the root directory of the drive letter after a log path was set.
-- Fixed the issue where getMessage failed to get the `MemberChangeList` content of group tips.
+- Fixed the issue where `getMessage` failed to get the `MemberChangeList` content of group tips.
 - Fixed the issue where getting lastMsg status through the conversation was exceptional after the last message was recalled.
 - Fixed the issue where reporting conversation read and getting the unread count failed in some cases.
 
@@ -968,7 +1135,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 
 **Windows platform**
 
-- Supported custom field data reporting.
+- Added support for custom field data reporting.
 - Added messages that disappear after being viewed.
 - Added use cases for recalling messages.
 - Fixed occasional failures in setting upload files.
@@ -977,7 +1144,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed group message synchronization after network reconnection.
 - Fixed the issue where identifying duplicates failed when a large number of messages was received in a short time.
 - Fixed the issue where the same message might be received again after the app restarted.
-- Fixed occasional errors caused when lastMsg of a conversation was deleted.
+- Fixed occasional errors caused when `lastMsg` of a conversation was deleted.
 - Fixed occasional errors in initialization and message synchronization.
 - The JSON string of a delivered message is returned in the callback indicating successful delivery.
 - Replaced `TIMSetRecvNewMsgCallback` with `TIMAddRecvNewMsgCallback` and `TIMRemoveRecvNewMsgCallback`.
@@ -1006,20 +1173,20 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Optimized the network reconnection strategy.
 - Optimized the server overload strategy.
 - Optimized heartbeat to reduce unnecessary outbound packets.
-- Supported importing through CocoaPods for TUIKit.
+- Added support for importing through CocoaPods for TUIKit.
 - Added the Contacts interface for TUIKit.
 - Added the Adding Friends interface for TUIKit.
 - Added the Blocklist interface for TUIKit.
 - Added the Search Friend interface for TUIKit.
 - Added the New Friends interface for TUIKit.
 - Added the Remarks, Blocklist, and Delete Friend features to the friend's profile page for TUIKit.
-- Supported modification of nicknames, personal signature, date of birth, gender, and location on the user profile page for TUIKit.
+- Added support for modification of nicknames, personal signature, date of birth, gender, and location on the user profile page for TUIKit.
 - Improve the group pinning feature for TUIKit.
 
 **Android platform**
 - Added `querySelfProfile` and `queryUserProfile` to the `TIMFriendshipManager` class (reading local data).
 - Added the `addTime` field when getting a friend's profile.
-- Supported the x86 and x86_64 architecture.
+- Added support for the x86 and x86_64 architecture.
 - Fixed the issue where `getLoginUser` returned a login user exception.
 - Fixed the issue where online reported user profiles failed to be obtained.
 - Fixed the issue where some local fields became invalid after the app restarted.
@@ -1047,7 +1214,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - TUIKit: optimized and fixed crashes reported online.
 
 **Windows platform**
-- Fixed the issue where getLoginUser returned a login user exception.
+- Fixed the issue where `getLoginUser` returned a login user exception.
 - Fixed the issue where online reported user profiles failed to be obtained.
 - Fixed the issue where some local fields became invalid after the app restarted.
 - Fixed occasional errors when calling read report after messages were deleted.
@@ -1121,7 +1288,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
  - Fixed the issue where the last message did not call back when unread messages were synchronized.
  - Fixed the issue where group messages occasionally could not be received.
  - Fixed the issue where login response packets could not be decrypted.
- - Supported IP connection and login information reporting.
+ - Added support for IP connection and login information reporting.
  - Fixed the message seq error.
 
 **Android platform**
@@ -1134,12 +1301,12 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
  - Fixed the issue where emojis were not displayed in the TUIKit demo.
  - Fixed the issue where the second page would often contain repeated messages when group chat messages were received.
  - Fixed some crashes in the TUIKit demo.
- - Fixed the issue where `TIMMessage` failed to get user profiles through senderProfile.
+ - Fixed the issue where `TIMMessage` failed to get user profiles through `senderProfile`.
  - Fixed the issue with read receipt callback and status.
  - Fixed the issue where the last message did not call back when unread messages were synchronized.
  - Fixed the issue where group messages occasionally could not be received.
  - Fixed the issue where login response packets could not be decrypted.
- - Supported IP connection and login information reporting.
+ - Added support for IP connection and login information reporting.
  - Fixed the message seq error.
 
 **Windows platform**
@@ -1151,7 +1318,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
  - Fixed the issue where the last message did not call back when unread messages were synchronized.
  - Fixed the issue where group messages occasionally could not be received.
  - Fixed the issue where login response packets could not be decrypted.
- - Supported IP connection and login information reporting.
+ - Added support for IP connection and login information reporting.
  - Fixed the message seq error.
 
 
@@ -1315,7 +1482,7 @@ Added TUIKIt.
 Added the level and role fields to `TIMUserProfile`.
 
 **Android platform**
-- Supported offline push on Meizu mobile phones.
+- Added support for offline push on Meizu mobile phones.
 - Added standard level and role properties to user profiles.
 - Fixed the issue where UGC short video failed to be sent when a user logged in after logging out.
 
@@ -1324,8 +1491,8 @@ Added the level and role fields to `TIMUserProfile`.
 - Added custom data parameters to the API for inviting users to join a group.
 
 **Android platform**
-- Supported offline push on Meizu mobile phones.
-- Supported custom data for the API for inviting users to join a group.
+- Added support for offline push on Meizu mobile phones.
+- Added support for custom data for the API for inviting users to join a group.
 
 ## Windows--IM SDK 2.5.7 2018-3-13
 - Modified the login module to improve communication security.
@@ -1427,8 +1594,8 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Fixed issues that may cause crashes.
 
 **API changes:**
-- Changed how `TIMMessageOfflinePushSettings.AndroidSettings` and `TIMMessageOfflinePushSettings.IOSSettings` are constructed.
-
+- Changed how TIMMessageOfflinePushSettings.AndroidSettings and TIMMessageOfflinePushSettings.IOSSettings are constructed.
+For more information, see [Offline Push](https://intl.cloud.tencent.com/document/product/1047/34336)
 
 ## IM Android SDK 2.5.2 2017-3-1
 - Fixed the issue where the return of outgoing packets occasionally timed out (return code 6205).
@@ -1440,10 +1607,10 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Fixed the status mismatch bug after messages failed to be sent when the user was not logged in.
 
 ## IM Web SDK 1.7 2016-12-20
-- Supported multi-instance force offline.
-- Supported simultaneous online of multiple instances.
-- Supported synchronization of read group messages.
-- Supported synchronization of read C2C messages.
+- Added support for multi-instance force offline.
+- Added support for simultaneous online of multiple instances.
+- Added support for synchronization of read group messages.
+- Added support for synchronization of read C2C messages.
 - Optimized the demo directory structure and code.
 - Added the recent contacts list.
 
@@ -1470,7 +1637,7 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Throwing `onNewMessage` when pulling the recent contacts list can be disallowed.
 
 ## IM SDK 2.3 2016-9-13
-- Supported push notifications to multiple apps with one appid.
+- Added support for push notifications to multiple apps with one appid.
 - Added `setOfflinePushToken` with callback to the Android version.
 - Optimized the message deletion logic to automatically filter messages in the DELETED state when messages were pulled.
 - iOS: moved database files from subdirectory Library/Caches/ to subdirectory Document/ to prevent them being cleared by the system.
@@ -1484,17 +1651,17 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Added profile system notifications.
 
 ## IM SDK 2.2 2016-8-10
-- Supported conversation drafts.
+- Added support for conversation drafts.
 - Conversations can be marked whether to store messages to ensure more flexible message handling.
 - Roaming messages can be traversed from old to new, which applies to scenarios where message recording is needed.
 - Added ext and sounds of push notifications to messages, allowing setting push information for some messages.
 - Added `stopQALService` to the Android SDK, which turns off QALService when exiting the app.
-- Supported network status monitoring and added error codes for network errors.
+- Added support for network status monitoring and added error codes for network errors.
 
 ## IM SDK 2.1 2016-7-15
-- Supported notification push to Mi and Huawei mobile phones.
-- Supported the read receipts feature, which is optional depending on product needs.
-- Supported typing reminder, which is optional depending on product needs.
+- Added support for notification push to Mi and Huawei mobile phones.
+- Added support for the read receipts feature, which is optional depending on product needs.
+- Added support for typing reminder, which is optional depending on product needs.
 - Added standard fields such as the gender, date of birth, address, and language to profile relationship chains.
 - Notifications for joining and quitting a group contain the group member count.
 - Fixed some SDK and demo bugs.
@@ -1509,7 +1676,7 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - The unread count can be synchronized between multiple online devices.
 - Historical messages can be imported when an app is migrated to ensure smooth migration.
 - Added the message notification status to group message properties.
-- Supported flexible settings for message priorities.
+- Added support for flexible settings for message priorities.
 - Push notifications can be filtered by property and tag.
 
 ## IM Web SDK 1.4 2016-6-7
@@ -1524,20 +1691,20 @@ Fixed the issue where some so libraries were incompatible with devices running s
 
 ## IM SDK 1.9.2 2016-5-27
 - Added the ticket expiration callback.
-- Supported IPv6 (iOS).
+- Added support for IPv6 (iOS).
 
 ## IM SDK 1.9 2016-5-4
-- Supported groups with more than 10,000 members (no limit on the number of members, which is suitable for broadcasting scenarios).
+- Added support for groups with more than 10,000 members (no limit on the number of members, which is suitable for broadcasting scenarios).
 - Reconstructed the IM demo for better experience and ease-of-use.
 - Messages can be sent based on the priority.
 - Added storage and cache for group profiles and relationship chains.
 - Added APIs to synchronize group profiles and relationship chains and change callbacks.
-- Supported getting friend profiles, including remarks and groups.
-- Supported setting default group profile and relationship chain fields to be pulled.
-- Supported disabling pulling recent contacts.
+- Added support for getting friend profiles, including remarks and lists.
+- Added support for setting default group profile and relationship chain fields to be pulled.
+- Added support for disabling pulling recent contacts.
 - Added synchronizing the last message to the conversation list.
 - You can specify the group members whose group information, such as group name cards is to be pulled.
-- Supported passing in file paths for voice and file messages (messages can be resent).
+- Added support for passing in file paths for voice and file messages (messages can be resent).
 - Adapted to Android 6.0 dynamic permission management.
 
 ## IM SDK 1.8.1 2016-4-13
@@ -1557,8 +1724,8 @@ Fixed the issue where some so libraries were incompatible with devices running s
 
 
 ## IM SDK 1.7 2016-1-25
-- Supported limiting the message sending frequency in groups.
-- Supported group ownership transfer.
+- Added support for limiting the message sending frequency in groups.
+- Added support for group ownership transfer.
 - Group message notification intensity can be customized.
 - CS channels are established to remove the need for a persistent connection between the app and backend to reduce battery consumption.
 - Added configuration items, including message and recent contacts roaming switch, storage duration, and multi-device online switch to improve the operational efficiency.
@@ -1568,15 +1735,15 @@ Fixed the issue where some so libraries were incompatible with devices running s
 
 ## IM SDK 1.6 2015-12-25
 - Short video messages are supported to meet growing needs for video messages and social communication.
-- Supported rule-based sorting of group members.
-- Supported relationship chain friend grouping.
-- Supported filtering of sensitive words in group names, announcements, and introductions.
-- Supported group member contact cards to help users identify group members.
-- Supported the message notifications switch, allowing users to turn on or off message notifications for one-to-one chats and group chats.
+- Added support for rule-based sorting of group members.
+- Added support for relationship chain friend lists.
+- Added support for filtering of sensitive words in group names, announcements, and introductions.
+- Added support for group member contact cards to help users identify group members.
+- Added support for the message notifications switch, allowing users to turn on or off message notifications for one-to-one chats and group chats.
 
 ## IM SDK 1.5 2015-11-16
 
-- Supported asynchronous download of message records.
+- Added support for asynchronous download of message records.
 - Group messages can be deleted at the server side.
 - Users can be searched by nickname.
 - Groups can be searched by group name.
@@ -1590,8 +1757,8 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Messages from blocklisted users cannot be received.
 - Deleted friend recommendations.
 - APNs pushes nicknames.
-- Supported filtering sensitive words in group names.
-- Supported filtering sensitive words in group announcements.
+- Added support for filtering sensitive words in group names.
+- Added support for filtering sensitive words in group announcements.
 - Demo supports the guest mode and third-party account login.
 
 ## IM SDK 1.3 2015-09-10
@@ -1601,37 +1768,38 @@ Fixed the issue where some so libraries were incompatible with devices running s
 - Real-time message synchronization through callbacks is supported.
 - Friend recommendation is supported after the recommendation logic has been defined.
 - Sending original images or thumbnails is supported for better user experience.
-- Supported push notifications (available only to online Android users).
-- Supported smooth migration.
-- Supported deleting local messages to protect users' privacy.
+- Added support for push notifications (available only to online Android users).
+- Added support for smooth migration.
+- Added support for deleting local messages to protect users' privacy.
 
 ## IM SDK 1.2 2015-08-18
 - C2C one-to-one chats on the web platform are supported.
 - The maximum number of group members is increased to 10,000.
-- Supported filtering ads and sensitive words in messages.
+- Added support for filtering ads and sensitive words in messages.
 - Added an API that provides message IDs to precisely locate messages.
 - Added remarks to user profiles.
-- Supported viewing local messages when offline.
+- Added support for viewing local messages when offline.
 
 ## IM SDK 1.1 2015-07-13
 - Windows C++ platform is supported.
 - Public groups and chat rooms are supported.
-- Supported adding group introductions and announcements and added muting, message block, and group role setting.
+- Added support for adding group introductions and announcements and added muting, message block, and group role setting.
 - Added APIs for user profile and relationship chain operations, such as nicknames, adding friends, and blocklist settings.
 - File messages are supported.
 - Optimized image messages: image quality includes the original image, thumbnail, and large image. Changed upload and download APIs. Image URLs can be passed.
 - Added log levels to the log callback API.
 - Added the logic to execute forced logout on one device in the event of repeated logins.
 - Added automatic crash reporting.
-- Supported self-owned account and third-party account integration in hosting mode.
+- Added support for self-owned account and third-party account integration in hosting mode.
 - Added SMS authentication for user registration and login.
-- Supported ticket verification using public keys and private keys generated by Tencent.
+- Added support for ticket verification using public keys and private keys generated by Tencent.
 - Added user and group management.
 
 ## IM SDK 1.0 2015-05-11
-- Supported Android/iOS platforms.
-- Supported integrating Tencent account and third-party account logins.
-- Supported one-to-one chats and group chats (discussion groups).
-- Supported text, emoji, image, audio, location, and custom messages.
+- Added support for Android/iOS platforms.
+- Added support for integrating Tencent account and third-party account logins.
+- Added support for one-to-one chats and group chats (discussion groups).
+- Added support for text, emoji, image, audio, location, and custom messages.
 - APNs push notifications (token reporting, foreground and background switching event reporting)
 - Messages can be stored locally.
+

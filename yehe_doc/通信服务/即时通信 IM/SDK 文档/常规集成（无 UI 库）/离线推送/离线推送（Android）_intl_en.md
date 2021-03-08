@@ -2,9 +2,10 @@
 
 IM terminal users need to obtain the latest messages at any time. However, due to the limited performance and battery power of mobile devices, when the app is running in the background, IM recommends that you use the system-grade push channels provided by vendors for message notifications to avoid excessive resource consumption caused by maintaining a persistent connection. Compared with third-party push, system-grade push channels provide more stable system-grade persistent connections, enabling users to receive push messages at any time and greatly reducing resource consumption.
 
-IM currently supports Mi Push, Huawei Push, Meizu Push, vivo Push, OPPO Push, and Google FCM Push. The vendor channel dependencies used by IM are provided and maintained by [TPNS](https://intl.cloud.tencent.com/product/tpns) in a unified manner, without the need for extra integration of vendor channels. After you add the vendor channel dependencies of [TPNS](https://intl.cloud.tencent.com/product/tpns), you can use the IM offline push feature. If you use only the IM offline push feature, no extra cost will be incurred. The vendor channels currently supported are as follows:
+IM supports Mi Push, Huawei Push, Meizu Push, vivo Push, OPPO Push, and Google FCM Push. The vendor channels used by IM demos are provided and maintained by [TPNS](https://intl.cloud.tencent.com/product/tpns) in a unified manner. You can integrate the [TPNS](https://intl.cloud.tencent.com/product/tpns) service or the offline push service of the desired vendor for offline push feature.
+Supported vendor channels are as below:
 
->? If you need to improve the push delivery rate or implement diversified push, we recommend that you install the [SDK](https://intl.cloud.tencent.com/document/product/1024/34673) of [TPNS](https://intl.cloud.tencent.com/product/tpns) to enjoy the complete push service. If you use IM and [TPNS](https://intl.cloud.tencent.com/product/tpns) at the same time, you do not need to repeatedly integrate vendor channels.
+>?If you need to improve the push delivery rate or implement diversified push, we recommend that you install the [SDK](https://intl.cloud.tencent.com/document/product/1024/34673) of [TPNS](https://intl.cloud.tencent.com/product/tpns) to enjoy the complete push service. If you use IM and [TPNS](https://intl.cloud.tencent.com/product/tpns) at the same time, you do not need to repeatedly integrate vendor channels.
 <table> 
    <tr> 
      <th nowrap="nowrap">Push Channel</th> 
@@ -43,7 +44,7 @@ IM currently supports Mi Push, Huawei Push, Meizu Push, vivo Push, OPPO Push, an
    </tr>  
    <tr> 
      <td nowrap="nowrap">vivo Push</td> 
-     <td nowrap="nowrap">FuntouchOS</td> 
+     <td nowrap="nowrap">Funtouch OS</td> 
      <td>Not all vivo models and versions support vivo Push. To use vivo Push, add the dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
 </td> 
    </tr> 
@@ -70,19 +71,19 @@ When the client app is killed by the system or user without IM logout, the IM se
 
 <span id="xiaomiStep1_1"></span>
 
-1. Access the [Mi open platform website](https://dev.mi.com/console/) to register an account and pass the developer verification. Log in to the console of the Mi open platform, choose **App Service** > **Push Service**, and create a MiPush service app. Take note of the **`Primary package name`**, **`AppID`**, and **`AppSecret`** information.
+1. Access the [Mi open platform website](https://dev.mi.com/console/) to register an account and pass the developer verification. Log in to the console of the Mi open platform, choose **App Service** > **Push Service**, and create a Mi Push service app. Take note of the **`Primary package name`**, **`AppID`**, and **`AppSecret`** information.
    
    <span id="xiaomiStep1_2"></span>
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#Step1_1) to configure the following parameters:
+2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#Step1_1) to configure the following parameters:
 
  - **Push Platform**: choose **Mi**.
- - **Package name**: the name of the MiPush service app.
- - **AppID**: enter the **AppID** you got from MiPush.
- - **AppSecret**: enter the **AppSecret** you got from MiPush.
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, see [Configuring Click Event](#xiaomi_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through](#xiaomi_custom).
+ - **SDKAppID**: the **primary package name** of the Mi Push service app.
+ - **AppID**: enter the **AppID** you got from Mi Push.
+ - **AppSecret**: enter the **AppSecret** you got from Mi Push.
+ - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, see [Configuring Click Event](#xiaomi_click).
+   **Open app** or **Open specified in-app page** allows [custom content pass through(#xiaomi_custom).
     ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
-   Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
+   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
     ![](https://main.qcloudimg.com/raw/b85cbad82be257ea06334bc0dadab8a8.png)
 
 ### Integrating the push SDK
@@ -96,19 +97,19 @@ After the certificate ID and regId are successfully reported, the IM server send
 
 ### Configuring click events
 
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
 
 #### Open app
 
 If you choose **Open app**, the `onNotificationMessageClicked` method of Mi will be called back, and the app itself can process app opening in this method.
-![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
+ ![](https://main.qcloudimg.com/raw/d2341570851aa707916a9127a47a2171.png)
 
-#### Open URL
+#### Open webpage
 
-You need to select **Open URL** in [Step 2: add a certificate](#xiaomiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
+You need to select **Open webpage** when [adding a certificate](#xiaomiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
 ![](https://main.qcloudimg.com/raw/3c8f71b696f39117105d0e67813aaa0f.png)
 
-#### Open specific app interface
+#### Open specified in-app page
 
 1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
 
@@ -141,16 +142,16 @@ You need to select **Open URL** in [Step 2: add a certificate](#xiaomiStep1_2) a
    intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
    ```
 
-3. Select **Open specific app interface** in [Step 2: add a certificate](#xiaomiStep1_2) and enter the result above.
+3. Select **Open specified in-app page** when [adding a certificate](#xiaomiStep1_2) and enter the result above.
    ![](https://main.qcloudimg.com/raw/94c3abe8ab0cb8c72ee79687d0ffe8d3.png)
 
 <span id="xiaomi_custom"></span>
 
 ### Custom content pass through
 
-Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2: add a certificate](#Step2) to support custom content pass through.
+Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2) to support custom content pass through.
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
 - Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
@@ -178,16 +179,16 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 
-- If you selected **Open app** in [Step 2: add a certificate](#xiaomiStep1_2), clicking the notification bar message triggers the `onNotificationMessageClicked(Context context, MiPushMessage miPushMessage)` callback. The custom content can be obtained from `miPushMessage`. You can refer to the parsing implementation in [XiaomiMsgReceiver.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/XiaomiMsgReceiver.java).
+- If you selected **Open app** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), clicking the notification bar message triggers the `onNotificationMessageClicked(Context context, MiPushMessage miPushMessage)` callback. The custom content can be obtained from `miPushMessage`. You can refer to the parsing implementation in [XiaomiMsgReceiver.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/XiaomiMsgReceiver.java).
 
   ```
   Map extra = miPushMessage.getExtra();
   String extContent = extra.get("ext");
   ```
 
-- If you selected **Open specific app interface** in [Step 2: add a certificate](#xiaomiStep1_2), `MiPushMessage`, which is the object that encapsulates the message, is passed to the client through `Intent`. The client then obtains the custom content from `Activity`. You can refer to the implementation of the `parseOfflineMessage(Intent intent)` method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+- If you selected **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), `MiPushMessage`, which is the object that encapsulates the message, is passed to the client through `Intent`. The client then obtains the custom content from `Activity`. You can refer to the implementation of the `parseOfflineMessage(Intent intent)` method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
   ```
     Bundle bundle = getIntent().getExtras(); 
@@ -205,15 +206,15 @@ Set the custom content for the notification bar message before sending the messa
 1. Access the [official website of the Huawei Developers Alliance](https://developer.huawei.com/consumer/cn/), register an account, and pass the developer verification. Log in to the console of the Huawei Developers Alliance, choose **App Service** > **Development Service** > **PUSH**, and create a Huawei push service app. Take note of the **`Package name`**, **`APP ID`**, and **`APP SECRET`**.
    
    <span id="huaweiStep1_2"></span>
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
+2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#huaweiStep1_1) to configure the following parameters:
 
- - **Push platform**: select **Huawei**.
- - **Package name**: the name of the Huawei Push service app.
+ - **Push Platform**: select **Huawei**.
+ - **SDKAppID**: the **package name** of the Huawei Push service app.
  - **AppID**: enter the **App ID** you got from Huawei Push.
  - **AppSecret**: enter the **APP SECRET** you got from Huawei Push.
  - **Badge Parameter**: enter the full `Activity` class name of the app entry, which will be used as the Huawei desktop app badge for display. See [Huawei Desktop Badge Development Guide](https://developer.huawei.com/consumer/cn/doc/development/system-References/30802).
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#huawei_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through](#huawei_custom).
+ - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#huawei_click).
+   **Open app** or **Open specified in-app page** allows [custom content pass through(#huawei_custom).
     ![](https://main.qcloudimg.com/raw/116d7c636349ff6f6fca3f5edd405ef0.png)
    Click **Save** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
    ![](https://main.qcloudimg.com/raw/50ce16755e98be14c40f5f402cb8150d.png)
@@ -229,18 +230,18 @@ After the certificate ID and regId are successfully reported, the IM server send
 
 ### Configuring click events
 
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
 
 #### Open app
 
 This is the default event, which opens the app once the notification bar message is clicked.
 
-#### Open URL
+#### Open webpage
 
-You need to select **Open URL** in [Step 2: add a certificate](#huaweiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
+You need to select **Open webpage** when [adding a certificate](#huaweiStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
 ![](https://main.qcloudimg.com/raw/5c10a94c4f768596b2e4562d5bcb3e14.png)
 
-#### Open specific app interface
+#### Open specified in-app page
 
 1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
 
@@ -273,15 +274,15 @@ You need to select **Open URL** in [Step 2: add a certificate](#huaweiStep1_2) a
    intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
    ```
 
-3. Select **Open specific app interface** in [Step 2: add a certificate](#huaweiStep1_2) and enter the result above.
+3. Select **Open specified in-app page** when [adding a certificate](#huaweiStep1_2) and enter the result above.
 
 <span id="huawei_custom"></span>
 
 ### Custom content pass through
 
->! Due to the compatibility issues of Huawei Push, the pass-through content can only be received on some EUI10+ devices.
+>!Due to the compatibility issues of Huawei Push, the pass-through content can only be received on some EUI10+ devices.
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
 - Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
@@ -309,9 +310,9 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 
-- If you selected **Open app** or **Open specific app interface** in [Step 1: add a certificate](#huaweiStep1_1), the client can obtain the custom content from `Activity` when the notification bar message is clicked. You can refer to the parseOfflineMessage(Intent intent) implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+- If you selected **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#huaweiStep1_1), the client can obtain the custom content from `Activity` when the notification bar message is clicked. You can refer to the parseOfflineMessage(Intent intent) implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
 Bundle bundle = getIntent().getExtras();
@@ -350,17 +351,17 @@ String value = bundle.getString("ext");
 
    <span id="oppoStep1_3"></span>
 
-3. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#oppoStep1_1) to configure the following parameters:
+3. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#oppoStep1_1) to configure the following parameters:
 
- - **Push platform**: select **OPPO**.
+ - **Push Platform**: select **OPPO**.
  - **AppKey**: enter the **AppKey** you got from OPPO PUSH.
  - **AppID**: enter the **AppID** you got from OPPO PUSH.
  - **MasterSecret**: enter the **MasterSecret** you got from OPPO PUSH.
- - **ChannelID**: enter the **ChannelID** generated in Step 2.
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#oppo_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through](#oppo_custom).
+ - **ChannelID**: enter the **ChannelID** created in Step 2.
+ - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#oppo_click).
+   **Open app** or **Open specified in-app page** allows [custom content pass through(#oppo_custom).
     ![](https://main.qcloudimg.com/raw/b4f1c81290a40c972d95cc2e63ffbbed.png)
-   Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
+   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
     ![](https://main.qcloudimg.com/raw/9d514aedd6233e5f619278073232974e.png)
 
 ### Integrating the push SDK
@@ -369,26 +370,26 @@ String value = bundle.getString("ext");
 3. Call `HeytapPushManager.register(…)` in the OPPO SDK to initialize the Opush service.
    After successful registration, you can obtain `regId` in the `onRegister` callback method of `ICallBackResultService`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
-After the certificate ID and regId are successfully reported, the IM server sends messages via OPPO Push notifications to the user when the app has been killed but the user has not logged out of IM.
+After the certificate ID and regId are successfully sent, the IM server will push the notification to the client through OPPO PUSH when the app is killed by the system before the user logs out.
 
 <span id="oppo_click"></span>
 
 ### Configuring click events
 
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
 
 #### Open app
 
 This is the default event, which opens the app once the notification bar message is clicked.
 
-#### Open URL
+#### Open webpage
 
-You need to select **Open URL** in [Step 2](#oppoStep1_3) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
+You need to select **Open webpage** when [adding a certificate](#oppoStep1_3) and enter a URL that starts with either `http` or `https`, such as `https://cloud.tencent.com/document/product/269`.
 ![](https://main.qcloudimg.com/raw/6dd91b1d6ca02f658f340463a55726bd.png)
 
-#### Open specific app interface
+#### Open specified in-app page
 
-These are the ways you can open a specific app interface:
+These are the ways you can open a specific in-app interface:
 
 **Activity** (recommended)
   This is rather simple. Enter the whole name of an Activity, such as `com.tencent.qcloud.tim.demo.SplashActivity`
@@ -410,9 +411,9 @@ These are the ways you can open a specific app interface:
 
 ### Custom content pass through
 
-Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2: add a certificate](#oppoStep1_3) to support custom content pass through.
+Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#oppoStep1_3) to support custom content pass through.
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
 - Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
@@ -440,7 +441,7 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 When the notification bar message is clicked, the client can obtain the custom content from the launched `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
@@ -448,7 +449,7 @@ Bundle bundle = intent.getExtras();
 	Set<String> set = bundle.keySet();
 	if (set != null) {
 			for (String key : set) {
-				// key and value correspond to extKey and ext content set in Step 1.
+				// `key` and `value` correspond to `extKey` and `ext content` set in Step 1.
 					String value = bundle.getString(key);
 					Log.i("oppo push custom data", "key = " + key + ":value = " + value);
 			}
@@ -463,22 +464,22 @@ Bundle bundle = intent.getExtras();
 
 1. Visit the [vivo open platform official website](https://dev.vivo.com.cn/home) and register for an account. Complete developer verification. Log in to the console of the vivo open platform, choose **Message Push** > **Create** > **Test Push**, and create a vivo push service app. Take note of **APP ID**, **APP key**, and **APP secret**.
    <span id="vivoStep1_2"></span>
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#vivoStep1_1) to configure the following parameters:
+2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#vivoStep1_1) to configure the following parameters:
 
- - **Push platform**: select **vivo**.
+ - **Push Platform**: select **vivo**.
  - **AppKey**: enter the **AppKey** you got from vivo Push.
  - **AppID**: enter the **AppID** you got from vivo Push.
  - **AppSecret**: enter the **APP secret** you got from vivo Push.
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#vivo_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through](#vivo_custom).
+ - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#vivo_click).
+   **Open app** or **Open specified in-app page** allows [custom content pass through(#vivo_custom).
     ![](https://main.qcloudimg.com/raw/32bdacc570cf25e074bb7bc1ca78f90e.png)
-   Click **OK** to save the information. Take note of the **ID** of the certificate. Certificate information takes effect 10 minutes after you save it.
+   Click **Confirm** to save the information. Take note of the **ID** of the certificate. Certificate information takes effect 10 minutes after you save it.
     ![](https://main.qcloudimg.com/raw/0dd67469033b90045402908e14bf935e.png)
 
 ### Integrating the push SDK
 1. Add vivo dependency: implementation 'com.tencent.tpns:vivo:1.2.1.2-release'.
 2. Refer to the [Integration Guide for vivo Push](https://dev.vivo.com.cn/documentCenter/doc/233#w2-08354405), and use the vivo console to test notification messages to ensure that the SDK was integrated properly.
-3. Call `PushClient.getInstance(getApplicationContext()).initialize()` to initialize the vivo Push service and call `PushClient.getInstance(getApplicationContext()).turnOnPush()` to launch push. If this succeeds, you will receive the `regId` in the `onReceiveRegId` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](http://doc.qcloudtrtc.com/im/classcom11tencent11imsdk11v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
+3. Call `PushClient.getInstance(getApplicationContext()).initialize()` to initialize the vivo Push service and call `PushClient.getInstance(getApplicationContext()).turnOnPush()` to launch push. If this succeeds, you will receive the `regId` in the `onReceiveRegId` of the custom `BroadcastReceiver`. `regId` is the unique identifier of the current app on the current device. After successful login to the IM SDK, you need to call [setOfflinePushConfig](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushManager.html#a494d6cafe50ba25503979a4e0f14c28e) to report the **certificate ID** and **regId** to the IM server.
 
 After the certificate ID and regId are successfully reported, the IM server sends messages via vivo Push notifications to the user when the app has been killed but the user has not logged out of IM.
 
@@ -486,18 +487,18 @@ After the certificate ID and regId are successfully reported, the IM server send
 
 ### Configuring click events
 
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
 
 #### Open app
 
 This is the default event, which opens the app once the notification bar message is clicked.
 
-#### Open URL
+#### Open webpage
 
-You need to select **Open URL** in [Step 2: add a certificate](#vivoStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
+You need to select **Open webpage** when [adding a certificate](#vivoStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
 ![](https://main.qcloudimg.com/raw/2bbfac1ddbd47123002844dc6dd768e9.png)
 
-#### Open specific app interface
+#### Open specified in-app page
 
 1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
 
@@ -530,15 +531,15 @@ You need to select **Open URL** in [Step 2: add a certificate](#vivoStep1_2) and
    intent://com.tencent.qcloud.tim/detail#Intent;scheme=pushscheme;launchFlags=0x4000000;component=com.tencent.qcloud.tim.tuikit/com.tencent.qcloud.tim.demo.chat.ChatActivity;end
    ```
 
-3. Select **Open specific app interface** in [Step 2: add a certificate](#vivoStep1_2) and enter the result above.
+3. Select **Open specified in-app page** when [adding a certificate](#vivoStep1_2) and enter the result above.
 
 <span id="vivo_custom"></span>
 
 ### Custom content pass through
 
-Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2: add a certificate](#vivoStep1_2) to support custom content pass through.
+Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#vivoStep1_2) to support custom content pass through.
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
 - Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
@@ -566,7 +567,7 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 When the notification bar message is clicked, the `onNotificationMessageClicked(Context context, UPSNotificationMessage upsNotificationMessage)` callback of the vivo Push SDK is triggered. The custom content can be obtained from `upsNotificationMessage`. You can refer to the parsing implementation in [VIVOPushMessageReceiverImpl.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/VIVOPushMessageReceiverImpl.java).
 
 ```
@@ -583,16 +584,16 @@ String extContent = paramMap.get("ext");
 1. Access the [Meizu open platform website](http://open.flyme.cn) to register an account and pass the developer verification. Log in to the Meizu console, choose **Development Service** > **Flyme Push** and create a Meizu push service app. Take note of the **`app package name`**, **`App ID`**, and **`App Secret`**.
    
    <span id="meizuStep1_2"></span>
-2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Use the information you obtained in [step 1](#meizuStep1_1) to configure the following parameters:
+2. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Use the information you obtained in [step 1](#meizuStep1_1) to configure the following parameters:
 
  - **Push Platform**: choose **Meizu**.
- - **App Package Name**: enter the **App package name** of the Meizu push service app.
+ - **SDKAppID**: enter the **app package name** of the Meizu push service app.
  - **AppID**: enter the **App ID** of the Meizu push service app.
  - **AppSecret**: enter the **App Secret** of the Meizu push service app.
- - **Click event**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open URL**, and **Open specific app interface**. For more information, refer to [Configuring Click Event](#meizu_click).
-   **Open app** or **Open specific app interface** allows [custom content pass through](#meizu_custom).
+ - **Response after Click**: the event to take place after the notification bar message is clicked. Valid values include **Open app**, **Open webpage**, and **Open specified in-app page**. For more information, refer to [Configuring Click Event](#meizu_click).
+   **Open app** or **Open specified in-app page** allows [custom content pass through(#meizu_custom).
     ![](https://main.qcloudimg.com/raw/7c2ff0ba523f6878cb40cd96c5992af8.png)
-   Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
+   Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
     ![](https://main.qcloudimg.com/raw/37c945dea796be72a035afb9386ace39.png)
 
 ### Integrating the push SDK
@@ -607,29 +608,29 @@ After the certificate ID and regId are successfully reported, the IM server send
 
 ### Configuring click events
 
-You can select one of the following events: **Open app**, **Open URL**, or **Open specific app interface**.
+You can select one of the following events: **Open app**, **Open webpage**, or **Open specified in-app page**.
 
 #### Open app
 
-This is the default event, which opens the App once the notification bar message is clicked.
+This is the default event, which opens the app once the notification bar message is clicked.
 
-#### Open URL
+#### Open webpage
 
-You need to select **Open URL** in [Step 2: add a certificate](#meizuStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
+You need to select **Open webpage** when [adding a certificate](#meizuStep1_2) and enter a URL that starts with either `http://` or `https://`, such as `https://cloud.tencent.com/document/product/269`.
 ![](https://main.qcloudimg.com/raw/823386b86c7994e5ebea8d48e8baead6.png)
 
-#### Open specific app interface
+#### Open specified in-app page
 
-When [adding a certificate](#meizuStep1_2), you need to choose **Open specific app interface** and enter the complete class name of the Activity to be opened, for example, `com.tencent.qcloud.tim.demo.chat.ChatActivity`.
+When [adding a certificate](#meizuStep1_2), you need to choose **Open specified in-app page** and enter the complete class name of the Activity to be opened, for example, `com.tencent.qcloud.tim.demo.chat.ChatActivity`.
 ![](https://main.qcloudimg.com/raw/9d4bb882e67f7f27263455311669c43c.png)
 
 <span id="meizu_custom"></span>
 
 ### Custom content pass through
 
-Select **Open app** or **Open specific app interface** when configuring **Click event** in [Step 2: add a certificate](#meizuStep1_2) to support custom content pass through.
+Select **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#meizuStep1_2) to support custom content pass through.
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
 - Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
@@ -657,7 +658,7 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 
 Clicking a notification bar message triggers a callback of `onNotificationClicked(Context context, MzPushMessage mzPushMessage)`, which is part of the Meizu Push SDK. The custom content can be obtained from the value of `mzPushMessage` .
 
@@ -681,9 +682,9 @@ String extContent = bundle.getString("ext");
 <span id="fcmStep1_2"></span>
 2. Log in to the [Firebase console](https://console.firebase.google.com) and click your app card to go to the app configuration page. Click <img src="https://main.qcloudimg.com/raw/0d062411405553c9fae29f8e0daf02ad.png"  style="margin:0;"> on the right side of **Project Overview**, choose **Project Settings** > **Service Account**, and click **Generate New Private Key** to generate a new private key file.
 <span id="fcmStep1_3"></span>
-3. Log in to the Tencent Cloud [IM console](https://console.qcloud.com/avc) and click the target app card to go to the basic configuration page of the app. Click **Add a certificate** under **Android push configuration**. Upload the private key file obtained in [Step 2](#fcmStep1_2).
+3. Log in to the Tencent Cloud [IM console](https://console.qcloud.com/avc) and click the target app card to go to the basic configuration page of the app. Click **Add Certificate** under **Android Platform Push Settings**. Upload the private key file obtained in [Step 2](#fcmStep1_2).
  ![](https://main.qcloudimg.com/raw/eb7a864e1cc927e3359b9365634093ac.png)
-4. Click **OK** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
+4. Click **Confirm** to save the information. Take note of the **`ID`** of the certificate. Certificate information takes effect within 10 minutes after you save it.
  ![](https://main.qcloudimg.com/raw/4eaad62f4db9756e510c0ea5f010574d.png)
 
 ### Integrating the push SDK
@@ -698,10 +699,10 @@ After the certificate ID and regId are successfully reported, the IM server send
 
 ### Custom content pass through
 
-**Step 1: custom content configuration (sender)**
+**Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the sendMessage() method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -726,7 +727,7 @@ Set the custom content for the notification bar message before sending the messa
 
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
-**Step 2: custom content configuration (receiver)**
+**Step 2. Set custom content (receiver)**
 When the notification bar message is clicked, the client can obtain the custom content from the corresponding `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
@@ -742,7 +743,7 @@ When calling [sendMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1i
 
 When calling [sendMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send messages, use [setTitle](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a7d4a73d6a1db487dd96f658bdbc98ae9) and [setDesc](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMOfflinePushInfo.html#a78c8e202aa4e0859468ce40bde6fd602) in `V2TIMOfflinePushInfo` to set the title and content of notification bar messages respectively.
 
-## FAQ
+## FAQs
 
 ### How to set a custom sound for push notifications on Android phones?
 
