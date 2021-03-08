@@ -22,8 +22,8 @@ To resolve this issue, run the `sync` command to forcibly write the data in the 
 ![](https://main.qcloudimg.com/raw/e1b0ac245e325281a0693f7ae43946ff.png)
 
 
-
-## Procedure<span id="CreateSnapshot"></span>
+e<span id="CreateSnapshot"></span>
+## Procedur
 ### Creating a snapshot in the console
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Click **Create Snapshot** for the target cloud disk.
