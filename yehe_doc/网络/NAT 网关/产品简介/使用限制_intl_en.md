@@ -9,6 +9,7 @@ For example, a NAT Gateway enables traffic from VPC1 to the Internet, and VPC1 e
 - If the subnet configured for a SNAT rule does not exist, the SNAT rule will be deleted as well.
 - If the CVM configured for a SNAT rule does not exist, the SNAT rule will also be deleted if this is the last CVM; otherwise, the CVM will be deleted from the SNAT rule.
 - The following table lists the restrictions on the supported resources for the NAT Gateway. For more information on other VPC resources, see [Quota Limit](https://intl.cloud.tencent.com/zh/document/product/215/38959).
+
 <table>
 <tbody>
 <tr>
@@ -35,5 +36,4 @@ For example, a NAT Gateway enables traffic from VPC1 to the Internet, and VPC1 e
 <td >Maximum number of SNAT rules per NAT Gateway</td>
 <td >200</td>
 </tr>
-<tr>
 </tbody></table>
