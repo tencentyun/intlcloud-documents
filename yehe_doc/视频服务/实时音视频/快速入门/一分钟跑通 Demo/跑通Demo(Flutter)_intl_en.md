@@ -67,7 +67,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 - [What should I do if an error occurs due to the absence of signatures when I debug my project on a real device?](https://intl.cloud.tencent.com/document/product/647/39242)
 - [After deleting/adding content in the swift file of the plugin, why can’t I find the corresponding file when building my project?](https://intl.cloud.tencent.com/document/product/647/39242)
 - [What should I do if the error “Info.plist, error: No value at that key path or invalid key path: NSBonjourServices” occurs when I run my project?](https://intl.cloud.tencent.com/document/product/647/39242)
-- [What should I do if an error occurs when I run `pod install`?](https://intl.cloud.tencent.com/document/product/647/392420)
+- [What should I do if an error occurs when I run `pod install`?](https://intl.cloud.tencent.com/document/product/647/39242)
 - [What should I do if a dependency error occurs when I run my iOS project?](https://intl.cloud.tencent.com/document/product/647/392421)
 
 
