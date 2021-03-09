@@ -58,7 +58,7 @@ You can click **Layer Information** next to a target image repository to view th
  >! When a specified image tag is deleted, other image tags that have the same image ID as the deleted image tag may also be deleted. Consequently, these image tags will become unavailable.
 
 ### Building images
-You can use the source code hosted on GitHub, GitLab.com, Gitee code cloud, or CODING to compile and build an image. For more information, see [Configuring Image Building](https://intl.cloud.tencent.com/document/product/1051/37252).
+You can use the source code hosted on GitHub, GitLab.com, Gitee code cloud, or CODING to compile and build an image.
 
 ### Editing the repository information
 On the details page of the image repository, you can select the **Repository Information** tab to view and edit basic information about the image repository, as shown in the figure below.
