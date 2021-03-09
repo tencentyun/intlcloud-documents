@@ -3,35 +3,22 @@
 
 **支持同步的实例类型**
 <table>
-<thead>
-<tr>
-<th>源实例类型</th>
-<th>目标实例类型</th>
-</tr>
-</thead>
+<thead><tr><th>源实例类型</th><th>目标实例类型</th></tr></thead>
 <tbody><tr>
-<td rowspan= "4">【公有云】云数据库 MariaDB/MySQL</td>
-<td>【公有云】云数据库 MariaDB/MySQL</td>
-</tr>
+<td rowspan= "4">【公有云】云数据库 MariaDB/MySQL</td><td>【公有云】云数据库 MariaDB/MySQL</td></tr>
 <tr>
-<td>【公有云】云数据库 PostgreSQL</td>
-</tr>
+<td>【公有云】云数据库 PostgreSQL</td></tr>
 <tr>
-<td>【公有云】消息队列 Ckafka</td>
-</tr>
+<td>【公有云】消息队列 Ckafka</td></tr>
 <tr>
-<td>【专有云】云数据库 MariaDB/MySQL</td>
-</tr>
+<td>【专有云】云数据库 MariaDB/MySQL</td></tr>
 <tr>
 <td rowspan= "3">【公有云】分布式数据库</td>
-<td>【公有云】分布式数据库</td>
-</tr>
+<td>【公有云】分布式数据库</td></tr>
 <tr>
-<td>【公有云】消息队列 Ckafka</td>
-</tr>
+<td>【公有云】消息队列 Ckafka</td></tr>
 <tr>
-<td>【专有云】分布式数据库</td>
-</tr>
+<td>【专有云】分布式数据库</td></tr>
 </tbody></table>
 
 **支持的同步拓扑**
@@ -80,7 +67,7 @@ MariaDB/MySQL 与 PostgreSQL 的数据类型不同，数据库同步工具将按
 | decimal/numeric                        | decimal/numeric              |
 | enum                                   | integer                      |
 
->表中所述类型的列在转换过程中数据长度保持不变，表中未列出类型在转换过程中保持不变。
+>?表中所述类型的列在转换过程中数据长度保持不变，表中未列出类型在转换过程中保持不变。
 
 #### MariaDB/MySQL 到分布式数据库的同步
 MariaDB/MySQL 与分布式数据库的数据类型相同，不存在数据类型转换情况。
@@ -115,4 +102,4 @@ MariaDB/MySQL 与分布式数据库的数据类型相同，不存在数据类型
 
 - **数据一致性**
 由于网络中断或其他原因，数据库实例生产到 Ckafka 的消息可能重复，此时消费端重放数据时，可以采用幂等方式消除。
->幂等，即多次重复执行消息时，最终数据一致，当遇到主键冲突的记录时，先进行 delete 再 insert，如果 update 无法匹配到数据，会强行插入；delete 找不到数据，直接跳过。通过幂等方案即可以实现数据消费一致性。使用幂等时表必须要有主键或有不能为 NULL 值的唯一索引。
+>?幂等，即多次重复执行消息时，最终数据一致，当遇到主键冲突的记录时，先进行 delete 再 insert，如果 update 无法匹配到数据，会强行插入；delete 找不到数据，直接跳过。通过幂等方案即可以实现数据消费一致性。使用幂等时表必须要有主键或有不能为 NULL 值的唯一索引。
