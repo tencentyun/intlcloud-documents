@@ -40,66 +40,66 @@
       <td>写流量费用</td>
        <td>使用 LogListener 会压缩上传，压缩后流量2.33GB，<b>享有免费额度5GB/日</b></td>
       <td>0GB</td>
-      <td>0.032USD/GB/日</td>
-      <td>0.00USD/日</td>
+      <td>0.18元/GB/日</td>
+      <td>0元/日</td>
    </tr>
      <tr>
       <td>索引流量费用</td>
       <td>开启全文索引后，产生11.2GB索引流量（索引会有膨胀），<b>享有免费额度1GB/日</b></td>
       <td>10.2GB</td>
-      <td>0.063USD/GB/日</td>
-      <td>0.64USD/日</td>
+      <td>0.35元/GB/日</td>
+      <td>3.57元/日</td>
    </tr>
    <tr>
       <td>内网读流量费用</td>
       <td>没有内网下载消费，无内网读流量</td>
       <td>0GB</td>
-      <td>0.032USD/GB/日</td>
-      <td>0.00USDUSD/日</td>
+      <td>0.18元/GB/日</td>
+      <td>0.00元/日</td>
    </tr>
    <tr>
       <td>外网读流量费用</td>
       <td>没有外网下载消费，无外网读流量</td>
       <td>0GB</td>
-      <td>0.144USD/GB/日</td>
-      <td>0.00USDUSD/日</td>
+      <td>0.8元/GB/日</td>
+      <td>0.00元/日</td>
    </tr>
    <tr>
       <td rowspan="2">存储费用</td>
       <td>日志存储费用</td>
       <td>每天上传2.33GB日志，<b>享有免费额度1GB/日</b>，保存15天后平均存储量19.95GB（1.33GB x 15天）</td>
       <td>19.95GB</td>
-      <td nowrap="nowrap">0.0025USD/GB/日</td>
-      <td nowrap="nowrap">0.0499USD/日</td>
+      <td nowrap="nowrap">0.014元/GB/日</td>
+      <td nowrap="nowrap">0.279元/日</td>
    </tr>
    <tr>
       <td>索引存储费用</td>
       <td>每天产生11.2GB索引，<b>享有免费额度1GB/日</b>，保存15天后平均存储量153GB （10.2GB x 15天）</td>
       <td>153GB</td>
-      <td>0.0025USD/GB/日</td>
-      <td nowrap="nowrap">0.382USD/日</td>
+      <td>0.014元/GB/日</td>
+      <td nowrap="nowrap">2.142元/日</td>
    </tr>
    <tr>
       <td rowspan="2">其他费用</td>
       <td>服务请求费用</td>
       <td>使用 Loglistener 会批量上传，将产生10万次上传请求，<b>享有免费额度100万次/日</b></td>
       <td>0次</td>
-      <td>0.027USD/GB/日</td>
-      <td>0.00USD/日</td>
+      <td>0.15元/GB/日</td>
+      <td>0.00元/日</td>
    </tr>
    <tr>
       <td>主题分区租用费用</td>
       <td>业务日志峰值8MB/s，需要两个主题分区，<b>享有免费额度1个/日</b></td>
       <td>1个</td>
-      <td>0.0072USD/个/日</td>
-      <td>0.0072USD/日</td>
+      <td>0.04元/个/日</td>
+      <td>0.04元/日</td>
    </tr>
    <tr>
       <td colspan="2">费用合计</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>
-      <td>1.0791USD/日</td>
+      <td>5.991元/日</td>
    </tr>
 </table>
 
@@ -113,7 +113,6 @@
 
 #### 活动对象
 由 TKE 侧自动创建的日志主题，且写入日志为 TKE 审计/事件日志。参与活动的日志主题带有 TKE-Audit 与 TKE-Event 标识，用户可在 【[日志服务控制台](https://console.cloud.tencent.com/cls/logset/desc)】>【日志集管理】>【日志主题】列表页查看。
-![](https://main.qcloudimg.com/raw/83ea60f5ea2e85eb7f926d6bd087e79d.png)
 
 #### 活动规则
 
@@ -126,6 +125,3 @@
 持续至2021年6月1日23点59分59秒。
 
 #### 示例页面
-![](https://main.qcloudimg.com/raw/1955438aa1c136c081e72087bdeee7da.png)
-![](https://main.qcloudimg.com/raw/a2051816f647312a2301f7a41d3598ae.png)
-
